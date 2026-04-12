@@ -44,7 +44,7 @@ function Section({
 
 function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-slate-400 bg-muted/50 p-4 mb-3">
+    <div className="rounded-lg border-l-4 border-border bg-muted/50 p-4 mb-3">
       <p className="text-sm font-semibold text-foreground italic">&ldquo;{quote}&rdquo;</p>
       {speaker && <p className="mt-1 text-xs font-medium text-muted-foreground">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>

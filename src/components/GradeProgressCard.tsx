@@ -24,7 +24,7 @@ interface GradeProgressCardProps {
 function trendIcon(trend: "up" | "down" | "stable") {
   if (trend === "up") return <ArrowUp className="h-3.5 w-3.5 text-emerald-400" />
   if (trend === "down") return <ArrowDown className="h-3.5 w-3.5 text-red-400" />
-  return <Minus className="h-3.5 w-3.5 text-neutral-500" />
+  return <Minus className="h-3.5 w-3.5 text-muted-foreground" />
 }
 
 function trendLabel(trend: "up" | "down" | "stable") {
@@ -36,7 +36,7 @@ function trendLabel(trend: "up" | "down" | "stable") {
 function trendColor(trend: "up" | "down" | "stable") {
   if (trend === "up") return "text-emerald-400"
   if (trend === "down") return "text-red-400"
-  return "text-neutral-500"
+  return "text-muted-foreground"
 }
 
 function gapStatusColor(status: string) {
@@ -104,7 +104,7 @@ function MiniProgressRing({
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-[10px] text-neutral-500 leading-none">
+        <span className="text-[10px] text-muted-foreground leading-none">
           {current}/{target}
         </span>
       </div>
@@ -134,7 +134,7 @@ export default function GradeProgressCard({
             >
               {currentGrade}
             </div>
-            <div className="text-[10px] uppercase tracking-wider text-neutral-500 mt-0.5">
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">
               Current
             </div>
           </div>
@@ -145,7 +145,7 @@ export default function GradeProgressCard({
           {/* Target */}
           <div className="text-center">
             <div className="text-xl font-semibold text-cyan-400">{targetGrade}</div>
-            <div className="text-[10px] uppercase tracking-wider text-neutral-500 mt-0.5">
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">
               Target
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function GradeProgressCard({
           >
             {currentGrade}
           </div>
-          <div className="text-[10px] uppercase tracking-wider text-neutral-500 mt-2 font-medium">
+          <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-2 font-medium">
             Working At
           </div>
         </div>
@@ -179,7 +179,7 @@ export default function GradeProgressCard({
           <div className="grid grid-cols-2 gap-3 mb-3">
             {/* Predicted Grade */}
             <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5">
-              <div className="text-[10px] uppercase tracking-wider text-neutral-500 mb-1">
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
                 Predicted
               </div>
               <div className="flex items-center gap-2">
@@ -197,7 +197,7 @@ export default function GradeProgressCard({
 
             {/* Target Grade */}
             <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5">
-              <div className="text-[10px] uppercase tracking-wider text-neutral-500 mb-1">
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
                 Target
               </div>
               <div className="flex items-center gap-2">

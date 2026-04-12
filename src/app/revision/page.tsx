@@ -151,17 +151,17 @@ export default async function RevisionHubPage() {
   return (
     <div className="space-y-10 pb-16">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
+      <section aria-labelledby="revision-hero-heading" className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
         {/* decorative glow */}
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
 
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
-            <Sparkles className="mr-1 size-3" />
+            <Sparkles className="mr-1 size-3" aria-hidden="true" />
             {config ? config.fullName : 'GCSE English Revision'}
           </Badge>
-          <h1 className="text-display-sm font-heading text-foreground sm:text-display">
+          <h1 id="revision-hero-heading" className="text-display-sm font-heading text-foreground sm:text-display">
             {headingPrefix} Revision Hub
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
@@ -177,7 +177,7 @@ export default async function RevisionHubPage() {
                 key={stat.label}
                 className="flex items-center gap-2 rounded-lg border border-border/40 bg-background/50 px-3 py-2"
               >
-                <stat.icon className="size-4 text-primary" />
+                <stat.icon className="size-4 text-primary" aria-hidden="true" />
                 <span className="text-sm font-semibold text-foreground">{stat.value}</span>
                 <span className="text-sm text-muted-foreground">{stat.label}</span>
               </div>
@@ -191,11 +191,11 @@ export default async function RevisionHubPage() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-4">
             <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15">
-              <CalendarDays className="size-6 text-primary" />
+              <CalendarDays className="size-6 text-primary" aria-hidden="true" />
             </div>
             <div>
               <Badge variant="secondary" className="mb-2">
-                <Sparkles className="mr-1 size-3" />
+                <Sparkles className="mr-1 size-3" aria-hidden="true" />
                 Personalised for {boardName}
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground">
@@ -217,7 +217,7 @@ export default async function RevisionHubPage() {
       {/* ── Section Cards ────────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <GraduationCap className="size-5 text-primary" />
+          <GraduationCap className="size-5 text-primary" aria-hidden="true" />
           <h2 className="text-heading-lg font-heading text-foreground">
             Explore Sections
           </h2>
@@ -248,7 +248,7 @@ export default async function RevisionHubPage() {
                 <div
                   className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
                 >
-                  <section.icon className={`size-5 ${section.colour}`} />
+                  <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
@@ -264,7 +264,7 @@ export default async function RevisionHubPage() {
 
               <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
                 Start revising
-                <ArrowRight className="size-3.5" />
+                <ArrowRight className="size-3.5" aria-hidden="true" />
               </div>
             </Link>
           ))}
@@ -275,7 +275,7 @@ export default async function RevisionHubPage() {
           <div className="mt-5 rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.04] p-5">
             <div className="flex items-start gap-4">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10">
-                <GraduationCap className="size-5 text-cyan-400" />
+                <GraduationCap className="size-5 text-cyan-400" aria-hidden="true" />
               </div>
               <div className="flex-1">
                 <h3 className="text-heading-md font-heading text-foreground">
@@ -319,7 +319,7 @@ export default async function RevisionHubPage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <Badge variant="secondary" className="mb-2">
-                <BookText className="mr-1 size-3" />
+                <BookText className="mr-1 size-3" aria-hidden="true" />
                 Featured for {boardName}
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground">
@@ -343,7 +343,7 @@ export default async function RevisionHubPage() {
 
       {/* ── Motivational banner ──────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">
-        <BarChart3 className="mx-auto mb-3 size-8 text-primary" />
+        <BarChart3 className="mx-auto mb-3 size-8 text-primary" aria-hidden="true" />
         <h2 className="text-heading-lg font-heading text-foreground">
           Consistent revision beats cramming every time
         </h2>

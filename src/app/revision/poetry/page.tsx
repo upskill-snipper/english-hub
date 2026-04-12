@@ -9,6 +9,7 @@ import {
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { PoetryHubAQAClient } from './PoetryHubAQAClient'
 
@@ -22,13 +23,21 @@ export default async function PoetryRevisionPage({
   const board = await getServerBoard()
   const wrongBoard = searchParams?.wrongBoard === '1'
 
+  const breadcrumbItems = [
+    { label: 'Revision', href: '/revision' },
+    { label: 'Poetry' },
+  ]
+
   // ── No board chosen yet ──────────────────────────────────────────────
   if (!board) {
     return (
-      <BoardlessPoetryShell
+      <>
+        <Breadcrumb items={breadcrumbItems} />
+        <BoardlessPoetryShell
         title="Choose your exam board"
         description="Each exam board uses a different poetry anthology. Pick yours so we can show you only the poems you actually need to learn."
       />
+      </>
     )
   }
 
@@ -36,6 +45,7 @@ export default async function PoetryRevisionPage({
   if (board === 'aqa') {
     return (
       <>
+        <Breadcrumb items={breadcrumbItems} />
         {wrongBoard && <WrongBoardBanner />}
         <PoetryHubAQAClient />
       </>
@@ -45,6 +55,8 @@ export default async function PoetryRevisionPage({
   // ── Edexcel: Conflict + Time and Place ──────────────────────────────
   if (board === 'edexcel') {
     return (
+      <>
+      <Breadcrumb items={breadcrumbItems} />
       <PoetryShell
         boardLabel="Pearson Edexcel"
         title="Edexcel Poetry Anthology"
@@ -70,12 +82,15 @@ export default async function PoetryRevisionPage({
           </Button>
         </div>
       </PoetryShell>
+      </>
     )
   }
 
   // ── OCR: Towards a World Unknown (4 clusters) ────────────────────────
   if (board === 'ocr') {
     return (
+      <>
+      <Breadcrumb items={breadcrumbItems} />
       <PoetryShell
         boardLabel="OCR"
         title="Towards a World Unknown"
@@ -113,12 +128,15 @@ export default async function PoetryRevisionPage({
           </Button>
         </div>
       </PoetryShell>
+      </>
     )
   }
 
   // ── Eduqas: single 18-poem anthology ────────────────────────────────
   if (board === 'eduqas') {
     return (
+      <>
+      <Breadcrumb items={breadcrumbItems} />
       <PoetryShell
         boardLabel="WJEC Eduqas"
         title="Eduqas Poetry Anthology"
@@ -132,12 +150,15 @@ export default async function PoetryRevisionPage({
           </Button>
         </div>
       </PoetryShell>
+      </>
     )
   }
 
   // ── Edexcel IGCSE: Edexcel international anthology ──────────────────
   if (board === 'edexcel-igcse') {
     return (
+      <>
+      <Breadcrumb items={breadcrumbItems} />
       <PoetryShell
         boardLabel="Edexcel IGCSE"
         title="Edexcel IGCSE Poetry Anthology"
@@ -151,6 +172,7 @@ export default async function PoetryRevisionPage({
           </Button>
         </div>
       </PoetryShell>
+      </>
     )
   }
 
@@ -162,6 +184,8 @@ export default async function PoetryRevisionPage({
         : '/igcse/cambridge/0990/paper-1'
 
     return (
+      <>
+      <Breadcrumb items={breadcrumbItems} />
       <PoetryShell
         boardLabel={board === 'cambridge-0500' ? 'Cambridge 0500' : 'Cambridge 0990'}
         title="No poetry anthology for your board"
@@ -175,11 +199,12 @@ export default async function PoetryRevisionPage({
           </Button>
         </div>
       </PoetryShell>
+      </>
     )
   }
 
   // Fallback (shouldn't be reachable)
-  return <BoardlessPoetryShell title="Choose your exam board" description="Pick a board to see your poetry anthology." />
+  return <><Breadcrumb items={breadcrumbItems} /><BoardlessPoetryShell title="Choose your exam board" description="Pick a board to see your poetry anthology." /></>
 }
 
 // ─── Shared shell components (server) ───────────────────────────────────────

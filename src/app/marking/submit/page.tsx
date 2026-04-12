@@ -196,7 +196,7 @@ export default function SubmitEssayPage() {
               Marking
             </Link>
           </li>
-          <li aria-hidden>/</li>
+          <li aria-hidden="true">/</li>
           <li className="font-medium text-foreground">New submission</li>
         </ol>
       </nav>

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 import type { ExamBoard } from '@/lib/board/board-store'
 import { isIgcseBoard } from '@/lib/board/board-filter'
 
@@ -189,6 +190,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
 
   return (
     <div className="space-y-8 pb-16">
+      <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Language' }]} />
       {/* Header */}
       <div>
         <Button

@@ -22,6 +22,7 @@ import {
 
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
@@ -477,6 +478,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
 
     return (
       <div className="space-y-8 pb-16">
+        <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Study Plan' }]} />
         <div>
           <Button
             variant="ghost"
@@ -633,6 +635,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
   if (step === 0 && Object.keys(answers).length === 0) {
     return (
       <div className="space-y-8 pb-16">
+        <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Study Plan' }]} />
         <div>
           <Button
             variant="ghost"
@@ -676,6 +679,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
   if (!isComplete) {
     return (
       <div className="space-y-8 pb-16">
+        <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Study Plan' }]} />
         <div>
           <Button
             variant="ghost"

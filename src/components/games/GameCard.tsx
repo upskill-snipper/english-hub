@@ -142,7 +142,7 @@ export default function GameCard({
             <span
               className={cn(
                 'inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium',
-                DIFFICULTY_COLORS[difficulty] ?? 'bg-white/5 text-neutral-400 border-white/10'
+                DIFFICULTY_COLORS[difficulty] ?? 'bg-white/5 text-muted-foreground border-white/10'
               )}
             >
               {difficulty}

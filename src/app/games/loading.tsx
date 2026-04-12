@@ -1,21 +1,42 @@
+import { Skeleton } from '@/components/ui/skeleton'
+
 export default function Loading() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="h-8 w-44 animate-pulse rounded bg-muted mb-2" />
-      <div className="h-4 w-64 animate-pulse rounded bg-muted mb-8" />
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-10">
+      {/* Hero section */}
+      <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 sm:p-8 lg:p-10">
+        <div className="relative space-y-4">
+          <Skeleton className="h-6 w-36 rounded-full" />
+          <Skeleton className="h-10 w-52 sm:w-72" />
+          <Skeleton className="h-5 w-full max-w-2xl" />
+          <Skeleton className="h-5 w-2/3 max-w-lg" />
+        </div>
+      </section>
+
+      {/* Tab bar */}
+      <div className="flex gap-2">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <Skeleton key={i} className="h-9 w-28 rounded-md" />
+        ))}
+      </div>
+
+      {/* Game cards grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="rounded-xl border border-border bg-card p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-10 w-10 animate-pulse rounded-lg bg-muted" />
-              <div>
-                <div className="h-5 w-28 animate-pulse rounded bg-muted mb-1" />
-                <div className="h-3 w-16 animate-pulse rounded bg-muted" />
+          <div
+            key={i}
+            className="flex flex-col rounded-2xl border border-border/60 bg-card p-6"
+          >
+            <div className="mb-4 flex items-center gap-3">
+              <Skeleton className="h-10 w-10 rounded-lg" />
+              <div className="space-y-1.5">
+                <Skeleton className="h-5 w-28" />
+                <Skeleton className="h-3 w-16" />
               </div>
             </div>
-            <div className="h-3 w-full animate-pulse rounded bg-muted mb-2" />
-            <div className="h-3 w-2/3 animate-pulse rounded bg-muted mb-4" />
-            <div className="h-9 w-full animate-pulse rounded-md bg-muted" />
+            <Skeleton className="h-3 w-full" />
+            <Skeleton className="mt-2 h-3 w-2/3" />
+            <Skeleton className="mt-4 h-9 w-full rounded-md" />
           </div>
         ))}
       </div>

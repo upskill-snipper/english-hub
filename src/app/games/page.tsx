@@ -29,6 +29,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { cn } from '@/lib/utils'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
@@ -608,7 +609,7 @@ function WeeklyLeaderboard() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="p-2 rounded-xl bg-amber-500/10">
-              <Trophy className="size-5 text-amber-400" />
+              <Trophy className="size-5 text-amber-400" aria-hidden="true" />
             </div>
             <div>
               <CardTitle>Weekly Leaderboard</CardTitle>
@@ -650,9 +651,9 @@ function WeeklyLeaderboard() {
                         >
                           {/* Rank badge */}
                           <div className="w-7 shrink-0 text-center">
-                            {idx === 0 && <Crown className="size-5 text-amber-400 mx-auto" />}
-                            {idx === 1 && <Medal className="size-5 text-zinc-300 mx-auto" />}
-                            {idx === 2 && <Medal className="size-5 text-amber-600 mx-auto" />}
+                            {idx === 0 && <Crown className="size-5 text-amber-400 mx-auto" aria-label="1st place" />}
+                            {idx === 1 && <Medal className="size-5 text-zinc-300 mx-auto" aria-label="2nd place" />}
+                            {idx === 2 && <Medal className="size-5 text-amber-600 mx-auto" aria-label="3rd place" />}
                             {idx > 2 && <span className="text-xs font-bold text-muted-foreground">{idx + 1}</span>}
                           </div>
                           {/* Name */}
@@ -953,12 +954,13 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
               onChange={(e) => setGuess(e.target.value.toUpperCase())}
               onKeyDown={(e) => { if (e.key === 'Enter') handleSubmit() }}
               placeholder="Type your answer..."
+              aria-label="Your answer for the scrambled word"
               className="flex-1 h-11 rounded-xl border border-border bg-background px-4 text-foreground font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500/60 transition-all"
               autoComplete="off"
               spellCheck={false}
             />
-            <Button onClick={handleSubmit} className="bg-emerald-600 hover:bg-emerald-500 text-white">
-              <ChevronRight className="size-5" />
+            <Button onClick={handleSubmit} aria-label="Submit answer" className="bg-emerald-600 hover:bg-emerald-500 text-white">
+              <ChevronRight className="size-5" aria-hidden="true" />
             </Button>
           </div>
           {!showHint && (
@@ -1497,6 +1499,9 @@ export default function GamesPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-6">
+        <Breadcrumb items={[{ label: 'Games' }]} />
+      </div>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/40">
         {/* Animated background blobs */}

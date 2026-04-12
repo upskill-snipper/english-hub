@@ -286,6 +286,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
             <button
               key={tab.key}
               onClick={() => toggleTab(tab.key)}
+              aria-pressed={isActive}
               className={cn(
                 'rounded-md border px-3 py-1.5 text-xs font-medium transition-all duration-150',
                 isActive
@@ -323,6 +324,8 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                     onClick={() => handleLineClick(idx, line.annotations)}
                     role={hasAnnotations ? 'button' : undefined}
                     tabIndex={hasAnnotations ? 0 : undefined}
+                    aria-label={hasAnnotations ? `Line ${idx + 1}: show ${line.annotations!.length} annotation${line.annotations!.length > 1 ? 's' : ''}` : undefined}
+                    aria-expanded={hasAnnotations ? popoverLine === idx : undefined}
                     onKeyDown={(e) => {
                       if (hasAnnotations && (e.key === 'Enter' || e.key === ' ')) {
                         e.preventDefault()

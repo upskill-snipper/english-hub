@@ -16,6 +16,7 @@ import {
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 /* ── Sub-page links ──────────────────────────────────────────────── */
 
@@ -107,6 +108,7 @@ export default function ExamTechniqueHubView({
 
   return (
     <div className="space-y-10 pb-16">
+      <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Exam Technique' }]} />
       {/* ── Header ──────────────────────────────────────────────── */}
       <div>
         <Button

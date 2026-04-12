@@ -40,49 +40,49 @@ type Region = 'gcse' | 'igcse'
 const BOARD_THEME: Record<ExamBoard, { gradient: string; ring: string; iconBg: string; iconText: string; accent: string }> = {
   aqa: {
     gradient: 'from-rose-500/10 via-rose-500/5 to-transparent',
-    ring: 'hover:ring-rose-400/40 aria-pressed:ring-rose-500/50',
+    ring: 'hover:ring-rose-400/40 aria-checked:ring-rose-500/50',
     iconBg: 'bg-rose-500/10 group-hover:bg-rose-500/20',
     iconText: 'text-rose-500 dark:text-rose-400',
     accent: 'bg-rose-500',
   },
   edexcel: {
     gradient: 'from-blue-500/10 via-blue-500/5 to-transparent',
-    ring: 'hover:ring-blue-400/40 aria-pressed:ring-blue-500/50',
+    ring: 'hover:ring-blue-400/40 aria-checked:ring-blue-500/50',
     iconBg: 'bg-blue-500/10 group-hover:bg-blue-500/20',
     iconText: 'text-blue-500 dark:text-blue-400',
     accent: 'bg-blue-500',
   },
   ocr: {
     gradient: 'from-amber-500/10 via-amber-500/5 to-transparent',
-    ring: 'hover:ring-amber-400/40 aria-pressed:ring-amber-500/50',
+    ring: 'hover:ring-amber-400/40 aria-checked:ring-amber-500/50',
     iconBg: 'bg-amber-500/10 group-hover:bg-amber-500/20',
     iconText: 'text-amber-500 dark:text-amber-400',
     accent: 'bg-amber-500',
   },
   eduqas: {
     gradient: 'from-emerald-500/10 via-emerald-500/5 to-transparent',
-    ring: 'hover:ring-emerald-400/40 aria-pressed:ring-emerald-500/50',
+    ring: 'hover:ring-emerald-400/40 aria-checked:ring-emerald-500/50',
     iconBg: 'bg-emerald-500/10 group-hover:bg-emerald-500/20',
     iconText: 'text-emerald-500 dark:text-emerald-400',
     accent: 'bg-emerald-500',
   },
   'edexcel-igcse': {
     gradient: 'from-indigo-500/10 via-indigo-500/5 to-transparent',
-    ring: 'hover:ring-indigo-400/40 aria-pressed:ring-indigo-500/50',
+    ring: 'hover:ring-indigo-400/40 aria-checked:ring-indigo-500/50',
     iconBg: 'bg-indigo-500/10 group-hover:bg-indigo-500/20',
     iconText: 'text-indigo-500 dark:text-indigo-400',
     accent: 'bg-indigo-500',
   },
   'cambridge-0500': {
     gradient: 'from-violet-500/10 via-violet-500/5 to-transparent',
-    ring: 'hover:ring-violet-400/40 aria-pressed:ring-violet-500/50',
+    ring: 'hover:ring-violet-400/40 aria-checked:ring-violet-500/50',
     iconBg: 'bg-violet-500/10 group-hover:bg-violet-500/20',
     iconText: 'text-violet-500 dark:text-violet-400',
     accent: 'bg-violet-500',
   },
   'cambridge-0990': {
     gradient: 'from-fuchsia-500/10 via-fuchsia-500/5 to-transparent',
-    ring: 'hover:ring-fuchsia-400/40 aria-pressed:ring-fuchsia-500/50',
+    ring: 'hover:ring-fuchsia-400/40 aria-checked:ring-fuchsia-500/50',
     iconBg: 'bg-fuchsia-500/10 group-hover:bg-fuchsia-500/20',
     iconText: 'text-fuchsia-500 dark:text-fuchsia-400',
     accent: 'bg-fuchsia-500',
@@ -387,7 +387,8 @@ function BoardCard({
       type="button"
       onClick={onClick}
       disabled={disabled}
-      aria-pressed={isSelected}
+      role="radio"
+      aria-checked={isSelected}
       aria-busy={isLoading}
       data-board={board.id}
       className={cn(
@@ -398,7 +399,7 @@ function BoardCard({
         'hover:-translate-y-1 hover:shadow-xl hover:ring-2',
         'focus-visible:border-ring focus-visible:ring-4 focus-visible:ring-ring/20',
         'disabled:pointer-events-none disabled:opacity-50',
-        'aria-pressed:border-primary aria-pressed:ring-2',
+        'aria-checked:border-primary aria-checked:ring-2',
         theme.ring,
         compact ? 'p-5' : 'p-6',
       )}

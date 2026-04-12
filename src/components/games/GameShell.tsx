@@ -59,7 +59,7 @@ function DifficultyBadge({ level }: { level: string }) {
     <span
       className={cn(
         'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold',
-        DIFFICULTY_STYLES[level] ?? 'bg-white/5 text-neutral-400 border-white/10'
+        DIFFICULTY_STYLES[level] ?? 'bg-white/5 text-muted-foreground border-white/10'
       )}
     >
       {level}
@@ -143,7 +143,7 @@ function ResultsScreen({ score, maxScore, elapsedSeconds, timed, onPlayAgain }: 
       >
         <div className="text-center">
           <div className={cn('text-4xl font-bold', gcseGradeColor(grade))}>{grade}</div>
-          <div className="text-[10px] uppercase tracking-wider text-neutral-500">Grade</div>
+          <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Grade</div>
         </div>
       </div>
 
@@ -323,7 +323,7 @@ export default function GameShell({
                 >
                   {liveGrade}
                 </div>
-                <div className="text-[10px] uppercase tracking-wider text-neutral-500">
+                <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
                   Grade
                 </div>
               </div>
@@ -334,7 +334,7 @@ export default function GameShell({
               <div className="text-xl font-bold text-foreground">
                 {score}/{maxScore}
               </div>
-              <div className="text-[10px] uppercase tracking-wider text-neutral-500">
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
                 Score
               </div>
             </div>
@@ -348,7 +348,7 @@ export default function GameShell({
                     {highScore.percentage}%
                   </span>
                 </div>
-                <div className="text-[10px] uppercase tracking-wider text-neutral-500">
+                <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
                   Best
                 </div>
               </div>
@@ -365,7 +365,7 @@ export default function GameShell({
                 >
                   {formatTime(timeLeft)}
                 </div>
-                <div className="text-[10px] uppercase tracking-wider text-neutral-500">
+                <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
                   Time
                 </div>
               </div>

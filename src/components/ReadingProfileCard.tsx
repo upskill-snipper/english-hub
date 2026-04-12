@@ -85,20 +85,20 @@ export default function ReadingProfileCard({
 
   if (readingAge == null && decodingAge == null && fluencyAge == null) {
     return (
-      <Card className="bg-zinc-900 border-zinc-800">
+      <Card className="bg-card border-border">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-zinc-100">
+          <CardTitle className="flex items-center gap-2 text-foreground">
             <BookOpen className="w-5 h-5 text-cyan-400" />
             Reading Profile
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-zinc-500">No reading assessment data available.</p>
+          <p className="text-sm text-muted-foreground">No reading assessment data available.</p>
           {showReassessLink && (
             <Button
               variant="outline"
               size="sm"
-              className="mt-3 border-zinc-700 text-zinc-300 hover:bg-zinc-800"
+              className="mt-3 border-border text-muted-foreground hover:bg-muted"
               render={<Link href="/assessment/reading" />}
             >
               Take Assessment
@@ -116,9 +116,9 @@ export default function ReadingProfileCard({
   ]
 
   return (
-    <Card className="bg-zinc-900 border-zinc-800">
+    <Card className="bg-card border-border">
       <CardHeader className={compact ? "pb-2" : undefined}>
-        <CardTitle className="flex items-center gap-2 text-zinc-100">
+        <CardTitle className="flex items-center gap-2 text-foreground">
           <BookOpen className="w-5 h-5 text-cyan-400" />
           Reading Profile
         </CardTitle>
@@ -133,7 +133,7 @@ export default function ReadingProfileCard({
                 key={label}
                 className={`rounded-lg border p-3 text-center ${statusBgColor(status)}`}
               >
-                <p className="text-[10px] uppercase tracking-wider text-zinc-500 mb-1">{label}</p>
+                <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">{label}</p>
                 <p className={`text-xl font-bold ${statusColor(status)}`}>
                   {monthsToDisplay(value)}
                 </p>
@@ -146,13 +146,13 @@ export default function ReadingProfileCard({
         </div>
 
         {/* Chronological age comparison */}
-        <div className="mt-3 flex items-center justify-between text-xs text-zinc-500">
+        <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
           <span>Chronological age: {monthsToDisplay(chronoMonths)}</span>
         </div>
 
         {/* Assessment date & reassess link */}
         <div className="mt-3 flex items-center justify-between">
-          <span className="flex items-center gap-1.5 text-xs text-zinc-500">
+          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <Clock className="w-3.5 h-3.5" />
             Last assessed: {formatAssessmentDate(assessmentDate)}
           </span>
@@ -160,7 +160,7 @@ export default function ReadingProfileCard({
             <Button
               variant="outline"
               size="sm"
-              className="h-7 text-xs border-zinc-700 text-zinc-300 hover:bg-zinc-800"
+              className="h-7 text-xs border-border text-muted-foreground hover:bg-muted"
               render={<Link href="/assessment/reading" />}
             >
               Reassess
@@ -181,7 +181,7 @@ export function ReadingAgeInline({
   readingAge: number | null
   yearGroup: string
 }) {
-  if (readingAge == null) return <span className="text-zinc-600">--</span>
+  if (readingAge == null) return <span className="text-muted-foreground">--</span>
   const chronoMonths = getChronologicalMonths(yearGroup)
   const status = getAgeStatus(readingAge, chronoMonths)
   return (

@@ -61,6 +61,99 @@ const QUOTE_BANK: QuoteEntry[] = [
   { quote: 'I got you to look after me, and you got me to look after you.', text: 'Of Mice and Men' },
   { quote: 'Guys like us, that work on ranches, are the loneliest guys in the world.', text: 'Of Mice and Men' },
   { quote: 'Tell me about the rabbits, George.', text: 'Of Mice and Men' },
+
+  // ── Additional Macbeth quotes (public domain) ──────────────────────────────
+  { quote: 'Stars, hide your fires; let not light see my black and deep desires.', text: 'Macbeth' },
+  { quote: 'Come, you spirits that tend on mortal thoughts, unsex me here.', text: 'Macbeth' },
+  { quote: 'I dare do all that may become a man; who dares do more is none.', text: 'Macbeth' },
+  { quote: 'By the pricking of my thumbs, something wicked this way comes.', text: 'Macbeth' },
+  { quote: 'Yet do I fear thy nature; it is too full o\' the milk of human kindness.', text: 'Macbeth' },
+  { quote: 'What\'s done cannot be undone.', text: 'Macbeth' },
+  { quote: 'Double, double toil and trouble; fire burn and cauldron bubble.', text: 'Macbeth' },
+  { quote: 'There\'s daggers in men\'s smiles.', text: 'Macbeth' },
+  { quote: 'It is a tale told by an idiot, full of sound and fury, signifying nothing.', text: 'Macbeth' },
+  { quote: 'I am in blood stepped in so far that, should I wade no more, returning were as tedious as go o\'er.', text: 'Macbeth' },
+  { quote: 'So foul and fair a day I have not seen.', text: 'Macbeth' },
+  { quote: 'Screw your courage to the sticking place, and we\'ll not fail.', text: 'Macbeth' },
+  { quote: 'All the perfumes of Arabia will not sweeten this little hand.', text: 'Macbeth' },
+  { quote: 'Tomorrow, and tomorrow, and tomorrow, creeps in this petty pace from day to day.', text: 'Macbeth' },
+  { quote: 'Full of scorpions is my mind, dear wife!', text: 'Macbeth' },
+
+  // ── Additional An Inspector Calls quotes (<=15 words, fair dealing) ────────
+  { quote: 'Public men, Mr Birling, have responsibilities as well as privileges.', text: 'An Inspector Calls' },
+  { quote: 'You\'re not the kind of father a chap could go to when he\'s in trouble.', text: 'An Inspector Calls' },
+  { quote: 'If we were all responsible for everything that happened to everybody we\'d had anything to do with, it would be very awkward.', text: 'An Inspector Calls' },
+  { quote: 'I\'m ashamed of you as well — yes both of you.', text: 'An Inspector Calls' },
+  { quote: 'The girl had been happy — hadn\'t she?', text: 'An Inspector Calls' },
+  { quote: 'Just used her for the end of a stupid drunken evening.', text: 'An Inspector Calls' },
+  { quote: 'You began to learn something. And now you\'ve stopped.', text: 'An Inspector Calls' },
+  { quote: 'A man has to mind his own business and look after himself.', text: 'An Inspector Calls' },
+  { quote: 'We don\'t live alone. We are members of one body.', text: 'An Inspector Calls' },
+  { quote: 'Each of you helped to kill her.', text: 'An Inspector Calls' },
+
+  // ── Additional A Christmas Carol quotes (public domain) ────────────────────
+  { quote: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!', text: 'A Christmas Carol' },
+  { quote: 'Bah! Humbug!', text: 'A Christmas Carol' },
+  { quote: 'Old Marley was as dead as a door-nail.', text: 'A Christmas Carol' },
+  { quote: 'I will live in the Past, the Present, and the Future.', text: 'A Christmas Carol' },
+  { quote: 'The cold within him froze his old features, nipped his pointed nose.', text: 'A Christmas Carol' },
+  { quote: 'God bless us, every one!', text: 'A Christmas Carol' },
+  { quote: 'Darkness is cheap, and Scrooge liked it.', text: 'A Christmas Carol' },
+  { quote: 'No warmth could warm, no wintry weather chill him.', text: 'A Christmas Carol' },
+  { quote: 'He carried his own low temperature always about with him.', text: 'A Christmas Carol' },
+  { quote: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy.', text: 'A Christmas Carol' },
+
+  // ── Additional Jekyll and Hyde quotes (public domain) ──────────────────────
+  { quote: 'I learned to recognise the thorough and primitive duality of man.', text: 'Jekyll and Hyde' },
+  { quote: 'With every day I drew nearer to the truth, that man is not truly one, but truly two.', text: 'Jekyll and Hyde' },
+  { quote: 'The pleasures which I made haste to seek in my disguise were undignified.', text: 'Jekyll and Hyde' },
+  { quote: 'He had always been known for charities; he was now no less distinguished for religion.', text: 'Jekyll and Hyde' },
+  { quote: 'All human beings are commingled out of good and evil.', text: 'Jekyll and Hyde' },
+  { quote: 'The moment I choose, I can be rid of Mr Hyde.', text: 'Jekyll and Hyde' },
+  { quote: 'He is not easy to describe. There is something wrong with his appearance.', text: 'Jekyll and Hyde' },
+  { quote: 'That child of Hell had nothing human; nothing lived in him but fear and hatred.', text: 'Jekyll and Hyde' },
+  { quote: 'I was slowly losing hold of my original and better self.', text: 'Jekyll and Hyde' },
+  { quote: 'The fog still slept on the wing above the drowned city.', text: 'Jekyll and Hyde' },
+
+  // ── Additional Romeo and Juliet quotes (public domain) ─────────────────────
+  { quote: 'O Romeo, Romeo! Wherefore art thou Romeo?', text: 'Romeo and Juliet' },
+  { quote: 'What\'s in a name? That which we call a rose by any other name would smell as sweet.', text: 'Romeo and Juliet' },
+  { quote: 'For never was a story of more woe than this of Juliet and her Romeo.', text: 'Romeo and Juliet' },
+  { quote: 'O, she doth teach the torches to burn bright!', text: 'Romeo and Juliet' },
+  { quote: 'Wisely and slow; they stumble that run fast.', text: 'Romeo and Juliet' },
+  { quote: 'Good night, good night! Parting is such sweet sorrow, that I shall say good night till it be morrow.', text: 'Romeo and Juliet' },
+  { quote: 'Do you bite your thumb at us, sir?', text: 'Romeo and Juliet' },
+  { quote: 'Thus with a kiss I die.', text: 'Romeo and Juliet' },
+  { quote: 'Then I defy you, stars!', text: 'Romeo and Juliet' },
+  { quote: 'My bounty is as boundless as the sea, my love as deep.', text: 'Romeo and Juliet' },
+
+  // ── Additional Animal Farm quotes (<=15 words, fair dealing) ───────────────
+  { quote: 'The only good human being is a dead one.', text: 'Animal Farm' },
+  { quote: 'I will work harder!', text: 'Animal Farm' },
+  { quote: 'All animals are equal.', text: 'Animal Farm' },
+  { quote: 'Man serves the interests of no creature except himself.', text: 'Animal Farm' },
+  { quote: 'Donkeys live a long time. None of you has ever seen a dead donkey.', text: 'Animal Farm' },
+
+  // ── Additional Lord of the Flies quotes (<=15 words, fair dealing) ─────────
+  { quote: 'The rules! You\'re breaking the rules!', text: 'Lord of the Flies' },
+  { quote: 'What are we? Humans? Or animals? Or savages?', text: 'Lord of the Flies' },
+  { quote: 'We\'ve got to have rules and obey them. After all, we\'re not savages.', text: 'Lord of the Flies' },
+  { quote: 'Fancy thinking the Beast was something you could hunt and kill!', text: 'Lord of the Flies' },
+  { quote: 'The world, that understandable and lawful world, was slipping away.', text: 'Lord of the Flies' },
+
+  // ── Additional Of Mice and Men quotes (<=15 words, fair dealing) ───────────
+  { quote: 'I seen hundreds of men come by on the road... every damn one of \'em\'s got a little piece of land in his head.', text: 'Of Mice and Men' },
+  { quote: 'A guy sets alone out here at night, maybe readin\' books or thinkin\'.', text: 'Of Mice and Men' },
+  { quote: 'I could get you strung up on a tree so easy it ain\'t even funny.', text: 'Of Mice and Men' },
+  { quote: 'We could live offa the fatta the lan\'.', text: 'Of Mice and Men' },
+  { quote: 'Ain\'t many guys travel around together. I don\'t know why.', text: 'Of Mice and Men' },
+
+  // ── To Kill a Mockingbird quotes (<=15 words, fair dealing) ────────────────
+  { quote: 'You never really understand a person until you climb into his skin.', text: 'To Kill a Mockingbird' },
+  { quote: 'Mockingbirds don\'t do one thing but sing their hearts out for us.', text: 'To Kill a Mockingbird' },
+  { quote: 'The one thing that doesn\'t abide by majority rule is a person\'s conscience.', text: 'To Kill a Mockingbird' },
+  { quote: 'I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun.', text: 'To Kill a Mockingbird' },
+  { quote: 'People generally see what they look for, and hear what they listen for.', text: 'To Kill a Mockingbird' },
 ]
 
 const ALL_TEXTS = [
@@ -72,6 +165,7 @@ const ALL_TEXTS = [
   'Animal Farm',
   'Lord of the Flies',
   'Of Mice and Men',
+  'To Kill a Mockingbird',
 ]
 
 // Map the quote bank's simplified display titles to canonical set-text slugs.
@@ -84,6 +178,7 @@ const TEXT_TO_SLUG: Record<string, string> = {
   'Animal Farm': 'animal-farm',
   'Lord of the Flies': 'lord-of-the-flies',
   'Of Mice and Men': 'of-mice-and-men',
+  'To Kill a Mockingbird': 'to-kill-a-mockingbird',
 }
 
 function shuffle<T>(arr: T[]): T[] {

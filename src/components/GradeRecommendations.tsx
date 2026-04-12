@@ -103,9 +103,9 @@ export default function GradeRecommendations({
       {/* Header: Grade Transition Arrow */}
       <div className="flex items-center gap-3">
         <GradeChip grade={rec.from} />
-        <ArrowRight className="h-4 w-4 text-neutral-500 shrink-0" />
+        <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />
         <GradeChip grade={rec.to} highlight />
-        <span className="ml-2 text-xs text-neutral-500 uppercase tracking-wider font-medium">
+        <span className="ml-2 text-xs text-muted-foreground uppercase tracking-wider font-medium">
           Next Grade Target
         </span>
       </div>
@@ -114,19 +114,19 @@ export default function GradeRecommendations({
       <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-4">
         <div className="flex items-start gap-3">
           <Lightbulb className="h-4 w-4 mt-0.5 text-amber-400 shrink-0" />
-          <p className="text-sm text-neutral-300 leading-relaxed">{rec.summary}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">{rec.summary}</p>
         </div>
       </div>
 
       {/* Key Focus Areas */}
       {!compact && (
         <div>
-          <h4 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-3">
+          <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-3">
             Key Focus Areas
           </h4>
           <ul className="space-y-2">
             {rec.keyFocus.map((focus, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-sm text-neutral-400">
+              <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground">
                 <ClipboardList className="h-3.5 w-3.5 mt-0.5 text-cyan-400/60 shrink-0" />
                 <span>{focus}</span>
               </li>
@@ -137,7 +137,7 @@ export default function GradeRecommendations({
 
       {/* Action Items by Skill */}
       <div>
-        <h4 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-3">
+        <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-3">
           {weakAreas.length > 0 ? "Priority Actions (by weak areas)" : "Action Items"}
         </h4>
         <div className="space-y-3">
@@ -161,7 +161,7 @@ export default function GradeRecommendations({
       {/* Suggested Resources */}
       {showResources && rec.suggestedResources.length > 0 && (
         <div>
-          <h4 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-3">
+          <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-3">
             Suggested Resources
           </h4>
           <div className={compact ? "space-y-2" : "grid grid-cols-1 sm:grid-cols-2 gap-2"}>
@@ -170,11 +170,11 @@ export default function GradeRecommendations({
               return (
                 <div
                   key={i}
-                  className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-white/[0.02] px-3.5 py-2.5 text-sm text-neutral-400 hover:bg-white/[0.04] transition-colors"
+                  className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-white/[0.02] px-3.5 py-2.5 text-sm text-muted-foreground hover:bg-white/[0.04] transition-colors"
                 >
                   <Icon className="h-3.5 w-3.5 text-cyan-400/60 shrink-0" />
                   <span className="flex-1 truncate">{res.title}</span>
-                  <span className="text-[10px] uppercase tracking-wider text-neutral-600">
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60">
                     {res.type}
                   </span>
                 </div>
@@ -234,7 +234,7 @@ function SkillActionCard({
       }`}
     >
       <div className="flex items-start gap-3">
-        <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded text-[10px] font-bold bg-white/[0.06] text-neutral-500">
+        <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded text-[10px] font-bold bg-white/[0.06] text-muted-foreground">
           {index + 1}
         </span>
         <div className="flex-1 min-w-0">
@@ -246,10 +246,10 @@ function SkillActionCard({
               </span>
             )}
           </div>
-          <p className="text-sm text-neutral-400 leading-relaxed">{skill.action}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">{skill.action}</p>
 
           {!compact && (
-            <div className="mt-2 flex items-center gap-2 text-xs text-neutral-500">
+            <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
               <FileText className="h-3 w-3 shrink-0" />
               <span className="italic">{skill.exercise}</span>
             </div>
@@ -257,7 +257,7 @@ function SkillActionCard({
 
           {showProgress && (
             <div className="mt-2.5">
-              <div className="flex items-center justify-between text-[10px] text-neutral-500 mb-1">
+              <div className="flex items-center justify-between text-[10px] text-muted-foreground mb-1">
                 <span>{skill.currentLevel}</span>
                 <span className="text-cyan-400/60">{skill.targetLevel}</span>
               </div>

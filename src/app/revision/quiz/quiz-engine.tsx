@@ -344,7 +344,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
       <div className="space-y-6 animate-fade-in">
         {/* Grade card */}
         <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 text-center">
-          <Trophy className="mx-auto mb-3 size-10 text-amber-400" />
+          <Trophy className="mx-auto mb-3 size-10 text-amber-400" aria-hidden="true" />
           <h2 className="text-display-sm font-heading text-foreground">Quiz Complete</h2>
 
           <div className="mt-6 flex items-center justify-center gap-6">
@@ -550,7 +550,14 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
       </div>
 
       {/* Progress bar */}
-      <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+      <div
+        className="h-1.5 w-full rounded-full bg-muted overflow-hidden"
+        role="progressbar"
+        aria-valuenow={Math.round(progress)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label={`Quiz progress: ${currentIndex + (hasAnswered ? 1 : 0)} of ${questions.length} questions`}
+      >
         <div
           className="h-full bg-primary rounded-full transition-all duration-300 ease-out"
           style={{ width: `${progress}%` }}
@@ -625,6 +632,8 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
       {/* Explanation (after answering) */}
       {hasAnswered && (
         <div
+          role="status"
+          aria-live="polite"
           className={`rounded-xl border p-4 animate-slide-up ${
             isCorrect
               ? 'border-emerald-500/30 bg-emerald-500/5'

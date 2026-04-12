@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import {
@@ -121,6 +122,7 @@ export default async function GradeTargetsPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Grade Targets' }]} />
       {/* ── Header ──────────────────────────────────────────────── */}
       <div>
         <Button

@@ -83,8 +83,8 @@ function TimerDisplay({ startTime, offsetSeconds = 0 }: { startTime: number | nu
   const secs = elapsed % 60
 
   return (
-    <div className="flex items-center gap-1.5 text-sm text-white/50 tabular-nums">
-      <Timer className="h-4 w-4" />
+    <div className="flex items-center gap-1.5 text-sm text-muted-foreground tabular-nums" aria-label={`Elapsed time: ${mins} minutes ${secs} seconds`}>
+      <Timer className="h-4 w-4" aria-hidden="true" />
       <span>
         {mins}:{secs.toString().padStart(2, "0")}
       </span>
@@ -107,13 +107,20 @@ function TestProgress({
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center justify-between text-xs text-white/40">
+      <div className="flex items-center justify-between text-xs text-muted-foreground">
         <span>{label}</span>
         <span>
           {currentStep} of {totalSteps}
         </span>
       </div>
-      <div className="h-1.5 w-full rounded-full bg-white/5">
+      <div
+        className="h-1.5 w-full rounded-full bg-muted/50"
+        role="progressbar"
+        aria-valuenow={percentage}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label={`${label}: ${currentStep} of ${totalSteps}`}
+      >
         <div
           className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-blue-500 transition-all duration-500"
           style={{ width: `${percentage}%` }}
@@ -145,32 +152,32 @@ function AgeInputPhase({
         <CardContent className="space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-white/60 mb-2">
+              <label className="block text-sm font-medium text-muted-foreground mb-2">
                 Age (years)
               </label>
               <select
                 value={years}
                 onChange={(e) => setYears(Number(e.target.value))}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/90 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30"
+                className="w-full rounded-lg border border-border bg-muted/50 px-3 py-2 text-sm text-foreground focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30"
               >
                 {Array.from({ length: 15 }, (_, i) => i + 6).map((y) => (
-                  <option key={y} value={y} className="bg-zinc-900">
+                  <option key={y} value={y} className="bg-popover text-popover-foreground">
                     {y} years
                   </option>
                 ))}
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-white/60 mb-2">
+              <label className="block text-sm font-medium text-muted-foreground mb-2">
                 Months
               </label>
               <select
                 value={months}
                 onChange={(e) => setMonths(Number(e.target.value))}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/90 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30"
+                className="w-full rounded-lg border border-border bg-muted/50 px-3 py-2 text-sm text-foreground focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30"
               >
                 {Array.from({ length: 12 }, (_, i) => i).map((m) => (
-                  <option key={m} value={m} className="bg-zinc-900">
+                  <option key={m} value={m} className="bg-popover text-popover-foreground">
                     {m} months
                   </option>
                 ))}
@@ -178,10 +185,10 @@ function AgeInputPhase({
             </div>
           </div>
 
-          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+          <div className="rounded-xl border border-border bg-muted/50 p-4">
             <div className="flex items-start gap-2">
-              <AlertTriangle className="h-4 w-4 text-amber-400 mt-0.5 shrink-0" />
-              <p className="text-xs text-white/50">
+              <AlertTriangle className="h-4 w-4 text-amber-400 mt-0.5 shrink-0" aria-hidden="true" />
+              <p className="text-xs text-muted-foreground">
                 Your age is used only to compare your reading level against expected norms.
                 It does not affect your raw scores.
               </p>
@@ -190,7 +197,7 @@ function AgeInputPhase({
 
           <Button className="w-full" onClick={() => onSubmit(years, months)}>
             Begin Assessment
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
           </Button>
         </CardContent>
       </Card>
@@ -244,8 +251,8 @@ function PassagePhase({
           <Badge variant="outline" className="mb-2 text-xs">
             {passage.yearGroup} Level ({passage.ageRange} years)
           </Badge>
-          <h2 className="text-lg font-bold text-white/90">{passage.title}</h2>
-          <p className="text-xs text-white/40 mt-1">
+          <h2 className="text-lg font-bold text-foreground">{passage.title}</h2>
+          <p className="text-xs text-muted-foreground mt-1">
             {passage.genre === "fiction" ? "Fiction" : "Non-fiction"} &middot;{" "}
             {passage.wordCount} words
           </p>
@@ -257,7 +264,7 @@ function PassagePhase({
         <CardContent className="pt-5">
           <div className="prose prose-invert prose-sm max-w-none select-none" style={{ userSelect: "none" }}>
             {passage.text.split("\n\n").map((para, i) => (
-              <p key={i} className="text-sm leading-relaxed text-white/75 mb-4 last:mb-0">
+              <p key={i} className="text-sm leading-relaxed text-foreground/80 mb-4 last:mb-0">
                 {para}
               </p>
             ))}
@@ -266,8 +273,8 @@ function PassagePhase({
       </Card>
 
       <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2 text-xs text-white/40">
-          <Clock className="h-3.5 w-3.5" />
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          <Clock className="h-3.5 w-3.5" aria-hidden="true" />
           {canFinish ? (
             <span>Read carefully — you cannot return once you start the questions.</span>
           ) : (
@@ -278,7 +285,7 @@ function PassagePhase({
         </div>
         <Button onClick={onFinishReading} disabled={!canFinish}>
           I have finished reading
-          <ArrowRight className="h-4 w-4 ml-2" />
+          <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
         </Button>
       </div>
     </div>
@@ -327,7 +334,7 @@ function QuestionsPhase({
           >
             {question.skill}
           </Badge>
-          <span className="text-xs text-white/30">
+          <span className="text-xs text-primary-foreground/30">
             {question.points} {question.points === 1 ? "mark" : "marks"}
           </span>
         </div>
@@ -335,7 +342,7 @@ function QuestionsPhase({
 
       <Card>
         <CardContent className="pt-5 space-y-4">
-          <p className="text-sm font-medium text-white/85">{question.question}</p>
+          <p className="text-sm font-medium text-foreground">{question.question}</p>
 
           {question.type === "multiple-choice" && question.options ? (
             <div className="space-y-2">
@@ -345,16 +352,16 @@ function QuestionsPhase({
                   onClick={() => onAnswerChange(option.id)}
                   className={`w-full text-left rounded-xl border p-4 text-sm transition-all duration-200 ${
                     currentAnswer === option.id
-                      ? "border-emerald-500/40 bg-emerald-500/10 text-white/90"
-                      : "border-white/10 bg-white/5 text-white/60 hover:border-white/20 hover:bg-white/10"
+                      ? "border-emerald-500/40 bg-emerald-500/10 text-foreground"
+                      : "border-border bg-muted/50 text-muted-foreground hover:border-border/60 hover:bg-muted"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
                         currentAnswer === option.id
-                          ? "border-emerald-500 bg-emerald-500 text-white"
-                          : "border-white/20 text-white/40"
+                          ? "border-emerald-500 bg-emerald-500 text-primary-foreground"
+                          : "border-border/60 text-muted-foreground"
                       }`}
                     >
                       {option.id.toUpperCase()}
@@ -366,18 +373,19 @@ function QuestionsPhase({
             </div>
           ) : (
             <textarea
+              aria-label="Your answer"
               value={currentAnswer}
               onChange={(e) => onAnswerChange(e.target.value)}
               placeholder="Type your answer here..."
               rows={4}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 placeholder:text-white/30 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30 resize-none"
+              className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30 resize-none"
             />
           )}
         </CardContent>
       </Card>
 
       <div className="flex items-center justify-between">
-        <p className="text-xs text-white/40 max-w-[200px]">
+        <p className="text-xs text-muted-foreground max-w-[200px]">
           Answer from memory — you cannot return to the passage.
         </p>
         <Button
@@ -385,7 +393,7 @@ function QuestionsPhase({
           disabled={!currentAnswer.trim()}
         >
           {isLast ? "Next Section" : "Next Question"}
-          <ArrowRight className="h-4 w-4 ml-2" />
+          <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
         </Button>
       </div>
     </div>
@@ -412,10 +420,10 @@ function DecodingPhase({
     <div className="mx-auto max-w-lg space-y-6">
       <div>
         <div className="flex items-center gap-2 mb-2">
-          <Eye className="h-5 w-5 text-blue-400" />
-          <h2 className="text-lg font-bold text-white/90">Word Recognition</h2>
+          <Eye className="h-5 w-5 text-blue-400" aria-hidden="true" />
+          <h2 className="text-lg font-bold text-foreground">Word Recognition</h2>
         </div>
-        <p className="text-sm text-white/50">
+        <p className="text-sm text-muted-foreground">
           Read the word below. Do you recognise it? Is it a real English word?
         </p>
       </div>
@@ -429,10 +437,10 @@ function DecodingPhase({
       <Card>
         <CardContent className="pt-5">
           <div className="flex flex-col items-center py-8">
-            <div className="mb-2 text-xs text-white/30">
+            <div className="mb-2 text-xs text-primary-foreground/30">
               Level {word.level} &middot; {word.phonicPattern}
             </div>
-            <div className="text-4xl font-bold text-white/95 mb-8 tracking-wide">
+            <div className="text-4xl font-bold text-foreground mb-8 tracking-wide">
               {word.word}
             </div>
             <div className="flex gap-4">
@@ -441,7 +449,7 @@ function DecodingPhase({
                 className="min-w-[140px] border-emerald-500/30 hover:bg-emerald-500/10"
                 onClick={() => onAnswer(word.isReal === true)}
               >
-                <CheckCircle className="h-4 w-4 mr-2 text-emerald-400" />
+                <CheckCircle className="h-4 w-4 mr-2 text-emerald-400" aria-hidden="true" />
                 Real Word
               </Button>
               <Button
@@ -449,7 +457,7 @@ function DecodingPhase({
                 className="min-w-[140px] border-red-500/30 hover:bg-red-500/10"
                 onClick={() => onAnswer(word.isReal === false)}
               >
-                <AlertTriangle className="h-4 w-4 mr-2 text-red-400" />
+                <AlertTriangle className="h-4 w-4 mr-2 text-red-400" aria-hidden="true" />
                 Not a Real Word
               </Button>
             </div>
@@ -468,9 +476,9 @@ function DecodingPhase({
 
 function CompletingPhase() {
   return (
-    <div className="flex flex-col items-center justify-center py-16 space-y-4">
-      <Loader2 className="h-8 w-8 text-emerald-400 animate-spin" />
-      <p className="text-sm text-white/60">Calculating your results...</p>
+    <div className="flex flex-col items-center justify-center py-16 space-y-4" role="status" aria-live="polite">
+      <Loader2 className="h-8 w-8 text-emerald-400 animate-spin" aria-hidden="true" />
+      <p className="text-sm text-muted-foreground">Calculating your results...</p>
     </div>
   )
 }
@@ -484,23 +492,23 @@ function CeilingReachedPhase({ onContinue }: { onContinue: () => void }) {
         <CardContent className="pt-6 space-y-5">
           <div className="flex flex-col items-center text-center space-y-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10">
-              <CheckCircle className="h-6 w-6 text-emerald-400" />
+              <CheckCircle className="h-6 w-6 text-emerald-400" aria-hidden="true" />
             </div>
-            <h2 className="text-lg font-bold text-white/90">
+            <h2 className="text-lg font-bold text-foreground">
               Assessment complete
             </h2>
-            <p className="text-sm text-white/60 leading-relaxed max-w-sm">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
               We have enough data to calculate your reading age. You do not need
               to continue with the remaining passages.
             </p>
           </div>
 
-          <Separator className="bg-white/10" />
+          <Separator className="bg-muted" />
 
-          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+          <div className="rounded-xl border border-border bg-muted/50 p-4">
             <div className="flex items-start gap-2">
-              <BookOpen className="h-4 w-4 text-blue-400 mt-0.5 shrink-0" />
-              <p className="text-xs text-white/50">
+              <BookOpen className="h-4 w-4 text-blue-400 mt-0.5 shrink-0" aria-hidden="true" />
+              <p className="text-xs text-muted-foreground">
                 Your score is based on the passages you completed. Passages you
                 did not attempt do not affect your result.
               </p>
@@ -509,7 +517,7 @@ function CeilingReachedPhase({ onContinue }: { onContinue: () => void }) {
 
           <Button className="w-full" onClick={onContinue}>
             Continue to Word Recognition
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
           </Button>
         </CardContent>
       </Card>
@@ -855,12 +863,12 @@ export default function ReadingTestPage() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
       {/* Header */}
       <div className="mb-6">
-        <div className="flex items-center gap-2 text-sm text-white/40 mb-4">
-          <Link href="/assessment/reading" className="hover:text-white/60 transition-colors">
+        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+          <Link href="/assessment/reading" className="hover:text-muted-foreground transition-colors">
             Reading Assessment
           </Link>
           <span>/</span>
-          <span className="text-white/60">Test</span>
+          <span className="text-muted-foreground">Test</span>
         </div>
 
         {state.phase !== "age-input" && state.phase !== "complete" && state.phase !== "ceiling-reached" && (

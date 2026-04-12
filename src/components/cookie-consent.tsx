@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 type ConsentValue = 'all' | 'essential' | null
@@ -73,12 +73,48 @@ export function CookieConsent() {
     saveConsent(analyticsEnabled ? 'all' : 'essential')
   }
 
+  // Focus trap: keep Tab within the consent dialog while visible
+  const dialogRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (!visible || !dialogRef.current) return
+    const dialog = dialogRef.current
+    const focusableSelector =
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key !== 'Tab') return
+      const focusables = Array.from(
+        dialog.querySelectorAll<HTMLElement>(focusableSelector),
+      )
+      if (focusables.length === 0) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
+    }
+    // Auto-focus the first button
+    const firstBtn = dialog.querySelector<HTMLElement>('button')
+    firstBtn?.focus()
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [visible, showPreferences])
+
   if (!visible) return null
 
   return (
     <div
+      ref={dialogRef}
       className="fixed bottom-0 inset-x-0 z-[100] animate-slide-up"
       role="dialog"
+      aria-modal="true"
       aria-label="Cookie consent"
     >
       <div className="mx-auto max-w-4xl p-4">
@@ -170,8 +206,9 @@ export function CookieConsent() {
                   type="button"
                   role="switch"
                   aria-checked={analyticsEnabled}
+                  aria-label="Toggle analytics cookies"
                   onClick={() => setAnalyticsEnabled(!analyticsEnabled)}
-                  className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors ${
+                  className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                     analyticsEnabled ? 'bg-primary' : 'bg-muted'
                   }`}
                 >

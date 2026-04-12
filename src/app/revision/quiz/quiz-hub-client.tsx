@@ -19,6 +19,7 @@ import {
 
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
@@ -151,6 +152,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
   // ─── Hub screen ──────────────────────────────────────────────────────────
   return (
     <div className="space-y-8 pb-16">
+      <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Quiz' }]} />
       {/* Header */}
       <div>
         <Button

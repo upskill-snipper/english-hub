@@ -19,6 +19,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 import type { ExamBoard } from '@/lib/board/board-store'
 import type { SetText, TextCategory } from '@/lib/board/set-texts'
@@ -136,6 +137,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
 
   return (
     <div className="space-y-10 pb-16">
+      <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Set Texts' }]} />
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
         <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
