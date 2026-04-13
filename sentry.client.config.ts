@@ -13,6 +13,11 @@ Sentry.init({
 
   // PII scrubbing — strip emails, names, and student data from error reports
   beforeSend(event) {
+    // Strip user PII (matches server config)
+    if (event.user) {
+      delete event.user.email
+      delete event.user.username
+    }
     if (event.request?.cookies) {
       delete event.request.cookies
     }
