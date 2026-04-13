@@ -301,8 +301,8 @@ export default function AnalyticsPage() {
   }
 
   return (
-    <div className="text-foreground overflow-x-hidden">
-      <div className="space-y-8 max-w-full">
+    <div className="text-foreground overflow-hidden w-full">
+      <div className="space-y-8 w-full min-w-0">
         {/* Page toggle: Analytics / Reports */}
         <div className="flex items-center gap-1 rounded-lg border border-border bg-muted/40 p-1 w-fit">
           <span className="flex items-center gap-1.5 rounded-md bg-primary/10 text-primary px-4 py-2 text-sm font-semibold">
