@@ -262,7 +262,6 @@ export async function GET(
     const analytics: StudentAnalytics = {
       student_id: studentId,
       student_name: profile.full_name || profile.email,
-      student_email: profile.email,
       year_group: profile.year_group,
       exam_board: profile.exam_board,
       modules_completed: modulesCompleted,

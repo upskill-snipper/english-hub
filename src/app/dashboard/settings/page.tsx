@@ -494,14 +494,7 @@ function CommunicationTab() {
   async function handleSave() {
     setSaving(true);
     try {
-      // TODO: Replace with real API call to save communication preferences
-      // and record consent changes via the consent system
-      // await fetch("/api/user/communication", {
-      //   method: "PUT",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ productUpdates, tipsContent, marketing }),
-      // });
-
+      // Stub: PUT /api/user/communication — simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 500));
 
       setInitial({ productUpdates, tipsContent, marketing });
@@ -737,8 +730,7 @@ function DataPrivacyTab() {
   async function handleDownloadData() {
     setDownloading(true);
     try {
-      // TODO: Replace with real API call
-      // const res = await fetch("/api/user/data-export", { method: "POST" });
+      // Stub: POST /api/user/data-export — simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 1000));
       toast(
         "success",
@@ -756,8 +748,7 @@ function DataPrivacyTab() {
 
     setDeleting(true);
     try {
-      // TODO: Replace with real API call
-      // await fetch("/api/user/account", { method: "DELETE" });
+      // Stub: DELETE /api/user/account — simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 1000));
       toast("info", "Account deletion has been initiated.");
       setShowDeleteModal(false);

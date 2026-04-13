@@ -916,7 +916,7 @@ export function generateInterventionRecommendations(
 
     recommendations.push({
       studentId: student.studentId,
-      studentName: student.fullName ?? student.email,
+      studentName: student.fullName ?? 'Unknown Student',
       priorityLevel,
       weakSkillAreas,
       interventionType,
@@ -1030,7 +1030,7 @@ export function generateParentUpdateSummary(
 
   return {
     studentId: student.studentId,
-    studentName: student.fullName ?? student.email,
+    studentName: student.fullName ?? 'Unknown Student',
     generatedDate: new Date().toISOString().split('T')[0],
     doingWell,
     areasForDevelopment,
@@ -1131,7 +1131,7 @@ export function predictGradeTrajectory(
 
   return {
     studentId: student.studentId,
-    studentName: student.fullName ?? student.email,
+    studentName: student.fullName ?? 'Unknown Student',
     currentAvgScore: currentScore,
     weeksUntilExam,
     currentTrajectory: trajectory,

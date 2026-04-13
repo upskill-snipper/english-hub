@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
-   TODO: Replace with real API calls:
+   Uses mock data until these API routes are implemented:
    - Fetch classes from /api/teacher/classes
    - Fetch student data from /api/teacher/classes/[id]/students
    ───────────────────────────────────────────────────────────────────── */

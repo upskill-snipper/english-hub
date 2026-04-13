@@ -11,6 +11,20 @@ export interface Profile {
   subscription_status: 'free' | 'pro' | 'cancelled' | 'past_due' | 'unpaid' | 'incomplete' | 'paused'
   subscription_end_date: string | null
   stripe_customer_id: string | null
+  /** True when the user was under 18 at registration */
+  is_minor?: boolean
+  /** ICO Children's Code: streaks disabled by default for under-16s */
+  streaks_enabled?: boolean
+  /** ICO Children's Code: personalised recommendations off for under-16s */
+  personalised_recommendations?: boolean
+  /** ICO Children's Code: streak notifications off for under-16s */
+  streak_notifications?: boolean
+  /** ICO Children's Code: nudge notifications off for under-16s */
+  nudge_notifications?: boolean
+  /** ICO Children's Code: analytics opt-in off for under-16s */
+  analytics_opt_in?: boolean
+  /** ICO Children's Code: marketing opt-in off for under-16s */
+  marketing_opt_in?: boolean
   created_at: string
   updated_at: string
 }
@@ -321,7 +335,6 @@ export interface ClassStudent {
   is_active: boolean
   // Joined data
   student_name?: string
-  student_email?: string
   year_group?: string
 }
 
@@ -340,7 +353,6 @@ export interface SchoolJoinCode {
 export interface StudentAnalytics {
   student_id: string
   student_name: string
-  student_email: string
   year_group: string | null
   exam_board: string | null
   modules_completed: number

@@ -23,8 +23,12 @@ export default function SettingsPage() {
   const { board, isHydrated } = useBoard()
   const config = getBoardConfig(board)
 
+  // ICO Children's Code: child users (under-16) get privacy-safe defaults.
+  // Streak nudges and marketing notifications are OFF for children.
+  const isChildUser = profile?.is_minor === true && profile?.streaks_enabled === false
+
   // Notification preferences (simple local stub — wire to backend later).
-  const [emailNotifications, setEmailNotifications] = useState(true)
+  const [emailNotifications, setEmailNotifications] = useState(!isChildUser)
   const [productUpdates, setProductUpdates] = useState(true)
 
   useEffect(() => {
@@ -33,6 +37,9 @@ export default function SettingsPage() {
       const p = profile as unknown as Record<string, unknown>
       if (typeof p.email_notifications === 'boolean') {
         setEmailNotifications(p.email_notifications)
+      } else if (profile.streak_notifications === false) {
+        // Children's Code: streak nudge emails default to off for children
+        setEmailNotifications(false)
       }
       if (typeof p.product_updates === 'boolean') {
         setProductUpdates(p.product_updates)

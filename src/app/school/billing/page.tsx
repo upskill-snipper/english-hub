@@ -10,6 +10,8 @@ import {
   TrendingUp,
   Users,
   Building2,
+  GraduationCap,
+  Sparkles,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -42,12 +44,56 @@ interface UsageStats {
 
 const BILLING_EMAIL = "info@Upskillenergy.com"
 const FOUNDER_EXPIRY = new Date("2026-08-31T23:59:59Z")
-const LICENSE_PRICE = "1,500"
 const RENEWAL_WARNING_DAYS = 60
+const FOUNDING_SCHOOLS_TOTAL = 10
+
+interface PricingTier {
+  id: string
+  name: string
+  yearGroups: string
+  pricePerPupil: number
+  founderPricePerPupil: number
+  description: string
+}
+
+const PRICING_TIERS: PricingTier[] = [
+  {
+    id: "ks3",
+    name: "KS3 Only",
+    yearGroups: "Years 7\u20139",
+    pricePerPupil: 12,
+    founderPricePerPupil: 6,
+    description: "Key Stage 3 English resources for Years 7\u20139",
+  },
+  {
+    id: "ks4",
+    name: "KS4 Only",
+    yearGroups: "Years 10\u201311",
+    pricePerPupil: 15,
+    founderPricePerPupil: 7.5,
+    description: "GCSE English resources for Years 10\u201311",
+  },
+  {
+    id: "ks3-ks4",
+    name: "KS3 + KS4",
+    yearGroups: "Years 7\u201311",
+    pricePerPupil: 22,
+    founderPricePerPupil: 11,
+    description: "Complete KS3 and GCSE English coverage",
+  },
+  {
+    id: "whole-secondary",
+    name: "Whole Secondary",
+    yearGroups: "Years 7\u201313",
+    pricePerPupil: 26,
+    founderPricePerPupil: 13,
+    description: "Full secondary including KS5 / Sixth Form",
+  },
+]
 
 const LICENSE_FEATURES = [
-  "Unlimited students",
-  "All teachers included",
+  "Per-pupil pricing \u2014 pay only for students enrolled",
+  "All teachers included at no extra cost",
   "Full resource library access",
   "Admin portal & dashboard",
   "Analytics & progress tracking",
@@ -131,7 +177,11 @@ function FounderPlanCard({
             <span className="font-medium">Free access until 31 August 2026</span>
           </div>
           <p className="text-sm text-muted-foreground pl-6">
-            After expiry: <span className="text-foreground font-medium">&pound;{LICENSE_PRICE}/year</span> for school site license
+            After expiry: per-pupil pricing from{" "}
+            <span className="text-foreground font-medium">&pound;6/pupil/year</span>{" "}
+            (Founding Schools) or{" "}
+            <span className="text-foreground font-medium">&pound;12/pupil/year</span>{" "}
+            (standard)
           </p>
           <div className="pl-6 pt-1">
             <span className="inline-block rounded-md bg-muted/60 px-3 py-1 text-sm font-semibold text-foreground tabular-nums">
@@ -190,7 +240,7 @@ function PaidPlanCard({ access }: { access: SchoolAccessData }) {
       <CardContent className="space-y-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            School Site License
+            School Subscription
           </h2>
           <div className="flex items-center gap-2">
             <Badge className="w-fit border border-emerald-500/30 bg-emerald-500/15 text-emerald-400 text-xs">
@@ -198,7 +248,7 @@ function PaidPlanCard({ access }: { access: SchoolAccessData }) {
               Active
             </Badge>
             <span className="text-sm text-muted-foreground font-medium">
-              &pound;{LICENSE_PRICE}/year
+              Per-pupil pricing
             </span>
           </div>
         </div>
@@ -261,25 +311,81 @@ function PaidPlanCard({ access }: { access: SchoolAccessData }) {
   )
 }
 
-function SiteLicenseInfoCard() {
+function PricingTierRow({ tier, isFounder }: { tier: PricingTier; isFounder: boolean }) {
+  const displayPrice = isFounder ? tier.founderPricePerPupil : tier.pricePerPupil
+  const formattedPrice = displayPrice % 1 === 0 ? `${displayPrice}` : displayPrice.toFixed(2)
+
+  return (
+    <div className="flex items-center justify-between rounded-lg border border-border bg-muted/20 px-4 py-3">
+      <div className="space-y-0.5">
+        <p className="text-sm font-semibold text-foreground">{tier.name}</p>
+        <p className="text-xs text-muted-foreground">{tier.yearGroups}</p>
+      </div>
+      <div className="text-right">
+        <div className="flex items-baseline gap-1">
+          <span className="text-lg font-bold text-foreground tabular-nums">
+            &pound;{formattedPrice}
+          </span>
+          <span className="text-xs text-muted-foreground">/pupil/year</span>
+        </div>
+        {isFounder && (
+          <p className="text-xs text-muted-foreground line-through">
+            &pound;{tier.pricePerPupil}/pupil/year
+          </p>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function PricingCard({ isFounder }: { isFounder: boolean }) {
   return (
     <Card className="border-border bg-card/60">
       <CardHeader className="pb-3">
         <div className="flex items-center gap-3">
-          <Building2 className="h-5 w-5 text-muted-foreground" />
+          <GraduationCap className="h-5 w-5 text-muted-foreground" />
           <div>
-            <CardTitle className="text-foreground">School Site License</CardTitle>
+            <CardTitle className="text-foreground">Per-Pupil Pricing</CardTitle>
             <CardDescription className="mt-0.5">
-              Everything your school needs in one plan.
+              Flexible pricing based on your key stages and pupil numbers.
             </CardDescription>
           </div>
         </div>
       </CardHeader>
-      <CardContent className="space-y-4">
-        {/* Price */}
-        <div className="flex items-baseline gap-1.5">
-          <span className="text-3xl font-bold text-foreground">&pound;{LICENSE_PRICE}</span>
-          <span className="text-sm text-muted-foreground">/ year</span>
+      <CardContent className="space-y-5">
+        {/* Founding Schools banner */}
+        <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3 flex items-start gap-3">
+          <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
+          <div className="space-y-1">
+            <p className="text-sm font-semibold text-amber-300">
+              Founding Schools &mdash; 50% off Year 1
+            </p>
+            <p className="text-xs text-muted-foreground">
+              The first {FOUNDING_SCHOOLS_TOTAL} schools to subscribe receive 50% off their first
+              year. Founding School pricing is shown{" "}
+              {isFounder ? "as your current rate below." : "alongside standard rates below."}
+            </p>
+          </div>
+        </div>
+
+        {/* Pricing tiers */}
+        <div className="space-y-2">
+          {PRICING_TIERS.map((tier) => (
+            <PricingTierRow key={tier.id} tier={tier} isFounder={isFounder} />
+          ))}
+        </div>
+
+        {/* Example calculation */}
+        <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 space-y-1">
+          <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+            Example
+          </p>
+          <p className="text-sm text-foreground">
+            A school with <span className="font-semibold">800 KS3+KS4 pupils</span> would pay{" "}
+            <span className="font-semibold">&pound;17,600/year</span> (standard) or{" "}
+            <span className="font-semibold text-amber-400">&pound;8,800/year</span> as a Founding
+            School.
+          </p>
         </div>
 
         {/* Features */}
@@ -294,12 +400,12 @@ function SiteLicenseInfoCard() {
 
         {/* CTA */}
         <div className="flex flex-col gap-2 pt-1 sm:flex-row">
-          <Button className="bg-primary hover:bg-primary/90" render={<a href={`mailto:${BILLING_EMAIL}?subject=Upgrade%20to%20Site%20License`} />}>
+          <Button className="bg-primary hover:bg-primary/90" render={<a href={`mailto:${BILLING_EMAIL}?subject=Subscription%20Enquiry`} />}>
               <Mail className="mr-2 h-4 w-4" />
-              Contact Us to Upgrade
-          </Button>
-          <Button variant="outline" size="sm" className="text-muted-foreground" render={<a href={`mailto:${BILLING_EMAIL}?subject=Site%20License%20Enquiry`} />}>
               Get a Quote
+          </Button>
+          <Button variant="outline" size="sm" className="text-muted-foreground" render={<a href={`mailto:${BILLING_EMAIL}?subject=Pricing%20Question`} />}>
+              Ask a Question
           </Button>
         </div>
       </CardContent>
@@ -311,20 +417,20 @@ function UsageStatsCard({ stats, loading }: { stats: UsageStats; loading: boolea
   const rows = [
     {
       icon: Users,
-      label: "Students",
+      label: "Students enrolled",
       value: loading ? "--" : String(stats.totalStudents),
-      limit: "Unlimited",
+      limit: "Billed per pupil",
     },
     {
       icon: Users,
       label: "Teachers",
       value: loading ? "--" : String(stats.totalTeachers),
-      limit: "Unlimited",
+      limit: "Included at no extra cost",
     },
     {
       icon: TrendingUp,
-      label: "Storage",
-      value: "N/A",
+      label: "Resources",
+      value: "Full access",
       limit: "All resources included",
     },
   ]
@@ -539,8 +645,8 @@ export default function SchoolBillingPage() {
           )}
           {isPaid && <PaidPlanCard access={access} />}
 
-          {/* Site license info */}
-          <SiteLicenseInfoCard />
+          {/* Per-pupil pricing */}
+          <PricingCard isFounder={isFounder} />
 
           {/* Usage stats */}
           <UsageStatsCard stats={stats} loading={statsLoading} />

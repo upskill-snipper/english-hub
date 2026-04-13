@@ -6,7 +6,7 @@ import { percentageToGCSEGrade, percentageToGCSEGradeLabel, formatPercentageWith
 import { LearningTip } from "@/components/ui/learning-tip";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
-   TODO: Replace with real API calls:
+   Uses mock data until these API routes are implemented:
    - Fetch linked students from /api/parent/students
    - Fetch progress data from /api/parent/students/[id]/progress
    ───────────────────────────────────────────────────────────────────── */

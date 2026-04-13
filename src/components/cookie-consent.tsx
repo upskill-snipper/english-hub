@@ -45,6 +45,39 @@ export function CookieConsent() {
     if (value === 'all') {
       enableGA4()
     }
+
+    // Log consent choice server-side for PECR/ICO compliance (fire-and-forget)
+    logConsentToServer(value)
+  }
+
+  function logConsentToServer(value: ConsentValue) {
+    if (!value) return
+    const choice =
+      value === 'all'
+        ? 'accept_all'
+        : value === 'essential'
+          ? 'reject_all'
+          : 'custom'
+
+    // Reuse or create a stable visitor ID for anonymous users
+    let visitorId = localStorage.getItem('cookie-visitor-id')
+    if (!visitorId) {
+      visitorId = crypto.randomUUID()
+      localStorage.setItem('cookie-visitor-id', visitorId)
+    }
+
+    fetch('/api/consent/cookie', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        choice,
+        analytics: value === 'all',
+        marketing: false,
+        visitorId,
+      }),
+    }).catch(() => {
+      // Best-effort — consent is also stored client-side as the primary record
+    })
   }
 
   function enableGA4() {
@@ -70,7 +103,33 @@ export function CookieConsent() {
   }
 
   function handleSavePreferences() {
-    saveConsent(analyticsEnabled ? 'all' : 'essential')
+    if (analyticsEnabled) {
+      saveConsent('all')
+    } else {
+      // Custom selection with analytics disabled — still log as "custom"
+      localStorage.setItem('cookie-consent', 'essential')
+      setVisible(false)
+      logConsentToServerCustom(analyticsEnabled)
+    }
+  }
+
+  function logConsentToServerCustom(analytics: boolean) {
+    let visitorId = localStorage.getItem('cookie-visitor-id')
+    if (!visitorId) {
+      visitorId = crypto.randomUUID()
+      localStorage.setItem('cookie-visitor-id', visitorId)
+    }
+
+    fetch('/api/consent/cookie', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        choice: 'custom',
+        analytics,
+        marketing: false,
+        visitorId,
+      }),
+    }).catch(() => {})
   }
 
   // Focus trap: keep Tab within the consent dialog while visible

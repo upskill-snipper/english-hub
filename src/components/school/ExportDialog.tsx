@@ -310,9 +310,9 @@ function buildPreviewCsv(type: ExportType, data: ExportDataSources): string | nu
     case 'class-report': {
       if (!data.classAnalytics || !data.students) return null
       // Build inline rather than triggering download
-      const headers = ['Student Name', 'Email', 'Year Group', 'Avg Score', 'Completion %', 'Trajectory', 'Predicted Grade']
+      const headers = ['Student Name', 'Year Group', 'Avg Score', 'Completion %', 'Trajectory', 'Predicted Grade']
       const rows = data.students.map((s) => [
-        s.student_name, s.student_email, s.year_group ?? '',
+        s.student_name, s.year_group ?? '',
         String(Math.round(s.avg_quiz_score)), `${Math.round(s.completion_rate)}%`,
         s.trajectory, s.predicted_grade ?? '',
       ])

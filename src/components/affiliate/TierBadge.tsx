@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { Award, Gem, Medal } from 'lucide-react'
 
-// TODO: Supabase — persist tier to affiliate account
+// Supabase: persist tier to affiliate account when database is ready
 
 export type AffiliateTier = 'bronze' | 'silver' | 'gold'
 

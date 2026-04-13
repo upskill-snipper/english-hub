@@ -31,8 +31,8 @@ export function generateCSV(
   className: string
 ): string {
   const headers = [
+    'Student ID',
     'Student Name',
-    'Email',
     'Year Group',
     'Modules Completed',
     'Total Modules',
@@ -59,8 +59,8 @@ export function generateCSV(
       .join('; ')
 
     rows.push([
+      s.studentId,
       s.fullName ?? 'Unknown',
-      s.email,
       s.yearGroup ?? '',
       String(s.modulesCompleted),
       String(s.totalModules),

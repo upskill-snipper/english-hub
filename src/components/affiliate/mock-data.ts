@@ -1,4 +1,4 @@
-// TODO: Supabase — replace entire file with database queries
+// Supabase: replace entire file with database queries when backend is ready
 
 import type { AffiliateTier } from './TierBadge'
 

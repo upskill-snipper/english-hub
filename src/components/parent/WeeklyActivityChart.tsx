@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
-// TODO: replace with Supabase — weekly activity aggregated server-side
+// Supabase: replace mock data with weekly activity aggregated server-side
 export interface WeeklyActivityPoint {
   label: string
   minutes: number

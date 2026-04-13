@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
-   TODO: Replace with real API/CMS data:
+   Uses mock data until these API/CMS routes are implemented:
    - GET /api/teacher/resources — categorised resource list
    - Resources could come from a headless CMS or database
    - Printable worksheets could be stored in cloud storage (S3/GCS)

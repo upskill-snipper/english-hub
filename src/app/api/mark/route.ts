@@ -27,6 +27,7 @@ import {
   unauthorizedResponse,
   unsupportedMediaTypeResponse,
 } from "@/lib/api-response"
+import { isAiOptedOutServer } from "@/lib/ai-preferences"
 import { getMarkScheme } from "@/lib/marking/mark-schemes"
 import { buildMarkingPrompt } from "@/lib/marking/prompt-builder"
 import { generateFeedback } from "@/lib/marking/feedback-generator"
@@ -76,6 +77,14 @@ export async function POST(request: NextRequest) {
     if (!consentCheck.allowed) {
       return forbiddenResponse(
         consentCheck.reason ?? "Consent is required to use this feature.",
+      )
+    }
+
+    // 4b. AI opt-out enforcement (Children's Code — GAP-12B)
+    const aiOptedOut = await isAiOptedOutServer(user.id)
+    if (aiOptedOut) {
+      return forbiddenResponse(
+        "AI features are currently disabled for your account. To re-enable AI marking, visit your privacy settings or ask a parent/guardian to update your preferences.",
       )
     }
 

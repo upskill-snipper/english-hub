@@ -3,7 +3,6 @@
 export interface StudentAnalytics {
   studentId: string
   fullName: string | null
-  email: string
   yearGroup: string | null
   examBoard: string | null
 

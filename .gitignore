@@ -28,3 +28,9 @@ POETRY_ANTHOLOGY_SUMMARY.txt
 
 # Generated Word documents
 docs-word/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

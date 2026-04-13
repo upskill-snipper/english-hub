@@ -4,7 +4,7 @@ import Link from "next/link";
 import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
-   TODO: Replace with real API calls:
+   Uses mock data until these API routes are implemented:
    - GET /api/teacher/analytics/scores — average scores over time
    - GET /api/teacher/analytics/skills — topic/skill area breakdown
    - GET /api/teacher/analytics/students-at-risk — students needing support
@@ -100,11 +100,11 @@ export default function AnalyticsPageClient() {
             who need help.
           </p>
         </div>
-        {/* TODO: Wire to actual export endpoint GET /api/teacher/analytics/export */}
+        {/* Stub: GET /api/teacher/analytics/export — export not yet implemented */}
         <button
           onClick={() => {
             if (typeof window !== "undefined") {
-              alert("TODO: Export report as CSV/PDF");
+              alert("Export coming soon — this feature is under development.");
             }
           }}
           className="btn-outline gap-2 self-start"
@@ -122,7 +122,7 @@ export default function AnalyticsPageClient() {
           Average Scores Over Time
         </h2>
         <div className="card">
-          {/* Simple CSS bar chart — TODO: Replace with a proper chart library (e.g. Recharts) */}
+          {/* Simple CSS bar chart — consider replacing with Recharts for interactivity */}
           <div className="flex items-end gap-2 sm:gap-4 h-48">
             {MOCK_WEEKLY_SCORES.map((w) => (
               <div key={w.week} className="flex-1 flex flex-col items-center gap-1">
@@ -206,7 +206,7 @@ export default function AnalyticsPageClient() {
                       </p>
                       <p className="text-xs text-muted-foreground">Working At</p>
                     </div>
-                    {/* TODO: Link to student profile */}
+                    {/* Links to student list — per-student profile route not yet implemented */}
                     <Link
                       href="/dashboard/teacher/students"
                       className="btn-outline text-xs px-3 py-1.5"

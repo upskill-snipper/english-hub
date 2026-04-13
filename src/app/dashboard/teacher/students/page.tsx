@@ -4,7 +4,7 @@ import { useState } from "react";
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, predictedGradeColor, calculateWorkingAtGrade, calculateTargetGrade } from "@/lib/grades";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
-   TODO: Replace with real API calls:
+   Uses mock data until these API routes are implemented:
    - GET /api/teacher/students — list linked students
    - POST /api/teacher/students/invite — add student by email/code
    - GET /api/teacher/students/:id — individual student detail
@@ -212,7 +212,7 @@ export default function StudentsPage() {
                   <h3 className="text-sm font-semibold text-foreground mb-3">
                     Recent Essays
                   </h3>
-                  {/* TODO: Fetch real essays for this student via API */}
+                  {/* Stub: uses mock essays — wire to GET /api/teacher/students/:id/essays */}
                   <ul className="space-y-2">
                     {MOCK_STUDENT_ESSAYS.map((essay) => (
                       <li
@@ -238,7 +238,7 @@ export default function StudentsPage() {
                     ))}
                   </ul>
                   <div className="mt-3 flex gap-2">
-                    {/* TODO: Link to actual student profile page */}
+                    {/* Links to student list — per-student profile route not yet implemented */}
                     <button className="btn-outline text-xs px-3 py-1.5">
                       View Full Profile
                     </button>
@@ -293,10 +293,9 @@ export default function StudentsPage() {
               >
                 Cancel
               </button>
-              {/* TODO: Call POST /api/teacher/students/invite */}
+              {/* Stub: POST /api/teacher/students/invite — currently only closes modal */}
               <button
                 onClick={() => {
-                  alert(`TODO: Invite student with value "${inviteValue}"`);
                   setShowAddModal(false);
                   setInviteValue("");
                 }}

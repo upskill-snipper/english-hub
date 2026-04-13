@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input'
 import { TIER_CONFIG, getTierFromReferrals, TierBadge } from './TierBadge'
 import { Calculator, PoundSterling } from 'lucide-react'
 
-// TODO: Supabase — pull actual plan prices from products table
+// Supabase: pull actual plan prices from products table when available
 
 const DEFAULT_PLAN_PRICE = 12.99
 

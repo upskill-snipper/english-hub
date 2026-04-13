@@ -8,6 +8,7 @@ import {
   buildConsentRecords,
   getDefaultPrivacySettings,
 } from "@/lib/auth";
+import { getChildDefaults } from "@/lib/privacy/child-defaults";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { ZodError } from "zod";
 
@@ -71,7 +72,11 @@ export async function POST(request: NextRequest) {
 
     // ── Build consent records ─────────────────────────────────────────
     const consentRecords = buildConsentRecords(data);
-    const privacySettings = getDefaultPrivacySettings();
+    // ICO Children's Code: under-16 users get high-privacy defaults
+    const isChildUser = !isTeacher && age < 16;
+    const privacySettings = isChildUser
+      ? { ...getDefaultPrivacySettings(), ...getChildDefaults() }
+      : getDefaultPrivacySettings();
 
     // ── Generate session ──────────────────────────────────────────────
     const sessionToken = generateSessionToken();

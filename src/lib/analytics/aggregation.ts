@@ -65,7 +65,7 @@ export async function getStudentProgress(studentId: string) {
         .eq('user_id', studentId),
       supabase
         .from('profiles')
-        .select('full_name, email, year_group, exam_board')
+        .select('full_name, year_group, exam_board')
         .eq('id', studentId)
         .single(),
       supabase
@@ -212,7 +212,6 @@ export async function getStudentDetailedAnalytics(
   return {
     studentId,
     fullName: raw.profile?.full_name ?? null,
-    email: raw.profile?.email ?? '',
     yearGroup: raw.profile?.year_group ?? null,
     examBoard: raw.profile?.exam_board ?? null,
     modulesCompleted,

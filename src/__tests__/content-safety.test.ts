@@ -211,11 +211,14 @@ describe('contentSafetyCheck', () => {
     expect(result).toContain('outside the scope')
   })
 
-  it('catches self-harm references', () => {
+  it('catches self-harm references with signposting response', () => {
     const essay = prose(120) + ' The character considers self-harm as an escape.'
     const result = contentSafetyCheck(input(essay))
     expect(result).not.toBeNull()
-    expect(result).toContain('outside the scope')
+    // Self-harm triggers supportive signposting (not a generic block)
+    expect(result).toContain('sensitive content')
+    expect(result).toContain('Childline')
+    expect(result).toContain('Samaritans')
   })
 
   it('catches hacking references', () => {

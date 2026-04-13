@@ -80,13 +80,31 @@ export function contentSafetyCheck(body: ContentSafetyInput): string | null {
   // 4. Block clearly off-topic / harmful content
   const harmfulPatterns = [
     /\b(how to (make|build|create) (a |an? )?(bomb|weapon|drug|explosive))/i,
-    /\b(self[- ]?harm|suicid)/i,
     /\b(hack(ing)?|exploit|malware|phishing)/i,
   ]
 
   for (const pattern of harmfulPatterns) {
     if (pattern.test(combined)) {
       return 'Your submission contains content outside the scope of English essay feedback. Please submit English Language or Literature coursework only.'
+    }
+  }
+
+  // 4b. Detect self-harm / suicide keywords — return safeguarding signposting
+  // This is a child safeguarding requirement (DD-07). The response must be
+  // supportive, non-judgmental, and provide UK helpline numbers.
+  const safeguardingPatterns = [/\b(self[- ]?harm)/i, /\bsuicid/i]
+
+  for (const pattern of safeguardingPatterns) {
+    if (pattern.test(combined)) {
+      return (
+        'It looks like your submission may contain sensitive content. ' +
+        'This tool can only give English essay feedback, but if you or someone you know needs support, please reach out:\n\n' +
+        '• Childline: 0800 1111 (free, confidential, under-19s)\n' +
+        '• NSPCC: 0808 800 5000\n' +
+        '• Samaritans: 116 123 (free, 24/7)\n' +
+        '• Crisis Text Line: text SHOUT to 85258\n\n' +
+        'You are not alone, and it is okay to ask for help.'
+      )
     }
   }
 

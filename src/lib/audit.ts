@@ -34,6 +34,7 @@ export enum AuditAction {
   SUPPORT_TICKETS_ARCHIVED = "SUPPORT_TICKETS_ARCHIVED",
   MARKETING_CONSENT_RECORDS_PURGED = "MARKETING_CONSENT_RECORDS_PURGED",
   DATA_RETENTION_CLEANUP_COMPLETED = "DATA_RETENTION_CLEANUP_COMPLETED",
+  PARENT_INITIATED_CHILD_DATA_DELETION = "PARENT_INITIATED_CHILD_DATA_DELETION",
 }
 
 // ─── Audit Entry ────────────────────────────────────────────────────────
@@ -226,4 +227,5 @@ export const AUDIT_ACTION_LABELS: Record<AuditAction, string> = {
   [AuditAction.SUPPORT_TICKETS_ARCHIVED]: "Support Tickets Archived",
   [AuditAction.MARKETING_CONSENT_RECORDS_PURGED]: "Marketing Consent Records Purged",
   [AuditAction.DATA_RETENTION_CLEANUP_COMPLETED]: "Data Retention Cleanup Completed",
+  [AuditAction.PARENT_INITIATED_CHILD_DATA_DELETION]: "Parent Initiated Child Data Deletion",
 };

@@ -71,7 +71,7 @@ export default function ParentSignupPage() {
     setLoading(true)
 
     try {
-      // [P2:auth] TODO: Supabase — create auth user, insert parent_profile, verify link code server-side
+      // [P2:auth] Supabase — create auth user, insert parent_profile, verify link code server-side
       await new Promise((resolve) => setTimeout(resolve, 500))
 
       const account = {

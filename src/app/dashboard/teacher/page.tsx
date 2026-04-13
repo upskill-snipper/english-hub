@@ -2,7 +2,7 @@ import Link from "next/link";
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
-   TODO: Replace all mock data with real API calls:
+   Uses mock data until these API routes are implemented:
    - Fetch class stats from /api/teacher/stats
    - Fetch recent submissions from /api/teacher/submissions?limit=5
    - Fetch student activity from /api/teacher/students/activity
@@ -229,7 +229,7 @@ export default function TeacherDashboardPage() {
           <ul className="space-y-3" role="list">
             {MOCK_RECENT_SUBMISSIONS.map((sub) => (
               <li key={sub.id}>
-                {/* TODO: Link to actual submission review page */}
+                {/* Stub: link to /dashboard/teacher/submissions/:id when route exists */}
                 <div className="card flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium text-foreground">

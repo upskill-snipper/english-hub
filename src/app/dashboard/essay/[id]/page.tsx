@@ -146,7 +146,7 @@ export default function EssayFeedbackPage() {
   const feedback = MOCK_FEEDBACK;
 
   function handleDelete() {
-    // TODO: Replace with real API call
+    // Stub: DELETE /api/essays/:id — currently just redirects
     window.location.href = "/dashboard/essays";
   }
 

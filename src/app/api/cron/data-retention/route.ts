@@ -1,109 +1,95 @@
-import { NextRequest, NextResponse } from "next/server";
-import crypto from "crypto";
-import { cleanupExpiredData } from "@/lib/data-retention";
+import { NextRequest, NextResponse } from 'next/server'
+import { timingSafeEqual } from 'crypto'
+import { cleanupExpiredData } from '@/lib/data-retention'
 
-// ─── Cron endpoint for scheduled data retention cleanup ─────────────────
-//
-// This endpoint should be called by a scheduled job (e.g. Vercel Cron,
-// AWS CloudWatch, or similar) on a daily basis.
-//
-// Required header: x-cron-secret must match the CRON_SECRET env variable.
+export const dynamic = 'force-dynamic'
 
-export async function POST(request: NextRequest) {
+/**
+ * GET /api/cron/data-retention
+ *
+ * Daily cron job that runs the full data-retention cleanup cycle.
+ * Runs at 4 AM daily (configured in vercel.json).
+ *
+ * Processing order (per UK GDPR & Children's Code):
+ *   1. Children's data (priority cleanup per ICO guidance)
+ *   1b. Children's Code Standard 8 dormant account processing
+ *   2. Hard-delete soft-deleted accounts past 30-day grace period
+ *   3. Warn and soft-delete inactive accounts (2 years)
+ *   4. Anonymise usage/analytics data older than 12 months
+ *   5. Archive support tickets older than 2 years
+ *   6. Clean up expired marketing consent records
+ *
+ * Protected by CRON_SECRET (Vercel's standard Bearer token pattern).
+ */
+export async function GET(request: NextRequest) {
+  const startTime = Date.now()
+
   try {
-    // ── Verify cron secret ────────────────────────────────────────────
-
-    const cronSecret = request.headers.get("x-cron-secret");
-    const expectedSecret = process.env.CRON_SECRET;
-
-    if (!expectedSecret) {
-      console.error(
-        "[data-retention] CRON_SECRET environment variable is not set"
-      );
-      return NextResponse.json(
-        { error: "Server misconfiguration" },
-        { status: 500 }
-      );
+    // ── Auth: verify CRON_SECRET ──────────────────────────────────────
+    const cronSecret = process.env.CRON_SECRET
+    if (!cronSecret) {
+      return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
     }
-
+    const authHeader = request.headers.get('authorization')
+    const incoming = Buffer.from(authHeader ?? '')
+    const expected = Buffer.from(`Bearer ${cronSecret}`)
     if (
-      !cronSecret ||
-      !crypto.timingSafeEqual(
-        Buffer.from(cronSecret),
-        Buffer.from(expectedSecret)
-      )
+      incoming.length !== expected.length ||
+      !timingSafeEqual(incoming, expected)
     ) {
-      return NextResponse.json(
-        { error: "Unauthorised" },
-        { status: 401 }
-      );
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    // ── Run cleanup ──────────────────────────────────────────────────
+    // ── Run the full cleanup cycle ────────────────────────────────────
+    const summary = await cleanupExpiredData()
 
-    const summary = await cleanupExpiredData();
+    const durationMs = Date.now() - startTime
 
-    // ── Return summary ──────────────────────────────────────────────
+    console.log('[data-retention] Cleanup completed', {
+      durationMs,
+      hardDeletedAccounts: summary.hardDeletedAccounts.length,
+      inactiveWarningsSent: summary.inactiveWarningsSent.length,
+      inactiveSoftDeleted: summary.inactiveSoftDeleted.length,
+      childrenPriorityCleanups: summary.childrenPriorityCleanups,
+      childDormancyWarnings: summary.childDormancy?.warningsSent.length ?? 0,
+      childDormancyDeletions: summary.childDormancy?.deletions.length ?? 0,
+      expiredMarketingConsents: summary.expiredMarketingConsents,
+      errors: summary.errors.length,
+    })
 
     return NextResponse.json({
-      success: true,
+      ok: true,
+      durationMs,
       summary: {
         startedAt: summary.startedAt,
         completedAt: summary.completedAt,
-        actions: {
-          hardDeletedAccounts: summary.hardDeletedAccounts.length,
-          inactiveWarningsSent: summary.inactiveWarningsSent.length,
-          inactiveSoftDeleted: summary.inactiveSoftDeleted.length,
-          usageDataAnonymised: summary.usageDataAnonymised,
-          supportTicketsArchived: summary.supportTicketsArchived,
-          expiredMarketingConsents: summary.expiredMarketingConsents,
-          childrenPriorityCleanups: summary.childrenPriorityCleanups,
-          childDormancy: summary.childDormancy
-            ? {
-                warningsSent: summary.childDormancy.warningsSent.length,
-                deletions: summary.childDormancy.deletions.length,
-                errors: summary.childDormancy.errors.length,
-              }
-            : null,
-        },
-        errors: summary.errors.length,
-        // Only include error details in non-production for debugging
-        ...(process.env.NODE_ENV !== "production" && {
-          errorDetails: summary.errors,
-        }),
+        hardDeletedAccounts: summary.hardDeletedAccounts.length,
+        inactiveWarningsSent: summary.inactiveWarningsSent.length,
+        inactiveSoftDeleted: summary.inactiveSoftDeleted.length,
+        childrenPriorityCleanups: summary.childrenPriorityCleanups,
+        childDormancy: summary.childDormancy
+          ? {
+              warningsSent: summary.childDormancy.warningsSent.length,
+              deletions: summary.childDormancy.deletions.length,
+              errors: summary.childDormancy.errors.length,
+            }
+          : null,
+        usageDataAnonymised: summary.usageDataAnonymised,
+        supportTicketsArchived: summary.supportTicketsArchived,
+        expiredMarketingConsents: summary.expiredMarketingConsents,
+        errorCount: summary.errors.length,
       },
-    });
+    })
   } catch (error) {
-    console.error("[data-retention] Unhandled error:", error);
+    const durationMs = Date.now() - startTime
+    console.error('[data-retention] Cron job failed:', error)
     return NextResponse.json(
-      { error: "Data retention cleanup failed" },
+      {
+        ok: false,
+        error: 'Data retention cleanup failed',
+        durationMs,
+      },
       { status: 500 }
-    );
-  }
-}
-
-// ─── GET: health check for monitoring ───────────────────────────────────
-
-export async function GET(request: NextRequest) {
-  const cronSecret = request.headers.get("x-cron-secret");
-  const expectedSecret = process.env.CRON_SECRET;
-
-  if (
-    !expectedSecret ||
-    !cronSecret ||
-    !crypto.timingSafeEqual(
-      Buffer.from(cronSecret),
-      Buffer.from(expectedSecret)
     )
-  ) {
-    return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
   }
-
-  return NextResponse.json({
-    status: "ok",
-    endpoint: "data-retention-cron",
-    description:
-      "POST to this endpoint to trigger data retention cleanup. " +
-      "Requires x-cron-secret header.",
-  });
 }

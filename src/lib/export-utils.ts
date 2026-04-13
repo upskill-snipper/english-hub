@@ -74,7 +74,6 @@ export function exportClassReport(
 ): void {
   const headers = [
     'Student Name',
-    'Email',
     'Year Group',
     'Modules Completed',
     'Total Modules',
@@ -91,15 +90,14 @@ export function exportClassReport(
 
   // Summary rows at top
   const summaryRows: (string | number | null)[][] = [
-    ['CLASS SUMMARY', '', '', '', '', '', '', '', '', '', '', '', '', ''],
-    ['Class', classAnalytics.class_name, 'Students', classAnalytics.student_count, 'Avg Score', classAnalytics.avg_score, 'Completion', `${classAnalytics.completion_rate}%`, 'At Risk', classAnalytics.students_at_risk, '', '', '', ''],
-    ['', '', '', '', '', '', '', '', '', '', '', '', '', ''],
-    ['STUDENT DATA', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['CLASS SUMMARY', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['Class', classAnalytics.class_name, 'Students', classAnalytics.student_count, 'Avg Score', classAnalytics.avg_score, 'Completion', `${classAnalytics.completion_rate}%`, 'At Risk', classAnalytics.students_at_risk, '', '', ''],
+    ['', '', '', '', '', '', '', '', '', '', '', '', ''],
+    ['STUDENT DATA', '', '', '', '', '', '', '', '', '', '', '', ''],
   ]
 
   const studentRows: (string | number | null)[][] = students.map((s) => [
     s.student_name,
-    s.student_email,
     s.year_group,
     s.modules_completed,
     s.total_modules,
@@ -129,7 +127,6 @@ export function exportStudentReport(student: StudentAnalytics, filename?: string
   const headers = ['Field', 'Value']
   const rows: (string | number | null)[][] = [
     ['Name', student.student_name],
-    ['Email', student.student_email],
     ['Year Group', student.year_group],
     ['Modules Completed', student.modules_completed],
     ['Total Modules', student.total_modules],
@@ -155,7 +152,6 @@ export function exportStudentReport(student: StudentAnalytics, filename?: string
 
 export interface AttendanceRow {
   student_name: string
-  student_email: string
   last_active_at: string | null
   modules_this_week: number
   practice_this_week: number
@@ -171,7 +167,6 @@ export interface AttendanceRow {
 export function exportAttendanceData(attendanceRows: AttendanceRow[], classId: string, filename?: string): void {
   const headers = [
     'Student Name',
-    'Email',
     'Last Active',
     'Modules This Week',
     'Practice This Week',
@@ -182,7 +177,6 @@ export function exportAttendanceData(attendanceRows: AttendanceRow[], classId: s
 
   const rows: (string | number | null)[][] = attendanceRows.map((r) => [
     r.student_name,
-    r.student_email,
     r.last_active_at ? new Date(r.last_active_at).toLocaleDateString('en-GB') : 'Never',
     r.modules_this_week,
     r.practice_this_week,
@@ -200,7 +194,6 @@ export function exportAttendanceData(attendanceRows: AttendanceRow[], classId: s
 
 export interface GradeRow {
   student_name: string
-  student_email: string
   year_group: string | null
   current_grade: string | null
   target_grade: string | null
@@ -215,7 +208,6 @@ export interface GradeRow {
 export function exportGradeData(students: StudentAnalytics[], targetGrades?: Map<string, string>, filename?: string): void {
   const headers = [
     'Student Name',
-    'Email',
     'Year Group',
     'Predicted Grade',
     'Target Grade',
@@ -231,7 +223,6 @@ export function exportGradeData(students: StudentAnalytics[], targetGrades?: Map
     const gap = computeGradeGap(s.predicted_grade, target)
     return [
       s.student_name,
-      s.student_email,
       s.year_group,
       s.predicted_grade,
       target,
@@ -258,7 +249,6 @@ export function formatForSIMS(students: StudentAnalytics[]): string {
   const headers = [
     'Forename',
     'Surname',
-    'Email',
     'Year Group',
     'Subject',
     'Assessment Name',
@@ -273,7 +263,6 @@ export function formatForSIMS(students: StudentAnalytics[]): string {
     return [
       nameParts.forename,
       nameParts.surname,
-      s.student_email,
       s.year_group ?? '',
       'English',
       'Platform Progress Assessment',

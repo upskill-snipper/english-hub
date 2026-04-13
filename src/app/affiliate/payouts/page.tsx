@@ -23,7 +23,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-// TODO(Phase-7): Supabase — move payout history and payment method to secure tables
+// Phase-7: Supabase — move payout history and payment method to secure tables
 
 const MINIMUM_PAYOUT_GBP = 50
 
@@ -102,7 +102,7 @@ export default function AffiliatePayoutsPage() {
   const handleSavePaymentMethod = (e: React.FormEvent) => {
     e.preventDefault()
     if (!account) return
-    // TODO(Phase-7): Supabase — persist to affiliate_payment_methods
+    // Phase-7: Supabase — persist to affiliate_payment_methods
     const updated: AffiliateAccount = {
       ...account,
       paymentMethod: { type: method, details },

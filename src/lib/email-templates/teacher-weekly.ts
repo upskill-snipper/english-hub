@@ -11,7 +11,7 @@
 
 // ─── Configuration ───────────────────────────────────────────────────────
 
-const BASE_URL = process.env.NEXTAUTH_URL || "https://theenglishhub.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://theenglishhub.app";
 const BRAND_COLOR = "#1A5276";
 const BRAND_ACCENT = "#2E86C1";
 const BRAND_LIGHT = "#D6EAF8";

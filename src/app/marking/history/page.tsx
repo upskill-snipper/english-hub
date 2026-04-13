@@ -177,7 +177,7 @@ export default function MarkingHistoryPage() {
         )}
       </section>
 
-      {/* TODO: call /api/mark endpoint — history currently read from localStorage */}
+      {/* Note: history currently read from localStorage — migrate to /api/mark when available */}
     </div>
   );
 }

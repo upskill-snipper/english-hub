@@ -201,12 +201,18 @@ model Consent {
 model CookieConsent {
   id          String   @id @default(cuid())
   visitorId   String
+  userId      String?
+  choice      String   // "accept_all" | "reject_all" | "custom"
   analytics   Boolean  @default(false)
   marketing   Boolean  @default(false)
+  ipHash      String   // SHA-256 hash of client IP — never store raw IP
+  userAgent   String?
   consentedAt DateTime @default(now())
   version     String
 
   @@index([visitorId])
+  @@index([userId])
+  @@index([consentedAt])
 }
 
 model Essay {
@@ -381,6 +387,7 @@ model PrivacySettings {
   analyticsEnabled     Boolean           @default(false)
   marketingEnabled     Boolean           @default(false)
   aiTrainingOptIn      Boolean           @default(false)
+  aiOptOut             Boolean           @default(false)
   schoolSharingEnabled Boolean           @default(false)
   researchDataEnabled  Boolean           @default(false)
   profileVisibility    ProfileVisibility @default(PRIVATE)

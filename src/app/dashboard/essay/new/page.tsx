@@ -64,11 +64,11 @@ export default function NewEssayPage() {
 
     setIsSubmitting(true);
 
-    // TODO: Replace with real API call
+    // Stub: POST /api/essays — currently simulates submission
     try {
-      const payload = { title, subject, examBoard, topic, content };
+      const _payload = { title, subject, examBoard, topic, content };
 
-      // Simulate API delay
+      // Simulate API delay until real endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       // Redirect to the essay feedback page

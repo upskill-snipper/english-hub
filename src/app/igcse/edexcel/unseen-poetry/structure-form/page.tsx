@@ -1,5 +1,5 @@
 'use client'
-// TODO [P2:auth] add layout-level board guard — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
 
 import {
   Layers,

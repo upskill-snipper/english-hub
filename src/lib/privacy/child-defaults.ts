@@ -24,6 +24,12 @@ export const CHILD_DEFAULT_SETTINGS = {
   analyticsOptIn: false,
   /** Marketing emails and promotional messages */
   marketingOptIn: false,
+  /**
+   * Social-share nudges (e.g. after practice sets / quiz completion).
+   * Disabled for children per GAP-13B — sharing encourages data
+   * disclosure and is not age-appropriate for users under 16.
+   */
+  socialShareNudge: false,
 } as const
 
 export type ChildPrivacySettings = typeof CHILD_DEFAULT_SETTINGS
@@ -34,4 +40,30 @@ export type ChildPrivacySettings = typeof CHILD_DEFAULT_SETTINGS
  */
 export function getChildDefaults(): ChildPrivacySettings {
   return { ...CHILD_DEFAULT_SETTINGS }
+}
+
+/**
+ * Returns child-safe defaults mapped to the `profiles` table column names
+ * used in the Supabase upsert during registration.
+ */
+export function getChildProfileDefaults() {
+  const d = getChildDefaults()
+  return {
+    streaks_enabled: false,
+    personalised_recommendations: d.personalisedRecommendations,
+    streak_notifications: d.streakNotifications,
+    nudge_notifications: d.nudgeNotifications,
+    analytics_opt_in: d.analyticsOptIn,
+    marketing_opt_in: d.marketingOptIn,
+    social_share_nudge: d.socialShareNudge,
+  } as const
+}
+
+/**
+ * Checks whether the given age qualifies as a child under the
+ * ICO Children's Code (Age Appropriate Design Code).
+ * Under-16s in the UK require high-privacy defaults.
+ */
+export function isChildAge(age: number | null | undefined): boolean {
+  return typeof age === 'number' && age >= 0 && age < 16
 }

@@ -115,8 +115,8 @@ export default function AllEssaysPage() {
     }
   }
 
-  function handleDelete(id: string) {
-    // TODO: Replace with real API call
+  function handleDelete(_id: string) {
+    // Stub: DELETE /api/essays/:id — no-op until API route exists
     setDeletingId(null);
   }
 

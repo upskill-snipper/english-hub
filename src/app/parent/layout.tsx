@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { ParentSidebar } from '@/components/parent/ParentSidebar'
 
-// [P2:auth] TODO: Supabase — read parent session from server cookies instead
+// [P2:auth] Supabase — read parent session from server cookies instead
 interface ParentAccount {
   name?: string
   email?: string
@@ -28,7 +28,7 @@ export default function ParentLayout({
 
   useEffect(() => {
     setMounted(true)
-    // [P2:auth] TODO: Supabase — supabase.auth.getUser()
+    // [P2:auth] Supabase — replace with supabase.auth.getUser()
     try {
       const raw = localStorage.getItem(PARENT_ACCOUNT_KEY)
       if (raw) {

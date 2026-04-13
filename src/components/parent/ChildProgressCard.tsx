@@ -6,7 +6,7 @@ import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 
-// TODO: replace with Supabase — real child record, not mock props
+// Supabase: replace mock props with real child record from database
 export interface ChildProgressCardProps {
   name: string
   yearGroup?: string

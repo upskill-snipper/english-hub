@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { prisma } from "@/lib/prisma";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
+import { getChildDefaults } from "@/lib/privacy/child-defaults";
 
 // GET /api/privacy/settings
 // Returns privacy settings, data summary, and essay list for the current user
@@ -50,13 +51,28 @@ export async function GET() {
     );
 
     // Build settings (create defaults if none exist)
+    // ICO Children's Code: under-16 users get high-privacy defaults
     let settings = user.privacySettings;
     if (!settings) {
+      // Calculate current age from dateOfBirth to determine child status
+      let isChildUser = false;
+      if (user.isMinor && user.dateOfBirth) {
+        const dob = new Date(user.dateOfBirth);
+        const now = new Date();
+        let age = now.getFullYear() - dob.getFullYear();
+        const monthDiff = now.getMonth() - dob.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dob.getDate())) {
+          age--;
+        }
+        isChildUser = age < 16;
+      }
+      const childDefaults = isChildUser ? getChildDefaults() : null;
+
       settings = await prisma.privacySettings.create({
         data: {
           userId: user.id,
-          analyticsEnabled: false,
-          marketingEnabled: false,
+          analyticsEnabled: childDefaults ? childDefaults.analyticsOptIn : false,
+          marketingEnabled: childDefaults ? childDefaults.marketingOptIn : false,
           aiTrainingOptIn: false,
           schoolSharingEnabled: false,
           researchDataEnabled: false,
@@ -70,6 +86,7 @@ export async function GET() {
         analyticsEnabled: settings.analyticsEnabled,
         marketingEnabled: settings.marketingEnabled,
         aiTrainingOptIn: settings.aiTrainingOptIn,
+        aiOptOut: settings.aiOptOut,
         schoolSharingEnabled: settings.schoolSharingEnabled,
         researchDataEnabled: settings.researchDataEnabled,
         profileVisibility: settings.profileVisibility,
@@ -131,19 +148,26 @@ export async function PUT(request: NextRequest) {
 
     const body = await request.json();
 
-    const validVisibility = ["PRIVATE", "SCHOOL_ONLY", "PUBLIC"];
-    const profileVisibility = validVisibility.includes(body.profileVisibility)
-      ? body.profileVisibility
-      : "PRIVATE";
+    // Build update data — only include fields present in the request body
+    // so callers can send partial updates (e.g. toggling only aiOptOut).
+    const data: Record<string, unknown> = {};
 
-    const data = {
-      analyticsEnabled: Boolean(body.analyticsEnabled),
-      marketingEnabled: Boolean(body.marketingEnabled),
-      aiTrainingOptIn: Boolean(body.aiTrainingOptIn),
-      schoolSharingEnabled: Boolean(body.schoolSharingEnabled),
-      researchDataEnabled: Boolean(body.researchDataEnabled),
-      profileVisibility,
-    };
+    if ("analyticsEnabled" in body) data.analyticsEnabled = Boolean(body.analyticsEnabled);
+    if ("marketingEnabled" in body) data.marketingEnabled = Boolean(body.marketingEnabled);
+    if ("aiTrainingOptIn" in body) data.aiTrainingOptIn = Boolean(body.aiTrainingOptIn);
+    if ("aiOptOut" in body) data.aiOptOut = Boolean(body.aiOptOut);
+    if ("schoolSharingEnabled" in body) data.schoolSharingEnabled = Boolean(body.schoolSharingEnabled);
+    if ("researchDataEnabled" in body) data.researchDataEnabled = Boolean(body.researchDataEnabled);
+    if ("profileVisibility" in body) {
+      const validVisibility = ["PRIVATE", "SCHOOL_ONLY", "PUBLIC"];
+      data.profileVisibility = validVisibility.includes(body.profileVisibility)
+        ? body.profileVisibility
+        : "PRIVATE";
+    }
+
+    if (Object.keys(data).length === 0) {
+      return NextResponse.json({ error: "No valid fields to update." }, { status: 400 });
+    }
 
     const settings = await prisma.privacySettings.upsert({
       where: { userId: user.id },
@@ -158,7 +182,7 @@ export async function PUT(request: NextRequest) {
         action: "PRIVACY_SETTINGS_UPDATED",
         resource: "PrivacySettings",
         resourceId: settings.id,
-        details: data,
+        details: data as Record<string, boolean | string>,
         ipAddress: ip,
       },
     });

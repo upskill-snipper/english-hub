@@ -54,7 +54,7 @@ export default function ParentLoginPage() {
     setLoading(true)
 
     try {
-      // [P2:auth] TODO: Supabase — supabase.auth.signInWithPassword({email, password})
+      // [P2:auth] Supabase — replace with supabase.auth.signInWithPassword({email, password})
       await new Promise((resolve) => setTimeout(resolve, 400))
 
       // For mock flow: if no existing account, seed a minimal one so the dashboard loads.

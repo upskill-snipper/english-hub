@@ -144,7 +144,7 @@ export function StudentTable({
       result = result.filter(
         (s) =>
           s.student_name.toLowerCase().includes(term) ||
-          s.student_email.toLowerCase().includes(term),
+          s.student_id.toLowerCase().includes(term),
       )
     }
 

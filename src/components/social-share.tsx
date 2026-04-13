@@ -20,6 +20,14 @@ interface SocialShareProps {
   variant?: 'default' | 'compact'
   /** Additional className */
   className?: string
+  /**
+   * Children's Code Standard 3 — Age-appropriate application.
+   * When true, the social-share nudge is suppressed entirely.
+   * Pass true for users under 16 / child accounts (isMinor).
+   * Social sharing encourages data disclosure and is not appropriate
+   * for child users per ICO guidance.
+   */
+  isChildAccount?: boolean
 }
 
 function buildShareUrl(
@@ -46,8 +54,16 @@ export function SocialShare({
   utmCampaign,
   variant = 'default',
   className = '',
+  isChildAccount = false,
 }: SocialShareProps) {
   const [copied, setCopied] = useState(false)
+
+  // Children's Code: suppress social-share nudge for child accounts (under 16).
+  // Social sharing encourages children to disclose personal data and activity,
+  // which is not appropriate per ICO Age Appropriate Design Code guidance.
+  if (isChildAccount) {
+    return null
+  }
 
   const baseUrl = url || (typeof window !== 'undefined' ? window.location.href : '')
 

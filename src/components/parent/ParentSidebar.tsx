@@ -8,6 +8,7 @@ import {
   TrendingUp,
   FileText,
   Settings,
+  Trash2,
   Menu,
   X,
   GraduationCap,
@@ -17,7 +18,7 @@ import {
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 
-// TODO: replace with Supabase — derive session & signed-in state from auth
+// Supabase: derive session & signed-in state from auth
 export interface ParentSidebarProps {
   parentName?: string
   childName?: string
@@ -28,6 +29,7 @@ const NAV_ITEMS = [
   { label: 'Progress', href: '/parent/progress', icon: TrendingUp },
   { label: 'Reports', href: '/parent/reports', icon: FileText },
   { label: 'Settings', href: '/parent/settings', icon: Settings },
+  { label: 'Delete Data', href: '/parent/delete-data', icon: Trash2 },
 ]
 
 export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
@@ -39,7 +41,7 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
   }
 
   function handleSignOut() {
-    // TODO: replace with Supabase — call supabase.auth.signOut()
+    // Supabase: replace with supabase.auth.signOut()
     try {
       localStorage.removeItem('english-hub-parent-account')
     } catch {

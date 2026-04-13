@@ -7,7 +7,7 @@ import crypto from "crypto";
 
 // ─── CSRF Tokens ───────────────────────────────────────────────────────
 
-const CSRF_SECRET = process.env.CSRF_SECRET || process.env.NEXTAUTH_SECRET || "";
+const CSRF_SECRET = process.env.CSRF_SECRET || "";
 const CSRF_TOKEN_EXPIRY_MS = 60 * 60 * 1000; // 1 hour
 
 interface CSRFPayload {
@@ -22,7 +22,7 @@ interface CSRFPayload {
 export function generateCSRFToken(): string {
   if (!CSRF_SECRET) {
     throw new Error(
-      "CSRF_SECRET or NEXTAUTH_SECRET must be set in environment variables"
+      "CSRF_SECRET must be set in environment variables"
     );
   }
 

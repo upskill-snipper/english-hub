@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 // Email template helpers
 // ---------------------------------------------------------------------------
 
-const BASE_URL = process.env.NEXTAUTH_URL || "https://theenglishhub.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://theenglishhub.app";
 const BRAND_COLOR = "#1A5276";
 
 function formatDate(date: Date | string): string {

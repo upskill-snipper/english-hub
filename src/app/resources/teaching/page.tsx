@@ -3,8 +3,8 @@
 import Link from "next/link";
 
 /* ─── Role guard ──────────────────────────────────────────────
-   TODO: Replace with real auth context check.
-   In production, redirect non-teachers to /resources.
+   Stub: uses mock role. Replace with real auth context check
+   to redirect non-teachers to /resources.
    ───────────────────────────────────────────────────────────── */
 const MOCK_USER_ROLE: "student" | "teacher" | "parent" = "teacher";
 

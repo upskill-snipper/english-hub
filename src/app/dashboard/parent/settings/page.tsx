@@ -142,7 +142,7 @@ export default function ParentSettingsPage() {
   async function handleSaveNotifications() {
     setSavingNotifications(true);
     try {
-      // TODO: Replace with real API call
+      // Stub: PUT /api/parent/notifications — simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 500));
       showSuccess("Notification preferences saved.");
     } finally {
@@ -153,7 +153,7 @@ export default function ParentSettingsPage() {
   async function handleSaveSchedule() {
     setSavingSchedule(true);
     try {
-      // TODO: Replace with real API call
+      // Stub: PUT /api/parent/report-schedule — simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 500));
       showSuccess("Report schedule saved.");
     } finally {
@@ -174,7 +174,7 @@ export default function ParentSettingsPage() {
 
     setInviting(true);
     try {
-      // TODO: Replace with real API call
+      // Stub: POST /api/parent/invite-student — simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 1000));
       showSuccess(`Invitation sent to ${inviteEmail}. The student must accept the link request.`);
       setInviteEmail("");
@@ -188,7 +188,7 @@ export default function ParentSettingsPage() {
     if (!confirm("Are you sure you want to unlink this student? You will no longer be able to view their progress.")) {
       return;
     }
-    // TODO: Replace with real API call
+    // Stub: DELETE /api/parent/students/:id — currently only removes from local state
     setStudents((prev) => prev.filter((s) => s.id !== studentId));
     showSuccess("Student unlinked successfully.");
   }
@@ -205,7 +205,7 @@ export default function ParentSettingsPage() {
   async function handleSaveGrades(studentId: string) {
     setSavingGrades(true);
     try {
-      // TODO: Replace with real API call
+      // Stub: PUT /api/parent/students/:id/grades — simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 500));
       setStudents((prev) =>
         prev.map((s) => {

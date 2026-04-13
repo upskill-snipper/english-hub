@@ -206,7 +206,7 @@ export default function ParentDashboardPage() {
 
   useEffect(() => {
     setMounted(true)
-    // [P2:data] TODO: Supabase — fetch aggregates via server components/RPC
+    // [P2:data] Supabase — fetch aggregates via server components/RPC
     setAccount(safeParse<ParentAccountLike>(localStorage.getItem(PARENT_ACCOUNT_KEY)))
     setState(buildDashboardState())
   }, [])

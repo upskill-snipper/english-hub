@@ -109,9 +109,23 @@ describe('getQuestionsForBoard', () => {
   it('returns only matching questions for cambridge-0500', () => {
     const qs = getQuestionsForBoard(undefined, 'cambridge-0500')
     for (const q of qs) {
-      // Must be a topic cambridge-0500 covers
-      expect(['language-techniques', 'exam-technique']).toContain(q.topic)
       // Must not be board-locked to another board
+      if (q.boards && q.boards.length > 0) {
+        expect(q.boards).toContain('cambridge-0500')
+      }
+      // When no topics are specified, getQuestionsForBoard only filters by
+      // board matching — untagged questions from any topic pass through.
+      // Topic restriction is the caller's responsibility (e.g. via
+      // getTopicsForBoard).
+    }
+    expect(qs.length).toBeGreaterThan(0)
+  })
+
+  it('returns only board-relevant topics when topics are provided from getTopicsForBoard', () => {
+    const topics = getTopicsForBoard('cambridge-0500')
+    const qs = getQuestionsForBoard(topics, 'cambridge-0500')
+    for (const q of qs) {
+      expect(['language-techniques', 'exam-technique']).toContain(q.topic)
       if (q.boards && q.boards.length > 0) {
         expect(q.boards).toContain('cambridge-0500')
       }

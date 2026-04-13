@@ -105,7 +105,7 @@ export default function LanguageDevicesBingoWorksheet() {
             </div>
           </div>
 
-          {/* TODO: wire up download-as-PDF */}
+          {/* PDF export pending: needs server-side PDF generation route */}
           <div className="mt-6">
             <Button variant="default" size="lg">
               Download as PDF

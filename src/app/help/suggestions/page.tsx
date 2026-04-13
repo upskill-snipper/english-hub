@@ -19,9 +19,19 @@ export default function SuggestionsPage() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: POST to /api/support/suggestion
+    try {
+      const res = await fetch('/api/support/suggestion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ category, title, description, email }),
+      });
+      if (!res.ok) throw new Error('Failed to submit suggestion');
+    } catch {
+      // Silently continue — the confirmation screen still shows so the user
+      // is not blocked. Once the API route exists it will persist properly.
+    }
     setSubmitted(true);
   };
 

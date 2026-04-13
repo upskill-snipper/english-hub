@@ -16,7 +16,12 @@ vi.mock('@/lib/stripe', () => ({
   },
 }))
 
-// Build a chainable Supabase mock that records calls
+// Build a chainable Supabase mock that records calls.
+// The real webhook route performs an idempotency check against
+// `webhook_events` before processing events, then inserts into
+// `webhook_events` afterwards. We need table-aware mocks so the
+// idempotency check returns "no existing event" while profile
+// lookups return the expected profile data.
 function createSupabaseMock() {
   const updateInFn = vi.fn(() => ({ error: null, count: 0 }))
   const updateEqFn = vi.fn(() => ({ error: null, in: updateInFn }))
@@ -28,17 +33,35 @@ function createSupabaseMock() {
   const selectFn = vi.fn(() => ({ eq: selectEqFn }))
 
   const upsertFn = vi.fn(() => ({ error: null }))
+  const insertFn = vi.fn(() => ({ error: null }))
 
-  const fromFn = vi.fn(() => ({
+  // webhook_events table — idempotency check must return null (no duplicate)
+  const webhookEventsChain = {
+    select: vi.fn(() => ({
+      eq: vi.fn(() => ({
+        single: vi.fn(() => ({ data: null, error: null })),
+      })),
+    })),
+    insert: insertFn,
+  }
+
+  // Default chain for all other tables (profiles, enrolments, affiliate_referrals, etc.)
+  const defaultChain = () => ({
     update: updateFn,
     select: selectFn,
     upsert: upsertFn,
-  }))
+    insert: insertFn,
+  })
+
+  const fromFn = vi.fn((table: string) => {
+    if (table === 'webhook_events') return webhookEventsChain
+    return defaultChain()
+  })
 
   return {
     from: fromFn,
     // Expose inner mocks so tests can inspect/override them
-    _mocks: { fromFn, updateFn, updateEqFn, selectFn, selectEqFn, singleFn, inFn, upsertFn },
+    _mocks: { fromFn, updateFn, updateEqFn, selectFn, selectEqFn, singleFn, inFn, upsertFn, insertFn },
   }
 }
 

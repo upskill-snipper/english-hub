@@ -87,7 +87,6 @@ function generateMockStudents(classData: Class): ProgressCardData[] {
   return names.map((name, i) => ({
     student_id: `stu-${classData.id}-${i}`,
     student_name: name,
-    student_email: `${name.toLowerCase().replace(/\s/g, '.')}@school.edu`,
     year_group: classData.year_group,
     exam_board: classData.exam_board,
     modules_completed: Math.floor(Math.random() * 8) + 2,
@@ -186,7 +185,7 @@ export default function ProgressCardsPage() {
       .filter((s) => selectedIds.has(s.student_id))
       .map((s) => ({
         name: s.student_name,
-        email: s.student_email,
+        student_id: s.student_id,
         year_group: s.year_group,
         exam_board: s.exam_board,
         predicted_grade: s.predicted_grade,

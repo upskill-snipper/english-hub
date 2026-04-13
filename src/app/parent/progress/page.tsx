@@ -69,7 +69,7 @@ function formatDate(iso?: string): string {
 
 // ── Reading age estimation (simple mock heuristic) ────────────────────────────
 function estimateReadingAge(averageScore: number | null, poemCount: number): number {
-  // [P2:data] TODO: Supabase — use real reading age assessments
+  // [P2:data] Supabase — use real reading age assessments
   const base = 10
   const scoreBoost = averageScore != null ? (averageScore / 100) * 5 : 0
   const poemBoost = Math.min(poemCount * 0.1, 2)

@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
-   TODO: Replace with real API calls:
+   Uses mock data until these API routes are implemented:
    - GET /api/teacher/assignments — list assignments
    - POST /api/teacher/assignments — create assignment
    - PATCH /api/teacher/assignments/:id — update assignment
@@ -105,10 +105,7 @@ export default function AssignmentsPage() {
   );
 
   const handleCreate = () => {
-    // TODO: POST /api/teacher/assignments with form data
-    alert(
-      `TODO: Create assignment\nTitle: ${newTitle}\nGroup: ${newGroup}\nDeadline: ${newDeadline}`
-    );
+    // Stub: POST /api/teacher/assignments — currently only closes modal
     setShowCreateModal(false);
     setNewTitle("");
     setNewPrompt("");
@@ -232,7 +229,7 @@ export default function AssignmentsPage() {
 
               {/* Actions */}
               <div className="mt-4 pt-3 border-t border-border flex flex-wrap gap-2">
-                {/* TODO: Wire these to real actions */}
+                {/* Stub: wire to real actions when API routes exist */}
                 <button className="btn-outline text-xs px-3 py-1.5">
                   View Submissions
                 </button>

@@ -13,7 +13,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-// TODO: Supabase — replace localStorage account with auth session
+// Supabase: replace localStorage account with auth session
 
 const NAV_ITEMS = [
   { href: '/affiliate/dashboard', label: 'Dashboard', icon: LayoutDashboard },

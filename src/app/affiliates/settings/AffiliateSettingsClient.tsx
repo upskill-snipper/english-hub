@@ -62,7 +62,7 @@ export default function AffiliateSettingsClient({
 
   const handleSave = async () => {
     setSaving(true)
-    // TODO: Wire up Supabase update
+    // Stub: wire up Supabase update when backend is ready
     await new Promise((r) => setTimeout(r, 800))
     setSaving(false)
     setSaved(true)
@@ -71,7 +71,7 @@ export default function AffiliateSettingsClient({
 
   const handleRequestCode = () => {
     if (!customCode.trim()) return
-    // TODO: Submit custom code request
+    // Stub: submit custom code request when API route exists
     setCodeRequested(true)
     setTimeout(() => setCodeRequested(false), 3000)
   }

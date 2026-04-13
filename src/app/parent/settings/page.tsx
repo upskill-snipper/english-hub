@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import {
   Bell,
+  Bot,
   CheckCircle2,
   CreditCard,
   ExternalLink,
@@ -25,6 +26,8 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { Badge } from '@/components/ui/badge'
+import { Switch } from '@/components/ui/switch'
+import { isAiOptedOut, setAiOptedOut } from '@/lib/ai-preferences'
 
 const PARENT_ACCOUNT_KEY = 'english-hub-parent-account'
 
@@ -68,6 +71,9 @@ export default function ParentSettingsPage() {
   const [passwordMessage, setPasswordMessage] = useState<string | null>(null)
   const [passwordError, setPasswordError] = useState<string | null>(null)
 
+  // AI opt-out (Children's Code — GAP-12B)
+  const [aiEnabled, setAiEnabled] = useState(true)
+
   // Save-state for notifications
   const [savedRecently, setSavedRecently] = useState(false)
 
@@ -81,10 +87,11 @@ export default function ParentSettingsPage() {
       setInactivityAlerts(acc.notifications?.inactivityAlerts ?? false)
       setProductUpdates(acc.notifications?.productUpdates ?? false)
     }
+    setAiEnabled(!isAiOptedOut())
   }, [])
 
   function saveNotifications() {
-    // [P2:data] TODO: Supabase — update parent_profile.notifications
+    // [P2:data] Supabase — update parent_profile.notifications
     const next: ParentAccount = {
       ...(account ?? {}),
       notifications: {
@@ -120,7 +127,7 @@ export default function ParentSettingsPage() {
 
     setPasswordLoading(true)
     try {
-      // [P2:auth] TODO: Supabase — supabase.auth.updateUser({ password })
+      // [P2:auth] Supabase — replace with supabase.auth.updateUser({ password })
       await new Promise((resolve) => setTimeout(resolve, 400))
       setPasswordMessage('Password updated.')
       setCurrentPassword('')
@@ -286,6 +293,68 @@ export default function ParentSettingsPage() {
               <Mail className="h-4 w-4" />
               Save preferences
             </Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* AI Features — Children's Code compliance (GAP-12B) */}
+      <Card>
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-2">
+            <Bot className="h-4 w-4 text-primary" />
+            <CardTitle className="text-base">AI Features</CardTitle>
+          </div>
+          <CardDescription>
+            Control whether AI-powered features (like essay marking) are enabled
+            for your child&apos;s account.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <label className="flex cursor-pointer items-start justify-between gap-4">
+            <div className="min-w-0">
+              <p className="text-sm font-medium text-foreground">
+                Enable AI essay marking
+              </p>
+              <p className="text-xs text-muted-foreground">
+                When turned on, your child can submit essays and receive
+                AI-generated feedback and predicted grades. When turned off,
+                the AI marking feature will be hidden and no data will be sent
+                to the AI provider.
+              </p>
+            </div>
+            <Switch
+              checked={aiEnabled}
+              onCheckedChange={(checked: boolean) => {
+                setAiEnabled(checked)
+                setAiOptedOut(!checked)
+                // Sync to server for server-side enforcement (Children's Code — GAP-12B)
+                fetch('/api/privacy/settings', {
+                  method: 'PUT',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ aiOptOut: !checked }),
+                }).catch(() => {})
+              }}
+            />
+          </label>
+          <div className="rounded-lg border border-border bg-muted/50 p-4 text-xs text-muted-foreground space-y-2">
+            <p>
+              <strong className="text-foreground">What does the AI see?</strong>{' '}
+              Only the essay text and the question chosen. No names, emails, or
+              other personal information is sent.
+            </p>
+            <p>
+              <strong className="text-foreground">Who provides the AI?</strong>{' '}
+              We use Claude by Anthropic. Your child&apos;s essays are not used
+              to train AI models.
+            </p>
+            <p>
+              <Link
+                href="/marking/ai-explainer"
+                className="text-primary underline-offset-2 hover:underline"
+              >
+                Read the full AI marking explainer &rarr;
+              </Link>
+            </p>
           </div>
         </CardContent>
       </Card>

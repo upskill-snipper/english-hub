@@ -62,7 +62,7 @@ export default async function RootLayout({
 }) {
   const initialBoard = await getServerBoard()
   return (
-    <html lang="en" className={monaSans.variable}>
+    <html lang="en-GB" className={monaSans.variable}>
       <head>
         <link rel="manifest" href="/manifest.json" />
         <WebsiteJsonLd />

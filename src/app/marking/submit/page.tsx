@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { isAiOptedOut } from "@/lib/ai-preferences";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -111,6 +112,12 @@ function friendlyError(status: number, body: string): string {
 
 export default function SubmitEssayPage() {
   const router = useRouter();
+  const [aiOptedOut, setAiOptedOutState] = useState(false);
+
+  useEffect(() => {
+    setAiOptedOutState(isAiOptedOut());
+  }, []);
+
   const [board, setBoard] = useState<string>("");
   const [paper, setPaper] = useState<string>("");
   const [question, setQuestion] = useState<string>("");
@@ -255,9 +262,46 @@ export default function SubmitEssayPage() {
       </h1>
       <p className="mt-1 text-sm text-muted-foreground">
         Paste your essay below. We&apos;ll return a predicted grade, AO
-        breakdown and examiner-style feedback.
+        breakdown and examiner-style feedback.{" "}
+        <Link
+          href="/marking/ai-explainer"
+          className="text-primary underline-offset-2 hover:underline"
+        >
+          How does AI marking work?
+        </Link>
       </p>
 
+      {/* AI opt-out notice (Children's Code — GAP-12B) */}
+      {aiOptedOut && (
+        <div className="mt-8 rounded-lg border border-border bg-muted/50 px-6 py-8 text-center">
+          <h2 className="text-lg font-semibold text-foreground">
+            AI marking is turned off
+          </h2>
+          <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
+            A parent or guardian has turned off AI features for this account.
+            You can still use all other parts of The English Hub.
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            To turn AI marking back on, visit{" "}
+            <Link
+              href="/parent/settings"
+              className="text-primary underline-offset-2 hover:underline"
+            >
+              Parent Settings
+            </Link>{" "}
+            or read{" "}
+            <Link
+              href="/marking/ai-explainer"
+              className="text-primary underline-offset-2 hover:underline"
+            >
+              how AI marking works
+            </Link>
+            .
+          </p>
+        </div>
+      )}
+
+      {!aiOptedOut && (
       <Card className="mt-8">
         <CardHeader>
           <CardTitle>Essay details</CardTitle>
@@ -444,6 +488,7 @@ export default function SubmitEssayPage() {
           </form>
         </CardContent>
       </Card>
+      )}
     </div>
   );
 }

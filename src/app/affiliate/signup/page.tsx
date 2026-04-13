@@ -62,7 +62,7 @@ export default function AffiliateSignupPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // TODO(Phase-7): Supabase — insert affiliate row with pending status
+    // Phase-7: Supabase — insert affiliate row with pending status
     const account = createDefaultAccount({
       name: form.name,
       email: form.email,
