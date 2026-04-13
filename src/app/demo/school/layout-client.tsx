@@ -23,6 +23,7 @@ import {
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { ToastProvider } from "@/components/ui/Toast"
 import DemoBanner from "@/components/demo/DemoBanner"
 
 const NAV_ITEMS = [
@@ -125,57 +126,59 @@ export default function DemoSchoolLayoutClient({
   )
 
   return (
-    <div className="flex min-h-screen bg-background">
-      {/* Desktop sidebar */}
-      <aside className="hidden w-60 shrink-0 border-r border-border bg-card lg:block">
-        <div className="sticky top-0 h-screen overflow-y-auto">
-          {sidebarContent}
-        </div>
-      </aside>
-
-      {/* Mobile header */}
-      <div className="fixed inset-x-0 top-0 z-40 flex h-14 items-center border-b border-border bg-card px-4 lg:hidden">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="mr-3"
-        >
-          {mobileOpen ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
-        </Button>
-        <div className="flex items-center gap-2">
-          <School className="h-5 w-5 text-primary" />
-          <span className="text-sm font-bold">Riverside Academy</span>
-          <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider">
-            Demo
-          </Badge>
-        </div>
-      </div>
-
-      {/* Mobile sidebar overlay */}
-      {mobileOpen && (
-        <>
-          <div
-            className="fixed inset-0 z-40 bg-black/50 lg:hidden"
-            onClick={() => setMobileOpen(false)}
-          />
-          <aside className="fixed inset-y-0 left-0 z-50 w-60 bg-card shadow-xl lg:hidden">
+    <ToastProvider>
+      <div className="flex min-h-screen bg-background">
+        {/* Desktop sidebar */}
+        <aside className="hidden w-60 shrink-0 border-r border-border bg-card lg:block">
+          <div className="sticky top-0 h-screen overflow-y-auto">
             {sidebarContent}
-          </aside>
-        </>
-      )}
+          </div>
+        </aside>
 
-      {/* Main content */}
-      <main className="flex-1 min-w-0 overflow-auto pt-14 lg:pt-0">
-        <DemoBanner />
-        <div className="px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-          {children}
+        {/* Mobile header */}
+        <div className="fixed inset-x-0 top-0 z-40 flex h-14 items-center border-b border-border bg-card px-4 lg:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="mr-3"
+          >
+            {mobileOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </Button>
+          <div className="flex items-center gap-2">
+            <School className="h-5 w-5 text-primary" />
+            <span className="text-sm font-bold">Riverside Academy</span>
+            <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider">
+              Demo
+            </Badge>
+          </div>
         </div>
-      </main>
-    </div>
+
+        {/* Mobile sidebar overlay */}
+        {mobileOpen && (
+          <>
+            <div
+              className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+              onClick={() => setMobileOpen(false)}
+            />
+            <aside className="fixed inset-y-0 left-0 z-50 w-60 bg-card shadow-xl lg:hidden">
+              {sidebarContent}
+            </aside>
+          </>
+        )}
+
+        {/* Main content */}
+        <main className="flex-1 min-w-0 overflow-auto pt-14 lg:pt-0">
+          <DemoBanner />
+          <div className="px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+            {children}
+          </div>
+        </main>
+      </div>
+    </ToastProvider>
   )
 }
