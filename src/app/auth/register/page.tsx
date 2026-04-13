@@ -8,6 +8,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff, Calendar, School, Sparkles, Gift, Zap } from 'lucide-react'
 
 import { getUtmParams } from '@/lib/utm'
+import { getChildDefaults, getChildProfileDefaults } from '@/lib/privacy/child-defaults'
 import { trackEvent } from '@/lib/gtag'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
@@ -152,6 +153,14 @@ function RegisterForm() {
     // Upsert profile data
     if (data.user) {
       const dateOfBirth = `${dobYear}-${dobMonth.padStart(2, '0')}-${dobDay.padStart(2, '0')}`
+
+      // ICO Children's Code: apply high-privacy defaults for under-16 users
+      const isMinorUser = accountType === 'student' && userAge !== null && userAge < 18
+      const isChildUser = accountType === 'student' && userAge !== null && userAge < 16
+      // ICO Children's Code: use getChildProfileDefaults() for complete
+      // column mapping (includes social_share_nudge)
+      const childProfileDefaults = isChildUser ? getChildProfileDefaults() : null
+
       const { error: profileError } = await supabase.from('profiles').upsert({
         id: data.user.id,
         email,
@@ -162,6 +171,16 @@ function RegisterForm() {
         school_name: accountType === 'teacher' ? (schoolName || null) : null,
         date_of_birth: accountType === 'student' ? dateOfBirth : null,
         parent_guardian_email: accountType === 'student' ? (parentGuardianEmail || null) : null,
+        is_minor: isMinorUser,
+        // Children's Code (GAP-5A / GAP-7A): high-privacy defaults for under-16s
+        ...(childProfileDefaults ?? {
+          streaks_enabled: true,
+          personalised_recommendations: true,
+          streak_notifications: true,
+          nudge_notifications: true,
+          analytics_opt_in: false,
+          marketing_opt_in: false,
+        }),
         utm_source: utmParams?.utm_source ?? null,
         utm_medium: utmParams?.utm_medium ?? null,
         utm_campaign: utmParams?.utm_campaign ?? null,
