@@ -67,7 +67,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { grade: "8-9", pct: 8, color: "bg-emerald-500" },
       { grade: "7", pct: 22, color: "bg-emerald-400" },
       { grade: "6", pct: 38, color: "bg-amber-400" },
-      { grade: "5", pct: 22, color: "bg-orange-400" },
+      { grade: "5", pct: 22, color: "bg-amber-500" },
       { grade: "1-4", pct: 10, color: "bg-red-500" },
     ],
     classes: [
@@ -105,7 +105,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { grade: "8-9", pct: 10, color: "bg-emerald-500" },
       { grade: "7", pct: 25, color: "bg-emerald-400" },
       { grade: "6", pct: 36, color: "bg-amber-400" },
-      { grade: "5", pct: 20, color: "bg-orange-400" },
+      { grade: "5", pct: 20, color: "bg-amber-500" },
       { grade: "1-4", pct: 9, color: "bg-red-500" },
     ],
     classes: [
@@ -143,7 +143,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { grade: "8-9", pct: 12, color: "bg-emerald-500" },
       { grade: "7", pct: 28, color: "bg-emerald-400" },
       { grade: "6", pct: 34, color: "bg-amber-400" },
-      { grade: "5", pct: 18, color: "bg-orange-400" },
+      { grade: "5", pct: 18, color: "bg-amber-500" },
       { grade: "1-4", pct: 8, color: "bg-red-500" },
     ],
     classes: [
@@ -181,7 +181,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { grade: "8-9", pct: 15, color: "bg-emerald-500" },
       { grade: "7", pct: 30, color: "bg-emerald-400" },
       { grade: "6", pct: 35, color: "bg-amber-400" },
-      { grade: "5", pct: 15, color: "bg-orange-400" },
+      { grade: "5", pct: 15, color: "bg-amber-500" },
       { grade: "1-4", pct: 5, color: "bg-red-500" },
     ],
     classes: [
@@ -221,7 +221,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { grade: "8-9", pct: 18, color: "bg-emerald-500" },
       { grade: "7", pct: 32, color: "bg-emerald-400" },
       { grade: "6", pct: 32, color: "bg-amber-400" },
-      { grade: "5", pct: 13, color: "bg-orange-400" },
+      { grade: "5", pct: 13, color: "bg-amber-500" },
       { grade: "1-4", pct: 5, color: "bg-red-500" },
     ],
     classes: [
@@ -261,7 +261,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { grade: "8-9", pct: 20, color: "bg-emerald-500" },
       { grade: "7", pct: 35, color: "bg-emerald-400" },
       { grade: "6", pct: 28, color: "bg-amber-400" },
-      { grade: "5", pct: 12, color: "bg-orange-400" },
+      { grade: "5", pct: 12, color: "bg-amber-500" },
       { grade: "1-4", pct: 5, color: "bg-red-500" },
     ],
     classes: [
@@ -298,7 +298,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { grade: "8-9", pct: 22, color: "bg-emerald-500" },
       { grade: "7", pct: 34, color: "bg-emerald-400" },
       { grade: "6", pct: 30, color: "bg-amber-400" },
-      { grade: "5", pct: 10, color: "bg-orange-400" },
+      { grade: "5", pct: 10, color: "bg-amber-500" },
       { grade: "1-4", pct: 4, color: "bg-red-500" },
     ],
     classes: [
@@ -336,7 +336,7 @@ function progressTextColor(pct: number): string {
 
 function ragColor(status: string): string {
   if (status === "onTrack") return "bg-emerald-500"
-  if (status === "aboveTarget") return "bg-blue-500"
+  if (status === "aboveTarget") return "bg-yellow-400"
   if (status === "belowTarget") return "bg-amber-500"
   return "bg-red-500"
 }
@@ -415,7 +415,7 @@ export default function SchoolProgressPage() {
           <Card className="bg-neutral-900/60 border-neutral-800">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-                <GraduationCap className="h-4 w-4 text-blue-400" />
+                <GraduationCap className="h-4 w-4 text-violet-400" />
                 Year Group Breakdown
               </CardTitle>
             </CardHeader>
@@ -448,7 +448,7 @@ export default function SchoolProgressPage() {
                   { grade: "8-9", pct: 15, color: "bg-emerald-500" },
                   { grade: "7", pct: 30, color: "bg-emerald-400" },
                   { grade: "6", pct: 35, color: "bg-amber-400" },
-                  { grade: "5", pct: 15, color: "bg-orange-400" },
+                  { grade: "5", pct: 15, color: "bg-amber-500" },
                   { grade: "1-4", pct: 5, color: "bg-red-500" },
                 ].map((g) => (
                   <div key={g.grade} className="flex items-center gap-2 text-xs">
@@ -468,7 +468,7 @@ export default function SchoolProgressPage() {
         <Card className="bg-neutral-900/60 border-neutral-800 mb-8">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-              <Users className="h-4 w-4 text-cyan-400" />
+              <Users className="h-4 w-4 text-violet-400" />
               Student Distribution (All Year Groups)
             </CardTitle>
           </CardHeader>
@@ -480,9 +480,9 @@ export default function SchoolProgressPage() {
                 <div className="text-xs text-neutral-400 mt-1">On Track</div>
                 <div className="text-xs text-neutral-500">{Math.round((totalOnTrack / totalStudents) * 100)}%</div>
               </div>
-              <div className="text-center p-4 rounded-lg bg-blue-500/10 border border-blue-500/20">
-                <TrendingUp className="h-5 w-5 text-blue-400 mx-auto mb-1" />
-                <div className="text-2xl font-bold text-blue-400">{totalAboveTarget}</div>
+              <div className="text-center p-4 rounded-lg bg-yellow-400/10 border border-yellow-400/20">
+                <TrendingUp className="h-5 w-5 text-yellow-400 mx-auto mb-1" />
+                <div className="text-2xl font-bold text-yellow-400">{totalAboveTarget}</div>
                 <div className="text-xs text-neutral-400 mt-1">Above Target</div>
                 <div className="text-xs text-neutral-500">{Math.round((totalAboveTarget / totalStudents) * 100)}%</div>
               </div>
@@ -542,7 +542,7 @@ export default function SchoolProgressPage() {
                 <div className="text-[10px] text-neutral-500 uppercase">Predicted</div>
               </div>
               <div className="text-center">
-                <div className="text-lg font-bold text-cyan-400">G{activeYearData.avgTarget}</div>
+                <div className="text-lg font-bold text-violet-400">G{activeYearData.avgTarget}</div>
                 <div className="text-[10px] text-neutral-500 uppercase">Target</div>
               </div>
             </div>
@@ -552,7 +552,7 @@ export default function SchoolProgressPage() {
           <Card className="bg-neutral-900/60 border-neutral-800">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-blue-400" />
+                <BarChart3 className="h-4 w-4 text-violet-400" />
                 Class Comparison
               </CardTitle>
             </CardHeader>
@@ -594,7 +594,7 @@ export default function SchoolProgressPage() {
             <Card className="bg-neutral-900/60 border-neutral-800">
               <CardHeader className="pb-3">
                 <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-                  <PieChart className="h-4 w-4 text-cyan-400" />
+                  <PieChart className="h-4 w-4 text-violet-400" />
                   Student Distribution
                 </CardTitle>
               </CardHeader>
@@ -652,9 +652,9 @@ export default function SchoolProgressPage() {
                       <span className="text-emerald-400 font-mono ml-auto">{activeYearData.onTrack}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="h-3 w-3 rounded-full bg-blue-500" />
+                      <div className="h-3 w-3 rounded-full bg-yellow-400" />
                       <span className="text-neutral-300">Above Target</span>
-                      <span className="text-blue-400 font-mono ml-auto">{activeYearData.aboveTarget}</span>
+                      <span className="text-yellow-400 font-mono ml-auto">{activeYearData.aboveTarget}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-amber-500" />
@@ -805,7 +805,7 @@ export default function SchoolProgressPage() {
                       </tr>
                       <tr className="border-b">
                         <td className="py-1 text-gray-500">Above Target</td>
-                        <td className="py-1 font-medium text-right text-blue-600">{activeYearData.aboveTarget} ({Math.round((activeYearData.aboveTarget / activeYearData.totalStudents) * 100)}%)</td>
+                        <td className="py-1 font-medium text-right text-yellow-600">{activeYearData.aboveTarget} ({Math.round((activeYearData.aboveTarget / activeYearData.totalStudents) * 100)}%)</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-1 text-gray-500">Below Target</td>

@@ -301,8 +301,8 @@ export default function AnalyticsPage() {
   }
 
   return (
-    <div className="text-foreground">
-      <div className="space-y-8">
+    <div className="text-foreground overflow-x-hidden">
+      <div className="space-y-8 max-w-full">
         {/* Page toggle: Analytics / Reports */}
         <div className="flex items-center gap-1 rounded-lg border border-border bg-muted/40 p-1 w-fit">
           <span className="flex items-center gap-1.5 rounded-md bg-primary/10 text-primary px-4 py-2 text-sm font-semibold">
@@ -329,7 +329,7 @@ export default function AnalyticsPage() {
 
           <div className="flex items-center gap-3">
             {/* Date range selector */}
-            <div className="flex items-center gap-1 rounded-lg bg-muted/50 border border-border p-1">
+            <div className="flex items-center gap-1 rounded-lg bg-muted/50 border border-border p-1 overflow-x-auto max-w-full">
               {(Object.keys(DATE_LABELS) as DateRange[]).map((key) => (
                 <button
                   key={key}
@@ -445,7 +445,7 @@ export default function AnalyticsPage() {
               </Card>
 
               {/* Average Score */}
-              <Card className="bg-gradient-to-br from-purple-500/5 to-card border-purple-500/10 hover:border-purple-500/25 transition-colors">
+              <Card className="bg-gradient-to-br from-amber-500/5 to-card border-amber-500/10 hover:border-amber-500/25 transition-colors">
                 <CardContent className="pt-6 pb-5">
                   <div className="flex items-start justify-between">
                     <div>
@@ -455,7 +455,7 @@ export default function AnalyticsPage() {
                         <TrendBadge value={vary(3, dateRange)} />
                       </div>
                     </div>
-                    <RingChart value={vary(68, dateRange)} color="text-purple-400" label="avg" />
+                    <RingChart value={vary(68, dateRange)} color="text-amber-400" label="avg" />
                   </div>
                 </CardContent>
               </Card>
@@ -492,8 +492,8 @@ export default function AnalyticsPage() {
                   {[
                     { label: "Student engagement rate", value: "89%", color: "text-emerald-400" },
                     { label: "Assignment completion", value: "74%", color: "text-amber-400" },
-                    { label: "Avg mock exam score", value: `${vary(68, dateRange)}%`, color: "text-blue-400" },
-                    { label: "Resource utilisation", value: "67%", color: "text-purple-400" },
+                    { label: "Avg mock exam score", value: `${vary(68, dateRange)}%`, color: "text-amber-400" },
+                    { label: "Resource utilisation", value: "67%", color: "text-violet-400" },
                   ].map((m) => (
                     <div key={m.label} className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">{m.label}</span>
@@ -538,12 +538,12 @@ export default function AnalyticsPage() {
                       Schedule intervention sessions for 23 at-risk students before Easter break
                     </p>
                   </div>
-                  <div className="p-3 rounded-lg bg-blue-500/5 border border-blue-500/10">
+                  <div className="p-3 rounded-lg bg-amber-500/5 border border-amber-500/10">
                     <p className="text-sm text-foreground/80">
                       Increase Year 9 Literature mock exam access to boost engagement
                     </p>
                   </div>
-                  <div className="p-3 rounded-lg bg-purple-500/5 border border-purple-500/10">
+                  <div className="p-3 rounded-lg bg-yellow-400/5 border border-yellow-400/10">
                     <p className="text-sm text-foreground/80">
                       Share top-performing class strategies across department
                     </p>
@@ -625,7 +625,7 @@ export default function AnalyticsPage() {
                         <HBar
                           value={count}
                           max={maxWeaknessCount}
-                          color={count / maxWeaknessCount > 0.7 ? "bg-red-500" : count / maxWeaknessCount > 0.4 ? "bg-amber-500" : "bg-blue-500"}
+                          color={count / maxWeaknessCount > 0.7 ? "bg-red-500" : count / maxWeaknessCount > 0.4 ? "bg-amber-500" : "bg-emerald-500"}
                         />
                       </div>
                     ))}
@@ -819,10 +819,10 @@ export default function AnalyticsPage() {
                   className="w-full pl-9 pr-4 py-2 text-sm rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-purple-500/50"
                 />
               </div>
-              <div className="flex items-center gap-1 rounded-lg bg-muted/50 border border-border p-1">
+              <div className="flex items-center gap-1 rounded-lg bg-muted/50 border border-border p-1 overflow-x-auto max-w-full">
                 <button
                   onClick={() => setYearFilter(null)}
-                  className={`px-3 py-1.5 text-xs rounded-md transition-all ${
+                  className={`px-3 py-1.5 text-xs rounded-md transition-all shrink-0 ${
                     yearFilter === null ? "bg-muted text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -832,7 +832,7 @@ export default function AnalyticsPage() {
                   <button
                     key={y}
                     onClick={() => setYearFilter(yearFilter === y ? null : y)}
-                    className={`px-2.5 py-1.5 text-xs rounded-md transition-all ${
+                    className={`px-2.5 py-1.5 text-xs rounded-md transition-all shrink-0 ${
                       yearFilter === y ? "bg-muted text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
@@ -882,14 +882,14 @@ export default function AnalyticsPage() {
                       {student.yearGroup} &middot; {student.className}
                     </p>
                   </div>
-                  <div className="text-right shrink-0 space-y-0.5">
-                    <div className="flex items-center gap-2 justify-end">
+                  <div className="text-right shrink-0 space-y-0.5 max-w-[180px]">
+                    <div className="flex items-center gap-1.5 justify-end flex-wrap">
                       <span className="text-[10px] text-muted-foreground/70 uppercase">WAG</span>
                       <span className={`text-sm font-bold ${gcseGradeColor(student.workingAtGrade)}`}>{student.workingAtGrade}</span>
                       <span className="text-[10px] text-muted-foreground/70 uppercase">Pred</span>
                       <span className={`text-sm font-bold ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>{student.predictedGrade}</span>
                       <span className="text-[10px] text-muted-foreground/70 uppercase">Tgt</span>
-                      <span className="text-sm font-bold text-cyan-400">{student.targetGrade}</span>
+                      <span className="text-sm font-bold text-violet-400">{student.targetGrade}</span>
                     </div>
                     {ragBadge(student.overallProgress)}
                   </div>
@@ -942,14 +942,14 @@ export default function AnalyticsPage() {
                           <p className="text-xs text-red-400/80 truncate">{student.riskReason}</p>
                         </div>
                         <div className="flex items-center gap-3 shrink-0">
-                          <div className="hidden md:flex items-center gap-1.5">
+                          <div className="hidden md:flex items-center gap-1.5 flex-wrap">
                             <Badge variant="destructive" className="text-red-300 bg-red-500/15">
                               WAG {student.workingAtGrade}
                             </Badge>
                             <Badge className={`${predictedGradeColor(student.predictedGrade, student.workingAtGrade) === 'text-emerald-400' ? 'bg-emerald-500/15 text-emerald-300' : predictedGradeColor(student.predictedGrade, student.workingAtGrade) === 'text-red-400' ? 'bg-red-500/15 text-red-300' : 'bg-amber-500/15 text-amber-300'} border-0`}>
                               Pred {student.predictedGrade}
                             </Badge>
-                            <Badge className="bg-cyan-500/15 text-cyan-300 border-0">
+                            <Badge className="bg-violet-500/15 text-violet-300 border-0">
                               Tgt {student.targetGrade}
                             </Badge>
                           </div>
@@ -1018,11 +1018,11 @@ export default function AnalyticsPage() {
                 <CardTitle className="text-foreground">Grade Distribution (Latest Mock Exams)</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {(() => {
-                    const colors = ["bg-emerald-500", "bg-blue-500", "bg-amber-500", "bg-red-500"]
-                    const textColors = ["text-emerald-400", "text-blue-400", "text-amber-400", "text-red-400"]
-                    const bgColors = ["bg-emerald-500/10", "bg-blue-500/10", "bg-amber-500/10", "bg-red-500/10"]
+                    const colors = ["bg-yellow-400", "bg-emerald-500", "bg-amber-500", "bg-red-500"]
+                    const textColors = ["text-yellow-400", "text-emerald-400", "text-amber-400", "text-red-400"]
+                    const bgColors = ["bg-yellow-400/10", "bg-emerald-500/10", "bg-amber-500/10", "bg-red-500/10"]
                     return Object.entries(gradeBuckets).map(([label, count], i) => (
                       <div key={label} className={`text-center p-4 rounded-xl ${bgColors[i]} border border-border/50`}>
                         <p className={`text-3xl font-bold ${textColors[i]}`}>{count}</p>

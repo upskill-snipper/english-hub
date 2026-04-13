@@ -22,14 +22,14 @@ function boardBadgeClass(board: string): string {
     case "CAIE IGCSE":
       return "bg-amber-500/10 text-amber-400 border-amber-500/20"
     case "KS3":
-      return "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
+      return "bg-violet-500/10 text-violet-400 border-violet-500/20"
     default:
       return "bg-neutral-500/10 text-neutral-400 border-neutral-500/20"
   }
 }
 
 function progressBarColor(pct: number): string {
-  if (pct >= 70) return "bg-green-500"
+  if (pct >= 70) return "bg-emerald-500"
   if (pct >= 40) return "bg-amber-500"
   return "bg-red-500"
 }

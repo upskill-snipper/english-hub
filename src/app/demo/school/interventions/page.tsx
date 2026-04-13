@@ -272,9 +272,9 @@ function riskBadge(level: RiskLevel) {
     case "High":
       return <Badge className="bg-red-500/20 text-red-400 border-red-500/30">High</Badge>
     case "Medium":
-      return <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30">Medium</Badge>
+      return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30">Medium</Badge>
     case "Low":
-      return <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Low</Badge>
+      return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Low</Badge>
   }
 }
 

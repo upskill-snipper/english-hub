@@ -316,7 +316,7 @@ export default function StudentReportPage() {
                 </div>
               </div>
               <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
-                <div className="text-2xl font-bold text-cyan-400 print:text-cyan-700">
+                <div className="text-2xl font-bold text-violet-400 print:text-violet-700">
                   Grade {student.targetGrade}
                 </div>
                 <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
@@ -388,8 +388,8 @@ export default function StudentReportPage() {
                             a.type === "Mock Exam"
                               ? "bg-violet-500/15 text-violet-400 print:bg-violet-100 print:text-violet-700"
                               : a.type === "Essay"
-                              ? "bg-blue-500/15 text-blue-400 print:bg-blue-100 print:text-blue-700"
-                              : "bg-cyan-500/15 text-cyan-400 print:bg-cyan-100 print:text-cyan-700"
+                              ? "bg-violet-500/15 text-violet-300 print:bg-violet-100 print:text-violet-600"
+                              : "bg-violet-500/10 text-violet-300/80 print:bg-violet-50 print:text-violet-600"
                           }`}
                         >
                           {a.type}

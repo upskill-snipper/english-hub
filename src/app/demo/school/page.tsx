@@ -402,10 +402,10 @@ export default function DemoSchoolDashboardPage() {
         </div>
 
         {/* Avg Predicted Grade */}
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
+        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-violet-500/10 to-violet-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-cyan-400/80">
+              <p className="text-xs font-medium uppercase tracking-wider text-violet-400/80">
                 Avg Predicted
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
@@ -422,8 +422,8 @@ export default function DemoSchoolDashboardPage() {
                   : "Declining trajectory"}
               </p>
             </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/15">
-              <TrendingUp className="h-5 w-5 text-cyan-400" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15">
+              <TrendingUp className="h-5 w-5 text-violet-400" />
             </div>
           </div>
         </div>
@@ -944,7 +944,7 @@ export default function DemoSchoolDashboardPage() {
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                <BookOpenCheck className="h-4 w-4 text-cyan-400" />
+                <BookOpenCheck className="h-4 w-4 text-violet-400" />
                 Reading Age Data
               </CardTitle>
             </CardHeader>
@@ -957,10 +957,10 @@ export default function DemoSchoolDashboardPage() {
                 </p>
                 <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-cyan-400">
+                    <span className="text-xs font-medium text-violet-400">
                       Assessments completed
                     </span>
-                    <span className="text-xs font-bold text-cyan-400">
+                    <span className="text-xs font-bold text-violet-400">
                       Demo data
                     </span>
                   </div>

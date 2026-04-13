@@ -63,25 +63,26 @@ export function formatPercentageWithGrade(percentage: number): string {
 
 /**
  * Get a colour class for a GCSE grade (for use in Tailwind).
- * Grade 9-8: gold/emerald (excellent)
- * Grade 7-6: blue (good)
- * Grade 5-4: amber (pass)
- * Grade 3-1: red (below standard pass)
+ * RAG colour scheme:
+ *   Grade 9:     yellow-400 (gold) — exceeding / over-achieving
+ *   Grade 7-8:   emerald-400 (green) — on track / good
+ *   Grade 5-6:   amber-400 (amber) — needs attention
+ *   Grade 1-4:   red-400 (red) — at risk / significantly behind
  */
 export function gcseGradeColor(grade: number): string {
-  if (grade >= 8) return 'text-emerald-400'
-  if (grade >= 6) return 'text-blue-400'
-  if (grade >= 4) return 'text-amber-400'
+  if (grade >= 9) return 'text-yellow-400'
+  if (grade >= 7) return 'text-emerald-400'
+  if (grade >= 5) return 'text-amber-400'
   return 'text-red-400'
 }
 
 /**
- * Get a background colour class for a GCSE grade.
+ * Get a background colour class for a GCSE grade (RAG scheme).
  */
 export function gcseGradeBg(grade: number): string {
-  if (grade >= 8) return 'bg-emerald-500/10'
-  if (grade >= 6) return 'bg-blue-500/10'
-  if (grade >= 4) return 'bg-amber-500/10'
+  if (grade >= 9) return 'bg-yellow-400/10'
+  if (grade >= 7) return 'bg-emerald-500/10'
+  if (grade >= 5) return 'bg-amber-500/10'
   return 'bg-red-500/10'
 }
 
@@ -168,19 +169,22 @@ export function calculateTargetGrade(workingAtGrade: GCSEGrade): GCSEGrade {
 }
 
 /**
- * Get the colour class for the predicted vs working-at comparison.
- * Green if predicted > working at, amber if same, red if predicted < working at.
+ * Get the colour class for the predicted vs working-at comparison (RAG scheme).
+ * Gold if predicted > working at by 2+, green if predicted > working at,
+ * amber if same, red if predicted < working at.
  */
 export function predictedGradeColor(predicted: number, workingAt: number): string {
+  if (predicted >= workingAt + 2) return 'text-yellow-400'
   if (predicted > workingAt) return 'text-emerald-400'
   if (predicted === workingAt) return 'text-amber-400'
   return 'text-red-400'
 }
 
 /**
- * Get the background colour for predicted vs working-at comparison.
+ * Get the background colour for predicted vs working-at comparison (RAG scheme).
  */
 export function predictedGradeBg(predicted: number, workingAt: number): string {
+  if (predicted >= workingAt + 2) return 'bg-yellow-400/10 border-yellow-400/20'
   if (predicted > workingAt) return 'bg-emerald-500/10 border-emerald-500/20'
   if (predicted === workingAt) return 'bg-amber-500/10 border-amber-500/20'
   return 'bg-red-500/10 border-red-500/20'

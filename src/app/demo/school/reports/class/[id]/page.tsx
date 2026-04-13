@@ -24,12 +24,12 @@ function statusBadge(status: string): { label: string; cls: string } {
     case "excelling":
       return {
         label: "Excelling",
-        cls: "bg-emerald-500/15 text-emerald-400 print:bg-emerald-100 print:text-emerald-700",
+        cls: "bg-yellow-400/15 text-yellow-400 print:bg-yellow-100 print:text-yellow-700",
       };
     case "on-track":
       return {
         label: "On Track",
-        cls: "bg-blue-500/15 text-blue-400 print:bg-blue-100 print:text-blue-700",
+        cls: "bg-emerald-500/15 text-emerald-400 print:bg-emerald-100 print:text-emerald-700",
       };
     case "needs-support":
       return {
@@ -335,7 +335,7 @@ export default function ClassReportPage() {
               </div>
             </div>
             <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-cyan-400 print:text-cyan-700">
+              <div className="text-2xl font-bold text-violet-400 print:text-violet-700">
                 Grade {classAvgTarget}
               </div>
               <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
@@ -491,7 +491,7 @@ export default function ClassReportPage() {
                         <td className={`px-3 py-2.5 text-center font-bold ${s.predictedGrade > s.workingAtGrade ? "text-emerald-400 print:text-emerald-700" : s.predictedGrade < s.workingAtGrade ? "text-red-400 print:text-red-700" : "text-amber-400 print:text-amber-700"}`}>
                           {s.predictedGrade}
                         </td>
-                        <td className="px-3 py-2.5 text-center font-semibold text-cyan-400 print:text-cyan-700">
+                        <td className="px-3 py-2.5 text-center font-semibold text-violet-400 print:text-violet-700">
                           {s.targetGrade}
                         </td>
                         <td className="px-3 py-2.5 text-center text-neutral-400 print:text-neutral-600 text-xs">
