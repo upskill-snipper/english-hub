@@ -40,7 +40,8 @@ interface YearGroupData {
   avgPredicted: number
   avgTarget: number
   onTrack: number
-  needsSupport: number
+  aboveTarget: number
+  belowTarget: number
   atRisk: number
   predictedGrades: { grade: string; pct: number; color: string }[]
   classes: { name: string; avgScore: number; completionRate: number; teacher: string }[]
@@ -58,9 +59,10 @@ const YEAR_GROUPS: YearGroupData[] = [
     avgWorkingAt: percentageToGCSEGrade(58),
     avgPredicted: percentageToGCSEGrade(58),
     avgTarget: Math.min(9, percentageToGCSEGrade(58) + 2),
-    onTrack: 112,
-    needsSupport: 48,
-    atRisk: 20,
+    onTrack: 101,
+    aboveTarget: 32,
+    belowTarget: 33,
+    atRisk: 14,
     predictedGrades: [
       { grade: "8-9", pct: 8, color: "bg-emerald-500" },
       { grade: "7", pct: 22, color: "bg-emerald-400" },
@@ -95,9 +97,10 @@ const YEAR_GROUPS: YearGroupData[] = [
     avgWorkingAt: percentageToGCSEGrade(62),
     avgPredicted: percentageToGCSEGrade(64),
     avgTarget: Math.min(9, percentageToGCSEGrade(62) + 2),
-    onTrack: 108,
-    needsSupport: 39,
-    atRisk: 18,
+    onTrack: 94,
+    aboveTarget: 28,
+    belowTarget: 30,
+    atRisk: 13,
     predictedGrades: [
       { grade: "8-9", pct: 10, color: "bg-emerald-500" },
       { grade: "7", pct: 25, color: "bg-emerald-400" },
@@ -132,9 +135,10 @@ const YEAR_GROUPS: YearGroupData[] = [
     avgWorkingAt: percentageToGCSEGrade(64),
     avgPredicted: percentageToGCSEGrade(66),
     avgTarget: Math.min(9, percentageToGCSEGrade(64) + 2),
-    onTrack: 106,
-    needsSupport: 35,
-    atRisk: 17,
+    onTrack: 89,
+    aboveTarget: 27,
+    belowTarget: 29,
+    atRisk: 13,
     predictedGrades: [
       { grade: "8-9", pct: 12, color: "bg-emerald-500" },
       { grade: "7", pct: 28, color: "bg-emerald-400" },
@@ -169,9 +173,10 @@ const YEAR_GROUPS: YearGroupData[] = [
     avgWorkingAt: percentageToGCSEGrade(68),
     avgPredicted: percentageToGCSEGrade(70),
     avgTarget: Math.min(9, percentageToGCSEGrade(68) + 1),
-    onTrack: 92,
-    needsSupport: 34,
-    atRisk: 16,
+    onTrack: 80,
+    aboveTarget: 24,
+    belowTarget: 27,
+    atRisk: 11,
     predictedGrades: [
       { grade: "8-9", pct: 15, color: "bg-emerald-500" },
       { grade: "7", pct: 30, color: "bg-emerald-400" },
@@ -208,9 +213,10 @@ const YEAR_GROUPS: YearGroupData[] = [
     avgWorkingAt: percentageToGCSEGrade(72),
     avgPredicted: percentageToGCSEGrade(74),
     avgTarget: Math.min(9, percentageToGCSEGrade(72) + 1),
-    onTrack: 98,
-    needsSupport: 28,
-    atRisk: 12,
+    onTrack: 78,
+    aboveTarget: 25,
+    belowTarget: 25,
+    atRisk: 10,
     predictedGrades: [
       { grade: "8-9", pct: 18, color: "bg-emerald-500" },
       { grade: "7", pct: 32, color: "bg-emerald-400" },
@@ -247,9 +253,10 @@ const YEAR_GROUPS: YearGroupData[] = [
     avgWorkingAt: percentageToGCSEGrade(70),
     avgPredicted: percentageToGCSEGrade(72),
     avgTarget: Math.min(9, percentageToGCSEGrade(70) + 1),
-    onTrack: 44,
-    needsSupport: 14,
-    atRisk: 6,
+    onTrack: 36,
+    aboveTarget: 11,
+    belowTarget: 12,
+    atRisk: 5,
     predictedGrades: [
       { grade: "8-9", pct: 20, color: "bg-emerald-500" },
       { grade: "7", pct: 35, color: "bg-emerald-400" },
@@ -283,8 +290,9 @@ const YEAR_GROUPS: YearGroupData[] = [
     avgWorkingAt: percentageToGCSEGrade(74),
     avgPredicted: percentageToGCSEGrade(76),
     avgTarget: Math.min(9, percentageToGCSEGrade(74) + 1),
-    onTrack: 38,
-    needsSupport: 10,
+    onTrack: 29,
+    aboveTarget: 10,
+    belowTarget: 9,
     atRisk: 4,
     predictedGrades: [
       { grade: "8-9", pct: 22, color: "bg-emerald-500" },
@@ -328,7 +336,8 @@ function progressTextColor(pct: number): string {
 
 function ragColor(status: string): string {
   if (status === "onTrack") return "bg-emerald-500"
-  if (status === "needsSupport") return "bg-amber-500"
+  if (status === "aboveTarget") return "bg-blue-500"
+  if (status === "belowTarget") return "bg-amber-500"
   return "bg-red-500"
 }
 
@@ -337,7 +346,8 @@ function ragColor(status: string): string {
 const totalStudents = YEAR_GROUPS.reduce((s, y) => s + y.totalStudents, 0)
 const avgSchoolProgress = Math.round(YEAR_GROUPS.reduce((s, y) => s + y.avgProgress * y.totalStudents, 0) / totalStudents)
 const totalOnTrack = YEAR_GROUPS.reduce((s, y) => s + y.onTrack, 0)
-const totalNeedsSupport = YEAR_GROUPS.reduce((s, y) => s + y.needsSupport, 0)
+const totalAboveTarget = YEAR_GROUPS.reduce((s, y) => s + y.aboveTarget, 0)
+const totalBelowTarget = YEAR_GROUPS.reduce((s, y) => s + y.belowTarget, 0)
 const totalAtRisk = YEAR_GROUPS.reduce((s, y) => s + y.atRisk, 0)
 
 // ── Main Page ────────────────────────────────────────────────────────────────
@@ -415,9 +425,9 @@ export default function SchoolProgressPage() {
                   <div key={yg.year} className="flex items-center gap-2 text-xs">
                     <span className="w-8 text-neutral-500 font-mono">{yg.year}</span>
                     <div className="flex-1 h-1.5 rounded-full bg-neutral-800 overflow-hidden">
-                      <div className={`h-full rounded-full ${progressColor(yg.avgProgress)}`} style={{ width: `${yg.avgProgress}%` }} />
+                      <div className={`h-full rounded-full ${progressColor(yg.avgProgress)}`} style={{ width: `${(yg.avgWorkingAt / 9) * 100}%` }} />
                     </div>
-                    <span className={`w-8 text-right font-mono ${progressTextColor(yg.avgProgress)}`}>{yg.avgProgress}%</span>
+                    <span className={`w-20 text-right font-mono ${gcseGradeColor(yg.avgWorkingAt)}`}>Grade {yg.avgWorkingAt}</span>
                   </div>
                 ))}
               </div>
@@ -463,18 +473,24 @@ export default function SchoolProgressPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
                 <CheckCircle2 className="h-5 w-5 text-emerald-400 mx-auto mb-1" />
                 <div className="text-2xl font-bold text-emerald-400">{totalOnTrack}</div>
                 <div className="text-xs text-neutral-400 mt-1">On Track</div>
                 <div className="text-xs text-neutral-500">{Math.round((totalOnTrack / totalStudents) * 100)}%</div>
               </div>
+              <div className="text-center p-4 rounded-lg bg-blue-500/10 border border-blue-500/20">
+                <TrendingUp className="h-5 w-5 text-blue-400 mx-auto mb-1" />
+                <div className="text-2xl font-bold text-blue-400">{totalAboveTarget}</div>
+                <div className="text-xs text-neutral-400 mt-1">Above Target</div>
+                <div className="text-xs text-neutral-500">{Math.round((totalAboveTarget / totalStudents) * 100)}%</div>
+              </div>
               <div className="text-center p-4 rounded-lg bg-amber-500/10 border border-amber-500/20">
                 <Clock className="h-5 w-5 text-amber-400 mx-auto mb-1" />
-                <div className="text-2xl font-bold text-amber-400">{totalNeedsSupport}</div>
-                <div className="text-xs text-neutral-400 mt-1">Needs Support</div>
-                <div className="text-xs text-neutral-500">{Math.round((totalNeedsSupport / totalStudents) * 100)}%</div>
+                <div className="text-2xl font-bold text-amber-400">{totalBelowTarget}</div>
+                <div className="text-xs text-neutral-400 mt-1">Below Target</div>
+                <div className="text-xs text-neutral-500">{Math.round((totalBelowTarget / totalStudents) * 100)}%</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-red-500/10 border border-red-500/20">
                 <AlertTriangle className="h-5 w-5 text-red-400 mx-auto mb-1" />
@@ -589,9 +605,10 @@ export default function SchoolProgressPage() {
                     <svg viewBox="0 0 36 36" className="w-32 h-32 -rotate-90">
                       {(() => {
                         const onTrackPct = (activeYearData.onTrack / activeYearData.totalStudents) * 100
-                        const supportPct = (activeYearData.needsSupport / activeYearData.totalStudents) * 100
+                        const abovePct = (activeYearData.aboveTarget / activeYearData.totalStudents) * 100
+                        const belowPct = (activeYearData.belowTarget / activeYearData.totalStudents) * 100
                         const atRiskPct = (activeYearData.atRisk / activeYearData.totalStudents) * 100
-                        const gap = 1
+                        const gap = 0.8
                         return (
                           <>
                             <circle cx="18" cy="18" r="15.915" fill="none" stroke="#171717" strokeWidth="3.5" />
@@ -603,15 +620,21 @@ export default function SchoolProgressPage() {
                             />
                             <circle
                               cx="18" cy="18" r="15.915" fill="none"
-                              stroke="#f59e0b" strokeWidth="3.5"
-                              strokeDasharray={`${supportPct - gap} ${100 - supportPct + gap}`}
+                              stroke="#3b82f6" strokeWidth="3.5"
+                              strokeDasharray={`${abovePct - gap} ${100 - abovePct + gap}`}
                               strokeDashoffset={`${-(onTrackPct)}`}
+                            />
+                            <circle
+                              cx="18" cy="18" r="15.915" fill="none"
+                              stroke="#f59e0b" strokeWidth="3.5"
+                              strokeDasharray={`${belowPct - gap} ${100 - belowPct + gap}`}
+                              strokeDashoffset={`${-(onTrackPct + abovePct)}`}
                             />
                             <circle
                               cx="18" cy="18" r="15.915" fill="none"
                               stroke="#ef4444" strokeWidth="3.5"
                               strokeDasharray={`${atRiskPct - gap} ${100 - atRiskPct + gap}`}
-                              strokeDashoffset={`${-(onTrackPct + supportPct)}`}
+                              strokeDashoffset={`${-(onTrackPct + abovePct + belowPct)}`}
                             />
                           </>
                         )
@@ -629,9 +652,14 @@ export default function SchoolProgressPage() {
                       <span className="text-emerald-400 font-mono ml-auto">{activeYearData.onTrack}</span>
                     </div>
                     <div className="flex items-center gap-2">
+                      <div className="h-3 w-3 rounded-full bg-blue-500" />
+                      <span className="text-neutral-300">Above Target</span>
+                      <span className="text-blue-400 font-mono ml-auto">{activeYearData.aboveTarget}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-amber-500" />
-                      <span className="text-neutral-300">Needs Support</span>
-                      <span className="text-amber-400 font-mono ml-auto">{activeYearData.needsSupport}</span>
+                      <span className="text-neutral-300">Below Target</span>
+                      <span className="text-amber-400 font-mono ml-auto">{activeYearData.belowTarget}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-red-500" />
@@ -652,15 +680,17 @@ export default function SchoolProgressPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {activeYearData.predictedGrades.map((g) => (
                     <div key={g.grade} className="flex items-center gap-3">
-                      <span className="w-12 text-sm font-medium text-neutral-300">{g.grade}</span>
-                      <div className="flex-1 h-5 rounded bg-neutral-800 overflow-hidden relative">
-                        <div className={`h-full rounded ${g.color} transition-all`} style={{ width: `${g.pct * 2.5}%` }} />
+                      <span className="w-12 text-base font-semibold text-neutral-200">{g.grade}</span>
+                      <div className="flex-1 h-10 rounded-lg bg-neutral-800 overflow-hidden relative">
+                        <div className={`h-full rounded-lg ${g.color} transition-all`} style={{ width: `${g.pct * 2.5}%` }} />
+                        <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-white drop-shadow-sm">
+                          {g.pct}%
+                        </span>
                       </div>
-                      <span className="w-10 text-right text-sm font-mono text-neutral-400">{g.pct}%</span>
-                      <span className="w-10 text-right text-xs text-neutral-500">
+                      <span className="w-14 text-right text-base font-mono font-semibold text-neutral-300">
                         ~{Math.round(activeYearData.totalStudents * g.pct / 100)}
                       </span>
                     </div>
@@ -774,8 +804,12 @@ export default function SchoolProgressPage() {
                         <td className="py-1 font-medium text-right text-green-700">{activeYearData.onTrack} ({Math.round((activeYearData.onTrack / activeYearData.totalStudents) * 100)}%)</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-gray-500">Needs Support</td>
-                        <td className="py-1 font-medium text-right text-amber-600">{activeYearData.needsSupport} ({Math.round((activeYearData.needsSupport / activeYearData.totalStudents) * 100)}%)</td>
+                        <td className="py-1 text-gray-500">Above Target</td>
+                        <td className="py-1 font-medium text-right text-blue-600">{activeYearData.aboveTarget} ({Math.round((activeYearData.aboveTarget / activeYearData.totalStudents) * 100)}%)</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-1 text-gray-500">Below Target</td>
+                        <td className="py-1 font-medium text-right text-amber-600">{activeYearData.belowTarget} ({Math.round((activeYearData.belowTarget / activeYearData.totalStudents) * 100)}%)</td>
                       </tr>
                       <tr>
                         <td className="py-1 text-gray-500">At Risk</td>
