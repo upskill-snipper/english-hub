@@ -6,14 +6,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    // TypeScript checking runs in CI/CD (.github/workflows/ci.yml), not
-    // during Vercel builds — checking 600+ files causes OOM on the build
-    // container. Verified 0 errors locally before each push.
-    ignoreBuildErrors: true,
+    // Vercel Pro provides 8 GB build memory — re-enabled type checking
+    // during builds (was disabled on Hobby due to OOM). CI/CD also checks.
+    ignoreBuildErrors: false,
   },
   eslint: {
-    // ESLint runs in CI/CD pipeline (.github/workflows/ci.yml), not during
-    // Vercel builds — linting 600+ files causes OOM on the build container.
+    // ESLint runs in CI/CD pipeline (.github/workflows/ci.yml). Still
+    // skipped during Vercel builds to keep build times faster — linting
+    // 600+ files adds ~2min with no safety benefit since CI catches it.
     ignoreDuringBuilds: true,
   },
   experimental: {
