@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet",
   },
-  title: "Romeo and Juliet — Edexcel IGCSE 4ET1 Study Guide",
+  title: "Romeo and Juliet — Edexcel IGCSE IGCSE Literature Study Guide",
   description:
-    "Romeo and Juliet study hub for Edexcel IGCSE English Literature 4ET1: plot, characters, themes overview, and exam technique for the two-part Shakespeare question.",
+    "Romeo and Juliet study hub for Edexcel IGCSE English Literature IGCSE Literature: plot, characters, themes overview, and exam technique for the two-part Shakespeare question.",
 };
 
 const PLOT = [
@@ -122,7 +122,7 @@ export default async function RomeoAndJulietHubPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Romeo and Juliet
@@ -262,7 +262,7 @@ export default async function RomeoAndJulietHubPage() {
             How the IGCSE Romeo and Juliet question differs from GCSE
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            The Edexcel IGCSE 4ET1 Shakespeare question comes in{" "}
+            The Edexcel IGCSE IGCSE Literature Shakespeare question comes in{" "}
             <strong>two linked parts</strong>:
           </p>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">

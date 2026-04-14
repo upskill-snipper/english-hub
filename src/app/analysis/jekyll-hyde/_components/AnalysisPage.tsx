@@ -19,7 +19,7 @@ export type AnalysisPageProps = {
 }
 
 const SITE = 'https://theenglishhub.app'
-const AUTHOR = 'The English Hub GCSE Examiners'
+const AUTHOR = 'The English Hub GCSE Markers'
 
 export function ArticleJsonLd({
   slug,
@@ -172,7 +172,7 @@ export function AnalysisPage({
         <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
           <GraduationCap className="size-4 text-primary" aria-hidden="true" />
           <span>
-            Written by <strong className="text-foreground">GCSE examiners</strong> at The English
+            Written by <strong className="text-foreground">GCSE markers</strong> at The English
             Hub
           </span>
         </div>

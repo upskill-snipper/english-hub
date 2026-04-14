@@ -4,12 +4,12 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'GCSE English Revision & Grade Guides | The English Hub',
   description:
-    'Complete GCSE English revision hub: grade 9 guides, timetables, grade boundaries, exam-day tips and parent help. 25 guides written by GCSE examiners.',
+    'Complete GCSE English revision hub: grade 9 guides, timetables, grade boundaries, exam-day tips and parent help. 25 guides written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/revision' },
   openGraph: {
     title: 'GCSE English Revision & Grade Guides — The English Hub',
     description:
-      'Free, examiner-written GCSE English revision guides covering grade targets, revision plans, exam day prep and parent support.',
+      'Free, marker-written GCSE English revision guides covering grade targets, revision plans, exam day prep and parent support.',
   },
 }
 
@@ -54,7 +54,7 @@ export default function RevisionHub() {
     '@type': 'CollectionPage',
     name: 'GCSE English Revision & Grade Guides',
     description:
-      'A library of GCSE English revision and grade-targeting guides written by GCSE examiners.',
+      'A library of GCSE English revision and grade-targeting guides written by GCSE markers.',
     url: 'https://theenglishhub.app/analysis/revision',
     author: { '@type': 'Organization', name: 'The English Hub' },
   }
@@ -72,9 +72,9 @@ export default function RevisionHub() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           GCSE English Revision &amp; Grade Guides
         </h1>
-        <p className="mt-3 text-sm text-muted-foreground">Written by GCSE examiners</p>
+        <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
         <p className="mt-4 max-w-3xl text-base text-muted-foreground leading-relaxed">
-          A complete set of free, examiner-written guides to help you hit the grade you want in GCSE English
+          A complete set of free, marker-written guides to help you hit the grade you want in GCSE English
           Language and Literature. Use the sections below to plan revision, understand grade boundaries, prep
           for the exam day and &mdash; if you&rsquo;re a parent &mdash; support a student at home.
         </p>
@@ -147,7 +147,7 @@ export default function RevisionHub() {
       <section className="mt-12 rounded-xl border border-border bg-card p-6 shadow-sm">
         <h2 className="text-lg font-semibold text-foreground">Start revising with The English Hub</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Want examiner-graded practice, quote flashcards and personalised study plans? Create a free account
+          Want marker-graded practice, quote flashcards and personalised study plans? Create a free account
           and pick up where these guides leave off.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">

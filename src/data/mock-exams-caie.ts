@@ -1,6 +1,6 @@
 // @ts-nocheck
-// ─── CAIE IGCSE English Language Mock Exams (0500) ──────────────────────────
-// Cambridge IGCSE English Language (0500)
+// ─── CAIE IGCSE Language A Mock Exams ────────────────────────────────────────
+// Cambridge IGCSE Language A
 // Paper 1: Reading Passages & Comprehension (96 marks, 2 hours)
 // Paper 2: Directed Writing & Composition (104 marks, 2 hours)
 

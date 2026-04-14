@@ -25,16 +25,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Cambridge IGCSE 0500 First Language English — The English Hub',
+  title: 'IGCSE Language A — The English Hub',
   description:
-    'Cambridge IGCSE 0500 First Language English hub. Paper 1 Reading, Paper 2 Directed Writing and Composition, assessment structure, grade boundaries and exam technique.',
+    'IGCSE Language A hub. Reading Paper, Writing Paper, assessment structure, grade boundaries and exam technique. Aligns with Cambridge syllabus 0500.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0500' },
 }
 
 const papers = [
   {
-    code: 'Paper 1',
-    title: 'Reading',
+    code: 'Reading Paper',
+    title: 'Reading skills',
     time: '2 hours',
     marks: '80 marks',
     weight: '50% of qualification',
@@ -49,8 +49,8 @@ const papers = [
     ],
   },
   {
-    code: 'Paper 2',
-    title: 'Directed Writing and Composition',
+    code: 'Writing Paper',
+    title: 'Writing skills',
     time: '2 hours',
     marks: '80 marks',
     weight: '50% of qualification',
@@ -67,12 +67,6 @@ const papers = [
 ]
 
 const quickLinks = [
-  {
-    title: 'Full syllabus breakdown',
-    description: 'Topic-by-topic coverage of the 0500 specification.',
-    href: '/igcse/cambridge/0500/syllabus',
-    icon: ListChecks,
-  },
   {
     title: 'Grade boundaries A*-G',
     description: 'Historical thresholds and how to hit a top grade.',
@@ -107,7 +101,7 @@ export default async function Cambridge0500HubPage() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              Cambridge IGCSE 0500
+              Cambridge IGCSE
             </Badge>
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
@@ -115,7 +109,7 @@ export default async function Cambridge0500HubPage() {
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Cambridge 0500 First Language English
+            IGCSE Language A
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             The world&apos;s most widely taken international English
@@ -220,7 +214,7 @@ export default async function Cambridge0500HubPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Cambridge 0500 is assessed against two equally weighted objectives.
+          IGCSE Language A is assessed against two equally weighted objectives.
           Each paper draws on both in different proportions, so strong
           candidates must be able to read closely and write accurately across
           multiple forms.
@@ -228,7 +222,7 @@ export default async function Cambridge0500HubPage() {
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              AO1 Reading — 50%
+              Reading skills — 50%
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">
               Understand and respond to texts
@@ -242,7 +236,7 @@ export default async function Cambridge0500HubPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              AO2 Writing — 50%
+              Writing skills — 50%
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">
               Write clearly and effectively
@@ -256,6 +250,11 @@ export default async function Cambridge0500HubPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Footer note ─────────────────────────────────────────────── */}
+      <p className="text-center text-body-xs text-muted-foreground/60">
+        Aligns with Cambridge syllabus 0500
+      </p>
 
       {/* ── Quick links ────────────────────────────────────────────── */}
       <section>

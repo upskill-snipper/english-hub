@@ -2,7 +2,7 @@
 import type { CourseData, CourseModule, CourseQuiz } from './courses';
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// Edexcel IGCSE Literature — Poetry Anthology Set 2  (Pearson 4ET1)
+// Edexcel IGCSE Literature — Poetry Anthology Set 2
 // ═══════════════════════════════════════════════════════════════════════════════
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -264,7 +264,7 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
 <h2>Exam Practice — La Belle Dame sans Merci</h2>
 
 <h3>Typical Exam Questions</h3>
-<p>For the Edexcel IGCSE Literature exam (4ET1), you may be asked to analyse a specific poem in detail or to compare two poems. Typical questions on this poem might include:</p>
+<p>For the Edexcel IGCSE Literature exam, you may be asked to analyse a specific poem in detail or to compare two poems. Typical questions on this poem might include:</p>
 <ul>
   <li>"How does Keats present the theme of love in 'La Belle Dame sans Merci'?"</li>
   <li>"Explore how Keats creates a sense of loss and isolation in this poem."</li>

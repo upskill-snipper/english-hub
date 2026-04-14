@@ -94,7 +94,7 @@ const BOARD_TAGLINE: Record<ExamBoard, string> = {
   edexcel: 'Time & Place, Conflict anthology, AIC, Macbeth',
   ocr: 'Towards a World Unknown, Shakespeare & set texts',
   eduqas: 'Single anthology, unseen poetry, Component 1 & 2',
-  'edexcel-igcse': '4ET1 — Anthology, Shakespeare & modern prose',
+  'edexcel-igcse': 'Poetry, prose, drama & Shakespeare',
   'cambridge-0500': 'First Language English — A*-G grading',
   'cambridge-0990': 'First Language English — 9-1 grading',
 }

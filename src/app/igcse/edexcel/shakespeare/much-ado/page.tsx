@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado",
   },
-  title: "Much Ado About Nothing — Edexcel IGCSE 4ET1 Study Guide",
+  title: "Much Ado About Nothing — Edexcel IGCSE IGCSE Literature Study Guide",
   description:
-    "Much Ado About Nothing study hub for Edexcel IGCSE English Literature 4ET1: plot, characters, themes overview and exam technique.",
+    "Much Ado About Nothing study hub for Edexcel IGCSE English Literature IGCSE Literature: plot, characters, themes overview and exam technique.",
 };
 
 const PLOT = [
@@ -122,7 +122,7 @@ export default async function MuchAdoHubPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Much Ado About Nothing
@@ -263,7 +263,7 @@ export default async function MuchAdoHubPage() {
             How the IGCSE Much Ado question differs from GCSE
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            The Edexcel IGCSE 4ET1 Shakespeare question has two linked
+            The Edexcel IGCSE IGCSE Literature Shakespeare question has two linked
             parts:
           </p>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">

@@ -334,7 +334,7 @@ export default function UnseenPoetryPracticePage() {
             <div className="flex items-center gap-2">
               <h1 className="text-heading-lg font-heading text-foreground">Practice Poems</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
@@ -437,7 +437,7 @@ export default function UnseenPoetryPracticePage() {
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           Head to the essay technique hub for detailed guidance on introductions, PEEL
-          paragraphs, and comparison structures for the 4ET1.
+          paragraphs, and comparison structures.
         </p>
         <Button
           variant="default"

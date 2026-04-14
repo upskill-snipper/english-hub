@@ -22,7 +22,7 @@ import {
 export const metadata: Metadata = {
   title: "An Inspector Calls — Model Essay Bank",
   description:
-    "Five fully-annotated model essays for An Inspector Calls at Grades 5, 7 and 9, with AO breakdowns and examiner commentary.",
+    "Five fully-annotated model essays for An Inspector Calls at Grades 5, 7 and 9, with AO breakdowns and marker commentary.",
 };
 
 /* ─── Types ────────────────────────────────────────────────── */
@@ -347,7 +347,7 @@ const ESSAYS: ModelEssay[] = [
         quote: "responsibility is not acquired but uncovered",
         kind: "technique",
         comment:
-          "Exceptional AO1/AO2 fusion: a conceptual claim is built from close analysis of a phrasal verb. This is what examiners mean by 'methods analysed in a sophisticated way'.",
+          "Exceptional AO1/AO2 fusion: a conceptual claim is built from close analysis of a phrasal verb. This is what markers mean by 'methods analysed in a sophisticated way'.",
       },
       {
         id: "s9-a4",
@@ -425,7 +425,7 @@ export default async function InspectorCallsSamplePage() {
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           Five fully-annotated model responses across two popular exam questions
           at Grades 5, 7 and 9. Each essay includes paragraph-level annotations,
-          AO breakdowns and examiner commentary explaining why it achieves its
+          AO breakdowns and marker commentary explaining why it achieves its
           grade.
         </p>
       </header>
@@ -465,7 +465,7 @@ export default async function InspectorCallsSamplePage() {
               </CardContent>
             </Card>
 
-            {/* Examiner commentary */}
+            {/* Marker commentary */}
             <Card className="mb-4 border-primary/30 bg-primary/5">
               <CardHeader>
                 <div className="flex items-center gap-2">
@@ -473,7 +473,7 @@ export default async function InspectorCallsSamplePage() {
                   <CardDescription>{essay.paper}</CardDescription>
                 </div>
                 <CardTitle className="mt-2 text-base">
-                  Examiner commentary
+                  Marker commentary
                 </CardTitle>
               </CardHeader>
               <CardContent>

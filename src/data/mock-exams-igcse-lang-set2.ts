@@ -1,5 +1,5 @@
 // @ts-nocheck
-// ─── Cambridge IGCSE English Language Mock Exams Set 2 (0500/0990) ───────────
+// ─── Cambridge IGCSE Language A / Language B Mock Exams Set 2 ───────────────
 // Additional Cambridge IGCSE English Language Mock Exams
 // Paper 1: Reading (80 marks, 2 hours) - 3 mock exams
 // Paper 2: Directed Writing and Composition (80 marks, 2 hours) - 3 mock exams

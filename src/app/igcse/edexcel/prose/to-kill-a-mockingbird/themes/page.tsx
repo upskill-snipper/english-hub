@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'To Kill a Mockingbird Themes — Edexcel IGCSE 4ET1',
+  title: 'To Kill a Mockingbird Themes — Edexcel IGCSE Literature',
   description:
     'Themes in To Kill a Mockingbird: racism and justice, moral courage, childhood innocence, empathy, class, gender and the mockingbird motif.',
   alternates: {
@@ -103,7 +103,7 @@ export default async function TkamThemesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
             <Badge variant="secondary">Themes</Badge>
           </div>
@@ -111,7 +111,8 @@ export default async function TkamThemesPage() {
             To Kill a Mockingbird: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Lee’s novel for AO1, AO2 and AO4
+            Analytical routes through Lee’s novel — understanding the
+            text, analysing language and structure, and relating to context
             — racism, courage, innocence, empathy, class, gender and the
             mockingbird motif.
           </p>

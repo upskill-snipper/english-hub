@@ -142,7 +142,7 @@ export const ocrGuide: BoardExamGuide = {
               skill: 'Evaluate critically with textual support',
               time: '18\u201320 minutes',
               advice:
-                'This is the highest-tariff reading question. Take a clear position on the statement but demonstrate nuance \u2014 the best responses agree <em>and</em> qualify. Each paragraph should follow: <strong>point \u2192 evidence \u2192 analysis \u2192 link to statement</strong>. Examiners reward responses that engage with the writer\u2019s methods, not just content.',
+                'This is the highest-tariff reading question. Take a clear position on the statement but demonstrate nuance \u2014 the best responses agree <em>and</em> qualify. Each paragraph should follow: <strong>point \u2192 evidence \u2192 analysis \u2192 link to statement</strong>. Markers reward responses that engage with the writer\u2019s methods, not just content.',
             },
           ],
         },
@@ -371,7 +371,7 @@ export const ocrGuide: BoardExamGuide = {
     },
   ],
 
-  // ─── 6-Level Mark Scheme ─────────────────────────────────────────────────────
+  // ─── 6-Level Marking Guide ─────────────────────────────────────────────────────
   markBands: [
     {
       level: 6,
@@ -435,7 +435,7 @@ export const ocrGuide: BoardExamGuide = {
     },
   ],
 
-  // ─── Examiner Tips ───────────────────────────────────────────────────────────
+  // ─── Marker Tips ───────────────────────────────────────────────────────────
   examinerTips: [
     {
       question: 'Language Component 01: Section A Reading',
@@ -492,12 +492,12 @@ export const ocrGuide: BoardExamGuide = {
       ],
     },
     {
-      question: 'OCR Mark Scheme Annotation System',
+      question: 'OCR Marking Guide Annotation System',
       tips: [
-        'OCR examiners use a tick-based annotation: \u2713 (relevant point), \u2713+ (developed point), \u2713++ (analytical/perceptive point).',
+        'OCR markers use a tick-based annotation: \u2713 (relevant point), \u2713+ (developed point), \u2713++ (analytical/perceptive point).',
         'To earn \u2713++ annotations, go beyond identification and explanation \u2014 explore alternative interpretations, connotations, and the effect on different readers.',
         'A response full of \u2713 ticks but no \u2713++ will cap at Level 3\u20134. The top levels require consistent analytical depth.',
-        'Examiners are trained to reward quality over quantity. Five well-developed \u2713++ points will outscore ten superficial \u2713 points.',
+        'Markers are trained to reward quality over quantity. Five well-developed \u2713++ points will outscore ten superficial \u2713 points.',
       ],
     },
   ],
@@ -526,7 +526,7 @@ export const ocrGuide: BoardExamGuide = {
     '<strong>Linked-unseen format</strong> \u2014 unique to OCR. In Literature, every Part (a) question pairs a studied text extract with an unseen passage on the same theme, requiring integrated comparison.',
     '<strong>Cross-text comparison in both Language components</strong> \u2014 Component 02 demands simultaneous analysis of a literary prose extract and a linked non-fiction/media text, moving fluidly between genres.',
     '<strong>Two writing tasks in Language Component 01</strong> \u2014 a short-form task (~15 marks) and an extended task (~25 marks), making time management absolutely critical.',
-    '<strong>Tick-based mark scheme annotation</strong> \u2014 examiners use \u2713 (relevant), \u2713+ (developed), and \u2713++ (analytical/perceptive) to annotate responses, providing clear differentiation.',
+    '<strong>Tick-based marking guide annotation</strong> \u2014 markers use \u2713 (relevant), \u2713+ (developed), and \u2713++ (analytical/perceptive) to annotate responses, providing clear differentiation.',
     '<strong>Level 6 requires "sustained, interwoven comparison"</strong> \u2014 comparison must run throughout every paragraph, not just appear in the introduction and conclusion.',
     '<strong>AO1 and AO2 are equally weighted as dominant objectives</strong> in Literature \u2014 both carry ~30%, meaning personal response and language analysis are equally important.',
     '<strong>Poetry anthology includes unseen comparison</strong> \u2014 Part (a) of the poetry section compares a studied anthology poem with a thematically linked unseen poem, testing genuine analytical skill rather than memorisation.',

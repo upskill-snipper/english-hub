@@ -524,7 +524,7 @@ export default function JekyllAndHydePage() {
             Victorian Context
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Context is assessed through AO3. The best responses weave context
+            Context is assessed through the context skill. The best responses weave context
             into analysis rather than treating it as a bolt-on paragraph.
           </p>
           <div className="mt-6 space-y-4">
@@ -634,7 +634,7 @@ export default function JekyllAndHydePage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Use Stevenson&apos;s name — &quot;Stevenson presents...&quot; or &quot;Stevenson uses...&quot; shows awareness of authorial intent (AO2).
+                  Use Stevenson&apos;s name — &quot;Stevenson presents...&quot; or &quot;Stevenson uses...&quot; shows awareness of authorial intent (analysis of methods).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -654,11 +654,11 @@ export default function JekyllAndHydePage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Balance extract and whole text — examiners want to see both. Don&apos;t spend all your time on the extract and neglect the wider novella, or vice versa.
+                  Balance extract and whole text — markers want to see both. Don&apos;t spend all your time on the extract and neglect the wider novella, or vice versa.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Call it a &quot;novella&quot; not a &quot;novel&quot; — this shows you understand the form and will impress examiners.
+                  Call it a &quot;novella&quot; not a &quot;novel&quot; — this shows you understand the form and will impress markers.
                 </li>
               </ul>
             </div>

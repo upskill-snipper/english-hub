@@ -18,9 +18,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Paper 1 Practice Passages — Cambridge 0500',
+  title: 'Paper 1 Practice Passages — IGCSE Language A',
   description:
-    'Three IGCSE Cambridge 0500 Paper 1 practice passages using public domain literary extracts from Dickens, Austen and Hardy. Full questions and model answers.',
+    'Three IGCSE Language A Paper 1 practice passages using public domain literary extracts from Dickens, Austen and Hardy. Full questions and model answers. Aligns with Cambridge syllabus 0500.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/cambridge/0500/paper-1/practice',
@@ -115,7 +115,7 @@ export default async function PracticePage() {
       {/* ── Header ─────────────────────────────────────────────────── */}
       <section>
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
-          Cambridge IGCSE 0500
+          IGCSE Language A
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">
           Paper 1 practice passages

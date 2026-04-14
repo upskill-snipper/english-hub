@@ -166,10 +166,10 @@ export default function OCRInspectorCallsPage() {
             <div className="rounded-lg border border-border bg-muted p-4">
               <p className="font-semibold text-foreground">Assessment Objectives</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                <li><strong>AO1:</strong> Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.</li>
-                <li><strong>AO2:</strong> Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</li>
-                <li><strong>AO3:</strong> Show understanding of the relationships between texts and the contexts in which they were written.</li>
-                <li><strong>AO4:</strong> Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
+                <li><strong>Reading and response:</strong> Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.</li>
+                <li><strong>Language, form and structure:</strong> Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</li>
+                <li><strong>Contextual understanding:</strong> Show understanding of the relationships between texts and the contexts in which they were written.</li>
+                <li><strong>Written accuracy:</strong> Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
               </ul>
             </div>
           </div>
@@ -565,7 +565,7 @@ export default function OCRInspectorCallsPage() {
           </h2>
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Understanding context is essential for AO3. Here are the key
+              Understanding context is essential. Here are the key
               contextual areas to know for An Inspector Calls:
             </p>
             <div className="space-y-4">
@@ -672,8 +672,8 @@ export default function OCRInspectorCallsPage() {
                 <p className="font-semibold text-primary">Paragraph 1: Beginning of the play</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character established at the start? Use a
-                  memorised quotation. Analyse language closely (AO2). Link to
-                  context (AO3).
+                  memorised quotation. Analyse language closely. Link to
+                  context.
                 </p>
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
@@ -714,10 +714,10 @@ export default function OCRInspectorCallsPage() {
               <h3 className="font-semibold text-primary">OCR Exam Technique Tips</h3>
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>&bull; <strong>No extract:</strong> You must memorise quotations. Aim to use 4&ndash;6 short quotations in your essay.</li>
-                <li>&bull; <strong>AO1:</strong> Make clear, sustained arguments that directly answer the question throughout.</li>
-                <li>&bull; <strong>AO2:</strong> Analyse specific words, dramatic devices, and structural techniques. Use terminology like dramatic irony, stage directions, the well-made play structure, and the unity of time/place.</li>
-                <li>&bull; <strong>AO3:</strong> Integrate context naturally. Don&rsquo;t bolt on context paragraphs &mdash; weave it into your analysis.</li>
-                <li>&bull; <strong>AO4:</strong> Write clearly and accurately. Use a formal academic register.</li>
+                <li>&bull; <strong>Reading and response:</strong> Make clear, sustained arguments that directly answer the question throughout.</li>
+                <li>&bull; <strong>Language, form and structure:</strong> Analyse specific words, dramatic devices, and structural techniques. Use terminology like dramatic irony, stage directions, the well-made play structure, and the unity of time/place.</li>
+                <li>&bull; <strong>Contextual understanding:</strong> Integrate context naturally. Don&rsquo;t bolt on context paragraphs &mdash; weave it into your analysis.</li>
+                <li>&bull; <strong>Written accuracy:</strong> Write clearly and accurately. Use a formal academic register.</li>
                 <li>&bull; <strong>Time management:</strong> Spend approximately 45 minutes. Plan for 5 minutes before writing.</li>
               </ul>
             </div>

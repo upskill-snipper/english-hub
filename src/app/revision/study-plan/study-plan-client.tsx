@@ -268,7 +268,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
   }
   const FLASHCARDS: PlannedTask = {
     title: 'Flashcard sprint',
-    description: '15 minutes of spaced repetition on quotes and terminology.',
+    description: '15 minutes of smart review on quotes and terminology.',
     href: '/revision/flashcards',
     icon: Layers,
     colour: 'text-amber-400',

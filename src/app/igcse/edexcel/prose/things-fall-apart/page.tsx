@@ -21,9 +21,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Things Fall Apart — Edexcel IGCSE 4ET1 Study Guide',
+  title: 'Things Fall Apart — Edexcel IGCSE Literature Study Guide',
   description:
-    'Chinua Achebe\u2019s Things Fall Apart for Edexcel IGCSE 4ET1: Okonkwo, Umuofia, the arrival of the missionaries, key themes and quotations.',
+    'Chinua Achebe\u2019s Things Fall Apart for Edexcel IGCSE Literature: Okonkwo, Umuofia, the arrival of the missionaries, key themes and quotations.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart',
@@ -210,7 +210,7 @@ export default async function ThingsFallApartHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
             <Badge variant="secondary">Modern prose</Badge>
           </div>

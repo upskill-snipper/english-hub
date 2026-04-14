@@ -23,9 +23,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE 0990 | The English Hub',
+  title: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE Language B | The English Hub',
   description:
-    'Cambridge IGCSE 0990 Paper 2 Directed Writing and Composition: full breakdown, timing, grade boundaries and exam technique.',
+    'Cambridge IGCSE Language B Paper 2 Directed Writing and Composition: full breakdown, timing, grade boundaries and exam technique.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/paper-2' },
 }
 
@@ -82,7 +82,7 @@ export default async function Paper2Page() {
           render={<Link href="/igcse/cambridge/0990" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to 0990 hub
+          Back to IGCSE Language B hub
         </Button>
       </div>
 
@@ -92,7 +92,7 @@ export default async function Paper2Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE Language B
             </Badge>
             <Badge variant="secondary">Paper 2</Badge>
             <Badge variant="secondary">Writing</Badge>
@@ -102,7 +102,7 @@ export default async function Paper2Page() {
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
             Two hours. Two pieces of writing — one directed response and one
-            extended composition. 80 marks, worth 50% of the 0990
+            extended composition. 80 marks, worth 50% of the IGCSE Language B
             qualification.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">

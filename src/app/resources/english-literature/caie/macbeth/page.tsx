@@ -200,7 +200,7 @@ const characters = [
       "'Tomorrow, and tomorrow, and tomorrow' — nihilistic despair",
     ],
     examTip:
-      "Shakespeare presents Macbeth as both villain and tragic hero. For AO4 (personal response), consider whether the audience feels pity or horror — or both — at different points. His 'vaulting ambition' is his hamartia (tragic flaw), fitting the classical tragic pattern.",
+      "Shakespeare presents Macbeth as both villain and tragic hero. For Personal Response, consider whether the audience feels pity or horror — or both — at different points. His 'vaulting ambition' is his hamartia (tragic flaw), fitting the classical tragic pattern.",
   },
   {
     name: "Lady Macbeth",
@@ -214,7 +214,7 @@ const characters = [
       "'Out, damned spot!' — guilt destroys her",
     ],
     examTip:
-      "For AO3, analyse how Shakespeare uses prose in her sleepwalking scene (5.1) to show her mental disintegration — she has lost the control that verse represents. Her offstage death denies the audience closure, which is itself dramatically significant.",
+      "For Interpretation, analyse how Shakespeare uses prose in her sleepwalking scene (5.1) to show her mental disintegration — she has lost the control that verse represents. Her offstage death denies the audience closure, which is itself dramatically significant.",
   },
   {
     name: "Banquo",
@@ -227,7 +227,7 @@ const characters = [
       "His ghost's silent presence at the banquet — guilt made visible",
     ],
     examTip:
-      "Historically, Banquo was the ancestor of King James I, so Shakespeare presents him favourably. This is important context (AO2) — Shakespeare was writing for a patron who claimed descent from Banquo.",
+      "Historically, Banquo was the ancestor of King James I, so Shakespeare presents him favourably. This is important context (Writer's Methods) — Shakespeare was writing for a patron who claimed descent from Banquo.",
   },
   {
     name: "Macduff",
@@ -241,7 +241,7 @@ const characters = [
       "'Turn, hell-hound, turn!' — agent of retribution",
     ],
     examTip:
-      "For AO4, Macduff's line 'I must also feel it as a man' is crucial for the theme of masculinity. It directly challenges Lady Macbeth's earlier equation of manhood with violence and suggests that emotional honesty is true strength.",
+      "For Personal Response, Macduff's line 'I must also feel it as a man' is crucial for the theme of masculinity. It directly challenges Lady Macbeth's earlier equation of manhood with violence and suggests that emotional honesty is true strength.",
   },
   {
     name: "Duncan",
@@ -254,7 +254,7 @@ const characters = [
       "'There's no art to find the mind's construction in the face' — trusting nature",
     ],
     examTip:
-      "For AO2 (context), Duncan embodies the Divine Right of Kings. His murder is not just a political crime but a sin against God, which is why nature itself responds with storms and darkness.",
+      "For Writer's Methods (context), Duncan embodies the Divine Right of Kings. His murder is not just a political crime but a sin against God, which is why nature itself responds with storms and darkness.",
   },
   {
     name: "The Witches (Weird Sisters)",
@@ -268,7 +268,7 @@ const characters = [
       "'None of woman born / Shall harm Macbeth' — equivocation",
     ],
     examTip:
-      "For AO2, James I published Daemonologie (1597) and would have seen the witches as genuinely dangerous. For AO3, note their trochaic tetrameter (stressed-unstressed) versus the rest of the play's iambic pentameter (unstressed-stressed) — the rhythm itself marks them as unnatural.",
+      "For Writer's Methods, James I published Daemonologie (1597) and would have seen the witches as genuinely dangerous. For Interpretation, note their trochaic tetrameter (stressed-unstressed) versus the rest of the play's iambic pentameter (unstressed-stressed) — the rhythm itself marks them as unnatural.",
   },
 ];
 
@@ -623,7 +623,7 @@ const languageAnalysis = [
 
 const assessmentObjectives = [
   {
-    ao: "AO1",
+    ao: "Textual Knowledge",
     title: "Knowledge and Understanding",
     description: "Show detailed knowledge of the text and its content.",
     howToMeet:
@@ -632,7 +632,7 @@ const assessmentObjectives = [
       "Shakespeare presents Macbeth's guilt immediately after Duncan's murder through the image of 'Neptune's ocean' (2.2), suggesting the blood — and therefore the crime — can never be washed away.",
   },
   {
-    ao: "AO2",
+    ao: "Writer's Methods",
     title: "Meanings and Contexts",
     description:
       "Show understanding of how meanings are shaped by contexts (historical, social, cultural).",
@@ -642,7 +642,7 @@ const assessmentObjectives = [
       "A Jacobean audience would have found the regicide particularly horrifying because of the Divine Right of Kings — Duncan's murder is not merely political but an act of cosmic transgression, which Shakespeare signals through the unnatural darkness and storms that follow.",
   },
   {
-    ao: "AO3",
+    ao: "Interpretation",
     title: "Language, Structure, and Form",
     description:
       "Analyse the writer's methods: language techniques, structural choices, and dramatic form.",
@@ -652,7 +652,7 @@ const assessmentObjectives = [
       "Shakespeare's use of trochaic tetrameter for the Witches ('Double, double toil and trouble') disrupts the play's dominant iambic pentameter, rhythmically marking them as outside the natural order. The stressed-unstressed pattern (the reverse of normal verse) creates an incantatory, unsettling effect.",
   },
   {
-    ao: "AO4",
+    ao: "Personal Response",
     title: "Personal Response",
     description:
       "Develop a personal and informed response to the text.",
@@ -707,7 +707,7 @@ export default function MacbethStudyGuide() {
     { id: "language", label: "Language & Structure" },
     { id: "context", label: "Context" },
     { id: "exam", label: "Exam Guidance" },
-    { id: "aos", label: "Assessment Objectives" },
+    { id: "aos", label: "What Markers Look For" },
   ];
 
   return (
@@ -997,7 +997,7 @@ export default function MacbethStudyGuide() {
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
               Detailed analysis of Shakespeare&rsquo;s key techniques in
-              Macbeth. This section directly supports AO3 (language, structure,
+              Macbeth. This section directly supports Interpretation (language, structure,
               and form).
             </p>
             <div className="mt-6 space-y-5">
@@ -1047,7 +1047,7 @@ export default function MacbethStudyGuide() {
               Historical &amp; Literary Context
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Context supports AO2. Always connect context to meaning — do not
+              Context supports Writer's Methods. Always connect context to meaning — do not
               simply list facts. Explain how context shapes the audience&rsquo;s
               response to the play.
             </p>
@@ -1157,7 +1157,7 @@ export default function MacbethStudyGuide() {
                         </span>
                         <span>
                           <strong>Work through the passage sequentially</strong>{" "}
-                          — examiners want to see you engaging with the whole
+                          — markers want to see you engaging with the whole
                           extract, not just cherry-picking one quotation.
                         </span>
                       </li>
@@ -1166,7 +1166,7 @@ export default function MacbethStudyGuide() {
                           3.
                         </span>
                         <span>
-                          <strong>Analyse language closely (AO3).</strong>{" "}
+                          <strong>Analyse language closely (Interpretation).</strong>{" "}
                           Identify specific techniques: metaphor, simile,
                           personification, imperative verbs, rhetorical
                           questions, alliteration, sibilance, caesura,
@@ -1195,7 +1195,7 @@ export default function MacbethStudyGuide() {
                           </strong>{" "}
                           Link to the rest of the play: how does this passage
                           relate to themes, character arcs, or later events?
-                          This shows AO1 (knowledge) but keep it concise —
+                          This shows Textual Knowledge but keep it concise —
                           the passage is the focus.
                         </span>
                       </li>
@@ -1204,7 +1204,7 @@ export default function MacbethStudyGuide() {
                           6.
                         </span>
                         <span>
-                          <strong>Include brief context (AO2)</strong> where
+                          <strong>Include brief context (Writer's Methods)</strong> where
                           relevant — but only if it illuminates the passage.
                           Do not write a history essay.
                         </span>
@@ -1294,8 +1294,8 @@ export default function MacbethStudyGuide() {
                         </span>
                         <span>
                           <strong>
-                            Embed quotations (AO1) and analyse them closely
-                            (AO3).
+                            Embed quotations (Textual Knowledge) and analyse them closely
+                            (Interpretation).
                           </strong>{" "}
                           Short, embedded quotations are more effective than long
                           block quotes. Always explain why the quotation is
@@ -1311,7 +1311,7 @@ export default function MacbethStudyGuide() {
                             Track development across the play.
                           </strong>{" "}
                           Show how characters, themes, or relationships change
-                          from beginning to end. Examiners reward answers that
+                          from beginning to end. Markers reward answers that
                           demonstrate awareness of the whole text.
                         </span>
                       </li>
@@ -1320,7 +1320,7 @@ export default function MacbethStudyGuide() {
                           6.
                         </span>
                         <span>
-                          <strong>Offer personal response (AO4).</strong> Use
+                          <strong>Offer personal response (Personal Response).</strong> Use
                           phrases like &ldquo;arguably&rdquo;, &ldquo;it could
                           be interpreted that&rdquo;, &ldquo;Shakespeare
                           powerfully suggests&rdquo;. Consider alternative
@@ -1489,11 +1489,11 @@ export default function MacbethStudyGuide() {
                         reflecting the Jacobean belief that regicide violated the
                         Divine Right of Kings and therefore offended God Himself{" "}
                         <span className="font-semibold text-primary">
-                          [AO2 — context]
+                          [Writer's Methods — context]
                         </span>
                         . The rhetorical question form{" "}
                         <span className="font-semibold text-primary">
-                          [AO3 — form]
+                          [Interpretation — form]
                         </span>{" "}
                         reveals that this is not a genuine inquiry but a
                         despairing acknowledgement that no amount of cleansing
@@ -1502,20 +1502,20 @@ export default function MacbethStudyGuide() {
                         water clears us of this deed&rdquo; (2.2), where the
                         understatement &ldquo;a little water&rdquo;{" "}
                         <span className="font-semibold text-primary">
-                          [AO3 — language]
+                          [Interpretation — language]
                         </span>{" "}
                         reveals her pragmatic refusal to engage with guilt.
                         However, Shakespeare arguably uses this contrast to
                         foreshadow Lady Macbeth&rsquo;s later collapse{" "}
                         <span className="font-semibold text-primary">
-                          [AO4 — personal response]
+                          [Personal Response — personal response]
                         </span>
                         : by Act 5, she is obsessively washing her hands and
                         crying &ldquo;Out, damned spot!&rdquo; (5.1), the very
                         blood she once dismissed now consuming her. The dramatic
                         irony is devastating{" "}
                         <span className="font-semibold text-primary">
-                          [AO3 — structure]
+                          [Interpretation — structure]
                         </span>
                         : the audience remembers her earlier confidence, making
                         her disintegration all the more powerful. Shakespeare
@@ -1524,7 +1524,7 @@ export default function MacbethStudyGuide() {
                         indefinitely — it will surface, whether as hallucination,
                         madness, or despair{" "}
                         <span className="font-semibold text-primary">
-                          [AO1 — knowledge and understanding]
+                          [Textual Knowledge — knowledge and understanding]
                         </span>
                         .
                       </p>
@@ -1536,21 +1536,21 @@ export default function MacbethStudyGuide() {
                     </h4>
                     <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                       <li>
-                        <strong>AO1:</strong> Accurate quotations from multiple
+                        <strong>Textual Knowledge:</strong> Accurate quotations from multiple
                         points in the play, embedded fluently within sentences
                       </li>
                       <li>
-                        <strong>AO2:</strong> Context (Divine Right of Kings)
+                        <strong>Writer's Methods:</strong> Context (Divine Right of Kings)
                         integrated naturally and connected to meaning, not
                         bolted on
                       </li>
                       <li>
-                        <strong>AO3:</strong> Multiple techniques identified
+                        <strong>Interpretation:</strong> Multiple techniques identified
                         (hyperbole, classical allusion, rhetorical question,
                         understatement, dramatic irony) with effects explained
                       </li>
                       <li>
-                        <strong>AO4:</strong> Personal response through
+                        <strong>Personal Response:</strong> Personal response through
                         evaluative language (&ldquo;arguably&rdquo;,
                         &ldquo;powerfully&rdquo;, &ldquo;devastating&rdquo;) and
                         interpretive engagement (&ldquo;Shakespeare thus
@@ -1573,10 +1573,10 @@ export default function MacbethStudyGuide() {
               id="aos-heading"
               className="text-2xl font-bold text-foreground"
             >
-              Assessment Objectives (AOs)
+              Assessment Objectives
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Cambridge IGCSE English Literature assesses four AOs. Understanding
+              Cambridge IGCSE English Literature assesses four skills. Understanding
               what each one requires — and how to demonstrate it — is essential
               for top-band responses.
             </p>

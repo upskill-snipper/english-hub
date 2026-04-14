@@ -1,9 +1,10 @@
 # Data Breach Register
 
-**The English Hub Ltd**
+**Upskill Energy Limited t/a The English Hub**
+**Company No.** 16254656 | **ICO Reg.** ZC016690
 **Article 33(5) UK GDPR**
-**Owner:** DPO
-**Last reviewed:** `[REPLACE WITH DATE]`
+**Owner:** DPO (dpo@theenglishhub.app)
+**Last reviewed:** 2026-04-12
 
 > This register records all **personal data breaches** — defined in Article 4(12) UK GDPR as *"a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data transmitted, stored or otherwise processed."*
 >
@@ -13,7 +14,7 @@
 
 ## How to use this register
 
-1. **Detect and report internally** — any staff member who suspects a breach must report it to **security@englishhub.`[tld]`** immediately.
+1. **Detect and report internally** — any staff member who suspects a breach must report it to **security@theenglishhub.app** immediately.
 2. **Triage (within 4 hours)** — the DPO or incident commander assesses severity and whether personal data is affected.
 3. **Contain** — take immediate steps to stop data leaving or being modified further.
 4. **Assess (within 24 hours)** — confirm scope, affected data subjects, categories, and likely impact.
@@ -137,7 +138,7 @@ Personal data affected?
 
 | Year | Total events | Logged-only | ICO notified | Subjects notified | Avg containment time |
 |---|---|---|---|---|---|
-| `[REPLACE YEAR]` | 0 | 0 | 0 | 0 | — |
+| 2026 | 0 | 0 | 0 | 0 | — |
 
 ---
 
@@ -145,10 +146,10 @@ Personal data affected?
 
 | Role | Name | Contact |
 |---|---|---|
-| DPO | `[REPLACE]` | dpo@englishhub.`[tld]` |
-| Incident commander (primary) | `[REPLACE]` | security@englishhub.`[tld]` |
-| Incident commander (secondary) | `[REPLACE]` | — |
-| External legal | `[REPLACE]` | — |
-| Cyber insurer | `[REPLACE]` | — |
+| DPO | `[REPLACE WITH name]` | dpo@theenglishhub.app |
+| Incident commander (primary) | `[REPLACE WITH name]` | security@theenglishhub.app |
+| Incident commander (secondary) | `[REPLACE WITH name]` | — |
+| External legal | `[REPLACE WITH firm]` | — |
+| Cyber insurer | `[REPLACE WITH provider]` | — |
 | ICO | — | 0303 123 1113 |
 | National Cyber Security Centre | — | ncsc.gov.uk |

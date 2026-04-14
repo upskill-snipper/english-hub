@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/jekyll-and-hyde' },
   title: "Jekyll and Hyde Study Guide - AQA English Literature GCSE",
   description:
-    "Complete Jekyll and Hyde revision guide for AQA GCSE English Literature Paper 1 Section B. Key themes, 15+ quotations with analysis, Victorian context (AO3), character analysis, and sample essay plans.",
+    "Complete Jekyll and Hyde revision guide for AQA GCSE English Literature Paper 1 Section B. Key themes, 15+ quotations with analysis, Victorian context, character analysis, and sample essay plans.",
 };
 
 /* ─── Data ──────────────────────────────────────────────────── */
@@ -19,21 +19,21 @@ const examInfo = {
     "You will NOT be given an extract. You must answer from memory. The question will ask you to write about a theme, character, or idea across the whole novella.",
   assessmentObjectives: [
     {
-      code: "AO1",
+      code: "Understanding the text",
       description:
         "Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.",
       marks: "12 marks",
       tip: "Embed short quotations into your sentences and offer a personal interpretation. Use phrases like 'Stevenson presents...' or 'The reader is positioned to...'",
     },
     {
-      code: "AO2",
+      code: "Analysing language and structure",
       description:
         "Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.",
       marks: "12 marks",
       tip: "Zoom in on individual words and techniques. Discuss WHY Stevenson chose specific language. Consider the novella form, narrative structure (multiple narrators, delayed revelation), and the effect on the reader.",
     },
     {
-      code: "AO3",
+      code: "Relating to context",
       description:
         "Show understanding of the relationships between texts and the contexts in which they were written.",
       marks: "6 marks",
@@ -578,7 +578,7 @@ export default function JekyllAndHydePage() {
 
           <div className="mt-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300 mb-3">
-              Assessment Objectives
+              Key Skills (what markers look for)
             </p>
             <div className="grid gap-3 sm:grid-cols-3">
               {examInfo.assessmentObjectives.map((ao) => (
@@ -814,7 +814,7 @@ export default function JekyllAndHydePage() {
       {/* ── Context ──────────────────────────────────────────────── */}
       <section id="context" className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         <h2 className="text-2xl font-bold text-foreground">
-          Victorian Context (AO3)
+          Victorian Context
         </h2>
         <p className="mt-2 text-muted-foreground">
           Context is worth 6 marks. Integrate it into your analysis rather than

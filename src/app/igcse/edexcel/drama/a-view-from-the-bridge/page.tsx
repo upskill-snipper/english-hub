@@ -21,9 +21,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'A View from the Bridge — Edexcel IGCSE 4ET1 Study Guide',
+  title: 'A View from the Bridge — Edexcel IGCSE IGCSE Literature Study Guide',
   description:
-    'Arthur Miller\u2019s A View from the Bridge for Edexcel IGCSE 4ET1: plot, characters, themes, Red Hook context and key quotations.',
+    'Arthur Miller\u2019s A View from the Bridge for Edexcel IGCSE IGCSE Literature: plot, characters, themes, Red Hook context and key quotations.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge',
@@ -195,7 +195,7 @@ export default async function AViewHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE IGCSE Literature
             </Badge>
             <Badge variant="secondary">Modern drama</Badge>
           </div>

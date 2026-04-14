@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare",
   },
-  title: "Shakespeare — Edexcel IGCSE English Literature (4ET1)",
+  title: "Shakespeare — Edexcel IGCSE English Literature",
   description:
-    "Study guides for the three Edexcel IGCSE 4ET1 Shakespeare set texts: Macbeth, Romeo and Juliet, and Much Ado About Nothing. Plot, characters, themes, quotes and context.",
+    "Study guides for the three Edexcel IGCSE Literature Shakespeare set texts: Macbeth, Romeo and Juliet, and Much Ado About Nothing. Plot, characters, themes, quotes and context.",
 };
 
 const PLAYS = [
@@ -76,7 +76,7 @@ export default async function ShakespeareHubPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <Drama className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Shakespeare Study Guides
@@ -99,11 +99,10 @@ export default async function ShakespeareHubPage() {
             </span>
           </div>
           <h2 className="mt-2 text-2xl font-bold text-foreground">
-            Paper 1: Poetry and Modern Prose and Shakespeare
+            The Shakespeare question
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            In the Edexcel IGCSE 4ET1 exam, Shakespeare appears on{" "}
-            <strong>Paper 1</strong>. You will answer{" "}
+            In the Edexcel IGCSE Literature exam, you will answer{" "}
             <strong>two linked questions</strong> on your chosen play: a part
             (a) question focused on a printed extract, and a part (b) question
             that asks you to explore the same idea, theme or character across
@@ -122,7 +121,7 @@ export default async function ShakespeareHubPage() {
             </li>
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-              Assessment objectives: AO1, AO2 and AO4 (context)
+              Assessed on: understanding the text, analysing language and structure, and relating to context
             </li>
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -189,7 +188,7 @@ export default async function ShakespeareHubPage() {
             Studying IGCSE, not GCSE? Here&rsquo;s what changes
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            Edexcel IGCSE 4ET1 questions look a little different from GCSE
+            Edexcel IGCSE Literature questions look a little different from GCSE
             ones. Instead of a single essay with an extract, you answer{" "}
             <strong>two linked questions</strong> on the same play: a close
             extract analysis <em>and</em> a whole-play response. That means

@@ -24,9 +24,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE 4ET1 Exam Technique — The English Hub',
+  title: 'Edexcel IGCSE Literature Exam Technique — The English Hub',
   description:
-    'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature 4ET1. Comparison, extract-based and essay-style question strategies.',
+    'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature. Comparison, extract-based and essay-style question strategies.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/exam-technique',
   },
@@ -43,10 +43,10 @@ const questionTypes = [
       'Plan a thesis that captures similarity and difference in one sentence.',
       'Structure four integrated paragraphs, not two separate mini-essays.',
       'Use connective phrases: "whereas", "similarly", "by contrast", "in the same way".',
-      'Compare writers\u2019 methods (AO2) and effects, not just subject matter.',
-      'Bring AO4 to the front: almost every paragraph should reference both poems.',
+      'Compare writers\u2019 methods (language and structure) and effects, not just subject matter.',
+      'Keep comparison front and centre: almost every paragraph should reference both poems.',
     ],
-    ao: ['AO1', 'AO2', 'AO4'],
+    ao: ['Understanding the text', 'Analysing language and structure', 'Comparing texts'],
   },
   {
     icon: ScanText,
@@ -61,7 +61,7 @@ const questionTypes = [
       'Track dramatic methods: stage directions, dialogue, silence, lighting.',
       'Balance extract and wider play — roughly 60% extract, 40% elsewhere.',
     ],
-    ao: ['AO1', 'AO2'],
+    ao: ['Understanding the text', 'Analysing language and structure'],
   },
   {
     icon: PencilRuler,
@@ -73,10 +73,10 @@ const questionTypes = [
       'Memorise 20–30 short, flexible quotations per text — prioritise range over length.',
       'Open with a clear, argumentative thesis. Avoid plot summary.',
       'Use a five-paragraph PEEAL (Point, Evidence, Explain, Analyse, Link) structure.',
-      'Weave AO3 context into analysis, not a separate paragraph.',
+      'Weave context into analysis, not a separate paragraph.',
       'Keep an eye on the time — aim to finish with 3–5 minutes to review.',
     ],
-    ao: ['AO1', 'AO2', 'AO3'],
+    ao: ['Understanding the text', 'Analysing language and structure', 'Relating to context'],
   },
   {
     icon: Quote,
@@ -91,7 +91,7 @@ const questionTypes = [
       'Use subject terminology precisely — enjambment, caesura, sibilance.',
       'Write analytically, not descriptively: always link method to effect.',
     ],
-    ao: ['AO1', 'AO2'],
+    ao: ['Understanding the text', 'Analysing language and structure'],
   },
 ]
 
@@ -99,7 +99,7 @@ const pitfalls = [
   {
     title: 'Feature spotting without effect',
     detail:
-      'Naming "alliteration" without explaining how it creates meaning scores AO2 marks near the floor of the band.',
+      'Naming "alliteration" without explaining how it creates meaning scores very few language-and-structure marks.',
   },
   {
     title: 'Over-quoting',
@@ -114,12 +114,12 @@ const pitfalls = [
   {
     title: 'Context as biography',
     detail:
-      'AO3 wants contextual analysis, not author life-story. Link historical or social ideas directly to the writer\u2019s choices.',
+      'The context strand wants contextual analysis, not author life-story. Link historical or social ideas directly to the writer\u2019s choices.',
   },
   {
     title: 'Uneven comparison',
     detail:
-      'In Paper 1 Section B, spending 75% of your answer on one poem caps your AO4 mark. Alternate texts paragraph by paragraph.',
+      'In Paper 1 Section B, spending 75% of your answer on one poem caps your comparison mark. Alternate texts paragraph by paragraph.',
   },
   {
     title: 'Running out of time',
@@ -132,9 +132,9 @@ const checklist = [
   'Thesis statement in the opening paragraph',
   'Every paragraph tracks back to the question wording',
   'Short, embedded, well-chosen quotations (3–5 words)',
-  'Writer\u2019s methods named and effects explained (AO2)',
-  'Relevant context woven into analysis (AO3, where assessed)',
-  'Comparison integrated paragraph by paragraph (AO4, anthology only)',
+  'Writer\u2019s methods named and effects explained (language and structure)',
+  'Relevant context woven into analysis (where assessed)',
+  'Comparison integrated paragraph by paragraph (anthology only)',
   'Clear conclusion that returns to the thesis',
   'Time for a final read-through and correction',
 ]
@@ -153,7 +153,7 @@ export default async function EdexcelExamTechniquePage() {
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel 4ET1
+          Back to Edexcel IGCSE
         </Button>
       </div>
 
@@ -169,18 +169,17 @@ export default async function EdexcelExamTechniquePage() {
               Exam technique
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            4ET1 Exam Technique
+            IGCSE Literature Exam Technique
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Specific strategies for the three question types that show up in
-            Edexcel IGCSE English Literature 4ET1 — comparison, extract-based
-            and essay-style questions. Each approach is mapped to the
-            assessment objectives so you know exactly what examiners are
-            rewarding.
+            Edexcel IGCSE English Literature — comparison, extract-based
+            and essay-style questions. Each approach is mapped to what
+            examiners are actually rewarding.
           </p>
         </div>
       </section>

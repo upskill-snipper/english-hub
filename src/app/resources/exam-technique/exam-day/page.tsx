@@ -241,7 +241,7 @@ export default function ExamDayPage() {
         <div className="mt-8 rounded-xl border border-primary/20 bg-primary/10 p-6">
           <p className="text-sm text-muted-foreground leading-relaxed">
             <strong>Pro tip:</strong> Cross out your plan with a single line
-            when you are done. The examiner will not mark it, but if you run out
+            when you are done. The marker will not mark it, but if you run out
             of time, they can see what you intended to write -- and it shows
             deliberate planning.
           </p>
@@ -355,7 +355,7 @@ export default function ExamDayPage() {
             {
               title: "Tidy up your handwriting",
               detail:
-                "If any words are illegible, rewrite them clearly above. Examiners cannot award marks for words they cannot read.",
+                "If any words are illegible, rewrite them clearly above. Markers cannot award marks for words they cannot read.",
             },
           ].map((item, i) => (
             <div

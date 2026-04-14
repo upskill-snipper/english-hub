@@ -19,8 +19,8 @@ const ALL_PAPER_STATS: PaperStat[] = [
   { label: 'OCR Papers', value: '15+', key: 'ocr' },
   { label: 'WJEC Eduqas Papers', value: '22+', key: 'eduqas' },
   { label: 'Edexcel IGCSE Papers', value: '14+', key: 'edexcel-igcse' },
-  { label: 'Cambridge 0500 Papers', value: '12+', key: 'cambridge-0500' },
-  { label: 'Cambridge 0990 Papers', value: '10+', key: 'cambridge-0990' },
+  { label: 'Cambridge First Language Papers', value: '12+', key: 'cambridge-0500' },
+  { label: 'Cambridge First Language (9-1) Papers', value: '10+', key: 'cambridge-0990' },
 ]
 
 function getStatsForBoard(board: ExamBoard | null): PaperStat[] {
@@ -95,8 +95,8 @@ export default function MockExamsSection({ board }: { board?: ExamBoard | null }
             <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">AI Essay Feedback</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               {config
-                ? `Submit your essay and get instant, expert-level feedback. Our AI examiner analyses your work against real ${config.shortName} mark schemes.`
-                : 'Submit your essay and get instant, expert-level feedback. Our AI examiner analyses your work against real GCSE mark schemes.'}
+                ? `Submit your essay and get instant, expert-level feedback. Our AI analyses your work against real ${config.shortName} mark schemes and shows you exactly how to improve.`
+                : 'Submit your essay and get instant, expert-level feedback. Our AI analyses your work against real GCSE mark schemes and shows you exactly how to improve.'}
             </p>
             <div className="space-y-3 mb-6">
               {[

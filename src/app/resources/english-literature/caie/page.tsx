@@ -216,7 +216,7 @@ const resourceGroups: ResourceGroup[] = [
         title: "Unseen Poetry",
         href: "/resources/english-literature/caie/unseen-poetry",
         description:
-          "Step-by-step techniques for unseen poetry analysis, with worked examples, annotated responses, and examiner tips.",
+          "Step-by-step techniques for unseen poetry analysis, with worked examples, annotated responses, and marker tips.",
         icon: poetryIcon,
       },
     ],
@@ -230,7 +230,7 @@ const resourceGroups: ResourceGroup[] = [
         title: "Exam Technique",
         href: "/resources/english-literature/caie/exam-technique",
         description:
-          "Time management, essay structure, quoting strategies, and examiner-approved approaches for Papers 1 and 2.",
+          "Time management, essay structure, quoting strategies, and marker-approved approaches for Papers 1 and 2.",
         icon: examIcon,
       },
       {
@@ -305,21 +305,21 @@ export default function CaieEnglishLiteratureHub() {
           <h3 className="font-semibold text-foreground">Assessment Objectives</h3>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>
-              <strong className="text-foreground">AO1</strong> &mdash; Show detailed knowledge
+              <strong className="text-foreground">Textual Knowledge</strong> &mdash; Show detailed knowledge
               of the content of literary texts, supported by reference to the text.
             </li>
             <li>
-              <strong className="text-foreground">AO2</strong> &mdash; Understand the meanings
+              <strong className="text-foreground">Interpretation and Ideas</strong> &mdash; Understand the meanings
               of literary texts and their contexts, and explore texts beyond surface meanings to
               show deeper awareness of ideas and attitudes.
             </li>
             <li>
-              <strong className="text-foreground">AO3</strong> &mdash; Recognise and appreciate
+              <strong className="text-foreground">Analysis of Writer&rsquo;s Methods</strong> &mdash; Recognise and appreciate
               ways in which writers use language, structure, and form to create and shape meanings
               and effects.
             </li>
             <li>
-              <strong className="text-foreground">AO4</strong> &mdash; Communicate a sensitive
+              <strong className="text-foreground">Personal Response</strong> &mdash; Communicate a sensitive
               and informed personal response to literary texts.
             </li>
           </ul>
@@ -380,7 +380,7 @@ export default function CaieEnglishLiteratureHub() {
               label: "Quoting",
             },
             {
-              tip: "Cambridge examiners reward personal response. Use phrases such as \"I find it striking that...\" or \"This suggests to me...\" to show engagement.",
+              tip: "Cambridge markers reward personal response. Use phrases such as \"I find it striking that...\" or \"This suggests to me...\" to show engagement.",
               label: "Personal Response",
             },
             {

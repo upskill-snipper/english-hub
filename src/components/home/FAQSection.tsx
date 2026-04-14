@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: 'What exam boards do you cover?',
-    a: 'We cover AQA GCSE, Edexcel GCSE, Edexcel International GCSE (IGCSE), OCR, and WJEC/Eduqas. Each course is mapped to the exact specification so you only study what you need. We also cover KS3 for Years 7–9.',
+    a: 'We cover AQA GCSE, Edexcel GCSE, Edexcel International GCSE (IGCSE), OCR, and WJEC/Eduqas. Each course is mapped to exactly what your exam board requires so you only study what you need. We also cover KS3 for Years 7-9.',
   },
   {
     q: 'How does the AI essay feedback work?',
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: 'How is this different from YouTube?',
-    a: 'YouTube offers scattered videos with no structure, no feedback, and no progress tracking. The English Hub provides sequenced lessons written by examiners, exam-style practice with model answers, AI feedback, GCSE 1–9 grade tracking, and certificates.',
+    a: 'YouTube offers scattered videos with no structure, no feedback, and no progress tracking. The English Hub provides sequenced lessons written by experienced English teachers, exam-style practice with model answers, AI feedback, GCSE 1-9 grade tracking, and certificates.',
   },
   {
     q: 'Can I cancel my subscription?',

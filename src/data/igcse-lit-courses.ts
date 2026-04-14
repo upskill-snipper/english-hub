@@ -2,7 +2,7 @@
 import type { CourseData, CourseModule, CourseQuiz } from './courses';
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// IGCSE Literature — Drama & Prose  (Edexcel 4ET1)
+// IGCSE Literature — Drama & Prose  (Edexcel IGCSE Literature)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const dramaProseModules: CourseModule[] = [
@@ -16,7 +16,7 @@ const dramaProseModules: CourseModule[] = [
     content: `
 <h2>Approaching Set Texts for IGCSE Literature</h2>
 
-<p>The Edexcel International GCSE English Literature specification (4ET1) requires you to study <strong>set texts</strong> — novels, plays, and poetry that have been selected by the exam board. Your success depends not just on knowing what happens in these texts, but on developing a <strong>critical, analytical relationship</strong> with them. This module establishes the foundational skills you will use throughout the course.</p>
+<p>The Edexcel IGCSE Literature specification requires you to study <strong>set texts</strong> — novels, plays, and poetry that have been selected by the exam board. Your success depends not just on knowing what happens in these texts, but on developing a <strong>critical, analytical relationship</strong> with them. This module establishes the foundational skills you will use throughout the course.</p>
 
 <div class="key-term"><strong>Key Term: Set Text</strong> — A literary work prescribed by the exam board for detailed study. You must demonstrate close knowledge of the text in your exam responses, including specific references and quotations.</div>
 
@@ -1971,7 +1971,7 @@ const dramaProseAssessment: CourseQuiz[] = [
 
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// IGCSE Literature — Poetry & Unseen  (Edexcel 4ET1)
+// IGCSE Literature — Poetry & Unseen  (Edexcel IGCSE Literature)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const poetryModules: CourseModule[] = [
@@ -3444,7 +3444,7 @@ const poetryAssessment: CourseQuiz[] = [
 const igcseLitDramaProse: CourseData = {
   id: 'igcse-lit-drama-prose',
   title: 'IGCSE Literature — Drama & Prose',
-  subtitle: 'International GCSE Literature — Drama & Prose (4ET1)',
+  subtitle: 'International GCSE Literature — Drama & Prose',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -3461,7 +3461,7 @@ const igcseLitDramaProse: CourseData = {
 const igcseLitPoetry: CourseData = {
   id: 'igcse-lit-poetry',
   title: 'IGCSE Literature — Poetry & Unseen',
-  subtitle: 'International GCSE Literature — Poetry & Unseen (4ET1)',
+  subtitle: 'International GCSE Literature — Poetry & Unseen',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',

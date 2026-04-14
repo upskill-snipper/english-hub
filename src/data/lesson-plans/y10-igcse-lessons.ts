@@ -144,7 +144,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'Use the CIE specimen papers and mark schemes available on the Cambridge website — ensure you are using the correct syllabus code (0500 or 0990).',
+      'Use the CIE specimen papers and mark schemes available on the Cambridge website — ensure you are using the correct syllabus (IGCSE Language A or Language B).',
       'This lesson establishes exam literacy that underpins all subsequent Paper 1 lessons. Refer back to the overview grid regularly.',
       'Consider creating a classroom display of the Paper 1 structure that students can reference throughout the year.',
       'Differentiation data from the reflection cards is valuable for grouping students in future lessons.',
@@ -761,7 +761,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       'This is the first full practice paper — manage expectations. Many students will find the timing challenging, and that is the point. Use it as a diagnostic.',
       'Silence during the timed sections is essential to simulate exam conditions. Consider rearranging seating.',
       'Collect the target-setting pro formas and use them to create personalised revision checklists for each student.',
-      'If possible, use a past paper from the correct CIE syllabus (0500/0990) to maximise relevance.',
+      'If possible, use a past paper from the correct CIE syllabus (IGCSE Language A / Language B) to maximise relevance.',
       'Consider peer assessment in a follow-up lesson for a second perspective on the writing responses.',
     ],
     targetedSkills: [

@@ -187,7 +187,7 @@ export default async function PoetryRevisionPage({
       <>
       <Breadcrumb items={breadcrumbItems} />
       <PoetryShell
-        boardLabel={board === 'cambridge-0500' ? 'Cambridge 0500' : 'Cambridge 0990'}
+        boardLabel={board === 'cambridge-0500' ? 'Cambridge IGCSE' : 'Cambridge IGCSE (9-1)'}
         title="No poetry anthology for your board"
         description="Cambridge IGCSE First Language English doesn't include a poetry anthology. Focus on Paper 1 reading skills instead — that's where your time pays off."
         wrongBoard={wrongBoard}

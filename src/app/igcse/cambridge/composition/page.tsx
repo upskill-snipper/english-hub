@@ -32,7 +32,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 export const metadata: Metadata = {
   title: 'Cambridge IGCSE Composition — The English Hub',
   description:
-    'Master Cambridge IGCSE 0500/0990 Paper 2 Section B composition. Descriptive and narrative writing techniques, Grade 9 model answers, practice prompts and mark scheme breakdown.',
+    'Master Cambridge IGCSE Language Paper 2 Section B composition. Descriptive and narrative writing techniques, Grade 9 model answers, practice prompts and mark scheme breakdown.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/composition',
   },
@@ -168,8 +168,7 @@ export default async function CompositionHubPage() {
             Composition
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Cambridge IGCSE <strong className="text-foreground">0500</strong>{' '}
-            and <strong className="text-foreground">0990</strong> Paper 2
+            Cambridge IGCSE Language Paper 2
             Section B asks you to write a descriptive or narrative composition
             of <strong className="text-foreground">350–450 words</strong>. It
             is worth <strong className="text-foreground">40 marks</strong> —

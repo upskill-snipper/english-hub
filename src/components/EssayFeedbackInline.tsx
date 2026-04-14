@@ -436,7 +436,7 @@ function InlineFeedbackResults({
       <div className="space-y-2">
         <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
           <BarChart3 className="h-3.5 w-3.5 text-primary" />
-          Mark Scheme Breakdown
+          Marking Guide Breakdown
         </div>
         <div className="space-y-2.5">
           {feedback.aoScores.map((ao) => {

@@ -7,9 +7,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Composition Mark Scheme — Cambridge IGCSE 0500 / 0990',
+  title: 'Composition Mark Scheme — Cambridge IGCSE Language',
   description:
-    'Cambridge IGCSE 0500 / 0990 Paper 2 composition mark scheme explained. Content and structure (16), style and accuracy (24), with band descriptors.',
+    'Cambridge IGCSE Language Paper 2 composition mark scheme explained. Content and structure (16), style and accuracy (24), with band descriptors.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/cambridge/composition/mark-scheme',
@@ -169,14 +169,14 @@ export default async function MarkSchemePage() {
               <Sparkles className="mr-1 size-3" />
               Cambridge IGCSE
             </Badge>
-            <Badge variant="secondary">0500 / 0990</Badge>
+            <Badge variant="secondary">IGCSE Language</Badge>
             <Badge variant="secondary">Paper 2 Section B</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Composition mark scheme
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Cambridge IGCSE 0500 / 0990 Paper 2 Section B is marked out of
+            Cambridge IGCSE Language Paper 2 Section B is marked out of
             40, in two parts:{' '}
             <strong className="text-foreground">16 for content and
             structure</strong> and{' '}
@@ -371,7 +371,7 @@ export default async function MarkSchemePage() {
         <p>
           Band descriptors are paraphrased for clarity and are not the
           official Cambridge mark scheme wording. Always refer to the
-          current Cambridge 0500 / 0990 specification and published mark
+          current Cambridge IGCSE Language specification and published mark
           schemes for authoritative criteria.
         </p>
       </section>

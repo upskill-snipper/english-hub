@@ -34,7 +34,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>Orwell was a committed <strong>democratic socialist</strong>. He believed passionately in equality and workers' rights, but he was equally opposed to <strong>totalitarianism</strong> — the concentration of absolute power in a single ruler or party. His experience fighting in the <strong>Spanish Civil War</strong> (1936–1937) was decisive. He went to Spain to fight against Franco's fascists, but witnessed the communist faction — backed by Stalin's Soviet Union — betray and suppress other left-wing groups. This personal betrayal fuelled his lifelong distrust of Soviet-style communism.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Orwell was <em>not</em> opposed to socialism itself — he was opposed to the corruption and authoritarianism that hijacked socialist movements. Making this distinction shows the examiner that you understand the nuance of AO3 context. Orwell's target in <em>Animal Farm</em> is not the ideals of the revolution but their <strong>betrayal</strong> by those in power.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Orwell was <em>not</em> opposed to socialism itself — he was opposed to the corruption and authoritarianism that hijacked socialist movements. Making this distinction shows the marker that you understand the nuance of AO3 context. Orwell's target in <em>Animal Farm</em> is not the ideals of the revolution but their <strong>betrayal</strong> by those in power.</div>
 
 <h3>The Russian Revolution — A Brief Overview</h3>
 
@@ -67,7 +67,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>Orwell struggled to find a publisher for <em>Animal Farm</em>. During World War II, the Soviet Union was Britain's ally against Nazi Germany, and publishers were reluctant to print a book that openly attacked Stalin. The manuscript was rejected by several houses — including one where an official at the Ministry of Information advised against it. It was finally published by <strong>Secker &amp; Warburg</strong> in August 1945, just as the war ended. It became an immediate bestseller and has never been out of print.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The difficulty Orwell faced in publishing <em>Animal Farm</em> is itself an example of political censorship — one of the novella's central concerns. Mentioning this in an exam response demonstrates sophisticated contextual awareness (AO3).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The difficulty Orwell faced in publishing <em>Animal Farm</em> is itself an example of political censorship — one of the novella's central concerns. Mentioning this in an exam response demonstrates sophisticated contextual awareness (AO3).</div>
 
 <h3>Orwell's Writing Style</h3>
 
@@ -92,7 +92,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>The novella's structure is also <strong>cyclical</strong>. It begins with animals oppressed by a human master and ends with animals oppressed by pigs who have become human. The farm's name changes from Manor Farm to Animal Farm and back to Manor Farm. This circular pattern reinforces Orwell's central argument: without democratic safeguards, revolutions do not progress — they merely rotate the cast of oppressors.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If a question asks about "structure," the cyclical pattern is your strongest point. You can argue that Orwell deliberately mirrors the opening and closing of the novella to show that the revolution achieves <em>nothing</em> — the animals end where they began, under a different name but the same system of exploitation.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If a question asks about "structure," the cyclical pattern is your strongest point. You can argue that Orwell deliberately mirrors the opening and closing of the novella to show that the revolution achieves <em>nothing</em> — the animals end where they began, under a different name but the same system of exploitation.</div>
 
 <p>Although <em>Animal Farm</em> was written about specific historical events, its themes are universal. Wherever power is concentrated, language is manipulated, and ideals are betrayed, Orwell's warnings remain relevant. The novella asks readers to be vigilant — to question propaganda, to hold leaders accountable, and to recognise that revolutions can be hijacked by the very people who claim to lead them.</p>
 `,
@@ -196,7 +196,7 @@ export const animalFarmCourse: CourseData = {
   <li><strong>A unifying enemy:</strong> By identifying <strong>Man</strong> as the universal enemy, Old Major provides the animals with a simple, powerful narrative: all problems come from humans; remove humans and paradise follows.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing Old Major's speech, focus on <em>how</em> Orwell constructs the rhetoric, not just what Old Major says. Identify specific persuasive techniques (rhetorical questions, imperatives, repetition, inclusive pronouns) and explain their effect on the listening animals. This targets AO2 directly.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When analysing Old Major's speech, focus on <em>how</em> Orwell constructs the rhetoric, not just what Old Major says. Identify specific persuasive techniques (rhetorical questions, imperatives, repetition, inclusive pronouns) and explain their effect on the listening animals. This targets AO2 directly.</div>
 
 <p>Old Major then teaches the animals a song called <strong>"Beasts of England"</strong>, which becomes their revolutionary anthem. The song envisions a utopian future: "Rings shall vanish from our noses" and "tyrant Man shall be o'erthrown." It functions as propaganda — a simple, memorable, emotionally stirring piece that unites the animals around a shared vision. The parallels with <em>The Internationale</em>, the anthem of international socialism, are clear.</p>
 
@@ -244,7 +244,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>Even in Chapter 2, Orwell plants subtle signs of the corruption to come. The pigs take the milk and apples for themselves — Squealer later justifies this by claiming pigs need them to think properly. The phrase <strong>"it is for your sake"</strong> becomes a recurring justification for privilege. This early incident establishes the pattern: the pigs will always find a way to rationalise their advantages as being in the interests of all animals.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The milk and apples incident is a superb example to use in an exam. It shows how quickly revolutionary equality is undermined, and Squealer's justification demonstrates the role of propaganda in disguising exploitation. You can use this moment to discuss <em>multiple</em> themes — power, propaganda, class inequality — which shows the examiner you can make connections across the text (a top-band skill).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The milk and apples incident is a superb example to use in an exam. It shows how quickly revolutionary equality is undermined, and Squealer's justification demonstrates the role of propaganda in disguising exploitation. You can use this moment to discuss <em>multiple</em> themes — power, propaganda, class inequality — which shows the marker you can make connections across the text (a top-band skill).</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Describing the Rebellion as entirely positive. Orwell deliberately includes warning signs even in these early chapters — the pigs' assumption of leadership, the taking of the milk, and Moses' tales of Sugarcandy Mountain all foreshadow the corruption to come. A strong response should note that Orwell complicates the revolution from the very start.</div>
 
@@ -364,7 +364,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>This literacy gap is politically crucial. Because most animals cannot read the Seven Commandments for themselves, they must rely on the pigs to tell them what the Commandments say. This creates an <strong>information asymmetry</strong> — the pigs control knowledge, and knowledge is power. When the Commandments are later altered, the animals cannot verify whether they have changed because they never truly knew the original wording.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The literacy gap is one of Orwell's most important structural devices. It enables every subsequent act of propaganda and rewriting. In an exam, you could argue that Orwell shows how <strong>control of education is a prerequisite for tyranny</strong> — if the masses cannot read, they cannot hold their leaders to account.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The literacy gap is one of Orwell's most important structural devices. It enables every subsequent act of propaganda and rewriting. In an exam, you could argue that Orwell shows how <strong>control of education is a prerequisite for tyranny</strong> — if the masses cannot read, they cannot hold their leaders to account.</div>
 
 <h4>Squealer's First Major Speech</h4>
 
@@ -386,7 +386,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>Crucially, Napoleon's role in the battle is notably absent from the narrative. Orwell never describes Napoleon fighting. This is significant because Napoleon will later claim to have been the battle's true hero — a lie that goes unchallenged because the animals' memories are unreliable and the pigs control the historical record.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The rewriting of the Battle of the Cowshed is a key example of historical revisionism — a central theme. If you get a question about truth, propaganda, or language as control, this episode provides excellent evidence. Compare the <em>actual</em> events (Snowball's bravery, Napoleon's absence) with Napoleon's <em>later version</em> (Snowball as traitor, Napoleon as hero).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The rewriting of the Battle of the Cowshed is a key example of historical revisionism — a central theme. If you get a question about truth, propaganda, or language as control, this episode provides excellent evidence. Compare the <em>actual</em> events (Snowball's bravery, Napoleon's absence) with Napoleon's <em>later version</em> (Snowball as traitor, Napoleon as hero).</div>
 
 <h3>The Emerging Power Structure</h3>
 
@@ -517,7 +517,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>This parallels <strong>Stalin's expulsion of Trotsky</strong> from the Communist Party in 1927 and his exile from the Soviet Union in 1929. Historically, Trotsky was a military genius who deserved immense credit for Soviet victory in the Civil War. But Stalin outmanoeuvred him politically, eliminated his supporters, and by 1927, Trotsky was expelled. He would eventually be murdered in exile in Mexico in 1940. The dogs represent Stalin's <strong>secret police</strong> (the NKVD/KGB) — the instrument of state terror that enforced his rule and conducted mass murders. Notice that Napoleon did not win the argument; he won through <strong>violence</strong>. This is Orwell's crucial insight: in a struggle for power, force trumps intellect and debate. The cleverest argument cannot compete with a gun. The most eloquent speech cannot survive a secret police that shoots anyone who opposes the leader.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The expulsion of Snowball is the novella's turning point. If an exam question asks about a "significant moment" or a "moment of change," this is an excellent choice. You can discuss the shift from (flawed) democracy to dictatorship, the role of violence in seizing power, and the way Napoleon immediately begins rewriting history.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The expulsion of Snowball is the novella's turning point. If an exam question asks about a "significant moment" or a "moment of change," this is an excellent choice. You can discuss the shift from (flawed) democracy to dictatorship, the role of violence in seizing power, and the way Napoleon immediately begins rewriting history.</div>
 
 <h4>The Abolition of Debate</h4>
 
@@ -547,7 +547,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>This scene directly parallels Stalin's <strong>Great Purge</strong> and the <strong>Moscow Show Trials</strong> (1936–1938), in which prominent communists were forced to make absurd public confessions before being executed. During the Great Purge, an estimated 750,000 people were executed. Many were communists who had fought in the Revolution, but they were accused of ridiculous crimes: conspiracy with Trotsky, collaboration with foreign powers, espionage. The trials were theatrical — designed to break the accused's will and demonstrate the regime's total power. Some historians estimate that half of the 1930s confessions were extracted under torture. The confessions in <em>Animal Farm</em> are equally absurd — animals confess to crimes that are physically impossible (meeting Snowball at specific times when Snowball couldn't possibly have been there) — yet the atmosphere of terror is so overwhelming that no one dares protest. The animals watch their friends and comrades torn to shreds and say nothing, because speaking would be suicide.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The execution scene is one of the most powerful in the novella for AO2 analysis. Notice Orwell's restrained, matter-of-fact narration: "the dogs promptly tore their throats out." The lack of emotion in the prose creates a chilling effect — the violence is reported as routine, mirroring how totalitarian regimes normalise brutality. This narrative detachment is a key writer's method to discuss.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The execution scene is one of the most powerful in the novella for AO2 analysis. Notice Orwell's restrained, matter-of-fact narration: "the dogs promptly tore their throats out." The lack of emotion in the prose creates a chilling effect — the violence is reported as routine, mirroring how totalitarian regimes normalise brutality. This narrative detachment is a key writer's method to discuss.</div>
 
 <p>After the executions, the surviving animals huddle together, shocked and grieving. Clover looks out over the farm and reflects that this is not what they had envisioned when they first heard Old Major's speech. She tries to sing "Beasts of England," but Squealer arrives to announce that the song has been <strong>banned</strong> — it is no longer needed because the revolution is "complete." A new song, composed by Minimus, replaces it: a bland hymn praising Napoleon. The suppression of "Beasts of England" represents the suppression of the revolution's original ideals — the regime no longer wants the animals to dream of a better world, because that dream might lead them to question whether the current reality matches it.</p>
 
@@ -718,7 +718,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>Frederick and his men then attack the farm and <strong>blow up the windmill</strong> with explosives. This is the <strong>Battle of the Windmill</strong>, representing the <strong>Battle of Stalingrad</strong> and the devastation of World War II on Soviet soil. The animals eventually drive the humans off, but at enormous cost — many animals are wounded, and the windmill they laboured so hard to build is destroyed. Squealer declares it a "victory," but the animals are left battered, exhausted and no better off.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The gap between Squealer's language and reality is at its widest in this chapter. He declares the battle a "great victory" while the animals stand amid ruins. In an exam, this provides excellent material for discussing the theme of <em>language as control</em> — how propaganda reframes disaster as triumph.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The gap between Squealer's language and reality is at its widest in this chapter. He declares the battle a "great victory" while the animals stand amid ruins. In an exam, this provides excellent material for discussing the theme of <em>language as control</em> — how propaganda reframes disaster as triumph.</div>
 
 <p>After the battle, the pigs discover a case of whisky in the farmhouse cellar. That night, the animals hear strange sounds from the farmhouse and the next morning Napoleon appears wearing Jones's bowler hat. The Fifth Commandment now reads: <strong>"No animal shall drink alcohol <em>to excess</em>."</strong> The pattern of alteration continues — each change is just subtle enough to create doubt in the animals' minds while being obvious to the reader.</p>
 
@@ -744,7 +744,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>This is perhaps the most famous line in twentieth-century political literature. It perfectly encapsulates the hypocrisy of totalitarian regimes that use the language of equality to justify privilege. The logical contradiction — something cannot be "more equal" — mirrors the logical impossibility of the pigs' position: they claim to serve the animals while living in luxury at their expense. This is Orwell's name for this mental state: doublethink — the ability to hold two contradictory truths simultaneously. The animals believe in equality and in the pigs' privilege. Both. At once. Without noticing the contradiction.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> "All animals are equal, but some animals are more equal than others" is the novella's thesis statement. It should appear in virtually every essay you write about <em>Animal Farm</em>, regardless of the specific question. It connects to power, corruption, propaganda, class inequality, and the betrayal of ideals — every major theme. Use this as your hammer.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> "All animals are equal, but some animals are more equal than others" is the novella's thesis statement. It should appear in virtually every essay you write about <em>Animal Farm</em>, regardless of the specific question. It connects to power, corruption, propaganda, class inequality, and the betrayal of ideals — every major theme. Use this as your hammer.</div>
 
 <p>In the final scene, the pigs invite the neighbouring farmers to dinner. Napoleon announces that the farm will no longer be called "Animal Farm" — it is reverting to its original name, <strong>"Manor Farm."</strong> The symbolic erasure is complete. The revolution is officially cancelled. The animals peer through the farmhouse window and watch pigs and humans playing cards together, smoking cigarettes, drinking whisky. An argument breaks out — the humans cheat — and the pigs threaten violence. But then they laugh and make up, conspirators united in their contempt for animals. The watching animals look from pig to man, from man to pig — but <strong>"it was impossible to say which was which."</strong> The revolution has made a full circle. The oppressor has changed face but not form.</p>
 
@@ -879,7 +879,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>However, Orwell does not idealise Snowball. He participates in the early milk and apple appropriation; he supports the pigs' assumption of leadership; and he silences opposition with rhetoric just as Napoleon does with force. The difference between them is one of <em>degree</em>, not of <em>kind</em>. Orwell implies that even Snowball, had he won the power struggle, might have become corrupted — the flaw lies not in the individual but in the <strong>concentration of power</strong> itself.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Avoid idealising Snowball in your essays. The best responses acknowledge his genuine positive qualities <em>and</em> his complicity in the pigs' early power-grab. This nuanced view shows the examiner that you understand Orwell's broader argument — that the problem is systemic, not just about one bad leader.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Avoid idealising Snowball in your essays. The best responses acknowledge his genuine positive qualities <em>and</em> his complicity in the pigs' early power-grab. This nuanced view shows the marker that you understand Orwell's broader argument — that the problem is systemic, not just about one bad leader.</div>
 
 <h3>Boxer</h3>
 
@@ -915,7 +915,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>Benjamin only acts when Boxer is loaded onto the knacker's van — but by then it is too late. Orwell uses Benjamin to criticise the <strong>educated bystander</strong> — the intellectual who sees injustice clearly but refuses to speak up until the damage is done. Benjamin's silence is a form of complicity.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Benjamin is an underused character in exam responses, which makes him a great way to demonstrate originality. You could argue that Orwell presents Benjamin as the most culpable animal — because he <em>could</em> have challenged the pigs (he can read, he sees the truth) but chose passivity. This links powerfully to Orwell's belief that the greatest threat to freedom is the <strong>indifference of the educated</strong>.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Benjamin is an underused character in exam responses, which makes him a great way to demonstrate originality. You could argue that Orwell presents Benjamin as the most culpable animal — because he <em>could</em> have challenged the pigs (he can read, he sees the truth) but chose passivity. This links powerfully to Orwell's belief that the greatest threat to freedom is the <strong>indifference of the educated</strong>.</div>
 
 <h3>Mollie</h3>
 
@@ -935,7 +935,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>Clover's emotional response after the executions is one of the novella's most moving passages. Orwell writes that "if she could have spoken her thoughts," she would have said that the animals had never dreamed of such horrors when they first heard Old Major's speech. The conditional — "if she could have spoken" — is devastating. Clover has the <em>feelings</em> but not the <em>words</em>. Orwell shows that oppression works not only by silencing people through fear but by <strong>denying them the language to express dissent</strong>.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Clover's response after the executions is an excellent passage to analyse for AO2. Notice that Orwell gives us her thoughts indirectly — through the narrator's conditional phrasing ("if she could have spoken") rather than through direct speech. This technique reinforces the theme of silenced voices and makes the reader feel her frustration and helplessness.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Clover's response after the executions is an excellent passage to analyse for AO2. Notice that Orwell gives us her thoughts indirectly — through the narrator's conditional phrasing ("if she could have spoken") rather than through direct speech. This technique reinforces the theme of silenced voices and makes the reader feel her frustration and helplessness.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Discussing characters only in terms of their allegorical role without analysing <em>how</em> Orwell presents them as characters. An exam response should do both — explain the historical parallel AND analyse the techniques Orwell uses (description, dialogue, actions, narrative perspective) to create the character within the story.</div>
 `,
@@ -1092,7 +1092,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>The theme of power connects to Orwell's broader political argument: that <strong>any revolution that replaces one ruling class with another will inevitably reproduce the same oppression</strong>. The solution is not to avoid revolution but to build <strong>democratic accountability</strong> — systems that prevent power from being concentrated in the hands of a few. Animal Farm has no such systems, and the result is tyranny.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about power, avoid simply listing things Napoleon does. Instead, analyse the <em>mechanisms</em> of power — how it is gained (violence, the dogs), maintained (propaganda, fear, ignorance), and legitimised (rewriting laws, historical revisionism). This structural approach will push your response into the top bands.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When writing about power, avoid simply listing things Napoleon does. Instead, analyse the <em>mechanisms</em> of power — how it is gained (violence, the dogs), maintained (propaganda, fear, ignorance), and legitimised (rewriting laws, historical revisionism). This structural approach will push your response into the top bands.</div>
 
 <h3>2. Class &amp; Inequality</h3>
 
@@ -1120,7 +1120,7 @@ export const animalFarmCourse: CourseData = {
 
 <div class="key-term"><strong>Key Term: Doublethink</strong> — A concept Orwell developed fully in <em>Nineteen Eighty-Four</em>: the ability to hold two contradictory beliefs simultaneously and accept both. In <em>Animal Farm</em>, the animals practise a form of doublethink when they accept that the Commandments have "always" included the extra words, despite their dim memories suggesting otherwise.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> "Language as control" is the theme most closely linked to AO2 (writer's methods). When analysing this theme, you can discuss Orwell's use of slogans, euphemism, repetition, and the structural device of the changing Commandments — all of which are <em>methods</em> as well as thematic concerns. This allows you to hit AO1, AO2 and AO3 simultaneously.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> "Language as control" is the theme most closely linked to AO2 (writer's methods). When analysing this theme, you can discuss Orwell's use of slogans, euphemism, repetition, and the structural device of the changing Commandments — all of which are <em>methods</em> as well as thematic concerns. This allows you to hit AO1, AO2 and AO3 simultaneously.</div>
 
 <h3>4. Revolution &amp; Its Betrayal</h3>
 
@@ -1142,7 +1142,7 @@ export const animalFarmCourse: CourseData = {
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating education as a minor theme. In fact, education underpins <em>every other theme</em> in the novella. Without the literacy gap, the pigs could not alter the Commandments; without the animals' ignorance of history, Squealer could not rewrite the past; without the sheep's inability to think beyond slogans, Napoleon could not suppress debate. Education is not just one theme among many — it is the <em>enabling condition</em> for all forms of control.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The theme of education links beautifully to the structural device of the Seven Commandments. You could trace how the Commandments function differently depending on literacy: for the pigs, they are a <em>tool</em> to be manipulated; for the animals, they are a <em>truth</em> to be trusted; for Benjamin, they are an <em>irrelevance</em> to be ignored. This kind of multi-perspective analysis is exactly what top-band responses require.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The theme of education links beautifully to the structural device of the Seven Commandments. You could trace how the Commandments function differently depending on literacy: for the pigs, they are a <em>tool</em> to be manipulated; for the animals, they are a <em>truth</em> to be trusted; for Benjamin, they are an <em>irrelevance</em> to be ignored. This kind of multi-perspective analysis is exactly what top-band responses require.</div>
 
 <h3>Grade 9 Insight Boxes on Themes</h3>
 
@@ -1280,7 +1280,7 @@ export const animalFarmCourse: CourseData = {
   <li><strong>The final scene → The Tehran Conference (1943):</strong> Stalin meeting with Churchill and Roosevelt — the pigs sitting down with the humans as equals (or rather, as the same kind of exploiter).</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do not turn your essay into a history lesson. The examiner wants to see that you understand the allegory, but your primary focus should always be on <em>the text</em>. The best approach is to embed contextual parallels into your analysis: "Napoleon's use of the dogs to expel Snowball mirrors Stalin's deployment of the secret police to exile Trotsky, and Orwell's presentation of this moment — the sudden, shocking violence interrupting democratic debate — dramatises how easily force can override reason."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Do not turn your essay into a history lesson. The marker wants to see that you understand the allegory, but your primary focus should always be on <em>the text</em>. The best approach is to embed contextual parallels into your analysis: "Napoleon's use of the dogs to expel Snowball mirrors Stalin's deployment of the secret police to exile Trotsky, and Orwell's presentation of this moment — the sudden, shocking violence interrupting democratic debate — dramatises how easily force can override reason."</div>
 
 <h3>Why Orwell Chose Allegory</h3>
 
@@ -1434,7 +1434,7 @@ export const animalFarmCourse: CourseData = {
   <li><strong>Exaggeration for effect:</strong> Napoleon awards himself medals, is praised in poems, and appears with a retinue of dogs. The accumulation of absurd details highlights the ridiculousness of dictatorial self-aggrandisement.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing satire, always explain the <em>dual effect</em>. Satire makes us laugh <em>and</em> think. For example: "The image of pigs walking on their hind legs is absurd — and deliberately so. Orwell uses this physical comedy to satirise the way revolutionary leaders adopt the very behaviours they once condemned, making the reader laugh at the hypocrisy while simultaneously recognising its political horror."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When discussing satire, always explain the <em>dual effect</em>. Satire makes us laugh <em>and</em> think. For example: "The image of pigs walking on their hind legs is absurd — and deliberately so. Orwell uses this physical comedy to satirise the way revolutionary leaders adopt the very behaviours they once condemned, making the reader laugh at the hypocrisy while simultaneously recognising its political horror."</div>
 
 <h3>3. Irony</h3>
 
@@ -1460,7 +1460,7 @@ export const animalFarmCourse: CourseData = {
   <li>It maintains the <strong>fable's simplicity</strong> — a fable does not editorialize; it presents and lets the reader draw conclusions.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The detached narrator is one of the most effective AO2 points you can make. It shows the examiner that you understand narrative voice — a sophisticated concept. Analyse a specific passage (e.g. the execution scene) and explain how the narrator's <em>lack</em> of emotion creates a more powerful effect than emotional language would.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The detached narrator is one of the most effective AO2 points you can make. It shows the marker that you understand narrative voice — a sophisticated concept. Analyse a specific passage (e.g. the execution scene) and explain how the narrator's <em>lack</em> of emotion creates a more powerful effect than emotional language would.</div>
 
 <h3>5. Repetition &amp; Motifs</h3>
 
@@ -1506,7 +1506,7 @@ export const animalFarmCourse: CourseData = {
   <li><strong>The barn wall:</strong> Where the Commandments are written — symbolises the rule of law and its vulnerability to those in power.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing symbolism, always explain what the symbol <em>does</em> for the reader — how it creates meaning or effect. Naming a symbol is not enough; you must analyse its function. For example: "The farmhouse symbolises power and privilege. When the pigs move into Jones's bedroom, Orwell creates a visual image of the revolutionaries literally <em>becoming</em> the oppressor — occupying his space, sleeping in his bed, and eventually wearing his clothes."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When discussing symbolism, always explain what the symbol <em>does</em> for the reader — how it creates meaning or effect. Naming a symbol is not enough; you must analyse its function. For example: "The farmhouse symbolises power and privilege. When the pigs move into Jones's bedroom, Orwell creates a visual image of the revolutionaries literally <em>becoming</em> the oppressor — occupying his space, sleeping in his bed, and eventually wearing his clothes."</div>
 `,
       quiz: [
         {
@@ -1563,7 +1563,7 @@ export const animalFarmCourse: CourseData = {
         },
         {
           id: 'af-m9-q5',
-          question: 'What is the "dual effect" of satire that examiners look for?',
+          question: 'What is the "dual effect" of satire that markers look for?',
           options: [
             'It makes the reader laugh and then cry',
             'It makes the reader laugh at absurdity while simultaneously recognising its political horror',
@@ -1602,7 +1602,7 @@ export const animalFarmCourse: CourseData = {
   <li><strong>AO4 (4 marks):</strong> Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> AO2 carries as much weight as AO1. This means you cannot simply explain <em>what</em> happens or <em>what</em> a character represents — you must analyse <em>how</em> Orwell creates meaning through language, form and structure. Every paragraph should contain some analysis of the writer's craft.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> AO2 carries as much weight as AO1. This means you cannot simply explain <em>what</em> happens or <em>what</em> a character represents — you must analyse <em>how</em> Orwell creates meaning through language, form and structure. Every paragraph should contain some analysis of the writer's craft.</div>
 
 <h3>How to Structure Your Response</h3>
 
@@ -1626,7 +1626,7 @@ export const animalFarmCourse: CourseData = {
 
 <h4>Step 3: Write Your Response (30 minutes)</h4>
 
-<p><strong>Opening paragraph:</strong> State your thesis clearly. Show the examiner immediately that you have a conceptualised argument, not just a list of points.</p>
+<p><strong>Opening paragraph:</strong> State your thesis clearly. Show the marker immediately that you have a conceptualised argument, not just a list of points.</p>
 
 <p><strong>Extract paragraphs (3–4):</strong> Use the <strong>WHAT–HOW–WHY</strong> framework:</p>
 <ul>
@@ -1649,7 +1649,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>Notice how this paragraph integrates all three AOs seamlessly — it makes a point (AO1), analyses language (AO2 — passive voice, narrative detachment), and embeds context (AO3 — Pravda) without "bolting on" a separate context sentence.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Memorise 10–15 short quotations that can be used across multiple themes. Short quotes (under 10 words) are easier to embed into your sentences and show more skill than long block quotes. For example, "Napoleon is always right" can be used to discuss: power, propaganda, loyalty, Boxer's character, the cult of personality, and education.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Memorise 10–15 short quotations that can be used across multiple themes. Short quotes (under 10 words) are easier to embed into your sentences and show more skill than long block quotes. For example, "Napoleon is always right" can be used to discuss: power, propaganda, loyalty, Boxer's character, the cult of personality, and education.</div>
 
 <h3>Common Question Types</h3>
 
@@ -1705,7 +1705,7 @@ export const animalFarmCourse: CourseData = {
   <li><strong>"How does Orwell explore the idea that revolutions can be betrayed?"</strong> — Discuss the cyclical structure, the changing Commandments, Boxer's fate, and the final image of pigs indistinguishable from humans.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For each practice question, write a one-sentence thesis before you start. For example, for question 1: "Orwell presents power as a corrupting force that is maintained not primarily through violence but through the manipulation of language, law and historical memory — suggesting that the most dangerous form of control is the one people cannot see." A strong thesis like this gives your essay direction and ensures every paragraph contributes to a coherent argument.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> For each practice question, write a one-sentence thesis before you start. For example, for question 1: "Orwell presents power as a corrupting force that is maintained not primarily through violence but through the manipulation of language, law and historical memory — suggesting that the most dangerous form of control is the one people cannot see." A strong thesis like this gives your essay direction and ensures every paragraph contributes to a coherent argument.</div>
 
 <h3>Final Checklist Before the Exam</h3>
 

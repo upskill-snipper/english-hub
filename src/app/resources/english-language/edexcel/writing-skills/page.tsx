@@ -6,9 +6,9 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/writing-skills' },
-  title: "Transactional Writing Masterclass",
+  title: "Writing for Real Purposes Masterclass",
   description:
-    "Complete guide to transactional writing for Edexcel English Language Paper 2. Article, letter, speech, review, and essay writing conventions, formats, and techniques.",
+    "Complete guide to writing for real purposes for Edexcel English Language Paper 2. Article, letter, speech, review, and essay writing conventions, formats, and techniques.",
 };
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -28,7 +28,7 @@ export default function WritingSkillsPage() {
             Back to Edexcel Hub
           </Link>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Transactional Writing Masterclass
+            Writing for Real Purposes Masterclass
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Master every writing form you could face in Paper 2 Section B. Conventions, formats, example openings,
@@ -457,7 +457,7 @@ export default function WritingSkillsPage() {
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Universal Writing Tips</h2>
           <p className="mt-3 text-muted-foreground">
-            These principles apply to every form of transactional writing and will help you hit the top mark-scheme levels.
+            These principles apply to every form of writing for real purposes and will help you hit the top marking-guide levels.
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -484,7 +484,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-              <h3 className="font-bold text-accent">Vocabulary (AO6)</h3>
+              <h3 className="font-bold text-accent">Vocabulary (Technical accuracy)</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -506,7 +506,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-              <h3 className="font-bold text-success">Sentence Variety (AO6)</h3>
+              <h3 className="font-bold text-success">Sentence Variety (Technical accuracy)</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-success" />
@@ -528,7 +528,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-              <h3 className="font-bold text-warn">Punctuation Variety (AO6)</h3>
+              <h3 className="font-bold text-warn">Punctuation Variety (Technical accuracy)</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />

@@ -106,7 +106,7 @@ function getTopicRevisionLinks(
         {
           href: '/igcse/edexcel',
           title: 'Edexcel IGCSE Anthology',
-          description: 'Annotated guides for the IGCSE 4ET1 anthology.',
+          description: 'Annotated guides for the Edexcel IGCSE anthology.',
         },
         {
           href: '/revision/exam-technique/essay-structure',

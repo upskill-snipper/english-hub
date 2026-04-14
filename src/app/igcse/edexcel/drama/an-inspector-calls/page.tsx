@@ -23,9 +23,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'An Inspector Calls — Edexcel IGCSE 4ET1 Study Guide',
+  title: 'An Inspector Calls — Edexcel IGCSE IGCSE Literature Study Guide',
   description:
-    'J. B. Priestley\u2019s An Inspector Calls for Edexcel IGCSE 4ET1: plot summary, characters, themes, post-war context and key quotations.',
+    'J. B. Priestley\u2019s An Inspector Calls for Edexcel IGCSE IGCSE Literature: plot summary, characters, themes, post-war context and key quotations.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls',
@@ -211,7 +211,7 @@ export default async function InspectorCallsHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE IGCSE Literature
             </Badge>
             <Badge variant="secondary">Modern drama</Badge>
           </div>

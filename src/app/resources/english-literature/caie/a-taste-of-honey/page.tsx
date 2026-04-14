@@ -210,25 +210,25 @@ const dramaticTechniques = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     description: "Show detailed knowledge and understanding of the text",
     guidance:
       "Demonstrate thorough knowledge of the play's events, characters, and themes. Refer to specific moments and quote accurately. Do not retell the plot; select relevant details to support your argument. Show that you understand not just what happens but why it matters.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     description: "Analyse the language, form, and structure used by a writer to create meanings and effects",
     guidance:
       "This is where the highest marks are won. Analyse Delaney's dialogue, her use of humour, the two-act structure, staging choices, and the influence of Joan Littlewood's production. Discuss how kitchen sink realism shapes meaning. Identify specific language techniques (imagery, repetition, tone) and always explain their effect on the audience.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     description: "Demonstrate understanding of the relationships between texts and the contexts in which they were written and received",
     guidance:
       "Discuss 1950s Salford, post-war social change, attitudes to race and sexuality, the Angry Young Men movement, and the kitchen sink realism tradition. Show how these contexts shape the play's themes and the audience's response. Integrate context into your analysis rather than bolting it on as a separate paragraph.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     description: "Communicate a clear, relevant response using appropriate terminology",
     guidance:
       "Write clearly and analytically. Use literary terminology accurately (naturalistic dialogue, stage directions, dramatic irony, juxtaposition, symbolism). Structure your response with a clear argument. Avoid feature-spotting: always explain the effect of the techniques you identify.",
@@ -292,7 +292,7 @@ export default function ATasteOfHoneyStudyGuide() {
             "Key Quotes",
             "Dramatic Techniques",
             "Context",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Questions",
           ].map((s) => (
             <a
@@ -424,8 +424,8 @@ export default function ATasteOfHoneyStudyGuide() {
             Dramatic Techniques
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Delaney&rsquo;s dramatic techniques are essential for AO2 (analysis
-            of form, structure, and language). Examiners reward candidates who
+            Delaney&rsquo;s dramatic techniques are essential for Writer's Methods (analysis
+            of form, structure, and language). Markers reward responses that
             discuss <em>how</em> Delaney creates meaning, not just{" "}
             <em>what</em> happens.
           </p>
@@ -453,8 +453,8 @@ export default function ATasteOfHoneyStudyGuide() {
             Historical &amp; Social Context
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Cambridge examiners expect you to integrate contextual knowledge
-            into your analysis (AO3). The following areas are most relevant to
+            Cambridge markers expect you to integrate contextual knowledge
+            into your analysis (Interpretation). The following areas are most relevant to
             A Taste of Honey.
           </p>
           <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
@@ -570,7 +570,7 @@ export default function ATasteOfHoneyStudyGuide() {
         <hr className="my-10 border-border" />
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
-        <section id="assessment-objectives" aria-labelledby="ao-heading">
+        <section id="what-markers-look-for" aria-labelledby="ao-heading">
           <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
             Cambridge Assessment Objectives
           </h2>
@@ -820,36 +820,36 @@ export default function ATasteOfHoneyStudyGuide() {
                     Delaney presents motherhood as a cycle of neglect shaped by
                     poverty and limited opportunity, rather than the natural,
                     instinctive bond idealised by 1950s society{" "}
-                    <span className="font-semibold text-[#6B2D5B]">[AO1]</span>.
+                    <span className="font-semibold text-[#6B2D5B]">[Textual Knowledge]</span>.
                     When Jo confesses, &ldquo;I used to try to hold my
                     mother&rsquo;s hands but she always pushed me away,&rdquo; the
                     contrast between the child&rsquo;s reaching gesture and the
                     mother&rsquo;s rejection creates a painful image of emotional
                     deprivation{" "}
-                    <span className="font-semibold text-[#6B2D5B]">[AO2]</span>.
+                    <span className="font-semibold text-[#6B2D5B]">[Writer's Methods]</span>.
                     The verb &ldquo;pushed&rdquo; implies physical force, while
                     &ldquo;always&rdquo; establishes this as a habitual pattern
                     rather than a single incident, suggesting that Helen&rsquo;s
                     neglect is systemic{" "}
-                    <span className="font-semibold text-[#6B2D5B]">[AO2]</span>.
+                    <span className="font-semibold text-[#6B2D5B]">[Writer's Methods]</span>.
                     This failure of maternal care must be understood in the context
                     of 1950s working-class Britain, where women like Helen had
                     little access to education, stable employment, or social
                     support, and were often forced into dependency on unreliable
                     men{" "}
-                    <span className="font-semibold text-[#6B2D5B]">[AO3]</span>.
+                    <span className="font-semibold text-[#6B2D5B]">[Interpretation]</span>.
                     Delaney uses the juxtaposition between Helen&rsquo;s
                     biological motherhood and Geof&rsquo;s nurturing care to argue
                     that genuine parenting is defined by action, not biology —
                     a radical proposition on the 1958 stage, where the nuclear
                     family was rarely questioned{" "}
-                    <span className="font-semibold text-[#6B2D5B]">[AO3]</span>.
+                    <span className="font-semibold text-[#6B2D5B]">[Interpretation]</span>.
                     By structuring the play so that Jo&rsquo;s own pregnancy
                     mirrors Helen&rsquo;s earlier experience, Delaney implies that
                     without structural change, the cycle of neglect will simply
                     repeat — a deeply pessimistic but honest conclusion that
                     refuses the comfort of a sentimental resolution{" "}
-                    <span className="font-semibold text-[#6B2D5B]">[AO4]</span>.
+                    <span className="font-semibold text-[#6B2D5B]">[Personal Response]</span>.
                   </p>
                 </div>
                 <div className="mt-3 rounded bg-muted/50 p-3">
@@ -858,22 +858,22 @@ export default function ATasteOfHoneyStudyGuide() {
                   </p>
                   <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                     <li>
-                      &bull; <strong>AO1:</strong> Demonstrates knowledge of the
+                      &bull; <strong>Textual Knowledge:</strong> Demonstrates knowledge of the
                       text with an accurate, embedded quotation and reference to
                       the play&rsquo;s events
                     </li>
                     <li>
-                      &bull; <strong>AO2:</strong> Analyses specific word choices
+                      &bull; <strong>Writer's Methods:</strong> Analyses specific word choices
                       (&ldquo;pushed&rdquo;, &ldquo;always&rdquo;) and structural
                       techniques (juxtaposition, cyclical structure)
                     </li>
                     <li>
-                      &bull; <strong>AO3:</strong> Integrates contextual knowledge
+                      &bull; <strong>Interpretation:</strong> Integrates contextual knowledge
                       (1950s working-class conditions, attitudes to family) into
                       the argument rather than bolting it on
                     </li>
                     <li>
-                      &bull; <strong>AO4:</strong> Communicates clearly with
+                      &bull; <strong>Personal Response:</strong> Communicates clearly with
                       appropriate literary terminology (juxtaposition, cyclical
                       structure, resolution) and sustains a coherent argument
                     </li>
@@ -894,7 +894,7 @@ export default function ATasteOfHoneyStudyGuide() {
                   </strong>{" "}
                   Work through the extract methodically. Use short, embedded
                   quotations from the passage. Analyse language, form, and
-                  structure (AO2). Then connect outward to the rest of the play
+                  structure (Writer's Methods). Then connect outward to the rest of the play
                   and relevant context. Stay focused on the passage but show
                   awareness of the wider play.
                 </li>
@@ -914,7 +914,7 @@ export default function ATasteOfHoneyStudyGuide() {
                   Write &ldquo;Delaney presents...&rdquo; or &ldquo;Delaney
                   uses...&rdquo; rather than &ldquo;the play shows...&rdquo;.
                   This demonstrates awareness of authorial intent and helps you
-                  discuss methods (AO2).
+                  discuss methods (Writer's Methods).
                 </li>
                 <li>
                   <strong className="text-foreground">

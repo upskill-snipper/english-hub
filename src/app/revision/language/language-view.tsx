@@ -227,9 +227,9 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
             </h2>
             <p className="mt-1 text-body-sm text-muted-foreground">
               {boardId === 'cambridge-0500' &&
-                'Cambridge IGCSE 0500 has its own reading and directed writing papers. The generic reading, writing, and SPaG guidance below still applies to your learning, but for exam-specific guidance see your Cambridge 0500 hub.'}
+                'Cambridge IGCSE has its own reading and directed writing papers. The generic reading, writing, and SPaG guidance below still applies to your learning, but for exam-specific guidance see your Cambridge hub.'}
               {boardId === 'cambridge-0990' &&
-                'Cambridge IGCSE 0990 uses 9-1 grading and its own paper structure. The generic reading, writing, and SPaG guidance below still applies to your learning, but for exam-specific guidance see your Cambridge 0990 hub.'}
+                'Cambridge IGCSE (9-1) uses 9-1 grading and its own paper structure. The generic reading, writing, and SPaG guidance below still applies to your learning, but for exam-specific guidance see your Cambridge (9-1) hub.'}
               {boardId === 'edexcel-igcse' &&
                 'Edexcel IGCSE uses a different paper structure to UK GCSE. The generic reading, writing, and SPaG guidance below still applies, but the exam format is different.'}
             </p>

@@ -2,7 +2,7 @@
 import type { CourseData, CourseModule, CourseQuiz } from './courses';
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// Edexcel IGCSE Literature — Individual Drama Text Courses (Pearson 4ET1)
+// Edexcel IGCSE Literature — Individual Drama Text Courses
 // ═══════════════════════════════════════════════════════════════════════════════
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -433,7 +433,7 @@ const viewFromBridgeModules: CourseModule[] = [
 <h2>Exam Practice &amp; Model Response — <em>A View from the Bridge</em></h2>
 
 <h3>Understanding the Edexcel IGCSE Question Format</h3>
-<p>For the Edexcel IGCSE English Literature (4ET1) drama exam, you will typically encounter an <strong>extract-based question</strong>. You will be given a printed passage from your set text and asked a question that requires you to analyse the extract closely <strong>and</strong> discuss the wider play.</p>
+<p>For the Edexcel IGCSE Literature drama exam, you will typically encounter an <strong>extract-based question</strong>. You will be given a printed passage from your set text and asked a question that requires you to analyse the extract closely <strong>and</strong> discuss the wider play.</p>
 
 <p>A typical question might look like:</p>
 <div class="text-extract"><strong>Sample Question:</strong> Read the extract from Act One (the boxing scene).<br><br>Explore how Miller presents the conflict between Eddie and Rodolpho in this extract and in the play as a whole.</div>
@@ -959,7 +959,7 @@ const inspectorCallsIGModules: CourseModule[] = [
 <h2>Exam Practice &amp; Model Response — <em>An Inspector Calls</em></h2>
 
 <h3>The Edexcel IGCSE Question Format</h3>
-<p>For 4ET1, drama questions are typically extract-based. You will receive a printed passage and be asked to analyse it while also discussing the wider play. You must demonstrate close analysis of language and stagecraft (AO2) alongside personal response (AO1) and contextual understanding (AO3).</p>
+<p>For IGCSE Literature, drama questions are typically extract-based. You will receive a printed passage and be asked to analyse it while also discussing the wider play. You must demonstrate close analysis of language and stagecraft (AO2) alongside personal response (AO1) and contextual understanding (AO3).</p>
 
 <p><strong>Sample question:</strong></p>
 <div class="text-extract">Read the extract from Act Three, beginning with the Inspector's final speech.<br><br>How does Priestley use the Inspector to convey his ideas about responsibility in this extract and in the play as a whole?</div>
@@ -4124,7 +4124,7 @@ const merchantVeniceModules: CourseModule[] = [
 const viewFromBridge: CourseData = {
   id: 'igcse-lit-drama-view-from-bridge',
   title: 'A View from the Bridge',
-  subtitle: 'Edexcel IGCSE Literature — Arthur Miller (4ET1)',
+  subtitle: 'Edexcel IGCSE Literature — Arthur Miller',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -4133,14 +4133,14 @@ const viewFromBridge: CourseData = {
   level: 'IGCSE',
   color: '#6366f1',
   description:
-    'A comprehensive study guide for Arthur Miller\'s A View from the Bridge for Edexcel IGCSE English Literature (4ET1). Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    'A comprehensive study guide for Arthur Miller\'s A View from the Bridge for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
   moduleList: viewFromBridgeModules,
 };
 
 const inspectorCallsIG: CourseData = {
   id: 'igcse-lit-drama-inspector-calls',
   title: 'An Inspector Calls',
-  subtitle: 'Edexcel IGCSE Literature — J B Priestley (4ET1)',
+  subtitle: 'Edexcel IGCSE Literature — J B Priestley',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -4149,14 +4149,14 @@ const inspectorCallsIG: CourseData = {
   level: 'IGCSE',
   color: '#8b5cf6',
   description:
-    'A comprehensive study guide for J B Priestley\'s An Inspector Calls for Edexcel IGCSE English Literature (4ET1). Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    'A comprehensive study guide for J B Priestley\'s An Inspector Calls for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
   moduleList: inspectorCallsIGModules,
 };
 
 const curiousIncident: CourseData = {
   id: 'igcse-lit-drama-curious-incident',
   title: 'The Curious Incident of the Dog in the Night-time',
-  subtitle: 'Edexcel IGCSE Literature — Mark Haddon / Simon Stephens (4ET1)',
+  subtitle: 'Edexcel IGCSE Literature — Mark Haddon / Simon Stephens',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -4165,14 +4165,14 @@ const curiousIncident: CourseData = {
   level: 'IGCSE',
   color: '#a855f7',
   description:
-    'A comprehensive study guide for The Curious Incident of the Dog in the Night-time (adapted by Simon Stephens) for Edexcel IGCSE English Literature (4ET1). Covers context, plot, character analysis, themes, stagecraft, and exam technique with model responses.',
+    'A comprehensive study guide for The Curious Incident of the Dog in the Night-time (adapted by Simon Stephens) for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, stagecraft, and exam technique with model responses.',
   moduleList: curiousIncidentModules,
 };
 
 const kindertransport: CourseData = {
   id: 'igcse-lit-drama-kindertransport',
   title: 'Kindertransport',
-  subtitle: 'Edexcel IGCSE Literature — Diane Samuels (4ET1)',
+  subtitle: 'Edexcel IGCSE Literature — Diane Samuels',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -4181,14 +4181,14 @@ const kindertransport: CourseData = {
   level: 'IGCSE',
   color: '#7c3aed',
   description:
-    'A comprehensive study guide for Diane Samuels\' Kindertransport for Edexcel IGCSE English Literature (4ET1). Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    'A comprehensive study guide for Diane Samuels\' Kindertransport for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
   moduleList: kindertransportModules,
 };
 
 const deathKingsHorseman: CourseData = {
   id: 'igcse-lit-drama-death-kings-horseman',
   title: 'Death and the King\'s Horseman',
-  subtitle: 'Edexcel IGCSE Literature — Wole Soyinka (4ET1)',
+  subtitle: 'Edexcel IGCSE Literature — Wole Soyinka',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -4197,14 +4197,14 @@ const deathKingsHorseman: CourseData = {
   level: 'IGCSE',
   color: '#6d28d9',
   description:
-    'A comprehensive study guide for Wole Soyinka\'s Death and the King\'s Horseman for Edexcel IGCSE English Literature (4ET1). Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    'A comprehensive study guide for Wole Soyinka\'s Death and the King\'s Horseman for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
   moduleList: deathKingsHorsemanModules,
 };
 
 const romeoJulietIG: CourseData = {
   id: 'igcse-lit-drama-romeo-juliet',
   title: 'Romeo and Juliet',
-  subtitle: 'Edexcel IGCSE Literature — William Shakespeare (4ET1)',
+  subtitle: 'Edexcel IGCSE Literature — William Shakespeare',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -4213,14 +4213,14 @@ const romeoJulietIG: CourseData = {
   level: 'IGCSE',
   color: '#5b21b6',
   description:
-    'A comprehensive study guide for Shakespeare\'s Romeo and Juliet for Edexcel IGCSE English Literature (4ET1). Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    'A comprehensive study guide for Shakespeare\'s Romeo and Juliet for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
   moduleList: romeoJulietIGModules,
 };
 
 const macbethIG: CourseData = {
   id: 'igcse-lit-drama-macbeth',
   title: 'Macbeth',
-  subtitle: 'Edexcel IGCSE Literature — William Shakespeare (4ET1)',
+  subtitle: 'Edexcel IGCSE Literature — William Shakespeare',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -4229,14 +4229,14 @@ const macbethIG: CourseData = {
   level: 'IGCSE',
   color: '#4c1d95',
   description:
-    'A comprehensive study guide for Shakespeare\'s Macbeth for Edexcel IGCSE English Literature (4ET1). Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    'A comprehensive study guide for Shakespeare\'s Macbeth for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
   moduleList: macbethIGModules,
 };
 
 const merchantVenice: CourseData = {
   id: 'igcse-lit-drama-merchant-of-venice',
   title: 'The Merchant of Venice',
-  subtitle: 'Edexcel IGCSE Literature — William Shakespeare (4ET1)',
+  subtitle: 'Edexcel IGCSE Literature — William Shakespeare',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -4245,7 +4245,7 @@ const merchantVenice: CourseData = {
   level: 'IGCSE',
   color: '#3b0764',
   description:
-    'A comprehensive study guide for Shakespeare\'s The Merchant of Venice for Edexcel IGCSE English Literature (4ET1). Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    'A comprehensive study guide for Shakespeare\'s The Merchant of Venice for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
   moduleList: merchantVeniceModules,
 };
 

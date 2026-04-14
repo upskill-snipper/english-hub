@@ -42,9 +42,9 @@ const LESSON_PLANS = [
           "Close reading: Eva Smith's story through Sheila's confession. Students highlight linguistic techniques and annotate effects",
           "Timed practice: Write 2 PEEL paragraphs on 'How does Priestley present the Inspector as a mouthpiece for his socialist views?'",
         ],
-        plenary: "Peer assessment using the AQA mark scheme criteria (displayed on board). Students give one WWW and one EBI.",
+        plenary: "Peer assessment using the AQA marking guide criteria (displayed on board). Students give one WWW and one EBI.",
         differentiation: "Model PEEL paragraph provided for lower-ability; higher-ability attempt a third paragraph comparing to Mr Birling.",
-        resources: ["Mini whiteboards", "Comparison table handout", "AQA mark scheme extract", "PEEL frame"],
+        resources: ["Mini whiteboards", "Comparison table handout", "AQA marking guide extract", "PEEL frame"],
       },
       {
         number: 3,
@@ -83,7 +83,7 @@ const LESSON_PLANS = [
         ],
         plenary: "Gallery walk: Students read 2 other essays and leave a positive comment on a Post-it note.",
         differentiation: "Extract provided with key quotes highlighted for lower-ability; higher-ability given the extract without annotations.",
-        resources: ["Extract handout", "Essay answer booklets", "Post-it notes for gallery walk", "AQA mark scheme for self-marking"],
+        resources: ["Extract handout", "Essay answer booklets", "Post-it notes for gallery walk", "AQA marking guide for self-marking"],
       },
     ],
     assessmentOpportunities: [

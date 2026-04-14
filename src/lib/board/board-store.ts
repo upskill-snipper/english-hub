@@ -3,8 +3,8 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 // Re-export server-safe types and data from board-config so existing imports keep working.
-export { BOARDS, getBoardConfig } from './board-config'
-export type { ExamBoard, BoardConfig } from './board-config'
+export { BOARDS, getBoardConfig, getDisplayName } from './board-config'
+export type { ExamBoard, BoardConfig, BoardCategory } from './board-config'
 import type { ExamBoard } from './board-config'
 
 type State = { board: ExamBoard | null; isHydrated: boolean }

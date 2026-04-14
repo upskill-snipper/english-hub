@@ -257,7 +257,7 @@ export default function GradeBoundariesPage() {
           </div>
 
           <div className="overflow-x-auto mt-6">
-            <h3 className="font-bold text-accent mb-3">Paper 2: Non-Fiction and Transactional Writing</h3>
+            <h3 className="font-bold text-accent mb-3">Paper 2: Non-Fiction and Writing for Real Purposes</h3>
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border text-left text-muted-foreground">
@@ -301,7 +301,7 @@ export default function GradeBoundariesPage() {
         <Section title="What each grade looks like in practice">
           <p>
             Understanding the grade descriptors helps you see exactly what
-            examiners expect at each level. Here is what typical work looks like
+            markers expect at each level. Here is what typical work looks like
             at the key grade boundaries:
           </p>
 
@@ -552,31 +552,31 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4 font-semibold">Q1</td>
                   <td className="py-2 pr-4">Short response &mdash; identify explicit information from the extract</td>
                   <td className="py-2 pr-4">4 marks</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q2</td>
                   <td className="py-2 pr-4">Language analysis &mdash; explain how language is used for effect</td>
                   <td className="py-2 pr-4">8 marks</td>
-                  <td className="py-2 pr-4">AO2</td>
+                  <td className="py-2 pr-4">Language and structure analysis (AO2)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q3</td>
                   <td className="py-2 pr-4">Structure &mdash; explain how the writer structures the text for effect</td>
                   <td className="py-2 pr-4">8 marks</td>
-                  <td className="py-2 pr-4">AO2</td>
+                  <td className="py-2 pr-4">Language and structure analysis (AO2)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q4</td>
                   <td className="py-2 pr-4">Evaluation &mdash; critically evaluate the text with reference to a statement</td>
                   <td className="py-2 pr-4">20 marks</td>
-                  <td className="py-2 pr-4">AO4</td>
+                  <td className="py-2 pr-4">Critical evaluation (AO4)</td>
                 </tr>
                 <tr className="bg-primary/10">
                   <td className="py-2 pr-4 font-semibold">Q5</td>
                   <td className="py-2 pr-4">Imaginative / creative writing</td>
                   <td className="py-2 pr-4">24 marks</td>
-                  <td className="py-2 pr-4">AO5 (16) + AO6 (8)</td>
+                  <td className="py-2 pr-4">Content and organisation (AO5, 16) + Technical accuracy (AO6, 8)</td>
                 </tr>
                 <tr className="font-bold">
                   <td className="py-2 pr-4">Total</td>
@@ -589,7 +589,7 @@ export default function GradeBoundariesPage() {
           </div>
 
           <div className="overflow-x-auto mt-6">
-            <h3 className="font-bold text-accent mb-3">Paper 2: Non-Fiction and Transactional Writing (2h 05m)</h3>
+            <h3 className="font-bold text-accent mb-3">Paper 2: Non-Fiction and Writing for Real Purposes (2h 05m)</h3>
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border text-left text-muted-foreground">
@@ -604,55 +604,55 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4 font-semibold">Q1</td>
                   <td className="py-2 pr-4">Short response &mdash; identify true statements from Source A</td>
                   <td className="py-2 pr-4">4 marks</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q2</td>
                   <td className="py-2 pr-4">Short response &mdash; identify true statements from Source B</td>
                   <td className="py-2 pr-4">4 marks</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q3</td>
                   <td className="py-2 pr-4">Short response &mdash; identify explicit information from one source</td>
                   <td className="py-2 pr-4">4 marks</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q4</td>
                   <td className="py-2 pr-4">Short response &mdash; identify explicit information from one source</td>
                   <td className="py-2 pr-4">4 marks</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q5</td>
                   <td className="py-2 pr-4">Short response &mdash; identify explicit information from one source</td>
                   <td className="py-2 pr-4">4 marks</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q6</td>
                   <td className="py-2 pr-4">Short response &mdash; identify explicit information from one source</td>
                   <td className="py-2 pr-4">4 marks</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q7</td>
                   <td className="py-2 pr-4">Summary &mdash; synthesise and compare ideas from both sources</td>
                   <td className="py-2 pr-4">8 marks</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q8</td>
                   <td className="py-2 pr-4">Language analysis &mdash; analyse how language is used in one source</td>
                   <td className="py-2 pr-4">12 marks</td>
-                  <td className="py-2 pr-4">AO2</td>
+                  <td className="py-2 pr-4">Language and structure analysis (AO2)</td>
                 </tr>
                 <tr className="bg-primary/10">
                   <td className="py-2 pr-4 font-semibold">Q9</td>
-                  <td className="py-2 pr-4">Transactional writing (e.g., letter, article, speech, review)</td>
+                  <td className="py-2 pr-4">Writing for real purposes (e.g., letter, article, speech, review)</td>
                   <td className="py-2 pr-4">24 marks</td>
-                  <td className="py-2 pr-4">AO5 (16) + AO6 (8)</td>
+                  <td className="py-2 pr-4">Content and organisation (AO5, 16) + Technical accuracy (AO6, 8)</td>
                 </tr>
                 <tr className="font-bold">
                   <td className="py-2 pr-4">Total</td>

@@ -18,7 +18,7 @@ const data: TextGuideData = {
   author: 'Chinua Achebe',
   year: 'published 1958',
   category: 'Novel',
-  badge: 'Edexcel IGCSE 4ET1',
+  badge: 'Edexcel IGCSE',
   intro:
     "Chinua Achebe's landmark novel follows Okonkwo, a proud Igbo warrior in pre-colonial Nigeria, whose rigid masculinity and world are shattered by the arrival of European missionaries and colonial administrators. It is a foundational text of postcolonial literature and a direct reply to European narratives of Africa.",
   quickInfo: {

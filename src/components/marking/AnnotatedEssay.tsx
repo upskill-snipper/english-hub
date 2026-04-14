@@ -14,7 +14,7 @@ export interface Annotation {
   quote: string;
   /** Kind of comment — drives colour token */
   kind: AnnotationKind;
-  /** Examiner-style comment */
+  /** Marker-style comment */
   comment: string;
 }
 
@@ -39,9 +39,9 @@ export function AnnotatedEssay({
   return (
     <Card className={cn(className)}>
       <CardHeader>
-        <CardTitle>Annotated Essay</CardTitle>
+        <CardTitle>Your Marked Essay</CardTitle>
         <p className="text-xs text-muted-foreground">
-          Click a highlight to read the examiner comment.
+          Click a highlight to read the feedback.
         </p>
       </CardHeader>
       <CardContent className="grid gap-6 lg:grid-cols-[1fr_280px]">
@@ -60,7 +60,7 @@ export function AnnotatedEssay({
         {/* ── Comment rail ──────────────────────────────────────── */}
         <aside className="space-y-3 lg:border-l lg:border-border lg:pl-4">
           <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            Examiner Comments
+            Marker Comments
           </p>
           <ul className="space-y-2">
             {annotations.map((a) => (

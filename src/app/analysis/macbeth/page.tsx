@@ -5,12 +5,12 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 export const metadata: Metadata = {
   title: 'Macbeth Analysis: Quotes, Themes & Characters | The English Hub',
   description:
-    'In-depth Macbeth analysis for GCSE. Explore 15 famous quotes line-by-line, key themes like ambition and guilt, and character studies of Macbeth, Lady Macbeth and Banquo. Written by GCSE examiners.',
+    'In-depth Macbeth analysis for GCSE. Explore 15 famous quotes line-by-line, key themes like ambition and guilt, and character studies of Macbeth, Lady Macbeth and Banquo. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/macbeth' },
   openGraph: {
     title: 'Macbeth Analysis Hub — The English Hub',
     description:
-      'Grade 9 Macbeth analysis: quotes, themes, characters and essay writing, written by GCSE examiners.',
+      'Grade 9 Macbeth analysis: quotes, themes, characters and essay writing, written by GCSE markers.',
   },
 }
 
@@ -74,11 +74,11 @@ export default function MacbethAnalysisHub() {
       <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
         Macbeth Analysis: Quotes, Themes and Characters
       </h1>
-      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE examiners</p>
+      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
 
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
         Welcome to The English Hub&apos;s Macbeth analysis hub. Every page below is written
-        by experienced GCSE English Literature examiners and targets the specific questions
+        by experienced GCSE English Literature markers and targets the specific questions
         students type into search engines the night before an essay is due. Whether you
         need a line-by-line reading of a famous quote, a full theme breakdown, or a character
         study, you will find Grade 9-standard explanations, context and critical vocabulary

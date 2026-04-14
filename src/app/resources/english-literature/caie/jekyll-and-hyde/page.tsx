@@ -259,25 +259,25 @@ const plotSummary = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     title: "Show detailed knowledge of the text",
     detail:
       "Demonstrate close knowledge of the novella's content through well-chosen quotations and precise references. In passage-based questions, work through the extract methodically. In essays, select relevant moments from across the entire text.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     title: "Understand the writer's methods and effects",
     detail:
       "Analyse how Stevenson uses language, form, and structure to create meaning. Identify literary techniques (metaphor, symbolism, narrative structure, pathetic fallacy) and explain their effects on the reader. This is the most heavily weighted objective.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     title: "Respond to different interpretations (implied)",
     detail:
-      "While Cambridge IGCSE does not have a separate AO for alternative readings, examiners reward responses that consider multiple perspectives: for example, whether Jekyll is a tragic figure or a reckless egotist, whether Hyde is a separate entity or Jekyll's true self.",
+      "While Cambridge IGCSE does not have a separate skill for alternative readings, markers reward responses that consider multiple perspectives: for example, whether Jekyll is a tragic figure or a reckless egotist, whether Hyde is a separate entity or Jekyll's true self.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     title: "Relate the text to its context",
     detail:
       "Show understanding of the Victorian context in which Stevenson wrote: attitudes to respectability, scientific advancement, Darwinian theory, urbanisation, and the Gothic literary tradition. Context should be integrated into analysis, not bolted on as a separate paragraph.",
@@ -315,7 +315,7 @@ export default function JekyllAndHydeStudyGuide() {
             "Themes",
             "Key Quotes",
             "Context",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Questions",
           ].map((s) => (
             <a
@@ -546,7 +546,7 @@ export default function JekyllAndHydeStudyGuide() {
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
         <section
-          id="assessment-objectives"
+          id="what-markers-look-for"
           aria-labelledby="ao-heading"
         >
           <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
@@ -555,7 +555,7 @@ export default function JekyllAndHydeStudyGuide() {
           <p className="mt-2 text-sm text-muted-foreground">
             Understanding how Cambridge marks your work helps you target your
             revision. Paper 1 (Prose) questions are marked holistically, but
-            these objectives indicate what examiners are looking for.
+            these objectives indicate what markers are looking for.
           </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {assessmentObjectives.map((ao) => (

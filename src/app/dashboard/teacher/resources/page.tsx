@@ -49,8 +49,8 @@ const LESSON_PLANS: Resource[] = [
 const ASSESSMENT_GUIDES: Resource[] = [
   {
     id: "ag1",
-    title: "AQA English Literature Mark Scheme Guide",
-    description: "Simplified mark scheme breakdown for AO1-AO4. Includes student-friendly assessment criteria and example annotations.",
+    title: "AQA English Literature Marking Guide",
+    description: "Simplified marking guide breakdown for AO1-AO4. Includes student-friendly assessment criteria and example annotations.",
     type: "assessment",
     examBoard: "AQA",
     detailUrl: "/dashboard/teacher/resources/mark-scheme",
@@ -58,7 +58,7 @@ const ASSESSMENT_GUIDES: Resource[] = [
   {
     id: "ag2",
     title: "Edexcel English Language Assessment Criteria",
-    description: "Detailed rubric for Paper 1 and Paper 2 writing tasks. Includes band descriptors and examiner commentary.",
+    description: "Detailed rubric for Paper 1 and Paper 2 writing tasks. Includes band descriptors and marker commentary.",
     type: "assessment",
     examBoard: "Edexcel",
   },
@@ -102,7 +102,7 @@ const EXAM_BOARD_RESOURCES: Resource[] = [
   {
     id: "eb4",
     title: "CIE IGCSE English Coursework Guidance",
-    description: "Coursework portfolio requirements and moderation guidance for CIE 0500/0990.",
+    description: "Coursework portfolio requirements and moderation guidance for CIE IGCSE English.",
     type: "exam-board",
     examBoard: "CIE",
   },

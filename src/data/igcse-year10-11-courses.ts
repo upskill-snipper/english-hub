@@ -24,7 +24,7 @@ export const igcseYear1011Courses: CourseData[] = [
   {
     id: 'igcse-y10-lit-poetry',
     title: 'IGCSE Literature: Poetry Anthology',
-    subtitle: 'Anthology poems - unseen poetry and comparative analysis (4ET1).',
+    subtitle: 'Anthology poems - unseen poetry and comparative analysis (IGCSE Literature).',
     tier: 'IGCSE',
     board: 'Edexcel IGCSE',
     specCode: '4ET1',
@@ -38,7 +38,7 @@ export const igcseYear1011Courses: CourseData[] = [
   {
     id: 'igcse-y10-lit-omam',
     title: 'IGCSE Literature: Of Mice and Men',
-    subtitle: "Steinbeck's novella - character, context, and exam technique (4ET1).",
+    subtitle: "Steinbeck's novella - character, context, and exam technique (IGCSE Literature).",
     tier: 'IGCSE',
     board: 'Edexcel IGCSE',
     specCode: '4ET1',
@@ -66,7 +66,7 @@ export const igcseYear1011Courses: CourseData[] = [
   {
     id: 'igcse-y11-lit-inspector',
     title: 'IGCSE Literature: An Inspector Calls',
-    subtitle: "Priestley's drama - social responsibility and exam mastery (4ET1).",
+    subtitle: "Priestley's drama - social responsibility and exam mastery (IGCSE Literature).",
     tier: 'IGCSE',
     board: 'Edexcel IGCSE',
     specCode: '4ET1',
@@ -80,7 +80,7 @@ export const igcseYear1011Courses: CourseData[] = [
   {
     id: 'igcse-y11-lit-macbeth',
     title: 'IGCSE Literature: Macbeth',
-    subtitle: "Shakespeare's tragedy - ambition, power, and dramatic technique (4ET1).",
+    subtitle: "Shakespeare's tragedy - ambition, power, and dramatic technique (IGCSE Literature).",
     tier: 'IGCSE',
     board: 'Edexcel IGCSE',
     specCode: '4ET1',

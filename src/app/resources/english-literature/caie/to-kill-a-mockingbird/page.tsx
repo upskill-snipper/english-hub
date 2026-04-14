@@ -32,7 +32,7 @@ const keyQuotes = [
     speaker: "Atticus Finch",
     chapter: "Chapter 11",
     analysis:
-      "Atticus redefines courage through the example of Mrs Dubose, who battles her morphine addiction before dying. Lee contrasts physical bravery (the gun) with moral courage (persisting despite certain defeat). This definition applies directly to Atticus's defence of Tom Robinson: he knows the all-white jury will convict, but he proceeds because it is morally right. The passage is key for AO2 analysis of Lee's use of juxtaposition and redefinition.",
+      "Atticus redefines courage through the example of Mrs Dubose, who battles her morphine addiction before dying. Lee contrasts physical bravery (the gun) with moral courage (persisting despite certain defeat). This definition applies directly to Atticus's defence of Tom Robinson: he knows the all-white jury will convict, but he proceeds because it is morally right. The passage is key for Writer's Methods analysis of Lee's use of juxtaposition and redefinition.",
   },
   {
     quote: "As you grow older, you'll see white men cheat black men every day of your life, but let me tell you something and don't you forget it — whenever a white man does that to a black man, no matter who he is, how rich he is, or how fine a family he comes from, that white man is trash",
@@ -310,25 +310,25 @@ const narrativeTechniques = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     description: "Show detailed knowledge and understanding of the text",
     guidance:
       "Demonstrate thorough knowledge of the novel's plot, characters, and themes. Reference specific chapters and events accurately. Use precise, embedded quotations (not long block quotes). Show that you understand the significance of events, not just what happens: explain why the jury's verdict matters, why Boo Radley's gifts are significant, and what the mockingbird symbolises. Do not retell the story — select and deploy evidence purposefully to support your argument.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     description: "Analyse the language, form, and structure used by a writer to create meanings and effects",
     guidance:
       "This is where the highest marks are earned. Analyse Lee's specific word choices, her use of the child narrator and retrospective voice, symbolism (mockingbird, mad dog, Radley house), and structural decisions (dual plot, courtroom as set piece, the novel's circular ending). Discuss how the first-person narration creates dramatic irony. Always explain the effect on the reader. Use literary terminology accurately: dramatic irony, symbolism, juxtaposition, foreshadowing, motif, bildungsroman.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     description: "Demonstrate understanding of the relationships between texts and the contexts in which they were written and received",
     guidance:
       "To Kill a Mockingbird was published in 1960 but set in the 1930s during the Great Depression. Discuss the Jim Crow South, racial segregation, the Scottsboro Boys case (a real trial that influenced the novel), and the emerging Civil Rights Movement. Show how Lee wrote during a period of racial upheaval — the Montgomery Bus Boycott (1955), Brown v. Board of Education (1954) — and how the novel intervened in contemporary debates about racial justice. Integrate context into your analysis rather than treating it as a separate section.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     description: "Communicate a clear, relevant response using appropriate terminology",
     guidance:
       "Write clearly and analytically with a sustained argument. Use literary terminology accurately and naturally (do not force terms in without explanation). Structure your response with a clear introduction, developed paragraphs, and a conclusion. Each paragraph should make a point, support it with evidence, and analyse the writer's methods. Avoid feature-spotting (identifying a technique without explaining its effect). Write 'Lee presents...' or 'Lee uses...' to demonstrate awareness of authorial craft.",
@@ -376,7 +376,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             "Key Quotes",
             "Narrative Techniques",
             "Context",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Questions",
           ].map((s) => (
             <a
@@ -493,8 +493,8 @@ export default function ToKillAMockingbirdStudyGuide() {
             Narrative Techniques
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Lee&rsquo;s narrative methods are essential for AO2 (analysis of language, form,
-            and structure). Examiners reward candidates who discuss <em>how</em> Lee shapes
+            Lee&rsquo;s narrative methods are essential for Writer's Methods (analysis of language, form,
+            and structure). Markers reward responses that discuss <em>how</em> Lee shapes
             meaning, not just <em>what</em> happens.
           </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -519,7 +519,7 @@ export default function ToKillAMockingbirdStudyGuide() {
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
             To Kill a Mockingbird was published in 1960 but is set in the mid-1930s. Cambridge
-            examiners expect you to discuss both the fictional setting and the context of
+            markers expect you to discuss both the fictional setting and the context of
             publication, and to integrate context into your analysis rather than treating it
             as a bolt-on.
           </p>
@@ -663,12 +663,12 @@ export default function ToKillAMockingbirdStudyGuide() {
                 {sampleQuestion.modelParagraph}
               </p>
               <div className="mt-3 rounded bg-primary/5 p-3">
-                <p className="text-xs font-semibold text-foreground">AOs demonstrated:</p>
+                <p className="text-xs font-semibold text-foreground">Skills demonstrated:</p>
                 <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
-                  <li>&bull; <strong>AO1:</strong> Detailed knowledge of the passage and its significance in the novel</li>
-                  <li>&bull; <strong>AO2:</strong> Analysis of Lee&rsquo;s language (&lsquo;passin&rsquo;&rsquo;), structure (juxtaposition of verdict and honour), and narrative perspective</li>
-                  <li>&bull; <strong>AO3:</strong> Contextual awareness of racial hierarchy and the Black community&rsquo;s position</li>
-                  <li>&bull; <strong>AO4:</strong> Clear, analytical writing using appropriate literary terminology</li>
+                  <li>&bull; <strong>Textual Knowledge:</strong> Detailed knowledge of the passage and its significance in the novel</li>
+                  <li>&bull; <strong>Writer's Methods:</strong> Analysis of Lee&rsquo;s language (&lsquo;passin&rsquo;&rsquo;), structure (juxtaposition of verdict and honour), and narrative perspective</li>
+                  <li>&bull; <strong>Interpretation:</strong> Contextual awareness of racial hierarchy and the Black community&rsquo;s position</li>
+                  <li>&bull; <strong>Personal Response:</strong> Clear, analytical writing using appropriate literary terminology</li>
                 </ul>
               </div>
             </div>
@@ -745,7 +745,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                 <li>
                   <strong className="text-foreground">Passage-based (a) questions:</strong> Work
                   through the extract methodically. Use short, embedded quotations from the
-                  passage. Analyse language, form, and structure (AO2). Then connect outward to
+                  passage. Analyse language, form, and structure (Writer's Methods). Then connect outward to
                   the rest of the novel and relevant context. Always discuss Lee&rsquo;s use of
                   the child narrator and how it shapes the reader&rsquo;s response.
                 </li>
@@ -760,13 +760,13 @@ export default function ToKillAMockingbirdStudyGuide() {
                   <strong className="text-foreground">Always use the author&rsquo;s name:</strong>{" "}
                   Write &ldquo;Lee presents...&rdquo; or &ldquo;Lee
                   uses...&rdquo; rather than &ldquo;the novel shows...&rdquo;. This demonstrates
-                  awareness of authorial intent and helps you discuss methods (AO2).
+                  awareness of authorial intent and helps you discuss methods (Writer's Methods).
                 </li>
                 <li>
                   <strong className="text-foreground">The 1930s setting and 1960 publication:</strong>{" "}
                   Like An Inspector Calls, this novel has a dual time frame. The 1930s setting
                   depicts historical racial injustice; the 1960 publication places it in dialogue
-                  with the Civil Rights Movement. Both contexts are important for AO3.
+                  with the Civil Rights Movement. Both contexts are important for Interpretation.
                 </li>
                 <li>
                   <strong className="text-foreground">Quote precisely:</strong> Short, embedded

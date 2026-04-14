@@ -94,11 +94,11 @@ export default function ComparisonEssaysPage() {
                 Comparison Essays
               </h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
-              Point-by-point structure, thesis statements, and paragraph frames for 4ET1
+              Point-by-point structure, thesis statements, and paragraph frames for IGCSE Literature
               comparison questions
             </p>
           </div>
@@ -110,7 +110,7 @@ export default function ComparisonEssaysPage() {
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          AO4 is the differentiator
+          Comparison is the differentiator
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
           Comparison is where Grade 6 becomes Grade 9
@@ -143,7 +143,7 @@ export default function ComparisonEssaysPage() {
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed mb-3">
               Each paragraph takes one idea and compares both poems within it. Every paragraph
-              hits AO4.
+              scores comparison marks.
             </p>
             <div className="rounded-xl border border-border/40 bg-background/50 p-3">
               <p className="text-xs font-mono text-foreground/80 leading-relaxed">
@@ -166,7 +166,7 @@ export default function ComparisonEssaysPage() {
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed mb-3">
               Write about Poem A in full, then Poem B in full with links back. Caps around
-              Grade 6 on AO4.
+              Grade 6 for comparison.
             </p>
             <div className="rounded-xl border border-border/40 bg-background/50 p-3">
               <p className="text-xs font-mono text-foreground/80 leading-relaxed">

@@ -293,28 +293,28 @@ const scroogeTransformation = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     title: "Show detailed knowledge of the text",
     detail:
-      "Demonstrate close knowledge of the novella's content through well-chosen references and quotations. Do not simply retell the plot; use specific details to support analytical points. Examiners reward precise, embedded quotations over lengthy copied passages.",
+      "Demonstrate close knowledge of the novella's content through well-chosen references and quotations. Do not simply retell the plot; use specific details to support analytical points. Markers reward precise, embedded quotations over lengthy copied passages.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     title: "Understand the writer's methods and effects",
     detail:
       "Analyse how Dickens uses language, form, and structure to create meaning. This includes imagery, symbolism, narrative voice, the five-stave structure (paralleling a musical composition or a carol), the role of the three spirits, and the contrast between characters. Use literary terminology accurately.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     title: "Understand the significance of context",
     detail:
       "Connect the text to its Victorian context: the Industrial Revolution, the 1834 Poor Law, Malthusian economics, the conditions of the urban poor, and Dickens's own experiences (his father's imprisonment for debt, his childhood work in a blacking factory). Context should illuminate the text, not replace analysis of it.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     title: "Develop a personal response",
     detail:
-      "Offer your own interpretation of the text rather than rehearsing generic points. Examiners reward candidates who engage thoughtfully with the question and consider alternative readings. For example: is Scrooge's transformation convincing, or is it too sudden? Is Tiny Tim a powerful symbol or a sentimental device?",
+      "Offer your own interpretation of the text rather than rehearsing generic points. Markers reward responses that engage thoughtfully with the question and consider alternative readings. For example: is Scrooge's transformation convincing, or is it too sudden? Is Tiny Tim a powerful symbol or a sentimental device?",
   },
 ];
 
@@ -351,7 +351,7 @@ export default function ChristmasCarolStudyGuide() {
             "Scrooge's Transformation",
             "Key Quotes",
             "Context",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Questions",
           ].map((s) => (
             <a
@@ -590,13 +590,13 @@ export default function ChristmasCarolStudyGuide() {
         <hr className="my-10 border-border" />
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
-        <section id="assessment-objectives" aria-labelledby="ao-heading">
+        <section id="what-markers-look-for" aria-labelledby="ao-heading">
           <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
             Cambridge Assessment Objectives
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Cambridge IGCSE English Literature (0475/0992) assesses four
-            objectives. Understanding what the examiner is looking for will
+            objectives. Understanding what the marker is looking for will
             help you structure stronger responses.
           </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">

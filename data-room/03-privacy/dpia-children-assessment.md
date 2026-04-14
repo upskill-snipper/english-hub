@@ -1,12 +1,12 @@
 # DPIA — Processing Children's Personal Data
 
-**The English Hub Ltd**
+**Upskill Energy Limited t/a The English Hub**
 **Assessment against the UK Children's Code (Age Appropriate Design Code)**
 **DPIA ID:** EH-DPIA-0001
-**Date:** `[REPLACE WITH DATE]`
+**Date:** 2026-04-12
 **Status:** DRAFT — review required before launch
-**Author:** `[REPLACE]`
-**DPO review:** `[REPLACE]`
+**Author:** `[REPLACE WITH name]`
+**DPO review:** `[REPLACE WITH name]`
 
 > This DPIA covers The English Hub's end-to-end processing of children's personal data as an online GCSE English learning platform. It is required both by Article 35 UK GDPR and by ICO guidance on services likely to be accessed by children. It incorporates an assessment against each of the **15 standards** of the Children's Code.
 
@@ -23,7 +23,7 @@ The English Hub is a UK-based SaaS platform that helps students aged 13–16 pre
 | Item | Detail |
 |---|---|
 | **Nature** | Web and mobile online service; stores student writing; generates AI feedback; tracks progress; shows results to teachers |
-| **Scope** | UK and EU students aged primarily 13–16; estimated `[REPLACE]` users by end of year 1 |
+| **Scope** | UK and EU students aged primarily 13–16; estimated `[REPLACE WITH projected user count]` users by end of year 1 |
 | **Context** | Education; children are a vulnerable group under UK GDPR; schools as institutional controllers |
 | **Purpose** | Improve student outcomes in GCSE English; support teacher workload; give learners personalised feedback |
 
@@ -64,11 +64,11 @@ The English Hub is a UK-based SaaS platform that helps students aged 13–16 pre
 |---|---|---|
 | DPO | Yes | Full review; approved with conditions |
 | Engineering | Yes | Privacy-by-design reviewed |
-| Teachers (pilot) | `[REPLACE]` | Usability + data concerns; no concerns raised about scope |
-| Students (pilot) | `[REPLACE]` | Youth advisory feedback captured on tone, controls |
-| Parents (pilot) | `[REPLACE]` | Feedback on consent flow and controls |
+| Teachers (pilot) | Pending | Usability + data concerns; no concerns raised about scope |
+| Students (pilot) | Pending | Youth advisory feedback captured on tone, controls |
+| Parents (pilot) | Pending | Feedback on consent flow and controls |
 | ICO | Not consulted (no residual high risk identified; re-evaluate before Art 36 if this changes) | — |
-| External counsel | `[REPLACE]` | `[REPLACE]` |
+| External counsel | Pending | `[REPLACE WITH outcome when consulted]` |
 
 ---
 
@@ -307,7 +307,7 @@ All users under 18 are treated as children. Standards apply by default to all ac
 **Assessment:**
 - "Privacy" in the main settings menu exposes: export my data, delete my account, see what's stored, change consent choices.
 - A visible "Report a concern" link on every page routes to safeguarding + privacy queues.
-- Users can email privacy@englishhub.`[tld]` at any time.
+- Users can email dpo@theenglishhub.app at any time.
 - Response targets (1 month for SARs) are stated in the privacy notice.
 
 **Evidence:** In-product privacy centre `[REPLACE WITH link]`
@@ -344,7 +344,7 @@ All residual risks are assessed as low or medium. No residual high risks remain;
 | **Overall residual risk** | Low / Medium |
 | **Can we proceed?** | Yes, with implementation of mitigations below |
 | **ICO consultation (Art 36)?** | No |
-| **Review date** | `[REPLACE — within 12 months or on material change]` |
+| **Review date** | April 2027 (or sooner on material change) |
 
 ### Required mitigations before launch
 

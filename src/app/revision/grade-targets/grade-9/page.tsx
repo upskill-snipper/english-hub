@@ -156,8 +156,8 @@ export default async function Grade9Page() {
         <div className="rounded-xl border border-primary/20 bg-primary/[0.04] p-4 flex items-start gap-3">
           <Info className="size-4 shrink-0 text-primary mt-0.5" />
           <div className="text-xs text-muted-foreground leading-relaxed">
-            <span className="font-semibold text-foreground">Cambridge 0500 uses A*-G grading. </span>
-            For Cambridge 0500, a <span className="font-semibold text-foreground">Grade A*</span> is the
+            <span className="font-semibold text-foreground">Cambridge IGCSE uses A*-G grading. </span>
+            For Cambridge IGCSE, a <span className="font-semibold text-foreground">Grade A*</span> is the
             equivalent of the top of the <span className="font-semibold text-foreground">9-1 scale (Grade 8-9)</span>. The advice below describes that top-band thinking.
           </div>
         </div>
@@ -173,7 +173,7 @@ export default async function Grade9Page() {
         </div>
 
         <p className="text-body-sm text-muted-foreground mb-5 max-w-3xl">
-          {displayGradeLabel} is the top grade, achieved by a small percentage of students. Examiners describe this level of work as &quot;exploratory&quot;, &quot;critical&quot;, and &quot;conceptualised.&quot; The key distinction from the grade below is not more analysis — it is a different kind of thinking.
+          {displayGradeLabel} is the top grade, achieved by a small percentage of students. Markers describe this level of work as &quot;exploratory&quot;, &quot;critical&quot;, and &quot;conceptualised.&quot; The key distinction from the grade below is not more analysis — it is a different kind of thinking.
         </p>
 
         {boardConfig && boundary.percent !== null && (
@@ -185,7 +185,7 @@ export default async function Grade9Page() {
               </h3>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              You need approximately <span className="font-semibold text-primary">{boundary.percent}%</span> of total marks to reach {boundary.label} in {boardConfig.shortName}. This is the top grade — roughly 3-5% of candidates achieve it.
+              You need approximately <span className="font-semibold text-primary">{boundary.percent}%</span> of total marks to reach {boundary.label} in {boardConfig.shortName}. This is the top grade — roughly 3-5% of students achieve it.
               {boundary.systemNote && <> <span className="italic">{boundary.systemNote}</span></>}
             </p>
           </div>
@@ -254,7 +254,7 @@ export default async function Grade9Page() {
         </div>
 
         <p className="text-body-sm text-muted-foreground mb-5 max-w-3xl">
-          This is the most important word in the top-grade mark scheme and the most misunderstood. A conceptualised response is not just detailed analysis — it is analysis organised around a big idea that runs through your whole essay.
+          This is the most important word in the top-grade marking guide and the most misunderstood. A conceptualised response is not just detailed analysis — it is analysis organised around a big idea that runs through your whole essay.
         </p>
 
         <div className="space-y-5">
@@ -412,7 +412,7 @@ export default async function Grade9Page() {
           higherEssay={example.higherEssay}
           contextNote={
             boardConfig
-              ? `This example uses ${example.title}, which is on the ${boardConfig.shortName} specification.`
+              ? `This example uses ${example.title}, which is on your ${boardConfig.shortName} exam board.`
               : undefined
           }
         />

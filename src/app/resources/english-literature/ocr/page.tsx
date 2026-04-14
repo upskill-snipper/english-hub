@@ -19,7 +19,7 @@ const examPapers = [
     href: "/resources/english-literature/ocr/paper-1",
     description:
       "Modern prose or drama text, plus a literary heritage prose text. Worth 50% of the GCSE.",
-    component: "Component 01",
+    component: "Paper 01",
     duration: "2 hours",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
@@ -32,7 +32,7 @@ const examPapers = [
     href: "/resources/english-literature/ocr/paper-2",
     description:
       "Shakespeare play, plus poetry from the OCR anthology and unseen poetry. Worth 50% of the GCSE.",
-    component: "Component 02",
+    component: "Paper 02",
     duration: "2 hours",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
@@ -152,14 +152,14 @@ export default function OCREnglishLiteraturePage() {
           </p>
 
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
-            {/* Component 01 */}
+            {/* Paper 01 */}
             <div
               className="rounded-xl border-l-4 border-primary bg-card p-6 shadow-md"
             >
               <p
                 className="text-xs font-bold uppercase tracking-wider text-primary"
               >
-                Component 01
+                Paper 01
               </p>
               <h3 className="mt-1 text-lg font-semibold text-foreground">
                 Exploring Modern &amp; Literary Heritage Texts
@@ -184,14 +184,14 @@ export default function OCREnglishLiteraturePage() {
               </div>
             </div>
 
-            {/* Component 02 */}
+            {/* Paper 02 */}
             <div
               className="rounded-xl border-l-4 border-primary bg-card p-6 shadow-md"
             >
               <p
                 className="text-xs font-bold uppercase tracking-wider text-primary"
               >
-                Component 02
+                Paper 02
               </p>
               <h3 className="mt-1 text-lg font-semibold text-foreground">
                 Exploring Poetry &amp; Shakespeare
@@ -335,7 +335,7 @@ export default function OCREnglishLiteraturePage() {
             <div
               className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md"
             >
-              <p className="font-bold text-primary">AO1</p>
+              <p className="font-bold text-primary">Reading and response</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Read, understand, and respond to texts. Maintain a critical
                 style and develop an informed personal response. Use textual
@@ -346,7 +346,7 @@ export default function OCREnglishLiteraturePage() {
             <div
               className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md"
             >
-              <p className="font-bold text-accent">AO2</p>
+              <p className="font-bold text-accent">Language, form and structure</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Analyse the language, form, and structure used by a writer to
                 create meanings and effects, using relevant subject terminology
@@ -356,7 +356,7 @@ export default function OCREnglishLiteraturePage() {
             <div
               className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md"
             >
-              <p className="font-bold text-primary">AO3</p>
+              <p className="font-bold text-primary">Contextual understanding</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Show understanding of the relationships between texts and the
                 contexts in which they were written.
@@ -365,7 +365,7 @@ export default function OCREnglishLiteraturePage() {
             <div
               className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md"
             >
-              <p className="font-bold text-accent">AO4</p>
+              <p className="font-bold text-accent">Written accuracy</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Use a range of vocabulary and sentence structures for clarity,
                 purpose, and effect, with accurate spelling and punctuation.

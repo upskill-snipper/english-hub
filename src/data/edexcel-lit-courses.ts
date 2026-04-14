@@ -16,11 +16,11 @@ const edexcelLitPaper1: CourseData = {
   color: '#e11d48',
   moduleList: [
 // ──────────────────────────────────────────────
-  // MODULE 1 — Paper 1 Overview & Assessment Objectives
+  // MODULE 1 — Paper 1 Overview & what markers look for
   // ──────────────────────────────────────────────
   {
     id: 'edx-lt1-m1',
-    title: 'Paper 1 Overview & Assessment Objectives',
+    title: 'Paper 1 Overview & what markers look for',
     duration: '45 min',
     content: `
 <h2>Edexcel GCSE English Literature — Paper 1</h2>
@@ -35,24 +35,24 @@ const edexcelLitPaper1: CourseData = {
   <li><strong>Section B — Post-1914 Literature (40 marks):</strong> One extract-based essay on your studied post-1914 text. The same format applies — respond to the printed extract and then range across the wider text.</li>
 </ul>
 
-<h3>Assessment Objectives</h3>
+<h3>what markers look for</h3>
 <p>Four AOs are tested across Paper 1, but they carry different weight depending on the section:</p>
 <ul>
-  <li><strong>AO1</strong> — Read, understand and respond to texts. Maintain a critical style and develop an informed personal response. Use textual references, including quotations, to support and illustrate interpretations.</li>
-  <li><strong>AO2</strong> — Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.</li>
-  <li><strong>AO3</strong> — Show understanding of the relationships between texts and the contexts in which they were written.</li>
-  <li><strong>AO4</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. <em>This is assessed on one essay only</em> (typically the Shakespeare section) and is worth up to 4 marks.</li>
+  <li><strong>Personal response (AO1)</strong> — Read, understand and respond to texts. Maintain a critical style and develop an informed personal response. Use textual references, including quotations, to support and illustrate interpretations.</li>
+  <li><strong>Writer's methods (AO2)</strong> — Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.</li>
+  <li><strong>Context (AO3)</strong> — Show understanding of the relationships between texts and the contexts in which they were written.</li>
+  <li><strong>Technical accuracy (AO4)</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. <em>This is assessed on one essay only</em> (typically the Shakespeare section) and is worth up to 4 marks.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> AO4 (SPaG) marks are easy to lose through carelessness. Because they are only assessed on one essay, every spelling slip and missing full stop in that response costs you. Leave two minutes at the end of your Shakespeare essay purely for proofreading.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Technical accuracy (AO4) marks are easy to lose through carelessness. Because they are only assessed on one essay, every spelling slip and missing full stop in that response costs you. Leave two minutes at the end of your Shakespeare essay purely for proofreading.</div>
 
 <h3>How Marks Break Down</h3>
 <p>Each 40-mark section is typically weighted as follows:</p>
 <ul>
-  <li><strong>AO1:</strong> approximately 15 marks per section — rewarding your ideas and use of references.</li>
-  <li><strong>AO2:</strong> approximately 15 marks per section — rewarding analysis of the writer's craft.</li>
-  <li><strong>AO3:</strong> approximately 10 marks per section — rewarding contextual understanding.</li>
-  <li><strong>AO4:</strong> up to 4 additional marks on the Shakespeare essay only.</li>
+  <li><strong>Personal response (AO1):</strong> approximately 15 marks per section — rewarding your ideas and use of references.</li>
+  <li><strong>Writer's methods (AO2):</strong> approximately 15 marks per section — rewarding analysis of the writer's craft.</li>
+  <li><strong>Context (AO3):</strong> approximately 10 marks per section — rewarding contextual understanding.</li>
+  <li><strong>Technical accuracy (AO4):</strong> up to 4 additional marks on the Shakespeare essay only.</li>
 </ul>
 
 <h3>Recommended Timing Plan</h3>
@@ -61,13 +61,13 @@ const edexcelLitPaper1: CourseData = {
   <li><strong>5–50 min:</strong> Write your Shakespeare essay (40 marks + 4 SPaG marks). Spend roughly 5 minutes planning and 40 minutes writing.</li>
   <li><strong>50–55 min:</strong> Read the Post-1914 extract. Annotate in the same way.</li>
   <li><strong>55–95 min:</strong> Write your Post-1914 essay (40 marks). Again, 5 minutes planning and 35 minutes writing.</li>
-  <li><strong>95–105 min:</strong> Review both essays. Prioritise checking the Shakespeare response for SPaG (AO4).</li>
+  <li><strong>95–105 min:</strong> Review both essays. Prioritise checking the Shakespeare response for technical accuracy (AO4).</li>
 </ol>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing only about the printed extract and ignoring the wider text. Both sections ask you to use the extract as a <em>starting point</em>. At least a third of your essay should discuss moments, themes, or character development from elsewhere in the text, otherwise you cannot access the top mark bands.</div>
 
 <h3>What "Top Band" Responses Look Like</h3>
-<p>Examiners describe the highest-level answers as <strong>critical, exploratory</strong> responses that:</p>
+<p>Markers describe the highest-level answers as <strong>critical, exploratory</strong> responses that:</p>
 <ul>
   <li>Offer a <strong>conceptualised</strong> argument — not just a list of points, but an overarching thesis.</li>
   <li>Analyse the writer's methods using precise subject terminology (e.g. <em>soliloquy</em>, <em>dramatic irony</em>, <em>motif</em>).</li>
@@ -95,11 +95,11 @@ const edexcelLitPaper1: CourseData = {
       {
         id: 'edx-lt1-m1-q2',
         question:
-          'Which assessment objective tests spelling, punctuation and grammar (SPaG)?',
+          'Which what markers look for tests spelling, punctuation and grammar (SPaG)?',
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 3,
         explanation:
-          'AO4 assesses SPaG and is worth up to 4 additional marks. It is tested on one essay only — typically the Shakespeare response.',
+          'Technical accuracy (AO4) assesses SPaG and is worth up to 4 additional marks. It is tested on one essay only — typically the Shakespeare response.',
       },
       {
         id: 'edx-lt1-m1-q3',
@@ -142,9 +142,9 @@ const edexcelLitPaper1: CourseData = {
     content: `
 <h2>Macbeth — Themes &amp; Jacobean Context</h2>
 
-<p><em>Macbeth</em> is the most widely studied Shakespeare text for Edexcel GCSE English Literature. This module maps the play's <strong>seven major themes</strong> onto the historical context you need for AO3 — and shows you how to weave context into your analysis without "bolting it on".</p>
+<p><em>Macbeth</em> is the most widely studied Shakespeare text for Edexcel GCSE English Literature. This module maps the play's <strong>seven major themes</strong> onto the historical context you need for context (AO3) — and shows you how to weave context into your analysis without "bolting it on".</p>
 
-<div class="key-term"><strong>Key Term: Jacobean</strong> — Relating to the reign of King James I of England (1603–1625). <em>Macbeth</em> was written c. 1606, shortly after James came to the throne. Understanding Jacobean beliefs and politics is essential for AO3.</div>
+<div class="key-term"><strong>Key Term: Jacobean</strong> — Relating to the reign of King James I of England (1603–1625). <em>Macbeth</em> was written c. 1606, shortly after James came to the throne. Understanding Jacobean beliefs and politics is essential for context (AO3).</div>
 
 <h3>The Seven Key Themes</h3>
 
@@ -175,11 +175,11 @@ const edexcelLitPaper1: CourseData = {
 <div class="text-extract">"Look like th'innocent flower, / But be the serpent under't."<div class="source">Act 1, Scene 5</div></div>
 
 <h4>7. Fate vs Free Will</h4>
-<p>Do the witches cause Macbeth's actions, or merely reveal what he already desired? This ambiguity is central to Shakespeare's design and gives candidates a rich line of argument for AO1.</p>
+<p>Do the witches cause Macbeth's actions, or merely reveal what he already desired? This ambiguity is central to Shakespeare's design and gives you a rich line of argument for personal response (AO1).</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The strongest responses treat themes as <em>interconnected</em>. For example, link ambition to masculinity — Lady Macbeth equates manliness with murderous ambition, which shows how toxic definitions of masculinity fuel the play's violence.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The strongest responses treat themes as <em>interconnected</em>. For example, link ambition to masculinity — Lady Macbeth equates manliness with murderous ambition, which shows how toxic definitions of masculinity fuel the play's violence.</div>
 
-<h3>Historical Context for AO3</h3>
+<h3>Historical Context for the Context Skill (AO3)</h3>
 <ul>
   <li><strong>James I &amp; the Divine Right of Kings:</strong> James believed monarchs were appointed by God. Killing a king (regicide) was therefore not just treason but a sin against the divine order. This makes Duncan's murder doubly horrifying to a Jacobean audience.</li>
   <li><strong>The Gunpowder Plot (1605):</strong> The failed Catholic conspiracy to blow up Parliament occurred just a year before <em>Macbeth</em> was written. Themes of treason, hidden plots, and divine punishment would have resonated powerfully.</li>
@@ -192,7 +192,7 @@ const edexcelLitPaper1: CourseData = {
 <h3>Embedding Context — Not Bolting It On</h3>
 <p>A common weakness in GCSE essays is writing a detached paragraph of context that does not connect to the text. Instead, <strong>embed</strong> context into your analysis:</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing "In Jacobean times people believed in witches. James I wrote a book about them." as a stand-alone sentence with no link to the text. This is "bolted-on" context and will not score highly for AO3.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing "In Jacobean times people believed in witches. James I wrote a book about them." as a stand-alone sentence with no link to the text. This is "bolted-on" context and will not score highly for context (AO3).</div>
 
 <p><strong>Weak:</strong> "In Jacobean times, people believed in the Divine Right of Kings. Macbeth kills Duncan."</p>
 <p><strong>Strong:</strong> "Shakespeare makes Duncan's murder especially transgressive for a Jacobean audience who believed in the Divine Right of Kings — by killing God's appointed ruler, Macbeth does not merely commit treason but violates the sacred order, which is why nature itself convulses in response."</p>
@@ -258,13 +258,13 @@ const edexcelLitPaper1: CourseData = {
           'What is "bolted-on" context, and why should you avoid it?',
         options: [
           'Context placed at the end of an essay for emphasis — it is fine to use',
-          'A detached statement of historical fact with no link to the text — it scores poorly for AO3',
-          'Using too many quotations instead of context — it is penalised under AO2',
+          'A detached statement of historical fact with no link to the text — it scores poorly for context (AO3)',
+          'Using too many quotations instead of context — it is penalised under writer\'s methods (AO2)',
           'Referring to a different Shakespeare play for comparison — it is irrelevant',
         ],
         correct: 1,
         explanation:
-          'Bolted-on context means dropping in a historical fact (e.g. "James I believed in witches") without connecting it to the text\'s language, themes, or effects. To score well for AO3, you must embed context into your analysis.',
+          'Bolted-on context means dropping in a historical fact (e.g. "James I believed in witches") without connecting it to the text\'s language, themes, or effects. To score well for context (AO3), you must embed context into your analysis.',
       },
       {
         id: 'edx-lt1-m2-q5',
@@ -293,7 +293,7 @@ const edexcelLitPaper1: CourseData = {
     content: `
 <h2>Character Analysis &amp; Development in <em>Macbeth</em></h2>
 
-<p>For the Shakespeare question on Paper 1, go beyond describing what a character does — explain <em>how</em> Shakespeare constructs them (AO2) and <em>why</em> they matter thematically and contextually (AO3).</p>
+<p>For the Shakespeare question on Paper 1, go beyond describing what a character does — explain <em>how</em> Shakespeare constructs them (writer's methods, AO2) and <em>why</em> they matter thematically and contextually (context, AO3).</p>
 
 <div class="key-term"><strong>Key Term: Character Arc</strong> — The transformation a character undergoes across a text. In tragedy, the protagonist's arc traces a rise followed by a catastrophic fall.</div>
 
@@ -322,10 +322,10 @@ const edexcelLitPaper1: CourseData = {
   <li><strong>Macduff:</strong> Loyal thane who discovers Duncan's body. After his family's slaughter, he becomes the avenging hero who restores natural order.</li>
 </ul>
 
-<h3>Writing About Character: AO2 Language</h3>
+<h3>Writing About Character: Language Analysis (AO2)</h3>
 <p>Show awareness that characters are <em>constructs</em>. Use: "Shakespeare <strong>presents</strong> Macbeth as…", "Shakespeare <strong>portrays</strong> Lady Macbeth through…", "Shakespeare <strong>constructs</strong> Banquo as a foil to…"</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Treat characters as <em>vehicles for themes</em>. Macbeth is Shakespeare's exploration of unchecked ambition and the divine right of kings. Link character analysis to bigger ideas for top-band marks.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Treat characters as <em>vehicles for themes</em>. Macbeth is Shakespeare's exploration of unchecked ambition and the divine right of kings. Link character analysis to bigger ideas for top-band marks.</div>
 
 <h3>Characters and Jacobean Anxieties</h3>
 <ul>
@@ -343,7 +343,7 @@ const edexcelLitPaper1: CourseData = {
 <strong>Act 5, Scene 5 (Despair):</strong> "To-morrow, and to-morrow, and to-morrow, / Creeps in this petty pace from day to day" — Nihilism. Meaning dissolves; life becomes meaningless repetition.
 </div>
 
-<div class="grade-9-insight"><strong>Grade 9 Insight:</strong> Trace a single image's evolution across the entire play. Blood begins as honour ("brave Macbeth"), becomes transgression (Duncan's murder), then guilt ("Will all great Neptune's ocean wash this blood / Clean from my hand?"), and finally numbness ("Out, damned spot!" in Lady Macbeth's mad scene). This unified analysis demonstrates sophisticated AO2 understanding and conceptual mastery of the play's psychological arc.</div>
+<div class="grade-9-insight"><strong>Grade 9 Insight:</strong> Trace a single image's evolution across the entire play. Blood begins as honour ("brave Macbeth"), becomes transgression (Duncan's murder), then guilt ("Will all great Neptune's ocean wash this blood / Clean from my hand?"), and finally numbness ("Out, damned spot!" in Lady Macbeth's mad scene). This unified analysis demonstrates sophisticated writer's methods (AO2) understanding and conceptual mastery of the play's psychological arc.</div>
 
 <h3>Worked Example: Lady Macbeth's Transgression</h3>
 <p><strong>Extract:</strong> "Come, you spirits / That tend on mortal thoughts, unsex me here"</p>
@@ -418,7 +418,7 @@ const edexcelLitPaper1: CourseData = {
 <div class="text-extract">
 <strong>Sample Question:</strong> "Explore how Shakespeare presents Macbeth's change from loyal warrior to paranoid tyrant."<br><br>
 <strong>Model Response (c. 280 words):</strong> Shakespeare's presentation of Macbeth's moral descent is central to the tragedy's exploration of ambition's corrupting nature. In Act 1 Scene 2, the bleeding sergeant hails "brave Macbeth," establishing him as a loyal warrior whose violence serves rightful order — blood here symbolises martial honour. Yet by Act 1 Scene 7, Macbeth's soliloquy reveals internal fracture: "I have no spur / To prick the sides of my intent, but only / Vaulting ambition." The noun "spur" traditionally signified duty or honour, but Macbeth finds only "ambition" — selfish desire divorced from legitimate cause. The verb "vaulting" (arching, overleaping) suggests ambition that exceeds its proper bounds and will inevitably collapse, foreshadowing his downfall. Lady Macbeth's manipulation — "When you durst do it, then you were a man" — weaponises masculinity against him, forcing the murder. Following Duncan's death, blood's imagery inverts. The hyperbolic "Will all great Neptune's ocean wash this blood / Clean from my hand?" reveals Macbeth's recognition that moral transgression cannot be undone by physical action. This psychological unraveling accelerates through Acts 3–5. By Act 3, Macbeth orders further murders to feel secure ("We have scotch'd the snake, not kill'd it"), revealing paranoia and moral numbness. The Act 5 soliloquy sees meaning itself dissolve: "To-morrow, and to-morrow, and to-morrow." Shakespeare's arc demonstrates that unchecked ambition doesn't elevate; it destroys, leaving the protagonist isolated and nihilistic. For a Jacobean audience steeped in the divine right of kings, Macbeth's fall would serve as a cosmic warning: those who violate God's ordained order face not mere earthly punishment but psychological annihilation.
-<div class="source">Grade 8–9 exemplar: ~320 words integrating AO1 (interpretation), AO2 (language analysis of "vaulting," "spur," hyperbole), and AO3 (divine right context)</div>
+<div class="source">Grade 8–9 exemplar: ~320 words integrating personal response (AO1), writer's methods (AO2, language analysis of "vaulting," "spur," hyperbole), and context (AO3, divine right)</div>
 </div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as real people. Avoid "Macbeth feels angry" — instead write "Shakespeare presents Macbeth as consumed by paranoia, reflecting the consequences of tyranny."</div>
@@ -427,7 +427,7 @@ const edexcelLitPaper1: CourseData = {
       {
         id: 'edx-lt1-m3-q1',
         question:
-          'Which phrase best demonstrates AO2-focused writing about character?',
+          'Which phrase best demonstrates writer\'s methods (AO2)-focused writing about character?',
         options: [
           'Macbeth is a bad person who makes terrible choices',
           'Shakespeare constructs Macbeth as a vehicle for exploring unchecked ambition',
@@ -436,7 +436,7 @@ const edexcelLitPaper1: CourseData = {
         ],
         correct: 1,
         explanation:
-          'AO2 requires you to analyse the writer\'s methods. "Shakespeare constructs Macbeth as a vehicle for…" shows awareness that the character is a deliberate authorial construction used to explore a theme.',
+          'Writer\'s methods (AO2) requires you to analyse how writers create meaning. "Shakespeare constructs Macbeth as a vehicle for…" shows awareness that the character is a deliberate authorial construction used to explore a theme.',
       },
       {
         id: 'edx-lt1-m3-q2',
@@ -493,7 +493,7 @@ const edexcelLitPaper1: CourseData = {
     content: `
 <h2>Language, Form &amp; Structure in <em>Macbeth</em></h2>
 
-<p>AO2 requires you to analyse <em>how</em> writers use language and structure to achieve effects — not just what is said, but how and why.</p>
+<p>Writer's methods (AO2) requires you to analyse <em>how</em> writers use language and structure to achieve effects — not just what is said, but how and why.</p>
 
 <div class="key-term"><strong>Key Term: Writer's Methods</strong> — Deliberate choices in language, form and structure to shape meaning: verse form, imagery, soliloquy, dramatic irony, structural patterning.</div>
 
@@ -545,7 +545,7 @@ const edexcelLitPaper1: CourseData = {
   <li><strong>Structure:</strong> Placed before Lady Macbeth persuades him — juxtaposition highlights her as catalyst.</li>
 </ul><div class="source">Annotated extract: WHAT–HOW–WHY</div></div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do not just name a technique — explain the <em>effect</em>. "Shakespeare uses a metaphor" earns little; "the blood metaphor conveys guilt, reflecting Jacobean beliefs about divine punishment" earns much more.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Do not just name a technique — explain the <em>effect</em>. "Shakespeare uses a metaphor" earns little; "the blood metaphor conveys guilt, reflecting Jacobean beliefs about divine punishment" earns much more.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating language, form and structure as a checklist. The best responses integrate all three — e.g. prose in the sleepwalking scene reinforces fragmented imagery and mirrors structural collapse.</div>
 `,
@@ -581,7 +581,7 @@ const edexcelLitPaper1: CourseData = {
       {
         id: 'edx-lt1-m4-q3',
         question:
-          'In the WHAT–HOW–WHY framework, which element most directly addresses AO2?',
+          'In the WHAT–HOW–WHY framework, which element most directly addresses writer\'s methods (AO2)?',
         options: [
           'WHAT — describing what happens in the extract',
           'HOW — analysing Shakespeare\'s use of language, form and structure',
@@ -590,7 +590,7 @@ const edexcelLitPaper1: CourseData = {
         ],
         correct: 1,
         explanation:
-          'AO2 focuses on the writer\'s methods — how language and structure are used to achieve effects. The HOW step directly addresses this by identifying techniques and analysing their impact.',
+          'Writer\'s methods (AO2) focuses on how writers create meaning — how language and structure are used to achieve effects. The HOW step directly addresses this by identifying techniques and analysing their impact.',
       },
       {
         id: 'edx-lt1-m4-q4',
@@ -633,7 +633,7 @@ const edexcelLitPaper1: CourseData = {
     content: `
 <h2>The Edexcel Shakespeare Question — Extract to Whole Play</h2>
 
-<p>The Shakespeare question on Edexcel Paper 1 is worth <strong>40 marks</strong> and you should spend approximately <strong>50 minutes</strong> on it. You are given a printed extract alongside a question about a <strong>theme or character</strong>. You must discuss <strong>both the extract and the wider play</strong> — candidates who only analyse the extract will cap their mark severely. All four AOs are assessed: <strong>AO1</strong> (response and references), <strong>AO2</strong> (language/form/structure), <strong>AO3</strong> (context), and <strong>AO4</strong> (technical accuracy).</p>
+<p>The Shakespeare question on Edexcel Paper 1 is worth <strong>40 marks</strong> and you should spend approximately <strong>50 minutes</strong> on it. You are given a printed extract alongside a question about a <strong>theme or character</strong>. You must discuss <strong>both the extract and the wider play</strong> — students who only analyse the extract will cap their mark severely. All four AOs are assessed: <strong>personal response (AO1)</strong>, <strong>writer's methods (AO2)</strong>, <strong>context (AO3)</strong>, and <strong>technical accuracy (AO4)</strong>.</p>
 
 <div class="key-term"><strong>Key Term: Extract-to-Whole</strong> — The Edexcel requirement that your response moves from close analysis of the given passage outward to the rest of the play, showing how the theme or character develops across the full text.</div>
 
@@ -645,7 +645,7 @@ const edexcelLitPaper1: CourseData = {
   <li><strong>Conclusion (2–3 sentences):</strong> A final evaluative statement on Shakespeare's purpose or the audience's response.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Aim for roughly 60% on the extract and 40% on the wider play. The extract is your launchpad, but the wider play paragraphs lift you into the top bands.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Aim for roughly 60% on the extract and 40% on the wider play. The extract is your launchpad, but the wider play paragraphs lift you into the top bands.</div>
 
 <h3>The PETAL Framework</h3>
 <ul>
@@ -674,7 +674,7 @@ const edexcelLitPaper1: CourseData = {
 </div>
 
 <h3>Grade 9 Insight: Moving Beyond the Extract</h3>
-<div class="grade-9-insight"><strong>Grade 9 Approach:</strong> Spend roughly 60% of your essay on close analysis of the printed extract (AO2: language techniques, dramatic effects). However, the final 40% must move decisively into the wider play. Don't just mention other scenes — show how they <em>develop, complicate, or culminate</em> the idea from the extract. For example, if the extract shows Macbeth's hesitation about regicide, move to Act 2 (the murder), then Act 3 (paranoia), then Act 5 (nihilism). This progression demonstrates that you understand the thematic arc of the play and can integrate evidence strategically.</div>
+<div class="grade-9-insight"><strong>Grade 9 Approach:</strong> Spend roughly 60% of your essay on close analysis of the printed extract (writer's methods (AO2): language techniques, dramatic effects). However, the final 40% must move decisively into the wider play. Don't just mention other scenes — show how they <em>develop, complicate, or culminate</em> the idea from the extract. For example, if the extract shows Macbeth's hesitation about regicide, move to Act 2 (the murder), then Act 3 (paranoia), then Act 5 (nihilism). This progression demonstrates that you understand the thematic arc of the play and can integrate evidence strategically.</div>
 
 <h3>Worked Example: Extractto-Whole Analysis</h3>
 <p><strong>Extract (Act 1.7):</strong> "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th'other."</p>
@@ -701,7 +701,7 @@ The prophecy itself fuels this ambition. The witches' "All hail, Macbeth, that s
   <li><strong>0–5 min:</strong> Read extract carefully. Annotate key words, literary devices, character tone.</li>
   <li><strong>5–8 min:</strong> Plan — write a one-sentence thesis, 3–4 extract points (using PETAL), 3–4 wider-play moments (showing development).</li>
   <li><strong>8–42 min:</strong> Write response. Aim for 2–3 extract-focused paragraphs (60%), then 2–3 wider-play paragraphs (40%). Use embedded quotations (3–6 words each).</li>
-  <li><strong>42–50 min:</strong> Proofread for AO4 (spelling, punctuation, grammar). Check for SPaG errors that lose easy marks.</li>
+  <li><strong>42–50 min:</strong> Proofread for technical accuracy (AO4). Check for SPaG errors that lose easy marks.</li>
 </ol>
 
 <h3>Model Opening — Extract-to-Whole (Grade 8–9)</h3>
@@ -715,7 +715,7 @@ The prophecy itself fuels this ambition. The witches' "All hail, Macbeth, that s
 <div class="text-extract">
 <strong>From Act 1.7 — "I have no spur / To prick the sides of my intent, but only / Vaulting ambition"</strong><br><br>
 Shakespeare's use of equestrian metaphor reveals Macbeth's moral self-awareness. The "spur" traditionally signifies duty or honour — legitimate reasons to act — yet Macbeth identifies only "ambition" as his motivator. The verb "vaulting" (leaping, arching) carries connotations of reckless overreach; the paradoxical "o'erleaps itself / And falls on th'other" foreshadows inevitable collapse. Notably, Macbeth does not excuse his ambition as imposed by fate or witches — he owns it. For a Jacobean audience steeped in the Great Chain of Being, this self-aware transgression is damning: Macbeth understands the cosmic disorder his actions will produce, yet cannot resist. The metaphor's specificity — the concrete image of a horse and rider — makes abstract ambition visceral, inviting the audience to feel the tragedy of a man who recognises his own doom.
-<div class="source">Grade 8–9 Extract Paragraph: ~180 words, demonstrating AO2 (metaphor analysis, connotations, paradox), AO1 (response to question), AO3 (Jacobean context)</div>
+<div class="source">Grade 8–9 Extract Paragraph: ~180 words, demonstrating AO2 (metaphor analysis, connotations, paradox), personal response (AO1), context (AO3, Jacobean)</div>
 </div>
 
 <h3>Wider Play Paragraph Model (Grade 8–9)</h3>
@@ -738,7 +738,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
       {
         id: 'edx-lt1-m5-q2',
         question:
-          'What must candidates discuss in their response to the Shakespeare question?',
+          'What must you discuss in their response to the Shakespeare question?',
         options: [
           'Only the given extract in close detail',
           'Only the wider play with brief reference to the extract',
@@ -747,7 +747,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
         ],
         correct: 2,
         explanation:
-          'The Edexcel question requires candidates to analyse both the given extract and the wider play. Focusing on only one will limit the mark significantly.',
+          'The Edexcel question requires you to analyse both the given extract and the wider play. Focusing on only one will limit the mark significantly.',
       },
       {
         id: 'edx-lt1-m5-q3',
@@ -766,7 +766,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
       {
         id: 'edx-lt1-m5-q4',
         question:
-          'Which assessment objectives are tested in the Edexcel Shakespeare question?',
+          'Which what markers look for are tested in the Edexcel Shakespeare question?',
         options: [
           'AO1 and AO2 only',
           'AO1, AO2, and AO3 only',
@@ -775,7 +775,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
         ],
         correct: 2,
         explanation:
-          'All four AOs are assessed: AO1 (response and references), AO2 (language, form and structure analysis), AO3 (context), and AO4 (technical accuracy of your own writing).',
+          'All four AOs are assessed: personal response (AO1), writer\'s methods (AO2), context (AO3), and technical accuracy (AO4).',
       },
     ],
   },
@@ -824,7 +824,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
   <li><strong>"You're squiffy"</strong> — Eric's drinking hints at dysfunction beneath the respectable surface.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do not simply state the play was written in 1945 — explain <em>how</em> context shapes interpretation: "A 1945 audience would recognise Birling's optimism as dangerously naive, reinforcing Priestley's argument against ignoring social responsibility."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Do not simply state the play was written in 1945 — explain <em>how</em> context shapes interpretation: "A 1945 audience would recognise Birling's optimism as dangerously naive, reinforcing Priestley's argument against ignoring social responsibility."</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating context as a bolt-on paragraph. Weave it into analysis throughout — the tension between what 1912 characters think and what a 1945 audience understands is where the marks are.</div>
 
@@ -930,7 +930,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
   <li><strong>Gerald</strong> — Upper class, represents patriarchy. His affair with Daisy Renton is built on power imbalance. Key quote: <em>"intensely grateful"</em> reveals the transactional nature. Sides with the older Birlings by Act 3, closing ranks.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Sheila is the safest exam choice — her clear arc naturally generates AO1, AO2, and AO3 marks in a single paragraph. Eric is equally strong but slightly weaker because his motivation is less clear.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Sheila is the safest exam choice — her clear arc naturally generates personal response (AO1), writer's methods (AO2), and context (AO3) marks in a single paragraph. Eric is equally strong but slightly weaker because his motivation is less clear.</div>
 
 <h3>Quotation Bank: Key Character Moments with Analysis</h3>
 <div class="text-extract">
@@ -1010,9 +1010,9 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 
 <h3>Model Paragraph: Sheila's Development (Grade 8–9)</h3>
 
-<div class="text-extract">Priestley constructs Sheila as the play's central moral barometer, dramatising the younger generation's capacity for ethical awakening. In Act 1, the stage directions describe her as "a pretty girl in her early twenties, very pleased with life," a phrase heavy with irony — her pleasure is naive, rooted in material comfort and social privilege. Her comment on the Inspector's dress — "That's a beautiful dress! Isn't it, Mummy? I love it!" — reveals a mind focused entirely on consumption. However, once she learns that her own jealousy led to Eva Smith's dismissal from Milwards, Sheila undergoes a radical reorientation. Her assertion that girls "aren't cheap labour — they're people" employs deliberate simplicity to assert a shared humanity her parents cannot acknowledge. The noun "people" carries moral weight precisely because it refuses euphemism or qualification (unlike Mrs Birling's hedging "girls of that class"). By Act 3, Sheila has become the family's moral conscience, openly challenging her parents with "You're pretending everything's all right." The present continuous verb "pretending" shows her refusal to return to pre-war moral amnesia. For Priestley, writing in the aftermath of World War II, Sheila embodies his hope that the younger generation — having witnessed collective catastrophe — could build a post-war society founded on principles of collective responsibility. She becomes Priestley's spokesman for social justice, suggesting that moral growth, once achieved, cannot be reversed.<div class="source">Grade 8–9 paragraph: ~280 words, demonstrating AO1 (interpretation of generational change), AO2 (analysis of stage direction, word choice, dramatic action), AO3 (post-war historical context)</div></div>
+<div class="text-extract">Priestley constructs Sheila as the play's central moral barometer, dramatising the younger generation's capacity for ethical awakening. In Act 1, the stage directions describe her as "a pretty girl in her early twenties, very pleased with life," a phrase heavy with irony — her pleasure is naive, rooted in material comfort and social privilege. Her comment on the Inspector's dress — "That's a beautiful dress! Isn't it, Mummy? I love it!" — reveals a mind focused entirely on consumption. However, once she learns that her own jealousy led to Eva Smith's dismissal from Milwards, Sheila undergoes a radical reorientation. Her assertion that girls "aren't cheap labour — they're people" employs deliberate simplicity to assert a shared humanity her parents cannot acknowledge. The noun "people" carries moral weight precisely because it refuses euphemism or qualification (unlike Mrs Birling's hedging "girls of that class"). By Act 3, Sheila has become the family's moral conscience, openly challenging her parents with "You're pretending everything's all right." The present continuous verb "pretending" shows her refusal to return to pre-war moral amnesia. For Priestley, writing in the aftermath of World War II, Sheila embodies his hope that the younger generation — having witnessed collective catastrophe — could build a post-war society founded on principles of collective responsibility. She becomes Priestley's spokesman for social justice, suggesting that moral growth, once achieved, cannot be reversed.<div class="source">Grade 8–9 paragraph: ~280 words, demonstrating personal response (AO1, interpretation of generational change), writer's methods (AO2, analysis of stage direction, word choice, dramatic action), context (AO3, post-war)</div></div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as if they are real people. Always frame analysis around Priestley's purpose — e.g. "Priestley uses Sheila to suggest that younger people can develop moral conscience" not "Sheila feels bad because she caused Eva's death." The first is analysis (AO2); the second is paraphrase.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as if they are real people. Always frame analysis around Priestley's purpose — e.g. "Priestley uses Sheila to suggest that younger people can develop moral conscience" not "Sheila feels bad because she caused Eva's death." The first is writer's methods analysis (AO2); the second is paraphrase.</div>
 `,
     quiz: [
       {
@@ -1062,14 +1062,14 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
         question:
           'Why should exam responses refer to "Priestley" rather than treating characters as real people?',
         options: [
-          'Because the examiner prefers formal language',
-          'Because it demonstrates awareness that characters are constructs used to convey ideas (AO1/AO2)',
+          'Because markers prefer formal language',
+          'Because it demonstrates awareness that characters are constructs used to convey ideas (personal response (AO1) and writer\'s methods (AO2))',
           'Because it adds to the word count',
-          'Because the mark scheme only rewards biographical context',
+          'Because the marking guide only rewards biographical context',
         ],
         correct: 1,
         explanation:
-          'Referring to Priestley\'s intentions shows the examiner that you understand characters are deliberate constructs — tools the writer uses to explore themes and influence the audience. This is essential for AO1 (interpretation) and AO2 (analysis of methods).',
+          'Referring to Priestley\'s intentions shows markers that you understand characters are deliberate constructs — tools the writer uses to explore themes and influence the audience. This is essential for personal response (AO1) and writer\'s methods (AO2).',
       },
     ],
   },
@@ -1082,11 +1082,11 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     title: "Post-1914 Literature: Writer's Methods & Effects",
     duration: '55 min',
     content: `
-<h2>An Inspector Calls — Writer's Methods &amp; Effects (AO2)</h2>
+<h2>An Inspector Calls — Writer's Methods and Effects (AO2)</h2>
 
-<p><strong>AO2</strong> asks you to analyse how writers use <strong>language, form, and structure</strong> to achieve effects. In drama, this means going beyond dialogue to examine Priestley's full toolkit as a playwright.</p>
+<p><strong>writer's methods (AO2)</strong> asks you to analyse how writers use <strong>language, form, and structure</strong> to achieve effects. In drama, this means going beyond dialogue to examine Priestley's full toolkit as a playwright.</p>
 
-<div class="key-term"><strong>Key Term: AO2</strong> — The assessment objective that rewards analysis of <em>how</em> a writer creates meaning through language, structure, and form.</div>
+<div class="key-term"><strong>Key Term: Writer's Methods (AO2)</strong> — The what markers look for that rewards analysis of <em>how</em> a writer creates meaning through language, structure, and form.</div>
 
 <h3>Dramatic Methods</h3>
 
@@ -1123,11 +1123,11 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
   <li><strong>Foreshadowing</strong> — <em>"fire and blood and anguish"</em> refers to two World Wars; for the 1945 audience, already fulfilled.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about structure, think in terms of audience experience: "What does the audience feel, and how has Priestley engineered it?"</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When writing about structure, think in terms of audience experience: "What does the audience feel, and how has Priestley engineered it?"</div>
 
-<h3>Model AO2-Focused Paragraph</h3>
+<h3>Model Writer's Methods (AO2)-Focused Paragraph</h3>
 
-<div class="text-extract">Priestley uses the cyclical structure to reinforce his message. The telephone announces a girl has died and an inspector is coming — mirroring the opening. The Birlings' dismissal of the Inspector as a hoax is immediately punished; the comfortable resolution is snatched away. The audience must recognise that ignoring responsibility has consequences. Just as the Birlings relive the interrogation, post-war Britain must not repeat the inequalities that led to war.<div class="source">Model AO2 paragraph — technique, effect, purpose</div></div>
+<div class="text-extract">Priestley uses the cyclical structure to reinforce his message. The telephone announces a girl has died and an inspector is coming — mirroring the opening. The Birlings' dismissal of the Inspector as a hoax is immediately punished; the comfortable resolution is snatched away. The audience must recognise that ignoring responsibility has consequences. Just as the Birlings relive the interrogation, post-war Britain must not repeat the inequalities that led to war.<div class="source">Model writer's methods (AO2) paragraph — technique, effect, purpose</div></div>
 `,
     quiz: [
       {
@@ -1215,11 +1215,11 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 
 <p>Section B provides a short <strong>extract</strong> from your post-1914 text and asks you to analyse both the extract and the <strong>wider text</strong> for <strong>40 marks</strong> (AO1–AO4). The extract-to-whole-text approach — the same method used for Shakespeare — is essential.</p>
 
-<div class="key-term"><strong>Key Term: Extract-to-Whole-Text Approach</strong> — Begin with close analysis of the given extract, then broaden to the rest of the text, mirroring the mark scheme requirement to address both the passage and the wider work.</div>
+<div class="key-term"><strong>Key Term: Extract-to-Whole-Text Approach</strong> — Begin with close analysis of the given extract, then broaden to the rest of the text, mirroring the marking guide requirement to address both the passage and the wider work.</div>
 
 <h3>Planning in 5 Minutes</h3>
 <ol>
-  <li><strong>Identify the key theme.</strong> Read the extract twice, underline significant words. What is the examiner asking about — power, guilt, responsibility, conflict?</li>
+  <li><strong>Identify the key theme.</strong> Read the extract twice, underline significant words. What is markers asking about — power, guilt, responsibility, conflict?</li>
   <li><strong>Brainstorm 3–4 wider-text moments</strong> where this theme appears, focusing on <em>development</em> or <em>contrast</em>.</li>
   <li><strong>Choose quotations.</strong> 2–3 short quotes from the extract and 2–3 memorised from wider text (3–6 words each).</li>
 </ol>
@@ -1342,7 +1342,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 <h3>Planning in 5 Minutes</h3>
 <ol>
   <li><strong>Read the extract twice.</strong> Underline the 2–3 most significant words or phrases.</li>
-  <li><strong>Identify the theme.</strong> What is the examiner asking about — responsibility, class, morality, gender?</li>
+  <li><strong>Identify the theme.</strong> What is markers asking about — responsibility, class, morality, gender?</li>
   <li><strong>Brainstorm wider-play moments:</strong> List 4–5 scenes where this theme appears (different from the extract). Include one moment that <em>develops</em> the theme and one that <em>culminates</em> it.</li>
   <li><strong>Select quotations:</strong> 2–3 from the extract; 2–3 from memory (3–6 words each — brevity is strength).</li>
   <li><strong>Write a one-sentence thesis:</strong> "Priestley uses [character/technique] to argue that [thematic claim] because [evidence of why this matters]."</li>
@@ -1355,7 +1355,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
   <li><strong>Context:</strong> "Writing in 1945, emerging from…" / "For a contemporary audience, this would…" / "The historical context of post-war reconstruction illuminates…"</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Avoid mechanical transitions like "This links to context because…" or "Another example is…" Instead, weave context and evidence into flowing analytical sentences. Compare: "The Birlings' moral blindness reflects pre-war capitalist ideology" (integrated) vs. "This is an example of capitalism. Capitalism is bad" (bolted-on).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Avoid mechanical transitions like "This links to context because…" or "Another example is…" Instead, weave context and evidence into flowing analytical sentences. Compare: "The Birlings' moral blindness reflects pre-war capitalist ideology" (integrated) vs. "This is an example of capitalism. Capitalism is bad" (bolted-on).</div>
 
 <h3>Grade 5 vs Grade 9 Response Comparison</h3>
 <table style="width:100%; border-collapse: collapse;">
@@ -1433,7 +1433,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
           'Why should you avoid writing a separate "context paragraph" in your essay?',
         options: [
           'Because context is not assessed in the Literature exam',
-          'Because the examiner wants context woven into every paragraph, not isolated as an afterthought',
+          'Because markers are looking for context woven into every paragraph, not isolated as an afterthought',
           'Because there is not enough time to write a dedicated context paragraph',
           'Because context is only relevant to the Shakespeare question',
         ],
@@ -1483,14 +1483,14 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
   <li><strong>100–105 min:</strong> Final check — scan both essays, verify name and candidate number.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If running over on Section A, stop at 50 minutes and move on. Two solid essays always beat one excellent and one rushed.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If running over on Section A, stop at 50 minutes and move on. Two solid essays always beat one excellent and one rushed.</div>
 
 <h3>Reading the Extract</h3>
 <p><strong>First read:</strong> understand content, speaker, tone — do not write yet. <strong>Second read:</strong> annotate — underline key words, name techniques, note tone shifts. <strong>Then:</strong> highlight the question's instruction word; every paragraph must connect to it.</p>
 
 <h3>Common Pitfalls</h3>
 <ul>
-  <li><strong>Narrative retelling:</strong> Analyse <em>how</em> and <em>why</em>, not <em>what</em> happens. The examiner knows the plot.</li>
+  <li><strong>Narrative retelling:</strong> Analyse <em>how</em> and <em>why</em>, not <em>what</em> happens. Markers know the plot.</li>
   <li><strong>Forgetting context:</strong> No AO3 = capped grade. Integrate context into analytical paragraphs.</li>
   <li><strong>Unbalanced answers:</strong> Aim for 50/50 — two paragraphs extract, two wider text.</li>
   <li><strong>Feature-spotting:</strong> Naming a metaphor is not enough — explain what it suggests and its effect.</li>
@@ -1515,13 +1515,13 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 <ul>
   <li>Two complete essays — Shakespeare and Post-1914?</li>
   <li>Each addresses both extract and wider text?</li>
-  <li>Context (AO3) and language analysis (AO2) throughout?</li>
+  <li>Context (AO3) and language writer's methods analysis (AO2) throughout?</li>
   <li>SPaG and handwriting checked?</li>
 </ul>
 
 <p>Grade boundaries (rough guide, both papers): <strong>Grade 9</strong> ~70–75%, <strong>Grade 7</strong> ~55–60%, <strong>Grade 5</strong> ~42–48%, <strong>Grade 4</strong> ~35–40%.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The difference between Grade 8 and 9 is sophistication of argument and precision of analysis — not the amount you write. Quality over quantity.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The difference between Grade 8 and 9 is sophistication of argument and precision of analysis — not the amount you write. Quality over quantity.</div>
 `,
     quiz: [
       {
@@ -1587,7 +1587,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     { id: 'edx-lt1-a1', question: 'How long is Edexcel Literature Paper 1 and what percentage of the GCSE does it represent?', options: ['1 hour 30 minutes, 40%', '1 hour 45 minutes, 50%', '2 hours, 50%', '2 hours 15 minutes, 60%'], correct: 1, explanation: 'Paper 1 is 1 hour 45 minutes long and worth 80 marks, accounting for 50% of the total GCSE.' },
     { id: 'edx-lt1-a2', question: 'What is Macbeth\'s hamartia (tragic flaw)?', options: ['Cowardice', 'Vaulting ambition', 'Jealousy', 'Loyalty'], correct: 1, explanation: 'Macbeth identifies his own flaw as "vaulting ambition, which o\'erleaps itself" in Act 1 Scene 7. It drives every destructive choice in the play.' },
     { id: 'edx-lt1-a3', question: 'What does "extract-to-whole" mean in the Edexcel Shakespeare question?', options: ['Only analyse the extract', 'Analyse the extract first, then discuss the wider play', 'Ignore the extract and write about the whole play', 'Compare two extracts from different acts'], correct: 1, explanation: 'Extract-to-whole means starting with detailed analysis of the printed passage, then broadening to show how the theme or character develops across the full text.' },
-    { id: 'edx-lt1-a4', question: 'Which assessment objective tests spelling, punctuation and grammar on Paper 1?', options: ['AO1', 'AO2', 'AO3', 'AO4'], correct: 3, explanation: 'AO4 assesses SPaG and is worth up to 4 additional marks. It is tested on one essay only \u2014 typically the Shakespeare response.' },
+    { id: 'edx-lt1-a4', question: 'Which what markers look for tests spelling, punctuation and grammar on Paper 1?', options: ['AO1', 'AO2', 'AO3', 'AO4'], correct: 3, explanation: 'Technical accuracy (AO4) assesses SPaG and is worth up to 4 additional marks. It is tested on one essay only \u2014 typically the Shakespeare response.' },
     { id: 'edx-lt1-a5', question: 'Why would Duncan\'s murder have been particularly shocking to a Jacobean audience?', options: ['Because murder was rare on stage', 'Because they believed in the Divine Right of Kings, making regicide a sin against God', 'Because Duncan was based on a real English king', 'Because the audience sympathised with Lady Macbeth'], correct: 1, explanation: 'The Divine Right of Kings held that monarchs were appointed by God. Killing a king was not merely treason but a violation of the sacred, divinely ordained order.' },
     { id: 'edx-lt1-a6', question: 'What does the "L" in the PETAL framework stand for?', options: ['Language', 'Link to context', 'Literary device', 'Line reference'], correct: 1, explanation: 'In PETAL, L stands for "Link to context" \u2014 connecting your analysis to the social, historical, or literary context of the text (AO3).' },
     { id: 'edx-lt1-a7', question: 'When was An Inspector Calls written, and when is it set?', options: ['Written 1912, set 1945', 'Written 1945, set 1912', 'Written 1945, set 1945', 'Written 1912, set 1912'], correct: 1, explanation: 'The play was written in 1945 but set in 1912. This time gap creates dramatic irony \u2014 the audience knows about events the characters cannot foresee.' },
@@ -1614,11 +1614,11 @@ const edexcelLitPaper2: CourseData = {
   color: '#d97706',
   moduleList: [
 // ──────────────────────────────────────────────
-  // MODULE 1 — Paper 2 Overview & Assessment Objectives
+  // MODULE 1 — Paper 2 Overview & what markers look for
   // ──────────────────────────────────────────────
   {
     id: 'edx-lt2-m1',
-    title: 'Paper 2 Overview & Assessment Objectives',
+    title: 'Paper 2 Overview & what markers look for',
     duration: '45 min',
     content: `
 <h2>Edexcel GCSE English Literature — Paper 2</h2>
@@ -1634,21 +1634,21 @@ const edexcelLitPaper2: CourseData = {
   <li><strong>Section B Part 2 — Unseen Poetry Comparison (20 marks):</strong> You are given an unseen poem and must compare it with one poem from the anthology. The comparison must cover both content and method.</li>
 </ul>
 
-<h3>Assessment Objectives Tested</h3>
+<h3>what markers look for Tested</h3>
 <ul>
   <li><strong>AO1 (Section A &amp; B)</strong> — Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.</li>
   <li><strong>AO2 (Section A &amp; B)</strong> — Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</li>
   <li><strong>AO3 (Section A only)</strong> — Show understanding of the relationships between texts and the contexts in which they were written.</li>
-  <li><strong>AO4 (Section B Part 2)</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. <em>4 of the 20 marks in the comparison question are awarded for AO4.</em></li>
+  <li><strong>technical accuracy (AO4, Section B Part 2)</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. <em>4 of the 20 marks in the comparison question are awarded for technical accuracy (AO4).</em></li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Section A is worth half the paper, so it deserves half your time. A common error is spending too long on the novel and rushing the poetry. Stick to the timing plan below — practise it under timed conditions before the exam so it becomes automatic.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Section A is worth half the paper, so it deserves half your time. A common error is spending too long on the novel and rushing the poetry. Stick to the timing plan below — practise it under timed conditions before the exam so it becomes automatic.</div>
 
 <h3>Mark Distribution by AO</h3>
 <ul>
-  <li><strong>Section A (Novel):</strong> AO1 — 20 marks, AO2 — 20 marks, AO3 — woven throughout (no separate allocation; examiners reward context where it enhances analysis).</li>
-  <li><strong>Section B Part 1 (Single Poem):</strong> AO1 — 10 marks, AO2 — 10 marks.</li>
-  <li><strong>Section B Part 2 (Comparison):</strong> AO1 — 6 marks, AO2 — 6 marks, AO3 — 4 marks, AO4 — 4 marks.</li>
+  <li><strong>Section A (Novel):</strong> AO1 — 20 marks, Writer's methods (AO2) — 20 marks, Context (AO3) — woven throughout (no separate allocation; Markers reward context where it enhances analysis).</li>
+  <li><strong>Section B Part 1 (Single Poem):</strong> AO1 — 10 marks, Writer's methods (AO2) — 10 marks.</li>
+  <li><strong>Section B Part 2 (Comparison):</strong> AO1 — 6 marks, Writer's methods (AO2) — 6 marks, Context (AO3) — 4 marks, AO4 — 4 marks.</li>
 </ul>
 
 <h3>Recommended Timing Plan</h3>
@@ -1662,7 +1662,7 @@ const edexcelLitPaper2: CourseData = {
   <li><strong>125–135 min:</strong> Review all answers. Check quotation accuracy, spelling of authors' names, and paragraph coherence.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Treating Section A as two separate tasks — one on the extract and one on the rest of the novel. The examiner wants a <em>unified</em> essay that moves fluidly between the extract and the wider text. Use the extract as your launchpad, then broaden your argument with references from elsewhere in the novel, before returning to the extract to reinforce your points.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Treating Section A as two separate tasks — one on the extract and one on the rest of the novel. markers are looking for a <em>unified</em> essay that moves fluidly between the extract and the wider text. Use the extract as your launchpad, then broaden your argument with references from elsewhere in the novel, before returning to the extract to reinforce your points.</div>
 
 <h3>What "Explore" and "Analyse" Mean on This Paper</h3>
 <p>The command words on Paper 2 are precise. <strong>"Explore"</strong> means you should investigate the text in depth, considering multiple interpretations and layers of meaning. <strong>"Analyse"</strong> means you should break down the writer's choices — examining <em>how</em> language, structure, and form create specific effects on the reader. Both require you to go beyond description and engage critically with the text.</p>
@@ -1687,16 +1687,16 @@ const edexcelLitPaper2: CourseData = {
       {
         id: 'edx-lt2-m1-q2',
         question:
-          'Which Assessment Objective is tested ONLY in Section A (the 19th-century novel)?',
+          'Which what markers look for is tested ONLY in Section A (the 19th-century novel)?',
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 2,
         explanation:
-          'AO3 (context) is assessed in Section A, where students must show understanding of the relationship between the novel and the context in which it was written. AO1 and AO2 appear across both sections, and AO4 appears only in Section B Part 2.',
+          'context (AO3) is assessed in Section A, where students must show understanding of the relationship between the novel and the context in which it was written. AO1 and AO2 appear across both sections, and AO4 appears only in Section B Part 2.',
       },
       {
         id: 'edx-lt2-m1-q3',
         question:
-          'In Section B Part 2 (the comparison question), how many of the 20 marks are awarded for AO4 (quality of written expression)?',
+          'In Section B Part 2 (the comparison question), how many of the 20 marks are awarded for technical accuracy (AO4, quality of written expression)?',
         options: ['0 marks', '2 marks', '4 marks', '8 marks'],
         correct: 2,
         explanation:
@@ -1729,12 +1729,12 @@ const edexcelLitPaper2: CourseData = {
     content: `
 <h2>A Christmas Carol — Context, Conventions &amp; Dickens's Purpose</h2>
 
-<p><em>A Christmas Carol</em> is by far the most popular 19th-century novel choice on Edexcel Literature Paper 2. Understanding its historical context is not optional — AO3 requires you to show how the text relates to the time in which it was written. This module equips you with the contextual knowledge examiners reward and, crucially, teaches you how to <em>integrate</em> it into analytical paragraphs rather than bolting it on.</p>
+<p><em>A Christmas Carol</em> is by far the most popular 19th-century novel choice on Edexcel Literature Paper 2. Understanding its historical context is not optional — Context (AO3) requires you to show how the text relates to the time in which it was written. This module equips you with the contextual knowledge Markers reward and, crucially, teaches you how to <em>integrate</em> it into analytical paragraphs rather than bolting it on.</p>
 
 <div class="key-term"><strong>Key Term: Novella</strong> — A prose narrative longer than a short story but shorter than a full novel, typically between 15,000 and 40,000 words. <em>A Christmas Carol</em> is a novella — its compact form allows Dickens to deliver a focused moral message with an allegorical structure divided into five staves (chapters).</div>
 
 <h3>Historical Context: Victorian London in 1843</h3>
-<p>When Dickens published <em>A Christmas Carol</em> in December 1843, Britain was in the grip of rapid industrial change. The following contextual factors are essential for a strong AO3 response:</p>
+<p>When Dickens published <em>A Christmas Carol</em> in December 1843, Britain was in the grip of rapid industrial change. The following contextual factors are essential for a strong context (AO3) response:</p>
 
 <ul>
   <li><strong>The Poor Law Amendment Act (1834):</strong> This law created workhouses where the destitute were sent to labour in appalling conditions. The philosophy was deliberate harshness — poverty was seen as a moral failing, and relief was made as unpleasant as possible to discourage dependency. Scrooge directly echoes this attitude when he asks, <em>"Are there no prisons? Are there no workhouses?"</em></li>
@@ -1755,7 +1755,7 @@ const edexcelLitPaper2: CourseData = {
   <li><strong>Five Staves:</strong> Dickens calls his chapters "staves" — a musical term — reinforcing the idea that the novella is a <em>carol</em>, a song of celebration and joy. The structure itself mirrors the thematic journey from discord to harmony.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The best answers do not dump context in a separate paragraph. Instead, they weave it into analysis. Compare these two approaches:<br><br><strong>Weak:</strong> "In Victorian times, there were workhouses. Scrooge mentions workhouses."<br><strong>Strong:</strong> "Dickens, writing just nine years after the Poor Law Amendment Act of 1834, uses Scrooge's dismissive reference to workhouses to expose how institutionalised cruelty had become normalised among the wealthy. The audience would have recognised this attitude as commonplace — which makes its dramatic dismantling through the Spirits all the more powerful."<br><br>The second version integrates a specific date, names the legislation, and explains its <em>effect</em> on the reader — this is what AO3 at the top band looks like.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The best answers do not dump context in a separate paragraph. Instead, they weave it into analysis. Compare these two approaches:<br><br><strong>Weak:</strong> "In Victorian times, there were workhouses. Scrooge mentions workhouses."<br><strong>Strong:</strong> "Dickens, writing just nine years after the Poor Law Amendment Act of 1834, uses Scrooge's dismissive reference to workhouses to expose how institutionalised cruelty had become normalised among the wealthy. The audience would have recognised this attitude as commonplace — which makes its dramatic dismantling through the Spirits all the more powerful."<br><br>The second version integrates a specific date, names the legislation, and explains its <em>effect</em> on the reader — this is what context (AO3) at the top band looks like.</div>
 
 <h3>Dickens's Purpose: Social Reform</h3>
 <p>Dickens did not write <em>A Christmas Carol</em> merely to entertain. He had a clear <strong>didactic purpose</strong> — to attack greed, expose the suffering of the poor, and champion generosity. Key points to remember:</p>
@@ -1768,7 +1768,7 @@ const edexcelLitPaper2: CourseData = {
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing "Dickens wanted to show that Christmas is important." This is far too vague for a Literature essay. Be specific: Dickens wanted to <em>challenge the Malthusian view that the poor were expendable</em>, to <em>expose the moral bankruptcy of laissez-faire capitalism</em>, and to <em>argue that personal generosity could remedy social injustice</em>. Always connect purpose to specific contextual knowledge.</div>
 
-<h3>AO3 Sentence Starters That Examiners Reward</h3>
+<h3>Context (AO3) Sentence Starters That Markers Reward</h3>
 <p>Practise using these phrases to integrate context naturally into your paragraphs:</p>
 <ul>
   <li><em>"Dickens, writing in 1843, would have been aware that..."</em></li>
@@ -1778,7 +1778,7 @@ const edexcelLitPaper2: CourseData = {
   <li><em>"The reference to [specific detail] directly alludes to..."</em></li>
 </ul>
 
-<p>Each of these phrases anchors your contextual point to the text and the time period simultaneously, which is precisely what AO3 demands.</p>
+<p>Each of these phrases anchors your contextual point to the text and the time period simultaneously, which is precisely what context (AO3) demands.</p>
 `,
     quiz: [
       {
@@ -1821,7 +1821,7 @@ const edexcelLitPaper2: CourseData = {
         ],
         correct: 2,
         explanation:
-          'The third option integrates a specific date, names the legislation, connects it to a character\'s behaviour, and explains the effect — all in one sentence. This is what top-band AO3 looks like: context woven into analysis, not stated in isolation.',
+          'The third option integrates a specific date, names the legislation, connects it to a character\'s behaviour, and explains the effect — all in one sentence. This is what top-band context (AO3) looks like: context woven into analysis, not stated in isolation.',
       },
       {
         id: 'edx-lt2-m2-q4',
@@ -1864,7 +1864,7 @@ const edexcelLitPaper2: CourseData = {
     content: `
 <h2>A Christmas Carol — Character Analysis</h2>
 
-<p>Every character in <em>A Christmas Carol</em> serves a <strong>moral and social purpose</strong>. In the exam, show how characters embody ideas — linking <strong>AO1</strong> (response with references) to <strong>AO3</strong> (context).</p>
+<p>Every character in <em>A Christmas Carol</em> serves a <strong>moral and social purpose</strong>. In the exam, show how characters embody ideas — linking <strong>personal response (AO1)</strong> (response with references) to <strong>context (AO3)</strong>.</p>
 
 <h3>Ebenezer Scrooge</h3>
 
@@ -1894,7 +1894,7 @@ const edexcelLitPaper2: CourseData = {
   <li><strong>Christmas Yet to Come</strong> — Silent and shrouded, evoking death. Fear achieves what nostalgia and compassion could not.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Connect each Ghost's supernatural role to Dickens's social message. They are instruments of moral education aimed at Scrooge <em>and</em> the reader.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Connect each Ghost's supernatural role to Dickens's social message. They are instruments of moral education aimed at Scrooge <em>and</em> the reader.</div>
 
 <h3>Fred &amp; Fezziwig</h3>
 
@@ -2008,7 +2008,7 @@ const edexcelLitPaper2: CourseData = {
   <li><strong>Climactic Withholding (Stave 4):</strong> The gravestone delayed until the final moment builds suspense and forces confrontation with mortality.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Never write "Dickens uses a simile" and stop. Always push to <em>why</em>: what does the method make the reader think or feel? Link method to theme and context.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Never write "Dickens uses a simile" and stop. Always push to <em>why</em>: what does the method make the reader think or feel? Link method to theme and context.</div>
 
 <h3>Annotated Passage: Stave 3 (Cratchit Dinner)</h3>
 
@@ -2104,7 +2104,7 @@ const edexcelLitPaper2: CourseData = {
 
 <p>The 19th-century novel question on Edexcel Paper 2 is worth <strong>40 marks</strong> and is the highest-tariff question on the paper. You are given a <strong>printed extract</strong> from your set text — typically 30–40 lines — and asked to explore a theme or character both <em>in the extract</em> and <em>across the whole text</em>.</p>
 
-<div class="key-term"><strong>Key Term: Extract-to-Whole-Text Question</strong> — A format requiring close reading of a passage followed by discussion of how the same idea appears elsewhere in the text. Examiners reward answers that move fluently between the two.</div>
+<div class="key-term"><strong>Key Term: Extract-to-Whole-Text Question</strong> — A format requiring close reading of a passage followed by discussion of how the same idea appears elsewhere in the text. Markers reward answers that move fluently between the two.</div>
 
 <h3>Planning (5 Minutes)</h3>
 <ol>
@@ -2117,7 +2117,7 @@ const edexcelLitPaper2: CourseData = {
 <h3>Essay Structure</h3>
 <ol>
   <li><strong>Introduction:</strong> Thesis, writer and text named, question focus referenced.</li>
-  <li><strong>Extract Paragraph 1:</strong> Close-read a quotation — AO2 (technique), AO1 (argument), AO3 (context).</li>
+  <li><strong>Extract Paragraph 1:</strong> Close-read a quotation — AO2 (technique), AO1 (argument), context (AO3).</li>
   <li><strong>Extract Paragraph 2:</strong> Second quotation, different technique or contrasting idea, context woven in.</li>
   <li><strong>Wider-Text Paragraph 1:</strong> A moment elsewhere in the novel. Quote from memory and analyse.</li>
   <li><strong>Wider-Text Paragraph 2:</strong> Another moment showing how the theme develops or resolves.</li>
@@ -2125,19 +2125,19 @@ const edexcelLitPaper2: CourseData = {
 </ol>
 
 <h3>Hitting AO1 + AO2 + AO3 Together</h3>
-<p>The mark scheme rewards <strong>integration</strong>. In every paragraph: open with an analytical point and quotation (<strong>AO1</strong>), zoom in on a word or technique and explain its effect (<strong>AO2</strong>), then connect to 19th-century context in one sentence (<strong>AO3</strong>). Never bolt context on as a separate block.</p>
+<p>The marking guide rewards <strong>integration</strong>. In every paragraph: open with an analytical point and quotation (<strong>personal response (AO1)</strong>), zoom in on a word or technique and explain its effect (<strong>writer's methods (AO2)</strong>), then connect to 19th-century context in one sentence (<strong>context (AO3)</strong>). Never bolt context on as a separate block.</p>
 
 <h3>Model Grade 8–9 Opening</h3>
 
 <div class="text-extract">Dickens presents Scrooge's encounter with the Ghost of Christmas Present as a moral turning point. The imperative "Come in! and know me better, man!" signals warmth contrasting Scrooge's cold language earlier. Writing in 1843 amid urban poverty, Dickens uses the Ghost as a mouthpiece for charity the wealthy owed the poor — a shift in empathy developed across the narrative to champion social responsibility.<div class="source">Model paragraph — Grade 8–9</div></div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners look for a sustained argument, not a set number of paragraphs. The structure above is a scaffold. Quality of analysis always beats quantity.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> markers look for a sustained argument, not a set number of paragraphs. The structure above is a scaffold. Quality of analysis always beats quantity.</div>
 
 <h3>Common Mistakes to Avoid</h3>
 
 <div class="common-mistake"><strong>Retelling the Plot:</strong> "Scrooge is visited by three ghosts and then he changes" earns very few marks. Every sentence should analyse <em>how</em> or <em>why</em> the writer makes a choice, not describe <em>what</em> happens.</div>
 
-<div class="common-mistake"><strong>Ignoring the Extract:</strong> Some students leap straight to the wider text. You must analyse the printed passage in detail — it is there for a reason and the mark scheme rewards close reading of it.</div>
+<div class="common-mistake"><strong>Ignoring the Extract:</strong> Some students leap straight to the wider text. You must analyse the printed passage in detail — it is there for a reason and the marking guide rewards close reading of it.</div>
 
 <div class="common-mistake"><strong>Weak Context:</strong> Avoid "This was written in Victorian times when life was hard." Be specific: "Dickens published <em>A Christmas Carol</em> in 1843, the year a Parliamentary report exposed child labour in mines." Context should explain <em>why</em> the writer made a choice.</div>
 `,
@@ -2168,7 +2168,7 @@ const edexcelLitPaper2: CourseData = {
       {
         id: 'edx-lt2-m5-q3',
         question:
-          'Which of the following best describes how AO3 (context) should appear in a paragraph?',
+          'Which of the following best describes how context (AO3) should appear in a paragraph?',
         options: [
           'As a separate paragraph at the end of the essay',
           'As a one-line footnote after each quotation',
@@ -2177,7 +2177,7 @@ const edexcelLitPaper2: CourseData = {
         ],
         correct: 2,
         explanation:
-          'AO3 is most effective when integrated into your analysis — it should deepen your point by explaining the social, historical, or biographical reasons behind the writer\'s choices.',
+          'Context (AO3) is most effective when integrated into your analysis — it should deepen your point by explaining the social, historical, or biographical reasons behind the writer\'s choices.',
       },
       {
         id: 'edx-lt2-m5-q4',
@@ -2191,7 +2191,7 @@ const edexcelLitPaper2: CourseData = {
         ],
         correct: 1,
         explanation:
-          'Retelling the plot is one of the most common mistakes. The examiner knows the story — every sentence should focus on how or why the writer makes a particular choice, not what happens.',
+          'Retelling the plot is one of the most common mistakes. Markers know the story — every sentence should focus on how or why the writer makes a particular choice, not what happens.',
       },
     ],
   },
@@ -2225,7 +2225,7 @@ const edexcelLitPaper2: CourseData = {
   <li><strong>E — Effect:</strong> What response is the poet provoking — sympathy, anger, admiration, unease?</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always start with literal meaning. If you misread the poem, every analytical point crumbles. Spend the first minute understanding the surface story.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Always start with literal meaning. If you misread the poem, every analytical point crumbles. Spend the first minute understanding the surface story.</div>
 
 <h3>Annotating a Poem</h3>
 <p>Three passes: first write a one-sentence summary, then circle images and note techniques in the margin, finally connect ideas with arrows and mark tone shifts.</p>
@@ -2310,9 +2310,9 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
     content: `
 <h2>Poetry: Language, Form &amp; Structure — AO2</h2>
 
-<p>AO2 asks you to <strong>analyse how writers use language, form and structure to create meanings and effects</strong>. Examiners reward candidates who explain <em>why</em> a poet made a choice and <em>how</em> it shapes the reader's experience — not those who spot features.</p>
+<p>Writer's methods (AO2) asks you to <strong>analyse how writers use language, form and structure to create meanings and effects</strong>. Markers reward students who explain <em>why</em> a poet made a choice and <em>how</em> it shapes the reader's experience — not those who spot features.</p>
 
-<div class="key-term"><strong>Key Term: AO2</strong> — Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</div>
+<div class="key-term"><strong>Key Term: Writer's Methods (AO2)</strong> — Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</div>
 
 <h3>Language: The Poet's Toolkit</h3>
 
@@ -2328,7 +2328,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   <li><strong>Onomatopoeia</strong> — words imitating sounds ("crackle", "hiss") — the reader <em>hears</em> the poem.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Never just name a device — explain its effect. "The sibilance in 'softly she slipped away' creates a hushed tone mirroring stealth." Without effect, you are describing, not analysing.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Never just name a device — explain its effect. "The sibilance in 'softly she slipped away' creates a hushed tone mirroring stealth." Without effect, you are describing, not analysing.</div>
 
 <h3>Form: How the Poem Is Shaped</h3>
 <ul>
@@ -2373,7 +2373,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         ],
         correct: 1,
         explanation:
-          'AO2 focuses on analysing how writers use language, form and structure to create meanings and effects. It is the key assessment objective for the poetry questions on Paper 2.',
+          'Writer\'s methods (AO2) focuses on analysing how writers use language, form and structure to create meanings and effects. It is the key skill tested in the poetry questions on Paper 2.',
       },
       {
         id: 'edx-lt2-m7-q2',
@@ -2408,14 +2408,14 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         question:
           'Why is "feature-spotting" considered a weak approach in poetry analysis?',
         options: [
-          'Because examiners only want you to discuss content, not technique',
+          'Because markers only want you to discuss content, not technique',
           'Because it identifies techniques without explaining their effect on meaning',
           'Because you should only discuss one technique per paragraph',
           'Because sound devices are not relevant to AO2',
         ],
         correct: 1,
         explanation:
-          'Feature-spotting means listing techniques without analysing their effect. Examiners reward responses that explain how and why a technique creates meaning, not responses that simply name devices like a checklist.',
+          'Feature-spotting means listing techniques without analysing their effect. Markers reward responses that explain how and why a technique creates meaning, not responses that simply name devices like a checklist.',
       },
       {
         id: 'edx-lt2-m7-q5',
@@ -2456,7 +2456,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   <li><strong>Second read — technique:</strong> Underline key choices — imagery, tone shifts, structural features, sound patterns. Note connections to the named poem.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If a phrase puzzles you, move on and analyse what you <em>can</em>. Examiners want thoughtful analysis, not a perfect paraphrase.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If a phrase puzzles you, move on and analyse what you <em>can</em>. Markers are looking for thoughtful analysis, not a perfect paraphrase.</div>
 
 <h3>Comparison Frameworks</h3>
 
@@ -2492,7 +2492,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 
 <p><strong>Comparison Grid:</strong> Columns: <strong>Aspect</strong> | <strong>Poem A</strong> | <strong>Poem B</strong>. List 3–4 aspects (imagery, tone, structure) with brief notes — a ready-made plan.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Aim for 3–4 developed paragraphs, not 5–6 thin ones. Depth outscores breadth. Each paragraph needs a quotation from each poem and a clear comparative point.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Aim for 3–4 developed paragraphs, not 5–6 thin ones. Depth outscores breadth. Each paragraph needs a quotation from each poem and a clear comparative point.</div>
 `,
     quiz: [
       {
@@ -2578,7 +2578,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   <li><strong>Brief conclusion (2–3 sentences):</strong> Summarise how the poets' approaches differ or align, and offer a final evaluative comment about the overall effect on the reader.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do not write a long introduction. Two or three sentences are enough. The examiner wants to see comparison and analysis, not scene-setting. Get into your first comparative point by the end of the first third of a page.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Do not write a long introduction. Two or three sentences are enough. markers are looking for comparison and analysis, not scene-setting. Get into your first comparative point by the end of the first third of a page.</div>
 
 <h3>The PETER Framework for Comparison</h3>
 
@@ -2601,7 +2601,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 <ul>
   <li><strong>Anthology poem:</strong> You can deploy pre-learned quotations and contextual knowledge. Use this confidence to anchor each paragraph — start with the poem you know, then pivot to the unseen.</li>
   <li><strong>Unseen poem:</strong> Read it twice before writing. On the first read, identify the subject and tone. On the second, underline striking words, images, and structural features. You do not need to identify every technique — two or three well-analysed quotations are enough.</li>
-  <li><strong>Aim for roughly equal coverage.</strong> If you write fifteen lines on the anthology poem and three lines on the unseen, the examiner will see an unbalanced response. Each PETER paragraph should give comparable space to both texts.</li>
+  <li><strong>Aim for roughly equal coverage.</strong> If you write fifteen lines on the anthology poem and three lines on the unseen, markers will see an unbalanced response. Each PETER paragraph should give comparable space to both texts.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing two separate mini-essays — one on each poem — and calling it a comparison. This "poem A then poem B" approach will cap your mark. Every paragraph must discuss both poems and make explicit comparative points.</div>
@@ -2627,7 +2627,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   <li><strong>Grade 9</strong> responses offer a <strong>conceptualised</strong> comparison — a sophisticated argument about how and why the poets' approaches differ. They explore ambiguity, alternative interpretations, and the effect of structural choices. The comparison feels like a genuine conversation between the two poems, not a checklist.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> To push from Grade 7 to Grade 9, try opening a paragraph with a conceptual point rather than a technique: <em>"Both poets interrogate the idea that memory is a burden, yet they arrive at opposing conclusions."</em> This shows the examiner you are thinking about the poems as whole texts, not just hunting for devices.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> To push from Grade 7 to Grade 9, try opening a paragraph with a conceptual point rather than a technique: <em>"Both poets interrogate the idea that memory is a burden, yet they arrive at opposing conclusions."</em> This shows markers you are thinking about the poems as whole texts, not just hunting for devices.</div>
 
 <h3>Quick Practice</h3>
 
@@ -2714,7 +2714,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 
 <p>This totals <strong>135 minutes</strong> — exactly the time available. There is no spare time built in, which is why discipline with the plan is critical.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Wear a watch or position yourself to see a clock. Write your target finish times at the top of each section before you begin. For example: "Novel — finish by 10:20. Single poem — finish by 10:50. Comparison — finish by 11:30."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Wear a watch or position yourself to see a clock. Write your target finish times at the top of each section before you begin. For example: "Novel — finish by 10:20. Single poem — finish by 10:50. Comparison — finish by 11:30."</div>
 
 <h3>Open-Book Strategy</h3>
 
@@ -2746,7 +2746,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   <li><strong>Feature-spotting without analysis:</strong> Identifying a metaphor or simile but not explaining its effect on the reader. Always ask: <em>so what? What does this make the reader think or feel?</em></li>
   <li><strong>Ignoring structure:</strong> Students often focus on language and forget about structural features — enjambment, stanza breaks, volta, narrative arc. These are easy marks if you address them.</li>
   <li><strong>Running out of time on the final question:</strong> The comparison essay is last, and fatigued students often write half a response. Stick to the timing plan.</li>
-  <li><strong>Retelling the story:</strong> In the novel section, narrating the plot instead of analysing how the writer creates meaning. The examiner knows the story — they want to see your analytical skill.</li>
+  <li><strong>Retelling the story:</strong> In the novel section, narrating the plot instead of analysing how the writer creates meaning. Markers know the story — they want to see your analytical skill.</li>
 </ul>
 
 <h3>Revision Techniques</h3>
@@ -2756,12 +2756,12 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 <ol>
   <li><strong>Quotation flash cards:</strong> For each anthology poem, create cards with 5–6 key quotations on one side and analysis (technique + effect) on the other. For the novel, create cards for key themes with supporting quotations.</li>
   <li><strong>Theme grids:</strong> Draw a grid with poems along the top and themes down the side (power, conflict, identity, nature, loss). Tick where each poem connects. This makes it easy to find comparison pairs for any theme the exam might ask about.</li>
-  <li><strong>Timed practice:</strong> Write at least two full Paper 2 responses under timed conditions before exam day. Mark them against the mark scheme or swap with a study partner.</li>
-  <li><strong>Examiner reports:</strong> Read the published examiner reports for past Edexcel Literature papers. They tell you exactly what students did well and where they lost marks — this is insider knowledge freely available.</li>
+  <li><strong>Timed practice:</strong> Write at least two full Paper 2 responses under timed conditions before exam day. Mark them against the marking guide or swap with a study partner.</li>
+  <li><strong>Marker reports:</strong> Read the published marker reports for past Edexcel Literature papers. They tell you exactly what students did well and where they lost marks — this is insider knowledge freely available.</li>
   <li><strong>Quotation reduction:</strong> Can you express your analysis of a poem in just three quotations? Forcing yourself to select the most versatile quotations builds the kind of focused thinking the exam rewards.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The single most effective revision activity is <strong>timed practice under exam conditions</strong>. Reading notes and highlighting textbooks feels productive, but it does not prepare you for the pressure of writing three essays in 135 minutes. Practise the way you will perform.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The single most effective revision activity is <strong>timed practice under exam conditions</strong>. Reading notes and highlighting textbooks feels productive, but it does not prepare you for the pressure of writing three essays in 135 minutes. Practise the way you will perform.</div>
 
 <h3>Final Exam Day Checklist</h3>
 
@@ -2778,7 +2778,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Leaving the exam hall early. Use every minute. Even five minutes of proofreading can catch errors that cost marks — a missing comparative connective, a misspelled character name, or an incomplete sentence at the end of a paragraph.</div>
 
-<p>You have studied the texts, practised the skills, and learned the frameworks. Trust your preparation, manage your time, and show the examiner what you know. Good luck.</p>
+<p>You have studied the texts, practised the skills, and learned the frameworks. Trust your preparation, manage your time, and show markers what you know. Good luck.</p>
 `,
     quiz: [
       {
@@ -2842,7 +2842,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
     { id: 'edx-lt2-a4', question: 'Why does Dickens call his chapters "staves" rather than "chapters"?', options: ['To make the novella seem longer', 'Because "stave" means "ghost" in Victorian English', 'Because a stave is a musical term, reinforcing that the novella is a carol', 'To confuse the reader'], correct: 2, explanation: 'A "stave" is a set of lines in music. Dickens reinforces the title \u2014 the text is a carol, a song of joy \u2014 and the structure mirrors the journey from discord to harmony.' },
     { id: 'edx-lt2-a5', question: 'How many marks is the 19th-century novel question worth on Paper 2?', options: ['20 marks', '30 marks', '40 marks', '50 marks'], correct: 2, explanation: 'The novel question is worth 40 marks \u2014 the single biggest chunk of the paper. It requires analysis of both the printed extract and the wider text.' },
     { id: 'edx-lt2-a6', question: 'In the SMILE framework for poetry, what does the "I" stand for?', options: ['Intention', 'Imagery', 'Interpretation', 'Irony'], correct: 1, explanation: 'The "I" stands for Imagery \u2014 identifying similes, metaphors, personification, and symbols the poet uses to create vivid pictures and convey meaning.' },
-    { id: 'edx-lt2-a7', question: 'What does AO2 require you to analyse in poetry?', options: ['The poet\'s biography', 'Language, form and structure and their effects on meaning', 'Historical context only', 'Your personal feelings about the poem'], correct: 1, explanation: 'AO2 focuses on analysing how writers use language, form and structure to create meanings and effects. It is the key assessment objective for the poetry questions.' },
+    { id: 'edx-lt2-a7', question: 'What does AO2 require you to analyse in poetry?', options: ['The poet\'s biography', 'Language, form and structure and their effects on meaning', 'Historical context only', 'Your personal feelings about the poem'], correct: 1, explanation: 'Writer\'s methods (AO2) focuses on analysing how writers use language, form and structure to create meanings and effects. It is the key skill tested in the poetry questions.' },
     { id: 'edx-lt2-a8', question: 'What does "integrated comparison" mean in a poetry essay?', options: ['Writing about Poem A then Poem B separately', 'Discussing both poems within the same paragraphs, moving between them fluidly', 'Analysing only shared techniques', 'Quoting from both poems in your introduction only'], correct: 1, explanation: 'An integrated comparison discusses both poems within each paragraph, weaving between them with comparative vocabulary \u2014 not two separate mini-essays.' },
     { id: 'edx-lt2-a9', question: 'What does the R in the PETER comparison framework stand for?', options: ['Repetition', 'Response / Comparison', 'Review', 'Reference to context'], correct: 1, explanation: 'R stands for Response / Comparison \u2014 the crucial step where you draw both poems together and make an explicit comparative judgement about their effects or approaches.' },
     { id: 'edx-lt2-a10', question: 'What is the most common timing mistake on Paper 2?', options: ['Spending too long on the single poem', 'Spending too long on the novel and rushing the poetry', 'Spending too long on the comparison', 'Spending too long reading the unseen poem'], correct: 1, explanation: 'The novel (40 marks) tempts students to overwrite, but the two poetry questions are also worth 40 marks combined. Sticking to the 55-minute novel allocation is essential.' },

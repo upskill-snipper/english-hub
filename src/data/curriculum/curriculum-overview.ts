@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 // Maps the entire English programme across seven year groups.
 // KS3 (Y7-Y9):  National Curriculum strand mappings
-// KS4 (Y10-Y11): Edexcel IGCSE Language A (4EA1) & Literature (4ET1)
+// KS4 (Y10-Y11): Edexcel IGCSE Language A & IGCSE Literature
 // KS5 (Y12-Y13): Edexcel IAL English Language (YEN0) & Literature (YET0)
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -482,7 +482,7 @@ const year9: CurriculumYear = {
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // YEAR 10 — IGCSE Year 1
-// Edexcel IGCSE English Language A (4EA1) & English Literature (4ET1)
+// Edexcel IGCSE English Language A & IGCSE Literature
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const year10: CurriculumYear = {
@@ -490,7 +490,7 @@ const year10: CurriculumYear = {
   title: 'IGCSE English — Year 1',
   bigQuestion: 'How do we read critically and write with precision for an international exam?',
   focus:
-    'Beginning the two-year Edexcel IGCSE English Language A (4EA1) and IGCSE English Literature (4ET1) courses. Developing exam-ready reading analysis and controlled transactional and creative writing.',
+    'Beginning the two-year Edexcel IGCSE English Language A and IGCSE Literature courses. Developing exam-ready reading analysis and controlled transactional and creative writing.',
   terms: [
     {
       id: 'y10-t1',
@@ -540,10 +540,10 @@ const year10: CurriculumYear = {
       spagFocus:
         'Embedding context within analytical sentences; controlling complex sentence structures; using literary terminology precisely',
       keySkills: [
-        'Respond to an extract-based question on a drama text (4ET1 AO1)',
-        'Analyse how writers create character and theme (4ET1 AO2)',
-        'Explore how context shapes meaning (4ET1 AO3)',
-        'Write coherently with accurate SPaG (4ET1 AO4)',
+        'Respond to an extract-based question on a drama text (IGCSE Literature AO1)',
+        'Analyse how writers create character and theme (IGCSE Literature AO2)',
+        'Explore how context shapes meaning (IGCSE Literature AO3)',
+        'Write coherently with accurate SPaG (IGCSE Literature AO4)',
         'Develop a personal, conceptualised interpretation',
       ],
       keyVocabulary: [
@@ -558,7 +558,7 @@ const year10: CurriculumYear = {
       linkedLessonPlanIds: ['igcse-inspector-calls', 'igcse-prose-texts'],
       linkedWorkbookIds: ['wb-y10-igcse-lit-p1'],
       ncStrands: [
-        'Edexcel 4ET1 Paper 1: Drama and Prose',
+        'Edexcel IGCSE Literature Paper 1: Drama and Prose',
         'AO1: Close knowledge and understanding of texts with informed personal response',
         'AO2: Analyse language, form, and structure — writer\'s methods and effects',
         'AO3: Understand relationships between texts and contexts',
@@ -647,16 +647,16 @@ const year11: CurriculumYear = {
       termLabel: 'Autumn Term',
       unitTitle: 'IGCSE Literature: Poetry — Unseen and Anthology',
       coreTexts: [
-        'Edexcel IGCSE Poetry Anthology (4ET1)',
+        'Edexcel IGCSE Poetry Anthology (IGCSE Literature)',
         'Unseen poetry extracts for comparison',
       ],
       writingFocus: 'Comparative poetry essay — anthology and unseen',
       spagFocus:
         'Comparative connectives (conversely, in contrast, similarly); embedding quotations with analysis; controlling essay length',
       keySkills: [
-        'Analyse anthology poems in detail (4ET1 AO1/AO2)',
-        'Compare an anthology poem with an unseen poem (4ET1 AO2)',
-        'Respond to unseen poetry independently (4ET1 AO1)',
+        'Analyse anthology poems in detail (IGCSE Literature AO1/AO2)',
+        'Compare an anthology poem with an unseen poem (IGCSE Literature AO2)',
+        'Respond to unseen poetry independently (IGCSE Literature AO1)',
         'Write under timed conditions with sustained quality',
         'Use revision strategies effectively (flashcards, retrieval practice)',
       ],
@@ -671,7 +671,7 @@ const year11: CurriculumYear = {
       linkedLessonPlanIds: ['igcse-poetry-anthology', 'igcse-unseen-poetry'],
       linkedWorkbookIds: ['wb-y11-igcse-lit-p2'],
       ncStrands: [
-        'Edexcel 4ET1 Paper 2: Poetry',
+        'Edexcel IGCSE Literature Paper 2: Poetry',
         'AO1: Close knowledge of anthology poems with personal response',
         'AO2: Analyse poetic methods — language, form, structure',
         'AO3: Contextual understanding of poets and movements',
@@ -684,7 +684,7 @@ const year11: CurriculumYear = {
       unitTitle: 'IGCSE Exam Preparation — Language and Literature',
       coreTexts: [
         'Past paper packs — IGCSE Language A (4EA1)',
-        'Past paper packs — IGCSE Literature (4ET1)',
+        'Past paper packs — IGCSE Literature',
         'Revision anthology and model answer booklets',
       ],
       writingFocus: 'Exam-technique refinement across all question types',
@@ -709,7 +709,7 @@ const year11: CurriculumYear = {
       linkedWorkbookIds: ['wb-y11-exam-prep'],
       ncStrands: [
         'Edexcel 4EA1: Full specification revision — Papers 1 & 2',
-        'Edexcel 4ET1: Full specification revision — Papers 1 & 2',
+        'Edexcel IGCSE Literature: Full revision — Papers 1 & 2',
         'All AOs assessed across timed mock examinations',
       ],
     },
@@ -735,14 +735,14 @@ const year11: CurriculumYear = {
         'exam technique', 'time management', 'focused revision',
         'walking-talking mock', 'gap analysis', 'confidence building',
       ],
-      assessmentType: 'IGCSE External Examinations — 4EA1 Papers 1 & 2, 4ET1 Papers 1 & 2',
+      assessmentType: 'IGCSE External Examinations — Language A Papers 1 & 2, Literature Papers 1 & 2',
       assessmentWeighting: '100% external examination',
       linkedCourseIds: ['edexcel-igcse-lang-a', 'edexcel-igcse-lang-b', 'igcse-lit-drama-prose', 'igcse-lit-poetry'],
       linkedLessonPlanIds: ['igcse-final-revision'],
       linkedWorkbookIds: ['wb-y11-final-revision'],
       ncStrands: [
         'Edexcel 4EA1: External examination — June series',
-        'Edexcel 4ET1: External examination — June series',
+        'Edexcel IGCSE Literature: External examination — June series',
       ],
     },
   ],

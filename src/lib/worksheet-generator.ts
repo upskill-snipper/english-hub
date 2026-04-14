@@ -65,7 +65,7 @@ export const WORKSHEET_TYPE_META: Record<
   },
   'exam-question': {
     label: 'Exam Question Practice',
-    description: 'Full exam question with mark scheme and model answer',
+    description: 'Full exam question with answer guide and model answer',
     icon: 'clipboard-list',
   },
   'character-profile': {
@@ -587,7 +587,7 @@ function generateExamQuestion(config: WorksheetConfig): GeneratedWorksheet {
   })
 
   sections.push({
-    title: 'Mark Scheme Summary',
+    title: 'Marking Guidance Summary',
     instructions: 'Use this to self-assess or peer-assess the response.',
     questions: [
       {

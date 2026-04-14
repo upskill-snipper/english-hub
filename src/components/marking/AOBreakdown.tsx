@@ -20,14 +20,14 @@ export interface AOBreakdownProps {
 }
 
 /**
- * Assessment Objective bar chart.
+ * "What markers look for" bar chart.
  * Renders a labelled bar for each AO using theme tokens only.
  */
 export function AOBreakdown({ scores, className }: AOBreakdownProps) {
   return (
     <Card className={cn(className)}>
       <CardHeader>
-        <CardTitle>Assessment Objectives</CardTitle>
+        <CardTitle>What markers look for</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {scores.map((ao) => {
@@ -73,11 +73,11 @@ export function AOBreakdown({ scores, className }: AOBreakdownProps) {
 }
 
 function bandLabel(pct: number): string {
-  if (pct >= 85) return "Perceptive / conceptualised";
-  if (pct >= 70) return "Thoughtful / developed";
-  if (pct >= 55) return "Clear / relevant";
-  if (pct >= 40) return "Some / attempted";
-  return "Simple / limited";
+  if (pct >= 85) return "Excellent — original and convincing";
+  if (pct >= 70) return "Strong — detailed and well-developed";
+  if (pct >= 55) return "Good — clear and on-topic";
+  if (pct >= 40) return "Getting there — some good ideas";
+  return "Early stages — keep building";
 }
 
 export default AOBreakdown;

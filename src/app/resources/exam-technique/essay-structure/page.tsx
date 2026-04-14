@@ -78,7 +78,7 @@ export default function EssayStructurePage() {
               desc: "Begin with a brief piece of relevant context that frames your argument.",
               example:
                 "Writing in 1912, at a time of deep social inequality, Priestley uses 'An Inspector Calls' to challenge the moral complacency of the upper classes. The Birling family's refusal to accept responsibility reflects the attitudes Priestley sought to dismantle.",
-              best: "Literature essays where context is assessed (AO3)",
+              best: "Literature essays where context is assessed",
             },
             {
               title: "The conceptual statement",
@@ -192,7 +192,7 @@ export default function EssayStructurePage() {
         </h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           A topic sentence is the first sentence of each paragraph. It tells the
-          examiner exactly what the paragraph will be about and how it connects to
+          marker exactly what the paragraph will be about and how it connects to
           the question. Strong topic sentences make your essay easy to follow and
           demonstrate a clear line of argument.
         </p>
@@ -438,7 +438,7 @@ export default function EssayStructurePage() {
           <p className="mt-3 text-muted-foreground leading-relaxed">
             A strong conclusion does three things: it answers the question
             decisively, it pulls together the threads of your argument, and it
-            leaves the examiner with a final insight. It should never introduce new
+            leaves the marker with a final insight. It should never introduce new
             evidence or quotations.
           </p>
 

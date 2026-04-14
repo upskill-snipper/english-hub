@@ -289,27 +289,27 @@ const dramaticTechniques = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     description: "Show detailed knowledge and understanding of the text",
     guidance:
       "Demonstrate thorough knowledge of the play by referring to specific scenes, quoting accurately, and showing understanding of plot, characters, and themes. Do not retell the story; select relevant details to support your argument. For Streetcar, show awareness of the play's structure across eleven scenes and how Williams builds towards the climactic events of Scenes 10 and 11.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     description:
       "Analyse the language, form, and structure used by a writer to create meanings and effects",
     guidance:
       "This is where the highest marks are won. Analyse Williams' dramatic techniques: symbolism (light, the polka, the streetcar), staging (the transparent walls, expressionistic effects), dialogue (the contrast between Blanche's literary register and Stanley's colloquial speech), and structure (the pattern of progressive revelation). Always explain the effect on the audience. Use terminology accurately: stage directions, non-diegetic sound, plastic theatre, dramatic irony, motif.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     description:
       "Demonstrate understanding of the relationships between texts and the contexts in which they were written and received",
     guidance:
       "Discuss Williams' personal context (his sister Rose's institutionalisation, his own homosexuality in a hostile society), the social context (post-war America, gender roles, the decline of the Southern plantation economy, attitudes to sexuality and mental health), and the literary context (Southern Gothic tradition, the influence of Chekhov and expressionism). Integrate context into your analysis rather than adding it as a separate paragraph.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     description:
       "Communicate a clear, relevant response using appropriate terminology",
     guidance:
@@ -377,7 +377,7 @@ const examQuestions = {
 const sampleQuestion =
   "How does Williams present Blanche DuBois as a tragic figure in A Streetcar Named Desire?";
 
-const modelParagraph = `Williams presents Blanche as a tragic figure through her desperate and ultimately futile attempt to construct an identity that will protect her from the brutal reality of her situation [AO1]. When Blanche tells Mitch 'I don't want realism. I want magic!', Williams uses the stark antithesis between 'realism' and 'magic' to dramatise the central conflict that defines her character [AO2]. The exclamatory sentence conveys both defiance and desperation: Blanche knows that her illusions are unsustainable, yet she clings to them because the alternative — confronting her guilt over Allan's death, her sexual history, and her social decline — is psychologically unbearable [AO1]. Williams' choice of the word 'magic' is significant: it elevates Blanche's lies from mere dishonesty to a form of imaginative resistance, aligning her with the artist's impulse to reshape reality [AO2]. This speech must be understood in the context of Williams' concept of 'plastic theatre', in which emotional truth takes precedence over literal fact — Blanche's fabrications, like Williams' own expressionistic staging, seek to communicate feelings that plain realism cannot capture [AO3]. The tragic dimension arises because the world of Stanley Kowalski — blunt, physical, unaccommodating — has no space for such fragility. Williams invites the audience to recognise that Blanche's destruction is not merely personal but reflects the broader cultural violence of a post-war America that has abandoned the values of beauty and compassion she represents, however imperfectly [AO3]. The paragraph demonstrates that Williams' sympathy lies not with 'truth' in the narrow, factual sense, but with the human need for tenderness and meaning — a need that the play's brutal conclusion renders tragic [AO4].`;
+const modelParagraph = `Williams presents Blanche as a tragic figure through her desperate and ultimately futile attempt to construct an identity that will protect her from the brutal reality of her situation [Textual Knowledge]. When Blanche tells Mitch 'I don't want realism. I want magic!', Williams uses the stark antithesis between 'realism' and 'magic' to dramatise the central conflict that defines her character [Writer's Methods]. The exclamatory sentence conveys both defiance and desperation: Blanche knows that her illusions are unsustainable, yet she clings to them because the alternative — confronting her guilt over Allan's death, her sexual history, and her social decline — is psychologically unbearable [Textual Knowledge]. Williams' choice of the word 'magic' is significant: it elevates Blanche's lies from mere dishonesty to a form of imaginative resistance, aligning her with the artist's impulse to reshape reality [Writer's Methods]. This speech must be understood in the context of Williams' concept of 'plastic theatre', in which emotional truth takes precedence over literal fact — Blanche's fabrications, like Williams' own expressionistic staging, seek to communicate feelings that plain realism cannot capture [Interpretation]. The tragic dimension arises because the world of Stanley Kowalski — blunt, physical, unaccommodating — has no space for such fragility. Williams invites the audience to recognise that Blanche's destruction is not merely personal but reflects the broader cultural violence of a post-war America that has abandoned the values of beauty and compassion she represents, however imperfectly [Interpretation]. The paragraph demonstrates that Williams' sympathy lies not with 'truth' in the narrow, factual sense, but with the human need for tenderness and meaning — a need that the play's brutal conclusion renders tragic [Personal Response].`;
 
 /* ─── Page Component ─────────────────────────────────────────── */
 
@@ -412,7 +412,7 @@ export default function StreetcarStudyGuide() {
             "Characters",
             "Themes",
             "Dramatic Techniques",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Questions",
             "Model Paragraph",
           ].map((s) => (
@@ -540,7 +540,7 @@ export default function StreetcarStudyGuide() {
           <p className="mt-2 text-sm text-muted-foreground">
             Williams&rsquo; concept of &lsquo;plastic theatre&rsquo; &mdash;
             using lighting, sound, set design, and staging expressively &mdash;
-            is essential for AO2. Examiners reward candidates who analyse{" "}
+            is essential for Analysis of Writer's Methods. Markers reward responses that analyse{" "}
             <em>how</em> Williams creates meaning, not just <em>what</em>{" "}
             happens.
           </p>
@@ -564,7 +564,7 @@ export default function StreetcarStudyGuide() {
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
         <section
-          id="assessment-objectives"
+          id="what-markers-look-for"
           aria-labelledby="ao-heading"
         >
           <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
@@ -677,7 +677,7 @@ export default function StreetcarStudyGuide() {
                   </strong>{" "}
                   Work through the extract methodically. Use short, embedded
                   quotations from the passage. Analyse Williams&rsquo; language,
-                  stage directions, and dramatic effects (AO2). Then connect
+                  stage directions, and dramatic effects (Writer's Methods). Then connect
                   outward to the rest of the play and relevant context.
                 </li>
                 <li>
@@ -696,7 +696,7 @@ export default function StreetcarStudyGuide() {
                   Write &ldquo;Williams presents...&rdquo; or &ldquo;Williams
                   uses...&rdquo; rather than &ldquo;the play
                   shows...&rdquo;. This demonstrates awareness of authorial
-                  intent and helps you discuss methods (AO2).
+                  intent and helps you discuss methods (Writer's Methods).
                 </li>
                 <li>
                   <strong className="text-foreground">
@@ -758,7 +758,7 @@ export default function StreetcarStudyGuide() {
 
             <div className="rounded-lg border-2 border-[#7D3C98]/30 bg-primary/5 p-5">
               <h3 className="text-sm font-semibold text-foreground">
-                Model Paragraph (addressing all 4 AOs)
+                Model Paragraph (addressing all 4 skills)
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {modelParagraph}
@@ -766,12 +766,12 @@ export default function StreetcarStudyGuide() {
               <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {[
                   {
-                    code: "AO1",
+                    code: "Textual Knowledge",
                     label: "Knowledge & understanding of the text",
                   },
-                  { code: "AO2", label: "Analysis of language, form & structure" },
-                  { code: "AO3", label: "Context integrated into argument" },
-                  { code: "AO4", label: "Clear, analytical communication" },
+                  { code: "Writer's Methods", label: "Analysis of language, form & structure" },
+                  { code: "Interpretation", label: "Context integrated into argument" },
+                  { code: "Personal Response", label: "Clear, analytical communication" },
                 ].map((ao) => (
                   <div
                     key={ao.code}

@@ -18,7 +18,7 @@ const data: TextGuideData = {
   author: 'Simon Stephens (adapted from Mark Haddon)',
   year: 'first staged 2012',
   category: 'Play',
-  badge: 'Edexcel IGCSE 4ET1',
+  badge: 'Edexcel IGCSE',
   intro:
     "Simon Stephens' stage adaptation of Mark Haddon's novel follows Christopher Boone, a fifteen-year-old mathematical prodigy who thinks and perceives the world differently. When he discovers his neighbour's dog Wellington killed with a garden fork, he resolves to investigate — a decision that unravels the carefully managed lies of his family and sends him on a solo journey across England.",
   quickInfo: {

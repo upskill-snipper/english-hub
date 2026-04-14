@@ -232,7 +232,7 @@ export default function Paper1Page() {
                 ~55 minutes (including reading)
               </li>
               <li>
-                AO1 (12 marks), AO2 (12 marks), AO3 (6 marks), AO4 (4 marks
+                Understanding the text (12 marks), Analysing language and structure (12 marks), Relating to context (6 marks), Comparing texts (4 marks
                 for SPaG)
               </li>
             </ul>
@@ -254,7 +254,7 @@ export default function Paper1Page() {
                 </span>{" "}
                 ~50 minutes (including reading)
               </li>
-              <li>AO1 (12 marks), AO2 (12 marks), AO3 (6 marks)</li>
+              <li>Understanding the text (12 marks), Analysing language and structure (12 marks), Relating to context (6 marks)</li>
             </ul>
           </div>
         </div>
@@ -523,7 +523,7 @@ export default function Paper1Page() {
                   <span className="mt-0.5 text-warn font-bold">x</span>
                   <span>
                     <span className="font-medium">Retelling the story</span> -
-                    the examiner knows the plot. Focus on analysis, not
+                    the marker knows the plot. Focus on analysis, not
                     narrative.
                   </span>
                 </li>

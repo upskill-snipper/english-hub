@@ -139,7 +139,7 @@ const PRACTICE_TIPS = [
   },
   {
     title: 'Watch the clock',
-    body: 'For Paper 2 Section B you have roughly 35-40 minutes. Spend 5-8 minutes reading and planning, then write in sustained comparative paragraphs.',
+    body: 'For the unseen poetry section you have roughly 35-40 minutes. Spend 5-8 minutes reading and planning, then write in sustained comparative paragraphs.',
     icon: Clock,
   },
 ]
@@ -168,7 +168,7 @@ export default function UnseenPoetryHubPage() {
             <div className="flex items-center gap-2">
               <h1 className="text-heading-lg font-heading text-foreground">Unseen Poetry</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
@@ -183,13 +183,13 @@ export default function UnseenPoetryHubPage() {
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-sky-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          Paper 2 Section B
+          Paper 2 — Unseen Poetry
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
           Unseen poetry is the section students fear most -- and rewards most
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          In Paper 2 of the Edexcel IGCSE 4ET1 you will be asked to compare two poems you have
+          In Paper 2 of the Edexcel IGCSE Literature exam you will be asked to compare two poems you have
           never read before. There is no way to "revise" the poems themselves -- but there is
           absolutely a way to revise the skills. With a reliable reading approach, a toolkit of
           analytical vocabulary, and a clear comparative structure, unseen poetry becomes the
@@ -251,7 +251,7 @@ export default function UnseenPoetryHubPage() {
           <h2 className="text-heading-lg font-heading text-foreground">Common Themes</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          The 4ET1 unseen poems are often chosen from a narrow range of themes. Knowing the
+          The unseen poems are often chosen from a narrow range of themes. Knowing the
           territory helps you orient quickly under pressure.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -295,7 +295,7 @@ export default function UnseenPoetryHubPage() {
         <div className="mb-4 flex items-center gap-3">
           <CheckCircle2 className="size-5 text-emerald-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            What the 4ET1 Examiner is Looking For
+            What the Examiner is Looking For
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
@@ -305,25 +305,25 @@ export default function UnseenPoetryHubPage() {
         <div className="grid gap-3 sm:grid-cols-2">
           {[
             {
-              ao: 'AO1',
+              ao: 'Understanding the text',
               label: 'Informed personal response',
               detail:
                 'Read, understand, and respond thoughtfully. Use precise textual references to support your interpretation.',
             },
             {
-              ao: 'AO2',
+              ao: 'Analysing language and structure',
               label: 'Language, form, structure',
               detail:
                 'Analyse how poets use language, form, and structure to create meanings and effects, using subject terminology.',
             },
             {
-              ao: 'AO3',
+              ao: 'Relating to context',
               label: 'Context',
               detail:
                 'Show understanding of the relationships between texts and their contexts. Light touch for unseen poetry.',
             },
             {
-              ao: 'AO4',
+              ao: 'Comparing texts',
               label: 'Comparison',
               detail:
                 'Explore connections across texts, evaluating similarities and differences in writers\' methods and effects.',
@@ -333,7 +333,7 @@ export default function UnseenPoetryHubPage() {
               key={item.ao}
               className="flex gap-3 rounded-xl border border-border/40 bg-background/50 p-4"
             >
-              <Badge variant="secondary" className="h-fit shrink-0 font-mono text-xs">
+              <Badge variant="secondary" className="h-fit shrink-0 text-xs">
                 {item.ao}
               </Badge>
               <div>

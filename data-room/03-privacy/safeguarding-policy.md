@@ -1,7 +1,7 @@
 # Safeguarding Policy
 
-**The English Hub Ltd**
-**Last reviewed:** `[REPLACE WITH DATE]`
+**Upskill Energy Limited t/a The English Hub** (Company No. 16254656)
+**Last reviewed:** 12 April 2026
 **Next review:** Annually (or sooner on material change)
 **Policy owner:** Designated Safeguarding Lead (DSL)
 **Approved by:** Board / CEO
@@ -49,7 +49,7 @@ It covers any concern relating to the safety or welfare of a child using the ser
 
 | Role | Responsibilities | Contact |
 |---|---|---|
-| **Designated Safeguarding Lead (DSL)** | Overall responsibility for safeguarding; first escalation point for concerns; liaison with statutory services | `[REPLACE WITH name]`, safeguarding@englishhub.`[tld]` |
+| **Designated Safeguarding Lead (DSL)** | Overall responsibility for safeguarding; first escalation point for concerns; liaison with statutory services | `[REPLACE WITH DSL name]`, safeguarding@theenglishhub.app |
 | **Deputy DSL** | Cover during DSL absence; second-line triage | `[REPLACE]` |
 | **CEO / Board** | Strategic oversight; approve policy; resource allocation | `[REPLACE]` |
 | **Engineering / AI team** | Maintain safety classifiers and flagging systems; implement safety-by-design | `[REPLACE]` |
@@ -114,7 +114,7 @@ It covers any concern relating to the safety or welfare of a child using the ser
 
 1. **Act immediately.** Do not wait.
 2. **Record what you know** — exactly what you saw, when, the user's ID (not name in an email subject), and any actions already taken.
-3. **Email safeguarding@englishhub.`[tld]`** with the subject "Safeguarding concern — [urgent/non-urgent]".
+3. **Email safeguarding@theenglishhub.app** with the subject "Safeguarding concern — [urgent/non-urgent]".
 4. **Call the DSL** for any concern that is urgent or where a child may be at immediate risk.
 5. **Do not investigate or interview the child yourself.** Do not promise confidentiality you cannot keep.
 6. **Do not delete any evidence.** Preserve the record.
@@ -169,7 +169,7 @@ Every safeguarding concern is recorded in a secure safeguarding log, including:
 - Outcome
 - Review dates
 
-Records are kept in a restricted-access secure store. **Retention: `[REPLACE WITH]` years** (typically until the child reaches age 25, per KCSIE guidance).
+Records are kept in a restricted-access secure store. **Retention: until the child reaches age 25** (per KCSIE guidance).
 
 Access is limited to the DSL and deputy DSL; broader access requires documented need.
 
@@ -234,14 +234,14 @@ This policy is reviewed at least annually and whenever:
 
 | Date | Reviewer | Changes |
 |---|---|---|
-| `[REPLACE WITH DATE]` | DSL | Initial draft |
+| 12 April 2026 | DSL | Initial draft — placeholders filled from codebase; DSL/Deputy names pending appointment |
 
 ---
 
 ## 14. Key contacts
 
 ### Internal
-- **DSL:** `[REPLACE WITH name]`, safeguarding@englishhub.`[tld]`
+- **DSL:** `[REPLACE WITH DSL name]`, safeguarding@theenglishhub.app
 - **Deputy DSL:** `[REPLACE]`
 - **CEO:** `[REPLACE]`
 - **Board safeguarding lead:** `[REPLACE]`

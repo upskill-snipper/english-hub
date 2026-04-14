@@ -163,7 +163,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
             Your {boardName} Set Texts
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            In-depth study guides for every set text on your {boardName} specification.
+            In-depth study guides for every set text on your {boardName} exam board.
             Shakespeare plays, 19th-century novels, and modern texts -- with character analysis,
             theme tracking, and key quotations.
           </p>
@@ -392,7 +392,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
                   Track character development
                 </h3>
                 <p className="text-xs text-muted-foreground">
-                  Note how key characters change throughout the text. Examiners reward analysis
+                  Note how key characters change throughout the text. Markers reward analysis
                   of character arcs and what these reveal about the writer&apos;s message.
                 </p>
               </div>

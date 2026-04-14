@@ -21,9 +21,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Of Mice and Men — Edexcel IGCSE 4ET1 Study Guide',
+  title: 'Of Mice and Men — Edexcel IGCSE Literature Study Guide',
   description:
-    'Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE 4ET1: plot, characters, themes, Great Depression context and key quotations.',
+    'Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: plot, characters, themes, Great Depression context and key quotations.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men',
@@ -200,7 +200,7 @@ export default async function OmamHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
             <Badge variant="secondary">Modern prose</Badge>
           </div>

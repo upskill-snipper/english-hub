@@ -196,27 +196,27 @@ const narrativeTechniques = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     description: "Show detailed knowledge and understanding of the text",
     guidance:
       "Demonstrate thorough knowledge of the novel's plot, characters, and cultural context. Refer to specific chapters and events. Quote accurately and select relevant details to support your argument rather than retelling the story. Show that you understand the significance of events within Igbo culture (e.g. why Okonkwo's exile is for a 'female' crime, why the unmasking of the egwugwu is a sacrilege).",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     description:
       "Analyse the language, form, and structure used by a writer to create meanings and effects",
     guidance:
       "This is where the highest marks are won. Analyse Achebe's specific word choices, his use of Igbo proverbs, the structural significance of the three-part division, and the devastating shift in narrative perspective in the final chapter. Discuss how the oral tradition style creates meaning and how the ironic title frames the reader's interpretation. Always explain the effect on the reader.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     description:
       "Demonstrate understanding of the relationships between texts and the contexts in which they were written and received",
     guidance:
       "Discuss the historical context of British colonialism in Nigeria (late 19th/early 20th century), the cultural context of Igbo society, and Achebe's purpose in writing the novel as a response to colonial narratives such as Joseph Conrad's Heart of Darkness. Show how Achebe's postcolonial perspective shapes the novel's meaning. Integrate context into your analysis rather than bolting it on as a separate paragraph.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     description:
       "Communicate a clear, relevant response using appropriate terminology",
     guidance:
@@ -257,7 +257,7 @@ export default function ThingsFallApartStudyGuide() {
             "Characters",
             "Themes",
             "Narrative Techniques",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Guidance",
             "Sample Response",
           ].map((s) => (
@@ -377,8 +377,8 @@ export default function ThingsFallApartStudyGuide() {
             Achebe&rsquo;s Narrative Techniques
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Achebe&rsquo;s techniques are essential for AO2 (analysis of
-            language, form, and structure). Examiners reward candidates who
+            Achebe&rsquo;s techniques are essential for Writer's Methods (analysis of
+            language, form, and structure). Markers reward responses that
             discuss <em>how</em> Achebe creates meaning, not just{" "}
             <em>what</em> happens.
           </p>
@@ -402,7 +402,7 @@ export default function ThingsFallApartStudyGuide() {
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
         <section
-          id="assessment-objectives"
+          id="what-markers-look-for"
           aria-labelledby="ao-heading"
         >
           <h2
@@ -610,7 +610,7 @@ export default function ThingsFallApartStudyGuide() {
                     </strong>{" "}
                     Work through the extract methodically. Use short, embedded
                     quotations from the passage. Analyse language, form, and
-                    structure (AO2). Then connect outward to the rest of the
+                    structure (Writer's Methods). Then connect outward to the rest of the
                     novel and relevant context.
                   </li>
                   <li>
@@ -629,7 +629,7 @@ export default function ThingsFallApartStudyGuide() {
                     Write &ldquo;Achebe presents...&rdquo; or &ldquo;Achebe
                     uses...&rdquo; rather than &ldquo;the novel
                     shows...&rdquo;. This demonstrates awareness of authorial
-                    intent and helps you discuss methods (AO2).
+                    intent and helps you discuss methods (Writer's Methods).
                   </li>
                   <li>
                     <strong className="text-foreground">
@@ -637,7 +637,7 @@ export default function ThingsFallApartStudyGuide() {
                     </strong>{" "}
                     Show understanding of Igbo customs, beliefs, and social
                     structures. Explain terms like chi, egwugwu, and osu when
-                    you use them. This demonstrates AO1 knowledge and AO3
+                    you use them. This demonstrates Textual Knowledge and Interpretation
                     contextual understanding.
                   </li>
                   <li>
@@ -683,12 +683,12 @@ export default function ThingsFallApartStudyGuide() {
             <CardContent>
               <div className="rounded bg-primary/5 p-4">
                 <p className="mb-2 text-xs font-semibold text-foreground">
-                  Model Paragraph (addressing all 4 AOs):
+                  Model Paragraph (addressing all 4 skills):
                 </p>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   Achebe presents colonialism&rsquo;s most devastating impact
                   not through violence but through narrative erasure.{" "}
-                  <strong className="text-foreground">[AO1]</strong> In the
+                  <strong className="text-foreground">[Textual Knowledge]</strong> In the
                   novel&rsquo;s final paragraphs, the District Commissioner
                   reflects that Okonkwo&rsquo;s story &lsquo;would make
                   interesting reading&rsquo; and might merit &lsquo;not a whole
@@ -697,7 +697,7 @@ export default function ThingsFallApartStudyGuide() {
                     The Pacification of the Primitive Tribes of the Lower Niger
                   </em>
                   .{" "}
-                  <strong className="text-foreground">[AO2]</strong> Achebe
+                  <strong className="text-foreground">[Writer's Methods]</strong> Achebe
                   uses a sudden, jarring shift in narrative perspective from
                   the intimate, Igbo-centred voice that has governed the entire
                   novel to the cold, detached viewpoint of the colonial
@@ -707,7 +707,7 @@ export default function ThingsFallApartStudyGuide() {
                   the Commissioner&rsquo;s title, with its dehumanising word
                   &lsquo;Primitive&rsquo;, reveals the ideology that underpins
                   colonial power.{" "}
-                  <strong className="text-foreground">[AO3]</strong> Writing
+                  <strong className="text-foreground">[Interpretation]</strong> Writing
                   in 1958, two years before Nigerian independence, Achebe was
                   responding to a tradition of European literature &mdash;
                   including Joseph Conrad&rsquo;s{" "}
@@ -717,7 +717,7 @@ export default function ThingsFallApartStudyGuide() {
                   culture, only to show it dismissed in a single sentence,
                   Achebe forces the reader to recognise the violence inherent
                   in colonial storytelling.{" "}
-                  <strong className="text-foreground">[AO4]</strong> The
+                  <strong className="text-foreground">[Personal Response]</strong> The
                   structural irony of this ending &mdash; the Commissioner
                   plans to write about Africa, but Achebe has already written
                   the book that exposes the inadequacy of such accounts &mdash;

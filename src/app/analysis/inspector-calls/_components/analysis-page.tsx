@@ -74,12 +74,12 @@ export function BackLink() {
   )
 }
 
-export function ExaminerByline() {
+export function MarkerByline() {
   return (
     <div className="flex items-center gap-2 text-xs text-muted-foreground">
       <GraduationCap className="size-3.5" />
       <span>
-        Written by GCSE examiners &middot; The English Hub editorial team
+        Written by GCSE markers &middot; The English Hub editorial team
       </span>
     </div>
   )
@@ -154,7 +154,7 @@ export function RevisionCta() {
           </h3>
           <p className="text-body-sm text-muted-foreground">
             Grade 5, 7 and 9 revision plans, model answers and exam technique
-            from experienced GCSE examiners.
+            from experienced GCSE markers.
           </p>
         </div>
         <Button render={<Link href="/revision" />}>

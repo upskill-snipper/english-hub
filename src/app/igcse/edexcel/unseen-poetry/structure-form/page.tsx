@@ -148,7 +148,7 @@ export default function StructureFormPage() {
                 Form and Structure
               </h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
@@ -171,7 +171,7 @@ export default function StructureFormPage() {
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
           When you open a poem, the first thing you see is its shape on the page. Stanza
           length, rhyme, line breaks, metre -- these are not decoration. They shape how we
-          read, how we pause, and what we feel. The strongest candidates at 4ET1 always link
+          read, how we pause, and what we feel. The strongest candidates always link
           structural features back to meaning: form is never described in isolation but always
           tied to effect. This guide covers the forms and structural features you are most
           likely to meet in an unseen poem.
@@ -276,7 +276,7 @@ export default function StructureFormPage() {
           Put it all together with comparison
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Form, language, comparison, and thesis -- the 4ET1 unseen poetry question pulls all
+          Form, language, comparison, and thesis -- the unseen poetry question pulls all
           of these together. Revisit the comparison guide now that you have the full toolkit.
         </p>
         <Button

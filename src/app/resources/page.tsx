@@ -77,7 +77,7 @@ const QUICK_START: ResourceCard[] = [
   },
   {
     title: "Model Answers",
-    description: "Grade 9 exemplars with examiner commentary.",
+    description: "Grade 9 exemplars with marker commentary.",
     href: "/resources/model-answers",
     icon: FileText,
   },

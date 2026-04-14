@@ -198,7 +198,7 @@ export default function EssayStructureView({
           {shortName} Specification
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
-          What {shortName} examiners are looking for
+          What {shortName} markers are looking for
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed mb-5">
           {essay.intro}
@@ -207,7 +207,7 @@ export default function EssayStructureView({
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-2">
-              Assessment Objective focus
+              What markers look for
             </p>
             <ul className="space-y-1.5">
               {essay.aoFocus.map((ao) => (
@@ -220,7 +220,7 @@ export default function EssayStructureView({
           </div>
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2">
-              {shortName} examiner checklist
+              {shortName} marker checklist
             </p>
             <ul className="space-y-1.5">
               {essay.examinerChecklist.map((item) => (
@@ -395,7 +395,7 @@ export default function EssayStructureView({
 
         <Warning>
           Never start with &ldquo;In this essay I will...&rdquo;. It wastes words and
-          sounds formulaic. Jump straight into your argument. The examiner knows it is
+          sounds formulaic. Jump straight into your argument. The marker knows it is
           an essay -- you do not need to announce it.
         </Warning>
 
@@ -469,7 +469,7 @@ export default function EssayStructureView({
       {/* ── Linking Paragraphs ────────────────────────────────── */}
       <Section title="Linking Paragraphs">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          {shortName} examiners reward &ldquo;sustained&rdquo; and &ldquo;cohesive&rdquo;
+          {shortName} markers reward &ldquo;sustained&rdquo; and &ldquo;cohesive&rdquo;
           responses. Your paragraphs should flow logically from one to the next, building
           an argument rather than listing separate points.
         </p>
@@ -524,7 +524,7 @@ export default function EssayStructureView({
       {/* ── Conclusions ───────────────────────────────────────── */}
       <Section title="Conclusions That Impress">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Your conclusion is the last thing the examiner reads. It should not simply
+          Your conclusion is the last thing the marker reads. It should not simply
           repeat your introduction -- it should show that your argument has arrived
           somewhere. Think of it as the destination, not a summary.
         </p>
@@ -535,7 +535,7 @@ export default function EssayStructureView({
             {[
               'Restate your thesis in a new way -- show how your analysis has deepened it.',
               'Zoom out to the bigger picture: what is the writer saying about humanity, society, or the human condition?',
-              'End with a thought-provoking final sentence that leaves the examiner thinking.',
+              'End with a thought-provoking final sentence that leaves the marker thinking.',
               'Avoid introducing brand new points or quotations.',
             ].map((point, i) => (
               <div key={i} className="flex gap-3 items-start">

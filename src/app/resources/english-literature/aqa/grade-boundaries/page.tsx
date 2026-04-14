@@ -182,8 +182,8 @@ export default function GradeBoundariesPage() {
         {/* What each grade looks like */}
         <Section title="What each grade looks like in practice">
           <p>
-            Understanding the grade descriptors helps you see exactly what
-            examiners expect at each level. Here is what typical work looks like
+            Understanding what each grade looks like helps you see exactly what
+            markers expect at each level. Here is what typical work looks like
             at the key grade boundaries:
           </p>
 

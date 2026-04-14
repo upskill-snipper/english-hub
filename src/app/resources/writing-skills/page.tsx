@@ -122,7 +122,7 @@ const QUICK_TIPS = [
     number: 2,
     tip: "Vary your sentence lengths deliberately",
     detail:
-      "Long sentences build tension; short sentences shatter it. A single word can form a paragraph. Control is what examiners reward.",
+      "Long sentences build tension; short sentences shatter it. A single word can form a paragraph. Control is what markers reward.",
   },
   {
     number: 3,

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Of Mice and Men Themes — Edexcel IGCSE 4ET1',
+  title: 'Of Mice and Men Themes — Edexcel IGCSE Literature',
   description:
     'Themes in Steinbeck\u2019s Of Mice and Men: the American Dream, loneliness, friendship, discrimination, fate, power and nature.',
   alternates: {
@@ -102,7 +102,7 @@ export default async function OmamThemesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
             <Badge variant="secondary">Themes</Badge>
           </div>

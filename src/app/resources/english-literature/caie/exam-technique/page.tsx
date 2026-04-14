@@ -153,8 +153,8 @@ export default function CAIEExamTechniquePage() {
         </h1>
         <p className="text-base text-muted-foreground leading-relaxed max-w-3xl">
           A comprehensive guide to every paper in the Cambridge IGCSE English
-          Literature syllabus (0475/0992). Learn how each paper works, what
-          examiners want, and how to structure your answers for top marks.
+          Literature course. Learn how each paper works, what
+          markers want, and how to structure your answers for top marks.
         </p>
       </div>
 
@@ -163,7 +163,7 @@ export default function CAIEExamTechniquePage() {
       <Section title="Overview: Papers & Routes" defaultOpen>
         <p className="text-sm text-muted-foreground leading-relaxed mb-4">
           Cambridge IGCSE Literature offers three assessment routes. Every
-          candidate sits <strong>Paper 1</strong> (Poetry &amp; Prose), then
+          student sits <strong>Paper 1</strong> (Poetry &amp; Prose), then
           chooses a drama component depending on their route.
         </p>
 
@@ -554,13 +554,13 @@ export default function CAIEExamTechniquePage() {
         </TipCard>
       </Section>
 
-      {/* ─── Mark Scheme ────────────────────────────────────── */}
+      {/* ─── Marking Guide ────────────────────────────────────── */}
 
-      <Section title="Mark Scheme Explained: 25-Mark Level Descriptors">
+      <Section title="Marking Guide: 25-Mark Level Descriptors">
         <p className="text-sm text-muted-foreground leading-relaxed mb-4">
           All 25-mark questions across Papers 1&ndash;4 are marked using the same
           five-band descriptors. Understanding these bands helps you target the
-          skills examiners reward.
+          skills markers reward.
         </p>
 
         <BandRow

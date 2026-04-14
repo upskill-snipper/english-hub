@@ -30,7 +30,7 @@ const RESOURCES = [
     title: "Paper 1: Reading",
     subtitle: "Core Paper 1 / Extended Paper 2",
     description:
-      "Master reading comprehension, summary writing, and note-making. Learn how to answer every question type with examiner-approved techniques.",
+      "Master reading comprehension, summary writing, and note-making. Learn how to answer every question type with marker-approved techniques.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -121,19 +121,19 @@ export default function CaieEnglishLanguagePage() {
             IGCSE English Language
           </h1>
           <p className="mt-2 text-lg font-medium text-muted-foreground">
-            Syllabus 0500 (Core &amp; Extended) / 0990 (9&ndash;1 Grading)
+            Core &amp; Extended / 9&ndash;1 Grading
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
             Everything you need to prepare for your Cambridge IGCSE English
             Language examination. Thorough coverage of both reading and writing
-            papers, language techniques, mark schemes, and grade boundaries.
+            papers, language techniques, marking guides, and grade boundaries.
           </p>
         </div>
       </section>
 
       {/* ── Syllabus overview ───────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-foreground">Syllabus Overview</h2>
+        <h2 className="text-2xl font-bold text-foreground">Course Overview</h2>
         <div className="mt-6 overflow-x-auto">
           <table className="w-full min-w-[600px] text-left text-sm">
             <thead>
@@ -242,7 +242,7 @@ export default function CaieEnglishLanguagePage() {
           <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Use the Passages</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Cambridge examiners reward candidates who engage closely with the
+              Cambridge markers reward candidates who engage closely with the
               text. Always refer to the passage using short, embedded quotations.
               Avoid copying long chunks &mdash; select precise words and phrases
               that support your point.

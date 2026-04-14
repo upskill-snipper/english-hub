@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/context",
   },
-  title: "Macbeth Context — Edexcel IGCSE 4ET1",
+  title: "Macbeth Context — Edexcel IGCSE IGCSE Literature",
   description:
-    "Jacobean context for Macbeth: James I, the Gunpowder Plot, Daemonologie and witchcraft, the Divine Right of Kings and the Great Chain of Being. For Edexcel IGCSE 4ET1.",
+    "Jacobean context for Macbeth: James I, the Gunpowder Plot, Daemonologie and witchcraft, the Divine Right of Kings and the Great Chain of Being. For Edexcel IGCSE IGCSE Literature.",
 };
 
 const CONTEXT_POINTS = [
@@ -78,7 +78,7 @@ export default async function MacbethContextPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Macbeth &mdash; Context
@@ -93,11 +93,11 @@ export default async function MacbethContextPage() {
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         <div className="rounded-xl bg-muted p-6">
           <h2 className="text-lg font-bold text-foreground">
-            Why context matters for 4ET1
+            Why context matters for IGCSE Literature
           </h2>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            On the Edexcel IGCSE 4ET1 Shakespeare question, context is
-            assessed through AO4. The strongest answers{" "}
+            On the Edexcel IGCSE IGCSE Literature Shakespeare question, context is
+            assessed through relating to context. The strongest answers{" "}
             <strong>weave context into analysis</strong> rather than treating
             it as a bolted-on paragraph. Aim for a single sharp sentence of
             context inside each analytical paragraph &mdash; enough to frame

@@ -74,22 +74,22 @@ export default function UnseenPoetryPage() {
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {[
               {
-                ao: "AO1",
+                ao: "Textual Knowledge",
                 title: "Knowledge & Understanding",
                 desc: "Show understanding of the poem's content, themes, and ideas. Demonstrate that you grasp what the poem is about.",
               },
               {
-                ao: "AO2",
+                ao: "Writer's Methods",
                 title: "Language, Form & Structure",
                 desc: "Analyse how the writer uses language, form, and structure to create effects and shape meaning.",
               },
               {
-                ao: "AO3",
+                ao: "Interpretation",
                 title: "Writer's Methods & Effects",
                 desc: "Explain the effects of the writer's choices on the reader. Go beyond naming techniques to exploring impact.",
               },
               {
-                ao: "AO4",
+                ao: "Personal Response",
                 title: "Personal Response",
                 desc: "Develop an informed, personal response supported by references to the text. Show genuine engagement.",
               },
@@ -173,8 +173,8 @@ export default function UnseenPoetryPage() {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>&bull; Group your annotations by technique or theme, not by stanza order. This produces a more analytical (less descriptive) response.</li>
                   <li>&bull; For each point, select a short quotation that best supports your argument.</li>
-                  <li>&bull; Ensure your plan covers all four AOs: understanding (AO1), language and form (AO2), effects (AO3), and personal response (AO4).</li>
-                  <li>&bull; Aim for at least one point on form or structure &mdash; this is where many candidates lose marks.</li>
+                  <li>&bull; Ensure your plan covers all four skills: understanding (Textual Knowledge), language and form (Writer's Methods), effects (Interpretation), and personal response (Personal Response).</li>
+                  <li>&bull; Aim for at least one point on form or structure &mdash; this is where many students lose marks.</li>
                   <li>&bull; Decide on your order: you might move from surface meaning to deeper symbolism, or from language to form to tone.</li>
                   <li>&bull; Write a brief plan (numbered points with key quotes) in the margin. Time spent planning is never wasted.</li>
                 </ul>
@@ -184,7 +184,7 @@ export default function UnseenPoetryPage() {
             {/* Step 4 */}
             <Card>
               <CardHeader>
-                <CardTitle>Step 4: Writing &mdash; Structured Response Hitting All 4 AOs (55&ndash;60 minutes)</CardTitle>
+                <CardTitle>Step 4: Writing &mdash; Structured Response Hitting All 4 skills (55&ndash;60 minutes)</CardTitle>
                 <CardDescription>Write a sustained, analytical commentary. Quality over quantity.</CardDescription>
               </CardHeader>
               <CardContent>
@@ -291,7 +291,7 @@ export default function UnseenPoetryPage() {
             How to Write About Form &amp; Structure
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Many candidates focus only on language. Writing about form and
+            Many students focus only on language. Writing about form and
             structure is what separates good responses from excellent ones.
           </p>
 
@@ -329,7 +329,7 @@ export default function UnseenPoetryPage() {
 
             <div className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
               <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
-                Examiner tip
+                Marker tip
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
                 When discussing form and structure, always link your observation
@@ -345,16 +345,16 @@ export default function UnseenPoetryPage() {
 
         <hr className="my-10 border-border" />
 
-        {/* ── Developing personal response (AO4) ────────────────── */}
+        {/* ── Developing personal response (Personal Response) ────────────────── */}
         <section aria-labelledby="personal-response-heading">
           <h2
             id="personal-response-heading"
             className="text-2xl font-bold text-foreground"
           >
-            How to Develop a Personal Response (AO4)
+            How to Develop a Personal Response
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            AO4 rewards genuine, thoughtful engagement with the poem. It is not
+            The Personal Response skill rewards genuine, thoughtful engagement with the poem. It is not
             about saying whether you &ldquo;liked&rdquo; it. It is about showing
             that you have thought independently about what the poem means and
             how it affects you as a reader.
@@ -477,7 +477,7 @@ the harbour holds its breath. And waits. For no one.`}
                 sense of inevitability rather than anger.
               </p>
               <p>
-                <span className="font-semibold text-foreground">[AO2 &mdash; Imagery &amp; Language]</span>{" "}
+                <span className="font-semibold text-foreground">[Writer&rsquo;s Methods &mdash; Imagery &amp; Language]</span>{" "}
                 The opening metaphor, &ldquo;boats are sleeping,&rdquo;
                 personifies the vessels as dormant rather than dead, suggesting
                 a fragile hope that they might wake. However, this is
@@ -491,7 +491,7 @@ the harbour holds its breath. And waits. For no one.`}
                 resistance.
               </p>
               <p>
-                <span className="font-semibold text-foreground">[AO2 &mdash; Sound &amp; Personification]</span>{" "}
+                <span className="font-semibold text-foreground">[Writer&rsquo;s Methods &mdash; Sound &amp; Personification]</span>{" "}
                 The lighthouse &ldquo;blinks its slow, indifferent eye&rdquo;
                 is a striking personification: it sees the harbour&rsquo;s
                 decay but is &lsquo;indifferent&rsquo; to it. The word
@@ -504,7 +504,7 @@ the harbour holds its breath. And waits. For no one.`}
                 continuing regardless of human absence.
               </p>
               <p>
-                <span className="font-semibold text-foreground">[AO2 &mdash; Form &amp; Structure]</span>{" "}
+                <span className="font-semibold text-foreground">[Writer&rsquo;s Methods &mdash; Form &amp; Structure]</span>{" "}
                 Structurally, the poem moves from description to reflection
                 to prophecy. The opening stanzas observe; the middle stanzas
                 introduce the concept of &ldquo;forgetting&rdquo;; and the
@@ -521,7 +521,7 @@ the harbour holds its breath. And waits. For no one.`}
                 has stopped trying to beautify what is simply inevitable.
               </p>
               <p>
-                <span className="font-semibold text-foreground">[AO3 &mdash; Effects on Reader]</span>{" "}
+                <span className="font-semibold text-foreground">[Interpretation &mdash; Effects on Reader]</span>{" "}
                 The image of nets &ldquo;heavy with nothing, dripping with the
                 dark&rdquo; is perhaps the poem&rsquo;s most powerful paradox.
                 Nets are designed to be heavy with fish; here, their heaviness
@@ -532,7 +532,7 @@ the harbour holds its breath. And waits. For no one.`}
                 but has its own oppressive, physical weight.
               </p>
               <p>
-                <span className="font-semibold text-foreground">[AO4 &mdash; Personal Response]</span>{" "}
+                <span className="font-semibold text-foreground">[Personal Response]</span>{" "}
                 The final line &mdash; &ldquo;And waits. For no one.&rdquo;
                 &mdash; is quietly devastating. The caesura before &ldquo;For
                 no one&rdquo; creates a pause in which the reader momentarily
@@ -579,7 +579,7 @@ the harbour holds its breath. And waits. For no one.`}
             {[
               {
                 pitfall: "Retelling the poem",
-                fix: "The examiner knows what the poem says. Your job is to analyse HOW the poet creates effects, not to describe WHAT happens. Every sentence should contain analysis, not summary.",
+                fix: "The marker knows what the poem says. Your job is to analyse HOW the poet creates effects, not to describe WHAT happens. Every sentence should contain analysis, not summary.",
               },
               {
                 pitfall: "Feature-spotting without analysis",
@@ -587,7 +587,7 @@ the harbour holds its breath. And waits. For no one.`}
               },
               {
                 pitfall: "Ignoring form and structure",
-                fix: "Many candidates write only about language. You must comment on how the poem is constructed: stanza arrangement, line length, enjambment, caesura, rhyme scheme, and overall progression.",
+                fix: "Many students write only about language. You must comment on how the poem is constructed: stanza arrangement, line length, enjambment, caesura, rhyme scheme, and overall progression.",
               },
               {
                 pitfall: "Using vague language",
@@ -603,7 +603,7 @@ the harbour holds its breath. And waits. For no one.`}
               },
               {
                 pitfall: "No personal response",
-                fix: "AO4 requires you to engage personally with the poem. Use tentative language: \"perhaps\", \"this could suggest\", \"the reader is left feeling\". Offer alternative interpretations to show independent thought.",
+                fix: "Personal Response requires you to engage personally with the poem. Use tentative language: \"perhaps\", \"this could suggest\", \"the reader is left feeling\". Offer alternative interpretations to show independent thought.",
               },
               {
                 pitfall: "Running out of time",
@@ -641,7 +641,7 @@ the harbour holds its breath. And waits. For no one.`}
             Level Descriptors Explained
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Understanding what examiners are looking for at each level helps you
+            Understanding what markers are looking for at each level helps you
             target your response. Paper 4 is marked out of 25.
           </p>
 

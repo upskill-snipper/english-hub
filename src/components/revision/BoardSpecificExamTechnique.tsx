@@ -50,7 +50,7 @@ export interface BoardEssayContent {
   aoFocus: string[]
   /** Distinctive structural advice for this board's literature questions */
   structureTips: string[]
-  /** A short checklist examiners look for */
+  /** A short checklist markers look for */
   examinerChecklist: string[]
   /** Specific guidance for the board's headline essay (e.g. comparison, modern text) */
   headlineEssayLabel: string
@@ -219,7 +219,7 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
         { time: '1:04 - 1:40', label: 'Q5/6 — Write imaginative piece (40 marks)', detail: '24 marks AO5 + 16 marks AO6. Single focused moment.', marks: '40 marks', colour: 'creative' },
         { time: '1:40 - 1:45', label: 'Proofread', detail: 'Check spelling, punctuation, sentence variety.', marks: 'Check', colour: 'check' },
       ],
-      tip: 'Q3 (language + structure together) is unique to Edexcel. Plan your paragraphs to alternate between the two so the examiner sees you addressing both halves of the AO.',
+      tip: 'Q3 (language + structure together) is unique to Edexcel. Plan your paragraphs to alternate between the two so the marker sees you addressing both halves of the AO.',
     },
     {
       title: 'Edexcel English Language Paper 2',

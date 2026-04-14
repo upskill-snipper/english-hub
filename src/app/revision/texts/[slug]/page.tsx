@@ -275,7 +275,7 @@ export default async function TextStudyGuidePage({
                     <Users className="size-5 text-emerald-400" />
                   </div>
                   <CardTitle className="text-heading-md font-heading">
-                    Edexcel IGCSE 4ET1 guide
+                    Edexcel IGCSE guide
                   </CardTitle>
                 </div>
                 <CardDescription className="mt-2">

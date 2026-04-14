@@ -15,9 +15,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE 4ET1 Anthology Poetry — The English Hub',
+  title: 'Edexcel IGCSE Literature Anthology Poetry — The English Hub',
   description:
-    'Complete study guide for the 15 poems in the Edexcel IGCSE 4ET1 Literature Anthology. Line-by-line analysis, quotes, comparison guides and exam tips.',
+    'Complete study guide for the 15 poems in the Edexcel IGCSE Literature Anthology. Line-by-line analysis, quotes, comparison guides and exam tips.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/poetry',
   },
@@ -296,17 +296,17 @@ export default async function EdexcelPoetryAnthologyPage() {
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <Badge variant="secondary" className="text-[0.65rem]">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
               <Badge variant="outline" className="text-[0.65rem]">
-                Paper 1 · Section B
+                Paper 1 — Anthology Poetry
               </Badge>
             </div>
             <h1 className="text-heading-lg font-heading text-foreground">
               Anthology Poetry
             </h1>
             <p className="text-body-sm text-muted-foreground mt-1 max-w-2xl">
-              The 15 poems of the Edexcel IGCSE 4ET1 Literature Anthology —
+              The 15 poems of the Edexcel IGCSE Literature Anthology —
               full line-by-line study guides for the public-domain poems and
               concise notes for the rest.
             </p>
@@ -338,7 +338,7 @@ export default async function EdexcelPoetryAnthologyPage() {
             </h2>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Paper 1, Section B (30 marks). You have roughly 45 minutes to
+            Paper 1 — Anthology Poetry (30 marks). You have roughly 45 minutes to
             compare the named poem with another from the anthology, focusing
             on language, structure and ideas.
           </p>

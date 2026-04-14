@@ -21,9 +21,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Directed Writing — Cambridge 0500 Paper 2 Section A',
+  title: 'Directed Writing — IGCSE Language A Paper 2 Section A',
   description:
-    'How to tackle Cambridge IGCSE 0500 Paper 2 Section A directed writing. Letters, speeches, articles, reports — style, structure and tone.',
+    'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports — style, structure and tone. Aligns with Cambridge syllabus 0500.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/cambridge/0500/paper-2/directed-writing',
@@ -127,7 +127,7 @@ export default async function DirectedWritingPage() {
       {/* ── Header ─────────────────────────────────────────────────── */}
       <section>
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
-          Cambridge IGCSE 0500
+          IGCSE Language A
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">
           Directed writing

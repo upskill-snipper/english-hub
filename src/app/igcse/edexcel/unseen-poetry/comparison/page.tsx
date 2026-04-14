@@ -45,10 +45,10 @@ const STRUCTURES = [
   {
     name: 'Point-by-point (recommended)',
     description:
-      'Each paragraph takes one idea and compares both poems within it. Every paragraph is genuinely comparative. This is what hits AO4 hardest.',
+      'Each paragraph takes one idea and compares both poems within it. Every paragraph is genuinely comparative. This is what scores highest for comparing texts.',
     example:
       'Paragraph 1: Imagery of nature. Both poets... / Paragraph 2: Use of form... / Paragraph 3: Emotional effect on the reader...',
-    strengths: 'Constant comparison, high AO4 marks, clear argument.',
+    strengths: 'Constant comparison, high marks for comparing texts, clear argument.',
     weaknesses: 'Needs confident planning; easy to drift if you lose your thesis.',
     colour: 'border-emerald-500/30 bg-emerald-500/[0.04]',
     badge: 'Best for Grade 8-9',
@@ -89,7 +89,7 @@ export default function UnseenPoetryComparisonPage() {
                 Comparison Techniques
               </h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
@@ -104,7 +104,7 @@ export default function UnseenPoetryComparisonPage() {
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          AO4 is the swing mark
+          Comparing texts is the swing mark
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
           Strong comparison is the single biggest differentiator at the top end
@@ -113,7 +113,7 @@ export default function UnseenPoetryComparisonPage() {
           Every IGCSE candidate can write about one poem. What separates a Grade 6 from a Grade
           8 is the ability to weave two poems together in sustained comparative paragraphs. The
           examiner is not looking for "and now here is the other poem" -- they want you to read
-          both poems through the same analytical lens. That requires planning, linking vocabulary,
+          both poems through the same analytical lens. That requires planning, linking vocabulary
           and a thesis that could only come from reading both poems together.
         </p>
       </section>
@@ -276,7 +276,7 @@ export default function UnseenPoetryComparisonPage() {
             <span className="font-semibold text-foreground">Notice: </span>
             Every sentence holds both poems in mind. The comparative linking ("while",
             "whereas", "similarly", "in this way") is relentless. And the thesis is something
-            that could only come from reading both poems together -- that is AO4 at its best.
+            that could only come from reading both poems together -- that is comparing texts at its best.
           </p>
         </div>
       </section>

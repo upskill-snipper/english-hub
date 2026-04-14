@@ -155,7 +155,7 @@ export default function QuestionTypesView({
       >
         <p className="text-body-sm text-muted-foreground leading-relaxed">
           This table lists every question type on the {boardName} specification, grouped by
-          paper. Use it to identify what the examiner is really asking for.
+          paper. Use it to identify what the marker is really asking for.
         </p>
 
         <div className="space-y-5">
@@ -359,7 +359,7 @@ export default function QuestionTypesView({
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-sm font-semibold text-foreground">Techniques the examiner expects to see</h3>
+          <h3 className="text-sm font-semibold text-foreground">Techniques the marker expects to see</h3>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { technique: 'Sensory detail', detail: 'Engage sight, sound, smell, touch, and taste. "The salt air stung my cracked lips" is more vivid than "it was windy."' },
@@ -465,7 +465,7 @@ export default function QuestionTypesView({
       {/* ── Command Words ─────────────────────────────────────── */}
       <Section title="Key Command Words" icon={FileText} badge="All Papers">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Command words tell you exactly what the examiner wants you to do. Misreading
+          Command words tell you exactly what the marker wants you to do. Misreading
           a command word is one of the most common reasons students underperform on
           {' '}{shortName} papers.
         </p>
@@ -507,7 +507,7 @@ export default function QuestionTypesView({
         <Tip>
           Before you start writing any answer, underline the command word in the question
           and write it at the top of your plan. This keeps you focused on what the
-          examiner actually wants, rather than what you want to write about.
+          marker actually wants, rather than what you want to write about.
         </Tip>
       </Section>
 

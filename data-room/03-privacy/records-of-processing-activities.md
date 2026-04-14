@@ -1,9 +1,9 @@
 # Records of Processing Activities (ROPA)
 
-**The English Hub Ltd**
+**Upskill Energy Limited t/a The English Hub**
 **Article 30 UK GDPR**
-**Last reviewed:** `[REPLACE WITH DATE]`
-**Next review:** Quarterly
+**Last reviewed:** 2026-04-12
+**Next review:** Quarterly (next: July 2026)
 **Owner:** DPO
 
 > This ROPA documents all processing activities under which The English Hub processes personal data, both as controller and as processor. It is a statutory record under Article 30 UK GDPR and must be made available to the ICO on request.
@@ -14,12 +14,12 @@
 
 | Field | Value |
 |---|---|
-| Name | The English Hub Ltd |
+| Name | Upskill Energy Limited t/a The English Hub |
 | Registered office | `[REPLACE WITH address]` |
-| Company number | `[REPLACE WITH]` |
-| ICO registration number | `[REPLACE WITH]` |
-| DPO | `[REPLACE WITH name and email]` |
-| UK Representative (EU users) | `[REPLACE WITH name/"Not applicable — UK-only"]` |
+| Company number | 16254656 |
+| ICO registration number | ZC016690 |
+| DPO | `[REPLACE WITH name]` — dpo@theenglishhub.app |
+| UK Representative (EU users) | Not applicable — UK-based controller |
 
 ---
 
@@ -95,10 +95,10 @@
 | **Purpose** | Generate feedback and suggestions on student writing |
 | **Data subjects** | Students |
 | **Data categories** | Student writing (transiently sent to AI provider) |
-| **Recipients** | `[REPLACE WITH AI provider]` |
+| **Recipients** | Anthropic PBC (AI provider) |
 | **Lawful basis** | Contract (Art 6(1)(b)) |
-| **Transfers** | EU (Ireland); SCCs / adequacy applies |
-| **Retention** | Prompt/response stored inside application for session + feedback history; AI provider log retention capped at `[REPLACE WITH 30]` days with no training on data |
+| **Transfers** | US; UK IDTA (International Data Transfer Agreement) applies |
+| **Retention** | Prompt/response stored inside application for session + feedback history; Anthropic API has zero-data-retention policy (no training on data) |
 | **Security measures** | Transport encryption, no-training contract, enterprise agreement, prompt scrubbing |
 | **Automated decision-making** | No Art 22 decision — human (teacher) can always override |
 
@@ -194,7 +194,7 @@
 | **Purpose** | Send product updates, teacher / parent newsletters |
 | **Data subjects** | Adults who have opted in |
 | **Data categories** | Name, email, opt-in status, audit trail |
-| **Recipients** | `[REPLACE WITH email provider]` |
+| **Recipients** | Postmark (ActiveCampaign LLC) |
 | **Lawful basis** | Consent (Art 6(1)(a) + PECR) |
 | **Transfers** | UK/EU or covered by IDTA |
 | **Retention** | Until withdrawn + 24 months audit |
@@ -226,7 +226,7 @@
 | **Recipients** | Internal safeguarding lead; school DSL; police / social services where required |
 | **Lawful basis** | Legal obligation (KCSIE); vital interests (urgent) |
 | **Transfers** | UK only |
-| **Retention** | `[REPLACE WITH]` years per KCSIE guidance |
+| **Retention** | 7 years per KCSIE guidance (or until child turns 25, whichever is longer) |
 | **Security measures** | Restricted access; immutable logging |
 
 ## Activity 14 — Cookies and consent management

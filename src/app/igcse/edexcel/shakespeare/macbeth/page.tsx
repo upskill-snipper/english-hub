@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth",
   },
-  title: "Macbeth — Edexcel IGCSE 4ET1 Study Guide",
+  title: "Macbeth — Edexcel IGCSE IGCSE Literature Study Guide",
   description:
-    "Full Macbeth study guide for Edexcel IGCSE English Literature 4ET1. Plot, characters, themes, quotes, Jacobean context and exam technique for the two-part Shakespeare question.",
+    "Full Macbeth study guide for Edexcel IGCSE English Literature IGCSE Literature. Plot, characters, themes, quotes, Jacobean context and exam technique for the two-part Shakespeare question.",
 };
 
 const SUB_PAGES = [
@@ -115,7 +115,7 @@ export default async function MacbethHubPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Macbeth
@@ -156,7 +156,7 @@ export default async function MacbethHubPage() {
           </h2>
           <p className="mt-2 text-muted-foreground">
             Drill down into each part of the play. Every section is written
-            for the Edexcel IGCSE 4ET1 two-part Shakespeare question.
+            for the Edexcel IGCSE IGCSE Literature two-part Shakespeare question.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {SUB_PAGES.map((page) => {
@@ -228,7 +228,7 @@ export default async function MacbethHubPage() {
             How the IGCSE Macbeth question differs from GCSE
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            On the Edexcel IGCSE 4ET1 paper, Shakespeare comes as a{" "}
+            On the Edexcel IGCSE IGCSE Literature paper, Shakespeare comes as a{" "}
             <strong>two-part question</strong>:
           </p>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">

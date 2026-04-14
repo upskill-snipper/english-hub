@@ -363,7 +363,7 @@ export default function ExamTechniquePage() {
             {
               label: "Model Answers",
               href: "/resources/model-answers",
-              desc: "Grade 5, 7, and 9 exemplars with examiner commentary.",
+              desc: "Grade 5, 7, and 9 sample answers with marker commentary.",
             },
             {
               label: "Techniques Reference",

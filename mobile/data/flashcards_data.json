@@ -1,0 +1,82 @@
+[
+  {
+    "id": "q-1",
+    "front": "\"Fair is foul, and foul is fair\"",
+    "back": "Macbeth, Act 1 Scene 1. Spoken by the Witches. Establishes the theme of moral inversion and deceptive appearances that runs throughout the play.",
+    "category": "quotes",
+    "difficulty": "easy",
+    "source": "Macbeth"
+  },
+  {
+    "id": "q-2",
+    "front": "\"Look like the innocent flower, but be the serpent under't\"",
+    "back": "Macbeth, Act 1 Scene 5. Lady Macbeth tells Macbeth to hide his murderous intent. Shows her manipulative nature and the theme of appearance vs reality.",
+    "category": "quotes",
+    "difficulty": "medium",
+    "source": "Macbeth"
+  },
+  {
+    "id": "q-3",
+    "front": "\"Out, damned spot! Out, I say!\"",
+    "back": "Macbeth, Act 5 Scene 1. Lady Macbeth sleepwalks, tormented by guilt. The blood symbolises guilt that cannot be washed away, showing her mental deterioration.",
+    "category": "quotes",
+    "difficulty": "easy",
+    "source": "Macbeth"
+  },
+  {
+    "id": "q-4",
+    "front": "\"Is this a dagger which I see before me\"",
+    "back": "Macbeth, Act 2 Scene 1. Macbeth hallucinates before killing Duncan. Reveals his tortured conscience and the psychological cost of ambition.",
+    "category": "quotes",
+    "difficulty": "easy",
+    "source": "Macbeth"
+  },
+  {
+    "id": "q-5",
+    "front": "\"decrease the surplus population\"",
+    "back": "A Christmas Carol, Stave 1. Scrooge dismisses concern for the poor dying. Echoes Malthusian economics; Dickens exposes the cruelty of treating people as statistics.",
+    "category": "quotes",
+    "difficulty": "medium",
+    "source": "A Christmas Carol"
+  },
+  {
+    "id": "q-6",
+    "front": "\"Are there no prisons? Are there no workhouses?\"",
+    "back": "A Christmas Carol, Stave 1. Scrooge dismisses the charity collectors. Shows his callousness towards the poor and reliance on inadequate institutions.",
+    "category": "quotes",
+    "difficulty": "easy",
+    "source": "A Christmas Carol"
+  },
+  {
+    "id": "q-7",
+    "front": "\"Mankind was my business\"",
+    "back": "A Christmas Carol, Stave 1. Marley's Ghost warns Scrooge. Conveys Dickens's message that social responsibility should be everyone's priority, not profit.",
+    "category": "quotes",
+    "difficulty": "medium",
+    "source": "A Christmas Carol"
+  },
+  {
+    "id": "q-8",
+    "front": "\"solitary as an oyster\"",
+    "back": "A Christmas Carol, Stave 1. Describes Scrooge's isolation. The simile suggests he is closed off from society, hard-shelled, yet contains something valuable inside.",
+    "category": "quotes",
+    "difficulty": "medium",
+    "source": "A Christmas Carol"
+  },
+  {
+    "id": "q-9",
+    "front": "\"We are members of one body\"",
+    "back": "An Inspector Calls, Act 3. The Inspector's final speech. Priestley's socialist message that society must take collective responsibility for one another.",
+    "category": "quotes",
+    "difficulty": "easy",
+    "source": "An Inspector Calls"
+  },
+  {
+    "id": "q-10",
+    "front": "\"Fire and blood and anguish\"",
+    "back": "An Inspector Calls, Act 3. The Inspector's warning. A prophetic reference to WW1 and WW2, warning of consequences if society ignores inequality.",
+    "category": "quotes",
+    "difficulty": "medium",
+    "source": "An Inspector Calls"
+  }
+]

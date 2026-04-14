@@ -204,7 +204,7 @@ export default function SampleMarkingPage() {
         </h1>
         <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
           Three fully-annotated responses to the same Macbeth question — Grade
-          5, 7 and 9 — with examiner commentary on why each lands where it
+          5, 7 and 9 — with marker commentary on why each lands where it
           does.
         </p>
       </header>
@@ -238,14 +238,14 @@ export default function SampleMarkingPage() {
         })}
       </div>
 
-      {/* ── Examiner commentary ───────────────────────────── */}
+      {/* ── Marker commentary ────────────────────────────── */}
       <Card className="mb-6 border-primary/30 bg-primary/5">
         <CardHeader>
           <div className="flex items-center gap-2">
             <Badge>{active.board}</Badge>
             <CardDescription>{active.paper}</CardDescription>
           </div>
-          <CardTitle className="mt-2">Examiner commentary</CardTitle>
+          <CardTitle className="mt-2">Marker commentary</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-sm leading-relaxed text-foreground">
@@ -278,7 +278,7 @@ export default function SampleMarkingPage() {
           Text-specific essay banks
         </h2>
         <p className="mb-4 text-xs text-muted-foreground">
-          Full model essays at multiple grades with paragraph-level examiner
+          Full model essays at multiple grades with paragraph-level marker
           annotations.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">

@@ -24,7 +24,7 @@ interface MarkingHistoryEntry {
   submittedAt: string;
 }
 
-/* ─── Static mock mark scheme links ────────────────────────── */
+/* ─── Static mock marking guide links ─────────────────────── */
 
 const MARK_SCHEMES = [
   {
@@ -90,7 +90,7 @@ export default function MarkingHubPage() {
           </h1>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
             Paste your GCSE English essay and get a predicted grade, full AO
-            breakdown, and examiner-style annotations in seconds.
+            breakdown, and marker-style annotations in seconds.
           </p>
         </div>
         <div className="flex gap-2">
@@ -188,7 +188,7 @@ export default function MarkingHubPage() {
           <CardHeader>
             <CardTitle>Sample marked essays</CardTitle>
             <CardDescription>
-              See how examiners justify Grade 5, 7 and 9 responses with full
+              See how markers justify Grade 5, 7 and 9 responses with full
               annotations.
             </CardDescription>
           </CardHeader>
@@ -203,10 +203,10 @@ export default function MarkingHubPage() {
         </Card>
       </section>
 
-      {/* ── Mark scheme library ───────────────────────────── */}
+      {/* ── Marking guide library ──────────────────────────── */}
       <section>
         <h2 className="mb-4 font-heading text-xl font-bold text-foreground">
-          Mark scheme library
+          Marking guide library
         </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {MARK_SCHEMES.map((group) => (

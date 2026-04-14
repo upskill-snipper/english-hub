@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title:
     "Jekyll & Hyde Model Essays — Grade 5, 7 & 9 | The English Hub",
   description:
-    "Three fully-annotated model essays answering 'How does Stevenson present the theme of duality?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and examiner commentary. AQA, Edexcel, OCR & Eduqas.",
+    "Three fully-annotated model essays answering 'How does Stevenson present the theme of duality?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and marker commentary. AQA, Edexcel, OCR & Eduqas.",
   keywords: [
     "Jekyll and Hyde",
     "model essay",
@@ -440,11 +440,11 @@ export default function JekyllHydeEssayBankPage() {
               </CardContent>
             </Card>
 
-            {/* Examiner commentary */}
+            {/* Marker commentary */}
             <Card className="mb-6">
               <CardHeader>
                 <CardTitle className="text-base">
-                  Examiner commentary
+                  Marker commentary
                 </CardTitle>
               </CardHeader>
               <CardContent>

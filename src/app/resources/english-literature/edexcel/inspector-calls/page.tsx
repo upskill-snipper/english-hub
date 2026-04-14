@@ -498,7 +498,7 @@ export default function InspectorCallsPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Always use &quot;Priestley&quot; as the subject — &quot;Priestley presents/uses/suggests...&quot; This is an AO2 requirement.
+                  Always use &quot;Priestley&quot; as the subject — &quot;Priestley presents/uses/suggests...&quot; This is an analysis of methods requirement.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -514,7 +514,7 @@ export default function InspectorCallsPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Note: No SPaG marks on Section B, but clear writing still matters for AO1.
+                  Note: No SPaG marks on Section B, but clear writing still matters for reading and response.
                 </li>
               </ul>
             </div>

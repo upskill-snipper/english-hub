@@ -8,21 +8,21 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/wjec' },
   title: "WJEC Eduqas GCSE English Literature Revision",
   description:
-    "Comprehensive revision resources for WJEC Eduqas GCSE English Literature. Component 1: Shakespeare and Poetry. Component 2: Post-1914 Prose/Drama, 19th Century Prose, and Unseen Poetry.",
+    "Comprehensive revision resources for WJEC Eduqas GCSE English Literature. Paper 1: Shakespeare and Poetry. Paper 2: Post-1914 Prose/Drama, 19th Century Prose, and Unseen Poetry.",
 };
 
 /* ─── Data ───────────────────────────────────────────────────── */
 
 const COMPONENTS = [
   {
-    title: "Component 1: Shakespeare and Poetry",
+    title: "Paper 1: Shakespeare and Poetry",
     description:
       "Section A: Shakespeare — one play studied in depth with an extract-based essay question. Section B: Poetry — two poems from the WJEC anthology compared in a single essay.",
     marks: "80 marks — 40% of GCSE",
     duration: "2 hours",
   },
   {
-    title: "Component 2: Post-1914 Prose/Drama, 19th Century Prose & Unseen Poetry",
+    title: "Paper 2: Post-1914 Prose/Drama, 19th Century Prose & Unseen Poetry",
     description:
       "Section A: Post-1914 prose or drama (extract-based and essay). Section B: 19th-century prose (extract-based and essay). Section C: Unseen poetry — one analysis and one comparison.",
     marks: "80 marks — 60% of GCSE",
@@ -80,7 +80,7 @@ export default function WJECEnglishLiteraturePage() {
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Everything you need to revise for WJEC Eduqas GCSE English Literature.
-            Component overviews, set text guides, poetry anthology analysis, and
+            Paper overviews, set text guides, poetry anthology analysis, and
             exam technique &mdash; all in one place.
           </p>
         </div>
@@ -91,8 +91,8 @@ export default function WJECEnglishLiteraturePage() {
         <h2 className="text-2xl font-bold text-foreground">Exam Overview</h2>
         <p className="mt-2 text-muted-foreground">
           The WJEC Eduqas GCSE English Literature qualification is assessed through
-          two externally examined components. Component 1 is worth 40% and Component 2
-          is worth 60% of the final grade. Both components are closed-book &mdash; no
+          two externally examined papers. Paper 1 is worth 40% and Paper 2
+          is worth 60% of the final grade. Both papers are closed-book &mdash; no
           texts are allowed in the exam room.
         </p>
 
@@ -121,11 +121,11 @@ export default function WJECEnglishLiteraturePage() {
         </div>
       </section>
 
-      {/* ── Component 1 detail ────────────────────────────────── */}
+      {/* ── Paper 1 detail ────────────────────────────────── */}
       <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
-            Component 1: Shakespeare and Poetry
+            Paper 1: Shakespeare and Poetry
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">2 hours &bull; 80 marks &bull; 40% of GCSE</p>
 
@@ -154,11 +154,11 @@ export default function WJECEnglishLiteraturePage() {
         </div>
       </section>
 
-      {/* ── Component 2 detail ────────────────────────────────── */}
+      {/* ── Paper 2 detail ────────────────────────────────── */}
       <section className="px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
-            Component 2: Post-1914 Prose/Drama, 19th Century Prose &amp; Unseen Poetry
+            Paper 2: Post-1914 Prose/Drama, 19th Century Prose &amp; Unseen Poetry
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">2 hours 30 minutes &bull; 80 marks &bull; 60% of GCSE</p>
 
@@ -208,7 +208,7 @@ export default function WJECEnglishLiteraturePage() {
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {/* Shakespeare */}
             <div className="rounded-xl border border-border bg-card p-5 shadow-md">
-              <h3 className="font-bold text-foreground">Shakespeare (Component 1)</h3>
+              <h3 className="font-bold text-foreground">Shakespeare (Paper 1)</h3>
               <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 {SET_TEXTS.shakespeare.map((text) => (
                   <li key={text} className="flex items-start gap-2">
@@ -221,7 +221,7 @@ export default function WJECEnglishLiteraturePage() {
 
             {/* Post-1914 */}
             <div className="rounded-xl border border-border bg-card p-5 shadow-md">
-              <h3 className="font-bold text-foreground">Post-1914 Prose/Drama (Component 2)</h3>
+              <h3 className="font-bold text-foreground">Post-1914 Prose/Drama (Paper 2)</h3>
               <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 {SET_TEXTS.post1914.map((text) => (
                   <li key={text} className="flex items-start gap-2">
@@ -234,7 +234,7 @@ export default function WJECEnglishLiteraturePage() {
 
             {/* 19th Century */}
             <div className="rounded-xl border border-border bg-card p-5 shadow-md">
-              <h3 className="font-bold text-foreground">19th Century Prose (Component 2)</h3>
+              <h3 className="font-bold text-foreground">19th Century Prose (Paper 2)</h3>
               <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 {SET_TEXTS.nineteenth.map((text) => (
                   <li key={text} className="flex items-start gap-2">
@@ -261,19 +261,19 @@ export default function WJECEnglishLiteraturePage() {
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {[
               {
-                ao: "AO1",
+                ao: "Reading and response",
                 desc: "Read, understand, and respond to texts. Use textual references (including quotations) to support and illustrate interpretations.",
               },
               {
-                ao: "AO2",
+                ao: "Language, form and structure",
                 desc: "Analyse the language, form, and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.",
               },
               {
-                ao: "AO3",
+                ao: "Contextual understanding",
                 desc: "Show understanding of the relationships between texts and the contexts in which they were written.",
               },
               {
-                ao: "AO4",
+                ao: "Written accuracy",
                 desc: "Use a range of vocabulary and sentence structures for clarity, purpose, and effect, with accurate spelling and punctuation. (Only assessed on certain questions.)",
               },
             ].map((obj) => (
@@ -311,7 +311,7 @@ export default function WJECEnglishLiteraturePage() {
                 Unseen poetry carries heavy weight
               </h3>
               <p className="mt-1 text-sm">
-                Section C of Component 2 is worth 40 marks (half of the paper, 25% of the
+                Section C of Paper 2 is worth 40 marks (half of the paper, 25% of the
                 total GCSE). Strong unseen poetry skills are essential for a high grade.
               </p>
             </div>
@@ -327,10 +327,10 @@ export default function WJECEnglishLiteraturePage() {
             </div>
             <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
               <h3 className="font-semibold text-foreground">
-                40/60 weighting between components
+                40/60 weighting between papers
               </h3>
               <p className="mt-1 text-sm">
-                Component 2 (Post-1914, 19th century, and unseen poetry) is worth 60% of
+                Paper 2 (Post-1914, 19th century, and unseen poetry) is worth 60% of
                 the GCSE, making it the more heavily weighted paper.
               </p>
             </div>

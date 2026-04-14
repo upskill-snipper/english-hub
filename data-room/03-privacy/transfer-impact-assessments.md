@@ -2,7 +2,7 @@
 
 **The English Hub Ltd**
 **UK GDPR — Chapter V; Schrems II; ICO TRA guidance**
-**Last reviewed:** `[REPLACE WITH DATE]`
+**Last reviewed:** 12 April 2026
 **Owner:** DPO
 
 > Following the Schrems II judgment, ICO guidance requires that before transferring personal data outside the UK (or EEA where EU GDPR applies), the exporter must assess whether the recipient country's laws and practices provide **essentially equivalent** protection — and if not, whether supplementary measures make the transfer lawful.
@@ -30,13 +30,14 @@ ICO's TRA tool and EDPB Recommendations 01/2020 are reference guides.
 
 | # | Recipient | Destination | Transfer tool | Risk rating | TIA date | Next review |
 |---|---|---|---|---|---|---|
-| 1 | Vercel Inc. | US | UK IDTA (UK Addendum) | Low | `[REPLACE]` | `[REPLACE]` |
-| 2 | Postmark (ActiveCampaign) | US | UK IDTA | Low-Medium | `[REPLACE]` | `[REPLACE]` |
-| 3 | Cloudflare Inc. | Global edge | UK IDTA + Data Localisation Suite | Low | `[REPLACE]` | `[REPLACE]` |
-| 4 | `[REPLACE WITH AI provider]` | Ireland (EEA) — no TIA needed | UK adequacy | — | — | — |
-| 5 | Stripe Payments Europe | Ireland (EEA) — no TIA needed | UK adequacy | — | — | — |
-| 6 | AWS EMEA SARL | London (UK) — no TIA needed | UK adequacy (processing in UK) | — | — | — |
-| 7 | Supabase Inc. | Frankfurt (EEA) — no TIA needed | UK adequacy | — | — | — |
+| 1 | Vercel Inc. | US | UK IDTA (UK Addendum) | Low | 12 April 2026 | April 2027 |
+| 2 | Postmark (ActiveCampaign) | US | UK IDTA | Low-Medium | 12 April 2026 | April 2027 |
+| 3 | Cloudflare Inc. | Global edge | UK IDTA + Data Localisation Suite | Low | 12 April 2026 | April 2027 |
+| 4 | Anthropic PBC | US | UK IDTA | Low | 12 April 2026 | April 2027 |
+| 5 | Sentry (Functional Software Inc.) | EU (Frankfurt) — no TIA needed | UK adequacy (EEA) | — | — | — |
+| 6 | Stripe Payments Europe | Ireland (EEA) — no TIA needed | UK adequacy | — | — | — |
+| 7 | AWS EMEA SARL | London (UK) — no TIA needed | UK adequacy (processing in UK) | — | — | — |
+| 8 | Supabase Inc. | Frankfurt (EEA) — no TIA needed | UK adequacy | — | — | — |
 
 ---
 
@@ -136,6 +137,65 @@ Transfer is **lawful** with the UK IDTA + supplementary measures in place. Data 
 
 ---
 
+## TIA 4 — Anthropic PBC
+
+### 1. Transfer details
+- **Exporter:** The English Hub Ltd (UK)
+- **Importer:** Anthropic PBC, United States
+- **Purpose:** AI-assisted feedback on student writing (essay marking, grammar, content suggestions)
+- **Data categories:** Student writing submissions (transient — zero-data-retention API); no account data is sent
+- **Volume:** Per-student per-submission; typically 1–5 API calls per essay
+- **Frequency:** On-demand when students submit work
+- **Sensitivity:** Medium — student essays may contain personal opinions or sensitive disclosures; however, data is transient and not stored by Anthropic
+
+### 2. Transfer tool
+- **UK International Data Transfer Agreement (IDTA)** incorporated into Anthropic's enterprise API agreement.
+
+### 3. Destination assessment
+- **Country:** United States
+- **Relevant laws:** FISA 702, EO 12333, CLOUD Act
+- **Is the importer a "Section 702 covered entity"?** Anthropic is a US-based AI company; potentially subject to FISA 702.
+- **Practical risk:** Low in this context:
+  - Zero-data-retention policy: API inputs and outputs are not stored beyond the duration of the request.
+  - No training on customer data (contractually prohibited).
+  - Data is transient — there is no durable store for authorities to compel access to.
+
+### 4. Supplementary measures
+- **Technical:** All API traffic encrypted in transit (TLS 1.2+). Zero-data-retention means no data at rest on Anthropic's systems. Student identifiers are not sent in API calls — only essay text and system prompts.
+- **Organisational:** Vendor assessment completed; enterprise agreement; SOC 2 Type II.
+- **Contractual:** Enterprise DPA with UK IDTA; zero-data-retention commitment; no training on inputs; breach notification; audit rights.
+
+### 5. Conclusion
+Transfer is **lawful** with the UK IDTA + supplementary measures. The zero-data-retention architecture means there is effectively no data at rest for surveillance authorities to access.
+
+### 6. Review triggers
+- Material change to US surveillance law
+- Anthropic changing data retention practices
+- New ICO guidance
+- Change in AI model or API architecture
+
+---
+
+## TIA 5 — Sentry (Functional Software Inc.)
+
+> Sentry processes data in the EU (Frankfurt). No TIA is required as this is covered by UK adequacy for EEA transfers. Included here for completeness.
+
+### 1. Transfer details
+- **Exporter:** The English Hub Ltd (UK)
+- **Importer:** Functional Software Inc. (Sentry), EU region (Frankfurt)
+- **Purpose:** Application error monitoring and crash reporting
+- **Data categories:** Error stack traces, IP addresses (scrubbed), pseudonymised user IDs. No student work, essay content, or learning data.
+- **Volume:** Error events only — variable, typically low
+- **Sensitivity:** Low — PII scrubbing enabled; no message bodies captured
+
+### 2. Transfer tool
+- **UK adequacy (EEA)** — no IDTA required. Sentry's EU data region (Frankfurt) is within the EEA.
+
+### 3. Conclusion
+No TIA required. Transfer is to an adequate destination.
+
+---
+
 ## Template for new TIAs
 
 ```
@@ -177,4 +237,4 @@ Transfer is **lawful** with the UK IDTA + supplementary measures in place. Data 
 
 | Date | Reviewer | Changes |
 |---|---|---|
-| `[REPLACE WITH DATE]` | DPO | Initial TIAs drafted |
+| 12 April 2026 | DPO | Initial TIAs drafted; Anthropic and Sentry assessments added |

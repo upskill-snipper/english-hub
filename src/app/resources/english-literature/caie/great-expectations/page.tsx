@@ -172,28 +172,28 @@ const narrativeTechniques = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     title: "Show detailed knowledge of the text",
     detail:
       "Demonstrate close knowledge of the novel through well-chosen references and quotations. Great Expectations is a long text, so selectivity is key: choose moments that are rich in language and thematic significance rather than retelling the plot. Embed short quotations into your analysis rather than copying lengthy passages.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     title: "Understand the writer's methods and effects",
     detail:
       "Analyse how Dickens uses language, form, and structure to create meaning. For Great Expectations, focus on: the first-person retrospective narration and its ironic double perspective; symbolism (Satis House, the marshes, the forge, chains, mist); the Bildungsroman structure; contrasts between characters (Pip/Joe, Magwitch/Compeyson, Satis House/the forge); and Dickens's use of Gothic and comic registers.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     title: "Understand the significance of context",
     detail:
       "Connect the text to its Victorian context: the rigid class system, the criminal justice system, transportation to Australia, the self-made man ideal, the position of women, and Dickens's own experience of poverty and social mobility. Context should illuminate the text, not replace analysis — integrate it into your discussion of specific passages.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     title: "Develop a personal response",
     detail:
-      "Offer your own interpretation rather than rehearsing generic points. Engage with complexity: Is Pip a sympathetic narrator or a self-pitying snob? Is the revised ending hopeful or merely less bleak? Does Dickens ultimately endorse or critique the possibility of self-improvement? Examiners reward candidates who think independently and consider alternative readings.",
+      "Offer your own interpretation rather than rehearsing generic points. Engage with complexity: Is Pip a sympathetic narrator or a self-pitying snob? Is the revised ending hopeful or merely less bleak? Does Dickens ultimately endorse or critique the possibility of self-improvement? Markers reward responses that think independently and consider alternative readings.",
   },
 ];
 
@@ -231,7 +231,7 @@ export default function GreatExpectationsStudyGuide() {
             "Characters",
             "Themes",
             "Narrative Techniques",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Guidance",
             "Sample Response",
           ].map((s) => (
@@ -363,7 +363,7 @@ export default function GreatExpectationsStudyGuide() {
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Understanding how Dickens constructs meaning through form,
-            structure, and language is essential for AO2.
+            structure, and language is essential for Writer's Methods.
           </p>
           <div className="mt-6 space-y-5">
             {narrativeTechniques.map((nt) => (
@@ -385,7 +385,7 @@ export default function GreatExpectationsStudyGuide() {
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
         <section
-          id="assessment-objectives"
+          id="what-markers-look-for"
           aria-labelledby="ao-heading"
         >
           <h2
@@ -396,7 +396,7 @@ export default function GreatExpectationsStudyGuide() {
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Cambridge IGCSE English Literature (0475/0992) assesses four
-            objectives. Understanding what the examiner rewards will help you
+            objectives. Understanding what the marker rewards will help you
             structure stronger responses on Great Expectations.
           </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -549,10 +549,10 @@ export default function GreatExpectationsStudyGuide() {
                   question.
                 </li>
                 <li>
-                  <strong>Address all four AOs:</strong> The strongest responses
-                  combine textual knowledge (AO1), analysis of methods (AO2),
-                  contextual understanding (AO3), and personal interpretation
-                  (AO4) in every paragraph.
+                  <strong>Address all four skills:</strong> The strongest responses
+                  combine textual knowledge (Textual Knowledge), analysis of methods (Writer's Methods),
+                  contextual understanding (Interpretation), and personal interpretation
+                  (Personal Response) in every paragraph.
                 </li>
               </ul>
             </div>
@@ -583,7 +583,7 @@ export default function GreatExpectationsStudyGuide() {
             <CardContent>
               <div className="rounded-lg border border-border bg-primary/5 p-4">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wide text-foreground">
-                  Model paragraph (addressing all 4 AOs)
+                  Model paragraph (addressing all 4 skills)
                 </p>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   Dickens challenges Victorian assumptions about criminality most
@@ -593,13 +593,13 @@ export default function GreatExpectationsStudyGuide() {
                   &ldquo;the abhorrence in which I held the man, the dread I had
                   of him, the repugnance with which I shrank from him&rdquo;
                   &mdash; each noun escalating his disgust{" "}
-                  <strong>(AO1: precise embedded quotation)</strong>. The
+                  <strong>(Textual Knowledge: precise embedded quotation)</strong>. The
                   retrospective narration is crucial here: the older Pip records
                   these feelings without excusing them, allowing the reader to
                   recognise what the younger Pip cannot &mdash; that his horror
                   is rooted in class prejudice, not moral judgement{" "}
                   <strong>
-                    (AO2: analysis of first-person retrospective technique)
+                    (Writer's Methods: analysis of first-person retrospective technique)
                   </strong>
                   . In Victorian England, a convict who had been transported to
                   Australia was considered permanently degraded; returning
@@ -609,7 +609,7 @@ export default function GreatExpectationsStudyGuide() {
                   Compeyson &mdash; well-spoken and well-dressed &mdash; is
                   exposed as the true criminal{" "}
                   <strong>
-                    (AO3: context of transportation and class-biased justice)
+                    (Interpretation: context of transportation and class-biased justice)
                   </strong>
                   . Yet Dickens does not sentimentalise Magwitch: his desire to
                   &lsquo;make a gentleman&rsquo; of Pip is itself a form of
@@ -618,7 +618,7 @@ export default function GreatExpectationsStudyGuide() {
                   Magwitch as a noble outsider and invites the reader to question
                   whether the class system can ever be truly escaped{" "}
                   <strong>
-                    (AO4: personal response with nuanced interpretation)
+                    (Personal Response: personal response with nuanced interpretation)
                   </strong>
                   .
                 </p>

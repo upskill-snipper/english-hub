@@ -82,7 +82,7 @@ const NAV_ITEMS: NavItem[] = [
     igcseOnly: true,
   },
   {
-    label: 'Cambridge 0500 Hub',
+    label: 'Cambridge Hub',
     href: '/igcse/cambridge/0500',
     icon: GraduationCap,
     colour: 'text-cyan-400',
@@ -90,7 +90,7 @@ const NAV_ITEMS: NavItem[] = [
     igcseOnly: true,
   },
   {
-    label: 'Cambridge 0990 Hub',
+    label: 'Cambridge (9-1) Hub',
     href: '/igcse/cambridge/0990',
     icon: GraduationCap,
     colour: 'text-cyan-400',

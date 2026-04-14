@@ -80,7 +80,7 @@ A stark, monosyllabic sentence that flatly contradicts the bombastic inscription
 <p><strong>9. "the lone and level sands stretch far away"</strong><br/>
 Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>far away</em> create a vast, empty soundscape. The desert — nature — has the final word.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about <em>Ozymandias</em>, always link the broken form of the sonnet to the theme of decaying power. Examiners reward candidates who connect <strong>form</strong> to <strong>meaning</strong> rather than simply identifying features.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> When writing about <em>Ozymandias</em>, always link the broken form of the sonnet to the theme of decaying power. Markers reward candidates who connect <strong>form</strong> to <strong>meaning</strong> rather than simply identifying features.</div>
 
 <h3>Structural Analysis: From Confidence to Awe</h3>
 <ul>
@@ -278,7 +278,7 @@ The <em>Harlot</em> is young — another lost innocent. <em>Curse</em> means bot
 <p><strong>10. "the Marriage hearse"</strong><br/>
 A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blake implies that even love and family are poisoned by the society he describes.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Blake's capitalisation of words like <em>Church</em>, <em>Soldier</em>, and <em>Palace</em> is deliberate — it turns individuals into symbols of whole institutions. Mention this in your essay to show awareness of the writer's craft.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Blake's capitalisation of words like <em>Church</em>, <em>Soldier</em>, and <em>Palace</em> is deliberate — it turns individuals into symbols of whole institutions. Mention this in your essay to show awareness of the writer's craft.</div>
 
 <h3>Structural Analysis: Form as Chaos</h3>
 <ul>
@@ -461,7 +461,7 @@ After the event, the boy is haunted by <em>huge and mighty forms</em> in his ima
 <p><strong>10. "a trouble to my dreams"</strong><br/>
 The experience does not end when the boat is returned. The phrase suggests lasting psychological impact — nature has educated the boy through fear.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The Prelude extract is ideal for exploring the <strong>shift in tone</strong>. Structure your essay around the contrast between the boy's confidence at the start and his terror/humility at the end. This shows you understand structural techniques, which addresses AO2.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The Prelude extract is ideal for exploring the <strong>shift in tone</strong>. Structure your essay around the contrast between the boy's confidence at the start and his terror/humility at the end. This shows you understand structural techniques, which addresses AO2.</div>
 
 <h3>Structural Analysis: Memory &amp; Maternal Grief</h3>
 <ul>
@@ -639,7 +639,7 @@ The most chilling moment: a euphemism for having the Duchess killed (or at least
 <p><strong>8. "Notice Neptune, though, / Taming a sea-horse"</strong><br/>
 The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse (the Duchess). The Duke identifies with Neptune — he sees domination as natural and beautiful.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The best essays on <em>My Last Duchess</em> explore what the Duke <em>unintentionally</em> reveals. He thinks he is presenting himself as reasonable and dignified, but the reader sees a controlling, possibly murderous tyrant. This gap is the key to the poem.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The best essays on <em>My Last Duchess</em> explore what the Duke <em>unintentionally</em> reveals. He thinks he is presenting himself as reasonable and dignified, but the reader sees a controlling, possibly murderous tyrant. This gap is the key to the poem.</div>
 
 <h3>Structural Analysis: Form as Control</h3>
 <ul>
@@ -831,7 +831,7 @@ The painful repetition of <em>not</em> forces the reader to confront the losses.
 <p><strong>9. "Honour the charge they made!"</strong><br/>
 The imperative directly addresses the reader, demanding respect and remembrance. The poem shifts from narrative to memorial.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Address the <strong>tension</strong> in this poem: Tennyson celebrates bravery but also acknowledges a "blunder." The best essays explore whether the poem glorifies war or subtly questions the system that sent men to die.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Address the <strong>tension</strong> in this poem: Tennyson celebrates bravery but also acknowledges a "blunder." The best essays explore whether the poem glorifies war or subtly questions the system that sent men to die.</div>
 
 <h3>Structural Analysis: Form &amp; Public Indifference</h3>
 <ul>
@@ -1016,7 +1016,7 @@ Even the thought of spring — renewal, life — brings fear rather than hope. T
 <p><strong>10. "All their eyes are ice"</strong><br/>
 The final image: the soldiers' eyes are literally frozen. The monosyllables and the assonance of the long "i" sound create a stark, final image of death.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners reward candidates who discuss <em>what is absent</em> in the poem as well as what is present. The absence of battle, the absence of meaning, the absence of God — these absences are central to Owen's message.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Markers reward candidates who discuss <em>what is absent</em> in the poem as well as what is present. The absence of battle, the absence of meaning, the absence of God — these absences are central to Owen's message.</div>
 
 <h3>Structural Analysis: Memory &amp; Maternal Grief</h3>
 <ul>
@@ -1195,7 +1195,7 @@ A metaphor equating empty space with a volley of gunfire. <em>Salvo</em> is expl
 <p><strong>8. "It is a huge nothing that we fear"</strong><br/>
 The paradoxical ending: the thing feared is <em>nothing</em> — invisible and intangible, yet <em>huge</em>. This captures the nature of political fear — an omnipresent threat that cannot be seen or directly confronted.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Mentioning the STORMONT reading is excellent — but only if you <em>support</em> it with evidence from the poem (military language, the invisible threat). Don't just state the allegory; prove it through analysis of the text.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Mentioning the STORMONT reading is excellent — but only if you <em>support</em> it with evidence from the poem (military language, the invisible threat). Don't just state the allegory; prove it through analysis of the text.</div>
 
 <h3>Structural Analysis: Form as Helplessness</h3>
 <ul>
@@ -1374,7 +1374,7 @@ A metaphor comparing his fear to explosives. <em>Touchy</em> means unstable — 
 <p><strong>9. "a yellow hare that rolled like a flame"</strong><br/>
 The hare — an innocent, natural creature — is caught in the crossfire, its suffering described with simile (<em>like a flame</em>). It mirrors the soldier's own helpless vulnerability.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The second stanza is crucial — it shows the soldier frozen in existential doubt. This is where Hughes challenges the idea that soldiers charge bravely; instead, he shows a man questioning everything. Make this stanza central to your analysis.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The second stanza is crucial — it shows the soldier frozen in existential doubt. This is where Hughes challenges the idea that soldiers charge bravely; instead, he shows a man questioning everything. Make this stanza central to your analysis.</div>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -1509,7 +1509,7 @@ Military metaphor — the memory has <em>dug in</em> like a soldier in a trench.
 <p><strong>8. "his bloody life in my bloody hands"</strong><br/>
 The repetition of <em>bloody</em> creates a double meaning — literally covered in blood, and the colloquial swear word expressing frustration and anguish.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Track the pronoun shift from <em>we</em> to <em>I</em> throughout the poem. This structural technique shows the soldier moving from shared responsibility to isolated, personal guilt — it is an excellent point for AO2 (structure).</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Track the pronoun shift from <em>we</em> to <em>I</em> throughout the poem. This structural technique shows the soldier moving from shared responsibility to isolated, personal guilt — it is an excellent point for AO2 (structure).</div>
 
 <h3>Structural Analysis: From Collective to Individual Guilt</h3>
 <ul>
@@ -1705,7 +1705,7 @@ She visits the memorial and traces the names — a physical act of connection wi
 <p><strong>10. "hoping to hear your playground voice"</strong><br/>
 The final image: she listens for her son's <em>childhood</em> voice, not his adult one. This reveals that to her, the soldier is still the child she raised — unbearably poignant.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The interweaving of textile and military language is the poem's most distinctive technique. If you can track how domestic images (sewing, Sellotape, smoothing) collide with military ones (bandaged, steeled, war memorial), you are demonstrating sophisticated AO2 analysis.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The interweaving of textile and military language is the poem's most distinctive technique. If you can track how domestic images (sewing, Sellotape, smoothing) collide with military ones (bandaged, steeled, war memorial), you are demonstrating sophisticated AO2 analysis.</div>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -1845,7 +1845,7 @@ A biting, satirical couplet. The public briefly feels emotion but immediately re
 <p><strong>10. "they do not care"</strong><br/>
 The bluntest statement in the poem. After all the photographer's anguish, the public's response is apathy. Duffy implicates the reader directly.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Duffy implicates the <em>reader</em> — we are part of the public that looks at war photographs and then turns the page. The best essays acknowledge this self-reflexive quality and ask whether the poem is a criticism of <em>us</em>.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Duffy implicates the <em>reader</em> — we are part of the public that looks at war photographs and then turns the page. The best essays acknowledge this self-reflexive quality and ask whether the poem is a criticism of <em>us</em>.</div>
 
 <h3>Structural Analysis: Form &amp; Public Indifference</h3>
 <ul>
@@ -2024,7 +2024,7 @@ A beautiful simile: lives as <em>paper kites</em> — light, fragile, airborne, 
 <p><strong>8. "turned into your skin"</strong><br/>
 The final, isolated line. The poem suddenly becomes personal — <em>your</em> addresses the reader directly. <em>Skin</em> is the most intimate kind of tissue, connecting the extended metaphor to the human body. We are all as fragile as paper.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> <em>Tissue</em> is often considered the hardest poem in the anthology. Focus on the <strong>extended metaphor of paper</strong> and track how Dharker applies it to different areas (religion, architecture, borders, money, the body). This gives your essay a clear structure.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> <em>Tissue</em> is often considered the hardest poem in the anthology. Focus on the <strong>extended metaphor of paper</strong> and track how Dharker applies it to different areas (religion, architecture, borders, money, the body). This gives your essay a clear structure.</div>
 
 <h3>Structural Analysis: From Abstract to Intimate</h3>
 <ul>
@@ -2203,7 +2203,7 @@ The city — her memory — shelters behind her, dependent on her to keep it ali
 <p><strong>9. "They mutter death, and my shadow falls as evidence"</strong><br/>
 The threatening <em>they</em> now <em>mutter death</em>. Her very <em>shadow</em> is treated as evidence against her — she is criminalised simply for existing as a displaced person.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The poem's power lies in the contrast between the speaker's <em>inner</em> world (sunlit memory) and the <em>outer</em> hostility she faces. Structure your essay around this contrast to produce a clear, conceptualised response.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The poem's power lies in the contrast between the speaker's <em>inner</em> world (sunlit memory) and the <em>outer</em> hostility she faces. Structure your essay around this contrast to produce a clear, conceptualised response.</div>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -2341,7 +2341,7 @@ Repeated <em>must have</em> phrases emphasise the daughter's uncertainty — she
 <p><strong>10. "was no longer the father we loved"</strong><br/>
 The past tense <em>loved</em> is heartbreaking — the family's love has been extinguished by cultural shame. The pilot has been emotionally killed despite surviving physically.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The father's <em>silence</em> is structurally important — he never speaks in the poem. Link this to the family's refusal to speak to him. The best essays will discuss how Garland uses the <em>absence</em> of voice to convey the pilot's erasure.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The father's <em>silence</em> is structurally important — he never speaks in the poem. Link this to the family's refusal to speak to him. The best essays will discuss how Garland uses the <em>absence</em> of voice to convey the pilot's erasure.</div>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -2490,7 +2490,7 @@ The volta — the speaker takes control. <em>Checking out</em> is colloquial and
 <p><strong>9. "I carving out me identity"</strong><br/>
 The final, climactic image. <em>Carving</em> is a verb of physical creation — he is actively sculpting his own sense of self. It also echoes woodcarving, a Caribbean craft tradition.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always discuss the <strong>visual layout</strong> of the poem — the alternation between standard and italicised stanzas is a structural technique that embodies the conflict between imposed and reclaimed history. This is a strong AO2 point.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Always discuss the <strong>visual layout</strong> of the poem — the alternation between standard and italicised stanzas is a structural technique that embodies the conflict between imposed and reclaimed history. This is a strong AO2 point.</div>
 
 <h3>Comparison Links</h3>
 <ul>

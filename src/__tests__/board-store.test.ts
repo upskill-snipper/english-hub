@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { BOARDS, getBoardConfig } from '@/lib/board/board-config'
+import { BOARDS, getBoardConfig, getDisplayName } from '@/lib/board/board-config'
 import type { ExamBoard } from '@/lib/board/board-config'
 
 // ---------------------------------------------------------------------------
@@ -49,7 +49,31 @@ describe('Board configuration', () => {
         expect(board.shortName).toBeTruthy()
         expect(board.description).toBeTruthy()
         expect(['gcse', 'igcse']).toContain(board.type)
+        expect(board.examCode).toBeTruthy()
+        expect(board.category).toBeTruthy()
       }
+    })
+
+    it('every board has a valid category', () => {
+      const validCategories = ['gcse', 'igcse-literature', 'igcse-language-a', 'igcse-language-b']
+      for (const board of BOARDS) {
+        expect(validCategories).toContain(board.category)
+      }
+    })
+
+    it('GCSE boards have category "gcse"', () => {
+      const gcse = BOARDS.filter((b) => b.type === 'gcse')
+      for (const board of gcse) {
+        expect(board.category).toBe('gcse')
+      }
+    })
+
+    it('IGCSE boards each have a distinct IGCSE category', () => {
+      const igcse = BOARDS.filter((b) => b.type === 'igcse')
+      const categories = igcse.map((b) => b.category)
+      expect(categories).toContain('igcse-literature')
+      expect(categories).toContain('igcse-language-a')
+      expect(categories).toContain('igcse-language-b')
     })
   })
 
@@ -84,6 +108,50 @@ describe('Board configuration', () => {
     it('returns the correct full name for edexcel', () => {
       const config = getBoardConfig('edexcel')
       expect(config?.fullName).toContain('Pearson Edexcel')
+    })
+
+    it('returns examCode and category for edexcel-igcse', () => {
+      const config = getBoardConfig('edexcel-igcse')
+      expect(config?.examCode).toBe('4ET1')
+      expect(config?.category).toBe('igcse-literature')
+    })
+
+    it('returns examCode and category for cambridge-0500', () => {
+      const config = getBoardConfig('cambridge-0500')
+      expect(config?.examCode).toBe('0500')
+      expect(config?.category).toBe('igcse-language-a')
+    })
+
+    it('returns examCode and category for cambridge-0990', () => {
+      const config = getBoardConfig('cambridge-0990')
+      expect(config?.examCode).toBe('0990')
+      expect(config?.category).toBe('igcse-language-b')
+    })
+  })
+
+  // ── getDisplayName ─────────────────────────────────────────────────────
+
+  describe('getDisplayName', () => {
+    it('returns "AQA" for aqa', () => {
+      expect(getDisplayName('aqa')).toBe('AQA')
+    })
+
+    it('returns "IGCSE Literature" for edexcel-igcse', () => {
+      expect(getDisplayName('edexcel-igcse')).toBe('IGCSE Literature')
+    })
+
+    it('returns "IGCSE Language A" for cambridge-0500', () => {
+      expect(getDisplayName('cambridge-0500')).toBe('IGCSE Language A')
+    })
+
+    it('returns "IGCSE Language B" for cambridge-0990', () => {
+      expect(getDisplayName('cambridge-0990')).toBe('IGCSE Language B')
+    })
+
+    it('returns the name field for every known board', () => {
+      for (const board of BOARDS) {
+        expect(getDisplayName(board.id)).toBe(board.name)
+      }
     })
   })
 })

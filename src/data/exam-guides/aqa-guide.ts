@@ -6,9 +6,9 @@ export const aqaGuide: BoardExamGuide = {
   boardName: 'AQA',
   boardColor: '#4F46E5',
 
-  overview: `<p>AQA is the most widely entered exam board for GCSE English Language in England, and its specifications are renowned for their clear structure, predictable question formats, and transparent mark schemes. The Language qualification (8700) splits evenly into two papers — one focused on fiction reading and creative writing, the other on non-fiction reading and persuasive writing — giving students a balanced assessment across all text types. The Literature qualification (8702) covers Shakespeare, the 19th-century novel, modern prose or drama, and poetry, demanding both close textual analysis and broader contextual understanding.</p>
+  overview: `<p>AQA is the most widely entered exam board for GCSE English Language in England, and its specifications are renowned for their clear structure, predictable question formats, and transparent marking guides. The Language qualification (8700) splits evenly into two papers — one focused on fiction reading and creative writing, the other on non-fiction reading and persuasive writing — giving students a balanced assessment across all text types. The Literature qualification (8702) covers Shakespeare, the 19th-century novel, modern prose or drama, and poetry, demanding both close textual analysis and broader contextual understanding.</p>
 
-<p>What makes AQA distinctive is its emphasis on <strong>evaluation</strong> and <strong>conceptualised response</strong>. The word "conceptualised" is the single most important descriptor separating top-band responses from competent ones: it means threading an overarching argument or interpretation through your entire answer rather than analysing quotations in isolation. AQA's mark schemes use six clearly defined levels, and examiners consistently reward depth over breadth — two or three deeply developed analytical paragraphs will outscore six superficial ones every time. The 2026 specification introduces several refinements, including multiple-choice for Paper 1 Question 1 and named structural effects for Question 3, making the exam more focused and accessible.</p>
+<p>What makes AQA distinctive is its emphasis on <strong>evaluation</strong> and <strong>conceptualised response</strong>. The word "conceptualised" is the single most important descriptor separating top-band responses from competent ones: it means threading an overarching argument or interpretation through your entire answer rather than analysing quotations in isolation. AQA's marking guides use six clearly defined levels, and markers consistently reward depth over breadth — two or three deeply developed analytical paragraphs will outscore six superficial ones every time. The 2026 specification introduces several refinements, including multiple-choice for Paper 1 Question 1 and named structural effects for Question 3, making the exam more focused and accessible.</p>
 
 <p>Strategically, students should note that AQA's grade boundaries are remarkably forgiving: a Grade 4 in Language requires only around 46% and even a Grade 9 needs just 74-76%. This means that mastering a handful of key skills — particularly AO2 language analysis and AO4 critical evaluation — can have an outsized impact on your final grade. In Literature, AO1 and AO2 together account for roughly 70% of all marks, so precise subject terminology and embedded quotation analysis are non-negotiable. Focus your revision on quality of analysis, practise under timed conditions, and always plan before you write.</p>`,
 
@@ -470,7 +470,7 @@ export const aqaGuide: BoardExamGuide = {
     },
   ],
 
-  // ─── Examiner Tips ───────────────────────────────────────────────────────────
+  // ─── Marker Tips ───────────────────────────────────────────────────────────
   examinerTips: [
     {
       question: 'Paper 1, Q1 — Multiple Choice (4 marks)',
@@ -606,9 +606,9 @@ export const aqaGuide: BoardExamGuide = {
     'Grade 4 in Language requires only approximately 45.6% (73/160), making the standard pass highly achievable with focused preparation.',
     'Grade 9 in Language requires only approximately 74.4% (119/160) — significantly lower than many students expect for the top grade.',
     'Literature Grade 4 requires only approximately 38.8% (62/160), one of the most accessible pass thresholds of any GCSE subject.',
-    'The word "conceptualised" is the single most important descriptor in AQA\'s mark scheme — it is the quality that separates Grade 9 responses from Grade 7 responses.',
+    'The word "conceptualised" is the single most important descriptor in AQA\'s marking guide — it is the quality that separates Grade 9 responses from Grade 7 responses.',
     'AO1 and AO2 together account for roughly 70% of all Literature marks, meaning close textual analysis is overwhelmingly the most important skill.',
     'Paper 1 Q4 (20 marks) is the most discriminating question across both Language papers — performance on this question correlates most strongly with final grade.',
-    'AQA provides detailed specimen materials, past papers, and examiner reports freely on their website, making independent revision highly accessible.',
+    'AQA provides detailed specimen materials, past papers, and marker reports freely on their website, making independent revision highly accessible.',
   ],
 };

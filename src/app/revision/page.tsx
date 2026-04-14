@@ -78,7 +78,7 @@ const ALL_SECTIONS: RevisionSection[] = [
   {
     title: 'Flashcards',
     description:
-      'Spaced repetition flashcards for quotes, terminology, and key concepts. Study smarter, not harder.',
+      'Smart review flashcards for quotes, terminology, and key concepts. Study smarter, not harder.',
     href: '/revision/flashcards',
     icon: Layers,
     colour: 'text-amber-400',
@@ -89,7 +89,7 @@ const ALL_SECTIONS: RevisionSection[] = [
   {
     title: 'Exam Technique',
     description:
-      'Essay structures, timing strategies, question types, and mark scheme breakdowns for every paper.',
+      'Essay structures, timing strategies, question types, and marking guide breakdowns for every paper.',
     href: '/revision/exam-technique',
     icon: Target,
     colour: 'text-emerald-400',
@@ -167,7 +167,7 @@ export default async function RevisionHubPage() {
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             {isCambridge
               ? `Everything you need to ace ${boardName} First Language English. Reading and writing technique, exam strategy, and language analysis -- all built around your specification.`
-              : `Everything you need to ace your ${boardName} English exams in one place. Interactive study guides, spaced repetition flashcards, and exam technique mastery -- built around your specification.`}
+              : `Everything you need to ace your ${boardName} English exams in one place. Interactive study guides, smart review flashcards, and exam technique mastery -- built around your specification.`}
           </p>
 
           {/* Quick stats */}

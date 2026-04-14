@@ -173,7 +173,7 @@ export default function Paper1Page() {
               analyse &mdash; just state the information.
             </li>
             <li>
-              If you write more than four things, the examiner marks the first
+              If you write more than four things, the marker marks the first
               four only. Do not waste time writing extra.
             </li>
           </ul>
@@ -211,7 +211,7 @@ export default function Paper1Page() {
             using relevant subject terminology.
           </p>
 
-          <h3 className="mt-4 font-bold text-primary">Mark scheme summary</h3>
+          <h3 className="mt-4 font-bold text-primary">Marking guide summary</h3>
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
@@ -284,7 +284,7 @@ export default function Paper1Page() {
             shallow ones. Quality over quantity.
           </p>
 
-          <h3 className="mt-4 font-bold text-primary">Top tips from examiners</h3>
+          <h3 className="mt-4 font-bold text-primary">Top tips from markers</h3>
           <ul className="ml-5 list-disc space-y-2">
             <li>
               <strong>Zoom in on individual words.</strong> The best responses
@@ -341,7 +341,7 @@ export default function Paper1Page() {
             This question asks you to analyse <strong>structural features</strong>{" "}
             across the whole text. Unlike Q2 (which is about language), Q3 is
             about how the writer organises and sequences the narrative. This
-            also assesses <strong>AO2</strong>.
+            also assesses <strong>Language and structure analysis (AO2)</strong>.
           </p>
 
           <h3 className="mt-4 font-bold text-primary">Structural features to look for</h3>
@@ -442,7 +442,7 @@ export default function Paper1Page() {
             </li>
           </ul>
 
-          <h3 className="mt-4 font-bold text-primary">Mark scheme summary</h3>
+          <h3 className="mt-4 font-bold text-primary">Marking guide summary</h3>
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
@@ -489,11 +489,11 @@ export default function Paper1Page() {
             response, supported by detailed references.
           </p>
           <p className="mt-2">
-            This question assesses <strong>AO4</strong>: Evaluate texts
+            This question assesses <strong>Critical evaluation (AO4)</strong>: Evaluate texts
             critically and support this with appropriate textual references.
           </p>
 
-          <h3 className="mt-4 font-bold text-primary">Mark scheme summary</h3>
+          <h3 className="mt-4 font-bold text-primary">Marking guide summary</h3>
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
@@ -564,7 +564,7 @@ export default function Paper1Page() {
             In Q2 you simply analyse language. In Q4 you must also{" "}
             <strong>evaluate</strong> &mdash; that means giving a judgement
             about how successful or effective the writing is. Do not just
-            explain <em>what</em> the writer does; tell the examiner{" "}
+            explain <em>what</em> the writer does; tell the marker{" "}
             <em>how well</em> they do it and <em>whether</em> you find it
             convincing.
           </p>
@@ -588,11 +588,11 @@ export default function Paper1Page() {
           </p>
           <p className="mt-2">This question assesses:</p>
           <ul className="ml-5 list-disc space-y-1 mt-1">
-            <li><strong>AO5 (24 marks):</strong> Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.</li>
-            <li><strong>AO6 (16 marks):</strong> Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
+            <li><strong>Content and organisation (AO5, 24 marks):</strong> Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.</li>
+            <li><strong>Technical accuracy (AO6, 16 marks):</strong> Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
           </ul>
 
-          <h3 className="mt-4 font-bold text-primary">Mark scheme: Content and Organisation (AO5, 24 marks)</h3>
+          <h3 className="mt-4 font-bold text-primary">Marking guide: Content and Organisation (AO5, 24 marks)</h3>
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
@@ -627,7 +627,7 @@ export default function Paper1Page() {
             </table>
           </div>
 
-          <h3 className="mt-4 font-bold text-primary">Mark scheme: Technical Accuracy (AO6, 16 marks)</h3>
+          <h3 className="mt-4 font-bold text-primary">Marking guide: Technical Accuracy (AO6, 16 marks)</h3>
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
@@ -690,7 +690,7 @@ export default function Paper1Page() {
             </div>
           </div>
 
-          <h3 className="mt-4 font-bold text-primary">What examiners want to see</h3>
+          <h3 className="mt-4 font-bold text-primary">What markers want to see</h3>
           <ul className="ml-5 list-disc space-y-2">
             <li>
               <strong>Crafted language:</strong> Use of literary devices

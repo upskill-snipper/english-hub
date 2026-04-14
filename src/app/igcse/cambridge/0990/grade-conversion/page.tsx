@@ -12,9 +12,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: '9-1 vs A*-G grade conversion | Cambridge IGCSE 0990 | The English Hub',
+  title: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B | The English Hub',
   description:
-    'Full conversion table between Cambridge IGCSE 0990 9-1 grades and 0500 A*-G grades. Understand how your numerical grade compares to the letter scale.',
+    'Full conversion table between Cambridge IGCSE Language B 9-1 grades and Language A A*-G grades. Understand how your numerical grade compares to the letter scale.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/grade-conversion',
   },
@@ -98,7 +98,7 @@ export default async function GradeConversionPage() {
           render={<Link href="/igcse/cambridge/0990" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to 0990 hub
+          Back to IGCSE Language B hub
         </Button>
       </div>
 
@@ -108,7 +108,7 @@ export default async function GradeConversionPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE Language B
             </Badge>
             <Badge variant="secondary">9-1 vs A*-G</Badge>
           </div>
@@ -116,8 +116,8 @@ export default async function GradeConversionPage() {
             9-1 vs A*-G: full grade conversion
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Cambridge IGCSE 0990 reports results on the 9-1 numerical scale,
-            while 0500 uses A*-G. The two syllabuses share a mark scheme — so
+            Cambridge IGCSE Language B reports results on the 9-1 numerical scale,
+            while Language A uses A*-G. The two syllabuses share a mark scheme — so
             you can map every letter to a number. Use this table to translate
             between the two.
           </p>
@@ -137,8 +137,8 @@ export default async function GradeConversionPage() {
             <table className="w-full text-body-sm">
               <thead className="border-b border-border/60 bg-muted/40 text-body-xs uppercase text-muted-foreground">
                 <tr>
-                  <th className="px-4 py-3 text-left">0990 grade</th>
-                  <th className="px-4 py-3 text-left">0500 equivalent</th>
+                  <th className="px-4 py-3 text-left">IGCSE Language B grade</th>
+                  <th className="px-4 py-3 text-left">Language A equivalent</th>
                   <th className="px-4 py-3 text-left">What it represents</th>
                 </tr>
               </thead>

@@ -73,7 +73,7 @@ export function getBoundaryForGrade(
   return {
     label: `Grade ${letter}`,
     percent: GRADE_BOUNDARIES[board][letter] ?? null,
-    systemNote: `Cambridge 0500 uses A*-G. Grade ${letter} is the equivalent of 9-1 Grade ${grade}.`,
+    systemNote: `IGCSE Language A uses A*-G grading. Grade ${letter} is the equivalent of 9-1 Grade ${grade}.`,
   }
 }
 
@@ -96,11 +96,11 @@ export function getPaperReferencesForBoard(board: ExamBoard | null): {
     case 'eduqas':
       return { literature: 'Eduqas Component 1 / Component 2 (Literature)', language: 'Eduqas Component 1 / Component 2 (Language)', boardLabel: 'WJEC Eduqas GCSE' }
     case 'edexcel-igcse':
-      return { literature: 'Edexcel IGCSE 4ET1 Paper 1 / Paper 2', language: 'Edexcel IGCSE 4EA1 Paper 1 / Paper 2', boardLabel: 'Pearson Edexcel IGCSE' }
+      return { literature: 'IGCSE Literature Paper 1 / Paper 2', language: 'IGCSE Literature Paper 1 / Paper 2', boardLabel: 'IGCSE English Literature' }
     case 'cambridge-0500':
-      return { literature: 'Cambridge 0500 Paper 1 / Paper 2', language: 'Cambridge 0500 Paper 1 / Paper 2', boardLabel: 'Cambridge IGCSE 0500' }
+      return { literature: 'IGCSE Language A Paper 1 / Paper 2', language: 'IGCSE Language A Paper 1 / Paper 2', boardLabel: 'IGCSE First Language English' }
     case 'cambridge-0990':
-      return { literature: 'Cambridge 0990 Paper 1 / Paper 2', language: 'Cambridge 0990 Paper 1 / Paper 2', boardLabel: 'Cambridge IGCSE 0990' }
+      return { literature: 'IGCSE Language B Paper 1 / Paper 2', language: 'IGCSE Language B Paper 1 / Paper 2', boardLabel: 'IGCSE First Language English (9-1)' }
     default:
       return { literature: 'Literature Paper 1 / Paper 2', language: 'Language Paper 1 / Paper 2', boardLabel: 'GCSE English' }
   }

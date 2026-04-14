@@ -20,9 +20,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE 4ET1 Modern Prose — The English Hub',
+  title: 'Edexcel IGCSE Literature Modern Prose — The English Hub',
   description:
-    'Study guides for all Edexcel IGCSE 4ET1 modern prose set texts: To Kill a Mockingbird, Of Mice and Men, The Whale Rider, The Joy Luck Club, Things Fall Apart, The Woman in Black, The Color Purple.',
+    'Study guides for all Edexcel IGCSE Literature modern prose set texts: To Kill a Mockingbird, Of Mice and Men, The Whale Rider, The Joy Luck Club, Things Fall Apart, The Woman in Black, The Color Purple.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/prose' },
 }
 
@@ -112,7 +112,7 @@ export default async function ProseHubPage() {
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel 4ET1
+          Back to Edexcel IGCSE Literature
         </Button>
       </div>
 
@@ -123,9 +123,8 @@ export default async function ProseHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
-            <Badge variant="secondary">Paper 1 · Section B</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Modern Prose
@@ -133,7 +132,8 @@ export default async function ProseHubPage() {
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Pick your set prose text to explore plot, characters, themes,
             context and a curated bank of short key quotations. Each guide is
-            built around Assessment Objectives AO1, AO2 and AO4.
+            built around understanding the text, analysing language and
+            structure, and comparing texts.
           </p>
         </div>
       </section>

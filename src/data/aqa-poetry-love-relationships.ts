@@ -81,7 +81,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>The Farmer's Bride (Mew):</strong> Both speakers are isolated by unfulfilled love, though Mew's speaker is separated by emotional distance rather than betrayal.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing this poem, embed context by linking the secrecy motif to Byron's real-life scandal rather than writing a separate context paragraph. For example: "Byron's own notoriety lends irony to the speaker's insistence on silence — a poet famed for public passion is here silenced by private grief."</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> When discussing this poem, embed context by linking the secrecy motif to Byron's real-life scandal rather than writing a separate context paragraph. For example: "Byron's own notoriety lends irony to the speaker's insistence on silence — a poet famed for public passion is here silenced by private grief."</div>
 `,
       quiz: [
         {
@@ -205,7 +205,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Singh Song! (Nagra):</strong> Both celebrate desire and attraction, though Nagra's tone is playful and fulfilled where Shelley's is yearning and frustrated.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Be careful not to describe this poem as simply "romantic." Examiners reward students who identify the <strong>persuasive intent</strong> — the speaker is constructing an argument, and the beloved's silence implies rejection. The poem is as much about frustration as it is about love.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Be careful not to describe this poem as simply "romantic." Markers reward students who identify the <strong>persuasive intent</strong> — the speaker is constructing an argument, and the beloved's silence implies rejection. The poem is as much about frustration as it is about love.</div>
 `,
       quiz: [
         {
@@ -348,7 +348,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Singh Song! (Nagra):</strong> Both explore desire, but Nagra's poem celebrates mutual, joyful love — the polar opposite of Porphyria's one-sided obsession.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Describing Porphyria's Lover as a "love poem." It is a poem about <strong>obsession, power and psychological disturbance</strong>. Examiners want to see you interrogate the speaker's reliability rather than accepting his version of events at face value.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Describing Porphyria's Lover as a "love poem." It is a poem about <strong>obsession, power and psychological disturbance</strong>. Markers want to see you interrogate the speaker's reliability rather than accepting his version of events at face value.</div>
 `,
       quiz: [
         {
@@ -550,7 +550,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Letters from Yorkshire (Dooley):</strong> Both explore connection across distance, though Dooley's poem is more restrained and ambiguous about the nature of the relationship.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Linking Barrett Browning's open expression of female desire to the restrictive Victorian context is a strong AO3 move. Note that the sonnets were presented as "translations from the Portuguese" to disguise their autobiographical nature — even a bold poet felt the need to mask female passion.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Linking Barrett Browning's open expression of female desire to the restrictive Victorian context is a strong AO3 move. Note that the sonnets were presented as "translations from the Portuguese" to disguise their autobiographical nature — even a bold poet felt the need to mask female passion.</div>
 `,
       quiz: [
         {
@@ -702,7 +702,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Love's Philosophy (Shelley):</strong> A direct contrast — Shelley's nature is alive and united, Hardy's is dead and indifferent.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The colour palette is crucial in this poem — white sun, grey leaves, pale cheek. All colour and warmth has been drained from the scene. Examiners reward students who analyse Hardy's deliberate use of <strong>"neutral"</strong> colour to convey emotional emptiness.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The colour palette is crucial in this poem — white sun, grey leaves, pale cheek. All colour and warmth has been drained from the scene. Markers reward students who analyse Hardy's deliberate use of <strong>"neutral"</strong> colour to convey emotional emptiness.</div>
 `,
       quiz: [
         {
@@ -887,7 +887,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Winter Swans (Sheers):</strong> Both depict understated, quiet relationships where connection is shown through small gestures rather than grand declarations.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do not assume the two people are romantic partners — Dooley deliberately leaves the relationship ambiguous. The strongest responses explore how the poem questions <strong>what love and connection mean</strong> rather than labelling the relationship.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Do not assume the two people are romantic partners — Dooley deliberately leaves the relationship ambiguous. The strongest responses explore how the poem questions <strong>what love and connection mean</strong> rather than labelling the relationship.</div>
 `,
       quiz: [
         {
@@ -1200,7 +1200,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Eden Rock (Causley):</strong> Both deal with parental love, but Eden Rock approaches it from the perspective of a child revisiting parents in memory or the afterlife.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The poem's power lies in its <strong>universality</strong>. When comparing with other parent-child poems, note that Day-Lewis writes from the parent's perspective — this is the view from the one being left behind, not the one leaving.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The poem's power lies in its <strong>universality</strong>. When comparing with other parent-child poems, note that Day-Lewis writes from the parent's perspective — this is the view from the one being left behind, not the one leaving.</div>
 `,
       quiz: [
         {
@@ -1349,7 +1349,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Before You Were Mine (Duffy):</strong> Both reconstruct parents as young people, imagining them in a time before the speaker knew them. Both use vivid sensory details to bring the past to life.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The poem's power comes from its <strong>restraint</strong>. Causley never explicitly says "death" or "afterlife." The strongest responses explore the ambiguity — is this memory, dream, or a vision of what comes after death? — rather than fixing on a single interpretation.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The poem's power comes from its <strong>restraint</strong>. Causley never explicitly says "death" or "afterlife." The strongest responses explore the ambiguity — is this memory, dream, or a vision of what comes after death? — rather than fixing on a single interpretation.</div>
 `,
       quiz: [
         {
@@ -1476,7 +1476,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Climbing My Grandfather (Waterhouse):</strong> Both present a child's admiration for a male relative through physical imagery and close observation.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The final line is the key to unlocking a top-band response. Explore its <strong>ambiguity</strong> — does "will not go away" express love, guilt, frustration, or all three? Examiners reward students who embrace multiple interpretations rather than fixing on one.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The final line is the key to unlocking a top-band response. Explore its <strong>ambiguity</strong> — does "will not go away" express love, guilt, frustration, or all three? Markers reward students who embrace multiple interpretations rather than fixing on one.</div>
 `,
       quiz: [
         {
@@ -1656,7 +1656,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Eden Rock (Causley):</strong> Both involve the relationship between parent and child, but Causley's speaker moves towards his parents while Armitage's moves away.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The sonnet form is a key analytical point. Examiners reward students who note that Armitage <strong>subverts the love sonnet</strong> by applying it to maternal love — suggesting that the bond between parent and child is as intense and complex as romantic love.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The sonnet form is a key analytical point. Markers reward students who note that Armitage <strong>subverts the love sonnet</strong> by applying it to maternal love — suggesting that the bond between parent and child is as intense and complex as romantic love.</div>
 `,
       quiz: [
         {
@@ -1834,7 +1834,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Walking Away (Day-Lewis):</strong> Both explore the parent-child bond, but Duffy reverses the perspective — here it is the child who possessively clings to the parent.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners reward responses that explore the <strong>guilt</strong> beneath the poem's celebratory surface. The speaker knows that her birth ended her mother's carefree youth — the "possessive yell" is an acknowledgement that love can be a form of taking.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Markers reward responses that explore the <strong>guilt</strong> beneath the poem's celebratory surface. The speaker knows that her birth ended her mother's carefree youth — the "possessive yell" is an acknowledgement that love can be a form of taking.</div>
 `,
       quiz: [
         {
@@ -1958,7 +1958,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Love's Philosophy (Shelley):</strong> Both use nature to comment on human relationships — Shelley argues nature demands union; Sheers shows nature modelling it.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The structural shift from <strong>tercets to a final couplet</strong> is a crucial analytical point. The move from three lines to two mirrors the couple finally pairing up — form enacts meaning. This is exactly the kind of form/structure analysis that scores highly on AO2.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The structural shift from <strong>tercets to a final couplet</strong> is a crucial analytical point. The move from three lines to two mirrors the couple finally pairing up — form enacts meaning. This is exactly the kind of form/structure analysis that scores highly on AO2.</div>
 `,
       quiz: [
         {
@@ -2097,7 +2097,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Sonnet 29 (Barrett Browning):</strong> Both express passionate desire within committed relationships, though their tones are very different — Barrett Browning is earnest and urgent, Nagra is playful and humorous.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do not treat the phonetic spelling as a joke or a deficiency. Nagra's use of dialect is a <strong>celebration of linguistic identity</strong>. The strongest responses discuss how the blending of Punjabi and English reflects the speaker's dual cultural heritage.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> Do not treat the phonetic spelling as a joke or a deficiency. Nagra's use of dialect is a <strong>celebration of linguistic identity</strong>. The strongest responses discuss how the blending of Punjabi and English reflects the speaker's dual cultural heritage.</div>
 `,
       quiz: [
         {
@@ -2224,7 +2224,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Walking Away (Day-Lewis):</strong> Both explore intergenerational love, though Day-Lewis focuses on separation while Waterhouse focuses on closeness and exploration.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The extended metaphor is the entire poem — every line sustains the comparison between climbing a mountain and exploring a grandfather. Examiners reward responses that trace how the metaphor <strong>develops</strong> (feet to face, exterior to heart) rather than just identifying it as a metaphor.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> The extended metaphor is the entire poem — every line sustains the comparison between climbing a mountain and exploring a grandfather. Markers reward responses that trace how the metaphor <strong>develops</strong> (feet to face, exterior to heart) rather than just identifying it as a metaphor.</div>
 `,
       quiz: [
         {

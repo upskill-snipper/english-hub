@@ -386,7 +386,7 @@ export default function AnimalFarmPage() {
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                <span><strong>Marks:</strong> 40 marks total (AO1: response and quotation; AO2: language, form, structure; AO3: context).</span>
+                <span><strong>Marks:</strong> 40 marks total (reading and response: response and quotation; analysis of methods: language, form, structure; context).</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -533,7 +533,7 @@ export default function AnimalFarmPage() {
           <p className="mt-2 text-muted-foreground">
             Animal Farm is an allegorical novella — every character, event, and
             setting represents a real historical counterpart. Understanding the
-            allegory is essential for AO3 (context) marks.
+            allegory is essential for context marks.
           </p>
           <div className="mt-6 space-y-4">
             {ALLEGORY_POINTS.map((a) => (
@@ -662,11 +662,11 @@ export default function AnimalFarmPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Always use &quot;Orwell&quot; as the subject — &quot;Orwell presents/uses/suggests/criticises...&quot; This demonstrates awareness of the writer&apos;s craft (AO2).
+                  Always use &quot;Orwell&quot; as the subject — &quot;Orwell presents/uses/suggests/criticises...&quot; This demonstrates awareness of the writer&apos;s craft (analysis of methods).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Discuss the novella as an <strong>allegory</strong> — show you understand that the characters and events represent real historical figures and events. This is essential for AO3.
+                  Discuss the novella as an <strong>allegory</strong> — show you understand that the characters and events represent real historical figures and events. This is essential for the context skill.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -686,7 +686,7 @@ export default function AnimalFarmPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Note: No separate SPaG marks on this question, but clear, accurate writing still matters for AO1.
+                  Note: No separate SPaG marks on this question, but clear, accurate writing still matters for reading and response.
                 </li>
               </ul>
             </div>

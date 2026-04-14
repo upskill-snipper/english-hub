@@ -10,7 +10,7 @@ export const y10IgcseLitPoetryLessons: LessonPlan[] = [
     yearGroup: 'Year 10',
     duration: '60 minutes',
     objectives: [
-      'Understand the structure and purpose of the Edexcel IGCSE Poetry Anthology (spec 4ET1)',
+      'Understand the structure and purpose of the Edexcel IGCSE Poetry Anthology (IGCSE Literature)',
       'Identify the key thematic clusters that group poems for comparative study',
       'Apply a three-phase reading strategy to approach anthology poems effectively',
       'Build an initial overview of tone, subject matter, and mood across selected poems',
@@ -1089,7 +1089,7 @@ export const y10IgcseLitPoetryLessons: LessonPlan[] = [
     yearGroup: 'Year 10',
     duration: '60 minutes',
     objectives: [
-      'Understand the specific demands and assessment criteria of the unseen poem question (4ET1)',
+      'Understand the specific demands and assessment criteria of the unseen poem question (IGCSE Literature)',
       'Apply a step-by-step reading strategy to an unseen poem encountered for the first time',
       'Identify how skills developed on anthology poems transfer to unseen poetry analysis',
       'Write a structured, well-evidenced analytical response to an unseen poem under timed conditions',

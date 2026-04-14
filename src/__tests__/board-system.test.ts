@@ -12,15 +12,35 @@ describe('board-config', () => {
     expect(BOARDS).toHaveLength(7)
   })
 
-  it('every board has id, name, fullName, shortName, type, description', () => {
+  it('every board has id, name, fullName, shortName, type, examCode, category, description', () => {
     for (const board of BOARDS) {
       expect(board.id).toBeTruthy()
       expect(board.name).toBeTruthy()
       expect(board.fullName).toBeTruthy()
       expect(board.shortName).toBeTruthy()
       expect(board.type).toMatch(/^(gcse|igcse)$/)
+      expect(board.examCode).toBeTruthy()
+      expect(board.category).toBeTruthy()
       expect(board.description).toBeTruthy()
     }
+  })
+
+  it('every board has a valid category value', () => {
+    const validCategories = ['gcse', 'igcse-literature', 'igcse-language-a', 'igcse-language-b']
+    for (const board of BOARDS) {
+      expect(validCategories).toContain(board.category)
+    }
+  })
+
+  it('IGCSE boards use new display names', () => {
+    const igcseLit = getBoardConfig('edexcel-igcse')
+    expect(igcseLit?.name).toBe('IGCSE Literature')
+
+    const langA = getBoardConfig('cambridge-0500')
+    expect(langA?.name).toBe('IGCSE Language A')
+
+    const langB = getBoardConfig('cambridge-0990')
+    expect(langB?.name).toBe('IGCSE Language B')
   })
 
   it('every board has a unique id', () => {

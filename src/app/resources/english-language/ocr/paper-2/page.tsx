@@ -118,7 +118,7 @@ export default function OCRPaper2Page() {
             {/* Language analysis */}
             <div>
               <h3 className="text-xl font-semibold text-foreground">
-                Analysing Language in Fiction (AO2)
+                Analysing Language in Fiction
               </h3>
               <p className="mt-2">
                 When analysing language in fiction, you are looking at the
@@ -195,7 +195,7 @@ export default function OCRPaper2Page() {
             {/* Structure analysis */}
             <div>
               <h3 className="text-xl font-semibold text-foreground">
-                Analysing Structure (AO2)
+                Analysing Structure
               </h3>
               <p className="mt-2">
                 Structure refers to the way the writer organises and shapes the
@@ -245,7 +245,7 @@ export default function OCRPaper2Page() {
             {/* Evaluation */}
             <div>
               <h3 className="text-xl font-semibold text-foreground">
-                Evaluation Questions (AO4)
+                Evaluation Questions
               </h3>
               <p className="mt-2">
                 You may be given a statement about the text and asked to what
@@ -458,11 +458,11 @@ export default function OCRPaper2Page() {
             {/* Assessment criteria summary */}
             <div>
               <h3 className="text-xl font-semibold text-foreground">
-                What the Examiner Is Looking For
+                What the Marker Is Looking For
               </h3>
               <div className="mt-3 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">AO5: Content and Organisation (24 marks)</h4>
+                  <h4 className="font-semibold text-foreground">Content and Organisation (24 marks)</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>Communication is convincing and compelling</li>
                     <li>Tone, style, and register match purpose and audience</li>
@@ -472,7 +472,7 @@ export default function OCRPaper2Page() {
                   </ul>
                 </div>
                 <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">AO6: Technical Accuracy (16 marks)</h4>
+                  <h4 className="font-semibold text-foreground">Technical Accuracy (16 marks)</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>Wide range of sentence forms for effect</li>
                     <li>Accurate and varied punctuation</li>

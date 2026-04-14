@@ -2,7 +2,7 @@
 import type { CourseData, CourseModule, CourseQuiz } from './courses';
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// Edexcel IGCSE Literature — Prose Texts (Pearson 4ET1)
+// Edexcel IGCSE Literature — Prose Texts
 // ═══════════════════════════════════════════════════════════════════════════════
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -369,7 +369,7 @@ const tkamModules: CourseModule[] = [
 <h2>To Kill a Mockingbird — Exam Practice &amp; Model Response</h2>
 
 <h3>Understanding the Exam Format</h3>
-<p>For Edexcel IGCSE Literature (4ET1), you will answer on your prose set text in a <strong>closed-book exam</strong>. This means you cannot take the text into the exam room. You will typically be asked a question that requires you to explore how the writer presents a particular character, theme, or idea. You must use <strong>specific textual references and quotations from memory</strong>.</p>
+<p>For Edexcel IGCSE Literature, you will answer on your prose set text in a <strong>closed-book exam</strong>. This means you cannot take the text into the exam room. You will typically be asked a question that requires you to explore how the writer presents a particular character, theme, or idea. You must use <strong>specific textual references and quotations from memory</strong>.</p>
 
 <h3>Sample Question</h3>
 <div class="sample-question"><strong>Question:</strong> Explore how Harper Lee presents the theme of courage in <em>To Kill a Mockingbird</em>. You must refer to the context of the novel in your answer.</div>
@@ -452,7 +452,7 @@ const tkamCourse: CourseData = {
   price: 0,
   duration: '6 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive IGCSE Literature course on To Kill a Mockingbird by Harper Lee, covering context, plot, characters, themes, language and exam technique for the Edexcel 4ET1 specification.',
+  description: 'A comprehensive IGCSE Literature course on To Kill a Mockingbird by Harper Lee, covering context, plot, characters, themes, language and exam technique for the Edexcel IGCSE Literature specification.',
   color: '#8B4513',
   moduleList: tkamModules,
 };
@@ -792,7 +792,7 @@ const omamModules: CourseModule[] = [
 <h2>Of Mice and Men — Exam Practice &amp; Model Response</h2>
 
 <h3>Understanding the Exam Format</h3>
-<p>For Edexcel IGCSE Literature (4ET1), you will answer on your prose set text in a <strong>closed-book exam</strong>. You must demonstrate close knowledge of the text through specific references and quotations recalled from memory.</p>
+<p>For Edexcel IGCSE Literature, you will answer on your prose set text in a <strong>closed-book exam</strong>. You must demonstrate close knowledge of the text through specific references and quotations recalled from memory.</p>
 
 <h3>Sample Question</h3>
 <div class="sample-question"><strong>Question:</strong> Explore how Steinbeck presents loneliness in <em>Of Mice and Men</em>. You must refer to the context of the novella in your answer.</div>
@@ -872,7 +872,7 @@ const omamCourse: CourseData = {
   price: 0,
   duration: '6 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive IGCSE Literature course on Of Mice and Men by John Steinbeck, covering context, plot, characters, themes, language and exam technique for the Edexcel 4ET1 specification.',
+  description: 'A comprehensive IGCSE Literature course on Of Mice and Men by John Steinbeck, covering context, plot, characters, themes, language and exam technique for the Edexcel IGCSE Literature specification.',
   color: '#A0522D',
   moduleList: omamModules,
 };
@@ -1365,7 +1365,7 @@ const whaleRiderCourse: CourseData = {
   price: 0,
   duration: '6 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive IGCSE Literature course on The Whale Rider by Witi Ihimaera, covering context, plot, characters, themes, language and exam technique for the Edexcel 4ET1 specification.',
+  description: 'A comprehensive IGCSE Literature course on The Whale Rider by Witi Ihimaera, covering context, plot, characters, themes, language and exam technique for the Edexcel IGCSE Literature specification.',
   color: '#1E6091',
   moduleList: whaleRiderModules,
 };
@@ -1855,7 +1855,7 @@ const jlcCourse: CourseData = {
   price: 0,
   duration: '6 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive IGCSE Literature course on The Joy Luck Club by Amy Tan, covering context, plot, characters, themes, language and exam technique for the Edexcel 4ET1 specification.',
+  description: 'A comprehensive IGCSE Literature course on The Joy Luck Club by Amy Tan, covering context, plot, characters, themes, language and exam technique for the Edexcel IGCSE Literature specification.',
   color: '#C41E3A',
   moduleList: jlcModules,
 };
@@ -2284,7 +2284,7 @@ const tfaCourse: CourseData = {
   price: 0,
   duration: '6 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive IGCSE Literature course on Things Fall Apart by Chinua Achebe, covering context, plot, characters, themes, language and exam technique for the Edexcel 4ET1 specification.',
+  description: 'A comprehensive IGCSE Literature course on Things Fall Apart by Chinua Achebe, covering context, plot, characters, themes, language and exam technique for the Edexcel IGCSE Literature specification.',
   color: '#8B0000',
   moduleList: tfaModules,
 };
@@ -2731,7 +2731,7 @@ const klaraCourse: CourseData = {
   price: 0,
   duration: '6 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive IGCSE Literature course on Klara and the Sun by Kazuo Ishiguro, covering context, plot, characters, themes, language and exam technique for the Edexcel 4ET1 specification.',
+  description: 'A comprehensive IGCSE Literature course on Klara and the Sun by Kazuo Ishiguro, covering context, plot, characters, themes, language and exam technique for the Edexcel IGCSE Literature specification.',
   color: '#DAA520',
   moduleList: klaraModules,
 };
@@ -3144,7 +3144,7 @@ const wlCourse: CourseData = {
   price: 0,
   duration: '6 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive IGCSE Literature course on Western Lane by Chetna Maroo, covering context, plot, characters, themes, language and exam technique for the Edexcel 4ET1 specification.',
+  description: 'A comprehensive IGCSE Literature course on Western Lane by Chetna Maroo, covering context, plot, characters, themes, language and exam technique for the Edexcel IGCSE Literature specification.',
   color: '#4A766E',
   moduleList: wlModules,
 };

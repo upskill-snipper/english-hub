@@ -281,7 +281,7 @@ export default function Paper1Page() {
                 </li>
                 <li>
                   <strong>Common mistake:</strong> Paraphrasing the passage instead of
-                  analysing it. Examiners want analysis of <em>how</em> the writer creates
+                  analysing it. Markers want analysis of <em>how</em> the writer creates
                   effects, not a summary of <em>what</em> happens.
                 </li>
                 <li>

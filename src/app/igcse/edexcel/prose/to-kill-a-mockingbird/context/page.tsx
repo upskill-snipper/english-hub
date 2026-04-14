@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'To Kill a Mockingbird Context — Edexcel IGCSE 4ET1',
+  title: 'To Kill a Mockingbird Context — Edexcel IGCSE Literature',
   description:
     '1930s Alabama, Jim Crow, the Scottsboro Boys, Harper Lee\u2019s Monroeville childhood and the Civil Rights Movement context for To Kill a Mockingbird.',
   alternates: {
@@ -54,7 +54,7 @@ const contextBlocks = [
   {
     title: 'Reception and reassessment',
     body:
-      'Mockingbird has been taught globally for decades but, since the 2015 publication of Lee\u2019s earlier draft Go Set a Watchman — in which Atticus holds segregationist views — critics have re-examined the "white saviour" framing. For IGCSE analysis, knowing both the 1960 reception and the post-2015 reassessment strengthens AO4 responses.',
+      'Mockingbird has been taught globally for decades but, since the 2015 publication of Lee\u2019s earlier draft Go Set a Watchman — in which Atticus holds segregationist views — critics have re-examined the "white saviour" framing. For IGCSE analysis, knowing both the 1960 reception and the post-2015 reassessment strengthens responses on relating to context.',
   },
 ]
 
@@ -81,7 +81,7 @@ export default async function TkamContextPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
             <Badge variant="secondary">Context</Badge>
           </div>
@@ -90,8 +90,8 @@ export default async function TkamContextPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Historical, biographical and literary context for Harper Lee’s
-            novel — essential for AO4 responses on social, cultural and
-            historical context.
+            novel — essential for relating to the social, cultural and
+            historical context of the text.
           </p>
         </div>
       </section>

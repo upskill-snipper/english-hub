@@ -1,7 +1,7 @@
 # Data Processing Agreement (Schools)
 
 **Between:**
-**The English Hub Ltd** ("**Processor**"), company number `[REPLACE WITH number]`, registered address `[REPLACE WITH address]`
+**Upskill Energy Limited t/a The English Hub** ("**Processor**"), company number 16254656, registered address `[REPLACE WITH registered address]`
 
 **and**
 
@@ -92,7 +92,7 @@ Maintain a Data Protection Officer (or documented Article 37 assessment) and mak
 ## 5. Subprocessors
 
 ### 5.1 General authorisation
-The Controller grants general written authorisation for the use of Subprocessors. A current list is in **Annex 3** and at `[REPLACE WITH public subprocessor list URL]`.
+The Controller grants general written authorisation for the use of Subprocessors. A current list is in **Annex 3** and at https://theenglishhub.app/safeguarding (or the public subprocessor page once published).
 
 ### 5.2 Notice of changes
 The Processor will notify the Controller of any intended additions or replacements of Subprocessors at least **30 days** in advance, giving the Controller an opportunity to object.
@@ -230,8 +230,8 @@ This DPA is governed by the **laws of England and Wales** and the parties submit
 | Encryption (at rest) | AES-256 on application databases and backups |
 | Network security | WAF, DDoS protection, IP allow-listing for admin surfaces |
 | Logging and monitoring | Centralised audit logs, SIEM alerting, anomaly detection |
-| Backups | Encrypted, tested, `[REPLACE WITH 30]` days retention, geographically separated |
-| Disaster recovery | RTO `[REPLACE WITH]` hours; RPO `[REPLACE WITH]` hours; annually tested |
+| Backups | Encrypted, tested, 30 days retention, geographically separated |
+| Disaster recovery | RTO `[REPLACE WITH RTO]` hours; RPO `[REPLACE WITH RPO]` hours; annually tested |
 | Patch management | Critical patches within 7 days; standard patches within 30 |
 | Vulnerability management | Automated dependency scanning; annual penetration test |
 | Secure SDLC | Code review for all changes; security-trained developers; dependency pinning |
@@ -253,13 +253,15 @@ See `subprocessor-register.csv` for the live list. At the effective date of this
 | Stripe Payments Europe | Payment processing (adult payers only) | Ireland |
 | Postmark (ActiveCampaign) | Transactional email | US — SCCs in place |
 | PostHog Cloud EU | Product analytics | EU |
-| `[REPLACE WITH AI provider]` | AI feedback generation | `[REPLACE]` |
+| Anthropic PBC | AI feedback generation | US — UK IDTA in place; zero-data-retention API |
+| Cloudflare Inc. | WAF, DDoS protection, CDN | Global (UK/EU edge priority) — UK IDTA + Data Localisation Suite |
+| Sentry (Functional Software Inc.) | Application error monitoring | EU (Frankfurt) |
 
 # Annex 4 — Contacts
 
 | Role | Contact |
 |---|---|
 | Controller DPO | `[REPLACE WITH school DPO name + email]` |
-| Processor DPO | `[REPLACE WITH name]`, dpo@englishhub.`[tld]` |
-| Processor security incidents | security@englishhub.`[tld]` |
-| Processor safeguarding | safeguarding@englishhub.`[tld]` |
+| Processor DPO | `[REPLACE WITH DPO name]`, dpo@theenglishhub.app |
+| Processor security incidents | security@theenglishhub.app |
+| Processor safeguarding | safeguarding@theenglishhub.app |

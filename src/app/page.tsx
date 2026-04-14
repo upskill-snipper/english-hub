@@ -190,7 +190,7 @@ function ForTeachersSection() {
       color: 'text-amber-400 bg-amber-500/10',
       title: '300+ Resources',
       description:
-        'Ready-to-use worksheets, model essays, mark schemes, and revision guides — all mapped to the latest specifications. No prep time required.',
+        'Ready-to-use worksheets, model essays, mark schemes, and revision guides — all mapped to your exam board. No prep time required.',
     },
   ]
 

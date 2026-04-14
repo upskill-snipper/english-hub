@@ -20,9 +20,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Descriptive Writing — Cambridge 0500 Paper 2 Section B',
+  title: 'Descriptive Writing — IGCSE Language A Paper 2 Section B',
   description:
-    'How to write a top-mark descriptive composition for Cambridge IGCSE 0500 Paper 2. Sensory detail, setting, atmosphere, structure and worked opening.',
+    'How to write a top-mark descriptive composition for IGCSE Language A Paper 2. Sensory detail, setting, atmosphere, structure and worked opening. Aligns with Cambridge syllabus 0500.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/cambridge/0500/paper-2/descriptive-writing',
@@ -124,7 +124,7 @@ export default async function DescriptiveWritingPage() {
       {/* ── Header ─────────────────────────────────────────────────── */}
       <section>
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
-          Cambridge IGCSE 0500
+          IGCSE Language A
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">
           Descriptive writing

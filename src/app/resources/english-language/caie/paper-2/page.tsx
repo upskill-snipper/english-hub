@@ -238,10 +238,10 @@ export default function Paper2Page() {
             </div>
           </div>
 
-          {/* Directed writing mark scheme */}
+          {/* Directed writing marking guide */}
           <div className="mt-8 rounded-lg border-2 border-primary/20 bg-primary/5 p-6">
             <h3 className="text-lg font-semibold text-primary">
-              Directed Writing Mark Scheme
+              Directed Writing Marking Guide
             </h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               The 40 marks are split into two Assessment Objectives:
@@ -286,7 +286,7 @@ export default function Paper2Page() {
           <div className="mt-8">
             <h3 className="text-lg font-semibold text-foreground">Narrative Writing</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Narrative writing tells a story. Cambridge examiners are looking
+              Narrative writing tells a story. Cambridge markers are looking
               for a well-structured story with engaging characters, a clear
               plot, and effective use of language.
             </p>
@@ -441,7 +441,7 @@ export default function Paper2Page() {
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Understanding the band descriptors is essential. Here is what
-            Cambridge examiners are looking for at each level. The composition
+            Cambridge markers are looking for at each level. The composition
             is marked out of 40: up to 16 for content and structure, and up
             to 24 for style and accuracy.
           </p>

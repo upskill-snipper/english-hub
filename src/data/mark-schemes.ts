@@ -1,6 +1,6 @@
 // @ts-nocheck
 /**
- * GCSE English mark scheme criteria by exam board.
+ * GCSE English marking guide criteria by exam board.
  * Each board defines Assessment Objectives (AOs) with descriptors per grade band.
  */
 
@@ -894,10 +894,10 @@ export function getQuestionTypes(board: string, paper: string): string[] {
   return getMarkScheme(board, paper)?.questionTypes ?? []
 }
 
-/** Format mark scheme criteria as a string for use in AI prompts */
+/** Format marking guide criteria as a string for use in AI prompts */
 export function formatMarkSchemeForPrompt(board: string, paper: string): string {
   const scheme = getMarkScheme(board, paper)
-  if (!scheme) return 'No specific mark scheme found. Use general GCSE English assessment criteria.'
+  if (!scheme) return 'No specific marking guide found. Use general GCSE English assessment criteria.'
 
   let output = `${board} ${scheme.paper} — ${scheme.label}\n\n`
   output += 'Assessment Objectives:\n\n'

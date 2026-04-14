@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen, Quote, Users } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
-  ExaminerByline,
+  MarkerByline,
   PageContainer,
   RevisionCta,
   SectionHeading,
@@ -13,14 +13,14 @@ import {
 export const metadata: Metadata = {
   title: 'An Inspector Calls Analysis | The English Hub',
   description:
-    'In-depth An Inspector Calls analysis for GCSE English Literature. Quote breakdowns, character studies, themes, and Priestley context written by examiners.',
+    'In-depth An Inspector Calls analysis for GCSE English Literature. Quote breakdowns, character studies, themes, and Priestley context written by markers.',
   alternates: {
     canonical: 'https://theenglishhub.app/analysis/inspector-calls',
   },
   openGraph: {
     title: 'An Inspector Calls Analysis | The English Hub',
     description:
-      'GCSE-ready analysis of An Inspector Calls — quotes, characters, themes and context written by examiners.',
+      'GCSE-ready analysis of An Inspector Calls — quotes, characters, themes and context written by markers.',
     url: 'https://theenglishhub.app/analysis/inspector-calls',
     type: 'article',
   },
@@ -165,7 +165,7 @@ const CHARACTER_THEME_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/how-to-write-grade-9-inspector-calls-essay',
     title: 'How to write a Grade 9 Inspector Calls essay',
-    blurb: 'Planning, thesis, integrated quotation and examiner tips.',
+    blurb: 'Planning, thesis, integrated quotation and marker tips.',
   },
 ]
 
@@ -175,7 +175,7 @@ export default function InspectorCallsHubPage() {
     '@type': 'CollectionPage',
     name: 'An Inspector Calls Analysis',
     description:
-      'Quote, character and theme analyses for An Inspector Calls by J. B. Priestley, written by GCSE examiners.',
+      'Quote, character and theme analyses for An Inspector Calls by J. B. Priestley, written by GCSE markers.',
     url: 'https://theenglishhub.app/analysis/inspector-calls',
     about: {
       '@type': 'Book',
@@ -202,10 +202,10 @@ export default function InspectorCallsHubPage() {
           Twenty-five focused analysis pages on J. B. Priestley&apos;s
           An Inspector Calls, covering the play&apos;s most-searched quotes,
           every major character, and the big AQA, Edexcel and Eduqas themes.
-          Each page is written by GCSE examiners with short fair-use extracts,
+          Each page is written by GCSE markers with short fair-use extracts,
           context, and exam-ready analysis.
         </p>
-        <ExaminerByline />
+        <MarkerByline />
       </div>
 
       <section className="space-y-4">

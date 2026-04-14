@@ -66,7 +66,7 @@ export default function Paper2Page() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Assessed on AO1, AO2, AO3, and AO4 (4 SPaG marks).
+                  Assessed on reading and response, analysis of methods, context, and accuracy (4 SPaG marks).
                 </li>
               </ul>
             </div>
@@ -89,7 +89,7 @@ export default function Paper2Page() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Assessed on AO1, AO2, AO3.
+                  Assessed on reading and response, analysis of methods, and context.
                 </li>
               </ul>
             </div>
@@ -108,11 +108,11 @@ export default function Paper2Page() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Part (a): analyse the first poem (8 marks, AO1 + AO2).
+                  Part (a): analyse the first poem (8 marks, reading and response + analysis of methods).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Part (b): compare both poems (8 marks, AO2).
+                  Part (b): compare both poems (8 marks, analysis of methods).
                 </li>
               </ul>
             </div>

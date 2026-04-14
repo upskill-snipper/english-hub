@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "OCR Paper 2: Exploring Poetry and Shakespeare | The English Hub",
   description:
-    "Complete guide to OCR GCSE English Literature Component 02. Shakespeare play, poetry anthology comparison, and unseen poetry revision.",
+    "Complete guide to OCR GCSE English Literature Paper 2. Shakespeare play, poetry anthology comparison, and unseen poetry revision.",
 };
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -31,7 +31,7 @@ export default function OCRLitPaper2Page() {
             Paper 2: Exploring Poetry and Shakespeare
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Component 02 &middot; 2 hours &middot; 80 marks &middot; 50% of
+            Paper 02 &middot; 2 hours &middot; 80 marks &middot; 50% of
             GCSE
           </p>
         </div>
@@ -226,10 +226,10 @@ export default function OCRLitPaper2Page() {
               </div>
             </div>
 
-            {/* AO4 reminder */}
+            {/* Written accuracy reminder */}
             <div className="rounded border border-accent/20 bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">
-                AO4 is assessed in this section
+                Written accuracy is assessed in this section
               </p>
               <p className="mt-1 text-sm text-primary">
                 Section A is the only part of the English Literature exam where

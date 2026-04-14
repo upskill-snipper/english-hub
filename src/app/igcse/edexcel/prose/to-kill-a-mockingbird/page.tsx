@@ -23,9 +23,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'To Kill a Mockingbird — Edexcel IGCSE 4ET1 Study Guide',
+  title: 'To Kill a Mockingbird — Edexcel IGCSE Literature Study Guide',
   description:
-    'Study guide for Harper Lee\u2019s To Kill a Mockingbird: plot summary, characters, themes, 1930s Alabama context and key quotations for Edexcel IGCSE 4ET1.',
+    'Study guide for Harper Lee\u2019s To Kill a Mockingbird: plot summary, characters, themes, 1930s Alabama context and key quotations for Edexcel IGCSE Literature.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird',
@@ -156,7 +156,7 @@ const keyQuotations = [
     quote: 'When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
     speaker: 'Atticus Finch',
     analysis:
-      'A plain statement of the structural racism the trial will dramatise. Useful for AO4 (context) and AO1.',
+      'A plain statement of the structural racism the trial will dramatise. Useful for relating to context and understanding the text.',
   },
   {
     quote: 'Atticus, he was real nice… Most people are, Scout, when you finally see them.',
@@ -214,7 +214,7 @@ export default async function TkamHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
             <Badge variant="secondary">Modern prose</Badge>
           </div>

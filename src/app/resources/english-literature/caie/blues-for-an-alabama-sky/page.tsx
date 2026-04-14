@@ -206,25 +206,25 @@ const contextSections = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     description: "Show knowledge and understanding of the text",
     guidance:
       "Demonstrate thorough knowledge of the play's plot, characters, and themes. Refer to specific moments and use accurate, embedded quotations. Do not retell the story; select details strategically to support your argument. Show that you understand the significance of events, not just their sequence.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     description: "Understand how meanings are shaped by the contexts in which texts are written and received",
     guidance:
       "Discuss how the play's meaning is shaped by its historical context: the Great Depression, the end of the Harlem Renaissance, the birth control movement, LGBTQ+ history, and the Great Migration. Show how a modern audience might respond differently from a 1930s audience. Integrate context into your analysis rather than treating it as a separate paragraph.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     description: "Analyse how writers use language, structure, and form to create meanings and effects",
     guidance:
       "This is where the highest marks are won. Analyse Cleage's dialogue, dramatic structure, use of setting, symbolism, and tension building. Discuss the four-act escalation, the domestic setting as a pressure cooker, the contrast between characters' speech patterns, and how dramatic irony creates audience awareness of impending tragedy. Always explain the effect on the audience.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     description: "Communicate a personal response, using appropriate terminology",
     guidance:
       "Offer a genuine personal engagement with the text. Use literary and dramatic terminology accurately (dramatic irony, motif, symbolism, foreshadowing, juxtaposition, vernacular). Structure your response with a clear argument. The strongest answers go beyond description to offer interpretation and evaluation.",
@@ -269,22 +269,22 @@ const sampleQuestion = {
     "Cleage presents the friendship between Angel and Guy as the play's emotional and thematic anchor, using their bond to embody the spirit of the Harlem Renaissance itself. Their relationship is characterised by unconditional acceptance: Guy takes Angel in without hesitation when she is destitute, and Angel supports Guy's sexuality without judgement. Cleage's dialogue reveals their intimacy through naturalistic banter and shared cultural references, creating a rhythm that feels lived-in and authentic. Structurally, their friendship is positioned as the first relationship the audience encounters, establishing it as the play's moral centre before Leland's arrival disrupts it. The phrase 'the best friend I ever had in my life', spoken by Angel after Guy's murder, is devastating precisely because Cleage has spent four acts demonstrating the truth of it. The simplicity of the language, stripped of the wit that characterised their earlier exchanges, registers the depth of loss. In context, their relationship represents the tolerance and creative solidarity that the Harlem Renaissance made possible: a Black woman and a gay Black man supporting each other in a society hostile to both. Guy's death, therefore, is not just a personal tragedy but a symbolic one: it marks the destruction of the Renaissance's inclusive values by the conservative forces that the Depression empowered. Personally, I find Cleage's refusal to sentimentalise the friendship particularly effective. Angel is not always grateful; Guy is not always patient. Their arguments and frustrations make the love between them feel real rather than idealised, which makes the ending all the more devastating. Cleage forces the audience to reckon with what intolerance destroys: not an abstraction, but a specific, irreplaceable human connection.",
   aoBreakdown: [
     {
-      code: "AO1",
+      code: "Textual Knowledge",
       detail:
         "Demonstrates thorough knowledge: refers to specific plot points (Guy taking Angel in, Angel's eulogy), character dynamics, and the play's structure across all four acts.",
     },
     {
-      code: "AO2",
+      code: "Writer's Methods",
       detail:
         "Integrates context throughout: the Harlem Renaissance's tolerance, the Depression's economic pressures, and the historical significance of LGBTQ+ acceptance in 1930s Harlem are woven into the analysis rather than bolted on.",
     },
     {
-      code: "AO3",
+      code: "Interpretation",
       detail:
         "Analyses Cleage's methods: discusses dialogue style (naturalistic banter vs. stripped simplicity), structural positioning (the friendship as the first relationship introduced), and the effect of language choices on the audience.",
     },
     {
-      code: "AO4",
+      code: "Personal Response",
       detail:
         "Offers genuine personal response ('I find Cleage's refusal to sentimentalise...') and uses appropriate terminology (dramatic irony, structural positioning, naturalistic, symbolic). The argument is clearly structured and evaluative.",
     },
@@ -324,7 +324,7 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
             "Themes",
             "Dramatic Techniques",
             "Context",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Guidance",
             "Sample Question",
           ].map((s) => (
@@ -450,8 +450,8 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
             Dramatic Techniques
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Cleage&rsquo;s use of dramatic techniques is essential for AO3
-            (language, structure, and form). Examiners reward candidates who
+            Cleage&rsquo;s use of dramatic techniques is essential for Interpretation
+            (language, structure, and form). Markers reward responses that
             discuss <em>how</em> Cleage shapes meaning, not just <em>what</em>{" "}
             happens.
           </p>
@@ -482,8 +482,8 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
             Historical &amp; Social Context
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Cambridge examiners expect you to integrate context into your
-            analysis (AO2), showing how historical and social factors shape the
+            Cambridge markers expect you to integrate context into your
+            analysis (Writer's Methods), showing how historical and social factors shape the
             characters&rsquo; choices and the play&rsquo;s meaning.
           </p>
           <div className="mt-6 space-y-4">
@@ -506,7 +506,7 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
         <section
-          id="assessment-objectives"
+          id="what-markers-look-for"
           aria-labelledby="ao-heading"
         >
           <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
@@ -601,7 +601,7 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
                   Write &ldquo;Cleage presents...&rdquo; or &ldquo;Cleage
                   uses...&rdquo; rather than &ldquo;the play shows...&rdquo;.
                   This demonstrates awareness of authorial intent and helps you
-                  discuss methods (AO3).
+                  discuss methods (Interpretation).
                 </li>
                 <li>
                   <strong className="text-foreground">
@@ -613,7 +613,7 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
                 </li>
                 <li>
                   <strong className="text-foreground">
-                    Integrate context (AO2):
+                    Integrate context (Writer's Methods):
                   </strong>{" "}
                   Do not write a separate &ldquo;context paragraph&rdquo;.
                   Instead, weave historical references into your analysis:
@@ -623,7 +623,7 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
                 </li>
                 <li>
                   <strong className="text-foreground">
-                    Analyse methods, not just events (AO3):
+                    Analyse methods, not just events (Interpretation):
                   </strong>{" "}
                   Discuss Cleage&rsquo;s dramatic techniques: how dialogue
                   reveals character, how the four-act structure builds tension,
@@ -632,7 +632,7 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
                 </li>
                 <li>
                   <strong className="text-foreground">
-                    Offer a personal response (AO4):
+                    Offer a personal response (Personal Response):
                   </strong>{" "}
                   Phrases such as &ldquo;I find this particularly
                   effective...&rdquo; or &ldquo;This moment is significant
@@ -695,7 +695,7 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
               <CardHeader>
                 <CardTitle>Assessment Objective Breakdown</CardTitle>
                 <CardDescription>
-                  How this paragraph addresses each AO
+                  How this paragraph addresses each skill
                 </CardDescription>
               </CardHeader>
               <CardContent>

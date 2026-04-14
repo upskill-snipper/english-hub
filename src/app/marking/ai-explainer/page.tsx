@@ -41,10 +41,10 @@ export default function AiExplainerPage() {
           <p className="text-muted-foreground leading-relaxed">
             When you submit an essay on The English Hub, we use a computer
             program called an <strong className="text-foreground">AI model</strong>{' '}
-            to read your work, compare it against the official GCSE mark scheme,
+            to read your work, compare it against the official GCSE marking guide,
             and give you a predicted grade with feedback. Think of it like a very
-            fast practice examiner that can help you spot strengths and areas to
-            improve &mdash; but it is <em>not</em> a real examiner and the grade
+            fast practice marker that can help you spot strengths and areas to
+            improve &mdash; but it is <em>not</em> a real marker and the grade
             is <em>not</em> an official result.
           </p>
         </section>
@@ -105,8 +105,8 @@ export default function AiExplainerPage() {
           <p className="text-muted-foreground leading-relaxed">
             <strong className="text-foreground">No.</strong> The grade you
             receive is a <em>predicted</em> grade based on how the AI interprets
-            the mark scheme. It is meant as a learning guide to help you
-            practise and improve. Only a qualified examiner appointed by your
+            the marking guide. It is meant as a learning guide to help you
+            practise and improve. Only a qualified marker appointed by your
             exam board (AQA, Edexcel, OCR or Eduqas) can award an official GCSE
             grade.
           </p>

@@ -62,7 +62,7 @@ const sections = [
     title: "Writing Skills",
     href: "/resources/english-language/ocr/writing-skills",
     description:
-      "OCR-specific writing guidance covering transactional writing, creative writing, and how to hit the top band.",
+      "OCR-specific writing guidance covering writing for real purposes, creative writing, and how to hit the top band.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
@@ -195,24 +195,24 @@ export default function OCREnglishLanguagePage() {
             id="ao-heading"
             className="text-2xl font-bold text-foreground"
           >
-            Assessment Objectives
+            Key Skills Assessed
           </h2>
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Understanding the assessment objectives (AOs) is essential for
-              knowing what the examiner is looking for. OCR English Language
-              uses the following AOs:
+              Understanding the key skills assessed is essential for
+              knowing what the marker is looking for. OCR English Language
+              tests the following skills:
             </p>
             <div className="space-y-3">
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">AO1 &mdash; Reading</p>
+                <p className="font-semibold text-foreground">Retrieval and inference &mdash; Reading</p>
                 <p className="mt-1 text-sm">
                   Identify and interpret explicit and implicit information and
                   ideas. Select and synthesise evidence from different texts.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">AO2 &mdash; Reading</p>
+                <p className="font-semibold text-foreground">Language analysis &mdash; Reading</p>
                 <p className="mt-1 text-sm">
                   Explain, comment on and analyse how writers use language and
                   structure to achieve effects and influence readers, using
@@ -220,21 +220,21 @@ export default function OCREnglishLanguagePage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">AO3 &mdash; Reading</p>
+                <p className="font-semibold text-foreground">Comparison &mdash; Reading</p>
                 <p className="mt-1 text-sm">
                   Compare writers&rsquo; ideas and perspectives, as well as how
                   these are conveyed, across two or more texts.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">AO4 &mdash; Reading</p>
+                <p className="font-semibold text-foreground">Evaluation &mdash; Reading</p>
                 <p className="mt-1 text-sm">
                   Evaluate texts critically and support this with appropriate
                   textual references.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">AO5 &mdash; Writing</p>
+                <p className="font-semibold text-foreground">Content and organisation &mdash; Writing</p>
                 <p className="mt-1 text-sm">
                   Communicate clearly, effectively and imaginatively, selecting
                   and adapting tone, style and register for different forms,
@@ -244,27 +244,27 @@ export default function OCREnglishLanguagePage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">AO6 &mdash; Writing</p>
+                <p className="font-semibold text-foreground">Technical accuracy &mdash; Writing</p>
                 <p className="mt-1 text-sm">
                   Use a range of vocabulary and sentence structures for clarity,
                   purpose and effect, with accurate spelling and punctuation.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">AO7 &mdash; Spoken Language</p>
+                <p className="font-semibold text-foreground">Presenting &mdash; Spoken Language</p>
                 <p className="mt-1 text-sm">
                   Demonstrate presentation skills in a formal setting.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">AO8 &mdash; Spoken Language</p>
+                <p className="font-semibold text-foreground">Listening and responding &mdash; Spoken Language</p>
                 <p className="mt-1 text-sm">
                   Listen and respond appropriately to spoken language, including
                   to questions and feedback on presentations.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">AO9 &mdash; Spoken Language</p>
+                <p className="font-semibold text-foreground">Standard English &mdash; Spoken Language</p>
                 <p className="mt-1 text-sm">
                   Use spoken Standard English effectively in speeches and
                   presentations.

@@ -281,7 +281,7 @@ export default function TimeManagementView({
             },
             {
               rule: 'A partial answer to every question beats a perfect answer to half',
-              detail: 'Examiners can only give marks for what you write. An unfinished paper guarantees lost marks. A complete paper with some shorter answers still gives you a chance at every mark.',
+              detail: 'Markers can only give marks for what you write. An unfinished paper guarantees lost marks. A complete paper with some shorter answers still gives you a chance at every mark.',
               icon: Target,
             },
             {
@@ -372,8 +372,8 @@ export default function TimeManagementView({
         </div>
 
         <Tip>
-          Examiners do not mark your plan, but they can see it. A visible plan signals
-          to the examiner that your response is structured and deliberate, even if
+          Markers do not mark your plan, but they can see it. A visible plan signals
+          to the marker that your response is structured and deliberate, even if
           you run out of time before finishing.
         </Tip>
       </Section>

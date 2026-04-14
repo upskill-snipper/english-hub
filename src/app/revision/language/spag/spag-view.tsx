@@ -163,7 +163,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
             </p>
             <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
               Spelling, punctuation, and grammar rules are identical across GCSE
-              and IGCSE. The specific mark scheme weighting differs -- see{' '}
+              and IGCSE. The specific marking guide weighting differs -- see{' '}
               <Link
                 href={
                   boardId === 'cambridge-0500'
@@ -195,7 +195,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       <Section title="Spelling Rules and Common Errors" icon={SpellCheck} colour="text-amber-400" defaultOpen>
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Examiners do not expect perfect spelling, but persistent errors in common words
+            Markers do not expect perfect spelling, but persistent errors in common words
             will pull your marks down. Focus on mastering these high-frequency mistakes.
           </p>
 
@@ -289,7 +289,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
 
           <TipBox>
             <strong>Exam strategy:</strong> If you are unsure how to spell a word, use a
-            synonym you can spell instead. Examiners reward ambition but persistent basic
+            synonym you can spell instead. Markers reward ambition but persistent basic
             errors cost marks. Play to your strengths.
           </TipBox>
         </div>
@@ -301,7 +301,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Accurate punctuation is not just about avoiding errors -- it is a tool for
             controlling meaning, pace, and clarity. Using a range of punctuation marks
-            (beyond full stops and commas) is explicitly rewarded in the mark scheme.
+            (beyond full stops and commas) is explicitly rewarded in the marking guide.
           </p>
 
           <Tabs defaultValue="commas">
@@ -363,7 +363,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
                 explanation="'and dark' is not a complete sentence. Both sides of a semicolon must be independent clauses."
               />
               <TipBox>
-                Using even one semicolon correctly in your writing signals to the examiner
+                Using even one semicolon correctly in your writing signals to the marker
                 that you have control over complex punctuation. It is one of the easiest
                 marks to pick up.
               </TipBox>
@@ -448,7 +448,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
               <CorrectIncorrect
                 incorrect="The cat's are playing. Apple's for sale."
                 correct="The cats are playing. Apples for sale."
-                explanation="NEVER use an apostrophe to make a plural. This is called the 'greengrocer's apostrophe' and examiners specifically look for it."
+                explanation="NEVER use an apostrophe to make a plural. This is called the 'greengrocer's apostrophe' and markers specifically look for it."
               />
               <CorrectIncorrect
                 incorrect="The team played it's best game."
@@ -465,7 +465,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Grammar errors undermine even the most creative or insightful writing. The
-            mark scheme rewards &ldquo;controlled&rdquo; writing -- which means your grammar
+            marking guide rewards &ldquo;controlled&rdquo; writing -- which means your grammar
             should be deliberate, not accidental.
           </p>
 
@@ -550,7 +550,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           </div>
 
           <TipBox>
-            <strong>Mark scheme secret:</strong> The jump from Grade 4 to Grade 5 is
+            <strong>Marking guide secret:</strong> The jump from Grade 4 to Grade 5 is
             largely about technical accuracy. If you can eliminate tense errors,
             subject-verb disagreements, and comma splices from your writing, you will see
             an immediate grade boost.
@@ -562,8 +562,8 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       <Section title="Common Mistakes to Avoid" icon={AlertTriangle} colour="text-rose-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            These are the errors that examiners see thousands of times every year. Avoiding
-            them puts you ahead of the majority of candidates.
+            These are the errors that markers see thousands of times every year. Avoiding
+            them puts you ahead of the majority of students.
           </p>
 
           <div className="space-y-3">

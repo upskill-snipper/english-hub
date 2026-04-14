@@ -34,7 +34,7 @@ function getGuides(boardShortName: string): GuideLink[] {
   return [
     {
       title: 'Essay Structure',
-      description: `PEEL paragraphs, thesis statements, introductions, conclusions and model answers aligned to ${boardShortName} band descriptors.`,
+      description: `PEEL paragraphs, thesis statements, introductions, conclusions and model answers aligned to what each ${boardShortName} grade looks like.`,
       href: '/revision/exam-technique/essay-structure',
       icon: PenLine,
       colour: 'text-blue-400',
@@ -80,7 +80,7 @@ const QUICK_TIPS = [
   },
   {
     title: 'Link to the big ideas',
-    body: 'Examiners reward responses that connect to context, authorial intent, and wider themes. Always ask yourself: why did the writer make this choice?',
+    body: 'Markers reward responses that connect to context, authorial intent, and wider themes. Always ask yourself: why did the writer make this choice?',
     icon: Star,
   },
   {
@@ -90,7 +90,7 @@ const QUICK_TIPS = [
   },
   {
     title: 'Use subject terminology',
-    body: 'Words like "metaphor", "sibilance", "iambic pentameter", and "semantic field" show the examiner you understand craft. Use them precisely, not just to drop them in.',
+    body: 'Words like "metaphor", "sibilance", "iambic pentameter", and "semantic field" show the marker you understand craft. Use them precisely, not just to drop them in.',
     icon: Target,
   },
 ]
@@ -129,7 +129,7 @@ export default function ExamTechniqueHubView({
               {shortName} Exam Technique
             </h1>
             <p className="text-body-sm text-muted-foreground">
-              Essay structure, timing and mark scheme mastery for {boardName}
+              Essay structure, timing and marking guide mastery for {boardName}
             </p>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function ExamTechniqueHubView({
           You can know every quote and every context point, but without strong exam technique
           your knowledge stays in your head instead of on the page. These guides are tailored
           specifically to the {shortName} specification — paper structures, question types
-          and band descriptors — so every tip maps to the marks you can actually earn.
+          and what each grade looks like — so every tip maps to the marks you can actually earn.
         </p>
       </section>
 
@@ -227,16 +227,16 @@ export default function ExamTechniqueHubView({
         </div>
       </section>
 
-      {/* ── Assessment objectives reminder ──────────────────────── */}
+      {/* ── What markers look for reminder ──────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <CheckCircle2 className="size-5 text-emerald-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Know Your {shortName} Assessment Objectives
+            Know What Your {shortName} Markers Look For
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          Every mark in GCSE English is tied to an Assessment Objective. Understanding these
+          Every mark in GCSE English is tied to what markers look for. Understanding these
           is the first step to targeted exam technique.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">

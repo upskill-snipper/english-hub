@@ -18,7 +18,7 @@ const data: TextGuideData = {
   author: 'Harper Lee',
   year: 'published 1960',
   category: 'Novel',
-  badge: 'Edexcel IGCSE 4ET1',
+  badge: 'Edexcel IGCSE',
   intro:
     "Harper Lee's Pulitzer-winning novel follows the Finch children as their father Atticus defends a Black man falsely accused of rape in 1930s Alabama. It is a coming-of-age story, a courtroom drama and an indictment of the racism woven into the American South.",
   quickInfo: {

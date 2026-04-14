@@ -241,25 +241,25 @@ const dramaticDevices = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     description: "Show detailed knowledge and understanding of the text",
     guidance:
       "Demonstrate that you know the play thoroughly. Refer to specific moments, quote accurately, and show you understand the plot, characters, and themes. Do not simply retell the story; select relevant details to support your argument.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     description: "Analyse the language, form, and structure used by a writer to create meanings and effects",
     guidance:
       "This is where the highest marks are won. Analyse Priestley's word choices, dramatic devices, and structural decisions. Discuss how the well-made play structure builds tension, how stage directions create meaning, and how dramatic irony shapes the audience's response. Always explain the effect on the audience.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     description: "Demonstrate understanding of the relationships between texts and the contexts in which they were written and received",
     guidance:
       "The 1912/1945 dual time frame is essential. Discuss Edwardian class divisions, the welfare state debate, Priestley's socialism, and the post-war political context. Show how context shapes both the play's meaning and the audience's reception of it. Avoid bolting context on; integrate it into your analysis.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     description: "Communicate a clear, relevant response using appropriate terminology",
     guidance:
       "Write clearly and analytically. Use literary terminology accurately (dramatic irony, stage directions, motif, symbolism, juxtaposition). Structure your response with a clear argument. Avoid feature-spotting without explanation.",
@@ -316,7 +316,7 @@ export default function InspectorCallsStudyGuide() {
             "Key Quotes",
             "Dramatic Devices",
             "Context",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Questions",
           ].map((s) => (
             <a
@@ -424,8 +424,8 @@ export default function InspectorCallsStudyGuide() {
             Dramatic Devices
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Priestley&rsquo;s use of dramatic techniques is essential for AO2 (analysis of form
-            and structure). Examiners reward candidates who discuss <em>how</em> Priestley shapes
+            Priestley&rsquo;s use of dramatic techniques is essential for Analysis of Writer's Methods (analysis of form
+            and structure). Markers reward responses that discuss <em>how</em> Priestley shapes
             meaning, not just <em>what</em> happens.
           </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -450,7 +450,7 @@ export default function InspectorCallsStudyGuide() {
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
             The dual time frame (set in 1912, performed in 1945) is fundamental to the
-            play&rsquo;s meaning. Cambridge examiners expect you to discuss both contexts and
+            play&rsquo;s meaning. Cambridge markers expect you to discuss both contexts and
             explain how the gap between them creates dramatic irony.
           </p>
           <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
@@ -516,7 +516,7 @@ export default function InspectorCallsStudyGuide() {
         <hr className="my-10 border-border" />
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
-        <section id="assessment-objectives" aria-labelledby="ao-heading">
+        <section id="what-markers-look-for" aria-labelledby="ao-heading">
           <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
             Cambridge Assessment Objectives
           </h2>
@@ -651,7 +651,7 @@ export default function InspectorCallsStudyGuide() {
                 <li>
                   <strong className="text-foreground">Passage-based questions:</strong> Work
                   through the extract methodically. Use short, embedded quotations from the
-                  passage. Analyse language, form, and structure (AO2). Then connect outward to
+                  passage. Analyse language, form, and structure (Writer's Methods). Then connect outward to
                   the rest of the play and relevant context.
                 </li>
                 <li>
@@ -664,7 +664,7 @@ export default function InspectorCallsStudyGuide() {
                   <strong className="text-foreground">Always use the author&rsquo;s name:</strong>{" "}
                   Write &ldquo;Priestley presents...&rdquo; or &ldquo;Priestley
                   uses...&rdquo; rather than &ldquo;the play shows...&rdquo;. This demonstrates
-                  awareness of authorial intent and helps you discuss methods (AO2).
+                  awareness of authorial intent and helps you discuss methods (Writer's Methods).
                 </li>
                 <li>
                   <strong className="text-foreground">The 1912/1945 dual context:</strong> This is

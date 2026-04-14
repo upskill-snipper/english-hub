@@ -212,28 +212,28 @@ export default function EdexcelEnglishLiteraturePage() {
       <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
-            Assessment Objectives
+            Marking Skills
           </h2>
           <p className="mt-2 text-muted-foreground">
-            All responses are marked against these four AOs. Knowing how marks
+            All responses are marked against these four skills. Knowing how marks
             are weighted for each question helps you structure your answer.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {[
               {
-                ao: "AO1",
+                ao: "Reading and response",
                 desc: "Read, understand, and respond to texts. Use textual references (including quotations) to support and illustrate interpretations.",
               },
               {
-                ao: "AO2",
+                ao: "Analysis of methods",
                 desc: "Analyse the language, form, and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.",
               },
               {
-                ao: "AO3",
+                ao: "Context",
                 desc: "Show understanding of the relationships between texts and the contexts in which they were written.",
               },
               {
-                ao: "AO4",
+                ao: "Accuracy",
                 desc: "Use a range of vocabulary and sentence structures for clarity, purpose, and effect, with accurate spelling and punctuation. (Only assessed on certain questions.)",
               },
             ].map((obj) => (

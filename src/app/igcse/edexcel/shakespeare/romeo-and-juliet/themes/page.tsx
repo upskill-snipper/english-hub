@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/themes",
   },
-  title: "Romeo and Juliet Themes — Edexcel IGCSE 4ET1",
+  title: "Romeo and Juliet Themes — Edexcel IGCSE IGCSE Literature",
   description:
-    "Detailed themes guide for Romeo and Juliet for Edexcel IGCSE 4ET1: love, fate, conflict, youth vs age and honour, with key quotations and analysis.",
+    "Detailed themes guide for Romeo and Juliet for Edexcel IGCSE IGCSE Literature: love, fate, conflict, youth vs age and honour, with key quotations and analysis.",
 };
 
 const THEMES = [
@@ -99,7 +99,7 @@ export default async function RomeoAndJulietThemesPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Romeo and Juliet &mdash; Themes

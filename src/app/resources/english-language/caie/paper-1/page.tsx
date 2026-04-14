@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/paper-1' },
   title: "Paper 1: Reading | Cambridge IGCSE English Language",
   description:
-    "Complete guide to Cambridge IGCSE English Language Paper 1 (Reading). Covers comprehension question types, summary writing, note-making, and passage analysis with examiner tips.",
+    "Complete guide to Cambridge IGCSE English Language Paper 1 (Reading). Covers comprehension question types, summary writing, note-making, and passage analysis with marker tips.",
   keywords: [
     "IGCSE English Language Paper 1",
     "Cambridge reading comprehension",
@@ -311,10 +311,10 @@ export default function Paper1ReadingPage() {
               <div>
                 <h3 className="font-semibold text-foreground">Write in your own words</h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  This is critical. Cambridge examiners specifically penalise
+                  This is critical. Cambridge markers specifically penalise
                   &ldquo;lifting&rdquo; (copying directly from the passage). You
                   must rephrase the ideas using your own vocabulary and sentence
-                  structures. The mark scheme awards up to 15 marks for content
+                  structures. The marking guide awards up to 15 marks for content
                   (the number of relevant points) and up to 10 marks for quality
                   of writing (use of own words, fluency, accuracy).
                 </p>
@@ -384,7 +384,7 @@ export default function Paper1ReadingPage() {
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5">
-              <h3 className="font-semibold text-primary">What Examiners Want</h3>
+              <h3 className="font-semibold text-primary">What Markers Want</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />

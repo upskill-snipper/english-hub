@@ -101,12 +101,12 @@ export default function GradeBoundariesPage() {
         </div>
 
         {/* Overall grade boundaries */}
-        <Section title="Overall grade boundaries (combined Component 1 + Component 2)" defaultOpen>
+        <Section title="Overall grade boundaries (combined Paper 1 + Paper 2)" defaultOpen>
           <p>
-            The total number of marks across both components is <strong>160</strong>.
-            Component 1 (Shakespeare and Poetry) is worth 40% (64 marks) and
-            Component 2 (Post-1914 Prose/Drama and Unseen Poetry) is worth
-            60% (96 marks). Your raw marks from both components are combined
+            The total number of marks across both papers is <strong>160</strong>.
+            Paper 1 (Shakespeare and Poetry) is worth 40% (64 marks) and
+            Paper 2 (Post-1914 Prose/Drama and Unseen Poetry) is worth
+            60% (96 marks). Your raw marks from both papers are combined
             to produce your overall grade. Below are the approximate boundaries
             from recent exam series:
           </p>
@@ -201,7 +201,7 @@ export default function GradeBoundariesPage() {
         <Section title="What each grade looks like in practice">
           <p>
             Understanding the grade descriptors helps you see exactly what
-            examiners expect at each level. Here is what typical work looks like
+            markers expect at each level. Here is what typical work looks like
             at the key grade boundaries:
           </p>
 
@@ -329,7 +329,7 @@ export default function GradeBoundariesPage() {
                   to reflect the Elizabethan belief that&hellip;&rdquo;
                 </li>
                 <li>
-                  <strong>Comparison:</strong> In Component 1 poetry comparison,
+                  <strong>Comparison:</strong> In Paper 1 poetry comparison,
                   use comparative connectives throughout (&ldquo;Similarly,&rdquo;
                   &ldquo;In contrast,&rdquo; &ldquo;While both poets&hellip;&rdquo;)
                   rather than writing about each poem separately.
@@ -379,12 +379,12 @@ export default function GradeBoundariesPage() {
         {/* Marks per question */}
         <Section title="Marks per question at a glance">
           <p className="mb-4">
-            WJEC Eduqas English Literature is split into two components.
-            Component 1 (Shakespeare and Poetry) is worth 40% and Component 2
+            WJEC Eduqas English Literature is split into two papers.
+            Paper 1 (Shakespeare and Poetry) is worth 40% and Paper 2
             (Post-1914 Prose/Drama and Unseen Poetry) is worth 60%.
           </p>
 
-          <h3 className="font-bold text-foreground mb-2">Component 1 &mdash; Shakespeare and Poetry (40%)</h3>
+          <h3 className="font-bold text-foreground mb-2">Paper 1 &mdash; Shakespeare and Poetry (40%)</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -409,7 +409,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">Poetry anthology comparison (two poems)</td>
                 </tr>
                 <tr className="font-bold">
-                  <td className="py-2 pr-4" colSpan={2}>Component 1 Total</td>
+                  <td className="py-2 pr-4" colSpan={2}>Paper 1 Total</td>
                   <td className="py-2 pr-4">64 marks</td>
                   <td className="py-2 pr-4">40% of qualification</td>
                 </tr>
@@ -417,7 +417,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <h3 className="font-bold text-foreground mt-6 mb-2">Component 2 &mdash; Post-1914 Prose/Drama and Unseen Poetry (60%)</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Paper 2 &mdash; Post-1914 Prose/Drama and Unseen Poetry (60%)</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -447,7 +447,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">Comparison of two unseen poems</td>
                 </tr>
                 <tr className="font-bold">
-                  <td className="py-2 pr-4" colSpan={2}>Component 2 Total</td>
+                  <td className="py-2 pr-4" colSpan={2}>Paper 2 Total</td>
                   <td className="py-2 pr-4">96 marks</td>
                   <td className="py-2 pr-4">60% of qualification</td>
                 </tr>
@@ -456,7 +456,7 @@ export default function GradeBoundariesPage() {
           </div>
 
           <p className="mt-4 text-sm text-muted-foreground">
-            Component 2 carries more weight and includes unseen poetry, which
+            Paper 2 carries more weight and includes unseen poetry, which
             many students find challenging. Practising with unfamiliar poems
             under timed conditions is one of the most effective ways to improve
             your overall Literature grade.

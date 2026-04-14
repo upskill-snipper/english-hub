@@ -435,7 +435,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
                   <p><strong className="text-foreground">Salutation:</strong> &ldquo;Dear Sir/Madam&rdquo; (formal) or &ldquo;Dear Mr/Mrs [Name]&rdquo; (semi-formal). Never &ldquo;Hey&rdquo; or &ldquo;Hi&rdquo; unless writing to a friend.</p>
                   <p><strong className="text-foreground">Opening:</strong> State your purpose clearly in the first sentence: &ldquo;I am writing to express my concern about...&rdquo;</p>
                   <p><strong className="text-foreground">Body:</strong> One point per paragraph. Use formal connectives: Furthermore, Additionally, Moreover, Nevertheless.</p>
-                  <p><strong className="text-foreground">Sign-off:</strong> &ldquo;Yours faithfully&rdquo; (if you used Sir/Madam) or &ldquo;Yours sincerely&rdquo; (if you used their name). This matters -- examiners notice.</p>
+                  <p><strong className="text-foreground">Sign-off:</strong> &ldquo;Yours faithfully&rdquo; (if you used Sir/Madam) or &ldquo;Yours sincerely&rdquo; (if you used their name). This matters -- markers notice.</p>
                 </div>
               </div>
             </TabsContent>
@@ -547,7 +547,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           </div>
 
           <TipBox>
-            <strong>Do not skip planning.</strong> Examiners can tell when a student did not
+            <strong>Do not skip planning.</strong> Markers can tell when a student did not
             plan because the writing meanders, repeats itself, or loses focus halfway
             through. A visible plan on your paper is never penalised.
           </TipBox>
@@ -607,8 +607,8 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Varying your sentence structures is one of the simplest ways to improve your
-            writing. Examiners specifically look for this -- it is mentioned in the mark
-            scheme for every grade boundary.
+            writing. Markers specifically look for this -- it is mentioned in the marking
+            guide for every grade boundary.
           </p>
 
           <div className="space-y-3">

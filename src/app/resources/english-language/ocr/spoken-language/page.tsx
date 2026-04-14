@@ -79,7 +79,7 @@ export default function OCRSpokenLanguagePage() {
           </h2>
           <div className="mt-4 space-y-4">
             <div className="rounded-lg border border-border bg-muted p-5">
-              <h3 className="font-semibold text-foreground">AO7 &mdash; Presenting</h3>
+              <h3 className="font-semibold text-foreground">Presenting</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Demonstrate presentation skills in a formal setting. This
                 means you should speak clearly, maintain appropriate pace and
@@ -91,7 +91,7 @@ export default function OCRSpokenLanguagePage() {
             </div>
 
             <div className="rounded-lg border border-border bg-muted p-5">
-              <h3 className="font-semibold text-foreground">AO8 &mdash; Listening and Responding</h3>
+              <h3 className="font-semibold text-foreground">Listening and Responding</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Listen and respond appropriately to spoken language, including
                 to questions and feedback on presentations. After your
@@ -105,7 +105,7 @@ export default function OCRSpokenLanguagePage() {
             </div>
 
             <div className="rounded-lg border border-border bg-muted p-5">
-              <h3 className="font-semibold text-foreground">AO9 &mdash; Using Standard English</h3>
+              <h3 className="font-semibold text-foreground">Using Standard English</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Use spoken Standard English effectively in speeches and
                 presentations. This means using formal grammar, avoiding
@@ -329,7 +329,7 @@ export default function OCRSpokenLanguagePage() {
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               After your presentation, you will face questions from your
-              teacher and/or classmates. This tests AO8. Here are strategies
+              teacher and/or classmates. This tests your listening and responding skills. Here are strategies
               for success:
             </p>
             <ul className="ml-6 list-disc space-y-2">

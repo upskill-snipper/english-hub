@@ -504,7 +504,7 @@ export default function ChristmasCarolPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Use &quot;Dickens presents/suggests/conveys/uses...&quot; to show awareness of the writer&apos;s craft (AO2).
+                  Use &quot;Dickens presents/suggests/conveys/uses...&quot; to show awareness of the writer&apos;s craft (analysis of methods).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />

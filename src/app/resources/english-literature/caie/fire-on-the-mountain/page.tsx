@@ -475,13 +475,13 @@ export default function FireOnTheMountainStudyGuide() {
 
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>The Four Assessment Objectives (AOs)</CardTitle>
+              <CardTitle>The Four Assessment Objectives</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-lg bg-primary/5 p-3">
                   <p className="text-xs font-semibold text-foreground">
-                    AO1 &mdash; Knowledge &amp; Understanding
+                    Textual Knowledge &mdash; Knowledge &amp; Understanding
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
                     Show detailed knowledge of the text. Use accurate,
@@ -491,7 +491,7 @@ export default function FireOnTheMountainStudyGuide() {
                 </div>
                 <div className="rounded-lg bg-primary/5 p-3">
                   <p className="text-xs font-semibold text-foreground">
-                    AO2 &mdash; Analysis of Language, Form &amp; Structure
+                    Writer's Methods &mdash; Analysis of Language, Form &amp; Structure
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
                     Analyse how Desai uses language (imagery, diction, syntax),
@@ -501,7 +501,7 @@ export default function FireOnTheMountainStudyGuide() {
                 </div>
                 <div className="rounded-lg bg-primary/5 p-3">
                   <p className="text-xs font-semibold text-foreground">
-                    AO3 &mdash; Comparison (if required)
+                    Interpretation &mdash; Comparison (if required)
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
                     Compare characters (Nanda vs Raka, Nanda vs Ila Das),
@@ -511,7 +511,7 @@ export default function FireOnTheMountainStudyGuide() {
                 </div>
                 <div className="rounded-lg bg-primary/5 p-3">
                   <p className="text-xs font-semibold text-foreground">
-                    AO4 &mdash; Context
+                    Personal Response &mdash; Context
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
                     Reference postcolonial India, patriarchal social structures,
@@ -550,15 +550,15 @@ export default function FireOnTheMountainStudyGuide() {
             <CardContent>
               <div className="rounded-lg border border-border bg-primary/5 p-5">
                 <p className="text-xs font-semibold text-foreground">
-                  Model Paragraph (addressing all 4 AOs)
+                  Model Paragraph (addressing all 4 skills)
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  <strong>[AO1]</strong> Desai establishes Nanda Kaul&rsquo;s
+                  <strong>[Textual Knowledge]</strong> Desai establishes Nanda Kaul&rsquo;s
                   isolation in the novel&rsquo;s opening pages through the stark
                   declaration that &ldquo;she wanted nothing. She wanted no
                   one&rdquo;, a line whose blunt repetition and negation convey
                   not peace but a willed erasure of human connection.{" "}
-                  <strong>[AO2]</strong> The short, declarative syntax mirrors
+                  <strong>[Writer's Methods]</strong> The short, declarative syntax mirrors
                   Nanda&rsquo;s desire for a simplified, emptied existence, while
                   the anaphoric repetition of &ldquo;she wanted&rdquo; ironically
                   reveals that her withdrawal is itself a form of intense wanting
@@ -570,7 +570,7 @@ export default function FireOnTheMountainStudyGuide() {
                   another layer of Nanda&rsquo;s carefully constructed detachment,
                   so that the narrative arc itself enacts the impossibility of
                   true isolation.{" "}
-                  <strong>[AO3]</strong> Desai draws a pointed contrast between
+                  <strong>[Interpretation]</strong> Desai draws a pointed contrast between
                   Nanda&rsquo;s performed isolation and Raka&rsquo;s instinctive
                   withdrawal. Where Nanda tells stories about her past to win
                   Raka&rsquo;s attention &mdash; revealing that she still craves
@@ -578,7 +578,7 @@ export default function FireOnTheMountainStudyGuide() {
                   instead to &ldquo;the edge of the ridge&rdquo;, drawn to the
                   gorge and the wild. Raka&rsquo;s isolation needs no
                   justification or narrative; it simply is.{" "}
-                  <strong>[AO4]</strong> Contextually, Nanda&rsquo;s withdrawal
+                  <strong>[Personal Response]</strong> Contextually, Nanda&rsquo;s withdrawal
                   must be read against the limited roles available to women in
                   postcolonial India: having spent a lifetime defined entirely by
                   her function as wife, mother, and hostess in the Vice-Chancellor

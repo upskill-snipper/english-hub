@@ -244,7 +244,7 @@ const examGuidance = {
       "Analyse the effect of each feature — do not simply name techniques ('Shakespeare uses a metaphor'). Explain what it does.",
       "Connect the passage to the rest of the play: how does it develop themes, advance the plot, or reveal character?",
       "Embed short quotations from the passage into your sentences rather than copying out long blocks of text.",
-      "Address all four Assessment Objectives: AO1 (knowledge and understanding), AO2 (analysis of language, form, structure), AO3 (context where relevant), AO4 (personal response and evaluation).",
+      "Address all four assessment skills: Textual Knowledge (knowledge and understanding), Analysis of Writer's Methods (analysis of language, form, structure), Interpretation and Ideas (context where relevant), Personal Response (personal response and evaluation).",
     ],
   },
   essayBased: {
@@ -254,9 +254,9 @@ const examGuidance = {
       "Plan before you write: identify 3–4 key points and select quotations to support each one.",
       "Structure your essay by argument, not by retelling the plot chronologically.",
       "Every paragraph should make a clear point, support it with a quotation, and analyse Shakespeare's methods.",
-      "Use discourse markers ('Furthermore', 'Conversely', 'However') to show the examiner how your argument develops.",
+      "Use discourse markers ('Furthermore', 'Conversely', 'However') to show the marker how your argument develops.",
       "Include contextual references where they genuinely illuminate meaning (Elizabethan attitudes to marriage, folk beliefs about fairies, classical sources).",
-      "Address the question in every paragraph — examiners reward sustained focus.",
+      "Address the question in every paragraph — markers reward sustained focus.",
     ],
   },
 };
@@ -265,12 +265,12 @@ const sampleQuestion = {
   question:
     "How does Shakespeare present the theme of transformation in A Midsummer Night's Dream?",
   modelParagraph:
-    "Shakespeare uses Bottom's literal transformation into an ass to explore the metaphorical transformations that love and desire produce (AO1). When Titania declares 'Thou art as wise as thou art beautiful' while gazing at Bottom's donkey head, the dramatic irony exposes how love distorts perception — the audience sees the absurdity that Titania, enchanted, cannot (AO2: dramatic irony, juxtaposition of 'wise' and 'beautiful' with the visual reality of the ass head). The word 'ass' itself functions as a pun: Bottom is both literally an ass and figuratively a fool, yet his 'Bottom's Dream' speech in Act 4 reveals unexpected depth, echoing St Paul's description of divine mysteries beyond human comprehension. This allusion elevates a comic scene to something philosophically resonant, suggesting that transformation — even absurd transformation — can grant access to truths that rational thought cannot reach (AO4: evaluative personal response). For an Elizabethan audience familiar with Ovid's Metamorphoses — a key source for Shakespeare — Bottom's transformation would recall a rich tradition of mythological shape-shifting in which physical change reveals inner truths about human nature (AO3: literary and classical context).",
+    "Shakespeare uses Bottom's literal transformation into an ass to explore the metaphorical transformations that love and desire produce (Textual Knowledge). When Titania declares 'Thou art as wise as thou art beautiful' while gazing at Bottom's donkey head, the dramatic irony exposes how love distorts perception — the audience sees the absurdity that Titania, enchanted, cannot (Analysis of Writer's Methods: dramatic irony, juxtaposition of 'wise' and 'beautiful' with the visual reality of the ass head). The word 'ass' itself functions as a pun: Bottom is both literally an ass and figuratively a fool, yet his 'Bottom's Dream' speech in Act 4 reveals unexpected depth, echoing St Paul's description of divine mysteries beyond human comprehension. This allusion elevates a comic scene to something philosophically resonant, suggesting that transformation — even absurd transformation — can grant access to truths that rational thought cannot reach (Personal Response: evaluative personal response). For an Elizabethan audience familiar with Ovid's Metamorphoses — a key source for Shakespeare — Bottom's transformation would recall a rich tradition of mythological shape-shifting in which physical change reveals inner truths about human nature (Interpretation and Ideas: literary and classical context).",
   aos: [
-    "AO1 — Knowledge and understanding: identifies the scene and its thematic significance.",
-    "AO2 — Analysis of methods: discusses dramatic irony, wordplay ('ass'), juxtaposition, and biblical allusion.",
-    "AO3 — Context: references Ovid's Metamorphoses and Elizabethan literary traditions.",
-    "AO4 — Personal response: offers an evaluative judgement about the philosophical implications of transformation.",
+    "Textual Knowledge — identifies the scene and its thematic significance.",
+    "Analysis of Writer's Methods — discusses dramatic irony, wordplay ('ass'), juxtaposition, and biblical allusion.",
+    "Interpretation and Ideas — references Ovid's Metamorphoses and Elizabethan literary traditions.",
+    "Personal Response — offers an evaluative judgement about the philosophical implications of transformation.",
   ],
 };
 
@@ -523,7 +523,7 @@ export default function MidsummerNightsDreamStudyGuide() {
             <CardContent className="space-y-5">
               <div>
                 <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-foreground">
-                  Model Paragraph (addressing all 4 AOs)
+                  Model Paragraph (addressing all 4 skills)
                 </p>
                 <div className="rounded-lg bg-primary/5 p-4 text-sm leading-relaxed text-muted-foreground">
                   {sampleQuestion.modelParagraph}

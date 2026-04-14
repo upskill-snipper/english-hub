@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'An Inspector Calls Context — Edexcel IGCSE 4ET1',
+  title: 'An Inspector Calls Context — Edexcel IGCSE IGCSE Literature',
   description:
     'Context for An Inspector Calls: Edwardian 1912 vs 1945 Britain, J. B. Priestley\u2019s socialism, the welfare state, dramatic inheritance.',
   alternates: {
@@ -79,7 +79,7 @@ export default async function InspectorCallsContextPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE IGCSE Literature
             </Badge>
             <Badge variant="secondary">Context</Badge>
           </div>
@@ -88,7 +88,7 @@ export default async function InspectorCallsContextPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Historical, biographical and dramatic context for Priestley’s
-            play — essential for AO4 responses on social, cultural and
+            play — essential for Relating to context responses on social, cultural and
             historical context.
           </p>
         </div>

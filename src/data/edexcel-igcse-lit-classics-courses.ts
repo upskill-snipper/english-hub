@@ -2,7 +2,7 @@
 import type { CourseData, CourseModule, CourseQuiz } from './courses';
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// Edexcel IGCSE Literature — Classic Novel Texts (Pearson 4ET1)
+// Edexcel IGCSE Literature — Classic Novel Texts
 // ═══════════════════════════════════════════════════════════════════════════════
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -456,7 +456,7 @@ const prideAndPrejudiceModules: CourseModule[] = [
     content: `
 <h2>Exam Practice for <em>Pride and Prejudice</em></h2>
 
-<p>This module brings together everything you have learned and applies it to exam-style questions. The Edexcel IGCSE Literature exam (4ET1) tests your ability to write sustained, analytical responses under timed conditions. Success requires not just knowledge of the text but the ability to <strong>construct a coherent argument, integrate evidence, and analyse the writer's methods</strong>.</p>
+<p>This module brings together everything you have learned and applies it to exam-style questions. The Edexcel IGCSE Literature exam tests your ability to write sustained, analytical responses under timed conditions. Success requires not just knowledge of the text but the ability to <strong>construct a coherent argument, integrate evidence, and analyse the writer's methods</strong>.</p>
 
 <h3>Understanding the Question</h3>
 <p>IGCSE Literature questions typically take one of two forms:</p>
@@ -1699,7 +1699,7 @@ const scarletLetterModules: CourseModule[] = [
 const prideAndPrejudiceCourse: CourseData = {
   id: 'igcse-lit-classic-pride-and-prejudice',
   title: 'IGCSE Literature — Pride and Prejudice',
-  subtitle: 'Jane Austen — Pride and Prejudice (Edexcel 4ET1)',
+  subtitle: 'Jane Austen — Pride and Prejudice (Edexcel IGCSE Literature)',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -1708,14 +1708,14 @@ const prideAndPrejudiceCourse: CourseData = {
   level: 'IGCSE',
   color: '#8b5cf6',
   description:
-    'A comprehensive study of Jane Austen\'s Pride and Prejudice for Edexcel IGCSE English Literature (4ET1). Covers context and author background, plot and structure, character analysis, themes and ideas, language and style, and exam practice with model responses — equipping you to write confident, analytical responses on this classic novel.',
+    'A comprehensive study of Jane Austen\'s Pride and Prejudice for Edexcel IGCSE Literature. Covers context and author background, plot and structure, character analysis, themes and ideas, language and style, and exam practice with model responses — equipping you to write confident, analytical responses on this classic novel.',
   moduleList: prideAndPrejudiceModules,
 };
 
 const greatExpectationsCourse: CourseData = {
   id: 'igcse-lit-classic-great-expectations',
   title: 'IGCSE Literature — Great Expectations',
-  subtitle: 'Charles Dickens — Great Expectations (Edexcel 4ET1)',
+  subtitle: 'Charles Dickens — Great Expectations (Edexcel IGCSE Literature)',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -1724,14 +1724,14 @@ const greatExpectationsCourse: CourseData = {
   level: 'IGCSE',
   color: '#7c3aed',
   description:
-    'A comprehensive study of Charles Dickens\'s Great Expectations for Edexcel IGCSE English Literature (4ET1). Covers context and author background, plot and structure, character analysis, themes and ideas, language and style, and exam practice with model responses — equipping you to write confident, analytical responses on this classic novel.',
+    'A comprehensive study of Charles Dickens\'s Great Expectations for Edexcel IGCSE Literature. Covers context and author background, plot and structure, character analysis, themes and ideas, language and style, and exam practice with model responses — equipping you to write confident, analytical responses on this classic novel.',
   moduleList: greatExpectationsModules,
 };
 
 const scarletLetterCourse: CourseData = {
   id: 'igcse-lit-classic-the-scarlet-letter',
   title: 'IGCSE Literature — The Scarlet Letter',
-  subtitle: 'Nathaniel Hawthorne — The Scarlet Letter (Edexcel 4ET1)',
+  subtitle: 'Nathaniel Hawthorne — The Scarlet Letter (Edexcel IGCSE Literature)',
   tier: 'IGCSE',
   board: 'Edexcel',
   specId: '4ET1',
@@ -1740,7 +1740,7 @@ const scarletLetterCourse: CourseData = {
   level: 'IGCSE',
   color: '#6d28d9',
   description:
-    'A comprehensive study of Nathaniel Hawthorne\'s The Scarlet Letter for Edexcel IGCSE English Literature (4ET1). Covers context and author background, plot and structure, character analysis, themes and ideas, language and style, and exam practice with model responses — equipping you to write confident, analytical responses on this classic novel.',
+    'A comprehensive study of Nathaniel Hawthorne\'s The Scarlet Letter for Edexcel IGCSE Literature. Covers context and author background, plot and structure, character analysis, themes and ideas, language and style, and exam practice with model responses — equipping you to write confident, analytical responses on this classic novel.',
   moduleList: scarletLetterModules,
 };
 

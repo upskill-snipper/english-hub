@@ -7,11 +7,11 @@ import type { CourseData, CourseQuiz, CourseModule } from './courses';
 
 const paper1Modules: CourseModule[] = [
 // ──────────────────────────────────────────────
-  // MODULE 1 — Paper 1 Overview & Assessment Objectives
+  // MODULE 1 — Paper 1 Overview & what markers look for
   // ──────────────────────────────────────────────
   {
     id: 'edx-lp1-m1',
-    title: 'Paper 1 Overview & Assessment Objectives',
+    title: 'Paper 1 Overview & what markers look for',
     duration: '45 min',
     content: `
 <h2>Edexcel GCSE English Language — Paper 1 (1EN2/01): Complete Overview</h2>
@@ -35,14 +35,14 @@ const paper1Modules: CourseModule[] = [
     <td>5 questions on one unseen 19th-century extract</td>
     <td>40</td>
     <td>~60 min</td>
-    <td>AO1, AO2, AO4</td>
+    <td>Reading (AO1), Language (AO2), Evaluation (AO4)</td>
   </tr>
   <tr>
     <td><strong>B: Writing</strong></td>
     <td>1 extended transactional task (letter, article, speech, review, etc.)</td>
     <td>40</td>
     <td>~50 min</td>
-    <td>AO5, AO6</td>
+    <td>content and organisation (AO5), technical accuracy (AO6)</td>
   </tr>
 </table>
 
@@ -97,20 +97,20 @@ const paper1Modules: CourseModule[] = [
     <ul>
       <li><em>Example command:</em> "Write an article for a broadsheet newspaper about the dangers of social media."</li>
       <li><em>Strategy:</em> Spend 5 minutes planning. Identify audience, purpose, form, tone. Write in paragraphs with a clear introduction and conclusion. Use techniques appropriate to the form.</li>
-      <li><em>Marking breakdown:</em> 24 marks for AO5 (content, organisation, clarity) + 16 marks for AO6 (spelling, punctuation, grammar, vocabulary range, sentence variety).</li>
+      <li><em>Marking breakdown:</em> 24 marks for content and organisation (AO5) (content, organisation, clarity) + 16 marks for technical accuracy (AO6) (spelling, punctuation, grammar, vocabulary range, sentence variety).</li>
       <li><em>Time budget:</em> 45–50 minutes total (5 min plan + 40–45 min write).</li>
     </ul>
   </li>
 </ol>
 
-<h3>Assessment Objectives Explained</h3>
+<h3>what markers look for Explained</h3>
 
 <ul>
-  <li><strong>AO1 (Reading)</strong> — Identify and interpret explicit information and ideas; identify and interpret implicit meanings. <em>What is the text saying, literally and between the lines?</em></li>
-  <li><strong>AO2 (Reading)</strong> — Explain, comment on and analyse how writers use language and structure to achieve effects. <em>Why did the writer make this choice? What effect does it create?</em></li>
-  <li><strong>AO4 (Reading)</strong> — Evaluate texts critically and support judgements with appropriate textual references. <em>Is the argument persuasive? Do you agree? Why or why not?</em></li>
-  <li><strong>AO5 (Writing)</strong> — Communicate clearly, effectively and imaginatively; organise information using structural and grammatical features. <em>Is your writing well-structured, clear, and suited to the task?</em></li>
-  <li><strong>AO6 (Writing)</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect; spell and punctuate accurately. <em>Is your technical accuracy flawless? Do you vary your sentence types?</em></li>
+  <li><strong>Reading comprehension (AO1)</strong> — Identify and interpret explicit information and ideas; identify and interpret implicit meanings. <em>What is the text saying, literally and between the lines?</em></li>
+  <li><strong>Language and structure analysis (AO2)</strong> — Explain, comment on and analyse how writers use language and structure to achieve effects. <em>Why did the writer make this choice? What effect does it create?</em></li>
+  <li><strong>Critical evaluation (AO4)</strong> — Evaluate texts critically and support judgements with appropriate textual references. <em>Is the argument persuasive? Do you agree? Why or why not?</em></li>
+  <li><strong>Content and organisation (AO5)</strong> — Communicate clearly, effectively and imaginatively; organise information using structural and grammatical features. <em>Is your writing well-structured, clear, and suited to the task?</em></li>
+  <li><strong>Technical accuracy (AO6)</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect; spell and punctuate accurately. <em>Is your technical accuracy flawless? Do you vary your sentence types?</em></li>
 </ul>
 
 <div class="grade-9-technique"><strong>Grade 9 Technique: The Interconnected Response</strong> — Top-band responses do not treat reading and writing as separate skills. When analysing a 19th-century text in Q4–Q5, notice the writer's techniques and use similar techniques in your own Q6 writing. If the source uses anaphora for emphasis, try anaphora in your article. This shows holistic understanding of how language creates meaning.</div>
@@ -188,16 +188,16 @@ const paper1Modules: CourseModule[] = [
         options: ['24 marks', '30 marks', '40 marks', '16 marks'],
         correct: 2,
         explanation:
-          'Q6 is worth 40 marks in total — 24 marks for AO5 (content and organisation) and 16 marks for AO6 (technical accuracy).',
+          'Q6 is worth 40 marks in total — 24 marks for content and organisation (AO5) (content and organisation) and 16 marks for technical accuracy (AO6) (technical accuracy).',
       },
       {
         id: 'edx-lp1-m1-q3',
         question:
-          'Which Assessment Objective is tested by the evaluation question (Q5)?',
+          'Which what markers look for is tested by the evaluation question (Q5)?',
         options: ['AO1', 'AO2', 'AO4', 'AO6'],
         correct: 2,
         explanation:
-          'Q5 tests AO4 — the ability to evaluate texts critically and support your judgement with appropriate textual references.',
+          'Q5 tests critical evaluation (AO4) — the ability to evaluate texts critically and support your judgement with appropriate textual references.',
       },
       {
         id: 'edx-lp1-m1-q4',
@@ -246,7 +246,7 @@ const paper1Modules: CourseModule[] = [
   <li><strong>Copy or closely paraphrase</strong> — <em>"thick with cotton dust"</em> is a perfect single-phrase answer.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For Q1, keep your answer short — a phrase or single sentence is ideal. You do not need to explain or analyse; the examiner simply checks whether you have identified relevant information. One clear phrase is enough for the mark.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> For Q1, keep your answer short — a phrase or single sentence is ideal. You do not need to explain or analyse; markers simply checks whether you have identified relevant information. One clear phrase is enough for the mark.</div>
 
 <h3>Answering Q2 — Give Two Ways (2 marks)</h3>
 
@@ -277,7 +277,7 @@ const paper1Modules: CourseModule[] = [
   <li><strong>Prevail</strong> — to prove more powerful; to be widespread.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do not panic if you encounter unfamiliar Victorian vocabulary. Use the surrounding context to work out meaning. If a word appears in a sentence describing hardship, it is likely negative in tone — and that contextual understanding is often enough to answer the question correctly.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Do not panic if you encounter unfamiliar Victorian vocabulary. Use the surrounding context to work out meaning. If a word appears in a sentence describing hardship, it is likely negative in tone — and that contextual understanding is often enough to answer the question correctly.</div>
 
 <h3>Annotated Model: Putting It Together</h3>
 <p>Below is an example of how a full Q1 + Q2 response might look in the exam:</p>
@@ -330,7 +330,7 @@ const paper1Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Both points address the same idea (fatigue), so the examiner would credit only one of them. Q2 requires two distinct pieces of information to earn both marks.',
+          'Both points address the same idea (fatigue), so markers would credit only one of them. Q2 requires two distinct pieces of information to earn both marks.',
       },
       {
         id: 'edx-lp1-m2-q4',
@@ -357,11 +357,11 @@ const paper1Modules: CourseModule[] = [
     title: 'Reading 19th-Century Non-Fiction: Language Analysis',
     duration: '95 min',
     content: `
-<h2>Paper 1 Question 3 — Language &amp; Structure Analysis (6 marks, AO2)</h2>
+<h2>Paper 1 Question 3 — Language &amp; Structure Analysis (6 marks, language and structure)</h2>
 
-<p>Question 3 on Edexcel Paper 1 (1EN2/01) is worth <strong>6 marks</strong> and tests <strong>AO2</strong>: your ability to explain, comment on and analyse how writers use language and structure to achieve effects, using relevant subject terminology. You should spend around <strong>12–15 minutes</strong> on this question.</p>
+<p>Question 3 on Edexcel Paper 1 (1EN2/01) is worth <strong>6 marks</strong> and tests <strong>Language and structure analysis (AO2)</strong>: your ability to explain, comment on and analyse how writers use language and structure to achieve effects, using relevant subject terminology. You should spend around <strong>12–15 minutes</strong> on this question.</p>
 
-<div class="key-term"><strong>Key Term: AO2 — Language &amp; Structure</strong> — Analyse how writers use language (word choices, imagery, rhetorical devices) and structure (sentence forms, paragraph organisation, shifts in focus) to influence the reader.</div>
+<div class="key-term"><strong>Key Term: Language and Structure Language analysis (AO2) — Language &amp; Structure</strong> — Analyse how writers use language (word choices, imagery, rhetorical devices) and structure (sentence forms, paragraph organisation, shifts in focus) to influence the reader.</div>
 
 <h3>The 19th-Century Non-Fiction Extract</h3>
 
@@ -392,7 +392,7 @@ const paper1Modules: CourseModule[] = [
 
 <p><em>"The writer uses the simile 'pressed upon the skull like a heated iron' to convey the extreme physical discomfort of the journey. The verb 'pressed' suggests an inescapable, oppressive force, while the image of a 'heated iron' connotes both industrial punishment and branding — implying that the landscape is actively hostile and marking the travellers. This sensory detail shifts the reader's perception of the setting from mere inconvenience to genuine threat, reinforcing the structural movement from calm observation to personal unease."</em></p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> At Level 2 (4–6 marks), examiners want to see you move beyond feature-spotting. Always explain the <em>effect</em> of a technique on the reader, not just identify it. A single well-analysed quotation is worth more than three labelled devices with no exploration.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> At Level 2 (4–6 marks), Markers are looking for to see you move beyond feature-spotting. Always explain the <em>effect</em> of a technique on the reader, not just identify it. A single well-analysed quotation is worth more than three labelled devices with no exploration.</div>
 
 <h3>Key Techniques at a Glance</h3>
 
@@ -410,7 +410,7 @@ const paper1Modules: CourseModule[] = [
 <p><em>"The writer uses the simile 'pressed upon the skull like a heated iron' to convey the extreme physical discomfort of the journey. The verb 'pressed' suggests an inescapable, oppressive force, while the image of a 'heated iron' connotes both industrial punishment and branding — implying that the landscape is actively hostile and marking the travellers. This sensory detail shifts the reader's perception of the setting from mere inconvenience to genuine threat, reinforcing the structural movement from calm observation to personal unease."</em></p>
 
 <div class="examiner-commentary">
-<strong>Examiner Comment (Grade 9):</strong> This response demonstrates sophisticated analysis. The student has:
+<strong>Marker Comment (Grade 9):</strong> This response demonstrates sophisticated analysis. The student has:
 <ul>
   <li>Identified the specific technique (simile) with precision</li>
   <li>Embedded the quotation seamlessly</li>
@@ -456,7 +456,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 </div>
 </div>
 
-<h3>Mark Scheme Level Descriptors</h3>
+<h3>marking guide Level Descriptors</h3>
 <ul>
   <li><strong>Level 1 (1–3 marks):</strong> Simple awareness of language or structure; may identify features but with limited or no explanation of effect. Comments tend to be general or descriptive. Example: "The writer uses words to describe the setting."</li>
   <li><strong>Level 2 (4–6 marks):</strong> Clear, explained analysis of language and/or structure. Relevant use of subject terminology. Comments on the effect of the writer's choices on the reader, supported by appropriate textual references. Example: "The simile conveys discomfort by comparing the sun's heat to an iron, suggesting violence."</li>
@@ -503,7 +503,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 
 <h3>Subject Terminology Checklist</h3>
 
-<p>Using correct terminology is essential for AO2 marks. Familiarise yourself with these terms:</p>
+<p>Using correct terminology is essential for language and structure (AO2) marks. Familiarise yourself with these terms:</p>
 
 <ul>
   <li><strong>Imagery:</strong> Mental pictures created through language; covers similes, metaphors, personification</li>
@@ -516,7 +516,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <li><strong>Pathetic fallacy:</strong> Nature reflects human emotions or states (e.g., "angry storm," "cheerful sunshine")</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> At Level 2 (4–6 marks), examiners want to see you move beyond feature-spotting. Always explain the <em>effect</em> of a technique on the reader, not just identify it. A single well-analysed quotation is worth more than three labelled devices with no exploration.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> At Level 2 (4–6 marks), Markers are looking for to see you move beyond feature-spotting. Always explain the <em>effect</em> of a technique on the reader, not just identify it. A single well-analysed quotation is worth more than three labelled devices with no exploration.</div>
 
 <p>Remember: two tight PEEL paragraphs with precise terminology and embedded quotation will comfortably reach Level 2. Quality of analysis, not quantity, is what earns the marks.</p>
 `,
@@ -528,21 +528,21 @@ This is clear evidence of Level 2 performance (5–6 marks).
         options: ['4 marks', '6 marks', '8 marks', '12 marks'],
         correct: 1,
         explanation:
-          'Question 3 is worth 6 marks and assesses AO2 — your ability to analyse language and structure.',
+          'Question 3 is worth 6 marks and assesses language and structure analysis (AO2) — your ability to analyse language and structure.',
       },
       {
         id: 'edx-lp1-m3-q2',
         question:
-          'Which Assessment Objective does Q3 primarily test?',
+          'Which what markers look for does Q3 primarily test?',
         options: [
-          'AO1 — Identify and interpret information',
-          'AO2 — Analyse language and structure',
-          'AO3 — Compare writers\' ideas',
-          'AO4 — Critically evaluate texts',
+          'Reading comprehension (AO1) — Identify and interpret information',
+          'Language and structure analysis (AO2)',
+          'Comparing writers\' ideas (AO3) — Compare writers\' ideas',
+          'Critical evaluation (AO4) — Critically evaluate texts',
         ],
         correct: 1,
         explanation:
-          'Q3 tests AO2: explaining, commenting on and analysing how writers use language and structure to achieve effects and influence readers.',
+          'Q3 tests language and structure analysis (AO2): explaining, commenting on and analysing how writers use language and structure to achieve effects and influence readers.',
       },
       {
         id: 'edx-lp1-m3-q3',
@@ -583,19 +583,19 @@ This is clear evidence of Level 2 performance (5–6 marks).
     title: 'Reading 19th-Century Non-Fiction: Evaluation',
     duration: '55 min',
     content: `
-<h2>Paper 1 Question 4 — Critical Evaluation (15 marks, AO4)</h2>
+<h2>Paper 1 Question 4 — Critical Evaluation (15 marks, critical evaluation)</h2>
 
-<p>Question 4 on Edexcel Paper 1 (1EN2/01) is the highest-tariff reading question at <strong>15 marks</strong>, testing <strong>AO4</strong>: critical evaluation. You will be given a statement from "a student" about the 19th-century extract and asked <strong>"How far do you agree?"</strong>. You should spend approximately <strong>25 minutes</strong> on this question.</p>
+<p>Question 4 on Edexcel Paper 1 (1EN2/01) is the highest-tariff reading question at <strong>15 marks</strong>, testing <strong>Critical evaluation (AO4)</strong>: critical evaluation. You will be given a statement from "a student" about the 19th-century extract and asked <strong>"How far do you agree?"</strong>. You should spend approximately <strong>25 minutes</strong> on this question.</p>
 
-<div class="key-term"><strong>Key Term: Evaluation (AO4)</strong> — Making a critical judgement about a text, supported by analysis of the writer's methods. Evaluation means explaining <em>how effectively</em> the writer achieves something, not simply describing what they do.</div>
+<div class="key-term"><strong>Key Term: Critical Critical evaluation (AO4)</strong> — Making a critical judgement about a text, supported by analysis of the writer's methods. Evaluation means explaining <em>how effectively</em> the writer achieves something, not simply describing what they do.</div>
 
 <h3>Evaluation vs Analysis — The Key Distinction</h3>
 
 <p>Many students confuse evaluation with analysis. Here is the difference:</p>
 
 <ul>
-  <li><strong>Analysis (AO2):</strong> "The writer uses a metaphor to describe the heat." — This identifies and explains a technique.</li>
-  <li><strong>Evaluation (AO4):</strong> "The writer's use of metaphor is particularly effective in conveying the heat because it forces the reader to feel the physical weight of the climate, making the statement convincing." — This <em>judges how successfully</em> the technique works.</li>
+  <li><strong>Language analysis (AO2):</strong> "The writer uses a metaphor to describe the heat." — This identifies and explains a technique.</li>
+  <li><strong>Critical evaluation (AO4):</strong> "The writer's use of metaphor is particularly effective in conveying the heat because it forces the reader to feel the physical weight of the climate, making the statement convincing." — This <em>judges how successfully</em> the technique works.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Describing what happens in the text or listing techniques without ever saying whether they are effective. If your response could answer a Q3 language analysis question just as well, you are not evaluating. Every paragraph must include a judgement word: <em>effectively, convincingly, successfully, powerfully, less successfully</em>.</div>
@@ -611,7 +611,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <li><strong>Sustain a critical perspective</strong> — Maintain your evaluative voice throughout; do not slip into pure summary or description.</li>
 </ol>
 
-<h3>5-Level Mark Scheme Breakdown</h3>
+<h3>5-Level marking guide Breakdown</h3>
 <ul>
   <li><strong>Level 1 (1–3 marks):</strong> Simple, limited comment with little reference to the text. No clear evaluation.</li>
   <li><strong>Level 2 (4–6 marks):</strong> Some attempts to evaluate with general references to the text, but comments tend to be assertion rather than supported judgement.</li>
@@ -624,7 +624,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 
 <p><em>"I largely agree with the student's claim that the writer makes the journey sound 'truly dangerous and frightening,' though I would argue the writer achieves something more nuanced — a sense of creeping dread rather than outright terror. The personification of the landscape as 'pitiless' is highly effective in establishing danger because it suggests the environment possesses a deliberate, almost malicious intent; this is far more unsettling than a simple description of harsh terrain. Furthermore, the structural shift from objective observation — 'three days upon the river' — to the intimate confession 'I confess I felt, for the first time, a creeping apprehension' convincingly traces the narrator's psychological unravelling. The word 'creeping' is particularly well-chosen: it implies the fear is gradual and insidious rather than sudden, which makes it feel more realistic and therefore more frightening. However, the writer's use of litotes — 'It was not fear, precisely' — partially undercuts the student's claim, as it introduces intellectual restraint that tempers the emotional impact. The danger feels controlled and reflected upon rather than raw, suggesting the writer aims to convey a more complex emotional response than simple fright."</em></p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The best responses are not simply "I agree" from start to finish. Examiners reward nuance — partially agreeing, qualifying the statement, or identifying where the writer is less successful shows genuine critical engagement and pushes you into Level 4 and above.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The best responses are not simply "I agree" from start to finish. Markers reward nuance — partially agreeing, qualifying the statement, or identifying where the writer is less successful shows genuine critical engagement and pushes you into Level 4 and above.</div>
 
 <h3>Timing and Structure</h3>
 
@@ -645,7 +645,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
         options: ['6 marks', '10 marks', '12 marks', '15 marks'],
         correct: 3,
         explanation:
-          'Question 4 is worth 15 marks — the highest-tariff reading question on Paper 1 — and tests AO4: critical evaluation.',
+          'Question 4 is worth 15 marks — the highest-tariff reading question on Paper 1 — and tests critical evaluation (AO4): critical evaluation.',
       },
       {
         id: 'edx-lp1-m4-q2',
@@ -659,7 +659,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
         ],
         correct: 1,
         explanation:
-          'Analysis (AO2) identifies and explains techniques. Evaluation (AO4) goes further by making a critical judgement about how effectively those techniques achieve the writer\'s purpose.',
+          'Language analysis (AO2) identifies and explains techniques. Critical evaluation (AO4) goes further by making a critical judgement about how effectively those techniques achieve the writer\'s purpose.',
       },
       {
         id: 'edx-lp1-m4-q3',
@@ -727,7 +727,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <li><strong>Pamphlets</strong> — Short, persuasive, urgent tone, calls to action. Linked to social reform campaigns.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> You do not need to name the text type, but recognising the form helps you anticipate conventions — e.g. a speech uses repetition <em>on purpose</em>, not as a flaw.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> You do not need to name the text type, but recognising the form helps you anticipate conventions — e.g. a speech uses repetition <em>on purpose</em>, not as a flaw.</div>
 
 <h3>Historical Context</h3>
 
@@ -828,9 +828,9 @@ This is clear evidence of Level 2 performance (5–6 marks).
     content: `
 <h2>Transactional Writing — Planning &amp; Structure</h2>
 
-<p>Section B is the <strong>transactional writing</strong> task: <strong>40 marks</strong> (24 AO5 content/organisation + 16 AO6 technical accuracy). You choose <em>one of two tasks</em>, each specifying a form, audience, and purpose.</p>
+<p>Section B is the <strong>transactional writing</strong> task: <strong>40 marks</strong> (24 marks for content and organisation (AO5) + 16 marks for technical accuracy (AO6)). You choose <em>one of two tasks</em>, each specifying a form, audience, and purpose.</p>
 
-<div class="key-term"><strong>Key Term: AO5 — Content &amp; Organisation</strong> — Rewards effective, engaging communication with clearly organised ideas. Worth 24 of the 40 marks.</div>
+<div class="key-term"><strong>Key Term: Content and Organisation (AO5) — Content &amp; Organisation</strong> — Rewards effective, engaging communication with clearly organised ideas. Worth 24 of the 40 marks.</div>
 
 <h3>The Five Transactional Forms</h3>
 
@@ -842,7 +842,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <li><strong>Guide / Leaflet</strong> — Subheadings, bullet points, direct address ("you"), helpful tone.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Read both tasks before choosing. Pick the one where you can most easily generate ideas and sustain a clear structure — not the one that merely sounds more interesting.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Read both tasks before choosing. Pick the one where you can most easily generate ideas and sustain a clear structure — not the one that merely sounds more interesting.</div>
 
 <h3>The 5-Minute Plan</h3>
 
@@ -867,7 +867,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 
 <div class="text-extract"><strong>Sample Plan — "Write a speech arguing a disused car park should become a community garden."</strong><br><br><em>Form:</em> Speech | <em>Audience:</em> Council | <em>Purpose:</em> Argue<br>1. Hook — "When did this car park last serve anyone but the pigeons?"<br>2. Problem — litter, antisocial behaviour, wasted space<br>3. Solution — green space, food growing, community events<br>4. Benefits — mental health, cohesion, property values<br>5. Counter — cost? Grants, volunteers, long-term savings<br>6. Closing — call to action + circular return<div class="source">Exemplar 5-minute plan</div></div>
 
-<h3>AO5 Mark Scheme Levels</h3>
+<h3>content and organisation (AO5) marking guide Levels</h3>
 
 <ul>
   <li><strong>Level 1 (1–5)</strong> — Simple, limited. Ideas listed, minimal paragraphing.</li>
@@ -884,7 +884,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 <h4>Task: "Write an article for a broadsheet newspaper arguing that fast fashion has a negative impact on young people."</h4>
 
 <div class="grade-comparison">
-<h4>Grade 5 Response (11–15 marks for AO5)</h4>
+<h4>Grade 5 Response (11–15 marks for content and organisation (AO5))</h4>
 
 <div class="sample-response">
 <p><strong>Fast Fashion and Young People</strong></p>
@@ -906,7 +906,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 <strong>Verdict:</strong> This hits Level 3 (11–15 marks) because it has clear structure and some appropriate register, but it lacks persuasive depth and reader engagement.
 </div>
 
-<h4>Grade 9 Response (21–24 marks for AO5)</h4>
+<h4>Grade 9 Response (21–24 marks for content and organisation (AO5))</h4>
 
 <div class="sample-response">
 <p><strong>The Fast Fashion Trap: Why Young People Are Paying the Real Price</strong></p>
@@ -963,7 +963,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <tr><td><strong>Guide/Leaflet</strong></td><td>Subheadings, bullet points, direct address ("you"), short sentences, helpful tone</td><td>"Introduction" section with clear purpose statement</td><td>Anticipates reader questions; provides concrete steps; uses formatting strategically</td></tr>
 </table>
 
-<h3>AO5 Mark Scheme Detailed Breakdown</h3>
+<h3>content and organisation (AO5) marking guide Detailed Breakdown</h3>
 
 <div class="grade-boundary">
 <h4>Level 5: 21–24 marks — "Sophisticated &amp; Inventive"</h4>
@@ -1028,16 +1028,16 @@ This is clear evidence of Level 2 performance (5–6 marks).
       {
         id: 'edx-lp1-m6-q1',
         question:
-          'How are the 40 marks for Section B divided between the two assessment objectives?',
+          'How are the 40 marks for Section B divided between the two what markers look for?',
         options: [
-          '20 marks AO5 + 20 marks AO6',
-          '24 marks AO5 + 16 marks AO6',
-          '30 marks AO5 + 10 marks AO6',
-          '16 marks AO5 + 24 marks AO6',
+          '20 marks content (AO5) + 20 marks technical accuracy (AO6)',
+          '24 marks content (AO5) + 16 marks technical accuracy (AO6)',
+          '30 marks content (AO5) + 10 marks technical accuracy (AO6)',
+          '16 marks content (AO5) + 24 marks technical accuracy (AO6)',
         ],
         correct: 1,
         explanation:
-          'Section B awards 24 marks for AO5 (content and organisation) and 16 marks for AO6 (technical accuracy), totalling 40 marks.',
+          'Section B awards 24 marks for content and organisation (AO5) (content and organisation) and 16 marks for technical accuracy (AO6) (technical accuracy), totalling 40 marks.',
       },
       {
         id: 'edx-lp1-m6-q2',
@@ -1047,7 +1047,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
           'The five transactional writing forms',
           'The order of discourse markers in an essay',
           'Reasons to start a new paragraph: Time, Idea, Person, Topic, Opinion, Place',
-          'The five levels of the AO5 mark scheme',
+          'The five levels of the content and organisation (AO5) marking guide',
         ],
         correct: 2,
         explanation:
@@ -1070,7 +1070,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
       {
         id: 'edx-lp1-m6-q4',
         question:
-          'At which AO5 level does writing become "compelling" and "convincing" with "well-crafted" paragraphs?',
+          'At which content and organisation (AO5) level does writing become "compelling" and "convincing" with "well-crafted" paragraphs?',
         options: [
           'Level 2 (6–10 marks)',
           'Level 3 (11–15 marks)',
@@ -1099,7 +1099,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 
 <p>Different audiences require different registers, vocabulary, and tone. Mismatching your audience loses marks across AO5 (clarity and organisation) and AO6 (vocabulary range).</p>
 
-<h4>Formal Audiences (Examiners Reward These)</h4>
+<h4>Formal Audiences (Markers Reward These)</h4>
 <ul>
   <li><strong>Headteacher / Principal</strong> — Standard English, measured tone, no slang. Use formal conventions: "Dear Sir/Madam", respectful language, clear problem-solution structure.</li>
   <li><strong>Local Council / Authority</strong> — Evidence-based, logical argumentation. Cite statistics. Structure: opening statement of intent → evidence → call to action.</li>
@@ -1115,7 +1115,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <li><strong>Friends / Social Groups</strong> — Less common in exam tasks, but if set, maintain clarity and purpose. Do not confuse informal with sloppy.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Register</strong> — The level of formality in your writing, determined by audience and purpose. Shifting register mid-piece (e.g., starting formal, then using slang) is one of the most common reasons students drop marks on AO5. Examiners can feel when the writer loses control of their voice.</div>
+<div class="key-term"><strong>Key Term: Register</strong> — The level of formality in your writing, determined by audience and purpose. Shifting register mid-piece (e.g., starting formal, then using slang) is one of the most common reasons students drop marks on content and organisation (AO5). markers can tell when the writer loses control of their voice.</div>
 
 <h3>2. Purpose: The Writer's Intention</h3>
 
@@ -1147,7 +1147,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 
 <h3>3. Form: The Genre You're Writing</h3>
 
-<p>Form means the type of text you're writing. Each form has conventions — ways that readers expect the text to be structured and styled. Violating these conventions loses marks on AO5.</p>
+<p>Form means the type of text you're writing. Each form has conventions — ways that readers expect the text to be structured and styled. Violating these conventions loses marks on content and organisation (AO5).</p>
 
 <h4>Article (for Newspaper or Magazine)</h4>
 <ul>
@@ -1157,7 +1157,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <li><strong>Grade 9 marker:</strong> The article reads as though it could be published. It has a distinctive voice and a clear argument.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do NOT write "Written by [Your Name]" in an exam article unless explicitly asked. Do write a compelling headline — examiners notice.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Do NOT write "Written by [Your Name]" in an exam article unless explicitly asked. Do write a compelling headline — markers notice.</div>
 
 <h4>Letter (Formal or Semi-Formal)</h4>
 <ul>
@@ -1204,7 +1204,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 
 <div class="common-mistake"><strong>Generic, Purposeless Writing:</strong> Writing an article that could be about anything. No hook, no clear argument, no reason to read it. Grade 9 writing has a distinctive voice and clear intent.</div>
 
-<div class="common-mistake"><strong>Ignoring Form Conventions:</strong> Writing a "letter" that looks like an essay, or a "speech" that reads like a magazine article. Examiners expect you to know the conventions of each form.</div>
+<div class="common-mistake"><strong>Ignoring Form Conventions:</strong> Writing a "letter" that looks like an essay, or a "speech" that reads like a magazine article. Markers are looking for you to know the conventions of each form.</div>
 
 <div class="common-mistake"><strong>Addressing the Wrong Audience:</strong> Writing to teenagers when the audience is a headteacher. Re-read the task carefully and keep your audience in mind with every sentence.</div>
 
@@ -1287,7 +1287,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
     duration: '55 min',
     content: `<h2>Persuasive Techniques — Building a Grade 8–9 Response</h2>
 
-<p>You now understand audience, purpose, and form. But how do you actually persuade? Audience, purpose, and form get you to Level 3. To reach <strong>Level 4–5</strong> on AO5, you need persuasive techniques deployed with <em>precision</em>, not scattered randomly. You must also understand why each technique works and integrate them into a logical, compelling argument.</p>
+<p>You now understand audience, purpose, and form. But how do you actually persuade? Audience, purpose, and form get you to Level 3. To reach <strong>Level 4–5</strong> on content and organisation (AO5), you need persuasive techniques deployed with <em>precision</em>, not scattered randomly. You must also understand why each technique works and integrate them into a logical, compelling argument.</p>
 
 <h3>Understanding Persuasion: Ethos, Pathos, Logos</h3>
 
@@ -1354,7 +1354,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   </tr>
 </table>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Top-band responses <em>integrate</em> AFOREST techniques into logical chains, not checklists. You do not need to use all seven techniques in every piece. Use the ones that serve your argument. A rhetorical question followed by a statistic, then an emotive phrase, creates a much stronger effect than seven isolated techniques scattered through the text.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Top-band responses <em>integrate</em> AFOREST techniques into logical chains, not checklists. You do not need to use all seven techniques in every piece. Use the ones that serve your argument. A rhetorical question followed by a statistic, then an emotive phrase, creates a much stronger effect than seven isolated techniques scattered through the text.</div>
 
 <h3>Advanced Persuasive Techniques: Beyond AFOREST</h3>
 
@@ -1491,11 +1491,11 @@ This is clear evidence of Level 2 performance (5–6 marks).
           'It makes your piece longer, which earns more marks',
           'It shows you have considered multiple perspectives before reaching a conclusion',
           'It allows you to use more quotations',
-          'It is a requirement of the mark scheme at every level',
+          'It is a requirement of the marking guide at every level',
         ],
         correct: 1,
         explanation:
-          'Counter-arguments demonstrate maturity and intellectual control. They show the examiner that you have weighed opposing views and can dismantle them — a hallmark of Level 4–5 writing.',
+          'Counter-arguments demonstrate maturity and intellectual control. They show markers that you have weighed opposing views and can dismantle them — a hallmark of Level 4–5 writing.',
       },
       {
         id: 'edx-lp1-m8-q3',
@@ -1528,7 +1528,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
       {
         id: 'edx-lp1-m8-q5',
         question:
-          'According to the AO5 descriptors, what distinguishes Level 5 (21–24 marks) from Level 4?',
+          'According to the content and organisation (AO5) descriptors, what distinguishes Level 5 (21–24 marks) from Level 4?',
         options: [
           'Level 5 requires at least five paragraphs',
           'Level 5 writing is compelling with extensive, ambitious vocabulary and sustained crafting',
@@ -1550,13 +1550,13 @@ This is clear evidence of Level 2 performance (5–6 marks).
     title: 'Spelling, Punctuation & Grammar for Paper 1',
     duration: '45 min',
     content: `
-<h2>AO6: Spelling, Punctuation &amp; Grammar — The Technical Mark Multiplier</h2>
+<h2>Technical Accuracy (AO6): Spelling, Punctuation &amp; Grammar — The Technical Mark Multiplier</h2>
 
-<p>On Edexcel Paper 1 (1EN2/01), <strong>AO6 is worth 16 marks</strong> on writing — that is <strong>40% of the writing mark</strong>. This is not a minor bonus; it is the difference between a Grade 5 and a Grade 7. Examiners reward technical accuracy at every grade boundary, and sloppy work loses marks even if the ideas are strong.</p>
+<p>On Edexcel Paper 1 (1EN2/01), <strong>Technical accuracy (AO6) is worth 16 marks</strong> on writing — that is <strong>40% of the writing mark</strong>. This is not a minor bonus; it is the difference between a Grade 5 and a Grade 7. Markers reward technical accuracy at every grade boundary, and sloppy work loses marks even if the ideas are strong.</p>
 
-<div class="key-term"><strong>Key Term: AO6</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</div>
+<div class="key-term"><strong>Key Term: Technical Accuracy (AO6)</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</div>
 
-<h3>The AO6 Mark Pyramid</h3>
+<h3>The Technical Accuracy (AO6) Mark Pyramid</h3>
 <ul>
   <li><strong>Grades 1–3:</strong> Basic spelling and punctuation, frequent errors that obscure meaning.</li>
   <li><strong>Grades 4–5:</strong> Generally accurate spelling and punctuation; variety in sentence structure is attempted but not always controlled.</li>
@@ -1578,7 +1578,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <li><strong>accommodate</strong> — double 'c', double 'm' (a friend + a motel = accommodation)</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If unsure how to spell a word, replace it with a synonym you can spell confidently. A simpler word spelled correctly is always worth more than an ambitious word spelled wrong. Never guess at complex words in an exam.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If unsure how to spell a word, replace it with a synonym you can spell confidently. A simpler word spelled correctly is always worth more than an ambitious word spelled wrong. Never guess at complex words in an exam.</div>
 
 <h3>Punctuation for Maximum Effect</h3>
 
@@ -1591,7 +1591,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <li><em>She had practised for months; the performance was effortless.</em></li>
   <li><em>Climate change is real; the evidence is overwhelming.</em></li>
 </ul>
-<p><strong>Why examiners love it:</strong> Demonstrates mature control and shows you can handle grammatically complex ideas without fragmenting them.</p>
+<p><strong>Why markers love it:</strong> Demonstrates mature control and shows you can handle grammatically complex ideas without fragmenting them.</p>
 
 <h4>Colons: The Dramatic Reveal</h4>
 <p><strong>Purpose:</strong> Introduce a list, explanation, or dramatic statement that expands on what came before.</p>
@@ -1620,7 +1620,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 
 <h3>Varied Sentence Openers: Breaking the Subject-Verb Pattern</h3>
 
-<p><strong>Common mistake:</strong> Every sentence begins with the subject. This creates a monotonous rhythm that bores examiners. Grade 9 responses vary their starters.</p>
+<p><strong>Common mistake:</strong> Every sentence begins with the subject. This creates a monotonous rhythm that bores markers. Grade 9 responses vary their starters.</p>
 
 <h4>Adverbial Openers</h4>
 <ul>
@@ -1706,7 +1706,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
 <p><em>Example:</em></p>
 <p><em>"The government promised reform. For decades, nothing changed. Communities were forgotten. Schools crumbled. Services disappeared. Yet politicians claimed success. Change is possible only when accountability exists."</em></p>
 
-<h3>Common AO6 Mistakes to Avoid</h3>
+<h3>Common Technical Accuracy (AO6) Mistakes to Avoid</h3>
 
 <div class="common-mistake"><strong>Comma Splicing:</strong> Joining two independent clauses with only a comma. <em>"He opened the door, the room was empty."</em> Fix: Use a full stop, semicolon, or conjunction. <em>"He opened the door. The room was empty."</em> or <em>"He opened the door; the room was empty."</em> or <em>"He opened the door, and the room was empty."</em></div>
 
@@ -1744,7 +1744,7 @@ This is clear evidence of Level 2 performance (5–6 marks).
   <li>Paragraph rhythm: builds argument logically</li>
 </ul>
 
-<h3>Practice: Edit for AO6</h3>
+<h3>Practice: Edit for Technical Accuracy (AO6)</h3>
 
 <p><strong>Original passage (containing 5 errors):</strong></p>
 <p><em>"The internet has changed everything. It allows people to communicate instantly. People can access information from anywhere. Its easy to share ideas. However, there are risks; some people use it for crime. The impact is huge, it affects everyone."</em></p>
@@ -1765,11 +1765,11 @@ This is clear evidence of Level 2 performance (5–6 marks).
       {
         id: 'edx-lp1-m9-q1',
         question:
-          'How many marks is AO6 worth on the Paper 1 writing section?',
+          'How many marks is technical accuracy (AO6) worth on the Paper 1 writing section?',
         options: ['8 marks', '12 marks', '16 marks', '24 marks'],
         correct: 2,
         explanation:
-          'AO6 is worth 16 marks on Paper 1 writing, which accounts for 40% of the total writing mark. Technical accuracy is heavily rewarded.',
+          'Technical accuracy (AO6) is worth 16 marks on Paper 1 writing, which accounts for 40% of the total writing mark. Technical accuracy is heavily rewarded.',
       },
       {
         id: 'edx-lp1-m9-q2',
@@ -2114,11 +2114,11 @@ This is clear evidence of Level 2 performance (5–6 marks).
 <ul>
   <li><strong>Arrive early.</strong> Use the extra time to calm yourself, read through the entire paper, and allocate your time.</li>
   <li><strong>Read the entire paper before starting.</strong> You might notice that Q5 is asking about the writer's purpose — this informs your Q4 answer.</li>
-  <li><strong>Underline command words:</strong> "Analyse", "Evaluate", "To what extent", "Persuade". These tell you exactly what the examiner wants.</li>
+  <li><strong>Underline command words:</strong> "Analyse", "Evaluate", "To what extent", "Persuade". These tell you exactly what markers are looking for.</li>
   <li><strong>If you blank on Q4, move on to Q5.</strong> You can come back if time allows. Leaving a 15-mark question blank is worse than leaving a partial answer and securing marks on Q5.</li>
   <li><strong>If you run out of time on reading, write Q6 anyway.</strong> A complete 40-mark writing response is always worth more than perfect reading with no writing.</li>
-  <li><strong>Use a pen.</strong> Do not use pencil for the main responses (though underlining in pencil is fine). Examiners need to see clear ink.</li>
-  <li><strong>Number your answers clearly.</strong> Q1, Q2, Q3, etc. Examiners will not hunt for your responses.</li>
+  <li><strong>Use a pen.</strong> Do not use pencil for the main responses (though underlining in pencil is fine). markers need to see clear ink.</li>
+  <li><strong>Number your answers clearly.</strong> Q1, Q2, Q3, etc. markers will not hunt for your responses.</li>
   <li><strong>Do not leave the exam early.</strong> Use every minute to proofread and refine.</li>
 </ul>
 
@@ -2166,12 +2166,12 @@ This is clear evidence of Level 2 performance (5–6 marks).
         options: [
           'Write as fast as possible without planning',
           'Skip the writing section entirely and revisit reading answers',
-          'Write a brief plan so the examiner can see your intended structure',
+          'Write a brief plan so markers can see your intended structure',
           'Copy out the question prompt to fill space',
         ],
         correct: 2,
         explanation:
-          'A brief plan shows the examiner your structural intentions and can earn credit even if you do not finish. Then prioritise your opening and ending paragraphs for maximum impact.',
+          'A brief plan shows markers your structural intentions and can earn credit even if you do not finish. Then prioritise your opening and ending paragraphs for maximum impact.',
       },
       {
         id: 'edx-lp1-m10-q4',
@@ -2192,16 +2192,16 @@ This is clear evidence of Level 2 performance (5–6 marks).
 
 const paper2Modules: CourseModule[] = [
 // ──────────────────────────────────────────────
-  // MODULE 1 — Paper 2 Overview & Assessment Objectives
+  // MODULE 1 — Paper 2 Overview & what markers look for
   // ──────────────────────────────────────────────
   {
     id: 'edx-lp2-m1',
-    title: 'Paper 2 Overview & Assessment Objectives',
+    title: 'Paper 2 Overview & what markers look for',
     duration: '45 min',
     content: `
 <h2>Edexcel Paper 2: Fiction, Literary Non-Fiction &amp; Imaginative Writing (1EN2/02)</h2>
 
-<p>Paper 2 is one of two externally examined components in the Edexcel GCSE English Language specification. It accounts for <strong>50% of your total GCSE grade</strong> and is sat under timed conditions. Understanding the paper's structure inside-out is the first step to a confident performance on exam day.</p>
+<p>Paper 2 is one of two externally examined components in the Edexcel GCSE English Language exam board guide. It accounts for <strong>50% of your total GCSE grade</strong> and is sat under timed conditions. Understanding the paper's structure inside-out is the first step to a confident performance on exam day.</p>
 
 <div class="key-term"><strong>Key Term: 1EN2/02</strong> — The official Pearson Edexcel component code for English Language Paper 2. The paper focuses on <em>fiction</em> and <em>literary non-fiction</em> reading, plus <em>imaginative writing</em>. It is worth 80 marks and lasts 1 hour 55 minutes.</div>
 
@@ -2228,19 +2228,19 @@ const paper2Modules: CourseModule[] = [
 <div class="key-term"><strong>Key Term: Literary Non-Fiction</strong> — Texts that are factual in origin but employ literary techniques such as imagery, rhetoric, and narrative voice. Examples include travel writing, autobiography, essays, and letters.</div>
 
 <h3>Section B: Imaginative Writing (40 marks)</h3>
-<p>You choose <strong>one</strong> writing task from a choice of two. Tasks may provide a visual stimulus (image) or a written prompt. You are assessed on <strong>content and organisation</strong> (AO5 — 24 marks) and <strong>technical accuracy</strong> (AO6 — 16 marks).</p>
+<p>You choose <strong>one</strong> writing task from a choice of two. Tasks may provide a visual stimulus (image) or a written prompt. You are assessed on <strong>content and organisation</strong> (content and organisation, AO5 — 24 marks) and <strong>technical accuracy</strong> (technical accuracy, AO6 — 16 marks).</p>
 
-<h3>Assessment Objectives Tested</h3>
+<h3>what markers look for Tested</h3>
 <ul>
-  <li><strong>AO1</strong> — Identify and interpret explicit and implicit information; select and synthesise evidence.</li>
-  <li><strong>AO2</strong> — Explain, comment on and analyse how writers use language and structure for effect.</li>
-  <li><strong>AO3</strong> — Compare writers' ideas and perspectives across texts.</li>
-  <li><strong>AO4</strong> — Evaluate texts critically, supporting with textual references.</li>
-  <li><strong>AO5</strong> — Communicate clearly, effectively and imaginatively; organise information using structural and grammatical features.</li>
-  <li><strong>AO6</strong> — Use a range of vocabulary and sentence structures for clarity and effect; apply accurate spelling, punctuation and grammar.</li>
+  <li><strong>Reading comprehension (AO1)</strong> — Identify and interpret explicit and implicit information; select and synthesise evidence.</li>
+  <li><strong>Language and structure analysis (AO2)</strong> — Explain, comment on and analyse how writers use language and structure for effect.</li>
+  <li><strong>Comparing writers' ideas (AO3)</strong> — Compare writers' ideas and perspectives across texts.</li>
+  <li><strong>Critical evaluation (AO4)</strong> — Evaluate texts critically, supporting with textual references.</li>
+  <li><strong>Content and organisation (AO5)</strong> — Communicate clearly, effectively and imaginatively; organise information using structural and grammatical features.</li>
+  <li><strong>Technical accuracy (AO6)</strong> — Use a range of vocabulary and sentence structures for clarity and effect; apply accurate spelling, punctuation and grammar.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The key difference between Paper 1 and Paper 2 is the text types and writing task. Paper 1 focuses on non-fiction and transactional writing; Paper 2 focuses on fiction, literary non-fiction, and <em>imaginative</em> writing. Do not confuse the two — creative description and narrative are Paper 2 skills.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The key difference between Paper 1 and Paper 2 is the text types and writing task. Paper 1 focuses on non-fiction and transactional writing; Paper 2 focuses on fiction, literary non-fiction, and <em>imaginative</em> writing. Do not confuse the two — creative description and narrative are Paper 2 skills.</div>
 
 <h3>Recommended Timing Strategy</h3>
 <ol>
@@ -2296,16 +2296,16 @@ const paper2Modules: CourseModule[] = [
         ],
         correct: 2,
         explanation:
-          'Section B of Paper 2 tests imaginative writing — you choose one task and produce a piece of creative narrative or descriptive writing, assessed on AO5 (content and organisation) and AO6 (technical accuracy).',
+          'Section B of Paper 2 tests imaginative writing — you choose one task and produce a piece of creative narrative or descriptive writing, assessed on content and organisation (AO5) (content and organisation) and AO6 (technical accuracy).',
       },
       {
         id: 'edx-lp2-m1-q4',
         question:
-          'Which assessment objective is concerned with comparing writers\' ideas and perspectives?',
+          'Which what markers look for is concerned with comparing writers\' ideas and perspectives?',
         options: ['AO1', 'AO2', 'AO3', 'AO5'],
         correct: 2,
         explanation:
-          'AO3 requires you to compare writers\' ideas and perspectives across texts. This is typically tested in the higher-mark reading questions on Paper 2.',
+          'Comparing writers\' ideas (AO3) requires you to compare writers\' ideas and perspectives across texts. This is typically tested in the higher-mark reading questions on Paper 2.',
       },
     ],
   },
@@ -2347,7 +2347,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   <li>The brickwork has been "darkened by decades of rain" — rain is a long-standing feature of the area.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always embed a short quotation in your answer, even for 1-mark retrieval questions. It proves you are working from the text and removes ambiguity. Keep quotations concise — a few key words are enough.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Always embed a short quotation in your answer, even for 1-mark retrieval questions. It proves you are working from the text and removes ambiguity. Keep quotations concise — a few key words are enough.</div>
 
 <h3>Moving from Retrieval to Inference</h3>
 <p>Higher-mark short questions may ask what a detail <em>suggests</em> or what the reader can <em>infer</em>. To build a strong inference, follow a three-step chain:</p>
@@ -2458,11 +2458,11 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
     title: 'Reading Fiction: Language & Structure Analysis',
     duration: '90 min',
     content: `
-<h2>AO2 in Fiction — Language &amp; Structure Combined</h2>
+<h2>Language and Structure in Fiction — Language &amp; Structure Combined</h2>
 
 <p>On Edexcel Paper 2 (1EN2/02), fiction extracts require you to analyse <strong>both language and structure</strong> in one response. Edexcel does <em>not</em> split these into separate questions — you must weave both skills together.</p>
 
-<div class="key-term"><strong>AO2</strong> — Analyse how writers use language and structure to achieve effects, using relevant subject terminology.</div>
+<div class="key-term"><strong>Language and structure analysis (AO2)</strong> — Analyse how writers use language and structure to achieve effects, using relevant subject terminology.</div>
 
 <h3>Language Techniques in Fiction</h3>
 <ul>
@@ -2502,7 +2502,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   <li><strong>WHY</strong> — Analyse the effect on the reader or link to wider meaning.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Integrate language and structure rather than treating them as separate lists. After a language point, link it to structure — e.g. "The metaphor appears in the opening line, positioning the threat from the start."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Integrate language and structure rather than treating them as separate lists. After a language point, link it to structure — e.g. "The metaphor appears in the opening line, positioning the threat from the start."</div>
 
 <h3>Model Answer (Extract)</h3>
 
@@ -2569,7 +2569,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 
 <h3>Common Errors in Literary Terminology</h3>
 
-<div class="common-mistake"><strong>Error 1 — Confusing Metaphor and Simile:</strong> A simile uses "like" or "as" ("like a creature"). A metaphor doesn't ("crouched"). Learn to distinguish them — examiners mark you down for mislabelling techniques.</div>
+<div class="common-mistake"><strong>Error 1 — Confusing Metaphor and Simile:</strong> A simile uses "like" or "as" ("like a creature"). A metaphor doesn't ("crouched"). Learn to distinguish them — you will be marked down for mislabelling techniques.</div>
 
 <div class="common-mistake"><strong>Error 2 — Calling All Word Groupings "Semantic Fields":</strong> A semantic field must be words from the SAME domain that build a consistent image. "Dark," "peeling," "bloom," and "damp" are a semantic field because they all suggest decay. But "house" and "crouched" are not a semantic field just because they appear together.</div>
 
@@ -2657,11 +2657,11 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
           'Identifying techniques without analysing their effect — it stays in lower mark bands',
           'Using too many quotations — it wastes time in the exam',
           'Writing about structure instead of language — it misses half the marks',
-          'Colour-coding annotations — it is not accepted by examiners',
+          'Colour-coding annotations — it is not accepted by markers',
         ],
         correct: 0,
         explanation:
-          'Feature-spotting means naming techniques (e.g. "The writer uses a metaphor") without explaining how they work or why they are effective. Examiners reward analysis, not lists of devices.',
+          'Feature-spotting means naming techniques (e.g. "The writer uses a metaphor") without explaining how they work or why they are effective. Markers reward analysis, not lists of devices.',
       },
     ],
   },
@@ -2703,7 +2703,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 
 <p>In the extract, personification ("the landscape pausing") and the verb "envied" reveal admiration for nature, while contrast with the city positions nature as superior.</p>
 
-<div class="key-term"><strong>AO3</strong> — Compare writers' ideas and perspectives, and how these are conveyed, across two or more texts.</div>
+<div class="key-term"><strong>Comparing writers' ideas (AO3)</strong> — Compare writers' ideas and perspectives, and how these are conveyed, across two or more texts.</div>
 
 <h3>Comparison Frameworks</h3>
 
@@ -2713,7 +2713,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   <tr><td><strong>Block</strong></td><td>All of Text A, then all of Text B, linking back.</td><td>Easier to organise — but risks two separate essays.</td></tr>
 </table>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The alternating method is strongly preferred — every paragraph should reference both texts. The block method often produces two separate analyses that will not reach higher mark bands.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The alternating method is strongly preferred — every paragraph should reference both texts. The block method often produces two separate analyses that will not reach higher mark bands.</div>
 
 <h3>Comparative Connectives</h3>
 <ul>
@@ -2804,7 +2804,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 </ul>
 </div>
 
-<h3>Common Mistakes in AO3 Comparison</h3>
+<h3>Common Mistakes in Comparison</h3>
 
 <div class="common-mistake"><strong>Mistake 1 — The "Ping-Pong" Comparison:</strong> "Text A says… Text B says…" Alternating between texts without integration. Instead, use embedded comparison: "Where Text A emphasises X, Text B prioritises Y, revealing…"</div>
 
@@ -2845,7 +2845,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   <li>Integration: "Both writers use personal voice to convey authority, but Text A asks us to understand fallible youth, while Text B positions us as witnesses to planetary failure — an exhortation rather than a confession."</li>
 </ul>
 
-<h3>The AO3 Mark Scheme at a Glance</h3>
+<h3>The comparison marking guide at a Glance</h3>
 
 <div class="grade-boundary">
 <h4>Level 2 (10–12 marks) — "Critical, exploratory, judicious"</h4>
@@ -2885,7 +2885,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
       {
         id: 'edx-lp2-m4-q2',
         question:
-          'Which comparison framework do examiners recommend for the highest marks?',
+          'Which comparison framework do markers recommend for the highest marks?',
         options: [
           'Block method — analyse Text A fully, then Text B',
           'Alternating (point-by-point) method — compare both texts within each paragraph',
@@ -2939,7 +2939,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 
 <p>Two of the most demanding skills on Edexcel Paper 2 (1EN2/02) are <strong>synthesis</strong> and <strong>evaluation</strong>. Synthesis asks you to draw together information from <em>two</em> sources, while evaluation asks you to make a <strong>critical judgement</strong> about how successfully a writer achieves their purpose.</p>
 
-<div class="key-term"><strong>Key Term: Synthesis (AO1/AO3)</strong> — The skill of identifying and comparing information, ideas, or perspectives across two different texts, drawing out similarities to build a unified response.</div>
+<div class="key-term"><strong>Key Term: Synthesis (reading comprehension and comparison)</strong> — The skill of identifying and comparing information, ideas, or perspectives across two different texts, drawing out similarities to build a unified response.</div>
 
 <h3>How to Scan Both Texts for Common Themes</h3>
 <ol>
@@ -2952,13 +2952,13 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 <h3>Writing Synthesis Paragraphs</h3>
 <p>The golden rule: every paragraph must reference <strong>both</strong> sources. Use connective phrases such as <em>"Both sources suggest that…"</em>, <em>"Similarly, Source B describes…"</em>, <em>"This idea is echoed in Source A, where the writer…"</em>.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Writing a paragraph entirely about Source A then one about Source B is <em>comparison</em>, not synthesis. True synthesis weaves evidence from both sources into the same paragraph.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Writing a paragraph entirely about Source A then one about Source B is <em>comparison</em>, not synthesis. True synthesis weaves evidence from both sources into the same paragraph.</div>
 
 <h3>Evaluation: Critical Judgement (AO4)</h3>
 
-<div class="key-term"><strong>Key Term: Evaluation (AO4)</strong> — Assessing how <em>effectively</em> a writer achieves a particular purpose or effect. This requires a critical judgement — not just identification or analysis of techniques.</div>
+<div class="key-term"><strong>Key Term: Critical Critical evaluation (AO4)</strong> — Assessing how <em>effectively</em> a writer achieves a particular purpose or effect. This requires a critical judgement — not just identification or analysis of techniques.</div>
 
-<p>Evaluation questions take the form: <em>"How successfully does the writer…"</em>. The examiner is not asking you to explain what the writer does — that is analysis. Evaluation asks you to <strong>judge how well they do it</strong>.</p>
+<p>Evaluation questions take the form: <em>"How successfully does the writer…"</em>. the question is not asking you to explain what the writer does — that is analysis. Evaluation asks you to <strong>judge how well they do it</strong>.</p>
 
 <ul>
   <li><strong>Analysis:</strong> <em>"The writer uses the metaphor 'a blanket of silence' to suggest the quiet was total."</em></li>
@@ -2979,7 +2979,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
       {
         id: 'edx-lp2-m5-q1',
         question:
-          'Which assessment objectives does synthesis primarily test on Edexcel Paper 2?',
+          'Which what markers look for does synthesis primarily test on Edexcel Paper 2?',
         options: [
           'AO1 and AO2',
           'AO1 and AO3',
@@ -2988,7 +2988,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
         ],
         correct: 1,
         explanation:
-          'Synthesis tests AO1 (identify and interpret information) and AO3 (compare writers\' ideas and perspectives across two or more texts).',
+          'Synthesis tests reading comprehension (AO1) (identify and interpret information) and comparison (AO3) (compare writers\' ideas and perspectives across two or more texts).',
       },
       {
         id: 'edx-lp2-m5-q2',
@@ -3059,9 +3059,9 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
     content: `
 <h2>Paper 2 Section B — Imaginative Writing</h2>
 
-<p>Section B of Edexcel Paper 2 (1EN2/02) tests <strong>imaginative writing</strong>. It is worth <strong>40 marks</strong>: <strong>24 for AO5</strong> (content and organisation) and <strong>16 for AO6</strong> (technical accuracy). You choose <strong>one of two tasks</strong> — a short story, description, or narrative based on a prompt.</p>
+<p>Section B of Edexcel Paper 2 (1EN2/02) tests <strong>imaginative writing</strong>. It is worth <strong>40 marks</strong>: <strong>24 for content and organisation (AO5)</strong> (content and organisation) and <strong>16 for AO6</strong> (technical accuracy). You choose <strong>one of two tasks</strong> — a short story, description, or narrative based on a prompt.</p>
 
-<div class="key-term"><strong>Key Term: AO5 (Content &amp; Organisation)</strong> — Communication is clear, effective, and imaginative. Ideas are organised using structural and grammatical features to support coherence and cohesion.</div>
+<div class="key-term"><strong>Key Term: Content and Organisation (AO5) — (Content &amp; Organisation)</strong> — Communication is clear, effective, and imaginative. Ideas are organised using structural and grammatical features to support coherence and cohesion.</div>
 
 <h3>Narrative Perspective</h3>
 <ul>
@@ -3070,7 +3070,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   <li><strong>Third person omniscient:</strong> All-knowing narrator — powerful but difficult to control in a short piece.</li>
 </ul>
 
-<p><strong>Past tense</strong> is the safest choice. <strong>Present tense</strong> creates urgency but demands consistency — slipping between tenses costs AO6 marks. An <strong>unreliable narrator</strong> can be sophisticated but must be signalled through contradictions or tonal shifts.</p>
+<p><strong>Past tense</strong> is the safest choice. <strong>Present tense</strong> creates urgency but demands consistency — slipping between tenses costs technical accuracy (AO6) marks. An <strong>unreliable narrator</strong> can be sophisticated but must be signalled through contradictions or tonal shifts.</p>
 
 <h3>Plot Structure</h3>
 <p>The best exam narratives focus on a <strong>single moment or turning point</strong>:</p>
@@ -3100,7 +3100,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 <p><strong>Write about a time when everything changed.</strong></p>
 <p>Plan for <strong>5 minutes</strong>, write for <strong>35–40 minutes</strong>, proofread for <strong>5 minutes</strong>. Aim for 450–600 words.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Quality beats quantity. A controlled 500-word piece with varied sentences and precise vocabulary will outscore a rambling 900-word piece.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Quality beats quantity. A controlled 500-word piece with varied sentences and precise vocabulary will outscore a rambling 900-word piece.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Trying to tell an entire life story in 40 minutes. Zoom in on a <strong>single scene or moment</strong> and explore it with depth. Think of a photograph, not a film.</div>
 `,
@@ -3108,16 +3108,16 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
       {
         id: 'edx-lp2-m6-q1',
         question:
-          'How are the 40 marks for Section B imaginative writing divided between assessment objectives?',
+          'How are the 40 marks for Section B imaginative writing divided between what markers look for?',
         options: [
-          '20 marks AO5 + 20 marks AO6',
-          '24 marks AO5 + 16 marks AO6',
-          '30 marks AO5 + 10 marks AO6',
-          '16 marks AO5 + 24 marks AO6',
+          '20 marks content (AO5) + 20 marks technical accuracy (AO6)',
+          '24 marks content (AO5) + 16 marks technical accuracy (AO6)',
+          '30 marks content (AO5) + 10 marks technical accuracy (AO6)',
+          '16 marks content (AO5) + 24 marks technical accuracy (AO6)',
         ],
         correct: 1,
         explanation:
-          'The 40 marks are split into 24 marks for AO5 (content and organisation) and 16 marks for AO6 (technical accuracy — spelling, punctuation, and grammar).',
+          'The 40 marks are split into 24 marks for content and organisation (AO5) (content and organisation) and 16 marks for technical accuracy (AO6) (technical accuracy — spelling, punctuation, and grammar).',
       },
       {
         id: 'edx-lp2-m6-q2',
@@ -3154,12 +3154,12 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
         options: [
           'Present tense is not allowed on the Edexcel exam',
           'Present tense always sounds informal and colloquial',
-          'Present tense demands strict consistency and slipping between tenses is a common AO6 error',
+          'Present tense demands strict consistency and slipping between tenses is a common technical accuracy (AO6) error',
           'Present tense cannot be used with third-person narration',
         ],
         correct: 2,
         explanation:
-          'Present tense creates urgency and immediacy but requires strict consistency. Under exam pressure, students frequently slip into past tense mid-paragraph, which is penalised under AO6 (technical accuracy).',
+          'Present tense creates urgency and immediacy but requires strict consistency. Under exam pressure, students frequently slip into past tense mid-paragraph, which is penalised under technical accuracy (AO6).',
       },
     ],
   },
@@ -3204,7 +3204,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   <li><strong>Juxtaposition:</strong> <em>"A child's laughter rose from the garden; inside, the clock measured out its silence."</em></li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Edexcel provides <strong>two images</strong> as stimulus. Spend one minute studying both before choosing. Pick the image that sparks the strongest sensory response — you need enough material for 40 minutes of sustained writing.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Edexcel provides <strong>two images</strong> as stimulus. Spend one minute studying both before choosing. Pick the image that sparks the strongest sensory response — you need enough material for 40 minutes of sustained writing.</div>
 
 <h3>Grade 5 vs Grade 9 — Same Scene</h3>
 <p>Prompt image: an abandoned fairground at dusk.</p>
@@ -3288,7 +3288,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
     content: `
 <h2>Elevating Your Writing from Grade 7 to Grade 9</h2>
 
-<p>The gap between Grade 7 and Grade 9 is not more techniques — it is <strong>control, subtlety, and sustained quality</strong>. AO5 Level 5 demands writing that <em>"shapes audience response with subtlety"</em> and is <em>"sophisticated and sustained"</em>.</p>
+<p>The gap between Grade 7 and Grade 9 is not more techniques — it is <strong>control, subtlety, and sustained quality</strong>. Content and organisation (AO5) Level 5 demands writing that <em>"shapes audience response with subtlety"</em> and is <em>"sophisticated and sustained"</em>.</p>
 
 <div class="key-term"><strong>Key Term: Authorial Voice</strong> — The distinctive personality and tone in a writer's prose. At Grade 9, your writing should sound like <em>you</em> — deliberate register, rhythm, and attitude.</div>
 
@@ -3302,7 +3302,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 <h3>Symbolism and Motifs</h3>
 <p>A <strong>symbol</strong> carries abstract meaning — a locked door suggests exclusion. A <strong>motif</strong> <em>recurs</em>: mention a ticking clock in your opening, return to it in your final paragraph.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> One recurring image — light, water, a colour — lifts a piece from "competent" to "crafted". Motifs show <strong>deliberate structural control</strong>.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> One recurring image — light, water, a colour — lifts a piece from "competent" to "crafted". Motifs show <strong>deliberate structural control</strong>.</div>
 
 <h3>Temporal Manipulation</h3>
 <ul>
@@ -3335,7 +3335,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Front-loading your best writing into paragraph one. <em>"Sustained"</em> means quality from first line to last. Plan your ending before you start.</div>
 
-<h3>AO5 Level 5 Descriptors</h3>
+<h3>Content and organisation (AO5) Level 5 Descriptors</h3>
 <ul>
   <li><em>"Fully secure, compelling voice."</em></li>
   <li><em>"Tone, style and register subtly adapted and sustained."</em></li>
@@ -3377,10 +3377,10 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
         question:
           'Why should students avoid "purple prose" in their descriptive writing?',
         options: [
-          'Examiners penalise any use of figurative language',
+          'markers penalise any use of figurative language',
           'Overwrought, elaborate vocabulary sounds unnatural and obscures meaning',
           'Simple words always score higher than complex words',
-          'The mark scheme specifically forbids adjectives',
+          'The marking guide specifically forbids adjectives',
         ],
         correct: 1,
         explanation:
@@ -3403,7 +3403,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
       {
         id: 'edx-lp2-m8-q5',
         question:
-          'According to the AO5 Level 5 descriptors, which phrase best captures what examiners look for at Grade 8–9?',
+          'According to the Content and organisation (AO5) Level 5 descriptors, which phrase best captures what markers look for at Grade 8–9?',
         options: [
           '"Uses a range of vocabulary and sentence structures"',
           '"Communicates ideas successfully for the intended audience"',
@@ -3412,7 +3412,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
         ],
         correct: 2,
         explanation:
-          '"Shapes audience response with subtlety" is a Level 5 AO5 descriptor. It means the writer does not simply communicate ideas but deliberately controls how the reader feels and responds — through voice, structure, imagery, and linguistic precision.',
+          '"Shapes audience response with subtlety" is a Level 5 content and organisation (AO5) descriptor. It means the writer does not simply communicate ideas but deliberately controls how the reader feels and responds — through voice, structure, imagery, and linguistic precision.',
       },
     ],
   },
@@ -3427,9 +3427,9 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
     content: `
 <h2>SPaG &amp; Vocabulary for Creative Writing (AO6)</h2>
 
-<p>On Paper 2, Section B awards up to <strong>16 marks for AO6</strong> — spelling, punctuation, grammar and vocabulary. These marks represent <strong>40% of the writing mark</strong> and can be the difference between a grade 5 and a grade 7.</p>
+<p>On Paper 2, Section B awards up to <strong>16 marks for technical accuracy (AO6)</strong> — spelling, punctuation, grammar and vocabulary. These marks represent <strong>40% of the writing mark</strong> and can be the difference between a grade 5 and a grade 7.</p>
 
-<div class="key-term"><strong>Key Term: SPaG</strong> — Spelling, Punctuation and Grammar. AO6 rewards accurate and effective use of these elements alongside varied vocabulary and sentence structures.</div>
+<div class="key-term"><strong>Key Term: SPaG</strong> — Spelling, Punctuation and Grammar. Technical accuracy (AO6) rewards accurate and effective use of these elements alongside varied vocabulary and sentence structures.</div>
 
 <h3>Punctuation as a Creative Tool</h3>
 
@@ -3464,7 +3464,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 
 <p><em>"The corridor stretched ahead, its walls lined with faded portraits whose eyes seemed to follow his every step. He stopped. Something was wrong."</em></p>
 
-<p>Short sentences after a long one create a jolt — examiners look for this at higher grade bands.</p>
+<p>Short sentences after a long one create a jolt — markers look for this at higher grade bands.</p>
 
 <h3>Common Errors to Fix</h3>
 
@@ -3484,7 +3484,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   <li><strong>Scan for homophones</strong> — their/there/they're, its/it's, your/you're.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Leave at least 5 minutes for proofreading. Correcting two or three SPaG errors can move you up a mark band. Neatly cross out mistakes and write corrections above — examiners will not penalise crossings-out.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Leave at least 5 minutes for proofreading. Correcting two or three SPaG errors can move you up a mark band. Neatly cross out mistakes and write corrections above — markers will not penalise crossings-out.</div>
 `,
     quiz: [
       {
@@ -3582,7 +3582,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   <li><strong>105–115 min:</strong> <strong>Proofread</strong> — SPaG check across the whole paper.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Write the target end-time for each question in your margin before you start. This turns vague urgency into a concrete schedule.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Write the target end-time for each question in your margin before you start. This turns vague urgency into a concrete schedule.</div>
 
 <h3>Choosing Between the Two Writing Tasks</h3>
 
@@ -3622,14 +3622,14 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 <h3>Checklist &amp; Grade Boundaries</h3>
 
 <ul>
-  <li>Do you know the AOs (AO1, AO2, AO4, AO5/AO6) and mark tariffs (1, 2, 6, 15, 16, 40)?</li>
+  <li>Do you know the skills tested (reading, language analysis, evaluation, writing content, technical accuracy) and mark tariffs (1, 2, 6, 15, 16, 40)?</li>
   <li>Have you completed at least one full timed paper?</li>
   <li>Have you memorised dialogue punctuation and your proofreading checklist?</li>
 </ul>
 
 <p>Roughly: <strong>grade 4</strong> needs <strong>45–50%</strong> (36–40/80); <strong>grade 7</strong> needs <strong>70–75%</strong> (56–60/80).</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> In the final 10 minutes, proofread — do not write new content. A polished, shorter response outperforms a longer, careless one.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> In the final 10 minutes, proofread — do not write new content. A polished, shorter response outperforms a longer, careless one.</div>
 `,
     quiz: [
       {
@@ -3707,11 +3707,11 @@ const paper1Assessment: CourseQuiz[] = [
   },
   {
     id: 'edx-lp1-assess-2',
-    question: 'Which Assessment Objective tests critical evaluation on Paper 1?',
+    question: 'Which what markers look for tests critical evaluation on Paper 1?',
     options: ['AO1', 'AO2', 'AO4', 'AO6'],
     correct: 2,
     explanation:
-      'AO4 tests critical evaluation — the ability to judge how effectively a writer achieves their purpose, supported by textual evidence.',
+      'Critical evaluation (AO4) tests your ability to judge — the ability to judge how effectively a writer achieves their purpose, supported by textual evidence.',
   },
   {
     id: 'edx-lp1-assess-3',
@@ -3764,14 +3764,14 @@ const paper1Assessment: CourseQuiz[] = [
     id: 'edx-lp1-assess-7',
     question: 'How are the 40 marks for Section B (writing) divided?',
     options: [
-      '20 marks AO5 + 20 marks AO6',
-      '24 marks AO5 + 16 marks AO6',
-      '30 marks AO5 + 10 marks AO6',
-      '16 marks AO5 + 24 marks AO6',
+      '20 marks content (AO5) + 20 marks technical accuracy (AO6)',
+      '24 marks content (AO5) + 16 marks technical accuracy (AO6)',
+      '30 marks content (AO5) + 10 marks technical accuracy (AO6)',
+      '16 marks content (AO5) + 24 marks technical accuracy (AO6)',
     ],
     correct: 1,
     explanation:
-      'Section B awards 24 marks for AO5 (content and organisation) and 16 marks for AO6 (technical accuracy — spelling, punctuation, grammar).',
+      'Section B awards 24 marks for content and organisation (AO5) (content and organisation) and 16 marks for technical accuracy (AO6) (technical accuracy — spelling, punctuation, grammar).',
   },
   {
     id: 'edx-lp1-assess-8',
@@ -3821,7 +3821,7 @@ const paper1Assessment: CourseQuiz[] = [
     ],
     correct: 2,
     explanation:
-      'A brief plan shows the examiner your structure. Then prioritise your opening and ending — a purposeful conclusion demonstrates control and can rescue significant marks.',
+      'A brief plan shows markers your structure. Then prioritise your opening and ending — a purposeful conclusion demonstrates control and can rescue significant marks.',
   },
 ];
 
@@ -3858,11 +3858,11 @@ const paper2Assessment: CourseQuiz[] = [
   },
   {
     id: 'edx-lp2-assess-3',
-    question: "Which assessment objective requires you to compare writers' ideas and perspectives?",
+    question: "Which what markers look for requires you to compare writers' ideas and perspectives?",
     options: ['AO1', 'AO2', 'AO3', 'AO5'],
     correct: 2,
     explanation:
-      "AO3 requires you to compare writers' ideas and perspectives across two or more texts, typically tested in higher-mark reading questions.",
+      "Comparing writers' ideas (AO3) requires you to compare writers' ideas and perspectives across two or more texts, typically tested in higher-mark reading questions.",
   },
   {
     id: 'edx-lp2-assess-4',
@@ -3892,7 +3892,7 @@ const paper2Assessment: CourseQuiz[] = [
   },
   {
     id: 'edx-lp2-assess-6',
-    question: 'Which comparison framework do examiners recommend for the highest marks?',
+    question: 'Which comparison framework do markers recommend for the highest marks?',
     options: [
       'Block method — all of Text A then Text B',
       'Alternating (point-by-point) — both texts in each paragraph',
@@ -3990,7 +3990,7 @@ const edexcelLangPaper1: CourseData = {
   level: 'GCSE (Years 10-11)',
   color: '#7c3aed',
   description:
-    'Master Edexcel Paper 1: analyse 19th-century non-fiction texts and craft compelling transactional writing. Covers all question types with Edexcel-specific strategies and examiner insights.',
+    'Master Edexcel Paper 1: analyse 19th-century non-fiction texts and craft compelling transactional writing. Covers all question types with Edexcel-specific strategies and marker insights.',
   moduleList: paper1Modules,
   assessmentQuestions: paper1Assessment,
 };
@@ -4008,7 +4008,7 @@ const edexcelLangPaper2: CourseData = {
   level: 'GCSE (Years 10-11)',
   color: '#4f46e5',
   description:
-    'Master Edexcel Paper 2: analyse modern fiction and literary non-fiction, then craft powerful imaginative writing with examiner-approved strategies.',
+    'Master Edexcel Paper 2: analyse modern fiction and literary non-fiction, then craft powerful imaginative writing with top-scoring strategies.',
   moduleList: paper2Modules,
   assessmentQuestions: paper2Assessment,
 };

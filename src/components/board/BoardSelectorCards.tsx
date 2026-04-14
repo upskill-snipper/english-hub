@@ -32,7 +32,7 @@ const BOARD_TAGLINE: Record<ExamBoard, string> = {
   edexcel: 'Time & Place, AIC, and Macbeth',
   ocr: 'Conflict cluster and Romeo & Juliet',
   eduqas: 'Single anthology and unseen poetry',
-  'edexcel-igcse': 'Anthology and Shakespeare 4ET1',
+  'edexcel-igcse': 'Poetry, prose, drama & Shakespeare',
   'cambridge-0500': 'First Language English (A*-G)',
   'cambridge-0990': 'First Language English (9-1)',
 }
@@ -42,7 +42,7 @@ const BOARD_BENEFITS: Record<ExamBoard, string[]> = {
   edexcel: ['Anthology analysis', 'Set text guides', 'Exam-style tasks'],
   ocr: ['Conflict poetry', 'Shakespeare support', 'Past paper practice'],
   eduqas: ['Anthology mastery', 'Unseen poetry drills', 'Component 1 & 2 prep'],
-  'edexcel-igcse': ['Anthology coverage', 'Shakespeare 4ET1', 'Unseen prose & poetry'],
+  'edexcel-igcse': ['Anthology coverage', 'Shakespeare essays', 'Unseen prose & poetry'],
   'cambridge-0500': ['Reading passages', 'Directed writing', 'Composition practice'],
   'cambridge-0990': ['Reading passages', 'Directed writing', 'Composition practice'],
 }

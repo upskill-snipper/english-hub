@@ -11,6 +11,7 @@ import {
   PenTool,
   Layers,
   History,
+  Info,
 } from 'lucide-react'
 import {
   Card,
@@ -24,40 +25,41 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE 4ET1 Syllabus — The English Hub',
+  title: 'Edexcel IGCSE Literature Syllabus — The English Hub',
   description:
-    'Complete breakdown of the Pearson Edexcel IGCSE English Literature 4ET1 syllabus: assessment objectives AO1–AO4, mark allocations, time limits and paper structure.',
+    'Complete breakdown of the Pearson Edexcel IGCSE English Literature syllabus: what the examiners are looking for, mark allocations, time limits and paper structure.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/syllabus' },
+  robots: { index: false },
 }
 
 const aos = [
   {
-    code: 'AO1',
+    code: 'Reading & Responding',
     icon: BookOpen,
-    title: 'Read and respond',
+    title: 'Show you understand the text',
     description:
-      'Read and understand texts. Maintain a critical style and develop an informed personal response, using textual references including quotations to support and illustrate interpretations.',
+      'Read carefully, form your own opinion about the text, and back up every point with short quotations or references. The examiner wants to see that you can think for yourself and prove it with evidence.',
   },
   {
-    code: 'AO2',
+    code: 'Language & Structure',
     icon: PenTool,
-    title: 'Analyse language, form and structure',
+    title: 'Explain how the writer creates effects',
     description:
-      'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.',
+      'Look at the words, techniques, and structure a writer uses and explain why they matter. Use literary terms where you can, but the key thing is explaining the effect on the reader.',
   },
   {
-    code: 'AO3',
+    code: 'Context',
     icon: History,
-    title: 'Contexts',
+    title: 'Connect the text to its background',
     description:
-      'Show understanding of the relationships between texts and the contexts in which they were written.',
+      'Show you understand how the time period, society, or the writer\u2019s own life shaped the text. This only comes up in the prose and Shakespeare essays, so weave it in naturally rather than bolting it on.',
   },
   {
-    code: 'AO4',
+    code: 'Comparison',
     icon: Layers,
-    title: 'Compare texts',
+    title: 'Compare texts side by side',
     description:
-      'Explore connections across texts, making comparisons between writers\u2019 use of language, form, structure and ideas.',
+      'Find similarities and differences between two texts \u2014 their language, structure, form, and ideas. This is tested only in the anthology poetry comparison on Paper 1.',
   },
 ]
 
@@ -66,21 +68,21 @@ const paper1Questions = [
     section: 'Section A — Unseen Poetry',
     task: 'One question on a previously unseen poem',
     marks: 20,
-    aos: ['AO1', 'AO2'],
+    aos: ['Reading & Responding', 'Language & Structure'],
     guide: '35 mins',
   },
   {
     section: 'Section B — Anthology Poetry',
     task: 'Comparison of two anthology poems',
     marks: 20,
-    aos: ['AO1', 'AO2', 'AO4'],
+    aos: ['Reading & Responding', 'Language & Structure', 'Comparison'],
     guide: '35 mins',
   },
   {
     section: 'Section C — Modern Prose',
     task: 'One essay on a studied modern prose text (closed book)',
     marks: 20,
-    aos: ['AO1', 'AO2', 'AO3'],
+    aos: ['Reading & Responding', 'Language & Structure', 'Context'],
     guide: '50 mins',
   },
 ]
@@ -90,14 +92,14 @@ const paper2Questions = [
     section: 'Section A — Modern Drama',
     task: 'Extract-based question on a studied modern drama text',
     marks: 20,
-    aos: ['AO1', 'AO2'],
+    aos: ['Reading & Responding', 'Language & Structure'],
     guide: '40 mins',
   },
   {
     section: 'Section B — Literary Heritage',
     task: 'One essay on a studied Shakespeare play (closed book)',
     marks: 20,
-    aos: ['AO1', 'AO2', 'AO3'],
+    aos: ['Reading & Responding', 'Language & Structure', 'Context'],
     guide: '45 mins',
   },
 ]
@@ -116,8 +118,23 @@ export default async function EdexcelSyllabusPage() {
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel 4ET1
+          Back to Edexcel IGCSE Literature
         </Button>
+      </div>
+
+      {/* ── Redirect banner ──────────────────────────────────────────── */}
+      <div className="flex items-start gap-3 rounded-xl border border-primary/20 bg-primary/5 p-4">
+        <Info className="mt-0.5 size-5 shrink-0 text-primary" />
+        <p className="text-body-sm text-foreground">
+          Looking for revision content? Visit our{' '}
+          <Link
+            href="/igcse/edexcel"
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            IGCSE Literature hub
+          </Link>{' '}
+          for study guides, practice questions, and more.
+        </p>
       </div>
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
@@ -132,11 +149,11 @@ export default async function EdexcelSyllabusPage() {
               Syllabus breakdown
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            4ET1 Syllabus
+            IGCSE Literature Syllabus
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Everything you need to know about the Pearson Edexcel IGCSE
@@ -211,7 +228,7 @@ export default async function EdexcelSyllabusPage() {
         <div className="mb-5 flex items-center gap-3">
           <Target className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Assessment objectives (AO1–AO4)
+            What the examiners are looking for
           </h2>
         </div>
 
@@ -256,7 +273,7 @@ export default async function EdexcelSyllabusPage() {
         <Card>
           <CardHeader className="pb-3">
             <div className="flex flex-wrap items-center gap-2">
-              <Badge variant="secondary">4ET1/01</Badge>
+              <Badge variant="secondary">Paper 1</Badge>
               <Badge variant="secondary">2 hours</Badge>
               <Badge variant="secondary">60 marks</Badge>
               <Badge className="bg-primary/10 text-primary border-primary/20">
@@ -276,7 +293,7 @@ export default async function EdexcelSyllabusPage() {
                     <th className="px-4 py-3 text-left">Section</th>
                     <th className="px-4 py-3 text-left">Task</th>
                     <th className="px-4 py-3 text-left">Marks</th>
-                    <th className="px-4 py-3 text-left">AOs</th>
+                    <th className="px-4 py-3 text-left">Skills tested</th>
                     <th className="px-4 py-3 text-left">Suggested time</th>
                   </tr>
                 </thead>
@@ -311,7 +328,7 @@ export default async function EdexcelSyllabusPage() {
         <Card>
           <CardHeader className="pb-3">
             <div className="flex flex-wrap items-center gap-2">
-              <Badge variant="secondary">4ET1/02</Badge>
+              <Badge variant="secondary">Paper 2</Badge>
               <Badge variant="secondary">1 hour 30 minutes</Badge>
               <Badge variant="secondary">40 marks</Badge>
               <Badge className="bg-primary/10 text-primary border-primary/20">
@@ -331,7 +348,7 @@ export default async function EdexcelSyllabusPage() {
                     <th className="px-4 py-3 text-left">Section</th>
                     <th className="px-4 py-3 text-left">Task</th>
                     <th className="px-4 py-3 text-left">Marks</th>
-                    <th className="px-4 py-3 text-left">AOs</th>
+                    <th className="px-4 py-3 text-left">Skills tested</th>
                     <th className="px-4 py-3 text-left">Suggested time</th>
                   </tr>
                 </thead>
@@ -357,40 +374,44 @@ export default async function EdexcelSyllabusPage() {
       {/* ── AO weighting note ──────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <h2 className="text-heading-md font-heading text-foreground mb-3">
-          How AOs are weighted
+          Where each skill matters most
         </h2>
         <ul className="space-y-2 text-body-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">AO1</strong> and{' '}
-              <strong className="text-foreground">AO2</strong> are tested in
-              every section, forming the core of your response on language,
-              structure and personal engagement.
+              <strong className="text-foreground">Reading & Responding</strong>{' '}
+              and{' '}
+              <strong className="text-foreground">Language & Structure</strong>{' '}
+              are tested in every section. These are the backbone of every
+              answer you write — show you understand the text and can explain
+              how the writer creates effects.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">AO3</strong> (context) is
-              assessed in the modern prose and Shakespeare essays only. Bring in
-              relevant social, historical or literary context.
+              <strong className="text-foreground">Context</strong> only comes up
+              in the modern prose and Shakespeare essays. Weave in social,
+              historical, or literary background naturally rather than adding
+              it as a separate paragraph.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">AO4</strong> (comparison) is
-              assessed only in Paper 1 Section B on the anthology poetry
-              question.
+              <strong className="text-foreground">Comparison</strong> is tested
+              only in Paper 1 Section B, the anthology poetry question. Make
+              sure you discuss both poems throughout your answer rather than
+              writing about one and then the other.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              Always check the specific assessment grid for the text and
-              section you are answering — some tasks weight AO1 more heavily,
-              others lean on AO2.
+              Always check the mark scheme for the specific question you are
+              answering — some tasks lean more on your personal response while
+              others focus on close language analysis.
             </span>
           </li>
         </ul>

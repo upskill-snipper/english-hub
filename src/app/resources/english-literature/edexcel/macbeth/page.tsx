@@ -428,7 +428,7 @@ export default function MacbethPage() {
             Historical Context
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Context is assessed through AO3. The best responses weave context
+            Context is assessed through the context skill. The best responses weave context
             into analysis rather than treating it as a bolt-on paragraph.
           </p>
           <div className="mt-6 space-y-4">

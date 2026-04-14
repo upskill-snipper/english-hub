@@ -273,7 +273,7 @@ export default function EssayFeedbackPage() {
                 AI Essay Feedback
               </h1>
               <p className="mt-0.5 text-sm text-muted-foreground">
-                Get GCSE examiner-level feedback on your writing, aligned to your exam board&apos;s mark scheme.
+                Get GCSE marker-level feedback on your writing, aligned to your exam board&apos;s marking guide.
               </p>
             </div>
           </div>
@@ -467,7 +467,7 @@ function FeedbackResults({
       <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-amber-200">
         <p className="font-medium">Important Disclaimer</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          This is an AI-generated estimate based on the mark scheme criteria. It is not an official grade and should be used alongside your teacher&apos;s guidance. Actual exam grades may differ.
+          This is an AI-generated estimate based on the marking guide criteria. It is not an official grade and should be used alongside your teacher&apos;s guidance. Actual exam grades may differ.
         </p>
       </div>
 
@@ -509,7 +509,7 @@ function FeedbackResults({
         <CardHeader>
           <div className="flex items-center gap-2">
             <BarChart3 className="h-4 w-4 text-primary" />
-            <CardTitle>Mark Scheme Breakdown</CardTitle>
+            <CardTitle>Marking Guide Breakdown</CardTitle>
           </div>
           <CardDescription>How your essay scored against each Assessment Objective</CardDescription>
         </CardHeader>
@@ -595,7 +595,7 @@ function FeedbackResults({
             <MessageSquareText className="h-4 w-4 text-primary" />
             <CardTitle>Detailed Feedback</CardTitle>
           </div>
-          <CardDescription>Paragraph-by-paragraph examiner commentary</CardDescription>
+          <CardDescription>Paragraph-by-paragraph marker commentary</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">

@@ -153,8 +153,8 @@ export default async function Grade5Page() {
         <div className="rounded-xl border border-primary/20 bg-primary/[0.04] p-4 flex items-start gap-3">
           <Info className="size-4 shrink-0 text-primary mt-0.5" />
           <div className="text-xs text-muted-foreground leading-relaxed">
-            <span className="font-semibold text-foreground">Cambridge 0500 uses A*-G grading. </span>
-            For Cambridge 0500, a <span className="font-semibold text-foreground">Grade C</span> is the closest
+            <span className="font-semibold text-foreground">Cambridge IGCSE uses A*-G grading. </span>
+            For Cambridge IGCSE, a <span className="font-semibold text-foreground">Grade C</span> is the closest
             equivalent to a <span className="font-semibold text-foreground">9-1 Grade 5</span>. The advice below applies at this level.
           </div>
         </div>
@@ -170,7 +170,7 @@ export default async function Grade5Page() {
         </div>
 
         <p className="text-body-sm text-muted-foreground mb-5 max-w-3xl">
-          A {displayGradeLabel} response is the &quot;strong pass&quot; — it is above average and shows clear understanding. Examiners describe it as having &quot;clear&quot; and &quot;explained&quot; ideas with relevant evidence. Here is what that means in practice:
+          A {displayGradeLabel} response is the &quot;strong pass&quot; — it is above average and shows clear understanding. Markers describe it as having &quot;clear&quot; and &quot;explained&quot; ideas with relevant evidence. Here is what that means in practice:
         </p>
 
         {/* Board-specific mark boundary */}
@@ -275,7 +275,7 @@ export default async function Grade5Page() {
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-2">5. Vary your sentence structures in writing tasks</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              For Language papers, your creative and transactional writing needs variety. Use short sentences for impact. Use longer, complex sentences for description. Start some sentences with an adverb or a present participle. This variety is what examiners mean by &quot;crafting&quot;.
+              For Language papers, your creative and transactional writing needs variety. Use short sentences for impact. Use longer, complex sentences for description. Start some sentences with an adverb or a present participle. This variety is what markers mean by &quot;crafting&quot;.
             </p>
           </div>
         </div>
@@ -337,7 +337,7 @@ export default async function Grade5Page() {
           higherEssay={example.higherEssay}
           contextNote={
             boardConfig
-              ? `This example uses ${example.title}, which is on the ${boardConfig.shortName} specification.`
+              ? `This example uses ${example.title}, which is on your ${boardConfig.shortName} exam board.`
               : undefined
           }
         />

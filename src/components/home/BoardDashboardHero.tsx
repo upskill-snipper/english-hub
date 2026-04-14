@@ -64,7 +64,7 @@ function getQuickLinks(board: ExamBoard): QuickLink[] {
         },
         {
           title: 'AQA Exam Technique',
-          description: 'Paper 1 & Paper 2 walkthroughs with examiner tips',
+          description: 'Paper 1 & Paper 2 walkthroughs with expert tips',
           href: '/revision/exam-technique',
           icon: GraduationCap,
           color: 'text-primary bg-primary/10',
@@ -146,14 +146,14 @@ function getQuickLinks(board: ExamBoard): QuickLink[] {
       return [
         {
           title: 'Edexcel IGCSE Hub',
-          description: 'Paper 1 & Paper 2 preparation for spec 4ET1',
+          description: 'Paper 1 & Paper 2 preparation for Edexcel IGCSE Literature',
           href: '/igcse/edexcel',
           icon: BookOpen,
           color: 'text-emerald-400 bg-emerald-500/10',
         },
         {
           title: 'Set Texts & Anthology',
-          description: 'Unseen passages, anthology texts and transactional writing',
+          description: 'Unseen passages, anthology texts and writing for real purposes',
           href: '/revision/texts',
           icon: Feather,
           color: 'text-amber-400 bg-amber-500/10',
@@ -169,7 +169,7 @@ function getQuickLinks(board: ExamBoard): QuickLink[] {
     case 'cambridge-0500':
       return [
         {
-          title: 'Cambridge 0500 Hub',
+          title: 'Cambridge First Language Hub',
           description: 'First Language English (A*-G) reading and writing',
           href: '/igcse/cambridge/0500',
           icon: BookOpen,
@@ -184,7 +184,7 @@ function getQuickLinks(board: ExamBoard): QuickLink[] {
         },
         {
           title: 'Cambridge Exam Technique',
-          description: 'Paper 1 & Paper 2 walkthroughs for 0500',
+          description: 'Paper 1 & Paper 2 walkthroughs for Cambridge First Language',
           href: '/revision/exam-technique',
           icon: GraduationCap,
           color: 'text-primary bg-primary/10',
@@ -193,7 +193,7 @@ function getQuickLinks(board: ExamBoard): QuickLink[] {
     case 'cambridge-0990':
       return [
         {
-          title: 'Cambridge 0990 Hub',
+          title: 'Cambridge First Language (9-1) Hub',
           description: 'First Language English 9-1 reading and writing',
           href: '/igcse/cambridge/0990',
           icon: BookOpen,
@@ -208,7 +208,7 @@ function getQuickLinks(board: ExamBoard): QuickLink[] {
         },
         {
           title: 'Cambridge Exam Technique',
-          description: 'Paper 1 & Paper 2 walkthroughs for 0990',
+          description: 'Paper 1 & Paper 2 walkthroughs for Cambridge First Language (9-1)',
           href: '/revision/exam-technique',
           icon: GraduationCap,
           color: 'text-primary bg-primary/10',

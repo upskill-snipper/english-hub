@@ -77,7 +77,7 @@ export default function AnalysisPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: entry.title.replace(/ \| .+$/, ''),
-    author: { '@type': 'Organization', name: 'The English Hub — GCSE Examiners' },
+    author: { '@type': 'Organization', name: 'The English Hub — GCSE Markers' },
     publisher: { '@type': 'Organization', name: 'The English Hub' },
     description: entry.description,
     mainEntityOfPage: `https://theenglishhub.app/analysis/${key}`,
@@ -104,7 +104,7 @@ export default function AnalysisPage({ params }: Props) {
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         {entry.title.replace(/ \| .+$/, '')}
       </h1>
-      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE examiners</p>
+      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
 
       <article className="mt-8 space-y-5 text-muted-foreground leading-relaxed">
         <p>{entry.description}</p>

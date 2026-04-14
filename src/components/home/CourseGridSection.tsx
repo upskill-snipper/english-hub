@@ -11,7 +11,7 @@ import {
   Clock,
 } from 'lucide-react'
 
-type CourseBoard = 'all' | 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'Edexcel IGCSE' | 'Cambridge 0500' | 'Cambridge 0990'
+type CourseBoard = 'all' | 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'Edexcel IGCSE' | 'Cambridge First Language' | 'Cambridge First Language (9-1)'
 
 type Course = {
   title: string
@@ -36,7 +36,7 @@ const courses: readonly Course[] = [
     level: 'KS3',
     levelColor: 'bg-blue-500/20 text-blue-400',
     duration: '6 weeks',
-    desc: 'Creative and transactional writing foundations for Years 7-9.',
+    desc: 'Creative and real-world writing foundations for Years 7-9.',
     boards: ['all'],
   },
   {
@@ -60,7 +60,7 @@ const courses: readonly Course[] = [
     level: 'GCSE',
     levelColor: 'bg-primary/20 text-primary',
     duration: '8 weeks',
-    desc: "Writers\u2019 viewpoints and perspectives — non-fiction reading and transactional writing for AQA.",
+    desc: "Writers\u2019 viewpoints and perspectives — non-fiction reading and writing for real purposes for AQA.",
     boards: ['AQA'],
   },
   {
@@ -76,7 +76,7 @@ const courses: readonly Course[] = [
     level: 'GCSE',
     levelColor: 'bg-primary/20 text-primary',
     duration: '8 weeks',
-    desc: 'Master 19th-century non-fiction analysis and transactional writing for Edexcel 1EN2.',
+    desc: 'Master 19th-century non-fiction analysis and writing for real purposes for Edexcel 1EN2.',
     boards: ['Edexcel'],
   },
   {
@@ -92,7 +92,7 @@ const courses: readonly Course[] = [
     level: 'IGCSE',
     levelColor: 'bg-emerald-500/20 text-emerald-400',
     duration: '10 weeks',
-    desc: 'Edexcel IGCSE English Language Spec A (4EA1) — non-fiction and transactional writing.',
+    desc: 'Edexcel IGCSE English Language Spec A (4EA1) — non-fiction and writing for real purposes.',
     boards: ['Edexcel IGCSE'],
   },
   {
@@ -100,24 +100,24 @@ const courses: readonly Course[] = [
     level: 'IGCSE',
     levelColor: 'bg-purple-500/20 text-purple-400',
     duration: '10 weeks',
-    desc: 'Anthology, unseen poetry and prose for Edexcel IGCSE 4ET1.',
+    desc: 'Anthology, unseen poetry and prose for Edexcel IGCSE English Literature.',
     boards: ['Edexcel IGCSE'],
   },
   {
-    title: 'Cambridge 0500 First Language',
+    title: 'Cambridge First Language English',
     level: 'IGCSE',
     levelColor: 'bg-sky-500/20 text-sky-400',
     duration: '10 weeks',
-    desc: 'Reading, directed writing and composition for Cambridge IGCSE 0500 First Language English.',
-    boards: ['Cambridge 0500'],
+    desc: 'Reading, directed writing and composition for Cambridge IGCSE First Language English.',
+    boards: ['Cambridge First Language'],
   },
   {
-    title: 'Cambridge 0990 First Language',
+    title: 'Cambridge First Language English (9-1)',
     level: 'IGCSE',
     levelColor: 'bg-sky-500/20 text-sky-400',
     duration: '10 weeks',
-    desc: 'Reading, directed writing and composition for Cambridge IGCSE 0990 (9-1 grading).',
-    boards: ['Cambridge 0990'],
+    desc: 'Reading, directed writing and composition for Cambridge IGCSE First Language English (9-1 grading).',
+    boards: ['Cambridge First Language (9-1)'],
   },
   {
     title: 'OCR Language Practice',
@@ -152,8 +152,8 @@ const BOARD_TO_LABEL: Record<ExamBoard, CourseBoard> = {
   ocr: 'OCR',
   eduqas: 'WJEC',
   'edexcel-igcse': 'Edexcel IGCSE',
-  'cambridge-0500': 'Cambridge 0500',
-  'cambridge-0990': 'Cambridge 0990',
+  'cambridge-0500': 'Cambridge First Language',
+  'cambridge-0990': 'Cambridge First Language (9-1)',
 }
 
 function filterCourses(all: readonly Course[], board: ExamBoard | null): readonly Course[] {
@@ -168,7 +168,7 @@ export default function CourseGridSection({ board }: { board?: ExamBoard | null 
 
   const heading = config ? `${config.shortName} Courses` : 'Featured Courses'
   const sub = config
-    ? `Every course below is mapped to the ${config.fullName} specification. All courses included with your subscription. First ${PRICING.TRIAL_DAYS}-day month free!`
+    ? `Every course below is mapped to ${config.fullName}. All courses included with your subscription. First ${PRICING.TRIAL_DAYS}-day month free!`
     : `All courses included with your subscription. First ${PRICING.TRIAL_DAYS}-day month free!`
 
   return (

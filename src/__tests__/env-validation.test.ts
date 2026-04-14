@@ -17,6 +17,7 @@ describe('validateEnv', () => {
     'STRIPE_WEBHOOK_SECRET',
     'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY',
     'ANTHROPIC_API_KEY',
+    'NEXT_PUBLIC_SITE_URL',
   ]
 
   beforeEach(() => {
@@ -76,9 +77,9 @@ describe('validateEnv', () => {
     const { validateEnv } = await import('@/lib/env-validation')
     validateEnv()
 
-    // At least one optional var should be missing (we didn't set any)
+    // At least one recommended/optional var should be missing (we didn't set any)
     expect(warnSpy).toHaveBeenCalledWith(
-      expect.stringContaining('Optional environment variables')
+      expect.stringContaining('[env-validation] Warnings')
     )
     warnSpy.mockRestore()
   })
@@ -87,7 +88,7 @@ describe('validateEnv', () => {
     const optionalVars = [
       'UPSTASH_REDIS_REST_URL', 'UPSTASH_REDIS_REST_TOKEN',
       'REWARDFUL_API_SECRET', 'NEXT_PUBLIC_REWARDFUL_KEY',
-      'CRON_SECRET', 'NEXT_PUBLIC_SENTRY_DSN', 'SENTRY_DSN',
+      'CRON_SECRET', 'CSRF_SECRET', 'NEXT_PUBLIC_SENTRY_DSN', 'SENTRY_DSN',
       'NEXT_PUBLIC_GA4_ID', 'RESEND_API_KEY', 'ADMIN_EMAILS',
     ]
     for (const v of optionalVars) {

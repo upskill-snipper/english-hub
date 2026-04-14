@@ -21,9 +21,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Summary Writing — Cambridge 0500 Paper 1 Q3',
+  title: 'Summary Writing — IGCSE Language A Paper 1 Q3',
   description:
-    'How to write a top-mark summary for Cambridge IGCSE 0500 Paper 1 Question 3. Method, model paragraph and marking criteria explained.',
+    'How to write a top-mark summary for IGCSE Language A Paper 1 Question 3. Method, model paragraph and marking criteria explained. Aligns with Cambridge syllabus 0500.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/cambridge/0500/paper-1/summary-writing',
@@ -97,7 +97,7 @@ export default async function SummaryWritingPage() {
       {/* ── Header ─────────────────────────────────────────────────── */}
       <section>
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
-          Cambridge IGCSE 0500
+          IGCSE Language A
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">
           Summary writing (Q3)
@@ -120,7 +120,7 @@ export default async function SummaryWritingPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              AO1 Reading — 15 marks
+              Reading skills — 15 marks
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">
               Content points
@@ -132,7 +132,7 @@ export default async function SummaryWritingPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              AO2 Writing — 10 marks
+              Writing skills — 10 marks
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">
               Style, structure, own words

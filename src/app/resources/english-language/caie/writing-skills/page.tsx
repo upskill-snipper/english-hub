@@ -48,7 +48,7 @@ export default function WritingSkillsPage() {
           <p className="mt-3 max-w-2xl text-muted-foreground">
             A comprehensive guide to every writing skill you need for the
             Cambridge IGCSE English Language examination, with format templates,
-            worked examples, and examiner-approved techniques.
+            worked examples, and marker-approved techniques.
           </p>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default function WritingSkillsPage() {
           <p className="mt-3 text-muted-foreground leading-relaxed">
             In directed writing, you must write in a specific format using
             ideas from a provided passage <strong>and</strong> your own ideas.
-            Getting the format right is the foundation &mdash; examiners will
+            Getting the format right is the foundation &mdash; markers will
             immediately notice if you use the wrong conventions.
           </p>
 
@@ -423,14 +423,14 @@ export default function WritingSkillsPage() {
             </div>
           </div>
 
-          {/* Summary mark scheme */}
+          {/* Summary marking guide */}
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5">
               <p className="text-2xl font-bold text-primary">15</p>
               <p className="text-sm font-semibold text-foreground">Content Marks</p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 1 mark for each relevant content point identified from the
-                passage. The mark scheme lists specific points &mdash; you get
+                passage. The marking guide lists specific points &mdash; you get
                 credit for each distinct idea you include, up to 15.
               </p>
             </div>
@@ -467,7 +467,7 @@ export default function WritingSkillsPage() {
           </h3>
           <p className="mt-2 text-sm text-muted-foreground">
             Your opening is crucial &mdash; it sets the tone and determines
-            whether the examiner is engaged from the start.
+            whether the marker is engaged from the start.
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border p-4">

@@ -12,7 +12,7 @@ export const wjecGuide: BoardExamGuide = {
 
 <p>The Literature specification organises its poetry anthology into <strong>three thematic clusters of 18 poems</strong>, a structure that encourages students to think comparatively within and across clusters rather than treating each poem in isolation. This "three-cluster" approach is unique to Eduqas and shapes how students prepare for the poetry comparison question: they must select a poem of their own choice from the same cluster as the named poem, making strategic poem selection a key exam skill. The board also places significant emphasis on <strong>oracy</strong>, with continuous assessment of spoken language skills feeding into the overall qualification profile.</p>
 
-<p>Eduqas mark schemes are widely regarded as among the clearest and most structured of any board, with six precisely defined levels and transparent descriptors that make self-assessment and targeted improvement straightforward. The top band rewards "sophisticated, assured analysis" with "perceptive, conceptualised" responses — students who thread an overarching interpretation through their entire answer rather than analysing quotations in isolation. Grade boundaries have remained relatively stable, with a Grade 4 requiring approximately 29% and a Grade 9 requiring around 76% across both qualifications combined. Strategic preparation should focus on mastering the proofreading component (free marks that many students leave on the table), developing confident comparative skills for the poetry anthology, and practising the two distinct writing modes required in Component 2.</p>`,
+<p>Eduqas marking guides are widely regarded as among the clearest and most structured of any board, with six precisely defined levels and transparent descriptors that make self-assessment and targeted improvement straightforward. The top band rewards "sophisticated, assured analysis" with "perceptive, conceptualised" responses — students who thread an overarching interpretation through their entire answer rather than analysing quotations in isolation. Grade boundaries have remained relatively stable, with a Grade 4 requiring approximately 29% and a Grade 9 requiring around 76% across both qualifications combined. Strategic preparation should focus on mastering the proofreading component (free marks that many students leave on the table), developing confident comparative skills for the poetry anthology, and practising the two distinct writing modes required in Component 2.</p>`,
 
   specCodes: [
     { subject: 'English Language', code: 'C700QS' },
@@ -359,7 +359,7 @@ export const wjecGuide: BoardExamGuide = {
               skill: 'Extract-based analysis of 19th-century prose',
               time: '25 minutes',
               advice:
-                'Ground your response in the specific extract, but demonstrate wider knowledge of the text where relevant. Analyse the writer\'s language choices in detail — for a text like A Christmas Carol, explore Dickens\'s use of imagery, symbolism, allegory, and narrative voice. Integrate contextual understanding naturally: reference Victorian social conditions, the Poor Law, Christian morality, and the industrial revolution as appropriate. The mark scheme rewards responses that show how context shapes the writer\'s choices rather than bolting on historical facts.',
+                'Ground your response in the specific extract, but demonstrate wider knowledge of the text where relevant. Analyse the writer\'s language choices in detail — for a text like A Christmas Carol, explore Dickens\'s use of imagery, symbolism, allegory, and narrative voice. Integrate contextual understanding naturally: reference Victorian social conditions, the Poor Law, Christian morality, and the industrial revolution as appropriate. The marking guide rewards responses that show how context shapes the writer\'s choices rather than bolting on historical facts.',
             },
           ],
         },
@@ -463,7 +463,7 @@ export const wjecGuide: BoardExamGuide = {
     },
   ],
 
-  // ─── Examiner Tips ───────────────────────────────────────────────────────────
+  // ─── Marker Tips ───────────────────────────────────────────────────────────
   examinerTips: [
     {
       question: 'Component 1, Section A — Reading Questions',
@@ -486,7 +486,7 @@ export const wjecGuide: BoardExamGuide = {
     {
       question: 'Component 1, Section B — Creative Writing',
       tips: [
-        'Spend 5–7 minutes planning before you write. A clear plan prevents the rambling, unfocused responses that examiners consistently flag.',
+        'Spend 5–7 minutes planning before you write. A clear plan prevents the rambling, unfocused responses that markers consistently flag.',
         'Open with a hook: a striking image, an unusual perspective, a sensory detail, or a provocative line of dialogue.',
         'Vary your sentence openings and lengths purposefully. Short sentences create impact; longer sentences build atmosphere and description.',
         'End with circularity — echo your opening image, phrase, or motif to create a satisfying, crafted structure.',
@@ -551,12 +551,12 @@ export const wjecGuide: BoardExamGuide = {
     {
       year: '2026',
       change:
-        'Enhanced proofreading component: the proofreading/editing task in Language Component 1 has been expanded with a wider range of error types and a clearer mark scheme to better assess students\' editing precision.',
+        'Enhanced proofreading component: the proofreading/editing task in Language Component 1 has been expanded with a wider range of error types and a clearer marking guide to better assess students\' editing precision.',
     },
     {
       year: '2026',
       change:
-        'Clarified contextual assessment in Literature: mark scheme descriptors for AO3 now provide more explicit guidance on what constitutes integrated contextual understanding versus bolted-on context, helping students target the top bands more effectively.',
+        'Clarified contextual assessment in Literature: marking guide descriptors for AO3 now provide more explicit guidance on what constitutes integrated contextual understanding versus bolted-on context, helping students target the top bands more effectively.',
     },
   ],
 
@@ -816,7 +816,7 @@ export const wjecGuide: BoardExamGuide = {
     'Proofreading and editing task in Language Component 1 — the only GCSE English board to formally assess students\' ability to identify and correct errors in spelling, punctuation, and grammar within a given passage.',
     'Three-cluster poetry anthology of 18 poems — poems are organised into three thematic clusters, and students must choose their comparison poem from the same cluster as the named poem. This unique structure requires strategic preparation across all clusters.',
     'Oracy assessment: WJEC Eduqas includes continuous assessment of spoken language skills (oracy) as part of the overall qualification profile, placing greater emphasis on oral communication than other boards.',
-    'Structured mark schemes with six clearly defined levels — widely regarded as among the clearest and most transparent of any board, making self-assessment and targeted improvement straightforward for students and teachers.',
+    'Structured marking guides with six clearly defined levels — widely regarded as among the clearest and most transparent of any board, making self-assessment and targeted improvement straightforward for students and teachers.',
     'Component 2 requires two transactional writing tasks of different lengths (one shorter, one longer), testing a range of forms including letters, articles, speeches, and reviews within a single exam sitting.',
     'The proofreading task offers some of the most accessible marks on the entire Language paper — students who practise editing skills regularly can secure these marks with confidence, giving them a strategic advantage.',
     'Literature Component 2 covers three distinct sections (post-1914 prose/drama, 19th-century prose, and unseen poetry) in a single 2-hour-30-minute paper, requiring exceptional time management and versatility.',

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/unseen' },
   title: "Unseen Analysis - Cambridge IGCSE English Literature",
   description:
-    "Step-by-step techniques for unseen prose and poetry analysis in Cambridge IGCSE English Literature. Worked examples, frameworks, and examiner tips.",
+    "Step-by-step techniques for unseen prose and poetry analysis in Cambridge IGCSE English Literature. Worked examples, frameworks, and marker tips.",
 };
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -28,7 +28,7 @@ export default function UnseenAnalysisPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             A complete guide to tackling unseen texts with confidence. Step-by-step
-            frameworks, worked examples, and examiner tips for Cambridge IGCSE.
+            frameworks, worked examples, and marker tips for Cambridge IGCSE.
           </p>
         </div>
       </section>
@@ -173,7 +173,7 @@ export default function UnseenAnalysisPage() {
                   "Analyse specific moments closely: quote a phrase, name the technique, explain the effect.",
                   "Consider the reader's response: how does the writer make us feel? Why?",
                   "Comment on structure: how does the extract begin, develop, and end? Is there a climax or shift?",
-                  "Avoid narrative summary. The examiner knows what happens; they want to know HOW the writer makes it happen.",
+                  "Avoid narrative summary. The marker knows what happens; they want to know HOW the writer makes it happen.",
                 ],
               },
             ].map((s) => (
@@ -346,16 +346,16 @@ export default function UnseenAnalysisPage() {
 
         <hr className="my-10 border-border" />
 
-        {/* ── Examiner tips ───────────────────────────────────────── */}
+        {/* ── Marker tips ───────────────────────────────────────── */}
         <section aria-labelledby="tips-heading">
           <h2 id="tips-heading" className="text-2xl font-bold text-foreground">
-            Examiner Tips for Unseen Analysis
+            Marker Tips for Unseen Analysis
           </h2>
           <div className="mt-6 space-y-3">
             {[
               {
                 label: "Do not panic",
-                tip: "You are not expected to know the text. The examiner is testing your analytical skills, not your memory. A thoughtful, well-structured response to an unfamiliar text is exactly what they want to see.",
+                tip: "You are not expected to know the text. The marker is testing your analytical skills, not your memory. A thoughtful, well-structured response to an unfamiliar text is exactly what they want to see.",
               },
               {
                 label: "Quality over quantity",

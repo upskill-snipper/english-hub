@@ -199,7 +199,7 @@ export default function GradeBoundariesPage() {
         <Section title="What each grade looks like in practice">
           <p>
             Understanding the grade descriptors helps you see exactly what
-            examiners expect at each level. Here is what typical work looks like
+            markers expect at each level. Here is what typical work looks like
             at the key grade boundaries:
           </p>
 
@@ -337,7 +337,7 @@ export default function GradeBoundariesPage() {
                   <strong>Writing:</strong> Focus on technical accuracy.
                   Eliminating comma splicing, using capital letters correctly,
                   and spelling common words accurately can gain you several
-                  marks on AO6 alone. Practise proofreading your work in the
+                  marks on technical accuracy alone. Practise proofreading your work in the
                   final five minutes of each component.
                 </li>
                 <li>
@@ -448,7 +448,7 @@ export default function GradeBoundariesPage() {
                   <th className="py-2 pr-4">Question</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">What it tests</th>
-                  <th className="py-2 pr-4">AO</th>
+                  <th className="py-2 pr-4">Skill tested</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -457,44 +457,44 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4 font-semibold">Q1</td>
                   <td className="py-2 pr-4">4 marks</td>
                   <td className="py-2 pr-4">Retrieve and interpret information from one text</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Retrieval and inference</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q2</td>
                   <td className="py-2 pr-4">6 marks</td>
                   <td className="py-2 pr-4">Explain how language is used for effect</td>
-                  <td className="py-2 pr-4">AO2</td>
+                  <td className="py-2 pr-4">Language analysis</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q3</td>
                   <td className="py-2 pr-4">6 marks</td>
                   <td className="py-2 pr-4">Identify and interpret themes or ideas across both texts</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Retrieval and inference</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q4</td>
                   <td className="py-2 pr-4">10 marks</td>
                   <td className="py-2 pr-4">Compare how writers convey viewpoints and perspectives</td>
-                  <td className="py-2 pr-4">AO3</td>
+                  <td className="py-2 pr-4">Comparison</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q5</td>
                   <td className="py-2 pr-4">6 marks</td>
                   <td className="py-2 pr-4">Evaluate how effectively a writer achieves their purpose</td>
-                  <td className="py-2 pr-4">AO4</td>
+                  <td className="py-2 pr-4">Evaluation</td>
                 </tr>
                 <tr className="bg-primary/10">
                   <td className="py-2 pr-4" rowSpan={2}>Section B: Writing</td>
                   <td className="py-2 pr-4 font-semibold">Q6</td>
                   <td className="py-2 pr-4">24 marks</td>
                   <td className="py-2 pr-4">Writing to present a viewpoint (e.g., article, speech, letter)</td>
-                  <td className="py-2 pr-4">AO5 (14) + AO6 (10)</td>
+                  <td className="py-2 pr-4">Content and organisation (14) + Technical accuracy (10)</td>
                 </tr>
                 <tr className="bg-primary/10">
                   <td className="py-2 pr-4 font-semibold">Q7</td>
                   <td className="py-2 pr-4">24 marks</td>
                   <td className="py-2 pr-4">Writing to present a viewpoint (shorter task or different form)</td>
-                  <td className="py-2 pr-4">AO5 (14) + AO6 (10)</td>
+                  <td className="py-2 pr-4">Content and organisation (14) + Technical accuracy (10)</td>
                 </tr>
                 <tr className="font-bold">
                   <td className="py-2 pr-4">Total</td>
@@ -508,7 +508,7 @@ export default function GradeBoundariesPage() {
           <p className="mt-4 text-sm text-muted-foreground">
             The writing section (Q6 and Q7 combined) is worth <strong>48 out
             of 80 marks</strong> &mdash; 60% of this component. Strong
-            transactional writing skills are essential for a high mark on
+            writing for real purposes skills are essential for a high mark on
             Component 01.
           </p>
         </Section>
@@ -530,7 +530,7 @@ export default function GradeBoundariesPage() {
                   <th className="py-2 pr-4">Question</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">What it tests</th>
-                  <th className="py-2 pr-4">AO</th>
+                  <th className="py-2 pr-4">Skill tested</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -539,32 +539,32 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4 font-semibold">Q1</td>
                   <td className="py-2 pr-4">4 marks</td>
                   <td className="py-2 pr-4">Retrieve and interpret information from a 21st-century text</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Retrieval and inference</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q2</td>
                   <td className="py-2 pr-4">6 marks</td>
                   <td className="py-2 pr-4">Explain how language and structure create effects</td>
-                  <td className="py-2 pr-4">AO2</td>
+                  <td className="py-2 pr-4">Language analysis</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q3</td>
                   <td className="py-2 pr-4">6 marks</td>
                   <td className="py-2 pr-4">Analyse a 19th-century text: how language creates meaning</td>
-                  <td className="py-2 pr-4">AO2</td>
+                  <td className="py-2 pr-4">Language analysis</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q4</td>
                   <td className="py-2 pr-4">24 marks</td>
                   <td className="py-2 pr-4">Evaluate critically how a writer achieves impact on the reader</td>
-                  <td className="py-2 pr-4">AO4</td>
+                  <td className="py-2 pr-4">Evaluation</td>
                 </tr>
                 <tr className="bg-primary/10">
                   <td className="py-2 pr-4">Section B: Writing</td>
                   <td className="py-2 pr-4 font-semibold">Q5</td>
                   <td className="py-2 pr-4">40 marks</td>
                   <td className="py-2 pr-4">Creative / imaginative writing (narrative or descriptive)</td>
-                  <td className="py-2 pr-4">AO5 (24) + AO6 (16)</td>
+                  <td className="py-2 pr-4">Content and organisation (24) + Technical accuracy (16)</td>
                 </tr>
                 <tr className="font-bold">
                   <td className="py-2 pr-4">Total</td>

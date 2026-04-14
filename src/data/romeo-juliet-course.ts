@@ -34,7 +34,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p><em>Romeo and Juliet</em> was written during what scholars call Shakespeare's <strong>"lyrical period"</strong> — the same years that produced <em>A Midsummer Night's Dream</em> and many of his sonnets. This explains the play's rich poetic texture: shared sonnets, rhyming couplets, elaborate conceits, and extended metaphors of light and dark.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> You do not need to memorise Shakespeare's biography for the exam. However, knowing that he wrote during the <strong>Elizabethan period</strong> (1558–1603) helps you contextualise the attitudes to love, marriage, and family honour that shape the play. Always link context to the <em>text</em>, not to Shakespeare's personal life.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> You do not need to memorise Shakespeare's biography for the exam. However, knowing that he wrote during the <strong>Elizabethan period</strong> (1558–1603) helps you contextualise the attitudes to love, marriage, and family honour that shape the play. Always link context to the <em>text</em>, not to Shakespeare's personal life.</div>
 
 <h3>Elizabethan Attitudes to Love &amp; Marriage</h3>
 
@@ -58,7 +58,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Shakespeare did not invent the story. He adapted it from <strong>Arthur Brooke's poem</strong> <em>The Tragical History of Romeus and Juliet</em> (1562), which was itself based on Italian sources. However, Shakespeare made significant changes: he <strong>compressed the timeline</strong> from nine months to just four or five days, creating an atmosphere of breathless urgency and inevitability. He also elevated the roles of Mercutio and the Nurse, added the Queen Mab speech, and made Juliet younger — just <strong>thirteen years old</strong> — to heighten the pathos.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The compressed timeline is an excellent point to raise in an essay about fate or dramatic structure. Shakespeare's decision to condense events into a few days makes the tragedy feel <em>inevitable</em> — the lovers are swept along by forces they cannot control. This directly supports AO2 analysis of structure.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The compressed timeline is an excellent point to raise in an essay about fate or dramatic structure. Shakespeare's decision to condense events into a few days makes the tragedy feel <em>inevitable</em> — the lovers are swept along by forces they cannot control. This directly supports AO2 analysis of structure.</div>
 
 <h3>The Prologue: A Roadmap for the Play</h3>
 
@@ -91,7 +91,7 @@ export const romeoJulietCourse: CourseData = {
   <li><strong>Soliloquy:</strong> A speech delivered by a character alone on stage, revealing their inner thoughts. Both Romeo and Juliet have important soliloquies — Romeo at the balcony, Juliet before taking the potion.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Using precise subject terminology such as <em>soliloquy</em>, <em>dramatic irony</em>, <em>oxymoron</em>, and <em>iambic pentameter</em> demonstrates your knowledge of literary conventions and will improve your AO2 marks. Practice spelling these terms correctly — they also contribute to your SPaG marks (AO4).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Using precise subject terminology such as <em>soliloquy</em>, <em>dramatic irony</em>, <em>oxymoron</em>, and <em>iambic pentameter</em> demonstrates your knowledge of literary conventions and will improve your AO2 marks. Practice spelling these terms correctly — they also contribute to your SPaG marks (AO4).</div>
 
 <h3>Religion &amp; the Role of the Church</h3>
 
@@ -201,7 +201,7 @@ export const romeoJulietCourse: CourseData = {
   <li><strong>"death-mark'd love"</strong> — Love is branded with death from the outset. The past participle <strong>"mark'd"</strong> implies it is stamped, sealed, predetermined.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The Prologue is an excellent choice for linking AO2 (form — the sonnet) with AO3 (Elizabethan beliefs in fate and astrology). If your extract question relates to fate or love, you can reference the Prologue as structural evidence of Shakespeare's intentions.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The Prologue is an excellent choice for linking AO2 (form — the sonnet) with AO3 (Elizabethan beliefs in fate and astrology). If your extract question relates to fate or love, you can reference the Prologue as structural evidence of Shakespeare's intentions.</div>
 
 <h3>Scene 1: The Street Brawl</h3>
 
@@ -234,7 +234,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Juliet's response is carefully obedient: <strong>"I'll look to like, if looking liking move."</strong> The alliteration and measured phrasing reveal a young woman who is dutiful but not passionate. She promises to <em>try</em> to find Paris attractive but makes no commitment. This subtle independence foreshadows her later, more dramatic defiance.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Juliet's initial obedience is a crucial baseline for tracking her character development (AO2 — structure). When she later refuses to marry Paris in Act 3, Scene 5, the contrast is stark, and you can argue that her love for Romeo has given her the courage to defy patriarchal authority.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Juliet's initial obedience is a crucial baseline for tracking her character development (AO2 — structure). When she later refuses to marry Paris in Act 3, Scene 5, the contrast is stark, and you can argue that her love for Romeo has given her the courage to defy patriarchal authority.</div>
 
 <h3>Scene 4: Queen Mab Speech</h3>
 
@@ -369,7 +369,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Juliet argues that names are arbitrary labels, not essential truths. A rose's fragrance exists independently of what we call it; Romeo's worth exists independently of his family name. This is a remarkably <strong>philosophical</strong> argument for a thirteen-year-old, and it demonstrates Juliet's intellectual maturity. She is not simply swept away by emotion — she <em>reasons</em> her way to a justification for loving Romeo.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Juliet's "rose" speech is ideal for an essay about her character development or the theme of identity versus family. You can argue that Juliet is Shakespeare's most <em>rational</em> character — she analyses the problem of names and identity with a clarity that the feuding adults never achieve.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Juliet's "rose" speech is ideal for an essay about her character development or the theme of identity versus family. You can argue that Juliet is Shakespeare's most <em>rational</em> character — she analyses the problem of names and identity with a clarity that the feuding adults never achieve.</div>
 
 <p>However, the speech also reveals a <strong>tragic naivety</strong>. Names <em>do</em> matter in Verona — the name "Montague" carries a history of violence and obligation that cannot simply be discarded. Juliet's idealism is beautiful but ultimately insufficient to overcome the social reality she lives in. This gap between what love promises and what society allows is the engine of the tragedy.</p>
 
@@ -399,7 +399,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>The Friar agrees to marry Romeo and Juliet, hoping the union will <strong>"turn your households' rancour to pure love"</strong>. His motivation is political as well as spiritual — he sees the marriage as a potential solution to the feud. This makes him a well-intentioned but ultimately <strong>misguided</strong> figure whose good intentions pave the way to catastrophe.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Friar Lawrence is an excellent character to discuss when writing about the theme of fate versus free will. He <em>chooses</em> to marry the couple and later devises the sleeping-potion plan — but his choices, made with good intentions, contribute directly to the tragic outcome. Is he a victim of fate or the architect of his own failure?</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Friar Lawrence is an excellent character to discuss when writing about the theme of fate versus free will. He <em>chooses</em> to marry the couple and later devises the sleeping-potion plan — but his choices, made with good intentions, contribute directly to the tragic outcome. Is he a victim of fate or the architect of his own failure?</div>
 
 <h3>The Nurse as Go-Between</h3>
 
@@ -517,7 +517,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Mercutio's dying words are among the play's most famous: <strong>"A plague o' both your houses!"</strong> Repeated three times, this curse indicts <em>both</em> families — not Tybalt alone, but the entire feud. Mercutio, who belongs to neither family, is the innocent victim of a conflict that is not his own. His curse extends to <strong>"your houses"</strong> — the families as institutions — suggesting that the feud is a disease infecting all of Verona.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Mercutio's curse is one of the best quotations in the play for discussing the theme of conflict. It works for AO1 (your interpretation of the feud's destructive reach), AO2 (the repetition and the collective noun "houses"), and AO3 (the Elizabethan concept of honour that compels Mercutio to fight).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Mercutio's curse is one of the best quotations in the play for discussing the theme of conflict. It works for AO1 (your interpretation of the feud's destructive reach), AO2 (the repetition and the collective noun "houses"), and AO3 (the Elizabethan concept of honour that compels Mercutio to fight).</div>
 
 <p>His final line — <strong>"Ask for me tomorrow, and you shall find me a grave man"</strong> — is a characteristic pun: "grave" means both serious and dead. Even dying, Mercutio plays with language, but the pun is bitterly ironic. His wit, which has been the play's source of comic energy, is extinguished by the feud.</p>
 
@@ -545,7 +545,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>When Lady Capulet announces that Juliet must marry <strong>Paris</strong>, Juliet refuses — her first direct defiance of her parents. <strong>Lord Capulet's</strong> reaction is terrifying in its violence: <strong>"Hang thee, young baggage, disobedient wretch!"</strong> The insults dehumanise Juliet, reducing her to property — <strong>"baggage"</strong> — that has malfunctioned. He threatens to <strong>"drag thee on a hurdle thither"</strong> and disown her entirely.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Capulet's rage in Act 3, Scene 5 is essential for any essay about patriarchal authority, the theme of family, or Juliet's character. Note how his language shifts from affection (earlier calling Juliet the "hopeful lady of my earth") to brutal dehumanisation. This contrast reveals that paternal "love" in the play is conditional on obedience.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Capulet's rage in Act 3, Scene 5 is essential for any essay about patriarchal authority, the theme of family, or Juliet's character. Note how his language shifts from affection (earlier calling Juliet the "hopeful lady of my earth") to brutal dehumanisation. This contrast reveals that paternal "love" in the play is conditional on obedience.</div>
 
 <div class="historical-context"><strong>Elizabethan Honour Culture &amp; Duelling</strong> — Act 3, Scene 1 reflects the intense code of honour that governed Elizabethan society, particularly among the aristocracy. In both Italy and Elizabethan England, a man's <strong>reputation was his most valuable possession</strong>. An insult to honour could only be answered through physical combat. The duel was not merely a personal conflict but a legal and social mechanism for settling disputes. Tybalt's challenge to Romeo, therefore, is not an act of aggression but a formal and necessary response to Romeo's presence at the Capulet ball. Romeo's refusal to fight (motivated by his secret marriage to Juliet) would normally be seen as shameful cowardice. Mercutio's intervention is thus not reckless but what any honourable friend would do — defend Romeo's honour when Romeo cannot. The tragedy is that this code of honour, designed to settle disputes justly, instead kills two young men and sets in motion the events that destroy the lovers.</div>
 
@@ -766,7 +766,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>The plan is elaborate and fragile — it depends on perfect timing, reliable messengers, and no unforeseen complications. An Elizabethan audience, steeped in <strong>providential thinking</strong> (the belief that God controls events), might interpret its failure as divine punishment for the deception involved. A modern audience is more likely to see it as tragic <strong>bad luck</strong> — but Shakespeare deliberately leaves both readings open.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The Friar's plan is a key moment for discussing <strong>fate versus free will</strong>. The Friar makes a <em>choice</em> to use deception rather than confronting the families directly. His plan fails not because of fate alone, but because of a combination of human error and bad timing. This ambiguity is what makes the theme of fate so rich in the play.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The Friar's plan is a key moment for discussing <strong>fate versus free will</strong>. The Friar makes a <em>choice</em> to use deception rather than confronting the families directly. His plan fails not because of fate alone, but because of a combination of human error and bad timing. This ambiguity is what makes the theme of fate so rich in the play.</div>
 
 <div class="historical-context"><strong>Elizabethan Context: Marriage &amp; Parental Authority</strong> — Juliet's decision to defy her parents reflects a genuine social transgression. In Elizabethan England, the law of <strong>primogeniture</strong> and strict patriarchal control meant that daughters were their father's property until marriage, at which point they became their husband's. Lord Capulet's ultimatum — "speak not, reply not, do not answer me" — represents absolute paternal authority backed by law and custom. Juliet's choice to drink the potion is therefore not merely romantic but profoundly political: she asserts her right to choose her own husband and, implicitly, ownership of her own body. For Shakespeare's audience, this would have been thrilling but also deeply disturbing — a daughter rejecting the natural order that kept society stable.</div>
 
@@ -891,7 +891,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Romeo drinks the poison and dies. Moments later, Juliet wakes. Finding Romeo dead, she kisses his lips hoping for residual poison: <strong>"Thy lips are warm."</strong> These four monosyllabic words are devastating in their simplicity — they tell the audience that Romeo died only seconds before, that a moment's difference would have saved both lives. Juliet then takes Romeo's dagger and stabs herself: <strong>"O happy dagger, / This is thy sheath."</strong> The sexual metaphor — the dagger entering its sheath — unites love and death one final time.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> "Thy lips are warm" is perhaps the play's most powerful line. Its simplicity — four monosyllabic words — contrasts with the elaborate poetry that surrounds it, making Juliet's grief feel raw and real. In an exam, this line can support arguments about timing, fate, dramatic irony, or Juliet's character.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> "Thy lips are warm" is perhaps the play's most powerful line. Its simplicity — four monosyllabic words — contrasts with the elaborate poetry that surrounds it, making Juliet's grief feel raw and real. In an exam, this line can support arguments about timing, fate, dramatic irony, or Juliet's character.</div>
 
 <h3>The Reconciliation</h3>
 
@@ -983,7 +983,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>In the balcony scene, Romeo's poetry reaches its peak. His extended sun metaphor is spontaneous and passionate, his willingness to renounce his name — <strong>"Call me but love, and I'll be new baptized"</strong> — shows he values Juliet above family identity, and his physical bravery in climbing the Capulet wall demonstrates that his love is active, not passive.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about Romeo's character, always track the <strong>change in his language</strong> from Act 1 to Act 2. This linguistic transformation is the best evidence for his character development and allows you to engage with AO2 (writer's methods) while making an AO1 argument about character.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When writing about Romeo's character, always track the <strong>change in his language</strong> from Act 1 to Act 2. This linguistic transformation is the best evidence for his character development and allows you to engage with AO2 (writer's methods) while making an AO1 argument about character.</div>
 
 <h3>Romeo &amp; Masculinity</h3>
 
@@ -1007,7 +1007,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Romeo's final act is to drink poison — a slower death than Juliet's dagger, which gives him time for a last kiss and a last speech. Shakespeare denies him the knowledge that would save his life, making him a figure of profound pathos. He dies believing he has lost everything, never knowing that Juliet was alive and that his death was unnecessary.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> A strong essay on Romeo's character will argue that he is <strong>both</strong> a victim of fate and the author of his own downfall. The best responses avoid a one-sided interpretation and instead explore the tension between free will and destiny — this is what examiners call a "conceptualised" response.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> A strong essay on Romeo's character will argue that he is <strong>both</strong> a victim of fate and the author of his own downfall. The best responses avoid a one-sided interpretation and instead explore the tension between free will and destiny — this is what markers call a "conceptualised" response.</div>
 
 <h3>Romeo &amp; Language: Tracking His Development</h3>
 
@@ -1140,7 +1140,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Juliet also demonstrates <strong>self-awareness</strong> about the social codes she is breaking: <strong>"Fain would I dwell on form — fain, fain deny / What I have spoke. But farewell compliment!"</strong> She knows she should play coy, pretend she was not overheard, follow the rules of courtship — but she rejects these conventions as dishonest. Her honesty is a form of courage.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Juliet's rationality is an excellent counter-argument to any reading that dismisses the lovers as "just impulsive teenagers." While Romeo is impulsive, Juliet thinks carefully before acting. She demands marriage, she considers the consequences, and she weighs her options before taking the potion. Highlighting this difference strengthens your character analysis.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Juliet's rationality is an excellent counter-argument to any reading that dismisses the lovers as "just impulsive teenagers." While Romeo is impulsive, Juliet thinks carefully before acting. She demands marriage, she considers the consequences, and she weighs her options before taking the potion. Highlighting this difference strengthens your character analysis.</div>
 
 <h3>Juliet's Defiance (Act 3, Scene 5)</h3>
 
@@ -1164,7 +1164,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Yet she drinks. The speech ends: <strong>"Romeo, Romeo, Romeo! Here's drink — I drink to thee."</strong> The triple invocation of Romeo's name transforms the act of drinking into an act of devotion — a toast to their love that echoes the sacramental imagery of their first meeting. She faces potential death with a declaration of love, not fear.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Juliet's potion soliloquy is ideal for an essay about her character or about courage. Compare it with Romeo's behaviour in the Friar's cell (Act 3, Scene 3), where he weeps and threatens suicide. Juliet confronts her fears rationally and acts decisively; Romeo collapses emotionally. This contrast is powerful evidence for any argument about Juliet's strength.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Juliet's potion soliloquy is ideal for an essay about her character or about courage. Compare it with Romeo's behaviour in the Friar's cell (Act 3, Scene 3), where he weeps and threatens suicide. Juliet confronts her fears rationally and acts decisively; Romeo collapses emotionally. This contrast is powerful evidence for any argument about Juliet's strength.</div>
 
 <h3>Juliet's Death</h3>
 
@@ -1385,7 +1385,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>The play's central argument about love is that it is <strong>the most powerful force in the world</strong> — more powerful than family loyalty, social convention, or even the fear of death. But this power is double-edged: the same love that transforms Romeo from a posturing adolescent into a passionate man also drives him to kill Tybalt, defy his banishment, and take his own life.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If the exam asks about love, do not only write about romantic love. Discuss at least <strong>two or three different types</strong> of love and show how Shakespeare contrasts them. This demonstrates a sophisticated understanding and allows you to range across the whole play.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If the exam asks about love, do not only write about romantic love. Discuss at least <strong>two or three different types</strong> of love and show how Shakespeare contrasts them. This demonstrates a sophisticated understanding and allows you to range across the whole play.</div>
 
 <h3>2. Fate &amp; Destiny</h3>
 
@@ -1424,7 +1424,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Parental authority is also critiqued. Lord Capulet's transformation from indulgent father — <strong>"My will to her consent is but a part"</strong> (Act 1) — to tyrannical patriarch — <strong>"Hang thee, young baggage!"</strong> (Act 3) — shows that parental love in this world is conditional on the child's compliance. When Juliet exerts her own will, "love" turns to fury.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Capulet's contradictory behaviour is a gift for AO2 analysis. Quote his gentle Act 1 attitude alongside his Act 3 rage and argue that Shakespeare <em>structures</em> the play to expose the hypocrisy of patriarchal authority — it masquerades as love but is really about control.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Capulet's contradictory behaviour is a gift for AO2 analysis. Quote his gentle Act 1 attitude alongside his Act 3 rage and argue that Shakespeare <em>structures</em> the play to expose the hypocrisy of patriarchal authority — it masquerades as love but is really about control.</div>
 
 <h3>5. Youth vs Age</h3>
 
@@ -1447,7 +1447,7 @@ export const romeoJulietCourse: CourseData = {
   <li><strong>Conflict and Masculinity:</strong> The feud is sustained by a code of masculine honour that equates violence with manliness. Tybalt fights because honour demands it; Mercutio fights because Romeo's refusal shames the code; Romeo fights because Mercutio's death demands retaliation. The cycle of violence is powered by a definition of masculinity that Shakespeare presents as toxic and self-destructive.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If your exam question asks about <em>one</em> theme (e.g. conflict), you can still reference other themes to show interconnection. For example: "Shakespeare presents conflict not only as physical violence but as a force that corrupts love itself — Romeo and Juliet's relationship is defined by the conflict that surrounds it, as the Prologue's oxymoron 'death-mark'd love' suggests." This kind of thematic linking is characteristic of top-band responses.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If your exam question asks about <em>one</em> theme (e.g. conflict), you can still reference other themes to show interconnection. For example: "Shakespeare presents conflict not only as physical violence but as a force that corrupts love itself — Romeo and Juliet's relationship is defined by the conflict that surrounds it, as the Prologue's oxymoron 'death-mark'd love' suggests." This kind of thematic linking is characteristic of top-band responses.</div>
 
 <div class="model-answer"><strong>Model Answer (extract):</strong> Shakespeare presents the theme of fate as inextricable from the theme of conflict — destiny operates not through supernatural forces alone but through the social structures that humans create and sustain. The Prologue's description of "star-cross'd lovers" implies a cosmic force governing the tragedy, yet the "stars" work through earthly mechanisms: the feud that makes their love forbidden, the code of honour that compels Romeo to kill Tybalt, the patriarchal authority that drives Juliet to the Friar's desperate plan. When Romeo cries "Then I defy you, stars!", the verb "defy" positions him against fate itself, yet his defiance — buying poison and riding to the tomb — is precisely the act that fulfils the prophecy. Shakespeare thus presents fate not as an external, irresistible power but as a pattern woven from human choices, social pressures, and tragic timing — a reading that gives the play enduring relevance for audiences who may not share Elizabethan beliefs in astrology but who recognise the destructive cycles that communities create for themselves.</div>
 `,
@@ -1553,7 +1553,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>This imagery serves two purposes. First, it <strong>elevates</strong> their love above the mundane — it is sacred, transcendent, and pure. Second, it creates an <strong>ironic tension</strong> with the fact that their love involves deception, disobedience, and ultimately death. The religious language sanctifies what society condemns, suggesting that the lovers' instincts are truer than the social order that oppresses them.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Religious imagery is one of the easiest AO2 points to make in the exam because it appears throughout the play. When you identify it, always explain <em>why</em> Shakespeare uses it — to elevate the love, to create irony, or to critique the gap between the lovers' purity and society's corruption.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Religious imagery is one of the easiest AO2 points to make in the exam because it appears throughout the play. When you identify it, always explain <em>why</em> Shakespeare uses it — to elevate the love, to create irony, or to critique the gap between the lovers' purity and society's corruption.</div>
 
 <h4>3. Oxymorons &amp; Antithesis</h4>
 
@@ -1609,7 +1609,7 @@ export const romeoJulietCourse: CourseData = {
   <li><strong>The alternation of scenes</strong> — public violence alternates with private intimacy, comedy with tragedy, day with night.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Structural analysis is one of the best ways to access the top mark bands for AO2. Instead of just analysing individual quotations, show how Shakespeare's <em>arrangement</em> of scenes creates meaning. For example: the marriage in Act 2, Scene 6 is immediately followed by the killings in Act 3, Scene 1 — joy and violence are structurally inseparable, mirroring the play's thematic argument.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Structural analysis is one of the best ways to access the top mark bands for AO2. Instead of just analysing individual quotations, show how Shakespeare's <em>arrangement</em> of scenes creates meaning. For example: the marriage in Act 2, Scene 6 is immediately followed by the killings in Act 3, Scene 1 — joy and violence are structurally inseparable, mirroring the play's thematic argument.</div>
 
 <h3>Soliloquies &amp; Asides</h3>
 
@@ -1732,7 +1732,7 @@ export const romeoJulietCourse: CourseData = {
   <li><strong>Plan a thesis.</strong> What is your overarching argument? A conceptualised response has a clear line of argument, not just a list of observations.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Your thesis does not need to be complex. A statement like "Shakespeare presents conflict as a destructive force that corrupts all levels of society" is sufficient to guide a focused, coherent response. The key is that every paragraph supports this central argument.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Your thesis does not need to be complex. A statement like "Shakespeare presents conflict as a destructive force that corrupts all levels of society" is sufficient to guide a focused, coherent response. The key is that every paragraph supports this central argument.</div>
 
 <h3>Essay Structure: The WHAT-HOW-WHY Method</h3>
 
@@ -1745,7 +1745,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>This structure ensures you hit all three AOs in every paragraph, rather than bolting context onto the end of your essay as a separate section.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing a "context paragraph" at the start or end of your essay. Examiners want context <em>embedded</em> in your analysis — woven into your discussion of language and theme. A standalone context paragraph suggests you cannot integrate your knowledge and will limit you to the middle mark bands.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing a "context paragraph" at the start or end of your essay. Markers want context <em>embedded</em> in your analysis — woven into your discussion of language and theme. A standalone context paragraph suggests you cannot integrate your knowledge and will limit you to the middle mark bands.</div>
 
 <h3>Analysing the Extract: Close Reading</h3>
 
@@ -1757,7 +1757,7 @@ export const romeoJulietCourse: CourseData = {
   <li><strong>Form:</strong> Is the extract in verse or prose? Rhyming couplets or blank verse? A sonnet? What does this tell us about the characters or the mood?</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The difference between a Grade 5 and a Grade 9 response is not the <em>number</em> of quotations or devices you identify, but the <em>depth</em> of your analysis. One quotation analysed in detail — exploring connotations, effects, and context — is worth more than five quotations simply labelled as "metaphors."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The difference between a Grade 5 and a Grade 9 response is not the <em>number</em> of quotations or devices you identify, but the <em>depth</em> of your analysis. One quotation analysed in detail — exploring connotations, effects, and context — is worth more than five quotations simply labelled as "metaphors."</div>
 
 <h3>Ranging Across the Play</h3>
 
@@ -1789,7 +1789,7 @@ export const romeoJulietCourse: CourseData = {
   <li>Use semicolons and colons to add sophistication: "Romeo's language transforms; his imagery becomes vivid and original."</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Leave <strong>two minutes</strong> at the end of the Shakespeare essay purely for proofreading. Read your essay backwards, sentence by sentence — this forces you to focus on individual sentences rather than the flow of argument, making errors easier to spot.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Leave <strong>two minutes</strong> at the end of the Shakespeare essay purely for proofreading. Read your essay backwards, sentence by sentence — this forces you to focus on individual sentences rather than the flow of argument, making errors easier to spot.</div>
 
 <h3>Useful Sentence Starters for AO2 &amp; AO3</h3>
 
@@ -1831,7 +1831,7 @@ export const romeoJulietCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'Examiners reward context that is integrated into analysis — woven into your discussion of Shakespeare\'s methods and their effects. A standalone context paragraph limits you to the middle mark bands.',
+            'Markers reward context that is integrated into analysis — woven into your discussion of Shakespeare\'s methods and their effects. A standalone context paragraph limits you to the middle mark bands.',
         },
         {
           id: 'rj-m10-q2',
@@ -1872,7 +1872,7 @@ export const romeoJulietCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'The WHAT-HOW-WHY structure ensures every paragraph addresses AO1 (your point), AO2 (writer\'s methods), and AO3 (context), integrating all assessment objectives rather than treating them separately.',
+            'The WHAT-HOW-WHY structure ensures every paragraph addresses AO1 (your point), AO2 (writer\'s methods), and AO3 (context), integrating all what markers look for rather than treating them separately.',
         },
         {
           id: 'rj-m10-q5',
@@ -1882,7 +1882,7 @@ export const romeoJulietCourse: CourseData = {
             'These phrases are grammatically incorrect',
             'They signal that context is bolted on rather than integrated into analysis',
             'They are too informal for an exam',
-            'Examiners dislike historical references',
+            'Markers dislike historical references',
           ],
           correct: 1,
           explanation:
@@ -2107,7 +2107,7 @@ export const romeoJulietCourse: CourseData = {
       ],
       correct: 1,
       explanation:
-        'Examiners reward context that is woven into analysis: "Shakespeare uses Juliet\'s defiance to critique patriarchal authority..." rather than "In those days, women had to obey their fathers."',
+        'Markers reward context that is woven into analysis: "Shakespeare uses Juliet\'s defiance to critique patriarchal authority..." rather than "In those days, women had to obey their fathers."',
     },
     {
       id: 'rj-aq17',

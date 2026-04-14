@@ -167,10 +167,10 @@ export default function OCRJekyllAndHydePage() {
             <div className="rounded-lg border border-border bg-muted p-4">
               <p className="font-semibold text-foreground">Assessment Objectives</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                <li><strong>AO1:</strong> Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.</li>
-                <li><strong>AO2:</strong> Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</li>
-                <li><strong>AO3:</strong> Show understanding of the relationships between texts and the contexts in which they were written.</li>
-                <li><strong>AO4:</strong> Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
+                <li><strong>Reading and response:</strong> Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.</li>
+                <li><strong>Language, form and structure:</strong> Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</li>
+                <li><strong>Contextual understanding:</strong> Show understanding of the relationships between texts and the contexts in which they were written.</li>
+                <li><strong>Written accuracy:</strong> Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
               </ul>
             </div>
           </div>
@@ -554,7 +554,7 @@ export default function OCRJekyllAndHydePage() {
           </h2>
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Understanding context is essential for AO3. Here are the key
+              Understanding context is essential. Here are the key
               contextual areas to know for Jekyll and Hyde:
             </p>
             <div className="space-y-4">
@@ -668,7 +668,7 @@ export default function OCRJekyllAndHydePage() {
                 <p className="font-semibold text-primary">Paragraph 1: How the theme/character is introduced</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Analyse the early chapters. Use a memorised quotation and
-                  explore language closely (AO2). Consider the narrative
+                  explore language closely. Consider the narrative
                   perspective and what is withheld from the reader.
                 </p>
               </div>
@@ -711,10 +711,10 @@ export default function OCRJekyllAndHydePage() {
               <h3 className="font-semibold text-primary">OCR Exam Technique Tips</h3>
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>&bull; <strong>No extract:</strong> You must memorise quotations. Aim to use 4&ndash;6 short quotations in your essay.</li>
-                <li>&bull; <strong>AO1:</strong> Make clear, sustained arguments that directly answer the question. Explore how meaning develops across the novella.</li>
-                <li>&bull; <strong>AO2:</strong> Analyse specific words, imagery, narrative structure, and Gothic conventions. Discuss Stevenson&rsquo;s use of multiple narrators, the epistolary form (letters), and the delayed revelation structure.</li>
-                <li>&bull; <strong>AO3:</strong> Integrate context naturally. Link to Victorian respectability, Darwinism, the Gothic tradition, and the culture of secrecy. Do not write separate context paragraphs.</li>
-                <li>&bull; <strong>AO4:</strong> Write clearly and accurately. Use a formal academic register with precise literary vocabulary.</li>
+                <li>&bull; <strong>Reading and response:</strong> Make clear, sustained arguments that directly answer the question. Explore how meaning develops across the novella.</li>
+                <li>&bull; <strong>Language, form and structure:</strong> Analyse specific words, imagery, narrative structure, and Gothic conventions. Discuss Stevenson&rsquo;s use of multiple narrators, the epistolary form (letters), and the delayed revelation structure.</li>
+                <li>&bull; <strong>Contextual understanding:</strong> Integrate context naturally. Link to Victorian respectability, Darwinism, the Gothic tradition, and the culture of secrecy. Do not write separate context paragraphs.</li>
+                <li>&bull; <strong>Written accuracy:</strong> Write clearly and accurately. Use a formal academic register with precise literary vocabulary.</li>
                 <li>&bull; <strong>Time management:</strong> Spend approximately 45 minutes. Plan for 5 minutes before writing.</li>
               </ul>
             </div>

@@ -20,9 +20,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE 4ET1 Modern Drama — The English Hub',
+  title: 'Edexcel IGCSE IGCSE Literature Modern Drama — The English Hub',
   description:
-    'Study guides for Edexcel IGCSE 4ET1 modern drama set texts: An Inspector Calls, A View from the Bridge, The Curious Incident of the Dog in the Night-Time, Death of a Salesman.',
+    'Study guides for Edexcel IGCSE IGCSE Literature modern drama set texts: An Inspector Calls, A View from the Bridge, The Curious Incident of the Dog in the Night-Time, Death of a Salesman.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/drama' },
 }
 
@@ -81,7 +81,7 @@ export default async function DramaHubPage() {
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel 4ET1
+          Back to Edexcel IGCSE Literature
         </Button>
       </div>
 
@@ -91,7 +91,7 @@ export default async function DramaHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE IGCSE Literature
             </Badge>
             <Badge variant="secondary">Paper 2 · Section A</Badge>
           </div>
@@ -101,7 +101,7 @@ export default async function DramaHubPage() {
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Pick your set modern drama text for full study notes covering plot,
             characters, themes, context and a bank of short key quotations
-            built around Assessment Objectives AO1, AO2 and AO4.
+            built around Understanding the text, Analysing language and structure, and Comparing texts.
           </p>
         </div>
       </section>

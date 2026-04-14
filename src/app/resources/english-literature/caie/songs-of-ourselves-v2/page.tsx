@@ -239,7 +239,7 @@ const poemPairings = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     title: "Informed personal response",
     description:
       "Demonstrate a close knowledge and understanding of texts, maintaining a critical style and presenting an informed personal engagement.",
@@ -247,7 +247,7 @@ const assessmentObjectives = [
       "Show you have read the poem closely. Use embedded quotations. Offer your own interpretation rather than simply describing what happens. For example, argue whether Smith's tone is genuinely light or deliberately unsettling.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     title: "Language, form and structure",
     description:
       "Analyse the language, form and structure used by a writer to create meanings and effects.",
@@ -255,7 +255,7 @@ const assessmentObjectives = [
       "This is where marks are won and lost. Examine specific word choices (e.g., Daryush's 'cushioned niche'), structural features (e.g., Auden's use of the Petrarchan volta), and the effects of form (e.g., Kolatkar's cinematic free verse). Always link technique to meaning.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     title: "Context",
     description:
       "Demonstrate understanding of the relationships between texts and the contexts in which they were written.",
@@ -263,7 +263,7 @@ const assessmentObjectives = [
       "Use context to illuminate, not to pad. Link Dharker's post-9/11 context to the poem's tone of anxiety. Connect Daryush's own privileged background to the poem's self-aware critique. Context should explain why the poem says what it says, not just when it was written.",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     title: "Comparison (where required)",
     description:
       "Explore connections and comparisons between texts.",
@@ -317,7 +317,7 @@ export default function SongsOfOurselvesV2Page() {
               <em>Songs of Ourselves Volume 2</em>, Part 3, is the prescribed poetry
               cluster for the Cambridge Assessment International Education (CAIE) IGCSE
               English Literature syllabus (0475). The anthology gathers poems from a wide
-              range of periods, cultures, and poetic traditions, offering candidates a rich
+              range of periods, cultures, and poetic traditions, offering you a rich
               body of work for close reading, comparative analysis, and personal response.
             </p>
             <p>
@@ -326,14 +326,14 @@ export default function SongsOfOurselvesV2Page() {
               diversity of voices — from Imtiaz Dharker&apos;s post-colonial perspective to
               W.H. Auden&apos;s 1930s social critique, from Arun Kolatkar&apos;s Indian
               modernism to Stevie Smith&apos;s English eccentricity — ensures that
-              candidates engage with multiple contexts, forms, and worldviews.
+              you engage with multiple contexts, forms, and worldviews.
             </p>
             <p>
-              In the examination, candidates may be asked to write a critical appreciation
+              In the examination, you may be asked to write a critical appreciation
               of a single poem or a comparative essay on two poems. Both question types
-              require close attention to language, form, and structure (AO2), an informed
-              personal response (AO1), and — where relevant — an understanding of context
-              (AO3) and the ability to draw connections between texts (AO4).
+              require close attention to language, form, and structure (Writer&apos;s Methods), an informed
+              personal response (Textual Knowledge), and — where relevant — an understanding of context
+              (Interpretation) and the ability to draw connections between texts (Personal Response).
             </p>
           </CardContent>
         </Card>
@@ -449,8 +449,8 @@ export default function SongsOfOurselvesV2Page() {
           CAIE Assessment Objectives for Poetry
         </h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
-          The CAIE 0475 syllabus assesses candidates against four Assessment Objectives.
-          Understanding what each AO requires — and how to demonstrate it in a poetry
+          The CAIE 0475 syllabus assesses you against four Assessment Objectives.
+          Understanding what each skill requires — and how to demonstrate it in a poetry
           response — is essential for achieving the highest bands.
         </p>
         <div className="mt-6 space-y-4">

@@ -196,7 +196,7 @@ const ESSAY_TIPS = [
   {
     title: "Link every point to the writer's purpose",
     detail:
-      "Examiners call this 'authorial intent.' After analysing a technique, explain why the writer made that choice. What message or effect were they trying to create? How does it connect to the wider themes of the text?",
+      "Markers call this 'authorial intent.' After analysing a technique, explain why the writer made that choice. What message or effect were they trying to create? How does it connect to the wider themes of the text?",
   },
   {
     title: "Use context purposefully, not as filler",
@@ -595,7 +595,7 @@ export default async function EnglishLiteraturePage() {
                 Paste your literature essay and receive instant, detailed
                 feedback on your argument, use of evidence, analysis of
                 language, and exam technique. Our AI marker is calibrated to
-                GCSE mark schemes.
+                GCSE marking guides.
               </p>
             </div>
             <Link
@@ -615,7 +615,7 @@ export default async function EnglishLiteraturePage() {
             More revision resources
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Strengthen specific skills that examiners reward most highly.
+            Strengthen specific skills that markers reward most highly.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

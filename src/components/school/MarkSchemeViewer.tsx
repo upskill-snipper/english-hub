@@ -144,13 +144,13 @@ function QuestionDetail({ scheme }: { scheme: MarkScheme }) {
         </Card>
       </div>
 
-      {/* Examiner annotations */}
+      {/* Marker annotations */}
       {scheme.exampleAnnotations && (
         <Card size="sm" className="border-primary/20 bg-primary/5">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-sm text-primary">
               <FileText className="h-4 w-4" />
-              Examiner Annotations — What Good Marking Looks Like
+              Marker Annotations — What Good Marking Looks Like
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -251,11 +251,11 @@ export function MarkSchemeViewer() {
         <div>
           <h1 className="flex items-center gap-2 text-2xl font-bold text-foreground">
             <BookOpen className="h-6 w-6 text-primary" />
-            Mark Scheme Reference
+            Marking Guide
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Browse GCSE English mark schemes by board, paper, and question. Select a question to
-            view detailed level descriptors, top tips, and common mistakes.
+            Browse GCSE English marking criteria by board, paper, and question. Select a question to
+            view detailed level descriptors, tips, and common mistakes.
           </p>
         </div>
         {activeScheme && (
@@ -351,7 +351,7 @@ export function MarkSchemeViewer() {
             <BookOpen className="mb-3 h-10 w-10 text-muted-foreground/70" />
             <p className="font-medium text-foreground">Get started</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Choose an exam board above to browse mark schemes.
+              Choose an exam board above to browse marking guides.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {boards.map((b) => (

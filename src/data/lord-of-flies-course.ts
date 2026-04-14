@@ -36,7 +36,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>Golding later stated: <strong>"I began to see what people were capable of doing"</strong> — a direct reference to the atrocities he witnessed during the war. The Holocaust, the atomic bombings of Hiroshima and Nagasaki, and the systematic cruelty of both Axis and Allied forces convinced him that <strong>evil is not confined to specific nations or ideologies but is an inherent part of human nature</strong>.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing Golding's context for AO3, always connect his biographical experiences to specific moments in the text. For example, link his wartime disillusionment to Simon's murder — a scene in which even "good" boys participate in savage violence, reflecting Golding's belief that ordinary people are capable of terrible acts.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When discussing Golding's context for AO3, always connect his biographical experiences to specific moments in the text. For example, link his wartime disillusionment to Simon's murder — a scene in which even "good" boys participate in savage violence, reflecting Golding's belief that ordinary people are capable of terrible acts.</div>
 
 <h3>Historical Context: World War II</h3>
 
@@ -86,7 +86,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>The novel was rejected by <strong>21 publishers</strong> before Faber &amp; Faber accepted it in 1954. It initially sold modestly, but by the 1960s it had become a bestseller and a staple of school curricula worldwide. Golding was awarded the <strong>Nobel Prize in Literature in 1983</strong>, with the committee citing his novels' ability to "illuminate the human condition in the world of today." <em>Lord of the Flies</em> remains one of the most widely studied novels in English literature and continues to provoke debate about the fundamental nature of humanity.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For AO3, you should demonstrate understanding of <em>why</em> context matters to the text's meaning — not just list historical facts. The strongest responses show how Golding's wartime experiences and post-war anxieties shaped the novel's central argument about human nature.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> For AO3, you should demonstrate understanding of <em>why</em> context matters to the text's meaning — not just list historical facts. The strongest responses show how Golding's wartime experiences and post-war anxieties shaped the novel's central argument about human nature.</div>
 `,
       quiz: [
         {
@@ -180,7 +180,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>An <strong>election</strong> is held. Ralph wins — largely because he blew the conch and because of his physical attractiveness: "there was a stillness about Ralph as he sat that marked him out... he was old enough, twelve perhaps, to have lost the prominent tummy of childhood... and there was a mildness about his mouth and eyes that proclaimed no devil." Jack is visibly humiliated by his defeat. To appease him, Ralph allows Jack's choir to become <strong>hunters</strong>.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The election scene is crucial for AO2 analysis. Notice Golding's language: Ralph wins not because of intelligence or merit but because of his <strong>appearance</strong> and the symbolic authority of the conch. This subtly critiques democracy — the boys choose a leader for superficial reasons, foreshadowing the fragility of their democratic system.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The election scene is crucial for AO2 analysis. Notice Golding's language: Ralph wins not because of intelligence or merit but because of his <strong>appearance</strong> and the symbolic authority of the conch. This subtly critiques democracy — the boys choose a leader for superficial reasons, foreshadowing the fragility of their democratic system.</div>
 
 <p>Ralph, Jack and Simon explore the island and confirm it is uninhabited. On their way back, they encounter a piglet caught in creepers. Jack draws his knife but <strong>hesitates</strong> — unable to bring himself to kill. Golding writes: "the enormity of the knife descending and cutting into living flesh... the unbearable blood." Jack is ashamed of his hesitation and vows it will not happen again. This moment is <strong>pivotal</strong>: it marks the last time the conditioning of civilisation restrains Jack's violent impulses.</p>
 
@@ -210,7 +210,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>The chapter ends with a revealing scene: <strong>Simon</strong> slips away from the other boys and finds a secluded clearing in the jungle — a peaceful, flower-filled space where he sits alone. This establishes Simon as a <strong>spiritual, solitary figure</strong> who is attuned to the natural world in a way the others are not. His private retreat foreshadows his later role as the novel's moral and visionary centre.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing Chapters 1–3, focus on how Golding uses these early chapters to establish <strong>binary oppositions</strong> that will structure the entire novel: Ralph vs Jack, civilisation vs savagery, reason vs instinct, rescue vs hunting, the conch vs the spear. Identifying these opposing forces demonstrates sophisticated structural awareness (AO2).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When analysing Chapters 1–3, focus on how Golding uses these early chapters to establish <strong>binary oppositions</strong> that will structure the entire novel: Ralph vs Jack, civilisation vs savagery, reason vs instinct, rescue vs hunting, the conch vs the spear. Identifying these opposing forces demonstrates sophisticated structural awareness (AO2).</div>
 
 <h3>Key Quotations from Chapters 1–3</h3>
 <ul>
@@ -396,7 +396,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>However, during the hunt, Jack allowed the <strong>signal fire to go out</strong>. A ship passed the island — and no smoke was visible. <strong>Ralph is furious</strong>. This is the boys' first real chance of rescue, and Jack's obsession with hunting has cost them. Piggy confronts Jack, and Jack <strong>punches Piggy in the stomach and breaks one lens of his glasses</strong>. This act of violence against the novel's most rational, vulnerable character marks a critical escalation.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The breaking of Piggy's glasses is symbolically rich. The glasses represent <strong>reason, science and intellectual clarity</strong>. Breaking one lens suggests that rational thought is being literally damaged by the rise of violent tribalism. When both lenses are later destroyed, it signals the total collapse of reason on the island.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The breaking of Piggy's glasses is symbolically rich. The glasses represent <strong>reason, science and intellectual clarity</strong>. Breaking one lens suggests that rational thought is being literally damaged by the rise of violent tribalism. When both lenses are later destroyed, it signals the total collapse of reason on the island.</div>
 
 <p>After the hunt, Jack and his followers perform a frenzied <strong>re-enactment</strong>, chanting <strong>"Kill the pig. Cut her throat. Spill her blood."</strong> This ritualistic chant transforms killing from a practical necessity (food) into a <strong>communal, ecstatic experience</strong> — a celebration of violence for its own sake. The rhythm and repetition of the chant mirror tribal war dances and religious rituals, suggesting a regression to a more primitive state of being.</p>
 
@@ -429,7 +429,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>Ralph insists they continue to the mountain to investigate the beast and relight the fire. Jack accuses Ralph of being afraid. The boys' attention is increasingly drawn to Jack's confidence and aggression rather than Ralph's cautious rationality. <strong>Power is shifting.</strong></p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The dead paratrooper is excellent material for linking AO2 (writer's methods) with AO3 (context). You can argue that Golding uses the paratrooper as a <strong>structural device</strong> that connects the boys' island to the wider Cold War world, reinforcing his thesis that human savagery is universal — present in both children and adults, on islands and on continents.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The dead paratrooper is excellent material for linking AO2 (writer's methods) with AO3 (context). You can argue that Golding uses the paratrooper as a <strong>structural device</strong> that connects the boys' island to the wider Cold War world, reinforcing his thesis that human savagery is universal — present in both children and adults, on islands and on continents.</div>
 
 <h3>Key Quotations from Chapters 4–6</h3>
 <ul>
@@ -544,7 +544,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>Jack's hunters kill a large <strong>sow</strong> in a scene of horrifying, sexualised violence. Golding's description — "the sow collapsed under them and they were heavy and fulfilled upon her" — deliberately echoes the language of sexual assault. The hunters sever the sow's head and impale it on a sharpened stick as an <strong>"offering to the beast"</strong> — the "gift for the darkness" of the chapter's title. This is the <strong>Lord of the Flies</strong>.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The killing of the sow is one of the most analysed passages in the novel. For AO2, you should discuss Golding's <strong>disturbing imagery</strong> and the way he blurs the boundaries between hunting, violence and sexual domination. The scene reveals how the boys' savagery has moved far beyond the practical need for food into something ritualistic and psychologically disturbing.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The killing of the sow is one of the most analysed passages in the novel. For AO2, you should discuss Golding's <strong>disturbing imagery</strong> and the way he blurs the boundaries between hunting, violence and sexual domination. The scene reveals how the boys' savagery has moved far beyond the practical need for food into something ritualistic and psychologically disturbing.</div>
 
 <p><strong>Simon's encounter with the Lord of the Flies</strong> is the novel's philosophical and symbolic centrepiece. Alone in his hidden clearing, Simon watches as flies swarm around the decomposing pig's head. In a hallucinatory vision, the head appears to <strong>speak to him</strong>. It calls itself "the Beast" and tells Simon:</p>
 
@@ -568,7 +568,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>Simon's death has profound allegorical significance. He is the novel's <strong>Christ figure</strong>: a gentle, prophetic character who discovers the truth (that the beast is within) and is killed by the very people he tries to save. Like Christ, Simon is innocent, misunderstood and destroyed by the community he seeks to enlighten.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The description of Simon's body being carried out to sea is one of the finest passages in the novel for AO2 analysis. Notice the contrast between the <strong>brutality of the murder</strong> and the <strong>beauty of the natural imagery</strong>: "dressed in... the strange, attendant creatures, with their fiery eyes and trailing vapours." Golding suggests that nature honours what humanity destroys — Simon is too good for the island's corrupted society.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The description of Simon's body being carried out to sea is one of the finest passages in the novel for AO2 analysis. Notice the contrast between the <strong>brutality of the murder</strong> and the <strong>beauty of the natural imagery</strong>: "dressed in... the strange, attendant creatures, with their fiery eyes and trailing vapours." Golding suggests that nature honours what humanity destroys — Simon is too good for the island's corrupted society.</div>
 
 <h3>Key Quotations from Chapters 7–9</h3>
 <ul>
@@ -665,7 +665,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>That night, Jack sends a raiding party to Ralph's camp to steal <strong>Piggy's glasses</strong>. They do not take the conch — it no longer has any value to them. The theft of the glasses is devastating: Piggy is now <strong>effectively blind</strong>, and the glasses — the only means of making fire — are in Jack's hands. The power dynamic has shifted completely: Jack controls fire (warmth, cooking, power) while Ralph's group has only the conch (democratic authority that nobody recognises anymore).</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The contrast between what Jack steals (the glasses) and what he ignores (the conch) is a powerful analytical point. It demonstrates that Jack understands <strong>practical power</strong> — the ability to make fire — is more valuable than symbolic authority. This reflects a broader truth about politics: ideals and institutions are meaningless without the practical power to enforce them.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The contrast between what Jack steals (the glasses) and what he ignores (the conch) is a powerful analytical point. It demonstrates that Jack understands <strong>practical power</strong> — the ability to make fire — is more valuable than symbolic authority. This reflects a broader truth about politics: ideals and institutions are meaningless without the practical power to enforce them.</div>
 
 <h3>Chapter 11: Castle Rock</h3>
 
@@ -697,7 +697,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>The novel ends with Ralph weeping: <strong>"Ralph wept for the end of innocence, the darkness of man's heart, and the fall through the air of the true, wise friend called Piggy."</strong> This final sentence encapsulates the novel's three main concerns: the <strong>loss of innocence</strong>, the <strong>inherent darkness of human nature</strong>, and the <strong>destruction of reason and intellect</strong> (Piggy).</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The ending is one of the most important passages for exam essays. The naval officer's arrival does <em>not</em> represent a happy ending. The officer himself is engaged in a war; the boys are "rescued" into a world that is committing the same violence on a larger scale. Always discuss the <strong>irony</strong> of the rescue — it is Golding's final, devastating point that the savagery on the island merely mirrors the savagery of the "civilised" world.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The ending is one of the most important passages for exam essays. The naval officer's arrival does <em>not</em> represent a happy ending. The officer himself is engaged in a war; the boys are "rescued" into a world that is committing the same violence on a larger scale. Always discuss the <strong>irony</strong> of the rescue — it is Golding's final, devastating point that the savagery on the island merely mirrors the savagery of the "civilised" world.</div>
 
 <h3>Key Quotations from Chapters 10–12</h3>
 <ul>
@@ -816,7 +816,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>The <strong>face paint</strong> is central to Jack's transformation. It allows him to shed his civilised identity — "the mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness." The mask represents the <strong>anonymity</strong> that enables atrocity: when people cannot be individually identified and held accountable, they are capable of far greater cruelty.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Avoid describing Jack as simply "evil." He is better understood as a character who discovers and exploits the <strong>darkness that exists in all the boys</strong>. His power comes not from forcing others to obey but from offering them what they secretly want — the freedom to abandon rules, to hunt, to give in to primal instincts. This makes him far more frightening than a straightforward villain.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Avoid describing Jack as simply "evil." He is better understood as a character who discovers and exploits the <strong>darkness that exists in all the boys</strong>. His power comes not from forcing others to obey but from offering them what they secretly want — the freedom to abandon rules, to hunt, to give in to primal instincts. This makes him far more frightening than a straightforward villain.</div>
 
 <p><strong>Key quotations for Jack:</strong></p>
 <ul>
@@ -867,7 +867,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>By Chapter 12, Roger has become Jack's <strong>enforcer</strong> — the torturer who keeps the tribe in line through fear. Samneric warn Ralph that Roger is even more dangerous than Jack: "Roger sharpened a stick at both ends." While Jack is motivated by the desire for power and status, Roger is motivated by the <strong>pleasure of inflicting pain</strong>. He represents the darkest extreme of Golding's thesis about human nature.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Roger is an excellent character for discussing Golding's <strong>structural methods</strong>. His arc from stone-thrower to murderer is carefully calibrated across the novel, with each escalation timed to coincide with the erosion of another civilised structure. Discussing this deliberate progression demonstrates sophisticated understanding of narrative structure (AO2).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Roger is an excellent character for discussing Golding's <strong>structural methods</strong>. His arc from stone-thrower to murderer is carefully calibrated across the novel, with each escalation timed to coincide with the erosion of another civilised structure. Discussing this deliberate progression demonstrates sophisticated understanding of narrative structure (AO2).</div>
 
 <h3>Minor Characters</h3>
 <ul>
@@ -876,7 +876,7 @@ export const lordOfFliesCourse: CourseData = {
   <li><strong>Percival Wemys Madison:</strong> A littlun who recites his name, address and telephone number like a mantra — a civilised ritual that gradually breaks down. By the end of the novel, he can no longer remember his own name, symbolising the <strong>total erasure of civilised identity</strong>.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending your entire essay on Ralph and Jack without mentioning other characters. The examiner wants to see range. Even a brief reference to Roger, Simon or Piggy can demonstrate wider understanding of the novel and earn additional marks for AO1.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending your entire essay on Ralph and Jack without mentioning other characters. The marker wants to see range. Even a brief reference to Roger, Simon or Piggy can demonstrate wider understanding of the novel and earn additional marks for AO1.</div>
 `,
       quiz: [
         {
@@ -972,7 +972,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <div class="key-term"><strong>Key Term: Binary Opposition</strong> — A pair of contrasting concepts used to structure meaning in a text. <em>Lord of the Flies</em> is built around the binary opposition of civilisation and savagery. Other related binaries include: order/chaos, reason/instinct, democracy/tyranny, rescue/hunting, and the conch/the spear.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about civilisation vs savagery, avoid suggesting that the novel is simply about "good boys vs bad boys." The most insightful responses argue that Golding presents savagery as a <strong>universal human potential</strong> that exists within everyone, not just within specific characters. Reference Ralph's participation in the hunting frenzy and Simon's murder to support this interpretation.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When writing about civilisation vs savagery, avoid suggesting that the novel is simply about "good boys vs bad boys." The most insightful responses argue that Golding presents savagery as a <strong>universal human potential</strong> that exists within everyone, not just within specific characters. Reference Ralph's participation in the hunting frenzy and Simon's murder to support this interpretation.</div>
 
 <h3>2. Power &amp; Leadership</h3>
 
@@ -988,7 +988,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>Golding's <strong>pessimistic conclusion</strong> is that democratic and intellectual power are inherently fragile, while authoritarian and coercive power are more durable because they exploit fundamental human drives: the desire for security, the fear of punishment, and the attraction to strong, decisive leadership.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Discussing power only in terms of Ralph vs Jack. The novel's exploration of power is more nuanced than a simple two-way contest. Including Piggy (intellect without power), Roger (cruelty as power) and Simon (moral authority without influence) demonstrates the kind of range examiners reward.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Discussing power only in terms of Ralph vs Jack. The novel's exploration of power is more nuanced than a simple two-way contest. Including Piggy (intellect without power), Roger (cruelty as power) and Simon (moral authority without influence) demonstrates the kind of range markers reward.</div>
 
 <h3>3. Loss of Innocence</h3>
 
@@ -1020,7 +1020,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>Simon is the only character who <strong>confronts fear directly</strong> and sees through it. His understanding that "maybe it's only us" is the antidote to the beast — but the truth is too frightening for the other boys to accept. They prefer the comforting lie (an external beast that can be hunted) to the terrifying truth (the beast is within).</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Fear is an excellent theme for linking to AO3 context. You can argue that Golding, writing in the early Cold War, was exploring how <strong>fear of nuclear annihilation</strong> was being exploited by political leaders on both sides. Just as Jack uses the beast to control the boys, Cold War politicians used the threat of communism (or capitalism) to control their populations.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Fear is an excellent theme for linking to AO3 context. You can argue that Golding, writing in the early Cold War, was exploring how <strong>fear of nuclear annihilation</strong> was being exploited by political leaders on both sides. Just as Jack uses the beast to control the boys, Cold War politicians used the threat of communism (or capitalism) to control their populations.</div>
 
 <h3>5. Human Nature</h3>
 
@@ -1046,7 +1046,7 @@ export const lordOfFliesCourse: CourseData = {
   <li><strong>Power and fear are mutually reinforcing</strong> — Jack uses fear of the beast to gain power, and uses his power to maintain and escalate that fear.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If your essay question asks about one theme, always try to <strong>link it to at least one other theme</strong>. For example, if asked about "the significance of fear," discuss how fear connects to power, to the breakdown of civilisation, and to Golding's broader argument about human nature. This creates a conceptualised, interconnected response that examiners reward with top-band marks.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If your essay question asks about one theme, always try to <strong>link it to at least one other theme</strong>. For example, if asked about "the significance of fear," discuss how fear connects to power, to the breakdown of civilisation, and to Golding's broader argument about human nature. This creates a conceptualised, interconnected response that markers reward with top-band marks.</div>
 `,
       quiz: [
         {
@@ -1118,7 +1118,7 @@ export const lordOfFliesCourse: CourseData = {
       content: `
 <h2>Symbolism in Lord of the Flies</h2>
 
-<p><em>Lord of the Flies</em> is one of the most <strong>symbolically rich</strong> novels in GCSE English Literature. Every major object, setting and event carries meaning beyond the literal. Understanding and analysing these symbols is essential for AO2 (writer's methods) and demonstrates the kind of conceptualised thinking examiners reward with top-band marks.</p>
+<p><em>Lord of the Flies</em> is one of the most <strong>symbolically rich</strong> novels in GCSE English Literature. Every major object, setting and event carries meaning beyond the literal. Understanding and analysing these symbols is essential for AO2 (writer's methods) and demonstrates the kind of conceptualised thinking markers reward with top-band marks.</p>
 
 <div class="key-term"><strong>Key Term: Symbol</strong> — An object, character, setting or event that represents something beyond its literal meaning. Symbols work by association: a dove symbolises peace, a skull symbolises death. In <em>Lord of the Flies</em>, Golding uses a network of interconnected symbols to convey his themes.</div>
 
@@ -1136,7 +1136,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>Golding also uses the conch's <strong>physical appearance</strong> symbolically. When first found, it is described as beautiful — "deep cream, touched here and there with fading pink." By the later chapters, it has become "fragile" and "bleached" — its colour fading just as its authority fades.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The conch is excellent material for tracking <strong>structural change</strong> (AO2). You can trace its declining authority across the novel to demonstrate how Golding structures his narrative around the erosion of civilisation. This kind of whole-text analysis is what examiners describe as "conceptualised" reading.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The conch is excellent material for tracking <strong>structural change</strong> (AO2). You can trace its declining authority across the novel to demonstrate how Golding structures his narrative around the erosion of civilisation. This kind of whole-text analysis is what markers describe as "conceptualised" reading.</div>
 
 <h3>2. The Beast</h3>
 
@@ -1188,7 +1188,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>The fire's final, terrible irony comes in Chapter 12: Jack sets the entire island ablaze to smoke Ralph out — a <strong>destructive fire</strong> that represents the complete corruption of the fire's original purpose. Yet this destructive fire is what attracts the naval vessel, leading to rescue. Golding's irony is devastating: <strong>salvation comes through destruction</strong>, and the fire that was supposed to signal hope for civilisation ultimately signals its total collapse.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The fire's dual nature — hope and destruction — is excellent material for a paragraph exploring Golding's use of <strong>irony</strong>. You can argue that the fire is a symbol of human potential itself: capable of both warming and destroying, of illuminating and consuming, depending on whether it is controlled by reason or unleashed by savagery.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The fire's dual nature — hope and destruction — is excellent material for a paragraph exploring Golding's use of <strong>irony</strong>. You can argue that the fire is a symbol of human potential itself: capable of both warming and destroying, of illuminating and consuming, depending on whether it is controlled by reason or unleashed by savagery.</div>
 
 <h3>6. The Island</h3>
 
@@ -1323,7 +1323,7 @@ export const lordOfFliesCourse: CourseData = {
   <li><strong>The chant's pronoun shift:</strong> From "Kill the pig" to "Kill the beast" — foreshadowing the moment when human beings become the target.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Foreshadowing is a <strong>structural</strong> technique — it operates across the novel rather than in a single passage. When discussing it, show how early events <strong>prepare</strong> the reader for later events, creating a sense of tragic inevitability. This demonstrates whole-text awareness, which examiners value highly for AO2.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Foreshadowing is a <strong>structural</strong> technique — it operates across the novel rather than in a single passage. When discussing it, show how early events <strong>prepare</strong> the reader for later events, creating a sense of tragic inevitability. This demonstrates whole-text awareness, which markers value highly for AO2.</div>
 
 <h3>3. Biblical Allusions</h3>
 
@@ -1369,7 +1369,7 @@ export const lordOfFliesCourse: CourseData = {
 
 <p>Golding also uses the island's <strong>weather</strong> as a narrative tool. Calm, sunny weather accompanies the early, hopeful chapters. Storms gather as tensions rise. The final chapter's fire transforms the entire island into a hellscape of smoke and flame — the physical destruction of the setting mirroring the moral destruction of its inhabitants.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing setting, always connect it to theme and character. Do not simply describe the scenery — explain how Golding uses the physical environment to <strong>externalise internal states</strong>. For example: "Golding uses the jungle's darkness to externalise the boys' psychological regression — as they venture deeper into the jungle, they venture deeper into their own capacity for savagery."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When discussing setting, always connect it to theme and character. Do not simply describe the scenery — explain how Golding uses the physical environment to <strong>externalise internal states</strong>. For example: "Golding uses the jungle's darkness to externalise the boys' psychological regression — as they venture deeper into the jungle, they venture deeper into their own capacity for savagery."</div>
 
 <h3>6. Narrative Perspective</h3>
 
@@ -1391,7 +1391,7 @@ export const lordOfFliesCourse: CourseData = {
   <li>The <strong>ending mirrors the beginning</strong>: the novel opens with boys emerging from the jungle onto a beach; it closes with Ralph bursting out of the jungle onto the beach. But the tone has completely reversed — from excitement to terror.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Focusing only on language analysis (word-level techniques) for AO2. Examiners also reward discussion of <strong>form and structure</strong> — the novel's allegorical framework, its narrative perspective, its escalating pattern of violence, and the ironic structure of the ending. Balance language analysis with structural awareness for a rounded response.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Focusing only on language analysis (word-level techniques) for AO2. Markers also reward discussion of <strong>form and structure</strong> — the novel's allegorical framework, its narrative perspective, its escalating pattern of violence, and the ironic structure of the ending. Balance language analysis with structural awareness for a rounded response.</div>
 `,
       quiz: [
         {
@@ -1477,7 +1477,7 @@ export const lordOfFliesCourse: CourseData = {
       content: `
 <h2>Exam Technique: Essay Practice with Model Paragraphs</h2>
 
-<p>This module brings together everything from the course and shows you how to <strong>apply your knowledge under exam conditions</strong>. You will learn a clear essay structure, see model paragraphs at different levels, and practise the specific skills that examiners reward. On AQA, <em>Lord of the Flies</em> is examined in <strong>Paper 2, Section A: Modern Texts</strong>. You will answer <strong>one essay question</strong> worth <strong>30 marks + 4 SPaG marks (34 total)</strong>.</p>
+<p>This module brings together everything from the course and shows you how to <strong>apply your knowledge under exam conditions</strong>. You will learn a clear essay structure, see model paragraphs at different levels, and practise the specific skills that markers reward. On AQA, <em>Lord of the Flies</em> is examined in <strong>Paper 2, Section A: Modern Texts</strong>. You will answer <strong>one essay question</strong> worth <strong>30 marks + 4 SPaG marks (34 total)</strong>.</p>
 
 <h3>Understanding the Question Format</h3>
 
@@ -1508,7 +1508,7 @@ export const lordOfFliesCourse: CourseData = {
   <li><strong>Conclusion (2–3 sentences):</strong> Return to your thesis. Offer a final, evaluative comment on Golding's intentions.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The introduction is your chance to make a strong first impression. A top-band introduction states a <strong>clear argument</strong> (not just a topic), mentions the <strong>writer by name</strong>, and uses <strong>one or two critical-sounding adjectives</strong>. Compare: "This essay is about fear" (weak) vs "Golding presents fear as the most insidious and destructive force on the island — a weapon that Jack exploits to dismantle Ralph's fragile democracy" (strong).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The introduction is your chance to make a strong first impression. A top-band introduction states a <strong>clear argument</strong> (not just a topic), mentions the <strong>writer by name</strong>, and uses <strong>one or two critical-sounding adjectives</strong>. Compare: "This essay is about fear" (weak) vs "Golding presents fear as the most insidious and destructive force on the island — a weapon that Jack exploits to dismantle Ralph's fragile democracy" (strong).</div>
 
 <h3>The PETAL Paragraph Structure</h3>
 
@@ -1528,7 +1528,7 @@ export const lordOfFliesCourse: CourseData = {
 <h4>Model Introduction</h4>
 <p><em>Throughout Lord of the Flies, Golding presents civilisation and savagery as opposing forces locked in an unequal struggle — one that civilisation is destined to lose without the external structures that sustain it. Writing in the aftermath of World War II, Golding uses the boys' island as a microcosm for the wider world, arguing that the thin veneer of civilised behaviour can be rapidly stripped away when fear, primal instinct and the hunger for power are given free rein. The novel's trajectory — from democratic assembly to murderous hunt — constitutes a powerful indictment of humanity's capacity for self-destruction.</em></p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Notice how this introduction (1) states a clear argument, (2) names Golding as the writer, (3) embeds context naturally, and (4) uses sophisticated vocabulary. It does not simply announce "I am going to write about civilisation and savagery." It makes a <strong>claim</strong> that the rest of the essay will support.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Notice how this introduction (1) states a clear argument, (2) names Golding as the writer, (3) embeds context naturally, and (4) uses sophisticated vocabulary. It does not simply announce "I am going to write about civilisation and savagery." It makes a <strong>claim</strong> that the rest of the essay will support.</div>
 
 <h4>Model Paragraph (Top Band)</h4>
 <p><em>Golding establishes the conch shell as the novel's primary emblem of democratic civilisation — and its progressive deterioration mirrors the collapse of the social order it represents. Initially described as "deep cream, touched here and there with fading pink," the conch is beautiful and authoritative: its sound summons the boys and its possession grants the right to speak. However, as Jack's influence grows, the conch's authority erodes — "the conch doesn't count on top of the mountain" — until it is finally "exploded into a thousand white fragments" by the same boulder that kills Piggy. Golding's use of the verb "exploded" connotes sudden, violent destruction, echoing the language of the bomb that has devastated the adult world beyond the island. By destroying the conch and Piggy simultaneously, Golding structurally yokes reason and democratic order together, suggesting that neither can survive without the other. For a post-war readership still processing the failures of democracy that led to fascism and global conflict, this destruction would have carried particular resonance — a warning that civilisation's symbols are only as strong as the collective will to uphold them.</em></p>
@@ -1569,7 +1569,7 @@ export const lordOfFliesCourse: CourseData = {
   <li><strong>"How does Golding use [symbol/technique] to explore ideas about [theme]?"</strong> — Focus heavily on AO2. Analyse the symbol/technique in detail and connect it to the wider theme.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For AO4 (SPaG, 4 marks), leave <strong>2 minutes at the end</strong> to proofread your essay. Check for common errors: missing apostrophes, misspellings of key words (particularly "Golding," "civilisation," "savagery," "allegory"), and unclear sentences. These 4 marks are among the easiest to earn — or to throw away.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> For AO4 (SPaG, 4 marks), leave <strong>2 minutes at the end</strong> to proofread your essay. Check for common errors: missing apostrophes, misspellings of key words (particularly "Golding," "civilisation," "savagery," "allegory"), and unclear sentences. These 4 marks are among the easiest to earn — or to throw away.</div>
 
 <h3>Practice Questions</h3>
 <ol>
@@ -1864,7 +1864,7 @@ export const lordOfFliesCourse: CourseData = {
       ],
       correct: 1,
       explanation:
-        'Embedded context means weaving contextual knowledge into your analysis rather than bolting it on as a separate paragraph. It shows the examiner that you understand WHY context matters to the text\'s meaning.',
+        'Embedded context means weaving contextual knowledge into your analysis rather than bolting it on as a separate paragraph. It shows the marker that you understand WHY context matters to the text\'s meaning.',
     },
     {
       id: 'lotf-aq17',

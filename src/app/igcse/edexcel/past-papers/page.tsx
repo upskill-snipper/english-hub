@@ -24,9 +24,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE 4ET1 Past Papers — The English Hub',
+  title: 'Edexcel IGCSE Literature Past Papers — The English Hub',
   description:
-    'How to find, download and practise with Pearson Edexcel IGCSE English Literature 4ET1 past papers. Study tips, timing advice and mark scheme strategy.',
+    'How to find, download and practise with Pearson Edexcel IGCSE English Literature past papers. Study tips, timing advice and mark scheme strategy.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/past-papers',
   },
@@ -88,7 +88,7 @@ const studyTips = [
     icon: FileText,
     title: 'Annotate model answers',
     description:
-      'Read examiner-graded high-band scripts and annotate where they hit AO1, AO2, AO3 and AO4. Translate the moves into your own voice.',
+      'Read examiner-graded high-band scripts and annotate where they show understanding, language analysis, context, and comparison. Translate the moves into your own voice.',
   },
 ]
 
@@ -106,7 +106,7 @@ export default async function EdexcelPastPapersPage() {
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel 4ET1
+          Back to Edexcel IGCSE
         </Button>
       </div>
 
@@ -122,11 +122,11 @@ export default async function EdexcelPastPapersPage() {
               Past papers & practice
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            4ET1 Past Papers
+            IGCSE Literature Past Papers
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Past papers are the single most effective revision resource for
@@ -274,7 +274,7 @@ export default async function EdexcelPastPapersPage() {
             <span>
               <strong className="text-foreground">55–75 min:</strong> Mark
               against the published mark scheme and examiner report. Tag every
-              paragraph with AO1/AO2/AO3/AO4 hits.
+              paragraph for understanding, language analysis, context, and comparison.
             </span>
           </li>
           <li className="flex items-start gap-3">

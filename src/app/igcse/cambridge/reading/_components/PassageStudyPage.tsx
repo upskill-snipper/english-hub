@@ -65,7 +65,7 @@ export interface PassageStudyPageProps {
   passage: string[]
   /** 3-5 comprehension questions */
   comprehension: ComprehensionQuestion[]
-  /** Language analysis (AO2) question */
+  /** Language analysis question */
   languageTask: LanguageTask
   /** Summary task (Paper 1 Q3 style) */
   summaryTask: SummaryTask
@@ -125,7 +125,7 @@ export function PassageStudyPage({
               Cambridge IGCSE
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              0500 / 0990 &middot; Paper 1
+              IGCSE Language &middot; Paper 1
             </Badge>
             <Badge variant="outline" className={difficultyClass[difficulty]}>
               {difficulty}
@@ -188,7 +188,7 @@ export function PassageStudyPage({
             </h2>
           </div>
           <Badge variant="secondary">
-            AO1 &middot; {totalComprehensionMarks} marks
+            Reading &middot; {totalComprehensionMarks} marks
           </Badge>
         </div>
 
@@ -242,7 +242,7 @@ export function PassageStudyPage({
               Language Analysis
             </h2>
           </div>
-          <Badge variant="secondary">AO2 &middot; {languageTask.marks} marks</Badge>
+          <Badge variant="secondary">Language &middot; {languageTask.marks} marks</Badge>
         </div>
 
         <Card>
@@ -302,7 +302,7 @@ export function PassageStudyPage({
             </h2>
           </div>
           <Badge variant="secondary">
-            AO1 + AO3 &middot; {summaryTask.marks} marks
+            Reading + Summary &middot; {summaryTask.marks} marks
           </Badge>
         </div>
 

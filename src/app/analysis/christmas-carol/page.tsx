@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'A Christmas Carol Analysis — Quotes, Characters & Themes',
   description:
-    'In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance written by GCSE examiners.',
+    'In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance written by GCSE markers.',
   alternates: {
     canonical: 'https://theenglishhub.app/analysis/christmas-carol',
   },
@@ -144,7 +144,7 @@ const characterThemePages: { slug: string; title: string; blurb: string }[] = [
   {
     slug: 'how-to-write-grade-9-christmas-carol-essay',
     title: 'How to Write a Grade 9 Essay',
-    blurb: 'Examiner-written structure, language and context tips for top marks.',
+    blurb: 'Marker-written structure, language and context tips for top marks.',
   },
 ]
 
@@ -184,11 +184,11 @@ export default function ChristmasCarolAnalysisHub() {
         </h1>
         <p className="max-w-3xl text-lg text-muted-foreground">
           In-depth GCSE analysis of Charles Dickens&apos;s 1843 novella A Christmas Carol.
-          Browse full quotation analyses, character studies, theme guides and examiner essay
-          advice, all written by experienced GCSE English Literature examiners.
+          Browse full quotation analyses, character studies, theme guides and marker essay
+          advice, all written by experienced GCSE English Literature markers.
         </p>
         <p className="text-sm text-muted-foreground">
-          Written by GCSE examiners · Updated for 2026 specifications
+          Written by GCSE markers · Updated for 2026 specifications
         </p>
       </header>
 

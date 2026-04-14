@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel' },
   title: "Edexcel English Language GCSE Revision",
   description:
-    "Complete Edexcel English Language GCSE revision hub. Paper 1 Fiction & Imaginative Writing, Paper 2 Non-Fiction & Transactional Writing, techniques, writing skills, and grade boundaries.",
+    "Complete Edexcel English Language GCSE revision hub. Paper 1 Fiction & Imaginative Writing, Paper 2 Non-Fiction & Writing for Real Purposes, techniques, writing skills, and grade boundaries.",
 };
 
 /* ─── Card data ──────────────────────────────────────────────── */
@@ -27,9 +27,9 @@ const sections = [
     colour: "bg-primary",
   },
   {
-    title: "Paper 2: Non-Fiction & Transactional Writing",
+    title: "Paper 2: Non-Fiction & Writing for Real Purposes",
     description:
-      "Section A: Reading two linked non-fiction texts (19th & 21st century). Section B: Transactional writing. 2 hours 5 minutes, 64 marks.",
+      "Section A: Reading two linked non-fiction texts (19th & 21st century). Section B: Writing for real purposes. 2 hours 5 minutes, 64 marks.",
     href: "/resources/english-language/edexcel/paper-2",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
@@ -51,9 +51,9 @@ const sections = [
     colour: "bg-primary",
   },
   {
-    title: "Transactional Writing Masterclass",
+    title: "Writing for Real Purposes Masterclass",
     description:
-      "Step-by-step guides for articles, letters, speeches, reviews, and essays. Learn conventions, formats, and techniques to hit every mark-scheme bullet.",
+      "Step-by-step guides for articles, letters, speeches, reviews, and essays. Learn conventions, formats, and techniques to hit every marking-guide bullet.",
     href: "/resources/english-language/edexcel/writing-skills",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
@@ -92,7 +92,7 @@ export default function EdexcelEnglishLanguagePage() {
             English Language Revision Hub
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Everything you need to ace your Edexcel English Language GCSE. Two papers, full mark-scheme
+            Everything you need to ace your Edexcel English Language GCSE. Two papers, full marking-guide
             breakdowns, 30+ techniques, writing masterclasses, and grade boundary data &mdash; all in one place.
           </p>
 
@@ -158,7 +158,7 @@ export default function EdexcelEnglishLanguagePage() {
                   <td className="px-4 py-3 text-muted-foreground">40%</td>
                 </tr>
                 <tr className="hover:bg-muted">
-                  <td className="px-4 py-3 font-medium text-foreground">Paper 2 &mdash; Non-Fiction &amp; Transactional Writing</td>
+                  <td className="px-4 py-3 font-medium text-foreground">Paper 2 &mdash; Non-Fiction &amp; Writing for Real Purposes</td>
                   <td className="px-4 py-3 text-muted-foreground">2 hr 5 min</td>
                   <td className="px-4 py-3 text-muted-foreground">64</td>
                   <td className="px-4 py-3 text-muted-foreground">60%</td>
@@ -182,7 +182,7 @@ export default function EdexcelEnglishLanguagePage() {
             Explore Revision Materials
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
-            Click any section below to access full study notes, mark schemes, example responses, and exam tips.
+            Click any section below to access full study notes, marking guides, example responses, and exam tips.
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -217,10 +217,10 @@ export default function EdexcelEnglishLanguagePage() {
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
-            Assessment Objectives (AOs)
+            Key Skills Tested
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
-            Every question targets specific AOs. Understanding them helps you know exactly what examiners want.
+            Every question tests specific skills (called Assessment Objectives, or AOs, in the specification). Understanding them helps you know exactly what markers want.
           </p>
 
           <div className="mt-8 space-y-4">

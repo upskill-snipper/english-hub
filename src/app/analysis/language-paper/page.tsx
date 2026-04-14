@@ -4,12 +4,12 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'AQA English Language Paper 1 & Paper 2 Technique Guides | The English Hub',
   description:
-    'Question-by-question AQA English Language Paper 1 and Paper 2 technique guides for GCSE. Grade 9 model answers, mark schemes explained, timing and examiner tips. Written by GCSE examiners.',
+    'Question-by-question AQA English Language Paper 1 and Paper 2 technique guides for GCSE. Grade 9 model answers, marking guides explained, timing and marker tips. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/language-paper' },
   openGraph: {
     title: 'AQA Language Paper 1 & 2 Technique Guides — The English Hub',
     description:
-      'Grade 9 walkthroughs for every AQA English Language Paper 1 and Paper 2 question, written by GCSE examiners.',
+      'Grade 9 walkthroughs for every AQA English Language Paper 1 and Paper 2 question, written by GCSE markers.',
   },
 }
 
@@ -81,12 +81,12 @@ export default function LanguagePaperAnalysisHub() {
       <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
         AQA English Language Paper 1 &amp; Paper 2 Technique Guides
       </h1>
-      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE examiners</p>
+      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
 
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
         Twenty-five focused guides covering every question on AQA English Language Paper 1
         and Paper 2, plus the writing tasks and general technique pages that most students
-        need the night before the exam. Every page is written by experienced GCSE examiners
+        need the night before the exam. Every page is written by experienced GCSE markers
         and targets the exact phrases students type into search engines: how to answer
         Paper 1 Question 2, how to structure the Paper 2 comparison, and how to hit Grade 9
         on the 40-mark writing tasks.
@@ -96,7 +96,7 @@ export default function LanguagePaperAnalysisHub() {
         <h2 className="text-xl font-semibold text-foreground">How to use this hub</h2>
         <p className="mt-2 text-muted-foreground leading-relaxed">
           Start with the question you are weakest on and read the guide all the way through.
-          Each page includes the mark scheme in plain English, a worked model answer, a
+          Each page includes the marking guide in plain English, a worked model answer, a
           timing plan, and common mistakes to avoid. Once you have covered every question,
           move to the general technique pages to sharpen your vocabulary and method. Every
           page links back to our full language revision notes so you can zoom out when you
@@ -116,7 +116,7 @@ export default function LanguagePaperAnalysisHub() {
         <h2 className="text-2xl font-bold text-foreground">Paper 1 questions (5)</h2>
         <p className="mt-2 text-muted-foreground">
           One guide per question on Paper 1 (Explorations in Creative Reading and Writing).
-          Mark scheme, model answer and timing for each.
+          Marking guide, model answer and timing for each.
         </p>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {paper1Questions.map((p) => (

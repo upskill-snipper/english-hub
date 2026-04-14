@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/paper-1' },
   title: "Edexcel Paper 1: Fiction & Imaginative Writing",
   description:
-    "Complete revision guide for Edexcel English Language Paper 1 (1EN0/01). 19th-century fiction reading, imaginative writing, mark schemes, AOs, and example responses.",
+    "Complete revision guide for Edexcel English Language Paper 1 (1EN0/01). 19th-century fiction reading, imaginative writing, marking guides, key skills, and example responses.",
 };
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -58,7 +58,7 @@ export default function Paper1Page() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Five compulsory questions testing AO1, AO2, and AO4
+                  Five compulsory questions testing Reading and retrieval (AO1), Language and structure analysis (AO2), and Critical evaluation (AO4)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -81,7 +81,7 @@ export default function Paper1Page() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Assessed on AO5 (content &amp; organisation, 24 marks) and AO6 (technical accuracy, 16 marks)
+                  Assessed on Content and organisation (AO5, 24 marks) and Technical accuracy (AO6, 16 marks)
                 </li>
               </ul>
             </div>
@@ -105,7 +105,7 @@ export default function Paper1Page() {
                 <h3 className="text-lg font-bold text-foreground">Short Retrieval (1 mark)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO1</strong> &mdash; A single-mark question asking you to retrieve explicit information from a specific part of the text.
+                <strong>Reading and retrieval (AO1)</strong> &mdash; A single-mark question asking you to retrieve explicit information from a specific part of the text.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">Example question:</p>
@@ -128,7 +128,7 @@ export default function Paper1Page() {
                 <h3 className="text-lg font-bold text-foreground">Short Retrieval / Summary (2 marks)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO1</strong> &mdash; Two retrieval points from a specified section of the text. You need to identify two things.
+                <strong>Reading and retrieval (AO1)</strong> &mdash; Two retrieval points from a specified section of the text. You need to identify two things.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">Example question:</p>
@@ -151,7 +151,7 @@ export default function Paper1Page() {
                 <h3 className="text-lg font-bold text-foreground">Language Analysis (6 marks)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO2</strong> &mdash; Analyse how the writer uses language to create a specific effect. This question will direct you to a particular section of the text.
+                <strong>Language and structure analysis (AO2)</strong> &mdash; Analyse how the writer uses language to create a specific effect. This question will direct you to a particular section of the text.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">Example question:</p>
@@ -166,7 +166,7 @@ export default function Paper1Page() {
                 </p>
               </div>
               <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="text-sm font-semibold text-primary">Mark scheme &mdash; Level descriptors:</p>
+                <p className="text-sm font-semibold text-primary">Marking guide &mdash; Level descriptors:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-2 marks):</strong> Simple awareness of language, limited use of terminology.</li>
                   <li><strong>Level 2 (3-4 marks):</strong> Some analysis of language with appropriate examples and terminology.</li>
@@ -182,7 +182,7 @@ export default function Paper1Page() {
                 <h3 className="text-lg font-bold text-foreground">Structural / Language Analysis (6 marks)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO2</strong> &mdash; Analyse how the writer uses language and/or structure to achieve a specific effect in a different section of the text.
+                <strong>Language and structure analysis (AO2)</strong> &mdash; Analyse how the writer uses language and/or structure to achieve a specific effect in a different section of the text.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">Example question:</p>
@@ -205,7 +205,7 @@ export default function Paper1Page() {
                 <h3 className="text-lg font-bold text-foreground">Critical Evaluation (15 marks)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO4</strong> &mdash; Evaluate critically how effective the writer has been, referring to the whole text. You will be given a statement and asked to what extent you agree.
+                <strong>Critical evaluation (AO4)</strong> &mdash; Evaluate critically how effective the writer has been, referring to the whole text. You will be given a statement and asked to what extent you agree.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">Example question:</p>
@@ -220,7 +220,7 @@ export default function Paper1Page() {
                 </p>
               </div>
               <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="text-sm font-semibold text-primary">Mark scheme &mdash; Level descriptors:</p>
+                <p className="text-sm font-semibold text-primary">Marking guide &mdash; Level descriptors:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-3 marks):</strong> Limited evaluation with little textual reference. Simple, unsupported comments.</li>
                   <li><strong>Level 2 (4-6 marks):</strong> Some evaluation with references. Attempts to respond to the statement but may be descriptive.</li>
@@ -246,7 +246,7 @@ export default function Paper1Page() {
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-xl border border-primary/20 bg-primary/10 p-6">
-              <h3 className="font-bold text-primary">AO5: Content &amp; Organisation (24 marks)</h3>
+              <h3 className="font-bold text-primary">Content and Organisation (AO5, 24 marks)</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -267,7 +267,7 @@ export default function Paper1Page() {
               </ul>
             </div>
             <div className="rounded-xl border border-primary/20 bg-primary/10 p-6">
-              <h3 className="font-bold text-primary">AO6: Technical Accuracy (16 marks)</h3>
+              <h3 className="font-bold text-primary">Technical Accuracy (AO6, 16 marks)</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -289,16 +289,16 @@ export default function Paper1Page() {
             </div>
           </div>
 
-          {/* Mark scheme levels */}
+          {/* Marking guide levels */}
           <div className="mt-8 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
             <table className="w-full text-left text-sm">
               <thead className="bg-primary text-white">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Level</th>
-                  <th className="px-4 py-3 font-semibold">AO5 Marks</th>
-                  <th className="px-4 py-3 font-semibold">AO5 Descriptor</th>
-                  <th className="px-4 py-3 font-semibold">AO6 Marks</th>
-                  <th className="px-4 py-3 font-semibold">AO6 Descriptor</th>
+                  <th className="px-4 py-3 font-semibold">Content and organisation (AO5) Marks</th>
+                  <th className="px-4 py-3 font-semibold">Content and organisation (AO5) Descriptor</th>
+                  <th className="px-4 py-3 font-semibold">Technical accuracy (AO6) Marks</th>
+                  <th className="px-4 py-3 font-semibold">Technical accuracy (AO6) Descriptor</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -378,7 +378,7 @@ export default function Paper1Page() {
               </div>
             </div>
             <div className="mt-3 rounded-lg bg-primary/10 p-4">
-              <p className="text-sm font-medium text-primary">Examiner commentary:</p>
+              <p className="text-sm font-medium text-primary">Marker commentary:</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 This response achieves Level 3 because it makes perceptive comments about the effects of language, uses precise
                 subject terminology (personification, simile, connotations), embeds quotations fluently, and analyses the effect
@@ -417,7 +417,7 @@ export default function Paper1Page() {
               <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Directly addresses the statement (&ldquo;I largely agree&rdquo;)</li>
                 <li>&bull; Embeds quotations and analyses specific word choices</li>
-                <li>&bull; Considers the 19th-century context (demonstrates AO4 evaluation)</li>
+                <li>&bull; Considers the 19th-century context (demonstrates Critical evaluation (AO4))</li>
                 <li>&bull; Offers a balanced view (&ldquo;However...&rdquo;)</li>
                 <li>&bull; Discusses effect on the reader throughout</li>
               </ul>
@@ -564,7 +564,7 @@ export default function Paper1Page() {
                 href="/resources/english-language/edexcel/paper-2"
                 className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
               >
-                Paper 2: Non-Fiction &amp; Transactional Writing
+                Paper 2: Non-Fiction &amp; Writing for Real Purposes
               </Link>
               <Link
                 href="/resources/english-language/edexcel/techniques"

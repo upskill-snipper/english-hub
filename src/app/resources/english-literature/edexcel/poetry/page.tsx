@@ -598,7 +598,7 @@ export default function PoetryPage() {
               The question will focus on how the poets present a particular
               theme or idea. You must compare <strong>methods</strong>
               (language, structure, form) as well as content. The comparison
-              is worth <strong>24 marks</strong> (AO1, AO2, AO3).
+              is worth <strong>24 marks</strong> (reading and response, analysis of methods, context).
             </p>
             <p>
               <strong>Top tip:</strong> For each poem, prepare 2-3 comparison
@@ -688,7 +688,7 @@ export default function PoetryPage() {
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                   <span>
-                    <strong>Include context where relevant</strong> — when and why was the poem written? How does the poet&apos;s background inform the poem? (AO3)
+                    <strong>Include context where relevant</strong> — when and why was the poem written? How does the poet&apos;s background inform the poem? (context)
                   </span>
                 </li>
                 <li className="flex gap-3">

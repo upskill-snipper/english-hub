@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/plot",
   },
-  title: "Macbeth Plot Summary — Edexcel IGCSE 4ET1",
+  title: "Macbeth Plot Summary — Edexcel IGCSE IGCSE Literature",
   description:
-    "Scene-by-scene Macbeth plot summary for Edexcel IGCSE English Literature 4ET1. Follow the whole play from the witches' prophecy to Macbeth's downfall.",
+    "Scene-by-scene Macbeth plot summary for Edexcel IGCSE English Literature IGCSE Literature. Follow the whole play from the witches' prophecy to Macbeth's downfall.",
 };
 
 const ACTS = [
@@ -218,7 +218,7 @@ export default async function MacbethPlotPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Macbeth &mdash; Plot summary

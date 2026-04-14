@@ -60,7 +60,7 @@ const NINE_ONE_GRADE_CARDS: GradeCard[] = [
   {
     grade: '9',
     title: 'How to Get a Grade 9',
-    subtitle: 'The very top — what examiners look for in exceptional work',
+    subtitle: 'The very top — what markers look for in exceptional work',
     href: '/revision/grade-targets/grade-9',
     colour: 'text-amber-400',
     bgColour: 'bg-amber-500/10',
@@ -159,7 +159,7 @@ export default async function GradeTargetsPage() {
             <span className="font-semibold text-foreground">Showing {papers.boardLabel} guidance. </span>
             {isLetterSystem ? (
               <>
-                Cambridge IGCSE 0500 uses the traditional <span className="font-semibold text-foreground">A*-G grading system</span>, not the 9-1 system used by most GCSE boards.
+                Cambridge IGCSE uses the traditional <span className="font-semibold text-foreground">A*-G grading system</span>, not the 9-1 system used by most GCSE boards.
                 Throughout these guides you will also see 9-1 conversions so you can compare with other students.
               </>
             ) : (
@@ -259,8 +259,8 @@ export default async function GradeTargetsPage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
           {isLetterSystem
-            ? 'Each guide is written for 9-1 grades, but we also show the equivalent A*-G grade for Cambridge 0500. Examples use texts you study.'
-            : 'Each guide tells you exactly what examiners want at that grade, what skills to practise, and how to level up from where you are now.'}
+            ? 'Each guide is written for 9-1 grades, but we also show the equivalent A*-G grade for Cambridge IGCSE. Examples use texts you study.'
+            : 'Each guide tells you exactly what markers want at that grade, what skills to practise, and how to level up from where you are now.'}
         </p>
 
         <div className="grid gap-4 sm:grid-cols-3">

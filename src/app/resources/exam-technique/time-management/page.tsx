@@ -38,7 +38,7 @@ const AQA_TIMINGS = {
         { q: "Q2: Summarise differences/similarities", marks: 8, time: "10 mins", notes: "Comparative -- both texts." },
         { q: "Q3: How does the writer use language?", marks: 12, time: "15 mins", notes: "3-4 language points." },
         { q: "Q4: Compare viewpoints", marks: 16, time: "20 mins", notes: "Integrated comparison." },
-        { q: "Q5: Transactional writing", marks: 40, time: "45 mins", notes: "Include 5 mins planning." },
+        { q: "Q5: Writing for real purposes", marks: 40, time: "45 mins", notes: "Include 5 mins planning." },
       ],
     },
     {
@@ -80,15 +80,15 @@ const EDEXCEL_TIMINGS = {
       ],
     },
     {
-      name: "Language Paper 2 -- Non-Fiction & Transactional Writing",
+      name: "Language Paper 2 -- Non-Fiction & Writing for Real Purposes",
       duration: "2 hours 5 minutes",
       total: 64,
       questions: [
         { q: "Q1-Q4: Short reading questions", marks: 12, time: "15 mins", notes: "Comprehension and inference." },
         { q: "Q5: Language analysis", marks: 12, time: "15 mins", notes: "Focus on writer's methods." },
         { q: "Q6: Compare/contrast viewpoints", marks: 16, time: "20 mins", notes: "Sustained comparison." },
-        { q: "Q7: Transactional writing (Task A)", marks: 12, time: "25 mins", notes: "Purpose, audience, form." },
-        { q: "Q8: Transactional writing (Task B)", marks: 12, time: "30 mins", notes: "Different form from Q7." },
+        { q: "Q7: Writing for real purposes (Task A)", marks: 12, time: "25 mins", notes: "Purpose, audience, form." },
+        { q: "Q8: Writing for real purposes (Task B)", marks: 12, time: "30 mins", notes: "Different form from Q7." },
       ],
     },
     {
@@ -118,7 +118,7 @@ const CAIE_TIMINGS = {
   colour: "bg-primary",
   papers: [
     {
-      name: "Language Paper 1 -- Reading (0500)",
+      name: "Language Paper 1 -- Reading",
       duration: "2 hours",
       total: 80,
       questions: [
@@ -128,7 +128,7 @@ const CAIE_TIMINGS = {
       ],
     },
     {
-      name: "Language Paper 2 -- Directed Writing & Composition (0500)",
+      name: "Language Paper 2 -- Directed Writing & Composition",
       duration: "2 hours",
       total: 50,
       questions: [
@@ -167,7 +167,7 @@ const OCR_TIMINGS = {
       total: 80,
       questions: [
         { q: "Section A: Reading (multiple questions)", marks: 40, time: "60 mins", notes: "Comprehension, inference, language analysis." },
-        { q: "Section B: Writing (one task)", marks: 40, time: "50 mins", notes: "Transactional writing task." },
+        { q: "Section B: Writing (one task)", marks: 40, time: "50 mins", notes: "Writing for real purposes task." },
       ],
     },
     {
@@ -435,7 +435,7 @@ export default function TimeManagementPage() {
             {
               title: "Never leave a question blank",
               detail:
-                "A blank answer scores zero. Even a few bullet points will pick up some marks. Examiners can only mark what is on the page.",
+                "A blank answer scores zero. Even a few bullet points will pick up some marks. Markers can only mark what is on the page.",
             },
             {
               title: "Switch to bullet points",

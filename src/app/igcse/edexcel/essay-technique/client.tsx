@@ -33,7 +33,7 @@ const GUIDES = [
   {
     title: 'Mark Scheme Decoded',
     description:
-      'How examiners mark AO1, AO2, AO3, and AO4. Band descriptors, grade boundaries, and what separates a 6 from a 9.',
+      'How examiners mark your understanding, language analysis, context, and comparison. Band descriptors, grade boundaries, and what separates a 6 from a 9.',
     href: '/igcse/edexcel/essay-technique/mark-scheme',
     icon: Target,
     colour: 'text-emerald-400',
@@ -109,11 +109,11 @@ export default function EssayTechniqueHubPage() {
                 Essay Technique
               </h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
-              Introductions, PEEL paragraphs, comparison, and conclusions for the 4ET1
+              Introductions, PEEL paragraphs, comparison, and conclusions for IGCSE Literature
             </p>
           </div>
         </div>
@@ -127,10 +127,10 @@ export default function EssayTechniqueHubPage() {
           Paper-specific essay writing
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
-          The 4ET1 rewards tightly structured, comparative essays
+          IGCSE Literature rewards tightly structured, comparative essays
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          Edexcel IGCSE 4ET1 examiners see hundreds of essays that show good knowledge but
+          Edexcel IGCSE examiners see hundreds of essays that show good knowledge but
           lack clear structure. The candidates who score highest are the ones who introduce a
           focused thesis, build paragraphs around it with embedded evidence, and finish with a
           conclusion that answers the question without simply repeating it. This hub breaks
@@ -148,7 +148,7 @@ export default function EssayTechniqueHubPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 leading-relaxed max-w-2xl">
-          A strong 4ET1 introduction does three things in three sentences. Any longer and you
+          A strong introduction does three things in three sentences. Any longer and you
           are wasting writing time; any shorter and you are not setting up your argument.
         </p>
         <div className="grid gap-4 md:grid-cols-3">
@@ -169,7 +169,7 @@ export default function EssayTechniqueHubPage() {
               n: '3',
               title: 'Context (light touch)',
               body:
-                'For set texts, one phrase of genuinely relevant context. For unseen poetry, skip context entirely -- AO3 is not heavily weighted there.',
+                'For set texts, one phrase of genuinely relevant context. For unseen poetry, skip context entirely -- it is not heavily weighted there.',
             },
           ].map((s) => (
             <div key={s.n} className="rounded-xl border border-border/40 bg-background/50 p-4">
@@ -358,7 +358,7 @@ export default function EssayTechniqueHubPage() {
           Learn to compare two texts in one essay
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Comparison is the single biggest differentiator at the top end of the 4ET1. Learn
+          Comparison is the single biggest differentiator at the top end of IGCSE Literature. Learn
           the structural patterns and linking vocabulary that examiners reward.
         </p>
         <Button

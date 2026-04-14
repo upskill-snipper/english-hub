@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/ocr/writing-skills' },
   title: "OCR Writing Skills Guide | The English Hub",
   description:
-    "OCR-specific writing guidance for GCSE English Language. Master transactional writing, creative writing, SPaG, and learn how to hit the top band.",
+    "OCR-specific writing guidance for GCSE English Language. Master writing for real purposes, creative writing, SPaG, and learn how to hit the top band.",
 };
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -31,30 +31,30 @@ export default function OCRWritingSkillsPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             OCR-specific guidance for both transactional and creative writing.
-            Learn what examiners are looking for and how to hit the top band.
+            Learn what markers are looking for and how to hit the top band.
           </p>
         </div>
       </section>
 
       {/* ── Main content ──────────────────────────────────────── */}
       <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16 lg:py-20">
-        {/* Understanding the mark scheme */}
+        {/* Understanding the marking guide */}
         <section aria-labelledby="markscheme-heading">
           <h2
             id="markscheme-heading"
             className="text-2xl font-bold text-foreground"
           >
-            Understanding the OCR Writing Mark Scheme
+            Understanding the OCR Writing Marking Guide
           </h2>
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               OCR assesses writing through two assessment objectives. Both are
-              assessed in Paper 1 (transactional writing) and Paper 2
+              assessed in Paper 1 (writing for real purposes) and Paper 2
               (creative writing):
             </p>
             <div className="mt-3 grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">AO5: Content and Organisation</h3>
+                <h3 className="font-semibold text-foreground">Content and Organisation</h3>
                 <p className="mt-2 text-sm">
                   Communicate clearly, effectively, and imaginatively,
                   selecting and adapting tone, style, and register for
@@ -67,7 +67,7 @@ export default function OCRWritingSkillsPage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">AO6: Technical Accuracy</h3>
+                <h3 className="font-semibold text-foreground">Technical Accuracy</h3>
                 <p className="mt-2 text-sm">
                   Use a range of vocabulary and sentence structures for
                   clarity, purpose, and effect, with accurate spelling and
@@ -94,13 +94,13 @@ export default function OCRWritingSkillsPage() {
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Understanding the top-band descriptors tells you exactly what
-              the examiner is rewarding. Here is what separates a grade
+              the marker is rewarding. Here is what separates a grade
               8&ndash;9 response:
             </p>
 
             <div className="space-y-4">
               <div className="rounded-lg border border-success/30 bg-success-50 p-5">
-                <h3 className="font-semibold text-success-700">Top Band &mdash; AO5</h3>
+                <h3 className="font-semibold text-success-700">Top Band &mdash; Content and Organisation</h3>
                 <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>Communication is convincing and compelling throughout</li>
                   <li>Tone, style, and register are assuredly matched to purpose, form, and audience</li>
@@ -112,7 +112,7 @@ export default function OCRWritingSkillsPage() {
               </div>
 
               <div className="rounded-lg border border-success/30 bg-success-50 p-5">
-                <h3 className="font-semibold text-success-700">Top Band &mdash; AO6</h3>
+                <h3 className="font-semibold text-success-700">Top Band &mdash; Technical Accuracy</h3>
                 <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>Sentence demarcation is consistently secure and accurate</li>
                   <li>Wide range of punctuation used with a high level of accuracy</li>
@@ -128,18 +128,18 @@ export default function OCRWritingSkillsPage() {
 
         <hr className="my-10 border-border" />
 
-        {/* ── Transactional Writing ──────────────────────────── */}
+        {/* ── Writing for Real Purposes ──────────────────────── */}
         <section aria-labelledby="transactional-heading">
           <h2
             id="transactional-heading"
             className="text-2xl font-bold text-foreground"
           >
-            Transactional Writing (Paper 1, Section B)
+            Writing for Real Purposes (Paper 1, Section B)
           </h2>
 
           <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              Transactional writing means writing for a real-world purpose and
+              Writing for real purposes means writing for a real-world purpose and
               audience. You are communicating ideas, information, or a
               viewpoint in a specific form. The key to success is matching
               your writing precisely to the task requirements.
@@ -242,7 +242,7 @@ export default function OCRWritingSkillsPage() {
                 Effective Paragraphing
               </h3>
               <p className="mt-2">
-                Strong paragraphing is essential for AO5. Each paragraph
+                Strong paragraphing is essential for content and organisation. Each paragraph
                 should:
               </p>
               <ul className="ml-6 mt-2 list-disc space-y-2">
@@ -337,7 +337,7 @@ export default function OCRWritingSkillsPage() {
           <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <p>
               Creative writing on Paper 2 tests your ability to write
-              imaginatively. The examiner is looking for crafted, deliberate
+              imaginatively. The marker is looking for crafted, deliberate
               writing that demonstrates control over language, structure, and
               tone.
             </p>
@@ -536,7 +536,7 @@ export default function OCRWritingSkillsPage() {
                 Punctuation for Effect
               </h3>
               <p className="mt-2">
-                Accurate, varied punctuation is essential for AO6. Here is how
+                Accurate, varied punctuation is essential for technical accuracy. Here is how
                 to use each mark correctly:
               </p>
               <div className="mt-3 space-y-3">

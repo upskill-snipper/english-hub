@@ -391,7 +391,7 @@ export default function PersuasiveWritingPage() {
                   <h3 className="text-lg font-bold text-foreground">Point-Counterpoint (Debate Style)</h3>
                   <p className="mt-2 text-sm text-muted-foreground mb-4">
                     Each paragraph presents an opposing argument and immediately dismantles it. This creates
-                    a back-and-forth rhythm that feels like a live debate -- and shows the examiner that you
+                    a back-and-forth rhythm that feels like a live debate -- and shows the marker that you
                     can engage with multiple perspectives.
                   </p>
                   <div className="mt-4 space-y-3">
@@ -491,7 +491,7 @@ export default function PersuasiveWritingPage() {
             {/* ─── FORMAT CONVENTIONS ────────────────────────────── */}
             <Section id="format-conventions" title="Format Conventions">
               <p className="mb-6 text-muted-foreground leading-relaxed">
-                Each form has specific format features that examiners expect to see. Getting these right
+                Each form has specific format features that markers expect to see. Getting these right
                 shows awareness of audience, purpose, and form -- and it is easy marks.
               </p>
 
@@ -1150,7 +1150,7 @@ export default function PersuasiveWritingPage() {
                   },
                   {
                     mistake: "No counter-argument",
-                    explanation: "Ignoring the opposition makes your argument look one-sided and naive. Examiners specifically reward students who engage with the other side.",
+                    explanation: "Ignoring the opposition makes your argument look one-sided and naive. Markers specifically reward students who engage with the other side.",
                     fix: "Include at least one counter-argument paragraph. Use the Acknowledge-Challenge-Reassert structure.",
                   },
                   {

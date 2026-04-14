@@ -144,7 +144,7 @@ export default function OCRRomeoAndJulietPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Everything you need to know about Romeo and Juliet for OCR GCSE
-            English Literature Component 01, Section A.
+            English Literature Paper 1, Section A.
           </p>
         </div>
       </section>
@@ -161,7 +161,7 @@ export default function OCRRomeoAndJulietPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
-              <p className="font-semibold text-primary">Component 01: Exploring Modern and Literary Heritage Texts</p>
+              <p className="font-semibold text-primary">Paper 1: Exploring Modern and Literary Heritage Texts</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Section A &mdash; Shakespeare. You will be given an extract
                 from Romeo and Juliet and asked a question about a theme or
@@ -695,7 +695,7 @@ export default function OCRRomeoAndJulietPage() {
           </h2>
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Understanding context is essential for AO3. Here are the key
+              Understanding context is essential. Here are the key
               contextual areas to know for Romeo and Juliet:
             </p>
             <div className="space-y-4">

@@ -44,7 +44,7 @@ const WHW_STEPS = [
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
     description:
-      'Why has the poet chosen this? What is the effect on meaning, tone, and the reader? This is where the top marks live -- AO2 rewards candidates who explain effect, not just identify technique.',
+      'Why has the poet chosen this? What is the effect on meaning, tone, and the reader? This is where the top marks live -- the examiner rewards candidates who explain effect, not just identify technique.',
     example:
       'The light metaphor transforms an abstraction into something both vulnerable and present, suggesting that hope is not triumphant but quietly enduring -- a companion that rests in us without demanding anything in return.',
   },
@@ -161,7 +161,7 @@ export default function LanguageAnalysisPage() {
                 Language Analysis Framework
               </h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
@@ -177,13 +177,13 @@ export default function LanguageAnalysisPage() {
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-emerald-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          AO2 is where most marks are won
+          Analysing language and structure is where most marks are won
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
           The difference between spotting a technique and analysing it
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          "There is a metaphor here" is a starting point, not an answer. The 4ET1 examiner
+          "There is a metaphor here" is a starting point, not an answer. The examiner
           wants you to explain how the technique works and why the poet chose it. The
           What-How-Why framework is the simplest, most reliable way to force your writing from
           identification into analysis -- and it scales from a single-paragraph answer to a

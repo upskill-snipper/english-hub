@@ -261,11 +261,11 @@ function buildFallbackNextSteps(
   prediction: ReturnType<typeof predictGrade>,
 ): string[] {
   if (!prediction.nextGrade) {
-    return ["Keep reviewing and applying the mark scheme descriptors."]
+    return ["Keep reviewing and applying the marking criteria."]
   }
   return [
     `You need approximately ${prediction.marksToNextGrade} more marks to reach Grade ${prediction.nextGrade}.`,
-    "Focus on the improvements above, and try another practice response using the same mark scheme.",
+    "Focus on the improvements above, and try another practice response using the same marking criteria.",
   ]
 }
 

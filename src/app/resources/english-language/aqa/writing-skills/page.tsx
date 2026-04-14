@@ -84,7 +84,7 @@ export default function WritingSkillsPage() {
         <Section title="Sentence structures" defaultOpen>
           <p>
             Varying your sentence structures is one of the fastest ways to
-            improve your writing grade. The AO6 mark scheme explicitly rewards
+            improve your writing grade. The Technical accuracy (AO6) marking guide explicitly rewards
             students who use &ldquo;a full range of appropriate sentence forms
             for effect.&rdquo; Here are the four main types:
           </p>
@@ -258,7 +258,7 @@ export default function WritingSkillsPage() {
         {/* ── Vocabulary tiers ───────────────────────────────────── */}
         <Section title="Vocabulary tiers">
           <p>
-            The mark scheme rewards &ldquo;extensive, ambitious vocabulary.&rdquo;
+            The marking guide rewards &ldquo;extensive, ambitious vocabulary.&rdquo;
             This does not mean using the longest word you can think of. It means
             choosing <strong>precise, evocative words</strong> that create a
             specific effect. Think of vocabulary in three tiers:
@@ -270,7 +270,7 @@ export default function WritingSkillsPage() {
               <p className="mt-1 text-sm">
                 Words everyone knows: big, small, nice, good, bad, said, walked,
                 happy, sad. These are not wrong, but they lack precision and do
-                not impress examiners.
+                not impress markers.
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
@@ -322,7 +322,7 @@ export default function WritingSkillsPage() {
             <p className="mt-1 text-warn-700">
               Using complex vocabulary incorrectly is worse than using simple
               vocabulary correctly. Only use a word if you are confident of its
-              meaning. Examiners can tell when students are forcing in words
+              meaning. Markers can tell when students are forcing in words
               they do not fully understand. A well-placed &ldquo;trudged&rdquo;
               is worth more than a misused &ldquo;perambulated.&rdquo;
             </p>
@@ -333,7 +333,7 @@ export default function WritingSkillsPage() {
         <Section title="Punctuation for effect">
           <p>
             Punctuation is not just about accuracy &mdash; it is a tool for
-            creating effects. The mark scheme rewards a &ldquo;wide range of
+            creating effects. The marking guide rewards a &ldquo;wide range of
             punctuation used with a high level of accuracy.&rdquo; Here is how
             to use each type purposefully:
           </p>
@@ -381,7 +381,7 @@ export default function WritingSkillsPage() {
         {/* ── Opening techniques ─────────────────────────────────── */}
         <Section title="Opening techniques">
           <p>
-            Your opening is the first thing the examiner reads. A strong opening
+            Your opening is the first thing the marker reads. A strong opening
             signals ambition, control, and creativity. Here are proven
             techniques:
           </p>
@@ -465,7 +465,7 @@ export default function WritingSkillsPage() {
         <Section title="Ending techniques">
           <p>
             A strong ending leaves a lasting impression. The final lines are
-            what the examiner remembers when deciding your mark. Here are
+            what the marker remembers when deciding your mark. Here are
             effective ways to close your writing:
           </p>
 

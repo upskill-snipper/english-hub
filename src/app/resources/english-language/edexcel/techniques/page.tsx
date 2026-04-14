@@ -531,7 +531,7 @@ export default function TechniquesPage() {
                 href="/resources/english-language/edexcel/paper-2"
                 className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
               >
-                Paper 2: Non-Fiction &amp; Transactional Writing
+                Paper 2: Non-Fiction &amp; Writing for Real Purposes
               </Link>
               <Link
                 href="/resources/writing-skills"

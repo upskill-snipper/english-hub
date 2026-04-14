@@ -340,15 +340,15 @@ export default function AqaPoetryPage() {
         {/* ── AO breakdown ────────────────────────────────────── */}
         <section className="mt-14">
           <h2 className="text-2xl font-bold text-foreground">
-            Assessment Objectives — What the Examiner Wants
+            Key Skills — What Markers Look For
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-border p-5 shadow-md">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-                AO1
+                1
               </div>
               <h3 className="mt-3 font-bold text-foreground">
-                Response &amp; Comparison (12 marks)
+                Understanding the text (what markers look for) (12 marks)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Read, understand, and respond to texts. Use textual references
@@ -363,10 +363,10 @@ export default function AqaPoetryPage() {
             </div>
             <div className="rounded-xl border border-border p-5 shadow-md">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-                AO2
+                2
               </div>
               <h3 className="mt-3 font-bold text-foreground">
-                Methods &amp; Effects (12 marks)
+                Analysing language and structure (12 marks)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Analyse the language, form, and structure used by the writer to
@@ -380,10 +380,10 @@ export default function AqaPoetryPage() {
             </div>
             <div className="rounded-xl border border-border p-5 shadow-md">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-                AO3
+                3
               </div>
               <h3 className="mt-3 font-bold text-foreground">
-                Context (6 marks)
+                Relating to context (6 marks)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Show understanding of the relationships between texts and the
@@ -547,7 +547,7 @@ export default function AqaPoetryPage() {
                     3
                   </span>
                   <span>
-                    <strong>Analyse methods (AO2)</strong> — don&apos;t just
+                    <strong>Analyse methods (analysing language and structure)</strong> — don&apos;t just
                     compare what the poems say, but <em>how</em> they say it.
                     Compare language choices, structural techniques, form,
                     tone, and imagery. Name the technique and explain its
@@ -559,7 +559,7 @@ export default function AqaPoetryPage() {
                     4
                   </span>
                   <span>
-                    <strong>Integrate context (AO3)</strong> — weave in
+                    <strong>Integrate context (relating to context)</strong> — weave in
                     relevant context about the poet&apos;s life, the time
                     period, or social attitudes. Explain how context shapes
                     the poem&apos;s meaning rather than bolting on

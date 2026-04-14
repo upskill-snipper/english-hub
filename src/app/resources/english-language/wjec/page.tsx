@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/wjec' },
   title: "WJEC Eduqas GCSE English Language Revision",
   description:
-    "Complete WJEC Eduqas GCSE English Language revision hub. Component 1: 20th Century Literature Reading & Creative Prose Writing. Component 2: 19th & 21st Century Non-Fiction Reading & Transactional/Persuasive Writing.",
+    "Complete WJEC Eduqas GCSE English Language revision hub. Paper 1: 20th Century Literature Reading & Creative Prose Writing. Paper 2: 19th & 21st Century Non-Fiction Reading & Writing for Real Purposes.",
 };
 
 /* ─── Card data ──────────────────────────────────────────────── */
 
 const sections = [
   {
-    title: "Component 1: 20th Century Literature Reading & Creative Prose Writing",
+    title: "Paper 1: 20th Century Literature Reading & Creative Prose Writing",
     description:
       "Section A: Reading a 20th-century literary prose extract with structured questions. Section B: One creative prose writing task from a choice of four titles. 1 hour 45 minutes, 80 marks.",
     href: "/resources/english-language/wjec",
@@ -27,9 +27,9 @@ const sections = [
     colour: "bg-primary",
   },
   {
-    title: "Component 2: 19th & 21st Century Non-Fiction Reading & Transactional/Persuasive Writing",
+    title: "Paper 2: 19th & 21st Century Non-Fiction Reading & Writing for Real Purposes",
     description:
-      "Section A: Reading two non-fiction extracts (one 19th century, one 21st century) with structured and extended response questions. Section B: Two transactional/persuasive writing tasks. 2 hours, 80 marks.",
+      "Section A: Reading two non-fiction extracts (one 19th century, one 21st century) with structured and extended response questions. Section B: Two writing for real purposes tasks. 2 hours, 80 marks.",
     href: "/resources/english-language/wjec",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
@@ -58,7 +58,7 @@ export default function WJECEnglishLanguagePage() {
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need for your WJEC Eduqas English Language GCSE. Two components covering
             20th-century literature reading, creative prose writing, non-fiction reading, and
-            transactional/persuasive writing &mdash; fully broken down with exam technique and mark-scheme guidance.
+            writing for real purposes &mdash; fully broken down with exam technique and marking-guide guidance.
           </p>
         </div>
       </section>
@@ -98,13 +98,13 @@ export default function WJECEnglishLanguagePage() {
               </thead>
               <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
-                  <td className="px-4 py-3 font-medium text-foreground">Component 1 &mdash; 20th Century Literature Reading &amp; Creative Prose Writing</td>
+                  <td className="px-4 py-3 font-medium text-foreground">Paper 1 &mdash; 20th Century Literature Reading &amp; Creative Prose Writing</td>
                   <td className="px-4 py-3 text-muted-foreground">1 hr 45 min</td>
                   <td className="px-4 py-3 text-muted-foreground">80</td>
                   <td className="px-4 py-3 text-muted-foreground">40%</td>
                 </tr>
                 <tr className="hover:bg-muted">
-                  <td className="px-4 py-3 font-medium text-foreground">Component 2 &mdash; 19th &amp; 21st Century Non-Fiction Reading &amp; Transactional/Persuasive Writing</td>
+                  <td className="px-4 py-3 font-medium text-foreground">Paper 2 &mdash; 19th &amp; 21st Century Non-Fiction Reading &amp; Writing for Real Purposes</td>
                   <td className="px-4 py-3 text-muted-foreground">2 hr</td>
                   <td className="px-4 py-3 text-muted-foreground">80</td>
                   <td className="px-4 py-3 text-muted-foreground">60%</td>
@@ -128,7 +128,7 @@ export default function WJECEnglishLanguagePage() {
             Component Breakdown
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
-            Understand exactly what each component covers, how it is structured, and what the examiner is looking for.
+            Understand exactly what each component covers, how it is structured, and what the marker is looking for.
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -152,10 +152,10 @@ export default function WJECEnglishLanguagePage() {
             ))}
           </div>
 
-          {/* ── Component 1 detail ─────────────────────────────────── */}
+          {/* ── Paper 1 detail ─────────────────────────────────── */}
           <div className="mt-12 rounded-xl border border-border bg-card p-6 shadow-md sm:p-8">
             <h3 className="text-xl font-bold text-foreground">
-              Component 1: 20th Century Literature Reading &amp; Creative Prose Writing
+              Paper 1: 20th Century Literature Reading &amp; Creative Prose Writing
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">1 hour 45 minutes &bull; 80 marks &bull; 40% of GCSE</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -180,10 +180,10 @@ export default function WJECEnglishLanguagePage() {
             </div>
           </div>
 
-          {/* ── Component 2 detail ─────────────────────────────────── */}
+          {/* ── Paper 2 detail ─────────────────────────────────── */}
           <div className="mt-6 rounded-xl border border-border bg-card p-6 shadow-md sm:p-8">
             <h3 className="text-xl font-bold text-foreground">
-              Component 2: 19th &amp; 21st Century Non-Fiction Reading &amp; Transactional/Persuasive Writing
+              Paper 2: 19th &amp; 21st Century Non-Fiction Reading &amp; Writing for Real Purposes
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">2 hours &bull; 80 marks &bull; 60% of GCSE</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -199,7 +199,7 @@ export default function WJECEnglishLanguagePage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-semibold text-foreground">Section B: Writing (40 marks)</h4>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; Two compulsory transactional/persuasive writing tasks</li>
+                  <li>&bull; Two compulsory writing for real purposes tasks</li>
                   <li>&bull; Different forms, audiences, and purposes (e.g. letter, article, speech, review)</li>
                   <li>&bull; Each task: content (12 marks) and technical accuracy (8 marks)</li>
                   <li>&bull; Requires adaptation of tone, style, and register</li>
@@ -214,46 +214,46 @@ export default function WJECEnglishLanguagePage() {
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
-            Assessment Objectives (AOs)
+            Key Skills Assessed
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
-            Every question targets specific AOs. Understanding them helps you know exactly what examiners want.
+            Every question targets specific skills. Understanding them helps you know exactly what markers want.
           </p>
 
           <div className="mt-8 space-y-4">
             {[
               {
-                ao: "AO1",
+                ao: "Retrieval",
                 title: "Identify and interpret explicit and implicit information and ideas",
                 detail: "Select and synthesise evidence from different texts.",
                 weight: "Reading",
               },
               {
-                ao: "AO2",
+                ao: "Analysis",
                 title: "Explain, comment on and analyse how writers use language and structure",
                 detail: "Analyse effects on readers, using relevant subject terminology.",
                 weight: "Reading",
               },
               {
-                ao: "AO3",
+                ao: "Compare",
                 title: "Compare writers' ideas and perspectives",
-                detail: "Compare across two or more texts, supported by detailed references. Primarily assessed in Component 2.",
-                weight: "Reading (Component 2)",
+                detail: "Compare across two or more texts, supported by detailed references. Primarily assessed in Paper 2.",
+                weight: "Reading (Paper 2)",
               },
               {
-                ao: "AO4",
+                ao: "Evaluate",
                 title: "Evaluate texts critically",
-                detail: "Support evaluation with appropriate textual references. Assessed in Component 1 Section A.",
-                weight: "Reading (Component 1)",
+                detail: "Support evaluation with appropriate textual references. Assessed in Paper 1 Section A.",
+                weight: "Reading (Paper 1)",
               },
               {
-                ao: "AO5",
+                ao: "Content",
                 title: "Communicate clearly, effectively, and imaginatively",
                 detail: "Select and adapt tone, style and register for different forms, purposes and audiences. Organise information and ideas using structural and grammatical features.",
                 weight: "Writing",
               },
               {
-                ao: "AO6",
+                ao: "Accuracy",
                 title: "Use a range of vocabulary and sentence structures with accurate spelling and punctuation",
                 detail: "Candidates must use accurate Standard English with control of grammar.",
                 weight: "Writing",
@@ -324,24 +324,24 @@ export default function WJECEnglishLanguagePage() {
               <h3 className="font-semibold text-foreground">Components, not Papers</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 WJEC Eduqas uses the term &ldquo;Component&rdquo; rather than &ldquo;Paper.&rdquo;
-                Component 1 focuses on 20th-century literature and creative writing, while
-                Component 2 covers 19th and 21st-century non-fiction with transactional writing.
+                Paper 1 focuses on 20th-century literature and creative writing, while
+                Paper 2 covers 19th and 21st-century non-fiction with writing for real purposes.
               </p>
             </div>
             <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">20th Century Literature Extract</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Component 1 reading uses a 20th-century literary prose extract &mdash; neither AQA
+                Paper 1 reading uses a 20th-century literary prose extract &mdash; neither AQA
                 (which uses fiction from any period) nor Edexcel (which uses 19th-century fiction)
                 share this exact focus. Expect extracts from novels or short stories published
                 between 1900 and 1999.
               </p>
             </div>
             <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
-              <h3 className="font-semibold text-foreground">Two Compulsory Writing Tasks in Component 2</h3>
+              <h3 className="font-semibold text-foreground">Two Compulsory Writing Tasks in Paper 2</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Unlike AQA and Edexcel, where the non-fiction writing section requires one extended
-                piece, WJEC Eduqas Component 2 requires two shorter transactional/persuasive writing
+                piece, WJEC Eduqas Paper 2 requires two shorter writing for real purposes
                 tasks. This tests your ability to adapt to different forms and audiences within the
                 same exam sitting.
               </p>
@@ -349,7 +349,7 @@ export default function WJECEnglishLanguagePage() {
             <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">Creative Writing: Prose Only</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Component 1&apos;s creative writing section is strictly prose &mdash; narrative or
+                Paper 1&apos;s creative writing section is strictly prose &mdash; narrative or
                 descriptive writing. AQA also offers descriptive/narrative, but Edexcel gives broader
                 imaginative writing options. WJEC provides a choice of four titles.
               </p>
@@ -357,7 +357,7 @@ export default function WJECEnglishLanguagePage() {
             <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">Weighting: 40/60 Split</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Component 1 is worth 40% and Component 2 is worth 60%. This contrasts with AQA&apos;s
+                Paper 1 is worth 40% and Paper 2 is worth 60%. This contrasts with AQA&apos;s
                 50/50 split and differs from Edexcel&apos;s 40/60 weighting (though the content focus
                 of each paper is different).
               </p>

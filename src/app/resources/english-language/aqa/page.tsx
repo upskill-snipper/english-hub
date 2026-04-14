@@ -14,7 +14,7 @@ const sections = [
     title: "Paper 1: Explorations in Creative Reading and Writing",
     href: "/resources/english-language/aqa/paper-1",
     description:
-      "Full breakdown of Questions 1-4 (Reading) and Question 5 (Writing). Mark schemes, examiner tips, and example responses at every grade.",
+      "Full breakdown of Questions 1-4 (Reading) and Question 5 (Writing). Marking guides, marker tips, and example responses at every grade.",
     icon: (
       <svg className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
@@ -87,7 +87,7 @@ export default function AQAEnglishLanguagePage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to achieve your best grade in AQA GCSE English
-            Language. Detailed study notes, techniques, mark schemes, and
+            Language. Detailed study notes, techniques, marking guides, and
             example responses for both papers.
           </p>
         </div>
@@ -235,9 +235,9 @@ export default function AQAEnglishLanguagePage() {
                 3
               </span>
               <span>
-                <strong>Learn the mark schemes.</strong> Understanding exactly
-                what examiners are looking for is half the battle. Our Paper 1
-                and Paper 2 pages include full mark scheme breakdowns.
+                <strong>Learn the marking guides.</strong> Understanding exactly
+                what markers are looking for is half the battle. Our Paper 1
+                and Paper 2 pages include full marking guide breakdowns.
               </span>
             </li>
             <li className="flex gap-3">

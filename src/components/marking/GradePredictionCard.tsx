@@ -42,7 +42,7 @@ export function GradePredictionCard({
             <p className="text-sm font-medium text-foreground">{paperLabel}</p>
           )}
           <p className="text-xs text-muted-foreground">
-            Based on AQA-style mark scheme descriptors
+            Based on AQA-style marking guide
           </p>
         </div>
 

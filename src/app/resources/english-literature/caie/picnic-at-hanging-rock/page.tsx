@@ -688,7 +688,7 @@ export default function PicnicAtHangingRockPage() {
                 </p>
                 <p>
                   In CAIE terms, the ending is rich material for discussing authorial intent
-                  (AO3): Lindsay <em>chooses</em> not to resolve the mystery because resolution would
+                  (Interpretation): Lindsay <em>chooses</em> not to resolve the mystery because resolution would
                   undermine the novel&rsquo;s philosophical and thematic concerns.
                 </p>
               </CardContent>
@@ -786,34 +786,34 @@ export default function PicnicAtHangingRockPage() {
                 <table className="w-full text-sm text-muted-foreground">
                   <thead>
                     <tr className="border-b border-border/60">
-                      <th className="py-2 pr-4 text-left font-semibold text-foreground">AO</th>
+                      <th className="py-2 pr-4 text-left font-semibold text-foreground">Skill</th>
                       <th className="py-2 text-left font-semibold text-foreground">Description</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border/40">
                     <tr>
-                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">AO1</td>
+                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">Textual Knowledge</td>
                       <td className="py-2.5">
                         Show detailed knowledge and understanding of the text — support points with
                         specific references and quotations.
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">AO2</td>
+                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">Writer's Methods</td>
                       <td className="py-2.5">
                         Analyse the ways in which writers use language, structure, and form to create
                         meanings and effects.
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">AO3</td>
+                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">Interpretation</td>
                       <td className="py-2.5">
                         Demonstrate understanding of the relationship between texts and contexts —
                         historical, social, cultural, and literary.
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">AO4</td>
+                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">Personal Response</td>
                       <td className="py-2.5">
                         Develop a personal response, showing engagement with and interpretation of
                         the text — explore alternative readings where appropriate.
@@ -846,20 +846,20 @@ export default function PicnicAtHangingRockPage() {
 
               <div>
                 <h3 className="font-semibold text-foreground mb-2">
-                  Model Paragraph (addressing all 4 AOs)
+                  Model Paragraph (addressing all 4 skills)
                 </h3>
                 <div className="rounded-lg bg-muted/30 p-4 border border-border/40 space-y-3">
                   <p>
                     Lindsay presents Hanging Rock not merely as a backdrop but as an active,
                     almost sentient force that drives the narrative&rsquo;s central crisis.
-                    <span className="text-xs text-primary ml-1">[AO1 — knowledge of text]</span>
+                    <span className="text-xs text-primary ml-1">[Textual Knowledge — knowledge of text]</span>
                     {" "}The Rock is described as having existed for &ldquo;a million years,&rdquo; a
                     phrase whose deliberate repetition throughout the novel emphasises the vast
                     geological timescale that dwarfs the human drama unfolding at its base. The
                     personification of the landscape &mdash; the Rock &ldquo;brooded in silence
                     over its own unfathomable secrets&rdquo; &mdash; grants it agency and
                     consciousness, transforming setting into character.
-                    <span className="text-xs text-primary ml-1">[AO2 — language analysis: repetition, personification]</span>
+                    <span className="text-xs text-primary ml-1">[Writer's Methods — language analysis: repetition, personification]</span>
                   </p>
                   <p>
                     This technique reflects the tradition of Australian Gothic literature, in which
@@ -867,7 +867,7 @@ export default function PicnicAtHangingRockPage() {
                     1967, Lindsay drew on growing Australian anxieties about the relationship between
                     settler culture and the ancient Indigenous landscape; the Rock&rsquo;s refusal to
                     yield its secrets can be read as the land itself resisting colonial possession.
-                    <span className="text-xs text-primary ml-1">[AO3 — literary and historical context]</span>
+                    <span className="text-xs text-primary ml-1">[Interpretation — literary and historical context]</span>
                   </p>
                   <p>
                     However, while the Rock is undoubtedly a powerful presence, calling it &ldquo;the
@@ -877,7 +877,7 @@ export default function PicnicAtHangingRockPage() {
                     &mdash; love, cruelty, desire &mdash; that the Rock merely catalyses. The Rock
                     provides the conditions for tragedy, but it is the characters&rsquo; responses
                     that give the novel its emotional power.
-                    <span className="text-xs text-primary ml-1">[AO4 — personal response, alternative interpretation]</span>
+                    <span className="text-xs text-primary ml-1">[Personal Response — personal response, alternative interpretation]</span>
                   </p>
                 </div>
               </div>

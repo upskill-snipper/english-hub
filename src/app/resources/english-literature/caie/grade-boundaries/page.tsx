@@ -176,7 +176,7 @@ export default function GradeBoundariesPage() {
         <Section title="What each grade looks like in practice">
           <p>
             Understanding the grade descriptors helps you see exactly what
-            examiners expect at each level. Here is what typical work looks like
+            markers expect at each level. Here is what typical work looks like
             at the key grade boundaries:
           </p>
 
@@ -283,7 +283,7 @@ export default function GradeBoundariesPage() {
                 <li>
                   <strong>Structure:</strong> Plan your essays briefly before
                   writing. A clear introduction, structured paragraphs, and a
-                  conclusion show the examiner you can organise your ideas.
+                  conclusion show the marker you can organise your ideas.
                 </li>
               </ul>
             </div>
@@ -305,7 +305,7 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li>
                   <strong>Personal response:</strong> Develop a genuine personal
-                  engagement with the text. Show the examiner you have thought
+                  engagement with the text. Show the marker you have thought
                   independently about the writer&rsquo;s intentions and effects.
                 </li>
                 <li>

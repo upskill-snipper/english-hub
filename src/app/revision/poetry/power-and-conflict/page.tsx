@@ -411,7 +411,7 @@ export default function PowerAndConflictPage() {
               Use the themes, not just the topic
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Examiners reward thematic analysis. Instead of writing &quot;both
+              Markers reward thematic analysis. Instead of writing &quot;both
               poems are about war&quot;, explore how each poet presents the
               effects of conflict differently -- one through guilt, the other
               through loss.

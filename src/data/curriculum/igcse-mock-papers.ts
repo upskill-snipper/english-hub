@@ -259,7 +259,7 @@ const langPaper2Questions: MockQuestion[] = [
 
 // =============================================================================
 // PAPER 3: IGCSE English Literature -- Paper 1 (Poetry)
-// Edexcel spec code 4ET1, Paper 1
+// Edexcel IGCSE Literature, Paper 1
 // =============================================================================
 
 const litPaper1Extract = `UNSEEN POEM FOR SECTION A\n\n` +
@@ -349,7 +349,7 @@ const litPaper1Questions: MockQuestion[] = [
 
 // =============================================================================
 // PAPER 4: IGCSE English Literature -- Paper 2 (Prose and Drama)
-// Edexcel spec code 4ET1, Paper 2
+// Edexcel IGCSE Literature, Paper 2
 // =============================================================================
 
 const litPaper2Extract = `SECTION A -- PROSE\n\n` +

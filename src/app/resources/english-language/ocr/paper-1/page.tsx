@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "OCR Paper 1: Communicating Information and Ideas | The English Hub",
   description:
-    "Complete guide to OCR GCSE English Language Component 01 — Communicating Information and Ideas. Non-fiction reading and transactional writing revision.",
+    "Complete guide to OCR GCSE English Language Paper 1 — Communicating Information and Ideas. Non-fiction reading and writing for real purposes revision.",
 };
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -134,7 +134,7 @@ export default function OCRPaper1Page() {
               <div className="mt-4 space-y-4">
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">
-                    Retrieval and Inference (AO1)
+                    Retrieval and Inference
                   </h4>
                   <p className="mt-2 text-sm">
                     You will be asked to identify explicit information from the
@@ -156,7 +156,7 @@ export default function OCRPaper1Page() {
 
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">
-                    Language and Structure Analysis (AO2)
+                    Language and Structure Analysis
                   </h4>
                   <p className="mt-2 text-sm">
                     These questions ask you to analyse <em>how</em> the writer
@@ -178,7 +178,7 @@ export default function OCRPaper1Page() {
 
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">
-                    Comparison (AO3)
+                    Comparison
                   </h4>
                   <p className="mt-2 text-sm">
                     You will need to compare the two texts, focusing on
@@ -201,7 +201,7 @@ export default function OCRPaper1Page() {
 
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">
-                    Evaluation (AO4)
+                    Evaluation
                   </h4>
                   <p className="mt-2 text-sm">
                     You may be asked to evaluate a statement or viewpoint about
@@ -261,7 +261,7 @@ export default function OCRPaper1Page() {
               </h3>
               <p className="mt-2">
                 Here is an example of a strong analytical paragraph responding
-                to an AO2 question about a travel writing extract:
+                to a language analysis question about a travel writing extract:
               </p>
               <div className="mt-3 rounded-lg border border-border bg-card p-5 shadow-md">
                 <p className="text-sm italic text-muted-foreground">
@@ -307,7 +307,7 @@ export default function OCRPaper1Page() {
               </h3>
               <p className="mt-2">
                 In Section B, you will complete <strong>two</strong> writing
-                tasks. These are transactional writing tasks where you write
+                tasks. These are writing for real purposes tasks where you write
                 for a specific purpose, audience, and form. You might be asked
                 to write:
               </p>
@@ -474,10 +474,10 @@ export default function OCRPaper1Page() {
             {/* SPaG */}
             <div>
               <h3 className="text-xl font-semibold text-foreground">
-                Spelling, Punctuation, and Grammar (AO6)
+                Spelling, Punctuation, and Grammar (Technical Accuracy)
               </h3>
               <p className="mt-2">
-                Accurate SPaG is assessed as part of AO6. To reach the top
+                Accurate SPaG is assessed as part of the technical accuracy skill. To reach the top
                 band:
               </p>
               <ul className="ml-6 mt-2 list-disc space-y-1">
@@ -581,7 +581,7 @@ export default function OCRPaper1Page() {
                 <li>
                   <strong>Weak openings and endings</strong> &mdash; your first
                   and last paragraphs leave the strongest impression on the
-                  examiner.
+                  marker.
                 </li>
               </ul>
             </div>
@@ -592,7 +592,7 @@ export default function OCRPaper1Page() {
         <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">Continue studying</h2>
           <p className="mt-2 text-muted-foreground">
-            Build your reading analysis and transactional writing skills further.
+            Build your reading analysis and writing for real purposes skills further.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link

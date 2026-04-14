@@ -23,9 +23,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Paper 1 Reading — Cambridge IGCSE 0500',
+  title: 'Paper 1 Reading — IGCSE Language A',
   description:
-    'Everything you need for Cambridge IGCSE 0500 Paper 1 Reading. Question breakdown, reading techniques, language analysis, summary writing and practice passages.',
+    'Everything you need for IGCSE Language A Paper 1 Reading. Question breakdown, reading techniques, language analysis, summary writing and practice passages. Aligns with Cambridge syllabus 0500.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1',
   },
@@ -111,7 +111,7 @@ export default async function Paper1HubPage() {
           className="gap-1"
         >
           <ChevronLeft className="size-4" />
-          0500 hub
+          IGCSE Language A hub
         </Button>
       </div>
 
@@ -121,7 +121,7 @@ export default async function Paper1HubPage() {
 
         <div className="relative">
           <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
-            Cambridge IGCSE 0500
+            IGCSE Language A
           </Badge>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Paper 1: Reading
@@ -166,7 +166,7 @@ export default async function Paper1HubPage() {
                     <CardTitle className="text-heading-sm font-heading">
                       {q.number}: {q.title}
                     </CardTitle>
-                    <CardDescription>AO split — {q.ao}</CardDescription>
+                    <CardDescription>Skills focus — {q.ao}</CardDescription>
                   </div>
                   <Badge className="bg-primary/10 text-primary border-primary/20">
                     {q.marks} marks
@@ -267,6 +267,11 @@ export default async function Paper1HubPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Footer note ─────────────────────────────────────────────── */}
+      <p className="text-center text-body-xs text-muted-foreground/60">
+        Aligns with Cambridge syllabus 0500
+      </p>
     </div>
   )
 }

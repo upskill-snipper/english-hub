@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/themes",
   },
-  title: "Macbeth Themes — Edexcel IGCSE 4ET1",
+  title: "Macbeth Themes — Edexcel IGCSE IGCSE Literature",
   description:
-    "The seven major themes of Macbeth for Edexcel IGCSE 4ET1: ambition, guilt, the supernatural, kingship, appearance vs reality, gender, and fate vs free will.",
+    "The seven major themes of Macbeth for Edexcel IGCSE IGCSE Literature: ambition, guilt, the supernatural, kingship, appearance vs reality, gender, and fate vs free will.",
 };
 
 const THEMES = [
@@ -117,7 +117,7 @@ export default async function MacbethThemesPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Macbeth &mdash; Themes

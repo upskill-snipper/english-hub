@@ -30,7 +30,7 @@ const gcseLangReading: CourseData = {
 
 <div class="key-term"><strong>Key Term: Information Retrieval</strong> — The skill of locating and selecting explicit information from a text without inference or interpretation.</div>
 
-<h3>What the Examiner Wants</h3>
+<h3>What Markers Look For</h3>
 <ul>
   <li>Four <strong>separate</strong> points drawn from the correct lines of the source.</li>
   <li>Each point must be clearly linked to the question focus.</li>
@@ -38,8 +38,8 @@ const gcseLangReading: CourseData = {
   <li>No analysis or explanation is needed.</li>
 </ul>
 
-<h3>Understanding the Mark Scheme</h3>
-<p><strong>AQA Q1 Mark Scheme:</strong></p>
+<h3>Understanding the marking guide</h3>
+<p><strong>AQA Q1 marking guide:</strong></p>
 <ul>
   <li><strong>1 mark per correct point</strong> — Straightforward, no partial credit.</li>
   <li>Points must be <strong>distinct and separate</strong> — you cannot score two marks for paraphrasing the same detail.</li>
@@ -92,15 +92,15 @@ const gcseLangReading: CourseData = {
   <li>The November wind was cold.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip 1:</strong> Many students lose marks by going outside the specified line range. Always double-check you are reading from the correct section before you write anything.</div>
+<div class="examiner-tip"><strong>Top Tip 1:</strong> Many students lose marks by going outside the specified line range. Always double-check you are reading from the correct section before you write anything.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 2:</strong> Q1 is a quick-fire question. Spend no more than 5 minutes on it so you have adequate time for Q2, Q3, and Q4, which are worth more marks.</div>
+<div class="examiner-tip"><strong>Top Tip 2:</strong> Q1 is a quick-fire question. Spend no more than 5 minutes on it so you have adequate time for Q2, Q3, and Q4, which are worth more marks.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 3:</strong> If you miss a detail, keep moving. Spending 2 minutes hunting for a fourth detail wastes time. Move on and come back if you have time at the end.</div>
+<div class="examiner-tip"><strong>Top Tip 3:</strong> If you miss a detail, keep moving. Spending 2 minutes hunting for a fourth detail wastes time. Move on and come back if you have time at the end.</div>
 
 <div class="common-mistake"><strong>Common Mistake 1:</strong> Giving a point that requires inference — e.g. writing "The person who lives here is poor." The question asks for explicit information, not deduction. Stick to what is directly stated in the text.</div>
 
-<div class="common-mistake"><strong>Common Mistake 2:</strong> Listing the same point twice in different words. For example: "The kitchen was cold" and "The temperature was low." These are the same detail. The examiner will only credit one.</div>
+<div class="common-mistake"><strong>Common Mistake 2:</strong> Listing the same point twice in different words. For example: "The kitchen was cold" and "The temperature was low." These are the same detail. Markers will only credit one.</div>
 
 <div class="common-mistake"><strong>Common Mistake 3:</strong> Writing too much detail. A simple, short sentence is enough. Do not quote long phrases — just lift one key fact per line.</div>
 
@@ -197,7 +197,7 @@ const gcseLangReading: CourseData = {
 
 <div class="key-term"><strong>Key Term: Connotation</strong> — The implied or associated meaning of a word beyond its literal definition. For example, "crept" literally means moved slowly, but it connotes secrecy, stealth, or threat.</div>
 
-<h3>The AQA Mark Scheme: What Gets Top Marks</h3>
+<h3>The AQA marking guide: What Gets Top Marks</h3>
 <ul>
   <li><strong>Level 4 (7-8 marks):</strong> Perceptive, detailed analysis. Uses subject terminology accurately and precisely. Analyses effects of individual words and phrases. Evaluates writer's choices.</li>
   <li><strong>Level 3 (5-6 marks):</strong> Clear, relevant explanations with appropriate terminology. Good use of evidence and analysis.</li>
@@ -282,13 +282,13 @@ const gcseLangReading: CourseData = {
   <li>Sentence form: short, punchy final sentence — provides climactic emphasis after longer build-up</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip 1:</strong> Avoid "feature spotting" — simply naming a technique without explaining its effect. The examiner wants to see you explore <em>why</em> the writer chose that particular word or image and what it makes the reader think or feel.</div>
+<div class="examiner-tip"><strong>Top Tip 1:</strong> Avoid "feature spotting" — simply naming a technique without explaining its effect. markers are looking for you explore <em>why</em> the writer chose that particular word or image and what it makes the reader think or feel.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 2:</strong> Aim for 4-5 detailed paragraphs, each covering one or two related techniques. Never write more than one sentence per technique — depth beats breadth.</div>
+<div class="examiner-tip"><strong>Top Tip 2:</strong> Aim for 4-5 detailed paragraphs, each covering one or two related techniques. Never write more than one sentence per technique — depth beats breadth.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 3:</strong> Use subject terminology accurately (metaphor, not just "comparison"). Incorrect terminology will cost you marks.</div>
+<div class="examiner-tip"><strong>Top Tip 3:</strong> Use subject terminology accurately (metaphor, not just "comparison"). Incorrect terminology will cost you marks.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 4:</strong> Focus on techniques that cluster together thematically. Do not jump randomly from one technique to another. Show how the writer builds meaning through cumulative choices.</div>
+<div class="examiner-tip"><strong>Top Tip 4:</strong> Focus on techniques that cluster together thematically. Do not jump randomly from one technique to another. Show how the writer builds meaning through cumulative choices.</div>
 
 <h3>Key Language Methods to Master</h3>
 <ul>
@@ -378,7 +378,7 @@ const gcseLangReading: CourseData = {
 
 <div class="key-term"><strong>Key Term: Structural Feature</strong> — A deliberate choice about how a text is organised, including focus shifts, narrative perspective changes, the use of openings and endings, pacing, and the ordering of events.</div>
 
-<h3>The AQA Mark Scheme for Q3</h3>
+<h3>The AQA marking guide for Q3</h3>
 <ul>
   <li><strong>Level 4 (7-8 marks):</strong> Perceptive analysis of structural features across the whole text. Clear links between structure and reader effect. Precise subject terminology.</li>
   <li><strong>Level 3 (5-6 marks):</strong> Clear explanations of structural choices with some analysis of effect. Mostly whole-text approach.</li>
@@ -412,7 +412,7 @@ const gcseLangReading: CourseData = {
 
 <h3>Worked Example 2: Common Error — Language Analysis Disguised as Structure</h3>
 <p><strong>Weak response:</strong> "The writer uses metaphor when describing the market as 'alive.' The word 'alive' has positive connotations. The letter is described using the word 'regret,' which is sad."</p>
-<p><strong>Why this fails:</strong> This is language analysis (metaphor, connotations, word choice), not structural analysis. The examiner specifically wants you to explain how the text is <em>organised</em>, not how individual words work.</p>
+<p><strong>Why this fails:</strong> This is language analysis (metaphor, connotations, word choice), not structural analysis. Markers specifically wants you to explain how the text is <em>organised</em>, not how individual words work.</p>
 
 <h3>Worked Example 3: Correct Structure Focus</h3>
 <p><strong>Strong response:</strong> "The writer structures the text by contrasting the external chaos of the market with Elena's internal emotional state. This is achieved through the opening's wide-angle perspective, which narrows in the second paragraph to focus on Elena's private moment. The structural juxtaposition emphasises the gap between public normality and private devastation."</p>
@@ -463,13 +463,13 @@ const gcseLangReading: CourseData = {
 
 <p><strong>Memory aid:</strong> If you are quoting a word or phrase and discussing its <em>connotations</em>, you are doing language analysis (Q2/Q4). If you are discussing <em>where</em> something appears in the text and <em>why</em> that placement matters, you are doing structure (Q3).</p>
 
-<div class="examiner-tip"><strong>Examiner Tip 1:</strong> Always link structural choices to the reader's experience. Do not just describe what happens ("the writer moves from the market to Elena"). Explain <em>why</em> this shift matters — what effect does it have on the reader's engagement, emotion, or understanding?</div>
+<div class="examiner-tip"><strong>Top Tip 1:</strong> Always link structural choices to the reader's experience. Do not just describe what happens ("the writer moves from the market to Elena"). Explain <em>why</em> this shift matters — what effect does it have on the reader's engagement, emotion, or understanding?</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 2:</strong> Reference the <em>whole</em> text, not just opening or ending. Show awareness of how beginning, middle, and end work together to create effect.</div>
+<div class="examiner-tip"><strong>Top Tip 2:</strong> Reference the <em>whole</em> text, not just opening or ending. Show awareness of how beginning, middle, and end work together to create effect.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 3:</strong> Use precise structural terminology: not "the writer moves from here to there," but "the writer shifts focus from the macro to the micro" or "establishes then complicates."</div>
+<div class="examiner-tip"><strong>Top Tip 3:</strong> Use precise structural terminology: not "the writer moves from here to there," but "the writer shifts focus from the macro to the micro" or "establishes then complicates."</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 4:</strong> If you mention language features (metaphor, personification, alliteration), always connect them back to structural effect. For example: "The listing in the opening creates a sense of narrative momentum that carries the reader into Elena's private moment."</div>
+<div class="examiner-tip"><strong>Top Tip 4:</strong> If you mention language features (metaphor, personification, alliteration), always connect them back to structural effect. For example: "The listing in the opening creates a sense of narrative momentum that carries the reader into Elena's private moment."</div>
 
 <div class="common-mistake"><strong>Common Mistake 1:</strong> Analysing language instead of structure. If you find yourself discussing metaphors, connotations, or imagery in detail, you have drifted off-task. Q3 is about how the text is <em>arranged</em>, not how individual words are <em>chosen</em>.</div>
 
@@ -577,7 +577,7 @@ const gcseLangReading: CourseData = {
 
 <div class="model-answer"><strong>Model Answer (Grade 8-9):</strong> I agree that the writer creates a powerful sense of fear and vulnerability. The physical description of Marcus — "breath shallow and uneven," "pressed his back against the wall" — immediately positions him as someone on the defensive, and the reader's sympathy is engaged through these visceral, bodily details that mirror the physical sensations of anxiety. The metaphor "each door a closed mouth refusing to speak" is particularly effective because it personifies the environment as deliberately withholding and hostile; the doors are not simply closed but actively refusing to help, which intensifies the reader's perception of Marcus as utterly alone. However, the writer also introduces moments of dark absurdity — the shoes that squeak "absurdly loud" — which subtly undercuts the tension and adds a layer of self-awareness to Marcus's fear. This prevents the passage from becoming melodramatic and makes the fear feel more authentic, as real terror often coexists with absurd, mundane details. The final image of the shadow in a "frantic, stuttering dance" externalises Marcus's internal panic, and the word "stuttering" connotes a loss of control, reinforcing the reader's sense that fear has overtaken both his body and the space around him.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Use evaluative verbs and phrases throughout: "effectively conveys," "successfully creates," "powerfully suggests," "this is particularly compelling because." These signal to the examiner that you are evaluating, not just analysing.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Use evaluative verbs and phrases throughout: "effectively conveys," "successfully creates," "powerfully suggests," "this is particularly compelling because." These signal to markers that you are evaluating, not just analysing.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Simply retelling the story or describing what happens. Q4 demands critical judgement — you must assess <em>how well</em> the writer achieves the stated effect, not summarise the plot. Every paragraph should include evaluative language.</div>
 
@@ -678,16 +678,16 @@ const gcseLangReading: CourseData = {
 
 <p><strong>Suggested Approach:</strong> Choose Tier 2 or 3 above and apply it to this passage. Focus on: (1) What sensory details are included and how they accumulate? (2) How does the structure of the passage reinforce alienation? (3) Is the technique effective, and what would be an alternative approach? (4) Does the final sentence change or complicate the sense of alienation?</p>
 
-<h3>Examiner Commentary: What Top Answers Do Differently</h3>
+<h3>Marker Commentary: What Top Answers Do Differently</h3>
 
-<p>After marking thousands of Q4 responses, examiners consistently report that Grade 9 answers share four features:</p>
+<p>After marking thousands of Q4 responses, markers consistently report that Grade 9 answers share four features:</p>
 
 <ol>
 <li><strong>Precision Over Generality:</strong> A Grade 9 response does not say "the writer uses language to create effect." It says "the verb 'stuttering,' usually reserved for human speech patterns disrupted by anxiety, is transferred to the shadow, suggesting that fear has become so total it has infected the environment itself." Specificity signals close reading.</li>
 
 <li><strong>Recognition of Complexity:</strong> The best responses rarely say "the writer does X and this creates effect Y, full stop." Instead, they acknowledge: "While the passage clearly establishes isolation through spatial detail, it simultaneously introduces complexity through the absurdist detail of the squeaking shoe, which suggests the writer is offering a more nuanced view of fear than simple terror." This shows sophistication.</li>
 
-<li><strong>Connection to Reader:</strong> Examiners reward explicit reference to the reader's response: "This makes the reader experience isolation from within, which is more powerful than being told Marcus is isolated, because we inhabit his consciousness rather than observing him from outside."</li>
+<li><strong>Connection to Reader:</strong> Markers reward explicit reference to the reader's response: "This makes the reader experience isolation from within, which is more powerful than being told Marcus is isolated, because we inhabit his consciousness rather than observing him from outside."</li>
 
 <li><strong>Sustained Argument:</strong> Grade 9 responses do not list separate points. Each paragraph builds on the previous one, developing a cumulative argument. The opening states a thesis; subsequent paragraphs develop and complicate it; the conclusion returns to the original claim but with deepened understanding.</li>
 </ol>
@@ -765,7 +765,7 @@ const gcseLangReading: CourseData = {
 <h3>How It Works</h3>
 <p>The exam paper presents a list of eight statements labelled A–H. Each statement makes a claim about what happens or what is described in a specified section of Source A. Exactly four statements are true and four are false. You shade the boxes next to the four you believe are true.</p>
 
-<h3>The AQA Mark Scheme</h3>
+<h3>The AQA marking guide</h3>
 <ul>
   <li><strong>4 marks:</strong> All four correct statements selected, no incorrect statements selected.</li>
   <li><strong>3 marks:</strong> Three correct statements selected, no incorrect statements selected; OR four correct statements selected with one incorrect.</li>
@@ -802,7 +802,7 @@ const gcseLangReading: CourseData = {
 <p><strong>Score:</strong> 2 marks (three correct statements with one incorrect statement)</p>
 
 <h3>Recognising False Statements: Distortion Tactics</h3>
-<p>Examiners use specific tricks to create plausible false statements. Watch for these patterns:</p>
+<p>Exams use specific tricks to create plausible false statements. Watch for these patterns:</p>
 
 <h4>Tactic 1: Subtle Number Changes</h4>
 <p><strong>Text says:</strong> "The party consisted of seven men"<br>
@@ -853,13 +853,13 @@ const gcseLangReading: CourseData = {
 
 <p><strong>Answer:</strong> A, C, E, G (exactly 4 boxes) = 4 marks</p>
 
-<div class="examiner-tip"><strong>Examiner Tip 1:</strong> Always double-check that you have selected exactly four boxes. A common error is selecting five in panic, which wipes out your entire score.</div>
+<div class="examiner-tip"><strong>Top Tip 1:</strong> Always double-check that you have selected exactly four boxes. A common error is selecting five in panic, which wipes out your entire score.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 2:</strong> If you are genuinely unsure about one statement, use logic: if you are confident about three, the fourth must be the one you select. Trust the logic of the test.</div>
+<div class="examiner-tip"><strong>Top Tip 2:</strong> If you are genuinely unsure about one statement, use logic: if you are confident about three, the fourth must be the one you select. Trust the logic of the test.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 3:</strong> Do not overthink this question. Q1 should take 3–5 minutes maximum. It is worth only 4 marks; move on to the higher-mark questions quickly.</div>
+<div class="examiner-tip"><strong>Top Tip 3:</strong> Do not overthink this question. Q1 should take 3–5 minutes maximum. It is worth only 4 marks; move on to the higher-mark questions quickly.</div>
 
-<div class="common-mistake"><strong>Common Mistake 1:</strong> Shading five boxes "just to be safe." The mark scheme explicitly penalises extra selections — if you shade five, you score zero. Always select exactly four.</div>
+<div class="common-mistake"><strong>Common Mistake 1:</strong> Shading five boxes "just to be safe." The marking guide explicitly penalises extra selections — if you shade five, you score zero. Always select exactly four.</div>
 
 <div class="common-mistake"><strong>Common Mistake 2:</strong> Making inferences. A statement saying "The director was unhappy about the weather" is false if the text only says "The weather changed abruptly." Do not infer emotion or opinion.</div>
 
@@ -885,14 +885,14 @@ const gcseLangReading: CourseData = {
           question:
             'What happens if you shade five boxes instead of four?',
           options: [
-            'Nothing — the examiner ignores the extra one',
+            'Nothing — markers ignore the extra one',
             'You are marked out of three instead of four',
             'You automatically score zero',
             'Only your first four selections count',
           ],
           correct: 1,
           explanation:
-            'If you shade five boxes, the mark scheme penalises you by marking out of three. Shading six means you are marked out of two, and so on.',
+            'If you shade five boxes, the marking guide penalises you by marking out of three. Shading six means you are marked out of two, and so on.',
         },
         {
           id: 'gcse-lr-m5-q3',
@@ -916,7 +916,7 @@ const gcseLangReading: CourseData = {
             'Guess and move on immediately',
             'Shade it along with a fifth statement to be safe',
             'Skip it, complete the others, and return to it using elimination',
-            'Write a note to the examiner explaining your uncertainty',
+            'Write a note to markers explaining your uncertainty',
           ],
           correct: 2,
           explanation:
@@ -939,7 +939,7 @@ const gcseLangReading: CourseData = {
 
 <div class="key-term"><strong>Key Term: Synthesis</strong> — The skill of combining information from two or more sources to identify points of comparison or contrast, presenting them in an integrated, connected way rather than treating each source separately.</div>
 
-<h3>AQA Mark Scheme for Q2</h3>
+<h3>AQA marking guide for Q2</h3>
 <ul>
   <li><strong>Level 4 (7-8 marks):</strong> Clear, sustained comparison across both sources. Integrated, fluent writing. Precise, well-selected evidence from both texts.</li>
   <li><strong>Level 3 (5-6 marks):</strong> Clear comparative statements with evidence from both sources. Some synthesis but organisation could be tighter.</li>
@@ -998,11 +998,11 @@ const gcseLangReading: CourseData = {
 <p>WRONG: "The sources are very different."</p>
 <p>RIGHT: "Source A presents the canteen as a space where students' preferences are valued, whereas Source B depicts the dining hall as a place of austere discipline and control."</p>
 
-<div class="examiner-tip"><strong>Examiner Tip 1:</strong> You must use evidence from <strong>both</strong> sources in every paragraph. A response that discusses Source A for two paragraphs and then Source B for two paragraphs will not score highly because it lacks synthesis — the sources must be woven together.</div>
+<div class="examiner-tip"><strong>Top Tip 1:</strong> You must use evidence from <strong>both</strong> sources in every paragraph. A response that discusses Source A for two paragraphs and then Source B for two paragraphs will not score highly because it lacks synthesis — the sources must be woven together.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 2:</strong> Use topic sentences that explicitly signal comparison. Start paragraphs with phrases like "While Source A suggests… Source B implies…" or "Both sources convey… however…"</div>
+<div class="examiner-tip"><strong>Top Tip 2:</strong> Use topic sentences that explicitly signal comparison. Start paragraphs with phrases like "While Source A suggests… Source B implies…" or "Both sources convey… however…"</div>
 
-<div class="examiner-tip"><strong>Examiner Tip 3:</strong> Remember that Q2 is only worth 8 marks (out of 80 total), so spend around 12-15 minutes on it. Do not over-prepare. A clear, well-integrated response of three solid paragraphs is sufficient.</div>
+<div class="examiner-tip"><strong>Top Tip 3:</strong> Remember that Q2 is only worth 8 marks (out of 80 total), so spend around 12-15 minutes on it. Do not over-prepare. A clear, well-integrated response of three solid paragraphs is sufficient.</div>
 
 <div class="common-mistake"><strong>Common Mistake 1:</strong> Analysing language in excessive detail. Q2 is a <em>summary</em> question — you identify <em>what</em> the sources say, not <em>how</em> they say it. Brief references to language are acceptable, but extended analysis of metaphors or imagery is not needed and wastes time.</div>
 
@@ -1010,7 +1010,7 @@ const gcseLangReading: CourseData = {
 
 <div class="common-mistake"><strong>Common Mistake 3:</strong> Making vague, unsupported claims like "The sources are quite different." Always back up comparative points with specific evidence from both texts.</div>
 
-<div class="grade-9-technique"><strong>Grade 9 Technique:</strong> Begin your response with a clear thesis statement that identifies the overall comparison: "The sources present fundamentally opposed views on [topic], with Source A emphasising [aspect] while Source B stresses [aspect]." This frames your entire response and shows the examiner you have grasped the overarching comparison before diving into detail.</div>
+<div class="grade-9-technique"><strong>Grade 9 Technique:</strong> Begin your response with a clear thesis statement that identifies the overall comparison: "The sources present fundamentally opposed views on [topic], with Source A emphasising [aspect] while Source B stresses [aspect]." This frames your entire response and shows markers you have grasped the overarching comparison before diving into detail.</div>
 
 <h3>Key Differences Between Q2 and Q3</h3>
 <ul>
@@ -1117,7 +1117,7 @@ const gcseLangReading: CourseData = {
 
 <div class="model-answer"><strong>Model Answer (Grade 8-9):</strong> Both writers present the city as an overpowering force, but they use contrasting imagery to convey this. In Source A, the metaphor "the city was a machine" frames urban life as mechanical, efficient, and impersonal — the connotations of "tireless and indifferent" suggest a system that functions without regard for individual human experience. The simile "like the arms of giants" reinforces this sense of inhuman scale, positioning the cranes as mythic, almost threatening presences. In contrast, Source B uses the metaphor "a monstrous labyrinth," which connotes confusion, entrapment, and danger rather than efficiency. Where Source A's city is coldly functional, Source B's is chaotic and hostile. The simile "like a funeral shroud" introduces connotations of death and mourning entirely absent from Source A, suggesting that the 19th-century writer perceives the city as not merely indifferent but actively destructive. This difference may reflect the writers' distinct historical contexts: Source A's modern narrator accepts the city's relentless pace as normative, while Source B's Victorian narrator is viscerally disturbed by it.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The best responses do not treat the sources separately. Every analytical point about Source A should be connected to Source B through comparison. Use phrases like "Similarly," "In contrast," "Where Source A… Source B instead…" to keep the comparison explicit.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The best responses do not treat the sources separately. Every analytical point about Source A should be connected to Source B through comparison. Use phrases like "Similarly," "In contrast," "Where Source A… Source B instead…" to keep the comparison explicit.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing two separate mini-essays — one about Source A and one about Source B — with a brief comparison sentence at the end. This will cap your mark at Level 2. The comparison must be embedded throughout.</div>
 
@@ -1220,7 +1220,7 @@ const gcseLangReading: CourseData = {
 
 <div class="model-answer"><strong>Model Answer (Grade 8-9):</strong> The two writers hold fundamentally opposing views on youth voice in the digital age. Source A celebrates social media as "democracy in its purest, most accessible form," using the superlative "purest" to frame online expression as an ideal — even utopian — development. The tricolon "published letters, public meetings, vetted phone-ins" catalogues the limitations of previous eras, implying that those barriers were gatekeeping mechanisms that excluded young people. In stark contrast, Source B dismisses digital expression through the antithesis "not a chorus but a cacophony," which suggests that increased participation has produced dissonance rather than harmony. The metaphor of intoxication — "intoxicated by the novelty of being heard" — is particularly loaded, positioning young people as reckless and lacking judgement, which directly counters Source A's respectful framing. Where Source A deliberately rejects the accusation of narcissism ("This is not narcissism"), Source B implicitly endorses it through the cutting assertion that "having a platform is not the same as having something to say." The writers' tones are equally divergent: Source A is celebratory and inclusive, while Source B adopts a weary, authoritative register that positions the writer as a wise elder correcting youthful folly.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always identify both the viewpoint (what the writer thinks) AND the method (how they express it). Stating "Source A thinks social media is good" without analysing the language used to convey this will limit you to Level 2.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Always identify both the viewpoint (what the writer thinks) AND the method (how they express it). Stating "Source A thinks social media is good" without analysing the language used to convey this will limit you to Level 2.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Only comparing methods without stating what the viewpoints actually are. You need both: the <em>opinion</em> and the <em>technique</em>. Start each comparative point by making the viewpoint clear, then analyse how it is conveyed.</div>
 
@@ -1317,7 +1317,7 @@ const gcseLangReading: CourseData = {
 <li><strong>Method Analysis:</strong> Source A uses "purest" (ideological language); Source B uses "intoxicated" (language implying poor judgment). These word choices reveal competing views of young people and knowledge itself.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When comparing viewpoints, ask yourself: "If these writers were in a room together, what would they actually be disagreeing about?" The answer is rarely as simple as "one likes it, one dislikes it." Usually, it is about fundamentally different values or assumptions. That deeper disagreement is what makes Grade 9 analysis powerful.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When comparing viewpoints, ask yourself: "If these writers were in a room together, what would they actually be disagreeing about?" The answer is rarely as simple as "one likes it, one dislikes it." Usually, it is about fundamentally different values or assumptions. That deeper disagreement is what makes Grade 9 analysis powerful.</div>
 
 `,
       quiz: [
@@ -1420,7 +1420,7 @@ const gcseLangReading: CourseData = {
       ],
       correct: 1,
       explanation:
-        'This is "feature spotting" — naming techniques without analysing what they suggest, imply, or make the reader feel. The examiner needs to see the effect of each method explained.',
+        'This is "feature spotting" — naming techniques without analysing what they suggest, imply, or make the reader feel. Markers needs to see the effect of each method explained.',
     },
     {
       id: 'gcse-lr-a4',
@@ -1486,7 +1486,7 @@ const gcseLangReading: CourseData = {
         'They are marked out of four as normal',
         'They are marked out of two',
         'They automatically score zero',
-        'The examiner selects the best four',
+        'Markers selects the best four',
       ],
       correct: 1,
       explanation:
@@ -1607,7 +1607,7 @@ const gcseLangReading: CourseData = {
     {
       id: 'gcse-lr-a17',
       question:
-        'When answering Paper 1 Q3 about structure, a student analyses a metaphor in detail. What feedback would the examiner give?',
+        'When answering Paper 1 Q3 about structure, a student analyses a metaphor in detail. What feedback would markers give?',
       options: [
         '"Excellent — detailed language analysis"',
         '"Off-task — Q3 is about structure, not language"',
@@ -1674,7 +1674,7 @@ const gcseLangWriting: CourseData = {
   price: 0,
   duration: '7-9 hours',
   level: 'GCSE (Years 10-11)',
-  description: 'Master both AQA Paper 1 (creative writing) and Paper 2 (non-fiction writing). Learn how to plan, structure, and polish your writing to hit every mark scheme descriptor.',
+  description: 'Master both AQA Paper 1 (creative writing) and Paper 2 (non-fiction writing). Learn how to plan, structure, and polish your writing to hit every marking guide descriptor.',
   color: '#10b981',
   moduleList: [
     {
@@ -1687,7 +1687,7 @@ const gcseLangWriting: CourseData = {
 <h3>Why Plans Matter</h3>
 <p>Without a plan, most students write themselves into a corner by paragraph three. They repeat ideas, lose track of their argument, or run out of story. A plan gives you a roadmap: you always know what comes next, so you never waste time staring at the page.</p>
 
-<div class="key-term"><strong>Key Term: Conceptualised response</strong> — A piece of writing that is clearly shaped around a central idea or theme from start to finish. Examiners reward this highly because it shows deliberate craft, not just improvisation.</div>
+<div class="key-term"><strong>Key Term: Conceptualised response</strong> — A piece of writing that is clearly shaped around a central idea or theme from start to finish. Markers reward this highly because it shows deliberate craft, not just improvisation.</div>
 
 <h3>The 5-Minute Mind Map (Paper 1 — Creative Writing)</h3>
 <p>Put your central image, setting, or character in the middle. Branch out with:</p>
@@ -1708,17 +1708,17 @@ const gcseLangWriting: CourseData = {
 <li><strong>Powerful conclusion</strong> — Call to action, return to opening image, or memorable final line.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Jot down 4-5 ambitious vocabulary words during your planning time. Having them ready means you will actually use them instead of falling back on simple language under pressure.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Jot down 4-5 ambitious vocabulary words during your planning time. Having them ready means you will actually use them instead of falling back on simple language under pressure.</div>
 
 <h3>Timing Strategy</h3>
 <p>For a 45-minute writing task, aim for: <strong>5 mins planning → 35 mins writing → 5 mins proofreading</strong>. Protect your proofreading time fiercely — fixing SPaG errors in those final minutes can gain you 3-4 marks.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing a plan so detailed that it becomes a first draft. Your plan should be rough, fast, and private — bullet points and single words are fine. No examiner marks the plan, so do not waste time making it neat.</div>`,
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing a plan so detailed that it becomes a first draft. Your plan should be rough, fast, and private — bullet points and single words are fine. No marker marks the plan, so do not waste time making it neat.</div>`,
       quiz: [
         { id: 'gcse-lw-m1-q1', question: 'How long should you spend planning a 45-minute writing task?', options: ['1-2 minutes', 'About 5 minutes', '10-15 minutes', 'You should not plan at all'], correct: 1, explanation: 'Five minutes of planning is the recommended time. It is enough to create a clear structure without eating into your writing time. The ideal split is 5 mins plan, 35 mins write, 5 mins proofread.' },
-        { id: 'gcse-lw-m1-q2', question: 'What is a "conceptualised response"?', options: ['A response that uses long words', 'A response shaped around a central idea from start to finish', 'A response that includes a counter-argument', 'A response written entirely in paragraphs'], correct: 1, explanation: 'A conceptualised response is one where a deliberate central idea or theme runs through the whole piece. Examiners reward this because it shows the writer has crafted the work, not just improvised.' },
+        { id: 'gcse-lw-m1-q2', question: 'What is a "conceptualised response"?', options: ['A response that uses long words', 'A response shaped around a central idea from start to finish', 'A response that includes a counter-argument', 'A response written entirely in paragraphs'], correct: 1, explanation: 'A conceptualised response is one where a deliberate central idea or theme runs through the whole piece. Markers reward this because it shows the writer has crafted the work, not just improvised.' },
         { id: 'gcse-lw-m1-q3', question: 'What should you include in a mind map plan for creative writing?', options: ['Only the plot events in order', 'Senses, mood, techniques, and structure', 'A full first draft of your opening', 'A list of every character name'], correct: 1, explanation: 'A good creative writing mind map branches into sensory details, mood/atmosphere, specific techniques you will use, and your structural approach. These ensure your writing is rich and deliberate.' },
-        { id: 'gcse-lw-m1-q4', question: 'In a Paper 2 bullet outline, what goes in point 4?', options: ['Your weakest argument', 'A personal anecdote', 'A counter-argument followed by a rebuttal', 'A summary of points 1-3'], correct: 2, explanation: 'Point 4 is where you acknowledge the opposing view and then dismantle it. This shows the examiner you can consider different perspectives, which is a higher-level skill rewarded in the mark scheme.' },
+        { id: 'gcse-lw-m1-q4', question: 'In a Paper 2 bullet outline, what goes in point 4?', options: ['Your weakest argument', 'A personal anecdote', 'A counter-argument followed by a rebuttal', 'A summary of points 1-3'], correct: 2, explanation: 'Point 4 is where you acknowledge the opposing view and then dismantle it. This shows markers you can consider different perspectives, which is a higher-level skill rewarded in the marking guide.' },
       ],
     },
     {
@@ -1756,7 +1756,7 @@ const gcseLangWriting: CourseData = {
 <li><strong>Pathetic fallacy</strong> — Using weather or nature to mirror mood.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Quality over quantity. Three well-crafted figurative images across your whole piece are far more effective than cramming one into every sentence. Overloading imagery makes writing feel forced and cluttered.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Quality over quantity. Three well-crafted figurative images across your whole piece are far more effective than cramming one into every sentence. Overloading imagery makes writing feel forced and cluttered.</div>
 
 <h3>Structural Techniques for Description</h3>
 <p>Even though you are not writing a plot, your description still needs shape:</p>
@@ -1836,9 +1836,9 @@ const gcseLangWriting: CourseData = {
 
 <p><strong>Annotation:</strong> This response uses all five senses (smell, sight, touch, sound, and even taste in the metaphor of "acceptance"). The structural technique is a movement inward from external detail (the rain, the light) to internal peace (breathing, consciousness). Figurative language is restrained but effective ("waiting," "studying the temperature," "light like beads"). The vocabulary is precise ("gilding," "studded," "sustaining"). The writing demonstrates control of rhythm — longer sentences slow the pace and induce a contemplative mood. The final sentence is powerful because it is abstract but grounded in the sensory experience that precedes it.</p>
 
-<h3>Examiner Guidance: What Top Markers Look For in Descriptive Writing</h3>
+<h3>Marker Guidance: What Top Markers Look For in Descriptive Writing</h3>
 
-<p>When examiners mark descriptive writing, they look for:</p>
+<p>When markers mark descriptive writing, they look for:</p>
 
 <ol>
 <li><strong>Immersion:</strong> Can the reader see, hear, smell, taste, and feel what you are describing? A Grade 9 response makes the reader genuinely present in the scene.</li>
@@ -1847,7 +1847,7 @@ const gcseLangWriting: CourseData = {
 
 <li><strong>Atmosphere Without Exposition:</strong> Do you tell the reader the mood ("it was scary"), or do you create it through detail? Grade 9 writers show the mood, never tell it.</li>
 
-<li><strong>Originality:</strong> Clichés — "the storm raged," "time stood still," "the sun set peacefully" — actively harm your mark. Examiners see these hundreds of times per year. Original comparisons and observations earn rewards.</li>
+<li><strong>Originality:</strong> Clichés — "the storm raged," "time stood still," "the sun set peacefully" — actively harm your mark. markers see these hundreds of times per year. Original comparisons and observations earn rewards.</li>
 
 <li><strong>Control:</strong> Are your sentences varied? Do shorter sentences create emphasis? Do longer sentences create immersion? Grade 9 writers use syntax deliberately, not accidentally.</li>
 
@@ -1856,7 +1856,7 @@ const gcseLangWriting: CourseData = {
 
 `,
       quiz: [
-        { id: 'gcse-lw-m2-q1', question: 'What does "show, don\'t tell" mean in descriptive writing?', options: ['Use illustrations alongside your writing', 'Reveal emotions through physical details rather than stating them directly', 'Show your plan to the examiner', 'Write in the present tense'], correct: 1, explanation: '"Show, don\'t tell" means conveying emotions, atmosphere, or character through concrete physical details and actions rather than simply labelling them. "Her hands trembled" is more powerful than "She was nervous."' },
+        { id: 'gcse-lw-m2-q1', question: 'What does "show, don\'t tell" mean in descriptive writing?', options: ['Use illustrations alongside your writing', 'Reveal emotions through physical details rather than stating them directly', 'Show your plan to markers', 'Write in the present tense'], correct: 1, explanation: '"Show, don\'t tell" means conveying emotions, atmosphere, or character through concrete physical details and actions rather than simply labelling them. "Her hands trembled" is more powerful than "She was nervous."' },
         { id: 'gcse-lw-m2-q2', question: 'How many senses should a top-band descriptive piece engage?', options: ['Only sight', 'Sight and sound', 'At least three to five senses', 'Exactly two'], correct: 2, explanation: 'Top-band responses aim to engage multiple senses — ideally all five. This creates an immersive, textured experience for the reader and demonstrates sophisticated descriptive skill.' },
         { id: 'gcse-lw-m2-q3', question: 'What is pathetic fallacy?', options: ['A mistake in your writing', 'Using weather or nature to mirror mood or emotion', 'A type of unreliable narrator', 'A paragraph that is too short'], correct: 1, explanation: 'Pathetic fallacy is when a writer uses elements of the natural world — weather, landscape, seasons — to reflect the mood of the scene or the emotions of a character. For example, a storm during an argument.' },
         { id: 'gcse-lw-m2-q4', question: 'What is a "zoom in/out" structural technique?', options: ['Using a magnifying glass image', 'Shifting focus from a wide landscape to a tiny detail, or the reverse', 'Writing in very large and very small handwriting', 'Repeating the same sentence at different points'], correct: 1, explanation: 'Zoom in/out means moving your descriptive focus from a broad panorama to a precise detail (or the other way around). This gives your writing a cinematic quality and a clear sense of structure.' },
@@ -1881,7 +1881,7 @@ const gcseLangWriting: CourseData = {
 <div class="key-term"><strong>Key Term: In medias res</strong> — Latin for "in the middle of things." Starting your story mid-action hooks the reader immediately and avoids slow, boring openings. You can fill in backstory later through hints and details.</div>
 
 <h3>Crafting Your Opening</h3>
-<p>Your first two sentences determine whether the examiner leans in or switches off. Avoid starting with an alarm clock going off or a character waking up. Instead, try:</p>
+<p>Your first two sentences determine whether markers lean in or switches off. Avoid starting with an alarm clock going off or a character waking up. Instead, try:</p>
 <ul>
 <li>A line of dialogue: <em>"Don't open that door."</em></li>
 <li>A striking image: <em>"The letter had been sitting on the mat for three days, and nobody wanted to touch it."</em></li>
@@ -1908,7 +1908,7 @@ const gcseLangWriting: CourseData = {
 <li>Show emotion through action around the dialogue, not through adverbs: <em>"I'm fine," she said, folding the letter into smaller and smaller squares.</em></li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Keep your story focused on ONE event, ONE character, and ONE setting. A 45-minute story that tries to cover a whole day with five characters in three locations will feel rushed and shallow. Depth beats breadth every time.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Keep your story focused on ONE event, ONE character, and ONE setting. A 45-minute story that tries to cover a whole day with five characters in three locations will feel rushed and shallow. Depth beats breadth every time.</div>
 
 <h3>Endings That Satisfy</h3>
 <p>Your ending does not need to wrap everything up neatly. In fact, subtle, ambiguous endings often score higher because they show sophistication:</p>
@@ -1934,7 +1934,7 @@ const gcseLangWriting: CourseData = {
 <p>Paper 2 Question 5 asks you to write non-fiction — typically an article, a speech, a letter, or a leaflet. The task will test your ability to present a clear viewpoint and influence the reader. You need to be organised, persuasive, and engaging.</p>
 
 <h3>Know Your Forms</h3>
-<p>Each form has conventions you must follow to show the examiner you understand the task:</p>
+<p>Each form has conventions you must follow to show markers you understand the task:</p>
 <ul>
 <li><strong>Article</strong> — Headline, optional subheading, opening hook, paragraphed body, strong conclusion. Written for a specific publication (newspaper, magazine, website).</li>
 <li><strong>Speech</strong> — Direct address to the audience ("Ladies and gentlemen…"), rhetorical questions, groups of three, a rousing call to action at the end.</li>
@@ -1967,7 +1967,7 @@ const gcseLangWriting: CourseData = {
 <li><strong>Direct address</strong> — "You might think this does not affect you. You would be wrong." Involves the reader personally.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always include a counter-argument. Examiners specifically look for this because it demonstrates mature, balanced thinking. You do not have to agree with the opposing view — just acknowledge it and explain why your position is stronger.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Always include a counter-argument. Markers specifically look for this because it demonstrates mature, balanced thinking. You do not have to agree with the opposing view — just acknowledge it and explain why your position is stronger.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Forgetting the form. If the question asks for a letter, you must include addresses and a sign-off. If it asks for a speech, you must address the audience directly. Ignoring the form costs marks even if the writing itself is strong.</div>
 
@@ -2071,7 +2071,7 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
 `,
       quiz: [
         { id: 'gcse-lw-m4-q1', question: 'What does the acronym AFOREST stand for?', options: ['Adjectives, Facts, Onomatopoeia, Repetition, Endings, Similes, Tension', 'Alliteration, Facts, Opinions, Rhetorical questions, Emotive language, Statistics, Three (rule of three)', 'Audience, Form, Organisation, Register, Evidence, Structure, Tone', 'Argument, Formal language, Opening, Rebuttal, Example, Summary, Theme'], correct: 1, explanation: 'AFOREST stands for Alliteration, Facts, Opinions, Rhetorical questions, Emotive language, Statistics, and Three (rule of three). These are the core persuasive techniques you should use in viewpoint writing.' },
-        { id: 'gcse-lw-m4-q2', question: 'Why should you include a counter-argument in viewpoint writing?', options: ['To show you cannot make up your mind', 'To fill up space', 'To demonstrate mature, balanced thinking and then strengthen your own position', 'Because the mark scheme requires exactly four paragraphs'], correct: 2, explanation: 'Including a counter-argument shows the examiner that you can consider multiple perspectives — a higher-level skill. The key is to acknowledge the opposing view and then rebut it, which actually strengthens your argument.' },
+        { id: 'gcse-lw-m4-q2', question: 'Why should you include a counter-argument in viewpoint writing?', options: ['To show you cannot make up your mind', 'To fill up space', 'To demonstrate mature, balanced thinking and then strengthen your own position', 'Because the marking guide requires exactly four paragraphs'], correct: 2, explanation: 'Including a counter-argument shows markers that you can consider multiple perspectives — a higher-level skill. The key is to acknowledge the opposing view and then rebut it, which actually strengthens your argument.' },
         { id: 'gcse-lw-m4-q3', question: 'If the question asks you to write a speech, what must you include?', options: ['Addresses and a date', 'Bullet points and subheadings', 'Direct address to the audience and rhetorical techniques', 'A bibliography'], correct: 2, explanation: 'A speech must directly address the audience ("Ladies and gentlemen," "you," "we") and use spoken-word techniques like rhetorical questions, repetition, and the rule of three. Ignoring the form conventions loses marks.' },
         { id: 'gcse-lw-m4-q4', question: 'What is the purpose of an anecdote in persuasive writing?', options: ['To show off your vocabulary', 'To make an abstract argument feel personal and real', 'To meet the word count', 'To prove you have done research'], correct: 1, explanation: 'Anecdotes — short personal stories — make arguments concrete and relatable. They help the reader connect emotionally to your point, which is far more persuasive than abstract reasoning alone.' },
       ],
@@ -2081,7 +2081,7 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
       title: 'Sentences & Paragraphs for Effect',
       duration: '35 mins',
       content: `<h2>Controlling Pace, Rhythm, and Flow</h2>
-<p>The mark scheme for both Paper 1 and Paper 2 rewards "a range of sentence forms for effect." This means you need to vary your sentence lengths and types deliberately — not randomly. Every sentence choice should serve your meaning.</p>
+<p>The marking guide for both Paper 1 and Paper 2 rewards "a range of sentence forms for effect." This means you need to vary your sentence lengths and types deliberately — not randomly. Every sentence choice should serve your meaning.</p>
 
 <h3>Sentence Types and Their Effects</h3>
 <ul>
@@ -2116,14 +2116,14 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
 <li><strong>Sequence</strong> — Initially, subsequently, finally, meanwhile.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do not start every paragraph with a discourse marker. Mix them up — sometimes start with a short statement, a question, or an image. Over-reliance on "Furthermore… However… In conclusion…" sounds formulaic and limits your mark.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Do not start every paragraph with a discourse marker. Mix them up — sometimes start with a short statement, a question, or an image. Over-reliance on "Furthermore… However… In conclusion…" sounds formulaic and limits your mark.</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Using minor sentences (fragments) in every paragraph. One or two across the whole piece create impact. Five or six suggest you do not know how to write a complete sentence. The examiner needs to see range, not repetition of one trick.</div>`,
+<div class="common-mistake"><strong>Common Mistake:</strong> Using minor sentences (fragments) in every paragraph. One or two across the whole piece create impact. Five or six suggest you do not know how to write a complete sentence. Markers needs to see range, not repetition of one trick.</div>`,
       quiz: [
-        { id: 'gcse-lw-m5-q1', question: 'Why are short sentences most effective after longer ones?', options: ['Because the examiner prefers short sentences', 'Because the contrast creates sudden impact, like a punch', 'Because they save time', 'Because they are grammatically simpler'], correct: 1, explanation: 'Short sentences create impact through contrast. After long, flowing sentences, a short one creates a sudden shift in pace that catches the reader off guard. Without the contrast, the effect is lost.' },
+        { id: 'gcse-lw-m5-q1', question: 'Why are short sentences most effective after longer ones?', options: ['Because markers prefer short sentences', 'Because the contrast creates sudden impact, like a punch', 'Because they save time', 'Because they are grammatically simpler'], correct: 1, explanation: 'Short sentences create impact through contrast. After long, flowing sentences, a short one creates a sudden shift in pace that catches the reader off guard. Without the contrast, the effect is lost.' },
         { id: 'gcse-lw-m5-q2', question: 'What is a discourse marker?', options: ['A type of punctuation mark', 'A word or phrase that signals the direction of your argument (e.g., "however," "furthermore")', 'A pen used for marking exams', 'A paragraph that contains only dialogue'], correct: 1, explanation: 'Discourse markers are connective words and phrases like "however," "furthermore," "consequently," and "on the other hand" that guide the reader through your argument by showing the relationship between ideas.' },
         { id: 'gcse-lw-m5-q3', question: 'How often should you use a one-line paragraph?', options: ['Every other paragraph', 'Once or twice per piece for maximum impact', 'Never — paragraphs must always be at least three sentences', 'In every paragraph to keep things concise'], correct: 1, explanation: 'A one-line paragraph isolates a moment or idea, giving it enormous weight. Using it once or twice per piece creates genuine impact. Using it constantly dilutes the effect and looks like you cannot develop ideas.' },
-        { id: 'gcse-lw-m5-q4', question: 'What does the mark scheme mean by "a range of sentence forms"?', options: ['Using only complex sentences', 'Varying sentence lengths and types deliberately for effect', 'Writing at least 30 sentences', 'Starting every sentence with a different word'], correct: 1, explanation: 'The mark scheme rewards deliberate variety — using simple, compound, complex, and minor sentences where each choice serves the meaning. It is about conscious control, not random variation.' },
+        { id: 'gcse-lw-m5-q4', question: 'What does the marking guide mean by "a range of sentence forms"?', options: ['Using only complex sentences', 'Varying sentence lengths and types deliberately for effect', 'Writing at least 30 sentences', 'Starting every sentence with a different word'], correct: 1, explanation: 'The marking guide rewards deliberate variety — using simple, compound, complex, and minor sentences where each choice serves the meaning. It is about conscious control, not random variation.' },
       ],
     },
     {
@@ -2131,7 +2131,7 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
       title: 'Vocabulary & Ambitious Language',
       duration: '30 mins',
       content: `<h2>Choosing the Right Word, Not the Biggest Word</h2>
-<p>The mark scheme rewards "extensive and ambitious vocabulary" — but ambitious does not mean obscure. It means choosing the most precise, evocative word for the moment. A well-placed "fractured" is worth more than ten misused long words.</p>
+<p>The marking guide rewards "extensive and ambitious vocabulary" — but ambitious does not mean obscure. It means choosing the most precise, evocative word for the moment. A well-placed "fractured" is worth more than ten misused long words.</p>
 
 <h3>Connotation vs Denotation</h3>
 <p>Every word has a <strong>denotation</strong> (its dictionary meaning) and <strong>connotation</strong> (the feelings and associations it carries). Top-band writers exploit connotation constantly:</p>
@@ -2158,7 +2158,7 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
 <p>The "after" version uses specific nouns ("factory" not "building"), powerful verbs ("loomed," "swallowing," "gaped"), and figurative language that grows from the vocabulary rather than being bolted on.</p>
 
 <h3>Avoiding Cliches</h3>
-<p>Cliches are phrases so overused they have lost all impact. Examiners notice them immediately:</p>
+<p>Cliches are phrases so overused they have lost all impact. markers notice them immediately:</p>
 <ul>
 <li>"It was a dark and stormy night" — describe the storm specifically instead.</li>
 <li>"Her heart pounded like a drum" — find a fresher comparison.</li>
@@ -2166,13 +2166,13 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
 <li>"Crystal clear" — clear in what way? Be precise.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If a phrase feels familiar — if you have read it a hundred times — it is probably a cliche. Push past your first instinct and reach for something more original. Even a slight twist makes a difference: "her heart hammered against her ribs like a fist on a locked door" is far more vivid than "her heart pounded."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If a phrase feels familiar — if you have read it a hundred times — it is probably a cliche. Push past your first instinct and reach for something more original. Even a slight twist makes a difference: "her heart hammered against her ribs like a fist on a locked door" is far more vivid than "her heart pounded."</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Using a thesaurus to find obscure words you do not fully understand. If you use a word incorrectly, the examiner will notice, and it damages your mark more than using a simpler word correctly. Only use words you genuinely know.</div>`,
+<div class="common-mistake"><strong>Common Mistake:</strong> Using a thesaurus to find obscure words you do not fully understand. If you use a word incorrectly, markers will notice, and it damages your mark more than using a simpler word correctly. Only use words you genuinely know.</div>`,
       quiz: [
         { id: 'gcse-lw-m6-q1', question: 'What is the difference between connotation and denotation?', options: ['Connotation is the spelling; denotation is the pronunciation', 'Denotation is the dictionary meaning; connotation is the emotional or cultural associations', 'They are the same thing', 'Connotation only applies to nouns'], correct: 1, explanation: 'Denotation is a word\'s literal, dictionary meaning. Connotation is the feelings, associations, and implied meanings a word carries. "Home" and "house" denote the same thing, but "home" connotes warmth and belonging.' },
-        { id: 'gcse-lw-m6-q2', question: 'What does the mark scheme mean by "ambitious vocabulary"?', options: ['Using the longest words you can find', 'Choosing the most precise, evocative word for each moment', 'Using at least 50 different adjectives', 'Only using words with four or more syllables'], correct: 1, explanation: 'Ambitious vocabulary means selecting words with precision and purpose — choosing the word that captures exactly the right shade of meaning. A well-chosen short word can be more ambitious than a misused long one.' },
-        { id: 'gcse-lw-m6-q3', question: 'Why should you avoid cliches in your writing?', options: ['They are too short', 'They are grammatically incorrect', 'They are overused and have lost their impact', 'They are too difficult for the examiner to understand'], correct: 2, explanation: 'Cliches are phrases so familiar they no longer create any vivid picture in the reader\'s mind. They signal lazy writing. Examiners reward originality, so push past your first instinct and find a fresher way to express the idea.' },
+        { id: 'gcse-lw-m6-q2', question: 'What does the marking guide mean by "ambitious vocabulary"?', options: ['Using the longest words you can find', 'Choosing the most precise, evocative word for each moment', 'Using at least 50 different adjectives', 'Only using words with four or more syllables'], correct: 1, explanation: 'Ambitious vocabulary means selecting words with precision and purpose — choosing the word that captures exactly the right shade of meaning. A well-chosen short word can be more ambitious than a misused long one.' },
+        { id: 'gcse-lw-m6-q3', question: 'Why should you avoid cliches in your writing?', options: ['They are too short', 'They are grammatically incorrect', 'They are overused and have lost their impact', 'They are too difficult for markers to understand'], correct: 2, explanation: 'Cliches are phrases so familiar they no longer create any vivid picture in the reader\'s mind. They signal lazy writing. Markers reward originality, so push past your first instinct and find a fresher way to express the idea.' },
         { id: 'gcse-lw-m6-q4', question: 'Which is the best replacement for "walked slowly"?', options: ['Perambulated leisurely', 'Trudged', 'Moved in a slow walking manner', 'Went'], correct: 1, explanation: '"Trudged" is a single, precise verb that conveys slow, heavy, reluctant movement. It is ambitious but natural. "Perambulated leisurely" is over-the-top and sounds unnatural. "Went" is too vague. A strong verb does the work of a verb and an adverb combined.' },
       ],
     },
@@ -2189,14 +2189,14 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
 <li><strong>Full stops</strong> — Every sentence must end with one. It sounds obvious, but comma splicing (joining sentences with a comma instead of a full stop) is the most common punctuation error at GCSE.</li>
 <li><strong>Commas</strong> — After subordinate clauses ("Although it was raining, we continued"), in lists, and around embedded clauses ("The house, which had been empty for years, stood at the end of the lane").</li>
 <li><strong>Apostrophes</strong> — For contraction (don't, it's) and possession (the dog's bowl, the students' work). Never use an apostrophe for plurals.</li>
-<li><strong>Semi-colons</strong> — Join two closely related independent clauses: "The rain hammered the roof; inside, nobody spoke." Using even one correctly signals confidence to the examiner.</li>
+<li><strong>Semi-colons</strong> — Join two closely related independent clauses: "The rain hammered the roof; inside, nobody spoke." Using even one correctly signals confidence to markers.</li>
 <li><strong>Colons</strong> — Introduce a list, an explanation, or an elaboration: "There was only one option: run."</li>
 </ul>
 
 <div class="key-term"><strong>Key Term: Comma splice</strong> — The error of joining two complete sentences with only a comma. "It was dark, we couldn't see anything" is a comma splice. Fix it with a full stop, a semi-colon, or a conjunction: "It was dark, and we couldn't see anything."</div>
 
 <h3>The Top 10 Spelling Mistakes at GCSE</h3>
-<p>Learn these and you remove the most common spelling errors examiners see:</p>
+<p>Learn these and you remove the most common spelling errors markers see:</p>
 <ol>
 <li><strong>their / there / they're</strong> — possession / place / "they are"</li>
 <li><strong>your / you're</strong> — possession / "you are"</li>
@@ -2210,7 +2210,7 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
 <li><strong>necessary</strong> — one collar, two socks (one c, two s's)</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If you are unsure how to spell a word, use a synonym you can spell instead. It is better to write "essential" than to misspell "necessary." The examiner cannot penalise a word you never wrote.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If you are unsure how to spell a word, use a synonym you can spell instead. It is better to write "essential" than to misspell "necessary." Markers cannot penalise a word you never wrote.</div>
 
 <h3>Grammar Essentials</h3>
 <ul>
@@ -2229,12 +2229,12 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
 <li>Any sentence that sounds awkward when read in your head — rewrite it in the margin.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Thinking that neat crossing-out looks bad. Examiners do not penalise corrections — they reward them. A single line through a mistake with a neat correction above it shows self-editing skill, not carelessness. It is far better to correct an error than to leave it.</div>`,
+<div class="common-mistake"><strong>Common Mistake:</strong> Thinking that neat crossing-out looks bad. Markers do not penalise corrections — they reward them. A single line through a mistake with a neat correction above it shows self-editing skill, not carelessness. It is far better to correct an error than to leave it.</div>`,
       quiz: [
         { id: 'gcse-lw-m7-q1', question: 'What is a comma splice?', options: ['Using too many commas in a list', 'Joining two complete sentences with only a comma', 'Forgetting to use a comma after a name', 'Using a comma instead of an apostrophe'], correct: 1, explanation: 'A comma splice occurs when two independent clauses (complete sentences) are joined with just a comma. For example: "It was raining, we stayed inside." Fix it with a full stop, semi-colon, or conjunction.' },
         { id: 'gcse-lw-m7-q2', question: 'How many marks is technical accuracy worth on each writing paper?', options: ['8 marks', '12 marks', '16 marks', '24 marks'], correct: 2, explanation: 'Technical accuracy (spelling, punctuation, and grammar) is worth 16 out of 40 marks on the writing section — that is 40% of your mark. It is one of the easiest areas to improve with practice and careful proofreading.' },
         { id: 'gcse-lw-m7-q3', question: 'Which sentence uses a semi-colon correctly?', options: ['The dog was tired; and it slept.', 'The rain hammered the roof; inside, nobody spoke.', 'She went to the shop; milk, bread, eggs.', 'He ran fast; because he was late.'], correct: 1, explanation: 'A semi-colon correctly joins two closely related independent clauses that could each stand alone as sentences. "The rain hammered the roof" and "inside, nobody spoke" are both complete ideas linked by theme.' },
-        { id: 'gcse-lw-m7-q4', question: 'What should you do if you are unsure how to spell a word in the exam?', options: ['Leave a blank space', 'Guess and hope for the best', 'Use a synonym you can spell correctly', 'Write it phonetically'], correct: 2, explanation: 'If you cannot spell a word, replace it with a synonym you are confident about. The examiner cannot penalise a word you did not write, and using a well-spelled alternative keeps your technical accuracy marks safe.' },
+        { id: 'gcse-lw-m7-q4', question: 'What should you do if you are unsure how to spell a word in the exam?', options: ['Leave a blank space', 'Guess and hope for the best', 'Use a synonym you can spell correctly', 'Write it phonetically'], correct: 2, explanation: 'If you cannot spell a word, replace it with a synonym you are confident about. Markers cannot penalise a word you did not write, and using a well-spelled alternative keeps your technical accuracy marks safe.' },
       ],
     },
   ],
@@ -2305,9 +2305,9 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
     {
       id: 'gcse-lw-a10',
       question: 'What is the main problem with using too many minor sentences (fragments)?',
-      options: ['They are always grammatically incorrect', 'Overuse suggests you cannot write complete sentences and reduces your demonstrated range', 'The examiner will stop reading', 'They make your writing too long'],
+      options: ['They are always grammatically incorrect', 'Overuse suggests you cannot write complete sentences and reduces your demonstrated range', 'Markers will stop reading', 'They make your writing too long'],
       correct: 1,
-      explanation: 'One or two fragments create deliberate impact, but overusing them suggests a limited range of sentence forms. The mark scheme rewards variety — the examiner needs to see you can control simple, compound, and complex sentences too.',
+      explanation: 'One or two fragments create deliberate impact, but overusing them suggests a limited range of sentence forms. The marking guide rewards variety — markers need to see you can control simple, compound, and complex sentences too.',
     },
     {
       id: 'gcse-lw-a11',
@@ -2326,7 +2326,7 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
     {
       id: 'gcse-lw-a13',
       question: 'Why should you include a counter-argument in Paper 2 viewpoint writing?',
-      options: ['To weaken your own argument', 'To fill space and reach the word count', 'To show balanced, mature thinking and then strengthen your own position', 'Because the mark scheme says you must write exactly five paragraphs'],
+      options: ['To weaken your own argument', 'To fill space and reach the word count', 'To show balanced, mature thinking and then strengthen your own position', 'Because the marking guide says you must write exactly five paragraphs'],
       correct: 2,
       explanation: 'A counter-argument demonstrates that you can engage with different perspectives — a higher-order skill. Acknowledging the opposition and then rebutting it actually makes your own argument more convincing.',
     },
@@ -2356,7 +2356,7 @@ One rule of three per argument is powerful. Three rules of three in one paragrap
       question: 'What is the most common punctuation error at GCSE?',
       options: ['Missing exclamation marks', 'Comma splicing (joining sentences with commas)', 'Overusing semi-colons', 'Forgetting question marks'],
       correct: 1,
-      explanation: 'Comma splicing — joining two independent clauses with just a comma — is the most common punctuation error examiners see at GCSE. It can be fixed with a full stop, a semi-colon, or by adding a conjunction.',
+      explanation: 'Comma splicing — joining two independent clauses with just a comma — is the most common punctuation error markers see at GCSE. It can be fixed with a full stop, a semi-colon, or by adding a conjunction.',
     },
     {
       id: 'gcse-lw-a18',
@@ -2394,7 +2394,7 @@ const gcseLitPoetry: CourseData = {
   duration: '5-7 hours',
   level: 'GCSE (Years 10-11)',
   description:
-    'Build your confidence with unseen poetry analysis. Learn to identify techniques, explore meanings, compare poems, and write essays that examiners love. Covers both unseen poetry questions on AQA Paper 2.',
+    'Build your confidence with unseen poetry analysis. Learn to identify techniques, explore meanings, compare poems, and write essays that markers love. Covers both unseen poetry questions on AQA Paper 2.',
   color: '#10b981',
 
   moduleList: [
@@ -2411,7 +2411,7 @@ const gcseLitPoetry: CourseData = {
 <h3>Step 1 — Read the Poem Three Times</h3>
 <p>Your first read-through should be relaxed: simply absorb the poem without writing anything. On the second reading, underline any striking words or images. On the third reading, start making marginal notes about what you think the poem is about and how the poet achieves their effects.</p>
 
-<div class="examiner-tip">Examiners can tell when students have only read a poem once. Multiple readings show in the depth of analysis you produce.</div>
+<div class="examiner-tip">Markers can tell when students have only read a poem once. Multiple readings show in the depth of analysis you produce.</div>
 
 <h3>Step 2 — Annotate with SMILE</h3>
 <p>Use the <span class="key-term">SMILE</span> framework to organise your annotations:</p>
@@ -2591,7 +2591,7 @@ const gcseLitPoetry: CourseData = {
       title: 'Analysing Meaning & Themes',
       duration: '35 mins',
       content: `
-<p>Identifying techniques is only half the task. Examiners want to see that you can move beyond the surface to explore <span class="key-term">deeper meanings</span> and connect the poem to broader themes. This module will show you how to think like a literary analyst.</p>
+<p>Identifying techniques is only half the task. Markers are looking for to see that you can move beyond the surface to explore <span class="key-term">deeper meanings</span> and connect the poem to broader themes. This module will show you how to think like a literary analyst.</p>
 
 <h3>Surface vs. Deeper Meaning</h3>
 <p>The <span class="key-term">surface meaning</span> (or literal meaning) is what the poem describes on a basic level: a storm, a walk through a city, a memory of childhood. The <span class="key-term">deeper meaning</span> is what the poem is really about — its ideas, emotions, and arguments. A poem describing a storm might really be exploring anger; a poem about a locked door might address emotional isolation.</p>
@@ -2642,12 +2642,12 @@ const gcseLitPoetry: CourseData = {
           options: [
             'Because your answer is probably wrong',
             'Because poems can have multiple valid interpretations',
-            'Because examiners prefer uncertain students',
+            'Because markers prefer uncertain students',
             'Because you are not allowed to give a definite opinion',
           ],
           correct: 1,
           explanation:
-            'Tentative language shows the examiner that you understand poetry is open to interpretation and that you are exploring possibilities rather than making unsupported assertions.',
+            'Tentative language shows markers that you understand poetry is open to interpretation and that you are exploring possibilities rather than making unsupported assertions.',
         },
         {
           id: 'gcse-lp-m3-q3',
@@ -2809,10 +2809,10 @@ The poet conveys an oppressive sense of time passing slowly. <strong>[P]</strong
   <li>A short conclusion that draws your analysis together and offers a final insight.</li>
 </ol>
 
-<div class="examiner-tip">You do not need a long introduction. Examiners would rather see you spend time on detailed analysis. One or two sentences that show you have understood the poem's main idea are sufficient.</div>
+<div class="examiner-tip">You do not need a long introduction. Markers would rather see you spend time on detailed analysis. One or two sentences that show you have understood the poem's main idea are sufficient.</div>
 
 <h3>Comparing Poems</h3>
-<p>When comparing, use an <span class="key-term">integrated approach</span>: discuss both poems within each paragraph rather than writing about one poem in the first half and the other in the second. Use comparative connectives: "Similarly…", "In contrast…", "While Poem A uses… Poem B instead…". This shows the examiner you are genuinely comparing, not just writing two separate analyses.</p>
+<p>When comparing, use an <span class="key-term">integrated approach</span>: discuss both poems within each paragraph rather than writing about one poem in the first half and the other in the second. Use comparative connectives: "Similarly…", "In contrast…", "While Poem A uses… Poem B instead…". This shows markers you are genuinely comparing, not just writing two separate analyses.</p>
 
 <div class="common-mistake">Avoid spending so long on your first paragraph that you run out of time. Practise writing to a timer: roughly 8–10 minutes per PETAL paragraph for a 45-minute question.</div>
 
@@ -2852,7 +2852,7 @@ The poet conveys an oppressive sense of time passing slowly. <strong>[P]</strong
           ],
           correct: 1,
           explanation:
-            'A brief introduction of two to three sentences is sufficient. Examiners prefer you to spend your time on detailed analysis rather than a lengthy opening.',
+            'A brief introduction of two to three sentences is sufficient. markers prefer you to spend your time on detailed analysis rather than a lengthy opening.',
         },
         {
           id: 'gcse-lp-m5-q4',
@@ -2914,7 +2914,7 @@ The poet conveys an oppressive sense of time passing slowly. <strong>[P]</strong
   <li>Offer a concluding comment on what the difference or similarity reveals.</li>
 </ol>
 
-<div class="common-mistake">Do not simply list features of each poem side by side. The examiner wants to see you making <em>connections</em>. Every paragraph must contain a direct comparison, not just separate descriptions.</div>
+<div class="common-mistake">Do not simply list features of each poem side by side. markers are looking for you making <em>connections</em>. Every paragraph must contain a direct comparison, not just separate descriptions.</div>
 
 <div class="model-answer">
 <strong>Example comparison opening:</strong><br><br>
@@ -3081,11 +3081,11 @@ Both poets explore the theme of resilience through images of trees, yet they pre
         'Because your interpretation is probably incorrect',
         'Because poems have only one correct meaning',
         'Because it shows awareness that poems can support multiple valid interpretations',
-        'Because the examiner prefers students who seem uncertain',
+        'Because markers prefer students who seem uncertain',
       ],
       correct: 2,
       explanation:
-        'Tentative language ("perhaps," "could suggest") shows the examiner you understand that poetry is open to multiple valid readings, a sign of mature analysis.',
+        'Tentative language ("perhaps," "could suggest") shows markers you understand that poetry is open to multiple valid readings, a sign of mature analysis.',
     },
     {
       id: 'gcse-lp-a9',
@@ -3177,7 +3177,7 @@ Both poets explore the theme of resilience through images of trees, yet they pre
         'Because free verse is easier to write',
         'Because free verse allows the shape of the poem to mirror its content without formal constraints',
         'Because strict forms are old-fashioned',
-        'Because examiners prefer free verse poems',
+        'Because markers prefer free verse poems',
       ],
       correct: 1,
       explanation:
@@ -3297,7 +3297,7 @@ const gcseLitProse: CourseData = {
 <h3>Theme: The Supernatural</h3>
 <p>The witches, the floating dagger, Banquo's ghost — the supernatural is woven throughout the play. For a Jacobean audience who believed in witchcraft, these elements were genuinely terrifying. Shakespeare uses the supernatural to externalise Macbeth's inner turmoil and to raise the question: is Macbeth a victim of fate, or does he choose his own path?</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always link the supernatural to Macbeth's own choices. The witches predict, but they never force Macbeth to act. Examiners reward answers that explore this ambiguity.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Always link the supernatural to Macbeth's own choices. The witches predict, but they never force Macbeth to act. Markers reward answers that explore this ambiguity.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Calling the witches "the three witches." Shakespeare calls them the "Weird Sisters" — from the Old English "wyrd," meaning fate. Using the correct term shows sophisticated knowledge.</div>`,
       quiz: [
@@ -3335,7 +3335,7 @@ const gcseLitProse: CourseData = {
 
 <p><strong>Equivocation and paradox:</strong> The witches speak in riddles — "Fair is foul, and foul is fair." This blurring of opposites reflects the play's moral confusion: nothing is what it seems. Macbeth unknowingly echoes this with "So foul and fair a day I have not seen," linking him to the witches from the outset.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing Shakespeare's language, always try to link form to meaning. For example, Macbeth often speaks in fragmented, interrupted verse after Duncan's murder — the breakdown in poetic rhythm mirrors his psychological breakdown.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When analysing Shakespeare's language, always try to link form to meaning. For example, Macbeth often speaks in fragmented, interrupted verse after Duncan's murder — the breakdown in poetic rhythm mirrors his psychological breakdown.</div>
 
 <h3>Jacobean Context</h3>
 <p>Macbeth was written in approximately 1606, shortly after the Gunpowder Plot (1605) — a failed attempt to assassinate King James I. Shakespeare's play about the murder of a king would have resonated powerfully with its original audience. Key contextual points:</p>
@@ -3394,7 +3394,7 @@ const gcseLitProse: CourseData = {
 <h3>Theme: Generational Divide</h3>
 <p>The older Birlings (Arthur and Sybil) refuse to change. The younger generation (Sheila and Eric) accept responsibility and are transformed. Priestley suggests that hope for a fairer society lies with the young.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always refer to Priestley's intentions. Say "Priestley presents Birling as..." or "Priestley uses Sheila to show..." This demonstrates you understand the play is a constructed text with a deliberate message, not just a story.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Always refer to Priestley's intentions. Say "Priestley presents Birling as..." or "Priestley uses Sheila to show..." This demonstrates you understand the play is a constructed text with a deliberate message, not just a story.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Describing the Inspector as a normal detective. He is a dramatic device — possibly supernatural — used by Priestley to expose the Birlings' guilt and deliver the play's socialist message. Treat him as a symbol, not a realistic character.</div>`,
       quiz: [
@@ -3442,7 +3442,7 @@ const gcseLitProse: CourseData = {
 <h3>1912 vs 1945: The Time Gap</h3>
 <p>The dual time frame is not just a clever trick — it is the engine of the play's message. In 1912, the Birlings feel invincible. By 1945, the audience knows that two world wars, the Depression, and the sinking of the Titanic have destroyed that complacency. Priestley is saying: <strong>we had the chance to learn, and we didn't. Will we learn now?</strong></p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing the play's ending — the phone rings with news of a real inspector on the way — link it to Priestley's message. The second chance mirrors the 1945 audience's second chance to build a fairer society after the war. If the Birlings (and the audience) ignore the lesson again, the consequences will repeat.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When discussing the play's ending — the phone rings with news of a real inspector on the way — link it to Priestley's message. The second chance mirrors the 1945 audience's second chance to build a fairer society after the war. If the Birlings (and the audience) ignore the lesson again, the consequences will repeat.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating the play as a murder mystery. It is not a whodunit — Priestley is not interested in whether the Inspector was "real." The play is a moral parable about social responsibility. Focus your essay on Priestley's message, not on solving the mystery.</div>
 
@@ -3501,14 +3501,14 @@ const gcseLitProse: CourseData = {
 <h3>Social Class in 19th-Century Prose</h3>
 <p>Class is everywhere in Victorian fiction. Look for how characters speak (dialect vs standard English), how they are described (clothing, homes, manners), and how the narrator treats them (with sympathy, mockery, or condemnation). Writers like Dickens use caricature and satire to attack the wealthy, while others like Hardy show the suffering of rural working people.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> You will not lose marks for not knowing the specific novel the extract comes from. The examiner wants to see close language analysis and awareness of 19th-century context. Treat the extract as a standalone piece and analyse it with confidence.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> You will not lose marks for not knowing the specific novel the extract comes from. markers are looking for close language analysis and awareness of 19th-century context. Treat the extract as a standalone piece and analyse it with confidence.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Ignoring the narrative voice. Always comment on WHO is telling the story and HOW their perspective shapes the reader's response. A first-person child narrator creates sympathy; an omniscient narrator can reveal hidden truths. This is an easy win for marks.</div>`,
       quiz: [
         { id: 'gcse-ld-m5-q1', question: 'What should you do FIRST when you encounter a 19th-century novel extract in the exam?', options: ['Start writing your essay immediately', 'Try to identify which novel it is from', 'Read the extract twice — once for meaning, once for detail', 'Count the number of paragraphs'], correct: 2, explanation: 'Always read the extract twice. The first reading gives you overall meaning and tone. The second allows you to notice specific language choices, techniques, and details that you can analyse in your essay.' },
         { id: 'gcse-ld-m5-q2', question: 'Which of the following is a gothic convention?', options: ['A realistic urban setting with factories', 'Humorous dialogue between characters', 'Dark, isolated settings with supernatural elements and extreme emotions', 'A happy ending with a wedding'], correct: 2, explanation: 'Gothic conventions include dark or isolated settings (castles, moors), the supernatural (ghosts, the uncanny), and extreme emotions (terror, madness, despair). These elements create an atmosphere of mystery, dread, and psychological intensity.' },
         { id: 'gcse-ld-m5-q3', question: 'What is pathetic fallacy?', options: ['When a character makes a foolish mistake', 'When weather or landscape reflects a character\'s emotions or the mood of a scene', 'When the narrator directly addresses the reader', 'When animals are given human characteristics'], correct: 1, explanation: 'Pathetic fallacy is the literary technique of using weather, landscape, or natural phenomena to reflect characters\' emotions or the mood. A storm during a moment of conflict, or fog during confusion, are classic examples found throughout 19th-century fiction.' },
-        { id: 'gcse-ld-m5-q4', question: 'Why is social class an important contextual lens for analysing 19th-century texts?', options: ['Because all Victorian novels are about wealthy people', 'Because Victorian society was rigidly divided by class, and many writers used fiction to expose inequality and injustice', 'Because examiners only give marks for discussing class', 'Because there were no other important themes in the 19th century'], correct: 1, explanation: 'Victorian Britain had extreme class divisions. Many 19th-century novelists — Dickens, Gaskell, Hardy, Brontë — used their fiction to expose the suffering of the poor and critique the selfishness of the wealthy. Recognising class dynamics in an extract and linking them to this context will strengthen your analysis.' },
+        { id: 'gcse-ld-m5-q4', question: 'Why is social class an important contextual lens for analysing 19th-century texts?', options: ['Because all Victorian novels are about wealthy people', 'Because Victorian society was rigidly divided by class, and many writers used fiction to expose inequality and injustice', 'Because markers only give marks for discussing class', 'Because there were no other important themes in the 19th century'], correct: 1, explanation: 'Victorian Britain had extreme class divisions. Many 19th-century novelists — Dickens, Gaskell, Hardy, Brontë — used their fiction to expose the suffering of the poor and critique the selfishness of the wealthy. Recognising class dynamics in an extract and linking them to this context will strengthen your analysis.' },
       ],
     },
     {
@@ -3529,7 +3529,7 @@ const gcseLitProse: CourseData = {
 <div class="key-term"><strong>Key Term: Thesis statement</strong> — A single sentence at the start of your essay that presents your overall argument. For example: "Shakespeare presents Macbeth as a character who is ultimately destroyed by his own ambition, but who retains enough self-awareness to make his downfall genuinely tragic."</div>
 
 <h3>Topic Sentences</h3>
-<p>Every paragraph should begin with a <strong>topic sentence</strong> — a clear statement that tells the examiner what the paragraph is about and how it relates to the question. Think of each topic sentence as a mini-thesis for that paragraph.</p>
+<p>Every paragraph should begin with a <strong>topic sentence</strong> — a clear statement that tells markers what the paragraph is about and how it relates to the question. Think of each topic sentence as a mini-thesis for that paragraph.</p>
 <p><strong>Weak topic sentence:</strong> "In Act 1, Macbeth meets the witches."</p>
 <p><strong>Strong topic sentence:</strong> "Shakespeare uses the witches' prophecy in Act 1 to ignite Macbeth's latent ambition, suggesting that his desire for power existed before their intervention."</p>
 <p>The strong version makes an argument, names a technique, and links to the theme of ambition — all in one sentence.</p>
@@ -3540,7 +3540,7 @@ const gcseLitProse: CourseData = {
 <p><strong>Bolt-on (weaker):</strong> Macbeth feels guilty. He says, "Will all great Neptune's ocean wash this blood clean from my hand?"</p>
 <p><strong>Embedded (stronger):</strong> Macbeth's guilt is so overwhelming that he believes not even "great Neptune's ocean" could "wash this blood clean" from his hands, suggesting his crime has permanently stained his soul.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> You do not need to memorise dozens of long quotations. Short, precise phrases — even single words — are more effective. "Vaulting ambition," "unsex me here," "full o'th' milk of human kindness" — these are enough to build a sophisticated analysis around.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> You do not need to memorise dozens of long quotations. Short, precise phrases — even single words — are more effective. "Vaulting ambition," "unsex me here," "full o'th' milk of human kindness" — these are enough to build a sophisticated analysis around.</div>
 
 <h3>Linking to Context</h3>
 <p>Context should not be a separate bolt-on paragraph. It should be woven into your analysis naturally. The best way to do this is to explain WHY the writer made a particular choice by connecting it to the world they lived in.</p>
@@ -3563,7 +3563,7 @@ const gcseLitProse: CourseData = {
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing a paragraph that only describes what happens ("Macbeth kills Duncan and then feels guilty"). Description earns very few marks. You must analyse HOW the writer creates meaning and WHY they make specific choices. Always ask yourself: "Am I describing or analysing?"</div>`,
       quiz: [
-        { id: 'gcse-ld-m6-q1', question: 'What is a thesis statement?', options: ['The last sentence of your essay', 'A quotation from the text that proves your point', 'A single sentence at the start of your essay that presents your overall argument', 'A list of the points you will make in your essay'], correct: 2, explanation: 'A thesis statement is one clear sentence at the beginning of your essay that states your overall argument in response to the question. It gives your essay a clear direction and shows the examiner you have a focused, considered response.' },
+        { id: 'gcse-ld-m6-q1', question: 'What is a thesis statement?', options: ['The last sentence of your essay', 'A quotation from the text that proves your point', 'A single sentence at the start of your essay that presents your overall argument', 'A list of the points you will make in your essay'], correct: 2, explanation: 'A thesis statement is one clear sentence at the beginning of your essay that states your overall argument in response to the question. It gives your essay a clear direction and shows markers you have a focused, considered response.' },
         { id: 'gcse-ld-m6-q2', question: 'Which of the following is a strong topic sentence?', options: ['In the play, Macbeth kills Duncan.', 'Shakespeare uses the witches\' prophecy to ignite Macbeth\'s latent ambition, suggesting his desire for power existed before their intervention.', 'This paragraph is about ambition.', 'There are many themes in Macbeth such as guilt and ambition.'], correct: 1, explanation: 'A strong topic sentence makes an argument, names the writer and their technique, and links directly to the theme in the question. Option B does all three in one sentence, immediately signalling a high-quality analytical paragraph.' },
         { id: 'gcse-ld-m6-q3', question: 'In the WHAT-HOW-WHY paragraph structure, what does the "WHY" step require you to do?', options: ['Retell what happens in the scene', 'Identify the technique the writer uses', 'Explain why the writer made this choice by linking to theme, context, or their message', 'Write a quotation from the text'], correct: 2, explanation: 'The "WHY" step is where you explain the writer\'s purpose — why they made this particular choice. This is where you link to themes, context, character development, or the writer\'s overall message. It is the step that moves your answer from description to genuine analysis.' },
         { id: 'gcse-ld-m6-q4', question: 'Which is the better way to use context in a literature essay?', options: ['Write a separate paragraph at the end listing historical facts', 'Weave context into your analysis by explaining why the writer made specific choices in relation to their society', 'Mention context in your introduction and never refer to it again', 'Only include context if the question specifically asks for it'], correct: 1, explanation: 'Context should be integrated into your analysis, not bolted on as a separate paragraph. The best approach is to use context to explain WHY the writer made a particular choice: "Shakespeare\'s Jacobean audience would have viewed regicide as a sin against God, which intensifies the horror of Duncan\'s murder."' },
@@ -3585,10 +3585,10 @@ const gcseLitProse: CourseData = {
     { id: 'gcse-ld-a12', question: 'What is the "Angel in the House" ideal in Victorian context?', options: ['A type of gothic ghost story', 'The expectation that women should be domestic, obedient, and morally pure', 'A religious movement that built houses for the poor', 'A style of Victorian architecture'], correct: 1, explanation: 'The "Angel in the House" was the Victorian ideal of femininity: women should be devoted to home and family, submissive to their husbands, and morally pure. Female characters in 19th-century novels who defy this ideal are often punished, reflecting the restrictive gender norms of the period.' },
     { id: 'gcse-ld-a13', question: 'What is pathetic fallacy?', options: ['A logical error in an argument', 'Using weather or landscape to reflect characters\' emotions or the mood of a scene', 'A character who is pathetically weak', 'A plot device where a coincidence solves the story'], correct: 1, explanation: 'Pathetic fallacy is the technique of using natural phenomena — weather, landscape, seasons — to mirror characters\' emotions or the atmosphere of a scene. Storms during conflict, fog during confusion, and sunshine during happiness are common examples in 19th-century fiction.' },
     { id: 'gcse-ld-a14', question: 'Which of the following is a gothic convention?', options: ['A realistic factory setting', 'Witty dialogue at a dinner party', 'A dark, isolated setting with supernatural elements and extreme emotions', 'A detailed description of a character\'s daily routine'], correct: 2, explanation: 'Gothic conventions include dark and isolated settings (castles, moors, graveyards), the supernatural (ghosts, the uncanny), extreme emotions (terror, madness, obsession), and pathetic fallacy. These elements create an atmosphere of dread and psychological intensity.' },
-    { id: 'gcse-ld-a15', question: 'What is a thesis statement?', options: ['A quotation from the text that supports your argument', 'A single sentence at the start of your essay stating your overall argument', 'A summary of the plot', 'The topic sentence of your final paragraph'], correct: 1, explanation: 'A thesis statement is one clear sentence at the beginning of your essay that presents your overall argument in response to the question. It gives your essay direction and immediately signals to the examiner that you have a focused, analytical response.' },
+    { id: 'gcse-ld-a15', question: 'What is a thesis statement?', options: ['A quotation from the text that supports your argument', 'A single sentence at the start of your essay stating your overall argument', 'A summary of the plot', 'The topic sentence of your final paragraph'], correct: 1, explanation: 'A thesis statement is one clear sentence at the beginning of your essay that presents your overall argument in response to the question. It gives your essay direction and immediately signals to markers that you have a focused, analytical response.' },
     { id: 'gcse-ld-a16', question: 'What is the difference between an embedded quotation and a bolt-on quotation?', options: ['Embedded quotations are longer than bolt-on quotations', 'An embedded quotation is woven naturally into your sentence; a bolt-on sits separately', 'Bolt-on quotations are more sophisticated', 'There is no difference — they are the same thing'], correct: 1, explanation: 'An embedded quotation flows naturally within your own sentence (e.g., Macbeth\'s "vaulting ambition" drives him to murder). A bolt-on quotation sits separately and reads awkwardly (e.g., Macbeth is ambitious. "I have no spur..."). Embedded quotations are more fluent and score higher marks.' },
     { id: 'gcse-ld-a17', question: 'In the WHAT-HOW-WHY paragraph structure, what does the "HOW" step involve?', options: ['Describing what happens in the scene', 'Analysing the specific technique and language the writer uses', 'Explaining the historical context of the text', 'Giving your personal opinion about the character'], correct: 1, explanation: 'The "HOW" step requires you to analyse the writer\'s methods — the specific techniques, word choices, and structural features they use to create meaning. This is the analytical heart of the paragraph, where you demonstrate your understanding of the writer\'s craft.' },
-    { id: 'gcse-ld-a18', question: 'Why should you spend 5 minutes planning before writing a literature essay?', options: ['Because the exam rules require it', 'Because a planned essay is always more structured, focused, and coherent than an unplanned one', 'Because it uses up time so you write less', 'Because examiners mark your plan separately'], correct: 1, explanation: 'Planning ensures your essay has a clear argument (thesis), logically ordered paragraphs, and relevant quotations ready to use. An unplanned essay often rambles, repeats points, or drifts away from the question. Five minutes of planning saves time and improves quality.' },
+    { id: 'gcse-ld-a18', question: 'Why should you spend 5 minutes planning before writing a literature essay?', options: ['Because the exam rules require it', 'Because a planned essay is always more structured, focused, and coherent than an unplanned one', 'Because it uses up time so you write less', 'Because markers will mark your plan separately'], correct: 1, explanation: 'Planning ensures your essay has a clear argument (thesis), logically ordered paragraphs, and relevant quotations ready to use. An unplanned essay often rambles, repeats points, or drifts away from the question. Five minutes of planning saves time and improves quality.' },
     { id: 'gcse-ld-a19', question: 'How should context best be used in a literature essay?', options: ['In a separate paragraph at the end of your essay', 'Woven into your analysis to explain why the writer made specific choices', 'Only if the question specifically mentions context', 'As a long introduction before you discuss the text'], correct: 1, explanation: 'Context should be integrated into your analysis rather than bolted on. Use it to explain WHY a writer made a specific choice: "Lady Macbeth\'s command to \'unsex me here\' would have shocked a Jacobean audience who expected women to be passive and obedient." This approach earns higher marks than listing facts separately.' },
     { id: 'gcse-ld-a20', question: 'What is the most important reason Macbeth is considered a tragic hero?', options: ['He dies at the end of the play', 'He is a character of high status whose fatal flaw leads to his downfall, and he retains enough self-awareness to understand what he has lost', 'He fights bravely in the final battle', 'He is married to Lady Macbeth'], correct: 1, explanation: 'A tragic hero is not simply someone who dies. Macbeth qualifies because he begins as a noble figure, possesses a fatal flaw (ambition) that causes his downfall, and crucially, retains self-awareness — his soliloquies show he understands the horror of what he has become, which makes his destruction genuinely tragic rather than merely deserved.' },
   ],
@@ -3605,7 +3605,7 @@ const gcseRevisionBlitz: CourseData = {
   price: 0,
   duration: '6-8 hours',
   level: 'GCSE (Years 10-11)',
-  description: 'The ultimate AQA revision sprint. Condensed lessons covering every question type across Language and Literature, with exam walkthroughs, timing strategies, and grade-boosting tips from real examiners.',
+  description: 'The ultimate AQA revision sprint. Condensed lessons covering every question type across Language and Literature, with exam walkthroughs, timing strategies, and grade-boosting tips from real markers.',
   color: '#f59e0b',
   moduleList: [
     {
@@ -3624,24 +3624,24 @@ const gcseRevisionBlitz: CourseData = {
 <li><strong>Literature Paper 2</strong> — Modern Texts and Poetry. One modern prose/drama text, the poetry anthology, and unseen poetry. <strong>2 hours 15 minutes.</strong></li>
 </ul>
 
-<div class="key-term"><strong>Key Term: AOs (Assessment Objectives)</strong> — These are the specific skills the examiner is marking you on. Every mark on every question is tied to an AO. If you know the AOs, you know exactly what to include in your answer.</div>
+<div class="key-term"><strong>Key Term: AOs (what markers look for)</strong> — These are the specific skills you are being marked on. Every mark on every question is tied to an AO. If you know the AOs, you know exactly what to include in your answer.</div>
 
 <h3>Timing Is Everything</h3>
 <p>More students lose marks through poor timing than through lack of knowledge. The golden rule: <strong>spend roughly one minute per mark.</strong> If a question is worth 8 marks, spend 8-10 minutes on it. If it is worth 40 marks, give it 40-45 minutes. Do not let a low-mark question steal time from a high-mark question.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Bring a watch. Wall clocks can be hard to see, and you are not allowed your phone. A simple wristwatch means you control your time. Write your planned finish time for each question in the margin before you start the paper.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Bring a watch. Wall clocks can be hard to see, and you are not allowed your phone. A simple wristwatch means you control your time. Write your planned finish time for each question in the margin before you start the paper.</div>
 
 <h3>Equipment Checklist</h3>
 <p>Pack the night before. You need: two black pens, a spare pen, a pencil, a ruler, an eraser, a highlighter, and a watch. Do not rely on borrowing from friends — they will be stressed too.</p>
 
 <h3>Mindset: The Five-Minute Rule</h3>
-<p>If you feel stuck on a question, give yourself exactly five more minutes. Write anything — bullet points, fragments, half-formed ideas. Then move on. You can always come back, and a partial answer scores far more than a blank page. Examiners <strong>want</strong> to give you marks. Give them something to work with.</p>
+<p>If you feel stuck on a question, give yourself exactly five more minutes. Write anything — bullet points, fragments, half-formed ideas. Then move on. You can always come back, and a partial answer scores far more than a blank page. Markers <strong>want</strong> to give you marks. Give them something to work with.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Spending 30 minutes perfecting a 4-mark question and then rushing the 40-mark essay. Always check the marks before you write. The essay is where the big marks live — protect that time at all costs.</div>`,
       quiz: [
         { id: 'gcse-rb-m1-q1', question: 'How many papers do you sit across GCSE English Language and Literature?', options: ['Two', 'Three', 'Four', 'Six'], correct: 2, explanation: 'You sit four papers in total: Language Paper 1, Language Paper 2, Literature Paper 1, and Literature Paper 2.' },
         { id: 'gcse-rb-m1-q2', question: 'What is the recommended rule for time allocation per question?', options: ['Two minutes per mark', 'Roughly one minute per mark', 'Five minutes per question regardless of marks', 'Split time equally between all questions'], correct: 1, explanation: 'The golden rule is roughly one minute per mark. This ensures you give high-mark questions the time they deserve and do not overspend on low-mark ones.' },
-        { id: 'gcse-rb-m1-q3', question: 'What are AOs?', options: ['Answer Outlines — templates for your answers', 'Assessment Objectives — the specific skills being marked', 'Automatic Options — multiple choice answers', 'Academic Overviews — summaries of each text'], correct: 1, explanation: 'AOs are Assessment Objectives. They define exactly which skills the examiner is looking for in each question. Knowing them helps you target your answer precisely.' },
+        { id: 'gcse-rb-m1-q3', question: 'What are AOs?', options: ['Answer Outlines — templates for your answers', 'what markers look for — the specific skills being marked', 'Automatic Options — multiple choice answers', 'Academic Overviews — summaries of each text'], correct: 1, explanation: 'AOs are what markers look for. They define exactly which skills markers are looking for in each question. Knowing them helps you target your answer precisely.' },
         { id: 'gcse-rb-m1-q4', question: 'If you feel stuck on a question, what should you do?', options: ['Leave it completely blank and move on', 'Spend as long as it takes to finish it', 'Give yourself five more minutes, write what you can, then move on', 'Ask the invigilator for help'], correct: 2, explanation: 'The five-minute rule: write what you can — even bullet points — then move on. A partial answer always scores more than a blank space, and you protect time for other questions.' },
       ],
     },
@@ -3658,7 +3658,7 @@ const gcseRevisionBlitz: CourseData = {
 
 <p><strong>Question 2 (8 marks, ~10 minutes) — How does the writer use language?</strong> Focus on specific words, phrases, and techniques. Use the What-How-Why structure: What technique is used? How does it work? Why does it affect the reader? Aim for 2-3 detailed analytical points.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> On Question 2, examiners reward you for analysing individual words. Saying "the verb 'shattered' connotes destruction and fragility" is worth more than vaguely describing the whole paragraph. Zoom in on single words.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> On Question 2, Markers reward you for analysing individual words. Saying "the verb 'shattered' connotes destruction and fragility" is worth more than vaguely describing the whole paragraph. Zoom in on single words.</div>
 
 <p><strong>Question 3 (8 marks, ~10 minutes) — How does the writer use structure?</strong> Think about beginnings, shifts, focus changes, and endings. How does the writer move the reader through the text? Consider: focus shifts (wide to narrow, external to internal), pace changes, sentence length variation, paragraph structure, and cyclical patterns.</p>
 
@@ -3670,7 +3670,7 @@ const gcseRevisionBlitz: CourseData = {
 
 <p><strong>Question 5 (40 marks, ~45 minutes) — Descriptive or narrative writing.</strong> You get a choice of two tasks. Pick the one that sparks ideas immediately. Plan for 5 minutes, write for 35 minutes, proofread for 5 minutes. Use varied sentence structures, ambitious vocabulary, and sensory details. Half the marks are for technical accuracy (spelling, punctuation, grammar), so proofread carefully.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing a story with a huge plot for Question 5. Examiners want quality of writing, not quantity of events. A single powerful scene with rich description beats an action-packed epic every time. Slow down and describe.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing a story with a huge plot for Question 5. Markers are looking for quality of writing, not quantity of events. A single powerful scene with rich description beats an action-packed epic every time. Slow down and describe.</div>
 
 <div class="model-answer"><div class="model-answer-header">MODEL STRUCTURE FOR Q5 — DESCRIPTIVE</div>
 <p><strong>Opening:</strong> Start with a striking image or sensory detail — drop the reader straight into the scene.</p>
@@ -3680,7 +3680,7 @@ const gcseRevisionBlitz: CourseData = {
       quiz: [
         { id: 'gcse-rb-m2-q1', question: 'How many marks is Question 1 on Language Paper 1 worth?', options: ['2 marks', '4 marks', '8 marks', '12 marks'], correct: 1, explanation: 'Question 1 is worth 4 marks. It is the simplest question — just list four things from the specified lines. Spend no more than 5 minutes on it.' },
         { id: 'gcse-rb-m2-q2', question: 'What is the key skill for Question 3 (structure)?', options: ['Identifying language techniques like metaphor', 'Spotting structural shifts and explaining how the writer moves the reader through the text', 'Comparing the text to another source', 'Writing your own creative response'], correct: 1, explanation: 'Question 3 tests your ability to analyse structure — focus shifts, pace changes, narrative perspective, beginnings and endings, and how these choices affect the reader.' },
-        { id: 'gcse-rb-m2-q3', question: 'For Question 5 (creative writing), what common mistake should you avoid?', options: ['Using too many adjectives', 'Writing a huge plot with too many events instead of focusing on quality description', 'Making your writing too short', 'Using first person narration'], correct: 1, explanation: 'Examiners want quality of writing, not quantity of plot. A single well-described scene scores higher than a rushed adventure with five plot twists. Slow down and show off your language skills.' },
+        { id: 'gcse-rb-m2-q3', question: 'For Question 5 (creative writing), what common mistake should you avoid?', options: ['Using too many adjectives', 'Writing a huge plot with too many events instead of focusing on quality description', 'Making your writing too short', 'Using first person narration'], correct: 1, explanation: 'Markers are looking for quality of writing, not quantity of plot. A single well-described scene scores higher than a rushed adventure with five plot twists. Slow down and show off your language skills.' },
         { id: 'gcse-rb-m2-q4', question: 'How should you approach Question 4 (evaluation)?', options: ['Simply agree with the statement and give evidence', 'Write a balanced answer: agree with evidence, consider a counterargument, then conclude', 'Disagree completely and ignore the statement', 'Just retell the story in your own words'], correct: 1, explanation: 'Question 4 rewards a balanced evaluation. Agree with evidence, then consider an alternative interpretation, then reach a personal conclusion. This shows sophisticated critical thinking.' },
       ],
     },
@@ -3701,7 +3701,7 @@ const gcseRevisionBlitz: CourseData = {
 
 <p><strong>Question 3 (12 marks, ~15 minutes) — How does the writer use language?</strong> This is identical in style to Paper 1, Question 2, but worth more marks. Focus on one source only (it will tell you which). Analyse specific words, phrases, and techniques. Aim for 3-4 detailed points using What-How-Why. Include subject-specific terminology: metaphor, emotive language, rhetorical questions, direct address, hyperbole.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing non-fiction language, always consider the writer's purpose and audience. A charity appeal uses emotive language to provoke guilt; a newspaper editorial uses rhetorical questions to make the reader think. Linking language to purpose shows top-level understanding.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When analysing non-fiction language, always consider the writer's purpose and audience. A charity appeal uses emotive language to provoke guilt; a newspaper editorial uses rhetorical questions to make the reader think. Linking language to purpose shows top-level understanding.</div>
 
 <p><strong>Question 4 (16 marks, ~25 minutes) — Compare viewpoints and methods.</strong> This is the big one for Paper 2. Compare how the two writers present their attitudes to the same topic. You MUST discuss both writers' ideas AND their methods (language, structure, tone). Use comparative connectives throughout: "Similarly," "In contrast," "While Source A...Source B..."</p>
 
@@ -3732,7 +3732,7 @@ const gcseRevisionBlitz: CourseData = {
 
 <p>You will receive a printed extract from your Shakespeare play and a question asking how Shakespeare presents a theme or character. You MUST write about the extract AND the wider play. A good split is 60% extract, 40% wider play.</p>
 
-<div class="key-term"><strong>Key Term: Extract-to-whole</strong> — The technique of starting your analysis with the printed extract, then broadening out to discuss how the theme or character appears elsewhere in the play. This structure shows the examiner you know the whole text, not just the passage in front of you.</div>
+<div class="key-term"><strong>Key Term: Extract-to-whole</strong> — The technique of starting your analysis with the printed extract, then broadening out to discuss how the theme or character appears elsewhere in the play. This structure shows markers you know the whole text, not just the passage in front of you.</div>
 
 <p><strong>How to structure your Shakespeare answer:</strong></p>
 <ul>
@@ -3742,7 +3742,7 @@ const gcseRevisionBlitz: CourseData = {
 <li><strong>Conclusion (2-3 sentences):</strong> Sum up Shakespeare's overall message or purpose regarding the theme.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always refer to Shakespeare by name and use phrases like "Shakespeare presents," "Shakespeare suggests," or "Shakespeare forces the audience to consider." This shows you understand that the text was crafted deliberately — it did not just happen. Examiners call this "authorial intent."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Always refer to Shakespeare by name and use phrases like "Shakespeare presents," "Shakespeare suggests," or "Shakespeare forces the audience to consider." This shows you understand that the text was crafted deliberately — it did not just happen. Markers call this "authorial intent."</div>
 
 <h3>Section B: 19th-Century Novel (roughly 50 minutes)</h3>
 
@@ -3752,7 +3752,7 @@ const gcseRevisionBlitz: CourseData = {
 
 <p>If your text were Pride and Prejudice, you might note: Austen's ironic tone immediately signals that this "truth" is actually society's assumption, not a fact. The word "universally" is deliberately exaggerated, mocking the narrow world of the landed gentry where marriage was primarily an economic transaction.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending the entire essay on the extract and forgetting to discuss the wider text. The mark scheme explicitly rewards knowledge of the whole play or novel. Plan at least two paragraphs that move beyond the printed extract.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending the entire essay on the extract and forgetting to discuss the wider text. The marking guide explicitly rewards knowledge of the whole play or novel. Plan at least two paragraphs that move beyond the printed extract.</div>
 
 <div class="model-answer"><div class="model-answer-header">CONTEXT — HOW TO USE IT</div>
 <p>Context should be woven into your analysis, not bolted on as a separate paragraph. Bad: "In Victorian times, women had no rights." Good: "Dickens highlights the vulnerability of working-class women through Nancy's inability to escape Sikes, reflecting the limited legal protections available to women in the 1830s." The second version connects context directly to the text and the question.</p>
@@ -3779,7 +3779,7 @@ const gcseRevisionBlitz: CourseData = {
 
 <p><strong>Top tip:</strong> Learn 10-15 short quotations per character or theme. Short means 3-7 words — just enough to analyse but easy to memorise. Embed them into your sentences rather than writing them out separately.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If you cannot remember a quotation exactly, paraphrase it and say "the writer describes..." This is better than leaving a gap. You may lose a mark for precision, but you keep all the marks for your analytical point. Never leave a blank.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If you cannot remember a quotation exactly, paraphrase it and say "the writer describes..." This is better than leaving a gap. You may lose a mark for precision, but you keep all the marks for your analytical point. Never leave a blank.</div>
 
 <h3>Section B: Poetry Anthology (roughly 45 minutes)</h3>
 
@@ -3808,7 +3808,7 @@ const gcseRevisionBlitz: CourseData = {
         { id: 'gcse-rb-m5-q1', question: 'What is unique about the Modern Text section compared to other Literature sections?', options: ['It is the longest section', 'There is no extract — you must recall quotations from memory', 'You must compare two texts', 'It only tests context knowledge'], correct: 1, explanation: 'The Modern Text section provides no extract. You must recall quotations from memory, which is why memorising 10-15 short quotations per character or theme is essential.' },
         { id: 'gcse-rb-m5-q2', question: 'When choosing a poem to compare with the printed anthology poem, what should you consider?', options: ['Choose the poem you know best, regardless of theme', 'Choose a poem with the same theme but a different approach or perspective', 'Always choose the shortest poem', 'Choose a poem by the same poet'], correct: 1, explanation: 'Pick a poem that shares the theme but takes a different approach. This contrast gives you plenty of material for comparison. Two poems that are too similar leave you with little to say.' },
         { id: 'gcse-rb-m5-q3', question: 'How many times should you read an unseen poem before writing?', options: ['Once quickly', 'Twice — for meaning and language', 'Three times — meaning, language, then structure', 'As many times as possible'], correct: 2, explanation: 'The three-read strategy covers all bases: Read 1 for overall meaning, Read 2 for language and techniques, Read 3 for structure and form. This systematic approach prevents you from missing key features.' },
-        { id: 'gcse-rb-m5-q4', question: 'If you cannot remember an exact quotation in the Modern Text section, what should you do?', options: ['Leave a blank space', 'Make up a quotation', 'Paraphrase and say "the writer describes..."', 'Skip that point entirely'], correct: 2, explanation: 'Paraphrasing is always better than leaving a gap. You keep the marks for your analytical point even if you lose a mark for quotation precision. The examiner rewards your ideas, not just your memory.' },
+        { id: 'gcse-rb-m5-q4', question: 'If you cannot remember an exact quotation in the Modern Text section, what should you do?', options: ['Leave a blank space', 'Make up a quotation', 'Paraphrase and say "the writer describes..."', 'Skip that point entirely'], correct: 2, explanation: 'Paraphrasing is always better than leaving a gap. You keep the marks for your analytical point even if you lose a mark for quotation precision. markers reward your ideas, not just your memory.' },
       ],
     },
     {
@@ -3816,17 +3816,17 @@ const gcseRevisionBlitz: CourseData = {
       title: 'Grade Booster: Language',
       duration: '30 mins',
       content: `<h2>Grade Booster: 10 Quick Wins for Language Papers</h2>
-<p>These are the fastest, most reliable ways to push your Language grade up. Every tip here targets something examiners actively reward — or a common error that drags marks down. Nail these and you add marks to every question.</p>
+<p>These are the fastest, most reliable ways to push your Language grade up. Every tip here targets something markers actively reward — or a common error that drags marks down. Nail these and you add marks to every question.</p>
 
 <h3>Quick Wins for Reading</h3>
 
 <p><strong>1. Zoom in on single words.</strong> The best answers analyse individual word choices. Instead of saying "the writer uses descriptive language," say "the verb 'shattered' connotes sudden, irreversible destruction." This is the difference between Grade 5 and Grade 8.</p>
 
-<p><strong>2. Name the effect on the reader.</strong> Every analytical point should end with the reader. "This makes the reader feel..." or "This forces the reader to consider..." The examiner wants to see you understand that texts are designed to provoke a response.</p>
+<p><strong>2. Name the effect on the reader.</strong> Every analytical point should end with the reader. "This makes the reader feel..." or "This forces the reader to consider..." markers are looking for you understand that texts are designed to provoke a response.</p>
 
 <p><strong>3. Use subject terminology precisely.</strong> Do not just say "metaphor" — say what kind and why it matters. "The extended metaphor of war throughout the paragraph frames the argument as a battle, positioning the reader as an ally." Terminology must serve your analysis, not replace it.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners call it "terminology for the sake of terminology" when students label techniques without analysing them. Saying "this is a simile" earns zero marks. Saying "this simile compares X to Y, which suggests Z because..." earns full marks. Always explain the WHY.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Markers call it "terminology for the sake of terminology" when students label techniques without analysing them. Saying "this is a simile" earns zero marks. Saying "this simile compares X to Y, which suggests Z because..." earns full marks. Always explain the WHY.</div>
 
 <p><strong>4. Address structure confidently.</strong> Many students skip or rush the structure question. Use this vocabulary: focus shifts, pace changes, narrative perspective, chronological/non-chronological, cyclical structure, contrast, juxtaposition, climax. Structure is about movement — how the writer takes the reader on a journey through the text.</p>
 
@@ -3838,13 +3838,13 @@ const gcseRevisionBlitz: CourseData = {
 
 <p><strong>7. Use one-sentence paragraphs for impact.</strong> A single short sentence after a long descriptive paragraph creates a dramatic pause. "And then — silence." Use this technique once or twice per piece for maximum effect.</p>
 
-<p><strong>8. Semicolons are your friend.</strong> Using a semicolon correctly shows the examiner you have a sophisticated grasp of punctuation. "The forest was silent; not even the birds dared to sing." Practise this — it is one of the easiest ways to hit the top band for technical accuracy.</p>
+<p><strong>8. Semicolons are your friend.</strong> Using a semicolon correctly shows markers you have a sophisticated grasp of punctuation. "The forest was silent; not even the birds dared to sing." Practise this — it is one of the easiest ways to hit the top band for technical accuracy.</p>
 
-<div class="key-term"><strong>Key Term: Crafting</strong> — Deliberate, conscious choices in your writing. Examiners look for evidence that you have chosen words and structures for effect, not just written the first thing that came to mind. Ambitious vocabulary, varied punctuation, and purposeful structure all signal crafting.</div>
+<div class="key-term"><strong>Key Term: Crafting</strong> — Deliberate, conscious choices in your writing. markers look for evidence that you have chosen words and structures for effect, not just written the first thing that came to mind. Ambitious vocabulary, varied punctuation, and purposeful structure all signal crafting.</div>
 
 <p><strong>9. Proofread for the five killer errors.</strong> These cost the most marks: comma splices, missing apostrophes, their/there/they're confusion, inconsistent tense, and missing capital letters. Read your work backwards sentence by sentence to catch them — it forces your brain to focus on grammar rather than meaning.</p>
 
-<p><strong>10. End powerfully.</strong> Your last sentence is the examiner's last impression. For descriptive writing, end on a striking image. For argumentative writing, end on a call to action or a provocative question. Never end with "In conclusion" — it is flat and forgettable.</p>
+<p><strong>10. End powerfully.</strong> Your last sentence is the marker's last impression. For descriptive writing, end on a striking image. For argumentative writing, end on a call to action or a provocative question. Never end with "In conclusion" — it is flat and forgettable.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Using sophisticated vocabulary incorrectly. "The protagonist was very loquacious" sounds impressive, but if you do not know what "loquacious" means and use it in the wrong context, you lose marks for accuracy. Only use words you are confident about.</div>`,
       quiz: [
@@ -3869,11 +3869,11 @@ const gcseRevisionBlitz: CourseData = {
 
 <p><strong>2. Always comment on the writer's purpose.</strong> Why did the writer create this character, this scene, this ending? "Priestley uses the Inspector as a mouthpiece for socialist ideas" is stronger than "The Inspector says everyone should help each other." Show you understand the text as a constructed piece of art with a deliberate message.</p>
 
-<p><strong>3. Use alternative interpretations.</strong> "One reading of this is...however, it could alternatively suggest..." This immediately moves you into the top mark bands. Examiners reward students who can hold two ideas in tension rather than settling for one simple reading.</p>
+<p><strong>3. Use alternative interpretations.</strong> "One reading of this is...however, it could alternatively suggest..." This immediately moves you into the top mark bands. Markers reward students who can hold two ideas in tension rather than settling for one simple reading.</p>
 
 <p><strong>4. Link quotations in clusters.</strong> Instead of using one quotation per point, group 2-3 related quotations: "The motif of blood recurs through 'bloody instructions,' 'blood will have blood,' and Lady Macbeth's obsessive hand-washing, showing how guilt becomes inescapable." This demonstrates breadth of knowledge.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The word "perhaps" is one of the most powerful words in a Literature essay. "Perhaps Shakespeare suggests that ambition is not inherently evil, but becomes destructive when it overrides moral conscience." This shows nuanced, exploratory thinking — exactly what examiners reward at the highest levels.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The word "perhaps" is one of the most powerful words in a Literature essay. "Perhaps Shakespeare suggests that ambition is not inherently evil, but becomes destructive when it overrides moral conscience." This shows nuanced, exploratory thinking — exactly what Markers reward at the highest levels.</div>
 
 <h3>Quick Wins for Context</h3>
 
@@ -3889,13 +3889,13 @@ const gcseRevisionBlitz: CourseData = {
 
 <p><strong>9. Track character arcs.</strong> Show how a character changes across the text. "At the start, Scrooge is presented as 'hard and sharp as flint'; by the end, he is 'as good a friend...as the good old city knew.' This transformation embodies Dickens's message that redemption is always possible." Tracking change demonstrates whole-text knowledge.</p>
 
-<p><strong>10. Write a purposeful conclusion.</strong> Your conclusion should not just repeat your essay. Instead, zoom out: What is the writer's ultimate message? Why does it still matter today? "Ultimately, Shakespeare presents ambition as a force that consumes identity itself — a warning as relevant to modern audiences as it was in 1606." This leaves the examiner with a strong final impression.</p>
+<p><strong>10. Write a purposeful conclusion.</strong> Your conclusion should not just repeat your essay. Instead, zoom out: What is the writer's ultimate message? Why does it still matter today? "Ultimately, Shakespeare presents ambition as a force that consumes identity itself — a warning as relevant to modern audiences as it was in 1606." This leaves markers with a strong final impression.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> "Feature spotting" — listing techniques without explaining their significance. Saying "Shakespeare uses iambic pentameter" is worthless unless you explain why: "The disruption of iambic pentameter in Macbeth's later speeches mirrors his psychological disintegration." Always connect technique to meaning.</div>`,
       quiz: [
         { id: 'gcse-rb-m7-q1', question: 'What makes a quotation "versatile"?', options: ['It is very long and detailed', 'It can be applied to multiple themes or questions', 'It comes from the most important scene', 'It contains a literary technique'], correct: 1, explanation: 'A versatile quotation links to multiple themes, so one memorised quotation can serve you across different questions. This is the most efficient revision strategy for Literature.' },
         { id: 'gcse-rb-m7-q2', question: 'How should context be used in a Literature essay?', options: ['As a separate paragraph of historical facts', 'Woven into analysis and directly connected to the text and question', 'Only when the question mentions context', 'As the opening sentence of every paragraph'], correct: 1, explanation: 'Context must illuminate the text. Weave contextual points into your analysis so they directly support your argument about the text, rather than sitting as standalone historical facts.' },
-        { id: 'gcse-rb-m7-q3', question: 'Why is the word "perhaps" powerful in a Literature essay?', options: ['It makes your answer longer', 'It shows tentative, exploratory thinking that considers multiple interpretations', 'It avoids the need for evidence', 'It is a command word'], correct: 1, explanation: '"Perhaps" signals nuanced thinking — you are exploring possibilities rather than making simplistic claims. This is exactly what examiners reward at the highest mark bands.' },
+        { id: 'gcse-rb-m7-q3', question: 'Why is the word "perhaps" powerful in a Literature essay?', options: ['It makes your answer longer', 'It shows tentative, exploratory thinking that considers multiple interpretations', 'It avoids the need for evidence', 'It is a command word'], correct: 1, explanation: '"Perhaps" signals nuanced thinking — you are exploring possibilities rather than making simplistic claims. This is exactly what Markers reward at the highest mark bands.' },
         { id: 'gcse-rb-m7-q4', question: 'What is "feature spotting" and why should you avoid it?', options: ['Finding hidden details in the text — it is a useful skill', 'Listing techniques without explaining their significance — it earns no marks', 'Identifying themes across multiple texts — it is too time-consuming', 'Spotting errors in the exam paper — it wastes time'], correct: 1, explanation: 'Feature spotting means labelling techniques (like "this is a metaphor") without explaining why the writer used them or what effect they create. It earns zero analytical marks.' },
       ],
     },
@@ -3914,7 +3914,7 @@ const gcseRevisionBlitz: CourseData = {
 <li><strong>Re-read one model answer</strong> — ideally one you wrote yourself that scored well. This puts the right style and structure into your short-term memory.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The students who perform best on exam day are not the ones who revised until 2am. They are the ones who stopped at a sensible time, slept well, and arrived calm and alert. Sleep is when your brain transfers information from short-term to long-term memory. Cutting sleep to cram is literally counterproductive.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The students who perform best on exam day are not the ones who revised until 2am. They are the ones who stopped at a sensible time, slept well, and arrived calm and alert. Sleep is when your brain transfers information from short-term to long-term memory. Cutting sleep to cram is literally counterproductive.</div>
 
 <h3>What NOT to Cram</h3>
 <p>Do not try to memorise new quotations you have never practised using. Do not re-read entire set texts. Do not start a past paper at 10pm. Do not read revision guides cover-to-cover. All of these create the illusion of productivity while actually increasing anxiety and confusion. Trust what you have already learned.</p>
@@ -3934,7 +3934,7 @@ const gcseRevisionBlitz: CourseData = {
 
 <div class="key-term"><strong>Key Term: Exam readiness</strong> — The state of being mentally prepared, physically rested, and logistically organised for an exam. It is not about knowing everything — it is about being in the best possible condition to use what you know. Readiness beats last-minute cramming every time.</div>
 
-<p><strong>One final thought:</strong> You have studied these texts for two years. You know more than you think you do. The exam is not a test of everything — it is a test of how well you apply what you know to the specific questions in front of you. Stay focused, stay calm, and show the examiner what you can do. You have got this.</p>`,
+<p><strong>One final thought:</strong> You have studied these texts for two years. You know more than you think you do. The exam is not a test of everything — it is a test of how well you apply what you know to the specific questions in front of you. Stay focused, stay calm, and show markers what you can do. You have got this.</p>`,
       quiz: [
         { id: 'gcse-rb-m8-q1', question: 'What should you revise the night before the exam?', options: ['New quotations you have not studied before', 'Your quotation list, key terminology, and one model answer', 'The entire set text from beginning to end', 'A brand new past paper'], correct: 1, explanation: 'The night before, review what you already know: your quotation list, key terminology, and one strong model answer. Do not try to learn new material — it will not stick and will increase anxiety.' },
         { id: 'gcse-rb-m8-q2', question: 'Why is sleep more important than late-night cramming?', options: ['It is not — you should study as late as possible', 'Sleep transfers information from short-term to long-term memory', 'You need to dream about the exam', 'Sleep only matters if the exam is in the morning'], correct: 1, explanation: 'During sleep, your brain consolidates memories and transfers them to long-term storage. Cutting sleep to cram actually undermines your ability to recall information the next day.' },
@@ -3950,20 +3950,20 @@ const gcseRevisionBlitz: CourseData = {
     { id: 'gcse-rb-a4', question: 'In a Language Paper 2 comparison answer, what must you avoid?', options: ['Using comparative connectives', 'Writing about Source A and Source B in separate halves instead of weaving them together', 'Discussing both writers\' methods', 'Using quotations from both texts'], correct: 1, explanation: 'Writing about each source in separate blocks is not comparison. Every paragraph should discuss both sources, using comparative connectives to weave the analysis together.' },
     { id: 'gcse-rb-a5', question: 'What does "extract-to-whole" mean in a Literature essay?', options: ['Only analyse the extract', 'Analyse the extract first, then discuss the wider text', 'Ignore the extract completely', 'Quote the entire extract in your answer'], correct: 1, explanation: 'Extract-to-whole means starting with detailed analysis of the printed extract, then broadening to discuss how the theme or character appears elsewhere in the text.' },
     { id: 'gcse-rb-a6', question: 'How should you refer to the writer in a Literature essay?', options: ['By first name only', 'By surname with active verbs like "presents" or "suggests"', 'Do not mention the writer at all', 'Use "the book says" instead'], correct: 1, explanation: 'Using the author\'s surname with deliberate verbs shows awareness of authorial intent — the understanding that the text was crafted on purpose.' },
-    { id: 'gcse-rb-a7', question: 'What is a "versatile quotation"?', options: ['A very long quotation', 'A short quotation that links to multiple themes', 'A quotation from the exam paper', 'A quotation used by the examiner'], correct: 1, explanation: 'Versatile quotations are short (3-7 words) and link to multiple themes, making them useful across different possible exam questions.' },
+    { id: 'gcse-rb-a7', question: 'What is a "versatile quotation"?', options: ['A very long quotation', 'A short quotation that links to multiple themes', 'A quotation from the exam paper', 'A quotation used by markers'], correct: 1, explanation: 'Versatile quotations are short (3-7 words) and link to multiple themes, making them useful across different possible exam questions.' },
     { id: 'gcse-rb-a8', question: 'In the Literature Paper 2 modern text section, why is memorisation important?', options: ['The exam is open book', 'There is no extract provided — you must recall quotations from memory', 'You need to write out the entire text', 'Memorisation is not important for this section'], correct: 1, explanation: 'Unlike other Literature sections, the modern text question provides no extract. You must remember quotations and use them from memory.' },
     { id: 'gcse-rb-a9', question: 'What is the three-read strategy for unseen poetry?', options: ['Read for meaning, then language, then structure', 'Read the title, the first line, and the last line', 'Read it once and start writing immediately', 'Read three different poems before choosing one'], correct: 0, explanation: 'Read 1: overall meaning. Read 2: underline striking language and techniques. Read 3: examine structure, form, and line arrangement. This systematic approach ensures thorough analysis.' },
     { id: 'gcse-rb-a10', question: 'What does "zooming in on single words" mean in language analysis?', options: ['Using a magnifying glass on the text', 'Analysing individual word choices and their connotations rather than making general comments', 'Counting how many times a word appears', 'Only quoting one word per answer'], correct: 1, explanation: 'Zooming in means selecting a single word and exploring its connotations, effects, and significance. This precision is what separates top-band answers from mid-range ones.' },
-    { id: 'gcse-rb-a11', question: 'Why should every analytical point reference the reader?', options: ['Because the reader wrote the text', 'Because texts are designed to provoke a response, and examiners want to see you understand this', 'Because it makes your answer longer', 'Because it is a rule of English grammar'], correct: 1, explanation: 'Writers craft texts to affect readers. Explaining the impact on the reader ("This makes the reader feel...") shows you understand the purpose of literary techniques.' },
+    { id: 'gcse-rb-a11', question: 'Why should every analytical point reference the reader?', options: ['Because the reader wrote the text', 'Because texts are designed to provoke a response, and Markers are looking for to see you understand this', 'Because it makes your answer longer', 'Because it is a rule of English grammar'], correct: 1, explanation: 'Writers craft texts to affect readers. Explaining the impact on the reader ("This makes the reader feel...") shows you understand the purpose of literary techniques.' },
     { id: 'gcse-rb-a12', question: 'What are the "five killer errors" in writing?', options: ['Spelling, vocabulary, tone, length, and handwriting', 'Comma splices, missing apostrophes, their/there/they\'re, inconsistent tense, missing capitals', 'Using short sentences, repeating words, starting with "I", using "nice", ending with "The End"', 'Metaphor, simile, alliteration, personification, and onomatopoeia'], correct: 1, explanation: 'These five errors — comma splices, missing apostrophes, homophones, tense shifts, and missing capitals — are the most common technical mistakes and cost the most marks for accuracy.' },
     { id: 'gcse-rb-a13', question: 'How should context be integrated into a Literature essay?', options: ['As a standalone paragraph of historical facts', 'Woven into analysis and directly linked to the text', 'Only in the introduction', 'It should not be included at all'], correct: 1, explanation: 'Context is most effective when embedded in analysis. Connect it directly to your points about the text rather than writing a separate block of historical information.' },
     { id: 'gcse-rb-a14', question: 'What is "feature spotting" and why is it a problem?', options: ['Identifying key themes — it is helpful', 'Listing techniques without explaining their effect — it earns no analytical marks', 'Finding mistakes in the text — it wastes time', 'Memorising literary features — it is too difficult'], correct: 1, explanation: 'Feature spotting means labelling techniques without analysis. Saying "this is a metaphor" earns nothing; explaining why the metaphor was used and its effect on the reader earns marks.' },
     { id: 'gcse-rb-a15', question: 'What is the best way to end a creative writing piece?', options: ['Write "The End"', 'End with a striking image or thought-provoking line', 'Summarise everything that happened', 'End mid-sentence for dramatic effect'], correct: 1, explanation: 'A powerful final image or thought-provoking line leaves a strong lasting impression. Avoid flat endings like "In conclusion" or "The End" — make your final words memorable.' },
     { id: 'gcse-rb-a16', question: 'In Language Paper 1, Question 3, what are you analysing?', options: ['Language techniques', 'The writer\'s use of structure', 'The historical context', 'Spelling and grammar'], correct: 1, explanation: 'Question 3 focuses on structure: how the writer moves the reader through the text using focus shifts, pace changes, paragraph structure, and other organisational choices.' },
-    { id: 'gcse-rb-a17', question: 'Why is the word "perhaps" valuable in a Literature essay?', options: ['It avoids the need for evidence', 'It signals exploratory, nuanced thinking that considers multiple interpretations', 'It makes sentences grammatically correct', 'It is required by the mark scheme'], correct: 1, explanation: '"Perhaps" shows you can consider multiple interpretations rather than making simplistic claims. This exploratory thinking is rewarded at the highest mark bands.' },
+    { id: 'gcse-rb-a17', question: 'Why is the word "perhaps" valuable in a Literature essay?', options: ['It avoids the need for evidence', 'It signals exploratory, nuanced thinking that considers multiple interpretations', 'It makes sentences grammatically correct', 'It is required by the marking guide'], correct: 1, explanation: '"Perhaps" shows you can consider multiple interpretations rather than making simplistic claims. This exploratory thinking is rewarded at the highest mark bands.' },
     { id: 'gcse-rb-a18', question: 'What should you do the night before the exam?', options: ['Stay up and learn new material', 'Review your quotation list, key terms, and one model answer, then sleep well', 'Read the entire set text cover to cover', 'Start a new past paper at 11pm'], correct: 1, explanation: 'The night before, review what you already know briefly, then prioritise sleep. Your brain consolidates memories during sleep, so rest is more productive than last-minute cramming.' },
     { id: 'gcse-rb-a19', question: 'What is the 4-7-8 breathing technique used for?', options: ['Timing your exam answers', 'Reducing anxiety during the exam by activating the parasympathetic nervous system', 'Counting paragraphs in your essay', 'Pacing your reading speed'], correct: 1, explanation: 'Breathing in for 4 seconds, holding for 7, and exhaling for 8 activates the body\'s calming response. It takes under a minute and can be done silently if panic arises during the exam.' },
-    { id: 'gcse-rb-a20', question: 'For creative writing on Language Paper 1, what common mistake costs the most marks?', options: ['Using too much dialogue', 'Writing a plot-heavy story instead of focusing on quality description and language', 'Making the piece too short', 'Writing in first person'], correct: 1, explanation: 'Examiners reward quality of writing — vocabulary, sentence variety, sensory detail, crafted structure. A single well-described scene scores far higher than a rushed, plot-heavy story with five events and no descriptive depth.' },
+    { id: 'gcse-rb-a20', question: 'For creative writing on Language Paper 1, what common mistake costs the most marks?', options: ['Using too much dialogue', 'Writing a plot-heavy story instead of focusing on quality description and language', 'Making the piece too short', 'Writing in first person'], correct: 1, explanation: 'Markers reward quality of writing — vocabulary, sentence variety, sensory detail, crafted structure. A single well-described scene scores far higher than a rushed, plot-heavy story with five events and no descriptive depth.' },
   ],
 };
 

@@ -198,25 +198,25 @@ const narrativeTechniques = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     title: "Show detailed knowledge of the text",
     detail:
       "Demonstrate close knowledge of the novel through well-chosen quotations and precise references to events, characters, and dialogue. In passage-based questions, work through the extract methodically. In essay questions, select relevant moments from across the entire novel, not just one section.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     title: "Understand the writer\u2019s methods and effects",
     detail:
       "Analyse how du Maurier uses language, form, and structure to create meaning. Identify literary techniques (imagery, symbolism, narrative perspective, foreshadowing, pathetic fallacy, Gothic conventions) and explain their effects on the reader. This is the most heavily weighted objective: always focus on how du Maurier writes, not just what happens.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     title: "Respond to different interpretations (implied)",
     detail:
-      "While Cambridge IGCSE does not have a separately marked AO for alternative readings, examiners reward responses that consider multiple perspectives. For example: is Maxim a sympathetic figure or a controlling murderer? Is the narrator\u2019s devotion to him love or dependency? Is Rebecca a villain or a victim of patriarchal violence?",
+      "While Cambridge IGCSE does not have a separately marked skill for alternative readings, markers reward responses that consider multiple perspectives. For example: is Maxim a sympathetic figure or a controlling murderer? Is the narrator\u2019s devotion to him love or dependency? Is Rebecca a villain or a victim of patriarchal violence?",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     title: "Relate the text to its context",
     detail:
       "Show understanding of the novel\u2019s context: 1930s gender expectations, the English class system, the Gothic literary tradition, and du Maurier\u2019s own life as a woman navigating social conventions. Context should be integrated naturally into your analysis, not bolted on as a separate paragraph.",
@@ -256,7 +256,7 @@ export default function RebeccaStudyGuide() {
             "Themes",
             "Chapter Summary",
             "Narrative Techniques",
-            "Assessment Objectives",
+            "What Markers Look For",
             "Exam Guidance",
             "Sample Question",
           ].map((s) => (
@@ -392,7 +392,7 @@ export default function RebeccaStudyGuide() {
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
         <section
-          id="assessment-objectives"
+          id="what-markers-look-for"
           aria-labelledby="ao-heading"
         >
           <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
@@ -401,7 +401,7 @@ export default function RebeccaStudyGuide() {
           <p className="mt-2 text-sm text-muted-foreground">
             Understanding how Cambridge marks your work helps you target your
             revision. Paper 1 (Prose) questions are marked holistically, but
-            these objectives indicate what examiners are looking for.
+            these objectives indicate what markers are looking for.
           </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {assessmentObjectives.map((ao) => (
@@ -589,7 +589,7 @@ export default function RebeccaStudyGuide() {
             <CardContent>
               <div className="rounded-lg border border-border bg-primary/5 p-5">
                 <h4 className="text-sm font-bold text-foreground">
-                  Model Paragraph (addressing all 4 AOs)
+                  Model Paragraph (addressing all 4 skills)
                 </h4>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   Du Maurier presents the power of the past most vividly
@@ -598,7 +598,7 @@ export default function RebeccaStudyGuide() {
                   slim hand was writing, writing, the tall sloping letters
                   &mdash; R de W &mdash; R de W&rdquo;{" "}
                   <span className="font-semibold text-foreground">
-                    [AO1: precise quotation]
+                    [Textual Knowledge: precise quotation]
                   </span>
                   . The disembodied hand, detached from any living body,
                   functions as a Gothic image of haunting: Rebecca is dead,
@@ -606,7 +606,7 @@ export default function RebeccaStudyGuide() {
                   into the present, as though her will persists beyond the
                   grave{" "}
                   <span className="font-semibold text-foreground">
-                    [AO2: analysis of Gothic imagery and present tense]
+                    [Writer's Methods: analysis of Gothic imagery and present tense]
                   </span>
                   . The repetition of the initials mimics the narrator&rsquo;s
                   compulsive thoughts, suggesting that the past does not
@@ -617,7 +617,7 @@ export default function RebeccaStudyGuide() {
                   Rebecca&rsquo;s ghost, that animates the dead woman&rsquo;s
                   handwriting{" "}
                   <span className="font-semibold text-foreground">
-                    [AO3: alternative interpretation]
+                    [Interpretation: alternative interpretation]
                   </span>
                   . Du Maurier, writing in 1938, draws on a culture in which
                   a woman&rsquo;s identity was subsumed by her husband&rsquo;s
@@ -627,7 +627,7 @@ export default function RebeccaStudyGuide() {
                   a construction of patriarchal convention rather than an
                   authentic self{" "}
                   <span className="font-semibold text-foreground">
-                    [AO4: contextual understanding of gender and identity]
+                    [Personal Response: contextual understanding of gender and identity]
                   </span>
                   .
                 </p>
@@ -643,18 +643,18 @@ export default function RebeccaStudyGuide() {
                     question directly
                   </li>
                   <li>
-                    &bull; Embeds a precise, well-selected quotation (AO1)
+                    &bull; Embeds a precise, well-selected quotation (Textual Knowledge)
                   </li>
                   <li>
                     &bull; Analyses du Maurier&rsquo;s techniques &mdash;
-                    Gothic imagery, repetition, narrative perspective (AO2)
+                    Gothic imagery, repetition, narrative perspective (Writer's Methods)
                   </li>
                   <li>
-                    &bull; Offers an alternative reading of the passage (AO3)
+                    &bull; Offers an alternative reading of the passage (Interpretation)
                   </li>
                   <li>
                     &bull; Integrates context naturally into the analysis rather
-                    than bolting it on (AO4)
+                    than bolting it on (Personal Response)
                   </li>
                   <li>
                     &bull; Maintains analytical focus throughout without

@@ -324,13 +324,13 @@ export default function RomeoAndJulietPage() {
             </ul>
             <div className="mt-4 rounded-lg bg-card p-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                Assessment Objectives
+                Marking Skills
               </p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                <li><strong>AO1</strong> — Read, respond, and use textual references (including quotations) to support interpretation. <em>(Up to 12 marks)</em></li>
-                <li><strong>AO2</strong> — Analyse the language, form, and structure used by a writer to create meanings and effects, using relevant subject terminology. <em>(Up to 12 marks)</em></li>
-                <li><strong>AO3</strong> — Show understanding of the relationships between texts and the contexts in which they were written. <em>(Up to 8 marks)</em></li>
-                <li><strong>AO4</strong> — Use a range of vocabulary and sentence structures for clarity, purpose, and effect, with accurate spelling and punctuation. <em>(4 marks)</em></li>
+                <li><strong>Reading and response</strong> — Read, respond, and use textual references (including quotations) to support interpretation. <em>(Up to 12 marks)</em></li>
+                <li><strong>Analysis of methods</strong> — Analyse the language, form, and structure used by a writer to create meanings and effects, using relevant subject terminology. <em>(Up to 12 marks)</em></li>
+                <li><strong>Context</strong> — Show understanding of the relationships between texts and the contexts in which they were written. <em>(Up to 8 marks)</em></li>
+                <li><strong>Accuracy</strong> — Use a range of vocabulary and sentence structures for clarity, purpose, and effect, with accurate spelling and punctuation. <em>(4 marks)</em></li>
               </ul>
             </div>
           </div>
@@ -465,7 +465,7 @@ export default function RomeoAndJulietPage() {
             Historical Context
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Context is assessed through AO3. The best responses weave context
+            Context is assessed through the context skill. The best responses weave context
             into analysis rather than treating it as a bolt-on paragraph.
           </p>
           <div className="mt-6 space-y-4">
@@ -586,7 +586,7 @@ export default function RomeoAndJulietPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Use Shakespeare&apos;s name — &quot;Shakespeare presents...&quot; or &quot;Shakespeare uses... to suggest...&quot; shows awareness of authorial intent (AO1/AO2).
+                  Use Shakespeare&apos;s name — &quot;Shakespeare presents...&quot; or &quot;Shakespeare uses... to suggest...&quot; shows awareness of authorial intent (reading and response / analysis of methods).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -594,7 +594,7 @@ export default function RomeoAndJulietPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <strong>Embed context into analysis</strong> (AO3): &quot;An Elizabethan audience would have understood Juliet&apos;s defiance as deeply transgressive, given that daughters were expected to obey their fathers without question.&quot;
+                  <strong>Embed context into analysis</strong> (context): &quot;An Elizabethan audience would have understood Juliet&apos;s defiance as deeply transgressive, given that daughters were expected to obey their fathers without question.&quot;
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export const metadata = { title: "Mark Scheme Guide — Teacher Resources" };
+export const metadata = { title: "Marking Guide — Teacher Resources" };
 
-/* ─── Example 2: AQA English Literature Mark Scheme Breakdown ───── */
+/* ─── Example 2: AQA English Literature Marking Guide Breakdown ───── */
 
 const BANDS = [
   {
@@ -81,10 +81,10 @@ export default function MarkSchemePage() {
           &larr; Back to Resources
         </Link>
         <h1 className="text-2xl font-bold text-primary">
-          AQA English Literature Mark Scheme Guide
+          AQA English Literature Marking Guide
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          A teacher-friendly breakdown of the AQA GCSE English Literature 8702 mark scheme
+          A teacher-friendly breakdown of the AQA GCSE English Literature 8702 marking guide
           with annotated student examples at each band level.
         </p>
       </div>

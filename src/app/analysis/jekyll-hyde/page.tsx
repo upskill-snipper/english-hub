@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Quote, Sparkles, Users, Library, GraduationCap } 
 export const metadata: Metadata = {
   title: 'Jekyll and Hyde Analysis — Quotes, Characters & Themes',
   description:
-    'In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide — written by GCSE examiners.',
+    'In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide — written by GCSE markers.',
   alternates: {
     canonical: 'https://theenglishhub.app/analysis/jekyll-hyde',
   },
@@ -52,7 +52,7 @@ const quoteAnalyses = [
     title: 'Dual nature of man quotes',
     slug: 'dual-nature-of-man-quotes',
     blurb:
-      'Six quotations on duality, ranked by how examiners reward them, with AO1 and AO3 links.',
+      'Six quotations on duality, ranked by how markers reward them, with textual reference and context links.',
   },
   {
     title: 'Fog symbolism analysis',
@@ -142,7 +142,7 @@ const characterTheme = [
     title: 'How to write a Grade 9 Jekyll and Hyde essay',
     slug: 'how-to-write-grade-9-jekyll-hyde-essay',
     blurb:
-      'Thesis, topic sentences, zoomed-in AO2, AO3 weaving and the conclusion examiners reward.',
+      'Thesis, topic sentences, zoomed-in language and structure analysis, context weaving and the conclusion markers reward.',
     group: 'Essay guide',
   },
 ]
@@ -186,7 +186,7 @@ export default function JekyllHydeHubPage() {
           <p className="mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Line-by-line quote analysis, character studies, theme essays and Victorian context for
             Robert Louis Stevenson&rsquo;s 1886 Gothic novella. Every page is written by GCSE
-            examiners and mapped to AQA, Edexcel and OCR mark schemes.
+            markers and mapped to AQA, Edexcel and OCR marking guides.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
@@ -207,7 +207,7 @@ export default function JekyllHydeHubPage() {
 
           <p className="mt-6 flex items-center gap-2 text-xs text-muted-foreground">
             <GraduationCap className="size-4 text-primary" aria-hidden="true" />
-            Written by <strong className="text-foreground">GCSE examiners</strong> at The English
+            Written by <strong className="text-foreground">GCSE markers</strong> at The English
             Hub
           </p>
         </div>
@@ -301,7 +301,7 @@ export default function JekyllHydeHubPage() {
             <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
               The English Hub&rsquo;s full revision hub includes chapter summaries, 25+ annotated
               quotations, theme trackers, model essays at Grade 5, 7 and 9, and AI essay feedback
-              trained on the AQA, Edexcel and OCR mark schemes.
+              trained on the AQA, Edexcel and OCR marking guides.
             </p>
             <Link
               href="/revision/texts/jekyll-and-hyde"

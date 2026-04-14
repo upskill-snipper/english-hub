@@ -2,54 +2,102 @@ import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useEffect } from 'react';
+import { useEffect, useState, useCallback } from 'react';
+import * as Haptics from 'expo-haptics';
+import { ThemeProvider, useTheme } from '../lib/theme';
 import { registerForPushNotificationsAsync } from '../lib/notifications';
+import { getItem, setItem } from '../lib/storage';
+import ErrorBoundary from '../components/ErrorBoundary';
+import WelcomeScreen from '../components/onboarding/WelcomeScreen';
+import ProfileSetup from '../components/onboarding/ProfileSetup';
 
-export default function RootLayout() {
+// ---------------------------------------------------------------------------
+// Onboarding step type
+// ---------------------------------------------------------------------------
+
+type OnboardingStep = 'loading' | 'welcome' | 'profile' | 'done';
+
+// ---------------------------------------------------------------------------
+// Inner layout (needs ThemeProvider above it)
+// ---------------------------------------------------------------------------
+
+function AppShell() {
+  const { theme, isDark } = useTheme();
+
+  const [step, setStep] = useState<OnboardingStep>('loading');
+
+  // Check onboarding status on mount
   useEffect(() => {
+    (async () => {
+      const complete = await getItem<boolean>('onboardingComplete');
+      setStep(complete ? 'done' : 'welcome');
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (step !== 'done') return;
     registerForPushNotificationsAsync().catch((err) => {
       console.warn('Push notification registration failed:', err);
     });
+  }, [step]);
+
+  const handleTabPress = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+  };
+
+  const handleProfileComplete = useCallback(() => {
+    // onboardingComplete is already set to true by ProfileSetup.handleSubmit
+    setStep('done');
   }, []);
 
+  // Show nothing while checking AsyncStorage
+  if (step === 'loading') return null;
+
+  // Onboarding: welcome carousel
+  if (step === 'welcome') {
+    return <WelcomeScreen onComplete={() => setStep('profile')} />;
+  }
+
+  // Onboarding: profile setup
+  if (step === 'profile') {
+    return <ProfileSetup onComplete={handleProfileComplete} />;
+  }
+
+  // Normal tab layout
   return (
-    <SafeAreaProvider>
-      <StatusBar style="auto" />
+    <>
+      <StatusBar style={isDark ? 'light' : 'dark'} />
       <Tabs
         screenOptions={{
           headerShown: false,
-          tabBarActiveTintColor: '#1e40af',
-          tabBarInactiveTintColor: '#6b7280',
+          tabBarActiveTintColor: theme.tabBarActive,
+          tabBarInactiveTintColor: theme.tabBarInactive,
           tabBarStyle: {
+            backgroundColor: theme.tabBar,
             borderTopWidth: 0.5,
-            borderTopColor: '#e5e7eb',
+            borderTopColor: theme.tabBarBorder,
           },
         }}
+        screenListeners={{
+          tabPress: handleTabPress,
+        }}
       >
+        {/* ---- Visible tabs ---- */}
         <Tabs.Screen
           name="index"
           options={{
-            title: 'Home',
+            title: 'Dashboard',
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="home-outline" size={size} color={color} />
             ),
           }}
         />
         <Tabs.Screen
-          name="learn"
+          name="study"
           options={{
-            title: 'Learn',
+            title: 'Study',
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="book-outline" size={size} color={color} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="games"
-          options={{
-            title: 'Games',
-            tabBarIcon: ({ color, size }) => (
-              <Ionicons name="game-controller-outline" size={size} color={color} />
             ),
           }}
         />
@@ -63,15 +111,41 @@ export default function RootLayout() {
           }}
         />
         <Tabs.Screen
-          name="account"
+          name="profile"
           options={{
-            title: 'Account',
+            title: 'Profile',
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="person-outline" size={size} color={color} />
             ),
           }}
         />
+
+        {/* ---- Hidden routes (kept so expo-router doesn't error on existing files) ---- */}
+        <Tabs.Screen name="learn" options={{ href: null }} />
+        <Tabs.Screen name="games" options={{ href: null }} />
+        <Tabs.Screen name="account" options={{ href: null }} />
+        <Tabs.Screen name="quiz" options={{ href: null }} />
+        <Tabs.Screen name="timer" options={{ href: null }} />
+        <Tabs.Screen name="progress" options={{ href: null }} />
+        <Tabs.Screen name="notes" options={{ href: null }} />
+        <Tabs.Screen name="achievements" options={{ href: null }} />
       </Tabs>
-    </SafeAreaProvider>
+    </>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Root layout
+// ---------------------------------------------------------------------------
+
+export default function RootLayout() {
+  return (
+    <ErrorBoundary>
+      <SafeAreaProvider>
+        <ThemeProvider>
+          <AppShell />
+        </ThemeProvider>
+      </SafeAreaProvider>
+    </ErrorBoundary>
   );
 }

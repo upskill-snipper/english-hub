@@ -285,7 +285,7 @@ export default function CreativeWritingPage() {
                   name="Pathetic Fallacy"
                   definition="Using weather or nature to reflect a character's mood or the story's tone."
                   example='"Rain hammered the glass as she read the letter. Outside, the sky had turned the colour of a bruise."'
-                  effect="Reinforces the emotional atmosphere without stating it directly. Examiners love to see this used subtly."
+                  effect="Reinforces the emotional atmosphere without stating it directly. Markers love to see this used subtly."
                 />
                 <TechniqueCard
                   name="Symbolism"
@@ -490,7 +490,7 @@ export default function CreativeWritingPage() {
                   name="Non-Linear Structure"
                   definition="Telling the story out of chronological order, using flashbacks, flash-forwards, or fragmented scenes."
                   example='"Open with a character at a funeral. Then jump back six months to show the relationship. Return to the funeral at the end with new emotional weight."'
-                  effect="Adds complexity and depth. Shows the examiner that you can handle sophisticated narrative structure."
+                  effect="Adds complexity and depth. Shows the marker that you can handle sophisticated narrative structure."
                 />
               </div>
 
@@ -580,7 +580,7 @@ export default function CreativeWritingPage() {
             {/* ─── OPENING TECHNIQUES ────────────────────────────── */}
             <Section id="openings" title="Opening Techniques">
               <p className="mb-6 text-muted-foreground leading-relaxed">
-                Your opening is your first impression on the examiner. These are 12 proven opening
+                Your opening is your first impression on the marker. These are 12 proven opening
                 strategies that immediately signal confident, skilled writing.
               </p>
 
@@ -638,7 +638,7 @@ export default function CreativeWritingPage() {
                     num: 9,
                     name: "Reflective / Philosophical",
                     example: '"There is a particular kind of quiet that only exists in empty houses -- the kind that has weight."',
-                    why: "Establishes an introspective, mature tone. Signals to the examiner that this will be a thoughtful piece.",
+                    why: "Establishes an introspective, mature tone. Signals to the marker that this will be a thoughtful piece.",
                   },
                   {
                     num: 10,
@@ -682,7 +682,7 @@ export default function CreativeWritingPage() {
             {/* ─── ENDING TECHNIQUES ─────────────────────────────── */}
             <Section id="endings" title="Ending Techniques">
               <p className="mb-6 text-muted-foreground leading-relaxed">
-                Your ending is the last thing the examiner reads. A strong ending elevates the entire
+                Your ending is the last thing the marker reads. A strong ending elevates the entire
                 piece. Here are 10 ending strategies that leave a lasting impression.
               </p>
 
@@ -692,7 +692,7 @@ export default function CreativeWritingPage() {
                     num: 1,
                     name: "Circular Ending",
                     example: 'If the story opened with "The clock struck nine," end with "Somewhere, distantly, a clock struck nine." The repetition gives the piece a satisfying sense of completeness while suggesting that time -- or the cycle -- continues.',
-                    why: "Creates structural cohesion and shows the examiner you planned the piece deliberately.",
+                    why: "Creates structural cohesion and shows the marker you planned the piece deliberately.",
                   },
                   {
                     num: 2,
@@ -774,7 +774,7 @@ export default function CreativeWritingPage() {
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Structure is not just about &ldquo;beginning, middle, end.&rdquo; It is about how you
                 organise ideas, shift focus, and control the reader&apos;s experience across the whole
-                piece. Examiners specifically reward deliberate structural choices.
+                piece. Markers specifically reward deliberate structural choices.
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2">
@@ -794,7 +794,7 @@ export default function CreativeWritingPage() {
                   name="Shift in Focus"
                   definition="Moving the reader's attention from one element to another -- e.g., from setting to character, from external to internal, from present to past."
                   example="Begin by describing a busy market scene (external, sensory). Then narrow focus to a single person standing still in the crowd (internal, reflective). The contrast is powerful."
-                  effect="Shows the examiner that you are controlling the reader's gaze deliberately, like a film director."
+                  effect="Shows the marker that you are controlling the reader's gaze deliberately, like a film director."
                 />
                 <TechniqueCard
                   name="Time Manipulation"
@@ -806,7 +806,7 @@ export default function CreativeWritingPage() {
                   name="Non-Linear / Fractured Timeline"
                   definition="Telling the story out of chronological order, using flashbacks, flash-forwards, or fragmented scenes."
                   example="Open with a character at a funeral. Then jump back six months to show the relationship. Return to the funeral at the end with new emotional weight."
-                  effect="Adds complexity and depth. Shows the examiner that you can handle sophisticated narrative structure."
+                  effect="Adds complexity and depth. Shows the marker that you can handle sophisticated narrative structure."
                 />
                 <TechniqueCard
                   name="Contrast / Juxtaposition"
@@ -895,7 +895,7 @@ export default function CreativeWritingPage() {
                 <p className="mt-1 text-sm text-muted-foreground">
                   &ldquo;Trudged&rdquo; is better than &ldquo;walked slowly&rdquo; not because it is a harder word,
                   but because it does more work in fewer words. It tells us the character is tired, reluctant,
-                  or defeated. One word replaces three and adds emotional information. That is what examiners
+                  or defeated. One word replaces three and adds emotional information. That is what markers
                   mean by &ldquo;ambitious vocabulary.&rdquo;
                 </p>
               </div>
@@ -985,7 +985,7 @@ export default function CreativeWritingPage() {
               </div>
 
               <div className="mt-6 rounded-xl border-l-4 border-success bg-success/5 p-5">
-                <p className="font-bold text-foreground">Why This Response Works (Examiner Perspective)</p>
+                <p className="font-bold text-foreground">Why This Response Works (Marker Perspective)</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>Opens with a single-word sentence that immediately establishes atmosphere</li>
                   <li>Engages all five senses: sight (wallpaper, cracks), sound (pipe ticking), touch (cold glass), smell/taste (air of endings), implied sound (silence)</li>
@@ -1095,7 +1095,7 @@ export default function CreativeWritingPage() {
               </div>
 
               <div className="mt-6 rounded-xl border-l-4 border-success bg-success/5 p-5">
-                <p className="font-bold text-foreground">Why This Response Works (Examiner Perspective)</p>
+                <p className="font-bold text-foreground">Why This Response Works (Marker Perspective)</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>Opens in medias res with immediate intrigue (the pre-opened letter)</li>
                   <li>Uses flashback structure: present &rarr; three days ago &rarr; present</li>
@@ -1251,14 +1251,14 @@ export default function CreativeWritingPage() {
               <div className="space-y-4">
                 <MistakeCard
                   mistake="1. Telling Instead of Showing"
-                  why="Naming emotions directly ('She was sad') is the single most common weakness in creative writing. It tells the examiner what to feel instead of making them feel it."
+                  why="Naming emotions directly ('She was sad') is the single most common weakness in creative writing. It tells the marker what to feel instead of making them feel it."
                   fix="Replace every named emotion with a physical action, sensory detail, or piece of body language that demonstrates the feeling."
                   exampleBad="She was really upset and started crying."
                   exampleGood="Her chin trembled. She turned to the window, pressing her forehead against the cold glass, and let the tears come without wiping them away."
                 />
                 <MistakeCard
                   mistake="2. Covering Too Much Ground"
-                  why='Students try to tell a whole life story or describe an entire day. The result is thin, rushed writing with no depth. Examiners call this "narrative sprawl."'
+                  why='Students try to tell a whole life story or describe an entire day. The result is thin, rushed writing with no depth. Markers call this "narrative sprawl."'
                   fix="Focus on a single moment, scene, or location. An entire piece could cover just the act of opening a door and stepping inside. Depth beats breadth every time."
                   exampleBad="I woke up, had breakfast, went to school, and then at lunch something happened..."
                   exampleGood="The corridor was empty. My footsteps echoed off the tiles -- too loud, too fast. I stopped outside Room 14 and listened."
@@ -1272,14 +1272,14 @@ export default function CreativeWritingPage() {
                 />
                 <MistakeCard
                   mistake="4. Cliched Figurative Language"
-                  why='"Her eyes were as blue as the ocean" and "time stood still" are so overused that they have lost all impact. Examiners notice cliches immediately.'
+                  why='"Her eyes were as blue as the ocean" and "time stood still" are so overused that they have lost all impact. Markers notice cliches immediately.'
                   fix="If you have heard the comparison before, do not use it. Push past the first idea that comes to mind. The second or third idea is usually more original."
                   exampleBad="Her heart was pounding like a drum and butterflies filled her stomach."
                   exampleGood="Something tight and electric coiled in her chest. She swallowed, but the dryness stayed."
                 />
                 <MistakeCard
                   mistake="5. Starting with Backstory"
-                  why='"My name is Emma and I am 15 years old. I live in a small town..." This is a guaranteed way to bore the examiner in the first line.'
+                  why='"My name is Emma and I am 15 years old. I live in a small town..." This is a guaranteed way to bore the marker in the first line.'
                   fix="Start with action, sensory detail, dialogue, or atmosphere. The reader does not need context first -- they need a reason to keep reading."
                   exampleBad="My name is Sarah. I was born in London but moved to the countryside when I was young. This story is about the time I..."
                   exampleGood={'"Don\'t look back." Her voice cut through the darkness, sharp and certain. I didn\'t look back.'}
@@ -1314,7 +1314,7 @@ export default function CreativeWritingPage() {
                 />
                 <MistakeCard
                   mistake="10. No Structural Control"
-                  why='Writing without a plan leads to paragraphs of similar length, no shifts in focus, and a flat reading experience. The examiner sees no evidence of deliberate structure.'
+                  why='Writing without a plan leads to paragraphs of similar length, no shifts in focus, and a flat reading experience. The marker sees no evidence of deliberate structure.'
                   fix="Vary paragraph length deliberately. Use a one-sentence paragraph for impact. Shift between external description and internal reflection. Open and close with intention."
                   exampleBad="[Five paragraphs of equal length, all describing the same thing in the same way, with no change in pace or focus.]"
                   exampleGood="[Opening paragraph (4 lines). Short paragraph (1 sentence). Detailed paragraph (6 lines). Dialogue paragraph (2 lines). Reflective closing (3 lines).]"

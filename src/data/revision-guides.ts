@@ -246,14 +246,14 @@ export const revisionGuides: RevisionGuide[] = [
           "Develop a bank of language technique terms with examples",
           "Read widely: fiction, non-fiction, journalism, memoir, speeches",
           "Annotate texts as you read: mark techniques, tone shifts, structural points",
-          "Write timed practice answers and mark against the mark scheme",
+          "Write timed practice answers and mark against the marking guide",
           "Peer assess or ask a teacher to give feedback on Q4 answers"
         ],
         practiceQuestions: [
           {
             question: "Take a complete past paper and do Q1-Q4 under timed conditions.",
             marks: 64,
-            guidanceNotes: "This is your best preparation. Complete the full paper in one sitting. Mark strictly against the official mark scheme. Identify patterns in your strengths and weaknesses."
+            guidanceNotes: "This is your best preparation. Complete the full paper in one sitting. Mark strictly against the official marking guide. Identify patterns in your strengths and weaknesses."
           },
           {
             question: "Compare your analysis approach on two different texts. Which techniques are most common?",
@@ -1320,7 +1320,7 @@ export const LanguageRevisionGuides2 = [
           "Analyze language and techniques across different genres",
           "Write regularly—develop your natural style",
           "Seek feedback on your writing from teachers or peers",
-          "Revise using mark schemes and sample answers",
+          "Revise using marking guides and sample answers",
           "Practice essay writing under timed conditions"
         ],
         practiceQuestions: [
@@ -1989,7 +1989,7 @@ export const LanguageRevisionGuides3 = [
         id: "igcse-p3-oral",
         title: "Speaking Component: Oral Exam (30 marks)",
         keyPoints: [
-          "Conversation with examiner about a chosen topic (5-7 minutes)",
+          "Conversation with marker about a chosen topic (5-7 minutes)",
           "Prepare speaking notes on a topic from the course",
           "Show understanding of texts studied",
           "Respond spontaneously to questions",
@@ -2001,7 +2001,7 @@ export const LanguageRevisionGuides3 = [
           "Prepare notes (not a script) covering key points",
           "Practice speaking aloud beforehand",
           "Speak clearly at a moderate pace—not too fast",
-          "Listen to examiner's questions carefully",
+          "Listen to marker's questions carefully",
           "Respond naturally (not from memory)",
           "Develop your ideas: explain, give examples, expand",
           "If you don't understand a question, politely ask for clarification"
@@ -2017,7 +2017,7 @@ export const LanguageRevisionGuides3 = [
           "Reading directly from a script",
           "Speaking too quickly or unclearly",
           "Not developing ideas—giving minimal responses",
-          "Not engaging with the examiner's questions",
+          "Not engaging with the marker's questions",
           "Insufficient preparation leading to hesitation and silence"
         ]
       },
@@ -2070,7 +2070,7 @@ export const LanguageRevisionGuides3 = [
           "Analyse language in everything you read—develop habit of close analysis",
           "Write regularly—practice essay writing and other forms",
           "Seek feedback from teachers and peers",
-          "Use past papers and mark schemes to understand examiners' expectations",
+          "Use past papers and marking guides to understand markers' expectations",
           "Develop your analytical voice—don't memorize essays",
           "Practice all components: reading, writing, speaking"
         ],

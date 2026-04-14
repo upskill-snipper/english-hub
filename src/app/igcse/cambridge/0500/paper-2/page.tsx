@@ -22,9 +22,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Paper 2 Directed Writing & Composition — Cambridge 0500',
+  title: 'Paper 2 Directed Writing & Composition — IGCSE Language A',
   description:
-    'Cambridge IGCSE 0500 Paper 2 overview. Section A directed writing, Section B descriptive or narrative composition. Marks, timings and technique.',
+    'IGCSE Language A Paper 2 overview. Section A directed writing, Section B descriptive or narrative composition. Marks, timings and technique. Aligns with Cambridge syllabus 0500.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2',
   },
@@ -76,7 +76,7 @@ export default async function Paper2HubPage() {
           className="gap-1"
         >
           <ChevronLeft className="size-4" />
-          0500 hub
+          IGCSE Language A hub
         </Button>
       </div>
 
@@ -86,7 +86,7 @@ export default async function Paper2HubPage() {
 
         <div className="relative">
           <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
-            Cambridge IGCSE 0500
+            IGCSE Language A
           </Badge>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Paper 2: Directed Writing and Composition
@@ -259,6 +259,11 @@ export default async function Paper2HubPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Footer note ─────────────────────────────────────────────── */}
+      <p className="text-center text-body-xs text-muted-foreground/60">
+        Aligns with Cambridge syllabus 0500
+      </p>
     </div>
   )
 }

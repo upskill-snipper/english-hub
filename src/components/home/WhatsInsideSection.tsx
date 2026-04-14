@@ -41,7 +41,7 @@ const items: FeatureItem[] = [
     title: 'Structured Courses',
     desc: 'From KS3 foundations to GCSE and IGCSE mastery — 470+ expert-written courses covering Reading, Writing, Grammar, Language, and Literature.',
     preview:
-      'Sample topics: Inference & Deduction, Narrative Writing, Poetry Analysis, Transactional Writing, Shakespeare...',
+      'Sample topics: Inference & Deduction, Narrative Writing, Poetry Analysis, Writing for Real Purposes, Shakespeare...',
     tags: ['both'],
   },
   {
@@ -92,7 +92,7 @@ const items: FeatureItem[] = [
     icon: Layers,
     color: 'text-purple-400 bg-purple-500/10',
     title: '2,000+ Flashcards',
-    desc: 'Revise key quotes, terminology, and techniques with spaced-repetition flashcards.',
+    desc: 'Revise key quotes, terminology, and techniques with smart-review flashcards.',
     preview: 'Topics: Literary devices, key quotations, grammar rules, essay vocabulary, exam command words...',
     tags: ['both'],
   },
@@ -100,7 +100,7 @@ const items: FeatureItem[] = [
     icon: GraduationCap,
     color: 'text-amber-400 bg-amber-500/10',
     title: 'Comprehensive Exam Guides',
-    desc: 'Detailed breakdowns for AQA, Edexcel, OCR & WJEC — paper structure, mark schemes, and examiner tips.',
+    desc: 'Detailed breakdowns for AQA, Edexcel, OCR & WJEC — paper structure, mark schemes, and expert tips.',
     preview: 'Covers: Paper timings, assessment objectives, grade boundaries, common pitfalls to avoid...',
     tags: ['gcse'],
   },
@@ -108,8 +108,8 @@ const items: FeatureItem[] = [
     icon: GraduationCap,
     color: 'text-emerald-400 bg-emerald-500/10',
     title: 'IGCSE Exam Guides',
-    desc: 'Paper structure, examiner tips and band descriptors for Edexcel IGCSE 4ET1 and Cambridge 0500 / 0990.',
-    preview: 'Covers: Paper timings, assessment objectives, command words, unseen passages, transactional writing...',
+    desc: 'Paper structure, expert tips and band descriptors for Edexcel IGCSE and Cambridge First Language English.',
+    preview: 'Covers: Paper timings, assessment objectives, command words, unseen passages, writing for real purposes...',
     tags: ['igcse'],
   },
   {
@@ -143,7 +143,7 @@ const items: FeatureItem[] = [
     color: 'text-cyan-400 bg-cyan-500/10',
     title: 'AI Essay Feedback',
     desc:
-      'Submit your essay and get instant, detailed feedback from our AI examiner. Grade band estimates, strengths, improvements, and paragraph-by-paragraph annotation.',
+      'Submit your essay and get instant, detailed feedback from our AI marker. Grade band estimates, strengths, improvements, and paragraph-by-paragraph annotation.',
     preview: 'Powered by AI trained on GCSE mark schemes. Supports AQA, Edexcel, OCR & WJEC papers...',
     tags: ['both'],
   },
@@ -152,7 +152,7 @@ const items: FeatureItem[] = [
     color: 'text-pink-400 bg-pink-500/10',
     title: 'Board-Specific Content',
     desc:
-      'Every course, question, and resource is mapped to your exam board specification. No wasted time on irrelevant content.',
+      'Every course, question, and resource is matched to your exam board. No wasted time on irrelevant content.',
     preview: 'Supported boards: AQA, Edexcel, Edexcel IGCSE, OCR, WJEC/Eduqas, Cambridge IGCSE...',
     tags: ['both'],
   },
@@ -168,8 +168,8 @@ const items: FeatureItem[] = [
     icon: MessageSquare,
     color: 'text-teal-400 bg-teal-500/10',
     title: 'Model Answers at Every Grade',
-    desc: 'See what a Grade 4-5, 6-7, and 8-9 answer looks like for every question. Learn what examiners reward.',
-    preview: 'Annotated model answers with examiner commentary showing exactly where marks are gained...',
+    desc: 'See what a Grade 4-5, 6-7, and 8-9 answer looks like for every question. Learn what gets top marks.',
+    preview: 'Annotated model answers with expert commentary showing exactly where marks are gained...',
     tags: ['both'],
   },
   {
@@ -177,7 +177,7 @@ const items: FeatureItem[] = [
     color: 'text-violet-400 bg-violet-500/10',
     title: 'Revision Toolkit',
     desc: 'Flashcards, terminology glossaries, quote banks, and exam command word guides — all in one revision hub.',
-    preview: 'Includes: Spaced repetition, bookmarking, search, and filter by topic or exam board...',
+    preview: 'Includes: Smart review, bookmarking, search, and filter by topic or exam board...',
     tags: ['both'],
   },
 ]
@@ -245,7 +245,7 @@ export default function WhatsInsideSection({ board }: { board?: ExamBoard | null
 
   const heading = config ? `Your ${config.shortName} ${config.type.toUpperCase()} English toolkit` : "What\u2019s Inside"
   const sub = config
-    ? `Every tool below is mapped to the ${config.fullName} specification — no wasted time on irrelevant content.`
+    ? `Every tool below is mapped to ${config.fullName} — no wasted time on irrelevant content.`
     : 'A comprehensive look at the tools and content waiting for you.'
 
   return (

@@ -34,7 +34,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <p><strong>Crucially, AQA does NOT provide an extract.</strong> Unlike Edexcel, where students are given a printed passage as a starting point, AQA Modern Texts questions require you to write entirely from memory. You must recall quotations, plot details, and contextual knowledge without any text in front of you. This makes memorisation of key quotations absolutely essential.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Because AQA provides no extract, examiners reward students who can recall and deploy short, precise quotations from memory. Aim to memorise 20–30 short quotations (3–8 words each). Longer quotations are harder to remember accurately and often waste time.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Because AQA provides no extract, markers reward students who can recall and deploy short, precise quotations from memory. Aim to memorise 20–30 short quotations (3–8 words each). Longer quotations are harder to remember accurately and often waste time.</div>
 
 <h3>J.B. Priestley — Life &amp; Political Beliefs</h3>
 
@@ -59,7 +59,7 @@ export const inspectorCallsCourse: CourseData = {
   <li><strong>Capitalism was unregulated:</strong> Factory owners like Birling could sack workers at will, pay poverty wages, and face no consequences. There was no NHS, no unemployment benefit, and no minimum wage.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing about context as a separate, disconnected paragraph. AQA examiners want you to embed context into your analysis. Instead of "In 1912, women had no vote," write: "Priestley presents Mrs Birling's dismissal of Eva Smith as emblematic of a rigidly patriarchal Edwardian society in which working-class women were invisible to those in power."</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing about context as a separate, disconnected paragraph. AQA markers want you to embed context into your analysis. Instead of "In 1912, women had no vote," write: "Priestley presents Mrs Birling's dismissal of Eva Smith as emblematic of a rigidly patriarchal Edwardian society in which working-class women were invisible to those in power."</div>
 
 <h3>The 1945 Audience — Why It Matters</h3>
 
@@ -79,7 +79,7 @@ export const inspectorCallsCourse: CourseData = {
   <li><strong>Working class:</strong> Eva Smith / Daisy Renton. She has no surname stability, no social protection, and no voice. She is spoken about but never appears on stage — Priestley's way of showing how the upper classes erase working-class identity.</div>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Eva Smith never appears on stage. This is a deliberate structural choice by Priestley. In your essay, you can argue that her absence mirrors the way the working class are rendered invisible by those in power — they are talked about, acted upon, but never given a voice of their own.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Eva Smith never appears on stage. This is a deliberate structural choice by Priestley. In your essay, you can argue that her absence mirrors the way the working class are rendered invisible by those in power — they are talked about, acted upon, but never given a voice of their own.</div>
 
 <h3>Key Contextual Terms to Remember</h3>
 
@@ -227,7 +227,7 @@ content: `
 
 <p>Priestley uses dramatic irony to turn the Birlings' 1912 confidence into a condemnation of their worldview. Every confident prediction is proven catastrophically wrong. This is not accident — it is deliberate dramatic strategy. If Birling is wrong about everything factual, why should the audience trust his moral philosophy?</p>
 
-<div class="examiner-tip"><strong>Examiner Tip for AQA:</strong> Never simply list the historical facts. Instead, embed them into your analysis: "Priestley has Birling confidently declare the Titanic 'unsinkable' — a statement the 1945 audience knew to be false. This dramatic irony discredits not just Birling the man but Birling as a representative of capitalist ideology. If capitalism produced such catastrophic errors in judgment about basic facts, how can we trust it with society's welfare?"</div>
+<div class="examiner-tip"><strong>Top Tip for AQA:</strong> Never simply list the historical facts. Instead, embed them into your analysis: "Priestley has Birling confidently declare the Titanic 'unsinkable' — a statement the 1945 audience knew to be false. This dramatic irony discredits not just Birling the man but Birling as a representative of capitalist ideology. If capitalism produced such catastrophic errors in judgment about basic facts, how can we trust it with society's welfare?"</div>
 
 <h3>Arthur Birling's Speeches & Key Quotations Bank</h3>
 
@@ -424,7 +424,7 @@ content: `
 
 <p>However, Priestley complicates Gerald's apparent kindness. Although Gerald provided Eva with security and affection, the relationship was fundamentally <strong>unequal</strong>. Gerald had all the power — money, social status, a home — while Eva was dependent on his generosity. When Gerald ended the affair in September 1911 (to resume his relationship with Sheila), Eva was left with nothing. Gerald gave her money to see her through, but the power imbalance meant that Eva was never Gerald's equal — she was, effectively, a kept woman.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Gerald's involvement is excellent for essay questions about gender or power. You can argue that even Gerald's "kindness" is a form of exploitation because the relationship is built on inequality. The phrase "intensely grateful" is telling — it positions Eva as a recipient of charity rather than an equal partner, reinforcing the class hierarchy that Priestley critiques.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Gerald's involvement is excellent for essay questions about gender or power. You can argue that even Gerald's "kindness" is a form of exploitation because the relationship is built on inequality. The phrase "intensely grateful" is telling — it positions Eva as a recipient of charity rather than an equal partner, reinforcing the class hierarchy that Priestley critiques.</div>
 
 <p>After confessing, Gerald asks to leave to "walk about — to be alone for a while." Sheila observes that he appears genuinely upset. Priestley presents Gerald as a character somewhere between the older and younger generations — capable of genuine feeling but ultimately unwilling to fundamentally change his worldview.</p>
 
@@ -462,7 +462,7 @@ content: `
 
 <p>Priestley also uses Act 2 to develop the <strong>generational divide</strong>. Sheila and (by implication) Eric represent the younger generation who are capable of change and moral growth. Mrs Birling and (by extension) Arthur represent the older generation who are entrenched in their privilege and incapable of self-reflection. Gerald sits uncomfortably between the two.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For any essay on AQA Paper 2, remember you are writing from memory with no extract. Practise recalling the key moments of each act in sequence. A useful revision technique is to summarise each act in five bullet points, then practise writing a timed essay using only those bullet points and your memorised quotations.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> For any essay on AQA Paper 2, remember you are writing from memory with no extract. Practise recalling the key moments of each act in sequence. A useful revision technique is to summarise each act in five bullet points, then practise writing a timed essay using only those bullet points and your memorised quotations.</div>
 
 <h3>Gender in Act 2</h3>
 
@@ -572,7 +572,7 @@ content: `
 
 <p>Eric also challenges his parents' hypocrisy directly. He tells Birling: <strong>"You're not the kind of father a chap could go to when he's in trouble."</strong> This is a devastating indictment of the Birling family's values — they present themselves as respectable and close-knit, but in reality, there is no genuine emotional connection. Eric's alcoholism and reckless behaviour are, Priestley implies, symptoms of a family built on materialism rather than love.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Eric's line about his father is crucial for essays on the theme of family or generations. It shows that the Birlings' apparent respectability is hollow — their wealth has not created a loving, supportive family but an environment in which a young man feels unable to ask for help.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Eric's line about his father is crucial for essays on the theme of family or generations. It shows that the Birlings' apparent respectability is hollow — their wealth has not created a loving, supportive family but an environment in which a young man feels unable to ask for help.</div>
 
 <h3>The Inspector's Final Speech</h3>
 
@@ -602,7 +602,7 @@ content: `
 
 <p><strong>The younger generation (Sheila and Eric)</strong> refuse to celebrate. Sheila insists: <strong>"It frightens me the way you talk... you don't seem to have learnt anything."</strong> Eric agrees: <strong>"I'm ashamed of you."</strong> For Sheila and Eric, the question of whether the Inspector was "real" is irrelevant. What matters is what they <em>did</em> — the way they treated a vulnerable person. The moral truth of their guilt does not depend on the Inspector's identity.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Sheila's line "you don't seem to have learnt anything" is one of the most important in the play for AQA essays. It directly addresses Priestley's central concern: will society learn from its mistakes, or will it repeat them? Use this quotation in essays about the younger generation, about social responsibility, or about Priestley's message.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Sheila's line "you don't seem to have learnt anything" is one of the most important in the play for AQA essays. It directly addresses Priestley's central concern: will society learn from its mistakes, or will it repeat them? Use this quotation in essays about the younger generation, about social responsibility, or about Priestley's message.</div>
 
 <h3>The Final Phone Call</h3>
 
@@ -616,7 +616,7 @@ content: `
 
 <h3>The Ending — Critical Interpretations</h3>
 
-<p>The ending is one of the most debated in GCSE literature, and examiners reward candidates who can explore multiple interpretations:</p>
+<p>The ending is one of the most debated in GCSE literature, and markers reward candidates who can explore multiple interpretations:</p>
 
 <ul>
   <li><strong>Supernatural reading:</strong> The Inspector is a ghost, an angel, or a supernatural being who knows the future. The phone call confirms his prophecy.</li>
@@ -624,7 +624,7 @@ content: `
   <li><strong>Time-play reading:</strong> Priestley was fascinated by J.W. Dunne's theories about time. The Inspector may exist outside linear time, and the phone call may represent a time loop — giving the Birlings another chance to respond differently.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending too much of your essay debating whether the Inspector is "real." AQA examiners want you to focus on Priestley's purpose and methods. The key question is not "is the Inspector real?" but "what does Priestley achieve by making the Inspector's identity ambiguous?"</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending too much of your essay debating whether the Inspector is "real." AQA markers want you to focus on Priestley's purpose and methods. The key question is not "is the Inspector real?" but "what does Priestley achieve by making the Inspector's identity ambiguous?"</div>
 
 <h3>Key Quotations from Act 3</h3>
 
@@ -734,7 +734,7 @@ content: `
 
 <p>His social insecurity also makes him morally cowardly. When the Inspector arrives, Birling's first instinct is to protect his reputation, not to help Eva. He mentions his connections — he was Lord Mayor, he plays golf with the Chief Constable, he is expecting a knighthood. This name-dropping is Priestley's way of showing how the ruling class uses social networks to shield themselves from accountability.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> In an AQA essay on Birling, always connect his character to Priestley's wider purpose. Birling is not simply an unpleasant individual — he represents a class and a philosophy. When you write about his refusal to accept responsibility, frame it as Priestley's critique of capitalist ideology, not just of one man's selfishness.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> In an AQA essay on Birling, always connect his character to Priestley's wider purpose. Birling is not simply an unpleasant individual — he represents a class and a philosophy. When you write about his refusal to accept responsibility, frame it as Priestley's critique of capitalist ideology, not just of one man's selfishness.</div>
 
 <div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
   <strong>How to Develop an Argument About Birling (Grade 9 Response):</strong>
@@ -795,7 +795,7 @@ content: `
 
 <p>For all of these, your essay structure should follow the same principle: <strong>Point → Quotation → Analysis of language/form/structure → Link to Priestley's purpose/context.</strong> Because AQA gives no extract, you must drive the essay entirely from memorised material.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> A top-band AQA response on Birling will do more than describe his behaviour. It will argue that Priestley <em>uses</em> Birling to represent an ideology, and then analyse the specific methods (dramatic irony, stage directions, juxtaposition with the Inspector) through which that ideology is undermined. Always write about Priestley as a conscious craftsman making deliberate choices.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> A top-band AQA response on Birling will do more than describe his behaviour. It will argue that Priestley <em>uses</em> Birling to represent an ideology, and then analyse the specific methods (dramatic irony, stage directions, juxtaposition with the Inspector) through which that ideology is undermined. Always write about Priestley as a conscious craftsman making deliberate choices.</div>
 
 <h3>Key Quotation Bank — Arthur Birling</h3>
 <ol>
@@ -898,7 +898,7 @@ content: `
 
 <p>Sheila also demonstrates self-awareness. She recognises that she acted out of jealousy — <strong>"I was in a furious temper"</strong> — and understands that her family's social power made her complaint disproportionately destructive. A complaint from a Birling could end a working-class woman's career; this is the kind of casual cruelty that class privilege enables.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Sheila's crime is often seen as "minor" compared to Eric's or Mrs Birling's. In your essay, challenge this assumption. Argue that Priestley presents Sheila's act as representative of how class privilege operates in everyday life — the powerful can destroy the powerless through casual, thoughtless actions, and this is precisely the systemic injustice Priestley wants to expose.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Sheila's crime is often seen as "minor" compared to Eric's or Mrs Birling's. In your essay, challenge this assumption. Argue that Priestley presents Sheila's act as representative of how class privilege operates in everyday life — the powerful can destroy the powerless through casual, thoughtless actions, and this is precisely the systemic injustice Priestley wants to expose.</div>
 
 <div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
   <strong>How to Develop an Essay on Sheila's Act (Grade 9 Response):</strong>
@@ -944,7 +944,7 @@ content: `
 
 <p>The generational divide is one of the most important themes for AQA essays. Priestley structures the play so that the audience is forced to choose between two responses: the Birling parents' denial or Sheila and Eric's acceptance. The 1945 audience, who had just voted for Attlee's reforming Labour government, would have sided firmly with the young.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For AQA, always connect Sheila to Priestley's purpose. The question is never just "what is Sheila like?" but "how does Priestley use Sheila to convey his message?" Frame your analysis around Priestley's choices: why does he give Sheila the most dramatic character arc? Why does she become a chorus figure? What does her transformation represent for 1945 audiences?</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> For AQA, always connect Sheila to Priestley's purpose. The question is never just "what is Sheila like?" but "how does Priestley use Sheila to convey his message?" Frame your analysis around Priestley's choices: why does he give Sheila the most dramatic character arc? Why does she become a chorus figure? What does her transformation represent for 1945 audiences?</div>
 
 <h3>Key Quotation Bank — Sheila Birling</h3>
 <ol>
@@ -1052,7 +1052,7 @@ content: `
 
 <p>There is also a real town called <strong>Goole</strong> in the East Riding of Yorkshire — a port town associated with working-class industry. This grounds the Inspector in the working-class world that Eva Smith inhabited, making him a representative of the people the Birlings exploit.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Discussing the significance of the Inspector's name is a quick and effective way to demonstrate AO2 analysis in your essay. It shows you understand that Priestley makes deliberate choices — even the character's name carries meaning.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Discussing the significance of the Inspector's name is a quick and effective way to demonstrate AO2 analysis in your essay. It shows you understand that Priestley makes deliberate choices — even the character's name carries meaning.</div>
 
 <div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
   <strong>How to Analyse Symbolic Names (Grade 9 Response):</strong>
@@ -1092,7 +1092,7 @@ content: `
 
 <p>The Inspector's language is deliberately different from the Birlings'. Where they speak in euphemisms and social niceties, the Inspector speaks bluntly and directly. He describes Eva's death in graphic terms — she "died in misery and agony — hating life" — forcing the characters (and the audience) to confront the reality of working-class suffering rather than hiding behind comfortable abstractions.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending too much essay time debating whether the Inspector is "real." AQA examiners care about Priestley's purpose. Focus on what the Inspector represents (socialist conscience, collective responsibility) and how Priestley uses him (mouthpiece, structural device, moral authority) rather than on solving the mystery of his identity.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending too much essay time debating whether the Inspector is "real." AQA markers care about Priestley's purpose. Focus on what the Inspector represents (socialist conscience, collective responsibility) and how Priestley uses him (mouthpiece, structural device, moral authority) rather than on solving the mystery of his identity.</div>
 
 <h3>The Final Speech</h3>
 
@@ -1119,7 +1119,7 @@ content: `
 
 <p>The play literally could not exist without the Inspector. He is the catalyst for every confession, every argument, and every revelation. In structural terms, he is not just a character but the <strong>engine of the drama</strong>.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about the Inspector for AQA, use the phrase "Priestley uses the Inspector to..." This frames your analysis around the playwright's craft (AO2) and purpose, rather than discussing the Inspector as if he were a real person. Example: "Priestley uses the Inspector as a structural device to systematically dismantle the Birlings' complacency, questioning each character in turn to build a cumulative case for collective responsibility."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When writing about the Inspector for AQA, use the phrase "Priestley uses the Inspector to..." This frames your analysis around the playwright's craft (AO2) and purpose, rather than discussing the Inspector as if he were a real person. Example: "Priestley uses the Inspector as a structural device to systematically dismantle the Birlings' complacency, questioning each character in turn to build a cumulative case for collective responsibility."</div>
 
 <h3>Interpretations of the Inspector</h3>
 
@@ -1226,7 +1226,7 @@ content: `
 
 <p>After the Inspector leaves, Eric aligns firmly with Sheila. He tells his parents: <strong>"I'm ashamed of you."</strong> This reversal — the child judging the parents — represents Priestley's argument that the moral authority of the older generation has been forfeited. The young must now lead.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Eric is often overlooked in favour of Sheila for essays on the younger generation, but he is equally important. His crimes are more serious, which makes his remorse more significant — it shows that even those who have done terrible things can accept responsibility. This is a powerful argument for Priestley's belief in the possibility of redemption through accountability.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Eric is often overlooked in favour of Sheila for essays on the younger generation, but he is equally important. His crimes are more serious, which makes his remorse more significant — it shows that even those who have done terrible things can accept responsibility. This is a powerful argument for Priestley's belief in the possibility of redemption through accountability.</div>
 
 <h3>Mrs Birling (Sybil)</h3>
 
@@ -1252,7 +1252,7 @@ content: `
 
 <p>The phrase <strong>"intensely grateful"</strong> is particularly revealing. It positions Eva as a passive recipient of charity, not an equal partner. Gerald's description unconsciously reveals the power imbalance that defines their relationship — and, by extension, the power imbalance between the upper and working classes that Priestley critiques.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Gerald is the ideal character for essays about moral ambiguity. Unlike Birling (clearly wrong) or Sheila (clearly repentant), Gerald occupies a grey area. Was he genuinely kind, or was he exploiting Eva's vulnerability? AQA examiners reward candidates who can explore multiple perspectives on a character rather than offering a single, simplistic judgement.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Gerald is the ideal character for essays about moral ambiguity. Unlike Birling (clearly wrong) or Sheila (clearly repentant), Gerald occupies a grey area. Was he genuinely kind, or was he exploiting Eva's vulnerability? AQA markers reward candidates who can explore multiple perspectives on a character rather than offering a single, simplistic judgement.</div>
 
 <p>After the Inspector leaves, Gerald becomes the <strong>instigator of the investigation into the Inspector's identity</strong>. He suggests that the Inspector showed different photographs to different people, calls the infirmary to check for deaths, and helps Birling construct the argument that the whole visit was a hoax. Gerald aligns with the older generation — he is relieved by the possibility that there was no scandal and tries to offer Sheila the ring again.</p>
 
@@ -1391,7 +1391,7 @@ content: `
 
 <p>Priestley reinforces this theme through the <strong>final phone call</strong>. When the Birlings try to escape responsibility by proving the Inspector was not real, the phone call forces them (and the audience) to confront the truth: moral responsibility cannot be avoided. If you refuse to learn the lesson voluntarily, it will be imposed on you.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For a question on responsibility, structure your essay around the contrast between Birling and the Inspector. Show how Priestley systematically undermines Birling's position (through dramatic irony, the chain of guilt, the younger generation's response) and champions the Inspector's. This gives your essay a clear, argumentative structure that examiners reward.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> For a question on responsibility, structure your essay around the contrast between Birling and the Inspector. Show how Priestley systematically undermines Birling's position (through dramatic irony, the chain of guilt, the younger generation's response) and champions the Inspector's. This gives your essay a clear, argumentative structure that markers reward.</div>
 
 <h3>2. Social Class</h3>
 
@@ -1440,7 +1440,7 @@ content: `
 
 <p>The generational theme carries a clear message for the 1945 audience: the old pre-war society, represented by Birling and Mrs Birling, must be replaced. The young, represented by Sheila and Eric, must build something better. This aligned directly with the post-war mood that swept Attlee's Labour government to power.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The generational theme connects to every other theme in the play. Responsibility, class, gender, power — in each case, the older generation represents the problem and the younger generation represents the potential solution. If an AQA question asks about any theme, you can always strengthen your answer by discussing the generational divide.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The generational theme connects to every other theme in the play. Responsibility, class, gender, power — in each case, the older generation represents the problem and the younger generation represents the potential solution. If an AQA question asks about any theme, you can always strengthen your answer by discussing the generational divide.</div>
 
 <h3>5. Power</h3>
 
@@ -1476,7 +1476,7 @@ content: `
 
 <h3>Linking Themes in Your Essay</h3>
 
-<p>AQA examiners reward candidates who can show how themes <strong>interconnect</strong>. Here are some effective links:</p>
+<p>AQA markers reward candidates who can show how themes <strong>interconnect</strong>. Here are some effective links:</p>
 
 <ul>
   <li><strong>Responsibility + Class:</strong> The Birlings feel no responsibility because they do not see working-class people as fully human. Class privilege enables moral blindness.</li>
@@ -1485,7 +1485,7 @@ content: `
   <li><strong>Guilt + Class:</strong> The Birlings' class position shields them from guilt — they are so accustomed to privilege that they cannot see their actions as wrong.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> In your AQA essay, aim to discuss at least two interconnected themes even if the question only names one. For example, a question about "responsibility" can and should discuss class, because the Birlings' refusal of responsibility is rooted in their class privilege. This shows the examiner that you understand the play as a complex, interconnected whole — not a series of isolated topics.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> In your AQA essay, aim to discuss at least two interconnected themes even if the question only names one. For example, a question about "responsibility" can and should discuss class, because the Birlings' refusal of responsibility is rooted in their class privilege. This shows the marker that you understand the play as a complex, interconnected whole — not a series of isolated topics.</div>
 `,
       quiz: [
         {
@@ -1595,7 +1595,7 @@ content: `
 
 <p>Notice that AO1 and AO2 carry <strong>equal weight</strong> — 12 marks each. This means you must balance your ideas (AO1) with analysis of Priestley's methods (AO2). An essay that is all ideas with no language analysis, or all language analysis with no overarching argument, cannot achieve top marks.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> AO3 (context) is worth only 6 marks, but many students spend disproportionate time on context paragraphs. Embed your context into analysis — don't write a separate "context paragraph." For example: "Priestley uses Birling's wrong predictions to discredit his capitalist philosophy, which a 1945 audience — having just lived through the consequences of such attitudes — would have found deeply ironic."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> AO3 (context) is worth only 6 marks, but many students spend disproportionate time on context paragraphs. Embed your context into analysis — don't write a separate "context paragraph." For example: "Priestley uses Birling's wrong predictions to discredit his capitalist philosophy, which a 1945 audience — having just lived through the consequences of such attitudes — would have found deeply ironic."</div>
 
 <h3>Timing</h3>
 
@@ -1666,7 +1666,7 @@ content: `
   <li><strong>Genre:</strong> The play combines the detective genre (whodunit), the morality play (right vs. wrong), and social realism (real conditions).</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Use the phrase "Priestley uses..." to frame your AO2 analysis. This keeps you focused on the writer's craft rather than treating the characters as real people. Examples: "Priestley uses dramatic irony to...", "Priestley structures the play so that...", "Priestley juxtaposes Birling and the Inspector to..."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Use the phrase "Priestley uses..." to frame your AO2 analysis. This keeps you focused on the writer's craft rather than treating the characters as real people. Examples: "Priestley uses dramatic irony to...", "Priestley structures the play so that...", "Priestley juxtaposes Birling and the Inspector to..."</div>
 
 <h3>Embedding Context (AO3)</h3>
 
@@ -1690,7 +1690,7 @@ content: `
   <li><strong>Write timed practice essays</strong> regularly. The best way to test your memory is to write under exam conditions.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Trying to memorise long quotations. A short, punchy quotation like "fire and blood and anguish" is far more effective than trying to recall the entire final speech. Short quotations are easier to remember, easier to embed in sentences, and more impressive to examiners because they show you can select the most significant words.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Trying to memorise long quotations. A short, punchy quotation like "fire and blood and anguish" is far more effective than trying to recall the entire final speech. Short quotations are easier to remember, easier to embed in sentences, and more impressive to markers because they show you can select the most significant words.</div>
 
 <h3>Sample Question &amp; Plan</h3>
 
@@ -1706,7 +1706,7 @@ content: `
   <li><strong>Conclusion:</strong> The final phone call denies escape from responsibility — Priestley argues it is inescapable. The play's message is addressed to the audience: will you accept responsibility, or will you repeat the Birlings' mistakes?</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Notice how the plan moves from one position (Birling's rejection of responsibility) through the evidence that disproves it (the chain of guilt, the younger generation) to the alternative (the Inspector's message) and the conclusion (the phone call). This creates a clear argumentative arc. AQA examiners reward essays that argue, not essays that merely describe.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Notice how the plan moves from one position (Birling's rejection of responsibility) through the evidence that disproves it (the chain of guilt, the younger generation) to the alternative (the Inspector's message) and the conclusion (the phone call). This creates a clear argumentative arc. AQA markers reward essays that argue, not essays that merely describe.</div>
 
 <h3>Common Pitfalls to Avoid</h3>
 
@@ -1784,7 +1784,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Aim for 25–30 short quotations. Short quotations are easier to memorise, more flexible to use, and more impressive to examiners. They can be embedded smoothly into analytical sentences.',
+            'Aim for 25–30 short quotations. Short quotations are easier to memorise, more flexible to use, and more impressive to markers. They can be embedded smoothly into analytical sentences.',
         },
       ],
     },
@@ -2052,7 +2052,7 @@ content: `
       ],
       correct: 2,
       explanation:
-        '"Priestley uses dramatic irony to discredit..." demonstrates AO2 because it identifies a specific writer\'s method (dramatic irony), names the writer (Priestley), and explains its purpose (discrediting capitalism). This is the kind of analytical phrasing examiners reward.',
+        '"Priestley uses dramatic irony to discredit..." demonstrates AO2 because it identifies a specific writer\'s method (dramatic irony), names the writer (Priestley), and explains its purpose (discrediting capitalism). This is the kind of analytical phrasing markers reward.',
     },
   ],
 };

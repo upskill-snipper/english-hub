@@ -452,7 +452,7 @@ export default function PoetryAnalysisPage() {
               </ul>
             </div>
             <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
-              <h3 className="font-semibold text-foreground">What examiners look for</h3>
+              <h3 className="font-semibold text-foreground">What markers look for</h3>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; <strong>Close reading:</strong> analysis of specific words and phrases, not just general themes</li>
                 <li>&bull; <strong>Writer&rsquo;s methods:</strong> how form, structure, and language create meaning</li>

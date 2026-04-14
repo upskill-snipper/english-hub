@@ -2,7 +2,7 @@
 import type { CourseData, CourseModule, CourseQuiz } from './courses';
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// Edexcel IGCSE Literature — Anthology Poetry (Pearson 4ET1)
+// Edexcel IGCSE Literature — Anthology Poetry
 // ═══════════════════════════════════════════════════════════════════════════════
 
 // ─────────────────────────────────────────────────────────────────────────────

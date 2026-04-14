@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/quotes",
   },
-  title: "Romeo and Juliet Key Quotes — Edexcel IGCSE 4ET1",
+  title: "Romeo and Juliet Key Quotes — Edexcel IGCSE IGCSE Literature",
   description:
-    "20 key Romeo and Juliet quotations with speaker, scene reference and analysis, for the Edexcel IGCSE 4ET1 closed-book Shakespeare exam.",
+    "20 key Romeo and Juliet quotations with speaker, scene reference and analysis, for the Edexcel IGCSE IGCSE Literature closed-book Shakespeare exam.",
 };
 
 const QUOTES = [
@@ -173,7 +173,7 @@ export default async function RomeoAndJulietQuotesPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Romeo and Juliet &mdash; 20 key quotes

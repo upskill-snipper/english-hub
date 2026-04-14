@@ -541,7 +541,7 @@ export default function LordOfTheFliesPage() {
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">6</span>
                   <span>
-                    <strong>Discuss Golding&apos;s methods</strong> — symbolism (conch, glasses, the beast, face paint), allegory, foreshadowing, biblical allusion, the ironic ending, and narrative perspective. This is key for AO2.
+                    <strong>Discuss Golding&apos;s methods</strong> — symbolism (conch, glasses, the beast, face paint), allegory, foreshadowing, biblical allusion, the ironic ending, and narrative perspective. This is key for analysis of methods.
                   </span>
                 </li>
               </ol>
@@ -554,7 +554,7 @@ export default function LordOfTheFliesPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Always use &quot;Golding&quot; as the subject — &quot;Golding presents/suggests/uses...&quot; This demonstrates awareness of the writer&apos;s craft (AO2).
+                  Always use &quot;Golding&quot; as the subject — &quot;Golding presents/suggests/uses...&quot; This demonstrates awareness of the writer&apos;s craft (analysis of methods).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -574,7 +574,7 @@ export default function LordOfTheFliesPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Remember the mark scheme: AO1 (response to text, use of quotes), AO2 (analysis of writer&apos;s methods — language, form, structure), AO3 (context), AO4 (SPaG — 4 marks are available for spelling, punctuation, and grammar in Section B).
+                  Remember the marking guide: Reading and response (response to text, use of quotes), Analysis of methods (analysis of writer&apos;s methods — language, form, structure), Context (context), Accuracy (SPaG — 4 marks are available for spelling, punctuation, and grammar in Section B).
                 </li>
               </ul>
             </div>

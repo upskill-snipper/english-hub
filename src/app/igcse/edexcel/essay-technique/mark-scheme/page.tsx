@@ -30,7 +30,7 @@ interface AO {
 
 const AOS: AO[] = [
   {
-    code: 'AO1',
+    code: 'Understanding the text',
     label: 'Personal response and textual references',
     weight: 'Roughly 25% of total marks',
     colour: 'text-sky-400',
@@ -45,7 +45,7 @@ const AOS: AO[] = [
     ],
   },
   {
-    code: 'AO2',
+    code: 'Analysing language and structure',
     label: 'Language, form, and structure',
     weight: 'Roughly 40% of total marks -- the heaviest weighting',
     colour: 'text-violet-400',
@@ -60,7 +60,7 @@ const AOS: AO[] = [
     ],
   },
   {
-    code: 'AO3',
+    code: 'Relating to context',
     label: 'Context',
     weight: 'Roughly 15% of total marks (set texts only)',
     colour: 'text-emerald-400',
@@ -71,11 +71,11 @@ const AOS: AO[] = [
       'Context integrated with analysis, not bolted on in a context paragraph',
       'Relevant, specific context -- avoid generic "in Victorian times" statements',
       'Context that genuinely shapes meaning, not just historical background',
-      'Light touch for unseen poetry -- AO3 is minimal there',
+      'Light touch for unseen poetry -- context is minimal there',
     ],
   },
   {
-    code: 'AO4',
+    code: 'Comparing texts',
     label: 'Comparison',
     weight: 'Roughly 20% of total marks on comparison questions',
     colour: 'text-amber-400',
@@ -165,7 +165,7 @@ const GAINS = [
   {
     title: 'Linking every paragraph',
     detail:
-      'At least one comparative link per paragraph. Examiners scan for these -- they tell the story of your AO4 mark at a glance.',
+      'At least one comparative link per paragraph. Examiners scan for these -- they tell the story of your comparison mark at a glance.',
   },
   {
     title: 'Thesis that travels',
@@ -178,22 +178,22 @@ const LOSSES = [
   {
     title: 'Dropped quotations',
     detail:
-      'Quotes that sit alone in a sentence without being embedded. The examiner sees these as AO1 missed.',
+      'Quotes that sit alone in a sentence without being embedded. The examiner sees these as missed text-understanding marks.',
   },
   {
     title: 'Technique spotting',
     detail:
-      'Identifying a technique without explaining its effect. "This is a simile" is worth zero AO2 marks on its own.',
+      'Identifying a technique without explaining its effect. "This is a simile" is worth zero language-and-structure marks on its own.',
   },
   {
     title: 'Block structure comparison',
     detail:
-      'Writing about Poem A then Poem B without weaving them together. Caps at mid Grade 6 on AO4.',
+      'Writing about Poem A then Poem B without weaving them together. Caps at mid Grade 6 for comparison.',
   },
   {
     title: 'Ignoring form',
     detail:
-      'Writing entirely about language while ignoring stanzas, rhyme, enjambment, and structure. Forfeits half of AO2.',
+      'Writing entirely about language while ignoring stanzas, rhyme, enjambment, and structure. Forfeits half of your language-and-structure marks.',
   },
 ]
 
@@ -220,12 +220,12 @@ export default function MarkSchemePage() {
                 Mark Scheme Decoded
               </h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
-              How examiners actually mark your 4ET1 response -- AOs, band descriptors, and the
-              moves that lift your grade
+              How examiners actually mark your IGCSE Literature response -- band descriptors, skill
+              weightings, and the moves that lift your grade
             </p>
           </div>
         </div>
@@ -242,11 +242,14 @@ export default function MarkSchemePage() {
           Understanding the mark scheme is half the battle
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          4ET1 examiners do not mark holistically -- they read with the Assessment Objectives
-          in mind and assign your response a level for each one. Knowing which AO carries the
-          most weight (it is AO2), what separates "clear" from "perceptive", and exactly what
+          IGCSE Literature examiners do not mark holistically -- they read with specific
+          skills in mind and assign your response a level for each one. Knowing which skill carries the
+          most weight (it is language and structure analysis), what separates "clear" from "perceptive", and exactly what
           moves signal a top-band response lets you write with the examiner in mind. This
           guide translates the official mark scheme into practical advice.
+        </p>
+        <p className="mt-3 text-body-xs text-muted-foreground/70 max-w-2xl leading-relaxed italic">
+          In official mark schemes these skills are called Assessment Objectives: AO1 = Understanding the text, AO2 = Language and structure, AO3 = Context, AO4 = Comparing texts.
         </p>
       </section>
 
@@ -255,7 +258,7 @@ export default function MarkSchemePage() {
         <div className="mb-5 flex items-center gap-3">
           <BarChart3 className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            The Four Assessment Objectives
+            The Four Skills Examiners Mark
           </h2>
         </div>
 
@@ -345,7 +348,7 @@ export default function MarkSchemePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Edexcel grade boundaries for 4ET1 shift slightly each year, but recent sessions
+          Edexcel grade boundaries for IGCSE Literature shift slightly each year, but recent sessions
           suggest a rough guide of: Grade 9 around 78-82%, Grade 7 around 62-66%, Grade 5
           around 42-46%, and Grade 4 around 32-36%. These are indicative only -- boundaries
           are set after each exam series based on candidate performance. What is constant is
@@ -399,7 +402,7 @@ export default function MarkSchemePage() {
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           Understanding the mark scheme is one thing -- using it is another. Head to the
-          practice poems and try writing a comparative response using the AO framework.
+          practice poems and try writing a comparative response with these skills in mind.
         </p>
         <Button
           variant="default"

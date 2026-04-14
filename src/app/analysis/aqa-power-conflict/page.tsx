@@ -5,7 +5,7 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 export const metadata: Metadata = {
   title: 'AQA Power and Conflict Poetry Analysis: Comparisons, Themes & Quotes | The English Hub',
   description:
-    'Complete AQA Power and Conflict poetry analysis hub. 25 Grade 9 pages covering comparisons, themes, key quotes and exam technique. Written by GCSE examiners.',
+    'Complete AQA Power and Conflict poetry analysis hub. 25 Grade 9 pages covering comparisons, themes, key quotes and exam technique. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/aqa-power-conflict' },
   openGraph: {
     title: 'AQA Power and Conflict Analysis Hub — The English Hub',
@@ -77,11 +77,11 @@ export default function AQAPowerConflictHub() {
       <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
         AQA Power and Conflict Poetry Analysis
       </h1>
-      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE examiners</p>
+      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
 
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
         Welcome to The English Hub&apos;s AQA Power and Conflict analysis hub. Every page below
-        is written by experienced GCSE English Literature examiners and targets the specific
+        is written by experienced GCSE English Literature markers and targets the specific
         questions students ask the night before a mock. Whether you need a head-to-head
         comparison of two poems, a theme essay that runs across the whole anthology, or a
         walkthrough of how to plan a Grade 9 essay, you will find the exact analysis, context

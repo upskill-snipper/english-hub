@@ -48,6 +48,21 @@ const nextConfig = {
         destination: '/games',
         permanent: true,
       },
+      {
+        source: '/igcse/edexcel/syllabus',
+        destination: '/igcse/edexcel',
+        permanent: true,
+      },
+      {
+        source: '/igcse/cambridge/0500/syllabus',
+        destination: '/igcse/cambridge/0500',
+        permanent: true,
+      },
+      {
+        source: '/igcse/cambridge/0990/syllabus',
+        destination: '/igcse/cambridge/0990',
+        permanent: true,
+      },
     ]
   },
   async headers() {

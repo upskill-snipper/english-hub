@@ -73,7 +73,7 @@ const papers = [
       {
         name: "Section A: Shakespeare",
         detail:
-          "You will be given an extract from your studied Shakespeare play, plus a question. Write about the extract and then the play as a whole. (30 marks + 4 marks AO4)",
+          "You will be given an extract from your studied Shakespeare play, plus a question. Write about the extract and then the play as a whole. (30 marks + 4 marks for comparing texts)",
       },
       {
         name: "Section B: 19th-Century Novel",
@@ -111,28 +111,28 @@ const papers = [
 
 const assessmentObjectives = [
   {
-    ao: "AO1",
+    ao: "Understanding the text",
     summary: "Read, respond, and use quotations",
     detail:
       "Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.",
     weight: "Approx. 12 marks per question",
   },
   {
-    ao: "AO2",
+    ao: "Analysing language and structure",
     summary: "Analyse language, form and structure",
     detail:
       "Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.",
     weight: "Approx. 12 marks per question",
   },
   {
-    ao: "AO3",
+    ao: "Relating to context",
     summary: "Show understanding of context",
     detail:
       "Show understanding of the relationships between texts and the contexts in which they were written.",
     weight: "Approx. 6 marks per question",
   },
   {
-    ao: "AO4",
+    ao: "Comparing texts",
     summary: "Accurate written expression",
     detail:
       "Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. Assessed in Paper 1 Section A (Shakespeare) and Paper 2 Section C (unseen poetry comparison) only.",
@@ -347,11 +347,11 @@ export default function AqaEnglishLiteraturePage() {
       <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
-            Assessment Objectives (AO1&ndash;AO4)
+            Key Skills — What Markers Look For
           </h2>
           <p className="mt-2 text-muted-foreground">
             Understanding how your work is marked is essential for maximising
-            your grade. Every question targets specific AOs.
+            your grade. Every question targets specific skills.
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -391,7 +391,7 @@ export default function AqaEnglishLiteraturePage() {
             },
             {
               title: "Understand Context",
-              text: "AO3 (context) is worth significant marks. Know the historical, social, and literary context for every set text you study.",
+              text: "Relating to context (what markers look for) is worth significant marks. Know the historical, social, and literary context for every set text you study.",
             },
             {
               title: "Plan Before You Write",
@@ -399,7 +399,7 @@ export default function AqaEnglishLiteraturePage() {
             },
             {
               title: "Use Subject Terminology",
-              text: "AO2 requires analysis of language and structure. Name techniques (metaphor, dramatic irony, foreshadowing) and explain their effect.",
+              text: "Analysing language and structure (what markers look for) requires close attention to techniques. Name techniques (metaphor, dramatic irony, foreshadowing) and explain their effect.",
             },
             {
               title: "Compare Poems Effectively",

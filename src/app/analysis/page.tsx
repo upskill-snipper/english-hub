@@ -118,7 +118,7 @@ export default function AnalysisHubPage() {
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Long-form essays, quote-by-quote breakdowns and exam-board mapped
             analysis for every set text on the GCSE English specification.
-            Written by examiners and aligned to the AO mark scheme.
+            Written by markers and aligned to the marking guide.
           </p>
         </div>
       </section>

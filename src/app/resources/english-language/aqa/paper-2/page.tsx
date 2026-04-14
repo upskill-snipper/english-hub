@@ -91,7 +91,7 @@ export default function Paper2Page() {
             Paper 2 tests your ability to <strong>read and compare</strong> two
             non-fiction texts (one from the 19th century and one from the 21st
             century, or one from the 20th century and one from the 21st century)
-            and to produce a piece of <strong>transactional/persuasive writing</strong>.
+            and to produce a piece of <strong>writing for real purposes</strong>.
             The texts will be linked by theme.
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -171,12 +171,12 @@ export default function Paper2Page() {
             differences between the children&rsquo;s experiences of school.&rdquo;
           </p>
           <p className="mt-2">
-            This assesses <strong>AO1</strong>: Identify and interpret explicit
+            This assesses <strong>Reading and retrieval (AO1)</strong>: Identify and interpret explicit
             and implicit information and ideas. Select and synthesise evidence
             from different texts.
           </p>
 
-          <h3 className="mt-4 font-bold text-primary">Mark scheme summary</h3>
+          <h3 className="mt-4 font-bold text-primary">Marking guide summary</h3>
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
@@ -246,12 +246,12 @@ export default function Paper2Page() {
             effect (e.g., to describe a place, to convey their feelings).
           </p>
           <p className="mt-2">
-            This assesses <strong>AO2</strong>: Explain, comment on and analyse
+            This assesses <strong>Language and structure analysis (AO2)</strong>: Explain, comment on and analyse
             how writers use language and structure to achieve effects and
             influence readers.
           </p>
 
-          <h3 className="mt-4 font-bold text-primary">Mark scheme summary</h3>
+          <h3 className="mt-4 font-bold text-primary">Marking guide summary</h3>
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
@@ -310,12 +310,12 @@ export default function Paper2Page() {
             differences</strong>.
           </p>
           <p className="mt-2">
-            This assesses <strong>AO3</strong>: Compare writers&rsquo; ideas and
+            This assesses <strong>Comparing writers (AO3)</strong>: Compare writers&rsquo; ideas and
             perspectives, as well as how these are conveyed, across two or more
             texts.
           </p>
 
-          <h3 className="mt-4 font-bold text-primary">Mark scheme summary</h3>
+          <h3 className="mt-4 font-bold text-primary">Marking guide summary</h3>
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
@@ -392,9 +392,9 @@ export default function Paper2Page() {
             persuade, to advise).
           </p>
           <p className="mt-2">
-            This assesses <strong>AO5</strong> (24 marks: content and
-            organisation) and <strong>AO6</strong> (16 marks: technical
-            accuracy). The mark scheme is the same as Paper 1 Q5 but the
+            This assesses <strong>Content and organisation (AO5)</strong> (24 marks: content and
+            organisation) and <strong>Technical accuracy (AO6)</strong> (16 marks: technical
+            accuracy). The marking guide is the same as Paper 1 Q5 but the
             writing genre is different.
           </p>
 
@@ -496,7 +496,7 @@ export default function Paper2Page() {
             <li>Ignoring the form. If the question says &ldquo;Write a speech,&rdquo; your response must read like a speech, with direct address and rhetorical features.</li>
             <li>Not taking a clear position. Sitting on the fence earns fewer marks than a well-argued viewpoint.</li>
             <li>Overusing one technique (e.g., rhetorical questions in every paragraph).</li>
-            <li>Forgetting technical accuracy. AO6 is worth 16 marks &mdash; proofread carefully.</li>
+            <li>Forgetting technical accuracy. Technical accuracy (AO6) is worth 16 marks &mdash; proofread carefully.</li>
             <li>Not planning, which leads to repetitive or disorganised arguments.</li>
           </ul>
         </Section>

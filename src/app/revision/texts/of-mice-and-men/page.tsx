@@ -18,7 +18,7 @@ const data: TextGuideData = {
   author: 'John Steinbeck',
   year: 'published 1937',
   category: 'Novella',
-  badge: 'Edexcel IGCSE 4ET1',
+  badge: 'Edexcel IGCSE',
   intro:
     "A Depression-era novella about two displaced ranch workers chasing an impossible dream of owning their own piece of land. Steinbeck strips the American Dream bare and exposes the loneliness, prejudice and powerlessness at the heart of 1930s rural California.",
   quickInfo: {

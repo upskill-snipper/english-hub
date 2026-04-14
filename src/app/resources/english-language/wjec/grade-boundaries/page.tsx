@@ -101,10 +101,10 @@ export default function GradeBoundariesPage() {
         </div>
 
         {/* Overall grade boundaries */}
-        <Section title="Overall grade boundaries (combined Component 1 + Component 2)" defaultOpen>
+        <Section title="Overall grade boundaries (combined Paper 1 + Paper 2)" defaultOpen>
           <p>
             The total number of marks across both components is <strong>160</strong>.
-            Component 1 is worth 40% (64 marks) and Component 2 is worth 60%
+            Paper 1 is worth 40% (64 marks) and Paper 2 is worth 60%
             (96 marks). Your raw marks from both components are combined to
             produce your overall grade. Below are the approximate boundaries
             from recent exam series:
@@ -200,7 +200,7 @@ export default function GradeBoundariesPage() {
         <Section title="What each grade looks like in practice">
           <p>
             Understanding the grade descriptors helps you see exactly what
-            examiners expect at each level. Here is what typical work looks like
+            markers expect at each level. Here is what typical work looks like
             at the key grade boundaries:
           </p>
 
@@ -366,7 +366,7 @@ export default function GradeBoundariesPage() {
                   dashes for effect.
                 </li>
                 <li>
-                  <strong>Proofreading:</strong> In Component 2, the
+                  <strong>Proofreading:</strong> In Paper 2, the
                   proofreading and editing tasks are straightforward marks.
                   Practise identifying spelling, punctuation, and grammar
                   errors under timed conditions to secure these marks.
@@ -412,13 +412,13 @@ export default function GradeBoundariesPage() {
         <Section title="Marks per question at a glance">
           <p className="mb-4">
             WJEC Eduqas English Language is split into two components.
-            Component 1 (20th Century Literature Reading and Creative Prose
-            Writing) is worth 40% and Component 2 (19th and 21st Century
-            Non-Fiction Reading and Transactional/Persuasive Writing) is
+            Paper 1 (20th Century Literature Reading and Creative Prose
+            Writing) is worth 40% and Paper 2 (19th and 21st Century
+            Non-Fiction Reading and Writing for Real Purposes) is
             worth 60%.
           </p>
 
-          <h3 className="font-bold text-foreground mb-2">Component 1 &mdash; 20th Century Literature Reading and Creative Prose Writing (40%)</h3>
+          <h3 className="font-bold text-foreground mb-2">Paper 1 &mdash; 20th Century Literature Reading and Creative Prose Writing (40%)</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -463,7 +463,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">Creative prose writing</td>
                 </tr>
                 <tr className="font-bold">
-                  <td className="py-2 pr-4" colSpan={2}>Component 1 Total</td>
+                  <td className="py-2 pr-4" colSpan={2}>Paper 1 Total</td>
                   <td className="py-2 pr-4">64 marks</td>
                   <td className="py-2 pr-4">40% of qualification</td>
                 </tr>
@@ -471,7 +471,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <h3 className="font-bold text-foreground mt-6 mb-2">Component 2 &mdash; 19th and 21st Century Non-Fiction Reading and Transactional/Persuasive Writing (60%)</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Paper 2 &mdash; 19th and 21st Century Non-Fiction Reading and Writing for Real Purposes (60%)</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -526,7 +526,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">Transactional / persuasive writing (longer task)</td>
                 </tr>
                 <tr className="font-bold">
-                  <td className="py-2 pr-4" colSpan={2}>Component 2 Total</td>
+                  <td className="py-2 pr-4" colSpan={2}>Paper 2 Total</td>
                   <td className="py-2 pr-4">96 marks</td>
                   <td className="py-2 pr-4">60% of qualification</td>
                 </tr>
@@ -537,7 +537,7 @@ export default function GradeBoundariesPage() {
           <p className="mt-4 text-sm text-muted-foreground">
             Notice that the writing sections across both components contribute
             a significant portion of the marks. Strong creative and
-            transactional writing can be developed through preparation and
+            writing for real purposes can be developed through preparation and
             practice regardless of what unseen text appears on the day.
           </p>
         </Section>

@@ -4,16 +4,16 @@ import { WrongBoardBanner } from "@/components/board/WrongBoardBanner";
 
 export const metadata: Metadata = {
   title:
-    "Model Macbeth Essays: Grade 5, 7 & 9 with Examiner Annotations | The English Hub",
+    "Model Macbeth Essays: Grade 5, 7 & 9 with Marker Annotations | The English Hub",
   description:
-    "Five fully-annotated model Macbeth essays at Grade 5, 7, and 9 covering Lady Macbeth and guilt. Paragraph-by-paragraph examiner commentary with AO breakdowns and grade justifications.",
+    "Five fully-annotated model Macbeth essays at Grade 5, 7, and 9 covering Lady Macbeth and guilt. Paragraph-by-paragraph marker commentary with AO breakdowns and grade justifications.",
   alternates: {
     canonical: "https://theenglishhub.app/marking/sample/macbeth",
   },
   openGraph: {
     title: "Model Macbeth Essay Bank — The English Hub",
     description:
-      "Grade 5, 7 and 9 model essays on Lady Macbeth and guilt, with examiner annotations and AO breakdowns.",
+      "Grade 5, 7 and 9 model essays on Lady Macbeth and guilt, with marker annotations and AO breakdowns.",
   },
 };
 
@@ -230,7 +230,7 @@ const ESSAYS: ModelEssay[] = [
         paragraphIndex: 1,
         strengths: [
           "The analysis of conditional syntax ('durst' as placing courage in the past tense) is precise and original.",
-          "The paradox of Lady Macbeth weaponising the system that subordinates her is a genuinely conceptualised observation — this is what examiners mean by 'perceptive.'",
+          "The paradox of Lady Macbeth weaponising the system that subordinates her is a genuinely conceptualised observation — this is what markers mean by 'perceptive.'",
           "The conclusion ('operates within, and is limited by, the structures it subverts') is epigrammatic and demonstrates full critical control.",
         ],
         improvements: [
@@ -259,7 +259,7 @@ const ESSAYS: ModelEssay[] = [
           "Context (James I, witchcraft, assassination) is woven into the final sentence without disrupting the argument.",
         ],
         improvements: [
-          "At this level, the essay is operating at the top of the mark scheme. No significant improvements needed.",
+          "At this level, the essay is operating at the top of the marking guide. No significant improvements needed.",
         ],
         aoAddressed: ["AO1 — perceptive overview of whole text", "AO2 — structure (offstage death, silence)", "AO3 — James I, witchcraft beliefs"],
       },
@@ -273,7 +273,7 @@ const ESSAYS: ModelEssay[] = [
     gradeJustification:
       "This response meets every descriptor for Grade 9: it is 'critical, exploratory, conceptualised' with a 'convincing, critical analysis and exploration' of Shakespeare's methods. The thesis (power as performance, borrowed and unsustainable) is original and sustained across every paragraph. Word-level analysis is precise and purposeful. Context is never bolted on but emerges organically from the argument. The structural awareness — tracking Lady Macbeth's linguistic demotion from verse to prose to silence — demonstrates command of the whole text as a dramatic construction.",
     nextGradeTips: [
-      "This essay is at the top of the mark scheme. To maintain this standard under timed conditions, practise planning a conceptual thesis in 3 minutes before writing.",
+      "This essay is at the top of the marking guide. To maintain this standard under timed conditions, practise planning a conceptual thesis in 3 minutes before writing.",
     ],
     nextGrade: 9,
   },
@@ -367,7 +367,7 @@ const ESSAYS: ModelEssay[] = [
           "The final sentence ('dissolve the boundary between the real and the imagined') conceptualises the dagger as an enactment of guilt's epistemological effects.",
         ],
         improvements: [
-          "Operating at the top of the mark scheme. A marginal enhancement: could note that the dagger scene is a soliloquy, connecting to the play's broader use of soliloquy as the register of guilt.",
+          "Operating at the top of the marking guide. A marginal enhancement: could note that the dagger scene is a soliloquy, connecting to the play's broader use of soliloquy as the register of guilt.",
         ],
         aoAddressed: ["AO1 — perceptive, conceptualised", "AO2 — word-level analysis of compound modifier", "AO3 — divine order, conscience"],
       },
@@ -403,7 +403,7 @@ const ESSAYS: ModelEssay[] = [
           "The final sentence ('the play's true antagonist') provides a memorable, epigrammatic conclusion that reframes the whole text.",
         ],
         improvements: [
-          "This is operating at the very top of the mark scheme. No improvements needed.",
+          "This is operating at the very top of the marking guide. No improvements needed.",
         ],
         aoAddressed: ["AO1 — conceptualised overview", "AO2 — dramatic form (soliloquy vs involuntary speech)", "AO3 — Calvinist theology, Jacobean worldview"],
       },
@@ -417,7 +417,7 @@ const ESSAYS: ModelEssay[] = [
     gradeJustification:
       "This response exemplifies every Grade 9 descriptor. The thesis is original and conceptualised (guilt as 'the wrongdoing itself,' not its consequence). Word-level analysis is sustained throughout — from 'heat-oppressed' to 'incarnadine' to the shifting function of 'little.' Context (Calvinist predestination, divine order) is woven into the argument rather than appended. The structural awareness is exceptional: the distinction between soliloquy-guilt and somnambulist-guilt, and the tracking of Lady Macbeth's imagery across three key moments, demonstrate command of the whole text as a dramatic construction.",
     nextGradeTips: [
-      "This essay is at the top of the mark scheme. To reproduce this standard under exam pressure, practise planning a conceptual thesis in 3 minutes and aim for 4 paragraphs with embedded word-level analysis in each.",
+      "This essay is at the top of the marking guide. To reproduce this standard under exam pressure, practise planning a conceptual thesis in 3 minutes and aim for 4 paragraphs with embedded word-level analysis in each.",
     ],
     nextGrade: 9,
   },
@@ -473,7 +473,7 @@ export default function MacbethEssayBankPage() {
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
             Five original model essays at Grade 5, 7, and 9 on two popular
             Macbeth questions — Lady Macbeth as powerful and the theme of guilt.
-            Every paragraph has examiner annotations explaining what earns
+            Every paragraph has marker annotations explaining what earns
             marks, what is missing, and how to move up a grade.
           </p>
         </header>
@@ -576,11 +576,11 @@ function EssaySection({ essay }: { essay: ModelEssay }) {
                 {para}
               </p>
 
-              {/* Examiner annotations */}
+              {/* Marker annotations */}
               {ann && (
                 <div className="space-y-3 border-t border-border pt-4">
                   <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-                    Examiner Annotations
+                    Marker Annotations
                   </p>
 
                   {/* Strengths */}

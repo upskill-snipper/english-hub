@@ -537,25 +537,25 @@ const aqaExamFormat = {
     "You will be given a short extract from the play and asked a question about a theme or character. You must write about the extract AND the play as a whole.",
   assessmentObjectives: [
     {
-      code: "AO1",
+      code: "Understanding the text",
       description: "Read, understand and respond to texts. Use textual references to support interpretations.",
       marks: "12 marks",
       tip: "Make a clear argument. Use short, embedded quotations. Every point must be supported by evidence from the text.",
     },
     {
-      code: "AO2",
+      code: "Analysing language and structure",
       description: "Analyse the language, form and structure used by a writer to create meanings and effects.",
       marks: "12 marks",
       tip: "Zoom into individual words and techniques. Analyse HOW Shakespeare creates meaning, not just WHAT he says. Discuss form (sonnet, soliloquy, prose vs verse) and structure (where events are placed in the play).",
     },
     {
-      code: "AO3",
+      code: "Relating to context",
       description: "Show understanding of the relationships between texts and the contexts in which they were written.",
       marks: "6 marks",
       tip: "Integrate context into your analysis — do not bolt it on. Link Elizabethan attitudes to love, gender, honour, and fate to your points about the text.",
     },
     {
-      code: "AO4",
+      code: "Comparing texts",
       description: "Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.",
       marks: "4 marks",
       tip: "Write in formal academic English. Use literary terminology accurately. Proofread for spelling and punctuation errors.",
@@ -724,7 +724,7 @@ export default function RomeoAndJulietPage() {
         </div>
 
         <h3 className="mt-8 text-lg font-bold text-foreground">
-          Assessment Objectives Breakdown
+          Key Skills — What Markers Look For
         </h3>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {aqaExamFormat.assessmentObjectives.map((ao) => (
@@ -919,7 +919,7 @@ export default function RomeoAndJulietPage() {
           <p className="mt-2 text-muted-foreground">
             Learn these quotations and their analysis. In the exam, embed short
             phrases rather than copying entire quotes. AQA rewards analysis of
-            individual words and techniques (AO2).
+            individual words and techniques (analysing language and structure).
           </p>
 
           <div className="mt-8 space-y-4">
@@ -949,7 +949,7 @@ export default function RomeoAndJulietPage() {
           Historical and Social Context
         </h2>
         <p className="mt-2 text-muted-foreground">
-          Context (AO3) is worth 6 marks. Integrate it into your analysis rather
+          Relating to context (what markers look for) is worth 6 marks. Integrate it into your analysis rather
           than writing separate &quot;context paragraphs.&quot;
         </p>
 

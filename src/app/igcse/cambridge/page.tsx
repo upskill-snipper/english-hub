@@ -24,16 +24,15 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 export const metadata: Metadata = {
   title: 'Cambridge IGCSE English — The English Hub',
   description:
-    'Cambridge IGCSE English syllabus hub. Covers 0500 First Language English and 0990 (9-1) with full study guides, exam technique and assessment breakdowns.',
+    'Cambridge IGCSE English hub. Covers Language A and Language B with full study guides, exam technique and assessment breakdowns.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge' },
 }
 
 const syllabuses = [
   {
     slug: '0500',
-    code: '0500',
-    name: 'Cambridge IGCSE First Language English',
-    tagline: 'Cambridge Assessment International Education — 0500',
+    name: 'IGCSE Language A',
+    tagline: 'For students whose first language is English — graded A* to G',
     description:
       'Two-paper qualification testing reading comprehension, summary writing, directed writing and extended composition. Graded A*-G and sat by thousands of students in international schools every year.',
     icon: Globe,
@@ -45,18 +44,17 @@ const syllabuses = [
     available: true,
     href: '/igcse/cambridge/0500',
     highlights: [
-      'Paper 1 Reading — comprehension, summary and directed writing',
-      'Paper 2 Directed Writing and Composition — 80 marks total',
-      'Equal weighting of Reading (AO1) and Writing (AO2)',
+      'Reading Paper — comprehension, summary and directed writing',
+      'Writing Paper — directed writing and composition',
+      'Equal weighting of reading and writing skills',
     ],
   },
   {
     slug: '0990',
-    code: '0990',
-    name: 'Cambridge IGCSE (9-1) First Language English',
-    tagline: 'Cambridge Assessment International Education — 0990',
+    name: 'IGCSE Language B',
+    tagline: 'For students whose first language is English — graded 9 to 1',
     description:
-      'The 9-1 graded version of Cambridge First Language English. Identical content and assessment structure to 0500 but reported on the numerical 9-1 scale.',
+      'The 9-1 graded version of Cambridge First Language English. Identical content and assessment structure to Language A but reported on the numerical 9-1 scale.',
     icon: GraduationCap,
     iconBg: 'bg-muted',
     iconText: 'text-muted-foreground',
@@ -66,9 +64,9 @@ const syllabuses = [
     available: false,
     href: '/igcse/cambridge/0990',
     highlights: [
-      'Identical assessment structure to 0500',
+      'Identical assessment structure to Language A',
       'Graded 9-1 instead of A*-G',
-      'Same reading and writing assessment objectives',
+      'Same reading and writing skills assessed',
     ],
   },
 ]
@@ -111,8 +109,8 @@ export default async function CambridgeHubPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Cambridge First Language English is the world&apos;s largest
-            international English qualification. Pick your syllabus code below
-            to access full study guides, paper walkthroughs and past paper
+            international English qualification. Pick your course below to
+            access full study guides, paper walkthroughs and past paper
             practice.
           </p>
         </div>
@@ -123,7 +121,7 @@ export default async function CambridgeHubPage() {
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Choose your syllabus
+            Choose your course
           </h2>
         </div>
 
@@ -195,7 +193,7 @@ export default async function CambridgeHubPage() {
                         className="w-full"
                         render={<Link href={syllabus.href} />}
                       >
-                        Open {syllabus.code} hub
+                        Open {syllabus.name}
                         <ArrowRight className="size-3.5" />
                       </Button>
                     ) : (
@@ -232,10 +230,10 @@ export default async function CambridgeHubPage() {
           Students also learn to read a wide range of texts fluently and with
           good understanding.
         </p>
-        <div className="mt-5 grid gap-4 sm:grid-cols-3">
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <h3 className="text-body-sm font-semibold text-foreground">
-              AO1 Reading — 30%
+              Reading skills
             </h3>
             <p className="mt-1 text-body-xs text-muted-foreground">
               Demonstrate understanding of explicit and implicit meanings.
@@ -243,18 +241,10 @@ export default async function CambridgeHubPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <h3 className="text-body-sm font-semibold text-foreground">
-              AO2 Writing — 30%
+              Writing skills
             </h3>
             <p className="mt-1 text-body-xs text-muted-foreground">
               Communicate clearly, accurately and effectively for different purposes.
-            </p>
-          </div>
-          <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <h3 className="text-body-sm font-semibold text-foreground">
-              Two papers, 4 hours
-            </h3>
-            <p className="mt-1 text-body-xs text-muted-foreground">
-              Reading paper and Directed Writing + Composition paper.
             </p>
           </div>
         </div>

@@ -5,12 +5,12 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 export const metadata: Metadata = {
   title: 'AQA Love and Relationships Analysis: Comparisons, Themes & Quotes | The English Hub',
   description:
-    'In-depth AQA Love and Relationships poetry analysis for GCSE. Compare poems side-by-side, explore every theme and master the unseen comparison question. Written by GCSE examiners.',
+    'In-depth AQA Love and Relationships poetry analysis for GCSE. Compare poems side-by-side, explore every theme and master the unseen comparison question. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/aqa-love-relationships' },
   openGraph: {
     title: 'AQA Love and Relationships Analysis Hub — The English Hub',
     description:
-      'Grade 9 AQA Love and Relationships analysis: poem comparisons, themes, quotes and essay writing, written by GCSE examiners.',
+      'Grade 9 AQA Love and Relationships analysis: poem comparisons, themes, quotes and essay writing, written by GCSE markers.',
   },
 }
 
@@ -77,13 +77,13 @@ export default function AqaLoveRelationshipsHub() {
       <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
         AQA Love and Relationships Analysis
       </h1>
-      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE examiners</p>
+      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
 
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
         Welcome to The English Hub&apos;s AQA Love and Relationships analysis hub. The AQA
         anthology question asks you to compare how two poets present a given idea, and the
-        examiner is looking for a confident, conceptualised argument that moves beyond feature
-        spotting. Every page below is written by experienced GCSE English Literature examiners
+        marker is looking for a confident, conceptualised argument that moves beyond feature
+        spotting. Every page below is written by experienced GCSE English Literature markers
         and targets the exact question students type into search engines the night before a
         mock: how two specific poems compare, how a theme is presented across the cluster, or
         how to structure a Grade 9 comparison paragraph.

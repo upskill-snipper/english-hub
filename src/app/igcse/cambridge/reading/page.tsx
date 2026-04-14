@@ -29,7 +29,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title:
-    'Cambridge IGCSE Reading Practice Frameworks (0500 / 0990) — The English Hub',
+    'Cambridge IGCSE Reading Practice Frameworks (IGCSE Language) — The English Hub',
   description:
     'Ten reading practice frameworks for Cambridge IGCSE First Language English Paper 1. Each guide teaches you how to approach a type of passage and links to free public-domain texts on Project Gutenberg.',
   alternates: {
@@ -146,8 +146,7 @@ export default async function ReadingHubPage() {
             Ten structured guides that teach you{' '}
             <strong className="text-foreground">how to approach</strong>{' '}
             different kinds of reading passages for Cambridge IGCSE{' '}
-            <strong className="text-foreground">0500</strong> and{' '}
-            <strong className="text-foreground">0990</strong>. Each framework
+            <strong className="text-foreground">IGCSE Language</strong>. Each framework
             gives you a set of comprehension questions, a language analysis
             prompt, a summary task and a self-assessment checklist. Every
             practice text links out to{' '}

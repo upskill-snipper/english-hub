@@ -571,7 +571,7 @@ export default function IfPage() {
               Rudyard Kipling &middot; Edexcel IGCSE Anthology
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE Literature
             </Badge>
           </div>
         </div>

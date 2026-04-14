@@ -7,6 +7,8 @@ import {
   PenTool,
   Target,
   CheckCircle2,
+  ArrowRight,
+  Info,
 } from 'lucide-react'
 import {
   Card,
@@ -20,12 +22,13 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Cambridge 0500 Syllabus — The English Hub',
+  title: 'IGCSE Language A Course Overview — The English Hub',
   description:
-    'Full syllabus breakdown for Cambridge IGCSE 0500 First Language English. Assessment objectives, reading skills, writing skills and paper-by-paper content.',
+    'Course overview for Cambridge IGCSE Language A (First Language English). Reading skills, writing skills and paper-by-paper content.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/syllabus',
   },
+  robots: { index: false, follow: false },
 }
 
 const readingSkills = [
@@ -52,7 +55,7 @@ const paperContent = [
     title: 'Reading',
     duration: '2 hours',
     marks: 80,
-    aoSplit: 'Reading 50 marks • Writing 30 marks',
+    aoSplit: 'Reading skills 50 marks • Writing skills 30 marks',
     questions: [
       {
         q: 'Question 1',
@@ -81,7 +84,7 @@ const paperContent = [
     title: 'Directed Writing and Composition',
     duration: '2 hours',
     marks: 80,
-    aoSplit: 'Writing 50 marks • Reading 30 marks',
+    aoSplit: 'Writing skills 50 marks • Reading skills 30 marks',
     questions: [
       {
         q: 'Section A — Directed Writing',
@@ -111,21 +114,36 @@ export default async function SyllabusPage() {
           className="gap-1"
         >
           <ChevronLeft className="size-4" />
-          0500 hub
+          IGCSE Language A hub
         </Button>
+      </div>
+
+      {/* ── Banner ────────────────────────────────────────────────── */}
+      <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 flex items-center gap-3">
+        <Info className="size-5 shrink-0 text-primary" />
+        <p className="text-body-sm text-foreground">
+          Looking for revision content?{' '}
+          <Link
+            href="/igcse/cambridge/0500"
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            Visit our IGCSE Language A hub
+            <ArrowRight className="ml-1 inline size-3.5" />
+          </Link>
+        </p>
       </div>
 
       {/* ── Header ─────────────────────────────────────────────────── */}
       <section>
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
-          Cambridge IGCSE 0500
+          IGCSE Language A
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">
-          Syllabus breakdown
+          Course overview
         </h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
           A topic-by-topic guide to what Cambridge expects you to know, read
-          and be able to write for the 0500 First Language English
+          and be able to write for the IGCSE Language A (First Language English)
           qualification.
         </p>
       </section>
@@ -135,11 +153,11 @@ export default async function SyllabusPage() {
         <div className="mb-4 flex items-center gap-3">
           <Target className="size-5 text-primary" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Aims of the syllabus
+            Aims of the course
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Cambridge 0500 is designed to enable learners to develop the ability
+          IGCSE Language A is designed to enable learners to develop the ability
           to communicate clearly, accurately and effectively in both speech and
           writing; learn how to use a wide range of vocabulary, correct
           grammar, spelling and punctuation; develop a personal style and
@@ -154,7 +172,7 @@ export default async function SyllabusPage() {
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Reading skills (AO1)
+            Reading skills
           </h2>
         </div>
         <Card>
@@ -182,7 +200,7 @@ export default async function SyllabusPage() {
         <div className="mb-5 flex items-center gap-3">
           <PenTool className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Writing skills (AO2)
+            Writing skills
           </h2>
         </div>
         <Card>

@@ -26,16 +26,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE English Literature 4ET1 — The English Hub',
+  title: 'Edexcel IGCSE Literature — The English Hub',
   description:
-    'Complete revision hub for Pearson Edexcel IGCSE English Literature 4ET1. Paper 1 and Paper 2 breakdowns, set text guides, anthology poetry and exam technique.',
+    'Complete revision hub for Pearson Edexcel IGCSE English Literature. Paper 1 and Paper 2 breakdowns, set text guides, anthology poetry and exam technique.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel' },
 }
 
 const papers = [
   {
     name: 'Paper 1',
-    code: '4ET1/01',
+    code: 'Paper 1',
     title: 'Poetry and Modern Prose',
     time: '2 hours',
     marks: 60,
@@ -61,7 +61,7 @@ const papers = [
   },
   {
     name: 'Paper 2',
-    code: '4ET1/02',
+    code: 'Paper 2',
     title: 'Modern Drama and Literary Heritage',
     time: '1 hour 30 minutes',
     marks: 40,
@@ -105,37 +105,7 @@ const setTexts = {
   ],
 }
 
-const whyPoints = [
-  {
-    title: 'Breadth of texts',
-    detail:
-      'Eleven set text options across poetry, prose, drama and Shakespeare, allowing centres to tailor the course to student interest and cultural context.',
-  },
-  {
-    title: 'Closed-book rigour',
-    detail:
-      'All texts are studied closed book, rewarding genuine close reading and strong memorisation of key quotations.',
-  },
-  {
-    title: 'International recognition',
-    detail:
-      'Widely accepted by sixth forms, IB programmes and universities around the world as equivalent to UK GCSE.',
-  },
-  {
-    title: 'Transferable skills',
-    detail:
-      'Develops comparison, analytical writing and textual evidence handling that feed directly into A-level, IB and university literature.',
-  },
-]
-
 const hubLinks = [
-  {
-    title: 'Syllabus breakdown',
-    description:
-      'Full assessment objectives (AO1–AO4), mark allocations and timings.',
-    href: '/igcse/edexcel/syllabus',
-    icon: ScrollText,
-  },
   {
     title: 'Past papers',
     description:
@@ -146,7 +116,7 @@ const hubLinks = [
   {
     title: 'Exam technique',
     description:
-      '4ET1-specific strategies for comparison, extract and essay questions.',
+      'IGCSE-specific strategies for comparison, extract and essay questions.',
     href: '/igcse/edexcel/exam-technique',
     icon: Target,
   },
@@ -181,16 +151,13 @@ export default async function EdexcelIgcseHubPage() {
               <Sparkles className="mr-1 size-3" />
               International GCSE English Literature
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              Edexcel IGCSE 4ET1
-            </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Pearson Edexcel IGCSE English Literature
+            Pearson Edexcel IGCSE Literature
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             The Pearson Edexcel International GCSE in English Literature
-            (4ET1) is a two-paper qualification studied in over 85 countries.
+            is a two-paper qualification studied in over 85 countries.
             It covers <strong className="text-foreground">poetry, modern
             prose, modern drama</strong> and a{' '}
             <strong className="text-foreground">literary heritage
@@ -372,7 +339,7 @@ export default async function EdexcelIgcseHubPage() {
         <div className="mb-5 flex items-center gap-3">
           <GraduationCap className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Explore the 4ET1 hub
+            Explore the IGCSE Literature hub
           </h2>
         </div>
 
@@ -412,27 +379,10 @@ export default async function EdexcelIgcseHubPage() {
         </div>
       </section>
 
-      {/* ── Why this qualification ─────────────────────────────────── */}
-      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground mb-4">
-          Why choose Edexcel 4ET1?
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {whyPoints.map((point) => (
-            <div
-              key={point.title}
-              className="rounded-xl border border-border/60 bg-muted/30 p-4"
-            >
-              <h3 className="text-body-sm font-semibold text-foreground">
-                {point.title}
-              </h3>
-              <p className="mt-1 text-body-xs text-muted-foreground leading-relaxed">
-                {point.detail}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* ── Footer ──────────────────────────────────────────────────── */}
+      <footer className="pt-4 text-center text-body-xs text-muted-foreground">
+        Aligned with Pearson Edexcel specification 4ET1
+      </footer>
     </div>
   )
 }

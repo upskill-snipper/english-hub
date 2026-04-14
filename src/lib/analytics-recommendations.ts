@@ -470,7 +470,7 @@ export function mapWeakAreasToResources(
         title: fc,
         description: `Flashcard deck for key terminology and concepts in ${area}.`,
         duration_minutes: 15,
-        reason: `Spaced repetition helps embed knowledge of "${area}" terminology.`,
+        reason: `Regular revision helps embed knowledge of "${area}" terminology.`,
         weak_area: area,
         href: `/practice?mode=flashcards&topic=${encodeURIComponent(areaSlug)}`,
       })

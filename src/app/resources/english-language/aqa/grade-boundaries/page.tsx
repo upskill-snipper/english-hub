@@ -199,7 +199,7 @@ export default function GradeBoundariesPage() {
         <Section title="What each grade looks like in practice">
           <p>
             Understanding the grade descriptors helps you see exactly what
-            examiners expect at each level. Here is what typical work looks like
+            markers expect at each level. Here is what typical work looks like
             at the key grade boundaries:
           </p>
 
@@ -337,7 +337,7 @@ export default function GradeBoundariesPage() {
                   <strong>Writing:</strong> Focus on technical accuracy.
                   Eliminating comma splicing, using capital letters correctly,
                   and spelling common words accurately can gain you several
-                  marks on AO6 alone.
+                  marks on Technical accuracy (AO6) alone.
                 </li>
                 <li>
                   <strong>Timing:</strong> Make sure you attempt every question
@@ -423,31 +423,31 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4 font-semibold">Q1</td>
                   <td className="py-2 pr-4">4 marks (list 4 things)</td>
                   <td className="py-2 pr-4">4 marks (shade 4 true statements)</td>
-                  <td className="py-2 pr-4">AO1</td>
+                  <td className="py-2 pr-4">Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q2</td>
                   <td className="py-2 pr-4">8 marks (language analysis)</td>
                   <td className="py-2 pr-4">8 marks (summary / synthesis)</td>
-                  <td className="py-2 pr-4">P1: AO2 / P2: AO1</td>
+                  <td className="py-2 pr-4">P1: Language and structure analysis (AO2) / P2: Reading and retrieval (AO1)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q3</td>
                   <td className="py-2 pr-4">8 marks (structure)</td>
                   <td className="py-2 pr-4">12 marks (language analysis)</td>
-                  <td className="py-2 pr-4">AO2</td>
+                  <td className="py-2 pr-4">Language and structure analysis (AO2)</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q4</td>
                   <td className="py-2 pr-4">20 marks (evaluation)</td>
                   <td className="py-2 pr-4">16 marks (comparison)</td>
-                  <td className="py-2 pr-4">P1: AO4 / P2: AO3</td>
+                  <td className="py-2 pr-4">P1: Critical evaluation (AO4) / P2: Comparing writers (AO3)</td>
                 </tr>
                 <tr className="bg-primary/10">
                   <td className="py-2 pr-4 font-semibold">Q5</td>
                   <td className="py-2 pr-4">40 marks (creative writing)</td>
-                  <td className="py-2 pr-4">40 marks (transactional writing)</td>
-                  <td className="py-2 pr-4">AO5 (24) + AO6 (16)</td>
+                  <td className="py-2 pr-4">40 marks (writing for real purposes)</td>
+                  <td className="py-2 pr-4">Content and organisation (AO5, 24) + Technical accuracy (AO6, 16)</td>
                 </tr>
                 <tr className="font-bold">
                   <td className="py-2 pr-4">Total</td>

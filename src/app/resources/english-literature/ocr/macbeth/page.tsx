@@ -465,7 +465,7 @@ export default function OCRMacbethPage() {
           </h2>
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Understanding context is essential for AO3. Here are the key
+              Understanding context is essential. Here are the key
               contextual areas to know for Macbeth:
             </p>
             <div className="space-y-4">

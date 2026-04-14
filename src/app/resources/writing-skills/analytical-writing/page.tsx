@@ -325,7 +325,7 @@ export default function AnalyticalWritingPage() {
             <Section id="language-analysis" title="3. Language Analysis: Three Levels">
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Strong language analysis operates at three levels. The best responses move
-                fluidly between all three, showing the examiner that you can zoom in and
+                fluidly between all three, showing the marker that you can zoom in and
                 zoom out.
               </p>
 
@@ -492,7 +492,7 @@ export default function AnalyticalWritingPage() {
             <Section id="evaluative-language" title="5. Evaluative Language">
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Evaluative language demonstrates your personal response and critical judgement.
-                It shows the examiner that you are not just identifying techniques but assessing
+                It shows the marker that you are not just identifying techniques but assessing
                 their effectiveness. This is the difference between description and analysis.
               </p>
 

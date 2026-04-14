@@ -1,8 +1,8 @@
 // @ts-nocheck
 /**
- * Question-level mark scheme data for all GCSE English exam boards.
+ * Question-level marking guide data for all GCSE English exam boards.
  * Each entry describes a single question with its level descriptors,
- * top tips, and common mistakes — designed for the mark scheme browser tool.
+ * top tips, and common mistakes — designed for the marking guide browser tool.
  */
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -184,7 +184,7 @@ const aqaLanguagePaper1: MarkScheme[] = [
     board: 'AQA',
     subject: 'Language',
     paper: 'Paper 1: Explorations in Creative Reading and Writing',
-    question: `Q2 — Summary from source text (AO1) — Detailed Mark Scheme`,
+    question: `Q2 — Summary from source text (AO1) — Detailed Marking Guide`,
     totalMarks: 8,
     levels: [
       { level: 1, marks: '1-2', descriptor: 'Limited and simple summary. Extracts one or two pieces of information with minimal development. Reference to source is minimal or unclear.' },
@@ -1803,7 +1803,7 @@ const wjecLiterature: MarkScheme[] = [
   },
 ]
 
-// ── CAIE Mark Schemes ────────────────────────────────────────────────────────
+// ── CAIE Marking Guides ────────────────────────────────────────────────────────
 
 const caieLanguage: MarkScheme[] = [
   {
@@ -1925,7 +1925,7 @@ const caieEssayMarking: MarkScheme[] = [
   },
 ]
 
-// ── Edexcel Extended Mark Schemes ────────────────────────────────────────────
+// ── Edexcel Extended Marking Guides ────────────────────────────────────────────
 
 const edexcelExtended: MarkScheme[] = [
   {
@@ -1958,7 +1958,7 @@ const edexcelExtended: MarkScheme[] = [
   },
 ]
 
-// ── OCR Extended Mark Schemes ────────────────────────────────────────────────
+// ── OCR Extended Marking Guides ────────────────────────────────────────────────
 
 const ocrExtended: MarkScheme[] = [
   {
@@ -2185,7 +2185,7 @@ export const markSchemeQuestions: MarkScheme[] = [
 export const boards = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'CAIE'] as const
 export type Board = (typeof boards)[number]
 
-/** Get all mark schemes for a given board */
+/** Get all marking guides for a given board */
 export function getMarkSchemesForBoard(board: string): MarkScheme[] {
   return markSchemeQuestions.filter((ms) => ms.board === board)
 }
@@ -2198,12 +2198,12 @@ export function getPapersForBoard(board: string): string[] {
   return [...new Set(papers)]
 }
 
-/** Get all mark schemes for a given board + paper */
+/** Get all marking guides for a given board + paper */
 export function getMarkSchemesForPaper(board: string, paper: string): MarkScheme[] {
   return markSchemeQuestions.filter((ms) => ms.board === board && ms.paper === paper)
 }
 
-/** Find a single mark scheme by ID */
+/** Find a single marking guide by ID */
 export function getMarkSchemeById(id: string): MarkScheme | undefined {
   return markSchemeQuestions.find((ms) => ms.id === id)
 }

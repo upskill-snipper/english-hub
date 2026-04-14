@@ -837,7 +837,7 @@ export default function MacbethPage() {
           Historical and Social Context
         </h2>
         <p className="mt-2 text-muted-foreground">
-          Context (AO3) is worth 6 marks per question. Integrate it into your
+          Relating to context (what markers look for) is worth 6 marks per question. Integrate it into your
           analysis rather than writing separate &quot;context paragraphs.&quot;
         </p>
 

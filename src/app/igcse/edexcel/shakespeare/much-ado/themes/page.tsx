@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     canonical:
       "https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/themes",
   },
-  title: "Much Ado About Nothing Themes — Edexcel IGCSE 4ET1",
+  title: "Much Ado About Nothing Themes — Edexcel IGCSE IGCSE Literature",
   description:
-    "Detailed themes guide for Much Ado About Nothing for Edexcel IGCSE 4ET1: love, deception, honour, marriage and gender, with quotes and analysis.",
+    "Detailed themes guide for Much Ado About Nothing for Edexcel IGCSE IGCSE Literature: love, deception, honour, marriage and gender, with quotes and analysis.",
 };
 
 const THEMES = [
@@ -98,7 +98,7 @@ export default async function MuchAdoThemesPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE 4ET1
+            Edexcel IGCSE IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Much Ado About Nothing &mdash; Themes

@@ -30,7 +30,7 @@ const studentBenefits = [
     icon: Target,
     color: 'text-primary bg-primary/10',
     title: 'Board-Specific Revision Materials',
-    desc: 'Tailored content for AQA, Edexcel, OCR, and WJEC — study only what your specification demands.',
+    desc: 'Tailored content for AQA, Edexcel, OCR, and WJEC — study only what your exam board requires.',
   },
   {
     icon: FileQuestion,

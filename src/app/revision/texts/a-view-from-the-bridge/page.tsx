@@ -18,7 +18,7 @@ const data: TextGuideData = {
   author: 'Arthur Miller',
   year: 'first staged 1955',
   category: 'Play',
-  badge: 'Edexcel IGCSE 4ET1',
+  badge: 'Edexcel IGCSE',
   intro:
     "Arthur Miller's tight two-act tragedy follows Eddie Carbone, a Brooklyn longshoreman whose world collapses when he takes in his wife's Italian cousins as illegal immigrants and begins to suspect his niece has fallen in love with one of them. Narrated by the lawyer Alfieri, the play bends classical tragedy into the rhythms of 1950s New York dockyard life.",
   quickInfo: {

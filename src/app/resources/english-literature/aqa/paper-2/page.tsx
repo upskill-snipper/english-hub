@@ -183,7 +183,7 @@ export default function Paper2Page() {
                 <span className="font-medium text-foreground">Time:</span> ~45
                 minutes
               </li>
-              <li>AO1 (12), AO2 (12), AO3 (6), AO4 (4 SPaG)</li>
+              <li>Understanding the text (12), Analysing language and structure (12), Relating to context (6), Comparing texts (4 SPaG)</li>
             </ul>
           </div>
           <div className="rounded-xl border border-border p-6">
@@ -198,7 +198,7 @@ export default function Paper2Page() {
                 <span className="font-medium text-foreground">Time:</span> ~45
                 minutes
               </li>
-              <li>AO1 (12), AO2 (12), AO3 (6)</li>
+              <li>Understanding the text (12), Analysing language and structure (12), Relating to context (6)</li>
             </ul>
           </div>
           <div className="rounded-xl border border-border p-6">
@@ -213,7 +213,7 @@ export default function Paper2Page() {
                 <span className="font-medium text-foreground">Time:</span> ~45
                 minutes (30 + 15)
               </li>
-              <li>AO1 (12), AO2 (12) for Part 1; AO2 (8) for Part 2</li>
+              <li>Understanding the text (12), Analysing language and structure (12) for Part 1; Analysing language and structure (8) for Part 2</li>
             </ul>
           </div>
         </div>

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title:
     "A Christmas Carol Model Essays — Grade 5, 7 & 9 | The English Hub",
   description:
-    "Three fully-annotated model essays answering 'How does Dickens present Scrooge's transformation?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and examiner commentary. AQA, Edexcel & Eduqas.",
+    "Three fully-annotated model essays answering 'How does Dickens present Scrooge's transformation?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and marker commentary. AQA, Edexcel & Eduqas.",
   keywords: [
     "A Christmas Carol",
     "model essay",
@@ -439,11 +439,11 @@ export default function ChristmasCarolEssayBankPage() {
               </CardContent>
             </Card>
 
-            {/* Examiner commentary */}
+            {/* Marker commentary */}
             <Card className="mb-6">
               <CardHeader>
                 <CardTitle className="text-base">
-                  Examiner commentary
+                  Marker commentary
                 </CardTitle>
               </CardHeader>
               <CardContent>

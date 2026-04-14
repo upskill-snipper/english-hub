@@ -24,7 +24,7 @@ const accModules: CourseModule[] = [
 
 <p>In early 1843, Dickens visited the tin mines of Cornwall and was horrified by the child labour he witnessed. He also read a parliamentary report — the <strong>Second Report of the Children's Employment Commission</strong> — detailing the abuse of children in factories and mines. He initially planned to write a political pamphlet, but decided that a story told at Christmas would reach a far wider audience and have a more lasting emotional impact. This decision produced <em>A Christmas Carol</em>.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO3):</strong> When writing about context, always connect it to Dickens's <em>purpose</em>. Do not simply state facts about Victorian poverty — explain how Dickens uses the novella to challenge or critique those conditions. For example: "Dickens presents the Cratchit family's modest Christmas dinner to shame wealthy readers who, like Scrooge, regard the poor as undeserving."</div>
+<div class="examiner-tip"><strong>Top Tip (AO3):</strong> When writing about context, always connect it to Dickens's <em>purpose</em>. Do not simply state facts about Victorian poverty — explain how Dickens uses the novella to challenge or critique those conditions. For example: "Dickens presents the Cratchit family's modest Christmas dinner to shame wealthy readers who, like Scrooge, regard the poor as undeserving."</div>
 
 <h3>Victorian Poverty &amp; the Poor Law</h3>
 
@@ -64,7 +64,7 @@ const accModules: CourseModule[] = [
 
 <p>On AQA GCSE English Literature Paper 1, <em>A Christmas Carol</em> appears in <strong>Section B: The 19th-century novel</strong>. You will be given a short <strong>extract</strong> from the novella and asked a question in the format: <em>"Starting with this extract, how does Dickens present..."</em>. You must write about the extract <strong>and</strong> the novella as a whole. The question is worth <strong>30 marks</strong> (plus 4 marks for SPaG), and you should spend approximately <strong>50 minutes</strong> on it.</p>
 
-<p>The four assessment objectives are:</p>
+<p>The four what markers look for are:</p>
 <ul>
   <li><strong>AO1 (12 marks):</strong> Read, understand and respond to texts with a critical personal response, using textual references including quotations.</li>
   <li><strong>AO2 (12 marks):</strong> Analyse language, form and structure used by the writer to create meanings and effects.</li>
@@ -72,7 +72,7 @@ const accModules: CourseModule[] = [
   <li><strong>AO4 (4 marks):</strong> Use a range of vocabulary and sentence structures with accurate spelling and punctuation.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> AO3 is worth 6 marks on the 19th-century novel question. Do not write a separate "context paragraph" — instead, weave contextual understanding into every analytical point. For example, when analysing Scrooge's language, connect it to Malthusian ideology; when discussing the Cratchits, link their struggles to the realities of Victorian working-class life.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> AO3 is worth 6 marks on the 19th-century novel question. Do not write a separate "context paragraph" — instead, weave contextual understanding into every analytical point. For example, when analysing Scrooge's language, connect it to Malthusian ideology; when discussing the Cratchits, link their struggles to the realities of Victorian working-class life.</div>
 `,
     quiz: [
       {
@@ -167,7 +167,7 @@ const accModules: CourseModule[] = [
 
 <p>The famous simile "hard and sharp as flint" associates Scrooge with cold, lifeless stone — incapable of warmth or human connection. Yet flint also produces sparks when struck, which subtly foreshadows the possibility of transformation: even the hardest material can generate light. Dickens further describes Scrooge as "solitary as an oyster," a simile that conveys isolation but also carries a submerged metaphor — oysters contain pearls, hinting at the goodness hidden within Scrooge's hard exterior.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO2):</strong> When analysing Dickens's language choices, always consider <em>multiple layers of meaning</em>. The "oyster" simile is an excellent example: on the surface it conveys isolation, but a more sophisticated reading identifies the pearl metaphor and links it to Scrooge's latent capacity for goodness. This kind of layered analysis will push your response into the top mark bands.</div>
+<div class="examiner-tip"><strong>Top Tip (AO2):</strong> When analysing Dickens's language choices, always consider <em>multiple layers of meaning</em>. The "oyster" simile is an excellent example: on the surface it conveys isolation, but a more sophisticated reading identifies the pearl metaphor and links it to Scrooge's latent capacity for goodness. This kind of layered analysis will push your response into the top mark bands.</div>
 
 <p>The weather mirrors Scrooge's character through <strong>pathetic fallacy</strong>. The fog is "cold, bleak, biting"; it seeps into the counting house just as Scrooge's coldness infects everything around him. Dickens writes that "no warmth could warm" him — a deliberate tautology that emphasises the absoluteness of Scrooge's emotional frigidity. External cold and internal cold become indistinguishable.</p>
 
@@ -201,7 +201,7 @@ const accModules: CourseModule[] = [
 
 <p>Marley warns Scrooge that he wears a chain even longer than Marley's own — "you were my partner" — and that three spirits will visit him. The supernatural framework gives Dickens a mechanism to show Scrooge (and the reader) the past, present, and future consequences of greed. It also taps into the Victorian fascination with ghosts and the afterlife, ensuring the story would grip its audience.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO2):</strong> The chain is one of the most important symbols in the novella. In an exam, you could analyse how Dickens uses it to make an abstract concept (spiritual punishment for greed) concrete and visible. This links form and meaning — the ghost story genre allows Dickens to <em>literalise</em> metaphors that would otherwise remain abstract.</div>
+<div class="examiner-tip"><strong>Top Tip (AO2):</strong> The chain is one of the most important symbols in the novella. In an exam, you could analyse how Dickens uses it to make an abstract concept (spiritual punishment for greed) concrete and visible. This links form and meaning — the ghost story genre allows Dickens to <em>literalise</em> metaphors that would otherwise remain abstract.</div>
 
 <h3>The Window Scene</h3>
 
@@ -364,7 +364,7 @@ const accModules: CourseModule[] = [
 
 <p>When Scrooge sees his younger self, he weeps — a dramatic shift from the man who "no warmth could warm" in Stave 1. The tears show that beneath the flint-like exterior, feeling still exists. Dickens writes that Scrooge "said he wished" he had given something to the carol singer he turned away the previous evening. This is the first crack in Scrooge's armour — the first acknowledgement that his behaviour has been wrong — and it is triggered entirely by reconnection with his own suffering.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO1):</strong> When analysing Scrooge's response to his childhood self, make a clear link to his behaviour in Stave 1. His regret about the carol singer shows that memory is already beginning to work on his conscience. This is evidence of Dickens structuring the novella so that transformation is gradual and psychologically convincing, not sudden.</div>
+<div class="examiner-tip"><strong>Top Tip (AO1):</strong> When analysing Scrooge's response to his childhood self, make a clear link to his behaviour in Stave 1. His regret about the carol singer shows that memory is already beginning to work on his conscience. This is evidence of Dickens structuring the novella so that transformation is gradual and psychologically convincing, not sudden.</div>
 
 <p>The vision also reveals that Scrooge found solace in books — characters like Ali Baba and Robinson Crusoe were his companions. Dickens, himself a voracious childhood reader, uses this detail to show that Scrooge once had imagination and emotional capacity. His later obsession with money has starved these qualities.</p>
 
@@ -386,7 +386,7 @@ const accModules: CourseModule[] = [
 
 <p>Again, Scrooge thinks of Bob Cratchit and wishes he could say something to him "right now." This is the second crack — another moment where memory triggers conscience and Scrooge connects his past experience (being treated well by Fezziwig) to his present failure (treating Bob Cratchit badly).</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO3):</strong> Fezziwig embodies Dickens's ideal of the benevolent employer — a direct response to the exploitative factory owners and businessmen of Victorian England. When writing about Fezziwig, link him to Dickens's belief that the wealthy have a moral duty to use their resources to improve the lives of those who depend on them.</div>
+<div class="examiner-tip"><strong>Top Tip (AO3):</strong> Fezziwig embodies Dickens's ideal of the benevolent employer — a direct response to the exploitative factory owners and businessmen of Victorian England. When writing about Fezziwig, link him to Dickens's belief that the wealthy have a moral duty to use their resources to improve the lives of those who depend on them.</div>
 
 <h3>Belle: The Loss of Love</h3>
 
@@ -549,7 +549,7 @@ const accModules: CourseModule[] = [
 
 <p>The brilliance of this scene is its <strong>juxtaposition</strong>: the Cratchits have almost nothing in material terms, yet they possess everything that Scrooge lacks — love, warmth, gratitude, and togetherness. Dickens inverts the expected hierarchy: the "poor" family is spiritually rich, while the "wealthy" Scrooge is spiritually bankrupt. This structural contrast is central to the novella's moral argument and provides excellent material for AO2 analysis.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO2):</strong> When writing about the Cratchits, focus on Dickens's use of <strong>contrast and juxtaposition</strong>. Compare the Cratchit household (small, warm, full of love) with Scrooge's counting house (large, cold, devoid of human connection). This structural technique — placing opposites side by side — is one of Dickens's most powerful methods of persuasion.</div>
+<div class="examiner-tip"><strong>Top Tip (AO2):</strong> When writing about the Cratchits, focus on Dickens's use of <strong>contrast and juxtaposition</strong>. Compare the Cratchit household (small, warm, full of love) with Scrooge's counting house (large, cold, devoid of human connection). This structural technique — placing opposites side by side — is one of Dickens's most powerful methods of persuasion.</div>
 
 <div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
   <strong>How to Write About the Cratchit Family (Grade 9 Response):</strong>
@@ -587,7 +587,7 @@ const accModules: CourseModule[] = [
 
 <p>When Scrooge asks "Have they no refuge or resource?", the Ghost echoes his own words once more: "Are there no prisons? Are there no workhouses?" This repetition is devastating — Scrooge's earlier dismissal of the poor is turned into an indictment of his own callousness. Dickens makes it impossible for the reader to hear those words without shame.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO1):</strong> Ignorance and Want are among the most frequently examined moments in the novella. If asked about social responsibility, poverty, or Dickens's message, this scene should feature prominently. Always connect the allegory to Dickens's wider purpose — he is arguing that Victorian society must address poverty and education to avoid its own destruction.</div>
+<div class="examiner-tip"><strong>Top Tip (AO1):</strong> Ignorance and Want are among the most frequently examined moments in the novella. If asked about social responsibility, poverty, or Dickens's message, this scene should feature prominently. Always connect the allegory to Dickens's wider purpose — he is arguing that Victorian society must address poverty and education to avoid its own destruction.</div>
 
 <h3>Victorian Poverty and the "Hungry Forties"</h3>
 
@@ -736,7 +736,7 @@ const accModules: CourseModule[] = [
 
 <p>Scrooge does not yet realise the dead man is himself. This dramatic irony intensifies the horror — the reader may guess what Scrooge cannot, creating suspense and a sense of dread.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO2):</strong> Dickens uses <strong>dramatic irony</strong> throughout Stave 4 — the audience suspects the dead man is Scrooge before he does. This technique generates suspense and deepens the emotional impact when the truth is finally revealed. Always name the technique and explain its effect on the reader.</div>
+<div class="examiner-tip"><strong>Top Tip (AO2):</strong> Dickens uses <strong>dramatic irony</strong> throughout Stave 4 — the audience suspects the dead man is Scrooge before he does. This technique generates suspense and deepens the emotional impact when the truth is finally revealed. Always name the technique and explain its effect on the reader.</div>
 
 <h3>Old Joe's Shop: The Stolen Possessions</h3>
 
@@ -775,7 +775,7 @@ const accModules: CourseModule[] = [
 
 <p>The distinction between "Will" and "May" is crucial. Scrooge is asking whether the future is fixed or changeable — whether redemption is still possible. This question reflects a key tension in the novella between determinism and free will. Dickens's answer — delivered through Scrooge's transformation in Stave 5 — is emphatically optimistic: the future can be changed through moral choice and action.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO1):</strong> Scrooge's question at the gravestone — "Will be" or "May be" — is one of the novella's most quotable moments. Use it in essays about redemption, free will, or Dickens's message. It shows Scrooge taking responsibility for his own future, which is the turning point of the entire narrative.</div>
+<div class="examiner-tip"><strong>Top Tip (AO1):</strong> Scrooge's question at the gravestone — "Will be" or "May be" — is one of the novella's most quotable moments. Use it in essays about redemption, free will, or Dickens's message. It shows Scrooge taking responsibility for his own future, which is the turning point of the entire narrative.</div>
 
 <p>Scrooge pledges to "honour Christmas in my heart, and try to keep it all the year." The verb "try" is realistic — Dickens does not promise perfection, only effort. The phrase "all the year" extends the novella's message beyond the festive season: compassion is not a once-a-year obligation but a daily practice.</p>
 
@@ -941,7 +941,7 @@ const accModules: CourseModule[] = [
 
 <p>The anonymity of the gift is equally significant. Scrooge does not seek recognition or gratitude — his generosity is genuinely selfless, motivated by compassion rather than a desire for social approval. This contrasts with the performative charity of some Victorians, who gave publicly to enhance their reputation. Dickens implies that the purest form of giving expects nothing in return.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO3):</strong> The anonymous turkey can be linked to Dickens's critique of Victorian charity. Many wealthy Victorians gave to charity publicly for social prestige. By making Scrooge's gift anonymous, Dickens presents an ideal of selfless giving that challenges performative philanthropy.</div>
+<div class="examiner-tip"><strong>Top Tip (AO3):</strong> The anonymous turkey can be linked to Dickens's critique of Victorian charity. Many wealthy Victorians gave to charity publicly for social prestige. By making Scrooge's gift anonymous, Dickens presents an ideal of selfless giving that challenges performative philanthropy.</div>
 
 <h3>Meeting the Charity Collectors</h3>
 
@@ -975,7 +975,7 @@ const accModules: CourseModule[] = [
 
 <p>The novella's final line — "and it was always said of him, that he knew how to keep Christmas well, if any man alive possessed the knowledge" — extends the definition of "keeping Christmas" beyond one day. To "keep Christmas well" means to live with generosity, compassion, and awareness of one's social duty <em>every day</em>. Dickens addresses the reader directly in the final words: "may that be truly said of us, and all of us!" The shift from "him" to "us" is deliberate — Dickens turns the spotlight from Scrooge to the reader, making the moral demand personal and inescapable.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO1):</strong> The ending is rich material for any essay. The shift from third person ("him") to first person plural ("us") is a deliberate rhetorical move — Dickens breaks the fictional frame to challenge every reader to follow Scrooge's example. Analysing this technique shows awareness of Dickens as a conscious craftsman, not just a storyteller.</div>
+<div class="examiner-tip"><strong>Top Tip (AO1):</strong> The ending is rich material for any essay. The shift from third person ("him") to first person plural ("us") is a deliberate rhetorical move — Dickens breaks the fictional frame to challenge every reader to follow Scrooge's example. Analysing this technique shows awareness of Dickens as a conscious craftsman, not just a storyteller.</div>
 `,
     quiz: [
       {
@@ -1064,7 +1064,7 @@ const accModules: CourseModule[] = [
 </ol>
 <p>This graduated structure makes the transformation psychologically credible. Each ghost addresses a different aspect of Scrooge's psychology: the Past awakens memory and empathy; the Present shows him the current cost of his behaviour; the Future terrifies him into action.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO2):</strong> Tracking Scrooge's transformation across all five staves shows understanding of Dickens's <em>structural</em> methods — a key component of AO2 that many students neglect. Do not just analyse language; analyse how the novella's five-part structure shapes Scrooge's arc.</div>
+<div class="examiner-tip"><strong>Top Tip (AO2):</strong> Tracking Scrooge's transformation across all five staves shows understanding of Dickens's <em>structural</em> methods — a key component of AO2 that many students neglect. Do not just analyse language; analyse how the novella's five-part structure shapes Scrooge's arc.</div>
 
 <h4>Scrooge's Name</h4>
 <p>The name "Ebenezer" comes from Hebrew, meaning "stone of help" — a reference to a biblical monument commemorating God's assistance. Dickens may have chosen this name ironically (Scrooge is no help to anyone in Stave 1) or prophetically (he becomes a "stone of help" after his transformation). "Scrooge" itself has become a common English word meaning "miser," showing the character's cultural impact.</p>
@@ -1108,7 +1108,7 @@ const accModules: CourseModule[] = [
 <h4>The Ghost of Christmas Yet to Come</h4>
 <p>Silent, black-robed, faceless. It resembles the Grim Reaper and is the most frightening of the three. Its refusal to speak forces Scrooge into independent moral reasoning. It represents not just the future but the <em>consequences</em> of present choices — the most terrifying prospect of all.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO2):</strong> Compare the three ghosts' appearances and communication styles. The progression from warm and conversational (Past) to gentle but challenging (Present) to silent and terrifying (Future) mirrors the escalating pressure on Scrooge's conscience. This structural escalation is a key method worth analysing.</div>
+<div class="examiner-tip"><strong>Top Tip (AO2):</strong> Compare the three ghosts' appearances and communication styles. The progression from warm and conversational (Past) to gentle but challenging (Present) to silent and terrifying (Future) mirrors the escalating pressure on Scrooge's conscience. This structural escalation is a key method worth analysing.</div>
 
 <h3>Jacob Marley</h3>
 
@@ -1193,7 +1193,7 @@ const accModules: CourseModule[] = [
     content: `
 <h2>Key Themes — Redemption, Social Responsibility, Christmas Spirit, Poverty, Family &amp; Isolation</h2>
 
-<p>AQA examiners reward responses that treat themes as <strong>interconnected</strong> rather than isolated. A top-band essay about redemption, for example, will also touch on social responsibility, family, and isolation. This module maps the six major themes, provides key quotations for each, and shows you how to weave them together in an exam response.</p>
+<p>AQA markers reward responses that treat themes as <strong>interconnected</strong> rather than isolated. A top-band essay about redemption, for example, will also touch on social responsibility, family, and isolation. This module maps the six major themes, provides key quotations for each, and shows you how to weave them together in an exam response.</p>
 
 <h3>1. Redemption</h3>
 
@@ -1213,7 +1213,7 @@ const accModules: CourseModule[] = [
 
 <p>For AO3, connect this theme to the <strong>1834 Poor Law</strong>, Malthusian economics, and the vast wealth gap in Victorian Britain. Dickens was not advocating revolution — he was advocating <strong>individual moral action</strong> by the middle and upper classes. He believed that if enough Scrooges changed, society would follow.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO3):</strong> Do not reduce social responsibility to "Dickens wanted rich people to be nicer." Be specific: link it to the workhouse system, Malthusian theory, the 1834 Poor Law, and Dickens's own experiences of poverty. Specificity is what distinguishes a top-band contextual response from a generic one.</div>
+<div class="examiner-tip"><strong>Top Tip (AO3):</strong> Do not reduce social responsibility to "Dickens wanted rich people to be nicer." Be specific: link it to the workhouse system, Malthusian theory, the 1834 Poor Law, and Dickens's own experiences of poverty. Specificity is what distinguishes a top-band contextual response from a generic one.</div>
 
 <h3>3. The Christmas Spirit</h3>
 
@@ -1261,7 +1261,7 @@ const accModules: CourseModule[] = [
   <li><strong>Social Responsibility + Poverty:</strong> Dickens argues that poverty is not inevitable but the result of collective moral failure — if the wealthy fulfilled their social responsibility, poverty could be alleviated.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO1):</strong> AQA rewards "exploratory" responses that make connections between themes. In your essay, do not write about one theme in isolation — show how it connects to at least one other. This creates a "conceptualised" response, which is the hallmark of top-band work.</div>
+<div class="examiner-tip"><strong>Top Tip (AO1):</strong> AQA rewards "exploratory" responses that make connections between themes. In your essay, do not write about one theme in isolation — show how it connects to at least one other. This creates a "conceptualised" response, which is the hallmark of top-band work.</div>
 `,
     quiz: [
       {
@@ -1363,7 +1363,7 @@ const accModules: CourseModule[] = [
 
 <p>The Victorian audience would also have enjoyed the ghost story as entertainment — Dickens chose a popular genre to ensure the widest possible readership for his social message. This is itself a strategic choice: the moral lesson is delivered inside a compelling narrative wrapper.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO2):</strong> Many students analyse the ghosts only as characters. For AO2, also discuss them as <em>structural devices</em> — mechanisms that allow Dickens to compress time, literalise metaphors, and bypass Scrooge's psychological defences. This shows understanding of form and structure, not just character.</div>
+<div class="examiner-tip"><strong>Top Tip (AO2):</strong> Many students analyse the ghosts only as characters. For AO2, also discuss them as <em>structural devices</em> — mechanisms that allow Dickens to compress time, literalise metaphors, and bypass Scrooge's psychological defences. This shows understanding of form and structure, not just character.</div>
 
 <h3>Contrast &amp; Juxtaposition</h3>
 
@@ -1410,7 +1410,7 @@ const accModules: CourseModule[] = [
 
 <p>Dickens frequently uses lists and accumulated detail to build effect. Scrooge's introduction piles up negative adjectives; the Ghost of Christmas Present sits among an overflowing feast; Marley's chain is made of "cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses." The listing technique creates a sense of excess — whether excess of greed (Scrooge's adjectives), generosity (the feast), or spiritual burden (the chain). It is a versatile device that appears across the whole novella.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO2):</strong> When analysing a passage, try to identify at least one <strong>language</strong> technique (e.g. simile, metaphor, sibilance), one <strong>structural</strong> technique (e.g. contrast, the five-stave form, dramatic irony), and one <strong>form</strong> point (e.g. allegory, ghost story conventions, the novella form). This ensures balanced AO2 coverage.</div>
+<div class="examiner-tip"><strong>Top Tip (AO2):</strong> When analysing a passage, try to identify at least one <strong>language</strong> technique (e.g. simile, metaphor, sibilance), one <strong>structural</strong> technique (e.g. contrast, the five-stave form, dramatic irony), and one <strong>form</strong> point (e.g. allegory, ghost story conventions, the novella form). This ensures balanced AO2 coverage.</div>
 `,
     quiz: [
       {
@@ -1491,7 +1491,7 @@ const accModules: CourseModule[] = [
     content: `
 <h2>Exam Technique — AQA Extract-Based Essay Practice</h2>
 
-<p>The AQA GCSE English Literature exam requires a specific approach. Unlike Edexcel, which splits its questions across two papers with different formats, AQA places <em>A Christmas Carol</em> in <strong>Paper 1, Section B: The 19th-Century Novel</strong>. The question is worth <strong>30 marks</strong> plus <strong>4 marks for SPaG (AO4)</strong>, and you should spend approximately <strong>50 minutes</strong> on it. Understanding the question format, mark scheme, and examiner expectations is essential for maximising your grade.</p>
+<p>The AQA GCSE English Literature exam requires a specific approach. Unlike Edexcel, which splits its questions across two papers with different formats, AQA places <em>A Christmas Carol</em> in <strong>Paper 1, Section B: The 19th-Century Novel</strong>. The question is worth <strong>30 marks</strong> plus <strong>4 marks for SPaG (AO4)</strong>, and you should spend approximately <strong>50 minutes</strong> on it. Understanding the question format, marking guide, and marker expectations is essential for maximising your grade.</p>
 
 <h3>The AQA Question Format</h3>
 
@@ -1518,7 +1518,7 @@ const accModules: CourseModule[] = [
   <li><strong>Draft a thesis.</strong> Write one sentence that captures your overall argument — e.g., "Dickens presents Scrooge's isolation as both a consequence of his greed and a self-imposed prison from which only empathy can free him."</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> A clear thesis at the start of your essay signals a "conceptualised response" — the hallmark of top-band AO1. Examiners are trained to look for an overarching argument, not just a series of disconnected points.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> A clear thesis at the start of your essay signals a "conceptualised response" — the hallmark of top-band AO1. Markers are trained to look for an overarching argument, not just a series of disconnected points.</div>
 
 <h3>Essay Structure: The AQA-Optimised Approach</h3>
 
@@ -1544,7 +1544,7 @@ const accModules: CourseModule[] = [
 <h4>Conclusion (2–3 sentences)</h4>
 <p>Briefly summarise your argument and offer a final evaluative comment. This is your last chance to impress — end with a strong, confident statement about Dickens's purpose or effect.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending too long on the extract and running out of time for the wider novella. AQA's mark scheme requires you to write about <em>both</em>. Aim for roughly 50% extract, 50% wider text. If you only write about the extract, you cannot access the top mark bands.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending too long on the extract and running out of time for the wider novella. AQA's marking guide requires you to write about <em>both</em>. Aim for roughly 50% extract, 50% wider text. If you only write about the extract, you cannot access the top mark bands.</div>
 
 <h3>Embedding Quotations</h3>
 
@@ -1560,9 +1560,9 @@ const accModules: CourseModule[] = [
 <p><strong>Weak:</strong> "In Victorian times, there were workhouses. The Poor Law of 1834 made conditions harsh."</p>
 <p><strong>Strong:</strong> "Scrooge's dismissive question — 'Are there no workhouses?' — would have resonated with Victorian readers familiar with the deliberate cruelty of the 1834 Poor Law, which enforced the principle of 'less eligibility' to deter the poor from seeking help. Dickens places these real institutional failures in Scrooge's mouth to expose the moral bankruptcy of a system that punished poverty rather than relieving it."</p>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO3):</strong> The best AO3 responses connect context to <em>Dickens's purpose</em>. Do not just state a historical fact — explain how Dickens uses it to critique, challenge, or persuade. The formula is: "Dickens [verb — uses/presents/critiques/exposes] [textual detail] to [purpose/effect], reflecting [contextual knowledge]."</div>
+<div class="examiner-tip"><strong>Top Tip (AO3):</strong> The best AO3 responses connect context to <em>Dickens's purpose</em>. Do not just state a historical fact — explain how Dickens uses it to critique, challenge, or persuade. The formula is: "Dickens [verb — uses/presents/critiques/exposes] [textual detail] to [purpose/effect], reflecting [contextual knowledge]."</div>
 
-<h3>AQA Mark Bands: What Examiners Look For</h3>
+<h3>AQA Mark Bands: What Markers Look For</h3>
 
 <p>Understanding the mark bands helps you target the top:</p>
 <ul>
@@ -1611,7 +1611,7 @@ const accModules: CourseModule[] = [
   <li>Leave 2 minutes at the end to proofread your response.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip (AO4):</strong> The SPaG marks reward ambitious vocabulary and varied sentence structure as well as accuracy. Use literary terminology, vary your sentence lengths, and demonstrate control over complex sentences. Do not play it safe with simple prose — AO4 rewards sophistication.</div>
+<div class="examiner-tip"><strong>Top Tip (AO4):</strong> The SPaG marks reward ambitious vocabulary and varied sentence structure as well as accuracy. Use literary terminology, vary your sentence lengths, and demonstrate control over complex sentences. Do not play it safe with simple prose — AO4 rewards sophistication.</div>
 `,
     quiz: [
       {
@@ -1638,7 +1638,7 @@ const accModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'WHAT = your interpretation (AO1). HOW = the writer\'s technique and its effect (AO2). WHY = the contextual purpose and reader response (AO3). This framework ensures every paragraph addresses the three main assessment objectives.',
+          'WHAT = your interpretation (AO1). HOW = the writer\'s technique and its effect (AO2). WHY = the contextual purpose and reader response (AO3). This framework ensures every paragraph addresses the three main what markers look for.',
       },
       {
         id: 'aqa-acc-m10-q3',
@@ -1882,7 +1882,7 @@ const assessmentQuestions: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'A conceptualised response has an overarching argument that threads through every paragraph. It interprets rather than describes, connecting points into a coherent thesis. AQA examiners identify this as a key feature of top-band work.',
+      'A conceptualised response has an overarching argument that threads through every paragraph. It interprets rather than describes, connecting points into a coherent thesis. AQA markers identify this as a key feature of top-band work.',
   },
   {
     id: 'aqa-acc-aq17',

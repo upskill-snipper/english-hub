@@ -42,7 +42,7 @@ const QUESTION_TYPES = [
     id: "to-what-extent",
     title: "\"To what extent do you agree...\" questions",
     whatItAsks:
-      "These are evaluative questions. You are given a statement about the text and asked to assess how far you agree with it. You need to present a balanced argument but ultimately take a clear position. Examiners reward critical, independent thinking.",
+      "These are evaluative questions. You are given a statement about the text and asked to assess how far you agree with it. You need to present a balanced argument but ultimately take a clear position. Markers reward critical, independent thinking.",
     boards: "Language and Literature papers across all boards",
     structure: [
       "Open with a clear thesis: state the extent to which you agree (mostly agree, partially agree, disagree).",
@@ -156,7 +156,7 @@ const QUESTION_TYPES = [
       "Ignoring technical accuracy: SPaG marks are significant (up to 16 marks on some papers).",
       "Not varying your sentence structures: every sentence the same length and pattern.",
       "Forgetting to use paragraphs: new time, place, topic, or speaker = new paragraph.",
-      "Starting with \"I woke up\" or \"My alarm went off\" -- examiners see this thousands of times.",
+      "Starting with \"I woke up\" or \"My alarm went off\" -- markers see this thousands of times.",
     ],
     example:
       "The harbour exhaled salt and diesel, its breath clinging to the morning like a confession. Nets lay tangled on the quayside -- sleeping snakes, coiled and patient. Somewhere beneath the pier, water slapped stone with the lazy indifference of a cat. She stood at the edge, her shadow stretching toward the boats as if it knew where it wanted to go, even if she did not.",

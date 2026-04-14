@@ -155,7 +155,7 @@ const poems: PoemData[] = [
     examTips: [
       "The half-rhymes are crucial — always mention them and explain how they connect to the theme of imperfect imitation.",
       "Compare with 'Piano' (Lawrence) for another poem about a son's relationship with a parent and the pull of the past.",
-      "Discuss the ambiguity of the ending — examiners reward candidates who explore multiple interpretations rather than fixing on one.",
+      "Discuss the ambiguity of the ending — markers reward responses that explore multiple interpretations rather than fixing on one.",
       "Note the shift in tense: past tense dominates until the final stanza's 'today', which makes the reversal sudden and powerful.",
     ],
   },
@@ -466,7 +466,7 @@ const comparisonPairings = [
 
 const assessmentObjectives = [
   {
-    code: "AO1",
+    code: "Textual Knowledge",
     title: "Textual Knowledge & Personal Response",
     description:
       "Show detailed knowledge of the poem and offer a personal, informed response. Use precise references and quotations, not just general summaries.",
@@ -474,7 +474,7 @@ const assessmentObjectives = [
       "Embed short quotations into your sentences. For example: Shakespeare's metaphor of 'summer's lease' presents beauty as borrowed, not owned.",
   },
   {
-    code: "AO2",
+    code: "Writer's Methods",
     title: "Language, Form & Structure",
     description:
       "Analyse HOW the poet creates meaning through word choice, imagery, form (sonnet, free verse, etc.), and structural features (volta, anaphora, circular structure).",
@@ -482,7 +482,7 @@ const assessmentObjectives = [
       "Always ask 'Why has the poet chosen THIS word/form/structure?' For example: Clarke's anaphoric 'For' creates a liturgical rhythm that transforms the poem into a funeral prayer.",
   },
   {
-    code: "AO3",
+    code: "Interpretation",
     title: "Comparison",
     description:
       "When comparing poems, sustain the comparison throughout your response. Do not write about Poem A then Poem B. Weave analysis of both poems together, using connectives.",
@@ -490,7 +490,7 @@ const assessmentObjectives = [
       "Use comparative connectives: 'Similarly', 'In contrast', 'While Wright presents the snake as sovereign, Clarke shows nature as vulnerable to human destruction.'",
   },
   {
-    code: "AO4",
+    code: "Personal Response",
     title: "Context",
     description:
       "Use biographical, historical, or literary context to illuminate the text — not as a bolt-on paragraph. Context should explain WHY the poet writes as they do.",
@@ -546,7 +546,7 @@ export default function SongsOfOurselvesV1Page() {
                 organised into thematic sections.
               </p>
               <p>
-                For <strong>Paper 1 (Poetry and Prose)</strong>, candidates answer one
+                For <strong>Paper 1 (Poetry and Prose)</strong>, you answer one
                 question on a set poem from the anthology. Questions may ask for
                 close analysis of an extract or comparison of two poems. The best
                 responses demonstrate detailed knowledge of the poems, analysis of the
@@ -571,7 +571,7 @@ export default function SongsOfOurselvesV1Page() {
                   </li>
                   <li>
                     &bull; You are assessed on knowledge, analysis of methods,
-                    comparison, and context (AO1&ndash;AO4)
+                    comparison, and context (all four skills)
                   </li>
                   <li>
                     &bull; Responses should be <strong>analytical</strong>, not
@@ -591,8 +591,8 @@ export default function SongsOfOurselvesV1Page() {
             CAIE Assessment Objectives Applied to Poetry
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Understanding what each AO requires helps you structure responses that hit
-            every mark scheme criterion.
+            Understanding what each skill requires helps you structure responses that hit
+            every marking guide criterion.
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">

@@ -15,7 +15,7 @@ const features = [
   {
     icon: GraduationCap,
     title: 'Expert-Written Content',
-    desc: 'Written by experienced English teachers and examiners who know exactly what the mark scheme demands.',
+    desc: 'Written by English teachers and markers who know exactly what gets top marks.',
   },
   {
     icon: Award,

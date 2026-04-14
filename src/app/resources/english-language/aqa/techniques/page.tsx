@@ -499,7 +499,7 @@ export default function TechniquesPage() {
             Strong analysis uses tentative, exploratory language rather than making absolute
             statements. Phrases like &ldquo;This could suggest&hellip;&rdquo;,
             &ldquo;Perhaps the writer intends&hellip;&rdquo;, and &ldquo;This might evoke a
-            sense of&hellip;&rdquo; show the examiner that you are exploring multiple
+            sense of&hellip;&rdquo; show the marker that you are exploring multiple
             possible meanings rather than stating the obvious. This is a hallmark of
             perceptive, top-band analysis.
           </p>

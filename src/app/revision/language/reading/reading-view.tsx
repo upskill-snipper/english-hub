@@ -217,7 +217,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               universal and will sharpen your analysis regardless of board. However,
               the specific question structure for{' '}
               {boardId === 'cambridge-0500' || boardId === 'cambridge-0990'
-                ? 'Cambridge IGCSE 0500/0990 Paper 1 Reading'
+                ? 'Cambridge IGCSE Paper 1 Reading'
                 : 'Edexcel IGCSE 4EA1'}{' '}
               is different -- see{' '}
               <Link
@@ -394,13 +394,13 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
                 <span className="font-bold text-foreground">4.</span>
                 Use tentative language in your analysis: &ldquo;This could suggest...&rdquo;,
                 &ldquo;Perhaps the writer implies...&rdquo;, &ldquo;This might indicate...&rdquo;.
-                Examiners reward exploratory thinking.
+                Markers reward exploratory thinking.
               </li>
             </ol>
           </div>
 
           <TipBox>
-            <strong>Examiner insight:</strong> The difference between Grade 5 and Grade 7 on
+            <strong>Marker insight:</strong> The difference between Grade 5 and Grade 7 on
             inference questions is often depth, not quantity. Three well-developed inferences
             score higher than six shallow ones.
           </TipBox>
@@ -489,7 +489,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       <Section title="Writer's Methods and Their Effects" icon={Target} colour="text-rose-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            &ldquo;Writer&apos;s methods&rdquo; is the umbrella term examiners use for every
+            &ldquo;Writer&apos;s methods&rdquo; is the umbrella term markers use for every
             deliberate choice a writer makes. This goes far beyond literary devices -- it
             includes structure, form, tone, and even what the writer chooses to leave out.
           </p>

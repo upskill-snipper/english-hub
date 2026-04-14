@@ -105,7 +105,7 @@ const FALLBACK_IMPROVEMENTS = [
   "Maintain consistent formality in phrasing",
 ];
 const FALLBACK_NEXT_STEPS = [
-  "Develop conceptualised arguments — show the examiner what the writer is DOING",
+  "Develop conceptualised arguments — show the marker what the writer is DOING",
   "Integrate methods analysis at word/phrase level, not just metaphor-level",
   "Link context to the writer's intention, not just background facts",
 ];
@@ -292,7 +292,7 @@ export default function ResultsPage({
       {result.summary && (
         <Card className="mt-6">
           <CardHeader>
-            <CardTitle>Examiner summary</CardTitle>
+            <CardTitle>Marker summary</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-sm leading-relaxed text-foreground">

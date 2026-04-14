@@ -19,11 +19,11 @@ import {
 
 const examTips = [
   'Always plan before you write — even 3 minutes of planning can boost your grade by a full band.',
-  'Examiners reward precise vocabulary — swap "good" for "compelling", "bad" for "detrimental".',
+  'Top marks reward precise vocabulary — swap "good" for "compelling", "bad" for "detrimental".',
   'Re-read the question after every paragraph to make sure you\u2019re still answering it.',
   'Embed context naturally — don\u2019t bolt it on as a separate paragraph. Weave it into your analysis.',
   'Use short, punchy quotes and analyse individual word choices for top marks in any exam board.',
-  'For creative writing, a cyclical structure (ending where you began) impresses examiners.',
+  'For creative writing, a cyclical structure (ending where you began) impresses markers.',
 ]
 
 function QuickTipsBanner() {
@@ -97,7 +97,7 @@ export default function MarketingHero() {
           {/* Trust indicators */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-emerald-400" /> Written by examiners
+              <CheckCircle className="w-4 h-4 text-emerald-400" /> Written by expert teachers
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle className="w-4 h-4 text-emerald-400" /> GCSE 1–9 grading

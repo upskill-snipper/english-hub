@@ -21,9 +21,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Paper 1 Reading | Cambridge IGCSE 0990 | The English Hub',
+  title: 'Paper 1 Reading | Cambridge IGCSE Language B | The English Hub',
   description:
-    'Cambridge IGCSE 0990 Paper 1 Reading: full overview, question structure, timing strategy and 9-1 grade boundaries.',
+    'Cambridge IGCSE Language B Paper 1 Reading: full overview, question structure, timing strategy and 9-1 grade boundaries.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/paper-1' },
 }
 
@@ -88,7 +88,7 @@ export default async function Paper1Page() {
           render={<Link href="/igcse/cambridge/0990" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to 0990 hub
+          Back to IGCSE Language B hub
         </Button>
       </div>
 
@@ -98,7 +98,7 @@ export default async function Paper1Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE Language B
             </Badge>
             <Badge variant="secondary">Paper 1</Badge>
             <Badge variant="secondary">Reading</Badge>
@@ -108,7 +108,7 @@ export default async function Paper1Page() {
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
             Two hours. Two unseen non-fiction texts. Three compulsory
-            questions worth 80 marks — 50% of the 0990 qualification.
+            questions worth 80 marks — 50% of the IGCSE Language B qualification.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">

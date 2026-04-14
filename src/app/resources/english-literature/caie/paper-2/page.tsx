@@ -329,7 +329,7 @@ export default function Paper2Page() {
             How to Write About Dramatic Technique
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Cambridge examiners reward responses that treat the text as drama, not just
+            Cambridge markers reward responses that treat the text as drama, not just
             as a story. Below are key dramatic techniques with definitions, examples, and
             advice on how to write about them effectively.
           </p>

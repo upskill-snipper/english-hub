@@ -22,9 +22,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'How to pass with Grade 5 | Cambridge IGCSE 0990 | The English Hub',
+  title: 'How to pass with Grade 5 | Cambridge IGCSE Language B | The English Hub',
   description:
-    'Strong pass guide for Cambridge IGCSE 0990 First Language English. Reach Grade 5 with clear understanding, accurate writing and dependable exam technique.',
+    'Strong pass guide for Cambridge IGCSE Language B First Language English. Reach Grade 5 with clear understanding, accurate writing and dependable exam technique.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/grade-5-guide' },
 }
 
@@ -97,7 +97,7 @@ export default async function Grade5GuidePage() {
           render={<Link href="/igcse/cambridge/0990" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to 0990 hub
+          Back to IGCSE Language B hub
         </Button>
       </div>
 
@@ -107,7 +107,7 @@ export default async function Grade5GuidePage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE Language B
             </Badge>
             <Badge variant="secondary">
               <Award className="mr-1 size-3" />

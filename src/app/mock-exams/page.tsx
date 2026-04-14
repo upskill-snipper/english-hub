@@ -502,7 +502,7 @@ function HowMockExamsWork() {
     {
       icon: BookOpen,
       title: 'Learn from model answers',
-      description: 'Every question includes model answers at Grade 4-5, Grade 6-7, and Grade 8-9 so you can see exactly what examiners are looking for at each level.',
+      description: 'Every question includes model answers at Grade 4-5, Grade 6-7, and Grade 8-9 so you can see exactly what markers are looking for at each level.',
     },
     {
       icon: CheckCircle2,
@@ -614,7 +614,7 @@ export default function MockExamsPage() {
           </h1>
 
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-            Full-length, timed mock exams matching the exact {boardConfig?.name ?? 'AQA'} format. Language Paper 1 and 2, Literature Paper 1 and 2 -- complete with grade boundaries, model answers, and mark schemes.
+            Full-length, timed mock exams matching the exact {boardConfig?.name ?? 'AQA'} format. Language Paper 1 and 2, Literature Paper 1 and 2 -- complete with grade boundaries, model answers, and marking guides.
           </p>
 
           {/* Quick stats */}

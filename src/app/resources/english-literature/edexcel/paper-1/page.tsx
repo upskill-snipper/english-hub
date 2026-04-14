@@ -67,7 +67,7 @@ export default function Paper1Page() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Assessed on AO1, AO2, AO3, and AO4 (SPaG — 4 marks).
+                  Assessed on reading and response, analysis of methods, context, and accuracy (SPaG — 4 marks).
                 </li>
               </ul>
             </div>
@@ -94,7 +94,7 @@ export default function Paper1Page() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Assessed on AO1, AO2, AO3 (no SPaG marks on this section).
+                  Assessed on reading and response, analysis of methods, and context (no SPaG marks on this section).
                 </li>
               </ul>
             </div>
@@ -475,7 +475,7 @@ export default function Paper1Page() {
                   <span>
                     <strong>Analyse language and dramatic techniques</strong> —
                     explore Shakespeare&apos;s use of imagery, soliloquy,
-                    dramatic irony, verse vs prose, and stagecraft (AO2).
+                    dramatic irony, verse vs prose, and stagecraft (analysis of methods).
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -485,7 +485,7 @@ export default function Paper1Page() {
                   <span>
                     <strong>Link to context meaningfully</strong> — connect
                     ideas to Jacobean/Elizabethan society, audience reactions,
-                    and Shakespeare&apos;s intentions (AO3). Don&apos;t bolt on context
+                    and Shakespeare&apos;s intentions (context). Don&apos;t bolt on context
                     as separate sentences.
                   </span>
                 </li>
@@ -534,7 +534,7 @@ export default function Paper1Page() {
                     <strong>Use the writer&apos;s name</strong> — phrases like
                     &quot;Priestley presents...&quot; or &quot;Golding
                     suggests...&quot; show you understand the text is a
-                    construct with a deliberate message (AO2).
+                    construct with a deliberate message (analysis of methods).
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -544,7 +544,7 @@ export default function Paper1Page() {
                   <span>
                     <strong>Explore the writer&apos;s purpose</strong> — why did
                     they write this text? What message are they conveying to the
-                    audience? This secures AO3 marks.
+                    audience? This secures context marks.
                   </span>
                 </li>
                 <li className="flex gap-3">

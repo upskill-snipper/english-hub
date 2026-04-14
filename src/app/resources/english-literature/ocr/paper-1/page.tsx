@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "OCR Paper 1: Exploring Modern and Literary Heritage Texts | The English Hub",
   description:
-    "Complete guide to OCR GCSE English Literature Component 01. Modern prose/drama and 19th-century literary heritage text revision.",
+    "Complete guide to OCR GCSE English Literature Paper 01. Modern prose/drama and 19th-century literary heritage text revision.",
 };
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -31,7 +31,7 @@ export default function OCRLitPaper1Page() {
             Paper 1: Exploring Modern and Literary Heritage Texts
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Component 01 &middot; 2 hours &middot; 80 marks &middot; 50% of
+            Paper 01 &middot; 2 hours &middot; 80 marks &middot; 50% of
             GCSE
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function OCRLitPaper1Page() {
                 </div>
 
                 <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">3. Analyse Language Closely (AO2)</h4>
+                  <h4 className="font-semibold text-foreground">3. Analyse Language Closely</h4>
                   <p className="mt-2 text-sm">
                     Every paragraph should include a quotation and close
                     analysis of specific words. Don&rsquo;t just name
@@ -192,7 +192,7 @@ export default function OCRLitPaper1Page() {
                 </div>
 
                 <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">4. Embed Context Naturally (AO3)</h4>
+                  <h4 className="font-semibold text-foreground">4. Embed Context Naturally</h4>
                   <p className="mt-2 text-sm">
                     Context should be woven into your analysis, not bolted on
                     as a separate paragraph. Link context to the writer&rsquo;s
@@ -466,7 +466,7 @@ export default function OCRLitPaper1Page() {
           <div className="mt-4">
             <ul className="ml-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
               <li>
-                <strong>Retelling the story</strong> &mdash; The examiner
+                <strong>Retelling the story</strong> &mdash; The marker
                 knows the plot. Focus on analysis, not narration. Every
                 sentence should analyse, not describe.
               </li>

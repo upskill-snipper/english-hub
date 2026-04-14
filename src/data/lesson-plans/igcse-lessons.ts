@@ -1,8 +1,8 @@
 // @ts-nocheck
 // ─── IGCSE / CAIE English Lesson Plans ──────────────────────────────────────
 //
-// 10 comprehensive lessons targeting Cambridge IGCSE English Language (0500/0990)
-// and Literature (0475/0992) syllabuses. Covers reading, writing, literature,
+// 10 comprehensive lessons targeting Cambridge IGCSE Language A / Language B
+// and Literature syllabuses. Covers reading, writing, literature,
 // coursework portfolio, and exam strategy across Core and Extended tiers.
 
 import type { LessonPlan } from '@/types'
@@ -44,7 +44,7 @@ export const igcseLessons: LessonPlan[] = [
       title: 'Mark Scheme Myth-Buster',
       duration: '8 minutes',
       instructions:
-        'Display five common student misconceptions about IGCSE reading papers on the board (e.g. "You must write in full sentences for every question", "Summary means copying out the passage", "You lose marks for incorrect spelling"). Students vote agree/disagree on mini-whiteboards. Teacher reveals the truth for each, referencing the 0500 mark scheme descriptors for Reading (R1–R5). Establish the key principle: examiners reward precise selection and own words.',
+        'Display five common student misconceptions about IGCSE reading papers on the board (e.g. "You must write in full sentences for every question", "Summary means copying out the passage", "You lose marks for incorrect spelling"). Students vote agree/disagree on mini-whiteboards. Teacher reveals the truth for each, referencing the IGCSE Language A mark scheme descriptors for Reading (R1–R5). Establish the key principle: examiners reward precise selection and own words.',
       differentiation: {
         support: 'Provide the five statements as a printed handout so students can annotate and keep for reference.',
         core: 'Students justify their agree/disagree vote with a reason before the teacher reveals the answer.',
@@ -134,7 +134,7 @@ export const igcseLessons: LessonPlan[] = [
       'The summary mark scheme rewards both content (1 mark per point, up to 15) and style (up to 5 marks for use of own words and cohesion).',
       'For Extended candidates, remind them that Paper 2 uses two passages and the summary must draw from both. Core candidates work with a single passage.',
       'Common errors to watch for: students copying verbatim from the passage, missing the focus of the question, and writing summaries that include personal opinions or commentary rather than information from the text.',
-      'The 0500 and 0990 syllabuses are identical in content — 0990 is simply the code used when a centre enters candidates for both Core and Extended.'
+      'The IGCSE Language A and Language B syllabuses are identical in content — Language B is simply the code used when a centre enters candidates for both Core and Extended.'
     ],
     targetedSkills: [
       'Reading Comprehension',
@@ -1064,8 +1064,8 @@ export const igcseLessons: LessonPlan[] = [
     teacherNotes: [
       'This lesson is best delivered in mid-Year 10 when tier decisions are being discussed. Handle tier conversations sensitively — some students may feel disappointed by a Core recommendation.',
       'Emphasise that a strong Core grade (C) is a solid achievement and that Core does not mean "easy" — the skills tested are the same, just with different levels of scaffolding.',
-      'For the 0500 syllabus: Core candidates take Paper 1 (1h 45m) and Paper 2 (1h 45m) with grades C–G. Extended candidates take Paper 1 (2h) and Paper 2 (2h) with grades A*–E.',
-      'The 0990 syllabus is the same examination under a different code, used when a centre enters candidates for both Core and Extended.',
+      'For the IGCSE Language A syllabus: Core candidates take Paper 1 (1h 45m) and Paper 2 (1h 45m) with grades C–G. Extended candidates take Paper 1 (2h) and Paper 2 (2h) with grades A*–E.',
+      'The IGCSE Language B syllabus is the same examination under a different code, used when a centre enters candidates for both Core and Extended.',
       'Some centres use coursework (Component 3 or 4) alongside or instead of Paper 1. If this applies to your centre, adjust the comparison grid accordingly.'
     ],
     targetedSkills: [

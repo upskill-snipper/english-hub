@@ -6,9 +6,9 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/paper-2' },
-  title: "Edexcel Paper 2: Non-Fiction & Transactional Writing",
+  title: "Edexcel Paper 2: Non-Fiction & Writing for Real Purposes",
   description:
-    "Complete revision guide for Edexcel English Language Paper 2 (1EN0/02). Two linked non-fiction texts, transactional writing, mark schemes, AOs, and example responses.",
+    "Complete revision guide for Edexcel English Language Paper 2 (1EN0/02). Two linked non-fiction texts, writing for real purposes, marking guides, key skills, and example responses.",
 };
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -28,7 +28,7 @@ export default function Paper2Page() {
             Back to Edexcel Hub
           </Link>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Paper 2: Non-Fiction &amp; Transactional Writing
+            Paper 2: Non-Fiction &amp; Writing for Real Purposes
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             2 hours 5 minutes &bull; 64 marks &bull; 60% of your GCSE
@@ -43,7 +43,7 @@ export default function Paper2Page() {
           <p className="mt-3 leading-relaxed text-muted-foreground">
             Paper 2 is worth <strong>60% of your GCSE</strong> &mdash; the single most important paper. It tests your ability to
             read and compare two linked non-fiction texts (one from the 19th century, one from the 21st century) and then
-            produce a piece of transactional writing. You should spend approximately <strong>1 hour 15 minutes on Section A</strong> (reading)
+            produce a piece of writing for real purposes. You should spend approximately <strong>1 hour 15 minutes on Section A</strong> (reading)
             and <strong>50 minutes on Section B</strong> (writing).
           </p>
 
@@ -67,13 +67,13 @@ export default function Paper2Page() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Six compulsory questions testing AO1, AO2, AO3, and AO4
+                  Six compulsory questions testing Reading and retrieval (AO1), Language and structure analysis (AO2), Comparing writers (AO3), and Critical evaluation (AO4)
                 </li>
               </ul>
             </div>
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white font-bold text-sm">B</div>
-              <h3 className="mt-3 text-lg font-bold text-foreground">Section B: Transactional Writing</h3>
+              <h3 className="mt-3 text-lg font-bold text-foreground">Section B: Writing for Real Purposes</h3>
               <p className="mt-1 text-sm text-muted-foreground">40 marks &bull; ~50 min</p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
@@ -90,7 +90,7 @@ export default function Paper2Page() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Assessed on AO5 (24 marks) and AO6 (16 marks)
+                  Assessed on Content and organisation (AO5, 24 marks) and Technical accuracy (AO6, 16 marks)
                 </li>
               </ul>
             </div>
@@ -111,7 +111,7 @@ export default function Paper2Page() {
                 <h3 className="text-lg font-bold text-foreground">Short Retrieval &mdash; Text 1 (1 mark)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO1</strong> &mdash; Retrieve one piece of explicit information from the 19th-century text.
+                <strong>Reading and retrieval (AO1)</strong> &mdash; Retrieve one piece of explicit information from the 19th-century text.
               </p>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
@@ -128,7 +128,7 @@ export default function Paper2Page() {
                 <h3 className="text-lg font-bold text-foreground">Short Retrieval &mdash; Text 2 (2 marks)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO1</strong> &mdash; Identify two things from the 21st-century text.
+                <strong>Reading and retrieval (AO1)</strong> &mdash; Identify two things from the 21st-century text.
               </p>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
@@ -145,7 +145,7 @@ export default function Paper2Page() {
                 <h3 className="text-lg font-bold text-foreground">Language Analysis &mdash; Text 1 (6 marks)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO2</strong> &mdash; Analyse how the 19th-century writer uses language to convey a particular idea, feeling, or impression.
+                <strong>Language and structure analysis (AO2)</strong> &mdash; Analyse how the 19th-century writer uses language to convey a particular idea, feeling, or impression.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">Example question:</p>
@@ -154,7 +154,7 @@ export default function Paper2Page() {
                 </p>
               </div>
               <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="text-sm font-semibold text-primary">Mark scheme levels:</p>
+                <p className="text-sm font-semibold text-primary">Marking guide levels:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-2):</strong> Simple comments on language. Limited or no terminology.</li>
                   <li><strong>Level 2 (3-4):</strong> Some analysis of language with appropriate examples.</li>
@@ -170,7 +170,7 @@ export default function Paper2Page() {
                 <h3 className="text-lg font-bold text-foreground">Language Analysis &mdash; Text 2 (6 marks)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO2</strong> &mdash; Analyse how the 21st-century writer uses language in a specified section.
+                <strong>Language and structure analysis (AO2)</strong> &mdash; Analyse how the 21st-century writer uses language in a specified section.
               </p>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Key difference from Q3:</p>
@@ -188,7 +188,7 @@ export default function Paper2Page() {
                 <h3 className="text-lg font-bold text-foreground">Critical Evaluation &mdash; Text 2 (15 marks)</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO4</strong> &mdash; Evaluate how effectively the 21st-century text achieves its purpose. You will be given a statement and asked to what extent you agree.
+                <strong>Critical evaluation (AO4)</strong> &mdash; Evaluate how effectively the 21st-century text achieves its purpose. You will be given a statement and asked to what extent you agree.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">Example question:</p>
@@ -198,7 +198,7 @@ export default function Paper2Page() {
                 </p>
               </div>
               <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="text-sm font-semibold text-primary">Mark scheme levels:</p>
+                <p className="text-sm font-semibold text-primary">Marking guide levels:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-3):</strong> Limited evaluation with little reference to text.</li>
                   <li><strong>Level 2 (4-6):</strong> Some evaluation; attempts to respond to the statement.</li>
@@ -216,7 +216,7 @@ export default function Paper2Page() {
                 <h3 className="text-lg font-bold text-foreground">Comparison (10 marks) &mdash; UNIQUE TO PAPER 2</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>AO3</strong> &mdash; Compare the writers&rsquo; viewpoints and perspectives across <em>both</em> texts.
+                <strong>Comparing writers (AO3)</strong> &mdash; Compare the writers&rsquo; viewpoints and perspectives across <em>both</em> texts.
                 This is the only place in the entire English Language GCSE where you must compare.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
@@ -236,7 +236,7 @@ export default function Paper2Page() {
                 </ol>
               </div>
               <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="text-sm font-semibold text-primary">Mark scheme levels:</p>
+                <p className="text-sm font-semibold text-primary">Marking guide levels:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-2):</strong> Simple, limited cross-reference. May only discuss one text.</li>
                   <li><strong>Level 2 (3-4):</strong> Some comparison with relevant references from both texts.</li>
@@ -250,10 +250,10 @@ export default function Paper2Page() {
         </div>
       </section>
 
-      {/* ── Section B: Transactional Writing ──────────────────────── */}
+      {/* ── Section B: Writing for Real Purposes ──────────────────────── */}
       <section className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Section B: Transactional Writing (40 marks)</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Section B: Writing for Real Purposes (40 marks)</h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">
             You choose <strong>one task from two options</strong>. The task will specify a form (article, letter, speech, review, or essay),
             a purpose (argue, persuade, advise, inform, explain), and an audience. You <strong>must</strong> follow the conventions of the
@@ -275,15 +275,15 @@ export default function Paper2Page() {
             ))}
           </div>
 
-          {/* Writing mark scheme */}
+          {/* Writing marking guide */}
           <div className="mt-8 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
             <table className="w-full text-left text-sm">
               <thead className="bg-accent text-white">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Level</th>
-                  <th className="px-4 py-3 font-semibold">AO5 (24)</th>
+                  <th className="px-4 py-3 font-semibold">Content and organisation (AO5, 24)</th>
                   <th className="px-4 py-3 font-semibold">Descriptor</th>
-                  <th className="px-4 py-3 font-semibold">AO6 (16)</th>
+                  <th className="px-4 py-3 font-semibold">Technical accuracy (AO6, 16)</th>
                   <th className="px-4 py-3 font-semibold">Descriptor</th>
                 </tr>
               </thead>
@@ -369,7 +369,7 @@ export default function Paper2Page() {
             </div>
           </div>
 
-          {/* Transactional writing example */}
+          {/* Writing for real purposes example */}
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-foreground">Section B &mdash; Speech Writing (Level 4 opening)</h3>
             <div className="mt-3 rounded-lg bg-muted p-4">
@@ -433,49 +433,49 @@ export default function Paper2Page() {
               <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q1 (Text 1)</td>
-                  <td className="px-4 py-3">AO1</td>
+                  <td className="px-4 py-3">Reading and retrieval (AO1)</td>
                   <td className="px-4 py-3">1</td>
                   <td className="px-4 py-3">1 min</td>
                   <td className="px-4 py-3">Copy exact phrase.</td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q2 (Text 2)</td>
-                  <td className="px-4 py-3">AO1</td>
+                  <td className="px-4 py-3">Reading and retrieval (AO1)</td>
                   <td className="px-4 py-3">2</td>
                   <td className="px-4 py-3">2-3 min</td>
                   <td className="px-4 py-3">Two separate points. No analysis needed.</td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q3 (Text 1)</td>
-                  <td className="px-4 py-3">AO2</td>
+                  <td className="px-4 py-3">Language and structure analysis (AO2)</td>
                   <td className="px-4 py-3">6</td>
                   <td className="px-4 py-3">8-10 min</td>
                   <td className="px-4 py-3">What-How-Why. 2-3 points with terminology.</td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q4 (Text 2)</td>
-                  <td className="px-4 py-3">AO2</td>
+                  <td className="px-4 py-3">Language and structure analysis (AO2)</td>
                   <td className="px-4 py-3">6</td>
                   <td className="px-4 py-3">8-10 min</td>
                   <td className="px-4 py-3">Same approach. Note modern language features.</td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q5 (Text 2)</td>
-                  <td className="px-4 py-3">AO4</td>
+                  <td className="px-4 py-3">Critical evaluation (AO4)</td>
                   <td className="px-4 py-3">15</td>
                   <td className="px-4 py-3">20-25 min</td>
                   <td className="px-4 py-3">Evaluate effectiveness. Address the statement. Balanced.</td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q6 (Both)</td>
-                  <td className="px-4 py-3">AO3</td>
+                  <td className="px-4 py-3">Comparing writers (AO3)</td>
                   <td className="px-4 py-3">10</td>
                   <td className="px-4 py-3">15-20 min</td>
                   <td className="px-4 py-3">Compare throughout. Evidence from both texts. Context.</td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q7 (Writing)</td>
-                  <td className="px-4 py-3">AO5/6</td>
+                  <td className="px-4 py-3">Content, organisation, and accuracy (AO5/AO6)</td>
                   <td className="px-4 py-3">40</td>
                   <td className="px-4 py-3">50 min</td>
                   <td className="px-4 py-3">5 min plan, 40 min write, 5 min proofread. Follow form conventions.</td>
@@ -518,7 +518,7 @@ export default function Paper2Page() {
           <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
             <h2 className="text-xl font-bold text-foreground">Continue studying</h2>
             <p className="mt-2 text-muted-foreground">
-              Strengthen your reading analysis and transactional writing further.
+              Strengthen your reading analysis and writing for real purposes further.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link

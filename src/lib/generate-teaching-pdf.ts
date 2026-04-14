@@ -662,7 +662,7 @@ export function generateMarkScheme(
 
   const body = `
     <h1>${escHtml(meta.title)}</h1>
-    <p class="subtitle">${escHtml(topic)} — Mark Scheme (Teacher Copy)</p>
+    <p class="subtitle">${escHtml(topic)} — Answer Guide (Teacher Copy)</p>
 
     <div class="meta-grid">
       <div class="meta-item"><label>Text</label><span>${escHtml(meta.text)}</span></div>
@@ -888,7 +888,7 @@ export function generateHomeworkMarkSchemePdf(data: HomeworkData): void {
     .join("")
 
   const body = `
-    <h1>${escHtml(data.title)} — Mark Scheme</h1>
+    <h1>${escHtml(data.title)} — Answer Guide</h1>
     <p class="subtitle">${escHtml(data.topic)} — Teacher Copy</p>
 
     <div class="meta-grid">
@@ -913,5 +913,5 @@ export function generateHomeworkMarkSchemePdf(data: HomeworkData): void {
     </div>
   `
 
-  openHtmlInNewTab(htmlShell(`${data.title} — Mark Scheme`, body))
+  openHtmlInNewTab(htmlShell(`${data.title} — Answer Guide`, body))
 }

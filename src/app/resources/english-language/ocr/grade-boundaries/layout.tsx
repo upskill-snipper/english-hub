@@ -3,12 +3,12 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'OCR English Language Grade Boundaries',
   description:
-    'OCR GCSE English Language grade boundaries with historical data. Marks required for each grade across Component 1 and Component 2.',
+    'OCR GCSE English Language grade boundaries with historical data. Marks required for each grade across Paper 1 and Paper 2.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/ocr/grade-boundaries' },
   openGraph: {
     title: 'OCR English Language Grade Boundaries — The English Hub',
     description:
-      'OCR GCSE English Language grade boundaries with historical data. Marks required for each grade across Component 1 and Component 2.',
+      'OCR GCSE English Language grade boundaries with historical data. Marks required for each grade across Paper 1 and Paper 2.',
   },
 }
 

@@ -373,7 +373,7 @@ const GRADE_TRANSITIONS: Record<string, GradeTransition> = {
         skill: "creative-writing",
         label: "Creative Writing",
         action: "Produce writing that is engaging, technically accomplished, and tonally controlled",
-        exercise: "Write a complete piece then self-assess against the mark scheme criteria",
+        exercise: "Write a complete piece then self-assess against the marking criteria",
         currentLevel: "Deliberate technique choices",
         targetLevel: "Engaging, accomplished, and controlled writing",
       },

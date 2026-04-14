@@ -17,7 +17,7 @@ const steps = [
     step: 1,
     icon: ListChecks,
     title: 'Choose your exam board',
-    desc: 'Select AQA, Edexcel, OCR, or WJEC and we tailor everything to your specification.',
+    desc: 'Select AQA, Edexcel, OCR, or WJEC and we tailor everything to your exam board.',
   },
   {
     step: 2,
@@ -35,7 +35,7 @@ const steps = [
     step: 4,
     icon: Sparkles,
     title: 'Get AI feedback on your essays',
-    desc: 'Submit your writing and receive instant, detailed feedback with grade estimates from our AI examiner.',
+    desc: 'Submit your writing and receive instant, detailed feedback with grade estimates from our AI marker.',
   },
   {
     step: 5,

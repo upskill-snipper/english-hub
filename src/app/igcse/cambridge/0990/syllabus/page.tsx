@@ -4,6 +4,7 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
+  Info,
   PenTool,
   Target,
   Sparkles,
@@ -20,63 +21,64 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: '0990 Syllabus breakdown | Cambridge IGCSE | The English Hub',
+  title: 'IGCSE Language B course overview | Cambridge IGCSE | The English Hub',
   description:
-    'Full breakdown of the Cambridge IGCSE 0990 First Language English syllabus — assessment objectives, reading and writing content, and what skills are tested.',
+    'Full overview of the Cambridge IGCSE Language B First Language English course — what is tested across reading and writing, and the skills each paper assesses.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/syllabus' },
+  robots: { index: false, follow: false },
 }
 
-const aos = [
+const skills = [
   {
-    code: 'R1',
+    area: 'Reading',
     title: 'Read for meaning',
     description:
       'Demonstrate understanding of explicit meanings. Select and retrieve specific information from texts.',
   },
   {
-    code: 'R2',
+    area: 'Reading',
     title: 'Read between the lines',
     description:
       'Demonstrate understanding of implicit meanings and attitudes. Make inferences and read beyond the surface.',
   },
   {
-    code: 'R3',
+    area: 'Reading',
     title: 'Analyse language',
     description:
       "Analyse, evaluate and develop a personal response to writers' use of language, structure and form — with short relevant quotation.",
   },
   {
-    code: 'R4',
+    area: 'Reading',
     title: 'Select for summary',
     description:
       'Select information for specific purposes. Summarise key ideas concisely in your own words.',
   },
   {
-    code: 'W1',
+    area: 'Writing',
     title: 'Write for purpose',
     description:
       'Articulate experience and express what is thought, felt and imagined. Sequence facts, ideas and opinions.',
   },
   {
-    code: 'W2',
+    area: 'Writing',
     title: 'Use appropriate form and register',
     description:
       'Use language and register appropriate to audience and context. Adapt style for different writing tasks.',
   },
   {
-    code: 'W3',
+    area: 'Writing',
     title: 'Structure writing',
     description:
       'Organise and structure ideas and opinions for deliberate effect, across paragraphs and sentences.',
   },
   {
-    code: 'W4',
+    area: 'Writing',
     title: 'Control accuracy',
     description:
       'Use accurate spelling, punctuation and grammar to write clearly and effectively.',
   },
   {
-    code: 'W5',
+    area: 'Writing',
     title: 'Build vocabulary range',
     description:
       'Use a varied and appropriate vocabulary, including ambitious and precise word choices.',
@@ -90,7 +92,7 @@ const paperSummary = [
     weight: '50%',
     marks: '80',
     time: '2 hours',
-    aos: 'R1, R2, R3, R4',
+    tested: 'Comprehension, language analysis, summary',
     content:
       'Two unseen non-fiction texts (Text A and Text B). Three compulsory questions testing comprehension, language analysis and summary.',
     icon: BookOpen,
@@ -101,7 +103,7 @@ const paperSummary = [
     weight: '50%',
     marks: '80',
     time: '2 hours',
-    aos: 'W1-W5 (plus R1, R2, R3 for directed writing)',
+    tested: 'Directed writing, narrative and descriptive composition',
     content:
       'Section A: directed writing in response to a short text. Section B: extended composition — either a narrative or a descriptive task.',
     icon: PenTool,
@@ -120,7 +122,7 @@ export default async function Cambridge0990SyllabusPage() {
           render={<Link href="/igcse/cambridge/0990" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to 0990 hub
+          Back to IGCSE Language B hub
         </Button>
       </div>
 
@@ -130,19 +132,33 @@ export default async function Cambridge0990SyllabusPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE Language B
             </Badge>
-            <Badge variant="secondary">Syllabus</Badge>
+            <Badge variant="secondary">Course overview</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Syllabus breakdown
+            Course overview
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Everything assessed in Cambridge IGCSE 0990 First Language English:
-            the assessment objectives, the two papers and what each one is
+            Everything assessed in Cambridge IGCSE Language B First Language
+            English: the key skills, the two papers and what each one is
             actually testing.
           </p>
         </div>
+      </section>
+
+      {/* Revision banner */}
+      <section className="flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:items-center sm:p-5">
+        <Info className="mt-0.5 size-5 shrink-0 text-primary sm:mt-0" />
+        <p className="text-body-sm text-muted-foreground">
+          Looking for revision content?{' '}
+          <Link
+            href="/igcse/cambridge/0990"
+            className="font-medium text-primary underline underline-offset-2"
+          >
+            Visit our IGCSE Language B hub
+          </Link>
+        </p>
       </section>
 
       {/* Overview */}
@@ -226,8 +242,8 @@ export default async function Cambridge0990SyllabusPage() {
                       <dd>{p.marks}</dd>
                     </div>
                     <div className="rounded-md border border-border/60 bg-muted/30 p-2 sm:col-span-2">
-                      <dt className="font-medium text-foreground">Assessment objectives</dt>
-                      <dd>{p.aos}</dd>
+                      <dt className="font-medium text-foreground">Skills tested</dt>
+                      <dd>{p.tested}</dd>
                     </div>
                   </dl>
                 </CardContent>
@@ -237,35 +253,35 @@ export default async function Cambridge0990SyllabusPage() {
         </div>
       </section>
 
-      {/* Assessment objectives */}
+      {/* Tested skills */}
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Target className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Assessment objectives in detail
+            Tested skills in detail
           </h2>
         </div>
         <p className="mb-5 max-w-3xl text-body-sm text-muted-foreground">
           Every question on every paper is marked against one of these nine
-          objectives. Knowing which AO a question targets tells you what the
+          skills. Knowing which skill a question targets tells you what the
           examiner is actually looking for.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
-          {aos.map((ao) => (
+          {skills.map((skill) => (
             <div
-              key={ao.code}
+              key={skill.title}
               className="rounded-2xl border border-border/60 bg-card p-5"
             >
               <div className="flex items-center gap-3">
-                <span className="inline-flex size-9 items-center justify-center rounded-lg bg-primary/10 text-body-sm font-semibold text-primary">
-                  {ao.code}
+                <span className="inline-flex h-9 items-center justify-center rounded-lg bg-primary/10 px-2.5 text-body-sm font-semibold text-primary">
+                  {skill.area}
                 </span>
                 <h3 className="text-body font-semibold text-foreground">
-                  {ao.title}
+                  {skill.title}
                 </h3>
               </div>
               <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
-                {ao.description}
+                {skill.description}
               </p>
             </div>
           ))}

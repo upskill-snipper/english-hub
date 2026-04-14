@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   ArrowLeft,
-  ArrowRight,
   CheckCircle2,
   Sparkles,
   Info,
@@ -20,9 +19,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: '0990 vs 0500 — What is the difference? | Cambridge IGCSE | The English Hub',
+  title: 'Language A vs Language B — What is the difference? | Cambridge IGCSE | The English Hub',
   description:
-    'Cambridge IGCSE 0990 and 0500 First Language English are the same syllabus with different grade scales. Full comparison of content, papers, objectives and grading.',
+    'Cambridge IGCSE Language A and Language B First Language English are the same syllabus with different grade scales. Full comparison of content, papers, objectives and grading.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/difference-vs-0500',
   },
@@ -39,7 +38,7 @@ const sameRows = [
   },
   {
     label: 'Assessment objectives',
-    value: 'AO1 Reading, AO2 Writing — same weighting',
+    value: 'Reading skills, Writing skills — same weighting',
   },
   {
     label: 'Marks per paper',
@@ -51,30 +50,30 @@ const sameRows = [
   },
   {
     label: 'Examiner training & standardisation',
-    value: 'Same Cambridge examiners mark both 0500 and 0990',
+    value: 'Same Cambridge examiners mark both Language A and Language B',
   },
 ]
 
 const differentRows = [
   {
     label: 'Grading scale',
-    a: '0500: A*, A, B, C, D, E, F, G',
-    b: '0990: 9, 8, 7, 6, 5, 4, 3, 2, 1',
+    a: 'Language A: A*, A, B, C, D, E, F, G',
+    b: 'Language B: 9, 8, 7, 6, 5, 4, 3, 2, 1',
   },
   {
     label: 'Reporting',
-    a: '0500: Letter grades on certificate',
-    b: '0990: Numerical grades aligned with reformed UK GCSE',
+    a: 'Language A: Letter grades on certificate',
+    b: 'Language B: Numerical grades aligned with reformed UK GCSE',
   },
   {
     label: 'Top grade',
-    a: '0500: A* (approximately 75%+)',
-    b: '0990: 9 (approximately 85%+ — more selective)',
+    a: 'Language A: A* (approximately 75%+)',
+    b: 'Language B: 9 (approximately 85%+ — more selective)',
   },
   {
     label: 'Typical use',
-    a: '0500: International schools reporting in A*-G',
-    b: '0990: UK international schools, IB feeder schools reporting in 9-1',
+    a: 'Language A: International schools reporting in A*-G',
+    b: 'Language B: UK international schools, IB feeder schools reporting in 9-1',
   },
 ]
 
@@ -91,7 +90,7 @@ export default async function Difference0990vs0500Page() {
           render={<Link href="/igcse/cambridge/0990" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to 0990 hub
+          Back to IGCSE Language B hub
         </Button>
       </div>
 
@@ -102,22 +101,22 @@ export default async function Difference0990vs0500Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE Language B
             </Badge>
             <Badge variant="secondary">Explainer</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            0990 vs 0500: the only thing that changes is the grade
+            Language A vs Language B: the only thing that changes is the grade
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
             If you&apos;ve been told to revise for one and then found the
-            other in your exam entry, relax. Cambridge IGCSE 0990 and 0500
+            other in your exam entry, relax. Cambridge IGCSE Language A and Language B
             First Language English are the{' '}
             <strong className="text-foreground">
               same syllabus, same papers, same questions
             </strong>
             . The only difference is how your final result is reported: 9-1
-            for 0990, A*-G for 0500.
+            for Language B, A*-G for Language A.
           </p>
         </div>
       </section>
@@ -131,7 +130,7 @@ export default async function Difference0990vs0500Page() {
           </h2>
         </div>
         <p className="text-body-lg text-foreground leading-relaxed">
-          <strong>0990 = 0500 + 9-1 grading.</strong> Same content. Same
+          <strong>Language B = Language A + 9-1 grading.</strong> Same content. Same
           papers. Same mark scheme. Only the grades on your certificate
           change.
         </p>
@@ -139,10 +138,10 @@ export default async function Difference0990vs0500Page() {
           <div className="flex items-start gap-3">
             <Info className="mt-0.5 size-4 shrink-0 text-primary" />
             <p className="text-body-sm text-foreground">
-              Cambridge designed 0990 for schools that wanted alignment with
+              Cambridge designed Language B for schools that wanted alignment with
               the reformed UK GCSE numerical system introduced in England in
-              2017. The specification document for 0990 is almost word-for-word
-              identical to 0500.
+              2017. The specification document for Language B is almost word-for-word
+              identical to Language A.
             </p>
           </div>
         </div>
@@ -210,9 +209,9 @@ export default async function Difference0990vs0500Page() {
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Use 0500 resources freely.</strong>{' '}
-              Past papers, mark schemes and examiner reports for 0500 are
-              valid revision material for 0990 candidates — the questions and
+              <strong className="text-foreground">Use Language A resources freely.</strong>{' '}
+              Past papers, mark schemes and examiner reports for Language A are
+              valid revision material for Language B candidates — the questions and
               mark schemes are interchangeable.
             </span>
           </li>
@@ -250,7 +249,7 @@ export default async function Difference0990vs0500Page() {
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
               <strong className="text-foreground">Check your exam entry.</strong>{' '}
-              Your school will have entered you for either 0500 or 0990. It
+              Your school will have entered you for either Language A or Language B. It
               determines what appears on the certificate, not what you need
               to know.
             </span>
@@ -270,13 +269,6 @@ export default async function Difference0990vs0500Page() {
         <div className="mt-4 flex flex-wrap gap-2">
           <Button
             size="sm"
-            render={<Link href="/igcse/cambridge/0990/syllabus" />}
-          >
-            Syllabus breakdown
-            <ArrowRight className="size-3.5" />
-          </Button>
-          <Button
-            size="sm"
             variant="outline"
             render={<Link href="/igcse/cambridge/0990/grade-conversion" />}
           >
@@ -291,6 +283,11 @@ export default async function Difference0990vs0500Page() {
           </Button>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="text-center text-body-xs text-muted-foreground">
+        Aligns with Cambridge syllabus 0990
+      </footer>
     </div>
   )
 }

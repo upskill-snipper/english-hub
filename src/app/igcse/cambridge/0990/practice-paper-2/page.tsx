@@ -22,9 +22,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Practice Paper 2 (Writing) | Cambridge IGCSE 0990 | The English Hub',
+  title: 'Practice Paper 2 (Writing) | Cambridge IGCSE Language B | The English Hub',
   description:
-    'Full Cambridge IGCSE 0990 Paper 2 Directed Writing and Composition practice paper with stimulus text, task options and model answers.',
+    'Full Cambridge IGCSE Language B Paper 2 Directed Writing and Composition practice paper with stimulus text, task options and model answers.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/practice-paper-2',
   },
@@ -42,7 +42,7 @@ export default async function PracticePaper2Page() {
           render={<Link href="/igcse/cambridge/0990" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to 0990 hub
+          Back to IGCSE Language B hub
         </Button>
       </div>
 
@@ -52,7 +52,7 @@ export default async function PracticePaper2Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE Language B
             </Badge>
             <Badge variant="secondary">Practice Paper</Badge>
             <Badge variant="secondary">Paper 2 Writing</Badge>

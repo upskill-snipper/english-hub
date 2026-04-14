@@ -164,7 +164,7 @@ const CHECKLISTS: ChecklistBoard[] = [
   },
   {
     slug: "caie-language",
-    label: "Cambridge IGCSE First Language (0500)",
+    label: "Cambridge IGCSE First Language English",
     colour: "border-primary",
     sections: [
       {

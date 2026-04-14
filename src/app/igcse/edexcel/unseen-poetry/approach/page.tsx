@@ -149,7 +149,7 @@ export default function UnseenPoetryApproachPage() {
                 The 5-Step Approach
               </h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE 4ET1
+                Edexcel IGCSE Literature
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
@@ -273,7 +273,7 @@ export default function UnseenPoetryApproachPage() {
           Now learn to compare two poems
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          The 4ET1 unseen poetry question asks you to compare. Once you can read a single poem
+          The unseen poetry question asks you to compare. Once you can read a single poem
           well, the next skill is holding two poems in mind at once.
         </p>
         <Button

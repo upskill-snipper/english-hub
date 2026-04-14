@@ -1,5 +1,5 @@
 // ─── IGCSE Exam Technique Guides ─────────────────────────────────────────────
-// Edexcel IGCSE English Language (4EA1) and English Literature (4ET1)
+// Edexcel IGCSE English Language and IGCSE Literature
 // Detailed question-by-question technique guides for students and teachers.
 
 export interface ExamTechniqueGuide {
@@ -420,7 +420,7 @@ const langP2TaskB: ExamTechniqueGuide = {
   ],
 };
 
-// ─── Literature Paper 1 (4ET1/01) — Poetry ───────────────────────────────────
+// ─── Literature Paper 1 — Poetry ─────────────────────────────────────────────
 
 const litPoetryNamed: ExamTechniqueGuide = {
   id: 'lit-poetry-named',
@@ -682,7 +682,7 @@ const litDramaPaper1: ExamTechniqueGuide = {
   ],
 };
 
-// ─── Literature Paper 2 (4ET1/02) — Prose and Drama ─────────────────────────
+// ─── Literature Paper 2 — Prose and Drama ───────────────────────────────────
 
 const litProseP2Named: ExamTechniqueGuide = {
   id: 'lit-prose-p2-named',
@@ -956,7 +956,7 @@ export const igcsePaperOverviews: PaperOverview[] = [
   },
   {
     id: 'lit-overview',
-    paper: 'English Literature Papers 1 and 2 (4ET1/01 and 4ET1/02)',
+    paper: 'IGCSE Literature Papers 1 and 2',
     duration: '1 hour 30 minutes per paper',
     totalMarks: 80,
     sections: [

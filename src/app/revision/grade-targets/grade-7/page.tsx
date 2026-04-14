@@ -153,8 +153,8 @@ export default async function Grade7Page() {
         <div className="rounded-xl border border-primary/20 bg-primary/[0.04] p-4 flex items-start gap-3">
           <Info className="size-4 shrink-0 text-primary mt-0.5" />
           <div className="text-xs text-muted-foreground leading-relaxed">
-            <span className="font-semibold text-foreground">Cambridge 0500 uses A*-G grading. </span>
-            For Cambridge 0500, a <span className="font-semibold text-foreground">Grade A</span> is the closest
+            <span className="font-semibold text-foreground">Cambridge IGCSE uses A*-G grading. </span>
+            For Cambridge IGCSE, a <span className="font-semibold text-foreground">Grade A</span> is the closest
             equivalent to a <span className="font-semibold text-foreground">9-1 Grade 7</span>.
           </div>
         </div>
@@ -170,7 +170,7 @@ export default async function Grade7Page() {
         </div>
 
         <p className="text-body-sm text-muted-foreground mb-5 max-w-3xl">
-          {displayGradeLabel} is where examiners start using words like &quot;thoughtful&quot;, &quot;developed&quot;, and &quot;perceptive&quot;. The difference between mid-band and this level is not about knowing more content — it is about how deeply and precisely you analyse. A {displayGradeLabel} student does not just explain; they interpret.
+          {displayGradeLabel} is where markers start using words like &quot;thoughtful&quot;, &quot;developed&quot;, and &quot;perceptive&quot;. The difference between mid-band and this level is not about knowing more content — it is about how deeply and precisely you analyse. A {displayGradeLabel} student does not just explain; they interpret.
         </p>
 
         {boardConfig && boundary.percent !== null && (
@@ -370,7 +370,7 @@ export default async function Grade7Page() {
           higherEssay={example.higherEssay}
           contextNote={
             boardConfig
-              ? `This example uses ${example.title}, which is on the ${boardConfig.shortName} specification.`
+              ? `This example uses ${example.title}, which is on your ${boardConfig.shortName} exam board.`
               : undefined
           }
         />

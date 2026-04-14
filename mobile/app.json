@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1e40af"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -28,7 +28,7 @@
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#1e40af"
       },
       "permissions": ["NOTIFICATIONS"],
       "intentFilters": [
@@ -55,7 +55,7 @@
       [
         "expo-notifications",
         {
-          "color": "#ffffff"
+          "color": "#1e40af"
         }
       ]
     ],

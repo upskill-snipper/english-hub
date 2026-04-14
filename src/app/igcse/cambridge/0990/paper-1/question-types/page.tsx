@@ -19,9 +19,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Paper 1 Question Types | Cambridge IGCSE 0990 | The English Hub',
+  title: 'Paper 1 Question Types | Cambridge IGCSE Language B | The English Hub',
   description:
-    'Full breakdown of the three question types on Cambridge IGCSE 0990 Paper 1 Reading: comprehension, language analysis and summary. Worked technique for each.',
+    'Full breakdown of the three question types on Cambridge IGCSE Language B Paper 1 Reading: comprehension, language analysis and summary. Worked technique for each.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/paper-1/question-types',
   },
@@ -49,7 +49,7 @@ export default async function QuestionTypesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE Language B
             </Badge>
             <Badge variant="secondary">Paper 1</Badge>
             <Badge variant="secondary">Question types</Badge>

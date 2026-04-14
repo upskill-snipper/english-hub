@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/writing-skills/grammar-punctuation' },
   title: "Grammar & Punctuation Guide | The English Hub",
   description:
-    "Comprehensive GCSE grammar and punctuation guide. Sentence types, punctuation for effect, paragraph techniques, SPaG errors, active and passive voice, tense consistency, apostrophes, direct speech rules, commonly misspelled words, and AO6 mark scheme guidance.",
+    "Comprehensive GCSE grammar and punctuation guide. Sentence types, punctuation for effect, paragraph techniques, SPaG errors, active and passive voice, tense consistency, apostrophes, direct speech rules, commonly misspelled words, and technical accuracy marking guide guidance.",
 };
 
 /* ─── Section wrapper ────────────────────────────────────────── */
@@ -86,7 +86,7 @@ export default function GrammarPunctuationPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Master the technical accuracy that separates good writing from great writing.
-            Everything you need for SPaG (AO6) in one comprehensive guide.
+            Everything you need for SPaG (technical accuracy) in one comprehensive guide.
           </p>
         </div>
       </section>
@@ -123,7 +123,7 @@ export default function GrammarPunctuationPage() {
                 { id: "apostrophes", label: "Apostrophes" },
                 { id: "direct-speech", label: "Direct Speech" },
                 { id: "misspelled-words", label: "Commonly Misspelled Words" },
-                { id: "ao6-assessment", label: "AO6 Assessment" },
+                { id: "technical-accuracy-assessment", label: "technical accuracy Assessment" },
               ].map((item) => (
                 <a key={item.id} href={`#${item.id}`} className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors">
                   {item.label}
@@ -139,7 +139,7 @@ export default function GrammarPunctuationPage() {
             <Section id="sentence-types" title="1. Sentence Types">
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Varying your sentence types is one of the most powerful ways to control pace, rhythm, and tone
-                in your writing. Examiners actively look for deliberate variety -- it shows craft, not accident.
+                in your writing. Markers actively look for deliberate variety -- it shows craft, not accident.
               </p>
 
               <div className="space-y-4">
@@ -182,7 +182,7 @@ export default function GrammarPunctuationPage() {
                   <TipBox>
                     Complex sentences show <strong>sophistication</strong>. Fronted subordinate clauses
                     (starting with &quot;Although...&quot; or &quot;When...&quot;) are particularly effective because they
-                    delay the main point, creating suspense or emphasis. Examiners love to see these used deliberately.
+                    delay the main point, creating suspense or emphasis. Markers love to see these used deliberately.
                   </TipBox>
                 </RuleCard>
 
@@ -223,7 +223,7 @@ export default function GrammarPunctuationPage() {
                     It signals that the two ideas are intimately connected -- the reader should hold them together.
                   </p>
                   <TipBox>
-                    Using even one semicolon correctly in your exam response signals to the examiner that you
+                    Using even one semicolon correctly in your exam response signals to the marker that you
                     have control over your punctuation. It is a hallmark of confident, mature writing.
                   </TipBox>
                 </RuleCard>
@@ -314,7 +314,7 @@ export default function GrammarPunctuationPage() {
                 <RuleCard title="Topic Sentences">
                   <p>
                     The <strong>first sentence of each paragraph</strong> should clearly signal what the paragraph
-                    is about. It acts as a signpost for the reader and the examiner.
+                    is about. It acts as a signpost for the reader and the marker.
                   </p>
                   <ExampleBox>&quot;Perhaps the most damaging consequence of social media is its impact on young people&apos;s self-esteem.&quot;</ExampleBox>
                   <p>
@@ -592,7 +592,7 @@ export default function GrammarPunctuationPage() {
                   </ExampleBox>
                   <TipBox>
                     If you use a deliberate tense shift, make it obvious and controlled. Start a new paragraph,
-                    and return to your original tense afterwards. The examiner needs to see that the shift was
+                    and return to your original tense afterwards. The marker needs to see that the shift was
                     intentional, not accidental.
                   </TipBox>
                 </RuleCard>
@@ -793,16 +793,16 @@ export default function GrammarPunctuationPage() {
               </div>
             </Section>
 
-            {/* ─── 11. AO6 Assessment ─────────────────────────────── */}
-            <Section id="ao6-assessment" title="11. How SPaG is Assessed (AO6)">
+            {/* ─── 11. technical accuracy Assessment ─────────────────────────────── */}
+            <Section id="technical-accuracy-assessment" title="11. How SPaG is Assessed (technical accuracy)">
               <p className="mb-6 text-muted-foreground leading-relaxed">
-                AO6 tests your &quot;technical accuracy&quot; -- your ability to use vocabulary, sentence structures,
+                technical accuracy tests your &quot;technical accuracy&quot; -- your ability to use vocabulary, sentence structures,
                 spelling, and punctuation accurately and effectively. It is worth <strong>up to 16 marks</strong> on
                 AQA English Language, and significant marks on all exam boards.
               </p>
 
               <div className="space-y-4">
-                <RuleCard title="What Examiners Are Looking For">
+                <RuleCard title="What Markers Are Looking For">
                   <div className="mt-2 space-y-4">
                     <div className="rounded-lg border-l-4 border-red-400 bg-red-500/10 px-4 py-3">
                       <p className="font-semibold text-red-700 dark:text-red-300 text-sm">Level 1 (1-4 marks) -- Limited</p>
@@ -852,7 +852,7 @@ export default function GrammarPunctuationPage() {
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
-                      <p className="text-sm"><strong>Punctuation range:</strong> Use semicolons, colons, dashes, and ellipses correctly. Even one well-placed semicolon shows the examiner you have control.</p>
+                      <p className="text-sm"><strong>Punctuation range:</strong> Use semicolons, colons, dashes, and ellipses correctly. Even one well-placed semicolon shows the marker you have control.</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>

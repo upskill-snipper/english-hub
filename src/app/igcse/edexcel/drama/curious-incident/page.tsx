@@ -22,9 +22,9 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title:
-    'The Curious Incident of the Dog in the Night-Time — Edexcel IGCSE 4ET1 Study Guide',
+    'The Curious Incident of the Dog in the Night-Time — Edexcel IGCSE IGCSE Literature Study Guide',
   description:
-    'Simon Stephens\u2019s stage adaptation of Mark Haddon\u2019s novel for Edexcel IGCSE 4ET1: plot, characters, themes and key quotations.',
+    'Simon Stephens\u2019s stage adaptation of Mark Haddon\u2019s novel for Edexcel IGCSE IGCSE Literature: plot, characters, themes and key quotations.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel/drama/curious-incident',
@@ -201,7 +201,7 @@ export default async function CuriousIncidentHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE 4ET1
+              Edexcel IGCSE IGCSE Literature
             </Badge>
             <Badge variant="secondary">Modern drama</Badge>
           </div>

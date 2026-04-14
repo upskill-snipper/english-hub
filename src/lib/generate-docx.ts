@@ -411,7 +411,7 @@ export function generateMarkSchemeWord(
     </div>
 
     <h1>${escHtml(meta.title)}</h1>
-    <p style="font-size:10pt;color:#718096;margin-bottom:14pt;">${escHtml(topic)} &mdash; Mark Scheme (Teacher Copy)</p>
+    <p style="font-size:10pt;color:#718096;margin-bottom:14pt;">${escHtml(topic)} &mdash; Answer Guide (Teacher Copy)</p>
 
     <table class="meta-grid">
       <tr><td>Text</td><td>${escHtml(meta.text)}</td></tr>

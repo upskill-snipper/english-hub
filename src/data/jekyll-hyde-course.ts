@@ -36,7 +36,7 @@ export const jekyllHydeCourse: CourseData = {
 
 <div class="grade9-insight"><strong>Grade 9 Insight:</strong> When you analyse how Stevenson's biography informs the novella, you're not just listing facts — you're showing how <strong>lived experience shapes artistic meaning</strong>. For example: "Stevenson's personal experience of family tension between public conformity and private ambition gave him psychological insight into Jekyll's internal division. This is not simply biographical trivia; it explains why the novella's central tension feels so psychologically authentic."</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When you reference Stevenson's Edinburgh background, link it explicitly to the novella's themes. For example: "Stevenson grew up in Edinburgh, a city whose geographic split between the respectable New Town and the dangerous Old Town mirrors Jekyll's own internal division. Stevenson uses this personal geography as a <strong>spatial metaphor</strong> for psychological duality." This demonstrates that context <em>illuminates meaning</em>, which is exactly what AO3 rewards.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When you reference Stevenson's Edinburgh background, link it explicitly to the novella's themes. For example: "Stevenson grew up in Edinburgh, a city whose geographic split between the respectable New Town and the dangerous Old Town mirrors Jekyll's own internal division. Stevenson uses this personal geography as a <strong>spatial metaphor</strong> for psychological duality." This demonstrates that context <em>illuminates meaning</em>, which is exactly what AO3 rewards.</div>
 
 <h3>Victorian Society & Respectability: The Context of Reputation</h3>
 
@@ -203,7 +203,7 @@ export const jekyllHydeCourse: CourseData = {
 
 <p>Crucially, Enfield and Utterson agree not to discuss the matter further. This reflects the Victorian code of <strong>silence and discretion</strong> — gentlemen do not pry into one another's affairs, even when those affairs seem deeply suspicious or immoral. Stevenson shows that the culture of secrecy and polite avoidance of uncomfortable topics actively enables Hyde's violence. If Utterson had confronted Jekyll immediately, if respectable men had been willing to break the code of reticence, evil might have been stopped. Instead, they collaborate in concealing it through their silence.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The door is one of the novella's most important symbols. It represents the hidden, shameful entrance to Jekyll's secret life. In your essay, contrast this neglected rear entrance with the grand front door of Jekyll's house, which represents his respectable public face. The geography of the house reflects the dualism of the self: there is no easy transition between the two doors, suggesting that Jekyll cannot naturally reconcile his two natures.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The door is one of the novella's most important symbols. It represents the hidden, shameful entrance to Jekyll's secret life. In your essay, contrast this neglected rear entrance with the grand front door of Jekyll's house, which represents his respectable public face. The geography of the house reflects the dualism of the self: there is no easy transition between the two doors, suggesting that Jekyll cannot naturally reconcile his two natures.</div>
 
 <div class="quotation-bank">
 <strong>Key Quotation 1: "Like some damned Juggernaut"</strong>
@@ -251,7 +251,7 @@ export const jekyllHydeCourse: CourseData = {
 
 <p>The chapter ends with Utterson reflecting gloomily: "Poor Harry Jekyll, my mind misgives me he is in deep waters." The word "misgives" suggests premonition, a sense that something dreadful is unfolding that cannot yet be articulated. Utterson's intuition is correct, but his Victorian propriety prevents him from acting on it. He knows something is very wrong, but he respects Jekyll's privacy and will not push for answers. This passivity, born of good manners and social protocol, is complicit in the tragedy that follows.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Chapter 3's title is loaded with irony. "Dr Jekyll Was Quite at Ease" suggests calm and control, but the conversation reveals exactly the opposite — Jekyll is anxious, secretive, and desperate. Stevenson uses ironic chapter titles throughout the novella to highlight the <strong>gap between appearance and reality</strong>. When you see an ironic title in an exam extract, always comment on this technique and explain what Stevenson is suggesting through the irony.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Chapter 3's title is loaded with irony. "Dr Jekyll Was Quite at Ease" suggests calm and control, but the conversation reveals exactly the opposite — Jekyll is anxious, secretive, and desperate. Stevenson uses ironic chapter titles throughout the novella to highlight the <strong>gap between appearance and reality</strong>. When you see an ironic title in an exam extract, always comment on this technique and explain what Stevenson is suggesting through the irony.</div>
 
 <h3>Narrative Technique & Unreliable Narration in Chapters 1–3</h3>
 
@@ -279,7 +279,7 @@ export const jekyllHydeCourse: CourseData = {
   <li><strong>"Poor Harry Jekyll, my mind misgives me he is in deep waters"</strong> — Utterson's instinctive unease, foreshadowing tragedy</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Learn these quotations and practise embedding them in sentences. Short, embedded quotations score far higher than long block quotations because they demonstrate that you can select the most important words and weave them into your own argument.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Learn these quotations and practise embedding them in sentences. Short, embedded quotations score far higher than long block quotations because they demonstrate that you can select the most important words and weave them into your own argument.</div>
 
 <h3>The Role of Setting & Juxtaposition in Chapters 1–3</h3>
 
@@ -397,7 +397,7 @@ The imagery of fog and darkness also contributes to the theme of concealment. Ut
 
 <p>Inside, Hyde's rooms are surprisingly well-furnished — decorated with "good taste" and containing "good pictures" — but they have been ransacked. Papers have been burned, and the other half of the murder weapon's cane is found behind the door. The elegance of the furnishings reminds us that Hyde is not a separate person but <strong>Jekyll's alter ego</strong>, sharing Jekyll's refined tastes even while committing acts of savagery.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The Carew murder scene is a likely extract for the AQA exam. Practise analysing the contrast between Carew's politeness and Hyde's explosive violence. You could argue that Stevenson constructs Carew as the perfect victim — an innocent, courteous old man — precisely to emphasise Hyde's <em>motiveless</em> evil. Hyde does not kill for gain; he kills because violence is his nature.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The Carew murder scene is a likely extract for the AQA exam. Practise analysing the contrast between Carew's politeness and Hyde's explosive violence. You could argue that Stevenson constructs Carew as the perfect victim — an innocent, courteous old man — precisely to emphasise Hyde's <em>motiveless</em> evil. Hyde does not kill for gain; he kills because violence is his nature.</div>
 
 <h3>Chapter 5: "Incident of the Letter"</h3>
 
@@ -432,7 +432,7 @@ The imagery of fog and darkness also contributes to the theme of concealment. Ut
   <li><strong>Foreshadowing:</strong> Jekyll's claim "I can be rid of Mr Hyde" (Chapter 3) is echoed by his assertion that Hyde "will never more be heard of" (Chapter 5). Each reassurance increases the reader's certainty that Hyde will return.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing Stevenson's use of setting, always connect it to theme. The fog is not just atmospheric — it <em>symbolises</em> the concealment at the heart of Victorian society. The contrast between Jekyll's grand house and Hyde's Soho rooms is not just descriptive — it <em>embodies</em> the duality of respectable exterior and squalid interior. This is AO2 analysis at its strongest.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When analysing Stevenson's use of setting, always connect it to theme. The fog is not just atmospheric — it <em>symbolises</em> the concealment at the heart of Victorian society. The contrast between Jekyll's grand house and Hyde's Soho rooms is not just descriptive — it <em>embodies</em> the duality of respectable exterior and squalid interior. This is AO2 analysis at its strongest.</div>
 
 <p>The middle section of the novella also develops the theme of <strong>masculine friendship under strain</strong>. Utterson, Jekyll, and Lanyon are bound by decades of companionship, yet their code of conduct prevents them from speaking honestly to one another. Lanyon dies with his secret rather than share it. Jekyll hides behind a closed door rather than confide in his closest friend. Stevenson suggests that the bonds of Victorian male friendship, while genuine, are ultimately too constrained by propriety to offer real support in a crisis.</p>
 
@@ -448,7 +448,7 @@ The imagery of fog and darkness also contributes to the theme of concealment. Ut
   <li>"I have had a shock and I shall never recover" — Lanyon's devastating admission, representing the collapse of rational certainty in the face of irrational truth.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When quoting in the exam, keep quotations short — ideally under ten words — and embed them in your own sentences. For example: "Stevenson describes the Carew murder with visceral physical detail, noting that the victim's 'bones were audibly shattered,' which forces the reader to experience the horror through sound as well as sight." This demonstrates confident handling of textual evidence for AO1.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When quoting in the exam, keep quotations short — ideally under ten words — and embed them in your own sentences. For example: "Stevenson describes the Carew murder with visceral physical detail, noting that the victim's 'bones were audibly shattered,' which forces the reader to experience the horror through sound as well as sight." This demonstrates confident handling of textual evidence for AO1.</div>
 `,
       quiz: [
         {
@@ -539,7 +539,7 @@ The imagery of fog and darkness also contributes to the theme of concealment. Ut
 
 <div class="key-term"><strong>Key Term: Reticence</strong> — The quality of being reserved or reluctant to speak freely; the social code of silence. Stevenson presents Victorian reticence not as admirable self-control but as a dangerous habit that allows evil to flourish unchallenged and prevents people from offering help to those in distress. The window scene is structured entirely around what is <em>not said</em>.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The window scene is a masterclass in Stevenson's technique of <em>showing without telling</em>. We never learn exactly what Utterson and Enfield see on Jekyll's face, but their pale, horrified reaction tells us everything. Focus on what is <em>left unsaid</em> — the dialogue that does not occur, the comfort that is not offered, the questions that are not asked. Stevenson's <strong>restraint</strong> is itself a method worth analysing.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The window scene is a masterclass in Stevenson's technique of <em>showing without telling</em>. We never learn exactly what Utterson and Enfield see on Jekyll's face, but their pale, horrified reaction tells us everything. Focus on what is <em>left unsaid</em> — the dialogue that does not occur, the comfort that is not offered, the questions that are not asked. Stevenson's <strong>restraint</strong> is itself a method worth analysing.</div>
 
 <div class="quotation-bank">
 <strong>Key Quotation 1: "The smile was struck out of his face"</strong>
@@ -605,7 +605,7 @@ The imagery of fog and darkness also contributes to the theme of concealment. Ut
 
 <p>After the Carew murder — a crime that shocks even Utterson and the London public — Jekyll resolves to stop transforming entirely. He destroys his supply of the potion and stops the experiment. But the temptation proves irresistible. The pleasure and freedom that Hyde offered are addictive. Sitting in Regent's Park one day, Jekyll thinks about how much good he has done compared to Hyde's evil — a moment of self-satisfied pride in his virtue and respectability. This moment of <strong>pride</strong> triggers an involuntary transformation into Hyde. Jekyll's sin is not just the experiment but the self-righteous belief that his good deeds can outweigh and balance his evil ones.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Jekyll's statement is not a reliable confession — it is a <em>self-justification</em>. He repeatedly distances himself from Hyde ("He, I say — I cannot say, I"), refusing to fully accept that Hyde's actions are his own. In your essay, you can argue that even in his final confession, Jekyll maintains the duality Stevenson critiques: he wants credit for his virtues while disowning his vices. This is the psychological pattern Stevenson is exposing — the moral trick that allows respectable people to believe in their own virtue while ignoring their capacity for evil.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Jekyll's statement is not a reliable confession — it is a <em>self-justification</em>. He repeatedly distances himself from Hyde ("He, I say — I cannot say, I"), refusing to fully accept that Hyde's actions are his own. In your essay, you can argue that even in his final confession, Jekyll maintains the duality Stevenson critiques: he wants credit for his virtues while disowning his vices. This is the psychological pattern Stevenson is exposing — the moral trick that allows respectable people to believe in their own virtue while ignoring their capacity for evil.</div>
 
 <p>As the original supply of the chemical salt runs out, Jekyll makes a terrifying discovery: he cannot replicate it. The original batch contained an unknown <strong>impurity</strong> that was essential to the reaction. Jekyll is trapped: the transformations into Hyde are becoming more frequent and harder to reverse, the police are hunting Hyde for murder, and the potion is running out.</p>
 
@@ -735,7 +735,7 @@ Stevenson's use of Jekyll as an unreliable narrator also critiques the broader V
 
 <p>Rather than accepting that human nature contains both good and bad impulses, Jekyll becomes obsessed with the idea of <strong>separating</strong> them. He believes that if he could isolate his evil self, his good self would be free to enjoy a spotless reputation. This is a profoundly <strong>selfish</strong> motivation — Jekyll does not want to eliminate evil; he wants to indulge it without consequences.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> A sophisticated essay will argue that Jekyll's real flaw is not his dark impulses but his <em>response</em> to them. Instead of accepting that duality is part of being human, he tries to engineer a shortcut — a way to sin without guilt. Stevenson is critiquing the Victorian fantasy that a person can be wholly respectable while secretly indulging their vices.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> A sophisticated essay will argue that Jekyll's real flaw is not his dark impulses but his <em>response</em> to them. Instead of accepting that duality is part of being human, he tries to engineer a shortcut — a way to sin without guilt. Stevenson is critiquing the Victorian fantasy that a person can be wholly respectable while secretly indulging their vices.</div>
 
 <p>Jekyll's initial experience of transforming into Hyde is described in terms of <strong>pleasure</strong>: he feels "younger, lighter, happier in body" and enjoys "a current of disordered sensual images." This is a man who has repressed himself for decades and is finally tasting freedom. The tragedy is that this freedom, unrestrained by conscience, inevitably escalates into violence.</p>
 
@@ -772,7 +772,7 @@ Stevenson's use of Jekyll as an unreliable narrator also critiques the broader V
 
 <p>In this reading, Hyde is not an aberration but the <strong>inevitable product</strong> of a repressive society. If Victorian culture had allowed men like Jekyll to acknowledge their darker impulses openly, there would have been no need for the experiment. The real villain of the novella is not Hyde but the social system that created him.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about Jekyll, always consider Stevenson's <em>purpose</em>. Jekyll is not just a character in a story — he is Stevenson's vehicle for critiquing Victorian society. Phrases like "Stevenson uses Jekyll to demonstrate..." or "Through Jekyll, Stevenson suggests that..." show the examiner you understand the writer's craft (AO2) and the social context (AO3) simultaneously.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When writing about Jekyll, always consider Stevenson's <em>purpose</em>. Jekyll is not just a character in a story — he is Stevenson's vehicle for critiquing Victorian society. Phrases like "Stevenson uses Jekyll to demonstrate..." or "Through Jekyll, Stevenson suggests that..." show the marker you understand the writer's craft (AO2) and the social context (AO3) simultaneously.</div>
 
 <h3>Jekyll and the Gothic Tradition</h3>
 
@@ -898,7 +898,7 @@ Stevenson's use of Jekyll as an unreliable narrator also critiques the broader V
   <li><strong>The insignificance of evil:</strong> Hyde is physically unimpressive, suggesting that evil does not announce itself grandly but operates through small, insidious acts.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When you discuss Hyde's physical appearance, always move beyond description to <em>interpretation</em>. Don't simply say "Hyde is small." Say: "Stevenson presents Hyde as physically small, perhaps suggesting that Jekyll's evil nature, long repressed, is initially underdeveloped — though its rapid growth implies that suppression strengthens rather than eliminates dark impulses." That is AO2 analysis.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When you discuss Hyde's physical appearance, always move beyond description to <em>interpretation</em>. Don't simply say "Hyde is small." Say: "Stevenson presents Hyde as physically small, perhaps suggesting that Jekyll's evil nature, long repressed, is initially underdeveloped — though its rapid growth implies that suppression strengthens rather than eliminates dark impulses." That is AO2 analysis.</div>
 
 <h3>Animalistic Imagery</h3>
 
@@ -931,7 +931,7 @@ Stevenson's use of Jekyll as an unreliable narrator also critiques the broader V
 
 <p>However, the crucial twist is that Hyde is not actually an outsider — he is <strong>the product of the most respectable man in the story</strong>. Stevenson subverts Victorian prejudice by showing that the "beast" does not come from the colonial margins or the criminal underclass but from the heart of the establishment itself. The real horror is that Hyde is already inside every "respectable" gentleman.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> This is a sophisticated contextual point (AO3). You could write: "Stevenson subverts Victorian assumptions about the origins of evil. While his contemporaries associated criminality with the lower classes and 'primitive' races, Hyde emerges from the laboratory of a wealthy, educated doctor — suggesting that the capacity for evil transcends class and social standing."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> This is a sophisticated contextual point (AO3). You could write: "Stevenson subverts Victorian assumptions about the origins of evil. While his contemporaries associated criminality with the lower classes and 'primitive' races, Hyde emerges from the laboratory of a wealthy, educated doctor — suggesting that the capacity for evil transcends class and social standing."</div>
 
 <h3>Hyde's Growth &amp; Jekyll's Decline</h3>
 
@@ -955,9 +955,9 @@ Stevenson's use of Jekyll as an unreliable narrator also critiques the broader V
 
 <p>Hyde is one of the most frequently examined characters. Questions may ask you to explore how Stevenson presents Hyde as <strong>frightening</strong>, how he represents <strong>evil</strong>, or how he connects to the theme of <strong>duality</strong>. In every case, your analysis should move beyond surface description to explore what Hyde <em>represents</em>. He is not just a violent man — he is the embodiment of everything Victorian society repressed, denied, and refused to acknowledge. His terror comes not from what he does but from what he reveals about the human condition.</p>
 
-<p>When analysing Hyde, always connect his physical descriptions to their <strong>thematic significance</strong>. His smallness represents repressed evil that grows when indulged. His animalistic behaviour connects to Darwinian anxieties. His indescribability suggests that evil transcends rational understanding. Each physical detail carries a weight of meaning that examiners want to see you unpack.</p>
+<p>When analysing Hyde, always connect his physical descriptions to their <strong>thematic significance</strong>. His smallness represents repressed evil that grows when indulged. His animalistic behaviour connects to Darwinian anxieties. His indescribability suggests that evil transcends rational understanding. Each physical detail carries a weight of meaning that markers want to see you unpack.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The strongest essays about Hyde consider what he reveals about <em>Jekyll</em> and <em>Victorian society</em>, not just about himself. Hyde is a mirror — he reflects back the hidden truth about the culture that produced him. A top-band response might argue: "Stevenson constructs Hyde not as an external threat but as an internal truth — the embodiment of desires that Victorian respectability rendered unspeakable, and therefore uncontrollable."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The strongest essays about Hyde consider what he reveals about <em>Jekyll</em> and <em>Victorian society</em>, not just about himself. Hyde is a mirror — he reflects back the hidden truth about the culture that produced him. A top-band response might argue: "Stevenson constructs Hyde not as an external threat but as an internal truth — the embodiment of desires that Victorian respectability rendered unspeakable, and therefore uncontrollable."</div>
 
 <p>It is also worth noting that Hyde's name is itself symbolic. "Hyde" sounds like "hide" — to conceal. He is the <strong>hidden self</strong>, the part of Jekyll that must be kept out of sight. This onomastic symbolism extends to the novella's other characters: Utterson's name suggests someone who should "utter" truth but remains silent, while Jekyll's name can be read as a combination of the French "je" (I) and "kill" — the self-destructive impulse at the heart of the experiment.</p>
 `,
@@ -1076,7 +1076,7 @@ Stevenson's use of Jekyll as an unreliable narrator also critiques the broader V
 
 <div class="key-term"><strong>Key Term: Paradigm Shift</strong> — Thomas Kuhn used this term to describe the sudden, revolutionary change in scientific understanding that occurs when evidence can no longer be accommodated within existing frameworks. Lanyon experiences a paradigm shift when he witnesses the transformation. The old scientific worldview cannot accommodate what he sees. The new information is not a small adjustment but a complete overturning of scientific law. This is too much for Lanyon to sustain.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing Lanyon, move beyond simply calling him "orthodox" or "conservative." Recognize that Lanyon represents something important: the limits of orthodoxy when confronted with genuine innovation. Stevenson is not saying that Lanyon is wrong to trust established science — he is saying that blindness to the possibility of new knowledge is its own form of moral failure. Lanyon's refusal to even consider Jekyll's work is partly wisdom (scepticism of unproven claims) and partly hubris (the assumption that the established order cannot be violated).</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When analysing Lanyon, move beyond simply calling him "orthodox" or "conservative." Recognize that Lanyon represents something important: the limits of orthodoxy when confronted with genuine innovation. Stevenson is not saying that Lanyon is wrong to trust established science — he is saying that blindness to the possibility of new knowledge is its own form of moral failure. Lanyon's refusal to even consider Jekyll's work is partly wisdom (scepticism of unproven claims) and partly hubris (the assumption that the established order cannot be violated).</div>
 
 <h3>Mr Richard Enfield: The Gentleman-Observer</h3>
 
@@ -1231,7 +1231,7 @@ Both characters fail in similar ways despite their differences: both believe tha
 
 <p>Every character in the novella is governed by concerns about reputation. Utterson investigates quietly to avoid scandal. Enfield refuses to name the "respectable" cheque-signer. Jekyll would rather die than be exposed. Even Hyde understands the power of reputation — he agrees to pay compensation for trampling the child because the crowd threatens to "make his name stink."</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about reputation, link it to Stevenson's critique of Victorian society (AO3). You could argue: "Stevenson presents reputation as a prison. Jekyll is so trapped by the expectations placed on a man of his standing that he would rather split his personality than risk public exposure of his imperfections. Through Jekyll, Stevenson suggests that the cult of respectability does not make people good — it makes them secretive."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When writing about reputation, link it to Stevenson's critique of Victorian society (AO3). You could argue: "Stevenson presents reputation as a prison. Jekyll is so trapped by the expectations placed on a man of his standing that he would rather split his personality than risk public exposure of his imperfections. Through Jekyll, Stevenson suggests that the cult of respectability does not make people good — it makes them secretive."</div>
 
 <h3>3. Science &amp; its Limits</h3>
 
@@ -1269,7 +1269,7 @@ Both characters fail in similar ways despite their differences: both believe tha
 
 <p>Stevenson extends this critique to every character. Utterson, the most sympathetic figure in the novella, is still a man who locks away evidence and walks away from disturbing scenes rather than confronting them. Enfield agrees never to mention what he has witnessed. Even the servants know "something is wrong" but say nothing. The entire social fabric is built on the agreement to <strong>not look too closely</strong> — and it is this agreement that allows Hyde to flourish.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing themes, always link them together. Don't treat duality, reputation, and secrecy as separate topics — show how they interconnect. For example: "Stevenson presents duality as the inevitable consequence of a society obsessed with reputation: because Victorian culture demanded moral perfection, individuals like Jekyll were forced to create secret outlets for their imperfections, resulting in the very evil that society sought to suppress." This kind of interconnected analysis reaches the top mark bands.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When discussing themes, always link them together. Don't treat duality, reputation, and secrecy as separate topics — show how they interconnect. For example: "Stevenson presents duality as the inevitable consequence of a society obsessed with reputation: because Victorian culture demanded moral perfection, individuals like Jekyll were forced to create secret outlets for their imperfections, resulting in the very evil that society sought to suppress." This kind of interconnected analysis reaches the top mark bands.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about themes as if they exist in isolation. In the exam, the strongest essays show how themes <em>overlap</em>. Duality connects to secrecy, which connects to reputation, which connects to Victorian hypocrisy. Every theme in the novella reinforces the others.</div>
 
@@ -1382,7 +1382,7 @@ Both characters fail in similar ways despite their differences: both believe tha
   <li><strong>Chapter 10: First-person narrative (Jekyll's confession)</strong> — The final chapter gives us Jekyll's own voice, the innermost layer of the story. We move from public observation (Utterson) through private testimony (Lanyon) to personal confession (Jekyll). Each layer peels back another level of concealment.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about narrative structure, use precise terminology. Don't say "the story is told in different ways." Say: "Stevenson employs a layered narrative structure that moves from third-person limited perspective through epistolary testimony to first-person confession, mirroring the novella's thematic progression from concealment to revelation." This demonstrates command of form and structure for AO2.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> When writing about narrative structure, use precise terminology. Don't say "the story is told in different ways." Say: "Stevenson employs a layered narrative structure that moves from third-person limited perspective through epistolary testimony to first-person confession, mirroring the novella's thematic progression from concealment to revelation." This demonstrates command of form and structure for AO2.</div>
 
 <p>The structure also creates <strong>dramatic irony on re-reading</strong>. Once you know the secret, every scene in the first eight chapters takes on new meaning. Utterson's investigations seem painfully slow; Jekyll's reassurances become transparent lies; Lanyon's dismissal of Jekyll's science becomes tragically ironic. Stevenson designed the novella to reward multiple readings.</p>
 
@@ -1432,7 +1432,7 @@ Both characters fail in similar ways despite their differences: both believe tha
   <li><strong>Contrast and antithesis:</strong> Stevenson constantly pairs opposites — light/dark, front/back, known/unknown — to reinforce the theme of duality at the level of individual sentences.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> AO2 rewards analysis of <em>specific</em> word choices. Don't just say "Stevenson uses dark imagery." Pick a specific word — "trampled," "shattered," "hissed" — and explain what it suggests, what it connects to, and what effect it creates on the reader. One well-analysed word is worth more than a list of techniques.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> AO2 rewards analysis of <em>specific</em> word choices. Don't just say "Stevenson uses dark imagery." Pick a specific word — "trampled," "shattered," "hissed" — and explain what it suggests, what it connects to, and what effect it creates on the reader. One well-analysed word is worth more than a list of techniques.</div>
 
 <h3>Form: The Novella as a Concentrated Text</h3>
 
@@ -1547,7 +1547,7 @@ Both characters fail in similar ways despite their differences: both believe tha
   <li><strong>AO4 (4 marks):</strong> Spelling, punctuation, and grammar. Accurate, fluent writing with a range of vocabulary.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> AO2 is worth 12 of the 30 content marks — that is 40%. If you are not analysing Stevenson's methods in every paragraph, you are leaving almost half the marks on the table. Every point you make should include a technique: "Stevenson uses [technique] to suggest [meaning]." This is not optional — it is essential.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> AO2 is worth 12 of the 30 content marks — that is 40%. If you are not analysing Stevenson's methods in every paragraph, you are leaving almost half the marks on the table. Every point you make should include a technique: "Stevenson uses [technique] to suggest [meaning]." This is not optional — it is essential.</div>
 
 <h3>Timing &amp; Structure</h3>
 
@@ -1608,7 +1608,7 @@ Both characters fail in similar ways despite their differences: both believe tha
 <h4>Reputation</h4>
 <p>Show how every character is governed by concern for reputation. Argue that Stevenson presents reputation as a prison that forces individuals into hypocrisy and self-division.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Whatever the specific question, your essay should demonstrate knowledge of the <strong>whole novella</strong>. If the extract is from Chapter 1, make sure you reference events from Chapters 8–10 as well. If the extract is from Jekyll's final statement, refer back to earlier scenes. The question says "in the novella as a whole" — take this literally. Range across the entire text.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Whatever the specific question, your essay should demonstrate knowledge of the <strong>whole novella</strong>. If the extract is from Chapter 1, make sure you reference events from Chapters 8–10 as well. If the extract is from Jekyll's final statement, refer back to earlier scenes. The question says "in the novella as a whole" — take this literally. Range across the entire text.</div>
 
 <h3>Final Checklist Before the Exam</h3>
 
@@ -1624,7 +1624,7 @@ Both characters fail in similar ways despite their differences: both believe tha
 
 <div class="key-term"><strong>Key Term: Conceptualised Response</strong> — An essay built around a central argument or interpretation, rather than working through the extract line by line. For example, arguing that Stevenson uses the novella to demonstrate that Victorian society's obsession with respectability is itself the source of the evil it condemns. A conceptualised response is the single most important feature of a top-band essay.</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Retelling the story instead of analysing it. The examiner knows the plot — they want to see your <em>interpretation</em>. Every sentence should make an analytical point. If you find yourself writing "and then..." or "next, Jekyll...", stop and refocus on the question. Narration scores zero marks; analysis scores high marks.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Retelling the story instead of analysing it. The marker knows the plot — they want to see your <em>interpretation</em>. Every sentence should make an analytical point. If you find yourself writing "and then..." or "next, Jekyll...", stop and refocus on the question. Narration scores zero marks; analysis scores high marks.</div>
 
 <h3>Practice Question</h3>
 
@@ -1639,7 +1639,7 @@ Both characters fail in similar ways despite their differences: both believe tha
 
 <p>Plan your response using the WHAT-HOW-WHY method. Aim for four to five paragraphs covering: Jekyll's concealment of his pleasures, the locked doors and sealed documents, Utterson and Enfield's pact of silence, the epistolary structure as a form of delayed truth, and the link between Victorian propriety and the culture of secrecy. Ensure every paragraph includes an embedded quotation, analysis of Stevenson's technique, and a connection to context or purpose. Time yourself: you should complete the full essay in fifty minutes.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> After completing a practice essay, review it against the AO criteria. Highlight every point where you analyse a specific technique (AO2) in one colour, every embedded quotation (AO1) in another, and every contextual link (AO3) in a third. If any colour is missing from a paragraph, that paragraph is leaving marks on the table. This self-assessment habit will rapidly improve your exam performance.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> After completing a practice essay, review it against the AO criteria. Highlight every point where you analyse a specific technique (AO2) in one colour, every embedded quotation (AO1) in another, and every contextual link (AO3) in a third. If any colour is missing from a paragraph, that paragraph is leaving marks on the table. This self-assessment habit will rapidly improve your exam performance.</div>
 `,
       quiz: [
         {
@@ -1700,7 +1700,7 @@ Both characters fail in similar ways despite their differences: both believe tha
           options: [
             'What happened, how it happened, why it happened in the plot',
             'What point you are making, how Stevenson presents it (technique + quotation), why it matters (purpose/context)',
-            'What the examiner wants, how to impress them, why marks matter',
+            'What the marker wants, how to impress them, why marks matter',
             'What the extract says, how long it is, why it was chosen',
           ],
           correct: 1,

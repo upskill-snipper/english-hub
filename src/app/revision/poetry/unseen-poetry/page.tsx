@@ -230,7 +230,7 @@ export default function UnseenPoetryPage() {
               </div>
               <CardDescription className="mt-2">
                 Submit a practice answer to our marking tool and get instant
-                AO1–AO3 feedback.
+                feedback on your reading, analysis, and context skills.
               </CardDescription>
             </CardHeader>
             <CardContent>

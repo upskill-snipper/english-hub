@@ -1321,16 +1321,16 @@ function ResultsView({
               This grade is an estimate based on response length and
               completion. For accurate grading of your written responses,
               AI-powered essay feedback will provide detailed marks against
-              the mark scheme with specific comments on how to improve. This
+              the marking guide with specific comments on how to improve. This
               feature is coming soon.
             </p>
           </div>
 
-          {/* Mark scheme / model answers section */}
+          {/* Marking guide / model answers section */}
           <div className="mb-8">
             <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
               <Eye className="h-4 w-4 text-primary" />
-              Mark Scheme Guidance
+              Marking Guide
             </h3>
             <div className="space-y-4">
               {paper.questions.map((q) => (

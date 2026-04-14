@@ -21,9 +21,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Practice Paper 1 (Reading) | Cambridge IGCSE 0990 | The English Hub',
+  title: 'Practice Paper 1 (Reading) | Cambridge IGCSE Language B | The English Hub',
   description:
-    'Full Cambridge IGCSE 0990 Paper 1 Reading practice paper using public domain extracts from Charlotte Brontë and H.G. Wells. Questions, timing and mark breakdown.',
+    'Full Cambridge IGCSE Language B Paper 1 Reading practice paper using public domain extracts from Charlotte Brontë and H.G. Wells. Questions, timing and mark breakdown.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/practice-paper-1',
   },
@@ -41,7 +41,7 @@ export default async function PracticePaper1Page() {
           render={<Link href="/igcse/cambridge/0990" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to 0990 hub
+          Back to IGCSE Language B hub
         </Button>
       </div>
 
@@ -51,7 +51,7 @@ export default async function PracticePaper1Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE Language B
             </Badge>
             <Badge variant="secondary">Practice Paper</Badge>
             <Badge variant="secondary">Paper 1 Reading</Badge>

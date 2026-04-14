@@ -39,7 +39,7 @@ export default function AboutPage() {
             We provide 15+ structured courses covering KS3, GCSE, and IGCSE English Language and
             Literature. Our content is tailored to five major exam boards — AQA, Edexcel, OCR, WJEC
             Eduqas, and Cambridge IGCSE — so students always study material aligned to the
-            specification they are sitting. Each course is broken down into clear, manageable topics
+            exam board they are sitting. Each course is broken down into clear, manageable topics
             with lessons, practice activities, and revision resources designed to build confidence
             from the first lesson through to exam day.
           </p>
@@ -56,7 +56,7 @@ export default function AboutPage() {
             <li>
               <strong className="text-foreground">Exam board-specific content</strong> — lessons,
               mark schemes, and model answers mapped directly to AQA, Edexcel, OCR, WJEC Eduqas,
-              and Cambridge IGCSE specifications.
+              and Cambridge IGCSE exam boards.
             </li>
             <li>
               <strong className="text-foreground">AI-powered essay feedback</strong> — submit
@@ -103,8 +103,8 @@ export default function AboutPage() {
             </li>
             <li>
               <strong className="text-foreground">Evidence-based learning</strong> — our tools are
-              grounded in proven pedagogical strategies including retrieval practice, spaced
-              repetition, and formative feedback.
+              grounded in proven pedagogical strategies including retrieval practice, smart
+              review, and formative feedback.
             </li>
             <li>
               <strong className="text-foreground">Exam board alignment</strong> — students can

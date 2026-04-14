@@ -100,7 +100,7 @@ export default function GradeBoundariesPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Cambridge IGCSE English Language (0500 / 0990)
+            Cambridge IGCSE English Language
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Grade Boundaries
@@ -165,7 +165,7 @@ export default function GradeBoundariesPage() {
               <h3 className="text-lg font-bold text-foreground">Extended Tier</h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">Paper 2 (Reading) + Paper 4 (Directed Writing &amp; Composition)</p>
               <ul className="mt-3 ml-5 list-disc space-y-1 text-sm">
-                <li>Grades available: <strong>A* &ndash; G</strong> (or 9&ndash;1 for 0990)</li>
+                <li>Grades available: <strong>A* &ndash; G</strong> (or 9&ndash;1 for the 9&ndash;1 grading variant)</li>
                 <li>Maximum combined mark: <strong>160</strong></li>
                 <li>More challenging reading passages and questions</li>
                 <li>Required if targeting grade A* or A</li>
@@ -176,7 +176,7 @@ export default function GradeBoundariesPage() {
               <h3 className="text-lg font-bold text-muted-foreground">Core Tier</h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">Paper 1 (Reading) + Paper 3 (Directed Writing &amp; Composition)</p>
               <ul className="mt-3 ml-5 list-disc space-y-1 text-sm">
-                <li>Grades available: <strong>C &ndash; G</strong> (or 4&ndash;1 for 0990)</li>
+                <li>Grades available: <strong>C &ndash; G</strong> (or 4&ndash;1 for the 9&ndash;1 grading variant)</li>
                 <li>Maximum combined mark: <strong>120</strong></li>
                 <li>More accessible reading passages</li>
                 <li>Maximum achievable grade is C</li>
@@ -314,11 +314,11 @@ export default function GradeBoundariesPage() {
         </Section>
 
         {/* ── 9-1 Grading (0990) ─────────────────────────────── */}
-        <Section title="9-1 grading scale (Syllabus 0990)">
+        <Section title="9-1 grading scale">
           <p>
-            Syllabus 0990 uses the 9&ndash;1 grading scale (aligned with the UK
+            The 9&ndash;1 grading variant uses the 9&ndash;1 grading scale (aligned with the UK
             reformed GCSE system). The content and papers are identical to
-            0500 &mdash; only the grading scale differs. Here is how the two
+            the A*&ndash;G variant &mdash; only the grading scale differs. Here is how the two
             scales map onto each other:
           </p>
 
@@ -383,8 +383,8 @@ export default function GradeBoundariesPage() {
 
           <p className="mt-4 text-sm text-muted-foreground">
             Key equivalences to remember: Grade 9 = top A*, Grade 7 = A,
-            Grade 4 = C (standard pass). The 0990 boundaries in raw marks are
-            very similar to 0500 &mdash; they are simply mapped to the
+            Grade 4 = C (standard pass). The 9&ndash;1 boundaries in raw marks are
+            very similar to the A*&ndash;G variant &mdash; they are simply mapped to the
             different scale.
           </p>
         </Section>
@@ -393,7 +393,7 @@ export default function GradeBoundariesPage() {
         <Section title="What each grade looks like in practice">
           <p>
             Understanding the grade descriptors helps you see exactly what
-            examiners expect at each level. Here is what typical work looks like
+            markers expect at each level. Here is what typical work looks like
             at the key grade boundaries:
           </p>
 
@@ -507,7 +507,7 @@ export default function GradeBoundariesPage() {
         <Section title="Marks per component at a glance">
           <div className="space-y-6">
             <div>
-              <h3 className="font-bold text-foreground">Extended Tier (0500 / 0990)</h3>
+              <h3 className="font-bold text-foreground">Extended Tier</h3>
               <div className="overflow-x-auto mt-3">
                 <table className="w-full text-sm">
                   <thead>
@@ -543,7 +543,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div>
-              <h3 className="font-bold text-muted-foreground">Core Tier (0500 / 0990)</h3>
+              <h3 className="font-bold text-muted-foreground">Core Tier</h3>
               <div className="overflow-x-auto mt-3">
                 <table className="w-full text-sm">
                   <thead>
@@ -746,7 +746,7 @@ export default function GradeBoundariesPage() {
             <div className="rounded-lg bg-red-500/5 border border-red-500/15 p-4">
               <h3 className="font-semibold text-red-700 dark:text-red-300">Summary responses</h3>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
-                <li><strong>Copying from the passage</strong> &mdash; lifting whole phrases instead of using your own words. Examiners specifically look for evidence of your own vocabulary.</li>
+                <li><strong>Copying from the passage</strong> &mdash; lifting whole phrases instead of using your own words. Markers specifically look for evidence of your own vocabulary.</li>
                 <li><strong>Including irrelevant content</strong> &mdash; adding points that are not relevant to the specific summary question.</li>
                 <li><strong>Writing too little</strong> &mdash; many students under-write their summary. Aim for a full, developed paragraph.</li>
               </ul>

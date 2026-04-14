@@ -52,7 +52,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Which exam boards do you cover?',
         answer:
-          'We cover all major English exam boards in the UK: AQA, Edexcel, OCR, WJEC/Eduqas, and Cambridge IGCSE. All content — courses, mock exams, practice questions, and revision notes — is tailored to your specific exam board and specification.',
+          'We cover all major English exam boards in the UK: AQA, Edexcel, OCR, WJEC/Eduqas, and Cambridge IGCSE. All content — courses, mock exams, practice questions, and revision notes — is tailored to your specific exam board.',
       },
       {
         question: 'Do I need to download an app?',
@@ -62,7 +62,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How is The English Hub different from other revision sites?',
         answer:
-          'Unlike generic revision platforms, every piece of content on The English Hub is written specifically for your exam board and specification. Our mock exams use AI trained on real mark schemes to give you detailed, examiner-style feedback. We focus exclusively on English, so the depth and quality of our content is unmatched.',
+          'Unlike generic revision platforms, every piece of content on The English Hub is written specifically for your exam board. Our mock exams use AI trained on real mark schemes to give you detailed, criteria-referenced feedback. We focus exclusively on English, so the depth and quality of our content is unmatched.',
       },
     ],
   },
@@ -113,7 +113,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'What subjects and courses are available?',
         answer:
-          'We offer courses for GCSE English Language and GCSE English Literature across all major exam boards. Each course covers every topic in the specification with structured lessons, worked examples, and practice activities.',
+          'We offer courses for GCSE English Language and GCSE English Literature across all major exam boards. Each course covers every topic required by your exam board with structured lessons, worked examples, and practice activities.',
       },
       {
         question: 'How do mock exams work?',
@@ -123,7 +123,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'What are practice questions?',
         answer:
-          'Practice questions let you focus on individual question types (e.g. language analysis, creative writing, essay responses). Each question comes with a model answer so you can compare your response against a top-grade example and understand what examiners are looking for.',
+          'Practice questions let you focus on individual question types (e.g. language analysis, creative writing, essay responses). Each question comes with a model answer so you can compare your response against a top-grade example and understand what earns top marks.',
       },
       {
         question: 'Are set texts covered for English Literature?',
@@ -133,7 +133,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How often is content updated?',
         answer:
-          'We continuously update our content to reflect the latest exam board specifications, mark schemes, and examiner reports. When exam boards make changes, we update our materials promptly so you\'re always revising the right content.',
+          'We continuously update our content to reflect the latest exam board requirements, mark schemes, and published guidance. When exam boards make changes, we update our materials promptly so you\'re always revising the right content.',
       },
     ],
   },

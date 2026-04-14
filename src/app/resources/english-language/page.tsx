@@ -49,10 +49,10 @@ const BOARDS: Board[] = [
     name: "Edexcel (Pearson)",
     spec: "1EN0",
     description:
-      "Focuses on fiction and imaginative writing in Component 1 and non-fiction texts with transactional writing in Component 2. Known for its clear mark-scheme structure and accessible question style.",
+      "Focuses on fiction and imaginative writing in Paper 1 and non-fiction texts with writing for real purposes in Paper 2. Known for its clear marking-guide structure and accessible question style.",
     papers: [
-      "Component 1: Fiction & Imaginative Writing",
-      "Component 2: Non-Fiction & Transactional Writing",
+      "Paper 1: Fiction & Imaginative Writing",
+      "Paper 2: Non-Fiction & Writing for Real Purposes",
     ],
     totalMarks: 160,
     duration: "1h 45m + 2h 05m",
@@ -105,12 +105,12 @@ const BOARDS: Board[] = [
     description:
       "The Welsh board offering GCSE English Language across England and Wales. Features two components with a distinctive blend of reading comprehension, creative prose writing, and presentational writing tasks.",
     papers: [
-      "Component 1: 20th Century Literature Reading & Creative Prose Writing",
-      "Component 2: 19th & 21st Century Non-Fiction Reading & Transactional/Persuasive Writing",
+      "Paper 1: 20th Century Literature Reading & Creative Prose Writing",
+      "Paper 2: 19th & 21st Century Non-Fiction Reading & Writing for Real Purposes",
     ],
     totalMarks: 160,
     duration: "1h 45m + 2h",
-    uniqueFeature: "Proofreading and editing task in Component 2",
+    uniqueFeature: "Proofreading and editing task in Paper 2",
     color: "border-primary",
     accent: "bg-primary",
     icon: "W",
@@ -168,7 +168,7 @@ const CORE_SKILLS = [
     icon: "pen",
   },
   {
-    title: "Transactional Writing",
+    title: "Writing for Real Purposes",
     description:
       "Write for specific purposes and audiences, including letters, articles, speeches, and reviews, adapting tone and register appropriately.",
     icon: "mail",
@@ -345,7 +345,7 @@ export default function EnglishLanguagePage() {
             </div>
           )}
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Master reading analysis, creative writing, and transactional writing with comprehensive
+            Master reading analysis, creative writing, and writing for real purposes with comprehensive
             revision resources tailored to your exam board. Covering all five major boards with
             AI-powered feedback on your practice answers.
           </p>
@@ -399,7 +399,7 @@ export default function EnglishLanguagePage() {
               "Reading comprehension and analysis",
               "Language techniques and their effects",
               "Creative and descriptive writing",
-              "Persuasive, argumentative, and transactional writing",
+              "Persuasive, argumentative, and writing for real purposes",
               "Comparing writers' perspectives",
               "Spoken language endorsement",
             ].map((topic) => (
@@ -423,7 +423,7 @@ export default function EnglishLanguagePage() {
             ? "You're viewing resources for your chosen exam board only."
             : (
               <>
-                Choose your exam board below to access board-specific revision resources, mark schemes,
+                Choose your exam board below to access board-specific revision resources, marking guides,
                 and exam tips. Not sure which board you study? Use our{" "}
                 <a href="#board-finder" className="font-medium text-primary underline underline-offset-2 hover:text-foreground">
                   board finder
@@ -602,7 +602,7 @@ export default function EnglishLanguagePage() {
                 Get instant AI feedback on your answers
               </h2>
               <p className="mt-2 leading-relaxed text-muted-foreground">
-                Practice exam-style questions and receive detailed, mark-scheme-aligned feedback
+                Practice exam-style questions and receive detailed, marking-guide-aligned feedback
                 powered by AI. Our system analyses your response against the assessment objectives
                 for your specific exam board and provides targeted improvement suggestions.
               </p>

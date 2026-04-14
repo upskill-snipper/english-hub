@@ -25,16 +25,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Cambridge IGCSE 0990 (9-1) First Language English — The English Hub',
+  title: 'IGCSE Language B — The English Hub',
   description:
-    'Complete revision hub for Cambridge IGCSE 0990 First Language English (9-1 graded). Same papers as 0500, numerical grading. Paper 1 Reading, Paper 2 Writing, grade-by-grade guides and practice papers.',
+    'IGCSE Language B hub. Same content as Language A with 9-1 numerical grading. Reading Paper, Writing Paper, grade-by-grade guides and practice papers. Aligns with Cambridge syllabus 0990.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990' },
 }
 
 const papers = [
   {
-    code: 'Paper 1',
-    name: 'Reading',
+    code: 'Reading Paper',
+    name: 'Reading skills',
     time: '2 hours',
     marks: '80 marks',
     weight: '50%',
@@ -44,8 +44,8 @@ const papers = [
     icon: BookOpen,
   },
   {
-    code: 'Paper 2',
-    name: 'Directed Writing & Composition',
+    code: 'Writing Paper',
+    name: 'Writing skills',
     time: '2 hours',
     marks: '80 marks',
     weight: '50%',
@@ -58,23 +58,16 @@ const papers = [
 
 const navCards = [
   {
-    title: 'How 0990 differs from 0500',
+    title: 'How Language B differs from Language A',
     description:
       'Same syllabus, same papers, different grade scale. Understand exactly what changes and what stays the same.',
     href: '/igcse/cambridge/0990/difference-vs-0500',
     icon: Layers,
   },
   {
-    title: 'Syllabus breakdown',
-    description:
-      'Assessment objectives, content outline and skills assessed across Reading and Writing.',
-    href: '/igcse/cambridge/0990/syllabus',
-    icon: FileText,
-  },
-  {
     title: '9-1 grade conversion',
     description:
-      'Full conversion table from the numerical 9-1 grades to the older A*-G scale used for 0500.',
+      'Full conversion table from the numerical 9-1 grades to the older A*-G scale used for Language A.',
     href: '/igcse/cambridge/0990/grade-conversion',
     icon: Target,
   },
@@ -130,13 +123,13 @@ export default async function Cambridge0990HubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE 0990
+              Cambridge IGCSE
             </Badge>
             <Badge variant="secondary">First Language English (9-1)</Badge>
             <Badge variant="secondary">International</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Cambridge IGCSE 0990 First Language English
+            IGCSE Language B
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
             The <strong className="text-foreground">9-1 graded version</strong>{' '}
@@ -146,7 +139,7 @@ export default async function Cambridge0990HubPage() {
               href="/igcse/cambridge/0500"
               className="text-primary underline-offset-2 hover:underline"
             >
-              syllabus 0500
+              Language A
             </Link>
             , with results reported on the numerical scale from 9 (highest) to
             1 (lowest). Popular in UK international schools and IB feeder
@@ -154,10 +147,6 @@ export default async function Cambridge0990HubPage() {
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
-            <Button size="sm" render={<Link href="/igcse/cambridge/0990/syllabus" />}>
-              Syllabus breakdown
-              <ArrowRight className="size-3.5" />
-            </Button>
             <Button
               size="sm"
               variant="outline"
@@ -206,7 +195,7 @@ export default async function Cambridge0990HubPage() {
                     {p.code}: {p.name}
                   </CardTitle>
                   <CardDescription className="text-body-sm">
-                    Cambridge IGCSE 0990 · {p.marks} · {p.time}
+                    IGCSE Language B · {p.marks} · {p.time}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-1 flex-col gap-4">
@@ -250,11 +239,11 @@ export default async function Cambridge0990HubPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Cambridge IGCSE 0990 reports results on the same numerical 9-1
+          IGCSE Language B reports results on the same numerical 9-1
           scale used by reformed UK GCSEs, where Grade 9 is the highest and
           Grade 1 is the lowest pass. The content, papers and assessment
-          objectives are identical to Cambridge 0500 — only the reporting
-          scale changes. Schools choose 0990 when they want students&apos;
+          objectives are identical to Language A — only the reporting
+          scale changes. Schools choose Language B when they want students&apos;
           results to align directly with UK GCSE grades for sixth form or
           university applications.
         </p>
@@ -343,7 +332,7 @@ export default async function Cambridge0990HubPage() {
         <div className="mb-5 flex items-center gap-3">
           <Layers className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Explore the 0990 hub
+            Explore Language B
           </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
@@ -412,6 +401,11 @@ export default async function Cambridge0990HubPage() {
         </div>
       </section>
 
+      {/* ── Footer note ─────────────────────────────────────────────── */}
+      <p className="text-center text-body-xs text-muted-foreground/60">
+        Aligns with Cambridge syllabus 0990
+      </p>
+
       {/* Practice papers */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
@@ -422,7 +416,7 @@ export default async function Cambridge0990HubPage() {
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
           Full-length practice papers built around public-domain extracts,
-          mirroring the 0990 format and question style. Work under exam
+          mirroring the Language B format and question style. Work under exam
           conditions and compare your answers with our worked model responses.
         </p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">

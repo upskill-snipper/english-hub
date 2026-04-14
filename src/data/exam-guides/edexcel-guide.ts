@@ -6,11 +6,11 @@ export const edexcelGuide: BoardExamGuide = {
   boardName: 'Pearson Edexcel',
   boardColor: '#7C3AED',
 
-  overview: `<p>Edexcel (Pearson) is distinctive among GCSE English exam boards in running both a domestic GCSE — <strong>1EN0 (Language)</strong> and <strong>1ET0 (Literature)</strong> — and a widely taken <strong>International GCSE (4EA1)</strong>. The board's philosophy centres on <strong>"Reading as a Writer, Writing as a Reader"</strong>: the idea that close analytical reading and crafted writing are reciprocal skills that reinforce each other. This approach permeates the mark schemes, which consistently reward students who demonstrate awareness of <em>how</em> and <em>why</em> writers make choices, not just <em>what</em> those choices are.</p>
+  overview: `<p>Edexcel (Pearson) is distinctive among GCSE English exam boards in running both a domestic GCSE — <strong>1EN0 (Language)</strong> and <strong>1ET0 (Literature)</strong> — and a widely taken <strong>International GCSE (4EA1)</strong>. The board's philosophy centres on <strong>"Reading as a Writer, Writing as a Reader"</strong>: the idea that close analytical reading and crafted writing are reciprocal skills that reinforce each other. This approach permeates the marking guides, which consistently reward students who demonstrate awareness of <em>how</em> and <em>why</em> writers make choices, not just <em>what</em> those choices are.</p>
 
 <p>Key structural features set Edexcel apart from AQA and OCR. Language Paper 2 carries <strong>96 marks over 2 hours 5 minutes</strong>, making it one of the most demanding single papers at GCSE level. The reading section requires students to work across two non-fiction extracts — one 19th century and one modern — with synthesis, comparison, language analysis, and evaluation questions. The writing section uniquely demands <strong>two transactional writing tasks</strong> (one shorter, one longer), testing versatility across different forms such as letters, articles, speeches, and reviews. This dual-task format is exclusive to Edexcel and requires careful time management.</p>
 
-<p>In Literature, Edexcel's Paper 1 combines Shakespeare with a post-1914 British play or novel. The Shakespeare section splits into an <strong>extract-based essay and a whole-text essay</strong>, each worth 40 marks, demanding both close reading and panoramic textual knowledge. Paper 2 pairs a 19th-century novel with poetry — anthology comparison plus unseen poetry — across 2 hours 15 minutes. The mark schemes reward <strong>"judicious" quotation selection</strong> and <strong>sustained personal response</strong>, with "perceptive" and "assured" as the key descriptors for the top band.</p>
+<p>In Literature, Edexcel's Paper 1 combines Shakespeare with a post-1914 British play or novel. The Shakespeare section splits into an <strong>extract-based essay and a whole-text essay</strong>, each worth 40 marks, demanding both close reading and panoramic textual knowledge. Paper 2 pairs a 19th-century novel with poetry — anthology comparison plus unseen poetry — across 2 hours 15 minutes. The marking guides reward <strong>"judicious" quotation selection</strong> and <strong>sustained personal response</strong>, with "perceptive" and "assured" as the key descriptors for the top band.</p>
 
 <p>The IGCSE (4EA1) features a particularly extensive <strong>45-poem anthology divided across 6 clusters</strong>, giving international students extraordinary breadth but also demanding thorough revision. For domestic GCSE students, the poetry anthology is divided into three collections — <em>Relationships</em>, <em>Conflict</em>, and <em>Time and Place</em> — and schools select one. Edexcel also applies an <strong>explicit SPaG grid for writing tasks</strong>, where spelling, punctuation, and grammar marks are clearly separated from content marks, making technical accuracy a visible and targetable component of the grade.</p>
 
@@ -157,7 +157,7 @@ export const edexcelGuide: BoardExamGuide = {
               skill: 'Creative/narrative writing — imaginative prose',
               time: '45 minutes (including 5–7 minutes planning)',
               advice:
-                'Plan for 5–7 minutes before writing. Open with a hook — a striking image, a sensory detail, or a provocative line of dialogue. Vary sentence openings (adverbial, participial, one-word) and lengths (short for dramatic impact, longer for descriptive passages). Use the full punctuation range: semicolons, colons, dashes, ellipses. End with circularity — echo your opening image or motif. AO6 carries 16 marks for SPaG, so proofread carefully. Edexcel\'s "Reading as a Writer" philosophy means examiners reward evidence that you have <em>crafted</em> your writing with conscious technique.',
+                'Plan for 5–7 minutes before writing. Open with a hook — a striking image, a sensory detail, or a provocative line of dialogue. Vary sentence openings (adverbial, participial, one-word) and lengths (short for dramatic impact, longer for descriptive passages). Use the full punctuation range: semicolons, colons, dashes, ellipses. End with circularity — echo your opening image or motif. AO6 carries 16 marks for SPaG, so proofread carefully. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence that you have <em>crafted</em> your writing with conscious technique.',
             },
           ],
         },
@@ -271,7 +271,7 @@ export const edexcelGuide: BoardExamGuide = {
               skill: 'Extract-to-whole analysis of Shakespeare play',
               time: '50–55 minutes',
               advice:
-                'Divide your response roughly 40/60 between the extract and the wider play. Analyse the extract in close detail first — Shakespeare\'s word-level choices, imagery, dramatic irony, use of verse or prose, and rhetorical devices. Then broaden to the whole play, exploring how the theme or character develops across the text. Weave context (AO3) naturally into your analysis — do not bolt it on as a separate paragraph. AO4 rewards accurate written expression, so spell literary terms correctly and punctuate quotations accurately. Select quotations <strong>judiciously</strong> — Edexcel\'s mark scheme specifically rewards quality of selection over quantity.',
+                'Divide your response roughly 40/60 between the extract and the wider play. Analyse the extract in close detail first — Shakespeare\'s word-level choices, imagery, dramatic irony, use of verse or prose, and rhetorical devices. Then broaden to the whole play, exploring how the theme or character develops across the text. Weave context (AO3) naturally into your analysis — do not bolt it on as a separate paragraph. AO4 rewards accurate written expression, so spell literary terms correctly and punctuate quotations accurately. Select quotations <strong>judiciously</strong> — Edexcel\'s marking guide specifically rewards quality of selection over quantity.',
             },
           ],
         },
@@ -434,7 +434,7 @@ export const edexcelGuide: BoardExamGuide = {
     },
   ],
 
-  // ─── Examiner Tips ───────────────────────────────────────────────────────────
+  // ─── Marker Tips ───────────────────────────────────────────────────────────
   examinerTips: [
     {
       question: 'Language Paper 1, Q1–Q2 — Short-Answer Retrieval (1–2 marks each)',
@@ -469,7 +469,7 @@ export const edexcelGuide: BoardExamGuide = {
     {
       question: 'Language Paper 1, Q5 — Imaginative Writing (40 marks)',
       tips: [
-        'Spend 5–7 minutes planning. Edexcel\'s "Reading as a Writer" philosophy means examiners reward evidence of conscious craft.',
+        'Spend 5–7 minutes planning. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence of conscious craft.',
         'Open with a hook: a striking image, an unusual perspective, a sensory detail, or a line of dialogue.',
         'Vary sentence openings (adverbial, participial, one-word) and lengths (short for impact, long for description).',
         'Use the full punctuation range: semicolons, colons, dashes, ellipses, parenthetical commas.',
@@ -544,7 +544,7 @@ export const edexcelGuide: BoardExamGuide = {
     {
       year: '2026',
       change:
-        'Clarified mark scheme descriptors: Edexcel has refined the wording of mark band descriptors across both Language and Literature to reduce ambiguity, with clearer differentiation between adjacent levels — particularly between Levels 4 and 5.',
+        'Clarified marking guide descriptors: Edexcel has refined the wording of mark band descriptors across both Language and Literature to reduce ambiguity, with clearer differentiation between adjacent levels — particularly between Levels 4 and 5.',
     },
   ],
 
@@ -633,7 +633,7 @@ export const edexcelGuide: BoardExamGuide = {
         { quote: 'Out, damned spot! Out, I say!', analysis: 'Lady Macbeth\'s sleepwalking exclamation reduces her earlier commanding rhetoric to desperate, fragmented utterance. The irremovable "spot" of blood symbolises guilt that cannot be washed away — a physical manifestation of moral stain.' },
       ],
       examStrategy:
-        'For Edexcel\'s Shakespeare question, focus on close language analysis of the extract before broadening to the whole play. Macbeth is rich in imagery (blood, darkness, clothing, disease) — track these patterns across the text. Context should centre on Jacobean attitudes to regicide, the supernatural, and gender roles, but always link context to the effect on the audience rather than presenting it as standalone knowledge. The mark scheme rewards "judicious" quotation — select the most revealing phrases and analyse them in depth.',
+        'For Edexcel\'s Shakespeare question, focus on close language analysis of the extract before broadening to the whole play. Macbeth is rich in imagery (blood, darkness, clothing, disease) — track these patterns across the text. Context should centre on Jacobean attitudes to regicide, the supernatural, and gender roles, but always link context to the effect on the audience rather than presenting it as standalone knowledge. The marking guide rewards "judicious" quotation — select the most revealing phrases and analyse them in depth.',
     },
   ],
 
@@ -749,7 +749,7 @@ export const edexcelGuide: BoardExamGuide = {
     'Explicit SPaG grid for writing: Unlike boards where SPaG marks are embedded within content descriptors, Edexcel uses a separate, visible SPaG assessment grid, making technical accuracy a clearly targetable component of the grade.',
     'Paper 2 carries 96 marks over 2 hours 5 minutes: One of the most demanding single papers at GCSE level, requiring stamina and time management across reading and writing sections.',
     'Poetry anthology divided into three collections (Relationships, Conflict, Time and Place): Schools choose one collection, and students must know every poem within it for the comparison question.',
-    '"Judicious" quotation is specifically rewarded in the mark scheme: Edexcel\'s top-band descriptors emphasise quality of textual selection over quantity, rewarding students who choose the most revealing quotations rather than the most copious.',
+    '"Judicious" quotation is specifically rewarded in the marking guide: Edexcel\'s top-band descriptors emphasise quality of textual selection over quantity, rewarding students who choose the most revealing quotations rather than the most copious.',
     'Both domestic GCSE and International GCSE available: Edexcel is unique in offering both 1EN0/1ET0 (UK) and 4EA1 (international) pathways, giving schools worldwide access to Pearson qualifications.',
   ],
 };

@@ -99,7 +99,7 @@ export const act1LessonPlan: LessonPlanData = {
     "Write a 200-word response: 'How does Priestley use the opening of An Inspector Calls to establish that the Birling family has something to hide?' Include at least two quotations from the stage directions or dialogue.",
   teacherNotes: [
     "Ensure students grasp the dual time frame before diving into textual analysis — this is the foundation of every AO3 contextual point they will need at GCSE.",
-    "The lighting symbolism is a reliable AO2 point that examiners reward highly. Model this carefully.",
+    "The lighting symbolism is a reliable AO2 point that scores highly in exams. Model this carefully.",
     "Birling's dramatic irony speech is the single most frequently examined extract for the AO3 mark. Spend adequate time here.",
     "If time is short, the plenary exit ticket can be set as homework instead, with the Birling paragraph becoming the plenary task.",
     "This lesson pairs well with a follow-up lesson on the Inspector's entrance and his function as Priestley's mouthpiece.",
@@ -270,7 +270,7 @@ export const quotesWorksheetQuestions: WorksheetQuestion[] = [
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const responsibilityMarkSchemeMeta = {
-  title: "Mark Scheme: 'How does Priestley present the theme of responsibility?'",
+  title: "Answer Guide: 'How does Priestley present the theme of responsibility?'",
   text: "An Inspector Calls — J.B. Priestley",
   yearGroup: "Year 10/11",
   examBoard: "AQA / Edexcel IGCSE",
@@ -550,7 +550,7 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
     "Name specific language techniques and explain their effect. Do not just identify them: 'Priestley uses a metaphor' is not analysis. 'The metaphor of one body suggests organic interconnection, implying that harming Eva damages the entire social organism' is analysis.",
     "Plan your essay before writing. Spend 5 minutes identifying your three best points, your supporting quotations, and your argument thread. A planned essay with three excellent paragraphs will outscore an unplanned essay with six mediocre ones.",
     "Address Priestley's intentions explicitly. Use phrases like 'Priestley constructs...', 'Priestley positions the audience to...', 'Priestley uses X as a vehicle for...' This demonstrates awareness that the text is a crafted artefact, not a transparent window on reality.",
-    "Compare characters within your essay, even if the question only names one. The examiner rewards candidates who can show how characters function in relation to each other — Birling vs the Inspector, Sheila vs her mother.",
+    "Compare characters within your essay, even if the question only names one. You will score higher if you can show how characters function in relation to each other — Birling vs the Inspector, Sheila vs her mother.",
     "End with a strong concluding sentence that returns to the question and offers a final evaluative judgement. Avoid simply restating your points.",
   ],
   practiceQuestions: [

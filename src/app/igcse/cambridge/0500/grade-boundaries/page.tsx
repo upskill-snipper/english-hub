@@ -19,9 +19,9 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Grade Boundaries — Cambridge IGCSE 0500',
+  title: 'Grade Boundaries — IGCSE Language A',
   description:
-    'Historical grade boundaries for Cambridge IGCSE 0500 First Language English and how to hit an A* grade.',
+    'Historical grade boundaries for IGCSE Language A First Language English and how to hit an A* grade. Aligns with Cambridge syllabus 0500.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/cambridge/0500/grade-boundaries',
@@ -58,7 +58,7 @@ const tips = [
   'Build a personal bank of sophisticated vocabulary and test yourself weekly.',
   'Read 15 minutes of non-fiction daily — broadsheet opinion pieces are perfect for Q2-style analysis.',
   'Get a second pair of eyes on your descriptive/narrative compositions — self-marking rarely catches style issues.',
-  'Memorise the examiner\'s AO language so your writing sounds like it meets the criteria before the marker has to look.',
+  'Memorise the examiner\'s assessment language so your writing sounds like it meets the criteria before the marker has to look.',
 ]
 
 export default async function GradeBoundariesPage() {
@@ -75,20 +75,20 @@ export default async function GradeBoundariesPage() {
           className="gap-1"
         >
           <ChevronLeft className="size-4" />
-          0500 hub
+          IGCSE Language A hub
         </Button>
       </div>
 
       {/* ── Header ─────────────────────────────────────────────────── */}
       <section>
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
-          Cambridge IGCSE 0500
+          IGCSE Language A
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">
           Grade boundaries
         </h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Cambridge 0500 is marked out of 160 (Paper 1 + Paper 2 each out of
+          IGCSE Language A is marked out of 160 (Paper 1 + Paper 2 each out of
           80). Grade thresholds are set fresh each session, but the five-year
           trend gives you a reliable target range.
         </p>
@@ -216,6 +216,11 @@ export default async function GradeBoundariesPage() {
           ))}
         </ul>
       </section>
+
+      {/* ── Footer note ─────────────────────────────────────────────── */}
+      <p className="text-center text-body-xs text-muted-foreground/60">
+        Aligns with Cambridge syllabus 0500
+      </p>
     </div>
   )
 }

@@ -61,7 +61,7 @@ export const FEATURE_NAMES: Record<GatedFeature, string> = {
   ai_study_recommendations: 'AI Study Recommendations',
   ai_lesson_plan: 'AI Lesson Plan',
   worksheet_builder: 'Worksheet Builder',
-  mark_scheme_generator: 'Mark Scheme Generator',
+  mark_scheme_generator: 'Answer Guide Generator',
   export_pptx_word: 'PowerPoint/Word Export',
   class_analytics: 'Class Analytics',
   student_reports: 'Student Reports',

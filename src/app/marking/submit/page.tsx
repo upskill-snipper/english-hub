@@ -262,7 +262,7 @@ export default function SubmitEssayPage() {
       </h1>
       <p className="mt-1 text-sm text-muted-foreground">
         Paste your essay below. We&apos;ll return a predicted grade, AO
-        breakdown and examiner-style feedback.{" "}
+        breakdown and marker-style feedback.{" "}
         <Link
           href="/marking/ai-explainer"
           className="text-primary underline-offset-2 hover:underline"
@@ -307,7 +307,7 @@ export default function SubmitEssayPage() {
           <CardTitle>Essay details</CardTitle>
           <CardDescription>
             Pick your exam board, paper and question so we can apply the right
-            mark scheme.
+            marking guide.
           </CardDescription>
         </CardHeader>
         <CardContent>
