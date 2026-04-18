@@ -1,0 +1,118 @@
+'use client'
+
+import Link from 'next/link'
+
+/* ─────────── Chip card data ─────────── */
+
+const chipCards = [
+  { label: 'AI Essay Feedback', detail: 'Instant grade + targets', rotate: '-3deg', bg: 'bg-clay-400' },
+  { label: '30 Poems Deep-Dived', detail: 'Annotation & analysis', rotate: '2deg', bg: 'bg-sage-500' },
+  { label: '130+ Mock Exams', detail: 'Timed & auto-marked', rotate: '-1.5deg', bg: 'bg-ochre-500' },
+  { label: 'Grade Ladder', detail: '1–9 revision paths', rotate: '2.5deg', bg: 'bg-teal-600' },
+  { label: '7 GCSE Games', detail: 'Learn through play', rotate: '-2deg', bg: 'bg-ink-700' },
+]
+
+const boards = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'IGCSE', 'KS3']
+
+export default function AnthologyHero() {
+  return (
+    <section className="relative overflow-hidden">
+      {/* Main card */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-6 pb-2">
+        <div className="relative rounded-[32px] bg-teal-800 px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20 overflow-hidden">
+          {/* Diagonal line pattern overlay */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.07]"
+            style={{
+              backgroundImage:
+                'repeating-linear-gradient(135deg, transparent, transparent 14px, currentColor 14px, currentColor 15px)',
+              color: '#FBF7F0',
+            }}
+          />
+
+          {/* Meta bar */}
+          <div className="relative mb-8 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm font-mono tracking-wide text-cream-200/60">
+            <span>The English Hub &middot; Anthology Edition</span>
+            <span className="hidden sm:inline text-cream-200/30">|</span>
+            <span>Vol. I &mdash; Spring MMXXVI</span>
+            <span className="hidden sm:inline text-cream-200/30">|</span>
+            <span>15 pathways &middot; 470 lessons</span>
+          </div>
+
+          {/* Grid: content left, chips right */}
+          <div className="relative grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-center">
+            {/* Left column — text content */}
+            <div>
+              {/* Eyebrow */}
+              <p className="mb-4 text-sm font-medium tracking-widest uppercase text-clay-300">
+                An anthology for English &middot; 2026
+              </p>
+
+              {/* Display heading */}
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold leading-[1.05] tracking-tight text-cream-50 mb-6">
+                Read close.{' '}
+                <em className="italic">Write</em> bold.
+                <br />
+                Land the{' '}
+                <span className="relative inline-flex items-center justify-center">
+                  <span className="relative z-10">9</span>
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="w-[1.3em] h-[1.3em] rounded-full border-[3px] border-clay-400" />
+                  </span>
+                </span>
+              </h1>
+
+              {/* Dek */}
+              <p className="font-serif text-cream-200 text-lg sm:text-[22px] leading-relaxed max-w-lg mb-8">
+                Structured courses, AI essay feedback, mock exams, and revision tools
+                &mdash; all mapped to your exam board. One platform, every grade.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <Link
+                  href="/auth/register"
+                  className="inline-flex items-center gap-2 rounded-full bg-clay-500 px-7 py-3 text-sm font-bold text-cream-50 transition-colors hover:bg-clay-600 shadow-lg shadow-clay-500/25"
+                >
+                  Start free &mdash; no card &rarr;
+                </Link>
+                <Link
+                  href="/demo/school"
+                  className="inline-flex items-center gap-2 rounded-full border border-cream-200/25 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-50/10"
+                >
+                  Try the demo
+                </Link>
+              </div>
+
+              {/* Board badges */}
+              <div className="flex flex-wrap items-center gap-2">
+                {boards.map((b) => (
+                  <span
+                    key={b}
+                    className="rounded-full border border-cream-200/15 bg-cream-50/[0.06] px-3 py-1 text-xs font-semibold text-cream-200/70 tracking-wide"
+                  >
+                    {b}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right column — stacked chip tiles */}
+            <div className="relative hidden lg:flex flex-col items-center gap-3 py-4" aria-hidden="true">
+              {chipCards.map((chip, i) => (
+                <div
+                  key={chip.label}
+                  className={`${chip.bg} w-full max-w-[280px] rounded-2xl px-5 py-4 text-cream-50 shadow-elevated transition-transform duration-300 hover:scale-[1.03]`}
+                  style={{ transform: `rotate(${chip.rotate})`, zIndex: chipCards.length - i }}
+                >
+                  <p className="text-sm font-bold tracking-tight">{chip.label}</p>
+                  <p className="text-xs text-cream-100/70 mt-0.5">{chip.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

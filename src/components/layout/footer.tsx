@@ -125,6 +125,16 @@ function linkMatchesBoard(link: FooterLink, board: ExamBoard | null): boolean {
   return true
 }
 
+/** Group visible sections into 4 columns for the editorial layout. */
+function groupIntoColumns(sections: FooterSection[]): FooterSection[][] {
+  // Distribute sections roughly evenly across 4 columns.
+  const cols: FooterSection[][] = [[], [], [], []]
+  sections.forEach((section, i) => {
+    cols[i % 4].push(section)
+  })
+  return cols
+}
+
 export function Footer() {
   const { board, isHydrated } = useBoard()
   const effectiveBoard = isHydrated ? board : null
@@ -138,78 +148,142 @@ export function Footer() {
     }).filter((section) => section.links.length > 0)
   }, [effectiveBoard])
 
+  const columns = useMemo(() => groupIntoColumns(visibleSections), [visibleSections])
+
   return (
-    <footer className="border-t border-border/60 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer
+      className="border-t"
+      style={{
+        background: '#0F1411',
+        borderColor: 'rgba(255,255,255,0.08)',
+        color: '#B5B8B3',
+      }}
+    >
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        {/* Board badge bar */}
         {boardConfig && (
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 py-4">
+          <div
+            className="flex flex-wrap items-center justify-between gap-3 border-b py-4"
+            style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+          >
             <div className="flex items-center gap-2 text-sm">
-              <BookOpen className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-              <span className="text-muted-foreground">Studying</span>
-              <Badge variant="secondary">{boardConfig.shortName}</Badge>
-              <span className="hidden text-muted-foreground sm:inline">
-                — {boardConfig.fullName}
+              <BookOpen className="h-4 w-4 text-[#B5B8B3]" aria-hidden="true" />
+              <span className="text-[#B5B8B3]">Studying</span>
+              <Badge variant="secondary" className="bg-white/10 text-[#FBF7F0] border-0">
+                {boardConfig.shortName}
+              </Badge>
+              <span className="hidden text-[#B5B8B3] sm:inline">
+                &mdash; {boardConfig.fullName}
               </span>
             </div>
             <Link
               href="/board-select?change=1"
-              className="text-sm font-medium text-primary hover:underline underline-offset-4"
+              className="text-sm font-medium text-[#E8A382] hover:text-[#f0b89a] underline-offset-4 hover:underline transition-colors"
             >
               Change board
             </Link>
           </div>
         )}
 
-        <div className="grid grid-cols-2 gap-8 py-10 sm:grid-cols-3 lg:grid-cols-6">
-          {visibleSections.map((section) => (
-            <div key={section.title}>
-              <h3 className="text-sm font-semibold text-foreground">
-                {section.title}
-              </h3>
-              <ul className="mt-3 space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-                {section.title === 'Legal' && (
-                  <li>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        window.dispatchEvent(
-                          new CustomEvent('open-cookie-consent')
-                        )
-                      }
-                      className="text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
-                    >
-                      Manage Cookies
-                    </button>
-                  </li>
-                )}
-              </ul>
+        {/* Main 5-column grid: brand column + 4 link columns */}
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-14 sm:grid-cols-3 lg:grid-cols-5">
+          {/* Column 1 — Brand */}
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1 lg:pr-4">
+            <Link href="/" className="inline-block">
+              <span
+                className="font-serif text-3xl font-medium tracking-tight"
+                style={{ color: '#2dd4a8' }}
+              >
+                The
+                <br />
+                <em className="italic" style={{ color: '#E8A382' }}>English</em>
+                <br />
+                Hub
+              </span>
+            </Link>
+            <p className="mt-4 text-sm leading-relaxed text-[#B5B8B3]/70 max-w-[240px]">
+              GCSE &amp; IGCSE English revision, courses, and exam prep &mdash; built for students, teachers, and schools.
+            </p>
+          </div>
+
+          {/* Columns 2-5 — Link groups */}
+          {columns.map((colSections, colIndex) => (
+            <div key={colIndex} className="flex flex-col gap-8">
+              {colSections.map((section) => (
+                <div key={section.title}>
+                  <h3
+                    className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] mb-4"
+                    style={{ color: '#FBF7F0' }}
+                  >
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-2.5">
+                    {section.links.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-sm text-[#B5B8B3]/80 transition-colors duration-200 hover:text-[#FBF7F0]"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                    {section.title === 'Legal' && (
+                      <li>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.dispatchEvent(
+                              new CustomEvent('open-cookie-consent')
+                            )
+                          }
+                          className="text-sm text-[#B5B8B3]/80 transition-colors duration-200 hover:text-[#FBF7F0]"
+                        >
+                          Manage Cookies
+                        </button>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              ))}
             </div>
           ))}
         </div>
 
-        <div className="border-t border-border/60 py-6 space-y-2">
-          <p className="text-center text-xs text-muted-foreground">
-            &copy; 2024–{new Date().getFullYear()} The English Hub. All rights reserved.
-          </p>
-          <p className="text-center text-xs text-muted-foreground">
-            A trading name of Upskill Energy Limited · Company No. 16254656 · Registered in England and Wales
-          </p>
-          <p className="text-center text-xs text-muted-foreground">
-            Contact:{' '}
-            <a href="mailto:info@Upskillenergy.com" className="hover:text-foreground transition-colors">
-              info@Upskillenergy.com
+        {/* Bottom bar */}
+        <div
+          className="border-t py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+        >
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/60">
+              &copy; 2024&ndash;{new Date().getFullYear()} The English Hub. All rights reserved.
+            </p>
+            <span className="hidden sm:inline text-[#B5B8B3]/30">&middot;</span>
+            <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/60">
+              Upskill Energy Limited &middot; Co. 16254656 &middot; England &amp; Wales
+            </p>
+          </div>
+          <div className="flex items-center gap-4 text-[11px] font-mono tracking-wide">
+            <Link
+              href="/privacy-policy"
+              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+            >
+              Terms
+            </Link>
+            <a
+              href="mailto:info@Upskillenergy.com"
+              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+            >
+              Contact
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>
