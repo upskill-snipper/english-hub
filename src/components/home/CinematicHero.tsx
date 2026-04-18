@@ -271,8 +271,8 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             closed the gap.
           </p>
           <div className="scene-actions">
-            <a className="scene-cta">Book a call &rarr;</a>
-            <a className="scene-btn-ghost">See the demo</a>
+            <a href="/for-schools" className="scene-cta">Book a call &rarr;</a>
+            <a href="/demo/school" className="scene-btn-ghost">See the demo</a>
           </div>
         </div>
 
@@ -574,8 +574,8 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             paragraph-by-paragraph feedback aligned to your exam board.
           </p>
           <div className="scene-actions">
-            <a className="scene-cta">Try the teacher demo &rarr;</a>
-            <a className="scene-btn-ghost">Plans &amp; pricing</a>
+            <a href="/for-teachers/free-resources" className="scene-cta">Try the teacher demo &rarr;</a>
+            <a href="/pricing" className="scene-btn-ghost">Plans &amp; pricing</a>
           </div>
         </div>
 
@@ -690,8 +690,8 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             Flashcards, mocks and grade-predicting games &mdash; all mapped to your exam board.
           </p>
           <div className="scene-actions">
-            <a className="scene-cta">Start free &mdash; no card &rarr;</a>
-            <a className="scene-btn-ghost">Browse courses</a>
+            <a href="/board-select" className="scene-cta">Start free &mdash; no card &rarr;</a>
+            <a href="/board-select" className="scene-btn-ghost">Browse courses</a>
           </div>
         </div>
 
@@ -1065,8 +1065,8 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             First month free &mdash; cancel any time from your account.
           </p>
           <div className="scene-actions">
-            <a className="scene-cta">Start first month free &rarr;</a>
-            <a className="scene-btn-ghost">Read the parent guide</a>
+            <a href="/board-select" className="scene-cta">Start first month free &rarr;</a>
+            <a href="/for-parents" className="scene-btn-ghost">Read the parent guide</a>
           </div>
         </div>
 
