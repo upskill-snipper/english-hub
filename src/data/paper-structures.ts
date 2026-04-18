@@ -776,6 +776,290 @@ const CAMBRIDGE_0990_PAPERS: Paper[] = [
   },
 ]
 
+// ─── Edexcel IGCSE Language (4EA1) ──────────────────────────────────
+
+const EDEXCEL_IGCSE_LANG_PAPERS: Paper[] = [
+  {
+    id: 'igcse-lang-p1',
+    name: 'Paper 1',
+    subtitle: 'Non-fiction Texts and Transactional Writing',
+    examCode: '4EA1/01',
+    duration: '2h 15m',
+    totalMarks: 90,
+    colour: 'sage',
+    sections: [
+      {
+        title: 'Section A: Reading Non-fiction',
+        description: 'Questions on two non-fiction passages — comprehension, language analysis, comparison.',
+        links: [
+          { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
+          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          { label: 'IGCSE Lang Mock Exams', href: '/mock-exams?paper=igcse-lang', type: 'mock' },
+        ],
+      },
+      {
+        title: 'Section B: Transactional Writing',
+        description: 'One transactional writing task (letter, article, report, or speech) based on the reading material.',
+        links: [
+          { label: 'Transactional Writing Guide', href: '/revision/language/writing', type: 'technique' },
+          { label: 'Essay Structure', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'igcse-lang-p2',
+    name: 'Paper 2',
+    subtitle: 'Poetry and Prose Texts and Imaginative Writing',
+    examCode: '4EA1/02',
+    duration: '1h 30m',
+    totalMarks: 60,
+    colour: 'ochre',
+    sections: [
+      {
+        title: 'Section A: Reading Poetry and Prose',
+        description: 'Questions on an unseen poem and an unseen prose extract — language, structure and meaning.',
+        links: [
+          { label: 'Unseen Poetry Practice', href: '/revision/poetry/unseen-poetry', type: 'practice' },
+          { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
+          { label: 'IGCSE Lang Mock Exams', href: '/mock-exams?paper=igcse-lang', type: 'mock' },
+        ],
+      },
+      {
+        title: 'Section B: Imaginative Writing',
+        description: 'One imaginative/creative writing task from a choice of titles.',
+        links: [
+          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
+          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+        ],
+      },
+    ],
+  },
+]
+
+// ─── Cambridge IGCSE Literature (0475) ─────────────────────────────
+
+const CAMBRIDGE_0475_PAPERS: Paper[] = [
+  {
+    id: 'cam0475-p1',
+    name: 'Paper 1',
+    subtitle: 'Poetry and Prose',
+    examCode: '0475/12',
+    duration: '1h 30m',
+    totalMarks: 50,
+    colour: 'teal',
+    sections: [
+      {
+        title: 'Section A: Poetry',
+        description: 'One essay question on a studied poetry text or poems from the set anthology.',
+        links: [
+          { label: 'Poetry Analysis Guide', href: '/revision/poetry/unseen-poetry', type: 'poetry' },
+          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          { label: 'Cambridge Lit Mock Exams', href: '/mock-exams?paper=cambridge-lit', type: 'mock' },
+        ],
+      },
+      {
+        title: 'Section B: Prose',
+        description: 'One essay question on a studied prose text. Extract-based or essay format.',
+        links: [
+          { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
+          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'cam0475-p2',
+    name: 'Paper 2',
+    subtitle: 'Drama',
+    examCode: '0475/22',
+    duration: '1h 30m',
+    totalMarks: 50,
+    colour: 'clay',
+    sections: [
+      {
+        title: 'Drama',
+        description: 'One essay question on a studied drama text. Passage-based or discursive.',
+        links: [
+          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          { label: 'Cambridge Lit Mock Exams', href: '/mock-exams?paper=cambridge-lit', type: 'mock' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'cam0475-p3',
+    name: 'Paper 3',
+    subtitle: 'Coursework',
+    examCode: '0475/03',
+    duration: 'Coursework',
+    totalMarks: 50,
+    colour: 'sage',
+    sections: [
+      {
+        title: 'Coursework Portfolio',
+        description: 'Two assignments on two texts from two different genres. Internally assessed, externally moderated.',
+        links: [
+          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
+        ],
+      },
+    ],
+  },
+]
+
+// ─── International A-Level Edexcel ─────────────────────────────────
+
+const IAL_EDEXCEL_PAPERS: Paper[] = [
+  {
+    id: 'ial-unit1',
+    name: 'Unit 1',
+    subtitle: 'Post-2000 Poetry and Prose',
+    examCode: 'WEN01/01',
+    duration: '2h 15m',
+    totalMarks: 80,
+    colour: 'teal',
+    sections: [
+      {
+        title: 'Section A: Post-2000 Poetry',
+        description: 'One comparative essay question on an unseen poem and a studied collection.',
+        links: [
+          { label: 'Unseen Poetry Practice', href: '/revision/poetry/unseen-poetry', type: 'practice' },
+          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          { label: 'IAL Mock Exams', href: '/mock-exams?paper=ial', type: 'mock' },
+        ],
+      },
+      {
+        title: 'Section B: Post-2000 Prose',
+        description: 'One essay question on a studied prose text — close reading and wider textual knowledge.',
+        links: [
+          { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
+          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ial-unit2',
+    name: 'Unit 2',
+    subtitle: 'Drama',
+    examCode: 'WEN02/01',
+    duration: '1h 30m',
+    totalMarks: 60,
+    colour: 'clay',
+    sections: [
+      {
+        title: 'Drama',
+        description: 'One essay question on a studied drama text. Extract-based or discursive question.',
+        links: [
+          { label: 'Macbeth Study Guide', href: '/revision/texts/macbeth', type: 'text' },
+          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          { label: 'IAL Mock Exams', href: '/mock-exams?paper=ial', type: 'mock' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ial-unit3',
+    name: 'Unit 3',
+    subtitle: 'Coursework / Extended Essay',
+    examCode: 'WEN03/01',
+    duration: 'Coursework',
+    totalMarks: 60,
+    colour: 'sage',
+    sections: [
+      {
+        title: 'Coursework Portfolio',
+        description: 'Two essays: one re-creative piece with commentary and one comparative essay across two texts.',
+        links: [
+          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
+        ],
+      },
+    ],
+  },
+]
+
+// ─── KS3 ───────────────────────────────────────────────────────────
+
+const KS3_PAPERS: Paper[] = [
+  {
+    id: 'ks3-reading',
+    name: 'Reading Skills',
+    subtitle: 'Comprehension, inference and analysis',
+    examCode: 'KS3',
+    duration: 'Ongoing',
+    totalMarks: 0,
+    colour: 'teal',
+    sections: [
+      {
+        title: 'Fiction Reading',
+        description: 'Analyse fiction extracts — character, setting, language and structure.',
+        links: [
+          { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
+          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+        ],
+      },
+      {
+        title: 'Non-fiction Reading',
+        description: 'Understand and compare non-fiction texts — articles, speeches, letters.',
+        links: [
+          { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
+          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ks3-writing',
+    name: 'Writing Skills',
+    subtitle: 'Creative, transactional and analytical writing',
+    examCode: 'KS3',
+    duration: 'Ongoing',
+    totalMarks: 0,
+    colour: 'clay',
+    sections: [
+      {
+        title: 'Creative Writing',
+        description: 'Develop narrative and descriptive writing with vocabulary and structural variety.',
+        links: [
+          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
+          { label: 'SPAG Guide', href: '/revision/language/spag', type: 'technique' },
+        ],
+      },
+      {
+        title: 'Transactional Writing',
+        description: 'Write for purpose and audience — letters, articles, speeches and reviews.',
+        links: [
+          { label: 'Transactional Writing Guide', href: '/revision/language/writing', type: 'technique' },
+          { label: 'Essay Structure', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ks3-speaking',
+    name: 'Speaking & Listening',
+    subtitle: 'Oral communication and presentation skills',
+    examCode: 'KS3',
+    duration: 'Ongoing',
+    totalMarks: 0,
+    colour: 'sage',
+    sections: [
+      {
+        title: 'Speaking & Listening',
+        description: 'Practise presentations, debates and discussion skills for classroom assessment.',
+        links: [
+          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
+        ],
+      },
+    ],
+  },
+]
+
 // ─── Lookup ──────────────────────────────────────────────────────────
 
 const ALL_BOARD_PAPERS: BoardPapers[] = [
@@ -784,8 +1068,12 @@ const ALL_BOARD_PAPERS: BoardPapers[] = [
   { board: 'ocr', papers: OCR_PAPERS },
   { board: 'eduqas', papers: EDUQAS_PAPERS },
   { board: 'edexcel-igcse', papers: EDEXCEL_IGCSE_PAPERS },
+  { board: 'edexcel-igcse-lang', papers: EDEXCEL_IGCSE_LANG_PAPERS },
   { board: 'cambridge-0500', papers: CAMBRIDGE_0500_PAPERS },
   { board: 'cambridge-0990', papers: CAMBRIDGE_0990_PAPERS },
+  { board: 'cambridge-0475', papers: CAMBRIDGE_0475_PAPERS },
+  { board: 'ial-edexcel', papers: IAL_EDEXCEL_PAPERS },
+  { board: 'ks3', papers: KS3_PAPERS },
 ]
 
 export function getPapersForBoard(board: ExamBoard): Paper[] {

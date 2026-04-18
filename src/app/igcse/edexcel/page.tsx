@@ -41,21 +41,25 @@ const papers = [
     marks: 60,
     weight: '60%',
     icon: Feather,
+    href: '/dashboard/papers',
     sections: [
       {
         heading: 'Section A — Unseen Poetry',
         detail:
           'One question on a single unseen poem. Comment on language, structure and meaning.',
+        href: '/igcse/edexcel/unseen-poetry',
       },
       {
         heading: 'Section B — Anthology Poetry',
         detail:
           'One question comparing two poems from the Pearson Edexcel Poetry Anthology.',
+        href: '/igcse/edexcel/poetry',
       },
       {
         heading: 'Section C — Modern Prose',
         detail:
           'One essay question on a studied modern prose text. Closed book.',
+        href: '/igcse/edexcel/prose',
       },
     ],
   },
@@ -67,16 +71,19 @@ const papers = [
     marks: 40,
     weight: '40%',
     icon: Drama,
+    href: '/dashboard/papers',
     sections: [
       {
         heading: 'Section A — Modern Drama',
         detail:
           'One extract-based question on a studied modern drama text.',
+        href: '/igcse/edexcel/drama',
       },
       {
         heading: 'Section B — Literary Heritage',
         detail:
           'One essay question on a studied Shakespeare play. Closed book.',
+        href: '/igcse/edexcel/shakespeare',
       },
     ],
   },
@@ -215,18 +222,33 @@ export default async function EdexcelIgcseHubPage() {
                 </CardHeader>
                 <CardContent className="flex flex-1 flex-col gap-3">
                   {paper.sections.map((section) => (
-                    <div
+                    <Link
                       key={section.heading}
-                      className="rounded-xl border border-border/60 bg-muted/30 p-4"
+                      href={section.href}
+                      className="group/section rounded-xl border border-border/60 bg-muted/30 p-4 transition-all duration-200 hover:border-primary/40 hover:bg-primary/[0.04]"
                     >
-                      <h3 className="text-body-sm font-semibold text-foreground">
+                      <h3 className="text-body-sm font-semibold text-foreground group-hover/section:text-primary transition-colors">
                         {section.heading}
                       </h3>
                       <p className="mt-1 text-body-xs text-muted-foreground leading-relaxed">
                         {section.detail}
                       </p>
-                    </div>
+                      <span className="mt-2 inline-flex items-center gap-1 text-body-xs font-medium text-primary opacity-0 group-hover/section:opacity-100 transition-opacity">
+                        Explore
+                        <ArrowRight className="size-3" />
+                      </span>
+                    </Link>
                   ))}
+
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="mt-2 w-full"
+                    render={<Link href={paper.href} />}
+                  >
+                    Open {paper.name} breakdown
+                    <ArrowRight className="size-3.5" />
+                  </Button>
                 </CardContent>
               </Card>
             )
