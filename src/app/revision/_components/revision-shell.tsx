@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import {
   BookOpen,
   Layers,
@@ -32,7 +32,7 @@ import { Badge } from '@/components/ui/badge'
 
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
-import { isIgcseBoard, isGcseBoard } from '@/lib/board/board-filter'
+import { isIgcseBoard, isGcseBoard, getBoardType } from '@/lib/board/board-filter'
 
 // ─── Nav items ──────────────────────────────────────────────────────────────
 
@@ -235,13 +235,43 @@ function SidebarNav({
 
 // ─── Shell ───────────────────────────────────────────────────────────────────
 
+function getIgcseHubPath(board: ExamBoard): string {
+  switch (board) {
+    case 'edexcel-igcse':
+      return '/igcse/edexcel'
+    case 'cambridge-0500':
+      return '/igcse/cambridge/0500'
+    case 'cambridge-0990':
+      return '/igcse/cambridge/0990'
+    default:
+      return '/igcse'
+  }
+}
+
 export function RevisionShell({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const { board } = useBoard()
+  const { board, isHydrated } = useBoard()
+  const router = useRouter()
   const config = getBoardConfig(board)
   const boardName = config?.shortName ?? null
+  const boardType = getBoardType(board)
+
+  // Redirect non-GCSE students away from the revision hub
+  useEffect(() => {
+    if (!isHydrated || !board) return
+    if (boardType === 'ks3') {
+      router.replace('/courses')
+    } else if (boardType === 'igcse') {
+      router.replace(getIgcseHubPath(board))
+    }
+  }, [isHydrated, board, boardType, router])
 
   const navItems = getNavItemsForBoard(board)
+
+  // Don't render the revision shell for non-GCSE students (they're being redirected)
+  if (isHydrated && boardType && boardType !== 'gcse') {
+    return null
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">

@@ -19,6 +19,7 @@ import type { CourseData } from '@/data/courses'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoard } from '@/hooks/useBoard'
 import type { ExamBoard } from '@/hooks/useBoard'
+import { getBoardType } from '@/lib/board/board-filter'
 import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 
 import {
@@ -48,6 +49,14 @@ import { LearningTip } from '@/components/ui/learning-tip'
 const TIERS = ['All', 'KS3', 'GCSE', 'IGCSE'] as const
 type Tier = (typeof TIERS)[number]
 
+/** Map board type to the matching course tier. */
+function boardTypeToTier(boardType: 'ks3' | 'gcse' | 'igcse' | null): Tier {
+  if (boardType === 'ks3') return 'KS3'
+  if (boardType === 'gcse') return 'GCSE'
+  if (boardType === 'igcse') return 'IGCSE'
+  return 'All'
+}
+
 const CATEGORIES = [
   { id: 'all', label: 'All Courses' },
   { id: 'language', label: 'Language' },
@@ -72,15 +81,6 @@ const COURSES_PER_PAGE = 9
    Helpers
    ================================================================ */
 
-function getDefaultTierForYearGroup(
-  yearGroup: string | null | undefined,
-): Tier {
-  if (!yearGroup) return 'All'
-  const n = yearGroup.trim().toLowerCase()
-  if (['7', '8', '9', 'year 7', 'year 8', 'year 9'].includes(n)) return 'KS3'
-  if (['10', '11', 'year 10', 'year 11'].includes(n)) return 'GCSE'
-  return 'All'
-}
 
 function deriveCategory(course: CourseData): CategoryId {
   const id = course.id.toLowerCase()
@@ -170,13 +170,15 @@ function boardSlugToDisplayNames(board: ExamBoard): string[] {
    ================================================================ */
 
 export default function CourseCataloguePage() {
-  const { user, profile } = useAuthStore()
+  const { user } = useAuthStore()
   const { board: userBoard, isHydrated: boardHydrated } = useBoard()
 
   const [courses, setCourses] = useState<CourseData[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
-  const [activeTier, setActiveTier] = useState<Tier>('All')
+  const boardType = getBoardType(userBoard)
+  const activeTier = boardTypeToTier(boardType)
+
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [boardFilter, setBoardFilter] = useState<string>('all')
@@ -186,7 +188,6 @@ export default function CourseCataloguePage() {
   )
 
   const hasManuallySelectedBoard = useRef(false)
-  const hasManuallySelectedTier = useRef(false)
 
   useEffect(() => {
     loadAllCourses().then((data) => {
@@ -207,16 +208,6 @@ export default function CourseCataloguePage() {
       setBoardFilter(displayNames[0])
     }
   }, [boardHydrated, userBoard])
-
-  useEffect(() => {
-    if (hasManuallySelectedTier.current) return
-    setActiveTier(getDefaultTierForYearGroup(profile?.year_group))
-  }, [profile?.year_group])
-
-  const handleTierChange = useCallback((value: string) => {
-    hasManuallySelectedTier.current = true
-    setActiveTier(value as Tier)
-  }, [])
 
   const availableBoards = useMemo(() => extractBoards(courses), [courses])
 
@@ -288,13 +279,12 @@ export default function CourseCataloguePage() {
   /* ── recommended ───────────────────────────────────────────── */
 
   const recommended = useMemo(() => {
-    if (!profile?.year_group) return filtered.slice(0, 4)
-    const userTier = getDefaultTierForYearGroup(profile.year_group)
+    if (activeTier === 'All') return filtered.slice(0, 4)
     const m = filtered.filter(
-      (c) => userTier === 'All' || c.tier?.toUpperCase() === userTier,
+      (c) => c.tier?.toUpperCase() === activeTier,
     )
     return m.length > 0 ? m.slice(0, 4) : filtered.slice(0, 4)
-  }, [filtered, profile?.year_group])
+  }, [filtered, activeTier])
 
   /* ── grouped by category ───────────────────────────────────── */
 
@@ -460,41 +450,11 @@ export default function CourseCataloguePage() {
             />
           </div>
 
-          <div className="flex flex-wrap gap-2 sm:gap-3">
-            {TIERS.map((tier) => (
-              <button
-                key={tier}
-                onClick={() => handleTierChange(tier)}
-                aria-pressed={activeTier === tier}
-                className={cn(
-                  'inline-flex items-center rounded-full px-3 py-1 text-xs font-medium transition-all duration-200',
-                  activeTier === tier
-                    ? 'bg-primary text-primary-foreground shadow-sm'
-                    : 'bg-card border border-border text-muted-foreground hover:border-primary/40',
-                )}
-              >
-                {tier}
-              </button>
-            ))}
-          </div>
-
-          {availableBoards.length > 0 && (
-            <Select value={boardFilter} onValueChange={(v) => {
-              hasManuallySelectedBoard.current = true
-              setBoardFilter(v)
-            }}>
-              <SelectTrigger className="w-[140px]">
-                <SelectValue placeholder="Exam Board" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Boards</SelectItem>
-                {availableBoards.map((b) => (
-                  <SelectItem key={b} value={b}>
-                    {b}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          {/* Tier and board filters are auto-set from the user's selected board */}
+          {activeTier !== 'All' && (
+            <Badge variant="secondary" className="rounded-full px-3 py-1 text-xs font-medium">
+              {activeTier}
+            </Badge>
           )}
 
           <Select
@@ -551,7 +511,6 @@ export default function CourseCataloguePage() {
               onClick={() => {
                 setSearchQuery('')
                 setActiveCategory('all')
-                handleTierChange('All')
                 hasManuallySelectedBoard.current = true
                 setBoardFilter('all')
               }}

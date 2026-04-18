@@ -3,6 +3,7 @@ import type { ExamBoard } from './board-store'
 export type GradeSystem = '9-1' | 'A*-G'
 
 export const GRADE_SYSTEMS: Record<ExamBoard, GradeSystem> = {
+  'ks3': '9-1',
   'aqa': '9-1',
   'edexcel': '9-1',
   'ocr': '9-1',
@@ -14,6 +15,7 @@ export const GRADE_SYSTEMS: Record<ExamBoard, GradeSystem> = {
 
 // Approximate grade boundaries (% of total marks) — update with real data
 export const GRADE_BOUNDARIES: Record<ExamBoard, Partial<Record<'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'A*'|'A'|'B'|'C'|'D'|'E'|'F'|'G', number>>> = {
+  'ks3': {},
   'aqa': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
   'edexcel': { '4': 40, '5': 50, '6': 58, '7': 68, '8': 78, '9': 85 },
   'ocr': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 87 },

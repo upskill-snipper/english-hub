@@ -119,6 +119,7 @@ const MARK_SCHEMES = [
 function markSchemeMatchesBoard(examBoard: string, board: ExamBoard | null): boolean {
   if (!board) return true;
   const map: Record<ExamBoard, string> = {
+    ks3: "KS3",
     aqa: "AQA",
     edexcel: "Edexcel",
     ocr: "OCR",

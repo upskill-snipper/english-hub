@@ -28,42 +28,30 @@ import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
-import { isGcseBoard, isIgcseBoard } from '@/lib/board/board-filter'
+import { getBoardType } from '@/lib/board/board-filter'
 import type { ExamBoard } from '@/lib/board/board-store'
 
 type NavLink = {
   href: string
   label: string
-  // If omitted, link is generic and shown for every board / when no board set.
-  boardType?: 'gcse' | 'igcse'
 }
 
-const NAV_LINKS: NavLink[] = [
-  { href: '/courses', label: 'Courses' },
-  { href: '/games', label: 'Games' },
-  { href: '/revision', label: 'Revision' },
-  { href: '/assessment/reading', label: 'Assessment' },
-  { href: '/mock-exams', label: 'Mock Exams' },
-  { href: '/igcse', label: 'IGCSE', boardType: 'igcse' },
-  { href: '/for-teachers', label: 'For Teachers' },
-  { href: '/for-schools', label: 'For Schools' },
-  { href: '/pricing', label: 'Pricing' },
-]
+function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | null): NavLink[] {
+  const common: NavLink[] = [
+    { href: '/courses', label: 'Courses' },
+    { href: '/games', label: 'Games' },
+  ]
+  const teacherLinks: NavLink[] = [
+    { href: '/for-teachers', label: 'For Teachers' },
+    { href: '/for-schools', label: 'For Schools' },
+    { href: '/pricing', label: 'Pricing' },
+  ]
 
-function filterNavLinks(links: NavLink[], board: ExamBoard | null): NavLink[] {
-  // No board chosen yet — show the generic nav (hide IGCSE-only link by default).
-  if (!board) {
-    return links.filter((l) => l.boardType !== 'igcse')
-  }
-  if (isIgcseBoard(board)) {
-    // IGCSE: hide GCSE-only links (currently none are marked gcse-only, but keep the guard).
-    return links.filter((l) => l.boardType !== 'gcse')
-  }
-  if (isGcseBoard(board)) {
-    // GCSE: hide IGCSE-only links.
-    return links.filter((l) => l.boardType !== 'igcse')
-  }
-  return links
+  if (type === 'ks3') return [...common, { href: '/resources', label: 'Resources' }, ...teacherLinks]
+  if (type === 'gcse') return [...common, { href: '/revision', label: 'Revision' }, { href: '/mock-exams', label: 'Mock Exams' }, { href: '/assessment/reading', label: 'Assessment' }, ...teacherLinks]
+  if (type === 'igcse') return [{ href: '/igcse', label: 'IGCSE Hub' }, ...common, { href: '/mock-exams', label: 'Mock Exams' }, ...teacherLinks]
+  // No board selected — show generic nav
+  return [...common, { href: '/revision', label: 'Revision' }, ...teacherLinks]
 }
 
 export function Header() {
@@ -78,7 +66,7 @@ export function Header() {
   const isPremium = profile?.subscription_status === 'pro'
 
   const visibleNavLinks = useMemo(
-    () => filterNavLinks(NAV_LINKS, isBoardHydrated ? board : null),
+    () => getNavForBoardType(isBoardHydrated ? getBoardType(board) : null),
     [board, isBoardHydrated]
   )
 

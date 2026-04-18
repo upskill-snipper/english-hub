@@ -556,6 +556,7 @@ function HowMockExamsWork() {
 // Map a user's selected ExamBoard ID to the legacy `examBoard` strings used in
 // the static EXAM_CARDS list ("AQA", "Edexcel", "OCR", "WJEC", "CAIE").
 const BOARD_ID_TO_LEGACY: Record<ExamBoard, string[]> = {
+  'ks3': ['KS3'],
   'aqa': ['AQA'],
   'edexcel': ['Edexcel'],
   'ocr': ['OCR'],

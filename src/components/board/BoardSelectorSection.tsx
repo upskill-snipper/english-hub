@@ -13,6 +13,7 @@ import {
   Sparkles,
   Flag,
   MapPinned,
+  Shapes,
 } from 'lucide-react'
 
 import {
@@ -34,10 +35,17 @@ type Props = {
   compact?: boolean
 }
 
-type Region = 'gcse' | 'igcse'
+type StudyLevel = 'ks3' | 'gcse' | 'igcse'
 
 // Colour palette per board — keeps cards visually distinct
 const BOARD_THEME: Record<ExamBoard, { gradient: string; ring: string; iconBg: string; iconText: string; accent: string }> = {
+  ks3: {
+    gradient: 'from-emerald-500/10 via-green-500/5 to-transparent',
+    ring: 'hover:ring-emerald-400/40 aria-checked:ring-emerald-500/50',
+    iconBg: 'bg-emerald-500/10 group-hover:bg-emerald-500/20',
+    iconText: 'text-emerald-600 dark:text-emerald-400',
+    accent: 'bg-emerald-500',
+  },
   aqa: {
     gradient: 'from-rose-500/10 via-rose-500/5 to-transparent',
     ring: 'hover:ring-rose-400/40 aria-checked:ring-rose-500/50',
@@ -60,11 +68,11 @@ const BOARD_THEME: Record<ExamBoard, { gradient: string; ring: string; iconBg: s
     accent: 'bg-amber-500',
   },
   eduqas: {
-    gradient: 'from-emerald-500/10 via-emerald-500/5 to-transparent',
-    ring: 'hover:ring-emerald-400/40 aria-checked:ring-emerald-500/50',
-    iconBg: 'bg-emerald-500/10 group-hover:bg-emerald-500/20',
-    iconText: 'text-emerald-500 dark:text-emerald-400',
-    accent: 'bg-emerald-500',
+    gradient: 'from-teal-500/10 via-teal-500/5 to-transparent',
+    ring: 'hover:ring-teal-400/40 aria-checked:ring-teal-500/50',
+    iconBg: 'bg-teal-500/10 group-hover:bg-teal-500/20',
+    iconText: 'text-teal-500 dark:text-teal-400',
+    accent: 'bg-teal-500',
   },
   'edexcel-igcse': {
     gradient: 'from-indigo-500/10 via-indigo-500/5 to-transparent',
@@ -90,6 +98,7 @@ const BOARD_THEME: Record<ExamBoard, { gradient: string; ring: string; iconBg: s
 }
 
 const BOARD_TAGLINE: Record<ExamBoard, string> = {
+  ks3: 'Reading, writing, and spoken English skills',
   aqa: 'Power & Conflict, Love & Relationships, AIC, Macbeth',
   edexcel: 'Time & Place, Conflict anthology, AIC, Macbeth',
   ocr: 'Towards a World Unknown, Shakespeare & set texts',
@@ -100,6 +109,7 @@ const BOARD_TAGLINE: Record<ExamBoard, string> = {
 }
 
 const BOARD_ICON: Record<ExamBoard, React.ComponentType<{ className?: string }>> = {
+  ks3: Shapes,
   aqa: BookOpen,
   edexcel: GraduationCap,
   ocr: Sparkles,
@@ -117,7 +127,7 @@ export function BoardSelectorSection({
 }: Props) {
   const router = useRouter()
   const { board: currentBoard, setBoard } = useBoard()
-  const [region, setRegion] = React.useState<Region | null>(null)
+  const [studyLevel, setStudyLevel] = React.useState<StudyLevel | null>(null)
   const [loadingBoard, setLoadingBoard] = React.useState<ExamBoard | null>(null)
 
   const handleSelect = React.useCallback(
@@ -138,35 +148,49 @@ export function BoardSelectorSection({
     [disableRedirect, loadingBoard, onSelected, redirectTo, router, setBoard],
   )
 
+  const handleLevelPick = React.useCallback(
+    (level: StudyLevel) => {
+      if (level === 'ks3') {
+        // KS3 skips board selection — immediately set board and redirect
+        handleSelect('ks3')
+      } else {
+        setStudyLevel(level)
+      }
+    },
+    [handleSelect],
+  )
+
   const gcseBoards = React.useMemo(() => BOARDS.filter((b) => b.type === 'gcse'), [])
   const igcseBoards = React.useMemo(() => BOARDS.filter((b) => b.type === 'igcse'), [])
 
-  // Step 1 — pick region
-  if (region === null) {
-    return <RegionStep onPick={setRegion} compact={compact} />
+  // Step 1 — pick study level (KS3 / GCSE / IGCSE)
+  if (studyLevel === null) {
+    return <LevelStep onPick={handleLevelPick} loadingKs3={loadingBoard === 'ks3'} compact={compact} />
   }
 
-  // Step 2 — pick specific board
+  // Step 2 — pick specific board (GCSE or IGCSE only)
   return (
     <BoardStep
-      region={region}
-      boards={region === 'gcse' ? gcseBoards : igcseBoards}
+      studyLevel={studyLevel}
+      boards={studyLevel === 'gcse' ? gcseBoards : igcseBoards}
       currentBoard={currentBoard}
       loadingBoard={loadingBoard}
       compact={compact}
-      onBack={() => setRegion(null)}
+      onBack={() => setStudyLevel(null)}
       onSelect={handleSelect}
     />
   )
 }
 
-// ── Step 1 ─── Region picker ─────────────────────────────────────────────────
+// ── Step 1 ─── Study level picker ───────────────────────────────────────────
 
-function RegionStep({
+function LevelStep({
   onPick,
+  loadingKs3,
   compact,
 }: {
-  onPick: (region: Region) => void
+  onPick: (level: StudyLevel) => void
+  loadingKs3: boolean
   compact?: boolean
 }) {
   return (
@@ -177,29 +201,39 @@ function RegionStep({
           Welcome to The English Hub
         </span>
         <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-          Let&apos;s personalise your study hub
+          What are you studying?
         </h1>
         <p className="text-base text-muted-foreground sm:text-lg">
-          First things first — are you studying a UK GCSE or an International IGCSE?
-          We&apos;ll tailor every page to your exact course.
+          Tell us your level and we&apos;ll tailor every page to your exact course.
         </p>
       </header>
 
-      <div className={cn('mx-auto grid w-full max-w-3xl gap-5', 'sm:grid-cols-2')}>
-        <RegionCard
+      <div className={cn('mx-auto grid w-full max-w-4xl gap-5', 'sm:grid-cols-3')}>
+        <LevelCard
+          label="KS3"
+          subLabel="Years 7, 8 & 9"
+          description="Building your English foundations"
+          icon={Shapes}
+          gradient="from-emerald-500/20 via-green-500/10 to-lime-500/20"
+          iconGradient="from-emerald-500 to-green-600"
+          onClick={() => onPick('ks3')}
+          loading={loadingKs3}
+          compact={compact}
+        />
+        <LevelCard
           label="GCSE"
-          subLabel="United Kingdom"
-          description="AQA, Edexcel, OCR, or WJEC Eduqas — the UK GCSE 9-1 pathway."
+          subLabel="Years 10 & 11"
+          description="Preparing for your GCSEs (9-1)"
           icon={Flag}
-          gradient="from-rose-500/20 via-orange-500/10 to-amber-500/20"
-          iconGradient="from-rose-500 to-orange-500"
+          gradient="from-teal-500/20 via-cyan-500/10 to-teal-500/20"
+          iconGradient="from-teal-500 to-cyan-600"
           onClick={() => onPick('gcse')}
           compact={compact}
         />
-        <RegionCard
+        <LevelCard
           label="IGCSE"
           subLabel="International"
-          description="Pearson Edexcel IGCSE or Cambridge IGCSE — for schools outside the UK."
+          description="Studying outside the UK"
           icon={MapPinned}
           gradient="from-indigo-500/20 via-violet-500/10 to-fuchsia-500/20"
           iconGradient="from-indigo-500 to-violet-500"
@@ -215,7 +249,7 @@ function RegionStep({
   )
 }
 
-function RegionCard({
+function LevelCard({
   label,
   subLabel,
   description,
@@ -223,6 +257,7 @@ function RegionCard({
   gradient,
   iconGradient,
   onClick,
+  loading,
   compact,
 }: {
   label: string
@@ -232,12 +267,14 @@ function RegionCard({
   gradient: string
   iconGradient: string
   onClick: () => void
+  loading?: boolean
   compact?: boolean
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
+      disabled={loading}
       className={cn(
         'group relative flex flex-col overflow-hidden rounded-3xl border border-border/60 bg-card/60 text-left',
         'backdrop-blur-xl backdrop-saturate-150',
@@ -245,6 +282,7 @@ function RegionCard({
         'transition-all duration-300 ease-out outline-none',
         'hover:border-primary/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10',
         'focus-visible:border-ring focus-visible:ring-4 focus-visible:ring-ring/20',
+        'disabled:pointer-events-none disabled:opacity-70',
         compact ? 'p-6' : 'p-8',
       )}
     >
@@ -266,7 +304,11 @@ function RegionCard({
               iconGradient,
             )}
           >
-            <Icon className="size-7" aria-hidden="true" />
+            {loading ? (
+              <Loader2 className="size-7 animate-spin" aria-hidden="true" />
+            ) : (
+              <Icon className="size-7" aria-hidden="true" />
+            )}
           </div>
           <ArrowRight
             className="size-5 text-muted-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary"
@@ -292,7 +334,7 @@ function RegionCard({
 // ── Step 2 ─── Board picker ──────────────────────────────────────────────────
 
 function BoardStep({
-  region,
+  studyLevel,
   boards,
   currentBoard,
   loadingBoard,
@@ -300,7 +342,7 @@ function BoardStep({
   onBack,
   onSelect,
 }: {
-  region: Region
+  studyLevel: StudyLevel
   boards: readonly BoardConfig[]
   currentBoard: ExamBoard | null
   loadingBoard: ExamBoard | null
@@ -324,11 +366,11 @@ function BoardStep({
             Step 2 of 2
           </span>
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {region === 'gcse' ? 'Which UK GCSE board?' : 'Which International IGCSE board?'}
+            {studyLevel === 'gcse' ? 'Which UK GCSE board?' : 'Which IGCSE board?'}
           </h1>
           <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-            {region === 'gcse'
-              ? 'Pick your board — we&apos;ll show you only the poems, set texts, and papers you actually study.'
+            {studyLevel === 'gcse'
+              ? 'Pick your board — we\u0027ll show you only the poems, set texts, and papers you actually study.'
               : 'Choose your board below — each one has different set texts and assessment.'}
           </p>
         </div>
@@ -342,7 +384,7 @@ function BoardStep({
           boards.length === 2 && 'sm:grid-cols-2',
         )}
         role="radiogroup"
-        aria-label={`Choose your ${region === 'gcse' ? 'GCSE' : 'IGCSE'} exam board`}
+        aria-label={`Choose your ${studyLevel === 'gcse' ? 'GCSE' : 'IGCSE'} exam board`}
       >
         {boards.map((board) => (
           <BoardCard

@@ -2,6 +2,7 @@ import type { ExamBoard } from './board-store'
 
 // Set texts by board — each board prescribes different novels/plays/poetry
 export const SET_TEXTS_BY_BOARD: Record<ExamBoard, { shakespeare: string[]; nineteenthCentury: string[]; modern: string[]; poetry: string[] }> = {
+  'ks3': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
   'aqa': {
     shakespeare: ['macbeth', 'romeo-and-juliet', 'the-merchant-of-venice', 'much-ado-about-nothing', 'julius-caesar', 'the-tempest'],
     nineteenthCentury: ['a-christmas-carol', 'jekyll-and-hyde', 'great-expectations', 'jane-eyre', 'frankenstein', 'pride-and-prejudice', 'the-sign-of-four', 'silas-marner'],

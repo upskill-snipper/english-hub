@@ -11,7 +11,7 @@ import {
   Clock,
 } from 'lucide-react'
 
-type CourseBoard = 'all' | 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'Edexcel IGCSE' | 'Cambridge First Language' | 'Cambridge First Language (9-1)'
+type CourseBoard = 'all' | 'KS3' | 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'Edexcel IGCSE' | 'Cambridge First Language' | 'Cambridge First Language (9-1)'
 
 type Course = {
   title: string
@@ -147,6 +147,7 @@ const courses: readonly Course[] = [
 ]
 
 const BOARD_TO_LABEL: Record<ExamBoard, CourseBoard> = {
+  ks3: 'KS3',
   aqa: 'AQA',
   edexcel: 'Edexcel',
   ocr: 'OCR',

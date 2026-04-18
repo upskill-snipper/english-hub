@@ -23,6 +23,7 @@ export interface QuizQuestion {
 
 // Topics covered by each board
 export const TOPICS_FOR_BOARD: Record<ExamBoard, Topic[]> = {
+  ks3:             ['language-techniques', 'exam-technique'],
   aqa:             ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
   edexcel:         ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
   ocr:             ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],

@@ -3,14 +3,14 @@ import type { Metadata } from 'next'
 import { BoardSelectorSection } from '@/components/board/BoardSelectorSection'
 
 export const metadata: Metadata = {
-  title: 'Choose your exam board — The English Hub',
+  title: 'Choose your level — The English Hub',
   description:
-    'Pick your GCSE or IGCSE English exam board so we can show you the right texts, poems, and past paper walkthroughs for your course.',
+    'Pick KS3, GCSE, or IGCSE and your English exam board so we can show you the right texts, poems, and past paper walkthroughs for your course.',
   alternates: { canonical: 'https://theenglishhub.app/board-select' },
   openGraph: {
-    title: 'Choose your exam board — The English Hub',
+    title: 'Choose your level — The English Hub',
     description:
-      'Pick your GCSE or IGCSE English exam board to get a personalised study hub.',
+      'Pick KS3, GCSE, or IGCSE to get a personalised English study hub.',
   },
   robots: { index: false, follow: true },
 }

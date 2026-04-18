@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
+import { getBoardType } from '@/lib/board/board-filter'
 import {
   BookOpen,
   Feather,
@@ -39,6 +40,44 @@ const MAX_RECENT = 4
 
 function getQuickLinks(board: ExamBoard): QuickLink[] {
   switch (board) {
+    case 'ks3':
+      return [
+        {
+          title: 'Year 7 Courses',
+          description: 'Foundation English skills for Year 7 students',
+          href: '/courses?year=7',
+          icon: BookOpen,
+          color: 'text-emerald-400 bg-emerald-500/10',
+        },
+        {
+          title: 'Year 8 Courses',
+          description: 'Building on foundations with Year 8 English',
+          href: '/courses?year=8',
+          icon: BookOpen,
+          color: 'text-blue-400 bg-blue-500/10',
+        },
+        {
+          title: 'Year 9 Courses',
+          description: 'Preparing for GCSE with Year 9 English',
+          href: '/courses?year=9',
+          icon: BookOpen,
+          color: 'text-violet-400 bg-violet-500/10',
+        },
+        {
+          title: 'Games',
+          description: 'Fun English language and literacy games',
+          href: '/games',
+          icon: Sparkles,
+          color: 'text-amber-400 bg-amber-500/10',
+        },
+        {
+          title: 'Resources',
+          description: 'Worksheets, guides and study materials for KS3',
+          href: '/resources',
+          icon: FileText,
+          color: 'text-primary bg-primary/10',
+        },
+      ]
     case 'aqa':
       return [
         {
@@ -404,14 +443,22 @@ export default function BoardDashboardHero({ board }: { board: ExamBoard }) {
             <BookOpen className="w-4 h-4" />
             Browse {config.shortName} courses
           </Button>
-          <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/mock-exams" />}>
-            <FileText className="w-4 h-4" />
-            Mock exams
-          </Button>
+          {getBoardType(board) !== 'ks3' && (
+            <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/mock-exams" />}>
+              <FileText className="w-4 h-4" />
+              Mock exams
+            </Button>
+          )}
           <Button variant="outline" size="lg" className="text-base px-8 h-12 gap-2" render={<Link href="/games" />}>
             <Sparkles className="w-4 h-4" />
-            GCSE-grade games
+            {getBoardType(board) === 'ks3' ? 'English games' : 'Exam-prep games'}
           </Button>
+          {getBoardType(board) === 'ks3' && (
+            <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/resources" />}>
+              <FileText className="w-4 h-4" />
+              Resources
+            </Button>
+          )}
         </div>
       </div>
     </section>

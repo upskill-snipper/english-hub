@@ -18,6 +18,7 @@ type BoardSelectorCardsProps = {
 }
 
 const BOARD_ICON: Record<ExamBoard, React.ComponentType<{ className?: string }>> = {
+  ks3: BookOpen,
   aqa: BookOpen,
   edexcel: GraduationCap,
   ocr: Sparkles,
@@ -28,6 +29,7 @@ const BOARD_ICON: Record<ExamBoard, React.ComponentType<{ className?: string }>>
 }
 
 const BOARD_TAGLINE: Record<ExamBoard, string> = {
+  ks3: 'Years 7-9 foundation English skills',
   aqa: 'Power & Conflict, AIC, and Macbeth',
   edexcel: 'Time & Place, AIC, and Macbeth',
   ocr: 'Conflict cluster and Romeo & Juliet',
@@ -38,6 +40,7 @@ const BOARD_TAGLINE: Record<ExamBoard, string> = {
 }
 
 const BOARD_BENEFITS: Record<ExamBoard, string[]> = {
+  ks3: ['Reading comprehension', 'Creative writing', 'Grammar & vocabulary'],
   aqa: ['Poetry anthology', 'Set text guides', 'Past paper walkthroughs'],
   edexcel: ['Anthology analysis', 'Set text guides', 'Exam-style tasks'],
   ocr: ['Conflict poetry', 'Shakespeare support', 'Past paper practice'],

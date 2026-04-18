@@ -18,9 +18,10 @@ export const PRISMA_TO_APP: Record<PrismaExamBoard, ExamBoard> = {
 }
 
 /**
- * Reverse map — all app-level boards now have a Prisma counterpart.
+ * Reverse map — app-level boards to Prisma counterparts.
+ * KS3 has no Prisma enum value so is excluded (Partial).
  */
-export const APP_TO_PRISMA: Record<ExamBoard, PrismaExamBoard> = {
+export const APP_TO_PRISMA: Partial<Record<ExamBoard, PrismaExamBoard>> = {
   'aqa': 'AQA',
   'edexcel': 'EDEXCEL',
   'ocr': 'OCR',
