@@ -240,7 +240,7 @@ function highlightClass(highlight?: TableRow['highlight']): string {
     case 'good':
       return 'text-green-600 dark:text-green-400 report-highlight-good'
     case 'warning':
-      return 'text-amber-600 dark:text-amber-400 report-highlight-warning'
+      return 'text-amber-600 dark:text-clay-600 report-highlight-warning'
     case 'critical':
       return 'text-red-600 dark:text-red-400 report-highlight-critical'
     default:
@@ -632,7 +632,7 @@ export function ReportGenerator({
 
             {/* Validation message */}
             {!canGenerate && (
-              <div className="flex items-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-sm text-amber-600 dark:text-amber-400">
+              <div className="flex items-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-sm text-amber-600 dark:text-clay-600">
                 <Clock className="h-4 w-4 shrink-0" />
                 <span>
                   {selectedType.requiresClass && !selectedClassId && 'Please select a class. '}

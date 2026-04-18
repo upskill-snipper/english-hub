@@ -718,10 +718,10 @@ export default function HomeworkGeneratorDemo() {
         {/* Demo Banner */}
         <div className="mb-10 rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-4">
           <div className="flex items-start gap-3">
-            <span className="mt-0.5 text-amber-400 text-lg">*</span>
+            <span className="mt-0.5 text-clay-600 text-lg">*</span>
             <div>
-              <p className="text-amber-200 font-medium text-sm">Demo Mode</p>
-              <p className="text-amber-200/60 text-sm mt-1">
+              <p className="text-amber-700 font-medium text-sm">Demo Mode</p>
+              <p className="text-amber-700/60 text-sm mt-1">
                 This is a preview of the homework generator. Generated
                 assignments use pre-built templates to demonstrate format and
                 quality. With a full account, every homework is uniquely
@@ -911,7 +911,7 @@ export default function HomeworkGeneratorDemo() {
                   <ul className="space-y-2 text-sm text-ink-600">
                     {generatedHomework.markScheme.map((m, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-amber-400/60 mt-0.5 shrink-0">
+                        <span className="text-clay-600/60 mt-0.5 shrink-0">
                           *
                         </span>
                         {m}

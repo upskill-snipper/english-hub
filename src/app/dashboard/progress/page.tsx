@@ -283,7 +283,7 @@ export default function ProgressPage() {
             {/* Areas to Improve */}
             <div className="bg-card rounded-xl border border-border p-6">
               <div className="flex items-center gap-1.5 mb-3">
-                <h2 className="text-lg font-semibold text-amber-700 dark:text-amber-300">
+                <h2 className="text-lg font-semibold text-amber-700">
                   Areas to Improve
                 </h2>
                 <LearningTip categories={['study', 'exam']} side="left" />

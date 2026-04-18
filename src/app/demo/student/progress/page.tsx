@@ -168,7 +168,7 @@ function moduleBarColor(color: "amber" | "green" | "complete" | "red") {
 
 function moduleBadgeColor(color: "amber" | "green" | "complete" | "red") {
   if (color === "green") return "bg-green-500/20 text-green-400 border-green-500/30"
-  if (color === "amber") return "bg-amber-500/20 text-amber-400 border-amber-500/30"
+  if (color === "amber") return "bg-amber-500/20 text-clay-600 border-amber-500/30"
   if (color === "red") return "bg-red-500/20 text-red-400 border-red-500/30"
   return "bg-teal-800/10 text-teal-700 border-teal-800/30"
 }
@@ -193,7 +193,7 @@ function masteryBadge(status: "mastered" | "good" | "developing" | "weak") {
   if (status === "good")
     return "bg-green-500/20 text-green-400 border-green-500/30"
   if (status === "developing")
-    return "bg-amber-500/20 text-amber-400 border-amber-500/30"
+    return "bg-amber-500/20 text-clay-600 border-amber-500/30"
   return "bg-red-500/20 text-red-400 border-red-500/30"
 }
 
@@ -294,8 +294,8 @@ export default function StudentProgressPage() {
                 </div>
                 {/* Streak badge overlay */}
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm px-3 py-1.5 shadow-lg shadow-amber-500/5">
-                  <Flame className="h-4 w-4 text-amber-400" />
-                  <span className="text-sm font-semibold text-amber-400">{STUDENT.streak} day streak</span>
+                  <Flame className="h-4 w-4 text-clay-600" />
+                  <span className="text-sm font-semibold text-clay-600">{STUDENT.streak} day streak</span>
                 </div>
               </div>
 
@@ -308,8 +308,8 @@ export default function StudentProgressPage() {
                   </div>
                   <ArrowUpRight className="h-5 w-5 text-ink-500" />
                   <div className="rounded-xl bg-amber-500/10 border border-amber-500/20 px-4 py-3 text-center">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-400/60 mb-0.5">Predicted</p>
-                    <p className="text-3xl font-bold text-amber-400">Grade {STUDENT.predictedGrade}</p>
+                    <p className="text-[10px] uppercase tracking-wider text-clay-600/60 mb-0.5">Predicted</p>
+                    <p className="text-3xl font-bold text-clay-600">Grade {STUDENT.predictedGrade}</p>
                   </div>
                   <ArrowUpRight className="h-5 w-5 text-ink-500" />
                   <div className="rounded-xl bg-teal-800/10 border border-teal-800/20 px-4 py-3 text-center">
@@ -619,7 +619,7 @@ export default function StudentProgressPage() {
               const gradeColor = gradeNum >= 7
                 ? "text-teal-700 bg-teal-800/10 border-teal-800/30"
                 : gradeNum >= 5
-                  ? "text-amber-400 bg-amber-500/20 border-amber-500/30"
+                  ? "text-clay-600 bg-amber-500/20 border-amber-500/30"
                   : "text-red-400 bg-red-500/20 border-red-500/30"
               return (
                 <div key={i} className="px-5 py-4 transition-colors hover:bg-white">

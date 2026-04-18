@@ -418,9 +418,9 @@ export const RadarChart = memo(function RadarChart({
                           v < 40
                             ? 'text-red-400'
                             : v < 60
-                              ? 'text-amber-400'
+                              ? 'text-clay-600'
                               : v < 75
-                                ? 'text-yellow-400'
+                                ? 'text-clay-600'
                                 : 'text-green-400',
                         )}
                       >

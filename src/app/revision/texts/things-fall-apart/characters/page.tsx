@@ -565,7 +565,7 @@ export default function CharactersPage() {
               {/* Exam Tip */}
               <div className="rounded-lg bg-primary/[0.03] border border-primary/10 p-4">
                 <h3 className="mb-2 text-sm font-semibold text-foreground flex items-center gap-2">
-                  <Lightbulb className="size-4 text-amber-400" />
+                  <Lightbulb className="size-4 text-clay-600" />
                   Exam Tip
                 </h3>
                 <p>{ch.examTip}</p>

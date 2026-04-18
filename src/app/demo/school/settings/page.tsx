@@ -162,7 +162,7 @@ export default function DemoSettingsPage() {
       <section className="rounded-xl border border-border bg-card p-6">
         <div className="flex items-center gap-3 mb-6">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-500/10">
-            <Crown className="h-4.5 w-4.5 text-amber-400" />
+            <Crown className="h-4.5 w-4.5 text-clay-600" />
           </div>
           <div>
             <h2 className="text-base font-semibold">Subscription</h2>
@@ -174,8 +174,8 @@ export default function DemoSettingsPage() {
           <div className="flex items-center justify-between">
             <div>
               <div className="flex items-center gap-2.5">
-                <h3 className="text-lg font-bold text-amber-400">FOUNDER</h3>
-                <Badge className="bg-amber-500/15 text-amber-400 border-amber-500/25 text-[10px] uppercase tracking-wider">
+                <h3 className="text-lg font-bold text-clay-600">FOUNDER</h3>
+                <Badge className="bg-amber-500/15 text-clay-600 border-amber-500/25 text-[10px] uppercase tracking-wider">
                   Lifetime Access
                 </Badge>
               </div>
@@ -183,7 +183,7 @@ export default function DemoSettingsPage() {
                 Unlimited students, unlimited teachers, all features included.
               </p>
             </div>
-            <Sparkles className="h-8 w-8 text-amber-400/40" />
+            <Sparkles className="h-8 w-8 text-clay-600/40" />
           </div>
 
           <div className="mt-4 grid grid-cols-3 gap-4">

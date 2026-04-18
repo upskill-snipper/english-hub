@@ -94,7 +94,7 @@ export default function OCRComparisonGuidePage() {
 
         <div className="mt-5 grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-border/40 bg-background/50 p-4 text-center">
-            <Clock className="mx-auto mb-2 size-5 text-amber-400" />
+            <Clock className="mx-auto mb-2 size-5 text-clay-600" />
             <p className="text-sm font-semibold text-foreground">Time</p>
             <p className="mt-1 text-caption text-muted-foreground">
               Approximately 45 minutes
@@ -168,7 +168,7 @@ export default function OCRComparisonGuidePage() {
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <div className="flex items-start gap-3">
-              <Badge className="mt-0.5 shrink-0 bg-amber-500/15 text-amber-300 border-amber-500/20">
+              <Badge className="mt-0.5 shrink-0 bg-amber-500/15 text-amber-700 border-amber-500/20">
                 AO3
               </Badge>
               <div>
@@ -410,7 +410,7 @@ export default function OCRComparisonGuidePage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-5 flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <Lightbulb className="size-5 text-amber-400" />
+            <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
             Choosing Your Comparison Poem

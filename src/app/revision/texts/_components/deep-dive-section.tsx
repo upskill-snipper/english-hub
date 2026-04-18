@@ -20,12 +20,12 @@ const iconMap = {
 
 const iconColorMap = {
   acts: 'text-teal-400',
-  essays: 'text-amber-400',
+  essays: 'text-clay-600',
   quotes: 'text-violet-400',
   characters: 'text-emerald-400',
   themes: 'text-rose-400',
   read: 'text-blue-400',
-  context: 'text-orange-400',
+  context: 'text-clay-600',
 } as const
 
 const bgColorMap = {

@@ -87,7 +87,7 @@ function formatTimestamp(iso: string): string {
 
 const PRIORITY_CONFIG = {
   high: { label: 'High', color: 'text-red-400', dot: 'bg-red-500' },
-  medium: { label: 'Medium', color: 'text-amber-400', dot: 'bg-amber-500' },
+  medium: { label: 'Medium', color: 'text-clay-600', dot: 'bg-amber-500' },
   low: { label: 'Low', color: 'text-green-400', dot: 'bg-green-500' },
 }
 

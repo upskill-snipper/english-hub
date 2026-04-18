@@ -52,7 +52,7 @@ function statusBadgeClass(status: Assignment['status']): string {
     case 'active':
       return 'border-green-500/30 bg-green-500/10 text-green-400'
     case 'draft':
-      return 'border-amber-500/30 bg-amber-500/10 text-amber-400'
+      return 'border-amber-500/30 bg-amber-500/10 text-clay-600'
     case 'closed':
       return 'border-zinc-500/30 bg-zinc-500/10 text-zinc-400'
   }
@@ -71,7 +71,7 @@ function submissionStatusBadge(status: AssignmentSubmission['status']): string {
 
 function scoreColor(score: number): string {
   if (score >= 70) return 'text-green-400'
-  if (score >= 50) return 'text-amber-400'
+  if (score >= 50) return 'text-clay-600'
   return 'text-red-400'
 }
 
@@ -351,7 +351,7 @@ export default function AssignmentDetailPage() {
           <CardContent className="py-4">
             <div className="flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-500/10">
-                <Calendar className="h-4 w-4 text-amber-400" />
+                <Calendar className="h-4 w-4 text-clay-600" />
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">

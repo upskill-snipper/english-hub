@@ -46,7 +46,7 @@ const TYPE_CONFIG: Record<
 
 const PRIORITY_LABELS: Record<Recommendation['priority'], { label: string; colour: string }> = {
   high: { label: 'High priority', colour: 'text-red-400' },
-  medium: { label: 'Suggested', colour: 'text-amber-400' },
+  medium: { label: 'Suggested', colour: 'text-clay-600' },
   low: { label: 'Optional', colour: 'text-muted-foreground' },
 }
 

@@ -297,7 +297,7 @@ export default function ComparisonGuidePage() {
 
           <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.04] p-5">
             <div className="mb-2 flex items-center gap-2">
-              <AlertTriangle className="size-4 text-amber-400" />
+              <AlertTriangle className="size-4 text-clay-600" />
               <h3 className="text-sm font-semibold text-foreground">
                 Block then block
               </h3>
@@ -456,7 +456,7 @@ export default function ComparisonGuidePage() {
       {/* ── AQA mark scheme decoded ───────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Target className="size-5 text-amber-400" />
+          <Target className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">
             AQA Mark Scheme Decoded
           </h2>
@@ -507,7 +507,7 @@ export default function ComparisonGuidePage() {
       {/* ── Common mistakes ───────────────────────────────────── */}
       <section className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.04] p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
-          <AlertTriangle className="size-5 text-amber-400" />
+          <AlertTriangle className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
             Common Mistakes That Cap Your Grade
           </h2>
@@ -522,7 +522,7 @@ export default function ComparisonGuidePage() {
             'Listing techniques without analysis. Saying "Shelley uses a rhetorical question" earns no marks. Saying what the rhetorical question does to the reader is what earns marks.',
           ].map((m) => (
             <li key={m} className="flex gap-3">
-              <span className="mt-1 text-amber-400">-</span>
+              <span className="mt-1 text-clay-600">-</span>
               <p className="text-body-sm text-muted-foreground leading-relaxed">
                 {m}
               </p>
@@ -534,7 +534,7 @@ export default function ComparisonGuidePage() {
       {/* ── 5-minute planning checklist ────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
-          <Lightbulb className="size-5 text-amber-400" />
+          <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
             5-Minute Planning Checklist
           </h2>

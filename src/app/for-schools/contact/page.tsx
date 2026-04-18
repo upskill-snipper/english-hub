@@ -149,7 +149,7 @@ function FoundingSchoolsPanel() {
       <Card className="border-yellow-500/30 bg-yellow-500/5">
         <CardContent className="pt-6 space-y-4">
           <div className="flex items-center gap-2">
-            <Star className="h-5 w-5 text-yellow-400" />
+            <Star className="h-5 w-5 text-clay-600" />
             <h3 className="text-lg font-semibold text-foreground">
               Why join the Founding Schools Programme?
             </h3>
@@ -157,7 +157,7 @@ function FoundingSchoolsPanel() {
 
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <Gift className="h-4 w-4 mt-0.5 shrink-0 text-yellow-400" />
+              <Gift className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">
                   Free access until August 2026
@@ -166,7 +166,7 @@ function FoundingSchoolsPanel() {
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Users className="h-4 w-4 mt-0.5 shrink-0 text-yellow-400" />
+              <Users className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">
                   Unlimited teachers and students
@@ -175,7 +175,7 @@ function FoundingSchoolsPanel() {
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Shield className="h-4 w-4 mt-0.5 shrink-0 text-yellow-400" />
+              <Shield className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">
                   Locked-in founding pricing
@@ -184,7 +184,7 @@ function FoundingSchoolsPanel() {
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Phone className="h-4 w-4 mt-0.5 shrink-0 text-yellow-400" />
+              <Phone className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">
                   Direct line to the product team
@@ -193,7 +193,7 @@ function FoundingSchoolsPanel() {
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Clock className="h-4 w-4 mt-0.5 shrink-0 text-yellow-400" />
+              <Clock className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">
                   Live within 48 hours
@@ -204,7 +204,7 @@ function FoundingSchoolsPanel() {
           </ul>
 
           <div className="rounded-md border border-yellow-500/30 bg-yellow-500/10 px-4 py-3">
-            <p className="text-sm font-semibold text-yellow-300">
+            <p className="text-sm font-semibold text-amber-700">
               Only 10 schools. Programme closes when full.
             </p>
           </div>

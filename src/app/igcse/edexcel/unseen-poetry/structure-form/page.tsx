@@ -140,7 +140,7 @@ export default function StructureFormPage() {
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <Layers className="size-5 text-amber-400" />
+            <Layers className="size-5 text-clay-600" />
           </div>
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">

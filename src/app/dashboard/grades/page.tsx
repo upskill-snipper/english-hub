@@ -594,7 +594,7 @@ export default function GradeDashboardPage() {
                 {/* Weaknesses */}
                 <div>
                   <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold">
-                    <Target className="h-4 w-4 text-amber-400" />
+                    <Target className="h-4 w-4 text-clay-600" />
                     Areas for Improvement
                   </h3>
                   {weaknesses.length === 0 ? (
@@ -609,7 +609,7 @@ export default function GradeDashboardPage() {
                           <span className="text-sm font-medium truncate mr-2">
                             {w.courseName}
                           </span>
-                          <span className="shrink-0 rounded-md bg-amber-500/20 px-2 py-0.5 text-xs font-semibold text-amber-400">
+                          <span className="shrink-0 rounded-md bg-amber-500/20 px-2 py-0.5 text-xs font-semibold text-clay-600">
                             {scoreLabel(w.average)} ({w.average}%)
                           </span>
                         </div>
@@ -711,7 +711,7 @@ export default function GradeDashboardPage() {
             )}
 
             {averageScore < 50 && (
-              <p className="mt-4 rounded-lg bg-amber-500/10 border border-amber-500/20 px-4 py-3 text-sm text-amber-300">
+              <p className="mt-4 rounded-lg bg-amber-500/10 border border-amber-500/20 px-4 py-3 text-sm text-amber-700">
                 We recommend focusing on foundation courses to build a strong base before moving to GCSE-level content.
               </p>
             )}

@@ -31,7 +31,7 @@ export function Grade7VocabBank() {
     <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
       <div className="flex items-center gap-3 mb-2">
         <div className="flex size-9 items-center justify-center rounded-lg bg-amber-500/10">
-          <MessageSquare className="size-4.5 text-amber-400" />
+          <MessageSquare className="size-4.5 text-clay-600" />
         </div>
         <h2 className="text-heading-md font-heading text-foreground">Vocabulary Bank</h2>
       </div>
@@ -117,7 +117,7 @@ export function Grade7ComparisonExample({
       {show && (
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-orange-500/20 bg-orange-500/[0.03] p-5">
-            <Badge className="mb-3 bg-orange-500/20 text-orange-400 border-orange-500/30">{lowerLabel}</Badge>
+            <Badge className="mb-3 bg-orange-500/20 text-clay-600 border-orange-500/30">{lowerLabel}</Badge>
             <p className="text-xs text-muted-foreground leading-relaxed italic">{lowerEssay}</p>
             <div className="mt-3 space-y-1.5">
               {[
@@ -125,7 +125,7 @@ export function Grade7ComparisonExample({
                 'Context is bolted on at the end, not integrated',
                 'Analysis stays at surface level',
               ].map((reason) => (
-                <p key={reason} className="text-[10px] text-orange-400 flex items-start gap-1.5">
+                <p key={reason} className="text-[10px] text-clay-600 flex items-start gap-1.5">
                   <XCircle className="size-3 shrink-0 mt-0.5" />
                   {reason}
                 </p>

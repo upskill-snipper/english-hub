@@ -328,7 +328,7 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
 
 const THEMES = [
   { label: 'Reality of conflict', color: 'bg-red-500/15 text-red-400' },
-  { label: 'Guilt and responsibility', color: 'bg-amber-500/15 text-amber-400' },
+  { label: 'Guilt and responsibility', color: 'bg-amber-500/15 text-clay-600' },
   { label: 'Media and indifference', color: 'bg-blue-500/15 text-blue-400' },
   { label: 'Suffering and oppression', color: 'bg-rose-500/15 text-rose-400' },
   { label: 'Memory and reflection', color: 'bg-purple-500/15 text-purple-400' },

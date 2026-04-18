@@ -102,7 +102,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
         variant={schoolConsent?.status === 'denied' ? 'destructive' : 'default'}
         className="border-amber-500/30 bg-amber-500/[0.03]"
       >
-        <ShieldCheck className="h-5 w-5 text-amber-400" />
+        <ShieldCheck className="h-5 w-5 text-clay-600" />
         <AlertTitle className="text-foreground font-semibold">
           Parental Consent Required
         </AlertTitle>
@@ -115,7 +115,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
                 Please ask your parent/guardian to check their email and complete the consent form.
               </p>
               <div className="flex items-center gap-2">
-                <Badge variant="outline" className="border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs">
+                <Badge variant="outline" className="border-amber-500/30 bg-amber-500/10 text-clay-600 text-xs">
                   <Loader2 className="h-3 w-3 animate-spin mr-1" />
                   Awaiting parent response
                 </Badge>

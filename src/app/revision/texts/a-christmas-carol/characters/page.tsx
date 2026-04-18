@@ -670,7 +670,7 @@ export default function CharactersPage() {
               {/* Exam Tips */}
               <div>
                 <h3 className="mb-2 text-sm font-semibold text-foreground flex items-center gap-2">
-                  <Lightbulb className="size-4 text-amber-400" />
+                  <Lightbulb className="size-4 text-clay-600" />
                   Exam Tips
                 </h3>
                 <ul className="list-disc space-y-2 pl-4">

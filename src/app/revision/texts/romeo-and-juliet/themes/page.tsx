@@ -266,7 +266,7 @@ export default function RomeoAndJulietThemesPage() {
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
-                <Lightbulb className="mr-1 size-3 text-amber-400" />
+                <Lightbulb className="mr-1 size-3 text-clay-600" />
                 Theme Analysis
               </Badge>
               <Badge variant="outline" className="text-muted-foreground">
@@ -292,7 +292,7 @@ export default function RomeoAndJulietThemesPage() {
           {THEMES.map((t) => (
             <section key={t.title}>
               <div className="mb-5 flex items-center gap-3">
-                <Lightbulb className="size-5 text-amber-400" />
+                <Lightbulb className="size-5 text-clay-600" />
                 <div>
                   <h2 className="text-heading-lg font-heading text-foreground">{t.title}</h2>
                   <p className="text-body-sm text-muted-foreground">{t.overview}</p>
@@ -348,7 +348,7 @@ export default function RomeoAndJulietThemesPage() {
                 <Card className="bg-primary/5">
                   <CardContent className="p-5">
                     <div className="flex items-center gap-2 mb-1">
-                      <Lightbulb className="size-4 text-amber-400" />
+                      <Lightbulb className="size-4 text-clay-600" />
                       <p className="text-sm font-semibold text-foreground">Essay tip</p>
                     </div>
                     <p className="text-body-sm text-muted-foreground">{t.essayTip}</p>

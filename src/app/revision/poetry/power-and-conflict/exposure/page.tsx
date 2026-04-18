@@ -15,7 +15,7 @@ import StudyTools from '@/components/study/StudyTools'
 const THEMES = [
   { label: 'Power of Nature', icon: Snowflake, color: 'bg-sky-500/10 text-sky-400' },
   { label: 'Reality of Conflict', icon: Swords, color: 'bg-red-500/10 text-red-400' },
-  { label: 'Suffering', icon: Skull, color: 'bg-amber-500/10 text-amber-400' },
+  { label: 'Suffering', icon: Skull, color: 'bg-amber-500/10 text-clay-600' },
   { label: 'Futility / Loss', icon: HelpCircle, color: 'bg-purple-500/10 text-purple-400' },
   { label: 'Passage of Time', icon: Clock, color: 'bg-emerald-500/10 text-emerald-400' },
 ]

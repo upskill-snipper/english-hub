@@ -342,9 +342,9 @@ export default function StudentDemoPage() {
                   </div>
                   {/* Predicted grade */}
                   <div className="flex items-center gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2">
-                    <Award className="h-4 w-4 text-amber-400" />
+                    <Award className="h-4 w-4 text-clay-600" />
                     <span className="text-sm text-ink-600">
-                      Predicted: <span className="font-semibold text-amber-400">Grade {STUDENT.predictedGrade}</span>
+                      Predicted: <span className="font-semibold text-clay-600">Grade {STUDENT.predictedGrade}</span>
                     </span>
                   </div>
                   {/* Target grade */}
@@ -356,8 +356,8 @@ export default function StudentDemoPage() {
                   </div>
                   {/* Streak badge */}
                   <div className="flex items-center gap-2 rounded-lg border border-orange-500/20 bg-gradient-to-r from-orange-500/10 to-red-500/10 px-3 py-2">
-                    <Flame className="h-4 w-4 text-orange-400" />
-                    <span className="text-sm font-semibold text-orange-400">{STUDENT.streak} day streak</span>
+                    <Flame className="h-4 w-4 text-clay-600" />
+                    <span className="text-sm font-semibold text-clay-600">{STUDENT.streak} day streak</span>
                   </div>
                 </div>
               </div>
@@ -407,7 +407,7 @@ export default function StudentDemoPage() {
             <div className="rounded-xl border border-ink-200 bg-gradient-to-br from-orange-500/[0.08] to-red-500/[0.04] p-5">
               <div className="flex items-center justify-between mb-3">
                 <p className="text-xs font-medium text-ink-500 uppercase tracking-wider">Streak</p>
-                <Flame className="h-4 w-4 text-orange-400/50" />
+                <Flame className="h-4 w-4 text-clay-600/50" />
               </div>
               <p className="text-3xl font-bold text-ink-900 tabular-nums">
                 {STUDENT.streak} <span className="text-lg text-ink-500">days</span>
@@ -478,7 +478,7 @@ export default function StudentDemoPage() {
             {/* Areas to Improve */}
             <div className="rounded-2xl border border-amber-500/10 bg-gradient-to-b from-amber-500/[0.06] to-transparent p-6">
               <h2 className="text-lg font-medium text-ink-900 mb-4 flex items-center gap-2">
-                <Target className="h-5 w-5 text-amber-400" />
+                <Target className="h-5 w-5 text-clay-600" />
                 Areas to Improve
               </h2>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -488,7 +488,7 @@ export default function StudentDemoPage() {
                     className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium ${
                       a.score < 50
                         ? "bg-red-500/10 border-red-500/20 text-red-400"
-                        : "bg-amber-500/10 border-amber-500/20 text-amber-400"
+                        : "bg-amber-500/10 border-amber-500/20 text-clay-600"
                     }`}
                   >
                     <AlertTriangle className="h-3 w-3" />
@@ -508,12 +508,12 @@ export default function StudentDemoPage() {
                           style={{ width: `${a.score}%` }}
                         />
                       </div>
-                      <span className={`tabular-nums text-xs w-12 text-right ${a.score < 50 ? "text-red-400/70" : "text-amber-400/70"}`}>
+                      <span className={`tabular-nums text-xs w-12 text-right ${a.score < 50 ? "text-red-400/70" : "text-clay-600/70"}`}>
                         G{percentageToGCSEGrade(a.score)}
                       </span>
                     </div>
                     <div className="flex items-start gap-1.5">
-                      <Lightbulb className="h-3 w-3 text-amber-400/50 mt-0.5 flex-shrink-0" />
+                      <Lightbulb className="h-3 w-3 text-clay-600/50 mt-0.5 flex-shrink-0" />
                       <p className="text-xs text-ink-500">{a.suggestion}</p>
                     </div>
                   </div>
@@ -724,7 +724,7 @@ export default function StudentDemoPage() {
                       pct >= 80
                         ? "text-teal-700"
                         : pct >= 60
-                          ? "text-amber-400"
+                          ? "text-clay-600"
                           : "text-red-400"
                     const scoreBg =
                       pct >= 80
@@ -745,7 +745,7 @@ export default function StudentDemoPage() {
                                 ? "bg-teal-800/10 text-teal-700 border border-teal-800/20"
                                 : s.type === "exam"
                                   ? "bg-red-500/10 text-red-400 border border-red-500/20"
-                                  : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                                  : "bg-amber-500/10 text-clay-600 border border-amber-500/20"
                             }`}
                           >
                             {s.type}
@@ -790,7 +790,7 @@ export default function StudentDemoPage() {
                     {a.type === "essay" ? (
                       <FileText className="h-4 w-4 text-teal-700" />
                     ) : a.type === "quiz" ? (
-                      <Trophy className="h-4 w-4 text-amber-400" />
+                      <Trophy className="h-4 w-4 text-clay-600" />
                     ) : (
                       <BookOpen className="h-4 w-4 text-clay-600" />
                     )}

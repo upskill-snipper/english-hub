@@ -501,7 +501,7 @@ export default function GradeClimberPage() {
                 <span className={cn(
                   'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold',
                   currentGrade >= 7 ? 'border-emerald-500/20 bg-emerald-500/10 text-emerald-400'
-                    : currentGrade >= 5 ? 'border-amber-500/20 bg-amber-500/10 text-amber-400'
+                    : currentGrade >= 5 ? 'border-amber-500/20 bg-amber-500/10 text-clay-600'
                     : 'border-blue-500/20 bg-blue-500/10 text-blue-400'
                 )}>
                   Grade {currentGrade}

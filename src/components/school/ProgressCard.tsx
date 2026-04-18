@@ -116,7 +116,7 @@ function EffortStars({ rating, max = 5 }: { rating: number; max?: number }) {
           key={i}
           className={cn(
             'h-3.5 w-3.5',
-            i < rating ? 'fill-amber-400 text-amber-400' : 'fill-none text-muted-foreground',
+            i < rating ? 'fill-amber-400 text-clay-600' : 'fill-none text-muted-foreground',
           )}
         />
       ))}

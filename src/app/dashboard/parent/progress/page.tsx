@@ -373,7 +373,7 @@ export default function ProgressPage() {
                   let statusClass = "bg-success-50 text-success-700";
                   if (diff < 0) {
                     statusLabel = `${Math.abs(diff)} grade${Math.abs(diff) > 1 ? "s" : ""} below target`;
-                    statusClass = diff <= -2 ? "bg-warn-50 text-warn-700" : "bg-yellow-500/10 text-yellow-700 dark:text-yellow-300";
+                    statusClass = diff <= -2 ? "bg-warn-50 text-warn-700" : "bg-yellow-500/10 text-yellow-700";
                   } else if (diff > 0) {
                     statusLabel = "Above target";
                     statusClass = "bg-success-50 text-success-700";

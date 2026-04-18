@@ -329,7 +329,7 @@ export default function PracticePage() {
                   Paper {currentQuestion.paper}
                 </Badge>
               )}
-              <Badge className="bg-amber-500/15 text-amber-600 dark:text-amber-400">
+              <Badge className="bg-amber-500/15 text-amber-600 dark:text-clay-600">
                 {(currentQuestion.questionType || currentQuestion.type || 'General').split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
               </Badge>
             </div>

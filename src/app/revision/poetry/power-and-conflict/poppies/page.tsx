@@ -273,9 +273,9 @@ const themes = [
   { label: 'Loss and absence', color: 'bg-red-500/15 text-red-400 border-red-500/30' },
   { label: 'Memory', color: 'bg-blue-500/15 text-blue-400 border-blue-500/30' },
   { label: 'Family and motherhood', color: 'bg-pink-500/15 text-pink-400 border-pink-500/30' },
-  { label: 'War and conflict', color: 'bg-orange-500/15 text-orange-400 border-orange-500/30' },
+  { label: 'War and conflict', color: 'bg-orange-500/15 text-clay-600 border-orange-500/30' },
   { label: 'Grief', color: 'bg-purple-500/15 text-purple-400 border-purple-500/30' },
-  { label: 'Domestic vs military', color: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
+  { label: 'Domestic vs military', color: 'bg-amber-500/15 text-clay-600 border-amber-500/30' },
   { label: 'Nature and freedom', color: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' },
   { label: 'Identity and childhood', color: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30' },
 ]
@@ -363,7 +363,7 @@ export default function PoppiesStudyPage() {
               </div>
 
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1.5">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-clay-600 mb-1.5">
                   Differences
                 </h4>
                 <ul className="space-y-1">

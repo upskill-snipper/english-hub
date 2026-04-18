@@ -49,7 +49,7 @@ function getAgeStatus(ageMonths: number, chronoMonths: number): AgeStatus {
 function statusColor(status: AgeStatus): string {
   if (status === "above") return "text-emerald-400"
   if (status === "below") return "text-red-400"
-  return "text-amber-400"
+  return "text-clay-600"
 }
 
 function statusBgColor(status: AgeStatus): string {

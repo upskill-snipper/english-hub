@@ -507,7 +507,7 @@ export default function SchoolOnboardingPage() {
                 <div className="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center">
                   <GraduationCap className="w-5 h-5 text-indigo-400" />
                 </div>
-                <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/20 text-xs font-semibold">
+                <Badge className="bg-amber-500/10 text-clay-600 border-amber-500/20 text-xs font-semibold">
                   FOUNDER ACCESS
                 </Badge>
               </div>
@@ -875,7 +875,7 @@ export default function SchoolOnboardingPage() {
             <CardHeader className="pb-4">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                  <BookOpen className="w-5 h-5 text-amber-400" />
+                  <BookOpen className="w-5 h-5 text-clay-600" />
                 </div>
               </div>
               <CardTitle className="text-xl text-zinc-100">
@@ -1085,8 +1085,8 @@ export default function SchoolOnboardingPage() {
                   {
                     label: "Classes",
                     value: stats.classCount,
-                    icon: <BookOpen className="w-4 h-4 text-amber-400" />,
-                    color: "text-amber-400",
+                    icon: <BookOpen className="w-4 h-4 text-clay-600" />,
+                    color: "text-clay-600",
                   },
                 ].map((item) => (
                   <div

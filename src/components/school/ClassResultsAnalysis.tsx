@@ -46,7 +46,7 @@ function statusColor(status: SkillBreakdown['status']) {
     case 'below':
       return { bg: 'bg-red-500/10', text: 'text-red-400', border: 'border-red-500/20', fill: '#ef4444' }
     case 'approaching':
-      return { bg: 'bg-amber-500/10', text: 'text-amber-400', border: 'border-amber-500/20', fill: '#f59e0b' }
+      return { bg: 'bg-amber-500/10', text: 'text-clay-600', border: 'border-amber-500/20', fill: '#f59e0b' }
     case 'meeting':
       return { bg: 'bg-green-500/10', text: 'text-green-400', border: 'border-green-500/20', fill: '#22c55e' }
     case 'exceeding':
@@ -605,7 +605,7 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
 function WeakAreaCard({ area, classId }: { area: StrengthWeakness; classId: string }) {
   const severityConfig = {
     critical: { bg: 'bg-red-500/10', text: 'text-red-400', border: 'border-red-500/20', label: 'Critical' },
-    warning: { bg: 'bg-amber-500/10', text: 'text-amber-400', border: 'border-amber-500/20', label: 'Warning' },
+    warning: { bg: 'bg-amber-500/10', text: 'text-clay-600', border: 'border-amber-500/20', label: 'Warning' },
     minor: { bg: 'bg-blue-500/10', text: 'text-blue-400', border: 'border-blue-500/20', label: 'Minor' },
   }
   const config = severityConfig[area.severity]

@@ -39,7 +39,7 @@ const CATEGORIES: {
     label: 'Shakespeare',
     description: 'Plays studied for the Shakespeare component of GCSE Literature',
     icon: Crown,
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
   },
   {
@@ -346,7 +346,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
       {/* ── Study Tips ──────────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Lightbulb className="size-5 text-amber-400" />
+          <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">
             Literature Revision Tips
           </h2>

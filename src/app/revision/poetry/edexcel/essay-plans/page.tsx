@@ -897,7 +897,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
 
           {/* Exam tip */}
           <div className="flex gap-3 rounded-xl border border-amber-500/20 bg-amber-500/[0.06] p-4">
-            <Lightbulb className="mt-0.5 size-4 shrink-0 text-amber-400" />
+            <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600" />
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               <strong className="text-foreground">Exam tip:</strong>{' '}
               {plan.examTip}
@@ -1014,7 +1014,7 @@ export default function EdexcelEssayPlansPage() {
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-amber-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8">
         <div className="mb-3 flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <Lightbulb className="size-5 text-amber-400" />
+            <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-md font-heading text-foreground">
             How to use these plans

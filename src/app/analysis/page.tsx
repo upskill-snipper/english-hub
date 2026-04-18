@@ -86,7 +86,7 @@ const SECTIONS = [
   {
     label: 'Revision and Grade Guides',
     icon: ScrollText,
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     cards: [
       {

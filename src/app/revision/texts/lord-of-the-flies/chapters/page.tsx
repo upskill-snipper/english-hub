@@ -421,7 +421,7 @@ export default async function LotFChaptersPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
-                  <Flame className="size-4 text-orange-400" />
+                  <Flame className="size-4 text-clay-600" />
                   Key Events
                 </CardTitle>
               </CardHeader>

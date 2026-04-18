@@ -47,7 +47,7 @@ import ReadingProfileCard from "@/components/ReadingProfileCard"
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
-  if (score >= 50) return "text-amber-400"
+  if (score >= 50) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -61,7 +61,7 @@ function statusBadge(status: string) {
   const styles: Record<string, string> = {
     "excelling": "bg-green-500/10 text-green-400 border-green-500/20",
     "on-track": "bg-teal-800/10 text-teal-700 border-teal-800/20",
-    "needs-support": "bg-amber-500/10 text-amber-400 border-amber-500/20",
+    "needs-support": "bg-amber-500/10 text-clay-600 border-amber-500/20",
     "at-risk": "bg-red-500/10 text-red-400 border-red-500/20",
   }
   return styles[status] || "bg-ink-200/10 text-ink-600 border-neutral-500/20"
@@ -126,7 +126,7 @@ export default function TeacherStudentProfilePage() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12">
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
-          <p className="text-sm text-amber-400">
+          <p className="text-sm text-clay-600">
             <span className="font-semibold">Teacher Demo</span> -- Viewing sample student profile
           </p>
         </div>
@@ -268,7 +268,7 @@ export default function TeacherStudentProfilePage() {
         <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
-              <Lightbulb className="h-4 w-4 text-amber-400" />
+              <Lightbulb className="h-4 w-4 text-clay-600" />
               How to Reach the Next Grade
             </CardTitle>
           </CardHeader>
@@ -279,7 +279,7 @@ export default function TeacherStudentProfilePage() {
                 student.weaknesses.map((w) => typeof w === "string" ? w : w.name)
               ).map((rec, i) => (
                 <div key={i} className="flex items-start gap-3 rounded-lg border border-ink-200 bg-white p-3">
-                  <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-amber-500/15 text-amber-400 flex items-center justify-center text-[10px] font-bold">
+                  <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-amber-500/15 text-clay-600 flex items-center justify-center text-[10px] font-bold">
                     {i + 1}
                   </span>
                   <p className="text-sm text-ink-600">{rec}</p>
@@ -312,7 +312,7 @@ export default function TeacherStudentProfilePage() {
           <Button
             variant="outline"
             size="sm"
-            className="bg-amber-500/10 text-amber-400 border-amber-500/20 hover:bg-amber-500/20"
+            className="bg-amber-500/10 text-clay-600 border-amber-500/20 hover:bg-amber-500/20"
             onClick={() => showToast("Available with full account")}
           >
             <Send className="h-3.5 w-3.5 mr-1.5" />
@@ -531,7 +531,7 @@ export default function TeacherStudentProfilePage() {
                         skill.status === "mastered"
                           ? "bg-green-500/15 text-green-400"
                           : skill.status === "developing"
-                          ? "bg-amber-500/15 text-amber-400"
+                          ? "bg-amber-500/15 text-clay-600"
                           : "bg-red-500/15 text-red-400"
                       }`}
                     >
@@ -582,7 +582,7 @@ export default function TeacherStudentProfilePage() {
                           "bg-red-500/20 border border-red-500/30"
                         }`}>
                           <span className={`text-[9px] font-bold ${
-                            pct >= 70 ? "text-green-400" : pct >= 50 ? "text-amber-400" : "text-red-400"
+                            pct >= 70 ? "text-green-400" : pct >= 50 ? "text-clay-600" : "text-red-400"
                           }`}>{pct}</span>
                         </div>
                         <div className="flex-1 min-w-0 pb-1">
@@ -590,7 +590,7 @@ export default function TeacherStudentProfilePage() {
                             <span className="text-sm text-ink-900">{item.title}</span>
                             <Badge variant="outline" className={`text-[9px] ${
                               item.type === "Essay" ? "border-teal-800/20 text-teal-700" :
-                              item.type === "Quiz" ? "border-amber-500/20 text-amber-400" :
+                              item.type === "Quiz" ? "border-amber-500/20 text-clay-600" :
                               "border-clay-500/20 text-clay-600"
                             }`}>{item.type}</Badge>
                             {change !== null && change !== 0 && (
@@ -710,7 +710,7 @@ export default function TeacherStudentProfilePage() {
         <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
-              <Lightbulb className="h-4 w-4 text-amber-400" />
+              <Lightbulb className="h-4 w-4 text-clay-600" />
               Suggested Next Steps
             </CardTitle>
           </CardHeader>
@@ -756,7 +756,7 @@ export default function TeacherStudentProfilePage() {
                 }
                 return suggestions.map((suggestion, i) => (
                   <div key={i} className="flex items-start gap-3 rounded-lg border border-amber-500/10 bg-amber-500/[0.03] p-3">
-                    <span className="shrink-0 mt-0.5 h-5 w-5 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-[10px] text-amber-400 tabular-nums font-medium">
+                    <span className="shrink-0 mt-0.5 h-5 w-5 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-[10px] text-clay-600 tabular-nums font-medium">
                       {i + 1}
                     </span>
                     <p className="text-sm text-ink-600">{suggestion}</p>
@@ -925,7 +925,7 @@ export default function TeacherStudentProfilePage() {
                     (mod.status ?? "") === "Complete"
                       ? "border-green-500/20 text-green-400"
                       : (mod.status ?? "") === "In Progress"
-                      ? "border-amber-500/20 text-amber-400"
+                      ? "border-amber-500/20 text-clay-600"
                       : "border-neutral-500/20 text-ink-500"
                   }`}
                 >

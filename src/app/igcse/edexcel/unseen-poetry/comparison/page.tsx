@@ -193,7 +193,7 @@ export default function UnseenPoetryComparisonPage() {
                   <p className="text-xs text-muted-foreground">{s.strengths}</p>
                 </div>
                 <div className="flex gap-2">
-                  <AlertTriangle className="mt-0.5 size-3.5 shrink-0 text-amber-400" />
+                  <AlertTriangle className="mt-0.5 size-3.5 shrink-0 text-clay-600" />
                   <p className="text-xs text-muted-foreground">{s.weaknesses}</p>
                 </div>
               </div>
@@ -284,7 +284,7 @@ export default function UnseenPoetryComparisonPage() {
       {/* ── Common mistakes ─────────────────────────────────────── */}
       <section className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.04] p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
-          <AlertTriangle className="size-5 text-amber-400" />
+          <AlertTriangle className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">Common Mistakes</h2>
         </div>
         <ul className="space-y-3">
@@ -296,7 +296,7 @@ export default function UnseenPoetryComparisonPage() {
             'Losing your personal response. Examiners reward candidates who have a genuine view about which poem does what more powerfully.',
           ].map((m) => (
             <li key={m} className="flex gap-3">
-              <span className="mt-1 text-amber-400">-</span>
+              <span className="mt-1 text-clay-600">-</span>
               <p className="text-body-sm text-muted-foreground leading-relaxed">{m}</p>
             </li>
           ))}

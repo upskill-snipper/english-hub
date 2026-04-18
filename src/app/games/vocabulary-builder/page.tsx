@@ -207,7 +207,7 @@ export default function VocabularyBuilderPage() {
                   <span className="flex items-center gap-1 text-emerald-400">
                     <CheckCircle className="size-3.5" /> {masteredCountRef.current} mastered
                   </span>
-                  <span className="flex items-center gap-1 text-amber-400">
+                  <span className="flex items-center gap-1 text-clay-600">
                     <XCircle className="size-3.5" /> {learningCountRef.current} learning
                   </span>
                 </div>

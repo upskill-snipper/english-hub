@@ -216,7 +216,7 @@ function LessonPlanCard({ idx }: { idx: number }) {
 
       {/* Homework */}
       <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-3">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-amber-400 mb-1">
+        <p className="text-[11px] font-semibold uppercase tracking-widest text-clay-600 mb-1">
           Homework
         </p>
         <p className="text-xs text-white/60 leading-relaxed">{ex.homework}</p>
@@ -412,7 +412,7 @@ function HomeworkCard({ idx }: { idx: number }) {
 
       {/* Extension */}
       <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-3">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-amber-400 mb-1">
+        <p className="text-[11px] font-semibold uppercase tracking-widest text-clay-600 mb-1">
           Extension Challenge
         </p>
         <p className="text-xs text-white/55 leading-relaxed">{ex.extension}</p>

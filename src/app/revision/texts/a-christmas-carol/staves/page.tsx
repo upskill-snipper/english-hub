@@ -541,7 +541,7 @@ export default async function StavesPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
-                <Flame className="size-4 text-orange-400" />
+                <Flame className="size-4 text-clay-600" />
                 Key Moments
               </CardTitle>
             </CardHeader>
@@ -595,7 +595,7 @@ export default async function StavesPage() {
           {/* Language analysis */}
           <div>
             <div className="mb-4 flex items-center gap-2">
-              <Lightbulb className="size-4 text-amber-400" />
+              <Lightbulb className="size-4 text-clay-600" />
               <h3 className="text-heading-md font-heading text-foreground">
                 Language Analysis
               </h3>

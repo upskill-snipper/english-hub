@@ -380,13 +380,13 @@ export default function EssayMarkingDemoPage() {
               {/* Areas for improvement */}
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-5">
                 <div className="flex items-center gap-2 mb-3">
-                  <TrendingDown className="h-4 w-4 text-amber-400" />
-                  <h3 className="text-sm font-semibold text-amber-300">Areas for Improvement</h3>
+                  <TrendingDown className="h-4 w-4 text-clay-600" />
+                  <h3 className="text-sm font-semibold text-amber-700">Areas for Improvement</h3>
                 </div>
                 <ul className="space-y-2">
                   {essay.improvements.map((s, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-ink-600">
-                      <AlertTriangle className="h-4 w-4 text-amber-400/60 mt-0.5 shrink-0" />
+                      <AlertTriangle className="h-4 w-4 text-clay-600/60 mt-0.5 shrink-0" />
                       <span>{s}</span>
                     </li>
                   ))}

@@ -30,7 +30,7 @@ interface Passage {
 const TYPE_BADGE: Record<QuestionType, { label: string; color: string }> = {
   inference: { label: 'Inference', color: 'bg-blue-500/10 text-blue-400 border-blue-500/20' },
   language: { label: 'Language', color: 'bg-violet-500/10 text-violet-400 border-violet-500/20' },
-  structure: { label: 'Structure', color: 'bg-amber-500/10 text-amber-400 border-amber-500/20' },
+  structure: { label: 'Structure', color: 'bg-amber-500/10 text-clay-600 border-amber-500/20' },
   comparison: { label: 'Comparison', color: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20' },
   evaluation: { label: 'Evaluation', color: 'bg-rose-500/10 text-rose-400 border-rose-500/20' },
 }

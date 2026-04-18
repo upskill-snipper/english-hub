@@ -157,7 +157,7 @@ function completionColor(pct: number): string {
 
 function scoreColor(score: number): string {
   if (score >= 75) return "text-green-400"
-  if (score >= 60) return "text-amber-400"
+  if (score >= 60) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -533,7 +533,7 @@ export default function SchoolAnalyticsPage() {
                       <span
                         className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold shrink-0 ${
                           cls.rank === 1
-                            ? "bg-yellow-500/20 text-yellow-400"
+                            ? "bg-yellow-500/20 text-clay-600"
                             : cls.rank === 2
                             ? "bg-slate-400/20 text-slate-300"
                             : cls.rank === 3
@@ -631,7 +631,7 @@ export default function SchoolAnalyticsPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <FileText className="h-4 w-4 text-amber-400" />
+              <FileText className="h-4 w-4 text-clay-600" />
               Assignment Overview
             </CardTitle>
             <CardDescription>Completion rates and overdue counts by class</CardDescription>

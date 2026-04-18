@@ -411,7 +411,7 @@ export default async function RomeoAndJulietEssayPlansPage() {
             <Card className="border-amber-500/20 bg-amber-500/[0.03]">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Lightbulb className="size-4 text-amber-400" />
+                  <Lightbulb className="size-4 text-clay-600" />
                   <CardTitle className="text-heading-md font-heading">
                     Examiner Tip
                   </CardTitle>

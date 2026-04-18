@@ -257,7 +257,7 @@ export function LessonRecommendations({ analytics, className }: LessonRecommenda
       <Card className={className}>
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-base">
-            <Sparkles className="h-4 w-4 text-amber-400" />
+            <Sparkles className="h-4 w-4 text-clay-600" />
             Suggested Lesson Plans
           </CardTitle>
           <CardDescription>
@@ -295,7 +295,7 @@ export function LessonRecommendations({ analytics, className }: LessonRecommenda
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="flex items-center gap-2 text-base">
-              <Sparkles className="h-4 w-4 text-amber-400" />
+              <Sparkles className="h-4 w-4 text-clay-600" />
               Suggested Lesson Plans
             </CardTitle>
             <CardDescription>
@@ -320,7 +320,7 @@ export function LessonRecommendations({ analytics, className }: LessonRecommenda
                 <div className="group rounded-lg border border-border/60 bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm cursor-pointer">
                   <div className="flex items-start gap-3">
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-500/10">
-                      <BookOpen className="h-4 w-4 text-amber-400" />
+                      <BookOpen className="h-4 w-4 text-clay-600" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start justify-between gap-2">
@@ -329,7 +329,7 @@ export function LessonRecommendations({ analytics, className }: LessonRecommenda
                         </h4>
                         <Badge
                           variant="outline"
-                          className="shrink-0 text-[10px] bg-amber-500/10 text-amber-400 border-amber-500/20"
+                          className="shrink-0 text-[10px] bg-amber-500/10 text-clay-600 border-amber-500/20"
                         >
                           Suggested
                         </Badge>

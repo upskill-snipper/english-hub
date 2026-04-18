@@ -271,7 +271,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     description: '15 minutes of smart review on quotes and terminology.',
     href: '/revision/flashcards',
     icon: Layers,
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
   }
   const QUIZ: PlannedTask = {
@@ -279,7 +279,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     description: 'Take a quick quiz on this week\'s topics to test recall.',
     href: '/revision/quiz',
     icon: Zap,
-    colour: 'text-orange-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-orange-500/10',
   }
   const GRADE_GUIDE: PlannedTask = {

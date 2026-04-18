@@ -20,7 +20,7 @@ function statusBadgeClass(status: Assignment['status']): string {
     case 'active':
       return 'border-green-500/30 bg-green-500/10 text-green-400'
     case 'draft':
-      return 'border-amber-500/30 bg-amber-500/10 text-amber-400'
+      return 'border-amber-500/30 bg-amber-500/10 text-clay-600'
     case 'closed':
       return 'border-zinc-500/30 bg-zinc-500/10 text-zinc-400'
   }
@@ -113,11 +113,11 @@ export function AssignmentCard({ assignment, className }: AssignmentCardProps) {
             <div className="flex items-center gap-1.5">
               <Calendar className={cn(
                 'h-3.5 w-3.5',
-                overdue ? 'text-red-400' : dueSoon ? 'text-amber-400' : 'text-muted-foreground',
+                overdue ? 'text-red-400' : dueSoon ? 'text-clay-600' : 'text-muted-foreground',
               )} />
               <span className={cn(
                 'text-xs',
-                overdue ? 'text-red-400 font-medium' : dueSoon ? 'text-amber-400 font-medium' : 'text-muted-foreground',
+                overdue ? 'text-red-400 font-medium' : dueSoon ? 'text-clay-600 font-medium' : 'text-muted-foreground',
               )}>
                 {formatDueDate(assignment.dueDate)}
               </span>

@@ -292,7 +292,7 @@ function ProfileTab({
             <p className="text-sm font-medium text-foreground">Minor status</p>
             <p className="mt-1 text-sm text-muted-foreground">
               {profile.isMinor ? (
-                <span className="inline-flex items-center rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-medium text-amber-400">
+                <span className="inline-flex items-center rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-medium text-clay-600">
                   Under 18
                 </span>
               ) : (
@@ -559,7 +559,7 @@ function CommunicationTab() {
             description="Promotions, offers, and partner content."
           />
           {marketing && (
-            <p className="mt-2 ml-14 text-xs text-amber-400 bg-amber-500/10 rounded-lg px-3 py-2">
+            <p className="mt-2 ml-14 text-xs text-clay-600 bg-amber-500/10 rounded-lg px-3 py-2">
               By enabling marketing emails, you explicitly consent to receiving
               promotional communications. You can withdraw this consent at any
               time.
@@ -697,7 +697,7 @@ function SubscriptionTab() {
                           entry.status === "paid"
                             ? "bg-green-500/10 text-green-600"
                             : entry.status === "pending"
-                              ? "bg-amber-500/10 text-amber-400"
+                              ? "bg-amber-500/10 text-clay-600"
                               : "bg-red-500/10 text-red-600"
                         }`}
                       >

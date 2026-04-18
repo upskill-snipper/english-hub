@@ -342,8 +342,8 @@ export default function InspectorCallsRevisionPage() {
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Eric Birling</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Transforms</span>
-                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Troubled</span>
-                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Drinks Heavily</span>
+                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Troubled</span>
+                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Drinks Heavily</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Eric is described as &ldquo;in his early twenties, not quite at ease, half shy, half assertive.&rdquo; The stage directions hint early on that something is wrong: he is &ldquo;squiffy&rdquo; (drunk) at dinner, and his parents are oblivious. Eric is the character with the most serious involvement in Eva&apos;s story: he forced himself upon her while drunk (an assault), got her pregnant, and stole money from his father&apos;s firm. His behaviour reveals the darker side of upper-class privilege &mdash; young men like Eric can exploit working-class women with impunity. However, like Sheila, Eric undergoes genuine moral change. He is horrified by what he has done and accepts responsibility. He turns on his mother with real anger when he learns she rejected Eva&apos;s plea for help. By the end, he stands with Sheila against his parents, insisting that their guilt is real regardless of whether the Inspector was genuine. He represents both the failings and the potential for redemption in the younger generation.
@@ -374,8 +374,8 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Gerald Croft</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Aristocratic</span>
-                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Complex</span>
+                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Aristocratic</span>
+                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Complex</span>
                   <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Ultimately Unchanged</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -852,56 +852,56 @@ export default function InspectorCallsRevisionPage() {
             <div className="space-y-6">
 
               <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-                <h3 className="font-bold text-amber-700 dark:text-amber-300">1. Eva Smith as Priestley&apos;s Absent Protagonist</h3>
+                <h3 className="font-bold text-amber-700">1. Eva Smith as Priestley&apos;s Absent Protagonist</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Eva never appears on stage, never speaks, and may not even be a single person. Yet the entire play revolves around her. A sophisticated reading recognises that her absence is deliberate: she represents the voiceless working class who are discussed, judged, and exploited by the powerful but never given the opportunity to tell their own story. Her silence is the silence of an entire class. By making the audience <em>feel</em> for someone they never see, Priestley achieves something remarkable: he forces empathy through imagination rather than identification. Eva is more powerful as an idea than she could be as a character.
                 </p>
               </div>
 
               <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-                <h3 className="font-bold text-amber-700 dark:text-amber-300">2. The Inspector as Time Traveller, Ghost, or Conscience</h3>
+                <h3 className="font-bold text-amber-700">2. The Inspector as Time Traveller, Ghost, or Conscience</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The Inspector&apos;s identity is deliberately ambiguous, and a Grade 9 response should explore multiple interpretations rather than fixing on one. If he is a ghost (&ldquo;Goole&rdquo; = ghoul), the play becomes a supernatural morality tale. If he is a time traveller from 1945, he brings the knowledge of what Birling&apos;s worldview will cause (two world wars). If he is a collective conscience, the play becomes psychological. Priestley deliberately leaves this unresolved because the Inspector&apos;s <em>message</em> matters more than his identity. The ambiguity also forces the audience to engage actively: you must decide for yourself what the Inspector represents, just as you must decide what kind of society you want.
                 </p>
               </div>
 
               <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-                <h3 className="font-bold text-amber-700 dark:text-amber-300">3. The Cyclical Ending as Structural Argument</h3>
+                <h3 className="font-bold text-amber-700">3. The Cyclical Ending as Structural Argument</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The phone call at the end creates a cyclical structure: the events are about to begin again. This is not merely a dramatic twist but a structural embodiment of Priestley&apos;s argument. If the Birlings have not learned from the first visit, they will be forced to learn again &mdash; and, by extension, if the 1945 audience does not learn from the world wars, history will repeat itself. The cyclical structure turns the play into a warning that has no endpoint: every generation must choose whether to accept social responsibility or face the consequences of refusing. The form <em>is</em> the argument.
                 </p>
               </div>
 
               <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-                <h3 className="font-bold text-amber-700 dark:text-amber-300">4. Sheila as Priestley&apos;s Model Audience</h3>
+                <h3 className="font-bold text-amber-700">4. Sheila as Priestley&apos;s Model Audience</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Sheila&apos;s journey mirrors the journey Priestley wants his audience to take. She begins comfortable and complacent. She is confronted with her own complicity. She feels genuine guilt. She changes. She refuses to go back to ignorance. When she says, &ldquo;You&apos;re pretending everything&apos;s just as it was before,&rdquo; she is speaking not just to her parents but to any audience member who wants to dismiss the play&apos;s message. Priestley positions Sheila as the model of moral awakening: a privileged person who chooses to <em>see</em> rather than look away. Her refection of Gerald&apos;s ring symbolises her rejection of the entire system.
                 </p>
               </div>
 
               <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-                <h3 className="font-bold text-amber-700 dark:text-amber-300">5. Dramatic Irony as Political Weapon</h3>
+                <h3 className="font-bold text-amber-700">5. Dramatic Irony as Political Weapon</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Birling&apos;s wrong predictions (Titanic, no war) are not just comedic moments but a calculated political strategy. By making the spokesperson for capitalism demonstrably, laughably wrong, Priestley destroys his credibility before the Inspector even arrives. The audience cannot trust Birling&apos;s moral philosophy because they know his factual predictions are nonsensical. This is a logical fallacy (being wrong about facts does not mean being wrong about values), but dramatically it is devastatingly effective. Priestley weaponises dramatic irony: it becomes not just a literary device but a tool for ideological persuasion.
                 </p>
               </div>
 
               <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-                <h3 className="font-bold text-amber-700 dark:text-amber-300">6. The Photograph as Epistemological Problem</h3>
+                <h3 className="font-bold text-amber-700">6. The Photograph as Epistemological Problem</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The Inspector shows the photograph to one person at a time. Gerald later suggests they may have been shown different photographs &mdash; different girls. A top-level response might argue that this does not matter, and that Priestley intends it not to matter. Whether Eva is one person or many, the Birlings&apos; actions were still wrong. But the ambiguity also raises a philosophical question: does moral responsibility depend on provable cause and effect, or on the nature of the action itself? Priestley argues the latter. The older Birlings cling to the idea that if they cannot be <em>proven</em> guilty of killing <em>this specific girl</em>, they are innocent. The Inspector (and Priestley) insists that moral responsibility transcends legal proof.
                 </p>
               </div>
 
               <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-                <h3 className="font-bold text-amber-700 dark:text-amber-300">7. Eric as Priestley&apos;s Most Complex Character</h3>
+                <h3 className="font-bold text-amber-700">7. Eric as Priestley&apos;s Most Complex Character</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Eric is often overlooked, but a sophisticated reading recognises his complexity. He has committed the most serious individual crime (sexual assault, implied by &ldquo;I was in that state when a chap easily turns nasty&rdquo;). Yet he also shows the most violent guilt and the most direct challenge to his parents (&ldquo;you killed her&rdquo;). Eric exposes the hypocrisy of the class system from within: the son of respectable parents turns out to be a drunk and an assailant. Priestley uses Eric to argue that the upper class is not morally superior &mdash; it merely has the privilege of hiding its sins. Eric&apos;s shame is genuine, unlike his parents&apos; self-justification, but his crimes are real too. He represents the painful, messy reality of confronting one&apos;s own guilt.
                 </p>
               </div>
 
               <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-                <h3 className="font-bold text-amber-700 dark:text-amber-300">8. The Play as Direct Address to 1945</h3>
+                <h3 className="font-bold text-amber-700">8. The Play as Direct Address to 1945</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play was written in 1945, performed in 1945, but set in 1912. This temporal structure is itself an argument. By showing the audience a world that existed before two world wars and asking &ldquo;do you want to go back to this?&rdquo;, Priestley makes the play a political intervention in the 1945 general election. The audience had a real choice: return to the pre-war class system (Conservative) or build a new society based on collective responsibility (Labour). Priestley&apos;s play is, in this reading, not just a drama but a piece of political persuasion. The Inspector&apos;s &ldquo;fire and blood and anguish&rdquo; speech is not a prediction but a statement of historical fact for the 1945 audience &mdash; the fires of the Blitz, the blood of the trenches, the anguish of millions. Priestley asks: will you learn, or must you be taught again?
                 </p>

@@ -68,7 +68,7 @@ function progressColor(pct: number): string {
 
 function progressTextColor(pct: number): string {
   if (pct >= 75) return "text-teal-700"
-  if (pct >= 60) return "text-amber-400"
+  if (pct >= 60) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -76,7 +76,7 @@ function ragBadge(pct: number) {
   if (pct >= 75)
     return <Badge className="bg-teal-800/10 text-teal-700 border-teal-800/20">On Track</Badge>
   if (pct >= 60)
-    return <Badge className="bg-amber-500/15 text-amber-400 border-amber-500/20">Needs Support</Badge>
+    return <Badge className="bg-amber-500/15 text-clay-600 border-amber-500/20">Needs Support</Badge>
   return <Badge className="bg-red-500/15 text-red-400 border-red-500/20">At Risk</Badge>
 }
 
@@ -397,7 +397,7 @@ export default function AnalyticsPage() {
             </TabsTrigger>
             <TabsTrigger
               value="assessments"
-              className="px-4 py-2.5 text-sm data-active:text-amber-400 text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-amber-400"
+              className="px-4 py-2.5 text-sm data-active:text-clay-600 text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-amber-400"
             >
               <ClipboardList className="w-4 h-4 mr-1.5" />
               Assessments
@@ -455,7 +455,7 @@ export default function AnalyticsPage() {
                         <TrendBadge value={vary(3, dateRange)} />
                       </div>
                     </div>
-                    <RingChart value={vary(68, dateRange)} color="text-amber-400" label="avg" />
+                    <RingChart value={vary(68, dateRange)} color="text-clay-600" label="avg" />
                   </div>
                 </CardContent>
               </Card>
@@ -491,8 +491,8 @@ export default function AnalyticsPage() {
                 <CardContent className="space-y-4">
                   {[
                     { label: "Student engagement rate", value: "89%", color: "text-teal-700" },
-                    { label: "Assignment completion", value: "74%", color: "text-amber-400" },
-                    { label: "Avg mock exam score", value: `${vary(68, dateRange)}%`, color: "text-amber-400" },
+                    { label: "Assignment completion", value: "74%", color: "text-clay-600" },
+                    { label: "Avg mock exam score", value: `${vary(68, dateRange)}%`, color: "text-clay-600" },
                     { label: "Resource utilisation", value: "67%", color: "text-teal-700" },
                   ].map((m) => (
                     <div key={m.label} className="flex items-center justify-between">
@@ -514,7 +514,7 @@ export default function AnalyticsPage() {
                   {[
                     { text: "Year 11 progress up 12% since last half-term", icon: <ArrowUpRight className="w-4 h-4 text-teal-700 shrink-0" /> },
                     { text: "Creative writing scores improving across KS3", icon: <ArrowUpRight className="w-4 h-4 text-teal-700 shrink-0" /> },
-                    { text: "Mock exam participation up 23% this term", icon: <TrendingUp className="w-4 h-4 text-amber-400 shrink-0" /> },
+                    { text: "Mock exam participation up 23% this term", icon: <TrendingUp className="w-4 h-4 text-clay-600 shrink-0" /> },
                     { text: "Year 9 engagement dipping -- review needed", icon: <AlertTriangle className="w-4 h-4 text-red-400 shrink-0" /> },
                   ].map((t, i) => (
                     <div key={i} className="flex items-start gap-2">
@@ -558,7 +558,7 @@ export default function AnalyticsPage() {
               <Card className="bg-card border-border">
                 <CardHeader>
                   <CardTitle className="text-foreground flex items-center gap-2">
-                    <Trophy className="w-5 h-5 text-amber-400" />
+                    <Trophy className="w-5 h-5 text-clay-600" />
                     Top Performing Classes
                   </CardTitle>
                 </CardHeader>
@@ -573,18 +573,18 @@ export default function AnalyticsPage() {
                         <span
                           className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
                             i === 0
-                              ? "bg-amber-500/20 text-amber-400"
+                              ? "bg-amber-500/20 text-clay-600"
                               : i === 1
                               ? "bg-ink-200/20 text-foreground/80"
                               : i === 2
-                              ? "bg-orange-500/20 text-orange-400"
+                              ? "bg-orange-500/20 text-clay-600"
                               : "bg-muted/50 text-muted-foreground/70"
                           }`}
                         >
                           {i + 1}
                         </span>
                         <div className="flex-1 min-w-0">
-                          <p className="font-medium text-foreground truncate group-hover:text-amber-300 transition-colors">
+                          <p className="font-medium text-foreground truncate group-hover:text-amber-700 transition-colors">
                             {cls.name}
                           </p>
                           <p className="text-xs text-muted-foreground/70 truncate">
@@ -764,7 +764,7 @@ export default function AnalyticsPage() {
                               <p className="text-xs text-muted-foreground/70">{t.department} &middot; {t.classCount} class{t.classCount !== 1 ? "es" : ""}</p>
                             </div>
                             {i === 0 && (
-                              <Badge className="bg-amber-500/15 text-amber-400 border-amber-500/20 text-[10px] shrink-0">
+                              <Badge className="bg-amber-500/15 text-clay-600 border-amber-500/20 text-[10px] shrink-0">
                                 Top
                               </Badge>
                             )}
@@ -868,7 +868,7 @@ export default function AnalyticsPage() {
                           ? "text-red-400"
                           : student.overallProgress >= 75
                           ? "text-teal-700"
-                          : "text-amber-400"
+                          : "text-clay-600"
                       }`}
                     >
                       {student.name.split(" ").map((n) => n[0]).join("")}
@@ -946,7 +946,7 @@ export default function AnalyticsPage() {
                             <Badge variant="destructive" className="text-red-300 bg-red-500/15">
                               WAG {student.workingAtGrade}
                             </Badge>
-                            <Badge className={`${predictedGradeColor(student.predictedGrade, student.workingAtGrade) === 'text-teal-700' ? 'bg-teal-800/10 text-teal-700' : predictedGradeColor(student.predictedGrade, student.workingAtGrade) === 'text-red-400' ? 'bg-red-500/15 text-red-300' : 'bg-amber-500/15 text-amber-300'} border-0`}>
+                            <Badge className={`${predictedGradeColor(student.predictedGrade, student.workingAtGrade) === 'text-teal-700' ? 'bg-teal-800/10 text-teal-700' : predictedGradeColor(student.predictedGrade, student.workingAtGrade) === 'text-red-400' ? 'bg-red-500/15 text-red-300' : 'bg-amber-500/15 text-amber-700'} border-0`}>
                               Pred {student.predictedGrade}
                             </Badge>
                             <Badge className="bg-teal-700/15 text-teal-700 border-0">
@@ -973,7 +973,7 @@ export default function AnalyticsPage() {
                 const latest = cat.avgs[cat.avgs.length - 1]
                 const change = latest - cat.avgs[0]
                 const colorMap: Record<string, { ring: string; bar: string; text: string }> = {
-                  amber: { ring: "text-amber-400", bar: "bg-amber-500", text: "text-amber-400" },
+                  amber: { ring: "text-clay-600", bar: "bg-amber-500", text: "text-clay-600" },
                   cyan: { ring: "text-teal-700", bar: "bg-teal-600", text: "text-teal-700" },
                   purple: { ring: "text-clay-600", bar: "bg-clay-500", text: "text-clay-600" },
                 }
@@ -1021,7 +1021,7 @@ export default function AnalyticsPage() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {(() => {
                     const colors = ["bg-yellow-400", "bg-teal-700", "bg-amber-500", "bg-red-500"]
-                    const textColors = ["text-yellow-400", "text-teal-700", "text-amber-400", "text-red-400"]
+                    const textColors = ["text-clay-600", "text-teal-700", "text-clay-600", "text-red-400"]
                     const bgColors = ["bg-yellow-400/10", "bg-teal-800/10", "bg-amber-500/10", "bg-red-500/10"]
                     return Object.entries(gradeBuckets).map(([label, count], i) => (
                       <div key={label} className={`text-center p-4 rounded-xl ${bgColors[i]} border border-border/50`}>

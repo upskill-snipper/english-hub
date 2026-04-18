@@ -72,7 +72,7 @@ function getGradeBandStyle(band: string) {
       return {
         bg: 'bg-yellow-500/10',
         border: 'border-yellow-500/30',
-        text: 'text-yellow-400',
+        text: 'text-clay-600',
         ring: 'ring-yellow-500/20',
       }
     case 'Grade 6-7':
@@ -396,7 +396,7 @@ function InlineFeedbackResults({
   return (
     <div className="space-y-4 animate-fade-in">
       {/* Disclaimer */}
-      <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-200">
+      <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-700">
         <p className="font-medium text-sm">AI-Generated Estimate</p>
         <p className="mt-0.5 text-muted-foreground">
           Not an official grade — use alongside your teacher&apos;s guidance.

@@ -789,7 +789,7 @@ function difficultyColor(d: string): string {
 }
 
 function phaseColor(phase: string): { bg: string; text: string; border: string; icon: string } {
-  if (phase.toLowerCase().includes('starter')) return { bg: 'bg-amber-500/10', text: 'text-amber-400', border: 'border-amber-500/20', icon: 'text-amber-400' }
+  if (phase.toLowerCase().includes('starter')) return { bg: 'bg-amber-500/10', text: 'text-clay-600', border: 'border-amber-500/20', icon: 'text-clay-600' }
   if (phase.toLowerCase().includes('plenary')) return { bg: 'bg-purple-500/10', text: 'text-purple-400', border: 'border-purple-500/20', icon: 'text-purple-400' }
   return { bg: 'bg-blue-500/10', text: 'text-blue-400', border: 'border-blue-500/20', icon: 'text-blue-400' }
 }
@@ -1033,7 +1033,7 @@ export default function LessonDetailPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
                   {isRecommended && (
-                    <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/20 text-xs">
+                    <Badge className="bg-amber-500/10 text-clay-600 border-amber-500/20 text-xs">
                       <Sparkles className="h-3 w-3 mr-1" />
                       Suggested by Analytics
                     </Badge>
@@ -1083,7 +1083,7 @@ export default function LessonDetailPage() {
 
             {isRecommended && lesson.recommendReason && (
               <div className="mt-3 rounded-lg border border-amber-500/20 bg-amber-500/5 p-3">
-                <p className="text-sm text-amber-400 flex items-start gap-2">
+                <p className="text-sm text-clay-600 flex items-start gap-2">
                   <Sparkles className="h-4 w-4 mt-0.5 shrink-0" />
                   {lesson.recommendReason}
                 </p>
@@ -1299,7 +1299,7 @@ export default function LessonDetailPage() {
 
                                 {timing.teacherNotes && (
                                   <div className="mb-4 rounded-lg border border-amber-500/20 bg-amber-500/5 p-3">
-                                    <p className="text-xs font-semibold text-amber-400 mb-1 uppercase tracking-wider">
+                                    <p className="text-xs font-semibold text-clay-600 mb-1 uppercase tracking-wider">
                                       Teacher Notes
                                     </p>
                                     <p className="text-sm text-muted-foreground">{timing.teacherNotes}</p>
@@ -1379,7 +1379,7 @@ export default function LessonDetailPage() {
                     <Card>
                       <CardHeader className="pb-3">
                         <CardTitle className="text-sm flex items-center gap-2">
-                          <Home className="h-4 w-4 text-orange-400" />
+                          <Home className="h-4 w-4 text-clay-600" />
                           Homework Tasks
                         </CardTitle>
                       </CardHeader>
@@ -1399,7 +1399,7 @@ export default function LessonDetailPage() {
                     <Card>
                       <CardHeader className="pb-3">
                         <CardTitle className="text-sm flex items-center gap-2">
-                          <Star className="h-4 w-4 text-yellow-400" />
+                          <Star className="h-4 w-4 text-clay-600" />
                           Extension / Challenge
                         </CardTitle>
                       </CardHeader>

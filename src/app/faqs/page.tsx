@@ -141,7 +141,7 @@ const FAQ_SECTIONS: FaqSection[] = [
     id: 'technical',
     title: 'Technical',
     icon: Wrench,
-    color: 'text-orange-400 bg-orange-500/10 border-orange-500/20',
+    color: 'text-clay-600 bg-orange-500/10 border-orange-500/20',
     items: [
       {
         question: 'What browsers and devices are supported?',

@@ -54,7 +54,7 @@ interface Theme {
 const CLUSTER_BADGE: Record<string, string> = {
   'Love and Relationships': 'bg-pink-500/15 text-pink-300 border-pink-500/20',
   Conflict: 'bg-red-500/15 text-red-300 border-red-500/20',
-  'Youth and Age': 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+  'Youth and Age': 'bg-amber-500/15 text-amber-700 border-amber-500/20',
   'Power and the Natural World':
     'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
 }
@@ -422,7 +422,7 @@ const THEMES: Theme[] = [
   {
     name: 'Childhood and Growing Up',
     icon: Footprints,
-    iconColour: 'text-amber-400',
+    iconColour: 'text-clay-600',
     iconBg: 'bg-amber-500/10',
     description:
       'The innocence and freedom of childhood, the pain of growing up, and the moment when a child steps away from a parent.',
@@ -532,7 +532,7 @@ const THEMES: Theme[] = [
   {
     name: 'Mortality and the Passage of Time',
     icon: Clock,
-    iconColour: 'text-orange-400',
+    iconColour: 'text-clay-600',
     iconBg: 'bg-orange-500/10',
     description:
       'Confrontations with death and ageing. Poets explore the fear of dying young, the acceptance of old age, and the way time transforms everything.',
@@ -578,7 +578,7 @@ const THEMES: Theme[] = [
   {
     name: 'Prejudice and Injustice',
     icon: Scale,
-    iconColour: 'text-yellow-400',
+    iconColour: 'text-clay-600',
     iconBg: 'bg-yellow-500/10',
     description:
       'Poets challenge racism, class prejudice, gender inequality, and cultural imperialism. These poems are acts of protest that demand recognition and justice.',
@@ -757,7 +757,7 @@ export default function OCRThemesPage() {
       {/* ── How to use ────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-amber-500/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8">
         <div className="flex items-start gap-3">
-          <Lightbulb className="mt-0.5 size-5 shrink-0 text-amber-400" />
+          <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div>
             <h2 className="text-heading-sm font-heading text-foreground">
               How to use this page

@@ -105,7 +105,7 @@ interface SkillAverage {
 const CLASS_COLORS = [
   { bg: 'bg-blue-500', text: 'text-blue-400', hex: '#3b82f6', light: 'bg-blue-500/10' },
   { bg: 'bg-emerald-500', text: 'text-emerald-400', hex: '#10b981', light: 'bg-emerald-500/10' },
-  { bg: 'bg-amber-500', text: 'text-amber-400', hex: '#f59e0b', light: 'bg-amber-500/10' },
+  { bg: 'bg-amber-500', text: 'text-clay-600', hex: '#f59e0b', light: 'bg-amber-500/10' },
   { bg: 'bg-purple-500', text: 'text-purple-400', hex: '#a855f7', light: 'bg-purple-500/10' },
 ]
 
@@ -132,7 +132,7 @@ function gradeColor(grade: number): string {
 
 function scoreColor(score: number): string {
   if (score >= 70) return 'text-green-400'
-  if (score >= 50) return 'text-amber-400'
+  if (score >= 50) return 'text-clay-600'
   return 'text-red-400'
 }
 
@@ -1177,7 +1177,7 @@ export function ClassComparison() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-base flex items-center gap-2">
-                  <Lightbulb className="h-4 w-4 text-amber-400" />
+                  <Lightbulb className="h-4 w-4 text-clay-600" />
                   Insights
                 </CardTitle>
                 <CardDescription>Auto-generated observations based on class data.</CardDescription>
@@ -1194,7 +1194,7 @@ export function ClassComparison() {
                         insight.type === 'info' && 'border-blue-500/20 bg-blue-500/5',
                       )}
                     >
-                      {insight.type === 'warning' && <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0 text-amber-400" />}
+                      {insight.type === 'warning' && <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />}
                       {insight.type === 'positive' && <TrendingUp className="h-4 w-4 mt-0.5 shrink-0 text-green-400" />}
                       {insight.type === 'info' && <BarChart3 className="h-4 w-4 mt-0.5 shrink-0 text-blue-400" />}
                       <span className="text-muted-foreground">{insight.message}</span>

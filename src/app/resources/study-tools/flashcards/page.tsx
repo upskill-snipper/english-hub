@@ -26,7 +26,7 @@ type StudyMode = "browse" | "study" | "difficult";
 function getDeckCategory(deck: FlashcardDeck): string { return deck.category || "General"; }
 const QUALITY_COLORS: Record<string, string> = {
   destructive: "bg-red-500/15 text-red-400 hover:bg-red-500/25 border-red-500/30",
-  warning: "bg-amber-500/15 text-amber-400 hover:bg-amber-500/25 border-amber-500/30",
+  warning: "bg-amber-500/15 text-clay-600 hover:bg-amber-500/25 border-amber-500/30",
   success: "bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25 border-emerald-500/30",
   easy: "bg-blue-500/15 text-blue-400 hover:bg-blue-500/25 border-blue-500/30",
 };
@@ -153,9 +153,9 @@ export default function FlashcardsPage() {
     {/* Stats dashboard */}
     <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className={cn("rounded-lg p-2", gcseGradeBg(overallStats.grade))}><GraduationCap className={cn("h-5 w-5", gcseGradeColor(overallStats.grade))} /></div><div><p className="text-xs text-muted-foreground">Overall grade</p><p className={cn("text-lg font-bold", gcseGradeColor(overallStats.grade))}>{percentageToGCSEGradeLabel(overallStats.mastery)}</p></div></div><div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-700" style={{ width: `${overallStats.mastery}%` }} /></div><p className="mt-1.5 text-xs text-muted-foreground">{overallStats.mastered} of {overallStats.totalCards} cards mastered ({overallStats.mastery}%)</p></div>
-      <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-lg bg-amber-500/10 p-2"><Clock className="h-5 w-5 text-amber-400" /></div><div><p className="text-xs text-muted-foreground">Due for review</p><p className="text-lg font-bold text-foreground">{overallStats.due}</p></div></div><p className="mt-3 text-xs text-muted-foreground">Cards that need reviewing today</p></div>
+      <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-lg bg-amber-500/10 p-2"><Clock className="h-5 w-5 text-clay-600" /></div><div><p className="text-xs text-muted-foreground">Due for review</p><p className="text-lg font-bold text-foreground">{overallStats.due}</p></div></div><p className="mt-3 text-xs text-muted-foreground">Cards that need reviewing today</p></div>
       <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-lg bg-blue-500/10 p-2"><BarChart3 className="h-5 w-5 text-blue-400" /></div><div><p className="text-xs text-muted-foreground">Reviewed today</p><p className="text-lg font-bold text-foreground">{todayReviewed}</p></div></div><p className="mt-3 text-xs text-muted-foreground">{todayAccuracy > 0 ? `${todayAccuracy}% accuracy today` : "Start studying to track accuracy"}</p></div>
-      <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-lg bg-orange-500/10 p-2"><Flame className="h-5 w-5 text-orange-400" /></div><div><p className="text-xs text-muted-foreground">Study streak</p><p className="text-lg font-bold text-foreground">{store.streak} day{store.streak !== 1 ? "s" : ""}</p></div></div><p className="mt-3 text-xs text-muted-foreground">{overallAccuracy > 0 ? `${overallAccuracy}% lifetime accuracy` : "Keep studying daily"}</p></div>
+      <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-lg bg-orange-500/10 p-2"><Flame className="h-5 w-5 text-clay-600" /></div><div><p className="text-xs text-muted-foreground">Study streak</p><p className="text-lg font-bold text-foreground">{store.streak} day{store.streak !== 1 ? "s" : ""}</p></div></div><p className="mt-3 text-xs text-muted-foreground">{overallAccuracy > 0 ? `${overallAccuracy}% lifetime accuracy` : "Keep studying daily"}</p></div>
     </div>
     {/* Category filter */}
     <div className="mb-6 flex flex-wrap gap-2">
@@ -175,7 +175,7 @@ export default function FlashcardsPage() {
               <p className="mt-1 text-xs text-muted-foreground line-clamp-2">{deck.description}</p>
               <div className="mt-auto flex items-center gap-3 pt-4 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1"><Layers className="h-3 w-3" />{deck.cards.length} cards</span>
-                {stats.due > 0 && <span className="flex items-center gap-1 text-amber-400"><Clock className="h-3 w-3" />{stats.due} due</span>}
+                {stats.due > 0 && <span className="flex items-center gap-1 text-clay-600"><Clock className="h-3 w-3" />{stats.due} due</span>}
                 {stats.difficult > 0 && <span className="flex items-center gap-1 text-red-400"><Flame className="h-3 w-3" />{stats.difficult} hard</span>}
                 {stats.mastery === 100 && <span className="flex items-center gap-1 text-emerald-400"><Trophy className="h-3 w-3" />Complete</span>}
               </div>
@@ -215,7 +215,7 @@ function DeckDetail({ deck, stats, reviewStates, onBack, onStudy, onReset }: { d
       <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-700" style={{ width: `${stats.mastery}%` }} /></div>
       <div className="mt-4 flex flex-wrap gap-4 text-sm">
         <span className="flex items-center gap-1.5 text-muted-foreground"><Layers className="h-4 w-4" />{deck.cards.length} total cards</span>
-        <span className="flex items-center gap-1.5 text-amber-400"><Clock className="h-4 w-4" />{stats.due} due</span>
+        <span className="flex items-center gap-1.5 text-clay-600"><Clock className="h-4 w-4" />{stats.due} due</span>
         <span className="flex items-center gap-1.5 text-blue-400"><Star className="h-4 w-4" />{stats.newCount} new</span>
         {stats.difficult > 0 && <span className="flex items-center gap-1.5 text-red-400"><Flame className="h-4 w-4" />{stats.difficult} difficult</span>}
       </div>
@@ -229,7 +229,7 @@ function DeckDetail({ deck, stats, reviewStates, onBack, onStudy, onReset }: { d
       <div className="flex items-center justify-between border-b border-border px-5 py-3"><h3 className="text-sm font-bold text-foreground">All cards</h3><button onClick={() => setShowAllCards(!showAllCards)} className="text-xs font-medium text-primary hover:underline">{showAllCards ? "Collapse" : "Expand all"}</button></div>
       <div className="divide-y divide-border">
         {deck.cards.map((card) => { const state = reviewStates[card.id]; const isDifficult = state && state.easinessFactor < 2.0; const isMastered = state && state.interval >= 21; const isDue = state && new Date(state.nextReviewDate) <= new Date(); const isNew = !state; return (
-          <div key={card.id} className="px-5 py-3"><div className="flex items-start justify-between gap-3"><div className="min-w-0 flex-1"><p className="text-sm font-medium text-foreground">{card.front}</p>{showAllCards && <p className="mt-2 whitespace-pre-line text-xs leading-relaxed text-muted-foreground">{card.back}</p>}</div><div className="flex shrink-0 items-center gap-2">{isMastered && <CheckCircle2 className="h-4 w-4 text-emerald-400" />}{isDifficult && !isMastered && <Flame className="h-4 w-4 text-red-400" />}{isDue && !isMastered && !isDifficult && <Clock className="h-4 w-4 text-amber-400" />}{isNew && <Star className="h-4 w-4 text-blue-400" />}<span className="w-16 text-right text-[10px] text-muted-foreground">{formatNextReview(state)}</span></div></div></div>); })}
+          <div key={card.id} className="px-5 py-3"><div className="flex items-start justify-between gap-3"><div className="min-w-0 flex-1"><p className="text-sm font-medium text-foreground">{card.front}</p>{showAllCards && <p className="mt-2 whitespace-pre-line text-xs leading-relaxed text-muted-foreground">{card.back}</p>}</div><div className="flex shrink-0 items-center gap-2">{isMastered && <CheckCircle2 className="h-4 w-4 text-emerald-400" />}{isDifficult && !isMastered && <Flame className="h-4 w-4 text-red-400" />}{isDue && !isMastered && !isDifficult && <Clock className="h-4 w-4 text-clay-600" />}{isNew && <Star className="h-4 w-4 text-blue-400" />}<span className="w-16 text-right text-[10px] text-muted-foreground">{formatNextReview(state)}</span></div></div></div>); })}
       </div>
     </div>
   </div>);

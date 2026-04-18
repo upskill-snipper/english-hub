@@ -170,10 +170,10 @@ export default function DifferentiationPage() {
               </h3>
               <div className="grid gap-3 sm:grid-cols-3">
                 <div className="rounded-lg bg-amber-500/10 p-3">
-                  <p className="text-xs font-bold text-amber-700 dark:text-amber-300 mb-2">Lower Ability</p>
+                  <p className="text-xs font-bold text-amber-700 mb-2">Lower Ability</p>
                   <ul className="space-y-1.5">
                     {strat.lower.map((item, i) => (
-                      <li key={i} className="text-xs text-amber-700 dark:text-amber-300">{item}</li>
+                      <li key={i} className="text-xs text-amber-700">{item}</li>
                     ))}
                   </ul>
                 </div>
@@ -208,7 +208,7 @@ export default function DifferentiationPage() {
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-lg border-2 border-amber-500/30 p-3">
-            <p className="text-xs font-bold text-amber-700 dark:text-amber-300 mb-1">{DIFFERENTIATED_TASK.bronze.label}</p>
+            <p className="text-xs font-bold text-amber-700 mb-1">{DIFFERENTIATED_TASK.bronze.label}</p>
             <p className="text-xs text-muted-foreground mb-2">{DIFFERENTIATED_TASK.bronze.task}</p>
             <p className="text-xs text-amber-600 font-medium">Target: {DIFFERENTIATED_TASK.bronze.outcome}</p>
           </div>

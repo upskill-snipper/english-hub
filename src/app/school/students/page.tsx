@@ -134,8 +134,8 @@ function YearBadge({ year }: { year: string }) {
     "Year 8":  "bg-violet-500/15 text-violet-400 border-violet-500/25",
     "Year 9":  "bg-indigo-500/15 text-indigo-400 border-indigo-500/25",
     "Year 10": "bg-blue-500/15 text-blue-400 border-blue-500/25",
-    "Year 11": "bg-amber-500/15 text-amber-400 border-amber-500/25",
-    "Year 12": "bg-orange-500/15 text-orange-400 border-orange-500/25",
+    "Year 11": "bg-amber-500/15 text-clay-600 border-amber-500/25",
+    "Year 12": "bg-orange-500/15 text-clay-600 border-orange-500/25",
     "Year 13": "bg-rose-500/15 text-rose-400 border-rose-500/25",
   }
   return (
@@ -310,7 +310,7 @@ function ActionMenu({
             <div className="my-1 border-t border-border" />
 
             <button
-              className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-amber-400 hover:bg-amber-500/10"
+              className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-clay-600 hover:bg-amber-500/10"
               onClick={() => { onSuspend(student.id); setOpen(false) }}
             >
               <Ban className="size-3.5" />
@@ -646,7 +646,7 @@ export default function StudentsPage() {
             label="Not Yet Active"
             value={loading ? "..." : stats.notYetActive}
             icon={Hash}
-            iconClass="text-amber-400"
+            iconClass="text-clay-600"
             bgClass="bg-amber-500/10"
           />
           <StatCard
@@ -767,7 +767,7 @@ export default function StudentsPage() {
               <Button
                 size="xs"
                 variant="outline"
-                className="border-amber-500/30 text-amber-400 hover:bg-amber-500/10"
+                className="border-amber-500/30 text-clay-600 hover:bg-amber-500/10"
                 onClick={handleBulkSuspend}
               >
                 <Ban className="size-3" />

@@ -75,7 +75,7 @@ function Tip({ children }: { children: React.ReactNode }) {
 function Warning({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex gap-3 rounded-xl border border-amber-500/20 bg-amber-500/[0.06] p-4">
-      <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-400" />
+      <AlertTriangle className="mt-0.5 size-4 shrink-0 text-clay-600" />
       <p className="text-body-sm text-muted-foreground leading-relaxed">{children}</p>
     </div>
   )
@@ -131,7 +131,7 @@ function GradeComparison({
       <p className="text-sm font-semibold text-foreground">{focus}</p>
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.04] p-4">
-          <Badge variant="secondary" className="mb-2 bg-amber-500/10 text-amber-400 text-[0.65rem]">
+          <Badge variant="secondary" className="mb-2 bg-amber-500/10 text-clay-600 text-[0.65rem]">
             Grade 5
           </Badge>
           <p className="text-body-sm text-muted-foreground leading-relaxed italic">

@@ -25,7 +25,7 @@ function getClassStudents(classId: string) {
 
 function getProgressColor(value: number): string {
   if (value >= 80) return "text-teal-700"
-  if (value >= 60) return "text-amber-400"
+  if (value >= 60) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -133,7 +133,7 @@ export default function TeacherDetailPage() {
               <span
                 className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide ${
                   role === "HOD"
-                    ? "bg-amber-500/15 text-amber-400 border border-amber-500/20"
+                    ? "bg-amber-500/15 text-clay-600 border border-amber-500/20"
                     : "bg-cream-100 text-ink-600 border border-ink-200"
                 }`}
               >
@@ -402,7 +402,7 @@ export default function TeacherDetailPage() {
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-amber-400 mt-0.5 shrink-0">&rarr;</span>
+                    <span className="text-clay-600 mt-0.5 shrink-0">&rarr;</span>
                     <p className="text-sm text-ink-600">
                       Assignment completion is steady but below the year group target of 85%.
                       Three students have outstanding submissions.
@@ -498,7 +498,7 @@ export default function TeacherDetailPage() {
                       Year {reportClass.yearGroup} average.
                     </p>
                   ) : (
-                    <p className="text-[11px] text-amber-400/70 mt-2">
+                    <p className="text-[11px] text-clay-600/70 mt-2">
                       This class is performing {sameYearAvg - reportClass.avgProgress}% below the
                       Year {reportClass.yearGroup} average. Targeted interventions recommended.
                     </p>

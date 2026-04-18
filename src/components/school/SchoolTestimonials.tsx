@@ -41,7 +41,7 @@ function StarRow({ count }: { count: number }) {
       {Array.from({ length: count }).map((_, i) => (
         <Star
           key={i}
-          className="h-4 w-4 fill-amber-400 text-amber-400"
+          className="h-4 w-4 fill-amber-400 text-clay-600"
           aria-hidden="true"
         />
       ))}
@@ -88,7 +88,7 @@ export function SchoolTestimonials() {
       {/* Header */}
       <div className="mx-auto mb-10 max-w-3xl text-center">
         <div className="mb-4 flex items-center justify-center gap-2">
-          <Star className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
+          <Star className="h-5 w-5 fill-amber-400 text-clay-600" aria-hidden="true" />
           <span className="text-xs font-semibold uppercase tracking-widest text-emerald-400">
             Trusted by Schools
           </span>

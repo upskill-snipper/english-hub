@@ -119,7 +119,7 @@ const SECTIONS: LanguageSection[] = [
       'Spelling rules and common errors, punctuation mastery (semicolons, colons, dashes, apostrophes), grammar essentials, and the mistakes that cost marks.',
     href: '/revision/language/spag',
     icon: SpellCheck,
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     stats: '4 key areas',
     tips: [
@@ -220,7 +220,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
       {/* IGCSE redirect banner */}
       {showIgcseBanner && (
         <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] p-5 flex items-start gap-3">
-          <Info className="mt-0.5 size-5 shrink-0 text-amber-400" />
+          <Info className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="flex-1">
             <h2 className="text-sm font-semibold text-foreground">
               Your board uses a different paper structure

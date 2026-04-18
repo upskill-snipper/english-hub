@@ -485,7 +485,7 @@ export default function KeyQuotesPage() {
                       </div>
                       <div className="flex-1">
                         <h4 className="mb-1.5 text-xs font-mono font-medium uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-                          <Lightbulb className="size-3 text-amber-400" />
+                          <Lightbulb className="size-3 text-clay-600" />
                           Exam Tip
                         </h4>
                         <p className="text-body-sm text-muted-foreground">

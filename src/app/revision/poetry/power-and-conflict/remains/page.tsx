@@ -371,9 +371,9 @@ KEY STRUCTURAL EFFECTS:
 const THEMES = [
   { label: 'Guilt', icon: HeartCrack, color: 'text-red-400 bg-red-500/10' },
   { label: 'PTSD / Trauma', icon: Brain, color: 'text-purple-400 bg-purple-500/10' },
-  { label: 'Reality of conflict', icon: Swords, color: 'text-orange-400 bg-orange-500/10' },
+  { label: 'Reality of conflict', icon: Swords, color: 'text-clay-600 bg-orange-500/10' },
   { label: 'Power of memory', icon: Eye, color: 'text-blue-400 bg-blue-500/10' },
-  { label: 'Moral ambiguity', icon: Skull, color: 'text-amber-400 bg-amber-500/10' },
+  { label: 'Moral ambiguity', icon: Skull, color: 'text-clay-600 bg-amber-500/10' },
 ]
 
 /* ── Comparison poems ──────────────────────────────────────────── */

@@ -54,7 +54,7 @@ const prompts: { title: string; level: Level; hint: string }[] = [
 const levelStyle: Record<Level, string> = {
   Foundation: 'bg-primary/10 text-primary border-primary/20',
   Intermediate:
-    'bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-amber-400',
+    'bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-clay-600',
   Advanced:
     'bg-purple-500/10 text-purple-700 border-purple-500/20 dark:text-purple-400',
 }

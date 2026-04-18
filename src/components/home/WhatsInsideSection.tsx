@@ -98,7 +98,7 @@ const items: FeatureItem[] = [
   },
   {
     icon: GraduationCap,
-    color: 'text-amber-400 bg-amber-500/10',
+    color: 'text-clay-600 bg-amber-500/10',
     title: 'Comprehensive Exam Guides',
     desc: 'Detailed breakdowns for AQA, Edexcel, OCR & WJEC — paper structure, mark schemes, and expert tips.',
     preview: 'Covers: Paper timings, assessment objectives, grade boundaries, common pitfalls to avoid...',
@@ -130,7 +130,7 @@ const items: FeatureItem[] = [
   },
   {
     icon: Timer,
-    color: 'text-orange-400 bg-orange-500/10',
+    color: 'text-clay-600 bg-orange-500/10',
     title: '130+ Mock Exam Papers',
     desc:
       'Full-length timed mock exams for AQA, Edexcel, OCR, WJEC, IGCSE & KS3. Real exam format with model answers at every grade band.',

@@ -363,7 +363,7 @@ export default async function JaneEyreChaptersPage() {
             {/* Exam tip */}
             <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
               <div className="flex items-start gap-2">
-                <Sparkles className="mt-0.5 size-4 shrink-0 text-amber-400" />
+                <Sparkles className="mt-0.5 size-4 shrink-0 text-clay-600" />
                 <div>
                   <p className="text-sm font-semibold text-foreground">Exam Tip</p>
                   <p className="mt-1 text-body-sm text-muted-foreground">{ch.examTip}</p>

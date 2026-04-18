@@ -324,7 +324,7 @@ export default async function FrankensteinChaptersPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Lightbulb className="size-5 text-amber-400" />
+                  <Lightbulb className="size-5 text-clay-600" />
                   <CardTitle className="text-heading-md font-heading">Writer&apos;s Methods</CardTitle>
                 </div>
               </CardHeader>

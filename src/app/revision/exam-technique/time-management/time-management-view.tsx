@@ -75,7 +75,7 @@ function Tip({ children }: { children: React.ReactNode }) {
 function Warning({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex gap-3 rounded-xl border border-amber-500/20 bg-amber-500/[0.06] p-4">
-      <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-400" />
+      <AlertTriangle className="mt-0.5 size-4 shrink-0 text-clay-600" />
       <p className="text-body-sm text-muted-foreground leading-relaxed">{children}</p>
     </div>
   )
@@ -145,7 +145,7 @@ export default function TimeManagementView({
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <Clock className="size-5 text-amber-400" />
+            <Clock className="size-5 text-clay-600" />
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">
@@ -296,7 +296,7 @@ export default function TimeManagementView({
             },
           ].map((item) => (
             <div key={item.rule} className="flex gap-4 rounded-xl border border-border/40 bg-background/50 p-4">
-              <item.icon className="mt-0.5 size-5 shrink-0 text-amber-400" />
+              <item.icon className="mt-0.5 size-5 shrink-0 text-clay-600" />
               <div>
                 <p className="text-sm font-semibold text-foreground">{item.rule}</p>
                 <p className="mt-0.5 text-body-sm text-muted-foreground leading-relaxed">{item.detail}</p>

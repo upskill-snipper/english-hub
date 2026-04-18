@@ -352,7 +352,7 @@ export default function MacbethKeyQuotesPage() {
               Back to Macbeth overview
             </Button>
             <div className="mb-4 flex flex-wrap items-center gap-2">
-              <Badge variant="secondary"><Quote className="mr-1 size-3 text-amber-400" />Key Quotes Bank</Badge>
+              <Badge variant="secondary"><Quote className="mr-1 size-3 text-clay-600" />Key Quotes Bank</Badge>
               <Badge variant="outline">30 quotes</Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">Macbeth — Key Quotes</h1>
@@ -364,7 +364,7 @@ export default function MacbethKeyQuotesPage() {
 
         {/* Exam tip */}
         <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
-          <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-600 dark:text-amber-400">
+          <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-600 dark:text-clay-600">
             <Lightbulb className="size-4" /> How to Use These Quotes
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">

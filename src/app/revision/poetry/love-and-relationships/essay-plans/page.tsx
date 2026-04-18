@@ -516,7 +516,7 @@ export default function EssayPlansPage() {
       {/* ── Copyright notice ──────────────────────────────────── */}
       <section className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5">
         <div className="flex gap-3">
-          <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-amber-400" />
+          <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
               Key quotations only -- read the full poems
@@ -567,7 +567,7 @@ export default function EssayPlansPage() {
           </div>
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <div className="mb-2 flex items-center gap-2">
-              <AlertTriangle className="size-4 text-amber-400" />
+              <AlertTriangle className="size-4 text-clay-600" />
               <h3 className="text-sm font-semibold text-foreground">
                 Do not memorise essays
               </h3>
@@ -675,7 +675,7 @@ export default function EssayPlansPage() {
                     </div>
 
                     <div className="rounded-lg border border-amber-500/15 bg-amber-500/[0.03] p-3">
-                      <p className="text-[0.65rem] font-semibold uppercase tracking-wider text-amber-400 mb-1">
+                      <p className="text-[0.65rem] font-semibold uppercase tracking-wider text-clay-600 mb-1">
                         Comparative link
                       </p>
                       <p className="text-body-sm text-muted-foreground leading-relaxed">

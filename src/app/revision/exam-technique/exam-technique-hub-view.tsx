@@ -46,7 +46,7 @@ function getGuides(boardShortName: string): GuideLink[] {
       description: `Minute-by-minute plans for every ${boardShortName} paper, marks-to-time conversion and rapid planning techniques.`,
       href: '/revision/exam-technique/time-management',
       icon: Clock,
-      colour: 'text-amber-400',
+      colour: 'text-clay-600',
       bgColour: 'bg-amber-500/10',
     },
     {
@@ -205,7 +205,7 @@ export default function ExamTechniqueHubView({
       {/* ── Quick tips ──────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Lightbulb className="size-5 text-amber-400" />
+          <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">Quick Tips</h2>
         </div>
 

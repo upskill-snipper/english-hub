@@ -77,7 +77,7 @@ const PEEL_STEPS = [
   {
     letter: 'L',
     label: 'Link',
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     description:
       'Link back to the question, to the other poem (for comparison), or to the wider thesis. This closes the paragraph and keeps your argument tight.',
@@ -233,7 +233,7 @@ export default function EssayTechniqueHubPage() {
       {/* ── Embedding quotes ────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
-          <Quote className="size-5 text-amber-400" />
+          <Quote className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
             Embedding Quotations
           </h2>
@@ -253,7 +253,7 @@ export default function EssayTechniqueHubPage() {
             </p>
           </div>
           <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.04] p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">
+            <p className="text-xs font-semibold uppercase tracking-wider text-clay-600 mb-1">
               Better: signposted quote
             </p>
             <p className="text-body-sm italic text-muted-foreground">
@@ -353,7 +353,7 @@ export default function EssayTechniqueHubPage() {
 
       {/* ── CTA ─────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-violet-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8 text-center">
-        <Lightbulb className="mx-auto mb-3 size-8 text-amber-400" />
+        <Lightbulb className="mx-auto mb-3 size-8 text-clay-600" />
         <h2 className="text-heading-lg font-heading text-foreground">
           Learn to compare two texts in one essay
         </h2>

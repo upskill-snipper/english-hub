@@ -38,7 +38,7 @@ const STATUS_CONFIG: Record<StatusType, { label: string; badgeClass: string; bar
   },
   "needs-support": {
     label: "Needs Support",
-    badgeClass: "bg-amber-500/15 text-amber-400 border border-amber-500/25",
+    badgeClass: "bg-amber-500/15 text-clay-600 border border-amber-500/25",
     barClass: "bg-amber-500",
   },
   "at-risk": {
@@ -50,7 +50,7 @@ const STATUS_CONFIG: Record<StatusType, { label: string; badgeClass: string; bar
 
 function scoreTextColor(score: number): string {
   if (score >= 70) return "text-emerald-400"
-  if (score >= 50) return "text-amber-400"
+  if (score >= 50) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -121,7 +121,7 @@ export function StudentProgressPreview() {
               completed
             </span>
             <span className="text-white/20">|</span>
-            <span className="text-amber-400">
+            <span className="text-clay-600">
               <span className="font-semibold">{needsSupportCount}</span> need support
             </span>
             <span className="text-white/20">|</span>

@@ -56,7 +56,7 @@ const CLUSTERS: Cluster[] = [
       'Childhood, growing up, parenthood and mortality, from Yeats and Keats to Helen Dunmore and Carol Rumens.',
     count: 15,
     icon: Clock,
-    iconColor: 'text-amber-400',
+    iconColor: 'text-clay-600',
     iconBg: 'bg-amber-500/10',
   },
   {

@@ -134,7 +134,7 @@ export default function DemoImportPage() {
             3
           </div>
           <h2 className="text-base font-semibold">Import Results</h2>
-          <Badge className="bg-amber-500/15 text-amber-400 border-amber-500/25 text-[10px] uppercase tracking-wider">
+          <Badge className="bg-amber-500/15 text-clay-600 border-amber-500/25 text-[10px] uppercase tracking-wider">
             Sample
           </Badge>
         </div>
@@ -247,7 +247,7 @@ export default function DemoImportPage() {
 
       {/* CTA */}
       <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-6 text-center">
-        <Sparkles className="mx-auto h-6 w-6 text-amber-400" />
+        <Sparkles className="mx-auto h-6 w-6 text-clay-600" />
         <h3 className="mt-2 text-base font-semibold">Ready to import your students?</h3>
         <p className="mt-1 text-sm text-muted-foreground">
           Register your school to bulk-import students and teachers with automatic account creation.

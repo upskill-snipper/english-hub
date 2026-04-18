@@ -272,7 +272,7 @@ function riskBadge(level: RiskLevel) {
     case "High":
       return <Badge className="bg-red-500/20 text-red-400 border-red-500/30">High</Badge>
     case "Medium":
-      return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30">Medium</Badge>
+      return <Badge className="bg-amber-500/20 text-clay-600 border-amber-500/30">Medium</Badge>
     case "Low":
       return <Badge className="bg-teal-800/10 text-teal-700 border-teal-800/30">Low</Badge>
   }
@@ -338,7 +338,7 @@ export default function InterventionsPage() {
             <CardContent className="pt-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-500/20">
-                  <AlertTriangle className="h-5 w-5 text-yellow-400" />
+                  <AlertTriangle className="h-5 w-5 text-clay-600" />
                 </div>
                 <div>
                   <p className="text-sm text-ink-600">New Flags</p>
@@ -534,7 +534,7 @@ export default function InterventionsPage() {
         <Card className="bg-cream-100 border-ink-200 mb-8">
           <CardHeader>
             <CardTitle className="text-ink-900 flex items-center gap-2">
-              <Star className="h-5 w-5 text-yellow-400" />
+              <Star className="h-5 w-5 text-clay-600" />
               Success Stories
             </CardTitle>
             <CardDescription className="text-ink-600">

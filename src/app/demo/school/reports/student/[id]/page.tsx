@@ -16,7 +16,7 @@ function gradeColor(grade: string): string {
   const num = parseInt(grade);
   if (num >= 8) return "text-teal-700 print:text-emerald-700";
   if (num >= 6) return "text-teal-700 print:text-blue-700";
-  if (num >= 4) return "text-amber-400 print:text-amber-700";
+  if (num >= 4) return "text-clay-600 print:text-amber-700";
   return "text-red-400 print:text-red-700";
 }
 
@@ -586,7 +586,7 @@ export default function StudentReportPage() {
               return (
               <span
                 key={wName}
-                className="text-xs px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 print:bg-amber-50 print:text-amber-700 print:border-amber-300"
+                className="text-xs px-2.5 py-1 rounded-full bg-amber-500/10 text-clay-600 border border-amber-500/20 print:bg-amber-50 print:text-amber-700 print:border-amber-300"
               >
                 {wName}{wScore !== null && <>: {wScore}%</>}
               </span>
@@ -718,7 +718,7 @@ export default function StudentReportPage() {
         {/* Add Teacher Notes */}
         <div className="no-print report-card bg-cream-100 border border-ink-200 rounded-xl p-6">
           <h2 className="text-lg font-semibold text-neutral-100 mb-2 flex items-center gap-2">
-            <svg className="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+            <svg className="h-5 w-5 text-clay-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
             Add Teacher Notes
           </h2>
           <p className="text-xs text-ink-500 mb-3">

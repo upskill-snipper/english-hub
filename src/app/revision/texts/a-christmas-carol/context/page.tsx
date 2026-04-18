@@ -33,7 +33,7 @@ const sections: ContextSection[] = [
   {
     title: 'Victorian England: Social Conditions',
     icon: Landmark,
-    iconColour: 'text-amber-400',
+    iconColour: 'text-clay-600',
     content: [
       'A Christmas Carol was published on 19 December 1843, during a period of extreme economic inequality in Victorian England. The Industrial Revolution had created enormous wealth for factory owners, financiers and the emerging middle class, but it had also driven millions of working-class families into grinding poverty. Cities like London were overcrowded, polluted and disease-ridden. Cholera, typhus and tuberculosis were common. The gap between rich and poor was vast and growing, and many wealthy Victorians regarded poverty as a moral failing rather than an economic injustice.',
       'Average life expectancy in industrial cities was shockingly low -- around 26 years in Liverpool and Manchester, compared to 45 in rural areas. Child mortality was high: roughly one in five children in London died before their fifth birthday. The working poor lived in cramped, unsanitary conditions, often with entire families sharing a single room. Clean water was scarce, sewage ran through the streets, and the air was thick with factory smoke.',
@@ -123,7 +123,7 @@ const sections: ContextSection[] = [
   {
     title: 'The Industrial Revolution',
     icon: Factory,
-    iconColour: 'text-orange-400',
+    iconColour: 'text-clay-600',
     content: [
       'The Industrial Revolution transformed Britain between roughly 1760 and 1840, turning it from a largely agricultural economy into the world\'s first industrial nation. Factories, railways, and new technologies created unprecedented wealth, but they also created unprecedented misery. Workers -- including children as young as five -- laboured for twelve to sixteen hours a day in dangerous conditions. There were no safety regulations, no sick pay, no holiday entitlement, and no minimum wage.',
       'The factory system changed the relationship between employer and employee. In the pre-industrial economy, an employer like Fezziwig might know his workers personally and take a paternal interest in their welfare. In the new industrial economy, employers like Scrooge saw workers as economic units -- costs to be minimised. Bob Cratchit\'s fifteen shillings a week and freezing office reflect the reality of millions of workers who had no bargaining power and no legal protection.',
@@ -307,7 +307,7 @@ export default function ContextPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
-                  <Lightbulb className="size-4 text-amber-400" />
+                  <Lightbulb className="size-4 text-clay-600" />
                   Key Facts
                 </CardTitle>
               </CardHeader>
@@ -345,7 +345,7 @@ export default function ContextPage() {
       <section className="scroll-mt-8 space-y-5">
         <div className="flex items-center gap-4 border-b border-border/60 pb-4">
           <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-            <Lightbulb className="size-5 text-amber-400" />
+            <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
             How to Use Context in Your Exam

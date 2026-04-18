@@ -213,7 +213,7 @@ const comparisonPairings = [
   },
   {
     theme: 'Power and conflict',
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bg: 'bg-amber-500/10',
     border: 'border-amber-500/20',
     pairs: [
@@ -335,7 +335,7 @@ export default async function EdexcelPoetryAnthologyPage() {
 
         <div className="rounded-xl border border-border bg-card p-5">
           <div className="flex items-center gap-2 mb-2">
-            <Target className="size-4 text-amber-400" />
+            <Target className="size-4 text-clay-600" />
             <h2 className="text-sm font-semibold text-foreground">
               The exam
             </h2>

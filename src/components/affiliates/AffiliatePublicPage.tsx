@@ -795,7 +795,7 @@ function ApplicationForm() {
           {/* Under-18 Guardian Fields */}
           {isMinor && (
             <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-5 space-y-4">
-              <p className="text-sm text-amber-800 dark:text-amber-200 font-medium">
+              <p className="text-sm text-amber-800 font-medium">
                 Since you are under 18, we need your parent or guardian&apos;s details:
               </p>
               <div className="grid sm:grid-cols-2 gap-4">

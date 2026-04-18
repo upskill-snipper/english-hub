@@ -137,7 +137,7 @@ export default async function Grade9Page() {
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <span className="text-lg font-bold text-amber-400">{isLetterSystem ? 'A*' : '9'}</span>
+            <span className="text-lg font-bold text-clay-600">{isLetterSystem ? 'A*' : '9'}</span>
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">
@@ -167,7 +167,7 @@ export default async function Grade9Page() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-5">
           <div className="flex size-9 items-center justify-center rounded-lg bg-amber-500/10">
-            <Crown className="size-4.5 text-amber-400" />
+            <Crown className="size-4.5 text-clay-600" />
           </div>
           <h2 className="text-heading-md font-heading text-foreground">What a {displayGradeLabel} Looks Like</h2>
         </div>
@@ -206,7 +206,7 @@ export default async function Grade9Page() {
                 'Context is not just referenced but used to deepen interpretation',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2 text-xs text-muted-foreground">
-                  <CheckCircle2 className="size-3.5 shrink-0 mt-0.5 text-amber-400" />
+                  <CheckCircle2 className="size-3.5 shrink-0 mt-0.5 text-clay-600" />
                   {item}
                 </li>
               ))}
@@ -236,7 +236,7 @@ export default async function Grade9Page() {
         </div>
 
         <div className="mt-5 flex items-start gap-2.5 rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
-          <AlertCircle className="size-4 shrink-0 text-amber-400 mt-0.5" />
+          <AlertCircle className="size-4 shrink-0 text-clay-600 mt-0.5" />
           <p className="text-xs text-muted-foreground leading-relaxed">
             <span className="font-semibold text-foreground">Important: </span>
             {displayGradeLabel} is not about writing more. Many top-grade essays are the same length as mid-band ones. The difference is in the quality and originality of the thinking, not the quantity.
@@ -286,7 +286,7 @@ export default async function Grade9Page() {
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <Badge className="shrink-0 mt-0.5 text-[10px] bg-amber-500/20 text-amber-400 border-amber-500/30">
+                <Badge className="shrink-0 mt-0.5 text-[10px] bg-amber-500/20 text-clay-600 border-amber-500/30">
                   Top-grade concept
                 </Badge>
                 <p className="text-xs text-muted-foreground">
@@ -392,7 +392,7 @@ export default async function Grade9Page() {
                 'culpability', 'dissonance', 'fragility', 'hegemony',
                 'liminality', 'objectification', 'subjugation', 'alienation',
               ].map((word) => (
-                <span key={word} className="rounded-md bg-amber-500/10 px-2 py-1 text-[11px] font-medium text-amber-400">
+                <span key={word} className="rounded-md bg-amber-500/10 px-2 py-1 text-[11px] font-medium text-clay-600">
                   {word}
                 </span>
               ))}

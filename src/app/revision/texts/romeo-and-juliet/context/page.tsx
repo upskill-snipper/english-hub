@@ -158,7 +158,7 @@ export default function RomeoAndJulietContextPage() {
                 <Card className="bg-primary/5">
                   <CardContent className="p-5">
                     <div className="flex items-center gap-2 mb-1">
-                      <Lightbulb className="size-4 text-amber-400" />
+                      <Lightbulb className="size-4 text-clay-600" />
                       <p className="text-sm font-semibold text-foreground">Exam relevance (AO3)</p>
                     </div>
                     <p className="text-body-sm text-muted-foreground">{s.examRelevance}</p>

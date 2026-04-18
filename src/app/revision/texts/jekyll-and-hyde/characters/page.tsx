@@ -356,7 +356,7 @@ export default function JekyllAndHydeCharactersPage() {
                 <Card className="bg-primary/5">
                   <CardContent className="p-5">
                     <div className="flex items-center gap-2 mb-1">
-                      <Lightbulb className="size-4 text-amber-400" />
+                      <Lightbulb className="size-4 text-clay-600" />
                       <p className="text-sm font-semibold text-foreground">Exam tip</p>
                     </div>
                     <p className="text-body-sm text-muted-foreground">{ch.examTip}</p>

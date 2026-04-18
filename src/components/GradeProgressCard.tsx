@@ -41,8 +41,8 @@ function trendColor(trend: "up" | "down" | "stable") {
 
 function gapStatusColor(status: string) {
   if (status === "on-target") return "text-emerald-400"
-  if (status === "close") return "text-amber-400"
-  if (status === "behind") return "text-orange-400"
+  if (status === "close") return "text-clay-600"
+  if (status === "behind") return "text-clay-600"
   return "text-red-400"
 }
 

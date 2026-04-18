@@ -96,7 +96,7 @@ export default function CohortsPage() {
                   className={`mt-1 text-3xl font-bold tabular-nums ${
                     s.retention >= 100
                       ? "text-emerald-400"
-                      : "text-amber-400"
+                      : "text-clay-600"
                   }`}
                 >
                   {formatPct(s.retention)}
@@ -143,7 +143,7 @@ export default function CohortsPage() {
               than it did at signup.
             </p>
             <p>
-              <span className="font-medium text-amber-400">Amber</span> and
+              <span className="font-medium text-clay-600">Amber</span> and
               <span className="font-medium text-red-400"> red cells</span>{" "}
               indicate contraction or churn exceeding expansion for that cohort
               at that age.

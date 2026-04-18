@@ -33,7 +33,7 @@ const borderColors: Record<string, string> = {
 
 const iconBgColors: Record<string, string> = {
   green: 'bg-green-500/10 text-green-400',
-  amber: 'bg-amber-500/10 text-amber-400',
+  amber: 'bg-amber-500/10 text-clay-600',
   red: 'bg-red-500/10 text-red-400',
   blue: 'bg-blue-500/10 text-blue-400',
   purple: 'bg-purple-500/10 text-purple-400',

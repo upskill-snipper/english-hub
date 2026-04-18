@@ -600,7 +600,7 @@ export default function ClassAnalyticsPage() {
                                 student.averageScore >= 70 && 'bg-green-500/10 text-green-400',
                                 student.averageScore >= 50 &&
                                   student.averageScore < 70 &&
-                                  'bg-amber-500/10 text-amber-400',
+                                  'bg-amber-500/10 text-clay-600',
                                 student.averageScore > 0 &&
                                   student.averageScore < 50 &&
                                   'bg-red-500/10 text-red-400'

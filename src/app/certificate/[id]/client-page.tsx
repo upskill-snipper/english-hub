@@ -71,7 +71,7 @@ export default function CertificatePage() {
 
   function getGradeColor(grade: string): string {
     const num = parseInt(grade.replace('Grade ', ''))
-    if (num >= 8) return 'text-yellow-400'
+    if (num >= 8) return 'text-clay-600'
     if (num >= 6) return 'text-primary'
     if (num >= 4) return 'text-brand-blue'
     return 'text-muted-foreground'

@@ -136,7 +136,7 @@ export default function TeachersListPage() {
                   <span
                     className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide ${
                       role === "HOD"
-                        ? "bg-amber-500/15 text-amber-400 border border-amber-500/20"
+                        ? "bg-amber-500/15 text-clay-600 border border-amber-500/20"
                         : "bg-cream-100 text-ink-600 border border-ink-200"
                     }`}
                   >

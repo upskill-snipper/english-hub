@@ -108,7 +108,7 @@ function ActivityIcon({ type }: { type: 'module' | 'assessment' | 'practice' }) 
     case 'assessment':
       return (
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-yellow-500/10">
-          <Target className="h-4 w-4 text-yellow-400" />
+          <Target className="h-4 w-4 text-clay-600" />
         </div>
       )
     case 'practice':
@@ -125,7 +125,7 @@ function ActivityIcon({ type }: { type: 'module' | 'assessment' | 'practice' }) 
 function RecIcon({ type }: { type: 'weak_area' | 'next_module' | 'revision' }) {
   switch (type) {
     case 'weak_area':
-      return <AlertTriangle className="h-4 w-4 text-amber-400" />
+      return <AlertTriangle className="h-4 w-4 text-clay-600" />
     case 'next_module':
       return <ArrowRight className="h-4 w-4 text-primary" />
     case 'revision':
@@ -309,7 +309,7 @@ export default function AnalyticsPage() {
                       <CardContent className="pt-5">
                         <div className="flex items-center gap-3">
                           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500/10">
-                            <Flame className="h-5 w-5 text-orange-400" />
+                            <Flame className="h-5 w-5 text-clay-600" />
                           </div>
                           <div className="min-w-0">
                             <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
@@ -517,7 +517,7 @@ export default function AnalyticsPage() {
             <Card>
               <CardHeader>
                 <CardTitle>
-                  <Lightbulb className="mr-1.5 inline-block h-4 w-4 text-amber-400" />
+                  <Lightbulb className="mr-1.5 inline-block h-4 w-4 text-clay-600" />
                   Recommendations
                 </CardTitle>
                 <CardDescription>Areas to focus on for improvement</CardDescription>

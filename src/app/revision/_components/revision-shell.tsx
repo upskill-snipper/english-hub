@@ -68,10 +68,10 @@ const NAV_ITEMS: NavItem[] = [
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   { label: 'Language Skills', href: '/revision/language', icon: PenTool, colour: 'text-violet-400' },
-  { label: 'Flashcards', href: '/revision/flashcards', icon: Layers, colour: 'text-amber-400' },
+  { label: 'Flashcards', href: '/revision/flashcards', icon: Layers, colour: 'text-clay-600' },
   { label: 'Exam Technique', href: '/revision/exam-technique', icon: Target, colour: 'text-emerald-400' },
   { label: 'Grade Targets', href: '/revision/grade-targets', icon: TrendingUp, colour: 'text-cyan-400' },
-  { label: 'Quick Quizzes', href: '/revision/quiz', icon: Zap, colour: 'text-orange-400' },
+  { label: 'Quick Quizzes', href: '/revision/quiz', icon: Zap, colour: 'text-clay-600' },
   // Board-specific deep-link entries (IGCSE)
   {
     label: 'Edexcel IGCSE Hub',

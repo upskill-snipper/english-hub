@@ -577,7 +577,7 @@ function getTopScoresForGame(entries: LeaderboardEntry[], gameId: string): Leade
 const GAME_TAB_META: Record<string, { label: string; color: string; activeColor: string }> = {
   'word-scramble': { label: 'Word Scramble', color: 'text-emerald-400', activeColor: 'data-active:text-emerald-400' },
   'quote-match': { label: 'Quote Match', color: 'text-violet-400', activeColor: 'data-active:text-violet-400' },
-  'grammar-fix': { label: 'Grammar Fix', color: 'text-amber-400', activeColor: 'data-active:text-amber-400' },
+  'grammar-fix': { label: 'Grammar Fix', color: 'text-clay-600', activeColor: 'data-active:text-clay-600' },
 }
 
 // ─── Leaderboard Component ──────────────────────────────────────────────────
@@ -609,7 +609,7 @@ function WeeklyLeaderboard() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="p-2 rounded-xl bg-amber-500/10">
-              <Trophy className="size-5 text-amber-400" aria-hidden="true" />
+              <Trophy className="size-5 text-clay-600" aria-hidden="true" />
             </div>
             <div>
               <CardTitle>Weekly Leaderboard</CardTitle>
@@ -651,7 +651,7 @@ function WeeklyLeaderboard() {
                         >
                           {/* Rank badge */}
                           <div className="w-7 shrink-0 text-center">
-                            {idx === 0 && <Crown className="size-5 text-amber-400 mx-auto" aria-label="1st place" />}
+                            {idx === 0 && <Crown className="size-5 text-clay-600 mx-auto" aria-label="1st place" />}
                             {idx === 1 && <Medal className="size-5 text-zinc-300 mx-auto" aria-label="2nd place" />}
                             {idx === 2 && <Medal className="size-5 text-amber-600 mx-auto" aria-label="3rd place" />}
                             {idx > 2 && <span className="text-xs font-bold text-muted-foreground">{idx + 1}</span>}
@@ -667,7 +667,7 @@ function WeeklyLeaderboard() {
                           <div className="flex items-center gap-2 shrink-0">
                             <span className={cn(
                               'font-bold tabular-nums',
-                              idx === 0 ? 'text-amber-400' : idx === 1 ? 'text-zinc-300' : idx === 2 ? 'text-amber-600' : 'text-foreground',
+                              idx === 0 ? 'text-clay-600' : idx === 1 ? 'text-zinc-300' : idx === 2 ? 'text-amber-600' : 'text-foreground',
                             )}>
                               {entry.score}/{entry.total}
                             </span>
@@ -734,7 +734,7 @@ const GAMES: GameDef[] = [
     icon: <PenTool className="size-6" />,
     difficulty: 'Medium',
     locked: false,
-    color: 'text-amber-400',
+    color: 'text-clay-600',
     gradient: 'from-amber-500/20 to-amber-500/5',
   },
   {
@@ -777,7 +777,7 @@ const GAMES: GameDef[] = [
     icon: <Volume2 className="size-6" />,
     difficulty: 'Hard',
     locked: false,
-    color: 'text-orange-400',
+    color: 'text-clay-600',
     gradient: 'from-orange-500/20 to-orange-500/5',
     href: '/games/spelling-bee',
   },
@@ -870,8 +870,8 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
     return (
       <div className="flex flex-col items-center gap-6 py-8">
         <div className="relative">
-          <Trophy className="size-16 text-amber-400 animate-bounce" />
-          <Sparkles className="size-6 text-amber-300 absolute -top-1 -right-1 animate-pulse" />
+          <Trophy className="size-16 text-clay-600 animate-bounce" />
+          <Sparkles className="size-6 text-amber-700 absolute -top-1 -right-1 animate-pulse" />
         </div>
         <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
         <div className="text-center space-y-1">
@@ -890,7 +890,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
     )
   }
 
-  const timerColor = timeLeft > 15 ? 'text-emerald-400' : timeLeft > 5 ? 'text-amber-400' : 'text-red-400'
+  const timerColor = timeLeft > 15 ? 'text-emerald-400' : timeLeft > 5 ? 'text-clay-600' : 'text-red-400'
   const timerBg = timeLeft > 15 ? 'bg-emerald-400' : timeLeft > 5 ? 'bg-amber-400' : 'bg-red-400'
 
   return (
@@ -898,7 +898,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
       {/* Score & Timer */}
       <div className="flex items-center justify-between w-full max-w-md">
         <div className="flex items-center gap-2">
-          <Star className="size-4 text-amber-400" />
+          <Star className="size-4 text-clay-600" />
           <span className="font-bold text-foreground">{score}</span>
           <span className="text-muted-foreground text-sm">/ {totalAnswered}</span>
         </div>
@@ -990,7 +990,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
           )}
           {gameState === 'timeout' && (
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-amber-400 animate-in zoom-in duration-300">
+              <div className="flex items-center gap-2 text-clay-600 animate-in zoom-in duration-300">
                 <Timer className="size-6" />
                 <span className="font-bold text-lg">Time&apos;s up!</span>
               </div>
@@ -1121,7 +1121,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
     return (
       <div className="flex flex-col items-center gap-6 py-8">
         <div className="relative">
-          <Trophy className="size-16 text-amber-400 animate-bounce" />
+          <Trophy className="size-16 text-clay-600 animate-bounce" />
           <Sparkles className="size-6 text-violet-300 absolute -top-1 -right-1 animate-pulse" />
         </div>
         <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
@@ -1130,7 +1130,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
           <p className="text-muted-foreground text-sm">correct matches</p>
         </div>
         {score >= 8 && <p className="text-emerald-400 font-medium">Outstanding literary knowledge!</p>}
-        {score >= 5 && score < 8 && <p className="text-amber-400 font-medium">Good effort! Keep reading!</p>}
+        {score >= 5 && score < 8 && <p className="text-clay-600 font-medium">Good effort! Keep reading!</p>}
         {score < 5 && <p className="text-muted-foreground font-medium">Keep practising - you&apos;ll get there!</p>}
         <div className="flex gap-3">
           <Button variant="outline" onClick={onExit}>
@@ -1149,7 +1149,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
       {/* Score & Progress */}
       <div className="flex items-center justify-between w-full max-w-lg">
         <div className="flex items-center gap-2">
-          <Star className="size-4 text-amber-400" />
+          <Star className="size-4 text-clay-600" />
           <span className="font-bold text-foreground">{score}</span>
           <span className="text-muted-foreground text-sm">/ {currentIndex}</span>
         </div>
@@ -1279,16 +1279,16 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
     return (
       <div className="flex flex-col items-center gap-6 py-8">
         <div className="relative">
-          <Trophy className="size-16 text-amber-400 animate-bounce" />
-          <Sparkles className="size-6 text-amber-300 absolute -top-1 -right-1 animate-pulse" />
+          <Trophy className="size-16 text-clay-600 animate-bounce" />
+          <Sparkles className="size-6 text-amber-700 absolute -top-1 -right-1 animate-pulse" />
         </div>
         <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
         <div className="text-center space-y-1">
-          <p className="text-4xl font-black text-amber-400">{score}/10</p>
+          <p className="text-4xl font-black text-clay-600">{score}/10</p>
           <p className="text-muted-foreground text-sm">correct fixes</p>
         </div>
         {score >= 8 && <p className="text-emerald-400 font-medium">Grammar guru status achieved!</p>}
-        {score >= 5 && score < 8 && <p className="text-amber-400 font-medium">Solid grammar skills!</p>}
+        {score >= 5 && score < 8 && <p className="text-clay-600 font-medium">Solid grammar skills!</p>}
         {score < 5 && <p className="text-muted-foreground font-medium">Practice makes perfect!</p>}
         <div className="flex gap-3">
           <Button variant="outline" onClick={onExit}>
@@ -1307,7 +1307,7 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
       {/* Score & Progress */}
       <div className="flex items-center justify-between w-full max-w-lg">
         <div className="flex items-center gap-2">
-          <Star className="size-4 text-amber-400" />
+          <Star className="size-4 text-clay-600" />
           <span className="font-bold text-foreground">{score}</span>
           <span className="text-muted-foreground text-sm">/ {currentIndex}</span>
         </div>
@@ -1397,7 +1397,7 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
 const GameCard = memo(function GameCard({ game, isActive, onPlay }: { game: GameDef; isActive: boolean; onPlay: () => void }) {
   const difficultyColor =
     game.difficulty === 'Easy' ? 'text-emerald-400' :
-    game.difficulty === 'Medium' ? 'text-amber-400' : 'text-red-400'
+    game.difficulty === 'Medium' ? 'text-clay-600' : 'text-red-400'
 
   return (
     <Card
@@ -1542,7 +1542,7 @@ export default function GamesPage() {
               <CheckCircle className="size-3.5 text-emerald-400" /> 7 Free Games
             </span>
             <span className="flex items-center gap-1.5">
-              <Trophy className="size-3.5 text-amber-400" /> Track Your Score
+              <Trophy className="size-3.5 text-clay-600" /> Track Your Score
             </span>
             <span className="flex items-center gap-1.5">
               <Sparkles className="size-3.5 text-violet-400" /> Instant Feedback

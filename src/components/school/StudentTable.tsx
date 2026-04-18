@@ -59,7 +59,7 @@ interface StudentTableProps {
 
 function scoreColor(score: number): string {
   if (score >= 70) return 'text-green-400'
-  if (score >= 50) return 'text-amber-400'
+  if (score >= 50) return 'text-clay-600'
   return 'text-red-400'
 }
 
@@ -308,7 +308,7 @@ export function StudentTable({
                 parseInt(student.predicted_grade ?? '0') >= 7
                   ? 'bg-green-500/10 text-green-400'
                   : parseInt(student.predicted_grade ?? '0') >= 5
-                    ? 'bg-amber-500/10 text-amber-400'
+                    ? 'bg-amber-500/10 text-clay-600'
                     : 'bg-red-500/10 text-red-400',
               )}
             >

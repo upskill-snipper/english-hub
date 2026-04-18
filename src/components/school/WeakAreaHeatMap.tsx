@@ -61,8 +61,8 @@ function scoreToInlineBg(score: number): string {
 
 function scoreToTextColor(score: number): string {
   if (score < 40) return 'text-red-400'
-  if (score < 55) return 'text-orange-400'
-  if (score < 70) return 'text-amber-400'
+  if (score < 55) return 'text-clay-600'
+  if (score < 70) return 'text-clay-600'
   return 'text-green-400'
 }
 
@@ -81,7 +81,7 @@ function severityBadge(severity: 'critical' | 'warning' | 'minor') {
     case 'critical':
       return 'bg-red-500/10 text-red-400 border-red-500/20'
     case 'warning':
-      return 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+      return 'bg-amber-500/10 text-clay-600 border-amber-500/20'
     case 'minor':
       return 'bg-blue-500/10 text-blue-400 border-blue-500/20'
   }

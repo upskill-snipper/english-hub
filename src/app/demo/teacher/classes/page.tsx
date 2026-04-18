@@ -17,7 +17,7 @@ import { TEACHER_DEMO_CLASSES, DEMO_TEACHER, DEMO_STUDENTS, type DemoClass } fro
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
-  if (score >= 50) return "text-amber-400"
+  if (score >= 50) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -43,7 +43,7 @@ export default function TeacherClassesPage() {
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
-          <p className="text-sm text-amber-400">
+          <p className="text-sm text-clay-600">
             <span className="font-semibold">Teacher Demo</span> -- Viewing sample class data for {DEMO_TEACHER.name}
           </p>
         </div>

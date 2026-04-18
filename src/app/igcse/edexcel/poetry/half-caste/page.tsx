@@ -326,7 +326,7 @@ export default function HalfCastePage() {
 
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-orange-500/10">
-            <BookOpen className="size-5 text-orange-400" />
+            <BookOpen className="size-5 text-clay-600" />
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">

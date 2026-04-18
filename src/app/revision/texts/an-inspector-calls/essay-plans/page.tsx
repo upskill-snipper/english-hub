@@ -322,7 +322,7 @@ export default async function EssayPlansPage() {
       {/* Exam tip */}
       <Card className="border-amber-500/20 bg-amber-500/[0.03]">
         <CardContent className="flex items-start gap-3 p-5">
-          <Lightbulb className="mt-0.5 size-5 shrink-0 text-amber-400" />
+          <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="text-body-sm text-muted-foreground">
             <p className="mb-1 font-semibold text-foreground">Exam tip</p>
             <p>
@@ -377,7 +377,7 @@ export default async function EssayPlansPage() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex items-start gap-2">
-                    <Quote className="mt-0.5 size-4 shrink-0 text-amber-400" />
+                    <Quote className="mt-0.5 size-4 shrink-0 text-clay-600" />
                     <p className="text-body-sm font-medium italic text-foreground">
                       {para.quote}
                     </p>

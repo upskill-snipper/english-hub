@@ -289,11 +289,11 @@ const comparisons = [
 
 const themes = [
   { label: 'Conflict', color: 'bg-red-500/15 text-red-400 border-red-500/25' },
-  { label: 'Power', color: 'bg-orange-500/15 text-orange-400 border-orange-500/25' },
+  { label: 'Power', color: 'bg-orange-500/15 text-clay-600 border-orange-500/25' },
   { label: 'Identity', color: 'bg-blue-500/15 text-blue-400 border-blue-500/25' },
   { label: 'Nature', color: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25' },
   { label: 'Family', color: 'bg-pink-500/15 text-pink-400 border-pink-500/25' },
-  { label: 'Shame & Honour', color: 'bg-amber-500/15 text-amber-400 border-amber-500/25' },
+  { label: 'Shame & Honour', color: 'bg-amber-500/15 text-clay-600 border-amber-500/25' },
   { label: 'Memory', color: 'bg-purple-500/15 text-purple-400 border-purple-500/25' },
   { label: 'Death', color: 'bg-zinc-500/15 text-zinc-400 border-zinc-500/25' },
 ]

@@ -52,7 +52,7 @@ export function WrongBoardBanner({
           className="pointer-events-none absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-rose-500/10"
         />
         <div className="relative flex flex-col items-center gap-5 text-center">
-          <div className="inline-flex size-14 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 dark:text-amber-400">
+          <div className="inline-flex size-14 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 dark:text-clay-600">
             <Lock className="size-7" aria-hidden="true" />
           </div>
 

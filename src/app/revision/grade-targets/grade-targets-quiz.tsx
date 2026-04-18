@@ -89,7 +89,7 @@ function getGradeResult(
       grade: isLetter ? 'Grade A / A*' : 'Grade 8-9',
       description:
         'You are working at the top end. Your responses show sophisticated analysis and critical thinking. Focus on consistency and exploring alternative readings.',
-      colour: 'text-amber-400',
+      colour: 'text-clay-600',
       recommended: isLetter ? 'How to Get an A*' : 'How to Get a Grade 9',
       href: '/revision/grade-targets/grade-9',
     }
@@ -235,7 +235,7 @@ export function GradeTargetsQuiz({
           </div>
 
           <div className="flex items-start gap-2.5 rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
-            <AlertCircle className="size-4 shrink-0 text-amber-400 mt-0.5" />
+            <AlertCircle className="size-4 shrink-0 text-clay-600 mt-0.5" />
             <p className="text-xs text-muted-foreground leading-relaxed">
               This is a rough self-assessment, not a prediction. Your actual grade depends on exam performance, timing, and how well you apply techniques on the day. Use this as a starting point to focus your revision.
             </p>

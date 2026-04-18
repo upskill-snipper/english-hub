@@ -162,7 +162,7 @@ const THEME_GROUPS: ThemeGroup[] = [
   {
     label: 'Effects of Conflict',
     icon: Users,
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     poems: [
       {
@@ -222,19 +222,19 @@ const TAG_COLOURS: Record<string, string> = {
   Conflict: 'bg-red-500/15 text-red-300 border-red-500/20',
   Nature: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
   Identity: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/20',
-  Memory: 'bg-amber-500/15 text-amber-300 border-amber-500/20',
-  Fear: 'bg-orange-500/15 text-orange-300 border-orange-500/20',
+  Memory: 'bg-amber-500/15 text-amber-700 border-amber-500/20',
+  Fear: 'bg-orange-500/15 text-clay-600 border-orange-500/20',
   Pride: 'bg-pink-500/15 text-pink-300 border-pink-500/20',
   Time: 'bg-blue-500/15 text-blue-300 border-blue-500/20',
   Control: 'bg-violet-500/15 text-violet-300 border-violet-500/20',
   Jealousy: 'bg-rose-500/15 text-rose-300 border-rose-500/20',
   Suffering: 'bg-red-500/15 text-red-300 border-red-500/20',
-  Anger: 'bg-orange-500/15 text-orange-300 border-orange-500/20',
+  Anger: 'bg-orange-500/15 text-clay-600 border-orange-500/20',
   Fragility: 'bg-sky-500/15 text-sky-300 border-sky-500/20',
-  Honour: 'bg-yellow-500/15 text-yellow-300 border-yellow-500/20',
+  Honour: 'bg-yellow-500/15 text-amber-700 border-yellow-500/20',
   Duty: 'bg-blue-500/15 text-blue-300 border-blue-500/20',
   Reality: 'bg-stone-500/15 text-stone-300 border-stone-500/20',
-  Guilt: 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+  Guilt: 'bg-amber-500/15 text-amber-700 border-amber-500/20',
   Loss: 'bg-rose-500/15 text-rose-300 border-rose-500/20',
   Shame: 'bg-pink-500/15 text-pink-300 border-pink-500/20',
   Belonging: 'bg-teal-500/15 text-teal-300 border-teal-500/20',
@@ -389,7 +389,7 @@ export default function PowerAndConflictPage() {
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-amber-500/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8">
         <div className="mb-5 flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <Lightbulb className="size-5 text-amber-400" />
+            <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
             Study Tips: Comparing Poems

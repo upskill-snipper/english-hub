@@ -50,7 +50,7 @@ const typeConfig: Record<
   },
   certificate_earned: {
     icon: Award,
-    color: 'text-amber-400',
+    color: 'text-clay-600',
     bg: 'bg-amber-500/10',
   },
   assessment_taken: {

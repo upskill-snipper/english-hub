@@ -312,7 +312,7 @@ export default function ThemeMatcherPage() {
                     if (isCorrect && isSelected)
                       stateClass = 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
                     else if (isCorrect && !isSelected)
-                      stateClass = 'border-amber-500 bg-amber-500/10 text-amber-400'
+                      stateClass = 'border-amber-500 bg-amber-500/10 text-clay-600'
                     else if (!isCorrect && isSelected)
                       stateClass = 'border-red-500 bg-red-500/10 text-red-400'
                     else stateClass = 'opacity-40'

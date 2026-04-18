@@ -128,7 +128,7 @@ function boardBadgeClass(board: string | null): string {
     case "WJEC":
       return "bg-red-500/10 text-red-400 border-red-500/20"
     case "CAIE IGCSE":
-      return "bg-amber-500/10 text-amber-400 border-amber-500/20"
+      return "bg-amber-500/10 text-clay-600 border-amber-500/20"
     default:
       return "bg-muted text-muted-foreground"
   }
@@ -143,7 +143,7 @@ function progressBarColor(pct: number): string {
 function scoreColor(score: number | null): string {
   if (score === null) return "text-muted-foreground"
   if (score >= 70) return "text-green-400"
-  if (score >= 40) return "text-amber-400"
+  if (score >= 40) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -499,11 +499,11 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
                       className={cn(
                         "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold",
                         i === 0
-                          ? "bg-amber-500/20 text-amber-400"
+                          ? "bg-amber-500/20 text-clay-600"
                           : i === 1
                           ? "bg-slate-500/20 text-slate-400"
                           : i === 2
-                          ? "bg-orange-500/20 text-orange-400"
+                          ? "bg-orange-500/20 text-clay-600"
                           : "bg-muted text-muted-foreground"
                       )}
                     >
@@ -585,7 +585,7 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
                           </span>
                         )}
                         {noActivity && (
-                          <span className="text-xs text-amber-400">
+                          <span className="text-xs text-clay-600">
                             Last active: {formatLastActive(s.last_activity)}
                           </span>
                         )}
@@ -598,7 +598,7 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
                         </Badge>
                       )}
                       {noActivity && (
-                        <Badge variant="outline" className="border-amber-500/30 text-amber-400 text-[10px]">
+                        <Badge variant="outline" className="border-amber-500/30 text-clay-600 text-[10px]">
                           Inactive
                         </Badge>
                       )}

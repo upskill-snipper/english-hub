@@ -59,7 +59,7 @@ const GUIDES = [
       'Sonnet, ballad, free verse, stanzas, rhyme schemes, enjambment and volta. Reading the shape of a poem on the page.',
     href: '/igcse/edexcel/unseen-poetry/structure-form',
     icon: Layers,
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
   },
   {
@@ -270,7 +270,7 @@ export default function UnseenPoetryHubPage() {
       {/* ── Practice tips ───────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Lightbulb className="size-5 text-amber-400" />
+          <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">Practice Tips</h2>
         </div>
 

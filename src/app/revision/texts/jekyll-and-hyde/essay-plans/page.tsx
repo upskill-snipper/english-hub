@@ -522,7 +522,7 @@ export default async function JekyllEssayPlansPage() {
 
                 {/* Context */}
                 <div className="rounded-lg border border-border/40 bg-amber-500/[0.03] p-3">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-amber-400">
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
                     Contextual Link
                   </p>
                   <p className="text-body-sm text-muted-foreground">{para.context}</p>
@@ -535,7 +535,7 @@ export default async function JekyllEssayPlansPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
-                <Lightbulb className="size-4 text-amber-400" />
+                <Lightbulb className="size-4 text-clay-600" />
                 Conclusion
               </CardTitle>
             </CardHeader>

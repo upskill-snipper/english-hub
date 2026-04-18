@@ -218,7 +218,7 @@ export default function SpellingBeePage() {
                       currentWord.difficulty === 1
                         ? 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10'
                         : currentWord.difficulty === 2
-                          ? 'text-amber-400 border-amber-500/30 bg-amber-500/10'
+                          ? 'text-clay-600 border-amber-500/30 bg-amber-500/10'
                           : 'text-red-400 border-red-500/30 bg-red-500/10'
                     )}
                   >

@@ -428,7 +428,7 @@ const ESSAYS: ModelEssay[] = [
 function gradeColour(g: number): string {
   if (g >= 9) return "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300";
   if (g >= 7) return "bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300";
-  return "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300";
+  return "bg-amber-100 text-amber-800 dark:bg-amber-900/40";
 }
 
 function aoBarWidth(score: number, max: number): string {

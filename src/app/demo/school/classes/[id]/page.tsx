@@ -33,7 +33,7 @@ function boardBadgeClass(board: string): string {
     case "WJEC":
       return "bg-red-500/10 text-red-400 border-red-500/20"
     case "CAIE IGCSE":
-      return "bg-amber-500/10 text-amber-400 border-amber-500/20"
+      return "bg-amber-500/10 text-clay-600 border-amber-500/20"
     case "KS3":
       return "bg-teal-800/10 text-teal-700 border-teal-800/20"
     default:
@@ -54,7 +54,7 @@ function statusBadgeStyle(status: DemoStudent["status"]): { label: string; class
     case "on-track":
       return { label: "On Track", className: "bg-teal-800/10 text-teal-700 border-teal-800/20" }
     case "needs-support":
-      return { label: "Needs Support", className: "bg-amber-500/10 text-amber-400 border-amber-500/20" }
+      return { label: "Needs Support", className: "bg-amber-500/10 text-clay-600 border-amber-500/20" }
     case "at-risk":
       return { label: "At Risk", className: "bg-red-500/10 text-red-400 border-red-500/20" }
     default:

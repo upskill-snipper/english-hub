@@ -224,7 +224,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     title: 'How do poets present the passing of time?',
     cluster: 'Youth and Age',
     clusterIcon: Clock,
-    clusterColour: 'text-amber-400',
+    clusterColour: 'text-clay-600',
     poemA: 'When I Have Fears',
     poetA: 'John Keats',
     poemB: 'Crossing the Bar',
@@ -265,7 +265,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     title: 'How do poets present the parent-child relationship?',
     cluster: 'Youth and Age',
     clusterIcon: Clock,
-    clusterColour: 'text-amber-400',
+    clusterColour: 'text-clay-600',
     poemA: 'On My First Son',
     poetA: 'Ben Jonson',
     poemB: 'The Song of the Old Mother',
@@ -478,7 +478,7 @@ const ESSAY_PLANS: EssayPlan[] = [
 const CLUSTER_BADGE: Record<string, string> = {
   'Love and Relationships': 'bg-pink-500/15 text-pink-300 border-pink-500/20',
   Conflict: 'bg-red-500/15 text-red-300 border-red-500/20',
-  'Youth and Age': 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+  'Youth and Age': 'bg-amber-500/15 text-amber-700 border-amber-500/20',
   'Power and the Natural World':
     'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
   'Love and Relationships / Conflict':
@@ -590,9 +590,9 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
           {/* Exam tip */}
           <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.06] p-4">
             <div className="flex items-start gap-2">
-              <Lightbulb className="mt-0.5 size-4 shrink-0 text-amber-400" />
+              <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600" />
               <div>
-                <p className="text-caption font-semibold text-amber-300">
+                <p className="text-caption font-semibold text-amber-700">
                   Exam tip
                 </p>
                 <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
@@ -655,7 +655,7 @@ export default function OCREssayPlansPage() {
       {/* ── How to use ────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-amber-500/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8">
         <div className="flex items-start gap-3">
-          <Lightbulb className="mt-0.5 size-5 shrink-0 text-amber-400" />
+          <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div>
             <h2 className="text-heading-sm font-heading text-foreground">
               How to use these plans

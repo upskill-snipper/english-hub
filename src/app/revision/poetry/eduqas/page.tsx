@@ -69,7 +69,7 @@ const THEME_GROUPS = [
   { id: 'nature', label: 'Nature', icon: Leaf, accent: 'text-emerald-400', bg: 'bg-emerald-500/10', poems: NATURE },
   { id: 'war', label: 'War & Conflict', icon: Swords, accent: 'text-red-400', bg: 'bg-red-500/10', poems: WAR },
   { id: 'love', label: 'Love & Relationships', icon: Heart, accent: 'text-pink-400', bg: 'bg-pink-500/10', poems: LOVE },
-  { id: 'power', label: 'Power & Politics', icon: Crown, accent: 'text-amber-400', bg: 'bg-amber-500/10', poems: POWER },
+  { id: 'power', label: 'Power & Politics', icon: Crown, accent: 'text-clay-600', bg: 'bg-amber-500/10', poems: POWER },
   { id: 'identity', label: 'Identity & Place', icon: User, accent: 'text-violet-400', bg: 'bg-violet-500/10', poems: IDENTITY },
 ] as const
 

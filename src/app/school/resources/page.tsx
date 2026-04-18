@@ -97,7 +97,7 @@ function categoryColor(category: string): string {
     case 'Writing Frames':
       return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
     case 'Vocabulary Lists':
-      return 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+      return 'bg-amber-500/10 text-clay-600 border-amber-500/20'
     case 'Key Quotes Banks':
       return 'bg-pink-500/10 text-pink-400 border-pink-500/20'
     case 'Assessment Rubrics':
@@ -105,7 +105,7 @@ function categoryColor(category: string): string {
     case 'Revision Checklists':
       return 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20'
     case 'Starter Activities':
-      return 'bg-orange-500/10 text-orange-400 border-orange-500/20'
+      return 'bg-orange-500/10 text-clay-600 border-orange-500/20'
     default:
       return 'bg-muted text-muted-foreground border-border'
   }
@@ -192,7 +192,7 @@ function ResourceCard({
             aria-label={isSaved ? 'Remove from saved' : 'Save resource'}
           >
             {isSaved ? (
-              <BookmarkCheck className="h-4 w-4 text-amber-400" />
+              <BookmarkCheck className="h-4 w-4 text-clay-600" />
             ) : (
               <Bookmark className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
             )}
@@ -565,7 +565,7 @@ export default function ResourceLibraryPage() {
         <section>
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <BookmarkCheck className="h-4 w-4 text-amber-400" />
+              <BookmarkCheck className="h-4 w-4 text-clay-600" />
               <h2 className="text-sm font-semibold text-foreground">
                 My Saved Resources
               </h2>

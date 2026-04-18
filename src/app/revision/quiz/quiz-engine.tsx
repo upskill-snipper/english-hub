@@ -344,7 +344,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
       <div className="space-y-6 animate-fade-in">
         {/* Grade card */}
         <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 text-center">
-          <Trophy className="mx-auto mb-3 size-10 text-amber-400" aria-hidden="true" />
+          <Trophy className="mx-auto mb-3 size-10 text-clay-600" aria-hidden="true" />
           <h2 className="text-display-sm font-heading text-foreground">Quiz Complete</h2>
 
           <div className="mt-6 flex items-center justify-center gap-6">
@@ -417,7 +417,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
           return (
             <div className="rounded-2xl border border-border/60 bg-card p-5">
               <h3 className="text-heading-md font-heading text-foreground mb-1 flex items-center gap-2">
-                <Zap className="size-4 text-orange-400" />
+                <Zap className="size-4 text-clay-600" />
                 Recommended Revision
               </h3>
               <p className="text-body-sm text-muted-foreground mb-4">
@@ -513,7 +513,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
       {/* Header bar */}
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Zap className="size-4 text-orange-400" />
+          <Zap className="size-4 text-clay-600" />
           <span>
             Question {currentIndex + 1} of {questions.length}
           </span>

@@ -78,7 +78,7 @@ const AOS: AO[] = [
     code: 'Comparing texts',
     label: 'Comparison',
     weight: 'Roughly 20% of total marks on comparison questions',
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     description:
       'Explore connections across texts, evaluating similarities and differences in writers\' methods.',
@@ -125,7 +125,7 @@ const BANDS = [
     band: 'Grade 5-6',
     label: 'Clear, explained',
     colour: 'border-amber-500/30 bg-amber-500/[0.05]',
-    textColour: 'text-amber-400',
+    textColour: 'text-clay-600',
     descriptors: [
       'Clear response with some relevant points made',
       'Explanation of language and structure, though sometimes generic',
@@ -303,7 +303,7 @@ export default function MarkSchemePage() {
       {/* ── Band descriptors ────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Award className="size-5 text-amber-400" />
+          <Award className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">
             Band Descriptors: What Each Grade Looks Like
           </h2>
@@ -378,7 +378,7 @@ export default function MarkSchemePage() {
 
         <div className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.04] p-6">
           <div className="mb-3 flex items-center gap-3">
-            <AlertTriangle className="size-5 text-amber-400" />
+            <AlertTriangle className="size-5 text-clay-600" />
             <h2 className="text-heading-md font-heading text-foreground">
               Common Losses That Cap Your Grade
             </h2>

@@ -167,7 +167,7 @@ interface TrendsData {
 function gradeColorClass(grade: number): string {
   if (grade >= 8) return 'text-purple-400'
   if (grade >= 6) return 'text-green-400'
-  if (grade >= 4) return 'text-amber-400'
+  if (grade >= 4) return 'text-clay-600'
   return 'text-red-400'
 }
 
@@ -186,7 +186,7 @@ function scoreBarColor(score: number): string {
 
 function scoreTextColor(score: number): string {
   if (score >= 70) return 'text-green-400'
-  if (score >= 50) return 'text-amber-400'
+  if (score >= 50) return 'text-clay-600'
   return 'text-red-400'
 }
 
@@ -232,7 +232,7 @@ function statusBadge(status: ModuleProgressItem['status']) {
       )
     case 'in_progress':
       return (
-        <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-xs font-medium text-amber-400">
+        <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-xs font-medium text-clay-600">
           <Clock className="h-3 w-3" />
           In Progress
         </span>
@@ -254,7 +254,7 @@ function activityIcon(type: ActivityItem['type']) {
     case 'quiz_score':
       return <CheckCircle className="h-4 w-4 text-green-400" />
     case 'certificate':
-      return <Award className="h-4 w-4 text-yellow-400" />
+      return <Award className="h-4 w-4 text-clay-600" />
     case 'practice':
       return <Target className="h-4 w-4 text-purple-400" />
     case 'enrolment':
@@ -267,7 +267,7 @@ function activityIcon(type: ActivityItem['type']) {
 function recommendationIcon(type: Recommendation['type']) {
   switch (type) {
     case 'improvement':
-      return <Target className="h-5 w-5 text-amber-400" />
+      return <Target className="h-5 w-5 text-clay-600" />
     case 'praise':
       return <Zap className="h-5 w-5 text-green-400" />
     case 'suggestion':
@@ -956,7 +956,7 @@ export default function StudentDrilldownPage() {
               <Flame className="h-4 w-4" />
               <span className="text-xs font-medium uppercase tracking-wider">Streak</span>
             </div>
-            <p className="text-2xl font-bold tabular-nums text-orange-400">
+            <p className="text-2xl font-bold tabular-nums text-clay-600">
               {student.currentStreak}
             </p>
             <p className="text-xs text-muted-foreground mt-1">Days</p>
@@ -1351,7 +1351,7 @@ export default function StudentDrilldownPage() {
                                   : exam.grade === '7' || exam.grade === '6'
                                   ? 'border-green-500/30 text-green-400'
                                   : exam.grade === '5' || exam.grade === '4'
-                                  ? 'border-amber-500/30 text-amber-400'
+                                  ? 'border-amber-500/30 text-clay-600'
                                   : 'border-red-500/30 text-red-400'
                               }`}>
                                 Grade {exam.grade}
@@ -1362,7 +1362,7 @@ export default function StudentDrilldownPage() {
                                 {exam.areasForImprovement.map((area, i) => (
                                   <span
                                     key={i}
-                                    className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[10px] font-medium text-amber-400"
+                                    className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[10px] font-medium text-clay-600"
                                   >
                                     <AlertTriangle className="h-2.5 w-2.5" />
                                     {area}
@@ -1419,7 +1419,7 @@ export default function StudentDrilldownPage() {
                               essay.score >= 70
                                 ? 'border-green-500/30 text-green-400'
                                 : essay.score >= 50
-                                ? 'border-amber-500/30 text-amber-400'
+                                ? 'border-amber-500/30 text-clay-600'
                                 : 'border-red-500/30 text-red-400'
                             }`}
                           >
@@ -1527,7 +1527,7 @@ export default function StudentDrilldownPage() {
         <div className="mt-6 rounded-xl border border-border bg-card p-6 print:hidden">
           <SectionHeader
             sectionKey="notes"
-            icon={<FileText className="h-4 w-4 text-amber-400" />}
+            icon={<FileText className="h-4 w-4 text-clay-600" />}
             title="Teacher Notes"
             count={notes.length}
           />

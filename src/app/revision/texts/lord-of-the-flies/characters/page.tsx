@@ -218,7 +218,7 @@ export default async function LotFCharactersPage() {
       {/* Allegorical Overview */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Sparkles className="size-5 text-amber-400" />
+          <Sparkles className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">Allegorical Framework</h2>
         </div>
         <Card>

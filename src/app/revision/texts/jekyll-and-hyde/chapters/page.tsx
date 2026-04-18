@@ -649,7 +649,7 @@ export default async function JekyllChaptersPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
-                <Layers className="size-4 text-amber-400" />
+                <Layers className="size-4 text-clay-600" />
                 Key Events
               </CardTitle>
             </CardHeader>
@@ -657,7 +657,7 @@ export default async function JekyllChaptersPage() {
               <ul className="space-y-2">
                 {ch.keyEvents.map((evt, i) => (
                   <li key={i} className="flex items-start gap-2 text-body-sm text-muted-foreground">
-                    <span className="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full bg-amber-500/10 text-[10px] font-bold text-amber-400">
+                    <span className="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full bg-amber-500/10 text-[10px] font-bold text-clay-600">
                       {i + 1}
                     </span>
                     {evt}

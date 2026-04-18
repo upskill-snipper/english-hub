@@ -155,7 +155,7 @@ export default function BillingPage() {
         )}
 
         {profile?.subscription_status === 'past_due' && (
-          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-6 text-yellow-400 text-sm">
+          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-6 text-clay-600 text-sm">
             <p className="font-semibold mb-1">Payment failed</p>
             <p>
               We were unable to process your last payment. Please update your
@@ -164,7 +164,7 @@ export default function BillingPage() {
             <button
               onClick={handleManageSubscription}
               disabled={portalLoading}
-              className="mt-3 inline-flex items-center gap-1.5 text-yellow-300 underline underline-offset-2 hover:text-yellow-200 transition-colors disabled:opacity-50"
+              className="mt-3 inline-flex items-center gap-1.5 text-amber-700 underline underline-offset-2 hover:text-amber-700 transition-colors disabled:opacity-50"
             >
               {portalLoading ? (
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -191,7 +191,7 @@ export default function BillingPage() {
                 isPro
                   ? 'bg-primary/10 text-primary border border-primary/30'
                   : isCancelled
-                  ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/30'
+                  ? 'bg-yellow-500/10 text-clay-600 border border-yellow-500/30'
                   : 'bg-border text-muted-foreground border border-border'
               }`}
             >

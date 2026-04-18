@@ -92,7 +92,7 @@ const STEPS: Step[] = [
     title: 'Form and Structure',
     time: '3 minutes',
     icon: Layers,
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     summary:
       'Look at the shape of the poem on the page. Stanza length, line length, rhyme, rhythm, punctuation. Form is never accidental -- it shapes how we read.',

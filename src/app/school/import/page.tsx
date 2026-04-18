@@ -238,7 +238,7 @@ function ResultsTable({
               <td className="px-3 py-2.5 text-zinc-400">{user.email}</td>
               <td className="px-3 py-2.5 text-zinc-400">{user.extra}</td>
               <td className="px-3 py-2.5">
-                <code className="rounded bg-zinc-800 px-2 py-0.5 text-xs text-amber-400 font-mono">
+                <code className="rounded bg-zinc-800 px-2 py-0.5 text-xs text-clay-600 font-mono">
                   {user.password}
                 </code>
               </td>
@@ -505,7 +505,7 @@ export default function ImportUsersPage() {
                     <span className="mt-0.5 text-indigo-400">*</span>
                     <span>
                       For <strong className="text-zinc-300">classes</strong>, list class names
-                      separated by spaces or commas (e.g. <code className="text-amber-400">10A 10B 11C</code>).
+                      separated by spaces or commas (e.g. <code className="text-clay-600">10A 10B 11C</code>).
                     </span>
                   </li>
                 )}
@@ -782,9 +782,9 @@ export default function ImportUsersPage() {
         <Card className="border-amber-900/40 bg-amber-950/10">
           <CardContent className="pt-5 pb-5">
             <div className="flex items-start gap-3">
-              <Info className="size-5 shrink-0 mt-0.5 text-amber-400" />
+              <Info className="size-5 shrink-0 mt-0.5 text-clay-600" />
               <div className="space-y-1.5">
-                <p className="font-semibold text-amber-300">Important</p>
+                <p className="font-semibold text-amber-700">Important</p>
                 <ul className="space-y-1 text-sm text-zinc-400">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1 shrink-0 rounded-full bg-amber-500" />

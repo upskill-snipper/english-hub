@@ -247,11 +247,11 @@ export default function AffiliateDashboard({
   /* ── Status badge ── */
   const statusBadge = (status: string) => {
     const styles: Record<string, string> = {
-      pending: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
+      pending: 'bg-yellow-500/10 text-clay-600 border-yellow-500/20',
       confirmed: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
       paid: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
       voided: 'bg-red-500/10 text-red-400 border-red-500/20',
-      refunded: 'bg-orange-500/10 text-orange-400 border-orange-500/20',
+      refunded: 'bg-orange-500/10 text-clay-600 border-orange-500/20',
     }
     return (
       <span
@@ -300,10 +300,10 @@ export default function AffiliateDashboard({
 
         {/* ── Disclosure Reminder ── */}
         <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 mb-8 flex items-start gap-3">
-          <AlertTriangle className="w-5 h-5 text-yellow-400 mt-0.5 shrink-0" />
-          <div className="text-sm text-yellow-800 dark:text-yellow-200/90">
+          <AlertTriangle className="w-5 h-5 text-clay-600 mt-0.5 shrink-0" />
+          <div className="text-sm text-yellow-800/90">
             <strong>Required for every post:</strong> Include{' '}
-            <code className="bg-yellow-500/20 px-1.5 py-0.5 rounded text-yellow-700 dark:text-yellow-300 font-mono text-xs">
+            <code className="bg-yellow-500/20 px-1.5 py-0.5 rounded text-yellow-700 font-mono text-xs">
               #ad
             </code>{' '}
             in the first 3 words of your caption. Posts without disclosure will not earn
@@ -346,7 +346,7 @@ export default function AffiliateDashboard({
             gradient="from-amber-600/20 via-amber-500/10 to-orange-600/5"
             borderGlow="border-amber-500/20"
             icon={<Clock className="w-5 h-5" />}
-            iconColor="text-amber-400"
+            iconColor="text-clay-600"
             label="Pending Commission"
             value={formatGBP(pendingEarnings)}
             trend={confirmedEarnings > 0 ? `${formatGBP(confirmedEarnings)} confirmed` : 'Awaiting confirmation'}
@@ -439,7 +439,7 @@ export default function AffiliateDashboard({
               value="+1.2"
               label="Avg grade improvement"
               sublabel="across referred students"
-              color="text-amber-400"
+              color="text-clay-600"
               bg="bg-amber-500/10"
               badge="grades"
             />
@@ -516,7 +516,7 @@ export default function AffiliateDashboard({
           <div className="grid grid-cols-3 gap-3 mb-4">
             <div className="bg-card border border-border rounded-lg p-4 text-center">
               <p className="text-xs text-muted-foreground mb-1">Pending</p>
-              <p className="text-lg font-bold text-yellow-400">{formatGBP(periodPending)}</p>
+              <p className="text-lg font-bold text-clay-600">{formatGBP(periodPending)}</p>
             </div>
             <div className="bg-card border border-border rounded-lg p-4 text-center">
               <p className="text-xs text-muted-foreground mb-1">Confirmed</p>
@@ -802,7 +802,7 @@ export default function AffiliateDashboard({
                             ? 'bg-emerald-500/10 text-emerald-400'
                             : item.status === 'confirmed'
                               ? 'bg-blue-500/10 text-blue-400'
-                              : 'bg-yellow-500/10 text-yellow-400'
+                              : 'bg-yellow-500/10 text-clay-600'
                           : 'bg-emerald-500/10 text-emerald-400'
                       }`}
                     >

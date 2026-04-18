@@ -190,10 +190,10 @@ function StarterContent({ lesson }: { lesson: LessonExample }) {
         <div key={i} className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 space-y-2">
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <Zap className="h-3.5 w-3.5 text-amber-400" />
-              <span className="text-sm font-semibold text-amber-300">{s.activity}</span>
+              <Zap className="h-3.5 w-3.5 text-clay-600" />
+              <span className="text-sm font-semibold text-amber-700">{s.activity}</span>
             </div>
-            <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[11px] font-medium text-amber-400">
+            <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[11px] font-medium text-clay-600">
               {s.duration}
             </span>
           </div>
@@ -252,7 +252,7 @@ function ResourcesContent({ lesson }: { lesson: LessonExample }) {
   const typeColors: Record<string, string> = {
     Extract: "text-blue-400 bg-blue-500/15",
     Scaffold: "text-emerald-400 bg-emerald-500/15",
-    Context: "text-amber-400 bg-amber-500/15",
+    Context: "text-clay-600 bg-amber-500/15",
     "Mark Scheme": "text-rose-400 bg-rose-500/15",
     Glossary: "text-purple-400 bg-purple-500/15",
   }

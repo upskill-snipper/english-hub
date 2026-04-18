@@ -136,7 +136,7 @@ export default function MarketingHero() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8">
             {[
               { icon: BookOpen, color: 'text-primary bg-primary/10', value: '470+', label: 'Structured Lessons' },
-              { icon: FileText, color: 'text-orange-400 bg-orange-500/10', value: '130+', label: 'Mock Papers' },
+              { icon: FileText, color: 'text-clay-600 bg-orange-500/10', value: '130+', label: 'Mock Papers' },
               { icon: Lightbulb, color: 'text-rose-400 bg-rose-500/10', value: '30', label: 'Poem Studies' },
               { icon: Sparkles, color: 'text-cyan-400 bg-cyan-500/10', value: '7', label: 'GCSE-Grade Games' },
               { icon: Layers, color: 'text-purple-400 bg-purple-500/10', value: '2,000+', label: 'Flashcards' },

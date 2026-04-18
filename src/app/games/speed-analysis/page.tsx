@@ -290,7 +290,7 @@ export default function SpeedAnalysisPage() {
     timer <= 5
       ? 'text-red-400'
       : timer <= 15
-        ? 'text-amber-400'
+        ? 'text-clay-600'
         : 'text-muted-foreground'
 
   return (

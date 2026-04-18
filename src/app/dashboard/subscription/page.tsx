@@ -114,7 +114,7 @@ export default function SubscriptionPage() {
 
         {isCancelled && (
           <div className="bg-amber-950/20 border border-amber-900/40 rounded-lg p-4 mb-6">
-            <p className="text-sm text-amber-400">
+            <p className="text-sm text-clay-600">
               Your subscription has been cancelled. You will retain access until{" "}
               <strong>{periodEnd.toLocaleDateString("en-GB")}</strong>.
             </p>

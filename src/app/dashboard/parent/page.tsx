@@ -671,7 +671,7 @@ export default function ParentDashboardPage() {
                               workingAtGrade >= 7
                                 ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
                                 : workingAtGrade >= 5
-                                ? 'border-amber-500/30 bg-amber-500/10 text-amber-400'
+                                ? 'border-amber-500/30 bg-amber-500/10 text-clay-600'
                                 : 'border-red-500/30 bg-red-500/10 text-red-400'
                             )}>
                               {workingAtGrade}
@@ -693,7 +693,7 @@ export default function ParentDashboardPage() {
                               predictedGrade >= 7
                                 ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
                                 : predictedGrade >= 5
-                                ? 'border-amber-500/30 bg-amber-500/10 text-amber-400'
+                                ? 'border-amber-500/30 bg-amber-500/10 text-clay-600'
                                 : 'border-red-500/30 bg-red-500/10 text-red-400'
                             )}>
                               {predictedGrade}
@@ -706,7 +706,7 @@ export default function ParentDashboardPage() {
                             </div>
                           )}
                           {predictedGrade < (workingAtGrade ?? 0) && (
-                            <div className="flex items-center gap-1 text-xs text-amber-400">
+                            <div className="flex items-center gap-1 text-xs text-clay-600">
                               <TrendingDown className="h-3.5 w-3.5" />
                               Needs attention
                             </div>
@@ -753,7 +753,7 @@ export default function ParentDashboardPage() {
                 <StatCard
                   icon={<Flame className="h-5 w-5" />}
                   iconBg="bg-amber-500/10"
-                  iconColor="text-amber-400"
+                  iconColor="text-clay-600"
                   label="Streak"
                   value={streak}
                   sub={streak === 1 ? 'day' : 'days'}
@@ -792,7 +792,7 @@ export default function ParentDashboardPage() {
                           strokeDasharray={`${examReadiness * 2.64} 264`}
                           className={cn(
                             examReadiness >= 70 ? 'text-emerald-400' :
-                            examReadiness >= 40 ? 'text-amber-400' :
+                            examReadiness >= 40 ? 'text-clay-600' :
                             'text-red-400'
                           )}
                         />
@@ -904,7 +904,7 @@ export default function ParentDashboardPage() {
                 <Card className="animate-fade-in">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <AlertCircle className="h-5 w-5 text-amber-400" />
+                      <AlertCircle className="h-5 w-5 text-clay-600" />
                       Weak Areas Identified
                     </CardTitle>
                     <CardDescription>
@@ -925,7 +925,7 @@ export default function ParentDashboardPage() {
                             className="flex items-center justify-between rounded-lg border border-amber-500/20 bg-amber-500/[0.04] px-4 py-3"
                           >
                             <div className="flex items-center gap-3">
-                              <TrendingDown className="h-4 w-4 text-amber-400 shrink-0" />
+                              <TrendingDown className="h-4 w-4 text-clay-600 shrink-0" />
                               <div>
                                 <p className="text-sm font-medium text-foreground">{area.courseName}</p>
                                 <p className="text-xs text-muted-foreground">
@@ -933,7 +933,7 @@ export default function ParentDashboardPage() {
                                 </p>
                               </div>
                             </div>
-                            <Badge variant="outline" className="border-amber-500/30 text-amber-400">
+                            <Badge variant="outline" className="border-amber-500/30 text-clay-600">
                               {area.avgScore}%
                             </Badge>
                           </div>

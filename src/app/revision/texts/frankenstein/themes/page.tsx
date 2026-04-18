@@ -245,7 +245,7 @@ export default async function FrankensteinThemesPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Lightbulb className="mr-1 size-3 text-amber-400" />
+              <Lightbulb className="mr-1 size-3 text-clay-600" />
               Theme Analysis
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
@@ -270,7 +270,7 @@ export default async function FrankensteinThemesPage() {
       {THEMES.map((t) => (
         <section key={t.title}>
           <div className="mb-5 flex items-center gap-3">
-            <Lightbulb className="size-5 text-amber-400" />
+            <Lightbulb className="size-5 text-clay-600" />
             <div>
               <h2 className="text-heading-lg font-heading text-foreground">{t.title}</h2>
               <p className="text-body-sm text-muted-foreground">{t.overview}</p>

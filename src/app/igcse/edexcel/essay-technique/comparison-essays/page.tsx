@@ -158,7 +158,7 @@ export default function ComparisonEssaysPage() {
 
           <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.04] p-5">
             <div className="mb-2 flex items-center gap-2">
-              <AlertTriangle className="size-4 text-amber-400" />
+              <AlertTriangle className="size-4 text-clay-600" />
               <h3 className="text-sm font-semibold text-foreground">Block then block</h3>
               <Badge variant="secondary" className="text-[0.65rem]">
                 Backup only
@@ -258,7 +258,7 @@ export default function ComparisonEssaysPage() {
       {/* ── Common mistakes ─────────────────────────────────────── */}
       <section className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.04] p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
-          <AlertTriangle className="size-5 text-amber-400" />
+          <AlertTriangle className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
             Common Mistakes That Cap Your Grade
           </h2>
@@ -272,7 +272,7 @@ export default function ComparisonEssaysPage() {
             'Ending with a thesis you did not prove. Your conclusion should reflect the argument you actually made, not the one you planned.',
           ].map((m) => (
             <li key={m} className="flex gap-3">
-              <span className="mt-1 text-amber-400">-</span>
+              <span className="mt-1 text-clay-600">-</span>
               <p className="text-body-sm text-muted-foreground leading-relaxed">{m}</p>
             </li>
           ))}
@@ -282,7 +282,7 @@ export default function ComparisonEssaysPage() {
       {/* ── Planning checklist ──────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
-          <Lightbulb className="size-5 text-amber-400" />
+          <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
             5-Minute Planning Checklist
           </h2>

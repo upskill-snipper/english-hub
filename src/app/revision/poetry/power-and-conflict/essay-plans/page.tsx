@@ -433,7 +433,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     poemB: 'War Photographer',
     poetB: 'Duffy',
     themeTag: 'Memory',
-    themeColour: 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+    themeColour: 'bg-amber-500/15 text-amber-700 border-amber-500/20',
     introduction:
       'Both Armitage and Duffy explore how memory and guilt haunt those who have witnessed conflict. Remains presents a soldier unable to escape the memory of a killing, while War Photographer follows a photojournalist morally burdened by the images he captures. Both poems expose the invisible psychological wounds inflicted by proximity to violence.',
     paragraphs: [
@@ -872,7 +872,7 @@ export default function EssayPlansPage() {
             {/* Grade 5 vs Grade 9 */}
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.04] p-4">
-                <h4 className="mb-2 flex items-center gap-1.5 text-sm font-semibold text-amber-300">
+                <h4 className="mb-2 flex items-center gap-1.5 text-sm font-semibold text-amber-700">
                   <Star className="size-3.5" />
                   Grade 5 approach
                 </h4>
@@ -919,7 +919,7 @@ export default function EssayPlansPage() {
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
-        <BookOpen className="mx-auto mb-3 size-8 text-amber-400" />
+        <BookOpen className="mx-auto mb-3 size-8 text-clay-600" />
         <h2 className="text-heading-lg font-heading text-foreground">
           Ready to write your own comparisons?
         </h2>

@@ -187,7 +187,7 @@ function AgeInputPhase({
 
           <div className="rounded-xl border border-border bg-muted/50 p-4">
             <div className="flex items-start gap-2">
-              <AlertTriangle className="h-4 w-4 text-amber-400 mt-0.5 shrink-0" aria-hidden="true" />
+              <AlertTriangle className="h-4 w-4 text-clay-600 mt-0.5 shrink-0" aria-hidden="true" />
               <p className="text-xs text-muted-foreground">
                 Your age is used only to compare your reading level against expected norms.
                 It does not affect your raw scores.
@@ -328,7 +328,7 @@ function QuestionsPhase({
                 : question.skill === "inferential"
                   ? "border-violet-500/20 text-violet-400"
                   : question.skill === "evaluative"
-                    ? "border-amber-500/20 text-amber-400"
+                    ? "border-amber-500/20 text-clay-600"
                     : "border-emerald-500/20 text-emerald-400"
             }`}
           >

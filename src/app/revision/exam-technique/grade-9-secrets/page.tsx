@@ -197,7 +197,7 @@ export default function Grade9SecretsPage() {
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <Star className="size-5 text-amber-400" />
+            <Star className="size-5 text-clay-600" />
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">
@@ -232,7 +232,7 @@ export default function Grade9SecretsPage() {
       {/* ── 10 Techniques ───────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Zap className="size-5 text-amber-400" />
+          <Zap className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">
             10 Techniques Grade 9 Students Use
           </h2>
@@ -245,7 +245,7 @@ export default function Grade9SecretsPage() {
               className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6 space-y-4"
             >
               <div className="flex items-start gap-3">
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-sm font-bold text-amber-400">
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-sm font-bold text-clay-600">
                   {t.number}
                 </span>
                 <div>
@@ -305,8 +305,8 @@ export default function Grade9SecretsPage() {
                 {/* Before */}
                 <div className="p-5 sm:p-6 space-y-2">
                   <div className="flex items-center gap-2">
-                    <AlertTriangle className="size-4 text-amber-400" />
-                    <p className="text-xs font-semibold text-amber-400 uppercase tracking-wider">
+                    <AlertTriangle className="size-4 text-clay-600" />
+                    <p className="text-xs font-semibold text-clay-600 uppercase tracking-wider">
                       Grade 7
                     </p>
                   </div>

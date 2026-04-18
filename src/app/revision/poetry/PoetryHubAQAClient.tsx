@@ -448,7 +448,7 @@ export function PoetryHubAQAClient() {
       {/* ── Poetry Techniques ───────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Wand2 className="size-5 text-amber-400" />
+          <Wand2 className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">Poetry Techniques</h2>
         </div>
 
@@ -566,7 +566,7 @@ export function PoetryHubAQAClient() {
             className="group flex items-start gap-3 rounded-2xl border border-border/60 bg-card p-4 transition-all hover:border-border hover:shadow-card-hover"
           >
             <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-orange-500/10">
-              <Wand2 className="size-4 text-orange-400" />
+              <Wand2 className="size-4 text-clay-600" />
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">Poetry Quizzes</p>

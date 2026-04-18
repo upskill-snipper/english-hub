@@ -422,7 +422,7 @@ export default async function ActsPage() {
           {/* Key Quotes */}
           <div>
             <div className="mb-4 flex items-center gap-2">
-              <Quote className="size-4.5 text-amber-400" />
+              <Quote className="size-4.5 text-clay-600" />
               <h3 className="text-heading-sm font-heading text-foreground">
                 Key Quotes &mdash; Act {act.number}
               </h3>

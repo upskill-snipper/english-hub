@@ -400,7 +400,7 @@ function getTypeBadgeClasses(type: ResourceType) {
     case "Worksheet":
       return "bg-clay-500/10 text-clay-600 border-clay-500/20"
     case "Teaching Guide":
-      return "bg-amber-500/15 text-amber-400 border-amber-500/20"
+      return "bg-amber-500/15 text-clay-600 border-amber-500/20"
     case "Presentation":
       return "bg-teal-800/10 text-teal-700 border-teal-800/20"
     case "Mock Paper":
@@ -463,12 +463,12 @@ export default function TeacherResourcesPage() {
       {/* Toast */}
       {toast && (
         <div className="fixed top-6 right-6 z-50 animate-in slide-in-from-top-2 fade-in duration-300">
-          <div className="flex items-center gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm px-5 py-3 text-sm text-amber-200 shadow-lg shadow-amber-500/5">
-            <Lock className="h-4 w-4 text-amber-400 shrink-0" />
+          <div className="flex items-center gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm px-5 py-3 text-sm text-amber-700 shadow-lg shadow-amber-500/5">
+            <Lock className="h-4 w-4 text-clay-600 shrink-0" />
             <span>{toast}</span>
             <Link
               href="/for-teachers"
-              className="ml-2 font-semibold text-amber-400 hover:text-amber-300 underline underline-offset-2"
+              className="ml-2 font-semibold text-clay-600 hover:text-amber-700 underline underline-offset-2"
             >
               Subscribe
             </Link>

@@ -367,7 +367,7 @@ export default function UnseenPoetryPracticePage() {
       {/* ── How to use ──────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
-          <Lightbulb className="size-5 text-amber-400" />
+          <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
             How to Use These Practice Poems
           </h2>

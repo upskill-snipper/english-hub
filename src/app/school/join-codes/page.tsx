@@ -65,7 +65,7 @@ function getStatusBadge(code: JoinCode) {
     return <Badge variant="secondary" className="bg-zinc-700 text-zinc-300">Disabled</Badge>
   }
   if (code.is_expired) {
-    return <Badge variant="secondary" className="bg-amber-900/40 text-amber-400">Expired</Badge>
+    return <Badge variant="secondary" className="bg-amber-900/40 text-clay-600">Expired</Badge>
   }
   if (code.max_uses > 0 && code.uses >= code.max_uses) {
     return <Badge variant="secondary" className="bg-zinc-700 text-zinc-300">Full</Badge>

@@ -57,8 +57,8 @@ export default function DemoSchoolLayoutClient({
       {/* Demo mode badge */}
       <div className="px-5 pt-5 pb-3">
         <div className="flex items-center justify-center gap-2 rounded-lg bg-amber-500/15 border border-amber-500/25 px-3 py-2">
-          <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-          <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+          <Sparkles className="h-3.5 w-3.5 text-clay-600" />
+          <span className="text-xs font-bold uppercase tracking-wider text-clay-600">
             Demo Mode
           </span>
         </div>

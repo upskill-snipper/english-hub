@@ -76,7 +76,7 @@ function Tip({ children }: { children: React.ReactNode }) {
 function Warning({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex gap-3 rounded-xl border border-amber-500/20 bg-amber-500/[0.06] p-4">
-      <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-400" />
+      <AlertTriangle className="mt-0.5 size-4 shrink-0 text-clay-600" />
       <p className="text-body-sm text-muted-foreground leading-relaxed">{children}</p>
     </div>
   )
@@ -442,7 +442,7 @@ export default function QuestionTypesView({
               </div>
             </div>
             <div className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-2">
-              <p className="text-xs font-semibold text-amber-400 uppercase tracking-wider">Challenging the statement</p>
+              <p className="text-xs font-semibold text-clay-600 uppercase tracking-wider">Challenging the statement</p>
               <div className="flex flex-wrap gap-1.5">
                 {[
                   'However, it could be argued...',
@@ -452,7 +452,7 @@ export default function QuestionTypesView({
                   'While largely successful, the [X] weakens...',
                   'This risks undermining...',
                 ].map((phrase) => (
-                  <span key={phrase} className="rounded-md bg-amber-500/10 px-2 py-0.5 text-xs text-amber-400">
+                  <span key={phrase} className="rounded-md bg-amber-500/10 px-2 py-0.5 text-xs text-clay-600">
                     {phrase}
                   </span>
                 ))}
@@ -550,7 +550,7 @@ export default function QuestionTypesView({
             className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
           >
             <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-orange-500/10">
-              <Search className="size-4 text-orange-400" />
+              <Search className="size-4 text-clay-600" />
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">Quizzes</p>

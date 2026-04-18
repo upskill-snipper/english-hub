@@ -149,7 +149,7 @@ export default async function AnthologyHubPage() {
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge className="bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-amber-400">
+            <Badge className="bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-clay-600">
               <Sparkles className="mr-1 size-3" />
               Paper 1 Section A
             </Badge>
@@ -210,7 +210,7 @@ export default async function AnthologyHubPage() {
                 <CardHeader className="pb-3">
                   <div className="mb-3 flex items-center gap-3">
                     <div className="flex size-10 items-center justify-center rounded-lg bg-amber-500/10">
-                      <Icon className="size-5 text-amber-600 dark:text-amber-400" />
+                      <Icon className="size-5 text-amber-600 dark:text-clay-600" />
                     </div>
                     <span className="font-mono text-body-xs text-muted-foreground">
                       Text {i + 1}

@@ -227,7 +227,7 @@ export default function WorksheetBrowserPage() {
                           ? opt.value === 'foundation'
                             ? 'border-blue-400 bg-blue-500/10 text-blue-700 dark:border-blue-600 dark:bg-blue-900/30 dark:text-blue-300'
                             : opt.value === 'core'
-                              ? 'border-amber-400 bg-amber-500/10 text-amber-700 dark:border-amber-600 dark:bg-amber-900/30 dark:text-amber-300'
+                              ? 'border-amber-400 bg-amber-500/10 text-amber-700'
                               : 'border-purple-400 bg-purple-500/10 text-purple-700 dark:border-purple-600 dark:bg-purple-900/30 dark:text-purple-300'
                           : 'border-border text-muted-foreground hover:border-primary/30'
                       }`}

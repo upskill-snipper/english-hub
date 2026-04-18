@@ -112,7 +112,7 @@ const INTERVENTION_ICONS: Record<InterventionType, typeof Users> = {
 
 const STATUS_CONFIG: Record<InterventionStatus, { label: string; bg: string; text: string }> = {
   planned: { label: 'Planned', bg: 'bg-blue-500/10', text: 'text-blue-400' },
-  'in-progress': { label: 'In Progress', bg: 'bg-amber-500/10', text: 'text-amber-400' },
+  'in-progress': { label: 'In Progress', bg: 'bg-amber-500/10', text: 'text-clay-600' },
   completed: { label: 'Completed', bg: 'bg-green-500/10', text: 'text-green-400' },
   reviewed: { label: 'Reviewed', bg: 'bg-emerald-500/10', text: 'text-emerald-400' },
 }
@@ -438,7 +438,7 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                           </span>
                           <span>
                             Gap:{' '}
-                            <span className={cn('font-medium', gap > 2 ? 'text-red-400' : 'text-amber-400')}>
+                            <span className={cn('font-medium', gap > 2 ? 'text-red-400' : 'text-clay-600')}>
                               {gap} grade{gap !== 1 ? 's' : ''}
                             </span>
                           </span>
@@ -450,7 +450,7 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                                 student.avg_quiz_score >= 70
                                   ? 'text-green-400'
                                   : student.avg_quiz_score >= 50
-                                    ? 'text-amber-400'
+                                    ? 'text-clay-600'
                                     : 'text-red-400'
                               )}
                             >
@@ -1004,7 +1004,7 @@ function CreatePlanDialog({
                         {s.predicted_grade ?? '—'}
                       </span>
                       {needsIntervention && (
-                        <AlertTriangle className="h-3.5 w-3.5 shrink-0 text-amber-400" />
+                        <AlertTriangle className="h-3.5 w-3.5 shrink-0 text-clay-600" />
                       )}
                     </label>
                   )

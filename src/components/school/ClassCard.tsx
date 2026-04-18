@@ -39,7 +39,7 @@ function scoreBorderColor(score: number): string {
 
 function scoreTextColor(score: number): string {
   if (score >= 70) return 'text-green-400'
-  if (score >= 50) return 'text-amber-400'
+  if (score >= 50) return 'text-clay-600'
   return 'text-red-400'
 }
 

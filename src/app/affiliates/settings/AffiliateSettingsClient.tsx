@@ -432,7 +432,7 @@ export default function AffiliateSettingsClient({
             </a>
 
             <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 mt-3">
-              <p className="text-sm text-yellow-700 dark:text-yellow-300 dark:text-yellow-200">
+              <p className="text-sm text-yellow-700">
                 <strong>Disclosure reminder:</strong> You must include{' '}
                 <code className="bg-yellow-500/20 px-1 rounded">#ad</code> in the first
                 3 words of every promotional post. Failure to disclose may result in

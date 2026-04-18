@@ -261,7 +261,7 @@ function BreakdownCard({
     ? "text-emerald-400"
     : danger
       ? "text-red-400"
-      : "text-orange-400"
+      : "text-clay-600"
   const Icon = positive ? TrendingUp : TrendingDown
   return (
     <Card>

@@ -314,7 +314,7 @@ function ActionMenu({
             </button>
             <div className="my-1 border-t border-border" />
             <button
-              className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-amber-400 hover:bg-amber-500/10"
+              className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-clay-600 hover:bg-amber-500/10"
               onClick={() => { onSuspend(teacher.id); setOpen(false) }}
             >
               <Ban className="size-3.5" />
@@ -772,7 +772,7 @@ export default function TeachersPage() {
               <Button
                 size="xs"
                 variant="outline"
-                className="border-amber-500/30 text-amber-400 hover:bg-amber-500/10"
+                className="border-amber-500/30 text-clay-600 hover:bg-amber-500/10"
                 onClick={handleBulkSuspend}
               >
                 <Ban className="size-3" />

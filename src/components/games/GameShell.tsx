@@ -50,7 +50,7 @@ export interface GameShellProps {
 
 const DIFFICULTY_STYLES: Record<string, string> = {
   Foundation: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-  Crossover: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+  Crossover: 'bg-amber-500/10 text-clay-600 border-amber-500/20',
   Higher: 'bg-red-500/10 text-red-400 border-red-500/20',
 }
 
@@ -343,8 +343,8 @@ export default function GameShell({
             {highScore && (
               <div className="text-center">
                 <div className="flex items-center gap-1">
-                  <TrophyIcon className="h-3.5 w-3.5 text-amber-400" />
-                  <span className="text-sm font-semibold text-amber-400">
+                  <TrophyIcon className="h-3.5 w-3.5 text-clay-600" />
+                  <span className="text-sm font-semibold text-clay-600">
                     {highScore.percentage}%
                   </span>
                 </div>
@@ -384,7 +384,7 @@ export default function GameShell({
 
             {highScore && (
               <div className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2.5">
-                <TrophyIcon className="h-4 w-4 text-amber-400" />
+                <TrophyIcon className="h-4 w-4 text-clay-600" />
                 <span className="text-sm text-muted-foreground">
                   Best:{' '}
                   <span className={cn('font-semibold', gcseGradeColor(highScore.grade))}>
@@ -410,7 +410,7 @@ export default function GameShell({
             {/* Pause overlay */}
             {gameState === 'paused' && (
               <div className="mb-4 flex items-center justify-center rounded-lg border border-amber-500/20 bg-amber-500/10 px-4 py-3">
-                <span className="text-sm font-medium text-amber-400">
+                <span className="text-sm font-medium text-clay-600">
                   Game Paused
                 </span>
               </div>

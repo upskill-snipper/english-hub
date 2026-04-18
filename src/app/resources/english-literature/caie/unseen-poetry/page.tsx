@@ -671,7 +671,7 @@ the harbour holds its breath. And waits. For no one.`}
             <Card className="border-yellow-500/30">
               <CardHeader>
                 <CardTitle>
-                  <span className="mr-2 inline-flex items-center rounded-full bg-yellow-500/10 px-2.5 py-0.5 text-xs font-bold text-yellow-400">
+                  <span className="mr-2 inline-flex items-center rounded-full bg-yellow-500/10 px-2.5 py-0.5 text-xs font-bold text-clay-600">
                     10&ndash;15 marks
                   </span>
                   Competent to Good

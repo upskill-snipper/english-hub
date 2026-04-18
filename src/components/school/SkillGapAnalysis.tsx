@@ -147,7 +147,7 @@ function deriveStudentSkillScores(students: StudentAnalytics[]): StudentSkillSco
 
 function cellColor(score: number) {
   if (score < 40) return 'bg-red-500/25 text-red-300'
-  if (score <= 60) return 'bg-amber-500/20 text-amber-300'
+  if (score <= 60) return 'bg-amber-500/20 text-amber-700'
   return 'bg-green-500/20 text-green-300'
 }
 
@@ -170,7 +170,7 @@ function barSegmentColor(segment: 'red' | 'amber' | 'green') {
 
 function avgTextColor(score: number) {
   if (score < 40) return 'text-red-400'
-  if (score <= 60) return 'text-amber-400'
+  if (score <= 60) return 'text-clay-600'
   return 'text-green-400'
 }
 
@@ -580,7 +580,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                       'text-[10px] uppercase shrink-0',
                       ps.avg < 40
                         ? 'text-red-400 border-red-500/30'
-                        : 'text-amber-400 border-amber-500/30'
+                        : 'text-clay-600 border-amber-500/30'
                     )}
                   >
                     {ps.avg < 40 ? 'Critical' : 'Priority'}
@@ -590,7 +590,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                 {/* Why it matters */}
                 <div className="mb-4">
                   <div className="flex items-center gap-1.5 mb-1.5">
-                    <AlertTriangle className="h-3.5 w-3.5 text-amber-400" />
+                    <AlertTriangle className="h-3.5 w-3.5 text-clay-600" />
                     <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Why this matters for the exam
                     </span>
@@ -656,7 +656,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Zap className="h-5 w-5 text-amber-400" />
+              <Zap className="h-5 w-5 text-clay-600" />
               <CardTitle className="text-base">Quick Wins</CardTitle>
             </div>
             <CardDescription>

@@ -84,7 +84,7 @@ function categoryColor(cat: string): string {
     case 'Language':
       return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
     case 'Exam Technique':
-      return 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+      return 'bg-amber-500/10 text-clay-600 border-amber-500/20'
     case 'KS3 Skills':
       return 'bg-sky-500/10 text-sky-400 border-sky-500/20'
     default:
@@ -101,7 +101,7 @@ function categoryIcon(cat: string) {
     case 'Language':
       return <Pen className="h-5 w-5 text-emerald-400" />
     case 'Exam Technique':
-      return <Target className="h-5 w-5 text-amber-400" />
+      return <Target className="h-5 w-5 text-clay-600" />
     case 'KS3 Skills':
       return <Lightbulb className="h-5 w-5 text-sky-400" />
     default:
@@ -146,7 +146,7 @@ function RecommendedSection({
   return (
     <section className="mb-8">
       <div className="mb-4 flex items-center gap-2">
-        <Sparkles className="h-5 w-5 text-amber-400" />
+        <Sparkles className="h-5 w-5 text-clay-600" />
         <h2 className="text-lg font-bold text-foreground">
           Recommended for Your Classes
         </h2>
@@ -171,7 +171,7 @@ function RecommendedSection({
                     </h3>
                     <Badge
                       variant="outline"
-                      className="shrink-0 text-[10px] bg-amber-500/10 text-amber-400 border-amber-500/20"
+                      className="shrink-0 text-[10px] bg-amber-500/10 text-clay-600 border-amber-500/20"
                     >
                       <Sparkles className="h-2.5 w-2.5 mr-0.5" />
                       Recommended
@@ -180,7 +180,7 @@ function RecommendedSection({
 
                   {reason && (
                     <p className="text-xs text-muted-foreground mb-3 flex items-start gap-1">
-                      <Target className="h-3 w-3 mt-0.5 shrink-0 text-amber-400" />
+                      <Target className="h-3 w-3 mt-0.5 shrink-0 text-clay-600" />
                       {reason}
                     </p>
                   )}
@@ -241,7 +241,7 @@ function LessonCard({
             {isRecommended && (
               <Badge
                 variant="outline"
-                className="shrink-0 text-[10px] bg-amber-500/10 text-amber-400 border-amber-500/20"
+                className="shrink-0 text-[10px] bg-amber-500/10 text-clay-600 border-amber-500/20"
               >
                 <Sparkles className="h-2.5 w-2.5 mr-0.5" />
                 Recommended

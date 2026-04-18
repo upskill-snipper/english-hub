@@ -181,7 +181,7 @@ const THEME_GROUPS: ThemeGroup[] = [
   {
     label: 'Identity & Possession',
     icon: Flame,
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     poems: [
       {
@@ -211,7 +211,7 @@ const TAG_COLOURS: Record<string, string> = {
   Love: 'bg-rose-500/15 text-rose-300 border-rose-500/20',
   Desire: 'bg-pink-500/15 text-pink-300 border-pink-500/20',
   Family: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
-  Memory: 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+  Memory: 'bg-amber-500/15 text-amber-700 border-amber-500/20',
   Distance: 'bg-violet-500/15 text-violet-300 border-violet-500/20',
   Loss: 'bg-rose-500/15 text-rose-300 border-rose-500/20',
   Power: 'bg-violet-500/15 text-violet-300 border-violet-500/20',
@@ -219,17 +219,17 @@ const TAG_COLOURS: Record<string, string> = {
   Identity: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/20',
   Independence: 'bg-teal-500/15 text-teal-300 border-teal-500/20',
   Longing: 'bg-pink-500/15 text-pink-300 border-pink-500/20',
-  Persuasion: 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+  Persuasion: 'bg-amber-500/15 text-amber-700 border-amber-500/20',
   Obsession: 'bg-red-500/15 text-red-300 border-red-500/20',
   Death: 'bg-stone-500/15 text-stone-300 border-stone-500/20',
   'Letting go': 'bg-blue-500/15 text-blue-300 border-blue-500/20',
   Connection: 'bg-teal-500/15 text-teal-300 border-teal-500/20',
-  Bitterness: 'bg-orange-500/15 text-orange-300 border-orange-500/20',
+  Bitterness: 'bg-orange-500/15 text-clay-600 border-orange-500/20',
   Secrecy: 'bg-violet-500/15 text-violet-300 border-violet-500/20',
   Grief: 'bg-rose-500/15 text-rose-300 border-rose-500/20',
   Reconciliation: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
   Nature: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
-  Joy: 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+  Joy: 'bg-amber-500/15 text-amber-700 border-amber-500/20',
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────
@@ -383,7 +383,7 @@ export default function LoveAndRelationshipsPage() {
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-amber-500/[0.06] via-card to-rose-500/[0.04] p-6 sm:p-8">
         <div className="mb-5 flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <Lightbulb className="size-5 text-amber-400" />
+            <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
             Study Tips: Comparing Love &amp; Relationships

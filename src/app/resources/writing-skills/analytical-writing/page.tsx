@@ -226,8 +226,8 @@ export default function AnalyticalWritingPage() {
               </div>
 
               <div className="mt-6 rounded-lg bg-amber-500/10 border border-amber-500/30 p-4">
-                <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Top tip</p>
-                <p className="mt-1 text-sm text-amber-700 dark:text-amber-300">
+                <p className="text-sm font-semibold text-amber-700">Top tip</p>
+                <p className="mt-1 text-sm text-amber-700">
                   The best responses have the E (Explain) section as the longest part of the
                   paragraph. Aim for at least 3&ndash;4 sentences of analysis for every
                   quotation you use. This is where the marks are.
@@ -311,8 +311,8 @@ export default function AnalyticalWritingPage() {
               </div>
 
               <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-4">
-                <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Golden rule</p>
-                <p className="mt-1 text-sm text-amber-700 dark:text-amber-300">
+                <p className="text-sm font-semibold text-amber-700">Golden rule</p>
+                <p className="mt-1 text-sm text-amber-700">
                   Never let a quotation sit on its own as a standalone sentence. It should always be
                   embedded within your analysis or introduced with context. If you can remove the
                   quotation marks and the sentence still reads grammatically, you have embedded
@@ -471,7 +471,7 @@ export default function AnalyticalWritingPage() {
               </div>
 
               <div className="mt-6 rounded-lg bg-amber-500/10 border border-amber-500/30 p-4">
-                <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Key phrases for structural analysis</p>
+                <p className="text-sm font-semibold text-amber-700">Key phrases for structural analysis</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {[
                     "At the opening...", "The writer shifts focus to...",
@@ -1018,7 +1018,7 @@ export default function AnalyticalWritingPage() {
               <div className="mb-6 rounded-xl border-2 border-amber-500/40 bg-amber-500/10 p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="rounded-full bg-amber-400 px-4 py-1 text-sm font-bold text-white">Grade 5</span>
-                  <span className="text-sm font-semibold text-amber-700 dark:text-amber-300">Clear, explained response</span>
+                  <span className="text-sm font-semibold text-amber-700">Clear, explained response</span>
                 </div>
                 <div className="rounded-lg bg-card p-4 border border-amber-500/30">
                   <p className="text-sm text-foreground leading-relaxed">
@@ -1033,8 +1033,8 @@ export default function AnalyticalWritingPage() {
                   </p>
                 </div>
                 <div className="mt-4 space-y-2">
-                  <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">What keeps this at Grade 5:</p>
-                  <ul className="list-disc pl-5 text-sm text-amber-700 dark:text-amber-300 space-y-1">
+                  <p className="text-sm font-semibold text-amber-700">What keeps this at Grade 5:</p>
+                  <ul className="list-disc pl-5 text-sm text-amber-700 space-y-1">
                     <li>Makes a valid point and uses quotations</li>
                     <li>Some explanation of language, but stays surface-level</li>
                     <li>Context is mentioned but feels &ldquo;bolted on&rdquo; (&ldquo;in those days&rdquo;)</li>

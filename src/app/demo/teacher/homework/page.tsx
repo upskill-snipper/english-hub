@@ -138,7 +138,7 @@ function ProgressBar({ submitted, total, overdue }: { submitted: number; total: 
       <div className="flex items-center justify-between text-xs">
         <span className="text-ink-500">{submitted}/{total} submitted</span>
         {overdue > 0 && (
-          <span className="text-amber-400/80 flex items-center gap-1">
+          <span className="text-clay-600/80 flex items-center gap-1">
             <AlertTriangle className="h-3 w-3" />
             {overdue} overdue
           </span>
@@ -444,7 +444,7 @@ export default function HomeworkDemoPage() {
                         </>
                       )}
                       {s.status === "overdue" && (
-                        <span className="px-2 py-0.5 rounded-full text-xs bg-amber-500/15 text-amber-400 border border-amber-500/20">
+                        <span className="px-2 py-0.5 rounded-full text-xs bg-amber-500/15 text-clay-600 border border-amber-500/20">
                           Overdue
                         </span>
                       )}

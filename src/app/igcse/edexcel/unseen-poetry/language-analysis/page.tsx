@@ -307,7 +307,7 @@ export default function LanguageAnalysisPage() {
       {/* ── Sound effects ───────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Music className="size-5 text-amber-400" />
+          <Music className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">Sound Effects</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
@@ -341,7 +341,7 @@ export default function LanguageAnalysisPage() {
 
       {/* ── Next ────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-amber-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8 text-center">
-        <Layers className="mx-auto mb-3 size-8 text-amber-400" />
+        <Layers className="mx-auto mb-3 size-8 text-clay-600" />
         <h2 className="text-heading-lg font-heading text-foreground">
           Now read the shape of the poem
         </h2>

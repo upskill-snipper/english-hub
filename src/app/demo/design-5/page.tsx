@@ -56,7 +56,7 @@ export default function DopamineDashboard() {
           </div>
           <div className="flex items-center gap-3">
             <div className="bg-cream-100 backdrop-blur rounded-full px-4 py-2 flex items-center gap-2 text-sm font-semibold">
-              <span className="text-yellow-400">💪</span>
+              <span className="text-clay-600">💪</span>
               <span>{mockData.user.xp.toLocaleString()} XP</span>
             </div>
             <div className="bg-cream-100 backdrop-blur rounded-full px-4 py-2 flex items-center gap-2 text-sm font-semibold">
@@ -76,7 +76,7 @@ export default function DopamineDashboard() {
             <span className="text-7xl font-black bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
               {mockData.user.streak}
             </span>
-            <span className="text-2xl font-bold text-orange-300 ml-3">days straight</span>
+            <span className="text-2xl font-bold text-clay-600 ml-3">days straight</span>
           </div>
           <p className="text-clay-600 text-sm mt-3">Keep it up! Your longest streak was 23 days.</p>
         </div>
@@ -123,7 +123,7 @@ export default function DopamineDashboard() {
             <div className="mt-5">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-semibold text-ink-600">⏰ {mockData.dailyChallenge.timeLeft} left</span>
-                <span className="text-sm font-bold text-yellow-200">+{mockData.dailyChallenge.xpReward} XP</span>
+                <span className="text-sm font-bold text-amber-700">+{mockData.dailyChallenge.xpReward} XP</span>
               </div>
               <button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-extrabold py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 text-sm uppercase tracking-wide">
                 Start Challenge 💪

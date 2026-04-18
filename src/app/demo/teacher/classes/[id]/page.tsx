@@ -36,7 +36,7 @@ function ragLabel(status: "green" | "amber" | "red") {
   const labels = { green: "On Track", amber: "Monitor", red: "At Risk" }
   const styles = {
     green: "bg-green-500/10 text-green-400 border-green-500/20",
-    amber: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+    amber: "bg-amber-500/10 text-clay-600 border-amber-500/20",
     red: "bg-red-500/10 text-red-400 border-red-500/20",
   }
   return (
@@ -55,7 +55,7 @@ function trendIcon(trend: "up" | "down" | "stable") {
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
-  if (score >= 50) return "text-amber-400"
+  if (score >= 50) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -144,7 +144,7 @@ export default function TeacherClassDetailPage() {
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
-          <p className="text-sm text-amber-400">
+          <p className="text-sm text-clay-600">
             <span className="font-semibold">Teacher Demo</span> -- Viewing sample data for {cls.name}
           </p>
         </div>
@@ -335,7 +335,7 @@ export default function TeacherClassDetailPage() {
                         <td className="px-4 py-3">
                           <Badge variant="outline" className={
                             item.type === "Essay" ? "bg-teal-800/10 text-teal-700 border-teal-800/20" :
-                            item.type === "Quiz" ? "bg-amber-500/10 text-amber-400 border-amber-500/20" :
+                            item.type === "Quiz" ? "bg-amber-500/10 text-clay-600 border-amber-500/20" :
                             "bg-clay-500/10 text-clay-600 border-clay-500/20"
                           }>{item.type}</Badge>
                         </td>
@@ -421,7 +421,7 @@ export default function TeacherClassDetailPage() {
         {/* ── Suggested Lesson Focus ──────────────────────────────────── */}
         <section className="mb-10">
           <h2 className="text-lg font-medium text-ink-900 mb-4 flex items-center gap-2">
-            <Lightbulb className="h-5 w-5 text-amber-400" />
+            <Lightbulb className="h-5 w-5 text-clay-600" />
             Suggested Lesson Focus
           </h2>
           <Card className="bg-white border-ink-200">
@@ -459,7 +459,7 @@ export default function TeacherClassDetailPage() {
                   return (
                     <div key={i} className="rounded-lg border border-amber-500/10 bg-amber-500/[0.03] p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <BookOpen className="h-4 w-4 text-amber-400" />
+                        <BookOpen className="h-4 w-4 text-clay-600" />
                         <span className="text-sm font-medium text-ink-900">
                           Focus: {weakness}
                         </span>
@@ -469,7 +469,7 @@ export default function TeacherClassDetailPage() {
                       </div>
                       <p className="text-xs text-ink-600 mb-2">{suggestion}</p>
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] uppercase tracking-wider text-amber-400/60">Suggested Activity:</span>
+                        <span className="text-[10px] uppercase tracking-wider text-clay-600/60">Suggested Activity:</span>
                         <span className="text-xs text-ink-500">{activity}</span>
                       </div>
                     </div>
@@ -502,7 +502,7 @@ export default function TeacherClassDetailPage() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <AlertTriangle className="h-4 w-4 text-amber-400" />
+                    <AlertTriangle className="h-4 w-4 text-clay-600" />
                     <span className="text-sm text-ink-600">Areas for Focus</span>
                   </div>
                   <ul className="text-xs text-ink-500 space-y-1 pl-6">

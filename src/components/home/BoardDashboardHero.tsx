@@ -88,7 +88,7 @@ function getFallbackQuickLinks(board: ExamBoard): QuickLink[] {
         { title: 'Year 7 Courses', description: 'Foundation English skills for Year 7 students', href: '/courses?year=7', icon: BookOpen, color: 'text-emerald-400 bg-emerald-500/10' },
         { title: 'Year 8 Courses', description: 'Building on foundations with Year 8 English', href: '/courses?year=8', icon: BookOpen, color: 'text-blue-400 bg-blue-500/10' },
         { title: 'Year 9 Courses', description: 'Preparing for GCSE with Year 9 English', href: '/courses?year=9', icon: BookOpen, color: 'text-violet-400 bg-violet-500/10' },
-        { title: 'Games', description: 'Fun English language and literacy games', href: '/games', icon: Sparkles, color: 'text-amber-400 bg-amber-500/10' },
+        { title: 'Games', description: 'Fun English language and literacy games', href: '/games', icon: Sparkles, color: 'text-clay-600 bg-amber-500/10' },
         { title: 'Resources', description: 'Worksheets, guides and study materials for KS3', href: '/resources', icon: FileText, color: 'text-primary bg-primary/10' },
       ]
     case 'edexcel-igcse-lang':
@@ -103,7 +103,7 @@ function getFallbackQuickLinks(board: ExamBoard): QuickLink[] {
       ]
     case 'ial-edexcel':
       return [
-        { title: 'Courses', description: 'International A-Level English courses', href: '/courses', icon: BookOpen, color: 'text-amber-400 bg-amber-500/10' },
+        { title: 'Courses', description: 'International A-Level English courses', href: '/courses', icon: BookOpen, color: 'text-clay-600 bg-amber-500/10' },
         { title: 'Exam Technique', description: 'IAL English exam preparation and strategies', href: '/revision/exam-technique', icon: GraduationCap, color: 'text-primary bg-primary/10' },
       ]
     default:

@@ -61,7 +61,7 @@ const CATEGORY_META: Record<
   shakespeare: {
     label: 'Shakespeare',
     icon: Crown,
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
   },
   '19th-century': {
@@ -300,7 +300,7 @@ export default async function TextStudyGuidePage({
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-                  <Lightbulb className="size-5 text-amber-400" />
+                  <Lightbulb className="size-5 text-clay-600" />
                 </div>
                 <CardTitle className="text-heading-md font-heading">
                   Active recall quiz
@@ -328,7 +328,7 @@ export default async function TextStudyGuidePage({
       {/* ── Study Tips ─────────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Lightbulb className="size-5 text-amber-400" />
+          <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">
             How to revise {text.title}
           </h2>

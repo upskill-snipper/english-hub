@@ -466,7 +466,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
           {/* Course stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
             <div className="rounded-xl border border-ink-200 bg-white p-4 text-center">
-              <Trophy className="h-5 w-5 text-amber-400 mx-auto mb-2" />
+              <Trophy className="h-5 w-5 text-clay-600 mx-auto mb-2" />
               <p className="text-lg font-semibold text-ink-900">{completedCount}/{course.modules.length}</p>
               <p className="text-[11px] text-ink-500">Lessons Done</p>
             </div>
@@ -493,9 +493,9 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
           {revisionCount > 0 && (
             <div className="mb-6 rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
               <div className="flex items-start gap-3">
-                <AlertTriangle className="h-5 w-5 text-amber-400 mt-0.5 flex-shrink-0" />
+                <AlertTriangle className="h-5 w-5 text-clay-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-amber-400 mb-1">
+                  <p className="text-sm font-medium text-clay-600 mb-1">
                     {revisionCount} {revisionCount === 1 ? "lesson needs" : "lessons need"} revision
                   </p>
                   <p className="text-xs text-ink-500">
@@ -550,11 +550,11 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                         <>
                           <span className="text-[11px] text-ink-500/30">|</span>
                           <span className={`text-[11px] font-medium ${
-                            quizPct >= 80 ? "text-teal-700" : quizPct >= 60 ? "text-amber-400" : "text-red-400"
+                            quizPct >= 80 ? "text-teal-700" : quizPct >= 60 ? "text-clay-600" : "text-red-400"
                           }`}>
                             Quiz: {mod.quizScore}/{mod.quizMaxScore} ({quizPct}%)
                           </span>
-                          {quizPct === 100 && <Star className="h-3 w-3 text-amber-400" />}
+                          {quizPct === 100 && <Star className="h-3 w-3 text-clay-600" />}
                         </>
                       )}
                       {mod.completed && quizPct === null && (
@@ -619,10 +619,10 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                   : "border-red-500/20 bg-red-500/5"
             }`}>
               <Trophy className={`h-4 w-4 ${
-                quizPct >= 80 ? "text-teal-700" : quizPct >= 60 ? "text-amber-400" : "text-red-400"
+                quizPct >= 80 ? "text-teal-700" : quizPct >= 60 ? "text-clay-600" : "text-red-400"
               }`} />
               <span className={`text-sm font-medium ${
-                quizPct >= 80 ? "text-teal-700" : quizPct >= 60 ? "text-amber-400" : "text-red-400"
+                quizPct >= 80 ? "text-teal-700" : quizPct >= 60 ? "text-clay-600" : "text-red-400"
               }`}>
                 Previous score: {activeModule.quizScore}/{activeModule.quizMaxScore} ({quizPct}%)
               </span>
@@ -636,9 +636,9 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
           {activeModule.revisionNeeded && activeModule.revisionTip && (
             <div className="mt-3 rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
               <div className="flex items-start gap-2">
-                <Lightbulb className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                <Lightbulb className="h-4 w-4 text-clay-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-xs font-medium text-amber-400 mb-1">Revision Suggestion</p>
+                  <p className="text-xs font-medium text-clay-600 mb-1">Revision Suggestion</p>
                   <p className="text-xs text-ink-500 leading-relaxed">{activeModule.revisionTip}</p>
                 </div>
               </div>

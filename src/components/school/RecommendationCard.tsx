@@ -33,7 +33,7 @@ const priorityConfig = {
   },
   2: {
     label: 'P2',
-    badgeClass: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
+    badgeClass: 'bg-amber-500/10 text-clay-600 border-amber-500/30',
     borderClass: 'border-l-amber-500',
     Icon: AlertCircle,
   },

@@ -330,7 +330,7 @@ function progressColor(pct: number): string {
 
 function progressTextColor(pct: number): string {
   if (pct >= 75) return "text-teal-700"
-  if (pct >= 60) return "text-amber-400"
+  if (pct >= 60) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -438,7 +438,7 @@ export default function SchoolProgressPage() {
           <Card className="bg-white border-ink-200">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
-                <Target className="h-4 w-4 text-amber-400" />
+                <Target className="h-4 w-4 text-clay-600" />
                 Predicted Grades Distribution
               </CardTitle>
             </CardHeader>
@@ -481,14 +481,14 @@ export default function SchoolProgressPage() {
                 <div className="text-xs text-ink-500">{Math.round((totalOnTrack / totalStudents) * 100)}%</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-yellow-400/10 border border-yellow-400/20">
-                <TrendingUp className="h-5 w-5 text-yellow-400 mx-auto mb-1" />
-                <div className="text-2xl font-bold text-yellow-400">{totalAboveTarget}</div>
+                <TrendingUp className="h-5 w-5 text-clay-600 mx-auto mb-1" />
+                <div className="text-2xl font-bold text-clay-600">{totalAboveTarget}</div>
                 <div className="text-xs text-ink-600 mt-1">Above Target</div>
                 <div className="text-xs text-ink-500">{Math.round((totalAboveTarget / totalStudents) * 100)}%</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-amber-500/10 border border-amber-500/20">
-                <Clock className="h-5 w-5 text-amber-400 mx-auto mb-1" />
-                <div className="text-2xl font-bold text-amber-400">{totalBelowTarget}</div>
+                <Clock className="h-5 w-5 text-clay-600 mx-auto mb-1" />
+                <div className="text-2xl font-bold text-clay-600">{totalBelowTarget}</div>
                 <div className="text-xs text-ink-600 mt-1">Below Target</div>
                 <div className="text-xs text-ink-500">{Math.round((totalBelowTarget / totalStudents) * 100)}%</div>
               </div>
@@ -654,12 +654,12 @@ export default function SchoolProgressPage() {
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-yellow-400" />
                       <span className="text-ink-600">Above Target</span>
-                      <span className="text-yellow-400 font-mono ml-auto">{activeYearData.aboveTarget}</span>
+                      <span className="text-clay-600 font-mono ml-auto">{activeYearData.aboveTarget}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-amber-500" />
                       <span className="text-ink-600">Below Target</span>
-                      <span className="text-amber-400 font-mono ml-auto">{activeYearData.belowTarget}</span>
+                      <span className="text-clay-600 font-mono ml-auto">{activeYearData.belowTarget}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-red-500" />
@@ -675,7 +675,7 @@ export default function SchoolProgressPage() {
             <Card className="bg-white border-ink-200">
               <CardHeader className="pb-3">
                 <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
-                  <Target className="h-4 w-4 text-amber-400" />
+                  <Target className="h-4 w-4 text-clay-600" />
                   Predicted Grades -- {activeYearData.label}
                 </CardTitle>
               </CardHeader>

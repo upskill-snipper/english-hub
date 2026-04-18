@@ -464,7 +464,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-500/10/30 p-5">
-              <h3 className="text-lg font-bold text-yellow-700 dark:text-yellow-300">Grades E&ndash;F (2&ndash;3) &mdash; Developing</h3>
+              <h3 className="text-lg font-bold text-yellow-700">Grades E&ndash;F (2&ndash;3) &mdash; Developing</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
                 <ul className="ml-5 list-disc space-y-1">

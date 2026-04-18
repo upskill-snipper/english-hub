@@ -72,7 +72,7 @@ export default function SilasMarnerRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-700 dark:text-amber-300 uppercase tracking-wider">19th Century Novel</span>
+          <span className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-700 uppercase tracking-wider">19th Century Novel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
@@ -109,7 +109,7 @@ export default function SilasMarnerRevisionPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">1</span>
                 Part One &mdash; Betrayal, Isolation, and the Coming of Eppie
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -130,7 +130,7 @@ export default function SilasMarnerRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">2</span>
                 Part Two &mdash; Sixteen Years Later
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">

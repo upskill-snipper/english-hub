@@ -68,7 +68,7 @@ export default function AffiliatePayoutsClient({
 
   const statusBadge = (status: string) => {
     const styles: Record<string, string> = {
-      calculated: 'bg-yellow-500/10 text-yellow-400',
+      calculated: 'bg-yellow-500/10 text-clay-600',
       disclosure_checked: 'bg-blue-500/10 text-blue-400',
       approved: 'bg-primary/10 text-primary',
       paid: 'bg-primary/10 text-primary',
@@ -222,12 +222,12 @@ export default function AffiliatePayoutsClient({
 
         {/* ── Tax Information ──────────────────────────────────────── */}
         <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-5 flex items-start gap-3">
-          <AlertTriangle className="w-5 h-5 text-yellow-600 dark:text-yellow-400 mt-0.5 shrink-0" />
+          <AlertTriangle className="w-5 h-5 text-yellow-600 dark:text-clay-600 mt-0.5 shrink-0" />
           <div className="space-y-1.5">
-            <h3 className="text-sm font-semibold text-yellow-700 dark:text-yellow-300 dark:text-yellow-200">
+            <h3 className="text-sm font-semibold text-yellow-700">
               Tax Information
             </h3>
-            <ul className="text-sm text-yellow-700 dark:text-yellow-300 dark:text-yellow-200/80 space-y-1 list-disc list-inside">
+            <ul className="text-sm text-yellow-700/80 space-y-1 list-disc list-inside">
               <li>You are responsible for declaring affiliate income to HMRC</li>
               <li>We do not deduct tax at source</li>
               <li>Keep your payout records for your tax return</li>

@@ -360,7 +360,7 @@ export default function SpokenLanguagePage() {
                 </p>
               </div>
               <div className="rounded-lg border-l-4 border-amber-500 bg-muted p-4">
-                <p className="font-semibold text-amber-700 dark:text-amber-300">Counter-Argument (30&ndash;45 seconds)</p>
+                <p className="font-semibold text-amber-700">Counter-Argument (30&ndash;45 seconds)</p>
                 <p className="mt-1 text-sm">
                   Acknowledge the opposing viewpoint and explain why your
                   position is stronger. This demonstrates maturity and critical
@@ -741,7 +741,7 @@ export default function SpokenLanguagePage() {
                   </p>
                 </div>
                 <div className="rounded border-l-4 border-amber-500 bg-muted p-3">
-                  <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Counter-argument</p>
+                  <p className="text-sm font-semibold text-amber-700">Counter-argument</p>
                   <p className="mt-1 text-sm">
                     &ldquo;Some argue that 16-year-olds lack the maturity and
                     political knowledge to vote responsibly. However, maturity
@@ -801,7 +801,7 @@ export default function SpokenLanguagePage() {
                   </p>
                 </div>
                 <div className="rounded border-l-4 border-amber-500 bg-muted p-3">
-                  <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Counter-argument</p>
+                  <p className="text-sm font-semibold text-amber-700">Counter-argument</p>
                   <p className="mt-1 text-sm">
                     &ldquo;Some argue that social media can be positive &mdash;
                     connecting communities, raising awareness, and supporting

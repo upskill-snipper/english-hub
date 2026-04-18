@@ -229,7 +229,7 @@ export function PoetryHubClient() {
           </p>
           {isHydrated && noAnthology && (
             <div className="mx-auto mt-5 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-2xl text-left">
-              <svg className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <svg className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
               </svg>
               <p className="text-sm text-muted-foreground">

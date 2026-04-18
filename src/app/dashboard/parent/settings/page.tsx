@@ -480,7 +480,7 @@ export default function ParentSettingsPage() {
                         student.planStatus === "Active"
                           ? "bg-success-50 text-success-700"
                           : student.planStatus === "Trial"
-                            ? "bg-yellow-500/10 text-yellow-700 dark:text-yellow-300"
+                            ? "bg-yellow-500/10 text-yellow-700"
                             : "bg-muted text-muted-foreground"
                       }`}>
                         {student.plan} - {student.planStatus}

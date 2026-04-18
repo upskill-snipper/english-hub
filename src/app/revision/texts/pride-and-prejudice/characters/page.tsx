@@ -358,7 +358,7 @@ export default async function PrideAndPrejudiceCharactersPage() {
 
                 {/* Exam tip */}
                 <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
-                  <h4 className="text-sm font-semibold text-amber-300 mb-1">
+                  <h4 className="text-sm font-semibold text-amber-700 mb-1">
                     Exam tip
                   </h4>
                   <p className="text-body-sm text-muted-foreground">

@@ -525,7 +525,7 @@ export function DepartmentOverview({
                                 t.avgScore >= avgDeptScore
                                   ? 'bg-green-500/10 text-green-400'
                                   : t.avgScore >= avgDeptScore * 0.85
-                                    ? 'bg-amber-500/10 text-amber-400'
+                                    ? 'bg-amber-500/10 text-clay-600'
                                     : 'bg-red-500/10 text-red-400',
                               )}
                             >
@@ -562,7 +562,7 @@ export function DepartmentOverview({
                                 t.activityLevel === 'high' &&
                                   'border-green-500/30 text-green-400',
                                 t.activityLevel === 'medium' &&
-                                  'border-amber-500/30 text-amber-400',
+                                  'border-amber-500/30 text-clay-600',
                                 t.activityLevel === 'low' &&
                                   'border-red-500/30 text-red-400',
                               )}
@@ -804,7 +804,7 @@ export function DepartmentOverview({
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base">
-              <AlertTriangle className="h-4 w-4 text-amber-400" />
+              <AlertTriangle className="h-4 w-4 text-clay-600" />
               Concerns
             </CardTitle>
             <CardDescription>
@@ -835,7 +835,7 @@ export function DepartmentOverview({
                           'mt-0.5 shrink-0 text-[10px]',
                           c.severity === 'critical'
                             ? 'border-red-500/50 text-red-400'
-                            : 'border-amber-500/50 text-amber-400',
+                            : 'border-amber-500/50 text-clay-600',
                         )}
                       >
                         {c.severity}
@@ -860,7 +860,7 @@ export function DepartmentOverview({
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base">
-              <Trophy className="h-4 w-4 text-amber-400" />
+              <Trophy className="h-4 w-4 text-clay-600" />
               Highlights
             </CardTitle>
             <CardDescription>
@@ -881,7 +881,7 @@ export function DepartmentOverview({
                   >
                     <div className="flex items-start gap-2">
                       {h.type === 'top_class' ? (
-                        <Trophy className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
+                        <Trophy className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
                       ) : (
                         <TrendingUp className="mt-0.5 h-4 w-4 shrink-0 text-green-400" />
                       )}
@@ -907,7 +907,7 @@ export function DepartmentOverview({
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base">
-              <Lightbulb className="h-4 w-4 text-amber-400" />
+              <Lightbulb className="h-4 w-4 text-clay-600" />
               Resource Allocation Suggestions
             </CardTitle>
             <CardDescription>

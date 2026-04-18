@@ -551,12 +551,12 @@ export default function JekyllAndHydePage() {
       {/* Exam format banner */}
       <section className="bg-amber-500/10 border-b border-amber-500/30 px-4 py-6">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-lg font-bold text-amber-800 dark:text-amber-200">
+          <h2 className="text-lg font-bold text-amber-800">
             AQA Exam Format: {examInfo.paper}
           </h2>
           <div className="mt-3 grid gap-4 sm:grid-cols-3">
             <div className="rounded-lg bg-card p-4 border border-amber-500/30">
-              <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
+              <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">
                 Section &amp; Marks
               </p>
               <p className="mt-1 text-sm font-bold text-foreground">
@@ -567,7 +567,7 @@ export default function JekyllAndHydePage() {
               </p>
             </div>
             <div className="rounded-lg bg-card p-4 border border-amber-500/30 sm:col-span-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
+              <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">
                 Key Difference
               </p>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
@@ -577,7 +577,7 @@ export default function JekyllAndHydePage() {
           </div>
 
           <div className="mt-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300 mb-3">
+            <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 mb-3">
               Key Skills (what markers look for)
             </p>
             <div className="grid gap-3 sm:grid-cols-3">
@@ -590,7 +590,7 @@ export default function JekyllAndHydePage() {
                     <span className="text-sm font-bold text-primary">
                       {ao.code}
                     </span>
-                    <span className="text-xs font-medium text-amber-700 dark:text-amber-300">
+                    <span className="text-xs font-medium text-amber-700">
                       {ao.marks}
                     </span>
                   </div>

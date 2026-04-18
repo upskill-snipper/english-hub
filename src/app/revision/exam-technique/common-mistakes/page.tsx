@@ -254,10 +254,10 @@ function getCategoryColour(category: string) {
     Quotation: { text: 'text-blue-400', bg: 'bg-blue-500/10' },
     Terminology: { text: 'text-violet-400', bg: 'bg-violet-500/10' },
     Structure: { text: 'text-cyan-400', bg: 'bg-cyan-500/10' },
-    Context: { text: 'text-amber-400', bg: 'bg-amber-500/10' },
+    Context: { text: 'text-clay-600', bg: 'bg-amber-500/10' },
     'Writer focus': { text: 'text-emerald-400', bg: 'bg-emerald-500/10' },
-    'Critical thinking': { text: 'text-orange-400', bg: 'bg-orange-500/10' },
-    'Exam technique': { text: 'text-yellow-400', bg: 'bg-yellow-500/10' },
+    'Critical thinking': { text: 'text-clay-600', bg: 'bg-orange-500/10' },
+    'Exam technique': { text: 'text-clay-600', bg: 'bg-yellow-500/10' },
     'Reader response': { text: 'text-pink-400', bg: 'bg-pink-500/10' },
     'Academic register': { text: 'text-indigo-400', bg: 'bg-indigo-500/10' },
     'Technical accuracy': { text: 'text-teal-400', bg: 'bg-teal-500/10' },
@@ -413,7 +413,7 @@ export default function CommonMistakesPage() {
       {/* ── Summary checklist ───────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-rose-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
-          <AlertTriangle className="size-5 text-amber-400" />
+          <AlertTriangle className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
             Quick Self-Check Before Submitting
           </h2>
@@ -435,7 +435,7 @@ export default function CommonMistakesPage() {
             'Have I proofread for spelling and punctuation?',
           ].map((item) => (
             <div key={item} className="flex gap-3 items-start rounded-xl border border-border/40 bg-background/50 p-3">
-              <Lightbulb className="mt-0.5 size-4 shrink-0 text-amber-400" />
+              <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600" />
               <p className="text-xs text-muted-foreground leading-relaxed">{item}</p>
             </div>
           ))}

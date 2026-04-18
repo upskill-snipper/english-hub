@@ -49,7 +49,7 @@ const themes: ThemeData[] = [
   {
     title: 'Redemption and Change',
     icon: Sparkles,
-    iconColour: 'text-amber-400',
+    iconColour: 'text-clay-600',
     definition:
       'The idea that a person can acknowledge their past wrongs, choose to live differently, and be genuinely transformed.',
     overview:
@@ -440,7 +440,7 @@ const themes: ThemeData[] = [
   {
     title: 'Greed and Capitalism',
     icon: Flame,
-    iconColour: 'text-orange-400',
+    iconColour: 'text-clay-600',
     definition:
       'Dickens\'s critique of the idea that the pursuit of individual wealth should take priority over collective welfare.',
     overview:
@@ -622,7 +622,7 @@ export default function ThemesPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
-                  <Flame className="size-4 text-orange-400" />
+                  <Flame className="size-4 text-clay-600" />
                   Evidence Across the Novella
                 </CardTitle>
               </CardHeader>
@@ -683,7 +683,7 @@ export default function ThemesPage() {
             <Card className="bg-primary/[0.03] border-primary/10">
               <CardContent className="p-5 sm:p-6">
                 <h4 className="mb-3 text-sm font-semibold text-foreground flex items-center gap-2">
-                  <Lightbulb className="size-4 text-amber-400" />
+                  <Lightbulb className="size-4 text-clay-600" />
                   Essay Planning Tips
                 </h4>
                 <ul className="list-disc space-y-2 pl-4 text-body-sm text-muted-foreground">

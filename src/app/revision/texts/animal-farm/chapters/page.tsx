@@ -48,7 +48,7 @@ const chapters: ChapterData[] = [
     number: 1,
     title: "Old Major's Speech",
     icon: Crown,
-    iconColour: 'text-amber-400',
+    iconColour: 'text-clay-600',
     keyEvents: [
       'Old Major gathers the animals in the barn and delivers a rousing speech about human tyranny.',
       "He teaches them 'Beasts of England', a song imagining a future without human oppression.",
@@ -182,7 +182,7 @@ const chapters: ChapterData[] = [
     number: 6,
     title: 'The Windmill and Trade',
     icon: LandPlot,
-    iconColour: 'text-orange-400',
+    iconColour: 'text-clay-600',
     keyEvents: [
       'Napoleon announces the windmill will be built after all -- claiming it was his idea.',
       'The animals work gruelling 60-hour weeks. Napoleon begins trading with neighbouring farms through a human solicitor, Mr Whymper.',

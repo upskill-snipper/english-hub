@@ -117,8 +117,8 @@ export function SchoolSidebarNav({
           {/* FOUNDER badge */}
           {isFounder && (
             <div className="mt-3 flex items-center gap-1.5 rounded-md bg-amber-400/15 px-3 py-1.5">
-              <ChevronRight className="h-3 w-3 shrink-0 text-amber-400" />
-              <span className="text-[11px] font-semibold leading-snug text-amber-300">
+              <ChevronRight className="h-3 w-3 shrink-0 text-clay-600" />
+              <span className="text-[11px] font-semibold leading-snug text-amber-700">
                 {founderLabel}
               </span>
             </div>

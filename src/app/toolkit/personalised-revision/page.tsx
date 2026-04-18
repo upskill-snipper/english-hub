@@ -260,9 +260,9 @@ export default function PersonalisedRevisionPage() {
                 <div className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-3 dark:border-amber-900/50 dark:bg-amber-950/30">
                   <BarChart3 className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
                   <p className="text-sm leading-relaxed">
-                    Your <span className="font-semibold text-amber-700 dark:text-amber-400">{profile.aoGaps[0].ao}</span>{' '}
+                    Your <span className="font-semibold text-amber-700 dark:text-clay-600">{profile.aoGaps[0].ao}</span>{' '}
                     ({profile.aoGaps[0].label}) is consistently your weakest assessment objective at{' '}
-                    <span className="font-mono font-semibold text-amber-700 dark:text-amber-400">{profile.aoGaps[0].percentage}%</span>.
+                    <span className="font-mono font-semibold text-amber-700 dark:text-clay-600">{profile.aoGaps[0].percentage}%</span>.
                     This affects every essay you write.
                   </p>
                 </div>
@@ -316,12 +316,12 @@ export default function PersonalisedRevisionPage() {
                 >
                   <div className="flex items-center gap-2 mb-3">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/50">
-                      <BarChart3 className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+                      <BarChart3 className="h-4 w-4 text-amber-600 dark:text-clay-600" />
                     </div>
                     <h3 className="font-serif text-lg font-medium">
                       {gap.ao}: {gap.label}
                     </h3>
-                    <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900 dark:text-amber-400 dark:border-amber-800 font-mono text-xs ml-auto">
+                    <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900 dark:text-clay-600 dark:border-amber-800 font-mono text-xs ml-auto">
                       {gap.percentage}%
                     </Badge>
                   </div>
@@ -343,7 +343,7 @@ export default function PersonalisedRevisionPage() {
             <h2 className="font-serif text-2xl font-medium tracking-tight">
               Secure Grade {profile.predictedGrade}
             </h2>
-            <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-400 dark:border-amber-900 text-xs font-mono ml-2">
+            <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-clay-600 dark:border-amber-900 text-xs font-mono ml-2">
               Priority 2
             </Badge>
           </div>
@@ -367,7 +367,7 @@ export default function PersonalisedRevisionPage() {
               <ol className="space-y-2">
                 {getGradeTips(profile.predictedGrade).map((tip, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xs font-bold dark:bg-amber-900 dark:text-amber-400">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xs font-bold dark:bg-amber-900 dark:text-clay-600">
                       {i + 1}
                     </span>
                     <p className="text-sm leading-relaxed">{tip}</p>
@@ -445,7 +445,7 @@ export default function PersonalisedRevisionPage() {
                     key={i}
                     className="flex items-start gap-3 rounded-lg border border-yellow-200 bg-yellow-50/50 p-4 dark:border-yellow-900/50 dark:bg-yellow-950/20"
                   >
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold dark:bg-yellow-900 dark:text-yellow-300">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold dark:bg-yellow-900">
                       {i + 1}
                     </span>
                     <p className="text-sm leading-relaxed font-medium">
@@ -642,7 +642,7 @@ function StudyPlanCard({ item }: { item: StudyPlanItem }) {
     item.impact === 'high'
       ? 'text-red-600 bg-red-100 border-red-200 dark:text-red-400 dark:bg-red-900/50 dark:border-red-800'
       : item.impact === 'medium'
-        ? 'text-amber-600 bg-amber-100 border-amber-200 dark:text-amber-400 dark:bg-amber-900/50 dark:border-amber-800'
+        ? 'text-amber-600 bg-amber-100 border-amber-200 dark:text-clay-600 dark:bg-amber-900/50 dark:border-amber-800'
         : 'text-emerald-600 bg-emerald-100 border-emerald-200 dark:text-emerald-400 dark:bg-emerald-900/50 dark:border-emerald-800'
 
   return (

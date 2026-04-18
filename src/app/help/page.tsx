@@ -128,7 +128,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
     title: 'Practice & Revision',
     description: 'Sharpen your skills with targeted practice.',
     icon: PenTool,
-    color: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+    color: 'text-clay-600 bg-amber-500/10 border-amber-500/20',
     items: [
       {
         question: 'What types of practice questions are available?',
@@ -229,7 +229,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
     title: 'Technical Issues',
     description: 'Troubleshooting and technical support.',
     icon: Wrench,
-    color: 'text-orange-400 bg-orange-500/10 border-orange-500/20',
+    color: 'text-clay-600 bg-orange-500/10 border-orange-500/20',
     items: [
       {
         question: 'What devices can I use The English Hub on?',

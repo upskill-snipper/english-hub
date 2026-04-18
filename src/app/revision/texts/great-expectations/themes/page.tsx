@@ -31,7 +31,7 @@ type ThemeAnalysis = {
 const THEMES: ThemeAnalysis[] = [
   {
     title: 'Social Class and Snobbery',
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     overview:
       'Great Expectations is Dickens\'s most sustained attack on the Victorian class system. The novel systematically dismantles the idea that social class reflects moral worth. Pip\'s journey from blacksmith\'s boy to London "gentleman" and back exposes the hollowness of class distinctions: his money comes from a convict, his manners are a performance, and his happiest moments are at the forge, not in London drawing rooms. Dickens argues that the true measure of a person is their conduct, not their birth or bank balance.',
     howDickensPresentsIt: [

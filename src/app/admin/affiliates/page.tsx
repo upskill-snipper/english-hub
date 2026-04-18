@@ -237,7 +237,7 @@ export default function AdminAffiliatesPage() {
         {pending.length > 0 && !filter && (
           <section className="card p-6 mb-6">
             <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-              <AlertTriangle className="w-5 h-5 text-yellow-400" />
+              <AlertTriangle className="w-5 h-5 text-clay-600" />
               Pending Applications ({pending.length})
             </h2>
             <div className="space-y-4">
@@ -248,7 +248,7 @@ export default function AdminAffiliatesPage() {
                       <div className="flex items-center gap-2 mb-1">
                         <span className="font-semibold text-foreground">{a.full_name}</span>
                         {a.is_minor && (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400">
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/10 text-clay-600">
                             Under 18
                           </span>
                         )}
@@ -280,7 +280,7 @@ export default function AdminAffiliatesPage() {
                         </a>
                       )}
                       {a.is_minor && a.parental_consent_guardian_name && (
-                        <p className="text-xs text-yellow-400 mt-2">
+                        <p className="text-xs text-clay-600 mt-2">
                           Guardian: {a.parental_consent_guardian_name} ({a.parental_consent_guardian_email})
                         </p>
                       )}
@@ -346,7 +346,7 @@ export default function AdminAffiliatesPage() {
                           />
                           {a.full_name}
                           {a.is_minor && (
-                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-yellow-500/10 text-yellow-400">
+                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-yellow-500/10 text-clay-600">
                               Minor
                             </span>
                           )}
@@ -459,11 +459,11 @@ export default function AdminAffiliatesPage() {
 
 function StatusBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
-    pending: 'bg-yellow-500/10 text-yellow-400',
+    pending: 'bg-yellow-500/10 text-clay-600',
     agreement_sent: 'bg-blue-500/10 text-blue-400',
     agreement_signed: 'bg-blue-500/10 text-blue-400',
     active: 'bg-primary/10 text-primary',
-    suspended: 'bg-orange-500/10 text-orange-400',
+    suspended: 'bg-orange-500/10 text-clay-600',
     terminated: 'bg-red-500/10 text-red-400',
   }
   return (

@@ -21,7 +21,7 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 function GradeBadge({ grade }: { grade: number }) {
   const colours: Record<number, string> = {
-    5: 'border-amber-500/40 bg-amber-500/10 text-amber-300',
+    5: 'border-amber-500/40 bg-amber-500/10 text-amber-700',
     7: 'border-blue-500/40 bg-blue-500/10 text-blue-300',
     9: 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300',
   }
@@ -50,7 +50,7 @@ function Annotation({
     },
     improvement: {
       icon: AlertTriangle,
-      colour: 'text-amber-400',
+      colour: 'text-clay-600',
       border: 'border-amber-500/30 bg-amber-500/[0.06]',
       label: 'To improve',
     },

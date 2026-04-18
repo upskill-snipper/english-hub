@@ -11,7 +11,7 @@ import { GraduationCap } from 'lucide-react'
 const boards = [
   { id: 'aqa', board: 'AQA', color: 'border-blue-500/30 hover:border-blue-500/60', accent: 'text-blue-400', bg: 'bg-blue-500/10', desc: 'Paper structure, mark schemes, and expert tips.' },
   { id: 'edexcel', board: 'Edexcel', color: 'border-violet-500/30 hover:border-violet-500/60', accent: 'text-violet-400', bg: 'bg-violet-500/10', desc: 'Paper structure, mark schemes, and expert tips.' },
-  { id: 'ocr', board: 'OCR', color: 'border-orange-500/30 hover:border-orange-500/60', accent: 'text-orange-400', bg: 'bg-orange-500/10', desc: 'Paper structure, mark schemes, and expert tips.' },
+  { id: 'ocr', board: 'OCR', color: 'border-orange-500/30 hover:border-orange-500/60', accent: 'text-clay-600', bg: 'bg-orange-500/10', desc: 'Paper structure, mark schemes, and expert tips.' },
   { id: 'eduqas', board: 'WJEC Eduqas', color: 'border-red-500/30 hover:border-red-500/60', accent: 'text-red-400', bg: 'bg-red-500/10', desc: 'Paper structure, mark schemes, and expert tips.' },
 ] as const
 

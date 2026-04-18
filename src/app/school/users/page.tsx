@@ -276,7 +276,7 @@ function StatusBadge({ status }: { status: Status }) {
     },
     pending: {
       label: "Pending invite",
-      className: "bg-amber-500/15 text-amber-400 border border-amber-500/25",
+      className: "bg-amber-500/15 text-clay-600 border border-amber-500/25",
     },
     suspended: {
       label: "Suspended",

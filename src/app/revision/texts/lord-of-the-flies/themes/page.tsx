@@ -274,7 +274,7 @@ export default async function LotFThemesPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Lightbulb className="mr-1 size-3 text-amber-400" />
+              <Lightbulb className="mr-1 size-3 text-clay-600" />
               Themes & Symbolism
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
@@ -299,7 +299,7 @@ export default async function LotFThemesPage() {
       {/* ── THEMES ─────────────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Lightbulb className="size-5 text-amber-400" />
+          <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">Key Themes</h2>
         </div>
       </section>
@@ -307,7 +307,7 @@ export default async function LotFThemesPage() {
       {themes.map((theme) => (
         <section key={theme.title} id={theme.title.toLowerCase().replace(/\s+/g, '-')}>
           <div className="mb-5 flex items-center gap-3">
-            <Flame className="size-5 text-orange-400" />
+            <Flame className="size-5 text-clay-600" />
             <h2 className="text-heading-lg font-heading text-foreground">{theme.title}</h2>
           </div>
 

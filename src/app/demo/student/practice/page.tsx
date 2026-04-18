@@ -167,7 +167,7 @@ export default function StudentPracticeDemoPage() {
               Back to papers
             </button>
             <div className="flex items-center gap-2 rounded-lg border border-ink-200 bg-cream-100 px-4 py-2">
-              <Timer className="h-4 w-4 text-amber-400" />
+              <Timer className="h-4 w-4 text-clay-600" />
               <span className="font-mono text-sm text-ink-600">{formatTime(timerSeconds)}</span>
             </div>
           </div>
@@ -276,7 +276,7 @@ export default function StudentPracticeDemoPage() {
 
                   {/* Improvements */}
                   <div>
-                    <h4 className="text-xs font-medium text-amber-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <h4 className="text-xs font-medium text-clay-600 uppercase tracking-wider mb-3 flex items-center gap-2">
                       <TrendingUp className="h-3.5 w-3.5" />
                       Areas for Improvement
                     </h4>
@@ -315,7 +315,7 @@ export default function StudentPracticeDemoPage() {
 
               {/* CTA */}
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-6 text-center">
-                <p className="text-sm text-amber-400/80 mb-3">
+                <p className="text-sm text-clay-600/80 mb-3">
                   Get AI-powered feedback on every answer with a full account.
                 </p>
                 <Link
@@ -384,7 +384,7 @@ export default function StudentPracticeDemoPage() {
               {/* Start button */}
               <button
                 onClick={() => handleStartPractice(paper.id)}
-                className="w-full flex items-center justify-center gap-2 rounded-lg border border-ink-200 bg-cream-100 px-4 py-2.5 text-sm text-ink-600 hover:bg-cream-100 hover:text-ink-900 transition-all group-hover:border-amber-500/20 group-hover:text-amber-400"
+                className="w-full flex items-center justify-center gap-2 rounded-lg border border-ink-200 bg-cream-100 px-4 py-2.5 text-sm text-ink-600 hover:bg-cream-100 hover:text-ink-900 transition-all group-hover:border-amber-500/20 group-hover:text-clay-600"
               >
                 <Play className="h-3.5 w-3.5" />
                 Start Practice

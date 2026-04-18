@@ -10,8 +10,8 @@ interface ExamReadinessGaugeProps {
 
 function getReadinessColor(pct: number): string {
   if (pct >= 75) return 'text-green-400'
-  if (pct >= 50) return 'text-amber-400'
-  if (pct >= 25) return 'text-orange-400'
+  if (pct >= 50) return 'text-clay-600'
+  if (pct >= 25) return 'text-clay-600'
   return 'text-red-400'
 }
 

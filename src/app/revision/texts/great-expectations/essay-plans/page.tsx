@@ -334,7 +334,7 @@ export default async function GreatExpectationsEssayPlansPage() {
               {/* Introduction */}
               <div>
                 <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
-                  <Lightbulb className="size-4 text-amber-400" />
+                  <Lightbulb className="size-4 text-clay-600" />
                   Introduction
                 </h3>
                 <p className="text-body-sm text-muted-foreground">

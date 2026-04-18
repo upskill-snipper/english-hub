@@ -147,7 +147,7 @@ const PERMISSION_ROWS = [
 function cellClass(value: string) {
   if (value === "Yes" || value === "All") return "text-emerald-400 font-semibold"
   if (value === "No") return "text-muted-foreground"
-  return "text-amber-400 font-medium"
+  return "text-clay-600 font-medium"
 }
 
 function PermissionMatrix() {
@@ -433,7 +433,7 @@ function DistributingLoginsContent() {
         </div>
         <div className="rounded-lg border border-border bg-card p-4 space-y-1.5">
           <div className="flex items-center gap-2 text-sm font-semibold">
-            <Lock className="h-4 w-4 text-amber-400" />
+            <Lock className="h-4 w-4 text-clay-600" />
             Security reminders
           </div>
           <ul className="space-y-1 text-xs text-muted-foreground">

@@ -635,7 +635,7 @@ export default function EduqasEssayPlansPage() {
           <CardContent className="p-5 sm:p-6">
             <div className="flex items-start gap-3">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/10">
-                <Lightbulb className="size-5 text-amber-400" />
+                <Lightbulb className="size-5 text-clay-600" />
               </div>
               <div className="space-y-3">
                 <div>
@@ -650,19 +650,19 @@ export default function EduqasEssayPlansPage() {
                 </div>
                 <ul className="grid gap-2 text-body-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <FileText className="mt-0.5 size-4 shrink-0 text-amber-400" />
+                    <FileText className="mt-0.5 size-4 shrink-0 text-clay-600" />
                     Read the thesis -- it states the argument the whole essay will prove
                   </li>
                   <li className="flex items-start gap-2">
-                    <FileText className="mt-0.5 size-4 shrink-0 text-amber-400" />
+                    <FileText className="mt-0.5 size-4 shrink-0 text-clay-600" />
                     Each paragraph compares both poems on the same idea
                   </li>
                   <li className="flex items-start gap-2">
-                    <FileText className="mt-0.5 size-4 shrink-0 text-amber-400" />
+                    <FileText className="mt-0.5 size-4 shrink-0 text-clay-600" />
                     Evidence is given as brief references, not full quotations from copyrighted poems
                   </li>
                   <li className="flex items-start gap-2">
-                    <FileText className="mt-0.5 size-4 shrink-0 text-amber-400" />
+                    <FileText className="mt-0.5 size-4 shrink-0 text-clay-600" />
                     The conclusion draws the comparison together and links to the bigger picture
                   </li>
                 </ul>

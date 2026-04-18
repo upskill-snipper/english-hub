@@ -85,7 +85,7 @@ function StatusBadge({ status }: { status: ImportUser["status"] }) {
   }
   if (status === "duplicate") {
     return (
-      <span className="inline-flex items-center gap-1.5 text-amber-400 text-sm font-medium">
+      <span className="inline-flex items-center gap-1.5 text-clay-600 text-sm font-medium">
         <AlertCircle className="size-4 shrink-0" />
         Already exists
       </span>
@@ -378,7 +378,7 @@ export default function ImportResultsPage() {
             {isFullSuccess ? (
               <CheckCircle className="size-9 text-emerald-400 shrink-0" />
             ) : hasErrors ? (
-              <AlertCircle className="size-9 text-amber-400 shrink-0" />
+              <AlertCircle className="size-9 text-clay-600 shrink-0" />
             ) : (
               <XCircle className="size-9 text-red-400 shrink-0" />
             )}
@@ -388,7 +388,7 @@ export default function ImportResultsPage() {
                 isFullSuccess
                   ? "text-emerald-300"
                   : hasErrors && job.success > 0
-                  ? "text-amber-300"
+                  ? "text-amber-700"
                   : "text-red-300",
               ].join(" ")}
             >
@@ -413,7 +413,7 @@ export default function ImportResultsPage() {
             <p className="mt-1 text-xs text-zinc-500 uppercase tracking-wider">Errors</p>
           </div>
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4 text-center">
-            <p className="text-2xl font-bold text-amber-400">{job.duplicates}</p>
+            <p className="text-2xl font-bold text-clay-600">{job.duplicates}</p>
             <p className="mt-1 text-xs text-zinc-500 uppercase tracking-wider">Duplicates</p>
           </div>
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4 text-center">
@@ -442,8 +442,8 @@ export default function ImportResultsPage() {
             <CardContent className="space-y-4">
               {/* Warning box */}
               <div className="flex items-start gap-3 rounded-lg border border-amber-800/50 bg-amber-950/20 px-4 py-3">
-                <AlertCircle className="size-4 shrink-0 mt-0.5 text-amber-400" />
-                <p className="text-sm text-amber-300 font-medium">
+                <AlertCircle className="size-4 shrink-0 mt-0.5 text-clay-600" />
+                <p className="text-sm text-amber-700 font-medium">
                   Temporary passwords are shown once. Download now and store securely.
                 </p>
               </div>
@@ -535,9 +535,9 @@ export default function ImportResultsPage() {
           <Card className="border-amber-900/30 bg-amber-950/10">
             <CardContent className="pt-5 pb-5">
               <div className="flex items-start gap-3">
-                <AlertCircle className="size-5 shrink-0 mt-0.5 text-amber-400" />
+                <AlertCircle className="size-5 shrink-0 mt-0.5 text-clay-600" />
                 <div>
-                  <p className="font-semibold text-amber-300">
+                  <p className="font-semibold text-amber-700">
                     {job.duplicates} duplicate account{job.duplicates !== 1 ? "s" : ""} skipped
                   </p>
                   <p className="mt-1 text-sm text-zinc-400">

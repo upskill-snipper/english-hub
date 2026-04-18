@@ -127,7 +127,7 @@ function yearGroupNum(yg: string): number {
 
 const ragColors = {
   red: "bg-red-500/20 text-red-400 border-red-500/30",
-  amber: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+  amber: "bg-amber-500/20 text-clay-600 border-amber-500/30",
   green: "bg-teal-800/10 text-teal-700 border-teal-800/30",
 }
 
@@ -343,7 +343,7 @@ export default function ReportsPage() {
               {[
                 { label: "Total Students", value: totalStudents.toString(), icon: <Users className="h-5 w-5" />, color: "text-teal-700" },
                 { label: "Active Rate", value: `${activeRate}%`, icon: <TrendingUp className="h-5 w-5" />, color: "text-teal-700" },
-                { label: "Avg Score", value: `${avgScore}% (G${percentageToGCSEGrade(avgScore)})`, icon: <Target className="h-5 w-5" />, color: "text-amber-400" },
+                { label: "Avg Score", value: `${avgScore}% (G${percentageToGCSEGrade(avgScore)})`, icon: <Target className="h-5 w-5" />, color: "text-clay-600" },
                 { label: "Completion Rate", value: `${completionRate}%`, icon: <CheckCircle2 className="h-5 w-5" />, color: "text-teal-700" },
                 { label: "At-Risk Students", value: atRiskCount.toString(), icon: <AlertTriangle className="h-5 w-5" />, color: "text-red-400" },
               ].map((metric) => (
@@ -535,7 +535,7 @@ export default function ReportsPage() {
               </Card>
               <Card className="bg-card border-border print-avoid-break">
                 <CardHeader>
-                  <CardTitle className="text-amber-400 flex items-center gap-2">
+                  <CardTitle className="text-clay-600 flex items-center gap-2">
                     <TrendingDown className="h-4 w-4" />
                     Areas for Improvement
                   </CardTitle>
@@ -658,7 +658,7 @@ export default function ReportsPage() {
                       description: "Generated automatically before Parents' Evening -- includes all student reports",
                       recipient: "Parents",
                       frequency: "Termly",
-                      icon: <GraduationCap className="h-4 w-4 text-amber-400" />,
+                      icon: <GraduationCap className="h-4 w-4 text-clay-600" />,
                       defaultOn: false,
                     },
                   ].map((schedule) => (
@@ -1121,7 +1121,7 @@ export default function ReportsPage() {
                           <span className="text-sm text-foreground/80 w-48 shrink-0">{mod.name}</span>
                           <div className="flex-1 bg-muted rounded-full h-2.5"><div className={`h-2.5 rounded-full ${rag === "green" ? "bg-teal-700" : rag === "amber" ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${mod.score}%` }} /></div>
                           <span className="text-sm text-foreground font-semibold w-16 text-right">G{percentageToGCSEGrade(mod.score)}</span>
-                          <Badge className={`w-24 justify-center ${mod.status === "completed" ? "bg-teal-800/10 text-teal-700" : mod.status === "in-progress" ? "bg-amber-500/20 text-amber-400" : "bg-ink-200/20 text-muted-foreground"}`}>
+                          <Badge className={`w-24 justify-center ${mod.status === "completed" ? "bg-teal-800/10 text-teal-700" : mod.status === "in-progress" ? "bg-amber-500/20 text-clay-600" : "bg-ink-200/20 text-muted-foreground"}`}>
                             {mod.status === "completed" ? "Completed" : mod.status === "in-progress" ? "In Progress" : "Not Started"}
                           </Badge>
                         </div>
@@ -1200,7 +1200,7 @@ export default function ReportsPage() {
             {/* Teacher ranking */}
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
-                <CardTitle className="text-foreground flex items-center gap-2"><Award className="h-5 w-5 text-amber-400" />Teacher Ranking by Student Outcomes</CardTitle>
+                <CardTitle className="text-foreground flex items-center gap-2"><Award className="h-5 w-5 text-clay-600" />Teacher Ranking by Student Outcomes</CardTitle>
                 <CardDescription className="text-muted-foreground">Ranked by average student progress across all assigned classes</CardDescription>
               </CardHeader>
               <CardContent>
@@ -1211,13 +1211,13 @@ export default function ReportsPage() {
                       {teacherRanking.map((t, i) => (
                         <tr key={t.id} className={`border-b border-border/50 hover:bg-muted/50 transition-colors cursor-pointer ${selectedTeacherId === t.id ? "bg-muted/50" : ""}`} onClick={() => setSelectedTeacherId(t.id)}>
                           <td className="py-3 pr-4">
-                            <span className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${i === 0 ? "bg-amber-500/20 text-amber-400" : i === 1 ? "bg-neutral-400/20 text-foreground/80" : i === 2 ? "bg-orange-500/20 text-orange-400" : "bg-muted/50 text-muted-foreground/70"}`}>{i + 1}</span>
+                            <span className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${i === 0 ? "bg-amber-500/20 text-clay-600" : i === 1 ? "bg-neutral-400/20 text-foreground/80" : i === 2 ? "bg-orange-500/20 text-clay-600" : "bg-muted/50 text-muted-foreground/70"}`}>{i + 1}</span>
                           </td>
                           <td className="py-3 pr-4 font-medium text-foreground">{t.name}</td>
                           <td className="py-3 pr-4 text-foreground/80">{t.department}</td>
                           <td className="py-3 pr-4 text-foreground/80">{t.classNames.join(", ")}</td>
                           <td className="py-3 pr-4 text-foreground/80">{t.totalStudents}</td>
-                          <td className="py-3 pr-4"><span className={`font-semibold ${t.avgProgress >= 75 ? "text-teal-700" : t.avgProgress >= 60 ? "text-amber-400" : "text-red-400"}`}>{t.avgProgress}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(t.avgProgress)})</span></span></td>
+                          <td className="py-3 pr-4"><span className={`font-semibold ${t.avgProgress >= 75 ? "text-teal-700" : t.avgProgress >= 60 ? "text-clay-600" : "text-red-400"}`}>{t.avgProgress}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(t.avgProgress)})</span></span></td>
                           <td className="py-3 text-foreground/80">{t.completionRate}%</td>
                         </tr>
                       ))}

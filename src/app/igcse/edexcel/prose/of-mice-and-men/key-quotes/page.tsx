@@ -183,7 +183,7 @@ export default async function OmamKeyQuotesPage() {
 
       <section className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5">
         <div className="flex gap-3">
-          <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-amber-400" />
+          <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
               Key quotations only — read the full text

@@ -207,7 +207,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       {/* IGCSE banner */}
       {showIgcseBanner && (
         <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] p-4 flex items-start gap-3">
-          <Info className="mt-0.5 size-5 shrink-0 text-amber-400" />
+          <Info className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="flex-1">
             <p className="text-sm font-semibold text-foreground">
               Your board uses a different paper structure
@@ -619,7 +619,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       </Section>
 
       {/* ── 6. Practice Extract with Guided Questions ─────────────── */}
-      <Section title="Practice Extract with Guided Questions" icon={BookOpen} colour="text-amber-400">
+      <Section title="Practice Extract with Guided Questions" icon={BookOpen} colour="text-clay-600">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Use this short extract to practise your reading skills. Try answering each
@@ -779,7 +779,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
             className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
           >
             <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-orange-500/10">
-              <Search className="size-4 text-orange-400" />
+              <Search className="size-4 text-clay-600" />
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">Test Yourself</p>
@@ -808,7 +808,7 @@ function PracticeQuestion({
   return (
     <div className="rounded-xl border border-border/60 p-4">
       <div className="flex items-start gap-3">
-        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-amber-500/10 text-xs font-bold text-amber-400">
+        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-amber-500/10 text-xs font-bold text-clay-600">
           Q{number}
         </span>
         <div className="flex-1">

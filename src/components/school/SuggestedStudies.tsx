@@ -143,7 +143,7 @@ const RESOURCE_TYPE_CONFIG: Record<
   practice_questions: {
     icon: HelpCircle,
     label: 'Practice Questions',
-    color: 'text-amber-400',
+    color: 'text-clay-600',
     bgColor: 'bg-amber-500/10',
   },
   flashcard_deck: {

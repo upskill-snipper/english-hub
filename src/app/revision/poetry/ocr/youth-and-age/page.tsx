@@ -172,7 +172,7 @@ export default function OCRYouthAndAgePage() {
 
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Clock className="size-5 text-amber-400" />
+          <Clock className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">All 15 Poems</h2>
         </div>
 
@@ -233,7 +233,7 @@ export default function OCRYouthAndAgePage() {
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
-        <BookOpen className="mx-auto mb-3 size-8 text-amber-400" />
+        <BookOpen className="mx-auto mb-3 size-8 text-clay-600" />
         <h2 className="text-heading-lg font-heading text-foreground">
           Explore other clusters
         </h2>

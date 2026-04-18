@@ -278,7 +278,7 @@ export default async function OfMiceAndMenThemesPage() {
       {/* Themes */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Lightbulb className="size-5 text-amber-400" />
+          <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">Themes</h2>
         </div>
         <div className="space-y-6">

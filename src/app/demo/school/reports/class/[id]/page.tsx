@@ -15,7 +15,7 @@ function gradeColor(grade: string): string {
   const num = parseInt(grade);
   if (num >= 8) return "text-teal-700 print:text-emerald-700";
   if (num >= 6) return "text-teal-700 print:text-blue-700";
-  if (num >= 4) return "text-amber-400 print:text-amber-700";
+  if (num >= 4) return "text-clay-600 print:text-amber-700";
   return "text-red-400 print:text-red-700";
 }
 
@@ -24,7 +24,7 @@ function statusBadge(status: string): { label: string; cls: string } {
     case "excelling":
       return {
         label: "Excelling",
-        cls: "bg-yellow-400/15 text-yellow-400 print:bg-yellow-100 print:text-yellow-700",
+        cls: "bg-yellow-400/15 text-clay-600 print:bg-yellow-100 print:text-yellow-700",
       };
     case "on-track":
       return {
@@ -34,7 +34,7 @@ function statusBadge(status: string): { label: string; cls: string } {
     case "needs-support":
       return {
         label: "Needs Support",
-        cls: "bg-amber-500/15 text-amber-400 print:bg-amber-100 print:text-amber-700",
+        cls: "bg-amber-500/15 text-clay-600 print:bg-amber-100 print:text-amber-700",
       };
     case "at-risk":
       return {
@@ -327,7 +327,7 @@ export default function ClassReportPage() {
               </div>
             </div>
             <div className="bg-cream-100/50 print:bg-neutral-100 rounded-lg p-4 text-center">
-              <div className={`text-2xl font-bold ${Number(classAvgPredicted) > Number(classAvgWorkingAt) ? "text-teal-700 print:text-emerald-700" : Number(classAvgPredicted) < Number(classAvgWorkingAt) ? "text-red-400 print:text-red-700" : "text-amber-400 print:text-amber-700"}`}>
+              <div className={`text-2xl font-bold ${Number(classAvgPredicted) > Number(classAvgWorkingAt) ? "text-teal-700 print:text-emerald-700" : Number(classAvgPredicted) < Number(classAvgWorkingAt) ? "text-red-400 print:text-red-700" : "text-clay-600 print:text-amber-700"}`}>
                 Grade {classAvgPredicted}
               </div>
               <div className="text-ink-500 print:text-ink-500 text-xs mt-1">
@@ -406,7 +406,7 @@ export default function ClassReportPage() {
               {[
                 { label: "Excelling", count: ragCounts.excelling, pct: excellingPct, color: "bg-teal-700 print:bg-teal-800", textColor: "text-teal-700 print:text-emerald-700" },
                 { label: "On Track", count: ragCounts.onTrack, pct: onTrackPct, color: "bg-blue-500 print:bg-teal-800", textColor: "text-teal-700 print:text-blue-700" },
-                { label: "Needs Support", count: ragCounts.needsSupport, pct: needsSupportPct, color: "bg-amber-500 print:bg-amber-600", textColor: "text-amber-400 print:text-amber-700" },
+                { label: "Needs Support", count: ragCounts.needsSupport, pct: needsSupportPct, color: "bg-amber-500 print:bg-amber-600", textColor: "text-clay-600 print:text-amber-700" },
                 { label: "At Risk", count: ragCounts.atRisk, pct: atRiskPct, color: "bg-red-500 print:bg-red-600", textColor: "text-red-400 print:text-red-700" },
               ].map((band) => (
                 <div key={band.label} className="flex items-center gap-3">
@@ -488,7 +488,7 @@ export default function ClassReportPage() {
                         <td className={`px-3 py-2.5 text-center font-bold ${gradeColor(String(s.workingAtGrade))}`}>
                           {s.workingAtGrade}
                         </td>
-                        <td className={`px-3 py-2.5 text-center font-bold ${s.predictedGrade > s.workingAtGrade ? "text-teal-700 print:text-emerald-700" : s.predictedGrade < s.workingAtGrade ? "text-red-400 print:text-red-700" : "text-amber-400 print:text-amber-700"}`}>
+                        <td className={`px-3 py-2.5 text-center font-bold ${s.predictedGrade > s.workingAtGrade ? "text-teal-700 print:text-emerald-700" : s.predictedGrade < s.workingAtGrade ? "text-red-400 print:text-red-700" : "text-clay-600 print:text-amber-700"}`}>
                           {s.predictedGrade}
                         </td>
                         <td className="px-3 py-2.5 text-center font-semibold text-teal-700 print:text-violet-700">

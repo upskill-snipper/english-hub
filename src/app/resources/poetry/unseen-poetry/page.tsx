@@ -47,7 +47,7 @@ function Tip({ children }: { children: React.ReactNode }) {
 function Warning({ children }: { children: React.ReactNode }) {
   return (
     <div className="my-4 rounded-xl border-l-4 border-amber-500 bg-amber-500/10 px-5 py-4">
-      <p className="text-sm font-semibold text-amber-700 dark:text-amber-300 mb-1">Common Mistake</p>
+      <p className="text-sm font-semibold text-amber-700 mb-1">Common Mistake</p>
       <div className="text-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
   );

@@ -41,7 +41,7 @@ export function Grade5Checklist() {
     <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
       <div className="flex items-center gap-3 mb-2">
         <div className="flex size-9 items-center justify-center rounded-lg bg-amber-500/10">
-          <CheckCircle2 className="size-4.5 text-amber-400" />
+          <CheckCircle2 className="size-4.5 text-clay-600" />
         </div>
         <h2 className="text-heading-md font-heading text-foreground">Mastery Checklist</h2>
       </div>

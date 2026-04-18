@@ -166,7 +166,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-orange-500/10">
-            <Zap className="size-5 text-orange-400" />
+            <Zap className="size-5 text-clay-600" />
           </div>
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2">
@@ -342,7 +342,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
       {mounted && history.length > 0 && (
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <Trophy className="size-5 text-amber-400" />
+            <Trophy className="size-5 text-clay-600" />
             <h2 className="text-heading-md font-heading text-foreground">Score History</h2>
           </div>
 
@@ -365,7 +365,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                       gradeNum >= 7
                         ? 'text-emerald-400'
                         : gradeNum >= 5
-                          ? 'text-amber-400'
+                          ? 'text-clay-600'
                           : 'text-red-400'
 
                     return (
@@ -401,7 +401,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
 
       {/* Motivational */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-orange-500/[0.04] via-card to-primary/[0.04] p-6 text-center">
-        <Flame className="mx-auto mb-2 size-7 text-orange-400" />
+        <Flame className="mx-auto mb-2 size-7 text-clay-600" />
         <h3 className="text-heading-md font-heading text-foreground">
           Regular quizzing boosts long-term retention
         </h3>

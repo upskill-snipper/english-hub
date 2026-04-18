@@ -30,7 +30,7 @@ export default async function MacbethAct3Page() {
             Back to Macbeth overview
           </Button>
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge variant="secondary"><BookOpen className="mr-1 size-3 text-amber-400" />Act 3 — Paranoia &amp; Tyranny</Badge>
+            <Badge variant="secondary"><BookOpen className="mr-1 size-3 text-clay-600" />Act 3 — Paranoia &amp; Tyranny</Badge>
             <Badge variant="outline">6 scenes</Badge>
           </div>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">Macbeth — Act 3: Scene-by-Scene Analysis</h1>
@@ -43,7 +43,7 @@ export default async function MacbethAct3Page() {
       {/* Scene 1 */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-amber-400" />Scene 1 — Macbeth Plans Banquo&apos;s Murder</CardTitle>
+          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-clay-600" />Scene 1 — Macbeth Plans Banquo&apos;s Murder</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -103,7 +103,7 @@ export default async function MacbethAct3Page() {
       {/* Scene 2 */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-amber-400" />Scene 2 — &ldquo;Nought&rsquo;s Had, All&rsquo;s Spent&rdquo;</CardTitle>
+          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-clay-600" />Scene 2 — &ldquo;Nought&rsquo;s Had, All&rsquo;s Spent&rdquo;</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -161,7 +161,7 @@ export default async function MacbethAct3Page() {
       {/* Scene 3 */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-amber-400" />Scene 3 — Banquo&apos;s Murder</CardTitle>
+          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-clay-600" />Scene 3 — Banquo&apos;s Murder</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -206,7 +206,7 @@ export default async function MacbethAct3Page() {
       {/* Scene 4 */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-amber-400" />Scene 4 — The Banquet and Banquo&apos;s Ghost</CardTitle>
+          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-clay-600" />Scene 4 — The Banquet and Banquo&apos;s Ghost</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -272,7 +272,7 @@ export default async function MacbethAct3Page() {
       {/* Scene 5 */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-amber-400" />Scene 5 — Hecate&apos;s Intervention</CardTitle>
+          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-clay-600" />Scene 5 — Hecate&apos;s Intervention</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -305,7 +305,7 @@ export default async function MacbethAct3Page() {
       {/* Scene 6 */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-amber-400" />Scene 6 — Lennox&apos;s Suspicions</CardTitle>
+          <CardTitle className="flex items-center gap-2"><Sparkles className="size-5 text-clay-600" />Scene 6 — Lennox&apos;s Suspicions</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>

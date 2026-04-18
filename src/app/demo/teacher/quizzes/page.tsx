@@ -199,7 +199,7 @@ export default function QuizBuilderDemoPage() {
       <div className="max-w-4xl mx-auto px-6 py-8">
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
-          <p className="text-sm text-amber-400">
+          <p className="text-sm text-clay-600">
             <span className="font-semibold">Teacher Demo</span> -- Try the Quiz
             Builder with sample data. No account needed.
           </p>

@@ -62,7 +62,7 @@ const NINE_ONE_GRADE_CARDS: GradeCard[] = [
     title: 'How to Get a Grade 9',
     subtitle: 'The very top — what markers look for in exceptional work',
     href: '/revision/grade-targets/grade-9',
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     borderHover: 'hover:border-amber-500/30',
     skills: ['Conceptualised, critical responses', 'Alternative interpretations', 'Sophisticated, assured expression'],
@@ -98,7 +98,7 @@ const LETTER_GRADE_CARDS: GradeCard[] = [
     title: 'How to Get an A*',
     subtitle: 'The very top — sophisticated, conceptualised responses',
     href: '/revision/grade-targets/grade-9',
-    colour: 'text-amber-400',
+    colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     borderHover: 'hover:border-amber-500/30',
     skills: ['Conceptualised, critical responses', 'Alternative interpretations', 'Sophisticated, assured expression'],
@@ -209,7 +209,7 @@ export default async function GradeTargetsPage() {
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <div className="flex items-center gap-2 mb-3">
-              <Star className="size-4 text-amber-400" />
+              <Star className="size-4 text-clay-600" />
               <h3 className="text-sm font-semibold text-foreground">Target Grade</h3>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">

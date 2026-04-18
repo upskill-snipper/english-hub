@@ -48,10 +48,10 @@ function FounderWarningSoonBanner({
   schoolId: string
 }) {
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-amber-600/40 bg-amber-950/60 px-4 py-3 text-sm text-amber-300">
-      <AlertTriangle className="h-4 w-4 shrink-0 text-amber-400" aria-hidden="true" />
+    <div className="flex items-center gap-3 rounded-lg border border-amber-600/40 bg-amber-950/60 px-4 py-3 text-sm text-amber-700">
+      <AlertTriangle className="h-4 w-4 shrink-0 text-clay-600" aria-hidden="true" />
       <span>
-        <span className="font-semibold text-amber-200">{daysRemaining} days remaining</span> on your
+        <span className="font-semibold text-amber-700">{daysRemaining} days remaining</span> on your
         FOUNDER access &mdash; renew to keep access
       </span>
       <a
@@ -132,10 +132,10 @@ function TrialActiveBanner({ accessUntil, schoolId }: { accessUntil: string | nu
   const daysRemaining = getDaysRemaining(accessUntil)
 
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-amber-600/40 bg-amber-950/60 px-4 py-3 text-sm text-amber-300">
-      <AlertTriangle className="h-4 w-4 shrink-0 text-amber-400" aria-hidden="true" />
+    <div className="flex items-center gap-3 rounded-lg border border-amber-600/40 bg-amber-950/60 px-4 py-3 text-sm text-amber-700">
+      <AlertTriangle className="h-4 w-4 shrink-0 text-clay-600" aria-hidden="true" />
       <span>
-        <span className="font-semibold text-amber-200">Trial access</span>
+        <span className="font-semibold text-amber-700">Trial access</span>
         {daysRemaining !== null ? (
           <>
             {" "}

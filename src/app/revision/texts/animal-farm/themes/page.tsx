@@ -44,7 +44,7 @@ const themes: ThemeData[] = [
   {
     title: 'Power and Corruption',
     icon: Crown,
-    iconColour: 'text-amber-400',
+    iconColour: 'text-clay-600',
     overview:
       'Orwell\'s central argument: power corrupts absolutely when there are no checks on authority. The pigs begin as liberators and end as oppressors indistinguishable from the humans they replaced. The novel is structured as a slow, inexorable slide from shared idealism to totalitarian dictatorship.',
     keyPoints: [
@@ -132,7 +132,7 @@ const themes: ThemeData[] = [
   {
     title: 'Revolution and Betrayal',
     icon: Flame,
-    iconColour: 'text-orange-400',
+    iconColour: 'text-clay-600',
     overview:
       'Animal Farm does not argue that revolution is wrong. It argues that revolution is tragically vulnerable to betrayal. The animals\' Rebellion is justified -- Jones is a drunk who starves them. The tragedy is what happens afterwards: the ideals that inspired the revolution are hijacked by those who learned only its mechanics and none of its principles.',
     keyPoints: [
@@ -245,7 +245,7 @@ export default async function ThemesPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Lightbulb className="mr-1 size-3 text-amber-400" />
+              <Lightbulb className="mr-1 size-3 text-clay-600" />
               Deep Study
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">

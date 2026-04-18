@@ -204,7 +204,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       {/* IGCSE banner */}
       {showIgcseBanner && (
         <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] p-4 flex items-start gap-3">
-          <Info className="mt-0.5 size-5 shrink-0 text-amber-400" />
+          <Info className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="flex-1">
             <p className="text-sm font-semibold text-foreground">
               Your board uses a different paper structure
@@ -667,7 +667,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       </Section>
 
       {/* ── 6. Paragraphing and Cohesion ──────────────────────────── */}
-      <Section title="Paragraphing and Cohesion" icon={AlignLeft} colour="text-amber-400">
+      <Section title="Paragraphing and Cohesion" icon={AlignLeft} colour="text-clay-600">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Paragraphing is not just about making your work look neat -- it is a structural

@@ -143,7 +143,7 @@ function ragDot(status: "green" | "amber" | "red") {
 function ragBadge(status: "green" | "amber" | "red") {
   const styles = {
     green: "bg-teal-800/10 text-teal-700 border-teal-800/20",
-    amber: "bg-amber-500/15 text-amber-400 border-amber-500/20",
+    amber: "bg-amber-500/15 text-clay-600 border-amber-500/20",
     red: "bg-red-500/15 text-red-400 border-red-500/20",
   }
   const labels = { green: "On Track", amber: "Needs Support", red: "At Risk" }
@@ -168,7 +168,7 @@ function progressColor(pct: number): string {
 
 function progressTextColor(pct: number): string {
   if (pct >= 75) return "text-teal-700"
-  if (pct >= 60) return "text-amber-400"
+  if (pct >= 60) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -392,7 +392,7 @@ export default function TeacherProgressPage() {
           <Card className="bg-white border-ink-200">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
-                <Target className="h-4 w-4 text-amber-400" />
+                <Target className="h-4 w-4 text-clay-600" />
                 Score Distribution
               </CardTitle>
             </CardHeader>

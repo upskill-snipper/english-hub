@@ -9,7 +9,7 @@ const STATS = [
   { label: "Students", value: "342", icon: Users, color: "text-blue-400", bg: "bg-blue-500/10" },
   { label: "Teachers", value: "18", icon: BookOpen, color: "text-purple-400", bg: "bg-purple-500/10" },
   { label: "Classes", value: "12", icon: Brain, color: "text-emerald-400", bg: "bg-emerald-500/10" },
-  { label: "Active This Week", value: "89%", icon: TrendingUp, color: "text-amber-400", bg: "bg-amber-500/10" },
+  { label: "Active This Week", value: "89%", icon: TrendingUp, color: "text-clay-600", bg: "bg-amber-500/10" },
 ]
 
 const YEAR_GROUPS = [
@@ -191,7 +191,7 @@ function AtRiskPanel() {
                     "rounded-full px-2 py-0.5 text-[10px] font-semibold",
                     s.severity === "high"
                       ? "bg-red-500/20 text-red-300"
-                      : "bg-amber-500/20 text-amber-300"
+                      : "bg-amber-500/20 text-amber-700"
                   )}
                 >
                   {s.severity === "high" ? "High" : "Medium"}
@@ -222,7 +222,7 @@ function TopClassesPanel() {
   return (
     <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] overflow-hidden">
       <div className="flex items-center gap-2 border-b border-white/[0.07] px-4 py-3">
-        <Star className="h-4 w-4 text-amber-400" />
+        <Star className="h-4 w-4 text-clay-600" />
         <p className="text-sm font-semibold text-white">Top Classes</p>
       </div>
       <div className="space-y-3 px-4 py-3">

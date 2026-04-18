@@ -132,25 +132,25 @@ const TAG_COLOURS: Record<string, string> = {
   Time: 'bg-blue-500/15 text-blue-300 border-blue-500/20',
   Beauty: 'bg-pink-500/15 text-pink-300 border-pink-500/20',
   City: 'bg-violet-500/15 text-violet-300 border-violet-500/20',
-  Awe: 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+  Awe: 'bg-amber-500/15 text-amber-700 border-amber-500/20',
   Suffering: 'bg-red-500/15 text-red-300 border-red-500/20',
   Power: 'bg-violet-500/15 text-violet-300 border-violet-500/20',
   Identity: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/20',
-  Fear: 'bg-orange-500/15 text-orange-300 border-orange-500/20',
-  Memory: 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+  Fear: 'bg-orange-500/15 text-clay-600 border-orange-500/20',
+  Memory: 'bg-amber-500/15 text-amber-700 border-amber-500/20',
   Loss: 'bg-rose-500/15 text-rose-300 border-rose-500/20',
   Place: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
   Stillness: 'bg-sky-500/15 text-sky-300 border-sky-500/20',
   Nostalgia: 'bg-rose-500/15 text-rose-300 border-rose-500/20',
-  Home: 'bg-amber-500/15 text-amber-300 border-amber-500/20',
+  Home: 'bg-amber-500/15 text-amber-700 border-amber-500/20',
   Travel: 'bg-blue-500/15 text-blue-300 border-blue-500/20',
   Modernity: 'bg-stone-500/15 text-stone-300 border-stone-500/20',
   Disillusion: 'bg-violet-500/15 text-violet-300 border-violet-500/20',
   Culture: 'bg-violet-500/15 text-violet-300 border-violet-500/20',
   Belonging: 'bg-teal-500/15 text-teal-300 border-teal-500/20',
-  Anger: 'bg-orange-500/15 text-orange-300 border-orange-500/20',
+  Anger: 'bg-orange-500/15 text-clay-600 border-orange-500/20',
   Race: 'bg-red-500/15 text-red-300 border-red-500/20',
-  Satire: 'bg-yellow-500/15 text-yellow-300 border-yellow-500/20',
+  Satire: 'bg-yellow-500/15 text-amber-700 border-yellow-500/20',
   Class: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/20',
   Sound: 'bg-blue-500/15 text-blue-300 border-blue-500/20',
 }
@@ -294,7 +294,7 @@ export default function EdexcelTimeAndPlacePage() {
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-amber-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8">
         <div className="mb-3 flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <Lightbulb className="size-5 text-amber-400" />
+            <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-md font-heading text-foreground">
             Comparison tip

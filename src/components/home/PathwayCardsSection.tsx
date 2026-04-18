@@ -49,7 +49,7 @@ export default function PathwayCardsSection() {
             },
             {
               icon: RotateCcw,
-              color: 'text-amber-400 bg-amber-500/10',
+              color: 'text-clay-600 bg-amber-500/10',
               title: 'Revision & Exam Prep',
               subtitle: 'Exam-Ready',
               desc: 'Intensive revision courses to boost your grade in weeks, not months.',

@@ -171,7 +171,7 @@ export default function ForParentsPage() {
               { icon: Users, color: 'text-primary bg-primary/10', value: '2,400+', label: 'Students Learning' },
               { icon: TrendingUp, color: 'text-emerald-400 bg-emerald-500/10', value: '94%', label: 'See Grade Improvement' },
               { icon: BookOpen, color: 'text-blue-400 bg-blue-500/10', value: '13', label: 'Structured Courses' },
-              { icon: Shield, color: 'text-amber-400 bg-amber-500/10', value: 'GDPR', label: 'Compliant & Secure' },
+              { icon: Shield, color: 'text-clay-600 bg-amber-500/10', value: 'GDPR', label: 'Compliant & Secure' },
             ].map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-8 sm:gap-12">
                 {i > 0 && <div className="hidden sm:block w-px h-10 bg-border/50" />}
@@ -274,7 +274,7 @@ export default function ForParentsPage() {
               },
               {
                 icon: Bell,
-                color: 'text-amber-400 bg-amber-500/10',
+                color: 'text-clay-600 bg-amber-500/10',
                 title: 'Weak Area Alerts',
                 desc: 'Get notified when our system identifies areas your child is struggling with. "Your child needs more work on creative writing" or "Poetry analysis scores are below average."',
               },
@@ -334,7 +334,7 @@ export default function ForParentsPage() {
               <Card key={t.name} className="p-6 flex flex-col border-border/40">
                 <div className="flex items-center gap-1 mb-4">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-clay-600" />
                   ))}
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">

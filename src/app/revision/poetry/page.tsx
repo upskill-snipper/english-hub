@@ -257,7 +257,7 @@ function PoetryShell({
 
           {wrongBoard && (
             <div className="mt-6 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 p-3">
-              <Info className="mt-0.5 size-4 shrink-0 text-amber-400" />
+              <Info className="mt-0.5 size-4 shrink-0 text-clay-600" />
               <p className="text-caption text-muted-foreground">
                 That page belongs to a different exam board. Here&apos;s your anthology instead.
               </p>
@@ -346,7 +346,7 @@ function WrongBoardBanner() {
   return (
     <div className="mb-4 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4">
       <div className="flex items-start gap-2">
-        <Info className="mt-0.5 size-4 shrink-0 text-amber-400" />
+        <Info className="mt-0.5 size-4 shrink-0 text-clay-600" />
         <p className="text-caption text-muted-foreground">
           That page belongs to a different exam board. Here&apos;s your anthology instead.
         </p>

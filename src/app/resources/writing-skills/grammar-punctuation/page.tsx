@@ -813,8 +813,8 @@ export default function GrammarPunctuationPage() {
                       </ul>
                     </div>
                     <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-500/10 px-4 py-3">
-                      <p className="font-semibold text-yellow-700 dark:text-yellow-300 text-sm">Level 2 (5-8 marks) -- Some Success</p>
-                      <ul className="mt-1 text-sm text-yellow-700 dark:text-yellow-300 list-disc list-inside space-y-1">
+                      <p className="font-semibold text-yellow-700 text-sm">Level 2 (5-8 marks) -- Some Success</p>
+                      <ul className="mt-1 text-sm text-yellow-700 list-disc list-inside space-y-1">
                         <li>Some varied vocabulary; some sentence variety</li>
                         <li>Spelling generally accurate (including some complex words)</li>
                         <li>Some varied punctuation used, sometimes successfully</li>

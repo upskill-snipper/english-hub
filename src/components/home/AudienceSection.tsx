@@ -40,7 +40,7 @@ const studentBenefits = [
   },
   {
     icon: Timer,
-    color: 'text-orange-400 bg-orange-500/10',
+    color: 'text-clay-600 bg-orange-500/10',
     title: 'Mock Exams with Timing',
     desc: '130+ full-length timed mock exams in real exam format. Practise under pressure and build exam stamina.',
   },
@@ -73,7 +73,7 @@ const teacherBenefits = [
   },
   {
     icon: TrendingUp,
-    color: 'text-amber-400 bg-amber-500/10',
+    color: 'text-clay-600 bg-amber-500/10',
     title: 'Predicted Grades & Targeted Recommendations',
     desc: 'Data-driven grade predictions and personalised recommendations to help every student reach their target.',
   },
@@ -85,7 +85,7 @@ const teacherBenefits = [
   },
   {
     icon: Printer,
-    color: 'text-orange-400 bg-orange-500/10',
+    color: 'text-clay-600 bg-orange-500/10',
     title: 'Printable Worksheets & Resources',
     desc: 'Download and print worksheets, model answers, and revision materials for use in lessons.',
   },

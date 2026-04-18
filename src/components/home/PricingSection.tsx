@@ -172,7 +172,7 @@ export default function PricingSection() {
               Whole-School
             </Badge>
             <div className="flex items-center gap-2 mb-0">
-              <School className="w-5 h-5 text-amber-400 shrink-0" />
+              <School className="w-5 h-5 text-clay-600 shrink-0" />
               <h3 className="text-lg font-bold tracking-tight text-foreground">Schools</h3>
             </div>
             <p className="text-sm text-muted-foreground mt-1 mb-6">
@@ -188,8 +188,8 @@ export default function PricingSection() {
             </div>
             <div className="mb-6 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3">
               <div className="flex items-center gap-2 mb-0.5">
-                <Award className="w-4 h-4 text-amber-400 shrink-0" />
-                <p className="text-sm font-bold text-amber-400">
+                <Award className="w-4 h-4 text-clay-600 shrink-0" />
+                <p className="text-sm font-bold text-clay-600">
                   Founding Schools Programme &mdash; 2026
                 </p>
               </div>
@@ -200,7 +200,7 @@ export default function PricingSection() {
             <ul className="space-y-3 mb-8 flex-1">
               {SCHOOL_FEATURES.map((f) => (
                 <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 text-clay-600 shrink-0 mt-0.5" />
                   {f}
                 </li>
               ))}
@@ -208,7 +208,7 @@ export default function PricingSection() {
             <div className="flex flex-col gap-3">
               <Button
                 variant="outline"
-                className="w-full border-amber-500/50 text-amber-400 hover:bg-amber-500/10 hover:text-amber-300 gap-2"
+                className="w-full border-amber-500/50 text-clay-600 hover:bg-amber-500/10 hover:text-amber-700 gap-2"
                 render={<Link href="/for-schools" />}
               >
                 <Phone className="w-4 h-4" />
@@ -216,7 +216,7 @@ export default function PricingSection() {
               </Button>
               <Button
                 variant="ghost"
-                className="w-full text-amber-400/80 hover:text-amber-300"
+                className="w-full text-clay-600/80 hover:text-amber-700"
                 render={<Link href="/demo" />}
               >
                 View the Demo
@@ -229,7 +229,7 @@ export default function PricingSection() {
         {/* Founding Schools Banner */}
         <div className="mt-12 rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] px-7 py-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="shrink-0 w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center">
-            <Award className="w-5 h-5 text-amber-400" />
+            <Award className="w-5 h-5 text-clay-600" />
           </div>
           <div className="flex-1">
             <p className="font-semibold text-foreground text-base mb-0.5">
@@ -239,7 +239,7 @@ export default function PricingSection() {
               Be one of the first 10 schools to join. Heavily discounted pricing, early features, direct product input, and locked preferential rates.
             </p>
           </div>
-          <Button variant="outline" className="border-amber-500/50 text-amber-400 hover:bg-amber-500/10 hover:text-amber-300 shrink-0" render={<Link href="/for-schools" />}>
+          <Button variant="outline" className="border-amber-500/50 text-clay-600 hover:bg-amber-500/10 hover:text-amber-700 shrink-0" render={<Link href="/for-schools" />}>
             Learn More
           </Button>
         </div>

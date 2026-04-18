@@ -293,7 +293,7 @@ const TOPIC_COLORS: Record<string, string> = {
   Shakespeare: 'bg-purple-500/15 border-purple-500/30 text-purple-300',
   'Modern Text': 'bg-blue-500/15 border-blue-500/30 text-blue-300',
   Language: 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300',
-  Skills: 'bg-amber-500/15 border-amber-500/30 text-amber-300',
+  Skills: 'bg-amber-500/15 border-amber-500/30 text-amber-700',
   'Spoken Language': 'bg-cyan-500/15 border-cyan-500/30 text-cyan-300',
 }
 
@@ -311,7 +311,7 @@ const TOPIC_BADGE_COLORS: Record<string, string> = {
   Shakespeare: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
   'Modern Text': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
   Language: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-  Skills: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+  Skills: 'bg-amber-500/10 text-clay-600 border-amber-500/20',
   'Spoken Language': 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
 }
 
@@ -1070,7 +1070,7 @@ export function WeeklyPlanner() {
                   {autoFilling ? (
                     <Loader2 className="h-3.5 w-3.5 animate-spin" />
                   ) : (
-                    <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+                    <Sparkles className="h-3.5 w-3.5 text-clay-600" />
                   )}
                   Auto-fill
                 </Button>
@@ -1300,7 +1300,7 @@ export function WeeklyPlanner() {
           {/* Weak Areas Summary */}
           <div className="border-t border-border p-3">
             <h4 className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-1">
-              <AlertTriangle className="h-3 w-3 text-amber-400" />
+              <AlertTriangle className="h-3 w-3 text-clay-600" />
               Weak Areas (Analytics)
             </h4>
             <div className="space-y-1 max-h-[120px] overflow-y-auto">

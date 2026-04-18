@@ -581,7 +581,7 @@ export default function UnseenPoetryGuidePage() {
           ================================================================ */}
       <section id="techniques">
         <div className="mb-5 flex items-center gap-3">
-          <Search className="size-5 text-amber-400" />
+          <Search className="size-5 text-clay-600" />
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">
               Key techniques to look for
@@ -598,7 +598,7 @@ export default function UnseenPoetryGuidePage() {
             <Card key={t.name} size="sm" className="transition-all hover:border-border hover:shadow-card-hover">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex size-6 items-center justify-center rounded-md bg-amber-500/10 text-xs font-semibold text-amber-300">
+                  <div className="flex size-6 items-center justify-center rounded-md bg-amber-500/10 text-xs font-semibold text-amber-700">
                     {idx + 1}
                   </div>
                   <CardTitle className="text-heading-sm font-heading">
@@ -848,7 +848,7 @@ export default function UnseenPoetryGuidePage() {
                 {/* Guided questions */}
                 <div>
                   <p className="mb-3 text-sm font-semibold text-foreground flex items-center gap-2">
-                    <MessageSquareQuote className="size-4 text-amber-400" />
+                    <MessageSquareQuote className="size-4 text-clay-600" />
                     Analysis questions
                   </p>
                   <ol className="list-decimal space-y-2 pl-5">

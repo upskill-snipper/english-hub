@@ -111,7 +111,7 @@ function boardBadgeColor(board: string | null): string {
     case "WJEC":
       return "bg-red-500/10 text-red-400 border-red-500/20"
     case "CAIE IGCSE":
-      return "bg-amber-500/10 text-amber-400 border-amber-500/20"
+      return "bg-amber-500/10 text-clay-600 border-amber-500/20"
     default:
       return "bg-muted text-muted-foreground"
   }
@@ -132,7 +132,7 @@ function formatLastActive(dateStr: string | null | undefined): string {
 
 function scoreColor(score: number): string {
   if (score >= 70) return "text-green-400"
-  if (score >= 50) return "text-amber-400"
+  if (score >= 50) return "text-clay-600"
   return "text-red-400"
 }
 

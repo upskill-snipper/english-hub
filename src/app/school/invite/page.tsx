@@ -109,7 +109,7 @@ function StatusBadge({ status }: { status: InviteStatus }) {
     )
   }
   return (
-    <Badge className="gap-1 bg-amber-600/20 text-amber-400 border-amber-600/30">
+    <Badge className="gap-1 bg-amber-600/20 text-clay-600 border-amber-600/30">
       <Clock className="h-3 w-3" />
       Pending
     </Badge>

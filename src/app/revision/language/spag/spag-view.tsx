@@ -133,7 +133,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <SpellCheck className="size-5 text-amber-400" />
+            <SpellCheck className="size-5 text-clay-600" />
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
@@ -156,7 +156,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       {/* IGCSE banner */}
       {showIgcseBanner && (
         <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] p-4 flex items-start gap-3">
-          <Info className="mt-0.5 size-5 shrink-0 text-amber-400" />
+          <Info className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="flex-1">
             <p className="text-sm font-semibold text-foreground">
               SPaG is universal -- every board rewards it
@@ -184,7 +184,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
 
       {/* Intro note */}
       <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.04] p-4 flex items-start gap-3">
-        <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-400" />
+        <AlertTriangle className="mt-0.5 size-4 shrink-0 text-clay-600" />
         <p className="text-body-sm text-muted-foreground leading-relaxed">
           {markNote} Getting these basics right is one of the fastest ways to
           boost your grade.
@@ -192,7 +192,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       </div>
 
       {/* ── 1. Spelling Rules and Common Errors ──────────────────── */}
-      <Section title="Spelling Rules and Common Errors" icon={SpellCheck} colour="text-amber-400" defaultOpen>
+      <Section title="Spelling Rules and Common Errors" icon={SpellCheck} colour="text-clay-600" defaultOpen>
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Markers do not expect perfect spelling, but persistent errors in common words
@@ -636,7 +636,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
 
       {/* Exam reminder banner */}
       <div className="rounded-2xl border border-border/60 bg-gradient-to-r from-amber-500/[0.06] via-card to-emerald-500/[0.04] p-6 text-center">
-        <SpellCheck className="mx-auto mb-3 size-7 text-amber-400" />
+        <SpellCheck className="mx-auto mb-3 size-7 text-clay-600" />
         <h2 className="text-heading-md font-heading text-foreground">
           Accuracy Is a Habit, Not a Last-Minute Fix
         </h2>

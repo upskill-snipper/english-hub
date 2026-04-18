@@ -381,7 +381,7 @@ export default function EssayPlansPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <FileText className="mr-1 size-3 text-amber-400" />
+              <FileText className="mr-1 size-3 text-clay-600" />
               Deep Study
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
@@ -536,7 +536,7 @@ export default function EssayPlansPage() {
           <Card className="bg-amber-500/[0.03] border-amber-500/10">
             <CardContent className="p-5">
               <h4 className="mb-2 text-sm font-semibold text-foreground flex items-center gap-2">
-                <Lightbulb className="size-4 text-amber-400" />
+                <Lightbulb className="size-4 text-clay-600" />
                 Exam Technique Tip
               </h4>
               <p className="text-body-sm text-muted-foreground">

@@ -44,7 +44,7 @@ function gradeColor(grade: string | null): string {
   const g = grade.replace(/[^0-9A-U*]/gi, '').toUpperCase()
   if (['9', '8', 'A*', 'A'].includes(g)) return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40'
   if (['7', '6', 'B', 'C'].includes(g)) return 'bg-blue-500/20 text-blue-400 border-blue-500/40'
-  if (['5', '4', 'D'].includes(g)) return 'bg-amber-500/20 text-amber-400 border-amber-500/40'
+  if (['5', '4', 'D'].includes(g)) return 'bg-amber-500/20 text-clay-600 border-amber-500/40'
   return 'bg-red-500/20 text-red-400 border-red-500/40'
 }
 

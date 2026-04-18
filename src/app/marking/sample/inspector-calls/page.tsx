@@ -380,7 +380,7 @@ const ESSAYS: ModelEssay[] = [
 function gradeColour(grade: 5 | 7 | 9) {
   switch (grade) {
     case 5:
-      return "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300";
+      return "bg-amber-100 text-amber-800 dark:bg-amber-900/40";
     case 7:
       return "bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300";
     case 9:

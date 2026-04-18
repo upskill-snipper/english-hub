@@ -233,10 +233,10 @@ export default function SchoolDashboardPage() {
           <div className="flex items-start gap-3">
             <span className="mt-0.5 text-lg">&#9733;</span>
             <div>
-              <p className="font-semibold text-amber-400">
+              <p className="font-semibold text-clay-600">
                 Your Founding Schools access is active until {FOUNDER_ACCESS_UNTIL}.
               </p>
-              <p className="mt-0.5 text-sm text-amber-400/80">
+              <p className="mt-0.5 text-sm text-clay-600/80">
                 Your preferential rate is locked. Contact us to discuss renewal.
               </p>
             </div>
@@ -375,7 +375,7 @@ export default function SchoolDashboardPage() {
         <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-amber-500/10 to-amber-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-amber-400/80">
+              <p className="text-xs font-medium uppercase tracking-wider text-clay-600/80">
                 Assignments
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
@@ -390,7 +390,7 @@ export default function SchoolDashboardPage() {
               </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15">
-              <BarChart3 className="h-5 w-5 text-amber-400" />
+              <BarChart3 className="h-5 w-5 text-clay-600" />
             </div>
           </div>
         </div>

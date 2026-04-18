@@ -70,7 +70,7 @@ const URGENCY_DOT: Record<string, string> = {
 
 const URGENCY_BG: Record<string, string> = {
   green: 'bg-emerald-500/10 dark:bg-emerald-950/30',
-  amber: 'bg-amber-500/10 dark:bg-amber-950/30',
+  amber: 'bg-amber-500/10',
   red: 'bg-red-500/10 dark:bg-red-950/30',
 }
 
@@ -776,7 +776,7 @@ function WeekView({
                         colour === 'red'
                           ? 'border-red-500/30 dark:border-red-800'
                           : colour === 'amber'
-                            ? 'border-amber-500/30 dark:border-amber-800'
+                            ? 'border-amber-500/30'
                             : 'border-emerald-500/30 dark:border-emerald-800',
                       )}
                     >

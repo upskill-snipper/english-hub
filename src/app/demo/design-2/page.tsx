@@ -44,7 +44,7 @@ export default function NeonBrutalistDashboard() {
           <span className="text-xs text-zinc-600 border border-zinc-800 px-2 py-0.5 uppercase">v2.0-neon</span>
         </div>
         <div className="flex items-center gap-6">
-          <span className="text-yellow-400 font-black text-lg font-sans">14-DAY STREAK</span>
+          <span className="text-clay-600 font-black text-lg font-sans">14-DAY STREAK</span>
           <div className="border-2 border-lime-400 px-3 py-1 shadow-[3px_3px_0_#84cc16] hover:shadow-[1px_1px_0_#84cc16] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer">
             <span className="text-sm uppercase">calum_x</span>
           </div>
@@ -135,12 +135,12 @@ export default function NeonBrutalistDashboard() {
           <div className="mt-8 -mr-4 lg:-mr-12 border-2 border-yellow-400 rounded-none p-5 bg-black shadow-[8px_8px_0_#facc15] relative z-10">
             <div className="flex items-center justify-between flex-wrap gap-3">
               <div>
-                <div className="text-[10px] uppercase tracking-widest text-yellow-400 mb-1">weekly challenge</div>
+                <div className="text-[10px] uppercase tracking-widest text-clay-600 mb-1">weekly challenge</div>
                 <div className="text-xl font-black font-sans uppercase text-white">
                   WRITE 3 TIMED ESSAYS BEFORE FRIDAY
                 </div>
               </div>
-              <div className="border-2 border-yellow-400 px-4 py-2 text-yellow-400 font-black font-sans uppercase text-sm hover:bg-yellow-400 hover:text-black transition-colors cursor-pointer">
+              <div className="border-2 border-yellow-400 px-4 py-2 text-clay-600 font-black font-sans uppercase text-sm hover:bg-yellow-400 hover:text-black transition-colors cursor-pointer">
                 2 / 3 DONE
               </div>
             </div>

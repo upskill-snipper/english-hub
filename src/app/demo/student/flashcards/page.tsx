@@ -205,7 +205,7 @@ export default function StudentFlashcardsDemoPage() {
 
           <div className="mt-12 text-center">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-500/15 mx-auto mb-6">
-              <Trophy className="h-8 w-8 text-amber-400" />
+              <Trophy className="h-8 w-8 text-clay-600" />
             </div>
 
             <h2 className="text-2xl font-light text-ink-900 mb-2">Session Complete</h2>
@@ -213,7 +213,7 @@ export default function StudentFlashcardsDemoPage() {
 
             {/* Score */}
             <div className="rounded-xl border border-ink-200 bg-white p-8 mb-6">
-              <p className="text-5xl font-light text-amber-400 mb-2">
+              <p className="text-5xl font-light text-clay-600 mb-2">
                 {known}/{total}
               </p>
               <p className="text-ink-500 text-sm">
@@ -266,7 +266,7 @@ export default function StudentFlashcardsDemoPage() {
 
             {/* CTA */}
             <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-6">
-              <p className="text-sm text-amber-400/80 mb-3">
+              <p className="text-sm text-clay-600/80 mb-3">
                 Access 2,000+ flashcards across all topics and exam boards.
               </p>
               <Link
@@ -308,7 +308,7 @@ export default function StudentFlashcardsDemoPage() {
               onClick={() => handleSelectTopic(t.id)}
               className={`flex items-center gap-2 rounded-lg border px-4 py-2 text-sm transition-all ${
                 selectedTopic === t.id
-                  ? "border-amber-500/30 bg-amber-500/10 text-amber-400"
+                  ? "border-amber-500/30 bg-amber-500/10 text-clay-600"
                   : "border-ink-200 bg-white text-ink-500 hover:border-ink-200 hover:text-ink-600"
               }`}
             >
@@ -368,9 +368,9 @@ export default function StudentFlashcardsDemoPage() {
               </>
             ) : (
               <>
-                <span className="text-[10px] uppercase tracking-widest text-amber-400/40 mb-4">Definition</span>
+                <span className="text-[10px] uppercase tracking-widest text-clay-600/40 mb-4">Definition</span>
                 <p className="text-base text-ink-600 leading-relaxed max-w-lg">{card.definition}</p>
-                <span className="text-[10px] text-amber-400/30 mt-4">{card.term}</span>
+                <span className="text-[10px] text-clay-600/30 mt-4">{card.term}</span>
               </>
             )}
           </div>
@@ -424,7 +424,7 @@ export default function StudentFlashcardsDemoPage() {
 
         {/* CTA */}
         <div className="mt-12 rounded-xl border border-amber-500/20 bg-amber-500/5 p-6 text-center">
-          <p className="text-sm text-amber-400/80 mb-3">
+          <p className="text-sm text-clay-600/80 mb-3">
             Access 2,000+ flashcards across all topics and exam boards.
           </p>
           <Link

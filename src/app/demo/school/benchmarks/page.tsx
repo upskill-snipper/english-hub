@@ -246,7 +246,7 @@ export default function BenchmarksPage() {
                             ? "bg-green-500/10 text-green-400 border-green-500/20"
                             : row.percentile >= 60
                             ? "bg-teal-800/10 text-teal-700 border-teal-800/20"
-                            : "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
+                            : "bg-yellow-500/10 text-clay-600 border-yellow-500/20"
                         }
                       >
                         {row.percentile}th
@@ -384,7 +384,7 @@ export default function BenchmarksPage() {
       <Card className="bg-cream-100 border-ink-200">
         <CardHeader>
           <CardTitle className="text-ink-900 flex items-center gap-2">
-            <Lightbulb className="h-5 w-5 text-yellow-400" />
+            <Lightbulb className="h-5 w-5 text-clay-600" />
             Recommendations
           </CardTitle>
           <CardDescription className="text-ink-600">
@@ -403,13 +403,13 @@ export default function BenchmarksPage() {
                 }`}
               >
                 {rec.type === "warning" ? (
-                  <AlertTriangle className="h-5 w-5 text-yellow-400 mt-0.5 shrink-0" />
+                  <AlertTriangle className="h-5 w-5 text-clay-600 mt-0.5 shrink-0" />
                 ) : (
                   <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5 shrink-0" />
                 )}
                 <p
                   className={`text-sm ${
-                    rec.type === "warning" ? "text-yellow-200" : "text-green-200"
+                    rec.type === "warning" ? "text-amber-700" : "text-green-200"
                   }`}
                 >
                   {rec.text}

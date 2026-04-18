@@ -68,7 +68,7 @@ function wordCountForAnswer(text: string): number {
 const BOARD_CONFIG: Record<string, { color: string; bg: string; ring: string }> = {
   AQA: { color: 'text-blue-400', bg: 'bg-blue-500/10', ring: 'ring-blue-500/30' },
   Edexcel: { color: 'text-violet-400', bg: 'bg-violet-500/10', ring: 'ring-violet-500/30' },
-  OCR: { color: 'text-orange-400', bg: 'bg-orange-500/10', ring: 'ring-orange-500/30' },
+  OCR: { color: 'text-clay-600', bg: 'bg-orange-500/10', ring: 'ring-orange-500/30' },
   WJEC: { color: 'text-red-400', bg: 'bg-red-500/10', ring: 'ring-red-500/30' },
 }
 
@@ -295,7 +295,7 @@ function ExamConfigScreen() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-yellow-500/10">
-                    <Award className="h-4 w-4 text-yellow-400" />
+                    <Award className="h-4 w-4 text-clay-600" />
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-foreground">
@@ -310,7 +310,7 @@ function ExamConfigScreen() {
 
               <div className="rounded-lg border border-yellow-500/20 bg-yellow-500/5 p-3">
                 <div className="flex gap-2">
-                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-yellow-400" />
+                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
                   <div className="text-sm text-muted-foreground">
                     <strong className="text-foreground">Exam conditions:</strong> Once you start, a countdown timer will begin.
                     The timer will warn you at 5 minutes and 1 minute remaining. You can pause for accessibility,
@@ -475,7 +475,7 @@ function ExamInProgress() {
               className={cn(
                 'flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-mono text-lg font-bold tabular-nums',
                 warning === 'none' && 'bg-primary/10 text-primary',
-                warning === '5min' && 'bg-yellow-500/10 text-yellow-400 animate-pulse',
+                warning === '5min' && 'bg-yellow-500/10 text-clay-600 animate-pulse',
                 warning === '1min' && 'bg-red-500/10 text-red-400 animate-pulse',
                 warning === 'expired' && 'bg-red-500/20 text-red-400',
               )}
@@ -502,7 +502,7 @@ function ExamInProgress() {
 
         {/* Warning banners */}
         {warning === '5min' && !isPaused && (
-          <div className="bg-yellow-500/10 border-b border-yellow-500/20 px-4 py-1.5 text-center text-sm font-medium text-yellow-400">
+          <div className="bg-yellow-500/10 border-b border-yellow-500/20 px-4 py-1.5 text-center text-sm font-medium text-clay-600">
             <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />
             5 minutes remaining! Consider finishing your current answer.
           </div>
@@ -520,7 +520,7 @@ function ExamInProgress() {
           </div>
         )}
         {tabSwitchCount > 0 && (
-          <div className="bg-orange-500/10 border-b border-orange-500/20 px-4 py-1.5 text-center text-sm font-medium text-orange-400">
+          <div className="bg-orange-500/10 border-b border-orange-500/20 px-4 py-1.5 text-center text-sm font-medium text-clay-600">
             <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />
             You have left this tab {tabSwitchCount} time{tabSwitchCount !== 1 ? 's' : ''}. In a real exam, this would be flagged.
           </div>
@@ -773,9 +773,9 @@ function SubmitConfirmDialog({
         </div>
         {unanswered > 0 && (
           <div className="flex items-start gap-2 rounded-lg border border-yellow-500/20 bg-yellow-500/5 p-3">
-            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-yellow-400" />
+            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
             <span className="text-sm text-muted-foreground">
-              You have <strong className="text-yellow-400">{unanswered}</strong> unanswered
+              You have <strong className="text-clay-600">{unanswered}</strong> unanswered
               question{unanswered !== 1 ? 's' : ''}. Are you sure you want to submit?
             </span>
           </div>
@@ -838,7 +838,7 @@ function ExamResults() {
 
   // Grade estimate based on completion
   const getGradeEstimate = () => {
-    if (completionPercent >= 90) return { grade: '8-9', color: 'text-yellow-400', bg: 'bg-yellow-500/10' }
+    if (completionPercent >= 90) return { grade: '8-9', color: 'text-clay-600', bg: 'bg-yellow-500/10' }
     if (completionPercent >= 75) return { grade: '6-7', color: 'text-blue-400', bg: 'bg-blue-500/10' }
     if (completionPercent >= 50) return { grade: '4-5', color: 'text-green-400', bg: 'bg-green-500/10' }
     return { grade: '2-3', color: 'text-muted-foreground', bg: 'bg-muted' }
@@ -917,7 +917,7 @@ function ExamResults() {
             </p>
           )}
           {timeSpentMinutes >= paper.totalTimeMinutes && (
-            <p className="mt-2 text-xs text-yellow-400">
+            <p className="mt-2 text-xs text-clay-600">
               You used all the allocated time. Practise time management to leave a review buffer.
             </p>
           )}

@@ -35,7 +35,7 @@ import {
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
-  if (score >= 50) return "text-amber-400"
+  if (score >= 50) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -108,7 +108,7 @@ export default function TeacherDemoDashboard() {
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
-          <p className="text-sm text-amber-400">
+          <p className="text-sm text-clay-600">
             <span className="font-semibold">Teacher Demo</span> -- See what your
             dashboard looks like
           </p>
@@ -161,8 +161,8 @@ export default function TeacherDemoDashboard() {
             {/* Assignments Due */}
             <div className="rounded-xl border border-amber-500/10 bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent p-5">
               <div className="flex items-center gap-2 mb-3">
-                <ClipboardCheck className="h-4 w-4 text-amber-400/70" />
-                <span className="text-xs text-amber-400/70 font-medium uppercase tracking-wider">Due Soon</span>
+                <ClipboardCheck className="h-4 w-4 text-clay-600/70" />
+                <span className="text-xs text-clay-600/70 font-medium uppercase tracking-wider">Due Soon</span>
               </div>
               <p className="text-3xl font-bold text-ink-900">{assignmentsDueThisWeek.length}</p>
               <p className="text-xs text-ink-500 mt-1">{pendingMarking.length} awaiting marking</p>
@@ -454,7 +454,7 @@ export default function TeacherDemoDashboard() {
                 href: "/demo/teacher/resources",
                 gradient: "from-amber-500/10 to-amber-500/5",
                 border: "border-amber-500/10 hover:border-amber-500/20",
-                iconColor: "text-amber-400",
+                iconColor: "text-clay-600",
               },
               {
                 icon: BookOpen,

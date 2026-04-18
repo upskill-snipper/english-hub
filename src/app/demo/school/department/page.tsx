@@ -163,7 +163,7 @@ type SortKey = "name" | "classes" | "students" | "avgScore" | "completionRate" |
 
 function scoreColor(score: number): string {
   if (score >= DEPT_AVG + 5) return "text-teal-700"
-  if (score >= DEPT_AVG - 5) return "text-amber-400"
+  if (score >= DEPT_AVG - 5) return "text-clay-600"
   return "text-red-400"
 }
 
@@ -319,10 +319,10 @@ export default function DepartmentPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wider text-ink-9000">Gap to Target</p>
-                  <p className="mt-1 text-3xl font-bold text-amber-400">{gap}%</p>
+                  <p className="mt-1 text-3xl font-bold text-clay-600">{gap}%</p>
                 </div>
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10">
-                  <AlertTriangle className="h-5 w-5 text-amber-400" />
+                  <AlertTriangle className="h-5 w-5 text-clay-600" />
                 </div>
               </div>
             </CardContent>
@@ -489,7 +489,7 @@ export default function DepartmentPage() {
         <Card className="mb-8 border-ink-200 bg-cream-100/80">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
-              <GraduationCap className="h-5 w-5 text-amber-400" />
+              <GraduationCap className="h-5 w-5 text-clay-600" />
               Workload Distribution
             </CardTitle>
           </CardHeader>
@@ -524,7 +524,7 @@ export default function DepartmentPage() {
                         </div>
                       </div>
                       {overloaded && (
-                        <Badge variant="outline" className="shrink-0 border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs">
+                        <Badge variant="outline" className="shrink-0 border-amber-500/30 bg-amber-500/10 text-clay-600 text-xs">
                           High Load
                         </Badge>
                       )}
@@ -539,7 +539,7 @@ export default function DepartmentPage() {
         <Card className="mb-8 border-ink-200 bg-cream-100/80">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
-              <Lightbulb className="h-5 w-5 text-yellow-400" />
+              <Lightbulb className="h-5 w-5 text-clay-600" />
               CPD Recommendations
             </CardTitle>
           </CardHeader>
@@ -551,7 +551,7 @@ export default function DepartmentPage() {
                   className="flex items-start gap-3 rounded-lg border border-ink-200 bg-cream-100/60 px-4 py-3"
                 >
                   <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-yellow-500/10">
-                    <Lightbulb className="h-3 w-3 text-yellow-400" />
+                    <Lightbulb className="h-3 w-3 text-clay-600" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-ink-900">{rec.teacher}</p>

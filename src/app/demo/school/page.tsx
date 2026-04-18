@@ -249,7 +249,7 @@ export default function DemoSchoolDashboardPage() {
             {DEMO_SCHOOL.name}
             <Badge
               variant="secondary"
-              className="ml-1 border-amber-500/30 bg-amber-500/10 text-xs text-amber-400"
+              className="ml-1 border-amber-500/30 bg-amber-500/10 text-xs text-clay-600"
             >
               DEMO
             </Badge>
@@ -452,7 +452,7 @@ export default function DemoSchoolDashboardPage() {
         <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-amber-500/10 to-amber-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-amber-400/80">
+              <p className="text-xs font-medium uppercase tracking-wider text-clay-600/80">
                 Avg Target
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
@@ -463,7 +463,7 @@ export default function DemoSchoolDashboardPage() {
               </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15">
-              <GraduationCap className="h-5 w-5 text-amber-400" />
+              <GraduationCap className="h-5 w-5 text-clay-600" />
             </div>
           </div>
         </div>
@@ -757,7 +757,7 @@ export default function DemoSchoolDashboardPage() {
                               student.workingAtGrade ? (
                               <Badge
                                 variant="secondary"
-                                className="border-amber-500/30 bg-amber-500/10 text-[10px] text-amber-400"
+                                className="border-amber-500/30 bg-amber-500/10 text-[10px] text-clay-600"
                               >
                                 Declining
                               </Badge>
@@ -791,7 +791,7 @@ export default function DemoSchoolDashboardPage() {
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                <AlertTriangle className="h-4 w-4 text-amber-400" />
+                <AlertTriangle className="h-4 w-4 text-clay-600" />
                 Common Areas of Concern
               </CardTitle>
             </CardHeader>
@@ -883,7 +883,7 @@ export default function DemoSchoolDashboardPage() {
                   render={<Link href="/demo/school/import" />}
                 >
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-500/10">
-                    <Download className="h-4 w-4 text-amber-400" />
+                    <Download className="h-4 w-4 text-clay-600" />
                   </div>
                   <span className="text-xs font-medium">Export</span>
                 </Button>

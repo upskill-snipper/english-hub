@@ -187,14 +187,14 @@ export default async function OneHundredTwentySevenHoursPage() {
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
-            <BookOpen className="size-5 text-amber-600 dark:text-amber-400" />
+            <BookOpen className="size-5 text-amber-600 dark:text-clay-600" />
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground font-serif">127 Hours: Between a Rock and a Hard Place</h1>
             <p className="text-body-sm text-muted-foreground">Aron Ralston &middot; Autobiography</p>
             <div className="mt-1.5 flex flex-wrap gap-1.5">
               <Badge variant="secondary" className="text-[0.65rem]">Edexcel IGCSE Language A</Badge>
-              <Badge className="bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-amber-400 text-[0.65rem]">Paper 1 Section A</Badge>
+              <Badge className="bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-clay-600 text-[0.65rem]">Paper 1 Section A</Badge>
             </div>
           </div>
         </div>
@@ -202,14 +202,14 @@ export default async function OneHundredTwentySevenHoursPage() {
 
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-amber-50/30 via-card to-card p-5 sm:p-6 dark:from-amber-950/10">
         <div className="flex items-center gap-2 mb-4">
-          <Quote className="size-4.5 text-amber-600 dark:text-amber-400" />
+          <Quote className="size-4.5 text-amber-600 dark:text-clay-600" />
           <h2 className="text-heading-sm font-heading text-foreground font-serif">Key Extracts</h2>
           <span className="font-mono text-body-xs text-muted-foreground ml-auto">Fair-dealing extracts for study</span>
         </div>
         <div className="space-y-4">
           {keyExtracts.map((extract) => (
             <div key={extract.id} className="rounded-xl border border-border/40 bg-card p-4">
-              <span className="font-mono text-body-xs text-amber-600 dark:text-amber-400 uppercase tracking-wider">Extract {extract.id} — {extract.label}</span>
+              <span className="font-mono text-body-xs text-amber-600 dark:text-clay-600 uppercase tracking-wider">Extract {extract.id} — {extract.label}</span>
               <blockquote className="mt-2 border-l-2 border-amber-500/40 pl-4 font-serif text-body text-foreground italic leading-relaxed">{extract.text}</blockquote>
               <p className="mt-2 text-body-sm text-muted-foreground">{extract.context}</p>
             </div>
@@ -224,7 +224,7 @@ export default async function OneHundredTwentySevenHoursPage() {
           {languageFeatures.map((f) => (
             <div key={f.technique} className="rounded-xl border border-border/40 bg-muted/20 p-4">
               <span className="font-mono text-body-xs text-primary uppercase tracking-wider font-semibold">{f.technique}</span>
-              <p className="mt-2 text-body-sm text-foreground"><span className="font-serif italic text-amber-700 dark:text-amber-400">&ldquo;{f.quote}&rdquo;</span></p>
+              <p className="mt-2 text-body-sm text-foreground"><span className="font-serif italic text-amber-700 dark:text-clay-600">&ldquo;{f.quote}&rdquo;</span></p>
               <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">{f.explanation}</p>
             </div>
           ))}
@@ -278,9 +278,9 @@ export default async function OneHundredTwentySevenHoursPage() {
             <span className="font-mono text-body-xs text-primary uppercase tracking-wider font-semibold">{examPractice.q2.type}</span>
             <p className="mt-2 text-body text-foreground font-medium">{examPractice.q2.question}</p>
             <div className="mt-4 rounded-lg border border-amber-500/20 bg-amber-50/50 p-4 dark:bg-amber-950/20">
-              <span className="font-mono text-body-xs text-amber-700 dark:text-amber-400 uppercase tracking-wider font-semibold">Model answer outline</span>
+              <span className="font-mono text-body-xs text-amber-700 dark:text-clay-600 uppercase tracking-wider font-semibold">Model answer outline</span>
               <ul className="mt-2 space-y-2 text-body-sm text-muted-foreground">
-                {examPractice.q2.modelOutline.map((point, i) => (<li key={i} className="flex gap-2"><span className="shrink-0 text-amber-600 dark:text-amber-400">&bull;</span><span>{point}</span></li>))}
+                {examPractice.q2.modelOutline.map((point, i) => (<li key={i} className="flex gap-2"><span className="shrink-0 text-amber-600 dark:text-clay-600">&bull;</span><span>{point}</span></li>))}
               </ul>
             </div>
           </div>

@@ -68,7 +68,7 @@ export function Grade9ComparisonExample({
               ].map((reason, idx) => (
                 <p
                   key={reason}
-                  className={`text-[10px] flex items-start gap-1.5 ${idx < 2 ? 'text-emerald-400' : 'text-orange-400'}`}
+                  className={`text-[10px] flex items-start gap-1.5 ${idx < 2 ? 'text-emerald-400' : 'text-clay-600'}`}
                 >
                   {idx < 2 ? (
                     <CheckCircle2 className="size-3 shrink-0 mt-0.5" />
@@ -82,7 +82,7 @@ export function Grade9ComparisonExample({
           </div>
 
           <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.03] p-5">
-            <Badge className="mb-3 bg-amber-500/20 text-amber-400 border-amber-500/30">{higherLabel}</Badge>
+            <Badge className="mb-3 bg-amber-500/20 text-clay-600 border-amber-500/30">{higherLabel}</Badge>
             <p className="text-xs text-muted-foreground leading-relaxed italic">{higherEssay}</p>
             <div className="mt-3 space-y-1.5">
               {[
@@ -91,7 +91,7 @@ export function Grade9ComparisonExample({
                 'Ends with a genuinely original insight rather than a closed conclusion',
                 'Vocabulary is precise and controlled',
               ].map((reason) => (
-                <p key={reason} className="text-[10px] text-amber-400 flex items-start gap-1.5">
+                <p key={reason} className="text-[10px] text-clay-600 flex items-start gap-1.5">
                   <CheckCircle2 className="size-3 shrink-0 mt-0.5" />
                   {reason}
                 </p>

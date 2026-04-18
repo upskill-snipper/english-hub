@@ -47,7 +47,7 @@ export default function MockExamsSection({ board }: { board?: ExamBoard | null }
         <div className="text-center mb-16">
           <Badge
             variant="outline"
-            className="border-orange-500/20 bg-orange-500/[0.06] text-orange-400 text-sm font-semibold mb-6 gap-2 px-4 py-1.5"
+            className="border-orange-500/20 bg-orange-500/[0.06] text-clay-600 text-sm font-semibold mb-6 gap-2 px-4 py-1.5"
           >
             <FileText className="w-4 h-4" />
             {config ? `${config.shortName} Mock Exams` : 'New Feature'}
@@ -64,7 +64,7 @@ export default function MockExamsSection({ board }: { board?: ExamBoard | null }
           {/* Mock Exams Card */}
           <Card className="p-8 border-border/40 hover:border-orange-500/30 transition-colors">
             <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6">
-              <FileText className="w-6 h-6 text-orange-400" />
+              <FileText className="w-6 h-6 text-clay-600" />
             </div>
             <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">{cardTitle}</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">{cardDesc}</p>

@@ -18,8 +18,8 @@ function getScoreColor(percentage: number): string {
 
 function getScoreTextColor(percentage: number): string {
   if (percentage >= 70) return 'text-green-400'
-  if (percentage >= 50) return 'text-amber-400'
-  if (percentage >= 25) return 'text-orange-400'
+  if (percentage >= 50) return 'text-clay-600'
+  if (percentage >= 25) return 'text-clay-600'
   return 'text-red-400'
 }
 

@@ -308,7 +308,7 @@ export default function MacbethRevisionPage() {
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Tragic Hero</span>
                     <span className="rounded-full bg-purple-500/15 px-2.5 py-0.5 text-xs font-semibold text-purple-700 dark:text-purple-300">Protagonist</span>
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Thane &rarr; King &rarr; Tyrant</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Thane &rarr; King &rarr; Tyrant</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Thane of Glamis, then Thane of Cawdor, then King of Scotland. The play&apos;s tragic hero whose downfall is driven by ambition and moral weakness.</p>
@@ -356,7 +356,7 @@ export default function MacbethRevisionPage() {
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Tragic Figure</span>
                     <span className="rounded-full bg-purple-500/15 px-2.5 py-0.5 text-xs font-semibold text-purple-700 dark:text-purple-300">Catalyst</span>
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Powerful &rarr; Broken</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Powerful &rarr; Broken</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Macbeth&apos;s wife and the driving force behind Duncan&apos;s murder. One of Shakespeare&apos;s most complex female characters.</p>
@@ -404,7 +404,7 @@ export default function MacbethRevisionPage() {
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Moral Foil</span>
                     <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Victim</span>
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Loyal &rarr; Murdered</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Loyal &rarr; Murdered</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Macbeth&apos;s fellow general and friend. Father of Fleance. Ancestor of King James I&apos;s Stuart dynasty (a deliberate compliment to the king).</p>
@@ -440,7 +440,7 @@ export default function MacbethRevisionPage() {
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Hero</span>
                     <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Agent of Justice</span>
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Suspicious &rarr; Avenging</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Suspicious &rarr; Avenging</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Thane of Fife. Discovers Duncan&apos;s body. Ultimately kills Macbeth and restores the legitimate monarchy.</p>
@@ -476,7 +476,7 @@ export default function MacbethRevisionPage() {
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Ideal King</span>
                     <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Victim</span>
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Trusting &rarr; Murdered</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Trusting &rarr; Murdered</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> King of Scotland. His murder is the play&apos;s inciting crime, and his goodness makes the act more horrific.</p>
@@ -512,7 +512,7 @@ export default function MacbethRevisionPage() {
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Legitimate Heir</span>
                     <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Restorer of Order</span>
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Fugitive &rarr; King</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Fugitive &rarr; King</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Duncan&apos;s eldest son and rightful heir. Flees to England, then returns to defeat Macbeth and restore legitimate rule.</p>
@@ -548,7 +548,7 @@ export default function MacbethRevisionPage() {
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs font-semibold text-violet-700 dark:text-violet-300">Supernatural</span>
                     <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Catalysts</span>
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Ambiguous</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Ambiguous</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Three supernatural beings who prophesy Macbeth&apos;s rise and manipulate events through equivocation. They open and shape the play but never directly command Macbeth to act.</p>
@@ -624,7 +624,7 @@ export default function MacbethRevisionPage() {
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Messenger</span>
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Diplomat &amp; Survivor</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Diplomat &amp; Survivor</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> A Scottish nobleman and kinsman of Macduff. Acts as a messenger and go-between, delivering crucial news throughout the play. He is the play&apos;s most politically adaptable figure.</p>
@@ -659,7 +659,7 @@ export default function MacbethRevisionPage() {
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Voice of Scotland</span>
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Cautious Dissenter</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Cautious Dissenter</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> A Scottish nobleman who gradually sees through Macbeth&apos;s pretence. His ironic speeches in Act 3, Scene 6 voice the growing opposition to Macbeth&apos;s rule.</p>
@@ -1065,7 +1065,7 @@ export default function MacbethRevisionPage() {
                       <td className="py-2">&ldquo;Vaulting ambition, which o&apos;erleaps itself&rdquo; &bull; &ldquo;Stars, hide your fires&rdquo; &bull; &ldquo;Art not without ambition, but without the illness&rdquo; &bull; &ldquo;All hail, Macbeth, that shalt be king&rdquo; &bull; &ldquo;Tomorrow, and tomorrow&rdquo;</td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-amber-700 dark:text-amber-300 whitespace-nowrap">Power</td>
+                      <td className="py-2 pr-4 font-semibold text-amber-700 whitespace-nowrap">Power</td>
                       <td className="py-2">&ldquo;To be thus is nothing, but to be safely thus&rdquo; &bull; &ldquo;Full of scorpions is my mind&rdquo; &bull; &ldquo;I am in blood stepp&apos;d in so far&rdquo; &bull; &ldquo;Bleed, bleed, poor country&rdquo; &bull; &ldquo;Something wicked this way comes&rdquo;</td>
                     </tr>
                     <tr className="border-b border-border">

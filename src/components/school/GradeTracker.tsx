@@ -63,7 +63,7 @@ function statusColor(status: 'above' | 'on' | 'below' | 'unknown') {
     case 'above':
       return { bg: 'bg-green-500/10', text: 'text-green-400', border: 'border-green-500/20', dot: 'bg-green-500' }
     case 'on':
-      return { bg: 'bg-amber-500/10', text: 'text-amber-400', border: 'border-amber-500/20', dot: 'bg-amber-500' }
+      return { bg: 'bg-amber-500/10', text: 'text-clay-600', border: 'border-amber-500/20', dot: 'bg-amber-500' }
     case 'below':
       return { bg: 'bg-red-500/10', text: 'text-red-400', border: 'border-red-500/20', dot: 'bg-red-500' }
     default:
@@ -73,7 +73,7 @@ function statusColor(status: 'above' | 'on' | 'below' | 'unknown') {
 
 function gradeColor(grade: number): string {
   if (grade >= 7) return 'bg-green-500/10 text-green-400'
-  if (grade >= 5) return 'bg-amber-500/10 text-amber-400'
+  if (grade >= 5) return 'bg-amber-500/10 text-clay-600'
   if (grade >= 1) return 'bg-red-500/10 text-red-400'
   return 'bg-muted text-muted-foreground'
 }
@@ -643,7 +643,7 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
                             student.gap > 0
                               ? 'text-green-400'
                               : student.gap === 0
-                                ? 'text-amber-400'
+                                ? 'text-clay-600'
                                 : 'text-red-400',
                           )}
                         >

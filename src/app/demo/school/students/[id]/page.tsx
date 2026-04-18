@@ -328,7 +328,7 @@ function getClassAverage() {
 
 const STATUS_CONFIG: Record<string, { bg: string; text: string; border: string; label: string }> = {
   "on-track": { bg: "bg-teal-800/10", text: "text-teal-700", border: "border-teal-800/30", label: "On Track" },
-  "needs-support": { bg: "bg-amber-500/15", text: "text-amber-400", border: "border-amber-500/30", label: "Needs Support" },
+  "needs-support": { bg: "bg-amber-500/15", text: "text-clay-600", border: "border-amber-500/30", label: "Needs Support" },
   "at-risk": { bg: "bg-red-500/15", text: "text-red-400", border: "border-red-500/30", label: "At Risk" },
   "excelling": { bg: "bg-blue-500/15", text: "text-teal-700", border: "border-blue-500/30", label: "Excelling" },
 }
@@ -350,7 +350,7 @@ function gradeColor(grade: string): string {
   const g = parseInt(grade, 10)
   if (g >= 8) return "bg-teal-800/10 text-teal-700 border-teal-800/30"
   if (g >= 6) return "bg-blue-500/15 text-teal-700 border-blue-500/30"
-  if (g >= 4) return "bg-amber-500/15 text-amber-400 border-amber-500/30"
+  if (g >= 4) return "bg-amber-500/15 text-clay-600 border-amber-500/30"
   return "bg-red-500/15 text-red-400 border-red-500/30"
 }
 
@@ -377,10 +377,10 @@ function getActivityIcon(action: string) {
   const lower = action.toLowerCase()
   if (lower.includes("completed")) return <CheckCircle2 className="w-4 h-4 text-teal-700" />
   if (lower.includes("submitted")) return <Pen className="w-4 h-4 text-teal-700" />
-  if (lower.includes("scored")) return <Target className="w-4 h-4 text-amber-400" />
+  if (lower.includes("scored")) return <Target className="w-4 h-4 text-clay-600" />
   if (lower.includes("started")) return <BookOpen className="w-4 h-4 text-teal-700" />
   if (lower.includes("reviewed")) return <FileText className="w-4 h-4 text-teal-700" />
-  if (lower.includes("achieved")) return <Trophy className="w-4 h-4 text-yellow-400" />
+  if (lower.includes("achieved")) return <Trophy className="w-4 h-4 text-clay-600" />
   if (lower.includes("login")) return <LogIn className="w-4 h-4 text-ink-600" />
   return <Clock className="w-4 h-4 text-ink-600" />
 }
@@ -421,10 +421,10 @@ export default function SchoolStudentDetailPage() {
       {/* ------------------------------------------------------------------ */}
       <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-b border-amber-500/20 px-6 py-3">
         <div className="flex items-center gap-3">
-          <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30 text-xs font-medium">
+          <Badge className="bg-amber-500/20 text-clay-600 border-amber-500/30 text-xs font-medium">
             DEMO
           </Badge>
-          <span className="text-sm text-amber-400/80">
+          <span className="text-sm text-clay-600/80">
             You are viewing demo data. This is a preview of the school admin student drill-down.
           </span>
         </div>
@@ -579,7 +579,7 @@ export default function SchoolStudentDetailPage() {
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-medium text-ink-9000 uppercase tracking-wider">Modules Completed</span>
-                <Award className="w-4 h-4 text-amber-400" />
+                <Award className="w-4 h-4 text-clay-600" />
               </div>
               <div className="text-3xl font-bold text-ink-900">{student.modulesCompleted}</div>
               <div className="mt-2 text-xs text-ink-9000">of {student.modules.length} total modules</div>
@@ -609,7 +609,7 @@ export default function SchoolStudentDetailPage() {
                       score: e.score,
                       grade: e.grade,
                       date: e.date,
-                      icon: <GraduationCap className="w-4 h-4 text-amber-400" />,
+                      icon: <GraduationCap className="w-4 h-4 text-clay-600" />,
                       color: "amber",
                     })),
                     ...student.essays.map((e) => ({
@@ -877,7 +877,7 @@ export default function SchoolStudentDetailPage() {
                         </div>
                       </td>
                       <td className="py-3 px-4 text-center">
-                        <span className={`font-medium ${mod.score >= 70 ? "text-teal-700" : mod.score >= 50 ? "text-amber-400" : mod.score > 0 ? "text-red-400" : "text-ink-500"}`}>
+                        <span className={`font-medium ${mod.score >= 70 ? "text-teal-700" : mod.score >= 50 ? "text-clay-600" : mod.score > 0 ? "text-red-400" : "text-ink-500"}`}>
                           {mod.score > 0 ? mod.score + "%" : "--"}
                         </span>
                       </td>
@@ -911,7 +911,7 @@ export default function SchoolStudentDetailPage() {
                 const masteryColor = masteryLevel === "Mastered"
                   ? { bar: "bg-teal-700", text: "text-teal-700", bg: "bg-teal-800/10", border: "border-teal-800/30" }
                   : masteryLevel === "Developing"
-                  ? { bar: "bg-amber-500", text: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/30" }
+                  ? { bar: "bg-amber-500", text: "text-clay-600", bg: "bg-amber-500/10", border: "border-amber-500/30" }
                   : { bar: "bg-red-500", text: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/30" }
                 return (
                   <div key={i} className="p-3 rounded-lg bg-cream-100/40 border border-ink-200">
@@ -930,7 +930,7 @@ export default function SchoolStudentDetailPage() {
                     <div className="flex items-center justify-between mt-1.5">
                       <span className="text-[10px] text-ink-9000">{mod.progress}% complete</span>
                       {mod.score > 0 && (
-                        <span className={`text-[10px] font-medium ${mod.score >= 70 ? "text-teal-700" : mod.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
+                        <span className={`text-[10px] font-medium ${mod.score >= 70 ? "text-teal-700" : mod.score >= 50 ? "text-clay-600" : "text-red-400"}`}>
                           Avg: {percentageToGCSEGradeLabel(mod.score)}
                         </span>
                       )}
@@ -959,7 +959,7 @@ export default function SchoolStudentDetailPage() {
         <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-ink-900">
-              <GraduationCap className="w-5 h-5 text-amber-400" />
+              <GraduationCap className="w-5 h-5 text-clay-600" />
               Mock Exam Results
             </CardTitle>
           </CardHeader>
@@ -979,7 +979,7 @@ export default function SchoolStudentDetailPage() {
                     <tr key={i} className="border-b border-ink-200/50 hover:bg-cream-100/60 transition-colors">
                       <td className="py-3 px-4 font-medium text-ink-900">{exam.name}</td>
                       <td className="py-3 px-4 text-center">
-                        <span className={`font-medium ${exam.score >= 70 ? "text-teal-700" : exam.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
+                        <span className={`font-medium ${exam.score >= 70 ? "text-teal-700" : exam.score >= 50 ? "text-clay-600" : "text-red-400"}`}>
                           {percentageToGCSEGradeLabel(exam.score)}
                         </span>
                       </td>
@@ -1032,7 +1032,7 @@ export default function SchoolStudentDetailPage() {
                         </div>
                       </td>
                       <td className="py-3 px-4 text-center">
-                        <span className={`font-bold text-lg ${essay.score >= 75 ? "text-teal-700" : essay.score >= 55 ? "text-amber-400" : "text-red-400"}`}>
+                        <span className={`font-bold text-lg ${essay.score >= 75 ? "text-teal-700" : essay.score >= 55 ? "text-clay-600" : "text-red-400"}`}>
                           {essay.score}
                         </span>
                         <span className="text-ink-9000 text-xs">/100</span>
@@ -1085,7 +1085,7 @@ export default function SchoolStudentDetailPage() {
                                 style={{ width: `${pct}%` }}
                               />
                             </div>
-                            <span className={`text-sm font-medium ${pct >= 75 ? "text-teal-700" : pct >= 50 ? "text-amber-400" : "text-red-400"}`}>
+                            <span className={`text-sm font-medium ${pct >= 75 ? "text-teal-700" : pct >= 50 ? "text-clay-600" : "text-red-400"}`}>
                               {pct}%
                             </span>
                           </div>
@@ -1203,7 +1203,7 @@ export default function SchoolStudentDetailPage() {
                       <div className="flex items-center gap-2">
                         <Badge variant="outline" className={`text-[10px] ${
                           path.priority === "High" ? "bg-red-500/10 text-red-400 border-red-500/30"
-                          : path.priority === "Medium" ? "bg-amber-500/10 text-amber-400 border-amber-500/30"
+                          : path.priority === "Medium" ? "bg-amber-500/10 text-clay-600 border-amber-500/30"
                           : "bg-teal-800/10 text-teal-700 border-blue-500/30"
                         }`}>
                           {path.priority} Priority

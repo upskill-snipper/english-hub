@@ -122,7 +122,7 @@ const courses: readonly Course[] = [
   {
     title: 'OCR Language Practice',
     level: 'GCSE',
-    levelColor: 'bg-orange-500/20 text-orange-400',
+    levelColor: 'bg-orange-500/20 text-clay-600',
     duration: '8 weeks',
     desc:
       'Component 01 & 02 practice — non-fiction synthesis, evaluation, fiction analysis, and creative writing for OCR.',
@@ -139,7 +139,7 @@ const courses: readonly Course[] = [
   {
     title: 'GCSE Revision Blitz',
     level: 'Revision',
-    levelColor: 'bg-amber-500/20 text-amber-400',
+    levelColor: 'bg-amber-500/20 text-clay-600',
     duration: '4 weeks',
     desc: 'Intensive exam prep: timed practice, model answers, and grade boosters.',
     boards: ['AQA', 'Edexcel', 'OCR', 'WJEC'],

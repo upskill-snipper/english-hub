@@ -172,7 +172,7 @@ export default function EngagementPage() {
     <div className="min-h-screen bg-cream-50 text-ink-900">
       {/* Demo banner */}
       <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2.5 text-center">
-        <p className="text-sm text-amber-200/90">
+        <p className="text-sm text-amber-700/90">
           <Info className="inline-block w-4 h-4 mr-1.5 -mt-0.5" />
           This is a demo dashboard with sample data.{" "}
           <Link
@@ -284,13 +284,13 @@ export default function EngagementPage() {
                   </p>
                 </div>
                 <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                  <FileText className="w-6 h-6 text-amber-400" />
+                  <FileText className="w-6 h-6 text-clay-600" />
                 </div>
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
                   <span className="text-ink-500">Avg: 380/day</span>
-                  <span className="text-amber-400">+20% vs average</span>
+                  <span className="text-clay-600">+20% vs average</span>
                 </div>
                 <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
                   <div className="h-full bg-amber-500 rounded-full" style={{ width: "100%" }} />
@@ -380,7 +380,7 @@ export default function EngagementPage() {
                       <td className="py-3 px-3 font-medium">{yg.year}</td>
                       <td className="py-3 px-3 text-right text-ink-600">{yg.students}</td>
                       <td className="py-3 px-3 text-right">
-                        <span className={yg.activePct >= 85 ? "text-teal-700" : yg.activePct >= 75 ? "text-amber-400" : "text-red-400"}>
+                        <span className={yg.activePct >= 85 ? "text-teal-700" : yg.activePct >= 75 ? "text-clay-600" : "text-red-400"}>
                           {yg.activePct}%
                         </span>
                       </td>
@@ -406,7 +406,7 @@ export default function EngagementPage() {
           <Card className="bg-cream-100/50 border-ink-200">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Flame className="w-5 h-5 text-orange-400" />
+                <Flame className="w-5 h-5 text-clay-600" />
                 Most Active Students
               </CardTitle>
               <CardDescription className="text-ink-600">
@@ -433,7 +433,7 @@ export default function EngagementPage() {
                       </span>
                     </div>
                     <div className="flex items-center gap-4">
-                      <Badge variant="outline" className="border-orange-500/30 text-orange-400 text-xs">
+                      <Badge variant="outline" className="border-orange-500/30 text-clay-600 text-xs">
                         <Flame className="w-3 h-3 mr-1" />
                         {student.streak}d streak
                       </Badge>
@@ -541,7 +541,7 @@ export default function EngagementPage() {
                     </div>
                     <div className="flex items-center gap-3 shrink-0 ml-2">
                       <span className="text-xs text-ink-600">{quiz.attempts} attempts</span>
-                      <span className="text-xs text-amber-400">{quiz.avgScore}% avg</span>
+                      <span className="text-xs text-clay-600">{quiz.avgScore}% avg</span>
                     </div>
                   </div>
                 ))}

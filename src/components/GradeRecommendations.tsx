@@ -113,7 +113,7 @@ export default function GradeRecommendations({
       {/* Summary */}
       <div className="rounded-lg border border-border bg-cream-100 p-4">
         <div className="flex items-start gap-3">
-          <Lightbulb className="h-4 w-4 mt-0.5 text-amber-400 shrink-0" />
+          <Lightbulb className="h-4 w-4 mt-0.5 text-clay-600 shrink-0" />
           <p className="text-sm text-muted-foreground leading-relaxed">{rec.summary}</p>
         </div>
       </div>
@@ -241,7 +241,7 @@ function SkillActionCard({
           <div className="flex items-center gap-2 mb-1">
             <span className="text-sm font-medium text-foreground">{skill.label}</span>
             {isWeakArea && (
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-clay-600 bg-amber-500/10 px-1.5 py-0.5 rounded">
                 Focus
               </span>
             )}

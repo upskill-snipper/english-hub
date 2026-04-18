@@ -71,7 +71,7 @@ export default function MerchantOfVeniceRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-700 dark:text-amber-300 uppercase tracking-wider">Shakespeare</span>
+          <span className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-700 uppercase tracking-wider">Shakespeare</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
@@ -108,7 +108,7 @@ export default function MerchantOfVeniceRevisionPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">1</span>
                 Act 1 &mdash; The Bond
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -127,7 +127,7 @@ export default function MerchantOfVeniceRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">2</span>
                 Act 2 &mdash; Caskets and Elopement
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -146,7 +146,7 @@ export default function MerchantOfVeniceRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">3</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">3</span>
                 Act 3 &mdash; The Casket Choice and the Bond Due
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -165,7 +165,7 @@ export default function MerchantOfVeniceRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">4</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">4</span>
                 Act 4 &mdash; The Trial
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -184,7 +184,7 @@ export default function MerchantOfVeniceRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">5</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">5</span>
                 Act 5 &mdash; Reunion at Belmont
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">

@@ -82,7 +82,7 @@ function classifyAbility(grade: string | null): 'high' | 'mid' | 'low' {
 function abilityBadgeColor(level: string): string {
   if (level === 'high') return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40'
   if (level === 'mid') return 'bg-blue-500/20 text-blue-400 border-blue-500/40'
-  return 'bg-amber-500/20 text-amber-400 border-amber-500/40'
+  return 'bg-amber-500/20 text-clay-600 border-amber-500/40'
 }
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -553,7 +553,7 @@ export default function GroupGeneratorPage() {
                       </span>
                     )}
                     {lowCount > 0 && (
-                      <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[0.6rem] font-medium text-amber-400">
+                      <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[0.6rem] font-medium text-clay-600">
                         {lowCount} low
                       </span>
                     )}
@@ -664,7 +664,7 @@ export default function GroupGeneratorPage() {
                     : timerTotal <= 10 && timerRunning
                       ? 'animate-pulse border-red-500/50 bg-red-500/10 text-red-400'
                       : timerTotal <= 30 && timerRunning
-                        ? 'border-amber-500/50 bg-amber-500/10 text-amber-400'
+                        ? 'border-amber-500/50 bg-amber-500/10 text-clay-600'
                         : 'border-primary/30 bg-primary/5 text-primary'
                 )}
               >

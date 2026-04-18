@@ -150,10 +150,10 @@ function FounderPlanCard({
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-3">
-            <CreditCard className="h-5 w-5 text-amber-400" />
+            <CreditCard className="h-5 w-5 text-clay-600" />
             <CardTitle className="text-foreground">Current Plan</CardTitle>
           </div>
-          <Badge className="shrink-0 border border-amber-500/40 bg-amber-500/15 text-amber-400 text-xs font-semibold">
+          <Badge className="shrink-0 border border-amber-500/40 bg-amber-500/15 text-clay-600 text-xs font-semibold">
             FOUNDER
           </Badge>
         </div>
@@ -193,8 +193,8 @@ function FounderPlanCard({
         {/* Renewal warning */}
         {showRenewalWarning && (
           <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 flex items-start gap-3">
-            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
-            <p className="text-sm text-amber-300">
+            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
+            <p className="text-sm text-amber-700">
               Your FOUNDER access expires in{" "}
               <span className="font-semibold">{daysRemaining} days</span>. Renew now to maintain
               uninterrupted access for all students and teachers.
@@ -206,7 +206,7 @@ function FounderPlanCard({
         <div className="flex flex-col gap-2 pt-1 sm:flex-row">
           <Button
             variant="outline"
-            className="border-amber-500/40 text-amber-400 hover:bg-amber-500/10 hover:text-amber-300"
+            className="border-amber-500/40 text-clay-600 hover:bg-amber-500/10 hover:text-amber-700"
             render={<a href={buildRenewalMailto(access.schoolName)} />}
           >
               <Mail className="mr-2 h-4 w-4" />
@@ -355,9 +355,9 @@ function PricingCard({ isFounder }: { isFounder: boolean }) {
       <CardContent className="space-y-5">
         {/* Founding Schools banner */}
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3 flex items-start gap-3">
-          <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
+          <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
           <div className="space-y-1">
-            <p className="text-sm font-semibold text-amber-300">
+            <p className="text-sm font-semibold text-amber-700">
               Founding Schools &mdash; 50% off Year 1
             </p>
             <p className="text-xs text-muted-foreground">
@@ -383,7 +383,7 @@ function PricingCard({ isFounder }: { isFounder: boolean }) {
           <p className="text-sm text-foreground">
             A school with <span className="font-semibold">800 KS3+KS4 pupils</span> would pay{" "}
             <span className="font-semibold">&pound;17,600/year</span> (standard) or{" "}
-            <span className="font-semibold text-amber-400">&pound;8,800/year</span> as a Founding
+            <span className="font-semibold text-clay-600">&pound;8,800/year</span> as a Founding
             School.
           </p>
         </div>
@@ -502,9 +502,9 @@ function RenewalCtaCard({
   return (
     <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-5 py-4">
       <div className="flex items-start gap-3">
-        <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-400" />
+        <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-clay-600" />
         <div className="flex-1 space-y-3">
-          <p className="text-sm font-semibold text-amber-300">
+          <p className="text-sm font-semibold text-amber-700">
             Your FOUNDER access expires in{" "}
             <span className="font-bold">{daysRemaining} {daysRemaining === 1 ? "day" : "days"}</span>.
             Renew now to maintain uninterrupted access for all students and teachers.

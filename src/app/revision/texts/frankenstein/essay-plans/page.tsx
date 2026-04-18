@@ -398,7 +398,7 @@ export default async function FrankensteinEssayPlansPage() {
         <Card className="border-l-4 border-l-amber-400">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-3">
-              <Lightbulb className="size-5 text-amber-400" />
+              <Lightbulb className="size-5 text-clay-600" />
               <p className="text-sm font-semibold text-foreground">General exam strategy</p>
             </div>
             <ul className="space-y-2 text-body-sm text-muted-foreground">

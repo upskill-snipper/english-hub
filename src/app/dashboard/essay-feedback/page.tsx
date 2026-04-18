@@ -64,7 +64,7 @@ function getGradeBandStyle(band: string) {
       return {
         bg: 'bg-yellow-500/10',
         border: 'border-yellow-500/30',
-        text: 'text-yellow-400',
+        text: 'text-clay-600',
         ring: 'ring-yellow-500/20',
       }
     case 'Grade 6-7':
@@ -464,7 +464,7 @@ function FeedbackResults({
     <div className="space-y-6 animate-fade-in">
 
       {/* Disclaimer Banner */}
-      <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-amber-200">
+      <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-amber-700">
         <p className="font-medium">Important Disclaimer</p>
         <p className="mt-1 text-xs text-muted-foreground">
           This is an AI-generated estimate based on the marking guide criteria. It is not an official grade and should be used alongside your teacher&apos;s guidance. Actual exam grades may differ.

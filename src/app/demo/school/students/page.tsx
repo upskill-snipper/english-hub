@@ -185,9 +185,9 @@ const ALL_STUDENTS = [
 
 const STATUS_COLORS: Record<StudentStatus, string> = {
   "On Track": "bg-teal-800/10 text-teal-700 border-teal-800/30",
-  "Needs Support": "bg-amber-500/15 text-amber-400 border-amber-500/30",
+  "Needs Support": "bg-amber-500/15 text-clay-600 border-amber-500/30",
   "At Risk": "bg-red-500/15 text-red-400 border-red-500/30",
-  "Excelling": "bg-yellow-400/15 text-yellow-400 border-yellow-400/30",
+  "Excelling": "bg-yellow-400/15 text-clay-600 border-yellow-400/30",
 }
 
 const YEAR_COLORS: Record<number, string> = {
@@ -195,7 +195,7 @@ const YEAR_COLORS: Record<number, string> = {
   8: "bg-indigo-500/15 text-indigo-400 border-indigo-500/30",
   9: "bg-teal-800/10 text-teal-700 border-violet-500/30",
   10: "bg-teal-800/10 text-teal-700 border-teal-800/30",
-  11: "bg-amber-500/15 text-amber-400 border-amber-500/30",
+  11: "bg-amber-500/15 text-clay-600 border-amber-500/30",
   12: "bg-rose-500/15 text-rose-400 border-rose-500/30",
   13: "bg-pink-500/15 text-pink-400 border-pink-500/30",
 }
@@ -205,7 +205,7 @@ const INITIALS_COLORS = [
   "bg-blue-500/20 text-blue-300",
   "bg-teal-700/20 text-teal-700",
   "bg-teal-800/10 text-teal-700",
-  "bg-amber-500/20 text-amber-300",
+  "bg-amber-500/20 text-amber-700",
   "bg-rose-500/20 text-rose-300",
   "bg-pink-500/20 text-pink-300",
   "bg-indigo-500/20 text-indigo-300",
@@ -360,7 +360,7 @@ export default function StudentsPage() {
         <Card>
           <CardContent className="flex items-center gap-4 pt-0">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-500/15">
-              <AlertTriangle className="h-5 w-5 text-amber-400" />
+              <AlertTriangle className="h-5 w-5 text-clay-600" />
             </div>
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Needs Support</p>
@@ -655,7 +655,7 @@ export default function StudentsPage() {
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
           <div className="flex items-center gap-3 rounded-xl border border-amber-500/30 bg-card px-5 py-3 shadow-lg">
-            <GraduationCap className="h-5 w-5 text-amber-400" />
+            <GraduationCap className="h-5 w-5 text-clay-600" />
             <span className="text-sm font-medium text-foreground">{toastMessage}</span>
           </div>
         </div>

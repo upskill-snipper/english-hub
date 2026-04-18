@@ -181,8 +181,8 @@ export default function DemoHub() {
         <div className="rounded-2xl border border-ink-200 bg-white p-8 flex flex-col sm:flex-row items-center gap-6">
           <div className="flex-1 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
-              <Sparkles className="size-5 text-amber-400" />
-              <span className="text-sm font-medium text-amber-400 uppercase tracking-wider">
+              <Sparkles className="size-5 text-clay-600" />
+              <span className="text-sm font-medium text-clay-600 uppercase tracking-wider">
                 Free Resources
               </span>
             </div>
@@ -197,7 +197,7 @@ export default function DemoHub() {
             render={<Link href="/for-teachers/free-resources" />}
             variant="outline"
             size="lg"
-            className="border-amber-500/30 text-amber-400 hover:bg-amber-500/10 shrink-0"
+            className="border-amber-500/30 text-clay-600 hover:bg-amber-500/10 shrink-0"
           >
               <Download className="size-4 mr-1.5" />
               Download Free Pack
