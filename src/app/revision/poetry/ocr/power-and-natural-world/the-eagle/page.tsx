@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const theEagle: PoemData = {
   title: 'The Eagle',
@@ -255,6 +256,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'te-1', question: 'What does the poem describe?', type: 'multiple-choice', options: ['A caged bird', 'An eagle perched on a cliff before diving to catch prey — a brief, vivid snapshot of power', 'A flock of birds', 'A bird singing'], correctIndex: 1, explanation: 'The poem captures an eagle on a mountain crag surveying the world below, then plunging downward. It is a snapshot of natural power and majesty.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'te-2', question: 'What does "He clasps the crag with crooked hands" suggest?', type: 'multiple-choice', options: ['The eagle is gentle', 'The eagle\'s talons are personified as "hands", giving it human power and authority — "clasps" shows firm grip', 'The eagle is falling', 'The rock is smooth'], correctIndex: 1, explanation: '"Clasps" and "hands" personify the eagle, giving it human-like authority. "Crooked" suggests predatory nature. The alliterative hard "c" sounds create a harsh, powerful tone.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'te-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Just six lines in two tercets with AAA BBB rhyme — extreme brevity for maximum impact', 'Free verse', 'A ballad'], correctIndex: 1, explanation: 'Only six lines in two rhyming tercets. The extreme brevity mirrors the eagle\'s swift, decisive action — no wasted words, like no wasted movement.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'te-4', question: 'What does "like a thunderbolt he falls" suggest?', type: 'multiple-choice', options: ['The eagle is dying', 'The eagle\'s dive is compared to lightning — sudden, powerful, unstoppable natural force', 'Thunder is nearby', 'The eagle is clumsy'], correctIndex: 1, explanation: 'The thunderbolt simile presents the eagle\'s dive as an elemental force of nature — as sudden and devastating as lightning. The eagle is not just a bird but a force.', topic: 'Language', difficulty: 'higher' },
+  { id: 'te-5', question: 'Who wrote The Eagle and when?', type: 'multiple-choice', options: ['Byron in 1814', 'Alfred Lord Tennyson, published in 1851', 'Keats in 1819', 'Wordsworth in 1802'], correctIndex: 1, explanation: 'Written by Tennyson, published in 1851. The poem\'s subtitle is "A Fragment", suggesting it captures a single moment rather than a complete narrative.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'te-6', question: 'How does Tennyson use the word "ringed"?', type: 'multiple-choice', options: ['The eagle wears a ring', '"Ringed with the azure world" — the eagle is encircled by the blue sky, placing it at the centre of everything', 'The sky has rings', 'It describes a circus'], correctIndex: 1, explanation: 'The eagle is "ringed" (encircled) by the blue sky — it sits at the very centre of the natural world, like a king on a throne. Everything revolves around it.', topic: 'Language', difficulty: 'higher' },
+  { id: 'te-7', question: 'What is the effect of the personification throughout?', type: 'multiple-choice', options: ['It makes the eagle seem weak', 'Personifying the eagle with "hands", "he", and "stands" elevates it to almost human status — a figure of power and authority', 'It makes the eagle a pet', 'No personification exists'], correctIndex: 1, explanation: 'By giving the eagle human attributes — hands, standing, masculine pronoun — Tennyson elevates it from mere bird to a symbol of power, authority, and mastery over the natural world.', topic: 'Language', difficulty: 'higher' },
+  { id: 'te-8', question: 'How does the brevity contribute to the poem\'s effect?', type: 'multiple-choice', options: ['Tennyson ran out of ideas', 'Six lines capture a single, perfect moment — like the eagle\'s own swift, decisive action, nothing is wasted', 'It should be longer', 'Brevity weakens the poem'], correctIndex: 1, explanation: 'The six-line form is perfectly suited to content: a snapshot of power. Like the eagle itself, the poem wastes nothing — every word is precise and essential.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'te-9', question: 'What does "the wrinkled sea beneath him crawls" achieve?', type: 'multiple-choice', options: ['The sea is dirty', 'The sea — vast and powerful itself — is made to seem small and slow from the eagle\'s elevated perspective', 'The sea is frozen', 'Waves are described'], correctIndex: 1, explanation: 'From the eagle\'s height, the vast ocean appears wrinkled and crawling — tiny and insignificant. This reversal of scale emphasises the eagle\'s supreme position above everything.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'te-10', question: 'What theme does the eagle best represent?', type: 'multiple-choice', options: ['Weakness', 'The sublime power of nature — majesty, authority, and the sudden violence of the natural world', 'Domestication', 'Friendship'], correctIndex: 1, explanation: 'The eagle represents nature\'s sublime power — majestic, authoritative, and capable of sudden, devastating action. It embodies the Romantic fascination with nature\'s overwhelming force.', topic: 'Themes', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'The Eagle celebrates the sublime power of nature through a brief, vivid snapshot of majesty and predatory force.', keyPoints: ['Power and authority — the eagle commands its domain', 'The sublime — awe at nature\'s overwhelming force', 'Perspective — the eagle diminishes even the sea', 'Sudden violence — "like a thunderbolt he falls"'] },
+  { topic: 'Language & Imagery', summary: 'Tennyson uses personification, alliteration, simile, and reversal of scale to present the eagle as a figure of supreme power.', keyPoints: ['"Clasps the crag with crooked hands" — alliterative power', '"Ringed with the azure world" — the eagle at the centre', '"The wrinkled sea beneath him crawls" — the sea made small', '"Like a thunderbolt he falls" — elemental force'] },
+  { topic: 'Structure & Form', summary: 'Six lines in two tercets with AAA BBB rhyme — extreme brevity mirrors the eagle\'s swift, decisive nature.', keyPoints: ['Six lines only — nothing wasted', 'AAA BBB rhyme — strong, emphatic closures', 'Stanza 1: stillness and observation', 'Stanza 2: sudden, explosive action'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Tennyson present the power of nature in The Eagle?',
+  'Compare how an animal or natural force is presented in The Eagle and one other poem from the anthology.',
+  'How does Tennyson use brevity and imagery to create a powerful impression of the eagle?',
+]
+
 export default function TheEaglePage() {
   return (
     <div className="space-y-8">
@@ -290,6 +316,13 @@ export default function TheEaglePage() {
         cluster="Power and the Natural World"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="The Eagle"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={theEagle} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

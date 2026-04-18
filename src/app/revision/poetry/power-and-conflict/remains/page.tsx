@@ -7,6 +7,7 @@ import {
   type PoemData,
 } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 export const metadata = {
   title: 'Remains -- Simon Armitage -- The English Hub',
@@ -376,6 +377,150 @@ const THEMES = [
   { label: 'Moral ambiguity', icon: Skull, color: 'text-clay-600 bg-amber-500/10' },
 ]
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'rem-1',
+    question: 'What event does the speaker describe in Remains?',
+    type: 'multiple-choice',
+    options: ['A training exercise', 'Shooting a looter during a deployment, then being haunted by the memory', 'Rescuing a civilian from a warzone', 'Returning home from war to a hero\'s welcome'],
+    correctIndex: 1,
+    explanation: 'The speaker describes shooting a looter who was raiding a bank. The uncertainty about whether the man was armed, and the graphic aftermath, haunt the soldier long after the event.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rem-2',
+    question: 'What does "probably armed, possibly not" reveal?',
+    type: 'multiple-choice',
+    options: ['The soldier was certain the looter had a weapon', 'The moral ambiguity and guilt — the soldier cannot be sure the killing was justified', 'The soldier did not care about the situation', 'The looter was definitely unarmed'],
+    correctIndex: 1,
+    explanation: 'The shift from "probably" to the weaker "possibly" shows the soldier\'s uncertainty. He cannot justify the killing with confidence, and this moral doubt becomes the source of his guilt and PTSD.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rem-3',
+    question: 'Why does Armitage use colloquial language like "legs it" and "tosses his guts"?',
+    type: 'multiple-choice',
+    options: ['He is a careless writer', 'It makes the poem feel like a real soldier talking, not a polished literary voice', 'It is meant to be humorous', 'It shows the soldier is uneducated'],
+    correctIndex: 1,
+    explanation: 'The informal, colloquial language mimics the way a real soldier would recount the incident. It creates authenticity and makes the sudden shift to haunting imagery more shocking.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rem-4',
+    question: 'What does the poem explore about the psychological effects of war?',
+    type: 'multiple-choice',
+    options: ['War makes soldiers stronger', 'The trauma of killing someone stays with you forever — PTSD and guilt', 'Soldiers forget about war quickly', 'War has no lasting psychological effects'],
+    correctIndex: 1,
+    explanation: 'Remains is fundamentally about PTSD (Post-Traumatic Stress Disorder). The dead man\'s image is permanently "dug in behind my eyes" — the soldier cannot escape the memory, even through drink or drugs.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rem-5',
+    question: 'What is the effect of "his blood-Loss Loss loss shadow stays on the street"?',
+    type: 'multiple-choice',
+    options: ['It describes a clean crime scene', 'The bloodstain becomes a permanent mark — literally and metaphorically, the killing leaves a stain that cannot be removed', 'It shows the street is dangerous', 'It describes sunset'],
+    correctIndex: 1,
+    explanation: 'The bloodstain becomes a permanent shadow — a stain on both the street and the soldier\'s conscience. It cannot be washed away, symbolising how guilt persists long after the physical event.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'rem-6',
+    question: 'How does the poem shift between its two halves?',
+    type: 'multiple-choice',
+    options: ['It shifts from casual anecdote to haunting, inescapable guilt', 'It shifts from sadness to happiness', 'It stays in the same tone throughout', 'It shifts from a warzone to a hospital'],
+    correctIndex: 0,
+    explanation: 'The first half uses casual, anecdotal language as if telling a story in a pub. The second half shifts dramatically as the dead man\'s image invades the soldier\'s waking life and dreams, and guilt takes over.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'rem-7',
+    question: 'What is the significance of the final line "his bloody life in my bloody hands"?',
+    type: 'multiple-choice',
+    options: ['It is a swear word with no deeper meaning', 'The double meaning of "bloody" — both literal blood and the colloquial intensifier — captures the soldier\'s guilt and casual horror simultaneously', 'It describes the soldier washing his hands', 'It refers to a different incident'],
+    correctIndex: 1,
+    explanation: '"Bloody" works as both a swear word (casual, colloquial) and a literal description (covered in blood). This duality mirrors the poem\'s central tension between the soldier\'s casual surface and his deep psychological trauma.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'rem-8',
+    question: 'Where does Remains come from and what is its context?',
+    type: 'multiple-choice',
+    options: ['It was written during World War I', 'It is based on a real soldier\'s testimony from the documentary The Not Dead, about British soldiers in Iraq', 'It is entirely fictional', 'It is based on the Falklands War'],
+    correctIndex: 1,
+    explanation: 'Remains is based on the real testimony of a soldier named Guardsman Tromans, featured in the Channel 4 documentary The Not Dead (2007). Armitage wrote the poem as part of a collection giving voice to modern soldiers\' experiences.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'rem-9',
+    question: 'How does Armitage use the present tense to convey the experience of PTSD?',
+    type: 'multiple-choice',
+    options: ['The present tense makes the poem feel outdated', 'The shift to present tense in the second half shows the memory is not past — it is permanently happening now, refusing to become a memory', 'The present tense is used throughout without change', 'It creates a light, cheerful tone'],
+    correctIndex: 1,
+    explanation: 'The poem begins in past tense ("we got sent out") but shifts to present ("he\'s here in my head"). This tense shift is crucial: PTSD means the traumatic event never becomes "past" — it remains present, inescapable.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'rem-10',
+    question: 'Which poem from the Power and Conflict anthology best pairs with Remains for exploring guilt and the psychological effects of conflict?',
+    type: 'multiple-choice',
+    options: ['Ozymandias by Shelley', 'War Photographer by Carol Ann Duffy', 'Tissue by Dharker', 'Storm on the Island by Heaney'],
+    correctIndex: 1,
+    explanation: 'Both Remains and War Photographer explore the lasting psychological impact of witnessing violence. The photographer and the soldier are both haunted by what they have seen — but while the photographer observes, the soldier has directly caused death.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'Remains explores the psychological aftermath of killing in war — guilt, PTSD, moral ambiguity, and the impossibility of escaping traumatic memory.',
+    keyPoints: [
+      'Guilt and moral ambiguity — "probably armed, possibly not"',
+      'PTSD — the dead man is permanently "dug in behind my eyes"',
+      'The gap between the casual telling and the devastating psychological reality',
+      'Individual responsibility vs shared guilt — "all three of us open fire"',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Armitage uses colloquial voice, graphic imagery, and dual-meaning words to create a tension between casual storytelling and deep psychological trauma.',
+    keyPoints: [
+      'Colloquial language ("legs it", "tosses his guts") — authentic soldier\'s voice',
+      '"Dug in behind my eyes" — military metaphor for inescapable memory',
+      '"Bloody life in my bloody hands" — double meaning captures guilt',
+      'Graphic imagery of the shooting creates visceral, unforgettable scenes',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Free verse with irregular stanza lengths, shifting from anecdotal past tense to haunting present tense as PTSD takes hold.',
+    keyPoints: [
+      'Free verse — no regular rhyme or metre, mirroring the soldier\'s fractured state',
+      'Tense shift from past to present — the trauma refuses to become memory',
+      'First half is narrative; second half is psychological torment',
+      'Conversational tone gradually breaks down as guilt overwhelms',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Armitage present the psychological effects of conflict in Remains?',
+  'Compare how guilt is presented in Remains and one other poem from the anthology.',
+  'How does Armitage use language and structure to show the lasting impact of a single violent act?',
+]
+
 /* ── Comparison poems ──────────────────────────────────────────── */
 
 const COMPARISONS = [
@@ -466,6 +611,14 @@ export default function RemainsPage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="Remains"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={REMAINS} />
 
       {/* ── Comparison poems ── */}

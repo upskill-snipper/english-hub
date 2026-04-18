@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -112,6 +113,32 @@ const walkingAwayPoem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'wa-1', question: 'What event does the poem describe?', type: 'multiple-choice', options: ['A funeral', 'A father watching his son walk away to his first day of school or a football match', 'A couple breaking up', 'A soldier leaving for war'], correctIndex: 1, explanation: 'The speaker (a father) recalls watching his son walk away to a football game or school — a small moment of separation that represents the larger process of letting go.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'wa-2', question: 'What does "like a satellite wrenched from its orbit" suggest?', type: 'multiple-choice', options: ['The son enjoys space', 'Separation from a parent is as painful and unnatural as breaking a gravitational bond', 'The son is spinning', 'Space travel is important'], correctIndex: 1, explanation: 'The simile compares the son to a satellite torn from its orbit — suggesting the parent-child bond has a gravitational pull, and separation feels violent and unnatural.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'wa-3', question: 'What does the final line "selfhood begins with a walking away" mean?', type: 'multiple-choice', options: ['Walking is good exercise', 'Becoming your own person requires separating from your parents — independence starts with leaving', 'Walking away is always sad', 'Children should walk more'], correctIndex: 1, explanation: 'The father recognises that his child must walk away to become an independent person. "Selfhood" — individual identity — can only develop through separation, however painful.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'wa-4', question: 'What is the seed metaphor about?', type: 'multiple-choice', options: ['Gardening advice', '"Like a winged seed loosened from its parent stem" — the child must be released to grow independently, like a seed dispersing', 'The son plants a garden', 'Seeds represent food'], correctIndex: 1, explanation: 'The seed metaphor shows separation as natural and necessary. A seed must leave its parent plant to grow. The father understands this intellectually but still finds it emotionally painful.', topic: 'Language', difficulty: 'higher' },
+  { id: 'wa-5', question: 'Who wrote the poem?', type: 'multiple-choice', options: ['Seamus Heaney', 'Cecil Day-Lewis (1904-1972), who was Poet Laureate and father of actor Daniel Day-Lewis', 'Ted Hughes', 'Simon Armitage'], correctIndex: 1, explanation: 'Cecil Day-Lewis (1904-1972) was Poet Laureate from 1968 until his death. He was the father of actor Daniel Day-Lewis. The poem reflects real parental experience.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'wa-6', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Five quatrains with a loose half-rhyme scheme', 'A sonnet', 'Blank verse'], correctIndex: 1, explanation: 'Five quatrains with loose half-rhyme. The regular structure reflects the father\'s attempt to understand and contain his emotions, while the half-rhymes suggest things not quite resolved.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'wa-7', question: 'Why has the memory haunted the speaker for so long?', type: 'multiple-choice', options: ['It was a bad football match', '"Eighteen years ago, almost to the day" — the moment symbolises the larger, ongoing process of letting go', 'He forgot something', 'The weather was bad'], correctIndex: 1, explanation: 'The specific detail "eighteen years ago" shows this small moment has haunted the father for years. It represents not just one day but the entire process of watching a child become independent.', topic: 'Meaning', difficulty: 'higher' },
+  { id: 'wa-8', question: 'What does "love is proved in the letting go" mean?', type: 'multiple-choice', options: ['Love means holding on tightly', 'True love means giving the other person freedom — the greatest act of love is releasing your child', 'Love is easy', 'Letting go is selfish'], correctIndex: 1, explanation: 'The poem\'s deepest insight: love is not possession but release. The hardest thing a parent does is let go, but doing so is the ultimate proof of love.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'wa-9', question: 'How does the poem balance pain and acceptance?', type: 'multiple-choice', options: ['Only pain, no acceptance', 'The poem moves from painful memory to philosophical acceptance — separation hurts but is necessary for growth', 'Only acceptance, no pain', 'Neither — the tone is neutral'], correctIndex: 1, explanation: 'Day-Lewis balances genuine pain ("wrenched from its orbit") with mature acceptance ("selfhood begins with a walking away"). The poem does not pretend separation is easy, but recognises its necessity.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'wa-10', question: 'Which poem pairs best with Walking Away?', type: 'multiple-choice', options: ['Porphyria\'s Lover', 'Follower by Seamus Heaney', 'Neutral Tones', 'Love\'s Philosophy'], correctIndex: 1, explanation: 'Both Walking Away and Follower explore parent-child relationships and the passage of time. Walking Away is from the parent\'s perspective; Follower from the child\'s. Both deal with separation.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Walking Away explores the pain of parental love, the necessity of letting go, and how independence is the ultimate gift a parent gives.', keyPoints: ['Letting go — the hardest act of love', '"Selfhood begins with a walking away" — independence requires separation', 'Memory — one small moment haunts the father for 18 years', 'Love is proved in release, not possession'] },
+  { topic: 'Language & Imagery', summary: 'Day-Lewis uses satellite and seed metaphors to present separation as both painful and natural.', keyPoints: ['"Satellite wrenched from its orbit" — violent, unnatural separation', '"Winged seed loosened from its parent stem" — natural, necessary dispersal', '"Dazed" — the father\'s bewilderment at losing control', '"Proved in the letting go" — love defined by release'] },
+  { topic: 'Structure & Form', summary: 'Five quatrains with half-rhyme moving from specific memory to philosophical reflection on the nature of love.', keyPoints: ['Five quatrains — orderly structure containing complex emotion', 'Half-rhyme — things not quite resolved, like parental worry', 'Progression from memory to philosophy', '"Eighteen years ago" — the specific opening grounds the universal theme'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Day-Lewis present the pain of letting go in Walking Away?',
+  'Compare how parent-child relationships are presented in Walking Away and one other poem from the anthology.',
+  'How does Day-Lewis use language and structure to explore the relationship between love and independence?',
+]
+
 const comparePoems = [
   {
     title: 'Follower',
@@ -180,6 +207,13 @@ export default function WalkingAwayPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Walking Away"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={walkingAwayPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

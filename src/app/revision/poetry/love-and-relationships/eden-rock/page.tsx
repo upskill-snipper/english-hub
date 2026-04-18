@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -118,6 +119,32 @@ const edenRockPoem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'er-1', question: 'What is the speaker describing?', type: 'multiple-choice', options: ['A holiday in Cornwall', 'A vivid memory or vision of his dead parents waiting for him across a stream', 'A childhood picnic', 'A dream about heaven'], correctIndex: 1, explanation: 'Causley describes his parents at a picnic by a stream, waiting for him. The stream represents the boundary between life and death — his parents beckon him to cross over to join them.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'er-2', question: 'What does the stream represent?', type: 'multiple-choice', options: ['A swimming pool', 'The boundary between life and death — crossing it means joining his dead parents', 'A river in Cornwall', 'Tears of sadness'], correctIndex: 1, explanation: 'The stream is a powerful symbol of the divide between the living and the dead. The parents are on the other side, beckoning the speaker to "cross" — a metaphor for death.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'er-3', question: 'What is the effect of the precise sensory detail in the poem?', type: 'multiple-choice', options: ['It makes the poem boring', 'The vivid details make the scene feel real and present, as if the memory is more alive than reality', 'It is just description', 'It shows the speaker has a good memory'], correctIndex: 1, explanation: 'The precise details — the "H.P. Sauce bottle", the mother\'s dress, the father\'s "survey" — make the memory intensely vivid. The scene feels more real than a dream, suggesting it may be a vision of the afterlife.', topic: 'Language', difficulty: 'higher' },
+  { id: 'er-4', question: 'What does the final line "I had not thought that it would be like this" suggest?', type: 'multiple-choice', options: ['Disappointment', 'Death (or the approach of death) is gentler and more natural than expected — a calm acceptance', 'Surprise at a holiday destination', 'Confusion about the picnic'], correctIndex: 1, explanation: 'The final line is deliberately ambiguous but suggests the speaker is approaching death. It is not frightening but peaceful — "like this" implies something gentle, natural, and welcoming.', topic: 'Language', difficulty: 'higher' },
+  { id: 'er-5', question: 'Who was Charles Causley?', type: 'multiple-choice', options: ['A war poet from WWI', 'A Cornish poet whose father died when he was young — this poem reflects on that loss and the hope of reunion', 'A Romantic poet', 'A London playwright'], correctIndex: 1, explanation: 'Charles Causley (1917-2003) was a Cornish poet. His father died from war injuries when Causley was young. Eden Rock imagines reunion with both parents after death.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'er-6', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Four quatrains followed by a single final line — the isolation of the last line is significant', 'Free verse', 'Rhyming couplets'], correctIndex: 1, explanation: 'Four quatrains followed by a standalone final line. The isolated last line stands apart, like the speaker standing alone on one side of the stream, about to cross.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'er-7', question: 'What does "They are waiting for me somewhere beyond Eden Rock" suggest?', type: 'multiple-choice', options: ['They are hiding', 'The parents exist in a place beyond earthly experience — possibly heaven or the afterlife', 'They are lost', 'Eden Rock is a real place only'], correctIndex: 1, explanation: '"Beyond Eden Rock" suggests a place beyond the physical world. "Eden" echoes the Garden of Eden — a paradise. The parents wait in a realm beyond ordinary reality.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'er-8', question: 'How does the poem present death?', type: 'multiple-choice', options: ['As terrifying and violent', 'As a gentle, natural crossing — a reunion with loved ones rather than an ending', 'As meaningless', 'As punishment'], correctIndex: 1, explanation: 'Death is presented not as something to fear but as a gentle crossing of a stream toward waiting loved ones. The calm, nostalgic tone makes death feel like a homecoming.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'er-9', question: 'What is the effect of present tense in a poem about the past?', type: 'multiple-choice', options: ['It is a mistake', 'Present tense makes the memory feel immediately alive — as if the vision is happening now, not in the past', 'It makes the poem confusing', 'It shows the speaker is forgetful'], correctIndex: 1, explanation: 'Using present tense for a memory/vision makes it feel vivid and current. The parents are not remembered — they are present, waiting now. This blurs the line between memory and vision.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'er-10', question: 'Which poem pairs best with Eden Rock?', type: 'multiple-choice', options: ['Singh Song!', 'Walking Away by Cecil Day-Lewis', 'Love\'s Philosophy', 'Porphyria\'s Lover'], correctIndex: 1, explanation: 'Both Eden Rock and Walking Away explore parent-child separation. Walking Away shows a parent letting go of a child; Eden Rock shows a child approaching reunion with dead parents.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Eden Rock explores death as reunion, the power of memory, the parent-child bond, and a peaceful acceptance of mortality.', keyPoints: ['Death as reunion — crossing the stream to join loved ones', 'Memory as vision — the scene is too vivid to be mere memory', 'The enduring parent-child bond — love persists beyond death', 'Acceptance — "I had not thought that it would be like this"'] },
+  { topic: 'Language & Imagery', summary: 'Causley uses precise sensory detail, light imagery, water symbolism, and a calm, nostalgic tone to present death as gentle and natural.', keyPoints: ['Stream as boundary between life and death', 'Precise details (H.P. Sauce, dress colour) make the vision vivid', '"Beyond Eden Rock" — paradise beyond the physical world', 'Light and whiteness — the scene is illuminated, heavenly'] },
+  { topic: 'Structure & Form', summary: 'Four quatrains followed by a standalone final line — the isolated last line enacts the moment of crossing or decision.', keyPoints: ['Isolated final line — stands alone like the speaker at the boundary', 'Present tense — the vision is happening now, not in the past', 'No regular rhyme — natural, conversational tone', 'Progression toward the stream — the poem moves toward crossing'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Causley present the relationship between the speaker and his parents in Eden Rock?',
+  'Compare how memory is presented in Eden Rock and one other poem from the anthology.',
+  'How does Causley use language and structure to present death as something peaceful?',
+]
+
 const comparePoems = [
   {
     title: 'Walking Away',
@@ -186,6 +213,13 @@ export default function EdenRockPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Eden Rock"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={edenRockPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

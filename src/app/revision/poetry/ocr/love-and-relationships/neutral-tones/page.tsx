@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const neutralTones: PoemData = {
   title: 'Neutral Tones',
@@ -368,6 +369,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'nt-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A happy walk', 'The painful memory of a relationship ending beside a bleak winter pond', 'A nature description', 'A celebration'], correctIndex: 1, explanation: 'Hardy recalls the moment a relationship died, set beside a pond on a grey winter day. The bleak landscape mirrors the emotional deadness.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'nt-2', question: 'What does the pond symbolise?', type: 'multiple-choice', options: ['Beauty', 'Stagnation and emotional deadness', 'Swimming', 'Wealth'], correctIndex: 1, explanation: 'The pond is stagnant and lifeless, mirroring the dead relationship.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'nt-3', question: 'What is the "neutral tones" palette?', type: 'multiple-choice', options: ['Bright colours', 'White, grey, and ash — all warmth drained', 'Vivid greens', 'Random'], correctIndex: 1, explanation: 'Hardy removes colour from the poem, matching the emotional neutrality of the failed love.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'nt-4', question: 'What does "the deadest thing" suggest?', type: 'multiple-choice', options: ['Beauty', 'The smile is false and lifeless — total death of feeling', 'Shyness', 'Sadness'], correctIndex: 1, explanation: 'The superlative "deadest" emphasises total emotional extinction.', topic: 'Language', difficulty: 'higher' },
+  { id: 'nt-5', question: 'What form is used?', type: 'multiple-choice', options: ['Free verse', 'Four quatrains with ABBA rhyme', 'A sonnet', 'Blank verse'], correctIndex: 1, explanation: 'ABBA (envelope) rhyme — the enclosing structure traps the speaker in the memory.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'nt-6', question: 'What is the cyclical structure?', type: 'multiple-choice', options: ['Time passing', 'The poem ends where it began, trapping the speaker', 'Resolution', 'No effect'], correctIndex: 1, explanation: 'The final stanza returns to the pond — the speaker is locked in inescapable memory.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'nt-7', question: 'When was it written?', type: 'multiple-choice', options: ['1867 by Thomas Hardy', '1818', '1914', '1950'], correctIndex: 0, explanation: 'Written in 1867 by Hardy, who frequently presented love as doomed.', topic: 'Context', difficulty: 'higher' },
+  { id: 'nt-8', question: 'What does pathetic fallacy achieve?', type: 'multiple-choice', options: ['Cheerfulness', 'The landscape mirrors emotional deadness', 'Decoration', 'Suspense'], correctIndex: 1, explanation: 'Grey sky, white sun, fallen leaves mirror the speaker\'s state. Nature reinforces the deadness.', topic: 'Language', difficulty: 'higher' },
+  { id: 'nt-9', question: 'How does the final stanza transform the memory?', type: 'multiple-choice', options: ['Stays personal', 'Becomes a universal lesson — "keen lessons that love deceives"', 'New character', 'Hope'], correctIndex: 1, explanation: 'The memory becomes "keen lessons" about love\'s inevitable deception.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'nt-10', question: 'What pairs well with Neutral Tones?', type: 'multiple-choice', options: ['She Walks in Beauty', 'She Dwelt Among the Untrodden Ways', 'The Eagle', 'Crossing the Bar'], correctIndex: 1, explanation: 'Both explore love and loss through nature imagery. Wordsworth mourns a lost person; Hardy mourns a lost relationship.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Neutral Tones explores the death of love, bleakness of memory, and how one painful experience defines all future relationships.', keyPoints: ['Love as deception', 'Emotional deadness — all warmth drained', 'Memory as trap', 'Pessimism — love is doomed'] },
+  { topic: 'Language & Imagery', summary: 'Hardy uses pathetic fallacy, drained colour palette, and death imagery to create emotional extinction.', keyPoints: ['White, grey, ash — all warmth removed', '"The deadest thing" — superlative death imagery', 'Pathetic fallacy — landscape mirrors deadness', '"Starving sod" — even the earth is dying'] },
+  { topic: 'Structure & Form', summary: 'Four quatrains with ABBA rhyme — enclosed, trapped structure.', keyPoints: ['ABBA rhyme traps the speaker', 'Cyclical — begins and ends at the pond', 'Regular form contrasts with disordered emotions', 'Past tense — memory becomes permanent'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Hardy present the end of love in Neutral Tones?',
+  'Compare how lost love is presented in Neutral Tones and one other poem from the anthology.',
+  'How does Hardy use natural imagery to convey emotional pain?',
+]
+
 export default function NeutralTonesPage() {
   return (
     <div className="space-y-8">
@@ -403,6 +429,13 @@ export default function NeutralTonesPage() {
         cluster="Love and Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Neutral Tones"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={neutralTones} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

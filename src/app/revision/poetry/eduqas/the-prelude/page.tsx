@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const prelude: PoemData = {
   title: 'The Prelude: stealing the boat',
@@ -647,6 +648,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'pre-1', question: 'What does the young Wordsworth do?', type: 'multiple-choice', options: ['Goes swimming', 'Steals a boat and rows across a lake', 'Climbs a mountain', 'Walks through a forest'], correctIndex: 1, explanation: 'He finds a boat and rows it across a lake — an "act of stealth" that leads to a terrifying encounter with a mountain.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'pre-2', question: 'What does the mountain appear to do?', type: 'multiple-choice', options: ['Crumble', 'Rise up and stride after the boy', 'Disappear', 'Shine'], correctIndex: 1, explanation: 'The mountain "Upreared its head" and "Strode after me" — personified as a living creature pursuing the terrified boy.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'pre-3', question: 'What is "troubled pleasure"?', type: 'multiple-choice', options: ['Pure happiness', 'An oxymoron capturing excitement mixed with guilt', 'A type of boat', 'Weather'], correctIndex: 1, explanation: '"Troubled pleasure" combines contradictory emotions — thrill and guilt about stealing the boat.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'pre-4', question: 'What form is it in?', type: 'multiple-choice', options: ['Rhyming couplets', 'Blank verse (unrhymed iambic pentameter)', 'Free verse', 'A sonnet'], correctIndex: 1, explanation: 'Blank verse gives the poem a natural, conversational rhythm mirroring the flow of memory.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'pre-5', question: 'What does the contrast between "lustily" and "trembling" show?', type: 'multiple-choice', options: ['Weather changed', 'Nature replaces confidence with terror', 'Getting tired', 'Oars are broken'], correctIndex: 1, explanation: 'The shift from confident energy to fear demonstrates nature\'s power to humble even the self-assured.', topic: 'Language', difficulty: 'higher' },
+  { id: 'pre-6', question: 'What are "unknown modes of being"?', type: 'multiple-choice', options: ['A new species', 'Something beyond human comprehension — a spiritual power in nature', 'A new language', 'Memory loss'], correctIndex: 1, explanation: 'Deliberately abstract — the boy has glimpsed something transcendent that exceeds human understanding.', topic: 'Language', difficulty: 'higher' },
+  { id: 'pre-7', question: 'What is The Prelude?', type: 'multiple-choice', options: ['War poems', 'An epic autobiographical poem about the growth of Wordsworth\'s mind', 'A novel', 'A play'], correctIndex: 1, explanation: 'An epic autobiography tracing development from childhood to adulthood. This extract is from Book I.', topic: 'Context', difficulty: 'higher' },
+  { id: 'pre-8', question: 'What Romantic concept does this exemplify?', type: 'multiple-choice', options: ['Pathetic fallacy', 'The sublime — awe and terror from vast natural phenomena', 'The pastoral', 'The picturesque'], correctIndex: 1, explanation: 'The sublime: encounters with vast, powerful nature produce awe and spiritual transformation.', topic: 'Context', difficulty: 'higher' },
+  { id: 'pre-9', question: 'Why no stanza breaks?', type: 'multiple-choice', options: ['Forgotten', 'The continuous block reflects unbroken memory flow and how the experience consumed consciousness', 'Makes it shorter', 'Printer error'], correctIndex: 1, explanation: 'The single block mirrors how memory flows without divisions — the experience consumed everything.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'pre-10', question: 'How does the experience permanently change the boy?', type: 'multiple-choice', options: ['It doesn\'t', '"Huge and mighty forms" replace pleasant images — nature is no longer comforting but overwhelming and unknowable', 'He becomes happier', 'He forgets'], correctIndex: 1, explanation: 'Familiar natural scenes are replaced by "huge and mighty forms" that haunt his thoughts by day and trouble his dreams. His relationship with nature is permanently altered.', topic: 'Themes', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'The Prelude explores the power of nature, the Romantic sublime, growing up, and the lasting impact of formative experience.', keyPoints: ['Nature has "voluntary power" — it can humble humans', 'The sublime — overwhelming awe and terror', 'Growing up — confidence permanently replaced by uncertainty', 'Memory — the experience haunts him day and night'] },
+  { topic: 'Language & Imagery', summary: 'Wordsworth uses personification, contrast, simile, and abstract language to chart the shift from confidence to existential terror.', keyPoints: ['"Upreared its head", "Strode after me" — mountain personified', '"Lustily" vs "trembling" — confidence replaced by fear', 'Swan simile — grace before the terrifying encounter', '"Unknown modes of being" — beyond comprehension'] },
+  { topic: 'Structure & Form', summary: 'Blank verse in a single block, with enjambment mirroring memory\'s flow and the journey\'s momentum.', keyPoints: ['Blank verse — natural rhythm', 'Volta at the mountain encounter', 'Enjambment — momentum and overflow', 'First-person retrospective — adult reflecting on childhood'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Wordsworth present the power of nature in this extract from The Prelude?',
+  'Compare how nature is presented as powerful in The Prelude and one other poem from the anthology.',
+  'How does Wordsworth use language and structure to show a shift from confidence to fear?',
+]
+
 export default function PreludeEduqasPage() {
   return (
     <div className="space-y-8">
@@ -684,6 +710,13 @@ export default function PreludeEduqasPage() {
         cluster="Eduqas Poetry Anthology"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="The Prelude"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={prelude} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const toAutumn: PoemData = {
   title: 'To Autumn',
@@ -531,6 +532,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'ta-1', question: 'What is the poem celebrating?', type: 'multiple-choice', options: ['Spring', 'The richness and beauty of autumn — presented as a season of fulfilment rather than decay', 'Winter', 'Summer'], correctIndex: 1, explanation: 'Keats celebrates autumn as a season of abundance and beauty rather than decline, presenting it as the culmination of the year\'s growth.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'ta-2', question: 'How is Autumn personified?', type: 'multiple-choice', options: ['As a warrior', 'As a relaxed figure sitting, sleeping, and gleaning among the harvest', 'As a child', 'As an old man'], correctIndex: 1, explanation: 'Autumn is personified as a figure sitting on a granary floor, sleeping in a half-reaped furrow, and watching cider press. Each image shows abundance and leisure.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'ta-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Three stanzas of 11 lines each — an ode form', 'A sonnet', 'Quatrains'], correctIndex: 1, explanation: 'An ode with three regular 11-line stanzas, each with a consistent rhyme scheme. The ode form is suited to celebrating a subject with elevated language.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'ta-4', question: 'How does each stanza focus on a different sense?', type: 'multiple-choice', options: ['They don\'t', 'Stanza 1: sight/touch (ripeness), Stanza 2: sight (personification), Stanza 3: sound (music)', 'All focus on smell', 'All focus on taste'], correctIndex: 1, explanation: 'Each stanza emphasises a different sensory experience — tactile abundance (1), visual personification (2), and aural music (3) — creating a complete sensory immersion in autumn.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'ta-5', question: 'When was the poem written?', type: 'multiple-choice', options: ['1850', '19 September 1819, after Keats walked through the water-meadows near Winchester', '1794', '1914'], correctIndex: 1, explanation: 'Written on 19 September 1819 after an evening walk near Winchester. Keats was deeply moved by the warm stubble-fields and the gathering swallows.', topic: 'Context', difficulty: 'higher' },
+  { id: 'ta-6', question: 'What does "Where are the songs of Spring?" acknowledge?', type: 'multiple-choice', options: ['Spring is better', 'The passing of time — but Keats immediately insists autumn has its own, equally beautiful music', 'Spring will return', 'The speaker is sad'], correctIndex: 1, explanation: 'The rhetorical question briefly acknowledges loss, but Keats immediately asserts that autumn has its own beauty: "Think not of them, thou hast thy music too."', topic: 'Language', difficulty: 'higher' },
+  { id: 'ta-7', question: 'What does "Close bosom-friend of the maturing sun" suggest?', type: 'multiple-choice', options: ['The sun is hot', 'Autumn and the sun are intimate allies working together to bring fruit to perfect ripeness', 'Sunburn', 'The sun is setting'], correctIndex: 1, explanation: 'Autumn and the sun are presented as intimate friends conspiring to ripen everything. The warmth of their relationship mirrors the warmth of the season.', topic: 'Language', difficulty: 'higher' },
+  { id: 'ta-8', question: 'How does Keats handle the theme of mortality?', type: 'multiple-choice', options: ['He ignores it', 'Autumn\'s beauty is heightened by its transience — the beauty is more precious because it is fleeting', 'He fears death directly', 'He celebrates immortality'], correctIndex: 1, explanation: 'Keats (who was dying of tuberculosis) creates beauty from transience. Autumn is beautiful precisely because it is passing — the awareness of endings makes the present more vivid.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'ta-9', question: 'What is the effect of the gathering swallows at the end?', type: 'multiple-choice', options: ['Spring is coming', 'The swallows preparing to migrate signal the end of autumn and approaching winter — beauty accompanied by gentle farewell', 'The birds are feeding', 'It describes morning'], correctIndex: 1, explanation: 'The gathering swallows are preparing to leave for winter. This final image is both beautiful and poignant — autumn\'s music includes its own farewell.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'ta-10', question: 'Why is To Autumn considered one of the greatest English poems?', type: 'multiple-choice', options: ['It rhymes well', 'It perfectly balances sensory richness with philosophical depth — celebrating beauty while acknowledging its transience', 'It is very old', 'It is very long'], correctIndex: 1, explanation: 'To Autumn achieves a rare balance: it is sensorially rich (every line is full of texture, sound, and colour) while carrying profound philosophical weight about time, mortality, and acceptance.', topic: 'Themes', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'To Autumn celebrates the richness of the season while gently acknowledging mortality and the passage of time.', keyPoints: ['Abundance — autumn as fulfilment rather than decay', 'Transience — beauty is more precious because it is fleeting', 'Acceptance — the poem embraces endings rather than fearing them', 'Keats was dying — personal mortality informs the gentle farewell'] },
+  { topic: 'Language & Imagery', summary: 'Keats uses personification, sensory imagery across all five senses, and rich, accumulative language to immerse the reader in autumn.', keyPoints: ['Autumn personified as a relaxed figure among the harvest', '"Close bosom-friend of the maturing sun" — intimate alliance', 'Multi-sensory — sight, touch, taste, smell, sound', '"Gathering swallows" — gentle farewell image'] },
+  { topic: 'Structure & Form', summary: 'An ode in three 11-line stanzas, each focused on a different sense, progressing from abundance to acceptance.', keyPoints: ['Ode form — elevated celebration', 'Three stanzas: ripeness (1), personification (2), music (3)', 'Progression from morning to evening — time passing', 'Regular rhyme scheme — orderly celebration'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Keats present the beauty of autumn in To Autumn?',
+  'Compare how nature is presented in To Autumn and one other poem from the anthology.',
+  'How does Keats use language and structure to explore the relationship between beauty and transience?',
+]
+
 export default function ToAutumnEduqasPage() {
   return (
     <div className="space-y-8">
@@ -568,6 +594,13 @@ export default function ToAutumnEduqasPage() {
         cluster="Eduqas Poetry Anthology"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="To Autumn"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={toAutumn} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ────────────────────────────────────────────────────── */
 
@@ -370,6 +371,160 @@ Frame narrative: The poem uses three layers of voice — the speaker, the travel
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'oz-1',
+    question: 'What is the main theme of Ozymandias?',
+    type: 'multiple-choice',
+    options: ['The power of nature over humanity', 'The transience of political power', 'The beauty of ancient art', 'The importance of travel and exploration'],
+    correctIndex: 1,
+    explanation: 'Shelley explores how even the mightiest rulers are eventually forgotten. The ruined statue symbolises the inevitable decline of all human power and ambition.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oz-2',
+    question: 'What does the phrase "sneer of cold command" reveal about Ozymandias?',
+    type: 'multiple-choice',
+    options: ['He was a kind and generous ruler', 'He was a cruel and authoritarian tyrant', 'He was afraid of his enemies', 'He was an artist and sculptor'],
+    correctIndex: 1,
+    explanation: '"Sneer" shows contempt for others, "cold" shows lack of empathy, and "command" shows absolute authority. Together they characterise Ozymandias as a heartless tyrant.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oz-3',
+    question: 'What is the effect of the line "Nothing beside remains"?',
+    type: 'multiple-choice',
+    options: ['It shows the statue is well preserved', 'It devastatingly undercuts Ozymandias\'s boastful inscription', 'It describes the desert landscape positively', 'It suggests the traveller is lost'],
+    correctIndex: 1,
+    explanation: 'This short, blunt sentence directly contradicts the king\'s grand claims. After his boast about his "Works", three plain words demolish his legacy entirely.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oz-4',
+    question: 'What form does Ozymandias take?',
+    type: 'multiple-choice',
+    options: ['A free verse poem', 'A sonnet with an irregular rhyme scheme', 'A ballad with regular quatrains', 'A dramatic monologue in blank verse'],
+    correctIndex: 1,
+    explanation: 'Ozymandias is a 14-line sonnet, but Shelley deliberately breaks from standard Petrarchan and Shakespearean rhyme schemes. The irregular structure mirrors the theme of breaking from established power.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oz-5',
+    question: 'What is the significance of the sculptor in the poem?',
+    type: 'multiple-choice',
+    options: ['He represents the failure of art', 'His work survives while the king\'s empire does not, showing art outlasts power', 'He was punished by Ozymandias for his work', 'He is the poem\'s narrator'],
+    correctIndex: 1,
+    explanation: 'The sculptor\'s art endures while the king\'s political achievements have vanished. This irony shows that art and craft outlast tyrannical power.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oz-6',
+    question: 'What type of irony is used in "Look on my Works, ye Mighty, and despair!"?',
+    type: 'multiple-choice',
+    options: ['Verbal irony', 'Dramatic irony', 'Cosmic irony', 'Socratic irony'],
+    correctIndex: 1,
+    explanation: 'Dramatic irony occurs because the reader knows something Ozymandias did not: that his "Works" have completely vanished. His command to "despair" now means something entirely different from what he intended.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oz-7',
+    question: 'Why does Shelley use a frame narrative (a story within a story)?',
+    type: 'multiple-choice',
+    options: ['To make the poem longer', 'To distance the reader from Ozymandias, emphasising how his legacy has faded through retelling', 'To show that the traveller is unreliable', 'To create a happy ending'],
+    correctIndex: 1,
+    explanation: 'The tale passes through multiple voices (speaker, traveller, sculptor, Ozymandias). This layered retelling undermines the king\'s desire for a permanent, direct legacy.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oz-8',
+    question: 'What historical figure is Ozymandias based on?',
+    type: 'multiple-choice',
+    options: ['Alexander the Great', 'Julius Caesar', 'Ramesses II (Pharaoh of Egypt)', 'Genghis Khan'],
+    correctIndex: 2,
+    explanation: 'Ozymandias is the Greek name for Ramesses II, one of ancient Egypt\'s most powerful pharaohs. The British Museum had recently acquired a fragment of his statue, likely inspiring the poem.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oz-9',
+    question: 'How does the line "The lone and level sands stretch far away" contribute to the poem\'s message?',
+    type: 'multiple-choice',
+    options: ['It celebrates the beauty of the Egyptian desert', 'It shows nature has completely erased Ozymandias\'s empire, giving nature the final word over human power', 'It suggests the traveller still has a long journey ahead', 'It describes where the statue was originally built'],
+    correctIndex: 1,
+    explanation: 'The final image of endless, flat desert shows nature has reclaimed everything. The sibilant sounds ("sands stretch") evoke wind erasing the king\'s memory. Nature, not the king, has the last word.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'oz-10',
+    question: 'Which poem from the Power and Conflict anthology would be the strongest comparison for exploring the theme of the transience of power?',
+    type: 'multiple-choice',
+    options: ['Bayonet Charge by Ted Hughes', 'Tissue by Imtiaz Dharker', 'Remains by Simon Armitage', 'Poppies by Jane Weir'],
+    correctIndex: 1,
+    explanation: 'Tissue by Imtiaz Dharker also explores impermanence and the fragility of human structures. Both poems argue that what humans build — empires or identities — is ultimately temporary, though they use very different imagery (stone vs paper).',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'Ozymandias explores the transience of political power, the arrogance of tyrants, and the supremacy of nature and time over human ambition.',
+    keyPoints: [
+      'Power is temporary — even the mightiest rulers are eventually forgotten',
+      'Art outlasts political power — the sculptor\'s work survives while the empire is gone',
+      'Nature reclaims everything — the desert has the final word',
+      'Hubris (excessive pride) leads to downfall — Ozymandias\'s boast becomes evidence of his insignificance',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Shelley uses dramatic irony, alliteration, juxtaposition, and vivid imagery to contrast Ozymandias\'s grand claims with the reality of his ruined statue.',
+    keyPoints: [
+      '"Sneer of cold command" — characterises the tyrant through hard consonant sounds',
+      '"Nothing beside remains" — blunt monosyllables demolish the inscription\'s grandeur',
+      '"Boundless and bare" / "lone and level" — alliteration emphasises vast emptiness',
+      'Dramatic irony in "Look on my Works... and despair!" — the meaning has reversed',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'A 14-line sonnet with an irregular rhyme scheme that deliberately breaks from tradition, mirroring the poem\'s theme of dismantled power structures.',
+    keyPoints: [
+      'Irregular rhyme scheme (ababacdcedefef) — reflects decay and fragmentation',
+      'Volta at line 12 ("Nothing beside remains") — the devastating turn',
+      'Frame narrative — three layers of voice distance the reader from Ozymandias',
+      'Enjambment creates flowing momentum, pulling the reader through like time pulling towards decay',
+    ],
+  },
+  {
+    topic: 'Context',
+    summary: 'Written in 1817 during a period of political upheaval, the poem reflects Shelley\'s radical opposition to tyranny and absolute monarchy.',
+    keyPoints: [
+      'Shelley was a Romantic poet who opposed tyranny and institutional power',
+      'Written during the aftermath of the French Revolution and Napoleonic Wars',
+      'Inspired by a fragment of Ramesses II\'s statue acquired by the British Museum',
+      'Part of a sonnet-writing competition with Horace Smith — Shelley\'s version became iconic',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Shelley present the theme of power in Ozymandias?',
+  'Compare how the transience of power is presented in Ozymandias and one other poem from the Power and Conflict anthology.',
+  'How does Shelley use language and structure to convey the insignificance of human ambition?',
+]
+
 /* ── Comparison poems ─────────────────────────────────────────────── */
 
 const comparisons = [
@@ -438,6 +593,13 @@ export default function OzymandiasPage() {
         examBoard="AQA"
         cluster="Power & Conflict"
         variant="compact"
+      />
+
+      <InlineStudyEngine
+        textName="Ozymandias"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
       />
 
       {/* ── Interactive poem viewer ───────────────────────────────── */}

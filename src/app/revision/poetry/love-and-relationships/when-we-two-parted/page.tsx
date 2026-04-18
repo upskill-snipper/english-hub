@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const poemData: PoemData = {
   title: 'When We Two Parted',
@@ -70,6 +71,31 @@ const poemData: PoemData = {
   ],
 }
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'wwtp-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A happy reunion with a former lover', 'The pain of a secret affair ending and the lasting grief it causes', 'A letter to a future partner', 'A celebration of marriage'], correctIndex: 1, explanation: 'Byron reflects on the painful end of a secret affair. The secrecy means he cannot publicly grieve, intensifying his suffering. The poem traces past, present, and imagined future.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'wwtp-2', question: 'What does the cyclical structure (ending with "silence and tears") suggest?', type: 'multiple-choice', options: ['The speaker has moved on', 'The speaker is trapped in perpetual grief with no resolution', 'The relationship has been repaired', 'Time heals all wounds'], correctIndex: 1, explanation: 'The final line echoes the opening, creating a circular poem. Nothing has changed — the speaker is condemned to repeat the same silence and tears, with no escape from grief.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'wwtp-3', question: 'What does "A knell to mine ear" mean?', type: 'multiple-choice', options: ['A pleasant sound', 'Hearing the lover\'s name is like a funeral bell — it signals the death of their love', 'A musical instrument', 'A whisper'], correctIndex: 1, explanation: 'A "knell" is a funeral bell. Hearing the lover\'s name in ordinary conversation becomes an agonising reminder of loss, transforming everyday moments into experiences of grief.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'wwtp-4', question: 'What is the effect of "Half broken-hearted"?', type: 'multiple-choice', options: ['It shows the speaker wasn\'t very upset', 'The understatement paradoxically intensifies the emotion — Byron minimises his pain to protect himself', 'It means exactly what it says literally', 'It shows the relationship was unimportant'], correctIndex: 1, explanation: '"Half" is deliberate understatement. Rather than diminishing the pain, it reveals Byron\'s characteristic restraint — the unsaid half is more powerful than what is expressed.', topic: 'Language', difficulty: 'higher' },
+  { id: 'wwtp-5', question: 'Why is secrecy so important to the poem\'s meaning?', type: 'multiple-choice', options: ['It makes the poem mysterious', 'Secrecy intensifies suffering — the speaker cannot publicly acknowledge his grief, making it inescapable and isolating', 'It is a minor detail', 'The speaker is ashamed of writing poetry'], correctIndex: 1, explanation: 'Because the affair was secret, Byron\'s grief must also be hidden. He cannot share it with anyone. This double secrecy — of the love and of the loss — creates profound isolation.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'wwtp-6', question: 'What semantic field runs through the poem?', type: 'multiple-choice', options: ['Warmth and fire', 'Coldness — pale, cold, colder, chill', 'Colour and brightness', 'Music and sound'], correctIndex: 1, explanation: 'A sustained semantic field of coldness pervades the poem — "pale", "cold", "Colder", "chill". This contrasts with the expected warmth of love and creates an atmosphere of emotional death.', topic: 'Language', difficulty: 'higher' },
+  { id: 'wwtp-7', question: 'When was the poem written and what is its context?', type: 'multiple-choice', options: ['1850 during the Victorian era', '1816 — reflecting Byron\'s secret affair, likely with Lady Frances Webster', '1914 during WWI', '1790 during the French Revolution'], correctIndex: 1, explanation: 'Written in 1816, the poem is believed to reflect Byron\'s secret affair with Lady Frances Webster. The affair had to remain hidden, meaning Byron could not publicly express his grief when it ended.', topic: 'Context', difficulty: 'higher' },
+  { id: 'wwtp-8', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse with no regular pattern', 'Four eight-line stanzas with a tight ABAB rhyme scheme and short, clipped lines', 'A sonnet', 'Blank verse'], correctIndex: 1, explanation: 'The poem uses four eight-line stanzas with regular ABAB rhyme and predominantly monosyllabic words. The tight, controlled form mirrors Byron\'s emotional restraint.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'wwtp-9', question: 'How does the shift between past and present tenses function?', type: 'multiple-choice', options: ['It is inconsistent writing', 'It shows grief transcends time — the past event continues to haunt the present, proving the pain is unresolved', 'It creates a happy memory', 'It moves the poem forward chronologically'], correctIndex: 1, explanation: 'Byron shifts between past (the parting), present (hearing the name), and hypothetical future (a potential meeting). This temporal movement shows that grief is not confined to one moment — it bleeds across time.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'wwtp-10', question: 'Which poem from the Love & Relationships anthology best pairs with When We Two Parted?', type: 'multiple-choice', options: ['Singh Song! by Nagra', 'Neutral Tones by Thomas Hardy', 'Climbing My Grandfather by Waterhouse', 'Follower by Heaney'], correctIndex: 1, explanation: 'Both When We Two Parted and Neutral Tones explore the painful end of love with cold, bleak imagery and cyclical structures. Both speakers are trapped in memories of failed relationships.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'When We Two Parted explores secret love, the pain of betrayal, the isolation of hidden grief, and the inescapable nature of memory.', keyPoints: ['Secrecy intensifies suffering — grief that cannot be shared is doubly painful', 'Betrayal and broken vows — "Thy vows are all broken"', 'Cyclical, inescapable grief — the poem ends where it began', 'Memory as torment — hearing the name causes physical pain'] },
+  { topic: 'Language & Imagery', summary: 'Byron uses a semantic field of coldness, death imagery, understatement, and monosyllabic diction to convey restrained but profound grief.', keyPoints: ['"Pale... cold... Colder... chill" — sustained coldness imagery', '"A knell to mine ear" — funeral bell metaphor for hearing her name', '"Half broken-hearted" — understatement masking deep pain', 'Monosyllabic words create blunt, clipped emotional restraint'] },
+  { topic: 'Structure & Form', summary: 'Four regular stanzas with ABAB rhyme and cyclical structure — the controlled form mirrors emotional suppression while the circular ending traps the speaker in grief.', keyPoints: ['Cyclical structure — ends with "silence and tears" echoing the opening', 'Short, clipped lines — emotional restraint enacted in form', 'Temporal shifts — past, present, and future show grief transcends time', 'ABAB rhyme — controlled form contrasts with raw emotion beneath'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Byron present the pain of lost love in When We Two Parted?',
+  'Compare how the end of a relationship is presented in When We Two Parted and one other poem from the anthology.',
+  'How does Byron use language and structure to convey the speaker\'s grief?',
+]
+
 const COMPARE_POEMS = [
   { title: 'Neutral Tones', href: '/revision/poetry/love-and-relationships/neutral-tones', reason: 'Both explore the painful end of love with cold, bleak imagery and cyclical structures.' },
   { title: "Love's Philosophy", href: '/revision/poetry/love-and-relationships/loves-philosophy', reason: 'Contrasting perspective -- Shelley celebrates love\'s potential while Byron mourns its death.' },
@@ -102,6 +128,14 @@ export default function WhenWeTwoPartedPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="When We Two Parted"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={poemData} />
 
       {/* Compare With Section */}

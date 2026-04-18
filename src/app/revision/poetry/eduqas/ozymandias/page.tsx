@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ────────────────────────────────────────────────────── */
 
@@ -342,6 +343,31 @@ const comparisons = [
 
 /* ── Page component ───────────────────────────────────────────────── */
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'oz-1', question: 'What is the main theme of Ozymandias?', type: 'multiple-choice', options: ['The power of nature', 'The transience of political power', 'The beauty of art', 'Travel'], correctIndex: 1, explanation: 'Shelley explores how even the mightiest rulers are eventually forgotten. The ruined statue symbolises the inevitable decline of all power.', topic: 'Themes', difficulty: 'foundation' },
+  { id: 'oz-2', question: 'What does "sneer of cold command" reveal?', type: 'multiple-choice', options: ['A kind ruler', 'A cruel and authoritarian tyrant', 'A frightened man', 'An artist'], correctIndex: 1, explanation: '"Sneer" shows contempt, "cold" shows lack of empathy, "command" shows authority. Together they characterise a tyrant.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'oz-3', question: 'What is the effect of "Nothing beside remains"?', type: 'multiple-choice', options: ['The statue is preserved', 'It devastatingly undercuts the boastful inscription', 'It describes the desert positively', 'The traveller is lost'], correctIndex: 1, explanation: 'Three blunt words demolish the king\'s grand claims after his boast about his "Works."', topic: 'Language', difficulty: 'foundation' },
+  { id: 'oz-4', question: 'What form does it take?', type: 'multiple-choice', options: ['Free verse', 'A sonnet with irregular rhyme scheme', 'A ballad', 'A dramatic monologue'], correctIndex: 1, explanation: 'A 14-line sonnet with deliberately irregular rhyme, mirroring the theme of broken power structures.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'oz-5', question: 'What is significant about the sculptor?', type: 'multiple-choice', options: ['He failed', 'His art survives while the empire does not — art outlasts power', 'He was punished', 'He narrates'], correctIndex: 1, explanation: 'The sculptor\'s work endures while the king\'s achievements have vanished — art outlasts tyrannical power.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'oz-6', question: 'What type of irony is in "Look on my Works... and despair!"?', type: 'multiple-choice', options: ['Verbal irony', 'Dramatic irony', 'Cosmic irony', 'Socratic irony'], correctIndex: 1, explanation: 'Dramatic irony — the reader knows what Ozymandias did not: his works have completely vanished.', topic: 'Language', difficulty: 'higher' },
+  { id: 'oz-7', question: 'Why use a frame narrative?', type: 'multiple-choice', options: ['To make it longer', 'To distance the reader from Ozymandias, emphasising how his legacy has faded', 'To show the traveller is unreliable', 'For a happy ending'], correctIndex: 1, explanation: 'The layered retelling through multiple voices undermines the king\'s desire for a permanent, direct legacy.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'oz-8', question: 'Who is Ozymandias based on?', type: 'multiple-choice', options: ['Alexander the Great', 'Caesar', 'Ramesses II of Egypt', 'Genghis Khan'], correctIndex: 2, explanation: 'Ozymandias is the Greek name for Ramesses II, inspired by a statue fragment acquired by the British Museum.', topic: 'Context', difficulty: 'higher' },
+  { id: 'oz-9', question: 'What does the final line contribute?', type: 'multiple-choice', options: ['Celebrates the desert', 'Nature has completely erased the empire — giving nature the final word', 'The traveller continues', 'Describes where the statue was built'], correctIndex: 1, explanation: 'The endless desert has reclaimed everything. Nature, not the king, has the last word.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'oz-10', question: 'What was Shelley\'s political stance?', type: 'multiple-choice', options: ['Conservative', 'A radical Romantic who opposed tyranny and monarchy', 'Apolitical', 'Monarchist'], correctIndex: 1, explanation: 'Shelley was a radical who opposed all forms of tyranny. The poem was a challenge to the monarchies of his own time.', topic: 'Context', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Ozymandias explores the transience of power, hubris, the supremacy of nature and time, and art\'s endurance.', keyPoints: ['Power is temporary — even the mightiest rulers are forgotten', 'Art outlasts political power', 'Nature reclaims everything', 'Hubris leads to downfall'] },
+  { topic: 'Language & Imagery', summary: 'Shelley uses dramatic irony, alliteration, juxtaposition, and vivid desert imagery.', keyPoints: ['"Sneer of cold command" — hard consonants characterise the tyrant', '"Nothing beside remains" — blunt monosyllables', '"Boundless and bare" / "lone and level" — alliteration emphasises emptiness', 'Dramatic irony in "Look on my Works"'] },
+  { topic: 'Structure & Form', summary: 'Irregular sonnet with frame narrative and volta at "Nothing beside remains."', keyPoints: ['Irregular rhyme scheme — reflects decay', 'Volta at line 12 — devastating turn', 'Frame narrative — three voices distance the reader', 'Enjambment — flowing momentum toward decay'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Shelley present the theme of power in Ozymandias?',
+  'Compare how the transience of power is presented in Ozymandias and one other poem from the anthology.',
+  'How does Shelley use language and structure to convey the insignificance of human ambition?',
+]
+
 export default function OzymandiasEduqasPage() {
   return (
     <div className="space-y-8">
@@ -379,6 +405,13 @@ export default function OzymandiasEduqasPage() {
         cluster="Eduqas Poetry Anthology"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Ozymandias"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={ozymandias} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

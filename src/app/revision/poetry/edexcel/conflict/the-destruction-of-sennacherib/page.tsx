@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const sennacherib: PoemData = {
   title: 'The Destruction of Sennacherib',
@@ -450,6 +451,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'ds-1', question: 'What biblical event does the poem describe?', type: 'multiple-choice', options: ['Noah\'s Ark', 'The Angel of Death destroying the Assyrian army besieging Jerusalem overnight', 'David and Goliath', 'Moses parting the Red Sea'], correctIndex: 1, explanation: 'The poem retells the story from 2 Kings 19 where God sends an angel to destroy the Assyrian army of King Sennacherib as they besiege Jerusalem.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'ds-2', question: 'What is the effect of the simile "like the wolf on the fold"?', type: 'multiple-choice', options: ['It shows the Assyrians are kind', 'It presents the Assyrian army as predatory, dangerous, and aggressive — attacking the innocent', 'It describes actual wolves', 'It is about farming'], correctIndex: 1, explanation: 'Comparing the Assyrians to a wolf attacking a flock of sheep presents them as predatory aggressors. The "fold" (sheepfold) represents the vulnerable Israelites — prey to be devoured.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'ds-3', question: 'What metre does Byron use?', type: 'multiple-choice', options: ['Iambic pentameter', 'Anapaestic tetrameter — creating a galloping, charging rhythm', 'Free verse', 'Trochaic'], correctIndex: 1, explanation: 'The anapaestic metre (two unstressed syllables followed by a stressed one) creates a galloping rhythm that mirrors the cavalry charge of the Assyrian army.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'ds-4', question: 'What does the contrast between the army\'s splendour and their destruction suggest?', type: 'multiple-choice', options: ['War is glamorous', 'The greater the human power, the more completely divine power can destroy it — pride comes before a fall', 'The army was not well equipped', 'Nothing in particular'], correctIndex: 1, explanation: 'The Assyrians are described in "purple and gold" splendour before being reduced to corpses. This contrast emphasises the totality of their fall and the supremacy of divine power over military might.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'ds-5', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Six quatrains with AABB rhyme — fast-paced, narrative ballad form', 'Free verse', 'Blank verse'], correctIndex: 1, explanation: 'Six quatrains with rhyming couplets (AABB). The fast-paced, narrative structure suits the story of sudden military destruction.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'ds-6', question: 'What does "the Angel of Death spread his wings on the blast" suggest?', type: 'multiple-choice', options: ['An angel is flying normally', 'Divine destruction is presented as magnificent and terrifying — the angel rides the wind itself', 'There was a storm', 'The angel is peaceful'], correctIndex: 1, explanation: 'The Angel of Death is personified as a magnificent, terrifying figure riding on the wind. The image fuses beauty with destruction — divine power is both awesome and deadly.', topic: 'Language', difficulty: 'higher' },
+  { id: 'ds-7', question: 'Who is Lord Byron?', type: 'multiple-choice', options: ['A Victorian novelist', 'A major Romantic poet (1788-1824), known for narrative verse and dramatic, sweeping imagery', 'A war correspondent', 'A priest'], correctIndex: 1, explanation: 'Lord Byron (1788-1824) was one of the major English Romantic poets. He was famous for dramatic, sweeping narratives, and this poem showcases his gift for rhythm and vivid imagery.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'ds-8', question: 'How does Byron use colour imagery?', type: 'multiple-choice', options: ['Randomly', 'Gold and purple (living army) contrast with pale/cold death imagery — colour drains as life ends', 'Only dark colours', 'Only bright colours'], correctIndex: 1, explanation: 'The living army glitters in "purple and gold" and "the sheen of their spears." After the angel strikes, colour drains — faces become pale, the army is reduced to lifeless grey.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'ds-9', question: 'What is the poem\'s message about power?', type: 'multiple-choice', options: ['Military power always wins', 'No human military power can stand against divine will — the mightiest armies are destroyed overnight', 'Power is unimportant', 'The Assyrians were weak'], correctIndex: 1, explanation: 'The poem argues that divine power utterly surpasses human military might. The greatest army in the ancient world is destroyed in a single night — all human power is temporary.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'ds-10', question: 'How does the poem\'s rhythm contribute to its effect?', type: 'multiple-choice', options: ['It creates calm reflection', 'The galloping anapaestic metre creates excitement and momentum, then its continuation over corpses becomes grimly ironic', 'It has no rhythm', 'The rhythm is slow'], correctIndex: 1, explanation: 'The galloping rhythm initially suits the charging army, but after the angel strikes, the same rhythm continues over descriptions of death. The relentless beat becomes ironic — it marches over corpses.', topic: 'Structure', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'The Destruction of Sennacherib explores divine power vs military might, the futility of human ambition, and sudden, total destruction.', keyPoints: ['Divine power triumphs — no army can resist God\'s will', 'The futility of military splendour — gold and purple reduced to corpses', 'Pride before destruction — the mightier the army, the greater the fall', 'Biblical narrative — retelling of 2 Kings 19'] },
+  { topic: 'Language & Imagery', summary: 'Byron uses colour contrast, simile, personification of the Angel of Death, and vivid sensory detail to dramatise divine destruction.', keyPoints: ['"Like the wolf on the fold" — the Assyrians as predators', 'Colour imagery — gold/purple (life) vs pale/cold (death)', '"Angel of Death spread his wings" — divine power as magnificent and terrifying', 'Sensory detail tracks the army from splendour to silence'] },
+  { topic: 'Structure & Form', summary: 'Six quatrains in anapaestic tetrameter with AABB rhyme — the galloping rhythm mirrors cavalry then becomes ironic over corpses.', keyPoints: ['Anapaestic metre — galloping rhythm of cavalry charge', 'AABB rhyme — fast-paced, driving narrative', 'Rhythm continues over death descriptions — becomes grimly ironic', 'Progression: splendour → destruction → silence'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Byron present the theme of power in The Destruction of Sennacherib?',
+  'Compare how conflict is presented in The Destruction of Sennacherib and one other poem from the anthology.',
+  'How does Byron use rhythm and imagery to dramatise the destruction of the Assyrian army?',
+]
+
 export default function SennacheribPage() {
   return (
     <div className="space-y-8">
@@ -487,6 +513,13 @@ export default function SennacheribPage() {
         cluster="Conflict"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="The Destruction of Sennacherib"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={sennacherib} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

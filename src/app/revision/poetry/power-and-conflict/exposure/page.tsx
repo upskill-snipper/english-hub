@@ -9,6 +9,7 @@ import {
   type PoemData,
 } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Theme tokens ──────────────────────────────────────────────── */
 
@@ -18,6 +19,150 @@ const THEMES = [
   { label: 'Suffering', icon: Skull, color: 'bg-amber-500/10 text-clay-600' },
   { label: 'Futility / Loss', icon: HelpCircle, color: 'bg-purple-500/10 text-purple-400' },
   { label: 'Passage of Time', icon: Clock, color: 'bg-emerald-500/10 text-emerald-400' },
+]
+
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'exp-1',
+    question: 'What is the main enemy of the soldiers in Exposure?',
+    type: 'multiple-choice',
+    options: ['The German army', 'The weather and the agonising wait — nature, not combat', 'Their commanding officers', 'Disease in the trenches'],
+    correctIndex: 1,
+    explanation: 'Owen presents the soldiers\' greatest enemy not as enemy combatants but as the "merciless iced east winds" and the endless, futile waiting. The refrain "But nothing happens" emphasises this.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'exp-2',
+    question: 'What is the effect of the refrain "But nothing happens"?',
+    type: 'multiple-choice',
+    options: ['It creates excitement and suspense', 'It emphasises the futility and monotony of trench warfare — the anticlimax is the point', 'It shows the soldiers are safe', 'It indicates the war is nearly over'],
+    correctIndex: 1,
+    explanation: 'The devastating refrain appears at the end of multiple stanzas. The anticlimax is the poem\'s central argument: soldiers die not in heroic battle but in agonising, purposeless waiting.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'exp-3',
+    question: 'What does "merciless iced east winds that knive us" suggest about nature?',
+    type: 'multiple-choice',
+    options: ['Nature is a comforting presence', 'Nature is personified as a cruel, deliberate attacker — a weapon as dangerous as any enemy', 'The soldiers enjoy the cold weather', 'The wind is gentle and refreshing'],
+    correctIndex: 1,
+    explanation: 'Owen personifies the wind as a merciless, deliberate attacker. The verb "knive" (Owen\'s own coinage) turns nature into a weapon, blurring the line between the weather and the enemy.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'exp-4',
+    question: 'What does the rhetorical question "What are we doing here?" express?',
+    type: 'multiple-choice',
+    options: ['Curiosity about geography', 'The soldiers\' bewilderment and growing sense of the war\'s futility', 'Excitement about being at the front', 'A request for new orders'],
+    correctIndex: 1,
+    explanation: 'This direct question breaks the descriptive mode to express the soldiers\' deep confusion about the purpose of their suffering. It hints at the futility that Owen felt characterised the war.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'exp-5',
+    question: 'How does Owen subvert the traditional symbolism of dawn in the poem?',
+    type: 'multiple-choice',
+    options: ['Dawn brings rescue and hope', 'Dawn brings "poignant misery" — it reveals suffering rather than offering salvation', 'Dawn signals the end of the war', 'Dawn is not mentioned in the poem'],
+    correctIndex: 1,
+    explanation: 'Dawn is usually a symbol of hope and new beginnings, but Owen subverts this: "The poignant misery of dawn begins to grow." Dawn here brings only more visible suffering, not relief.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'exp-6',
+    question: 'What is the significance of the half-rhymes Owen uses throughout?',
+    type: 'multiple-choice',
+    options: ['He could not find proper rhymes', 'They create a sense of dissonance and incompleteness, mirroring the soldiers\' disturbed mental state', 'They make the poem easier to read', 'They are a mistake by the printer'],
+    correctIndex: 1,
+    explanation: 'Owen\'s half-rhymes (e.g., "knive us" / "nervous", "silent" / "salient") create deliberate dissonance. The failure to rhyme properly mirrors the wrongness of war and the soldiers\' fractured psychological state.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'exp-7',
+    question: 'Who was Wilfred Owen, and when was Exposure written?',
+    type: 'multiple-choice',
+    options: ['A Victorian poet who wrote about the Industrial Revolution', 'A WWI soldier-poet who wrote from direct experience of trench warfare, writing Exposure in 1917-18', 'A WWII war correspondent', 'A Romantic poet who opposed Napoleon'],
+    correctIndex: 1,
+    explanation: 'Wilfred Owen was a soldier in the trenches of World War I. He wrote Exposure in 1917-18 from direct personal experience. He was killed on 4 November 1918, one week before the Armistice.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'exp-8',
+    question: 'What does "Dawn massing in the east her melancholy army" suggest?',
+    type: 'multiple-choice',
+    options: ['The army is preparing to attack at dawn', 'Dawn is personified as a military general, making nature itself an enemy force attacking the soldiers', 'The sun is rising normally', 'The soldiers are excited about morning'],
+    correctIndex: 1,
+    explanation: 'Dawn is personified as a female general gathering an army of clouds. Nature becomes a military force just as lethal as the human enemy — the soldiers are attacked from all sides.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'exp-9',
+    question: 'How does the structure of each stanza reinforce the poem\'s message of futility?',
+    type: 'multiple-choice',
+    options: ['Each stanza builds to a climactic action scene', 'Each stanza builds tension through sensory description then deflates with the anticlimax "But nothing happens"', 'The stanzas get progressively shorter', 'The stanzas alternate between hope and despair equally'],
+    correctIndex: 1,
+    explanation: 'Each eight-line stanza builds atmospheric tension through vivid imagery, only to be deflated by the short, blunt final line. This repeated anticlimax structurally enacts the soldiers\' experience of endless, purposeless suffering.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'exp-10',
+    question: 'Which poem from the Power and Conflict anthology best contrasts with Exposure in its presentation of soldiers?',
+    type: 'multiple-choice',
+    options: ['The Charge of the Light Brigade by Tennyson', 'Tissue by Imtiaz Dharker', 'The Emigrée by Carol Rumens', 'London by William Blake'],
+    correctIndex: 0,
+    explanation: 'Tennyson glorifies soldiers\' courage and noble sacrifice, while Owen strips war of all heroism, showing only futile suffering. They offer opposing views of the soldier\'s role: one heroic, one devastatingly anti-heroic.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'Exposure presents the futility and horror of trench warfare, with nature as the true enemy and the soldiers\' suffering rendered meaningless by inaction.',
+    keyPoints: [
+      'Futility — "But nothing happens" — suffering without purpose or progress',
+      'Power of nature — the weather is more deadly than the enemy',
+      'Suffering — physical and psychological torment described in agonising detail',
+      'Loss of faith — the soldiers question God, duty, and the purpose of war',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Owen uses personification, synaesthesia, half-rhyme, and a sustained semantic field of cold and death to immerse the reader in the soldiers\' suffering.',
+    keyPoints: [
+      '"Merciless iced east winds that knive us" — nature personified as a deliberate attacker',
+      '"Dawn massing in the east her melancholy army" — dawn as a military general',
+      'Half-rhymes create deliberate dissonance, reflecting the wrongness of war',
+      'Synaesthesia ("Watching, we hear") — senses blurred by exhaustion and exposure',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Eight-line stanzas with half-rhyme and a devastating refrain. Each stanza builds tension only to deflate with "But nothing happens."',
+    keyPoints: [
+      'Refrain "But nothing happens" — structural embodiment of futility',
+      'Half-rhyme — creates dissonance and a sense that nothing resolves properly',
+      'Each stanza builds and deflates — mirroring the soldiers\' experience',
+      'Present tense — places the reader in the trenches with the soldiers',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Owen present the suffering of soldiers in Exposure?',
+  'Compare how the power of nature is presented in Exposure and one other poem from the anthology.',
+  'How does Owen use language and structure to convey the futility of war in Exposure?',
 ]
 
 /* ── Comparison poems ──────────────────────────────────────────── */
@@ -383,6 +528,14 @@ export default function ExposurePage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="Exposure"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={exposureData} />
 
       {/* ── Comparison poems ── */}

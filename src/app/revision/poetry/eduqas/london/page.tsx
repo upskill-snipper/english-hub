@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const london: PoemData = {
   title: 'London',
@@ -376,6 +377,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'lon-1', question: 'What does "charter\'d" suggest about London?', type: 'multiple-choice', options: ['The streets are well-maintained', 'Everything is controlled, owned, and commercialised', 'The streets are full of tourists', 'London is free'], correctIndex: 1, explanation: 'Blake uses "charter\'d" to suggest even streets and the Thames are controlled. Freedom is an illusion.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'lon-2', question: 'What are "mind-forg\'d manacles"?', type: 'multiple-choice', options: ['Physical chains', 'Psychological chains — people imprisoned by acceptance of oppression', 'Bracelets', 'Laws'], correctIndex: 1, explanation: 'The chains are mental — people have internalised their oppression and accepted it as normal.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'lon-3', question: 'What institutions does Blake attack?', type: 'multiple-choice', options: ['Schools and hospitals', 'The Church and the monarchy', 'Factories and shops', 'The army'], correctIndex: 1, explanation: 'Blake attacks the Church for ignoring child chimney sweeps and the monarchy for sending soldiers to die.', topic: 'Themes', difficulty: 'foundation' },
+  { id: 'lon-4', question: 'What is the oxymoron "Marriage hearse"?', type: 'multiple-choice', options: ['A wedding tradition', 'Love and death fused — corruption has poisoned every aspect of life', 'A funeral procession', 'A type of carriage'], correctIndex: 1, explanation: 'Marriage (love) combined with hearse (death) shows corruption has destroyed even sacred institutions.', topic: 'Language', difficulty: 'higher' },
+  { id: 'lon-5', question: 'What dominates stanza 2?', type: 'multiple-choice', options: ['Rhyming couplets', 'Anaphora — "In every" repeated four times', 'A volta', 'Lack of punctuation'], correctIndex: 1, explanation: 'The repetition creates overwhelming, cumulative effect making suffering feel universal.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'lon-6', question: 'What does "Runs in blood down Palace walls" suggest?', type: 'multiple-choice', options: ['The Palace is being painted', 'Blake directly blames the monarchy for soldiers\' deaths', 'Soldiers are protecting the Palace', 'The Palace is under renovation'], correctIndex: 1, explanation: 'Blood on "Palace walls" makes the monarchy\'s responsibility for death undeniable.', topic: 'Language', difficulty: 'higher' },
+  { id: 'lon-7', question: 'When was the poem published?', type: 'multiple-choice', options: ['1818', '1794, during the Industrial Revolution', '1850', '1914'], correctIndex: 1, explanation: 'Published in Songs of Experience (1794) during the Industrial Revolution and aftermath of the French Revolution.', topic: 'Context', difficulty: 'higher' },
+  { id: 'lon-8', question: 'What metre does Blake use?', type: 'multiple-choice', options: ['Free verse', 'Iambic tetrameter — steady marching rhythm', 'Iambic pentameter', 'Anapaestic'], correctIndex: 1, explanation: 'The four-beat rhythm sounds like footsteps, reinforcing relentless oppression.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'lon-9', question: 'How does the cyclical structure reinforce the message?', type: 'multiple-choice', options: ['London is improving', 'Suffering repeats endlessly from generation to generation', 'There is resolution', 'The streets are circular'], correctIndex: 1, explanation: 'The poem begins with a baby\'s cry and ends with a new-born infant\'s tear — suffering passes from generation to generation.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'lon-10', question: 'Which theme is most central to the poem?', type: 'multiple-choice', options: ['Nature\'s beauty', 'Institutional oppression and its effects on ordinary people', 'Romantic love', 'Travel'], correctIndex: 1, explanation: 'The poem attacks every level of institutional power — commercial, religious, royal — and shows how they destroy innocence and freedom.', topic: 'Themes', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'London explores corruption of power, suffering of ordinary people, and loss of innocence in an industrialised city.', keyPoints: ['Power corrupts — Church, monarchy, and commercial interests cause suffering', 'Oppression is both external and internal ("mind-forg\'d manacles")', 'Innocence destroyed — children suffer from birth', 'Cyclical suffering repeats across generations'] },
+  { topic: 'Language & Imagery', summary: 'Blake uses metaphor, repetition, oxymoron, and visceral imagery to create unrelenting suffering.', keyPoints: ['"Mind-forg\'d manacles" — psychological chains', '"Marriage hearse" — oxymoron fusing love with death', '"Runs in blood down Palace walls" — monarchy blamed', 'Semantic field of suffering throughout'] },
+  { topic: 'Structure & Form', summary: 'Four quatrains in ABAB rhyme with iambic tetrameter — rigid structure mirrors charter\'d restrictions.', keyPoints: ['Regular ABAB rhyme — form as constrained as the city', 'Anaphora in stanza 2 — overwhelming cumulative effect', '"But most" signals volta to darkest imagery', 'First-person narrator as eyewitness'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Blake present the effects of power on ordinary people in London?',
+  'Compare how Blake and one other poet present the abuse of power.',
+  'How does Blake use language and structure to create a sense of hopelessness?',
+]
+
 export default function LondonEduqasPage() {
   return (
     <div className="space-y-8">
@@ -413,6 +439,13 @@ export default function LondonEduqasPage() {
         cluster="Eduqas Poetry Anthology"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="London"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={london} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

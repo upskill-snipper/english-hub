@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -140,6 +141,32 @@ const followerPoem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'fol-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A boy following his friend to school', 'A son\'s admiration for his father\'s farming skill, and the role reversal as the father ages', 'A farmer describing his daily routine', 'A teacher and student'], correctIndex: 1, explanation: 'The speaker recalls following his father as a child, admiring his ploughing skill. The poem ends with a reversal: now the aged father follows the adult son, "stumbling" behind.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'fol-2', question: 'What does the metaphor "His shoulders globed like a full sail strung" suggest?', type: 'multiple-choice', options: ['The father is overweight', 'The father is presented as powerful, heroic, and in command — like a ship in full sail', 'The father is a sailor', 'The father is wearing a coat'], correctIndex: 1, explanation: 'The sail metaphor presents the father as powerful, commanding, and in perfect control of his work. He moves through the landscape like a ship through water — strong and purposeful.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'fol-3', question: 'What is the effect of the role reversal in the final stanza?', type: 'multiple-choice', options: ['It is humorous', 'It is poignant — the once-powerful father now stumbles behind the son, reversing the childhood dynamic', 'It shows the father has improved', 'It introduces a new character'], correctIndex: 1, explanation: 'The reversal is emotionally powerful. The father who once strode expertly now "will not go away" — he stumbles and follows, dependent on the son. The child has become the leader.', topic: 'Themes', difficulty: 'foundation' },
+  { id: 'fol-4', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Six quatrains with a half-rhyme scheme', 'A sonnet', 'Blank verse'], correctIndex: 1, explanation: 'Six regular quatrains with a consistent half-rhyme pattern. The neat, controlled form mirrors the father\'s precise, expert ploughing.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'fol-5', question: 'Who is Seamus Heaney and what is the poem\'s context?', type: 'multiple-choice', options: ['An English war poet', 'A Nobel Prize-winning Northern Irish poet who grew up on a farm — the poem draws on real childhood memories', 'A Scottish novelist', 'An American dramatist'], correctIndex: 1, explanation: 'Seamus Heaney (1939-2013) grew up on a farm in Northern Ireland. Follower draws on real memories of watching his father plough, combining personal experience with universal themes of ageing and admiration.', topic: 'Context', difficulty: 'higher' },
+  { id: 'fol-6', question: 'What does "I stumbled in his hob-nailed wake" suggest about the child?', type: 'multiple-choice', options: ['The child is clumsy', 'The child tries to follow but cannot match the father\'s skill — emphasising admiration and the gap between them', 'The child is injured', 'The child is running away'], correctIndex: 1, explanation: '"Stumbled" contrasts with the father\'s expert movement. The child tries to follow but falls short, emphasising both his admiration and his inability to match his father\'s mastery.', topic: 'Language', difficulty: 'higher' },
+  { id: 'fol-7', question: 'What is significant about the word "nuisance" in the final stanza?', type: 'multiple-choice', options: ['It is affectionate', 'It is ambiguous — it could refer to the child being a nuisance in the past OR the father being a nuisance now, suggesting guilt and discomfort', 'It is clearly about the child only', 'It is a compliment'], correctIndex: 1, explanation: '"Nuisance" shifts meaning. In childhood, the boy was a nuisance following his father. Now the roles are reversed — and calling the ageing father a nuisance carries uncomfortable guilt.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'fol-8', question: 'How does Heaney use technical farming vocabulary?', type: 'multiple-choice', options: ['To confuse the reader', 'Words like "sod", "furrow", "headrig" convey expert knowledge and deep respect for the father\'s skill', 'To show off his own knowledge', 'It is accidental jargon'], correctIndex: 1, explanation: 'The precise farming vocabulary — "sod rolled over", "headrig", "furrow" — shows the speaker truly understood and admired his father\'s work. The technical language is a form of respect.', topic: 'Language', difficulty: 'higher' },
+  { id: 'fol-9', question: 'What does the shift from past to present tense achieve?', type: 'multiple-choice', options: ['Nothing particular', 'It marks the painful transition from childhood admiration to adult responsibility — the past becomes the present', 'It confuses the timeline', 'It creates suspense'], correctIndex: 1, explanation: 'The shift from past tense (childhood memories) to present tense (the father following now) makes the role reversal immediate and emotionally confronting. The past is nostalgic; the present is uncomfortable.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'fol-10', question: 'Which poem pairs best with Follower?', type: 'multiple-choice', options: ['Porphyria\'s Lover', 'Walking Away by Cecil Day-Lewis', 'Neutral Tones', 'Love\'s Philosophy'], correctIndex: 1, explanation: 'Both Follower and Walking Away explore parent-child relationships across time. Follower is from the child\'s perspective looking up at a father; Walking Away is from the parent\'s perspective letting go.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Follower explores admiration for a parent, the passage of time, role reversal, and the complex emotions of ageing.', keyPoints: ['Admiration — the father is presented as heroic and expert', 'Role reversal — the powerful father becomes the dependent one', 'Time — childhood worship gives way to adult responsibility', 'Guilt — the final stanza carries uncomfortable emotion'] },
+  { topic: 'Language & Imagery', summary: 'Heaney uses agricultural metaphor, precise technical vocabulary, and physical imagery to convey admiration and its reversal.', keyPoints: ['"Shoulders globed like a full sail" — the father as powerful ship', 'Technical farming vocabulary — respect through knowledge', '"Stumbled in his hob-nailed wake" — the child cannot match the father', '"Will not go away" — the aged father follows, reversing childhood'] },
+  { topic: 'Structure & Form', summary: 'Six neat quatrains with half-rhyme, shifting from past to present tense to mark the painful role reversal.', keyPoints: ['Regular quatrains — the neat form mirrors the father\'s precise work', 'Tense shift — past (admiration) to present (role reversal)', 'Half-rhyme — creates slight dissonance, matching the emotional discomfort', 'Final stanza delivers the devastating reversal'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Heaney present the relationship between father and son in Follower?',
+  'Compare how parent-child relationships change over time in Follower and one other poem from the anthology.',
+  'How does Heaney use language and structure to convey admiration and its reversal?',
+]
+
 const comparePoems = [
   {
     title: 'Walking Away',
@@ -208,6 +235,13 @@ export default function FollowerPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Follower"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={followerPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

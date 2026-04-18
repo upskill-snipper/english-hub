@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const whenIHaveFears: PoemData = {
   title: 'When I Have Fears',
@@ -355,6 +356,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'wihf-1', question: 'What is the speaker afraid of?', type: 'multiple-choice', options: ['Spiders', 'Dying before he can write all the poetry he wants to and before he can experience love fully', 'Public speaking', 'Failure in exams'], correctIndex: 1, explanation: 'Keats fears dying young — before he can write all the poetry stored in his brain, before he can trace the "shadows" of stars, and before he can fully experience love.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'wihf-2', question: 'What does "high-piled books in charactery" mean?', type: 'multiple-choice', options: ['A library', 'The many books of poetry Keats wants to write — his brain is "teeming" with unwritten work', 'Other people\'s books', 'A bookshop'], correctIndex: 1, explanation: 'Keats imagines the many books he hopes to fill with his poetry. "High-piled" suggests abundance; "charactery" means written characters. His creative ambition is vast.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'wihf-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'A Shakespearean sonnet — three quatrains and a couplet', 'A ballad', 'Blank verse'], correctIndex: 1, explanation: 'A Shakespearean sonnet with three quatrains exploring different fears and a final couplet that resolves them — temporarily — through contemplation of nothingness.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'wihf-4', question: 'What does "cease to be" mean?', type: 'multiple-choice', options: ['To stop writing', 'To die — a euphemism for death that Keats later used again in Ode to a Nightingale', 'To stop thinking', 'To leave'], correctIndex: 1, explanation: '"Cease to be" is a gentle euphemism for death. Keats used the same phrase in Ode to a Nightingale ("half in love with easeful Death"). It reflects his constant awareness of mortality.', topic: 'Language', difficulty: 'higher' },
+  { id: 'wihf-5', question: 'When was the poem written and why is the context significant?', type: 'multiple-choice', options: ['1850, in old age', '1818, when Keats was 22 — he would die of tuberculosis just three years later, aged 25', '1794', '1914'], correctIndex: 1, explanation: 'Written in January 1818 when Keats was 22. He was already showing symptoms of the tuberculosis that would kill him in 1821 aged 25. His fear of dying young was tragically justified.', topic: 'Context', difficulty: 'higher' },
+  { id: 'wihf-6', question: 'What does "the night\'s starr\'d face" represent?', type: 'multiple-choice', options: ['Astronomy', 'The beauty and mystery of the universe — Keats fears he will die before understanding or capturing it in poetry', 'A constellation', 'A mask'], correctIndex: 1, explanation: 'The starry sky represents all the beauty and mystery Keats wants to explore in his poetry. He fears death will prevent him from "tracing" (understanding and writing about) these "huge cloudy symbols".', topic: 'Language', difficulty: 'higher' },
+  { id: 'wihf-7', question: 'How does the final couplet resolve the poem?', type: 'multiple-choice', options: ['It offers hope', '"Love and fame to nothingness do sink" — facing the void, both love and ambition seem insignificant. The resolution is bleak contemplation.', 'It celebrates life', 'It promises immortality'], correctIndex: 1, explanation: 'The couplet does not offer comfort. Standing at "the shore of the wide world", Keats watches love and fame sink into nothingness. The resolution is the acceptance of cosmic insignificance.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'wihf-8', question: 'What does "unreflecting love" suggest?', type: 'multiple-choice', options: ['Love that has no mirror', 'Love experienced in the moment without intellectual analysis — pure, spontaneous feeling that Keats fears he\'ll miss', 'Love that is reflected back', 'Self-love'], correctIndex: 1, explanation: '"Unreflecting" means unmediated by thought — pure, spontaneous, instinctive love. Keats fears he will die before experiencing this kind of raw, direct emotional connection.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'wihf-9', question: 'How does Keats use the harvest metaphor?', type: 'multiple-choice', options: ['He is a farmer', '"Before my pen has gleaned my teeming brain" — his brain is a field full of grain; his pen must harvest it. Death threatens before the harvest is complete.', 'He enjoys autumn', 'The metaphor is about food'], correctIndex: 1, explanation: 'The extended harvest metaphor presents Keats\'s brain as a fertile field "teeming" with ideas. His pen must "glean" (harvest) them into books. The fear is that death will destroy the crop before harvest.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'wihf-10', question: 'Which poem pairs well with When I Have Fears?', type: 'multiple-choice', options: ['She Walks in Beauty', 'Crossing the Bar by Tennyson', 'The Eagle', 'Neutral Tones'], correctIndex: 1, explanation: 'Both address mortality but differently. Keats faces death with anxiety and unfulfilled desire; Tennyson faces it with calm acceptance. They represent youth\'s fear vs age\'s peace.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'When I Have Fears explores the fear of dying young — before fulfilling creative ambition or fully experiencing love.', keyPoints: ['Fear of premature death — tragically justified', 'Creative ambition — so much poetry unwritten', 'Love — the desire for "unreflecting love" before death', 'Cosmic insignificance — love and fame sink to nothingness'] },
+  { topic: 'Language & Imagery', summary: 'Keats uses harvest metaphor, celestial imagery, and the poignant euphemism "cease to be" to explore mortality.', keyPoints: ['"Gleaned my teeming brain" — harvest metaphor for creativity', '"Night\'s starr\'d face" — beauty Keats fears he\'ll never capture', '"Cease to be" — gentle euphemism for death', '"Love and fame to nothingness do sink" — bleak conclusion'] },
+  { topic: 'Structure & Form', summary: 'A Shakespearean sonnet — three quatrains of escalating fears resolved (bleakly) in a final couplet.', keyPoints: ['Quatrain 1: fear of unwritten poetry', 'Quatrain 2: fear of unexplored beauty', 'Quatrain 3: fear of unlived love', 'Couplet: bleak acceptance of nothingness'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Keats present the fear of mortality in When I Have Fears?',
+  'Compare how death is presented in When I Have Fears and one other poem from the anthology.',
+  'How does Keats use the sonnet form to explore multiple fears and reach a resolution?',
+]
+
 export default function WhenIHaveFearsPage() {
   return (
     <div className="space-y-8">
@@ -390,6 +416,13 @@ export default function WhenIHaveFearsPage() {
         cluster="Youth and Age"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="When I Have Fears"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={whenIHaveFears} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

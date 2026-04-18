@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const sonnet43: PoemData = {
   title: 'Sonnet 43',
@@ -351,6 +352,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 's43-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A sad farewell', 'An attempt to measure the depth and breadth of the speaker\'s love — listing all the ways she loves', 'A business letter', 'A prayer'], correctIndex: 1, explanation: 'EBB tries to answer the question "How do I love thee?" by listing all the ways — to the "depth and breadth and height" her soul can reach, with the passion of daily life, and beyond death.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 's43-2', question: 'What does "I love thee to the depth and breadth and height / My soul can reach" suggest?', type: 'multiple-choice', options: ['Love is small', 'Love fills every dimension of existence — it is as vast as the speaker\'s entire spiritual being', 'She is measuring a room', 'Love is physical only'], correctIndex: 1, explanation: 'The spatial metaphor presents love as filling three-dimensional space — it extends to the absolute limits of the soul\'s capacity. Love is infinite, spiritual, and all-encompassing.', topic: 'Language', difficulty: 'foundation' },
+  { id: 's43-3', question: 'What form is the poem?', type: 'multiple-choice', options: ['Free verse', 'A Petrarchan sonnet — the form traditionally used for love poetry', 'A ballad', 'A dramatic monologue'], correctIndex: 1, explanation: 'A Petrarchan (Italian) sonnet — the traditional form for love poetry since Petrarch. EBB uses the established convention to express deeply personal, genuine love.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 's43-4', question: 'What is the effect of "I love thee freely, as men strive for right"?', type: 'multiple-choice', options: ['Love is easy', 'Love is compared to the pursuit of justice — it is a moral, principled commitment, not just emotion', 'She loves politics', 'It describes freedom'], correctIndex: 1, explanation: 'By comparing love to the pursuit of justice, EBB elevates it from mere emotion to a moral and spiritual duty. Love is principled, deliberate, and righteous.', topic: 'Language', difficulty: 'higher' },
+  { id: 's43-5', question: 'Who wrote the poem and what is its context?', type: 'multiple-choice', options: ['Jane Austen in 1813', 'Elizabeth Barrett Browning, written during her secret courtship with Robert Browning despite her father\'s opposition', 'Charlotte Bronte in 1847', 'Emily Dickinson in 1862'], correctIndex: 1, explanation: 'Written during EBB\'s secret courtship with Robert Browning. Her tyrannical father forbade his children from marrying. She eventually eloped with Robert, making the poem\'s passion deeply personal.', topic: 'Context', difficulty: 'higher' },
+  { id: 's43-6', question: 'What does "I shall but love thee better after death" mean?', type: 'multiple-choice', options: ['Love ends at death', 'Love transcends death — it will grow even stronger in the afterlife', 'She fears death', 'Death is unrelated to love'], correctIndex: 1, explanation: 'The final line claims love will intensify after death. EBB argues love is not limited to mortal life — it is eternal, spiritual, and will grow beyond the grave.', topic: 'Language', difficulty: 'higher' },
+  { id: 's43-7', question: 'What is the effect of the anaphora "I love thee"?', type: 'multiple-choice', options: ['Monotony', 'The repetition creates a liturgical, prayer-like rhythm — love is expressed as devotion', 'Random repetition', 'It is a refrain'], correctIndex: 1, explanation: 'The repeated "I love thee" creates a chant-like, devotional quality. Each repetition adds a new dimension to love — it accumulates like prayer, building toward the transcendent final claim.', topic: 'Structure', difficulty: 'higher' },
+  { id: 's43-8', question: 'How does EBB move from the everyday to the spiritual?', type: 'multiple-choice', options: ['She doesn\'t', 'The poem progresses from daily, mundane love ("by sun and candlelight") to eternal, spiritual love ("after death")', 'From spiritual to everyday', 'Only spiritual love matters'], correctIndex: 1, explanation: 'EBB begins with love in everyday life — "by sun and candlelight" — and elevates it through moral commitment and childhood faith to love that transcends death itself.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 's43-9', question: 'What does "with the passion put to use / In my old griefs" suggest?', type: 'multiple-choice', options: ['She has forgotten her past', 'The passion she once directed at grief and suffering is now redirected to love — love transforms pain into devotion', 'She is still grieving', 'Grief and love are unrelated'], correctIndex: 1, explanation: 'EBB repurposes the intensity of past suffering into love. Pain has not been wasted — it has trained her heart for the depth of feeling she now directs at her beloved.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 's43-10', question: 'How does Sonnet 43 compare with other love poems in the anthology?', type: 'multiple-choice', options: ['It is identical to all others', 'It presents love as unambiguously positive, spiritual, and eternal — contrasting with poems that show love\'s pain or complexity', 'Love is always positive in all poems', 'It is the only love poem'], correctIndex: 1, explanation: 'Sonnet 43 is unusual in presenting love as wholly positive, spiritual, and eternal. This contrasts with poems showing love\'s pain (Neutral Tones), danger (Porphyria\'s Lover), or complexity (The Farmer\'s Bride).', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Sonnet 43 celebrates love as infinite, spiritual, and eternal — progressing from everyday devotion to love that transcends death.', keyPoints: ['Love is immeasurable — fills "depth and breadth and height"', 'Love is moral — compared to striving for right', 'Love transforms suffering — past griefs redirected into devotion', 'Love is eternal — "I shall but love thee better after death"'] },
+  { topic: 'Language & Imagery', summary: 'EBB uses spatial metaphor, anaphora, religious language, and a progression from mundane to transcendent to express limitless love.', keyPoints: ['"Depth and breadth and height" — love fills all dimensions', '"I love thee" anaphora — prayer-like repetition', '"Freely, as men strive for right" — love as moral principle', '"After death" — love transcends mortality'] },
+  { topic: 'Structure & Form', summary: 'A Petrarchan sonnet — the traditional love form used for deeply personal, genuine expression.', keyPoints: ['Petrarchan sonnet — classical form for elevated love', 'Anaphora builds cumulative intensity', 'Progression: everyday → moral → spiritual → eternal', 'Final line transcends death — the ultimate claim'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Barrett Browning present the depth of love in Sonnet 43?',
+  'Compare how love is celebrated in Sonnet 43 and one other poem from the anthology.',
+  'How does Barrett Browning use the sonnet form and repetition to convey infinite love?',
+]
+
 export default function Sonnet43EduqasPage() {
   return (
     <div className="space-y-8">
@@ -388,6 +414,13 @@ export default function Sonnet43EduqasPage() {
         cluster="Eduqas Poetry Anthology"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Sonnet 43"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={sonnet43} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

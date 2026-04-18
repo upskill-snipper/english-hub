@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const sheWalksInBeauty: PoemData = {
   title: 'She Walks in Beauty',
@@ -361,6 +362,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'swb-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A woman exercising', 'The beauty of a woman who perfectly balances light and dark, inner goodness and outward grace', 'A sunset', 'A painting'], correctIndex: 1, explanation: 'Byron describes a woman whose beauty combines light and dark in perfect harmony. Her outer beauty reflects inner goodness — she is as beautiful in character as in appearance.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'swb-2', question: 'What does "She walks in beauty, like the night" mean?', type: 'multiple-choice', options: ['She walks at night', 'Her beauty is compared to a clear, starry night — dark and luminous simultaneously', 'She is dark-haired only', 'She is nocturnal'], correctIndex: 1, explanation: 'Byron compares her beauty to a cloudless starlit night — she combines darkness and light in perfect balance, like stars against a dark sky.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'swb-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Three sestets (six-line stanzas) with ABABAB rhyme', 'A sonnet', 'Blank verse'], correctIndex: 1, explanation: 'Three six-line stanzas with regular ABABAB rhyme. The flowing, harmonious form mirrors the balanced beauty it describes.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'swb-4', question: 'What is the significance of the light/dark contrast?', type: 'multiple-choice', options: ['Her clothes are striped', 'Perfect beauty requires balance — too much light or dark would destroy the harmony', 'Day and night are described', 'She uses makeup'], correctIndex: 1, explanation: '"One shade the more, one ray the less" would ruin the perfection. Byron presents beauty as a precise balance of opposites — any change would destroy it.', topic: 'Language', difficulty: 'higher' },
+  { id: 'swb-5', question: 'When was the poem written?', type: 'multiple-choice', options: ['1850', '1814, reportedly after Byron saw his cousin by marriage at a party wearing a black mourning dress with sequins', '1794', '1819'], correctIndex: 1, explanation: 'Written in 1814 after Byron saw his cousin Mrs Wilmot at a party. She wore a black dress with spangles (sequins), creating the interplay of darkness and light that inspired the poem.', topic: 'Context', difficulty: 'higher' },
+  { id: 'swb-6', question: 'How does Byron link outer beauty to inner character?', type: 'multiple-choice', options: ['He doesn\'t', 'The final stanza reveals her beauty reflects a "mind at peace" and a "heart whose love is innocent"', 'Only looks matter', 'Inner beauty is irrelevant'], correctIndex: 1, explanation: 'The final stanza shifts from physical beauty to moral beauty. Her serene expression reflects a peaceful mind and innocent heart — outer beauty is a mirror of inner goodness.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'swb-7', question: 'What does "a mind at peace with all below" suggest?', type: 'multiple-choice', options: ['She is asleep', 'She is serene, at peace with the world — her inner tranquillity creates her outward beauty', 'She lives underground', 'She is meditative'], correctIndex: 1, explanation: 'The woman\'s peacefulness with the world around her creates the calm, harmonious beauty Byron describes. Inner serenity radiates outward.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'swb-8', question: 'How is the poem\'s tone different from many love poems?', type: 'multiple-choice', options: ['It is angry', 'It is reverent and admiring rather than passionate or possessive — the speaker worships from a distance', 'It is identical to all love poems', 'It is sarcastic'], correctIndex: 1, explanation: 'Byron\'s tone is reverential — he admires rather than desires. There is no possession, no plea, no demand. The speaker simply observes and celebrates perfection.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'swb-9', question: 'What is the effect of the regular metre and rhyme?', type: 'multiple-choice', options: ['It makes the poem boring', 'The smooth, flowing rhythm mirrors the harmonious, balanced beauty it describes', 'It creates tension', 'It has no effect'], correctIndex: 1, explanation: 'The regular iambic tetrameter and ABABAB rhyme create a smooth, flowing musicality that mirrors the harmony and balance of the woman\'s beauty.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'swb-10', question: 'Which poem contrasts most with She Walks in Beauty?', type: 'multiple-choice', options: ['Neutral Tones by Hardy', 'Crossing the Bar', 'The Eagle', 'When I Have Fears'], correctIndex: 0, explanation: 'She Walks in Beauty celebrates perfect, harmonious beauty; Neutral Tones presents love as dead and colourless. They offer opposite visions of how relationships are experienced.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'She Walks in Beauty celebrates the perfect balance of light and dark, inner goodness reflected in outward beauty, and reverent admiration.', keyPoints: ['Beauty as balance — light and dark in perfect harmony', 'Inner beauty mirrors outer beauty — "a mind at peace"', 'Reverence — the speaker admires without possessing', '"One shade the more, one ray the less" — beauty is precise'] },
+  { topic: 'Language & Imagery', summary: 'Byron uses light/dark contrast, celestial imagery, and smooth, harmonious language to celebrate perfect beauty.', keyPoints: ['"Like the night / Of cloudless climes and starry skies" — beauty as starlit darkness', 'Light/dark balance throughout — neither dominates', '"A mind at peace" — inner serenity creates outer beauty', 'Smooth, flowing diction — language mirrors harmony'] },
+  { topic: 'Structure & Form', summary: 'Three sestets with ABABAB rhyme in iambic tetrameter — the flowing, regular form mirrors the balanced beauty described.', keyPoints: ['Three stanzas: appearance (1), balance (2), character (3)', 'ABABAB rhyme — smooth, harmonious pattern', 'Iambic tetrameter — flowing, musical rhythm', 'Progression from outer to inner beauty'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Byron present beauty in She Walks in Beauty?',
+  'Compare how admiration is expressed in She Walks in Beauty and one other poem from the anthology.',
+  'How does Byron use imagery and form to create a sense of harmony and balance?',
+]
+
 export default function SheWalksInBeautyPage() {
   return (
     <div className="space-y-8">
@@ -400,6 +426,13 @@ export default function SheWalksInBeautyPage() {
         cluster="Love and Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="She Walks in Beauty"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={sheWalksInBeauty} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

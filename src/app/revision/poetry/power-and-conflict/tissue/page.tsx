@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 export const metadata = {
   title: 'Tissue -- Imtiaz Dharker -- The English Hub',
@@ -224,6 +225,150 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'tis-1',
+    question: 'What is the central metaphor of Tissue?',
+    type: 'multiple-choice',
+    options: ['Paper as a metaphor for human life, structures, and fragility', 'Tissue as a metaphor for illness', 'Paper as a symbol of wealth', 'Tissue as decoration'],
+    correctIndex: 0,
+    explanation: 'Paper runs through the entire poem as a metaphor for the fragile structures humans create — from birth certificates to maps to buildings. Dharker argues these are all as temporary and delicate as tissue paper.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tis-2',
+    question: 'What does "Paper that lets the light shine through" suggest?',
+    type: 'multiple-choice',
+    options: ['Paper is useful for windows', 'Transparency and truth are valued — light symbolises understanding and honesty', 'The paper is damaged and torn', 'It describes a lantern'],
+    correctIndex: 1,
+    explanation: 'Light symbolises truth, clarity, and understanding throughout the poem. Paper that "lets the light shine through" represents openness and transparency — the opposite of rigid, opaque power structures.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tis-3',
+    question: 'What does the reference to the Koran suggest about paper?',
+    type: 'multiple-choice',
+    options: ['Only religious books matter', 'Paper records and preserves human identity, culture, and belief — it controls who we are', 'Dharker only writes about religion', 'The Koran is made of special paper'],
+    correctIndex: 1,
+    explanation: 'The Koran reference connects to Dharker\'s heritage and shows how paper records family histories, births, and identities. Paper documents define who we are — yet they are fragile and temporary.',
+    topic: 'Context',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tis-4',
+    question: 'What does "living tissue, raise it to the light" achieve?',
+    type: 'multiple-choice',
+    options: ['It describes a medical procedure', 'It blurs the boundary between paper and human skin — paper becomes flesh and flesh becomes paper', 'It describes reading in sunlight', 'It is about recycling'],
+    correctIndex: 1,
+    explanation: '"Living tissue" is the poem\'s most important image. Paper is compared to skin/flesh, blurring the boundary between human bodies and the documents that define us. Both are fragile; both can be torn.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tis-5',
+    question: 'What does the hypothetical "If buildings were paper" suggest?',
+    type: 'multiple-choice',
+    options: ['Dharker wants buildings to be demolished', 'She imagines a world where solid structures become fragile, questioning the permanence of human power', 'Paper buildings would be more eco-friendly', 'She is describing origami'],
+    correctIndex: 1,
+    explanation: 'The conditional "If buildings were paper" imagines dismantling the solid, imposing structures that represent human power. Dharker suggests the world would be better if we acknowledged the fragility of our constructions.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'tis-6',
+    question: 'What does the word "borderlines" connect to in Dharker\'s broader concerns?',
+    type: 'multiple-choice',
+    options: ['Garden fences', 'National borders, identity, and belonging — drawn on paper (maps) yet controlling real lives', 'Railway lines', 'Lines in a poem'],
+    correctIndex: 1,
+    explanation: 'Dharker, who has lived in multiple countries, is preoccupied with borders, identity, and belonging. "Borderlines" are drawn on paper (maps) yet they control where people can go and who they can be.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'tis-7',
+    question: 'How does the final single-line stanza differ from the rest of the poem?',
+    type: 'multiple-choice',
+    options: ['It is a question', 'It stands alone and shifts to the personal — connecting the poem\'s philosophical ideas to the human body', 'It is the longest line', 'It has no particular significance'],
+    correctIndex: 1,
+    explanation: 'The final single line stands alone, separate from the quatrain pattern. It brings the poem\'s abstract ideas about paper and power back to the intimate, personal level of the human body.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'tis-8',
+    question: 'Who is Imtiaz Dharker and what themes does she explore?',
+    type: 'multiple-choice',
+    options: ['A British war poet', 'A poet born in Pakistan, raised in Glasgow, living in India — she explores identity, borders, belonging, and the structures that control human life', 'A Victorian novelist', 'An American nature poet'],
+    correctIndex: 1,
+    explanation: 'Imtiaz Dharker was born in Lahore (Pakistan), raised in Glasgow, and has lived in India. Her cross-cultural identity deeply informs her poetry, which frequently explores borders, belonging, and the fragility of human constructs.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'tis-9',
+    question: 'How does the use of quatrains that break into shorter stanzas reflect the poem\'s themes?',
+    type: 'multiple-choice',
+    options: ['It makes the poem look neat', 'The shifting stanza lengths enact the poem\'s argument — structures appear solid but are ultimately fragile and breakable', 'It follows a traditional sonnet form', 'It has no thematic connection'],
+    correctIndex: 1,
+    explanation: 'The poem mostly uses quatrains but these break into shorter units, culminating in a single-line final stanza. This structural disintegration mirrors the poem\'s argument that all structures — even poetic ones — are ultimately fragile.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'tis-10',
+    question: 'Which poem from the Power and Conflict anthology best pairs with Tissue for exploring impermanence?',
+    type: 'multiple-choice',
+    options: ['Bayonet Charge by Hughes', 'Ozymandias by Shelley', 'Remains by Armitage', 'Poppies by Weir'],
+    correctIndex: 1,
+    explanation: 'Both Tissue and Ozymandias explore the impermanence of human structures and power. Ozymandias uses a stone statue crumbling in the desert; Tissue uses paper as a symbol of fragility. Both argue that nothing humans build is permanent.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'Tissue explores the fragility of human structures — identity, borders, buildings, power — using paper as a central metaphor for impermanence.',
+    keyPoints: [
+      'Fragility of power — human structures (buildings, borders, identities) are as fragile as paper',
+      'Light and transparency — valued over opacity and rigidity',
+      'Identity — paper records (birth certificates, religious texts) define who we are',
+      'Nature vs human constructs — natural light outlasts all paper records',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Dharker uses an extended metaphor of paper, light imagery, conditional language, and listing to build a philosophical argument about impermanence.',
+    keyPoints: [
+      '"Paper that lets the light shine through" — light as truth and understanding',
+      '"Living tissue" — blurs boundary between paper and human skin',
+      '"Borderlines" — paper maps controlling real human lives',
+      'Conditional language ("If buildings were paper") — imagining a fragile world',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Mostly quatrains that gradually fragment into shorter stanzas, culminating in a single-line final stanza — enacting the poem\'s theme of structural disintegration.',
+    keyPoints: [
+      'Quatrains that break apart — structure mirrors the fragility theme',
+      'Enjambment across stanza breaks — ideas flow across boundaries like paper',
+      'Single-line final stanza — isolation emphasises the personal, intimate conclusion',
+      'No regular rhyme scheme — reflects the poem\'s questioning of fixed structures',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Dharker present the theme of power and fragility in Tissue?',
+  'Compare how impermanence is presented in Tissue and one other poem from the anthology.',
+  'How does Dharker use the extended metaphor of paper to explore human structures and identity?',
+]
+
 /* ── Comparison poems ───────────────────────────────────────────── */
 
 const COMPARISONS = [
@@ -306,6 +451,14 @@ export default function TissuePage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="Tissue"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={TISSUE} />
 
       {/* Comparisons */}

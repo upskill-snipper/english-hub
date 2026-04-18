@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const westminsterBridge: PoemData = {
   title: 'Composed Upon Westminster Bridge, September 3, 1802',
@@ -349,6 +350,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'wb-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A busy London afternoon', 'The beauty of London at dawn seen from Westminster Bridge — the city in rare, peaceful stillness', 'Building Westminster Bridge', 'A political speech'], correctIndex: 1, explanation: 'Wordsworth describes London at dawn from Westminster Bridge, when the city is silent, bathed in sunlight, and appears as beautiful as any natural landscape.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'wb-2', question: 'What is surprising about Wordsworth praising a city?', type: 'multiple-choice', options: ['Nothing — he always wrote about cities', 'As a Romantic nature poet, he typically celebrated rural landscapes — praising London is unexpected', 'He lived in London', 'Cities were popular subjects'], correctIndex: 1, explanation: 'Wordsworth was famous for celebrating nature and the Lake District. Praising London — an industrial, urban space — is surprising and shows the city at dawn resembles the natural sublime.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'wb-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'A Petrarchan sonnet', 'A ballad', 'Blank verse'], correctIndex: 1, explanation: 'A Petrarchan sonnet with an octave describing the scene and a sestet reflecting on its emotional impact.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'wb-4', question: 'What does "The city now doth like a garment wear / The beauty of the morning" suggest?', type: 'multiple-choice', options: ['The city is ugly', 'The city is personified as wearing morning beauty like clothing — but this beauty is temporary, not inherent', 'The city has new buildings', 'Londoners dress well'], correctIndex: 1, explanation: 'The simile suggests the beauty is worn like a garment — it can be taken off. The city is beautiful because it is silent and empty, not because of its nature.', topic: 'Language', difficulty: 'higher' },
+  { id: 'wb-5', question: 'What does "the very houses seem asleep" achieve?', type: 'multiple-choice', options: ['Houses are alive', 'Personification creates a sense of peacefulness — the whole city is at rest, allowing its beauty to emerge', 'People are sleeping normally', 'It describes night'], correctIndex: 1, explanation: 'Personifying the houses as sleeping creates total stillness. The city\'s beauty exists precisely because human activity has paused.', topic: 'Language', difficulty: 'higher' },
+  { id: 'wb-6', question: 'When was the poem written?', type: 'multiple-choice', options: ['1850', '1802, on 3 September, during a journey through London at dawn', '1794', '1818'], correctIndex: 1, explanation: 'Written on 3 September 1802 as Wordsworth crossed Westminster Bridge at dawn on his way to France with his sister Dorothy.', topic: 'Context', difficulty: 'higher' },
+  { id: 'wb-7', question: 'What does "Earth has not anything to show more fair" claim?', type: 'multiple-choice', options: ['London is average', 'The view from the bridge is the most beautiful sight on Earth — an extraordinarily bold claim', 'The bridge is new', 'Other places are better'], correctIndex: 1, explanation: 'The opening is a bold superlative — nothing on Earth is more beautiful than this sight. This sets up the poem\'s surprising argument that a city can rival nature.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'wb-8', question: 'How does the poem contrast with Blake\'s London?', type: 'multiple-choice', options: ['They agree completely', 'Wordsworth sees London as beautiful and peaceful; Blake sees it as corrupt and oppressive — same city, opposite visions', 'Blake\'s London is also beautiful', 'They were written at the same time'], correctIndex: 1, explanation: 'Wordsworth\'s London is beautiful, calm, and almost divine. Blake\'s London is corrupt, oppressive, and full of suffering. The contrast shows how perspective transforms place.', topic: 'Comparison', difficulty: 'grade-9' },
+  { id: 'wb-9', question: 'Why is the city beautiful specifically at dawn?', type: 'multiple-choice', options: ['Sunrise is always beautiful', 'The city is beautiful because human activity has stopped — industry, commerce, and people are absent', 'More people are awake', 'The buildings look different'], correctIndex: 1, explanation: 'The city\'s beauty depends on human absence. Wordsworth loves London precisely when it is empty, silent, and resembles nature — not when it is a working, industrial city.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'wb-10', question: 'What does "Dear God!" express?', type: 'multiple-choice', options: ['Prayer', 'An exclamation of overwhelmed awe — the speaker is so moved he involuntarily cries out', 'Anger', 'A greeting'], correctIndex: 1, explanation: 'The exclamation is spontaneous and uncontrolled — a burst of genuine awe. It connects to the Romantic idea that beauty produces spiritual, almost religious experience.', topic: 'Language', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'The poem celebrates London\'s dawn beauty, the surprising sublimity of urban landscape, and the peace of a city at rest.', keyPoints: ['City as nature — London at dawn rivals any natural landscape', 'Silence and stillness — beauty depends on human absence', 'The Romantic sublime — even a city can produce awe', 'Contrast with Blake — same city, opposite visions'] },
+  { topic: 'Language & Imagery', summary: 'Wordsworth uses personification, simile, superlative claims, and light imagery to present London as unexpectedly beautiful.', keyPoints: ['"Earth has not anything to show more fair" — bold superlative', '"Like a garment wear" — beauty is temporary, worn clothing', '"The very houses seem asleep" — peaceful personification', '"Dear God!" — involuntary exclamation of awe'] },
+  { topic: 'Structure & Form', summary: 'A Petrarchan sonnet — the octave describes the scene, the sestet reflects on its emotional and spiritual impact.', keyPoints: ['Petrarchan sonnet — classical form for elevated subject', 'Octave: description of the dawn cityscape', 'Sestet: emotional/spiritual response', 'Volta — shift from observation to feeling'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Wordsworth present London as a place of beauty in Composed Upon Westminster Bridge?',
+  'Compare how London is presented in Wordsworth\'s poem and Blake\'s London.',
+  'How does Wordsworth use the sonnet form and imagery to convey a sense of awe?',
+]
+
 export default function WestminsterBridgePage() {
   return (
     <div className="space-y-8">
@@ -386,6 +412,13 @@ export default function WestminsterBridgePage() {
         cluster="Time and Place"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Composed Upon Westminster Bridge"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={westminsterBridge} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

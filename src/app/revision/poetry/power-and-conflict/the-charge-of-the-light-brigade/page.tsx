@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── SEO ────────────────────────────────────────────────────────── */
 
@@ -299,6 +300,150 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'clb-1',
+    question: 'What event does The Charge of the Light Brigade describe?',
+    type: 'multiple-choice',
+    options: ['A naval battle in World War I', 'A disastrous cavalry charge during the Battle of Balaclava in the Crimean War', 'A victorious infantry advance at Waterloo', 'A retreat from the French Revolution'],
+    correctIndex: 1,
+    explanation: 'The poem describes the charge of British cavalry against Russian forces at the Battle of Balaclava (1854) during the Crimean War. A miscommunicated order sent 600 soldiers into a valley surrounded by enemy cannons.',
+    topic: 'Context',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'clb-2',
+    question: 'What does "Theirs not to reason why, / Theirs but to do and die" mean?',
+    type: 'multiple-choice',
+    options: ['The soldiers chose to die willingly', 'The soldiers\' duty was to obey orders without question, even unto death', 'The soldiers did not understand the war', 'The soldiers were cowards'],
+    correctIndex: 1,
+    explanation: 'These lines emphasise the soldiers\' total obedience and lack of agency. They had no right to question their commanders, even when they knew "Some one had blunder\'d" and the order was a mistake.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'clb-3',
+    question: 'What is the effect of the refrain "Rode the six hundred"?',
+    type: 'multiple-choice',
+    options: ['It celebrates the size of the army', 'It creates a solemn, memorial rhythm that honours the soldiers collectively', 'It shows the soldiers were disorganised', 'It is used for comic effect'],
+    correctIndex: 1,
+    explanation: 'The repeated refrain gives the poem a memorial, hymn-like quality. The number changes from "six hundred" to "not the six hundred" after the charge, grimly marking the losses.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'clb-4',
+    question: 'What does "Into the jaws of Death, / Into the mouth of Hell" personify?',
+    type: 'multiple-choice',
+    options: ['The enemy soldiers', 'Death and Hell as predatory beasts consuming the cavalry', 'The horses the soldiers rode', 'The guns firing at them'],
+    correctIndex: 1,
+    explanation: 'Death is given "jaws" and Hell a "mouth", personifying them as predatory creatures consuming the soldiers. This creates a vivid, terrifying image of the battlefield as a place of certain destruction.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'clb-5',
+    question: 'What metre does Tennyson use, and what effect does it create?',
+    type: 'multiple-choice',
+    options: ['Iambic pentameter — creating a formal tone', 'Dactylic metre — imitating the galloping rhythm of horses', 'Trochaic metre — creating a marching rhythm', 'Free verse — creating an irregular, chaotic effect'],
+    correctIndex: 1,
+    explanation: 'The stressed-unstressed-unstressed dactylic rhythm ("Half a league, half a league") imitates the galloping of cavalry horses, creating relentless forward momentum that mirrors the unstoppable charge.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'clb-6',
+    question: 'What is the significance of "Some one had blunder\'d"?',
+    type: 'multiple-choice',
+    options: ['It criticises the soldiers for being clumsy', 'It acknowledges a catastrophic military error by those in command while praising the soldiers who obeyed despite it', 'It describes the enemy\'s mistake', 'It shows the soldiers were confused about directions'],
+    correctIndex: 1,
+    explanation: 'Tennyson briefly acknowledges the disastrous command error that sent the cavalry to their deaths, but the poem\'s focus is on honouring the soldiers\' bravery rather than dwelling on the officers\' incompetence.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'clb-7',
+    question: 'How does stanza 4 differ from the other stanzas?',
+    type: 'multiple-choice',
+    options: ['It is written in a different language', 'It briefly shows the soldiers fighting back successfully before the retreat begins', 'It is the shortest stanza', 'It introduces a new character'],
+    correctIndex: 1,
+    explanation: 'Stanza 4 is the only moment where the soldiers are shown striking back — "Flash\'d all their sabres bare" — briefly achieving heroic success before the devastating retreat in stanza 5.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'clb-8',
+    question: 'When was the poem written, and why?',
+    type: 'multiple-choice',
+    options: ['Years after the battle as a historical study', 'Within weeks of the charge (1854), after Tennyson read a newspaper report as Poet Laureate', 'Before the battle as a warning', 'During the battle as an eyewitness account'],
+    correctIndex: 1,
+    explanation: 'Tennyson wrote the poem in December 1854, just weeks after the charge on 25 October 1854. As Poet Laureate, he responded to a Times newspaper report. He intended it as a tribute to the soldiers\' bravery.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'clb-9',
+    question: 'How does the final stanza function differently from the rest of the poem?',
+    type: 'multiple-choice',
+    options: ['It returns to describing the battle', 'It shifts from narrative to direct address, commanding the reader to "Honour" the soldiers and remember their sacrifice', 'It reveals the identity of who blundered', 'It describes the soldiers\' funerals'],
+    correctIndex: 1,
+    explanation: 'The final stanza breaks from the narrative to address the reader directly: "Honour the charge they made! / Honour the Light Brigade." It transforms the poem from story into memorial, demanding remembrance.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'clb-10',
+    question: 'Which poem from the Power and Conflict anthology provides the strongest contrast in its presentation of soldiers?',
+    type: 'multiple-choice',
+    options: ['Ozymandias by Shelley', 'Exposure by Wilfred Owen', 'Tissue by Imtiaz Dharker', 'The Emigrée by Carol Rumens'],
+    correctIndex: 1,
+    explanation: 'Tennyson glorifies soldiers\' bravery and noble sacrifice, while Owen\'s Exposure strips war of all heroism, showing only futile suffering. They offer opposing perspectives on the soldier\'s experience.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'The poem celebrates the bravery and obedience of soldiers who charged into certain death, while subtly acknowledging the catastrophic error that sent them there.',
+    keyPoints: [
+      'Duty and obedience — "Theirs not to reason why" — soldiers follow orders without question',
+      'Honour and bravery — the soldiers are heroic despite the futility of the charge',
+      'The horror of war — surrounded by cannons, riding into "the jaws of Death"',
+      'The failure of leadership — "Some one had blunder\'d" — those in command made a fatal error',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Tennyson uses personification, repetition, onomatopoeia, and biblical allusion to create a vivid, emotionally charged tribute to the fallen cavalry.',
+    keyPoints: [
+      '"Valley of Death" — biblical allusion (Psalm 23) framing the battlefield as a place of inevitable death',
+      '"Jaws of Death" / "mouth of Hell" — personification of death as a predatory beast',
+      '"Volley\'d and thunder\'d" — onomatopoeia recreating the sounds of battle',
+      'Anaphora: "Cannon to right / left / in front" — surrounding the reader as the cannons surround the soldiers',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Six stanzas of varying length with dactylic metre, creating a galloping rhythm that drives the poem forward like the charge itself.',
+    keyPoints: [
+      'Dactylic metre — imitates galloping horses, creating relentless momentum',
+      'Refrain "Rode the six hundred" — changes to "Not the six hundred" to mark losses',
+      'Six stanzas mirror the charge: advance (1-3), brief success (4), retreat (5), memorial (6)',
+      'Final stanza shifts from narrative to imperative — commanding the reader to remember',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Tennyson present the bravery of the soldiers in The Charge of the Light Brigade?',
+  'Compare how conflict is presented in The Charge of the Light Brigade and one other poem from the anthology.',
+  'How does Tennyson use language and structure to create a sense of the horror and heroism of battle?',
+]
+
 /* ── Comparison poems ──────────────────────────────────────────── */
 
 const comparisons = [
@@ -390,6 +535,14 @@ export default function ChargeOfTheLightBrigadePage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="The Charge of the Light Brigade"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={poem} />
 
       {/* ── Comparison poems ────────────────────────────────────── */}

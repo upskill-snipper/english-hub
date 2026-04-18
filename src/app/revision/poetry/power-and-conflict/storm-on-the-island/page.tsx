@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 export const metadata: Metadata = {
   title: 'Storm on the Island – Seamus Heaney | Power & Conflict Poetry',
@@ -384,6 +385,150 @@ CYCLICAL STRUCTURE: The poem begins with "We are prepared" (confidence) and ends
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'soti-1',
+    question: 'What is the poem Storm on the Island about on a literal level?',
+    type: 'multiple-choice',
+    options: ['A volcanic eruption on an island', 'An island community preparing for and enduring a powerful storm', 'A shipwreck during a hurricane', 'A peaceful day at the seaside'],
+    correctIndex: 1,
+    explanation: 'On a literal level, the poem describes an island community that has prepared for a violent storm. Despite their preparations, the storm\'s ferocity still terrifies them.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'soti-2',
+    question: 'What tone does the speaker have at the beginning of the poem?',
+    type: 'multiple-choice',
+    options: ['Fearful and anxious', 'Confident and well-prepared', 'Angry and frustrated', 'Sad and melancholy'],
+    correctIndex: 1,
+    explanation: 'The poem opens with "We are prepared" — a confident, collective statement. The islanders have built solid homes and feel ready to face the storm, but this confidence is gradually undermined.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'soti-3',
+    question: 'What does "Exploding comfortably" suggest about the sea?',
+    type: 'multiple-choice',
+    options: ['The sea is calm and gentle', 'The islanders are so used to violent seas that they find comfort in them — until the real storm hits', 'The sea is warm and inviting', 'The explosion refers to fireworks'],
+    correctIndex: 1,
+    explanation: 'The oxymoron "exploding comfortably" shows the islanders are accustomed to rough seas. The word "exploding" is violent, but "comfortably" domesticates it — they are normalised to danger, until the real storm overwhelms them.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'soti-4',
+    question: 'What form does the poem use?',
+    type: 'multiple-choice',
+    options: ['Rhyming couplets in regular stanzas', 'A single stanza of blank verse (unrhymed iambic pentameter)', 'Free verse with no regular metre', 'A sonnet with a volta'],
+    correctIndex: 1,
+    explanation: 'The poem is written as a single block of blank verse (unrhymed iambic pentameter), reflecting the relentless, unbroken force of the storm and the community\'s attempt to hold firm.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'soti-5',
+    question: 'What is the hidden political allegory in Storm on the Island?',
+    type: 'multiple-choice',
+    options: ['It is about climate change', 'The word "Stormont" is hidden in the title, linking to the political turmoil of Northern Ireland', 'It describes a real hurricane', 'It is about the Scottish independence movement'],
+    correctIndex: 1,
+    explanation: 'The title contains "Stormont" — the seat of Northern Ireland\'s government. Heaney wrote during the Troubles, and the poem can be read as an allegory for living under the constant threat of political violence.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'soti-6',
+    question: 'What is the effect of "It is a huge nothing that we fear"?',
+    type: 'multiple-choice',
+    options: ['The storm is not actually dangerous', 'The paradox reveals that the most terrifying thing is the invisible, intangible force — fear of something you cannot see or fight', 'The islanders are being irrational', 'The storm has already passed'],
+    correctIndex: 1,
+    explanation: 'This paradox is the poem\'s crucial conclusion. The storm is invisible — wind, air, "nothing" — yet it is more terrifying than any tangible enemy. Fear of the unseen and uncontrollable is the poem\'s deepest theme.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'soti-7',
+    question: 'How does Heaney use military language in the poem?',
+    type: 'multiple-choice',
+    options: ['He describes an actual military battle', 'Words like "bombarded", "strafes", and "salvo" present nature as an attacking army', 'He praises the soldiers who defend the island', 'He uses military language sarcastically'],
+    correctIndex: 1,
+    explanation: 'Heaney uses a sustained semantic field of warfare — "bombarded", "strafes", "salvo" — to present the storm as a military attack. This reinforces the political allegory of the Troubles.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'soti-8',
+    question: 'Who is Seamus Heaney and what is his background?',
+    type: 'multiple-choice',
+    options: ['An English war poet from World War II', 'A Nobel Prize-winning Northern Irish poet who grew up during the Troubles', 'A Scottish Romantic poet', 'An American nature poet'],
+    correctIndex: 1,
+    explanation: 'Seamus Heaney (1939-2013) was a Northern Irish poet who won the Nobel Prize for Literature in 1995. He grew up in rural Northern Ireland and wrote extensively about the landscape, community, and political tensions of the Troubles.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'soti-9',
+    question: 'How does the shift from "We are prepared" to "it is a huge nothing that we fear" chart the poem\'s emotional journey?',
+    type: 'multiple-choice',
+    options: ['The community becomes more confident', 'The poem moves from collective confidence to existential fear — human preparation proves inadequate against nature\'s intangible power', 'The storm turns out to be harmless', 'The islanders decide to leave'],
+    correctIndex: 1,
+    explanation: 'The poem\'s arc moves from confident preparation to humbling fear. Despite their solid homes and experience, the islanders cannot defend against something invisible. This mirrors how human structures — political or physical — cannot fully protect against overwhelming forces.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'soti-10',
+    question: 'Which poem from the Power and Conflict anthology pairs best with Storm on the Island for comparing the power of nature?',
+    type: 'multiple-choice',
+    options: ['My Last Duchess by Browning', 'The Prelude by Wordsworth', 'Checking Out Me History by Agard', 'London by Blake'],
+    correctIndex: 1,
+    explanation: 'Both Storm on the Island and The Prelude explore the terrifying power of nature and humanity\'s vulnerability. Both feature speakers who shift from confidence to fear. Heaney\'s storm is literal and present; Wordsworth\'s mountain is remembered.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'Storm on the Island explores the power of nature, the limits of human preparation, fear of the invisible, and (allegorically) the political turmoil of Northern Ireland.',
+    keyPoints: [
+      'Power of nature — the storm overwhelms despite human preparation',
+      'Fear of the intangible — "a huge nothing that we fear"',
+      'Community and resilience — "We" shows collective experience',
+      'Political allegory — "Stormont" hidden in title links to Northern Ireland\'s Troubles',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Heaney uses military language, personification, oxymoron, and a conversational tone that gradually gives way to fear.',
+    keyPoints: [
+      '"Exploding comfortably" — oxymoron showing normalised danger',
+      'Military semantic field: "bombarded", "strafes", "salvo"',
+      '"A huge nothing that we fear" — paradox at the poem\'s climax',
+      'Conversational tone ("as you can see") shifts to terror',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'A single stanza of blank verse — the unbroken block mirrors both the relentless storm and the community\'s attempt to stand firm.',
+    keyPoints: [
+      'Single stanza — no breaks, reflecting the storm\'s unrelenting force',
+      'Blank verse (iambic pentameter) — steady rhythm like the islanders\' resilience',
+      'Enjambment — lines spill forward like the wind itself',
+      'Final line creates a quiet, devastating conclusion after the building intensity',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Heaney present the power of nature in Storm on the Island?',
+  'Compare how fear is presented in Storm on the Island and one other poem from the anthology.',
+  'How does Heaney use language and structure to show the shift from confidence to fear?',
+]
+
 /* ── Comparison poems ──────────────────────────────────────────────── */
 
 const comparisons = [
@@ -469,6 +614,14 @@ export default function StormOnTheIslandPage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="Storm on the Island"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={poem} />
 
       {/* Comparison poems */}

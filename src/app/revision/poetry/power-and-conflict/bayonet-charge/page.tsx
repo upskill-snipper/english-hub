@@ -6,6 +6,7 @@ import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
 import type { Metadata } from 'next'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── SEO ─────────────────────────────────────────────────────────── */
 
@@ -306,6 +307,150 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'bc-1',
+    question: 'What does the opening word "Suddenly" achieve?',
+    type: 'multiple-choice',
+    options: ['It creates a calm, reflective opening', 'It plunges the reader into chaos mid-action (in medias res), mirroring the soldier\'s disorientation', 'It introduces a flashback', 'It signals the end of the battle'],
+    correctIndex: 1,
+    explanation: 'The poem begins in medias res — mid-action. "Suddenly" throws both soldier and reader into the chaos of a charge without preparation or context, creating immediate disorientation.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'bc-2',
+    question: 'What does "raw-seamed hot khaki" describe?',
+    type: 'multiple-choice',
+    options: ['A comfortable, well-fitted uniform', 'The rough, chafing reality of a soldier\'s uniform — far from heroic', 'A type of camouflage', 'The colour of the battlefield'],
+    correctIndex: 1,
+    explanation: 'The tactile imagery of "raw-seamed hot khaki" emphasises physical discomfort and the unglamorous reality of war. The uniform chafes and burns — war is bodily suffering, not heroic romance.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'bc-3',
+    question: 'What happens to the soldier\'s patriotic motivation during the poem?',
+    type: 'multiple-choice',
+    options: ['It grows stronger throughout', 'It disintegrates — patriotism becomes meaningless in the reality of combat', 'It helps him complete the charge successfully', 'It is replaced by religious faith'],
+    correctIndex: 1,
+    explanation: '"The patriotic tear that had brimmed in his eye" is now meaningless. Patriotism, which once motivated him, dissolves under the reality of bullets, terror, and confusion. Ideology cannot survive contact with real violence.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'bc-4',
+    question: 'What does the metaphor "cold clockwork of the stars and the nations" suggest?',
+    type: 'multiple-choice',
+    options: ['The soldier admires the night sky', 'War is presented as an impersonal, mechanical system — soldiers are just cogs', 'The soldier is reading a compass', 'The stars are guiding him to safety'],
+    correctIndex: 1,
+    explanation: '"Cold clockwork" suggests war is a vast, impersonal machine. The individual soldier is just a cog in the mechanism of nations and their political machinery — his humanity is irrelevant.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'bc-5',
+    question: 'What does the image of the hare symbolise in stanza 3?',
+    type: 'multiple-choice',
+    options: ['A lucky omen for the soldier', 'An innocent creature caught in human violence — mirroring the soldier\'s own helplessness', 'A target for hunting practice', 'The speed of the charge'],
+    correctIndex: 1,
+    explanation: 'The hare "rolled like a flame" becomes a powerful symbol of innocent nature destroyed by human conflict. Its helpless suffering mirrors the soldier\'s own — both are caught in something beyond their control.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'bc-6',
+    question: 'How does Hughes use enjambment in the poem?',
+    type: 'multiple-choice',
+    options: ['To create neat, contained sentences', 'To create breathless momentum that mirrors the soldier\'s desperate sprint across the battlefield', 'To slow the poem down', 'To separate the stanzas clearly'],
+    correctIndex: 1,
+    explanation: 'Extensive enjambment carries lines forward without pause, creating the breathless, headlong momentum of the charge. The reader is swept forward just as the soldier is swept across the battlefield.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'bc-7',
+    question: 'Who was Ted Hughes and what influenced this poem?',
+    type: 'multiple-choice',
+    options: ['A WWI soldier who experienced bayonet charges firsthand', 'Poet Laureate who drew on his father\'s WWI experiences to write about the reality of combat', 'A war correspondent during WWII', 'A pacifist who never discussed war'],
+    correctIndex: 1,
+    explanation: 'Ted Hughes (1930-1998) was Poet Laureate. His father fought in WWI at Gallipoli and survived. Hughes drew on these second-hand accounts and his vivid imagination to create an intensely physical portrayal of combat.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'bc-8',
+    question: 'What form does the poem take?',
+    type: 'multiple-choice',
+    options: ['Regular quatrains with a clear rhyme scheme', 'Three stanzas of irregular length with no consistent rhyme — reflecting the chaos of battle', 'A sonnet', 'Rhyming couplets throughout'],
+    correctIndex: 1,
+    explanation: 'The poem has three stanzas of unequal length with no regular rhyme scheme. This irregular structure mirrors the chaos and unpredictability of a bayonet charge.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'bc-9',
+    question: 'How does the simile "sweating like molten iron" transform the idea of patriotism?',
+    type: 'multiple-choice',
+    options: ['It shows patriotism makes the soldier strong', 'It presents patriotism as a burning, painful, industrial force inside the soldier — destructive rather than noble', 'It describes the temperature of the battlefield', 'It compares the soldier to a blacksmith'],
+    correctIndex: 1,
+    explanation: 'Patriotism is no longer a noble ideal but a painful, burning substance like molten metal. The industrial imagery suggests the soldier has been forged by the machinery of war — his idealism has become a source of agony.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'bc-10',
+    question: 'Which poem from the Power and Conflict anthology provides the best comparison with Bayonet Charge on the reality of combat?',
+    type: 'multiple-choice',
+    options: ['Ozymandias by Shelley', 'Exposure by Wilfred Owen', 'Tissue by Dharker', 'The Emigrée by Rumens'],
+    correctIndex: 1,
+    explanation: 'Both Bayonet Charge and Exposure present the horror of war, but while Exposure shows soldiers enduring passive suffering from the elements, Bayonet Charge captures the terrifying momentum of active combat.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'Bayonet Charge explores the terror of combat, the collapse of patriotic ideals under fire, and the dehumanising effect of war on the individual soldier.',
+    keyPoints: [
+      'Terror and chaos — the soldier is disoriented, stumbling, barely in control',
+      'Collapse of patriotism — ideology crumbles under the reality of violence',
+      'Dehumanisation — the soldier becomes a body in motion, not a person',
+      'Nature as victim — the hare symbolises innocent destruction by human conflict',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Hughes uses visceral tactile imagery, violent similes, and industrial metaphor to create an intensely physical experience of combat.',
+    keyPoints: [
+      '"Raw-seamed hot khaki" — tactile imagery emphasising bodily discomfort',
+      '"Cold clockwork of the stars and the nations" — war as impersonal machinery',
+      '"Sweating like molten iron" — patriotism transformed into painful industrial imagery',
+      'The hare "rolled like a flame" — innocent nature consumed by violence',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Three irregular stanzas with no consistent rhyme, using enjambment and caesura to create breathless momentum interrupted by moments of frozen terror.',
+    keyPoints: [
+      'In medias res opening — "Suddenly" drops reader into mid-action chaos',
+      'Enjambment creates breathless, headlong momentum',
+      'Caesura and dashes — moments of frozen hesitation mid-charge',
+      'Stanza 2 is the moment of questioning; stanzas 1 and 3 are pure physical action',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Hughes present the reality of conflict in Bayonet Charge?',
+  'Compare how the experience of a soldier is presented in Bayonet Charge and one other poem from the anthology.',
+  'How does Hughes use language and structure to convey the terror and chaos of battle?',
+]
+
 /* ── Comparisons ─────────────────────────────────────────────────── */
 
 const COMPARISONS = [
@@ -403,6 +548,14 @@ export default function BayonetChargePage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="Bayonet Charge"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={BAYONET_CHARGE} />
 
       {/* ── Comparisons ──────────────────────────────────────────── */}

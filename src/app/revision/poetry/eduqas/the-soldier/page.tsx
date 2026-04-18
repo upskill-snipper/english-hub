@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const soldier: PoemData = {
   title: 'The Soldier',
@@ -342,6 +343,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'ts-1', question: 'What is the speaker imagining?', type: 'multiple-choice', options: ['Returning home from war', 'His own death in battle — and how the foreign soil where he is buried will become "a corner that is for ever England"', 'A holiday abroad', 'Retirement'], correctIndex: 1, explanation: 'The speaker imagines dying in battle abroad. He sees his death as a gift to the foreign land — his English body will sanctify it, making that spot "for ever England."', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'ts-2', question: 'What does "a corner of a foreign field that is for ever England" mean?', type: 'multiple-choice', options: ['England owns foreign territory', 'The soldier\'s buried body transforms foreign soil into sacred English ground — death for England is a form of colonisation', 'A cricket ground abroad', 'An embassy'], correctIndex: 1, explanation: 'The soldier believes his English body will consecrate foreign soil, making it permanently English. This reveals a deeply patriotic — and arguably imperialist — view of English identity.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'ts-3', question: 'What form is the poem?', type: 'multiple-choice', options: ['Free verse', 'A Petrarchan sonnet — the octave imagines death, the sestet imagines an afterlife', 'A ballad', 'Blank verse'], correctIndex: 1, explanation: 'A Petrarchan sonnet with an octave (lines 1-8) imagining the physical death and burial, and a sestet (lines 9-14) imagining a spiritual afterlife of peace and English values.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'ts-4', question: 'How does Brooke present England?', type: 'multiple-choice', options: ['As a flawed country', 'As an idealised, perfect motherland — gentle, pastoral, and worth dying for', 'As a military power', 'As a modern city'], correctIndex: 1, explanation: 'England is idealised as a gentle, nurturing motherland — "her flowers", "her ways", "English air". It is presented as a paradise worth any sacrifice.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'ts-5', question: 'When was it written and how does this affect its meaning?', type: 'multiple-choice', options: ['After the war ended', 'In 1914, before the reality of trench warfare — it reflects early-war idealism that was shattered by 1915', 'During the Victorian era', 'In 1918'], correctIndex: 1, explanation: 'Written in 1914 before the horrors of trench warfare became known. It reflects the idealistic patriotism of the war\'s early months, which was soon replaced by the disillusionment of Owen and Sassoon.', topic: 'Context', difficulty: 'higher' },
+  { id: 'ts-6', question: 'Who was Rupert Brooke?', type: 'multiple-choice', options: ['A trench soldier who survived the war', 'A poet who died of sepsis in 1915 without seeing combat — his poetry represents pre-war idealism', 'A war correspondent', 'A general'], correctIndex: 1, explanation: 'Rupert Brooke (1887-1915) died of blood poisoning on a troop ship before reaching Gallipoli. He never experienced trench combat, and his poetry represents the naive patriotism of 1914.', topic: 'Context', difficulty: 'higher' },
+  { id: 'ts-7', question: 'What does "a dust whom England bore, shaped, made aware" suggest?', type: 'multiple-choice', options: ['The soldier is dusty from travel', 'The soldier sees himself as entirely created by England — his body, mind, and values are English through and through', 'He is made of actual dust', 'He is cleaning'], correctIndex: 1, explanation: 'The soldier presents himself as a product of England — born from her soil, shaped by her culture, made conscious by her influence. His identity is entirely English, making his death a gift back to the motherland.', topic: 'Language', difficulty: 'higher' },
+  { id: 'ts-8', question: 'What is the tone of the poem?', type: 'multiple-choice', options: ['Angry and bitter', 'Calm, accepting, and idealistically patriotic — death is presented as peaceful and meaningful', 'Terrified', 'Sarcastic'], correctIndex: 1, explanation: 'The tone is remarkably calm and serene. Death is not feared but welcomed as a meaningful act. The speaker imagines peace, beauty, and an English heaven — a stark contrast to the reality of war.', topic: 'Themes', difficulty: 'foundation' },
+  { id: 'ts-9', question: 'How does The Soldier contrast with Owen\'s war poetry?', type: 'multiple-choice', options: ['They share the same view', 'Brooke idealises death for one\'s country as noble; Owen calls it "the old Lie" — they represent opposite poles of war poetry', 'Owen\'s is more patriotic', 'They were written at the same time'], correctIndex: 1, explanation: 'Brooke represents the idealistic patriotism of 1914; Owen represents the disillusioned realism of 1917-18. Together they show how attitudes to war changed as its reality became clear.', topic: 'Comparison', difficulty: 'grade-9' },
+  { id: 'ts-10', question: 'What is problematic about the poem\'s view of England and sacrifice?', type: 'multiple-choice', options: ['Nothing — it is perfectly balanced', 'The poem can be read as imperialist — English soil is presented as superior, and the soldier\'s death as colonising foreign land', 'It is too short', 'The rhyme scheme is wrong'], correctIndex: 1, explanation: 'Modern readers may find the poem\'s assumptions problematic: England is unquestioningly idealised, foreign land needs English bodies to improve it, and death in war is presented without any horror or doubt.', topic: 'Themes', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'The Soldier presents patriotic self-sacrifice as noble, beautiful, and meaningful — reflecting the idealism of 1914 before the reality of trench warfare.', keyPoints: ['Patriotism — England idealised as a nurturing motherland', 'Noble sacrifice — death for England is presented as peaceful and purposeful', 'Identity — the soldier sees himself as entirely made by England', 'Pre-war idealism — contrasts sharply with later disillusionment'] },
+  { topic: 'Language & Imagery', summary: 'Brooke uses pastoral imagery, personification of England as a mother, and serene, elevated language to present death as beautiful.', keyPoints: ['"A corner of a foreign field that is for ever England" — death as colonisation', '"A dust whom England bore, shaped, made aware" — identity as entirely English', 'Pastoral imagery — flowers, air, rivers — England as paradise', 'Calm, accepting tone — no fear, no horror, only peace'] },
+  { topic: 'Structure & Form', summary: 'A Petrarchan sonnet — octave imagines physical death, sestet imagines spiritual afterlife. The traditional form suits the traditional values.', keyPoints: ['Petrarchan sonnet — classical form for classical ideals', 'Octave: physical death and burial abroad', 'Sestet: spiritual afterlife of peace and English values', 'Regular iambic pentameter — calm, controlled, unhurried'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Brooke present patriotism and sacrifice in The Soldier?',
+  'Compare how attitudes to war are presented in The Soldier and one other poem from the anthology.',
+  'How does Brooke use language and the sonnet form to idealise death for one\'s country?',
+]
+
 export default function SoldierEduqasPage() {
   return (
     <div className="space-y-8">
@@ -379,6 +405,13 @@ export default function SoldierEduqasPage() {
         cluster="Eduqas Poetry Anthology"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="The Soldier"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={soldier} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

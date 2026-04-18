@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const wifeInLondon: PoemData = {
   title: 'A Wife in London',
@@ -437,6 +438,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'awl-1', question: 'What happens in the poem?', type: 'multiple-choice', options: ['A wife welcomes her husband home', 'A wife receives news of her husband\'s death in war, then a letter from him arrives the next day', 'A wife writes to her husband', 'A couple argues'], correctIndex: 1, explanation: 'In Part I, a wife receives a telegram telling her that her husband has been killed in the Boer War. In Part II, a letter from him arrives the next day — written before his death, full of plans for their future.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'awl-2', question: 'What is the devastating irony of the poem?', type: 'multiple-choice', options: ['The telegram was wrong', 'The letter arrives after the death notice — full of hope and plans that can never be fulfilled', 'She already knew', 'The letter is lost'], correctIndex: 1, explanation: 'The letter, "penned in highest feather" (optimistic), arrives after the telegram announcing death. The husband\'s hopeful plans for their future are now unbearably ironic.', topic: 'Themes', difficulty: 'foundation' },
+  { id: 'awl-3', question: 'How does Hardy use pathetic fallacy?', type: 'multiple-choice', options: ['To create sunshine', 'The fog and "tawny vapour" mirror the wife\'s emotional state — obscured, dark, suffocating', 'To describe spring', 'For decoration only'], correctIndex: 1, explanation: 'The November fog that pervades Part I mirrors the wife\'s grief and confusion. The outside world is as obscured and oppressive as her inner world after receiving the death notice.', topic: 'Language', difficulty: 'higher' },
+  { id: 'awl-4', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Two-part structure (Act I and Act II) with regular stanzas — like a two-act tragedy', 'A sonnet', 'Blank verse'], correctIndex: 1, explanation: 'The poem is divided into "The Tragedy" (Part I: the death notice) and "The Irony" (Part II: the letter). This dramatic structure emphasises the cruel twist of timing.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'awl-5', question: 'When was the poem written and what war does it reference?', type: 'multiple-choice', options: ['1918, WWI', '1899-1900, during the Second Boer War in South Africa', '1854, the Crimean War', '1945, WWII'], correctIndex: 1, explanation: 'Written during the Second Boer War (1899-1902). Hardy opposed the war and used this poem to show its devastating personal cost on those left at home.', topic: 'Context', difficulty: 'higher' },
+  { id: 'awl-6', question: 'What does "penned in highest feather" mean?', type: 'multiple-choice', options: ['Written with a fancy pen', 'Written in high spirits — the husband was optimistic and happy when he wrote the letter', 'Written quickly', 'Written in code'], correctIndex: 1, explanation: '"In highest feather" means in excellent spirits. The husband was happy and optimistic when he wrote — unaware he was about to die. This makes the letter unbearably poignant.', topic: 'Language', difficulty: 'higher' },
+  { id: 'awl-7', question: 'What does the poem suggest about war?', type: 'multiple-choice', options: ['War is glorious', 'War devastates those at home — the wife suffers the cruelest irony of receiving hope after receiving death', 'War is necessary', 'War has no effects on civilians'], correctIndex: 1, explanation: 'Hardy shows war\'s cruelty not through battlefield horror but through domestic devastation. The wife\'s suffering — receiving hope after death — is war\'s cruelest irony.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'awl-8', question: 'How does Hardy\'s choice to show the wife (not the soldier) emphasise his anti-war message?', type: 'multiple-choice', options: ['It doesn\'t', 'By focusing on the civilian victim, Hardy shows that war\'s damage extends far beyond the battlefield into ordinary homes', 'Soldiers are unimportant', 'The wife is a soldier too'], correctIndex: 1, explanation: 'Hardy\'s focus on the wife rather than the soldier shows that war\'s damage radiates outward. The real tragedy is not just death but the ripple of grief it sends through families and homes.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'awl-9', question: 'What effect does the two-part structure create?', type: 'multiple-choice', options: ['It divides the poem in half for no reason', 'The labelling of "The Tragedy" and "The Irony" prepares and frames the reader\'s response — the irony is deliberate and devastating', 'It creates two different poems', 'It makes the poem longer'], correctIndex: 1, explanation: 'By labelling the sections "The Tragedy" and "The Irony", Hardy signals that Part II will deepen Part I\'s pain. The reader knows what\'s coming, which makes it more — not less — devastating.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'awl-10', question: 'What does the fog symbolise?', type: 'multiple-choice', options: ['London pollution', 'Grief, confusion, and the obscuring of truth — the wife cannot see clearly, literally or emotionally', 'Morning dew', 'Cooking smoke'], correctIndex: 1, explanation: 'The fog symbolises the wife\'s grief and confusion — she cannot see clearly, physically or emotionally. The truth of her husband\'s death is delivered through a fog of disbelief.', topic: 'Language', difficulty: 'foundation' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'A Wife in London explores the devastating personal impact of war, cruel irony, and how death destroys domestic hope.', keyPoints: ['War\'s civilian cost — the wife suffers at home', 'Cruel irony — hope arrives after death', 'Pathetic fallacy — fog mirrors grief', 'Anti-war message through domestic tragedy'] },
+  { topic: 'Language & Imagery', summary: 'Hardy uses pathetic fallacy, dramatic irony, and precise timing to create devastating emotional impact.', keyPoints: ['Fog and "tawny vapour" — grief made physical', '"Penned in highest feather" — cruel optimism', 'Telegram vs letter — death vs hope, wrong order', 'Restrained, precise language intensifies emotion'] },
+  { topic: 'Structure & Form', summary: 'Two-part dramatic structure — "The Tragedy" and "The Irony" — frames the poem as a cruel, two-act drama.', keyPoints: ['"The Tragedy" (Part I) — death notice arrives', '"The Irony" (Part II) — hopeful letter arrives too late', 'Regular stanzas — controlled form for uncontrollable grief', 'Labelling sections guides the reader\'s emotional response'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Hardy present the impact of war on those left at home in A Wife in London?',
+  'Compare how the effects of conflict on civilians are presented in A Wife in London and one other poem from the anthology.',
+  'How does Hardy use structure and irony to create devastating emotional impact?',
+]
+
 export default function WifeInLondonEduqasPage() {
   return (
     <div className="space-y-8">
@@ -474,6 +500,13 @@ export default function WifeInLondonEduqasPage() {
         cluster="Eduqas Poetry Anthology"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="A Wife in London"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={wifeInLondon} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const poemData: PoemData = {
   title: "Sonnet 29 -- 'I think of thee!'",
@@ -53,6 +54,32 @@ const poemData: PoemData = {
   ],
 }
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 's29-1', question: 'What is the central metaphor of Sonnet 29?', type: 'multiple-choice', options: ['A journey', 'The speaker\'s thoughts are wild vines growing around a tree (her lover)', 'A storm at sea', 'A bird in a cage'], correctIndex: 1, explanation: 'EBB compares her thoughts to wild vines that "twine and bud" around a tree (her lover). The vines have grown so thick they hide the real person beneath.', topic: 'Language', difficulty: 'foundation' },
+  { id: 's29-2', question: 'What does the speaker ultimately want?', type: 'multiple-choice', options: ['To think about her lover more', 'The real, physical presence of her lover rather than an imagined version', 'To write more poetry', 'To travel abroad'], correctIndex: 1, explanation: 'At the volta, EBB rejects her own fantasies. She wants the real person who is "dearer, better" than any thought — physical presence beats imagination.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 's29-3', question: 'What form is the poem?', type: 'multiple-choice', options: ['Free verse', 'A Petrarchan sonnet', 'A ballad', 'A dramatic monologue'], correctIndex: 1, explanation: 'It is a Petrarchan (Italian) sonnet with an octave and sestet. The volta between them marks the shift from obsessive thought to desire for physical reality.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 's29-4', question: 'What is the effect of "Renew thy presence"?', type: 'multiple-choice', options: ['A polite request', 'An imperative command — the speaker demands her lover appear and destroy her fantasies', 'A prayer', 'A whisper'], correctIndex: 1, explanation: 'The imperative "Renew thy presence" is a direct command. EBB is not passive — she actively demands her lover\'s physical presence to replace the inadequate substitute of thought.', topic: 'Language', difficulty: 'higher' },
+  { id: 's29-5', question: 'Who wrote the poem and what is its context?', type: 'multiple-choice', options: ['Charlotte Bronte in 1847', 'Elizabeth Barrett Browning, written during her secret courtship with Robert Browning', 'Jane Austen in 1813', 'Emily Dickinson in 1862'], correctIndex: 1, explanation: 'Written by EBB during her secret courtship with Robert Browning. As an invalid confined to her room, she often had to rely on thought and letters rather than physical presence.', topic: 'Context', difficulty: 'higher' },
+  { id: 's29-6', question: 'What does the vine metaphor suggest about obsessive thought?', type: 'multiple-choice', options: ['Thinking is always healthy', 'Obsessive thoughts can smother the real person — fantasy is suffocating', 'Vines are decorative', 'The lover enjoys being thought about'], correctIndex: 1, explanation: 'The vines have grown so thick they hide the tree. EBB recognises that obsessive thinking can replace and smother reality — her fantasies are hiding the real person she loves.', topic: 'Language', difficulty: 'higher' },
+  { id: 's29-7', question: 'What happens at the volta?', type: 'multiple-choice', options: ['Nothing changes', 'The speaker shifts from describing her obsessive thoughts to rejecting them in favour of physical reality', 'The poem ends', 'A new character appears'], correctIndex: 1, explanation: 'The volta marks a dramatic shift — EBB stops describing her vine-like thoughts and actively rejects them. She wants reality, not fantasy: "I do not think of thee — I am too near thee."', topic: 'Structure', difficulty: 'higher' },
+  { id: 's29-8', question: 'What is paradoxical about the final line?', type: 'multiple-choice', options: ['Nothing — it is straightforward', 'When her lover is present, she does not need to think of him — reality transcends imagination', 'She forgets her lover', 'She prefers being alone'], correctIndex: 1, explanation: 'The paradox is that when her lover is physically present, she stops thinking about him — because reality is "dearer, better" than any fantasy. Presence makes thought unnecessary.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 's29-9', question: 'How does EBB present female desire differently from typical Victorian poetry?', type: 'multiple-choice', options: ['She is passive and submissive', 'She is actively desiring, commanding, and rejecting inadequacy — unusually assertive for a Victorian woman poet', 'She avoids the topic entirely', 'She follows conventions exactly'], correctIndex: 1, explanation: 'EBB is boldly assertive — she commands her lover to appear, rejects her own fantasies as insufficient, and openly expresses physical desire. This was unusually direct for a Victorian woman.', topic: 'Context', difficulty: 'grade-9' },
+  { id: 's29-10', question: 'Which poem pairs best with Sonnet 29?', type: 'multiple-choice', options: ['Neutral Tones', 'Love\'s Philosophy by Shelley', 'Remains', 'Exposure'], correctIndex: 1, explanation: 'Both Sonnet 29 and Love\'s Philosophy use natural imagery to express desire. But EBB writes from reciprocated love demanding presence, while Shelley persuades from unrequited desire.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Sonnet 29 explores obsessive love, the inadequacy of thought vs physical presence, female desire, and the power of reality over fantasy.', keyPoints: ['Physical presence is "dearer, better" than imagination', 'Obsessive thought can smother the real person', 'Female desire is expressed assertively and directly', 'Reality transcends fantasy — "I do not think of thee"'] },
+  { topic: 'Language & Imagery', summary: 'EBB uses an extended vine/tree metaphor, imperative commands, and a paradoxical final line to express desire for physical reality.', keyPoints: ['Vine metaphor — thoughts "twine and bud" around the lover', '"Renew thy presence" — imperative command for physical presence', '"Dearer, better" — reality surpasses all fantasy', 'Paradox — when present, she does not need to think'] },
+  { topic: 'Structure & Form', summary: 'A Petrarchan sonnet with a clear volta shifting from obsessive thought to assertive demand for reality.', keyPoints: ['Petrarchan form — octave (thought) and sestet (reality)', 'Volta — dramatic shift from fantasy to physical desire', 'Exclamation marks — urgency and passion', 'Enjambment — thoughts overflow, mirroring the vine metaphor'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Barrett Browning present desire in Sonnet 29?',
+  'Compare how love is expressed in Sonnet 29 and one other poem from the anthology.',
+  'How does Barrett Browning use the sonnet form to explore the relationship between thought and reality?',
+]
+
 const COMPARE_POEMS = [
   { title: "Love's Philosophy", href: '/revision/poetry/love-and-relationships/loves-philosophy', reason: 'Both use natural imagery to express desire, but Shelley persuades while EBB demands.' },
   { title: "Porphyria's Lover", href: '/revision/poetry/love-and-relationships/porphyrias-lover', reason: 'Both explore desire for possession, but EBB seeks healthy presence while Browning\'s speaker seeks deadly control.' },
@@ -85,6 +112,13 @@ export default function Sonnet29Page() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Sonnet 29"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={poemData} />
 
       {/* Compare With Section */}

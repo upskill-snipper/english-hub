@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -262,6 +263,150 @@ const londonPoem: PoemData = {
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'lon-1',
+    question: 'What does the word "charter\'d" suggest in the opening lines?',
+    type: 'multiple-choice',
+    options: ['The streets are well-maintained', 'Everything in London is controlled, owned, and commercialised', 'The streets are full of tourists with maps', 'London is a free and open city'],
+    correctIndex: 1,
+    explanation: 'Blake uses "charter\'d" to suggest that even the streets and the Thames have been bought, sold, and controlled. Freedom is an illusion — everything is owned by those in power.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'lon-2',
+    question: 'What are "mind-forg\'d manacles"?',
+    type: 'multiple-choice',
+    options: ['Physical chains used on prisoners', 'Psychological chains — people are imprisoned by their own acceptance of oppression', 'Decorative bracelets worn by Londoners', 'Laws written by Parliament'],
+    correctIndex: 1,
+    explanation: '"Mind-forg\'d manacles" is Blake\'s most important metaphor. The chains are not physical but mental — people have internalised their oppression and accepted it as normal.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'lon-3',
+    question: 'What institutions does Blake attack in stanza 3?',
+    type: 'multiple-choice',
+    options: ['Schools and hospitals', 'The Church and the monarchy', 'Factories and shops', 'The army and the navy'],
+    correctIndex: 1,
+    explanation: 'Blake attacks the Church ("every black\'ning Church appalls") for ignoring child chimney sweeps, and the monarchy ("Runs in blood down Palace walls") for sending soldiers to die.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'lon-4',
+    question: 'What is the effect of the oxymoron "Marriage hearse"?',
+    type: 'multiple-choice',
+    options: ['It celebrates wedding traditions', 'It fuses love and death, showing that corruption has poisoned every aspect of life', 'It describes a funeral procession', 'It shows that marriage is popular in London'],
+    correctIndex: 1,
+    explanation: 'Marriage (love, life, new beginnings) is combined with a hearse (death, endings). Blake argues that corruption has destroyed even the most sacred human institutions.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'lon-5',
+    question: 'What structural feature dominates stanza 2?',
+    type: 'multiple-choice',
+    options: ['Rhyming couplets', 'Anaphora — the repetition of "In every"', 'A volta or turning point', 'Lack of punctuation'],
+    correctIndex: 1,
+    explanation: '"In every" is repeated four times in stanza 2, creating a relentless, overwhelming effect. The repetition makes suffering feel universal and inescapable.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'lon-6',
+    question: 'What does "Runs in blood down Palace walls" suggest about the monarchy?',
+    type: 'multiple-choice',
+    options: ['The Palace is being redecorated', 'Blake directly blames the monarchy for soldiers\' deaths', 'The Palace is under attack by revolutionaries', 'The soldier is protecting the Palace'],
+    correctIndex: 1,
+    explanation: 'This vivid image places blood directly on the walls of royal power, making the monarchy\'s responsibility for sending soldiers to die undeniable. It may also foreshadow revolution.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'lon-7',
+    question: 'When was London published, and what was happening historically?',
+    type: 'multiple-choice',
+    options: ['1818, during the Romantic period', '1794, during the Industrial Revolution and aftermath of the French Revolution', '1850, during the Victorian era', '1914, at the start of World War I'],
+    correctIndex: 1,
+    explanation: 'London was published in Songs of Experience in 1794. Blake wrote during the Industrial Revolution, which brought poverty and child labour, and was influenced by the French Revolution (1789).',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'lon-8',
+    question: 'Why does Blake use iambic tetrameter throughout the poem?',
+    type: 'multiple-choice',
+    options: ['It was the only metre he knew', 'The steady, marching rhythm mirrors the relentless, inescapable nature of suffering', 'It makes the poem easier to memorise', 'It creates a cheerful, upbeat tone'],
+    correctIndex: 1,
+    explanation: 'The regular four-beat rhythm sounds like footsteps through the city, reinforcing the sense of relentless, unavoidable oppression. The rigid form also mirrors the "charter\'d" restrictions Blake describes.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'lon-9',
+    question: 'How does the cyclical structure of the poem reinforce Blake\'s message?',
+    type: 'multiple-choice',
+    options: ['It shows London is improving over time', 'It suggests the cycle of suffering repeats endlessly from generation to generation', 'It creates a sense of resolution', 'It reflects the circular layout of London\'s streets'],
+    correctIndex: 1,
+    explanation: 'The poem begins with an infant\'s "cry of fear" in stanza 2 and ends with a "new-born Infant\'s tear" in stanza 4. This cyclical structure suggests suffering passes from generation to generation with no escape.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'lon-10',
+    question: 'Which poem from the Power and Conflict anthology shares London\'s concern with institutional oppression?',
+    type: 'multiple-choice',
+    options: ['The Prelude by Wordsworth', 'Checking Out Me History by John Agard', 'Storm on the Island by Seamus Heaney', 'Exposure by Wilfred Owen'],
+    correctIndex: 1,
+    explanation: 'Both London and Checking Out Me History attack institutional control over people. Blake targets the Church and monarchy; Agard targets the colonial education system. Both show how power structures suppress individuals.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'London explores the corruption of power, the suffering of ordinary people, and the loss of innocence in an industrialised city controlled by oppressive institutions.',
+    keyPoints: [
+      'Power corrupts — the Church, monarchy, and commercial interests all cause suffering',
+      'Oppression is both external (institutions) and internal ("mind-forg\'d manacles")',
+      'Innocence is destroyed — children suffer from birth (chimney sweeps, diseased infants)',
+      'The cycle of suffering repeats endlessly from generation to generation',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Blake uses metaphor, repetition, oxymoron, and visceral imagery to create an unrelenting picture of suffering and institutional corruption.',
+    keyPoints: [
+      '"Mind-forg\'d manacles" — psychological chains of internalised oppression',
+      '"Marriage hearse" — oxymoron fusing love with death',
+      '"Runs in blood down Palace walls" — visceral imagery blaming the monarchy',
+      'Semantic field of suffering throughout: weakness, woe, cry, curse, plagues',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Four quatrains in ABAB rhyme with iambic tetrameter — the rigid, controlled structure mirrors the "charter\'d" restrictions of the city itself.',
+    keyPoints: [
+      'Regular ABAB rhyme scheme — the poem\'s form feels as constrained as the city',
+      'Anaphora ("In every") in stanza 2 creates overwhelming cumulative effect',
+      '"But most" signals the volta to the poem\'s darkest imagery in stanza 4',
+      'First-person narrator gives the poem moral authority as eyewitness testimony',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Blake present the effects of power on ordinary people in London?',
+  'Compare how Blake and one other poet from the anthology present the abuse of power.',
+  'How does Blake use language and structure to create a sense of hopelessness in London?',
+]
+
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
 const comparePoems = [
@@ -332,6 +477,14 @@ export default function LondonPage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="London"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={londonPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

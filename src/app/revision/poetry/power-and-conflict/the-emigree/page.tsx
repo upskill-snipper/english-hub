@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 export const metadata = {
   title: 'The Emigree -- Carol Rumens -- The English Hub',
@@ -226,6 +227,150 @@ Contrast: The structure consistently juxtaposes the bright, idealised past again
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'emi-1',
+    question: 'What is the central conflict in The Emigrée?',
+    type: 'multiple-choice',
+    options: ['A physical war between two countries', 'The tension between the speaker\'s idealised childhood memory of her homeland and its present political reality', 'A family argument about immigration', 'A debate about language'],
+    correctIndex: 1,
+    explanation: 'The speaker left her country as a child and remembers it as "sunlight-clear". Despite knowing it may now be at war or under tyranny, her memory remains positive and she refuses to let reality destroy it.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'emi-2',
+    question: 'What is the significance of the "sunlight" motif?',
+    type: 'multiple-choice',
+    options: ['The country has a warm climate', 'Sunlight represents the speaker\'s pure, untainted childhood memory that cannot be darkened by political reality', 'It describes the weather on the day she left', 'It is a reference to sunrise'],
+    correctIndex: 1,
+    explanation: 'The sunlight motif runs through the poem as a refrain. Memory is always presented in light, while the present reality is dark. The speaker\'s personal memory resists political attempts to rewrite it.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'emi-3',
+    question: 'What does "branded by an impression of sunlight" suggest?',
+    type: 'multiple-choice',
+    options: ['She has a sunburn', 'The memory is permanently and painfully marked onto her — like a brand on skin, it cannot be removed', 'She enjoys sunny weather', 'She has a tattoo of the sun'],
+    correctIndex: 1,
+    explanation: '"Branded" suggests the memory is seared onto her permanently, like a cattle brand. It is both painful (a burn) and indelible (it cannot be washed away). The memory defines her identity.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'emi-4',
+    question: 'What does "My memory is a passport" mean?',
+    type: 'multiple-choice',
+    options: ['She carries a real passport from her old country', 'Memory grants her access to a homeland that politics denies her — memory becomes a document of identity and freedom', 'She needs a passport to travel', 'Her memory is unreliable'],
+    correctIndex: 1,
+    explanation: 'This powerful metaphor shows that memory functions like an identity document — it allows the speaker to return to her homeland mentally even though she is denied physical return. Memory is freedom.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'emi-5',
+    question: 'What do the "frontiers" that "rise between us" represent?',
+    type: 'multiple-choice',
+    options: ['Mountain ranges', 'Political borders and barriers that aggressively separate the speaker from her homeland', 'Rivers and oceans', 'Airport security'],
+    correctIndex: 1,
+    explanation: '"Frontiers rise" personifies political borders as aggressive barriers that actively prevent the speaker from returning. The verb "rise" makes them seem threatening and dynamic — they are growing, not static.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'emi-6',
+    question: 'What is the effect of the refrain ending each stanza?',
+    type: 'multiple-choice',
+    options: ['It becomes repetitive and boring', 'The sunlight refrain at each stanza\'s end reinforces that memory triumphs over political darkness every time', 'It is a traditional poetic device with no specific meaning', 'It shows the speaker is confused'],
+    correctIndex: 1,
+    explanation: 'Each stanza presents increasingly dark political realities (war, massacre, bulldozers) but ends with the sunlight refrain. The pattern structurally enacts the speaker\'s refusal to let darkness overcome her memory.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'emi-7',
+    question: 'What is the speaker\'s relationship with the city\'s language?',
+    type: 'multiple-choice',
+    options: ['She has forgotten it entirely', 'It is described as "a hollow doll" she can "open and shut" — she possesses and controls it even in exile', 'She refuses to speak it', 'She learned it as an adult'],
+    correctIndex: 1,
+    explanation: 'The city\'s language is compared to a "hollow doll" the speaker can "open and shut", suggesting she has preserved it as a precious childhood possession. Language becomes another form of memory that connects her to her homeland.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'emi-8',
+    question: 'What type of poem is The Emigrée, and who is Carol Rumens?',
+    type: 'multiple-choice',
+    options: ['A dramatic monologue by a Victorian poet', 'A lyric poem by Carol Rumens (b. 1944), a British poet exploring themes of exile, identity, and political displacement', 'An epic poem by a war correspondent', 'A ballad by an Irish poet'],
+    correctIndex: 1,
+    explanation: 'Carol Rumens (b. 1944) is a British poet who has never been an emigrée herself. She writes in the voice of a displaced person to explore universal themes of exile, memory, identity, and the politics of belonging.',
+    topic: 'Context',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'emi-9',
+    question: 'How does the poem explore the idea that memory can be more powerful than political reality?',
+    type: 'multiple-choice',
+    options: ['It shows memory fading over time', 'Despite war, massacres, and frontiers, the speaker\'s childhood memory remains "sunlight-clear" — personal truth resists political propaganda', 'Memory and reality are the same in the poem', 'The speaker accepts that her memory is false'],
+    correctIndex: 1,
+    explanation: 'The poem\'s central argument is that personal memory can resist political attempts to rewrite or destroy it. No matter how much the homeland changes, the speaker\'s childhood impression remains intact and luminous.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'emi-10',
+    question: 'Which poem from the Power and Conflict anthology best pairs with The Emigrée for exploring identity and place?',
+    type: 'multiple-choice',
+    options: ['Bayonet Charge by Hughes', 'Checking Out Me History by John Agard', 'The Charge of the Light Brigade by Tennyson', 'Exposure by Owen'],
+    correctIndex: 1,
+    explanation: 'Both The Emigrée and Checking Out Me History explore how identity is shaped by what you are told (or denied) about your history and homeland. Both speakers resist external forces that try to define or erase their identity.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'The Emigrée explores memory, exile, identity, and the power of personal truth to resist political darkness.',
+    keyPoints: [
+      'Memory as resistance — childhood memory defies political reality',
+      'Identity — language, place, and memory define who the speaker is',
+      'Exile and displacement — the speaker cannot return but refuses to forget',
+      'Light vs darkness — the sunlight motif represents memory\'s triumph',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Rumens uses light/dark imagery, metaphor, personification, and a consistent sunlight refrain to present memory as a powerful, defiant force.',
+    keyPoints: [
+      '"Sunlight-clear" — memory presented as luminous and pure',
+      '"Branded" — memory is permanent, painful, and identity-defining',
+      '"My memory is a passport" — memory as freedom and identity document',
+      '"Frontiers rise between us" — borders personified as aggressive barriers',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Three stanzas of increasing political darkness, each ending with the sunlight refrain — structurally enacting the triumph of memory over reality.',
+    keyPoints: [
+      'Three stanzas — each introduces darker political reality',
+      'Sunlight refrain at end of each stanza — memory always wins',
+      'Enjambment — ideas flow across lines like unstoppable memory',
+      'No regular rhyme — reflecting the displaced, unstructured nature of exile',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Rumens present the power of memory in The Emigrée?',
+  'Compare how identity is presented in The Emigrée and one other poem from the anthology.',
+  'How does Rumens use language and structure to convey the speaker\'s attachment to her homeland?',
+]
+
 /* ── Comparison poems ──────────────────────────────────────────────── */
 
 const COMPARISONS = [
@@ -323,6 +468,14 @@ export default function TheEmigreePage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="The Emigrée"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={POEM} />
 
       {/* ── Comparison poems ───────────────────────────────────── */}

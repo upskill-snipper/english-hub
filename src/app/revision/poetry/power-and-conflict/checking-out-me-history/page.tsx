@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 export const metadata = {
   title: 'Checking Out Me History -- John Agard -- The English Hub',
@@ -258,6 +259,150 @@ The poem ends with the refrain, giving the speaker the final word. The shift fro
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'com-1',
+    question: 'What is the speaker protesting about in Checking Out Me History?',
+    type: 'multiple-choice',
+    options: ['The quality of school buildings', 'The British education system for teaching only British/European history and erasing Caribbean and African history', 'The cost of school textbooks', 'The lack of sports facilities'],
+    correctIndex: 1,
+    explanation: 'Agard protests that the British education system taught him irrelevant British history and nursery rhymes while completely ignoring the achievements of Caribbean and African historical figures.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'com-2',
+    question: 'What does "Bandage up me eye with me own history" mean?',
+    type: 'multiple-choice',
+    options: ['The speaker has an eye injury', 'The British education system has blinded him to his own Caribbean heritage', 'He is wearing a blindfold for a game', 'He is reading in poor light'],
+    correctIndex: 1,
+    explanation: 'This powerful metaphor suggests the education system has used his own history against him — wrapping it around his eyes like a bandage to prevent him from seeing the truth about his heritage and identity.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'com-3',
+    question: 'Why does Agard include nursery rhymes alongside historical references?',
+    type: 'multiple-choice',
+    options: ['He enjoys nursery rhymes', 'By placing British history alongside nursery rhymes, he suggests the education he received was trivial and childish', 'Nursery rhymes are part of the GCSE curriculum', 'He is writing a children\'s poem'],
+    correctIndex: 1,
+    explanation: 'Agard deliberately mixes historical references (1066, Lord Nelson) with nursery rhymes (Dick Whittington, Old King Cole, "the dish ran away with the spoon") to show how equally meaningless and irrelevant both felt to someone denied their own history.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'com-4',
+    question: 'Who is Toussaint L\'Ouverture, and why is he significant in the poem?',
+    type: 'multiple-choice',
+    options: ['A French king', 'The leader of the Haitian Revolution — the only successful slave revolt in history, which Agard\'s education never taught him', 'A British general', 'A famous poet'],
+    correctIndex: 1,
+    explanation: 'Toussaint L\'Ouverture (1743-1803) led the Haitian Revolution, the only successful slave revolt in history. He defeated Napoleon\'s army and Haiti became the first Black republic. Agard uses him as a hero whose achievements were erased by British education.',
+    topic: 'Context',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'com-5',
+    question: 'What is the effect of writing in Caribbean Creole throughout the poem?',
+    type: 'multiple-choice',
+    options: ['It makes the poem harder to understand', 'It asserts cultural identity through language itself — the dialect is an act of resistance against Standard English', 'It is a mistake in spelling', 'It shows the speaker is uneducated'],
+    correctIndex: 1,
+    explanation: 'Writing in Caribbean Creole is itself an act of resistance. By using "Dem" instead of "They" and "me" instead of "my", Agard refuses to conform to Standard English, asserting his cultural identity through his very language.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'com-6',
+    question: 'What does "I carving out me identity" suggest about the process of self-discovery?',
+    type: 'multiple-choice',
+    options: ['Identity is given to you automatically', 'Identity must be actively and deliberately created — like a sculptor carving art from raw material', 'The speaker is a woodworker', 'Identity is easy to find'],
+    correctIndex: 1,
+    explanation: '"Carving" suggests something permanent, deliberate, and effortful — like a sculptor creating art. Identity is not passively received from education; it must be actively constructed through self-education and resistance.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'com-7',
+    question: 'How does the poem\'s visual layout on the page contribute to its meaning?',
+    type: 'multiple-choice',
+    options: ['It has no visual significance', 'The italicised hero stanzas with short lines are visually separated from the British education stanzas, mirroring the separation of the two histories', 'All stanzas look the same', 'The layout is determined by the printer'],
+    correctIndex: 1,
+    explanation: 'The poem uses two distinct visual styles: longer lines for British education content and shorter, italicised lines for Caribbean heroes. This typographical separation mirrors the real-world separation between the two histories.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'com-8',
+    question: 'Who is Nanny of the Maroons, mentioned in the poem?',
+    type: 'multiple-choice',
+    options: ['A character from a nursery rhyme', 'A Jamaican national hero who led guerrilla warfare against British colonisers', 'A fictional character created by Agard', 'A British queen'],
+    correctIndex: 1,
+    explanation: 'Nanny of the Maroons (c.1686-c.1755) was a Jamaican national hero who led resistance against British colonisers through guerrilla warfare. She is one of only two women named as a National Hero of Jamaica.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'com-9',
+    question: 'How does the refrain "Dem tell me" function throughout the poem?',
+    type: 'multiple-choice',
+    options: ['It is a polite request for information', 'It creates a chant-like rhythm of protest, emphasising the relentless, repetitive nature of the education system\'s control over what is taught', 'It shows the speaker is grateful', 'It is used for musical effect only'],
+    correctIndex: 1,
+    explanation: 'The repetition of "Dem tell me" creates a chant-like, rhythmic quality rooted in Caribbean oral tradition. It hammers home how the education system dictated what was worth knowing, creating a powerful protest rhythm.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'com-10',
+    question: 'Which poem from the Power and Conflict anthology best pairs with Checking Out Me History for exploring how institutions control individuals?',
+    type: 'multiple-choice',
+    options: ['Storm on the Island by Heaney', 'London by William Blake', 'The Prelude by Wordsworth', 'Exposure by Owen'],
+    correctIndex: 1,
+    explanation: 'Both London and Checking Out Me History attack institutional control over people. Blake targets the Church and monarchy; Agard targets the colonial education system. Both show how power structures suppress individual freedom and identity.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'Checking Out Me History explores identity, cultural erasure, the power of education, resistance, and the reclaiming of suppressed heritage.',
+    keyPoints: [
+      'Identity — "Blind me to me own identity" — knowing your history is knowing yourself',
+      'Cultural erasure — Caribbean and African history deliberately excluded from education',
+      'Resistance — "I carving out me identity" — active self-education and protest',
+      'Power of education — those who control what is taught control identity itself',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Agard uses Caribbean Creole, metaphor, contrast between nursery rhymes and real heroes, and chant-like repetition to create a powerful protest poem.',
+    keyPoints: [
+      '"Bandage up me eye" — metaphor for being blinded by a one-sided education',
+      'Caribbean Creole dialect — language itself is an act of resistance',
+      'Nursery rhymes vs real heroes — British education compared to trivial fantasy',
+      '"Beacon" and "thorn" — metaphors celebrating Caribbean heroes\' dual significance',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Alternating stanza types — longer British education stanzas vs shorter, italicised Caribbean hero stanzas — visually and structurally separate the two histories.',
+    keyPoints: [
+      'Two visual styles — typographical separation mirrors the separation of histories',
+      'Anaphora ("Dem tell me") — creates a chant-like protest rhythm',
+      'Short lines in hero stanzas — reverential, almost prayer-like',
+      'Refrain "But now I checking out me own history" — the poem\'s thesis statement',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Agard present the importance of identity in Checking Out Me History?',
+  'Compare how power and control are presented in Checking Out Me History and one other poem from the anthology.',
+  'How does Agard use language and structure to create a powerful protest poem?',
+]
+
 /* ── Comparison poems ─────────────────────────────────────────────── */
 
 const COMPARISONS = [
@@ -360,6 +505,14 @@ export default function CheckingOutMeHistoryPage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="Checking Out Me History"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={POEM} />
 
       {/* ── Comparison poems ──────────────────────────────────────── */}

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const poemData: PoemData = {
   title: 'Neutral Tones',
@@ -59,6 +60,32 @@ const poemData: PoemData = {
   ],
 }
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'nt-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A happy walk by a pond', 'The painful memory of a relationship ending beside a bleak winter pond', 'A scientific description of a pond', 'A celebration of nature'], correctIndex: 1, explanation: 'Hardy recalls the moment a relationship died, set beside a pond on a grey winter day. The bleak landscape mirrors the emotional deadness.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'nt-2', question: 'What does the pond symbolise?', type: 'multiple-choice', options: ['Beauty and life', 'Stagnation and emotional deadness', 'A place for swimming', 'Wealth'], correctIndex: 1, explanation: 'The pond is stagnant and lifeless, mirroring the dead relationship. The "starving sod" reinforces the absence of vitality.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'nt-3', question: 'What is the effect of the "neutral tones" colour palette?', type: 'multiple-choice', options: ['Bright colours create excitement', 'White, grey, and ash drain all warmth from the scene, matching the dead relationship', 'Vivid colours celebrate nature', 'Colours are random'], correctIndex: 1, explanation: 'Hardy removes colour — the sun is "white", leaves are "grey". This drained palette matches the emotional neutrality of the failed love.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'nt-4', question: 'What does "The smile on your mouth was the deadest thing" suggest?', type: 'multiple-choice', options: ['A beautiful smile', 'The smile is false and lifeless — the relationship is beyond saving', 'Shyness', 'A genuine sad smile'], correctIndex: 1, explanation: 'The smile is deader than dead leaves — forced, insincere, representing total death of feeling. The superlative "deadest" emphasises extinction.', topic: 'Language', difficulty: 'higher' },
+  { id: 'nt-5', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Four quatrains with ABBA rhyme scheme', 'A sonnet', 'Blank verse'], correctIndex: 1, explanation: 'Four quatrains with ABBA (envelope) rhyme. The enclosing rhyme mirrors how the speaker is trapped in the memory.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'nt-6', question: 'What is the effect of the cyclical structure?', type: 'multiple-choice', options: ['Time passing', 'The poem ends where it began, trapping the speaker in inescapable painful memory', 'Happy resolution', 'No effect'], correctIndex: 1, explanation: 'The final stanza returns to the pond. The speaker is trapped in this memory — it defines all subsequent experiences of love.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'nt-7', question: 'When was the poem written?', type: 'multiple-choice', options: ['1867 by Thomas Hardy', '1818 during the Romantic period', '1914 during WWI', '1950 post-war'], correctIndex: 0, explanation: 'Written in 1867 by Hardy, who frequently presented love as doomed and painful. His pessimistic worldview shapes the bleak landscape.', topic: 'Context', difficulty: 'higher' },
+  { id: 'nt-8', question: 'What does pathetic fallacy achieve?', type: 'multiple-choice', options: ['Cheerfulness', 'The bleak landscape mirrors emotional deadness — nature reflects human feeling', 'Decoration', 'Suspense'], correctIndex: 1, explanation: 'Grey sky, white sun, fallen leaves, and starving sod mirror the speaker\'s emotional state. Nature reinforces the emotional deadness.', topic: 'Language', difficulty: 'higher' },
+  { id: 'nt-9', question: 'How does the final stanza transform the memory?', type: 'multiple-choice', options: ['It stays personal', 'The memory becomes a universal lesson — "keen lessons that love deceives"', 'New character introduced', 'Hope offered'], correctIndex: 1, explanation: 'The pond scene becomes not just one memory but "keen lessons" about love\'s inevitable deception — it colours all future relationships.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'nt-10', question: 'Which poem pairs best with Neutral Tones?', type: 'multiple-choice', options: ['Singh Song!', 'When We Two Parted by Byron', 'Climbing My Grandfather', 'Before You Were Mine'], correctIndex: 1, explanation: 'Both explore the painful end of love with cold imagery and cyclical structures. Both speakers are trapped in memories of failed relationships.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Neutral Tones explores the death of love, bleakness of memory, and how one painful experience defines all future relationships.', keyPoints: ['Love as deception — "keen lessons that love deceives"', 'Emotional deadness — all warmth and colour drained', 'Memory as trap — speaker locked in cyclical loop', 'Pessimism — love is doomed to fail'] },
+  { topic: 'Language & Imagery', summary: 'Hardy uses pathetic fallacy, drained colour palette, and death imagery to create total emotional extinction.', keyPoints: ['"Neutral tones" — white, grey, ash remove all warmth', '"The deadest thing" — superlative death imagery', 'Pathetic fallacy — landscape mirrors dead relationship', '"Starving sod" — even the earth is dying'] },
+  { topic: 'Structure & Form', summary: 'Four quatrains with ABBA rhyme creating an enclosed, trapped structure mirroring inescapable memory.', keyPoints: ['ABBA rhyme — enclosing structure traps the speaker', 'Cyclical — begins and ends at the pond', 'Regular form contrasts with disordered emotions', 'Past tense throughout — memory becomes permanent'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Hardy present the end of love in Neutral Tones?',
+  'Compare how lost love is presented in Neutral Tones and one other poem from the anthology.',
+  'How does Hardy use natural imagery to convey emotional pain?',
+]
+
 const COMPARE_POEMS = [
   { title: 'When We Two Parted', href: '/revision/poetry/love-and-relationships/when-we-two-parted', reason: 'Both use cold imagery and cyclical structures to explore the pain of lost love.' },
   { title: "Love's Philosophy", href: '/revision/poetry/love-and-relationships/loves-philosophy', reason: 'Polar opposites -- Shelley\'s optimistic argument for love vs. Hardy\'s bleak proof of its failure.' },
@@ -91,6 +118,13 @@ export default function NeutralTonesPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Neutral Tones"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={poemData} />
 
       {/* Compare With Section */}

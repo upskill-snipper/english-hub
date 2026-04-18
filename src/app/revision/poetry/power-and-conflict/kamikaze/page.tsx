@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────── */
 
@@ -247,6 +248,150 @@ KEY STRUCTURAL FEATURES:
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'kam-1',
+    question: 'What decision does the pilot make in Kamikaze?',
+    type: 'multiple-choice',
+    options: ['He completes his suicide mission', 'He turns back from his kamikaze mission and returns home', 'He crashes into an enemy ship', 'He lands on a different island'],
+    correctIndex: 1,
+    explanation: 'The pilot turns back from his kamikaze mission, choosing life over death. However, his family and community treat him as if he were dead — his survival brings shame rather than relief.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kam-2',
+    question: 'Who narrates the poem?',
+    type: 'multiple-choice',
+    options: ['The pilot himself', 'The pilot\'s daughter, retelling the story she was told', 'A military commander', 'A journalist'],
+    correctIndex: 1,
+    explanation: 'The poem is narrated by the pilot\'s daughter, who pieces together the story from what she was told. The final stanza shifts to her own first-person reflection on the consequences.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kam-3',
+    question: 'What causes the pilot to turn back?',
+    type: 'multiple-choice',
+    options: ['Engine failure', 'The beauty of nature — fish, birds, and the sea — reminds him of life and his childhood', 'A radio message from his family', 'Fear of the enemy'],
+    correctIndex: 1,
+    explanation: 'The pilot is pulled back by the beauty of the natural world — fish "swivelling their silver bodies", wood pigeons, the "green-blue translucent sea". Nature and childhood memories of fishing with his father represent life over death.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kam-4',
+    question: 'How does the pilot\'s family treat him after his return?',
+    type: 'multiple-choice',
+    options: ['They celebrate his survival', 'They treat him as if he were dead — refusing to speak to him or acknowledge his existence', 'They send him back to the military', 'They move to another country'],
+    correctIndex: 1,
+    explanation: 'The family treats the pilot as though he no longer exists. In Japanese culture, a kamikaze pilot who turned back brought profound shame. His wife and children refuse to speak to him — he becomes socially dead.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kam-5',
+    question: 'What does the nature imagery (fish, birds, sea) represent in the poem?',
+    type: 'multiple-choice',
+    options: ['The dangers of the ocean', 'The beauty of life and the power of nature to override duty and ideology', 'The pilot\'s diet', 'The Japanese fishing industry'],
+    correctIndex: 1,
+    explanation: 'Nature represents life itself — vivid, beautiful, and precious. The fish, birds, and translucent sea offer a sensory counterweight to the abstract concept of duty. Life is tangible; honour is not.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'kam-6',
+    question: 'What is the effect of the final stanza being in the daughter\'s first-person voice?',
+    type: 'multiple-choice',
+    options: ['It distances the reader from the story', 'It shifts from retelling to personal reflection, showing the lasting impact on the family — "he must have wondered which had been the better way to die"', 'It introduces a new character', 'It resolves the conflict happily'],
+    correctIndex: 1,
+    explanation: 'The shift to first person makes the final stanza deeply personal. The daughter speculates that her father must have wondered if social death (being shunned) was worse than the physical death he avoided.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'kam-7',
+    question: 'What is the significance of the "samurai sword" in the opening?',
+    type: 'multiple-choice',
+    options: ['It shows the pilot is dangerous', 'It represents the weight of Japanese warrior tradition and honour culture that demands his sacrifice', 'It is a cooking implement', 'It shows the pilot is wealthy'],
+    correctIndex: 1,
+    explanation: 'The samurai sword connects to Japan\'s warrior tradition and the bushido code of honour. Its ceremonial presence in the cockpit represents the cultural expectation of sacrifice and the weight of duty.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'kam-8',
+    question: 'What does "he flew into the sun" symbolise?',
+    type: 'multiple-choice',
+    options: ['He flew east towards the sunrise', 'The sun symbolises Japan (the Rising Sun flag) — flying into the sun represents devotion to the nation unto death', 'He was blinded by sunlight', 'The sun caused engine problems'],
+    correctIndex: 1,
+    explanation: 'The sun is a central symbol of Japan itself (the Rising Sun). "Flying into the sun" represents the pilot\'s devotion to his nation — literally heading towards death for his country. The repetition emphasises the inevitability of his mission.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'kam-9',
+    question: 'How does the poem question the concept of honour?',
+    type: 'multiple-choice',
+    options: ['It celebrates honour above all else', 'It shows that the "honourable" choice (death) and the "dishonourable" choice (life) both lead to a form of death — raising the question of which is truly worse', 'It ignores honour entirely', 'It defines honour clearly'],
+    correctIndex: 1,
+    explanation: 'The poem creates a devastating paradox: dying would have brought honour; living brought social death. The daughter\'s final reflection — "which had been the better way to die" — suggests both paths led to a form of death, questioning whether honour is worth the cost.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'kam-10',
+    question: 'Which poem from the Power and Conflict anthology best pairs with Kamikaze for exploring the personal impact of conflict?',
+    type: 'multiple-choice',
+    options: ['Ozymandias by Shelley', 'Poppies by Jane Weir', 'Storm on the Island by Heaney', 'The Charge of the Light Brigade by Tennyson'],
+    correctIndex: 1,
+    explanation: 'Both Kamikaze and Poppies explore the family\'s perspective on conflict — a daughter in Kamikaze, a mother in Poppies. Both show the personal, domestic costs of war through female voices and the pain of absence.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'Kamikaze explores honour, shame, the personal cost of conflict, the power of nature, and the devastating consequences of choosing life over duty.',
+    keyPoints: [
+      'Honour vs survival — the pilot chooses life but suffers social death',
+      'Power of nature — natural beauty overrides military duty',
+      'Family and shame — the family treats him as if he were dead',
+      'The question of identity — is he a coward or a brave man who chose life?',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Garland uses vivid nature imagery, symbolism of the sun and samurai sword, and a narrative voice that shifts from third person to intimate first person.',
+    keyPoints: [
+      'Nature imagery: "silver bodies", "green-blue translucent sea" — life\'s beauty',
+      'Sun symbolism — represents Japan and the pilot\'s devotion to his nation',
+      '"Samurai sword" — the weight of warrior tradition and honour culture',
+      'Colour imagery: "silver", "green-blue" — vivid life contrasting with the death mission',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Seven stanzas narrated mostly in third person, with a crucial shift to first person in the final stanza as the daughter reflects personally on the consequences.',
+    keyPoints: [
+      'Third-person narration — the daughter retells what she was told, creating distance',
+      'Final stanza shifts to first person — intimate, personal reflection',
+      'Enjambment across stanzas — the story flows without neat resolution',
+      'No regular rhyme — reflecting the unresolved nature of the family\'s pain',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Garland present the conflict between duty and personal choice in Kamikaze?',
+  'Compare how the effects of conflict on families are presented in Kamikaze and one other poem from the anthology.',
+  'How does Garland use language and structure to explore the concept of honour?',
+]
+
 /* ── Comparison poems ──────────────────────────────────────────── */
 
 const comparisons = [
@@ -355,6 +500,14 @@ export default function KamikazePage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="Kamikaze"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={kamikazeData} />
 
       {/* Comparisons */}

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -116,6 +117,32 @@ const farmersBridePoem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'fb-1', question: 'Who is the speaker?', type: 'multiple-choice', options: ['The bride herself', 'A farmer whose young wife is terrified of him and of physical intimacy', 'A neighbour', 'A priest'], correctIndex: 1, explanation: 'The poem is a dramatic monologue spoken by a farmer whose young bride fears him and all men. He describes her flight, capture, and continued terror with a mix of tenderness and frustration.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'fb-2', question: 'Why does the bride run away?', type: 'multiple-choice', options: ['She wants adventure', 'She is terrified of the farmer and of physical intimacy — "afraid of all things human"', 'She is homesick', 'She found another lover'], correctIndex: 1, explanation: 'The bride is "afraid of all things human", especially men and physical intimacy. She flees the marriage but is caught and brought back by the farmer and other men.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'fb-3', question: 'How is the bride described?', type: 'multiple-choice', options: ['As strong and confident', 'As an animal or fairy — compared to a hare, a mouse, a leveret — more creature than person', 'As angry and defiant', 'As elderly and wise'], correctIndex: 1, explanation: 'The bride is consistently compared to wild animals — a hare, a mouse, a leveret (young hare). She is associated with nature rather than human society, suggesting she is trapped in a role she cannot inhabit.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'fb-4', question: 'What does the final stanza reveal about the farmer?', type: 'multiple-choice', options: ['He is content with the situation', 'His desire becomes increasingly possessive and disturbing — "her eyes, her hair, her hair!" suggests barely contained obsession', 'He decides to let her go', 'He is angry at her'], correctIndex: 1, explanation: 'The final stanza\'s repetition of "her hair!" reveals the farmer\'s desire becoming obsessive and predatory. The exclamation marks suggest barely controlled passion that edges toward threat.', topic: 'Language', difficulty: 'higher' },
+  { id: 'fb-5', question: 'What does the poem suggest about marriage in this period?', type: 'multiple-choice', options: ['Marriage was always happy', 'Women had little agency — the bride is essentially property, caught and returned like a runaway animal', 'Women could easily divorce', 'Marriage was optional'], correctIndex: 1, explanation: 'The poem critiques Victorian/Edwardian marriage where women had little legal right to refuse their husbands. The bride is captured and returned like escaped livestock — she has no autonomy.', topic: 'Context', difficulty: 'higher' },
+  { id: 'fb-6', question: 'Who wrote the poem?', type: 'multiple-choice', options: ['Elizabeth Barrett Browning', 'Charlotte Mew (1869-1928), a modernist poet who experienced personal tragedy', 'Jane Austen', 'Carol Ann Duffy'], correctIndex: 1, explanation: 'Charlotte Mew (1869-1928) was a modernist poet. Her own experience as a queer woman in a repressive society likely informed her sympathy for the trapped bride.', topic: 'Context', difficulty: 'higher' },
+  { id: 'fb-7', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'A dramatic monologue with varying line lengths and an irregular rhyme scheme', 'Free verse', 'Regular quatrains'], correctIndex: 1, explanation: 'The poem is a dramatic monologue with irregular line lengths and an inconsistent rhyme scheme. The formal irregularity mirrors the farmer\'s agitated, unstable emotional state.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'fb-8', question: 'What does the changing of seasons represent?', type: 'multiple-choice', options: ['Nothing — it is just setting', 'Time passing without resolution — each season brings new frustration as the marriage remains unconsummated', 'The farmer enjoys gardening', 'Hope for improvement'], correctIndex: 1, explanation: 'The poem moves through seasons — "three Summers" have passed. Time moves but nothing changes — the bride remains fearful, the farmer grows more frustrated, and the situation becomes increasingly tense.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'fb-9', question: 'How does Mew create sympathy for both characters?', type: 'multiple-choice', options: ['She doesn\'t — only the bride gets sympathy', 'The farmer is presented as genuinely confused and frustrated, not purely villainous — while the bride\'s fear is painfully real', 'Only the farmer gets sympathy', 'Neither character is sympathetic'], correctIndex: 1, explanation: 'Mew creates a complex portrait: the farmer is not a cartoon villain but a confused, lonely man. Yet his desire becomes increasingly threatening. The bride\'s terror is genuine and pitiable. Both are trapped.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'fb-10', question: 'Which poem pairs best with The Farmer\'s Bride?', type: 'multiple-choice', options: ['Singh Song!', 'Porphyria\'s Lover by Robert Browning', 'Walking Away', 'Eden Rock'], correctIndex: 1, explanation: 'Both The Farmer\'s Bride and Porphyria\'s Lover feature male speakers with possessive desire for women. Both use dramatic monologue to reveal disturbing psychology beneath a surface of love.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'The Farmer\'s Bride explores trapped marriage, female oppression, male desire, the nature vs culture divide, and the loss of agency.', keyPoints: ['Trapped marriage — the bride has no freedom or choice', 'Female oppression — caught and returned like property', 'Male desire — increasingly possessive and threatening', 'Nature vs culture — the bride belongs to nature, not human society'] },
+  { topic: 'Language & Imagery', summary: 'Mew uses animal comparisons, seasonal imagery, and an increasingly agitated voice to reveal the farmer\'s desire and the bride\'s fear.', keyPoints: ['Animal imagery — hare, mouse, leveret — the bride as wild creature', '"Her eyes, her hair, her hair!" — obsessive repetition', 'Seasonal change — time passes but nothing resolves', 'The bride compared to nature — she belongs outside, not in marriage'] },
+  { topic: 'Structure & Form', summary: 'A dramatic monologue with irregular line lengths and rhyme, mirroring the farmer\'s unstable emotional state.', keyPoints: ['Dramatic monologue — the farmer reveals more than he intends', 'Irregular form — reflects agitation and instability', 'Changing stanza lengths — tension builds toward the disturbing finale', 'Seasonal structure — time frames the growing frustration'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Mew present the relationship between the farmer and his bride?',
+  'Compare how desire is presented in The Farmer\'s Bride and one other poem from the anthology.',
+  'How does Mew use the dramatic monologue form to create sympathy and unease?',
+]
+
 const comparePoems = [
   {
     title: 'Letters from Yorkshire',
@@ -184,6 +211,13 @@ export default function TheFarmersBridePage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="The Farmer's Bride"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={farmersBridePoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const poemData: PoemData = {
   title: "Porphyria's Lover",
@@ -87,6 +88,32 @@ const poemData: PoemData = {
   ],
 }
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'pl-1', question: 'What does the speaker do to Porphyria?', type: 'multiple-choice', options: ['He proposes marriage', 'He strangles her with her own hair to preserve the perfect moment', 'He sends her away', 'He writes her a letter'], correctIndex: 1, explanation: 'In the poem\'s shocking climax, the speaker wraps Porphyria\'s hair around her throat and strangles her, believing this will preserve the moment of her love forever.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'pl-2', question: 'What form is the poem written in?', type: 'multiple-choice', options: ['A sonnet', 'A dramatic monologue in rhyming couplets', 'Free verse', 'A ballad'], correctIndex: 1, explanation: 'Like My Last Duchess, Porphyria\'s Lover is a dramatic monologue — a single speaker reveals his disturbed psychology to the reader through his own words.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'pl-3', question: 'What does pathetic fallacy achieve in the opening?', type: 'multiple-choice', options: ['Creates a cheerful mood', 'The violent storm reflects the speaker\'s disturbed mental state', 'Describes normal weather', 'Shows the season is summer'], correctIndex: 1, explanation: 'The storm that "tore the elm-tops" and "did its worst to vex the lake" mirrors the speaker\'s inner turmoil and foreshadows the violence to come.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'pl-4', question: 'Why does the speaker kill Porphyria?', type: 'multiple-choice', options: ['He hates her', 'He wants to possess her completely and freeze the moment she belongs entirely to him', 'She asks him to', 'It was an accident'], correctIndex: 1, explanation: 'The speaker believes Porphyria cannot always be his due to social barriers. By killing her at the moment she "worshipped" him, he freezes her love in time — the ultimate act of possession.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'pl-5', question: 'What is disturbing about the speaker\'s tone after the murder?', type: 'multiple-choice', options: ['He is filled with remorse', 'He is calm and matter-of-fact, showing no guilt — suggesting psychopathy', 'He calls for help', 'He is angry'], correctIndex: 1, explanation: 'After strangling her, the speaker calmly arranges her body and sits with her all night. His lack of guilt or horror is deeply disturbing and reveals a psychopathic detachment.', topic: 'Language', difficulty: 'higher' },
+  { id: 'pl-6', question: 'What does "And yet God has not said a word!" suggest?', type: 'multiple-choice', options: ['The speaker is religious', 'The speaker believes the murder is justified because God has not punished him', 'God approves of the murder', 'The speaker is praying'], correctIndex: 1, explanation: 'The final line is chilling — the speaker interprets God\'s silence as approval. His warped logic shows complete moral blindness, believing divine inaction equals divine endorsement.', topic: 'Language', difficulty: 'higher' },
+  { id: 'pl-7', question: 'Who wrote the poem and when?', type: 'multiple-choice', options: ['Shelley in 1819', 'Robert Browning in 1836', 'Hardy in 1867', 'Byron in 1816'], correctIndex: 1, explanation: 'Written by Robert Browning in 1836. Browning was fascinated by the psychology of disturbed minds and used the dramatic monologue form to let speakers reveal their true nature.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'pl-8', question: 'How does the poem explore power and control?', type: 'multiple-choice', options: ['Porphyria controls the speaker', 'The speaker seizes control by killing Porphyria — transforming a living woman into a possessed object', 'Power is shared equally', 'Neither character has power'], correctIndex: 1, explanation: 'Initially Porphyria has power — she enters, tends the fire, arranges herself. The murder reverses this completely. The speaker transforms a living, autonomous woman into a lifeless possession he can control.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'pl-9', question: 'How does enjambment function in the poem?', type: 'multiple-choice', options: ['It slows the poem down', 'The continuous flow creates a disturbing sense of the speaker\'s uninterrupted, obsessive thought process', 'It creates neat, contained thoughts', 'It has no particular effect'], correctIndex: 1, explanation: 'The enjambment creates a relentless, flowing monologue that mirrors the speaker\'s obsessive train of thought. There are no breaks — his disturbed logic rolls forward without pause for reflection.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'pl-10', question: 'Which poem pairs best with Porphyria\'s Lover?', type: 'multiple-choice', options: ['Walking Away', 'My Last Duchess (also by Browning)', 'Singh Song!', 'Climbing My Grandfather'], correctIndex: 1, explanation: 'Both are Browning dramatic monologues where a male speaker kills a woman he claims to love. Both explore possessive, controlling power through the voice of the perpetrator.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Porphyria\'s Lover explores obsessive love, possession, power, control, and the psychology of a disturbed mind.', keyPoints: ['Obsessive love — the speaker kills to possess Porphyria forever', 'Power reversal — Porphyria initially has power; the murder gives it to the speaker', 'Moral blindness — the speaker feels no guilt and believes God approves', 'The dramatic monologue reveals psychology the speaker cannot see himself'] },
+  { topic: 'Language & Imagery', summary: 'Browning uses pathetic fallacy, disturbing calm after violence, and the final shocking reference to God to reveal the speaker\'s psychopathy.', keyPoints: ['Pathetic fallacy — the storm mirrors the speaker\'s inner turmoil', 'Calm, matter-of-fact tone after the murder — no guilt or horror', '"And yet God has not said a word!" — chilling final line', 'Hair as murder weapon — intimacy twisted into violence'] },
+  { topic: 'Structure & Form', summary: 'A dramatic monologue in rhyming couplets with relentless enjambment, creating an unbroken flow of obsessive thought.', keyPoints: ['Dramatic monologue — the speaker unwittingly reveals his madness', 'Rhyming couplets — controlled form masks violent content', 'Enjambment — unbroken flow mirrors obsessive thinking', 'Single stanza — no breaks, no escape from the speaker\'s logic'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Browning present obsessive love in Porphyria\'s Lover?',
+  'Compare how power and control are presented in Porphyria\'s Lover and one other poem from the anthology.',
+  'How does Browning use the dramatic monologue form to reveal the speaker\'s disturbed psychology?',
+]
+
 const COMPARE_POEMS = [
   { title: 'When We Two Parted', href: '/revision/poetry/love-and-relationships/when-we-two-parted', reason: 'Both explore secret, forbidden love, but with vastly different responses -- grief vs. violence.' },
   { title: 'Sonnet 29', href: '/revision/poetry/love-and-relationships/sonnet-29', reason: 'Both feature a lover longing for possession, but EBB seeks healthy union while Browning\'s speaker seeks total control.' },
@@ -119,6 +146,13 @@ export default function PorphyriasLoverPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Porphyria's Lover"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={poemData} />
 
       {/* Compare With Section */}

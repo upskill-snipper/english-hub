@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const aPoisonTree: PoemData = {
   title: 'A Poison Tree',
@@ -363,6 +364,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'apt-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['Growing fruit trees', 'How suppressed anger grows into something deadly when left unexpressed', 'A friendship story', 'A recipe'], correctIndex: 1, explanation: 'Blake explores how suppressed anger festers and grows like a poisonous plant, ultimately destroying the person it is directed at. Expressed anger ("I told my wrath") ends quickly.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'apt-2', question: 'What does the apple symbolise?', type: 'multiple-choice', options: ['Healthy eating', 'Temptation and the deadly fruit of suppressed anger — echoing the forbidden fruit in Eden', 'A gift', 'Autumn harvest'], correctIndex: 1, explanation: 'The apple alludes to the forbidden fruit in the Garden of Eden. The speaker\'s anger has grown into something tempting but deadly — the foe eats it and dies.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'apt-3', question: 'What is the contrast in the opening stanza?', type: 'multiple-choice', options: ['Day vs night', 'Expressed anger (with a friend, which ends) vs suppressed anger (with a foe, which grows)', 'Love vs hate', 'Past vs present'], correctIndex: 1, explanation: 'The first two lines show anger expressed openly to a friend, which resolves. The second two show anger hidden from a foe, which grows. Communication vs suppression.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'apt-4', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Four quatrains with AABB rhyme — simple, nursery-rhyme-like form', 'Free verse', 'Blank verse'], correctIndex: 1, explanation: 'Four quatrains with simple AABB rhyme. The nursery-rhyme quality is deliberate — Blake wrote it for Songs of Experience, using childlike form for dark adult content.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'apt-5', question: 'What does "I watered it in fears" suggest?', type: 'multiple-choice', options: ['The speaker cried on the tree', 'The speaker nurtures their anger with fear and deceit, making it grow stronger', 'The speaker is gardening', 'Rain falls on the tree'], correctIndex: 1, explanation: 'The extended metaphor presents anger as a plant that the speaker deliberately nurtures with negative emotions — fears, tears, sunning it with "deceitful wiles".', topic: 'Language', difficulty: 'higher' },
+  { id: 'apt-6', question: 'Who wrote the poem and what is its context?', type: 'multiple-choice', options: ['Wordsworth in 1800', 'William Blake, published in Songs of Experience (1794) — exploring how innocence is corrupted', 'Byron in 1816', 'Keats in 1819'], correctIndex: 1, explanation: 'Blake published it in Songs of Experience (1794). The collection explores how the adult world corrupts innocence — in this case, how social convention (hiding anger) creates deadly outcomes.', topic: 'Context', difficulty: 'higher' },
+  { id: 'apt-7', question: 'What is disturbing about the final stanza?', type: 'multiple-choice', options: ['Nothing — it is happy', 'The speaker is "glad" the foe is dead — they feel no guilt, showing how suppressed anger has corrupted them entirely', 'The foe survives', 'The tree is cut down'], correctIndex: 1, explanation: 'The speaker sees the foe "outstretched beneath the tree" and is glad. The lack of guilt shows how nurturing anger has morally corrupted the speaker — they have become the poison.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'apt-8', question: 'How does Blake use the Garden of Eden allusion?', type: 'multiple-choice', options: ['To celebrate nature', 'The poisonous apple echoes the forbidden fruit — anger creates its own tempting, deadly Eden', 'To describe a real garden', 'It is coincidental'], correctIndex: 1, explanation: 'The apple, the tree, and the garden echo Genesis. But Blake\'s Eden is inverted — the speaker is both serpent (tempter) and God (cultivator), and the fruit is anger, not knowledge.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'apt-9', question: 'What does the extended metaphor of the tree represent?', type: 'multiple-choice', options: ['Nature\'s beauty', 'Anger as a living thing that grows when nurtured — suppressed wrath is organic, deliberate, and ultimately lethal', 'A family tree', 'Environmental concerns'], correctIndex: 1, explanation: 'The tree is anger itself — planted by suppression, watered by tears and fears, sunned by deceit. It grows from emotion into a physical, deadly force. Blake shows anger as something cultivated, not spontaneous.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'apt-10', question: 'Which poem pairs well with A Poison Tree for comparing attitudes to conflict?', type: 'multiple-choice', options: ['To Autumn', 'The Destruction of Sennacherib by Byron', 'Westminster Bridge', 'I Started Early'], correctIndex: 1, explanation: 'Both A Poison Tree and The Destruction of Sennacherib explore destruction and the consequences of conflict, though Blake focuses on personal/emotional conflict and Byron on military destruction.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'A Poison Tree explores the danger of suppressed anger, the corruption of honesty, and how concealed emotions grow into something deadly.', keyPoints: ['Suppressed anger grows and kills; expressed anger resolves', 'The speaker deliberately nurtures their anger', 'Biblical allusion — the poisonous apple echoes Eden', 'Moral corruption — the speaker feels glad, not guilty'] },
+  { topic: 'Language & Imagery', summary: 'Blake uses an extended tree/plant metaphor, biblical allusion, and deceptively simple language to explore the deadly growth of anger.', keyPoints: ['Extended metaphor — anger as a tree that grows when nurtured', 'Eden allusion — the apple as temptation and death', '"Watered it in fears" — anger fed by negative emotions', '"Glad" — the speaker\'s lack of guilt shows moral corruption'] },
+  { topic: 'Structure & Form', summary: 'Four quatrains with AABB rhyme — the childlike nursery-rhyme form masks dark, adult content about anger and death.', keyPoints: ['AABB rhyme — simple form for complex moral content', 'Songs of Experience — paired with Songs of Innocence', 'Contrast in opening — expressed vs suppressed anger', 'Narrative progression — planting to harvesting death'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Blake present the dangers of suppressed anger in A Poison Tree?',
+  'Compare how conflict is explored in A Poison Tree and one other poem from the anthology.',
+  'How does Blake use the extended metaphor of the tree to convey his message about anger?',
+]
+
 export default function APoisonTreePage() {
   return (
     <div className="space-y-8">
@@ -398,6 +424,13 @@ export default function APoisonTreePage() {
         cluster="Conflict"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="A Poison Tree"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={aPoisonTree} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

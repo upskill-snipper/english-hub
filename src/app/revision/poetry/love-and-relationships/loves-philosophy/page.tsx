@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const poemData: PoemData = {
   title: "Love's Philosophy",
@@ -57,6 +58,31 @@ const poemData: PoemData = {
   ],
 }
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'lp-1', question: 'What is the speaker trying to do in Love\'s Philosophy?', type: 'multiple-choice', options: ['Describe a beautiful landscape', 'Persuade someone to love him by arguing that everything in nature is united', 'Write a scientific essay about nature', 'End a relationship'], correctIndex: 1, explanation: 'Shelley uses examples from nature (rivers, winds, mountains) to argue that everything naturally joins together — so why won\'t his beloved do the same? It is a persuasive love poem.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'lp-2', question: 'What technique dominates the poem?', type: 'multiple-choice', options: ['Dramatic monologue', 'Extended use of natural imagery and personification to argue for love', 'War imagery', 'Stream of consciousness'], correctIndex: 1, explanation: 'Shelley personifies nature throughout — rivers "mingle", mountains "clasp", the moon "kisses" the sea. Each example serves as evidence in his argument that love is natural.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'lp-3', question: 'What does "And the sunlight clasps the earth" suggest?', type: 'multiple-choice', options: ['The sun is too hot', 'Even cosmic forces embrace each other — making human love seem natural and universal', 'The earth is cold', 'It describes a sunset'], correctIndex: 1, explanation: '"Clasps" personifies sunlight as embracing the earth. Shelley elevates his argument to a cosmic scale — if the sun and earth unite, human love should follow.', topic: 'Language', difficulty: 'higher' },
+  { id: 'lp-4', question: 'What is the effect of the rhetorical questions at each stanza\'s end?', type: 'multiple-choice', options: ['They show the speaker is confused', 'They challenge the beloved — if nature is united, why are they apart?', 'They are philosophical digressions', 'They show the speaker has given up'], correctIndex: 1, explanation: 'The rhetorical questions function as the climax of each stanza — after presenting evidence from nature, the speaker challenges the beloved directly: why won\'t you yield?', topic: 'Language', difficulty: 'higher' },
+  { id: 'lp-5', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Two stanzas with a regular ABAB rhyme scheme', 'A sonnet', 'Blank verse'], correctIndex: 1, explanation: 'The poem has two eight-line stanzas with ABAB rhyme. The controlled, persuasive structure mirrors the speaker\'s logical argument.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'lp-6', question: 'Who wrote it and when?', type: 'multiple-choice', options: ['1850 by Tennyson', '1819 by Percy Bysshe Shelley, a major Romantic poet', '1914 by Owen', '1960 by Hughes'], correctIndex: 1, explanation: 'Written in 1819 by Shelley, one of the major Romantic poets. The Romantics celebrated nature, emotion, and passionate love.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'lp-7', question: 'How does the final line of each stanza function?', type: 'multiple-choice', options: ['It summarises the stanza', 'It undercuts nature imagery with personal frustration — revealing the argument\'s failure', 'It celebrates success in love', 'It describes more nature'], correctIndex: 1, explanation: 'Each stanza ends with a direct appeal. After grand natural imagery, the final lines reveal frustration — nature may be united, but the beloved is not persuaded.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'lp-8', question: 'What does the personification of nature suggest about love?', type: 'multiple-choice', options: ['Love is artificial', 'Love is a natural, universal force — as inevitable as rivers flowing to the sea', 'Love is only for poets', 'Love is dangerous'], correctIndex: 1, explanation: 'By showing nature in constant union, Shelley argues love is not a human invention but a universal law of nature. Resisting love is resisting nature itself.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'lp-9', question: 'Is the speaker\'s argument ultimately successful?', type: 'multiple-choice', options: ['Yes — the beloved agrees', 'No — despite all his evidence, the final lines reveal frustrated, unrequited desire', 'The poem is purely descriptive', 'Partially successful'], correctIndex: 1, explanation: 'Despite the elaborate argument, the poem ends with frustrated questions. The beloved has not been persuaded, creating tension between confident logic and emotional failure.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'lp-10', question: 'Which poem offers the strongest contrast to Love\'s Philosophy?', type: 'multiple-choice', options: ['Singh Song!', 'Neutral Tones by Thomas Hardy', 'Climbing My Grandfather', 'Walking Away'], correctIndex: 1, explanation: 'Neutral Tones offers a polar opposite — Hardy\'s bleak proof of love\'s failure vs Shelley\'s optimistic argument for love. Both use nature imagery but to opposite effects.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Love\'s Philosophy explores desire, natural imagery as evidence for love, persuasion, and the frustration of unrequited love.', keyPoints: ['Love is natural and universal — everything in nature is united', 'Persuasion — the speaker builds a logical argument from nature', 'Frustration — despite his argument, the beloved is not persuaded', 'Romanticism — nature, emotion, and passion are celebrated'] },
+  { topic: 'Language & Imagery', summary: 'Shelley uses personification of nature, rhetorical questions, and cumulative listing to build his persuasive argument.', keyPoints: ['"The fountains mingle with the river" — natural union as evidence', '"The sunlight clasps the earth" — cosmic personification', 'Rhetorical questions challenge the beloved directly', 'Listing of natural pairs builds overwhelming evidence'] },
+  { topic: 'Structure & Form', summary: 'Two regular stanzas with ABAB rhyme. The controlled form mirrors the argument, while frustrated final lines reveal its failure.', keyPoints: ['Two parallel stanzas build the argument', 'ABAB rhyme scheme — orderly, persuasive form', 'Final lines shift from nature to personal appeal', 'Regular metre creates a song-like, persuasive quality'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Shelley present desire in Love\'s Philosophy?',
+  'Compare how love is presented in Love\'s Philosophy and one other poem from the anthology.',
+  'How does Shelley use natural imagery to build his argument for love?',
+]
+
 const COMPARE_POEMS = [
   { title: 'When We Two Parted', href: '/revision/poetry/love-and-relationships/when-we-two-parted', reason: 'Contrasting Romantic perspectives -- Shelley celebrates love\'s potential; Byron mourns its death.' },
   { title: 'Sonnet 29', href: '/revision/poetry/love-and-relationships/sonnet-29', reason: 'Both use natural imagery to express desire, but EBB writes from a position of reciprocated love.' },
@@ -89,6 +115,14 @@ export default function LovesPhilosophyPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="Love's Philosophy"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={poemData} />
 
       {/* Compare With Section */}

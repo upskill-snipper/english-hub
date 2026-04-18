@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -254,6 +255,32 @@ const climbingMyGrandfatherPoem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'cmg-1', question: 'What is the poem\'s central extended metaphor?', type: 'multiple-choice', options: ['Swimming in the sea', 'The speaker climbs their grandfather like a mountain, exploring their relationship through physical ascent', 'Building a house', 'Painting a portrait'], correctIndex: 1, explanation: 'The entire poem is an extended metaphor: the speaker climbs their grandfather\'s body as if scaling a mountain, using each physical feature as a handhold to explore their relationship.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'cmg-2', question: 'What does the climbing represent?', type: 'multiple-choice', options: ['Literal rock climbing', 'Getting to know the grandfather deeply — physical closeness represents emotional understanding', 'Running away from home', 'A competition'], correctIndex: 1, explanation: 'The climb represents the process of truly knowing someone. Each body part the speaker touches reveals something about the grandfather — his work, character, and warmth.', topic: 'Themes', difficulty: 'foundation' },
+  { id: 'cmg-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Rhyming couplets in stanzas', 'A single continuous stanza of free verse', 'A sonnet', 'Quatrains with ABAB rhyme'], correctIndex: 1, explanation: 'A single continuous block with no stanza breaks, mirroring the unbroken, sustained effort of climbing. The free verse reflects the natural, organic relationship.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'cmg-4', question: 'What does "knowing the slow pulse of his good heart" suggest?', type: 'multiple-choice', options: ['The grandfather has a heart condition', 'The speaker has achieved deep, intimate knowledge of the grandfather\'s character — "good heart" is both literal and metaphorical', 'The speaker is a doctor', 'The climb has ended'], correctIndex: 1, explanation: 'Reaching the summit (the head) and feeling the heartbeat represents achieving the deepest possible understanding. "Good heart" works literally (his heartbeat) and metaphorically (his kind nature).', topic: 'Language', difficulty: 'higher' },
+  { id: 'cmg-5', question: 'Who wrote the poem?', type: 'multiple-choice', options: ['Seamus Heaney', 'Andrew Waterhouse (1958-2001), who died by suicide shortly after publication', 'Simon Armitage', 'Ted Hughes'], correctIndex: 1, explanation: 'Andrew Waterhouse (1958-2001) wrote the poem. He died by suicide in 2001, giving the poem\'s celebration of familial love an additional poignancy in retrospect.', topic: 'Context', difficulty: 'higher' },
+  { id: 'cmg-6', question: 'What does "without a rope or net" suggest?', type: 'multiple-choice', options: ['The speaker is reckless', 'The speaker approaches the relationship with trust and vulnerability — no safety nets, just genuine connection', 'Mountain climbing is dangerous', 'The grandfather is very tall'], correctIndex: 1, explanation: '"Without a rope or net" suggests the speaker approaches the relationship with complete trust. There is vulnerability in truly knowing someone, but the speaker chooses openness.', topic: 'Language', difficulty: 'higher' },
+  { id: 'cmg-7', question: 'How does the poem use the body to structure its narrative?', type: 'multiple-choice', options: ['Randomly', 'The speaker climbs from feet to head, with each body part revealing character — creating a journey of discovery', 'Only the face is described', 'The body is ignored'], correctIndex: 1, explanation: 'The poem progresses upward from feet through knees, chest, and face to the summit of the head. Each body part reveals something about the grandfather — his work-roughened hands, kind eyes, warm skin.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'cmg-8', question: 'What does the mountain metaphor suggest about the grandfather?', type: 'multiple-choice', options: ['He is cold and distant', 'He is vast, solid, enduring, and worth the effort of understanding — like a mountain worth climbing', 'He is dangerous', 'He is small'], correctIndex: 1, explanation: 'The mountain metaphor presents the grandfather as something vast, ancient, and enduring — worthy of the sustained effort needed to know him fully. He is a landscape to be explored.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'cmg-9', question: 'How does the lack of stanza breaks reflect the poem\'s meaning?', type: 'multiple-choice', options: ['It is a printing error', 'The continuous block mirrors the unbroken, sustained effort of truly knowing someone — no pauses or shortcuts', 'It makes the poem shorter', 'It has no connection to meaning'], correctIndex: 1, explanation: 'The single block mirrors the continuous, uninterrupted effort of climbing/knowing someone. There are no convenient resting points — the relationship demands sustained engagement.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'cmg-10', question: 'Which poem pairs best with Climbing My Grandfather?', type: 'multiple-choice', options: ['Porphyria\'s Lover', 'Follower by Seamus Heaney', 'Neutral Tones', 'When We Two Parted'], correctIndex: 1, explanation: 'Both Climbing My Grandfather and Follower explore admiration for a male family figure (grandfather/father). Both use physical, tactile imagery to convey emotional closeness.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Climbing My Grandfather explores familial love, the process of truly knowing someone, trust, and the enduring presence of family.', keyPoints: ['Getting to know someone — the climb represents deepening understanding', 'Trust and vulnerability — "without a rope or net"', 'Physical closeness as emotional intimacy', 'The grandfather as enduring, solid, and worth knowing'] },
+  { topic: 'Language & Imagery', summary: 'Waterhouse uses an extended mountain-climbing metaphor, tactile body imagery, and warmth to celebrate familial intimacy.', keyPoints: ['Extended metaphor — grandfather as mountain to be climbed', '"Without a rope or net" — trust and openness', 'Body parts as landscape features — hands like ridges, skin like earth', '"The slow pulse of his good heart" — literal and metaphorical warmth'] },
+  { topic: 'Structure & Form', summary: 'A single continuous stanza of free verse — the unbroken block mirrors the sustained effort of truly knowing someone.', keyPoints: ['Single stanza — no breaks, no shortcuts in understanding someone', 'Free verse — organic, natural rhythm matching the relationship', 'Upward progression — feet to head mirrors deepening knowledge', 'Present tense — the relationship is ongoing and alive'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Waterhouse present the relationship between grandchild and grandfather in Climbing My Grandfather?',
+  'Compare how family relationships are presented in Climbing My Grandfather and one other poem from the anthology.',
+  'How does Waterhouse use the extended metaphor of climbing to explore love and understanding?',
+]
+
 const comparePoems = [
   {
     title: 'Mother, any distance',
@@ -322,6 +349,13 @@ export default function ClimbingMyGrandfatherPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Climbing My Grandfather"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={climbingMyGrandfatherPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -308,6 +309,32 @@ const singhSongPoem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'ss-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['Running a supermarket', 'A young shopkeeper who neglects his father\'s shop to spend time with his new wife, celebrating their playful love', 'A cooking competition', 'A family argument about business'], correctIndex: 1, explanation: 'The speaker runs his father\'s shop but keeps sneaking upstairs to be with his new wife. The poem celebrates their joyful, uninhibited love through humour and cultural detail.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'ss-2', question: 'What language does Nagra use and why?', type: 'multiple-choice', options: ['Standard English only', 'A mixture of Punjabi-English dialect and Standard English, celebrating dual cultural identity', 'Only Punjabi', 'French'], correctIndex: 1, explanation: 'Nagra blends Punjabi-English dialect with Standard English, reflecting the speaker\'s British-Indian identity. The language itself celebrates cultural hybridity.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'ss-3', question: 'What is the wife like?', type: 'multiple-choice', options: ['Quiet and traditional', 'Rebellious, playful, and unconventional — she defies traditional expectations', 'Angry and critical', 'Absent from the poem'], correctIndex: 1, explanation: 'The wife is described as unconventional and rebellious — she puts her "red crew-Loss Loss cut" in the mirror, challenges traditional roles, and is playfully disruptive. She defies expectations.', topic: 'Meaning', difficulty: 'higher' },
+  { id: 'ss-4', question: 'What is the tone of the poem?', type: 'multiple-choice', options: ['Sad and melancholy', 'Joyful, humorous, and celebratory — love is presented as fun and liberating', 'Angry and bitter', 'Formal and serious'], correctIndex: 1, explanation: 'The poem is consistently joyful and humorous. Love is presented as playful, passionate, and liberating — a stark contrast to the more painful love poems in the anthology.', topic: 'Themes', difficulty: 'foundation' },
+  { id: 'ss-5', question: 'What does the shop represent?', type: 'multiple-choice', options: ['Wealth and success', 'Duty, family expectation, and the older generation — which the speaker neglects for love', 'A happy workplace', 'The speaker\'s dream'], correctIndex: 1, explanation: 'The shop represents duty, family responsibility, and the expectations of the older generation (the father). The speaker\'s neglect of it for love shows passion triumphing over obligation.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'ss-6', question: 'Who is Daljit Nagra?', type: 'multiple-choice', options: ['A Victorian poet', 'A British-Indian poet who explores Punjabi-British identity through humour and dialect', 'A war poet', 'A Romantic poet'], correctIndex: 1, explanation: 'Daljit Nagra (b. 1966) is a British poet of Punjabi heritage. His poetry celebrates the experience of second-generation British-Indians, using humour and dialect.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'ss-7', question: 'How does the poem challenge traditional presentations of love?', type: 'multiple-choice', options: ['It follows conventions exactly', 'It presents love through humour, cultural specificity, and physical comedy rather than romantic idealism', 'It avoids love entirely', 'It criticises love'], correctIndex: 1, explanation: 'Singh Song! replaces Western romantic conventions with playful, culturally specific imagery. Love is expressed through shared chutney, sneaking from the shop, and irreverent humour.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'ss-8', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'A long free-verse poem with a song-like refrain ("Singh Song!") and dialogue sections', 'Blank verse', 'Quatrains'], correctIndex: 1, explanation: 'The poem uses free verse with a distinctive song-like quality (the title itself is a pun on "sing-song"). Dialogue sections and refrains create a musical, oral-tradition feel.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'ss-9', question: 'What is the effect of the customers\' complaints?', type: 'multiple-choice', options: ['They make the speaker sad', 'Their comic complaints highlight the speaker\'s neglect of duty — but the reader sides with love over commerce', 'They are supportive', 'They are ignored entirely'], correctIndex: 1, explanation: 'The customers\' frustrated complaints about out-of-date produce and poor service provide comic contrast. The reader enjoys the speaker\'s prioritisation of love over the mundane duty of shopkeeping.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'ss-10', question: 'Which poem pairs best with Singh Song!?', type: 'multiple-choice', options: ['Neutral Tones', 'Letters from Yorkshire by Maura Dooley', 'Exposure', 'Ozymandias'], correctIndex: 1, explanation: 'Both Singh Song! and Letters from Yorkshire explore relationships within specific cultural/social settings. Both present love through everyday, unglamorous detail rather than romantic idealism.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Singh Song! celebrates joyful, playful love, cultural identity, the tension between duty and desire, and unconventional relationships.', keyPoints: ['Love as joy and play — contrasts with painful love poems in the anthology', 'Duty vs desire — the shop (obligation) vs the wife (passion)', 'Cultural identity — Punjabi-British experience celebrated through language', 'The wife as unconventional — she defies traditional expectations'] },
+  { topic: 'Language & Imagery', summary: 'Nagra uses Punjabi-English dialect, humour, food imagery, and playful cultural references to celebrate love.', keyPoints: ['Punjabi-English dialect — language as cultural identity', 'Food imagery — chutney and cooking as expressions of intimacy', 'Humour — love is fun, not solemn', 'Customers\' complaints — comic contrast with the love story'] },
+  { topic: 'Structure & Form', summary: 'Free verse with song-like qualities, dialogue sections, and a refrain. The loose form mirrors the speaker\'s carefree attitude.', keyPoints: ['Free verse — no rigid form, matching the speaker\'s freedom', 'Song-like refrain — "Singh Song!" as musical, oral quality', 'Dialogue — voices of customers contrast with the love story', 'Long, flowing lines — energy and exuberance'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Nagra present love as joyful and liberating in Singh Song!?',
+  'Compare how love is celebrated in Singh Song! and one other poem from the anthology.',
+  'How does Nagra use language and form to explore cultural identity and love?',
+]
+
 const comparePoems = [
   {
     title: 'Letters from Yorkshire',
@@ -376,6 +403,13 @@ export default function SinghSongPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Singh Song!"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={singhSongPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

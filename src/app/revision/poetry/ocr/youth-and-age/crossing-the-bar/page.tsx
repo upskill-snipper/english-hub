@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const crossingTheBar: PoemData = {
   title: 'Crossing the Bar',
@@ -337,6 +338,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'ctb-1', question: 'What is "crossing the bar" a metaphor for?', type: 'multiple-choice', options: ['Entering a pub', 'Death — crossing from life to the afterlife, like a ship crossing the sandbar into the open ocean', 'Passing a test', 'Crossing a bridge'], correctIndex: 1, explanation: 'The "bar" is a sandbar at a harbour mouth. Crossing it takes the ship from sheltered water to open sea — a metaphor for the soul\'s journey from life to death and beyond.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'ctb-2', question: 'What is the speaker\'s attitude to death?', type: 'multiple-choice', options: ['Terror', 'Calm acceptance — death is a peaceful transition, not something to fear or mourn', 'Anger', 'Indifference'], correctIndex: 1, explanation: 'The speaker faces death with remarkable calm. He asks for "no moaning of the bar" — no sadness — and hopes to meet his "Pilot" (God) "face to face" after death.', topic: 'Themes', difficulty: 'foundation' },
+  { id: 'ctb-3', question: 'What does "I hope to see my Pilot face to face" mean?', type: 'multiple-choice', options: ['He wants to fly a plane', 'The "Pilot" is God — the speaker hopes to meet God after death', 'He wants to meet a ship\'s captain', 'He hopes to navigate well'], correctIndex: 1, explanation: 'The "Pilot" is God or a divine guide. Just as a ship\'s pilot guides a vessel through dangerous waters, God guides the soul from life to death and into eternity.', topic: 'Language', difficulty: 'higher' },
+  { id: 'ctb-4', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Four quatrains with ABAB rhyme — the regular, calm form mirrors the peaceful acceptance of death', 'Free verse', 'Blank verse'], correctIndex: 1, explanation: 'Four neat quatrains with regular rhyme. The calm, orderly structure matches the speaker\'s serene acceptance of death — there is no formal disruption because there is no emotional turmoil.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'ctb-5', question: 'When was it written?', type: 'multiple-choice', options: ['In his youth', '1889, three years before Tennyson\'s death — he asked that it always be placed at the end of his collected poems', '1850', '1814'], correctIndex: 1, explanation: 'Written in 1889 when Tennyson was 80 and in declining health. He requested it be placed last in every edition of his poetry — as a farewell.', topic: 'Context', difficulty: 'higher' },
+  { id: 'ctb-6', question: 'What does "no moaning of the bar" mean?', type: 'multiple-choice', options: ['The bar should be quiet', 'The speaker asks that there be no mourning or sadness at his death — it should be a peaceful departure', 'A technical sailing term only', 'The sea should be calm'], correctIndex: 1, explanation: '"Moaning of the bar" has a double meaning — the sound of waves on the sandbar and the moaning of mourners. The speaker asks for neither — death should be a calm, quiet transition.', topic: 'Language', difficulty: 'higher' },
+  { id: 'ctb-7', question: 'How does the sea metaphor sustain the entire poem?', type: 'multiple-choice', options: ['It doesn\'t', 'Every element of the extended sea metaphor maps onto death: the bar is the boundary, the tide is the life force, the Pilot is God, the open sea is eternity', 'Only one line mentions the sea', 'The sea is literal only'], correctIndex: 1, explanation: 'The extended metaphor is perfectly sustained: harbour = life, bar = death\'s threshold, open sea = eternity, tide = life force, Pilot = God. Every nautical element has a spiritual meaning.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'ctb-8', question: 'What does "may there be no sadness of farewell" request?', type: 'multiple-choice', options: ['The speaker has no friends', 'Death should be treated as a departure, not an ending — the speaker moves on rather than being lost', 'He doesn\'t want a funeral', 'He wants to be forgotten'], correctIndex: 1, explanation: 'The speaker reframes death as departure rather than loss. He is not vanishing but travelling — going to meet his Pilot. There should be no grief because he is going somewhere, not nowhere.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'ctb-9', question: 'How does the poem balance personal faith and universal experience?', type: 'multiple-choice', options: ['It is only about faith', 'The maritime metaphor makes death universally accessible while the "Pilot" grounds it in personal Christian faith', 'It avoids faith entirely', 'It is only about sailing'], correctIndex: 1, explanation: 'The poem works on two levels: the sea metaphor is universal (anyone can understand a journey), while the "Pilot" anchors it in Tennyson\'s personal Christian faith. It is both personal and universal.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'ctb-10', question: 'Which poem pairs well with Crossing the Bar?', type: 'multiple-choice', options: ['The Eagle', 'When I Have Fears by Keats', 'She Walks in Beauty', 'Neutral Tones'], correctIndex: 1, explanation: 'Both Crossing the Bar and When I Have Fears address mortality. Tennyson faces death with calm acceptance; Keats faces it with anxiety and unfulfilled desire. Opposite responses to the same theme.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Crossing the Bar presents death as a peaceful departure into eternity, faced with calm acceptance and Christian faith.', keyPoints: ['Death as journey — crossing from harbour to open sea', 'Calm acceptance — "no moaning of the bar"', 'Faith — the "Pilot" (God) awaits after death', 'Departure not ending — the speaker moves on, not into nothing'] },
+  { topic: 'Language & Imagery', summary: 'Tennyson uses a perfectly sustained maritime metaphor where every nautical element maps onto the spiritual journey of death.', keyPoints: ['The bar = death\'s threshold', 'The tide = life force', 'The Pilot = God', '"No sadness of farewell" — reframing death as departure'] },
+  { topic: 'Structure & Form', summary: 'Four calm, regular quatrains — the orderly form mirrors the peaceful acceptance of death.', keyPoints: ['Four quatrains — regular, undisrupted form', 'ABAB rhyme — orderly, peaceful', 'No formal disruption — no emotional turmoil', 'Final request — a farewell placed last in his collected works'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Tennyson present death as a peaceful journey in Crossing the Bar?',
+  'Compare how death is presented in Crossing the Bar and one other poem from the anthology.',
+  'How does Tennyson use the extended maritime metaphor to explore mortality and faith?',
+]
+
 export default function CrossingTheBarPage() {
   return (
     <div className="space-y-8">
@@ -372,6 +398,13 @@ export default function CrossingTheBarPage() {
         cluster="Youth and Age"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Crossing the Bar"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={crossingTheBar} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

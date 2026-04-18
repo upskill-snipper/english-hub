@@ -8,6 +8,7 @@ import {
   PoemData,
 } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Metadata ──────────────────────────────────────────────────── */
 
@@ -336,6 +337,150 @@ const THEMES = [
   { label: 'Power of art', color: 'bg-emerald-500/15 text-emerald-400' },
 ]
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'wp-1',
+    question: 'Where is the war photographer at the start of the poem?',
+    type: 'multiple-choice',
+    options: ['In a warzone taking photos', 'In his darkroom in England, developing photographs', 'At a newspaper office', 'In a hospital'],
+    correctIndex: 1,
+    explanation: 'The poem opens with the photographer "finally alone" in his darkroom, developing film from his latest assignment. The darkroom becomes a metaphorical space between the worlds of war and peace.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'wp-2',
+    question: 'What does Duffy compare the darkroom to?',
+    type: 'multiple-choice',
+    options: ['A prison cell', 'A church — with the photographer as a priest performing a sacred duty', 'A battlefield', 'A classroom'],
+    correctIndex: 1,
+    explanation: 'The darkroom is compared to a church, with the photographer as "a priest preparing to intone a Mass." This elevates his work to something sacred and reverential — bearing witness to suffering is a moral duty.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'wp-3',
+    question: 'What does "spools of suffering set out in ordered rows" suggest?',
+    type: 'multiple-choice',
+    options: ['The photographer enjoys organising his equipment', 'Real human suffering has been captured on film and can be ordered and filed — a disturbing contrast', 'The film is damaged and needs repair', 'The darkroom is messy'],
+    correctIndex: 1,
+    explanation: '"Spools of suffering" shows that real pain has been wound onto film. The contrast between the "ordered rows" and the chaos of war highlights the tension between documenting suffering and containing it.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'wp-4',
+    question: 'What is the main theme of War Photographer?',
+    type: 'multiple-choice',
+    options: ['The excitement of photojournalism', 'The moral dilemma of witnessing suffering and the public\'s indifference to war', 'The beauty of black and white photography', 'The photographer\'s love of travel'],
+    correctIndex: 1,
+    explanation: 'The poem explores the photographer\'s moral burden: he witnesses terrible suffering, but the public in "Rural England" barely engages with his images. Duffy critiques society\'s comfortable indifference to others\' pain.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'wp-5',
+    question: 'What does "fields which don\'t explode beneath the feet" highlight?',
+    type: 'multiple-choice',
+    options: ['England has good farmland', 'The jarring contrast between the safety of England and the lethal danger of war zones', 'The photographer enjoys walking in fields', 'English fields are better maintained'],
+    correctIndex: 1,
+    explanation: 'This line juxtaposes the safety of English countryside with the horror of minefields. The simple, understated comparison makes the reader confront the vast gap between their comfortable life and the reality of conflict zones.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'wp-6',
+    question: 'What happens to the photograph\'s emotional impact in the final stanza?',
+    type: 'multiple-choice',
+    options: ['It inspires the public to take action', 'The editor selects only the images that will sell, and the public\'s sympathy is fleeting — "they do not care"', 'The photographs are exhibited in a gallery', 'The photographer destroys them'],
+    correctIndex: 1,
+    explanation: 'In the final stanza, the editor picks a few images to publish. Readers may feel a "prick" of emotion over their Sunday supplement, but their sympathy is brief and surface-level — they return to their comfortable lives.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'wp-7',
+    question: 'What is the effect of the regular form — four six-line stanzas with a consistent rhyme scheme?',
+    type: 'multiple-choice',
+    options: ['It makes the poem boring', 'The controlled, ordered form mirrors the photographer\'s attempt to impose order on the chaos of war', 'It reflects the randomness of war', 'It was Duffy\'s only available form'],
+    correctIndex: 1,
+    explanation: 'The neat, ordered stanzas mirror the photographer\'s methodical process of developing images. Just as he organises suffering into "ordered rows", the form imposes structure on emotional chaos.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'wp-8',
+    question: 'Who is Carol Ann Duffy, and what inspired this poem?',
+    type: 'multiple-choice',
+    options: ['A war reporter who served in Iraq', 'A Poet Laureate inspired by the work of photojournalists like Don McCullin who documented conflict', 'A photographer who wrote poetry as a hobby', 'A war historian'],
+    correctIndex: 1,
+    explanation: 'Carol Ann Duffy (b. 1955) became the UK Poet Laureate in 2009. The poem was inspired by the work of photojournalists like Don McCullin, who documented the horrors of conflict in Vietnam, Biafra, and Northern Ireland.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'wp-9',
+    question: 'How does the sibilance in "spools of suffering set out in ordered rows" contribute to the poem\'s tone?',
+    type: 'multiple-choice',
+    options: ['It creates an aggressive, angry tone', 'The soft, repeated "s" sounds create a hushed, reverential tone — like a whispered prayer, reinforcing the church simile', 'It imitates the sound of camera clicks', 'It makes the line difficult to read'],
+    correctIndex: 1,
+    explanation: 'The sibilant "s" sounds create a soft, solemn, almost sacred atmosphere — consistent with the comparison of the darkroom to a church. The photographer approaches his work with the quiet reverence of a priest.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'wp-10',
+    question: 'Which poem from the Power and Conflict anthology best pairs with War Photographer for comparing responses to suffering?',
+    type: 'multiple-choice',
+    options: ['Ozymandias by Shelley', 'Remains by Simon Armitage', 'The Prelude by Wordsworth', 'Storm on the Island by Heaney'],
+    correctIndex: 1,
+    explanation: 'Both War Photographer and Remains explore the lasting psychological impact of witnessing violence. The photographer observes suffering; the soldier in Remains directly causes death. Both are haunted by what they have experienced.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'War Photographer explores the moral burden of witnessing suffering, the contrast between war zones and comfortable England, and society\'s indifference to distant conflict.',
+    keyPoints: [
+      'Moral duty vs public indifference — the photographer bears witness, but the public does not care',
+      'Contrast between England and war zones — "fields which don\'t explode beneath the feet"',
+      'The inadequacy of images — photographs cannot fully convey the horror',
+      'Emotional numbness — the photographer must suppress his feelings to do his job',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Duffy uses religious imagery, sibilance, contrast, and carefully controlled language to convey the tension between professional duty and emotional devastation.',
+    keyPoints: [
+      'Religious imagery: darkroom as "church", photographer as "priest" — sacred duty',
+      '"Spools of suffering set out in ordered rows" — sibilance and metaphor',
+      '"Rural England" vs war zones — vast contrast in safety and comfort',
+      '"A hundred agonies in black-and-white" — suffering reduced to newspaper images',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Four regular six-line stanzas with a controlled rhyme scheme — the ordered form mirrors the photographer\'s attempt to impose structure on chaos.',
+    keyPoints: [
+      'Regular stanzas — orderly form contrasts with chaotic subject matter',
+      'Progression: darkroom (1) --> memories intrude (2-3) --> public indifference (4)',
+      'Enjambment at key moments creates urgency and emotional overflow',
+      'Final stanza shifts focus from photographer to apathetic public',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Duffy present the impact of conflict on the war photographer?',
+  'Compare how the effects of conflict are presented in War Photographer and one other poem from the anthology.',
+  'How does Duffy use language and structure to convey the contrast between war and everyday life?',
+]
+
 /* ── Comparison poems ──────────────────────────────────────────── */
 
 const COMPARISONS = [
@@ -403,6 +548,14 @@ export default function WarPhotographerPage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="War Photographer"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={WAR_PHOTOGRAPHER} />
 
       {/* ── Theme tokens ──────────────────────────────────────── */}

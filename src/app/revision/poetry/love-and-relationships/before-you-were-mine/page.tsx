@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -285,6 +286,32 @@ const beforeYouWereMinePOem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'bywm-1', question: 'Who is the speaker addressing?', type: 'multiple-choice', options: ['A friend', 'Her mother — imagining her life before she became a parent', 'A lover', 'Herself'], correctIndex: 1, explanation: 'Duffy addresses her mother, imagining the glamorous, carefree life she had before motherhood changed everything. The title "Before You Were Mine" suggests possessive love.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'bywm-2', question: 'What does the title suggest about the relationship?', type: 'multiple-choice', options: ['The mother belongs to the daughter', 'The speaker possessively claims her mother — "mine" suggests ownership of the mother by the child', 'The mother was sold', 'It refers to a pet'], correctIndex: 1, explanation: 'The possessive "mine" in the title reverses the usual parent-child dynamic. The daughter claims ownership of her mother, suggesting love so intense it becomes possessive.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'bywm-3', question: 'How does Duffy present the mother before motherhood?', type: 'multiple-choice', options: ['As sad and lonely', 'As glamorous, carefree, and full of life — dancing, laughing, like Marilyn Monroe', 'As strict and serious', 'As elderly'], correctIndex: 1, explanation: 'The mother is compared to Marilyn Monroe, shown dancing and laughing with friends on the pavement. She represents freedom, glamour, and youthful joy before motherhood restricted her.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'bywm-4', question: 'What is the effect of the Marilyn Monroe reference?', type: 'multiple-choice', options: ['It shows the mother was a film star', 'It glamorises the mother and suggests her pre-parenthood life was exciting, even iconic', 'It is a random cultural reference', 'It shows the mother was American'], correctIndex: 1, explanation: 'Comparing the mother to Marilyn Monroe — a glamorous, iconic figure — elevates her ordinary youth into something extraordinary and emphasises what was lost when motherhood began.', topic: 'Language', difficulty: 'higher' },
+  { id: 'bywm-5', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Five quatrains — each representing a decade of the mother\'s life', 'Free verse with no structure', 'Blank verse'], correctIndex: 1, explanation: 'Five four-line stanzas, each roughly covering a different period. The regular structure creates a sense of progression through time.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'bywm-6', question: 'What does "even then I wanted the bold girl" suggest?', type: 'multiple-choice', options: ['The speaker wanted a sister', 'The speaker loved her mother before she was even born — love transcends chronology', 'The speaker is selfish', 'It refers to a friend'], correctIndex: 1, explanation: 'Duffy imagines wanting her mother even before being born. This impossibility intensifies the love — it is so powerful it breaks the rules of time itself.', topic: 'Language', difficulty: 'higher' },
+  { id: 'bywm-7', question: 'Who is Carol Ann Duffy?', type: 'multiple-choice', options: ['A Victorian novelist', 'The first female and first openly gay Poet Laureate, known for dramatic monologues and persona poems', 'A war correspondent', 'A children\'s author only'], correctIndex: 1, explanation: 'Carol Ann Duffy (b. 1955) became the UK Poet Laureate in 2009. She is known for giving voice to marginalised perspectives and exploring relationships with vivid, accessible language.', topic: 'Context', difficulty: 'higher' },
+  { id: 'bywm-8', question: 'How does Duffy use tense in the poem?', type: 'multiple-choice', options: ['Only past tense', 'She blends past and present tense, collapsing time — the mother\'s past life is imagined as vividly present', 'Only future tense', 'Only present tense'], correctIndex: 1, explanation: 'Duffy moves between past and present tense, making the mother\'s pre-parenthood life feel vivid and immediate. Time collapses — the past is as real as the present.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'bywm-9', question: 'What tension exists in the poem about motherhood?', type: 'multiple-choice', options: ['None — motherhood is celebrated', 'The daughter loves being the child, but recognises her birth took away her mother\'s freedom and glamour', 'The mother regrets having children', 'The daughter wants to leave home'], correctIndex: 1, explanation: 'The poem contains a bittersweet tension: the daughter is grateful to exist, but acknowledges that her existence cost her mother the carefree, glamorous life she once had.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'bywm-10', question: 'Which poem pairs best with Before You Were Mine?', type: 'multiple-choice', options: ['Neutral Tones', 'Mother, any distance by Simon Armitage', 'When We Two Parted', 'Porphyria\'s Lover'], correctIndex: 1, explanation: 'Both explore the mother-child relationship. Before You Were Mine looks back at the mother\'s past; Mother, any distance explores the present moment of separation.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Before You Were Mine explores possessive love, the impact of motherhood on identity, memory, and the tension between gratitude and guilt.', keyPoints: ['Possessive love — the daughter claims ownership of her mother', 'Identity and sacrifice — motherhood changed who the mother was', 'Memory and imagination — the daughter recreates a past she never witnessed', 'Time — love transcends chronology'] },
+  { topic: 'Language & Imagery', summary: 'Duffy uses glamorous imagery, pop culture references, sensory detail, and possessive language to recreate her mother\'s youth.', keyPoints: ['Marilyn Monroe comparison — the mother as glamorous icon', '"Before you were mine" — possessive claim on the mother', 'Dancing and laughing imagery — freedom and joy before motherhood', '"Even then I wanted the bold girl" — love that transcends time'] },
+  { topic: 'Structure & Form', summary: 'Five quatrains moving through time, with tense shifts that collapse past and present into a vivid, immediate experience.', keyPoints: ['Five stanzas — progression through decades', 'Tense shifts — past becomes present, making memories vivid', 'Direct address ("you") — intimate, personal tone', 'No regular rhyme — conversational, natural voice'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Duffy present the relationship between mother and daughter in Before You Were Mine?',
+  'Compare how parent-child relationships are presented in Before You Were Mine and one other poem from the anthology.',
+  'How does Duffy use language and structure to explore memory and identity?',
+]
+
 const comparePoems = [
   {
     title: 'Mother, any distance',
@@ -353,6 +380,13 @@ export default function BeforeYouWereMinePage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Before You Were Mine"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={beforeYouWereMinePOem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

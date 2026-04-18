@@ -8,6 +8,7 @@ import {
   type PoemData,
 } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────── */
 
@@ -209,6 +210,150 @@ TENSE SHIFTS: The poem shifts between past and present tense, blurring the bound
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'pop-1',
+    question: 'Who is the speaker in Poppies?',
+    type: 'multiple-choice',
+    options: ['A soldier going to war', 'A mother whose son has left for military service', 'A teacher on Armistice Sunday', 'A war photographer'],
+    correctIndex: 1,
+    explanation: 'The poem is told from the perspective of a mother who is saying goodbye to her son before he leaves, possibly for military service. It explores the personal, domestic grief of conflict.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pop-2',
+    question: 'What do the poppies symbolise in the poem?',
+    type: 'multiple-choice',
+    options: ['A type of flower the mother grows in her garden', 'Remembrance of fallen soldiers and the connection between domestic life and war', 'The son\'s favourite colour', 'A decoration for Armistice Sunday celebrations'],
+    correctIndex: 1,
+    explanation: 'Poppies are the universal symbol of remembrance for fallen soldiers, originating from the fields of Flanders in WWI. Weir uses them to connect the mother\'s private grief to the public act of remembrance.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pop-3',
+    question: 'What type of imagery dominates the poem?',
+    type: 'multiple-choice',
+    options: ['Military and violent imagery', 'Domestic and textile imagery — sewing, pins, fabric', 'Industrial and urban imagery', 'Religious imagery'],
+    correctIndex: 1,
+    explanation: 'Weir uses a sustained semantic field of textiles and sewing: "crimped petals", "bias binding", "tucks, darts, pleats". This domestic language reflects the mother\'s world and how she processes grief through familiar, tangible activities.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pop-4',
+    question: 'What does "spasms of paper red" suggest about the mother\'s emotional state?',
+    type: 'multiple-choice',
+    options: ['She is calm and composed', 'The word "spasms" suggests involuntary, convulsive grief — her emotions are beyond her control', 'She is angry at her son', 'She is decorating the house'],
+    correctIndex: 1,
+    explanation: '"Spasms" suggests involuntary, painful physical reactions — the mother\'s grief manifests in bodily convulsions. The repetition of "paper red" mimics the stuttering of someone in distress.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pop-5',
+    question: 'What does the metaphor of the "songbird from its cage" represent?',
+    type: 'multiple-choice',
+    options: ['The mother\'s pet bird escaping', 'The mother letting her child go — an act that is both liberating and painful', 'The son singing a song', 'A reference to a specific war poem'],
+    correctIndex: 1,
+    explanation: 'The released songbird symbolises the mother releasing her child into the world (and possibly to war). It represents both freedom and loss — she must let go, even though it causes her pain.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pop-6',
+    question: 'How does Weir blur the line between sending a child to school and sending a soldier to war?',
+    type: 'multiple-choice',
+    options: ['She describes school uniform and military uniform separately', 'Through domestic imagery like "pinned" a poppy and "blazer" — the same maternal gestures apply to both', 'She explicitly compares school and war', 'She does not blur this line at all'],
+    correctIndex: 1,
+    explanation: 'The intimate maternal act of pinning something onto a "blazer" and smoothing a "lapel" could apply to a school uniform or military dress. This ambiguity powerfully blurs the boundary between childhood and warfare.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pop-7',
+    question: 'What perspective on conflict does Poppies offer that is unusual in the anthology?',
+    type: 'multiple-choice',
+    options: ['A soldier\'s perspective in the trenches', 'A mother\'s personal, domestic perspective on the impact of war at home', 'A politician\'s view of war strategy', 'A journalist\'s objective report'],
+    correctIndex: 1,
+    explanation: 'Poppies is unusual in the anthology because it shows conflict from a civilian perspective — specifically a mother\'s. It explores how war affects those left behind, not the soldiers themselves.',
+    topic: 'Context',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pop-8',
+    question: 'How does enjambment function in Poppies?',
+    type: 'multiple-choice',
+    options: ['It creates neat, contained thoughts', 'It enacts the mother\'s loss of emotional control — her feelings spill across line and stanza boundaries', 'It makes the poem easier to read aloud', 'It has no particular purpose'],
+    correctIndex: 1,
+    explanation: 'The extensive enjambment — including across stanza breaks — mirrors the mother\'s inability to contain her emotions. Grief overflows all boundaries, just as the lines overflow their margins.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'pop-9',
+    question: 'What is the effect of the sensory detail "longing to graze my nose across the top of your head"?',
+    type: 'multiple-choice',
+    options: ['It shows the mother is angry', 'It creates an intensely physical, intimate memory — the mother craves the specific sensory experience of closeness', 'It describes a childhood game', 'It is a metaphor for time passing'],
+    correctIndex: 1,
+    explanation: 'This deeply intimate sensory detail conveys the visceral, physical nature of maternal love and loss. The mother does not miss her son abstractly — she misses the specific smell and feel of his presence.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'pop-10',
+    question: 'Which poem from the Power and Conflict anthology best pairs with Poppies for exploring the personal impact of conflict?',
+    type: 'multiple-choice',
+    options: ['Ozymandias by Shelley', 'Kamikaze by Beatrice Garland', 'Storm on the Island by Heaney', 'The Charge of the Light Brigade by Tennyson'],
+    correctIndex: 1,
+    explanation: 'Both Poppies and Kamikaze explore the family\'s perspective on conflict — a mother in Poppies, a daughter in Kamikaze. Both show the personal, domestic costs of war through female voices and memory.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'Poppies explores a mother\'s grief, the personal cost of conflict, memory and loss, and the blurred boundary between childhood and war.',
+    keyPoints: [
+      'Maternal grief — the poem centres on the mother\'s experience, not the soldier\'s',
+      'Memory and loss — the mother replays memories obsessively',
+      'Domestic vs military — the boundary between sending a child to school and to war is blurred',
+      'Letting go — the songbird metaphor represents painful release',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Weir uses a sustained semantic field of textiles and domestic imagery to process grief through familiar, tangible objects.',
+    keyPoints: [
+      'Textile imagery: "crimped petals", "bias binding", "tucks, darts, pleats"',
+      '"Spasms of paper red" — involuntary, convulsive grief',
+      '"Songbird from its cage" — metaphor for letting a child go',
+      'Sensory detail: "longing to graze my nose across the top of your head"',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Free verse with extensive enjambment across stanza breaks, enacting the mother\'s loss of emotional control as grief overflows all boundaries.',
+    keyPoints: [
+      'Free verse — no regular rhyme or metre, reflecting the unstructured nature of grief',
+      'Enjambment across stanza breaks — emotions overflow all boundaries',
+      'First person direct address ("you") — creates intimacy between mother and absent son',
+      'Non-linear time — the poem moves between past and present as memory intrudes',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Weir present the impact of conflict on those left behind in Poppies?',
+  'Compare how loss is presented in Poppies and one other poem from the anthology.',
+  'How does Weir use language and structure to convey a mother\'s grief?',
+]
+
 /* ── Comparison poems ──────────────────────────────────────────── */
 
 interface ComparisonPoem {
@@ -329,6 +474,14 @@ export default function PoppiesStudyPage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="Poppies"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={poppiesData} />
 
       {/* ── Comparison poems ──────────────────────────────────── */}

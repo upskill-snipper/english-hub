@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -118,6 +119,32 @@ const lettersPoem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'lfy-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A tourist visiting Yorkshire', 'The connection between two people maintained through letters despite living very different lives', 'A love letter', 'A business correspondence'], correctIndex: 1, explanation: 'The poem explores how two people maintain a deep connection through letters despite living different lives — one rural and physical, the other urban and desk-bound.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'lfy-2', question: 'What does "Is his life more real because he digs and plants" suggest?', type: 'multiple-choice', options: ['His life is definitely better', 'The speaker questions whether a physical, outdoor life is more authentic than her own indoor, intellectual life', 'She looks down on gardening', 'She wants to move to Yorkshire'], correctIndex: 1, explanation: 'This rhetorical question reveals the speaker\'s anxiety about the value of her own work compared to his tangible, physical existence. She questions what constitutes a "real" life.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'lfy-3', question: 'What do the letters represent?', type: 'multiple-choice', options: ['Business documents', 'A lifeline of connection — words that bridge physical distance and different ways of living', 'Postcards from holiday', 'Official notices'], correctIndex: 1, explanation: 'The letters are the thread connecting two different worlds. They represent how language and shared feeling can bridge any distance — physical or experiential.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'lfy-4', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Five tercets (three-line stanzas) — a compact, contained form', 'Free verse with no structure', 'Rhyming couplets'], correctIndex: 1, explanation: 'Five tercets (three-line stanzas) with no regular rhyme. The compact form mirrors the concise, meaningful nature of a letter.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'lfy-5', question: 'Who wrote the poem?', type: 'multiple-choice', options: ['Carol Ann Duffy', 'Maura Dooley', 'Jane Weir', 'Imtiaz Dharker'], correctIndex: 1, explanation: 'Maura Dooley is a contemporary British poet. Letters from Yorkshire explores how communication sustains relationships across distance and difference.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'lfy-6', question: 'What does "It\'s the watching and the thinking that make this special" mean?', type: 'multiple-choice', options: ['She enjoys birdwatching', 'The act of observing, reflecting, and sharing — not the activity itself — creates connection between them', 'She prefers thinking to doing', 'Watching TV is special'], correctIndex: 1, explanation: 'The speaker realises that what makes their relationship special is not what they do but how they observe, think, and share. Connection comes from attention and care, not matching lifestyles.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'lfy-7', question: 'How does the poem present the contrast between two ways of living?', type: 'multiple-choice', options: ['One is clearly better than the other', 'Both are presented as valid — the physical/rural and intellectual/urban lives complement each other', 'Only the rural life is valued', 'Only the urban life is valued'], correctIndex: 1, explanation: 'The poem resolves its initial anxiety by recognising both ways of living are valid. What matters is not what you do but your capacity for observation, thought, and connection.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'lfy-8', question: 'What is the effect of "word of it"?', type: 'multiple-choice', options: ['It emphasises words are unreliable', 'It highlights the power of language — a single "word" can transmit the essence of an experience across distance', 'Words are unimportant', 'It is a cliche'], correctIndex: 1, explanation: '"Word" emphasises how language can compress and transmit experience. A letter carries not just information but the feeling and essence of a moment.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'lfy-9', question: 'What is the ambiguity about the relationship between the two people?', type: 'multiple-choice', options: ['They are clearly married', 'Dooley deliberately leaves the nature of the relationship undefined — friends, lovers, or family — making it universal', 'They are strangers', 'They are work colleagues'], correctIndex: 1, explanation: 'The poem never defines the relationship precisely. This ambiguity makes the poem universal — it could be about any deep connection maintained across distance.', topic: 'Meaning', difficulty: 'grade-9' },
+  { id: 'lfy-10', question: 'Which poem pairs best with Letters from Yorkshire?', type: 'multiple-choice', options: ['Porphyria\'s Lover', 'Sonnet 29 by Barrett Browning', 'Neutral Tones', 'Ozymandias'], correctIndex: 1, explanation: 'Both Letters from Yorkshire and Sonnet 29 explore the tension between physical presence and distance in a relationship. Both value connection but from different perspectives.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Letters from Yorkshire explores connection across distance, the value of different lifestyles, communication, and the power of shared observation.', keyPoints: ['Connection through letters — words bridge physical distance', 'Two ways of living — physical/rural vs intellectual/urban', 'Both are valid — what matters is observation and care', 'Communication sustains relationships'] },
+  { topic: 'Language & Imagery', summary: 'Dooley uses nature imagery, rhetorical questioning, and simple, precise language to explore how words carry experience across distance.', keyPoints: ['Nature imagery — "the first lapwings" carry seasonal beauty', '"Is his life more real?" — questioning the value of different lives', 'Letters as lifeline — "word of it" transmits experience', 'Simple, precise language mirrors the clarity of a good letter'] },
+  { topic: 'Structure & Form', summary: 'Five compact tercets with no regular rhyme — the form mirrors the concise, meaningful nature of a letter.', keyPoints: ['Tercets — compact, contained stanzas like paragraphs in a letter', 'No regular rhyme — natural, conversational tone', 'Enjambment — thoughts flow across line and stanza breaks', 'Present tense — the connection is ongoing and alive'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Dooley present the importance of communication in Letters from Yorkshire?',
+  'Compare how relationships are maintained across distance in Letters from Yorkshire and one other poem from the anthology.',
+  'How does Dooley use language and structure to explore what connects people?',
+]
+
 const comparePoems = [
   {
     title: 'Eden Rock',
@@ -186,6 +213,13 @@ export default function LettersFromYorkshirePage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Letters from Yorkshire"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={lettersPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

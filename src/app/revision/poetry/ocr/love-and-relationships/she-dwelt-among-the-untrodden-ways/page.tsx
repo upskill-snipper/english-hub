@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const sheDweltAmongTheUntroddenWays: PoemData = {
   title: 'She Dwelt Among the Untrodden Ways',
@@ -300,6 +301,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'sd-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A famous woman', 'A simple, unknown woman (Lucy) who lived and died in obscurity, mourned only by the speaker', 'A queen', 'A journey'], correctIndex: 1, explanation: 'Wordsworth mourns Lucy — a woman who lived a simple, solitary life by the River Dove, unknown to the wider world. Her death goes unnoticed by all except the speaker.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'sd-2', question: 'What does "A violet by a mossy stone / Half hidden from the eye" suggest?', type: 'multiple-choice', options: ['She grows flowers', 'Lucy is compared to a modest, hidden flower — beautiful but unnoticed by the world', 'She is a gardener', 'Flowers are important'], correctIndex: 1, explanation: 'The violet simile presents Lucy as naturally beautiful but modest and hidden. She does not seek attention — her beauty exists quietly, like a flower half-concealed by moss.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'sd-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Three quatrains with ABAB rhyme — a ballad-like simplicity matching Lucy\'s simplicity', 'Free verse', 'Blank verse'], correctIndex: 1, explanation: 'Three short quatrains with ABAB rhyme. The extreme simplicity of form matches Lucy\'s simple, unassuming life.', topic: 'Structure', difficulty: 'foundation' },
+  { id: 'sd-4', question: 'What is the effect of the final stanza?', type: 'multiple-choice', options: ['It is happy', 'The blunt, simple statement "But she is in her grave" is devastating in its plainness — death stated without decoration', 'It introduces a new character', 'It offers hope'], correctIndex: 1, explanation: '"But she is in her grave" is deliberately plain and unpoetic. After the flower and star imagery, this blunt statement of death is devastating precisely because of its simplicity.', topic: 'Language', difficulty: 'higher' },
+  { id: 'sd-5', question: 'Who is Lucy?', type: 'multiple-choice', options: ['A real historical figure', 'Possibly fictional, possibly based on a real person — one of Wordsworth\'s mysterious "Lucy poems"', 'Wordsworth\'s wife', 'His mother'], correctIndex: 1, explanation: 'Lucy\'s identity is debated. She may be fictional, or based on someone Wordsworth knew. The mystery adds to the poem\'s poignancy — even in the poem, Lucy remains half-hidden.', topic: 'Context', difficulty: 'higher' },
+  { id: 'sd-6', question: 'What does "Fair as a star, when only one / Is shining in the sky" suggest?', type: 'multiple-choice', options: ['She is an astronomer', 'Lucy\'s beauty is unique and solitary — she stands out not by competing but by existing alone', 'She is famous', 'Stars are bright'], correctIndex: 1, explanation: 'The single star simile presents Lucy as uniquely beautiful — not because she outshines others, but because she is the only one visible. Her beauty is solitary and self-sufficient.', topic: 'Language', difficulty: 'higher' },
+  { id: 'sd-7', question: 'What does "She lived unknown, and few could know / When Lucy ceased to be" suggest about her life?', type: 'multiple-choice', options: ['She was famous', 'Her life and death went unnoticed by the world — only the speaker truly knew and mourns her', 'Many people knew her', 'She moved away'], correctIndex: 1, explanation: 'Lucy lived and died in complete obscurity. The world did not notice her existence or her absence. Only the speaker knew her, making his grief intensely personal and isolated.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'sd-8', question: 'What does "the difference to me!" express?', type: 'multiple-choice', options: ['Indifference', 'The exclamation reveals the vast gap between the world\'s indifference and the speaker\'s devastating personal loss', 'Confusion', 'Happiness'], correctIndex: 1, explanation: 'The final exclamation is the poem\'s emotional climax. The world notices nothing, but for the speaker, everything has changed. The understatement of "difference" paradoxically intensifies the grief.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'sd-9', question: 'How does Wordsworth use simplicity as a poetic technique?', type: 'multiple-choice', options: ['He is a simple writer', 'The poem\'s extreme simplicity of language and form mirrors Lucy\'s simple life — and makes the grief more powerful', 'Simplicity is accidental', 'He prefers complex language'], correctIndex: 1, explanation: 'The deliberate simplicity — short lines, plain words, natural imagery — mirrors Lucy\'s modest life. The absence of elaborate language makes the raw emotion more powerful.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'sd-10', question: 'Which poem pairs well for comparison?', type: 'multiple-choice', options: ['The Eagle', 'She Walks in Beauty by Byron', 'Crossing the Bar', 'When I Have Fears'], correctIndex: 1, explanation: 'Both celebrate female beauty but differently — Byron\'s subject is glamorous and public; Wordsworth\'s Lucy is hidden and unknown. Both use natural imagery for beauty.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'The poem mourns a simple, unknown woman whose death goes unnoticed by the world but devastates the speaker.', keyPoints: ['Obscurity — Lucy lived and died unknown', 'Personal vs universal — the world is indifferent; the speaker is devastated', 'Simplicity — Lucy\'s modest beauty mirrors the poem\'s plain style', 'Loss — "the difference to me!" is deeply personal grief'] },
+  { topic: 'Language & Imagery', summary: 'Wordsworth uses violet and star similes, plain diction, and devastating understatement to mourn Lucy.', keyPoints: ['Violet — modest, hidden beauty', 'Single star — unique, solitary beauty', '"But she is in her grave" — blunt statement of death', '"The difference to me!" — understatement masking devastation'] },
+  { topic: 'Structure & Form', summary: 'Three simple quatrains with ABAB rhyme — extreme simplicity mirrors Lucy\'s simple life.', keyPoints: ['Three quatrains — brevity reflects a brief life', 'ABAB rhyme — simple, ballad-like form', 'Plain language — no decoration, matching Lucy\'s modesty', 'Final exclamation — the only emotional outburst'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Wordsworth present loss and obscurity in She Dwelt Among the Untrodden Ways?',
+  'Compare how love and loss are presented in She Dwelt Among the Untrodden Ways and one other poem from the anthology.',
+  'How does Wordsworth use simplicity as a powerful poetic technique?',
+]
+
 export default function SheDweltPage() {
   return (
     <div className="space-y-8">
@@ -337,6 +363,13 @@ export default function SheDweltPage() {
         cluster="Love and Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="She Dwelt Among the Untrodden Ways"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={sheDweltAmongTheUntroddenWays} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

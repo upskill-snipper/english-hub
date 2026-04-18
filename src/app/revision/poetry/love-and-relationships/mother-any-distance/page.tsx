@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -234,6 +235,32 @@ const motherAnyDistancePoem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'mad-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['Buying furniture', 'A son measuring his new home with his mother, using the tape measure as a metaphor for their bond', 'A mother redecorating', 'Moving house literally'], correctIndex: 1, explanation: 'The speaker measures rooms in a new home with his mother holding one end of the tape measure. The extending tape becomes a metaphor for the umbilical cord — the bond that stretches as the child gains independence.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'mad-2', question: 'What does the tape measure symbolise?', type: 'multiple-choice', options: ['A DIY tool only', 'The umbilical cord — the bond between mother and child that stretches but never quite breaks', 'A ruler', 'A telephone wire'], correctIndex: 1, explanation: 'The tape measure is an extended metaphor for the umbilical cord. The mother holds one end (the anchor) while the son moves further away. It stretches but maintains connection.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'mad-3', question: 'What does "Anchor. Kite." suggest about the mother and son?', type: 'multiple-choice', options: ['They enjoy sailing and flying kites', 'The mother is the anchor (stability, security) while the son is the kite (freedom, flight, independence)', 'They are both stuck', 'It describes the weather'], correctIndex: 1, explanation: 'The one-word sentences encapsulate the relationship perfectly. The mother anchors; the son soars. Both are necessary — a kite needs an anchor, and an anchor needs something to hold.', topic: 'Language', difficulty: 'higher' },
+  { id: 'mad-4', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Almost a sonnet — 15 lines that fall just outside the 14-line sonnet form', 'A ballad', 'Rhyming couplets'], correctIndex: 1, explanation: 'The poem has 15 lines — almost but not quite a sonnet. This near-miss mirrors the poem\'s theme of almost-but-not-quite letting go, of boundaries being tested.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'mad-5', question: 'Who is Simon Armitage?', type: 'multiple-choice', options: ['A Victorian poet', 'The current Poet Laureate, known for accessible, conversational poetry rooted in Northern English experience', 'A war correspondent', 'A Romantic poet'], correctIndex: 1, explanation: 'Simon Armitage (b. 1963) became Poet Laureate in 2019. He is known for accessible, witty poetry that uses everyday language and imagery to explore universal themes.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'mad-6', question: 'What does "to fall or fly" suggest about independence?', type: 'multiple-choice', options: ['The speaker is afraid of heights', 'Independence is presented as both thrilling and terrifying — freedom carries the risk of failure', 'The speaker is a pilot', 'It describes a bird'], correctIndex: 1, explanation: 'The final image presents independence as a leap into the unknown. "Fly" suggests exciting freedom; "fall" suggests the risk of failure. Growing up means accepting both possibilities.', topic: 'Language', difficulty: 'higher' },
+  { id: 'mad-7', question: 'What is the effect of the spatial imagery (floors, stairs, loft)?', type: 'multiple-choice', options: ['It describes a house tour', 'The upward movement through the house mirrors the son\'s growing independence — higher means further from the mother', 'It shows the house is large', 'It is random description'], correctIndex: 1, explanation: 'The speaker moves upward through the house — from ground floor to loft. Each level takes him further from his mother at the base, physically enacting the growing distance of independence.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'mad-8', question: 'What does "your fingertips still pinch the last one-Loss-Loss-hundredth of an inch" suggest?', type: 'multiple-choice', options: ['The mother has strong hands', 'The mother clings to the very last possible point of connection — she is reluctant to let go completely', 'The tape measure is stuck', 'The measurement is exact'], correctIndex: 1, explanation: 'The precise measurement "one-hundredth of an inch" shows how little connection remains — and yet the mother still holds on. The image captures the painful reluctance of letting go.', topic: 'Language', difficulty: 'grade-9' },
+  { id: 'mad-9', question: 'How does the poem move from security to risk?', type: 'multiple-choice', options: ['It doesn\'t change', 'It progresses from the safe, shared measuring to the speaker alone at the top, contemplating whether to fly or fall', 'It moves from risk to security', 'It stays at the same level'], correctIndex: 1, explanation: 'The poem charts a progression from the shared, secure activity of measuring together to the speaker alone at the open window, facing the terrifying choice of independence.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'mad-10', question: 'Which poem pairs best with Mother, any distance?', type: 'multiple-choice', options: ['Neutral Tones', 'Before You Were Mine by Carol Ann Duffy', 'Porphyria\'s Lover', 'When We Two Parted'], correctIndex: 1, explanation: 'Both explore the mother-child bond. Before You Were Mine looks back at the mother\'s past; Mother, any distance captures the present moment of separation and independence.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Mother, any distance explores the mother-child bond, the tension between security and independence, and the frightening thrill of growing up.', keyPoints: ['The umbilical cord metaphor — the bond stretches but persists', 'Independence — thrilling but terrifying ("fall or fly")', 'The mother as anchor — stability and reluctance to let go', 'Growing up means accepting risk'] },
+  { topic: 'Language & Imagery', summary: 'Armitage uses the extended tape measure metaphor, spatial imagery, and the anchor/kite contrast to explore separation.', keyPoints: ['Tape measure as umbilical cord — physical bond stretching', '"Anchor. Kite." — one-word sentences encapsulate the dynamic', '"Fall or fly" — independence as both risk and freedom', '"Last one-hundredth of an inch" — the mother\'s reluctance to release'] },
+  { topic: 'Structure & Form', summary: 'Almost a sonnet (15 lines) — the near-miss form mirrors the theme of almost-but-not-quite separating.', keyPoints: ['15 lines — almost but not quite a sonnet', 'Upward movement through the house mirrors growing independence', 'Half-rhymes — partial connections, like the stretching bond', 'Final image of the open window — freedom and danger'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Armitage present the relationship between mother and son in Mother, any distance?',
+  'Compare how parent-child separation is presented in Mother, any distance and one other poem from the anthology.',
+  'How does Armitage use the extended metaphor of the tape measure to explore growing up?',
+]
+
 const comparePoems = [
   {
     title: 'Before You Were Mine',
@@ -302,6 +329,13 @@ export default function MotherAnyDistancePage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Mother, any distance"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={motherAnyDistancePoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 const dulce: PoemData = {
   title: 'Dulce et Decorum Est',
@@ -515,6 +516,31 @@ const comparisons = [
   },
 ]
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'de-1', question: 'What does the Latin title mean?', type: 'multiple-choice', options: ['War is wonderful', '"It is sweet and fitting to die for one\'s country" — a phrase Owen calls "the old Lie"', 'Soldiers are brave', 'Death is natural'], correctIndex: 1, explanation: 'The title comes from Horace\'s Odes: "Dulce et decorum est pro patria mori" — it is sweet and fitting to die for one\'s country. Owen calls this "the old Lie" and the poem is designed to demolish it.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'de-2', question: 'What event does the poem describe?', type: 'multiple-choice', options: ['A victory celebration', 'Exhausted soldiers caught in a gas attack, with one soldier dying horribly', 'A training exercise', 'A homecoming parade'], correctIndex: 1, explanation: 'The poem describes exhausted WWI soldiers retreating from the front when gas shells land. One soldier fails to get his mask on in time and dies a horrific death, drowning in his own fluids.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'de-3', question: 'What does "Bent double, like old beggars under sacks" achieve?', type: 'multiple-choice', options: ['It shows soldiers are strong', 'The simile strips soldiers of all heroism — they are broken, aged, and dehumanised by war', 'It describes their uniforms', 'It shows they are resting'], correctIndex: 1, explanation: 'The opening simile immediately demolishes the image of heroic soldiers. They are "bent double" like elderly beggars — exhausted, broken, and completely unheroic. War has aged and dehumanised them.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'de-4', question: 'What does "drowning" imagery suggest about the gas attack?', type: 'multiple-choice', options: ['The soldiers are swimming', 'The dying soldier is submerged in poison gas as if drowning in a green sea — the speaker watches helplessly', 'It describes rain', 'The trenches are flooded'], correctIndex: 1, explanation: 'Owen describes watching the dying soldier "as under a green sea, I saw him drowning." The gas creates a green, liquid-like substance. The speaker is helpless behind his mask, watching a man drown in poison.', topic: 'Language', difficulty: 'higher' },
+  { id: 'de-5', question: 'What does "the blood / Come gargling from the froth-Loss-corrupted lungs" convey?', type: 'multiple-choice', options: ['The soldier is recovering', 'The graphic, visceral detail forces the reader to confront the true horror of death in war — destroying any notion of glory', 'It describes a cough', 'The soldier is drinking'], correctIndex: 1, explanation: 'This is deliberately shocking. Owen uses graphic, disgusting detail to make the reader experience the horror. "Gargling" and "froth-corrupted" are designed to sicken — this is what "dying for one\'s country" actually looks like.', topic: 'Language', difficulty: 'higher' },
+  { id: 'de-6', question: 'Who was Wilfred Owen?', type: 'multiple-choice', options: ['A general who planned battles', 'A WWI soldier-poet who wrote from direct trench experience, killed one week before the Armistice', 'A journalist', 'A Victorian poet'], correctIndex: 1, explanation: 'Wilfred Owen (1893-1918) served in the trenches of WWI. He wrote from direct experience and was killed on 4 November 1918, just one week before the war ended.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'de-7', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Loosely based on a sonnet structure with iambic pentameter, but broken and disrupted by the horror', 'Free verse', 'Rhyming couplets'], correctIndex: 1, explanation: 'The poem uses rough iambic pentameter and a loosely sonnet-like structure (two 14-line sections). But the form is deliberately disrupted — like the soldiers\' bodies and minds, the traditional form is broken by war.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'de-8', question: 'Who is Owen addressing when he says "My friend, you would not tell..."?', type: 'multiple-choice', options: ['His mother', 'Jessie Pope (and anyone who glorifies war) — the poem is a direct attack on pro-war propaganda', 'Another soldier', 'A doctor'], correctIndex: 1, explanation: 'Owen originally dedicated the poem to Jessie Pope, a civilian poet who wrote jingoistic, pro-war poetry encouraging young men to enlist. Owen\'s poem is a devastating rebuttal.', topic: 'Context', difficulty: 'higher' },
+  { id: 'de-9', question: 'How does Owen use the dream/nightmare imagery in stanza 3?', type: 'multiple-choice', options: ['To create a peaceful scene', 'The dying soldier haunts Owen\'s dreams — the present tense "In all my dreams" shows the trauma is ongoing, not past', 'To describe actual sleep', 'To show the soldier recovered'], correctIndex: 1, explanation: 'The short third stanza shifts to present tense — "In all my dreams, before my helpless sight, / He plunges at me." This is PTSD: the dying soldier\'s image permanently haunts Owen\'s sleeping and waking life.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'de-10', question: 'How does the final word "Lie" function in the poem?', type: 'multiple-choice', options: ['It refers to lying down', 'Capitalised "Lie" — the entire poem has been building evidence to prove that dying for one\'s country is NOT sweet or fitting but horrific', 'It is a small detail', 'It describes dishonesty in general'], correctIndex: 1, explanation: 'The capitalised "Lie" is the poem\'s verdict. Everything before it — the exhaustion, the gas attack, the graphic death — serves as evidence. The poem is a legal prosecution against pro-war propaganda.', topic: 'Themes', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Dulce et Decorum Est attacks the glorification of war, exposes the horrific reality of combat, and argues that dying for one\'s country is "the old Lie."', keyPoints: ['Anti-war — the poem demolishes the idea that war is glorious', 'The horror of gas warfare — graphic, visceral detail', 'PTSD — the dying soldier haunts Owen\'s dreams', '"The old Lie" — pro-war propaganda is exposed as false'] },
+  { topic: 'Language & Imagery', summary: 'Owen uses simile, graphic sensory detail, drowning imagery, and a direct address to destroy the myth of heroic war.', keyPoints: ['"Bent double, like old beggars" — soldiers stripped of heroism', '"Green sea" / "drowning" — gas attack as suffocation', '"Blood gargling from froth-corrupted lungs" — deliberately sickening', '"My friend" — direct, sarcastic address to pro-war propagandists'] },
+  { topic: 'Structure & Form', summary: 'A disrupted sonnet-like structure with iambic pentameter that breaks down under the weight of horror — form mirrors content.', keyPoints: ['Loosely sonnet-like — traditional form broken by war', 'Three sections: exhaustion, gas attack, haunting aftermath', 'Present tense in stanza 3 — trauma is ongoing', 'Final "Lie" capitalised — the poem\'s devastating verdict'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Owen present the reality of war in Dulce et Decorum Est?',
+  'Compare how the experience of conflict is presented in Dulce et Decorum Est and one other poem from the anthology.',
+  'How does Owen use language and structure to challenge the idea that dying for one\'s country is glorious?',
+]
+
 export default function DulceEduqasPage() {
   return (
     <div className="space-y-8">
@@ -552,6 +578,13 @@ export default function DulceEduqasPage() {
         cluster="Eduqas Poetry Anthology"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Dulce et Decorum Est"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={dulce} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

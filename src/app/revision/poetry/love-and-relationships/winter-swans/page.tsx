@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -268,6 +269,32 @@ const winterSwansPoem: PoemData = {
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
 
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'ws-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['Birdwatching', 'A couple whose troubled relationship is repaired after watching swans together on a walk', 'A winter holiday', 'Feeding ducks in a park'], correctIndex: 1, explanation: 'A couple who have been arguing walk together in silence after rain. Watching swans on a lake becomes a turning point — nature shows them how to reconnect.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'ws-2', question: 'What do the swans symbolise?', type: 'multiple-choice', options: ['Winter weather', 'Lifelong partnership and reconciliation — swans mate for life, modelling the loyalty the couple needs', 'Freedom', 'Loneliness'], correctIndex: 1, explanation: 'Swans mate for life, making them a perfect symbol for committed love. Watching the swans "mate for life" prompts the couple to reconnect — nature teaches them about lasting partnership.', topic: 'Language', difficulty: 'foundation' },
+  { id: 'ws-3', question: 'What does "the waterlogged earth gulping for breath" suggest about the relationship?', type: 'multiple-choice', options: ['The earth is drowning', 'The relationship has been saturated with conflict — it needs air and relief, just like the waterlogged ground', 'It describes normal rain', 'The couple is swimming'], correctIndex: 1, explanation: 'The pathetic fallacy of waterlogged earth mirrors the relationship — overwhelmed, saturated with tension, needing to breathe. The landscape reflects the couple\'s emotional state.', topic: 'Language', difficulty: 'higher' },
+  { id: 'ws-4', question: 'What happens at the end of the poem?', type: 'multiple-choice', options: ['The couple separates', 'Their hands "swum the distance between us" and settle together — reconciliation', 'They argue again', 'They watch more birds'], correctIndex: 1, explanation: 'The couple\'s hands find each other and "fold, one over the other, like swans\' wings folding". The reconciliation mirrors the swans\' behaviour — nature has shown them the way back to each other.', topic: 'Meaning', difficulty: 'foundation' },
+  { id: 'ws-5', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Six tercets followed by a final couplet — the shift from three lines to two mirrors two people coming together', 'Free verse', 'Quatrains'], correctIndex: 1, explanation: 'Six tercets (three-line stanzas) followed by a final couplet (two lines). The shift from three to two lines enacts the couple coming together — two people, two lines, one unit.', topic: 'Structure', difficulty: 'higher' },
+  { id: 'ws-6', question: 'Who is Owen Sheers?', type: 'multiple-choice', options: ['A Victorian poet', 'A contemporary Welsh poet and novelist known for exploring relationships and the natural world', 'A war poet', 'A Romantic poet'], correctIndex: 1, explanation: 'Owen Sheers (b. 1974) is a Welsh poet and novelist. His poetry frequently explores relationships, landscape, and the connection between the natural and human worlds.', topic: 'Context', difficulty: 'foundation' },
+  { id: 'ws-7', question: 'What does "they mate for life" achieve in the poem?', type: 'multiple-choice', options: ['It is a nature fact', 'It is the poem\'s turning point — the fact about swans becomes an unspoken message about the couple\'s own relationship', 'It is irrelevant', 'It describes other animals'], correctIndex: 1, explanation: 'This line functions as the poem\'s volta. The fact about swans is not just ornithology — it is a mirror held up to the couple, silently asking: will you commit to each other like the swans do?', topic: 'Structure', difficulty: 'higher' },
+  { id: 'ws-8', question: 'How does Sheers use water imagery throughout?', type: 'multiple-choice', options: ['As decoration', 'Water represents both the conflict (rain, waterlogged earth) and the resolution (the lake where swans reunite)', 'To describe the weather literally', 'Water is negative only'], correctIndex: 1, explanation: 'Water works dually: the rain and mud represent the relationship\'s difficulties, but the lake where the swans swim represents the calm, reflective space where reconciliation happens.', topic: 'Language', difficulty: 'higher' },
+  { id: 'ws-9', question: 'How does the final couplet enact the poem\'s meaning structurally?', type: 'multiple-choice', options: ['It doesn\'t', 'The shift from tercets (3 lines) to a couplet (2 lines) physically enacts two people coming together into one unit', 'It creates a summary', 'It introduces a new idea'], correctIndex: 1, explanation: 'The structural shift from three lines to two is the poem\'s most elegant technique. The final couplet — two lines, like two people — physically enacts the reunion on the page.', topic: 'Structure', difficulty: 'grade-9' },
+  { id: 'ws-10', question: 'Which poem pairs best with Winter Swans?', type: 'multiple-choice', options: ['When We Two Parted', 'Letters from Yorkshire by Maura Dooley', 'Porphyria\'s Lover', 'The Charge of the Light Brigade'], correctIndex: 0, explanation: 'Both Winter Swans and When We Two Parted explore relationships under strain, but from opposite outcomes — Winter Swans shows reconciliation while When We Two Parted shows permanent loss.', topic: 'Comparison', difficulty: 'grade-9' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Key Themes', summary: 'Winter Swans explores reconciliation, the healing power of nature, lifelong commitment, and the connection between landscape and emotion.', keyPoints: ['Reconciliation — the couple moves from distance to togetherness', 'Nature as teacher — the swans model lifelong partnership', 'Pathetic fallacy — landscape mirrors the relationship\'s state', 'Silent communication — the couple reconnects without words'] },
+  { topic: 'Language & Imagery', summary: 'Sheers uses water imagery, swan symbolism, pathetic fallacy, and tactile detail to chart the journey from conflict to reconciliation.', keyPoints: ['Swans as symbol — "they mate for life" mirrors the relationship', 'Water imagery — rain/mud (conflict) vs lake (calm, resolution)', '"Waterlogged earth gulping for breath" — pathetic fallacy for the relationship', '"Folding" hands like swans\' wings — reconciliation through natural imagery'] },
+  { topic: 'Structure & Form', summary: 'Six tercets followed by a closing couplet — the structural shift from three to two lines enacts two people coming together.', keyPoints: ['Tercets to couplet — form mirrors content (separation to union)', 'Volta at "they mate for life" — the turning point', 'Enjambment — connection flowing across stanza breaks', 'Present tense — the reconciliation is happening now'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Sheers present reconciliation in Winter Swans?',
+  'Compare how nature is used to explore relationships in Winter Swans and one other poem from the anthology.',
+  'How does Sheers use language and structure to show the journey from distance to togetherness?',
+]
+
 const comparePoems = [
   {
     title: 'Neutral Tones',
@@ -336,6 +363,13 @@ export default function WinterSwansPage() {
         cluster="Love & Relationships"
         variant="compact"
       />
+      <InlineStudyEngine
+        textName="Winter Swans"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={winterSwansPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

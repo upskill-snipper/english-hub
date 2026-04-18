@@ -9,6 +9,7 @@ import {
   type PoemData,
 } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 /* ── Poem data ─────────────────────────────────────────────────── */
 
@@ -353,6 +354,150 @@ The extract is one continuous block of text with no stanza breaks, reflecting th
   ],
 }
 
+/* ── InlineStudyEngine data ───────────────────────────────────────── */
+
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'pre-1',
+    question: 'What does the young Wordsworth do at the start of the extract?',
+    type: 'multiple-choice',
+    options: ['He goes swimming in a lake', 'He steals a boat and rows across a lake', 'He climbs a mountain', 'He walks through a forest'],
+    correctIndex: 1,
+    explanation: 'The young Wordsworth finds a small boat tied to a willow tree, unlooses its chain, and rows it out across a lake — an "act of stealth" that he knows is wrong.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pre-2',
+    question: 'What does the mountain appear to do in the poem?',
+    type: 'multiple-choice',
+    options: ['It crumbles and falls into the lake', 'It rises up and seems to stride after the boy', 'It is covered in beautiful flowers', 'It disappears behind clouds'],
+    correctIndex: 1,
+    explanation: 'The mountain "Upreared its head" and "Strode after me" — it is personified as a living creature that pursues the terrified boy, demonstrating nature\'s overwhelming power.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pre-3',
+    question: 'What is the effect of the oxymoron "troubled pleasure"?',
+    type: 'multiple-choice',
+    options: ['It shows the boy is happy throughout', 'It captures the mix of excitement and guilt about stealing the boat', 'It describes the weather conditions', 'It refers to the mountain\'s appearance'],
+    correctIndex: 1,
+    explanation: '"Troubled pleasure" combines contradictory emotions — the thrill of adventure with the guilt of transgression. It foreshadows the deeper psychological disturbance to come.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pre-4',
+    question: 'What form is the extract written in?',
+    type: 'multiple-choice',
+    options: ['Rhyming couplets', 'Blank verse (unrhymed iambic pentameter)', 'Free verse with no regular metre', 'A Shakespearean sonnet'],
+    correctIndex: 1,
+    explanation: 'The extract is written in blank verse — unrhymed iambic pentameter. This gives the poem a natural, conversational rhythm that mirrors the flow of memory and thought.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pre-5',
+    question: 'How does the contrast between "lustily I dipped" and "trembling oars" reflect the poem\'s message?',
+    type: 'multiple-choice',
+    options: ['It shows the weather changed', 'It shows the boy\'s confidence being replaced by terror as nature asserts its power', 'It shows the boy is getting tired', 'It shows the oars are broken'],
+    correctIndex: 1,
+    explanation: 'The dramatic shift from confident energy ("lustily") to fear ("trembling") demonstrates how nature can humble even the most self-assured individual, which is the poem\'s central theme.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pre-6',
+    question: 'What does the phrase "unknown modes of being" suggest?',
+    type: 'multiple-choice',
+    options: ['The boy has discovered a new species', 'The boy has glimpsed something beyond human comprehension — a spiritual power in nature', 'The boy has learned a new language', 'The boy has forgotten who he is'],
+    correctIndex: 1,
+    explanation: '"Unknown modes of being" is deliberately abstract. It suggests the boy has encountered something transcendent and unknowable — a power in nature that exceeds human understanding, central to the Romantic concept of the sublime.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pre-7',
+    question: 'What is The Prelude?',
+    type: 'multiple-choice',
+    options: ['A collection of war poems', 'An epic autobiographical poem tracing the growth of Wordsworth\'s mind', 'A novel about the Lake District', 'A play about the French Revolution'],
+    correctIndex: 1,
+    explanation: 'The Prelude is Wordsworth\'s epic autobiographical poem, tracing the development of his mind from childhood to adulthood. This extract comes from Book I, recounting a childhood experience on a lake.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pre-8',
+    question: 'What Romantic concept does the encounter with the mountain best exemplify?',
+    type: 'multiple-choice',
+    options: ['Pathetic fallacy', 'The sublime — awe and terror caused by vast, powerful natural phenomena', 'The pastoral — peaceful harmony with nature', 'The picturesque — nature as beautiful scenery'],
+    correctIndex: 1,
+    explanation: 'The sublime is the Romantic concept that encounters with vast, powerful, or terrifying natural phenomena can produce awe, wonder, and spiritual transformation. The mountain encounter is a textbook example.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pre-9',
+    question: 'Why is the extract written as a single verse paragraph with no stanza breaks?',
+    type: 'multiple-choice',
+    options: ['Wordsworth forgot to add breaks', 'The continuous block reflects the unbroken flow of memory and how the experience consumed his consciousness entirely', 'It makes the poem shorter', 'It was a printer\'s error'],
+    correctIndex: 1,
+    explanation: 'The single continuous block of text mirrors the way memory flows without neat divisions. The experience was so overwhelming it consumed his entire consciousness, refusing to be compartmentalised.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'pre-10',
+    question: 'Which poem from the Power and Conflict anthology best pairs with The Prelude for comparing the power of nature?',
+    type: 'multiple-choice',
+    options: ['My Last Duchess by Browning', 'Storm on the Island by Seamus Heaney', 'Checking Out Me History by Agard', 'Remains by Simon Armitage'],
+    correctIndex: 1,
+    explanation: 'Both The Prelude and Storm on the Island explore the terrifying power of nature and humanity\'s vulnerability. Both use first-person speakers who shift from confidence to fear in the face of natural forces.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Key Themes',
+    summary: 'The extract explores the power of nature, the Romantic sublime, the transition from innocence to experience, and the lasting psychological impact of a formative childhood encounter.',
+    keyPoints: [
+      'Nature is a powerful, autonomous force — it has "voluntary power" and can humble humans',
+      'The sublime — encountering something so vast it overwhelms understanding',
+      'Growing up — the boy\'s confidence is permanently replaced by awe and uncertainty',
+      'Memory — the experience haunts him "by day" and in his "dreams", showing its lasting impact',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Wordsworth uses personification, contrast, simile, and increasingly abstract language to chart the shift from youthful confidence to existential terror.',
+    keyPoints: [
+      'Personification of the mountain: "Upreared its head", "Strode after me"',
+      'Contrast: "lustily I dipped" vs "trembling oars" — confidence replaced by fear',
+      'Swan simile: grace and harmony before the terrifying encounter',
+      '"Unknown modes of being" — abstract language for something beyond comprehension',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Written in blank verse as a single verse paragraph, with extensive enjambment that mirrors the flow of memory and the momentum of the boat journey.',
+    keyPoints: [
+      'Blank verse (unrhymed iambic pentameter) — natural, conversational rhythm',
+      'Volta at "When, from behind that craggy steep" — the dramatic turning point',
+      'Enjambment creates momentum, mirroring both the boat\'s movement and overflowing memory',
+      'First-person retrospective narration — adult reflecting on childhood experience',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Wordsworth present the power of nature in this extract from The Prelude?',
+  'Compare how nature is presented as a powerful force in The Prelude and one other poem from the anthology.',
+  'How does Wordsworth use language and structure to show a shift from confidence to fear?',
+]
+
 /* ── Compare-with poems ────────────────────────────────────────── */
 
 const COMPARE_WITH = [
@@ -432,6 +577,14 @@ export default function ThePreludePage() {
         cluster="Power & Conflict"
         variant="compact"
       />
+
+      <InlineStudyEngine
+        textName="The Prelude"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
+      />
+
       <InteractivePoemViewer poem={POEM} />
 
       {/* ── Compare with ───────────────────────────────────────── */}
