@@ -47,6 +47,8 @@ function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | 'ial' | null, board
       { href: papersHref, label: 'My Papers' },
       { href: '/toolkit', label: 'Toolkit' },
       { href: '/games', label: 'Games' },
+      { href: '/for-teachers', label: 'For Teachers' },
+      { href: '/for-schools', label: 'For Schools' },
       { href: '/pricing', label: 'Pricing' },
     ]
   }
