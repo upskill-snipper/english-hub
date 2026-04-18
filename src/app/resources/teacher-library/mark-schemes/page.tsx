@@ -125,8 +125,11 @@ function markSchemeMatchesBoard(examBoard: string, board: ExamBoard | null): boo
     ocr: "OCR",
     eduqas: "Eduqas",
     "edexcel-igcse": "Edexcel",
+    "edexcel-igcse-lang": "Edexcel",
     "cambridge-0500": "Cambridge",
     "cambridge-0990": "Cambridge",
+    "cambridge-0475": "Cambridge",
+    "ial-edexcel": "Edexcel",
   };
   const label = map[board];
   return examBoard.toLowerCase().includes(label.toLowerCase());

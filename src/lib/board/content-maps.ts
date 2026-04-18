@@ -33,8 +33,14 @@ export const SET_TEXTS_BY_BOARD: Record<ExamBoard, { shakespeare: string[]; nine
     modern: ['to-kill-a-mockingbird', 'of-mice-and-men', 'things-fall-apart', 'an-inspector-calls', 'a-view-from-the-bridge', 'curious-incident'],
     poetry: ['edexcel-igcse-anthology'],
   },
+  // TODO: edexcel-igcse-lang — add set texts when Language content is built
+  'edexcel-igcse-lang': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
   'cambridge-0500': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
   'cambridge-0990': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
+  // TODO: cambridge-0475 — add Literature in English set texts
+  'cambridge-0475': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
+  // TODO: ial-edexcel — add IAL English set texts
+  'ial-edexcel': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
 }
 
 export function hasSetText(board: ExamBoard | null, category: keyof (typeof SET_TEXTS_BY_BOARD)[ExamBoard], slug: string): boolean {

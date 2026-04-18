@@ -10,7 +10,10 @@ export const GRADE_SYSTEMS: Record<ExamBoard, GradeSystem> = {
   'eduqas': '9-1',
   'cambridge-0500': 'A*-G',
   'cambridge-0990': '9-1',
+  'cambridge-0475': '9-1',
   'edexcel-igcse': '9-1',
+  'edexcel-igcse-lang': '9-1',
+  'ial-edexcel': 'A*-G', // IAL uses A*-E grading, closest match is A*-G
 }
 
 // Approximate grade boundaries (% of total marks) — update with real data
@@ -22,7 +25,10 @@ export const GRADE_BOUNDARIES: Record<ExamBoard, Partial<Record<'1'|'2'|'3'|'4'|
   'eduqas': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 87 },
   'cambridge-0500': { 'G': 20, 'F': 30, 'E': 40, 'D': 50, 'C': 60, 'B': 70, 'A': 80, 'A*': 88 },
   'cambridge-0990': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
+  'cambridge-0475': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
   'edexcel-igcse': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
+  'edexcel-igcse-lang': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
+  'ial-edexcel': { 'E': 40, 'D': 50, 'C': 60, 'B': 70, 'A': 80, 'A*': 88 }, // TODO: update with real IAL boundaries
 }
 
 export function getGradeSystemForBoard(board: ExamBoard | null): GradeSystem {

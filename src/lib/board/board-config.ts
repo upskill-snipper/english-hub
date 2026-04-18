@@ -5,7 +5,9 @@
 export type ExamBoard =
   | 'ks3'
   | 'aqa' | 'edexcel' | 'ocr' | 'eduqas'
-  | 'edexcel-igcse' | 'cambridge-0500' | 'cambridge-0990'
+  | 'edexcel-igcse' | 'edexcel-igcse-lang'
+  | 'cambridge-0500' | 'cambridge-0990' | 'cambridge-0475'
+  | 'ial-edexcel'
 
 export type BoardCategory =
   | 'ks3'
@@ -13,13 +15,15 @@ export type BoardCategory =
   | 'igcse-literature'
   | 'igcse-language-a'
   | 'igcse-language-b'
+  | 'igcse-language'
+  | 'ial'
 
 export type BoardConfig = {
   id: ExamBoard
   name: string
   fullName: string
   shortName: string
-  type: 'ks3' | 'gcse' | 'igcse'
+  type: 'ks3' | 'gcse' | 'igcse' | 'ial'
   examCode: string
   category: BoardCategory
   description: string
@@ -31,9 +35,14 @@ export const BOARDS: readonly BoardConfig[] = [
   { id: 'edexcel', name: 'Edexcel', shortName: 'Edexcel', fullName: 'Pearson Edexcel GCSE English Literature & Language', type: 'gcse', examCode: 'Edexcel', category: 'gcse', description: 'Pearson Edexcel GCSE English courses' },
   { id: 'ocr', name: 'OCR', shortName: 'OCR', fullName: 'OCR GCSE English Literature & Language', type: 'gcse', examCode: 'OCR', category: 'gcse', description: 'Oxford Cambridge and RSA GCSE English' },
   { id: 'eduqas', name: 'Eduqas', shortName: 'Eduqas', fullName: 'WJEC Eduqas GCSE English Literature & Language', type: 'gcse', examCode: 'Eduqas', category: 'gcse', description: 'WJEC Eduqas single-anthology GCSE' },
-  { id: 'edexcel-igcse', name: 'Edexcel IGCSE Literature (4ET1)', shortName: 'IGCSE Lit', fullName: 'IGCSE English Literature', type: 'igcse', examCode: '4ET1', category: 'igcse-literature', description: 'International GCSE — Pearson Edexcel' },
+  { id: 'edexcel-igcse', name: 'Edexcel IGCSE Literature (4ET1)', shortName: 'IGCSE Lit', fullName: 'IGCSE English Literature', type: 'igcse', examCode: '4ET1', category: 'igcse-literature', description: 'International GCSE — Pearson Edexcel Literature' },
+  // TODO: edexcel-igcse-lang — content not yet built; currently falls back to edexcel-igcse filtering
+  { id: 'edexcel-igcse-lang', name: 'Edexcel IGCSE Language (4EA1)', shortName: 'IGCSE Lang', fullName: 'IGCSE English Language', type: 'igcse', examCode: '4EA1', category: 'igcse-language', description: 'International GCSE — Pearson Edexcel Language' },
   { id: 'cambridge-0500', name: 'Cambridge (A*-G)', shortName: 'Cam 0500', fullName: 'Cambridge First Language English (0500)', type: 'igcse', examCode: '0500', category: 'igcse-language-a', description: 'Cambridge First Language English — A*-G grading' },
   { id: 'cambridge-0990', name: 'Cambridge (9-1)', shortName: 'Cam 0990', fullName: 'Cambridge First Language English (0990)', type: 'igcse', examCode: '0990', category: 'igcse-language-b', description: 'Cambridge First Language English — 9-1 grading' },
+  // TODO: cambridge-0475 — content not yet built; Literature in Other Languages paper
+  { id: 'cambridge-0475', name: 'Cambridge Literature (0475)', shortName: 'Cam 0475', fullName: 'Cambridge IGCSE Literature in English (0475)', type: 'igcse', examCode: '0475', category: 'igcse-literature', description: 'Cambridge IGCSE Literature in English' },
+  { id: 'ial-edexcel', name: 'Edexcel IAL', shortName: 'IAL', fullName: 'Pearson Edexcel International A-Level English', type: 'ial', examCode: 'IAL', category: 'ial', description: 'International Advanced Level English — Pearson Edexcel' },
 ]
 
 export function getBoardConfig(id: ExamBoard | null): BoardConfig | null {

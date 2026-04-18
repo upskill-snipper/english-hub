@@ -562,8 +562,11 @@ const BOARD_ID_TO_LEGACY: Record<ExamBoard, string[]> = {
   'ocr': ['OCR'],
   'eduqas': ['WJEC', 'Eduqas'],
   'edexcel-igcse': ['Edexcel IGCSE', 'IGCSE'],
+  'edexcel-igcse-lang': ['Edexcel IGCSE', 'IGCSE'],
   'cambridge-0500': ['CAIE', 'Cambridge', 'Cambridge 0500'],
   'cambridge-0990': ['CAIE', 'Cambridge', 'Cambridge 0990'],
+  'cambridge-0475': ['CAIE', 'Cambridge', 'Cambridge 0475'],
+  'ial-edexcel': ['Edexcel', 'IAL'],
 }
 
 export default function MockExamsPage() {

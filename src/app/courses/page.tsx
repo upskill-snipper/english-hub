@@ -50,10 +50,11 @@ const TIERS = ['All', 'KS3', 'GCSE', 'IGCSE'] as const
 type Tier = (typeof TIERS)[number]
 
 /** Map board type to the matching course tier. */
-function boardTypeToTier(boardType: 'ks3' | 'gcse' | 'igcse' | null): Tier {
+function boardTypeToTier(boardType: 'ks3' | 'gcse' | 'igcse' | 'ial' | null): Tier {
   if (boardType === 'ks3') return 'KS3'
   if (boardType === 'gcse') return 'GCSE'
   if (boardType === 'igcse') return 'IGCSE'
+  // IAL doesn't have its own tier yet — fall through to 'All'
   return 'All'
 }
 

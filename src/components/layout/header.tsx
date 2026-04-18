@@ -36,7 +36,7 @@ type NavLink = {
   label: string
 }
 
-function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | null): NavLink[] {
+function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | 'ial' | null): NavLink[] {
   const common: NavLink[] = [
     { href: '/courses', label: 'Courses' },
     { href: '/games', label: 'Games' },
@@ -50,6 +50,8 @@ function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | null): NavLink[] {
   if (type === 'ks3') return [...common, { href: '/resources', label: 'Resources' }, ...teacherLinks]
   if (type === 'gcse') return [...common, { href: '/revision', label: 'Revision' }, { href: '/mock-exams', label: 'Mock Exams' }, { href: '/assessment/reading', label: 'Assessment' }, ...teacherLinks]
   if (type === 'igcse') return [{ href: '/igcse', label: 'IGCSE Hub' }, ...common, { href: '/mock-exams', label: 'Mock Exams' }, ...teacherLinks]
+  // IAL — show revision and mock exams (similar to GCSE for now)
+  if (type === 'ial') return [...common, { href: '/revision', label: 'Revision' }, { href: '/mock-exams', label: 'Mock Exams' }, ...teacherLinks]
   // No board selected — show generic nav
   return [...common, { href: '/revision', label: 'Revision' }, ...teacherLinks]
 }

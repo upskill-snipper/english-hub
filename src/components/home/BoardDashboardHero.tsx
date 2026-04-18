@@ -253,6 +253,58 @@ function getQuickLinks(board: ExamBoard): QuickLink[] {
           color: 'text-primary bg-primary/10',
         },
       ]
+    // TODO: add dedicated quick links when content is built for these boards
+    case 'edexcel-igcse-lang':
+      return [
+        {
+          title: 'Edexcel IGCSE Hub',
+          description: 'IGCSE English Language preparation',
+          href: '/igcse/edexcel',
+          icon: BookOpen,
+          color: 'text-sky-400 bg-sky-500/10',
+        },
+        {
+          title: 'Exam Technique',
+          description: 'Paper structure, timing and band descriptors',
+          href: '/revision/exam-technique',
+          icon: GraduationCap,
+          color: 'text-primary bg-primary/10',
+        },
+      ]
+    case 'cambridge-0475':
+      return [
+        {
+          title: 'Cambridge Literature Hub',
+          description: 'IGCSE Literature in English (0475)',
+          href: '/igcse/cambridge/0500',
+          icon: BookOpen,
+          color: 'text-purple-400 bg-purple-500/10',
+        },
+        {
+          title: 'Exam Technique',
+          description: 'Paper walkthroughs for Cambridge Literature',
+          href: '/revision/exam-technique',
+          icon: GraduationCap,
+          color: 'text-primary bg-primary/10',
+        },
+      ]
+    case 'ial-edexcel':
+      return [
+        {
+          title: 'Courses',
+          description: 'International A-Level English courses',
+          href: '/courses',
+          icon: BookOpen,
+          color: 'text-amber-400 bg-amber-500/10',
+        },
+        {
+          title: 'Exam Technique',
+          description: 'IAL English exam preparation and strategies',
+          href: '/revision/exam-technique',
+          icon: GraduationCap,
+          color: 'text-primary bg-primary/10',
+        },
+      ]
   }
 }
 

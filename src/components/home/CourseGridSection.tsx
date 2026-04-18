@@ -153,8 +153,11 @@ const BOARD_TO_LABEL: Record<ExamBoard, CourseBoard> = {
   ocr: 'OCR',
   eduqas: 'WJEC',
   'edexcel-igcse': 'Edexcel IGCSE',
+  'edexcel-igcse-lang': 'Edexcel IGCSE',
   'cambridge-0500': 'Cambridge First Language',
   'cambridge-0990': 'Cambridge First Language (9-1)',
+  'cambridge-0475': 'Cambridge First Language',
+  'ial-edexcel': 'Edexcel',
 }
 
 function filterCourses(all: readonly Course[], board: ExamBoard | null): readonly Course[] {

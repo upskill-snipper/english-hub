@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { BookOpen, GraduationCap, Globe2, Sparkles, Loader2, Check } from 'lucide-react'
+import { BookOpen, GraduationCap, Globe2, Sparkles, Award, Loader2, Check } from 'lucide-react'
 
 import { BOARDS, type ExamBoard, type BoardConfig } from '@/lib/board/board-store'
 import { cn } from '@/lib/utils'
@@ -11,7 +11,7 @@ type BoardSelectorCardsProps = {
   /** Current board (highlights the matching card). */
   currentBoard?: ExamBoard | null
   /** Restrict displayed boards (e.g. only 'gcse' or 'igcse'). */
-  filterType?: 'gcse' | 'igcse'
+  filterType?: 'gcse' | 'igcse' | 'ial'
   className?: string
   /** Render the cards in a tighter grid — used inside the modal gate. */
   compact?: boolean
@@ -24,8 +24,11 @@ const BOARD_ICON: Record<ExamBoard, React.ComponentType<{ className?: string }>>
   ocr: Sparkles,
   eduqas: BookOpen,
   'edexcel-igcse': Globe2,
+  'edexcel-igcse-lang': Globe2,
   'cambridge-0500': Globe2,
   'cambridge-0990': Globe2,
+  'cambridge-0475': BookOpen,
+  'ial-edexcel': Award,
 }
 
 const BOARD_TAGLINE: Record<ExamBoard, string> = {
@@ -35,8 +38,11 @@ const BOARD_TAGLINE: Record<ExamBoard, string> = {
   ocr: 'Conflict cluster and Romeo & Juliet',
   eduqas: 'Single anthology and unseen poetry',
   'edexcel-igcse': 'Poetry, prose, drama & Shakespeare',
+  'edexcel-igcse-lang': 'Reading comprehension & transactional writing',
   'cambridge-0500': 'First Language English (A*-G)',
   'cambridge-0990': 'First Language English (9-1)',
+  'cambridge-0475': 'Literature in English — prose, poetry & drama',
+  'ial-edexcel': 'International A-Level English',
 }
 
 const BOARD_BENEFITS: Record<ExamBoard, string[]> = {
@@ -46,8 +52,11 @@ const BOARD_BENEFITS: Record<ExamBoard, string[]> = {
   ocr: ['Conflict poetry', 'Shakespeare support', 'Past paper practice'],
   eduqas: ['Anthology mastery', 'Unseen poetry drills', 'Component 1 & 2 prep'],
   'edexcel-igcse': ['Anthology coverage', 'Shakespeare essays', 'Unseen prose & poetry'],
+  'edexcel-igcse-lang': ['Reading passages', 'Transactional writing', 'Summary skills'],
   'cambridge-0500': ['Reading passages', 'Directed writing', 'Composition practice'],
   'cambridge-0990': ['Reading passages', 'Directed writing', 'Composition practice'],
+  'cambridge-0475': ['Poetry analysis', 'Prose & drama texts', 'Unseen criticism'],
+  'ial-edexcel': ['Advanced essay writing', 'Critical analysis', 'Comparative study'],
 }
 
 function BoardCard({

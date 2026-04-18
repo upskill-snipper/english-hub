@@ -26,7 +26,7 @@ interface PaperInfo {
   paper2: { name: string; focus: string }
 }
 
-const BOARD_PAPERS: Record<Exclude<ExamBoard, 'ks3' | 'cambridge-0500' | 'cambridge-0990' | 'edexcel-igcse'>, PaperInfo> = {
+const BOARD_PAPERS: Record<Exclude<ExamBoard, 'ks3' | 'cambridge-0500' | 'cambridge-0990' | 'edexcel-igcse' | 'edexcel-igcse-lang' | 'cambridge-0475' | 'ial-edexcel'>, PaperInfo> = {
   aqa: {
     paper1: {
       name: 'Paper 1: Explorations in Creative Reading and Writing',

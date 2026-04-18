@@ -23,14 +23,17 @@ export interface QuizQuestion {
 
 // Topics covered by each board
 export const TOPICS_FOR_BOARD: Record<ExamBoard, Topic[]> = {
-  ks3:             ['language-techniques', 'exam-technique'],
-  aqa:             ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
-  edexcel:         ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
-  ocr:             ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
-  eduqas:          ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
-  'edexcel-igcse': ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
-  'cambridge-0500':['language-techniques', 'exam-technique'],
-  'cambridge-0990':['language-techniques', 'exam-technique'],
+  ks3:                 ['language-techniques', 'exam-technique'],
+  aqa:                 ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  edexcel:             ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  ocr:                 ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  eduqas:              ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  'edexcel-igcse':     ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  'edexcel-igcse-lang':['language-techniques', 'exam-technique'],
+  'cambridge-0500':    ['language-techniques', 'exam-technique'],
+  'cambridge-0990':    ['language-techniques', 'exam-technique'],
+  'cambridge-0475':    ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  'ial-edexcel':       ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
 }
 
 export function getTopicsForBoard(board: ExamBoard | null): Topic[] {
