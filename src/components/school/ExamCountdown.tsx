@@ -47,7 +47,7 @@ const URGENCY_STYLES = {
   amber: {
     bg: 'bg-amber-50 dark:bg-amber-950/30',
     border: 'border-amber-200 dark:border-amber-800',
-    text: 'text-amber-700 dark:text-clay-600',
+    text: 'text-amber-700',
     badge: 'bg-amber-100 text-amber-800 dark:bg-amber-900',
     ring: 'ring-amber-500/20',
     dot: 'bg-amber-500',

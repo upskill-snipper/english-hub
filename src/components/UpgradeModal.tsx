@@ -45,9 +45,9 @@ export function UpgradeModal({
         <DialogHeader>
           <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30">
             {variant === 'warning' ? (
-              <Crown className="size-6 text-amber-600 dark:text-clay-600" />
+              <Crown className="size-6 text-amber-600" />
             ) : (
-              <Sparkles className="size-6 text-amber-600 dark:text-clay-600" />
+              <Sparkles className="size-6 text-amber-600" />
             )}
           </div>
           <DialogTitle className="text-center">

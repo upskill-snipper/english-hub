@@ -315,7 +315,7 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
             {score} / {deck.cards.length} matched
           </Badge>
           {mistakes > 0 && (
-            <Badge className="bg-amber-500/15 text-amber-600 dark:text-clay-600">
+            <Badge className="bg-amber-500/15 text-amber-600">
               {mistakes} mistake{mistakes !== 1 ? 's' : ''}
             </Badge>
           )}

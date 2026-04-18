@@ -61,7 +61,7 @@ export function UsageCounter({ feature, className }: UsageCounterProps) {
     remaining >= 3
       ? 'bg-emerald-600/15 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-400'
       : remaining === 2
-        ? 'bg-amber-600/15 text-amber-600 dark:bg-amber-500/15 dark:text-clay-600'
+        ? 'bg-amber-600/15 text-amber-600 dark:bg-amber-500/15'
         : 'bg-red-600/15 text-red-600 dark:bg-red-500/15 dark:text-red-400'
 
   return (
@@ -118,7 +118,7 @@ export function SoftNudge({
 
       <div className="flex items-start gap-3 pr-6">
         <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30">
-          <Sparkles className="size-4 text-amber-600 dark:text-clay-600" />
+          <Sparkles className="size-4 text-amber-600" />
         </div>
         <div className="space-y-2">
           <p className="text-sm leading-relaxed text-foreground">{message}</p>
@@ -235,7 +235,7 @@ export function LockoutCard({ feature, className }: LockoutCardProps) {
     >
       <CardHeader className="text-center">
         <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30">
-          <Lock className="size-7 text-amber-600 dark:text-clay-600" />
+          <Lock className="size-7 text-amber-600" />
         </div>
         <CardTitle className="text-lg">{featureName} is now locked</CardTitle>
         <CardDescription>

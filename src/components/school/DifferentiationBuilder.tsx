@@ -103,7 +103,7 @@ const LEVEL_CONFIG: Record<DifferentiationLevel, { label: string; tag: string; c
   foundation: {
     label: 'Foundation',
     tag: 'LA',
-    colour: 'text-amber-700 dark:text-clay-600',
+    colour: 'text-amber-700',
     bgColour: 'bg-amber-50 dark:bg-amber-950/30',
     borderColour: 'border-amber-200 dark:border-amber-800',
     description: 'Heavy scaffolding, sentence starters, word banks, guided templates',
@@ -295,7 +295,7 @@ function ClassDataBanner({ dist }: { dist: ClassDistribution }) {
           <span className="text-sm font-medium">Based on your class data:</span>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Badge variant="outline" className="border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/30 dark:text-clay-600">
+          <Badge variant="outline" className="border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/30">
             {dist.foundation} students need Foundation
           </Badge>
           <Badge variant="outline" className="border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-700 dark:bg-blue-950/30 dark:text-blue-400">

@@ -162,7 +162,7 @@ const QUESTION_TYPE_ICONS: Record<QuestionType, typeof List> = {
 
 const DIFFICULTY_COLORS: Record<Difficulty, string> = {
   easy: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
-  medium: 'bg-amber-500/10 text-amber-600 dark:text-clay-600',
+  medium: 'bg-amber-500/10 text-amber-600',
   hard: 'bg-red-500/10 text-red-600 dark:text-red-400',
 }
 
@@ -1347,7 +1347,7 @@ function ResultsView({ quiz }: { quiz: Quiz }) {
     <div className="space-y-6">
       {!results && (
         <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-3">
-          <p className="text-xs text-amber-600 dark:text-clay-600">
+          <p className="text-xs text-amber-600">
             Showing sample results for demonstration. Real results will appear when students
             complete the quiz.
           </p>

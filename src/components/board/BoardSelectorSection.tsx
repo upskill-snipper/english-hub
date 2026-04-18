@@ -398,7 +398,7 @@ const GCSE_BODIES: AwardingBodyOption[] = [
     icon: Sparkles,
     gradient: 'from-amber-500/10 via-amber-500/5 to-transparent',
     ring: 'hover:ring-amber-400/40', iconBg: 'bg-amber-500/10 group-hover:bg-amber-500/20',
-    iconText: 'text-amber-500 dark:text-clay-600', accent: 'bg-amber-500',
+    iconText: 'text-amber-500', accent: 'bg-amber-500',
   },
   {
     id: 'eduqas', label: 'WJEC Eduqas', subtitle: 'Single anthology, unseen poetry, Component 1 & 2',
@@ -432,7 +432,7 @@ const IAL_BODIES: AwardingBodyOption[] = [
     icon: Award,
     gradient: 'from-amber-500/10 via-amber-500/5 to-transparent',
     ring: 'hover:ring-amber-400/40', iconBg: 'bg-amber-500/10 group-hover:bg-amber-500/20',
-    iconText: 'text-amber-600 dark:text-clay-600', accent: 'bg-amber-500',
+    iconText: 'text-amber-600', accent: 'bg-amber-500',
   },
 ]
 

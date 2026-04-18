@@ -53,7 +53,7 @@ export function FeatureLockout({ feature }: FeatureLockoutProps) {
     <Card className="mx-auto max-w-md border-amber-200/60 dark:border-amber-800/40">
       <CardHeader className="text-center">
         <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30">
-          <Lock className="size-7 text-amber-600 dark:text-clay-600" />
+          <Lock className="size-7 text-amber-600" />
         </div>
         <CardTitle className="text-lg">
           {featureName} is now locked
