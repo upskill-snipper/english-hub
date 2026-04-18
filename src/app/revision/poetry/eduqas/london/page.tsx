@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const london: PoemData = {
   title: 'London',
@@ -405,6 +406,13 @@ export default function LondonEduqasPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="London"
+        textType="poem"
+        examBoard="Eduqas"
+        cluster="Eduqas Poetry Anthology"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={london} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

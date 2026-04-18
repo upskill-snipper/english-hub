@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   alternates: {
@@ -127,6 +128,10 @@ export default async function MacbethHubPage() {
           </p>
         </div>
       </section>
+
+      <div className="mx-auto max-w-5xl px-4 pt-8">
+        <StudyTools textName="Macbeth" textType="play" examBoard="Edexcel" />
+      </div>
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── At a glance ──────────────────────────────────────── */}

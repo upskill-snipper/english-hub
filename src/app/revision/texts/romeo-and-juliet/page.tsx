@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   title: 'Romeo and Juliet — Study Guide | The English Hub',
@@ -276,6 +277,7 @@ export default async function RomeoAndJulietPage() {
           },
         ]}
       />
+      <StudyTools textName="Romeo and Juliet" textType="play" examBoard="AQA" />
       <TextGuide data={data} />
     </>
   )

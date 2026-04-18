@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -328,6 +329,13 @@ export default function WinterSwansPage() {
       </div>
 
       {/* ── Interactive poem viewer ──────────────────────────────── */}
+      <StudyTools
+        textName="Winter Swans"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Love & Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={winterSwansPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

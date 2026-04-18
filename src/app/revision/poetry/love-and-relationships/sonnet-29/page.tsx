@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 const poemData: PoemData = {
   title: "Sonnet 29 -- 'I think of thee!'",
@@ -77,6 +78,13 @@ export default function Sonnet29Page() {
         </div>
       </div>
 
+      <StudyTools
+        textName="Sonnet 29"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Love & Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={poemData} />
 
       {/* Compare With Section */}

@@ -1,34 +1,18 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ANALYSIS_PAGE_MAP, ANALYSIS_PAGES } from '@/data/analysis'
+import { ANALYSIS_PAGE_MAP, ANALYSIS_PAGES, type AnalysisPageEntry } from '@/data/analysis'
+import { getCategoryContext } from '@/data/analysis/category-context'
 
 // ---------------------------------------------------------------------------
 // ISR: pages are generated on first request and cached for 24 hours.
-// This avoids the Vercel build OOM that 210 statically-generated pages caused.
+// Avoids the Vercel build OOM that 210 statically-generated pages caused.
 // ---------------------------------------------------------------------------
 export const revalidate = 86400
 
-// ---------------------------------------------------------------------------
-// Do NOT pre-render any sub-pages at build time — they are generated on-demand.
-// The 8 hub pages are separate static routes and are unaffected.
-// ---------------------------------------------------------------------------
+// Do NOT pre-render any sub-pages at build time — generated on-demand.
 export function generateStaticParams() {
   return []
-}
-
-// ---------------------------------------------------------------------------
-// Human-readable category labels for breadcrumbs
-// ---------------------------------------------------------------------------
-const CATEGORY_LABELS: Record<string, string> = {
-  macbeth: 'Macbeth',
-  'inspector-calls': 'An Inspector Calls',
-  'christmas-carol': 'A Christmas Carol',
-  'jekyll-hyde': 'Jekyll and Hyde',
-  'aqa-love-relationships': 'AQA Love & Relationships',
-  'aqa-power-conflict': 'AQA Power & Conflict',
-  'language-paper': 'Language Paper',
-  revision: 'Revision',
 }
 
 // ---------------------------------------------------------------------------
@@ -46,17 +30,56 @@ export function generateMetadata({ params }: Props): Metadata {
     return { title: 'Page Not Found | The English Hub' }
   }
 
+  const canonical = `https://theenglishhub.app/analysis/${key}`
+
   return {
     title: entry.title,
     description: entry.description,
-    alternates: {
-      canonical: `https://theenglishhub.app/analysis/${key}`,
-    },
+    alternates: { canonical },
     openGraph: {
+      title: entry.title,
+      description: entry.description,
+      url: canonical,
+      type: 'article',
+      siteName: 'The English Hub',
+    },
+    twitter: {
+      card: 'summary_large_image',
       title: entry.title,
       description: entry.description,
     },
   }
+}
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+const CATEGORY_LABELS: Record<string, string> = {
+  macbeth: 'Macbeth',
+  'inspector-calls': 'An Inspector Calls',
+  'christmas-carol': 'A Christmas Carol',
+  'jekyll-hyde': 'Jekyll and Hyde',
+  'aqa-love-relationships': 'AQA Love & Relationships',
+  'aqa-power-conflict': 'AQA Power & Conflict',
+  'language-paper': 'Language Paper',
+  revision: 'Revision',
+}
+
+function cleanTitle(title: string): string {
+  return title.replace(/ \| .+$/, '')
+}
+
+function relatedEntries(category: string, currentKey: string): AnalysisPageEntry[] {
+  return ANALYSIS_PAGES.filter(
+    (e) => e.category === category && e.slug.join('/') !== currentKey
+  ).slice(0, 6)
+}
+
+function capitalise(str: string): string {
+  return str
+    .split('-')
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ')
 }
 
 // ---------------------------------------------------------------------------
@@ -71,59 +94,299 @@ export default function AnalysisPage({ params }: Props) {
   }
 
   const category = entry.category
-  const categoryLabel = CATEGORY_LABELS[category] ?? category
+  const categoryLabel = CATEGORY_LABELS[category] ?? capitalise(category)
+  const pageTitle = cleanTitle(entry.title)
+  const ctx = getCategoryContext(category)
+  const related = relatedEntries(category, key)
+  const pageSlug = entry.slug[1]
+  const pageTopic = capitalise(pageSlug)
 
-  const jsonLd = {
+  const canonical = `https://theenglishhub.app/analysis/${key}`
+
+  // ---- Structured data ---------------------------------------------------
+  const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: entry.title.replace(/ \| .+$/, ''),
-    author: { '@type': 'Organization', name: 'The English Hub — GCSE Markers' },
-    publisher: { '@type': 'Organization', name: 'The English Hub' },
+    headline: pageTitle,
+    author: {
+      '@type': 'Organization',
+      name: 'The English Hub — GCSE Markers',
+      url: 'https://theenglishhub.app',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The English Hub',
+      url: 'https://theenglishhub.app',
+    },
     description: entry.description,
-    mainEntityOfPage: `https://theenglishhub.app/analysis/${key}`,
+    mainEntityOfPage: canonical,
+    about: ctx?.label ?? categoryLabel,
+    educationalLevel: 'GCSE',
+    inLanguage: 'en-GB',
   }
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Analysis', item: 'https://theenglishhub.app/analysis' },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: categoryLabel,
+        item: `https://theenglishhub.app/analysis/${category}`,
+      },
+      { '@type': 'ListItem', position: 3, name: pageTitle, item: canonical },
+    ],
+  }
+
+  const faqJsonLd = ctx?.faqs?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: ctx.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      }
+    : null
+
+  // ---- Render ------------------------------------------------------------
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       {/* Breadcrumb */}
-      <nav className="mb-4 text-sm text-muted-foreground">
-        <Link href={`/analysis/${category}`} className="hover:text-foreground">
-          {categoryLabel} Analysis
+      <nav className="mb-4 text-sm text-muted-foreground" aria-label="Breadcrumb">
+        <Link href="/analysis" className="hover:text-foreground">
+          Analysis
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-foreground">
-          {entry.title.replace(/ \| .+$/, '')}
-        </span>
+        <Link href={`/analysis/${category}`} className="hover:text-foreground">
+          {categoryLabel}
+        </Link>
+        <span className="mx-2">/</span>
+        <span className="text-foreground">{pageTitle}</span>
       </nav>
 
+      {/* Title */}
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        {entry.title.replace(/ \| .+$/, '')}
+        {pageTitle}
       </h1>
-      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
+      <p className="mt-3 text-sm text-muted-foreground">
+        Written by GCSE markers &middot; Covers{' '}
+        {ctx?.boards?.join(', ') ?? 'all UK exam boards'}
+      </p>
 
-      <article className="mt-8 space-y-5 text-muted-foreground leading-relaxed">
-        <p>{entry.description}</p>
+      <article className="mt-10 space-y-10 text-muted-foreground leading-relaxed">
+        {/* Intro — uses the entry description as the opening paragraph */}
+        <section>
+          <p className="text-lg text-foreground">{entry.description}</p>
+        </section>
 
-        <div className="mt-8 rounded-lg border border-border bg-muted/30 p-6 text-center">
-          <p className="text-base font-medium text-foreground">
-            Full analysis content is being migrated to our new platform.
+        {/* Quick orientation */}
+        {ctx && (
+          <section className="rounded-lg border border-border bg-muted/30 p-6">
+            <h2 className="text-xl font-semibold text-foreground">
+              What you need to know about {ctx.label}
+            </h2>
+            <p className="mt-3">{ctx.overview}</p>
+          </section>
+        )}
+
+        {/* About the text / anthology */}
+        {ctx?.about?.length && (
+          <section>
+            <h2 className="text-xl font-semibold text-foreground">
+              About {ctx.label}
+            </h2>
+            <div className="mt-4 space-y-4">
+              {ctx.about.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Assessment context */}
+        {ctx?.assessmentContext?.length ? (
+          <section>
+            <h2 className="text-xl font-semibold text-foreground">
+              How this is assessed
+            </h2>
+            <div className="mt-4 space-y-6">
+              {ctx.assessmentContext.map((ac, i) => (
+                <div key={i} className="rounded-lg border border-border p-5">
+                  <h3 className="font-medium text-foreground">{ac.board}</h3>
+                  <p className="mt-1 text-sm">
+                    {ac.paper} &middot; {ac.section}
+                  </p>
+                  <p className="mt-1 text-sm">
+                    <strong className="text-foreground">{ac.marks} marks</strong> &middot;{' '}
+                    {ac.timeGuide} recommended
+                  </p>
+                  <ul className="mt-3 space-y-1 text-sm">
+                    {ac.aoWeighting.map((ao, j) => (
+                      <li key={j}>
+                        <strong className="text-foreground">{ao.ao}</strong> ({ao.weight}) —{' '}
+                        {ao.description}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {/* Key quotes */}
+        {ctx?.keyQuotes?.length ? (
+          <section>
+            <h2 className="text-xl font-semibold text-foreground">
+              Key quotes and analysis
+            </h2>
+            <div className="mt-4 space-y-5">
+              {ctx.keyQuotes.map((q, i) => (
+                <blockquote
+                  key={i}
+                  className="border-l-2 border-primary/50 pl-4"
+                >
+                  <p className="font-medium text-foreground">{q.quote}</p>
+                  <p className="mt-1 text-sm italic">{q.source}</p>
+                  <p className="mt-2 text-sm">{q.analysis}</p>
+                </blockquote>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {/* Exam tips */}
+        {ctx?.examTips?.length ? (
+          <section>
+            <h2 className="text-xl font-semibold text-foreground">
+              Exam tips for {ctx.label}
+            </h2>
+            <ol className="mt-4 list-decimal space-y-2 pl-6">
+              {ctx.examTips.map((tip, i) => (
+                <li key={i}>{tip}</li>
+              ))}
+            </ol>
+          </section>
+        ) : null}
+
+        {/* Grade 9 indicators */}
+        {ctx?.grade9Indicators?.length ? (
+          <section>
+            <h2 className="text-xl font-semibold text-foreground">
+              What makes a Grade 9 answer
+            </h2>
+            <ul className="mt-4 list-disc space-y-2 pl-6">
+              {ctx.grade9Indicators.map((g, i) => (
+                <li key={i}>{g}</li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {/* Topic-specific section — generated from slug */}
+        <section>
+          <h2 className="text-xl font-semibold text-foreground">
+            Applying this to {pageTopic}
+          </h2>
+          <p className="mt-4">
+            {entry.description} Use the context, quotes, and exam tips above to structure your
+            answer on {pageTopic.toLowerCase()}. A Grade 9 response will connect at least two of the
+            points above, name the writer&rsquo;s methods explicitly, and return to the
+            question&rsquo;s wording in the final paragraph.
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            This page will be fully restored shortly. In the meantime, explore
-            the {categoryLabel} hub for more analysis.
+          <p className="mt-4">
+            <strong className="text-foreground">
+              Want the board-specific marking for this topic?
+            </strong>{' '}
+            Write your own practice paragraph and upload it to our AI marker — it applies your
+            exam board&rsquo;s specific AO weighting and returns feedback in the lexis of that
+            board&rsquo;s mark scheme.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/marking"
+              className="inline-block rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            >
+              Get AI feedback on your essay
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-block rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-muted"
+            >
+              See pricing
+            </Link>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        {ctx?.faqs?.length ? (
+          <section>
+            <h2 className="text-xl font-semibold text-foreground">
+              Frequently asked questions
+            </h2>
+            <div className="mt-4 space-y-4">
+              {ctx.faqs.map((f, i) => (
+                <div key={i}>
+                  <h3 className="font-medium text-foreground">{f.question}</h3>
+                  <p className="mt-1">{f.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {/* Related pages */}
+        {related.length > 0 && (
+          <section>
+            <h2 className="text-xl font-semibold text-foreground">
+              Related {categoryLabel} analysis
+            </h2>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              {related.map((r) => (
+                <li key={r.slug.join('/')}>
+                  <Link
+                    href={`/analysis/${r.slug.join('/')}`}
+                    className="block rounded-md border border-border p-4 hover:bg-muted"
+                  >
+                    <p className="font-medium text-foreground">
+                      {cleanTitle(r.title)}
+                    </p>
+                    <p className="mt-1 text-sm">{r.description}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Hub link */}
+        <section className="border-t border-border pt-8">
           <Link
             href={`/analysis/${category}`}
-            className="mt-4 inline-block rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            className="text-sm underline hover:no-underline"
           >
-            Browse {categoryLabel} Analysis
+            &larr; Back to all {categoryLabel} analysis
           </Link>
-        </div>
+        </section>
       </article>
     </main>
   )

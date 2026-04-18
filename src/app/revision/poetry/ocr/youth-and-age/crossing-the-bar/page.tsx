@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const crossingTheBar: PoemData = {
   title: 'Crossing the Bar',
@@ -364,6 +365,13 @@ export default function CrossingTheBarPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="Crossing the Bar"
+        textType="poem"
+        examBoard="OCR"
+        cluster="Youth and Age"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={crossingTheBar} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

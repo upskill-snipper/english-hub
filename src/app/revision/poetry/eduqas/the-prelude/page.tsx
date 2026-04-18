@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const prelude: PoemData = {
   title: 'The Prelude: stealing the boat',
@@ -676,6 +677,13 @@ export default function PreludeEduqasPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="The Prelude: stealing the boat"
+        textType="poem"
+        examBoard="Eduqas"
+        cluster="Eduqas Poetry Anthology"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={prelude} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

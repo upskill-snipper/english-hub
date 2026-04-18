@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const toAutumn: PoemData = {
   title: 'To Autumn',
@@ -580,6 +581,13 @@ export default function ToAutumnPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="To Autumn"
+        textType="poem"
+        examBoard="Edexcel"
+        cluster="Time and Place"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={toAutumn} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

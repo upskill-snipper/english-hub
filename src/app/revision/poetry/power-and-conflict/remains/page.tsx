@@ -6,6 +6,7 @@ import {
   InteractivePoemViewer,
   type PoemData,
 } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata = {
   title: 'Remains -- Simon Armitage -- The English Hub',
@@ -458,6 +459,13 @@ export default function RemainsPage() {
       </div>
 
       {/* ── Interactive poem viewer ── */}
+      <StudyTools
+        textName="Remains"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={REMAINS} />
 
       {/* ── Comparison poems ── */}

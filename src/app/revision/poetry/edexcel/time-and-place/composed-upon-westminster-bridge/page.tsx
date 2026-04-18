@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const westminsterBridge: PoemData = {
   title: 'Composed Upon Westminster Bridge, September 3, 1802',
@@ -378,6 +379,13 @@ export default function WestminsterBridgePage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="Composed Upon Westminster Bridge"
+        textType="poem"
+        examBoard="Edexcel"
+        cluster="Time and Place"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={westminsterBridge} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

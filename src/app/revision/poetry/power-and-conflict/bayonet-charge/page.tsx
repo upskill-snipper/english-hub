@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
 import type { Metadata } from 'next'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── SEO ─────────────────────────────────────────────────────────── */
 
@@ -395,6 +396,13 @@ export default function BayonetChargePage() {
       </div>
 
       {/* ── Interactive viewer ────────────────────────────────────── */}
+      <StudyTools
+        textName="Bayonet Charge"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={BAYONET_CHARGE} />
 
       {/* ── Comparisons ──────────────────────────────────────────── */}

@@ -19,6 +19,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   title: 'Things Fall Apart — Edexcel IGCSE Literature Study Guide',
@@ -227,6 +228,8 @@ export default async function ThingsFallApartHubPage() {
           </p>
         </div>
       </section>
+
+      <StudyTools textName="Things Fall Apart" textType="novel" examBoard="Edexcel" />
 
       <section className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5">
         <div className="flex gap-3">

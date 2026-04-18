@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ────────────────────────────────────────────────────── */
 
@@ -755,6 +756,8 @@ export default function LaBelleDamePage() {
       </div>
 
       <InteractivePoemViewer poem={poem} />
+
+      <StudyTools textName="La Belle Dame sans Merci" textType="poem" examBoard="Edexcel" variant="compact" />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">

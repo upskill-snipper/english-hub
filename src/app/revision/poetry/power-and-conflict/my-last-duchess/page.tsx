@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ─────────────────────────────────────────────────── */
 
@@ -606,6 +607,13 @@ export default function MyLastDuchessPage() {
       </div>
 
       {/* Interactive poem viewer */}
+      <StudyTools
+        textName="My Last Duchess"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={poemData} />
 
       {/* Comparison section */}

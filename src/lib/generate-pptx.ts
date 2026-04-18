@@ -2,6 +2,10 @@
 
 import type { LessonPlanData } from './generate-teaching-pdf'
 
+// ─── Slide skin type ────────────────────────────────────────────────────────
+
+export type SlideSkin = 'cream' | 'dark' | 'whiteboard'
+
 // ─── Re-export the ResourcePptxData type (used by callers) ───────────────────
 
 export interface ResourcePptxData {
@@ -59,12 +63,19 @@ async function fetchAndDownload(body: Record<string, unknown>): Promise<void> {
 
 // ─── Lesson Plan PowerPoint ──────────────────────────────────────────────────
 
-export async function generateLessonPlanPptx(topic: string, data: LessonPlanData): Promise<void> {
-  await fetchAndDownload({ variant: 'lesson-plan', topic, data })
+export async function generateLessonPlanPptx(
+  topic: string,
+  data: LessonPlanData,
+  skin: SlideSkin = 'cream',
+): Promise<void> {
+  await fetchAndDownload({ variant: 'lesson-plan', topic, data, skin })
 }
 
 // ─── Generic Resource PowerPoint ─────────────────────────────────────────────
 
-export async function generateResourcePptx(data: ResourcePptxData): Promise<void> {
-  await fetchAndDownload({ variant: 'resource', data })
+export async function generateResourcePptx(
+  data: ResourcePptxData,
+  skin: SlideSkin = 'cream',
+): Promise<void> {
+  await fetchAndDownload({ variant: 'resource', data, skin })
 }

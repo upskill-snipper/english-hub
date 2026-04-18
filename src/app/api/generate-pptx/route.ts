@@ -103,7 +103,9 @@ function pickTeacherTip(notes?: string[]): string | undefined {
 
 // ─── Lesson Plan Builder ────────────────────────────────────────────────────
 
-function buildLessonPlanPptx(topic: string, data: LessonPlanData): PptxGenJS {
+type SlideSkin = 'cream' | 'dark' | 'whiteboard'
+
+function buildLessonPlanPptx(topic: string, data: LessonPlanData, skin: SlideSkin = 'cream'): PptxGenJS {
   const pptx = new PptxGenJS()
   pptx.author = 'The English Hub'
   pptx.company = 'The English Hub'
@@ -232,7 +234,7 @@ function buildLessonPlanPptx(topic: string, data: LessonPlanData): PptxGenJS {
 
 // ─── Resource PPTX Builder ──────────────────────────────────────────────────
 
-function buildResourcePptx(data: ResourcePptxData): PptxGenJS {
+function buildResourcePptx(data: ResourcePptxData, skin: SlideSkin = 'cream'): PptxGenJS {
   const pptx = new PptxGenJS()
   pptx.author = 'The English Hub'
   pptx.company = 'The English Hub'
@@ -282,10 +284,11 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { variant, topic, data } = body as {
+    const { variant, topic, data, skin = 'cream' } = body as {
       variant: 'lesson-plan' | 'resource'
       topic?: string
       data: LessonPlanData | ResourcePptxData
+      skin?: 'cream' | 'dark' | 'whiteboard'
     }
 
     let pptx: PptxGenJS
@@ -293,11 +296,11 @@ export async function POST(request: NextRequest) {
 
     if (variant === 'lesson-plan') {
       const lpData = data as LessonPlanData
-      pptx = buildLessonPlanPptx(topic || 'Lesson', lpData)
+      pptx = buildLessonPlanPptx(topic || 'Lesson', lpData, skin)
       fileName = `${(topic || 'Lesson').replace(/\s+/g, '-')}-lesson-plan.pptx`
     } else {
       const rData = data as ResourcePptxData
-      pptx = buildResourcePptx(rData)
+      pptx = buildResourcePptx(rData, skin)
       fileName = `${rData.title.replace(/[^a-zA-Z0-9]+/g, '-').replace(/-+$/, '')}.pptx`
     }
 

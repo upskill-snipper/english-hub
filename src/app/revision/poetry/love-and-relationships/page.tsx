@@ -18,6 +18,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
+import StudyTools from '@/components/study/StudyTools'
 
 // ─── localStorage key (shared with other anthology pages) ─────────────────
 
@@ -298,6 +299,8 @@ export default function LoveAndRelationshipsPage() {
           )}
         </div>
       </section>
+
+      <StudyTools textName="Love & Relationships Anthology" textType="anthology" examBoard="AQA" variant="banner" />
 
       {/* ── Poem groups ─────────────────────────────────────────────── */}
       {THEME_GROUPS.map((group) => (

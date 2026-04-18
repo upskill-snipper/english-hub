@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const sheWalksInBeauty: PoemData = {
   title: 'She Walks in Beauty',
@@ -392,6 +393,13 @@ export default function SheWalksInBeautyPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="She Walks in Beauty"
+        textType="poem"
+        examBoard="OCR"
+        cluster="Love and Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={sheWalksInBeauty} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

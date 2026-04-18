@@ -4,6 +4,7 @@ import { BookOpen, ArrowRight } from 'lucide-react'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata = {
   title: 'Macbeth Study Guide | The English Hub',
@@ -310,6 +311,7 @@ export default async function MacbethPage() {
           },
         ]}
       />
+      <StudyTools textName="Macbeth" textType="play" examBoard="AQA" />
       <TextGuide data={data} />
     </>
   )

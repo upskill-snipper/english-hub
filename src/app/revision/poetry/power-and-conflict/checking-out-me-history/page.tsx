@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata = {
   title: 'Checking Out Me History -- John Agard -- The English Hub',
@@ -352,6 +353,13 @@ export default function CheckingOutMeHistoryPage() {
       </div>
 
       {/* ── Interactive poem viewer ───────────────────────────────── */}
+      <StudyTools
+        textName="Checking Out Me History"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={POEM} />
 
       {/* ── Comparison poems ──────────────────────────────────────── */}

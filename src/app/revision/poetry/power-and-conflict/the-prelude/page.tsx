@@ -8,6 +8,7 @@ import {
   InteractivePoemViewer,
   type PoemData,
 } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ─────────────────────────────────────────────────── */
 
@@ -424,6 +425,13 @@ export default function ThePreludePage() {
       </div>
 
       {/* ── Interactive poem viewer ─────────────────────────────── */}
+      <StudyTools
+        textName="The Prelude: Stealing the Boat"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={POEM} />
 
       {/* ── Compare with ───────────────────────────────────────── */}

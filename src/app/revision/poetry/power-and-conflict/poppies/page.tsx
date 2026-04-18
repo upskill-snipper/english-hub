@@ -7,6 +7,7 @@ import {
   InteractivePoemViewer,
   type PoemData,
 } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ─────────────────────────────────────────────────── */
 
@@ -321,6 +322,13 @@ export default function PoppiesStudyPage() {
       </section>
 
       {/* ── Interactive poem viewer ───────────────────────────── */}
+      <StudyTools
+        textName="Poppies"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={poppiesData} />
 
       {/* ── Comparison poems ──────────────────────────────────── */}

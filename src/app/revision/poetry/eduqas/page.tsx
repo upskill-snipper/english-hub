@@ -20,6 +20,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ────────────────────────────────────────────────────── */
 
@@ -155,6 +156,8 @@ export default function EduqasPoetryPage() {
           </div>
         </div>
       </section>
+
+      <StudyTools textName="Eduqas Poetry Anthology" textType="anthology" examBoard="Eduqas" variant="banner" />
 
       {/* ── Poems grouped by theme ────────────────────────────────── */}
       <section>

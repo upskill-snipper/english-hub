@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const sheDweltAmongTheUntroddenWays: PoemData = {
   title: 'She Dwelt Among the Untrodden Ways',
@@ -329,6 +330,13 @@ export default function SheDweltPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="She Dwelt Among the Untrodden Ways"
+        textType="poem"
+        examBoard="OCR"
+        cluster="Love and Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={sheDweltAmongTheUntroddenWays} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

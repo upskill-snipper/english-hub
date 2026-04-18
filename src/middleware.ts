@@ -6,24 +6,78 @@ const BOARD_COOKIE = 'english-hub-board'
 
 // Paths that are allowed through without a board cookie.
 // Use exact matches and prefix matches (prefixes end with "/").
+//
+// Philosophy: ONLY gate content that materially changes by exam board
+// (revision/*, practice, mock-exams, games, assessment/*, courses, igcse/*).
+// Marketing, policy, compliance, demo, and account pages must be crawlable
+// without a board cookie so that Googlebot, social unfurlers, diligence
+// reviewers, school DPOs, and paid-ad landers can see real content.
 const BOARD_ALLOWLIST_EXACT = new Set<string>([
+  // Root + board selector
   '/',
   '/board-select',
+
+  // Marketing / conversion surfaces
   '/pricing',
   '/about',
+  '/contact',
+  '/for-schools',
+  '/for-teachers',
+  '/for-parents',
+  '/affiliates',
+  '/creators',
+  '/resources',
+  '/help',
+  '/faqs',
+
+  // Legal / compliance (must be crawlable for school DPOs and regulators)
   '/terms',
   '/privacy',
+  '/privacy-policy',
+  '/cookie-policy',
+  '/refund-policy',
+  '/accessibility',
   '/safeguarding',
+  '/data-processing',
+  '/legal',
+
+  // Account-adjacent flows that don't depend on board choice
+  '/verify',
+  '/consent',
+  '/certificate',
+
+  // Technical
   '/favicon.ico',
   '/robots.txt',
   '/sitemap.xml',
 ])
 
 const BOARD_ALLOWLIST_PREFIX: string[] = [
+  // Board selector + auth flows
   '/board-select/',
   '/auth/',
+
+  // School, teacher, parent landing flows (board chosen later via school code)
   '/school/',
-  '/demo/school/',
+  '/for-schools/',
+  '/for-teachers/',
+  '/for-parents/',
+
+  // Demo pages must be public
+  '/demo/',
+
+  // Affiliates / creators / resources hubs
+  '/affiliates/',
+  '/creators/',
+  '/resources/',
+
+  // Compliance sub-pages
+  '/legal/',
+
+  // Long-tail SEO content hub — board-agnostic analysis pages
+  '/analysis/',
+
+  // API + Next.js internals
   '/api/',
   '/_next/',
 ]

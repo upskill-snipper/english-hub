@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   alternates: {
@@ -134,6 +135,10 @@ export default async function MuchAdoHubPage() {
           </p>
         </div>
       </section>
+
+      <div className="mx-auto max-w-5xl px-4 pt-8">
+        <StudyTools textName="Much Ado About Nothing" textType="play" examBoard="Edexcel" />
+      </div>
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Plot ────────────────────────────────────────────── */}

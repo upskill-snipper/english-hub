@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   title: 'A Christmas Carol — Study Guide | The English Hub',
@@ -243,8 +244,27 @@ export default async function AChristmasCarolPage() {
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/a-christmas-carol/characters',
+            icon: 'characters',
+            title: 'Character Analysis',
+            description: 'In-depth analysis of all major characters with quotes, arcs and exam tips.',
+          },
+          {
+            href: '/revision/texts/a-christmas-carol/themes',
+            icon: 'themes',
+            title: 'Theme Analysis',
+            description: 'Seven major themes explored with evidence from each stave and essay tips.',
+          },
+          {
+            href: '/revision/texts/a-christmas-carol/context',
+            icon: 'context',
+            title: 'Historical & Social Context',
+            description: 'Victorian England, the Poor Law, Dickens\' life, and the novella\'s impact.',
+          },
         ]}
       />
+      <StudyTools textName="A Christmas Carol" textType="novella" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are reproduced freely as the text is no longer subject to copyright.

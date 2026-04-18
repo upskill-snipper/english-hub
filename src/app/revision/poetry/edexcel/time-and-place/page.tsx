@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import StudyTools from '@/components/study/StudyTools'
 
 interface Poem {
   title: string
@@ -203,6 +204,8 @@ export default function EdexcelTimeAndPlacePage() {
           </p>
         </div>
       </section>
+
+      <StudyTools textName="Edexcel Time and Place Anthology" textType="anthology" examBoard="Edexcel" variant="banner" />
 
       {/* ── Available poems ────────────────────────────────────────── */}
       <section>

@@ -11,10 +11,11 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   eslint: {
-    // ESLint runs in CI/CD pipeline (.github/workflows/ci.yml). Still
-    // skipped during Vercel builds to keep build times faster — linting
-    // 600+ files adds ~2min with no safety benefit since CI catches it.
-    ignoreDuringBuilds: true,
+    // Re-enabled at build time (IMPROVEMENT-PLAN §1.2). If Vercel builds
+    // become too slow, scope lint to `src/` via `dirs` below rather than
+    // disabling. CI continues to run lint independently as a safety net.
+    ignoreDuringBuilds: false,
+    dirs: ['src'],
   },
   experimental: {
     instrumentationHook: true,

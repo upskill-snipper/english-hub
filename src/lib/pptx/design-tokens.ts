@@ -1,84 +1,148 @@
-// ─── PowerPoint Design Tokens ───────────────────────────────────────────────
+// ─── Anthology Deck Theme – PowerPoint Design Tokens ────────────────────────
 // Single source of truth for all visual constants used across slide templates.
+// Three skins share the same layout & typography; only the colour palette changes.
+
+// ─── Skin types & palette ───────────────────────────────────────────────────
+
+export type SlideSkin = 'cream' | 'dark' | 'whiteboard'
+
+export interface SkinPalette {
+  /** Slide background */
+  slideBg: string
+  /** Primary foreground / body text */
+  slideFg: string
+  /** Secondary text (subtitles, standfirsts) */
+  slideSub: string
+  /** Muted text (captions, metadata) */
+  slideMuted: string
+  /** Default rule / divider */
+  slideRule: string
+  /** Strong rule (used for emphasis dividers) */
+  slideRuleStrong: string
+  /** Panel / card background */
+  slidePanel: string
+  /** Panel / card border */
+  slidePanelBorder: string
+  /** Primary accent colour */
+  slideAccent: string
+  /** Softer accent (hover / secondary) */
+  slideAccentSoft: string
+}
+
+// ─── Skin palettes ──────────────────────────────────────────────────────────
+
+export const SKIN_PALETTES: Record<SlideSkin, SkinPalette> = {
+  cream: {
+    slideBg:          'FBF7F0', // cream-50
+    slideFg:          '141A17', // ink-900
+    slideSub:         '303832', // ink-700
+    slideMuted:       '4A524C', // ink-600
+    slideRule:        'B5B8B3', // ink-300
+    slideRuleStrong:  '141A17', // ink-900
+    slidePanel:       'F5EFE4', // cream-100
+    slidePanelBorder: 'D6D7D3', // ink-200
+    slideAccent:      'AD4A28', // clay-600
+    slideAccentSoft:  'C65A33', // clay-500
+  },
+
+  dark: {
+    slideBg:          '0E1513',
+    slideFg:          'FBF7F0', // cream-50
+    slideSub:         'C8C5BC',
+    slideMuted:       '8A8D82',
+    slideRule:        '2B332E',
+    slideRuleStrong:  'FBF7F0', // cream-50
+    slidePanel:       '15201C',
+    slidePanelBorder: '2B332E',
+    slideAccent:      'E89764',
+    slideAccentSoft:  'D97A4E',
+  },
+
+  whiteboard: {
+    slideBg:          'FFFFFF',
+    slideFg:          '111111',
+    slideSub:         '333333',
+    slideMuted:       '555555',
+    slideRule:        'DDDDDD',
+    slideRuleStrong:  '111111',
+    slidePanel:       'F7F7F5',
+    slidePanelBorder: 'E5E5E2',
+    slideAccent:      'AD4A28', // clay-600
+    slideAccentSoft:  'C65A33', // clay-500
+  },
+} as const
+
+// ─── Helper ─────────────────────────────────────────────────────────────────
+
+/** Return the palette for a given skin (defaults to cream). */
+export function getSkinPalette(skin: SlideSkin = 'cream'): SkinPalette {
+  return SKIN_PALETTES[skin]
+}
+
+// ─── Design constants ───────────────────────────────────────────────────────
 
 export const PPTX_DESIGN = {
-  // Brand
-  brandPrimary: '1e3a8a',
-  brandAccent: '2563eb',
-  brandLight: 'dbeafe',
-  brandDark: '0f1d45',
+  // Typography – Anthology stack
+  fontSerif: 'Newsreader',      // headlines, body, pull-quotes
+  fontMono:  'JetBrains Mono',  // kickers, codes, metadata
+  fontMain:  'Newsreader',      // backward-compat alias for fontSerif
 
-  // Phase colours
-  phaseStarter: 'f59e0b',    // amber
-  phaseMain: '3b82f6',       // blue
-  phasePlenary: '10b981',    // green
-  phaseHomework: '8b5cf6',   // purple
+  // ── Named sizes (points, scaled from 1920px → 13.33 in) ──────────────────
 
-  // Phase backgrounds (lighter tints)
-  phaseStarterBg: 'fef3c7',
-  phaseMainBg: 'dbeafe',
-  phasePlenaryBg: 'd1fae5',
-  phaseHomeworkBg: 'ede9fe',
+  /** Masthead brand name – 28 px → ~19 pt */
+  sizeMastheadBrand: 19,
+  /** Masthead edition line – 24 px → ~17 pt */
+  sizeMastheadEdition: 17,
+  /** Masthead code – 16 px → ~11 pt */
+  sizeMastheadCode: 11,
+  /** Standard body text – 28 px → ~19 pt */
+  sizeBody: 19,
+  /** Section heading – 54 px → ~37 pt */
+  sizeSectionHeading: 37,
+  /** Display h1 – 180 px → ~125 pt */
+  sizeDisplayH1: 125,
+  /** XL h1 – 120 px → ~83 pt */
+  sizeXlH1: 83,
+  /** LG h1 – 80 px → ~55 pt */
+  sizeLgH1: 55,
+  /** Standfirst / lead paragraph – 36 px → ~25 pt */
+  sizeStandfirst: 25,
+  /** Kicker / superscript label – 18 px → ~12 pt */
+  sizeKicker: 12,
+  /** Dashed list item – 28 px → ~19 pt */
+  sizeDashedList: 19,
+  /** Data-card number – 140 px → ~97 pt */
+  sizeDataCardNum: 97,
+  /** Pull-quote text – 88 px → ~61 pt */
+  sizePullQuote: 61,
+  /** Footer text – 15 px → ~10 pt */
+  sizeFooter: 10,
 
-  // Differentiation
-  diffSupport: { bg: 'dbeafe', text: '1e40af', header: '2563eb', headerBg: 'bfdbfe' },
-  diffCore: { bg: 'dcfce7', text: '166534', header: '16a34a', headerBg: 'bbf7d0' },
-  diffStretch: { bg: 'f3e8ff', text: '6b21a8', header: '7c3aed', headerBg: 'ddd6fe' },
+  // ── Legacy size aliases (backward compat) ─────────────────────────────────
 
-  // Text
-  textDark: '1a1a1a',
-  textMid: '374151',
-  textLight: '9ca3af',
-  white: 'ffffff',
+  titleSize:    37,  // maps to sizeSectionHeading
+  subtitleSize: 25,  // maps to sizeStandfirst
+  headingSize:  25,  // maps to sizeStandfirst
+  bodySize:     19,  // maps to sizeBody
+  smallSize:    12,  // maps to sizeKicker
+  tinySize:     10,  // maps to sizeFooter
 
-  // Backgrounds
-  bgLight: 'f8fafc',
-  bgCard: 'f1f5f9',
-  bgAlt: 'e2e8f0',
+  // ── Layout (inches, 16:9 widescreen) ──────────────────────────────────────
 
-  // Decorative
-  accentGold: 'fbbf24',
-  accentRed: 'ef4444',
-  accentAmber: 'f59e0b',
-  accentGreen: '22c55e',
-  successGreen: '16a34a',
-  warningAmber: 'f59e0b',
-  dangerRed: 'dc2626',
+  slideWidth:    13.33,
+  slideHeight:   7.5,
+  marginX:       0.83,  // 120 px / 1920 * 13.33
+  marginY:       0.61,  // 88 px / 1080 * 7.5
+  contentWidth:  11.67, // slideWidth - 2 * marginX
+  contentHeight: 6.28,  // slideHeight - 2 * marginY
 
-  // Traffic light colours
-  trafficRed: 'fecaca',
-  trafficRedText: 'b91c1c',
-  trafficAmber: 'fef3c7',
-  trafficAmberText: '92400e',
-  trafficGreen: 'd1fae5',
-  trafficGreenText: '065f46',
+  // ── Element sizes ─────────────────────────────────────────────────────────
 
-  // Typography
-  fontMain: 'Calibri',
-  fontMono: 'Consolas',
-
-  // Sizes (points)
-  titleSize: 28,
-  subtitleSize: 18,
-  headingSize: 22,
-  bodySize: 14,
-  smallSize: 10,
-  tinySize: 8,
-
-  // Layout (inches, 16:9 widescreen)
-  slideWidth: 13.33,
-  slideHeight: 7.5,
-  marginX: 0.5,
-  marginY: 0.5,
-  contentWidth: 12.33,  // slideWidth - 2*marginX
-  contentHeight: 6.5,   // slideHeight - 2*marginY
-
-  // Reusable element sizes
-  borderStripWidth: 0.08,
-  badgeHeight: 0.35,
-  iconSize: 0.4,
-  progressDotSize: 0.12,
-  dividerHeight: 0.03,
+  borderStripWidth: 0, // no phase strip in Anthology
+  badgeHeight:      0.35,
+  iconSize:         0.4,
+  progressDotSize:  0.12,
+  dividerHeight:    0.03,
 } as const
 
 // ─── Phase metadata ─────────────────────────────────────────────────────────
@@ -88,40 +152,34 @@ export type LessonPhase = 'starter' | 'main' | 'plenary' | 'homework' | 'general
 export interface PhaseStyle {
   colour: string
   bgColour: string
-  emoji: string
   label: string
 }
 
 export const PHASE_STYLES: Record<LessonPhase, PhaseStyle> = {
   starter: {
-    colour: PPTX_DESIGN.phaseStarter,
-    bgColour: PPTX_DESIGN.phaseStarterBg,
-    emoji: '\uD83D\uDFE1', // yellow circle
-    label: 'STARTER',
+    colour:   'AD4A28', // clay-600
+    bgColour: 'F5EFE4', // cream-100 (panel tone)
+    label:    'STARTER',
   },
   main: {
-    colour: PPTX_DESIGN.phaseMain,
-    bgColour: PPTX_DESIGN.phaseMainBg,
-    emoji: '\uD83D\uDD35', // blue circle
-    label: 'MAIN ACTIVITY',
+    colour:   'AD4A28',
+    bgColour: 'F5EFE4',
+    label:    'MAIN ACTIVITY',
   },
   plenary: {
-    colour: PPTX_DESIGN.phasePlenary,
-    bgColour: PPTX_DESIGN.phasePlenaryBg,
-    emoji: '\uD83D\uDFE2', // green circle
-    label: 'PLENARY',
+    colour:   'AD4A28',
+    bgColour: 'F5EFE4',
+    label:    'PLENARY',
   },
   homework: {
-    colour: PPTX_DESIGN.phaseHomework,
-    bgColour: PPTX_DESIGN.phaseHomeworkBg,
-    emoji: '\uD83C\uDFE0', // house
-    label: 'HOMEWORK',
+    colour:   'AD4A28',
+    bgColour: 'F5EFE4',
+    label:    'HOMEWORK',
   },
   general: {
-    colour: PPTX_DESIGN.brandAccent,
-    bgColour: PPTX_DESIGN.brandLight,
-    emoji: '\uD83D\uDCD6', // book
-    label: 'LESSON',
+    colour:   'AD4A28',
+    bgColour: 'F5EFE4',
+    label:    'LESSON',
   },
 }
 

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -324,6 +325,13 @@ export default function LondonPage() {
       </div>
 
       {/* ── Interactive poem viewer ──────────────────────────────── */}
+      <StudyTools
+        textName="London"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={londonPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

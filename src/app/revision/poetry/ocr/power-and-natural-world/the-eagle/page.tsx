@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const theEagle: PoemData = {
   title: 'The Eagle',
@@ -282,6 +283,13 @@ export default function TheEaglePage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="The Eagle"
+        textType="poem"
+        examBoard="OCR"
+        cluster="Power and the Natural World"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={theEagle} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

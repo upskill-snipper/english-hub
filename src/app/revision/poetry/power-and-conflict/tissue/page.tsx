@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata = {
   title: 'Tissue -- Imtiaz Dharker -- The English Hub',
@@ -298,6 +299,13 @@ export default function TissuePage() {
       </div>
 
       {/* Interactive poem viewer */}
+      <StudyTools
+        textName="Tissue"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={TISSUE} />
 
       {/* Comparisons */}

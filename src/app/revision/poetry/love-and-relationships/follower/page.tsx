@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -200,6 +201,13 @@ export default function FollowerPage() {
       </div>
 
       {/* ── Interactive poem viewer ──────────────────────────────── */}
+      <StudyTools
+        textName="Follower"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Love & Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={followerPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

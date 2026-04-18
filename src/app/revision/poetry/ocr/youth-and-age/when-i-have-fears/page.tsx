@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const whenIHaveFears: PoemData = {
   title: 'When I Have Fears',
@@ -382,6 +383,13 @@ export default function WhenIHaveFearsPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="When I Have Fears"
+        textType="poem"
+        examBoard="OCR"
+        cluster="Youth and Age"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={whenIHaveFears} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import StudyTools from '@/components/study/StudyTools'
 
 interface Poem {
   title: string
@@ -166,6 +167,8 @@ export default function OCRYouthAndAgePage() {
           </p>
         </div>
       </section>
+
+      <StudyTools textName="OCR Youth and Age Poetry" textType="anthology" examBoard="OCR" variant="banner" />
 
       <section>
         <div className="mb-5 flex items-center gap-3">

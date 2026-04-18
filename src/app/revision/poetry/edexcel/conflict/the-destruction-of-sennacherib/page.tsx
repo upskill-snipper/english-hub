@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const sennacherib: PoemData = {
   title: 'The Destruction of Sennacherib',
@@ -479,6 +480,13 @@ export default function SennacheribPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="The Destruction of Sennacherib"
+        textType="poem"
+        examBoard="Edexcel"
+        cluster="Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={sennacherib} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

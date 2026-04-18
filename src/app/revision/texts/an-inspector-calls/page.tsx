@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   title: 'An Inspector Calls — Study Guide | The English Hub',
@@ -216,13 +217,32 @@ export default async function AnInspectorCallsPage() {
             description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
           },
           {
+            href: '/revision/texts/an-inspector-calls/characters',
+            icon: 'characters',
+            title: 'Character Guide',
+            description: 'In-depth analysis of all seven characters with key quotes and exam tips.',
+          },
+          {
+            href: '/revision/texts/an-inspector-calls/themes',
+            icon: 'themes',
+            title: 'Theme Analysis',
+            description: 'Seven major themes with quotes, act-by-act evidence and essay planning tips.',
+          },
+          {
             href: '/revision/texts/an-inspector-calls/key-quotes',
             icon: 'quotes',
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/an-inspector-calls/context',
+            icon: 'context',
+            title: 'Historical Context',
+            description: '1912 vs 1945, Priestley\u2019s socialism, the welfare state and the class system.',
+          },
         ]}
       />
+      <StudyTools textName="An Inspector Calls" textType="play" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations (&le;15 words each) reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from your school or local library.

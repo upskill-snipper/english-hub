@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import StudyTools from '@/components/study/StudyTools'
 
 interface Poem {
   title: string
@@ -168,6 +169,8 @@ export default function OCRLoveAndRelationshipsPage() {
           </p>
         </div>
       </section>
+
+      <StudyTools textName="OCR Love and Relationships" textType="anthology" examBoard="OCR" variant="banner" />
 
       {/* ── Poem grid ───────────────────────────────────────────────── */}
       <section>

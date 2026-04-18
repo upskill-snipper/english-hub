@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 const poemData: PoemData = {
   title: 'When We Two Parted',
@@ -94,6 +95,13 @@ export default function WhenWeTwoPartedPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="When We Two Parted"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Love & Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={poemData} />
 
       {/* Compare With Section */}

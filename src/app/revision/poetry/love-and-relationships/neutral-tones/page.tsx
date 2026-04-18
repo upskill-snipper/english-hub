@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 const poemData: PoemData = {
   title: 'Neutral Tones',
@@ -83,6 +84,13 @@ export default function NeutralTonesPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="Neutral Tones"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Love & Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={poemData} />
 
       {/* Compare With Section */}

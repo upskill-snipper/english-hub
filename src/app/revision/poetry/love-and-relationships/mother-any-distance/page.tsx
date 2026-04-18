@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -294,6 +295,13 @@ export default function MotherAnyDistancePage() {
       </div>
 
       {/* ── Interactive poem viewer ──────────────────────────────── */}
+      <StudyTools
+        textName="Mother, any distance"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Love & Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={motherAnyDistancePoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

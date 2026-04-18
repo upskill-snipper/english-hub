@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   title: 'Jane Eyre — Study Guide | The English Hub',
@@ -177,6 +178,7 @@ export default async function JaneEyrePage() {
           },
         ]}
       />
+      <StudyTools textName="Jane Eyre" textType="novel" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <em>Jane Eyre</em> (1847) by Charlotte Bront&euml; is in the public domain. Quotations are reproduced freely.

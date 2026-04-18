@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, PoemData } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   title: 'Storm on the Island – Seamus Heaney | Power & Conflict Poetry',
@@ -461,6 +462,13 @@ export default function StormOnTheIslandPage() {
       </section>
 
       {/* Interactive poem viewer */}
+      <StudyTools
+        textName="Storm on the Island"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={poem} />
 
       {/* Comparison poems */}

@@ -13,6 +13,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import StudyTools from '@/components/study/StudyTools'
 
 export default function EdexcelPoetryHubPage() {
   return (
@@ -56,6 +57,8 @@ export default function EdexcelPoetryHubPage() {
           </p>
         </div>
       </section>
+
+      <StudyTools textName="Edexcel Poetry Anthology" textType="anthology" examBoard="Edexcel" variant="banner" />
 
       {/* ── Info note ───────────────────────────────────────────────── */}
       <section className="flex items-start gap-3 rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">

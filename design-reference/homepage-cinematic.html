@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>The English Hub — A cinematic anthology.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/tokens.css">
+<link rel="stylesheet" href="cinematic/chapters.css?v=2">
+<style>
+  body { background: var(--cream-50); }
+
+  /* ===== NAV ===== */
+  .topbar { position: sticky; top: 20px; z-index: 40; margin: 20px var(--gutter) 0; }
+  .topbar-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-5); padding: 10px 10px 10px 22px; max-width: 1400px; margin: 0 auto; background: rgba(15,20,17,0.92); backdrop-filter: blur(14px); border-radius: var(--radius-pill); color: var(--cream-50); }
+  .brand { font-family: var(--font-serif); font-size: 20px; font-weight: 500; letter-spacing: -0.02em; }
+  .brand em { font-style: italic; color: var(--clay-300); }
+  nav.main { display: flex; gap: 26px; font-size: 14px; color: var(--ink-300); justify-self: center; }
+  nav.main a:hover { color: var(--cream-50); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: var(--radius-pill); font-size: 14px; font-weight: 500; border: 1px solid transparent; transition: all var(--dur-base) var(--ease-out); cursor: pointer; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--clay-500); color: var(--cream-50); }
+  .btn-primary:hover { background: var(--clay-400); color: var(--ink-950); }
+  .btn-cream { background: var(--cream-50); color: var(--ink-950); }
+  .btn-xl { padding: 15px 26px; font-size: 16px; }
+
+  /* ===== HERO ===== */
+  .hero-wrap { padding: 40px var(--gutter) 20px; max-width: 1400px; margin: 0 auto; }
+  .hero-meta { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--fg-muted); padding-bottom: 14px; margin-bottom: 20px; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 12px; }
+  .hero-meta .chapter-tag { color: var(--clay-500); }
+  .hero-meta .live { display: inline-flex; align-items: center; gap: 6px; }
+  .hero-meta .live .d { width: 6px; height: 6px; border-radius: 50%; background: var(--clay-500); animation: blink 1.4s ease-in-out infinite; }
+  @keyframes blink { 50% { opacity: 0.3; } }
+
+  /* Chapter tabs */
+  .chapter-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 18px; }
+  .chapter-tabs [data-tab] {
+    background: var(--cream-100); border: 1px solid var(--border); border-radius: 16px;
+    padding: 18px 20px; text-align: left; display: flex; flex-direction: column; gap: 8px;
+    font-family: inherit; cursor: pointer; transition: all 400ms var(--ease-out);
+    color: inherit; position: relative; overflow: hidden;
+  }
+  .chapter-tabs [data-tab]:hover { transform: translateY(-2px); border-color: var(--ink-800); }
+  .chapter-tabs [data-tab] .n { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); }
+  .chapter-tabs [data-tab] .t { font-family: var(--font-serif); font-size: 22px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; }
+  .chapter-tabs [data-tab] .t em { font-style: italic; color: var(--clay-500); }
+  .chapter-tabs [data-tab] .s { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--fg-subtle); text-transform: uppercase; }
+  .chapter-tabs [data-tab].on { background: var(--ink-950); color: var(--cream-50); border-color: var(--ink-950); }
+  .chapter-tabs [data-tab].on .n { color: var(--clay-300); }
+  .chapter-tabs [data-tab].on .s { color: var(--ink-400); }
+  .chapter-tabs [data-tab].on .t em { color: var(--clay-300); }
+  .chapter-tabs [data-tab].on::after {
+    content: ""; position: absolute; bottom: 0; left: 0; height: 3px;
+    background: var(--clay-400); width: var(--p, 0%);
+  }
+  @media (max-width: 900px) { .chapter-tabs { grid-template-columns: 1fr 1fr; } }
+
+  /* ===== MARQUEE ===== */
+  .marquee { overflow: hidden; padding: 14px 0; margin-top: 40px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--cream-100); }
+  .marquee-track { display: flex; gap: 42px; animation: slide 40s linear infinite; white-space: nowrap; }
+  .marquee-track span { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--ink-800); display: inline-flex; align-items: center; gap: 42px; }
+  .marquee-track span::after { content: "✶"; color: var(--clay-500); font-style: normal; }
+  @keyframes slide { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+
+  /* ===== SECTION ===== */
+  section.block { padding: 100px var(--gutter); max-width: 1400px; margin: 0 auto; }
+  .block-head { display: flex; align-items: end; justify-content: space-between; gap: var(--space-5); margin-bottom: 50px; flex-wrap: wrap; }
+  .block-head .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--clay-500); margin-bottom: 14px; }
+  .block-head h2 { font-family: var(--font-serif); font-size: clamp(40px, 2rem + 3vw, 72px); font-weight: 400; letter-spacing: -0.035em; line-height: 0.98; max-width: 20ch; margin: 0; }
+  .block-head h2 em { font-style: italic; color: var(--teal-800); }
+  .block-head p { color: var(--fg-muted); font-family: var(--font-serif); font-size: 20px; max-width: 42ch; margin: 0; }
+
+  /* ===== PRICING ===== */
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .tiers { grid-template-columns: 1fr; } }
+  .tier { background: #fff; border: 1px solid var(--border); border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px; position: relative; transition: all var(--dur-base) var(--ease-out); }
+  .tier:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .tier.featured { background: var(--teal-800); color: var(--cream-50); border-color: var(--teal-800); }
+  .tier .badge { position: absolute; top: -12px; left: 24px; background: var(--clay-500); color: var(--cream-50); font-family: var(--font-mono); font-size: 11px; padding: 5px 10px; border-radius: var(--radius-pill); letter-spacing: 0.1em; text-transform: uppercase; }
+  .tier .kick { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay-500); }
+  .tier.featured .kick { color: var(--clay-300); }
+  .tier h3 { font-family: var(--font-serif); font-size: 32px; font-weight: 500; letter-spacing: -0.02em; margin: 0; }
+  .tier .amt { font-family: var(--font-serif); font-size: 52px; font-weight: 400; letter-spacing: -0.04em; line-height: 0.95; margin: 0; }
+  .tier .amt small { font-family: var(--font-sans); font-size: 14px; color: var(--fg-muted); margin-left: 4px; font-weight: 400; }
+  .tier.featured .amt small { color: var(--teal-300); }
+  .tier ul { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: var(--fg-muted); }
+  .tier.featured ul { color: var(--cream-200); }
+  .tier li { padding-left: 18px; position: relative; }
+  .tier li::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 2px; background: var(--clay-500); }
+  .tier .btn { margin-top: 18px; justify-content: center; }
+
+  /* ===== TRUST STRIP ===== */
+  .trust { padding: 60px var(--gutter); background: var(--ink-950); color: var(--cream-50); }
+  .trust-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+  @media (max-width: 900px) { .trust-inner { grid-template-columns: repeat(2, 1fr); } }
+  .trust-cell { display: flex; flex-direction: column; gap: 6px; }
+  .trust-cell .v { font-family: var(--font-serif); font-style: italic; font-size: 44px; font-weight: 400; letter-spacing: -0.03em; line-height: 1; color: var(--clay-300); }
+  .trust-cell .l { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-300); }
+
+  /* ===== FINAL ===== */
+  .final { padding: 120px var(--gutter); }
+  .final-inner { max-width: 1400px; margin: 0 auto; background: var(--ink-950); color: var(--cream-50); border-radius: 32px; padding: clamp(40px, 4vw, 100px); text-align: center; position: relative; overflow: hidden; }
+  .final-inner::before { content: "&"; position: absolute; font-family: var(--font-serif); font-style: italic; font-size: 900px; font-weight: 400; color: var(--teal-800); opacity: 0.45; top: 50%; left: 50%; transform: translate(-50%, -50%); line-height: 1; pointer-events: none; }
+  .final h2 { font-family: var(--font-serif); font-size: clamp(48px, 3rem + 4vw, 112px); font-weight: 400; letter-spacing: -0.04em; line-height: 0.95; position: relative; margin: 0; }
+  .final h2 em { font-style: italic; color: var(--clay-300); }
+  .final p { margin-top: 20px; font-family: var(--font-serif); font-size: 22px; color: var(--ink-300); max-width: 48ch; margin-inline: auto; position: relative; }
+  .final .btn { margin-top: 32px; position: relative; }
+
+  /* ===== FOOTER ===== */
+  footer { padding: 60px var(--gutter) 32px; max-width: 1400px; margin: 0 auto; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; align-items: start; }
+  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+  .foot-brand { font-family: var(--font-serif); font-size: 28px; font-weight: 500; letter-spacing: -0.02em; }
+  .foot-brand em { font-style: italic; color: var(--teal-800); }
+  .foot-col h4 { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--fg-subtle); margin: 0 0 14px; font-weight: 500; }
+  .foot-col a { display: block; padding: 5px 0; font-size: 14px; color: var(--fg-muted); }
+  .foot-col a:hover { color: var(--ink-950); }
+  .foot-bar { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: var(--fg-subtle); letter-spacing: 0.08em; flex-wrap: wrap; gap: 12px; }
+</style>
+</head>
+<body data-screen-label="04 Cinematic Launch">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand">The <em>English</em> Hub</a>
+    <nav class="main">
+      <a>Courses</a><a>Revision</a><a>Mock exams</a><a>Games</a><a>Teachers</a><a>Schools</a><a>Pricing</a>
+    </nav>
+    <a class="btn btn-primary">Start free →</a>
+  </div>
+</header>
+
+<section class="hero-wrap">
+  <div class="hero-meta">
+    <span>The English Hub · Cinematic Edition · MMXXVI</span>
+    <span class="chapter-tag">Now playing: <em id="now-playing">Chapter I — Schools</em></span>
+    <span class="live"><span class="d"></span> Chapters auto-advance · hover to pause</span>
+  </div>
+
+  <div class="stage" data-screen-label="Hero Stage">
+    <div class="stage-progress"><i></i></div>
+
+    <!-- ========== CHAPTER 1 — SCHOOLS ========== -->
+    <div class="scene scene-schools active" data-screen-label="Chapter 1 Schools">
+      <div class="scene-header">
+        <span class="scene-tag"><span class="dot"></span> Chapter I · For Schools</span>
+        <span class="scene-kicker">One licence · every student · every teacher</span>
+      </div>
+      <div class="scene-numeral">I</div>
+
+      <div class="phase-rail">
+        <div class="p on" data-phase="0"><span class="n">01</span> Trends</div>
+        <div class="p" data-phase="1"><span class="n">02</span> Department</div>
+        <div class="p" data-phase="2"><span class="n">03</span> Class drill-down</div>
+        <div class="p" data-phase="3"><span class="n">04</span> Student view</div>
+        <div class="p" data-phase="4"><span class="n">05</span> Intervention</div>
+      </div>
+
+      <div class="scene-content" style="grid-template-columns: 0.75fr 1.25fr;">
+        <div class="scene-text">
+          <h2 class="scene-title">From trends, to cohort, <em>to the one student</em>.</h2>
+          <p style="font-family: var(--font-serif); font-size: 18px; line-height: 1.5; opacity: 0.85; max-width: 34ch; margin: 0;">
+            Department analytics that drill from year-level trends to a flagged student in four clicks — with every essay, mock and AO score attached, plus the intervention that closed the gap.
+          </p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px;">
+            <a class="scene-cta">Book a call →</a>
+            <a class="btn" style="background: transparent; color: inherit; border: 1px solid rgba(255,255,255,0.3);">See the demo</a>
+          </div>
+        </div>
+
+        <div class="scene-viz" style="position: relative; align-items: stretch;">
+
+          <!-- PHASE 0 — TRENDS OVER TIME -->
+          <div class="subscene on" data-sub="0">
+            <div class="panel-head">
+              <span class="crumb">Oakwood Academy · <b>Year 11 English</b> · 12-week trend</span>
+              <span class="s">Autumn → Spring ’26 · live</span>
+            </div>
+            <div class="trend-wrap">
+              <div class="linechart">
+                <div class="lc-head">
+                  <span class="t">Cohort average · AO2 · weekly active</span>
+                  <div class="chips">
+                    <span class="avg">Grade avg</span>
+                    <span class="eng">Weekly active</span>
+                    <span class="tgt">At/above target</span>
+                  </div>
+                </div>
+                <div class="lc-svg">
+                  <svg viewBox="0 0 400 200" preserveAspectRatio="none">
+                    <g class="grid">
+                      <line x1="0" y1="40" x2="400" y2="40"/>
+                      <line x1="0" y1="80" x2="400" y2="80"/>
+                      <line x1="0" y1="120" x2="400" y2="120"/>
+                      <line x1="0" y1="160" x2="400" y2="160"/>
+                    </g>
+                    <!-- Grade avg — teal, climbs -->
+                    <path class="ln" stroke="#5A9A94" d="M 10 140 L 50 132 L 90 128 L 130 118 L 170 110 L 210 98 L 250 88 L 290 76 L 330 68 L 370 52"/>
+                    <!-- Weekly active — ochre -->
+                    <path class="ln" stroke="#E4BA4E" style="animation-delay: 600ms" d="M 10 110 L 50 102 L 90 96 L 130 94 L 170 82 L 210 76 L 250 62 L 290 54 L 330 46 L 370 42"/>
+                    <!-- At/above target — clay -->
+                    <path class="ln" stroke="#D97A4E" style="animation-delay: 1000ms" d="M 10 160 L 50 156 L 90 150 L 130 140 L 170 128 L 210 118 L 250 102 L 290 88 L 330 74 L 370 62"/>
+                    <!-- Latest dots -->
+                    <circle class="dot pulse-dot" cx="370" cy="52" r="4" fill="#5A9A94"/>
+                    <circle class="dot" cx="370" cy="42" r="3" fill="#E4BA4E"/>
+                    <circle class="dot" cx="370" cy="62" r="3" fill="#D97A4E"/>
+                    <!-- X axis weeks -->
+                    <text x="10" y="195" class="ax">W1</text>
+                    <text x="105" y="195" class="ax">W4</text>
+                    <text x="205" y="195" class="ax">W8</text>
+                    <text x="345" y="195" class="ax">W12</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="lc-compare">
+                <div class="kpi-mini">
+                  <span class="l">Avg grade</span>
+                  <span class="v"><em>6.4</em></span>
+                  <span class="d">↑ 1.4 since term 1</span>
+                  <div class="spark"><i style="height:40%"></i><i style="height:48%"></i><i style="height:55%"></i><i style="height:62%"></i><i style="height:70%"></i><i style="height:78%"></i><i style="height:88%"></i></div>
+                </div>
+                <div class="kpi-mini">
+                  <span class="l">Weekly active</span>
+                  <span class="v">92<em>%</em></span>
+                  <span class="d">↑ 18 pts vs term 1</span>
+                </div>
+                <div class="kpi-mini flag">
+                  <span class="l">AO2 gap · still open</span>
+                  <span class="v">11E · 8G</span>
+                  <span class="d">2 classes below target</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 1 — COHORT OVERVIEW -->
+          <div class="subscene" data-sub="1">
+            <div class="panel">
+              <div class="panel-head">
+                <span class="crumb">Oakwood Academy · <b>Year 11 English</b></span>
+                <span class="s">Spring ’26 · 184 students · 7 classes</span>
+              </div>
+
+              <div class="kpi-row">
+                <div class="kpi"><span class="v">+<em>1.4</em></span><span class="l">Avg grade uplift</span><span class="delta">↑ 0.3 vs term 1</span></div>
+                <div class="kpi"><span class="v">92<em>%</em></span><span class="l">Weekly active</span><span class="delta">↑ 8%</span></div>
+                <div class="kpi"><span class="v">68<em>%</em></span><span class="l">At/above target</span><span class="delta">↑ 12%</span></div>
+                <div class="kpi"><span class="v">14</span><span class="l">Flagged · attention</span><span class="delta down">↓ 5</span></div>
+              </div>
+
+              <div>
+                <div style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-300); margin-bottom: 6px;">Class × AO performance · hover a cell to drill</div>
+                <div class="cohort">
+                  <span></span>
+                  <span class="col-label">AO1</span><span class="col-label">AO2</span><span class="col-label">AO3</span><span class="col-label">AO4</span><span class="col-label">AO5</span><span class="col-label">AO6</span><span class="col-label">Mocks</span><span class="col-label">Essays</span><span class="col-label">Read</span><span class="col-label">Avg</span>
+
+                  <span class="row-label">11A</span>
+                  <span class="cell" data-v="4"></span><span class="cell" data-v="5"></span><span class="cell" data-v="4"></span><span class="cell" data-v="4"></span><span class="cell" data-v="5"></span><span class="cell" data-v="4"></span><span class="cell" data-v="5"></span><span class="cell" data-v="4"></span><span class="cell" data-v="5"></span><span class="cell" data-v="5"></span>
+
+                  <span class="row-label">11B</span>
+                  <span class="cell" data-v="3"></span><span class="cell" data-v="4"></span><span class="cell" data-v="3"></span><span class="cell" data-v="4"></span><span class="cell" data-v="4"></span><span class="cell" data-v="3"></span><span class="cell" data-v="4"></span><span class="cell" data-v="4"></span><span class="cell" data-v="3"></span><span class="cell" data-v="4"></span>
+
+                  <span class="row-label">11C</span>
+                  <span class="cell" data-v="3"></span><span class="cell" data-v="2"></span><span class="cell" data-v="3"></span><span class="cell" data-v="3"></span><span class="cell" data-v="3"></span><span class="cell" data-v="2"></span><span class="cell" data-v="3"></span><span class="cell" data-v="3"></span><span class="cell" data-v="3"></span><span class="cell" data-v="3"></span>
+
+                  <span class="row-label">11D</span>
+                  <span class="cell" data-v="2"></span><span class="cell" data-v="2"></span><span class="cell" data-v="3"></span><span class="cell" data-v="2"></span><span class="cell" data-v="3"></span><span class="cell" data-v="3"></span><span class="cell" data-v="3"></span><span class="cell" data-v="2"></span><span class="cell" data-v="3"></span><span class="cell" data-v="3"></span>
+
+                  <span class="row-label">11E</span>
+                  <span class="cell" data-v="1"></span><span class="cell pulse" data-v="1"></span><span class="cell" data-v="2"></span><span class="cell" data-v="2"></span><span class="cell" data-v="2"></span><span class="cell" data-v="2"></span><span class="cell" data-v="2"></span><span class="cell" data-v="1"></span><span class="cell" data-v="2"></span><span class="cell" data-v="2"></span>
+
+                  <span class="row-label">11F</span>
+                  <span class="cell" data-v="3"></span><span class="cell" data-v="3"></span><span class="cell" data-v="4"></span><span class="cell" data-v="3"></span><span class="cell" data-v="4"></span><span class="cell" data-v="3"></span><span class="cell" data-v="4"></span><span class="cell" data-v="3"></span><span class="cell" data-v="4"></span><span class="cell" data-v="4"></span>
+
+                  <span class="row-label">11G</span>
+                  <span class="cell" data-v="4"></span><span class="cell" data-v="4"></span><span class="cell" data-v="4"></span><span class="cell" data-v="5"></span><span class="cell" data-v="4"></span><span class="cell" data-v="5"></span><span class="cell" data-v="4"></span><span class="cell" data-v="4"></span><span class="cell" data-v="5"></span><span class="cell" data-v="4"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 2 — CLASS DETAIL -->
+          <div class="subscene" data-sub="2">
+            <div class="panel">
+              <div class="panel-head">
+                <span class="crumb">Oakwood · Year 11 · <b>11E — Ms Whitmore</b></span>
+                <span class="s">28 students · AO2 = intervention</span>
+              </div>
+
+              <div class="class-detail">
+                <div>
+                  <div style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-300); margin-bottom: 8px;">AO breakdown · 11E avg</div>
+                  <div class="ao-grid">
+                    <div class="ao-bar2"><span class="label">AO1</span><div class="track"><i style="width: 62%"></i></div><span class="v">62</span></div>
+                    <div class="ao-bar2"><span class="label">AO2</span><div class="track"><i style="width: 44%"></i></div><span class="v">44</span></div>
+                    <div class="ao-bar2"><span class="label">AO3</span><div class="track"><i style="width: 58%"></i></div><span class="v">58</span></div>
+                    <div class="ao-bar2"><span class="label">AO4</span><div class="track"><i style="width: 55%"></i></div><span class="v">55</span></div>
+                    <div class="ao-bar2"><span class="label">AO5</span><div class="track"><i style="width: 66%"></i></div><span class="v">66</span></div>
+                    <div class="ao-bar2"><span class="label">AO6</span><div class="track"><i style="width: 60%"></i></div><span class="v">60</span></div>
+                  </div>
+                  <div style="margin-top: 16px; padding: 12px; background: rgba(217,122,78,0.15); border: 1px dashed var(--clay-400); border-radius: 10px; font-size: 12px; line-height: 1.5; color: var(--cream-100);">
+                    <b style="color: var(--clay-300);">Recommendation:</b> AO2 (language analysis) consistently 14–18 points below other AOs. Assign the "Language Analysis Booster" pathway to 22 students.
+                  </div>
+                </div>
+
+                <div>
+                  <div style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-300); margin-bottom: 8px;">Students · sorted by trend</div>
+                  <div class="student-list">
+                    <div class="slist-row flag">
+                      <span class="name">Jamie P.</span>
+                      <span class="grade">3</span>
+                      <span class="trend down">↓ 1.2</span>
+                      <div class="bar"><i style="width: 34%"></i></div>
+                    </div>
+                    <div class="slist-row flag">
+                      <span class="name">Aisha R.</span>
+                      <span class="grade">4</span>
+                      <span class="trend down">↓ 0.8</span>
+                      <div class="bar"><i style="width: 42%"></i></div>
+                    </div>
+                    <div class="slist-row highlight">
+                      <span class="name">Evie M.</span>
+                      <span class="grade">5</span>
+                      <span class="trend">↑ 1.6</span>
+                      <div class="bar"><i style="width: 58%"></i></div>
+                    </div>
+                    <div class="slist-row">
+                      <span class="name">Noah K.</span>
+                      <span class="grade">5</span>
+                      <span class="trend flat">→ 0.1</span>
+                      <div class="bar"><i style="width: 55%"></i></div>
+                    </div>
+                    <div class="slist-row">
+                      <span class="name">Priya S.</span>
+                      <span class="grade">6</span>
+                      <span class="trend">↑ 0.4</span>
+                      <div class="bar"><i style="width: 64%"></i></div>
+                    </div>
+                    <div class="slist-row">
+                      <span class="name">Liam D.</span>
+                      <span class="grade">6</span>
+                      <span class="trend">↑ 0.9</span>
+                      <div class="bar"><i style="width: 68%"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 3 — STUDENT VIEW -->
+          <div class="subscene" data-sub="3">
+            <div class="panel" style="padding: 18px;">
+              <div class="panel-head">
+                <span class="crumb">11E · <b>Evie Matthews</b> · student #2418</span>
+                <span class="s">Last active · 2h ago</span>
+              </div>
+
+              <div class="student-card">
+                <div class="avatar">EM</div>
+                <div>
+                  <div class="sc-name">Evie Matthews</div>
+                  <div class="sc-meta">Year 11 · 11E · AQA · Joined Sep ’25</div>
+                  <div class="sc-grades">
+                    <div class="gchip"><span class="l">Working at</span><span class="v">5</span></div>
+                    <div class="gchip"><span class="l">Predicted</span><span class="v">7<small style="font-family: var(--font-sans); font-size: 12px; vertical-align: super;">.8</small></span></div>
+                    <div class="gchip target"><span class="l">Target</span><span class="v">8</span></div>
+                    <div class="gchip flag"><span class="l" style="color: var(--clay-600);">Gap</span><span class="v" style="color: var(--clay-600);">AO2</span></div>
+                  </div>
+                  <div class="sc-note">
+                    <strong>Pattern:</strong> Strong in essay structure and close reading. Slipping on language analysis under timed conditions — mocks 4 &amp; 5 both dropped 8+ marks on AO2. Assigned: <em>Language Analysis Booster</em>, 3× flashcard decks, 1× model answer walkthrough.
+                  </div>
+                </div>
+              </div>
+
+              <div class="kpi-row" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="kpi"><span class="v">47</span><span class="l">Lessons complete</span><span class="delta">↑ 12 this month</span></div>
+                <div class="kpi"><span class="v">9</span><span class="l">Essays marked</span><span class="delta">Avg grade 6.8</span></div>
+                <div class="kpi"><span class="v">6</span><span class="l">Mocks sat</span><span class="delta">Best: 72/80</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 4 — INTERVENTION TRACKER -->
+          <div class="subscene" data-sub="4">
+            <div class="panel-head">
+              <span class="crumb">Evie Matthews · <b>Language Analysis Booster</b></span>
+              <span class="s">Intervention · week 4 of 4</span>
+            </div>
+            <div class="intervention">
+              <div class="pipeline">
+                <span class="pipeline-title">The closed loop · flag → act → prove</span>
+                <div class="pipe-row done">
+                  <span class="n">1</span>
+                  <div class="line"><b>Flagged by analytics</b><small>AO2 14 pts below class · auto-surfaced</small></div>
+                  <span class="meta">Week 1 · Mon</span>
+                </div>
+                <div class="pipe-row done">
+                  <span class="n">2</span>
+                  <div class="line"><b>Pathway assigned · 4 lessons</b><small>"Language analysis booster" · by Ms Whitmore</small></div>
+                  <span class="meta">Week 1 · Tue</span>
+                </div>
+                <div class="pipe-row done">
+                  <span class="n">3</span>
+                  <div class="line"><b>Student completed lessons + 2 mocks</b><small>6.5 hrs on task · AI feedback on 3 drafts</small></div>
+                  <span class="meta">Week 2–3</span>
+                </div>
+                <div class="pipe-row done">
+                  <span class="n">4</span>
+                  <div class="line"><b>AO2 re-tested · +16 points</b><small>Gap closed · now above class average</small></div>
+                  <span class="meta">Week 4 · live</span>
+                </div>
+              </div>
+              <div class="impact">
+                <span class="impact-title">Before · after · evidence</span>
+                <h4>4 weeks. Gap closed.</h4>
+                <div class="before-after">
+                  <div class="col before"><span class="l">AO2 · before</span><span class="v">44</span></div>
+                  <div class="arrow">→</div>
+                  <div class="col after"><span class="l">AO2 · after</span><span class="v">60</span></div>
+                </div>
+                <ul class="impact-list">
+                  <li><b>Predicted grade:</b> 6 → 7.8 in 4 weeks</li>
+                  <li><b>14 students</b> on parallel pathways this term</li>
+                  <li>Full audit trail — <b>exportable for parents' evening</b></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="scene-foot">
+        <p class="scene-quote">"The analytics dashboard alone saves me hours each week. We can track every student across all year groups." — Mrs Patterson, Head of English</p>
+        <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5;">01 / 04</div>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 2 — TEACHERS ========== -->
+    <div class="scene scene-teachers" data-screen-label="Chapter 2 Teachers">
+      <div class="scene-header">
+        <span class="scene-tag"><span class="dot"></span> Chapter II · For Teachers</span>
+        <span class="scene-kicker">Plan · teach · mark — in one hour, not ten</span>
+      </div>
+      <div class="scene-numeral">II</div>
+
+      <div class="scene-content">
+        <div class="scene-text">
+          <h2 class="scene-title">An <em>AI marker</em> that reads like you do.</h2>
+          <p style="font-family: var(--font-serif); font-size: 20px; line-height: 1.5; opacity: 0.85; max-width: 40ch; margin: 0;">
+            Generate differentiated lesson plans in seconds. Mark a whole class in minutes, with paragraph-by-paragraph feedback aligned to your exam board.
+          </p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px;">
+            <a class="scene-cta">Try the teacher demo →</a>
+            <a class="btn" style="background: transparent; color: inherit; border: 1px solid rgba(255,255,255,0.3);">Plans & pricing</a>
+          </div>
+        </div>
+
+        <div class="scene-viz" style="flex-direction: column; gap: 16px;">
+          <div class="lesson-stack">
+            <div class="slide-card">
+              <div class="sc-tag">AQA · Language Paper 1</div>
+              <div class="sc-title">Descriptive writing — pathetic fallacy</div>
+              <div class="sc-body">Starter → model → shared write → independent paragraph → peer swap → plenary.</div>
+              <div class="sc-grid"><div>Starter · 5m</div><div>Model · 10m</div><div>Write · 25m</div><div>Plenary · 10m</div></div>
+            </div>
+            <div class="slide-card">
+              <div class="sc-tag">OCR · Component 01</div>
+              <div class="sc-title">Non-fiction synthesis (Q3)</div>
+              <div class="sc-body">Compare two extracts on travel. Cross-reference viewpoints with evidence stems provided.</div>
+              <div class="sc-grid"><div>Text A · Victorian</div><div>Text B · Modern</div><div>Sentence starters</div><div>Grade 6-7 model</div></div>
+            </div>
+            <div class="slide-card">
+              <div class="sc-tag">Edexcel · Literature</div>
+              <div class="sc-title">An Inspector Calls — Sheila's arc</div>
+              <div class="sc-body">Character development across Acts I–III. Key quotations mapped to AO1/AO2/AO3.</div>
+              <div class="sc-grid"><div>Act I · Act II</div><div>Act III</div><div>Quote bank</div><div>Essay stems</div></div>
+            </div>
+          </div>
+
+          <div class="mark-panel" style="max-width: 480px;">
+            <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay-500); margin-bottom: 10px;">AI marking · Student #2418</div>
+            The writer uses <span class="hl-good">pathetic fallacy effectively</span> to mirror Sheila's guilt, though <span class="hl-imp">the final paragraph lacks a clear thematic thread</span> back to responsibility.
+            <div class="grade">
+              <div class="grade-pill">7</div>
+              <div class="ao">
+                <div class="ao-row">AO1 <div class="ao-bar"><i style="--w: 78%"></i></div> 78</div>
+                <div class="ao-row">AO2 <div class="ao-bar"><i style="--w: 82%"></i></div> 82</div>
+                <div class="ao-row">AO3 <div class="ao-bar"><i style="--w: 65%"></i></div> 65</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene-foot">
+        <p class="scene-quote">"Finally an English resource that covers all the boards properly. The lesson builder has halved my planning time." — Mr Davies, English Teacher</p>
+        <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5;">02 / 04</div>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 3 — STUDENTS ========== -->
+    <div class="scene scene-students" data-screen-label="Chapter 3 Students" data-phases="4">
+      <div class="scene-header">
+        <span class="scene-tag"><span class="dot"></span> Chapter III · For Students</span>
+        <span class="scene-kicker">Learn · practise · get feedback · improve</span>
+      </div>
+      <div class="scene-numeral">III</div>
+
+      <div class="phase-rail tall">
+        <div class="p on" data-phase="0"><span class="n">01</span> Courses</div>
+        <div class="p" data-phase="1"><span class="n">02</span> Annotate</div>
+        <div class="p" data-phase="2"><span class="n">03</span> AI feedback</div>
+        <div class="p" data-phase="3"><span class="n">04</span> Writing coach</div>
+        <div class="p" data-phase="4"><span class="n">05</span> Mock exams</div>
+        <div class="p" data-phase="5"><span class="n">06</span> Revise · predict</div>
+      </div>
+
+      <div class="scene-content" style="grid-template-columns: 0.75fr 1.25fr;">
+        <div class="scene-text">
+          <h2 class="scene-title">Everything you need to <em>land the grade you want</em>.</h2>
+          <p style="font-family: var(--font-serif); font-size: 19px; line-height: 1.5; opacity: 0.9; max-width: 38ch; margin: 0;">
+            Structured courses you can actually follow. AI feedback that reads like a teacher's. Flashcards, mocks and grade-predicting games — all mapped to your exam board.
+          </p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px;">
+            <a class="scene-cta">Start free — no card →</a>
+            <a class="btn" style="background: transparent; color: inherit; border: 1px solid rgba(255,255,255,0.3);">Browse courses</a>
+          </div>
+        </div>
+
+        <div class="scene-viz" style="position: relative; align-items: stretch;">
+
+          <!-- PHASE 1 — STRUCTURED COURSE -->
+          <div class="subscene on" data-sub="0">
+            <div class="feat-header">
+              <h3>Structured courses</h3>
+              <span class="chip">470+ lessons</span>
+            </div>
+            <div class="feat-body">
+              <div class="card-white">
+                <span class="ch">AQA · Language Paper 1 · Week 3 of 8</span>
+                <h4>Analysing language in fiction extracts</h4>
+                <div class="course-progress">
+                  <span>38%</span>
+                  <div class="track"><i style="width: 38%"></i></div>
+                  <span>18 / 47</span>
+                </div>
+                <ul class="lesson-list">
+                  <li class="done"><span class="tick">✓</span> Identifying methods — similes &amp; metaphors</li>
+                  <li class="done"><span class="tick">✓</span> Effect on the reader — starter phrases</li>
+                  <li class="current"><span class="tick">▸</span> Zoom in: single-word analysis</li>
+                  <li class="next"><span class="tick"></span> Writing a full AO2 paragraph</li>
+                  <li class="next"><span class="tick"></span> Checkpoint quiz · grade predictor</li>
+                </ul>
+              </div>
+              <div class="card-white" style="background: var(--ink-950); color: var(--cream-50);">
+                <span class="ch" style="color: var(--clay-300);">Video lesson · 6 min · playing</span>
+                <h4 style="color: var(--cream-50);">"Don't just name the technique — show its job."</h4>
+                <div style="aspect-ratio: 16/9; background: var(--ink-800); border-radius: 8px; display: grid; place-items: center; position: relative; overflow: hidden;">
+                  <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--clay-400); display: grid; place-items: center; color: var(--ink-950); font-size: 20px;">▶</div>
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.2);"><div style="width: 42%; height: 100%; background: var(--clay-400);"></div></div>
+                </div>
+                <p style="color: var(--ink-300); font-size: 12px; margin: 0;">Chapter 3 of 6 · Ms Hughes explains why "freezing" matters more than "cold" in an extract from <em>Frankenstein</em>.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 2 — ANNOTATE -->
+          <div class="subscene" data-sub="1">
+            <div class="feat-header">
+              <h3>Annotated texts</h3>
+              <span class="chip">30 poems · 15 set texts</span>
+            </div>
+            <div class="feat-body" style="grid-template-columns: 1.1fr 0.9fr;">
+              <div class="card-white">
+                <span class="ch">AQA anthology · Power &amp; Conflict · "Ozymandias"</span>
+                <div style="font-family: var(--font-serif); font-style: italic; font-size: 16px; line-height: 1.55; color: var(--ink-900);">
+                  I met a <span style="background: rgba(107,138,107,0.35); padding: 0 3px;">traveller</span> from an antique land,<br/>
+                  Who said — "<span style="background: rgba(228,186,78,0.5); padding: 0 3px;">Two vast and trunkless legs of stone</span><br/>
+                  Stand in the desert. . . . Near them, on the sand,<br/>
+                  Half sunk a <span style="text-decoration: underline wavy var(--clay-500); text-underline-offset: 3px;">shattered visage</span> lies, whose frown,<br/>
+                  And wrinkled lip, and <span style="background: rgba(107,71,145,0.25); padding: 0 3px;">sneer of cold command</span>,<br/>
+                  Tell that its sculptor well those passions read
+                </div>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid var(--border); margin-top: 6px;">
+                  <span style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; background: rgba(107,138,107,0.25); color: var(--sage-600);">Narrator frame</span>
+                  <span style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; background: rgba(228,186,78,0.35); color: var(--ochre-600);">Imagery of decay</span>
+                  <span style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; background: rgba(198,90,51,0.2); color: var(--clay-600);">Key quote</span>
+                  <span style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; background: rgba(107,71,145,0.2); color: #6B4791;">Theme · power</span>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="card-white" style="padding: 14px 16px;">
+                  <span class="ch">Click to reveal · "sneer of cold command"</span>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5;">Shelley fuses the facial <b>sneer</b> with military <b>command</b> — the despot's contempt is inseparable from his authority. The coldness strips warmth, humanity; the sculptor has caught not a man but an attitude.</p>
+                </div>
+                <div class="card-white" style="padding: 14px 16px;">
+                  <span class="ch">Context card · 1818</span>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5;">Published as Napoleon's legacy was collapsing. Shelley, a radical, read the ruin of tyrants as inevitable — a Romantic reply to imperial pride.</p>
+                </div>
+                <div class="card-white" style="padding: 14px 16px; background: var(--ochre-200); color: var(--ink-900);">
+                  <span class="ch" style="color: var(--clay-600);">Grade 9 hinge</span>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.5;"><em>"Shelley's traveller is a mediating voice — we never meet Ozymandias, only his wreckage, retold."</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 3 — AI ESSAY FEEDBACK -->
+          <div class="subscene" data-sub="2">
+            <div class="feat-header">
+              <h3>AI essay feedback</h3>
+              <span class="chip">Grade · AO scores · rewrites</span>
+            </div>
+            <div class="feat-body">
+              <div class="ai-panel">
+                <span class="ch" style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay-500);">Your submission · An Inspector Calls · 428 words</span>
+                <div class="ess">
+                  Priestley presents Sheila as <span class="g">the emotional conscience</span> of the Birling family. At the start of Act I, her silly exclamations show she is still a child of privilege — <span class="r">but by the end of the play</span> she has become the character who most sharply condemns her parents. When she says <span class="g">"these girls aren't cheap labour"</span>, Priestley uses her voice to critique the capitalist assumptions her father takes for granted.
+                  <span class="i"> Her transformation is important because it shows that change is possible</span>, especially in the younger generation — a political argument Priestley wants the 1945 audience to hear.
+                </div>
+                <div class="fb-row">
+                  <div class="fb-grade">
+                    <div class="big">7</div>
+                    <div class="small">est. grade</div>
+                  </div>
+                  <ul class="feedback-list">
+                    <li class="strength"><b>AO1 · 82</b> — clear thesis, well-chosen quote embedded early.</li>
+                    <li class="strength"><b>AO3 · 78</b> — links 1945 context to Priestley's political purpose.</li>
+                    <li class="improve"><b>AO2 · 58</b> — zoom into "cheap labour" at word level, not just idea level.</li>
+                    <li class="improve"><b>Structure</b> — the <em>but by the end</em> jump skips Act II. Add a pivot sentence.</li>
+                  </ul>
+                </div>
+                <div style="display: flex; gap: 8px; padding-top: 10px; border-top: 1px solid var(--border);">
+                  <span style="font-family: var(--font-mono); font-size: 10px; padding: 5px 10px; background: var(--cream-100); border-radius: 20px; color: var(--fg-muted);">Suggest rewrite</span>
+                  <span style="font-family: var(--font-mono); font-size: 10px; padding: 5px 10px; background: var(--cream-100); border-radius: 20px; color: var(--fg-muted);">Compare to Grade 9 model</span>
+                  <span style="font-family: var(--font-mono); font-size: 10px; padding: 5px 10px; background: var(--ochre-200); border-radius: 20px; color: var(--clay-600);">Save to revision</span>
+                </div>
+              </div>
+
+              <div class="card-white" style="background: var(--teal-900); color: var(--cream-50);">
+                <span class="ch" style="color: var(--clay-300);">AI tutor · next step</span>
+                <h4 style="color: var(--cream-50);">"You're a Grade 7 now. Here's what a Grade 9 would add."</h4>
+                <div style="font-family: var(--font-serif); font-style: italic; font-size: 14px; line-height: 1.5; padding: 12px; background: rgba(255,255,255,0.06); border-left: 3px solid var(--clay-400); border-radius: 6px;">
+                  "Notice how Priestley splits the word: <b>cheap</b> (economic) and <b>labour</b> (moral). Sheila refuses the first adjective as a way of refusing the whole ideology."
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 6px;">
+                  <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: var(--teal-300);">Pathway: Language analysis booster · 4 lessons</span>
+                  <span style="font-family: var(--font-mono); font-size: 10px; color: var(--cream-50);">Start →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 3 — LIVE WRITING COACH -->
+          <div class="subscene" data-sub="3">
+            <div class="feat-header">
+              <h3>Live writing coach</h3>
+              <span class="chip">AO2 hints as you type</span>
+            </div>
+            <div class="coach-grid">
+              <div class="writer">
+                <div class="writer-head">
+                  <span class="t">Practice · "How is Sheila presented as powerful?"</span>
+                  <span class="count">287 words · 14 min</span>
+                </div>
+                <div class="writer-body">
+                  <span class="type-seg">From the opening of Act I, Sheila is </span><span class="weak" title="Weak verb — consider 'positioned' or 'framed'">shown</span><span class="type-seg"> as </span><span class="weak" title="Vague adjective — too general">nice</span><span class="type-seg"> and </span><span class="weak" title="Reuses prompt wording verbatim">powerful</span><span class="type-seg">. Priestley's stage directions describe her as "very pleased with life", which </span><span class="strong">sets up a fragile innocence the Inspector systematically dismantles</span><span class="type-seg">. Her repetition of "</span><span class="technique">Mother, I think it's a rotten shame</span><span class="type-seg">" marks the</span><span class="caret"></span>
+                </div>
+                <div class="writer-foot">
+                  <span>AO1 · idea strong</span>
+                  <span class="hot">AO2 · 3 weak verbs flagged</span>
+                  <span>AO3 · not yet</span>
+                </div>
+              </div>
+              <div class="tips">
+                <div class="tips-head">
+                  <span class="t">Coach · suggestions</span>
+                  <span class="live"><span class="d"></span> Reading your draft</span>
+                </div>
+                <div class="tip">
+                  <span class="lead">Word choice · AO2</span>
+                  "<b>shown</b>" is doing too little work. A verb like <b>positioned</b>, <b>framed</b> or <b>constructed</b> foregrounds Priestley as a craftsman making deliberate choices.
+                  <div class="suggest">"Sheila is <b>positioned</b> as the emotional conscience…"</div>
+                </div>
+                <div class="tip">
+                  <span class="lead">Structure · AO1</span>
+                  You've picked a strong quote but <b>haven't said why it matters politically</b>. Add one sentence linking "rotten shame" to Priestley's 1945 audience.
+                </div>
+                <div class="tip">
+                  <span class="lead">Technique · AO2</span>
+                  You've named repetition. Name its <b>effect</b>: repetition here mimics conviction — Sheila is finding her voice in real time.
+                </div>
+                <div class="ao-live">
+                  <div class="ao-chip up"><span class="l">AO1</span><span class="v">7</span></div>
+                  <div class="ao-chip"><span class="l">AO2</span><span class="v">5</span></div>
+                  <div class="ao-chip up"><span class="l">AO3</span><span class="v">6</span></div>
+                  <div class="ao-chip"><span class="l">AO4</span><span class="v">—</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 4 — MOCK EXAMS -->
+          <div class="subscene" data-sub="4">
+            <div class="feat-header">
+              <h3>Timed mock papers</h3>
+              <span class="chip">130+ papers · all boards</span>
+            </div>
+            <div class="mock-grid">
+              <div class="mock-paper">
+                <div class="head">
+                  <span>AQA · English Lit · Paper 2</span>
+                  <span>45m · Section A</span>
+                </div>
+                <h4>Power &amp; Conflict — 'Ozymandias' &amp; one other</h4>
+                <div class="qlist">
+                  <div class="q"><span class="qn">Q1 · 30 marks</span>Compare how poets present the effects of power in 'Ozymandias' and <b>one other</b> poem from Power and Conflict.</div>
+                  <div class="q" style="opacity: 0.55;"><span class="qn">Q2 · 8 marks</span>AO4 — accurate use of vocabulary for effect.</div>
+                </div>
+                <div style="display: flex; gap: 8px; font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); padding-top: 6px; border-top: 1px solid var(--border);">
+                  <span>✎ 287 words written</span>
+                  <span>· 2 drafts saved</span>
+                </div>
+              </div>
+              <div class="mock-panel">
+                <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay-300);">Live timer · exam conditions</div>
+                <div class="timer-ring">
+                  <svg viewBox="0 0 140 140">
+                    <circle class="t-bg" cx="70" cy="70" r="60"/>
+                    <circle class="t-fg" cx="70" cy="70" r="60"/>
+                  </svg>
+                  <div class="t-label">
+                    <div>
+                      <div class="tt">31<small>:24</small></div>
+                      <div class="tl">Of 45:00 remaining</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mock-stats">
+                  <div class="ms"><div class="v">287</div><div class="l">Words</div></div>
+                  <div class="ms"><div class="v">6.4/m</div><div class="l">Pace</div></div>
+                  <div class="ms"><div class="v">2/2</div><div class="l">Quotes cited</div></div>
+                </div>
+                <div class="mock-hint">
+                  <span class="icon">i</span>
+                  <div><b style="color: var(--ochre-300);">Pace alert:</b> you're on track for 450 words. Grade 9 answers average 520+ — consider tightening intro and starting Q1b.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHASE 5 — REVISE / PREDICT -->
+          <div class="subscene" data-sub="5">
+            <div class="feat-header">
+              <h3>Revise &amp; predict</h3>
+              <span class="chip">2,000 flashcards · 7 games</span>
+            </div>
+            <div class="feat-body" style="grid-template-columns: 1fr 1fr;">
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div class="card-white">
+                  <span class="ch">Flashcards · smart review</span>
+                  <div class="flash-stack">
+                    <div class="fc">
+                      <span class="tag">Literary device</span>
+                      <span class="term">Sibilance</span>
+                      <span class="ex">"the silver sea" — clustered 's' sounds for softness or menace.</span>
+                    </div>
+                    <div class="fc">
+                      <span class="tag">Poetic form</span>
+                      <span class="term">Volta</span>
+                      <span class="ex">A turn in thought — often between octet and sestet.</span>
+                    </div>
+                    <div class="fc">
+                      <span class="tag">Theme</span>
+                      <span class="term">Pathetic fallacy</span>
+                      <span class="ex">Weather or nature mirroring a character's mood — Brontë's moors.</span>
+                    </div>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); padding-top: 8px; border-top: 1px solid var(--border);">
+                    <span>Deck · Literary terms · 52</span>
+                    <span style="color: var(--clay-500);">47 / 52 mastered</span>
+                  </div>
+                </div>
+
+                <div class="card-white" style="background: var(--ink-950); color: var(--cream-50);">
+                  <span class="ch" style="color: var(--clay-300);">Grade-climber game · live</span>
+                  <h4 style="color: var(--cream-50); font-size: 16px;">You hit Grade 8 on the last round.</h4>
+                  <div style="display: flex; gap: 8px; margin-top: 4px;">
+                    <div style="flex: 1; padding: 8px; background: var(--ink-800); border-radius: 6px; text-align: center;">
+                      <div style="font-family: var(--font-mono); font-size: 9px; color: var(--ink-400); letter-spacing: 0.12em; text-transform: uppercase;">Round 1</div>
+                      <div style="font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--ochre-400);">6</div>
+                    </div>
+                    <div style="flex: 1; padding: 8px; background: var(--ink-800); border-radius: 6px; text-align: center;">
+                      <div style="font-family: var(--font-mono); font-size: 9px; color: var(--ink-400); letter-spacing: 0.12em; text-transform: uppercase;">Round 2</div>
+                      <div style="font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--ochre-400);">7</div>
+                    </div>
+                    <div style="flex: 1; padding: 8px; background: var(--clay-500); border-radius: 6px; text-align: center;">
+                      <div style="font-family: var(--font-mono); font-size: 9px; color: var(--cream-100); letter-spacing: 0.12em; text-transform: uppercase;">Round 3</div>
+                      <div style="font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--cream-50);">8</div>
+                    </div>
+                    <div style="flex: 1; padding: 8px; background: var(--ink-800); border-radius: 6px; text-align: center; border: 1px dashed var(--ink-600);">
+                      <div style="font-family: var(--font-mono); font-size: 9px; color: var(--ink-400); letter-spacing: 0.12em; text-transform: uppercase;">Next</div>
+                      <div style="font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--ink-500);">?</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-white">
+                <span class="ch">Grade predictor · Spring ’26</span>
+                <h4>Your predicted GCSE grade, updated live.</h4>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(var(--clay-500) 0deg, var(--clay-500) 288deg, var(--cream-200) 288deg); display: grid; place-items: center; position: relative;">
+                    <div style="position: absolute; inset: 10px; background: var(--cream-50); border-radius: 50%;"></div>
+                    <div style="position: relative; z-index: 1; font-family: var(--font-serif); font-style: italic; font-size: 52px; font-weight: 400; color: var(--ink-900);">8</div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 6px; flex: 1;">
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--fg-muted);"><span>Working at</span><b style="color: var(--ink-900); font-family: var(--font-serif); font-style: italic;">6</b></div>
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--fg-muted);"><span>Predicted</span><b style="color: var(--clay-600); font-family: var(--font-serif); font-style: italic;">8</b></div>
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--fg-muted);"><span>Target</span><b style="color: var(--teal-800); font-family: var(--font-serif); font-style: italic;">9</b></div>
+                    <div style="margin-top: 6px; padding: 8px 10px; background: var(--ochre-200); border-radius: 8px; font-size: 11px; color: var(--ink-900); line-height: 1.4;">
+                      Complete <b>3 more AO2 lessons</b> + <b>1 mock</b> to unlock a 9.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="scene-foot">
+        <p class="scene-quote">"I went from a Grade 4 to a 7 in six months. The structured courses and model answers made everything click." — Sophie T., Year 11 AQA</p>
+        <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5;">03 / 04</div>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 4 — PARENTS ========== -->
+    <div class="scene scene-parents" data-screen-label="Chapter 4 Parents">
+      <div class="scene-header">
+        <span class="scene-tag"><span class="dot"></span> Chapter IV · For Parents</span>
+        <span class="scene-kicker">See the progress · without the pressure</span>
+      </div>
+      <div class="scene-numeral">IV</div>
+
+      <div class="scene-content">
+        <div class="scene-text">
+          <h2 class="scene-title">Their <em>confidence</em>, on a dashboard you can read.</h2>
+          <p style="font-family: var(--font-serif); font-size: 20px; line-height: 1.5; opacity: 0.85; max-width: 40ch; margin: 0;">
+            Weekly progress summaries. Streaks, focus areas and predicted grades in plain English. First month free — cancel any time from your account.
+          </p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px;">
+            <a class="scene-cta">Start first month free →</a>
+            <a class="btn" style="background: transparent; color: inherit; border: 1px solid rgba(255,255,255,0.3);">Read the parent guide</a>
+          </div>
+        </div>
+
+        <div class="scene-viz" style="flex-direction: column; gap: 20px;">
+          <div class="parent-dash">
+            <div class="head">
+              <div class="h-title">Evie, Year 11</div>
+              <div class="h-sub">Week 12 · Spring</div>
+            </div>
+            <div class="ring-row">
+              <div class="pring" id="pring1" style="--prog: 288deg"><div class="v">7<small>.8</small></div></div>
+              <div class="ring-info">
+                <h4>Predicted grade</h4>
+                <p>Up from 6.2 four weeks ago. AO2 (language analysis) now her strongest area.</p>
+              </div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 6px;">14-day streak</div>
+              <div class="streak">
+                <div style="background: var(--sage-500)"></div><div style="background: var(--sage-500)"></div><div style="background: var(--sage-500)"></div><div style="background: var(--sage-500)"></div><div style="background: var(--sage-500)"></div><div></div><div style="background: var(--sage-500)"></div>
+                <div style="background: var(--sage-500)"></div><div style="background: var(--sage-500)"></div><div style="background: var(--sage-500)"></div><div style="background: var(--sage-500)"></div><div style="background: var(--sage-500)"></div><div style="background: var(--sage-500)"></div><div style="background: var(--clay-400)"></div>
+              </div>
+            </div>
+            <div class="focus"><span class="dot"></span> This week's focus: <strong style="margin-left: 4px;">Unseen poetry — structural analysis</strong></div>
+          </div>
+
+          <div class="trend">
+            <div class="trend-title">Mock score trend · last 6 weeks</div>
+            <div class="trend-chart">
+              <div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene-foot">
+        <p class="scene-quote">"My daughter's confidence has completely changed. She actually wants to revise now and her mock results have gone up two grades." — Mark H., Parent</p>
+        <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5;">04 / 04</div>
+      </div>
+    </div>
+
+    <div class="stage-dots">
+      <button class="on" aria-label="Chapter 1"></button>
+      <button aria-label="Chapter 2"></button>
+      <button aria-label="Chapter 3"></button>
+      <button aria-label="Chapter 4"></button>
+    </div>
+  </div>
+
+  <!-- Chapter tabs -->
+  <div class="chapter-tabs">
+    <button data-tab="0" class="on">
+      <span class="n">Chapter I</span>
+      <span class="t">For <em>Schools</em></span>
+      <span class="s">Whole-school licence</span>
+    </button>
+    <button data-tab="1">
+      <span class="n">Chapter II</span>
+      <span class="t">For <em>Teachers</em></span>
+      <span class="s">AI marker · 300 resources</span>
+    </button>
+    <button data-tab="2">
+      <span class="n">Chapter III</span>
+      <span class="t">For <em>Students</em></span>
+      <span class="s">470 lessons · 130 mocks</span>
+    </button>
+    <button data-tab="3">
+      <span class="n">Chapter IV</span>
+      <span class="t">For <em>Parents</em></span>
+      <span class="s">Progress · plain English</span>
+    </button>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>AQA</span><span>Edexcel</span><span>OCR</span><span>WJEC Eduqas</span><span>Edexcel IGCSE</span><span>Cambridge IGCSE</span><span>KS3 Years 7–9</span>
+    <span>AQA</span><span>Edexcel</span><span>OCR</span><span>WJEC Eduqas</span><span>Edexcel IGCSE</span><span>Cambridge IGCSE</span><span>KS3 Years 7–9</span>
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-cell"><div class="v">470+</div><div class="l">Structured lessons</div></div>
+    <div class="trust-cell"><div class="v">130+</div><div class="l">Mock papers</div></div>
+    <div class="trust-cell"><div class="v">2,400</div><div class="l">Students learning</div></div>
+    <div class="trust-cell"><div class="v">6</div><div class="l">Exam boards covered</div></div>
+    <div class="trust-cell"><div class="v">4.9</div><div class="l">Student rating / 5</div></div>
+    <div class="trust-cell"><div class="v">1–9</div><div class="l">Grade tracking</div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="block">
+  <div class="block-head">
+    <div>
+      <div class="kicker">Chapter V — Pricing</div>
+      <h2>Pick your <em>path</em>. First month always free.</h2>
+    </div>
+    <p>3 free uses of every feature, no card required. Cancel anytime from your account — no questions, no guilt trip.</p>
+  </div>
+
+  <div class="tiers">
+    <div class="tier">
+      <span class="kick">Student</span>
+      <h3>Learner</h3>
+      <div class="amt">£8.99<small>/mo</small></div>
+      <p style="margin: 0; color: var(--fg-muted); font-size: 14px;">or £67.99/yr — save 37%</p>
+      <ul>
+        <li>All 470+ courses</li>
+        <li>130+ timed mock papers</li>
+        <li>AI essay feedback · 10/day</li>
+        <li>2,000+ flashcards · 52 terms</li>
+        <li>Certificates & streaks</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <a class="btn btn-cream" style="background: var(--ink-950); color: var(--cream-50);">Start free month →</a>
+    </div>
+
+    <div class="tier featured">
+      <span class="badge">Most popular</span>
+      <span class="kick">Teacher</span>
+      <h3>Educator</h3>
+      <div class="amt">£12.99<small>/mo</small></div>
+      <p style="margin: 0; color: var(--cream-200); font-size: 14px;">or £99.99/yr — save 36%</p>
+      <ul>
+        <li>Everything in Student</li>
+        <li>AI lesson builder</li>
+        <li>Class analytics dashboard</li>
+        <li>300+ ready resources</li>
+        <li>Set & track assignments</li>
+        <li>Export parents'-evening reports</li>
+      </ul>
+      <a class="btn btn-primary">Start free trial →</a>
+    </div>
+
+    <div class="tier">
+      <span class="kick">Schools · 2026</span>
+      <h3>Whole School</h3>
+      <div class="amt">Custom</div>
+      <p style="margin: 0; color: var(--fg-muted); font-size: 14px;">Founding programme — 10 schools only</p>
+      <ul>
+        <li>All student & teacher features</li>
+        <li>Department analytics</li>
+        <li>Bulk onboarding · CSV/SSO</li>
+        <li>Locked preferential rates · 3 yrs</li>
+        <li>Dedicated support</li>
+        <li>Direct product input</li>
+      </ul>
+      <a class="btn btn-cream" style="background: var(--ink-950); color: var(--cream-50);">Book a call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="final-inner">
+    <h2>Read close. <em>Write bold.</em><br/>Land the 9.</h2>
+    <p>Join 2,400+ students building real confidence — backed by teachers who mark the papers.</p>
+    <a class="btn btn-primary btn-xl">Start free — no card needed →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">The <em>English</em> Hub</div>
+      <p style="margin-top: 12px; color: var(--fg-muted); font-size: 14px; max-width: 36ch; font-family: var(--font-serif);">
+        An anthology platform for GCSE, IGCSE and KS3 English. Built by teachers, used by 2,400+ students.
+      </p>
+    </div>
+    <div class="foot-col">
+      <h4>Product</h4>
+      <a>Courses</a><a>Games</a><a>Mock exams</a><a>Revision</a><a>Assessment</a>
+    </div>
+    <div class="foot-col">
+      <h4>For</h4>
+      <a>Students</a><a>Teachers</a><a>Schools</a><a>Parents</a>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a>About</a><a>Contact</a><a>Affiliates</a>
+    </div>
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <a>Privacy</a><a>Terms</a><a>Accessibility</a>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2024–2026 The English Hub · Upskill Energy Ltd · 16254656</span>
+    <span>info@upskillenergy.com</span>
+  </div>
+</footer>
+
+<script src="cinematic/chapters.js"></script>
+<script>
+  // Update 'Now playing' label
+  const names = ['Schools', 'Teachers', 'Students', 'Parents'];
+  const numerals = ['I', 'II', 'III', 'IV'];
+  const np = document.getElementById('now-playing');
+  const tabs = document.querySelectorAll('[data-tab]');
+  const bar = document.querySelector('.stage-progress i');
+
+  function syncLabel() {
+    const idx = Array.from(tabs).findIndex(t => t.classList.contains('on'));
+    if (idx >= 0 && np) np.textContent = `Chapter ${numerals[idx]} — ${names[idx]}`;
+    // Update progress on active tab
+    tabs.forEach((t, i) => {
+      t.style.setProperty('--p', i === idx ? (bar ? bar.style.width || '0%' : '0%') : '0%');
+    });
+  }
+  setInterval(syncLabel, 120);
+
+  // Predictor step animation — cycles through steps in chapter 3
+  const stu = document.querySelector('.scene-students');
+  const ring = document.getElementById('gradeRing');
+  function cycleSteps() {
+    if (!stu || !stu.classList.contains('active')) return;
+    const steps = ['ps-1','ps-2','ps-3'];
+    steps.forEach((id, i) => {
+      setTimeout(() => {
+        steps.forEach(s => document.getElementById(s)?.classList.remove('on'));
+        document.getElementById(id)?.classList.add('on');
+        if (ring) {
+          const deg = [200, 260, 310][i];
+          ring.style.background = `conic-gradient(var(--cream-50) 0deg, var(--cream-50) ${deg}deg, rgba(255,255,255,0.15) ${deg}deg)`;
+          ring.querySelector('.g').textContent = ['6','7','8'][i];
+        }
+      }, 5000 + i * 4500);
+    });
+  }
+  // Run when students scene becomes active
+  const obs = new MutationObserver(() => {
+    if (stu && stu.classList.contains('active')) cycleSteps();
+  });
+  if (stu) obs.observe(stu, { attributes: true, attributeFilter: ['class'] });
+</script>
+</body>
+</html>

@@ -8,6 +8,7 @@ import {
   InteractivePoemViewer,
   type PoemData,
 } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Theme tokens ──────────────────────────────────────────────── */
 
@@ -375,6 +376,13 @@ export default function ExposurePage() {
       </div>
 
       {/* ── Interactive poem viewer ── */}
+      <StudyTools
+        textName="Exposure"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={exposureData} />
 
       {/* ── Comparison poems ── */}

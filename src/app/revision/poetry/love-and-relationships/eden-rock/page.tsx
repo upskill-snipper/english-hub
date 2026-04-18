@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -178,6 +179,13 @@ export default function EdenRockPage() {
       </div>
 
       {/* ── Interactive poem viewer ──────────────────────────────── */}
+      <StudyTools
+        textName="Eden Rock"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Love & Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={edenRockPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}

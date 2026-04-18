@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── SEO ────────────────────────────────────────────────────────── */
 
@@ -382,6 +383,13 @@ export default function ChargeOfTheLightBrigadePage() {
       </section>
 
       {/* ── Interactive poem viewer ─────────────────────────────── */}
+      <StudyTools
+        textName="The Charge of the Light Brigade"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={poem} />
 
       {/* ── Comparison poems ────────────────────────────────────── */}

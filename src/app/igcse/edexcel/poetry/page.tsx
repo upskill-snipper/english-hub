@@ -13,6 +13,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   title: 'Edexcel IGCSE Literature Anthology Poetry — The English Hub',
@@ -313,6 +314,8 @@ export default async function EdexcelPoetryAnthologyPage() {
           </div>
         </div>
       </div>
+
+      <StudyTools textName="Edexcel IGCSE Poetry Anthology" textType="anthology" examBoard="Edexcel" variant="banner" />
 
       {/* ── Overview panel ──────────────────────────────────────────── */}
       <section className="grid gap-4 sm:grid-cols-3">

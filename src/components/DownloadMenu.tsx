@@ -13,6 +13,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
+import { StyleSelectorInline, useResourceStyle, type ResourceStyle } from "@/components/ui/StyleSelector"
 
 /* ── Types ─────────────────────────────────────────────────────────── */
 
@@ -21,8 +22,8 @@ export interface DownloadOption {
   label: string
   /** Format key used to distinguish handlers */
   format: "pdf" | "word" | "pptx" | "csv"
-  /** Handler that performs the actual download */
-  onClick: () => void | Promise<void>
+  /** Handler that performs the actual download. Receives the selected style. */
+  onClick: (style?: ResourceStyle) => void | Promise<void>
 }
 
 interface DownloadMenuProps {
@@ -36,6 +37,8 @@ interface DownloadMenuProps {
   label?: string
   /** Variant for the trigger button */
   variant?: "default" | "outline" | "ghost"
+  /** Show style selector in the dropdown (default: true for multi-option, false for single) */
+  showStylePicker?: boolean
 }
 
 /* ── Icon helper ───────────────────────────────────────────────────── */
@@ -75,14 +78,19 @@ export function DownloadMenu({
   className,
   label = "Download",
   variant = "default",
+  showStylePicker,
 }: DownloadMenuProps) {
   const [toast, setToast] = useState<string | null>(null)
+  const { style, setStyle } = useResourceStyle()
+
+  // Default: show style picker for multi-option menus
+  const showPicker = showStylePicker ?? options.length > 1
 
   if (options.length === 0) return null
 
   async function handleClick(opt: DownloadOption) {
     try {
-      await opt.onClick()
+      await opt.onClick(style)
     } catch (err) {
       console.error(`Download failed (${opt.format}):`, err)
       setToast("Download failed -- please try again")
@@ -91,7 +99,7 @@ export function DownloadMenu({
   }
 
   // Single option -- render a plain button, no dropdown needed
-  if (options.length === 1) {
+  if (options.length === 1 && !showPicker) {
     const opt = options[0]
     return (
       <>
@@ -107,7 +115,7 @@ export function DownloadMenu({
     )
   }
 
-  // Multiple options -- render a dropdown
+  // Multiple options (or single with style picker) -- render a dropdown
   return (
     <>
       <DropdownMenu>
@@ -118,7 +126,16 @@ export function DownloadMenu({
           <span className="ml-1.5">{label}</span>
           <ChevronDown className="ml-1 h-3.5 w-3.5 opacity-60" />
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="start">
+        <DropdownMenuContent align="start" className="min-w-[220px]">
+          {showPicker && (
+            <>
+              <DropdownMenuLabel>Style</DropdownMenuLabel>
+              <div className="px-2 py-1.5">
+                <StyleSelectorInline value={style} onChange={setStyle} />
+              </div>
+              <DropdownMenuSeparator />
+            </>
+          )}
           <DropdownMenuGroup>
             <DropdownMenuLabel>Choose format</DropdownMenuLabel>
             <DropdownMenuSeparator />

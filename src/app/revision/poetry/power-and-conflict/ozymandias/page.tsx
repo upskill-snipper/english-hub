@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ────────────────────────────────────────────────────── */
 
@@ -430,6 +431,14 @@ export default function OzymandiasPage() {
           </div>
         </div>
       </div>
+
+      <StudyTools
+        textName="Ozymandias"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
 
       {/* ── Interactive poem viewer ───────────────────────────────── */}
       <InteractivePoemViewer poem={ozymandias} />

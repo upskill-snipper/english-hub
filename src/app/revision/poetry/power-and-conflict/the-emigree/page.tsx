@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata = {
   title: 'The Emigree -- Carol Rumens -- The English Hub',
@@ -315,6 +316,13 @@ export default function TheEmigreePage() {
       </div>
 
       {/* ── Interactive poem viewer ────────────────────────────── */}
+      <StudyTools
+        textName="The Emigrée"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={POEM} />
 
       {/* ── Comparison poems ───────────────────────────────────── */}

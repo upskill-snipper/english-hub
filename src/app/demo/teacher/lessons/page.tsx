@@ -50,7 +50,15 @@ const TEXTS = [
   "Macbeth",
   "A Christmas Carol",
   "Of Mice and Men",
+  "Romeo and Juliet",
+  "Jekyll and Hyde",
+  "Frankenstein",
+  "The Tempest",
+  "Much Ado About Nothing",
   "Poetry Anthology",
+  "Unseen Poetry",
+  "Language Paper 1",
+  "Language Paper 2",
 ] as const;
 
 const YEAR_GROUPS = [
@@ -63,16 +71,44 @@ const YEAR_GROUPS = [
   "Year 13",
 ] as const;
 
-const EXAM_BOARDS = ["AQA"] as const;
+const EXAM_BOARDS = [
+  "AQA",
+  "Edexcel",
+  "OCR",
+  "Eduqas",
+  "IGCSE Edexcel",
+  "Cambridge IGCSE",
+] as const;
 
-const DURATIONS = ["30 minutes", "45 minutes", "60 minutes"] as const;
+const DURATIONS = ["30 minutes", "45 minutes", "60 minutes", "90 minutes (double)"] as const;
 
 const FOCUSES = [
-  "Reading Analysis",
-  "Writing Skills",
+  "Character Analysis",
+  "Key Quotes & Quotation Tracking",
+  "Theme Exploration",
+  "Language & Imagery Analysis",
+  "Specific Act / Scene Study",
+  "Plot & Structure",
+  "Context & Writer's Intentions",
+  "Exam Technique & Essay Writing",
+  "Comparison & Contrast",
+  "Reading Comprehension",
+  "Creative Writing",
+  "Transactional Writing",
   "Speaking & Listening",
-  "Exam Practice",
+  "Revision & Retrieval Practice",
 ] as const;
+
+const SPECIFIC_SECTIONS: Record<string, string[]> = {
+  "An Inspector Calls": ["Act 1", "Act 2", "Act 3", "Mr Birling", "Mrs Birling", "Sheila Birling", "Eric Birling", "Gerald Croft", "Inspector Goole", "Eva Smith / Daisy Renton"],
+  "Macbeth": ["Act 1 Scene 1–3", "Act 1 Scene 5–7", "Act 2 Scene 1–2 (The Murder)", "Act 3 Scene 4 (Banquet)", "Act 5 Scene 1 (Sleepwalking)", "Act 5 Scene 5 (Tomorrow Speech)", "Macbeth (character)", "Lady Macbeth", "The Witches", "Banquo", "Ambition", "Guilt & Conscience", "Supernatural", "Masculinity & Power"],
+  "A Christmas Carol": ["Stave 1 (Marley's Ghost)", "Stave 2 (Past)", "Stave 3 (Present)", "Stave 4 (Future)", "Stave 5 (Redemption)", "Scrooge", "The Cratchit Family", "Ghost of Christmas Past", "Ghost of Christmas Present", "Ghost of Christmas Yet to Come", "Poverty & Social Responsibility", "Redemption & Change"],
+  "Of Mice and Men": ["Chapter 1 (The Clearing)", "Chapter 2 (The Bunkhouse)", "Chapter 3 (Slim & Candy)", "Chapter 4 (Crooks' Room)", "Chapter 5 (The Barn)", "Chapter 6 (The Ending)", "George Milton", "Lennie Small", "Curley's Wife", "Crooks", "The American Dream", "Loneliness & Isolation"],
+  "Romeo and Juliet": ["Act 1 Scene 1 (The Brawl)", "Act 1 Scene 5 (The Party)", "Act 2 Scene 2 (Balcony)", "Act 3 Scene 1 (Mercutio & Tybalt)", "Act 3 Scene 5 (Juliet & Capulet)", "Act 5 Scene 3 (The Tomb)", "Romeo", "Juliet", "Tybalt", "Mercutio", "The Nurse", "Lord Capulet", "Love & Conflict", "Fate & Free Will"],
+  "Jekyll and Hyde": ["Chapter 1 (The Door)", "Chapter 2 (Search for Hyde)", "Chapter 4 (Carew Murder)", "Chapter 9 (Dr Lanyon's Narrative)", "Chapter 10 (Henry Jekyll's Statement)", "Dr Jekyll", "Mr Hyde", "Mr Utterson", "Duality of Man", "Repression & Victorian Society", "Science & Morality"],
+  "Frankenstein": ["Walton's Letters", "Chapters 1–5 (Creation)", "Chapters 11–16 (Creature's Narrative)", "Chapters 17–21 (Pursuit)", "Chapters 22–24 (The Ending)", "Victor Frankenstein", "The Creature", "Playing God", "Isolation & Rejection", "Nature vs Nurture"],
+  "Poetry Anthology": ["Power & Conflict cluster", "Love & Relationships cluster", "Ozymandias", "London", "My Last Duchess", "Charge of the Light Brigade", "Exposure", "Remains", "Bayonet Charge", "Comparing two poems"],
+};
 
 // ─── Pre-built Lesson Plans ──────────────────────────────────────────────────
 
@@ -1535,6 +1571,10 @@ export default function LessonBuilderDemo() {
   const [board, setBoard] = useState<string>(EXAM_BOARDS[0]);
   const [duration, setDuration] = useState<string>(DURATIONS[2]);
   const [focus, setFocus] = useState<string>(FOCUSES[0]);
+  const [specificSection, setSpecificSection] = useState<string>("");
+
+  // Compute available specific sections for the selected text
+  const availableSections = SPECIFIC_SECTIONS[text] || [];
 
   const [isGenerating, setIsGenerating] = useState(false);
   const [typingIndex, setTypingIndex] = useState(0);
@@ -1768,12 +1808,12 @@ export default function LessonBuilderDemo() {
         </p>
 
         {/* Demo Banner */}
-        <div className="mb-10 rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-4">
+        <div className="mb-10 rounded-xl border border-clay-500/20 bg-clay-500/5 px-5 py-4">
           <div className="flex items-start gap-3">
-            <span className="mt-0.5 text-amber-400 text-lg">*</span>
+            <span className="mt-0.5 text-clay-500 text-lg font-serif italic">*</span>
             <div>
-              <p className="text-amber-200 font-medium text-sm">Demo Mode</p>
-              <p className="text-amber-200/60 text-sm mt-1">
+              <p className="text-clay-700 font-medium text-sm">Demo Mode</p>
+              <p className="text-ink-600 text-sm mt-1">
                 This is a preview of the lesson builder. Generated plans use pre-built templates to demonstrate the format and quality. With a full account, every lesson is uniquely generated to your exact specification.
               </p>
             </div>
@@ -1785,13 +1825,23 @@ export default function LessonBuilderDemo() {
           <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
             <h2 className="text-xl font-medium text-ink-900 mb-6">Configure Your Lesson</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <FormSelect label="Text / Topic" value={text} onChange={setText} options={[...TEXTS]} />
-              <FormSelect label="Year Group" value={yearGroup} onChange={setYearGroup} options={[...YEAR_GROUPS]} />
+              <FormSelect label="Text / Topic" value={text} onChange={(v) => { setText(v); setSpecificSection(""); }} options={[...TEXTS]} />
               <FormSelect label="Exam Board" value={board} onChange={setBoard} options={[...EXAM_BOARDS]} />
+              <FormSelect label="Year Group" value={yearGroup} onChange={setYearGroup} options={[...YEAR_GROUPS]} />
               <FormSelect label="Duration" value={duration} onChange={setDuration} options={[...DURATIONS]} />
               <div className="sm:col-span-2">
                 <FormSelect label="Lesson Focus" value={focus} onChange={setFocus} options={[...FOCUSES]} />
               </div>
+              {availableSections.length > 0 && (
+                <div className="sm:col-span-2">
+                  <FormSelect
+                    label="Specific Section / Character / Theme (optional)"
+                    value={specificSection}
+                    onChange={setSpecificSection}
+                    options={["Any / Teacher's choice", ...availableSections]}
+                  />
+                </div>
+              )}
             </div>
             <button
               onClick={handleGenerate}
@@ -1914,7 +1964,7 @@ export default function LessonBuilderDemo() {
                   <ul className="space-y-2 text-sm text-ink-600">
                     {generatedPlan.teacherNotes.map((n, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-amber-400/60 mt-0.5 shrink-0">*</span>{n}
+                        <span className="text-clay-500 mt-0.5 shrink-0 font-serif italic">*</span>{n}
                       </li>
                     ))}
                   </ul>
@@ -2024,7 +2074,7 @@ function ActivityBlock({
   color: "amber" | "emerald" | "violet";
 }) {
   const styles = {
-    amber: { border: "border-amber-500/20", bg: "bg-amber-500/5", text: "text-amber-400" },
+    amber: { border: "border-clay-500/20", bg: "bg-clay-500/5", text: "text-clay-600" },
     emerald: { border: "border-teal-800/20", bg: "bg-teal-800/5", text: "text-teal-700" },
     violet: { border: "border-teal-800/20", bg: "bg-teal-800/5", text: "text-teal-700" },
   }[color];
@@ -2060,7 +2110,7 @@ function ActivityBlock({
 }
 
 function DiffTier({ tier, text }: { tier: string; text: string }) {
-  const color = tier === "Support" ? "text-teal-700" : tier === "Core" ? "text-ink-600" : "text-orange-400";
+  const color = tier === "Support" ? "text-teal-700" : tier === "Core" ? "text-ink-600" : "text-clay-600";
   return (
     <div className="flex items-start gap-2 text-xs">
       <span className={`shrink-0 font-medium ${color} w-14`}>{tier}</span>

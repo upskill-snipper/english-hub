@@ -21,6 +21,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   title: 'To Kill a Mockingbird — Edexcel IGCSE Literature Study Guide',
@@ -231,6 +232,8 @@ export default async function TkamHubPage() {
           </p>
         </div>
       </section>
+
+      <StudyTools textName="To Kill a Mockingbird" textType="novel" examBoard="Edexcel" />
 
       {/* Fair-use notice */}
       <section className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5">

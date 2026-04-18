@@ -16,6 +16,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import StudyTools from '@/components/study/StudyTools'
 
 interface Cluster {
   slug: string
@@ -112,6 +113,8 @@ export default function OCRPoetryHubPage() {
           </p>
         </div>
       </section>
+
+      <StudyTools textName="OCR Poetry Anthology" textType="anthology" examBoard="OCR" variant="banner" />
 
       {/* ── Info banner ─────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">

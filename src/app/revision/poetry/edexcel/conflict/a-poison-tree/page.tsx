@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const aPoisonTree: PoemData = {
   title: 'A Poison Tree',
@@ -390,6 +391,13 @@ export default function APoisonTreePage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="A Poison Tree"
+        textType="poem"
+        examBoard="Edexcel"
+        cluster="Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={aPoisonTree} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

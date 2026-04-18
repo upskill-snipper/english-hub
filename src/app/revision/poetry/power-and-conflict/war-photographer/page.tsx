@@ -7,6 +7,7 @@ import {
   InteractivePoemViewer,
   PoemData,
 } from '@/components/study'
+import StudyTools from '@/components/study/StudyTools'
 
 /* ── Metadata ──────────────────────────────────────────────────── */
 
@@ -395,6 +396,13 @@ export default function WarPhotographerPage() {
       </div>
 
       {/* ── Interactive poem viewer ───────────────────────────── */}
+      <StudyTools
+        textName="War Photographer"
+        textType="poem"
+        examBoard="AQA"
+        cluster="Power & Conflict"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={WAR_PHOTOGRAPHER} />
 
       {/* ── Theme tokens ──────────────────────────────────────── */}

@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const soldier: PoemData = {
   title: 'The Soldier',
@@ -371,6 +372,13 @@ export default function SoldierEduqasPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="The Soldier"
+        textType="poem"
+        examBoard="Eduqas"
+        cluster="Eduqas Poetry Anthology"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={soldier} />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">

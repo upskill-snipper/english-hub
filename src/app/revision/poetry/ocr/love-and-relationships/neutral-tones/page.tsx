@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
+import StudyTools from '@/components/study/StudyTools'
 
 const neutralTones: PoemData = {
   title: 'Neutral Tones',
@@ -395,6 +396,13 @@ export default function NeutralTonesPage() {
         </div>
       </div>
 
+      <StudyTools
+        textName="Neutral Tones"
+        textType="poem"
+        examBoard="OCR"
+        cluster="Love and Relationships"
+        variant="compact"
+      />
       <InteractivePoemViewer poem={neutralTones} />
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">
