@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
-import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -503,46 +502,6 @@ export default async function AnInspectorCallsPage() {
         }))}
       />
 
-      <DeepDiveSection
-        links={[
-          {
-            href: '/revision/texts/an-inspector-calls/acts',
-            icon: 'acts',
-            title: 'Act-by-Act Analysis',
-            description: 'Detailed breakdown of each act with key moments, quotes and analysis.',
-          },
-          {
-            href: '/revision/texts/an-inspector-calls/characters',
-            icon: 'characters',
-            title: 'Character Guide',
-            description: 'In-depth analysis of all seven characters with key quotes and exam tips.',
-          },
-          {
-            href: '/revision/texts/an-inspector-calls/themes',
-            icon: 'themes',
-            title: 'Theme Analysis',
-            description: 'Seven major themes with quotes, act-by-act evidence and essay planning tips.',
-          },
-          {
-            href: '/revision/texts/an-inspector-calls/key-quotes',
-            icon: 'quotes',
-            title: 'Key Quotes Bank',
-            description: 'Essential quotations organised by theme and character with analysis.',
-          },
-          {
-            href: '/revision/texts/an-inspector-calls/context',
-            icon: 'context',
-            title: 'Historical Context',
-            description: '1912 vs 1945, Priestley\u2019s socialism, the welfare state and the class system.',
-          },
-          {
-            href: '/revision/texts/an-inspector-calls/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-        ]}
-      />
       <InlineStudyEngine
         textName="An Inspector Calls"
         questions={QUIZ_QUESTIONS}

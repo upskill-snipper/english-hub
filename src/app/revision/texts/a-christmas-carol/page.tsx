@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
-import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -526,52 +525,6 @@ export default async function AChristmasCarolPage() {
         }))}
       />
 
-      <DeepDiveSection
-        links={[
-          {
-            href: '/revision/texts/a-christmas-carol/read',
-            icon: 'read',
-            title: 'Read the Full Text',
-            description: 'Read Dickens\'s original text with interactive annotations.',
-          },
-          {
-            href: '/revision/texts/a-christmas-carol/staves',
-            icon: 'acts',
-            title: 'Stave-by-Stave Analysis',
-            description: 'Detailed breakdown of each stave with key moments, quotes and analysis.',
-          },
-          {
-            href: '/revision/texts/a-christmas-carol/characters',
-            icon: 'characters',
-            title: 'Character Analysis',
-            description: 'In-depth analysis of all major characters with quotes, arcs and exam tips.',
-          },
-          {
-            href: '/revision/texts/a-christmas-carol/themes',
-            icon: 'themes',
-            title: 'Theme Analysis',
-            description: 'Seven major themes explored with evidence from each stave and essay tips.',
-          },
-          {
-            href: '/revision/texts/a-christmas-carol/key-quotes',
-            icon: 'quotes',
-            title: 'Key Quotes Bank',
-            description: 'Essential quotations organised by theme and character with analysis.',
-          },
-          {
-            href: '/revision/texts/a-christmas-carol/context',
-            icon: 'context',
-            title: 'Historical & Social Context',
-            description: 'Victorian England, the Poor Law, Dickens\' life, and the novella\'s impact.',
-          },
-          {
-            href: '/revision/texts/a-christmas-carol/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-        ]}
-      />
       <InlineStudyEngine
         textName="A Christmas Carol"
         questions={QUIZ_QUESTIONS}

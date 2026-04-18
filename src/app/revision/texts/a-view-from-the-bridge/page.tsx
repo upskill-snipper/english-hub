@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
-import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -210,35 +209,6 @@ export default async function AViewFromTheBridgePage() {
           front: q.quote,
           back: q.analysis,
         }))}
-      />
-
-      <DeepDiveSection
-        links={[
-          {
-            href: '/revision/texts/a-view-from-the-bridge/characters',
-            icon: 'characters',
-            title: 'Character Studies',
-            description: 'In-depth profiles of every major character with quotes and exam tips.',
-          },
-          {
-            href: '/revision/texts/a-view-from-the-bridge/themes',
-            icon: 'themes',
-            title: 'Theme Explorer',
-            description: 'Comprehensive analysis of every key theme with supporting evidence.',
-          },
-          {
-            href: '/revision/texts/a-view-from-the-bridge/key-quotes',
-            icon: 'quotes',
-            title: 'Key Quotes Bank',
-            description: 'Essential quotations organised by theme and character with analysis.',
-          },
-          {
-            href: '/revision/texts/a-view-from-the-bridge/context',
-            icon: 'context',
-            title: 'Historical Context',
-            description: 'McCarthyism, Italian immigration and Greek tragedy.',
-          },
-        ]}
       />
 
       <InlineStudyEngine

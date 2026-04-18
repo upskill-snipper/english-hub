@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
-import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -214,46 +213,6 @@ export default async function LordOfTheFliesPage() {
         }))}
       />
 
-      <DeepDiveSection
-        links={[
-          {
-            href: '/revision/texts/lord-of-the-flies/chapters',
-            icon: 'acts',
-            title: 'Chapter-by-Chapter Analysis',
-            description: 'Detailed breakdown of each chapter with key moments, quotes and analysis.',
-          },
-          {
-            href: '/revision/texts/lord-of-the-flies/characters',
-            icon: 'characters',
-            title: 'Character Studies',
-            description: 'In-depth profiles of every major character with quotes and exam tips.',
-          },
-          {
-            href: '/revision/texts/lord-of-the-flies/themes',
-            icon: 'themes',
-            title: 'Theme Explorer',
-            description: 'Comprehensive analysis of every key theme with supporting evidence.',
-          },
-          {
-            href: '/revision/texts/lord-of-the-flies/key-quotes',
-            icon: 'quotes',
-            title: 'Key Quotes Bank',
-            description: 'Essential quotations organised by theme and character with analysis.',
-          },
-          {
-            href: '/revision/texts/lord-of-the-flies/context',
-            icon: 'context',
-            title: 'Historical Context',
-            description: 'World War II, Golding\'s disillusionment, and the Coral Island tradition.',
-          },
-          {
-            href: '/revision/texts/lord-of-the-flies/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-        ]}
-      />
       <InlineStudyEngine
         textName="Lord of the Flies"
         questions={QUIZ_QUESTIONS}

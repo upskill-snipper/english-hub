@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
-import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -329,52 +328,6 @@ export default async function JekyllAndHydePage() {
         }))}
       />
 
-      <DeepDiveSection
-        links={[
-          {
-            href: '/revision/texts/jekyll-and-hyde/read',
-            icon: 'read',
-            title: 'Read the Full Text',
-            description: 'Read Stevenson\'s original text with interactive annotations.',
-          },
-          {
-            href: '/revision/texts/jekyll-and-hyde/chapters',
-            icon: 'acts',
-            title: 'Chapter-by-Chapter Analysis',
-            description: 'Detailed breakdown of each chapter with key moments, quotes and analysis.',
-          },
-          {
-            href: '/revision/texts/jekyll-and-hyde/characters',
-            icon: 'characters',
-            title: 'Character Guide',
-            description: 'In-depth analysis of all major characters with key quotes and exam tips.',
-          },
-          {
-            href: '/revision/texts/jekyll-and-hyde/themes',
-            icon: 'themes',
-            title: 'Theme Analysis',
-            description: 'Five major themes with quotes, evidence and essay planning tips.',
-          },
-          {
-            href: '/revision/texts/jekyll-and-hyde/key-quotes',
-            icon: 'quotes',
-            title: 'Key Quotes Bank',
-            description: 'Essential quotations organised by theme and character with analysis.',
-          },
-          {
-            href: '/revision/texts/jekyll-and-hyde/context',
-            icon: 'context',
-            title: 'Historical Context',
-            description: 'Victorian society, Darwin, duality and the Gothic tradition.',
-          },
-          {
-            href: '/revision/texts/jekyll-and-hyde/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-        ]}
-      />
       <InlineStudyEngine
         textName="Dr Jekyll and Mr Hyde"
         questions={QUIZ_QUESTIONS}

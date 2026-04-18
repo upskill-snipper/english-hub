@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
-import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -213,40 +212,6 @@ export default async function BloodBrothersPage() {
         }))}
       />
 
-      <DeepDiveSection
-        links={[
-          {
-            href: '/revision/texts/blood-brothers/acts',
-            icon: 'acts',
-            title: 'Act-by-Act Analysis',
-            description: 'Detailed breakdown of each act with key moments, quotes and analysis.',
-          },
-          {
-            href: '/revision/texts/blood-brothers/characters',
-            icon: 'characters',
-            title: 'Character Studies',
-            description: 'In-depth profiles of every major character with quotes and exam tips.',
-          },
-          {
-            href: '/revision/texts/blood-brothers/themes',
-            icon: 'themes',
-            title: 'Theme Explorer',
-            description: 'Comprehensive analysis of every key theme with supporting evidence.',
-          },
-          {
-            href: '/revision/texts/blood-brothers/key-quotes',
-            icon: 'quotes',
-            title: 'Key Quotes Bank',
-            description: 'Essential quotations organised by theme and character with analysis.',
-          },
-          {
-            href: '/revision/texts/blood-brothers/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-        ]}
-      />
       <InlineStudyEngine
         textName="Blood Brothers"
         questions={QUIZ_QUESTIONS}

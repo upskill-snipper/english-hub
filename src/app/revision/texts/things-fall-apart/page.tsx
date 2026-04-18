@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
-import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -210,35 +209,6 @@ export default async function ThingsFallApartPage() {
           front: q.quote,
           back: q.analysis,
         }))}
-      />
-
-      <DeepDiveSection
-        links={[
-          {
-            href: '/revision/texts/things-fall-apart/characters',
-            icon: 'characters',
-            title: 'Character Studies',
-            description: 'In-depth profiles of every major character with quotes and exam tips.',
-          },
-          {
-            href: '/revision/texts/things-fall-apart/themes',
-            icon: 'themes',
-            title: 'Theme Explorer',
-            description: 'Comprehensive analysis of every key theme with supporting evidence.',
-          },
-          {
-            href: '/revision/texts/things-fall-apart/key-quotes',
-            icon: 'quotes',
-            title: 'Key Quotes Bank',
-            description: 'Essential quotations organised by theme and character with analysis.',
-          },
-          {
-            href: '/revision/texts/things-fall-apart/context',
-            icon: 'context',
-            title: 'Historical Context',
-            description: 'Pre-colonial Igboland, British colonialism and Achebe\'s literary response.',
-          },
-        ]}
       />
 
       <InlineStudyEngine

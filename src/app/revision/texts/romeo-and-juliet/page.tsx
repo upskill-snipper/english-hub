@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
-import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -321,52 +320,6 @@ export default async function RomeoAndJulietPage() {
         }))}
       />
 
-      <DeepDiveSection
-        links={[
-          {
-            href: '/revision/texts/romeo-and-juliet/read',
-            icon: 'read',
-            title: 'Read the Full Play',
-            description: 'Read the complete text with interactive annotations, character notes and theme highlights.',
-          },
-          {
-            href: '/revision/texts/romeo-and-juliet/acts',
-            icon: 'acts',
-            title: 'Act-by-Act Analysis',
-            description: 'Detailed breakdown of each act with key moments, quotes and analysis.',
-          },
-          {
-            href: '/revision/texts/romeo-and-juliet/characters',
-            icon: 'characters',
-            title: 'Character Guide',
-            description: 'In-depth analysis of all major characters with key quotes and exam tips.',
-          },
-          {
-            href: '/revision/texts/romeo-and-juliet/themes',
-            icon: 'themes',
-            title: 'Theme Analysis',
-            description: 'Major themes with quotes, evidence and essay planning tips.',
-          },
-          {
-            href: '/revision/texts/romeo-and-juliet/key-quotes',
-            icon: 'quotes',
-            title: 'Key Quotes Bank',
-            description: 'Essential quotations organised by theme and character with analysis.',
-          },
-          {
-            href: '/revision/texts/romeo-and-juliet/context',
-            icon: 'context',
-            title: 'Historical Context',
-            description: 'Elizabethan England, marriage, patriarchy and Italian sources.',
-          },
-          {
-            href: '/revision/texts/romeo-and-juliet/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-        ]}
-      />
       <InlineStudyEngine
         textName="Romeo and Juliet"
         questions={QUIZ_QUESTIONS}
