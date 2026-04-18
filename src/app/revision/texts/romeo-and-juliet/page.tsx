@@ -251,6 +251,12 @@ export default async function RomeoAndJulietPage() {
       <DeepDiveSection
         links={[
           {
+            href: '/revision/texts/romeo-and-juliet/read',
+            icon: 'read',
+            title: '\ud83d\udcd6 Read the Full Play',
+            description: 'Read the complete text of Romeo and Juliet with interactive annotations, character notes and theme highlights.',
+          },
+          {
             href: '/revision/texts/romeo-and-juliet/acts',
             icon: 'acts',
             title: 'Act-by-Act Analysis',

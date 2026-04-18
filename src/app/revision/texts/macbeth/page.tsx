@@ -1,4 +1,6 @@
 import { redirect } from 'next/navigation'
+import Link from 'next/link'
+import { BookOpen, ArrowRight } from 'lucide-react'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
@@ -265,6 +267,27 @@ export default async function MacbethPage() {
   }
   return (
     <>
+      {/* Read the Full Play — prominent card */}
+      <section className="mb-8">
+        <Link
+          href="/revision/texts/macbeth/read"
+          className="group relative flex items-center gap-5 rounded-2xl border-2 border-teal-500/30 bg-gradient-to-r from-teal-500/[0.06] to-violet-500/[0.04] p-6 transition-all hover:border-teal-500/50 hover:shadow-md"
+        >
+          <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-teal-500/15">
+            <BookOpen className="size-7 text-teal-400" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <h3 className="text-lg font-bold text-foreground group-hover:text-teal-400 transition-colors">
+              Read the Full Play
+            </h3>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+              Read Shakespeare&apos;s complete text with interactive annotations, language analysis, theme tracking, and reading progress. Toggle between close reading, speed reading, and analytical modes.
+            </p>
+          </div>
+          <ArrowRight className="size-5 shrink-0 text-muted-foreground/40 transition-transform group-hover:translate-x-1 group-hover:text-teal-400" />
+        </Link>
+      </section>
+
       <DeepDiveSection
         links={[
           {

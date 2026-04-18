@@ -175,6 +175,12 @@ export default async function FrankensteinPage() {
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/frankenstein/read',
+            icon: 'read',
+            title: 'Read the Full Novel',
+            description: 'Read key chapters of Shelley\'s original text with interactive annotations, character and theme overlays, and reading progress tracking.',
+          },
         ]}
       />
       <TextGuide data={data} />

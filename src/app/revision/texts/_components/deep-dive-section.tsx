@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { ArrowRight, BookOpen, PenLine, Quote, Users, Lightbulb } from 'lucide-react'
+import { ArrowRight, BookOpen, BookText, PenLine, Quote, Users, Lightbulb } from 'lucide-react'
 
 export type DeepDiveLink = {
   href: string
-  icon: 'acts' | 'essays' | 'quotes' | 'characters' | 'themes'
+  icon: 'acts' | 'essays' | 'quotes' | 'characters' | 'themes' | 'read'
   title: string
   description: string
 }
@@ -14,6 +14,7 @@ const iconMap = {
   quotes: Quote,
   characters: Users,
   themes: Lightbulb,
+  read: BookText,
 } as const
 
 const iconColorMap = {
@@ -22,6 +23,7 @@ const iconColorMap = {
   quotes: 'text-violet-400',
   characters: 'text-emerald-400',
   themes: 'text-rose-400',
+  read: 'text-blue-400',
 } as const
 
 const bgColorMap = {
@@ -30,6 +32,7 @@ const bgColorMap = {
   quotes: 'bg-violet-500/10',
   characters: 'bg-emerald-500/10',
   themes: 'bg-rose-500/10',
+  read: 'bg-blue-500/10',
 } as const
 
 export function DeepDiveSection({ links }: { links: DeepDiveLink[] }) {
