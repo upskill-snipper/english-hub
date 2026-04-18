@@ -5,41 +5,47 @@ import { PRICING } from '@/constants/pricing'
 
 const tiers = [
   {
-    name: 'Free',
-    price: '£0',
-    period: 'forever',
-    description: '3 free uses per feature — no sign-up.',
+    name: 'Student',
+    price: `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}`,
+    period: '/month',
+    annual: `or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year (save 37%)`,
+    description: 'Full access for students — first month free.',
     features: [
-      '3 free uses of every tool',
-      'Browse all 470+ lessons',
-      'Sample mock papers',
-      'Try AI essay feedback',
-      'No card required',
+      'All 470+ structured lessons',
+      'All 130+ mock exams',
+      'AI essay feedback (10/day)',
+      '30+ poem deep-dives with annotations',
+      '7 GCSE revision games',
+      '500+ quiz questions',
+      'Grade 1–9 tracking & prediction',
+      'All exam boards included',
+      'First month free — cancel anytime',
     ],
-    cta: { label: 'Get started', href: '/courses' },
+    cta: { label: 'Start free month', href: '/auth/register' },
     featured: false,
     bg: 'bg-white border border-ink-200',
     text: 'text-ink-900',
     sub: 'text-ink-500',
     featureText: 'text-ink-600',
     btnClass:
-      'border border-ink-200 text-ink-900 hover:bg-cream-100 hover:border-ink-300',
+      'bg-teal-800 text-cream-50 hover:bg-teal-900 shadow-md',
   },
   {
-    name: 'Student',
-    price: `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}`,
+    name: 'Teacher',
+    price: `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}`,
     period: '/month',
-    description: 'Full access — first month free. Cancel anytime.',
+    annual: `or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year (save 36%)`,
+    description: 'Everything in Student plus teacher tools.',
     features: [
-      'All 470+ structured lessons',
-      'All 130+ mock exams',
-      'AI essay feedback (10/day)',
-      '30 poem deep-dives',
-      '7 GCSE revision games',
-      '2,000+ flashcards',
-      'Grade 1–9 tracking',
-      'All exam boards included',
-      'Cancel anytime',
+      'Everything in Student',
+      'AI lesson plan generator',
+      'PowerPoint builder (Anthology-styled)',
+      'Assignment tracker & marking',
+      'AI essay marking with AO breakdown',
+      'Class progress analytics',
+      '40+ downloadable lesson plans',
+      'Homework generator',
+      'Teacher resource library',
     ],
     cta: { label: 'Start free month', href: '/auth/register' },
     featured: true,
@@ -51,28 +57,31 @@ const tiers = [
       'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg shadow-clay-500/25',
   },
   {
-    name: 'School',
-    price: 'Custom',
-    period: '',
-    description: 'Whole-department access. Founding programme open.',
+    name: 'Founding School',
+    price: `From ${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k`,
+    period: '/year',
+    annual: `${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k–${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MAX / 1000).toFixed(0)}k · only ${PRICING.FOUNDER_SCHOOL_LIMIT} places`,
+    description: 'Whole-school licence at founding rate — locked in.',
     features: [
-      'Everything in Student',
+      'Everything in Teacher',
       'Unlimited students & teachers',
-      'Department analytics',
-      'Teacher admin portal',
-      'Bulk upload (CSV / SSO)',
-      'Progress reports',
-      'CPD resources',
-      'Dedicated support',
+      'Whole-department analytics dashboard',
+      'Student-level progress tracking',
+      'Bulk student upload (CSV)',
+      'Safeguarding & GDPR compliant',
+      'Dedicated onboarding support',
+      'Feature requests prioritised',
+      'Price locked at founding rate forever',
+      `Only ${PRICING.FOUNDER_SCHOOL_LIMIT} founding places available`,
     ],
-    cta: { label: 'Book a call', href: '/for-schools' },
+    cta: { label: 'Book a founding call', href: '/for-schools' },
     featured: false,
-    bg: 'bg-white border border-ink-200',
-    text: 'text-ink-900',
-    sub: 'text-ink-500',
-    featureText: 'text-ink-600',
+    bg: 'bg-ink-950',
+    text: 'text-cream-50',
+    sub: 'text-ink-400',
+    featureText: 'text-ink-300',
     btnClass:
-      'border border-ink-200 text-ink-900 hover:bg-cream-100 hover:border-ink-300',
+      'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg',
   },
 ]
 
@@ -88,8 +97,8 @@ export default function AnthologyPricing() {
           <h2 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-ink-900" style={{ letterSpacing: '-0.035em' }}>
             Simple, <em className="italic text-teal-800">honest</em> pricing.
           </h2>
-          <p className="mt-4 text-ink-600 text-lg max-w-md mx-auto font-serif">
-            3 free uses per feature. First month free on Student. Cancel anytime.
+          <p className="mt-4 text-ink-600 text-lg max-w-lg mx-auto font-serif">
+            First month free for students and teachers. Founding schools get a locked-in rate — only {PRICING.FOUNDER_SCHOOL_LIMIT} places.
           </p>
         </div>
 
@@ -121,6 +130,11 @@ export default function AnthologyPricing() {
                   <span className={`text-sm ${tier.sub}`}>{tier.period}</span>
                 )}
               </div>
+
+              {/* Annual option */}
+              {tier.annual && (
+                <p className={`text-xs ${tier.sub} mb-2 font-mono`}>{tier.annual}</p>
+              )}
 
               {/* Description */}
               <p className={`text-sm ${tier.sub} mb-6`}>{tier.description}</p>
