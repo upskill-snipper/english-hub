@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'Animal Farm — Study Guide | The English Hub',
@@ -143,6 +143,37 @@ export default async function AnimalFarmPage() {
 
   return (
     <>
+      <TextStudyHub
+        textName="Animal Farm"
+        textType="novella"
+        examBoard="AQA"
+        basePath="/revision/texts/animal-farm"
+        subPages={[
+          { id: 'chapters', href: '/revision/texts/animal-farm/chapters', icon: 'acts' as const, title: 'Chapter-by-Chapter', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/animal-farm/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/animal-farm/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/animal-farm/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'context', href: '/revision/texts/animal-farm/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
+          { id: 'essays', href: '/revision/texts/animal-farm/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Orwell present the theme of power and corruption in Animal Farm?',
+          'How does Orwell use the character of Boxer to explore exploitation of the working class?',
+          'How does Orwell present language as a tool of control in Animal Farm?',
+          'How does Orwell explore the betrayal of revolution in Animal Farm?',
+          'How does Orwell use allegory to convey his political message?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
           {
@@ -164,20 +195,25 @@ export default async function AnimalFarmPage() {
             description: 'Comprehensive analysis of every key theme with supporting evidence.',
           },
           {
-            href: '/revision/texts/animal-farm/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-          {
             href: '/revision/texts/animal-farm/key-quotes',
             icon: 'quotes',
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/animal-farm/context',
+            icon: 'context',
+            title: 'Historical Context',
+            description: 'The Russian Revolution, Stalin, and Orwell\'s democratic socialism.',
+          },
+          {
+            href: '/revision/texts/animal-farm/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
         ]}
       />
-      <StudyTools textName="Animal Farm" textType="novella" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for criticism and review. Full text available from your school or local library.

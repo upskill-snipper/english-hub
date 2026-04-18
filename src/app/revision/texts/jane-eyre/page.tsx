@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'Jane Eyre — Study Guide | The English Hub',
@@ -144,6 +144,36 @@ export default async function JaneEyrePage() {
 
   return (
     <>
+      <TextStudyHub
+        textName="Jane Eyre"
+        textType="novel"
+        examBoard="AQA"
+        basePath="/revision/texts/jane-eyre"
+        subPages={[
+          { id: 'chapters', href: '/revision/texts/jane-eyre/chapters', icon: 'acts' as const, title: 'Chapter-by-Chapter', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/jane-eyre/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/jane-eyre/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/jane-eyre/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'essays', href: '/revision/texts/jane-eyre/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Bront\u00eb present the theme of independence and self-respect in Jane Eyre?',
+          'How does Bront\u00eb explore the theme of class and social position?',
+          'How does Bront\u00eb present Jane as a feminist heroine?',
+          'How does Bront\u00eb use Gothic elements to enhance the narrative?',
+          'How does Bront\u00eb contrast different models of religion in the novel?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
           {
@@ -165,20 +195,19 @@ export default async function JaneEyrePage() {
             description: 'Comprehensive analysis of every key theme with supporting evidence.',
           },
           {
-            href: '/revision/texts/jane-eyre/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-          {
             href: '/revision/texts/jane-eyre/key-quotes',
             icon: 'quotes',
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/jane-eyre/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
         ]}
       />
-      <StudyTools textName="Jane Eyre" textType="novel" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <em>Jane Eyre</em> (1847) by Charlotte Bront&euml; is in the public domain. Quotations are reproduced freely.

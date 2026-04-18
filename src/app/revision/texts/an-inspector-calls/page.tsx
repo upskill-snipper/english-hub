@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'An Inspector Calls — Study Guide | The English Hub',
@@ -202,6 +202,37 @@ export default async function AnInspectorCallsPage() {
 
   return (
     <>
+      <TextStudyHub
+        textName="An Inspector Calls"
+        textType="play"
+        examBoard="AQA"
+        basePath="/revision/texts/an-inspector-calls"
+        subPages={[
+          { id: 'acts', href: '/revision/texts/an-inspector-calls/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/an-inspector-calls/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/an-inspector-calls/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/an-inspector-calls/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'context', href: '/revision/texts/an-inspector-calls/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
+          { id: 'essays', href: '/revision/texts/an-inspector-calls/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Priestley present the theme of social responsibility in An Inspector Calls?',
+          'How does Priestley use the character of Sheila to convey his message?',
+          'How does Priestley explore the theme of class in An Inspector Calls?',
+          'How does Priestley present the Inspector as a dramatic device?',
+          'How does Priestley use the generational divide to convey his ideas?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
           {
@@ -209,12 +240,6 @@ export default async function AnInspectorCallsPage() {
             icon: 'acts',
             title: 'Act-by-Act Analysis',
             description: 'Detailed breakdown of each act with key moments, quotes and analysis.',
-          },
-          {
-            href: '/revision/texts/an-inspector-calls/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
           },
           {
             href: '/revision/texts/an-inspector-calls/characters',
@@ -240,9 +265,14 @@ export default async function AnInspectorCallsPage() {
             title: 'Historical Context',
             description: '1912 vs 1945, Priestley\u2019s socialism, the welfare state and the class system.',
           },
+          {
+            href: '/revision/texts/an-inspector-calls/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
         ]}
       />
-      <StudyTools textName="An Inspector Calls" textType="play" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations (&le;15 words each) reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from your school or local library.

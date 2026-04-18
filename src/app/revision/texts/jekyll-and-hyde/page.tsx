@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'Strange Case of Dr Jekyll and Mr Hyde — Study Guide | The English Hub',
@@ -257,8 +257,46 @@ export default async function JekyllAndHydePage() {
 
   return (
     <>
+      <TextStudyHub
+        textName="Dr Jekyll and Mr Hyde"
+        textType="novella"
+        examBoard="AQA"
+        basePath="/revision/texts/jekyll-and-hyde"
+        subPages={[
+          { id: 'read', href: '/revision/texts/jekyll-and-hyde/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
+          { id: 'chapters', href: '/revision/texts/jekyll-and-hyde/chapters', icon: 'acts' as const, title: 'Chapter-by-Chapter', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/jekyll-and-hyde/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/jekyll-and-hyde/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/jekyll-and-hyde/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'context', href: '/revision/texts/jekyll-and-hyde/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
+          { id: 'essays', href: '/revision/texts/jekyll-and-hyde/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Stevenson present the duality of human nature in Jekyll and Hyde?',
+          'How does Stevenson use the character of Hyde to explore the theme of evil?',
+          'How does Stevenson explore the theme of secrecy and reputation?',
+          'How does Stevenson use setting to create a sense of mystery and fear?',
+          'How does Stevenson present the dangers of science in Jekyll and Hyde?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
+          {
+            href: '/revision/texts/jekyll-and-hyde/read',
+            icon: 'read',
+            title: 'Read the Full Text',
+            description: 'Read Stevenson\'s original text with interactive annotations.',
+          },
           {
             href: '/revision/texts/jekyll-and-hyde/chapters',
             icon: 'acts',
@@ -266,10 +304,16 @@ export default async function JekyllAndHydePage() {
             description: 'Detailed breakdown of each chapter with key moments, quotes and analysis.',
           },
           {
-            href: '/revision/texts/jekyll-and-hyde/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+            href: '/revision/texts/jekyll-and-hyde/characters',
+            icon: 'characters',
+            title: 'Character Guide',
+            description: 'In-depth analysis of all major characters with key quotes and exam tips.',
+          },
+          {
+            href: '/revision/texts/jekyll-and-hyde/themes',
+            icon: 'themes',
+            title: 'Theme Analysis',
+            description: 'Five major themes with quotes, evidence and essay planning tips.',
           },
           {
             href: '/revision/texts/jekyll-and-hyde/key-quotes',
@@ -277,9 +321,20 @@ export default async function JekyllAndHydePage() {
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/jekyll-and-hyde/context',
+            icon: 'context',
+            title: 'Historical Context',
+            description: 'Victorian society, Darwin, duality and the Gothic tradition.',
+          },
+          {
+            href: '/revision/texts/jekyll-and-hyde/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
         ]}
       />
-      <StudyTools textName="Dr Jekyll and Mr Hyde" textType="novella" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis

@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'A Christmas Carol — Study Guide | The English Hub',
@@ -224,25 +224,51 @@ export default async function AChristmasCarolPage() {
 
   return (
     <>
+      <TextStudyHub
+        textName="A Christmas Carol"
+        textType="novella"
+        examBoard="AQA"
+        basePath="/revision/texts/a-christmas-carol"
+        subPages={[
+          { id: 'read', href: '/revision/texts/a-christmas-carol/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
+          { id: 'staves', href: '/revision/texts/a-christmas-carol/staves', icon: 'acts' as const, title: 'Stave-by-Stave Analysis', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/a-christmas-carol/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/a-christmas-carol/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/a-christmas-carol/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'context', href: '/revision/texts/a-christmas-carol/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
+          { id: 'essays', href: '/revision/texts/a-christmas-carol/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Dickens present Scrooge\'s transformation in A Christmas Carol?',
+          'How does Dickens use the ghosts to convey his message about social responsibility?',
+          'How does Dickens explore the theme of poverty in A Christmas Carol?',
+          'How does Dickens present the importance of family and togetherness?',
+          'How does Dickens use the character of Tiny Tim to influence the reader?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
+          {
+            href: '/revision/texts/a-christmas-carol/read',
+            icon: 'read',
+            title: 'Read the Full Text',
+            description: 'Read Dickens\'s original text with interactive annotations.',
+          },
           {
             href: '/revision/texts/a-christmas-carol/staves',
             icon: 'acts',
             title: 'Stave-by-Stave Analysis',
             description: 'Detailed breakdown of each stave with key moments, quotes and analysis.',
-          },
-          {
-            href: '/revision/texts/a-christmas-carol/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-          {
-            href: '/revision/texts/a-christmas-carol/key-quotes',
-            icon: 'quotes',
-            title: 'Key Quotes Bank',
-            description: 'Essential quotations organised by theme and character with analysis.',
           },
           {
             href: '/revision/texts/a-christmas-carol/characters',
@@ -257,14 +283,25 @@ export default async function AChristmasCarolPage() {
             description: 'Seven major themes explored with evidence from each stave and essay tips.',
           },
           {
+            href: '/revision/texts/a-christmas-carol/key-quotes',
+            icon: 'quotes',
+            title: 'Key Quotes Bank',
+            description: 'Essential quotations organised by theme and character with analysis.',
+          },
+          {
             href: '/revision/texts/a-christmas-carol/context',
             icon: 'context',
             title: 'Historical & Social Context',
             description: 'Victorian England, the Poor Law, Dickens\' life, and the novella\'s impact.',
           },
+          {
+            href: '/revision/texts/a-christmas-carol/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
         ]}
       />
-      <StudyTools textName="A Christmas Carol" textType="novella" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are reproduced freely as the text is no longer subject to copyright.

@@ -4,7 +4,7 @@ import { BookOpen, ArrowRight } from 'lucide-react'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata = {
   title: 'Macbeth Study Guide | The English Hub',
@@ -289,8 +289,46 @@ export default async function MacbethPage() {
         </Link>
       </section>
 
+      <TextStudyHub
+        textName="Macbeth"
+        textType="play"
+        examBoard="AQA"
+        basePath="/revision/texts/macbeth"
+        subPages={[
+          { id: 'read', href: '/revision/texts/macbeth/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
+          { id: 'acts', href: '/revision/texts/macbeth/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/macbeth/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/macbeth/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/macbeth/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'context', href: '/revision/texts/macbeth/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
+          { id: 'essays', href: '/revision/texts/macbeth/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Shakespeare present the theme of ambition in Macbeth?',
+          'How does Shakespeare present Lady Macbeth as a powerful character?',
+          'How does Shakespeare use the supernatural to create tension in Macbeth?',
+          'How does Shakespeare explore the theme of guilt in Macbeth?',
+          'How does Shakespeare present the relationship between Macbeth and Lady Macbeth?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
+          {
+            href: '/revision/texts/macbeth/read',
+            icon: 'read',
+            title: 'Read the Full Play',
+            description: 'Read Shakespeare\'s complete text with interactive annotations.',
+          },
           {
             href: '/revision/texts/macbeth/acts',
             icon: 'acts',
@@ -298,10 +336,16 @@ export default async function MacbethPage() {
             description: 'Detailed breakdown of each act with key moments, quotes and analysis.',
           },
           {
-            href: '/revision/texts/macbeth/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+            href: '/revision/texts/macbeth/characters',
+            icon: 'characters',
+            title: 'Character Guide',
+            description: 'In-depth analysis of all major characters with key quotes and exam tips.',
+          },
+          {
+            href: '/revision/texts/macbeth/themes',
+            icon: 'themes',
+            title: 'Theme Analysis',
+            description: 'Six major themes with quotes, evidence and essay planning tips.',
           },
           {
             href: '/revision/texts/macbeth/key-quotes',
@@ -309,9 +353,20 @@ export default async function MacbethPage() {
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/macbeth/context',
+            icon: 'context',
+            title: 'Historical Context',
+            description: 'Jacobean England, James I, the Gunpowder Plot and the Divine Right of Kings.',
+          },
+          {
+            href: '/revision/texts/macbeth/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
         ]}
       />
-      <StudyTools textName="Macbeth" textType="play" examBoard="AQA" />
       <TextGuide data={data} />
     </>
   )

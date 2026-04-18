@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'Romeo and Juliet — Study Guide | The English Hub',
@@ -249,13 +249,45 @@ export default async function RomeoAndJulietPage() {
 
   return (
     <>
+      <TextStudyHub
+        textName="Romeo and Juliet"
+        textType="play"
+        examBoard="AQA"
+        basePath="/revision/texts/romeo-and-juliet"
+        subPages={[
+          { id: 'read', href: '/revision/texts/romeo-and-juliet/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
+          { id: 'acts', href: '/revision/texts/romeo-and-juliet/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/romeo-and-juliet/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/romeo-and-juliet/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/romeo-and-juliet/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'context', href: '/revision/texts/romeo-and-juliet/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
+          { id: 'essays', href: '/revision/texts/romeo-and-juliet/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Shakespeare present the theme of love in Romeo and Juliet?',
+          'How does Shakespeare use the character of Tybalt to explore the theme of conflict?',
+          'How does Shakespeare present fate and destiny in Romeo and Juliet?',
+          'How does Shakespeare explore the theme of youth versus age?',
+          'How does Shakespeare use light and dark imagery in Romeo and Juliet?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
           {
             href: '/revision/texts/romeo-and-juliet/read',
             icon: 'read',
-            title: '\ud83d\udcd6 Read the Full Play',
-            description: 'Read the complete text of Romeo and Juliet with interactive annotations, character notes and theme highlights.',
+            title: 'Read the Full Play',
+            description: 'Read the complete text with interactive annotations, character notes and theme highlights.',
           },
           {
             href: '/revision/texts/romeo-and-juliet/acts',
@@ -264,10 +296,16 @@ export default async function RomeoAndJulietPage() {
             description: 'Detailed breakdown of each act with key moments, quotes and analysis.',
           },
           {
-            href: '/revision/texts/romeo-and-juliet/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+            href: '/revision/texts/romeo-and-juliet/characters',
+            icon: 'characters',
+            title: 'Character Guide',
+            description: 'In-depth analysis of all major characters with key quotes and exam tips.',
+          },
+          {
+            href: '/revision/texts/romeo-and-juliet/themes',
+            icon: 'themes',
+            title: 'Theme Analysis',
+            description: 'Major themes with quotes, evidence and essay planning tips.',
           },
           {
             href: '/revision/texts/romeo-and-juliet/key-quotes',
@@ -275,9 +313,20 @@ export default async function RomeoAndJulietPage() {
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/romeo-and-juliet/context',
+            icon: 'context',
+            title: 'Historical Context',
+            description: 'Elizabethan England, marriage, patriarchy and Italian sources.',
+          },
+          {
+            href: '/revision/texts/romeo-and-juliet/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
         ]}
       />
-      <StudyTools textName="Romeo and Juliet" textType="play" examBoard="AQA" />
       <TextGuide data={data} />
     </>
   )

@@ -3,7 +3,8 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
-import StudyTools from '@/components/study/StudyTools'
+import { DeepDiveSection } from '../_components/deep-dive-section'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'Of Mice and Men — Study Guide | The English Hub',
@@ -155,7 +156,64 @@ export default async function OfMiceAndMenPage() {
 
   return (
     <>
-      <StudyTools textName="Of Mice and Men" textType="novella" examBoard="AQA" />
+      <TextStudyHub
+        textName="Of Mice and Men"
+        textType="novella"
+        examBoard="Edexcel IGCSE"
+        basePath="/revision/texts/of-mice-and-men"
+        subPages={[
+          { id: 'characters', href: '/revision/texts/of-mice-and-men/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/of-mice-and-men/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/of-mice-and-men/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'context', href: '/revision/texts/of-mice-and-men/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Steinbeck present the theme of loneliness in Of Mice and Men?',
+          'How does Steinbeck use the character of Crooks to explore racial prejudice?',
+          'How does Steinbeck present the American Dream as an illusion?',
+          'How does Steinbeck present the relationship between George and Lennie?',
+          'How does Steinbeck use Curley\'s wife to explore the theme of gender?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
+      <DeepDiveSection
+        links={[
+          {
+            href: '/revision/texts/of-mice-and-men/characters',
+            icon: 'characters',
+            title: 'Character Studies',
+            description: 'In-depth profiles of every major character with quotes and exam tips.',
+          },
+          {
+            href: '/revision/texts/of-mice-and-men/themes',
+            icon: 'themes',
+            title: 'Theme Explorer',
+            description: 'Comprehensive analysis of every key theme with supporting evidence.',
+          },
+          {
+            href: '/revision/texts/of-mice-and-men/key-quotes',
+            icon: 'quotes',
+            title: 'Key Quotes Bank',
+            description: 'Essential quotations organised by theme and character with analysis.',
+          },
+          {
+            href: '/revision/texts/of-mice-and-men/context',
+            icon: 'context',
+            title: 'Historical Context',
+            description: 'The Great Depression, migrant workers and 1930s California.',
+          },
+        ]}
+      />
+
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for criticism and review. Full text available from your school or local library.

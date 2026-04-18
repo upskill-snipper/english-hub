@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'Blood Brothers — Study Guide | The English Hub',
@@ -143,13 +143,43 @@ export default async function BloodBrothersPage() {
 
   return (
     <>
+      <TextStudyHub
+        textName="Blood Brothers"
+        textType="play"
+        examBoard="Edexcel"
+        basePath="/revision/texts/blood-brothers"
+        subPages={[
+          { id: 'acts', href: '/revision/texts/blood-brothers/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/blood-brothers/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/blood-brothers/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/blood-brothers/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'essays', href: '/revision/texts/blood-brothers/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Russell present the theme of class and inequality in Blood Brothers?',
+          'How does Russell use the character of Mickey to explore the effects of poverty?',
+          'How does Russell present the role of fate and superstition in Blood Brothers?',
+          'How does Russell explore the theme of motherhood in the play?',
+          'How does Russell use the Narrator to create tension and convey his message?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
           {
-            href: '/revision/texts/blood-brothers/chapters',
+            href: '/revision/texts/blood-brothers/acts',
             icon: 'acts',
-            title: 'Scene-by-Scene Analysis',
-            description: 'Detailed breakdown of each scene with key moments, quotes and analysis.',
+            title: 'Act-by-Act Analysis',
+            description: 'Detailed breakdown of each act with key moments, quotes and analysis.',
           },
           {
             href: '/revision/texts/blood-brothers/characters',
@@ -164,20 +194,19 @@ export default async function BloodBrothersPage() {
             description: 'Comprehensive analysis of every key theme with supporting evidence.',
           },
           {
-            href: '/revision/texts/blood-brothers/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-          {
             href: '/revision/texts/blood-brothers/key-quotes',
             icon: 'quotes',
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/blood-brothers/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
         ]}
       />
-      <StudyTools textName="Blood Brothers" textType="play" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for criticism and review. Full text available from your school or local library.

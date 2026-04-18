@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'Pride and Prejudice — Study Guide | The English Hub',
@@ -149,6 +149,36 @@ export default async function PrideAndPrejudicePage() {
 
   return (
     <>
+      <TextStudyHub
+        textName="Pride and Prejudice"
+        textType="novel"
+        examBoard="AQA"
+        basePath="/revision/texts/pride-and-prejudice"
+        subPages={[
+          { id: 'chapters', href: '/revision/texts/pride-and-prejudice/chapters', icon: 'acts' as const, title: 'Chapter-by-Chapter', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/pride-and-prejudice/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/pride-and-prejudice/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/pride-and-prejudice/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'essays', href: '/revision/texts/pride-and-prejudice/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Austen present the theme of pride and prejudice in the novel?',
+          'How does Austen explore the role of marriage in Regency society?',
+          'How does Austen use the character of Elizabeth Bennet to challenge social expectations?',
+          'How does Austen present the theme of class and social status?',
+          'How does Austen explore the theme of reputation and appearances?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
           {
@@ -170,20 +200,19 @@ export default async function PrideAndPrejudicePage() {
             description: 'Comprehensive analysis of every key theme with supporting evidence.',
           },
           {
-            href: '/revision/texts/pride-and-prejudice/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-          {
             href: '/revision/texts/pride-and-prejudice/key-quotes',
             icon: 'quotes',
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
+          {
+            href: '/revision/texts/pride-and-prejudice/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
         ]}
       />
-      <StudyTools textName="Pride and Prejudice" textType="novel" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <em>Pride and Prejudice</em> (1813) by Jane Austen is in the public domain. Quotations are reproduced freely.

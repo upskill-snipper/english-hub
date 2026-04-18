@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
-import StudyTools from '@/components/study/StudyTools'
+import TextStudyHub from '@/components/study/TextStudyHub'
 
 export const metadata: Metadata = {
   title: 'Frankenstein — Study Guide | The English Hub',
@@ -144,8 +144,45 @@ export default async function FrankensteinPage() {
 
   return (
     <>
+      <TextStudyHub
+        textName="Frankenstein"
+        textType="novel"
+        examBoard="AQA"
+        basePath="/revision/texts/frankenstein"
+        subPages={[
+          { id: 'read', href: '/revision/texts/frankenstein/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
+          { id: 'chapters', href: '/revision/texts/frankenstein/chapters', icon: 'acts' as const, title: 'Chapter-by-Chapter', description: 'Key moments & quotes' },
+          { id: 'characters', href: '/revision/texts/frankenstein/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
+          { id: 'themes', href: '/revision/texts/frankenstein/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
+          { id: 'quotes', href: '/revision/texts/frankenstein/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
+          { id: 'essays', href: '/revision/texts/frankenstein/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+        ]}
+        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+          quote: q.quote.replace(/["\u201C\u201D]/g, ''),
+          character: q.who.split('\u2014')[0].trim(),
+          context: q.analysis.slice(0, 100) + '...',
+        }))}
+        essayQuestions={[
+          'How does Shelley present the theme of ambition and hubris in Frankenstein?',
+          'How does Shelley explore the Creature as both victim and villain?',
+          'How does Shelley present the theme of isolation in Frankenstein?',
+          'How does Shelley use the novel to explore the dangers of science without ethics?',
+          'How does Shelley present the relationship between creator and creation?',
+        ]}
+        flashcards={data.quotations.slice(0, 8).map(q => ({
+          front: q.quote,
+          back: q.analysis,
+        }))}
+      />
+
       <DeepDiveSection
         links={[
+          {
+            href: '/revision/texts/frankenstein/read',
+            icon: 'read',
+            title: 'Read the Full Novel',
+            description: 'Read Shelley\'s original text with interactive annotations and theme overlays.',
+          },
           {
             href: '/revision/texts/frankenstein/chapters',
             icon: 'acts',
@@ -165,26 +202,19 @@ export default async function FrankensteinPage() {
             description: 'Comprehensive analysis of every key theme with supporting evidence.',
           },
           {
-            href: '/revision/texts/frankenstein/essay-plans',
-            icon: 'essays',
-            title: 'Essay Plans',
-            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
-          },
-          {
             href: '/revision/texts/frankenstein/key-quotes',
             icon: 'quotes',
             title: 'Key Quotes Bank',
             description: 'Essential quotations organised by theme and character with analysis.',
           },
           {
-            href: '/revision/texts/frankenstein/read',
-            icon: 'read',
-            title: 'Read the Full Novel',
-            description: 'Read key chapters of Shelley\'s original text with interactive annotations, character and theme overlays, and reading progress tracking.',
+            href: '/revision/texts/frankenstein/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
           },
         ]}
       />
-      <StudyTools textName="Frankenstein" textType="novel" examBoard="AQA" />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <em>Frankenstein</em> (1818) by Mary Shelley is in the public domain. Quotations are reproduced freely.
