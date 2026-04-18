@@ -5,6 +5,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 export const metadata: Metadata = {
   title: 'Jane Eyre — Study Guide | The English Hub',
@@ -135,6 +136,40 @@ const data: TextGuideData = {
   ],
 }
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  { id: 'je-1', question: 'Where does Jane grow up as a child?', type: 'multiple-choice', options: ['Thornfield Hall', 'Lowood Institution', 'Gateshead Hall with her cruel aunt Mrs Reed', 'Moor House'], correctIndex: 2, explanation: 'Jane is an orphan raised by her cruel aunt Mrs Reed at Gateshead Hall. Bullied by her cousin John and locked in the terrifying Red Room, her early suffering shapes her fierce independence.', topic: 'Plot', difficulty: 'foundation' },
+  { id: 'je-2', question: 'What is Jane\'s position at Thornfield Hall?', type: 'multiple-choice', options: ['Housekeeper', 'Governess', 'Cook', 'Lady\'s maid'], correctIndex: 1, explanation: 'Jane is hired as governess to Adele Varens at Thornfield Hall. This position places her in an ambiguous social class — educated but dependent, genteel but a servant.', topic: 'Plot', difficulty: 'foundation' },
+  { id: 'je-3', question: 'Who is the master of Thornfield Hall?', type: 'multiple-choice', options: ['St John Rivers', 'Mr Brocklehurst', 'Mr Rochester', 'Mr Reed'], correctIndex: 2, explanation: 'Mr Rochester is the brooding, morally complex master of Thornfield Hall. He and Jane develop an intense intellectual and emotional bond despite vast differences in age, wealth, and social position.', topic: 'Characters', difficulty: 'foundation' },
+  { id: 'je-4', question: 'Why is the wedding between Jane and Rochester halted?', type: 'multiple-choice', options: ['Jane changes her mind', 'Rochester is already married to Bertha Mason, who is alive in the attic', 'Mrs Reed forbids it', 'St John objects'], correctIndex: 1, explanation: 'The ceremony is halted by the revelation that Rochester is already married. His wife Bertha Mason is alive and imprisoned in the third floor of Thornfield, driven mad.', topic: 'Plot', difficulty: 'foundation' },
+  { id: 'je-5', question: 'What is Jane\'s famous declaration of independence?', type: 'multiple-choice', options: ['"Reader, I married him"', '"I am no bird; and no net ensnares me"', '"I care for myself"', '"Women feel just as men feel"'], correctIndex: 1, explanation: '"I am no bird; and no net ensnares me: I am a free human being with an independent will." Jane asserts her freedom and equality at the moment Rochester first proposes, establishing her refusal to be defined by class, appearance, or gender.', topic: 'Characters', difficulty: 'foundation' },
+  { id: 'je-6', question: 'What happens to Thornfield Hall?', type: 'multiple-choice', options: ['It is sold', 'Bertha sets it on fire, dying in the blaze, and Rochester is blinded and maimed', 'It is inherited by Jane', 'Nothing'], correctIndex: 1, explanation: 'Bertha burns down Thornfield Hall and dies in the fire. Rochester, who tried to rescue her, is left blind and maimed. This humbles him and makes possible his marriage to Jane as equals.', topic: 'Plot', difficulty: 'foundation' },
+  { id: 'je-7', question: 'Who proposes a loveless marriage to Jane after she leaves Thornfield?', type: 'multiple-choice', options: ['Mr Brocklehurst', 'St John Rivers', 'Mr Rochester again', 'John Reed'], correctIndex: 1, explanation: 'St John Rivers, a clergyman and Jane\'s cousin, proposes a loveless marriage to take her to India as a missionary. He represents principle without passion — the opposite of Rochester\'s offer of passion without principle.', topic: 'Plot', difficulty: 'foundation' },
+  { id: 'je-8', question: 'What is the significance of "Reader, I married him"?', type: 'multiple-choice', options: ['It is a simple statement', 'Jane addresses the reader directly, asserting her agency: she married him, not the other way around', 'It shows she is passive', 'Rochester proposed again'], correctIndex: 1, explanation: 'The novel\'s iconic closing line has Jane addressing the reader directly and placing herself as the active agent: "I married him" — not "he married me." This asserts her agency and independence to the very last line.', topic: 'Writer\'s Methods', difficulty: 'higher' },
+  { id: 'je-9', question: 'How does the Red Room function symbolically?', type: 'multiple-choice', options: ['It is just a room', 'It represents Jane\'s entrapment, rage, and the patriarchal oppression she will spend her life resisting', 'It represents safety', 'It foreshadows Thornfield'], correctIndex: 1, explanation: 'The Red Room at Gateshead, where Jane is locked as punishment, represents her entrapment by a patriarchal system that denies her voice and freedom. It also introduces the Gothic supernatural (she imagines her uncle\'s ghost) that recurs throughout the novel.', topic: 'Writer\'s Methods', difficulty: 'higher' },
+  { id: 'je-10', question: 'What does Helen Burns teach Jane?', type: 'multiple-choice', options: ['Mathematics', 'The value of endurance, forgiveness, and spiritual faith', 'How to escape Lowood', 'How to be assertive'], correctIndex: 1, explanation: 'Helen Burns, patient and spiritual, teaches Jane the value of endurance and forgiveness. Her death from consumption embodies the injustice of Victorian treatment of the poor and tempers Jane\'s rage with a capacity for restraint.', topic: 'Characters', difficulty: 'higher' },
+  { id: 'je-11', question: 'Why does Jane refuse to stay as Rochester\'s mistress?', type: 'multiple-choice', options: ['She does not love him', 'She refuses to compromise her self-respect and moral principles, even for love', 'She fears Bertha', 'She wants more money'], correctIndex: 1, explanation: '"I care for myself. The more solitary, the more friendless, the more unsustained I am, the more I will respect myself." Jane refuses to sacrifice her principles for comfort or love, insisting that self-respect is more important than happiness.', topic: 'Themes', difficulty: 'higher' },
+  { id: 'je-12', question: 'How does Bronte present Bertha Mason?', type: 'multiple-choice', options: ['As a fully sympathetic character', 'As mad and violent, but modern readings see her as a victim of patriarchy and colonialism', 'As a minor character', 'As Rochester\'s true love'], correctIndex: 1, explanation: 'Bertha is depicted as mad and violent, but modern postcolonial readings (notably Jean Rhys\'s Wide Sargasso Sea) reinterpret her as a victim locked away by a husband who married her for money. She is the novel\'s most contested figure.', topic: 'Characters', difficulty: 'higher' },
+  { id: 'je-13', question: 'What was radical about Jane\'s declaration that "women feel just as men feel"?', type: 'multiple-choice', options: ['Nothing — it was common', 'It directly challenged Victorian gender ideology that expected women to be passive and submissive', 'It was about medicine', 'It was sarcastic'], correctIndex: 1, explanation: 'In 1847, this was a revolutionary statement. Victorian ideology expected women to be passive, submissive, and decorative. Jane\'s insistence that women "need exercise for their faculties, and a field for their efforts" challenged the entire gender order.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'je-14', question: 'How does Bronte contrast different models of religion in the novel?', type: 'multiple-choice', options: ['All religion is presented positively', 'She contrasts Brocklehurst\'s hypocrisy, Helen\'s patient submission, St John\'s cold duty, and Jane\'s personal faith', 'Religion is not important', 'Only one type of religion appears'], correctIndex: 1, explanation: 'Bronte presents four models: Brocklehurst\'s cruel, hypocritical Christianity; Helen Burns\'s patient, self-sacrificing faith; St John\'s cold, rigid duty; and Jane\'s personal faith that balances conscience with compassion. Jane\'s is the only one the novel endorses.', topic: 'Themes', difficulty: 'grade-9' },
+  { id: 'je-15', question: 'Why did Charlotte Bronte publish under the pseudonym "Currer Bell"?', type: 'multiple-choice', options: ['She preferred a pen name', 'Women writers faced severe prejudice and used androgynous names to ensure their work was judged on its merits', 'It was required by her publisher', 'She was hiding from her family'], correctIndex: 1, explanation: 'All three Bronte sisters used androgynous pen names (Currer, Ellis, Acton Bell) because women writers faced significant prejudice. When Jane Eyre\'s authorship was revealed, critics were scandalised by its passionate tone and its heroine\'s insistence on equality.', topic: 'Context', difficulty: 'higher' },
+]
+
+const REVISION_TOPICS = [
+  { topic: 'Independence and Self-Respect', summary: 'Jane\'s defining quality is her refusal to sacrifice dignity for comfort or love.', keyPoints: ['"I am no bird; and no net ensnares me"', 'She leaves Rochester rather than become his mistress', 'She refuses St John rather than enter a loveless marriage', '"I care for myself" — self-respect trumps everything', 'Bronte insists moral independence is more important than happiness'] },
+  { topic: 'Class and Social Position', summary: 'Jane occupies an ambiguous position between servants and gentry.', keyPoints: ['Educated but poor, genteel but dependent', '"Do you think, because I am poor, obscure, plain, and little, I am soulless?"', 'The governess role places Jane between two worlds', 'The novel insists moral worth determines value, not birth or wealth', 'Jane\'s inheritance levels the playing field with Rochester'] },
+  { topic: 'Gender and Equality', summary: 'Jane\'s insistence that women feel and need as men do was radical in 1847.', keyPoints: ['"Women feel just as men feel; they need exercise for their faculties"', 'Jane\'s anger and desire are presented as legitimate', '"Reader, I married him" — Jane as active agent', 'The Red Room represents patriarchal entrapment', 'St John\'s proposal would suppress Jane\'s identity in service to duty'] },
+  { topic: 'Religion and Morality', summary: 'Bronte contrasts four models of Christianity and endorses only Jane\'s personal faith.', keyPoints: ['Brocklehurst: cruel hypocrisy', 'Helen Burns: patient submission', 'St John Rivers: cold, rigid duty', 'Jane: conscience balanced with compassion', '"Laws and principles are not for the times when there is no temptation"'] },
+  { topic: 'The Gothic and Supernatural', summary: 'Bronte uses Gothic conventions to externalise Jane\'s inner emotional life.', keyPoints: ['The Red Room: confinement and childhood terror', 'Bertha in the attic: the madwoman as Gothic archetype', 'Strange laughter, mysterious fires', 'Rochester\'s voice calling across the moors', 'The Gothic challenges realism and expresses what polite society cannot'] },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Bronte present the theme of independence and self-respect in Jane Eyre?',
+  'How does Bronte explore the theme of class and social position?',
+  'How does Bronte present Jane as a feminist heroine?',
+  'How does Bronte use Gothic elements to enhance the narrative?',
+  'How does Bronte contrast different models of religion in the novel?',
+]
+
 export default async function JaneEyrePage() {
   const board = await getServerBoard()
   const allowedBoards = ['aqa', 'ocr', 'eduqas']
@@ -207,6 +242,12 @@ export default async function JaneEyrePage() {
             description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
           },
         ]}
+      />
+      <InlineStudyEngine
+        textName="Jane Eyre"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">

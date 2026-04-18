@@ -5,6 +5,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 export const metadata = {
   title: 'Macbeth Study Guide | The English Hub',
@@ -261,6 +262,286 @@ const data: TextGuideData = {
   ],
 }
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'mac-1',
+    question: 'Who says "Fair is foul, and foul is fair"?',
+    type: 'multiple-choice',
+    options: ['Macbeth', 'Lady Macbeth', 'The Witches', 'Banquo'],
+    correctIndex: 2,
+    explanation: 'The Witches speak this paradox in Act 1, Scene 1, establishing the theme of moral inversion that runs throughout the entire play.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'mac-2',
+    question: 'What title does Macbeth hold at the start of the play?',
+    type: 'multiple-choice',
+    options: ['Thane of Cawdor', 'Thane of Glamis', 'King of Scotland', 'Duke of Albany'],
+    correctIndex: 1,
+    explanation: 'Macbeth begins the play as Thane of Glamis. He is given the title Thane of Cawdor after the previous thane is executed for treason, fulfilling the first of the witches\' prophecies.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'mac-3',
+    question: 'Who kills Macbeth at the end of the play?',
+    type: 'multiple-choice',
+    options: ['Malcolm', 'Banquo', 'Macduff', 'Donalbain'],
+    correctIndex: 2,
+    explanation: 'Macduff kills Macbeth in the final battle. He reveals he was "from his mother\'s womb untimely ripp\'d" (born by caesarean section), meaning he is not technically "of woman born" and can defeat Macbeth.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'mac-4',
+    question: 'Lady Macbeth calls on evil spirits to "unsex me here." What does she mean?',
+    type: 'multiple-choice',
+    options: ['She wants to disguise herself as a man', 'She wants to strip away her femininity and compassion', 'She wants to become invisible', 'She wants to gain supernatural powers of prophecy'],
+    correctIndex: 1,
+    explanation: 'Lady Macbeth asks dark spirits to remove the compassion and nurturing associated with womanhood so she can participate in murder without guilt. This links to the theme of gender and masculinity.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'mac-5',
+    question: 'What does Macbeth see before he murders Duncan?',
+    type: 'multiple-choice',
+    options: ['Banquo\'s ghost', 'A floating dagger', 'The witches', 'A bloody crown'],
+    correctIndex: 1,
+    explanation: 'Macbeth hallucinates a floating dagger leading him towards Duncan\'s chamber: "Is this a dagger which I see before me, / The handle toward my hand?" This dramatises his psychological conflict.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'mac-6',
+    question: 'Which character serves as a moral foil to Macbeth by hearing the same prophecy but resisting temptation?',
+    type: 'multiple-choice',
+    options: ['Malcolm', 'Macduff', 'Banquo', 'Ross'],
+    correctIndex: 2,
+    explanation: 'Banquo hears the same witches\' prophecy but responds with caution, warning that "the instruments of darkness tell us truths, / Win us with honest trifles, to betray\'s / In deepest consequence." He resists where Macbeth succumbs.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'mac-7',
+    question: 'What does Lady Macbeth obsessively do during her sleepwalking scene?',
+    type: 'multiple-choice',
+    options: ['Search for the murder weapon', 'Wash her hands', 'Write confession letters', 'Call out for Macbeth'],
+    correctIndex: 1,
+    explanation: 'Lady Macbeth compulsively washes imaginary blood from her hands, crying "Out, damned spot!" This reverses her earlier dismissal that "a little water clears us of this deed" and shows guilt cannot be suppressed indefinitely.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'mac-8',
+    question: 'When was Macbeth written, and who was the reigning monarch?',
+    type: 'multiple-choice',
+    options: ['1590, Elizabeth I', '1606, James I', '1616, James I', '1599, Elizabeth I'],
+    correctIndex: 1,
+    explanation: 'Macbeth was written around 1606 during the reign of James I (James VI of Scotland). Shakespeare crafted the play to flatter his new patron, who traced his ancestry to Banquo and had a documented fascination with witchcraft.',
+    topic: 'Context',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'mac-9',
+    question: 'What prophecy do the witches give that makes Macbeth feel invincible?',
+    type: 'multiple-choice',
+    options: ['He will live forever', 'No man born of woman can harm him', 'He will always win in battle', 'No weapon can pierce his armour'],
+    correctIndex: 1,
+    explanation: 'The witches tell Macbeth that "none of woman born / Shall harm Macbeth." This is a deliberate equivocation: Macduff was born by caesarean section and therefore not technically "of woman born."',
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'mac-10',
+    question: 'What technique do the witches use when they speak in a different rhythm from other characters?',
+    type: 'multiple-choice',
+    options: ['Iambic pentameter', 'Free verse', 'Trochaic tetrameter', 'Heroic couplets'],
+    correctIndex: 2,
+    explanation: 'The witches speak in trochaic tetrameter (stressed-unstressed pattern), which contrasts with the court\'s standard iambic pentameter. This marks them as creatures outside the natural order.',
+    topic: 'Writer\'s Methods',
+    difficulty: 'higher',
+  },
+  {
+    id: 'mac-11',
+    question: 'Why does Malcolm test Macduff\'s loyalty in Act 4, Scene 3?',
+    type: 'multiple-choice',
+    options: ['He suspects Macduff is a spy for Macbeth', 'He wants to prove Macduff genuinely cares about Scotland, not personal gain', 'He wants Macduff to prove his fighting ability', 'He is trying to delay going to war'],
+    correctIndex: 1,
+    explanation: 'Malcolm pretends to be riddled with vices to test whether Macduff is motivated by genuine concern for Scotland. This shows Malcolm\'s political wisdom, a quality his father Duncan lacked, and establishes him as a shrewder ruler.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'mac-12',
+    question: 'What is the significance of Duncan\'s line "There\'s no art / To find the mind\'s construction in the face"?',
+    type: 'multiple-choice',
+    options: ['It shows Duncan is a poor judge of art', 'It is dramatically ironic because he immediately trusts the new Thane of Cawdor, Macbeth', 'It proves Duncan knows Macbeth is plotting against him', 'It suggests Duncan cannot see properly'],
+    correctIndex: 1,
+    explanation: 'Duncan observes that you cannot read someone\'s thoughts from their face, having just been betrayed by the previous Thane of Cawdor. The dramatic irony is devastating: he says this while placing his trust in the new Thane of Cawdor, Macbeth, who is already contemplating murder.',
+    topic: 'Writer\'s Methods',
+    difficulty: 'higher',
+  },
+  {
+    id: 'mac-13',
+    question: 'How does Macduff challenge Lady Macbeth\'s definition of masculinity?',
+    type: 'multiple-choice',
+    options: ['By refusing to fight', 'By insisting he "must also feel it as a man" when grieving', 'By crying in front of the army', 'By forgiving Macbeth'],
+    correctIndex: 1,
+    explanation: 'When Malcolm tells Macduff to "Dispute it like a man," Macduff responds: "I shall do so; / But I must also feel it as a man." This directly challenges Lady Macbeth\'s reductive definition that equates manhood with violent action, offering an alternative model that includes emotional depth.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'mac-14',
+    question: 'What does the metaphor "I am in blood / Stepp\'d in so far" suggest about Macbeth\'s moral state?',
+    type: 'multiple-choice',
+    options: ['He has been wounded in battle', 'He has crossed a moral threshold where repentance feels as difficult as continuing', 'He is standing in a river', 'He is suffering from a guilty conscience for the first time'],
+    correctIndex: 1,
+    explanation: 'This extended metaphor imagines guilt as a river of blood crossed halfway. The word "tedious" is chillingly understated: returning to virtue has become merely inconvenient. It suggests that once a certain threshold of evil is crossed, the moral cost of repentance feels equal to continuing.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'mac-15',
+    question: 'How does the Gunpowder Plot of 1605 connect to the themes of Macbeth?',
+    type: 'multiple-choice',
+    options: ['It inspired the battle scenes', 'Its themes of treason, regicide, and equivocation had intense topical resonance', 'It caused Shakespeare to stop writing tragedies', 'It led to the play being banned'],
+    correctIndex: 1,
+    explanation: 'The Gunpowder Plot, in which Catholic conspirators attempted to assassinate James I, occurred just months before Macbeth was written. The play\'s themes of treason, regicide, and equivocation (the Porter scene directly references it) would have carried powerful topical resonance for Jacobean audiences.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'mac-16',
+    question: 'What literary term describes Lady Macbeth\'s instruction to "look like the innocent flower, / But be the serpent under\'t"?',
+    type: 'multiple-choice',
+    options: ['Pathetic fallacy', 'Dramatic irony', 'Biblical allusion combined with the theme of appearance vs reality', 'Soliloquy'],
+    correctIndex: 2,
+    explanation: 'This combines a biblical allusion to the serpent in the Garden of Eden with the theme of appearance versus reality. It aligns the Macbeths\' planned regicide with original sin, casting Duncan as an innocent Adam and the Macbeths as agents of the devil.',
+    topic: 'Writer\'s Methods',
+    difficulty: 'higher',
+  },
+  {
+    id: 'mac-17',
+    question: 'Why does Shakespeare transform Banquo from a co-conspirator (in the source material) to an innocent victim?',
+    type: 'multiple-choice',
+    options: ['To make the play shorter', 'Because James I traced his ancestry to Banquo and Shakespeare wanted to flatter his patron', 'Because the historical Banquo was innocent', 'To add more characters to the play'],
+    correctIndex: 1,
+    explanation: 'In Holinshed\'s Chronicles (Shakespeare\'s source), Banquo helped Macbeth murder Duncan. Shakespeare made Banquo noble and innocent because James I traced his royal lineage through Banquo\'s son Fleance. Making Banquo a co-conspirator would have insulted the king.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'mac-18',
+    question: 'How does Macbeth\'s soliloquy "Tomorrow, and tomorrow, and tomorrow" function as a commentary on his entire tragic arc?',
+    type: 'multiple-choice',
+    options: ['It shows he is looking forward to the future', 'It reveals a man stripped of all meaning by his own actions, seeing life as empty performance', 'It demonstrates his renewed ambition', 'It is a prayer for forgiveness'],
+    correctIndex: 1,
+    explanation: 'This nihilistic soliloquy reduces human existence to "a tale / Told by an idiot, full of sound and fury, / Signifying nothing." It represents the ultimate consequence of Macbeth\'s ambition: not punishment from outside but the realisation that he has emptied his own life of all purpose, love, and meaning.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'mac-19',
+    question: 'How does Shakespeare use the motif of sleep to reinforce the theme of guilt?',
+    type: 'multiple-choice',
+    options: ['Sleep represents power and control', 'Sleep represents innocence and peace of mind, which Macbeth destroys by murdering the sleeping Duncan', 'Sleep is used only as a plot device', 'Sleep symbolises laziness and complacency'],
+    correctIndex: 1,
+    explanation: 'The voice that cries "Sleep no more! Macbeth does murder sleep" creates a symbolic link between guilt and insomnia. By murdering the sleeping Duncan, Macbeth has destroyed his own capacity for rest and innocence. Lady Macbeth\'s sleepwalking scene later inverts this: she cannot sleep peacefully because her guilt erupts unconsciously.',
+    topic: 'Writer\'s Methods',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'mac-20',
+    question: 'What is the significance of the witches calling Macbeth "something wicked" rather than "someone wicked"?',
+    type: 'multiple-choice',
+    options: ['It is a grammatical error', 'It strips Macbeth of his humanity, suggesting he has been so corrupted that even the witches recognise him as a thing, not a person', 'It shows the witches admire him', 'It indicates they cannot see him clearly'],
+    correctIndex: 1,
+    explanation: 'The Second Witch says "By the pricking of my thumbs, / Something wicked this way comes." The use of "something" rather than "someone" strips Macbeth of his humanity. By Act 4, he has become so corrupted by violence that even the agents of evil themselves recognise him as wicked, dehumanising him in the process.',
+    topic: 'Writer\'s Methods',
+    difficulty: 'grade-9',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Ambition',
+    summary: 'Ambition is the engine of the entire tragedy, but Shakespeare does not present it as inherently evil.',
+    keyPoints: [
+      'Macbeth\'s "vaulting ambition, which o\'erleaps itself"',
+      'Lady Macbeth channels ambition through her husband by questioning his manhood',
+      'Banquo hears the same prophecy but does not act on it, proving ambition requires a willing agent',
+      'Each murder becomes easier, suggesting ambition overrides conscience once unleashed',
+      'The Gunpowder Plot gave the theme of unchecked ambition intense topical resonance',
+    ],
+  },
+  {
+    topic: 'Guilt and Conscience',
+    summary: 'Guilt pervades the play from the moment of Duncan\'s murder, manifesting in hallucinations, insomnia, and madness.',
+    keyPoints: [
+      'Macbeth\'s floating dagger and inability to say "Amen"',
+      '"Sleep no more! Macbeth does murder sleep" links guilt to insomnia',
+      'Lady Macbeth\'s initial dismissal ("A little water") is reversed in her sleepwalking scene',
+      'Banquo\'s ghost is a physical manifestation of guilt',
+      'Shakespeare uses guilt as evidence of a moral order that persists regardless of denial',
+    ],
+  },
+  {
+    topic: 'The Supernatural',
+    summary: 'Supernatural elements drive the plot and raise questions about fate versus free will.',
+    keyPoints: [
+      'The witches\' prophecies are technically true but deliberately misleading (equivocation)',
+      'The play never resolves whether the supernatural controls events or reflects inner desires',
+      'James I\'s Daemonologie (1597) gave witchcraft real cultural weight for Jacobean audiences',
+      'Lady Macbeth\'s invocation of evil spirits parallels demonic possession',
+      'The dagger, the ghost, and the apparitions blur the line between reality and hallucination',
+    ],
+  },
+  {
+    topic: 'Kingship and Power',
+    summary: 'The play contrasts three models of kingship: Duncan\'s virtue, Macbeth\'s tyranny, and Malcolm\'s wisdom.',
+    keyPoints: [
+      'Duncan is gracious but fatally trusting',
+      'Macbeth rules through fear, losing "honour, love, obedience, troops of friends"',
+      'Malcolm\'s "king-becoming graces" provide a checklist against which Macbeth fails',
+      'The Divine Right of Kings means regicide violates cosmic order',
+      'Nature itself rebels against Macbeth\'s illegitimate rule',
+    ],
+  },
+  {
+    topic: 'Gender and Masculinity',
+    summary: 'Shakespeare interrogates what it means to be a man, contrasting toxic and compassionate models of masculinity.',
+    keyPoints: [
+      'Lady Macbeth equates manhood with violence: "When you durst do it, then you were a man"',
+      'She asks to be "unsexed," rejecting femininity as incompatible with ruthlessness',
+      'Macduff offers an alternative: "I must also feel it as a man"',
+      'Macbeth manipulates the murderers using the same gendered taunts his wife used on him',
+      'Lady Macbeth\'s breakdown shows the cost of rejecting compassion and nurturing',
+    ],
+  },
+  {
+    topic: 'Appearance vs Reality',
+    summary: 'Nothing in Macbeth is what it seems, from the witches\' equivocations to the characters\' deceptions.',
+    keyPoints: [
+      '"Fair is foul, and foul is fair" establishes moral instability',
+      '"Look like the innocent flower, / But be the serpent under\'t"',
+      'The Gunpowder Plot trials exposed the Jesuit doctrine of equivocation',
+      'The witches\' prophecies are literally true but deliberately misleading',
+      'Self-deception: both Macbeths believe they can commit murder without lasting consequence',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Shakespeare present the theme of ambition in Macbeth?',
+  'Starting with this extract, how does Shakespeare present Lady Macbeth as a powerful character?',
+  'How does Shakespeare use the supernatural to create tension and convey meaning in Macbeth?',
+  'How does Shakespeare explore the theme of guilt and its consequences in Macbeth?',
+  'How does Shakespeare present ideas about masculinity and gender in Macbeth?',
+]
+
 export default async function MacbethPage() {
   const board = await getServerBoard()
   if (board && !['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'].includes(board)) {
@@ -366,6 +647,12 @@ export default async function MacbethPage() {
             description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
           },
         ]}
+      />
+      <InlineStudyEngine
+        textName="Macbeth"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
     </>

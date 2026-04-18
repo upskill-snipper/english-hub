@@ -5,6 +5,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { DeepDiveSection } from '../_components/deep-dive-section'
 import TextStudyHub from '@/components/study/TextStudyHub'
+import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 export const metadata: Metadata = {
   title: 'A Christmas Carol — Study Guide | The English Hub',
@@ -215,6 +216,275 @@ const data: TextGuideData = {
   ],
 }
 
+const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 'acc-1',
+    question: 'How many staves (chapters) does A Christmas Carol have?',
+    type: 'multiple-choice',
+    options: ['Three', 'Four', 'Five', 'Six'],
+    correctIndex: 2,
+    explanation: 'The novella has five staves — Dickens chose the musical term "stave" instead of "chapter" because the word links to Christmas carols and songs, reinforcing the novella\'s joyful moral message.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'acc-2',
+    question: 'What is the first line of the novella?',
+    type: 'multiple-choice',
+    options: ['"Bah! Humbug!"', '"Marley was dead: to begin with."', '"God bless Us, Every One!"', '"A merry Christmas, Uncle!"'],
+    correctIndex: 1,
+    explanation: '"Marley was dead: to begin with." Dickens establishes the death of Scrooge\'s business partner immediately. This is essential because Marley\'s ghost must return as a warning, and the reader needs to know he is truly dead for the supernatural events to have impact.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'acc-3',
+    question: 'How does Dickens describe Scrooge at the start of the novella?',
+    type: 'multiple-choice',
+    options: ['"A kind and generous old man"', '"A squeezing, wrenching, grasping, scraping, clutching, covetous old sinner"', '"A quiet, modest gentleman"', '"A lonely but respectable businessman"'],
+    correctIndex: 1,
+    explanation: 'Dickens heaps adjectives upon Scrooge to make his coldness overwhelming. The accumulation of negative descriptors creates a portrait of total moral deficiency that makes his eventual transformation all the more dramatic.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'acc-4',
+    question: 'Who is the Ghost of Christmas Present?',
+    type: 'multiple-choice',
+    options: ['A silent, hooded phantom', 'A flickering, ethereal figure', 'A jolly giant robed in green seated on a throne of food', 'A small, cheerful child'],
+    correctIndex: 2,
+    explanation: 'The Ghost of Christmas Present is a generous giant surrounded by abundance, embodying the warmth of the season. But he also reveals suffering: he shows Scrooge the hidden children Ignorance and Want beneath his robes.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'acc-5',
+    question: 'Who says "God bless Us, Every One!"?',
+    type: 'multiple-choice',
+    options: ['Scrooge', 'Bob Cratchit', 'Tiny Tim', 'Fred'],
+    correctIndex: 2,
+    explanation: 'Tiny Tim speaks this famous line, which serves as the novella\'s moral conclusion. His words embody Christian charity, generosity, and inclusivity — the values Dickens wants the reader to embrace.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'acc-6',
+    question: 'What did Jacob Marley\'s ghost wear that symbolised his punishment?',
+    type: 'multiple-choice',
+    options: ['A crown of thorns', 'Heavy chains forged from his own greed', 'A blindfold', 'Torn and ragged clothing'],
+    correctIndex: 1,
+    explanation: 'Marley wears the chain "I forged in life," made "link by link, and yard by yard." Each link represents a selfish act. Marley warns that Scrooge\'s own chain was already as heavy seven years ago and has grown since.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'acc-7',
+    question: 'When was A Christmas Carol published?',
+    type: 'multiple-choice',
+    options: ['1837', '1843', '1851', '1860'],
+    correctIndex: 1,
+    explanation: 'The novella was published in 1843, during the Victorian era. Dickens wrote it partly as a response to the harsh conditions created by the 1834 Poor Law Amendment Act, which forced the destitute into workhouses.',
+    topic: 'Context',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'acc-8',
+    question: 'What does Scrooge suggest the poor should go to when asked for charity?',
+    type: 'multiple-choice',
+    options: ['Churches', 'Hospitals', 'Prisons and workhouses', 'Schools'],
+    correctIndex: 2,
+    explanation: 'Scrooge dismisses the charity collectors by saying the poor should go to prisons and workhouses. This echoes the cruel provisions of the 1834 Poor Law, which Dickens despised. Scrooge\'s callousness is meant to shock the reader.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'acc-9',
+    question: 'Why does Belle break off her engagement to Scrooge?',
+    type: 'multiple-choice',
+    options: ['She falls in love with someone else', 'Scrooge insults her family', 'His love of money has replaced his love for her', 'Her father forbids the marriage'],
+    correctIndex: 2,
+    explanation: 'Belle tells young Scrooge that "another idol has displaced me... a golden one." She releases him from their engagement because his obsession with wealth has replaced his capacity for love. This moment marks when Scrooge chose money over human connection.',
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'acc-10',
+    question: 'What two children does the Ghost of Christmas Present reveal under his robes?',
+    type: 'multiple-choice',
+    options: ['Joy and Sorrow', 'Ignorance and Want', 'Hunger and Cold', 'Sin and Virtue'],
+    correctIndex: 1,
+    explanation: 'The wretched children Ignorance and Want are hidden beneath the ghost\'s robes. The ghost warns Scrooge to "beware them both, but most of all beware this boy" (Ignorance), "for on his brow I see that written which is Doom." Dickens argues that society\'s refusal to educate the poor will destroy everyone.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'acc-11',
+    question: 'How does the structure of the three ghosts work as a moral education for Scrooge?',
+    type: 'multiple-choice',
+    options: ['Past, Present, Future — matching three random moments', 'Regret, empathy, then fear — designed to break through Scrooge\'s defences', 'Joy, sadness, then joy again', 'Warning, punishment, then reward'],
+    correctIndex: 1,
+    explanation: 'The ghosts form a structured moral education: Christmas Past produces regret, Christmas Present produces empathy for others\' suffering, and Christmas Yet to Come produces fear of the consequences of an unchanged life. Each stage breaks down another layer of Scrooge\'s defences.',
+    topic: 'Writer\'s Methods',
+    difficulty: 'higher',
+  },
+  {
+    id: 'acc-12',
+    question: 'What is the significance of Dickens calling the chapters "staves" rather than chapters?',
+    type: 'multiple-choice',
+    options: ['It was a printing error', 'A stave is a section of a song, linking the novella to music and Christmas carols', 'It was a common Victorian convention', 'It sounds more formal'],
+    correctIndex: 1,
+    explanation: 'A stave is a verse or section of a song. By using this musical term, Dickens connects his novella to the tradition of Christmas carols, reinforcing its message of joy, generosity, and communal celebration.',
+    topic: 'Writer\'s Methods',
+    difficulty: 'higher',
+  },
+  {
+    id: 'acc-13',
+    question: 'What does Marley\'s cry that "Mankind was my business!" mean?',
+    type: 'multiple-choice',
+    options: ['He regrets not expanding his company', 'He realises his true duty was caring for other people, not accumulating wealth', 'He wants to return to his job', 'He blames mankind for his death'],
+    correctIndex: 1,
+    explanation: 'Marley\'s cry expresses the novella\'s central moral: the true business of life is caring for other people, not making money. He ignored this duty while alive and is now condemned to wander in chains. This is the lesson Scrooge must learn.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'acc-14',
+    question: 'How does Dickens use Tiny Tim strategically in the narrative?',
+    type: 'multiple-choice',
+    options: ['As a source of comedy', 'As the emotional lever that cracks Scrooge\'s selfishness and represents the thousands of poor Victorian children who died', 'As a minor background character', 'To show the Cratchits are irresponsible parents'],
+    correctIndex: 1,
+    explanation: 'Tiny Tim\'s potential death is the emotional lever that cracks Scrooge\'s selfishness. He represents the thousands of poor Victorian children who died because society would not care for them. The ghost\'s warning that "the child will die" directly links Scrooge\'s miserliness to real human consequences.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'acc-15',
+    question: 'Why is it significant that Scrooge\'s transformation happens on Christmas morning?',
+    type: 'multiple-choice',
+    options: ['It is a coincidence', 'Christmas represents rebirth and redemption, mirroring Christian ideas of salvation', 'It was the only day Scrooge was not working', 'The ghosts could only appear at Christmas'],
+    correctIndex: 1,
+    explanation: 'Christmas morning symbolises rebirth and new beginnings, mirroring Christian ideas of redemption and salvation. Scrooge waking transformed on Christmas Day suggests that change is always possible and that generosity should be practised year-round.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'acc-16',
+    question: 'What does the 1834 Poor Law Amendment Act have to do with the novella?',
+    type: 'multiple-choice',
+    options: ['It inspired the ghost scenes', 'It created harsh workhouses for the poor, which Dickens attacks through Scrooge\'s callous attitudes', 'It banned Christmas celebrations', 'It improved conditions for workers'],
+    correctIndex: 1,
+    explanation: 'The 1834 Poor Law forced the destitute into brutal workhouses designed to be as unpleasant as possible. Scrooge\'s suggestion that the poor should go to "prisons and workhouses" echoes this cruel policy, which Dickens campaigned against throughout his career.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'acc-17',
+    question: 'How does Dickens use the contrast between light and darkness throughout the novella?',
+    type: 'multiple-choice',
+    options: ['To describe the weather', 'Light represents warmth, generosity and redemption; darkness represents isolation and moral blindness', 'To show the time of day', 'There is no consistent pattern'],
+    correctIndex: 1,
+    explanation: 'Dickens consistently associates light with warmth and generosity (the Cratchits\' firelight, Christmas candles) and darkness with Scrooge\'s cold isolation. Scrooge\'s transformation is marked by a movement from darkness into light, reflecting his moral awakening.',
+    topic: 'Writer\'s Methods',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'acc-18',
+    question: 'Why does Dickens make Scrooge\'s redemption so exaggerated and joyful in Stave Five?',
+    type: 'multiple-choice',
+    options: ['To provide a happy ending for children', 'To argue that no one is beyond redemption and to model the generosity he wants Victorian society to embrace', 'Because it was fashionable at the time', 'To make the novella longer'],
+    correctIndex: 1,
+    explanation: 'The exaggerated joy of Scrooge\'s transformation is Dickens\'s argument that change is possible for anyone. By making Scrooge\'s generosity so complete and infectious, Dickens models the behaviour he wants his readers — particularly wealthy Victorian readers — to adopt.',
+    topic: 'Writer\'s Methods',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'acc-19',
+    question: 'How does the Ghost of Christmas Yet to Come differ from the other ghosts, and why?',
+    type: 'multiple-choice',
+    options: ['It is friendlier', 'It is a silent, hooded phantom representing death, designed to produce fear as the final stage of Scrooge\'s moral education', 'It speaks the most', 'It shows Scrooge happy memories'],
+    correctIndex: 1,
+    explanation: 'The final ghost is a dark, silent phantom — the most frightening of the three. Its silence forces Scrooge to interpret what he sees without guidance. It represents death and the consequences of an unchanged life, completing the sequence of regret (Past), empathy (Present), and fear (Future).',
+    topic: 'Characters',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'acc-20',
+    question: 'What is the significance of Scrooge\'s employer Mr Fezziwig in the narrative?',
+    type: 'multiple-choice',
+    options: ['He is a minor character with no importance', 'He represents the generous employer Scrooge could have been, proving that wealth and kindness are compatible', 'He is Scrooge\'s enemy', 'He taught Scrooge to value money'],
+    correctIndex: 1,
+    explanation: 'Mr Fezziwig represents the kind, generous employer who uses his wealth to create happiness. His warmth contrasts sharply with Scrooge\'s miserliness and proves that being a good employer is a choice. Scrooge\'s recognition of this during the Past vision is a key step in his transformation.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+]
+
+const REVISION_TOPICS = [
+  {
+    topic: 'Redemption and Transformation',
+    summary: 'Scrooge\'s transformation from miser to generous benefactor is the entire arc of the novella.',
+    keyPoints: [
+      'Dickens argues that no one is beyond redemption',
+      'The three ghosts provide a structured moral education: regret, empathy, fear',
+      'Scrooge\'s change is instant and complete in Stave Five',
+      '"I will honour Christmas in my heart, and try to keep it all the year"',
+      'Christmas morning symbolises rebirth and new beginnings',
+    ],
+  },
+  {
+    topic: 'Social Responsibility and Poverty',
+    summary: 'Dickens attacks Victorian society\'s treatment of the poor and argues for collective responsibility.',
+    keyPoints: [
+      'Scrooge\'s "prisons and workhouses" echoes the cruel 1834 Poor Law',
+      'Marley\'s cry: "Mankind was my business!"',
+      'Ignorance and Want beneath the ghost\'s robes represent society\'s hidden suffering',
+      'Tiny Tim represents thousands of poor children dying from neglect',
+      'Dickens wrote the novella partly as social campaigning',
+    ],
+  },
+  {
+    topic: 'Family and Togetherness',
+    summary: 'Dickens contrasts Scrooge\'s isolation with the warmth of families like the Cratchits.',
+    keyPoints: [
+      'The Cratchits are poor but rich in love and togetherness',
+      'Fred represents warmth and forgiveness despite Scrooge\'s rejection',
+      'Belle\'s happy family shows what Scrooge sacrificed for money',
+      'Scrooge\'s cold solitude is presented as self-inflicted',
+      'The novella ends with Scrooge joining Fred\'s dinner party, re-entering the family',
+    ],
+  },
+  {
+    topic: 'Greed and Generosity',
+    summary: 'The novella presents greed as a destructive force and generosity as the path to happiness.',
+    keyPoints: [
+      'Scrooge hoards wealth while Bob Cratchit earns fifteen shillings a week',
+      'Marley\'s chains are forged from acts of selfishness',
+      'Mr Fezziwig proves that wealth and kindness are compatible',
+      'The thieves pawning the dead man\'s belongings show greed\'s ultimate destination',
+      'Scrooge\'s final generosity — the turkey, the raise, the charity donation — models Dickens\'s ideal',
+    ],
+  },
+  {
+    topic: 'The Supernatural',
+    summary: 'Dickens uses ghosts as a dramatic device to force Scrooge to confront truths he has been avoiding.',
+    keyPoints: [
+      'Marley\'s ghost serves as a terrifying warning',
+      'Each ghost has a distinct appearance matching its function',
+      'The supernatural framework draws on the Gothic tradition',
+      'The ghosts allow Dickens to compress an entire moral education into one night',
+      'The Ghost of Christmas Yet to Come is the most frightening because it is silent',
+    ],
+  },
+]
+
+const ESSAY_PROMPTS = [
+  'How does Dickens present Scrooge\'s transformation in A Christmas Carol?',
+  'How does Dickens use the ghosts to convey his message about social responsibility?',
+  'How does Dickens explore the theme of poverty and its effects in A Christmas Carol?',
+  'How does Dickens present the importance of family and togetherness?',
+  'How does Dickens use the character of Tiny Tim to influence the reader?',
+]
+
 export default async function AChristmasCarolPage() {
   const board = await getServerBoard()
   const allowedBoards = ['aqa', 'edexcel', 'eduqas']
@@ -301,6 +571,12 @@ export default async function AChristmasCarolPage() {
             description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
           },
         ]}
+      />
+      <InlineStudyEngine
+        textName="A Christmas Carol"
+        questions={QUIZ_QUESTIONS}
+        essayPrompts={ESSAY_PROMPTS}
+        revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
