@@ -1,9 +1,5 @@
 import dynamic from 'next/dynamic'
-import { redirect } from 'next/navigation'
-import { getServerBoard } from '@/lib/board/get-server-board'
-import { getBoardType, getIgcseHubUrl } from '@/lib/board/board-filter'
 import SectionSkeleton from '@/components/home/SectionSkeleton'
-import BoardDashboardHero from '@/components/home/BoardDashboardHero'
 
 /* ───────────────────── Cinematic marketing sections (client, dynamic) ───────────────────── */
 
@@ -26,32 +22,10 @@ const FinalCTA = dynamic(() => import('@/components/home/FinalCTA'), {
 /* ───────────────────── Main Page ───────────────────── */
 
 export default async function Home() {
-  const board = await getServerBoard()
-
-  /* Board is set → route to the right place */
-  if (board) {
-    const boardType = getBoardType(board)
-
-    // IGCSE → go straight to the board-specific IGCSE hub
-    if (boardType === 'igcse') {
-      const hubUrl = getIgcseHubUrl(board)
-      if (hubUrl) redirect(hubUrl)
-    }
-
-    // KS3 → courses page
-    if (boardType === 'ks3') {
-      redirect('/courses')
-    }
-
-    // GCSE / IAL / fallback → existing personalised dashboard
-    return (
-      <main className="min-h-screen bg-background">
-        <BoardDashboardHero board={board} />
-      </main>
-    )
-  }
-
-  /* No board → Cinematic marketing homepage */
+  /* Always show the cinematic marketing homepage.
+     If the user has a board set, they can navigate to their
+     dashboard via "My Papers" in the header. The homepage is
+     always accessible by clicking the brand logo. */
   return (
     <main className="min-h-screen bg-background">
       {/* 1. Cinematic Hero — auto-advancing 4-chapter stage */}
