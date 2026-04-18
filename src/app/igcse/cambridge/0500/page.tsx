@@ -6,12 +6,18 @@ import {
   FileText,
   PenTool,
   ChevronLeft,
+  ChevronRight,
   Sparkles,
   Clock,
   Scroll,
   Target,
   GraduationCap,
   ListChecks,
+  Brain,
+  Gamepad2,
+  Layers,
+  Wrench,
+  BarChart3,
 } from 'lucide-react'
 import {
   Card,
@@ -43,9 +49,24 @@ const papers = [
     icon: BookOpen,
     href: '/igcse/cambridge/0500/paper-1',
     sections: [
-      'Question 1 — short comprehension responses',
-      'Question 2 — language analysis of the writer\'s choices',
-      'Question 3 — summary writing based on two passages',
+      {
+        label: 'Question 1 — short comprehension responses',
+        href: '/igcse/cambridge/0500/paper-1',
+      },
+      {
+        label: "Question 2 — language analysis of the writer's choices",
+        href: '/igcse/cambridge/0500/paper-1/language-analysis',
+      },
+      {
+        label: 'Question 3 — summary writing based on two passages',
+        href: '/igcse/cambridge/0500/paper-1/summary-writing',
+      },
+    ],
+    subLinks: [
+      { label: 'Reading techniques', href: '/igcse/cambridge/0500/paper-1/reading-techniques' },
+      { label: 'Language analysis', href: '/igcse/cambridge/0500/paper-1/language-analysis' },
+      { label: 'Summary writing', href: '/igcse/cambridge/0500/paper-1/summary-writing' },
+      { label: 'Practice', href: '/igcse/cambridge/0500/paper-1/practice' },
     ],
   },
   {
@@ -59,10 +80,39 @@ const papers = [
     icon: PenTool,
     href: '/igcse/cambridge/0500/paper-2',
     sections: [
-      'Section A — directed writing (40 marks)',
-      'Section B — descriptive OR narrative composition (40 marks)',
-      'Equal weighting of content and structure with style and accuracy',
+      {
+        label: 'Section A — directed writing (40 marks)',
+        href: '/igcse/cambridge/0500/paper-2/directed-writing',
+      },
+      {
+        label: 'Section B — descriptive writing (40 marks)',
+        href: '/igcse/cambridge/0500/paper-2/descriptive-writing',
+      },
+      {
+        label: 'Section B — narrative writing (40 marks)',
+        href: '/igcse/cambridge/0500/paper-2/narrative-writing',
+      },
     ],
+    subLinks: [
+      { label: 'Directed writing', href: '/igcse/cambridge/0500/paper-2/directed-writing' },
+      { label: 'Descriptive writing', href: '/igcse/cambridge/0500/paper-2/descriptive-writing' },
+      { label: 'Narrative writing', href: '/igcse/cambridge/0500/paper-2/narrative-writing' },
+    ],
+  },
+]
+
+const skillsLinks = [
+  {
+    label: 'Reading practice passages',
+    description: 'Work through unseen passages across 10 genres and styles',
+    href: '/igcse/cambridge/reading',
+    icon: BookOpen,
+  },
+  {
+    label: 'Composition skills',
+    description: 'Narrative, descriptive techniques and mark-scheme strategies',
+    href: '/igcse/cambridge/composition',
+    icon: PenTool,
   },
 ]
 
@@ -73,13 +123,58 @@ const quickLinks = [
     href: '/igcse/cambridge/0500/grade-boundaries',
     icon: Target,
   },
+  {
+    title: 'Full syllabus',
+    description: 'Complete 0500 specification breakdown.',
+    href: '/igcse/cambridge/0500/syllabus',
+    icon: FileText,
+  },
+]
+
+const studyTools = [
+  {
+    title: 'AI Essay Marking',
+    description: 'Submit an essay for AI feedback',
+    href: '/marking',
+    icon: PenTool,
+  },
+  {
+    title: 'Quiz',
+    description: 'Test yourself with IGCSE questions',
+    href: '/revision/quiz',
+    icon: Brain,
+  },
+  {
+    title: 'Flashcards',
+    description: 'Spaced repetition revision',
+    href: '/resources/study-tools/flashcards',
+    icon: Layers,
+  },
+  {
+    title: 'Games',
+    description: '7 GCSE-grade games',
+    href: '/games',
+    icon: Gamepad2,
+  },
+  {
+    title: 'AI Toolkit',
+    description: 'AI test builder and revision notes',
+    href: '/toolkit',
+    icon: Wrench,
+  },
+  {
+    title: 'Grade Targets',
+    description: 'Grade 5, 7, 9 specific guides',
+    href: '/revision/grade-targets',
+    icon: BarChart3,
+  },
 ]
 
 export default async function Cambridge0500HubPage() {
   await requireIgcseBoard(['cambridge-0500'])
 
   return (
-    <div className="space-y-10 pb-16">
+    <div className="space-y-12 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}
       <div>
         <Button
@@ -142,7 +237,9 @@ export default async function Cambridge0500HubPage() {
       {/* ── Papers ─────────────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <FileText className="size-5 text-primary" />
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <FileText className="size-5 text-primary" />
+          </div>
           <h2 className="text-heading-lg font-heading text-foreground">
             The two papers
           </h2>
@@ -152,54 +249,117 @@ export default async function Cambridge0500HubPage() {
           {papers.map((paper) => {
             const Icon = paper.icon
             return (
-              <Card
+              <div
                 key={paper.code}
-                className="group relative flex flex-col overflow-hidden transition-all duration-200 hover:border-border hover:shadow-card-hover"
+                className="rounded-2xl border border-border/60 bg-card transition-all duration-200 hover:shadow-card-hover"
               >
-                <CardHeader className="pb-3">
-                  <div className="mb-3 flex items-start justify-between gap-3">
-                    <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10">
-                      <Icon className="size-5 text-primary" />
+                {/* Paper header — clickable */}
+                <Link
+                  href={paper.href}
+                  className="group/paper flex items-start justify-between gap-3 p-5 pb-3"
+                >
+                  <div>
+                    <div className="mb-3 flex items-start gap-3">
+                      <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10">
+                        <Icon className="size-5 text-primary" />
+                      </div>
+                      <Badge className="bg-primary/10 text-primary border-primary/20">
+                        {paper.weight}
+                      </Badge>
                     </div>
-                    <Badge className="bg-primary/10 text-primary border-primary/20">
-                      {paper.weight}
-                    </Badge>
+                    <h3 className="text-heading-md font-heading leading-tight text-foreground group-hover/paper:text-primary transition-colors">
+                      {paper.code}: {paper.title}
+                    </h3>
+                    <p className="mt-1 font-mono text-body-xs text-muted-foreground">
+                      {paper.time} — {paper.marks}
+                    </p>
+                    <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
+                      {paper.description}
+                    </p>
                   </div>
-                  <CardTitle className="text-heading-md font-heading leading-tight">
-                    {paper.code}: {paper.title}
-                  </CardTitle>
-                  <CardDescription className="text-body-sm">
-                    {paper.time} — {paper.marks}
-                  </CardDescription>
-                </CardHeader>
+                  <ChevronRight className="mt-1 size-5 shrink-0 text-muted-foreground transition-transform group-hover/paper:translate-x-0.5 group-hover/paper:text-primary" />
+                </Link>
 
-                <CardContent className="flex flex-1 flex-col gap-4">
-                  <p className="text-body-sm text-muted-foreground leading-relaxed">
-                    {paper.description}
-                  </p>
-
-                  <ul className="space-y-2 text-body-sm text-muted-foreground">
-                    {paper.sections.map((item) => (
-                      <li key={item} className="flex items-start gap-2">
-                        <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-auto pt-2">
-                    <Button
-                      variant="default"
-                      size="sm"
-                      className="w-full"
-                      render={<Link href={paper.href} />}
+                {/* Clickable section breakdown */}
+                <div className="space-y-1.5 border-t border-border/40 p-4 pt-3">
+                  {paper.sections.map((section) => (
+                    <Link
+                      key={section.href + section.label}
+                      href={section.href}
+                      className="group/sec flex items-center justify-between gap-2 rounded-lg border border-border/40 bg-muted/20 px-3 py-2.5 text-body-sm text-muted-foreground transition-all hover:border-primary/40 hover:bg-primary/[0.04] hover:text-foreground"
                     >
-                      Explore {paper.code}
-                      <ArrowRight className="size-3.5" />
-                    </Button>
+                      <span>{section.label}</span>
+                      <ChevronRight className="size-3.5 shrink-0 text-muted-foreground/60 transition-transform group-hover/sec:translate-x-0.5 group-hover/sec:text-primary" />
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Sub-link pills */}
+                {paper.subLinks && paper.subLinks.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 border-t border-border/40 px-4 py-3">
+                    {paper.subLinks.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className="rounded-md border border-border/40 bg-muted/30 px-2.5 py-1 text-body-xs text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
                   </div>
-                </CardContent>
-              </Card>
+                )}
+
+                {/* Open button */}
+                <div className="border-t border-border/40 p-4">
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="w-full"
+                    render={<Link href={paper.href} />}
+                  >
+                    Explore {paper.code}
+                    <ArrowRight className="size-3.5" />
+                  </Button>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* ── Skills & Practice ─────────────────────────────────────── */}
+      <section>
+        <div className="mb-5 flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <Target className="size-5 text-primary" />
+          </div>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            Skills &amp; Practice
+          </h2>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {skillsLinks.map((link) => {
+            const Icon = link.icon
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+              >
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <Icon className="size-5 text-primary" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-heading text-body text-foreground">
+                    {link.label}
+                  </h3>
+                  <p className="text-body-xs text-muted-foreground">
+                    {link.description}
+                  </p>
+                </div>
+                <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+              </Link>
             )
           })}
         </div>
@@ -228,10 +388,10 @@ export default async function Cambridge0500HubPage() {
               Understand and respond to texts
             </h3>
             <ul className="mt-2 space-y-1.5 text-body-xs text-muted-foreground">
-              <li>• Demonstrate understanding of explicit meanings</li>
-              <li>• Demonstrate understanding of implicit meanings and attitudes</li>
-              <li>• Analyse, evaluate and develop facts, ideas and opinions</li>
-              <li>• Select and use information for specific purposes</li>
+              <li>Demonstrate understanding of explicit meanings</li>
+              <li>Demonstrate understanding of implicit meanings and attitudes</li>
+              <li>Analyse, evaluate and develop facts, ideas and opinions</li>
+              <li>Select and use information for specific purposes</li>
             </ul>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -242,36 +402,71 @@ export default async function Cambridge0500HubPage() {
               Write clearly and effectively
             </h3>
             <ul className="mt-2 space-y-1.5 text-body-xs text-muted-foreground">
-              <li>• Articulate experience and express ideas imaginatively</li>
-              <li>• Organise and structure ideas in paragraphs</li>
-              <li>• Use a range of vocabulary and sentence structures</li>
-              <li>• Use accurate spelling, punctuation and grammar</li>
+              <li>Articulate experience and express ideas imaginatively</li>
+              <li>Organise and structure ideas in paragraphs</li>
+              <li>Use a range of vocabulary and sentence structures</li>
+              <li>Use accurate spelling, punctuation and grammar</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* ── Footer note ─────────────────────────────────────────────── */}
-      <p className="text-center text-body-xs text-muted-foreground/60">
-        Aligns with Cambridge syllabus 0500
-      </p>
+      {/* ── Study Tools ───────────────────────────────────────────── */}
+      <section>
+        <div className="mb-5 flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <GraduationCap className="size-5 text-primary" />
+          </div>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            Study Tools
+          </h2>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {studyTools.map((tool) => {
+            const Icon = tool.icon
+            return (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+              >
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <Icon className="size-5 text-primary" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-heading text-body text-foreground">
+                    {tool.title}
+                  </h3>
+                  <p className="text-body-xs text-muted-foreground">
+                    {tool.description}
+                  </p>
+                </div>
+                <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+              </Link>
+            )
+          })}
+        </div>
+      </section>
 
       {/* ── Quick links ────────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <ListChecks className="size-5 text-primary" />
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <ListChecks className="size-5 text-primary" />
+          </div>
           <h2 className="text-heading-lg font-heading text-foreground">
-            Reference pages
+            Reference Pages
           </h2>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2">
           {quickLinks.map((link) => {
             const Icon = link.icon
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-border hover:shadow-card-hover"
+                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
               >
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                   <Icon className="size-5 text-primary" />
@@ -284,12 +479,17 @@ export default async function Cambridge0500HubPage() {
                     {link.description}
                   </p>
                 </div>
-                <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>
             )
           })}
         </div>
       </section>
+
+      {/* ── Footer note ─────────────────────────────────────────────── */}
+      <p className="text-center text-body-xs text-muted-foreground/60">
+        Aligns with Cambridge syllabus 0500
+      </p>
     </div>
   )
 }

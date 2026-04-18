@@ -12,11 +12,15 @@ import {
   FileText,
   Layers,
   ChevronRight,
+  Brain,
+  Gamepad2,
+  Wrench,
+  BarChart3,
+  ChevronLeft,
 } from 'lucide-react'
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
@@ -42,6 +46,9 @@ const papers = [
       'Three linked questions on two unseen non-fiction texts. Tests comprehension, language analysis and summary skills.',
     href: '/igcse/cambridge/0990/paper-1',
     icon: BookOpen,
+    subLinks: [
+      { label: 'Question types', href: '/igcse/cambridge/0990/paper-1/question-types' },
+    ],
   },
   {
     code: 'Writing Paper',
@@ -53,6 +60,7 @@ const papers = [
       'Section A directed writing in response to a text; Section B extended composition (narrative or descriptive).',
     href: '/igcse/cambridge/0990/paper-2',
     icon: PenTool,
+    subLinks: [] as { label: string; href: string }[],
   },
 ]
 
@@ -70,6 +78,13 @@ const navCards = [
       'Full conversion table from the numerical 9-1 grades to the older A*-G scale used for Language A.',
     href: '/igcse/cambridge/0990/grade-conversion',
     icon: Target,
+  },
+  {
+    title: 'Full syllabus',
+    description:
+      'Complete 0990 specification breakdown and assessment objectives.',
+    href: '/igcse/cambridge/0990/syllabus',
+    icon: FileText,
   },
 ]
 
@@ -100,6 +115,71 @@ const gradeGuides = [
   },
 ]
 
+const practicePapers = [
+  {
+    label: 'Practice Paper 1 (Reading)',
+    href: '/igcse/cambridge/0990/practice-paper-1',
+  },
+  {
+    label: 'Practice Paper 2 (Writing)',
+    href: '/igcse/cambridge/0990/practice-paper-2',
+  },
+]
+
+const skillsLinks = [
+  {
+    label: 'Reading practice passages',
+    description: 'Work through unseen passages across 10 genres and styles',
+    href: '/igcse/cambridge/reading',
+    icon: BookOpen,
+  },
+  {
+    label: 'Composition skills',
+    description: 'Narrative, descriptive techniques and mark-scheme strategies',
+    href: '/igcse/cambridge/composition',
+    icon: PenTool,
+  },
+]
+
+const studyTools = [
+  {
+    title: 'AI Essay Marking',
+    description: 'Submit an essay for AI feedback',
+    href: '/marking',
+    icon: PenTool,
+  },
+  {
+    title: 'Quiz',
+    description: 'Test yourself with IGCSE questions',
+    href: '/revision/quiz',
+    icon: Brain,
+  },
+  {
+    title: 'Flashcards',
+    description: 'Spaced repetition revision',
+    href: '/resources/study-tools/flashcards',
+    icon: Layers,
+  },
+  {
+    title: 'Games',
+    description: '7 GCSE-grade games',
+    href: '/games',
+    icon: Gamepad2,
+  },
+  {
+    title: 'AI Toolkit',
+    description: 'AI test builder and revision notes',
+    href: '/toolkit',
+    icon: Wrench,
+  },
+  {
+    title: 'Grade Targets',
+    description: 'Grade 5, 7, 9 specific guides',
+    href: '/revision/grade-targets',
+    icon: BarChart3,
+  },
+]
+
 const gradeBoundaries = [
   { grade: 9, paper1: 68, paper2: 68 },
   { grade: 8, paper1: 62, paper2: 62 },
@@ -113,7 +193,20 @@ export default async function Cambridge0990HubPage() {
   await requireIgcseBoard(['cambridge-0990'])
 
   return (
-    <div className="space-y-10 pb-16">
+    <div className="space-y-12 pb-16">
+      {/* ── Back link ─────────────────────────────────────────────── */}
+      <div>
+        <Button
+          variant="ghost"
+          size="sm"
+          render={<Link href="/igcse/cambridge" />}
+          className="gap-1"
+        >
+          <ChevronLeft className="size-4" />
+          Cambridge hub
+        </Button>
+      </div>
+
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
         <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
@@ -168,7 +261,9 @@ export default async function Cambridge0990HubPage() {
       {/* Papers */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <FileText className="size-5 text-primary" />
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <FileText className="size-5 text-primary" />
+          </div>
           <h2 className="text-heading-lg font-heading text-foreground">
             The two papers
           </h2>
@@ -178,53 +273,103 @@ export default async function Cambridge0990HubPage() {
           {papers.map((p) => {
             const Icon = p.icon
             return (
-              <Card
+              <div
                 key={p.code}
-                className="group flex flex-col transition-all duration-200 hover:border-border hover:shadow-card-hover"
+                className="rounded-2xl border border-border/60 bg-card transition-all duration-200 hover:shadow-card-hover"
               >
-                <CardHeader className="pb-3">
-                  <div className="mb-3 flex items-start justify-between gap-3">
-                    <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10">
-                      <Icon className="size-5 text-primary" />
+                {/* Paper header — clickable */}
+                <Link
+                  href={p.href}
+                  className="group/paper flex items-start justify-between gap-3 p-5 pb-3"
+                >
+                  <div>
+                    <div className="mb-3 flex items-start gap-3">
+                      <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10">
+                        <Icon className="size-5 text-primary" />
+                      </div>
+                      <Badge className="bg-primary/10 text-primary border-primary/20">
+                        {p.weight}
+                      </Badge>
                     </div>
-                    <Badge className="bg-primary/10 text-primary border-primary/20">
-                      {p.weight}
-                    </Badge>
+                    <h3 className="text-heading-md font-heading leading-tight text-foreground group-hover/paper:text-primary transition-colors">
+                      {p.code}: {p.name}
+                    </h3>
+                    <p className="mt-1 font-mono text-body-xs text-muted-foreground">
+                      IGCSE Language B &middot; {p.marks} &middot; {p.time}
+                    </p>
+                    <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
+                      {p.description}
+                    </p>
                   </div>
-                  <CardTitle className="text-heading-md font-heading leading-tight">
-                    {p.code}: {p.name}
-                  </CardTitle>
-                  <CardDescription className="text-body-sm">
-                    IGCSE Language B · {p.marks} · {p.time}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex flex-1 flex-col gap-4">
-                  <p className="text-body-sm text-muted-foreground leading-relaxed">
-                    {p.description}
+                  <ChevronRight className="mt-1 size-5 shrink-0 text-muted-foreground transition-transform group-hover/paper:translate-x-0.5 group-hover/paper:text-primary" />
+                </Link>
+
+                {/* Sub-link pills */}
+                {p.subLinks.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 border-t border-border/40 px-4 py-3">
+                    {p.subLinks.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className="rounded-md border border-border/40 bg-muted/30 px-2.5 py-1 text-body-xs text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {/* Open button */}
+                <div className="border-t border-border/40 p-4">
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="w-full"
+                    render={<Link href={p.href} />}
+                  >
+                    Open {p.code}
+                    <ArrowRight className="size-3.5" />
+                  </Button>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Skills & Practice */}
+      <section>
+        <div className="mb-5 flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <Target className="size-5 text-primary" />
+          </div>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            Skills &amp; Practice
+          </h2>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {skillsLinks.map((link) => {
+            const Icon = link.icon
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+              >
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <Icon className="size-5 text-primary" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-heading text-body text-foreground">
+                    {link.label}
+                  </h3>
+                  <p className="text-body-xs text-muted-foreground">
+                    {link.description}
                   </p>
-                  <div className="flex flex-wrap gap-3 text-body-xs text-muted-foreground">
-                    <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-2 py-1">
-                      <Clock className="size-3" />
-                      {p.time}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-2 py-1">
-                      <Award className="size-3" />
-                      {p.marks}
-                    </span>
-                  </div>
-                  <div className="mt-auto pt-2">
-                    <Button
-                      variant="default"
-                      size="sm"
-                      className="w-full"
-                      render={<Link href={p.href} />}
-                    >
-                      Open {p.code}
-                      <ArrowRight className="size-3.5" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
+                <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+              </Link>
             )
           })}
         </div>
@@ -280,7 +425,9 @@ export default async function Cambridge0990HubPage() {
       {/* Sample boundaries */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Target className="size-5 text-primary" />
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <Target className="size-5 text-primary" />
+          </div>
           <h2 className="text-heading-lg font-heading text-foreground">
             Indicative grade boundaries
           </h2>
@@ -330,19 +477,21 @@ export default async function Cambridge0990HubPage() {
       {/* Nav cards */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Layers className="size-5 text-primary" />
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <Layers className="size-5 text-primary" />
+          </div>
           <h2 className="text-heading-lg font-heading text-foreground">
             Explore Language B
           </h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-3">
           {navCards.map((c) => {
             const Icon = c.icon
             return (
               <Link
                 key={c.href}
                 href={c.href}
-                className="group rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-border hover:shadow-card-hover"
+                className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
               >
                 <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-primary/10">
                   <Icon className="size-5 text-primary" />
@@ -355,7 +504,7 @@ export default async function Cambridge0990HubPage() {
                 </p>
                 <span className="mt-3 inline-flex items-center gap-1 text-body-xs font-medium text-primary">
                   Read more
-                  <ChevronRight className="size-3" />
+                  <ChevronRight className="size-3 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>
             )
@@ -366,45 +515,73 @@ export default async function Cambridge0990HubPage() {
       {/* Grade guides */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <Award className="size-5 text-primary" />
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <Award className="size-5 text-primary" />
+          </div>
           <h2 className="text-heading-lg font-heading text-foreground">
             Grade-by-grade guides
           </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {gradeGuides.map((g) => (
-            <Card key={g.grade} className="flex flex-col">
-              <CardHeader className="pb-3">
-                <Badge className={`${g.tone} w-fit`}>Grade {g.grade}</Badge>
-                <CardTitle className="mt-2 text-heading-sm font-heading">
-                  {g.label}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-1 flex-col">
-                <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  {g.description}
-                </p>
-                <div className="mt-auto pt-4">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full"
-                    render={<Link href={g.href} />}
-                  >
-                    Read guide
-                    <ArrowRight className="size-3.5" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <Link
+              key={g.grade}
+              href={g.href}
+              className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+            >
+              <Badge className={`${g.tone} w-fit`}>Grade {g.grade}</Badge>
+              <h3 className="mt-3 text-heading-sm font-heading text-foreground group-hover:text-primary transition-colors">
+                {g.label}
+              </h3>
+              <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed flex-1">
+                {g.description}
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-body-xs font-medium text-primary">
+                Read guide
+                <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </Link>
           ))}
         </div>
       </section>
 
-      {/* ── Footer note ─────────────────────────────────────────────── */}
-      <p className="text-center text-body-xs text-muted-foreground/60">
-        Aligns with Cambridge syllabus 0990
-      </p>
+      {/* Study Tools */}
+      <section>
+        <div className="mb-5 flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <GraduationCap className="size-5 text-primary" />
+          </div>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            Study Tools
+          </h2>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {studyTools.map((tool) => {
+            const Icon = tool.icon
+            return (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+              >
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <Icon className="size-5 text-primary" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-heading text-body text-foreground">
+                    {tool.title}
+                  </h3>
+                  <p className="text-body-xs text-muted-foreground">
+                    {tool.description}
+                  </p>
+                </div>
+                <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+              </Link>
+            )
+          })}
+        </div>
+      </section>
 
       {/* Practice papers */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
@@ -420,22 +597,25 @@ export default async function Cambridge0990HubPage() {
           conditions and compare your answers with our worked model responses.
         </p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
-          <Button
-            variant="default"
-            render={<Link href="/igcse/cambridge/0990/practice-paper-1" />}
-          >
-            Practice Paper 1 (Reading)
-            <ArrowRight className="size-3.5" />
-          </Button>
-          <Button
-            variant="default"
-            render={<Link href="/igcse/cambridge/0990/practice-paper-2" />}
-          >
-            Practice Paper 2 (Writing)
-            <ArrowRight className="size-3.5" />
-          </Button>
+          {practicePapers.map((pp) => (
+            <Link
+              key={pp.href}
+              href={pp.href}
+              className="group flex items-center justify-between gap-3 rounded-xl border border-border/60 bg-muted/20 p-4 transition-all hover:border-primary/30 hover:bg-primary/[0.04]"
+            >
+              <span className="font-heading text-body text-foreground group-hover:text-primary transition-colors">
+                {pp.label}
+              </span>
+              <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+            </Link>
+          ))}
         </div>
       </section>
+
+      {/* ── Footer note ─────────────────────────────────────────────── */}
+      <p className="text-center text-body-xs text-muted-foreground/60">
+        Aligns with Cambridge syllabus 0990
+      </p>
     </div>
   )
 }
