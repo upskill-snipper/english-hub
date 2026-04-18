@@ -53,6 +53,16 @@ const AI_TOOLS: ToolkitSection[] = [
     bgColour: 'bg-blue-500/10',
     tag: 'AI-Powered',
   },
+  {
+    title: 'Personalised Revision',
+    description:
+      'A revision guide built from YOUR data. Targets your weakest areas first, consolidates your current grade, then pushes you higher with stretch questions.',
+    href: '/toolkit/personalised-revision',
+    icon: Target,
+    colour: 'text-rose-500',
+    bgColour: 'bg-rose-500/10',
+    tag: 'Data-Driven',
+  },
 ]
 
 const DASHBOARD_SECTIONS: ToolkitSection[] = [
