@@ -1,20 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import PptxGenJS from 'pptxgenjs'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
-
-// ─── Brand constants ──────────────────────────────────────────────────────────
-
-const BRAND_BLUE = '1e3a8a'
-const ACCENT_BLUE = '2563eb'
-const TEXT_DARK = '1a1a1a'
-const TEXT_MID = '374151'
-const TEXT_LIGHT = '6b7280'
-const WHITE = 'ffffff'
-
-const TITLE_FONT_SIZE = 24
-const HEADING_FONT_SIZE = 18
-const BODY_FONT_SIZE = 14
-const SMALL_FONT_SIZE = 11
+import {
+  titleSlide,
+  objectivesSlide,
+  phaseDividerSlide,
+  activitySlide,
+  differentiationSlide,
+  vocabularySlide,
+  plenarySlide,
+  homeworkSlide,
+  endSlide,
+} from '@/lib/pptx/slide-templates'
 
 // ─── Types (duplicated to avoid client import) ───────────────────────────────
 
@@ -58,63 +55,53 @@ interface ResourcePptxData {
   firstActivity: string
 }
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
+// ─── Helpers ────────────────────────────────────────────────────────────────
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function addBranding(slide: any) {
-  slide.addText('The English Hub', {
-    x: 0.4, y: 0.2, w: 3, h: 0.3,
-    fontSize: 9, color: TEXT_LIGHT, fontFace: 'Calibri',
-  })
-  slide.addText('theenglishhub.app', {
-    x: 6.5, y: 0.2, w: 3, h: 0.3,
-    fontSize: 8, color: TEXT_LIGHT, fontFace: 'Calibri', align: 'right',
-  })
+/** Extract a plausible "key question" from instructions text */
+function extractKeyQuestion(instructions: string): string | undefined {
+  const sentences = instructions.split(/(?<=[.!?])\s+/)
+  const question = sentences.find((s) => s.trim().endsWith('?'))
+  return question?.trim()
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function addSlideTitle(slide: any, title: string) {
-  slide.addText(title, {
-    x: 0.4, y: 0.5, w: 9.2, h: 0.6,
-    fontSize: HEADING_FONT_SIZE, color: BRAND_BLUE, fontFace: 'Calibri', bold: true,
-  })
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  slide.addShape('rect' as any, {
-    x: 0.4, y: 1.1, w: 9.2, h: 0.03,
-    fill: { color: ACCENT_BLUE },
-  })
+/** Extract numbered steps from a block of instructions */
+function extractSteps(instructions: string): string[] {
+  // If there are numbered items, use them
+  const numbered = instructions.match(/\d+[\.\)]\s+[^\n]+/g)
+  if (numbered && numbered.length >= 2) return numbered.map((s) => s.replace(/^\d+[\.\)]\s*/, ''))
+
+  // Otherwise split by sentences and take meaningful ones
+  const sentences = instructions
+    .split(/(?<=[.!])\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 15)
+  return sentences.length > 1 ? sentences : [instructions]
 }
 
-function addDiffGrid(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  slide: any,
-  diff: { support: string; core: string; stretch: string },
-  yStart: number,
-) {
-  const colW = 2.93
-  const headers = [
-    { label: 'Support', color: '2563eb', bg: 'dbeafe' },
-    { label: 'Core', color: '16a34a', bg: 'dcfce7' },
-    { label: 'Stretch', color: '7c3aed', bg: 'ede9fe' },
+/** Build 3 reflection prompts from plenary instructions */
+function buildReflectionQuestions(instructions: string): string[] {
+  const questions = instructions
+    .split(/(?<=[.!?])\s+/)
+    .filter((s) => s.trim().endsWith('?'))
+    .map((s) => s.trim())
+
+  if (questions.length >= 3) return questions.slice(0, 3)
+
+  // Provide intelligent defaults
+  return [
+    questions[0] || 'What concept from today\'s lesson do I need more help understanding?',
+    questions[1] || 'Which skill am I still developing and need to practise?',
+    questions[2] || 'What is one thing I can confidently explain to someone else?',
   ]
-  const texts = [diff.support, diff.core, diff.stretch]
-
-  headers.forEach((h, i) => {
-    const x = 0.5 + i * (colW + 0.1)
-    slide.addText(h.label, {
-      x, y: yStart, w: colW, h: 0.3,
-      fontSize: 10, color: h.color, fontFace: 'Calibri', bold: true,
-      fill: { color: h.bg }, align: 'center', valign: 'middle',
-    })
-    slide.addText(texts[i], {
-      x, y: yStart + 0.32, w: colW, h: 0.8,
-      fontSize: 10, color: TEXT_MID, fontFace: 'Calibri', valign: 'top', wrap: true,
-      fill: { color: 'fafafa' },
-    })
-  })
 }
 
-// ─── Lesson Plan Builder ─────────────────────────────────────────────────────
+/** Pick a teacher tip from the notes array if available */
+function pickTeacherTip(notes?: string[]): string | undefined {
+  if (!notes || notes.length === 0) return undefined
+  return notes[0]
+}
+
+// ─── Lesson Plan Builder ────────────────────────────────────────────────────
 
 function buildLessonPlanPptx(topic: string, data: LessonPlanData): PptxGenJS {
   const pptx = new PptxGenJS()
@@ -124,162 +111,126 @@ function buildLessonPlanPptx(topic: string, data: LessonPlanData): PptxGenJS {
   pptx.subject = topic
   pptx.layout = 'LAYOUT_WIDE'
 
-  // Slide 1: Title
-  const slide1 = pptx.addSlide()
-  slide1.background = { fill: BRAND_BLUE }
-  slide1.addText('The English Hub', {
-    x: 0.5, y: 0.6, w: 9, h: 0.5,
-    fontSize: 14, color: 'bfdbfe', fontFace: 'Calibri', bold: true,
-  })
-  slide1.addText(data.title, {
-    x: 0.5, y: 1.6, w: 9, h: 1.2,
-    fontSize: TITLE_FONT_SIZE, color: WHITE, fontFace: 'Calibri', bold: true,
-  })
-  slide1.addText(`${topic} -- Lesson Plan`, {
-    x: 0.5, y: 2.9, w: 9, h: 0.5,
-    fontSize: 16, color: 'bfdbfe', fontFace: 'Calibri',
-  })
-  const metaItems = [
-    `Year Group: ${data.yearGroup}`,
-    `Exam Board: ${data.examBoard}`,
-    `Duration: ${data.duration}`,
-    `Text: ${data.text}`,
-  ]
-  slide1.addText(metaItems.join('   |   '), {
-    x: 0.5, y: 4.2, w: 9, h: 0.4,
-    fontSize: SMALL_FONT_SIZE, color: 'bfdbfe', fontFace: 'Calibri',
-  })
-  slide1.addText('theenglishhub.app', {
-    x: 0.5, y: 4.9, w: 9, h: 0.3,
-    fontSize: 10, color: '93c5fd', fontFace: 'Calibri',
+  // ── Slide 1: Title ──────────────────────────────────────────────────
+  titleSlide(pptx, {
+    title: data.title,
+    subtitle: `${topic} \u2014 Lesson Plan`,
+    yearGroup: data.yearGroup,
+    examBoard: data.examBoard,
+    duration: data.duration,
+    text: data.text,
   })
 
-  // Slide 2: Learning Objectives
-  const slide2 = pptx.addSlide()
-  addBranding(slide2)
-  addSlideTitle(slide2, 'Learning Objectives')
-  const objBullets = data.objectives.map((o) => ({
-    text: o,
-    options: {
-      fontSize: BODY_FONT_SIZE, color: TEXT_MID,
-      bullet: { type: 'number' as const }, paraSpaceAfter: 8,
-    },
-  }))
-  slide2.addText(objBullets, {
-    x: 0.6, y: 1.3, w: 8.8, h: 3.5, fontFace: 'Calibri', valign: 'top',
+  // ── Slide 2: Learning Objectives ────────────────────────────────────
+  objectivesSlide(pptx, data.objectives)
+
+  // ── Slide 3: Starter Phase Divider ──────────────────────────────────
+  phaseDividerSlide(pptx, 'starter', data.starterActivity.title)
+
+  // ── Slide 4: Starter Activity ───────────────────────────────────────
+  const starterSteps = extractSteps(data.starterActivity.instructions)
+  activitySlide(pptx, 'starter', {
+    slideTitle: 'Starter Activity',
+    activityTitle: data.starterActivity.title,
+    duration: data.starterActivity.duration,
+    instructions: starterSteps.join('\n'),
+    keyQuestion: extractKeyQuestion(data.starterActivity.instructions),
+    teacherTip: pickTeacherTip(data.teacherNotes),
   })
 
-  // Slide 3: Starter Activity
-  const slide3 = pptx.addSlide()
-  addBranding(slide3)
-  addSlideTitle(slide3, 'Starter Activity')
-  slide3.addText(data.starterActivity.title, {
-    x: 0.6, y: 1.3, w: 8.8, h: 0.4,
-    fontSize: 16, color: TEXT_DARK, fontFace: 'Calibri', bold: true,
-  })
-  slide3.addText(data.starterActivity.duration, {
-    x: 0.6, y: 1.7, w: 8.8, h: 0.3,
-    fontSize: SMALL_FONT_SIZE, color: TEXT_LIGHT, fontFace: 'Calibri', italic: true,
-  })
-  slide3.addText(data.starterActivity.instructions, {
-    x: 0.6, y: 2.2, w: 8.8, h: 2,
-    fontSize: BODY_FONT_SIZE, color: TEXT_MID, fontFace: 'Calibri', valign: 'top', wrap: true,
-  })
+  // ── Slide 5: Starter Differentiation (if present) ───────────────────
   if (data.starterActivity.differentiation) {
-    addDiffGrid(slide3, data.starterActivity.differentiation, 4.4)
+    differentiationSlide(
+      pptx,
+      'starter',
+      'Starter \u2014 Differentiation',
+      data.starterActivity.differentiation,
+    )
   }
 
-  // Slides 4+: Main Activities
+  // ── Main Activities ─────────────────────────────────────────────────
   data.mainActivities.forEach((act, i) => {
-    const slide = pptx.addSlide()
-    addBranding(slide)
-    addSlideTitle(slide, `Main Activity ${i + 1}`)
-    slide.addText(act.title, {
-      x: 0.6, y: 1.3, w: 8.8, h: 0.4,
-      fontSize: 16, color: TEXT_DARK, fontFace: 'Calibri', bold: true,
+    const label = data.mainActivities.length > 1
+      ? `MAIN ACTIVITY ${i + 1}`
+      : 'MAIN ACTIVITY'
+
+    // Phase divider
+    phaseDividerSlide(pptx, 'main', act.title)
+
+    // Activity slide
+    const mainSteps = extractSteps(act.instructions)
+    activitySlide(pptx, 'main', {
+      slideTitle: label,
+      activityTitle: act.title,
+      duration: act.duration,
+      instructions: mainSteps.join('\n'),
+      keyQuestion: extractKeyQuestion(act.instructions),
+      expectedOutcomes: mainSteps.length > 2
+        ? [mainSteps[mainSteps.length - 1]]
+        : undefined,
+      teacherTip: data.teacherNotes && data.teacherNotes.length > 1
+        ? data.teacherNotes[Math.min(i + 1, data.teacherNotes.length - 1)]
+        : undefined,
     })
-    slide.addText(act.duration, {
-      x: 0.6, y: 1.7, w: 8.8, h: 0.3,
-      fontSize: SMALL_FONT_SIZE, color: TEXT_LIGHT, fontFace: 'Calibri', italic: true,
-    })
-    slide.addText(act.instructions, {
-      x: 0.6, y: 2.2, w: 8.8, h: 1.8,
-      fontSize: BODY_FONT_SIZE, color: TEXT_MID, fontFace: 'Calibri', valign: 'top', wrap: true,
-    })
+
+    // Differentiation slide
     if (act.differentiation) {
-      addDiffGrid(slide, act.differentiation, 4.2)
+      differentiationSlide(
+        pptx,
+        'main',
+        `${label} \u2014 Differentiation`,
+        act.differentiation,
+      )
     }
   })
 
-  // Plenary Slide
-  const slidePlenary = pptx.addSlide()
-  addBranding(slidePlenary)
-  addSlideTitle(slidePlenary, 'Plenary')
-  slidePlenary.addText(data.plenary.title, {
-    x: 0.6, y: 1.3, w: 8.8, h: 0.4,
-    fontSize: 16, color: TEXT_DARK, fontFace: 'Calibri', bold: true,
+  // ── Plenary Phase Divider ───────────────────────────────────────────
+  phaseDividerSlide(pptx, 'plenary', data.plenary.title)
+
+  // ── Plenary Slide ───────────────────────────────────────────────────
+  plenarySlide(pptx, {
+    title: data.plenary.title,
+    instructions: data.plenary.instructions,
+    reflectionQuestions: buildReflectionQuestions(data.plenary.instructions),
   })
-  slidePlenary.addText(data.plenary.instructions, {
-    x: 0.6, y: 1.9, w: 8.8, h: 2,
-    fontSize: BODY_FONT_SIZE, color: TEXT_MID, fontFace: 'Calibri', valign: 'top', wrap: true,
-  })
+
+  // ── Plenary Differentiation ─────────────────────────────────────────
   if (data.plenary.differentiation) {
-    addDiffGrid(slidePlenary, data.plenary.differentiation, 4.2)
+    differentiationSlide(
+      pptx,
+      'plenary',
+      'Plenary \u2014 Differentiation',
+      data.plenary.differentiation,
+    )
   }
 
-  // Slide: Key Vocabulary
-  const slideVocab = pptx.addSlide()
-  addBranding(slideVocab)
-  addSlideTitle(slideVocab, 'Key Vocabulary')
-  const vocabBullets = data.keyVocabulary.map((kw) => ({
-    text: kw,
-    options: {
-      fontSize: BODY_FONT_SIZE, color: TEXT_MID,
-      bullet: true, paraSpaceAfter: 6,
-    },
-  }))
-  slideVocab.addText(vocabBullets, {
-    x: 0.6, y: 1.3, w: 8.8, h: 3.5, fontFace: 'Calibri', valign: 'top',
-  })
+  // ── Vocabulary Slide ────────────────────────────────────────────────
+  if (data.keyVocabulary.length > 0) {
+    vocabularySlide(pptx, data.keyVocabulary)
+  }
 
-  // Slide: Homework & Resources
-  const slideHw = pptx.addSlide()
-  addBranding(slideHw)
-  addSlideTitle(slideHw, 'Homework & Resources')
-  let yPos = 1.3
-
+  // ── Homework Slide ──────────────────────────────────────────────────
   if (data.homework) {
-    slideHw.addText('Homework', {
-      x: 0.6, y: yPos, w: 8.8, h: 0.35,
-      fontSize: 15, color: BRAND_BLUE, fontFace: 'Calibri', bold: true,
+    phaseDividerSlide(pptx, 'homework')
+    homeworkSlide(pptx, {
+      task: data.homework,
+      resources: data.resourcesNeeded.length > 0 ? data.resourcesNeeded : undefined,
     })
-    yPos += 0.4
-    slideHw.addText(data.homework, {
-      x: 0.6, y: yPos, w: 8.8, h: 1,
-      fontSize: BODY_FONT_SIZE, color: TEXT_MID, fontFace: 'Calibri', valign: 'top', wrap: true,
+  } else if (data.resourcesNeeded.length > 0) {
+    // Still show resources even without homework
+    homeworkSlide(pptx, {
+      task: 'No homework set for this lesson.',
+      resources: data.resourcesNeeded,
     })
-    yPos += 1.2
   }
 
-  if (data.resourcesNeeded.length > 0) {
-    slideHw.addText('Resources Needed', {
-      x: 0.6, y: yPos, w: 8.8, h: 0.35,
-      fontSize: 15, color: BRAND_BLUE, fontFace: 'Calibri', bold: true,
-    })
-    yPos += 0.4
-    const resBullets = data.resourcesNeeded.map((r) => ({
-      text: r,
-      options: { fontSize: 13, color: TEXT_MID, bullet: true, paraSpaceAfter: 4 },
-    }))
-    slideHw.addText(resBullets, {
-      x: 0.6, y: yPos, w: 8.8, h: 2, fontFace: 'Calibri', valign: 'top',
-    })
-  }
+  // ── End Slide ───────────────────────────────────────────────────────
+  endSlide(pptx)
 
   return pptx
 }
 
-// ─── Resource PPTX Builder ───────────────────────────────────────────────────
+// ─── Resource PPTX Builder ──────────────────────────────────────────────────
 
 function buildResourcePptx(data: ResourcePptxData): PptxGenJS {
   const pptx = new PptxGenJS()
@@ -289,49 +240,34 @@ function buildResourcePptx(data: ResourcePptxData): PptxGenJS {
   pptx.layout = 'LAYOUT_WIDE'
 
   // Title slide
-  const slide1 = pptx.addSlide()
-  slide1.background = { fill: BRAND_BLUE }
-  slide1.addText('The English Hub', {
-    x: 0.5, y: 0.6, w: 9, h: 0.5,
-    fontSize: 14, color: 'bfdbfe', fontFace: 'Calibri', bold: true,
-  })
-  slide1.addText(data.title, {
-    x: 0.5, y: 1.6, w: 9, h: 1.2,
-    fontSize: TITLE_FONT_SIZE, color: WHITE, fontFace: 'Calibri', bold: true,
-  })
-  slide1.addText(`${data.type} | ${data.yearGroup} | ${data.examBoard}${data.duration ? ` | ${data.duration}` : ''}`, {
-    x: 0.5, y: 3.2, w: 9, h: 0.4,
-    fontSize: 13, color: 'bfdbfe', fontFace: 'Calibri',
+  titleSlide(pptx, {
+    title: data.title,
+    subtitle: `${data.type} Resource`,
+    yearGroup: data.yearGroup,
+    examBoard: data.examBoard,
+    duration: data.duration,
   })
 
-  // Objectives slide
-  const slide2 = pptx.addSlide()
-  addBranding(slide2)
-  addSlideTitle(slide2, 'Objectives')
-  const objBullets = data.objectives.map((o) => ({
-    text: o,
-    options: {
-      fontSize: BODY_FONT_SIZE, color: TEXT_MID,
-      bullet: { type: 'number' as const }, paraSpaceAfter: 8,
-    },
-  }))
-  slide2.addText(objBullets, {
-    x: 0.6, y: 1.3, w: 8.8, h: 3.5, fontFace: 'Calibri', valign: 'top',
+  // Objectives
+  objectivesSlide(pptx, data.objectives)
+
+  // First Activity — use the activity slide template
+  const steps = extractSteps(data.firstActivity)
+  activitySlide(pptx, 'main', {
+    slideTitle: 'First Activity',
+    activityTitle: data.type,
+    duration: data.duration || '',
+    instructions: steps.join('\n'),
+    keyQuestion: extractKeyQuestion(data.firstActivity),
   })
 
-  // Activity slide
-  const slide3 = pptx.addSlide()
-  addBranding(slide3)
-  addSlideTitle(slide3, 'First Activity')
-  slide3.addText(data.firstActivity, {
-    x: 0.6, y: 1.3, w: 8.8, h: 3.5,
-    fontSize: BODY_FONT_SIZE, color: TEXT_MID, fontFace: 'Calibri', valign: 'top', wrap: true,
-  })
+  // End
+  endSlide(pptx)
 
   return pptx
 }
 
-// ─── API Route Handler ───────────────────────────────────────────────────────
+// ─── API Route Handler ──────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
   try {
@@ -341,7 +277,7 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } },
       )
     }
 
@@ -366,12 +302,13 @@ export async function POST(request: NextRequest) {
     }
 
     // Generate as nodebuffer (server-side)
-    const buffer = await pptx.write({ outputType: 'nodebuffer' }) as Buffer
+    const buffer = (await pptx.write({ outputType: 'nodebuffer' })) as Buffer
 
     return new NextResponse(new Uint8Array(buffer), {
       status: 200,
       headers: {
-        'Content-Type': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        'Content-Type':
+          'application/vnd.openxmlformats-officedocument.presentationml.presentation',
         'Content-Disposition': `attachment; filename="${fileName}"`,
         'Content-Length': String(buffer.length),
       },

@@ -28,81 +28,102 @@ export const act1LessonPlan: LessonPlanData = {
     "Analyse how Priestley establishes the Birling family as representatives of Edwardian upper-middle-class values in the opening stage directions",
     "Explore Mr Birling's capitalist philosophy and identify how Priestley systematically undermines it through dramatic irony",
     "Examine how the Inspector's arrival disrupts the family's celebration and foreshadows the moral interrogation to come",
+    "Begin to develop AO3 contextual arguments linking the play's setting to Priestley's post-war socialist purpose",
   ],
   starterActivity: {
     title: "1912 vs 1945: Two Worlds Collide",
     duration: "8 minutes",
     instructions:
-      "Display two images side by side: a wealthy Edwardian dinner party (circa 1912) and bomb-damaged British streets (circa 1945). Students write three observations about each image in silence for 2 minutes, then pair-share for 2 minutes. Teacher draws out the contrast: the play was written after two world wars, the welfare state, and massive social change, but is deliberately set before any of it happened. Ask: 'Why might a playwright choose to set his play 33 years in the past?' Collect three responses on the board. Establish that this gap is the engine of the play's dramatic irony.",
+      "1. Display two images side by side on the projector: a wealthy Edwardian dinner party (circa 1912) and bomb-damaged British streets (circa 1945).\n2. Silent observation (2 minutes): students write three observations about each image in their books.\n3. Pair-share (2 minutes): students compare observations and discuss what life was like in each era.\n4. Teacher-led discussion (3 minutes): draw out the contrast — the play was written after two world wars, the welfare state, and massive social change, but is deliberately set before any of it happened.\n5. Pose the key question on the board: 'Why might a playwright choose to set his play 33 years in the past?' Cold-call three students.\n6. Record three responses on the board and establish that this 33-year gap is the engine of the play's dramatic irony.\n7. Write the definition of dramatic irony on the board for students to copy: 'When the audience knows something the characters do not.'",
     differentiation: {
-      support: "Provide sentence stems: 'In the 1912 image I notice... This suggests... In contrast, the 1945 image shows...' and a glossary defining 'dramatic irony' and 'Edwardian era'.",
-      core: "Students write three observations per image and identify one connection between the images and the concept of dramatic irony.",
-      stretch: "Students predict three specific examples of dramatic irony that a 1945 audience would recognise if a character in 1912 made confident predictions about the future.",
+      support: "Provide sentence stems on a handout: 'In the 1912 image I notice... This suggests that life was... In contrast, the 1945 image shows... This tells me that...' Include a glossary card defining 'dramatic irony', 'Edwardian era', and 'welfare state'. Teacher pairs these students with a confident partner for the discussion phase.",
+      core: "Students write three observations per image independently, then identify one connection between the images and the concept of dramatic irony in a written sentence.",
+      stretch: "Students predict three specific examples of dramatic irony that a 1945 audience would recognise if a character in 1912 made confident predictions about the future (e.g. predicting no wars, the Titanic being unsinkable, or that capitalism would bring prosperity for all).",
     },
   },
   mainActivities: [
     {
       title: "Close Reading: The Opening Stage Directions",
-      duration: "18 minutes",
+      duration: "15 minutes",
       instructions:
-        "Distribute copies of the opening stage directions (from 'The dining room of a fairly large suburban house' to the entrance of Edna). Students annotate in pairs, guided by three focus questions displayed on the board: (1) What does the setting reveal about the Birlings' wealth and values? (2) What does 'pink and intimate' lighting changing to 'brighter and harder' when the Inspector arrives symbolise? (3) What do the characters' positions at the table suggest about power dynamics? After 10 minutes of annotation, teacher cold-calls three pairs to share their best annotation. Model a PEEL paragraph on the board using the lighting symbolism: Point — the lighting shift symbolises the exposure of truth. Evidence — 'pink and intimate... brighter and harder'. Explain — the warm pink suggests comfort and concealment, while the harder light suggests scrutiny. Link — Priestley uses this visual metaphor to signal that the Inspector will strip away the family's comfortable illusions.",
+        "1. Distribute photocopied extracts of the opening stage directions (from 'The dining room of a fairly large suburban house' to the entrance of Edna).\n2. Display three focus questions on the board: (a) What does the setting reveal about the Birlings' wealth and values? (b) What does 'pink and intimate' lighting changing to 'brighter and harder' symbolise? (c) What do the characters' positions at the table suggest about power dynamics?\n3. Students annotate the extract in pairs for 8 minutes, using the focus questions to guide them. Instruct them to underline key words and write marginal notes.\n4. Cold-call three pairs to share their strongest annotation. Insist on precise textual reference.\n5. Model a PEEL paragraph on the board using the lighting symbolism (5 minutes):\n   - Point: The lighting shift symbolises the exposure of truth.\n   - Evidence: 'pink and intimate... brighter and harder'\n   - Explain: The warm pink suggests comfort and concealment, while the harder light suggests scrutiny and moral examination.\n   - Link: Priestley uses this visual metaphor to signal that the Inspector will strip away the family's comfortable illusions.\n6. Students copy the model paragraph and underline the technique word (symbolism).",
       differentiation: {
-        support: "Provide a pre-highlighted extract with arrows pointing to key details. Include a word bank: symbolism, foreshadowing, stage directions, bourgeois, facade, scrutiny.",
-        core: "Annotate the extract independently using the three focus questions and write one PEEL paragraph on the lighting symbolism.",
-        stretch: "Write a second paragraph analysing what the port, cigars, and champagne suggest about the family's relationship with wealth, linking to Priestley's critique of capitalist excess.",
+        support: "Provide a pre-highlighted extract with arrows pointing to 'pink and intimate', 'brighter and harder', and the description of the furniture. Include a word bank on the handout: symbolism, foreshadowing, stage directions, bourgeois, facade, scrutiny. Teacher visits support-tier pairs first to check annotations.",
+        core: "Annotate the extract independently using the three focus questions. Write one PEEL paragraph on the lighting symbolism in their books, following the modelled structure.",
+        stretch: "Write a second PEEL paragraph analysing what the port, cigars, and champagne suggest about the family's relationship with wealth. Link to Priestley's critique of capitalist excess and the 1945 audience's awareness of wartime rationing.",
       },
     },
     {
       title: "Mr Birling's Speech: Identifying Dramatic Irony",
-      duration: "20 minutes",
+      duration: "15 minutes",
       instructions:
-        "Students read Mr Birling's extended speech about the Titanic being 'unsinkable', war being 'impossible', and progress making everybody happy. Working in groups of three, students complete a three-column table: (1) What Birling says, (2) What actually happened, (3) What Priestley wants the 1945 audience to think. Groups share their most powerful example. Teacher then poses the key question: 'If Birling is wrong about everything, what does this do to his authority as a character?' Students write a paragraph answering this question, embedding at least one quotation. Teacher circulates, targeting two students for individual feedback on quotation embedding technique.",
+        "1. Read aloud Mr Birling's speech about the Titanic, war, and progress. Ask students to follow along on their copies.\n2. After reading, ask: 'What predictions does Birling make?' Elicit three key predictions and write them on the board.\n3. Distribute the three-column table handout. Explain the columns: (a) What Birling says (short quotation — max 10 words), (b) What actually happened, (c) What Priestley wants the 1945 audience to think.\n4. Students work in groups of three for 7 minutes to complete the table. Circulate to check quotation accuracy.\n5. Groups share their most powerful example via cold-call. Teacher adds to a class version on the board.\n6. Pose the key question on the board: 'If Birling is wrong about everything, what does this do to his authority as a character?'\n7. Students write a paragraph answering this question (5 minutes), embedding at least one short quotation (e.g. 'absolutely unsinkable').\n8. Teacher circulates during writing, targeting two students for individual feedback on quotation embedding technique.",
       differentiation: {
-        support: "Provide the three-column table with Birling's quotations already filled in; students complete columns 2 and 3. Sentence stem provided for the paragraph: 'Priestley undermines Birling's authority by...'",
-        core: "Students complete all three columns independently and write a paragraph with embedded quotation.",
-        stretch: "Students extend their paragraph to consider why Priestley makes Birling a magistrate and a potential knight — how does his social status make the dramatic irony even more powerful?",
+        support: "Provide the three-column table with Birling's quotations already filled in column 1; students complete columns 2 and 3 only. Sentence stem provided for the paragraph: 'Priestley undermines Birling's authority by showing that his prediction about... was completely wrong. The 1945 audience would know that...'",
+        core: "Students complete all three columns independently, selecting their own short quotations, and write a paragraph with at least one embedded quotation.",
+        stretch: "Students extend their paragraph to consider why Priestley makes Birling a magistrate and a prospective knight — how does his social status intensify the dramatic irony? What does it suggest about the ruling class?",
+      },
+    },
+    {
+      title: "The Inspector's Entrance: A Turning Point",
+      duration: "12 minutes",
+      instructions:
+        "1. Read aloud the stage directions describing the Inspector's entrance and his first exchange with Birling.\n2. Ask students: 'How does the atmosphere change when the Inspector arrives?' (2 minutes think-pair-share)\n3. Display two short quotations on the board (each under 15 words) showing the Inspector's direct, authoritative tone versus Birling's bluster.\n4. Students write three bullet points in their books: (a) How the Inspector's language differs from Birling's, (b) What the lighting change at this moment symbolises, (c) Why Priestley times the entrance to interrupt the celebration.\n5. Class discussion (3 minutes): teacher draws out that the Inspector functions as Priestley's mouthpiece — he arrives to shatter complacency.\n6. Students add one key sentence to their notes: 'The Inspector's entrance transforms the play from a celebration of wealth into a moral interrogation.'",
+      differentiation: {
+        support: "Provide a comparison table with two columns — Birling's language vs Inspector's language — with one example pre-filled in each column. Students add two more examples each.",
+        core: "Students independently write their three bullet points and contribute to class discussion.",
+        stretch: "Students write a short paragraph exploring whether the Inspector is a realistic character or a dramatic device, using evidence from his entrance to support their view.",
       },
     },
   ],
   plenary: {
     title: "Exit Ticket: One Quote, One Insight",
     instructions:
-      "Each student selects one quotation from Act 1 that they think is the most important for understanding Priestley's message. They write it on a sticky note with a one-sentence explanation of why it matters. Students place notes on the board as they leave. Teacher reviews them to inform the next lesson's starter activity and identify any gaps in understanding.",
+      "1. Give each student a sticky note (or half-sheet of paper).\n2. Task (displayed on board): 'Select one quotation from Act 1 (no more than 12 words) that you think is the most important for understanding Priestley's message.'\n3. Below the quotation, students write one sentence explaining why it matters.\n4. Students place completed notes on a designated section of the board as they leave.\n5. Teacher sorts the notes into themes (dramatic irony, class, responsibility) after the lesson to inform the next lesson's starter activity and identify gaps in understanding.",
     differentiation: {
-      support: "Choose from a bank of five pre-selected quotations and explain your choice in one sentence.",
+      support: "Choose from a bank of five pre-selected short quotations displayed on the board. Explain your choice using the sentence stem: 'This quotation matters because Priestley uses it to...'",
       core: "Select your own quotation from Act 1 and write a one-sentence explanation linking it to Priestley's purpose.",
-      stretch: "Select a quotation and write two sentences: one explaining its significance for a 1912 audience and one for a 1945 audience.",
+      stretch: "Select a quotation and write two sentences: one explaining its significance for a 1912 audience and one for a 1945 audience, highlighting the dramatic irony.",
     },
   },
   keyVocabulary: [
-    "dramatic irony",
-    "stage directions",
-    "symbolism",
-    "bourgeois",
-    "capitalism",
-    "socialism",
-    "Edwardian era",
-    "welfare state",
-    "didactic",
-    "facade",
-    "hubris",
-    "foreshadowing",
+    "dramatic irony — when the audience knows something the characters do not",
+    "stage directions — instructions in a script describing setting, movement, or tone",
+    "symbolism — using an object or detail to represent a larger idea",
+    "bourgeois — relating to the comfortable middle class; often used critically",
+    "capitalism — an economic system based on private ownership and profit",
+    "socialism — a political philosophy advocating collective ownership and equality",
+    "Edwardian era — the period 1901–1910 (broadly to 1914) characterised by rigid class hierarchy",
+    "welfare state — government provision of healthcare, education, and social security for all citizens",
+    "didactic — intended to teach a moral or political lesson",
+    "facade — a false outward appearance that conceals the truth",
+    "hubris — excessive pride or self-confidence, often leading to a downfall",
+    "foreshadowing — hints or clues about events that will occur later in a text",
+    "mouthpiece — a character who voices the author's own views",
+    "collective responsibility — the idea that all members of society share accountability",
+    "morality play — a dramatic genre in which characters represent moral qualities",
+    "interrogation — intense questioning; used here both literally and metaphorically",
   ],
   resourcesNeeded: [
-    "Copies of An Inspector Calls (Act 1) or photocopied extracts",
-    "Projector for starter images and model paragraph",
-    "Three-column table handout for Birling's speech activity",
-    "Sticky notes for exit ticket plenary",
-    "Glossary cards for support-tier students",
+    "Copies of An Inspector Calls (Act 1) or photocopied extracts of the opening stage directions and Birling's speech",
+    "Projector and screen for starter images (Edwardian dinner party and 1945 bomb damage)",
+    "Three-column table handout for Birling's speech activity (one per student)",
+    "Sticky notes or half-sheets of paper for the exit ticket plenary",
+    "Glossary cards for support-tier students (dramatic irony, Edwardian era, welfare state, bourgeois)",
+    "Word bank handout for close reading activity (support tier)",
+    "Printed PEEL paragraph frame for support-tier students",
+    "Mini-whiteboards and pens (optional, for quick-check questions)",
   ],
   homework:
-    "Write a 200-word response: 'How does Priestley use the opening of An Inspector Calls to establish that the Birling family has something to hide?' Include at least two quotations from the stage directions or dialogue.",
+    "Write a 200–250 word response to the following question: 'How does Priestley use the opening of An Inspector Calls to establish that the Birling family has something to hide?'\n\nSuccess criteria:\n- Include at least two short quotations from the stage directions or dialogue (each under 12 words)\n- Use at least one technical term (e.g. symbolism, dramatic irony, foreshadowing)\n- Structure your response using PEEL (Point, Evidence, Explain, Link)\n- Include one sentence of AO3 context linking the play's setting (1912) to when it was written (1945)\n- Write in formal academic register (no contractions, no first person)",
   teacherNotes: [
-    "Ensure students grasp the dual time frame before diving into textual analysis — this is the foundation of every AO3 contextual point they will need at GCSE.",
-    "The lighting symbolism is a reliable AO2 point that scores highly in exams. Model this carefully.",
-    "Birling's dramatic irony speech is the single most frequently examined extract for the AO3 mark. Spend adequate time here.",
-    "If time is short, the plenary exit ticket can be set as homework instead, with the Birling paragraph becoming the plenary task.",
-    "This lesson pairs well with a follow-up lesson on the Inspector's entrance and his function as Priestley's mouthpiece.",
+    "Timing priority: Ensure students grasp the dual time frame (set 1912, written 1945) before any textual analysis. This is the foundation of every AO3 contextual point they will need at GCSE. If the starter runs over, absorb time from the plenary rather than from this concept.",
+    "High-value exam content: The lighting symbolism ('pink and intimate' to 'brighter and harder') is a reliable AO2 point that consistently scores well in exams. Model the PEEL paragraph carefully and insist students copy it — many will use this exact point in their mock and final exam.",
+    "Most frequently examined extract: Birling's dramatic irony speech is the single most commonly examined extract for the AO3 mark across AQA papers. Ensure every student can explain at least one example of dramatic irony from it.",
+    "Flexible plenary: If time is short, the exit ticket plenary can be set as homework instead. In that case, use the final 5 minutes for the Birling paragraph to become the plenary task — students read their paragraph aloud to a partner who checks for an embedded quotation.",
+    "Copyright note: All quotations from An Inspector Calls are the copyright of J.B. Priestley's estate. Keep all quoted passages to 15 words or fewer for fair dealing purposes. Do not reproduce extended extracts on student-facing handouts — use page references instead.",
+    "Seating for the group activity: Pre-arrange mixed-ability groups of three for the Birling speech table. Assign roles: Reader (reads the speech aloud), Scribe (fills in the table), Challenger (checks column 3 answers are genuinely analytical, not just plot retelling).",
+    "Common misconception: Students often describe Birling as 'stupid'. Redirect this — Priestley deliberately constructs Birling's wrongness for didactic effect. The point is not that Birling is unintelligent, but that his ideology blinds him.",
   ],
 }
 
@@ -133,7 +154,7 @@ export const characterWorksheetQuestions: WorksheetQuestion[] = [
     type: "quote-analysis",
     marks: 6,
     lines: 8,
-    sourceQuote: "A man has to mind his own business and look after himself and his own — and I still say there's no reason to change.",
+    sourceQuote: "a man has to mind his own business and look after himself",
   },
   {
     question:
@@ -168,7 +189,7 @@ export const characterWorksheetQuestions: WorksheetQuestion[] = [
     type: "quote-analysis",
     marks: 6,
     lines: 8,
-    sourceQuote: "We are members of one body. We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish.",
+    sourceQuote: "We are members of one body. We are responsible for each other.",
   },
   {
     question:
@@ -230,7 +251,7 @@ export const quotesWorksheetQuestions: WorksheetQuestion[] = [
     type: "quote-analysis",
     marks: 6,
     lines: 8,
-    sourceQuote: "If men will not learn that lesson, then they will be taught it in fire and blood and anguish.",
+    sourceQuote: "they will be taught it in fire and blood and anguish.",
   },
   {
     question:
@@ -254,7 +275,7 @@ export const quotesWorksheetQuestions: WorksheetQuestion[] = [
     type: "quote-analysis",
     marks: 5,
     lines: 7,
-    sourceQuote: "I say there isn't a chance of war. The world's developing so fast that it'll make war impossible.",
+    sourceQuote: "I say there isn't a chance of war.",
   },
   {
     question:
@@ -289,7 +310,7 @@ export const responsibilityMarkSchemeAnswers: MarkSchemeAnswer[] = [
       "Quality of written communication: formal academic register, accurate SPaG",
     ],
     exampleTop:
-      "Priestley constructs Birling as the embodiment of capitalist individualism, a man whose confident declarations are systematically dismantled by dramatic irony. His assertion that a man must 'look after himself and his own' uses possessive pronouns that linguistically fence off responsibility, reducing the moral universe to the private sphere. The audience, aware that two world wars have devastated this philosophy, recognises Birling as a cautionary figure — a didactic tool through which Priestley exposes the fatal consequences of rejecting collective responsibility. Birling's status as a magistrate and potential knight intensifies the irony: the very institutions that should embody justice are infected by his selfishness.",
+      "Priestley constructs Birling as the embodiment of capitalist individualism, a man whose confident declarations are systematically dismantled by dramatic irony. His assertion that a man must 'look after himself' uses possessive pronouns that linguistically fence off responsibility, reducing the moral universe to the private sphere. The audience, aware that two world wars have devastated this philosophy, recognises Birling as a cautionary figure — a didactic tool through which Priestley exposes the fatal consequences of rejecting collective responsibility. Birling's status as a magistrate and potential knight intensifies the irony: the very institutions that should embody justice are infected by his selfishness.",
     exampleMid:
       "Priestley uses Birling to show that some people only care about themselves. Birling says 'a man has to mind his own business' which shows he is selfish. The audience knows that his predictions about the Titanic and war are wrong, which makes him look foolish. Priestley is trying to show that capitalism is wrong because it stops people caring about others.",
     exampleLower:
@@ -378,7 +399,7 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
       name: "Arthur Birling",
       role: "A prosperous factory owner, magistrate, and potential knight. Represents Edwardian capitalist individualism. Priestley's primary target for satirical critique.",
       keyQuotes: [
-        "A man has to mind his own business and look after himself and his own.",
+        "a man has to mind his own business and look after himself",
         "The Titanic — she sails next week... absolutely unsinkable.",
         "I say there isn't a chance of war.",
       ],
@@ -401,7 +422,7 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
       role: "A mysterious inspector who arrives to question the family. Functions as Priestley's mouthpiece for socialist ideals and collective responsibility. Possibly supernatural — his identity is deliberately ambiguous.",
       keyQuotes: [
         "We are members of one body. We are responsible for each other.",
-        "If men will not learn that lesson, then they will be taught it in fire and blood and anguish.",
+        "they will be taught it in fire and blood and anguish",
         "Public men, Mr Birling, have responsibilities as well as privileges.",
       ],
       analysis:
@@ -423,7 +444,7 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
       role: "The Birlings' son. Drinks heavily, had a relationship with Eva, and stole money from his father's business. Accepts responsibility but is immature and weak.",
       keyQuotes: [
         "My God — I'm not likely to forget.",
-        "You're not the kind of father a chap could go to when he's in trouble.",
+        "You're not the kind of father a chap could go to",
         "We did her in all right.",
       ],
       analysis:
@@ -443,7 +464,7 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
       ],
       quotes: [
         "We are members of one body. We are responsible for each other.",
-        "A man has to mind his own business and look after himself and his own.",
+        "a man has to mind his own business and look after himself",
       ],
     },
     {
@@ -515,14 +536,14 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
         "The central thesis of the play. The metaphor of 'one body' echoes both Christian theology (the Body of Christ) and socialist solidarity. The anaphoric 'we' is deliberately inclusive, extending responsibility to the audience. This quotation functions as Priestley's direct address to post-war Britain.",
     },
     {
-      quote: "A man has to mind his own business and look after himself and his own.",
+      quote: "a man has to mind his own business and look after himself",
       speaker: "Mr Birling",
       context: "Birling's dinner speech in Act 1, delivered with confidence shortly before the Inspector arrives.",
       analysis:
         "The possessive pronouns ('himself', 'his own') linguistically fence off responsibility to the private sphere. The repetition of self-referential language reveals Birling's moral universe: small, insular, and oblivious. Priestley positions this speech immediately before the Inspector's arrival to maximise the contrast between capitalist individualism and collective responsibility.",
     },
     {
-      quote: "If men will not learn that lesson, then they will be taught it in fire and blood and anguish.",
+      quote: "they will be taught it in fire and blood and anguish",
       speaker: "Inspector Goole",
       context: "The climax of the Inspector's final speech, Act 3.",
       analysis:
