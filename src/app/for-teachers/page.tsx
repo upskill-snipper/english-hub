@@ -49,31 +49,31 @@ const features = [
   },
   {
     icon: PenTool,
-    color: 'text-emerald-400 bg-emerald-500/10',
+    color: 'text-teal-700 bg-emerald-500/10',
     title: 'AI Essay Marking',
     desc: 'Students submit essays and get instant, detailed feedback aligned to your school\'s chosen exam board mark scheme. Review and adjust before it reaches them.',
   },
   {
     icon: BarChart3,
-    color: 'text-blue-400 bg-blue-500/10',
+    color: 'text-blue-600 bg-blue-500/10',
     title: 'Student Progress Analytics',
     desc: 'Track every student in real time. Spot who is falling behind, who is excelling, and where the whole class needs extra support -- all in one dashboard.',
   },
   {
     icon: ClipboardList,
-    color: 'text-purple-400 bg-purple-500/10',
+    color: 'text-purple-600 bg-purple-500/10',
     title: 'Homework & Assignment Manager',
     desc: 'Set assignments, track submissions, chase overdue work, and monitor completion rates across all your classes without juggling spreadsheets.',
   },
   {
     icon: Library,
-    color: 'text-amber-400 bg-amber-500/10',
+    color: 'text-amber-600 bg-amber-500/10',
     title: '300+ Ready Resources',
     desc: 'A growing library of worksheets, revision materials, model answers, and starter activities -- all ready to print or share digitally.',
   },
   {
     icon: Award,
-    color: 'text-red-400 bg-red-500/10',
+    color: 'text-red-600 bg-red-500/10',
     title: 'Your Exam Board, Your Content',
     desc: 'We support AQA, Edexcel, OCR, WJEC, and IGCSE/CAIE. Your school selects one board during setup and every lesson, resource, and mark scheme is tailored to that specification -- so nothing is wasted.',
   },
@@ -269,10 +269,10 @@ export default function ForTeachersPage() {
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14">
             {[
               { icon: Clock, color: 'text-primary bg-primary/10', value: '5hrs+', label: 'Saved Per Week' },
-              { icon: PenTool, color: 'text-emerald-400 bg-emerald-500/10', value: 'AI', label: 'Essay Marking' },
-              { icon: BookOpen, color: 'text-purple-400 bg-purple-500/10', value: '300+', label: 'Ready Resources' },
-              { icon: Award, color: 'text-amber-400 bg-amber-500/10', value: '5', label: 'Exam Boards' },
-              { icon: Users, color: 'text-blue-400 bg-blue-500/10', value: '1,000+', label: 'Teachers' },
+              { icon: PenTool, color: 'text-teal-700 bg-emerald-500/10', value: 'AI', label: 'Essay Marking' },
+              { icon: BookOpen, color: 'text-purple-600 bg-purple-500/10', value: '300+', label: 'Ready Resources' },
+              { icon: Award, color: 'text-amber-600 bg-amber-500/10', value: '5', label: 'Exam Boards' },
+              { icon: Users, color: 'text-blue-600 bg-blue-500/10', value: '1,000+', label: 'Teachers' },
             ].map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-8 sm:gap-14">
                 {i > 0 && <div className="hidden sm:block w-px h-10 bg-border/50" />}
@@ -299,7 +299,7 @@ export default function ForTeachersPage() {
           <div className="text-center mb-14">
             <Badge
               variant="outline"
-              className="border-emerald-500/20 bg-emerald-500/[0.06] text-emerald-400 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
+              className="border-emerald-500/20 bg-emerald-500/[0.06] text-teal-700 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
             >
               <Sparkles className="w-3.5 h-3.5" />
               Start Free
@@ -322,14 +322,14 @@ export default function ForTeachersPage() {
               },
               {
                 icon: PenTool,
-                color: 'text-emerald-400 bg-emerald-500/10',
+                color: 'text-teal-700 bg-emerald-500/10',
                 title: 'AI Marking',
                 desc: 'Students submit essays and get instant, detailed feedback aligned to your mark scheme. You review before they see it.',
                 uses: '3 free uses',
               },
               {
                 icon: FileText,
-                color: 'text-purple-400 bg-purple-500/10',
+                color: 'text-purple-600 bg-purple-500/10',
                 title: 'Worksheet Builder',
                 desc: 'Create differentiated worksheets with model answers at multiple levels -- ready to print or share digitally.',
                 uses: '3 free uses',
@@ -341,7 +341,7 @@ export default function ForTeachersPage() {
                 </div>
                 <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">{tool.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">{tool.desc}</p>
-                <Badge variant="outline" className="text-xs border-emerald-500/20 text-emerald-400 w-fit">
+                <Badge variant="outline" className="text-xs border-emerald-500/20 text-teal-700 w-fit">
                   {tool.uses}
                 </Badge>
               </Card>
@@ -406,14 +406,14 @@ export default function ForTeachersPage() {
               },
               {
                 icon: Layers,
-                color: "text-emerald-400 bg-emerald-500/10",
+                color: "text-teal-700 bg-emerald-500/10",
                 title: "Lesson Builder",
                 desc: "Build a full lesson plan aligned to your exam board in minutes.",
                 href: "/demo/teacher/lessons",
               },
               {
                 icon: BarChart3,
-                color: "text-blue-400 bg-blue-500/10",
+                color: "text-blue-600 bg-blue-500/10",
                 title: "Student Analytics",
                 desc: "Track progress, spot at-risk students, and view predicted grades.",
                 href: "/demo/teacher/students/s1",
@@ -540,7 +540,7 @@ export default function ForTeachersPage() {
                     <Sparkles className="w-4 h-4 text-primary" />
                   </div>
                   <span className="text-xs font-semibold text-primary uppercase tracking-wide">Lesson Generated</span>
-                  <Badge className="ml-auto text-xs bg-emerald-500/10 text-emerald-400 border-emerald-500/20">AQA</Badge>
+                  <Badge className="ml-auto text-xs bg-emerald-500/10 text-teal-700 border-emerald-500/20">AQA</Badge>
                 </div>
                 <h4 className="font-bold text-foreground mb-1">
                   An Inspector Calls -- Act 1: Birling's Monologue
@@ -569,14 +569,14 @@ export default function ForTeachersPage() {
 
               <Card className="p-4 border-border/40 bg-card/40">
                 <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-amber-400" />
+                  <FileText className="w-4 h-4 text-amber-600" />
                   <span className="text-sm font-medium text-foreground">Differentiated worksheet</span>
                   <span className="ml-auto text-xs text-muted-foreground">3 levels</span>
                 </div>
               </Card>
               <Card className="p-4 border-border/40 bg-card/40">
                 <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-blue-400" />
+                  <BookOpen className="w-4 h-4 text-blue-600" />
                   <span className="text-sm font-medium text-foreground">Model answer + mark scheme</span>
                   <span className="ml-auto text-xs text-muted-foreground">AQA aligned</span>
                 </div>
@@ -598,7 +598,7 @@ export default function ForTeachersPage() {
             <div className="space-y-4 order-2 lg:order-1">
               <Card className="p-6 border-border/40 bg-card/60">
                 <div className="flex items-center gap-2 mb-5">
-                  <BarChart3 className="w-5 h-5 text-blue-400" />
+                  <BarChart3 className="w-5 h-5 text-blue-600" />
                   <h4 className="font-semibold text-foreground">Class Progress -- Year 11 Set 1</h4>
                 </div>
                 <div className="space-y-4">
@@ -613,8 +613,8 @@ export default function ForTeachersPage() {
               <div className="grid grid-cols-2 gap-4">
                 <Card className="p-4 border-red-500/20 bg-red-500/[0.04]">
                   <div className="flex items-center gap-2 mb-3">
-                    <AlertTriangle className="w-4 h-4 text-red-400" />
-                    <span className="text-sm font-semibold text-red-400">At Risk</span>
+                    <AlertTriangle className="w-4 h-4 text-red-600" />
+                    <span className="text-sm font-semibold text-red-600">At Risk</span>
                   </div>
                   <div className="space-y-1.5">
                     {['Liam B.', 'Amara J.', 'Tyler R.'].map((name) => (
@@ -628,8 +628,8 @@ export default function ForTeachersPage() {
 
                 <Card className="p-4 border-emerald-500/20 bg-emerald-500/[0.04]">
                   <div className="flex items-center gap-2 mb-3">
-                    <TrendingUp className="w-4 h-4 text-emerald-400" />
-                    <span className="text-sm font-semibold text-emerald-400">Most Improved</span>
+                    <TrendingUp className="w-4 h-4 text-teal-700" />
+                    <span className="text-sm font-semibold text-teal-700">Most Improved</span>
                   </div>
                   <div className="space-y-1.5">
                     {['Priya M.', 'Daniel H.', 'Sofia C.'].map((name) => (
@@ -645,10 +645,10 @@ export default function ForTeachersPage() {
               <Card className="p-4 border-border/40 bg-card/60">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <ClipboardList className="w-4 h-4 text-purple-400" />
+                    <ClipboardList className="w-4 h-4 text-purple-600" />
                     <span className="text-sm font-semibold text-foreground">Assignment Completion</span>
                   </div>
-                  <span className="text-sm font-bold text-emerald-400">87%</span>
+                  <span className="text-sm font-bold text-teal-700">87%</span>
                 </div>
                 <div className="mt-3 h-2 bg-border/40 rounded-full overflow-hidden">
                   <div className="h-full w-[87%] bg-emerald-400 rounded-full" />
@@ -660,7 +660,7 @@ export default function ForTeachersPage() {
             <div className="order-1 lg:order-2">
               <Badge
                 variant="outline"
-                className="border-blue-500/20 bg-blue-500/[0.06] text-blue-400 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
+                className="border-blue-500/20 bg-blue-500/[0.06] text-blue-600 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
               >
                 <BarChart3 className="w-3.5 h-3.5" />
                 Analytics Dashboard
@@ -683,7 +683,7 @@ export default function ForTeachersPage() {
                   'Predicted grade trajectories',
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                     <span className="text-sm text-foreground">{point}</span>
                   </li>
                 ))}
@@ -739,7 +739,7 @@ export default function ForTeachersPage() {
               <Card key={t.name} className="p-6 border-border/40 bg-card/60 flex flex-col">
                 <div className="flex gap-0.5 mb-5">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-600" />
                   ))}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
@@ -765,7 +765,7 @@ export default function ForTeachersPage() {
           <div className="text-center mb-14">
             <Badge
               variant="outline"
-              className="border-amber-500/20 bg-amber-500/[0.06] text-amber-400 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
+              className="border-amber-500/20 bg-amber-500/[0.06] text-amber-600 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
             >
               <Download className="w-3.5 h-3.5" />
               Free Resources
@@ -780,7 +780,7 @@ export default function ForTeachersPage() {
           <Card className="max-w-2xl mx-auto p-8 border-border/40 bg-card/60 mb-10">
             <div className="flex items-center gap-2 mb-6">
               <div className="w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                <FileText className="w-5 h-5 text-amber-400" />
+                <FileText className="w-5 h-5 text-amber-600" />
               </div>
               <div>
                 <h3 className="font-bold text-foreground">An Inspector Calls -- Free Lesson Pack</h3>
@@ -796,7 +796,7 @@ export default function ForTeachersPage() {
                 "Differentiated activities (support/core/stretch)",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                   <span className="text-sm text-foreground">{item}</span>
                 </div>
               ))}
@@ -895,7 +895,7 @@ export default function ForTeachersPage() {
                   <span className="text-4xl font-bold text-foreground tracking-tight">£12.99</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
-                <p className="text-sm text-emerald-400 font-semibold mt-1.5">or £99.99/year -- save 36%</p>
+                <p className="text-sm text-teal-700 font-semibold mt-1.5">or £99.99/year -- save 36%</p>
               </div>
 
               <Separator className="my-6 opacity-40" />

@@ -284,16 +284,16 @@ export default function DashboardPage() {
 
   const quickActions = [
     { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-primary', bg: 'bg-primary/10' },
-    { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-400', bg: 'bg-blue-950/200/10' },
-    { label: 'Essay Feedback', href: '/dashboard/essay-feedback', icon: Sparkles, color: 'text-amber-400', bg: 'bg-amber-950/200/10' },
-    { label: 'Revision Cards', href: '/revision', icon: Layers, color: 'text-purple-400', bg: 'bg-purple-500/10' },
-    { label: 'Mock Exams', href: '/dashboard/mock-exam', icon: Timer, color: 'text-red-400', bg: 'bg-red-950/200/10' },
-    { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-400', bg: 'bg-green-500/10' },
-    { label: 'Reading Assessment', href: '/assessment/reading', icon: BookOpen, color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
-    { label: 'Analytics', href: '/dashboard/analytics', icon: BarChart3, color: 'text-cyan-400', bg: 'bg-cyan-500/10' },
+    { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-600', bg: 'bg-blue-950/200/10' },
+    { label: 'Essay Feedback', href: '/dashboard/essay-feedback', icon: Sparkles, color: 'text-amber-600', bg: 'bg-amber-950/200/10' },
+    { label: 'Revision Cards', href: '/revision', icon: Layers, color: 'text-purple-600', bg: 'bg-purple-500/10' },
+    { label: 'Mock Exams', href: '/dashboard/mock-exam', icon: Timer, color: 'text-red-600', bg: 'bg-red-950/200/10' },
+    { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-600', bg: 'bg-green-500/10' },
+    { label: 'Reading Assessment', href: '/assessment/reading', icon: BookOpen, color: 'text-teal-700', bg: 'bg-emerald-500/10' },
+    { label: 'Analytics', href: '/dashboard/analytics', icon: BarChart3, color: 'text-cyan-600', bg: 'bg-cyan-500/10' },
     ...(schoolInfo
-      ? [{ label: 'School Dashboard', href: '/school', icon: School, color: 'text-indigo-400', bg: 'bg-indigo-500/10' }]
-      : [{ label: 'Join School', href: '/school/join', icon: UserPlus, color: 'text-indigo-400', bg: 'bg-indigo-500/10' }]
+      ? [{ label: 'School Dashboard', href: '/school', icon: School, color: 'text-indigo-600', bg: 'bg-indigo-500/10' }]
+      : [{ label: 'Join School', href: '/school/join', icon: UserPlus, color: 'text-indigo-600', bg: 'bg-indigo-500/10' }]
     ),
   ]
 
@@ -442,7 +442,7 @@ export default function DashboardPage() {
                 <StatCard
                   icon={<CheckCircle className="h-5 w-5" />}
                   iconBg="bg-blue-950/200/10"
-                  iconColor="text-blue-400"
+                  iconColor="text-blue-600"
                   label="Completed"
                   value={completedModulesCount}
                   sub={completedModulesCount === 1 ? 'module' : 'modules'}
@@ -451,7 +451,7 @@ export default function DashboardPage() {
                 <StatCard
                   icon={<Trophy className="h-5 w-5" />}
                   iconBg="bg-yellow-500/10"
-                  iconColor="text-yellow-400"
+                  iconColor="text-yellow-600"
                   label="Certificates"
                   value={certificates.length}
                   sub={certificates.length === 1 ? 'earned' : 'earned'}
@@ -464,7 +464,7 @@ export default function DashboardPage() {
                       : <Sparkles className="h-5 w-5" />
                   }
                   iconBg={profile?.subscription_status === 'pro' ? 'bg-yellow-500/10' : 'bg-muted'}
-                  iconColor={profile?.subscription_status === 'pro' ? 'text-yellow-400' : 'text-muted-foreground'}
+                  iconColor={profile?.subscription_status === 'pro' ? 'text-yellow-600' : 'text-muted-foreground'}
                   label="Plan"
                   value={<SubscriptionBadge status={profile?.subscription_status ?? 'free'} />}
                   sub="current plan"
@@ -678,7 +678,7 @@ export default function DashboardPage() {
                           <div key={cert.id}>
                             <div className="flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-secondary">
                               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-yellow-500/10">
-                                <Award className="h-5 w-5 text-yellow-400" />
+                                <Award className="h-5 w-5 text-yellow-600" />
                               </div>
                               <div className="min-w-0 flex-1">
                                 <h2 className="truncate text-sm font-semibold text-foreground">
@@ -792,7 +792,7 @@ function SubscriptionBadge({
     <Badge
       variant={variantMap[status] ?? 'secondary'}
       className={cn(
-        status === 'pro' && 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
+        status === 'pro' && 'bg-yellow-500/10 text-yellow-600 border-yellow-500/30',
       )}
     >
       {status === 'pro' && <Crown className="mr-1 h-3.5 w-3.5" />}
@@ -812,8 +812,8 @@ function GradeBadge({ grade }: { grade: string }) {
   }
 
   const getColor = (): string => {
-    if (num >= 8) return 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30'
-    if (num >= 6) return 'bg-blue-500/15 text-blue-400 border-blue-500/30'
+    if (num >= 8) return 'bg-yellow-500/15 text-yellow-600 border-yellow-500/30'
+    if (num >= 6) return 'bg-blue-500/15 text-blue-600 border-blue-500/30'
     if (num >= 4) return 'bg-primary/15 text-primary border-primary/30'
     return 'bg-muted text-muted-foreground border-border'
   }

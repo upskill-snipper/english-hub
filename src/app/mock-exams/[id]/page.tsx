@@ -487,15 +487,15 @@ function calculateGrade(score: number, boundaries: GradeBoundary[]): number {
 }
 
 function getGradeColor(grade: number) {
-  if (grade >= 7) return 'text-emerald-400'
-  if (grade >= 5) return 'text-amber-400'
-  return 'text-red-400'
+  if (grade >= 7) return 'text-teal-800'
+  if (grade >= 5) return 'text-amber-700'
+  return 'text-red-600'
 }
 
 function getGradeBg(grade: number) {
-  if (grade >= 7) return 'bg-emerald-500/15 border-emerald-500/30'
-  if (grade >= 5) return 'bg-amber-500/15 border-amber-500/30'
-  return 'bg-red-500/15 border-red-500/30'
+  if (grade >= 7) return 'bg-teal-50 border-teal-200'
+  if (grade >= 5) return 'bg-amber-50 border-amber-200'
+  return 'bg-red-50 border-red-200'
 }
 
 function getGradeLabel(grade: number) {
@@ -535,13 +535,13 @@ function ExamIntro({
             'h-2',
             isLanguage
               ? 'bg-gradient-to-r from-blue-500 to-cyan-500'
-              : 'bg-gradient-to-r from-violet-500 to-pink-500'
+              : 'bg-gradient-to-r from-teal-800 to-clay-500'
           )}
         />
 
         <CardHeader>
           <div className="flex items-center gap-2 mb-3 flex-wrap">
-            <Badge className="bg-blue-500/15 text-blue-300 border-blue-500/30 text-xs">
+            <Badge className="bg-blue-50 text-blue-700 border-blue-200 text-xs">
               {paper.examBoard}
             </Badge>
             <Badge
@@ -549,8 +549,8 @@ function ExamIntro({
               className={cn(
                 'text-xs',
                 isLanguage
-                  ? 'border-cyan-500/30 text-cyan-300'
-                  : 'border-pink-500/30 text-pink-300'
+                  ? 'border-cyan-600/30 text-cyan-700'
+                  : 'border-pink-600/30 text-pink-700'
               )}
             >
               {isLanguage ? 'Language' : 'Literature'}
@@ -637,7 +637,7 @@ function ExamIntro({
 
           {/* Instructions */}
           <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
-            <h3 className="font-semibold text-amber-300 mb-2 flex items-center gap-2">
+            <h3 className="font-semibold text-amber-700 mb-2 flex items-center gap-2">
               <AlertCircle className="h-4 w-4" />
               Exam Conditions
             </h3>
@@ -1009,7 +1009,7 @@ function ExamView({
                   {timer.formatted}.
                 </p>
                 {answeredCount < paper.questions.length && (
-                  <p className="text-sm text-amber-400 mt-2 flex items-center justify-center gap-1">
+                  <p className="text-sm text-amber-600 mt-2 flex items-center justify-center gap-1">
                     <AlertCircle className="h-4 w-4" />
                     You have unanswered questions.
                   </p>
@@ -1048,7 +1048,7 @@ function ExamView({
                   isCurrent
                     ? 'bg-primary text-primary-foreground border-primary'
                     : hasAnswer
-                      ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30'
+                      ? 'bg-teal-50 text-teal-800 border-teal-200'
                       : 'bg-muted/50 text-muted-foreground border-border/40 hover:border-border'
                 )}
               >
@@ -1166,7 +1166,7 @@ function ResultsView({
             'h-2',
             isLanguage
               ? 'bg-gradient-to-r from-blue-500 to-cyan-500'
-              : 'bg-gradient-to-r from-violet-500 to-pink-500'
+              : 'bg-gradient-to-r from-teal-800 to-clay-500'
           )}
         />
 
@@ -1237,10 +1237,10 @@ function ResultsView({
                       ? 'ring-2 ring-primary ring-offset-1 ring-offset-background'
                       : '',
                     g >= 7
-                      ? 'bg-emerald-500/10 border-emerald-500/20'
+                      ? 'bg-teal-50 border-teal-200'
                       : g >= 5
-                        ? 'bg-amber-500/10 border-amber-500/20'
-                        : 'bg-slate-500/10 border-slate-500/20'
+                        ? 'bg-amber-50 border-amber-200'
+                        : 'bg-muted border-border'
                   )}
                 >
                   <div
@@ -1280,8 +1280,8 @@ function ResultsView({
                       className={cn(
                         'h-6 w-6 rounded-md flex items-center justify-center shrink-0',
                         hasAnswer
-                          ? 'bg-emerald-500/15 text-emerald-400'
-                          : 'bg-red-500/15 text-red-400'
+                          ? 'bg-teal-50 text-teal-800'
+                          : 'bg-red-50 text-red-600'
                       )}
                     >
                       {hasAnswer ? (
@@ -1366,8 +1366,8 @@ function ResultsView({
                       </div>
                     )}
                     {q.modelAnswer && (
-                      <div className="mt-3 p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
-                        <p className="text-xs font-semibold text-emerald-400 mb-1">
+                      <div className="mt-3 p-3 rounded-lg bg-teal-50/50 border border-teal-200">
+                        <p className="text-xs font-semibold text-teal-800 mb-1">
                           Example response (Grade 7+):
                         </p>
                         <p className="text-sm text-foreground/80 leading-relaxed">

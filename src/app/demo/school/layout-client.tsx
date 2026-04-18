@@ -162,7 +162,7 @@ export default function DemoSchoolLayoutClient({
         {mobileOpen && (
           <>
             <div
-              className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+              className="fixed inset-0 z-40 bg-ink-900/30 lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
             <aside className="fixed inset-y-0 left-0 z-50 w-60 bg-card shadow-xl lg:hidden">

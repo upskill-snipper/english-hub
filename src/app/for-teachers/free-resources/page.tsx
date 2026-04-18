@@ -262,7 +262,7 @@ export default function FreeResourcesPage() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {lesson.successCriteria.map((sc, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-emerald-400 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-teal-700 mt-0.5 shrink-0" />
                     <span>{sc}</span>
                   </li>
                 ))}
@@ -284,7 +284,7 @@ export default function FreeResourcesPage() {
             {/* Starter Activity */}
             <div className="rounded-lg border border-border/50 p-5 bg-muted/30">
               <div className="flex items-center gap-2 mb-3">
-                <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/30">Starter</Badge>
+                <Badge className="bg-amber-500/10 text-amber-600 border-amber-500/30">Starter</Badge>
                 <span className="text-sm font-medium">{lesson.starterActivity.title}</span>
                 <span className="text-xs text-muted-foreground ml-auto">{lesson.starterActivity.duration}</span>
               </div>
@@ -296,15 +296,15 @@ export default function FreeResourcesPage() {
                   <p className="font-medium text-foreground">Differentiation:</p>
                   <div className="grid gap-2 sm:grid-cols-3">
                     <div className="rounded-md border border-border/40 p-3 bg-background/50">
-                      <p className="font-medium text-blue-400 mb-1">Support</p>
+                      <p className="font-medium text-blue-600 mb-1">Support</p>
                       <p className="text-muted-foreground">{lesson.starterActivity.differentiation.support}</p>
                     </div>
                     <div className="rounded-md border border-border/40 p-3 bg-background/50">
-                      <p className="font-medium text-emerald-400 mb-1">Core</p>
+                      <p className="font-medium text-teal-700 mb-1">Core</p>
                       <p className="text-muted-foreground">{lesson.starterActivity.differentiation.core}</p>
                     </div>
                     <div className="rounded-md border border-border/40 p-3 bg-background/50">
-                      <p className="font-medium text-purple-400 mb-1">Stretch</p>
+                      <p className="font-medium text-purple-600 mb-1">Stretch</p>
                       <p className="text-muted-foreground">{lesson.starterActivity.differentiation.stretch}</p>
                     </div>
                   </div>
@@ -328,15 +328,15 @@ export default function FreeResourcesPage() {
                     <p className="font-medium text-foreground">Differentiation:</p>
                     <div className="grid gap-2 sm:grid-cols-3">
                       <div className="rounded-md border border-border/40 p-3 bg-background/50">
-                        <p className="font-medium text-blue-400 mb-1">Support</p>
+                        <p className="font-medium text-blue-600 mb-1">Support</p>
                         <p className="text-muted-foreground">{act.differentiation.support}</p>
                       </div>
                       <div className="rounded-md border border-border/40 p-3 bg-background/50">
-                        <p className="font-medium text-emerald-400 mb-1">Core</p>
+                        <p className="font-medium text-teal-700 mb-1">Core</p>
                         <p className="text-muted-foreground">{act.differentiation.core}</p>
                       </div>
                       <div className="rounded-md border border-border/40 p-3 bg-background/50">
-                        <p className="font-medium text-purple-400 mb-1">Stretch</p>
+                        <p className="font-medium text-purple-600 mb-1">Stretch</p>
                         <p className="text-muted-foreground">{act.differentiation.stretch}</p>
                       </div>
                     </div>
@@ -359,15 +359,15 @@ export default function FreeResourcesPage() {
                   <p className="font-medium text-foreground">Differentiation:</p>
                   <div className="grid gap-2 sm:grid-cols-3">
                     <div className="rounded-md border border-border/40 p-3 bg-background/50">
-                      <p className="font-medium text-blue-400 mb-1">Support</p>
+                      <p className="font-medium text-blue-600 mb-1">Support</p>
                       <p className="text-muted-foreground">{lesson.plenaryActivity.differentiation.support}</p>
                     </div>
                     <div className="rounded-md border border-border/40 p-3 bg-background/50">
-                      <p className="font-medium text-emerald-400 mb-1">Core</p>
+                      <p className="font-medium text-teal-700 mb-1">Core</p>
                       <p className="text-muted-foreground">{lesson.plenaryActivity.differentiation.core}</p>
                     </div>
                     <div className="rounded-md border border-border/40 p-3 bg-background/50">
-                      <p className="font-medium text-purple-400 mb-1">Stretch</p>
+                      <p className="font-medium text-purple-600 mb-1">Stretch</p>
                       <p className="text-muted-foreground">{lesson.plenaryActivity.differentiation.stretch}</p>
                     </div>
                   </div>
@@ -389,7 +389,7 @@ export default function FreeResourcesPage() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {lesson.teacherNotes.map((note, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <Star className="h-4 w-4 text-amber-400 mt-0.5 shrink-0" />
+                    <Star className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
                     <span>{note}</span>
                   </li>
                 ))}
@@ -415,7 +415,7 @@ export default function FreeResourcesPage() {
         <section>
           <div className="flex items-center gap-3 mb-6">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10">
-              <ClipboardList className="h-5 w-5 text-emerald-400" />
+              <ClipboardList className="h-5 w-5 text-teal-700" />
             </div>
             <div>
               <h2 className="text-2xl font-bold">Worksheet</h2>
@@ -473,7 +473,7 @@ export default function FreeResourcesPage() {
                       </button>
                       {showAnswers[i] && (
                         <div className="mt-3 rounded-md border border-emerald-500/20 bg-emerald-500/5 p-4">
-                          <p className="text-xs font-medium text-emerald-400 mb-2">Model Answer:</p>
+                          <p className="text-xs font-medium text-teal-700 mb-2">Model Answer:</p>
                           <p className="text-sm text-muted-foreground leading-relaxed">
                             {q.modelAnswer}
                           </p>
@@ -502,7 +502,7 @@ export default function FreeResourcesPage() {
         <section>
           <div className="flex items-center gap-3 mb-6">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/10">
-              <BookOpen className="h-5 w-5 text-purple-400" />
+              <BookOpen className="h-5 w-5 text-purple-600" />
             </div>
             <div>
               <h2 className="text-2xl font-bold">Teaching Guide Excerpt</h2>
@@ -517,7 +517,7 @@ export default function FreeResourcesPage() {
               <ul className="space-y-3 text-sm text-muted-foreground">
                 {teachingGuide.contextNotes.map((note, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <BookOpen className="h-4 w-4 text-purple-400 mt-0.5 shrink-0" />
+                    <BookOpen className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
                     <span>{note}</span>
                   </li>
                 ))}
@@ -599,7 +599,7 @@ export default function FreeResourcesPage() {
         <section>
           <div className="flex items-center gap-3 mb-6">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10">
-              <PenTool className="h-5 w-5 text-amber-400" />
+              <PenTool className="h-5 w-5 text-amber-600" />
             </div>
             <div>
               <h2 className="text-2xl font-bold">Key Quotes Worksheet</h2>
@@ -634,7 +634,7 @@ export default function FreeResourcesPage() {
         <section>
           <div className="flex items-center gap-3 mb-6">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10">
-              <BarChart3 className="h-5 w-5 text-red-400" />
+              <BarChart3 className="h-5 w-5 text-red-600" />
             </div>
             <div>
               <h2 className="text-2xl font-bold">Mark Scheme</h2>

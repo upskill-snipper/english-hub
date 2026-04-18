@@ -56,49 +56,49 @@ const demos = [
 
 const accentStyles = {
   blue: {
-    border: "border-blue-500/30",
-    bg: "bg-blue-500/10",
-    text: "text-blue-400",
-    hoverBg: "hover:bg-blue-500/20",
-    badge: "bg-blue-500/15 text-blue-400 border-blue-500/30",
-    glow: "group-hover:shadow-blue-500/10",
-    iconBg: "bg-blue-500/15",
+    border: "border-teal-800/30",
+    bg: "bg-teal-800/10",
+    text: "text-teal-700",
+    hoverBg: "hover:bg-teal-700/20",
+    badge: "bg-teal-800/15 text-teal-700 border-teal-800/30",
+    glow: "group-hover:shadow-teal-800/10",
+    iconBg: "bg-teal-800/15",
   },
   green: {
-    border: "border-emerald-500/30",
-    bg: "bg-emerald-500/10",
-    text: "text-emerald-400",
-    hoverBg: "hover:bg-emerald-500/20",
-    badge: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
-    glow: "group-hover:shadow-emerald-500/10",
-    iconBg: "bg-emerald-500/15",
+    border: "border-teal-800/30",
+    bg: "bg-teal-800/10",
+    text: "text-teal-700",
+    hoverBg: "hover:bg-teal-800/10",
+    badge: "bg-teal-800/10 text-teal-700 border-teal-800/30",
+    glow: "group-hover:shadow-teal-800/10",
+    iconBg: "bg-teal-800/10",
   },
   purple: {
-    border: "border-purple-500/30",
-    bg: "bg-purple-500/10",
-    text: "text-purple-400",
-    hoverBg: "hover:bg-purple-500/20",
-    badge: "bg-purple-500/15 text-purple-400 border-purple-500/30",
-    glow: "group-hover:shadow-purple-500/10",
-    iconBg: "bg-purple-500/15",
+    border: "border-clay-500/30",
+    bg: "bg-clay-500/10",
+    text: "text-clay-600",
+    hoverBg: "hover:bg-clay-500/10",
+    badge: "bg-clay-500/10 text-clay-600 border-clay-500/30",
+    glow: "group-hover:shadow-clay-500/10",
+    iconBg: "bg-clay-500/10",
   },
 } as const
 
 export default function DemoHub() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       {/* Hero */}
       <section className="mx-auto max-w-5xl px-6 pt-20 pb-16 text-center">
-        <Badge variant="outline" className="mb-6 border-white/10 text-neutral-400">
+        <Badge variant="outline" className="mb-6 border-ink-200 text-ink-600">
           No signup required
         </Badge>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
           Try The English Hub{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-800 via-teal-600 to-clay-500">
             Free Interactive Demo
           </span>
         </h1>
-        <p className="text-lg sm:text-xl text-neutral-400 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-ink-600 max-w-2xl mx-auto">
           Explore the full platform with sample data. No signup, no email
           required. Click any demo to start.
         </p>
@@ -114,7 +114,7 @@ export default function DemoHub() {
             return (
               <Card
                 key={demo.href}
-                className={`group relative bg-white/[0.02] border-white/5 hover:border-white/10 transition-all duration-300 hover:shadow-xl ${styles.glow}`}
+                className={`group relative bg-white border-ink-200 hover:border-ink-200 transition-all duration-300 hover:shadow-xl ${styles.glow}`}
               >
                 <CardHeader>
                   <div
@@ -122,10 +122,10 @@ export default function DemoHub() {
                   >
                     <Icon className={`size-6 ${styles.text}`} />
                   </div>
-                  <CardTitle className="text-xl text-white">
+                  <CardTitle className="text-xl text-ink-900">
                     {demo.title}
                   </CardTitle>
-                  <CardDescription className="text-neutral-400 text-sm leading-relaxed">
+                  <CardDescription className="text-ink-600 text-sm leading-relaxed">
                     {demo.description}
                   </CardDescription>
                 </CardHeader>
@@ -135,7 +135,7 @@ export default function DemoHub() {
                     {demo.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center gap-2.5 text-sm text-neutral-300"
+                        className="flex items-center gap-2.5 text-sm text-ink-600"
                       >
                         <CheckCircle2
                           className={`size-4 shrink-0 ${styles.text}`}
@@ -147,16 +147,16 @@ export default function DemoHub() {
                 </CardContent>
 
                 {/* Screenshot placeholder */}
-                <div className="mx-5 mb-4 rounded-lg border border-white/5 bg-white/[0.02] p-4">
+                <div className="mx-5 mb-4 rounded-lg border border-ink-200 bg-white p-4">
                   <div className="flex items-center gap-1.5 mb-2">
-                    <div className="size-2 rounded-full bg-white/10" />
-                    <div className="size-2 rounded-full bg-white/10" />
-                    <div className="size-2 rounded-full bg-white/10" />
+                    <div className="size-2 rounded-full bg-cream-100" />
+                    <div className="size-2 rounded-full bg-cream-100" />
+                    <div className="size-2 rounded-full bg-cream-100" />
                   </div>
                   <div className="space-y-1.5">
-                    <div className="h-2 rounded bg-white/5 w-3/4" />
-                    <div className="h-2 rounded bg-white/5 w-1/2" />
-                    <div className="h-2 rounded bg-white/5 w-2/3" />
+                    <div className="h-2 rounded bg-cream-100 w-3/4" />
+                    <div className="h-2 rounded bg-cream-100 w-1/2" />
+                    <div className="h-2 rounded bg-cream-100 w-2/3" />
                   </div>
                 </div>
 
@@ -178,7 +178,7 @@ export default function DemoHub() {
 
       {/* Free resources */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 flex flex-col sm:flex-row items-center gap-6">
+        <div className="rounded-2xl border border-ink-200 bg-white p-8 flex flex-col sm:flex-row items-center gap-6">
           <div className="flex-1 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
               <Sparkles className="size-5 text-amber-400" />
@@ -186,10 +186,10 @@ export default function DemoHub() {
                 Free Resources
               </span>
             </div>
-            <p className="text-white text-lg font-medium mb-1">
+            <p className="text-ink-900 text-lg font-medium mb-1">
               Free teaching materials pack for An Inspector Calls
             </p>
-            <p className="text-neutral-500 text-sm">
+            <p className="text-ink-500 text-sm">
               Lesson plans, worksheets, and revision guides -- ready to download.
             </p>
           </div>
@@ -208,10 +208,10 @@ export default function DemoHub() {
       {/* Bottom CTA */}
       <section className="mx-auto max-w-5xl px-6 pb-24">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-ink-900 mb-3">
             Ready to get started?
           </h2>
-          <p className="text-neutral-400 mb-8 max-w-lg mx-auto">
+          <p className="text-ink-600 mb-8 max-w-lg mx-auto">
             Choose the plan that fits your needs. Schools get full access with
             the FOUNDER plan -- completely free.
           </p>
@@ -220,7 +220,7 @@ export default function DemoHub() {
                 Register School
                 <Badge
                   variant="secondary"
-                  className="ml-2 bg-white/20 text-white text-[10px] border-0"
+                  className="ml-2 bg-teal-800/10 text-teal-800 text-[10px] border-0"
                 >
                   FREE WITH FOUNDER
                 </Badge>
@@ -229,7 +229,7 @@ export default function DemoHub() {
               render={<Link href="/auth/teacher-register" />}
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+              className="w-full sm:w-auto border-teal-800/30 text-teal-700 hover:bg-teal-800/10"
             >
               Teacher Free Trial
             </Button>
@@ -237,7 +237,7 @@ export default function DemoHub() {
               render={<Link href="/auth/register" />}
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto border-purple-500/30 text-purple-400 hover:bg-purple-500/10"
+              className="w-full sm:w-auto border-clay-500/30 text-clay-600 hover:bg-clay-500/10"
             >
               Student Free Trial
             </Button>

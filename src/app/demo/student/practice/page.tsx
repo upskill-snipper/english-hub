@@ -153,7 +153,7 @@ export default function StudentPracticeDemoPage() {
     const paper = EXAM_PAPERS.find((p) => p.id === activePaper)
 
     return (
-      <div className="min-h-screen bg-[#0a0a0a] text-white">
+      <div className="min-h-screen bg-cream-50 text-ink-900">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <DemoBanner message="Practice mode demo -- answers are not saved." />
 
@@ -161,34 +161,34 @@ export default function StudentPracticeDemoPage() {
           <div className="mt-6 flex items-center justify-between">
             <button
               onClick={handleBackToGrid}
-              className="flex items-center gap-2 text-white/50 hover:text-white/80 transition-colors text-sm"
+              className="flex items-center gap-2 text-ink-500 hover:text-ink-900 transition-colors text-sm"
             >
               <ChevronLeft className="h-4 w-4" />
               Back to papers
             </button>
-            <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2">
+            <div className="flex items-center gap-2 rounded-lg border border-ink-200 bg-cream-100 px-4 py-2">
               <Timer className="h-4 w-4 text-amber-400" />
-              <span className="font-mono text-sm text-white/70">{formatTime(timerSeconds)}</span>
+              <span className="font-mono text-sm text-ink-600">{formatTime(timerSeconds)}</span>
             </div>
           </div>
 
           {/* Paper title */}
           <div className="mt-6 mb-8">
-            <h1 className="text-2xl font-light tracking-tight text-white/90">
+            <h1 className="text-2xl font-light tracking-tight text-ink-900">
               {paper?.name}
             </h1>
-            <p className="text-white/40 text-sm mt-1">Sample Question -- {SAMPLE_QUESTION.topic}</p>
+            <p className="text-ink-500 text-sm mt-1">Sample Question -- {SAMPLE_QUESTION.topic}</p>
           </div>
 
           {/* Question */}
-          <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 mb-6">
+          <div className="rounded-xl border border-ink-200 bg-white p-6 mb-6">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-sm font-medium text-white/60">Question 1</span>
-              <span className="rounded-full bg-blue-500/15 border border-blue-500/20 px-3 py-1 text-xs text-blue-400">
+              <span className="text-sm font-medium text-ink-600">Question 1</span>
+              <span className="rounded-full bg-blue-500/15 border border-teal-800/20 px-3 py-1 text-xs text-teal-700">
                 {SAMPLE_QUESTION.marks} marks
               </span>
             </div>
-            <p className="text-white/80 leading-relaxed whitespace-pre-line">
+            <p className="text-ink-900 leading-relaxed whitespace-pre-line">
               {SAMPLE_QUESTION.text}
             </p>
           </div>
@@ -200,7 +200,7 @@ export default function StudentPracticeDemoPage() {
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 placeholder="Write your answer here..."
-                className="w-full h-48 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-white/80 placeholder:text-white/20 focus:outline-none focus:border-white/20 resize-none text-sm leading-relaxed"
+                className="w-full h-48 rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900 placeholder:text-ink-500 focus:outline-none focus:border-ink-200 resize-none text-sm leading-relaxed"
               />
               <div className="flex items-center justify-between mt-4">
                 <div className="space-y-1">
@@ -214,7 +214,7 @@ export default function StudentPracticeDemoPage() {
                     {answer.split(/\s+/).filter(Boolean).length} / 100 words
                   </p>
                   {answer.split(/\s+/).filter(Boolean).length < 100 && (
-                    <p className="text-xs text-white/30">
+                    <p className="text-xs text-ink-500">
                       Write at least 100 words to submit your response
                     </p>
                   )}
@@ -222,7 +222,7 @@ export default function StudentPracticeDemoPage() {
                 <button
                   onClick={handleSubmit}
                   disabled={answer.split(/\s+/).filter(Boolean).length < 100}
-                  className="flex items-center gap-2 rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-amber-400 transition-colors disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-amber-500"
+                  className="flex items-center gap-2 rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-amber-400 transition-colors disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-amber-500"
                 >
                   <Send className="h-4 w-4" />
                   Submit Answer
@@ -244,15 +244,15 @@ export default function StudentPracticeDemoPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs text-white/40">
+                <div className="flex items-center gap-2 text-xs text-ink-500">
                   <Clock className="h-3.5 w-3.5" />
                   <span>Completed in {formatTime(timerSeconds)}</span>
                 </div>
               </div>
 
               {/* AI Feedback */}
-              <div className="rounded-xl border border-blue-500/20 bg-blue-500/5 p-6">
-                <h3 className="text-sm font-semibold text-blue-400 mb-4 flex items-center gap-2">
+              <div className="rounded-xl border border-teal-800/20 bg-blue-500/5 p-6">
+                <h3 className="text-sm font-semibold text-teal-700 mb-4 flex items-center gap-2">
                   <Star className="h-4 w-4" />
                   AI Feedback
                 </h3>
@@ -266,7 +266,7 @@ export default function StudentPracticeDemoPage() {
                     </h4>
                     <ul className="space-y-2">
                       {MODEL_ANSWER.strengths.map((s, i) => (
-                        <li key={i} className="text-sm text-white/60 flex items-start gap-2">
+                        <li key={i} className="text-sm text-ink-600 flex items-start gap-2">
                           <span className="text-green-500 mt-0.5">+</span>
                           {s}
                         </li>
@@ -282,7 +282,7 @@ export default function StudentPracticeDemoPage() {
                     </h4>
                     <ul className="space-y-2">
                       {MODEL_ANSWER.improvements.map((imp, i) => (
-                        <li key={i} className="text-sm text-white/60 flex items-start gap-2">
+                        <li key={i} className="text-sm text-ink-600 flex items-start gap-2">
                           <span className="text-amber-500 mt-0.5">-</span>
                           {imp}
                         </li>
@@ -293,20 +293,20 @@ export default function StudentPracticeDemoPage() {
               </div>
 
               {/* Model Answer */}
-              <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6">
-                <h3 className="text-sm font-semibold text-white/70 mb-3">Model Answer</h3>
-                <p className="text-sm text-white/50 leading-relaxed">
+              <div className="rounded-xl border border-ink-200 bg-white p-6">
+                <h3 className="text-sm font-semibold text-ink-600 mb-3">Model Answer</h3>
+                <p className="text-sm text-ink-500 leading-relaxed">
                   {MODEL_ANSWER.modelResponse}
                 </p>
               </div>
 
               {/* Mark Scheme */}
-              <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6">
-                <h3 className="text-sm font-semibold text-white/70 mb-3">Mark Scheme Criteria</h3>
+              <div className="rounded-xl border border-ink-200 bg-white p-6">
+                <h3 className="text-sm font-semibold text-ink-600 mb-3">Mark Scheme Criteria</h3>
                 <ul className="space-y-2">
                   {MODEL_ANSWER.markScheme.map((criterion, i) => (
-                    <li key={i} className="text-sm text-white/50 flex items-start gap-2">
-                      <AlertCircle className="h-4 w-4 text-white/20 mt-0.5 shrink-0" />
+                    <li key={i} className="text-sm text-ink-500 flex items-start gap-2">
+                      <AlertCircle className="h-4 w-4 text-ink-500 mt-0.5 shrink-0" />
                       {criterion}
                     </li>
                   ))}
@@ -320,7 +320,7 @@ export default function StudentPracticeDemoPage() {
                 </p>
                 <Link
                   href="/for-schools/register"
-                  className="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-amber-400 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-amber-400 transition-colors"
                 >
                   Start free trial
                 </Link>
@@ -335,16 +335,16 @@ export default function StudentPracticeDemoPage() {
   // ── Grid view ─────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       <div className="max-w-6xl mx-auto px-6 py-8">
         <DemoBanner message="Practice mode demo -- answers are not saved." />
 
         {/* Header */}
         <div className="mt-6 mb-8">
-          <h1 className="text-3xl font-light tracking-tight text-white/90">
+          <h1 className="text-3xl font-light tracking-tight text-ink-900">
             Practice & Revision
           </h1>
-          <p className="text-white/40 text-sm mt-1">
+          <p className="text-ink-500 text-sm mt-1">
             Mock exam papers with AI-powered marking and feedback
           </p>
         </div>
@@ -354,28 +354,28 @@ export default function StudentPracticeDemoPage() {
           {EXAM_PAPERS.map((paper) => (
             <div
               key={paper.id}
-              className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 hover:border-white/10 hover:bg-white/[0.03] transition-all group"
+              className="rounded-xl border border-ink-200 bg-white p-5 hover:border-ink-200 hover:bg-white transition-all group"
             >
               {/* Header */}
               <div className="flex items-start justify-between mb-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/10">
-                  <FileText className="h-5 w-5 text-blue-400" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-800/10">
+                  <FileText className="h-5 w-5 text-teal-700" />
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-sm font-medium text-white/80 mb-1 leading-snug">
+              <h3 className="text-sm font-medium text-ink-900 mb-1 leading-snug">
                 {paper.name}
               </h3>
-              <p className="text-xs text-white/30 mb-4">{paper.subject}</p>
+              <p className="text-xs text-ink-500 mb-4">{paper.subject}</p>
 
               {/* Meta */}
               <div className="flex items-center gap-3 mb-4">
-                <span className="flex items-center gap-1.5 rounded-md bg-white/5 px-2.5 py-1 text-xs text-white/50">
+                <span className="flex items-center gap-1.5 rounded-md bg-cream-100 px-2.5 py-1 text-xs text-ink-500">
                   <Clock className="h-3 w-3" />
                   {paper.duration}
                 </span>
-                <span className="flex items-center gap-1.5 rounded-md bg-white/5 px-2.5 py-1 text-xs text-white/50">
+                <span className="flex items-center gap-1.5 rounded-md bg-cream-100 px-2.5 py-1 text-xs text-ink-500">
                   <FileText className="h-3 w-3" />
                   {paper.questions} questions
                 </span>
@@ -384,7 +384,7 @@ export default function StudentPracticeDemoPage() {
               {/* Start button */}
               <button
                 onClick={() => handleStartPractice(paper.id)}
-                className="w-full flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white/60 hover:bg-white/10 hover:text-white/80 transition-all group-hover:border-amber-500/20 group-hover:text-amber-400"
+                className="w-full flex items-center justify-center gap-2 rounded-lg border border-ink-200 bg-cream-100 px-4 py-2.5 text-sm text-ink-600 hover:bg-cream-100 hover:text-ink-900 transition-all group-hover:border-amber-500/20 group-hover:text-amber-400"
               >
                 <Play className="h-3.5 w-3.5" />
                 Start Practice

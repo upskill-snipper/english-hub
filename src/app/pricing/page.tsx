@@ -156,7 +156,7 @@ function FeatureRow({
   return (
     <li className="flex items-center gap-2.5 text-sm text-muted-foreground">
       {included ? (
-        <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+        <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
       ) : (
         <X className="w-4 h-4 text-muted-foreground/40 shrink-0" />
       )}
@@ -164,7 +164,7 @@ function FeatureRow({
         {feature}
       </span>
       {free && included && (
-        <Badge variant="outline" className="text-[10px] px-1.5 py-0 border-emerald-500/30 text-emerald-400 ml-auto">
+        <Badge variant="outline" className="text-[10px] px-1.5 py-0 border-emerald-500/30 text-emerald-600 ml-auto">
           Free
         </Badge>
       )}
@@ -252,8 +252,8 @@ export default function PricingPage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 sm:p-8 text-center">
             <div className="flex items-center justify-center gap-2 mb-3">
-              <Gift className="w-5 h-5 text-emerald-400" />
-              <span className="font-bold text-emerald-400 text-sm uppercase tracking-wider">
+              <Gift className="w-5 h-5 text-emerald-600" />
+              <span className="font-bold text-emerald-600 text-sm uppercase tracking-wider">
                 Start free
               </span>
             </div>
@@ -315,13 +315,13 @@ export default function PricingPage() {
                     <span className="text-muted-foreground text-sm ml-1">/year</span>
                     <Badge
                       variant="outline"
-                      className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-400 text-xs font-semibold"
+                      className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-600 text-xs font-semibold"
                     >
                       Save {studentSavings}%
                     </Badge>
                   </div>
                 </div>
-                <p className="text-sm text-emerald-400 font-semibold mb-6">
+                <p className="text-sm text-emerald-600 font-semibold mb-6">
                   First month FREE on the monthly plan
                 </p>
 
@@ -409,13 +409,13 @@ export default function PricingPage() {
                     <span className="text-muted-foreground text-sm ml-1">/year</span>
                     <Badge
                       variant="outline"
-                      className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-400 text-xs font-semibold"
+                      className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-600 text-xs font-semibold"
                     >
                       Save {teacherSavings}%
                     </Badge>
                   </div>
                 </div>
-                <p className="text-sm text-emerald-400 font-semibold mb-6">
+                <p className="text-sm text-emerald-600 font-semibold mb-6">
                   First month FREE on the monthly plan
                 </p>
 
@@ -440,7 +440,7 @@ export default function PricingPage() {
                 <div className="mb-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                     Premium
-                    <span className="text-purple-400/70 normal-case ml-1">
+                    <span className="text-purple-600/70 normal-case ml-1">
                       — {PRICING.FREE_USES_PER_FEATURE} free, then unlimited
                     </span>
                   </p>
@@ -478,7 +478,7 @@ export default function PricingPage() {
           <div className="text-center mb-14">
             <Badge
               variant="outline"
-              className="bg-amber-500/10 border-amber-500/25 text-amber-400 text-sm font-bold mb-6 gap-2 px-4 py-1.5"
+              className="bg-amber-500/10 border-amber-500/25 text-amber-600 text-sm font-bold mb-6 gap-2 px-4 py-1.5"
             >
               <School className="w-4 h-4" />
               Limited to 10 Schools
@@ -513,7 +513,7 @@ export default function PricingPage() {
 
               {/* What schools receive */}
               <div className="max-w-lg mx-auto mb-10">
-                <p className="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-4 text-center">
+                <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 mb-4 text-center">
                   What your school receives
                 </p>
                 <ul className="space-y-3">
@@ -522,7 +522,7 @@ export default function PricingPage() {
                       key={item}
                       className="flex items-start gap-2.5 text-sm text-muted-foreground"
                     >
-                      <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                       {item}
                     </li>
                   ))}
@@ -532,7 +532,7 @@ export default function PricingPage() {
               {/* Closing note */}
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-4 text-center mb-8">
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-amber-400">
+                  <span className="font-semibold text-amber-600">
                     This programme closes when 10 schools are onboarded.
                   </span>{' '}
                   Once all places are filled, entry will not reopen at this pricing.
@@ -576,14 +576,14 @@ export default function PricingPage() {
               {
                 step: '2',
                 icon: Sparkles,
-                color: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+                color: 'text-purple-600 bg-purple-500/10 border-purple-500/20',
                 title: 'Explore',
                 desc: `Every premium feature includes ${PRICING.FREE_USES_PER_FEATURE} free uses. Try AI marking, mock exams, lesson plans, and more.`,
               },
               {
                 step: '3',
                 icon: Zap,
-                color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+                color: 'text-emerald-600 bg-emerald-500/10 border-emerald-500/20',
                 title: 'Upgrade',
                 desc: 'When you\'re ready, subscribe and get your first month free on any monthly plan.',
               },

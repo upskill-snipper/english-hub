@@ -142,13 +142,13 @@ function formatNumber(n: number): string {
 function getDifficultyColor(difficulty: QuestionDifficulty['difficulty']): string {
   switch (difficulty) {
     case 'easy':
-      return 'text-green-600 bg-green-50'
+      return 'text-emerald-700 bg-emerald-500/10'
     case 'medium':
-      return 'text-yellow-600 bg-yellow-50'
+      return 'text-amber-700 bg-amber-500/10'
     case 'hard':
-      return 'text-orange-600 bg-orange-50'
+      return 'text-orange-700 bg-orange-500/10'
     case 'very-hard':
-      return 'text-red-600 bg-red-50'
+      return 'text-red-700 bg-red-500/10'
   }
 }
 
@@ -166,11 +166,11 @@ function getTrendIcon(direction: TextPopularity['trendDirection']): string {
 function getTrendColor(direction: TextPopularity['trendDirection']): string {
   switch (direction) {
     case 'rising':
-      return 'text-green-600'
+      return 'text-emerald-600'
     case 'falling':
       return 'text-red-600'
     case 'stable':
-      return 'text-gray-500'
+      return 'text-muted-foreground'
   }
 }
 
@@ -225,15 +225,15 @@ function TextPopularityBadge({
 
   if (!text) {
     return (
-      <div className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1 text-sm text-gray-600">
-        <span className="inline-block h-2 w-2 rounded-full bg-gray-400" />
+      <div className="inline-flex items-center gap-1.5 rounded-full bg-cream-100 px-3 py-1 text-sm text-ink-600">
+        <span className="inline-block h-2 w-2 rounded-full bg-ink-400" />
         <span>{formatNumber(data.totalStudents)} students on the platform</span>
       </div>
     )
   }
 
   return (
-    <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">
+    <div className="inline-flex items-center gap-1.5 rounded-full bg-teal-500/10 px-3 py-1 text-sm text-teal-800">
       <span className="inline-block h-2 w-2 rounded-full bg-blue-500" />
       <span>
         <strong>{formatNumber(text.totalStudents)}</strong> students have studied this text
@@ -259,7 +259,7 @@ function QuizScoreBadge({
   const avgScore = board?.avgQuizScore ?? 67
 
   return (
-    <div className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm text-purple-700">
+    <div className="inline-flex items-center gap-1.5 rounded-full bg-clay-500/10 px-3 py-1 text-sm text-clay-700">
       <span className="inline-block h-2 w-2 rounded-full bg-purple-500" />
       <span>
         Average quiz score: <strong>{avgScore}%</strong>
@@ -278,27 +278,27 @@ function PopularTextsWidget({ data }: { data: AggregateSnapshot }) {
   const isWeekly = data.weeklyPopularTexts.length > 0
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-      <h3 className="mb-3 text-sm font-semibold text-gray-900">
+    <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
+      <h3 className="mb-3 text-sm font-semibold text-foreground">
         {isWeekly ? 'Most Popular This Week' : 'Most Studied Texts'}
       </h3>
       <ul className="space-y-2">
         {texts.map((text, i) => (
           <li
             key={text.textId}
-            className="flex items-center justify-between rounded-md px-2 py-1.5 hover:bg-gray-50"
+            className="flex items-center justify-between rounded-md px-2 py-1.5 hover:bg-cream-100"
           >
             <div className="flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 text-xs font-medium text-gray-600">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-cream-100 text-xs font-medium text-ink-600">
                 {i + 1}
               </span>
               <div>
-                <p className="text-sm font-medium text-gray-900">{text.textTitle}</p>
-                <p className="text-xs text-gray-500">{text.author}</p>
+                <p className="text-sm font-medium text-foreground">{text.textTitle}</p>
+                <p className="text-xs text-muted-foreground">{text.author}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-muted-foreground">
                 {formatNumber(text.totalStudents)} students
               </span>
               <span className={`text-xs ${getTrendColor(text.trendDirection)}`}>
@@ -316,18 +316,18 @@ function HardestQuestionsWidget({ data }: { data: AggregateSnapshot }) {
   const questions = data.hardestQuestions.slice(0, 5)
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-      <h3 className="mb-3 text-sm font-semibold text-gray-900">
+    <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
+      <h3 className="mb-3 text-sm font-semibold text-foreground">
         Hardest Questions
       </h3>
       <ul className="space-y-2">
         {questions.map((q, i) => (
           <li
             key={q.questionId}
-            className="rounded-md border border-gray-100 px-3 py-2"
+            className="rounded-md border border-border/60 px-3 py-2"
           >
             <div className="mb-1 flex items-start justify-between gap-2">
-              <p className="text-sm text-gray-900 line-clamp-2">
+              <p className="text-sm text-foreground line-clamp-2">
                 {q.questionText}
               </p>
               <span
@@ -338,15 +338,15 @@ function HardestQuestionsWidget({ data }: { data: AggregateSnapshot }) {
                 {q.difficulty.replace('-', ' ')}
               </span>
             </div>
-            <div className="flex items-center gap-3 text-xs text-gray-500">
+            <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <span>{q.moduleName}</span>
               <span>{q.correctRate}% correct</span>
               <span>{formatNumber(q.totalAttempts)} attempts</span>
             </div>
             {/* Difficulty bar */}
-            <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
+            <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-ink-200/30">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-red-500 to-green-500"
+                className="h-full rounded-full bg-gradient-to-r from-red-500 to-emerald-500"
                 style={{ width: `${q.correctRate}%` }}
               />
             </div>
@@ -362,41 +362,41 @@ function FullDashboard({ data }: { data: AggregateSnapshot }) {
     <div className="space-y-6">
       {/* Summary Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
+        <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
             Total Students
           </p>
-          <p className="mt-1 text-2xl font-bold text-gray-900">
+          <p className="mt-1 text-2xl font-bold text-foreground">
             {formatNumber(data.totalStudents)}
           </p>
         </div>
-        <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
+        <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
             Quiz Attempts
           </p>
-          <p className="mt-1 text-2xl font-bold text-gray-900">
+          <p className="mt-1 text-2xl font-bold text-foreground">
             {formatNumber(data.totalQuizAttempts)}
           </p>
         </div>
-        <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
+        <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
             Texts Studied
           </p>
-          <p className="mt-1 text-2xl font-bold text-gray-900">
+          <p className="mt-1 text-2xl font-bold text-foreground">
             {data.totalTextsStudied}
           </p>
         </div>
       </div>
 
       {/* Board Scores */}
-      <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-        <h3 className="mb-3 text-sm font-semibold text-gray-900">
+      <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
+        <h3 className="mb-3 text-sm font-semibold text-foreground">
           Average Scores by Exam Board
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-gray-100 text-xs font-medium uppercase text-gray-500">
+              <tr className="border-b border-border text-xs font-medium uppercase text-muted-foreground">
                 <th className="pb-2 pr-4">Board</th>
                 <th className="pb-2 pr-4">Students</th>
                 <th className="pb-2 pr-4">Avg Quiz</th>
@@ -406,18 +406,18 @@ function FullDashboard({ data }: { data: AggregateSnapshot }) {
             </thead>
             <tbody>
               {data.scoresByBoard.map((board) => (
-                <tr key={board.examBoard} className="border-b border-gray-50">
-                  <td className="py-2 pr-4 font-medium text-gray-900">
+                <tr key={board.examBoard} className="border-b border-border/40">
+                  <td className="py-2 pr-4 font-medium text-foreground">
                     {board.examBoard}
                   </td>
-                  <td className="py-2 pr-4 text-gray-600">
+                  <td className="py-2 pr-4 text-ink-600">
                     {formatNumber(board.totalStudents)}
                   </td>
-                  <td className="py-2 pr-4 text-gray-600">{board.avgQuizScore}%</td>
-                  <td className="py-2 pr-4 text-gray-600">
+                  <td className="py-2 pr-4 text-ink-600">{board.avgQuizScore}%</td>
+                  <td className="py-2 pr-4 text-ink-600">
                     {board.avgAssessmentScore}%
                   </td>
-                  <td className="py-2 text-gray-600">{board.avgCompletionRate}%</td>
+                  <td className="py-2 text-ink-600">{board.avgCompletionRate}%</td>
                 </tr>
               ))}
             </tbody>
@@ -426,19 +426,19 @@ function FullDashboard({ data }: { data: AggregateSnapshot }) {
       </div>
 
       {/* Grade Distribution */}
-      <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-        <h3 className="mb-3 text-sm font-semibold text-gray-900">
+      <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
+        <h3 className="mb-3 text-sm font-semibold text-foreground">
           Grade Distribution
         </h3>
         <div className="flex items-end gap-1">
           {data.gradeDistribution.map((g) => (
             <div key={g.grade} className="flex flex-1 flex-col items-center gap-1">
-              <span className="text-xs text-gray-500">{g.percentage}%</span>
+              <span className="text-xs text-muted-foreground">{g.percentage}%</span>
               <div
-                className="w-full rounded-t bg-blue-500"
+                className="w-full rounded-t bg-teal-600"
                 style={{ height: `${Math.max(g.percentage * 4, 4)}px` }}
               />
-              <span className="text-xs font-medium text-gray-700">{g.grade}</span>
+              <span className="text-xs font-medium text-ink-600">{g.grade}</span>
             </div>
           ))}
         </div>
@@ -458,19 +458,19 @@ function FullDashboard({ data }: { data: AggregateSnapshot }) {
 function LoadingSkeleton({ variant }: { variant: AggregateStatsProps['variant'] }) {
   if (variant === 'text-popularity' || variant === 'quiz-score') {
     return (
-      <div className="inline-flex animate-pulse items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1">
-        <span className="inline-block h-2 w-2 rounded-full bg-gray-300" />
-        <span className="h-3 w-32 rounded bg-gray-300" />
+      <div className="inline-flex animate-pulse items-center gap-1.5 rounded-full bg-cream-100 px-3 py-1">
+        <span className="inline-block h-2 w-2 rounded-full bg-ink-200" />
+        <span className="h-3 w-32 rounded bg-ink-200" />
       </div>
     )
   }
 
   return (
-    <div className="animate-pulse space-y-3 rounded-lg border border-gray-200 bg-white p-4">
-      <div className="h-4 w-1/3 rounded bg-gray-200" />
+    <div className="animate-pulse space-y-3 rounded-lg border border-border bg-card p-4">
+      <div className="h-4 w-1/3 rounded bg-ink-200" />
       <div className="space-y-2">
         {[1, 2, 3].map((i) => (
-          <div key={i} className="h-8 rounded bg-gray-100" />
+          <div key={i} className="h-8 rounded bg-cream-100" />
         ))}
       </div>
     </div>

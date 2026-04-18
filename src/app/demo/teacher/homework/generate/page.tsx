@@ -683,10 +683,10 @@ export default function HomeworkGeneratorDemo() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       {/* Toast */}
       {toast && (
-        <div className="fixed top-6 right-6 z-50 bg-emerald-600 text-white px-5 py-3 rounded-xl shadow-lg text-sm font-medium animate-fade-in">
+        <div className="fixed top-6 right-6 z-50 bg-teal-800 text-white px-5 py-3 rounded-xl shadow-lg text-sm font-medium animate-fade-in">
           {toast}
         </div>
       )}
@@ -698,18 +698,18 @@ export default function HomeworkGeneratorDemo() {
         <div className="mb-2">
           <Link
             href="/demo/teacher/homework"
-            className="text-sm text-neutral-500 hover:text-neutral-300 transition-colors"
+            className="text-sm text-ink-500 hover:text-ink-600 transition-colors"
           >
             &larr; Back to Homework Dashboard
           </Link>
         </div>
-        <p className="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-4">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-ink-500 mb-4">
           The English Hub
         </p>
         <h1 className="text-4xl sm:text-5xl font-light tracking-tight mb-3">
           Homework Generator
         </h1>
-        <p className="text-neutral-400 text-lg mb-8 max-w-2xl">
+        <p className="text-ink-600 text-lg mb-8 max-w-2xl">
           Generate complete, differentiated homework assignments in seconds.
           Select your topic, homework type, year group, and target grade -- then
           preview, download, or assign directly.
@@ -733,8 +733,8 @@ export default function HomeworkGeneratorDemo() {
 
         {/* ─── Configuration Form ─────────────────────────────────────── */}
         {!generatedHomework && !isGenerating && (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 mb-10">
-            <h2 className="text-xl font-medium text-white/90 mb-6">
+          <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
+            <h2 className="text-xl font-medium text-ink-900 mb-6">
               Configure Your Homework
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -765,7 +765,7 @@ export default function HomeworkGeneratorDemo() {
             </div>
             <button
               onClick={handleGenerate}
-              className="mt-8 w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-3.5 px-6 transition-colors text-sm"
+              className="mt-8 w-full rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-medium py-3.5 px-6 transition-colors text-sm"
             >
               Generate Homework
             </button>
@@ -774,24 +774,24 @@ export default function HomeworkGeneratorDemo() {
 
         {/* ─── Loading Animation ──────────────────────────────────────── */}
         {isGenerating && (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 mb-10">
+          <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="flex gap-1">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse [animation-delay:150ms]" />
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse [animation-delay:300ms]" />
+                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse [animation-delay:150ms]" />
+                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse [animation-delay:300ms]" />
               </div>
-              <span className="text-sm text-emerald-400 font-medium">
+              <span className="text-sm text-teal-700 font-medium">
                 Generating homework assignment...
               </span>
             </div>
             <div className="space-y-2 font-mono text-xs">
               {TYPING_LINES.slice(0, typingIndex).map((line, i) => (
-                <div key={i} className="text-neutral-400 animate-fade-in">
-                  <span className="text-emerald-500/60 mr-2">&gt;</span>
+                <div key={i} className="text-ink-600 animate-fade-in">
+                  <span className="text-teal-700/60 mr-2">&gt;</span>
                   {line}
                   {i === typingIndex - 1 && (
-                    <span className="inline-block w-1.5 h-3.5 bg-emerald-400 ml-1 animate-pulse" />
+                    <span className="inline-block w-1.5 h-3.5 bg-teal-600 ml-1 animate-pulse" />
                   )}
                 </div>
               ))}
@@ -802,32 +802,32 @@ export default function HomeworkGeneratorDemo() {
         {/* ─── Generated Homework Preview ─────────────────────────────── */}
         {generatedHomework && (
           <>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden mb-6">
+            <div className="rounded-2xl border border-ink-200 bg-white overflow-hidden mb-6">
               {/* Header */}
-              <div className="border-b border-white/10 bg-emerald-500/5 px-6 sm:px-8 py-6">
+              <div className="border-b border-ink-200 bg-teal-800/5 px-6 sm:px-8 py-6">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-400" />
-                  <span className="text-xs uppercase tracking-wider text-emerald-400 font-medium">
+                  <span className="inline-block w-2 h-2 rounded-full bg-teal-600" />
+                  <span className="text-xs uppercase tracking-wider text-teal-700 font-medium">
                     Generated Homework Assignment
                   </span>
                 </div>
-                <h2 className="text-2xl font-medium text-white mb-2">
+                <h2 className="text-2xl font-medium text-ink-900 mb-2">
                   {generatedHomework.title}
                 </h2>
-                <div className="flex flex-wrap gap-3 text-xs text-neutral-400">
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">
+                <div className="flex flex-wrap gap-3 text-xs text-ink-600">
+                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">
                     {generatedHomework.topic}
                   </span>
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">
+                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">
                     {generatedHomework.homeworkType}
                   </span>
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">
+                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">
                     {generatedHomework.yearGroup}
                   </span>
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">
+                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">
                     {generatedHomework.targetGrade}
                   </span>
-                  <span className="px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                  <span className="px-2.5 py-1 rounded-md bg-teal-600/10 border border-teal-800/20 text-teal-700">
                     {generatedHomework.estimatedTime}
                   </span>
                 </div>
@@ -836,20 +836,20 @@ export default function HomeworkGeneratorDemo() {
               <div className="px-6 sm:px-8 py-6 space-y-8">
                 {/* Instructions */}
                 <Section title="Instructions">
-                  <p className="text-sm text-neutral-300 leading-relaxed">
+                  <p className="text-sm text-ink-600 leading-relaxed">
                     {generatedHomework.instructions}
                   </p>
                 </Section>
 
                 {/* Success Criteria */}
-                <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5">
-                  <h3 className="text-xs uppercase tracking-wider text-emerald-400 font-medium mb-3">
+                <div className="rounded-xl border border-teal-800/20 bg-teal-800/5 p-5">
+                  <h3 className="text-xs uppercase tracking-wider text-teal-700 font-medium mb-3">
                     Success Criteria
                   </h3>
-                  <ul className="space-y-1.5 text-sm text-neutral-300">
+                  <ul className="space-y-1.5 text-sm text-ink-600">
                     {generatedHomework.successCriteria.map((s, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-emerald-400 mt-0.5 shrink-0">
+                        <span className="text-teal-700 mt-0.5 shrink-0">
                           --
                         </span>
                         {s}
@@ -864,22 +864,22 @@ export default function HomeworkGeneratorDemo() {
                     {generatedHomework.questions.map((q, i) => (
                       <div
                         key={i}
-                        className="rounded-lg border border-white/5 bg-white/[0.02] p-4"
+                        className="rounded-lg border border-ink-200 bg-white p-4"
                       >
                         <div className="flex items-start justify-between gap-3 mb-2">
-                          <p className="text-sm text-white font-medium">
+                          <p className="text-sm text-ink-900 font-medium">
                             {i + 1}. {q.question}
                           </p>
-                          <span className="shrink-0 text-xs text-neutral-500 bg-white/5 px-2 py-0.5 rounded">
+                          <span className="shrink-0 text-xs text-ink-500 bg-cream-100 px-2 py-0.5 rounded">
                             {q.marks} marks
                           </span>
                         </div>
                         {q.modelAnswer && (
                           <details className="mt-2">
-                            <summary className="text-xs text-emerald-400/70 cursor-pointer hover:text-emerald-400 transition-colors">
+                            <summary className="text-xs text-teal-700/70 cursor-pointer hover:text-teal-700 transition-colors">
                               Show model answer
                             </summary>
-                            <p className="mt-2 text-xs text-neutral-400 leading-relaxed pl-4 border-l border-emerald-500/20">
+                            <p className="mt-2 text-xs text-ink-600 leading-relaxed pl-4 border-l border-teal-800/20">
                               {q.modelAnswer}
                             </p>
                           </details>
@@ -890,14 +890,14 @@ export default function HomeworkGeneratorDemo() {
                 </Section>
 
                 {/* Extension Tasks */}
-                <div className="rounded-xl border border-violet-500/20 bg-violet-500/5 p-5">
-                  <h3 className="text-xs uppercase tracking-wider text-violet-400 font-medium mb-3">
+                <div className="rounded-xl border border-teal-800/20 bg-teal-800/5 p-5">
+                  <h3 className="text-xs uppercase tracking-wider text-teal-700 font-medium mb-3">
                     Extension Tasks (Higher Ability)
                   </h3>
-                  <ul className="space-y-2 text-sm text-neutral-300">
+                  <ul className="space-y-2 text-sm text-ink-600">
                     {generatedHomework.extensionTasks.map((t, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-violet-400 mt-0.5 shrink-0">
+                        <span className="text-teal-700 mt-0.5 shrink-0">
                           {i + 1}.
                         </span>
                         {t}
@@ -908,7 +908,7 @@ export default function HomeworkGeneratorDemo() {
 
                 {/* Mark Scheme */}
                 <Section title="Mark Scheme / Marking Guidance">
-                  <ul className="space-y-2 text-sm text-neutral-400">
+                  <ul className="space-y-2 text-sm text-ink-600">
                     {generatedHomework.markScheme.map((m, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-amber-400/60 mt-0.5 shrink-0">
@@ -945,8 +945,8 @@ export default function HomeworkGeneratorDemo() {
             </div>
 
             {/* ─── Assign to Class Panel ───────────────────────────────── */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 mb-10">
-              <h3 className="text-lg font-medium text-white/90 mb-4">
+            <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
+              <h3 className="text-lg font-medium text-ink-900 mb-4">
                 Assign to Class
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -963,34 +963,34 @@ export default function HomeworkGeneratorDemo() {
                   ]}
                 />
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-neutral-400 mb-2">
+                  <label className="block text-xs uppercase tracking-wider text-ink-600 mb-2">
                     Due Date
                   </label>
                   <input
                     type="date"
-                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white text-sm focus:outline-none focus:border-emerald-500/50 transition-colors"
+                    className="w-full rounded-lg border border-ink-200 bg-cream-100 px-4 py-3 text-ink-900 text-sm focus:outline-none focus:border-teal-800/50 transition-colors"
                   />
                 </div>
               </div>
               <button
                 onClick={handleAssign}
-                className="mt-6 w-full rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-medium py-3 px-6 transition-opacity hover:opacity-90 text-sm"
+                className="mt-6 w-full rounded-xl bg-gradient-to-r from-teal-800 to-teal-600 text-black font-medium py-3 px-6 transition-opacity hover:opacity-90 text-sm"
               >
                 Set Homework for Class
               </button>
             </div>
 
             {/* CTA */}
-            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6 sm:p-8 text-center mb-10">
-              <p className="text-lg text-white font-medium mb-2">
+            <div className="rounded-2xl border border-teal-800/20 bg-teal-800/5 p-6 sm:p-8 text-center mb-10">
+              <p className="text-lg text-ink-900 font-medium mb-2">
                 Generate unlimited homework in seconds.
               </p>
-              <p className="text-neutral-400 text-sm mb-5">
+              <p className="text-ink-600 text-sm mb-5">
                 Start your free month to access the full homework generator --
                 every assignment uniquely created, with mark schemes and
                 extension tasks included.
               </p>
-              <button className="rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-3 px-8 transition-colors text-sm">
+              <button className="rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-medium py-3 px-8 transition-colors text-sm">
                 Start Free Month
               </button>
             </div>
@@ -1026,16 +1026,16 @@ function FormSelect({
 }) {
   return (
     <div>
-      <label className="block text-xs uppercase tracking-wider text-neutral-400 mb-2">
+      <label className="block text-xs uppercase tracking-wider text-ink-600 mb-2">
         {label}
       </label>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white text-sm focus:outline-none focus:border-emerald-500/50 transition-colors appearance-none cursor-pointer"
+        className="w-full rounded-lg border border-ink-200 bg-cream-100 px-4 py-3 text-ink-900 text-sm focus:outline-none focus:border-teal-800/50 transition-colors appearance-none cursor-pointer"
       >
         {options.map((o) => (
-          <option key={o} value={o} className="bg-neutral-900 text-white">
+          <option key={o} value={o} className="bg-cream-100 text-ink-900">
             {o}
           </option>
         ))}
@@ -1053,7 +1053,7 @@ function Section({
 }) {
   return (
     <div>
-      <h3 className="text-xs uppercase tracking-wider text-neutral-500 mb-3 font-medium">
+      <h3 className="text-xs uppercase tracking-wider text-ink-500 mb-3 font-medium">
         {title}
       </h3>
       {children}
@@ -1071,7 +1071,7 @@ function ActionButton({
   return (
     <button
       onClick={onClick}
-      className="rounded-lg border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] text-neutral-300 hover:text-white text-xs font-medium py-2.5 px-3 transition-colors"
+      className="rounded-lg border border-ink-200 bg-white hover:bg-cream-100 text-ink-600 hover:text-ink-900 text-xs font-medium py-2.5 px-3 transition-colors"
     >
       {label}
     </button>

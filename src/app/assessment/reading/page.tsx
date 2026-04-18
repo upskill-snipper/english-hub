@@ -52,22 +52,22 @@ function AgeGauge({
 
   const colorClasses = {
     emerald: {
-      bg: "from-emerald-500/20 to-emerald-500/5",
-      border: "border-emerald-500/20",
-      text: "text-emerald-400",
-      badge: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+      bg: "from-teal-800/10 to-teal-800/5",
+      border: "border-teal-800/20",
+      text: "text-teal-800",
+      badge: "bg-teal-800/10 text-teal-800 border-teal-800/20",
     },
     blue: {
-      bg: "from-blue-500/20 to-blue-500/5",
+      bg: "from-blue-500/10 to-blue-500/5",
       border: "border-blue-500/20",
-      text: "text-blue-400",
-      badge: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+      text: "text-blue-600",
+      badge: "bg-blue-500/10 text-blue-600 border-blue-500/20",
     },
     violet: {
-      bg: "from-violet-500/20 to-violet-500/5",
-      border: "border-violet-500/20",
-      text: "text-violet-400",
-      badge: "bg-violet-500/10 text-violet-400 border-violet-500/20",
+      bg: "from-clay-500/10 to-clay-500/5",
+      border: "border-clay-500/20",
+      text: "text-clay-500",
+      badge: "bg-clay-500/10 text-clay-500 border-clay-500/20",
     },
   }
 
@@ -75,9 +75,9 @@ function AgeGauge({
 
   const comparisonBadge = comparison
     ? {
-        above: { label: "Above expected", className: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" },
-        at: { label: "At expected level", className: "bg-amber-500/10 text-amber-400 border-amber-500/20" },
-        below: { label: "Below expected", className: "bg-red-500/10 text-red-400 border-red-500/20" },
+        above: { label: "Above expected", className: "bg-teal-800/10 text-teal-800 border-teal-800/20" },
+        at: { label: "At expected level", className: "bg-amber-500/10 text-amber-700 border-amber-500/20" },
+        below: { label: "Below expected", className: "bg-red-500/10 text-red-600 border-red-500/20" },
       }[comparison]
     : null
 
@@ -87,9 +87,9 @@ function AgeGauge({
         <div className={`rounded-lg p-2 ${c.badge}`}>
           <Icon className="h-5 w-5" />
         </div>
-        <h3 className="font-semibold text-white/90">{label}</h3>
+        <h3 className="font-semibold text-ink-900">{label}</h3>
       </div>
-      <div className="text-3xl font-bold text-white/95 mb-2">
+      <div className="text-3xl font-bold text-ink-900 mb-2">
         {formatAgeScore(age)}
       </div>
       {comparisonBadge && (
@@ -116,7 +116,7 @@ function ResultsDisplay({
     <div className="space-y-8">
       {/* Age Gauges */}
       <div>
-        <h2 className="text-xl font-bold text-white/90 mb-4">Your Reading Profile</h2>
+        <h2 className="text-xl font-bold text-ink-900 mb-4">Your Reading Profile</h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <AgeGauge
             label="Reading Age"
@@ -148,11 +148,11 @@ function ResultsDisplay({
           <CardContent className="pt-5">
             <div className="flex items-center gap-3">
               <div className="rounded-lg bg-amber-500/10 p-2">
-                <Target className="h-5 w-5 text-amber-400" />
+                <Target className="h-5 w-5 text-amber-600" />
               </div>
               <div>
-                <p className="text-sm text-white/50">GCSE Equivalent</p>
-                <p className="text-2xl font-bold text-white/90">
+                <p className="text-sm text-ink-500">GCSE Equivalent</p>
+                <p className="text-2xl font-bold text-ink-900">
                   Grade {result.gcseEquivalent}
                 </p>
               </div>
@@ -165,36 +165,36 @@ function ResultsDisplay({
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <BarChart3 className="h-5 w-5 text-white/50" />
+            <BarChart3 className="h-5 w-5 text-ink-500" />
             Score Breakdown
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border border-white/10 p-4">
-              <p className="text-xs text-white/40 mb-1">Comprehension</p>
-              <p className="text-2xl font-bold text-white/90">
+            <div className="rounded-xl border border-border p-4">
+              <p className="text-xs text-ink-500 mb-1">Comprehension</p>
+              <p className="text-2xl font-bold text-ink-900">
                 {result.rawScores.comprehension.score}/{result.rawScores.comprehension.maxScore}
               </p>
-              <p className="text-sm text-white/50">
+              <p className="text-sm text-ink-500">
                 {result.rawScores.comprehension.percentage}%
               </p>
             </div>
-            <div className="rounded-xl border border-white/10 p-4">
-              <p className="text-xs text-white/40 mb-1">Decoding</p>
-              <p className="text-2xl font-bold text-white/90">
+            <div className="rounded-xl border border-border p-4">
+              <p className="text-xs text-ink-500 mb-1">Decoding</p>
+              <p className="text-2xl font-bold text-ink-900">
                 {result.rawScores.decoding.score}/{result.rawScores.decoding.maxScore}
               </p>
-              <p className="text-sm text-white/50">
+              <p className="text-sm text-ink-500">
                 {result.rawScores.decoding.percentage}%
               </p>
             </div>
-            <div className="rounded-xl border border-white/10 p-4">
-              <p className="text-xs text-white/40 mb-1">Fluency</p>
-              <p className="text-2xl font-bold text-white/90">
+            <div className="rounded-xl border border-border p-4">
+              <p className="text-xs text-ink-500 mb-1">Fluency</p>
+              <p className="text-2xl font-bold text-ink-900">
                 {result.rawScores.fluency.adjustedWpm} WPM
               </p>
-              <p className="text-sm text-white/50">
+              <p className="text-sm text-ink-500">
                 {result.rawScores.fluency.accuracy}% accuracy
               </p>
             </div>
@@ -206,7 +206,7 @@ function ResultsDisplay({
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Sparkles className="h-5 w-5 text-emerald-400" />
+            <Sparkles className="h-5 w-5 text-teal-800" />
             Strengths
           </CardTitle>
         </CardHeader>
@@ -214,8 +214,8 @@ function ResultsDisplay({
           <ul className="space-y-2">
             {result.strengths.map((s, i) => (
               <li key={i} className="flex items-start gap-2">
-                <CheckCircle className="h-4 w-4 text-emerald-400 mt-0.5 shrink-0" />
-                <span className="text-sm text-white/70">{s}</span>
+                <CheckCircle className="h-4 w-4 text-teal-800 mt-0.5 shrink-0" />
+                <span className="text-sm text-ink-600">{s}</span>
               </li>
             ))}
           </ul>
@@ -226,7 +226,7 @@ function ResultsDisplay({
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Target className="h-5 w-5 text-amber-400" />
+            <Target className="h-5 w-5 text-amber-600" />
             Areas for Development
           </CardTitle>
         </CardHeader>
@@ -234,8 +234,8 @@ function ResultsDisplay({
           <ul className="space-y-2">
             {result.areasForDevelopment.map((a, i) => (
               <li key={i} className="flex items-start gap-2">
-                <ArrowRight className="h-4 w-4 text-amber-400 mt-0.5 shrink-0" />
-                <span className="text-sm text-white/70">{a}</span>
+                <ArrowRight className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
+                <span className="text-sm text-ink-600">{a}</span>
               </li>
             ))}
           </ul>
@@ -248,29 +248,29 @@ function ResultsDisplay({
           <CardTitle>Recommended Next Steps</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="flex items-start gap-3 rounded-xl border border-white/10 p-4">
-            <BookOpen className="h-5 w-5 text-blue-400 mt-0.5 shrink-0" />
+          <div className="flex items-start gap-3 rounded-xl border border-border p-4">
+            <BookOpen className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
             <div>
-              <p className="text-sm font-medium text-white/80">Read widely</p>
-              <p className="text-xs text-white/50">
+              <p className="text-sm font-medium text-ink-900">Read widely</p>
+              <p className="text-xs text-ink-500">
                 Aim for 15-20 minutes of reading daily across fiction and non-fiction at your reading level.
               </p>
             </div>
           </div>
-          <div className="flex items-start gap-3 rounded-xl border border-white/10 p-4">
-            <FileText className="h-5 w-5 text-violet-400 mt-0.5 shrink-0" />
+          <div className="flex items-start gap-3 rounded-xl border border-border p-4">
+            <FileText className="h-5 w-5 text-clay-500 mt-0.5 shrink-0" />
             <div>
-              <p className="text-sm font-medium text-white/80">Practise comprehension</p>
-              <p className="text-xs text-white/50">
+              <p className="text-sm font-medium text-ink-900">Practise comprehension</p>
+              <p className="text-xs text-ink-500">
                 Work through reading comprehension exercises, focusing on inference and evaluation questions.
               </p>
             </div>
           </div>
-          <div className="flex items-start gap-3 rounded-xl border border-white/10 p-4">
-            <Brain className="h-5 w-5 text-emerald-400 mt-0.5 shrink-0" />
+          <div className="flex items-start gap-3 rounded-xl border border-border p-4">
+            <Brain className="h-5 w-5 text-teal-800 mt-0.5 shrink-0" />
             <div>
-              <p className="text-sm font-medium text-white/80">Build vocabulary</p>
-              <p className="text-xs text-white/50">
+              <p className="text-sm font-medium text-ink-900">Build vocabulary</p>
+              <p className="text-xs text-ink-500">
                 Learn new words in context. Keep a vocabulary journal and review unfamiliar words regularly.
               </p>
             </div>
@@ -343,21 +343,21 @@ function MethodologySection() {
           className="flex items-center justify-between w-full text-left"
         >
           <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-white/50" />
+            <Info className="h-5 w-5 text-ink-500" />
             Methodology
           </CardTitle>
           {expanded ? (
-            <ChevronUp className="h-5 w-5 text-white/40" />
+            <ChevronUp className="h-5 w-5 text-ink-500" />
           ) : (
-            <ChevronDown className="h-5 w-5 text-white/40" />
+            <ChevronDown className="h-5 w-5 text-ink-500" />
           )}
         </button>
       </CardHeader>
       {expanded && (
         <CardContent className="space-y-4">
-          <div className="space-y-3 text-sm text-white/60">
+          <div className="space-y-3 text-sm text-ink-600">
             <div>
-              <h4 className="font-medium text-white/80 mb-1">How the test works</h4>
+              <h4 className="font-medium text-ink-900 mb-1">How the test works</h4>
               <p>
                 This assessment uses graded passages of increasing difficulty (Year 3 to Year 13 level)
                 to measure reading ability across three dimensions: comprehension, decoding, and fluency.
@@ -367,7 +367,7 @@ function MethodologySection() {
             <Separator />
 
             <div>
-              <h4 className="font-medium text-white/80 mb-1">Comprehension</h4>
+              <h4 className="font-medium text-ink-900 mb-1">Comprehension</h4>
               <p>
                 Measured through a combination of literal (retrieval), inferential (reading between
                 the lines), and evaluative (analysis and judgment) questions on each passage.
@@ -376,7 +376,7 @@ function MethodologySection() {
             </div>
 
             <div>
-              <h4 className="font-medium text-white/80 mb-1">Decoding</h4>
+              <h4 className="font-medium text-ink-900 mb-1">Decoding</h4>
               <p>
                 Measured through word recognition accuracy, including both real words and
                 pseudo-words (nonsense words that follow English phonetic patterns, similar to the
@@ -385,7 +385,7 @@ function MethodologySection() {
             </div>
 
             <div>
-              <h4 className="font-medium text-white/80 mb-1">Fluency</h4>
+              <h4 className="font-medium text-ink-900 mb-1">Fluency</h4>
               <p>
                 Measured through words-per-minute reading speed, adjusted for accuracy.
                 The adjusted WPM (words read correctly per minute) is compared against
@@ -396,7 +396,7 @@ function MethodologySection() {
             <Separator />
 
             <div>
-              <h4 className="font-medium text-white/80 mb-1">Standardisation</h4>
+              <h4 className="font-medium text-ink-900 mb-1">Standardisation</h4>
               <p>
                 Results are standardised against UK national curriculum reading expectations.
                 The reading age is calculated as a weighted composite: comprehension (50%),
@@ -407,7 +407,7 @@ function MethodologySection() {
             </div>
 
             <div>
-              <h4 className="font-medium text-white/80 mb-1">Methodology basis</h4>
+              <h4 className="font-medium text-ink-900 mb-1">Methodology basis</h4>
               <p>
                 The assessment draws on methodology from established standardised reading tests
                 including the NFER Group Reading Test, the Salford Sentence Reading Test,
@@ -419,10 +419,10 @@ function MethodologySection() {
             <Separator />
 
             <div className="flex items-start gap-2 rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
-              <AlertTriangle className="h-5 w-5 text-amber-400 mt-0.5 shrink-0" />
+              <AlertTriangle className="h-5 w-5 text-amber-700 mt-0.5 shrink-0" />
               <div>
-                <h4 className="font-medium text-amber-400 mb-1">Limitations</h4>
-                <p className="text-white/50">
+                <h4 className="font-medium text-amber-700 mb-1">Limitations</h4>
+                <p className="text-ink-600">
                   This is a screening tool, not a diagnostic assessment. It provides an
                   indicative reading age that can help identify strengths and areas for
                   development. For a formal diagnosis of reading difficulties such as dyslexia,
@@ -468,23 +468,23 @@ export default function ReadingAssessmentPage() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
       {/* Header */}
       <div className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-white/40 mb-4">
-          <Link href="/dashboard" className="hover:text-white/60 transition-colors">
+        <div className="flex items-center gap-2 text-sm text-ink-500 mb-4">
+          <Link href="/dashboard" className="hover:text-ink-600 transition-colors">
             Dashboard
           </Link>
           <span>/</span>
-          <span className="text-white/60">Reading Assessment</span>
+          <span className="text-ink-600">Reading Assessment</span>
         </div>
 
         <div className="flex items-center gap-4 mb-4">
-          <div className="rounded-2xl bg-gradient-to-br from-emerald-500/20 to-blue-500/20 p-3">
-            <BookOpen className="h-8 w-8 text-emerald-400" />
+          <div className="rounded-2xl bg-gradient-to-br from-teal-800/10 to-blue-500/10 p-3">
+            <BookOpen className="h-8 w-8 text-teal-800" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-white/90 sm:text-3xl">
+            <h1 className="text-2xl font-bold text-ink-900 sm:text-3xl">
               Reading Comprehension Assessment
             </h1>
-            <p className="text-sm text-white/50 mt-1">
+            <p className="text-sm text-ink-500 mt-1">
               Measure your reading age, decoding skills, and fluency
             </p>
           </div>
@@ -509,32 +509,32 @@ export default function ReadingAssessmentPage() {
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-4">
+                <div className="rounded-xl border border-teal-800/15 bg-gradient-to-br from-teal-800/5 to-teal-800/[0.02] p-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <BookOpen className="h-5 w-5 text-emerald-400" />
-                    <h3 className="font-semibold text-white/80 text-sm">Reading Age</h3>
+                    <BookOpen className="h-5 w-5 text-teal-800" />
+                    <h3 className="font-semibold text-ink-900 text-sm">Reading Age</h3>
                   </div>
-                  <p className="text-xs text-white/50">
+                  <p className="text-xs text-ink-500">
                     Your overall reading comprehension level, expressed as an age equivalent.
                     Measures understanding of both fiction and non-fiction texts.
                   </p>
                 </div>
-                <div className="rounded-xl border border-blue-500/15 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-4">
+                <div className="rounded-xl border border-blue-500/15 bg-gradient-to-br from-blue-500/5 to-blue-500/[0.02] p-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <Eye className="h-5 w-5 text-blue-400" />
-                    <h3 className="font-semibold text-white/80 text-sm">Decoding Age</h3>
+                    <Eye className="h-5 w-5 text-blue-600" />
+                    <h3 className="font-semibold text-ink-900 text-sm">Decoding Age</h3>
                   </div>
-                  <p className="text-xs text-white/50">
+                  <p className="text-xs text-ink-500">
                     Your ability to recognise and decode words accurately, including
                     real words and pseudo-words that test phonics knowledge.
                   </p>
                 </div>
-                <div className="rounded-xl border border-violet-500/15 bg-gradient-to-br from-violet-500/10 to-violet-500/5 p-4">
+                <div className="rounded-xl border border-clay-500/15 bg-gradient-to-br from-clay-500/5 to-clay-500/[0.02] p-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <Timer className="h-5 w-5 text-violet-400" />
-                    <h3 className="font-semibold text-white/80 text-sm">Fluency Age</h3>
+                    <Timer className="h-5 w-5 text-clay-500" />
+                    <h3 className="font-semibold text-ink-900 text-sm">Fluency Age</h3>
                   </div>
-                  <p className="text-xs text-white/50">
+                  <p className="text-xs text-ink-500">
                     Your reading speed combined with accuracy. Fluent readers read
                     smoothly and quickly while maintaining comprehension.
                   </p>
@@ -583,12 +583,12 @@ export default function ReadingAssessmentPage() {
                   },
                 ].map((item) => (
                   <div key={item.step} className="flex items-start gap-4">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/5 text-sm font-semibold text-white/60">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold text-ink-600">
                       {item.step}
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-white/80">{item.title}</p>
-                      <p className="text-xs text-white/50">{item.description}</p>
+                      <p className="text-sm font-medium text-ink-900">{item.title}</p>
+                      <p className="text-xs text-ink-500">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -598,15 +598,15 @@ export default function ReadingAssessmentPage() {
 
           {/* Time and info */}
           <div className="flex flex-wrap gap-4">
-            <div className="flex items-center gap-2 text-sm text-white/50">
+            <div className="flex items-center gap-2 text-sm text-ink-500">
               <Timer className="h-4 w-4" />
               <span>Approximately 20-30 minutes</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-white/50">
+            <div className="flex items-center gap-2 text-sm text-ink-500">
               <FileText className="h-4 w-4" />
               <span>10 passages, 40 questions</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-white/50">
+            <div className="flex items-center gap-2 text-sm text-ink-500">
               <Target className="h-4 w-4" />
               <span>Year 3 to Year 13 levels</span>
             </div>

@@ -65,12 +65,12 @@ const HEATMAP_DATA = generateHeatmapData()
 const DAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 function heatmapColor(value: number): string {
-  if (value >= 80) return "bg-emerald-400"
-  if (value >= 60) return "bg-emerald-500"
-  if (value >= 40) return "bg-emerald-600/80"
-  if (value >= 20) return "bg-emerald-700/60"
-  if (value >= 10) return "bg-emerald-900/40"
-  return "bg-neutral-800/60"
+  if (value >= 80) return "bg-teal-600"
+  if (value >= 60) return "bg-teal-700"
+  if (value >= 40) return "bg-teal-800/80"
+  if (value >= 20) return "bg-teal-800/60"
+  if (value >= 10) return "bg-teal-900/40"
+  return "bg-cream-100/60"
 }
 
 // -- Year group engagement data -------------------------------------------------
@@ -169,7 +169,7 @@ export default function EngagementPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       {/* Demo banner */}
       <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2.5 text-center">
         <p className="text-sm text-amber-200/90">
@@ -189,98 +189,98 @@ export default function EngagementPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight flex items-center gap-3">
-            <Activity className="w-8 h-8 text-emerald-400" />
+            <Activity className="w-8 h-8 text-teal-700" />
             Student Engagement
           </h1>
-          <p className="text-neutral-400 mt-1">
+          <p className="text-ink-600 mt-1">
             Track student activity, login patterns, and content usage across your school.
           </p>
         </div>
 
         {/* ── Engagement stats cards ─────────────────────────────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <Card className="bg-neutral-900/50 border-neutral-800">
+          <Card className="bg-cream-100/50 border-ink-200">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-neutral-400">Daily Active Users</p>
+                  <p className="text-sm text-ink-600">Daily Active Users</p>
                   <p className="text-2xl font-bold mt-1">
-                    287<span className="text-base font-normal text-neutral-500">/342</span>
+                    287<span className="text-base font-normal text-ink-500">/342</span>
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-emerald-400" />
+                <div className="w-12 h-12 rounded-lg bg-teal-800/10 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-teal-700" />
                 </div>
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-neutral-500">84% active</span>
-                  <span className="text-emerald-400">+3% vs last week</span>
+                  <span className="text-ink-500">84% active</span>
+                  <span className="text-teal-700">+3% vs last week</span>
                 </div>
-                <div className="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-emerald-500 rounded-full" style={{ width: "84%" }} />
+                <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-teal-700 rounded-full" style={{ width: "84%" }} />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-neutral-900/50 border-neutral-800">
+          <Card className="bg-cream-100/50 border-ink-200">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-neutral-400">Weekly Login Rate</p>
+                  <p className="text-sm text-ink-600">Weekly Login Rate</p>
                   <p className="text-2xl font-bold mt-1">
-                    305<span className="text-base font-normal text-neutral-500">/342</span>
+                    305<span className="text-base font-normal text-ink-500">/342</span>
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                  <TrendingUp className="w-6 h-6 text-blue-400" />
+                <div className="w-12 h-12 rounded-lg bg-teal-800/10 flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-teal-700" />
                 </div>
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-neutral-500">89% logged in</span>
-                  <span className="text-blue-400">+1% vs last week</span>
+                  <span className="text-ink-500">89% logged in</span>
+                  <span className="text-teal-700">+1% vs last week</span>
                 </div>
-                <div className="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
+                <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
                   <div className="h-full bg-blue-500 rounded-full" style={{ width: "89%" }} />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-neutral-900/50 border-neutral-800">
+          <Card className="bg-cream-100/50 border-ink-200">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-neutral-400">Average Session</p>
+                  <p className="text-sm text-ink-600">Average Session</p>
                   <p className="text-2xl font-bold mt-1">
-                    23<span className="text-base font-normal text-neutral-500"> min</span>
+                    23<span className="text-base font-normal text-ink-500"> min</span>
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-purple-400" />
+                <div className="w-12 h-12 rounded-lg bg-clay-500/10 flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-clay-600" />
                 </div>
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-neutral-500">Target: 20 min</span>
-                  <span className="text-purple-400">+2 min vs last week</span>
+                  <span className="text-ink-500">Target: 20 min</span>
+                  <span className="text-clay-600">+2 min vs last week</span>
                 </div>
-                <div className="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-purple-500 rounded-full" style={{ width: "100%" }} />
+                <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-clay-500 rounded-full" style={{ width: "100%" }} />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-neutral-900/50 border-neutral-800">
+          <Card className="bg-cream-100/50 border-ink-200">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-neutral-400">Content Accessed Today</p>
+                  <p className="text-sm text-ink-600">Content Accessed Today</p>
                   <p className="text-2xl font-bold mt-1">
-                    456<span className="text-base font-normal text-neutral-500"> pages</span>
+                    456<span className="text-base font-normal text-ink-500"> pages</span>
                   </p>
                 </div>
                 <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center">
@@ -289,10 +289,10 @@ export default function EngagementPage() {
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-neutral-500">Avg: 380/day</span>
+                  <span className="text-ink-500">Avg: 380/day</span>
                   <span className="text-amber-400">+20% vs average</span>
                 </div>
-                <div className="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
+                <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
                   <div className="h-full bg-amber-500 rounded-full" style={{ width: "100%" }} />
                 </div>
               </div>
@@ -301,13 +301,13 @@ export default function EngagementPage() {
         </div>
 
         {/* ── Engagement Heatmap ─────────────────────────────────── */}
-        <Card className="bg-neutral-900/50 border-neutral-800 mb-8">
+        <Card className="bg-cream-100/50 border-ink-200 mb-8">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <BarChart3 className="w-5 h-5 text-emerald-400" />
+              <BarChart3 className="w-5 h-5 text-teal-700" />
               Engagement Heatmap
             </CardTitle>
-            <CardDescription className="text-neutral-400">
+            <CardDescription className="text-ink-600">
               Activity levels across 7 days and 24 hours. Darker green = higher activity.
             </CardDescription>
           </CardHeader>
@@ -318,7 +318,7 @@ export default function EngagementPage() {
                 <div className="w-10 shrink-0" />
                 <div className="grid grid-cols-24 gap-[2px] flex-1 min-w-[600px]" style={{ gridTemplateColumns: "repeat(24, minmax(0, 1fr))" }}>
                   {Array.from({ length: 24 }, (_, i) => (
-                    <div key={i} className="text-[10px] text-neutral-500 text-center">
+                    <div key={i} className="text-[10px] text-ink-500 text-center">
                       {i % 3 === 0 ? `${i.toString().padStart(2, "0")}` : ""}
                     </div>
                   ))}
@@ -327,7 +327,7 @@ export default function EngagementPage() {
               {/* Heatmap grid */}
               {HEATMAP_DATA.map((row, dayIdx) => (
                 <div key={dayIdx} className="flex items-center mb-[2px]">
-                  <div className="w-10 shrink-0 text-xs text-neutral-400 font-medium">
+                  <div className="w-10 shrink-0 text-xs text-ink-600 font-medium">
                     {DAY_LABELS[dayIdx]}
                   </div>
                   <div className="grid gap-[2px] flex-1 min-w-[600px]" style={{ gridTemplateColumns: "repeat(24, minmax(0, 1fr))" }}>
@@ -343,21 +343,21 @@ export default function EngagementPage() {
               ))}
               {/* Legend */}
               <div className="flex items-center gap-2 mt-3 justify-end">
-                <span className="text-xs text-neutral-500">Less</span>
-                <div className="w-4 h-4 rounded-sm bg-neutral-800/60" />
-                <div className="w-4 h-4 rounded-sm bg-emerald-900/40" />
-                <div className="w-4 h-4 rounded-sm bg-emerald-700/60" />
-                <div className="w-4 h-4 rounded-sm bg-emerald-600/80" />
-                <div className="w-4 h-4 rounded-sm bg-emerald-500" />
-                <div className="w-4 h-4 rounded-sm bg-emerald-400" />
-                <span className="text-xs text-neutral-500">More</span>
+                <span className="text-xs text-ink-500">Less</span>
+                <div className="w-4 h-4 rounded-sm bg-cream-100/60" />
+                <div className="w-4 h-4 rounded-sm bg-teal-900/40" />
+                <div className="w-4 h-4 rounded-sm bg-teal-800/60" />
+                <div className="w-4 h-4 rounded-sm bg-teal-800/80" />
+                <div className="w-4 h-4 rounded-sm bg-teal-700" />
+                <div className="w-4 h-4 rounded-sm bg-teal-600" />
+                <span className="text-xs text-ink-500">More</span>
               </div>
             </div>
           </CardContent>
         </Card>
 
         {/* ── Year Group Engagement table ────────────────────────── */}
-        <Card className="bg-neutral-900/50 border-neutral-800 mb-8">
+        <Card className="bg-cream-100/50 border-ink-200 mb-8">
           <CardHeader>
             <CardTitle className="text-lg">Year Group Engagement</CardTitle>
           </CardHeader>
@@ -365,30 +365,30 @@ export default function EngagementPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-neutral-800">
-                    <th className="text-left py-3 px-3 text-neutral-400 font-medium">Year</th>
-                    <th className="text-right py-3 px-3 text-neutral-400 font-medium">Students</th>
-                    <th className="text-right py-3 px-3 text-neutral-400 font-medium">Active %</th>
-                    <th className="text-right py-3 px-3 text-neutral-400 font-medium">Avg Sessions/Week</th>
-                    <th className="text-right py-3 px-3 text-neutral-400 font-medium">Avg Duration</th>
-                    <th className="text-center py-3 px-3 text-neutral-400 font-medium">Trend</th>
+                  <tr className="border-b border-ink-200">
+                    <th className="text-left py-3 px-3 text-ink-600 font-medium">Year</th>
+                    <th className="text-right py-3 px-3 text-ink-600 font-medium">Students</th>
+                    <th className="text-right py-3 px-3 text-ink-600 font-medium">Active %</th>
+                    <th className="text-right py-3 px-3 text-ink-600 font-medium">Avg Sessions/Week</th>
+                    <th className="text-right py-3 px-3 text-ink-600 font-medium">Avg Duration</th>
+                    <th className="text-center py-3 px-3 text-ink-600 font-medium">Trend</th>
                   </tr>
                 </thead>
                 <tbody>
                   {YEAR_GROUP_ENGAGEMENT.map((yg) => (
-                    <tr key={yg.year} className="border-b border-neutral-800/50 hover:bg-white/[0.02]">
+                    <tr key={yg.year} className="border-b border-ink-200/50 hover:bg-white">
                       <td className="py-3 px-3 font-medium">{yg.year}</td>
-                      <td className="py-3 px-3 text-right text-neutral-300">{yg.students}</td>
+                      <td className="py-3 px-3 text-right text-ink-600">{yg.students}</td>
                       <td className="py-3 px-3 text-right">
-                        <span className={yg.activePct >= 85 ? "text-emerald-400" : yg.activePct >= 75 ? "text-amber-400" : "text-red-400"}>
+                        <span className={yg.activePct >= 85 ? "text-teal-700" : yg.activePct >= 75 ? "text-amber-400" : "text-red-400"}>
                           {yg.activePct}%
                         </span>
                       </td>
-                      <td className="py-3 px-3 text-right text-neutral-300">{yg.avgSessions}</td>
-                      <td className="py-3 px-3 text-right text-neutral-300">{yg.avgDuration}</td>
+                      <td className="py-3 px-3 text-right text-ink-600">{yg.avgSessions}</td>
+                      <td className="py-3 px-3 text-right text-ink-600">{yg.avgDuration}</td>
                       <td className="py-3 px-3 text-center">
                         {yg.trend === "up" ? (
-                          <TrendingUp className="w-4 h-4 text-emerald-400 inline-block" />
+                          <TrendingUp className="w-4 h-4 text-teal-700 inline-block" />
                         ) : (
                           <TrendingDown className="w-4 h-4 text-red-400 inline-block" />
                         )}
@@ -403,13 +403,13 @@ export default function EngagementPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* ── Most Active Students (top 10) ──────────────────── */}
-          <Card className="bg-neutral-900/50 border-neutral-800">
+          <Card className="bg-cream-100/50 border-ink-200">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Flame className="w-5 h-5 text-orange-400" />
                 Most Active Students
               </CardTitle>
-              <CardDescription className="text-neutral-400">
+              <CardDescription className="text-ink-600">
                 Top 10 students by activity this week
               </CardDescription>
             </CardHeader>
@@ -419,16 +419,16 @@ export default function EngagementPage() {
                   <Link
                     key={student.id}
                     href={`/demo/school/students/${student.id}`}
-                    className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-white/5 transition-colors group"
+                    className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-cream-100 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="w-6 text-center text-sm font-bold text-neutral-500">
+                      <span className="w-6 text-center text-sm font-bold text-ink-500">
                         {idx + 1}
                       </span>
-                      <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs font-bold text-emerald-400">
+                      <div className="w-8 h-8 rounded-full bg-teal-800/10 flex items-center justify-center text-xs font-bold text-teal-700">
                         {student.name.split(" ").map((n) => n[0]).join("")}
                       </div>
-                      <span className="text-sm font-medium group-hover:text-emerald-400 transition-colors">
+                      <span className="text-sm font-medium group-hover:text-teal-700 transition-colors">
                         {student.name}
                       </span>
                     </div>
@@ -437,7 +437,7 @@ export default function EngagementPage() {
                         <Flame className="w-3 h-3 mr-1" />
                         {student.streak}d streak
                       </Badge>
-                      <span className="text-xs text-neutral-400">{student.sessions} sessions</span>
+                      <span className="text-xs text-ink-600">{student.sessions} sessions</span>
                     </div>
                   </Link>
                 ))}
@@ -446,13 +446,13 @@ export default function EngagementPage() {
           </Card>
 
           {/* ── Inactive Students (7+ days) ────────────────────── */}
-          <Card className="bg-neutral-900/50 border-neutral-800">
+          <Card className="bg-cream-100/50 border-ink-200">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Bell className="w-5 h-5 text-red-400" />
                 Inactive Students
               </CardTitle>
-              <CardDescription className="text-neutral-400">
+              <CardDescription className="text-ink-600">
                 Students who have not logged in for 7+ days
               </CardDescription>
             </CardHeader>
@@ -469,7 +469,7 @@ export default function EngagementPage() {
                       </div>
                       <div>
                         <p className="text-sm font-medium">{student.name}</p>
-                        <p className="text-xs text-neutral-500">
+                        <p className="text-xs text-ink-500">
                           Last active: {student.lastActive}
                         </p>
                       </div>
@@ -481,7 +481,7 @@ export default function EngagementPage() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-neutral-700 hover:bg-neutral-800 text-xs h-7"
+                        className="border-ink-200 hover:bg-cream-100 text-xs h-7"
                         disabled={remindersSent.has(student.id)}
                         onClick={() => handleSendReminder(student.id, student.name)}
                       >
@@ -498,10 +498,10 @@ export default function EngagementPage() {
         {/* ── Content Engagement ─────────────────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
           {/* Popular Courses */}
-          <Card className="bg-neutral-900/50 border-neutral-800">
+          <Card className="bg-cream-100/50 border-ink-200">
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-blue-400" />
+                <BookOpen className="w-4 h-4 text-teal-700" />
                 Most Popular Courses
               </CardTitle>
             </CardHeader>
@@ -510,12 +510,12 @@ export default function EngagementPage() {
                 {POPULAR_COURSES.map((course, idx) => (
                   <div key={idx} className="flex items-center justify-between">
                     <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-xs font-bold text-neutral-500 w-4">{idx + 1}</span>
+                      <span className="text-xs font-bold text-ink-500 w-4">{idx + 1}</span>
                       <span className="text-sm truncate">{course.name}</span>
                     </div>
                     <div className="flex items-center gap-2 shrink-0 ml-2">
-                      <span className="text-xs text-neutral-400">{course.views} views</span>
-                      <span className="text-xs text-emerald-400">{course.trend}</span>
+                      <span className="text-xs text-ink-600">{course.views} views</span>
+                      <span className="text-xs text-teal-700">{course.trend}</span>
                     </div>
                   </div>
                 ))}
@@ -524,10 +524,10 @@ export default function EngagementPage() {
           </Card>
 
           {/* Most Attempted Quizzes */}
-          <Card className="bg-neutral-900/50 border-neutral-800">
+          <Card className="bg-cream-100/50 border-ink-200">
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
-                <ClipboardList className="w-4 h-4 text-purple-400" />
+                <ClipboardList className="w-4 h-4 text-clay-600" />
                 Most Attempted Quizzes
               </CardTitle>
             </CardHeader>
@@ -536,11 +536,11 @@ export default function EngagementPage() {
                 {POPULAR_QUIZZES.map((quiz, idx) => (
                   <div key={idx} className="flex items-center justify-between">
                     <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-xs font-bold text-neutral-500 w-4">{idx + 1}</span>
+                      <span className="text-xs font-bold text-ink-500 w-4">{idx + 1}</span>
                       <span className="text-sm truncate">{quiz.name}</span>
                     </div>
                     <div className="flex items-center gap-3 shrink-0 ml-2">
-                      <span className="text-xs text-neutral-400">{quiz.attempts} attempts</span>
+                      <span className="text-xs text-ink-600">{quiz.attempts} attempts</span>
                       <span className="text-xs text-amber-400">{quiz.avgScore}% avg</span>
                     </div>
                   </div>
@@ -550,10 +550,10 @@ export default function EngagementPage() {
           </Card>
 
           {/* Most Viewed Resources */}
-          <Card className="bg-neutral-900/50 border-neutral-800">
+          <Card className="bg-cream-100/50 border-ink-200">
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
-                <FolderOpen className="w-4 h-4 text-emerald-400" />
+                <FolderOpen className="w-4 h-4 text-teal-700" />
                 Most Viewed Resources
               </CardTitle>
             </CardHeader>
@@ -562,10 +562,10 @@ export default function EngagementPage() {
                 {POPULAR_RESOURCES.map((resource, idx) => (
                   <div key={idx} className="flex items-center justify-between">
                     <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-xs font-bold text-neutral-500 w-4">{idx + 1}</span>
+                      <span className="text-xs font-bold text-ink-500 w-4">{idx + 1}</span>
                       <span className="text-sm truncate">{resource.name}</span>
                     </div>
-                    <span className="text-xs text-neutral-400 shrink-0 ml-2">{resource.downloads} downloads</span>
+                    <span className="text-xs text-ink-600 shrink-0 ml-2">{resource.downloads} downloads</span>
                   </div>
                 ))}
               </div>
@@ -574,13 +574,13 @@ export default function EngagementPage() {
         </div>
 
         {/* ── Time-of-Day Analysis ───────────────────────────────── */}
-        <Card className="bg-neutral-900/50 border-neutral-800">
+        <Card className="bg-cream-100/50 border-ink-200">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Clock className="w-5 h-5 text-blue-400" />
+              <Clock className="w-5 h-5 text-teal-700" />
               Time-of-Day Activity
             </CardTitle>
-            <CardDescription className="text-neutral-400">
+            <CardDescription className="text-ink-600">
               When students are most active throughout the day
             </CardDescription>
           </CardHeader>
@@ -594,39 +594,39 @@ export default function EngagementPage() {
                     key={slot.label}
                     className="flex-1 flex flex-col items-center gap-1"
                   >
-                    <span className="text-xs font-bold text-neutral-300">
+                    <span className="text-xs font-bold text-ink-600">
                       {slot.value}%
                     </span>
                     <div
                       className={`w-full rounded-t-md transition-all ${
                         isPeak
-                          ? "bg-emerald-500"
+                          ? "bg-teal-700"
                           : slot.value >= 40
-                            ? "bg-emerald-600/60"
-                            : "bg-neutral-700/60"
+                            ? "bg-teal-800/60"
+                            : "bg-ink-200/40"
                       }`}
                       style={{ height: `${heightPct}%` }}
                       title={`${slot.period}: ${slot.value}% of peak activity`}
                     />
-                    <span className="text-[10px] text-neutral-500 text-center leading-tight">
+                    <span className="text-[10px] text-ink-500 text-center leading-tight">
                       {slot.label}
                     </span>
                   </div>
                 )
               })}
             </div>
-            <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-neutral-800">
+            <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-ink-200">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm bg-emerald-500" />
-                <span className="text-xs text-neutral-400">Peak hours</span>
+                <div className="w-3 h-3 rounded-sm bg-teal-700" />
+                <span className="text-xs text-ink-600">Peak hours</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm bg-emerald-600/60" />
-                <span className="text-xs text-neutral-400">Moderate</span>
+                <div className="w-3 h-3 rounded-sm bg-teal-800/60" />
+                <span className="text-xs text-ink-600">Moderate</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm bg-neutral-700/60" />
-                <span className="text-xs text-neutral-400">Low</span>
+                <div className="w-3 h-3 rounded-sm bg-ink-200/40" />
+                <span className="text-xs text-ink-600">Low</span>
               </div>
             </div>
           </CardContent>

@@ -529,7 +529,7 @@ export default function CourseCataloguePage() {
                 <div className="mb-12 rounded-xl border border-amber-500/20 bg-amber-500/[0.03] p-5 sm:p-6">
                   <div className="mb-5 flex items-center gap-2.5">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/15">
-                      <Star className="h-4 w-4 text-amber-400" />
+                      <Star className="h-4 w-4 text-amber-600" />
                     </div>
                     <div>
                       <h2 className="text-lg font-bold tracking-tight text-foreground">
@@ -742,7 +742,7 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
               {course.board && (
                 <Badge
                   variant="secondary"
-                  className="rounded-full bg-blue-500/20 text-blue-400 text-xs"
+                  className="rounded-full bg-blue-500/20 text-blue-600 text-xs"
                 >
                   {course.board}
                 </Badge>

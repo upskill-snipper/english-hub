@@ -96,7 +96,7 @@ export default function SettingsPage() {
 
               <div
                 role="note"
-                className="mb-4 flex items-start gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-300"
+                className="mb-4 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-50 p-3 text-sm text-amber-700"
               >
                 <AlertTriangle
                   className="mt-0.5 size-4 shrink-0"

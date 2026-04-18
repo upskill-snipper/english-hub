@@ -56,31 +56,31 @@ interface InteractiveTextViewerProps {
 const OVERLAY_CONFIG: Record<OverlayType, { label: string; color: string; bg: string; border: string }> = {
   context: {
     label: 'Context',
-    color: 'text-blue-300',
+    color: 'text-blue-700',
     bg: 'bg-blue-500/20',
     border: 'border-blue-500/40',
   },
   quote: {
     label: 'Key Quotes',
-    color: 'text-amber-300',
+    color: 'text-amber-700',
     bg: 'bg-amber-500/20',
     border: 'border-amber-500/40',
   },
   language: {
     label: 'Language',
-    color: 'text-purple-300',
+    color: 'text-purple-700',
     bg: 'bg-purple-500/20',
     border: 'border-purple-500/40',
   },
   theme: {
     label: 'Themes',
-    color: 'text-emerald-300',
+    color: 'text-emerald-700',
     bg: 'bg-emerald-500/20',
     border: 'border-emerald-500/40',
   },
   character: {
     label: 'Characters',
-    color: 'text-rose-300',
+    color: 'text-rose-700',
     bg: 'bg-rose-500/20',
     border: 'border-rose-500/40',
   },
@@ -539,7 +539,7 @@ function InfoPanel({
                 </p>
                 {char.keyQuotes.length > 0 && (
                   <div className="mt-3 flex flex-col gap-1.5">
-                    <span className="text-xs font-semibold text-amber-300">Key Quotes</span>
+                    <span className="text-xs font-semibold text-amber-700">Key Quotes</span>
                     {char.keyQuotes.map((q, i) => (
                       <blockquote
                         key={i}
@@ -559,7 +559,7 @@ function InfoPanel({
           <div className="flex flex-col gap-4">
             {data.themes.map((theme) => (
               <div key={theme.name} className="rounded-xl border border-border bg-surface-raised p-4">
-                <h3 className="text-sm font-bold text-emerald-300">{theme.name}</h3>
+                <h3 className="text-sm font-bold text-emerald-700">{theme.name}</h3>
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                   {theme.description}
                 </p>

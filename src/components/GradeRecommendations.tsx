@@ -87,7 +87,7 @@ export default function GradeRecommendations({
       <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5">
         <div className="flex items-center gap-3">
           <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-          <p className="text-sm text-emerald-300 font-medium">
+          <p className="text-sm text-emerald-700 font-medium">
             Working at Grade 9 -- the highest level. Focus on maintaining
             excellence and supporting others.
           </p>
@@ -111,7 +111,7 @@ export default function GradeRecommendations({
       </div>
 
       {/* Summary */}
-      <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-4">
+      <div className="rounded-lg border border-border bg-cream-100 p-4">
         <div className="flex items-start gap-3">
           <Lightbulb className="h-4 w-4 mt-0.5 text-amber-400 shrink-0" />
           <p className="text-sm text-muted-foreground leading-relaxed">{rec.summary}</p>
@@ -127,7 +127,7 @@ export default function GradeRecommendations({
           <ul className="space-y-2">
             {rec.keyFocus.map((focus, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                <ClipboardList className="h-3.5 w-3.5 mt-0.5 text-cyan-400/60 shrink-0" />
+                <ClipboardList className="h-3.5 w-3.5 mt-0.5 text-teal-700/60 shrink-0" />
                 <span>{focus}</span>
               </li>
             ))}
@@ -170,9 +170,9 @@ export default function GradeRecommendations({
               return (
                 <div
                   key={i}
-                  className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-white/[0.02] px-3.5 py-2.5 text-sm text-muted-foreground hover:bg-white/[0.04] transition-colors"
+                  className="flex items-center gap-3 rounded-lg border border-border bg-cream-100 px-3.5 py-2.5 text-sm text-muted-foreground hover:bg-cream-200/50 transition-colors"
                 >
-                  <Icon className="h-3.5 w-3.5 text-cyan-400/60 shrink-0" />
+                  <Icon className="h-3.5 w-3.5 text-teal-700/60 shrink-0" />
                   <span className="flex-1 truncate">{res.title}</span>
                   <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60">
                     {res.type}
@@ -201,8 +201,8 @@ function GradeChip({
     <span
       className={`inline-flex items-center justify-center h-9 w-9 rounded-lg text-sm font-bold ${
         highlight
-          ? "bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300"
-          : "bg-white/[0.04] border border-white/[0.08] " + colorClass
+          ? "bg-gradient-to-br from-teal-500/20 to-teal-600/20 border border-teal-500/30 text-teal-700"
+          : "bg-ink-200/30 border border-border " + colorClass
       }`}
     >
       {grade}
@@ -230,16 +230,16 @@ function SkillActionCard({
       className={`rounded-lg border p-3.5 transition-colors ${
         isWeakArea
           ? "border-amber-500/20 bg-amber-500/[0.04]"
-          : "border-white/[0.06] bg-white/[0.02]"
+          : "border-border bg-cream-100"
       }`}
     >
       <div className="flex items-start gap-3">
-        <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded text-[10px] font-bold bg-white/[0.06] text-muted-foreground">
+        <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded text-[10px] font-bold bg-ink-200/30 text-muted-foreground">
           {index + 1}
         </span>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-sm font-medium text-white/90">{skill.label}</span>
+            <span className="text-sm font-medium text-foreground">{skill.label}</span>
             {isWeakArea && (
               <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">
                 Focus
@@ -259,9 +259,9 @@ function SkillActionCard({
             <div className="mt-2.5">
               <div className="flex items-center justify-between text-[10px] text-muted-foreground mb-1">
                 <span>{skill.currentLevel}</span>
-                <span className="text-cyan-400/60">{skill.targetLevel}</span>
+                <span className="text-teal-700/60">{skill.targetLevel}</span>
               </div>
-              <div className="h-1 w-full rounded-full bg-white/[0.04]">
+              <div className="h-1 w-full rounded-full bg-ink-200/30">
                 <div
                   className={`h-full rounded-full transition-all ${progressBarColor(progress)}`}
                   style={{ width: `${progress}%` }}

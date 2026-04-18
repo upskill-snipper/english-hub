@@ -128,7 +128,7 @@ function yearGroupNum(yg: string): number {
 const ragColors = {
   red: "bg-red-500/20 text-red-400 border-red-500/30",
   amber: "bg-amber-500/20 text-amber-400 border-amber-500/30",
-  green: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+  green: "bg-teal-800/10 text-teal-700 border-teal-800/30",
 }
 
 // Teacher ranking data
@@ -208,14 +208,14 @@ const printStyles = `
   [class*="border-border"] {
     border-color: #ccc !important;
   }
-  .bg-emerald-500, .bg-amber-500, .bg-red-500,
-  .bg-blue-500, .bg-violet-500 {
+  .bg-teal-700, .bg-amber-500, .bg-red-500,
+  .bg-blue-500, .bg-teal-700 {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
   [class*="bg-red-500/20"],
   [class*="bg-amber-500/20"],
-  [class*="bg-emerald-500/20"] {
+  [class*="bg-teal-800/10"] {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -341,10 +341,10 @@ export default function ReportsPage() {
             {/* Key Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
               {[
-                { label: "Total Students", value: totalStudents.toString(), icon: <Users className="h-5 w-5" />, color: "text-violet-400" },
-                { label: "Active Rate", value: `${activeRate}%`, icon: <TrendingUp className="h-5 w-5" />, color: "text-emerald-400" },
+                { label: "Total Students", value: totalStudents.toString(), icon: <Users className="h-5 w-5" />, color: "text-teal-700" },
+                { label: "Active Rate", value: `${activeRate}%`, icon: <TrendingUp className="h-5 w-5" />, color: "text-teal-700" },
                 { label: "Avg Score", value: `${avgScore}% (G${percentageToGCSEGrade(avgScore)})`, icon: <Target className="h-5 w-5" />, color: "text-amber-400" },
-                { label: "Completion Rate", value: `${completionRate}%`, icon: <CheckCircle2 className="h-5 w-5" />, color: "text-emerald-400" },
+                { label: "Completion Rate", value: `${completionRate}%`, icon: <CheckCircle2 className="h-5 w-5" />, color: "text-teal-700" },
                 { label: "At-Risk Students", value: atRiskCount.toString(), icon: <AlertTriangle className="h-5 w-5" />, color: "text-red-400" },
               ].map((metric) => (
                 <Card key={metric.label} className="bg-card border-border print-avoid-break">
@@ -390,7 +390,7 @@ export default function ReportsPage() {
                             <td className="py-3 pr-4 text-muted-foreground">{row.prev}{row.metric.includes("Count") ? "" : "%"}</td>
                             <td className="py-3 pr-4 text-foreground font-semibold">{row.curr}{row.metric.includes("Count") ? "" : "%"}</td>
                             <td className="py-3">
-                              <span className={`inline-flex items-center gap-1 text-xs font-medium ${positive ? "text-emerald-400" : "text-red-400"}`}>
+                              <span className={`inline-flex items-center gap-1 text-xs font-medium ${positive ? "text-teal-700" : "text-red-400"}`}>
                                 {diff > 0 ? <ArrowUpRight className="h-3 w-3" /> : diff < 0 ? <ArrowDownRight className="h-3 w-3" /> : <Minus className="h-3 w-3" />}
                                 {diff > 0 ? "+" : ""}{diff}{row.metric.includes("Count") ? "" : "%"}
                               </span>
@@ -434,11 +434,11 @@ export default function ReportsPage() {
                             <td className="py-3 pr-4 text-foreground font-semibold">{yg.avgProgress}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(yg.avgProgress)})</span></td>
                             <td className="py-3 pr-4">
                               <div className="w-full bg-muted rounded-full h-2.5">
-                                <div className={`h-2.5 rounded-full transition-all ${yg.avgProgress >= 75 ? "bg-emerald-500" : yg.avgProgress >= 60 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${yg.avgProgress}%` }} />
+                                <div className={`h-2.5 rounded-full transition-all ${yg.avgProgress >= 75 ? "bg-teal-700" : yg.avgProgress >= 60 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${yg.avgProgress}%` }} />
                               </div>
                             </td>
                             <td className="py-3">
-                              <span className={`inline-flex items-center gap-1 text-xs font-medium ${diff > 0 ? "text-emerald-400" : diff < 0 ? "text-red-400" : "text-muted-foreground"}`}>
+                              <span className={`inline-flex items-center gap-1 text-xs font-medium ${diff > 0 ? "text-teal-700" : diff < 0 ? "text-red-400" : "text-muted-foreground"}`}>
                                 {diff > 0 ? <ArrowUpRight className="h-3 w-3" /> : diff < 0 ? <ArrowDownRight className="h-3 w-3" /> : <Minus className="h-3 w-3" />}
                                 {diff > 0 ? "+" : ""}{diff}%
                               </span>
@@ -517,7 +517,7 @@ export default function ReportsPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="bg-card border-border print-avoid-break">
                 <CardHeader>
-                  <CardTitle className="text-emerald-400 flex items-center gap-2">
+                  <CardTitle className="text-teal-700 flex items-center gap-2">
                     <TrendingUp className="h-4 w-4" />
                     Department Strengths
                   </CardTitle>
@@ -526,7 +526,7 @@ export default function ReportsPage() {
                   <ul className="space-y-3">
                     {strengths.map((s, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-teal-700 mt-0.5 shrink-0" />
                         {s}
                       </li>
                     ))}
@@ -563,7 +563,7 @@ export default function ReportsPage() {
                 <ol className="space-y-4">
                   {recommendations.map((r, i) => (
                     <li key={i} className="flex gap-4 text-sm text-foreground/80">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/20 text-violet-400 text-xs font-bold">{i + 1}</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-700/20 text-teal-700 text-xs font-bold">{i + 1}</span>
                       {r}
                     </li>
                   ))}
@@ -575,7 +575,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
                 <CardTitle className="text-foreground flex items-center gap-2">
-                  <FileText className="h-5 w-5 text-violet-400" />
+                  <FileText className="h-5 w-5 text-teal-700" />
                   Generate Reports
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">Generate printable, downloadable reports for any class or student</CardDescription>
@@ -585,7 +585,7 @@ export default function ReportsPage() {
                   <div className="bg-muted/50 rounded-lg p-4 border border-border/50">
                     <h4 className="text-sm font-semibold text-foreground mb-2">School Overview</h4>
                     <p className="text-xs text-muted-foreground/70 mb-3">Full school performance report with all year groups and departments.</p>
-                    <Button size="sm" className="w-full bg-violet-600 hover:bg-violet-700 text-foreground gap-1.5" onClick={() => window.print()}>
+                    <Button size="sm" className="w-full bg-teal-800 hover:bg-teal-800 text-foreground gap-1.5" onClick={() => window.print()}>
                       <Printer className="h-3.5 w-3.5" />Print / Save as PDF
                     </Button>
                   </div>
@@ -615,7 +615,7 @@ export default function ReportsPage() {
                 {/* Download All */}
                 <div className="mt-4 pt-4 border-t border-border/50 flex items-center justify-between">
                   <p className="text-xs text-muted-foreground/70">Generate all class and student reports at once for the current term.</p>
-                  <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-foreground gap-1.5" onClick={() => toast.info("Register your school to batch-download all reports as a ZIP file.")}>
+                  <Button size="sm" className="bg-teal-800 hover:bg-teal-800 text-foreground gap-1.5" onClick={() => toast.info("Register your school to batch-download all reports as a ZIP file.")}>
                     <Download className="h-3.5 w-3.5" />Download All Reports
                   </Button>
                 </div>
@@ -626,7 +626,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break" data-print-hide>
               <CardHeader>
                 <CardTitle className="text-foreground flex items-center gap-2">
-                  <CalendarDays className="h-5 w-5 text-violet-400" />
+                  <CalendarDays className="h-5 w-5 text-teal-700" />
                   Schedule Reports
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -642,7 +642,7 @@ export default function ReportsPage() {
                       description: "Auto-sent to Head of Department every Monday at 8:00 AM",
                       recipient: "HoD",
                       frequency: "Weekly",
-                      icon: <Clock className="h-4 w-4 text-violet-400" />,
+                      icon: <Clock className="h-4 w-4 text-teal-700" />,
                       defaultOn: true,
                     },
                     {
@@ -650,7 +650,7 @@ export default function ReportsPage() {
                       description: "Auto-sent to Senior Leadership Team on the 1st of each month",
                       recipient: "SLT",
                       frequency: "Monthly",
-                      icon: <BarChart3 className="h-4 w-4 text-emerald-400" />,
+                      icon: <BarChart3 className="h-4 w-4 text-teal-700" />,
                       defaultOn: true,
                     },
                     {
@@ -715,7 +715,7 @@ export default function ReportsPage() {
                 <div className="mt-6 pt-4 border-t border-border/50">
                   <div className="flex items-center justify-between bg-gradient-to-r from-violet-600/10 via-blue-600/10 to-cyan-600/10 rounded-lg p-4 border border-border">
                     <div className="flex items-start gap-3">
-                      <Archive className="h-5 w-5 text-violet-400 mt-0.5" />
+                      <Archive className="h-5 w-5 text-teal-700 mt-0.5" />
                       <div>
                         <h4 className="text-sm font-semibold text-foreground">Download All Student Reports</h4>
                         <p className="text-xs text-muted-foreground/70 mt-0.5">
@@ -728,7 +728,7 @@ export default function ReportsPage() {
                     </div>
                     <Button
                       size="sm"
-                      className="bg-violet-600 hover:bg-violet-700 text-foreground gap-1.5"
+                      className="bg-teal-800 hover:bg-teal-800 text-foreground gap-1.5"
                       onClick={() => {
                         toast.info("Download All Student Reports", {
                           description: `In production, this would generate ${DEMO_STUDENTS.length} individual student PDFs and bundle them into a single ZIP file for download. Register your school to enable this feature.`,
@@ -826,7 +826,7 @@ export default function ReportsPage() {
                       const maxCount = Math.max(...gradeDistribution.map(([, v]) => v))
                       const heightPct = maxCount > 0 ? (count / maxCount) * 100 : 0
                       const gradeNum = parseInt(grade, 10)
-                      const barColor = gradeNum >= 9 ? "bg-yellow-400" : gradeNum >= 7 ? "bg-emerald-500" : gradeNum >= 5 ? "bg-amber-500" : "bg-red-500"
+                      const barColor = gradeNum >= 9 ? "bg-yellow-400" : gradeNum >= 7 ? "bg-teal-700" : gradeNum >= 5 ? "bg-amber-500" : "bg-red-500"
                       return (
                         <div key={grade} className="flex-1 flex flex-col items-center gap-2">
                           <span className="text-xs text-muted-foreground font-medium">{count}</span>
@@ -879,13 +879,13 @@ export default function ReportsPage() {
             {/* Top / Bottom performers */}
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="bg-card border-border print-avoid-break">
-                <CardHeader><CardTitle className="text-emerald-400 flex items-center gap-2"><Star className="h-4 w-4" />Top Performers</CardTitle></CardHeader>
+                <CardHeader><CardTitle className="text-teal-700 flex items-center gap-2"><Star className="h-4 w-4" />Top Performers</CardTitle></CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     {[...yearStudents].sort((a, b) => b.overallProgress - a.overallProgress).slice(0, 5).map((s) => (
                       <li key={s.id} className="flex items-center justify-between text-sm">
                         <div><span className="text-foreground font-medium">{s.name}</span><span className="text-muted-foreground/70 ml-2">{s.className}</span></div>
-                        <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">{s.overallProgress}%</Badge>
+                        <Badge className="bg-teal-800/10 text-teal-700 border-teal-800/30">{s.overallProgress}%</Badge>
                       </li>
                     ))}
                     {yearStudents.length === 0 && <li className="text-sm text-muted-foreground/70">No student data for this year group in the demo.</li>}
@@ -926,7 +926,7 @@ export default function ReportsPage() {
                     ? ["Weekly 20-minute focused writing drills using scaffolded templates", "Vocabulary enrichment programme using The English Hub's word-bank modules", "Cross-curricular reading initiative with History and Geography departments"]
                     : ["Fortnightly timed essay practice under exam conditions", "Peer marking sessions using GCSE mark schemes to build examiner awareness", "Dedicated unseen poetry workshop series in Spring term"]
                   ).map((v, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-foreground/80"><Target className="h-4 w-4 text-violet-400 mt-0.5 shrink-0" />{v}</li>
+                    <li key={i} className="flex items-start gap-3 text-sm text-foreground/80"><Target className="h-4 w-4 text-teal-700 mt-0.5 shrink-0" />{v}</li>
                   ))}
                 </ul>
               </CardContent>
@@ -959,7 +959,7 @@ export default function ReportsPage() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   <div className="bg-muted/50 rounded-lg p-4"><p className="text-2xl font-bold text-foreground">{classAvg}%</p><p className="text-xs text-muted-foreground/70">Class Average</p></div>
                   <div className="bg-muted/50 rounded-lg p-4"><p className="text-2xl font-bold text-foreground">{schoolAvg}%</p><p className="text-xs text-muted-foreground/70">School Average</p></div>
-                  <div className="bg-muted/50 rounded-lg p-4"><p className={`text-2xl font-bold ${classAvg >= schoolAvg ? "text-emerald-400" : "text-red-400"}`}>{classAvg >= schoolAvg ? "+" : ""}{classAvg - schoolAvg}%</p><p className="text-xs text-muted-foreground/70">vs School Avg</p></div>
+                  <div className="bg-muted/50 rounded-lg p-4"><p className={`text-2xl font-bold ${classAvg >= schoolAvg ? "text-teal-700" : "text-red-400"}`}>{classAvg >= schoolAvg ? "+" : ""}{classAvg - schoolAvg}%</p><p className="text-xs text-muted-foreground/70">vs School Avg</p></div>
                   <div className="bg-muted/50 rounded-lg p-4"><p className="text-2xl font-bold text-foreground">{Math.round((selectedClass.assignmentsCompleted / selectedClass.assignmentsSet) * 100)}%</p><p className="text-xs text-muted-foreground/70">Completion ({selectedClass.assignmentsCompleted}/{selectedClass.assignmentsSet})</p></div>
                 </div>
               </CardContent>
@@ -1002,7 +1002,7 @@ export default function ReportsPage() {
                               <td className="py-3 pr-4 font-medium text-foreground">{s.name}</td>
                               <td className={`py-3 pr-4 text-center font-bold ${gcseGradeColor(s.workingAtGrade)}`}>{s.workingAtGrade}</td>
                               <td className={`py-3 pr-4 text-center font-bold ${predictedGradeColor(s.predictedGrade, s.workingAtGrade)}`}>{s.predictedGrade}</td>
-                              <td className="py-3 pr-4 text-center font-bold text-violet-400">{s.targetGrade}</td>
+                              <td className="py-3 pr-4 text-center font-bold text-teal-700">{s.targetGrade}</td>
                               <td className="py-3 pr-4 text-muted-foreground">{s.lastActive}</td>
                               <td className="py-3 pr-4">{s.atRisk ? <Badge className="bg-red-500/20 text-red-400 border-red-500/30">Yes</Badge> : <span className="text-muted-foreground/70">--</span>}</td>
                               <td className="py-3"><Badge className={ragColors[rag]}>{rag.toUpperCase()}</Badge></td>
@@ -1025,11 +1025,11 @@ export default function ReportsPage() {
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between text-sm mb-1"><span className="text-muted-foreground">{selectedClass.name}</span><span className="text-foreground font-semibold">{classAvg}%</span></div>
-                    <div className="w-full bg-muted rounded-full h-4"><div className={`h-4 rounded-full transition-all ${classAvg >= 75 ? "bg-emerald-500" : classAvg >= 60 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${classAvg}%` }} /></div>
+                    <div className="w-full bg-muted rounded-full h-4"><div className={`h-4 rounded-full transition-all ${classAvg >= 75 ? "bg-teal-700" : classAvg >= 60 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${classAvg}%` }} /></div>
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1"><span className="text-muted-foreground">School Average</span><span className="text-foreground font-semibold">{schoolAvg}%</span></div>
-                    <div className="w-full bg-muted rounded-full h-4"><div className="h-4 rounded-full bg-violet-500 transition-all" style={{ width: `${schoolAvg}%` }} /></div>
+                    <div className="w-full bg-muted rounded-full h-4"><div className="h-4 rounded-full bg-teal-700 transition-all" style={{ width: `${schoolAvg}%` }} /></div>
                   </div>
                 </div>
               </CardContent>
@@ -1077,7 +1077,7 @@ export default function ReportsPage() {
                     </div>
                     <div className="text-center">
                       <p className="text-xs text-muted-foreground">Target</p>
-                      <p className="text-3xl font-bold text-violet-400 mt-1">{selectedStudent.targetGrade}</p>
+                      <p className="text-3xl font-bold text-teal-700 mt-1">{selectedStudent.targetGrade}</p>
                     </div>
                   </div>
                 </div>
@@ -1089,7 +1089,7 @@ export default function ReportsPage() {
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">Overall Progress</h3>
                   <div className="flex items-center gap-4">
                     <div className="w-full bg-muted rounded-full h-4">
-                      <div className={`h-4 rounded-full transition-all ${selectedStudent.overallProgress >= 70 ? "bg-emerald-500" : selectedStudent.overallProgress >= 50 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${selectedStudent.overallProgress}%` }} />
+                      <div className={`h-4 rounded-full transition-all ${selectedStudent.overallProgress >= 70 ? "bg-teal-700" : selectedStudent.overallProgress >= 50 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${selectedStudent.overallProgress}%` }} />
                     </div>
                     <span className="text-xl font-bold text-foreground shrink-0 w-14 text-right">{selectedStudent.overallProgress}%</span>
                   </div>
@@ -1105,7 +1105,7 @@ export default function ReportsPage() {
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <div className="bg-muted/50 rounded-lg p-4 text-center"><p className={`text-2xl font-bold ${gcseGradeColor(selectedStudent.workingAtGrade)}`}>Grade {selectedStudent.workingAtGrade}</p><p className="text-xs text-muted-foreground/70">Working At Grade</p></div>
                     <div className="bg-muted/50 rounded-lg p-4 text-center"><p className={`text-2xl font-bold ${predictedGradeColor(selectedStudent.predictedGrade, selectedStudent.workingAtGrade)}`}>Grade {selectedStudent.predictedGrade}</p><p className="text-xs text-muted-foreground/70">Predicted Grade</p></div>
-                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-violet-400">Grade {selectedStudent.targetGrade}</p><p className="text-xs text-muted-foreground/70">Target Grade</p></div>
+                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-teal-700">Grade {selectedStudent.targetGrade}</p><p className="text-xs text-muted-foreground/70">Target Grade</p></div>
                     <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.assignmentsCompleted}/{selectedStudent.assignmentsTotal}</p><p className="text-xs text-muted-foreground/70">Assignments</p>{selectedStudent.readingAge && <p className="text-xs text-muted-foreground mt-1">Reading Age: {formatReadingAge(selectedStudent.readingAge)}</p>}</div>
                   </div>
                 </div>
@@ -1119,9 +1119,9 @@ export default function ReportsPage() {
                       return (
                         <div key={mod.name} className="flex items-center gap-4">
                           <span className="text-sm text-foreground/80 w-48 shrink-0">{mod.name}</span>
-                          <div className="flex-1 bg-muted rounded-full h-2.5"><div className={`h-2.5 rounded-full ${rag === "green" ? "bg-emerald-500" : rag === "amber" ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${mod.score}%` }} /></div>
+                          <div className="flex-1 bg-muted rounded-full h-2.5"><div className={`h-2.5 rounded-full ${rag === "green" ? "bg-teal-700" : rag === "amber" ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${mod.score}%` }} /></div>
                           <span className="text-sm text-foreground font-semibold w-16 text-right">G{percentageToGCSEGrade(mod.score)}</span>
-                          <Badge className={`w-24 justify-center ${mod.status === "completed" ? "bg-emerald-500/20 text-emerald-400" : mod.status === "in-progress" ? "bg-amber-500/20 text-amber-400" : "bg-neutral-500/20 text-muted-foreground"}`}>
+                          <Badge className={`w-24 justify-center ${mod.status === "completed" ? "bg-teal-800/10 text-teal-700" : mod.status === "in-progress" ? "bg-amber-500/20 text-amber-400" : "bg-ink-200/20 text-muted-foreground"}`}>
                             {mod.status === "completed" ? "Completed" : mod.status === "in-progress" ? "In Progress" : "Not Started"}
                           </Badge>
                         </div>
@@ -1133,9 +1133,9 @@ export default function ReportsPage() {
                 {/* Strengths and Weaknesses */}
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">Strengths</h3>
+                    <h3 className="text-sm font-semibold text-teal-700 uppercase tracking-wider mb-3">Strengths</h3>
                     <ul className="space-y-2 text-sm text-foreground/80">
-                      {selectedStudent.strengths.map((s: string | { name: string; score: number }) => (<li key={typeof s === "string" ? s : s.name} className="flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />{typeof s === "string" ? s : `${s.name} (G${percentageToGCSEGrade(s.score)})`}</li>))}
+                      {selectedStudent.strengths.map((s: string | { name: string; score: number }) => (<li key={typeof s === "string" ? s : s.name} className="flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-teal-700 shrink-0" />{typeof s === "string" ? s : `${s.name} (G${percentageToGCSEGrade(s.score)})`}</li>))}
                       {selectedStudent.strengths.length === 0 && <li className="text-muted-foreground/70">No strengths identified yet</li>}
                     </ul>
                   </div>
@@ -1153,7 +1153,7 @@ export default function ReportsPage() {
                   <div>
                     <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">Next Steps</h3>
                     <ul className="space-y-2">
-                      {selectedStudent.recommendations.map((r, i) => (<li key={i} className="flex items-start gap-3 text-sm text-foreground/80"><Target className="h-4 w-4 text-violet-400 mt-0.5 shrink-0" />{r}</li>))}
+                      {selectedStudent.recommendations.map((r, i) => (<li key={i} className="flex items-start gap-3 text-sm text-foreground/80"><Target className="h-4 w-4 text-teal-700 mt-0.5 shrink-0" />{r}</li>))}
                     </ul>
                   </div>
                 )}
@@ -1174,8 +1174,8 @@ export default function ReportsPage() {
                 </div>
 
                 {/* Parent note */}
-                <div className="bg-violet-500/10 border border-violet-500/20 rounded-lg p-4">
-                  <p className="text-sm text-violet-300">
+                <div className="bg-teal-800/10 border border-teal-800/20 rounded-lg p-4">
+                  <p className="text-sm text-teal-700">
                     <strong>For parents/carers:</strong> This report shows your child&apos;s progress across all English modules. The predicted grade is based on current performance and may change as the year progresses. Please contact the school office if you would like to discuss this report further.
                   </p>
                 </div>
@@ -1217,7 +1217,7 @@ export default function ReportsPage() {
                           <td className="py-3 pr-4 text-foreground/80">{t.department}</td>
                           <td className="py-3 pr-4 text-foreground/80">{t.classNames.join(", ")}</td>
                           <td className="py-3 pr-4 text-foreground/80">{t.totalStudents}</td>
-                          <td className="py-3 pr-4"><span className={`font-semibold ${t.avgProgress >= 75 ? "text-emerald-400" : t.avgProgress >= 60 ? "text-amber-400" : "text-red-400"}`}>{t.avgProgress}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(t.avgProgress)})</span></span></td>
+                          <td className="py-3 pr-4"><span className={`font-semibold ${t.avgProgress >= 75 ? "text-teal-700" : t.avgProgress >= 60 ? "text-amber-400" : "text-red-400"}`}>{t.avgProgress}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(t.avgProgress)})</span></span></td>
                           <td className="py-3 text-foreground/80">{t.completionRate}%</td>
                         </tr>
                       ))}
@@ -1269,10 +1269,10 @@ export default function ReportsPage() {
                             <td className="py-3 pr-4 text-foreground/80">{cls.yearGroup}</td>
                             <td className="py-3 pr-4 text-foreground/80">{cls.studentCount}</td>
                             <td className="py-3 pr-4 text-foreground font-semibold">{cls.avgProgress}%</td>
-                            <td className="py-3 pr-4"><div className="w-full bg-muted rounded-full h-2"><div className={`h-2 rounded-full ${cls.avgProgress >= 70 ? "bg-emerald-500" : cls.avgProgress >= 55 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${cls.avgProgress}%` }} /></div></td>
+                            <td className="py-3 pr-4"><div className="w-full bg-muted rounded-full h-2"><div className={`h-2 rounded-full ${cls.avgProgress >= 70 ? "bg-teal-700" : cls.avgProgress >= 55 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${cls.avgProgress}%` }} /></div></td>
                             <td className="py-3 pr-4 text-foreground/80">{cls.assignmentsCompleted}/{cls.assignmentsSet}</td>
                             <td className="py-3">
-                              <span className={`inline-flex items-center gap-1 text-xs font-medium ${diff > 0 ? "text-emerald-400" : diff < 0 ? "text-red-400" : "text-muted-foreground"}`}>
+                              <span className={`inline-flex items-center gap-1 text-xs font-medium ${diff > 0 ? "text-teal-700" : diff < 0 ? "text-red-400" : "text-muted-foreground"}`}>
                                 {diff > 0 ? <ArrowUpRight className="h-3 w-3" /> : diff < 0 ? <ArrowDownRight className="h-3 w-3" /> : <Minus className="h-3 w-3" />}
                                 {diff > 0 ? "+" : ""}{diff}%
                               </span>
@@ -1303,7 +1303,7 @@ export default function ReportsPage() {
                         return (
                           <div key={s.id} className="flex items-center justify-between bg-muted/50 rounded-lg p-3">
                             <div className="flex items-center gap-3">
-                              <div className={`w-2.5 h-2.5 rounded-full ${rag === "green" ? "bg-emerald-500" : rag === "amber" ? "bg-amber-500" : "bg-red-500"}`} />
+                              <div className={`w-2.5 h-2.5 rounded-full ${rag === "green" ? "bg-teal-700" : rag === "amber" ? "bg-amber-500" : "bg-red-500"}`} />
                               <div><p className="text-sm font-medium text-foreground">{s.name}</p><p className="text-xs text-muted-foreground/70">{s.className}</p></div>
                             </div>
                             <div className="flex items-center gap-3">
@@ -1312,7 +1312,7 @@ export default function ReportsPage() {
                               <span className="text-xs text-muted-foreground">Pred</span>
                               <span className={`text-sm font-bold ${predictedGradeColor(s.predictedGrade, s.workingAtGrade)}`}>{s.predictedGrade}</span>
                               <span className="text-xs text-muted-foreground">Tgt</span>
-                              <span className="text-sm font-bold text-violet-400">{s.targetGrade}</span>
+                              <span className="text-sm font-bold text-teal-700">{s.targetGrade}</span>
                               {s.atRisk && <Badge className="bg-red-500/20 text-red-400 border-red-500/30 text-xs">At Risk</Badge>}
                             </div>
                           </div>
@@ -1342,15 +1342,15 @@ export default function ReportsPage() {
                       <div>
                         <p className="text-sm text-muted-foreground mb-2">Average Student Progress</p>
                         <div className="space-y-3">
-                          <div><div className="flex justify-between text-sm mb-1"><span className="text-foreground/80">{selectedTeacher.name}</span><span className="text-foreground font-semibold">{teacherAvg}%</span></div><div className="w-full bg-muted rounded-full h-3"><div className={`h-3 rounded-full transition-all ${teacherAvg >= 75 ? "bg-emerald-500" : teacherAvg >= 60 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${teacherAvg}%` }} /></div></div>
-                          <div><div className="flex justify-between text-sm mb-1"><span className="text-foreground/80">{selectedTeacher.department} Avg</span><span className="text-foreground font-semibold">{deptAvg}%</span></div><div className="w-full bg-muted rounded-full h-3"><div className="h-3 rounded-full bg-violet-500/70 transition-all" style={{ width: `${deptAvg}%` }} /></div></div>
+                          <div><div className="flex justify-between text-sm mb-1"><span className="text-foreground/80">{selectedTeacher.name}</span><span className="text-foreground font-semibold">{teacherAvg}%</span></div><div className="w-full bg-muted rounded-full h-3"><div className={`h-3 rounded-full transition-all ${teacherAvg >= 75 ? "bg-teal-700" : teacherAvg >= 60 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${teacherAvg}%` }} /></div></div>
+                          <div><div className="flex justify-between text-sm mb-1"><span className="text-foreground/80">{selectedTeacher.department} Avg</span><span className="text-foreground font-semibold">{deptAvg}%</span></div><div className="w-full bg-muted rounded-full h-3"><div className="h-3 rounded-full bg-teal-700/70 transition-all" style={{ width: `${deptAvg}%` }} /></div></div>
                         </div>
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground mb-2">Assignment Completion Rate</p>
                         <div className="space-y-3">
-                          <div><div className="flex justify-between text-sm mb-1"><span className="text-foreground/80">{selectedTeacher.name}</span><span className="text-foreground font-semibold">{teacherCompletion}%</span></div><div className="w-full bg-muted rounded-full h-3"><div className="h-3 rounded-full bg-emerald-500 transition-all" style={{ width: `${teacherCompletion}%` }} /></div></div>
-                          <div><div className="flex justify-between text-sm mb-1"><span className="text-foreground/80">{selectedTeacher.department} Avg</span><span className="text-foreground font-semibold">{deptCompletion}%</span></div><div className="w-full bg-muted rounded-full h-3"><div className="h-3 rounded-full bg-emerald-500/50 transition-all" style={{ width: `${deptCompletion}%` }} /></div></div>
+                          <div><div className="flex justify-between text-sm mb-1"><span className="text-foreground/80">{selectedTeacher.name}</span><span className="text-foreground font-semibold">{teacherCompletion}%</span></div><div className="w-full bg-muted rounded-full h-3"><div className="h-3 rounded-full bg-teal-700 transition-all" style={{ width: `${teacherCompletion}%` }} /></div></div>
+                          <div><div className="flex justify-between text-sm mb-1"><span className="text-foreground/80">{selectedTeacher.department} Avg</span><span className="text-foreground font-semibold">{deptCompletion}%</span></div><div className="w-full bg-muted rounded-full h-3"><div className="h-3 rounded-full bg-teal-800/50 transition-all" style={{ width: `${deptCompletion}%` }} /></div></div>
                         </div>
                       </div>
                     </div>
@@ -1362,13 +1362,13 @@ export default function ReportsPage() {
             {/* CPD Recommendations */}
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
-                <CardTitle className="text-foreground flex items-center gap-2"><BookOpen className="h-5 w-5 text-violet-400" />Professional Development Recommendations</CardTitle>
+                <CardTitle className="text-foreground flex items-center gap-2"><BookOpen className="h-5 w-5 text-teal-700" />Professional Development Recommendations</CardTitle>
                 <CardDescription className="text-muted-foreground">Suggested CPD activities for {selectedTeacher.name}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   {(selectedTeacher.cpdNotes ?? ["Attend subject-specific CPD sessions", "Observe outstanding practitioners in department", "Complete safeguarding refresher training"]).map((note: any, i: number) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-foreground/80"><Target className="h-4 w-4 text-violet-400 mt-0.5 shrink-0" />{note}</li>
+                    <li key={i} className="flex items-start gap-3 text-sm text-foreground/80"><Target className="h-4 w-4 text-teal-700 mt-0.5 shrink-0" />{note}</li>
                   ))}
                 </ul>
               </CardContent>

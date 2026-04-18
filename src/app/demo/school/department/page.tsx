@@ -162,39 +162,39 @@ const CPD_RECOMMENDATIONS: CpdRecommendation[] = [
 type SortKey = "name" | "classes" | "students" | "avgScore" | "completionRate" | "atRisk"
 
 function scoreColor(score: number): string {
-  if (score >= DEPT_AVG + 5) return "text-emerald-400"
+  if (score >= DEPT_AVG + 5) return "text-teal-700"
   if (score >= DEPT_AVG - 5) return "text-amber-400"
   return "text-red-400"
 }
 
 function scoreBg(score: number): string {
-  if (score >= DEPT_AVG + 5) return "bg-emerald-500/10"
+  if (score >= DEPT_AVG + 5) return "bg-teal-800/10"
   if (score >= DEPT_AVG - 5) return "bg-amber-500/10"
   return "bg-red-500/10"
 }
 
 function rankBg(rank: number, total: number): string {
-  if (rank <= 5) return "bg-emerald-500/10 border-emerald-500/20"
+  if (rank <= 5) return "bg-teal-800/10 border-teal-800/20"
   if (rank > total - 5) return "bg-red-500/10 border-red-500/20"
-  return "bg-zinc-800/50 border-zinc-700/50"
+  return "bg-cream-100/80 border-ink-200/50"
 }
 
 function rankText(rank: number, total: number): string {
-  if (rank <= 5) return "text-emerald-400"
+  if (rank <= 5) return "text-teal-700"
   if (rank > total - 5) return "text-red-400"
-  return "text-zinc-400"
+  return "text-ink-600"
 }
 
 function trendIcon(change: number) {
-  if (change > 0) return <ArrowUp className="inline h-4 w-4 text-emerald-400" />
+  if (change > 0) return <ArrowUp className="inline h-4 w-4 text-teal-700" />
   if (change < 0) return <ArrowDown className="inline h-4 w-4 text-red-400" />
-  return <Minus className="inline h-4 w-4 text-zinc-500" />
+  return <Minus className="inline h-4 w-4 text-ink-9000" />
 }
 
 function trendColor(change: number): string {
-  if (change > 0) return "text-emerald-400"
+  if (change > 0) return "text-teal-700"
   if (change < 0) return "text-red-400"
-  return "text-zinc-500"
+  return "text-ink-9000"
 }
 
 // ── Workload thresholds ────────────────────────────────────────────────────
@@ -249,7 +249,7 @@ export default function DepartmentPage() {
   const gap = DEPT_AVG - DEPT_TARGET
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       {/* 1. Demo banner */}
       <DemoBanner message="You are viewing a demo department dashboard with sample data." />
 
@@ -260,11 +260,11 @@ export default function DepartmentPage() {
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
               Department Overview
             </h1>
-            <p className="mt-1 text-sm text-zinc-400">
+            <p className="mt-1 text-sm text-ink-600">
               {DEMO_SCHOOL.name} &middot; English Department &middot; {DEPT_TEACHERS.length} Teachers
             </p>
           </div>
-          <Button onClick={handleExport} className="gap-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700">
+          <Button onClick={handleExport} className="gap-2 bg-cream-100 hover:bg-cream-100 border border-ink-200">
             <Download className="h-4 w-4" />
             Download Department Report
           </Button>
@@ -272,53 +272,53 @@ export default function DepartmentPage() {
 
         {/* 3. Department KPIs */}
         <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Card className="border-zinc-800 bg-zinc-900/80">
+          <Card className="border-ink-200 bg-cream-100/80">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Total English Teachers</p>
+                  <p className="text-xs font-medium uppercase tracking-wider text-ink-9000">Total English Teachers</p>
                   <p className="mt-1 text-3xl font-bold">{DEPT_TEACHERS.length}</p>
                 </div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10">
-                  <Users className="h-5 w-5 text-blue-400" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-800/10">
+                  <Users className="h-5 w-5 text-teal-700" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-zinc-800 bg-zinc-900/80">
+          <Card className="border-ink-200 bg-cream-100/80">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Average Student Score</p>
-                  <p className="mt-1 text-3xl font-bold">{DEPT_AVG}% <span className="text-lg font-normal text-zinc-400">(Grade {percentageToGCSEGrade(DEPT_AVG)})</span></p>
+                  <p className="text-xs font-medium uppercase tracking-wider text-ink-9000">Average Student Score</p>
+                  <p className="mt-1 text-3xl font-bold">{DEPT_AVG}% <span className="text-lg font-normal text-ink-600">(Grade {percentageToGCSEGrade(DEPT_AVG)})</span></p>
                 </div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10">
-                  <BarChart3 className="h-5 w-5 text-emerald-400" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-800/10">
+                  <BarChart3 className="h-5 w-5 text-teal-700" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-zinc-800 bg-zinc-900/80">
+          <Card className="border-ink-200 bg-cream-100/80">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Department Target</p>
+                  <p className="text-xs font-medium uppercase tracking-wider text-ink-9000">Department Target</p>
                   <p className="mt-1 text-3xl font-bold">{DEPT_TARGET}%</p>
                 </div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-500/10">
-                  <Target className="h-5 w-5 text-violet-400" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-800/10">
+                  <Target className="h-5 w-5 text-teal-700" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-zinc-800 bg-zinc-900/80">
+          <Card className="border-ink-200 bg-cream-100/80">
             <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Gap to Target</p>
+                  <p className="text-xs font-medium uppercase tracking-wider text-ink-9000">Gap to Target</p>
                   <p className="mt-1 text-3xl font-bold text-amber-400">{gap}%</p>
                 </div>
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10">
@@ -330,10 +330,10 @@ export default function DepartmentPage() {
         </div>
 
         {/* 4. Teacher Comparison Table */}
-        <Card className="mb-8 border-zinc-800 bg-zinc-900/80">
+        <Card className="mb-8 border-ink-200 bg-cream-100/80">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
-              <Users className="h-5 w-5 text-blue-400" />
+              <Users className="h-5 w-5 text-teal-700" />
               Teacher Comparison
             </CardTitle>
           </CardHeader>
@@ -341,7 +341,7 @@ export default function DepartmentPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-800 text-left text-xs uppercase tracking-wider text-zinc-500">
+                  <tr className="border-b border-ink-200 text-left text-xs uppercase tracking-wider text-ink-9000">
                     {([
                       ["name", "Teacher"],
                       ["classes", "Classes"],
@@ -352,14 +352,14 @@ export default function DepartmentPage() {
                     ] as [SortKey, string][]).map(([key, label]) => (
                       <th
                         key={key}
-                        className="cursor-pointer px-3 py-3 hover:text-zinc-300 transition-colors select-none"
+                        className="cursor-pointer px-3 py-3 hover:text-ink-600 transition-colors select-none"
                         onClick={() => handleSort(key)}
                       >
                         <span className="inline-flex items-center gap-1">
                           {label}
                           <ArrowUpDown className="h-3 w-3" />
                           {sortKey === key && (
-                            <span className="text-blue-400">{sortAsc ? "^" : "v"}</span>
+                            <span className="text-teal-700">{sortAsc ? "^" : "v"}</span>
                           )}
                         </span>
                       </th>
@@ -368,20 +368,20 @@ export default function DepartmentPage() {
                 </thead>
                 <tbody className="divide-y divide-zinc-800/50">
                   {sortedTeachers.map((t) => (
-                    <tr key={t.id} className="hover:bg-zinc-800/30 transition-colors">
+                    <tr key={t.id} className="hover:bg-cream-100/60 transition-colors">
                       <td className="px-3 py-3 font-medium">{t.name}</td>
-                      <td className="px-3 py-3 text-zinc-400">{t.classes}</td>
-                      <td className="px-3 py-3 text-zinc-400">{t.students}</td>
+                      <td className="px-3 py-3 text-ink-600">{t.classes}</td>
+                      <td className="px-3 py-3 text-ink-600">{t.students}</td>
                       <td className={`px-3 py-3 font-semibold ${scoreColor(t.avgScore)}`}>
-                        {t.avgScore}% <span className="text-zinc-500 text-xs font-normal">(G{percentageToGCSEGrade(t.avgScore)})</span>
+                        {t.avgScore}% <span className="text-ink-9000 text-xs font-normal">(G{percentageToGCSEGrade(t.avgScore)})</span>
                       </td>
                       <td className="px-3 py-3">
                         <div className="flex items-center gap-2">
-                          <div className="h-1.5 w-16 rounded-full bg-zinc-700">
+                          <div className="h-1.5 w-16 rounded-full bg-cream-100">
                             <div
                               className={`h-1.5 rounded-full ${
                                 t.completionRate >= 75
-                                  ? "bg-emerald-500"
+                                  ? "bg-teal-700"
                                   : t.completionRate >= 60
                                   ? "bg-amber-500"
                                   : "bg-red-500"
@@ -389,7 +389,7 @@ export default function DepartmentPage() {
                               style={{ width: `${t.completionRate}%` }}
                             />
                           </div>
-                          <span className="text-zinc-400">{t.completionRate}%</span>
+                          <span className="text-ink-600">{t.completionRate}%</span>
                         </div>
                       </td>
                       <td className="px-3 py-3">
@@ -398,7 +398,7 @@ export default function DepartmentPage() {
                             {t.atRisk}
                           </Badge>
                         ) : (
-                          <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs">
+                          <Badge variant="outline" className="border-teal-800/30 bg-teal-800/10 text-teal-700 text-xs">
                             0
                           </Badge>
                         )}
@@ -412,10 +412,10 @@ export default function DepartmentPage() {
         </Card>
 
         {/* 5. Class Performance Ranking */}
-        <Card className="mb-8 border-zinc-800 bg-zinc-900/80">
+        <Card className="mb-8 border-ink-200 bg-cream-100/80">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
-              <BookOpen className="h-5 w-5 text-violet-400" />
+              <BookOpen className="h-5 w-5 text-teal-700" />
               Class Performance Ranking
             </CardTitle>
           </CardHeader>
@@ -431,22 +431,22 @@ export default function DepartmentPage() {
                     <span
                       className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
                         rank <= 5
-                          ? "bg-emerald-500/20 text-emerald-400"
+                          ? "bg-teal-800/10 text-teal-700"
                           : rank > ALL_CLASSES.length - 5
                           ? "bg-red-500/20 text-red-400"
-                          : "bg-zinc-700/50 text-zinc-400"
+                          : "bg-cream-100/50 text-ink-600"
                       }`}
                     >
                       {rank}
                     </span>
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium">{c.name}</p>
-                      <p className="text-xs text-zinc-500">
+                      <p className="text-xs text-ink-9000">
                         {c.teacher} &middot; {c.yearGroup}
                       </p>
                     </div>
                     <span className={`text-sm font-bold ${rankText(rank, ALL_CLASSES.length)}`}>
-                      {c.avgScore}% <span className="text-xs font-normal text-zinc-500">(G{percentageToGCSEGrade(c.avgScore)})</span>
+                      {c.avgScore}% <span className="text-xs font-normal text-ink-9000">(G{percentageToGCSEGrade(c.avgScore)})</span>
                     </span>
                   </div>
                 )
@@ -456,10 +456,10 @@ export default function DepartmentPage() {
         </Card>
 
         {/* 6. Year Group Trends */}
-        <Card className="mb-8 border-zinc-800 bg-zinc-900/80">
+        <Card className="mb-8 border-ink-200 bg-cream-100/80">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
-              <TrendingUp className="h-5 w-5 text-emerald-400" />
+              <TrendingUp className="h-5 w-5 text-teal-700" />
               Year Group Trends
             </CardTitle>
           </CardHeader>
@@ -468,9 +468,9 @@ export default function DepartmentPage() {
               {YEAR_TRENDS.map((yt) => (
                 <div
                   key={yt.year}
-                  className="rounded-lg border border-zinc-800 bg-zinc-800/30 p-4 text-center"
+                  className="rounded-lg border border-ink-200 bg-cream-100/60 p-4 text-center"
                 >
-                  <p className="text-sm font-semibold text-zinc-300">{yt.year}</p>
+                  <p className="text-sm font-semibold text-ink-600">{yt.year}</p>
                   <p className="mt-2 text-2xl font-bold">{yt.current}%</p>
                   <div className={`mt-2 flex items-center justify-center gap-1 text-sm font-medium ${trendColor(yt.change)}`}>
                     {trendIcon(yt.change)}
@@ -486,7 +486,7 @@ export default function DepartmentPage() {
         </Card>
 
         {/* 7. Workload Distribution */}
-        <Card className="mb-8 border-zinc-800 bg-zinc-900/80">
+        <Card className="mb-8 border-ink-200 bg-cream-100/80">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <GraduationCap className="h-5 w-5 text-amber-400" />
@@ -494,7 +494,7 @@ export default function DepartmentPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="mb-4 text-xs text-zinc-500">
+            <p className="mb-4 text-xs text-ink-9000">
               Average: {AVG_STUDENTS_PER_TEACHER} students per teacher. Flagged if above {OVERLOAD_THRESHOLD}.
             </p>
             <div className="space-y-3">
@@ -510,12 +510,12 @@ export default function DepartmentPage() {
                         {t.name}
                       </span>
                       <div className="flex-1">
-                        <div className="h-5 w-full rounded-full bg-zinc-800">
+                        <div className="h-5 w-full rounded-full bg-cream-100">
                           <div
                             className={`flex h-5 items-center justify-end rounded-full px-2 text-xs font-semibold ${
                               overloaded
                                 ? "bg-amber-500/80 text-black"
-                                : "bg-blue-500/60 text-white"
+                                : "bg-teal-800/60 text-white"
                             }`}
                             style={{ width: `${pct}%` }}
                           >
@@ -536,7 +536,7 @@ export default function DepartmentPage() {
         </Card>
 
         {/* 8. CPD Recommendations */}
-        <Card className="mb-8 border-zinc-800 bg-zinc-900/80">
+        <Card className="mb-8 border-ink-200 bg-cream-100/80">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <Lightbulb className="h-5 w-5 text-yellow-400" />
@@ -548,14 +548,14 @@ export default function DepartmentPage() {
               {CPD_RECOMMENDATIONS.map((rec, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 rounded-lg border border-zinc-800 bg-zinc-800/30 px-4 py-3"
+                  className="flex items-start gap-3 rounded-lg border border-ink-200 bg-cream-100/60 px-4 py-3"
                 >
                   <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-yellow-500/10">
                     <Lightbulb className="h-3 w-3 text-yellow-400" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-zinc-200">{rec.teacher}</p>
-                    <p className="mt-0.5 text-sm text-zinc-400">{rec.recommendation}</p>
+                    <p className="text-sm font-semibold text-ink-900">{rec.teacher}</p>
+                    <p className="mt-0.5 text-sm text-ink-600">{rec.recommendation}</p>
                   </div>
                 </div>
               ))}

@@ -195,7 +195,7 @@ export default function QuizBuilderDemoPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       <div className="max-w-4xl mx-auto px-6 py-8">
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
@@ -207,41 +207,41 @@ export default function QuizBuilderDemoPage() {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-light tracking-tight text-white/90 flex items-center gap-3">
-            <Sparkles className="h-7 w-7 text-emerald-400" />
+          <h1 className="text-3xl font-light tracking-tight text-ink-900 flex items-center gap-3">
+            <Sparkles className="h-7 w-7 text-teal-700" />
             Quiz Builder
           </h1>
-          <p className="text-white/40 text-sm mt-1">
+          <p className="text-ink-500 text-sm mt-1">
             Generate multiple-choice quizzes aligned to your exam board in seconds.
           </p>
         </div>
 
         {/* Form */}
-        <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6 mb-8">
+        <div className="rounded-xl border border-ink-200 bg-white p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Topic */}
             <div>
-              <label className="block text-xs font-medium text-white/50 mb-2">
+              <label className="block text-xs font-medium text-ink-500 mb-2">
                 Topic / Text
               </label>
               <input
                 type="text"
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white/90 placeholder-white/30 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30 transition-colors"
+                className="w-full rounded-lg border border-ink-200 bg-cream-100 px-4 py-2.5 text-sm text-ink-900 placeholder-ink-500 focus:border-teal-800/50 focus:outline-none focus:ring-1 focus:ring-teal-800/30 transition-colors"
                 placeholder="e.g. An Inspector Calls, Macbeth..."
               />
             </div>
 
             {/* Year Group */}
             <div>
-              <label className="block text-xs font-medium text-white/50 mb-2">
+              <label className="block text-xs font-medium text-ink-500 mb-2">
                 Year Group
               </label>
               <select
                 value={yearGroup}
                 onChange={(e) => setYearGroup(e.target.value)}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white/90 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30 transition-colors"
+                className="w-full rounded-lg border border-ink-200 bg-cream-100 px-4 py-2.5 text-sm text-ink-900 focus:border-teal-800/50 focus:outline-none focus:ring-1 focus:ring-teal-800/30 transition-colors"
               >
                 <option value="7">Year 7</option>
                 <option value="8">Year 8</option>
@@ -255,7 +255,7 @@ export default function QuizBuilderDemoPage() {
 
             {/* Difficulty */}
             <div>
-              <label className="block text-xs font-medium text-white/50 mb-2">
+              <label className="block text-xs font-medium text-ink-500 mb-2">
                 Difficulty
               </label>
               <div className="flex gap-3">
@@ -265,8 +265,8 @@ export default function QuizBuilderDemoPage() {
                     onClick={() => setDifficulty(d)}
                     className={`flex-1 rounded-lg border px-4 py-2.5 text-sm font-medium transition-all ${
                       difficulty === d
-                        ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-400"
-                        : "border-white/10 bg-white/5 text-white/50 hover:text-white/70 hover:border-white/20"
+                        ? "border-teal-800/40 bg-teal-800/10 text-teal-700"
+                        : "border-ink-200 bg-cream-100 text-ink-500 hover:text-ink-600 hover:border-ink-200"
                     }`}
                   >
                     {d}
@@ -277,7 +277,7 @@ export default function QuizBuilderDemoPage() {
 
             {/* Number of questions */}
             <div>
-              <label className="block text-xs font-medium text-white/50 mb-2">
+              <label className="block text-xs font-medium text-ink-500 mb-2">
                 Number of Questions
               </label>
               <div className="flex gap-3">
@@ -287,8 +287,8 @@ export default function QuizBuilderDemoPage() {
                     onClick={() => setNumQuestions(n)}
                     className={`flex-1 rounded-lg border px-4 py-2.5 text-sm font-medium transition-all ${
                       numQuestions === n
-                        ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-400"
-                        : "border-white/10 bg-white/5 text-white/50 hover:text-white/70 hover:border-white/20"
+                        ? "border-teal-800/40 bg-teal-800/10 text-teal-700"
+                        : "border-ink-200 bg-cream-100 text-ink-500 hover:text-ink-600 hover:border-ink-200"
                     }`}
                   >
                     {n}
@@ -303,7 +303,7 @@ export default function QuizBuilderDemoPage() {
             <button
               onClick={handleGenerate}
               disabled={generating}
-              className="flex items-center justify-center gap-2 w-full md:w-auto px-8 py-3 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-sm font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-60"
+              className="flex items-center justify-center gap-2 w-full md:w-auto px-8 py-3 rounded-lg bg-gradient-to-r from-teal-800 to-teal-600 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
             >
               {generating ? (
                 <>
@@ -326,10 +326,10 @@ export default function QuizBuilderDemoPage() {
             {/* Quiz header */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h2 className="text-xl font-medium text-white/90">
+                <h2 className="text-xl font-medium text-ink-900">
                   An Inspector Calls -- Knowledge Quiz
                 </h2>
-                <p className="text-xs text-white/40 mt-1">
+                <p className="text-xs text-ink-500 mt-1">
                   Year {yearGroup} | {difficulty} | {GENERATED_QUESTIONS.length}{" "}
                   questions
                 </p>
@@ -337,14 +337,14 @@ export default function QuizBuilderDemoPage() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => downloadQuiz(GENERATED_QUESTIONS)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 bg-white/5 text-sm text-white/70 hover:text-white hover:border-white/20 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-ink-200 bg-cream-100 text-sm text-ink-600 hover:text-ink-900 hover:border-ink-200 transition-colors"
                 >
                   <Download className="h-4 w-4" />
                   Download Quiz
                 </button>
                 <button
                   onClick={() => downloadAnswerSheet(GENERATED_QUESTIONS)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 bg-white/5 text-sm text-white/70 hover:text-white hover:border-white/20 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-ink-200 bg-cream-100 text-sm text-ink-600 hover:text-ink-900 hover:border-ink-200 transition-colors"
                 >
                   <FileText className="h-4 w-4" />
                   Download Answer Sheet
@@ -357,10 +357,10 @@ export default function QuizBuilderDemoPage() {
               {GENERATED_QUESTIONS.map((q) => (
                 <div
                   key={q.id}
-                  className="rounded-xl border border-white/5 bg-white/[0.02] p-5"
+                  className="rounded-xl border border-ink-200 bg-white p-5"
                 >
-                  <p className="text-sm font-medium text-white/90 mb-3">
-                    <span className="text-emerald-400 mr-2">{q.id}.</span>
+                  <p className="text-sm font-medium text-ink-900 mb-3">
+                    <span className="text-teal-700 mr-2">{q.id}.</span>
                     {q.question}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
@@ -373,13 +373,13 @@ export default function QuizBuilderDemoPage() {
                           className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm ${
                             isCorrect
                               ? "border-green-500/30 bg-green-500/10 text-green-400"
-                              : "border-white/5 bg-white/[0.01] text-white/60"
+                              : "border-ink-200 bg-white text-ink-600"
                           }`}
                         >
                           {isCorrect ? (
                             <CheckCircle className="h-4 w-4 shrink-0 text-green-400" />
                           ) : (
-                            <XCircle className="h-4 w-4 shrink-0 text-white/20" />
+                            <XCircle className="h-4 w-4 shrink-0 text-ink-500" />
                           )}
                           <span>
                             {letter}) {opt}
@@ -388,9 +388,9 @@ export default function QuizBuilderDemoPage() {
                       )
                     })}
                   </div>
-                  <div className="rounded-lg bg-white/[0.03] border border-white/5 px-3 py-2">
-                    <p className="text-xs text-white/40">
-                      <span className="text-white/50 font-medium">Mark scheme: </span>
+                  <div className="rounded-lg bg-white border border-ink-200 px-3 py-2">
+                    <p className="text-xs text-ink-500">
+                      <span className="text-ink-500 font-medium">Mark scheme: </span>
                       {q.explanation}
                     </p>
                   </div>
@@ -402,7 +402,7 @@ export default function QuizBuilderDemoPage() {
             <div className="flex justify-center pt-4">
               <button
                 onClick={handleAssign}
-                className="flex items-center gap-2 px-6 py-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-sm font-medium text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                className="flex items-center gap-2 px-6 py-3 rounded-lg border border-teal-800/30 bg-teal-800/10 text-sm font-medium text-teal-700 hover:bg-teal-800/10 transition-colors"
               >
                 <Users className="h-4 w-4" />
                 Assign to Class
@@ -415,12 +415,12 @@ export default function QuizBuilderDemoPage() {
       {/* Toast */}
       {showToast && (
         <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
-          <div className="rounded-lg border border-white/10 bg-[#1a1a1a] px-5 py-3 shadow-xl">
-            <p className="text-sm text-white/80">
+          <div className="rounded-lg border border-ink-200 bg-cream-100 px-5 py-3 shadow-xl">
+            <p className="text-sm text-ink-900">
               Available with full account --{" "}
               <a
                 href="/auth/teacher-register"
-                className="text-emerald-400 hover:underline"
+                className="text-teal-700 hover:underline"
               >
                 Start free trial
               </a>

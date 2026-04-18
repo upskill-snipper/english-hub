@@ -66,7 +66,7 @@ const FOUNDING_BENEFITS = [
 const PLATFORM_FEATURES = [
   {
     icon: BarChart3,
-    color: "text-blue-400 bg-blue-500/10 border-blue-500/20",
+    color: "text-blue-600 bg-blue-500/10 border-blue-500/20",
     title: "Department Analytics Dashboard",
     desc: "Real-time progress across every year group. Spot at-risk students early, compare class performance, and generate Ofsted-ready reports in seconds.",
   },
@@ -78,25 +78,25 @@ const PLATFORM_FEATURES = [
   },
   {
     icon: Brain,
-    color: "text-purple-400 bg-purple-500/10 border-purple-500/20",
+    color: "text-purple-600 bg-purple-500/10 border-purple-500/20",
     title: "AI Essay Feedback",
     desc: "Students get instant, detailed feedback on their essays based on exam board mark schemes. Frees up teacher time while keeping every student on track.",
   },
   {
     icon: ClipboardList,
-    color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+    color: "text-teal-700 bg-emerald-500/10 border-emerald-500/20",
     title: "Homework Management",
     desc: "Set assignments in seconds, track completion automatically, and let the platform handle routine marking. Teachers reclaim hours every week.",
   },
   {
     icon: FileText,
-    color: "text-amber-400 bg-amber-500/10 border-amber-500/20",
+    color: "text-amber-600 bg-amber-500/10 border-amber-500/20",
     title: "Progress Reports",
     desc: "Auto-generated progress reports for parents, heads of year, and senior leadership. Always up to date, always audit-ready.",
   },
   {
     icon: GraduationCap,
-    color: "text-red-400 bg-red-500/10 border-red-500/20",
+    color: "text-red-600 bg-red-500/10 border-red-500/20",
     title: "Teacher CPD & Onboarding",
     desc: "Built-in CPD materials and guided onboarding walkthroughs so every member of your department is confident and productive from day one.",
   },
@@ -113,19 +113,19 @@ const CONTENT_CREATION_ITEMS = [
   },
   {
     icon: Layout,
-    color: "text-blue-400 bg-blue-500/10",
+    color: "text-blue-600 bg-blue-500/10",
     label: "Worksheets",
     desc: "Printable, editable worksheets aligned to any topic or text your class is studying.",
   },
   {
     icon: Presentation,
-    color: "text-purple-400 bg-purple-500/10",
+    color: "text-purple-600 bg-purple-500/10",
     label: "Presentations",
     desc: "Classroom-ready slide decks with teacher notes, discussion prompts, and learning objectives.",
   },
   {
     icon: ClipboardList,
-    color: "text-emerald-400 bg-emerald-500/10",
+    color: "text-teal-700 bg-emerald-500/10",
     label: "Assessments",
     desc: "Practice papers and formative assessments with auto-marking for multiple choice and short answer.",
   },
@@ -135,9 +135,9 @@ const CONTENT_CREATION_ITEMS = [
 
 const ANALYTICS_METRICS = [
   { label: "Year 11 Avg Score", value: "72%", trend: "+4% this month", color: "text-primary" },
-  { label: "At-Risk Students", value: "3", trend: "Flagged for intervention", color: "text-amber-400" },
-  { label: "Completion Rate", value: "89%", trend: "Across all year groups", color: "text-emerald-400" },
-  { label: "Top Performing Class", value: "11B", trend: "84% average", color: "text-blue-400" },
+  { label: "At-Risk Students", value: "3", trend: "Flagged for intervention", color: "text-amber-600" },
+  { label: "Completion Rate", value: "89%", trend: "Across all year groups", color: "text-teal-700" },
+  { label: "Top Performing Class", value: "11B", trend: "84% average", color: "text-blue-600" },
 ];
 
 /* ─────────────── How It Works ─────────────── */
@@ -153,14 +153,14 @@ const HOW_IT_WORKS = [
   {
     step: "2",
     icon: Upload,
-    color: "text-blue-400 bg-blue-500/10 border-blue-500/20",
+    color: "text-blue-600 bg-blue-500/10 border-blue-500/20",
     title: "We Set Up Your School",
     desc: "We handle onboarding for you. Your exam board is configured, accounts are created in bulk, and your admin dashboard is ready to go.",
   },
   {
     step: "3",
     icon: Zap,
-    color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+    color: "text-teal-700 bg-emerald-500/10 border-emerald-500/20",
     title: "Everyone Has Instant Access",
     desc: "Students and teachers receive login details and can start using the full platform immediately. Your admin dashboard is live from day one.",
   },
@@ -197,21 +197,21 @@ const TESTIMONIALS = [
     name: "English Teacher",
     school: "Grammar School, Kent",
     initials: "ET",
-    color: "bg-blue-500/10 text-blue-400",
+    color: "bg-blue-500/10 text-blue-600",
   },
   {
     quote: "Setting up was genuinely easy. The onboarding team handled everything and by Tuesday every student had an account and could log in.",
     name: "Second in Department",
     school: "Comprehensive, Manchester",
     initials: "SD",
-    color: "bg-emerald-500/10 text-emerald-400",
+    color: "bg-emerald-500/10 text-teal-700",
   },
   {
     quote: "I save 5-6 hours a week on planning and marking. The resources are mapped to our spec so I never have to check if something matches our board.",
     name: "NQT English Teacher",
     school: "Academy Trust, Leeds",
     initials: "NT",
-    color: "bg-purple-500/10 text-purple-400",
+    color: "bg-purple-500/10 text-purple-600",
   },
 ];
 
@@ -425,7 +425,7 @@ export default function ForSchoolsPage() {
             {[
               {
                 icon: BarChart3,
-                color: "text-blue-400 bg-blue-500/10 border-blue-500/20",
+                color: "text-blue-600 bg-blue-500/10 border-blue-500/20",
                 title: "School Dashboard",
                 desc: "Overview of all year groups",
                 href: "/demo/school",
@@ -439,14 +439,14 @@ export default function ForSchoolsPage() {
               },
               {
                 icon: FileText,
-                color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+                color: "text-teal-700 bg-emerald-500/10 border-emerald-500/20",
                 title: "Class Reports",
                 desc: "Personalised reports per class",
                 href: "/demo/school/reports",
               },
               {
                 icon: GraduationCap,
-                color: "text-purple-400 bg-purple-500/10 border-purple-500/20",
+                color: "text-purple-600 bg-purple-500/10 border-purple-500/20",
                 title: "Teacher Insights",
                 desc: "See teacher-level performance data",
                 href: "/demo/school/teachers",
@@ -557,7 +557,7 @@ export default function ForSchoolsPage() {
                 <p className="text-sm text-muted-foreground mt-1">Standard pricing will reflect the full value of the platform.</p>
               </div>
               <div className="rounded-xl bg-amber-500/5 border border-amber-500/20 p-4 mb-6">
-                <p className="text-sm font-semibold text-amber-400 mb-1">Why join now?</p>
+                <p className="text-sm font-semibold text-amber-600 mb-1">Why join now?</p>
                 <p className="text-sm text-muted-foreground">
                   Founding schools lock in preferential rates for 2-3 years. Post-programme pricing
                   will be substantially higher. This offer closes when 10 schools have joined.
@@ -713,7 +713,7 @@ export default function ForSchoolsPage() {
                     <p className="font-bold text-foreground">Department Overview</p>
                     <p className="text-xs text-muted-foreground">All Year Groups -- Live Data</p>
                   </div>
-                  <Badge variant="outline" className="border-emerald-500/30 text-emerald-400 bg-emerald-500/10 text-xs">
+                  <Badge variant="outline" className="border-emerald-500/30 text-teal-700 bg-emerald-500/10 text-xs">
                     Live
                   </Badge>
                 </div>
@@ -826,7 +826,7 @@ export default function ForSchoolsPage() {
               },
               {
                 icon: Upload,
-                color: "text-blue-400 bg-blue-500/10 border-blue-500/20",
+                color: "text-blue-600 bg-blue-500/10 border-blue-500/20",
                 title: "Excel Bulk Upload",
                 points: [
                   "Download our simple Excel template",
@@ -837,7 +837,7 @@ export default function ForSchoolsPage() {
               },
               {
                 icon: UserPlus,
-                color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+                color: "text-teal-700 bg-emerald-500/10 border-emerald-500/20",
                 title: "Self-Registration Option",
                 points: [
                   "Share your unique school code",
@@ -868,7 +868,7 @@ export default function ForSchoolsPage() {
           <div className="rounded-2xl border border-border/40 bg-card/60 p-6 max-w-2xl mx-auto">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                <Table className="w-4 h-4 text-emerald-400" />
+                <Table className="w-4 h-4 text-teal-700" />
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">student-upload-template.xlsx</p>
@@ -970,7 +970,7 @@ export default function ForSchoolsPage() {
               <Card key={t.name} className="p-6 border-border/40 flex flex-col">
                 <div className="flex items-center gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                    <Star key={s} className="w-3.5 h-3.5 text-amber-600 fill-amber-500" />
                   ))}
                 </div>
                 <Quote className="w-7 h-7 text-primary/15 mb-3" />

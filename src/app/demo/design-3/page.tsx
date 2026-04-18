@@ -10,12 +10,12 @@ const courses = [
 ]
 
 const activity = [
-  { text: 'Completed Paper 1 Q5 practice essay', time: '2 hours ago', color: 'bg-violet-400' },
+  { text: 'Completed Paper 1 Q5 practice essay', time: '2 hours ago', color: 'bg-teal-500' },
   { text: 'Reviewed feedback on Macbeth analysis', time: '5 hours ago', color: 'bg-pink-300' },
-  { text: 'Achieved 8/8 on inference questions', time: 'Yesterday', color: 'bg-emerald-300' },
+  { text: 'Achieved 8/8 on inference questions', time: 'Yesterday', color: 'bg-teal-500' },
   { text: 'Started Poetry Anthology module', time: 'Yesterday', color: 'bg-sky-300' },
   { text: 'Watched Language Paper 2 walkthrough', time: '2 days ago', color: 'bg-amber-300' },
-  { text: 'Submitted narrative writing draft', time: '3 days ago', color: 'bg-violet-300' },
+  { text: 'Submitted narrative writing draft', time: '3 days ago', color: 'bg-teal-400' },
 ]
 
 const deadlines = [
@@ -37,7 +37,7 @@ export default function SoftAuroraPage() {
     <div className="relative min-h-screen overflow-hidden" style={{ backgroundColor: '#FAFAF8' }}>
       {/* Aurora gradient blobs */}
       <div
-        className="pointer-events-none absolute -left-32 top-16 h-[500px] w-[500px] rounded-full bg-gradient-to-r from-violet-200/30 to-pink-200/20 blur-3xl"
+        className="pointer-events-none absolute -left-32 top-16 h-[500px] w-[500px] rounded-full bg-gradient-to-r from-clay-200/30 to-pink-200/20 blur-3xl"
         aria-hidden="true"
       />
       <div
@@ -54,18 +54,18 @@ export default function SoftAuroraPage() {
         {/* Header */}
         <div className="mb-10 flex items-end justify-between">
           <div>
-            <p className="mb-1 text-sm font-medium tracking-wide text-slate-400">
+            <p className="mb-1 text-sm font-medium tracking-wide text-ink-600">
               ENGLISH HUB
             </p>
-            <h1 className="text-4xl font-light text-slate-900">
+            <h1 className="text-4xl font-light text-ink-900">
               Good morning, Olivia
             </h1>
-            <p className="mt-2 text-slate-500">
+            <p className="mt-2 text-ink-500">
               You&apos;re making great progress this week. Keep it up.
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-violet-50 text-sm font-medium text-violet-600">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-50 text-sm font-medium text-clay-600">
               OW
             </div>
           </div>
@@ -79,11 +79,11 @@ export default function SoftAuroraPage() {
               className="rounded-2xl bg-white p-8"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
             >
-              <p className="text-5xl font-light text-slate-900">
+              <p className="text-5xl font-light text-ink-900">
                 {stat.value}
-                <span className="ml-1 text-lg font-normal text-slate-400">{stat.suffix}</span>
+                <span className="ml-1 text-lg font-normal text-ink-600">{stat.suffix}</span>
               </p>
-              <p className="mt-2 text-sm text-slate-500">{stat.label}</p>
+              <p className="mt-2 text-sm text-ink-500">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -97,22 +97,22 @@ export default function SoftAuroraPage() {
               className="rounded-2xl bg-white p-8"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
             >
-              <h2 className="mb-6 text-lg font-medium text-slate-900">Your Courses</h2>
+              <h2 className="mb-6 text-lg font-medium text-ink-900">Your Courses</h2>
               <div className="flex flex-col gap-5">
                 {courses.map((course) => (
                   <div key={course.name}>
                     <div className="mb-1 flex items-center justify-between">
                       <div>
-                        <p className="text-sm font-medium text-slate-800">{course.name}</p>
-                        <p className="text-xs text-slate-400">{course.papers}</p>
+                        <p className="text-sm font-medium text-ink-900">{course.name}</p>
+                        <p className="text-xs text-ink-600">{course.papers}</p>
                       </div>
-                      <p className="text-xs text-slate-400">
+                      <p className="text-xs text-ink-600">
                         {course.completed}/{course.lessons} lessons
                       </p>
                     </div>
-                    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+                    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-cream-100">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-violet-400 to-pink-400"
+                        className="h-full rounded-full bg-gradient-to-r from-clay-400 to-clay-400"
                         style={{ width: `${course.progress}%` }}
                       />
                     </div>
@@ -126,8 +126,8 @@ export default function SoftAuroraPage() {
               className="rounded-2xl bg-white/60 p-8 backdrop-blur-xl"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
             >
-              <h2 className="mb-4 text-lg font-medium text-slate-900">Weekly Focus</h2>
-              <p className="mb-5 text-sm text-slate-500">
+              <h2 className="mb-4 text-lg font-medium text-ink-900">Weekly Focus</h2>
+              <p className="mb-5 text-sm text-ink-500">
                 This week&apos;s recommended focus based on your performance.
               </p>
               <div className="flex flex-col gap-4">
@@ -138,11 +138,11 @@ export default function SoftAuroraPage() {
                 ].map((focus) => (
                   <div key={focus.area} className="flex items-start gap-3">
                     <div className={`mt-1 h-2 w-2 flex-shrink-0 rounded-full ${
-                      focus.priority === 'High' ? 'bg-violet-500' : 'bg-violet-300'
+                      focus.priority === 'High' ? 'bg-teal-700' : 'bg-teal-400'
                     }`} />
                     <div>
-                      <p className="text-sm font-medium text-slate-800">{focus.area}</p>
-                      <p className="text-xs text-slate-400">{focus.tip}</p>
+                      <p className="text-sm font-medium text-ink-900">{focus.area}</p>
+                      <p className="text-xs text-ink-600">{focus.tip}</p>
                     </div>
                   </div>
                 ))}
@@ -157,19 +157,19 @@ export default function SoftAuroraPage() {
               className="rounded-2xl bg-white p-8"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
             >
-              <h2 className="mb-6 text-lg font-medium text-slate-900">Recent Activity</h2>
+              <h2 className="mb-6 text-lg font-medium text-ink-900">Recent Activity</h2>
               <div className="flex flex-col gap-4">
                 {activity.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="flex flex-col items-center">
                       <div className={`mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full ${item.color}`} />
                       {i < activity.length - 1 && (
-                        <div className="mt-1 h-8 w-px bg-slate-100" />
+                        <div className="mt-1 h-8 w-px bg-cream-100" />
                       )}
                     </div>
                     <div className="pb-1">
-                      <p className="text-sm text-slate-700">{item.text}</p>
-                      <p className="text-xs text-slate-400">{item.time}</p>
+                      <p className="text-sm text-ink-600">{item.text}</p>
+                      <p className="text-xs text-ink-600">{item.time}</p>
                     </div>
                   </div>
                 ))}
@@ -181,21 +181,21 @@ export default function SoftAuroraPage() {
               className="rounded-2xl bg-white p-8"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
             >
-              <h2 className="mb-6 text-lg font-medium text-slate-900">Upcoming Deadlines</h2>
+              <h2 className="mb-6 text-lg font-medium text-ink-900">Upcoming Deadlines</h2>
               <div className="flex flex-col gap-4">
                 {deadlines.map((deadline) => (
                   <div
                     key={deadline.title}
-                    className="flex items-center justify-between rounded-xl bg-slate-50/80 px-5 py-4"
+                    className="flex items-center justify-between rounded-xl bg-cream-50/80 px-5 py-4"
                   >
                     <div>
-                      <p className="text-sm font-medium text-slate-800">{deadline.title}</p>
-                      <p className="text-xs text-slate-400">{deadline.subject}</p>
+                      <p className="text-sm font-medium text-ink-900">{deadline.title}</p>
+                      <p className="text-xs text-ink-600">{deadline.subject}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-medium text-slate-700">{deadline.date}</p>
+                      <p className="text-sm font-medium text-ink-600">{deadline.date}</p>
                       <p className={`text-xs ${
-                        deadline.daysLeft <= 5 ? 'font-medium text-violet-500' : 'text-slate-400'
+                        deadline.daysLeft <= 5 ? 'font-medium text-teal-700' : 'text-ink-600'
                       }`}>
                         {deadline.daysLeft} days left
                       </p>
@@ -210,7 +210,7 @@ export default function SoftAuroraPage() {
               className="rounded-2xl bg-white p-8"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
             >
-              <h2 className="mb-4 text-lg font-medium text-slate-900">Quick Actions</h2>
+              <h2 className="mb-4 text-lg font-medium text-ink-900">Quick Actions</h2>
               <div className="grid grid-cols-2 gap-3">
                 {[
                   'Practice Essay',
@@ -220,7 +220,7 @@ export default function SoftAuroraPage() {
                 ].map((action) => (
                   <button
                     key={action}
-                    className="rounded-xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-600 transition-colors hover:bg-violet-50 hover:text-violet-600"
+                    className="rounded-xl bg-cream-50 px-4 py-3 text-sm font-medium text-ink-500 transition-colors hover:bg-teal-50 hover:text-clay-600"
                   >
                     {action}
                   </button>
@@ -232,7 +232,7 @@ export default function SoftAuroraPage() {
 
         {/* Footer */}
         <div className="mt-10 text-center">
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-ink-600">
             Soft Aurora — Design 3 Concept
           </p>
         </div>

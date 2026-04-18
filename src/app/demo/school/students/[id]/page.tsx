@@ -327,10 +327,10 @@ function getClassAverage() {
 // ---------------------------------------------------------------------------
 
 const STATUS_CONFIG: Record<string, { bg: string; text: string; border: string; label: string }> = {
-  "on-track": { bg: "bg-emerald-500/15", text: "text-emerald-400", border: "border-emerald-500/30", label: "On Track" },
+  "on-track": { bg: "bg-teal-800/10", text: "text-teal-700", border: "border-teal-800/30", label: "On Track" },
   "needs-support": { bg: "bg-amber-500/15", text: "text-amber-400", border: "border-amber-500/30", label: "Needs Support" },
   "at-risk": { bg: "bg-red-500/15", text: "text-red-400", border: "border-red-500/30", label: "At Risk" },
-  "excelling": { bg: "bg-blue-500/15", text: "text-blue-400", border: "border-blue-500/30", label: "Excelling" },
+  "excelling": { bg: "bg-blue-500/15", text: "text-teal-700", border: "border-blue-500/30", label: "Excelling" },
 }
 
 const STATUS_ICON: Record<string, React.ReactNode> = {
@@ -341,21 +341,21 @@ const STATUS_ICON: Record<string, React.ReactNode> = {
 }
 
 const MODULE_STATUS_STYLE: Record<string, string> = {
-  "Complete": "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
-  "In Progress": "bg-blue-500/15 text-blue-400 border-blue-500/30",
-  "Not Started": "bg-zinc-500/15 text-zinc-400 border-zinc-500/30",
+  "Complete": "bg-teal-800/10 text-teal-700 border-teal-800/30",
+  "In Progress": "bg-blue-500/15 text-teal-700 border-blue-500/30",
+  "Not Started": "bg-ink-200/15 text-ink-600 border-ink-200/30",
 }
 
 function gradeColor(grade: string): string {
   const g = parseInt(grade, 10)
-  if (g >= 8) return "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
-  if (g >= 6) return "bg-blue-500/15 text-blue-400 border-blue-500/30"
+  if (g >= 8) return "bg-teal-800/10 text-teal-700 border-teal-800/30"
+  if (g >= 6) return "bg-blue-500/15 text-teal-700 border-blue-500/30"
   if (g >= 4) return "bg-amber-500/15 text-amber-400 border-amber-500/30"
   return "bg-red-500/15 text-red-400 border-red-500/30"
 }
 
 function scoreBarColor(score: number): string {
-  if (score >= 80) return "bg-emerald-500"
+  if (score >= 80) return "bg-teal-700"
   if (score >= 65) return "bg-blue-500"
   if (score >= 50) return "bg-amber-500"
   return "bg-red-500"
@@ -375,14 +375,14 @@ function scoreTrend(scores: number[]): "up" | "down" | "stable" {
 
 function getActivityIcon(action: string) {
   const lower = action.toLowerCase()
-  if (lower.includes("completed")) return <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-  if (lower.includes("submitted")) return <Pen className="w-4 h-4 text-blue-400" />
+  if (lower.includes("completed")) return <CheckCircle2 className="w-4 h-4 text-teal-700" />
+  if (lower.includes("submitted")) return <Pen className="w-4 h-4 text-teal-700" />
   if (lower.includes("scored")) return <Target className="w-4 h-4 text-amber-400" />
-  if (lower.includes("started")) return <BookOpen className="w-4 h-4 text-violet-400" />
-  if (lower.includes("reviewed")) return <FileText className="w-4 h-4 text-cyan-400" />
+  if (lower.includes("started")) return <BookOpen className="w-4 h-4 text-teal-700" />
+  if (lower.includes("reviewed")) return <FileText className="w-4 h-4 text-teal-700" />
   if (lower.includes("achieved")) return <Trophy className="w-4 h-4 text-yellow-400" />
-  if (lower.includes("login")) return <LogIn className="w-4 h-4 text-zinc-400" />
-  return <Clock className="w-4 h-4 text-zinc-400" />
+  if (lower.includes("login")) return <LogIn className="w-4 h-4 text-ink-600" />
+  return <Clock className="w-4 h-4 text-ink-600" />
 }
 
 function getInitials(name: string): string {
@@ -415,7 +415,7 @@ export default function SchoolStudentDetailPage() {
   const statusCfg = STATUS_CONFIG[student.status] ?? STATUS_CONFIG["On Track"]
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       {/* ------------------------------------------------------------------ */}
       {/* 1. Demo Banner                                                     */}
       {/* ------------------------------------------------------------------ */}
@@ -436,7 +436,7 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         <Link
           href="/demo/school/students"
-          className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-ink-600 hover:text-ink-900 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Students
@@ -446,33 +446,33 @@ export default function SchoolStudentDetailPage() {
         {/* 2. Student Header                                                */}
         {/* ---------------------------------------------------------------- */}
         <div className="flex flex-col md:flex-row md:items-center gap-6">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-violet-500/30 to-blue-500/30 border border-zinc-700 flex items-center justify-center text-xl font-bold text-violet-300 shrink-0">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-violet-500/30 to-teal-600/30 border border-ink-200 flex items-center justify-center text-xl font-bold text-teal-700 shrink-0">
             {getInitials(student.name)}
           </div>
           <div className="flex-1 space-y-2">
             <div className="flex flex-wrap items-center gap-3">
-              <h1 className="text-2xl font-bold text-zinc-50">{student.name}</h1>
+              <h1 className="text-2xl font-bold text-ink-900">{student.name}</h1>
               <Badge className={`${statusCfg.bg} ${statusCfg.text} ${statusCfg.border} gap-1`}>
                 {STATUS_ICON[student.status]}
                 {statusCfg.label}
               </Badge>
             </div>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-zinc-400">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-ink-600">
               <span className="flex items-center gap-1.5">
-                <GraduationCap className="w-4 h-4 text-violet-400" />
-                <Badge variant="outline" className="bg-violet-500/10 text-violet-400 border-violet-500/30 text-xs">
+                <GraduationCap className="w-4 h-4 text-teal-700" />
+                <Badge variant="outline" className="bg-teal-800/10 text-teal-700 border-violet-500/30 text-xs">
                   {student.yearGroup}
                 </Badge>
               </span>
               <span className="flex items-center gap-1.5">
-                <Users className="w-4 h-4 text-blue-400" />
+                <Users className="w-4 h-4 text-teal-700" />
                 {student.className}
               </span>
               <span className="flex items-center gap-1.5">
-                <BookOpen className="w-4 h-4 text-emerald-400" />
+                <BookOpen className="w-4 h-4 text-teal-700" />
                 {student.teacherName}
               </span>
-              <span className="text-zinc-500">{student.email}</span>
+              <span className="text-ink-9000">{student.email}</span>
             </div>
           </div>
         </div>
@@ -481,44 +481,44 @@ export default function SchoolStudentDetailPage() {
         {/* 4. Grade Overview Cards                                          */}
         {/* ---------------------------------------------------------------- */}
         <div className="grid grid-cols-3 gap-4 mb-4">
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">Working At Grade</span>
-                <Target className="w-4 h-4 text-emerald-400" />
+                <span className="text-xs font-medium text-ink-9000 uppercase tracking-wider">Working At Grade</span>
+                <Target className="w-4 h-4 text-teal-700" />
               </div>
               <div className={`text-3xl font-bold ${gcseGradeColor(student.workingAtGrade)}`}>
                 Grade {student.workingAtGrade}
               </div>
-              <div className="mt-2 text-xs text-zinc-500">Based on last 5 assessments</div>
+              <div className="mt-2 text-xs text-ink-9000">Based on last 5 assessments</div>
             </CardContent>
           </Card>
 
-          <Card className={`bg-zinc-900 ${predictedGradeBg(student.predictedGrade, student.workingAtGrade)}`}>
+          <Card className={`bg-cream-100 ${predictedGradeBg(student.predictedGrade, student.workingAtGrade)}`}>
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">Predicted Grade</span>
-                <TrendingUp className="w-4 h-4 text-blue-400" />
+                <span className="text-xs font-medium text-ink-9000 uppercase tracking-wider">Predicted Grade</span>
+                <TrendingUp className="w-4 h-4 text-teal-700" />
               </div>
               <div className={`text-3xl font-bold ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>
                 Grade {student.predictedGrade}
               </div>
-              <div className="mt-2 text-xs text-zinc-500">
+              <div className="mt-2 text-xs text-ink-9000">
                 {student.predictedGrade > student.workingAtGrade ? "Improving trajectory" : student.predictedGrade === student.workingAtGrade ? "Stable trajectory" : "Declining trajectory"}
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-zinc-900 border-violet-500/20">
+          <Card className="bg-cream-100 border-teal-800/20">
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">Target Grade</span>
-                <Sparkles className="w-4 h-4 text-violet-400" />
+                <span className="text-xs font-medium text-ink-9000 uppercase tracking-wider">Target Grade</span>
+                <Sparkles className="w-4 h-4 text-teal-700" />
               </div>
-              <div className="text-3xl font-bold text-violet-400">
+              <div className="text-3xl font-bold text-teal-700">
                 Grade {student.targetGrade}
               </div>
-              <div className="mt-2 text-xs text-zinc-500">
+              <div className="mt-2 text-xs text-ink-9000">
                 {student.targetGrade - student.workingAtGrade > 0
                   ? `${student.targetGrade - student.workingAtGrade} grade${student.targetGrade - student.workingAtGrade > 1 ? "s" : ""} to target`
                   : "At target"}
@@ -529,60 +529,60 @@ export default function SchoolStudentDetailPage() {
 
         {/* KPI Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">Overall Progress</span>
-                <TrendingUp className="w-4 h-4 text-violet-400" />
+                <span className="text-xs font-medium text-ink-9000 uppercase tracking-wider">Overall Progress</span>
+                <TrendingUp className="w-4 h-4 text-teal-700" />
               </div>
-              <div className="text-3xl font-bold text-zinc-50">{student.overallProgress}%</div>
-              <div className="mt-2 w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+              <div className="text-3xl font-bold text-ink-900">{student.overallProgress}%</div>
+              <div className="mt-2 w-full h-2 bg-cream-100 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-violet-500 to-blue-500 rounded-full transition-all duration-700"
+                  className="h-full bg-gradient-to-r from-violet-500 to-teal-600 rounded-full transition-all duration-700"
                   style={{ width: `${student.overallProgress}%` }}
                 />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+                <span className="text-xs font-medium text-ink-9000 uppercase tracking-wider">
                   {isGCSEYearGroup(student.yearGroup) ? "Average Grade" : "Avg Score"}
                 </span>
-                <Target className="w-4 h-4 text-emerald-400" />
+                <Target className="w-4 h-4 text-teal-700" />
               </div>
               <div className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(student.averageScore))}`}>
                 {formatScoreForYearGroup(student.averageScore, student.yearGroup)}
               </div>
-              <div className="mt-2 text-xs text-zinc-500">Class avg: Grade {percentageToGCSEGrade(classAvg.score)}</div>
+              <div className="mt-2 text-xs text-ink-9000">Class avg: Grade {percentageToGCSEGrade(classAvg.score)}</div>
             </CardContent>
           </Card>
 
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">Assignments</span>
-                <ClipboardCheck className="w-4 h-4 text-blue-400" />
+                <span className="text-xs font-medium text-ink-9000 uppercase tracking-wider">Assignments</span>
+                <ClipboardCheck className="w-4 h-4 text-teal-700" />
               </div>
-              <div className="text-3xl font-bold text-zinc-50">
+              <div className="text-3xl font-bold text-ink-900">
                 {student.assignmentsCompleted}/{student.assignmentsTotal}
               </div>
-              <div className="mt-2 text-xs text-zinc-500">
+              <div className="mt-2 text-xs text-ink-9000">
                 {Math.round((student.assignmentsCompleted / student.assignmentsTotal) * 100)}% completion rate
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">Modules Completed</span>
+                <span className="text-xs font-medium text-ink-9000 uppercase tracking-wider">Modules Completed</span>
                 <Award className="w-4 h-4 text-amber-400" />
               </div>
-              <div className="text-3xl font-bold text-zinc-50">{student.modulesCompleted}</div>
-              <div className="mt-2 text-xs text-zinc-500">of {student.modules.length} total modules</div>
+              <div className="text-3xl font-bold text-ink-900">{student.modulesCompleted}</div>
+              <div className="mt-2 text-xs text-ink-9000">of {student.modules.length} total modules</div>
             </CardContent>
           </Card>
         </div>
@@ -590,16 +590,16 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 4b. Assessment Results Timeline                                  */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
-              <Clock className="w-5 h-5 text-cyan-400" />
+            <CardTitle className="flex items-center gap-2 text-ink-900">
+              <Clock className="w-5 h-5 text-teal-700" />
               Assessment Results Timeline
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="relative">
-              <div className="absolute left-5 top-0 bottom-0 w-px bg-zinc-800" />
+              <div className="absolute left-5 top-0 bottom-0 w-px bg-cream-100" />
               <div className="space-y-3">
                 {(() => {
                   const allAssessments = [
@@ -618,7 +618,7 @@ export default function SchoolStudentDetailPage() {
                       score: e.score,
                       grade: null,
                       date: e.date,
-                      icon: <FileText className="w-4 h-4 text-cyan-400" />,
+                      icon: <FileText className="w-4 h-4 text-teal-700" />,
                       color: "cyan",
                     })),
                     ...student.quizAttempts.map((q) => ({
@@ -634,16 +634,16 @@ export default function SchoolStudentDetailPage() {
 
                   return allAssessments.map((item, i) => (
                     <div key={i} className="flex items-start gap-4 relative">
-                      <div className="w-10 h-10 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0 z-10">
+                      <div className="w-10 h-10 rounded-full bg-cream-100 border border-ink-200 flex items-center justify-center shrink-0 z-10">
                         {item.icon}
                       </div>
-                      <div className="flex-1 p-3 rounded-lg bg-zinc-800/40 border border-zinc-800">
+                      <div className="flex-1 p-3 rounded-lg bg-cream-100/40 border border-ink-200">
                         <div className="flex items-center justify-between gap-2 flex-wrap">
                           <div className="flex items-center gap-2">
                             <Badge variant="outline" className={`text-[10px] bg-${item.color}-500/10 text-${item.color}-400 border-${item.color}-500/30`}>
                               {item.type}
                             </Badge>
-                            <span className="text-sm font-medium text-zinc-200">{item.title}</span>
+                            <span className="text-sm font-medium text-ink-900">{item.title}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <span className={`text-sm font-bold ${gcseGradeColor(percentageToGCSEGrade(item.score))}`}>
@@ -656,7 +656,7 @@ export default function SchoolStudentDetailPage() {
                             )}
                           </div>
                         </div>
-                        <span className="text-xs text-zinc-500 mt-1 block">{item.date}</span>
+                        <span className="text-xs text-ink-9000 mt-1 block">{item.date}</span>
                       </div>
                     </div>
                   ))
@@ -669,14 +669,14 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 5. Score Trend (last 8 scores)                                   */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-3 text-zinc-100">
-              <BarChart3 className="w-5 h-5 text-blue-400" />
+            <CardTitle className="flex items-center gap-3 text-ink-900">
+              <BarChart3 className="w-5 h-5 text-teal-700" />
               Score Trend (Last 8 Scores)
               <span className="ml-auto flex items-center gap-1.5 text-sm font-normal">
                 {trend === "up" && (
-                  <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/30 gap-1">
+                  <Badge className="bg-teal-800/10 text-teal-700 border-teal-800/30 gap-1">
                     <ArrowUp className="w-3 h-3" /> Improving
                   </Badge>
                 )}
@@ -686,7 +686,7 @@ export default function SchoolStudentDetailPage() {
                   </Badge>
                 )}
                 {trend === "stable" && (
-                  <Badge className="bg-zinc-500/15 text-zinc-400 border-zinc-500/30 gap-1">
+                  <Badge className="bg-ink-200/15 text-ink-600 border-ink-200/30 gap-1">
                     <Minus className="w-3 h-3" /> Stable
                   </Badge>
                 )}
@@ -697,7 +697,7 @@ export default function SchoolStudentDetailPage() {
             <div className="flex items-end gap-3 h-48">
               {student.recentScores.map((score, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center gap-2">
-                  <span className="text-xs font-medium text-zinc-300">G{percentageToGCSEGrade(score)}</span>
+                  <span className="text-xs font-medium text-ink-600">G{percentageToGCSEGrade(score)}</span>
                   <div
                     className="w-full relative rounded-t-md overflow-hidden"
                     style={{ height: `${(score / 100) * 140}px` }}
@@ -705,13 +705,13 @@ export default function SchoolStudentDetailPage() {
                     <div className={`absolute inset-0 ${scoreBarColor(score)} opacity-80 rounded-t-md`} />
                     <div className={`absolute inset-0 ${scoreBarColor(score)} opacity-20 blur-sm`} />
                   </div>
-                  <span className="text-[10px] text-zinc-500">#{i + 1}</span>
+                  <span className="text-[10px] text-ink-9000">#{i + 1}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-4 flex items-center gap-6 text-xs text-zinc-500">
+            <div className="mt-4 flex items-center gap-6 text-xs text-ink-9000">
               <span className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded bg-emerald-500 inline-block" /> 80%+
+                <span className="w-3 h-3 rounded bg-teal-700 inline-block" /> 80%+
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded bg-blue-500 inline-block" /> 65-79%
@@ -729,27 +729,27 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 5b. Grade Progress & Next Grade Recommendations (School View)    */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-3 text-zinc-100">
-              <Lightbulb className="w-5 h-5 text-cyan-400" />
+            <CardTitle className="flex items-center gap-3 text-ink-900">
+              <Lightbulb className="w-5 h-5 text-teal-700" />
               Next Grade Recommendations
             </CardTitle>
           </CardHeader>
           <CardContent>
             {/* Grade Progress Summary */}
             <div className="mb-6 grid grid-cols-3 gap-3">
-              <div className="rounded-lg border border-zinc-800 bg-zinc-950/50 p-3 text-center">
-                <p className="text-[10px] uppercase tracking-wider text-zinc-500 mb-1">Working At</p>
+              <div className="rounded-lg border border-ink-200 bg-cream-50/50 p-3 text-center">
+                <p className="text-[10px] uppercase tracking-wider text-ink-9000 mb-1">Working At</p>
                 <p className={`text-2xl font-bold ${gcseGradeColor(student.workingAtGrade)}`}>{student.workingAtGrade}</p>
               </div>
-              <div className="rounded-lg border border-zinc-800 bg-zinc-950/50 p-3 text-center">
-                <p className="text-[10px] uppercase tracking-wider text-zinc-500 mb-1">Predicted</p>
+              <div className="rounded-lg border border-ink-200 bg-cream-50/50 p-3 text-center">
+                <p className="text-[10px] uppercase tracking-wider text-ink-9000 mb-1">Predicted</p>
                 <p className={`text-2xl font-bold ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>{student.predictedGrade}</p>
               </div>
-              <div className="rounded-lg border border-zinc-800 bg-zinc-950/50 p-3 text-center">
-                <p className="text-[10px] uppercase tracking-wider text-zinc-500 mb-1">Target</p>
-                <p className="text-2xl font-bold text-violet-400">{student.targetGrade}</p>
+              <div className="rounded-lg border border-ink-200 bg-cream-50/50 p-3 text-center">
+                <p className="text-[10px] uppercase tracking-wider text-ink-9000 mb-1">Target</p>
+                <p className="text-2xl font-bold text-teal-700">{student.targetGrade}</p>
               </div>
             </div>
 
@@ -759,11 +759,11 @@ export default function SchoolStudentDetailPage() {
                 student.workingAtGrade,
                 (student.weaknesses || []).map((w) => typeof w === "string" ? w : w.name)
               ).map((rec, i) => (
-                <div key={i} className="flex items-start gap-3 rounded-lg border border-zinc-800 bg-zinc-950/50 p-3">
-                  <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-[10px] font-bold">
+                <div key={i} className="flex items-start gap-3 rounded-lg border border-ink-200 bg-cream-50/50 p-3">
+                  <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-teal-600/15 text-teal-700 flex items-center justify-center text-[10px] font-bold">
                     {i + 1}
                   </span>
-                  <p className="text-sm text-zinc-300">{rec}</p>
+                  <p className="text-sm text-ink-600">{rec}</p>
                 </div>
               ))}
             </div>
@@ -785,10 +785,10 @@ export default function SchoolStudentDetailPage() {
         {/* 6. Strengths & Weaknesses                                        */}
         {/* ---------------------------------------------------------------- */}
         <div className="grid md:grid-cols-2 gap-4">
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-zinc-100">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+              <CardTitle className="flex items-center gap-2 text-ink-900">
+                <CheckCircle2 className="w-5 h-5 text-teal-700" />
                 Strengths
               </CardTitle>
             </CardHeader>
@@ -799,11 +799,11 @@ export default function SchoolStudentDetailPage() {
                   <div key={i} className="flex items-center gap-3">
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm text-zinc-300">{item.name}</span>
-                        <span className="text-sm font-medium text-emerald-400">G{percentageToGCSEGrade(item.score)}</span>
+                        <span className="text-sm text-ink-600">{item.name}</span>
+                        <span className="text-sm font-medium text-teal-700">G{percentageToGCSEGrade(item.score)}</span>
                       </div>
-                      <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
-                        <div className="h-full bg-emerald-500/70 rounded-full" style={{ width: `${item.score}%` }} />
+                      <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
+                        <div className="h-full bg-teal-700/70 rounded-full" style={{ width: `${item.score}%` }} />
                       </div>
                     </div>
                   </div>
@@ -812,9 +812,9 @@ export default function SchoolStudentDetailPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-zinc-100">
+              <CardTitle className="flex items-center gap-2 text-ink-900">
                 <AlertTriangle className="w-5 h-5 text-red-400" />
                 Weaknesses
               </CardTitle>
@@ -826,10 +826,10 @@ export default function SchoolStudentDetailPage() {
                   <div key={i} className="flex items-center gap-3">
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm text-zinc-300">{item.name}</span>
+                        <span className="text-sm text-ink-600">{item.name}</span>
                         <span className="text-sm font-medium text-red-400">G{percentageToGCSEGrade(item.score)}</span>
                       </div>
-                      <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
                         <div className="h-full bg-red-500/70 rounded-full" style={{ width: `${item.score}%` }} />
                       </div>
                     </div>
@@ -843,10 +843,10 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 7. Module Progress Table                                         */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
-              <BookOpen className="w-5 h-5 text-violet-400" />
+            <CardTitle className="flex items-center gap-2 text-ink-900">
+              <BookOpen className="w-5 h-5 text-teal-700" />
               Module Progress
             </CardTitle>
           </CardHeader>
@@ -854,30 +854,30 @@ export default function SchoolStudentDetailPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-800">
-                    <th className="text-left py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Module</th>
-                    <th className="text-left py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Progress</th>
-                    <th className="text-center py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Score</th>
-                    <th className="text-center py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Status</th>
+                  <tr className="border-b border-ink-200">
+                    <th className="text-left py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Module</th>
+                    <th className="text-left py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Progress</th>
+                    <th className="text-center py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Score</th>
+                    <th className="text-center py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   {student.modules.map((mod, i) => (
-                    <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors">
-                      <td className="py-3 px-4 font-medium text-zinc-200">{mod.name}</td>
+                    <tr key={i} className="border-b border-ink-200/50 hover:bg-cream-100/60 transition-colors">
+                      <td className="py-3 px-4 font-medium text-ink-900">{mod.name}</td>
                       <td className="py-3 px-4">
                         <div className="flex items-center gap-3">
-                          <div className="flex-1 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                          <div className="flex-1 h-2 bg-cream-100 rounded-full overflow-hidden">
                             <div
-                              className="h-full bg-gradient-to-r from-violet-500 to-blue-500 rounded-full transition-all duration-500"
+                              className="h-full bg-gradient-to-r from-violet-500 to-teal-600 rounded-full transition-all duration-500"
                               style={{ width: `${mod.progress}%` }}
                             />
                           </div>
-                          <span className="text-xs text-zinc-400 w-10 text-right">{mod.progress}%</span>
+                          <span className="text-xs text-ink-600 w-10 text-right">{mod.progress}%</span>
                         </div>
                       </td>
                       <td className="py-3 px-4 text-center">
-                        <span className={`font-medium ${mod.score >= 70 ? "text-emerald-400" : mod.score >= 50 ? "text-amber-400" : mod.score > 0 ? "text-red-400" : "text-zinc-600"}`}>
+                        <span className={`font-medium ${mod.score >= 70 ? "text-teal-700" : mod.score >= 50 ? "text-amber-400" : mod.score > 0 ? "text-red-400" : "text-ink-500"}`}>
                           {mod.score > 0 ? mod.score + "%" : "--"}
                         </span>
                       </td>
@@ -897,10 +897,10 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 7b. Mastery Tracker                                              */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
-              <Target className="w-5 h-5 text-violet-400" />
+            <CardTitle className="flex items-center gap-2 text-ink-900">
+              <Target className="w-5 h-5 text-teal-700" />
               Curriculum Mastery Tracker
             </CardTitle>
           </CardHeader>
@@ -909,28 +909,28 @@ export default function SchoolStudentDetailPage() {
               {student.modules.map((mod, i) => {
                 const masteryLevel = mod.progress >= 90 ? "Mastered" : mod.progress >= 50 ? "Developing" : "Needs Work"
                 const masteryColor = masteryLevel === "Mastered"
-                  ? { bar: "bg-emerald-500", text: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/30" }
+                  ? { bar: "bg-teal-700", text: "text-teal-700", bg: "bg-teal-800/10", border: "border-teal-800/30" }
                   : masteryLevel === "Developing"
                   ? { bar: "bg-amber-500", text: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/30" }
                   : { bar: "bg-red-500", text: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/30" }
                 return (
-                  <div key={i} className="p-3 rounded-lg bg-zinc-800/40 border border-zinc-800">
+                  <div key={i} className="p-3 rounded-lg bg-cream-100/40 border border-ink-200">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-zinc-200">{mod.name}</span>
+                      <span className="text-sm font-medium text-ink-900">{mod.name}</span>
                       <Badge variant="outline" className={`text-[10px] ${masteryColor.bg} ${masteryColor.text} ${masteryColor.border}`}>
                         {masteryLevel}
                       </Badge>
                     </div>
-                    <div className="w-full h-2.5 bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="w-full h-2.5 bg-cream-100 rounded-full overflow-hidden">
                       <div
                         className={`h-full rounded-full ${masteryColor.bar} transition-all duration-500`}
                         style={{ width: `${mod.progress}%` }}
                       />
                     </div>
                     <div className="flex items-center justify-between mt-1.5">
-                      <span className="text-[10px] text-zinc-500">{mod.progress}% complete</span>
+                      <span className="text-[10px] text-ink-9000">{mod.progress}% complete</span>
                       {mod.score > 0 && (
-                        <span className={`text-[10px] font-medium ${mod.score >= 70 ? "text-emerald-400" : mod.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
+                        <span className={`text-[10px] font-medium ${mod.score >= 70 ? "text-teal-700" : mod.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
                           Avg: {percentageToGCSEGradeLabel(mod.score)}
                         </span>
                       )}
@@ -939,9 +939,9 @@ export default function SchoolStudentDetailPage() {
                 )
               })}
             </div>
-            <div className="mt-4 flex items-center gap-6 text-xs text-zinc-500">
+            <div className="mt-4 flex items-center gap-6 text-xs text-ink-9000">
               <span className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded bg-emerald-500 inline-block" /> Mastered (90%+)
+                <span className="w-3 h-3 rounded bg-teal-700 inline-block" /> Mastered (90%+)
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded bg-amber-500 inline-block" /> Developing (50-89%)
@@ -956,9 +956,9 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 8. Mock Exam Results                                             */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
+            <CardTitle className="flex items-center gap-2 text-ink-900">
               <GraduationCap className="w-5 h-5 text-amber-400" />
               Mock Exam Results
             </CardTitle>
@@ -967,19 +967,19 @@ export default function SchoolStudentDetailPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-800">
-                    <th className="text-left py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Exam</th>
-                    <th className="text-center py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Score</th>
-                    <th className="text-center py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Grade</th>
-                    <th className="text-right py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Date</th>
+                  <tr className="border-b border-ink-200">
+                    <th className="text-left py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Exam</th>
+                    <th className="text-center py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Score</th>
+                    <th className="text-center py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Grade</th>
+                    <th className="text-right py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Date</th>
                   </tr>
                 </thead>
                 <tbody>
                   {student.mockExams.map((exam, i) => (
-                    <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors">
-                      <td className="py-3 px-4 font-medium text-zinc-200">{exam.name}</td>
+                    <tr key={i} className="border-b border-ink-200/50 hover:bg-cream-100/60 transition-colors">
+                      <td className="py-3 px-4 font-medium text-ink-900">{exam.name}</td>
                       <td className="py-3 px-4 text-center">
-                        <span className={`font-medium ${exam.score >= 70 ? "text-emerald-400" : exam.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
+                        <span className={`font-medium ${exam.score >= 70 ? "text-teal-700" : exam.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
                           {percentageToGCSEGradeLabel(exam.score)}
                         </span>
                       </td>
@@ -988,7 +988,7 @@ export default function SchoolStudentDetailPage() {
                           Grade {exam.grade}
                         </Badge>
                       </td>
-                      <td className="py-3 px-4 text-right text-zinc-400">{exam.date}</td>
+                      <td className="py-3 px-4 text-right text-ink-600">{exam.date}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1000,10 +1000,10 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 9. Essay Submissions                                             */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
-              <FileText className="w-5 h-5 text-cyan-400" />
+            <CardTitle className="flex items-center gap-2 text-ink-900">
+              <FileText className="w-5 h-5 text-teal-700" />
               Essay Submissions
             </CardTitle>
           </CardHeader>
@@ -1011,34 +1011,34 @@ export default function SchoolStudentDetailPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-800">
-                    <th className="text-left py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Title</th>
-                    <th className="text-center py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Score</th>
-                    <th className="text-left py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Feedback</th>
-                    <th className="text-right py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Date</th>
+                  <tr className="border-b border-ink-200">
+                    <th className="text-left py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Title</th>
+                    <th className="text-center py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Score</th>
+                    <th className="text-left py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Feedback</th>
+                    <th className="text-right py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Date</th>
                   </tr>
                 </thead>
                 <tbody>
                   {student.essays.map((essay, i) => (
-                    <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors">
+                    <tr key={i} className="border-b border-ink-200/50 hover:bg-cream-100/60 transition-colors">
                       <td className="py-3 px-4">
                         <div className="flex items-center gap-2">
-                          <span className="font-medium text-zinc-200">{essay.title}</span>
+                          <span className="font-medium text-ink-900">{essay.title}</span>
                           {essay.teacherReviewed && (
-                            <Badge variant="outline" className="text-[10px] bg-emerald-500/10 text-emerald-400 border-emerald-500/30">
+                            <Badge variant="outline" className="text-[10px] bg-teal-800/10 text-teal-700 border-teal-800/30">
                               Reviewed
                             </Badge>
                           )}
                         </div>
                       </td>
                       <td className="py-3 px-4 text-center">
-                        <span className={`font-bold text-lg ${essay.score >= 75 ? "text-emerald-400" : essay.score >= 55 ? "text-amber-400" : "text-red-400"}`}>
+                        <span className={`font-bold text-lg ${essay.score >= 75 ? "text-teal-700" : essay.score >= 55 ? "text-amber-400" : "text-red-400"}`}>
                           {essay.score}
                         </span>
-                        <span className="text-zinc-500 text-xs">/100</span>
+                        <span className="text-ink-9000 text-xs">/100</span>
                       </td>
-                      <td className="py-3 px-4 text-zinc-400 text-xs max-w-xs truncate">{essay.feedback}</td>
-                      <td className="py-3 px-4 text-right text-zinc-400">{essay.date}</td>
+                      <td className="py-3 px-4 text-ink-600 text-xs max-w-xs truncate">{essay.feedback}</td>
+                      <td className="py-3 px-4 text-right text-ink-600">{essay.date}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1050,9 +1050,9 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 10. Quiz Attempts                                                */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
+            <CardTitle className="flex items-center gap-2 text-ink-900">
               <Brain className="w-5 h-5 text-pink-400" />
               Quiz Attempts
             </CardTitle>
@@ -1061,36 +1061,36 @@ export default function SchoolStudentDetailPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-800">
-                    <th className="text-left py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Quiz</th>
-                    <th className="text-center py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Score</th>
-                    <th className="text-center py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Percentage</th>
-                    <th className="text-right py-3 px-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">Date</th>
+                  <tr className="border-b border-ink-200">
+                    <th className="text-left py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Quiz</th>
+                    <th className="text-center py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Score</th>
+                    <th className="text-center py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Percentage</th>
+                    <th className="text-right py-3 px-4 text-xs font-medium text-ink-9000 uppercase tracking-wider">Date</th>
                   </tr>
                 </thead>
                 <tbody>
                   {student.quizAttempts.map((quiz, i) => {
                     const pct = Math.round((quiz.score / quiz.maxScore) * 100)
                     return (
-                      <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors">
-                        <td className="py-3 px-4 font-medium text-zinc-200">{quiz.quiz}</td>
-                        <td className="py-3 px-4 text-center text-zinc-300">
+                      <tr key={i} className="border-b border-ink-200/50 hover:bg-cream-100/60 transition-colors">
+                        <td className="py-3 px-4 font-medium text-ink-900">{quiz.quiz}</td>
+                        <td className="py-3 px-4 text-center text-ink-600">
                           {quiz.score}/{quiz.maxScore}
                         </td>
                         <td className="py-3 px-4 text-center">
                           <div className="flex items-center justify-center gap-2">
-                            <div className="w-16 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                            <div className="w-16 h-2 bg-cream-100 rounded-full overflow-hidden">
                               <div
-                                className={`h-full rounded-full ${pct >= 75 ? "bg-emerald-500" : pct >= 50 ? "bg-amber-500" : "bg-red-500"}`}
+                                className={`h-full rounded-full ${pct >= 75 ? "bg-teal-700" : pct >= 50 ? "bg-amber-500" : "bg-red-500"}`}
                                 style={{ width: `${pct}%` }}
                               />
                             </div>
-                            <span className={`text-sm font-medium ${pct >= 75 ? "text-emerald-400" : pct >= 50 ? "text-amber-400" : "text-red-400"}`}>
+                            <span className={`text-sm font-medium ${pct >= 75 ? "text-teal-700" : pct >= 50 ? "text-amber-400" : "text-red-400"}`}>
                               {pct}%
                             </span>
                           </div>
                         </td>
-                        <td className="py-3 px-4 text-right text-zinc-400">{quiz.date}</td>
+                        <td className="py-3 px-4 text-right text-ink-600">{quiz.date}</td>
                       </tr>
                     )
                   })}
@@ -1103,28 +1103,28 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 11. Activity Timeline                                            */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
-              <Clock className="w-5 h-5 text-zinc-400" />
+            <CardTitle className="flex items-center gap-2 text-ink-900">
+              <Clock className="w-5 h-5 text-ink-600" />
               Activity Timeline
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="relative">
-              <div className="absolute left-5 top-0 bottom-0 w-px bg-zinc-800" />
+              <div className="absolute left-5 top-0 bottom-0 w-px bg-cream-100" />
               <div className="space-y-4">
                 {student.activityTimeline.map((activity, i) => (
                   <div key={i} className="flex items-start gap-4 relative">
-                    <div className="w-10 h-10 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0 z-10">
+                    <div className="w-10 h-10 rounded-full bg-cream-100 border border-ink-200 flex items-center justify-center shrink-0 z-10">
                       {getActivityIcon(activity.action)}
                     </div>
                     <div className="flex-1 pt-2">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-sm font-medium text-zinc-200">{activity.action}</span>
-                        <span className="text-sm text-zinc-400">{activity.detail}</span>
+                        <span className="text-sm font-medium text-ink-900">{activity.action}</span>
+                        <span className="text-sm text-ink-600">{activity.detail}</span>
                       </div>
-                      <span className="text-xs text-zinc-500 mt-0.5 block">{activity.date}</span>
+                      <span className="text-xs text-ink-9000 mt-0.5 block">{activity.date}</span>
                     </div>
                   </div>
                 ))}
@@ -1136,21 +1136,21 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 12. Personalised Recommendations                                 */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800 border-l-4 border-l-violet-500">
+        <Card className="bg-cream-100 border-ink-200 border-l-4 border-l-teal-700">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
-              <Sparkles className="w-5 h-5 text-violet-400" />
+            <CardTitle className="flex items-center gap-2 text-ink-900">
+              <Sparkles className="w-5 h-5 text-teal-700" />
               AI-Powered Recommendations
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
               {student.recommendations.map((rec, i) => (
-                <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-violet-500/5 border border-violet-500/10">
-                  <div className="w-6 h-6 rounded-full bg-violet-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                    <Lightbulb className="w-3.5 h-3.5 text-violet-400" />
+                <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-teal-800/5 border border-violet-500/10">
+                  <div className="w-6 h-6 rounded-full bg-teal-700/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <Lightbulb className="w-3.5 h-3.5 text-teal-700" />
                   </div>
-                  <p className="text-sm text-zinc-300 leading-relaxed">{rec}</p>
+                  <p className="text-sm text-ink-600 leading-relaxed">{rec}</p>
                 </div>
               ))}
             </div>
@@ -1160,15 +1160,15 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 12b. Suggested Learning Paths                                    */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800 border-l-4 border-l-blue-500">
+        <Card className="bg-cream-100 border-ink-200 border-l-4 border-l-blue-500">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
-              <BookOpen className="w-5 h-5 text-blue-400" />
+            <CardTitle className="flex items-center gap-2 text-ink-900">
+              <BookOpen className="w-5 h-5 text-teal-700" />
               Suggested Learning Paths
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-zinc-500 mb-4">Based on identified weaknesses and module gaps, these learning paths are recommended for this student.</p>
+            <p className="text-xs text-ink-9000 mb-4">Based on identified weaknesses and module gaps, these learning paths are recommended for this student.</p>
             <div className="space-y-3">
               {(() => {
                 const weakItems = student.weaknesses.map((w) => typeof w === "string" ? w : w.name)
@@ -1198,26 +1198,26 @@ export default function SchoolStudentDetailPage() {
                   )
 
                 return paths.map((path, i) => (
-                  <div key={i} className="p-4 rounded-lg bg-zinc-800/40 border border-zinc-800">
+                  <div key={i} className="p-4 rounded-lg bg-cream-100/40 border border-ink-200">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <Badge variant="outline" className={`text-[10px] ${
                           path.priority === "High" ? "bg-red-500/10 text-red-400 border-red-500/30"
                           : path.priority === "Medium" ? "bg-amber-500/10 text-amber-400 border-amber-500/30"
-                          : "bg-blue-500/10 text-blue-400 border-blue-500/30"
+                          : "bg-teal-800/10 text-teal-700 border-blue-500/30"
                         }`}>
                           {path.priority} Priority
                         </Badge>
-                        <span className="text-sm font-medium text-zinc-200">{path.weakness}</span>
+                        <span className="text-sm font-medium text-ink-900">{path.weakness}</span>
                       </div>
                     </div>
-                    <p className="text-xs text-zinc-400 mb-2">
-                      Recommended module: <span className="text-blue-400 font-medium">{path.module}</span>
+                    <p className="text-xs text-ink-600 mb-2">
+                      Recommended module: <span className="text-teal-700 font-medium">{path.module}</span>
                     </p>
                     <div className="flex flex-wrap gap-1.5">
                       {path.exercises.map((ex, j) => (
-                        <span key={j} className="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md bg-zinc-800 text-zinc-400 border border-zinc-700">
-                          <Lightbulb className="w-3 h-3 text-violet-400" />
+                        <span key={j} className="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md bg-cream-100 text-ink-600 border border-ink-200">
+                          <Lightbulb className="w-3 h-3 text-teal-700" />
                           {ex}
                         </span>
                       ))}
@@ -1232,10 +1232,10 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 13. Compare with Class Average                                   */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-cream-100 border-ink-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-zinc-100">
-              <Users className="w-5 h-5 text-blue-400" />
+            <CardTitle className="flex items-center gap-2 text-ink-900">
+              <Users className="w-5 h-5 text-teal-700" />
               Compare with Class Average
             </CardTitle>
           </CardHeader>
@@ -1253,15 +1253,15 @@ export default function SchoolStudentDetailPage() {
                 const maxVal = Math.max(metric.studentVal, metric.avg, 1)
                 return (
                   <div key={i} className="space-y-3">
-                    <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider block text-center">
+                    <span className="text-xs font-medium text-ink-9000 uppercase tracking-wider block text-center">
                       {metric.label}
                     </span>
                     <div className="flex items-end gap-3 justify-center h-24">
                       <div className="flex flex-col items-center gap-1 w-12">
-                        <span className="text-xs font-bold text-violet-400">
+                        <span className="text-xs font-bold text-teal-700">
                           {metric.studentVal}{metric.unit}
                         </span>
-                        <div className="w-full bg-zinc-800 rounded-t-md overflow-hidden" style={{ height: "60px" }}>
+                        <div className="w-full bg-cream-100 rounded-t-md overflow-hidden" style={{ height: "60px" }}>
                           <div
                             className="w-full bg-gradient-to-t from-violet-600 to-violet-400 rounded-t-md"
                             style={{
@@ -1270,22 +1270,22 @@ export default function SchoolStudentDetailPage() {
                             }}
                           />
                         </div>
-                        <span className="text-[10px] text-zinc-500">Student</span>
+                        <span className="text-[10px] text-ink-9000">Student</span>
                       </div>
                       <div className="flex flex-col items-center gap-1 w-12">
-                        <span className="text-xs font-bold text-zinc-400">
+                        <span className="text-xs font-bold text-ink-600">
                           {metric.avg}{metric.unit}
                         </span>
-                        <div className="w-full bg-zinc-800 rounded-t-md overflow-hidden" style={{ height: "60px" }}>
+                        <div className="w-full bg-cream-100 rounded-t-md overflow-hidden" style={{ height: "60px" }}>
                           <div
-                            className="w-full bg-gradient-to-t from-zinc-600 to-zinc-400 rounded-t-md"
+                            className="w-full bg-gradient-to-t from-cream-100 to-zinc-400 rounded-t-md"
                             style={{
                               height: `${(metric.avg / maxVal) * 100}%`,
                               marginTop: `${100 - (metric.avg / maxVal) * 100}%`,
                             }}
                           />
                         </div>
-                        <span className="text-[10px] text-zinc-500">Class</span>
+                        <span className="text-[10px] text-ink-9000">Class</span>
                       </div>
                     </div>
                     <div className="text-center">
@@ -1293,9 +1293,9 @@ export default function SchoolStudentDetailPage() {
                         variant="outline"
                         className={`text-xs ${
                           isAbove
-                            ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
+                            ? "bg-teal-800/10 text-teal-700 border-teal-800/30"
                             : isEqual
-                            ? "bg-zinc-500/10 text-zinc-400 border-zinc-500/30"
+                            ? "bg-ink-200/10 text-ink-600 border-ink-200/30"
                             : "bg-red-500/10 text-red-400 border-red-500/30"
                         }`}
                       >
@@ -1316,10 +1316,10 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 14. Previous / Next Student Navigation                           */}
         {/* ---------------------------------------------------------------- */}
-        <div className="flex items-center justify-between pt-4 border-t border-zinc-800">
+        <div className="flex items-center justify-between pt-4 border-t border-ink-200">
           {prevId ? (
             <Link href={"/demo/school/students/" + prevId}>
-              <Button variant="outline" className="bg-zinc-900 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 gap-2">
+              <Button variant="outline" className="bg-cream-100 border-ink-200 text-ink-600 hover:bg-cream-100 hover:text-ink-900 gap-2">
                 <ChevronLeft className="w-4 h-4" />
                 Previous Student
               </Button>
@@ -1327,12 +1327,12 @@ export default function SchoolStudentDetailPage() {
           ) : (
             <div />
           )}
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-ink-9000">
             Student {currentIndex >= 0 ? currentIndex + 1 : "?"} of {allIds.length}
           </span>
           {nextId ? (
             <Link href={"/demo/school/students/" + nextId}>
-              <Button variant="outline" className="bg-zinc-900 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 gap-2">
+              <Button variant="outline" className="bg-cream-100 border-ink-200 text-ink-600 hover:bg-cream-100 hover:text-ink-900 gap-2">
                 Next Student
                 <ChevronRight className="w-4 h-4" />
               </Button>

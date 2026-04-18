@@ -45,7 +45,7 @@ function statusBadge(atRisk: boolean) {
     )
   }
   return (
-    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
+    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide bg-teal-800/10 text-teal-700 border border-teal-800/20">
       On Track
     </span>
   )
@@ -70,30 +70,30 @@ export default function TeacherStudentsPage() {
   const atRiskCount = filtered.filter((s) => s.atRisk).length
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       <DemoBanner message="You are viewing an interactive demo with sample data. No real student data is used." />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12">
         {/* Back link */}
         <Link
           href="/demo/teacher"
-          className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-neutral-500 hover:text-white/70 transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-ink-500 hover:text-ink-600 transition-colors mb-6"
         >
           <span className="text-base leading-none">&larr;</span> Teacher Dashboard
         </Link>
 
         {/* Header */}
         <div className="mb-8">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-2">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-ink-500 mb-2">
             Mrs Mitchell
           </p>
           <div className="flex items-baseline gap-3">
-            <h1 className="text-3xl sm:text-4xl font-light tracking-tight text-white/90">
+            <h1 className="text-3xl sm:text-4xl font-light tracking-tight text-ink-900">
               My Students
             </h1>
-            <span className="text-lg text-neutral-500 tabular-nums">{filtered.length}</span>
+            <span className="text-lg text-ink-500 tabular-nums">{filtered.length}</span>
           </div>
-          <p className="text-neutral-500 text-sm mt-1 max-w-lg">
+          <p className="text-ink-500 text-sm mt-1 max-w-lg">
             Track progress, scores, and engagement across your classes.
           </p>
           {atRiskCount > 0 && (
@@ -109,8 +109,8 @@ export default function TeacherStudentsPage() {
             onClick={() => setClassFilter("all")}
             className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors border ${
               classFilter === "all"
-                ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
-                : "bg-white/[0.04] text-neutral-300 border-white/10 hover:bg-white/[0.08] hover:text-white"
+                ? "bg-teal-800/10 text-teal-700 border-teal-800/30"
+                : "bg-white text-ink-600 border-ink-200 hover:bg-cream-100 hover:text-white"
             }`}
           >
             All Classes ({MITCHELL_STUDENTS.length})
@@ -123,8 +123,8 @@ export default function TeacherStudentsPage() {
                 onClick={() => setClassFilter(cls.id)}
                 className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors border ${
                   classFilter === cls.id
-                    ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
-                    : "bg-white/[0.04] text-neutral-300 border-white/10 hover:bg-white/[0.08] hover:text-white"
+                    ? "bg-teal-800/10 text-teal-700 border-teal-800/30"
+                    : "bg-white text-ink-600 border-ink-200 hover:bg-cream-100 hover:text-white"
                 }`}
               >
                 {cls.name} ({count})
@@ -150,7 +150,7 @@ export default function TeacherStudentsPage() {
                   }, 2500)
                 }
               }}
-              className="rounded-lg px-4 py-2 text-xs font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 transition-colors"
+              className="rounded-lg px-4 py-2 text-xs font-medium bg-teal-600/10 text-teal-700 border border-teal-800/20 hover:bg-teal-600/20 transition-colors"
             >
               View Class Report: {cls.name}
             </button>
@@ -168,19 +168,19 @@ export default function TeacherStudentsPage() {
 
           return (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Avg Working At Grade</p>
+              <div className="rounded-xl border border-ink-200 bg-white p-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">Avg Working At Grade</p>
                 <p className={`text-2xl font-light tabular-nums ${gcseGradeColor(avgWorking)}`}>Grade {avgWorking}</p>
               </div>
-              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Avg Predicted Grade</p>
+              <div className="rounded-xl border border-ink-200 bg-white p-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">Avg Predicted Grade</p>
                 <p className={`text-2xl font-light tabular-nums ${predictedGradeColor(avgPredicted, avgWorking)}`}>Grade {avgPredicted}</p>
               </div>
-              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-2">Grade Distribution</p>
+              <div className="rounded-xl border border-ink-200 bg-white p-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-2">Grade Distribution</p>
                 <div className="flex flex-wrap gap-2">
                   {gradeDist.map((g) => (
-                    <span key={g.grade} className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium border ${gcseGradeColor(g.grade)} border-white/10 bg-white/[0.03]`}>
+                    <span key={g.grade} className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium border ${gcseGradeColor(g.grade)} border-ink-200 bg-white`}>
                       G{g.grade}: {g.count}
                     </span>
                   ))}
@@ -191,9 +191,9 @@ export default function TeacherStudentsPage() {
         })()}
 
         {/* Student Table */}
-        <div className="rounded-xl border border-white/5 bg-white/[0.02] overflow-hidden">
+        <div className="rounded-xl border border-ink-200 bg-white overflow-hidden">
           {/* Table header */}
-          <div className="hidden sm:grid grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-4 px-5 py-3 border-b border-white/5 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+          <div className="hidden sm:grid grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-4 px-5 py-3 border-b border-ink-200 text-[10px] uppercase tracking-[0.2em] text-ink-500">
             <span>Name</span>
             <span>Class</span>
             <span className="text-center">Working At</span>
@@ -208,7 +208,7 @@ export default function TeacherStudentsPage() {
             <Link
               key={student.id}
               href={`/demo/teacher/students/${student.id}`}
-              className={`group grid grid-cols-1 sm:grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-1 sm:gap-4 px-5 py-4 border-b border-white/[0.03] hover:bg-white/[0.03] transition-colors cursor-pointer ${
+              className={`group grid grid-cols-1 sm:grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-1 sm:gap-4 px-5 py-4 border-b border-white/[0.03] hover:bg-white transition-colors cursor-pointer ${
                 student.atRisk ? "bg-red-500/[0.03]" : ""
               }`}
             >
@@ -218,7 +218,7 @@ export default function TeacherStudentsPage() {
                   className={`h-8 w-8 shrink-0 rounded-full flex items-center justify-center text-[11px] font-medium ${
                     student.atRisk
                       ? "bg-red-500/15 text-red-400"
-                      : "bg-gradient-to-br from-white/10 to-white/5 text-white/60"
+                      : "bg-gradient-to-br from-white/10 to-white/5 text-ink-600"
                   }`}
                 >
                   {student.name
@@ -228,10 +228,10 @@ export default function TeacherStudentsPage() {
                     .slice(0, 2)}
                 </div>
                 <div>
-                  <p className="text-sm text-white/90 group-hover:text-white transition-colors">
+                  <p className="text-sm text-ink-900 group-hover:text-ink-900 transition-colors">
                     {student.name}
                   </p>
-                  <p className="text-[11px] text-neutral-600 sm:hidden">
+                  <p className="text-[11px] text-ink-500 sm:hidden">
                     {student.className} &middot; Year {student.yearGroup}
                   </p>
                 </div>
@@ -239,7 +239,7 @@ export default function TeacherStudentsPage() {
 
               {/* Class */}
               <div className="hidden sm:flex items-center">
-                <p className="text-sm text-neutral-400">{student.className}</p>
+                <p className="text-sm text-ink-600">{student.className}</p>
               </div>
 
               {/* Working At Grade */}
@@ -262,7 +262,7 @@ export default function TeacherStudentsPage() {
 
               {/* Target Grade */}
               <div className="hidden sm:flex items-center justify-center">
-                <span className="text-sm tabular-nums font-medium text-violet-400">
+                <span className="text-sm tabular-nums font-medium text-teal-700">
                   {student.targetGrade}
                 </span>
               </div>
@@ -278,7 +278,7 @@ export default function TeacherStudentsPage() {
                   className={`text-sm tabular-nums ${
                     student.lastActive.includes("week") || student.lastActive.includes("days")
                       ? "text-red-400/70"
-                      : "text-neutral-500"
+                      : "text-ink-500"
                   }`}
                 >
                   {student.lastActive}
@@ -289,7 +289,7 @@ export default function TeacherStudentsPage() {
         </div>
 
         {/* Footer */}
-        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-neutral-600">
+        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-ink-500">
           Demo data &middot; {filtered.length} students &middot; {MITCHELL_CLASSES.length} classes
         </p>
       </div>
@@ -297,7 +297,7 @@ export default function TeacherStudentsPage() {
       {/* Toast */}
       <div
         id="demo-toast"
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md border border-white/10 text-white/90 text-sm px-5 py-3 rounded-xl opacity-0 translate-y-2 transition-all duration-300 pointer-events-none z-50"
+        className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-cream-100 backdrop-blur-md border border-ink-200 text-ink-900 text-sm px-5 py-3 rounded-xl opacity-0 translate-y-2 transition-all duration-300 pointer-events-none z-50"
       />
     </div>
   )

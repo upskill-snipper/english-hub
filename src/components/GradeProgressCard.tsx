@@ -87,7 +87,7 @@ function MiniProgressRing({
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="rgba(255,255,255,0.04)"
+          stroke="hsl(var(--border) / 0.3)"
           strokeWidth={stroke}
         />
         <circle
@@ -125,7 +125,7 @@ export default function GradeProgressCard({
 
   if (compact) {
     return (
-      <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4">
+      <div className="rounded-xl border border-border bg-card p-4">
         <div className="flex items-center gap-4">
           {/* Current Grade - prominent */}
           <div className="text-center">
@@ -144,7 +144,7 @@ export default function GradeProgressCard({
 
           {/* Target */}
           <div className="text-center">
-            <div className="text-xl font-semibold text-cyan-400">{targetGrade}</div>
+            <div className="text-xl font-semibold text-teal-700">{targetGrade}</div>
             <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">
               Target
             </div>
@@ -160,12 +160,12 @@ export default function GradeProgressCard({
   }
 
   return (
-    <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
+    <div className="rounded-xl border border-border bg-card p-5">
       <div className="flex items-start gap-5">
         {/* Working At Grade - large and prominent */}
         <div className="text-center shrink-0">
           <div
-            className={`h-20 w-20 rounded-2xl flex items-center justify-center text-4xl font-bold ${gcseGradeBg(currentGrade)} ${gcseGradeColor(currentGrade)} border border-white/[0.06]`}
+            className={`h-20 w-20 rounded-2xl flex items-center justify-center text-4xl font-bold ${gcseGradeBg(currentGrade)} ${gcseGradeColor(currentGrade)} border border-border`}
           >
             {currentGrade}
           </div>
@@ -178,7 +178,7 @@ export default function GradeProgressCard({
         <div className="flex-1 min-w-0">
           <div className="grid grid-cols-2 gap-3 mb-3">
             {/* Predicted Grade */}
-            <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5">
+            <div className="rounded-lg border border-border bg-cream-100 px-3 py-2.5">
               <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
                 Predicted
               </div>
@@ -196,13 +196,13 @@ export default function GradeProgressCard({
             </div>
 
             {/* Target Grade */}
-            <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5">
+            <div className="rounded-lg border border-border bg-cream-100 px-3 py-2.5">
               <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
                 Target
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-xl font-bold text-cyan-400">{targetGrade}</span>
-                <Target className="h-3.5 w-3.5 text-cyan-400/50" />
+                <span className="text-xl font-bold text-teal-700">{targetGrade}</span>
+                <Target className="h-3.5 w-3.5 text-teal-700/50" />
               </div>
             </div>
           </div>

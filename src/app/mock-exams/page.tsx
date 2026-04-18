@@ -73,54 +73,54 @@ interface QuestionSummary {
 // ─── Board Config ────────────────────────────────────────────────────────────
 
 const DEFAULT_BOARD_CONFIG = {
-  color: 'text-slate-400',
-  bg: 'bg-slate-500/10',
-  gradient: 'from-slate-500/20 to-slate-600/5',
-  border: 'border-slate-500/30',
-  badge: 'bg-slate-500/15 text-slate-300 border-slate-500/30',
-  accent: 'text-slate-400',
+  color: 'text-ink-500',
+  bg: 'bg-muted/50',
+  gradient: 'from-muted/40 to-muted/10',
+  border: 'border-border',
+  badge: 'bg-muted/50 text-ink-600 border-border',
+  accent: 'text-ink-500',
 }
 
 const BOARD_CONFIG: Record<string, typeof DEFAULT_BOARD_CONFIG> = {
   AQA: {
-    color: 'text-blue-400',
-    bg: 'bg-blue-500/10',
-    gradient: 'from-blue-500/20 to-blue-600/5',
-    border: 'border-blue-500/30',
-    badge: 'bg-blue-500/15 text-blue-300 border-blue-500/30',
-    accent: 'text-blue-400',
+    color: 'text-blue-700',
+    bg: 'bg-blue-50',
+    gradient: 'from-blue-50 to-blue-50/30',
+    border: 'border-blue-200',
+    badge: 'bg-blue-50 text-blue-700 border-blue-200',
+    accent: 'text-blue-700',
   },
   Edexcel: {
-    color: 'text-violet-400',
-    bg: 'bg-violet-500/10',
-    gradient: 'from-violet-500/20 to-violet-600/5',
-    border: 'border-violet-500/30',
-    badge: 'bg-violet-500/15 text-violet-300 border-violet-500/30',
-    accent: 'text-violet-400',
+    color: 'text-purple-700',
+    bg: 'bg-purple-50',
+    gradient: 'from-purple-50 to-purple-50/30',
+    border: 'border-purple-200',
+    badge: 'bg-purple-50 text-purple-700 border-purple-200',
+    accent: 'text-purple-700',
   },
   OCR: {
-    color: 'text-orange-400',
-    bg: 'bg-orange-500/10',
-    gradient: 'from-orange-500/20 to-orange-600/5',
-    border: 'border-orange-500/30',
-    badge: 'bg-orange-500/15 text-orange-300 border-orange-500/30',
-    accent: 'text-orange-400',
+    color: 'text-orange-700',
+    bg: 'bg-orange-50',
+    gradient: 'from-orange-50 to-orange-50/30',
+    border: 'border-orange-200',
+    badge: 'bg-orange-50 text-orange-700 border-orange-200',
+    accent: 'text-orange-700',
   },
   WJEC: {
-    color: 'text-red-400',
-    bg: 'bg-red-500/10',
-    gradient: 'from-red-500/20 to-red-600/5',
-    border: 'border-red-500/30',
-    badge: 'bg-red-500/15 text-red-300 border-red-500/30',
-    accent: 'text-red-400',
+    color: 'text-red-700',
+    bg: 'bg-red-50',
+    gradient: 'from-red-50 to-red-50/30',
+    border: 'border-red-200',
+    badge: 'bg-red-50 text-red-700 border-red-200',
+    accent: 'text-red-700',
   },
   CAIE: {
-    color: 'text-emerald-400',
-    bg: 'bg-emerald-500/10',
-    gradient: 'from-emerald-500/20 to-emerald-600/5',
-    border: 'border-emerald-500/30',
-    badge: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
-    accent: 'text-emerald-400',
+    color: 'text-teal-800',
+    bg: 'bg-teal-50',
+    gradient: 'from-teal-50 to-teal-50/30',
+    border: 'border-teal-200',
+    badge: 'bg-teal-50 text-teal-800 border-teal-200',
+    accent: 'text-teal-800',
   },
 }
 
@@ -267,26 +267,26 @@ const EXAM_CARDS: ExamCardData[] = [
 function getDifficultyBadge(difficulty: string) {
   switch (difficulty) {
     case 'Foundation':
-      return 'bg-green-500/15 text-green-300 border-green-500/30'
+      return 'bg-green-50 text-green-700 border-green-200'
     case 'Intermediate':
-      return 'bg-amber-500/15 text-amber-300 border-amber-500/30'
+      return 'bg-amber-50 text-amber-700 border-amber-200'
     case 'Higher':
-      return 'bg-red-500/15 text-red-300 border-red-500/30'
+      return 'bg-red-50 text-red-700 border-red-200'
     default:
-      return 'bg-slate-500/15 text-slate-300 border-slate-500/30'
+      return 'bg-muted text-ink-600 border-border'
   }
 }
 
 function getGradeColor(grade: number) {
-  if (grade >= 7) return 'text-emerald-400'
-  if (grade >= 5) return 'text-amber-400'
-  return 'text-red-400'
+  if (grade >= 7) return 'text-teal-800'
+  if (grade >= 5) return 'text-amber-700'
+  return 'text-red-600'
 }
 
 function getGradeBg(grade: number) {
-  if (grade >= 7) return 'bg-emerald-500/15 border-emerald-500/30'
-  if (grade >= 5) return 'bg-amber-500/15 border-amber-500/30'
-  return 'bg-red-500/15 border-red-500/30'
+  if (grade >= 7) return 'bg-teal-50 border-teal-200'
+  if (grade >= 5) return 'bg-amber-50 border-amber-200'
+  return 'bg-red-50 border-red-200'
 }
 
 // ─── Grade Boundaries Component ──────────────────────────────────────────────
@@ -300,10 +300,10 @@ function GradeBoundariesTable({ boundaries, totalMarks }: { boundaries: GradeBou
           className={cn(
             'rounded-lg p-2 text-center border',
             grade >= 7
-              ? 'bg-emerald-500/10 border-emerald-500/20'
+              ? 'bg-teal-50 border-teal-200'
               : grade >= 5
-                ? 'bg-amber-500/10 border-amber-500/20'
-                : 'bg-slate-500/10 border-slate-500/20'
+                ? 'bg-amber-50 border-amber-200'
+                : 'bg-muted border-border'
           )}
         >
           <div className={cn('text-sm font-bold', getGradeColor(grade))}>{grade}</div>
@@ -367,7 +367,7 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:border-border">
       {/* Header gradient strip */}
-      <div className={cn('h-1.5', isLanguage ? 'bg-gradient-to-r from-blue-500 to-cyan-500' : 'bg-gradient-to-r from-violet-500 to-pink-500')} />
+      <div className={cn('h-1.5', isLanguage ? 'bg-gradient-to-r from-blue-500 to-cyan-500' : 'bg-gradient-to-r from-teal-800 to-clay-500')} />
 
       <CardHeader className="pb-0">
         <div className="flex items-start justify-between gap-3">
@@ -377,7 +377,7 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
               <Badge className={cn(getDifficultyBadge(exam.difficulty), 'text-xs border')}>
                 {exam.difficulty}
               </Badge>
-              <Badge variant="outline" className={cn('text-xs', isLanguage ? 'border-cyan-500/30 text-cyan-300' : 'border-pink-500/30 text-pink-300')}>
+              <Badge variant="outline" className={cn('text-xs', isLanguage ? 'border-cyan-600/30 text-cyan-700' : 'border-pink-600/30 text-pink-700')}>
                 {isLanguage ? 'Language' : 'Literature'}
               </Badge>
             </div>
@@ -605,7 +605,7 @@ export default function MockExamsPage() {
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.06] via-transparent to-violet-500/[0.06]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.06] via-transparent to-clay-500/[0.04]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[140px] pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-4 py-16 sm:py-20 text-center">
@@ -724,15 +724,15 @@ export default function MockExamsPage() {
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-3 sm:grid-cols-9 gap-2">
               {[
-                { grade: 9, label: 'A**', colour: 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300' },
-                { grade: 8, label: 'A*', colour: 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300' },
-                { grade: 7, label: 'A', colour: 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300' },
-                { grade: 6, label: 'B+', colour: 'bg-cyan-500/15 border-cyan-500/30 text-cyan-300' },
-                { grade: 5, label: 'B/C', colour: 'bg-amber-500/15 border-amber-500/30 text-amber-300' },
-                { grade: 4, label: 'C', colour: 'bg-amber-500/15 border-amber-500/30 text-amber-300' },
-                { grade: 3, label: 'D', colour: 'bg-orange-500/15 border-orange-500/30 text-orange-300' },
-                { grade: 2, label: 'E/F', colour: 'bg-red-500/15 border-red-500/30 text-red-300' },
-                { grade: 1, label: 'G', colour: 'bg-red-500/15 border-red-500/30 text-red-300' },
+                { grade: 9, label: 'A**', colour: 'bg-teal-50 border-teal-200 text-teal-800' },
+                { grade: 8, label: 'A*', colour: 'bg-teal-50 border-teal-200 text-teal-800' },
+                { grade: 7, label: 'A', colour: 'bg-teal-50 border-teal-200 text-teal-800' },
+                { grade: 6, label: 'B+', colour: 'bg-cyan-50 border-cyan-200 text-cyan-700' },
+                { grade: 5, label: 'B/C', colour: 'bg-amber-50 border-amber-200 text-amber-700' },
+                { grade: 4, label: 'C', colour: 'bg-amber-50 border-amber-200 text-amber-700' },
+                { grade: 3, label: 'D', colour: 'bg-orange-50 border-orange-200 text-orange-700' },
+                { grade: 2, label: 'E/F', colour: 'bg-red-50 border-red-200 text-red-700' },
+                { grade: 1, label: 'G', colour: 'bg-red-50 border-red-200 text-red-700' },
               ].map(({ grade, label, colour }) => (
                 <div key={grade} className={cn('rounded-xl border p-3 text-center', colour)}>
                   <div className="text-2xl font-bold">{grade}</div>
@@ -741,8 +741,8 @@ export default function MockExamsPage() {
               ))}
             </div>
             <div className="flex justify-between mt-3 text-xs text-muted-foreground px-2">
-              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-amber-400" /> Grade 4 = Standard pass</span>
-              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-emerald-400" /> Grade 5 = Strong pass</span>
+              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-amber-600" /> Grade 4 = Standard pass</span>
+              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-teal-800" /> Grade 5 = Strong pass</span>
             </div>
           </div>
         </div>

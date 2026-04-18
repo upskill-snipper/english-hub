@@ -36,7 +36,7 @@ import {
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
 function ringColor(pct: number): string {
-  if (pct >= 75) return "stroke-emerald-500"
+  if (pct >= 75) return "stroke-teal-700"
   if (pct >= 50) return "stroke-amber-500"
   return "stroke-red-500"
 }
@@ -215,10 +215,10 @@ export default function DemoSchoolDashboardPage() {
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">
       {/* Demo banner */}
-      <div className="mb-6 rounded-lg border border-blue-500/30 bg-blue-500/10 px-5 py-4">
+      <div className="mb-6 rounded-lg border border-blue-500/30 bg-teal-800/10 px-5 py-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-3">
-            <GraduationCap className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
+            <GraduationCap className="mt-0.5 h-5 w-5 shrink-0 text-teal-700" />
             <p className="text-sm text-blue-300">
               You are viewing an interactive demo with sample data. Register
               your school to use with your own students.
@@ -362,10 +362,10 @@ export default function DemoSchoolDashboardPage() {
       {/* ── Hero Stat Cards ──────────────────────────────────────────────── */}
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {/* Total Students */}
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
+        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-teal-800/10 to-teal-600/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-blue-400/80">
+              <p className="text-xs font-medium uppercase tracking-wider text-teal-700/80">
                 Students
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
@@ -376,16 +376,16 @@ export default function DemoSchoolDashboardPage() {
               </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15">
-              <Users className="h-5 w-5 text-blue-400" />
+              <Users className="h-5 w-5 text-teal-700" />
             </div>
           </div>
         </div>
 
         {/* Avg Working At Grade */}
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-violet-500/10 to-violet-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
+        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-violet-500/10 to-clay-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-violet-400/80">
+              <p className="text-xs font-medium uppercase tracking-wider text-teal-700/80">
                 Avg Working At
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
@@ -395,23 +395,23 @@ export default function DemoSchoolDashboardPage() {
                 Current attainment level
               </p>
             </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15">
-              <BookOpen className="h-5 w-5 text-violet-400" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-700/15">
+              <BookOpen className="h-5 w-5 text-teal-700" />
             </div>
           </div>
         </div>
 
         {/* Avg Predicted Grade */}
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-violet-500/10 to-violet-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
+        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-violet-500/10 to-clay-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-violet-400/80">
+              <p className="text-xs font-medium uppercase tracking-wider text-teal-700/80">
                 Avg Predicted
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
                 Grade {metrics.avgPredicted}
               </p>
-              <p className={`mt-1 flex items-center gap-1 text-xs ${metrics.avgPredicted >= metrics.avgWorkingAt ? "text-emerald-400" : "text-red-400"}`}>
+              <p className={`mt-1 flex items-center gap-1 text-xs ${metrics.avgPredicted >= metrics.avgWorkingAt ? "text-teal-700" : "text-red-400"}`}>
                 {metrics.avgPredicted >= metrics.avgWorkingAt ? (
                   <TrendingUp className="h-3 w-3" />
                 ) : (
@@ -422,17 +422,17 @@ export default function DemoSchoolDashboardPage() {
                   : "Declining trajectory"}
               </p>
             </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15">
-              <TrendingUp className="h-5 w-5 text-violet-400" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-700/15">
+              <TrendingUp className="h-5 w-5 text-teal-700" />
             </div>
           </div>
         </div>
 
         {/* On Track % */}
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
+        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-teal-800/10 to-teal-600/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-emerald-400/80">
+              <p className="text-xs font-medium uppercase tracking-wider text-teal-700/80">
                 On Track
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
@@ -442,8 +442,8 @@ export default function DemoSchoolDashboardPage() {
                 {metrics.onTrackCount} of {metrics.total} students
               </p>
             </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/15">
-              <Target className="h-5 w-5 text-emerald-400" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-800/10">
+              <Target className="h-5 w-5 text-teal-700" />
             </div>
           </div>
         </div>
@@ -482,7 +482,7 @@ export default function DemoSchoolDashboardPage() {
                 </CardTitle>
                 <div className="flex items-center gap-3 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1">
-                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-teal-700" />
                     Grade 7-9
                   </span>
                   <span className="flex items-center gap-1">
@@ -506,7 +506,7 @@ export default function DemoSchoolDashboardPage() {
                       : 0
                   const barColor =
                     grade >= 7
-                      ? "bg-emerald-500"
+                      ? "bg-teal-700"
                       : grade >= 4
                         ? "bg-blue-500"
                         : "bg-red-500"
@@ -531,21 +531,21 @@ export default function DemoSchoolDashboardPage() {
               </div>
               {/* Summary row below chart */}
               <div className="mt-4 grid grid-cols-3 gap-3">
-                <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-3 text-center">
-                  <p className="text-lg font-bold text-emerald-400">
+                <div className="rounded-lg border border-teal-800/20 bg-teal-800/5 p-3 text-center">
+                  <p className="text-lg font-bold text-teal-700">
                     {(metrics.gradeDistribution[7] || 0) +
                       (metrics.gradeDistribution[8] || 0) +
                       (metrics.gradeDistribution[9] || 0)}
                   </p>
-                  <p className="text-[11px] text-emerald-400/80">Grade 7-9</p>
+                  <p className="text-[11px] text-teal-700/80">Grade 7-9</p>
                 </div>
-                <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3 text-center">
-                  <p className="text-lg font-bold text-blue-400">
+                <div className="rounded-lg border border-teal-800/20 bg-blue-500/5 p-3 text-center">
+                  <p className="text-lg font-bold text-teal-700">
                     {(metrics.gradeDistribution[4] || 0) +
                       (metrics.gradeDistribution[5] || 0) +
                       (metrics.gradeDistribution[6] || 0)}
                   </p>
-                  <p className="text-[11px] text-blue-400/80">Grade 4-6 (Standard pass+)</p>
+                  <p className="text-[11px] text-teal-700/80">Grade 4-6 (Standard pass+)</p>
                 </div>
                 <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-3 text-center">
                   <p className="text-lg font-bold text-red-400">
@@ -589,7 +589,7 @@ export default function DemoSchoolDashboardPage() {
                       <p className="text-xs text-muted-foreground">
                         On Track (predicted &ge; target)
                       </p>
-                      <p className="text-lg font-semibold text-emerald-400">
+                      <p className="text-lg font-semibold text-teal-700">
                         {metrics.onTrackCount} students
                       </p>
                     </div>
@@ -849,8 +849,8 @@ export default function DemoSchoolDashboardPage() {
                   className="h-auto flex-col gap-2 px-3 py-4"
                   render={<Link href="/demo/school/import" />}
                 >
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/10">
-                    <Upload className="h-4 w-4 text-blue-400" />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-800/10">
+                    <Upload className="h-4 w-4 text-teal-700" />
                   </div>
                   <span className="text-xs font-medium">Import</span>
                 </Button>
@@ -860,8 +860,8 @@ export default function DemoSchoolDashboardPage() {
                   className="h-auto flex-col gap-2 px-3 py-4"
                   render={<Link href="/demo/school/classes" />}
                 >
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500/10">
-                    <BookOpen className="h-4 w-4 text-emerald-400" />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-800/10">
+                    <BookOpen className="h-4 w-4 text-teal-700" />
                   </div>
                   <span className="text-xs font-medium">Classes</span>
                 </Button>
@@ -871,8 +871,8 @@ export default function DemoSchoolDashboardPage() {
                   className="h-auto flex-col gap-2 px-3 py-4"
                   render={<Link href="/demo/school/analytics" />}
                 >
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-violet-500/10">
-                    <BarChart3 className="h-4 w-4 text-violet-400" />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-800/10">
+                    <BarChart3 className="h-4 w-4 text-teal-700" />
                   </div>
                   <span className="text-xs font-medium">Analytics</span>
                 </Button>
@@ -895,7 +895,7 @@ export default function DemoSchoolDashboardPage() {
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                <TrendingUp className="h-4 w-4 text-emerald-400" />
+                <TrendingUp className="h-4 w-4 text-teal-700" />
                 Top Improving Students
               </CardTitle>
             </CardHeader>
@@ -910,7 +910,7 @@ export default function DemoSchoolDashboardPage() {
                     <Link
                       key={student.id}
                       href={`/demo/school/students/${student.id}`}
-                      className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5 transition-colors hover:border-emerald-500/30 hover:bg-emerald-500/5"
+                      className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5 transition-colors hover:border-teal-800/30 hover:bg-teal-800/5"
                     >
                       <div className="min-w-0">
                         <p className="truncate text-xs font-medium text-foreground">
@@ -926,7 +926,7 @@ export default function DemoSchoolDashboardPage() {
                         >
                           G{student.workingAtGrade}
                         </span>
-                        <ArrowRight className="h-3 w-3 text-emerald-400" />
+                        <ArrowRight className="h-3 w-3 text-teal-700" />
                         <span
                           className={`text-xs font-bold ${gcseGradeColor(student.predictedGrade)}`}
                         >
@@ -944,7 +944,7 @@ export default function DemoSchoolDashboardPage() {
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                <BookOpenCheck className="h-4 w-4 text-violet-400" />
+                <BookOpenCheck className="h-4 w-4 text-teal-700" />
                 Reading Age Data
               </CardTitle>
             </CardHeader>
@@ -955,12 +955,12 @@ export default function DemoSchoolDashboardPage() {
                   Assessment. Students who have completed the assessment will
                   have their reading age, decoding age, and fluency age recorded.
                 </p>
-                <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-3">
+                <div className="rounded-lg border border-teal-800/20 bg-teal-600/5 p-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-violet-400">
+                    <span className="text-xs font-medium text-teal-700">
                       Assessments completed
                     </span>
-                    <span className="text-xs font-bold text-violet-400">
+                    <span className="text-xs font-bold text-teal-700">
                       Demo data
                     </span>
                   </div>
@@ -1025,7 +1025,7 @@ export default function DemoSchoolDashboardPage() {
                   <span className="text-xs text-muted-foreground">
                     Students on track
                   </span>
-                  <span className="text-sm font-bold text-emerald-400">
+                  <span className="text-sm font-bold text-teal-700">
                     {metrics.onTrackCount}/{metrics.total}
                   </span>
                 </div>

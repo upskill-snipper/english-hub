@@ -53,9 +53,9 @@ export default function TeacherDemoLayout({
     <div className="flex h-full flex-col">
       {/* Demo mode badge */}
       <div className="px-5 pt-5 pb-3">
-        <div className="flex items-center justify-center gap-2 rounded-lg bg-emerald-500/15 border border-emerald-500/25 px-3 py-2">
-          <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+        <div className="flex items-center justify-center gap-2 rounded-lg bg-teal-800/10 border border-teal-800/25 px-3 py-2">
+          <Sparkles className="h-3.5 w-3.5 text-teal-700" />
+          <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
             Teacher Demo
           </span>
         </div>
@@ -64,8 +64,8 @@ export default function TeacherDemoLayout({
       {/* Teacher header */}
       <div className="border-b border-border px-5 pb-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10">
-            <UserCircle className="h-5 w-5 text-emerald-400" />
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-800/10">
+            <UserCircle className="h-5 w-5 text-teal-700" />
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-2">
@@ -100,7 +100,7 @@ export default function TeacherDemoLayout({
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                 active
-                  ? "bg-emerald-500/10 text-emerald-400"
+                  ? "bg-teal-800/10 text-teal-700"
                   : "text-muted-foreground hover:bg-accent hover:text-foreground"
               )}
             >
@@ -113,7 +113,7 @@ export default function TeacherDemoLayout({
 
       {/* Bottom actions */}
       <div className="border-t border-border px-3 py-4 space-y-3">
-        <Button render={<Link href="/auth/teacher-register" />} className="w-full font-semibold bg-gradient-to-r from-emerald-500 to-cyan-500 text-black hover:opacity-90">
+        <Button render={<Link href="/auth/teacher-register" />} className="w-full font-semibold bg-gradient-to-r from-teal-800 to-teal-600 text-white hover:opacity-90">
             <Sparkles className="h-4 w-4 mr-1.5" />
             Start Free Trial
         </Button>
@@ -152,7 +152,7 @@ export default function TeacherDemoLayout({
           )}
         </Button>
         <div className="flex items-center gap-2">
-          <UserCircle className="h-5 w-5 text-emerald-400" />
+          <UserCircle className="h-5 w-5 text-teal-700" />
           <span className="text-sm font-bold">Mrs Mitchell</span>
           <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider">
             Teacher Demo
@@ -164,7 +164,7 @@ export default function TeacherDemoLayout({
       {mobileOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+            className="fixed inset-0 z-40 bg-ink-900/30 lg:hidden"
             onClick={() => setMobileOpen(false)}
           />
           <aside className="fixed inset-y-0 left-0 z-50 w-60 bg-card shadow-xl lg:hidden">

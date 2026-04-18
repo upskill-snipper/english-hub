@@ -64,8 +64,8 @@ const YEAR_GROUPS: YearGroupData[] = [
     belowTarget: 33,
     atRisk: 14,
     predictedGrades: [
-      { grade: "8-9", pct: 8, color: "bg-emerald-500" },
-      { grade: "7", pct: 22, color: "bg-emerald-400" },
+      { grade: "8-9", pct: 8, color: "bg-teal-700" },
+      { grade: "7", pct: 22, color: "bg-teal-600" },
       { grade: "6", pct: 38, color: "bg-amber-400" },
       { grade: "5", pct: 22, color: "bg-amber-500" },
       { grade: "1-4", pct: 10, color: "bg-red-500" },
@@ -102,8 +102,8 @@ const YEAR_GROUPS: YearGroupData[] = [
     belowTarget: 30,
     atRisk: 13,
     predictedGrades: [
-      { grade: "8-9", pct: 10, color: "bg-emerald-500" },
-      { grade: "7", pct: 25, color: "bg-emerald-400" },
+      { grade: "8-9", pct: 10, color: "bg-teal-700" },
+      { grade: "7", pct: 25, color: "bg-teal-600" },
       { grade: "6", pct: 36, color: "bg-amber-400" },
       { grade: "5", pct: 20, color: "bg-amber-500" },
       { grade: "1-4", pct: 9, color: "bg-red-500" },
@@ -140,8 +140,8 @@ const YEAR_GROUPS: YearGroupData[] = [
     belowTarget: 29,
     atRisk: 13,
     predictedGrades: [
-      { grade: "8-9", pct: 12, color: "bg-emerald-500" },
-      { grade: "7", pct: 28, color: "bg-emerald-400" },
+      { grade: "8-9", pct: 12, color: "bg-teal-700" },
+      { grade: "7", pct: 28, color: "bg-teal-600" },
       { grade: "6", pct: 34, color: "bg-amber-400" },
       { grade: "5", pct: 18, color: "bg-amber-500" },
       { grade: "1-4", pct: 8, color: "bg-red-500" },
@@ -178,8 +178,8 @@ const YEAR_GROUPS: YearGroupData[] = [
     belowTarget: 27,
     atRisk: 11,
     predictedGrades: [
-      { grade: "8-9", pct: 15, color: "bg-emerald-500" },
-      { grade: "7", pct: 30, color: "bg-emerald-400" },
+      { grade: "8-9", pct: 15, color: "bg-teal-700" },
+      { grade: "7", pct: 30, color: "bg-teal-600" },
       { grade: "6", pct: 35, color: "bg-amber-400" },
       { grade: "5", pct: 15, color: "bg-amber-500" },
       { grade: "1-4", pct: 5, color: "bg-red-500" },
@@ -218,8 +218,8 @@ const YEAR_GROUPS: YearGroupData[] = [
     belowTarget: 25,
     atRisk: 10,
     predictedGrades: [
-      { grade: "8-9", pct: 18, color: "bg-emerald-500" },
-      { grade: "7", pct: 32, color: "bg-emerald-400" },
+      { grade: "8-9", pct: 18, color: "bg-teal-700" },
+      { grade: "7", pct: 32, color: "bg-teal-600" },
       { grade: "6", pct: 32, color: "bg-amber-400" },
       { grade: "5", pct: 13, color: "bg-amber-500" },
       { grade: "1-4", pct: 5, color: "bg-red-500" },
@@ -258,8 +258,8 @@ const YEAR_GROUPS: YearGroupData[] = [
     belowTarget: 12,
     atRisk: 5,
     predictedGrades: [
-      { grade: "8-9", pct: 20, color: "bg-emerald-500" },
-      { grade: "7", pct: 35, color: "bg-emerald-400" },
+      { grade: "8-9", pct: 20, color: "bg-teal-700" },
+      { grade: "7", pct: 35, color: "bg-teal-600" },
       { grade: "6", pct: 28, color: "bg-amber-400" },
       { grade: "5", pct: 12, color: "bg-amber-500" },
       { grade: "1-4", pct: 5, color: "bg-red-500" },
@@ -295,8 +295,8 @@ const YEAR_GROUPS: YearGroupData[] = [
     belowTarget: 9,
     atRisk: 4,
     predictedGrades: [
-      { grade: "8-9", pct: 22, color: "bg-emerald-500" },
-      { grade: "7", pct: 34, color: "bg-emerald-400" },
+      { grade: "8-9", pct: 22, color: "bg-teal-700" },
+      { grade: "7", pct: 34, color: "bg-teal-600" },
       { grade: "6", pct: 30, color: "bg-amber-400" },
       { grade: "5", pct: 10, color: "bg-amber-500" },
       { grade: "1-4", pct: 4, color: "bg-red-500" },
@@ -323,19 +323,19 @@ const YEAR_GROUPS: YearGroupData[] = [
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function progressColor(pct: number): string {
-  if (pct >= 75) return "bg-emerald-500"
+  if (pct >= 75) return "bg-teal-700"
   if (pct >= 60) return "bg-amber-500"
   return "bg-red-500"
 }
 
 function progressTextColor(pct: number): string {
-  if (pct >= 75) return "text-emerald-400"
+  if (pct >= 75) return "text-teal-700"
   if (pct >= 60) return "text-amber-400"
   return "text-red-400"
 }
 
 function ragColor(status: string): string {
-  if (status === "onTrack") return "bg-emerald-500"
+  if (status === "onTrack") return "bg-teal-700"
   if (status === "aboveTarget") return "bg-yellow-400"
   if (status === "belowTarget") return "bg-amber-500"
   return "bg-red-500"
@@ -361,14 +361,14 @@ export default function SchoolProgressPage() {
   const maxClassScore = Math.max(...activeYearData.classes.map((c) => c.avgScore))
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       <DemoBanner message="You are viewing an interactive demo with sample data. No real student data is used." />
 
       <div className="px-4 sm:px-6 py-8 sm:py-12">
         {/* Back link */}
         <Link
           href="/demo/school"
-          className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-neutral-500 hover:text-white/70 transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-ink-500 hover:text-ink-600 transition-colors mb-6"
         >
           <span className="text-base leading-none">&larr;</span> School Dashboard
         </Link>
@@ -377,14 +377,14 @@ export default function SchoolProgressPage() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight flex items-center gap-3">
-              <BarChart3 className="h-7 w-7 text-violet-400" />
+              <BarChart3 className="h-7 w-7 text-teal-700" />
               Progress Tracking
             </h1>
-            <p className="text-neutral-400 mt-1">Whole-school progress overview and year group analysis</p>
+            <p className="text-ink-600 mt-1">Whole-school progress overview and year group analysis</p>
           </div>
           <Button
             variant="outline"
-            className="border-neutral-700 text-neutral-300 hover:bg-neutral-800 gap-2"
+            className="border-ink-200 text-ink-600 hover:bg-cream-100 gap-2"
             onClick={() => toast("Available with full account", { description: "Register your school to download reports." })}
           >
             <Download className="h-4 w-4" />
@@ -395,27 +395,27 @@ export default function SchoolProgressPage() {
         {/* ── Overview Cards ───────────────────────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           {/* Overall School Progress */}
-          <Card className="bg-neutral-900/60 border-neutral-800">
+          <Card className="bg-white border-ink-200">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-violet-400" />
+              <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
+                <TrendingUp className="h-4 w-4 text-teal-700" />
                 Overall School Progress
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(avgSchoolProgress))}`}>Grade {percentageToGCSEGrade(avgSchoolProgress)} <span className="text-lg font-normal text-neutral-400">avg</span></div>
-              <div className="mt-2 h-2 w-full rounded-full bg-neutral-800 overflow-hidden">
+              <div className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(avgSchoolProgress))}`}>Grade {percentageToGCSEGrade(avgSchoolProgress)} <span className="text-lg font-normal text-ink-600">avg</span></div>
+              <div className="mt-2 h-2 w-full rounded-full bg-cream-100 overflow-hidden">
                 <div className={`h-full rounded-full ${progressColor(avgSchoolProgress)} transition-all`} style={{ width: `${avgSchoolProgress}%` }} />
               </div>
-              <p className="text-xs text-neutral-500 mt-2">{totalStudents} students across {YEAR_GROUPS.length} year groups</p>
+              <p className="text-xs text-ink-500 mt-2">{totalStudents} students across {YEAR_GROUPS.length} year groups</p>
             </CardContent>
           </Card>
 
           {/* Year Group Breakdown */}
-          <Card className="bg-neutral-900/60 border-neutral-800">
+          <Card className="bg-white border-ink-200">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-                <GraduationCap className="h-4 w-4 text-violet-400" />
+              <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
+                <GraduationCap className="h-4 w-4 text-teal-700" />
                 Year Group Breakdown
               </CardTitle>
             </CardHeader>
@@ -423,8 +423,8 @@ export default function SchoolProgressPage() {
               <div className="space-y-1.5">
                 {YEAR_GROUPS.map((yg) => (
                   <div key={yg.year} className="flex items-center gap-2 text-xs">
-                    <span className="w-8 text-neutral-500 font-mono">{yg.year}</span>
-                    <div className="flex-1 h-1.5 rounded-full bg-neutral-800 overflow-hidden">
+                    <span className="w-8 text-ink-500 font-mono">{yg.year}</span>
+                    <div className="flex-1 h-1.5 rounded-full bg-cream-100 overflow-hidden">
                       <div className={`h-full rounded-full ${progressColor(yg.avgProgress)}`} style={{ width: `${(yg.avgWorkingAt / 9) * 100}%` }} />
                     </div>
                     <span className={`w-20 text-right font-mono ${gcseGradeColor(yg.avgWorkingAt)}`}>Grade {yg.avgWorkingAt}</span>
@@ -435,9 +435,9 @@ export default function SchoolProgressPage() {
           </Card>
 
           {/* Predicted Grades Distribution (school-wide) */}
-          <Card className="bg-neutral-900/60 border-neutral-800">
+          <Card className="bg-white border-ink-200">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
+              <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
                 <Target className="h-4 w-4 text-amber-400" />
                 Predicted Grades Distribution
               </CardTitle>
@@ -445,18 +445,18 @@ export default function SchoolProgressPage() {
             <CardContent>
               <div className="space-y-1.5">
                 {[
-                  { grade: "8-9", pct: 15, color: "bg-emerald-500" },
-                  { grade: "7", pct: 30, color: "bg-emerald-400" },
+                  { grade: "8-9", pct: 15, color: "bg-teal-700" },
+                  { grade: "7", pct: 30, color: "bg-teal-600" },
                   { grade: "6", pct: 35, color: "bg-amber-400" },
                   { grade: "5", pct: 15, color: "bg-amber-500" },
                   { grade: "1-4", pct: 5, color: "bg-red-500" },
                 ].map((g) => (
                   <div key={g.grade} className="flex items-center gap-2 text-xs">
-                    <span className="w-10 text-neutral-400 font-medium">{g.grade}</span>
-                    <div className="flex-1 h-3 rounded bg-neutral-800 overflow-hidden">
+                    <span className="w-10 text-ink-600 font-medium">{g.grade}</span>
+                    <div className="flex-1 h-3 rounded bg-cream-100 overflow-hidden">
                       <div className={`h-full rounded ${g.color}`} style={{ width: `${g.pct}%` }} />
                     </div>
-                    <span className="w-8 text-right text-neutral-400 font-mono">{g.pct}%</span>
+                    <span className="w-8 text-right text-ink-600 font-mono">{g.pct}%</span>
                   </div>
                 ))}
               </div>
@@ -465,38 +465,38 @@ export default function SchoolProgressPage() {
         </div>
 
         {/* ── Student Distribution Summary ─────────────────────────── */}
-        <Card className="bg-neutral-900/60 border-neutral-800 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-              <Users className="h-4 w-4 text-violet-400" />
+            <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
+              <Users className="h-4 w-4 text-teal-700" />
               Student Distribution (All Year Groups)
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                <CheckCircle2 className="h-5 w-5 text-emerald-400 mx-auto mb-1" />
-                <div className="text-2xl font-bold text-emerald-400">{totalOnTrack}</div>
-                <div className="text-xs text-neutral-400 mt-1">On Track</div>
-                <div className="text-xs text-neutral-500">{Math.round((totalOnTrack / totalStudents) * 100)}%</div>
+              <div className="text-center p-4 rounded-lg bg-teal-800/10 border border-teal-800/20">
+                <CheckCircle2 className="h-5 w-5 text-teal-700 mx-auto mb-1" />
+                <div className="text-2xl font-bold text-teal-700">{totalOnTrack}</div>
+                <div className="text-xs text-ink-600 mt-1">On Track</div>
+                <div className="text-xs text-ink-500">{Math.round((totalOnTrack / totalStudents) * 100)}%</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-yellow-400/10 border border-yellow-400/20">
                 <TrendingUp className="h-5 w-5 text-yellow-400 mx-auto mb-1" />
                 <div className="text-2xl font-bold text-yellow-400">{totalAboveTarget}</div>
-                <div className="text-xs text-neutral-400 mt-1">Above Target</div>
-                <div className="text-xs text-neutral-500">{Math.round((totalAboveTarget / totalStudents) * 100)}%</div>
+                <div className="text-xs text-ink-600 mt-1">Above Target</div>
+                <div className="text-xs text-ink-500">{Math.round((totalAboveTarget / totalStudents) * 100)}%</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-amber-500/10 border border-amber-500/20">
                 <Clock className="h-5 w-5 text-amber-400 mx-auto mb-1" />
                 <div className="text-2xl font-bold text-amber-400">{totalBelowTarget}</div>
-                <div className="text-xs text-neutral-400 mt-1">Below Target</div>
-                <div className="text-xs text-neutral-500">{Math.round((totalBelowTarget / totalStudents) * 100)}%</div>
+                <div className="text-xs text-ink-600 mt-1">Below Target</div>
+                <div className="text-xs text-ink-500">{Math.round((totalBelowTarget / totalStudents) * 100)}%</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-red-500/10 border border-red-500/20">
                 <AlertTriangle className="h-5 w-5 text-red-400 mx-auto mb-1" />
                 <div className="text-2xl font-bold text-red-400">{totalAtRisk}</div>
-                <div className="text-xs text-neutral-400 mt-1">At Risk</div>
-                <div className="text-xs text-neutral-500">{Math.round((totalAtRisk / totalStudents) * 100)}%</div>
+                <div className="text-xs text-ink-600 mt-1">At Risk</div>
+                <div className="text-xs text-ink-500">{Math.round((totalAtRisk / totalStudents) * 100)}%</div>
               </div>
             </div>
           </CardContent>
@@ -504,15 +504,15 @@ export default function SchoolProgressPage() {
 
         {/* ── Year Group Tabs ──────────────────────────────────────── */}
         <div className="mb-6">
-          <div className="flex gap-1 flex-wrap rounded-lg bg-neutral-900/60 border border-neutral-800 p-1">
+          <div className="flex gap-1 flex-wrap rounded-lg bg-white border border-ink-200 p-1">
             {YEAR_GROUPS.map((yg) => (
               <button
                 key={yg.year}
                 onClick={() => { setActiveYear(yg.year); setShowReport(false) }}
                 className={`px-3 py-2 rounded-md text-xs font-medium transition-colors ${
                   activeYear === yg.year
-                    ? "bg-violet-600 text-white"
-                    : "text-neutral-400 hover:text-white hover:bg-neutral-800"
+                    ? "bg-teal-800 text-white"
+                    : "text-ink-600 hover:text-ink-900 hover:bg-cream-100"
                 }`}
               >
                 {yg.year}
@@ -526,33 +526,33 @@ export default function SchoolProgressPage() {
           {/* Year header */}
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold flex items-center gap-2">
-              <GraduationCap className="h-5 w-5 text-violet-400" />
+              <GraduationCap className="h-5 w-5 text-teal-700" />
               {activeYearData.label} Progress
-              <Badge variant="secondary" className="ml-2 bg-neutral-800 text-neutral-300">
+              <Badge variant="secondary" className="ml-2 bg-cream-100 text-ink-600">
                 {activeYearData.totalStudents} students
               </Badge>
             </h2>
             <div className="flex items-center gap-4">
               <div className="text-center">
                 <div className={`text-lg font-bold ${gcseGradeColor(activeYearData.avgWorkingAt)}`}>G{activeYearData.avgWorkingAt}</div>
-                <div className="text-[10px] text-neutral-500 uppercase">Working At</div>
+                <div className="text-[10px] text-ink-500 uppercase">Working At</div>
               </div>
               <div className="text-center">
                 <div className={`text-lg font-bold ${predictedGradeColor(activeYearData.avgPredicted, activeYearData.avgWorkingAt)}`}>G{activeYearData.avgPredicted}</div>
-                <div className="text-[10px] text-neutral-500 uppercase">Predicted</div>
+                <div className="text-[10px] text-ink-500 uppercase">Predicted</div>
               </div>
               <div className="text-center">
-                <div className="text-lg font-bold text-violet-400">G{activeYearData.avgTarget}</div>
-                <div className="text-[10px] text-neutral-500 uppercase">Target</div>
+                <div className="text-lg font-bold text-teal-700">G{activeYearData.avgTarget}</div>
+                <div className="text-[10px] text-ink-500 uppercase">Target</div>
               </div>
             </div>
           </div>
 
           {/* Class Comparison Chart */}
-          <Card className="bg-neutral-900/60 border-neutral-800">
+          <Card className="bg-white border-ink-200">
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-violet-400" />
+              <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
+                <BarChart3 className="h-4 w-4 text-teal-700" />
                 Class Comparison
               </CardTitle>
             </CardHeader>
@@ -562,21 +562,21 @@ export default function SchoolProgressPage() {
                   <div key={cls.name}>
                     <div className="flex items-center justify-between mb-1">
                       <div>
-                        <span className="text-sm font-medium text-white">{cls.name}</span>
-                        <span className="text-xs text-neutral-500 ml-2">({cls.teacher})</span>
+                        <span className="text-sm font-medium text-ink-900">{cls.name}</span>
+                        <span className="text-xs text-ink-500 ml-2">({cls.teacher})</span>
                       </div>
                       <div className="flex items-center gap-3 text-xs">
-                        <span className="text-neutral-400">Avg: <span className={progressTextColor(cls.avgScore)}>{cls.avgScore}% (G{percentageToGCSEGrade(cls.avgScore)})</span></span>
-                        <span className="text-neutral-400">Completion: <span className={progressTextColor(cls.completionRate)}>{cls.completionRate}%</span></span>
+                        <span className="text-ink-600">Avg: <span className={progressTextColor(cls.avgScore)}>{cls.avgScore}% (G{percentageToGCSEGrade(cls.avgScore)})</span></span>
+                        <span className="text-ink-600">Completion: <span className={progressTextColor(cls.completionRate)}>{cls.completionRate}%</span></span>
                       </div>
                     </div>
                     <div className="flex gap-1">
-                      <div className="flex-1 h-6 rounded bg-neutral-800 overflow-hidden relative">
+                      <div className="flex-1 h-6 rounded bg-cream-100 overflow-hidden relative">
                         <div
-                          className={`h-full rounded ${cls.avgScore === maxClassScore ? "bg-violet-500" : progressColor(cls.avgScore)} transition-all`}
+                          className={`h-full rounded ${cls.avgScore === maxClassScore ? "bg-teal-700" : progressColor(cls.avgScore)} transition-all`}
                           style={{ width: `${cls.avgScore}%` }}
                         />
-                        <span className="absolute inset-0 flex items-center justify-center text-[10px] font-mono text-white/80">
+                        <span className="absolute inset-0 flex items-center justify-center text-[10px] font-mono text-ink-900">
                           {cls.avgScore}%
                         </span>
                       </div>
@@ -584,17 +584,17 @@ export default function SchoolProgressPage() {
                   </div>
                 ))}
               </div>
-              <p className="text-[10px] text-neutral-600 mt-3">Best performing class highlighted in violet</p>
+              <p className="text-[10px] text-ink-500 mt-3">Best performing class highlighted in violet</p>
             </CardContent>
           </Card>
 
           {/* Student Distribution (donut-style) + Predicted Grades */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Student Distribution */}
-            <Card className="bg-neutral-900/60 border-neutral-800">
+            <Card className="bg-white border-ink-200">
               <CardHeader className="pb-3">
-                <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-                  <PieChart className="h-4 w-4 text-violet-400" />
+                <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
+                  <PieChart className="h-4 w-4 text-teal-700" />
                   Student Distribution
                 </CardTitle>
               </CardHeader>
@@ -641,29 +641,29 @@ export default function SchoolProgressPage() {
                       })()}
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-lg font-bold text-white">{activeYearData.totalStudents}</span>
-                      <span className="text-[10px] text-neutral-500">students</span>
+                      <span className="text-lg font-bold text-ink-900">{activeYearData.totalStudents}</span>
+                      <span className="text-[10px] text-ink-500">students</span>
                     </div>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
-                      <div className="h-3 w-3 rounded-full bg-emerald-500" />
-                      <span className="text-neutral-300">On Track</span>
-                      <span className="text-emerald-400 font-mono ml-auto">{activeYearData.onTrack}</span>
+                      <div className="h-3 w-3 rounded-full bg-teal-700" />
+                      <span className="text-ink-600">On Track</span>
+                      <span className="text-teal-700 font-mono ml-auto">{activeYearData.onTrack}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-yellow-400" />
-                      <span className="text-neutral-300">Above Target</span>
+                      <span className="text-ink-600">Above Target</span>
                       <span className="text-yellow-400 font-mono ml-auto">{activeYearData.aboveTarget}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-amber-500" />
-                      <span className="text-neutral-300">Below Target</span>
+                      <span className="text-ink-600">Below Target</span>
                       <span className="text-amber-400 font-mono ml-auto">{activeYearData.belowTarget}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-red-500" />
-                      <span className="text-neutral-300">At Risk</span>
+                      <span className="text-ink-600">At Risk</span>
                       <span className="text-red-400 font-mono ml-auto">{activeYearData.atRisk}</span>
                     </div>
                   </div>
@@ -672,9 +672,9 @@ export default function SchoolProgressPage() {
             </Card>
 
             {/* Predicted Grades */}
-            <Card className="bg-neutral-900/60 border-neutral-800">
+            <Card className="bg-white border-ink-200">
               <CardHeader className="pb-3">
-                <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
+                <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
                   <Target className="h-4 w-4 text-amber-400" />
                   Predicted Grades -- {activeYearData.label}
                 </CardTitle>
@@ -683,14 +683,14 @@ export default function SchoolProgressPage() {
                 <div className="space-y-4">
                   {activeYearData.predictedGrades.map((g) => (
                     <div key={g.grade} className="flex items-center gap-3">
-                      <span className="w-12 text-base font-semibold text-neutral-200">{g.grade}</span>
-                      <div className="flex-1 h-10 rounded-lg bg-neutral-800 overflow-hidden relative">
+                      <span className="w-12 text-base font-semibold text-ink-600">{g.grade}</span>
+                      <div className="flex-1 h-10 rounded-lg bg-cream-100 overflow-hidden relative">
                         <div className={`h-full rounded-lg ${g.color} transition-all`} style={{ width: `${g.pct * 2.5}%` }} />
-                        <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-white drop-shadow-sm">
+                        <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-ink-900 drop-shadow-sm">
                           {g.pct}%
                         </span>
                       </div>
-                      <span className="w-14 text-right text-base font-mono font-semibold text-neutral-300">
+                      <span className="w-14 text-right text-base font-mono font-semibold text-ink-600">
                         ~{Math.round(activeYearData.totalStudents * g.pct / 100)}
                       </span>
                     </div>
@@ -701,22 +701,22 @@ export default function SchoolProgressPage() {
           </div>
 
           {/* Module Completion Rates */}
-          <Card className="bg-neutral-900/60 border-neutral-800">
+          <Card className="bg-white border-ink-200">
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-neutral-400 flex items-center gap-2">
-                <BookOpen className="h-4 w-4 text-violet-400" />
+              <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
+                <BookOpen className="h-4 w-4 text-teal-700" />
                 Module Completion Rates
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {activeYearData.modules.map((mod) => (
-                  <div key={mod.name} className="p-3 rounded-lg bg-neutral-800/50 border border-neutral-700/50">
+                  <div key={mod.name} className="p-3 rounded-lg bg-cream-100/50 border border-ink-200/50">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-white truncate">{mod.name}</span>
+                      <span className="text-sm text-ink-900 truncate">{mod.name}</span>
                       <span className={`text-sm font-mono ${progressTextColor(mod.completionRate)}`}>{mod.completionRate}%</span>
                     </div>
-                    <div className="h-1.5 w-full rounded-full bg-neutral-700 overflow-hidden">
+                    <div className="h-1.5 w-full rounded-full bg-ink-200 overflow-hidden">
                       <div className={`h-full rounded-full ${progressColor(mod.completionRate)} transition-all`} style={{ width: `${mod.completionRate}%` }} />
                     </div>
                   </div>
@@ -726,7 +726,7 @@ export default function SchoolProgressPage() {
           </Card>
 
           {/* Intervention Recommendations */}
-          <Card className="bg-neutral-900/60 border-neutral-800 border-l-4 border-l-red-500/50">
+          <Card className="bg-white border-ink-200 border-l-4 border-l-red-500/50">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-red-400 flex items-center gap-2">
                 <ShieldAlert className="h-4 w-4" />
@@ -736,7 +736,7 @@ export default function SchoolProgressPage() {
             <CardContent>
               <ul className="space-y-2">
                 {activeYearData.interventions.map((intervention, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-neutral-300">
+                  <li key={i} className="flex items-start gap-2 text-sm text-ink-600">
                     <AlertTriangle className="h-4 w-4 text-amber-500 mt-0.5 flex-shrink-0" />
                     {intervention}
                   </li>
@@ -748,7 +748,7 @@ export default function SchoolProgressPage() {
           {/* Generate Progress Report Button */}
           <div className="flex flex-col sm:flex-row gap-3">
             <Button
-              className="bg-violet-600 hover:bg-violet-500 text-white gap-2"
+              className="bg-teal-800 hover:bg-teal-700 text-white gap-2"
               onClick={() => setShowReport(true)}
             >
               <Printer className="h-4 w-4" />
@@ -756,7 +756,7 @@ export default function SchoolProgressPage() {
             </Button>
             <Button
               variant="outline"
-              className="border-neutral-700 text-neutral-300 hover:bg-neutral-800 gap-2"
+              className="border-ink-200 text-ink-600 hover:bg-cream-100 gap-2"
               onClick={() => toast("Available with full account", { description: "Register your school to download year group reports." })}
             >
               <Download className="h-4 w-4" />
@@ -767,15 +767,15 @@ export default function SchoolProgressPage() {
 
         {/* ── Printable Report Card Modal ──────────────────────────── */}
         {showReport && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink-900/50 p-4">
             <div className="bg-white text-black rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               {/* Report header */}
               <div className="flex items-center justify-between p-6 border-b">
                 <div>
                   <h2 className="text-xl font-bold">Progress Report: {activeYearData.label}</h2>
-                  <p className="text-sm text-gray-500">Westfield Academy -- Generated {new Date().toLocaleDateString("en-GB")}</p>
+                  <p className="text-sm text-ink-500">Westfield Academy -- Generated {new Date().toLocaleDateString("en-GB")}</p>
                 </div>
-                <button onClick={() => setShowReport(false)} className="p-2 rounded-md hover:bg-gray-100">
+                <button onClick={() => setShowReport(false)} className="p-2 rounded-md hover:bg-cream-100">
                   <X className="h-5 w-5" />
                 </button>
               </div>
@@ -788,31 +788,31 @@ export default function SchoolProgressPage() {
                   <table className="w-full text-left border-collapse">
                     <tbody>
                       <tr className="border-b">
-                        <td className="py-1 text-gray-500">Total Students</td>
+                        <td className="py-1 text-ink-500">Total Students</td>
                         <td className="py-1 font-medium text-right">{activeYearData.totalStudents}</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-gray-500">Average Progress</td>
+                        <td className="py-1 text-ink-500">Average Progress</td>
                         <td className="py-1 font-medium text-right">{activeYearData.avgProgress}%</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-gray-500">Average Score</td>
+                        <td className="py-1 text-ink-500">Average Score</td>
                         <td className="py-1 font-medium text-right">{activeYearData.avgScore}%</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-gray-500">On Track</td>
+                        <td className="py-1 text-ink-500">On Track</td>
                         <td className="py-1 font-medium text-right text-green-700">{activeYearData.onTrack} ({Math.round((activeYearData.onTrack / activeYearData.totalStudents) * 100)}%)</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-gray-500">Above Target</td>
+                        <td className="py-1 text-ink-500">Above Target</td>
                         <td className="py-1 font-medium text-right text-yellow-600">{activeYearData.aboveTarget} ({Math.round((activeYearData.aboveTarget / activeYearData.totalStudents) * 100)}%)</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-gray-500">Below Target</td>
+                        <td className="py-1 text-ink-500">Below Target</td>
                         <td className="py-1 font-medium text-right text-amber-600">{activeYearData.belowTarget} ({Math.round((activeYearData.belowTarget / activeYearData.totalStudents) * 100)}%)</td>
                       </tr>
                       <tr>
-                        <td className="py-1 text-gray-500">At Risk</td>
+                        <td className="py-1 text-ink-500">At Risk</td>
                         <td className="py-1 font-medium text-right text-red-600">{activeYearData.atRisk} ({Math.round((activeYearData.atRisk / activeYearData.totalStudents) * 100)}%)</td>
                       </tr>
                     </tbody>
@@ -824,7 +824,7 @@ export default function SchoolProgressPage() {
                   <h3 className="font-semibold text-lg mb-2">Class Performance</h3>
                   <table className="w-full text-left border-collapse">
                     <thead>
-                      <tr className="border-b text-gray-500">
+                      <tr className="border-b text-ink-500">
                         <th className="py-1 font-medium">Class</th>
                         <th className="py-1 font-medium">Teacher</th>
                         <th className="py-1 font-medium text-right">Avg Score</th>
@@ -835,7 +835,7 @@ export default function SchoolProgressPage() {
                       {activeYearData.classes.map((cls) => (
                         <tr key={cls.name} className="border-b">
                           <td className="py-1">{cls.name}</td>
-                          <td className="py-1 text-gray-500">{cls.teacher}</td>
+                          <td className="py-1 text-ink-500">{cls.teacher}</td>
                           <td className="py-1 text-right font-medium">{cls.avgScore}%</td>
                           <td className="py-1 text-right font-medium">{cls.completionRate}%</td>
                         </tr>
@@ -849,9 +849,9 @@ export default function SchoolProgressPage() {
                   <h3 className="font-semibold text-lg mb-2">Predicted Grade Distribution</h3>
                   <div className="flex gap-2">
                     {activeYearData.predictedGrades.map((g) => (
-                      <div key={g.grade} className="flex-1 text-center p-2 rounded bg-gray-100">
+                      <div key={g.grade} className="flex-1 text-center p-2 rounded bg-cream-100">
                         <div className="text-lg font-bold">{g.pct}%</div>
-                        <div className="text-xs text-gray-500">{g.grade}</div>
+                        <div className="text-xs text-ink-500">{g.grade}</div>
                       </div>
                     ))}
                   </div>
@@ -860,7 +860,7 @@ export default function SchoolProgressPage() {
                 {/* Interventions */}
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Recommended Interventions</h3>
-                  <ul className="list-disc list-inside space-y-1 text-gray-700">
+                  <ul className="list-disc list-inside space-y-1 text-ink-600">
                     {activeYearData.interventions.map((int, i) => (
                       <li key={i}>{int}</li>
                     ))}
@@ -868,7 +868,7 @@ export default function SchoolProgressPage() {
                 </div>
 
                 {/* Footer */}
-                <div className="text-center text-xs text-gray-400 pt-4 border-t">
+                <div className="text-center text-xs text-ink-600 pt-4 border-t">
                   This is a demo report. Register your school for real progress tracking.
                 </div>
               </div>
@@ -878,7 +878,7 @@ export default function SchoolProgressPage() {
                 <Button variant="outline" onClick={() => setShowReport(false)}>
                   Close
                 </Button>
-                <Button onClick={() => window.print()} className="bg-black text-white hover:bg-gray-800 gap-2">
+                <Button onClick={() => window.print()} className="bg-teal-800 text-white hover:bg-teal-700 gap-2">
                   <Printer className="h-4 w-4" />
                   Print Report
                 </Button>

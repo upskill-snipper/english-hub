@@ -46,11 +46,11 @@ export interface PoemData {
 type AnalysisTab = 'context' | 'summary' | 'form' | 'quotes' | 'language'
 
 const TABS: { key: AnalysisTab; label: string; color: string; bgActive: string; bgHighlight: string }[] = [
-  { key: 'context',  label: 'Context',          color: 'text-blue-400',   bgActive: 'bg-blue-500/20 border-blue-500/50 text-blue-300',   bgHighlight: 'bg-blue-500/15' },
+  { key: 'context',  label: 'Context',          color: 'text-blue-400',   bgActive: 'bg-blue-500/20 border-blue-500/50 text-blue-700',   bgHighlight: 'bg-blue-500/15' },
   { key: 'summary',  label: 'Summary',          color: 'text-foreground', bgActive: 'bg-muted border-border text-foreground',            bgHighlight: '' },
-  { key: 'form',     label: 'Form & Structure', color: 'text-purple-400', bgActive: 'bg-purple-500/20 border-purple-500/50 text-purple-300', bgHighlight: 'bg-purple-500/15' },
-  { key: 'quotes',   label: 'Key Quotes',       color: 'text-amber-400',  bgActive: 'bg-amber-500/20 border-amber-500/50 text-amber-300',   bgHighlight: 'bg-amber-500/15' },
-  { key: 'language', label: 'Language Analysis', color: 'text-emerald-400', bgActive: 'bg-emerald-500/20 border-emerald-500/50 text-emerald-300', bgHighlight: 'bg-emerald-500/15' },
+  { key: 'form',     label: 'Form & Structure', color: 'text-purple-400', bgActive: 'bg-purple-500/20 border-purple-500/50 text-purple-700', bgHighlight: 'bg-purple-500/15' },
+  { key: 'quotes',   label: 'Key Quotes',       color: 'text-amber-400',  bgActive: 'bg-amber-500/20 border-amber-500/50 text-amber-700',   bgHighlight: 'bg-amber-500/15' },
+  { key: 'language', label: 'Language Analysis', color: 'text-emerald-400', bgActive: 'bg-emerald-500/20 border-emerald-500/50 text-emerald-700', bgHighlight: 'bg-emerald-500/15' },
 ]
 
 /* ── Line popover ───────────────────────────────────────────────── */
@@ -134,7 +134,7 @@ function LinePopover({
 function ContextPanel({ html }: { html: string }) {
   return (
     <div
-      className="prose prose-invert prose-sm max-w-none text-sm leading-relaxed text-card-foreground"
+      className="prose prose-sm max-w-none text-sm leading-relaxed text-card-foreground"
       dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
     />
   )
@@ -161,7 +161,7 @@ function QuotesPanel({ quotes }: { quotes: KeyQuote[] }) {
     <div className="space-y-4">
       {quotes.map((q, i) => (
         <div key={i} className="rounded-md border border-amber-500/20 bg-amber-500/5 p-3">
-          <p className="text-sm font-medium text-amber-300 italic mb-1.5">
+          <p className="text-sm font-medium text-amber-700 italic mb-1.5">
             &ldquo;{q.quote}&rdquo;
           </p>
           <p className="text-sm text-card-foreground mb-2">{q.analysis}</p>
@@ -187,7 +187,7 @@ function LanguagePanel({ devices }: { devices: LanguageDevice[] }) {
       {devices.map((d, i) => (
         <div key={i} className="rounded-md border border-emerald-500/20 bg-emerald-500/5 p-3">
           <div className="flex items-baseline justify-between mb-1">
-            <span className="text-sm font-medium text-emerald-300">{d.device}</span>
+            <span className="text-sm font-medium text-emerald-700">{d.device}</span>
             <span className="text-xs text-muted-foreground">Line {d.lineRef + 1}</span>
           </div>
           <p className="text-sm text-card-foreground italic mb-1">

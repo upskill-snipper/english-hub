@@ -60,11 +60,11 @@ function scoreBg(score: number) {
 function statusBadge(status: string) {
   const styles: Record<string, string> = {
     "excelling": "bg-green-500/10 text-green-400 border-green-500/20",
-    "on-track": "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    "on-track": "bg-teal-800/10 text-teal-700 border-teal-800/20",
     "needs-support": "bg-amber-500/10 text-amber-400 border-amber-500/20",
     "at-risk": "bg-red-500/10 text-red-400 border-red-500/20",
   }
-  return styles[status] || "bg-neutral-500/10 text-neutral-400 border-neutral-500/20"
+  return styles[status] || "bg-ink-200/10 text-ink-600 border-neutral-500/20"
 }
 
 function showToast(msg: string) {
@@ -90,13 +90,13 @@ export default function TeacherStudentProfilePage() {
 
   if (!student) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] text-white flex items-center justify-center">
+      <div className="min-h-screen bg-cream-50 text-ink-900 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-light text-white/90 mb-2">Student Not Found</h1>
-          <p className="text-neutral-500 text-sm mb-6">This student is not in your classes.</p>
+          <h1 className="text-2xl font-light text-ink-900 mb-2">Student Not Found</h1>
+          <p className="text-ink-500 text-sm mb-6">This student is not in your classes.</p>
           <Link
             href="/demo/teacher/classes"
-            className="text-cyan-400 hover:text-cyan-300 text-sm transition-colors"
+            className="text-teal-700 hover:text-teal-700 text-sm transition-colors"
           >
             &larr; Back to My Classes
           </Link>
@@ -122,7 +122,7 @@ export default function TeacherStudentProfilePage() {
   const maxTrend = Math.max(...student.recentScores, 1)
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12">
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
@@ -135,7 +135,7 @@ export default function TeacherStudentProfilePage() {
         <div className="flex items-center justify-between mb-6">
           <Link
             href="/demo/teacher/classes"
-            className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-neutral-500 hover:text-white/70 transition-colors"
+            className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-ink-500 hover:text-ink-600 transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" /> My Classes
           </Link>
@@ -143,7 +143,7 @@ export default function TeacherStudentProfilePage() {
             {prevStudent && (
               <Link
                 href={`/demo/teacher/students/${prevStudent.id}`}
-                className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.2em] text-neutral-500 hover:text-white/70 transition-colors"
+                className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.2em] text-ink-500 hover:text-ink-600 transition-colors"
               >
                 <ChevronLeft className="h-3.5 w-3.5" /> Previous
               </Link>
@@ -151,7 +151,7 @@ export default function TeacherStudentProfilePage() {
             {nextStudent && (
               <Link
                 href={`/demo/teacher/students/${nextStudent.id}`}
-                className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.2em] text-neutral-500 hover:text-white/70 transition-colors"
+                className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.2em] text-ink-500 hover:text-ink-600 transition-colors"
               >
                 Next <ChevronRight className="h-3.5 w-3.5" />
               </Link>
@@ -167,7 +167,7 @@ export default function TeacherStudentProfilePage() {
                 ? "bg-red-500/15 text-red-400"
                 : student.status === "excelling"
                 ? "bg-green-500/15 text-green-400"
-                : "bg-gradient-to-br from-white/10 to-white/5 text-white/60"
+                : "bg-gradient-to-br from-white/10 to-white/5 text-ink-600"
             }`}
           >
             {student.name
@@ -177,10 +177,10 @@ export default function TeacherStudentProfilePage() {
               .slice(0, 2)}
           </div>
           <div className="flex-1">
-            <h1 className="text-3xl sm:text-4xl font-light tracking-tight text-white/90">
+            <h1 className="text-3xl sm:text-4xl font-light tracking-tight text-ink-900">
               {student.name}
             </h1>
-            <p className="text-neutral-500 text-sm mt-1">
+            <p className="text-ink-500 text-sm mt-1">
               {student.yearGroup} -- {student.className} -- {student.teacherName}
             </p>
           </div>
@@ -191,33 +191,33 @@ export default function TeacherStudentProfilePage() {
 
         {/* Grade Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-5">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Working At Grade</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">Working At Grade</p>
               <p className={`text-3xl font-light tabular-nums ${gcseGradeColor(student.workingAtGrade)}`}>
                 Grade {student.workingAtGrade}
               </p>
-              <p className="text-[11px] text-neutral-500 mt-1">Based on last 5 assessments</p>
+              <p className="text-[11px] text-ink-500 mt-1">Based on last 5 assessments</p>
             </CardContent>
           </Card>
           <Card className={`border ${predictedGradeBg(student.predictedGrade, student.workingAtGrade)}`}>
             <CardContent className="p-5">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Predicted Grade</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">Predicted Grade</p>
               <p className={`text-3xl font-light tabular-nums ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>
                 Grade {student.predictedGrade}
               </p>
-              <p className="text-[11px] text-neutral-500 mt-1">
+              <p className="text-[11px] text-ink-500 mt-1">
                 {student.predictedGrade > student.workingAtGrade ? "Improving trajectory" : student.predictedGrade === student.workingAtGrade ? "Stable trajectory" : "Declining trajectory"}
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-white/[0.02] border-violet-500/20">
+          <Card className="bg-white border-teal-800/20">
             <CardContent className="p-5">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Target Grade</p>
-              <p className="text-3xl font-light text-violet-400 tabular-nums">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">Target Grade</p>
+              <p className="text-3xl font-light text-teal-700 tabular-nums">
                 Grade {student.targetGrade}
               </p>
-              <p className="text-[11px] text-neutral-500 mt-1">
+              <p className="text-[11px] text-ink-500 mt-1">
                 {student.targetGrade - student.workingAtGrade > 0
                   ? `${student.targetGrade - student.workingAtGrade} grade${student.targetGrade - student.workingAtGrade > 1 ? "s" : ""} to target`
                   : "At target"}
@@ -228,17 +228,17 @@ export default function TeacherStudentProfilePage() {
 
         {/* KPI Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-5">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Progress</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">Progress</p>
               <p className={`text-3xl font-light tabular-nums ${scoreColor(student.overallProgress)}`}>
                 {student.overallProgress}%
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-5">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">
                 {isGCSEYearGroup(student.yearGroup) ? "Average Grade" : "Avg Score"}
               </p>
               <p className={`text-3xl font-light tabular-nums ${isGCSEYearGroup(student.yearGroup) ? gcseGradeColor(percentageToGCSEGrade(student.averageScore)) : scoreColor(student.averageScore)}`}>
@@ -246,18 +246,18 @@ export default function TeacherStudentProfilePage() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-5">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Assignments</p>
-              <p className="text-3xl font-light text-cyan-400 tabular-nums">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">Assignments</p>
+              <p className="text-3xl font-light text-teal-700 tabular-nums">
                 {student.assignmentsCompleted}/{student.assignmentsTotal}
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-5">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Modules Done</p>
-              <p className="text-3xl font-light text-violet-400 tabular-nums">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">Modules Done</p>
+              <p className="text-3xl font-light text-teal-700 tabular-nums">
                 {student.modulesCompleted}/{student.modules.length}
               </p>
             </CardContent>
@@ -265,9 +265,9 @@ export default function TeacherStudentProfilePage() {
         </div>
 
         {/* How to Reach Next Grade */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
               <Lightbulb className="h-4 w-4 text-amber-400" />
               How to Reach the Next Grade
             </CardTitle>
@@ -278,11 +278,11 @@ export default function TeacherStudentProfilePage() {
                 student.workingAtGrade,
                 student.weaknesses.map((w) => typeof w === "string" ? w : w.name)
               ).map((rec, i) => (
-                <div key={i} className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-3">
+                <div key={i} className="flex items-start gap-3 rounded-lg border border-ink-200 bg-white p-3">
                   <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-amber-500/15 text-amber-400 flex items-center justify-center text-[10px] font-bold">
                     {i + 1}
                   </span>
-                  <p className="text-sm text-white/70">{rec}</p>
+                  <p className="text-sm text-ink-600">{rec}</p>
                 </div>
               ))}
             </div>
@@ -294,7 +294,7 @@ export default function TeacherStudentProfilePage() {
           <Button
             variant="outline"
             size="sm"
-            className="bg-violet-500/10 text-violet-400 border-violet-500/20 hover:bg-violet-500/20"
+            className="bg-teal-800/10 text-teal-700 border-teal-800/20 hover:bg-teal-700/20"
             onClick={() => showToast("Available with full account")}
           >
             <Target className="h-3.5 w-3.5 mr-1.5" />
@@ -321,10 +321,10 @@ export default function TeacherStudentProfilePage() {
         </div>
 
         {/* Score Trend Chart */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-cyan-400" />
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <BarChart3 className="h-4 w-4 text-teal-700" />
               Score Trend
             </CardTitle>
           </CardHeader>
@@ -332,14 +332,14 @@ export default function TeacherStudentProfilePage() {
             <div className="flex items-end gap-2 h-32">
               {student.recentScores.map((val, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <span className="text-[10px] text-neutral-500 tabular-nums">{val}</span>
+                  <span className="text-[10px] text-ink-500 tabular-nums">{val}</span>
                   <div
                     className={`w-full rounded-sm transition-all ${
-                      val >= 70 ? "bg-emerald-500/60" : val >= 50 ? "bg-amber-500/60" : "bg-red-500/60"
+                      val >= 70 ? "bg-teal-700/60" : val >= 50 ? "bg-amber-500/60" : "bg-red-500/60"
                     }`}
                     style={{ height: `${(val / maxTrend) * 100}%` }}
                   />
-                  <span className="text-[9px] text-neutral-600">W{i + 1}</span>
+                  <span className="text-[9px] text-ink-500">W{i + 1}</span>
                 </div>
               ))}
             </div>
@@ -347,10 +347,10 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* ── Grade Recommendations (Teacher View) ──────────────────── */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <Lightbulb className="h-4 w-4 text-cyan-400" />
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <Lightbulb className="h-4 w-4 text-teal-700" />
               Next Grade Recommendations
             </CardTitle>
           </CardHeader>
@@ -397,10 +397,10 @@ export default function TeacherStudentProfilePage() {
         </div>
 
         {/* ── Topic Mastery Map ──────────────────────────────────────── */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <Target className="h-4 w-4 text-violet-400" />
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <Target className="h-4 w-4 text-teal-700" />
               Topic Mastery Map
             </CardTitle>
           </CardHeader>
@@ -525,7 +525,7 @@ export default function TeacherStudentProfilePage() {
                         : "border-red-500/20 bg-red-500/5"
                     }`}
                   >
-                    <p className="text-xs font-medium text-white/70 mb-1.5">{skill.name}</p>
+                    <p className="text-xs font-medium text-ink-600 mb-1.5">{skill.name}</p>
                     <span
                       className={`inline-block text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full ${
                         skill.status === "mastered"
@@ -545,16 +545,16 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* ── Learning Journey ─────────────────────────────────────────── */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-cyan-400" />
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-teal-700" />
               Learning Journey
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="relative">
-              <div className="absolute left-3 top-0 bottom-0 w-px bg-white/5" />
+              <div className="absolute left-3 top-0 bottom-0 w-px bg-cream-100" />
               <div className="space-y-4">
                 {(() => {
                   // Combine all assessments into a timeline
@@ -587,11 +587,11 @@ export default function TeacherStudentProfilePage() {
                         </div>
                         <div className="flex-1 min-w-0 pb-1">
                           <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-sm text-white/80">{item.title}</span>
+                            <span className="text-sm text-ink-900">{item.title}</span>
                             <Badge variant="outline" className={`text-[9px] ${
-                              item.type === "Essay" ? "border-blue-500/20 text-blue-400" :
+                              item.type === "Essay" ? "border-teal-800/20 text-teal-700" :
                               item.type === "Quiz" ? "border-amber-500/20 text-amber-400" :
-                              "border-purple-500/20 text-purple-400"
+                              "border-clay-500/20 text-clay-600"
                             }`}>{item.type}</Badge>
                             {change !== null && change !== 0 && (
                               <span className={`text-[10px] flex items-center gap-0.5 ${change > 0 ? "text-green-400" : "text-red-400"}`}>
@@ -600,7 +600,7 @@ export default function TeacherStudentProfilePage() {
                               </span>
                             )}
                           </div>
-                          <p className="text-[11px] text-neutral-600 mt-0.5">{item.date}</p>
+                          <p className="text-[11px] text-ink-500 mt-0.5">{item.date}</p>
                         </div>
                         <span className={`text-sm tabular-nums font-medium shrink-0 ${scoreColor(pct)}`}>
                           {item.score}/{item.maxScore}
@@ -615,9 +615,9 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* ── What They've Grasped ─────────────────────────────────────── */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-emerald-400 flex items-center gap-2">
+            <CardTitle className="text-sm font-medium text-teal-700 flex items-center gap-2">
               <Award className="h-4 w-4" /> What They&apos;ve Grasped
             </CardTitle>
           </CardHeader>
@@ -640,17 +640,17 @@ export default function TeacherStudentProfilePage() {
                       {score && <span className="text-xs text-green-400/70">G{percentageToGCSEGrade(score)}</span>}
                     </div>
                     {relatedEssay && (
-                      <p className="text-[11px] text-white/40">
+                      <p className="text-[11px] text-ink-500">
                         Evidence: {percentageToGCSEGradeLabel(relatedEssay.score)} on &quot;{relatedEssay.title}&quot;
                       </p>
                     )}
                     {!relatedEssay && relatedQuiz && (
-                      <p className="text-[11px] text-white/40">
+                      <p className="text-[11px] text-ink-500">
                         Evidence: Scored {relatedQuiz.score}/{relatedQuiz.maxScore} on &quot;{relatedQuiz.quiz}&quot;
                       </p>
                     )}
                     {!relatedEssay && !relatedQuiz && (
-                      <p className="text-[11px] text-white/40">
+                      <p className="text-[11px] text-ink-500">
                         Consistently demonstrated across multiple assessments
                       </p>
                     )}
@@ -662,7 +662,7 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* ── Where They're Struggling ─────────────────────────────────── */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-red-400 flex items-center gap-2">
               <XCircle className="h-4 w-4" /> Where They&apos;re Struggling
@@ -698,7 +698,7 @@ export default function TeacherStudentProfilePage() {
                       <span className="text-sm font-medium text-red-400">{name}</span>
                       {score && <span className="text-xs text-red-400/70">G{percentageToGCSEGrade(score)}</span>}
                     </div>
-                    <p className="text-[11px] text-white/50">{suggestion}</p>
+                    <p className="text-[11px] text-ink-500">{suggestion}</p>
                   </div>
                 )
               })}
@@ -707,9 +707,9 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* ── Suggested Next Steps ─────────────────────────────────────── */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
               <Lightbulb className="h-4 w-4 text-amber-400" />
               Suggested Next Steps
             </CardTitle>
@@ -759,7 +759,7 @@ export default function TeacherStudentProfilePage() {
                     <span className="shrink-0 mt-0.5 h-5 w-5 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-[10px] text-amber-400 tabular-nums font-medium">
                       {i + 1}
                     </span>
-                    <p className="text-sm text-white/70">{suggestion}</p>
+                    <p className="text-sm text-ink-600">{suggestion}</p>
                   </div>
                 ))
               })()}
@@ -769,9 +769,9 @@ export default function TeacherStudentProfilePage() {
 
         {/* Strengths & Weaknesses */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardHeader>
-              <CardTitle className="text-sm font-medium text-emerald-400 flex items-center gap-2">
+              <CardTitle className="text-sm font-medium text-teal-700 flex items-center gap-2">
                 <CheckCircle className="h-4 w-4" /> Strengths
               </CardTitle>
             </CardHeader>
@@ -779,13 +779,13 @@ export default function TeacherStudentProfilePage() {
               <div className="space-y-3">
                 {student.strengths.map((s, i) => (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-300">{typeof s === "string" ? s : s.name}</span>
+                    <span className="text-sm text-ink-600">{typeof s === "string" ? s : s.name}</span>
                   </div>
                 ))}
               </div>
             </CardContent>
           </Card>
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardHeader>
               <CardTitle className="text-sm font-medium text-red-400 flex items-center gap-2">
                 <AlertTriangle className="h-4 w-4" /> Weaknesses
@@ -795,7 +795,7 @@ export default function TeacherStudentProfilePage() {
               <div className="space-y-3">
                 {student.weaknesses.map((w, i) => (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-300">{typeof w === "string" ? w : w.name}</span>
+                    <span className="text-sm text-ink-600">{typeof w === "string" ? w : w.name}</span>
                   </div>
                 ))}
               </div>
@@ -804,9 +804,9 @@ export default function TeacherStudentProfilePage() {
         </div>
 
         {/* Compare with Class Average */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80">
+            <CardTitle className="text-sm font-medium text-ink-900">
               Compare with Class Average ({student.className})
             </CardTitle>
           </CardHeader>
@@ -814,28 +814,28 @@ export default function TeacherStudentProfilePage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {/* Progress comparison */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-2">Progress</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-2">Progress</p>
                 <div className="space-y-2">
                   <div>
                     <div className="flex items-center justify-between text-xs mb-1">
-                      <span className="text-cyan-400">{student.name.split(" ")[0]}</span>
-                      <span className="text-neutral-500 tabular-nums">{student.overallProgress}%</span>
+                      <span className="text-teal-700">{student.name.split(" ")[0]}</span>
+                      <span className="text-ink-500 tabular-nums">{student.overallProgress}%</span>
                     </div>
-                    <div className="h-2 rounded-full bg-white/5 overflow-hidden">
-                      <div className="h-full rounded-full bg-cyan-500" style={{ width: `${student.overallProgress}%` }} />
+                    <div className="h-2 rounded-full bg-cream-100 overflow-hidden">
+                      <div className="h-full rounded-full bg-teal-600" style={{ width: `${student.overallProgress}%` }} />
                     </div>
                   </div>
                   <div>
                     <div className="flex items-center justify-between text-xs mb-1">
-                      <span className="text-neutral-500">Class Avg</span>
-                      <span className="text-neutral-500 tabular-nums">{classAvgProgress}%</span>
+                      <span className="text-ink-500">Class Avg</span>
+                      <span className="text-ink-500 tabular-nums">{classAvgProgress}%</span>
                     </div>
-                    <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div className="h-2 rounded-full bg-cream-100 overflow-hidden">
                       <div className="h-full rounded-full bg-neutral-600" style={{ width: `${classAvgProgress}%` }} />
                     </div>
                   </div>
                 </div>
-                <p className={`text-xs mt-2 ${student.overallProgress >= classAvgProgress ? "text-emerald-400" : "text-red-400"}`}>
+                <p className={`text-xs mt-2 ${student.overallProgress >= classAvgProgress ? "text-teal-700" : "text-red-400"}`}>
                   {student.overallProgress >= classAvgProgress
                     ? `+${student.overallProgress - classAvgProgress}% above average`
                     : `${classAvgProgress - student.overallProgress}% below average`}
@@ -844,28 +844,28 @@ export default function TeacherStudentProfilePage() {
 
               {/* Score comparison */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-2">Avg Score</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-2">Avg Score</p>
                 <div className="space-y-2">
                   <div>
                     <div className="flex items-center justify-between text-xs mb-1">
-                      <span className="text-cyan-400">{student.name.split(" ")[0]}</span>
-                      <span className="text-neutral-500 tabular-nums">{student.averageScore}%</span>
+                      <span className="text-teal-700">{student.name.split(" ")[0]}</span>
+                      <span className="text-ink-500 tabular-nums">{student.averageScore}%</span>
                     </div>
-                    <div className="h-2 rounded-full bg-white/5 overflow-hidden">
-                      <div className="h-full rounded-full bg-cyan-500" style={{ width: `${student.averageScore}%` }} />
+                    <div className="h-2 rounded-full bg-cream-100 overflow-hidden">
+                      <div className="h-full rounded-full bg-teal-600" style={{ width: `${student.averageScore}%` }} />
                     </div>
                   </div>
                   <div>
                     <div className="flex items-center justify-between text-xs mb-1">
-                      <span className="text-neutral-500">Class Avg</span>
-                      <span className="text-neutral-500 tabular-nums">{classAvgScore}%</span>
+                      <span className="text-ink-500">Class Avg</span>
+                      <span className="text-ink-500 tabular-nums">{classAvgScore}%</span>
                     </div>
-                    <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div className="h-2 rounded-full bg-cream-100 overflow-hidden">
                       <div className="h-full rounded-full bg-neutral-600" style={{ width: `${classAvgScore}%` }} />
                     </div>
                   </div>
                 </div>
-                <p className={`text-xs mt-2 ${student.averageScore >= classAvgScore ? "text-emerald-400" : "text-red-400"}`}>
+                <p className={`text-xs mt-2 ${student.averageScore >= classAvgScore ? "text-teal-700" : "text-red-400"}`}>
                   {student.averageScore >= classAvgScore
                     ? `+${student.averageScore - classAvgScore}% above average`
                     : `${classAvgScore - student.averageScore}% below average`}
@@ -874,13 +874,13 @@ export default function TeacherStudentProfilePage() {
 
               {/* Assignments comparison */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-2">Assignments Done</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-2">Assignments Done</p>
                 <div className="flex items-baseline gap-2 mt-1">
-                  <span className="text-2xl font-light text-cyan-400 tabular-nums">{student.assignmentsCompleted}</span>
-                  <span className="text-neutral-500 text-sm">vs class avg</span>
-                  <span className="text-2xl font-light text-neutral-500 tabular-nums">{classAvgAssignments}</span>
+                  <span className="text-2xl font-light text-teal-700 tabular-nums">{student.assignmentsCompleted}</span>
+                  <span className="text-ink-500 text-sm">vs class avg</span>
+                  <span className="text-2xl font-light text-ink-500 tabular-nums">{classAvgAssignments}</span>
                 </div>
-                <p className={`text-xs mt-2 ${student.assignmentsCompleted >= classAvgAssignments ? "text-emerald-400" : "text-red-400"}`}>
+                <p className={`text-xs mt-2 ${student.assignmentsCompleted >= classAvgAssignments ? "text-teal-700" : "text-red-400"}`}>
                   {student.assignmentsCompleted >= classAvgAssignments
                     ? `${student.assignmentsCompleted - classAvgAssignments} ahead`
                     : `${classAvgAssignments - student.assignmentsCompleted} behind`}
@@ -891,13 +891,13 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* Module Progress */}
-        <Card className="bg-white/[0.02] border-white/5 overflow-hidden mb-8">
-          <CardHeader className="border-b border-white/5">
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <BookOpen className="h-4 w-4 text-violet-400" /> Module Progress
+        <Card className="bg-white border-ink-200 overflow-hidden mb-8">
+          <CardHeader className="border-b border-ink-200">
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <BookOpen className="h-4 w-4 text-teal-700" /> Module Progress
             </CardTitle>
           </CardHeader>
-          <div className="hidden sm:grid grid-cols-[1fr_160px_80px_80px] gap-4 px-5 py-2 border-b border-white/5 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+          <div className="hidden sm:grid grid-cols-[1fr_160px_80px_80px] gap-4 px-5 py-2 border-b border-ink-200 text-[10px] uppercase tracking-[0.2em] text-ink-500">
             <span>Module</span>
             <span>Progress</span>
             <span className="text-right">Score</span>
@@ -905,17 +905,17 @@ export default function TeacherStudentProfilePage() {
           </div>
           {student.modules.map((mod: any, i: number) => (
             <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_160px_80px_80px] gap-1 sm:gap-4 px-5 py-3 border-b border-white/[0.03]">
-              <p className="text-sm text-white/80">{mod.name}</p>
+              <p className="text-sm text-ink-900">{mod.name}</p>
               <div className="flex items-center gap-2">
-                <div className="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                <div className="flex-1 h-1.5 rounded-full bg-cream-100 overflow-hidden">
                   <div
                     className={`h-full rounded-full ${scoreBg(mod.progress)}`}
                     style={{ width: `${mod.progress}%` }}
                   />
                 </div>
-                <span className="text-xs text-neutral-500 tabular-nums w-8 text-right">{mod.progress}%</span>
+                <span className="text-xs text-ink-500 tabular-nums w-8 text-right">{mod.progress}%</span>
               </div>
-              <p className={`text-sm tabular-nums text-right ${mod.score > 0 ? scoreColor(mod.score) : "text-neutral-600"}`}>
+              <p className={`text-sm tabular-nums text-right ${mod.score > 0 ? scoreColor(mod.score) : "text-ink-500"}`}>
                 {mod.score > 0 ? percentageToGCSEGradeLabel(mod.score) : "--"}
               </p>
               <div className="text-right">
@@ -926,7 +926,7 @@ export default function TeacherStudentProfilePage() {
                       ? "border-green-500/20 text-green-400"
                       : (mod.status ?? "") === "In Progress"
                       ? "border-amber-500/20 text-amber-400"
-                      : "border-neutral-500/20 text-neutral-500"
+                      : "border-neutral-500/20 text-ink-500"
                   }`}
                 >
                   {mod.status ?? "In Progress"}
@@ -937,13 +937,13 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* Mock Exam Results */}
-        <Card className="bg-white/[0.02] border-white/5 overflow-hidden mb-8">
-          <CardHeader className="border-b border-white/5">
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <ClipboardList className="h-4 w-4 text-blue-400" /> Mock Exam Results
+        <Card className="bg-white border-ink-200 overflow-hidden mb-8">
+          <CardHeader className="border-b border-ink-200">
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <ClipboardList className="h-4 w-4 text-teal-700" /> Mock Exam Results
             </CardTitle>
           </CardHeader>
-          <div className="hidden sm:grid grid-cols-[1fr_100px_80px_60px] gap-4 px-5 py-2 border-b border-white/5 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+          <div className="hidden sm:grid grid-cols-[1fr_100px_80px_60px] gap-4 px-5 py-2 border-b border-ink-200 text-[10px] uppercase tracking-[0.2em] text-ink-500">
             <span>Exam</span>
             <span>Date</span>
             <span className="text-center">Score</span>
@@ -951,26 +951,26 @@ export default function TeacherStudentProfilePage() {
           </div>
           {student.mockExams.map((exam: any, i: number) => (
             <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_100px_80px_60px] gap-1 sm:gap-4 px-5 py-3 border-b border-white/[0.03]">
-              <p className="text-sm text-white/80">{exam.name}</p>
-              <p className="text-sm text-neutral-500">{exam.date}</p>
+              <p className="text-sm text-ink-900">{exam.name}</p>
+              <p className="text-sm text-ink-500">{exam.date}</p>
               <p className={`text-sm tabular-nums text-center ${gcseGradeColor(percentageToGCSEGrade(exam.score))}`}>{percentageToGCSEGradeLabel(exam.score)}</p>
-              <p className="text-sm font-medium text-center text-white/70">{exam.grade}</p>
+              <p className="text-sm font-medium text-center text-ink-600">{exam.grade}</p>
             </div>
           ))}
         </Card>
 
         {/* Essay Submissions */}
-        <Card className="bg-white/[0.02] border-white/5 overflow-hidden mb-8">
-          <CardHeader className="border-b border-white/5">
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <FileText className="h-4 w-4 text-emerald-400" /> Essay Submissions
+        <Card className="bg-white border-ink-200 overflow-hidden mb-8">
+          <CardHeader className="border-b border-ink-200">
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <FileText className="h-4 w-4 text-teal-700" /> Essay Submissions
             </CardTitle>
           </CardHeader>
           {student.essays.map((essay: any, i: number) => (
             <div key={i} className="px-5 py-4 border-b border-white/[0.03]">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
                 <div className="flex items-center gap-2">
-                  <p className="text-sm text-white/80">{essay.title}</p>
+                  <p className="text-sm text-ink-900">{essay.title}</p>
                   {essay.teacherReviewed && (
                     <Badge variant="outline" className="text-[9px] border-green-500/20 text-green-400">
                       Reviewed
@@ -978,23 +978,23 @@ export default function TeacherStudentProfilePage() {
                   )}
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs text-neutral-500">{essay.date}</span>
+                  <span className="text-xs text-ink-500">{essay.date}</span>
                   <span className={`text-sm tabular-nums font-medium ${scoreColor(essay.score)}`}>
                     {percentageToGCSEGradeLabel(essay.score)}
                   </span>
                 </div>
               </div>
-              <p className="text-xs text-neutral-400 italic">{essay.feedback}</p>
+              <p className="text-xs text-ink-600 italic">{essay.feedback}</p>
             </div>
           ))}
         </Card>
 
         {/* Quiz Attempts */}
-        <Card className="bg-white/[0.02] border-white/5 overflow-hidden mb-8">
-          <CardHeader className="border-b border-white/5">
-            <CardTitle className="text-sm font-medium text-white/80">Quiz Attempts</CardTitle>
+        <Card className="bg-white border-ink-200 overflow-hidden mb-8">
+          <CardHeader className="border-b border-ink-200">
+            <CardTitle className="text-sm font-medium text-ink-900">Quiz Attempts</CardTitle>
           </CardHeader>
-          <div className="hidden sm:grid grid-cols-[1fr_100px_100px] gap-4 px-5 py-2 border-b border-white/5 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+          <div className="hidden sm:grid grid-cols-[1fr_100px_100px] gap-4 px-5 py-2 border-b border-ink-200 text-[10px] uppercase tracking-[0.2em] text-ink-500">
             <span>Quiz</span>
             <span>Date</span>
             <span className="text-right">Score</span>
@@ -1003,8 +1003,8 @@ export default function TeacherStudentProfilePage() {
             const pct = Math.round((quiz.score / quiz.maxScore) * 100)
             return (
               <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_100px_100px] gap-1 sm:gap-4 px-5 py-3 border-b border-white/[0.03]">
-                <p className="text-sm text-white/80">{quiz.quiz}</p>
-                <p className="text-sm text-neutral-500">{quiz.date}</p>
+                <p className="text-sm text-ink-900">{quiz.quiz}</p>
+                <p className="text-sm text-ink-500">{quiz.date}</p>
                 <p className={`text-sm tabular-nums text-right ${scoreColor(pct)}`}>
                   {quiz.score}/{quiz.maxScore} ({percentageToGCSEGradeLabel(pct)})
                 </p>
@@ -1014,10 +1014,10 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* Activity Timeline */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <Clock className="h-4 w-4 text-neutral-400" /> Activity Timeline
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <Clock className="h-4 w-4 text-ink-600" /> Activity Timeline
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -1028,20 +1028,20 @@ export default function TeacherStudentProfilePage() {
                 return (
                   <div key={i} className="flex items-start gap-3">
                     <div className="flex flex-col items-center mt-1">
-                      <div className={`h-2 w-2 rounded-full ${isPositive ? "bg-emerald-500" : isNegative ? "bg-red-500" : "bg-cyan-500"}`} />
+                      <div className={`h-2 w-2 rounded-full ${isPositive ? "bg-teal-700" : isNegative ? "bg-red-500" : "bg-teal-600"}`} />
                       {i < student.activityTimeline.length - 1 && (
-                        <div className="w-px h-6 bg-white/5 mt-1" />
+                        <div className="w-px h-6 bg-cream-100 mt-1" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm text-white/70">
-                        <span className={`font-medium ${isPositive ? "text-emerald-400" : isNegative ? "text-red-400" : "text-cyan-400"}`}>
+                      <p className="text-sm text-ink-600">
+                        <span className={`font-medium ${isPositive ? "text-teal-700" : isNegative ? "text-red-400" : "text-teal-700"}`}>
                           {item.action}
                         </span>
                         {" -- "}
                         {item.detail}
                       </p>
-                      <p className="text-[11px] text-neutral-600">{item.date}</p>
+                      <p className="text-[11px] text-ink-500">{item.date}</p>
                     </div>
                   </div>
                 )
@@ -1051,17 +1051,17 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* Recommendations */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <Target className="h-4 w-4 text-cyan-400" /> Recommendations
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <Target className="h-4 w-4 text-teal-700" /> Recommendations
             </CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-3">
               {student.recommendations.map((rec, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-neutral-300">
-                  <span className="shrink-0 mt-0.5 h-5 w-5 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-[10px] text-cyan-400 tabular-nums">
+                <li key={i} className="flex items-start gap-3 text-sm text-ink-600">
+                  <span className="shrink-0 mt-0.5 h-5 w-5 rounded-full bg-teal-600/10 border border-teal-800/20 flex items-center justify-center text-[10px] text-teal-700 tabular-nums">
                     {i + 1}
                   </span>
                   {rec}
@@ -1072,10 +1072,10 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* Write Comment (Teacher Action) */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
-              <MessageSquare className="h-4 w-4 text-white/50" /> Write Comment
+            <CardTitle className="text-sm font-medium text-ink-900 flex items-center gap-2">
+              <MessageSquare className="h-4 w-4 text-ink-500" /> Write Comment
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -1083,13 +1083,13 @@ export default function TeacherStudentProfilePage() {
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               placeholder="Add a note or comment about this student..."
-              className="w-full h-24 bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-sm text-white/80 placeholder-neutral-600 resize-none focus:outline-none focus:border-white/10 transition-colors"
+              className="w-full h-24 bg-white border border-ink-200 rounded-lg px-4 py-3 text-sm text-ink-900 placeholder-neutral-600 resize-none focus:outline-none focus:border-ink-200 transition-colors"
             />
             <div className="flex justify-end mt-3">
               <Button
                 variant="outline"
                 size="sm"
-                className="text-white/60 border-white/10 hover:border-white/20"
+                className="text-ink-600 border-ink-200 hover:border-ink-200"
                 onClick={() => {
                   showToast("Comment saved (available with full account)")
                   setComment("")
@@ -1102,7 +1102,7 @@ export default function TeacherStudentProfilePage() {
         </Card>
 
         {/* Footer */}
-        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-neutral-600">
+        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-ink-500">
           Demo data -- {student.name} -- {student.className}
         </p>
       </div>
@@ -1110,7 +1110,7 @@ export default function TeacherStudentProfilePage() {
       {/* Toast */}
       <div
         id="demo-toast"
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md border border-white/10 text-white/90 text-sm px-5 py-3 rounded-xl opacity-0 translate-y-2 transition-all duration-300 pointer-events-none z-50"
+        className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-cream-100 backdrop-blur-md border border-ink-200 text-ink-900 text-sm px-5 py-3 rounded-xl opacity-0 translate-y-2 transition-all duration-300 pointer-events-none z-50"
       />
     </div>
   )

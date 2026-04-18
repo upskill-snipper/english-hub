@@ -274,7 +274,7 @@ function riskBadge(level: RiskLevel) {
     case "Medium":
       return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30">Medium</Badge>
     case "Low":
-      return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Low</Badge>
+      return <Badge className="bg-teal-800/10 text-teal-700 border-teal-800/30">Low</Badge>
   }
 }
 
@@ -284,7 +284,7 @@ export default function InterventionsPage() {
   const [planningStudent, setPlanningStudent] = useState<string | null>(null)
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       {/* ── 1. Demo Banner ─────────────────────────────────────────────────── */}
       <DemoBanner message="You are viewing an interactive demo with sample intervention data." />
 
@@ -295,54 +295,54 @@ export default function InterventionsPage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/20">
               <AlertTriangle className="h-5 w-5 text-red-400" />
             </div>
-            <h1 className="text-2xl font-bold tracking-tight text-zinc-50">
+            <h1 className="text-2xl font-bold tracking-tight text-ink-900">
               Intervention Planning
             </h1>
           </div>
-          <p className="text-zinc-400 mt-1">
+          <p className="text-ink-600 mt-1">
             Identify at-risk students, assign interventions, and track progress towards recovery.
           </p>
         </div>
 
         {/* ── 3. Stats ───────────────────────────────────────────────────── */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-8">
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardContent className="pt-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/20">
                   <Flag className="h-5 w-5 text-red-400" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-400">Students Flagged</p>
-                  <p className="text-2xl font-bold text-zinc-50">23</p>
+                  <p className="text-sm text-ink-600">Students Flagged</p>
+                  <p className="text-2xl font-bold text-ink-900">23</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardContent className="pt-6">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/20">
-                  <UserCheck className="h-5 w-5 text-emerald-400" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-800/10">
+                  <UserCheck className="h-5 w-5 text-teal-700" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-400">Receiving Intervention</p>
-                  <p className="text-2xl font-bold text-zinc-50">8</p>
+                  <p className="text-sm text-ink-600">Receiving Intervention</p>
+                  <p className="text-2xl font-bold text-ink-900">8</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-cream-100 border-ink-200">
             <CardContent className="pt-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-500/20">
                   <AlertTriangle className="h-5 w-5 text-yellow-400" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-400">New Flags</p>
-                  <p className="text-2xl font-bold text-zinc-50">15</p>
+                  <p className="text-sm text-ink-600">New Flags</p>
+                  <p className="text-2xl font-bold text-ink-900">15</p>
                 </div>
               </div>
             </CardContent>
@@ -350,13 +350,13 @@ export default function InterventionsPage() {
         </div>
 
         {/* ── 4. At-Risk Students Table ──────────────────────────────────── */}
-        <Card className="bg-zinc-900 border-zinc-800 mb-8">
+        <Card className="bg-cream-100 border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-zinc-50 flex items-center gap-2">
+            <CardTitle className="text-ink-900 flex items-center gap-2">
               <Users className="h-5 w-5 text-red-400" />
               At-Risk Students
             </CardTitle>
-            <CardDescription className="text-zinc-400">
+            <CardDescription className="text-ink-600">
               Students flagged by the system based on engagement, scores, and assignment completion.
             </CardDescription>
           </CardHeader>
@@ -364,48 +364,48 @@ export default function InterventionsPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-800 text-left">
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Name</th>
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Year Group</th>
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Risk Level</th>
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Issue</th>
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Current Intervention</th>
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Assigned To</th>
-                    <th className="pb-3 font-medium text-zinc-400">Action</th>
+                  <tr className="border-b border-ink-200 text-left">
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Name</th>
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Year Group</th>
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Risk Level</th>
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Issue</th>
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Current Intervention</th>
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Assigned To</th>
+                    <th className="pb-3 font-medium text-ink-600">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {atRiskStudents.map((student) => (
                     <tr
                       key={student.id}
-                      className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors"
+                      className="border-b border-ink-200/50 hover:bg-cream-100/60 transition-colors"
                     >
                       <td className="py-3 pr-4">
                         <Link
                           href={`/demo/school/students/${student.id}`}
-                          className="text-blue-400 hover:text-blue-300 hover:underline font-medium"
+                          className="text-teal-700 hover:text-blue-300 hover:underline font-medium"
                         >
                           {student.name}
                         </Link>
                       </td>
-                      <td className="py-3 pr-4 text-zinc-300">{student.yearGroup}</td>
+                      <td className="py-3 pr-4 text-ink-600">{student.yearGroup}</td>
                       <td className="py-3 pr-4">{riskBadge(student.riskLevel)}</td>
-                      <td className="py-3 pr-4 text-zinc-300">{student.issue}</td>
+                      <td className="py-3 pr-4 text-ink-600">{student.issue}</td>
                       <td className="py-3 pr-4">
                         {student.currentIntervention === "None" ? (
-                          <span className="text-zinc-500 italic">None</span>
+                          <span className="text-ink-9000 italic">None</span>
                         ) : (
-                          <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
+                          <Badge className="bg-teal-800/10 text-teal-700 border-teal-800/30">
                             {student.currentIntervention}
                           </Badge>
                         )}
                       </td>
-                      <td className="py-3 pr-4 text-zinc-300">{student.assignedTo}</td>
+                      <td className="py-3 pr-4 text-ink-600">{student.assignedTo}</td>
                       <td className="py-3">
                         <Button
                           size="sm"
                           variant="outline"
-                          className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100"
+                          className="border-ink-200 text-ink-600 hover:bg-cream-100 hover:text-ink-900"
                           onClick={() => {
                             setPlanningStudent(student.name)
                             toast.success(`Intervention plan opened for ${student.name}`, {
@@ -427,24 +427,24 @@ export default function InterventionsPage() {
 
         {/* ── 5. Intervention Types ──────────────────────────────────────── */}
         <div className="mb-8">
-          <h2 className="text-lg font-semibold text-zinc-50 mb-4 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-violet-400" />
+          <h2 className="text-lg font-semibold text-ink-900 mb-4 flex items-center gap-2">
+            <BookOpen className="h-5 w-5 text-teal-700" />
             Intervention Types
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {interventionTypes.map((type) => (
-              <Card key={type.title} className="bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-colors">
+              <Card key={type.title} className="bg-cream-100 border-ink-200 hover:border-ink-200 transition-colors">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-violet-500/20 text-violet-400 shrink-0">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-700/20 text-teal-700 shrink-0">
                       {type.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-zinc-50">{type.title}</h3>
+                      <h3 className="font-semibold text-ink-900">{type.title}</h3>
                     </div>
                   </div>
-                  <p className="text-sm text-zinc-400 mb-3">{type.description}</p>
-                  <div className="text-xs text-zinc-500 flex items-center gap-1.5">
+                  <p className="text-sm text-ink-600 mb-3">{type.description}</p>
+                  <div className="text-xs text-ink-9000 flex items-center gap-1.5">
                     <Target className="h-3.5 w-3.5" />
                     <span>Recommended for: {type.recommended}</span>
                   </div>
@@ -455,13 +455,13 @@ export default function InterventionsPage() {
         </div>
 
         {/* ── 6. Active Interventions Tracker ────────────────────────────── */}
-        <Card className="bg-zinc-900 border-zinc-800 mb-8">
+        <Card className="bg-cream-100 border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-zinc-50 flex items-center gap-2">
-              <ClipboardList className="h-5 w-5 text-emerald-400" />
+            <CardTitle className="text-ink-900 flex items-center gap-2">
+              <ClipboardList className="h-5 w-5 text-teal-700" />
               Active Interventions
             </CardTitle>
-            <CardDescription className="text-zinc-400">
+            <CardDescription className="text-ink-600">
               Ongoing interventions with scheduled review dates and progress tracking.
             </CardDescription>
           </CardHeader>
@@ -469,49 +469,49 @@ export default function InterventionsPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-800 text-left">
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Student</th>
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Intervention Type</th>
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Start Date</th>
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Review Date</th>
-                    <th className="pb-3 pr-4 font-medium text-zinc-400">Progress Notes</th>
-                    <th className="pb-3 font-medium text-zinc-400">Action</th>
+                  <tr className="border-b border-ink-200 text-left">
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Student</th>
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Intervention Type</th>
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Start Date</th>
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Review Date</th>
+                    <th className="pb-3 pr-4 font-medium text-ink-600">Progress Notes</th>
+                    <th className="pb-3 font-medium text-ink-600">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {activeInterventions.map((intervention) => (
                     <tr
                       key={intervention.id}
-                      className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors"
+                      className="border-b border-ink-200/50 hover:bg-cream-100/60 transition-colors"
                     >
-                      <td className="py-3 pr-4 font-medium text-zinc-200">
+                      <td className="py-3 pr-4 font-medium text-ink-900">
                         {intervention.studentName}
                       </td>
                       <td className="py-3 pr-4">
-                        <Badge className="bg-violet-500/20 text-violet-400 border-violet-500/30">
+                        <Badge className="bg-teal-700/20 text-teal-700 border-violet-500/30">
                           {intervention.interventionType}
                         </Badge>
                       </td>
-                      <td className="py-3 pr-4 text-zinc-300">
+                      <td className="py-3 pr-4 text-ink-600">
                         <span className="flex items-center gap-1.5">
-                          <Calendar className="h-3.5 w-3.5 text-zinc-500" />
+                          <Calendar className="h-3.5 w-3.5 text-ink-9000" />
                           {intervention.startDate}
                         </span>
                       </td>
-                      <td className="py-3 pr-4 text-zinc-300">
+                      <td className="py-3 pr-4 text-ink-600">
                         <span className="flex items-center gap-1.5">
-                          <Calendar className="h-3.5 w-3.5 text-zinc-500" />
+                          <Calendar className="h-3.5 w-3.5 text-ink-9000" />
                           {intervention.reviewDate}
                         </span>
                       </td>
-                      <td className="py-3 pr-4 text-zinc-400 max-w-xs">
+                      <td className="py-3 pr-4 text-ink-600 max-w-xs">
                         <p className="line-clamp-2">{intervention.progressNotes}</p>
                       </td>
                       <td className="py-3">
                         <Button
                           size="sm"
                           variant="outline"
-                          className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100"
+                          className="border-ink-200 text-ink-600 hover:bg-cream-100 hover:text-ink-900"
                           onClick={() => {
                             toast.success(`Intervention updated for ${intervention.studentName}`, {
                               description: "Progress notes saved. Next review date confirmed.",
@@ -531,13 +531,13 @@ export default function InterventionsPage() {
         </Card>
 
         {/* ── 7. Success Stories ──────────────────────────────────────────── */}
-        <Card className="bg-zinc-900 border-zinc-800 mb-8">
+        <Card className="bg-cream-100 border-ink-200 mb-8">
           <CardHeader>
-            <CardTitle className="text-zinc-50 flex items-center gap-2">
+            <CardTitle className="text-ink-900 flex items-center gap-2">
               <Star className="h-5 w-5 text-yellow-400" />
               Success Stories
             </CardTitle>
-            <CardDescription className="text-zinc-400">
+            <CardDescription className="text-ink-600">
               3 students moved from At-Risk to On-Track this month
             </CardDescription>
           </CardHeader>
@@ -546,11 +546,11 @@ export default function InterventionsPage() {
               {successStories.map((story) => (
                 <div
                   key={story.studentName}
-                  className="rounded-lg border border-zinc-800 bg-zinc-800/30 p-4"
+                  className="rounded-lg border border-ink-200 bg-cream-100/60 p-4"
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                    <span className="font-semibold text-zinc-100">{story.studentName}</span>
+                    <CheckCircle2 className="h-4 w-4 text-teal-700" />
+                    <span className="font-semibold text-ink-900">{story.studentName}</span>
                   </div>
 
                   {/* Before / After comparison */}
@@ -562,26 +562,26 @@ export default function InterventionsPage() {
                         {story.previousStatus}
                       </Badge>
                     </div>
-                    <div className="rounded-md bg-emerald-500/10 border border-emerald-500/20 p-2 text-center">
-                      <p className="text-[10px] uppercase tracking-wider text-emerald-400 mb-1">After</p>
-                      <p className="text-lg font-bold text-emerald-400">{story.currentScore}%</p>
-                      <Badge className="mt-1 bg-emerald-500/20 text-emerald-400 border-emerald-500/30 text-[10px]">
+                    <div className="rounded-md bg-teal-800/10 border border-teal-800/20 p-2 text-center">
+                      <p className="text-[10px] uppercase tracking-wider text-teal-700 mb-1">After</p>
+                      <p className="text-lg font-bold text-teal-700">{story.currentScore}%</p>
+                      <Badge className="mt-1 bg-teal-800/10 text-teal-700 border-teal-800/30 text-[10px]">
                         {story.currentStatus}
                       </Badge>
                     </div>
                   </div>
 
-                  <div className="space-y-1 text-xs text-zinc-400">
+                  <div className="space-y-1 text-xs text-ink-600">
                     <p className="flex items-center gap-1.5">
-                      <ArrowUpRight className="h-3 w-3 text-emerald-400" />
+                      <ArrowUpRight className="h-3 w-3 text-teal-700" />
                       +{story.currentScore - story.previousScore}% improvement
                     </p>
                     <p className="flex items-center gap-1.5">
-                      <ClipboardList className="h-3 w-3 text-violet-400" />
+                      <ClipboardList className="h-3 w-3 text-teal-700" />
                       {story.intervention}
                     </p>
                     <p className="flex items-center gap-1.5">
-                      <Calendar className="h-3 w-3 text-zinc-500" />
+                      <Calendar className="h-3 w-3 text-ink-9000" />
                       {story.duration}
                     </p>
                   </div>
@@ -594,7 +594,7 @@ export default function InterventionsPage() {
         {/* ── 8. Export Button ────────────────────────────────────────────── */}
         <div className="flex justify-end">
           <Button
-            className="bg-zinc-800 text-zinc-200 hover:bg-zinc-700 border border-zinc-700"
+            className="bg-cream-100 text-ink-900 hover:bg-cream-100 border border-ink-200"
             onClick={() => {
               toast.success("Intervention report exported", {
                 description: "The report has been generated and is ready for download.",

@@ -174,10 +174,10 @@ Dickens uses Scrooge's transformation to argue that anyone can change and that t
 
 function Toast({ message, onClose }: { message: string; onClose: () => void }) {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-lg bg-emerald-500/20 border border-emerald-500/30 px-4 py-3 text-sm text-emerald-300 shadow-xl animate-in slide-in-from-bottom-4">
-      <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-lg bg-teal-800/10 border border-teal-800/30 px-4 py-3 text-sm text-teal-700 shadow-xl animate-in slide-in-from-bottom-4">
+      <CheckCircle2 className="h-4 w-4 text-teal-700 shrink-0" />
       <span>{message}</span>
-      <button onClick={onClose} className="ml-2 text-emerald-400/60 hover:text-emerald-300">
+      <button onClick={onClose} className="ml-2 text-teal-700/60 hover:text-teal-700">
         <X className="h-3.5 w-3.5" />
       </button>
     </div>
@@ -211,35 +211,35 @@ export default function EssayMarkingDemoPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="min-h-screen bg-cream-50">
       <DemoBanner message="This is an interactive demo of AI essay marking. No real data is saved." />
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 lg:py-12">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/20">
-              <Sparkles className="h-5 w-5 text-purple-400" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-clay-500/20 to-clay-400/20 border border-clay-500/20">
+              <Sparkles className="h-5 w-5 text-clay-600" />
             </div>
-            <h1 className="text-2xl font-bold text-white">AI Essay Marking</h1>
+            <h1 className="text-2xl font-bold text-ink-900">AI Essay Marking</h1>
           </div>
-          <p className="text-white/50 text-sm mt-1">
+          <p className="text-ink-500 text-sm mt-1">
             AI-powered essay analysis with AO scoring, detailed feedback, and improvement suggestions.
           </p>
         </div>
 
         {/* Essay display */}
-        <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 mb-6">
+        <div className="rounded-xl border border-ink-200 bg-white p-5 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-sm font-semibold text-white/90">{essay.title}</h2>
-              <p className="text-xs text-white/40 mt-0.5">{essay.student}</p>
+              <h2 className="text-sm font-semibold text-ink-900">{essay.title}</h2>
+              <p className="text-xs text-ink-500 mt-0.5">{essay.student}</p>
             </div>
-            <span className="px-2.5 py-1 rounded-full text-xs bg-white/[0.06] text-white/50 border border-white/[0.08]">
+            <span className="px-2.5 py-1 rounded-full text-xs bg-cream-100 text-ink-500 border border-ink-200">
               Sample {essayIndex + 1} of {SAMPLE_ESSAYS.length}
             </span>
           </div>
-          <div className="rounded-lg bg-white/[0.03] border border-white/[0.06] p-5 text-sm text-white/70 leading-relaxed whitespace-pre-line max-h-[350px] overflow-y-auto">
+          <div className="rounded-lg bg-white border border-ink-200 p-5 text-sm text-ink-600 leading-relaxed whitespace-pre-line max-h-[350px] overflow-y-auto">
             {essay.text}
           </div>
         </div>
@@ -249,7 +249,7 @@ export default function EssayMarkingDemoPage() {
           <button
             onClick={handleAnalyse}
             disabled={loading}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-sm font-semibold text-white hover:opacity-90 transition-opacity disabled:opacity-60"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-clay-500 to-clay-400 text-sm font-semibold text-white hover:opacity-90 transition-opacity disabled:opacity-60"
           >
             {loading ? (
               <>
@@ -265,7 +265,7 @@ export default function EssayMarkingDemoPage() {
           </button>
           <button
             onClick={handleTryAnother}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/[0.06] border border-white/[0.08] text-sm text-white/70 hover:text-white hover:bg-white/[0.08] transition-colors"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cream-100 border border-ink-200 text-sm text-ink-600 hover:text-ink-900 hover:bg-cream-100 transition-colors"
           >
             <RefreshCw className="h-4 w-4" />
             Try Another Essay
@@ -274,10 +274,10 @@ export default function EssayMarkingDemoPage() {
 
         {/* Loading state */}
         {loading && (
-          <div className="rounded-xl border border-purple-500/20 bg-purple-500/5 p-8 text-center">
-            <Loader2 className="h-8 w-8 animate-spin text-purple-400 mx-auto mb-3" />
-            <p className="text-sm text-purple-300">Analysing essay against GCSE assessment objectives...</p>
-            <p className="text-xs text-white/40 mt-1">Evaluating AO1, AO2, AO3, and AO4 criteria</p>
+          <div className="rounded-xl border border-clay-500/20 bg-clay-500/5 p-8 text-center">
+            <Loader2 className="h-8 w-8 animate-spin text-clay-600 mx-auto mb-3" />
+            <p className="text-sm text-clay-600">Analysing essay against GCSE assessment objectives...</p>
+            <p className="text-xs text-ink-500 mt-1">Evaluating AO1, AO2, AO3, and AO4 criteria</p>
           </div>
         )}
 
@@ -287,20 +287,20 @@ export default function EssayMarkingDemoPage() {
             {/* Grade + scores row */}
             <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
               {/* Predicted grade */}
-              <div className="md:col-span-2 rounded-xl border border-purple-500/20 bg-purple-500/5 p-5 flex items-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/30 to-pink-500/30 border border-purple-500/30">
-                  <span className="text-3xl font-bold text-purple-300">{essay.grade}</span>
+              <div className="md:col-span-2 rounded-xl border border-clay-500/20 bg-clay-500/5 p-5 flex items-center gap-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-clay-500/30 to-clay-400/30 border border-clay-500/30">
+                  <span className="text-3xl font-bold text-clay-600">{essay.grade}</span>
                 </div>
                 <div>
-                  <p className="text-xs text-white/40">Predicted Grade</p>
-                  <p className="text-lg font-bold text-white">Grade {essay.grade}</p>
-                  <p className="text-xs text-white/50">{essay.total}/{essay.totalMax} ({essay.percentage}%)</p>
+                  <p className="text-xs text-ink-500">Predicted Grade</p>
+                  <p className="text-lg font-bold text-ink-900">Grade {essay.grade}</p>
+                  <p className="text-xs text-ink-500">{essay.total}/{essay.totalMax} ({essay.percentage}%)</p>
                 </div>
               </div>
 
               {/* AO scores */}
-              <div className="md:col-span-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-                <h3 className="text-xs font-medium text-white/50 mb-3 uppercase tracking-wider">Assessment Objectives</h3>
+              <div className="md:col-span-4 rounded-xl border border-ink-200 bg-white p-5">
+                <h3 className="text-xs font-medium text-ink-500 mb-3 uppercase tracking-wider">Assessment Objectives</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {[
                     { label: "AO1 Reading", score: essay.ao1, max: essay.ao1Max },
@@ -337,10 +337,10 @@ export default function EssayMarkingDemoPage() {
                           </defs>
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-xs font-bold text-white">{ao.score}/{ao.max}</span>
+                          <span className="text-xs font-bold text-ink-900">{ao.score}/{ao.max}</span>
                         </div>
                       </div>
-                      <p className="text-xs text-white/50">{ao.label}</p>
+                      <p className="text-xs text-ink-500">{ao.label}</p>
                     </div>
                   ))}
                 </div>
@@ -348,11 +348,11 @@ export default function EssayMarkingDemoPage() {
             </div>
 
             {/* Detailed feedback */}
-            <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-              <h3 className="text-sm font-semibold text-white/90 mb-3">Detailed Feedback</h3>
+            <div className="rounded-xl border border-ink-200 bg-white p-5">
+              <h3 className="text-sm font-semibold text-ink-900 mb-3">Detailed Feedback</h3>
               <div className="space-y-3">
                 {essay.feedback.map((para, i) => (
-                  <p key={i} className="text-sm text-white/60 leading-relaxed">
+                  <p key={i} className="text-sm text-ink-600 leading-relaxed">
                     {para}
                   </p>
                 ))}
@@ -362,15 +362,15 @@ export default function EssayMarkingDemoPage() {
             {/* Strengths & Improvements */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Strengths */}
-              <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5">
+              <div className="rounded-xl border border-teal-800/20 bg-teal-800/5 p-5">
                 <div className="flex items-center gap-2 mb-3">
-                  <TrendingUp className="h-4 w-4 text-emerald-400" />
-                  <h3 className="text-sm font-semibold text-emerald-300">Strengths</h3>
+                  <TrendingUp className="h-4 w-4 text-teal-700" />
+                  <h3 className="text-sm font-semibold text-teal-700">Strengths</h3>
                 </div>
                 <ul className="space-y-2">
                   {essay.strengths.map((s, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-white/60">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400/60 mt-0.5 shrink-0" />
+                    <li key={i} className="flex items-start gap-2 text-sm text-ink-600">
+                      <CheckCircle2 className="h-4 w-4 text-teal-700/60 mt-0.5 shrink-0" />
                       <span>{s}</span>
                     </li>
                   ))}
@@ -385,7 +385,7 @@ export default function EssayMarkingDemoPage() {
                 </div>
                 <ul className="space-y-2">
                   {essay.improvements.map((s, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-white/60">
+                    <li key={i} className="flex items-start gap-2 text-sm text-ink-600">
                       <AlertTriangle className="h-4 w-4 text-amber-400/60 mt-0.5 shrink-0" />
                       <span>{s}</span>
                     </li>
@@ -395,15 +395,15 @@ export default function EssayMarkingDemoPage() {
             </div>
 
             {/* CTA */}
-            <div className="rounded-xl border border-white/[0.06] bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10 p-6 text-center">
-              <Sparkles className="h-6 w-6 text-purple-400 mx-auto mb-2" />
-              <h3 className="text-lg font-semibold text-white mb-1">Use AI marking with your students</h3>
-              <p className="text-sm text-white/50 mb-4">
+            <div className="rounded-xl border border-ink-200 bg-gradient-to-r from-clay-500/10 via-pink-500/10 to-clay-400/10 p-6 text-center">
+              <Sparkles className="h-6 w-6 text-clay-600 mx-auto mb-2" />
+              <h3 className="text-lg font-semibold text-ink-900 mb-1">Use AI marking with your students</h3>
+              <p className="text-sm text-ink-500 mb-4">
                 Save hours of marking time with instant, detailed feedback on every essay.
               </p>
               <Link
                 href="/auth/teacher-register"
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-clay-500 to-clay-400 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
               >
                 Start free trial
               </Link>

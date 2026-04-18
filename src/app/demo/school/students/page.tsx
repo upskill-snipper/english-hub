@@ -184,27 +184,27 @@ const ALL_STUDENTS = [
 // ---------------------------------------------------------------------------
 
 const STATUS_COLORS: Record<StudentStatus, string> = {
-  "On Track": "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
+  "On Track": "bg-teal-800/10 text-teal-700 border-teal-800/30",
   "Needs Support": "bg-amber-500/15 text-amber-400 border-amber-500/30",
   "At Risk": "bg-red-500/15 text-red-400 border-red-500/30",
   "Excelling": "bg-yellow-400/15 text-yellow-400 border-yellow-400/30",
 }
 
 const YEAR_COLORS: Record<number, string> = {
-  7: "bg-violet-500/15 text-violet-400 border-violet-500/30",
+  7: "bg-teal-700/15 text-teal-700 border-violet-500/30",
   8: "bg-indigo-500/15 text-indigo-400 border-indigo-500/30",
-  9: "bg-violet-500/10 text-violet-300 border-violet-500/30",
-  10: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
+  9: "bg-teal-800/10 text-teal-700 border-violet-500/30",
+  10: "bg-teal-800/10 text-teal-700 border-teal-800/30",
   11: "bg-amber-500/15 text-amber-400 border-amber-500/30",
   12: "bg-rose-500/15 text-rose-400 border-rose-500/30",
   13: "bg-pink-500/15 text-pink-400 border-pink-500/30",
 }
 
 const INITIALS_COLORS = [
-  "bg-violet-500/20 text-violet-300",
+  "bg-teal-700/20 text-teal-700",
   "bg-blue-500/20 text-blue-300",
-  "bg-violet-500/20 text-violet-300",
-  "bg-emerald-500/20 text-emerald-300",
+  "bg-teal-700/20 text-teal-700",
+  "bg-teal-800/10 text-teal-700",
   "bg-amber-500/20 text-amber-300",
   "bg-rose-500/20 text-rose-300",
   "bg-pink-500/20 text-pink-300",
@@ -212,7 +212,7 @@ const INITIALS_COLORS = [
 ]
 
 function progressBarColor(progress: number): string {
-  if (progress >= 80) return "bg-emerald-500"
+  if (progress >= 80) return "bg-teal-700"
   if (progress >= 50) return "bg-amber-500"
   return "bg-red-500"
 }
@@ -336,7 +336,7 @@ export default function StudentsPage() {
         <Card>
           <CardContent className="flex items-center gap-4 pt-0">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-500/15">
-              <Users className="h-5 w-5 text-blue-400" />
+              <Users className="h-5 w-5 text-teal-700" />
             </div>
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Total Students</p>
@@ -347,8 +347,8 @@ export default function StudentsPage() {
 
         <Card>
           <CardContent className="flex items-center gap-4 pt-0">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15">
-              <CheckCircle2 className="h-5 w-5 text-emerald-400" />
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-800/10">
+              <CheckCircle2 className="h-5 w-5 text-teal-700" />
             </div>
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Active This Week</p>
@@ -551,7 +551,7 @@ export default function StudentsPage() {
                         {student.email}
                       </td>
                       <td className="px-4 py-3">
-                        <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold ${YEAR_COLORS[student.yearGroup] ?? "bg-gray-500/15 text-gray-400 border-gray-500/30"}`}>
+                        <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold ${YEAR_COLORS[student.yearGroup] ?? "bg-ink-200/15 text-ink-600 border-ink-200/30"}`}>
                           Y{student.yearGroup}
                         </span>
                       </td>
@@ -576,7 +576,7 @@ export default function StudentsPage() {
                         <span className={`tabular-nums font-medium ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>Grade {student.predictedGrade}</span>
                       </td>
                       <td className="px-4 py-3 hidden lg:table-cell">
-                        <span className="tabular-nums font-medium text-violet-500">Grade {student.targetGrade}</span>
+                        <span className="tabular-nums font-medium text-teal-700">Grade {student.targetGrade}</span>
                       </td>
                       <td className="px-4 py-3 hidden xl:table-cell">
                         <ReadingAgeInline readingAge={student.readingAge} yearGroup={student.yearGroupStr} />

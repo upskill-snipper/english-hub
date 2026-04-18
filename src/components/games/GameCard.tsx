@@ -98,7 +98,7 @@ export default function GameCard({
     >
       {/* Top row: icon + best grade badge */}
       <div className="flex items-start justify-between gap-3">
-        <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/[0.06] bg-white/[0.02] text-2xl">
+        <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-cream-100 text-2xl">
           {icon}
         </span>
 
@@ -142,7 +142,7 @@ export default function GameCard({
             <span
               className={cn(
                 'inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium',
-                DIFFICULTY_COLORS[difficulty] ?? 'bg-white/5 text-muted-foreground border-white/10'
+                DIFFICULTY_COLORS[difficulty] ?? 'bg-cream-100 text-muted-foreground border-border'
               )}
             >
               {difficulty}

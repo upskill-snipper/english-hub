@@ -34,7 +34,7 @@ export function MRRWaterfallChart({ month, className }: MRRWaterfallChartProps) 
     amount: month.startingMRR,
     barStart: 0,
     barTop: month.startingMRR,
-    colour: "bg-slate-500/70",
+    colour: "bg-ink-500/70",
     isTotal: true,
   })
 
@@ -77,7 +77,7 @@ export function MRRWaterfallChart({ month, className }: MRRWaterfallChartProps) 
     amount: month.endingMRR,
     barStart: 0,
     barTop: month.endingMRR,
-    colour: "bg-slate-400/80",
+    colour: "bg-ink-400/80",
     isTotal: true,
   })
 

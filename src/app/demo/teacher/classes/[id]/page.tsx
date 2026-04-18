@@ -50,7 +50,7 @@ function ragLabel(status: "green" | "amber" | "red") {
 function trendIcon(trend: "up" | "down" | "stable") {
   if (trend === "up") return <TrendingUp className="h-3.5 w-3.5 text-green-400" />
   if (trend === "down") return <TrendingDown className="h-3.5 w-3.5 text-red-400" />
-  return <Minus className="h-3.5 w-3.5 text-white/30" />
+  return <Minus className="h-3.5 w-3.5 text-ink-500" />
 }
 
 function scoreColor(score: number) {
@@ -72,11 +72,11 @@ export default function TeacherClassDetailPage() {
 
   if (!cls) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] text-white flex items-center justify-center">
+      <div className="min-h-screen bg-cream-50 text-ink-900 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-light text-white/90 mb-2">Class Not Found</h1>
-          <p className="text-neutral-500 text-sm mb-6">This class does not exist or is not assigned to you.</p>
-          <Link href="/demo/teacher/classes" className="text-emerald-400 hover:underline text-sm">
+          <h1 className="text-2xl font-light text-ink-900 mb-2">Class Not Found</h1>
+          <p className="text-ink-500 text-sm mb-6">This class does not exist or is not assigned to you.</p>
+          <Link href="/demo/teacher/classes" className="text-teal-700 hover:underline text-sm">
             Back to My Classes
           </Link>
         </div>
@@ -140,7 +140,7 @@ export default function TeacherClassDetailPage() {
     .slice(0, 5)
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
@@ -152,7 +152,7 @@ export default function TeacherClassDetailPage() {
         {/* Back nav */}
         <Link
           href="/demo/teacher/classes"
-          className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-sm text-ink-500 hover:text-ink-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to My Classes
@@ -160,14 +160,14 @@ export default function TeacherClassDetailPage() {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-light tracking-tight text-white/90 mb-2">
+          <h1 className="text-3xl font-light tracking-tight text-ink-900 mb-2">
             {cls.name}
           </h1>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-white/40">
-            <Badge variant="outline" className="text-xs border-white/10 text-white/50">
+          <div className="flex flex-wrap items-center gap-3 text-sm text-ink-500">
+            <Badge variant="outline" className="text-xs border-ink-200 text-ink-500">
               Year {cls.yearGroup}
             </Badge>
-            <Badge variant="outline" className="text-xs border-white/10 text-white/50">
+            <Badge variant="outline" className="text-xs border-ink-200 text-ink-500">
               {cls.examBoard}
             </Badge>
             <span className="flex items-center gap-1">
@@ -179,58 +179,58 @@ export default function TeacherClassDetailPage() {
 
         {/* Class Analytics KPIs */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-4">
-              <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">Avg Score</p>
+              <p className="text-[11px] uppercase tracking-wider text-ink-500 mb-1">Avg Score</p>
               <p className={`text-2xl font-light ${scoreColor(avgScore)}`}>{avgScore}%</p>
             </CardContent>
           </Card>
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-4">
-              <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">Completion Rate</p>
-              <p className="text-2xl font-light text-white/80">{avgCompletion}%</p>
+              <p className="text-[11px] uppercase tracking-wider text-ink-500 mb-1">Completion Rate</p>
+              <p className="text-2xl font-light text-ink-900">{avgCompletion}%</p>
             </CardContent>
           </Card>
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-4">
-              <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">At-Risk</p>
+              <p className="text-[11px] uppercase tracking-wider text-ink-500 mb-1">At-Risk</p>
               <p className={`text-2xl font-light ${atRiskCount > 0 ? "text-red-400" : "text-green-400"}`}>
                 {atRiskCount}
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-4">
-              <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">On Track</p>
+              <p className="text-[11px] uppercase tracking-wider text-ink-500 mb-1">On Track</p>
               <p className="text-2xl font-light text-green-400">{onTrackCount}</p>
             </CardContent>
           </Card>
         </div>
 
         {/* RAG Distribution */}
-        <Card className="bg-white/[0.02] border-white/5 mb-8">
+        <Card className="bg-white border-ink-200 mb-8">
           <CardContent className="p-5">
-            <p className="text-sm font-medium text-white/70 mb-3">Student Distribution</p>
+            <p className="text-sm font-medium text-ink-600 mb-3">Student Distribution</p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                <span className="text-sm text-white/60">On Track: {onTrackCount}</span>
+                <span className="text-sm text-ink-600">On Track: {onTrackCount}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                <span className="text-sm text-white/60">Monitor: {monitorCount}</span>
+                <span className="text-sm text-ink-600">Monitor: {monitorCount}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                <span className="text-sm text-white/60">At Risk: {atRiskCount}</span>
+                <span className="text-sm text-ink-600">At Risk: {atRiskCount}</span>
               </div>
               <div className="flex items-center gap-2">
                 <TrendingUp className="h-3.5 w-3.5 text-green-400" />
-                <span className="text-sm text-white/60">Improving: {improvingCount}</span>
+                <span className="text-sm text-ink-600">Improving: {improvingCount}</span>
               </div>
               <div className="flex items-center gap-2">
                 <TrendingDown className="h-3.5 w-3.5 text-red-400" />
-                <span className="text-sm text-white/60">Declining: {decliningCount}</span>
+                <span className="text-sm text-ink-600">Declining: {decliningCount}</span>
               </div>
             </div>
           </CardContent>
@@ -238,32 +238,32 @@ export default function TeacherClassDetailPage() {
 
         {/* Student Table */}
         <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4">All Students</h2>
-          <Card className="bg-white/[0.02] border-white/5 overflow-hidden">
+          <h2 className="text-lg font-medium text-ink-900 mb-4">All Students</h2>
+          <Card className="bg-white border-ink-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-white/5">
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Student</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Score</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40 hidden md:table-cell">RAG</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40 hidden md:table-cell">Trend</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40 hidden lg:table-cell">Last Active</th>
-                    <th className="text-right px-4 py-3 text-xs font-medium text-white/40">Profile</th>
+                  <tr className="border-b border-ink-200">
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500">Student</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500">Score</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500 hidden md:table-cell">RAG</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500 hidden md:table-cell">Trend</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500 hidden lg:table-cell">Last Active</th>
+                    <th className="text-right px-4 py-3 text-xs font-medium text-ink-500">Profile</th>
                   </tr>
                 </thead>
                 <tbody>
                   {sortedStudents.map((student) => (
                     <tr
                       key={student.id}
-                      className={`border-b border-white/5 last:border-0 transition-colors hover:bg-white/[0.02] ${
+                      className={`border-b border-ink-200 last:border-0 transition-colors hover:bg-white ${
                         student.atRisk ? "bg-red-500/[0.02]" : ""
                       }`}
                     >
                       <td className="px-4 py-3">
                         <Link
                           href={`/demo/teacher/students/${student.id}`}
-                          className="text-white/80 hover:text-emerald-400 transition-colors font-medium"
+                          className="text-ink-900 hover:text-teal-700 transition-colors font-medium"
                         >
                           {student.name}
                         </Link>
@@ -284,11 +284,11 @@ export default function TeacherClassDetailPage() {
                       <td className="px-4 py-3 hidden md:table-cell">
                         {trendIcon(student.trend)}
                       </td>
-                      <td className="px-4 py-3 hidden lg:table-cell text-xs text-white/40">
+                      <td className="px-4 py-3 hidden lg:table-cell text-xs text-ink-500">
                         {student.lastActive}
                       </td>
                       <td className="px-4 py-3 text-right">
-                        <Button render={<Link href={`/demo/teacher/students/${student.id}`} />} variant="ghost" size="xs" className="text-white/40 hover:text-emerald-400">
+                        <Button render={<Link href={`/demo/teacher/students/${student.id}`} />} variant="ghost" size="xs" className="text-ink-500 hover:text-teal-700">
                             <ExternalLink className="h-3.5 w-3.5" />
                         </Button>
                       </td>
@@ -302,48 +302,48 @@ export default function TeacherClassDetailPage() {
 
         {/* ── Assessment Results Table ─────────────────────────────── */}
         <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-            <FileText className="h-5 w-5 text-blue-400" />
+          <h2 className="text-lg font-medium text-ink-900 mb-4 flex items-center gap-2">
+            <FileText className="h-5 w-5 text-teal-700" />
             Recent Assessment Results
           </h2>
-          <Card className="bg-white/[0.02] border-white/5 overflow-hidden">
+          <Card className="bg-white border-ink-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-white/5">
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Student</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Assessment</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Type</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Score</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40 hidden md:table-cell">Date</th>
+                  <tr className="border-b border-ink-200">
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500">Student</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500">Assessment</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500">Type</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500">Score</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-ink-500 hidden md:table-cell">Date</th>
                   </tr>
                 </thead>
                 <tbody>
                   {recentAssessments.map((item, idx) => {
                     const pct = Math.round((item.score / item.maxScore) * 100)
                     return (
-                      <tr key={idx} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02]">
+                      <tr key={idx} className="border-b border-ink-200 last:border-0 hover:bg-white">
                         <td className="px-4 py-3">
                           <Link
                             href={`/demo/teacher/students/${item.studentId}`}
-                            className="text-white/80 hover:text-emerald-400 transition-colors font-medium"
+                            className="text-ink-900 hover:text-teal-700 transition-colors font-medium"
                           >
                             {item.studentName}
                           </Link>
                         </td>
-                        <td className="px-4 py-3 text-white/60 max-w-[200px] truncate">{item.title}</td>
+                        <td className="px-4 py-3 text-ink-600 max-w-[200px] truncate">{item.title}</td>
                         <td className="px-4 py-3">
                           <Badge variant="outline" className={
-                            item.type === "Essay" ? "bg-blue-500/10 text-blue-400 border-blue-500/20" :
+                            item.type === "Essay" ? "bg-teal-800/10 text-teal-700 border-teal-800/20" :
                             item.type === "Quiz" ? "bg-amber-500/10 text-amber-400 border-amber-500/20" :
-                            "bg-purple-500/10 text-purple-400 border-purple-500/20"
+                            "bg-clay-500/10 text-clay-600 border-clay-500/20"
                           }>{item.type}</Badge>
                         </td>
                         <td className="px-4 py-3">
                           <span className={scoreColor(pct)}>{item.score}/{item.maxScore}</span>
-                          <span className="text-neutral-600 text-xs ml-1">({pct}%)</span>
+                          <span className="text-ink-500 text-xs ml-1">({pct}%)</span>
                         </td>
-                        <td className="px-4 py-3 text-white/40 text-xs hidden md:table-cell">{item.date}</td>
+                        <td className="px-4 py-3 text-ink-500 text-xs hidden md:table-cell">{item.date}</td>
                       </tr>
                     )
                   })}
@@ -355,14 +355,14 @@ export default function TeacherClassDetailPage() {
 
         {/* ── Class Strengths & Weaknesses ────────────────────────────── */}
         <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-            <BarChart3 className="h-5 w-5 text-violet-400" />
+          <h2 className="text-lg font-medium text-ink-900 mb-4 flex items-center gap-2">
+            <BarChart3 className="h-5 w-5 text-teal-700" />
             Class Strengths &amp; Weaknesses
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="bg-white/[0.02] border-white/5">
+            <Card className="bg-white border-ink-200">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-emerald-400 flex items-center gap-2">
+                <CardTitle className="text-sm font-medium text-teal-700 flex items-center gap-2">
                   <CheckCircle className="h-4 w-4" /> Class Strengths
                 </CardTitle>
               </CardHeader>
@@ -370,15 +370,15 @@ export default function TeacherClassDetailPage() {
                 <div className="space-y-3">
                   {topStrengths.map(([name, count], i) => (
                     <div key={i} className="flex items-center justify-between">
-                      <span className="text-sm text-white/70">{name}</span>
+                      <span className="text-sm text-ink-600">{name}</span>
                       <div className="flex items-center gap-2">
-                        <div className="w-20 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                        <div className="w-20 h-1.5 rounded-full bg-cream-100 overflow-hidden">
                           <div
                             className="h-full rounded-full bg-green-500"
                             style={{ width: `${(count / fullClassStudents.length) * 100}%` }}
                           />
                         </div>
-                        <span className="text-[11px] text-white/40 w-16 text-right">
+                        <span className="text-[11px] text-ink-500 w-16 text-right">
                           {count}/{fullClassStudents.length} students
                         </span>
                       </div>
@@ -388,7 +388,7 @@ export default function TeacherClassDetailPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/[0.02] border-white/5">
+            <Card className="bg-white border-ink-200">
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium text-red-400 flex items-center gap-2">
                   <XCircle className="h-4 w-4" /> Class Weaknesses
@@ -398,15 +398,15 @@ export default function TeacherClassDetailPage() {
                 <div className="space-y-3">
                   {topWeaknesses.map(([name, count], i) => (
                     <div key={i} className="flex items-center justify-between">
-                      <span className="text-sm text-white/70">{name}</span>
+                      <span className="text-sm text-ink-600">{name}</span>
                       <div className="flex items-center gap-2">
-                        <div className="w-20 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                        <div className="w-20 h-1.5 rounded-full bg-cream-100 overflow-hidden">
                           <div
                             className="h-full rounded-full bg-red-500"
                             style={{ width: `${(count / fullClassStudents.length) * 100}%` }}
                           />
                         </div>
-                        <span className="text-[11px] text-white/40 w-16 text-right">
+                        <span className="text-[11px] text-ink-500 w-16 text-right">
                           {count}/{fullClassStudents.length} students
                         </span>
                       </div>
@@ -420,11 +420,11 @@ export default function TeacherClassDetailPage() {
 
         {/* ── Suggested Lesson Focus ──────────────────────────────────── */}
         <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+          <h2 className="text-lg font-medium text-ink-900 mb-4 flex items-center gap-2">
             <Lightbulb className="h-5 w-5 text-amber-400" />
             Suggested Lesson Focus
           </h2>
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-6">
               <div className="space-y-4">
                 {topWeaknesses.slice(0, 3).map(([weakness, count], i) => {
@@ -460,17 +460,17 @@ export default function TeacherClassDetailPage() {
                     <div key={i} className="rounded-lg border border-amber-500/10 bg-amber-500/[0.03] p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <BookOpen className="h-4 w-4 text-amber-400" />
-                        <span className="text-sm font-medium text-white/80">
+                        <span className="text-sm font-medium text-ink-900">
                           Focus: {weakness}
                         </span>
-                        <span className="text-[11px] text-white/30 ml-auto">
+                        <span className="text-[11px] text-ink-500 ml-auto">
                           Affects {count}/{fullClassStudents.length} students
                         </span>
                       </div>
-                      <p className="text-xs text-white/60 mb-2">{suggestion}</p>
+                      <p className="text-xs text-ink-600 mb-2">{suggestion}</p>
                       <div className="flex items-center gap-2">
                         <span className="text-[10px] uppercase tracking-wider text-amber-400/60">Suggested Activity:</span>
-                        <span className="text-xs text-white/50">{activity}</span>
+                        <span className="text-xs text-ink-500">{activity}</span>
                       </div>
                     </div>
                   )
@@ -482,19 +482,19 @@ export default function TeacherClassDetailPage() {
 
         {/* Personalised Class Report */}
         <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-            <BarChart3 className="h-5 w-5 text-emerald-400" />
+          <h2 className="text-lg font-medium text-ink-900 mb-4 flex items-center gap-2">
+            <BarChart3 className="h-5 w-5 text-teal-700" />
             Personalised Class Report
           </h2>
-          <Card className="bg-white/[0.02] border-white/5">
+          <Card className="bg-white border-ink-200">
             <CardContent className="p-6 space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-sm text-white/70">Strengths</span>
+                    <span className="text-sm text-ink-600">Strengths</span>
                   </div>
-                  <ul className="text-xs text-white/50 space-y-1 pl-6">
+                  <ul className="text-xs text-ink-500 space-y-1 pl-6">
                     <li>Strong engagement from top performers</li>
                     <li>Good completion rate on reading tasks</li>
                     <li>Consistent improvement in essay scores</li>
@@ -503,9 +503,9 @@ export default function TeacherClassDetailPage() {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <AlertTriangle className="h-4 w-4 text-amber-400" />
-                    <span className="text-sm text-white/70">Areas for Focus</span>
+                    <span className="text-sm text-ink-600">Areas for Focus</span>
                   </div>
-                  <ul className="text-xs text-white/50 space-y-1 pl-6">
+                  <ul className="text-xs text-ink-500 space-y-1 pl-6">
                     <li>{decliningCount} student{decliningCount !== 1 ? "s" : ""} showing declining engagement</li>
                     <li>Paper 2 scores below class average</li>
                     <li>Homework submission rate needs attention</li>
@@ -513,10 +513,10 @@ export default function TeacherClassDetailPage() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-blue-400" />
-                    <span className="text-sm text-white/70">Recommendations</span>
+                    <Target className="h-4 w-4 text-teal-700" />
+                    <span className="text-sm text-ink-600">Recommendations</span>
                   </div>
-                  <ul className="text-xs text-white/50 space-y-1 pl-6">
+                  <ul className="text-xs text-ink-500 space-y-1 pl-6">
                     <li>Intervention meeting for at-risk students</li>
                     <li>Additional Paper 2 practice resources</li>
                     <li>Peer mentoring for mid-range students</li>
@@ -528,7 +528,7 @@ export default function TeacherClassDetailPage() {
         </section>
 
         {/* Footer */}
-        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-neutral-600">
+        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-ink-500">
           Demo data -- {cls.name} -- {cls.studentCount} students
         </p>
       </div>

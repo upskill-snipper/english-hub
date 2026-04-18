@@ -246,8 +246,8 @@ export default function AccountPage() {
               aria-live="assertive"
               className={`flex items-center gap-2 rounded-lg p-3 mb-4 text-sm ${
                 profileMessage.type === 'success'
-                  ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400'
-                  : 'bg-red-500/10 border border-red-500/30 text-red-400'
+                  ? 'bg-emerald-500/10 border border-emerald-500/30 text-teal-700'
+                  : 'bg-red-500/10 border border-red-500/30 text-red-600'
               }`}
             >
               {profileMessage.type === 'success' ? (
@@ -388,8 +388,8 @@ export default function AccountPage() {
               aria-live="assertive"
               className={`flex items-center gap-2 rounded-lg p-3 mb-4 text-sm ${
                 passwordMessage.type === 'success'
-                  ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400'
-                  : 'bg-red-500/10 border border-red-500/30 text-red-400'
+                  ? 'bg-emerald-500/10 border border-emerald-500/30 text-teal-700'
+                  : 'bg-red-500/10 border border-red-500/30 text-red-600'
               }`}
             >
               {passwordMessage.type === 'success' ? (
@@ -472,8 +472,8 @@ export default function AccountPage() {
         {/* Danger Zone */}
         <section className="bg-card border border-red-500/30 rounded-xl p-6">
           <div className="flex items-center gap-3 mb-4">
-            <Trash2 className="w-5 h-5 text-red-400" />
-            <h2 className="text-xl font-semibold text-red-400">Danger Zone</h2>
+            <Trash2 className="w-5 h-5 text-red-600" />
+            <h2 className="text-xl font-semibold text-red-600">Danger Zone</h2>
           </div>
 
           <p className="text-muted-foreground text-sm mb-4">
@@ -482,7 +482,7 @@ export default function AccountPage() {
           </p>
 
           {deleteError && (
-            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-4 text-red-400 text-sm">
+            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-4 text-red-600 text-sm">
               {deleteError}
             </div>
           )}
@@ -490,7 +490,7 @@ export default function AccountPage() {
           <div className="space-y-3">
             <div>
               <label htmlFor="deleteConfirm" className="label">
-                Type <span className="font-mono font-bold text-red-400">DELETE</span> to confirm
+                Type <span className="font-mono font-bold text-red-600">DELETE</span> to confirm
               </label>
               <input
                 id="deleteConfirm"
@@ -505,7 +505,7 @@ export default function AccountPage() {
             <button
               onClick={handleDeleteAccount}
               disabled={deleteLoading || deleteConfirm !== 'DELETE'}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm bg-red-500/10 text-red-400 border border-red-500/30 hover:bg-red-500/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm bg-red-500/10 text-red-600 border border-red-500/30 hover:bg-red-500/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {deleteLoading ? (
                 <>

@@ -301,9 +301,9 @@ function getGenericCourse(id: string): CourseData {
 // ---------------------------------------------------------------------------
 
 function ProgressBar({ value, className }: { value: number; className?: string }) {
-  const color = value === 100 ? "bg-emerald-500" : value >= 60 ? "bg-blue-500" : value >= 40 ? "bg-amber-500" : "bg-red-500"
+  const color = value === 100 ? "bg-teal-700" : value >= 60 ? "bg-blue-500" : value >= 40 ? "bg-amber-500" : "bg-red-500"
   return (
-    <div className={`h-1.5 rounded-full bg-white/5 ${className || ""}`}>
+    <div className={`h-1.5 rounded-full bg-cream-100 ${className || ""}`}>
       <div className={`h-1.5 rounded-full ${color} transition-all`} style={{ width: `${value}%` }} />
     </div>
   )
@@ -327,45 +327,45 @@ function QuizView({ quiz, onClose }: { quiz: { question: string; options: string
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-medium text-white/90 flex items-center gap-2">
-          <FileQuestion className="h-5 w-5 text-blue-400" />
+        <h3 className="text-lg font-medium text-ink-900 flex items-center gap-2">
+          <FileQuestion className="h-5 w-5 text-teal-700" />
           Module Quiz
         </h3>
-        <button onClick={onClose} className="text-white/30 hover:text-white/60 transition-colors">
+        <button onClick={onClose} className="text-ink-500 hover:text-ink-600 transition-colors">
           <X className="h-5 w-5" />
         </button>
       </div>
 
       {quiz.map((q, qi) => (
-        <div key={qi} className="rounded-lg border border-white/5 bg-white/[0.02] p-4">
-          <p className="text-sm font-medium text-white/80 mb-3">
+        <div key={qi} className="rounded-lg border border-ink-200 bg-white p-4">
+          <p className="text-sm font-medium text-ink-900 mb-3">
             {qi + 1}. {q.question}
           </p>
           <div className="space-y-2">
             {q.options.map((opt, oi) => {
-              let optStyle = "border-white/5 bg-white/[0.02] hover:border-white/10 hover:bg-white/[0.04]"
+              let optStyle = "border-ink-200 bg-white hover:border-ink-200 hover:bg-white"
               if (answers[qi] === oi && !submitted) {
-                optStyle = "border-blue-500/30 bg-blue-500/10"
+                optStyle = "border-blue-500/30 bg-teal-800/10"
               }
               if (submitted) {
                 if (oi === q.answer) {
-                  optStyle = "border-emerald-500/30 bg-emerald-500/10"
+                  optStyle = "border-teal-800/30 bg-teal-800/10"
                 } else if (answers[qi] === oi && oi !== q.answer) {
                   optStyle = "border-red-500/30 bg-red-500/10"
                 } else {
-                  optStyle = "border-white/5 bg-white/[0.01] opacity-50"
+                  optStyle = "border-ink-200 bg-white opacity-50"
                 }
               }
               return (
                 <button
                   key={oi}
                   onClick={() => select(qi, oi)}
-                  className={`w-full text-left rounded-lg border px-4 py-2.5 text-sm text-white/70 transition-all ${optStyle}`}
+                  className={`w-full text-left rounded-lg border px-4 py-2.5 text-sm text-ink-600 transition-all ${optStyle}`}
                 >
-                  <span className="text-white/30 mr-2">{String.fromCharCode(65 + oi)}.</span>
+                  <span className="text-ink-500 mr-2">{String.fromCharCode(65 + oi)}.</span>
                   {opt}
                   {submitted && oi === q.answer && (
-                    <CheckCircle2 className="inline h-4 w-4 text-emerald-400 ml-2" />
+                    <CheckCircle2 className="inline h-4 w-4 text-teal-700 ml-2" />
                   )}
                 </button>
               )
@@ -378,21 +378,21 @@ function QuizView({ quiz, onClose }: { quiz: { question: string; options: string
         <button
           onClick={() => setSubmitted(true)}
           disabled={answers.some((a) => a === null)}
-          className="w-full rounded-lg bg-blue-600 hover:bg-blue-500 disabled:bg-white/5 disabled:text-white/20 px-4 py-3 text-sm font-medium text-white transition-colors"
+          className="w-full rounded-lg bg-teal-800 hover:bg-teal-700 disabled:bg-cream-100 disabled:text-ink-500 px-4 py-3 text-sm font-medium text-white transition-colors"
         >
           {answers.some((a) => a === null) ? "Answer all questions to submit" : "Submit Answers"}
         </button>
       ) : (
-        <div className="rounded-lg border border-white/5 bg-white/[0.02] p-4 text-center">
-          <p className="text-2xl font-light text-white/90 mb-1">
+        <div className="rounded-lg border border-ink-200 bg-white p-4 text-center">
+          <p className="text-2xl font-light text-ink-900 mb-1">
             {score}/{quiz.length}
           </p>
-          <p className="text-sm text-white/40">
+          <p className="text-sm text-ink-500">
             {score === quiz.length ? "Perfect score! Well done." : score >= 3 ? "Good effort! Review any you missed." : "Keep practising -- you will get there."}
           </p>
           <button
             onClick={onClose}
-            className="mt-4 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+            className="mt-4 text-sm text-teal-700 hover:text-blue-300 transition-colors"
           >
             Back to module
           </button>
@@ -428,11 +428,11 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
     })()
 
     return (
-      <div className="min-h-screen bg-[#0a0a0a] text-white">
+      <div className="min-h-screen bg-cream-50 text-ink-900">
         <div className="max-w-4xl mx-auto px-6 py-8">
           {/* Demo banner */}
-          <div className="mb-6 rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-4 py-3">
-            <p className="text-sm text-emerald-400">
+          <div className="mb-6 rounded-lg border border-teal-800/20 bg-teal-800/5 px-4 py-3">
+            <p className="text-sm text-teal-700">
               <span className="font-semibold">Student Demo</span> -- Exploring a
               course as a student
             </p>
@@ -441,7 +441,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
           {/* Back */}
           <Link
             href="/demo/student/courses"
-            className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors mb-6"
+            className="inline-flex items-center gap-1.5 text-sm text-ink-500 hover:text-ink-600 transition-colors mb-6"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Back to Courses
@@ -449,43 +449,43 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
 
           {/* Course header */}
           <div className="mb-8">
-            <h1 className="text-2xl font-light tracking-tight text-white/90 mb-2">
+            <h1 className="text-2xl font-light tracking-tight text-ink-900 mb-2">
               {course.title}
             </h1>
-            <p className="text-sm text-white/40 mb-4">{course.description}</p>
-            <div className="flex items-center gap-3 text-xs text-white/40 mb-2">
+            <p className="text-sm text-ink-500 mb-4">{course.description}</p>
+            <div className="flex items-center gap-3 text-xs text-ink-500 mb-2">
               <span>{course.modules.length} modules</span>
               <span>--</span>
               <span>{completedCount} completed</span>
               <span>--</span>
-              <span className="text-white/60">{pct}%</span>
+              <span className="text-ink-600">{pct}%</span>
             </div>
             <ProgressBar value={pct} />
           </div>
 
           {/* Course stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4 text-center">
+            <div className="rounded-xl border border-ink-200 bg-white p-4 text-center">
               <Trophy className="h-5 w-5 text-amber-400 mx-auto mb-2" />
-              <p className="text-lg font-semibold text-white/90">{completedCount}/{course.modules.length}</p>
-              <p className="text-[11px] text-white/30">Lessons Done</p>
+              <p className="text-lg font-semibold text-ink-900">{completedCount}/{course.modules.length}</p>
+              <p className="text-[11px] text-ink-500">Lessons Done</p>
             </div>
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4 text-center">
-              <Star className="h-5 w-5 text-blue-400 mx-auto mb-2" />
-              <p className="text-lg font-semibold text-white/90">{avgQuizScore !== null ? `${avgQuizScore}%` : "--"}</p>
-              <p className="text-[11px] text-white/30">Avg Quiz Score</p>
+            <div className="rounded-xl border border-ink-200 bg-white p-4 text-center">
+              <Star className="h-5 w-5 text-teal-700 mx-auto mb-2" />
+              <p className="text-lg font-semibold text-ink-900">{avgQuizScore !== null ? `${avgQuizScore}%` : "--"}</p>
+              <p className="text-[11px] text-ink-500">Avg Quiz Score</p>
             </div>
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4 text-center">
-              <CheckCircle2 className={`h-5 w-5 mx-auto mb-2 ${course.modules.filter(m => m.quizScore !== null && m.quizScore !== undefined && m.quizScore === m.quizMaxScore).length > 0 ? "text-emerald-400" : "text-white/20"}`} />
-              <p className="text-lg font-semibold text-white/90">
+            <div className="rounded-xl border border-ink-200 bg-white p-4 text-center">
+              <CheckCircle2 className={`h-5 w-5 mx-auto mb-2 ${course.modules.filter(m => m.quizScore !== null && m.quizScore !== undefined && m.quizScore === m.quizMaxScore).length > 0 ? "text-teal-700" : "text-ink-500"}`} />
+              <p className="text-lg font-semibold text-ink-900">
                 {course.modules.filter(m => m.quizScore !== null && m.quizScore !== undefined && m.quizScore === m.quizMaxScore).length}
               </p>
-              <p className="text-[11px] text-white/30">Perfect Scores</p>
+              <p className="text-[11px] text-ink-500">Perfect Scores</p>
             </div>
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4 text-center">
-              <AlertTriangle className={`h-5 w-5 mx-auto mb-2 ${revisionCount > 0 ? "text-red-400" : "text-white/20"}`} />
-              <p className="text-lg font-semibold text-white/90">{revisionCount}</p>
-              <p className="text-[11px] text-white/30">Need Revision</p>
+            <div className="rounded-xl border border-ink-200 bg-white p-4 text-center">
+              <AlertTriangle className={`h-5 w-5 mx-auto mb-2 ${revisionCount > 0 ? "text-red-400" : "text-ink-500"}`} />
+              <p className="text-lg font-semibold text-ink-900">{revisionCount}</p>
+              <p className="text-[11px] text-ink-500">Need Revision</p>
             </div>
           </div>
 
@@ -498,7 +498,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                   <p className="text-sm font-medium text-amber-400 mb-1">
                     {revisionCount} {revisionCount === 1 ? "lesson needs" : "lessons need"} revision
                   </p>
-                  <p className="text-xs text-white/40">
+                  <p className="text-xs text-ink-500">
                     You scored below 60% on {revisionCount === 1 ? "this lesson's quiz" : "these lesson quizzes"}. Revisit the content and retake the quiz to strengthen your understanding.
                   </p>
                 </div>
@@ -520,24 +520,24 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                     setActiveModuleIdx(idx)
                     setShowQuiz(false)
                   }}
-                  className={`w-full group flex items-center gap-3 rounded-lg border px-4 py-3.5 text-left transition-all hover:bg-white/[0.04] ${
+                  className={`w-full group flex items-center gap-3 rounded-lg border px-4 py-3.5 text-left transition-all hover:bg-white ${
                     mod.revisionNeeded
                       ? "border-red-500/15 bg-red-500/[0.03] hover:border-red-500/25"
-                      : "border-white/5 bg-white/[0.02] hover:border-white/10"
+                      : "border-ink-200 bg-white hover:border-ink-200"
                   }`}
                 >
                   {mod.completed ? (
                     mod.revisionNeeded ? (
                       <AlertTriangle className="h-5 w-5 text-red-400 flex-shrink-0" />
                     ) : (
-                      <CheckCircle2 className="h-5 w-5 text-emerald-500 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-teal-700 flex-shrink-0" />
                     )
                   ) : (
-                    <Circle className="h-5 w-5 text-white/15 flex-shrink-0" />
+                    <Circle className="h-5 w-5 text-ink-500/40 flex-shrink-0" />
                   )}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <p className="text-sm text-white/80 truncate">{mod.title}</p>
+                      <p className="text-sm text-ink-900 truncate">{mod.title}</p>
                       {mod.revisionNeeded && (
                         <span className="inline-flex items-center rounded-full bg-red-500/20 border border-red-500/30 px-1.5 py-0.5 text-[9px] font-medium text-red-400 flex-shrink-0">
                           Revision Needed
@@ -545,12 +545,12 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                       )}
                     </div>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <p className="text-[11px] text-white/30">Module {idx + 1} of {course.modules.length}</p>
+                      <p className="text-[11px] text-ink-500">Module {idx + 1} of {course.modules.length}</p>
                       {quizPct !== null && (
                         <>
-                          <span className="text-[11px] text-white/10">|</span>
+                          <span className="text-[11px] text-ink-500/30">|</span>
                           <span className={`text-[11px] font-medium ${
-                            quizPct >= 80 ? "text-emerald-400" : quizPct >= 60 ? "text-amber-400" : "text-red-400"
+                            quizPct >= 80 ? "text-teal-700" : quizPct >= 60 ? "text-amber-400" : "text-red-400"
                           }`}>
                             Quiz: {mod.quizScore}/{mod.quizMaxScore} ({quizPct}%)
                           </span>
@@ -559,13 +559,13 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                       )}
                       {mod.completed && quizPct === null && (
                         <>
-                          <span className="text-[11px] text-white/10">|</span>
-                          <span className="text-[11px] text-white/20">Quiz not taken</span>
+                          <span className="text-[11px] text-ink-500/30">|</span>
+                          <span className="text-[11px] text-ink-500">Quiz not taken</span>
                         </>
                       )}
                     </div>
                   </div>
-                  <ChevronRight className="h-4 w-4 text-white/15 group-hover:text-white/40 transition-colors flex-shrink-0" />
+                  <ChevronRight className="h-4 w-4 text-ink-500/40 group-hover:text-ink-500 transition-colors flex-shrink-0" />
                 </button>
               )
             })}
@@ -581,11 +581,11 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
     : null
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       <div className="max-w-3xl mx-auto px-6 py-8">
         {/* Demo banner */}
-        <div className="mb-6 rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-4 py-3">
-          <p className="text-sm text-emerald-400">
+        <div className="mb-6 rounded-lg border border-teal-800/20 bg-teal-800/5 px-4 py-3">
+          <p className="text-sm text-teal-700">
             <span className="font-semibold">Student Demo</span> -- Viewing
             lesson content
           </p>
@@ -594,7 +594,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
         {/* Back */}
         <button
           onClick={() => { setActiveModuleIdx(null); setShowQuiz(false) }}
-          className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-sm text-ink-500 hover:text-ink-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           Back to module list
@@ -602,10 +602,10 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
 
         {/* Module header */}
         <div className="mb-6">
-          <p className="text-xs text-white/30 mb-1">
+          <p className="text-xs text-ink-500 mb-1">
             Module {activeModuleIdx! + 1} of {course.modules.length}
           </p>
-          <h2 className="text-xl font-light tracking-tight text-white/90">
+          <h2 className="text-xl font-light tracking-tight text-ink-900">
             {activeModule.title}
           </h2>
 
@@ -613,16 +613,16 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
           {quizPct !== null && (
             <div className={`mt-3 inline-flex items-center gap-2 rounded-lg border px-3 py-2 ${
               quizPct >= 80
-                ? "border-emerald-500/20 bg-emerald-500/5"
+                ? "border-teal-800/20 bg-teal-800/5"
                 : quizPct >= 60
                   ? "border-amber-500/20 bg-amber-500/5"
                   : "border-red-500/20 bg-red-500/5"
             }`}>
               <Trophy className={`h-4 w-4 ${
-                quizPct >= 80 ? "text-emerald-400" : quizPct >= 60 ? "text-amber-400" : "text-red-400"
+                quizPct >= 80 ? "text-teal-700" : quizPct >= 60 ? "text-amber-400" : "text-red-400"
               }`} />
               <span className={`text-sm font-medium ${
-                quizPct >= 80 ? "text-emerald-400" : quizPct >= 60 ? "text-amber-400" : "text-red-400"
+                quizPct >= 80 ? "text-teal-700" : quizPct >= 60 ? "text-amber-400" : "text-red-400"
               }`}>
                 Previous score: {activeModule.quizScore}/{activeModule.quizMaxScore} ({quizPct}%)
               </span>
@@ -639,7 +639,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                 <Lightbulb className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs font-medium text-amber-400 mb-1">Revision Suggestion</p>
-                  <p className="text-xs text-white/50 leading-relaxed">{activeModule.revisionTip}</p>
+                  <p className="text-xs text-ink-500 leading-relaxed">{activeModule.revisionTip}</p>
                 </div>
               </div>
             </div>
@@ -651,14 +651,14 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
         ) : (
           <>
             {/* Lesson content */}
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6 mb-6">
-              <div className="flex items-center gap-2 text-xs text-emerald-400/70 mb-4">
+            <div className="rounded-xl border border-ink-200 bg-white p-6 mb-6">
+              <div className="flex items-center gap-2 text-xs text-teal-700/70 mb-4">
                 <BookOpen className="h-4 w-4" />
                 Lesson Content
               </div>
               <div className="prose dark:prose-invert prose-sm max-w-none">
                 {activeModule.lessonContent.split("\n\n").map((paragraph, i) => (
-                  <p key={i} className="text-sm text-white/60 leading-relaxed mb-3 whitespace-pre-line">
+                  <p key={i} className="text-sm text-ink-600 leading-relaxed mb-3 whitespace-pre-line">
                     {paragraph}
                   </p>
                 ))}
@@ -672,7 +672,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                 className={`flex-1 flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-white transition-colors ${
                   activeModule.revisionNeeded
                     ? "bg-amber-600 hover:bg-amber-500"
-                    : "bg-blue-600 hover:bg-blue-500"
+                    : "bg-teal-800 hover:bg-teal-700"
                 }`}
               >
                 <FileQuestion className="h-4 w-4" />
@@ -682,7 +682,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
               {activeModuleIdx! < course.modules.length - 1 && (
                 <button
                   onClick={() => { setActiveModuleIdx(activeModuleIdx! + 1); setShowQuiz(false); window.scrollTo(0, 0) }}
-                  className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-white/10 hover:border-white/20 hover:bg-white/[0.04] px-4 py-3 text-sm font-medium text-white/70 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-ink-200 hover:border-ink-200 hover:bg-white px-4 py-3 text-sm font-medium text-ink-600 transition-colors"
                 >
                   Next Module
                   <ArrowRight className="h-4 w-4" />
@@ -692,7 +692,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
               {activeModuleIdx! > 0 && (
                 <button
                   onClick={() => { setActiveModuleIdx(activeModuleIdx! - 1); setShowQuiz(false); window.scrollTo(0, 0) }}
-                  className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-white/10 hover:border-white/20 hover:bg-white/[0.04] px-4 py-3 text-sm font-medium text-white/70 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-ink-200 hover:border-ink-200 hover:bg-white px-4 py-3 text-sm font-medium text-ink-600 transition-colors"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Previous Module

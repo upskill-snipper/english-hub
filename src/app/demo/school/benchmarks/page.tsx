@@ -148,18 +148,18 @@ export default function BenchmarksPage() {
       {/* ── Header ──────────────────────────────────────────────────────────── */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-white flex items-center gap-3">
-            <BarChart3 className="h-8 w-8 text-blue-400" />
+          <h1 className="text-3xl font-bold text-ink-900 flex items-center gap-3">
+            <BarChart3 className="h-8 w-8 text-teal-700" />
             Performance Benchmarks
           </h1>
-          <p className="text-zinc-400 mt-1">
+          <p className="text-ink-600 mt-1">
             How Riverside Academy compares to national and platform averages
           </p>
         </div>
         <Button
           onClick={handleDownload}
           disabled={downloading}
-          className="bg-blue-600 hover:bg-blue-700 text-white"
+          className="bg-teal-800 hover:bg-teal-700 text-white"
         >
           <Download className="h-4 w-4 mr-2" />
           {downloading ? "Downloading..." : "Download Benchmark Report"}
@@ -172,26 +172,26 @@ export default function BenchmarksPage() {
           const Icon = card.icon
           const isAtRisk = card.label === "At-Risk %"
           return (
-            <Card key={card.label} className="bg-zinc-900 border-zinc-800">
+            <Card key={card.label} className="bg-cream-100 border-ink-200">
               <CardContent className="pt-6">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="p-2 rounded-lg bg-zinc-800">
-                    <Icon className="h-5 w-5 text-blue-400" />
+                  <div className="p-2 rounded-lg bg-cream-100">
+                    <Icon className="h-5 w-5 text-teal-700" />
                   </div>
                   <Badge className="bg-green-500/10 text-green-400 border-green-500/20">
                     <ArrowUpRight className="h-3 w-3 mr-1" />
                     {isAtRisk ? "Better" : "Above Avg"}
                   </Badge>
                 </div>
-                <p className="text-sm text-zinc-400 mb-1">{card.label}</p>
+                <p className="text-sm text-ink-600 mb-1">{card.label}</p>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-white">
+                  <span className="text-2xl font-bold text-ink-900">
                     {card.school}%
                     {card.label === "Average Score" && (
-                      <span className="text-base font-normal text-zinc-400 ml-1">(Grade {percentageToGCSEGrade(card.school)})</span>
+                      <span className="text-base font-normal text-ink-600 ml-1">(Grade {percentageToGCSEGrade(card.school)})</span>
                     )}
                   </span>
-                  <span className="text-sm text-zinc-500">
+                  <span className="text-sm text-ink-900">
                     vs {card.national}% national
                   </span>
                 </div>
@@ -208,10 +208,10 @@ export default function BenchmarksPage() {
       </div>
 
       {/* ── Year Group Benchmarks table ─────────────────────────────────────── */}
-      <Card className="bg-zinc-900 border-zinc-800">
+      <Card className="bg-cream-100 border-ink-200">
         <CardHeader>
-          <CardTitle className="text-white">Year Group Benchmarks</CardTitle>
-          <CardDescription className="text-zinc-400">
+          <CardTitle className="text-ink-900">Year Group Benchmarks</CardTitle>
+          <CardDescription className="text-ink-600">
             Performance by year group compared to national averages
           </CardDescription>
         </CardHeader>
@@ -219,7 +219,7 @@ export default function BenchmarksPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-zinc-800 text-zinc-400">
+                <tr className="border-b border-ink-200 text-ink-600">
                   <th className="text-left py-3 px-4 font-medium">Year Group</th>
                   <th className="text-right py-3 px-4 font-medium">School Avg</th>
                   <th className="text-right py-3 px-4 font-medium">National Avg</th>
@@ -231,11 +231,11 @@ export default function BenchmarksPage() {
                 {yearGroupBenchmarks.map((row) => (
                   <tr
                     key={row.year}
-                    className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors"
+                    className="border-b border-ink-200/50 hover:bg-cream-100/60 transition-colors"
                   >
-                    <td className="py-3 px-4 text-white font-medium">{row.year}</td>
-                    <td className="text-right py-3 px-4 text-white">{row.school}% <span className="text-zinc-500 text-xs">(G{percentageToGCSEGrade(row.school)})</span></td>
-                    <td className="text-right py-3 px-4 text-zinc-400">{row.national}% <span className="text-zinc-600 text-xs">(G{percentageToGCSEGrade(row.national)})</span></td>
+                    <td className="py-3 px-4 text-ink-900 font-medium">{row.year}</td>
+                    <td className="text-right py-3 px-4 text-ink-900">{row.school}% <span className="text-ink-900 text-xs">(G{percentageToGCSEGrade(row.school)})</span></td>
+                    <td className="text-right py-3 px-4 text-ink-600">{row.national}% <span className="text-ink-500 text-xs">(G{percentageToGCSEGrade(row.national)})</span></td>
                     <td className="text-right py-3 px-4">
                       <span className="text-green-400 font-medium">+{row.diff}%</span>
                     </td>
@@ -245,7 +245,7 @@ export default function BenchmarksPage() {
                           row.percentile >= 75
                             ? "bg-green-500/10 text-green-400 border-green-500/20"
                             : row.percentile >= 60
-                            ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
+                            ? "bg-teal-800/10 text-teal-700 border-teal-800/20"
                             : "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
                         }
                       >
@@ -261,13 +261,13 @@ export default function BenchmarksPage() {
       </Card>
 
       {/* ── Subject Area Comparison ─────────────────────────────────────────── */}
-      <Card className="bg-zinc-900 border-zinc-800">
+      <Card className="bg-cream-100 border-ink-200">
         <CardHeader>
-          <CardTitle className="text-white flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-blue-400" />
+          <CardTitle className="text-ink-900 flex items-center gap-2">
+            <BookOpen className="h-5 w-5 text-teal-700" />
             Subject Area Comparison
           </CardTitle>
-          <CardDescription className="text-zinc-400">
+          <CardDescription className="text-ink-600">
             School performance vs platform-wide averages by subject
           </CardDescription>
         </CardHeader>
@@ -278,12 +278,12 @@ export default function BenchmarksPage() {
               return (
                 <div key={subject.subject} className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-white font-medium">{subject.subject}</span>
+                    <span className="text-ink-900 font-medium">{subject.subject}</span>
                     <div className="flex items-center gap-4">
-                      <span className="text-zinc-400">
+                      <span className="text-ink-600">
                         Platform: {subject.platform}%
                       </span>
-                      <span className="text-white font-medium">
+                      <span className="text-ink-900 font-medium">
                         School: {subject.school}%
                       </span>
                       <span className="text-green-400 text-xs font-medium">
@@ -291,9 +291,9 @@ export default function BenchmarksPage() {
                       </span>
                     </div>
                   </div>
-                  <div className="relative h-3 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="relative h-3 bg-cream-100 rounded-full overflow-hidden">
                     <div
-                      className="absolute inset-y-0 left-0 bg-zinc-600 rounded-full"
+                      className="absolute inset-y-0 left-0 bg-ink-200 rounded-full"
                       style={{ width: `${subject.platform}%` }}
                     />
                     <div
@@ -301,13 +301,13 @@ export default function BenchmarksPage() {
                       style={{ width: `${subject.school}%`, opacity: 0.8 }}
                     />
                   </div>
-                  <div className="flex items-center gap-4 text-xs text-zinc-500">
+                  <div className="flex items-center gap-4 text-xs text-ink-900">
                     <span className="flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />
                       School
                     </span>
                     <span className="flex items-center gap-1">
-                      <span className="w-2 h-2 rounded-full bg-zinc-600 inline-block" />
+                      <span className="w-2 h-2 rounded-full bg-ink-200 inline-block" />
                       Platform
                     </span>
                   </div>
@@ -319,13 +319,13 @@ export default function BenchmarksPage() {
       </Card>
 
       {/* ── Trend Over Time ─────────────────────────────────────────────────── */}
-      <Card className="bg-zinc-900 border-zinc-800">
+      <Card className="bg-cream-100 border-ink-200">
         <CardHeader>
-          <CardTitle className="text-white flex items-center gap-2">
+          <CardTitle className="text-ink-900 flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-green-400" />
             Trend Over Time
           </CardTitle>
-          <CardDescription className="text-zinc-400">
+          <CardDescription className="text-ink-600">
             Four-term comparison showing improvement trajectory
           </CardDescription>
         </CardHeader>
@@ -334,27 +334,27 @@ export default function BenchmarksPage() {
             {termTrend.map((term) => (
               <div key={term.term} className="space-y-2">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-zinc-300 font-medium w-36">{term.term}</span>
+                  <span className="text-ink-600 font-medium w-36">{term.term}</span>
                   <div className="flex items-center gap-4">
-                    <span className="text-zinc-400 text-xs">
+                    <span className="text-ink-600 text-xs">
                       National: {term.national}%
                     </span>
-                    <span className="text-white font-medium text-xs">
+                    <span className="text-ink-900 font-medium text-xs">
                       School: {term.school}%
                     </span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="flex-1 relative h-8 bg-zinc-800 rounded overflow-hidden">
+                  <div className="flex-1 relative h-8 bg-cream-100 rounded overflow-hidden">
                     <div
-                      className="absolute inset-y-0 left-0 bg-zinc-700 rounded"
+                      className="absolute inset-y-0 left-0 bg-cream-100 rounded"
                       style={{ width: `${(term.national / maxTermSchool) * 100}%` }}
                     />
                     <div
                       className="absolute inset-y-0 left-0 bg-blue-500/80 rounded flex items-center justify-end pr-2"
                       style={{ width: `${(term.school / maxTermSchool) * 100}%` }}
                     >
-                      <span className="text-xs text-white font-medium">{term.school}%</span>
+                      <span className="text-xs text-ink-900 font-medium">{term.school}%</span>
                     </div>
                   </div>
                   <span className="text-green-400 text-sm font-medium w-12 text-right">
@@ -363,16 +363,16 @@ export default function BenchmarksPage() {
                 </div>
               </div>
             ))}
-            <div className="flex items-center gap-4 text-xs text-zinc-500 mt-2 pt-2 border-t border-zinc-800">
+            <div className="flex items-center gap-4 text-xs text-ink-900 mt-2 pt-2 border-t border-ink-200">
               <span className="flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />
                 School Average
               </span>
               <span className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-zinc-700 inline-block" />
+                <span className="w-2 h-2 rounded-full bg-cream-100 inline-block" />
                 National Average
               </span>
-              <span className="ml-auto text-zinc-500">
+              <span className="ml-auto text-ink-900">
                 +7% improvement over 4 terms
               </span>
             </div>
@@ -381,13 +381,13 @@ export default function BenchmarksPage() {
       </Card>
 
       {/* ── Recommendations ─────────────────────────────────────────────────── */}
-      <Card className="bg-zinc-900 border-zinc-800">
+      <Card className="bg-cream-100 border-ink-200">
         <CardHeader>
-          <CardTitle className="text-white flex items-center gap-2">
+          <CardTitle className="text-ink-900 flex items-center gap-2">
             <Lightbulb className="h-5 w-5 text-yellow-400" />
             Recommendations
           </CardTitle>
-          <CardDescription className="text-zinc-400">
+          <CardDescription className="text-ink-600">
             Actionable insights based on benchmark analysis
           </CardDescription>
         </CardHeader>

@@ -1747,23 +1747,23 @@ export default function LessonBuilderDemo() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       {/* Toast */}
       {toast && (
-        <div className="fixed top-6 right-6 z-50 bg-emerald-600 text-white px-5 py-3 rounded-xl shadow-lg text-sm font-medium animate-fade-in">
+        <div className="fixed top-6 right-6 z-50 bg-teal-800 text-white px-5 py-3 rounded-xl shadow-lg text-sm font-medium animate-fade-in">
           {toast}
         </div>
       )}
 
       <div className="mx-auto max-w-4xl px-6 py-12">
         {/* Header */}
-        <p className="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-4">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-ink-500 mb-4">
           The English Hub
         </p>
         <h1 className="text-4xl sm:text-5xl font-light tracking-tight mb-3">
           Lesson Builder Demo
         </h1>
-        <p className="text-neutral-400 text-lg mb-8 max-w-2xl">
+        <p className="text-ink-600 text-lg mb-8 max-w-2xl">
           See exactly how the AI lesson builder works. Choose your text, year group, and focus -- then generate a complete, differentiated lesson plan in seconds.
         </p>
 
@@ -1782,8 +1782,8 @@ export default function LessonBuilderDemo() {
 
         {/* Form */}
         {!generatedPlan && !isGenerating && (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 mb-10">
-            <h2 className="text-xl font-medium text-white/90 mb-6">Configure Your Lesson</h2>
+          <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
+            <h2 className="text-xl font-medium text-ink-900 mb-6">Configure Your Lesson</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormSelect label="Text / Topic" value={text} onChange={setText} options={[...TEXTS]} />
               <FormSelect label="Year Group" value={yearGroup} onChange={setYearGroup} options={[...YEAR_GROUPS]} />
@@ -1795,7 +1795,7 @@ export default function LessonBuilderDemo() {
             </div>
             <button
               onClick={handleGenerate}
-              className="mt-8 w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-3.5 px-6 transition-colors text-sm"
+              className="mt-8 w-full rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-medium py-3.5 px-6 transition-colors text-sm"
             >
               Generate Lesson Plan
             </button>
@@ -1804,22 +1804,22 @@ export default function LessonBuilderDemo() {
 
         {/* Loading Animation */}
         {isGenerating && (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 mb-10">
+          <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="flex gap-1">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse [animation-delay:150ms]" />
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse [animation-delay:300ms]" />
+                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse [animation-delay:150ms]" />
+                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse [animation-delay:300ms]" />
               </div>
-              <span className="text-sm text-emerald-400 font-medium">Generating lesson plan...</span>
+              <span className="text-sm text-teal-700 font-medium">Generating lesson plan...</span>
             </div>
             <div className="space-y-2 font-mono text-xs">
               {TYPING_LINES.slice(0, typingIndex).map((line, i) => (
-                <div key={i} className="text-neutral-400 animate-fade-in">
-                  <span className="text-emerald-500/60 mr-2">&gt;</span>
+                <div key={i} className="text-ink-600 animate-fade-in">
+                  <span className="text-teal-700/60 mr-2">&gt;</span>
                   {line}
                   {i === typingIndex - 1 && (
-                    <span className="inline-block w-1.5 h-3.5 bg-emerald-400 ml-1 animate-pulse" />
+                    <span className="inline-block w-1.5 h-3.5 bg-teal-600 ml-1 animate-pulse" />
                   )}
                 </div>
               ))}
@@ -1830,36 +1830,36 @@ export default function LessonBuilderDemo() {
         {/* Generated Lesson Plan */}
         {generatedPlan && (
           <>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden mb-6">
+            <div className="rounded-2xl border border-ink-200 bg-white overflow-hidden mb-6">
               {/* Plan Header */}
-              <div className="border-b border-white/10 bg-emerald-500/5 px-6 sm:px-8 py-6">
+              <div className="border-b border-ink-200 bg-teal-800/5 px-6 sm:px-8 py-6">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-400" />
-                  <span className="text-xs uppercase tracking-wider text-emerald-400 font-medium">
+                  <span className="inline-block w-2 h-2 rounded-full bg-teal-600" />
+                  <span className="text-xs uppercase tracking-wider text-teal-700 font-medium">
                     Generated Lesson Plan
                   </span>
                 </div>
-                <h2 className="text-2xl font-medium text-white mb-2">{generatedPlan.title}</h2>
-                <div className="flex flex-wrap gap-3 text-xs text-neutral-400">
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">{generatedPlan.text}</span>
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">{generatedPlan.board}</span>
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">{generatedPlan.yearGroup}</span>
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">{generatedPlan.duration}</span>
+                <h2 className="text-2xl font-medium text-ink-900 mb-2">{generatedPlan.title}</h2>
+                <div className="flex flex-wrap gap-3 text-xs text-ink-600">
+                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">{generatedPlan.text}</span>
+                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">{generatedPlan.board}</span>
+                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">{generatedPlan.yearGroup}</span>
+                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">{generatedPlan.duration}</span>
                 </div>
               </div>
 
               <div className="px-6 sm:px-8 py-6 space-y-8">
                 <Section title="Learning Objectives">
-                  <ol className="list-decimal list-inside space-y-1.5 text-sm text-neutral-300">
+                  <ol className="list-decimal list-inside space-y-1.5 text-sm text-ink-600">
                     {generatedPlan.objectives.map((o, i) => <li key={i}>{o}</li>)}
                   </ol>
                 </Section>
 
                 <Section title="Success Criteria">
-                  <ul className="space-y-1.5 text-sm text-neutral-300">
+                  <ul className="space-y-1.5 text-sm text-ink-600">
                     {generatedPlan.successCriteria.map((s, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-emerald-400 mt-0.5 shrink-0">--</span>{s}
+                        <span className="text-teal-700 mt-0.5 shrink-0">--</span>{s}
                       </li>
                     ))}
                   </ul>
@@ -1868,7 +1868,7 @@ export default function LessonBuilderDemo() {
                 <Section title="Keywords">
                   <div className="flex flex-wrap gap-2">
                     {generatedPlan.keywords.map((k) => (
-                      <span key={k} className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-neutral-300">{k}</span>
+                      <span key={k} className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200 text-xs text-ink-600">{k}</span>
                     ))}
                   </div>
                 </Section>
@@ -1881,26 +1881,26 @@ export default function LessonBuilderDemo() {
 
                 {generatedPlan.homework && (
                   <Section title="Homework">
-                    <p className="text-sm text-neutral-300 leading-relaxed">{generatedPlan.homework}</p>
+                    <p className="text-sm text-ink-600 leading-relaxed">{generatedPlan.homework}</p>
                   </Section>
                 )}
 
                 <Section title="Worksheet Questions">
                   <div className="space-y-5">
                     {generatedPlan.worksheetQuestions.map((q, i) => (
-                      <div key={i} className="rounded-lg border border-white/5 bg-white/[0.02] p-4">
+                      <div key={i} className="rounded-lg border border-ink-200 bg-white p-4">
                         <div className="flex items-start justify-between gap-3 mb-2">
-                          <p className="text-sm text-white font-medium">{i + 1}. {q.question}</p>
+                          <p className="text-sm text-ink-900 font-medium">{i + 1}. {q.question}</p>
                           {q.marks && (
-                            <span className="shrink-0 text-xs text-neutral-500 bg-white/5 px-2 py-0.5 rounded">{q.marks} marks</span>
+                            <span className="shrink-0 text-xs text-ink-500 bg-cream-100 px-2 py-0.5 rounded">{q.marks} marks</span>
                           )}
                         </div>
                         {q.modelAnswer && (
                           <details className="mt-2">
-                            <summary className="text-xs text-emerald-400/70 cursor-pointer hover:text-emerald-400 transition-colors">
+                            <summary className="text-xs text-teal-700/70 cursor-pointer hover:text-teal-700 transition-colors">
                               Show model answer
                             </summary>
-                            <p className="mt-2 text-xs text-neutral-400 leading-relaxed pl-4 border-l border-emerald-500/20">
+                            <p className="mt-2 text-xs text-ink-600 leading-relaxed pl-4 border-l border-teal-800/20">
                               {q.modelAnswer}
                             </p>
                           </details>
@@ -1911,7 +1911,7 @@ export default function LessonBuilderDemo() {
                 </Section>
 
                 <Section title="Teacher Notes">
-                  <ul className="space-y-2 text-sm text-neutral-400">
+                  <ul className="space-y-2 text-sm text-ink-600">
                     {generatedPlan.teacherNotes.map((n, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-amber-400/60 mt-0.5 shrink-0">*</span>{n}
@@ -1936,7 +1936,7 @@ export default function LessonBuilderDemo() {
               <DownloadMenu
                 label="Worksheet"
                 variant="outline"
-                className="text-xs border-white/10 text-neutral-300 hover:bg-white/[0.07] hover:text-white"
+                className="text-xs border-ink-200 text-ink-600 hover:bg-cream-100 hover:text-white"
                 options={[
                   { label: "Download PDF", format: "pdf", onClick: handleDownloadWorksheet },
                   { label: "Download Word (.docx)", format: "word", onClick: handleDownloadWordWorksheet },
@@ -1948,14 +1948,14 @@ export default function LessonBuilderDemo() {
             </div>
 
             {/* CTA */}
-            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6 sm:p-8 text-center mb-10">
-              <p className="text-lg text-white font-medium mb-2">
+            <div className="rounded-2xl border border-teal-800/20 bg-teal-800/5 p-6 sm:p-8 text-center mb-10">
+              <p className="text-lg text-ink-900 font-medium mb-2">
                 This is one of 300+ ready-made lessons.
               </p>
-              <p className="text-neutral-400 text-sm mb-5">
+              <p className="text-ink-600 text-sm mb-5">
                 Start your free month to access them all -- fully editable, printable, and aligned to your exam board.
               </p>
-              <button className="rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-3 px-8 transition-colors text-sm">
+              <button className="rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-medium py-3 px-8 transition-colors text-sm">
                 Start Free Month
               </button>
             </div>
@@ -1991,14 +1991,14 @@ function FormSelect({
 }) {
   return (
     <div>
-      <label className="block text-xs uppercase tracking-wider text-neutral-400 mb-2">{label}</label>
+      <label className="block text-xs uppercase tracking-wider text-ink-600 mb-2">{label}</label>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white text-sm focus:outline-none focus:border-emerald-500/50 transition-colors appearance-none cursor-pointer"
+        className="w-full rounded-lg border border-ink-200 bg-cream-100 px-4 py-3 text-ink-900 text-sm focus:outline-none focus:border-teal-800/50 transition-colors appearance-none cursor-pointer"
       >
         {options.map((o) => (
-          <option key={o} value={o} className="bg-neutral-900 text-white">{o}</option>
+          <option key={o} value={o} className="bg-cream-100 text-ink-900">{o}</option>
         ))}
       </select>
     </div>
@@ -2008,7 +2008,7 @@ function FormSelect({
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="text-xs uppercase tracking-wider text-neutral-500 mb-3 font-medium">{title}</h3>
+      <h3 className="text-xs uppercase tracking-wider text-ink-500 mb-3 font-medium">{title}</h3>
       {children}
     </div>
   );
@@ -2025,21 +2025,21 @@ function ActivityBlock({
 }) {
   const styles = {
     amber: { border: "border-amber-500/20", bg: "bg-amber-500/5", text: "text-amber-400" },
-    emerald: { border: "border-emerald-500/20", bg: "bg-emerald-500/5", text: "text-emerald-400" },
-    violet: { border: "border-violet-500/20", bg: "bg-violet-500/5", text: "text-violet-400" },
+    emerald: { border: "border-teal-800/20", bg: "bg-teal-800/5", text: "text-teal-700" },
+    violet: { border: "border-teal-800/20", bg: "bg-teal-800/5", text: "text-teal-700" },
   }[color];
 
   return (
     <div className={`rounded-xl border ${styles.border} ${styles.bg} p-5`}>
       <div className="flex items-center justify-between mb-3">
         <span className={`text-xs uppercase tracking-wider ${styles.text} font-medium`}>{label}</span>
-        <span className="text-xs text-neutral-500">{activity.duration}</span>
+        <span className="text-xs text-ink-500">{activity.duration}</span>
       </div>
-      <h4 className="text-sm font-medium text-white mb-2">{activity.title}</h4>
-      <p className="text-sm text-neutral-300 leading-relaxed mb-3">{activity.instructions}</p>
+      <h4 className="text-sm font-medium text-ink-900 mb-2">{activity.title}</h4>
+      <p className="text-sm text-ink-600 leading-relaxed mb-3">{activity.instructions}</p>
       {activity.differentiation && (
         <div className="space-y-2 mt-4">
-          <p className="text-xs uppercase tracking-wider text-neutral-500 font-medium">Differentiation</p>
+          <p className="text-xs uppercase tracking-wider text-ink-500 font-medium">Differentiation</p>
           <DiffTier tier="Support" text={activity.differentiation.support} />
           <DiffTier tier="Core" text={activity.differentiation.core} />
           <DiffTier tier="Stretch" text={activity.differentiation.stretch} />
@@ -2047,10 +2047,10 @@ function ActivityBlock({
       )}
       {activity.resources && activity.resources.length > 0 && (
         <div className="mt-4">
-          <p className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-1.5">Resources</p>
+          <p className="text-xs uppercase tracking-wider text-ink-500 font-medium mb-1.5">Resources</p>
           <div className="flex flex-wrap gap-1.5">
             {activity.resources.map((r) => (
-              <span key={r} className="px-2 py-0.5 rounded text-xs text-neutral-400 bg-white/5 border border-white/5">{r}</span>
+              <span key={r} className="px-2 py-0.5 rounded text-xs text-ink-600 bg-cream-100 border border-ink-200">{r}</span>
             ))}
           </div>
         </div>
@@ -2060,11 +2060,11 @@ function ActivityBlock({
 }
 
 function DiffTier({ tier, text }: { tier: string; text: string }) {
-  const color = tier === "Support" ? "text-blue-400" : tier === "Core" ? "text-neutral-300" : "text-orange-400";
+  const color = tier === "Support" ? "text-teal-700" : tier === "Core" ? "text-ink-600" : "text-orange-400";
   return (
     <div className="flex items-start gap-2 text-xs">
       <span className={`shrink-0 font-medium ${color} w-14`}>{tier}</span>
-      <span className="text-neutral-400">{text}</span>
+      <span className="text-ink-600">{text}</span>
     </div>
   );
 }
@@ -2073,7 +2073,7 @@ function ActionButton({ onClick, label }: { onClick: () => void; label: string }
   return (
     <button
       onClick={onClick}
-      className="rounded-lg border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] text-neutral-300 hover:text-white text-xs font-medium py-2.5 px-3 transition-colors"
+      className="rounded-lg border border-ink-200 bg-white hover:bg-cream-100 text-ink-600 hover:text-ink-900 text-xs font-medium py-2.5 px-3 transition-colors"
     >
       {label}
     </button>

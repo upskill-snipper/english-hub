@@ -12,24 +12,24 @@ import { percentageToGCSEGrade } from "@/lib/grades"
 function boardBadgeClass(board: string): string {
   switch (board) {
     case "AQA":
-      return "bg-purple-500/10 text-purple-400 border-purple-500/20"
+      return "bg-clay-500/10 text-clay-600 border-clay-500/20"
     case "Edexcel":
-      return "bg-blue-500/10 text-blue-400 border-blue-500/20"
+      return "bg-teal-800/10 text-teal-700 border-teal-800/20"
     case "OCR":
-      return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+      return "bg-teal-800/10 text-teal-700 border-teal-800/20"
     case "WJEC":
       return "bg-red-500/10 text-red-400 border-red-500/20"
     case "CAIE IGCSE":
       return "bg-amber-500/10 text-amber-400 border-amber-500/20"
     case "KS3":
-      return "bg-violet-500/10 text-violet-400 border-violet-500/20"
+      return "bg-teal-800/10 text-teal-700 border-teal-800/20"
     default:
-      return "bg-neutral-500/10 text-neutral-400 border-neutral-500/20"
+      return "bg-ink-200/10 text-ink-600 border-neutral-500/20"
   }
 }
 
 function progressBarColor(pct: number): string {
-  if (pct >= 70) return "bg-emerald-500"
+  if (pct >= 70) return "bg-teal-700"
   if (pct >= 40) return "bg-amber-500"
   return "bg-red-500"
 }

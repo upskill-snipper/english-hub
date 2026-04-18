@@ -30,16 +30,16 @@ function progressBarColor(pct: number) {
 function trendIcon(cls: typeof TEACHER_DEMO_CLASSES[number]) {
   // Derive trend from DEMO_STUDENTS matched by class name
   const students = DEMO_STUDENTS.filter((s) => s.className === cls.name)
-  if (students.length === 0) return <Minus className="h-3.5 w-3.5 text-white/30" />
+  if (students.length === 0) return <Minus className="h-3.5 w-3.5 text-ink-500" />
   const avgScore = Math.round(students.reduce((sum, s) => sum + s.averageScore, 0) / students.length)
   if (avgScore >= 70) return <TrendingUp className="h-3.5 w-3.5 text-green-400" />
   if (avgScore < 50) return <TrendingDown className="h-3.5 w-3.5 text-red-400" />
-  return <Minus className="h-3.5 w-3.5 text-white/30" />
+  return <Minus className="h-3.5 w-3.5 text-ink-500" />
 }
 
 export default function TeacherClassesPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
@@ -51,38 +51,38 @@ export default function TeacherClassesPage() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-light tracking-tight text-white/90 mb-1">My Classes</h1>
-            <p className="text-sm text-white/40">
+            <h1 className="text-3xl font-light tracking-tight text-ink-900 mb-1">My Classes</h1>
+            <p className="text-sm text-ink-500">
               {TEACHER_DEMO_CLASSES.length} classes -- {DEMO_TEACHER.department} Department
             </p>
           </div>
-          <Button render={<Link href="/demo/teacher" />} variant="outline" size="sm" className="text-white/60 border-white/10 hover:border-white/20">
+          <Button render={<Link href="/demo/teacher" />} variant="outline" size="sm" className="text-ink-600 border-ink-200 hover:border-ink-200">
               Back to Dashboard
           </Button>
         </div>
 
         {/* Summary KPIs */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-            <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">Total Students</p>
-            <p className="text-2xl font-light text-white/80">
+          <div className="rounded-xl border border-ink-200 bg-white p-4">
+            <p className="text-[11px] uppercase tracking-wider text-ink-500 mb-1">Total Students</p>
+            <p className="text-2xl font-light text-ink-900">
               {TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + c.studentCount, 0)}
             </p>
           </div>
-          <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-            <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">Avg Score</p>
+          <div className="rounded-xl border border-ink-200 bg-white p-4">
+            <p className="text-[11px] uppercase tracking-wider text-ink-500 mb-1">Avg Score</p>
             <p className={`text-2xl font-light ${scoreColor(Math.round(TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + c.avgScore, 0) / TEACHER_DEMO_CLASSES.length))}`}>
               {Math.round(TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + c.avgScore, 0) / TEACHER_DEMO_CLASSES.length)}%
             </p>
           </div>
-          <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-            <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">Avg Completion</p>
-            <p className="text-2xl font-light text-white/80">
+          <div className="rounded-xl border border-ink-200 bg-white p-4">
+            <p className="text-[11px] uppercase tracking-wider text-ink-500 mb-1">Avg Completion</p>
+            <p className="text-2xl font-light text-ink-900">
               {Math.round(TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + c.completionRate, 0) / TEACHER_DEMO_CLASSES.length)}%
             </p>
           </div>
-          <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-            <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">At-Risk Students</p>
+          <div className="rounded-xl border border-ink-200 bg-white p-4">
+            <p className="text-[11px] uppercase tracking-wider text-ink-500 mb-1">At-Risk Students</p>
             <p className={`text-2xl font-light ${TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + (c.atRiskCount ?? 0), 0) > 0 ? "text-red-400" : "text-green-400"}`}>
               {TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + (c.atRiskCount ?? 0), 0)}
             </p>
@@ -93,19 +93,19 @@ export default function TeacherClassesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {TEACHER_DEMO_CLASSES.map((cls) => (
             <Link key={cls.id} href={`/demo/teacher/classes/${cls.id}`} className="block group">
-              <Card className="bg-white/[0.02] border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-200 h-full">
+              <Card className="bg-white border-ink-200 hover:border-ink-200 hover:bg-white transition-all duration-200 h-full">
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-base font-medium text-white/90 group-hover:text-white transition-colors">
+                    <CardTitle className="text-base font-medium text-ink-900 group-hover:text-ink-900 transition-colors">
                       {cls.name}
                     </CardTitle>
-                    <ArrowRight className="h-4 w-4 text-white/20 group-hover:text-white/50 transition-colors" />
+                    <ArrowRight className="h-4 w-4 text-ink-500 group-hover:text-ink-500 transition-colors" />
                   </div>
                   <div className="flex items-center gap-2 mt-1">
-                    <Badge variant="outline" className="text-[10px] border-white/10 text-white/50">
+                    <Badge variant="outline" className="text-[10px] border-ink-200 text-ink-500">
                       Year {cls.yearGroup}
                     </Badge>
-                    <Badge variant="outline" className="text-[10px] border-white/10 text-white/50">
+                    <Badge variant="outline" className="text-[10px] border-ink-200 text-ink-500">
                       {cls.examBoard}
                     </Badge>
                   </div>
@@ -114,20 +114,20 @@ export default function TeacherClassesPage() {
                   {/* Stats row */}
                   <div className="grid grid-cols-3 gap-3">
                     <div>
-                      <p className="text-[10px] uppercase tracking-wider text-white/30 mb-0.5">Students</p>
-                      <p className="text-lg font-light text-white/70 flex items-center gap-1.5">
-                        <Users className="h-3.5 w-3.5 text-white/30" />
+                      <p className="text-[10px] uppercase tracking-wider text-ink-500 mb-0.5">Students</p>
+                      <p className="text-lg font-light text-ink-600 flex items-center gap-1.5">
+                        <Users className="h-3.5 w-3.5 text-ink-500" />
                         {cls.studentCount}
                       </p>
                     </div>
                     <div>
-                      <p className="text-[10px] uppercase tracking-wider text-white/30 mb-0.5">Avg Score</p>
+                      <p className="text-[10px] uppercase tracking-wider text-ink-500 mb-0.5">Avg Score</p>
                       <p className={`text-lg font-light ${scoreColor(cls.avgScore)}`}>
                         {cls.avgScore}%
                       </p>
                     </div>
                     <div>
-                      <p className="text-[10px] uppercase tracking-wider text-white/30 mb-0.5">Trend</p>
+                      <p className="text-[10px] uppercase tracking-wider text-ink-500 mb-0.5">Trend</p>
                       <div className="flex items-center gap-1 mt-1">
                         {trendIcon(cls)}
                       </div>
@@ -137,10 +137,10 @@ export default function TeacherClassesPage() {
                   {/* Completion bar */}
                   <div>
                     <div className="flex items-center justify-between mb-1">
-                      <p className="text-[10px] uppercase tracking-wider text-white/30">Completion</p>
-                      <span className="text-xs text-white/40">{cls.completionRate}%</span>
+                      <p className="text-[10px] uppercase tracking-wider text-ink-500">Completion</p>
+                      <span className="text-xs text-ink-500">{cls.completionRate}%</span>
                     </div>
-                    <div className="w-full h-1.5 rounded-full bg-white/5">
+                    <div className="w-full h-1.5 rounded-full bg-cream-100">
                       <div
                         className={`h-1.5 rounded-full ${progressBarColor(cls.completionRate)} transition-all`}
                         style={{ width: `${cls.completionRate}%` }}
@@ -168,7 +168,7 @@ export default function TeacherClassesPage() {
         </div>
 
         {/* Footer */}
-        <p className="mt-10 text-center text-[10px] uppercase tracking-[0.3em] text-neutral-600">
+        <p className="mt-10 text-center text-[10px] uppercase tracking-[0.3em] text-ink-500">
           Demo data -- {DEMO_TEACHER.name} -- {TEACHER_DEMO_CLASSES.length} classes
         </p>
       </div>

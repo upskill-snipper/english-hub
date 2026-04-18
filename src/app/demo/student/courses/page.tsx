@@ -52,7 +52,7 @@ const COURSES = [
 ]
 
 function progressBarColor(pct: number) {
-  if (pct === 100) return "bg-emerald-500"
+  if (pct === 100) return "bg-teal-700"
   if (pct >= 60) return "bg-blue-500"
   if (pct >= 40) return "bg-amber-500"
   return "bg-red-500"
@@ -60,12 +60,12 @@ function progressBarColor(pct: number) {
 
 export default function StudentCoursesPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-cream-50 text-ink-900">
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Back link */}
         <Link
           href="/demo/student"
-          className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-sm text-ink-500 hover:text-ink-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           Back to dashboard
@@ -73,10 +73,10 @@ export default function StudentCoursesPage() {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-light tracking-tight text-white/90">
+          <h1 className="text-3xl font-light tracking-tight text-ink-900">
             My Courses
           </h1>
-          <p className="text-white/40 text-sm mt-1">
+          <p className="text-ink-500 text-sm mt-1">
             {STUDENT.name} -- {STUDENT.year}
           </p>
         </div>
@@ -87,27 +87,27 @@ export default function StudentCoursesPage() {
             <Link
               key={course.id}
               href={`/demo/student/courses/${course.id}`}
-              className="group rounded-xl border border-white/5 bg-white/[0.02] p-5 transition-all hover:border-white/10 hover:bg-white/[0.04]"
+              className="group rounded-xl border border-ink-200 bg-white p-5 transition-all hover:border-ink-200 hover:bg-white"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <BookOpen className="h-4 w-4 text-white/30 flex-shrink-0 mt-0.5" />
-                  <h3 className="text-base font-medium text-white/90 leading-tight">
+                  <BookOpen className="h-4 w-4 text-ink-500 flex-shrink-0 mt-0.5" />
+                  <h3 className="text-base font-medium text-ink-900 leading-tight">
                     {course.title}
                   </h3>
                 </div>
               </div>
 
-              <p className="text-xs text-white/40 mb-4 leading-relaxed">
+              <p className="text-xs text-ink-500 mb-4 leading-relaxed">
                 {course.description}
               </p>
 
-              <div className="flex items-center justify-between text-xs text-white/40 mb-2">
+              <div className="flex items-center justify-between text-xs text-ink-500 mb-2">
                 <span>{course.modules} modules</span>
-                <span className="text-white/60">{course.progress}%</span>
+                <span className="text-ink-600">{course.progress}%</span>
               </div>
 
-              <div className="h-1.5 rounded-full bg-white/5 mb-4">
+              <div className="h-1.5 rounded-full bg-cream-100 mb-4">
                 <div
                   className={`h-1.5 rounded-full ${progressBarColor(course.progress)} transition-all`}
                   style={{ width: `${course.progress}%` }}
@@ -116,14 +116,14 @@ export default function StudentCoursesPage() {
 
               <div className="flex items-center justify-between">
                 {course.progress === 100 ? (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 text-[11px] font-medium text-emerald-400">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-teal-800/10 border border-teal-800/20 px-2.5 py-1 text-[11px] font-medium text-teal-700">
                     <CheckCircle2 className="h-3 w-3" />
                     Completed!
                   </span>
                 ) : (
                   <span />
                 )}
-                <span className="inline-flex items-center gap-1 text-sm text-white/50 group-hover:text-emerald-400 transition-colors">
+                <span className="inline-flex items-center gap-1 text-sm text-ink-500 group-hover:text-teal-700 transition-colors">
                   {course.progress === 100 ? "Review" : "Continue"}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </span>

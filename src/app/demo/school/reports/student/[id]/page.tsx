@@ -14,8 +14,8 @@ function scoreToGrade(score: number): string {
 
 function gradeColor(grade: string): string {
   const num = parseInt(grade);
-  if (num >= 8) return "text-emerald-400 print:text-emerald-700";
-  if (num >= 6) return "text-blue-400 print:text-blue-700";
+  if (num >= 8) return "text-teal-700 print:text-emerald-700";
+  if (num >= 6) return "text-teal-700 print:text-blue-700";
   if (num >= 4) return "text-amber-400 print:text-amber-700";
   return "text-red-400 print:text-red-700";
 }
@@ -43,10 +43,10 @@ function statusDot(status: string): string {
   switch (status) {
     case "excelling":
     case "Excelling":
-      return "bg-emerald-400 print:bg-emerald-600";
+      return "bg-teal-600 print:bg-teal-800";
     case "on-track":
     case "On Track":
-      return "bg-blue-400 print:bg-blue-600";
+      return "bg-blue-400 print:bg-teal-800";
     case "needs-support":
     case "Needs Support":
       return "bg-amber-400 print:bg-amber-600";
@@ -79,11 +79,11 @@ export default function StudentReportPage() {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
-          <h2 className="text-xl font-semibold text-neutral-200">Student Not Found</h2>
-          <p className="mt-2 text-neutral-400">No student exists with this identifier.</p>
+          <h2 className="text-xl font-semibold text-ink-600">Student Not Found</h2>
+          <p className="mt-2 text-ink-600">No student exists with this identifier.</p>
           <Link
             href="/demo/school/reports"
-            className="mt-4 inline-block text-blue-400 hover:underline"
+            className="mt-4 inline-block text-teal-700 hover:underline"
           >
             Back to Reports
           </Link>
@@ -197,7 +197,7 @@ export default function StudentReportPage() {
         <div className="no-print flex items-center justify-between mb-4">
           <Link
             href="/demo/school/reports"
-            className="text-sm text-neutral-400 hover:text-neutral-200 flex items-center gap-1"
+            className="text-sm text-ink-600 hover:text-ink-600 flex items-center gap-1"
           >
             <span>&larr;</span> Back to Reports
           </Link>
@@ -208,14 +208,14 @@ export default function StudentReportPage() {
                   description: "In production, this sends a secure, time-limited link to the student's parents/carers via email. They can view the report without needing an account.",
                 });
               }}
-              className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+              className="px-5 py-2.5 bg-teal-800 hover:bg-teal-800 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
               Share with Parents
             </button>
             <button
               onClick={() => window.print()}
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+              className="px-5 py-2.5 bg-teal-800 hover:bg-teal-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2z" /></svg>
               Download PDF
@@ -224,18 +224,18 @@ export default function StudentReportPage() {
         </div>
 
         {/* Report Header */}
-        <div className="report-header bg-neutral-900 border border-neutral-800 rounded-xl p-8 print:rounded-none">
+        <div className="report-header bg-cream-100 border border-ink-200 rounded-xl p-8 print:rounded-none">
           <div className="flex items-start justify-between">
             <div>
-              <div className="text-sm font-medium text-neutral-400 print:text-neutral-600 uppercase tracking-wider mb-1">
+              <div className="text-sm font-medium text-ink-600 print:text-ink-500 uppercase tracking-wider mb-1">
                 The English Hub
               </div>
               <h1 className="text-2xl font-bold text-neutral-100 print:text-black">
                 Student Progress Report
               </h1>
             </div>
-            <div className="text-right text-sm text-neutral-400 print:text-neutral-600">
-              <div className="w-16 h-16 border-2 border-dashed border-neutral-700 print:border-neutral-400 rounded-lg flex items-center justify-center text-[10px] text-neutral-500 print:text-neutral-500 mb-1 font-medium">
+            <div className="text-right text-sm text-ink-600 print:text-ink-500">
+              <div className="w-16 h-16 border-2 border-dashed border-ink-200 print:border-neutral-400 rounded-lg flex items-center justify-center text-[10px] text-ink-500 print:text-ink-500 mb-1 font-medium">
                 LOGO
               </div>
             </div>
@@ -243,30 +243,30 @@ export default function StudentReportPage() {
 
           <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
             <div>
-              <span className="text-neutral-500 print:text-neutral-600">Student:</span>{" "}
+              <span className="text-ink-500 print:text-ink-500">Student:</span>{" "}
               <span className="text-neutral-100 print:text-black font-medium">{student.name}</span>
             </div>
             <div>
-              <span className="text-neutral-500 print:text-neutral-600">Year Group:</span>{" "}
+              <span className="text-ink-500 print:text-ink-500">Year Group:</span>{" "}
               <span className="text-neutral-100 print:text-black font-medium">{student.yearGroup}</span>
             </div>
             <div>
-              <span className="text-neutral-500 print:text-neutral-600">Class:</span>{" "}
+              <span className="text-ink-500 print:text-ink-500">Class:</span>{" "}
               <span className="text-neutral-100 print:text-black font-medium">{student.className}</span>
             </div>
             <div>
-              <span className="text-neutral-500 print:text-neutral-600">Teacher:</span>{" "}
+              <span className="text-ink-500 print:text-ink-500">Teacher:</span>{" "}
               <span className="text-neutral-100 print:text-black font-medium">{student.teacherName}</span>
             </div>
           </div>
 
-          <div className="mt-4 pt-4 border-t border-neutral-800 print:border-neutral-300 flex items-center justify-between text-sm">
+          <div className="mt-4 pt-4 border-t border-ink-200 print:border-neutral-300 flex items-center justify-between text-sm">
             <div>
-              <span className="text-neutral-500 print:text-neutral-600">Reporting Period:</span>{" "}
+              <span className="text-ink-500 print:text-ink-500">Reporting Period:</span>{" "}
               <span className="text-neutral-100 print:text-black font-medium">Autumn Term 2025-2026</span>
             </div>
             <div>
-              <span className="text-neutral-500 print:text-neutral-600">Date Issued:</span>{" "}
+              <span className="text-ink-500 print:text-ink-500">Date Issued:</span>{" "}
               <span className="text-neutral-100 print:text-black font-medium">
                 {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
               </span>
@@ -275,7 +275,7 @@ export default function StudentReportPage() {
         </div>
 
         {/* Grade Progress Card */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
             Grade Summary
           </h2>
@@ -286,14 +286,14 @@ export default function StudentReportPage() {
             trend={scoreTrend.label === "Improving" ? "up" : scoreTrend.label === "Declining" ? "down" : "stable"}
           />
           {student.readingAge && (
-            <div className="mt-3 text-sm text-neutral-400 print:text-neutral-600">
-              Reading Age: <span className="font-semibold text-neutral-200 print:text-black">{formatReadingAge(student.readingAge)}</span>
+            <div className="mt-3 text-sm text-ink-600 print:text-ink-500">
+              Reading Age: <span className="font-semibold text-ink-600 print:text-black">{formatReadingAge(student.readingAge)}</span>
             </div>
           )}
         </div>
 
         {/* KPI Summary */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
             Overall Assessment
           </h2>
@@ -302,43 +302,43 @@ export default function StudentReportPage() {
               <div className={`text-5xl font-bold ${gradeColor(String(student.workingAtGrade))}`}>
                 {student.workingAtGrade}
               </div>
-              <div className="text-xs text-neutral-500 print:text-neutral-600 mt-1">
+              <div className="text-xs text-ink-500 print:text-ink-500 mt-1">
                 Working At Grade
               </div>
             </div>
             <div className="flex-1 grid grid-cols-4 gap-3 text-sm">
-              <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
+              <div className="bg-cream-100/50 print:bg-neutral-100 rounded-lg p-3 text-center">
                 <div className={`text-2xl font-bold ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>
                   Grade {student.predictedGrade}
                 </div>
-                <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+                <div className="text-ink-500 print:text-ink-500 text-xs mt-1">
                   Predicted Grade
                 </div>
               </div>
-              <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
-                <div className="text-2xl font-bold text-violet-400 print:text-violet-700">
+              <div className="bg-cream-100/50 print:bg-neutral-100 rounded-lg p-3 text-center">
+                <div className="text-2xl font-bold text-teal-700 print:text-violet-700">
                   Grade {student.targetGrade}
                 </div>
-                <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+                <div className="text-ink-500 print:text-ink-500 text-xs mt-1">
                   Target Grade
                 </div>
               </div>
-              <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
+              <div className="bg-cream-100/50 print:bg-neutral-100 rounded-lg p-3 text-center">
                 <div className="text-2xl font-bold text-neutral-100 print:text-black">
                   {completionPct}%
                 </div>
-                <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+                <div className="text-ink-500 print:text-ink-500 text-xs mt-1">
                   Work Completed
                 </div>
               </div>
-              <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
+              <div className="bg-cream-100/50 print:bg-neutral-100 rounded-lg p-3 text-center">
                 <div className="flex items-center justify-center gap-1.5">
                   <span className={`inline-block size-2.5 rounded-full ${statusDot(student.status)}`} />
                   <span className="text-sm font-semibold text-neutral-100 print:text-black">
                     {statusLabel(student.status)}
                   </span>
                 </div>
-                <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+                <div className="text-ink-500 print:text-ink-500 text-xs mt-1">
                   Current Standing
                 </div>
               </div>
@@ -347,7 +347,7 @@ export default function StudentReportPage() {
         </div>
 
         {/* Assessment Results Table */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
             Assessment Results
           </h2>
@@ -355,20 +355,20 @@ export default function StudentReportPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-neutral-800 print:bg-neutral-200">
-                    <th className="text-left px-3 py-2.5 font-semibold text-neutral-300 print:text-black rounded-tl-lg print:rounded-none">
+                  <tr className="bg-cream-100 print:bg-neutral-200">
+                    <th className="text-left px-3 py-2.5 font-semibold text-ink-600 print:text-black rounded-tl-lg print:rounded-none">
                       Assessment
                     </th>
-                    <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
+                    <th className="text-center px-3 py-2.5 font-semibold text-ink-600 print:text-black">
                       Type
                     </th>
-                    <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
+                    <th className="text-center px-3 py-2.5 font-semibold text-ink-600 print:text-black">
                       Date
                     </th>
-                    <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
+                    <th className="text-center px-3 py-2.5 font-semibold text-ink-600 print:text-black">
                       Score
                     </th>
-                    <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black rounded-tr-lg print:rounded-none">
+                    <th className="text-center px-3 py-2.5 font-semibold text-ink-600 print:text-black rounded-tr-lg print:rounded-none">
                       Grade
                     </th>
                   </tr>
@@ -377,28 +377,28 @@ export default function StudentReportPage() {
                   {allAssessments.map((a, i) => (
                     <tr
                       key={`${a.name}-${i}`}
-                      className={i % 2 === 0 ? "bg-neutral-900 print:bg-white" : "bg-neutral-850 print:bg-neutral-50"}
+                      className={i % 2 === 0 ? "bg-cream-100 print:bg-white" : "bg-white print:bg-neutral-50"}
                     >
-                      <td className="px-3 py-2.5 text-neutral-200 print:text-black font-medium">
+                      <td className="px-3 py-2.5 text-ink-600 print:text-black font-medium">
                         {a.name}
                       </td>
                       <td className="px-3 py-2.5 text-center">
                         <span
                           className={`inline-block text-xs px-2 py-0.5 rounded-full font-medium ${
                             a.type === "Mock Exam"
-                              ? "bg-violet-500/15 text-violet-400 print:bg-violet-100 print:text-violet-700"
+                              ? "bg-teal-700/15 text-teal-700 print:bg-teal-100 print:text-violet-700"
                               : a.type === "Essay"
-                              ? "bg-violet-500/15 text-violet-300 print:bg-violet-100 print:text-violet-600"
-                              : "bg-violet-500/10 text-violet-300/80 print:bg-violet-50 print:text-violet-600"
+                              ? "bg-teal-700/15 text-teal-700 print:bg-teal-100 print:text-violet-600"
+                              : "bg-teal-800/10 text-teal-700/80 print:bg-teal-50 print:text-violet-600"
                           }`}
                         >
                           {a.type}
                         </span>
                       </td>
-                      <td className="px-3 py-2.5 text-center text-neutral-400 print:text-neutral-600">
+                      <td className="px-3 py-2.5 text-center text-ink-600 print:text-ink-500">
                         {a.date}
                       </td>
-                      <td className="px-3 py-2.5 text-center text-neutral-300 print:text-black font-medium">
+                      <td className="px-3 py-2.5 text-center text-ink-600 print:text-black font-medium">
                         G{percentageToGCSEGrade(a.score)}
                       </td>
                       <td className={`px-3 py-2.5 text-center font-bold ${gradeColor(a.grade)}`}>
@@ -410,14 +410,14 @@ export default function StudentReportPage() {
               </table>
             </div>
           ) : (
-            <p className="text-sm text-neutral-400 print:text-neutral-600 italic">
+            <p className="text-sm text-ink-600 print:text-ink-500 italic">
               No assessment results available yet.
             </p>
           )}
         </div>
 
         {/* Score Trend */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-3">
             Score Trend
           </h2>
@@ -425,10 +425,10 @@ export default function StudentReportPage() {
             <span
               className={`inline-flex items-center gap-1.5 text-sm font-semibold px-3 py-1 rounded-full ${
                 scoreTrend.label === "Improving"
-                  ? "bg-emerald-500/15 text-emerald-400 print:bg-emerald-100 print:text-emerald-700"
+                  ? "bg-teal-800/10 text-teal-700 print:bg-teal-50 print:text-emerald-700"
                   : scoreTrend.label === "Declining"
                   ? "bg-red-500/15 text-red-400 print:bg-red-100 print:text-red-700"
-                  : "bg-blue-500/15 text-blue-400 print:bg-blue-100 print:text-blue-700"
+                  : "bg-blue-500/15 text-teal-700 print:bg-blue-100 print:text-blue-700"
               }`}
             >
               {scoreTrend.label === "Improving" && (
@@ -443,18 +443,18 @@ export default function StudentReportPage() {
               {scoreTrend.label}
             </span>
           </div>
-          <p className="text-sm text-neutral-300 print:text-black leading-relaxed">
+          <p className="text-sm text-ink-600 print:text-black leading-relaxed">
             {scoreTrend.description}
           </p>
           {student.recentScores.length > 0 && (
             <div className="mt-4 flex items-end gap-2 h-24">
               {student.recentScores.map((score, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <span className="text-[10px] text-neutral-500 print:text-neutral-600 font-medium">G{percentageToGCSEGrade(score)}</span>
-                  <div className="w-full bg-neutral-800 print:bg-neutral-200 rounded-t relative" style={{ height: "70px" }}>
+                  <span className="text-[10px] text-ink-500 print:text-ink-500 font-medium">G{percentageToGCSEGrade(score)}</span>
+                  <div className="w-full bg-cream-100 print:bg-neutral-200 rounded-t relative" style={{ height: "70px" }}>
                     <div
                       className={`absolute bottom-0 left-0 right-0 rounded-t transition-all ${
-                        score >= 70 ? "bg-emerald-500 print:bg-emerald-600" : score >= 50 ? "bg-amber-500 print:bg-amber-600" : "bg-red-500 print:bg-red-600"
+                        score >= 70 ? "bg-teal-700 print:bg-teal-800" : score >= 50 ? "bg-amber-500 print:bg-amber-600" : "bg-red-500 print:bg-red-600"
                       }`}
                       style={{ height: `${(score / 100) * 70}px` }}
                     />
@@ -466,7 +466,7 @@ export default function StudentReportPage() {
         </div>
 
         {/* Module Progress */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
             Module Progress
           </h2>
@@ -475,25 +475,25 @@ export default function StudentReportPage() {
               const pct = mod.progress ?? (mod.status === "Complete" ? 100 : mod.status === "In Progress" ? 50 : 0);
               return (
                 <div key={mod.name} className="flex items-center gap-4">
-                  <span className="text-sm text-neutral-300 print:text-black w-44 shrink-0 font-medium">{mod.name}</span>
-                  <div className="flex-1 bg-neutral-800 print:bg-neutral-200 rounded-full h-3 overflow-hidden">
+                  <span className="text-sm text-ink-600 print:text-black w-44 shrink-0 font-medium">{mod.name}</span>
+                  <div className="flex-1 bg-cream-100 print:bg-neutral-200 rounded-full h-3 overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all ${
-                        (mod.score || 0) >= 70 ? "bg-emerald-500 print:bg-emerald-600" : (mod.score || 0) >= 50 ? "bg-amber-500 print:bg-amber-600" : "bg-red-500 print:bg-red-600"
+                        (mod.score || 0) >= 70 ? "bg-teal-700 print:bg-teal-800" : (mod.score || 0) >= 50 ? "bg-amber-500 print:bg-amber-600" : "bg-red-500 print:bg-red-600"
                       }`}
                       style={{ width: `${pct}%` }}
                     />
                   </div>
-                  <span className="text-sm text-neutral-300 print:text-black w-12 text-right font-semibold">
+                  <span className="text-sm text-ink-600 print:text-black w-12 text-right font-semibold">
                     {mod.score > 0 ? percentageToGCSEGradeLabel(mod.score) : "--"}
                   </span>
                   <span
                     className={`text-xs px-2 py-0.5 rounded-full font-medium w-24 text-center ${
                       mod.status === "Complete"
-                        ? "bg-emerald-500/15 text-emerald-400 print:bg-emerald-100 print:text-emerald-700"
+                        ? "bg-teal-800/10 text-teal-700 print:bg-teal-50 print:text-emerald-700"
                         : mod.status === "In Progress"
-                        ? "bg-blue-500/15 text-blue-400 print:bg-blue-100 print:text-blue-700"
-                        : "bg-neutral-500/15 text-neutral-400 print:bg-neutral-200 print:text-neutral-600"
+                        ? "bg-blue-500/15 text-teal-700 print:bg-blue-100 print:text-blue-700"
+                        : "bg-ink-200/15 text-ink-600 print:bg-neutral-200 print:text-ink-500"
                     }`}
                   >
                     {mod.status || "Not Started"}
@@ -505,11 +505,11 @@ export default function StudentReportPage() {
         </div>
 
         {/* Strengths */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-3">
             Strengths
           </h2>
-          <p className="text-sm text-neutral-300 print:text-black leading-relaxed">
+          <p className="text-sm text-ink-600 print:text-black leading-relaxed">
             {student.name} demonstrates strong ability in{" "}
             {student.strengths.map((s) => (typeof s === "string" ? s : s.name).toLowerCase()).join(", ")}.
             {student.strengths.length > 0 && (() => {
@@ -537,7 +537,7 @@ export default function StudentReportPage() {
               return (
               <span
                 key={sName}
-                className="text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 print:bg-emerald-50 print:text-emerald-700 print:border-emerald-300"
+                className="text-xs px-2.5 py-1 rounded-full bg-teal-800/10 text-teal-700 border border-teal-800/20 print:bg-teal-50 print:text-emerald-700 print:border-emerald-300"
               >
                 {sName}{sScore !== null && <>: {sScore}%</>}
               </span>
@@ -547,11 +547,11 @@ export default function StudentReportPage() {
         </div>
 
         {/* Areas for Development */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-3">
             Areas for Development
           </h2>
-          <p className="text-sm text-neutral-300 print:text-black leading-relaxed">
+          <p className="text-sm text-ink-600 print:text-black leading-relaxed">
             {student.weaknesses.length > 0 ? (
               <>
                 To improve further, {student.name} should focus on developing{" "}
@@ -596,40 +596,40 @@ export default function StudentReportPage() {
         </div>
 
         {/* Attendance & Engagement */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
             Attendance &amp; Engagement
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-            <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
+            <div className="bg-cream-100/50 print:bg-neutral-100 rounded-lg p-3 text-center">
               <div className="text-xl font-bold text-neutral-100 print:text-black">
                 {student.assignmentsCompleted}/{student.assignmentsTotal}
               </div>
-              <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+              <div className="text-ink-500 print:text-ink-500 text-xs mt-1">
                 Assignments Submitted
               </div>
             </div>
-            <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
+            <div className="bg-cream-100/50 print:bg-neutral-100 rounded-lg p-3 text-center">
               <div className="text-xl font-bold text-neutral-100 print:text-black">
                 {student.modulesCompleted}/{student.modules.length}
               </div>
-              <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+              <div className="text-ink-500 print:text-ink-500 text-xs mt-1">
                 Modules Completed
               </div>
             </div>
-            <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
+            <div className="bg-cream-100/50 print:bg-neutral-100 rounded-lg p-3 text-center">
               <div className="text-xl font-bold text-neutral-100 print:text-black">
                 {student.quizAttempts.length}
               </div>
-              <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+              <div className="text-ink-500 print:text-ink-500 text-xs mt-1">
                 Quizzes Attempted
               </div>
             </div>
-            <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
+            <div className="bg-cream-100/50 print:bg-neutral-100 rounded-lg p-3 text-center">
               <div className="text-xl font-bold text-neutral-100 print:text-black">
                 {avgQuizPct}%
               </div>
-              <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+              <div className="text-ink-500 print:text-ink-500 text-xs mt-1">
                 Avg Quiz Score
               </div>
             </div>
@@ -637,11 +637,11 @@ export default function StudentReportPage() {
         </div>
 
         {/* Recommended Next Steps */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-3">
             Recommended Next Steps
           </h2>
-          <ol className="list-decimal list-inside space-y-2 text-sm text-neutral-300 print:text-black">
+          <ol className="list-decimal list-inside space-y-2 text-sm text-ink-600 print:text-black">
             {student.recommendations.map((rec, i) => (
               <li key={i} className="leading-relaxed pl-1">
                 {rec}
@@ -651,12 +651,12 @@ export default function StudentReportPage() {
         </div>
 
         {/* Teacher Comment */}
-        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+        <div className="report-card bg-cream-100 border border-ink-200 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-3">
             Teacher Notes
           </h2>
-          <div className="bg-neutral-800/50 print:bg-neutral-50 rounded-lg p-4 border border-neutral-700 print:border-neutral-300">
-            <p className="text-sm text-neutral-300 print:text-black leading-relaxed italic">
+          <div className="bg-cream-100/50 print:bg-neutral-50 rounded-lg p-4 border border-ink-200 print:border-neutral-300">
+            <p className="text-sm text-ink-600 print:text-black leading-relaxed italic">
               &quot;{student.name} has shown{" "}
               {student.status === "excelling"
                 ? "exceptional dedication and consistently outstanding work this term. Their contributions to class discussions and written assignments are of the highest calibre."
@@ -667,19 +667,19 @@ export default function StudentReportPage() {
                 : "potential in class discussions but this is not yet reflected in their written work. Consistent attendance, completion of set work, and engagement with support sessions are essential to make progress."}
               &quot;
             </p>
-            <p className="text-sm text-neutral-400 print:text-neutral-600 mt-3 text-right">
+            <p className="text-sm text-ink-600 print:text-ink-500 mt-3 text-right">
               -- {student.teacherName}, {student.className}
             </p>
           </div>
         </div>
 
         {/* Previous Reports */}
-        <div className="no-print report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+        <div className="no-print report-card bg-cream-100 border border-ink-200 rounded-xl p-6">
           <h2 className="text-lg font-semibold text-neutral-100 mb-4 flex items-center gap-2">
-            <svg className="h-5 w-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <svg className="h-5 w-5 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             Previous Reports
           </h2>
-          <p className="text-xs text-neutral-500 mb-4">
+          <p className="text-xs text-ink-500 mb-4">
             In the full product, all previously generated reports are archived and accessible here.
           </p>
           <div className="space-y-2">
@@ -692,20 +692,20 @@ export default function StudentReportPage() {
             ].map((report) => (
               <div
                 key={report.date}
-                className="flex items-center justify-between bg-neutral-800/50 rounded-lg px-4 py-3 text-sm"
+                className="flex items-center justify-between bg-cream-100/50 rounded-lg px-4 py-3 text-sm"
               >
                 <div className="flex items-center gap-3">
-                  <svg className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                  <svg className="h-4 w-4 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                   <div>
-                    <span className="text-neutral-200 font-medium">{report.type}</span>
-                    <span className="text-neutral-500 ml-2">-- {report.term}</span>
+                    <span className="text-ink-600 font-medium">{report.type}</span>
+                    <span className="text-ink-500 ml-2">-- {report.term}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-neutral-500 text-xs">{report.date}</span>
+                  <span className="text-ink-500 text-xs">{report.date}</span>
                   <button
                     onClick={() => toast.info("In the full product, this would open the archived report PDF.")}
-                    className="text-blue-400 hover:text-blue-300 text-xs font-medium"
+                    className="text-teal-700 hover:text-blue-300 text-xs font-medium"
                   >
                     View
                   </button>
@@ -716,23 +716,23 @@ export default function StudentReportPage() {
         </div>
 
         {/* Add Teacher Notes */}
-        <div className="no-print report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+        <div className="no-print report-card bg-cream-100 border border-ink-200 rounded-xl p-6">
           <h2 className="text-lg font-semibold text-neutral-100 mb-2 flex items-center gap-2">
             <svg className="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
             Add Teacher Notes
           </h2>
-          <p className="text-xs text-neutral-500 mb-3">
+          <p className="text-xs text-ink-500 mb-3">
             Add additional notes for this report. In the full product, notes are saved and included in the exported PDF.
           </p>
           <textarea
             value={teacherNotes}
             onChange={(e) => setTeacherNotes(e.target.value)}
             placeholder="Add any additional observations, context, or notes about this student's progress..."
-            className="w-full bg-neutral-800/50 border border-neutral-700 rounded-lg p-4 text-sm text-neutral-200 placeholder:text-neutral-600 focus:outline-none focus:border-blue-500/50 resize-y min-h-[100px]"
+            className="w-full bg-cream-100/50 border border-ink-200 rounded-lg p-4 text-sm text-ink-600 placeholder:text-ink-500 focus:outline-none focus:border-blue-500/50 resize-y min-h-[100px]"
             rows={4}
           />
           <div className="flex items-center justify-between mt-3">
-            <span className="text-xs text-neutral-600">
+            <span className="text-xs text-ink-500">
               {teacherNotes.length > 0 ? `${teacherNotes.length} characters` : "No notes added"}
             </span>
             <button
@@ -753,7 +753,7 @@ export default function StudentReportPage() {
         </div>
 
         {/* Footer */}
-        <div className="text-center text-xs text-neutral-500 print:text-neutral-600 pt-4 border-t border-neutral-800 print:border-neutral-300">
+        <div className="text-center text-xs text-ink-500 print:text-ink-500 pt-4 border-t border-ink-200 print:border-neutral-300">
           <p>
             The English Hub -- Student Progress Report -- Confidential
           </p>
@@ -768,7 +768,7 @@ export default function StudentReportPage() {
         <div className="no-print text-center pt-2">
           <button
             onClick={() => window.print()}
-            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2 mx-auto"
+            className="px-5 py-2.5 bg-teal-800 hover:bg-teal-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2 mx-auto"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2z" /></svg>
             Download PDF

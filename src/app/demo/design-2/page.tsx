@@ -214,7 +214,7 @@ export default function NeonBrutalistDashboard() {
 
           {/* ── GRADE TARGETS ── */}
           <div className="mt-8 border-2 border-blue-500 rounded-none p-4 shadow-[4px_4px_0_#3b82f6]">
-            <div className="text-[10px] uppercase tracking-widest text-blue-400 mb-3">grade targets</div>
+            <div className="text-[10px] uppercase tracking-widest text-teal-700 mb-3">grade targets</div>
             <div className="grid grid-cols-2 gap-3">
               {[
                 { subject: 'ENG LANG', current: '6', target: '8', color: '#84cc16' },

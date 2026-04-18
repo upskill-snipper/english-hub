@@ -113,7 +113,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                   {course.level}
                 </span>
                 {course.board && (
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-blue-500/20 text-blue-400">
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-blue-500/20 text-blue-600">
                     {course.board}
                   </span>
                 )}
