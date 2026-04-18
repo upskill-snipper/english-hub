@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { DeepDiveSection } from '../_components/deep-dive-section'
 
 export const metadata: Metadata = {
   title: 'Strange Case of Dr Jekyll and Mr Hyde — Study Guide | The English Hub',
@@ -255,6 +256,28 @@ export default async function JekyllAndHydePage() {
 
   return (
     <>
+      <DeepDiveSection
+        links={[
+          {
+            href: '/revision/texts/jekyll-and-hyde/chapters',
+            icon: 'acts',
+            title: 'Chapter-by-Chapter Analysis',
+            description: 'Detailed breakdown of each chapter with key moments, quotes and analysis.',
+          },
+          {
+            href: '/revision/texts/jekyll-and-hyde/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
+          {
+            href: '/revision/texts/jekyll-and-hyde/key-quotes',
+            icon: 'quotes',
+            title: 'Key Quotes Bank',
+            description: 'Essential quotations organised by theme and character with analysis.',
+          },
+        ]}
+      />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis

@@ -27,7 +27,7 @@ import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
-import { getBoardType } from '@/lib/board/board-filter'
+import { getBoardType, getIgcseHubUrl } from '@/lib/board/board-filter'
 import type { ExamBoard } from '@/lib/board/board-store'
 
 type NavLink = {
@@ -35,11 +35,16 @@ type NavLink = {
   label: string
 }
 
-function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | 'ial' | null): NavLink[] {
+function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | 'ial' | null, board: ExamBoard | null): NavLink[] {
   // Board is set — simplified nav; deeper navigation lives in Paper Dashboard & Toolkit
   if (type) {
+    // For IGCSE boards, "My Papers" goes to the board-specific IGCSE hub
+    const papersHref = type === 'igcse'
+      ? (getIgcseHubUrl(board) ?? '/igcse')
+      : '/dashboard/papers'
+
     return [
-      { href: '/dashboard/papers', label: 'My Papers' },
+      { href: papersHref, label: 'My Papers' },
       { href: '/toolkit', label: 'Toolkit' },
       { href: '/games', label: 'Games' },
       { href: '/pricing', label: 'Pricing' },
@@ -67,7 +72,7 @@ export function Header() {
   const isPremium = profile?.subscription_status === 'pro'
 
   const visibleNavLinks = useMemo(
-    () => getNavForBoardType(isBoardHydrated ? getBoardType(board) : null),
+    () => getNavForBoardType(isBoardHydrated ? getBoardType(board) : null, board),
     [board, isBoardHydrated]
   )
 

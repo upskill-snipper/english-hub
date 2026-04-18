@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { DeepDiveSection } from '../_components/deep-dive-section'
 
 export const metadata: Metadata = {
   title: 'An Inspector Calls — Study Guide | The English Hub',
@@ -200,6 +201,28 @@ export default async function AnInspectorCallsPage() {
 
   return (
     <>
+      <DeepDiveSection
+        links={[
+          {
+            href: '/revision/texts/an-inspector-calls/acts',
+            icon: 'acts',
+            title: 'Act-by-Act Analysis',
+            description: 'Detailed breakdown of each act with key moments, quotes and analysis.',
+          },
+          {
+            href: '/revision/texts/an-inspector-calls/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
+          {
+            href: '/revision/texts/an-inspector-calls/key-quotes',
+            icon: 'quotes',
+            title: 'Key Quotes Bank',
+            description: 'Essential quotations organised by theme and character with analysis.',
+          },
+        ]}
+      />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations (&le;15 words each) reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from your school or local library.

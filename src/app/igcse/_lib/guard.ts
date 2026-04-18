@@ -2,6 +2,9 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import type { ExamBoard } from '@/lib/board/board-config'
 
+// Re-export so existing imports from guard keep working
+export { getIgcseHubUrl } from '@/lib/board/board-filter'
+
 /**
  * Server-side guard for IGCSE pages.
  *
@@ -21,11 +24,13 @@ export async function requireIgcseBoard(
   }
 }
 
-/** Convenience: all three IGCSE boards. */
+/** Convenience: all IGCSE boards. */
 export const ALL_IGCSE_BOARDS: ExamBoard[] = [
   'edexcel-igcse',
+  'edexcel-igcse-lang',
   'cambridge-0500',
   'cambridge-0990',
+  'cambridge-0475',
 ]
 
 /** Convenience: both Cambridge boards (for shared reading/composition). */
@@ -33,3 +38,4 @@ export const CAMBRIDGE_BOARDS: ExamBoard[] = ['cambridge-0500', 'cambridge-0990'
 
 /** Convenience: GCSE-only boards (for detection). */
 export const GCSE_BOARDS: ExamBoard[] = ['aqa', 'edexcel', 'ocr', 'eduqas']
+

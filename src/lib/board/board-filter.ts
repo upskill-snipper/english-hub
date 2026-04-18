@@ -36,6 +36,28 @@ export function isIalBoard(board: ExamBoard | null): boolean {
   return board === 'ial-edexcel'
 }
 
+/**
+ * Returns the board-specific IGCSE hub URL for a given board.
+ * Returns `null` if the board is not an IGCSE board.
+ */
+export function getIgcseHubUrl(board: ExamBoard | null): string | null {
+  if (!board) return null
+  switch (board) {
+    case 'edexcel-igcse':
+      return '/igcse/edexcel'
+    case 'edexcel-igcse-lang':
+      return '/igcse/edexcel-lang'
+    case 'cambridge-0500':
+      return '/igcse/cambridge/0500'
+    case 'cambridge-0990':
+      return '/igcse/cambridge/0990'
+    case 'cambridge-0475':
+      return '/igcse/cambridge'
+    default:
+      return null
+  }
+}
+
 // Routes that are board-specific and should redirect if user is on wrong board
 export const BOARD_SPECIFIC_PATH_PREFIXES: Record<ExamBoard, string[]> = {
   'ks3': [],

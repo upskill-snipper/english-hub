@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { DeepDiveSection } from '../_components/deep-dive-section'
 
 export const metadata: Metadata = {
   title: 'A Christmas Carol — Study Guide | The English Hub',
@@ -222,6 +223,28 @@ export default async function AChristmasCarolPage() {
 
   return (
     <>
+      <DeepDiveSection
+        links={[
+          {
+            href: '/revision/texts/a-christmas-carol/staves',
+            icon: 'acts',
+            title: 'Stave-by-Stave Analysis',
+            description: 'Detailed breakdown of each stave with key moments, quotes and analysis.',
+          },
+          {
+            href: '/revision/texts/a-christmas-carol/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
+          {
+            href: '/revision/texts/a-christmas-carol/key-quotes',
+            icon: 'quotes',
+            title: 'Key Quotes Bank',
+            description: 'Essential quotations organised by theme and character with analysis.',
+          },
+        ]}
+      />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are reproduced freely as the text is no longer subject to copyright.

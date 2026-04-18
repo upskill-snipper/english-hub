@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { DeepDiveSection } from '../_components/deep-dive-section'
 
 export const metadata: Metadata = {
   title: 'Romeo and Juliet — Study Guide | The English Hub',
@@ -245,5 +246,31 @@ export default async function RomeoAndJulietPage() {
     redirect('/revision/texts')
   }
 
-  return <TextGuide data={data} />
+  return (
+    <>
+      <DeepDiveSection
+        links={[
+          {
+            href: '/revision/texts/romeo-and-juliet/acts',
+            icon: 'acts',
+            title: 'Act-by-Act Analysis',
+            description: 'Detailed breakdown of each act with key moments, quotes and analysis.',
+          },
+          {
+            href: '/revision/texts/romeo-and-juliet/essay-plans',
+            icon: 'essays',
+            title: 'Essay Plans',
+            description: 'Ready-made GCSE essay plans with thesis statements, paragraphs and evidence.',
+          },
+          {
+            href: '/revision/texts/romeo-and-juliet/key-quotes',
+            icon: 'quotes',
+            title: 'Key Quotes Bank',
+            description: 'Essential quotations organised by theme and character with analysis.',
+          },
+        ]}
+      />
+      <TextGuide data={data} />
+    </>
+  )
 }
