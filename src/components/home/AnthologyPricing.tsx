@@ -18,11 +18,12 @@ const tiers = [
     ],
     cta: { label: 'Get started', href: '/courses' },
     featured: false,
-    bg: 'bg-cream-100/[0.04] border border-cream-200/10',
-    text: 'text-cream-50',
-    sub: 'text-cream-200/60',
+    bg: 'bg-white border border-ink-200',
+    text: 'text-ink-900',
+    sub: 'text-ink-500',
+    featureText: 'text-ink-600',
     btnClass:
-      'border border-cream-200/20 text-cream-100 hover:bg-cream-50/10',
+      'border border-ink-200 text-ink-900 hover:bg-cream-100 hover:border-ink-300',
   },
   {
     name: 'Student',
@@ -44,9 +45,10 @@ const tiers = [
     featured: true,
     bg: 'bg-teal-800',
     text: 'text-cream-50',
-    sub: 'text-cream-200/70',
+    sub: 'text-teal-300',
+    featureText: 'text-cream-200',
     btnClass:
-      'bg-clay-500 text-cream-50 hover:bg-clay-600 shadow-lg shadow-clay-500/25',
+      'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg shadow-clay-500/25',
   },
   {
     name: 'School',
@@ -65,11 +67,12 @@ const tiers = [
     ],
     cta: { label: 'Book a call', href: '/for-schools' },
     featured: false,
-    bg: 'bg-cream-100/[0.04] border border-cream-200/10',
-    text: 'text-cream-50',
-    sub: 'text-cream-200/60',
+    bg: 'bg-white border border-ink-200',
+    text: 'text-ink-900',
+    sub: 'text-ink-500',
+    featureText: 'text-ink-600',
     btnClass:
-      'border border-cream-200/20 text-cream-100 hover:bg-cream-50/10',
+      'border border-ink-200 text-ink-900 hover:bg-cream-100 hover:border-ink-300',
   },
 ]
 
@@ -79,10 +82,13 @@ export default function AnthologyPricing() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Section head */}
         <div className="mb-12 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-cream-50">
-            Simple, honest pricing.
+          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-clay-500 mb-4">
+            Pricing
+          </p>
+          <h2 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-ink-900" style={{ letterSpacing: '-0.035em' }}>
+            Simple, <em className="italic text-teal-800">honest</em> pricing.
           </h2>
-          <p className="mt-3 text-cream-200/50 text-lg max-w-md mx-auto">
+          <p className="mt-4 text-ink-600 text-lg max-w-md mx-auto font-serif">
             3 free uses per feature. First month free on Student. Cancel anytime.
           </p>
         </div>
@@ -92,30 +98,39 @@ export default function AnthologyPricing() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`rounded-2xl p-8 flex flex-col ${tier.bg} ${tier.text} ${
-                tier.featured ? 'ring-2 ring-clay-400/40 scale-[1.02] shadow-elevated' : ''
+              className={`rounded-3xl p-8 flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${tier.bg} ${tier.text} ${
+                tier.featured ? 'ring-2 ring-clay-400/40 scale-[1.02] shadow-lg' : ''
               }`}
             >
+              {/* Badge for featured */}
+              {tier.featured && (
+                <span className="self-start font-mono text-[10px] font-medium uppercase tracking-[0.14em] bg-clay-500 text-cream-50 px-3 py-1 rounded-full mb-4">
+                  Most popular
+                </span>
+              )}
+
               {/* Name */}
-              <h3 className="text-lg font-bold tracking-tight">{tier.name}</h3>
+              <h3 className="text-lg font-semibold tracking-tight">{tier.name}</h3>
 
               {/* Price */}
               <div className="mt-3 mb-1 flex items-baseline gap-1">
-                <span className="font-serif text-4xl font-extrabold tracking-tight">
+                <span className="font-serif text-5xl font-normal tracking-tight" style={{ letterSpacing: '-0.04em' }}>
                   {tier.price}
                 </span>
                 {tier.period && (
                   <span className={`text-sm ${tier.sub}`}>{tier.period}</span>
                 )}
               </div>
-              <p className={`text-sm mb-6 ${tier.sub}`}>{tier.description}</p>
 
-              {/* Feature list */}
-              <ul className="space-y-2.5 mb-8 flex-1">
-                {tier.features.map((f) => (
-                  <li key={f} className={`flex items-start gap-2.5 text-sm ${tier.sub}`}>
-                    <span className="mt-1.5 block w-1 h-1 rounded-full bg-clay-400 shrink-0" />
-                    {f}
+              {/* Description */}
+              <p className={`text-sm ${tier.sub} mb-6`}>{tier.description}</p>
+
+              {/* Features */}
+              <ul className={`space-y-3 text-sm ${tier.featureText} mb-8 flex-1`}>
+                {tier.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2.5">
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-clay-500" />
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -123,9 +138,10 @@ export default function AnthologyPricing() {
               {/* CTA */}
               <Link
                 href={tier.cta.href}
-                className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-bold transition-colors ${tier.btnClass}`}
+                className={`mt-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-200 ${tier.btnClass}`}
               >
-                {tier.cta.label} &rarr;
+                {tier.cta.label}
+                <span>&rarr;</span>
               </Link>
             </div>
           ))}

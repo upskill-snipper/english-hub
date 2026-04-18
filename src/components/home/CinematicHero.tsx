@@ -167,16 +167,13 @@ export default function CinematicHero() {
     <section className="cinematic-hero-wrap">
       {/* Meta bar */}
       <div className="hero-meta">
-        <span>The English Hub &middot; Cinematic Edition &middot; MMXXVI</span>
+        <span>The English Hub</span>
         <span className="chapter-tag">
-          Now playing:{' '}
-          <em>
-            Chapter {numerals[chapterIdx]} &mdash; {chapter.label}
-          </em>
+          <em>{chapter.audience}</em>
         </span>
         <span className="live-indicator">
           <span className="blink-dot" />
-          Chapters auto-advance &middot; hover to pause
+          Auto-advance &middot; hover to pause
         </span>
       </div>
 
@@ -224,7 +221,7 @@ export default function CinematicHero() {
                 : ({ '--p': '0%' } as React.CSSProperties)
             }
           >
-            <span className="n">Chapter {ch.numeral}</span>
+            <span className="n">{ch.audience}</span>
             <span className="t">
               For <em>{ch.label}</em>
             </span>
@@ -245,11 +242,11 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
     <div className={`scene scene-schools ${active ? 'active' : ''}`}>
       <div className="scene-header">
         <span className="scene-tag">
-          <span className="dot" /> Chapter I &middot; For Schools
+          <span className="dot" /> For Schools
         </span>
         <span className="scene-kicker">One licence &middot; every student &middot; every teacher</span>
       </div>
-      <div className="scene-numeral">I</div>
+      {/* numeral removed */}
 
       {/* Phase rail */}
       <div className="phase-rail">
@@ -558,11 +555,11 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
     <div className={`scene scene-teachers ${active ? 'active' : ''}`}>
       <div className="scene-header">
         <span className="scene-tag">
-          <span className="dot" /> Chapter II &middot; For Teachers
+          <span className="dot" /> For Teachers
         </span>
         <span className="scene-kicker">Plan &middot; teach &middot; mark &mdash; in one hour, not ten</span>
       </div>
-      <div className="scene-numeral">II</div>
+      {/* numeral removed */}
 
       <div className="scene-content">
         <div className="scene-text">
@@ -663,11 +660,11 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
     <div className={`scene scene-students ${active ? 'active' : ''}`}>
       <div className="scene-header">
         <span className="scene-tag">
-          <span className="dot" /> Chapter III &middot; For Students
+          <span className="dot" /> For Students
         </span>
         <span className="scene-kicker">Learn &middot; practise &middot; get feedback &middot; improve</span>
       </div>
-      <div className="scene-numeral">III</div>
+      {/* numeral removed */}
 
       {/* Phase rail */}
       <div className="phase-rail tall">
@@ -1049,11 +1046,11 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
     <div className={`scene scene-parents ${active ? 'active' : ''}`}>
       <div className="scene-header">
         <span className="scene-tag">
-          <span className="dot" /> Chapter IV &middot; For Parents
+          <span className="dot" /> For Parents
         </span>
         <span className="scene-kicker">See the progress &middot; without the pressure</span>
       </div>
-      <div className="scene-numeral">IV</div>
+      {/* numeral removed */}
 
       <div className="scene-content">
         <div className="scene-text">
