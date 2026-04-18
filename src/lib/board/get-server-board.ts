@@ -1,7 +1,10 @@
 import { cookies } from 'next/headers'
 import type { ExamBoard } from './board-store'
+import { BOARDS } from './board-config'
 
-const VALID: ExamBoard[] = ['aqa','edexcel','ocr','eduqas','edexcel-igcse','cambridge-0500','cambridge-0990']
+// Derive valid board IDs from the canonical BOARDS array so new boards
+// are automatically recognised without manually updating this list.
+const VALID: ExamBoard[] = BOARDS.map((b) => b.id)
 
 export async function getServerBoard(): Promise<ExamBoard | null> {
   try {
