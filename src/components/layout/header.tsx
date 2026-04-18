@@ -55,9 +55,11 @@ function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | 'ial' | null, board
 
   // No board selected — marketing visitor nav
   return [
-    { href: '/pricing', label: 'Pricing' },
+    { href: '/board-select', label: 'For Students' },
+    { href: '/for-parents', label: 'For Parents' },
     { href: '/for-teachers', label: 'For Teachers' },
     { href: '/for-schools', label: 'For Schools' },
+    { href: '/pricing', label: 'Pricing' },
   ]
 }
 
