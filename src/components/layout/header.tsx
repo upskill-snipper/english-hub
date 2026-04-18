@@ -12,7 +12,6 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet'
-import { Button, buttonVariants } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import {
   DropdownMenu,
@@ -37,23 +36,23 @@ type NavLink = {
 }
 
 function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | 'ial' | null): NavLink[] {
-  const common: NavLink[] = [
-    { href: '/courses', label: 'Courses' },
-    { href: '/games', label: 'Games' },
-  ]
-  const teacherLinks: NavLink[] = [
+  // Board is set — simplified nav; deeper navigation lives in Paper Dashboard & Toolkit
+  if (type) {
+    return [
+      { href: '/dashboard/papers', label: 'My Papers' },
+      { href: '/toolkit', label: 'Toolkit' },
+      { href: '/games', label: 'Games' },
+      { href: '/pricing', label: 'Pricing' },
+    ]
+  }
+
+  // No board selected — marketing visitor nav
+  return [
+    { href: '#features', label: 'Features' },
+    { href: '/pricing', label: 'Pricing' },
     { href: '/for-teachers', label: 'For Teachers' },
     { href: '/for-schools', label: 'For Schools' },
-    { href: '/pricing', label: 'Pricing' },
   ]
-
-  if (type === 'ks3') return [...common, { href: '/resources', label: 'Resources' }, ...teacherLinks]
-  if (type === 'gcse') return [...common, { href: '/revision', label: 'Revision' }, { href: '/mock-exams', label: 'Mock Exams' }, { href: '/assessment/reading', label: 'Assessment' }, ...teacherLinks]
-  if (type === 'igcse') return [{ href: '/igcse', label: 'IGCSE Hub' }, ...common, { href: '/mock-exams', label: 'Mock Exams' }, ...teacherLinks]
-  // IAL — show revision and mock exams (similar to GCSE for now)
-  if (type === 'ial') return [...common, { href: '/revision', label: 'Revision' }, { href: '/mock-exams', label: 'Mock Exams' }, ...teacherLinks]
-  // No board selected — show generic nav
-  return [...common, { href: '/revision', label: 'Revision' }, ...teacherLinks]
 }
 
 export function Header() {
