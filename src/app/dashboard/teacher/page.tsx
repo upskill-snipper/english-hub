@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AlertTriangle } from "lucide-react";
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
@@ -6,6 +7,10 @@ import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } fro
    - Fetch class stats from /api/teacher/stats
    - Fetch recent submissions from /api/teacher/submissions?limit=5
    - Fetch student activity from /api/teacher/students/activity
+
+   Until those endpoints ship, this page is shown as a PREVIEW of the
+   teacher experience — the prominent banner below makes it unambiguous
+   that the numbers and students on screen are illustrative, not real.
    ───────────────────────────────────────────────────────────────────── */
 
 const MOCK_TEACHER = { firstName: "Ms. Williams" };
@@ -109,13 +114,40 @@ export default function TeacherDashboardPage() {
 
   return (
     <div className="mx-auto max-w-7xl space-y-8">
+      {/* ── Preview banner ──────────────────────────────────────── */}
+      <div
+        role="status"
+        className="flex items-start gap-3 rounded-xl border border-amber-500/40 bg-amber-500/10 px-5 py-4"
+      >
+        <AlertTriangle
+          className="h-5 w-5 shrink-0 text-amber-600 mt-0.5"
+          aria-hidden="true"
+        />
+        <div className="text-sm text-foreground">
+          <p className="font-semibold">Preview &mdash; teacher dashboard is still in development</p>
+          <p className="mt-1 text-muted-foreground">
+            The numbers and students below are illustrative only. Live class stats,
+            real student submissions, and progress tracking are coming soon. If you
+            were expecting live data, please contact us at{' '}
+            <a
+              href="mailto:info@upskillenergy.com"
+              className="underline underline-offset-2 font-medium text-foreground hover:text-primary"
+            >
+              info@upskillenergy.com
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+
       {/* ── Welcome header ──────────────────────────────────────── */}
       <div>
         <h1 className="text-2xl font-bold text-primary sm:text-3xl">
           Welcome back, {teacher.firstName}!
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Here&apos;s an overview of your classes and student progress.
+          Here&apos;s a <strong>preview</strong> of the teacher dashboard. Real data
+          will appear here once class stats and submissions ship.
         </p>
       </div>
 
