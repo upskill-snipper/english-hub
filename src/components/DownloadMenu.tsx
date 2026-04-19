@@ -1,44 +1,34 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { FileText, FileDown, Presentation, ChevronDown } from "lucide-react"
-import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuGroup,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu"
-import { StyleSelectorInline, useResourceStyle, type ResourceStyle } from "@/components/ui/StyleSelector"
-import { ErrorBoundary } from "@/components/ErrorBoundary"
+
+/**
+ * DownloadMenu — Dead-simple download button group.
+ *
+ * Zero external dependencies (no Base UI, no localStorage, no useResourceStyle).
+ * Uses native button + native click-outside detection.
+ *
+ * If anything in this component throws, fall back to plain inline buttons.
+ */
 
 /* ── Types ─────────────────────────────────────────────────────────── */
 
+export type ResourceStyle = "cream" | "dark" | "whiteboard"
+
 export interface DownloadOption {
-  /** Label shown in the menu, e.g. "Download PDF" */
   label: string
-  /** Format key used to distinguish handlers */
   format: "pdf" | "word" | "pptx" | "csv"
-  /** Handler that performs the actual download. Receives the selected style. */
   onClick: (style?: ResourceStyle) => void | Promise<void>
 }
 
 interface DownloadMenuProps {
-  /** Download options to show (order preserved) */
   options: DownloadOption[]
-  /** Optional size variant for the trigger button */
   size?: "sm" | "default" | "lg"
-  /** Optional extra className for the trigger button */
   className?: string
-  /** Text for the primary button label (default: "Download") */
   label?: string
-  /** Variant for the trigger button */
   variant?: "default" | "outline" | "ghost"
-  /** Show style selector in the dropdown (default: true for multi-option, false for single) */
   showStylePicker?: boolean
 }
 
@@ -57,140 +47,185 @@ function formatIcon(format: DownloadOption["format"]) {
   }
 }
 
-/* ── Component ─────────────────────────────────────────────────────── */
+/* ── Plain button styling (inline — no buttonVariants dependency) ──── */
 
-/**
- * A single download button when there is only one option, or a dropdown
- * menu when there are multiple formats available.
- *
- * Usage:
- * ```tsx
- * <DownloadMenu
- *   options={[
- *     { label: "Download PDF",  format: "pdf",  onClick: handlePdf },
- *     { label: "Download Word (.docx)", format: "word", onClick: handleWord },
- *   ]}
- * />
- * ```
- */
-export function DownloadMenu(props: DownloadMenuProps) {
-  // Wrap the entire menu in an error boundary so any unexpected render
-  // failure (e.g. a Base UI internal error or an SSR/hydration mismatch)
-  // shows a small inline notice instead of taking down the whole page.
-  return (
-    <ErrorBoundary
-      label="Download menu unavailable"
-      fallback={
-        <div className="inline-flex items-center gap-2 rounded-lg border border-ink-200 bg-cream-100 px-4 py-2.5 text-xs text-ink-600">
-          <FileDown className="h-4 w-4" />
-          <span>Download temporarily unavailable</span>
-        </div>
-      }
-    >
-      <DownloadMenuInner {...props} />
-    </ErrorBoundary>
-  )
+function buttonClass(variant: "default" | "outline" | "ghost", size: "sm" | "default" | "lg") {
+  const base =
+    "inline-flex items-center justify-center gap-1.5 rounded-lg font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 disabled:opacity-50"
+  const sizeMap = {
+    sm: "h-8 px-3 text-xs",
+    default: "h-9 px-4 text-sm",
+    lg: "h-10 px-5 text-sm",
+  }
+  const variantMap = {
+    default: "bg-teal-800 text-white hover:bg-teal-700",
+    outline: "border border-ink-200 bg-white text-ink-700 hover:bg-cream-50",
+    ghost: "text-ink-700 hover:bg-cream-100",
+  }
+  return cn(base, sizeMap[size], variantMap[variant])
 }
 
-function DownloadMenuInner({
+/* ── Component ─────────────────────────────────────────────────────── */
+
+export function DownloadMenu({
   options,
   size = "default",
   className,
   label = "Download",
   variant = "default",
-  showStylePicker,
 }: DownloadMenuProps) {
+  const [open, setOpen] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
-  const { style, setStyle } = useResourceStyle()
+  const [style, setStyle] = useState<ResourceStyle>("cream")
+  const wrapperRef = useRef<HTMLDivElement>(null)
 
-  // Default: show style picker for multi-option menus
-  const showPicker = showStylePicker ?? options.length > 1
+  // Hydrate style from localStorage client-side only (safe SSR)
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem("english-hub-resource-style")
+      if (stored === "cream" || stored === "dark" || stored === "whiteboard") {
+        setStyle(stored)
+      }
+    } catch {
+      // Ignore — no localStorage available
+    }
+  }, [])
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    if (!open) return
+    function handleOutsideClick(e: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleOutsideClick)
+    return () => document.removeEventListener("mousedown", handleOutsideClick)
+  }, [open])
+
+  // Persist style choice
+  function selectStyle(next: ResourceStyle) {
+    setStyle(next)
+    try {
+      window.localStorage.setItem("english-hub-resource-style", next)
+    } catch {
+      // Ignore
+    }
+  }
 
   if (options.length === 0) return null
 
   /**
-   * Bulletproof click dispatcher.
-   *
-   * Belt-and-braces protection:
-   *  - Always returns a resolved Promise (never throws synchronously)
-   *  - Catches sync throws from the handler before they touch React
-   *  - Catches async rejections from the handler
-   *  - If `setToast` itself throws (state on unmounted component etc.),
-   *    falls back to a console error so nothing escapes to React's
-   *    error boundary
+   * Bulletproof click dispatcher. NEVER throws to React.
    */
   function handleClick(opt: DownloadOption): void {
-    // Run inside a microtask so any sync throw becomes a rejected promise
+    setOpen(false)
     Promise.resolve()
       .then(() => opt.onClick(style))
+      .then(() => {
+        try {
+          setToast(`${opt.label} started`)
+          setTimeout(() => {
+            try { setToast(null) } catch { /* unmounted */ }
+          }, 2500)
+        } catch { /* unmounted */ }
+      })
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.error(`[DownloadMenu] Download failed (${opt.format}):`, err)
         try {
-          setToast("Download failed -- please try again")
+          setToast(`${opt.label} failed — try again`)
           setTimeout(() => {
-            try {
-              setToast(null)
-            } catch {
-              // ignore: component may have unmounted
-            }
-          }, 3000)
-        } catch {
-          // ignore: setState on unmounted component
-        }
+            try { setToast(null) } catch { /* unmounted */ }
+          }, 3500)
+        } catch { /* unmounted */ }
       })
   }
 
-  // Single option -- render a plain button, no dropdown needed
-  if (options.length === 1 && !showPicker) {
+  // Single option — render plain button
+  if (options.length === 1) {
     const opt = options[0]
     return (
       <>
         <button
-          className={cn(buttonVariants({ variant, size }), className)}
+          type="button"
+          className={cn(buttonClass(variant, size), className)}
           onClick={() => handleClick(opt)}
         >
           {formatIcon(opt.format)}
-          <span className="ml-1.5">{opt.label}</span>
+          <span>{opt.label}</span>
         </button>
         {toast && <DownloadToast message={toast} onDismiss={() => setToast(null)} />}
       </>
     )
   }
 
-  // Multiple options (or single with style picker) -- render a dropdown
+  // Multiple options — native dropdown using plain HTML
   return (
     <>
-      <DropdownMenu>
-        <DropdownMenuTrigger
-          render={<button className={cn(buttonVariants({ variant, size }), className)} />}
+      <div ref={wrapperRef} className="relative inline-block">
+        <button
+          type="button"
+          className={cn(buttonClass(variant, size), className)}
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-haspopup="menu"
         >
           <FileDown className="h-4 w-4" />
-          <span className="ml-1.5">{label}</span>
-          <ChevronDown className="ml-1 h-3.5 w-3.5 opacity-60" />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="min-w-[220px]">
-          {showPicker && (
-            <>
-              <DropdownMenuLabel>Style</DropdownMenuLabel>
-              <div className="px-2 py-1.5">
-                <StyleSelectorInline value={style} onChange={setStyle} />
+          <span>{label}</span>
+          <ChevronDown className={cn("h-3.5 w-3.5 opacity-60 transition-transform", open && "rotate-180")} />
+        </button>
+
+        {open && (
+          <div
+            role="menu"
+            className="absolute left-0 top-full z-50 mt-1 min-w-[240px] overflow-hidden rounded-lg border border-ink-200 bg-white shadow-lg"
+          >
+            {/* Style picker */}
+            <div className="border-b border-ink-100 bg-cream-50 px-3 py-2">
+              <p className="font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-1.5">
+                Style
+              </p>
+              <div className="flex gap-1">
+                {(["cream", "dark", "whiteboard"] as ResourceStyle[]).map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => selectStyle(s)}
+                    className={cn(
+                      "flex-1 rounded-md px-2 py-1 font-mono text-[10px] uppercase tracking-[0.12em] transition-colors",
+                      style === s
+                        ? "bg-clay-500 text-white"
+                        : "bg-white text-ink-500 hover:bg-cream-100"
+                    )}
+                  >
+                    {s}
+                  </button>
+                ))}
               </div>
-              <DropdownMenuSeparator />
-            </>
-          )}
-          <DropdownMenuGroup>
-            <DropdownMenuLabel>Choose format</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            {options.map((opt) => (
-              <DropdownMenuItem key={opt.format} onClick={() => handleClick(opt)}>
-                {formatIcon(opt.format)}
-                {opt.label}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
+            </div>
+
+            {/* Format options */}
+            <div className="py-1">
+              <p className="font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-ink-500 px-3 py-1.5">
+                Format
+              </p>
+              {options.map((opt) => (
+                <button
+                  key={opt.format}
+                  type="button"
+                  role="menuitem"
+                  onClick={() => handleClick(opt)}
+                  className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-ink-700 transition-colors hover:bg-cream-50 focus:bg-cream-50 focus:outline-none"
+                >
+                  {formatIcon(opt.format)}
+                  <span>{opt.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
       {toast && <DownloadToast message={toast} onDismiss={() => setToast(null)} />}
     </>
   )
@@ -205,13 +240,25 @@ function DownloadToast({
   message: string
   onDismiss: () => void
 }) {
+  const isError = message.toLowerCase().includes("failed")
   return (
-    <div className="fixed top-6 right-6 z-50 animate-in slide-in-from-top-2 fade-in duration-300">
-      <div className="flex items-center gap-3 rounded-xl border border-red-500/30 bg-red-500/10 backdrop-blur-sm px-5 py-3 text-sm text-red-200 shadow-lg shadow-red-500/5">
-        <span>{message}</span>
+    <div className="fixed top-6 right-6 z-50">
+      <div
+        className={cn(
+          "flex items-center gap-3 rounded-xl border px-5 py-3 text-sm shadow-lg backdrop-blur-sm",
+          isError
+            ? "border-clay-500/30 bg-clay-500/10 text-clay-700"
+            : "border-teal-700/30 bg-teal-700/10 text-teal-800"
+        )}
+      >
+        <span className="font-medium">{message}</span>
         <button
+          type="button"
           onClick={onDismiss}
-          className="ml-2 text-red-400 hover:text-red-300 font-semibold"
+          className={cn(
+            "font-semibold hover:opacity-80",
+            isError ? "text-clay-600" : "text-teal-700"
+          )}
         >
           Dismiss
         </button>
