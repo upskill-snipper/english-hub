@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import PptxGenJS from 'pptxgenjs'
-import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { rateLimit } from '@/lib/rate-limit'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { hasActiveSubscription } from '@/lib/course-access'
 import {
   titleSlide,
   objectivesSlide,
@@ -273,9 +275,27 @@ function buildResourcePptx(data: ResourcePptxData, skin: SlideSkin = 'cream'): P
 
 export async function POST(request: NextRequest) {
   try {
-    // ── Rate limit: 20 per hour per IP ──────────────────────────────────
-    const ip = getClientIp(request.headers)
-    const rl = await rateLimit(`generate-pptx:${ip}`, { limit: 20, windowSeconds: 3600 })
+    // ── 1. Authenticate ────────────────────────────────────────────────
+    const supabase = createServerSupabaseClient()
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    if (authError || !user) {
+      return NextResponse.json(
+        { error: 'You must be signed in to generate lesson materials.' },
+        { status: 401 },
+      )
+    }
+
+    // ── 2. Subscription check — Pro / Teacher feature ─────────────────
+    const isPro = await hasActiveSubscription(supabase, user.id)
+    if (!isPro) {
+      return NextResponse.json(
+        { error: 'Lesson material generation is a Pro feature. Please upgrade your subscription to continue.' },
+        { status: 403 },
+      )
+    }
+
+    // ── 3. Per-user rate limit: 20 per hour ────────────────────────────
+    const rl = await rateLimit(`generate-pptx:${user.id}`, { limit: 20, windowSeconds: 3600 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },

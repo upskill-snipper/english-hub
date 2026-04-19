@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { rateLimit } from '@/lib/rate-limit'
 import { SET_TEXTS } from '@/lib/board/set-texts'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { hasActiveSubscription } from '@/lib/course-access'
 
 // ─── POST /api/toolkit/generate-test ───────────────────────────────────────
 // Generates a custom quiz from the available question bank + set-texts data.
@@ -176,9 +178,27 @@ function generateQuestionsFromSetTexts(
 }
 
 export async function POST(request: NextRequest) {
-  // Rate limit: 10 per hour
-  const ip = getClientIp(request.headers)
-  const rl = await rateLimit(`toolkit-test:${ip}`, {
+  // 1. Authenticate
+  const supabase = createServerSupabaseClient()
+  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  if (authError || !user) {
+    return NextResponse.json(
+      { error: 'You must be signed in to generate a custom test.' },
+      { status: 401 }
+    )
+  }
+
+  // 2. Subscription check — Pro-only feature
+  const isPro = await hasActiveSubscription(supabase, user.id)
+  if (!isPro) {
+    return NextResponse.json(
+      { error: 'Custom test generation is a Pro feature. Please upgrade your subscription to continue.' },
+      { status: 403 }
+    )
+  }
+
+  // 3. Per-user rate limit
+  const rl = await rateLimit(`toolkit-test:${user.id}`, {
     limit: 10,
     windowSeconds: 3600,
   })
