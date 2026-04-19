@@ -194,7 +194,7 @@ export default function PricingSection() {
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
-                Limited to 10 schools. Heavily discounted pricing with locked preferential rates for 2-3 years.
+                Founding partner pricing reserved for the first 10 schools to sign. Locked preferential rates for 2-3 years. Later schools welcome at standard pricing.
               </p>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
@@ -233,10 +233,10 @@ export default function PricingSection() {
           </div>
           <div className="flex-1">
             <p className="font-semibold text-foreground text-base mb-0.5">
-              Founding Schools Programme &mdash; 2026. Limited to 10 schools.
+              Founding Schools Programme &mdash; 2026. First 10 schools get founding rates.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Be one of the first 10 schools to join. Heavily discounted pricing, early features, direct product input, and locked preferential rates.
+              Be one of the first 10 schools to join and get founding-partner pricing, early features, direct product input, and locked preferential rates for 2-3 years. Additional schools are welcome at standard rates thereafter.
             </p>
           </div>
           <Button variant="outline" className="border-amber-500/50 text-clay-600 hover:bg-amber-500/10 hover:text-amber-700 shrink-0" render={<Link href="/for-schools" />}>

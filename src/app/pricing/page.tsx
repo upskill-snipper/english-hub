@@ -481,14 +481,15 @@ export default function PricingPage() {
               className="bg-amber-500/10 border-amber-500/25 text-amber-600 text-sm font-bold mb-6 gap-2 px-4 py-1.5"
             >
               <School className="w-4 h-4" />
-              Limited to 10 Schools
+              Founding Partner Pricing — First 10 Schools
             </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground max-w-3xl mx-auto leading-tight">
               Founding Schools Programme — 2026
             </h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-              This is not a free trial. It is a strategic partnership with a limited number of
-              schools who will shape the future of the platform.
+              This is not a free trial. It is a strategic partnership: the first 10 schools to
+              join receive founding partner pricing and shape the future of the platform.
+              Additional schools are welcome at standard rates once the founding cohort closes.
             </p>
           </div>
 

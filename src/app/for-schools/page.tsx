@@ -220,7 +220,7 @@ const TESTIMONIALS = [
 const SCHOOL_FAQS = [
   {
     q: "What is the Founding Schools Programme?",
-    a: "The Founding Schools Programme is a strategic partnership for the 2026 academic year, limited to 10 schools. Founding schools receive full platform access, early features, direct product input, priority onboarding, and locked preferential pricing for 2-3 years. This is not a free trial -- it is a partnership with heavily discounted pricing tailored to your department size.",
+    a: "The Founding Schools Programme is a strategic partnership for the 2026 academic year. The first 10 schools to sign are designated as founding partners and receive early features, direct product input, priority onboarding, founding partner recognition, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates once the founding cohort closes. This is not a free trial -- it is a discounted, long-term partnership tailored to your department size.",
   },
   {
     q: "How much does it cost?",
@@ -509,7 +509,7 @@ export default function ForSchoolsPage() {
                 </div>
                 <div>
                   <p className="font-bold text-foreground">Founding Schools Programme</p>
-                  <p className="text-xs text-muted-foreground">Limited to 10 schools -- 2026</p>
+                  <p className="text-xs text-muted-foreground">First 10 schools -- 2026 founding rate</p>
                 </div>
               </div>
               <div className="mb-6">
@@ -559,8 +559,8 @@ export default function ForSchoolsPage() {
               <div className="rounded-xl bg-amber-500/5 border border-amber-500/20 p-4 mb-6">
                 <p className="text-sm font-semibold text-amber-600 mb-1">Why join now?</p>
                 <p className="text-sm text-muted-foreground">
-                  Founding schools lock in preferential rates for 2-3 years. Post-programme pricing
-                  will be substantially higher. This offer closes when 10 schools have joined.
+                  The first 10 schools to sign lock in founding-partner rates for 2-3 years.
+                  Schools joining after the founding cohort closes pay standard (higher) rates.
                 </p>
               </div>
               <ul className="space-y-3 flex-1">
@@ -586,7 +586,8 @@ export default function ForSchoolsPage() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-8">
-            Only 10 schools. When the programme closes, it closes. Book a call to secure your place.
+            Founding partner pricing is reserved for the first 10 schools to sign. Book a call
+            to secure your founding place -- later schools are welcome at standard rates.
           </p>
         </div>
       </section>
@@ -1121,8 +1122,8 @@ export default function ForSchoolsPage() {
             <span className="text-primary">Before It Closes</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto mb-10">
-            Only 10 schools. Heavily discounted pricing locked for 2-3 years. Early features.
-            Direct product input. When the programme closes, it closes.
+            First 10 schools get founding-partner pricing, locked for 2-3 years. Early features.
+            Direct product input. Additional schools welcome at standard rates after the cohort closes.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="text-base px-10 h-13 shadow-xl shadow-primary/25 gap-2 font-bold" render={<Link href="/contact" />}>

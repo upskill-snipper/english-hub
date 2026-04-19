@@ -98,7 +98,7 @@ export default function AnthologyPricing() {
             Simple, <em className="italic text-teal-800">honest</em> pricing.
           </h2>
           <p className="mt-4 text-ink-600 text-lg max-w-lg mx-auto font-serif">
-            First month free for students and teachers. Founding schools get a locked-in rate — only {PRICING.FOUNDER_SCHOOL_LIMIT} places.
+            First month free for students and teachers. The first {PRICING.FOUNDER_SCHOOL_LIMIT} schools to sign lock in founding-partner pricing for 2-3 years.
           </p>
         </div>
 
