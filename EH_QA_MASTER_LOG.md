@@ -297,11 +297,62 @@ Next 14→15 and RLS SQL deferred to separate PRs.
 - `npx tsc --noEmit` — **0 errors** (exit 0)
 - `npx next lint` — **0 errors, warnings pre-existing in test files and `src/lib/*`** (exit 0)
 - `npx vitest run` — **681 pass, 12 fail**. All 12 failures are in `board-store.test.ts` + `board-system.test.ts` (IGCSE board naming + grade-boundaries coverage) and fail identically on HEAD without my changes. **Zero new test failures introduced by Wave B.**
-- Full `next build` not run (long). Recommended before commit.
+- `npm run build` — **passes** (production bundle built successfully).
 
 ### Status
 
-Branch `qa/cycle-1-wave-b-v2` has 13 modified files + 1 new file, uncommitted. Awaiting owner decision on commit + merge path.
+Wave B is **committed and pushed**. Two branches now exist, both green:
+
+#### `qa/cycle-1-wave-b-v2` — P0/P1 fixes + CI hardening + RPC migration
+
+7 commits on top of `main`:
+
+1. `fix(security): lock down parent-notify + toolkit AI endpoints (P0)` — `c48d384`
+2. `fix(dashboard): redirect stub essay flow + mark teacher dashboard as preview (P0)` — `87e9efe`
+3. `fix(privacy): gate Vercel Analytics + Rewardful behind cookie consent (P0)` — `11d8f94`
+4. `fix(marketing): rewrite 'Limited to 10 Schools' to truthful founding-partner framing (P1)` — `81c7cbb`
+5. `docs(qa): Cycle 1 Wave B change manifest + owner answers` — `dcb9c70`
+6. `feat(db): add verify_certificate RPC for minimal-field public verification (P1-SEC-3)` — `f116cf9`
+7. `ci: block deploys on failing quality gate + tighten audit posture (P1-INFRA-2,3)` — `46badee`
+
+Create PR: https://github.com/upskill-snipper/english-hub/pull/new/qa/cycle-1-wave-b-v2
+
+#### `qa/next15-upgrade` — P0-INFRA-1 semver-major framework bump
+
+1 commit on top of `main`:
+
+1. `feat(deps): upgrade Next 14→15 + React 18→19 + Anthropic SDK 0.80→0.90 (P0-INFRA-1)` — `f351304`
+
+Create PR: https://github.com/upskill-snipper/english-hub/pull/new/qa/next15-upgrade
+
+**Merge order:** Land `qa/cycle-1-wave-b-v2` first, then rebase `qa/next15-upgrade` onto main (the Next 15 branch was cut from main before Wave B landed).
+
+### Items that remain open (not in this cycle's scope)
+
+| Ref | Item | Notes |
+|---|---|---|
+| P1-SEC-3 (step 2) | Update `/verify/[id]/client-page.tsx` to call `supabase.rpc('verify_certificate', ...)` instead of `.from('certificates').select('*')` | Additive SQL migration is committed (`20260419_certificate_public_rpc.sql`); apply it first, then ship the client change. |
+| P1-SEC-3 (step 3) | Drop the `"Public can verify certificates" FOR SELECT USING (TRUE)` policy | Only after client is on the RPC in production. |
+| P1-SEC-4 | `school_join_codes` RLS — same pattern: replace the `is_active = TRUE` open policy with a SECURITY DEFINER RPC that takes a code string and returns only school_id + class_id | Needs an understanding of the join-flow UX to scope the RPC correctly. |
+| P1-SEC-5 + SEC-6 | Login/register account-enumeration via verbatim Supabase errors | One-file fix per, touches live auth UX — worth coordinating with user flows. |
+| P1-SEC-7 / Live | CSP `script-src 'unsafe-inline'` + COOP / CORP / frame-ancestors / form-action | Ties into the Next 15 per-request nonce pattern; do after `qa/next15-upgrade` lands. |
+| P1-INFRA-6 | `sentry.edge.config.ts` so middleware errors are reported | 1-file follow-up. |
+| P1-INFRA-7 | Pin `amondnet/vercel-action@v25` by SHA instead of major tag | Supply-chain hardening — straightforward. |
+| P2-SEC-1 | AI output via `dangerouslySetInnerHTML` in `toolkit/revision-builder/page.tsx:313` + `toolkit/my-materials/page.tsx:188` — run through DOMPurify | Widened attack surface for the now-locked-down generate-notes endpoint; still worth closing. |
+| P2-SEC-2 | Verify `20260322_new_features.sql` does not recreate the permissive `FOR ALL USING (true)` on `parental_consents` after `004_fix_school_rls.sql` drops it (migration sort order) | Needs a query against `pg_policies` on live to confirm — could not verify statically. |
+| P2-SEC-3 | CSRF Origin check in middleware passes when Origin header is absent | Tighten to require Origin present OR `sec-fetch-site=same-origin`. |
+| P2-SEC-5 | `webhook_events` idempotency table not in committed migrations | Likely exists in live DB; commit the DDL so reproducible deploys include it. |
+| Destructive testing | Auth enumeration, RBAC cross-role probes, live XSS, live AI prompt injection | Requires a staging environment; not safe against prod. |
+
+---
+
+## CYCLE 1 STATUS · 2026-04-19
+
+- **Wave A** (review): ✅ complete — 91 findings across security, compliance, infra, UX, and live headers.
+- **Wave B** (fix): ✅ complete — 14 items fixed + merged patterns from the concurrent `a64da8a` commit + Next 15 / React 19 / Anthropic SDK semver-major upgrade. Two branches pushed, both green.
+- **Wave C** (verify): Deferred to post-merge. The new CI `quality-gate` job will perform automated verification on every future PR (lint + typecheck + tests + critical-audit, blocking).
+
+Cycles 2–5 have not been run. A full re-review is most valuable **after** the two PRs above are merged and deployed, so the next cycle runs against the fixed baseline rather than the pre-fix state.
 
 ---
 
