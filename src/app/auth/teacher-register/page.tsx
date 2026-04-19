@@ -51,6 +51,7 @@ export default function TeacherRegisterPage() {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [schoolName, setSchoolName] = useState('')
+  const [selectedExamBoard, setSelectedExamBoard] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [dobDay, setDobDay] = useState('')
@@ -165,6 +166,7 @@ export default function TeacherRegisterPage() {
             dateOfBirth,
             country: 'GB',
             ...(schoolName.trim() ? { school: schoolName.trim() } : {}),
+            ...(selectedExamBoard ? { selectedExamBoard } : {}),
           }),
         }).catch(() => {})
       }
@@ -352,6 +354,35 @@ export default function TeacherRegisterPage() {
                       </Link>
                       .
                     </p>
+                  </div>
+
+                  {/* Exam board (optional) — whitelist matches Prisma ExamBoard enum
+                      in /api/auth/teacher-signup. Empty string is intentionally
+                      excluded from the fetch body below (handler treats absence
+                      as "not specified"). */}
+                  <div className="space-y-1.5">
+                    <Label htmlFor="selectedExamBoard">
+                      Exam board you primarily teach{' '}
+                      <span className="text-muted-foreground font-normal">(optional)</span>
+                    </Label>
+                    <div className="relative">
+                      <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <select
+                        id="selectedExamBoard"
+                        value={selectedExamBoard}
+                        onChange={(e) => setSelectedExamBoard(e.target.value)}
+                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-10 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                      >
+                        <option value="">Select exam board</option>
+                        <option value="AQA">AQA</option>
+                        <option value="EDEXCEL">Pearson Edexcel</option>
+                        <option value="OCR">OCR</option>
+                        <option value="EDUQAS">WJEC Eduqas</option>
+                        <option value="EDEXCEL_IGCSE">Pearson Edexcel IGCSE</option>
+                        <option value="CAMBRIDGE_0500">Cambridge IGCSE (0500)</option>
+                        <option value="CAMBRIDGE_0990">Cambridge IGCSE Global (0990)</option>
+                      </select>
+                    </div>
                   </div>
 
                   {/* Password */}
