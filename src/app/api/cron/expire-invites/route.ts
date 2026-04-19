@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
+import * as Sentry from '@sentry/nextjs'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 
 export const dynamic = 'force-dynamic'
@@ -15,10 +16,7 @@ export async function GET(request: NextRequest) {
     const authHeader = request.headers.get('authorization')
     const incoming = Buffer.from(authHeader ?? '')
     const expected = Buffer.from(`Bearer ${cronSecret}`)
-    if (
-      incoming.length !== expected.length ||
-      !timingSafeEqual(incoming, expected)
-    ) {
+    if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
@@ -33,12 +31,14 @@ export async function GET(request: NextRequest) {
 
     if (error) {
       console.error('Expire invites cron error:', error)
+      Sentry.captureException(error, { tags: { cron: 'expire-invites' } })
       return NextResponse.json({ error: 'Failed to expire invites' }, { status: 500 })
     }
 
     return NextResponse.json({ expired: data?.length ?? 0 })
   } catch (error) {
     console.error('Expire invites cron error:', error)
+    Sentry.captureException(error, { tags: { cron: 'expire-invites' } })
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

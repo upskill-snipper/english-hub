@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
+import * as Sentry from '@sentry/nextjs'
 import { prisma } from '@/lib/prisma'
 import { processChildDormancy } from '@/lib/privacy/dormancy'
 import { sendEmail } from '@/lib/email'
@@ -50,10 +51,7 @@ export async function GET(request: NextRequest) {
     const authHeader = request.headers.get('authorization')
     const incoming = Buffer.from(authHeader ?? '')
     const expected = Buffer.from(`Bearer ${cronSecret}`)
-    if (
-      incoming.length !== expected.length ||
-      !timingSafeEqual(incoming, expected)
-    ) {
+    if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
@@ -102,7 +100,7 @@ export async function GET(request: NextRequest) {
           // Calculate deletion date (30 days from now)
           const deletionDate = new Date()
           deletionDate.setDate(
-            deletionDate.getDate() + RETENTION_PERIODS.INACTIVE_WARNING_GRACE_DAYS
+            deletionDate.getDate() + RETENTION_PERIODS.INACTIVE_WARNING_GRACE_DAYS,
           )
 
           const formattedDate = deletionDate.toLocaleDateString('en-GB', {
@@ -115,7 +113,7 @@ export async function GET(request: NextRequest) {
           await sendEmail(
             user.email,
             'Your English Hub account will be deleted due to inactivity',
-            buildAdultDormancyWarningEmail(user.firstName, formattedDate)
+            buildAdultDormancyWarningEmail(user.firstName, formattedDate),
           )
 
           // Audit
@@ -179,8 +177,7 @@ export async function GET(request: NextRequest) {
       childWarnings: childDormancy?.warningsSent.length ?? 0,
       childDeletions: childDormancy?.deletions.length ?? 0,
       adultWarnings: adultResult.warningsSent.length,
-      totalErrors:
-        (childDormancy?.errors.length ?? 0) + adultResult.errors.length,
+      totalErrors: (childDormancy?.errors.length ?? 0) + adultResult.errors.length,
     })
 
     return NextResponse.json({
@@ -201,23 +198,24 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     const durationMs = Date.now() - startTime
     console.error('[dormancy-check] Cron job failed:', error)
+    Sentry.captureException(error, {
+      tags: { cron: 'dormancy-check' },
+      extra: { durationMs },
+    })
     return NextResponse.json(
       {
         ok: false,
         error: 'Dormancy check failed',
         durationMs,
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }
 
 // ─── Email template ───────────────────────────────────────────────────────
 
-function buildAdultDormancyWarningEmail(
-  firstName: string,
-  deletionDate: string
-): string {
+function buildAdultDormancyWarningEmail(firstName: string, deletionDate: string): string {
   return `
     <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
       <div style="background-color: #1A5276; padding: 24px; border-radius: 12px 12px 0 0;">

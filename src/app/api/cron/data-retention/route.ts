@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
+import * as Sentry from '@sentry/nextjs'
 import { cleanupExpiredData } from '@/lib/data-retention'
 
 export const dynamic = 'force-dynamic'
@@ -33,10 +34,7 @@ export async function GET(request: NextRequest) {
     const authHeader = request.headers.get('authorization')
     const incoming = Buffer.from(authHeader ?? '')
     const expected = Buffer.from(`Bearer ${cronSecret}`)
-    if (
-      incoming.length !== expected.length ||
-      !timingSafeEqual(incoming, expected)
-    ) {
+    if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
@@ -83,13 +81,17 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     const durationMs = Date.now() - startTime
     console.error('[data-retention] Cron job failed:', error)
+    Sentry.captureException(error, {
+      tags: { cron: 'data-retention' },
+      extra: { durationMs },
+    })
     return NextResponse.json(
       {
         ok: false,
         error: 'Data retention cleanup failed',
         durationMs,
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

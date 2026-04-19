@@ -23,6 +23,7 @@
  *   }
  */
 
+import crypto from 'crypto'
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
@@ -41,8 +42,43 @@ interface ConversionBody {
 
 const EXTERNAL_ID_REGEX = /^[A-Za-z0-9_.:-]{3,200}$/
 
+// P0-SEC (Cycle 2 security deep dive): previously this endpoint was
+// completely unauthenticated. Anyone with a browser could POST it with
+// a forged external_id + large order_value_pence and insert fake
+// conversions, inflating affiliate commissions. Attribution via the
+// teh_aff cookie is trivial to acquire (just hit any ?ref=… URL).
+//
+// The Stripe webhook handler at src/app/api/stripe/webhook/route.ts
+// already performs affiliate attribution internally via
+// attributeAffiliateReferral on checkout.session.completed — so this
+// endpoint has no known legitimate external caller.
+//
+// We lock it down with an INTERNAL_API_SECRET shared-secret header.
+// Only server code that can read the env var can invoke it. If the
+// env var is unset, the endpoint returns 503 (fail closed) rather
+// than defaulting to unauthenticated.
+function hasInternalSecret(request: NextRequest): boolean {
+  const expected = process.env.INTERNAL_API_SECRET
+  if (!expected || expected.length < 32) return false
+  const got = request.headers.get('x-internal-api-secret')
+  if (!got || got.length !== expected.length) return false
+  try {
+    return crypto.timingSafeEqual(Buffer.from(got), Buffer.from(expected))
+  } catch {
+    return false
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
+    // ── Auth: internal-service secret ─────────────────────────────────
+    if (!process.env.INTERNAL_API_SECRET || process.env.INTERNAL_API_SECRET.length < 32) {
+      return NextResponse.json({ error: 'Conversion tracking is not configured.' }, { status: 503 })
+    }
+    if (!hasInternalSecret(request)) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`affiliate-convert:${ip}`, {
       limit: 60,
@@ -82,7 +118,7 @@ export async function POST(request: NextRequest) {
           attributed: false,
           reason: attribution.reason ?? 'no_attribution',
         },
-        { status: 200 }
+        { status: 200 },
       )
     }
 
@@ -98,7 +134,7 @@ export async function POST(request: NextRequest) {
     if (existing) {
       return NextResponse.json(
         { success: true, attributed: true, conversion_id: existing.id, deduplicated: true },
-        { status: 200 }
+        { status: 200 },
       )
     }
 
@@ -117,7 +153,7 @@ export async function POST(request: NextRequest) {
     if (!account || account.status !== 'active') {
       return NextResponse.json(
         { success: true, attributed: false, reason: 'affiliate_not_active' },
-        { status: 200 }
+        { status: 200 },
       )
     }
 
@@ -160,7 +196,7 @@ export async function POST(request: NextRequest) {
         commission_pence: commissionPence,
         tier: tierInfo.tier,
       },
-      { status: 201 }
+      { status: 201 },
     )
   } catch (err) {
     console.error('[affiliate/track-conversion] unexpected error:', err)

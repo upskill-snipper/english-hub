@@ -4,6 +4,8 @@ import { SET_TEXTS } from '@/lib/board/set-texts'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { hasActiveSubscription } from '@/lib/course-access'
 
+export const maxDuration = 60
+
 // ─── POST /api/toolkit/generate-notes ──────────────────────────────────────
 // Generates structured revision notes for a topic.
 // Uses Anthropic Claude if ANTHROPIC_API_KEY is set, otherwise returns
@@ -14,7 +16,7 @@ import { hasActiveSubscription } from '@/lib/course-access'
 interface RequestBody {
   board: string
   topic: string
-  targetGrade: number      // 1-9
+  targetGrade: number // 1-9
   weakAreas?: string[]
 }
 
@@ -22,10 +24,10 @@ function generateTemplateNotes(
   topic: string,
   board: string,
   targetGrade: number,
-  weakAreas: string[]
+  weakAreas: string[],
 ): string {
   const text = SET_TEXTS.find(
-    (t) => t.title.toLowerCase() === topic.toLowerCase() || t.slug === topic
+    (t) => t.title.toLowerCase() === topic.toLowerCase() || t.slug === topic,
   )
 
   const title = text?.title || topic
@@ -35,14 +37,15 @@ function generateTemplateNotes(
 
   const gradeAdvice =
     targetGrade >= 7
-      ? 'At Grade 7+, examiners expect you to analyse the writer\'s methods with sophistication, embed quotations fluently, and consider alternative interpretations. Use critical terminology precisely.'
+      ? "At Grade 7+, examiners expect you to analyse the writer's methods with sophistication, embed quotations fluently, and consider alternative interpretations. Use critical terminology precisely."
       : targetGrade >= 5
         ? 'At Grade 5-6, aim to explain clearly how the writer uses language and structure. Support every point with a relevant quotation and explain its effect on the reader.'
         : 'At Grade 4, focus on making clear points supported by quotations. Identify techniques and explain their basic effect. Structure your response with clear paragraphs.'
 
-  const weakAreaNotes = weakAreas.length > 0
-    ? `\n\n## Focus Areas for Improvement\n\nBased on your performance data, prioritise these areas:\n\n${weakAreas.map((w) => `- **${w}** -- Revisit your notes and practise answering questions specifically on this topic.`).join('\n')}`
-    : ''
+  const weakAreaNotes =
+    weakAreas.length > 0
+      ? `\n\n## Focus Areas for Improvement\n\nBased on your performance data, prioritise these areas:\n\n${weakAreas.map((w) => `- **${w}** -- Revisit your notes and practise answering questions specifically on this topic.`).join('\n')}`
+      : ''
 
   return `# Revision Notes: ${title}
 
@@ -134,11 +137,14 @@ function sanitiseForPrompt(s: string, maxLen: number): string {
 export async function POST(request: NextRequest) {
   // ── 1. Authenticate ──────────────────────────────────────────────────────
   const supabase = createServerSupabaseClient()
-  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  const {
+    data: { user },
+    error: authError,
+  } = await supabase.auth.getUser()
   if (authError || !user) {
     return NextResponse.json(
       { error: 'You must be signed in to generate revision notes.' },
-      { status: 401 }
+      { status: 401 },
     )
   }
 
@@ -146,8 +152,10 @@ export async function POST(request: NextRequest) {
   const isPro = await hasActiveSubscription(supabase, user.id)
   if (!isPro) {
     return NextResponse.json(
-      { error: 'AI revision notes are a Pro feature. Please upgrade your subscription to continue.' },
-      { status: 403 }
+      {
+        error: 'AI revision notes are a Pro feature. Please upgrade your subscription to continue.',
+      },
+      { status: 403 },
     )
   }
 
@@ -159,7 +167,7 @@ export async function POST(request: NextRequest) {
   if (!rl.success) {
     return NextResponse.json(
       { error: 'Rate limit exceeded. You can generate up to 5 sets of revision notes per hour.' },
-      { status: 429 }
+      { status: 429 },
     )
   }
 
@@ -168,10 +176,7 @@ export async function POST(request: NextRequest) {
     const { board, topic, targetGrade, weakAreas } = body
 
     if (!topic) {
-      return NextResponse.json(
-        { error: 'Missing required field: topic' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Missing required field: topic' }, { status: 400 })
     }
 
     const grade = Math.min(9, Math.max(1, targetGrade || 5))
@@ -184,7 +189,7 @@ export async function POST(request: NextRequest) {
       // Use Claude for AI-generated notes
       try {
         const text = SET_TEXTS.find(
-          (t) => t.title.toLowerCase() === topic.toLowerCase() || t.slug === topic
+          (t) => t.title.toLowerCase() === topic.toLowerCase() || t.slug === topic,
         )
         const textTitle = sanitiseForPrompt(text?.title || topic, 200)
         const textAuthor = sanitiseForPrompt(text?.author || '', 100)
@@ -221,20 +226,35 @@ Create detailed revision notes in Markdown format covering:
 
 Be specific, include example quotations, and give practical exam advice.`
 
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': anthropicKey,
-            'anthropic-version': '2023-06-01',
-          },
-          body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
-            max_tokens: 2000,
-            system: systemPrompt,
-            messages: [{ role: 'user', content: prompt }],
-          }),
-        })
+        // P1 (Cycle 2 perf audit): cap Anthropic round-trip at 45s and
+        // cancel it if the client disconnects, so a hanging upstream
+        // doesn't pin a Vercel lambda for its full 60s maxDuration.
+        const ac = new AbortController()
+        const clientAbort = () => ac.abort()
+        request.signal.addEventListener('abort', clientAbort)
+        const timeoutId = setTimeout(() => ac.abort(), 45_000)
+
+        let response: Response
+        try {
+          response = await fetch('https://api.anthropic.com/v1/messages', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-api-key': anthropicKey,
+              'anthropic-version': '2023-06-01',
+            },
+            body: JSON.stringify({
+              model: 'claude-sonnet-4-20250514',
+              max_tokens: 2000,
+              system: systemPrompt,
+              messages: [{ role: 'user', content: prompt }],
+            }),
+            signal: ac.signal,
+          })
+        } finally {
+          clearTimeout(timeoutId)
+          request.signal.removeEventListener('abort', clientAbort)
+        }
 
         if (response.ok) {
           const data = await response.json()
@@ -272,7 +292,7 @@ Be specific, include example quotations, and give practical exam advice.`
   } catch {
     return NextResponse.json(
       { error: 'Failed to generate notes. Please try again.' },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

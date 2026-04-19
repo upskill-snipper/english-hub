@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
+import * as Sentry from '@sentry/nextjs'
 import { stripe } from '@/lib/stripe'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 
@@ -21,10 +22,7 @@ export async function GET(request: NextRequest) {
     const authHeader = request.headers.get('authorization')
     const incoming = Buffer.from(authHeader ?? '')
     const expected = Buffer.from(`Bearer ${cronSecret}`)
-    if (
-      incoming.length !== expected.length ||
-      !timingSafeEqual(incoming, expected)
-    ) {
+    if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
@@ -42,11 +40,16 @@ export async function GET(request: NextRequest) {
 
     if (fetchError) {
       console.error('Failed to fetch pending referrals:', fetchError)
+      Sentry.captureException(fetchError, { tags: { cron: 'affiliate-confirm' } })
       return NextResponse.json({ error: 'Failed to fetch referrals' }, { status: 500 })
     }
 
     if (!pendingReferrals || pendingReferrals.length === 0) {
-      return NextResponse.json({ confirmed: 0, voided: 0, message: 'No pending referrals to process' })
+      return NextResponse.json({
+        confirmed: 0,
+        voided: 0,
+        message: 'No pending referrals to process',
+      })
     }
 
     let confirmed = 0
@@ -89,7 +92,7 @@ export async function GET(request: NextRequest) {
               .eq('id', referral.id)
             return 'voided' as const
           }
-        })
+        }),
       )
 
       for (let j = 0; j < results.length; j++) {
@@ -100,14 +103,28 @@ export async function GET(request: NextRequest) {
         } else {
           const referralId = batch[j].id
           console.error(`Failed to process referral ${referralId}:`, result.reason)
+          Sentry.captureException(result.reason, {
+            tags: { cron: 'affiliate-confirm' },
+            extra: { referralId },
+          })
           errors.push(referralId)
         }
       }
     }
 
-    return NextResponse.json({ confirmed, voided, errors: errors.length, total: pendingReferrals.length })
+    // Return non-200 if more than 10% of referrals failed so Vercel cron
+    // retries (rather than silently succeeding with errors in the body).
+    const totalProcessed = pendingReferrals.length
+    if (errors.length > 0 && errors.length > totalProcessed * 0.1) {
+      return NextResponse.json(
+        { confirmed, voided, errors: errors.length, total: totalProcessed, partialFailure: true },
+        { status: 500 },
+      )
+    }
+    return NextResponse.json({ confirmed, voided, errors: errors.length, total: totalProcessed })
   } catch (error) {
     console.error('Affiliate confirm cron unexpected error:', error)
+    Sentry.captureException(error, { tags: { cron: 'affiliate-confirm' } })
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
