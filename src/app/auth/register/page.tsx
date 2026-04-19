@@ -243,6 +243,27 @@ function RegisterForm() {
           console.error('Parent notification error:', err)
         }
       }
+
+      // Fire-and-forget: create the Prisma User projection row. The Supabase
+      // signup above is the source of truth for credentials; this mirror row
+      // is a lagging index used by dormancy-check, data-retention, DSAR, and
+      // weekly-report features that query Prisma (see /api/auth/register
+      // route.ts header). Must not block the user's signup/verification flow.
+      if (dobYear && dobMonth && dobDay) {
+        const [firstName, ...rest] = fullName.trim().split(/\s+/)
+        const lastName = rest.join(' ') || firstName
+        fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            dateOfBirth,
+            country: 'GB',
+            role: accountType === 'teacher' ? 'TEACHER' : 'STUDENT',
+          }),
+        }).catch(() => {})
+      }
     }
 
     trackEvent('sign_up', { method: 'email' })

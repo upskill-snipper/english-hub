@@ -20,20 +20,28 @@ import {
   FileText,
   Star,
   CheckSquare,
+  Calendar,
 } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+} from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
 const BENEFITS = [
-  { icon: BookOpen,      text: '300+ ready-made lesson plans' },
-  { icon: CheckSquare,   text: 'AI essay marking and feedback' },
-  { icon: BarChart2,     text: 'Real-time student analytics' },
+  { icon: BookOpen, text: '300+ ready-made lesson plans' },
+  { icon: CheckSquare, text: 'AI essay marking and feedback' },
+  { icon: BarChart2, text: 'Real-time student analytics' },
   { icon: ClipboardList, text: 'Homework management' },
-  { icon: FileText,      text: 'Mock exam papers for all boards' },
-  { icon: Star,          text: '3 free uses of every AI tool' },
+  { icon: FileText, text: 'Mock exam papers for all boards' },
+  { icon: Star, text: '3 free uses of every AI tool' },
 ]
 
 export default function TeacherRegisterPage() {
@@ -45,9 +53,30 @@ export default function TeacherRegisterPage() {
   const [schoolName, setSchoolName] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [dobDay, setDobDay] = useState('')
+  const [dobMonth, setDobMonth] = useState('')
+  const [dobYear, setDobYear] = useState('')
   const [isTeacher, setIsTeacher] = useState(false)
   const [agreeTerms, setAgreeTerms] = useState(false)
   const [agreePrivacy, setAgreePrivacy] = useState(false)
+
+  // Teacher age guard: client-side check for >= 18. The server
+  // (/api/auth/teacher-signup) only enforces >= 13, so this is purely a
+  // UX nudge; we treat it as informational rather than a hard block on
+  // the backend. Mirrors the DOB component pattern from /auth/register.
+  const calculateAge = (day: string, month: string, year: string): number | null => {
+    if (!day || !month || !year) return null
+    const dob = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+    const today = new Date()
+    let age = today.getFullYear() - dob.getFullYear()
+    const monthDiff = today.getMonth() - dob.getMonth()
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+      age--
+    }
+    return age
+  }
+  const teacherAge = calculateAge(dobDay, dobMonth, dobYear)
+  const isUnder18 = teacherAge !== null && teacherAge < 18
 
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
@@ -70,6 +99,11 @@ export default function TeacherRegisterPage() {
     else if (password.length < 8) errors.password = 'Password must be at least 8 characters.'
     if (!confirmPassword) errors.confirmPassword = 'Please confirm your password.'
     else if (password !== confirmPassword) errors.confirmPassword = 'Passwords do not match.'
+    if (!dobDay || !dobMonth || !dobYear) errors.dob = 'Date of birth is required.'
+    else if (isUnder18) {
+      errors.dob =
+        'Teacher accounts are for adults (18+). If you are a student, please use the student sign-up.'
+    }
     if (!isTeacher) errors.isTeacher = 'Please confirm you are a teacher.'
     if (!agreeTerms) errors.agreeTerms = 'You must accept the Terms of Service.'
     if (!agreePrivacy) errors.agreePrivacy = 'You must accept the Privacy Policy.'
@@ -116,6 +150,23 @@ export default function TeacherRegisterPage() {
           console.error('Profile upsert error:', profileError)
           // Don't block signup — profile can be updated later
         }
+
+        // Fire-and-forget: create the Prisma User projection row. Lagging
+        // mirror of Supabase Auth; feeds dormancy/DSAR/retention features
+        // (see /api/auth/teacher-signup route.ts header). Must not block
+        // the signup/verification UX.
+        const dateOfBirth = `${dobYear}-${dobMonth.padStart(2, '0')}-${dobDay.padStart(2, '0')}`
+        fetch('/api/auth/teacher-signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            firstName: firstName.trim(),
+            lastName: lastName.trim(),
+            dateOfBirth,
+            country: 'GB',
+            ...(schoolName.trim() ? { school: schoolName.trim() } : {}),
+          }),
+        }).catch(() => {})
       }
 
       setSuccess(true)
@@ -135,12 +186,14 @@ export default function TeacherRegisterPage() {
               <CheckCircle className="w-14 h-14 text-primary mx-auto mb-4" />
               <h1 className="text-2xl font-bold text-foreground mb-3">Account created!</h1>
               <p className="text-muted-foreground mb-4">
-                Check your email to verify your address, then log in to access your teacher dashboard.
+                Check your email to verify your address, then log in to access your teacher
+                dashboard.
               </p>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6 text-left">
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">Your free trial is ready.</span>{' '}
-                  You have 3 free uses of every premium feature — AI marking, lesson plans, and more. Upgrade for unlimited at &pound;12.99/month (first month free).
+                  <span className="font-medium text-foreground">Your free trial is ready.</span> You
+                  have 3 free uses of every premium feature — AI marking, lesson plans, and more.
+                  Upgrade for unlimited at &pound;12.99/month (first month free).
                 </p>
               </div>
               <Button render={<Link href="/auth/login" />} className="w-full" size="lg">
@@ -169,11 +222,15 @@ export default function TeacherRegisterPage() {
 
         {/* Header */}
         <div className="text-center mb-10">
-          <Badge variant="secondary" className="mb-4">Teachers</Badge>
-          <h1 className="text-3xl font-bold text-foreground mb-3">Start your free teacher account</h1>
+          <Badge variant="secondary" className="mb-4">
+            Teachers
+          </Badge>
+          <h1 className="text-3xl font-bold text-foreground mb-3">
+            Start your free teacher account
+          </h1>
           <p className="text-muted-foreground max-w-xl mx-auto text-base">
-            Save 5+ hours per week with AI lesson planning and marking.
-            3 free uses of every AI tool. Upgrade for unlimited.
+            Save 5+ hours per week with AI lesson planning and marking. 3 free uses of every AI
+            tool. Upgrade for unlimited.
           </p>
           <p className="text-sm text-primary font-medium mt-2">
             &pound;12.99/month &mdash; first month free
@@ -287,7 +344,10 @@ export default function TeacherRegisterPage() {
                     </div>
                     <p className="text-xs text-muted-foreground">
                       For school-wide access, ask your school admin or{' '}
-                      <Link href="/for-schools/register" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                      <Link
+                        href="/for-schools/register"
+                        className="underline underline-offset-2 hover:text-foreground transition-colors"
+                      >
                         register your school at /for-schools/register
                       </Link>
                       .
@@ -317,7 +377,11 @@ export default function TeacherRegisterPage() {
                         className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                         aria-label={showPassword ? 'Hide password' : 'Show password'}
                       >
-                        {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        {showPassword ? (
+                          <EyeOff className="w-4 h-4" />
+                        ) : (
+                          <Eye className="w-4 h-4" />
+                        )}
                       </button>
                     </div>
                     {fieldErrors.password && (
@@ -356,6 +420,86 @@ export default function TeacherRegisterPage() {
                     )}
                   </div>
 
+                  {/* Date of birth — required for Prisma User projection (schema NOT NULL) */}
+                  <fieldset
+                    className="space-y-1.5"
+                    aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}
+                  >
+                    <legend className="text-sm font-medium leading-none">
+                      Date of birth <span className="text-destructive">*</span>
+                    </legend>
+                    <div className="relative">
+                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <div className="flex gap-2 pl-10">
+                        <select
+                          id="dobDay"
+                          value={dobDay}
+                          onChange={(e) => setDobDay(e.target.value)}
+                          className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                          aria-label="Day"
+                          aria-invalid={!!fieldErrors.dob}
+                        >
+                          <option value="">Day</option>
+                          {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
+                            <option key={d} value={String(d)}>
+                              {d}
+                            </option>
+                          ))}
+                        </select>
+                        <select
+                          id="dobMonth"
+                          value={dobMonth}
+                          onChange={(e) => setDobMonth(e.target.value)}
+                          className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                          aria-label="Month"
+                          aria-invalid={!!fieldErrors.dob}
+                        >
+                          <option value="">Month</option>
+                          {[
+                            'January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December',
+                          ].map((m, i) => (
+                            <option key={i + 1} value={String(i + 1)}>
+                              {m}
+                            </option>
+                          ))}
+                        </select>
+                        <select
+                          id="dobYear"
+                          value={dobYear}
+                          onChange={(e) => setDobYear(e.target.value)}
+                          className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                          aria-label="Year"
+                          aria-invalid={!!fieldErrors.dob}
+                        >
+                          <option value="">Year</option>
+                          {Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i).map(
+                            (y) => (
+                              <option key={y} value={String(y)}>
+                                {y}
+                              </option>
+                            ),
+                          )}
+                        </select>
+                      </div>
+                    </div>
+                    {fieldErrors.dob && (
+                      <p id="dob-error" className="text-xs text-destructive">
+                        {fieldErrors.dob}
+                      </p>
+                    )}
+                  </fieldset>
+
                   {/* Teacher confirmation checkbox */}
                   <div className="space-y-1.5">
                     <label className="flex items-start gap-3 cursor-pointer group">
@@ -387,7 +531,10 @@ export default function TeacherRegisterPage() {
                       />
                       <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                         I agree to the{' '}
-                        <Link href="/terms" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                        <Link
+                          href="/terms"
+                          className="underline underline-offset-2 hover:text-foreground transition-colors"
+                        >
                           Terms of Service
                         </Link>
                       </span>
@@ -409,7 +556,10 @@ export default function TeacherRegisterPage() {
                       />
                       <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                         I have read and accept the{' '}
-                        <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                        <Link
+                          href="/privacy-policy"
+                          className="underline underline-offset-2 hover:text-foreground transition-colors"
+                        >
                           Privacy Policy
                         </Link>
                       </span>
@@ -436,7 +586,10 @@ export default function TeacherRegisterPage() {
                 {/* School CTA */}
                 <p className="text-xs text-muted-foreground text-center border-t border-border pt-4 w-full">
                   Is your school interested? Ask your Head of Department to{' '}
-                  <Link href="/for-schools" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                  <Link
+                    href="/for-schools"
+                    className="underline underline-offset-2 hover:text-foreground transition-colors"
+                  >
                     learn about the Founding Schools Programme
                   </Link>{' '}
                   for full department access.
@@ -463,7 +616,9 @@ export default function TeacherRegisterPage() {
             <div className="sticky top-8 space-y-4">
               <Card className="border-primary/20 bg-primary/5">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base text-primary">What&apos;s included free</CardTitle>
+                  <CardTitle className="text-base text-primary">
+                    What&apos;s included free
+                  </CardTitle>
                   <p className="text-xs text-muted-foreground">No credit card required</p>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -481,9 +636,14 @@ export default function TeacherRegisterPage() {
               <Card className="border-dashed">
                 <CardContent className="pt-5 pb-4">
                   <p className="text-sm text-muted-foreground text-center">
-                    <span className="block text-foreground font-semibold mb-1">Need school-wide access?</span>
+                    <span className="block text-foreground font-semibold mb-1">
+                      Need school-wide access?
+                    </span>
                     Register your school for a single subscription that covers all staff.{' '}
-                    <Link href="/for-schools/register" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                    <Link
+                      href="/for-schools/register"
+                      className="underline underline-offset-2 hover:text-foreground transition-colors"
+                    >
                       Learn more
                     </Link>
                   </p>
