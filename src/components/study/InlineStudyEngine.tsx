@@ -29,6 +29,7 @@ import {
   TrendingUp,
   AlertCircle,
 } from 'lucide-react'
+import { events } from '@/lib/gtag'
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -127,6 +128,7 @@ function QuizMode({
     setFinished(false)
     setTopicResults({})
     setStarted(true)
+    try { events.quizStarted(textName) } catch { /* never break */ }
   }
 
   const handleSelect = (idx: number) => {
@@ -154,6 +156,7 @@ function QuizMode({
     if (currentIdx >= quizQuestions.length - 1) {
       setFinished(true)
       onComplete({ correct: score + (selected === quizQuestions[currentIdx]?.correctIndex ? 0 : 0), total: quizQuestions.length, topicResults })
+      try { events.quizCompleted(textName, score, quizQuestions.length) } catch { /* never break */ }
     } else {
       setCurrentIdx((i) => i + 1)
       setSelected(null)

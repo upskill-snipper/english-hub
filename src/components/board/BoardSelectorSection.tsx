@@ -16,6 +16,7 @@ import {
   ChevronRight,
 } from 'lucide-react'
 
+import { events } from '@/lib/gtag'
 import {
   useBoard,
   type ExamBoard,
@@ -70,6 +71,7 @@ export function BoardSelectorSection({
       setLoadingBoard(board)
       try {
         setBoard(board)
+        try { events.boardSelected(board) } catch { /* never break */ }
         onSelected?.(board)
         if (!disableRedirect) {
           router.push(redirectTo)

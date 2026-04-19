@@ -223,11 +223,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Assessment
     { url: `${base}/assessment/reading`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
 
-    // Revision text sub-pages
-    ...['macbeth', 'romeo-and-juliet', 'jekyll-and-hyde', 'christmas-carol',
+    // Revision text hub pages
+    ...['macbeth', 'romeo-and-juliet', 'jekyll-and-hyde', 'a-christmas-carol',
       'an-inspector-calls', 'animal-farm', 'lord-of-the-flies', 'great-expectations',
       'frankenstein', 'jane-eyre', 'much-ado-about-nothing', 'the-tempest',
-      'of-mice-and-men',
+      'of-mice-and-men', 'a-view-from-the-bridge', 'blood-brothers',
+      'things-fall-apart', 'to-kill-a-mockingbird', 'pride-and-prejudice',
+      'anita-and-me', 'curious-incident', 'never-let-me-go', 'pigeon-english',
     ].map((text) => ({
       url: `${base}/revision/texts/${text}`,
       lastModified: now,
@@ -235,9 +237,316 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     })),
 
-    // Revision poetry sub-pages
-    { url: `${base}/revision/poetry/power-and-conflict`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/revision/poetry/love-and-relationships`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    // Revision text sub-pages (discovered from filesystem)
+    ...([
+      ['a-christmas-carol', ['characters', 'context', 'essay-plans', 'key-quotes', 'staves', 'themes']],
+      ['a-view-from-the-bridge', ['characters', 'context', 'key-quotes', 'themes']],
+      ['an-inspector-calls', ['acts', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes']],
+      ['animal-farm', ['chapters', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes']],
+      ['blood-brothers', ['acts', 'characters', 'essay-plans', 'key-quotes', 'themes']],
+      ['frankenstein', ['chapters', 'characters', 'essay-plans', 'key-quotes', 'read', 'themes']],
+      ['great-expectations', ['chapters', 'characters', 'essay-plans', 'key-quotes', 'themes']],
+      ['jane-eyre', ['chapters', 'key-quotes']],
+      ['jekyll-and-hyde', ['chapters', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes']],
+      ['lord-of-the-flies', ['chapters', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes']],
+      ['macbeth', ['act-1', 'act-2', 'act-3', 'acts', 'characters', 'context', 'essay-plans', 'key-quotes', 'read', 'themes']],
+      ['of-mice-and-men', ['characters', 'context', 'key-quotes', 'themes']],
+      ['pride-and-prejudice', ['chapters', 'characters']],
+      ['romeo-and-juliet', ['acts', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes']],
+      ['things-fall-apart', ['characters', 'context', 'key-quotes', 'themes']],
+      ['to-kill-a-mockingbird', ['characters', 'context', 'key-quotes', 'themes']],
+    ] as const).flatMap(([text, subs]) =>
+      subs.map((sub) => ({
+        url: `${base}/revision/texts/${text}/${sub}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      }))
+    ),
+
+    // Revision poetry hubs
+    { url: `${base}/revision/poetry/power-and-conflict`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/power-and-conflict/essay-plans`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/revision/poetry/love-and-relationships`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/love-and-relationships/essay-plans`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/revision/poetry/love-and-relationships/comparison-guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/revision/poetry/edexcel`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/edexcel/essay-plans`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/revision/poetry/edexcel/conflict`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/edexcel/time-and-place`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/eduqas`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/eduqas/essay-plans`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/revision/poetry/ocr`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/ocr/essay-plans`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/revision/poetry/ocr/comparison-guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/revision/poetry/ocr/themes`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/revision/poetry/ocr/conflict`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/ocr/love-and-relationships`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/ocr/power-and-natural-world`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/ocr/youth-and-age`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/poetry/unseen-poetry`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+
+    // Individual poems — Power and Conflict (AQA)
+    ...['ozymandias', 'london', 'the-prelude', 'my-last-duchess', 'the-charge-of-the-light-brigade',
+      'exposure', 'storm-on-the-island', 'bayonet-charge', 'remains', 'poppies',
+      'war-photographer', 'tissue', 'the-emigree', 'kamikaze', 'checking-out-me-history',
+    ].map((poem) => ({
+      url: `${base}/revision/poetry/power-and-conflict/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // Individual poems — Love and Relationships (AQA)
+    ...['when-we-two-parted', 'loves-philosophy', 'neutral-tones', 'porphyrias-lover', 'sonnet-29',
+      'before-you-were-mine', 'climbing-my-grandfather', 'eden-rock', 'follower',
+      'letters-from-yorkshire', 'mother-any-distance', 'singh-song', 'the-farmers-bride',
+      'walking-away', 'winter-swans',
+    ].map((poem) => ({
+      url: `${base}/revision/poetry/love-and-relationships/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // Individual poems — Edexcel Conflict
+    ...['a-poison-tree', 'the-destruction-of-sennacherib'].map((poem) => ({
+      url: `${base}/revision/poetry/edexcel/conflict/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // Individual poems — Edexcel Time and Place
+    ...['london', 'composed-upon-westminster-bridge', 'i-started-early-took-my-dog', 'to-autumn'].map((poem) => ({
+      url: `${base}/revision/poetry/edexcel/time-and-place/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // Individual poems — Eduqas
+    ...['dulce-et-decorum-est', 'the-soldier', 'london', 'ozymandias', 'the-prelude',
+      'a-wife-in-london', 'sonnet-43', 'to-autumn',
+    ].map((poem) => ({
+      url: `${base}/revision/poetry/eduqas/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // Individual poems — OCR Love and Relationships
+    ...['neutral-tones', 'she-dwelt-among-the-untrodden-ways', 'she-walks-in-beauty'].map((poem) => ({
+      url: `${base}/revision/poetry/ocr/love-and-relationships/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // Individual poems — OCR Power and Natural World
+    ...['the-eagle'].map((poem) => ({
+      url: `${base}/revision/poetry/ocr/power-and-natural-world/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // Individual poems — OCR Youth and Age
+    ...['crossing-the-bar', 'when-i-have-fears'].map((poem) => ({
+      url: `${base}/revision/poetry/ocr/youth-and-age/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // ============================================================
+    // IGCSE — Edexcel
+    // ============================================================
+    { url: `${base}/igcse/edexcel`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/igcse/edexcel/syllabus`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/edexcel/past-papers`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/edexcel/exam-technique`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/igcse/edexcel/essay-technique`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/igcse/edexcel/essay-technique/comparison-essays`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/edexcel/essay-technique/mark-scheme`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+
+    // IGCSE Edexcel Drama
+    { url: `${base}/igcse/edexcel/drama`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...([
+      ['a-view-from-the-bridge', ['characters', 'context', 'essay-plans', 'key-quotes', 'themes']],
+      ['an-inspector-calls', ['act-1', 'act-2', 'act-3', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes']],
+      ['curious-incident', ['characters', 'key-quotes', 'themes']],
+    ] as const).flatMap(([text, subs]) => [
+      { url: `${base}/igcse/edexcel/drama/${text}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.7 },
+      ...subs.map((sub) => ({
+        url: `${base}/igcse/edexcel/drama/${text}/${sub}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      })),
+    ]),
+
+    // IGCSE Edexcel Prose
+    { url: `${base}/igcse/edexcel/prose`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...([
+      ['of-mice-and-men', ['chapters', 'characters', 'essay-plans', 'key-quotes', 'themes']],
+      ['things-fall-apart', ['characters', 'key-quotes', 'themes']],
+      ['to-kill-a-mockingbird', ['chapters', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes']],
+    ] as const).flatMap(([text, subs]) => [
+      { url: `${base}/igcse/edexcel/prose/${text}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.7 },
+      ...subs.map((sub) => ({
+        url: `${base}/igcse/edexcel/prose/${text}/${sub}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      })),
+    ]),
+
+    // IGCSE Edexcel Shakespeare
+    { url: `${base}/igcse/edexcel/shakespeare`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...([
+      ['macbeth', ['characters', 'context', 'essay-plans', 'plot', 'quotes', 'themes']],
+      ['much-ado', ['characters', 'quotes', 'themes']],
+      ['romeo-and-juliet', ['characters', 'context', 'essay-plans', 'quotes', 'themes']],
+    ] as const).flatMap(([text, subs]) => [
+      { url: `${base}/igcse/edexcel/shakespeare/${text}`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.7 },
+      ...subs.map((sub) => ({
+        url: `${base}/igcse/edexcel/shakespeare/${text}/${sub}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      })),
+    ]),
+
+    // IGCSE Edexcel Poetry
+    { url: `${base}/igcse/edexcel/poetry`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...['cousin-kate', 'half-caste', 'if', 'la-belle-dame-sans-merci', 'piano',
+      'remember', 'sonnet-116', 'the-man-he-killed', 'the-tyger',
+    ].map((poem) => ({
+      url: `${base}/igcse/edexcel/poetry/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // IGCSE Edexcel Unseen Poetry
+    { url: `${base}/igcse/edexcel/unseen-poetry`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    ...['approach', 'comparison', 'language-analysis', 'practice', 'structure-form'].map((sub) => ({
+      url: `${base}/igcse/edexcel/unseen-poetry/${sub}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // ============================================================
+    // IGCSE — Edexcel Language
+    // ============================================================
+    { url: `${base}/igcse/edexcel-lang`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/igcse/edexcel-lang/anthology`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...['127-hours', 'a-passage-to-africa', 'the-danger-of-a-single-story',
+      'the-explorers-daughter', 'young-and-dyslexic',
+    ].map((text) => ({
+      url: `${base}/igcse/edexcel-lang/anthology/${text}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // ============================================================
+    // IGCSE — Cambridge
+    // ============================================================
+    { url: `${base}/igcse/cambridge`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+
+    // Cambridge 0500
+    { url: `${base}/igcse/cambridge/0500`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/igcse/cambridge/0500/syllabus`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/cambridge/0500/vocabulary`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/cambridge/0500/grade-boundaries`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/cambridge/0500/comprehension-strategies`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/cambridge/0500/paper-1`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...['language-analysis', 'model-answers', 'practice', 'reading-techniques', 'summary-writing'].map((sub) => ({
+      url: `${base}/igcse/cambridge/0500/paper-1/${sub}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+    { url: `${base}/igcse/cambridge/0500/paper-2`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...['descriptive-writing', 'directed-writing', 'model-answers', 'narrative-writing'].map((sub) => ({
+      url: `${base}/igcse/cambridge/0500/paper-2/${sub}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // Cambridge 0990
+    { url: `${base}/igcse/cambridge/0990`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...['difference-vs-0500', 'grade-5-guide', 'grade-7-guide', 'grade-9-guide',
+      'grade-conversion', 'practice-paper-1', 'practice-paper-2', 'syllabus',
+    ].map((sub) => ({
+      url: `${base}/igcse/cambridge/0990/${sub}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+    { url: `${base}/igcse/cambridge/0990/paper-1`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/igcse/cambridge/0990/paper-1/question-types`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/cambridge/0990/paper-2`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+
+    // Cambridge Composition
+    { url: `${base}/igcse/cambridge/composition`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/igcse/cambridge/composition/mark-scheme`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/cambridge/composition/sentence-variety`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/cambridge/composition/vocabulary-upgrade`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/igcse/cambridge/composition/descriptive`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...['extended-metaphors', 'model-answers', 'practice-prompts', 'sensory-language', 'structure'].map((sub) => ({
+      url: `${base}/igcse/cambridge/composition/descriptive/${sub}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+    { url: `${base}/igcse/cambridge/composition/narrative`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...['character', 'dialogue', 'model-answers', 'practice-prompts', 'structure', 'tension'].map((sub) => ({
+      url: `${base}/igcse/cambridge/composition/narrative/${sub}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // Cambridge Reading
+    { url: `${base}/igcse/cambridge/reading`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    ...['character-introductions', 'childrens-classic', 'classic-novel-openings',
+      'descriptive-nature', 'dialogue-analysis', 'modernist-fiction', 'narrative-voice',
+      'setting-atmosphere', 'travel-writing', 'victorian-fiction',
+    ].map((sub) => ({
+      url: `${base}/igcse/cambridge/reading/${sub}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+
+    // ============================================================
+    // Toolkit
+    // ============================================================
+    { url: `${base}/toolkit`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/toolkit/test-builder`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/toolkit/revision-builder`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/toolkit/personalised-revision`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/toolkit/my-materials`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/toolkit/progress`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+
+    // ============================================================
+    // Demo pages
+    // ============================================================
+    { url: `${base}/demo`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/demo/teacher`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/demo/student`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/demo/school`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+
+    // ============================================================
+    // Other
+    // ============================================================
+    { url: `${base}/board-select`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/dashboard/papers`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
 
     // Auth pages (public)
     { url: `${base}/auth/register`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },

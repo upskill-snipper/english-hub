@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import { FileText, FileDown, Presentation, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { events } from "@/lib/gtag"
 
 /**
  * DownloadMenu — Dead-simple download button group.
@@ -120,6 +121,10 @@ export function DownloadMenu({
    */
   function handleClick(opt: DownloadOption): void {
     setOpen(false)
+    // Track the download event in GA4 (no-op if GA4 not configured/consented)
+    try {
+      events.documentDownloaded(opt.label, opt.format)
+    } catch { /* never break the click */ }
     Promise.resolve()
       .then(() => opt.onClick(style))
       .then(() => {
