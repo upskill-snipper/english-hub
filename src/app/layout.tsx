@@ -8,6 +8,8 @@ import { RootLayoutShell } from '@/components/layout/root-layout-shell'
 import { WebsiteJsonLd } from '@/components/seo/json-ld'
 import { CookieConsent } from '@/components/cookie-consent'
 import { UtmCapture } from '@/components/utm-capture'
+import { GoogleAnalytics } from '@/components/GoogleAnalytics'
+import { Suspense } from 'react'
 import { BoardGate } from '@/components/board/BoardGate'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { Analytics } from '@vercel/analytics/react'
@@ -93,29 +95,10 @@ export default async function RootLayout({
         </SupabaseProvider>
         <Analytics />
         <SpeedInsights />
-        {process.env.NEXT_PUBLIC_GA4_ID && (
-          <>
-            <Script
-              id="ga4-consent-check"
-              strategy="afterInteractive"
-            >
-              {`(function() {
-                var consent = localStorage.getItem('cookie-consent');
-                if (consent === 'all') {
-                  var s = document.createElement('script');
-                  s.src = 'https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}';
-                  s.async = true;
-                  document.head.appendChild(s);
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  window.gtag = gtag;
-                  gtag('js', new Date());
-                  gtag('config', '${process.env.NEXT_PUBLIC_GA4_ID}');
-                }
-              })();`}
-            </Script>
-          </>
-        )}
+        {/* Google Analytics 4 — auto-loads if user has consented + tracks SPA route changes */}
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
       </body>
     </html>
   )
