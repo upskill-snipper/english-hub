@@ -1,0 +1,36 @@
+-- ─── Drop permissive school_join_codes SELECT policy (P1-SEC-4) ──────────
+--
+-- Migration 004_fix_school_rls.sql:322 established:
+--
+--   CREATE POLICY "anyone_can_read_active_join_codes"
+--     ON public.school_join_codes FOR SELECT USING (is_active = TRUE);
+--
+-- which let any authenticated user `select * from school_join_codes` and
+-- enumerate every active join code along with its school_id, class_id,
+-- max_uses, uses count, expires_at, and created_by. For a platform
+-- serving minors this exceeds data minimisation and turns the table
+-- into an enumerable roster of active school links.
+--
+-- This migration is SAFE to apply now because:
+--   1. Every repo code path that reads school_join_codes uses
+--      `createServiceRoleClient()` (grep for
+--      `from.*school_join_codes` — all matches are in
+--      /api/school/join/route.ts and /api/school/join-codes/*). The
+--      service role bypasses RLS entirely, so dropping this policy
+--      does not affect server-side code.
+--   2. The new `public.lookup_school_join_code(code_input text)` RPC
+--      (added in 20260419_school_join_code_lookup_rpc.sql) provides
+--      a safe, minimum-field public lookup for any future client that
+--      needs to validate a code without service role.
+--
+-- If rollback is needed (unlikely), re-apply the original policy:
+--   CREATE POLICY "anyone_can_read_active_join_codes"
+--     ON public.school_join_codes FOR SELECT USING (is_active = TRUE);
+--
+-- Other SELECT policies remain intact:
+--   - "School members can view join codes" (from 20260322_rls_hardening.sql)
+--     — lets school members see codes for their own school.
+-- ──────────────────────────────────────────────────────────────────────
+
+DROP POLICY IF EXISTS "anyone_can_read_active_join_codes"
+  ON public.school_join_codes;
