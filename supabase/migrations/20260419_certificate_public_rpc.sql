@@ -19,10 +19,15 @@
 --
 -- ──────────────────────────────────────────────────────────────────────
 
+-- NOTE on column types: `certificates.course_id` is TEXT (see
+-- 001_initial_schema.sql:94 — it references `courses(id)` which is a
+-- TEXT primary key, not a UUID). An earlier draft of this RPC declared
+-- `course_id uuid` here, which would throw "structure of query does
+-- not match function result type" on every call. Keep TEXT.
 CREATE OR REPLACE FUNCTION public.verify_certificate(cert_id uuid)
 RETURNS TABLE (
   id             uuid,
-  course_id      uuid,
+  course_id      text,
   grade          text,
   issued_at      timestamptz,
   student_name   text
