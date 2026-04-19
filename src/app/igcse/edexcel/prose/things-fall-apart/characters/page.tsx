@@ -1,6 +1,6 @@
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 'use client'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import Link from 'next/link'
 import { ArrowLeft, Users, Sparkles, Info } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
