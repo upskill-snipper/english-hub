@@ -13,16 +13,90 @@ import { cn } from '@/lib/utils'
  * open it can be dismissed with Escape.
  *
  * Entries ending in `/*` match the prefix (e.g. `/auth/*` matches `/auth/login`).
+ *
+ * This list MUST stay in sync with `BOARD_ALLOWLIST_EXACT` and
+ * `BOARD_ALLOWLIST_PREFIX` in `src/middleware.ts`. The middleware handles the
+ * server-side redirect; this component handles the client-side modal.
+ *
+ * Philosophy: ONLY gate content that materially changes by exam board
+ * (revision/*, practice, mock-exams, games, assessment/*, courses, igcse/*).
+ * Marketing, policy, compliance, demo, and account pages are crawlable
+ * without a board cookie — Googlebot, social unfurlers, diligence reviewers,
+ * school DPOs, and paid-ad landers must see real content.
+ *
+ * Commercial note: extending this list to /revision/*, /games, /mock-exams,
+ * /practice, /igcse (previously gated) unlocks Google indexing of ~200
+ * long-tail content pages. Each page has its own client-side board-aware
+ * filter; visitors without a board see the board-agnostic version with a
+ * soft "pick your board" nudge baked into the page content.
  */
 const ALLOWLISTED_PATHS = [
+  // Root + board selector
   '/',
   '/board-select',
+  '/board-select/*',
+
+  // Auth flows
   '/auth/*',
+
+  // Marketing / conversion surfaces
   '/pricing',
   '/about',
+  '/contact',
+  '/for-schools',
+  '/for-schools/*',
+  '/for-teachers',
+  '/for-teachers/*',
+  '/for-parents',
+  '/for-parents/*',
+  '/affiliates',
+  '/affiliates/*',
+  '/creators',
+  '/creators/*',
+  '/resources',
+  '/resources/*',
+  '/help',
+  '/faqs',
+
+  // Legal / compliance
   '/terms',
   '/privacy',
+  '/privacy-policy',
+  '/cookie-policy',
+  '/refund-policy',
+  '/accessibility',
+  '/safeguarding',
+  '/data-processing',
+  '/legal',
+  '/legal/*',
+
+  // Account-adjacent
+  '/verify',
+  '/consent',
+  '/certificate',
+
+  // School flows (board chosen via school code)
   '/school/*',
+
+  // Demo — must be public
+  '/demo/*',
+
+  // Content surfaces previously gated — now crawlable for SEO.
+  // Each page has its own board-aware filter; no-board visitors see the
+  // generic version.
+  '/analysis/*',
+  '/revision/*',
+  '/practice/*',
+  '/games/*',
+  '/assessment/*',
+  '/mock-exams/*',
+  '/courses/*',
+  '/igcse/*',
+  '/learn/*',
+  '/marking/*',
+  '/toolkit/*',
+
+  // API + internals
   '/api/*',
 ] as const
 
