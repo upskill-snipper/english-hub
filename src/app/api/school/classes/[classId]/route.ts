@@ -16,22 +16,26 @@ async function verifyClassBelongsToSchool(classId: string, schoolId: string) {
   return !error && !!data
 }
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { classId: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ classId: string }> }) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-detail:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -52,8 +56,16 @@ export async function GET(
       .single()
 
     // Teachers may only access classes they are assigned to
-    if (!classError && classData && member.role === 'teacher' && classData.teacher_id !== member.id) {
-      return NextResponse.json({ error: 'Forbidden: you are not assigned to this class' }, { status: 403 })
+    if (
+      !classError &&
+      classData &&
+      member.role === 'teacher' &&
+      classData.teacher_id !== member.id
+    ) {
+      return NextResponse.json(
+        { error: 'Forbidden: you are not assigned to this class' },
+        { status: 403 },
+      )
     }
 
     if (classError || !classData) {
@@ -79,22 +91,40 @@ export async function GET(
 
     // Fetch profiles, progress, and practice sessions in parallel
     const [profilesResult, progressResult, practiceResult, certsResult] = await Promise.all([
-      admin.from('profiles').select('id, email, full_name, year_group, exam_board').in('id', studentIds),
-      admin.from('module_progress')
-        .select('user_id, module_id, course_id, quiz_score, completed, time_spent_seconds, completed_at')
+      admin
+        .from('profiles')
+        .select('id, email, full_name, year_group, exam_board')
+        .in('id', studentIds),
+      admin
+        .from('module_progress')
+        .select(
+          'user_id, module_id, course_id, quiz_score, completed, time_spent_seconds, completed_at',
+        )
         .in('user_id', studentIds),
       admin.from('practice_sessions').select('user_id, created_at').in('user_id', studentIds),
       admin.from('certificates').select('user_id').in('user_id', studentIds),
     ])
 
     // Aggregate progress by student
-    const progressByStudent = new Map<string, Array<{
-      module_id: string; course_id: string; quiz_score: number | null;
-      completed: boolean; time_spent_seconds: number; completed_at: string | null
-    }>>()
+    const progressByStudent = new Map<
+      string,
+      Array<{
+        module_id: string
+        course_id: string
+        quiz_score: number | null
+        completed: boolean
+        time_spent_seconds: number
+        completed_at: string | null
+      }>
+    >()
     for (const p of (progressResult.data || []) as Array<{
-      user_id: string; module_id: string; course_id: string; quiz_score: number | null;
-      completed: boolean; time_spent_seconds: number; completed_at: string | null
+      user_id: string
+      module_id: string
+      course_id: string
+      quiz_score: number | null
+      completed: boolean
+      time_spent_seconds: number
+      completed_at: string | null
     }>) {
       if (!progressByStudent.has(p.user_id)) progressByStudent.set(p.user_id, [])
       progressByStudent.get(p.user_id)!.push(p)
@@ -113,7 +143,9 @@ export async function GET(
     }
 
     // Trajectory helper
-    const getTrajectory = (scores: number[]): 'improving' | 'declining' | 'stable' | 'insufficient_data' => {
+    const getTrajectory = (
+      scores: number[],
+    ): 'improving' | 'declining' | 'stable' | 'insufficient_data' => {
       if (scores.length < 3) return 'insufficient_data'
       const recent = scores.slice(-3)
       const earlier = scores.slice(-6, -3)
@@ -126,48 +158,58 @@ export async function GET(
       return 'stable'
     }
 
-    const students = (profilesResult.data || []).map((profile: {
-      id: string; email: string; full_name: string | null; year_group: string | null; exam_board: string | null
-    }) => {
-      const studentProgress = progressByStudent.get(profile.id) || []
-      const joinInfo = (classStudents || []).find((s: { student_id: string }) => s.student_id === profile.id)
+    const students = (profilesResult.data || []).map(
+      (profile: {
+        id: string
+        email: string
+        full_name: string | null
+        year_group: string | null
+        exam_board: string | null
+      }) => {
+        const studentProgress = progressByStudent.get(profile.id) || []
+        const joinInfo = (classStudents || []).find(
+          (s: { student_id: string }) => s.student_id === profile.id,
+        )
 
-      const scores = studentProgress
-        .filter(p => p.quiz_score !== null && p.completed_at)
-        .sort((a, b) => new Date(a.completed_at!).getTime() - new Date(b.completed_at!).getTime())
-        .map(p => p.quiz_score as number)
+        const scores = studentProgress
+          .filter((p) => p.quiz_score !== null && p.completed_at)
+          .sort((a, b) => new Date(a.completed_at!).getTime() - new Date(b.completed_at!).getTime())
+          .map((p) => p.quiz_score as number)
 
-      const completedModules = studentProgress.filter(p => p.completed).length
-      const avgScore = scores.length > 0
-        ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
-        : null
-      const totalTime = studentProgress.reduce((sum, p) => sum + (p.time_spent_seconds || 0), 0)
-      const lastActivity = studentProgress
-        .filter(p => p.completed_at)
-        .sort((a, b) => new Date(b.completed_at!).getTime() - new Date(a.completed_at!).getTime())[0]
+        const completedModules = studentProgress.filter((p) => p.completed).length
+        const avgScore =
+          scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null
+        const totalTime = studentProgress.reduce((sum, p) => sum + (p.time_spent_seconds || 0), 0)
+        const lastActivity = studentProgress
+          .filter((p) => p.completed_at)
+          .sort(
+            (a, b) => new Date(b.completed_at!).getTime() - new Date(a.completed_at!).getTime(),
+          )[0]
 
-      const trajectory = getTrajectory(scores)
+        const trajectory = getTrajectory(scores)
 
-      return {
-        student_id: profile.id,
-        full_name: profile.full_name,
-        email: profile.email,
-        year_group: profile.year_group,
-        exam_board: profile.exam_board,
-        joined_at: joinInfo?.joined_at,
-        avg_quiz_score: avgScore,
-        modules_completed: completedModules,
-        total_modules_started: studentProgress.length,
-        completion_rate: studentProgress.length > 0
-          ? Math.round((completedModules / studentProgress.length) * 100)
-          : 0,
-        time_spent_seconds: totalTime,
-        practice_sessions: practiceByStudent.get(profile.id) || 0,
-        certificates_count: certsByStudent.get(profile.id) || 0,
-        last_activity: lastActivity?.completed_at || null,
-        trajectory,
-      }
-    })
+        return {
+          student_id: profile.id,
+          full_name: profile.full_name,
+          email: profile.email,
+          year_group: profile.year_group,
+          exam_board: profile.exam_board,
+          joined_at: joinInfo?.joined_at,
+          avg_quiz_score: avgScore,
+          modules_completed: completedModules,
+          total_modules_started: studentProgress.length,
+          completion_rate:
+            studentProgress.length > 0
+              ? Math.round((completedModules / studentProgress.length) * 100)
+              : 0,
+          time_spent_seconds: totalTime,
+          practice_sessions: practiceByStudent.get(profile.id) || 0,
+          certificates_count: certsByStudent.get(profile.id) || 0,
+          last_activity: lastActivity?.completed_at || null,
+          trajectory,
+        }
+      },
+    )
 
     return NextResponse.json({
       class: classData,
@@ -180,22 +222,26 @@ export async function GET(
   }
 }
 
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { classId: string } }
-) {
+export async function PATCH(request: NextRequest, props: { params: Promise<{ classId: string }> }) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-update:${ip}`, { limit: 10, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -236,7 +282,10 @@ export async function PATCH(
         return NextResponse.json({ error: 'Class name cannot be empty' }, { status: 422 })
       }
       if ((updates.name as string).trim().length > 100) {
-        return NextResponse.json({ error: 'Class name must be 100 characters or fewer' }, { status: 422 })
+        return NextResponse.json(
+          { error: 'Class name must be 100 characters or fewer' },
+          { status: 422 },
+        )
       }
       updates.name = (updates.name as string).trim()
     }
@@ -253,7 +302,10 @@ export async function PATCH(
         .eq('invite_status', 'accepted')
         .single()
       if (memberErr || !assignedMember) {
-        return NextResponse.json({ error: 'Assigned teacher is not a member of this school' }, { status: 422 })
+        return NextResponse.json(
+          { error: 'Assigned teacher is not a member of this school' },
+          { status: 422 },
+        )
       }
     }
 
@@ -278,20 +330,27 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { classId: string } }
+  props: { params: Promise<{ classId: string }> },
 ) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-delete:${ip}`, { limit: 5, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }

@@ -77,7 +77,7 @@ const BASE_COOKIE_OPTIONS = {
 // ---------------------------------------------------------------------------
 
 export function readAffiliateCookieFromRequest(
-  request: NextRequest
+  request: NextRequest,
 ): AffiliateCookiePayload | null {
   const raw = request.cookies.get(AFFILIATE_COOKIE_NAME)?.value
   if (!raw) return null
@@ -86,7 +86,7 @@ export function readAffiliateCookieFromRequest(
 
 export function writeAffiliateCookieOnResponse(
   response: NextResponse,
-  payload: AffiliateCookiePayload
+  payload: AffiliateCookiePayload,
 ): void {
   response.cookies.set({
     name: AFFILIATE_COOKIE_NAME,
@@ -114,7 +114,8 @@ export function clearAffiliateCookieOnResponse(response: NextResponse): void {
 
 async function getCookieStore() {
   const mod = await import('next/headers')
-  return mod.cookies()
+  // Next 15: `cookies()` is async and must be awaited.
+  return await mod.cookies()
 }
 
 export async function readAffiliateCookie(): Promise<AffiliateCookiePayload | null> {
@@ -124,9 +125,7 @@ export async function readAffiliateCookie(): Promise<AffiliateCookiePayload | nu
   return decode(raw)
 }
 
-export async function writeAffiliateCookie(
-  payload: AffiliateCookiePayload
-): Promise<void> {
+export async function writeAffiliateCookie(payload: AffiliateCookiePayload): Promise<void> {
   const store = await getCookieStore()
   try {
     store.set({
@@ -156,10 +155,7 @@ export async function clearAffiliateCookie(): Promise<void> {
 /**
  * Build a fresh cookie payload for a first-ever click.
  */
-export function buildInitialPayload(
-  ref: string,
-  linkId?: string
-): AffiliateCookiePayload {
+export function buildInitialPayload(ref: string, linkId?: string): AffiliateCookiePayload {
   const now = new Date().toISOString()
   return {
     ref,

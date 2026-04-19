@@ -31,7 +31,8 @@ function getTrajectory(
   return 'stable'
 }
 
-export async function GET(request: NextRequest, { params }: { params: { classId: string } }) {
+export async function GET(request: NextRequest, props: { params: Promise<{ classId: string }> }) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-students:${ip}`, { limit: 30, windowSeconds: 60 })
@@ -172,7 +173,8 @@ export async function GET(request: NextRequest, { params }: { params: { classId:
   }
 }
 
-export async function POST(request: NextRequest, { params }: { params: { classId: string } }) {
+export async function POST(request: NextRequest, props: { params: Promise<{ classId: string }> }) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-add-student:${ip}`, { limit: 20, windowSeconds: 60 })
@@ -480,7 +482,11 @@ export async function POST(request: NextRequest, { params }: { params: { classId
   }
 }
 
-export async function DELETE(request: NextRequest, { params }: { params: { classId: string } }) {
+export async function DELETE(
+  request: NextRequest,
+  props: { params: Promise<{ classId: string }> },
+) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-remove-student:${ip}`, {

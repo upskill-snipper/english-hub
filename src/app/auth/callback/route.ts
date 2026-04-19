@@ -9,11 +9,12 @@ export async function GET(request: NextRequest) {
   const type = searchParams.get('type')
   const rawNext = searchParams.get('next') ?? '/dashboard'
   // Validate redirect to prevent open redirect attacks
-  const next = (rawNext.startsWith('/') && !rawNext.startsWith('//') && !rawNext.includes(':'))
-    ? rawNext
-    : '/dashboard'
+  const next =
+    rawNext.startsWith('/') && !rawNext.startsWith('//') && !rawNext.includes(':')
+      ? rawNext
+      : '/dashboard'
 
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -26,7 +27,7 @@ export async function GET(request: NextRequest) {
         setAll(cookiesToSet) {
           try {
             cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
+              cookieStore.set(name, value, options),
             )
           } catch {
             // The `setAll` method was called from a Server Component.
@@ -34,7 +35,7 @@ export async function GET(request: NextRequest) {
           }
         },
       },
-    }
+    },
   )
 
   // Handle PKCE flow (code exchange)

@@ -19,7 +19,8 @@ const nextConfig = {
     dirs: ['src'],
   },
   experimental: {
-    instrumentationHook: true,
+    // instrumentationHook: removed in Next 15 — instrumentation.js is
+    // available by default and no longer needs this flag.
     scrollRestoration: true,
     // Additions from Cycle 3 bundle deep-dive: barrel-heavy packages where
     // tree-shaking via modularizeImports materially reduces shared chunk size.

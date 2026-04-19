@@ -20,22 +20,26 @@ function predictGrade(avgScore: number): string {
   return 'Grade 1'
 }
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { studentId: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ studentId: string }> }) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-student-detail:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -50,7 +54,10 @@ export async function GET(
 
     // Students can only view their own progress
     if (!staffRoles.includes(membership.role) && user.id !== studentId) {
-      return NextResponse.json({ error: 'Forbidden: you can only view your own progress' }, { status: 403 })
+      return NextResponse.json(
+        { error: 'Forbidden: you can only view your own progress' },
+        { status: 403 },
+      )
     }
 
     if (!(await verifyStudentInSchool(studentId, membership.school_id))) {
@@ -60,14 +67,40 @@ export async function GET(
     const admin = createServiceRoleClient()
 
     // Fetch all data in parallel
-    const [profileRes, enrolmentsRes, progressRes, assessmentsRes, practiceRes, certificatesRes] = await Promise.all([
-      admin.from('profiles').select('id, email, full_name, year_group, exam_board, created_at').eq('id', studentId).single(),
-      admin.from('enrolments').select('course_id, enrolled_at, payment_type').eq('user_id', studentId),
-      admin.from('module_progress').select('module_id, course_id, quiz_score, completed, quiz_attempts, time_spent_seconds, completed_at').eq('user_id', studentId),
-      admin.from('assessment_attempts').select('id, course_id, score, passed, time_taken_seconds, attempted_at').eq('user_id', studentId).order('attempted_at', { ascending: false }),
-      admin.from('practice_sessions').select('id, exam_board, paper, question_type, self_rating, time_spent_seconds, created_at').eq('user_id', studentId).order('created_at', { ascending: false }),
-      admin.from('certificates').select('id, course_id, score, grade, issued_at').eq('user_id', studentId),
-    ])
+    const [profileRes, enrolmentsRes, progressRes, assessmentsRes, practiceRes, certificatesRes] =
+      await Promise.all([
+        admin
+          .from('profiles')
+          .select('id, email, full_name, year_group, exam_board, created_at')
+          .eq('id', studentId)
+          .single(),
+        admin
+          .from('enrolments')
+          .select('course_id, enrolled_at, payment_type')
+          .eq('user_id', studentId),
+        admin
+          .from('module_progress')
+          .select(
+            'module_id, course_id, quiz_score, completed, quiz_attempts, time_spent_seconds, completed_at',
+          )
+          .eq('user_id', studentId),
+        admin
+          .from('assessment_attempts')
+          .select('id, course_id, score, passed, time_taken_seconds, attempted_at')
+          .eq('user_id', studentId)
+          .order('attempted_at', { ascending: false }),
+        admin
+          .from('practice_sessions')
+          .select(
+            'id, exam_board, paper, question_type, self_rating, time_spent_seconds, created_at',
+          )
+          .eq('user_id', studentId)
+          .order('created_at', { ascending: false }),
+        admin
+          .from('certificates')
+          .select('id, course_id, score, grade, issued_at')
+          .eq('user_id', studentId),
+      ])
 
     if (profileRes.error || !profileRes.data) {
       return NextResponse.json({ error: 'Student not found' }, { status: 404 })
@@ -76,18 +109,28 @@ export async function GET(
     const profile = profileRes.data
     const enrolments = enrolmentsRes.data || []
     const progress = (progressRes.data || []) as Array<{
-      module_id: string; course_id: string; quiz_score: number | null;
-      completed: boolean; quiz_attempts: number; time_spent_seconds: number; completed_at: string | null
+      module_id: string
+      course_id: string
+      quiz_score: number | null
+      completed: boolean
+      quiz_attempts: number
+      time_spent_seconds: number
+      completed_at: string | null
     }>
     const assessments = assessmentsRes.data || []
     const practice = (practiceRes.data || []) as Array<{
-      id: string; exam_board: string; paper: string; question_type: string;
-      self_rating: number | null; time_spent_seconds: number; created_at: string
+      id: string
+      exam_board: string
+      paper: string
+      question_type: string
+      self_rating: number | null
+      time_spent_seconds: number
+      created_at: string
     }>
     const certificates = certificatesRes.data || []
 
     // Build course/module name lookups from static course data
-    const courseMap = new Map(allCourses.map(c => [c.id, c]))
+    const courseMap = new Map(allCourses.map((c) => [c.id, c]))
     const moduleMap = new Map<string, { title: string; courseId: string }>()
     for (const course of allCourses) {
       for (const mod of course.moduleList) {
@@ -98,31 +141,38 @@ export async function GET(
     const totalModulesAvailable = allCourses.reduce((sum, c) => sum + c.moduleList.length, 0)
 
     // Enrolments with course names
-    const enrolmentsWithNames = enrolments.map(e => ({
+    const enrolmentsWithNames = enrolments.map((e) => ({
       ...e,
       course_name: courseMap.get(e.course_id)?.title || e.course_id,
     }))
 
     // Module progress with names
-    const moduleProgressWithNames = progress.map(mp => ({
+    const moduleProgressWithNames = progress.map((mp) => ({
       ...mp,
       course_name: courseMap.get(mp.course_id)?.title || mp.course_id,
       module_name: moduleMap.get(mp.module_id)?.title || mp.module_id,
     }))
 
     // Compute stats
-    const modulesCompleted = progress.filter(p => p.completed).length
-    const quizScores = progress.filter(p => p.quiz_score !== null).map(p => p.quiz_score as number)
-    const avgQuizScore = quizScores.length > 0
-      ? Math.round(quizScores.reduce((a, b) => a + b, 0) / quizScores.length)
-      : 0
+    const modulesCompleted = progress.filter((p) => p.completed).length
+    const quizScores = progress
+      .filter((p) => p.quiz_score !== null)
+      .map((p) => p.quiz_score as number)
+    const avgQuizScore =
+      quizScores.length > 0
+        ? Math.round(quizScores.reduce((a, b) => a + b, 0) / quizScores.length)
+        : 0
     const totalTimeSpent = progress.reduce((sum, p) => sum + (p.time_spent_seconds || 0), 0)
 
     // Practice ratings
-    const practiceRatings = practice.filter(p => p.self_rating !== null).map(p => p.self_rating as number)
-    const avgPracticeRating = practiceRatings.length > 0
-      ? Math.round((practiceRatings.reduce((a, b) => a + b, 0) / practiceRatings.length) * 10) / 10
-      : 0
+    const practiceRatings = practice
+      .filter((p) => p.self_rating !== null)
+      .map((p) => p.self_rating as number)
+    const avgPracticeRating =
+      practiceRatings.length > 0
+        ? Math.round((practiceRatings.reduce((a, b) => a + b, 0) / practiceRatings.length) * 10) /
+          10
+        : 0
 
     // Strengths/weaknesses: average quiz score per course
     const courseScoreMap = new Map<string, { total: number; count: number; name: string }>()
@@ -139,10 +189,17 @@ export async function GET(
       .map(([id, v]) => ({ id, name: v.name, avg: v.total / v.count }))
       .sort((a, b) => b.avg - a.avg)
 
-    const strengths = courseAvgs.slice(0, 3).map(c => c.name)
-    const weaknesses = courseAvgs.length > 3
-      ? courseAvgs.slice(-3).reverse().map(c => c.name)
-      : courseAvgs.slice(Math.max(0, courseAvgs.length - 3)).reverse().map(c => c.name)
+    const strengths = courseAvgs.slice(0, 3).map((c) => c.name)
+    const weaknesses =
+      courseAvgs.length > 3
+        ? courseAvgs
+            .slice(-3)
+            .reverse()
+            .map((c) => c.name)
+        : courseAvgs
+            .slice(Math.max(0, courseAvgs.length - 3))
+            .reverse()
+            .map((c) => c.name)
 
     // Trajectory: compare last 4 weeks avg vs previous 4 weeks
     const now = new Date()
@@ -150,14 +207,26 @@ export async function GET(
     const eightWeeksAgo = new Date(now.getTime() - 56 * 24 * 60 * 60 * 1000)
 
     const recentScores = progress
-      .filter(p => p.completed_at && new Date(p.completed_at) >= fourWeeksAgo && p.quiz_score !== null)
-      .map(p => p.quiz_score as number)
+      .filter(
+        (p) => p.completed_at && new Date(p.completed_at) >= fourWeeksAgo && p.quiz_score !== null,
+      )
+      .map((p) => p.quiz_score as number)
     const previousScores = progress
-      .filter(p => p.completed_at && new Date(p.completed_at) >= eightWeeksAgo && new Date(p.completed_at) < fourWeeksAgo && p.quiz_score !== null)
-      .map(p => p.quiz_score as number)
+      .filter(
+        (p) =>
+          p.completed_at &&
+          new Date(p.completed_at) >= eightWeeksAgo &&
+          new Date(p.completed_at) < fourWeeksAgo &&
+          p.quiz_score !== null,
+      )
+      .map((p) => p.quiz_score as number)
 
-    const recentAvg = recentScores.length > 0 ? recentScores.reduce((a, b) => a + b, 0) / recentScores.length : 0
-    const previousAvg = previousScores.length > 0 ? previousScores.reduce((a, b) => a + b, 0) / previousScores.length : 0
+    const recentAvg =
+      recentScores.length > 0 ? recentScores.reduce((a, b) => a + b, 0) / recentScores.length : 0
+    const previousAvg =
+      previousScores.length > 0
+        ? previousScores.reduce((a, b) => a + b, 0) / previousScores.length
+        : 0
 
     let trajectory: 'improving' | 'stable' | 'declining' = 'stable'
     if (recentScores.length > 0 && previousScores.length > 0) {
@@ -180,17 +249,19 @@ export async function GET(
     for (const p of practice) {
       if (p.created_at) timestamps.push(p.created_at)
     }
-    const lastActiveAt = timestamps.length > 0
-      ? timestamps.sort((a, b) => new Date(b).getTime() - new Date(a).getTime())[0]
-      : null
+    const lastActiveAt =
+      timestamps.length > 0
+        ? timestamps.sort((a, b) => new Date(b).getTime() - new Date(a).getTime())[0]
+        : null
 
     // Build weak areas
     const weakAreas: WeakArea[] = courseAvgs
-      .filter(c => c.avg < 70)
+      .filter((c) => c.avg < 70)
       .slice(-5)
       .reverse()
-      .map(c => {
-        const severity: WeakArea['severity'] = c.avg < 40 ? 'critical' : c.avg < 55 ? 'warning' : 'minor'
+      .map((c) => {
+        const severity: WeakArea['severity'] =
+          c.avg < 40 ? 'critical' : c.avg < 55 ? 'warning' : 'minor'
         return {
           course_id: c.id,
           course_name: c.name,
@@ -221,7 +292,8 @@ export async function GET(
         title: 'Increase practice session frequency',
         description: `Only ${practice.length} practice session${practice.length !== 1 ? 's' : ''} completed. Regular exam practice improves confidence and readiness.`,
         affected_students: 1,
-        suggested_action: 'Aim for at least 3 practice sessions per week using the exam question bank.',
+        suggested_action:
+          'Aim for at least 3 practice sessions per week using the exam question bank.',
       })
     }
 
@@ -231,17 +303,23 @@ export async function GET(
         title: 'Address declining performance',
         description: 'Recent quiz scores are trending downward compared to the previous period.',
         affected_students: 1,
-        suggested_action: 'Schedule a one-to-one review session to identify and address knowledge gaps.',
+        suggested_action:
+          'Schedule a one-to-one review session to identify and address knowledge gaps.',
       })
     }
 
-    if (modulesCompleted > 0 && totalModulesAvailable > 0 && (modulesCompleted / totalModulesAvailable) < 0.3) {
+    if (
+      modulesCompleted > 0 &&
+      totalModulesAvailable > 0 &&
+      modulesCompleted / totalModulesAvailable < 0.3
+    ) {
       recommendations.push({
         priority: 3,
         title: 'Improve course completion rate',
         description: `Only ${Math.round((modulesCompleted / totalModulesAvailable) * 100)}% of available modules completed.`,
         affected_students: 1,
-        suggested_action: 'Set a weekly target of completing at least 2 modules to maintain steady progress.',
+        suggested_action:
+          'Set a weekly target of completing at least 2 modules to maintain steady progress.',
       })
     }
 
@@ -251,7 +329,8 @@ export async function GET(
         title: 'Maintain upward momentum',
         description: 'Performance is improving. Keep up the good work!',
         affected_students: 1,
-        suggested_action: 'Continue current study pattern and consider attempting more challenging assessment questions.',
+        suggested_action:
+          'Continue current study pattern and consider attempting more challenging assessment questions.',
       })
     }
 
@@ -266,7 +345,10 @@ export async function GET(
       exam_board: profile.exam_board,
       modules_completed: modulesCompleted,
       total_modules: totalModulesAvailable,
-      completion_rate: totalModulesAvailable > 0 ? Math.round((modulesCompleted / totalModulesAvailable) * 100) : 0,
+      completion_rate:
+        totalModulesAvailable > 0
+          ? Math.round((modulesCompleted / totalModulesAvailable) * 100)
+          : 0,
       avg_quiz_score: avgQuizScore,
       total_time_spent_seconds: totalTimeSpent,
       practice_sessions_count: practice.length,

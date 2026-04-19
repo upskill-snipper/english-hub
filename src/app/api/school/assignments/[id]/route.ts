@@ -18,22 +18,26 @@ type AssignmentStatusValue = (typeof VALID_STATUSES)[number]
  *
  * Returns a single assignment with its submissions.
  */
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-assignment-get:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -89,9 +93,10 @@ export async function GET(
         updatedAt: assignment.updatedAt.toISOString(),
         submissionsCount: submitted.length,
         totalStudents: assignment.submissions.length,
-        avgScore: scores.length > 0
-          ? Math.round((scores.reduce((x, y) => x + y, 0) / scores.length) * 100) / 100
-          : null,
+        avgScore:
+          scores.length > 0
+            ? Math.round((scores.reduce((x, y) => x + y, 0) / scores.length) * 100) / 100
+            : null,
         submissions: assignment.submissions.map((s) => ({
           id: s.id,
           studentId: s.studentId,
@@ -115,22 +120,26 @@ export async function GET(
  * Updates an existing assignment. Only the owning teacher, admin, or HoD may update.
  * Allowed fields: title, description, type, status, due_date, course_id, module_ids.
  */
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function PATCH(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-assignment-update:${ip}`, { limit: 15, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -141,7 +150,10 @@ export async function PATCH(
     }
 
     if (member.role === 'student') {
-      return NextResponse.json({ error: 'Forbidden: students cannot update assignments' }, { status: 403 })
+      return NextResponse.json(
+        { error: 'Forbidden: students cannot update assignments' },
+        { status: 403 },
+      )
     }
 
     // Fetch existing assignment
@@ -174,7 +186,7 @@ export async function PATCH(
     if (!isOwner && !isClassTeacher && !isStaff) {
       return NextResponse.json(
         { error: 'Forbidden: you can only update your own assignments' },
-        { status: 403 }
+        { status: 403 },
       )
     }
 
@@ -204,7 +216,10 @@ export async function PATCH(
         return NextResponse.json({ error: 'title must be a non-empty string' }, { status: 422 })
       }
       if (body.title.trim().length > 200) {
-        return NextResponse.json({ error: 'title must be 200 characters or fewer' }, { status: 422 })
+        return NextResponse.json(
+          { error: 'title must be 200 characters or fewer' },
+          { status: 422 },
+        )
       }
       updateData.title = body.title.trim()
     }
@@ -218,7 +233,7 @@ export async function PATCH(
       if (!VALID_TYPES.includes(upperType)) {
         return NextResponse.json(
           { error: `type must be one of: ${VALID_TYPES.join(', ')}` },
-          { status: 422 }
+          { status: 422 },
         )
       }
       updateData.type = upperType
@@ -229,7 +244,7 @@ export async function PATCH(
       if (!VALID_STATUSES.includes(upperStatus)) {
         return NextResponse.json(
           { error: `status must be one of: ${VALID_STATUSES.join(', ')}` },
-          { status: 422 }
+          { status: 422 },
         )
       }
       updateData.status = upperStatus
@@ -241,7 +256,10 @@ export async function PATCH(
       } else {
         const parsed = new Date(body.due_date)
         if (isNaN(parsed.getTime())) {
-          return NextResponse.json({ error: 'due_date must be a valid ISO date string' }, { status: 422 })
+          return NextResponse.json(
+            { error: 'due_date must be a valid ISO date string' },
+            { status: 422 },
+          )
         }
         updateData.dueDate = parsed
       }
@@ -279,9 +297,7 @@ export async function PATCH(
     })
 
     const submitted = updated.submissions.filter((s) => s.status !== 'PENDING')
-    const scores = updated.submissions
-      .filter((s) => s.score !== null)
-      .map((s) => s.score as number)
+    const scores = updated.submissions.filter((s) => s.score !== null).map((s) => s.score as number)
 
     return NextResponse.json({
       assignment: {
@@ -299,9 +315,10 @@ export async function PATCH(
         updatedAt: updated.updatedAt.toISOString(),
         submissionsCount: submitted.length,
         totalStudents: updated.submissions.length,
-        avgScore: scores.length > 0
-          ? Math.round((scores.reduce((x, y) => x + y, 0) / scores.length) * 100) / 100
-          : null,
+        avgScore:
+          scores.length > 0
+            ? Math.round((scores.reduce((x, y) => x + y, 0) / scores.length) * 100) / 100
+            : null,
       },
     })
   } catch (error) {
@@ -316,22 +333,26 @@ export async function PATCH(
  * Deletes an assignment and all its submissions (cascade).
  * Only the owning teacher, admin, or HoD may delete.
  */
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-assignment-delete:${ip}`, { limit: 10, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -342,7 +363,10 @@ export async function DELETE(
     }
 
     if (member.role === 'student') {
-      return NextResponse.json({ error: 'Forbidden: students cannot delete assignments' }, { status: 403 })
+      return NextResponse.json(
+        { error: 'Forbidden: students cannot delete assignments' },
+        { status: 403 },
+      )
     }
 
     const existing = await prisma.assignment.findUnique({
@@ -374,7 +398,7 @@ export async function DELETE(
     if (!isOwner && !isClassTeacher && !isStaff) {
       return NextResponse.json(
         { error: 'Forbidden: you can only delete your own assignments' },
-        { status: 403 }
+        { status: 403 },
       )
     }
 

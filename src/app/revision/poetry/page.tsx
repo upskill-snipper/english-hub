@@ -1,11 +1,5 @@
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Sparkles,
-  Info,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, Sparkles, Info } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -15,18 +9,12 @@ import { PoetryHubAQAClient } from './PoetryHubAQAClient'
 
 type SearchParams = { wrongBoard?: string }
 
-export default async function PoetryRevisionPage({
-  searchParams,
-}: {
-  searchParams?: SearchParams
-}) {
+export default async function PoetryRevisionPage(props: { searchParams?: Promise<SearchParams> }) {
+  const searchParams = await props.searchParams
   const board = await getServerBoard()
   const wrongBoard = searchParams?.wrongBoard === '1'
 
-  const breadcrumbItems = [
-    { label: 'Revision', href: '/revision' },
-    { label: 'Poetry' },
-  ]
+  const breadcrumbItems = [{ label: 'Revision', href: '/revision' }, { label: 'Poetry' }]
 
   // ── No board chosen yet ──────────────────────────────────────────────
   if (!board) {
@@ -34,9 +22,9 @@ export default async function PoetryRevisionPage({
       <>
         <Breadcrumb items={breadcrumbItems} />
         <BoardlessPoetryShell
-        title="Choose your exam board"
-        description="Each exam board uses a different poetry anthology. Pick yours so we can show you only the poems you actually need to learn."
-      />
+          title="Choose your exam board"
+          description="Each exam board uses a different poetry anthology. Pick yours so we can show you only the poems you actually need to learn."
+        />
       </>
     )
   }
@@ -56,32 +44,32 @@ export default async function PoetryRevisionPage({
   if (board === 'edexcel') {
     return (
       <>
-      <Breadcrumb items={breadcrumbItems} />
-      <PoetryShell
-        boardLabel="Pearson Edexcel"
-        title="Edexcel Poetry Anthology"
-        description="The Pearson Edexcel anthology is split into themed clusters. You'll study one cluster: Conflict or Time and Place."
-        wrongBoard={wrongBoard}
-      >
-        <ClusterCard
-          href="/revision/poetry/edexcel/conflict"
-          title="Conflict"
-          subtitle="15 poems"
-          description="War, struggle, internal turmoil and the cost of conflict."
-        />
-        <ClusterCard
-          href="/revision/poetry/edexcel/time-and-place"
-          title="Time and Place"
-          subtitle="15 poems"
-          description="Memory, landscape, identity and a sense of belonging."
-        />
-        <div className="sm:col-span-2">
-          <Button variant="outline" size="sm" render={<Link href="/revision/poetry/edexcel" />}>
-            View full Edexcel anthology hub
-            <ArrowRight className="size-3.5" />
-          </Button>
-        </div>
-      </PoetryShell>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel="Pearson Edexcel"
+          title="Edexcel Poetry Anthology"
+          description="The Pearson Edexcel anthology is split into themed clusters. You'll study one cluster: Conflict or Time and Place."
+          wrongBoard={wrongBoard}
+        >
+          <ClusterCard
+            href="/revision/poetry/edexcel/conflict"
+            title="Conflict"
+            subtitle="15 poems"
+            description="War, struggle, internal turmoil and the cost of conflict."
+          />
+          <ClusterCard
+            href="/revision/poetry/edexcel/time-and-place"
+            title="Time and Place"
+            subtitle="15 poems"
+            description="Memory, landscape, identity and a sense of belonging."
+          />
+          <div className="sm:col-span-2">
+            <Button variant="outline" size="sm" render={<Link href="/revision/poetry/edexcel" />}>
+              View full Edexcel anthology hub
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
       </>
     )
   }
@@ -90,44 +78,44 @@ export default async function PoetryRevisionPage({
   if (board === 'ocr') {
     return (
       <>
-      <Breadcrumb items={breadcrumbItems} />
-      <PoetryShell
-        boardLabel="OCR"
-        title="Towards a World Unknown"
-        description="The OCR anthology has 4 thematic clusters of 15 poems each. You'll study one cluster prescribed by your teacher."
-        wrongBoard={wrongBoard}
-      >
-        <ClusterCard
-          href="/revision/poetry/ocr/love-and-relationships"
-          title="Love and Relationships"
-          subtitle="15 poems"
-          description="Romantic, familial and complicated forms of love across centuries."
-        />
-        <ClusterCard
-          href="/revision/poetry/ocr/conflict"
-          title="Conflict"
-          subtitle="15 poems"
-          description="Personal, political and global conflict in poetry."
-        />
-        <ClusterCard
-          href="/revision/poetry/ocr/youth-and-age"
-          title="Youth and Age"
-          subtitle="15 poems"
-          description="Time, growing up, mortality and looking back."
-        />
-        <ClusterCard
-          href="/revision/poetry/ocr/power-and-natural-world"
-          title="Power and the Natural World"
-          subtitle="15 poems"
-          description="Nature's force, human power and our relationship with the environment."
-        />
-        <div className="sm:col-span-2">
-          <Button variant="outline" size="sm" render={<Link href="/revision/poetry/ocr" />}>
-            View full OCR anthology hub
-            <ArrowRight className="size-3.5" />
-          </Button>
-        </div>
-      </PoetryShell>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel="OCR"
+          title="Towards a World Unknown"
+          description="The OCR anthology has 4 thematic clusters of 15 poems each. You'll study one cluster prescribed by your teacher."
+          wrongBoard={wrongBoard}
+        >
+          <ClusterCard
+            href="/revision/poetry/ocr/love-and-relationships"
+            title="Love and Relationships"
+            subtitle="15 poems"
+            description="Romantic, familial and complicated forms of love across centuries."
+          />
+          <ClusterCard
+            href="/revision/poetry/ocr/conflict"
+            title="Conflict"
+            subtitle="15 poems"
+            description="Personal, political and global conflict in poetry."
+          />
+          <ClusterCard
+            href="/revision/poetry/ocr/youth-and-age"
+            title="Youth and Age"
+            subtitle="15 poems"
+            description="Time, growing up, mortality and looking back."
+          />
+          <ClusterCard
+            href="/revision/poetry/ocr/power-and-natural-world"
+            title="Power and the Natural World"
+            subtitle="15 poems"
+            description="Nature's force, human power and our relationship with the environment."
+          />
+          <div className="sm:col-span-2">
+            <Button variant="outline" size="sm" render={<Link href="/revision/poetry/ocr" />}>
+              View full OCR anthology hub
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
       </>
     )
   }
@@ -136,20 +124,20 @@ export default async function PoetryRevisionPage({
   if (board === 'eduqas') {
     return (
       <>
-      <Breadcrumb items={breadcrumbItems} />
-      <PoetryShell
-        boardLabel="WJEC Eduqas"
-        title="Eduqas Poetry Anthology"
-        description="The Eduqas anthology has 18 poems that all students study. You'll be asked to compare two of them in the exam — strong pairings are essential."
-        wrongBoard={wrongBoard}
-      >
-        <div className="sm:col-span-2">
-          <Button variant="default" size="sm" render={<Link href="/revision/poetry/eduqas" />}>
-            View Eduqas anthology
-            <ArrowRight className="size-3.5" />
-          </Button>
-        </div>
-      </PoetryShell>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel="WJEC Eduqas"
+          title="Eduqas Poetry Anthology"
+          description="The Eduqas anthology has 18 poems that all students study. You'll be asked to compare two of them in the exam — strong pairings are essential."
+          wrongBoard={wrongBoard}
+        >
+          <div className="sm:col-span-2">
+            <Button variant="default" size="sm" render={<Link href="/revision/poetry/eduqas" />}>
+              View Eduqas anthology
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
       </>
     )
   }
@@ -158,20 +146,20 @@ export default async function PoetryRevisionPage({
   if (board === 'edexcel-igcse') {
     return (
       <>
-      <Breadcrumb items={breadcrumbItems} />
-      <PoetryShell
-        boardLabel="Edexcel IGCSE"
-        title="Edexcel IGCSE Poetry Anthology"
-        description="Pearson Edexcel IGCSE prescribes its own poetry anthology. Head to the IGCSE area for the poems you need."
-        wrongBoard={wrongBoard}
-      >
-        <div className="sm:col-span-2">
-          <Button variant="default" size="sm" render={<Link href="/igcse/edexcel/poetry" />}>
-            View Edexcel IGCSE poetry
-            <ArrowRight className="size-3.5" />
-          </Button>
-        </div>
-      </PoetryShell>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel="Edexcel IGCSE"
+          title="Edexcel IGCSE Poetry Anthology"
+          description="Pearson Edexcel IGCSE prescribes its own poetry anthology. Head to the IGCSE area for the poems you need."
+          wrongBoard={wrongBoard}
+        >
+          <div className="sm:col-span-2">
+            <Button variant="default" size="sm" render={<Link href="/igcse/edexcel/poetry" />}>
+              View Edexcel IGCSE poetry
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
       </>
     )
   }
@@ -179,32 +167,38 @@ export default async function PoetryRevisionPage({
   // ── Cambridge 0500 / 0990: no poetry anthology ──────────────────────
   if (board === 'cambridge-0500' || board === 'cambridge-0990') {
     const paperHref =
-      board === 'cambridge-0500'
-        ? '/igcse/cambridge/0500/paper-1'
-        : '/igcse/cambridge/0990/paper-1'
+      board === 'cambridge-0500' ? '/igcse/cambridge/0500/paper-1' : '/igcse/cambridge/0990/paper-1'
 
     return (
       <>
-      <Breadcrumb items={breadcrumbItems} />
-      <PoetryShell
-        boardLabel={board === 'cambridge-0500' ? 'Cambridge IGCSE' : 'Cambridge IGCSE (9-1)'}
-        title="No poetry anthology for your board"
-        description="Cambridge IGCSE First Language English doesn't include a poetry anthology. Focus on Paper 1 reading skills instead — that's where your time pays off."
-        wrongBoard={wrongBoard}
-      >
-        <div className="sm:col-span-2">
-          <Button variant="default" size="sm" render={<Link href={paperHref} />}>
-            Go to Paper 1 reading
-            <ArrowRight className="size-3.5" />
-          </Button>
-        </div>
-      </PoetryShell>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel={board === 'cambridge-0500' ? 'Cambridge IGCSE' : 'Cambridge IGCSE (9-1)'}
+          title="No poetry anthology for your board"
+          description="Cambridge IGCSE First Language English doesn't include a poetry anthology. Focus on Paper 1 reading skills instead — that's where your time pays off."
+          wrongBoard={wrongBoard}
+        >
+          <div className="sm:col-span-2">
+            <Button variant="default" size="sm" render={<Link href={paperHref} />}>
+              Go to Paper 1 reading
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
       </>
     )
   }
 
   // Fallback (shouldn't be reachable)
-  return <><Breadcrumb items={breadcrumbItems} /><BoardlessPoetryShell title="Choose your exam board" description="Pick a board to see your poetry anthology." /></>
+  return (
+    <>
+      <Breadcrumb items={breadcrumbItems} />
+      <BoardlessPoetryShell
+        title="Choose your exam board"
+        description="Pick a board to see your poetry anthology."
+      />
+    </>
+  )
 }
 
 // ─── Shared shell components (server) ───────────────────────────────────────
@@ -296,7 +290,12 @@ function BoardlessPoetryShell({ title, description }: { title: string; descripti
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">{title}</h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{description}</p>
 
-          <Button variant="default" size="lg" className="mt-6" render={<Link href="/board-select" />}>
+          <Button
+            variant="default"
+            size="lg"
+            className="mt-6"
+            render={<Link href="/board-select" />}
+          >
             Choose your exam board
             <ArrowRight className="size-4" />
           </Button>

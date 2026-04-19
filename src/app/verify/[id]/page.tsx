@@ -2,12 +2,14 @@ import type { Metadata } from 'next'
 import VerifyPage from './client-page'
 
 interface Props {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params
   const title = 'Verify Certificate | The English Hub'
-  const description = 'Verify the authenticity of a Certificate of Achievement issued by The English Hub for GCSE English course completion.'
+  const description =
+    'Verify the authenticity of a Certificate of Achievement issued by The English Hub for GCSE English course completion.'
 
   return {
     title,

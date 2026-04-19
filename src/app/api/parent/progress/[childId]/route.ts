@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
-import {
-  assertParentCanAccessChild,
-  accessErrorToHttpStatus,
-} from '@/lib/parent/access-control'
+import { assertParentCanAccessChild, accessErrorToHttpStatus } from '@/lib/parent/access-control'
 
 // ── GET /api/parent/progress/[childId] ──────────────────────────────────────
 //
@@ -14,9 +11,9 @@ import {
 
 export async function GET(
   _request: NextRequest,
-  context: { params: { childId: string } }
+  context: { params: Promise<{ childId: string }> },
 ) {
-  const { childId } = context.params
+  const { childId } = await context.params
 
   try {
     const supabase = createServerSupabaseClient()
@@ -37,18 +34,14 @@ export async function GET(
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429 }
+        { status: 429 },
       )
     }
 
     const serviceClient = createServiceRoleClient()
 
     // ── Authorization ────────────────────────────────────────────────────────
-    const access = await assertParentCanAccessChild(
-      serviceClient,
-      user,
-      childId
-    )
+    const access = await assertParentCanAccessChild(serviceClient, user, childId)
     if (!access.ok && access.error) {
       const { status, message } = accessErrorToHttpStatus(access.error)
       return NextResponse.json({ error: message }, { status })
@@ -62,23 +55,15 @@ export async function GET(
       .maybeSingle()
 
     if (profileErr || !childProfile) {
-      return NextResponse.json(
-        { error: 'Child profile not found.' },
-        { status: 404 }
-      )
+      return NextResponse.json({ error: 'Child profile not found.' }, { status: 404 })
     }
 
     // ── Fetch learning data in parallel (read-only) ──────────────────────────
     const [enrolRes, progressRes, certRes, recentRes] = await Promise.all([
-      serviceClient
-        .from('enrolments')
-        .select('course_id, enrolled_at')
-        .eq('user_id', childId),
+      serviceClient.from('enrolments').select('course_id, enrolled_at').eq('user_id', childId),
       serviceClient
         .from('module_progress')
-        .select(
-          'id, course_id, module_id, completed, quiz_score, time_spent_seconds, completed_at'
-        )
+        .select('id, course_id, module_id, completed, quiz_score, time_spent_seconds, completed_at')
         .eq('user_id', childId),
       serviceClient
         .from('certificates')
@@ -109,20 +94,15 @@ export async function GET(
     // ── Aggregate summary metrics (read-only, computed here) ─────────────────
     const modules = progressRes.data ?? []
     const completedModules = modules.filter((m) => m.completed).length
-    const totalTimeSeconds = modules.reduce(
-      (sum, m) => sum + (m.time_spent_seconds ?? 0),
-      0
-    )
+    const totalTimeSeconds = modules.reduce((sum, m) => sum + (m.time_spent_seconds ?? 0), 0)
     const scoredModules = modules.filter(
-      (m) => typeof m.quiz_score === 'number' && m.quiz_score !== null
+      (m) => typeof m.quiz_score === 'number' && m.quiz_score !== null,
     )
     const avgQuizScore =
       scoredModules.length > 0
         ? Math.round(
-            scoredModules.reduce(
-              (sum, m) => sum + (m.quiz_score as number),
-              0
-            ) / scoredModules.length
+            scoredModules.reduce((sum, m) => sum + (m.quiz_score as number), 0) /
+              scoredModules.length,
           )
         : null
 
@@ -153,13 +133,10 @@ export async function GET(
           // Read-only, private. Do not cache between users.
           'Cache-Control': 'private, no-store',
         },
-      }
+      },
     )
   } catch (error) {
     console.error('[parent/progress] unhandled error:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

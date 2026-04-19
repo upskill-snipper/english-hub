@@ -24,10 +24,11 @@ export const dynamicParams = true
 // Metadata
 // ---------------------------------------------------------------------------
 interface Props {
-  params: { slug: string[] }
+  params: Promise<{ slug: string[] }>
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params
   const key = params.slug.join('/')
   const entry = ANALYSIS_PAGE_MAP.get(key)
 
@@ -90,7 +91,8 @@ function capitalise(str: string): string {
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
-export default function AnalysisPage({ params }: Props) {
+export default async function AnalysisPage(props: Props) {
+  const params = await props.params
   const key = params.slug.join('/')
   const entry = ANALYSIS_PAGE_MAP.get(key)
 
