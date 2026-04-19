@@ -39,7 +39,11 @@ jobs:
       - run: npm run build
       - name: Deploy to Vercel (Production)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: amondnet/vercel-action@v25
+        # Pinned by SHA (supply-chain hardening — tags are mutable, SHAs
+        # are not). v25 = 16e87c0a08142b0d0d33b76aeaf20823c381b9b9. When
+        # updating, re-resolve the tag via GitHub API and pin to the new
+        # commit SHA.
+        uses: amondnet/vercel-action@16e87c0a08142b0d0d33b76aeaf20823c381b9b9
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
@@ -47,7 +51,7 @@ jobs:
           vercel-args: '--prod'
       - name: Deploy to Vercel (Preview)
         if: github.event_name == 'pull_request'
-        uses: amondnet/vercel-action@v25
+        uses: amondnet/vercel-action@16e87c0a08142b0d0d33b76aeaf20823c381b9b9
         id: vercel-preview
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
