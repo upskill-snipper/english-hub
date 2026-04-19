@@ -1,6 +1,6 @@
 # Photography & Video Release Form
 
-**Controller:** Upskill Energy Limited (trading as The English Hub), Company No. 16254656, registered in England & Wales.
+**Controller:** Upskill Energy Limited (trading as The English Hub), Company No. 16511479, registered in England & Wales.
 **Contact:** `privacy@theenglishhub.app` · `dpo@theenglishhub.app`
 **Purpose:** To obtain your explicit consent to photograph, film, and use your likeness (image and/or recorded voice) in marketing, sales, and editorial materials.
 

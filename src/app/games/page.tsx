@@ -1051,27 +1051,10 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
   const [shuffledOptions, setShuffledOptions] = useState<string[]>([])
 
   const currentQuestion = questions[currentIndex]
+  const hasSavedRef = useRef(false)
 
-  // Edge case: board has no literature set texts (Cambridge 0500 / 0990).
-  // Show a friendly fallback instead of an empty game.
-  if (questions.length === 0) {
-    return (
-      <div className="flex flex-col items-center gap-4 py-12 text-center">
-        <BookOpen className="size-12 text-muted-foreground" />
-        <div className="space-y-1">
-          <h3 className="text-xl font-bold text-foreground">No literature set texts for your board</h3>
-          <p className="text-sm text-muted-foreground max-w-md">
-            Your exam board focuses on English Language skills rather than prescribed literature texts.
-            Try the other games in the hub — Word Scramble, Grammar Fix, or literary technique drills.
-          </p>
-        </div>
-        <Button variant="outline" onClick={onExit}>
-          <ArrowLeft className="size-4 mr-1" /> Back to Games
-        </Button>
-      </div>
-    )
-  }
-
+  // All hooks must be called unconditionally in the same order every render
+  // (Rules of Hooks). Any early-return based on state must come AFTER them.
   useEffect(() => {
     if (currentQuestion) {
       setShuffledOptions(shuffleArray(currentQuestion.options))
@@ -1081,7 +1064,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
   const handleAnswer = useCallback((answer: string) => {
     if (gameState !== 'playing') return
     setSelectedAnswer(answer)
-    if (answer === currentQuestion.answer) {
+    if (currentQuestion && answer === currentQuestion.answer) {
       setScore((p) => p + 1)
     }
     setGameState('answered')
@@ -1108,7 +1091,6 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
   }, [gameState, nextQuestion])
 
   // Save score on finish
-  const hasSavedRef = useRef(false)
   useEffect(() => {
     if (gameState === 'finished' && !hasSavedRef.current) {
       hasSavedRef.current = true
@@ -1116,6 +1098,27 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
       window.dispatchEvent(new Event('leaderboard-updated'))
     }
   }, [gameState, score])
+
+  // Edge case: board has no literature set texts (Cambridge 0500 / 0990).
+  // Show a friendly fallback instead of an empty game. This early-return must
+  // come AFTER all hooks above, otherwise Rules of Hooks is violated.
+  if (questions.length === 0) {
+    return (
+      <div className="flex flex-col items-center gap-4 py-12 text-center">
+        <BookOpen className="size-12 text-muted-foreground" />
+        <div className="space-y-1">
+          <h3 className="text-xl font-bold text-foreground">No literature set texts for your board</h3>
+          <p className="text-sm text-muted-foreground max-w-md">
+            Your exam board focuses on English Language skills rather than prescribed literature texts.
+            Try the other games in the hub — Word Scramble, Grammar Fix, or literary technique drills.
+          </p>
+        </div>
+        <Button variant="outline" onClick={onExit}>
+          <ArrowLeft className="size-4 mr-1" /> Back to Games
+        </Button>
+      </div>
+    )
+  }
 
   if (gameState === 'finished') {
     return (

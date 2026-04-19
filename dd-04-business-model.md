@@ -1,7 +1,7 @@
 # DD-04 — Business Model, Monetisation & Unit Economics
 
 **Target:** The English Hub (`theenglishhub.app`)
-**Operating entity:** Upskill Energy Limited (Co. No. 16254656)
+**Operating entity:** Upskill Energy Limited (Co. No. 16511479)
 **Scope:** Commercial / pricing / monetisation / go-to-market review
 **Date:** 2026-04-12
 **Version:** 5 — FINAL (Cycle 3)
@@ -578,7 +578,7 @@ Because no actuals exist, these are plausibility sketches. Assumptions: 50/50 an
 
 ### 10a. Current state
 
-The operating entity is **Upskill Energy Limited** (Companies House No. 16254656). This name:
+The operating entity is **Upskill Energy Limited** (Companies House No. 16511479). This name:
 - Does not match the trading brand ("The English Hub")
 - Appears in the school billing page email address (`info@Upskillenergy.com`)
 - Appears in the safeguarding policy page header ("Upskill Energy Limited, trading as The English Hub")

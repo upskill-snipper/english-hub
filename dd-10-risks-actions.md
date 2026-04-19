@@ -1,6 +1,6 @@
 # DD-10 — Risk Register & Action Plan
 
-**Target:** The English Hub SaaS (trading name of Upskill Energy Limited, company no. 16254656)
+**Target:** The English Hub SaaS (trading name of Upskill Energy Limited, company no. 16511479)
 **Report date:** 12 April 2026 — Cycle 3 revision (v5, FINAL)
 **Prepared for:** Buy-side principal / acquirer deal team
 **Author:** Senior M&A Analyst, Commercial DD
@@ -16,7 +16,7 @@
 
 **Headline findings:**
 
-1. **The operating entity is wrong.** Trading name is "The English Hub" but the legal entity is **Upskill Energy Limited, company no. 16254656**, with contact email `info@Upskillenergy.com`. A documented entity restructure plan exists but has **not been executed**. This alone is a conditional-LOI blocker.
+1. **The operating entity is wrong.** Trading name is "The English Hub" but the legal entity is **Upskill Energy Limited, company no. 16511479**, with contact email `info@Upskillenergy.com`. A documented entity restructure plan exists but has **not been executed**. This alone is a conditional-LOI blocker.
 2. **Examiner credential IP is unassigned.** The core differentiator ("written by former AQA / Edexcel / Cambridge examiners") rests on template contracts that have not been signed. Buyer cannot rely on the marketing claim post-close.
 3. **Financial records are aspirational.** Every schedule in `data-room/01-financials/` is a `[PLACEHOLDER]` template. No verifiable ARR, no cohort data, no CAC/LTV, no unit economics. The Information Memorandum is a blank form.
 4. **Codebase quality at its strongest point across all three cycles.** TODOs cut from 118 to 32 (73% reduction). `next-auth` dependency removed. Test coverage now at 44 files (33 unit + 11 E2E), all passing, with pre-commit hooks enforcing quality gates. SBOM and operational runbook now in place. Bundle analyzer available for technical DD. Env validation overhauled. Prisma board map fixed (stale enum references updated). Migration readiness addressed (script created, new migration file for Cycle 1-2 schema changes). Build system issues persist (TS and ESLint disabled at build time).
@@ -63,7 +63,7 @@
 | **Likelihood** | 5 (Certain — it is currently the case) |
 | **Impact** | 5 (Catastrophic — buyer cannot acquire the named brand) |
 | **Risk score** | 25 |
-| **Evidence** | Footer shows "A trading name of Upskill Energy Limited, Company No. 16254656" with contact email `info@Upskillenergy.com`. Entity restructure plan exists in `business-docs/entity-restructure/` but Phase 1 (incorporate The English Hub Ltd) has not been executed. |
+| **Evidence** | Footer shows "A trading name of Upskill Energy Limited, Company No. 16511479" with contact email `info@Upskillenergy.com`. Entity restructure plan exists in `business-docs/entity-restructure/` but Phase 1 (incorporate The English Hub Ltd) has not been executed. |
 | **Consequence** | Share sale acquires an entity whose legal name bears no relation to the product. Contamination risk from potential historic liabilities of a company originally positioned in renewable energy. Stamp duty exposure. VAT TOGC complications. Every customer relationship is technically with the wrong entity name. |
 | **Mitigation** | Execute the documented 6-phase restructure plan before signing: incorporate The English Hub Ltd, execute Asset Transfer Agreement with TOGC treatment, IP assignment deed, novation letters, update all customer-facing legal identifiers, file TM16 at Companies House. |
 | **Owner** | Founder + solicitor |

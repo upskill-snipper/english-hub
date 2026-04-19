@@ -16,8 +16,8 @@
 | Field | Pre-filled answer |
 |---|---|
 | Applicant name (as it will appear on the register) | **Upskill Energy Limited** |
-| Companies House number | **16254656** |
-| Address for service | _[REGISTERED OFFICE — retrieve from Companies House]_ |
+| Companies House number | **16511479** |
+| Address for service | 110 Harington Road, Formby, Liverpool, England, L37 1PZ |
 | Email for correspondence | **legal@theenglishhub.app** (create this alias) |
 | Phone | _[FOUNDER PHONE]_ |
 | Applicant type | Limited company (UK) |
@@ -147,7 +147,7 @@ Track all correspondence in `data-room/02-legal/trademark-register.md`. Set a ca
 
 ## 9 · What you need before clicking submit
 
-- [ ] Companies House number: **16254656** — confirmed
+- [ ] Companies House number: **16511479** — confirmed
 - [ ] Registered office address (from Companies House)
 - [ ] Card or bank account for £270 fee payment
 - [ ] Confirmation that the clearance search (Section 4) is clean

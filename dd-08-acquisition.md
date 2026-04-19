@@ -1,7 +1,7 @@
 # DD-08: Acquisition Readiness Assessment
 
 **Target:** The English Hub (theenglishhub.app)
-**Current Entity:** Upskill Energy Limited (company no. 16254656, incorporated 16 Feb 2025)
+**Current Entity:** Upskill Energy Limited (company no. 16511479, incorporated 16 Feb 2025)
 **Reviewer:** Sell-side due diligence analyst
 **Date:** 2026-04-12
 **Classification:** CONFIDENTIAL -- Seller-side internal preparation document
@@ -65,13 +65,13 @@ The pattern is clear: the founder has systematically executed on the dimensions 
 
 ### 2.1 Current state
 
-- **Legal entity:** Upskill Energy Limited (CRN 16254656)
+- **Legal entity:** Upskill Energy Limited (CRN 16511479)
 - **Incorporated:** 16 February 2025
 - **Trading as:** "The English Hub" (unregistered trading name)
 - **SIC codes:** Not confirmed in data room (placeholder)
 - **Directors/PSCs:** Not populated in `entity-map-as-is.md` (all placeholders)
 - **Share capital:** Not documented
-- **Companies House note:** Previous DD flagged that CRN 16254656 may be listed as "SASKIME LIMITED" on Companies House. This discrepancy requires immediate reconciliation.
+- **Companies House note:** Previous DD flagged that CRN 16511479 may be listed as "SASKIME LIMITED" on Companies House. This discrepancy requires immediate reconciliation.
 
 ### 2.2 Target state
 

@@ -3,7 +3,7 @@
 
 **Prepared:** 12 April 2026 (v5 — Cycle 3 FINAL revision incorporating three-cycle improvement programme)
 **Asset:** The English Hub (theenglishhub.app)
-**Operating Entity:** Upskill Energy Limited (Co. No. 16254656), trading as The English Hub
+**Operating Entity:** Upskill Energy Limited (Co. No. 16511479), trading as The English Hub
 **Sector:** UK EdTech — GCSE/IGCSE English Literature & Language
 **Based on:** 9 specialist DD reports (Product, Technical, Business Model, Market, Competitors, Compliance, Acquisition, Buyer Analysis, Risks)
 

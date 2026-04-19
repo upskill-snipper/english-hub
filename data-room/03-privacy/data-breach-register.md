@@ -1,7 +1,7 @@
 # Data Breach Register
 
 **Upskill Energy Limited t/a The English Hub**
-**Company No.** 16254656 | **ICO Reg.** ZC016690
+**Company No.** 16511479 | **ICO Reg.** ZC016690
 **Article 33(5) UK GDPR**
 **Owner:** DPO (dpo@theenglishhub.app)
 **Last reviewed:** 2026-04-12

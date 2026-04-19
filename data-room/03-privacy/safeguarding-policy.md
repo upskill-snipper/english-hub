@@ -1,6 +1,6 @@
 # Safeguarding Policy
 
-**Upskill Energy Limited t/a The English Hub** (Company No. 16254656)
+**Upskill Energy Limited t/a The English Hub** (Company No. 16511479)
 **Last reviewed:** 12 April 2026
 **Next review:** Annually (or sooner on material change)
 **Policy owner:** Designated Safeguarding Lead (DSL)

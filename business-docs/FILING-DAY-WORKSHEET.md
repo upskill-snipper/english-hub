@@ -1,18 +1,20 @@
-# Filing Day Worksheet — 45 minutes, £637 total
+# Filing Day Worksheet — 30 minutes, £590 total
 
 **Use this document as your single source of truth while filing.** Each section is a browser tab. Each table row is a field. Paste the "Paste this" column exactly.
 
+**Updated April 2026:** ICO Data Protection Fee is already registered for Upskill Energy Limited. Only Cyber Essentials (£320) and UKIPO trademark (£270) remain. **Total cost: £590.** See Section 0 for the ICO number to paste back into the site + docs.
+
 **Before you start (5 min):**
 
-1. Open these four tabs:
-   - https://find-and-update.company-information.service.gov.uk/company/16254656 (reference — get your registered office address)
-   - https://ico.org.uk/for-organisations/data-protection-fee/self-assessment/
+1. Open these three tabs:
+   - https://find-and-update.company-information.service.gov.uk/company/16511479 (reference — already known: registered office is 110 Harington Road, Formby, Liverpool, England, L37 1PZ)
    - https://iasme.co.uk/cyber-essentials/
    - https://www.gov.uk/how-to-register-a-trade-mark
 2. Have ready:
-   - Business card or bank account + sort code for Direct Debit
+   - Business card or bank account + sort code for payments
    - Your full legal name and DOB
-   - Create three email aliases NOW (takes 2 min in your Google Workspace / email provider): `dpo@theenglishhub.app`, `security@theenglishhub.app`, `legal@theenglishhub.app` — all forwarding to your primary inbox
+   - **Cloudflare Email Routing already set up** (see separate email setup doc) — `security@theenglishhub.app` and `legal@theenglishhub.app` live and forwarding to `info@upskillenergy.com`
+   - Your ICO registration number (`ZC016690`) ready to paste into the site + compliance block
 
 ---
 
@@ -26,7 +28,7 @@ Fill this block in pen or in the template below. Every form below pulls from it.
 | `{{ROLE_TITLE}}` | Director |
 | `{{DATE_OF_BIRTH}}` (DD/MM/YYYY) | ____ / ____ / __________ |
 | `{{PHONE}}` | _______________________________ |
-| `{{REGISTERED_OFFICE}}` (from Companies House) | _______________________________ |
+| `110 Harington Road, Formby, Liverpool, England, L37 1PZ` (from Companies House) | _______________________________ |
 | `{{TRADING_ADDRESS}}` (if different) | _______________________________ |
 | `{{BUSINESS_BANK_SORT_CODE}}` | ____-____-____ |
 | `{{BUSINESS_BANK_ACCOUNT_NUMBER}}` | _____________ |
@@ -34,7 +36,7 @@ Fill this block in pen or in the template below. Every form below pulls from it.
 
 Fixed answers (do not change):
 
-- **Companies House number:** 16254656
+- **Companies House number:** 16511479
 - **Legal entity:** Upskill Energy Limited
 - **Trading name:** The English Hub
 - **DPO email:** dpo@theenglishhub.app
@@ -45,46 +47,35 @@ Fixed answers (do not change):
 
 ---
 
-## Filing 1 — ICO Data Protection Fee · 20 min · £47
+## Filing 0 — ICO registration (ALREADY COMPLETE ✅)
 
-**URL:** https://ico.org.uk/for-organisations/data-protection-fee/self-assessment/
-**Payment:** Direct Debit (saves £5)
-**Expected outcome:** Registration number in format `ZAxxxxxx` issued immediately on payment
+**Status:** Already registered for Upskill Energy Limited. No filing action needed.
 
-### Screen-by-screen
+**What I still need from you:**
 
-| Screen | Field | Paste this |
-|---|---|---|
-| Assessment start | "Does the organisation need to pay a fee?" | Select **Yes** (you process personal data; you are not exempt) |
-| Organisation | Organisation name | **Upskill Energy Limited** |
-| | Trading name (optional) | The English Hub |
-| | Companies House number | **16254656** |
-| | Type | Private limited company |
-| | Sector | **Other** → then type "Educational technology" |
-| Tier | Turnover last financial year | <£632,000 |
-| | Number of employees | 10 or fewer |
-| | **Tier assessment** | **Tier 1 — Micro** (auto-calculated £52/yr, £47 with DD) |
-| Address | Registered office | `{{REGISTERED_OFFICE}}` |
-| | Correspondence address | Same as registered office (tick box) |
-| Contact | Contact name | `{{FULL_LEGAL_NAME}}` |
-| | Role | Director |
-| | Phone | `{{PHONE}}` |
-| | Email | **dpo@theenglishhub.app** |
-| | Do you have a DPO? | **No** (Tier 1 doesn't require one; document this as a self-appointed data protection contact in your privacy policy) |
-| Processing | Purpose of processing | Paste this: *Operating an online education platform for GCSE and IGCSE English revision, including AI-supported essay feedback, progress tracking, and subscription payments.* |
-| | Categories of data subjects | Paste: *Students (14–18), parents/guardians, teachers, school staff, subscribers* |
-| | Categories of personal data | Paste: *Name, email, school name, year group, exam board, essay submissions, progress data, payment information (via Stripe), cookies and device identifiers* |
-| | Special category data? | **No** |
-| | International transfers? | **Yes — USA** (for AI model processing; covered by UK IDTA/SCCs with each sub-processor) |
-| Payment | Method | **Direct Debit** |
-| | Sort code | `{{BUSINESS_BANK_SORT_CODE}}` |
-| | Account number | `{{BUSINESS_BANK_ACCOUNT_NUMBER}}` |
-| | Account name | Upskill Energy Limited |
-| Declaration | Signature | `{{FULL_LEGAL_NAME}}`, Director |
+Paste your ICO registration number (format `ZC016690`) here:
 
-**On success:** screenshot your registration number (ZAxxxxxx). Save to `data-room/03-privacy/ico-registration-confirmation.png`.
+> **ICO registration number: ZC016690**
 
-**Then tell me:** "ICO done, registration ZA______" — I'll update privacy policy, footer, `/for-schools` block, and DD evidence pack in one edit.
+Also useful to confirm (two-minute task on https://ico.org.uk/ESDWebPages/Search):
+
+- [ ] Registered entity name on the ICO register: **Upskill Energy Limited**
+- [ ] Registration tier: Tier 1 (Micro) — should be £52/yr or £47 DD
+- [ ] Renewal date: ______________________
+- [ ] Contact email on register: __________________________
+- [ ] Public purposes declared cover education / AI processing? (If not, update via the ICO self-service — a processing-purposes update is free)
+
+**Once you give me the ZA number, I'll update in one pass:**
+
+- `src/components/layout/footer.tsx` — add "ICO Registered: ZC016690"
+- `src/app/for-schools/page.tsx` — compliance block
+- `src/app/privacy-policy/page.tsx` — registration notice
+- `src/app/terms/page.tsx` — ICO reference
+- `data-room/03-privacy/privacy-policy.md` — canonical copy
+- `data-room/03-privacy/records-of-processing-activities.md` — ROPA header
+- `data-room/00-overview/company-register.md` — authoritative record
+- `business-docs/compliance/childrens-code/05-ico/` — certification marker
+- `dd-07-compliance.md` — DD evidence pack
 
 ---
 
@@ -108,10 +99,10 @@ Decide which pathway:
 | Start | Certification level | **Cyber Essentials** (not Plus — defer Plus to £500k+ ARR) |
 | | Certification scheme | **Cyber Essentials (IASME)** |
 | Company | Legal name | **Upskill Energy Limited** |
-| | Companies House | **16254656** |
+| | Companies House | **16511479** |
 | | Sector | Education |
 | | Size | Micro (<10 employees, <£632k turnover) |
-| | Address | `{{REGISTERED_OFFICE}}` |
+| | Address | `110 Harington Road, Formby, Liverpool, England, L37 1PZ` |
 | Contact | Name | `{{FULL_LEGAL_NAME}}` |
 | | Role | Director |
 | | Email | **security@theenglishhub.app** |
@@ -158,8 +149,8 @@ Run clearance search (5 min):
 | Application type | "Standard application" or "Right Start"? | **Standard** (Right Start splits the fee 50/50 with examination first — unnecessary here because pre-check is clean) |
 | Applicant | Applicant type | Limited company (UK) |
 | | Legal name | **Upskill Energy Limited** |
-| | Company number | **16254656** |
-| | Address | `{{REGISTERED_OFFICE}}` |
+| | Company number | **16511479** |
+| | Address | `110 Harington Road, Formby, Liverpool, England, L37 1PZ` |
 | | Email | **legal@theenglishhub.app** |
 | | Phone | `{{PHONE}}` |
 | Mark | Mark type | **Word** |
@@ -210,7 +201,7 @@ Each of these is a 5-minute edit from me once you give me the confirmation:
 
 | Trigger | My action | File affected |
 |---|---|---|
-| ICO number issued | Add ZAxxxxxx to privacy policy, site footer, /for-schools compliance block, dd-07 | 4 files |
+| ICO number issued | Add ZC016690 to privacy policy, site footer, /for-schools compliance block, dd-07 | 4 files |
 | CE certified | Add badge to footer, /for-schools, /pricing Founding tier; save cert to data room | 5 files |
 | Trademark filed | Update trademark-register.md with app no + filing date; schedule 4-month calendar check | 1 file |
 | Trademark registered | Change ™ to ® site-wide; update footer line to "registered trade mark" | 2 files |

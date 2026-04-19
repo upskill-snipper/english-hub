@@ -1,6 +1,6 @@
 # Testimonial & Case-Study Consent Form
 
-**Controller:** Upskill Energy Limited (trading as The English Hub), Company No. 16254656, registered in England & Wales.
+**Controller:** Upskill Energy Limited (trading as The English Hub), Company No. 16511479, registered in England & Wales.
 **Contact:** `privacy@theenglishhub.app` · `dpo@theenglishhub.app`
 **Purpose of this form:** To obtain your explicit, informed, revocable consent under UK GDPR (Article 6(1)(a) and, where applicable, Article 9(2)(a)) to use your name, likeness, school, role, words, and/or outcomes in marketing and sales materials for The English Hub.
 

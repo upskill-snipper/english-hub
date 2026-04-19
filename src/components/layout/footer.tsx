@@ -261,7 +261,7 @@ export function Footer() {
             </p>
             <span className="hidden sm:inline text-[#B5B8B3]/30">&middot;</span>
             <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/60">
-              Upskill Energy Limited &middot; Co. 16254656 &middot; England &amp; Wales
+              Upskill Energy Limited &middot; Co. 16511479 &middot; ICO ZC016690 &middot; 110 Harington Road, Formby, Liverpool, L37 1PZ &middot; England &amp; Wales
             </p>
           </div>
           <div className="flex items-center gap-4 text-[11px] font-mono tracking-wide">
@@ -278,7 +278,7 @@ export function Footer() {
               Terms
             </Link>
             <a
-              href="mailto:info@Upskillenergy.com"
+              href="mailto:info@upskillenergy.com"
               className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
             >
               Contact

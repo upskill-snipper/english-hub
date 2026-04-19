@@ -16,7 +16,7 @@
 |---|---|
 | Name | Upskill Energy Limited t/a The English Hub |
 | Registered office | `[REPLACE WITH address]` |
-| Company number | 16254656 |
+| Company number | 16511479 |
 | ICO registration number | ZC016690 |
 | DPO | `[REPLACE WITH name]` — dpo@theenglishhub.app |
 | UK Representative (EU users) | Not applicable — UK-based controller |

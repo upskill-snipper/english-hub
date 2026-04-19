@@ -7,7 +7,7 @@
 **Intended use:** Publish at `/analysis/ai-feedback-head-to-head` as an indexable SEO asset. Link from `/marking`, `/for-teachers`, `/for-schools`. Use in sales demos. Include in the diligence data room as evidence of board-specific AO interpretation.
 
 **Prepared:** April 2026
-**Entity:** Upskill Energy Limited · Co. 16254656 · trading as The English Hub
+**Entity:** Upskill Energy Limited · Co. 16511479 · trading as The English Hub
 
 ---
 

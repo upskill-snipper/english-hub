@@ -14,10 +14,10 @@
 |---|---|
 | Organisation name (as registered) | **Upskill Energy Limited** |
 | Trading name (if different) | The English Hub |
-| Companies House number | **16254656** |
+| Companies House number | **16511479** |
 | Country of registration | England & Wales |
 | Is the organisation based in the UK? | Yes |
-| Registered office address | _[INSERT from Companies House: https://find-and-update.company-information.service.gov.uk/company/16254656]_ |
+| Registered office address | 110 Harington Road, Formby, Liverpool, England, L37 1PZ |
 | Trading address (if different) | _[Same as registered office unless you have a separate trading premises]_ |
 | Organisation type | Private limited company (by shares) |
 | Sector | Education / Educational Technology |
@@ -85,11 +85,11 @@ The ICO asks you to identify the categories of personal data processed and the p
 
 ## 6 · Post-registration to-do
 
-Once the ICO registration number (format `ZAxxxxxx`) is issued:
+Once the ICO registration number (format `ZC016690`) is issued:
 
 1. **Update privacy policy** — add the registration number prominently at the top. File: `data-room/03-privacy/privacy-policy.md`.
 2. **Add registration number to the site footer** site-wide. File: `src/components/layout/Footer.tsx` (or equivalent).
-3. **Update `/for-schools` compliance block** to display "ICO Registered: ZAxxxxxx".
+3. **Update `/for-schools` compliance block** to display "ICO Registered: ZC016690".
 4. **Add to `dd-07-compliance.md`** DD evidence pack.
 5. **Calendar the renewal** — 11 months from today.
 
@@ -97,7 +97,7 @@ Once the ICO registration number (format `ZAxxxxxx`) is issued:
 
 ## 7 · Required evidence on hand before filing
 
-- [ ] Companies House number: **16254656** — confirmed
+- [ ] Companies House number: **16511479** — confirmed
 - [ ] Registered office address — retrieve from Companies House if not known
 - [ ] Revenue for most recent financial year (for tier confirmation) — should be <£632k
 - [ ] Business bank account details for Direct Debit setup

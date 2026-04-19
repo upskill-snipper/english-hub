@@ -1,7 +1,7 @@
 # Data Processing Agreement (Schools)
 
 **Between:**
-**Upskill Energy Limited t/a The English Hub** ("**Processor**"), company number 16254656, registered address `[REPLACE WITH registered address]`
+**Upskill Energy Limited t/a The English Hub** ("**Processor**"), company number 16511479, registered address `[REPLACE WITH registered address]`
 
 **and**
 

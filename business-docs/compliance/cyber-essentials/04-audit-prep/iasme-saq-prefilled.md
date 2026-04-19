@@ -18,7 +18,7 @@ This document pre-fills the IASME SAQ based on The English Hub's actual tech sta
 |---|---|
 | Legal organisation name | **Upskill Energy Limited** |
 | Trading name | The English Hub |
-| Companies House number | **16254656** |
+| Companies House number | **16511479** |
 | Sector | Education / EdTech |
 | Number of employees | 1 (founder) — may rise during year |
 | Size category | Micro |

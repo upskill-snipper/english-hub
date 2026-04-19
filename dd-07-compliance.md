@@ -1,7 +1,7 @@
 # DD-07 — Compliance & Regulatory Assessment
 
 **Target:** The English Hub (theenglishhub.app)
-**Operating entity:** Upskill Energy Limited (Co. No. 16254656), trading as The English Hub
+**Operating entity:** Upskill Energy Limited (Co. No. 16511479), trading as The English Hub
 **Reviewer:** Compliance / legal DD analyst (sell-side)
 **Date:** 2026-04-12
 **Version:** 5 (Cycle 3 — FINAL)
@@ -72,7 +72,7 @@ The pack explicitly benchmarks against all 15 standards and names the maximum fi
 
 | Policy | Present | File | Notes |
 |--------|---------|------|-------|
-| Privacy policy | YES | `src/app/privacy-policy/page.tsx` (664 lines) | Production-quality. Names controller as Upskill Energy Limited t/a The English Hub. Cites ICO registration ZC016690. Contact: info@Upskillenergy.com. Last updated March 2026. |
+| Privacy policy | YES | `src/app/privacy-policy/page.tsx` (664 lines) | Production-quality. Names controller as Upskill Energy Limited t/a The English Hub. Cites ICO registration ZC016690. Contact: info@upskillenergy.com. Last updated March 2026. |
 | Terms of service | YES | `src/app/terms/page.tsx` (353 lines) | Present and substantive. |
 | Cookie policy | YES | `src/app/cookie-policy/page.tsx` (405 lines) | Present and substantive. |
 | Data processing agreement (schools) | PARTIAL | `src/app/data-processing/page.tsx` (498 lines) + `data-room/03-privacy/data-processing-agreement-template.md` | Page exists in product; signable DPA template still marked DRAFT. 6 REPLACE placeholders remain (registered address, school fields (expected for template), RTO/RPO, DPO name). Controller details (entity name, company number) are populated. Processing purposes, data categories, and subprocessor list substantively filled. |
@@ -507,7 +507,7 @@ Sentry integration via `@sentry/nextjs`.
 
 ### 11.1 Operating Entity
 
-**Upskill Energy Limited** (Co. No. 16254656) is the named data controller in the live privacy policy (ICO ZC016690).
+**Upskill Energy Limited** (Co. No. 16511479) is the named data controller in the live privacy policy (ICO ZC016690).
 
 ### 11.2 Issues
 
