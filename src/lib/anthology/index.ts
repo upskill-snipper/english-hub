@@ -99,7 +99,7 @@ function getTitle(doc: AnthologyDocument): string {
  *
  * Falls back to download if popups are blocked.
  */
-export function generateAnthologyPdf(doc: AnthologyDocument): void {
+export function generateAnthologyPdf(doc: AnthologyDocument): boolean {
   try {
     const content = getContent(doc)
     const title = getTitle(doc)
@@ -117,7 +117,13 @@ export function generateAnthologyPdf(doc: AnthologyDocument): void {
     const url = URL.createObjectURL(blob)
 
     // Try to open in new tab; if blocked by popup blocker, fall back to download
-    const newWindow = window.open(url, '_blank')
+    let newWindow: Window | null = null
+    try {
+      newWindow = window.open(url, '_blank')
+    } catch {
+      newWindow = null
+    }
+
     if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
       // Popup blocked — trigger download instead
       const a = document.createElement('a')
@@ -128,9 +134,12 @@ export function generateAnthologyPdf(doc: AnthologyDocument): void {
       document.body.removeChild(a)
     }
     setTimeout(() => URL.revokeObjectURL(url), 60_000)
+    return true
   } catch (err) {
     console.error('[generateAnthologyPdf] Failed:', err)
-    throw new Error('Failed to generate document. Please check your browser allows popups and try again.')
+    // Don't throw — the React error boundary will catch it and crash the page.
+    // Return false so caller can handle gracefully.
+    return false
   }
 }
 
@@ -144,7 +153,7 @@ export function generateAnthologyPdf(doc: AnthologyDocument): void {
 export function downloadAnthologyWord(
   doc: AnthologyDocument,
   fileName?: string,
-): void {
+): boolean {
   try {
     const content = getContent(doc)
     const title = getTitle(doc)
@@ -169,9 +178,11 @@ export function downloadAnthologyWord(
     a.click()
     document.body.removeChild(a)
     setTimeout(() => URL.revokeObjectURL(url), 5_000)
+    return true
   } catch (err) {
     console.error('[downloadAnthologyWord] Failed:', err)
-    throw new Error('Failed to generate Word document. Please try again.')
+    // Don't throw — return false so caller can show error gracefully.
+    return false
   }
 }
 

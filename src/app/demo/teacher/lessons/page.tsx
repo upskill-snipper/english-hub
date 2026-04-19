@@ -1613,119 +1613,139 @@ export default function LessonBuilderDemo() {
 
   const handleDownloadPDF = useCallback(() => {
     if (!generatedPlan) return;
-    const plan = generatedPlan;
-    const lessonData: LessonPlanData = {
-      title: plan.title,
-      duration: plan.duration,
-      yearGroup: plan.yearGroup,
-      examBoard: plan.board,
-      text: plan.text,
-      objectives: plan.objectives,
-      starterActivity: {
-        title: plan.starterActivity.title,
-        duration: plan.starterActivity.duration,
-        instructions: plan.starterActivity.instructions,
-        differentiation: plan.starterActivity.differentiation,
-      },
-      mainActivities: plan.mainActivities.map((a) => ({
-        title: a.title,
-        duration: a.duration,
-        instructions: a.instructions,
-        differentiation: a.differentiation,
-      })),
-      plenary: {
-        title: plan.plenaryActivity.title,
-        instructions: plan.plenaryActivity.instructions,
-        differentiation: plan.plenaryActivity.differentiation,
-      },
-      keyVocabulary: plan.keywords,
-      resourcesNeeded: plan.starterActivity.resources || [],
-      homework: plan.homework,
-      teacherNotes: plan.teacherNotes,
-    };
-    generateLessonPlan(plan.text, lessonData);
-    showToast("Lesson plan opened for printing/saving as PDF");
+    try {
+      const plan = generatedPlan;
+      const lessonData: LessonPlanData = {
+        title: plan.title,
+        duration: plan.duration,
+        yearGroup: plan.yearGroup,
+        examBoard: plan.board,
+        text: plan.text,
+        objectives: plan.objectives,
+        starterActivity: {
+          title: plan.starterActivity.title,
+          duration: plan.starterActivity.duration,
+          instructions: plan.starterActivity.instructions,
+          differentiation: plan.starterActivity.differentiation,
+        },
+        mainActivities: plan.mainActivities.map((a) => ({
+          title: a.title,
+          duration: a.duration,
+          instructions: a.instructions,
+          differentiation: a.differentiation,
+        })),
+        plenary: {
+          title: plan.plenaryActivity.title,
+          instructions: plan.plenaryActivity.instructions,
+          differentiation: plan.plenaryActivity.differentiation,
+        },
+        keyVocabulary: plan.keywords,
+        resourcesNeeded: plan.starterActivity.resources || [],
+        homework: plan.homework,
+        teacherNotes: plan.teacherNotes,
+      };
+      generateLessonPlan(plan.text, lessonData);
+      showToast("Lesson plan opened for printing/saving as PDF");
+    } catch (err) {
+      console.error("PDF generation failed:", err);
+      showToast("Download failed — please try again");
+    }
   }, [generatedPlan]);
 
   const handleDownloadWorksheet = useCallback(() => {
     if (!generatedPlan) return;
-    const plan = generatedPlan;
-    const questions: PdfWorksheetQuestion[] = plan.worksheetQuestions.map((q) => ({
-      question: q.question,
-      type: "short-answer" as const,
-      marks: q.marks || 3,
-      lines: q.lines,
-    }));
-    generateWorksheet(
-      plan.text,
-      {
-        title: `Worksheet: ${plan.title}`,
-        instructions: "Answer all questions in the spaces provided. Use quotations to support your answers where appropriate.",
-        text: plan.text,
-        yearGroup: plan.yearGroup,
-        examBoard: plan.board,
-      },
-      questions,
-    );
-    showToast("Worksheet opened for printing/saving as PDF");
+    try {
+      const plan = generatedPlan;
+      const questions: PdfWorksheetQuestion[] = plan.worksheetQuestions.map((q) => ({
+        question: q.question,
+        type: "short-answer" as const,
+        marks: q.marks || 3,
+        lines: q.lines,
+      }));
+      generateWorksheet(
+        plan.text,
+        {
+          title: `Worksheet: ${plan.title}`,
+          instructions: "Answer all questions in the spaces provided. Use quotations to support your answers where appropriate.",
+          text: plan.text,
+          yearGroup: plan.yearGroup,
+          examBoard: plan.board,
+        },
+        questions,
+      );
+      showToast("Worksheet opened for printing/saving as PDF");
+    } catch (err) {
+      console.error("Worksheet generation failed:", err);
+      showToast("Download failed — please try again");
+    }
   }, [generatedPlan]);
 
   const handleDownloadWordLesson = useCallback(() => {
     if (!generatedPlan) return;
-    const plan = generatedPlan;
-    generateLessonPlanWord(plan.text, {
-      title: plan.title,
-      duration: plan.duration,
-      yearGroup: plan.yearGroup,
-      examBoard: plan.board,
-      text: plan.text,
-      objectives: plan.objectives,
-      starterActivity: {
-        title: plan.starterActivity.title,
-        duration: plan.starterActivity.duration,
-        instructions: plan.starterActivity.instructions,
-        differentiation: plan.starterActivity.differentiation,
-      },
-      mainActivities: plan.mainActivities.map((a) => ({
-        title: a.title,
-        duration: a.duration,
-        instructions: a.instructions,
-        differentiation: a.differentiation,
-      })),
-      plenary: {
-        title: plan.plenaryActivity.title,
-        instructions: plan.plenaryActivity.instructions,
-        differentiation: plan.plenaryActivity.differentiation,
-      },
-      keyVocabulary: plan.keywords,
-      resourcesNeeded: plan.starterActivity.resources || [],
-      homework: plan.homework,
-      teacherNotes: plan.teacherNotes,
-    });
-    showToast("Lesson plan downloaded as Word document");
+    try {
+      const plan = generatedPlan;
+      generateLessonPlanWord(plan.text, {
+        title: plan.title,
+        duration: plan.duration,
+        yearGroup: plan.yearGroup,
+        examBoard: plan.board,
+        text: plan.text,
+        objectives: plan.objectives,
+        starterActivity: {
+          title: plan.starterActivity.title,
+          duration: plan.starterActivity.duration,
+          instructions: plan.starterActivity.instructions,
+          differentiation: plan.starterActivity.differentiation,
+        },
+        mainActivities: plan.mainActivities.map((a) => ({
+          title: a.title,
+          duration: a.duration,
+          instructions: a.instructions,
+          differentiation: a.differentiation,
+        })),
+        plenary: {
+          title: plan.plenaryActivity.title,
+          instructions: plan.plenaryActivity.instructions,
+          differentiation: plan.plenaryActivity.differentiation,
+        },
+        keyVocabulary: plan.keywords,
+        resourcesNeeded: plan.starterActivity.resources || [],
+        homework: plan.homework,
+        teacherNotes: plan.teacherNotes,
+      });
+      showToast("Lesson plan downloaded as Word document");
+    } catch (err) {
+      console.error("Word lesson generation failed:", err);
+      showToast("Download failed — please try again");
+    }
   }, [generatedPlan]);
 
   const handleDownloadWordWorksheet = useCallback(() => {
     if (!generatedPlan) return;
-    const plan = generatedPlan;
-    const questions = plan.worksheetQuestions.map((q) => ({
-      question: q.question,
-      type: "short-answer" as const,
-      marks: q.marks || 3,
-      lines: q.lines,
-    }));
-    generateWorksheetWord(
-      plan.text,
-      {
-        title: `Worksheet: ${plan.title}`,
-        instructions: "Answer all questions in the spaces provided. Use quotations to support your answers where appropriate.",
-        text: plan.text,
-        yearGroup: plan.yearGroup,
-        examBoard: plan.board,
-      },
-      questions,
-    );
-    showToast("Worksheet downloaded as Word document");
+    try {
+      const plan = generatedPlan;
+      const questions = plan.worksheetQuestions.map((q) => ({
+        question: q.question,
+        type: "short-answer" as const,
+        marks: q.marks || 3,
+        lines: q.lines,
+      }));
+      generateWorksheetWord(
+        plan.text,
+        {
+          title: `Worksheet: ${plan.title}`,
+          instructions: "Answer all questions in the spaces provided. Use quotations to support your answers where appropriate.",
+          text: plan.text,
+          yearGroup: plan.yearGroup,
+          examBoard: plan.board,
+        },
+        questions,
+      );
+      showToast("Worksheet downloaded as Word document");
+    } catch (err) {
+      console.error("Word worksheet generation failed:", err);
+      showToast("Download failed — please try again");
+    }
   }, [generatedPlan]);
 
   const handleDownloadPptx = useCallback(async () => {
