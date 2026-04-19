@@ -33,6 +33,14 @@
     {
       "path": "/api/cron/school-access",
       "schedule": "0 5 * * *"
+    },
+    {
+      "path": "/api/cron/trustpilot-followup-7d",
+      "schedule": "45 3 * * *"
+    },
+    {
+      "path": "/api/cron/trustpilot-retention-90d",
+      "schedule": "15 4 * * *"
     }
   ]
 }

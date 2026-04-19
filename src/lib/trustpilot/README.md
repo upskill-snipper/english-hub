@@ -1,6 +1,18 @@
 # Trustpilot review solicitation
 
-Scaffolded 19 April 2026. **Feature-flagged OFF until Trustpilot Business account, SendGrid, and Cloudflare Email Routing are configured.**
+Scaffolded 19 April 2026. Triggers WIRED but feature-flagged OFF until Trustpilot Business account, SendGrid, and Cloudflare Email Routing are configured.
+
+**Current state:**
+
+- ✅ Templates + dispatcher live
+- ✅ Trigger orchestrator live (`trigger-invite.ts`)
+- ✅ Supabase migration for dedup table committed
+- ✅ `/api/mark/route.ts` wired — fires `student_first_mark` after every successful AI mark
+- ✅ `/api/cron/trustpilot-followup-7d` live — runs daily 03:45 UTC
+- ✅ `/api/cron/trustpilot-retention-90d` live — runs daily 04:15 UTC
+- ⚠️ `student_first_mock` and `teacher_first_bulk_mark` triggers exported but those routes don't exist yet — call `fireStudentFirstMock()` / `fireTeacherFirstBulkMark()` from wherever those events are processed when the routes ship.
+
+**Switch-on procedure:** complete steps 1–5 below, then set `TRUSTPILOT_ENABLED=true` in Vercel.
 
 ---
 
@@ -9,8 +21,10 @@ Scaffolded 19 April 2026. **Feature-flagged OFF until Trustpilot Business accoun
 | File                          | Role                                                                                                             |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `email-templates.ts`          | The 6 email bodies (5 live, 1 deferred) with British-English copy, under 200 words each, subjects under 50 chars |
-| `send-invite.ts`              | `sendTrustpilotInvite(...)` — idempotent-ish dispatcher that logs (not sends) until the feature flag is enabled  |
+| `send-invite.ts`              | `sendTrustpilotInvite(...)` — logs-only dispatcher until the feature flag is enabled                             |
 | `buildTrustpilotInviteLink()` | Helper that constructs a BGL-style link; swap for AFS link once Trustpilot API key is in env                     |
+| `trigger-invite.ts`           | Orchestrator: user lookup, under-18 skip, opt-out skip, dedup via Supabase, send, record outcome                 |
+| `fire*(...)` convenience fns  | One-liners per trigger used by route handlers + cron jobs                                                        |
 
 All sends go out as `reviews@theenglishhub.app` with `reply-to: info@upskillenergy.com`.
 
@@ -81,26 +95,44 @@ create policy "service role manages trustpilot_invite"
   with check (auth.role() = 'service_role');
 ```
 
-### 6. Wire triggers (the final 1% — do after the above)
+### 6. Triggers — WIRED (no further dev required to activate)
 
-The dispatch logic lives in the routes that handle each business event. Hook points:
+All five active-trigger hook points are live in the codebase. Routes + crons call the orchestrator in `trigger-invite.ts`, which handles dedup, under-18 skip, opt-out skip, send, and write of the dedup row. Activating the flow is a pure configuration step (set `TRUSTPILOT_ENABLED=true`).
 
-| Trigger                          | Firing location                                                                                                                                                              |
-| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `student_first_mark`             | `src/app/api/mark/route.ts` — after first successful `prisma.essayMark.create` for a user                                                                                    |
-| `student_first_mark_followup_7d` | `src/app/api/cron/` — daily cron: query users whose first mark was 7 days ago AND `essays_submitted_count >= 2` AND no review-left event AND no prior invite of this trigger |
-| `student_first_mock`             | `src/app/api/mock/submit/route.ts` — after first mock submission with duration ≥ 45min                                                                                       |
-| `student_90d_retention`          | `src/app/api/cron/` — daily cron: users whose first successful payment was exactly 90 days ago                                                                               |
-| `teacher_first_bulk_mark`        | `src/app/api/mark/bulk/route.ts` — after first bulk-mark session with `count >= 5`                                                                                           |
+| Trigger                          | Firing location                                                                                          | Status                 |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------- |
+| `student_first_mark`             | `src/app/api/mark/route.ts` — fire-and-forget after successful AI mark return                            | ✅ Live                |
+| `student_first_mark_followup_7d` | `src/app/api/cron/trustpilot-followup-7d/route.ts` — runs daily 03:45 UTC                                | ✅ Live                |
+| `student_first_mock`             | No `/api/mock/submit` route exists yet. When it ships, call `fireStudentFirstMock(supabaseUserId, opts)` | ⏸️ Exported, not wired |
+| `student_90d_retention`          | `src/app/api/cron/trustpilot-retention-90d/route.ts` — runs daily 04:15 UTC                              | ✅ Live                |
+| `teacher_first_bulk_mark`        | No `/api/mark/bulk` route exists yet. When it ships, call `fireTeacherFirstBulkMark(supabaseUserId)`     | ⏸️ Exported, not wired |
 
-In each hook point:
+Call pattern used in `src/app/api/mark/route.ts`:
 
-1. Check `trustpilot_invite` table for existing `(user_id, trigger)` row — if present, skip.
-2. Build `trustpilot_invite_link` via `buildTrustpilotInviteLink({ email, name, orderId: subscriptionId })`.
-3. Call `sendTrustpilotInvite({ trigger, toEmail, vars, userId })`.
-4. Insert the result row into `trustpilot_invite` (status = sent | skipped | failed).
+```ts
+import { fireStudentFirstMark } from '@/lib/trustpilot/trigger-invite'
 
-Each insert is idempotent thanks to the `UNIQUE (user_id, trigger)` constraint.
+// …after successful business event, just before NextResponse.json(…):
+void fireStudentFirstMark(user.id).catch((err) =>
+  console.warn('[api/mark] Trustpilot trigger dispatch failed', err),
+)
+```
+
+The `void` + `.catch()` pattern is fire-and-forget — it never blocks the route response or surfaces a failure to the client. The orchestrator records a row in `trustpilot_invite` regardless of send outcome (sent / skipped / failed), so audit trails work even while the flag is off (rows will have `status='skipped'`, `skipped_reason='disabled'`).
+
+### 7. Cron smoke test (after migrating the table + setting CRON_SECRET)
+
+```bash
+curl -X POST https://theenglishhub.app/api/cron/trustpilot-followup-7d \
+  -H "x-cron-secret: $CRON_SECRET"
+# Expected: {"ok":true,"candidates":0,"tried":0,"sent":0,"skipped":0,"failed":0}
+
+curl -X POST https://theenglishhub.app/api/cron/trustpilot-retention-90d \
+  -H "x-cron-secret: $CRON_SECRET"
+# Expected: {"ok":true,"candidates":0,"sent":0,"skipped":0,"failed":0}
+```
+
+Both should return HTTP 200 with zero-candidate responses until there are real users matching the time windows.
 
 ---
 
