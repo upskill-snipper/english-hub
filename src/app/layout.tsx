@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
-import Script from 'next/script'
 import { SupabaseProvider } from '@/components/providers/supabase-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/sonner'
@@ -9,11 +8,10 @@ import { WebsiteJsonLd } from '@/components/seo/json-ld'
 import { CookieConsent } from '@/components/cookie-consent'
 import { UtmCapture } from '@/components/utm-capture'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
+import { ConsentGatedAnalytics } from '@/components/ConsentGatedAnalytics'
 import { Suspense } from 'react'
 import { BoardGate } from '@/components/board/BoardGate'
 import { getServerBoard } from '@/lib/board/get-server-board'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const monaSans = localFont({
@@ -71,13 +69,9 @@ export default async function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
         <link rel="manifest" href="/manifest.json" />
         <WebsiteJsonLd />
-        {process.env.NEXT_PUBLIC_REWARDFUL_KEY && (
-          <Script
-            src="https://r.wdfl.co/rw.js"
-            data-rewardful={process.env.NEXT_PUBLIC_REWARDFUL_KEY}
-            strategy="afterInteractive"
-          />
-        )}
+        {/* Rewardful is loaded by <ConsentGatedAnalytics /> below after
+            the visitor accepts analytics/marketing cookies. Loading it
+            unconditionally here would breach PECR reg. 6. */}
       </head>
       <body className="min-h-screen font-sans antialiased">
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md">
@@ -93,8 +87,9 @@ export default async function RootLayout({
             <UtmCapture />
           </TooltipProvider>
         </SupabaseProvider>
-        <Analytics />
-        <SpeedInsights />
+        {/* Vercel Analytics + Speed Insights + Rewardful — all gated behind
+            cookie consent so no non-essential trackers fire pre-consent. */}
+        <ConsentGatedAnalytics />
         {/* Google Analytics 4 — auto-loads if user has consented + tracks SPA route changes */}
         <Suspense fallback={null}>
           <GoogleAnalytics />
