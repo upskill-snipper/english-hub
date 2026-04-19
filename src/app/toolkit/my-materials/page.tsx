@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
+import DOMPurify from 'dompurify'
 import {
   ArrowLeft,
   FolderOpen,
@@ -72,18 +73,15 @@ export default function MyMaterialsPage() {
       lsSet(LS_KEYS.myMaterials, updated)
       if (viewingMaterial?.id === id) setViewingMaterial(null)
     },
-    [materials, viewingMaterial]
+    [materials, viewingMaterial],
   )
 
   // Filtered materials
-  const filtered =
-    filter === 'all'
-      ? materials
-      : materials.filter((m) => m.type === filter)
+  const filtered = filter === 'all' ? materials : materials.filter((m) => m.type === filter)
 
   // Sort by date (newest first)
   const sorted = [...filtered].sort(
-    (a, b) => new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime()
+    (a, b) => new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime(),
   )
 
   // Format date
@@ -185,18 +183,25 @@ export default function MyMaterialsPage() {
 
               {viewingMaterial.type === 'notes' && (
                 <div className="prose prose-sm max-w-none course-content">
+                  {/* P2-SEC-1: DOMPurify-wrap the hand-rolled markdown
+                      pipeline so any HTML smuggled through the AI path
+                      (prompt injection → model emits <script>) is stripped
+                      before it reaches a minor's browser. */}
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: ((viewingMaterial.data as { notes: string })?.notes || '')
-                        .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-                        .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-                        .replace(/^# (.+)$/gm, '<h1>$1</h1>')
-                        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-                        .replace(/\*(.+?)\*/g, '<em>$1</em>')
-                        .replace(/^- (.+)$/gm, '<li>$1</li>')
-                        .replace(/^---$/gm, '<hr />')
-                        .replace(/\n\n/g, '</p><p>')
-                        .replace(/\n/g, '<br />'),
+                      __html: DOMPurify.sanitize(
+                        ((viewingMaterial.data as { notes: string })?.notes || '')
+                          .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+                          .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+                          .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+                          .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                          .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                          .replace(/^- (.+)$/gm, '<li>$1</li>')
+                          .replace(/^---$/gm, '<hr />')
+                          .replace(/\n\n/g, '</p><p>')
+                          .replace(/\n/g, '<br />'),
+                        { USE_PROFILES: { html: true } },
+                      ),
                     }}
                   />
                 </div>
@@ -205,12 +210,14 @@ export default function MyMaterialsPage() {
               {viewingMaterial.type === 'test' && (
                 <div className="space-y-4">
                   <p className="text-sm text-muted-foreground">
-                    This test has {((viewingMaterial.data as { test: GeneratedTest })?.test?.questions || []).length} questions.
+                    This test has{' '}
+                    {
+                      ((viewingMaterial.data as { test: GeneratedTest })?.test?.questions || [])
+                        .length
+                    }{' '}
+                    questions.
                   </p>
-                  <Link
-                    href="/toolkit/test-builder"
-                    className="btn-primary inline-flex"
-                  >
+                  <Link href="/toolkit/test-builder" className="btn-primary inline-flex">
                     <RotateCcw className="h-4 w-4 mr-2" />
                     Take a New Test
                   </Link>
@@ -241,7 +248,9 @@ export default function MyMaterialsPage() {
                   className="group rounded-xl border border-border bg-card p-5 shadow-soft hover:shadow-medium hover:border-primary/25 transition-all duration-200"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${colours.bg}`}>
+                    <div
+                      className={`flex h-10 w-10 items-center justify-center rounded-lg ${colours.bg}`}
+                    >
                       <Icon className={`h-5 w-5 ${colours.text}`} />
                     </div>
                     <Badge variant="outline" className="text-xs font-mono">
@@ -294,8 +303,8 @@ export default function MyMaterialsPage() {
             <FolderOpen className="h-10 w-10 text-muted-foreground mx-auto mb-4" />
             <h3 className="font-serif text-lg font-medium mb-2">No materials saved yet</h3>
             <p className="text-sm text-muted-foreground mb-6 max-w-md mx-auto">
-              Generate custom tests or revision notes using the AI tools, then save them here
-              for quick access later.
+              Generate custom tests or revision notes using the AI tools, then save them here for
+              quick access later.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/toolkit/test-builder" className="btn-primary text-sm">

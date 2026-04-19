@@ -118,7 +118,7 @@ const BOARD_ALLOWLIST_PREFIX: string[] = [
 function isStaticAsset(pathname: string): boolean {
   // Common static file extensions that shouldn't gate on board
   return /\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map|txt|xml|json|woff|woff2|ttf|otf|eot|mp4|webm|ogg|mp3|wav|pdf)$/i.test(
-    pathname
+    pathname,
   )
 }
 
@@ -147,10 +147,28 @@ export async function middleware(request: NextRequest) {
     // Stripe webhooks come from Stripe servers — skip origin check
     if (!pathname.startsWith('/api/stripe/webhook') && !pathname.startsWith('/api/cron/')) {
       const origin = request.headers.get('origin')
-      if (origin && !ALLOWED_ORIGINS.has(origin)) {
+      const secFetchSite = request.headers.get('sec-fetch-site')
+
+      // P2-SEC-3: require a same-origin attestation for API mutations.
+      //
+      // Case 1 — Origin header present: it MUST be in the allow-list.
+      // Case 2 — Origin header absent: accept only if Sec-Fetch-Site
+      //   signals same-origin (set by all modern browsers on SPA fetches
+      //   and form submissions). Values 'same-origin' and 'none' are
+      //   safe; 'cross-site' / 'same-site' / missing are not.
+      //
+      // Previously the check passed silently when Origin was absent,
+      // which left a CSRF bypass for CLI-style requests. Known
+      // same-app callers (Stripe webhooks, Vercel cron) are exempted
+      // in the outer `if` above.
+      if (origin) {
+        if (!ALLOWED_ORIGINS.has(origin)) {
+          return NextResponse.json({ error: 'Forbidden: invalid origin' }, { status: 403 })
+        }
+      } else if (secFetchSite !== 'same-origin' && secFetchSite !== 'none') {
         return NextResponse.json(
-          { error: 'Forbidden: invalid origin' },
-          { status: 403 }
+          { error: 'Forbidden: missing same-origin attestation' },
+          { status: 403 },
         )
       }
     }
@@ -179,7 +197,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-  ],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
 }
