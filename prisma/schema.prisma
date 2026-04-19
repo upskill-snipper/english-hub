@@ -248,6 +248,7 @@ model Essay {
   @@index([examBoard])
   @@index([deletedAt])
   @@index([userId, createdAt])
+  @@index([userId, deletedAt, createdAt])
 }
 
 model AIFeedback {
@@ -393,6 +394,7 @@ model AuditLog {
   @@index([action])
   @@index([resource, resourceId])
   @@index([timestamp])
+  @@index([userId, timestamp(sort: Desc)])
 }
 
 model PrivacySettings {
