@@ -59,6 +59,14 @@ function LoginForm() {
       password,
     })
 
+    // P1 (Cycle 3): record successful login so the dormancy cron uses a
+    // real `lastLoginAt` signal rather than the previous `updatedAt`
+    // proxy. Fire-and-forget; failures are logged server-side only and
+    // do not block the login flow.
+    if (!authError) {
+      fetch('/api/auth/record-login', { method: 'POST' }).catch(() => {})
+    }
+
     if (authError) {
       // Generic error for every failure mode to prevent account enumeration.
       // Previously we branched on 'email not confirmed' which leaked the fact

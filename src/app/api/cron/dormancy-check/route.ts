@@ -79,11 +79,25 @@ export async function GET(request: NextRequest) {
     try {
       const inactiveCutoff = daysAgo(RETENTION_PERIODS.INACTIVE_ACCOUNT_DAYS)
 
+      // P1 (Cycle 2): was `updatedAt: { lte: inactiveCutoff }` — any row
+      // update (email change, preference toggle, Stripe customer id write)
+      // reset dormancy, and conversely a user who logged in daily but
+      // never triggered a write-path would be wrongly flagged. Now
+      // querying on `lastLoginAt` which is populated by the login
+      // handler. Fall back to `createdAt` when `lastLoginAt` is null —
+      // that's the case for pre-migration accounts that haven't logged
+      // in since the column was introduced; the fallback errs on the
+      // side of NOT deleting them until they log in once.
       const inactiveAdults = await prisma.user.findMany({
         where: {
           isMinor: false,
           accountStatus: 'ACTIVE',
-          updatedAt: { lte: inactiveCutoff },
+          OR: [
+            { lastLoginAt: { lte: inactiveCutoff } },
+            {
+              AND: [{ lastLoginAt: null }, { createdAt: { lte: inactiveCutoff } }],
+            },
+          ],
         },
         select: { id: true, email: true, firstName: true },
         take: 100, // Rate-limit per run
