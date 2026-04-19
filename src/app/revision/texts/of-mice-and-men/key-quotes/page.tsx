@@ -14,6 +14,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Of Mice and Men — Key Quotes | The English Hub',
   description:
@@ -274,6 +275,15 @@ export default async function OfMiceAndMenKeyQuotesPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Of Mice and Men", url: "https://theenglishhub.app/revision/texts/of-mice-and-men" },
+          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/of-mice-and-men/key-quotes" },
+        ]}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-violet-500/[0.04] p-6 sm:p-8 lg:p-10">
         <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />

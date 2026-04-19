@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'An Inspector Calls Characters — Edexcel IGCSE IGCSE Literature',
   description:
@@ -87,6 +88,16 @@ export default async function InspectorCallsCharactersPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
+          { name: "An Inspector Calls", url: "https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls" },
+          { name: "Characters", url: "https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls/characters" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

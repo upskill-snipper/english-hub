@@ -23,6 +23,7 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import StudyTools from '@/components/study/StudyTools'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'An Inspector Calls — Edexcel IGCSE IGCSE Literature Study Guide',
   description:
@@ -196,6 +197,19 @@ export default async function InspectorCallsHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <CourseJsonLd
+        name="An Inspector Calls — Edexcel IGCSE Literature Study Guide"
+        description="In-depth study guide for An Inspector Calls for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
+          { name: "An Inspector Calls", url: "https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

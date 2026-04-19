@@ -6,6 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Blood Brothers — Study Guide | The English Hub',
   description:
@@ -182,6 +183,18 @@ export default async function BloodBrothersPage() {
 
   return (
     <>
+      <CourseJsonLd
+        name="Blood Brothers — Complete GCSE Study Guide"
+        description="In-depth study guide for Blood Brothers covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Blood Brothers", url: "https://theenglishhub.app/revision/texts/blood-brothers" },
+        ]}
+      />
       <TextStudyHub
         textName="Blood Brothers"
         textType="play"

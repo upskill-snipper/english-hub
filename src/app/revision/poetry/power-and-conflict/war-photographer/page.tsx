@@ -10,6 +10,7 @@ import {
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Metadata ──────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -512,6 +513,19 @@ const COMPARISONS = [
 export default function WarPhotographerPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="War Photographer by Carol Ann Duffy — Analysis & Annotations"
+        description="Line-by-line analysis of War Photographer with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
+          { name: "War Photographer", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/war-photographer" },
+        ]}
+      />
       {/* ── Navigation ────────────────────────────────────────── */}
       <div>
         <Button

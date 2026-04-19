@@ -7,6 +7,7 @@ import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
   title: 'Checking Out Me History -- John Agard -- The English Hub',
   description:
@@ -460,6 +461,19 @@ const THEMES = [
 export default function CheckingOutMeHistoryPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="Checking Out Me History by John Agard — Analysis & Annotations"
+        description="Line-by-line analysis of Checking Out Me History with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
+          { name: "Checking Out Me History", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/checking-out-me-history" },
+        ]}
+      />
       {/* ── Breadcrumb / back ─────────────────────────────────────── */}
       <div>
         <Button

@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const characters = [
   {
     name: 'Beatrice',
@@ -92,6 +93,16 @@ const characters = [
 export default function MuchAdoCharactersPage() {
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: "Shakespeare", url: "https://theenglishhub.app/igcse/edexcel/shakespeare" },
+          { name: "Much Ado About Nothing", url: "https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado" },
+          { name: "Characters", url: "https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/characters" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

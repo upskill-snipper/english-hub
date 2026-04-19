@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Jane Eyre Key Chapters Analysed | The English Hub',
   description:
@@ -257,6 +258,15 @@ export default async function JaneEyreChaptersPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Jane Eyre", url: "https://theenglishhub.app/revision/texts/jane-eyre" },
+          { name: "Chapter-by-Chapter Analysis", url: "https://theenglishhub.app/revision/texts/jane-eyre/chapters" },
+        ]}
+      />
       <Breadcrumb
         items={[
           { label: 'Revision', href: '/revision' },

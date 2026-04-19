@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Types ──────────────────────────────────────────────────── */
 
 type ThemeStudy = {
@@ -246,6 +247,15 @@ const THEMES: ThemeStudy[] = [
 export default function RomeoAndJulietThemesPage() {
   return (
     <div className="min-h-screen bg-cream-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Romeo and Juliet", url: "https://theenglishhub.app/revision/texts/romeo-and-juliet" },
+          { name: "Themes", url: "https://theenglishhub.app/revision/texts/romeo-and-juliet/themes" },
+        ]}
+      />
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
         <StudyTools textName="Romeo and Juliet" textType="play" />
 

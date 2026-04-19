@@ -7,6 +7,7 @@ import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
   title: 'The Emigree -- Carol Rumens -- The English Hub',
   description:
@@ -429,6 +430,19 @@ const THEMES = [
 export default function TheEmigreePage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="The Emigree by Carol Rumens — Analysis & Annotations"
+        description="Line-by-line analysis of The Emigree with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
+          { name: "The Emigree", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/the-emigree" },
+        ]}
+      />
       {/* ── Back nav ───────────────────────────────────────────── */}
       <div>
         <Button

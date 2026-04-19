@@ -6,6 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'To Kill a Mockingbird — Study Guide | The English Hub',
   description:
@@ -182,6 +183,18 @@ export default async function ToKillAMockingbirdPage() {
 
   return (
     <>
+      <CourseJsonLd
+        name="To Kill a Mockingbird — Complete GCSE Study Guide"
+        description="In-depth study guide for To Kill a Mockingbird covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "To Kill a Mockingbird", url: "https://theenglishhub.app/revision/texts/to-kill-a-mockingbird" },
+        ]}
+      />
       <TextStudyHub
         textName="To Kill a Mockingbird"
         textType="novel"

@@ -6,6 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'A View from the Bridge — Study Guide | The English Hub',
   description:
@@ -182,6 +183,18 @@ export default async function AViewFromTheBridgePage() {
 
   return (
     <>
+      <CourseJsonLd
+        name="A View from the Bridge — Complete GCSE Study Guide"
+        description="In-depth study guide for A View from the Bridge covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "A View from the Bridge", url: "https://theenglishhub.app/revision/texts/a-view-from-the-bridge" },
+        ]}
+      />
       <TextStudyHub
         textName="A View from the Bridge"
         textType="play"

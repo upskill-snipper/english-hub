@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Lord of the Flies Themes & Symbolism | The English Hub',
   description:
@@ -248,6 +249,15 @@ export default async function LotFThemesPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Lord of the Flies", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies" },
+          { name: "Themes", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies/themes" },
+        ]}
+      />
       <Breadcrumb
         items={[
           { label: 'Revision', href: '/revision' },

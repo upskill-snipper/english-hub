@@ -13,6 +13,7 @@ import {
 
 import StudyTools from '@/components/study/StudyTools'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ────────────────────────────────────────────────────────────────────── */
 /*  Data                                                                 */
 /* ────────────────────────────────────────────────────────────────────── */
@@ -315,6 +316,15 @@ export default function AnimalFarmKeyQuotesPage() {
 
   return (
     <div className="min-h-screen bg-cream-50 font-serif">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Animal Farm", url: "https://theenglishhub.app/revision/texts/animal-farm" },
+          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/animal-farm/key-quotes" },
+        ]}
+      />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Study Tools */}
         <StudyTools textName="Animal Farm" textType="novella" />

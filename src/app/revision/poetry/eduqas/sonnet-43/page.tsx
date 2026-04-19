@@ -9,6 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const sonnet43: PoemData = {
   title: 'Sonnet 43',
   poet: 'Elizabeth Barrett Browning',
@@ -380,6 +381,19 @@ const ESSAY_PROMPTS = [
 export default function Sonnet43EduqasPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="Sonnet 43 by Elizabeth Barrett Browning — Analysis & Annotations"
+        description="Line-by-line analysis of Sonnet 43 with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Eduqas Poetry", url: "https://theenglishhub.app/revision/poetry/eduqas" },
+          { name: "Sonnet 43", url: "https://theenglishhub.app/revision/poetry/eduqas/sonnet-43" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

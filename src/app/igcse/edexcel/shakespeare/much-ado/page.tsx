@@ -11,6 +11,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import StudyTools from '@/components/study/StudyTools'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   alternates: {
     canonical:
@@ -112,6 +113,19 @@ export default async function MuchAdoHubPage() {
 
   return (
     <main className="min-h-screen bg-background">
+      <CourseJsonLd
+        name="Much Ado About Nothing — Edexcel IGCSE Literature Study Guide"
+        description="In-depth study guide for Much Ado About Nothing for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: "Shakespeare", url: "https://theenglishhub.app/igcse/edexcel/shakespeare" },
+          { name: "Much Ado About Nothing", url: "https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado" },
+        ]}
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="border-b border-border bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">

@@ -25,6 +25,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Edexcel IGCSE Literature — The English Hub',
   description:
@@ -259,6 +260,13 @@ const examResources = [
 function TextCard({ text }: { text: TextEntry }) {
   return (
     <div className="group/text rounded-xl border border-border/60 bg-card transition-all duration-200 hover:border-primary/30 hover:shadow-card-hover">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+        ]}
+      />
       <Link
         href={text.href}
         className="flex items-center justify-between gap-3 p-4"

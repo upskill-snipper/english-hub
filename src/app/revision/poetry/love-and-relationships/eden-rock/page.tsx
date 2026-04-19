@@ -8,6 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
 const edenRockPoem: PoemData = {
@@ -174,6 +175,19 @@ const comparePoems = [
 export default function EdenRockPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="Eden Rock by Charles Causley — Analysis & Annotations"
+        description="Line-by-line analysis of Eden Rock with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Love and Relationships", url: "https://theenglishhub.app/revision/poetry/love-and-relationships" },
+          { name: "Eden Rock", url: "https://theenglishhub.app/revision/poetry/love-and-relationships/eden-rock" },
+        ]}
+      />
       {/* ── Back navigation ──────────────────────────────────────── */}
       <div>
         <Button

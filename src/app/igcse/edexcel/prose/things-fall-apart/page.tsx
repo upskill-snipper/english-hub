@@ -21,6 +21,7 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import StudyTools from '@/components/study/StudyTools'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Things Fall Apart — Edexcel IGCSE Literature Study Guide',
   description:
@@ -195,6 +196,19 @@ export default async function ThingsFallApartHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <CourseJsonLd
+        name="Things Fall Apart — Edexcel IGCSE Literature Study Guide"
+        description="In-depth study guide for Things Fall Apart for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
+          { name: "Things Fall Apart", url: "https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

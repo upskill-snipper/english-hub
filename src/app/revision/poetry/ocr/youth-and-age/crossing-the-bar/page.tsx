@@ -9,6 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const crossingTheBar: PoemData = {
   title: 'Crossing the Bar',
   poet: 'Alfred Lord Tennyson',
@@ -366,6 +367,19 @@ const ESSAY_PROMPTS = [
 export default function CrossingTheBarPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="Crossing the Bar by Alfred, Lord Tennyson — Analysis & Annotations"
+        description="Line-by-line analysis of Crossing the Bar with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "OCR Poetry", url: "https://theenglishhub.app/revision/poetry/ocr" },
+          { name: "Crossing the Bar", url: "https://theenglishhub.app/revision/poetry/ocr/crossing-the-bar" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

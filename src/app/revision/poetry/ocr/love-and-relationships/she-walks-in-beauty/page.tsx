@@ -9,6 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const sheWalksInBeauty: PoemData = {
   title: 'She Walks in Beauty',
   poet: 'Lord Byron',
@@ -390,6 +391,19 @@ const ESSAY_PROMPTS = [
 export default function SheWalksInBeautyPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="She Walks in Beauty by Lord Byron — Analysis & Annotations"
+        description="Line-by-line analysis of She Walks in Beauty with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "OCR Poetry", url: "https://theenglishhub.app/revision/poetry/ocr" },
+          { name: "She Walks in Beauty", url: "https://theenglishhub.app/revision/poetry/ocr/she-walks-in-beauty" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

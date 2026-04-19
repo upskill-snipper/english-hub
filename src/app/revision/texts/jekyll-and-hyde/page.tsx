@@ -6,6 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Strange Case of Dr Jekyll and Mr Hyde — Study Guide | The English Hub',
   description:
@@ -296,6 +297,18 @@ export default async function JekyllAndHydePage() {
 
   return (
     <>
+      <CourseJsonLd
+        name="Dr Jekyll and Mr Hyde — Complete GCSE Study Guide"
+        description="In-depth study guide for Dr Jekyll and Mr Hyde covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Dr Jekyll and Mr Hyde", url: "https://theenglishhub.app/revision/texts/jekyll-and-hyde" },
+        ]}
+      />
       <TextStudyHub
         textName="Dr Jekyll and Mr Hyde"
         textType="novella"

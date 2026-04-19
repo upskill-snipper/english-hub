@@ -11,6 +11,7 @@ import {
 
 import StudyTools from '@/components/study/StudyTools'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ────────────────────────────────────────────────────────────────────── */
 /*  Data                                                                 */
 /* ────────────────────────────────────────────────────────────────────── */
@@ -239,6 +240,15 @@ const ESSAY_PLANS: EssayPlan[] = [
 export default function LOTFEssayPlansPage() {
   return (
     <div className="min-h-screen bg-cream-50 font-serif">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Lord of the Flies", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies" },
+          { name: "Essay Plans", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies/essay-plans" },
+        ]}
+      />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Study Tools */}
         <StudyTools textName="Lord of the Flies" textType="novel" />

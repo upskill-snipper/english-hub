@@ -8,6 +8,7 @@ import type { Metadata } from 'next'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── SEO ─────────────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -507,6 +508,19 @@ const THEMES = [
 export default function BayonetChargePage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="Bayonet Charge by Ted Hughes — Analysis & Annotations"
+        description="Line-by-line analysis of Bayonet Charge with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
+          { name: "Bayonet Charge", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/bayonet-charge" },
+        ]}
+      />
       {/* ── Back nav ──────────────────────────────────────────────── */}
       <div>
         <Button

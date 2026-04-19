@@ -8,6 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const poemData: PoemData = {
   title: "Love's Philosophy",
   poet: 'Percy Bysshe Shelley',
@@ -92,6 +93,19 @@ const COMPARE_POEMS = [
 export default function LovesPhilosophyPage() {
   return (
     <div className="space-y-6">
+      <CourseJsonLd
+        name="Love's Philosophy by Percy Bysshe Shelley — Analysis & Annotations"
+        description="Line-by-line analysis of Love's Philosophy with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Love and Relationships", url: "https://theenglishhub.app/revision/poetry/love-and-relationships" },
+          { name: "Love's Philosophy", url: "https://theenglishhub.app/revision/poetry/love-and-relationships/loves-philosophy" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

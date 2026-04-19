@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -548,6 +549,15 @@ export default async function JekyllChaptersPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Dr Jekyll and Mr Hyde", url: "https://theenglishhub.app/revision/texts/jekyll-and-hyde" },
+          { name: "Chapter-by-Chapter Analysis", url: "https://theenglishhub.app/revision/texts/jekyll-and-hyde/chapters" },
+        ]}
+      />
       {/* Breadcrumb */}
       <Breadcrumb
         items={[

@@ -7,6 +7,7 @@ import { InteractivePoemViewer, PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Storm on the Island – Seamus Heaney | Power & Conflict Poetry',
   description:
@@ -572,6 +573,19 @@ const themes = [
 export default function StormOnTheIslandPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8 space-y-10">
+      <CourseJsonLd
+        name="Storm on the Island by Seamus Heaney — Analysis & Annotations"
+        description="Line-by-line analysis of Storm on the Island with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
+          { name: "Storm on the Island", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/storm-on-the-island" },
+        ]}
+      />
       {/* Back link */}
       <Button
         variant="ghost"

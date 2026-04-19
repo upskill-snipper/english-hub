@@ -20,6 +20,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Theme data ──────────────────────────────────────────────────────── */
 
 type ThemeQuote = {
@@ -508,6 +509,15 @@ const themes: ThemeData[] = [
 export default function ThemesPage() {
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "A Christmas Carol", url: "https://theenglishhub.app/revision/texts/a-christmas-carol" },
+          { name: "Themes", url: "https://theenglishhub.app/revision/texts/a-christmas-carol/themes" },
+        ]}
+      />
       {/* Study Tools */}
       <StudyTools textName="A Christmas Carol" textType="novella" />
 

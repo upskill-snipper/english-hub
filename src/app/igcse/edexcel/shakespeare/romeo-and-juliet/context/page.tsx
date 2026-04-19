@@ -4,6 +4,7 @@ import { GraduationCap } from "lucide-react";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   alternates: {
     canonical:
@@ -67,6 +68,16 @@ export default async function RomeoAndJulietContextPage() {
 
   return (
     <main className="min-h-screen bg-background">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: "Shakespeare", url: "https://theenglishhub.app/igcse/edexcel/shakespeare" },
+          { name: "Romeo and Juliet", url: "https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet" },
+          { name: "Context", url: "https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/context" },
+        ]}
+      />
       {/* -- Hero ------------------------------------------------- */}
       <section className="border-b border-border bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">

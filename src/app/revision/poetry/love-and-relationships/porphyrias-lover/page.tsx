@@ -8,6 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const poemData: PoemData = {
   title: "Porphyria's Lover",
   poet: 'Robert Browning',
@@ -123,6 +124,19 @@ const COMPARE_POEMS = [
 export default function PorphyriasLoverPage() {
   return (
     <div className="space-y-6">
+      <CourseJsonLd
+        name="Porphyria's Lover by Robert Browning — Analysis & Annotations"
+        description="Line-by-line analysis of Porphyria's Lover with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Love and Relationships", url: "https://theenglishhub.app/revision/poetry/love-and-relationships" },
+          { name: "Porphyria's Lover", url: "https://theenglishhub.app/revision/poetry/love-and-relationships/porphyrias-lover" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

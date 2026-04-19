@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Of Mice and Men Essay Plans — Edexcel IGCSE Literature',
   description:
@@ -158,6 +159,16 @@ export default async function OmamEssayPlansPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
+          { name: "Of Mice and Men", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men" },
+          { name: "Essay Plans", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/essay-plans" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

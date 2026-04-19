@@ -20,6 +20,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Edexcel IGCSE English Language A (4EA1) — The English Hub',
   description:
@@ -91,6 +92,13 @@ export default async function EdexcelIgcseLangHubPage() {
 
   return (
     <div className="space-y-12 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Language", url: "https://theenglishhub.app/igcse/edexcel-lang" },
+        ]}
+      />
       {/* ── Back link ───────────────────────────────────────────────── */}
       <div>
         <Button

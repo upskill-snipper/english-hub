@@ -3,6 +3,7 @@
 import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
 import Link from 'next/link'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // ─── Full Frankenstein reading data ─────────────────────────────────────────
 // Mary Shelley's Frankenstein (1818) is in the public domain.
 // Text sourced from the 1818 first edition.
@@ -754,6 +755,15 @@ Frankenstein was published anonymously on 1 January 1818. Most reviewers assumed
 export default function FrankensteinReadPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Frankenstein", url: "https://theenglishhub.app/revision/texts/frankenstein" },
+          { name: "Read Full Text", url: "https://theenglishhub.app/revision/texts/frankenstein/read" },
+        ]}
+      />
       {/* Breadcrumb */}
       <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
         <Link

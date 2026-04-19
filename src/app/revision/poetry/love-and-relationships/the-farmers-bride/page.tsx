@@ -8,6 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
 const farmersBridePoem: PoemData = {
@@ -172,6 +173,19 @@ const comparePoems = [
 export default function TheFarmersBridePage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="The Farmer's Bride by Charlotte Mew — Analysis & Annotations"
+        description="Line-by-line analysis of The Farmer's Bride with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Love and Relationships", url: "https://theenglishhub.app/revision/poetry/love-and-relationships" },
+          { name: "The Farmer's Bride", url: "https://theenglishhub.app/revision/poetry/love-and-relationships/the-farmers-bride" },
+        ]}
+      />
       {/* ── Back navigation ──────────────────────────────────────── */}
       <div>
         <Button

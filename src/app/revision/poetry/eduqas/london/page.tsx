@@ -9,6 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const london: PoemData = {
   title: 'London',
   poet: 'William Blake',
@@ -405,6 +406,19 @@ const ESSAY_PROMPTS = [
 export default function LondonEduqasPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="London by William Blake — Analysis & Annotations"
+        description="Line-by-line analysis of London with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Eduqas Poetry", url: "https://theenglishhub.app/revision/poetry/eduqas" },
+          { name: "London", url: "https://theenglishhub.app/revision/poetry/eduqas/london" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

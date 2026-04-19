@@ -30,6 +30,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'IGCSE Language A — The English Hub',
   description:
@@ -175,6 +176,13 @@ export default async function Cambridge0500HubPage() {
 
   return (
     <div className="space-y-12 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Cambridge IGCSE 0500", url: "https://theenglishhub.app/igcse/cambridge/0500" },
+        ]}
+      />
       {/* ── Back link ─────────────────────────────────────────────── */}
       <div>
         <Button

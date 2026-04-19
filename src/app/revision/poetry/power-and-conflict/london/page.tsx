@@ -8,6 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
 const londonPoem: PoemData = {
@@ -438,6 +439,19 @@ const comparePoems = [
 export default function LondonPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="London by William Blake — Analysis & Annotations"
+        description="Line-by-line analysis of London with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
+          { name: "London", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/london" },
+        ]}
+      />
       {/* ── Back navigation ──────────────────────────────────────── */}
       <div>
         <Button

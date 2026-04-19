@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const characters = [
   {
     name: 'George Milton',
@@ -84,6 +85,16 @@ const characters = [
 export default function OmamCharactersPage() {
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
+          { name: "Of Mice and Men", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men" },
+          { name: "Characters", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/characters" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

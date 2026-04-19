@@ -6,6 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Of Mice and Men — Study Guide | The English Hub',
   description:
@@ -195,6 +196,18 @@ export default async function OfMiceAndMenPage() {
 
   return (
     <>
+      <CourseJsonLd
+        name="Of Mice and Men — Complete GCSE Study Guide"
+        description="In-depth study guide for Of Mice and Men covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Of Mice and Men", url: "https://theenglishhub.app/revision/texts/of-mice-and-men" },
+        ]}
+      />
       <TextStudyHub
         textName="Of Mice and Men"
         textType="novella"

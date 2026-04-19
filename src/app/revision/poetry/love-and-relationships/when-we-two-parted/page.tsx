@@ -8,6 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const poemData: PoemData = {
   title: 'When We Two Parted',
   poet: 'Lord Byron',
@@ -105,6 +106,19 @@ const COMPARE_POEMS = [
 export default function WhenWeTwoPartedPage() {
   return (
     <div className="space-y-6">
+      <CourseJsonLd
+        name="When We Two Parted by Lord Byron — Analysis & Annotations"
+        description="Line-by-line analysis of When We Two Parted with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Love and Relationships", url: "https://theenglishhub.app/revision/poetry/love-and-relationships" },
+          { name: "When We Two Parted", url: "https://theenglishhub.app/revision/poetry/love-and-relationships/when-we-two-parted" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

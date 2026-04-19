@@ -21,6 +21,7 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import StudyTools from '@/components/study/StudyTools'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title:
     'The Curious Incident of the Dog in the Night-Time — Edexcel IGCSE IGCSE Literature Study Guide',
@@ -186,6 +187,19 @@ export default async function CuriousIncidentHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <CourseJsonLd
+        name="The Curious Incident of the Dog in the Night-Time — Edexcel IGCSE Literature Study Guide"
+        description="In-depth study guide for The Curious Incident of the Dog in the Night-Time for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
+          { name: "The Curious Incident of the Dog in the Night-Time", url: "https://theenglishhub.app/igcse/edexcel/drama/curious-incident" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

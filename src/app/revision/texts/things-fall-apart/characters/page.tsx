@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Character data ──────────────────────────────────────────────────── */
 
 type CharacterQuote = {
@@ -409,6 +410,15 @@ const characters: CharacterData[] = [
 export default function CharactersPage() {
   return (
     <div className="space-y-10 bg-cream-50 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Things Fall Apart", url: "https://theenglishhub.app/revision/texts/things-fall-apart" },
+          { name: "Characters", url: "https://theenglishhub.app/revision/texts/things-fall-apart/characters" },
+        ]}
+      />
       {/* Study Tools */}
       <StudyTools textName="Things Fall Apart" textType="novel" examBoard="IGCSE Edexcel" />
 

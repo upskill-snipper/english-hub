@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import StudyTools from '@/components/study/StudyTools'
 
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'A View from the Bridge — Themes | The English Hub',
   description:
@@ -219,6 +220,15 @@ export default async function AViewFromTheBridgeThemesPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "A View from the Bridge", url: "https://theenglishhub.app/revision/texts/a-view-from-the-bridge" },
+          { name: "Themes", url: "https://theenglishhub.app/revision/texts/a-view-from-the-bridge/themes" },
+        ]}
+      />
       <StudyTools textName="A View from the Bridge" textType="play" />
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-amber-500/[0.04] p-6 sm:p-8 lg:p-10">

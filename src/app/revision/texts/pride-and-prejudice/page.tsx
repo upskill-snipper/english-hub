@@ -6,6 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Pride and Prejudice — Study Guide | The English Hub',
   description:
@@ -183,6 +184,18 @@ export default async function PrideAndPrejudicePage() {
 
   return (
     <>
+      <CourseJsonLd
+        name="Pride and Prejudice — Complete GCSE Study Guide"
+        description="In-depth study guide for Pride and Prejudice covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
+          { name: "Pride and Prejudice", url: "https://theenglishhub.app/revision/texts/pride-and-prejudice" },
+        ]}
+      />
       <TextStudyHub
         textName="Pride and Prejudice"
         textType="novel"

@@ -8,6 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
 const motherAnyDistancePoem: PoemData = {
@@ -290,6 +291,19 @@ const comparePoems = [
 export default function MotherAnyDistancePage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="Mother, Any Distance by Simon Armitage — Analysis & Annotations"
+        description="Line-by-line analysis of Mother, Any Distance with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Love and Relationships", url: "https://theenglishhub.app/revision/poetry/love-and-relationships" },
+          { name: "Mother, Any Distance", url: "https://theenglishhub.app/revision/poetry/love-and-relationships/mother-any-distance" },
+        ]}
+      />
       {/* ── Back navigation ──────────────────────────────────────── */}
       <div>
         <Button

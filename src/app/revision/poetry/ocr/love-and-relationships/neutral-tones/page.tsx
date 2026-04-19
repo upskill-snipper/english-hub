@@ -9,6 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const neutralTones: PoemData = {
   title: 'Neutral Tones',
   poet: 'Thomas Hardy',
@@ -397,6 +398,19 @@ const ESSAY_PROMPTS = [
 export default function NeutralTonesPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="Neutral Tones by Thomas Hardy — Analysis & Annotations"
+        description="Line-by-line analysis of Neutral Tones with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "OCR Poetry", url: "https://theenglishhub.app/revision/poetry/ocr" },
+          { name: "Neutral Tones", url: "https://theenglishhub.app/revision/poetry/ocr/neutral-tones" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"

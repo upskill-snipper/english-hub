@@ -9,6 +9,7 @@ import {
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
   title: 'Remains -- Simon Armitage -- The English Hub',
   description:
@@ -564,6 +565,19 @@ const COMPARISONS = [
 export default function RemainsPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="Remains by Simon Armitage — Analysis & Annotations"
+        description="Line-by-line analysis of Remains with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
+          { name: "Remains", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/remains" },
+        ]}
+      />
       {/* ── Breadcrumb / back ── */}
       <div>
         <Button

@@ -9,6 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const sheDweltAmongTheUntroddenWays: PoemData = {
   title: 'She Dwelt Among the Untrodden Ways',
   poet: 'William Wordsworth',
@@ -329,6 +330,19 @@ const ESSAY_PROMPTS = [
 export default function SheDweltPage() {
   return (
     <div className="space-y-8">
+      <CourseJsonLd
+        name="She Dwelt Among the Untrodden Ways by William Wordsworth — Analysis & Annotations"
+        description="Line-by-line analysis of She Dwelt Among the Untrodden Ways with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://theenglishhub.app" },
+          { name: "Revision", url: "https://theenglishhub.app/revision" },
+          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
+          { name: "OCR Poetry", url: "https://theenglishhub.app/revision/poetry/ocr" },
+          { name: "She Dwelt Among the Untrodden Ways", url: "https://theenglishhub.app/revision/poetry/ocr/she-dwelt-among-the-untrodden-ways" },
+        ]}
+      />
       <div>
         <Button
           variant="ghost"
