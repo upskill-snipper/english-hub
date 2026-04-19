@@ -28,7 +28,10 @@ export async function GET(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
@@ -53,20 +56,26 @@ export async function GET(request: NextRequest) {
     if (!account) {
       return NextResponse.json(
         { error: 'No affiliate account found for this user' },
-        { status: 404 }
+        { status: 404 },
       )
     }
 
-    // 2. Fetch payouts paginated, newest first
+    // 2. Fetch payouts paginated, newest first.
+    // Cycle 4: switched from `affiliate_payouts` (legacy Rewardful table)
+    // to `affiliate_payout_batches` (new percentage-tier system, created
+    // by supabase/migrations/20260420_affiliates_v2.sql). The admin
+    // Rewardful payout route at src/app/api/admin/affiliates/payout.ts
+    // continues to use the legacy table — the two pipelines stay
+    // separate by design.
     const {
       data: payouts,
       error: payoutsErr,
       count,
     } = await admin
-      .from('affiliate_payouts')
+      .from('affiliate_payout_batches')
       .select(
         'id, period_start, period_end, amount_pence, currency, status, paid_at, payment_reference, created_at',
-        { count: 'exact' }
+        { count: 'exact' },
       )
       .eq('affiliate_id', account.id)
       .order('period_end', { ascending: false })
@@ -79,7 +88,7 @@ export async function GET(request: NextRequest) {
 
     // 3. Summary: total paid, pending (unpaid commissions), tier info
     const { data: totals } = await admin
-      .from('affiliate_payouts')
+      .from('affiliate_payout_batches')
       .select('amount_pence, status')
       .eq('affiliate_id', account.id)
 
@@ -100,7 +109,7 @@ export async function GET(request: NextRequest) {
 
     const unpaidCommissionPence = (unpaidConv ?? []).reduce(
       (sum, c) => sum + Number(c.commission_pence ?? 0),
-      0
+      0,
     )
 
     const referralCount = Number(account.confirmed_referral_count ?? 0)
@@ -133,7 +142,7 @@ export async function GET(request: NextRequest) {
           total: count ?? 0,
         },
       },
-      { status: 200 }
+      { status: 200 },
     )
   } catch (err) {
     console.error('[affiliate/payouts] unexpected error:', err)
