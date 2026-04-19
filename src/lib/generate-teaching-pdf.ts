@@ -118,7 +118,8 @@ function currentDate(): string {
   return new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
 }
 
-function pickAccentWord(title: string): string {
+function pickAccentWord(title: string | null | undefined): string {
+  if (!title || typeof title !== 'string') return 'Document'
   // Filter out very short / generic words and pick the longest remaining word
   const stopWords = new Set([
     'a', 'an', 'the', 'and', 'or', 'of', 'to', 'in', 'on', 'for', 'is',
@@ -127,7 +128,7 @@ function pickAccentWord(title: string): string {
   ])
   const words = title.split(/\s+/).filter(w => w.length > 0)
   const candidates = words.filter(w => !stopWords.has(w.toLowerCase()) && w.length > 2)
-  if (candidates.length === 0) return words[0] || title
+  if (candidates.length === 0) return words[0] || title || 'Document'
   // Prefer the longest meaningful word
   return candidates.reduce((a, b) => b.length > a.length ? b : a)
 }
