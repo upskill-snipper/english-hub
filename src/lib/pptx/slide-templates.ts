@@ -267,22 +267,26 @@ export function titleSlide(
 
   const mx = D.marginX
   const cw = D.contentWidth
-  let cy = contentTop + 0.4
+  // Centre the title block vertically in the available space
+  // Available height: contentTop (~1.0) to footer (6.85) = ~5.85"
+  // Title block is ~3" tall — start it ~1.5" below contentTop
+  let cy = contentTop + 1.2
 
-  // .t-super kicker (mono 12pt, accent, uppercase, letter-spaced)
+  // Kicker (mono, accent, uppercase) — exam metadata
   const kickerText = data.kicker || [data.yearGroup, data.examBoard, data.duration, data.text]
-    .filter(Boolean).join('  /  ')
+    .filter(Boolean).join('  ·  ')
   if (kickerText) {
     slide.addText(kickerText.toUpperCase(), {
       x: mx, y: cy, w: cw, h: 0.3,
       fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 2, valign: 'middle',
+      color: p.slideAccent, charSpacing: 3, valign: 'middle',
     })
-    cy += 0.45
+    cy += 0.5
   }
 
-  // h1.display (serif 125pt) — accent word in italic accent colour
+  // Display title — auto-shrinks if too long
   const accentWord = data.accentWord
+  const titleH = 2.0  // Generous height, shrinkText keeps it within bounds
   if (accentWord && data.title.includes(accentWord)) {
     const before = data.title.substring(0, data.title.indexOf(accentWord))
     const after = data.title.substring(data.title.indexOf(accentWord) + accentWord.length)
@@ -292,28 +296,28 @@ export function titleSlide(
         { text: accentWord, options: { fontSize: D.sizeDisplayH1, fontFace: D.fontSerif, color: p.slideAccent, italic: true } },
         ...(after ? [{ text: after, options: { fontSize: D.sizeDisplayH1, fontFace: D.fontSerif, color: p.slideFg } }] : []),
       ],
-      { x: mx, y: cy, w: cw, h: 2.2, valign: 'bottom', shrinkText: true },
+      { x: mx, y: cy, w: cw, h: titleH, valign: 'middle', fit: 'shrink' as const, wrap: true },
     )
   } else {
     slide.addText(data.title, {
-      x: mx, y: cy, w: cw, h: 2.2,
+      x: mx, y: cy, w: cw, h: titleH,
       fontSize: D.sizeDisplayH1, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'bottom', shrinkText: true,
+      color: p.slideFg, valign: 'middle', fit: 'shrink' as const, wrap: true,
     })
   }
-  cy += 2.4
+  cy += titleH + 0.2
 
-  // .standfirst (italic serif 25pt, sub colour)
+  // Standfirst (italic serif, sub colour)
   if (data.subtitle) {
     slide.addText(data.subtitle, {
       x: mx, y: cy, w: cw, h: 0.55,
       fontSize: D.sizeStandfirst, fontFace: D.fontSerif, italic: true,
-      color: p.slideSub, valign: 'top',
+      color: p.slideSub, valign: 'top', wrap: true,
     })
-    cy += 0.7
+    cy += 0.65
   }
 
-  // .byline (mono 10pt, muted)
+  // Byline (mono, muted)
   const byline = data.byline || 'theenglishhub.app'
   slide.addText(byline, {
     x: mx, y: cy, w: cw, h: 0.3,

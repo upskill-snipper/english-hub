@@ -87,45 +87,47 @@ export const PPTX_DESIGN = {
   fontMono:  'JetBrains Mono',  // kickers, codes, metadata
   fontMain:  'Newsreader',      // backward-compat alias for fontSerif
 
-  // ── Named sizes (points, scaled from 1920px → 13.33 in) ──────────────────
+  // ── Named sizes (POINTS — for actual PowerPoint reading distance) ────────
+  // Standard PowerPoint typography: titles 36-60pt, body 18-24pt, captions 10-12pt
+  // These are sized to be readable when projected and not overflow 13.33×7.5in slides
 
-  /** Masthead brand name – 28 px → ~19 pt */
-  sizeMastheadBrand: 19,
-  /** Masthead edition line – 24 px → ~17 pt */
-  sizeMastheadEdition: 17,
-  /** Masthead code – 16 px → ~11 pt */
-  sizeMastheadCode: 11,
-  /** Standard body text – 28 px → ~19 pt */
-  sizeBody: 19,
-  /** Section heading – 54 px → ~37 pt */
-  sizeSectionHeading: 37,
-  /** Display h1 – 180 px → ~125 pt */
-  sizeDisplayH1: 125,
-  /** XL h1 – 120 px → ~83 pt */
-  sizeXlH1: 83,
-  /** LG h1 – 80 px → ~55 pt */
-  sizeLgH1: 55,
-  /** Standfirst / lead paragraph – 36 px → ~25 pt */
-  sizeStandfirst: 25,
-  /** Kicker / superscript label – 18 px → ~12 pt */
-  sizeKicker: 12,
-  /** Dashed list item – 28 px → ~19 pt */
-  sizeDashedList: 19,
-  /** Data-card number – 140 px → ~97 pt */
-  sizeDataCardNum: 97,
-  /** Pull-quote text – 88 px → ~61 pt */
-  sizePullQuote: 61,
-  /** Footer text – 15 px → ~10 pt */
-  sizeFooter: 10,
+  /** Masthead brand name */
+  sizeMastheadBrand: 14,
+  /** Masthead edition line */
+  sizeMastheadEdition: 12,
+  /** Masthead code */
+  sizeMastheadCode: 9,
+  /** Standard body text */
+  sizeBody: 16,
+  /** Section heading */
+  sizeSectionHeading: 28,
+  /** Display h1 — large title slide heading */
+  sizeDisplayH1: 54,
+  /** XL h1 — content slide major heading */
+  sizeXlH1: 40,
+  /** LG h1 — secondary heading */
+  sizeLgH1: 30,
+  /** Standfirst / lead paragraph */
+  sizeStandfirst: 18,
+  /** Kicker / superscript label */
+  sizeKicker: 10,
+  /** Dashed list item */
+  sizeDashedList: 16,
+  /** Data-card number */
+  sizeDataCardNum: 60,
+  /** Pull-quote text */
+  sizePullQuote: 32,
+  /** Footer text */
+  sizeFooter: 9,
 
   // ── Legacy size aliases (backward compat) ─────────────────────────────────
 
-  titleSize:    37,  // maps to sizeSectionHeading
-  subtitleSize: 25,  // maps to sizeStandfirst
-  headingSize:  25,  // maps to sizeStandfirst
-  bodySize:     19,  // maps to sizeBody
-  smallSize:    12,  // maps to sizeKicker
-  tinySize:     10,  // maps to sizeFooter
+  titleSize:    28,  // maps to sizeSectionHeading
+  subtitleSize: 18,  // maps to sizeStandfirst
+  headingSize:  18,  // maps to sizeStandfirst
+  bodySize:     16,  // maps to sizeBody
+  smallSize:    10,  // maps to sizeKicker
+  tinySize:     9,   // maps to sizeFooter
 
   // ── Layout (inches, 16:9 widescreen) ──────────────────────────────────────
 
