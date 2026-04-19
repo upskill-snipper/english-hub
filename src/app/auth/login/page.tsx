@@ -6,7 +6,14 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { validateRedirect } from '@/lib/utils'
 import { Mail, Lock, Loader2, ArrowLeft, Eye, EyeOff } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+} from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -80,20 +87,30 @@ function LoginForm() {
     })
 
     if (authError) {
-      // Detect unverified email error and show resend option
-      if (authError.message.toLowerCase().includes('email not confirmed')) {
-        setShowEmailNotConfirmed(true)
-        setError('Your email address has not been verified yet. Please check your inbox for the verification link.')
-      } else {
-        setError(authError.message)
-      }
+      // Generic error for every failure mode to prevent account enumeration.
+      // Previously we branched on 'email not confirmed' which leaked the fact
+      // that an account exists for the submitted email (P1-SEC-5). We still
+      // surface a verification CTA, but only in-form text — we do not
+      // auto-enable a resend-verification UI from here, since that branch
+      // would itself confirm account existence.
+      //
+      // If a user does have an unverified account they can use the
+      // /auth/forgot-password or a dedicated "resend verification" flow,
+      // both of which respond identically whether or not the email exists.
+      setShowEmailNotConfirmed(false)
+      setError(
+        'Invalid email or password, or your email has not yet been verified. ' +
+          'Please check your credentials and verification link.',
+      )
       setLoading(false)
       return
     }
 
     // If no explicit redirect, check if user is a teacher and redirect accordingly
     if (redirectTo === '/dashboard') {
-      const { data: { user } } = await supabase.auth.getUser()
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
       if (user) {
         const { data: profile } = await supabase
           .from('profiles')
@@ -129,16 +146,15 @@ function LoginForm() {
         <Card>
           <CardHeader className="text-center">
             <h1 className="text-2xl font-semibold leading-none tracking-tight">Welcome back</h1>
-            <CardDescription>
-              Sign in to your English Hub account.
-            </CardDescription>
+            <CardDescription>Sign in to your English Hub account.</CardDescription>
           </CardHeader>
 
           <CardContent>
             {resendSuccess && (
               <Alert className="mb-6">
                 <AlertDescription>
-                  Verification email sent! Please check your inbox and click the link to verify your account.
+                  Verification email sent! Please check your inbox and click the link to verify your
+                  account.
                 </AlertDescription>
               </Alert>
             )}
@@ -198,7 +214,7 @@ function LoginForm() {
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="password"
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Your password"
@@ -211,19 +227,14 @@ function LoginForm() {
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
-                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
                 </div>
               </div>
 
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full"
-                size="lg"
-              >
+              <Button type="submit" disabled={loading} className="w-full" size="lg">
                 {loading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin mr-2" />
