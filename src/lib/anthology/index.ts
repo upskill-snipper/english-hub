@@ -96,24 +96,42 @@ function getTitle(doc: AnthologyDocument): string {
 /**
  * Generates an Anthology-styled HTML document and opens it in a new browser tab.
  * User can print to PDF via Ctrl+P / Cmd+P, or use the built-in print bar.
+ *
+ * Falls back to download if popups are blocked.
  */
 export function generateAnthologyPdf(doc: AnthologyDocument): void {
-  const content = getContent(doc)
-  const title = getTitle(doc)
+  try {
+    const content = getContent(doc)
+    const title = getTitle(doc)
 
-  const html = anthologyPageHtml({
-    title,
-    brand: content.brand,
-    cover: content.cover,
-    bodyHtml: renderBody(doc),
-    footer: content.footer,
-    preview: true,
-  })
+    const html = anthologyPageHtml({
+      title,
+      brand: content.brand,
+      cover: content.cover,
+      bodyHtml: renderBody(doc),
+      footer: content.footer,
+      preview: true,
+    })
 
-  const blob = new Blob([html], { type: 'text/html;charset=utf-8' })
-  const url = URL.createObjectURL(blob)
-  window.open(url, '_blank')
-  setTimeout(() => URL.revokeObjectURL(url), 60_000)
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+
+    // Try to open in new tab; if blocked by popup blocker, fall back to download
+    const newWindow = window.open(url, '_blank')
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      // Popup blocked — trigger download instead
+      const a = document.createElement('a')
+      a.href = url
+      a.download = (title.replace(/[^a-zA-Z0-9]/g, '-') || 'document') + '.html'
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+    }
+    setTimeout(() => URL.revokeObjectURL(url), 60_000)
+  } catch (err) {
+    console.error('[generateAnthologyPdf] Failed:', err)
+    throw new Error('Failed to generate document. Please check your browser allows popups and try again.')
+  }
 }
 
 // ─── Word Export (triggers download) ──────────────────────────────────────
@@ -121,31 +139,40 @@ export function generateAnthologyPdf(doc: AnthologyDocument): void {
 /**
  * Generates an Anthology-styled HTML document and triggers a .doc download.
  * Word and Google Docs can open HTML files saved with a .doc extension.
+ * CSS variables are resolved to hex values for Word compatibility.
  */
 export function downloadAnthologyWord(
   doc: AnthologyDocument,
   fileName?: string,
 ): void {
-  const content = getContent(doc)
-  const title = getTitle(doc)
+  try {
+    const content = getContent(doc)
+    const title = getTitle(doc)
 
-  const html = anthologyWordHtml({
-    title,
-    brand: content.brand,
-    cover: content.cover,
-    bodyHtml: renderBody(doc),
-    footer: content.footer,
-  })
+    const html = anthologyWordHtml({
+      title,
+      brand: content.brand,
+      cover: content.cover,
+      bodyHtml: renderBody(doc),
+      footer: content.footer,
+    })
 
-  const blob = new Blob(['\ufeff' + html], { type: 'application/msword' })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = (fileName || title.replace(/[^a-zA-Z0-9]/g, '-')) + '.doc'
-  document.body.appendChild(a)
-  a.click()
-  document.body.removeChild(a)
-  URL.revokeObjectURL(url)
+    // BOM + meta charset for Word to render UTF-8 correctly
+    const blob = new Blob(['\ufeff' + html], {
+      type: 'application/vnd.ms-word;charset=utf-8',
+    })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = (fileName || title.replace(/[^a-zA-Z0-9]/g, '-') || 'document') + '.doc'
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    setTimeout(() => URL.revokeObjectURL(url), 5_000)
+  } catch (err) {
+    console.error('[downloadAnthologyWord] Failed:', err)
+    throw new Error('Failed to generate Word document. Please try again.')
+  }
 }
 
 // ─── Convenience: generate both formats ───────────────────────────────────
