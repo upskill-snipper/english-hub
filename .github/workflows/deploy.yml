@@ -5,7 +5,29 @@ on:
   pull_request:
     branches: [main]
 jobs:
+  # ───────────────────────────────────────────────────────────────────
+  # Quality gate — lint, typecheck, test, audit. Must pass before any
+  # deploy step can run. Previously the CI and Deploy workflows were
+  # independent, which meant a failing CI run could not block a deploy
+  # on merge to main. Embedding the checks here closes that gap.
+  # ───────────────────────────────────────────────────────────────────
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npx next lint
+      - run: npx tsc --noEmit
+      - run: npm test
+      - name: Production-dependency audit (CRITICAL blocks)
+        run: npm audit --omit=dev --audit-level=critical
+
   deploy:
+    needs: quality-gate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
