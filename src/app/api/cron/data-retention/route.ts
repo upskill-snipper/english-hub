@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
-import * as Sentry from '@sentry/nextjs'
 import { cleanupExpiredData } from '@/lib/data-retention'
+import { runCron } from '@/lib/cron/observability'
 
 export const dynamic = 'force-dynamic'
 
@@ -23,41 +23,23 @@ export const dynamic = 'force-dynamic'
  * Protected by CRON_SECRET (Vercel's standard Bearer token pattern).
  */
 export async function GET(request: NextRequest) {
-  const startTime = Date.now()
+  // ── Auth: verify CRON_SECRET ──────────────────────────────────────
+  const cronSecret = process.env.CRON_SECRET
+  if (!cronSecret) {
+    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
+  }
+  const authHeader = request.headers.get('authorization')
+  const incoming = Buffer.from(authHeader ?? '')
+  const expected = Buffer.from(`Bearer ${cronSecret}`)
+  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
 
-  try {
-    // ── Auth: verify CRON_SECRET ──────────────────────────────────────
-    const cronSecret = process.env.CRON_SECRET
-    if (!cronSecret) {
-      return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-    }
-    const authHeader = request.headers.get('authorization')
-    const incoming = Buffer.from(authHeader ?? '')
-    const expected = Buffer.from(`Bearer ${cronSecret}`)
-    if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-
+  return runCron('data-retention', async () => {
     // ── Run the full cleanup cycle ────────────────────────────────────
     const summary = await cleanupExpiredData()
 
-    const durationMs = Date.now() - startTime
-
-    console.log('[data-retention] Cleanup completed', {
-      durationMs,
-      hardDeletedAccounts: summary.hardDeletedAccounts.length,
-      inactiveWarningsSent: summary.inactiveWarningsSent.length,
-      inactiveSoftDeleted: summary.inactiveSoftDeleted.length,
-      childrenPriorityCleanups: summary.childrenPriorityCleanups,
-      childDormancyWarnings: summary.childDormancy?.warningsSent.length ?? 0,
-      childDormancyDeletions: summary.childDormancy?.deletions.length ?? 0,
-      expiredMarketingConsents: summary.expiredMarketingConsents,
-      errors: summary.errors.length,
-    })
-
-    return NextResponse.json({
-      ok: true,
-      durationMs,
+    return {
       summary: {
         startedAt: summary.startedAt,
         completedAt: summary.completedAt,
@@ -77,21 +59,6 @@ export async function GET(request: NextRequest) {
         expiredMarketingConsents: summary.expiredMarketingConsents,
         errorCount: summary.errors.length,
       },
-    })
-  } catch (error) {
-    const durationMs = Date.now() - startTime
-    console.error('[data-retention] Cron job failed:', error)
-    Sentry.captureException(error, {
-      tags: { cron: 'data-retention' },
-      extra: { durationMs },
-    })
-    return NextResponse.json(
-      {
-        ok: false,
-        error: 'Data retention cleanup failed',
-        durationMs,
-      },
-      { status: 500 },
-    )
-  }
+    }
+  })
 }

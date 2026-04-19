@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
-import * as Sentry from '@sentry/nextjs'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { sendEmail } from '@/lib/email'
+import { runCron } from '@/lib/cron/observability'
 
 export const dynamic = 'force-dynamic'
 
@@ -188,159 +188,144 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  // ── Query all Founder schools with a set access_until ────────────────────
+  return runCron('school-access', async () => {
+    // ── Query all Founder schools with a set access_until ──────────────────
+    const admin = createServiceRoleClient()
 
-  const admin = createServiceRoleClient()
-
-  const { data: schools, error: queryError } = await admin
-    .from('schools')
-    .select('id, name, contact_email, access_type, access_until')
-    .eq('access_type', 'founder')
-    .not('access_until', 'is', null)
-
-  if (queryError) {
-    console.error('[cron/school-access] Failed to query schools:', queryError)
-    Sentry.captureException(queryError, { tags: { cron: 'school-access' } })
-    return NextResponse.json({ error: 'Failed to query schools' }, { status: 500 })
-  }
-
-  const rows = (schools ?? []) as SchoolRow[]
-
-  const now = new Date()
-  const in7Days = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000)
-  const in30Days = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000)
-
-  const expiredIds: string[] = []
-  const emailErrors: string[] = []
-  let expiredCount = 0
-  let warnedCount = 0
-
-  for (const school of rows) {
-    if (!school.access_until) continue
-
-    const accessUntil = new Date(school.access_until)
-    const contactEmail = school.contact_email
-
-    // ── Expired: access_until has passed ────────────────────────────────────
-    if (accessUntil < now) {
-      expiredIds.push(school.id)
-      expiredCount++
-
-      if (contactEmail) {
-        const html = schoolAccessExpiredEmail(school.name, school.access_until)
-        const result = await sendEmail(
-          contactEmail,
-          `Your school access has expired - ${school.name}`,
-          html,
-        )
-        if (!result.success) {
-          emailErrors.push(`Expiry email failed for school ${school.id}: ${result.error}`)
-        }
-      } else {
-        console.info(
-          `[cron/school-access] No contact email for expired school: ${school.id} (${school.name})`,
-        )
-      }
-
-      continue
-    }
-
-    // ── Urgent warning: within 7 days ────────────────────────────────────────
-    if (accessUntil <= in7Days) {
-      warnedCount++
-
-      if (contactEmail) {
-        const daysRemaining = Math.ceil(
-          (accessUntil.getTime() - now.getTime()) / (1000 * 60 * 60 * 24),
-        )
-        const html = schoolAccessWarningEmail(school.name, school.access_until, daysRemaining, true)
-        const result = await sendEmail(
-          contactEmail,
-          `URGENT: Your school access expires in ${daysRemaining} day${daysRemaining === 1 ? '' : 's'} - ${school.name}`,
-          html,
-        )
-        if (!result.success) {
-          emailErrors.push(`Urgent warning email failed for school ${school.id}: ${result.error}`)
-        }
-      } else {
-        console.info(
-          `[cron/school-access] No contact email for urgent-warn school: ${school.id} (${school.name})`,
-        )
-      }
-
-      continue
-    }
-
-    // ── Standard warning: within 30 days ─────────────────────────────────────
-    if (accessUntil <= in30Days) {
-      warnedCount++
-
-      if (contactEmail) {
-        const daysRemaining = Math.ceil(
-          (accessUntil.getTime() - now.getTime()) / (1000 * 60 * 60 * 24),
-        )
-        const html = schoolAccessWarningEmail(
-          school.name,
-          school.access_until,
-          daysRemaining,
-          false,
-        )
-        const result = await sendEmail(
-          contactEmail,
-          `Your school access expires in ${daysRemaining} days - ${school.name}`,
-          html,
-        )
-        if (!result.success) {
-          emailErrors.push(`Warning email failed for school ${school.id}: ${result.error}`)
-        }
-      } else {
-        console.info(
-          `[cron/school-access] No contact email for warn school: ${school.id} (${school.name})`,
-        )
-      }
-    }
-  }
-
-  // ── Bulk-update expired schools ───────────────────────────────────────────
-
-  if (expiredIds.length > 0) {
-    const { error: updateError } = await admin
+    const { data: schools, error: queryError } = await admin
       .from('schools')
-      .update({ access_type: 'expired' })
-      .in('id', expiredIds)
+      .select('id, name, contact_email, access_type, access_until')
+      .eq('access_type', 'founder')
+      .not('access_until', 'is', null)
 
-    if (updateError) {
-      console.error('[cron/school-access] Failed to mark schools as expired:', updateError)
-      Sentry.captureException(updateError, {
-        tags: { cron: 'school-access' },
-        extra: { expiredIds },
-      })
-      return NextResponse.json(
-        {
-          error: 'Failed to update expired schools',
-          processed: rows.length,
-          expired: expiredCount,
-          warned: warnedCount,
-          emailErrors,
-        },
-        { status: 500 },
-      )
+    if (queryError) {
+      throw new Error(`Failed to query schools: ${queryError.message}`)
     }
-  }
 
-  if (emailErrors.length > 0) {
-    for (const msg of emailErrors) {
-      console.error(`[cron/school-access] ${msg}`)
+    const rows = (schools ?? []) as SchoolRow[]
+
+    const now = new Date()
+    const in7Days = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000)
+    const in30Days = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000)
+
+    const expiredIds: string[] = []
+    const emailErrors: string[] = []
+    let expiredCount = 0
+    let warnedCount = 0
+
+    for (const school of rows) {
+      if (!school.access_until) continue
+
+      const accessUntil = new Date(school.access_until)
+      const contactEmail = school.contact_email
+
+      // ── Expired: access_until has passed ──────────────────────────────────
+      if (accessUntil < now) {
+        expiredIds.push(school.id)
+        expiredCount++
+
+        if (contactEmail) {
+          const html = schoolAccessExpiredEmail(school.name, school.access_until)
+          const result = await sendEmail(
+            contactEmail,
+            `Your school access has expired - ${school.name}`,
+            html,
+          )
+          if (!result.success) {
+            emailErrors.push(`Expiry email failed for school ${school.id}: ${result.error}`)
+          }
+        } else {
+          console.info(
+            `[cron/school-access] No contact email for expired school: ${school.id} (${school.name})`,
+          )
+        }
+
+        continue
+      }
+
+      // ── Urgent warning: within 7 days ──────────────────────────────────────
+      if (accessUntil <= in7Days) {
+        warnedCount++
+
+        if (contactEmail) {
+          const daysRemaining = Math.ceil(
+            (accessUntil.getTime() - now.getTime()) / (1000 * 60 * 60 * 24),
+          )
+          const html = schoolAccessWarningEmail(
+            school.name,
+            school.access_until,
+            daysRemaining,
+            true,
+          )
+          const result = await sendEmail(
+            contactEmail,
+            `URGENT: Your school access expires in ${daysRemaining} day${daysRemaining === 1 ? '' : 's'} - ${school.name}`,
+            html,
+          )
+          if (!result.success) {
+            emailErrors.push(`Urgent warning email failed for school ${school.id}: ${result.error}`)
+          }
+        } else {
+          console.info(
+            `[cron/school-access] No contact email for urgent-warn school: ${school.id} (${school.name})`,
+          )
+        }
+
+        continue
+      }
+
+      // ── Standard warning: within 30 days ───────────────────────────────────
+      if (accessUntil <= in30Days) {
+        warnedCount++
+
+        if (contactEmail) {
+          const daysRemaining = Math.ceil(
+            (accessUntil.getTime() - now.getTime()) / (1000 * 60 * 60 * 24),
+          )
+          const html = schoolAccessWarningEmail(
+            school.name,
+            school.access_until,
+            daysRemaining,
+            false,
+          )
+          const result = await sendEmail(
+            contactEmail,
+            `Your school access expires in ${daysRemaining} days - ${school.name}`,
+            html,
+          )
+          if (!result.success) {
+            emailErrors.push(`Warning email failed for school ${school.id}: ${result.error}`)
+          }
+        } else {
+          console.info(
+            `[cron/school-access] No contact email for warn school: ${school.id} (${school.name})`,
+          )
+        }
+      }
     }
-  }
 
-  console.info(
-    `[cron/school-access] Done. processed=${rows.length} expired=${expiredCount} warned=${warnedCount} emailErrors=${emailErrors.length}`,
-  )
+    // ── Bulk-update expired schools ─────────────────────────────────────────
+    if (expiredIds.length > 0) {
+      const { error: updateError } = await admin
+        .from('schools')
+        .update({ access_type: 'expired' })
+        .in('id', expiredIds)
 
-  return NextResponse.json({
-    processed: rows.length,
-    expired: expiredCount,
-    warned: warnedCount,
+      if (updateError) {
+        throw new Error(`Failed to update expired schools: ${updateError.message}`)
+      }
+    }
+
+    if (emailErrors.length > 0) {
+      for (const msg of emailErrors) {
+        console.error(`[cron/school-access] ${msg}`)
+      }
+    }
+
+    return {
+      processed: rows.length,
+      expired: expiredCount,
+      warned: warnedCount,
+    }
   })
 }

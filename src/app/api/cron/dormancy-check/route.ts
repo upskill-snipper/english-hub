@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
-import * as Sentry from '@sentry/nextjs'
 import { prisma } from '@/lib/prisma'
 import { processChildDormancy } from '@/lib/privacy/dormancy'
 import { sendEmail } from '@/lib/email'
 import { RETENTION_PERIODS } from '@/lib/data-retention'
+import { runCron } from '@/lib/cron/observability'
 
 export const dynamic = 'force-dynamic'
 
@@ -40,21 +40,19 @@ function daysAgo(days: number): Date {
  * Protected by CRON_SECRET to prevent unauthorized invocation.
  */
 export async function GET(request: NextRequest) {
-  const startTime = Date.now()
+  // ── Auth: verify CRON_SECRET ──────────────────────────────────────
+  const cronSecret = process.env.CRON_SECRET
+  if (!cronSecret) {
+    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
+  }
+  const authHeader = request.headers.get('authorization')
+  const incoming = Buffer.from(authHeader ?? '')
+  const expected = Buffer.from(`Bearer ${cronSecret}`)
+  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
 
-  try {
-    // ── Auth: verify CRON_SECRET ──────────────────────────────────────
-    const cronSecret = process.env.CRON_SECRET
-    if (!cronSecret) {
-      return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-    }
-    const authHeader = request.headers.get('authorization')
-    const incoming = Buffer.from(authHeader ?? '')
-    const expected = Buffer.from(`Bearer ${cronSecret}`)
-    if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-
+  return runCron('dormancy-check', async () => {
     // ── 1. Child dormancy (12-month threshold) ────────────────────────
     // Uses the dedicated Children's Code Standard 8 logic which both
     // sends warnings and processes deletions for the grace period.
@@ -184,19 +182,7 @@ export async function GET(request: NextRequest) {
       },
     })
 
-    const durationMs = Date.now() - startTime
-
-    console.log('[dormancy-check] Completed', {
-      durationMs,
-      childWarnings: childDormancy?.warningsSent.length ?? 0,
-      childDeletions: childDormancy?.deletions.length ?? 0,
-      adultWarnings: adultResult.warningsSent.length,
-      totalErrors: (childDormancy?.errors.length ?? 0) + adultResult.errors.length,
-    })
-
-    return NextResponse.json({
-      ok: true,
-      durationMs,
+    return {
       childDormancy: childDormancy
         ? {
             warningsSent: childDormancy.warningsSent.length,
@@ -208,23 +194,8 @@ export async function GET(request: NextRequest) {
         warningsSent: adultResult.warningsSent.length,
         errors: adultResult.errors.length,
       },
-    })
-  } catch (error) {
-    const durationMs = Date.now() - startTime
-    console.error('[dormancy-check] Cron job failed:', error)
-    Sentry.captureException(error, {
-      tags: { cron: 'dormancy-check' },
-      extra: { durationMs },
-    })
-    return NextResponse.json(
-      {
-        ok: false,
-        error: 'Dormancy check failed',
-        durationMs,
-      },
-      { status: 500 },
-    )
-  }
+    }
+  })
 }
 
 // ─── Email template ───────────────────────────────────────────────────────

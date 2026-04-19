@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'crypto'
-import * as Sentry from '@sentry/nextjs'
 import { sendWeeklyReport } from '@/lib/weekly-report'
+import { runCron } from '@/lib/cron/observability'
 
 // ─── Cron endpoint for weekly parent progress reports ─────────────────
 //
@@ -14,24 +14,23 @@ import { sendWeeklyReport } from '@/lib/weekly-report'
 // and sends each a branded HTML email with their child's progress.
 
 export async function POST(request: NextRequest) {
-  try {
-    // ── Verify cron secret ────────────────────────────────────────────
+  // ── Verify cron secret (x-cron-secret header, not Bearer) ─────────
+  const cronSecret = request.headers.get('x-cron-secret')
+  const expectedSecret = process.env.CRON_SECRET
 
-    const cronSecret = request.headers.get('x-cron-secret')
-    const expectedSecret = process.env.CRON_SECRET
+  if (!expectedSecret) {
+    console.error('[weekly-reports] CRON_SECRET environment variable is not set')
+    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
+  }
 
-    if (!expectedSecret) {
-      console.error('[weekly-reports] CRON_SECRET environment variable is not set')
-      return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-    }
+  if (
+    !cronSecret ||
+    !crypto.timingSafeEqual(Buffer.from(cronSecret), Buffer.from(expectedSecret))
+  ) {
+    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
+  }
 
-    if (
-      !cronSecret ||
-      !crypto.timingSafeEqual(Buffer.from(cronSecret), Buffer.from(expectedSecret))
-    ) {
-      return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
-    }
-
+  return runCron('weekly-reports', async () => {
     // ── Fetch parents who opted in to weekly reports ──────────────────
 
     // TODO(Phase-7): Replace with Supabase query on parent_settings table (weeklyReportEnabled, reportDay, linked students with active subscriptions)
@@ -65,17 +64,12 @@ export async function POST(request: NextRequest) {
       totalFailed += result.failed
     }
 
-    return NextResponse.json({
-      success: true,
+    return {
       parentsProcessed: parentIds.length,
       emailsSent: totalSent,
       emailsFailed: totalFailed,
-    })
-  } catch (error) {
-    console.error('[weekly-reports] Unexpected error:', error)
-    Sentry.captureException(error, { tags: { cron: 'weekly-reports' } })
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
-  }
+    }
+  })
 }
 
 // ── Health check / status endpoint ────────────────────────────────────
