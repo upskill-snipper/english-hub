@@ -7,11 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import {
-  createDefaultAccount,
-  seedMockData,
-  setAccount,
-} from '@/components/affiliate/mock-data'
+import { createDefaultAccount, seedMockData, setAccount } from '@/components/affiliate/mock-data'
 import { ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react'
 
 interface FormState {
@@ -53,9 +49,7 @@ export default function AffiliateSignupPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
@@ -69,7 +63,7 @@ export default function AffiliateSignupPage() {
       website: form.website,
       audienceSize: form.audienceSize,
       niche: form.niche,
-      tier: 'bronze',
+      tier: 'tier-1',
     })
     setAccount(account)
     seedMockData()
@@ -99,12 +93,8 @@ export default function AffiliateSignupPage() {
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-primary mx-auto mb-4">
                 <CheckCircle2 className="w-7 h-7" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground mb-2">
-                Application received
-              </h2>
-              <p className="text-muted-foreground">
-                Redirecting to your dashboard...
-              </p>
+              <h2 className="text-2xl font-bold text-foreground mb-2">Application received</h2>
+              <p className="text-muted-foreground">Redirecting to your dashboard...</p>
             </CardContent>
           </Card>
         ) : (
@@ -117,8 +107,7 @@ export default function AffiliateSignupPage() {
                 <CardTitle className="text-2xl">Apply to become an affiliate</CardTitle>
               </div>
               <p className="text-sm text-muted-foreground">
-                Tell us about yourself and your audience. Applications are reviewed
-                within 48 hours.
+                Tell us about yourself and your audience. Applications are reviewed within 48 hours.
               </p>
             </CardHeader>
             <CardContent>

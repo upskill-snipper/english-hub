@@ -1,82 +1,81 @@
-"use client";
+'use client'
 
-import { useState, useCallback } from "react";
+import { useState, useCallback } from 'react'
 
-type Tab = "online" | "printable";
+type Tab = 'online' | 'printable'
 
 interface FormData {
-  fullName: string;
-  email: string;
-  address: string;
-  subscriptionPlan: string;
-  startDate: string;
-  reason: string;
-  confirmed: boolean;
+  fullName: string
+  email: string
+  address: string
+  subscriptionPlan: string
+  startDate: string
+  reason: string
+  confirmed: boolean
 }
 
 const SUBSCRIPTION_PLANS = [
-  { value: "", label: "Select your plan" },
-  { value: "student-monthly", label: "Student Monthly (£8.99/month)" },
-  { value: "student-annual", label: "Student Annual (£67.99/year)" },
-  { value: "teacher-monthly", label: "Teacher Monthly (£12.99/month)" },
-  { value: "teacher-annual", label: "Teacher Annual (£99.99/year)" },
-  { value: "school", label: "School / Institutional Plan" },
-];
+  { value: '', label: 'Select your plan' },
+  { value: 'student-annual', label: 'Student Annual (£20/year)' },
+  { value: 'teacher-annual', label: 'Teacher Annual (£67.99/year)' },
+  { value: 'student-monthly-legacy', label: 'Student Monthly (legacy — £8.99/month)' },
+  { value: 'student-annual-legacy', label: 'Student Annual (legacy — £67.99/year)' },
+  { value: 'teacher-monthly-legacy', label: 'Teacher Monthly (legacy — £12.99/month)' },
+  { value: 'teacher-annual-legacy', label: 'Teacher Annual (legacy — £99.99/year)' },
+  { value: 'school', label: 'School / Institutional Plan' },
+]
 
 const CANCELLATION_REASONS = [
-  { value: "", label: "Select a reason (optional)" },
-  { value: "too-expensive", label: "Too expensive" },
-  { value: "not-using", label: "Not using the service enough" },
-  { value: "found-alternative", label: "Found an alternative" },
-  { value: "missing-features", label: "Missing features I need" },
-  { value: "technical-issues", label: "Technical issues" },
-  { value: "temporary", label: "Temporary break" },
-  { value: "other", label: "Other" },
-];
+  { value: '', label: 'Select a reason (optional)' },
+  { value: 'too-expensive', label: 'Too expensive' },
+  { value: 'not-using', label: 'Not using the service enough' },
+  { value: 'found-alternative', label: 'Found an alternative' },
+  { value: 'missing-features', label: 'Missing features I need' },
+  { value: 'technical-issues', label: 'Technical issues' },
+  { value: 'temporary', label: 'Temporary break' },
+  { value: 'other', label: 'Other' },
+]
 
 function generateRefNumber(): string {
-  const timestamp = Date.now().toString(36).toUpperCase();
-  const random = Math.random().toString(36).substring(2, 6).toUpperCase();
-  return `CAN-${timestamp}-${random}`;
+  const timestamp = Date.now().toString(36).toUpperCase()
+  const random = Math.random().toString(36).substring(2, 6).toUpperCase()
+  return `CAN-${timestamp}-${random}`
 }
 
 export default function CancellationFormPage() {
-  const [activeTab, setActiveTab] = useState<Tab>("online");
+  const [activeTab, setActiveTab] = useState<Tab>('online')
   const [formData, setFormData] = useState<FormData>({
-    fullName: "",
-    email: "",
-    address: "",
-    subscriptionPlan: "",
-    startDate: "",
-    reason: "",
+    fullName: '',
+    email: '',
+    address: '',
+    subscriptionPlan: '',
+    startDate: '',
+    reason: '',
     confirmed: false,
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitResult, setSubmitResult] = useState<{
-    success: boolean;
-    refNumber?: string;
-    error?: string;
-  } | null>(null);
+    success: boolean
+    refNumber?: string
+    error?: string
+  } | null>(null)
 
-  const updateField = useCallback(
-    (field: keyof FormData, value: string | boolean) => {
-      setFormData((prev) => ({ ...prev, [field]: value }));
-    },
-    []
-  );
+  const updateField = useCallback((field: keyof FormData, value: string | boolean) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    if (!formData.confirmed) return;
+    if (!formData.confirmed) return
 
-    setIsSubmitting(true);
-    setSubmitResult(null);
+    setIsSubmitting(true)
+    setSubmitResult(null)
 
     try {
-      const response = await fetch("/api/stripe/cancel", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/stripe/cancel', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           fullName: formData.fullName,
           email: formData.email,
@@ -85,40 +84,37 @@ export default function CancellationFormPage() {
           startDate: formData.startDate,
           reason: formData.reason || undefined,
         }),
-      });
+      })
 
       if (!response.ok) {
-        const data = await response.json().catch(() => null);
-        throw new Error(
-          data?.error || "Failed to process cancellation. Please try again."
-        );
+        const data = await response.json().catch(() => null)
+        throw new Error(data?.error || 'Failed to process cancellation. Please try again.')
       }
 
-      const data = await response.json();
-      const refNumber = data.referenceNumber || generateRefNumber();
+      const data = await response.json()
+      const refNumber = data.referenceNumber || generateRefNumber()
 
-      setSubmitResult({ success: true, refNumber });
+      setSubmitResult({ success: true, refNumber })
     } catch (err) {
       setSubmitResult({
         success: false,
-        error:
-          err instanceof Error ? err.message : "An unexpected error occurred.",
-      });
+        error: err instanceof Error ? err.message : 'An unexpected error occurred.',
+      })
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   const handlePrint = () => {
-    window.print();
-  };
+    window.print()
+  }
 
   const isFormValid =
-    formData.fullName.trim() !== "" &&
-    formData.email.trim() !== "" &&
-    formData.subscriptionPlan !== "" &&
-    formData.startDate !== "" &&
-    formData.confirmed;
+    formData.fullName.trim() !== '' &&
+    formData.email.trim() !== '' &&
+    formData.subscriptionPlan !== '' &&
+    formData.startDate !== '' &&
+    formData.confirmed
 
   return (
     <>
@@ -172,12 +168,10 @@ export default function CancellationFormPage() {
       `}</style>
 
       <div className="not-prose">
-        <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2">
-          Cancellation Form
-        </h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Cancellation Form</h1>
         <p className="text-muted-foreground text-sm mb-6">
-          Cancel your subscription in accordance with the Consumer Contracts
-          (Information, Cancellation and Additional Charges) Regulations 2013.
+          Cancel your subscription in accordance with the Consumer Contracts (Information,
+          Cancellation and Additional Charges) Regulations 2013.
         </p>
 
         {/* Tab controls */}
@@ -189,28 +183,28 @@ export default function CancellationFormPage() {
         >
           <button
             role="tab"
-            aria-selected={activeTab === "online"}
+            aria-selected={activeTab === 'online'}
             aria-controls="panel-online"
             id="tab-online"
-            onClick={() => setActiveTab("online")}
+            onClick={() => setActiveTab('online')}
             className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-              activeTab === "online"
-                ? "border-primary text-primary"
-                : "border-transparent text-muted-foreground hover:text-muted-foreground hover:border-border"
+              activeTab === 'online'
+                ? 'border-primary text-primary'
+                : 'border-transparent text-muted-foreground hover:text-muted-foreground hover:border-border'
             }`}
           >
             Online Cancellation
           </button>
           <button
             role="tab"
-            aria-selected={activeTab === "printable"}
+            aria-selected={activeTab === 'printable'}
             aria-controls="panel-printable"
             id="tab-printable"
-            onClick={() => setActiveTab("printable")}
+            onClick={() => setActiveTab('printable')}
             className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-              activeTab === "printable"
-                ? "border-primary text-primary"
-                : "border-transparent text-muted-foreground hover:text-muted-foreground hover:border-border"
+              activeTab === 'printable'
+                ? 'border-primary text-primary'
+                : 'border-transparent text-muted-foreground hover:text-muted-foreground hover:border-border'
             }`}
           >
             Printable Model Form
@@ -223,7 +217,7 @@ export default function CancellationFormPage() {
           role="tabpanel"
           aria-labelledby="tab-online"
           data-tab="online"
-          className={activeTab === "online" ? "block" : "hidden"}
+          className={activeTab === 'online' ? 'block' : 'hidden'}
         >
           {submitResult?.success ? (
             <SuccessMessage refNumber={submitResult.refNumber!} />
@@ -252,7 +246,7 @@ export default function CancellationFormPage() {
                   id="fullName"
                   required
                   value={formData.fullName}
-                  onChange={(e) => updateField("fullName", e.target.value)}
+                  onChange={(e) => updateField('fullName', e.target.value)}
                   className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                   placeholder="Your full name"
                 />
@@ -271,7 +265,7 @@ export default function CancellationFormPage() {
                   id="email"
                   required
                   value={formData.email}
-                  onChange={(e) => updateField("email", e.target.value)}
+                  onChange={(e) => updateField('email', e.target.value)}
                   className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                   placeholder="you@example.com"
                 />
@@ -283,14 +277,13 @@ export default function CancellationFormPage() {
                   htmlFor="address"
                   className="block text-sm font-medium text-muted-foreground mb-1"
                 >
-                  Address{" "}
-                  <span className="text-muted-foreground font-normal">(optional)</span>
+                  Address <span className="text-muted-foreground font-normal">(optional)</span>
                 </label>
                 <textarea
                   id="address"
                   rows={3}
                   value={formData.address}
-                  onChange={(e) => updateField("address", e.target.value)}
+                  onChange={(e) => updateField('address', e.target.value)}
                   className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
                   placeholder="Your address"
                 />
@@ -308,9 +301,7 @@ export default function CancellationFormPage() {
                   id="subscriptionPlan"
                   required
                   value={formData.subscriptionPlan}
-                  onChange={(e) =>
-                    updateField("subscriptionPlan", e.target.value)
-                  }
+                  onChange={(e) => updateField('subscriptionPlan', e.target.value)}
                   className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-card"
                 >
                   {SUBSCRIPTION_PLANS.map((plan) => (
@@ -334,7 +325,7 @@ export default function CancellationFormPage() {
                   id="startDate"
                   required
                   value={formData.startDate}
-                  onChange={(e) => updateField("startDate", e.target.value)}
+                  onChange={(e) => updateField('startDate', e.target.value)}
                   className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                 />
               </div>
@@ -345,13 +336,13 @@ export default function CancellationFormPage() {
                   htmlFor="reason"
                   className="block text-sm font-medium text-muted-foreground mb-1"
                 >
-                  Reason for cancellation{" "}
+                  Reason for cancellation{' '}
                   <span className="text-muted-foreground font-normal">(optional)</span>
                 </label>
                 <select
                   id="reason"
                   value={formData.reason}
-                  onChange={(e) => updateField("reason", e.target.value)}
+                  onChange={(e) => updateField('reason', e.target.value)}
                   className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-card"
                 >
                   {CANCELLATION_REASONS.map((r) => (
@@ -368,14 +359,13 @@ export default function CancellationFormPage() {
                   <input
                     type="checkbox"
                     checked={formData.confirmed}
-                    onChange={(e) => updateField("confirmed", e.target.checked)}
+                    onChange={(e) => updateField('confirmed', e.target.checked)}
                     className="mt-0.5 h-4 w-4 rounded border-border text-primary focus:ring-primary"
                     required
                   />
                   <span className="text-sm text-muted-foreground">
-                    I wish to cancel my subscription. I understand that this
-                    action will end my access to The English Hub services at the
-                    end of my current billing period.{" "}
+                    I wish to cancel my subscription. I understand that this action will end my
+                    access to The English Hub services at the end of my current billing period.{' '}
                     <span className="text-warn">*</span>
                   </span>
                 </label>
@@ -412,7 +402,7 @@ export default function CancellationFormPage() {
                       Processing...
                     </>
                   ) : (
-                    "Submit Cancellation Request"
+                    'Submit Cancellation Request'
                   )}
                 </button>
                 <a
@@ -432,19 +422,14 @@ export default function CancellationFormPage() {
           role="tabpanel"
           aria-labelledby="tab-printable"
           data-tab="printable"
-          className={activeTab === "printable" ? "block" : "hidden"}
+          className={activeTab === 'printable' ? 'block' : 'hidden'}
         >
           <div className="mb-6 flex items-center gap-4 no-print">
             <button
               onClick={handlePrint}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white font-medium text-sm shadow-md hover:bg-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -462,12 +447,9 @@ export default function CancellationFormPage() {
           {/* The legally prescribed model form */}
           <div className="border border-border rounded-lg p-6 sm:p-8 bg-card space-y-6">
             <div className="text-center border-b border-border pb-6">
-              <h2 className="text-xl font-bold text-foreground">
-                Model Cancellation Form
-              </h2>
+              <h2 className="text-xl font-bold text-foreground">Model Cancellation Form</h2>
               <p className="text-sm text-muted-foreground mt-2 italic">
-                (Complete and return this form only if you wish to withdraw from
-                the contract)
+                (Complete and return this form only if you wish to withdraw from the contract)
               </p>
             </div>
 
@@ -478,11 +460,8 @@ export default function CancellationFormPage() {
                 <p>Upskill Energy Limited</p>
                 <p>71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
                 <p>
-                  Email:{" "}
-                  <a
-                    href="mailto:info@Upskillenergy.com"
-                    className="text-primary hover:underline"
-                  >
+                  Email:{' '}
+                  <a href="mailto:info@Upskillenergy.com" className="text-primary hover:underline">
                     info@Upskillenergy.com
                   </a>
                 </p>
@@ -491,12 +470,10 @@ export default function CancellationFormPage() {
               {/* Notice statement */}
               <div className="bg-muted rounded-lg p-4 border border-border">
                 <p>
-                  I/We (*) hereby give notice that I/We (*) cancel my/our (*)
-                  contract for the provision of the following service:
+                  I/We (*) hereby give notice that I/We (*) cancel my/our (*) contract for the
+                  provision of the following service:
                 </p>
-                <p className="font-medium mt-2">
-                  The English Hub subscription service
-                </p>
+                <p className="font-medium mt-2">The English Hub subscription service</p>
               </div>
 
               {/* Form fields */}
@@ -511,36 +488,28 @@ export default function CancellationFormPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2">
-                  <span className="font-medium whitespace-nowrap">
-                    Name of consumer(s):
-                  </span>
+                  <span className="font-medium whitespace-nowrap">Name of consumer(s):</span>
                   <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2">
-                  <span className="font-medium whitespace-nowrap">
-                    Address of consumer(s):
-                  </span>
+                  <span className="font-medium whitespace-nowrap">Address of consumer(s):</span>
                   <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2">
-                  <span className="font-medium whitespace-nowrap">
-                    Email address:
-                  </span>
+                  <span className="font-medium whitespace-nowrap">Email address:</span>
                   <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2">
-                  <span className="font-medium whitespace-nowrap">
-                    Subscription plan:
-                  </span>
+                  <span className="font-medium whitespace-nowrap">Subscription plan:</span>
                   <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
@@ -573,18 +542,14 @@ export default function CancellationFormPage() {
 
               {/* Delete as appropriate */}
               <div className="pt-4 border-t border-border">
-                <p className="text-xs text-muted-foreground italic">
-                  (*) Delete as appropriate
-                </p>
+                <p className="text-xs text-muted-foreground italic">(*) Delete as appropriate</p>
               </div>
             </div>
           </div>
 
           {/* Additional info below the form */}
           <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20 no-print">
-            <h3 className="text-sm font-semibold text-primary mb-2">
-              How to submit this form
-            </h3>
+            <h3 className="text-sm font-semibold text-primary mb-2">How to submit this form</h3>
             <ul className="text-sm text-muted-foreground space-y-1.5">
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-0.5">1.</span>
@@ -597,18 +562,15 @@ export default function CancellationFormPage() {
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-0.5">3.</span>
                 <span>
-                  Post to: Upskill Energy Limited, 71-75 Shelton Street, Covent
-                  Garden, London, WC2H 9JQ
+                  Post to: Upskill Energy Limited, 71-75 Shelton Street, Covent Garden, London, WC2H
+                  9JQ
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-0.5">4.</span>
                 <span>
-                  Or scan and email to:{" "}
-                  <a
-                    href="mailto:info@Upskillenergy.com"
-                    className="text-primary hover:underline"
-                  >
+                  Or scan and email to:{' '}
+                  <a href="mailto:info@Upskillenergy.com" className="text-primary hover:underline">
                     info@Upskillenergy.com
                   </a>
                 </span>
@@ -618,7 +580,7 @@ export default function CancellationFormPage() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 /** Success confirmation shown after successful cancellation */
@@ -626,25 +588,13 @@ function SuccessMessage({ refNumber }: { refNumber: string }) {
   return (
     <div className="text-center py-8 space-y-6">
       <div className="mx-auto w-16 h-16 bg-success/10 rounded-full flex items-center justify-center">
-        <svg
-          className="w-8 h-8 text-success"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 13l4 4L19 7"
-          />
+        <svg className="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
       </div>
 
       <div>
-        <h2 className="text-xl font-bold text-foreground">
-          Cancellation request submitted
-        </h2>
+        <h2 className="text-xl font-bold text-foreground">Cancellation request submitted</h2>
         <p className="text-muted-foreground mt-2">
           Your cancellation has been received and is being processed.
         </p>
@@ -652,19 +602,17 @@ function SuccessMessage({ refNumber }: { refNumber: string }) {
 
       <div className="bg-muted rounded-lg p-4 border border-border inline-block">
         <p className="text-sm text-muted-foreground">Reference number</p>
-        <p className="text-lg font-mono font-bold text-primary mt-1">
-          {refNumber}
-        </p>
+        <p className="text-lg font-mono font-bold text-primary mt-1">{refNumber}</p>
       </div>
 
       <div className="text-sm text-muted-foreground max-w-md mx-auto space-y-2">
         <p>
-          A confirmation email has been sent to your email address. Please keep
-          your reference number for your records.
+          A confirmation email has been sent to your email address. Please keep your reference
+          number for your records.
         </p>
         <p>
-          Your subscription will remain active until the end of your current
-          billing period. You will not be charged again.
+          Your subscription will remain active until the end of your current billing period. You
+          will not be charged again.
         </p>
       </div>
 
@@ -683,5 +631,5 @@ function SuccessMessage({ refNumber }: { refNumber: string }) {
         </a>
       </div>
     </div>
-  );
+  )
 }

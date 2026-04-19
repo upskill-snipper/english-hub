@@ -20,13 +20,7 @@ import {
   type AffiliateClick,
   type AffiliateConversion,
 } from '@/components/affiliate/mock-data'
-import {
-  MousePointerClick,
-  TrendingUp,
-  PoundSterling,
-  Users,
-  ArrowUpRight,
-} from 'lucide-react'
+import { MousePointerClick, TrendingUp, PoundSterling, Users, ArrowUpRight } from 'lucide-react'
 
 // Phase-7: Supabase — hydrate dashboard from server queries instead of localStorage
 
@@ -48,21 +42,25 @@ export default function AffiliateDashboardPage() {
     const totalClicks = clicks.length
     const totalConversions = conversions.length
     const earnings = conversions.reduce((sum, c) => sum + c.commission, 0)
-    const conversionRate =
-      totalClicks > 0 ? (totalConversions / totalClicks) * 100 : 0
+    const conversionRate = totalClicks > 0 ? (totalConversions / totalClicks) * 100 : 0
     return { totalClicks, totalConversions, earnings, conversionRate }
   }, [clicks, conversions])
 
   const tier: AffiliateTier = account?.tier ?? getTierFromReferrals(conversions.length)
   const currentTierConfig = TIER_CONFIG[tier]
   const nextTier: AffiliateTier | null =
-    tier === 'bronze' ? 'silver' : tier === 'silver' ? 'gold' : null
+    tier === 'tier-1'
+      ? 'tier-2'
+      : tier === 'tier-2'
+        ? 'tier-3'
+        : tier === 'tier-3'
+          ? 'tier-4'
+          : tier === 'tier-4'
+            ? 'tier-5'
+            : null
   const nextTierConfig = nextTier ? TIER_CONFIG[nextTier] : null
   const progressToNext = nextTierConfig
-    ? Math.min(
-        100,
-        (conversions.length / nextTierConfig.minReferrals) * 100
-      )
+    ? Math.min(100, (conversions.length / nextTierConfig.minReferrals) * 100)
     : 100
 
   const topLinks = useMemo(() => {
@@ -209,18 +207,13 @@ export default function AffiliateDashboardPage() {
                   </thead>
                   <tbody>
                     {topLinks.map((row) => (
-                      <tr
-                        key={row.linkId}
-                        className="border-b border-border/40 last:border-0"
-                      >
+                      <tr key={row.linkId} className="border-b border-border/40 last:border-0">
                         <td className="py-3 px-5">
                           <span className="font-medium text-foreground capitalize">
                             {row.linkId}
                           </span>
                         </td>
-                        <td className="py-3 px-3 text-right text-muted-foreground">
-                          {row.clicks}
-                        </td>
+                        <td className="py-3 px-3 text-right text-muted-foreground">{row.clicks}</td>
                         <td className="py-3 px-3 text-right text-muted-foreground">
                           {row.conversions}
                         </td>
@@ -264,9 +257,7 @@ function StatCard({
           <Icon className="h-4 w-4" />
         </div>
         <div>
-          <p className="text-xs text-muted-foreground uppercase tracking-wide">
-            {label}
-          </p>
+          <p className="text-xs text-muted-foreground uppercase tracking-wide">{label}</p>
           <p
             className={
               highlight

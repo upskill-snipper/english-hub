@@ -47,13 +47,12 @@ function HeroSection() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
-          Earn up to{' '}
-          <span className="text-primary">25% commission</span> with The English Hub
+          Earn up to <span className="text-primary">25% commission</span> with The English Hub
         </h1>
 
         <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-          Join our partnership programme and earn recurring revenue by sharing a
-          product you already love with your audience.
+          Join our partnership programme and earn recurring revenue by sharing a product you already
+          love with your audience.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -88,7 +87,7 @@ function HeroSection() {
 /* ─── Tiers ─────────────────────────────────────────────────── */
 
 function TierBreakdownSection() {
-  const tiers = (['bronze', 'silver', 'gold'] as const).map((id) => ({
+  const tiers = (['tier-1', 'tier-2', 'tier-3', 'tier-4', 'tier-5'] as const).map((id) => ({
     id,
     ...TIER_CONFIG[id],
   }))
@@ -98,24 +97,25 @@ function TierBreakdownSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
-            Three tiers. One clear path.
+            Five tiers. Lifetime progression.
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            The more students you refer, the higher your commission rate climbs.
+            Flat commission per signup. The more students you refer over time, the higher your
+            per-signup rate climbs — and it stays there for life.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5">
           {tiers.map((tier, idx) => (
             <Card
               key={tier.id}
               className={
-                tier.id === 'gold'
+                tier.id === 'tier-5'
                   ? 'border-primary/40 shadow-lg shadow-primary/5 relative'
                   : 'relative'
               }
             >
-              {tier.id === 'gold' && (
+              {tier.id === 'tier-5' && (
                 <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-bl-xl rounded-tr-2xl">
                   Top tier
                 </div>
@@ -126,12 +126,11 @@ function TierBreakdownSection() {
                   <span className="text-xs text-muted-foreground">Tier {idx + 1}</span>
                 </div>
                 <div className="flex items-baseline gap-1 pt-4">
-                  <span className="text-5xl font-bold text-foreground">
-                    {tier.commission}
-                  </span>
-                  <span className="text-2xl font-bold text-muted-foreground">%</span>
+                  <span className="text-xs text-muted-foreground">£</span>
+                  <span className="text-5xl font-bold text-foreground">{tier.commission}</span>
+                  <span className="text-base font-medium text-muted-foreground">/signup</span>
                 </div>
-                <p className="text-sm text-muted-foreground">commission on every sale</p>
+                <p className="text-sm text-muted-foreground">flat commission per conversion</p>
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-foreground">{tier.description}</p>
@@ -140,8 +139,8 @@ function TierBreakdownSection() {
                     <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                     <span className="text-muted-foreground">
                       {tier.minReferrals === 0
-                        ? 'Open to everyone'
-                        : `${tier.minReferrals}+ referred students`}
+                        ? 'Open from signup #1'
+                        : `From signup #${tier.minReferrals + 1}`}
                     </span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
@@ -152,13 +151,13 @@ function TierBreakdownSection() {
                     <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                     <span className="text-muted-foreground">Real-time tracking</span>
                   </li>
-                  {tier.id !== 'bronze' && (
+                  {tier.id !== 'tier-1' && (
                     <li className="flex items-start gap-2 text-sm">
                       <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span className="text-muted-foreground">Priority support</span>
                     </li>
                   )}
-                  {tier.id === 'gold' && (
+                  {tier.id === 'tier-5' && (
                     <li className="flex items-start gap-2 text-sm">
                       <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span className="text-muted-foreground">Dedicated partner manager</span>
@@ -185,8 +184,8 @@ function CalculatorSection() {
             Calculate your earnings
           </h2>
           <p className="text-muted-foreground text-lg mb-6">
-            Move the slider to see how many referrals translate to monthly and yearly
-            commission. The calculator automatically factors in your tier bonus.
+            Move the slider to see how many referrals translate to monthly and yearly commission.
+            The calculator automatically factors in your tier bonus.
           </p>
           <ul className="space-y-3">
             {[
@@ -240,9 +239,7 @@ function HowItWorksSection() {
     <section className="px-4 py-16 sm:py-24 bg-muted/20 border-y border-border/60">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
-            How it works
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">How it works</h2>
           <p className="text-muted-foreground text-lg">
             Get approved, share your links, and start earning in minutes.
           </p>
@@ -307,9 +304,7 @@ function FAQSection() {
     <section className="px-4 py-16 sm:py-24">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
-            Frequently asked
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">Frequently asked</h2>
           <p className="text-muted-foreground text-lg">
             Can&apos;t find what you&apos;re looking for? Drop us a note.
           </p>
@@ -360,12 +355,10 @@ function CtaSection() {
           <HeartHandshake className="w-4 h-4" />
           Ready when you are
         </div>
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-          Start earning today
-        </h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Start earning today</h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-          Applications are reviewed within 48 hours. Once approved, you&apos;ll get
-          instant access to your dashboard and marketing assets.
+          Applications are reviewed within 48 hours. Once approved, you&apos;ll get instant access
+          to your dashboard and marketing assets.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Button size="lg" render={<Link href="/affiliate/signup" />}>

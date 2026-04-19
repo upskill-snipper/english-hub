@@ -9,7 +9,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-import { getTierForReferralCount } from '@/lib/affiliate/tiers'
+import { getCurrentTierInfo } from '@/lib/affiliate/tiers'
 import { rateLimit } from '@/lib/rate-limit'
 
 export async function GET(request: NextRequest) {
@@ -28,7 +28,10 @@ export async function GET(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
@@ -53,7 +56,7 @@ export async function GET(request: NextRequest) {
     if (!account) {
       return NextResponse.json(
         { error: 'No affiliate account found for this user' },
-        { status: 404 }
+        { status: 404 },
       )
     }
 
@@ -66,7 +69,7 @@ export async function GET(request: NextRequest) {
       .from('affiliate_payouts')
       .select(
         'id, period_start, period_end, amount_pence, currency, status, paid_at, payment_reference, created_at',
-        { count: 'exact' }
+        { count: 'exact' },
       )
       .eq('affiliate_id', account.id)
       .order('period_end', { ascending: false })
@@ -100,11 +103,11 @@ export async function GET(request: NextRequest) {
 
     const unpaidCommissionPence = (unpaidConv ?? []).reduce(
       (sum, c) => sum + Number(c.commission_pence ?? 0),
-      0
+      0,
     )
 
     const referralCount = Number(account.confirmed_referral_count ?? 0)
-    const tierInfo = getTierForReferralCount(referralCount)
+    const tierInfo = getCurrentTierInfo(referralCount)
 
     return NextResponse.json(
       {
@@ -116,9 +119,14 @@ export async function GET(request: NextRequest) {
           confirmed_referrals: referralCount,
           tier: tierInfo.tier,
           tier_label: tierInfo.label,
-          commission_rate: tierInfo.commissionRate,
+          commission_pence: tierInfo.commissionPence,
+          commission_gbp: tierInfo.commissionGbp,
+          // Flat-rate system — no percentage. Kept for API backward compat.
+          commission_rate: 0,
           next_tier: tierInfo.nextTier,
-          referrals_to_next_tier: tierInfo.referralsToNextTier,
+          signups_to_next_tier: tierInfo.signupsToNextTier,
+          /** @deprecated Use signups_to_next_tier. */
+          referrals_to_next_tier: tierInfo.signupsToNextTier,
         },
         summary: {
           total_paid_pence: totalPaidPence,
@@ -133,7 +141,7 @@ export async function GET(request: NextRequest) {
           total: count ?? 0,
         },
       },
-      { status: 200 }
+      { status: 200 },
     )
   } catch (err) {
     console.error('[affiliate/payouts] unexpected error:', err)

@@ -4,30 +4,52 @@ import { useMemo, useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { TIER_CONFIG, getTierFromReferrals, TierBadge } from './TierBadge'
+import { TierBadge, getTierFromReferrals } from './TierBadge'
+import { calculateCommissionGbp, PUBLIC_TIER_LADDER } from '@/lib/affiliate/tiers'
 import { Calculator, PoundSterling } from 'lucide-react'
 
-// Supabase: pull actual plan prices from products table when available
-
-const DEFAULT_PLAN_PRICE = 12.99
+// 19 April 2026: rewritten for flat-rate tiered affiliate commissions.
+// Student plan is now £20/year flat; commission is per-signup, lifetime-counted.
 
 export function CommissionCalculator() {
-  const [referrals, setReferrals] = useState(15)
-  const [planPrice, setPlanPrice] = useState(DEFAULT_PLAN_PRICE)
+  const [signups, setSignups] = useState(50)
 
-  const tier = getTierFromReferrals(referrals)
+  const tier = getTierFromReferrals(Math.max(0, signups - 1))
 
-  const { monthly, yearly, commissionRate } = useMemo(() => {
-    const rate = TIER_CONFIG[tier].commission
-    const monthlyValue = (referrals * planPrice * rate) / 100
-    return {
-      monthly: monthlyValue,
-      yearly: monthlyValue * 12,
-      commissionRate: rate,
+  const { total, currentPerSignup, breakdown } = useMemo(() => {
+    // Compute total lifetime earnings by stepping through tier buckets.
+    let cumulativeTotal = 0
+    const bucketBreakdown: Array<{
+      range: string
+      count: number
+      perSignup: number
+      subtotal: number
+    }> = []
+    let remaining = signups
+
+    for (const tierRow of PUBLIC_TIER_LADDER) {
+      if (remaining <= 0) break
+      const bucketMax = tierRow.maxSignup ?? Infinity
+      const bucketSize = bucketMax - tierRow.minSignup + 1
+      const inThisBucket = Math.min(remaining, bucketSize)
+      if (inThisBucket > 0) {
+        const subtotal = inThisBucket * tierRow.commissionGbp
+        cumulativeTotal += subtotal
+        bucketBreakdown.push({
+          range: tierRow.range,
+          count: inThisBucket,
+          perSignup: tierRow.commissionGbp,
+          subtotal,
+        })
+        remaining -= inThisBucket
+      }
     }
-  }, [referrals, planPrice, tier])
 
-  const format = (value: number) =>
+    const currentRate = calculateCommissionGbp(Math.max(0, signups - 1))
+    return { total: cumulativeTotal, currentPerSignup: currentRate, breakdown: bucketBreakdown }
+  }, [signups])
+
+  const fmt = (value: number) =>
     new Intl.NumberFormat('en-GB', {
       style: 'currency',
       currency: 'GBP',
@@ -43,71 +65,79 @@ export function CommissionCalculator() {
           </div>
           <div>
             <CardTitle>Commission Calculator</CardTitle>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              See how much you could earn
-            </p>
+            <p className="text-xs text-muted-foreground mt-0.5">Estimate your lifetime earnings</p>
           </div>
         </div>
       </CardHeader>
       <CardContent className="space-y-5">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <Label htmlFor="referrals">Students referred / month</Label>
-            <span className="text-sm font-semibold text-foreground">{referrals}</span>
+            <Label htmlFor="signups">Total signups referred (lifetime)</Label>
+            <span className="text-sm font-semibold text-foreground">
+              {signups.toLocaleString('en-GB')}
+            </span>
           </div>
           <input
-            id="referrals"
+            id="signups"
             type="range"
             min={1}
-            max={50}
-            value={referrals}
-            onChange={(e) => setReferrals(Number(e.target.value))}
+            max={2000}
+            step={1}
+            value={signups}
+            onChange={(e) => setSignups(Number(e.target.value))}
             className="w-full accent-primary cursor-pointer"
           />
           <div className="flex justify-between text-xs text-muted-foreground">
             <span>1</span>
-            <span>25</span>
-            <span>50</span>
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="price">Average plan price (£)</Label>
-          <div className="relative">
-            <PoundSterling className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              id="price"
-              type="number"
-              min={0}
-              step={0.5}
-              value={planPrice}
-              onChange={(e) => setPlanPrice(Number(e.target.value) || 0)}
-              className="pl-9"
-            />
+            <span>1,000</span>
+            <span>2,000+</span>
           </div>
         </div>
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-4 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground uppercase tracking-wide">
-              Your tier
+              Your current tier
             </span>
             <TierBadge tier={tier} showCommission />
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <p className="text-xs text-muted-foreground">Monthly earnings</p>
-              <p className="text-2xl font-bold text-foreground">{format(monthly)}</p>
-            </div>
-            <div>
-              <p className="text-xs text-muted-foreground">Yearly potential</p>
-              <p className="text-2xl font-bold text-primary">{format(yearly)}</p>
-            </div>
+          <div>
+            <p className="text-xs text-muted-foreground">Total lifetime earnings</p>
+            <p className="text-3xl font-bold text-primary">{fmt(total)}</p>
           </div>
-          <p className="text-xs text-muted-foreground pt-2 border-t border-border/40">
-            Based on {referrals} referrals × £{planPrice.toFixed(2)} × {commissionRate}%
-            commission.
+          <p className="text-xs text-muted-foreground">
+            Your next signup earns <strong className="text-foreground">£{currentPerSignup}</strong>.
+            Paid 60 days after each signup&rsquo;s trial converts to paid.
           </p>
+
+          {breakdown.length > 1 && (
+            <div className="mt-2 space-y-1 text-xs pt-3 border-t border-border/40">
+              {breakdown.map((b) => (
+                <div key={b.range} className="flex justify-between">
+                  <span className="text-muted-foreground">
+                    Signups {b.range} ({b.count.toLocaleString('en-GB')} × £{b.perSignup})
+                  </span>
+                  <span className="font-medium text-foreground">{fmt(b.subtotal)}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="border-t border-border pt-4">
+          <p className="text-xs font-semibold text-foreground uppercase tracking-wide mb-2">
+            Tier ladder (lifetime signups)
+          </p>
+          <div className="space-y-1 text-xs">
+            {PUBLIC_TIER_LADDER.map((t) => (
+              <div key={t.tier} className="flex justify-between">
+                <span className="text-muted-foreground">
+                  {t.label} &middot; signups {t.range}
+                </span>
+                <span className="font-semibold text-foreground">£{t.commissionGbp}/signup</span>
+              </div>
+            ))}
+          </div>
         </div>
       </CardContent>
     </Card>

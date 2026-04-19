@@ -164,7 +164,10 @@ function FeatureRow({
         {feature}
       </span>
       {free && included && (
-        <Badge variant="outline" className="text-[10px] px-1.5 py-0 border-emerald-500/30 text-emerald-600 ml-auto">
+        <Badge
+          variant="outline"
+          className="text-[10px] px-1.5 py-0 border-emerald-500/30 text-emerald-600 ml-auto"
+        >
           Free
         </Badge>
       )}
@@ -172,20 +175,17 @@ function FeatureRow({
   )
 }
 
-function PremiumFeatureRow({
-  feature,
-  icon: Icon,
-}: {
-  feature: string
-  icon: React.ElementType
-}) {
+function PremiumFeatureRow({ feature, icon: Icon }: { feature: string; icon: React.ElementType }) {
   return (
     <li className="flex items-center gap-2.5 text-sm">
       <div className="w-4 h-4 flex items-center justify-center shrink-0">
         <Icon className="w-3.5 h-3.5 text-primary" />
       </div>
       <span className="text-foreground/90">{feature}</span>
-      <Badge variant="outline" className="text-[10px] px-1.5 py-0 border-primary/30 text-primary/80 ml-auto whitespace-nowrap">
+      <Badge
+        variant="outline"
+        className="text-[10px] px-1.5 py-0 border-primary/30 text-primary/80 ml-auto whitespace-nowrap"
+      >
         3 free
       </Badge>
     </li>
@@ -207,9 +207,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           }`}
         />
       </button>
-      {open && (
-        <p className="pb-5 text-sm text-muted-foreground leading-relaxed -mt-1">{a}</p>
-      )}
+      {open && <p className="pb-5 text-sm text-muted-foreground leading-relaxed -mt-1">{a}</p>}
     </div>
   )
 }
@@ -219,12 +217,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 /* ------------------------------------------------------------------ */
 
 export default function PricingPage() {
-  const studentSavings = Math.round(
-    (1 - PRICING.STUDENT_ANNUAL / (PRICING.STUDENT_MONTHLY * 12)) * 100
-  )
-  const teacherSavings = Math.round(
-    (1 - PRICING.TEACHER_ANNUAL / (PRICING.TEACHER_MONTHLY * 12)) * 100
-  )
+  // Monthly plans removed 19 April 2026 — student + teacher are annual-only.
+  // Savings calcs retained as zeros in case any legacy downstream code reads them.
+  const studentSavings = 0
+  const teacherSavings = 0
 
   return (
     <main className="relative overflow-hidden">
@@ -300,29 +296,22 @@ export default function PricingPage() {
                 </p>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-4 flex-wrap mb-1">
-                  <div>
-                    <span className="text-4xl font-extrabold tracking-tight text-foreground">
-                      {PRICING.CURRENCY}{PRICING.STUDENT_MONTHLY}
-                    </span>
-                    <span className="text-muted-foreground text-sm ml-1">/month</span>
-                  </div>
-                  <span className="text-muted-foreground text-sm">or</span>
-                  <div>
-                    <span className="text-4xl font-extrabold tracking-tight text-foreground">
-                      {PRICING.CURRENCY}{PRICING.STUDENT_ANNUAL}
-                    </span>
-                    <span className="text-muted-foreground text-sm ml-1">/year</span>
-                    <Badge
-                      variant="outline"
-                      className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-600 text-xs font-semibold"
-                    >
-                      Save {studentSavings}%
-                    </Badge>
-                  </div>
+                {/* Price — annual-only at £20/year */}
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="text-5xl font-extrabold tracking-tight text-foreground">
+                    {PRICING.CURRENCY}
+                    {PRICING.STUDENT_ANNUAL}
+                  </span>
+                  <span className="text-muted-foreground text-base">/year</span>
+                  <Badge
+                    variant="outline"
+                    className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-600 text-xs font-semibold"
+                  >
+                    Best value in the UK market
+                  </Badge>
                 </div>
                 <p className="text-sm text-emerald-600 font-semibold mb-6">
-                  First month FREE on the monthly plan
+                  {PRICING.TRIAL_TEXT} · auto-renews annually · cancel anytime
                 </p>
 
                 {/* Free features */}
@@ -332,12 +321,7 @@ export default function PricingPage() {
                   </p>
                   <ul className="space-y-2.5">
                     {STUDENT_FREE_FEATURES.map((f) => (
-                      <FeatureRow
-                        key={f.feature}
-                        feature={f.feature}
-                        included={f.included}
-                        free
-                      />
+                      <FeatureRow key={f.feature} feature={f.feature} included={f.included} free />
                     ))}
                   </ul>
                 </div>
@@ -352,11 +336,7 @@ export default function PricingPage() {
                   </p>
                   <ul className="space-y-2.5">
                     {STUDENT_PREMIUM_FEATURES.map((f) => (
-                      <PremiumFeatureRow
-                        key={f.feature}
-                        feature={f.feature}
-                        icon={f.icon}
-                      />
+                      <PremiumFeatureRow key={f.feature} feature={f.feature} icon={f.icon} />
                     ))}
                   </ul>
                 </div>
@@ -393,30 +373,16 @@ export default function PricingPage() {
                   AI-powered tools to save hours every week.
                 </p>
 
-                {/* Price */}
-                <div className="flex items-baseline gap-4 flex-wrap mb-1">
-                  <div>
-                    <span className="text-4xl font-extrabold tracking-tight text-foreground">
-                      {PRICING.CURRENCY}{PRICING.TEACHER_MONTHLY}
-                    </span>
-                    <span className="text-muted-foreground text-sm ml-1">/month</span>
-                  </div>
-                  <span className="text-muted-foreground text-sm">or</span>
-                  <div>
-                    <span className="text-4xl font-extrabold tracking-tight text-foreground">
-                      {PRICING.CURRENCY}{PRICING.TEACHER_ANNUAL}
-                    </span>
-                    <span className="text-muted-foreground text-sm ml-1">/year</span>
-                    <Badge
-                      variant="outline"
-                      className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-600 text-xs font-semibold"
-                    >
-                      Save {teacherSavings}%
-                    </Badge>
-                  </div>
+                {/* Price — annual-only */}
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="text-5xl font-extrabold tracking-tight text-foreground">
+                    {PRICING.CURRENCY}
+                    {PRICING.TEACHER_ANNUAL}
+                  </span>
+                  <span className="text-muted-foreground text-base">/year</span>
                 </div>
                 <p className="text-sm text-emerald-600 font-semibold mb-6">
-                  First month FREE on the monthly plan
+                  {PRICING.TRIAL_TEXT} · auto-renews annually · cancel anytime
                 </p>
 
                 {/* Free features */}
@@ -426,12 +392,7 @@ export default function PricingPage() {
                   </p>
                   <ul className="space-y-2.5">
                     {TEACHER_FREE_FEATURES.map((f) => (
-                      <FeatureRow
-                        key={f.feature}
-                        feature={f.feature}
-                        included={f.included}
-                        free
-                      />
+                      <FeatureRow key={f.feature} feature={f.feature} included={f.included} free />
                     ))}
                   </ul>
                 </div>
@@ -446,11 +407,7 @@ export default function PricingPage() {
                   </p>
                   <ul className="space-y-2.5">
                     {TEACHER_PREMIUM_FEATURES.map((f) => (
-                      <PremiumFeatureRow
-                        key={f.feature}
-                        feature={f.feature}
-                        icon={f.icon}
-                      />
+                      <PremiumFeatureRow key={f.feature} feature={f.feature} icon={f.icon} />
                     ))}
                   </ul>
                 </div>
@@ -499,15 +456,14 @@ export default function PricingPage() {
               {/* Price */}
               <div className="text-center mb-8">
                 <div className="flex items-baseline justify-center gap-2">
+                  <span className="text-base text-muted-foreground">from</span>
                   <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
                     {PRICING.CURRENCY}
                     {PRICING.FOUNDER_SCHOOL_MIN.toLocaleString()}
-                    &ndash;{PRICING.CURRENCY}
-                    {PRICING.FOUNDER_SCHOOL_MAX.toLocaleString()}
                   </span>
                 </div>
                 <p className="text-muted-foreground text-sm mt-2">
-                  One-time partnership fee depending on department size
+                  One-time founding partnership fee — scales with department size
                 </p>
               </div>
 
@@ -585,7 +541,7 @@ export default function PricingPage() {
                 icon: Zap,
                 color: 'text-emerald-600 bg-emerald-500/10 border-emerald-500/20',
                 title: 'Upgrade',
-                desc: 'When you\'re ready, subscribe and get your first month free on any monthly plan.',
+                desc: "When you're ready, subscribe and get your first month free on any monthly plan.",
               },
             ].map((item) => (
               <Card key={item.step} className="p-6 text-center border-border/40">
@@ -599,9 +555,7 @@ export default function PricingPage() {
                     Step {item.step}
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {item.desc}
-                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               </Card>
             ))}

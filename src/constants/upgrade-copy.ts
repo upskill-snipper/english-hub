@@ -17,10 +17,10 @@ export function isTeacherFeature(feature: GatedFeature): boolean {
   return TEACHER_FEATURES.has(feature)
 }
 
-// ─── Pricing display strings ───────────────────────────────────────────
+// ─── Pricing display strings (annual-only since 19 April 2026) ─────────
 
-export const STUDENT_PRICE_STRING = `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month`
-export const TEACHER_PRICE_STRING = `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month`
+export const STUDENT_PRICE_STRING = `${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year`
+export const TEACHER_PRICE_STRING = `${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year`
 
 export function getPriceString(feature: GatedFeature): string {
   return isTeacherFeature(feature) ? TEACHER_PRICE_STRING : STUDENT_PRICE_STRING
@@ -28,8 +28,8 @@ export function getPriceString(feature: GatedFeature): string {
 
 export function getFullPricingLine(feature: GatedFeature): string {
   const price = isTeacherFeature(feature)
-    ? `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month (teachers)`
-    : `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month (students)`
+    ? `${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year (teachers)`
+    : `${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year (students)`
   return `${price}. ${PRICING.TRIAL_TEXT}. Cancel anytime.`
 }
 
@@ -91,7 +91,7 @@ export const SOFT_NUDGE_COPY = {
 
 export const DASHBOARD_BANNER_COPY = {
   student:
-    "You're making progress. Premium students get unlimited AI marking, mock exams, and personalised study plans. First month free.",
+    "You're making progress. Premium students get unlimited AI marking, mock exams, and personalised study plans. 7-day free trial.",
   teacher:
-    "You've started building with The English Hub. Unlock unlimited AI tools and full class analytics. First month free.",
+    "You've started building with The English Hub. Unlock unlimited AI tools and full class analytics. 7-day free trial.",
 } as const

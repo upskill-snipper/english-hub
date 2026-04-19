@@ -28,7 +28,7 @@ import { createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { readAffiliateCookieFromRequest } from '@/lib/affiliate/tracking-cookie'
 import { resolveAttribution, DEFAULT_ATTRIBUTION } from '@/lib/affiliate/attribution-v2'
-import { calculateCommissionPence, getTierForReferralCount } from '@/lib/affiliate/tiers'
+import { calculateCommissionPence, getCurrentTierInfo } from '@/lib/affiliate/tiers'
 
 interface ConversionBody {
   external_id: string
@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
           attributed: false,
           reason: attribution.reason ?? 'no_attribution',
         },
-        { status: 200 }
+        { status: 200 },
       )
     }
 
@@ -98,7 +98,7 @@ export async function POST(request: NextRequest) {
     if (existing) {
       return NextResponse.json(
         { success: true, attributed: true, conversion_id: existing.id, deduplicated: true },
-        { status: 200 }
+        { status: 200 },
       )
     }
 
@@ -117,14 +117,17 @@ export async function POST(request: NextRequest) {
     if (!account || account.status !== 'active') {
       return NextResponse.json(
         { success: true, attributed: false, reason: 'affiliate_not_active' },
-        { status: 200 }
+        { status: 200 },
       )
     }
 
-    // Commission calculation
+    // Commission calculation — flat-rate tiered by lifetime signup count.
+    // 19 April 2026: migrated from percentage-based to flat-rate (see
+    // src/lib/affiliate/tiers.ts). order_value_pence is logged but no
+    // longer used in the commission calculation; kept for accounting.
     const referralCount = Number(account.confirmed_referral_count ?? 0)
-    const tierInfo = getTierForReferralCount(referralCount)
-    const commissionPence = calculateCommissionPence(body.order_value_pence, referralCount)
+    const tierInfo = getCurrentTierInfo(referralCount + 1)
+    const commissionPence = calculateCommissionPence(referralCount)
 
     const { data: inserted, error: insertErr } = await admin
       .from('affiliate_conversions')
@@ -134,7 +137,8 @@ export async function POST(request: NextRequest) {
         external_id: body.external_id,
         order_value_pence: body.order_value_pence,
         commission_pence: commissionPence,
-        commission_rate: tierInfo.commissionRate,
+        // Flat-rate system has no percentage rate; store 0 for backwards compat.
+        commission_rate: 0,
         tier_at_conversion: tierInfo.tier,
         currency: (body.currency ?? 'gbp').toLowerCase(),
         product_type: body.product_type ?? null,
@@ -160,7 +164,7 @@ export async function POST(request: NextRequest) {
         commission_pence: commissionPence,
         tier: tierInfo.tier,
       },
-      { status: 201 }
+      { status: 201 },
     )
   } catch (err) {
     console.error('[affiliate/track-conversion] unexpected error:', err)

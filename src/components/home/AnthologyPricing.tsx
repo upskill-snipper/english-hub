@@ -27,8 +27,7 @@ const tiers = [
     text: 'text-ink-900',
     sub: 'text-ink-500',
     featureText: 'text-ink-600',
-    btnClass:
-      'bg-teal-800 text-cream-50 hover:bg-teal-900 shadow-md',
+    btnClass: 'bg-teal-800 text-cream-50 hover:bg-teal-900 shadow-md',
   },
   {
     name: 'Teacher',
@@ -53,14 +52,13 @@ const tiers = [
     text: 'text-cream-50',
     sub: 'text-teal-300',
     featureText: 'text-cream-200',
-    btnClass:
-      'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg shadow-clay-500/25',
+    btnClass: 'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg shadow-clay-500/25',
   },
   {
     name: 'Founding School',
     price: `From ${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k`,
     period: '/year',
-    annual: `${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k–${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MAX / 1000).toFixed(0)}k · only ${PRICING.FOUNDER_SCHOOL_LIMIT} places`,
+    annual: `From ${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k · only ${PRICING.FOUNDER_SCHOOL_LIMIT} places`,
     description: 'Whole-school licence at founding rate — locked in.',
     features: [
       'Everything in Teacher',
@@ -80,8 +78,7 @@ const tiers = [
     text: 'text-cream-50',
     sub: 'text-ink-400',
     featureText: 'text-ink-300',
-    btnClass:
-      'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg',
+    btnClass: 'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg',
   },
 ]
 
@@ -94,11 +91,15 @@ export default function AnthologyPricing() {
           <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-clay-500 mb-4">
             Pricing
           </p>
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-ink-900" style={{ letterSpacing: '-0.035em' }}>
+          <h2
+            className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-ink-900"
+            style={{ letterSpacing: '-0.035em' }}
+          >
             Simple, <em className="italic text-teal-800">honest</em> pricing.
           </h2>
           <p className="mt-4 text-ink-600 text-lg max-w-lg mx-auto font-serif">
-            First month free for students and teachers. Founding schools get a locked-in rate — only {PRICING.FOUNDER_SCHOOL_LIMIT} places.
+            First month free for students and teachers. Founding schools get a locked-in rate — only{' '}
+            {PRICING.FOUNDER_SCHOOL_LIMIT} places.
           </p>
         </div>
 
@@ -123,18 +124,17 @@ export default function AnthologyPricing() {
 
               {/* Price */}
               <div className="mt-3 mb-1 flex items-baseline gap-1">
-                <span className="font-serif text-5xl font-normal tracking-tight" style={{ letterSpacing: '-0.04em' }}>
+                <span
+                  className="font-serif text-5xl font-normal tracking-tight"
+                  style={{ letterSpacing: '-0.04em' }}
+                >
                   {tier.price}
                 </span>
-                {tier.period && (
-                  <span className={`text-sm ${tier.sub}`}>{tier.period}</span>
-                )}
+                {tier.period && <span className={`text-sm ${tier.sub}`}>{tier.period}</span>}
               </div>
 
               {/* Annual option */}
-              {tier.annual && (
-                <p className={`text-xs ${tier.sub} mb-2 font-mono`}>{tier.annual}</p>
-              )}
+              {tier.annual && <p className={`text-xs ${tier.sub} mb-2 font-mono`}>{tier.annual}</p>}
 
               {/* Description */}
               <p className={`text-sm ${tier.sub} mb-6`}>{tier.description}</p>

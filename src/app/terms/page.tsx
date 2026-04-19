@@ -26,17 +26,18 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-foreground">1. Introduction</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             These Terms of Service (&quot;Terms&quot;) govern your access to and use of The English
-            Hub (accessible at theenglishhub.app), operated by Upskill Energy Limited (Company No. 16511479), trading as The English Hub, a company
-            registered in England and Wales (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;). By
-            creating an account or using any part of our platform, you agree to be bound by these
-            Terms. If you do not agree, you must not use the Service.
+            Hub (accessible at theenglishhub.app), operated by Upskill Energy Limited (Company No.
+            16511479), trading as The English Hub, a company registered in England and Wales
+            (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;). By creating an account or using any
+            part of our platform, you agree to be bound by these Terms. If you do not agree, you
+            must not use the Service.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            The English Hub is an online learning platform designed to support students studying GCSE
-            English Language and English Literature. Our Service includes structured courses,
+            The English Hub is an online learning platform designed to support students studying
+            GCSE English Language and English Literature. Our Service includes structured courses,
             interactive practice exercises, timed mock examinations, AI-powered essay feedback, and
-            revision resources. The platform is intended as a supplementary educational tool and does
-            not replace formal schooling or professional tutoring.
+            revision resources. The platform is intended as a supplementary educational tool and
+            does not replace formal schooling or professional tutoring.
           </p>
         </section>
 
@@ -48,8 +49,8 @@ export default function TermsPage() {
             Data Protection Act 2018) to create an account on The English Hub. If you are under 16
             years of age, you must have the consent of a parent or legal guardian before
             registering. By creating an account for a user under 16, the parent or guardian agrees
-            to these Terms on the minor&apos;s behalf and accepts responsibility for the minor&apos;s
-            use of the Service.
+            to these Terms on the minor&apos;s behalf and accepts responsibility for the
+            minor&apos;s use of the Service.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             School and institutional accounts are provisioned and managed by the subscribing
@@ -83,21 +84,29 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">4. Subscription Plans</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            The English Hub offers the following subscription plans for individual users:
+            The English Hub offers the following annual subscription plans for individual users (as
+            of 19 April 2026):
           </p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
-              <strong>Monthly Plan:</strong> £8.99 per month, billed monthly on a recurring basis. First month free.
+              <strong>Student Plan:</strong> £20 per year, billed annually on a recurring basis.
+              Includes full access to every feature on the platform.
             </li>
             <li>
-              <strong>Annual Plan:</strong> £67.99 per year, billed annually on a recurring basis. First month free.
+              <strong>Teacher Plan:</strong> £67.99 per year, billed annually on a recurring basis.
+              Includes AI lesson planning, worksheet builder, bulk essay marking, and class
+              analytics in addition to all student features.
             </li>
           </ul>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            New individual subscribers are eligible for a 30-day free trial. During the trial period
-            you will have full access to the platform. If you do not cancel before the trial ends,
-            your chosen subscription plan will activate automatically and your payment method will be
-            charged. You will receive a reminder email at least 3 days before the trial expires.
+            Monthly plans are no longer offered to new subscribers. All new subscriptions are annual
+            and auto-renew.
+          </p>
+          <p className="mt-2 text-muted-foreground leading-relaxed">
+            New subscribers are eligible for a 7-day free trial. During the trial period you will
+            have full access to the platform. If you do not cancel before the trial ends, your
+            chosen subscription plan will activate automatically and your payment method will be
+            charged. You will receive a reminder email at least 2 days before the trial expires.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             Subscriptions renew automatically at the end of each billing cycle unless cancelled. The
@@ -113,8 +122,8 @@ export default function TermsPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">
             In addition to subscription plans, The English Hub may offer individual courses or
             resource packs available for one-time purchase. Once purchased, you will have ongoing
-            access to the course content for as long as the course remains available on the platform.
-            One-time purchases are separate from your subscription and are not affected by
+            access to the course content for as long as the course remains available on the
+            platform. One-time purchases are separate from your subscription and are not affected by
             subscription cancellation.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
@@ -139,8 +148,8 @@ export default function TermsPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">
             If a payment fails, we will attempt to process it again and notify you by email. If
             payment remains unsuccessful after 7 days, we may suspend your access until the
-            outstanding amount is resolved. You are responsible for ensuring your payment information
-            is current and valid.
+            outstanding amount is resolved. You are responsible for ensuring your payment
+            information is current and valid.
           </p>
         </section>
 
@@ -160,8 +169,8 @@ export default function TermsPage() {
             While we work to ensure our AI tools are accurate and educationally valuable, automated
             feedback may occasionally contain errors, omissions, or suggestions that do not align
             with the marking criteria of a specific exam board. You should always use AI feedback in
-            conjunction with guidance from your teachers and official exam board resources. We accept
-            no liability for any reliance placed solely on AI-generated feedback.
+            conjunction with guidance from your teachers and official exam board resources. We
+            accept no liability for any reliance placed solely on AI-generated feedback.
           </p>
         </section>
 
@@ -223,11 +232,11 @@ export default function TermsPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">
             You retain all intellectual property rights in the essays, written responses, and other
             original content you submit through the platform (&quot;User Content&quot;). By
-            submitting User Content, you grant us a non-exclusive, royalty-free, worldwide licence to
-            use, store, and process your submissions solely for the purposes of providing the
+            submitting User Content, you grant us a non-exclusive, royalty-free, worldwide licence
+            to use, store, and process your submissions solely for the purposes of providing the
             Service, including generating AI feedback and improving our educational tools. We will
-            not publish or share your User Content with third parties without your consent, except in
-            anonymised and aggregated form for research and platform improvement purposes.
+            not publish or share your User Content with third parties without your consent, except
+            in anonymised and aggregated form for research and platform improvement purposes.
           </p>
         </section>
 
@@ -244,16 +253,16 @@ export default function TermsPage() {
             In accordance with the Consumer Contracts (Information, Cancellation and Additional
             Charges) Regulations 2013, you have the right to cancel a new subscription or one-time
             purchase within 14 days of the date of purchase for a full refund, provided you have not
-            substantially used the Service during that period. Where you have used the Service during
-            the 14-day cancellation period, we may deduct a proportionate amount reflecting the
-            services already provided.
+            substantially used the Service during that period. Where you have used the Service
+            during the 14-day cancellation period, we may deduct a proportionate amount reflecting
+            the services already provided.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             For subscriptions cancelled after the 14-day statutory cancellation period, we offer a
             pro-rated refund for the unused portion of the current billing cycle if you request a
             refund within 14 days of your most recent renewal date. Refund requests made more than
-            14 days after the renewal date will not be eligible for a refund, though your access will
-            continue until the end of the billing period.
+            14 days after the renewal date will not be eligible for a refund, though your access
+            will continue until the end of the billing period.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             If your free trial converts to a paid subscription and you did not intend to continue,
@@ -267,10 +276,10 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">11. Limitation of Liability</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            To the fullest extent permitted by law, Upskill Energy Limited shall not be liable for any
-            indirect, incidental, special, consequential, or punitive damages arising out of or in
-            connection with your use of the Service, including but not limited to loss of data, loss
-            of academic opportunity, or reliance on AI-generated feedback.
+            To the fullest extent permitted by law, Upskill Energy Limited shall not be liable for
+            any indirect, incidental, special, consequential, or punitive damages arising out of or
+            in connection with your use of the Service, including but not limited to loss of data,
+            loss of academic opportunity, or reliance on AI-generated feedback.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             Our total aggregate liability to you for any claims arising under or in connection with
@@ -308,9 +317,9 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-foreground">13. Dispute Resolution</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             If you have a complaint or dispute regarding the Service, we encourage you to contact us
-            first at info@Upskillenergy.com so that we can attempt to resolve the matter
-            informally. We will acknowledge your complaint within 5 business days and aim to provide
-            a substantive response within 14 business days.
+            first at info@Upskillenergy.com so that we can attempt to resolve the matter informally.
+            We will acknowledge your complaint within 5 business days and aim to provide a
+            substantive response within 14 business days.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             If we are unable to resolve your complaint to your satisfaction, you may refer the

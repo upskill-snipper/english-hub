@@ -95,25 +95,20 @@ export function seedMockData() {
   }
 
   if (!window.localStorage.getItem(STORAGE_KEYS.conversions)) {
-    const sampleConversions: AffiliateConversion[] = Array.from(
-      { length: 12 },
-      (_, i) => ({
-        id: `conv-${i}`,
-        linkId: i % 3 === 0 ? 'homepage' : i % 3 === 1 ? 'pricing' : 'igcse',
-        planName: i % 2 === 0 ? 'Premium Monthly' : 'Premium Yearly',
-        amount: i % 2 === 0 ? 12.99 : 129.0,
-        commission: i % 2 === 0 ? 1.95 : 19.35,
-        status: i < 3 ? 'pending' : i < 8 ? 'approved' : 'paid',
-        date: new Date(Date.now() - i * 86_400_000 * 2).toISOString(),
-      })
-    )
+    const sampleConversions: AffiliateConversion[] = Array.from({ length: 12 }, (_, i) => ({
+      id: `conv-${i}`,
+      linkId: i % 3 === 0 ? 'homepage' : i % 3 === 1 ? 'pricing' : 'igcse',
+      planName: i % 2 === 0 ? 'Premium Monthly' : 'Premium Yearly',
+      amount: i % 2 === 0 ? 12.99 : 129.0,
+      commission: i % 2 === 0 ? 1.95 : 19.35,
+      status: i < 3 ? 'pending' : i < 8 ? 'approved' : 'paid',
+      date: new Date(Date.now() - i * 86_400_000 * 2).toISOString(),
+    }))
     safeWrite(STORAGE_KEYS.conversions, sampleConversions)
   }
 }
 
-export function createDefaultAccount(
-  overrides: Partial<AffiliateAccount> = {}
-): AffiliateAccount {
+export function createDefaultAccount(overrides: Partial<AffiliateAccount> = {}): AffiliateAccount {
   return {
     id: `aff_${Math.random().toString(36).slice(2, 10)}`,
     name: overrides.name ?? 'Demo Affiliate',
@@ -121,7 +116,7 @@ export function createDefaultAccount(
     website: overrides.website,
     audienceSize: overrides.audienceSize,
     niche: overrides.niche,
-    tier: overrides.tier ?? 'bronze',
+    tier: overrides.tier ?? 'tier-1',
     createdAt: new Date().toISOString(),
     paymentMethod: overrides.paymentMethod,
   }
