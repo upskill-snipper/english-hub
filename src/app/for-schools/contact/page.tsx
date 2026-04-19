@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react'
+import Link from 'next/link'
 import {
   ChevronLeft,
   CheckCircle2,
@@ -13,48 +13,42 @@ import {
   Clock,
   Gift,
   Shield,
-} from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+} from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
 
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 
 const ROLES = [
-  "Head of Department",
-  "Head of English",
-  "Deputy Head",
-  "Headteacher",
-  "MAT Lead",
-  "Other",
-];
+  'Head of Department',
+  'Head of English',
+  'Deputy Head',
+  'Headteacher',
+  'MAT Lead',
+  'Other',
+]
 
-const STUDENT_COUNTS = [
-  "Under 100",
-  "100-300",
-  "300-500",
-  "500-1000",
-  "1000+",
-];
+const STUDENT_COUNTS = ['Under 100', '100-300', '300-500', '500-1000', '1000+']
 
-const EXAM_BOARDS = ["AQA", "Edexcel", "OCR", "WJEC", "IGCSE/CAIE"];
+const EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'IGCSE/CAIE']
 
 const COUNTRY_CODES = [
-  { code: "+44", label: "UK (+44)" },
-  { code: "+1", label: "US/CA (+1)" },
-  { code: "+971", label: "UAE (+971)" },
-  { code: "+974", label: "Qatar (+974)" },
-  { code: "+65", label: "Singapore (+65)" },
-  { code: "+852", label: "HK (+852)" },
-  { code: "+61", label: "Australia (+61)" },
-];
+  { code: '+44', label: 'UK (+44)' },
+  { code: '+1', label: 'US/CA (+1)' },
+  { code: '+971', label: 'UAE (+971)' },
+  { code: '+974', label: 'Qatar (+974)' },
+  { code: '+65', label: 'Singapore (+65)' },
+  { code: '+852', label: 'HK (+852)' },
+  { code: '+61', label: 'Australia (+61)' },
+]
 
-const PREFERRED_CONTACT_OPTIONS = ["Email", "Phone", "Either"] as const;
+const PREFERRED_CONTACT_OPTIONS = ['Email', 'Phone', 'Either'] as const
 
 // ---------------------------------------------------------------------------
 // NativeSelect (matches register page style)
@@ -67,11 +61,11 @@ function NativeSelect({
   options,
   placeholder,
 }: {
-  id: string;
-  value: string;
-  onChange: (v: string) => void;
-  options: string[];
-  placeholder?: string;
+  id: string
+  value: string
+  onChange: (v: string) => void
+  options: string[]
+  placeholder?: string
 }) {
   return (
     <select
@@ -91,7 +85,7 @@ function NativeSelect({
         </option>
       ))}
     </select>
-  );
+  )
 }
 
 // ---------------------------------------------------------------------------
@@ -99,13 +93,13 @@ function NativeSelect({
 // ---------------------------------------------------------------------------
 
 function FieldError({ msg }: { msg?: string }) {
-  if (!msg) return null;
+  if (!msg) return null
   return (
     <p className="flex items-center gap-1 text-xs text-destructive mt-1">
       <AlertCircle className="h-3 w-3 shrink-0" />
       {msg}
     </p>
-  );
+  )
 }
 
 // ---------------------------------------------------------------------------
@@ -113,30 +107,30 @@ function FieldError({ msg }: { msg?: string }) {
 // ---------------------------------------------------------------------------
 
 interface ContactForm {
-  schoolName: string;
-  contactName: string;
-  email: string;
-  countryCode: string;
-  phone: string;
-  preferredContact: string;
-  role: string;
-  studentCount: string;
-  examBoard: string;
-  message: string;
+  schoolName: string
+  contactName: string
+  email: string
+  countryCode: string
+  phone: string
+  preferredContact: string
+  role: string
+  studentCount: string
+  examBoard: string
+  message: string
 }
 
 const INITIAL_FORM: ContactForm = {
-  schoolName: "",
-  contactName: "",
-  email: "",
-  countryCode: "+44",
-  phone: "",
-  preferredContact: "Email",
-  role: "",
-  studentCount: "",
-  examBoard: "",
-  message: "",
-};
+  schoolName: '',
+  contactName: '',
+  email: '',
+  countryCode: '+44',
+  phone: '',
+  preferredContact: 'Email',
+  role: '',
+  studentCount: '',
+  examBoard: '',
+  message: '',
+}
 
 // ---------------------------------------------------------------------------
 // Side panel — Founding Schools info
@@ -159,53 +153,44 @@ function FoundingSchoolsPanel() {
             <li className="flex items-start gap-3">
               <Gift className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">
-                  Free access until August 2026
-                </span>{" "}
-                — no payment required to get started
+                <span className="font-medium text-foreground">Free access until August 2026</span> —
+                no payment required to get started
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Users className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">
-                  Unlimited teachers and students
-                </span>{" "}
+                <span className="font-medium text-foreground">Unlimited teachers and students</span>{' '}
                 — whole-department access on a single site license
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Shield className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">
-                  Locked-in founding pricing
-                </span>{" "}
-                — guaranteed best rate when the programme ends
+                <span className="font-medium text-foreground">Locked-in founding pricing</span> —
+                guaranteed best rate when the programme ends
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Phone className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">
-                  Direct line to the product team
-                </span>{" "}
+                <span className="font-medium text-foreground">Direct line to the product team</span>{' '}
                 — your feedback shapes the platform
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Clock className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">
-                  Live within 48 hours
-                </span>{" "}
-                — we handle onboarding and teacher training
+                <span className="font-medium text-foreground">Live within 48 hours</span> — we
+                handle onboarding and teacher training
               </span>
             </li>
           </ul>
 
           <div className="rounded-md border border-yellow-500/30 bg-yellow-500/10 px-4 py-3">
             <p className="text-sm font-semibold text-amber-700">
-              Only 10 schools. Programme closes when full.
+              First 10 schools get founding-partner pricing. Additional schools welcome at standard
+              rates.
             </p>
           </div>
         </CardContent>
@@ -214,9 +199,7 @@ function FoundingSchoolsPanel() {
       {/* What to expect */}
       <Card className="border-muted/40 bg-card/50">
         <CardContent className="pt-6 space-y-3">
-          <h3 className="text-lg font-semibold text-foreground">
-            What we&apos;ll cover
-          </h3>
+          <h3 className="text-lg font-semibold text-foreground">What we&apos;ll cover</h3>
           <ul className="space-y-2.5">
             <li className="flex items-start gap-2.5">
               <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0 text-emerald-500" />
@@ -249,16 +232,16 @@ function FoundingSchoolsPanel() {
 
           <div className="rounded-md border border-primary/20 bg-primary/5 px-4 py-3 mt-4">
             <p className="text-sm text-muted-foreground leading-relaxed">
-              <span className="font-medium text-foreground">Missed exams?</span>{" "}
-              Our analytics data can also support schools in cases where students
-              miss exams, providing predicted grades based on continuous assessment
-              data, mock exam performance, and coursework to ensure fair outcomes.
+              <span className="font-medium text-foreground">Missed exams?</span> Our analytics data
+              can also support schools in cases where students miss exams, providing predicted
+              grades based on continuous assessment data, mock exam performance, and coursework to
+              ensure fair outcomes.
             </p>
           </div>
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }
 
 // ---------------------------------------------------------------------------
@@ -276,8 +259,8 @@ function SuccessScreen() {
           Thanks! We&apos;ll be in touch within 24 hours.
         </h2>
         <p className="text-muted-foreground">
-          One of our schools team will reach out to schedule your 20-minute call.
-          Check your inbox (and spam folder) for a confirmation.
+          One of our schools team will reach out to schedule your 20-minute call. Check your inbox
+          (and spam folder) for a confirmation.
         </p>
       </div>
       <Button render={<Link href="/for-schools" />} variant="outline">
@@ -285,7 +268,7 @@ function SuccessScreen() {
         Back to Schools
       </Button>
     </div>
-  );
+  )
 }
 
 // ---------------------------------------------------------------------------
@@ -293,14 +276,14 @@ function SuccessScreen() {
 // ---------------------------------------------------------------------------
 
 export default function BookACallPage() {
-  const [form, setForm] = useState<ContactForm>(INITIAL_FORM);
-  const [errors, setErrors] = useState<Partial<Record<keyof ContactForm, string>>>({});
-  const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState("");
-  const [success, setSuccess] = useState(false);
+  const [form, setForm] = useState<ContactForm>(INITIAL_FORM)
+  const [errors, setErrors] = useState<Partial<Record<keyof ContactForm, string>>>({})
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+  const [success, setSuccess] = useState(false)
 
   function patch(update: Partial<ContactForm>) {
-    setForm((prev) => ({ ...prev, ...update }));
+    setForm((prev) => ({ ...prev, ...update }))
   }
 
   // -------------------------------------------------------------------------
@@ -308,19 +291,19 @@ export default function BookACallPage() {
   // -------------------------------------------------------------------------
 
   function validate(): boolean {
-    const errs: Partial<Record<keyof ContactForm, string>> = {};
-    if (!form.schoolName.trim()) errs.schoolName = "School name is required.";
-    if (!form.contactName.trim()) errs.contactName = "Your name is required.";
+    const errs: Partial<Record<keyof ContactForm, string>> = {}
+    if (!form.schoolName.trim()) errs.schoolName = 'School name is required.'
+    if (!form.contactName.trim()) errs.contactName = 'Your name is required.'
     if (!form.email.trim()) {
-      errs.email = "Email is required.";
+      errs.email = 'Email is required.'
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      errs.email = "Please enter a valid email address.";
+      errs.email = 'Please enter a valid email address.'
     }
-    if (!form.role) errs.role = "Please select your role.";
-    if (!form.studentCount) errs.studentCount = "Please select student count.";
-    if (!form.examBoard) errs.examBoard = "Please select your exam board.";
-    setErrors(errs);
-    return Object.keys(errs).length === 0;
+    if (!form.role) errs.role = 'Please select your role.'
+    if (!form.studentCount) errs.studentCount = 'Please select student count.'
+    if (!form.examBoard) errs.examBoard = 'Please select your exam board.'
+    setErrors(errs)
+    return Object.keys(errs).length === 0
   }
 
   // -------------------------------------------------------------------------
@@ -328,28 +311,28 @@ export default function BookACallPage() {
   // -------------------------------------------------------------------------
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!validate()) return;
+    e.preventDefault()
+    if (!validate()) return
 
-    setSubmitting(true);
-    setSubmitError("");
+    setSubmitting(true)
+    setSubmitError('')
 
     try {
-      const res = await fetch("/api/school/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/school/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
-      });
-      const json = await res.json();
+      })
+      const json = await res.json()
       if (res.ok) {
-        setSuccess(true);
+        setSuccess(true)
       } else {
-        setSubmitError(json.error ?? "Something went wrong. Please try again.");
+        setSubmitError(json.error ?? 'Something went wrong. Please try again.')
       }
     } catch {
-      setSubmitError("Could not send your request. Please check your connection and try again.");
+      setSubmitError('Could not send your request. Please check your connection and try again.')
     } finally {
-      setSubmitting(false);
+      setSubmitting(false)
     }
   }
 
@@ -364,7 +347,7 @@ export default function BookACallPage() {
           <SuccessScreen />
         </div>
       </main>
-    );
+    )
   }
 
   return (
@@ -383,8 +366,7 @@ export default function BookACallPage() {
             Book a Call with Our Schools Team
           </h1>
           <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-            A 20-minute conversation about whether The English Hub fits your
-            department.
+            A 20-minute conversation about whether The English Hub fits your department.
           </p>
         </div>
 
@@ -472,9 +454,7 @@ export default function BookACallPage() {
                           name="preferredContact"
                           value={option}
                           checked={form.preferredContact === option}
-                          onChange={(e) =>
-                            patch({ preferredContact: e.target.value })
-                          }
+                          onChange={(e) => patch({ preferredContact: e.target.value })}
                           className="accent-primary h-4 w-4"
                         />
                         {option}
@@ -498,9 +478,7 @@ export default function BookACallPage() {
 
                 {/* Student count */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="studentCount">
-                    Number of Students in English Department *
-                  </Label>
+                  <Label htmlFor="studentCount">Number of Students in English Department *</Label>
                   <NativeSelect
                     id="studentCount"
                     value={form.studentCount}
@@ -545,12 +523,7 @@ export default function BookACallPage() {
                 )}
 
                 {/* Submit */}
-                <Button
-                  type="submit"
-                  disabled={submitting}
-                  className="w-full gap-1.5"
-                  size="lg"
-                >
+                <Button type="submit" disabled={submitting} className="w-full gap-1.5" size="lg">
                   {submitting ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
@@ -580,7 +553,7 @@ export default function BookACallPage() {
 
         {/* Footer */}
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          Prefer to register directly?{" "}
+          Prefer to register directly?{' '}
           <Link
             href="/for-schools/register"
             className="text-primary underline-offset-2 hover:underline"
@@ -590,5 +563,5 @@ export default function BookACallPage() {
         </p>
       </div>
     </main>
-  );
+  )
 }

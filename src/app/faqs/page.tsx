@@ -47,7 +47,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Who is The English Hub for?',
         answer:
-          'The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licenses to set assignments and track class progress, and parents can link to their child\'s account for weekly progress reports.',
+          "The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licenses to set assignments and track class progress, and parents can link to their child's account for weekly progress reports.",
       },
       {
         question: 'Which exam boards do you cover?',
@@ -85,7 +85,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'What happens after my free trial ends?',
         answer:
-          'We\'ll send you a reminder email before your free first month ends. If you\'ve added a payment method and chosen a plan, your subscription will start automatically. If you haven\'t added payment details, your account will simply be paused — you won\'t be charged anything.',
+          "We'll send you a reminder email before your free first month ends. If you've added a payment method and chosen a plan, your subscription will start automatically. If you haven't added payment details, your account will simply be paused — you won't be charged anything.",
       },
       {
         question: 'Can I cancel my subscription?',
@@ -100,7 +100,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Can I get a refund?',
         answer:
-          'If you\'re not satisfied within the first 14 days of a paid subscription, contact our support team and we\'ll arrange a full refund. After 14 days, you can cancel to prevent future charges, but we don\'t offer partial refunds for the current billing period.',
+          "If you're not satisfied within the first 14 days of a paid subscription, contact our support team and we'll arrange a full refund. After 14 days, you can cancel to prevent future charges, but we don't offer partial refunds for the current billing period.",
       },
     ],
   },
@@ -133,7 +133,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How often is content updated?',
         answer:
-          'We continuously update our content to reflect the latest exam board requirements, mark schemes, and published guidance. When exam boards make changes, we update our materials promptly so you\'re always revising the right content.',
+          "We continuously update our content to reflect the latest exam board requirements, mark schemes, and published guidance. When exam boards make changes, we update our materials promptly so you're always revising the right content.",
       },
     ],
   },
@@ -149,12 +149,12 @@ const FAQ_SECTIONS: FaqSection[] = [
           'The English Hub works on any device with a modern web browser. We support the latest versions of Chrome, Safari, Firefox, and Microsoft Edge on Windows, macOS, iOS, Android, and ChromeOS.',
       },
       {
-        question: 'I can\'t log in to my account. What should I do?',
+        question: "I can't log in to my account. What should I do?",
         answer:
           'First, check that you\'re using the correct email address. If you\'ve forgotten your password, click "Forgot Password" on the login page to receive a reset link. If you signed up with Google, use the "Sign in with Google" button. If you\'re still having trouble, contact our support team.',
       },
       {
-        question: 'The page isn\'t loading or looks broken. How do I fix it?',
+        question: "The page isn't loading or looks broken. How do I fix it?",
         answer:
           'Try these steps: (1) Clear your browser cache and cookies, (2) Refresh the page, (3) Try a different browser, (4) Check your internet connection. If the problem persists, it may be a temporary issue on our end — try again in a few minutes or contact support.',
       },
@@ -202,7 +202,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How does the Founding Schools Programme work?',
         answer:
-          'Our Founding Schools Programme is a strategic partnership limited to 10 schools, with pricing ranging from £3,000 to £7,000 per year depending on department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Visit our For Schools page or contact info@Upskillenergy.com for details.',
+          'Our Founding Schools Programme reserves founding-partner pricing for the first 10 schools to sign, with pricing ranging from £3,000 to £7,000 per year depending on department size. Founding schools receive priority onboarding, early features, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates after the founding cohort closes. Visit our For Schools page or contact info@Upskillenergy.com for details.',
       },
       {
         question: 'What does the teacher dashboard include?',
@@ -217,7 +217,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Can we try it before committing to a school license?',
         answer:
-          'Yes. We offer a free pilot for schools so you can trial The English Hub with a class before purchasing a full license. Contact us to arrange a pilot, and we\'ll set you up with temporary access for your students.',
+          "Yes. We offer a free pilot for schools so you can trial The English Hub with a class before purchasing a full license. Contact us to arrange a pilot, and we'll set you up with temporary access for your students.",
       },
       {
         question: 'Do you offer training for teachers?',
@@ -245,11 +245,7 @@ function AccordionItem({ question, answer }: FaqItem) {
           className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
         />
       </button>
-      {open && (
-        <div className="pb-4 text-sm leading-relaxed text-muted-foreground">
-          {answer}
-        </div>
-      )}
+      {open && <div className="pb-4 text-sm leading-relaxed text-muted-foreground">{answer}</div>}
     </div>
   )
 }
@@ -266,7 +262,7 @@ export default function FaqsPage() {
       (item) =>
         !searchQuery ||
         item.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.answer.toLowerCase().includes(searchQuery.toLowerCase())
+        item.answer.toLowerCase().includes(searchQuery.toLowerCase()),
     ),
   })).filter((section) => section.items.length > 0)
 
@@ -278,8 +274,7 @@ export default function FaqsPage() {
           Frequently Asked Questions
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Everything you need to know about The English Hub. For more detailed
-          help, visit our{' '}
+          Everything you need to know about The English Hub. For more detailed help, visit our{' '}
           <Link href="/help" className="text-primary underline hover:text-primary/80">
             Help Centre
           </Link>
@@ -308,11 +303,7 @@ export default function FaqsPage() {
               <button
                 key={section.id}
                 type="button"
-                onClick={() =>
-                  setActiveSection(
-                    activeSection === section.id ? null : section.id
-                  )
-                }
+                onClick={() => setActiveSection(activeSection === section.id ? null : section.id)}
                 className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
                   activeSection === section.id
                     ? 'border-primary bg-primary/10 text-primary'
@@ -332,12 +323,8 @@ export default function FaqsPage() {
         {filteredSections.length === 0 && (
           <div className="rounded-xl border border-border bg-card p-8 text-center">
             <p className="text-muted-foreground">
-              No FAQs found for &ldquo;{searchQuery}&rdquo;. Try a different
-              search term or{' '}
-              <Link
-                href="/help/contact"
-                className="text-primary underline hover:text-primary/80"
-              >
+              No FAQs found for &ldquo;{searchQuery}&rdquo;. Try a different search term or{' '}
+              <Link href="/help/contact" className="text-primary underline hover:text-primary/80">
                 ask our support team
               </Link>
               .
@@ -346,10 +333,7 @@ export default function FaqsPage() {
         )}
 
         {filteredSections
-          .filter(
-            (section) =>
-              searchQuery || !activeSection || section.id === activeSection
-          )
+          .filter((section) => searchQuery || !activeSection || section.id === activeSection)
           .map((section) => {
             const Icon = section.icon
             return (
@@ -364,9 +348,7 @@ export default function FaqsPage() {
                   >
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h2 className="text-lg font-semibold text-foreground">
-                    {section.title}
-                  </h2>
+                  <h2 className="text-lg font-semibold text-foreground">{section.title}</h2>
                 </div>
 
                 <div className="divide-y divide-border">

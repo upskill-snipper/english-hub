@@ -84,7 +84,7 @@ const FAQ_JSON_LD_DATA: { question: string; answer: string }[] = [
   {
     question: 'How does the Founding Schools Programme work?',
     answer:
-      'Our Founding Schools Programme is a strategic partnership limited to 10 schools, with pricing ranging from £3,000 to £7,000 per year depending on department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Visit our For Schools page or contact info@Upskillenergy.com for details.',
+      'Our Founding Schools Programme reserves founding-partner pricing for the first 10 schools to sign, with pricing ranging from £3,000 to £7,000 per year depending on department size. Founding schools receive priority onboarding, early features, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates after the founding cohort closes. Visit our For Schools page or contact info@Upskillenergy.com for details.',
   },
   {
     question: 'Can we try it before committing to a school license?',
@@ -93,11 +93,7 @@ const FAQ_JSON_LD_DATA: { question: string; answer: string }[] = [
   },
 ]
 
-export default function FaqsLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function FaqsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <FAQPageJsonLd faqs={FAQ_JSON_LD_DATA} />

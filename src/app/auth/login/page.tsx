@@ -35,43 +35,16 @@ function LoginForm() {
   })
   const [loading, setLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
-  const [showEmailNotConfirmed, setShowEmailNotConfirmed] = useState(false)
-  const [resendLoading, setResendLoading] = useState(false)
-  const [resendSuccess, setResendSuccess] = useState(false)
-
-  async function handleResendVerification() {
-    if (!email) {
-      setError('Please enter your email address above first.')
-      return
-    }
-
-    setResendLoading(true)
-    setResendSuccess(false)
-
-    const supabase = createClient()
-    const { error: resendError } = await supabase.auth.resend({
-      type: 'signup',
-      email,
-      options: {
-        emailRedirectTo: `${window.location.origin}/auth/callback`,
-      },
-    })
-
-    if (resendError) {
-      setError(resendError.message)
-    } else {
-      setResendSuccess(true)
-      setError(null)
-    }
-
-    setResendLoading(false)
-  }
+  // P1-SEC-5 (Cycle 1 Wave B) closed the email-not-confirmed enumeration
+  // branch. The previous "Resend verification" CTA would have confirmed
+  // the existence of an unverified account for the submitted email —
+  // an enumeration + email-bombing primitive. Users needing to re-verify
+  // should re-register (which returns a generic response regardless of
+  // whether the email exists) or use /auth/forgot-password.
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
-    setShowEmailNotConfirmed(false)
-    setResendSuccess(false)
 
     if (!email || !password) {
       setError('Please fill in all fields.')
@@ -97,7 +70,6 @@ function LoginForm() {
       // If a user does have an unverified account they can use the
       // /auth/forgot-password or a dedicated "resend verification" flow,
       // both of which respond identically whether or not the email exists.
-      setShowEmailNotConfirmed(false)
       setError(
         'Invalid email or password, or your email has not yet been verified. ' +
           'Please check your credentials and verification link.',
@@ -150,32 +122,9 @@ function LoginForm() {
           </CardHeader>
 
           <CardContent>
-            {resendSuccess && (
-              <Alert className="mb-6">
-                <AlertDescription>
-                  Verification email sent! Please check your inbox and click the link to verify your
-                  account.
-                </AlertDescription>
-              </Alert>
-            )}
-
             {error && (
               <Alert variant="destructive" className="mb-6">
-                <AlertDescription>
-                  {error}
-                  {showEmailNotConfirmed && (
-                    <Button
-                      type="button"
-                      variant="link"
-                      size="sm"
-                      className="h-auto p-0 ml-1 font-medium text-destructive underline"
-                      disabled={resendLoading}
-                      onClick={handleResendVerification}
-                    >
-                      {resendLoading ? 'Sending...' : 'Resend verification email'}
-                    </Button>
-                  )}
-                </AlertDescription>
+                <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
 
