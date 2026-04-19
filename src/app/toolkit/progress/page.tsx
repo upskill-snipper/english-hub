@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
+import DOMPurify from 'dompurify'
 import {
   ArrowLeft,
   BarChart3,
@@ -46,9 +47,9 @@ function calculateStreak(): number {
   try {
     const dates: string[] = JSON.parse(raw)
     if (!dates.length) return 0
-    const unique = [
-      ...new Set(dates.map((d) => new Date(d).toISOString().slice(0, 10))),
-    ].sort().reverse()
+    const unique = [...new Set(dates.map((d) => new Date(d).toISOString().slice(0, 10)))]
+      .sort()
+      .reverse()
     const today = new Date().toISOString().slice(0, 10)
     const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10)
     if (unique[0] !== today && unique[0] !== yesterday) return 0
@@ -83,9 +84,7 @@ function StatCard({ icon: Icon, label, value, colour, bgColour }: StatCardProps)
         <Icon className={`h-5 w-5 ${colour}`} />
       </div>
       <div>
-        <p className="font-mono text-xs text-muted-foreground uppercase tracking-wide">
-          {label}
-        </p>
+        <p className="font-mono text-xs text-muted-foreground uppercase tracking-wide">{label}</p>
         <p className="text-lg font-serif font-medium">{value}</p>
       </div>
     </div>
@@ -94,7 +93,17 @@ function StatCard({ icon: Icon, label, value, colour, bgColour }: StatCardProps)
 
 // ── Progress Bar ───────────────────────────────────────────────────────────
 
-function ProgressBar({ label, value, max, colour }: { label: string; value: number; max: number; colour: string }) {
+function ProgressBar({
+  label,
+  value,
+  max,
+  colour,
+}: {
+  label: string
+  value: number
+  max: number
+  colour: string
+}) {
   const pct = max > 0 ? Math.round((value / max) * 100) : 0
   return (
     <div>
@@ -138,11 +147,8 @@ export default function ProgressPage() {
   // ── Computed stats ─────────────────────────────────────────────────────
 
   const allScores = useMemo(
-    () => [
-      ...quizHistory.map((q) => q.score),
-      ...gameScores.map((g) => g.score),
-    ],
-    [quizHistory, gameScores]
+    () => [...quizHistory.map((q) => q.score), ...gameScores.map((g) => g.score)],
+    [quizHistory, gameScores],
   )
 
   const avgScore = useMemo(() => {
@@ -173,14 +179,8 @@ export default function ProgressPage() {
   }, [quizHistory])
 
   // Strengths and weaknesses
-  const strengths = useMemo(
-    () => topicBreakdown.filter((t) => t.avgScore >= 80),
-    [topicBreakdown]
-  )
-  const weaknesses = useMemo(
-    () => topicBreakdown.filter((t) => t.avgScore < 60),
-    [topicBreakdown]
-  )
+  const strengths = useMemo(() => topicBreakdown.filter((t) => t.avgScore >= 80), [topicBreakdown])
+  const weaknesses = useMemo(() => topicBreakdown.filter((t) => t.avgScore < 60), [topicBreakdown])
 
   // Study history (recent 20 items)
   const studyHistory = useMemo(() => {
@@ -209,7 +209,9 @@ export default function ProgressPage() {
         score: m.score,
       })),
     ]
-    return items.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 20)
+    return items
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 20)
   }, [quizHistory, studiedPoems, gameScores, markingHistory])
 
   // AI-suggested focus areas
@@ -218,37 +220,37 @@ export default function ProgressPage() {
 
     if (weaknesses.length > 0) {
       suggestions.push(
-        `Focus on **${weaknesses[0].name}** -- your average score is ${weaknesses[0].avgScore}%. Try the AI Test Builder for targeted practice.`
+        `Focus on **${weaknesses[0].name}** -- your average score is ${weaknesses[0].avgScore}%. Try the AI Test Builder for targeted practice.`,
       )
     }
 
     if (quizHistory.length < 5) {
       suggestions.push(
-        'Take more quizzes to build a reliable progress profile. Aim for at least 5 across different topics.'
+        'Take more quizzes to build a reliable progress profile. Aim for at least 5 across different topics.',
       )
     }
 
     if (streak < 3) {
       suggestions.push(
-        'Build a study streak! Consistent daily revision is more effective than cramming. Even 15 minutes counts.'
+        'Build a study streak! Consistent daily revision is more effective than cramming. Even 15 minutes counts.',
       )
     }
 
     if (predictedGrade > 0 && predictedGrade < 7) {
       suggestions.push(
-        `To push towards Grade 7+, focus on embedding quotations and analysing writer's methods rather than retelling the plot.`
+        `To push towards Grade 7+, focus on embedding quotations and analysing writer's methods rather than retelling the plot.`,
       )
     }
 
     if (studiedPoems.length < 5) {
       suggestions.push(
-        'Study more poems from your anthology. Comparative analysis across multiple poems is key for top grades.'
+        'Study more poems from your anthology. Comparative analysis across multiple poems is key for top grades.',
       )
     }
 
     if (suggestions.length === 0) {
       suggestions.push(
-        'Great progress! Keep building on your strengths and revisiting areas you have not practised recently.'
+        'Great progress! Keep building on your strengths and revisiting areas you have not practised recently.',
       )
     }
 
@@ -360,14 +362,17 @@ export default function ProgressPage() {
               <p className="font-mono text-sm text-muted-foreground uppercase tracking-wide mb-2">
                 Predicted GCSE Grade
               </p>
-              <p className={`font-serif text-6xl sm:text-7xl font-medium mb-2 ${gradeColour(predictedGrade)}`}>
+              <p
+                className={`font-serif text-6xl sm:text-7xl font-medium mb-2 ${gradeColour(predictedGrade)}`}
+              >
                 {predictedGrade}
               </p>
               <p className="text-muted-foreground">
                 Based on {allScores.length} scores with an average of {avgScore}%
               </p>
               <p className="text-xs text-muted-foreground mt-2">
-                {percentageToGCSEGradeLabel(avgScore)} equivalent -- take more quizzes for a more accurate prediction
+                {percentageToGCSEGradeLabel(avgScore)} equivalent -- take more quizzes for a more
+                accurate prediction
               </p>
             </div>
           ) : (
@@ -388,12 +393,20 @@ export default function ProgressPage() {
           <h2 className="font-serif text-xl font-medium mb-4">Streak Tracker</h2>
           <div className="rounded-xl border border-border bg-card p-6 shadow-soft">
             <div className="flex items-center gap-4">
-              <div className={`flex h-16 w-16 items-center justify-center rounded-2xl ${
-                streak >= 7 ? 'bg-amber-500/10' : streak >= 3 ? 'bg-emerald-500/10' : 'bg-muted'
-              }`}>
-                <Flame className={`h-8 w-8 ${
-                  streak >= 7 ? 'text-amber-500' : streak >= 3 ? 'text-emerald-500' : 'text-muted-foreground'
-                }`} />
+              <div
+                className={`flex h-16 w-16 items-center justify-center rounded-2xl ${
+                  streak >= 7 ? 'bg-amber-500/10' : streak >= 3 ? 'bg-emerald-500/10' : 'bg-muted'
+                }`}
+              >
+                <Flame
+                  className={`h-8 w-8 ${
+                    streak >= 7
+                      ? 'text-amber-500'
+                      : streak >= 3
+                        ? 'text-emerald-500'
+                        : 'text-muted-foreground'
+                  }`}
+                />
               </div>
               <div>
                 <p className="font-serif text-3xl font-medium">
@@ -420,23 +433,17 @@ export default function ProgressPage() {
                 const label = labels[day.getDay() === 0 ? 6 : day.getDay() - 1]
 
                 // Check if this day is within the streak
-                const isActive = i >= (7 - streak)
+                const isActive = i >= 7 - streak
                 const isToday = i === 6
 
                 return (
                   <div key={dayStr} className="flex-1 text-center">
                     <div
                       className={`h-3 rounded-full mb-1 ${
-                        isActive
-                          ? 'bg-primary'
-                          : isToday
-                            ? 'bg-primary/30'
-                            : 'bg-border'
+                        isActive ? 'bg-primary' : isToday ? 'bg-primary/30' : 'bg-border'
                       }`}
                     />
-                    <span className="text-[10px] font-mono text-muted-foreground">
-                      {label}
-                    </span>
+                    <span className="text-[10px] font-mono text-muted-foreground">{label}</span>
                   </div>
                 )
               })}
@@ -604,14 +611,23 @@ export default function ProgressPage() {
                 className="rounded-xl border border-primary/15 bg-primary/5 p-5 flex items-start gap-3"
               >
                 <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 mt-0.5">
-                  <span className="text-xs font-mono font-bold text-primary">
-                    {i + 1}
-                  </span>
+                  <span className="text-xs font-mono font-bold text-primary">{i + 1}</span>
                 </div>
                 <p
                   className="text-sm text-foreground/80 leading-relaxed"
+                  // P2 (Cycle 3): `s` is built from localStorage quiz history
+                  // (user's own data, so cross-user XSS is not possible) but
+                  // wrapping in DOMPurify costs nothing and blocks self-XSS
+                  // if the localStorage schema ever widens to include other
+                  // fields under user control.
                   dangerouslySetInnerHTML={{
-                    __html: s.replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>'),
+                    __html: DOMPurify.sanitize(
+                      s.replace(
+                        /\*\*(.+?)\*\*/g,
+                        '<strong class="text-foreground font-semibold">$1</strong>',
+                      ),
+                      { USE_PROFILES: { html: true } },
+                    ),
                   }}
                 />
               </div>

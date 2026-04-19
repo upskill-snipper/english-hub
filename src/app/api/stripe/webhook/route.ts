@@ -18,37 +18,24 @@ class WebhookMetadataError extends Error {
 export async function POST(request: NextRequest) {
   if (!process.env.STRIPE_WEBHOOK_SECRET) {
     console.error('STRIPE_WEBHOOK_SECRET is not configured')
-    return NextResponse.json(
-      { error: 'Webhook endpoint is not configured' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Webhook endpoint is not configured' }, { status: 500 })
   }
 
   const body = await request.text()
   const signature = request.headers.get('stripe-signature')
 
   if (!signature) {
-    return NextResponse.json(
-      { error: 'Missing stripe-signature header' },
-      { status: 400 }
-    )
+    return NextResponse.json({ error: 'Missing stripe-signature header' }, { status: 400 })
   }
 
   let event: Stripe.Event
 
   try {
-    event = stripe.webhooks.constructEvent(
-      body,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET!
-    )
+    event = stripe.webhooks.constructEvent(body, signature, process.env.STRIPE_WEBHOOK_SECRET!)
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unknown error'
     console.error('Webhook signature verification failed:', message)
-    return NextResponse.json(
-      { error: 'Invalid webhook signature' },
-      { status: 400 }
-    )
+    return NextResponse.json({ error: 'Invalid webhook signature' }, { status: 400 })
   }
 
   const supabase = createServiceRoleClient()
@@ -114,7 +101,7 @@ export async function POST(request: NextRequest) {
             userId: failedProfile?.id ?? null,
             amountDue: invoice.amount_due,
             currency: invoice.currency,
-          })
+          }),
         )
 
         // Send payment-failed notification via Resend (non-blocking)
@@ -129,7 +116,10 @@ export async function POST(request: NextRequest) {
               customerEmail = customer.email
             }
           } catch (err) {
-            console.warn('[stripe/webhook] Failed to retrieve Stripe customer for invoice.payment_failed:', err)
+            console.warn(
+              '[stripe/webhook] Failed to retrieve Stripe customer for invoice.payment_failed:',
+              err,
+            )
           }
 
           if (!customerEmail) {
@@ -171,7 +161,7 @@ export async function POST(request: NextRequest) {
               if (!res.ok) {
                 const errorBody = await res.text()
                 console.error(
-                  `[stripe/webhook] Failed to send payment_failed email: ${res.status} ${errorBody}`
+                  `[stripe/webhook] Failed to send payment_failed email: ${res.status} ${errorBody}`,
                 )
               }
             } catch (err) {
@@ -180,12 +170,12 @@ export async function POST(request: NextRequest) {
             }
           } else {
             console.warn(
-              `[stripe/webhook] invoice.payment_failed: could not resolve email for customer, skipping notification`
+              `[stripe/webhook] invoice.payment_failed: could not resolve email for customer, skipping notification`,
             )
           }
         } else {
           console.warn(
-            '[stripe/webhook] RESEND_API_KEY not configured — skipping payment_failed email'
+            '[stripe/webhook] RESEND_API_KEY not configured — skipping payment_failed email',
           )
         }
 
@@ -208,9 +198,7 @@ export async function POST(request: NextRequest) {
         const invoiceAny = invoice as any
         if (paidProfile && invoiceAny.subscription) {
           const periodEnd = invoiceAny.period_end as number | undefined
-          const subscriptionEndDate = periodEnd
-            ? new Date(periodEnd * 1000).toISOString()
-            : null
+          const subscriptionEndDate = periodEnd ? new Date(periodEnd * 1000).toISOString() : null
 
           const { error } = await supabase
             .from('profiles')
@@ -246,7 +234,7 @@ export async function POST(request: NextRequest) {
               typeof chargeAny.invoice === 'string' ? chargeAny.invoice : chargeAny.invoice?.id
             if (invoiceId) {
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              const invoice = await stripe.invoices.retrieve(invoiceId) as any
+              const invoice = (await stripe.invoices.retrieve(invoiceId)) as any
               subscriptionId =
                 typeof invoice.subscription === 'string' ? invoice.subscription : null
             }
@@ -254,7 +242,7 @@ export async function POST(request: NextRequest) {
 
           if (!subscriptionId) {
             console.warn(
-              `[stripe/webhook] charge.refunded: could not resolve subscription for charge ${charge.id}, skipping commission void`
+              `[stripe/webhook] charge.refunded: could not resolve subscription for charge ${charge.id}, skipping commission void`,
             )
             break
           }
@@ -271,11 +259,11 @@ export async function POST(request: NextRequest) {
           if (voidError) {
             console.error(
               `[stripe/webhook] Failed to void affiliate commissions for charge ${charge.id} (subscription ${subscriptionId}):`,
-              voidError
+              voidError,
             )
           } else if (voidedCount && voidedCount > 0) {
             console.info(
-              `[stripe/webhook] charge.refunded: voided ${voidedCount} affiliate commission(s) for subscription ${subscriptionId}`
+              `[stripe/webhook] charge.refunded: voided ${voidedCount} affiliate commission(s) for subscription ${subscriptionId}`,
             )
           }
         } catch (err) {
@@ -312,13 +300,13 @@ export async function POST(request: NextRequest) {
         }
 
         const activeStatuses = ['active', 'trialing']
-        const subscriptionStatus = activeStatuses.includes(subscription.status) ? 'pro' : 'incomplete'
+        const subscriptionStatus = activeStatuses.includes(subscription.status)
+          ? 'pro'
+          : 'incomplete'
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const periodEnd = (subscription as any).current_period_end as number | undefined
-        const subscriptionEndDate = periodEnd
-          ? new Date(periodEnd * 1000).toISOString()
-          : null
+        const subscriptionEndDate = periodEnd ? new Date(periodEnd * 1000).toISOString() : null
 
         const { error } = await supabase
           .from('profiles')
@@ -358,15 +346,12 @@ export async function POST(request: NextRequest) {
       console.error(`Missing metadata in ${event.type}: ${error.message}`)
       return NextResponse.json(
         { error: 'Missing required metadata in webhook event' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
     console.error(`Error handling webhook event ${event.type}:`, error)
-    return NextResponse.json(
-      { error: 'Webhook handler failed' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Webhook handler failed' }, { status: 500 })
   }
 }
 
@@ -376,12 +361,12 @@ export async function POST(request: NextRequest) {
 
 async function handleCheckoutCompleted(
   session: Stripe.Checkout.Session,
-  supabase: ReturnType<typeof createServiceRoleClient>
+  supabase: ReturnType<typeof createServiceRoleClient>,
 ) {
   const userId = session.metadata?.userId
   if (!userId) {
     throw new WebhookMetadataError(
-      `checkout.session.completed: missing userId in metadata (session ${session.id})`
+      `checkout.session.completed: missing userId in metadata (session ${session.id})`,
     )
   }
 
@@ -394,9 +379,7 @@ async function handleCheckoutCompleted(
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const cpEnd = (subscription as any).current_period_end as number | undefined
-    const subscriptionEndDate = cpEnd
-      ? new Date(cpEnd * 1000).toISOString()
-      : null
+    const subscriptionEndDate = cpEnd ? new Date(cpEnd * 1000).toISOString() : null
 
     const { error } = await supabase
       .from('profiles')
@@ -416,16 +399,19 @@ async function handleCheckoutCompleted(
     const courseId = session.metadata?.courseId
     if (!courseId) {
       throw new WebhookMetadataError(
-        `checkout.session.completed (payment): missing courseId in metadata (session ${session.id})`
+        `checkout.session.completed (payment): missing courseId in metadata (session ${session.id})`,
       )
     }
 
-    const { error } = await supabase.from('enrolments').upsert({
-      user_id: userId,
-      course_id: courseId,
-      payment_type: 'one_time',
-      stripe_payment_intent_id: session.payment_intent as string,
-    }, { onConflict: 'user_id,course_id' })
+    const { error } = await supabase.from('enrolments').upsert(
+      {
+        user_id: userId,
+        course_id: courseId,
+        payment_type: 'one_time',
+        stripe_payment_intent_id: session.payment_intent as string,
+      },
+      { onConflict: 'user_id,course_id' },
+    )
 
     if (error) {
       console.error('Failed to create enrolment record:', error)
@@ -436,7 +422,7 @@ async function handleCheckoutCompleted(
 
 async function handleSubscriptionUpdated(
   subscription: Stripe.Subscription,
-  supabase: ReturnType<typeof createServiceRoleClient>
+  supabase: ReturnType<typeof createServiceRoleClient>,
 ) {
   let userId = subscription.metadata?.userId
   if (!userId) {
@@ -472,6 +458,42 @@ async function handleSubscriptionUpdated(
     ? new Date(periodEndUpdate * 1000).toISOString()
     : null
 
+  // P1 (Cycle 2 security audit): Stripe does not guarantee webhook delivery
+  // order. An `customer.subscription.updated` with `status: 'active'` that
+  // arrives AFTER a `customer.subscription.deleted` has already fired would
+  // silently re-grant Pro to a cancelled user. Guard: if the stored state
+  // is already terminal (`cancelled`/`unpaid`) and the subscription's
+  // canonical end date has passed, refuse to upgrade back to `pro` or
+  // `trialing`. A genuine re-subscription comes through `checkout.session
+  // .completed` → `subscription.created`, not a late-arriving `.updated`.
+  const wouldUpgrade = subscriptionStatus === 'pro' || subscriptionStatus === 'trialing'
+  if (wouldUpgrade) {
+    const { data: currentProfile } = await supabase
+      .from('profiles')
+      .select('subscription_status, subscription_end_date')
+      .eq('id', userId)
+      .single()
+
+    const currentStatus = currentProfile?.subscription_status
+    const currentEndDate = currentProfile?.subscription_end_date
+      ? new Date(currentProfile.subscription_end_date)
+      : null
+
+    const isTerminalState = currentStatus === 'cancelled' || currentStatus === 'unpaid'
+    const endDatePassed = currentEndDate ? currentEndDate.getTime() < Date.now() : false
+
+    if (isTerminalState && endDatePassed) {
+      console.warn('[stripe/webhook] Refusing to re-grant Pro via stale subscription.updated', {
+        subscriptionId: subscription.id,
+        userId,
+        currentStatus,
+        currentEndDate: currentProfile?.subscription_end_date,
+        incomingStatus: subscriptionStatus,
+      })
+      return
+    }
+  }
+
   const { error } = await supabase
     .from('profiles')
     .update({
@@ -488,7 +510,7 @@ async function handleSubscriptionUpdated(
 
 async function handleSubscriptionDeleted(
   subscription: Stripe.Subscription,
-  supabase: ReturnType<typeof createServiceRoleClient>
+  supabase: ReturnType<typeof createServiceRoleClient>,
 ) {
   let userId = subscription.metadata?.userId
   if (!userId) {
@@ -538,13 +560,16 @@ async function handleSubscriptionDeleted(
     .in('commission_status', ['pending', 'confirmed'])
 
   if (voidError) {
-    console.error(`[stripe/webhook] Failed to void affiliate commissions for subscription ${subscription.id}:`, voidError)
+    console.error(
+      `[stripe/webhook] Failed to void affiliate commissions for subscription ${subscription.id}:`,
+      voidError,
+    )
   }
 }
 
 async function handleTrialWillEnd(
   subscription: Stripe.Subscription,
-  supabase: ReturnType<typeof createServiceRoleClient>
+  supabase: ReturnType<typeof createServiceRoleClient>,
 ) {
   const customerId = subscription.customer as string
 
@@ -571,9 +596,7 @@ async function handleTrialWillEnd(
   }
 
   const trialEndTimestamp = subscription.trial_end
-  const trialEndDate = trialEndTimestamp
-    ? new Date(trialEndTimestamp * 1000)
-    : null
+  const trialEndDate = trialEndTimestamp ? new Date(trialEndTimestamp * 1000) : null
   const trialEndFormatted = trialEndDate
     ? trialEndDate.toLocaleDateString('en-GB', {
         weekday: 'long',
@@ -588,12 +611,12 @@ async function handleTrialWillEnd(
       event: 'customer.subscription.trial_will_end',
       subscriptionId: subscription.id,
       trialEnd: trialEndDate?.toISOString() ?? null,
-    })
+    }),
   )
 
   if (!customerEmail) {
     console.error(
-      '[stripe/webhook] trial_will_end: could not resolve email for customer, skipping notification'
+      '[stripe/webhook] trial_will_end: could not resolve email for customer, skipping notification',
     )
     return
   }
@@ -601,9 +624,7 @@ async function handleTrialWillEnd(
   // Send trial-ending notification via Resend
   const resendApiKey = process.env.RESEND_API_KEY
   if (!resendApiKey) {
-    console.warn(
-      '[stripe/webhook] RESEND_API_KEY not configured — skipping trial_will_end email'
-    )
+    console.warn('[stripe/webhook] RESEND_API_KEY not configured — skipping trial_will_end email')
     return
   }
 
@@ -641,7 +662,7 @@ async function handleTrialWillEnd(
     if (!res.ok) {
       const errorBody = await res.text()
       console.error(
-        `[stripe/webhook] Failed to send trial_will_end email to ${customerEmail}: ${res.status} ${errorBody}`
+        `[stripe/webhook] Failed to send trial_will_end email to ${customerEmail}: ${res.status} ${errorBody}`,
       )
     }
   } catch (err) {
