@@ -90,12 +90,12 @@ async function sendConsentRequestEmail(args: {
   }
   try {
     const consentUrl = `${getSiteUrl()}/consent?token=${encodeURIComponent(args.token)}`
-    const { subject, html } = buildParentConsentEmail({
+    const { subject, html, text } = buildParentConsentEmail({
       studentName: args.studentName,
       schoolName: args.schoolName,
       consentUrl,
     })
-    const result = await sendEmail(args.parentEmail, subject, html)
+    const result = await sendEmail(args.parentEmail, subject, html, text)
     if (!result.success) {
       console.warn(
         `[consent] Failed to send consent-request email to ${maskEmail(args.parentEmail)}: ${result.error ?? 'unknown error'}`,
@@ -133,7 +133,7 @@ async function sendConsentDecisionEmail(args: {
             studentName: args.studentName,
             schoolName: args.schoolName,
           })
-    const result = await sendEmail(args.parentEmail, built.subject, built.html)
+    const result = await sendEmail(args.parentEmail, built.subject, built.html, built.text)
     if (!result.success) {
       console.warn(
         `[consent] Failed to send ${args.decision} confirmation to ${maskEmail(args.parentEmail)}: ${result.error ?? 'unknown error'}`,
