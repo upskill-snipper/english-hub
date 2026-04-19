@@ -14,9 +14,9 @@ import {
 
 export async function GET(
   _request: NextRequest,
-  context: { params: { childId: string } }
+  context: { params: Promise<{ childId: string }> }
 ) {
-  const { childId } = context.params
+  const { childId } = (await context.params)
 
   try {
     const supabase = createServerSupabaseClient()

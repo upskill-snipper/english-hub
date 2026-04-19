@@ -23,10 +23,11 @@ export const dynamicParams = true
 // Metadata
 // ---------------------------------------------------------------------------
 interface Props {
-  params: { slug: string[] }
+  params: Promise<{ slug: string[] }>
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const key = params.slug.join('/')
   const entry = ANALYSIS_PAGE_MAP.get(key)
 
@@ -70,7 +71,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 }
 
 function cleanTitle(title: string): string {
-  return title.replace(/ \| .+$/, '')
+  return title.replace(/ \| .+$/, '');
 }
 
 function relatedEntries(category: string, currentKey: string): AnalysisPageEntry[] {
@@ -89,7 +90,8 @@ function capitalise(str: string): string {
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
-export default function AnalysisPage({ params }: Props) {
+export default async function AnalysisPage(props: Props) {
+  const params = await props.params;
   const key = params.slug.join('/')
   const entry = ANALYSIS_PAGE_MAP.get(key)
 

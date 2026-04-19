@@ -39,7 +39,7 @@ function encode(payload: AffiliateCookiePayload): string {
   // Edge runtime fallback
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const b64 = (globalThis as any).btoa(unescape(encodeURIComponent(json)))
-  return b64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+  return b64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 
 function decode(raw: string): AffiliateCookiePayload | null {
@@ -114,7 +114,8 @@ export function clearAffiliateCookieOnResponse(response: NextResponse): void {
 
 async function getCookieStore() {
   const mod = await import('next/headers')
-  return mod.cookies()
+  // Next 15: `cookies()` is async and must be awaited.
+  return await mod.cookies()
 }
 
 export async function readAffiliateCookie(): Promise<AffiliateCookiePayload | null> {

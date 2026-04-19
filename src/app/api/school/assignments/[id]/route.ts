@@ -18,10 +18,8 @@ type AssignmentStatusValue = (typeof VALID_STATUSES)[number]
  *
  * Returns a single assignment with its submissions.
  */
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-assignment-get:${ip}`, { limit: 30, windowSeconds: 60 })
@@ -115,10 +113,8 @@ export async function GET(
  * Updates an existing assignment. Only the owning teacher, admin, or HoD may update.
  * Allowed fields: title, description, type, status, due_date, course_id, module_ids.
  */
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function PATCH(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-assignment-update:${ip}`, { limit: 15, windowSeconds: 60 })
@@ -316,10 +312,8 @@ export async function PATCH(
  * Deletes an assignment and all its submissions (cascade).
  * Only the owning teacher, admin, or HoD may delete.
  */
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-assignment-delete:${ip}`, { limit: 10, windowSeconds: 60 })

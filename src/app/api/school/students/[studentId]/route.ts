@@ -20,10 +20,8 @@ function predictGrade(avgScore: number): string {
   return 'Grade 1'
 }
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { studentId: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ studentId: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-student-detail:${ip}`, { limit: 30, windowSeconds: 60 })

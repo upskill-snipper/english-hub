@@ -10,10 +10,8 @@ export const dynamic = "force-dynamic"
 // Cancel (revoke) a pending invite. Admin only.
 // ---------------------------------------------------------------------------
 
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { token: string } }
-) {
+export async function DELETE(request: NextRequest, props: { params: Promise<{ token: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-invite-revoke:${ip}`, { limit: 20, windowSeconds: 60 })

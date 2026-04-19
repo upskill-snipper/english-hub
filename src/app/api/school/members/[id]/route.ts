@@ -9,11 +9,12 @@ const VALID_ROLES = ["admin", "head_of_department", "teacher"] as const
 type SchoolRole = typeof VALID_ROLES[number]
 
 interface RouteParams {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 // GET /api/school/members/[id] — get single member details
-export async function GET(request: NextRequest, { params }: RouteParams) {
+export async function GET(request: NextRequest, props: RouteParams) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-member-get:${ip}`, { limit: 30, windowSeconds: 60 })
@@ -65,7 +66,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 }
 
 // PUT /api/school/members/[id] — update member (name, email, role, department)
-export async function PUT(request: NextRequest, { params }: RouteParams) {
+export async function PUT(request: NextRequest, props: RouteParams) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-member-update:${ip}`, { limit: 20, windowSeconds: 60 })
@@ -168,7 +170,8 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
 }
 
 // DELETE /api/school/members/[id] — remove member from school
-export async function DELETE(request: NextRequest, { params }: RouteParams) {
+export async function DELETE(request: NextRequest, props: RouteParams) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-member-delete:${ip}`, { limit: 10, windowSeconds: 60 })

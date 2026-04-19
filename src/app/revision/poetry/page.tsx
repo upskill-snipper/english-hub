@@ -15,11 +15,12 @@ import { PoetryHubAQAClient } from './PoetryHubAQAClient'
 
 type SearchParams = { wrongBoard?: string }
 
-export default async function PoetryRevisionPage({
-  searchParams,
-}: {
-  searchParams?: SearchParams
-}) {
+export default async function PoetryRevisionPage(
+  props: {
+    searchParams?: Promise<SearchParams>
+  }
+) {
+  const searchParams = await props.searchParams;
   const board = await getServerBoard()
   const wrongBoard = searchParams?.wrongBoard === '1'
 

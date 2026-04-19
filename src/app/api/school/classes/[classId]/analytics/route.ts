@@ -19,10 +19,8 @@ function getTrajectory(scores: number[]): 'improving' | 'declining' | 'stable' |
   return 'stable'
 }
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { classId: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ classId: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-analytics:${ip}`, { limit: 20, windowSeconds: 60 })

@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
     ? rawNext
     : '/dashboard'
 
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,

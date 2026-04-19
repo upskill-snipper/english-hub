@@ -12,10 +12,8 @@ export const dynamic = "force-dynamic";
 // Auth: school admin only.
 // ---------------------------------------------------------------------------
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { jobId: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ jobId: string }> }) {
+  const params = await props.params;
   try {
     // 1. Auth
     const supabase = createServerSupabaseClient();

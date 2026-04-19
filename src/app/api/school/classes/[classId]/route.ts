@@ -16,10 +16,8 @@ async function verifyClassBelongsToSchool(classId: string, schoolId: string) {
   return !error && !!data
 }
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { classId: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ classId: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-detail:${ip}`, { limit: 30, windowSeconds: 60 })
@@ -180,10 +178,8 @@ export async function GET(
   }
 }
 
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { classId: string } }
-) {
+export async function PATCH(request: NextRequest, props: { params: Promise<{ classId: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-update:${ip}`, { limit: 10, windowSeconds: 60 })
@@ -276,10 +272,8 @@ export async function PATCH(
   }
 }
 
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { classId: string } }
-) {
+export async function DELETE(request: NextRequest, props: { params: Promise<{ classId: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-class-delete:${ip}`, { limit: 5, windowSeconds: 60 })

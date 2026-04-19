@@ -3,10 +3,11 @@ import { allCourses } from '@/data/courses'
 import AssessmentPage from './client-page'
 
 interface Props {
-  params: { courseId: string }
+  params: Promise<{ courseId: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const course = allCourses.find((c) => c.id === params.courseId)
   if (!course) return {}
 

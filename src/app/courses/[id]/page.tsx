@@ -5,10 +5,11 @@ import { CourseJsonLd } from '@/components/seo/json-ld'
 import CourseDetailPage from './client-page'
 
 interface Props {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const course = allCourses.find((c) => c.id === params.id)
   if (!course) return {}
 
@@ -40,7 +41,8 @@ export function generateStaticParams() {
   return allCourses.map((course) => ({ id: course.id }))
 }
 
-export default function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const course = allCourses.find((c) => c.id === params.id)
   if (!course) notFound()
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, use } from "react";
 import Link from "next/link"
 import {
   ArrowLeft,
@@ -406,7 +406,8 @@ function QuizView({ quiz, onClose }: { quiz: { question: string; options: string
 // Page
 // ---------------------------------------------------------------------------
 
-export default function CourseDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default function CourseDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = use(props.params);
   const { id } = require("react").use(params)
   const course = COURSES[id] || getGenericCourse(id)
 

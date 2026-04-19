@@ -6,10 +6,8 @@ import { rateLimit, getClientIp } from "@/lib/rate-limit"
 export const dynamic = "force-dynamic"
 
 // PATCH /api/school/join-codes/[code] — disable a join code
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { code: string } }
-) {
+export async function PATCH(request: NextRequest, props: { params: Promise<{ code: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-join-codes-patch:${ip}`, { limit: 20, windowSeconds: 60 })
@@ -63,10 +61,8 @@ export async function PATCH(
 }
 
 // DELETE /api/school/join-codes/[code] — permanently delete a join code
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { code: string } }
-) {
+export async function DELETE(request: NextRequest, props: { params: Promise<{ code: string }> }) {
+  const params = await props.params;
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-join-codes-delete:${ip}`, { limit: 20, windowSeconds: 60 })

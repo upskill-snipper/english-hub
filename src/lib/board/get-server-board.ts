@@ -8,7 +8,7 @@ const VALID: ExamBoard[] = BOARDS.map((b) => b.id)
 
 export async function getServerBoard(): Promise<ExamBoard | null> {
   try {
-    const store = cookies()
+    const store = await cookies()
     const value = store.get('english-hub-board')?.value
     if (value && VALID.includes(value as ExamBoard)) {
       return value as ExamBoard

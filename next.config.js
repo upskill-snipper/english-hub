@@ -19,7 +19,8 @@ const nextConfig = {
     dirs: ['src'],
   },
   experimental: {
-    instrumentationHook: true,
+    // instrumentationHook: removed in Next 15 — instrumentation.js is
+    // available by default and no longer needs this flag.
     scrollRestoration: true,
     optimizePackageImports: [
       'lucide-react',
