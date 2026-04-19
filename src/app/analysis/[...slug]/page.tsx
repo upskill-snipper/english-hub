@@ -7,13 +7,17 @@ import { getCategoryContext } from '@/data/analysis/category-context'
 // ---------------------------------------------------------------------------
 // ISR: pages are generated on first request and cached for 24 hours.
 // Avoids the Vercel build OOM that 210 statically-generated pages caused.
+//
+// We intentionally do NOT export generateStaticParams here. In Next.js 14,
+// combining `generateStaticParams() { return [] }` with dynamic ISR causes
+// a runtime "Page changed from static to dynamic" 500 on first render. By
+// omitting it entirely, Next.js treats this as a dynamic route with ISR,
+// which is what we want: generated on-demand, cached 24 h, no build-time
+// pre-render of the 201 slugs.
 // ---------------------------------------------------------------------------
 export const revalidate = 86400
-
-// Do NOT pre-render any sub-pages at build time — generated on-demand.
-export function generateStaticParams() {
-  return []
-}
+export const dynamic = 'force-static'
+export const dynamicParams = true
 
 // ---------------------------------------------------------------------------
 // Metadata

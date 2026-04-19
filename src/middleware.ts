@@ -77,6 +77,24 @@ const BOARD_ALLOWLIST_PREFIX: string[] = [
   // Long-tail SEO content hub — board-agnostic analysis pages
   '/analysis/',
 
+  // Revision content hub — must be crawlable by Googlebot even without a
+  // board cookie. Board-specific UI filtering happens client-side once the
+  // cookie is set; non-logged-in visitors see the generic rendered version.
+  '/revision/',
+
+  // Practice, games, assessment, mock exams — content surfaces that must
+  // be crawlable. Each page handles the no-board case with a friendly
+  // fallback (see e.g. QuoteMatchGame's empty-board branch).
+  '/practice/',
+  '/games/',
+  '/assessment/',
+  '/mock-exams/',
+  '/courses/',
+  '/igcse/',
+  '/learn/',
+  '/marking/',
+  '/toolkit/',
+
   // API + Next.js internals
   '/api/',
   '/_next/',
