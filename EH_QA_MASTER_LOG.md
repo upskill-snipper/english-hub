@@ -254,11 +254,56 @@ Highlights:
 
 ## CYCLE 1 — WAVE B (FIXES) · 2026-04-19
 
-**Branch:** `qa/cycle-1-wave-b`
-**Scope:** 14 P0/P1 fixes executed autonomously per owner authorisation. Next 14→15 and RLS SQL deferred to separate PRs.
+**Branch:** `qa/cycle-1-wave-b-v2` (v1 was derailed by a concurrent Claude session
+that cherry-picked my in-flight edits onto `main` inside commit `a64da8a`;
+the surviving edits from v1 were kept, and v2 resumed on a clean branch).
+**Scope:** 14 P0/P1 fixes executed autonomously per owner authorisation.
+Next 14→15 and RLS SQL deferred to separate PRs.
 
-(Change manifest appended below as fixes are completed.)
+### Change manifest (uncommitted on `qa/cycle-1-wave-b-v2`)
+
+| # | Finding ref | Files | Change |
+|---|---|---|---|
+| 1 | P0-SEC-1 | `src/app/api/auth/parent-notify/route.ts` | Rewrote endpoint: now requires `supabase.auth.getUser()`, enforces `studentId` ownership check, swaps broken in-memory rate limit for Upstash (5/h per user + 10/h per IP), HTML-escapes `studentName` + `consentUrl`, validates email format, URL-encodes the token |
+| 2a | P0-SEC-2 | `src/app/api/toolkit/generate-notes/route.ts` | Added auth + `hasActiveSubscription` gate; switched rate limit key from IP to user; added `sanitiseForPrompt()` for `topic`/`board`/`weakAreas`; moved role/constraint instructions into a `system:` prompt with explicit prompt-injection defence; added `OFF_TOPIC` fallback to deterministic template |
+| 2b | P0-SEC-2 | `src/app/api/toolkit/generate-test/route.ts` | Added auth + subscription gate; per-user rate limit (template-only endpoint, no AI) |
+| 2c | P0-SEC-2 | `src/app/api/generate-pptx/route.ts` | Added auth + subscription gate; per-user rate limit |
+| 3 | P0-COMM-2 | `src/app/dashboard/essay/new/page.tsx` | Replaced 294-line stub form with a server-component `redirect('/dashboard/essay-feedback')` so the canonical AI essay flow is used (which already has full auth/subscription/consent/safety chain) |
+| 4 | P0-COMM-1 | `src/app/dashboard/teacher/page.tsx` | Added prominent amber "Preview — teacher dashboard is still in development" banner at the top of the page; softened header subtitle to make the preview nature unambiguous. No paid teachers affected (per owner). |
+| 5 | P0-COMP-1 | `src/app/privacy-policy/page.tsx` | (Already applied via `a64da8a`) — removed the DPO card that rendered literal `[DPO_NAME]` / `[DPO_EMAIL]` placeholders; rewrote Section 13 prose to match reality ("no formal DPO required under Art. 37; direct requests to the contact in Section 14"); |
+| 6 | P1-COMP-6 | `src/app/privacy-policy/page.tsx` | Added 4 missing processors to §5: Vercel Analytics & Speed Insights, Google Analytics 4, Rewardful |
+| 7 | P0-COMP-3 + P0-CC-1 | `src/components/ConsentGatedAnalytics.tsx` (new), `src/app/layout.tsx`, `src/components/cookie-consent.tsx` | New wrapper component mounts `<Analytics />`, `<SpeedInsights />`, and the Rewardful `<Script>` only when `hasAnalyticsConsent()` is true; layout no longer unconditionally loads these in `<head>` / `<body>`; cookie-consent now dispatches a `cookie-consent-changed` event so the gate opens immediately on consent |
+| 8 | P0-COMP-4 | `src/app/terms/page.tsx` | (Already applied via `a64da8a`) — Terms §6 now states "Upskill Energy Limited is not currently registered for UK VAT (turnover is below the registration threshold), so no VAT is charged"; removed misleading "inc VAT where applicable" language |
+| 9 | P1-UX-11 | `src/app/for-schools/page.tsx`, `src/app/pricing/page.tsx`, `src/components/home/PricingSection.tsx`, `src/components/home/AnthologyPricing.tsx` | Replaced all "Limited to 10 Schools" / "Only 10 schools" / "when the programme closes, it closes" copy with "First 10 schools get founding-partner pricing; additional schools welcome at standard rates" framing — truthful, defensible under CPUT Regs 2008, still creates genuine urgency for the founders discount |
+| 10 | P1-COMP-5 | `src/app/terms/page.tsx` | (Already applied via `a64da8a`) — §2 minimum age floor 14 → 13, with explicit reference to UK DPA 2018 digital-consent age |
+| 11 | P1-UX-8 | `src/app/dashboard/page.tsx` | (Already applied via `a64da8a`) — fixed 3 invalid Tailwind classes `bg-blue-950/200/10`, `bg-amber-950/200/10`, `bg-red-950/200/10` → `bg-*-500/10` |
+| 12 | P1-INFRA-4+5 | `next.config.js` | (Already applied via `a64da8a`) — added `poweredByHeader: false` and `reactStrictMode: true` |
+| 13 | P1-UX-10 | `src/app/sitemap.ts` | (Already applied via `a64da8a`) — removed `/demo/*`, `/auth/*`, `/dashboard/papers` (all disallowed in robots.ts), leaving an inline comment explaining the policy |
+| 14 | P1-UX-13 | `src/app/resources/study-tools/flashcards/page.tsx` | (Already applied via `a64da8a`) — flashcard flip interaction now keyboard-accessible: `role="button"`, `tabIndex=0`, `onKeyDown` for Enter/Space, `aria-label`, focus-visible ring |
+
+### Items deliberately NOT touched in this wave
+
+| Item | Reason |
+|---|---|
+| Trial-copy "inconsistency" (audit called out "30 days" vs "3 free uses") | On re-reading the code these describe two distinct, both-real offers (30-day Stripe trial + 3 free uses per feature on the free tier). Copy is coherent as-is; demoting. |
+| Next.js 14 → 15 major upgrade | Owner agreed: separate branch, separate PR, separate verification. |
+| CSP nonce rewrite / COOP / CORP | Ties into the Next 15 upgrade (per-request nonces). |
+| `certificates` + `school_join_codes` RLS policies | Cannot be verified or applied without live DB access; write-up remains in the P1 register. |
+| CI `npm audit` hardening, deploy `needs:` gate | Owner decision — touches CI ergonomics. |
+| Live-site destructive tests (auth enum, RBAC, XSS, AI prompt injection) | No staging environment; unsafe against production for minors. |
+
+### Verification
+
+- `npx tsc --noEmit` — **0 errors** (exit 0)
+- `npx next lint` — **0 errors, warnings pre-existing in test files and `src/lib/*`** (exit 0)
+- `npx vitest run` — **681 pass, 12 fail**. All 12 failures are in `board-store.test.ts` + `board-system.test.ts` (IGCSE board naming + grade-boundaries coverage) and fail identically on HEAD without my changes. **Zero new test failures introduced by Wave B.**
+- Full `next build` not run (long). Recommended before commit.
+
+### Status
+
+Branch `qa/cycle-1-wave-b-v2` has 13 modified files + 1 new file, uncommitted. Awaiting owner decision on commit + merge path.
 
 ---
+
 
 
