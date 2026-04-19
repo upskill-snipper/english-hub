@@ -1,3 +1,4 @@
+// Cycle 7 / Identity PR-3: lookups prefer supabaseUserId over email.
 import { prisma } from '@/lib/prisma'
 import { sendEmail } from '@/lib/email'
 import { createServiceRoleClient } from '@/lib/supabase/server'
@@ -471,6 +472,12 @@ export async function anonymiseUser(userId: string): Promise<void> {
  * This is irreversible.
  */
 export async function hardDeleteUser(userId: string): Promise<void> {
+  // Capture the identity info we need to purge the Supabase auth.users row
+  // AFTER the Prisma transaction commits and anonymises the email column.
+  // Prefer the canonical `supabaseUserId` (populated by PR-1/PR-2) so we
+  // can target the auth.users row by UUID directly, avoiding the brittle
+  // email-scan fallback that the Cycle 7 convergence plan is closing.
+  let supabaseUserId: string | null = null
   let supabaseUserEmail: string | null = null
 
   await prisma.$transaction(async (tx) => {
@@ -479,10 +486,12 @@ export async function hardDeleteUser(userId: string): Promise<void> {
       select: {
         id: true,
         email: true,
+        supabaseUserId: true,
         isMinor: true,
         dateOfBirth: true,
       },
     })
+    supabaseUserId = user?.supabaseUserId ?? null
     supabaseUserEmail = user?.email ?? null
 
     if (!user) {
@@ -579,18 +588,28 @@ export async function hardDeleteUser(userId: string): Promise<void> {
   // succeeded by this point, so a Supabase failure leaves the app-side
   // data deleted (compliant direction) with only the Supabase auth
   // record lingering. A retry/reconciliation task can sweep those.
-  if (supabaseUserEmail) {
+  //
+  // Cycle 7 / Identity PR-3: prefer the stored `supabaseUserId` UUID so
+  // we can target auth.users directly. Fall back to the email-scan path
+  // only when the column is null (pre-backfill rows); that scan was the
+  // core bug this convergence plan closes.
+  if (supabaseUserId || supabaseUserEmail) {
     try {
       const admin = createServiceRoleClient()
-      // Supabase uses its own UUID for auth.users; our Prisma User.id
-      // is a cuid. The two are linked only by email. Find the matching
-      // Supabase user by email and delete them.
-      const { data: authUsers } = await admin.auth.admin.listUsers()
-      const match = authUsers?.users.find(
-        (u) => u.email?.toLowerCase() === supabaseUserEmail!.toLowerCase(),
-      )
-      if (match) {
-        await admin.auth.admin.deleteUser(match.id)
+      if (supabaseUserId) {
+        // Direct UUID-based deletion — no listUsers scan needed.
+        await admin.auth.admin.deleteUser(supabaseUserId)
+      } else {
+        // Legacy fallback: Prisma row had no supabaseUserId populated.
+        // Supabase uses its own UUID for auth.users; our Prisma User.id
+        // is a cuid. Find the matching Supabase user by email and delete.
+        const { data: authUsers } = await admin.auth.admin.listUsers()
+        const match = authUsers?.users.find(
+          (u) => u.email?.toLowerCase() === supabaseUserEmail!.toLowerCase(),
+        )
+        if (match) {
+          await admin.auth.admin.deleteUser(match.id)
+        }
       }
     } catch (err) {
       // Log but don't throw: Prisma data is already gone. Surface this

@@ -1,9 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
-import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { prisma } from "@/lib/prisma";
-import { sendEmail } from "@/lib/email";
-import { rateLimit } from "@/lib/rate-limit";
-import { RETENTION_PERIODS } from "@/lib/data-retention";
+// Cycle 7 / Identity PR-3: lookups prefer supabaseUserId over email.
+import { NextRequest, NextResponse } from 'next/server'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { prisma } from '@/lib/prisma'
+import { sendEmail } from '@/lib/email'
+import { rateLimit } from '@/lib/rate-limit'
+import { RETENTION_PERIODS } from '@/lib/data-retention'
 
 // ─── POST: Parent requests deletion of their child's account data ─────────
 //
@@ -15,21 +16,18 @@ import { RETENTION_PERIODS } from "@/lib/data-retention";
 export async function POST(request: NextRequest) {
   try {
     // ── Authenticate ───────────────────────────────────────────────────
-    const supabase = createServerSupabaseClient();
+    const supabase = createServerSupabaseClient()
     const {
       data: { user: authUser },
       error: authError,
-    } = await supabase.auth.getUser();
+    } = await supabase.auth.getUser()
 
     if (authError || !authUser) {
-      return NextResponse.json(
-        { error: "Authentication required." },
-        { status: 401 }
-      );
+      return NextResponse.json({ error: 'Authentication required.' }, { status: 401 })
     }
 
-    const parent = await prisma.user.findUnique({
-      where: { email: authUser.email! },
+    const parentBySupabaseId = await prisma.user.findUnique({
+      where: { supabaseUserId: authUser.id },
       select: {
         id: true,
         role: true,
@@ -37,51 +35,62 @@ export async function POST(request: NextRequest) {
         email: true,
         firstName: true,
       },
-    });
+    })
+    // Fallback for pre-backfill or mismatched rows — logged as a warning.
+    const parent =
+      parentBySupabaseId ??
+      (await prisma.user.findUnique({
+        where: { email: authUser.email!.toLowerCase() },
+        select: {
+          id: true,
+          role: true,
+          accountStatus: true,
+          email: true,
+          firstName: true,
+        },
+      }))
+    if (parent && !parentBySupabaseId) {
+      console.warn('[identity] Prisma row matched by email, not supabaseUserId', {
+        supabaseUserId: authUser.id,
+        prismaUserId: parent.id,
+      })
+    }
 
-    if (!parent || parent.accountStatus !== "ACTIVE") {
-      return NextResponse.json(
-        { error: "Session expired. Please log in again." },
-        { status: 401 }
-      );
+    if (!parent || parent.accountStatus !== 'ACTIVE') {
+      return NextResponse.json({ error: 'Session expired. Please log in again.' }, { status: 401 })
     }
 
     // Only parents can initiate child data deletion
-    if (parent.role !== "PARENT") {
+    if (parent.role !== 'PARENT') {
       return NextResponse.json(
-        { error: "Only parent accounts can request child data deletion." },
-        { status: 403 }
-      );
+        { error: 'Only parent accounts can request child data deletion.' },
+        { status: 403 },
+      )
     }
 
     // ── Rate limit ─────────────────────────────────────────────────────
     const rl = await rateLimit(`parent-delete-child:${parent.id}`, {
       limit: 3,
       windowSeconds: 3600,
-    });
+    })
     if (!rl.success) {
       return NextResponse.json(
-        { error: "Too many requests. Please try again later." },
+        { error: 'Too many requests. Please try again later.' },
         {
           status: 429,
           headers: {
-            "Retry-After": String(
-              Math.ceil((rl.resetAt - Date.now()) / 1000)
-            ),
+            'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)),
           },
-        }
-      );
+        },
+      )
     }
 
     // ── Parse body ─────────────────────────────────────────────────────
-    const body = await request.json().catch(() => ({}));
-    const { childId } = body as { childId?: string };
+    const body = await request.json().catch(() => ({}))
+    const { childId } = body as { childId?: string }
 
-    if (!childId || typeof childId !== "string") {
-      return NextResponse.json(
-        { error: "Missing or invalid childId." },
-        { status: 400 }
-      );
+    if (!childId || typeof childId !== 'string') {
+      return NextResponse.json({ error: 'Missing or invalid childId.' }, { status: 400 })
     }
 
     // ── Verify parent is linked to the child account ───────────────────
@@ -96,52 +105,49 @@ export async function POST(request: NextRequest) {
         firstName: true,
         email: true,
       },
-    });
+    })
 
     if (!child) {
-      return NextResponse.json(
-        { error: "Child account not found." },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: 'Child account not found.' }, { status: 404 })
     }
 
     if (child.parentId !== parent.id) {
       return NextResponse.json(
-        { error: "You are not linked to this child account." },
-        { status: 403 }
-      );
+        { error: 'You are not linked to this child account.' },
+        { status: 403 },
+      )
     }
 
-    if (child.accountStatus === "DELETED") {
+    if (child.accountStatus === 'DELETED') {
       return NextResponse.json(
-        { error: "This account has already been scheduled for deletion." },
-        { status: 409 }
-      );
+        { error: 'This account has already been scheduled for deletion.' },
+        { status: 409 },
+      )
     }
 
     // ── Soft-delete the child account (30-day grace period) ────────────
-    const now = new Date();
-    const gracePeriodEndsAt = new Date(now);
+    const now = new Date()
+    const gracePeriodEndsAt = new Date(now)
     gracePeriodEndsAt.setDate(
-      gracePeriodEndsAt.getDate() + RETENTION_PERIODS.ACCOUNT_GRACE_PERIOD_DAYS
-    );
+      gracePeriodEndsAt.getDate() + RETENTION_PERIODS.ACCOUNT_GRACE_PERIOD_DAYS,
+    )
 
     await prisma.$transaction(async (tx) => {
       // 1. Soft-delete the child account
       await tx.user.update({
         where: { id: childId },
         data: {
-          accountStatus: "DELETED",
+          accountStatus: 'DELETED',
           deletedAt: now,
         },
-      });
+      })
 
       // 2. Log the request for compliance audit trail
       await tx.auditLog.create({
         data: {
           userId: parent.id,
-          action: "PARENT_INITIATED_CHILD_DATA_DELETION",
-          resource: "User",
+          action: 'PARENT_INITIATED_CHILD_DATA_DELETION',
+          resource: 'User',
           resourceId: childId,
           details: {
             parentId: parent.id,
@@ -151,61 +157,48 @@ export async function POST(request: NextRequest) {
             childFirstName: child.firstName,
             gracePeriodDays: RETENTION_PERIODS.ACCOUNT_GRACE_PERIOD_DAYS,
             gracePeriodEndsAt: gracePeriodEndsAt.toISOString(),
-            deletionMethod: "parent_portal",
-            complianceStandard:
-              "Children's Code Standard 11 – Parental Controls",
+            deletionMethod: 'parent_portal',
+            complianceStandard: "Children's Code Standard 11 – Parental Controls",
             requestedAt: now.toISOString(),
           },
           ipAddress:
-            request.headers.get("x-forwarded-for") ??
-            request.headers.get("x-real-ip") ??
-            "unknown",
+            request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? 'unknown',
         },
-      });
-    });
+      })
+    })
 
     // ── Send confirmation email to parent ───────────────────────────────
-    const formattedDate = gracePeriodEndsAt.toLocaleDateString("en-GB", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+    const formattedDate = gracePeriodEndsAt.toLocaleDateString('en-GB', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
 
     try {
       await sendEmail(
         parent.email,
         `Data deletion request confirmed for ${child.firstName}'s account`,
-        buildParentDeletionConfirmationEmail(
-          parent.firstName,
-          child.firstName,
-          formattedDate
-        )
-      );
+        buildParentDeletionConfirmationEmail(parent.firstName, child.firstName, formattedDate),
+      )
     } catch (emailErr) {
       // Email failure should not block the deletion request
-      console.error(
-        "[parent/delete-child-data] Failed to send confirmation email:",
-        emailErr
-      );
+      console.error('[parent/delete-child-data] Failed to send confirmation email:', emailErr)
     }
 
     return NextResponse.json(
       {
-        message: "Deletion request submitted successfully.",
+        message: 'Deletion request submitted successfully.',
         childId,
         gracePeriodDays: RETENTION_PERIODS.ACCOUNT_GRACE_PERIOD_DAYS,
         gracePeriodEndsAt: gracePeriodEndsAt.toISOString(),
         deletionScheduledFor: gracePeriodEndsAt.toISOString(),
       },
-      { status: 200 }
-    );
+      { status: 200 },
+    )
   } catch (err) {
-    console.error("[parent/delete-child-data] Error:", err);
-    return NextResponse.json(
-      { error: "Something went wrong. Please try again." },
-      { status: 500 }
-    );
+    console.error('[parent/delete-child-data] Error:', err)
+    return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 })
   }
 }
 
@@ -214,7 +207,7 @@ export async function POST(request: NextRequest) {
 function buildParentDeletionConfirmationEmail(
   parentName: string,
   childName: string,
-  deletionDate: string
+  deletionDate: string,
 ): string {
   return `
     <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
@@ -263,5 +256,5 @@ function buildParentDeletionConfirmationEmail(
         </p>
       </div>
     </div>
-  `;
+  `
 }

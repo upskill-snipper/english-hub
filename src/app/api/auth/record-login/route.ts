@@ -1,3 +1,4 @@
+// Cycle 7 / Identity PR-3: lookups prefer supabaseUserId over email.
 import { NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
@@ -42,8 +43,11 @@ export async function POST(request: NextRequest) {
     // updateMany avoids a throw when the Prisma User row doesn't exist
     // for this email (e.g. a Supabase-only account that never hit Prisma
     // for whatever reason). Best-effort — dormancy is a lagging signal.
+    // Match by supabaseUserId OR email so pre-backfill rows are still hit.
     const result = await prisma.user.updateMany({
-      where: { email: user.email },
+      where: {
+        OR: [{ supabaseUserId: user.id }, { email: user.email.toLowerCase() }],
+      },
       data: { lastLoginAt: new Date() },
     })
     return NextResponse.json({ ok: true, rows: result.count })

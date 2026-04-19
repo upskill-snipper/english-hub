@@ -1,11 +1,8 @@
+// Cycle 7 / Identity PR-3: lookups prefer supabaseUserId over email.
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
-import {
-  isValidLinkCode,
-  normalizeLinkCode,
-  isLinkCodeExpired,
-} from '@/lib/parent/link-codes'
+import { isValidLinkCode, normalizeLinkCode, isLinkCodeExpired } from '@/lib/parent/link-codes'
 import { isParentRole } from '@/lib/parent/access-control'
 
 // ── POST: Redeem a 6-char link code to link parent → child ──────────────────
@@ -39,7 +36,7 @@ export async function POST(request: NextRequest) {
     if (!isParentRole(user)) {
       return NextResponse.json(
         { error: 'Only parent accounts can link to a child.' },
-        { status: 403 }
+        { status: 403 },
       )
     }
 
@@ -52,7 +49,7 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many link attempts. Please try again in an hour.' },
-        { status: 429 }
+        { status: 429 },
       )
     }
 
@@ -66,10 +63,7 @@ export async function POST(request: NextRequest) {
 
     const rawCode = (body.code ?? '').toString()
     if (!rawCode) {
-      return NextResponse.json(
-        { error: 'A 6-character link code is required.' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'A 6-character link code is required.' }, { status: 400 })
     }
 
     const code = normalizeLinkCode(rawCode)
@@ -77,10 +71,9 @@ export async function POST(request: NextRequest) {
     if (!isValidLinkCode(code)) {
       return NextResponse.json(
         {
-          error:
-            'That link code looks wrong. Please check with your child and try again.',
+          error: 'That link code looks wrong. Please check with your child and try again.',
         },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -97,28 +90,22 @@ export async function POST(request: NextRequest) {
       console.error('[parent/link-child] code lookup failed:', codeErr)
       return NextResponse.json(
         { error: 'Could not verify link code. Please try again.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
     if (!linkCode) {
-      return NextResponse.json(
-        { error: 'Invalid or expired link code.' },
-        { status: 404 }
-      )
+      return NextResponse.json({ error: 'Invalid or expired link code.' }, { status: 404 })
     }
 
     if (linkCode.consumed_at) {
-      return NextResponse.json(
-        { error: 'This link code has already been used.' },
-        { status: 410 }
-      )
+      return NextResponse.json({ error: 'This link code has already been used.' }, { status: 410 })
     }
 
     if (isLinkCodeExpired(linkCode.expires_at)) {
       return NextResponse.json(
         { error: 'This link code has expired. Ask your child for a new one.' },
-        { status: 410 }
+        { status: 410 },
       )
     }
 
@@ -128,7 +115,7 @@ export async function POST(request: NextRequest) {
     if (childUserId === user.id) {
       return NextResponse.json(
         { error: 'You cannot link your own account as a child.' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -141,10 +128,7 @@ export async function POST(request: NextRequest) {
       .maybeSingle()
 
     if (existingLink && existingLink.status === 'active') {
-      return NextResponse.json(
-        { error: 'This child account is already linked.' },
-        { status: 409 }
-      )
+      return NextResponse.json({ error: 'This child account is already linked.' }, { status: 409 })
     }
 
     // ── Enforce Parent tier cap: up to 3 children per parent ─────────────────
@@ -157,10 +141,9 @@ export async function POST(request: NextRequest) {
     if ((activeCount ?? 0) >= 3) {
       return NextResponse.json(
         {
-          error:
-            'Your Parent plan supports up to 3 linked children. Unlink one to add another.',
+          error: 'Your Parent plan supports up to 3 linked children. Unlink one to add another.',
         },
-        { status: 409 }
+        { status: 409 },
       )
     }
 
@@ -181,7 +164,7 @@ export async function POST(request: NextRequest) {
       console.error('[parent/link-child] consume failed:', consumeErr)
       return NextResponse.json(
         { error: 'Could not redeem link code. Please try again.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
@@ -196,7 +179,7 @@ export async function POST(request: NextRequest) {
           requested_at: nowIso,
           link_code_id: linkCode.id,
         },
-        { onConflict: 'parent_id,child_id' }
+        { onConflict: 'parent_id,child_id' },
       )
       .select('id, status, linked_at')
       .single()
@@ -205,7 +188,7 @@ export async function POST(request: NextRequest) {
       console.error('[parent/link-child] create link failed:', linkError)
       return NextResponse.json(
         { error: 'Failed to create link. Please try again.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
@@ -229,9 +212,6 @@ export async function POST(request: NextRequest) {
     })
   } catch (error) {
     console.error('[parent/link-child] unhandled error:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
