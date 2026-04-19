@@ -431,8 +431,8 @@ export function dividerSlide(
     cy += 0.7
   }
 
-  // .chap-title (serif 140pt, accent on key word)
-  const titleSize = 140
+  // .chap-title (serif 66pt, accent on key word)
+  const titleSize = 66
   if (data.accentWord && data.title.includes(data.accentWord)) {
     const before = data.title.substring(0, data.title.indexOf(data.accentWord))
     const after = data.title.substring(data.title.indexOf(data.accentWord) + data.accentWord.length)
