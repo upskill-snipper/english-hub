@@ -14,6 +14,7 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
 import { StyleSelectorInline, useResourceStyle, type ResourceStyle } from "@/components/ui/StyleSelector"
+import { ErrorBoundary } from "@/components/ErrorBoundary"
 
 /* ── Types ─────────────────────────────────────────────────────────── */
 
@@ -72,7 +73,26 @@ function formatIcon(format: DownloadOption["format"]) {
  * />
  * ```
  */
-export function DownloadMenu({
+export function DownloadMenu(props: DownloadMenuProps) {
+  // Wrap the entire menu in an error boundary so any unexpected render
+  // failure (e.g. a Base UI internal error or an SSR/hydration mismatch)
+  // shows a small inline notice instead of taking down the whole page.
+  return (
+    <ErrorBoundary
+      label="Download menu unavailable"
+      fallback={
+        <div className="inline-flex items-center gap-2 rounded-lg border border-ink-200 bg-cream-100 px-4 py-2.5 text-xs text-ink-600">
+          <FileDown className="h-4 w-4" />
+          <span>Download temporarily unavailable</span>
+        </div>
+      }
+    >
+      <DownloadMenuInner {...props} />
+    </ErrorBoundary>
+  )
+}
+
+function DownloadMenuInner({
   options,
   size = "default",
   className,
@@ -88,14 +108,37 @@ export function DownloadMenu({
 
   if (options.length === 0) return null
 
-  async function handleClick(opt: DownloadOption) {
-    try {
-      await opt.onClick(style)
-    } catch (err) {
-      console.error(`Download failed (${opt.format}):`, err)
-      setToast("Download failed -- please try again")
-      setTimeout(() => setToast(null), 3000)
-    }
+  /**
+   * Bulletproof click dispatcher.
+   *
+   * Belt-and-braces protection:
+   *  - Always returns a resolved Promise (never throws synchronously)
+   *  - Catches sync throws from the handler before they touch React
+   *  - Catches async rejections from the handler
+   *  - If `setToast` itself throws (state on unmounted component etc.),
+   *    falls back to a console error so nothing escapes to React's
+   *    error boundary
+   */
+  function handleClick(opt: DownloadOption): void {
+    // Run inside a microtask so any sync throw becomes a rejected promise
+    Promise.resolve()
+      .then(() => opt.onClick(style))
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error(`[DownloadMenu] Download failed (${opt.format}):`, err)
+        try {
+          setToast("Download failed -- please try again")
+          setTimeout(() => {
+            try {
+              setToast(null)
+            } catch {
+              // ignore: component may have unmounted
+            }
+          }, 3000)
+        } catch {
+          // ignore: setState on unmounted component
+        }
+      })
   }
 
   // Single option -- render a plain button, no dropdown needed

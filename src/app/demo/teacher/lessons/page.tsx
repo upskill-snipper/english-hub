@@ -6,6 +6,7 @@ import type { LessonPlanData, WorksheetQuestion as PdfWorksheetQuestion } from "
 import { generateLessonPlanWord, generateWorksheetWord } from "@/lib/generate-docx";
 import { generateLessonPlanPptx } from "@/lib/generate-pptx";
 import { DownloadMenu } from "@/components/DownloadMenu";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 // ─── Types (mirroring src/types.ts) ──────────────────────────────────────────
 
@@ -1992,30 +1993,41 @@ export default function LessonBuilderDemo() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap gap-3 mb-10">
-              <DownloadMenu
-                label="Lesson Plan"
-                className="text-xs"
-                options={[
-                  { label: "Download PDF", format: "pdf", onClick: handleDownloadPDF },
-                  { label: "Download Word (.docx)", format: "word", onClick: handleDownloadWordLesson },
-                  { label: "Download PowerPoint (.pptx)", format: "pptx", onClick: handleDownloadPptx },
-                ]}
-              />
-              <DownloadMenu
-                label="Worksheet"
-                variant="outline"
-                className="text-xs border-ink-200 text-ink-600 hover:bg-cream-100 hover:text-white"
-                options={[
-                  { label: "Download PDF", format: "pdf", onClick: handleDownloadWorksheet },
-                  { label: "Download Word (.docx)", format: "word", onClick: handleDownloadWordWorksheet },
-                ]}
-              />
-              <ActionButton onClick={handleCopy} label={copied ? "Copied!" : "Copy to Clipboard"} />
-              <ActionButton onClick={handleReset} label="Generate Another" />
-              <ActionButton onClick={() => showToast("Available with full account")} label="Edit Lesson" />
-            </div>
+            {/* Action Buttons -- wrapped in an error boundary so the whole
+                lesson-builder page never disappears behind a "Something went
+                wrong" screen if a download menu or generator misbehaves. */}
+            <ErrorBoundary
+              label="Download buttons unavailable"
+              fallback={
+                <div className="mb-10 rounded-xl border border-red-500/20 bg-red-500/5 px-5 py-4 text-sm text-red-700">
+                  Download buttons couldn't load. Please refresh the page or use Copy to Clipboard above.
+                </div>
+              }
+            >
+              <div className="flex flex-wrap gap-3 mb-10">
+                <DownloadMenu
+                  label="Lesson Plan"
+                  className="text-xs"
+                  options={[
+                    { label: "Download PDF", format: "pdf", onClick: handleDownloadPDF },
+                    { label: "Download Word (.docx)", format: "word", onClick: handleDownloadWordLesson },
+                    { label: "Download PowerPoint (.pptx)", format: "pptx", onClick: handleDownloadPptx },
+                  ]}
+                />
+                <DownloadMenu
+                  label="Worksheet"
+                  variant="outline"
+                  className="text-xs border-ink-200 text-ink-600 hover:bg-cream-100 hover:text-white"
+                  options={[
+                    { label: "Download PDF", format: "pdf", onClick: handleDownloadWorksheet },
+                    { label: "Download Word (.docx)", format: "word", onClick: handleDownloadWordWorksheet },
+                  ]}
+                />
+                <ActionButton onClick={handleCopy} label={copied ? "Copied!" : "Copy to Clipboard"} />
+                <ActionButton onClick={handleReset} label="Generate Another" />
+                <ActionButton onClick={() => showToast("Available with full account")} label="Edit Lesson" />
+              </div>
+            </ErrorBoundary>
 
             {/* CTA */}
             <div className="rounded-2xl border border-teal-800/20 bg-teal-800/5 p-6 sm:p-8 text-center mb-10">
