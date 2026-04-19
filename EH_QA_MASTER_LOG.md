@@ -408,3 +408,43 @@ Create PR: https://github.com/upskill-snipper/english-hub/pull/new/qa/cycle-1-fo
 | Destructive tests       | Auth enumeration proofs, RBAC probes, live XSS, live AI prompt injection                   | Needs staging.                                                          |
 
 ---
+
+## CYCLE 8 SUMMARY · 2026-04-19
+
+Follow-up strike force on `qa/cycle-1-followup`. No prior Cycle 6/7 summary
+marker in this log — prior cycle work was tracked in side documents. This
+entry covers only the changes landed in Cycle 8.
+
+### Commits shipped this cycle
+
+1. `fix(privacy): DSAR export + single-request fetch paths` — patched
+   `src/app/api/dsar/route.ts`, `/api/dsar/[id]/route.ts`, `/api/dsar/export/route.ts`.
+2. `feat(email): sendEmail multipart (attachments) support` — `src/lib/email.ts`
+   now accepts an `attachments[]` payload; DSAR export uses it.
+3. `feat(quiz): add /api/quiz/response POST` — new handler at
+   `src/app/api/quiz/response/route.ts` backed by the `quiz_responses` table
+   landed in `b74b598`.
+4. `refactor(cron): adopt shared runCron() wrapper` — `affiliate-confirm`,
+   `expire-invites` now funnel through the common Sentry + auth helper.
+5. `docs(polish): rename `AFFILIATE_IP_SALT`→`AFFILIATE_IP_HASH_SECRET` in
+affiliate README + add HMAC-SHA256 / rotation section`.
+6. `fix(consent): align school/consent route error shape` — minor.
+
+**Totals (working-tree scope):** 8 files changed (+188 / -95), 6 logical
+commits, 1 new route directory (`src/app/api/quiz/response/`).
+
+### Still open for the next cycle
+
+- **Doc-drift (minor):** `src/app/api/affiliate/README.md` still references
+  `Rewardful` in the integration checklist; re-sweep once the legacy flow
+  is actually decommissioned.
+- **`AFFILIATE_IP_SALT` legacy reference:** see grep audit — one doc line
+  already fixed here; no source-code hits remain (see Cycle 8 grep note).
+- **`runCron` rollout:** 2 of N crons migrated this cycle; remaining
+  cron endpoints (`src/app/api/cron/*`) still inline their Sentry/auth.
+- **Quiz responses:** schema and POST route in place, but no read/analytics
+  surface yet (teacher dashboard still mocks).
+- **Legacy Rewardful retirement:** `attribution.ts` + `utils.ts` under
+  `src/lib/affiliate/` remain; scheduled for removal once v2 is hot.
+
+---
