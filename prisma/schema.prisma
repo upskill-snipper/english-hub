@@ -136,6 +136,14 @@ enum ProfileVisibility {
 
 model User {
   id                String        @id @default(cuid())
+  // supabaseUserId: links this Prisma User row to the Supabase auth.users
+  // row that owns the identity (email + password hash + MFA factors).
+  // Added in Cycle 4 PR-1 (identity convergence plan). Nullable for the
+  // transition window; every endpoint that currently joins by email
+  // should read this instead once PR-3 ships, and a follow-up migration
+  // flips it to NOT NULL once backfill is verified. See
+  // EH_QA_MASTER_LOG.md Cycle 3 schema convergence plan.
+  supabaseUserId    String?       @unique @db.Uuid
   email             String        @unique
   passwordHash      String
   firstName         String
