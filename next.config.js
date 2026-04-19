@@ -21,12 +21,23 @@ const nextConfig = {
   experimental: {
     instrumentationHook: true,
     scrollRestoration: true,
+    // Additions from Cycle 3 bundle deep-dive: barrel-heavy packages where
+    // tree-shaking via modularizeImports materially reduces shared chunk size.
     optimizePackageImports: [
-      'lucide-react',
-      'date-fns',
+      '@base-ui/react',
+      '@sentry/nextjs',
+      '@supabase/ssr',
       '@supabase/supabase-js',
       'class-variance-authority',
-      '@base-ui/react',
+      'cmdk',
+      'date-fns',
+      'dompurify',
+      'lucide-react',
+      'next-themes',
+      'sonner',
+      'tailwind-merge',
+      'zod',
+      'zustand',
     ],
   },
   images: {
