@@ -5,6 +5,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false,
+  reactStrictMode: true,
   typescript: {
     // Vercel Pro provides 8 GB build memory — re-enabled type checking
     // during builds (was disabled on Hobby due to OOM). CI/CD also checks.

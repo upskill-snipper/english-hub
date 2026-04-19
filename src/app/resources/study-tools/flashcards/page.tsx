@@ -118,7 +118,19 @@ export default function FlashcardsPage() {
         <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60 transition-all duration-500" style={{ width: `${progress}%` }} /></div>
       </div>
       <div className="mx-auto max-w-2xl">
-        <div className={cn("relative min-h-[320px] cursor-pointer overflow-hidden rounded-2xl border-2 shadow-lg transition-all duration-300", isFlipped ? "border-primary/30 bg-card" : "border-border bg-gradient-to-br from-primary/10 to-primary/5 hover:shadow-xl")} onClick={() => !isFlipped && setIsFlipped(true)}>
+        <div
+          className={cn("relative min-h-[320px] overflow-hidden rounded-2xl border-2 shadow-lg transition-all duration-300", isFlipped ? "border-primary/30 bg-card" : "cursor-pointer border-border bg-gradient-to-br from-primary/10 to-primary/5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2")}
+          onClick={() => !isFlipped && setIsFlipped(true)}
+          onKeyDown={(e) => {
+            if (!isFlipped && (e.key === "Enter" || e.key === " ")) {
+              e.preventDefault();
+              setIsFlipped(true);
+            }
+          }}
+          role={isFlipped ? undefined : "button"}
+          tabIndex={isFlipped ? undefined : 0}
+          aria-label={isFlipped ? undefined : "Reveal flashcard answer"}
+        >
           <div className="absolute top-4 right-4"><span className="text-xs text-muted-foreground">{formatNextReview(reviewState)}</span></div>
           {!isFlipped ? (
             <div className="flex min-h-[320px] flex-col items-center justify-center p-8 text-center"><div className="mb-4 rounded-full bg-primary/10 p-3"><BookOpen className="h-6 w-6 text-primary" /></div><p className="text-xl font-semibold leading-relaxed text-foreground">{currentCard.front}</p><p className="mt-6 text-xs text-muted-foreground">Click to reveal answer</p></div>

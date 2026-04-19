@@ -46,6 +46,21 @@ const BOARD_ALLOWLIST_EXACT = new Set<string>([
   '/consent',
   '/certificate',
 
+  // Content-hub ROOTS (no trailing slash — subpages covered by prefix list).
+  // Without these, visiting `/games` (no trailing slash) fails the prefix
+  // match for `/games/` and redirects to /board-select.
+  '/analysis',
+  '/revision',
+  '/practice',
+  '/games',
+  '/assessment',
+  '/mock-exams',
+  '/courses',
+  '/igcse',
+  '/learn',
+  '/marking',
+  '/toolkit',
+
   // Technical
   '/favicon.ico',
   '/robots.txt',

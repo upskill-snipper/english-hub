@@ -534,24 +534,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/toolkit/my-materials`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/toolkit/progress`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
 
-    // ============================================================
-    // Demo pages
-    // ============================================================
-    { url: `${base}/demo`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/demo/teacher`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/demo/student`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/demo/school`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    // Note: /demo/*, /dashboard/*, and /auth/* are disallowed in robots.ts and
+    // intentionally excluded from the sitemap to avoid "Indexed though blocked"
+    // warnings in Google Search Console.
 
     // ============================================================
     // Other
     // ============================================================
     { url: `${base}/board-select`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/dashboard/papers`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
-
-    // Auth pages (public)
-    { url: `${base}/auth/register`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/auth/login`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/auth/teacher-register`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
 
     // Info & legal pages
     { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },

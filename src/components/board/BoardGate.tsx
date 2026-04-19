@@ -83,17 +83,29 @@ const ALLOWLISTED_PATHS = [
 
   // Content surfaces previously gated — now crawlable for SEO.
   // Each page has its own board-aware filter; no-board visitors see the
-  // generic version.
+  // generic version. Both the root (`/games`) AND the prefix (`/games/*`)
+  // entries are required — the prefix matcher doesn't match the exact root.
+  '/analysis',
   '/analysis/*',
+  '/revision',
   '/revision/*',
+  '/practice',
   '/practice/*',
+  '/games',
   '/games/*',
+  '/assessment',
   '/assessment/*',
+  '/mock-exams',
   '/mock-exams/*',
+  '/courses',
   '/courses/*',
+  '/igcse',
   '/igcse/*',
+  '/learn',
   '/learn/*',
+  '/marking',
   '/marking/*',
+  '/toolkit',
   '/toolkit/*',
 
   // API + internals

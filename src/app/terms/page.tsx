@@ -44,10 +44,11 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">2. Eligibility</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            You must be at least 14 years of age to create an account on The English Hub. If you are
-            under 16 years of age, you must have the consent of a parent or legal guardian before
-            registering. By creating an account for a user under 16, the parent or guardian agrees to
-            these Terms on the minor&apos;s behalf and accepts responsibility for the minor&apos;s
+            You must be at least 13 years of age (the age of digital consent in the UK under the
+            Data Protection Act 2018) to create an account on The English Hub. If you are under 16
+            years of age, you must have the consent of a parent or legal guardian before
+            registering. By creating an account for a user under 16, the parent or guardian agrees
+            to these Terms on the minor&apos;s behalf and accepts responsibility for the minor&apos;s
             use of the Service.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
@@ -130,8 +131,10 @@ export default function TermsPage() {
             All payments are processed securely by Stripe, our third-party payment processor. We do
             not store your full payment card details on our servers. By providing your payment
             information, you authorise us to charge the applicable fees to your chosen payment
-            method. All prices are quoted in British Pounds Sterling (GBP) and are inclusive of VAT
-            where applicable.
+            method. All prices are quoted in British Pounds Sterling (GBP). Upskill Energy Limited
+            is not currently registered for UK VAT (turnover is below the registration threshold),
+            so no VAT is charged on the prices shown. If we become VAT-registered in the future we
+            will update this policy and clearly display VAT-inclusive pricing.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             If a payment fails, we will attempt to process it again and notify you by email. If

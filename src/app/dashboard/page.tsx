@@ -284,10 +284,10 @@ export default function DashboardPage() {
 
   const quickActions = [
     { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-primary', bg: 'bg-primary/10' },
-    { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-600', bg: 'bg-blue-950/200/10' },
-    { label: 'Essay Feedback', href: '/dashboard/essay-feedback', icon: Sparkles, color: 'text-amber-600', bg: 'bg-amber-950/200/10' },
+    { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-600', bg: 'bg-blue-500/10' },
+    { label: 'Essay Feedback', href: '/dashboard/essay-feedback', icon: Sparkles, color: 'text-amber-600', bg: 'bg-amber-500/10' },
     { label: 'Revision Cards', href: '/revision', icon: Layers, color: 'text-purple-600', bg: 'bg-purple-500/10' },
-    { label: 'Mock Exams', href: '/dashboard/mock-exam', icon: Timer, color: 'text-red-600', bg: 'bg-red-950/200/10' },
+    { label: 'Mock Exams', href: '/dashboard/mock-exam', icon: Timer, color: 'text-red-600', bg: 'bg-red-500/10' },
     { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-600', bg: 'bg-green-500/10' },
     { label: 'Reading Assessment', href: '/assessment/reading', icon: BookOpen, color: 'text-teal-700', bg: 'bg-emerald-500/10' },
     { label: 'Analytics', href: '/dashboard/analytics', icon: BarChart3, color: 'text-cyan-600', bg: 'bg-cyan-500/10' },
@@ -441,7 +441,7 @@ export default function DashboardPage() {
                 />
                 <StatCard
                   icon={<CheckCircle className="h-5 w-5" />}
-                  iconBg="bg-blue-950/200/10"
+                  iconBg="bg-blue-500/10"
                   iconColor="text-blue-600"
                   label="Completed"
                   value={completedModulesCount}

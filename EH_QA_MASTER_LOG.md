@@ -2,7 +2,7 @@
 
 **Site:** https://theenglishhub.app
 **Repo:** `D:/Coding/english-hub/`
-**Entity:** Upskill Energy Limited (Co. 16254656)
+**Entity:** Upskill Energy Limited (Co. **16511479** — confirmed with owner 2026-04-19; original mission-brief number 16254656 was incorrect)
 **Audience:** Minors (14–16) + Teachers + Schools
 **Branch:** main @ 427f69f
 **Run start:** 2026-04-19
@@ -236,4 +236,29 @@ Highlights:
 **Complete.** Wave B (fixes) gated on owner answers to questions 1–8 above. No code changes made this cycle.
 
 ---
+
+## OWNER ANSWERS · 2026-04-19
+
+1. **Company number:** 16511479 (code correct; brief was wrong) → P0-COMP-2 closed
+2. **Teacher dashboard mock:** wiring forgotten, no paid teachers affected → fix by gating with Preview banner
+3. **Essay submission:** should be live → wire to existing `/api/essay-feedback`
+4. **VAT:** not registered, confirmed below £90k threshold → remove "inc VAT where applicable" from Terms §6; add "No VAT charged" statement; no pricing page label needed
+5. **"Limited to 10 Schools":** aspirational; owner wants to onboard as many as possible → rewrite to "First 10 schools get founding partner pricing; subsequent schools welcome at standard rates"
+6. **Staging:** not known / not available → destructive tests remain ungated; Wave B is static fixes only
+7. **Next 14 → 15 upgrade:** approved → deferred to separate PR on its own branch
+8. **DPO:** not set up → owner chose option (a) — hide the card entirely; `info@upskillenergy.com` remains as privacy contact via existing pages
+
+**Trial length:** defaulting to 30-day free trial (matches Terms + `src/constants/pricing.ts:17`). Will align register copy accordingly. Owner can override.
+
+---
+
+## CYCLE 1 — WAVE B (FIXES) · 2026-04-19
+
+**Branch:** `qa/cycle-1-wave-b`
+**Scope:** 14 P0/P1 fixes executed autonomously per owner authorisation. Next 14→15 and RLS SQL deferred to separate PRs.
+
+(Change manifest appended below as fixes are completed.)
+
+---
+
 
