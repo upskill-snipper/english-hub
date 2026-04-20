@@ -27,6 +27,65 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { GRADE_SYSTEMS } from '@/lib/board/grade-boundaries'
+
+// ─── Board-aware grade-question labels ────────────────────────────────────
+//
+// The diagnostic stores target grade as a 9-1-style range (`4-5` / `6-7` /
+// `8-9`) because every board maps onto 9-1 marks internally. But the
+// LABEL shown to the student has to match their actual award:
+//   - 9-1 boards                → "Grade 4 or 5" etc.
+//   - A*-G boards (Cambridge 0500) → "D or C" / "B or A" / "A* or above"
+//   - A*-E boards (IAL, UK A-Level) → "D or C" / "C or B" / "A or A*"
+
+interface GradeOptionLabels {
+  low: { label: string; description: string }
+  mid: { label: string; description: string }
+  high: { label: string; description: string }
+}
+
+function gradeLabelsForBoard(board: ExamBoard | null): GradeOptionLabels {
+  const system = board ? GRADE_SYSTEMS[board] : '9-1'
+  if (system === 'A*-E') {
+    return {
+      low: { label: 'Grade D or C', description: 'Solid pass' },
+      mid: { label: 'Grade C or B', description: 'Strong performer' },
+      high: { label: 'Grade A or A*', description: 'Top of the class' },
+    }
+  }
+  if (system === 'A*-G') {
+    return {
+      low: { label: 'Grade D or C', description: 'Standard pass' },
+      mid: { label: 'Grade B or A', description: 'Strong performer' },
+      high: { label: 'Grade A*', description: 'Top of the class' },
+    }
+  }
+  return {
+    low: { label: 'Grade 4 or 5', description: 'Strong pass' },
+    mid: { label: 'Grade 6 or 7', description: 'High achiever' },
+    high: { label: 'Grade 8 or 9', description: 'Top of the class' },
+  }
+}
+
+function questionsForBoard(board: ExamBoard | null): typeof QUESTIONS {
+  const labels = gradeLabelsForBoard(board)
+  // Clone the grade question with relabelled options. We deliberately keep
+  // the `value` strings as-is (4-5 / 6-7 / 8-9) so downstream logic that
+  // branches on them (buildPlan grade mapping, saved-plan persistence)
+  // stays untouched.
+  const [weeksQ, , weakAreaQ, hoursQ] = QUESTIONS
+  const boardGradeQ: (typeof QUESTIONS)[1] = {
+    id: 'grade',
+    prompt: QUESTIONS[1].prompt,
+    helper: QUESTIONS[1].helper,
+    options: [
+      { value: '4-5', label: labels.low.label, description: labels.low.description },
+      { value: '6-7', label: labels.mid.label, description: labels.mid.description },
+      { value: '8-9', label: labels.high.label, description: labels.high.description },
+    ],
+  }
+  return [weeksQ, boardGradeQ, weakAreaQ, hoursQ]
+}
 
 // ─── Types ────────────────────────────────────────────────────────────────
 
@@ -113,6 +172,9 @@ const QUESTIONS: [
     id: 'grade',
     prompt: 'Which grade are you aiming for?',
     helper: 'Be ambitious but realistic -- we will pitch your plan accordingly.',
+    // Default labels target 9-1 boards. gradeLabelsForBoard() below swaps
+    // these to A*-E wording for IAL / UK A-Level, or A*-G wording for
+    // Cambridge 0500, before the component renders the question.
     options: [
       { value: '4-5', label: 'Grade 4 or 5', description: 'Strong pass' },
       { value: '6-7', label: 'Grade 6 or 7', description: 'High achiever' },
@@ -428,14 +490,18 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
     return savedPlan.weeks
   }, [savedPlan])
 
-  const currentQuestion = QUESTIONS[step]
-  const isComplete = step >= QUESTIONS.length
+  // Board-aware question set — reshapes the grade question's labels for
+  // IAL / UK A-Level (A*-E) and Cambridge 0500 (A*-G). Values (4-5 / 6-7 /
+  // 8-9) stay stable so downstream plan-builder logic doesn't branch.
+  const boardQuestions = useMemo(() => questionsForBoard(board), [board])
+  const currentQuestion = boardQuestions[step]
+  const isComplete = step >= boardQuestions.length
 
   const handleAnswer = <T extends string>(value: T) => {
     const next = { ...answers, [currentQuestion.id]: value }
     setAnswers(next)
 
-    if (step < QUESTIONS.length - 1) {
+    if (step < boardQuestions.length - 1) {
       setStep(step + 1)
       return
     }
@@ -533,7 +599,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
                 Time horizon
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground">
-                {QUESTIONS[0].options.find((o) => o.value === meta.weeks)?.label}
+                {boardQuestions[0].options.find((o) => o.value === meta.weeks)?.label}
               </p>
             </div>
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
@@ -542,7 +608,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
                 Target grade
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground">
-                {QUESTIONS[1].options.find((o) => o.value === meta.grade)?.label}
+                {boardQuestions[1].options.find((o) => o.value === meta.grade)?.label}
               </p>
             </div>
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
@@ -569,7 +635,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
                 Hours per week
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground">
-                {QUESTIONS[3].options.find((o) => o.value === meta.hoursPerWeek)?.label}
+                {boardQuestions[3].options.find((o) => o.value === meta.hoursPerWeek)?.label}
               </p>
             </div>
             <div className="rounded-xl border border-primary/30 bg-primary/5 p-4">
@@ -682,13 +748,13 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
         </div>
 
         <DiagnosticStep
-          question={QUESTIONS[0]}
+          question={boardQuestions[0]}
           stepIndex={0}
-          totalSteps={QUESTIONS.length}
+          totalSteps={boardQuestions.length}
           onSelect={handleAnswer}
           onBack={handleBack}
           canGoBack={false}
-          currentValue={answers[QUESTIONS[0].id]}
+          currentValue={answers[boardQuestions[0].id]}
         />
       </div>
     )
@@ -720,7 +786,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
         <DiagnosticStep
           question={currentQuestion}
           stepIndex={step}
-          totalSteps={QUESTIONS.length}
+          totalSteps={boardQuestions.length}
           onSelect={handleAnswer}
           onBack={handleBack}
           canGoBack
