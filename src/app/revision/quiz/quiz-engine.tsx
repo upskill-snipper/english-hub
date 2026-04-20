@@ -349,6 +349,12 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     // Fire-and-forget analytics write → /api/quiz/response. Server returns
     // 401 for anon users; we swallow errors silently. Uses `keepalive` so
     // the request survives page navigation after the answer is selected.
+    //
+    // moduleId is intentionally omitted: our quiz "topic" ('poetry' etc.)
+    // is not a public.modules row, and the quiz_responses.module_id column
+    // is an FK to modules(id). Passing topic here would 400 on FK. Leaving
+    // it null — per-question aggregates still key on question_id, which is
+    // what getQuestionDifficulty / getHardestQuestions read.
     const timeTakenSeconds = Math.min(
       3600,
       Math.max(0, Math.floor((Date.now() - questionShownAtRef.current) / 1000)),
@@ -359,7 +365,6 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
       keepalive: true,
       body: JSON.stringify({
         questionId: question.id,
-        moduleId: question.topic,
         isCorrect,
         timeTakenSeconds,
       }),
