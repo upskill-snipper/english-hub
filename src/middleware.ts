@@ -1,6 +1,7 @@
 import { updateSession } from '@/lib/supabase/middleware'
 import { applyAffiliateTracking } from '@/middleware-affiliate'
-import { NextResponse, type NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
+import crypto from 'crypto'
 
 const BOARD_COOKIE = 'english-hub-board'
 
@@ -146,8 +147,38 @@ const ALLOWED_ORIGINS = new Set([
   ...(process.env.NODE_ENV === 'development' ? ['http://localhost:3000'] : []),
 ])
 
+// ── CSP nonce generation (P1 #6 follow-up) ─────────────────────────────
+//
+// Generate a fresh base64 nonce per request. Thread it via the `x-nonce`
+// request header (so server components can read it via `headers()` and
+// attach to <script> tags), and bake it into the Content-Security-Policy
+// response header so browsers match inline scripts against the same value.
+//
+// 'strict-dynamic' permits scripts that are loaded by nonced scripts to
+// themselves run without explicit host allow-listing — this is how Next's
+// bundled _next/*.js files get through.
+function buildCsp(nonce: string): string {
+  return [
+    `default-src 'self'`,
+    // 'unsafe-inline' is a FALLBACK for browsers that don't understand
+    // nonce/strict-dynamic (old iOS Safari etc.); modern browsers ignore
+    // it when 'nonce-...' or 'strict-dynamic' is present.
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline' https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com`,
+    `style-src 'self' 'unsafe-inline'`, // Tailwind JIT inlines styles; acceptable.
+    `img-src 'self' data: https:`,
+    `font-src 'self' data:`,
+    `connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io`,
+    `frame-src https://js.stripe.com https://hooks.stripe.com`,
+    `frame-ancestors 'self'`,
+    `form-action 'self'`,
+    `object-src 'none'`,
+    `base-uri 'self'`,
+  ].join('; ')
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
 
   // ── CSRF: Origin header validation for API mutations ─────────────
   if (pathname.startsWith('/api/') && request.method !== 'GET' && request.method !== 'HEAD') {
@@ -196,8 +227,24 @@ export async function middleware(request: NextRequest) {
     }
   }
 
+  // Propagate nonce to downstream so server components can read it via
+  // `headers()` and stamp it on inline <script> tags (e.g. JSON-LD).
+  const requestHeaders = new Headers(request.headers)
+  requestHeaders.set('x-nonce', nonce)
+
   // Preserve existing behaviour: supabase auth session refresh + affiliate tracking
-  const response = await updateSession(request)
+  const response = await updateSession(
+    new NextRequest(request.url, {
+      ...request,
+      headers: requestHeaders,
+    }),
+  )
+
+  // Attach the per-request nonce + CSP. Setting CSP here lets us emit a
+  // fresh nonce per request; next.config.js only supports static headers.
+  response.headers.set('Content-Security-Policy', buildCsp(nonce))
+  response.headers.set('x-nonce', nonce)
+
   // Annotate the response with affiliate tracking cookie if ?ref=… is present.
   // No-op when no ref param or when the response is a redirect we want to pass through.
   return applyAffiliateTracking(request, response)

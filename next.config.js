@@ -93,18 +93,12 @@ const nextConfig = {
           // CORP prevents other origins from embedding our resources.
           { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
           { key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
-          // TODO(P1-SEC-7 follow-up): replace 'unsafe-inline' in script-src with
-          // per-request nonces. Requires threading the nonce through every
-          // `<script type="application/ld+json" dangerouslySetInnerHTML={...}>`
-          // site (~20 pages in src/app, src/components/seo). Deferred to its
-          // own PR to avoid shipping partial nonce coverage alongside this
-          // additive-only header pass.
-          //
-          // `frame-ancestors 'self'` supersedes the X-Frame-Options header above
-          // on modern browsers (both remain set for defense-in-depth during the
-          // header migration). `form-action 'self'` blocks form hijacking to
-          // third-party POST targets.
-          { key: 'Content-Security-Policy', value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io; frame-src https://js.stripe.com https://hooks.stripe.com; frame-ancestors 'self'; form-action 'self'; object-src 'none'; base-uri 'self';" },
+          // NOTE: Content-Security-Policy is now set per-request in
+          // src/middleware.ts so each response carries a fresh nonce for
+          // inline scripts (see buildCsp in middleware.ts). A static CSP
+          // can't include a nonce because every response would share it,
+          // defeating the purpose. `frame-ancestors` + `form-action` live
+          // in that dynamic CSP too.
           { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
         ],
       },

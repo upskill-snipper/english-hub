@@ -1,4 +1,13 @@
-export function WebsiteJsonLd() {
+// Every exported component here renders a <script type="application/ld+json">
+// tag via dangerouslySetInnerHTML. Under the nonce-based CSP (P1 #6 follow-up),
+// every inline <script> must carry the per-request nonce or the browser drops
+// it. Callers pass it in via `nonce` — use `headers().get('x-nonce')` from
+// server components, or leave it undefined for static generation (the script
+// is still serialised; when served live, middleware sets the nonce in the
+// Content-Security-Policy header so Next's own runtime + these JSON-LD tags
+// all carry the same value).
+
+export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
@@ -52,6 +61,7 @@ export function WebsiteJsonLd() {
   return (
     <script
       type="application/ld+json"
+      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   )
@@ -61,10 +71,12 @@ export function CourseJsonLd({
   name,
   description,
   provider,
+  nonce,
 }: {
   name: string
   description: string
   provider?: string
+  nonce?: string
 }) {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -81,12 +93,19 @@ export function CourseJsonLd({
   return (
     <script
       type="application/ld+json"
+      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   )
 }
 
-export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string }[] }) {
+export function BreadcrumbJsonLd({
+  items,
+  nonce,
+}: {
+  items: { name: string; url: string }[]
+  nonce?: string
+}) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -101,12 +120,19 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string
   return (
     <script
       type="application/ld+json"
+      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   )
 }
 
-export function FAQPageJsonLd({ faqs }: { faqs: { question: string; answer: string }[] }) {
+export function FAQPageJsonLd({
+  faqs,
+  nonce,
+}: {
+  faqs: { question: string; answer: string }[]
+  nonce?: string
+}) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -123,6 +149,7 @@ export function FAQPageJsonLd({ faqs }: { faqs: { question: string; answer: stri
   return (
     <script
       type="application/ld+json"
+      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   )
