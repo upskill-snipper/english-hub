@@ -83,22 +83,102 @@ export interface AggregateSnapshot {
 /**
  * Per-question difficulty metrics across all users.
  *
- * Was: hardcoded mock array of 8 fake questions with inflated attempt counts.
+ * History:
+ *   - Originally a mock array of 8 fabricated questions.
+ *   - Cycle 7: dropped to `return []` (honest zero — no source table).
+ *   - 2026-04-20: implemented against `public.quiz_responses`, landed in
+ *     migration `20260420_quiz_responses.sql` and wired to the client in
+ *     `src/app/revision/quiz/quiz-engine.tsx`.
  *
- * Honest zero: the current schema does not record per-question outcomes.
- * `module_progress` stores a single `quiz_score` per (user, module), not
- * which individual questions were right or wrong, and there is no
- * `quiz_responses` or equivalent table. Returning real question-level
- * difficulty requires a new table — flagged below.
+ * Definitions:
+ *   - `correctRate = correctCount / totalAttempts * 100` (0–100 integer).
+ *   - `difficulty` bands map to correctRate:
+ *       easy       ≥ 80%
+ *       medium     50–79%
+ *       hard       25–49%
+ *       very-hard  < 25%
+ *   - `avgTimeSeconds` is the mean over all responses for this questionId.
  *
- * TODO(follow-up): introduce a `quiz_responses` table (user_id, question_id,
- * is_correct, time_taken_seconds, attempted_at) so this aggregation becomes
- * possible. Until then we return an empty array rather than lie.
+ * Schema notes:
+ *   - `quiz_responses.module_id` is OPTIONAL (FK SET NULL). The client
+ *     doesn't send it (quiz "topics" aren't `modules` rows). So we don't
+ *     join modules — moduleId/moduleName/courseId/courseName are returned
+ *     as empty strings when module_id is NULL. A future modules-aware
+ *     client can populate them without schema change.
+ *   - Minimum-attempts gate: we exclude question_ids with fewer than 3
+ *     responses to avoid noisy "100%"/"0%" readings dominating the list.
+ *
+ * Bounded cost: single scan of quiz_responses, aggregated in-app. For
+ * ~N rows the memory footprint is O(unique questionIds). At current
+ * scale (5 users × dozens of questions each) this is negligible.
  */
+const MIN_ATTEMPTS_FOR_DIFFICULTY = 3
+
 export async function getQuestionDifficulty(
-  _supabase: SupabaseClient,
+  supabase: SupabaseClient,
 ): Promise<QuestionDifficulty[]> {
-  return []
+  const { data, error } = await supabase
+    .from('quiz_responses')
+    .select('question_id, module_id, is_correct, time_taken_seconds')
+
+  if (error) {
+    console.error('[analytics/getQuestionDifficulty] query failed:', error)
+    return []
+  }
+  if (!data || data.length === 0) return []
+
+  // Aggregate in-app — Supabase doesn't support GROUP BY via PostgREST.
+  const buckets = new Map<
+    string,
+    { moduleId: string; total: number; correct: number; timeSum: number }
+  >()
+  for (const row of data) {
+    const qid = row.question_id as string
+    const existing = buckets.get(qid) ?? {
+      moduleId: (row.module_id as string | null) ?? '',
+      total: 0,
+      correct: 0,
+      timeSum: 0,
+    }
+    existing.total += 1
+    if (row.is_correct) existing.correct += 1
+    existing.timeSum += Number(row.time_taken_seconds) || 0
+    // First-seen moduleId wins. If later rows have a different non-null
+    // moduleId we keep the first — not load-bearing, moduleId is best-effort.
+    buckets.set(qid, existing)
+  }
+
+  const results: QuestionDifficulty[] = []
+  for (const [questionId, agg] of buckets) {
+    if (agg.total < MIN_ATTEMPTS_FOR_DIFFICULTY) continue
+    const correctRate = Math.round((agg.correct / agg.total) * 100)
+    const avgTimeSeconds = Math.round(agg.timeSum / agg.total)
+    const difficulty: QuestionDifficulty['difficulty'] =
+      correctRate >= 80
+        ? 'easy'
+        : correctRate >= 50
+          ? 'medium'
+          : correctRate >= 25
+            ? 'hard'
+            : 'very-hard'
+    results.push({
+      questionId,
+      questionText: '', // Not stored in quiz_responses; lookup belongs in a join helper.
+      moduleId: agg.moduleId,
+      moduleName: '',
+      courseId: '',
+      courseName: '',
+      totalAttempts: agg.total,
+      correctCount: agg.correct,
+      incorrectCount: agg.total - agg.correct,
+      correctRate,
+      avgTimeSeconds,
+      difficulty,
+    })
+  }
+  // Hardest-first ordering is the common reading of this dataset.
+  results.sort((a, b) => a.correctRate - b.correctRate)
+  return results
 }
 
 // ─── getMostStudiedTexts ────────────────────────────────────────────────────
