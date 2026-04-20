@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
+import { VAT_LABEL } from '@/lib/copy/pricing'
 import {
   GraduationCap,
   BookOpen,
@@ -1080,6 +1081,10 @@ export default function ForTeachersPage() {
               </p>
             </Card>
           </div>
+
+          <p className="text-center text-xs text-muted-foreground/80 mt-10 max-w-2xl mx-auto">
+            {VAT_LABEL}
+          </p>
         </div>
       </section>
 
@@ -1233,6 +1238,7 @@ export default function ForTeachersPage() {
             3 free uses per tool. Premium from £7.99/month or £67.99/year — 7-day free trial, card
             required.
           </p>
+          <p className="mt-3 text-xs text-muted-foreground/80 max-w-2xl mx-auto">{VAT_LABEL}</p>
         </div>
       </section>
     </main>

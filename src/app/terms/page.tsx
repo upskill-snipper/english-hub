@@ -112,6 +112,12 @@ export default function TermsPage() {
             </li>
           </ul>
           <p className="mt-2 text-muted-foreground leading-relaxed">
+            <strong>VAT.</strong> Prices shown in GBP. The English Hub is not currently
+            VAT-registered, so no VAT is added to the advertised price. If and when we cross the UK
+            VAT registration threshold, we will update this page and display VAT-inclusive prices
+            accordingly.
+          </p>
+          <p className="mt-2 text-muted-foreground leading-relaxed">
             <strong>7-day free trial.</strong> New subscribers are eligible for a single 7-day free
             trial on their first paid plan. The trial requires full sign-up with a valid payment
             method. During the trial period you will have full access to the platform. If you do not

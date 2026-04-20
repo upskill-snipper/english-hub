@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { PRICING } from '@/constants/pricing'
+import { VAT_LABEL } from '@/lib/copy/pricing'
 
 const tiers = [
   {
@@ -164,6 +165,10 @@ export default function AnthologyPricing() {
             </div>
           ))}
         </div>
+
+        <p className="mt-10 text-center text-xs text-ink-500 max-w-2xl mx-auto font-mono">
+          {VAT_LABEL}
+        </p>
       </div>
     </section>
   )

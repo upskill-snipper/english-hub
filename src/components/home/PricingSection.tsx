@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { PRICING } from '@/constants/pricing'
+import { VAT_LABEL } from '@/lib/copy/pricing'
 import { Sparkles, CheckCircle, School, GraduationCap, Phone, Award } from 'lucide-react'
 
 const STUDENT_FEATURES = [
@@ -271,6 +272,9 @@ export default function PricingSection() {
           Every feature includes {PRICING.FREE_USES_PER_FEATURE} free uses &mdash; no card required
           for the demo. Every paid plan starts with a {PRICING.TRIAL_TEXT} (card required). Cancel
           before day 7 and you won&apos;t be charged.
+        </p>
+        <p className="text-center text-xs text-muted-foreground/80 mt-4 max-w-2xl mx-auto">
+          {VAT_LABEL}
         </p>
       </div>
     </section>

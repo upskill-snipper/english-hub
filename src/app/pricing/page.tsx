@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { PRICING } from '@/constants/pricing'
+import { VAT_LABEL } from '@/lib/copy/pricing'
 import {
   CheckCircle,
   X,
@@ -475,6 +476,10 @@ export default function PricingPage() {
               </div>
             </Card>
           </div>
+
+          <p className="mt-8 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
+            {VAT_LABEL}
+          </p>
         </div>
       </section>
 
@@ -558,6 +563,10 @@ export default function PricingPage() {
               </div>
             </div>
           </Card>
+
+          <p className="mt-8 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
+            {VAT_LABEL}
+          </p>
         </div>
       </section>
 

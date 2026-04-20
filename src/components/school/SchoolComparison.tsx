@@ -1,5 +1,6 @@
-import { CheckCircle, X } from "lucide-react"
-import Link from "next/link"
+import { CheckCircle, X } from 'lucide-react'
+import Link from 'next/link'
+import { VAT_LABEL } from '@/lib/copy/pricing'
 
 interface ComparisonRow {
   feature: string
@@ -9,54 +10,54 @@ interface ComparisonRow {
 
 const rows: ComparisonRow[] = [
   {
-    feature: "Price",
-    individual: "Per student per month",
-    school: "\u00a33,000 \u2013 \u00a37,000 / year",
+    feature: 'Price',
+    individual: 'Per student per month',
+    school: '\u00a33,000 \u2013 \u00a37,000 / year',
   },
   {
-    feature: "Students covered",
-    individual: "1 student",
-    school: "Unlimited students",
+    feature: 'Students covered',
+    individual: '1 student',
+    school: 'Unlimited students',
   },
   {
-    feature: "Teachers covered",
+    feature: 'Teachers covered',
     individual: false,
-    school: "All teachers included",
+    school: 'All teachers included',
   },
   {
-    feature: "Admin dashboard",
+    feature: 'Admin dashboard',
     individual: false,
-    school: "Full school analytics",
+    school: 'Full school analytics',
   },
   {
-    feature: "Bulk user management",
+    feature: 'Bulk user management',
     individual: false,
-    school: "Yes - Excel import",
+    school: 'Yes - Excel import',
   },
   {
-    feature: "Department analytics",
-    individual: false,
-    school: true,
-  },
-  {
-    feature: "Ofsted-ready reporting",
+    feature: 'Department analytics',
     individual: false,
     school: true,
   },
   {
-    feature: "Progress reports",
+    feature: 'Ofsted-ready reporting',
     individual: false,
-    school: "Automated",
+    school: true,
   },
   {
-    feature: "Dedicated support",
+    feature: 'Progress reports',
     individual: false,
-    school: "Priority",
+    school: 'Automated',
   },
   {
-    feature: "Early features access",
+    feature: 'Dedicated support',
     individual: false,
-    school: "Founding schools only",
+    school: 'Priority',
+  },
+  {
+    feature: 'Early features access',
+    individual: false,
+    school: 'Founding schools only',
   },
 ]
 
@@ -99,8 +100,7 @@ export function SchoolComparison() {
               Founding Schools Programme
             </p>
             <p className="text-white text-2xl font-bold">
-              Only <span className="text-emerald-400">10 places</span> available
-              for 2026
+              Only <span className="text-emerald-400">10 places</span> available for 2026
             </p>
           </div>
           <div className="flex-shrink-0">
@@ -150,8 +150,8 @@ export function SchoolComparison() {
                 key={row.feature}
                 className={
                   i % 2 === 0
-                    ? "bg-slate-900 hover:bg-slate-800/60 transition-colors"
-                    : "bg-slate-800/50 hover:bg-slate-800/80 transition-colors"
+                    ? 'bg-slate-900 hover:bg-slate-800/60 transition-colors'
+                    : 'bg-slate-800/50 hover:bg-slate-800/80 transition-colors'
                 }
               >
                 <td className="px-6 py-4 text-slate-300 text-sm font-medium border-t border-slate-700/50">
@@ -171,9 +171,10 @@ export function SchoolComparison() {
 
       {/* Sub-note */}
       <p className="max-w-5xl mx-auto mt-4 text-center text-slate-500 text-sm">
-        Founding Schools Programme pricing ranges from £3,000 to £7,000 per year. Book a call
-        to discuss your package.
+        Founding Schools Programme pricing ranges from £3,000 to £7,000 per year. Book a call to
+        discuss your package.
       </p>
+      <p className="max-w-5xl mx-auto mt-2 text-center text-slate-500 text-xs">{VAT_LABEL}</p>
     </section>
   )
 }

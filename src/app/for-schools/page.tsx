@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { FAQItem } from '@/components/for-schools/FAQItem'
 import { BookCallForm } from '@/components/for-schools/BookCallForm'
+import { VAT_LABEL } from '@/lib/copy/pricing'
 import {
   BookOpen,
   GraduationCap,
@@ -596,6 +597,9 @@ export default function ForSchoolsPage() {
             Founding partner pricing is reserved for the first 10 schools to sign. Book a call to
             secure your founding place -- later schools are welcome at standard rates.
           </p>
+          <p className="text-center text-xs text-muted-foreground/80 mt-4 max-w-2xl mx-auto">
+            {VAT_LABEL}
+          </p>
         </div>
       </section>
 
@@ -1143,6 +1147,10 @@ export default function ForSchoolsPage() {
               </div>
             ))}
           </div>
+
+          <p className="text-center text-xs text-muted-foreground/80 mt-6 max-w-2xl mx-auto">
+            {VAT_LABEL}
+          </p>
         </div>
       </section>
 

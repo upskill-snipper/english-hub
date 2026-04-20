@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { useRewardful } from '@/hooks/useRewardful'
 import { PRICING } from '@/constants/pricing'
+import { VAT_LABEL } from '@/lib/copy/pricing'
 import { trackEvent } from '@/lib/gtag'
 import { getCourseName } from '@/lib/utils'
 import {
@@ -144,9 +145,7 @@ export default function BillingPage() {
           Back to account
         </Link>
 
-        <h1 className="text-3xl font-bold text-foreground mb-8">
-          Billing &amp; Subscription
-        </h1>
+        <h1 className="text-3xl font-bold text-foreground mb-8">Billing &amp; Subscription</h1>
 
         {error && (
           <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
@@ -158,8 +157,8 @@ export default function BillingPage() {
           <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-6 text-clay-600 text-sm">
             <p className="font-semibold mb-1">Payment failed</p>
             <p>
-              We were unable to process your last payment. Please update your
-              payment method to keep your Pro access.
+              We were unable to process your last payment. Please update your payment method to keep
+              your Pro access.
             </p>
             <button
               onClick={handleManageSubscription}
@@ -180,9 +179,7 @@ export default function BillingPage() {
         <section className="bg-card border border-border rounded-xl p-6 mb-6">
           <div className="flex items-center gap-3 mb-4">
             <Crown className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-semibold text-foreground">
-              Current Plan
-            </h2>
+            <h2 className="text-xl font-semibold text-foreground">Current Plan</h2>
           </div>
 
           <div className="flex items-center gap-3 mb-4">
@@ -191,8 +188,8 @@ export default function BillingPage() {
                 isPro
                   ? 'bg-primary/10 text-primary border border-primary/30'
                   : isCancelled
-                  ? 'bg-yellow-500/10 text-clay-600 border border-yellow-500/30'
-                  : 'bg-border text-muted-foreground border border-border'
+                    ? 'bg-yellow-500/10 text-clay-600 border border-yellow-500/30'
+                    : 'bg-border text-muted-foreground border border-border'
               }`}
             >
               {isPro && <Sparkles className="w-3.5 h-3.5" />}
@@ -233,34 +230,33 @@ export default function BillingPage() {
           ) : (
             <div className="space-y-4">
               <p className="text-muted-foreground text-sm">
-                Upgrade to Pro for unlimited access to all courses, practice
-                papers, and premium features.
+                Upgrade to Pro for unlimited access to all courses, practice papers, and premium
+                features.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {/* Student Monthly */}
                 <div className="border border-border rounded-xl p-5 hover:border-primary/50 transition-colors">
-                  <h3 className="text-lg font-semibold text-foreground mb-1">
-                    Student
-                  </h3>
+                  <h3 className="text-lg font-semibold text-foreground mb-1">Student</h3>
                   <p className="text-2xl font-bold text-primary mb-1">
-                    {PRICING.CURRENCY}{PRICING.STUDENT_MONTHLY}
-                    <span className="text-sm font-normal text-muted-foreground">
-                      /month
-                    </span>
+                    {PRICING.CURRENCY}
+                    {PRICING.STUDENT_MONTHLY}
+                    <span className="text-sm font-normal text-muted-foreground">/month</span>
                   </p>
                   <p className="text-xs text-muted-foreground mb-1">
-                    or {PRICING.CURRENCY}{PRICING.STUDENT_ANNUAL}/year
+                    or {PRICING.CURRENCY}
+                    {PRICING.STUDENT_ANNUAL}/year
                   </p>
-                  <p className="text-sm text-emerald-500 font-semibold mb-2">{PRICING.TRIAL_TEXT}</p>
+                  <p className="text-sm text-emerald-500 font-semibold mb-2">
+                    {PRICING.TRIAL_TEXT}
+                  </p>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-primary" />
                       All courses included
                     </li>
                     <li className="flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
-                      3 free uses per feature
+                      <CheckCircle className="w-3.5 h-3.5 text-primary" />3 free uses per feature
                     </li>
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-primary" />
@@ -285,19 +281,19 @@ export default function BillingPage() {
 
                 {/* Teacher */}
                 <div className="border border-purple-500/30 rounded-xl p-5 hover:border-purple-500/50 transition-colors">
-                  <h3 className="text-lg font-semibold text-foreground mb-1">
-                    Teacher
-                  </h3>
+                  <h3 className="text-lg font-semibold text-foreground mb-1">Teacher</h3>
                   <p className="text-2xl font-bold text-purple-400 mb-1">
-                    {PRICING.CURRENCY}{PRICING.TEACHER_MONTHLY}
-                    <span className="text-sm font-normal text-muted-foreground">
-                      /month
-                    </span>
+                    {PRICING.CURRENCY}
+                    {PRICING.TEACHER_MONTHLY}
+                    <span className="text-sm font-normal text-muted-foreground">/month</span>
                   </p>
                   <p className="text-xs text-muted-foreground mb-1">
-                    or {PRICING.CURRENCY}{PRICING.TEACHER_ANNUAL}/year
+                    or {PRICING.CURRENCY}
+                    {PRICING.TEACHER_ANNUAL}/year
                   </p>
-                  <p className="text-sm text-emerald-500 font-semibold mb-2">{PRICING.TRIAL_TEXT}</p>
+                  <p className="text-sm text-emerald-500 font-semibold mb-2">
+                    {PRICING.TRIAL_TEXT}
+                  </p>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-purple-400" />
@@ -327,8 +323,9 @@ export default function BillingPage() {
                     )}
                   </button>
                 </div>
-
               </div>
+
+              <p className="text-xs text-muted-foreground/80 mt-4">{VAT_LABEL}</p>
             </div>
           )}
         </section>
@@ -337,9 +334,7 @@ export default function BillingPage() {
         <section className="bg-card border border-border rounded-xl p-6">
           <div className="flex items-center gap-3 mb-4">
             <BookOpen className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-semibold text-foreground">
-              Course Purchases
-            </h2>
+            <h2 className="text-xl font-semibold text-foreground">Course Purchases</h2>
           </div>
 
           {enrolments.length === 0 ? (
@@ -359,14 +354,11 @@ export default function BillingPage() {
                     </p>
                     <p className="text-muted-foreground text-xs">
                       Enrolled{' '}
-                      {new Date(enrolment.enrolled_at).toLocaleDateString(
-                        'en-GB',
-                        {
-                          day: 'numeric',
-                          month: 'short',
-                          year: 'numeric',
-                        }
-                      )}
+                      {new Date(enrolment.enrolled_at).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
+                      })}
                     </p>
                   </div>
                   <span
@@ -374,15 +366,15 @@ export default function BillingPage() {
                       enrolment.payment_type === 'subscription'
                         ? 'bg-primary/10 text-primary'
                         : enrolment.payment_type === 'one_time'
-                        ? 'bg-brand-blue/10 text-brand-blue'
-                        : 'bg-border text-muted-foreground'
+                          ? 'bg-brand-blue/10 text-brand-blue'
+                          : 'bg-border text-muted-foreground'
                     }`}
                   >
                     {enrolment.payment_type === 'subscription'
                       ? 'Subscription'
                       : enrolment.payment_type === 'one_time'
-                      ? 'Purchased'
-                      : 'Free'}
+                        ? 'Purchased'
+                        : 'Free'}
                   </span>
                 </div>
               ))}
