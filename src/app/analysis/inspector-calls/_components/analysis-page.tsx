@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, GraduationCap, Quote } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
@@ -25,6 +26,7 @@ export function ArticleJsonLd({
   description: string
   slug: string
 }) {
+  const nonce = headers().get('x-nonce') ?? undefined
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -55,6 +57,7 @@ export function ArticleJsonLd({
   return (
     <script
       type="application/ld+json"
+      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   )
@@ -78,9 +81,7 @@ export function MarkerByline() {
   return (
     <div className="flex items-center gap-2 text-xs text-muted-foreground">
       <GraduationCap className="size-3.5" />
-      <span>
-        Written by GCSE markers &middot; The English Hub editorial team
-      </span>
+      <span>Written by GCSE markers &middot; The English Hub editorial team</span>
     </div>
   )
 }
@@ -89,25 +90,17 @@ export function Extract({ children }: { children: React.ReactNode }) {
   return (
     <blockquote className="flex gap-3 rounded-xl border border-border/60 bg-muted/40 p-4 sm:p-5">
       <Quote className="mt-0.5 size-4 shrink-0 text-muted-foreground/70" />
-      <p className="text-body-sm italic leading-relaxed text-foreground/90">
-        {children}
-      </p>
+      <p className="text-body-sm italic leading-relaxed text-foreground/90">{children}</p>
     </blockquote>
   )
 }
 
 export function SectionHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="text-heading-md font-heading text-foreground">{children}</h2>
-  )
+  return <h2 className="text-heading-md font-heading text-foreground">{children}</h2>
 }
 
 export function Prose({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="space-y-4 text-body-sm leading-relaxed text-foreground/90">
-      {children}
-    </div>
-  )
+  return <div className="space-y-4 text-body-sm leading-relaxed text-foreground/90">{children}</div>
 }
 
 export function RelatedAnalyses({ items }: { items: RelatedLink[] }) {
@@ -124,9 +117,7 @@ export function RelatedAnalyses({ items }: { items: RelatedLink[] }) {
             <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
               {item.title}
             </h3>
-            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-              {item.blurb}
-            </p>
+            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{item.blurb}</p>
             <div className="mt-3 flex items-center gap-1 text-[0.7rem] font-medium uppercase tracking-wider text-muted-foreground group-hover:text-primary">
               Read analysis
               <ArrowRight className="size-3" />
@@ -153,8 +144,8 @@ export function RevisionCta() {
             Revise An Inspector Calls for GCSE English Literature
           </h3>
           <p className="text-body-sm text-muted-foreground">
-            Grade 5, 7 and 9 revision plans, model answers and exam technique
-            from experienced GCSE markers.
+            Grade 5, 7 and 9 revision plans, model answers and exam technique from experienced GCSE
+            markers.
           </p>
         </div>
         <Button render={<Link href="/revision" />}>
@@ -170,11 +161,7 @@ export function TagRow({ tags }: { tags: string[] }) {
   return (
     <div className="flex flex-wrap gap-2">
       {tags.map((tag) => (
-        <Badge
-          key={tag}
-          variant="secondary"
-          className="text-[0.65rem] uppercase tracking-wider"
-        >
+        <Badge key={tag} variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
           {tag}
         </Badge>
       ))}

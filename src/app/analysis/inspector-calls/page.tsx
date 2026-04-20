@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Quote, Users } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
@@ -36,58 +37,56 @@ const QUOTE_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/we-are-members-of-one-body-meaning',
     title: 'We are members of one body — meaning',
-    blurb:
-      'Religious allusion and collective responsibility in the Inspector\'s closing speech.',
+    blurb: "Religious allusion and collective responsibility in the Inspector's closing speech.",
   },
   {
     href: '/analysis/inspector-calls/fire-and-blood-and-anguish-meaning',
     title: 'Fire and blood and anguish — meaning',
-    blurb:
-      'Biblical and WWI imagery in the Inspector\'s prophetic warning.',
+    blurb: "Biblical and WWI imagery in the Inspector's prophetic warning.",
   },
   {
     href: '/analysis/inspector-calls/a-man-has-to-make-his-own-way',
     title: 'A man has to make his own way',
-    blurb: 'Birling\'s individualism dismantled by Priestley in Act One.',
+    blurb: "Birling's individualism dismantled by Priestley in Act One.",
   },
   {
     href: '/analysis/inspector-calls/community-and-all-that-nonsense',
     title: 'Community and all that nonsense',
-    blurb: 'Birling\'s dismissal of social responsibility analysed.',
+    blurb: "Birling's dismissal of social responsibility analysed.",
   },
   {
     href: '/analysis/inspector-calls/girls-of-that-class-meaning',
     title: 'Girls of that class — meaning',
-    blurb: 'Mrs Birling\'s class prejudice in Act Two examined.',
+    blurb: "Mrs Birling's class prejudice in Act Two examined.",
   },
   {
     href: '/analysis/inspector-calls/i-wasnt-in-any-way-responsible',
-    title: 'I wasn\'t in any way responsible',
-    blurb: 'Mrs Birling\'s denial of guilt and moral evasion.',
+    title: "I wasn't in any way responsible",
+    blurb: "Mrs Birling's denial of guilt and moral evasion.",
   },
   {
     href: '/analysis/inspector-calls/public-men-have-responsibilities',
     title: 'Public men have responsibilities',
-    blurb: 'Goole\'s rebuke of Birling and the duties of the elite.',
+    blurb: "Goole's rebuke of Birling and the duties of the elite.",
   },
   {
     href: '/analysis/inspector-calls/she-asked-for-the-earth',
     title: 'She asked for the earth',
-    blurb: 'Mrs Birling\'s contempt for Eva Smith, unpacked.',
+    blurb: "Mrs Birling's contempt for Eva Smith, unpacked.",
   },
   {
     href: '/analysis/inspector-calls/its-better-to-ask-for-the-earth',
-    title: 'It\'s better to ask for the earth',
-    blurb: 'The Inspector\'s reversal of Mrs Birling\'s phrase.',
+    title: "It's better to ask for the earth",
+    blurb: "The Inspector's reversal of Mrs Birling's phrase.",
   },
   {
     href: '/analysis/inspector-calls/we-dont-live-alone',
-    title: 'We don\'t live alone',
-    blurb: 'The moral heart of the Inspector\'s final speech.',
+    title: "We don't live alone",
+    blurb: "The moral heart of the Inspector's final speech.",
   },
   {
     href: '/analysis/inspector-calls/the-inspector-stage-directions',
-    title: 'The Inspector\'s stage directions',
+    title: "The Inspector's stage directions",
     blurb: 'Massiveness, solidity and purposefulness — what they signal.',
   },
   {
@@ -98,17 +97,17 @@ const QUOTE_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/port-the-governor-used-to-send',
     title: 'Port the Governor used to send',
-    blurb: 'Birling\'s status-obsessed dinner table talk decoded.',
+    blurb: "Birling's status-obsessed dinner table talk decoded.",
   },
   {
     href: '/analysis/inspector-calls/cranks-walking-out-meaning',
     title: 'Cranks walking out — meaning',
-    blurb: 'Birling\'s contempt for socialists and reformers.',
+    blurb: "Birling's contempt for socialists and reformers.",
   },
   {
     href: '/analysis/inspector-calls/millions-and-millions-of-eva-smiths',
     title: 'Millions and millions of Eva Smiths',
-    blurb: 'Universality and class in the Inspector\'s final warning.',
+    blurb: "Universality and class in the Inspector's final warning.",
   },
 ]
 
@@ -116,14 +115,12 @@ const CHARACTER_THEME_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/inspector-goole-character-analysis',
     title: 'Inspector Goole — character analysis',
-    blurb:
-      'Priestley\'s moral mouthpiece: name, role, authority and structure.',
+    blurb: "Priestley's moral mouthpiece: name, role, authority and structure.",
   },
   {
     href: '/analysis/inspector-calls/arthur-birling-character-analysis',
     title: 'Arthur Birling — character analysis',
-    blurb:
-      'Dramatic irony, capitalism and the pompous patriarch of Act One.',
+    blurb: 'Dramatic irony, capitalism and the pompous patriarch of Act One.',
   },
   {
     href: '/analysis/inspector-calls/sheila-birling-character-analysis',
@@ -138,8 +135,7 @@ const CHARACTER_THEME_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/social-responsibility-theme',
     title: 'Social responsibility — theme',
-    blurb:
-      'Priestley\'s central theme explored through structure and speech.',
+    blurb: "Priestley's central theme explored through structure and speech.",
   },
   {
     href: '/analysis/inspector-calls/class-theme-analysis',
@@ -149,8 +145,7 @@ const CHARACTER_THEME_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/age-theme-analysis',
     title: 'Age — theme analysis',
-    blurb:
-      'Young vs old: who changes, who refuses, and why it matters.',
+    blurb: 'Young vs old: who changes, who refuses, and why it matters.',
   },
   {
     href: '/analysis/inspector-calls/gender-theme-analysis',
@@ -159,7 +154,7 @@ const CHARACTER_THEME_PAGES: Entry[] = [
   },
   {
     href: '/analysis/inspector-calls/priestley-socialism-context',
-    title: 'Priestley\'s socialism — context',
+    title: "Priestley's socialism — context",
     blurb: '1912 setting, 1945 audience, welfare state and WWI/WWII.',
   },
   {
@@ -170,6 +165,7 @@ const CHARACTER_THEME_PAGES: Entry[] = [
 ]
 
 export default function InspectorCallsHubPage() {
+  const nonce = headers().get('x-nonce') ?? undefined
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -188,6 +184,7 @@ export default function InspectorCallsHubPage() {
     <PageContainer>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
@@ -199,11 +196,10 @@ export default function InspectorCallsHubPage() {
           An Inspector Calls — analysis hub
         </h1>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Twenty-five focused analysis pages on J. B. Priestley&apos;s
-          An Inspector Calls, covering the play&apos;s most-searched quotes,
-          every major character, and the big AQA, Edexcel and Eduqas themes.
-          Each page is written by GCSE markers with short fair-use extracts,
-          context, and exam-ready analysis.
+          Twenty-five focused analysis pages on J. B. Priestley&apos;s An Inspector Calls, covering
+          the play&apos;s most-searched quotes, every major character, and the big AQA, Edexcel and
+          Eduqas themes. Each page is written by GCSE markers with short fair-use extracts, context,
+          and exam-ready analysis.
         </p>
         <MarkerByline />
       </div>
@@ -223,9 +219,7 @@ export default function InspectorCallsHubPage() {
               <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
                 {item.title}
               </h3>
-              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                {item.blurb}
-              </p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{item.blurb}</p>
             </Link>
           ))}
         </div>
@@ -246,9 +240,7 @@ export default function InspectorCallsHubPage() {
               <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
                 {item.title}
               </h3>
-              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                {item.blurb}
-              </p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{item.blurb}</p>
             </Link>
           ))}
         </div>
@@ -264,10 +256,10 @@ export default function InspectorCallsHubPage() {
           </span>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Start with the quote analysis closest to your essay question, then
-          cross-reference the relevant character or theme page. Every page
-          ends with a Grade 9 writing tip and links onwards to three related
-          analyses, so you can build a full revision sweep in under an hour.
+          Start with the quote analysis closest to your essay question, then cross-reference the
+          relevant character or theme page. Every page ends with a Grade 9 writing tip and links
+          onwards to three related analyses, so you can build a full revision sweep in under an
+          hour.
         </p>
         <Button
           variant="outline"

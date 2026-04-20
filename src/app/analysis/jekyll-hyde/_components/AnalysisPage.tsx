@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, GraduationCap, PenLine } from 'lucide-react'
 
@@ -34,6 +35,7 @@ export function ArticleJsonLd({
   datePublished?: string
   dateModified?: string
 }) {
+  const nonce = headers().get('x-nonce') ?? undefined
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -79,6 +81,7 @@ export function ArticleJsonLd({
   return (
     <script
       type="application/ld+json"
+      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   )
@@ -172,8 +175,7 @@ export function AnalysisPage({
         <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
           <GraduationCap className="size-4 text-primary" aria-hidden="true" />
           <span>
-            Written by <strong className="text-foreground">GCSE markers</strong> at The English
-            Hub
+            Written by <strong className="text-foreground">GCSE markers</strong> at The English Hub
           </span>
         </div>
       </header>
@@ -192,8 +194,8 @@ export function AnalysisPage({
               Ready to revise the whole novella?
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">
-              Get the complete Jekyll and Hyde study guide — chapter summaries, every key
-              quotation, every theme, and exam-ready essay plans for AQA, Edexcel and OCR.
+              Get the complete Jekyll and Hyde study guide — chapter summaries, every key quotation,
+              every theme, and exam-ready essay plans for AQA, Edexcel and OCR.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link

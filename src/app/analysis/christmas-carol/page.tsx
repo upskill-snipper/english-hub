@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -21,17 +22,17 @@ const quoteAnalyses: { slug: string; title: string; blurb: string }[] = [
   {
     slug: 'squeezing-wrenching-grasping-scraping',
     title: '"Squeezing, wrenching, grasping, scraping"',
-    blurb: 'Dickens\'s asyndetic list of verbs exposing Scrooge\'s miserly greed.',
+    blurb: "Dickens's asyndetic list of verbs exposing Scrooge's miserly greed.",
   },
   {
     slug: 'solitary-as-an-oyster',
     title: '"Solitary as an oyster"',
-    blurb: 'The famous simile characterising Scrooge\'s emotional isolation.',
+    blurb: "The famous simile characterising Scrooge's emotional isolation.",
   },
   {
     slug: 'are-there-no-prisons',
     title: '"Are there no prisons?"',
-    blurb: 'Scrooge\'s callous echo of Malthusian Victorian attitudes.',
+    blurb: "Scrooge's callous echo of Malthusian Victorian attitudes.",
   },
   {
     slug: 'decrease-the-surplus-population',
@@ -41,57 +42,57 @@ const quoteAnalyses: { slug: string; title: string; blurb: string }[] = [
   {
     slug: 'mankind-was-my-business',
     title: '"Mankind was my business"',
-    blurb: 'Marley\'s anguished revelation about moral duty.',
+    blurb: "Marley's anguished revelation about moral duty.",
   },
   {
     slug: 'i-wear-the-chain-i-forged-in-life',
     title: '"I wear the chain I forged in life"',
-    blurb: 'Marley\'s metaphor for the consequences of sin.',
+    blurb: "Marley's metaphor for the consequences of sin.",
   },
   {
     slug: 'god-bless-us-every-one',
     title: '"God bless us, every one!"',
-    blurb: 'Tiny Tim\'s closing benediction and its symbolic weight.',
+    blurb: "Tiny Tim's closing benediction and its symbolic weight.",
   },
   {
     slug: 'ignorance-and-want-analysis',
     title: 'Ignorance and Want',
-    blurb: 'The allegorical children revealed beneath the Ghost of Christmas Present\'s robe.',
+    blurb: "The allegorical children revealed beneath the Ghost of Christmas Present's robe.",
   },
   {
     slug: 'bah-humbug-meaning',
     title: '"Bah! Humbug!"',
-    blurb: 'Scrooge\'s signature dismissal of Christmas joy and generosity.',
+    blurb: "Scrooge's signature dismissal of Christmas joy and generosity.",
   },
   {
     slug: 'marleys-ghost-analysis',
-    title: 'Marley\'s Ghost',
-    blurb: 'Analysis of Marley\'s spectral warning and Gothic entrance.',
+    title: "Marley's Ghost",
+    blurb: "Analysis of Marley's spectral warning and Gothic entrance.",
   },
   {
     slug: 'good-old-fezziwig',
     title: '"Good old Fezziwig"',
-    blurb: 'Dickens\'s model of the benevolent capitalist employer.',
+    blurb: "Dickens's model of the benevolent capitalist employer.",
   },
   {
     slug: 'tiny-tim-blessing',
-    title: 'Tiny Tim\'s Blessing',
+    title: "Tiny Tim's Blessing",
     blurb: 'Analysis of Tim\'s church reflections and the "crutch without an owner".',
   },
   {
     slug: 'his-own-heart-laughed',
     title: '"His own heart laughed"',
-    blurb: 'Scrooge\'s jubilant transformation in Stave Five.',
+    blurb: "Scrooge's jubilant transformation in Stave Five.",
   },
   {
     slug: 'i-am-as-light-as-a-feather',
     title: '"I am as light as a feather"',
-    blurb: 'Scrooge\'s ecstatic simile after his redemption.',
+    blurb: "Scrooge's ecstatic simile after his redemption.",
   },
   {
     slug: 'the-chains-he-drew-were-clasped',
     title: '"The chain he drew was clasped about his middle"',
-    blurb: 'Dickens\'s Gothic description of Marley\'s burden.',
+    blurb: "Dickens's Gothic description of Marley's burden.",
   },
 ]
 
@@ -99,7 +100,7 @@ const characterThemePages: { slug: string; title: string; blurb: string }[] = [
   {
     slug: 'scrooge-character-analysis',
     title: 'Scrooge Character Analysis',
-    blurb: 'Full study of Ebenezer Scrooge\'s transformation across the five staves.',
+    blurb: "Full study of Ebenezer Scrooge's transformation across the five staves.",
   },
   {
     slug: 'bob-cratchit-character-analysis',
@@ -114,7 +115,7 @@ const characterThemePages: { slug: string; title: string; blurb: string }[] = [
   {
     slug: 'fred-character-analysis',
     title: 'Fred Character Analysis',
-    blurb: 'Scrooge\'s cheerful nephew and the novella\'s advocate of Christmas spirit.',
+    blurb: "Scrooge's cheerful nephew and the novella's advocate of Christmas spirit.",
   },
   {
     slug: 'jacob-marley-character-analysis',
@@ -124,12 +125,12 @@ const characterThemePages: { slug: string; title: string; blurb: string }[] = [
   {
     slug: 'redemption-theme-analysis',
     title: 'Redemption Theme',
-    blurb: 'How Dickens structures Scrooge\'s moral and spiritual salvation.',
+    blurb: "How Dickens structures Scrooge's moral and spiritual salvation.",
   },
   {
     slug: 'poverty-theme-analysis',
     title: 'Poverty Theme',
-    blurb: 'Dickens\'s condemnation of Victorian inequality and the Poor Laws.',
+    blurb: "Dickens's condemnation of Victorian inequality and the Poor Laws.",
   },
   {
     slug: 'family-theme-analysis',
@@ -168,10 +169,12 @@ const jsonLd = {
 }
 
 export default function ChristmasCarolAnalysisHub() {
+  const nonce = headers().get('x-nonce') ?? undefined
   return (
     <div className="mx-auto max-w-5xl space-y-12 px-4 py-10 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
@@ -183,9 +186,9 @@ export default function ChristmasCarolAnalysisHub() {
           A Christmas Carol Analysis
         </h1>
         <p className="max-w-3xl text-lg text-muted-foreground">
-          In-depth GCSE analysis of Charles Dickens&apos;s 1843 novella A Christmas Carol.
-          Browse full quotation analyses, character studies, theme guides and marker essay
-          advice, all written by experienced GCSE English Literature markers.
+          In-depth GCSE analysis of Charles Dickens&apos;s 1843 novella A Christmas Carol. Browse
+          full quotation analyses, character studies, theme guides and marker essay advice, all
+          written by experienced GCSE English Literature markers.
         </p>
         <p className="text-sm text-muted-foreground">
           Written by GCSE markers · Updated for 2026 specifications

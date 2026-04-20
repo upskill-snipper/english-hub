@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import { ArrowRight, BookOpen, Quote, Sparkles, Users, Library, GraduationCap } from 'lucide-react'
 
@@ -39,14 +40,12 @@ const quoteAnalyses = [
   {
     title: '"The polite fiction of the law"',
     slug: 'the-polite-fiction-of-the-law',
-    blurb:
-      'Utterson, hypocrisy and the Victorian obsession with reputation over reality.',
+    blurb: 'Utterson, hypocrisy and the Victorian obsession with reputation over reality.',
   },
   {
     title: '"Downright detestable"',
     slug: 'downright-detestable',
-    blurb:
-      'Enfield\'s visceral, irrational disgust at Hyde and the limits of rational description.',
+    blurb: "Enfield's visceral, irrational disgust at Hyde and the limits of rational description.",
   },
   {
     title: 'Dual nature of man quotes',
@@ -63,14 +62,12 @@ const quoteAnalyses = [
   {
     title: 'Door symbolism analysis',
     slug: 'door-symbolism-analysis',
-    blurb:
-      'The "blistered and distained" door, secrecy, repression and the Gothic threshold.',
+    blurb: 'The "blistered and distained" door, secrecy, repression and the Gothic threshold.',
   },
   {
     title: '"With the sea of liberty before me"',
     slug: 'with-the-sea-of-liberty-before-me',
-    blurb:
-      'Jekyll\'s euphoric first transformation — freedom, repression and the hedonistic id.',
+    blurb: "Jekyll's euphoric first transformation — freedom, repression and the hedonistic id.",
   },
 ]
 
@@ -92,8 +89,7 @@ const characterTheme = [
   {
     title: 'Mr Utterson character analysis',
     slug: 'mr-utterson-character-analysis',
-    blurb:
-      'The "lean, long, dusty, dreary" lawyer as reliable narrator and moral anchor.',
+    blurb: 'The "lean, long, dusty, dreary" lawyer as reliable narrator and moral anchor.',
     group: 'Character',
   },
   {
@@ -127,15 +123,13 @@ const characterTheme = [
   {
     title: 'Science theme analysis',
     slug: 'science-theme-analysis',
-    blurb:
-      '"Transcendental medicine", Darwin and the Gothic fear of unregulated experimentation.',
+    blurb: '"Transcendental medicine", Darwin and the Gothic fear of unregulated experimentation.',
     group: 'Theme',
   },
   {
     title: 'Victorian society context',
     slug: 'victorian-society-context',
-    blurb:
-      'Fin-de-siècle London, the 1885 Labouchere Amendment, Darwinism and the class divide.',
+    blurb: 'Fin-de-siècle London, the 1885 Labouchere Amendment, Darwinism and the class divide.',
     group: 'Context',
   },
   {
@@ -148,6 +142,7 @@ const characterTheme = [
 ]
 
 export default function JekyllHydeHubPage() {
+  const nonce = headers().get('x-nonce') ?? undefined
   const hubJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -167,6 +162,7 @@ export default function JekyllHydeHubPage() {
     <div className="mx-auto max-w-5xl px-4 pb-16 pt-8 sm:px-6">
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(hubJsonLd) }}
       />
 
@@ -207,8 +203,7 @@ export default function JekyllHydeHubPage() {
 
           <p className="mt-6 flex items-center gap-2 text-xs text-muted-foreground">
             <GraduationCap className="size-4 text-primary" aria-hidden="true" />
-            Written by <strong className="text-foreground">GCSE markers</strong> at The English
-            Hub
+            Written by <strong className="text-foreground">GCSE markers</strong> at The English Hub
           </p>
         </div>
       </section>
