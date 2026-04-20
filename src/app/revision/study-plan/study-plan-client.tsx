@@ -42,11 +42,27 @@ interface StudyPlanAnswers {
   hoursPerWeek: HoursPerWeek
 }
 
+// Icons are stored as STRING KEYS because the plan is JSON.stringified to
+// localStorage. React component references don't survive serialisation —
+// storing the component directly produced `{}` on reload and crashed the
+// page with "Element type is invalid" on `<task.icon />`.
+const ICON_MAP = {
+  fileText: FileText,
+  bookOpen: BookOpen,
+  penTool: PenTool,
+  target: Target,
+  clock: Clock,
+  layers: Layers,
+  zap: Zap,
+  trendingUp: TrendingUp,
+} as const
+type IconKey = keyof typeof ICON_MAP
+
 interface PlannedTask {
   title: string
   description: string
   href: string
-  icon: typeof BookOpen
+  icon: IconKey
   colour: string
   bgColour: string
 }
@@ -196,7 +212,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'Annotate two anthology poems',
     description: 'Read closely, mark techniques, and write a one-paragraph response to each.',
     href: getPoetryHref(board),
-    icon: FileText,
+    icon: 'fileText',
     colour: 'text-rose-400',
     bgColour: 'bg-rose-500/10',
   }
@@ -204,7 +220,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'Practise a poetry comparison',
     description: 'Pair two poems on the same theme and write a comparative paragraph.',
     href: getPoetryHref(board),
-    icon: FileText,
+    icon: 'fileText',
     colour: 'text-rose-400',
     bgColour: 'bg-rose-500/10',
   }
@@ -214,7 +230,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
       : 'Deep-dive a set text chapter or scene',
     description: 'Re-read, summarise, and extract 5 key quotes.',
     href: getTextsHref(board, featuredText?.slug),
-    icon: BookOpen,
+    icon: 'bookOpen',
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
   }
@@ -222,7 +238,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'Reading comprehension drill',
     description: 'Tackle a past extract and answer the analysis questions.',
     href: getReadingHref(board),
-    icon: BookOpen,
+    icon: 'bookOpen',
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
   }
@@ -230,7 +246,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'Creative or transactional writing',
     description: 'Write to a 45-minute prompt. Plan, draft, check.',
     href: '/revision/language/writing',
-    icon: PenTool,
+    icon: 'penTool',
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
   }
@@ -238,7 +254,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'SPaG accuracy session',
     description: 'Review the SPaG mastery guide and proofread last week\'s writing.',
     href: '/revision/language/spag',
-    icon: PenTool,
+    icon: 'penTool',
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
   }
@@ -246,7 +262,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'Essay structure workout',
     description: 'Write a thesis and three topic sentences for a past question.',
     href: '/revision/exam-technique/essay-structure',
-    icon: Target,
+    icon: 'target',
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
   }
@@ -254,7 +270,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'Decode question command words',
     description: 'Practise identifying what each command word actually wants.',
     href: '/revision/exam-technique/question-types',
-    icon: Target,
+    icon: 'target',
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
   }
@@ -262,7 +278,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'Timed exam practice',
     description: 'Sit one full question under exam conditions.',
     href: '/revision/exam-technique/time-management',
-    icon: Clock,
+    icon: 'clock',
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
   }
@@ -270,7 +286,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'Flashcard sprint',
     description: '15 minutes of smart review on quotes and terminology.',
     href: '/revision/flashcards',
-    icon: Layers,
+    icon: 'layers',
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
   }
@@ -278,7 +294,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     title: 'Topic quiz check-in',
     description: 'Take a quick quiz on this week\'s topics to test recall.',
     href: '/revision/quiz',
-    icon: Zap,
+    icon: 'zap',
     colour: 'text-clay-600',
     bgColour: 'bg-orange-500/10',
   }
@@ -296,7 +312,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
         : answers.grade === '6-7'
           ? '/revision/grade-targets/grade-7'
           : '/revision/grade-targets/grade-9',
-    icon: TrendingUp,
+    icon: 'trendingUp',
     colour: 'text-cyan-400',
     bgColour: 'bg-cyan-500/10',
   }
@@ -588,7 +604,9 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
                 </span>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
-                {week.tasks.map((task, i) => (
+                {week.tasks.map((task, i) => {
+                  const Icon = ICON_MAP[task.icon] ?? BookOpen
+                  return (
                   <Link
                     key={task.title + i}
                     href={task.href}
@@ -597,7 +615,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
                     <div
                       className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${task.bgColour}`}
                     >
-                      <task.icon className={`size-4 ${task.colour}`} />
+                      <Icon className={`size-4 ${task.colour}`} />
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-semibold text-foreground group-hover:text-primary">
@@ -609,7 +627,8 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
                     </div>
                     <ArrowRight className="mt-1 size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
                   </Link>
-                ))}
+                  )
+                })}
               </div>
             </div>
           ))}
