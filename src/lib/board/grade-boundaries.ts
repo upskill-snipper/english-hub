@@ -74,11 +74,26 @@ export function getGradeSystemForBoard(board: ExamBoard | null): GradeSystem {
  * For A*-G boards, return the equivalent 9-1 grade.
  * Rough mapping used for cross-referencing guides.
  */
-export function gradeNineToLetterEquivalent(grade: '5' | '7' | '9'): 'C' | 'B' | 'A' | 'A*' {
+export function gradeNineToLetterEquivalent(
+  grade: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
+): 'G' | 'F' | 'E' | 'D' | 'C' | 'B' | 'A' | 'A*' {
+  // Approximate mapping between 9-1 and A*-G grading systems.
   switch (grade) {
+    case '1':
+      return 'G'
+    case '2':
+      return 'F'
+    case '3':
+      return 'E'
+    case '4':
+      return 'D'
     case '5':
       return 'C'
+    case '6':
+      return 'B'
     case '7':
+      return 'A'
+    case '8':
       return 'A'
     case '9':
       return 'A*'
@@ -114,7 +129,7 @@ export function gradeLetterToNineOneEquivalent(
  */
 export function getBoundaryForGrade(
   board: ExamBoard | null,
-  grade: '5' | '7' | '9',
+  grade: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
 ): { label: string; percent: number | null; systemNote?: string } {
   if (!board) {
     return { label: `Grade ${grade}`, percent: GRADE_BOUNDARIES['aqa'][grade] ?? null }
