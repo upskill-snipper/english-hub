@@ -1,5 +1,5 @@
-import { sendEmail } from "@/lib/email";
-import { percentageToGCSEGradeLabel } from "@/lib/grades";
+import { sendEmail } from '@/lib/email'
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 
 // [PHASE:db-integration] This file currently returns mock data.
 // Replace mock queries and hardcoded IDs with Prisma calls once the
@@ -7,31 +7,31 @@ import { percentageToGCSEGradeLabel } from "@/lib/grades";
 
 // ─── Configuration ────────────────────────────────────────────────────
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://theenglishhub.app";
-const BRAND_COLOR = "#1A5276";
-const BRAND_ACCENT = "#2E86C1";
-const BRAND_LIGHT = "#D6EAF8";
-const DASHBOARD_URL = `${BASE_URL}/dashboard/parent`;
-const UNSUBSCRIBE_URL = `${BASE_URL}/dashboard/parent/settings`;
-const TERMS_URL = `${BASE_URL}/terms`;
-const PRIVACY_URL = `${BASE_URL}/privacy-policy`;
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
+const BRAND_COLOR = '#1A5276'
+const BRAND_ACCENT = '#2E86C1'
+const BRAND_LIGHT = '#D6EAF8'
+const DASHBOARD_URL = `${BASE_URL}/dashboard/parent`
+const UNSUBSCRIBE_URL = `${BASE_URL}/dashboard/parent/settings`
+const TERMS_URL = `${BASE_URL}/terms`
+const PRIVACY_URL = `${BASE_URL}/privacy-policy`
 
 // ─── Types ────────────────────────────────────────────────────────────
 
 export interface WeeklyReportData {
-  parentName: string;
-  parentEmail: string;
-  studentName: string;
-  weekStart: Date;
-  weekEnd: Date;
-  essaysCompleted: number;
-  timeSpentMinutes: number;
-  averageScoreThisWeek: number;
-  averageScoreLastWeek: number;
-  projectedGrades: { subject: string; grade: string; target: string }[];
-  topStrengths: string[];
-  areasForImprovement: string[];
-  recommendedNextSteps: string[];
+  parentName: string
+  parentEmail: string
+  studentName: string
+  weekStart: Date
+  weekEnd: Date
+  essaysCompleted: number
+  timeSpentMinutes: number
+  averageScoreThisWeek: number
+  averageScoreLastWeek: number
+  projectedGrades: { subject: string; grade: string; target: string }[]
+  topStrengths: string[]
+  areasForImprovement: string[]
+  recommendedNextSteps: string[]
 }
 
 // ─── Generate Weekly Report ───────────────────────────────────────────
@@ -42,20 +42,20 @@ export interface WeeklyReportData {
 
 export async function generateWeeklyReport(
   parentId: string,
-  studentId: string
+  studentId: string,
 ): Promise<WeeklyReportData | null> {
   try {
     // Mock data -- see [PHASE:db-integration] note at top of file
-    const now = new Date();
-    const weekStart = new Date(now);
-    weekStart.setDate(now.getDate() - now.getDay() + 1); // Monday
-    const weekEnd = new Date(weekStart);
-    weekEnd.setDate(weekStart.getDate() + 6); // Sunday
+    const now = new Date()
+    const weekStart = new Date(now)
+    weekStart.setDate(now.getDate() - now.getDay() + 1) // Monday
+    const weekEnd = new Date(weekStart)
+    weekEnd.setDate(weekStart.getDate() + 6) // Sunday
 
     const report: WeeklyReportData = {
-      parentName: "Parent",
-      parentEmail: "parent@example.com",
-      studentName: "Student",
+      parentName: 'Parent',
+      parentEmail: 'parent@example.com',
+      studentName: 'Student',
       weekStart,
       weekEnd,
       essaysCompleted: 0,
@@ -66,15 +66,15 @@ export async function generateWeeklyReport(
       topStrengths: [],
       areasForImprovement: [],
       recommendedNextSteps: [],
-    };
+    }
 
-    return report;
+    return report
   } catch (error) {
     console.error(
       `[weekly-report] Failed to generate report for parent=${parentId}, student=${studentId}:`,
-      error
-    );
-    return null;
+      error,
+    )
+    return null
   }
 }
 
@@ -83,104 +83,85 @@ export async function generateWeeklyReport(
 // Sends a branded HTML email with the weekly progress report to the parent.
 
 export async function sendWeeklyReport(
-  parentId: string
+  parentId: string,
 ): Promise<{ success: boolean; sent: number; failed: number }> {
   try {
     // Mock student list -- see [PHASE:db-integration] note at top of file
-    const mockStudentIds = ["student_1"];
-    let sent = 0;
-    let failed = 0;
+    const mockStudentIds = ['student_1']
+    let sent = 0
+    let failed = 0
 
     for (const studentId of mockStudentIds) {
-      const report = await generateWeeklyReport(parentId, studentId);
+      const report = await generateWeeklyReport(parentId, studentId)
 
       if (!report) {
-        failed++;
-        continue;
+        failed++
+        continue
       }
 
-      const html = buildWeeklyReportEmail(report);
-      const subject = `Weekly Progress Report: ${report.studentName} - ${formatDateShort(report.weekStart)} to ${formatDateShort(report.weekEnd)}`;
+      const html = buildWeeklyReportEmail(report)
+      const subject = `Weekly Progress Report: ${report.studentName} - ${formatDateShort(report.weekStart)} to ${formatDateShort(report.weekEnd)}`
 
-      const result = await sendEmail(report.parentEmail, subject, html);
+      const result = await sendEmail(report.parentEmail, subject, html)
 
       if (result.success) {
-        sent++;
+        sent++
       } else {
-        failed++;
+        failed++
         console.error(
-          `[weekly-report] Failed to send report for student=${studentId}: ${result.error}`
-        );
+          `[weekly-report] Failed to send report for student=${studentId}: ${result.error}`,
+        )
       }
     }
 
-    return { success: failed === 0, sent, failed };
+    return { success: failed === 0, sent, failed }
   } catch (error) {
-    console.error(
-      `[weekly-report] Failed to send reports for parent=${parentId}:`,
-      error
-    );
-    return { success: false, sent: 0, failed: 1 };
+    console.error(`[weekly-report] Failed to send reports for parent=${parentId}:`, error)
+    return { success: false, sent: 0, failed: 1 }
   }
 }
 
 // ─── Build HTML email ─────────────────────────────────────────────────
 
 function buildWeeklyReportEmail(report: WeeklyReportData): string {
-  const scoreDiff =
-    report.averageScoreThisWeek - report.averageScoreLastWeek;
-  const trendArrow = scoreDiff >= 0 ? "&#9650;" : "&#9660;"; // up or down triangle
-  const trendColor = scoreDiff >= 0 ? "#27AE60" : "#E74C3C";
-  const trendText =
-    scoreDiff >= 0 ? `+${scoreDiff}pp` : `${scoreDiff}pp`;
+  const scoreDiff = report.averageScoreThisWeek - report.averageScoreLastWeek
+  const trendArrow = scoreDiff >= 0 ? '&#9650;' : '&#9660;' // up or down triangle
+  const trendColor = scoreDiff >= 0 ? '#27AE60' : '#E74C3C'
+  const trendText = scoreDiff >= 0 ? `+${scoreDiff}pp` : `${scoreDiff}pp`
 
-  const hours = Math.floor(report.timeSpentMinutes / 60);
-  const minutes = report.timeSpentMinutes % 60;
-  const timeDisplay =
-    hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+  const hours = Math.floor(report.timeSpentMinutes / 60)
+  const minutes = report.timeSpentMinutes % 60
+  const timeDisplay = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`
 
   // Projected grades rows
   const gradesRows = report.projectedGrades
     .map((g) => {
-      const projected = parseInt(g.grade);
-      const target = parseInt(g.target);
+      const projected = parseInt(g.grade)
+      const target = parseInt(g.target)
       const gradeColor =
-        projected >= target
-          ? "#27AE60"
-          : projected >= target - 1
-            ? "#2E86C1"
-            : "#E74C3C";
+        projected >= target ? '#27AE60' : projected >= target - 1 ? '#2E86C1' : '#E74C3C'
       return `<tr>
         <td style="padding:8px 12px;font-size:14px;color:#555;border-bottom:1px solid #eee;">${g.subject}</td>
         <td style="padding:8px 12px;font-size:14px;font-weight:700;color:${gradeColor};text-align:center;border-bottom:1px solid #eee;">Grade ${g.grade}</td>
         <td style="padding:8px 12px;font-size:14px;color:#888;text-align:center;border-bottom:1px solid #eee;">Grade ${g.target}</td>
-      </tr>`;
+      </tr>`
     })
-    .join("");
+    .join('')
 
   // Strengths list
   const strengthsList = report.topStrengths
-    .map(
-      (s) =>
-        `<li style="padding:4px 0;font-size:14px;color:#555;">${s}</li>`
-    )
-    .join("");
+    .map((s) => `<li style="padding:4px 0;font-size:14px;color:#555;">${s}</li>`)
+    .join('')
 
   // Improvements list
   const improvementsList = report.areasForImprovement
-    .map(
-      (i) =>
-        `<li style="padding:4px 0;font-size:14px;color:#555;">${i}</li>`
-    )
-    .join("");
+    .map((i) => `<li style="padding:4px 0;font-size:14px;color:#555;">${i}</li>`)
+    .join('')
 
   // Recommendations list
   const recommendationsList = report.recommendedNextSteps
-    .map(
-      (r) =>
-        `<li style="padding:4px 0;font-size:14px;color:#555;">${r}</li>`
-    )
-    .join("");
+    .map((r) => `<li style="padding:4px 0;font-size:14px;color:#555;">${r}</li>`)
+    .join('')
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -237,7 +218,9 @@ function buildWeeklyReportEmail(report: WeeklyReportData): string {
             </td>
           </tr>
 
-          ${report.projectedGrades.length > 0 ? `
+          ${
+            report.projectedGrades.length > 0
+              ? `
           <!-- Projected grades -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -251,9 +234,13 @@ function buildWeeklyReportEmail(report: WeeklyReportData): string {
                 ${gradesRows}
               </table>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
-          ${report.topStrengths.length > 0 ? `
+          ${
+            report.topStrengths.length > 0
+              ? `
           <!-- Strengths -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -262,9 +249,13 @@ function buildWeeklyReportEmail(report: WeeklyReportData): string {
                 ${strengthsList}
               </ol>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
-          ${report.areasForImprovement.length > 0 ? `
+          ${
+            report.areasForImprovement.length > 0
+              ? `
           <!-- Areas for improvement -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -273,9 +264,13 @@ function buildWeeklyReportEmail(report: WeeklyReportData): string {
                 ${improvementsList}
               </ol>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
-          ${report.recommendedNextSteps.length > 0 ? `
+          ${
+            report.recommendedNextSteps.length > 0
+              ? `
           <!-- Recommended next steps -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -284,7 +279,9 @@ function buildWeeklyReportEmail(report: WeeklyReportData): string {
                 ${recommendationsList}
               </ol>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
           <!-- CTA Button -->
           <tr>
@@ -309,8 +306,8 @@ function buildWeeklyReportEmail(report: WeeklyReportData): string {
               </p>
               <p style="margin:0 0 8px 0;font-size:12px;color:#888888;line-height:1.5;">
                 The English Hub is a trading name of <strong>Upskill Energy Limited</strong>.<br />
-                Company registration number: [COMPANY_NUMBER]<br />
-                Registered address: [REGISTERED_ADDRESS]
+                Company registration number: 16511479 &middot; ICO ZC016690<br />
+                Registered in England &amp; Wales. Registered office address available on request.
               </p>
               <p style="margin:0 0 8px 0;font-size:12px;color:#888888;line-height:1.5;">
                 <a href="${TERMS_URL}" style="color:${BRAND_COLOR};text-decoration:underline;">Terms &amp; Conditions</a> &nbsp;|&nbsp;
@@ -327,22 +324,22 @@ function buildWeeklyReportEmail(report: WeeklyReportData): string {
     </tr>
   </table>
 </body>
-</html>`;
+</html>`
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 }
 
 function formatDateShort(date: Date): string {
-  return date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "short",
-  });
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+  })
 }

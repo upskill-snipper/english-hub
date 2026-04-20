@@ -2,20 +2,24 @@
 // All templates are DMCC Act, UK GDPR and consumer-rights compliant.
 // Language is kept clear and plain for a 14-18 year-old audience.
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://theenglishhub.app";
-const BRAND_COLOR = "#1A5276";
-const BRAND_LIGHT = "#D6EAF8";
-const CANCEL_URL = `${BASE_URL}/account/cancel`;
-const UNSUBSCRIBE_URL = `${BASE_URL}/account/email-preferences`;
-const TERMS_URL = `${BASE_URL}/terms`;
-const PRIVACY_URL = `${BASE_URL}/privacy-policy`;
-const CANCELLATION_POLICY_URL = `${BASE_URL}/legal/cancellation`;
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
+const BRAND_COLOR = '#1A5276'
+const BRAND_LIGHT = '#D6EAF8'
+const CANCEL_URL = `${BASE_URL}/account/cancel`
+const UNSUBSCRIBE_URL = `${BASE_URL}/account/email-preferences`
+const TERMS_URL = `${BASE_URL}/terms`
+const PRIVACY_URL = `${BASE_URL}/privacy-policy`
+const CANCELLATION_POLICY_URL = `${BASE_URL}/legal/cancellation`
 
 // ─── Layout wrapper ──────────────────────────────────────────────────────
 
-function layout(title: string, body: string, options?: { isMarketing?: boolean; isSubscription?: boolean }): string {
-  const showUnsubscribe = options?.isMarketing ?? false;
-  const showCancel = options?.isSubscription ?? false;
+function layout(
+  title: string,
+  body: string,
+  options?: { isMarketing?: boolean; isSubscription?: boolean },
+): string {
+  const showUnsubscribe = options?.isMarketing ?? false
+  const showCancel = options?.isSubscription ?? false
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -46,20 +50,28 @@ function layout(title: string, body: string, options?: { isMarketing?: boolean; 
             <td style="background:#f9f9f9;padding:24px 32px;border-top:1px solid #eeeeee;">
               <p style="margin:0 0 8px 0;font-size:12px;color:#888888;line-height:1.5;">
                 The English Hub is a trading name of <strong>Upskill Energy Limited</strong>.<br />
-                Company registration number: [COMPANY_NUMBER]<br />
-                Registered address: [REGISTERED_ADDRESS]
+                Company registration number: 16511479 &middot; ICO ZC016690<br />
+                Registered in England &amp; Wales. Registered office address available on request.
               </p>
               <p style="margin:0 0 8px 0;font-size:12px;color:#888888;line-height:1.5;">
                 <a href="${TERMS_URL}" style="color:${BRAND_COLOR};text-decoration:underline;">Terms &amp; Conditions</a> &nbsp;|&nbsp;
                 <a href="${PRIVACY_URL}" style="color:${BRAND_COLOR};text-decoration:underline;">Privacy Policy</a> &nbsp;|&nbsp;
                 <a href="${CANCELLATION_POLICY_URL}" style="color:${BRAND_COLOR};text-decoration:underline;">Cancellation Policy</a>
               </p>
-              ${showCancel ? `<p style="margin:0 0 8px 0;font-size:12px;color:#888888;line-height:1.5;">
+              ${
+                showCancel
+                  ? `<p style="margin:0 0 8px 0;font-size:12px;color:#888888;line-height:1.5;">
                 <a href="${CANCEL_URL}" style="color:${BRAND_COLOR};text-decoration:underline;font-weight:600;">Cancel your subscription</a>
-              </p>` : ""}
-              ${showUnsubscribe ? `<p style="margin:0 0 8px 0;font-size:12px;color:#888888;line-height:1.5;">
+              </p>`
+                  : ''
+              }
+              ${
+                showUnsubscribe
+                  ? `<p style="margin:0 0 8px 0;font-size:12px;color:#888888;line-height:1.5;">
                 <a href="${UNSUBSCRIBE_URL}" style="color:${BRAND_COLOR};text-decoration:underline;">Unsubscribe from marketing emails</a>
-              </p>` : ""}
+              </p>`
+                  : ''
+              }
               <p style="margin:0;font-size:11px;color:#aaaaaa;">
                 &copy; ${new Date().getFullYear()} Upskill Energy Limited. All rights reserved.
               </p>
@@ -70,31 +82,31 @@ function layout(title: string, body: string, options?: { isMarketing?: boolean; 
     </tr>
   </table>
 </body>
-</html>`;
+</html>`
 }
 
 // ─── Helper: CTA button ──────────────────────────────────────────────────
 
 function ctaButton(text: string, href: string, color?: string): string {
-  const bg = color || BRAND_COLOR;
+  const bg = color || BRAND_COLOR
   return `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:24px 0;">
   <tr>
     <td align="center" style="background:${bg};border-radius:6px;">
       <a href="${href}" target="_blank" style="display:inline-block;padding:14px 32px;color:#ffffff;font-size:16px;font-weight:600;text-decoration:none;border-radius:6px;">${text}</a>
     </td>
   </tr>
-</table>`;
+</table>`
 }
 
 // ─── Helper: format date for display ─────────────────────────────────────
 
 function formatDate(date: Date | string): string {
-  const d = typeof date === "string" ? new Date(date) : date;
-  return d.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const d = typeof date === 'string' ? new Date(date) : date
+  return d.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -105,7 +117,7 @@ function formatDate(date: Date | string): string {
 
 export function welcomeEmail(name: string, plan: string): string {
   return layout(
-    "Welcome to The English Hub!",
+    'Welcome to The English Hub!',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Welcome, ${name}!</h2>
 <p style="font-size:16px;line-height:1.6;">
   Thanks for subscribing to The English Hub <strong>${plan}</strong> plan. We're really glad to have you here.
@@ -124,16 +136,16 @@ export function welcomeEmail(name: string, plan: string): string {
 <p style="font-size:16px;line-height:1.6;">
   You can cancel your subscription at any time from your account settings.
 </p>
-${ctaButton("Go to your dashboard", `${BASE_URL}/dashboard`)}`,
-    { isSubscription: true }
-  );
+${ctaButton('Go to your dashboard', `${BASE_URL}/dashboard`)}`,
+    { isSubscription: true },
+  )
 }
 
 // ─── b. Trial started ────────────────────────────────────────────────────
 
 export function trialStartEmail(name: string, trialEndDate: Date | string): string {
   return layout(
-    "Your free trial has started",
+    'Your free trial has started',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Your free trial is live, ${name}!</h2>
 <p style="font-size:16px;line-height:1.6;">
   Your free trial of The English Hub is now active. You have full access to all features until <strong>${formatDate(trialEndDate)}</strong>.
@@ -147,9 +159,9 @@ export function trialStartEmail(name: string, trialEndDate: Date | string): stri
 <p style="font-size:16px;line-height:1.6;">
   Go to <a href="${CANCEL_URL}" style="color:${BRAND_COLOR};font-weight:600;">Account Settings &gt; Cancel Subscription</a> at any time before ${formatDate(trialEndDate)}.
 </p>
-${ctaButton("Start exploring", `${BASE_URL}/dashboard`)}`,
-    { isSubscription: true }
-  );
+${ctaButton('Start exploring', `${BASE_URL}/dashboard`)}`,
+    { isSubscription: true },
+  )
 }
 
 // ─── c. Trial ending (2 days before) ─────────────────────────────────────
@@ -157,10 +169,10 @@ ${ctaButton("Start exploring", `${BASE_URL}/dashboard`)}`,
 export function trialEndingEmail(
   name: string,
   trialEndDate: Date | string,
-  amount: string
+  amount: string,
 ): string {
   return layout(
-    "Your free trial ends soon",
+    'Your free trial ends soon',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Heads up, ${name} &mdash; your trial ends soon</h2>
 <p style="font-size:16px;line-height:1.6;">
   Your free trial of The English Hub ends on <strong>${formatDate(trialEndDate)}</strong>.
@@ -176,12 +188,12 @@ export function trialEndingEmail(
     Cancel before ${formatDate(trialEndDate)} and you won't be charged.
   </p>
 </div>
-${ctaButton("Cancel subscription", CANCEL_URL, "#c0392b")}
+${ctaButton('Cancel subscription', CANCEL_URL, '#c0392b')}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   You can also cancel from <a href="${CANCEL_URL}" style="color:${BRAND_COLOR};">Account Settings &gt; Cancel Subscription</a>.
 </p>`,
-    { isSubscription: true }
-  );
+    { isSubscription: true },
+  )
 }
 
 // ─── d. Renewal reminder (DMCC Act compliant) ───────────────────────────
@@ -191,7 +203,7 @@ export function renewalReminderEmail(
   nextDate: Date | string,
   amount: string,
   plan: string,
-  priceChanged?: boolean
+  priceChanged?: boolean,
 ): string {
   const priceNotice = priceChanged
     ? `<div style="background:#FDEDEC;border-left:4px solid #c0392b;padding:16px;margin:16px 0;border-radius:4px;">
@@ -202,10 +214,10 @@ export function renewalReminderEmail(
     The amount shown below is different from what you've been paying. Please check the new price and decide if you'd like to continue.
   </p>
 </div>`
-    : "";
+    : ''
 
   return layout(
-    "Your subscription is renewing soon",
+    'Your subscription is renewing soon',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Subscription renewal reminder</h2>
 <p style="font-size:16px;line-height:1.6;">
   Hi ${name}, this is a reminder that your <strong>${plan}</strong> subscription to The English Hub will renew on <strong>${formatDate(nextDate)}</strong>.
@@ -230,13 +242,13 @@ ${priceNotice}
 <p style="font-size:16px;line-height:1.6;">
   If you'd like to continue, you don't need to do anything. If you'd prefer to cancel, please do so before your renewal date.
 </p>
-${ctaButton("Cancel subscription", CANCEL_URL, "#c0392b")}
+${ctaButton('Cancel subscription', CANCEL_URL, '#c0392b')}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   This reminder is sent in accordance with the Digital Markets, Competition and Consumers Act 2024.
   You can manage your subscription at any time from <a href="${BASE_URL}/account" style="color:${BRAND_COLOR};">your account settings</a>.
 </p>`,
-    { isSubscription: true }
-  );
+    { isSubscription: true },
+  )
 }
 
 // ─── e. Cancellation confirmed ───────────────────────────────────────────
@@ -244,17 +256,17 @@ ${ctaButton("Cancel subscription", CANCEL_URL, "#c0392b")}
 export function cancellationConfirmEmail(
   name: string,
   accessEndDate: Date | string,
-  refundInfo?: string
+  refundInfo?: string,
 ): string {
   const refundBlock = refundInfo
     ? `<div style="background:${BRAND_LIGHT};border-radius:8px;padding:20px;margin:20px 0;">
   <p style="margin:0;font-size:16px;line-height:1.6;font-weight:600;color:${BRAND_COLOR};">Refund information</p>
   <p style="margin:8px 0 0 0;font-size:16px;line-height:1.6;">${refundInfo}</p>
 </div>`
-    : "";
+    : ''
 
   return layout(
-    "Subscription cancelled",
+    'Subscription cancelled',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Your subscription has been cancelled</h2>
 <p style="font-size:16px;line-height:1.6;">
   Hi ${name}, we've cancelled your subscription as requested.
@@ -266,12 +278,12 @@ ${refundBlock}
 <p style="font-size:16px;line-height:1.6;">
   If you change your mind, you can resubscribe at any time from your account.
 </p>
-${ctaButton("Resubscribe", `${BASE_URL}/pricing`)}
+${ctaButton('Resubscribe', `${BASE_URL}/pricing`)}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   We'd love to hear why you cancelled. If you have feedback, reply to this email or visit our <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact page</a>.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 }
 
 // ─── f. Payment failed ───────────────────────────────────────────────────
@@ -280,10 +292,10 @@ export function paymentFailedEmail(
   name: string,
   reason: string,
   retryDate: Date | string,
-  gracePeriodEnd: Date | string
+  gracePeriodEnd: Date | string,
 ): string {
   return layout(
-    "Payment failed",
+    'Payment failed',
     `<h2 style="color:#c0392b;margin:0 0 16px 0;">There was a problem with your payment</h2>
 <p style="font-size:16px;line-height:1.6;">
   Hi ${name}, we tried to charge your payment method but it didn't go through.
@@ -307,21 +319,21 @@ export function paymentFailedEmail(
 <p style="font-size:16px;line-height:1.6;">
   To make sure you don't lose access, please update your payment method before <strong>${formatDate(gracePeriodEnd)}</strong>.
 </p>
-${ctaButton("Update payment method", `${BASE_URL}/account/billing`)}`,
-    { isSubscription: true }
-  );
+${ctaButton('Update payment method', `${BASE_URL}/account/billing`)}`,
+    { isSubscription: true },
+  )
 }
 
 // ─── g. Data export ready ────────────────────────────────────────────────
 
 export function dataExportReadyEmail(name: string, downloadLink: string): string {
   return layout(
-    "Your data export is ready",
+    'Your data export is ready',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Your data export is ready to download</h2>
 <p style="font-size:16px;line-height:1.6;">
   Hi ${name}, we've finished putting together the data you asked for. You can download it using the button below.
 </p>
-${ctaButton("Download your data", downloadLink)}
+${ctaButton('Download your data', downloadLink)}
 <p style="font-size:16px;line-height:1.6;">
   For your security, this download link will expire in <strong>7 days</strong>. If the link has expired, you can request a new export from your account settings.
 </p>
@@ -329,15 +341,15 @@ ${ctaButton("Download your data", downloadLink)}
   This export was generated in response to your data subject access request under UK GDPR.
   If you didn't make this request, please <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact us</a> immediately.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 }
 
 // ─── h. Account deletion scheduled ──────────────────────────────────────
 
 export function accountDeletionEmail(name: string, deletionDate: Date | string): string {
   return layout(
-    "Account deletion scheduled",
+    'Account deletion scheduled',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Your account is scheduled for deletion</h2>
 <p style="font-size:16px;line-height:1.6;">
   Hi ${name}, as you requested, your account will be permanently deleted on <strong>${formatDate(deletionDate)}</strong>.
@@ -353,19 +365,19 @@ export function accountDeletionEmail(name: string, deletionDate: Date | string):
   <li>All essays and feedback</li>
   <li>Subscription and payment records (except where we are legally required to keep them)</li>
 </ul>
-${ctaButton("Cancel deletion", `${BASE_URL}/account/cancel-deletion`)}
+${ctaButton('Cancel deletion', `${BASE_URL}/account/cancel-deletion`)}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   If you didn't request this, please <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact us</a> immediately.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 }
 
 // ─── i. Human review submitted ───────────────────────────────────────────
 
 export function humanReviewSubmittedEmail(name: string, referenceNumber: string): string {
   return layout(
-    "Human review request received",
+    'Human review request received',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">We've received your human review request</h2>
 <p style="font-size:16px;line-height:1.6;">
   Hi ${name}, your request for a human review of your AI feedback has been submitted.
@@ -380,16 +392,16 @@ export function humanReviewSubmittedEmail(name: string, referenceNumber: string)
 <p style="font-size:16px;line-height:1.6;">
   Please keep your reference number safe &mdash; you'll need it if you contact us about this review.
 </p>
-${ctaButton("View your reviews", `${BASE_URL}/reviews`)}`,
-    { isSubscription: false }
-  );
+${ctaButton('View your reviews', `${BASE_URL}/reviews`)}`,
+    { isSubscription: false },
+  )
 }
 
 // ─── j. Human review completed ───────────────────────────────────────────
 
 export function humanReviewCompletedEmail(name: string, referenceNumber: string): string {
   return layout(
-    "Human review completed",
+    'Human review completed',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Your human review is complete</h2>
 <p style="font-size:16px;line-height:1.6;">
   Hi ${name}, the human review for request <strong>${referenceNumber}</strong> has been completed.
@@ -397,19 +409,19 @@ export function humanReviewCompletedEmail(name: string, referenceNumber: string)
 <p style="font-size:16px;line-height:1.6;">
   A reviewer has looked at your essay and the AI feedback. You can now see their comments and any changes to your feedback.
 </p>
-${ctaButton("View review result", `${BASE_URL}/reviews`)}
+${ctaButton('View review result', `${BASE_URL}/reviews`)}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   If you have questions about the review outcome, please <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact us</a> quoting reference <strong>${referenceNumber}</strong>.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 }
 
 // ─── k. Password reset ──────────────────────────────────────────────────
 
 export function passwordResetEmail(name: string, resetLink: string): string {
   return layout(
-    "Reset your password",
+    'Reset your password',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Password reset request</h2>
 <p style="font-size:16px;line-height:1.6;">
   Hi ${name}, we received a request to reset your password for The English Hub.
@@ -417,7 +429,7 @@ export function passwordResetEmail(name: string, resetLink: string): string {
 <p style="font-size:16px;line-height:1.6;">
   Click the button below to choose a new password. This link will expire in <strong>1 hour</strong>.
 </p>
-${ctaButton("Reset your password", resetLink)}
+${ctaButton('Reset your password', resetLink)}
 <p style="font-size:16px;line-height:1.6;">
   If you didn't ask to reset your password, you can safely ignore this email. Your password won't be changed.
 </p>
@@ -425,8 +437,8 @@ ${ctaButton("Reset your password", resetLink)}
   If the button doesn't work, copy and paste this link into your browser:<br />
   <a href="${resetLink}" style="color:${BRAND_COLOR};word-break:break-all;">${resetLink}</a>
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 }
 
 // ─── l. DSAR acknowledgement ─────────────────────────────────────────────
@@ -434,18 +446,18 @@ ${ctaButton("Reset your password", resetLink)}
 export function dsarAcknowledgementEmail(
   name: string,
   requestType: string,
-  referenceNumber: string
+  referenceNumber: string,
 ): string {
   const typeLabels: Record<string, string> = {
-    ACCESS: "access your personal data",
-    PORTABILITY: "export your personal data in a portable format",
-    ERASURE: "erase your personal data",
-    RECTIFICATION: "correct your personal data",
-  };
-  const typeDescription = typeLabels[requestType] || requestType.toLowerCase();
+    ACCESS: 'access your personal data',
+    PORTABILITY: 'export your personal data in a portable format',
+    ERASURE: 'erase your personal data',
+    RECTIFICATION: 'correct your personal data',
+  }
+  const typeDescription = typeLabels[requestType] || requestType.toLowerCase()
 
   return layout(
-    "Data request received",
+    'Data request received',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">We've received your data request</h2>
 <p style="font-size:16px;line-height:1.6;">
   Hi ${name}, we've received your request to <strong>${typeDescription}</strong>.
@@ -463,16 +475,13 @@ export function dsarAcknowledgementEmail(
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   If you didn't make this request, please <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact us</a> immediately.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 }
 
 // ─── m. Parent linked confirmation (sent to parent) ─────────────────────
 
-export function parentLinkedEmail(
-  parentName: string,
-  studentFirstName: string
-): string {
+export function parentLinkedEmail(parentName: string, studentFirstName: string): string {
   return layout(
     "You are now linked to your child's account",
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">You're all set, ${parentName}!</h2>
@@ -490,22 +499,22 @@ export function parentLinkedEmail(
   <li>Overview of essays completed and scores</li>
   <li>Projected grades and improvement areas</li>
 </ul>
-${ctaButton("View your dashboard", `${BASE_URL}/dashboard`)}
+${ctaButton('View your dashboard', `${BASE_URL}/dashboard`)}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   You can manage your parent link at any time from <a href="${BASE_URL}/dashboard/settings/parent-link" style="color:${BRAND_COLOR};">your settings</a>.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 }
 
 // ─── n. Student linked notification (sent to student) ───────────────────
 
 export function studentLinkedNotificationEmail(
   studentName: string,
-  parentFirstName: string
+  parentFirstName: string,
 ): string {
   return layout(
-    "A parent has been linked to your account",
+    'A parent has been linked to your account',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Hi ${studentName},</h2>
 <p style="font-size:16px;line-height:1.6;">
   <strong>${parentFirstName}</strong> has been linked to your account as a parent. They will be able to view your progress reports and scores.
@@ -521,9 +530,9 @@ export function studentLinkedNotificationEmail(
     If you did not share an invite code, you can remove this link from your account settings.
   </p>
 </div>
-${ctaButton("Manage parent links", `${BASE_URL}/dashboard/settings/parent-link`)}`,
-    { isSubscription: false }
-  );
+${ctaButton('Manage parent links', `${BASE_URL}/dashboard/settings/parent-link`)}`,
+    { isSubscription: false },
+  )
 }
 
 // ─── o. Parent invite email (sent when invite is created) ───────────────
@@ -531,10 +540,10 @@ ${ctaButton("Manage parent links", `${BASE_URL}/dashboard/settings/parent-link`)
 export function parentInviteEmail(
   studentFirstName: string,
   inviteCode: string,
-  inviteUrl: string
+  inviteUrl: string,
 ): string {
   return layout(
-    "You have been invited to The English Hub",
+    'You have been invited to The English Hub',
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Your child wants to connect with you</h2>
 <p style="font-size:16px;line-height:1.6;">
   <strong>${studentFirstName}</strong> has invited you to The English Hub so you can monitor their English study progress.
@@ -546,12 +555,12 @@ export function parentInviteEmail(
   <p style="margin:0 0 4px 0;font-size:14px;color:#555;">Your invite code</p>
   <p style="margin:0;font-size:28px;font-weight:700;color:${BRAND_COLOR};letter-spacing:3px;">${inviteCode}</p>
 </div>
-${ctaButton("Accept invitation", inviteUrl)}
+${ctaButton('Accept invitation', inviteUrl)}
 <p style="font-size:16px;line-height:1.6;">
   This invite expires in <strong>7 days</strong>. If the link above doesn't work, you can enter the code manually at <a href="${BASE_URL}/dashboard/settings/parent-link" style="color:${BRAND_COLOR};">The English Hub</a>.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -561,17 +570,17 @@ ${ctaButton("Accept invitation", inviteUrl)}
 // ─── p. School welcome (sent to admin after registration) ────────────────
 
 export function schoolWelcomeEmail(params: {
-  adminName: string;
-  schoolName: string;
-  loginUrl: string;
-  accessType: "FOUNDER" | "TRIAL" | string;
-  accessUntil: Date | string;
+  adminName: string
+  schoolName: string
+  loginUrl: string
+  accessType: 'FOUNDER' | 'TRIAL' | string
+  accessUntil: Date | string
 }): { subject: string; html: string; text: string } {
-  const { adminName, schoolName, loginUrl, accessType, accessUntil } = params;
+  const { adminName, schoolName, loginUrl, accessType, accessUntil } = params
 
-  const isFounder = accessType === "FOUNDER";
-  const badgeLabel = isFounder ? "FOUNDER Access" : "Free Trial";
-  const badgeColor = isFounder ? "#1A5276" : "#117A65";
+  const isFounder = accessType === 'FOUNDER'
+  const badgeLabel = isFounder ? 'FOUNDER Access' : 'Free Trial'
+  const badgeColor = isFounder ? '#1A5276' : '#117A65'
 
   const accessBlock = isFounder
     ? `<div style="background:${BRAND_LIGHT};border-left:4px solid ${BRAND_COLOR};border-radius:4px;padding:20px;margin:20px 0;">
@@ -585,11 +594,11 @@ export function schoolWelcomeEmail(params: {
   <p style="margin:0;font-size:15px;line-height:1.6;">
     You have full access to all school features until <strong>${formatDate(accessUntil)}</strong>. After your trial we will be in touch to discuss next steps.
   </p>
-</div>`;
+</div>`
 
   const subject = isFounder
     ? `Welcome to The English Hub, ${schoolName} - FOUNDER Access Confirmed`
-    : `Welcome to The English Hub, ${schoolName} - Your Trial Is Active`;
+    : `Welcome to The English Hub, ${schoolName} - Your Trial Is Active`
 
   const html = layout(
     subject,
@@ -608,47 +617,47 @@ ${accessBlock}
   <li>Import students individually or in bulk via CSV</li>
   <li>Track progress and usage from the school analytics panel</li>
 </ul>
-${ctaButton("Go to your school dashboard", loginUrl)}
+${ctaButton('Go to your school dashboard', loginUrl)}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   If you have any questions, our team is here to help. Reply to this email or visit our <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact page</a>.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 
   const text = [
     `Welcome to The English Hub, ${adminName}!`,
-    "",
+    '',
     `School: ${schoolName}`,
     `Access type: ${badgeLabel}`,
     `Access until: ${formatDate(accessUntil)}`,
-    "",
-    "Getting started:",
-    "- Log in to your school admin dashboard to manage teachers and students",
-    "- Invite teachers using the teacher management section",
-    "- Import students individually or in bulk via CSV",
-    "- Track progress and usage from the school analytics panel",
-    "",
+    '',
+    'Getting started:',
+    '- Log in to your school admin dashboard to manage teachers and students',
+    '- Invite teachers using the teacher management section',
+    '- Import students individually or in bulk via CSV',
+    '- Track progress and usage from the school analytics panel',
+    '',
     `Log in here: ${loginUrl}`,
-    "",
-    "If you have any questions, reply to this email or visit https://theenglishhub.app/contact",
-  ].join("\n");
+    '',
+    'If you have any questions, reply to this email or visit https://theenglishhub.app/contact',
+  ].join('\n')
 
-  return { subject, html, text };
+  return { subject, html, text }
 }
 
 // ─── q. Teacher invite (credentials sent to new teacher) ─────────────────
 
 export function teacherInviteEmail(params: {
-  teacherName: string;
-  schoolName: string;
-  loginEmail: string;
-  temporaryPassword: string;
-  loginUrl: string;
-  adminName: string;
+  teacherName: string
+  schoolName: string
+  loginEmail: string
+  temporaryPassword: string
+  loginUrl: string
+  adminName: string
 }): { subject: string; html: string; text: string } {
-  const { teacherName, schoolName, loginEmail, temporaryPassword, loginUrl, adminName } = params;
+  const { teacherName, schoolName, loginEmail, temporaryPassword, loginUrl, adminName } = params
 
-  const subject = `You have been added to The English Hub - ${schoolName}`;
+  const subject = `You have been added to The English Hub - ${schoolName}`
 
   const html = layout(
     subject,
@@ -672,7 +681,7 @@ export function teacherInviteEmail(params: {
 <p style="font-size:16px;line-height:1.6;">
   For your security, please change your password the first time you log in.
 </p>
-${ctaButton("Log in to The English Hub", loginUrl)}
+${ctaButton('Log in to The English Hub', loginUrl)}
 <p style="font-size:16px;line-height:1.6;font-weight:600;">What you can do as a teacher</p>
 <ul style="font-size:15px;line-height:1.8;padding-left:20px;margin:0 0 20px 0;">
   <li>View your students' essays and AI feedback</li>
@@ -682,40 +691,40 @@ ${ctaButton("Log in to The English Hub", loginUrl)}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   If you weren't expecting this email or have any questions, please contact your school admin or reach us at <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">The English Hub support</a>.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 
   const text = [
     `Welcome to The English Hub, ${teacherName}!`,
-    "",
+    '',
     `${adminName} at ${schoolName} has added you to The English Hub.`,
-    "",
-    "Your login details:",
+    '',
+    'Your login details:',
     `  Email: ${loginEmail}`,
     `  Temporary password: ${temporaryPassword}`,
-    "",
-    "Please change your password when you first log in.",
-    "",
+    '',
+    'Please change your password when you first log in.',
+    '',
     `Log in here: ${loginUrl}`,
-    "",
+    '',
     "If you weren't expecting this, contact your school admin or visit https://theenglishhub.app/contact",
-  ].join("\n");
+  ].join('\n')
 
-  return { subject, html, text };
+  return { subject, html, text }
 }
 
 // ─── r. Student welcome (credentials sent to new student) ────────────────
 
 export function studentWelcomeEmail(params: {
-  studentName: string;
-  schoolName: string;
-  loginEmail: string;
-  temporaryPassword: string;
-  loginUrl: string;
+  studentName: string
+  schoolName: string
+  loginEmail: string
+  temporaryPassword: string
+  loginUrl: string
 }): { subject: string; html: string; text: string } {
-  const { studentName, schoolName, loginEmail, temporaryPassword, loginUrl } = params;
+  const { studentName, schoolName, loginEmail, temporaryPassword, loginUrl } = params
 
-  const subject = `Your English Hub account is ready - ${schoolName}`;
+  const subject = `Your English Hub account is ready - ${schoolName}`
 
   const html = layout(
     subject,
@@ -739,7 +748,7 @@ export function studentWelcomeEmail(params: {
 <p style="font-size:16px;line-height:1.6;">
   Please change your password after your first login to keep your account secure.
 </p>
-${ctaButton("Log in and get started", loginUrl)}
+${ctaButton('Log in and get started', loginUrl)}
 <p style="font-size:16px;line-height:1.6;font-weight:600;">What you can do</p>
 <ul style="font-size:15px;line-height:1.8;padding-left:20px;margin:0 0 20px 0;">
   <li>Submit essays for instant AI feedback</li>
@@ -750,46 +759,46 @@ ${ctaButton("Log in and get started", loginUrl)}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   If you have any trouble logging in, speak to your teacher or contact us at <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">The English Hub support</a>.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 
   const text = [
     `Hi ${studentName}, your English Hub account is ready!`,
-    "",
+    '',
     `Your school, ${schoolName}, has set up an account for you.`,
-    "",
-    "Your login details:",
+    '',
+    'Your login details:',
     `  Email: ${loginEmail}`,
     `  Temporary password: ${temporaryPassword}`,
-    "",
-    "Please change your password after your first login.",
-    "",
+    '',
+    'Please change your password after your first login.',
+    '',
     `Log in here: ${loginUrl}`,
-    "",
-    "What you can do:",
-    "- Submit essays for instant AI feedback",
-    "- See detailed marks and suggestions for improvement",
-    "- Track your progress over time",
-    "- Practise for your GCSE and A Level exams",
-    "",
-    "Need help? Visit https://theenglishhub.app/contact",
-  ].join("\n");
+    '',
+    'What you can do:',
+    '- Submit essays for instant AI feedback',
+    '- See detailed marks and suggestions for improvement',
+    '- Track your progress over time',
+    '- Practise for your GCSE and A Level exams',
+    '',
+    'Need help? Visit https://theenglishhub.app/contact',
+  ].join('\n')
 
-  return { subject, html, text };
+  return { subject, html, text }
 }
 
 // ─── s. FOUNDER access expiry warning (30 days before) ───────────────────
 
 export function founderAccessExpiryWarningEmail(params: {
-  adminName: string;
-  schoolName: string;
-  accessUntil: Date | string;
-  renewalUrl: string;
-  renewalPrice: string;
+  adminName: string
+  schoolName: string
+  accessUntil: Date | string
+  renewalUrl: string
+  renewalPrice: string
 }): { subject: string; html: string; text: string } {
-  const { adminName, schoolName, accessUntil, renewalUrl, renewalPrice } = params;
+  const { adminName, schoolName, accessUntil, renewalUrl, renewalPrice } = params
 
-  const subject = `Action required: Your FOUNDER access expires on ${formatDate(accessUntil)} - ${schoolName}`;
+  const subject = `Action required: Your FOUNDER access expires on ${formatDate(accessUntil)} - ${schoolName}`
 
   const html = layout(
     subject,
@@ -820,41 +829,41 @@ export function founderAccessExpiryWarningEmail(params: {
     </tr>
   </table>
 </div>
-${ctaButton("Renew now", renewalUrl)}
+${ctaButton('Renew now', renewalUrl)}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   Questions about renewal? Reply to this email or visit our <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact page</a> and we'll be happy to help.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 
   const text = [
     `Hi ${adminName},`,
-    "",
+    '',
     `Your FOUNDER access for ${schoolName} expires on ${formatDate(accessUntil)} - that's 30 days away.`,
-    "",
+    '',
     "After that date your school's account will be suspended unless you renew.",
-    "",
+    '',
     `Renewal price: ${renewalPrice}`,
-    "",
+    '',
     `Renew here: ${renewalUrl}`,
-    "",
-    "Questions? Reply to this email or visit https://theenglishhub.app/contact",
-  ].join("\n");
+    '',
+    'Questions? Reply to this email or visit https://theenglishhub.app/contact',
+  ].join('\n')
 
-  return { subject, html, text };
+  return { subject, html, text }
 }
 
 // ─── t. FOUNDER access expired ───────────────────────────────────────────
 
 export function founderAccessExpiredEmail(params: {
-  adminName: string;
-  schoolName: string;
-  renewalUrl: string;
-  renewalPrice: string;
+  adminName: string
+  schoolName: string
+  renewalUrl: string
+  renewalPrice: string
 }): { subject: string; html: string; text: string } {
-  const { adminName, schoolName, renewalUrl, renewalPrice } = params;
+  const { adminName, schoolName, renewalUrl, renewalPrice } = params
 
-  const subject = `Your FOUNDER access has expired - ${schoolName}`;
+  const subject = `Your FOUNDER access has expired - ${schoolName}`
 
   const html = layout(
     subject,
@@ -881,45 +890,45 @@ export function founderAccessExpiredEmail(params: {
     </tr>
   </table>
 </div>
-${ctaButton("Renew and restore access", renewalUrl)}
+${ctaButton('Renew and restore access', renewalUrl)}
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   Need help or want to discuss your options? Reply to this email or visit our <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact page</a>.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 
   const text = [
     `Hi ${adminName},`,
-    "",
+    '',
     `The FOUNDER access for ${schoolName} has expired.`,
-    "",
-    "Teacher and student accounts at your school no longer have access to The English Hub.",
-    "",
-    "No data has been deleted - renew to restore access immediately.",
-    "",
+    '',
+    'Teacher and student accounts at your school no longer have access to The English Hub.',
+    '',
+    'No data has been deleted - renew to restore access immediately.',
+    '',
     `Renewal price: ${renewalPrice}`,
-    "",
+    '',
     `Renew here: ${renewalUrl}`,
-    "",
-    "Need help? Reply to this email or visit https://theenglishhub.app/contact",
-  ].join("\n");
+    '',
+    'Need help? Reply to this email or visit https://theenglishhub.app/contact',
+  ].join('\n')
 
-  return { subject, html, text };
+  return { subject, html, text }
 }
 
 // ─── u. Bulk import complete (sent to admin) ─────────────────────────────
 
 export function schoolBulkImportCompleteEmail(params: {
-  adminName: string;
-  schoolName: string;
-  importCount: number;
-  importType: "students" | "teachers" | string;
-  downloadUrl: string;
+  adminName: string
+  schoolName: string
+  importCount: number
+  importType: 'students' | 'teachers' | string
+  downloadUrl: string
 }): { subject: string; html: string; text: string } {
-  const { adminName, schoolName, importCount, importType, downloadUrl } = params;
+  const { adminName, schoolName, importCount, importType, downloadUrl } = params
 
-  const typeLabel = importType.charAt(0).toUpperCase() + importType.slice(1).toLowerCase();
-  const subject = `Bulk import complete - ${importCount} ${importType} added to ${schoolName}`;
+  const typeLabel = importType.charAt(0).toUpperCase() + importType.slice(1).toLowerCase()
+  const subject = `Bulk import complete - ${importCount} ${importType} added to ${schoolName}`
 
   const html = layout(
     subject,
@@ -946,34 +955,36 @@ export function schoolBulkImportCompleteEmail(params: {
 <p style="font-size:16px;line-height:1.6;">
   A full import report including any skipped or failed rows is available to download below. We recommend reviewing it to make sure everything looks correct.
 </p>
-${ctaButton("Download import report", downloadUrl)}
+${ctaButton('Download import report', downloadUrl)}
 <p style="font-size:16px;line-height:1.6;">
-  ${importType === "students" || importType === "teachers"
-    ? `Each imported ${importType.replace(/s$/, "")} has received a welcome email with their login credentials.`
-    : "Imported accounts have been notified with their login credentials."}
+  ${
+    importType === 'students' || importType === 'teachers'
+      ? `Each imported ${importType.replace(/s$/, '')} has received a welcome email with their login credentials.`
+      : 'Imported accounts have been notified with their login credentials.'
+  }
 </p>
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   The download link expires in <strong>7 days</strong>. If you need a new report after that, you can re-run the export from your admin dashboard.
   If you have any questions, <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact us</a>.
 </p>`,
-    { isSubscription: false }
-  );
+    { isSubscription: false },
+  )
 
   const text = [
     `Hi ${adminName},`,
-    "",
+    '',
     `The bulk import for ${schoolName} is complete.`,
-    "",
+    '',
     `Import type: ${typeLabel}`,
     `Records imported: ${importCount.toLocaleString()}`,
-    "",
-    "A full import report is available to download:",
+    '',
+    'A full import report is available to download:',
     downloadUrl,
-    "",
-    "The download link expires in 7 days.",
-    "",
-    "Questions? Visit https://theenglishhub.app/contact",
-  ].join("\n");
+    '',
+    'The download link expires in 7 days.',
+    '',
+    'Questions? Visit https://theenglishhub.app/contact',
+  ].join('\n')
 
-  return { subject, html, text };
+  return { subject, html, text }
 }

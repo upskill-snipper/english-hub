@@ -45,7 +45,11 @@ const FOOTER_SECTIONS: FooterSection[] = [
       { href: '/revision', label: 'Revision Hub' },
       // Poetry clusters are board-specific.
       { href: '/revision/poetry/power-and-conflict', label: 'Power & Conflict', boards: ['aqa'] },
-      { href: '/revision/poetry/love-and-relationships', label: 'Love & Relationships', boards: ['aqa'] },
+      {
+        href: '/revision/poetry/love-and-relationships',
+        label: 'Love & Relationships',
+        boards: ['aqa'],
+      },
       { href: '/revision/poetry/edexcel', label: 'Edexcel Anthology', boards: ['edexcel'] },
       { href: '/revision/poetry/ocr', label: 'OCR Anthology', boards: ['ocr'] },
       { href: '/revision/poetry/eduqas', label: 'Eduqas Anthology', boards: ['eduqas'] },
@@ -196,13 +200,16 @@ export function Footer() {
               >
                 The
                 <br />
-                <em className="italic" style={{ color: '#E8A382' }}>English</em>
+                <em className="italic" style={{ color: '#E8A382' }}>
+                  English
+                </em>
                 <br />
                 Hub
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-[#B5B8B3]/70 max-w-[240px]">
-              GCSE &amp; IGCSE English revision, courses, and exam prep &mdash; built for students, teachers, and schools.
+              GCSE &amp; IGCSE English revision, courses, and exam prep &mdash; built for students,
+              teachers, and schools.
             </p>
           </div>
 
@@ -233,9 +240,7 @@ export function Footer() {
                         <button
                           type="button"
                           onClick={() =>
-                            window.dispatchEvent(
-                              new CustomEvent('open-cookie-consent')
-                            )
+                            window.dispatchEvent(new CustomEvent('open-cookie-consent'))
                           }
                           className="text-sm text-[#B5B8B3]/80 transition-colors duration-200 hover:text-[#FBF7F0]"
                         >
@@ -261,7 +266,8 @@ export function Footer() {
             </p>
             <span className="hidden sm:inline text-[#B5B8B3]/30">&middot;</span>
             <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/60">
-              Upskill Energy Limited &middot; Co. 16511479 &middot; ICO ZC016690 &middot; 110 Harington Road, Formby, Liverpool, L37 1PZ &middot; England &amp; Wales
+              Upskill Energy Limited &middot; Co. 16511479 &middot; ICO ZC016690 &middot; Registered
+              in England &amp; Wales &middot; Registered office on request
             </p>
           </div>
           <div className="flex items-center gap-4 text-[11px] font-mono tracking-wide">
