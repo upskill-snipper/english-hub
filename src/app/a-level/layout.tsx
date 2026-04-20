@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { RevisionShell } from '@/app/revision/_components/revision-shell'
 
 export const metadata: Metadata = {
   title: 'A-Level English — The English Hub',
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
   },
 }
 
+// Unify the A-Level route tree with the /revision layout — same sidebar
+// + header chrome ("Your Hub" nav) regardless of the entry URL.
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return <RevisionShell>{children}</RevisionShell>
 }

@@ -102,6 +102,12 @@ const BOARD_ALLOWLIST_PREFIX: string[] = [
   '/consent/',
   '/certificate/',
 
+  // KS3 + IAL prefix allowlists so sub-routes don't loop to /board-select.
+  // (/ks3 and /ial root paths are caught by the BOARD_LANDING_REDIRECTS
+  // above; these prefixes let future sub-pages breathe.)
+  '/ks3/',
+  '/ial/',
+
   // Long-tail SEO content hub — board-agnostic analysis pages
   '/analysis/',
 
@@ -199,11 +205,43 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   ].join('; ')
 }
 
+// Board-specific landing URLs redirect to /revision with the board cookie
+// set, so every student lands on the unified "Your <Board> Hub" layout
+// regardless of which route tree they entered through. The board-specific
+// deep-content pages (e.g. /igcse/edexcel/drama) stay intact — only the
+// LANDING pages redirect.
+const BOARD_LANDING_REDIRECTS: Record<string, string> = {
+  '/a-level/aqa': 'aqa-a-level',
+  '/a-level/edexcel': 'edexcel-a-level',
+  '/a-level/ocr': 'ocr-a-level',
+  '/a-level/eduqas': 'eduqas-a-level',
+  '/igcse/edexcel': 'edexcel-igcse',
+  '/igcse/cambridge/0500': 'cambridge-0500',
+  '/igcse/cambridge/0990': 'cambridge-0990',
+  '/igcse/cambridge/0475': 'cambridge-0475',
+  '/ks3': 'ks3',
+  '/ial': 'ial-edexcel',
+  '/ial/edexcel': 'ial-edexcel',
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   // Web Crypto `randomUUID()` + `btoa` — edge-runtime safe, avoids the
   // node:crypto / Buffer imports which the edge runtime flags.
   const nonce = btoa(globalThis.crypto.randomUUID())
+
+  // ── Unified hub redirect — board landing → /revision with cookie set.
+  const boardForLanding = BOARD_LANDING_REDIRECTS[pathname]
+  if (boardForLanding) {
+    const redirectUrl = new URL('/revision', request.url)
+    const response = NextResponse.redirect(redirectUrl)
+    response.cookies.set('english-hub-board', boardForLanding, {
+      path: '/',
+      maxAge: 60 * 60 * 24 * 365, // 1 year
+      sameSite: 'lax',
+    })
+    return response
+  }
 
   // ── CSRF: Origin header validation for API mutations ─────────────
   if (pathname.startsWith('/api/') && request.method !== 'GET' && request.method !== 'HEAD') {

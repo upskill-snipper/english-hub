@@ -223,5 +223,3 @@ export default async function CuriousIncidentPage() {
     </>
   )
 }
-</content>
-</invoke>
