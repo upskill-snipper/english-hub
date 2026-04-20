@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import {
   BookOpen,
   Layers,
@@ -33,7 +33,7 @@ import { Badge } from '@/components/ui/badge'
 
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
-import { isIgcseBoard, isGcseBoard, getBoardType } from '@/lib/board/board-filter'
+import { isIgcseBoard, isGcseBoard } from '@/lib/board/board-filter'
 
 // ─── Nav items ──────────────────────────────────────────────────────────────
 
@@ -148,10 +148,51 @@ function getNavItemsForBoard(board: ExamBoard | null): NavItem[] {
 // ─── Progress from localStorage ─────────────────────────────────────────────
 
 const PROGRESS_KEY = 'english-hub-revision-progress'
+const STUDY_PLAN_KEY = 'english-hub-study-plan'
+const TARGET_GRADE_KEY = 'english-hub-target-grade'
 
-function useRevisionProgress(items: NavItem[]) {
+type TargetGrade = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+function clampGrade(n: number): TargetGrade {
+  if (n < 1) return 1
+  if (n > 9) return 9
+  return Math.round(n) as TargetGrade
+}
+
+// Derive a target grade from the Study Plan save first (user's most recent
+// explicit choice), then the direct target-grade override, then a sensible
+// default of 7 (high achiever but reachable for most students).
+function readTargetGrade(): TargetGrade {
+  try {
+    const direct = localStorage.getItem(TARGET_GRADE_KEY)
+    if (direct) {
+      const parsed = parseInt(direct, 10)
+      if (!Number.isNaN(parsed)) return clampGrade(parsed)
+    }
+    const plan = localStorage.getItem(STUDY_PLAN_KEY)
+    if (plan) {
+      const parsed = JSON.parse(plan) as { answers?: { grade?: string } }
+      const g = parsed?.answers?.grade
+      // Study Plan stores ranges: '4-5' | '6-7' | '8-9'. Take the UPPER value.
+      if (g === '4-5') return 5
+      if (g === '6-7') return 7
+      if (g === '8-9') return 9
+    }
+  } catch {
+    // ignore
+  }
+  return 7
+}
+
+interface ProgressSnapshot {
+  progress: number
+  target: TargetGrade
+}
+
+function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
   const pathname = usePathname()
   const [progress, setProgress] = useState(0)
+  const [target, setTarget] = useState<TargetGrade>(7)
 
   // Track section visits — once visited, contributes to overall progress
   const sectionKeys = items.filter((i) => i.href !== '/revision').map((i) => i.href)
@@ -180,10 +221,11 @@ function useRevisionProgress(items: NavItem[]) {
     } catch {
       // ignore
     }
+    setTarget(readTargetGrade())
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname, sectionKeys.join('|')])
 
-  return progress
+  return { progress, target }
 }
 
 // ─── Sidebar content (shared between desktop & mobile) ──────────────────────
@@ -198,7 +240,14 @@ function SidebarNav({
   boardName: string | null
 }) {
   const pathname = usePathname()
-  const progress = useRevisionProgress(navItems)
+  const { progress, target } = useRevisionProgress(navItems)
+
+  // Target + two grades below — e.g. target=7 → show 5, 6, 7 with fill
+  // reflecting how far through the 5→7 journey the student has travelled.
+  // If target ≤ 2 we show 1, 2, target so labels still make sense.
+  const gradeRight = target
+  const gradeMid = Math.max(1, target - 1) as TargetGrade
+  const gradeLeft = Math.max(1, target - 2) as TargetGrade
 
   return (
     <nav className="flex flex-col gap-1">
@@ -212,17 +261,26 @@ function SidebarNav({
         </div>
       )}
 
-      {/* Progress indicator */}
+      {/* Grade progress bar — target grade + two grades below. The fill
+          reflects the student's journey through the previous two bands
+          toward their target, based on study coverage, test results and
+          AI-feedback ratings (currently proxied through revision progress
+          until the full SaaS analytics wire-up lands).  */}
       <div className="mb-4 rounded-xl border border-border/40 bg-background/50 p-3">
         <div className="mb-2 flex items-center justify-between">
-          <span className="text-caption font-medium text-muted-foreground">Overall Progress</span>
-          <span className="text-caption font-semibold text-foreground">{progress}%</span>
+          <span className="text-caption font-medium text-muted-foreground">Target grade</span>
+          <span className="text-caption font-semibold text-primary">Grade {gradeRight}</span>
         </div>
         <Progress value={progress}>
-          <ProgressTrack className="h-1.5">
-            <ProgressIndicator className="rounded-full bg-primary" />
+          <ProgressTrack className="h-2 bg-border/40">
+            <ProgressIndicator className="rounded-full bg-gradient-to-r from-cyan-400 via-primary to-emerald-400" />
           </ProgressTrack>
         </Progress>
+        <div className="mt-1.5 flex justify-between text-[10px] font-medium text-muted-foreground">
+          <span>Grade {gradeLeft}</span>
+          <span>Grade {gradeMid}</span>
+          <span className="text-primary">Grade {gradeRight}</span>
+        </div>
       </div>
 
       {/* Nav links */}
@@ -312,27 +370,18 @@ function getIgcseHubPath(board: ExamBoard): string {
 export function RevisionShell({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { board, isHydrated } = useBoard()
-  const router = useRouter()
   const config = getBoardConfig(board)
   const boardName = config?.shortName ?? null
-  const boardType = getBoardType(board)
 
-  // Redirect non-GCSE students away from the revision hub
-  useEffect(() => {
-    if (!isHydrated || !board) return
-    if (boardType === 'ks3') {
-      router.replace('/courses')
-    } else if (boardType === 'igcse') {
-      router.replace(getIgcseHubPath(board))
-    }
-  }, [isHydrated, board, boardType, router])
+  // NB — the previous implementation redirected non-GCSE students AWAY from
+  // this shell (KS3 → /courses, IGCSE → board hub, null render for A-Level/
+  // IAL). That contradicted the unified "Your Hub" goal and produced the
+  // "flash then navigates away" bug reported for IGCSE and A-Level. The
+  // hub now renders for every board; board-aware filtering happens in
+  // NAV_ITEMS (see `boards?: ExamBoard[]` per entry).
+  void isHydrated
 
   const navItems = getNavItemsForBoard(board)
-
-  // Don't render the revision shell for non-GCSE students (they're being redirected)
-  if (isHydrated && boardType && boardType !== 'gcse') {
-    return null
-  }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
