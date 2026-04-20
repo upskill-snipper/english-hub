@@ -34,10 +34,7 @@ interface RevisionLink {
   description: string
 }
 
-function getTopicRevisionLinks(
-  topic: Topic,
-  board: ExamBoard | null,
-): RevisionLink[] {
+function getTopicRevisionLinks(topic: Topic, board: ExamBoard | null): RevisionLink[] {
   // Poetry — link to the cluster the user actually studies
   if (topic === 'poetry') {
     if (board === 'aqa') {
@@ -116,55 +113,123 @@ function getTopicRevisionLinks(
       ]
     }
     return [
-      { href: '/revision/poetry', title: 'Poetry Anthology', description: 'Annotated study guides for every poem.' },
-      { href: '/revision/exam-technique/essay-structure', title: 'Comparison Essay Structure', description: 'Build sustained poetry comparisons.' },
+      {
+        href: '/revision/poetry',
+        title: 'Poetry Anthology',
+        description: 'Annotated study guides for every poem.',
+      },
+      {
+        href: '/revision/exam-technique/essay-structure',
+        title: 'Comparison Essay Structure',
+        description: 'Build sustained poetry comparisons.',
+      },
     ]
   }
 
   if (topic === 'set-texts') {
     if (board === 'edexcel-igcse') {
       return [
-        { href: '/igcse/edexcel', title: 'Edexcel IGCSE Set Texts', description: 'Plot, character and theme guides for IGCSE.' },
-        { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'Plan top-band literature responses.' },
+        {
+          href: '/igcse/edexcel',
+          title: 'Edexcel IGCSE Set Texts',
+          description: 'Plot, character and theme guides for IGCSE.',
+        },
+        {
+          href: '/revision/exam-technique/essay-structure',
+          title: 'Essay Structure',
+          description: 'Plan top-band literature responses.',
+        },
       ]
     }
     return [
-      { href: '/revision/texts', title: 'Set Texts Library', description: 'Plot, character and theme guides.' },
-      { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'Plan top-band literature responses.' },
+      {
+        href: '/revision/texts',
+        title: 'Set Texts Library',
+        description: 'Plot, character and theme guides.',
+      },
+      {
+        href: '/revision/exam-technique/essay-structure',
+        title: 'Essay Structure',
+        description: 'Plan top-band literature responses.',
+      },
     ]
   }
 
   if (topic === 'language-techniques') {
     if (board === 'cambridge-0500' || board === 'cambridge-0990') {
       return [
-        { href: '/igcse/cambridge/0500', title: 'Cambridge Reading Skills', description: 'Reading passages and directed response.' },
-        { href: '/revision/language/writing', title: 'Writing Skills', description: 'Use techniques in your own writing.' },
+        {
+          href: '/igcse/cambridge/0500',
+          title: 'Cambridge Reading Skills',
+          description: 'Reading passages and directed response.',
+        },
+        {
+          href: '/revision/language/writing',
+          title: 'Writing Skills',
+          description: 'Use techniques in your own writing.',
+        },
       ]
     }
     return [
-      { href: '/revision/language/reading', title: 'Reading Comprehension', description: 'Spot and analyse language techniques.' },
-      { href: '/revision/language/writing', title: 'Writing Skills', description: 'Use techniques in your own writing.' },
+      {
+        href: '/revision/language/reading',
+        title: 'Reading Comprehension',
+        description: 'Spot and analyse language techniques.',
+      },
+      {
+        href: '/revision/language/writing',
+        title: 'Writing Skills',
+        description: 'Use techniques in your own writing.',
+      },
     ]
   }
 
   if (topic === 'exam-technique') {
     return [
-      { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'PEE/PEEL and thesis-led plans.' },
-      { href: '/revision/exam-technique/question-types', title: 'Question Types', description: 'Decode every command word.' },
-      { href: '/revision/exam-technique/time-management', title: 'Time Management', description: 'Pace each paper for top marks.' },
+      {
+        href: '/revision/exam-technique/essay-structure',
+        title: 'Essay Structure',
+        description: 'PEE/PEEL and thesis-led plans.',
+      },
+      {
+        href: '/revision/exam-technique/question-types',
+        title: 'Question Types',
+        description: 'Decode every command word.',
+      },
+      {
+        href: '/revision/exam-technique/time-management',
+        title: 'Time Management',
+        description: 'Pace each paper for top marks.',
+      },
     ]
   }
 
   // context
   if (board === 'edexcel-igcse') {
     return [
-      { href: '/igcse/edexcel', title: 'IGCSE Set Texts', description: 'Historical, social and literary context.' },
-      { href: '/revision/grade-targets/grade-7', title: 'Grade 7 Standards', description: 'See how context lifts marks.' },
+      {
+        href: '/igcse/edexcel',
+        title: 'IGCSE Set Texts',
+        description: 'Historical, social and literary context.',
+      },
+      {
+        href: '/revision/grade-targets/grade-7',
+        title: 'Grade 7 Standards',
+        description: 'See how context lifts marks.',
+      },
     ]
   }
   return [
-    { href: '/revision/texts', title: 'Set Texts', description: 'Historical, social and literary context.' },
-    { href: '/revision/grade-targets/grade-7', title: 'Grade 7 Standards', description: 'See how context lifts marks.' },
+    {
+      href: '/revision/texts',
+      title: 'Set Texts',
+      description: 'Historical, social and literary context.',
+    },
+    {
+      href: '/revision/grade-targets/grade-7',
+      title: 'Grade 7 Standards',
+      description: 'See how context lifts marks.',
+    },
   ]
 }
 
@@ -217,8 +282,8 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
   const [hasAnswered, setHasAnswered] = useState(false)
   const [score, setScore] = useState(0)
-  const [answers, setAnswers] = useState<(number | null)[]>(
-    () => new Array(questions.length).fill(null)
+  const [answers, setAnswers] = useState<(number | null)[]>(() =>
+    new Array(questions.length).fill(null),
   )
   const [finished, setFinished] = useState(false)
 
@@ -227,6 +292,11 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
   const [timeLeft, setTimeLeft] = useState(0)
   const [totalTime, setTotalTime] = useState(0)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // Tracks when the current question was first shown — reset every time the
+  // question index advances. Used to compute timeTakenSeconds for the
+  // /api/quiz/response analytics write.
+  const questionShownAtRef = useRef<number>(Date.now())
 
   const question = questions[currentIndex]
   const progress = ((currentIndex + (hasAnswered ? 1 : 0)) / questions.length) * 100
@@ -275,6 +345,25 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
       next[currentIndex] = optionIndex
       return next
     })
+
+    // Fire-and-forget analytics write → /api/quiz/response. Server returns
+    // 401 for anon users; we swallow errors silently. Uses `keepalive` so
+    // the request survives page navigation after the answer is selected.
+    const timeTakenSeconds = Math.min(
+      3600,
+      Math.max(0, Math.floor((Date.now() - questionShownAtRef.current) / 1000)),
+    )
+    fetch('/api/quiz/response', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        questionId: question.id,
+        moduleId: question.topic,
+        isCorrect,
+        timeTakenSeconds,
+      }),
+    }).catch(() => {})
   }
 
   // Move to next question
@@ -283,6 +372,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
       setCurrentIndex((i) => i + 1)
       setSelectedOption(null)
       setHasAnswered(false)
+      questionShownAtRef.current = Date.now()
     } else {
       handleFinish()
     }
@@ -298,7 +388,10 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     questions.forEach((q, i) => {
       if (!topicBreakdown[q.topic]) topicBreakdown[q.topic] = { correct: 0, total: 0 }
       topicBreakdown[q.topic].total++
-      if (answers[i] === q.correctIndex || (i === currentIndex && selectedOption === q.correctIndex)) {
+      if (
+        answers[i] === q.correctIndex ||
+        (i === currentIndex && selectedOption === q.correctIndex)
+      ) {
         topicBreakdown[q.topic].correct++
       }
     })
@@ -349,7 +442,9 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
 
           <div className="mt-6 flex items-center justify-center gap-6">
             <div className="text-center">
-              <div className="text-4xl font-bold text-foreground">{score}/{questions.length}</div>
+              <div className="text-4xl font-bold text-foreground">
+                {score}/{questions.length}
+              </div>
               <div className="text-sm text-muted-foreground mt-1">Correct</div>
             </div>
             <div className="h-16 w-px bg-border/60" />
@@ -382,7 +477,10 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
               return (
                 <div key={topic} className="flex items-center gap-3">
                   <div className="w-36 sm:w-44">
-                    <Badge variant="secondary" className={`${meta.colour} bg-transparent border border-border/40`}>
+                    <Badge
+                      variant="secondary"
+                      className={`${meta.colour} bg-transparent border border-border/40`}
+                    >
                       {meta.label}
                     </Badge>
                   </div>
@@ -421,7 +519,8 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
                 Recommended Revision
               </h3>
               <p className="text-body-sm text-muted-foreground mb-4">
-                Based on your weakest topic{weakTopics.length > 1 ? 's' : ''} ({weakTopics.map((t) => TOPIC_META[t].label).join(', ')}), focus next on:
+                Based on your weakest topic{weakTopics.length > 1 ? 's' : ''} (
+                {weakTopics.map((t) => TOPIC_META[t].label).join(', ')}), focus next on:
               </p>
               <div className="grid gap-3 sm:grid-cols-2">
                 {recs.map((rec) => (
@@ -434,7 +533,9 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
                       <ChevronRight className="size-4 text-primary" />
                     </div>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-foreground group-hover:text-primary">{rec.title}</p>
+                      <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                        {rec.title}
+                      </p>
                       <p className="text-xs text-muted-foreground mt-0.5">{rec.description}</p>
                     </div>
                   </Link>
@@ -462,9 +563,13 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
                   }`}
                 >
                   <summary className="cursor-pointer flex items-center gap-2 text-sm">
-                    <span className={`flex size-5 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
-                      isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/20 text-red-400'
-                    }`}>
+                    <span
+                      className={`flex size-5 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                        isCorrect
+                          ? 'bg-emerald-500/20 text-emerald-400'
+                          : 'bg-red-500/20 text-red-400'
+                      }`}
+                    >
                       {isCorrect ? <Check className="size-3" /> : <X className="size-3" />}
                     </span>
                     <span className="flex-1 text-foreground font-medium">{q.question}</span>
@@ -474,9 +579,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
                   </summary>
                   <div className="mt-2 pl-7 space-y-1.5">
                     {userAnswer !== null && userAnswer !== q.correctIndex && (
-                      <p className="text-sm text-red-400">
-                        Your answer: {q.options[userAnswer]}
-                      </p>
+                      <p className="text-sm text-red-400">Your answer: {q.options[userAnswer]}</p>
                     )}
                     <p className="text-sm text-emerald-400">
                       Correct answer: {q.options[q.correctIndex]}
@@ -588,7 +691,8 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
             'rounded-xl border p-4 text-left transition-all duration-200 cursor-pointer'
 
           if (!hasAnswered) {
-            optionClass += ' border-border/60 bg-card hover:border-primary/40 hover:bg-primary/[0.04]'
+            optionClass +=
+              ' border-border/60 bg-card hover:border-primary/40 hover:bg-primary/[0.04]'
           } else if (isCorrectOption) {
             optionClass += ' border-emerald-500/50 bg-emerald-500/10'
           } else if (isSelected && !isCorrectOption) {
@@ -635,9 +739,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
           role="status"
           aria-live="polite"
           className={`rounded-xl border p-4 animate-slide-up ${
-            isCorrect
-              ? 'border-emerald-500/30 bg-emerald-500/5'
-              : 'border-red-500/30 bg-red-500/5'
+            isCorrect ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-red-500/30 bg-red-500/5'
           }`}
         >
           <div className="flex items-center gap-2 mb-2">
