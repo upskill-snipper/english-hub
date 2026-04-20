@@ -878,7 +878,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                     phrases
                   </li>
                   <li className="current">
-                    <span className="tick">&blacktriangleright;</span> Zoom in: single-word analysis
+                    <span className="tick">{'\u25B6'}</span> Zoom in: single-word analysis
                   </li>
                   <li className="next">
                     <span className="tick"></span> Writing a full AO2 paragraph
@@ -892,15 +892,15 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                 <span className="ch">
                   &ldquo;Don&apos;t just name the technique &mdash; show its job.&rdquo;
                 </span>
-                <div className="video-placeholder">
-                  <div className="play-btn">&blacktriangleright;</div>
-                  <div className="video-bar">
-                    <div style={{ width: '42%' }} />
-                  </div>
-                </div>
+                {/* Video placeholder removed — The English Hub isn't a video
+                    platform; the feature reel previously shown here (play
+                    button + fake progress bar) misrepresented the product.
+                    Kept the teaching quote + caption as an annotated-lesson
+                    preview. */}
                 <p className="video-caption">
-                  Chapter 3 of 6 &middot; Ms Hughes explains why &ldquo;freezing&rdquo; matters more
-                  than &ldquo;cold&rdquo; in an extract from <em>Frankenstein</em>.
+                  Chapter 3 of 6 &middot; an annotated walk-through that shows why
+                  &ldquo;freezing&rdquo; matters more than &ldquo;cold&rdquo; in an extract from{' '}
+                  <em>Frankenstein</em>.
                 </p>
               </div>
             </div>

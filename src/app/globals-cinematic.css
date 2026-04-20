@@ -419,6 +419,17 @@
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  /* Hide by default — only the ACTIVE scene's phase-rail should render.
+     Without this, rails from dormant scenes visibly bled through the
+     scrolling homepage (top-right). .scene.active .phase-rail below
+     restores display for the current scene only. */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms var(--ease-out);
+}
+.scene.active .phase-rail {
+  opacity: 1;
+  pointer-events: auto;
 }
 .phase-rail .p {
   padding: 5px 10px;

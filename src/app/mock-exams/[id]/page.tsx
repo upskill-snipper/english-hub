@@ -424,6 +424,194 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
       },
     ],
   },
+  // ── Pearson Edexcel IAL Literature (WET01-04) ──────────────────────
+  // Each IAL paper is one or two extended essay prompts. Grade boundary
+  // numbers 9/8/7/6/5/4 map to A*/A/B/C/D/E respectively — the numeric
+  // shape is preserved so the existing grade-label UI works unchanged;
+  // the examBoard string ("IAL") signals the letter system to readers.
+  'ial-wet01-full': {
+    id: 'ial-wet01-full',
+    paperName: 'IAL Unit 1 — Poetry and Drama (WET01)',
+    paperType: 'literature',
+    paperNumber: 1,
+    examBoard: 'IAL',
+    timeAllowed: '2 hours 15 minutes',
+    timeMinutes: 135,
+    totalMarks: 60,
+    gradeBoundaries: [
+      { grade: 9, minMarks: 48 },
+      { grade: 8, minMarks: 42 },
+      { grade: 7, minMarks: 36 },
+      { grade: 6, minMarks: 30 },
+      { grade: 5, minMarks: 24 },
+      { grade: 4, minMarks: 18 },
+    ],
+    sectionA: 'Unseen + Anthology Comparison',
+    sectionB: 'Drama Essay',
+    questions: [
+      {
+        number: 1,
+        label: 'Unseen poem + anthology comparison (AO1/2/4)',
+        marks: 30,
+        type: 'Comparative Analysis',
+        prompt:
+          'Compare the ways the poets present loss and longing in the unseen poem and in a named poem from your studied anthology. Focus on the writers\' uses of language, form and structure, and make sustained connections between the two poems. Write a fluent, argued response — not two separate readings.',
+        markScheme: [
+          'AO1 (8): informed personal response + accurate terminology.',
+          'AO2 (10): analysis of writers\' methods — form, structure, imagery, voice — with precise textual detail.',
+          'AO4 (12): sustained comparison. Connections AND differences. Top-band answers identify points of tension, not just surface similarities.',
+        ],
+      },
+      {
+        number: 2,
+        label: 'Drama text essay (AO1/2/3)',
+        marks: 30,
+        type: 'Extended Response',
+        prompt:
+          'Explore how the dramatist presents power and its abuses in your studied drama text. Refer to at least three moments across the play and situate your reading in its social and historical context.',
+        markScheme: [
+          'AO1 (8): sustained personal response with an explicit thesis.',
+          'AO2 (10): analysis of dramatic methods — staging, dialogue, pace, dramatic irony — not just language.',
+          'AO3 (12): context woven into argument. Historical, theatrical, biographical context that sharpens interpretation, not a separate paragraph.',
+        ],
+      },
+    ],
+  },
+  'ial-wet02-full': {
+    id: 'ial-wet02-full',
+    paperName: 'IAL Unit 2 — Prose (WET02)',
+    paperType: 'literature',
+    paperNumber: 2,
+    examBoard: 'IAL',
+    timeAllowed: '1 hour 45 minutes',
+    timeMinutes: 105,
+    totalMarks: 40,
+    gradeBoundaries: [
+      { grade: 9, minMarks: 32 },
+      { grade: 8, minMarks: 28 },
+      { grade: 7, minMarks: 24 },
+      { grade: 6, minMarks: 20 },
+      { grade: 5, minMarks: 16 },
+      { grade: 4, minMarks: 12 },
+    ],
+    sectionA: 'Comparative Prose Essay',
+    questions: [
+      {
+        number: 1,
+        label: 'Comparative prose essay — pre-1900 + post-1900 (AO1/2/3/4)',
+        marks: 40,
+        type: 'Comparative Analysis',
+        prompt:
+          'Compare how the authors explore the theme of identity in your two studied prose texts. You must pair a pre-1900 and a post-1900 text, and show how each writer\'s methods shape the reader\'s response.',
+        markScheme: [
+          'AO1 (10): coherent argument with a clear line of comparison; accurate terminology.',
+          'AO2 (10): analysis of prose methods — narrative voice, structure, pacing, imagery — across both texts.',
+          'AO3 (8): historical and social context for BOTH texts. Contrast between periods should sharpen, not just decorate.',
+          'AO4 (12): sustained, precise comparison. Top-band answers treat DIFFERENCES as analytical points.',
+        ],
+      },
+    ],
+  },
+  'ial-wet03-full': {
+    id: 'ial-wet03-full',
+    paperName: 'IAL Unit 3 — Poetry and Prose, A2 (WET03)',
+    paperType: 'literature',
+    paperNumber: 1,
+    examBoard: 'IAL',
+    timeAllowed: '2 hours 15 minutes',
+    timeMinutes: 135,
+    totalMarks: 60,
+    gradeBoundaries: [
+      { grade: 9, minMarks: 48 },
+      { grade: 8, minMarks: 42 },
+      { grade: 7, minMarks: 36 },
+      { grade: 6, minMarks: 30 },
+      { grade: 5, minMarks: 24 },
+      { grade: 4, minMarks: 18 },
+    ],
+    sectionA: 'Pre-1900 Poetry',
+    sectionB: 'Prose with Critical Perspective',
+    questions: [
+      {
+        number: 1,
+        label: 'Unseen pre-1900 poem + anthology comparison (AO1/2/3/4)',
+        marks: 30,
+        type: 'Comparative Analysis',
+        prompt:
+          'Compare how the poets present the natural world in the unseen pre-1900 poem and in a named poem from the pre-1900 anthology. Consider the writers\' uses of form, imagery and voice, and the historical contexts.',
+        markScheme: [
+          'AO1 (6): sustained personal response, accurate literary vocabulary.',
+          'AO2 (8): close reading of form + method + voice. Pre-1900 conventions named.',
+          'AO3 (6): historical context — Romantic inheritance, Industrial Revolution, religious doubt.',
+          'AO4 (10): comparison as argument. Points of TENSION score higher than shared images.',
+        ],
+      },
+      {
+        number: 2,
+        label: 'Prose essay with AO5 critical perspective',
+        marks: 30,
+        type: 'Extended Response',
+        prompt:
+          '"The novel presents its female characters as trapped by ideology." How far do you agree with this feminist reading of your studied prose text? Refer to specific moments and engage with at least one critical position beyond the one offered in the question.',
+        markScheme: [
+          'AO1 (5): coherent argument with explicit thesis.',
+          'AO2 (8): analysis of prose methods — narrative voice, free indirect discourse, closure.',
+          'AO3 (5): context — Victorian gender norms, legal status of women, marriage market.',
+          'AO5 (12): explicit engagement with TWO or more critical positions. Student defends their own against them.',
+        ],
+      },
+    ],
+  },
+  'ial-wet04-full': {
+    id: 'ial-wet04-full',
+    paperName: 'IAL Unit 4 — Shakespeare + Pre-1900 Drama (WET04)',
+    paperType: 'literature',
+    paperNumber: 2,
+    examBoard: 'IAL',
+    timeAllowed: '2 hours 15 minutes',
+    timeMinutes: 135,
+    totalMarks: 60,
+    gradeBoundaries: [
+      { grade: 9, minMarks: 48 },
+      { grade: 8, minMarks: 42 },
+      { grade: 7, minMarks: 36 },
+      { grade: 6, minMarks: 30 },
+      { grade: 5, minMarks: 24 },
+      { grade: 4, minMarks: 18 },
+    ],
+    sectionA: 'Shakespeare',
+    sectionB: 'Pre-1900 Drama',
+    questions: [
+      {
+        number: 1,
+        label: 'Shakespeare essay with AO5 (AO1/2/3/5)',
+        marks: 30,
+        type: 'Extended Response',
+        prompt:
+          '"Shakespeare\'s tragic protagonist is ultimately destroyed less by external forces than by their own psychological contradictions." How far do you agree? Refer to at least THREE moments across your studied Shakespeare play and engage with at least one critical perspective (e.g. psychoanalytic, feminist, New Historicist).',
+        markScheme: [
+          'AO1 (5): sustained thesis across the essay; accurate terminology.',
+          'AO2 (8): analysis of dramatic methods — soliloquy, staging, dramatic irony, versification. Form, not just language.',
+          'AO3 (5): context as argument — Renaissance thought, Elizabethan/Jacobean theatre, religious/political climate.',
+          'AO5 (12): explicit use of one or more named critical perspectives. Top-band answers show tension between a surface reading and the critical reading.',
+        ],
+      },
+      {
+        number: 2,
+        label: 'Pre-1900 drama essay with AO5 (AO1/2/3/5)',
+        marks: 30,
+        type: 'Extended Response',
+        prompt:
+          'Discuss how your studied pre-1900 drama text represents power and transgression. You must refer to the play\'s theatrical methods, its historical context, and at least one critical perspective on the play.',
+        markScheme: [
+          'AO1 (5): coherent argument, controlled prose.',
+          'AO2 (8): drama-specific method analysis — structure, asides, stagecraft, character contrast.',
+          'AO3 (5): accurate period-specific context (Restoration theatre, Jacobean revenge tradition, early-modern religious politics).',
+          'AO5 (12): engagement with a named critic or critical position. One used well beats three namechecked.',
+        ],
+      },
+    ],
+  },
 }
 
 // ─── Timer Hook ─────────────────────────────────────────────────────────────

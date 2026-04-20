@@ -35,12 +35,8 @@ export function gradeDisplayLabel(
 ): string {
   const system = board ? GRADE_SYSTEMS[board] : '9-1'
   if (system === '9-1') return `Grade ${grade}`
-  const letter = gradeNineToLetterEquivalent(grade)
-  if (system === 'A*-E') {
-    // A*-E has no F or G — collapse to E (threshold) or U (ungraded).
-    if (letter === 'F' || letter === 'G') return 'U'
-  }
-  return letter
+  if (system === 'A*-E') return gradeNineToALevelLetter(grade)
+  return gradeNineToLetterEquivalent(grade)
 }
 
 // Approximate grade boundaries (% of total marks) — update with real data
@@ -96,15 +92,57 @@ export function getGradeSystemForBoard(board: ExamBoard | null): GradeSystem {
  * For A*-G boards, return the equivalent 9-1 grade.
  * Rough mapping used for cross-referencing guides.
  */
+/**
+ * GCSE 9-1 → legacy letter mapping (A*-G, used by Cambridge 0500 and for
+ * reference tables across the site). Aligned with the canonical mapping
+ * published by AQA / JCQ / Ofqual:
+ *   9 = A** (top of A*)   8 = A*   7 = A   6 = B (high)   5 = B/C (strong pass)
+ *   4 = C (standard pass) 3 = D    2 = E/F  1 = G
+ * We return single-letter values (the closest standard letter) because
+ * the UI renders one badge per grade band; the split "B/C" and "E/F"
+ * cases collapse to the LOWER letter so no student over-claims a grade
+ * they haven't reached.
+ */
 export function gradeNineToLetterEquivalent(
   grade: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
 ): 'G' | 'F' | 'E' | 'D' | 'C' | 'B' | 'A' | 'A*' {
-  // Approximate mapping between 9-1 and A*-G grading systems.
   switch (grade) {
     case '1':
       return 'G'
     case '2':
-      return 'F'
+      return 'F' // 2 = "E/F" officially; collapsed to F (lower)
+    case '3':
+      return 'D'
+    case '4':
+      return 'C' // standard pass threshold
+    case '5':
+      return 'C' // 5 = "B/C" officially; collapsed to C (lower)
+    case '6':
+      return 'B'
+    case '7':
+      return 'A'
+    case '8':
+      return 'A*'
+    case '9':
+      return 'A*' // 9 = "A**" in some tables; collapsed to A* (highest letter in A*-G)
+  }
+}
+
+/**
+ * GCSE 9-1 → IAL / UK A-Level A*-E mapping. A-Level has no F/G — below
+ * the E pass threshold is "U" (ungraded). A*-E is compressed upward vs
+ * A*-G because it only reports passing grades.
+ *   9 = A*   8 = A    7 = B    6 = C    5 = C (strong-pass C)
+ *   4 = D    3 = E    2 = E (E floor)   1 = U
+ */
+export function gradeNineToALevelLetter(
+  grade: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
+): 'U' | 'E' | 'D' | 'C' | 'B' | 'A' | 'A*' {
+  switch (grade) {
+    case '1':
+      return 'U'
+    case '2':
+      return 'E'
     case '3':
       return 'E'
     case '4':
@@ -112,9 +150,9 @@ export function gradeNineToLetterEquivalent(
     case '5':
       return 'C'
     case '6':
-      return 'B'
+      return 'C'
     case '7':
-      return 'A'
+      return 'B'
     case '8':
       return 'A'
     case '9':
