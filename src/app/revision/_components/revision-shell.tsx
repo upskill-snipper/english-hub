@@ -187,16 +187,37 @@ function readTargetGrade(): TargetGrade {
 interface ProgressSnapshot {
   progress: number
   target: TargetGrade
+  hasData: boolean
+}
+
+// Approximate 9-1 boundary % (board-agnostic averages) — used to convert the
+// raw performance score (0-100 avg of quiz correct rate + AI essay score)
+// into a "% of the way toward your target grade" fill. If you hit the
+// target's % threshold, the bar is 100% full; below lowest-visible grade
+// it's 0%. Matches boundaries table in src/lib/board/grade-boundaries.ts
+// averaged across boards.
+const GRADE_PERCENT_THRESHOLDS: Record<TargetGrade, number> = {
+  1: 10,
+  2: 20,
+  3: 30,
+  4: 40,
+  5: 50,
+  6: 60,
+  7: 70,
+  8: 80,
+  9: 88,
 }
 
 function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
   const pathname = usePathname()
-  const [progress, setProgress] = useState(0)
+  const [coverage, setCoverage] = useState(0)
+  const [perfScore, setPerfScore] = useState<number | null>(null)
   const [target, setTarget] = useState<TargetGrade>(7)
 
   // Track section visits — once visited, contributes to overall progress
   const sectionKeys = items.filter((i) => i.href !== '/revision').map((i) => i.href)
 
+  // Coverage % (revision sections visited) — immediate feedback loop
   useEffect(() => {
     try {
       const stored = localStorage.getItem(PROGRESS_KEY)
@@ -208,11 +229,10 @@ function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
       )
       if (matchedSection) visited.add(matchedSection)
 
-      // Only count visits to sections currently visible to this board
       const visibleVisited = Array.from(visited).filter((v) => sectionKeys.includes(v))
       const denominator = sectionKeys.length || 1
       const percentage = Math.round((visibleVisited.length / denominator) * 100)
-      setProgress(Math.min(100, Math.max(0, percentage)))
+      setCoverage(Math.min(100, Math.max(0, percentage)))
 
       localStorage.setItem(
         PROGRESS_KEY,
@@ -225,7 +245,34 @@ function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname, sectionKeys.join('|')])
 
-  return { progress, target }
+  // Real performance score — quiz correct rate + AI essay overall score
+  // (server-aggregated via /api/profile/grade-progress). Fire once per
+  // shell mount; anon users 401 silently and fall back to coverage.
+  useEffect(() => {
+    let cancelled = false
+    fetch('/api/profile/grade-progress', { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: { avgScore: number | null } | null) => {
+        if (cancelled) return
+        if (j && typeof j.avgScore === 'number') setPerfScore(j.avgScore)
+      })
+      .catch(() => {
+        // silent — coverage-only fallback is fine
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  // Blend: prefer the real perf score once we have it (map it to
+  // % toward target grade); fall back to the coverage proxy otherwise.
+  const targetThreshold = GRADE_PERCENT_THRESHOLDS[target]
+  const progress =
+    perfScore !== null && targetThreshold > 0
+      ? Math.min(100, Math.max(0, (perfScore / targetThreshold) * 100))
+      : coverage
+
+  return { progress: Math.round(progress), target, hasData: perfScore !== null }
 }
 
 // ─── Sidebar content (shared between desktop & mobile) ──────────────────────
@@ -240,7 +287,7 @@ function SidebarNav({
   boardName: string | null
 }) {
   const pathname = usePathname()
-  const { progress, target } = useRevisionProgress(navItems)
+  const { progress, target, hasData } = useRevisionProgress(navItems)
 
   // Target + two grades below — e.g. target=7 → show 5, 6, 7 with fill
   // reflecting how far through the 5→7 journey the student has travelled.
@@ -261,11 +308,12 @@ function SidebarNav({
         </div>
       )}
 
-      {/* Grade progress bar — target grade + two grades below. The fill
-          reflects the student's journey through the previous two bands
-          toward their target, based on study coverage, test results and
-          AI-feedback ratings (currently proxied through revision progress
-          until the full SaaS analytics wire-up lands).  */}
+      {/* Grade progress bar — target grade + two grades below. The fill is
+          the student's weighted performance score (quiz_responses correct
+          rate + AIFeedback overallScore, server-aggregated at
+          /api/profile/grade-progress) mapped onto the target-grade
+          threshold. Until there's real data we fall back to a coverage
+          proxy (sections visited / total visible sections).  */}
       <div className="mb-4 rounded-xl border border-border/40 bg-background/50 p-3">
         <div className="mb-2 flex items-center justify-between">
           <span className="text-caption font-medium text-muted-foreground">Target grade</span>
@@ -281,6 +329,11 @@ function SidebarNav({
           <span>Grade {gradeMid}</span>
           <span className="text-primary">Grade {gradeRight}</span>
         </div>
+        {!hasData && (
+          <p className="mt-2 text-[10px] text-muted-foreground/70 italic">
+            Sit quizzes and submit essays to see your real-data progress.
+          </p>
+        )}
       </div>
 
       {/* Nav links */}
