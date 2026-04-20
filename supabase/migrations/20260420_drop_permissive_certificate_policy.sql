@@ -1,0 +1,77 @@
+-- ─── Final drop of "Public can verify certificates" permissive policy ─
+--
+-- STATUS: PENDING. DO NOT MOVE TO migrations/ UNTIL:
+--   1. `verify_certificate` RPC (20260419_certificate_public_rpc.sql) is
+--      live in prod Supabase (verified via `\df public.verify_certificate`)
+--   2. `src/app/verify/[id]/client-page.tsx` is live in prod reading via
+--      the RPC (not `.from('certificates').select('*')`). Verify by
+--      deploying the branch and loading a certificate in the prod UI.
+--   3. A spot-check in prod `logs` or Sentry shows no
+--      "certificates FOR SELECT" failures for at least 24 hours since
+--      the client change deployed.
+--
+-- Applying this migration before any of the above will break the public
+-- /verify/[id] page for every visitor until the client update catches up.
+--
+-- To apply: `git mv migrations-pending/20260420_drop_permissive_certificate_policy.sql migrations/` and commit.
+--
+-- ──────────────────────────────────────────────────────────────────────
+-- Context (P1-SEC-3 in QA Cycle 1 Wave A):
+--
+-- The policy defined in 001_initial_schema.sql:135
+--
+--   CREATE POLICY "Public can verify certificates"
+--     ON public.certificates FOR SELECT USING (TRUE);
+--
+-- allowed any anon caller holding a certificate UUID to `select *` from
+-- public.certificates, exposing internal fields (user_id,
+-- assessment_attempt_id, score) alongside the public-facing
+-- student_name and grade. For a platform serving minors this violated
+-- data minimisation.
+--
+-- Cycle 1 Wave B shipped the mitigation in two additive steps:
+--   a) 20260419_certificate_public_rpc.sql — adds the SECURITY DEFINER
+--      RPC public.verify_certificate(cert_id uuid) which returns only
+--      { id, course_id, grade, issued_at, student_name } (5 public-safe
+--      fields; no user_id, no assessment_attempt_id).
+--   b) src/app/verify/[id]/client-page.tsx — rewritten to call
+--      `supabase.rpc('verify_certificate', { cert_id: id })` in place
+--      of `supabase.from('certificates').select('*')`.
+--
+-- The permissive policy was intentionally left in place during Wave B
+-- so the public verify page would continue to work during the deploy
+-- window. This migration is the final cleanup — once (1)-(3) above are
+-- confirmed, moving this file into `migrations/` and applying it
+-- removes the last permissive SELECT path on `certificates`.
+--
+-- Deployment ordering (read carefully before promoting this file):
+--   Step 1: RPC migration 20260419_certificate_public_rpc.sql applied to prod DB.
+--   Step 2: Client bundle containing the RPC-based verify page deployed to prod.
+--   Step 3: Soak period — 24h minimum with no "certificates FOR SELECT"
+--           errors reported in logs / Sentry.
+--   Step 4: `git mv` this file from migrations-pending/ to migrations/,
+--           commit, and apply via the normal Supabase migration flow.
+--
+-- Reversibility: if a regression surfaces after promotion, re-add the
+-- policy with:
+--
+--   CREATE POLICY "Public can verify certificates"
+--     ON public.certificates FOR SELECT USING (TRUE);
+--
+-- but prefer fixing forward — any residual caller that still issues
+-- `from('certificates').select(...)` from an anon session is itself a
+-- data-exposure bug and should be migrated to the RPC.
+--
+-- After-state SELECT policies on public.certificates:
+--   - "Users can view own certificates" (001_initial_schema.sql:133)
+--     — authenticated owners see their own rows via auth.uid() = user_id.
+--   - Service role continues to have full access (RLS bypass).
+--   - Public verification flows exclusively through
+--     public.verify_certificate(uuid).
+--
+-- This CLOSES Cycle 1 P1-SEC-3. See the Cycle 1 audit log entry for
+-- P1-SEC-3 and the Cycle 8 strike-force write-up referencing this
+-- pending migration.
+-- ──────────────────────────────────────────────────────────────────────
+
+DROP POLICY IF EXISTS "Public can verify certificates" ON public.certificates;

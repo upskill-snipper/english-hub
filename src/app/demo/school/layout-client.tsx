@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
   LayoutDashboard,
   Users,
@@ -19,36 +19,32 @@ import {
   Settings,
   Upload,
   UserCog,
-} from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ToastProvider } from "@/components/ui/Toast"
-import DemoBanner from "@/components/demo/DemoBanner"
+} from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { ToastProvider } from '@/components/ui/Toast'
+import DemoBanner from '@/components/demo/DemoBanner'
 
 const NAV_ITEMS = [
-  { label: "Dashboard", href: "/demo/school", icon: LayoutDashboard },
-  { label: "Students", href: "/demo/school/students", icon: Users },
-  { label: "Teachers", href: "/demo/school/teachers", icon: GraduationCap },
-  { label: "Classes", href: "/demo/school/classes", icon: BookOpen },
-  { label: "Analytics", href: "/demo/school/analytics", icon: BarChart3 },
-  { label: "Reports", href: "/demo/school/reports", icon: FileText },
-  { label: "Progress", href: "/demo/school/progress", icon: TrendingUp },
-  { label: "Users", href: "/demo/school/users", icon: UserCog },
-  { label: "Import", href: "/demo/school/import", icon: Upload },
-  { label: "Settings", href: "/demo/school/settings", icon: Settings },
+  { label: 'Dashboard', href: '/demo/school', icon: LayoutDashboard },
+  { label: 'Students', href: '/demo/school/students', icon: Users },
+  { label: 'Teachers', href: '/demo/school/teachers', icon: GraduationCap },
+  { label: 'Classes', href: '/demo/school/classes', icon: BookOpen },
+  { label: 'Analytics', href: '/demo/school/analytics', icon: BarChart3 },
+  { label: 'Reports', href: '/demo/school/reports', icon: FileText },
+  { label: 'Progress', href: '/demo/school/progress', icon: TrendingUp },
+  { label: 'Users', href: '/demo/school/users', icon: UserCog },
+  { label: 'Import', href: '/demo/school/import', icon: Upload },
+  { label: 'Settings', href: '/demo/school/settings', icon: Settings },
 ]
 
-export default function DemoSchoolLayoutClient({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function DemoSchoolLayoutClient({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
 
   function isActive(href: string) {
-    if (href === "/demo/school") return pathname === "/demo/school"
+    if (href === '/demo/school') return pathname === '/demo/school'
     return pathname.startsWith(href)
   }
 
@@ -72,10 +68,11 @@ export default function DemoSchoolLayoutClient({
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-2">
-              <p className="truncate text-sm font-bold text-foreground">
-                Riverside Academy
-              </p>
-              <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider">
+              <p className="truncate text-sm font-bold text-foreground">Riverside Academy</p>
+              <Badge
+                variant="secondary"
+                className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider"
+              >
                 Demo
               </Badge>
             </div>
@@ -95,10 +92,10 @@ export default function DemoSchoolLayoutClient({
               href={item.href}
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                 active
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                  ? 'bg-primary/10 text-primary'
+                  : 'text-muted-foreground hover:bg-accent hover:text-foreground',
               )}
             >
               <Icon className="h-4 w-4 shrink-0" />
@@ -111,8 +108,8 @@ export default function DemoSchoolLayoutClient({
       {/* Bottom actions */}
       <div className="border-t border-border px-3 py-4 space-y-3">
         <Button render={<Link href="/for-schools/register" />} className="w-full font-semibold">
-            <Sparkles className="h-4 w-4 mr-1.5" />
-            Register Your School
+          <Sparkles className="h-4 w-4 mr-1.5" />
+          Register Your School
         </Button>
         <Link
           href="/demo"
@@ -130,9 +127,7 @@ export default function DemoSchoolLayoutClient({
       <div className="flex min-h-screen bg-background">
         {/* Desktop sidebar */}
         <aside className="hidden w-60 shrink-0 border-r border-border bg-card lg:block">
-          <div className="sticky top-0 h-screen overflow-y-auto">
-            {sidebarContent}
-          </div>
+          <div className="sticky top-0 h-screen overflow-y-auto">{sidebarContent}</div>
         </aside>
 
         {/* Mobile header */}
@@ -143,16 +138,15 @@ export default function DemoSchoolLayoutClient({
             onClick={() => setMobileOpen(!mobileOpen)}
             className="mr-3"
           >
-            {mobileOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
           <div className="flex items-center gap-2">
             <School className="h-5 w-5 text-primary" />
             <span className="text-sm font-bold">Riverside Academy</span>
-            <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider">
+            <Badge
+              variant="secondary"
+              className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider"
+            >
               Demo
             </Badge>
           </div>
@@ -171,12 +165,12 @@ export default function DemoSchoolLayoutClient({
           </>
         )}
 
-        {/* Main content */}
-        <main className="flex-1 min-w-0 overflow-x-hidden pt-14 lg:pt-0">
+        {/* Main content — id matches the skip-to-content link in the
+            root layout. Cycle 2 a11y P1: without this id the skip link
+            fell through to the top of the page on /demo/school/*. */}
+        <main id="main-content" className="flex-1 min-w-0 overflow-x-hidden pt-14 lg:pt-0">
           <DemoBanner />
-          <div className="px-4 py-6 sm:px-6 lg:px-8 lg:py-8 max-w-full">
-            {children}
-          </div>
+          <div className="px-4 py-6 sm:px-6 lg:px-8 lg:py-8 max-w-full">{children}</div>
         </main>
       </div>
     </ToastProvider>

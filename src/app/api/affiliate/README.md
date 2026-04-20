@@ -7,10 +7,10 @@ plural `affiliates` vs. this singular `affiliate`).
 
 ## Why two systems?
 
-| Surface              | Path                          | Tiers                  | Commission        | Source of truth          |
-| -------------------- | ----------------------------- | ---------------------- | ----------------- | ------------------------ |
-| Legacy (Rewardful)   | `/api/affiliates/*`           | `1 / 2 / 3`            | Flat GBP per plan | `affiliates`, `affiliate_referrals`, `affiliate_payouts` |
-| **New (this dir)**   | `/api/affiliate/*`            | `bronze / silver / gold` | % of order value  | `affiliate_accounts`, `affiliate_links`, `affiliate_clicks`, `affiliate_conversions`, `affiliate_payouts` (v2) |
+| Surface            | Path                | Tiers                    | Commission        | Source of truth                                                                                                |
+| ------------------ | ------------------- | ------------------------ | ----------------- | -------------------------------------------------------------------------------------------------------------- |
+| Legacy (Rewardful) | `/api/affiliates/*` | `1 / 2 / 3`              | Flat GBP per plan | `affiliates`, `affiliate_referrals`, `affiliate_payouts`                                                       |
+| **New (this dir)** | `/api/affiliate/*`  | `bronze / silver / gold` | % of order value  | `affiliate_accounts`, `affiliate_links`, `affiliate_clicks`, `affiliate_conversions`, `affiliate_payouts` (v2) |
 
 The new system is **not wired to Stripe yet**. Until the migration below is
 applied and the Stripe webhook is updated, this backend is inert: all routes
@@ -79,7 +79,7 @@ Cookie schema (base64url-encoded JSON):
   "ref": "alex-abc123",
   "linkId": "9f2c7…",
   "firstTouchAt": "2026-04-01T12:00:00.000Z",
-  "lastTouchAt":  "2026-04-08T09:31:11.123Z",
+  "lastTouchAt": "2026-04-08T09:31:11.123Z",
   "clickCount": 3
 }
 ```
@@ -133,11 +133,27 @@ into Stripe checkout `metadata` at session-creation time).
 
 ### 3. Environment variables
 
-| Variable               | Purpose                                         |
-| ---------------------- | ----------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Base URL used to build share/short URLs         |
-| `AFFILIATE_IP_SALT`    | Salt for the click-log IP hash (random 32-char) |
-| `AFFILIATE_ADMIN_EMAIL`| Where to send new-application notifications    |
+| Variable                   | Purpose                                             |
+| -------------------------- | --------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`     | Base URL used to build share/short URLs             |
+| `AFFILIATE_IP_HASH_SECRET` | HMAC key for click-log IP hashing (random 32+ char) |
+| `AFFILIATE_ADMIN_EMAIL`    | Where to send new-application notifications         |
+
+#### IP hashing (HMAC-SHA256)
+
+Click-log rows persist a keyed hash of the client IP rather than the raw
+address, so the table is privacy-compliant and usable for fraud-dedup
+without being a PII store. We use `HMAC-SHA256(AFFILIATE_IP_HASH_SECRET, ip)`
+(see `src/lib/affiliate/ip-hash.ts`), which is stronger than a plain salted
+digest because an attacker needs the secret to mount a dictionary attack
+against the hash column.
+
+Each environment (prod, staging, preview) should have its own unique
+`AFFILIATE_IP_HASH_SECRET`. **Rotation semantics:** rotating the secret
+breaks cross-environment click-fraud deduplication (the same IP now hashes
+to a different value), but does not corrupt already-persisted rows —
+historical conversions still attribute correctly. Rotate only if you have
+reason to believe the secret has leaked.
 
 ### 4. Short-URL redirect
 

@@ -49,14 +49,14 @@ shape for the work, not 50.
 
 ### Summary counts
 
-| Audit | P0 | P1 | P2 | P3 |
-|---|---|---|---|---|
-| Security code | 2 | 5 | 5 | 4 |
-| Compliance & legal | 5 | 6 | 6 | — |
-| Dependency & infra | 2 | 6 | 7 | 4 |
-| UX / SEO / a11y static | 2 | 7 | 9 | 6 |
-| Live-site headers (prod) | 0 | 2 | 5 | 8 |
-| **TOTAL** | **11** | **26** | **32** | **22** |
+| Audit                    | P0     | P1     | P2     | P3     |
+| ------------------------ | ------ | ------ | ------ | ------ |
+| Security code            | 2      | 5      | 5      | 4      |
+| Compliance & legal       | 5      | 6      | 6      | —      |
+| Dependency & infra       | 2      | 6      | 7      | 4      |
+| UX / SEO / a11y static   | 2      | 7      | 9      | 6      |
+| Live-site headers (prod) | 0      | 2      | 5      | 8      |
+| **TOTAL**                | **11** | **26** | **32** | **22** |
 
 ### PRIORITISED FIX QUEUE
 
@@ -67,12 +67,14 @@ shape for the work, not 50.
 Listed in fix-priority order (not audit order):
 
 **P0-SEC-1 · Unauthenticated parental-notification endpoint with HTML injection**
+
 - `src/app/api/auth/parent-notify/route.ts:27-148`
 - No auth check. Body trusted. `studentName` interpolated unescaped into HTML email.
 - Impact: Anyone can email arbitrary parents from `noreply@theenglishhub.app` with attacker-controlled HTML. Safeguarding + phishing pivot + brand damage. In-memory rate limit is broken in Vercel serverless (per-instance map).
 - Fix: auth + ownership check; switch to Upstash; HTML-escape or use template library.
 
 **P0-SEC-2 · Unauthenticated AI endpoints burning Anthropic credits**
+
 - `src/app/api/toolkit/generate-notes/route.ts:121-189`
 - `src/app/api/toolkit/generate-test/route.ts`
 - `src/app/api/generate-pptx/route.ts:274-303`
@@ -81,48 +83,56 @@ Listed in fix-priority order (not audit order):
 - Fix: auth + `hasActiveSubscription` + Upstash per-user limit + content-safety wrapper.
 
 **P0-COMM-1 · Teacher dashboard is hardcoded mock data**
+
 - `src/app/dashboard/teacher/page.tsx:5-79`
 - Paying teachers at £12.99/mo see hardcoded students "Emma Thompson / Oliver Chen / Amira Patel". No `/api/teacher/*` implementation.
 - Impact: CMA misleading-practice exposure; customer fraud risk. If known-unshipped, should be gated behind "Coming soon" banner, not delivered to paid users.
 - Fix: wire real APIs or hide feature behind a release flag + refund any teachers who paid for it.
 
 **P0-COMM-2 · Essay submission is a setTimeout stub**
+
 - `src/app/dashboard/essay/new/page.tsx:66-79`
 - Comment: "Stub: POST /api/essays — currently simulates submission". Redirects to hardcoded `/dashboard/essay/1`.
 - Impact: if this is the canonical student entry, "AI Essay Marking" marketing claim is undelivered. Other routes (`/api/mark`, `/api/essay-feedback`) exist and are well-built — this may be a dead entrypoint. **Needs owner confirmation.**
 - Fix: either wire to real endpoint or remove.
 
 **P0-COMP-1 · Live `[DPO_NAME]` / `[DPO_EMAIL]` placeholders on privacy policy**
+
 - `src/app/privacy-policy/page.tsx:637,641,642`
 - Literal placeholder strings rendered to users on production right now.
 - Impact: UK GDPR Art. 13(1)(b) breach — users cannot identify/contact DPO.
 - Fix: replace with real DPO details or remove the card and rely on `info@upskillenergy.com`.
 
 **P0-COMP-2 · Company number inconsistency — NEEDS OWNER CONFIRMATION**
+
 - Code shows `16511479` (`src/components/layout/footer.tsx:264`, `src/app/terms/page.tsx:29`)
 - Original mission manifest said `16254656`
 - Impact: if code is wrong, every legal page misstates the contracting party (voidable contracts, Companies Act s.82).
 - Fix: confirm correct number at Companies House and correct wherever stated.
 
 **P0-COMP-3 · Vercel Analytics + SpeedInsights + Rewardful fire pre-consent**
+
 - `src/app/layout.tsx:15-16, 74-80, 96-97`
 - `<Analytics />`, `<SpeedInsights />`, and `https://r.wdfl.co/rw.js` mounted unconditionally with `afterInteractive`.
 - Impact: PECR reg. 6 breach — identifiers set/read before consent. Rewardful also missing from Privacy Policy processor list.
 - Fix: gate all three behind existing `hasAnalyticsConsent()`; add to Cookie Policy + Privacy Policy §5.
 
 **P0-COMP-4 · VAT treatment missing on pricing page**
+
 - `src/app/pricing/page.tsx:303-322, 397-417, 500-507`
 - All prices shown without "inc VAT" / "ex VAT" label.
 - Impact: Price Marking Order 2004 / CRA 2015 — B2C prices must be clearly indicated.
 - Fix: label each price block. (Terms §6 says "inc VAT where applicable" — bring to pricing UX.)
 
 **P0-INFRA-1 · Next.js 14.2.35 high-severity DoS CVE (GHSA-h25m-26qc-wcjf)**
+
 - Fix release is Next 15.0.8+ (semver major).
 - Impact: external DoS against production; also `@anthropic-ai/sdk@0.80.0` has a moderate sandbox-escape (fix 0.90, also major) — batch these together.
 - Fix: plan Next 14→15 migration + SDK bump. Material work; not a one-line patch.
 
 **P0-CC-1 · Rewardful + Vercel Analytics + SpeedInsights load without child-aware consent**
 (Partly overlaps P0-COMP-3.) ICO Children's Code Standard 15 (third-party tools) — under-16 defaults should suppress these tools entirely, not just gate behind generic consent.
+
 - Fix: combine consent gate with `getChildProfileDefaults()` check.
 
 ---
@@ -130,6 +140,7 @@ Listed in fix-priority order (not audit order):
 #### ⚠️ P1 — HIGH RISK (26 items)
 
 **Security**
+
 - P1-SEC-3 · `certificates` table has `FOR SELECT USING (TRUE)` — returns `user_id`, `student_name`, `score`, `assessment_attempt_id` to anyone with the UUID (`supabase/migrations/001_initial_schema.sql:135`)
 - P1-SEC-4 · `school_join_codes` selectable by any authenticated user (`supabase/migrations/004_fix_school_rls.sql:322-325`)
 - P1-SEC-5 · Login leaks account existence via Supabase error (`src/app/auth/login/page.tsx:82-92`)
@@ -137,6 +148,7 @@ Listed in fix-priority order (not audit order):
 - P1-SEC-7 · CSP allows `script-src 'unsafe-inline'` with no nonce; no COOP/CORP (`next.config.js:79`)
 
 **Infra**
+
 - P1-INFRA-2 · CI workflow uses `npm audit || true` — findings don't fail CI
 - P1-INFRA-3 · Deploy workflow has no `needs:` on CI — merge to main can deploy with failing CI
 - P1-INFRA-4 · `poweredByHeader: false` not set (leaks `X-Powered-By: Next.js`)
@@ -145,6 +157,7 @@ Listed in fix-priority order (not audit order):
 - P1-INFRA-7 · `amondnet/vercel-action@v25` pinned by tag not SHA — supply-chain risk
 
 **Compliance**
+
 - P1-COMP-5 · Minimum age floor inconsistent: Terms says 14, Privacy says 13, register enforces 13
 - P1-COMP-6 · Missing processors in Privacy Policy: Google Analytics, Rewardful, Vercel Analytics, Vercel SpeedInsights
 - P1-COMP-7 · Trial length inconsistent: Terms 30 days, pricing "3 free uses", register "first month free"
@@ -153,6 +166,7 @@ Listed in fix-priority order (not audit order):
 - P1-COMP-10 · Accessibility statement missing explicit alt-format offer (Equality Act 2010)
 
 **UX / SEO**
+
 - P1-UX-8 · Invalid Tailwind class `bg-blue-950/200/10` (`src/app/dashboard/page.tsx:443`)
 - P1-UX-9 · `src/app/auth/register/layout.tsx` missing description + OG tags
 - P1-UX-10 · Sitemap lists `/dashboard/papers`, `/auth/*`, `/demo/*` while robots.txt disallows those paths
@@ -161,6 +175,7 @@ Listed in fix-priority order (not audit order):
 - P1-UX-13 · Flashcard `<div onClick>` with no keyboard handler (WCAG 2.1.1)
 
 **Live site**
+
 - P1-LIVE-1 · CSP `'unsafe-inline'` (same root as P1-SEC-7; confirms prod)
 - P1-LIVE-2 · `Cross-Origin-Opener-Policy` absent on prod (site has Stripe popups — should be `same-origin-allow-popups`)
 
@@ -169,6 +184,7 @@ Listed in fix-priority order (not audit order):
 #### 🔧 P2 — MEDIUM (32 items)
 
 Highlights (full list in agent reports):
+
 - P2-SEC-1 · AI output rendered via `dangerouslySetInnerHTML` in `toolkit/revision-builder/page.tsx:313`, `toolkit/my-materials/page.tsx:188` — stored XSS if Claude emits HTML (prompt injection from P0-SEC-2 widens this)
 - P2-SEC-2 · `parental_consents` migration ordering — `20260322_new_features.sql` recreates a permissive `FOR ALL USING (true)` policy after `004_fix_school_rls.sql` drops it (file sort order)
 - P2-SEC-3 · CSRF Origin check passes when Origin header absent (`src/middleware.ts:131-142`)
@@ -194,6 +210,7 @@ Highlights (full list in agent reports):
 #### 📝 P3 — LOW / HYGIENE (22 items)
 
 Highlights:
+
 - `X-Powered-By: Next.js` leak on prod
 - `X-Matched-Path` debug header exposed
 - `upgrade-insecure-requests`, CSP `report-uri` not set
@@ -254,11 +271,180 @@ Highlights:
 
 ## CYCLE 1 — WAVE B (FIXES) · 2026-04-19
 
-**Branch:** `qa/cycle-1-wave-b`
-**Scope:** 14 P0/P1 fixes executed autonomously per owner authorisation. Next 14→15 and RLS SQL deferred to separate PRs.
+**Branch:** `qa/cycle-1-wave-b-v2` (v1 was derailed by a concurrent Claude session
+that cherry-picked my in-flight edits onto `main` inside commit `a64da8a`;
+the surviving edits from v1 were kept, and v2 resumed on a clean branch).
+**Scope:** 14 P0/P1 fixes executed autonomously per owner authorisation.
+Next 14→15 and RLS SQL deferred to separate PRs.
 
-(Change manifest appended below as fixes are completed.)
+### Change manifest (uncommitted on `qa/cycle-1-wave-b-v2`)
+
+| #   | Finding ref         | Files                                                                                                                                            | Change                                                                                                                                                                                                                                                                                                                  |
+| --- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | P0-SEC-1            | `src/app/api/auth/parent-notify/route.ts`                                                                                                        | Rewrote endpoint: now requires `supabase.auth.getUser()`, enforces `studentId` ownership check, swaps broken in-memory rate limit for Upstash (5/h per user + 10/h per IP), HTML-escapes `studentName` + `consentUrl`, validates email format, URL-encodes the token                                                    |
+| 2a  | P0-SEC-2            | `src/app/api/toolkit/generate-notes/route.ts`                                                                                                    | Added auth + `hasActiveSubscription` gate; switched rate limit key from IP to user; added `sanitiseForPrompt()` for `topic`/`board`/`weakAreas`; moved role/constraint instructions into a `system:` prompt with explicit prompt-injection defence; added `OFF_TOPIC` fallback to deterministic template                |
+| 2b  | P0-SEC-2            | `src/app/api/toolkit/generate-test/route.ts`                                                                                                     | Added auth + subscription gate; per-user rate limit (template-only endpoint, no AI)                                                                                                                                                                                                                                     |
+| 2c  | P0-SEC-2            | `src/app/api/generate-pptx/route.ts`                                                                                                             | Added auth + subscription gate; per-user rate limit                                                                                                                                                                                                                                                                     |
+| 3   | P0-COMM-2           | `src/app/dashboard/essay/new/page.tsx`                                                                                                           | Replaced 294-line stub form with a server-component `redirect('/dashboard/essay-feedback')` so the canonical AI essay flow is used (which already has full auth/subscription/consent/safety chain)                                                                                                                      |
+| 4   | P0-COMM-1           | `src/app/dashboard/teacher/page.tsx`                                                                                                             | Added prominent amber "Preview — teacher dashboard is still in development" banner at the top of the page; softened header subtitle to make the preview nature unambiguous. No paid teachers affected (per owner).                                                                                                      |
+| 5   | P0-COMP-1           | `src/app/privacy-policy/page.tsx`                                                                                                                | (Already applied via `a64da8a`) — removed the DPO card that rendered literal `[DPO_NAME]` / `[DPO_EMAIL]` placeholders; rewrote Section 13 prose to match reality ("no formal DPO required under Art. 37; direct requests to the contact in Section 14");                                                               |
+| 6   | P1-COMP-6           | `src/app/privacy-policy/page.tsx`                                                                                                                | Added 4 missing processors to §5: Vercel Analytics & Speed Insights, Google Analytics 4, Rewardful                                                                                                                                                                                                                      |
+| 7   | P0-COMP-3 + P0-CC-1 | `src/components/ConsentGatedAnalytics.tsx` (new), `src/app/layout.tsx`, `src/components/cookie-consent.tsx`                                      | New wrapper component mounts `<Analytics />`, `<SpeedInsights />`, and the Rewardful `<Script>` only when `hasAnalyticsConsent()` is true; layout no longer unconditionally loads these in `<head>` / `<body>`; cookie-consent now dispatches a `cookie-consent-changed` event so the gate opens immediately on consent |
+| 8   | P0-COMP-4           | `src/app/terms/page.tsx`                                                                                                                         | (Already applied via `a64da8a`) — Terms §6 now states "Upskill Energy Limited is not currently registered for UK VAT (turnover is below the registration threshold), so no VAT is charged"; removed misleading "inc VAT where applicable" language                                                                      |
+| 9   | P1-UX-11            | `src/app/for-schools/page.tsx`, `src/app/pricing/page.tsx`, `src/components/home/PricingSection.tsx`, `src/components/home/AnthologyPricing.tsx` | Replaced all "Limited to 10 Schools" / "Only 10 schools" / "when the programme closes, it closes" copy with "First 10 schools get founding-partner pricing; additional schools welcome at standard rates" framing — truthful, defensible under CPUT Regs 2008, still creates genuine urgency for the founders discount  |
+| 10  | P1-COMP-5           | `src/app/terms/page.tsx`                                                                                                                         | (Already applied via `a64da8a`) — §2 minimum age floor 14 → 13, with explicit reference to UK DPA 2018 digital-consent age                                                                                                                                                                                              |
+| 11  | P1-UX-8             | `src/app/dashboard/page.tsx`                                                                                                                     | (Already applied via `a64da8a`) — fixed 3 invalid Tailwind classes `bg-blue-950/200/10`, `bg-amber-950/200/10`, `bg-red-950/200/10` → `bg-*-500/10`                                                                                                                                                                     |
+| 12  | P1-INFRA-4+5        | `next.config.js`                                                                                                                                 | (Already applied via `a64da8a`) — added `poweredByHeader: false` and `reactStrictMode: true`                                                                                                                                                                                                                            |
+| 13  | P1-UX-10            | `src/app/sitemap.ts`                                                                                                                             | (Already applied via `a64da8a`) — removed `/demo/*`, `/auth/*`, `/dashboard/papers` (all disallowed in robots.ts), leaving an inline comment explaining the policy                                                                                                                                                      |
+| 14  | P1-UX-13            | `src/app/resources/study-tools/flashcards/page.tsx`                                                                                              | (Already applied via `a64da8a`) — flashcard flip interaction now keyboard-accessible: `role="button"`, `tabIndex=0`, `onKeyDown` for Enter/Space, `aria-label`, focus-visible ring                                                                                                                                      |
+
+### Items deliberately NOT touched in this wave
+
+| Item                                                                     | Reason                                                                                                                                                                   |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Trial-copy "inconsistency" (audit called out "30 days" vs "3 free uses") | On re-reading the code these describe two distinct, both-real offers (30-day Stripe trial + 3 free uses per feature on the free tier). Copy is coherent as-is; demoting. |
+| Next.js 14 → 15 major upgrade                                            | Owner agreed: separate branch, separate PR, separate verification.                                                                                                       |
+| CSP nonce rewrite / COOP / CORP                                          | Ties into the Next 15 upgrade (per-request nonces).                                                                                                                      |
+| `certificates` + `school_join_codes` RLS policies                        | Cannot be verified or applied without live DB access; write-up remains in the P1 register.                                                                               |
+| CI `npm audit` hardening, deploy `needs:` gate                           | Owner decision — touches CI ergonomics.                                                                                                                                  |
+| Live-site destructive tests (auth enum, RBAC, XSS, AI prompt injection)  | No staging environment; unsafe against production for minors.                                                                                                            |
+
+### Verification
+
+- `npx tsc --noEmit` — **0 errors** (exit 0)
+- `npx next lint` — **0 errors, warnings pre-existing in test files and `src/lib/*`** (exit 0)
+- `npx vitest run` — **681 pass, 12 fail**. All 12 failures are in `board-store.test.ts` + `board-system.test.ts` (IGCSE board naming + grade-boundaries coverage) and fail identically on HEAD without my changes. **Zero new test failures introduced by Wave B.**
+- `npm run build` — **passes** (production bundle built successfully).
+
+### Status
+
+Wave B is **committed and pushed**. Two branches now exist, both green:
+
+#### `qa/cycle-1-wave-b-v2` — P0/P1 fixes + CI hardening + RPC migration
+
+7 commits on top of `main`:
+
+1. `fix(security): lock down parent-notify + toolkit AI endpoints (P0)` — `c48d384`
+2. `fix(dashboard): redirect stub essay flow + mark teacher dashboard as preview (P0)` — `87e9efe`
+3. `fix(privacy): gate Vercel Analytics + Rewardful behind cookie consent (P0)` — `11d8f94`
+4. `fix(marketing): rewrite 'Limited to 10 Schools' to truthful founding-partner framing (P1)` — `81c7cbb`
+5. `docs(qa): Cycle 1 Wave B change manifest + owner answers` — `dcb9c70`
+6. `feat(db): add verify_certificate RPC for minimal-field public verification (P1-SEC-3)` — `f116cf9`
+7. `ci: block deploys on failing quality gate + tighten audit posture (P1-INFRA-2,3)` — `46badee`
+
+Create PR: https://github.com/upskill-snipper/english-hub/pull/new/qa/cycle-1-wave-b-v2
+
+#### `qa/next15-upgrade` — P0-INFRA-1 semver-major framework bump
+
+1 commit on top of `main`:
+
+1. `feat(deps): upgrade Next 14→15 + React 18→19 + Anthropic SDK 0.80→0.90 (P0-INFRA-1)` — `f351304`
+
+Create PR: https://github.com/upskill-snipper/english-hub/pull/new/qa/next15-upgrade
+
+**Merge order:** Land `qa/cycle-1-wave-b-v2` first, then rebase `qa/next15-upgrade` onto main (the Next 15 branch was cut from main before Wave B landed).
+
+### Items that remain open (not in this cycle's scope)
+
+| Ref                 | Item                                                                                                                                                                             | Notes                                                                                                                     |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| P1-SEC-3 (step 2)   | Update `/verify/[id]/client-page.tsx` to call `supabase.rpc('verify_certificate', ...)` instead of `.from('certificates').select('*')`                                           | Additive SQL migration is committed (`20260419_certificate_public_rpc.sql`); apply it first, then ship the client change. |
+| P1-SEC-3 (step 3)   | Drop the `"Public can verify certificates" FOR SELECT USING (TRUE)` policy                                                                                                       | Only after client is on the RPC in production.                                                                            |
+| P1-SEC-4            | `school_join_codes` RLS — same pattern: replace the `is_active = TRUE` open policy with a SECURITY DEFINER RPC that takes a code string and returns only school_id + class_id    | Needs an understanding of the join-flow UX to scope the RPC correctly.                                                    |
+| P1-SEC-5 + SEC-6    | Login/register account-enumeration via verbatim Supabase errors                                                                                                                  | One-file fix per, touches live auth UX — worth coordinating with user flows.                                              |
+| P1-SEC-7 / Live     | CSP `script-src 'unsafe-inline'` + COOP / CORP / frame-ancestors / form-action                                                                                                   | Ties into the Next 15 per-request nonce pattern; do after `qa/next15-upgrade` lands.                                      |
+| P1-INFRA-6          | `sentry.edge.config.ts` so middleware errors are reported                                                                                                                        | 1-file follow-up.                                                                                                         |
+| P1-INFRA-7          | Pin `amondnet/vercel-action@v25` by SHA instead of major tag                                                                                                                     | Supply-chain hardening — straightforward.                                                                                 |
+| P2-SEC-1            | AI output via `dangerouslySetInnerHTML` in `toolkit/revision-builder/page.tsx:313` + `toolkit/my-materials/page.tsx:188` — run through DOMPurify                                 | Widened attack surface for the now-locked-down generate-notes endpoint; still worth closing.                              |
+| P2-SEC-2            | Verify `20260322_new_features.sql` does not recreate the permissive `FOR ALL USING (true)` on `parental_consents` after `004_fix_school_rls.sql` drops it (migration sort order) | Needs a query against `pg_policies` on live to confirm — could not verify statically.                                     |
+| P2-SEC-3            | CSRF Origin check in middleware passes when Origin header is absent                                                                                                              | Tighten to require Origin present OR `sec-fetch-site=same-origin`.                                                        |
+| P2-SEC-5            | `webhook_events` idempotency table not in committed migrations                                                                                                                   | Likely exists in live DB; commit the DDL so reproducible deploys include it.                                              |
+| Destructive testing | Auth enumeration, RBAC cross-role probes, live XSS, live AI prompt injection                                                                                                     | Requires a staging environment; not safe against prod.                                                                    |
 
 ---
 
+## CYCLE 1 STATUS · 2026-04-19
 
+- **Wave A** (review): ✅ complete — 91 findings across security, compliance, infra, UX, and live headers.
+- **Wave B** (fix): ✅ complete — 14 items fixed + merged patterns from the concurrent `a64da8a` commit + Next 15 / React 19 / Anthropic SDK semver-major upgrade. Two branches pushed, both green.
+- **Wave C** (verify): Deferred to post-merge. The new CI `quality-gate` job will perform automated verification on every future PR (lint + typecheck + tests + critical-audit, blocking).
+
+Cycles 2–5 have not been run. A full re-review is most valuable **after** the two PRs above are merged and deployed, so the next cycle runs against the fixed baseline rather than the pre-fix state.
+
+---
+
+## CYCLE 1 — WAVE B FOLLOW-UP · 2026-04-19
+
+A third branch stacked on `qa/cycle-1-wave-b-v2` closes out P1/P2 items
+that were static-safe (only additive RPC migrations for DB side).
+Typecheck + build green.
+
+#### `qa/cycle-1-followup` — 4 commits on Wave B
+
+1. `chore: declare prettier as devDependency` + `fix(auth): eliminate account-enumeration via login and register errors (P1-SEC-5,6)` — `13eb425`
+2. `feat(db): verify-certificate RPC client switch + school_join_code lookup RPC (P1-SEC-3,4)` — `4f65b2e`
+3. `fix(security): DOMPurify toolkit AI output + tighten CSRF Origin check (P2-SEC-1,3)` — `8552c43`
+4. `fix(infra): Sentry edge config + pin Vercel action by SHA (P1-INFRA-6,7)` — `836f72a`
+
+Create PR: https://github.com/upskill-snipper/english-hub/pull/new/qa/cycle-1-followup
+
+### Deploy order (critical)
+
+1. **Apply the two RPC migrations first** (`20260419_certificate_public_rpc.sql` from Wave B, `20260419_school_join_code_lookup_rpc.sql` from this follow-up). Both additive.
+2. **Merge `qa/cycle-1-wave-b-v2`** to main.
+3. **Merge `qa/cycle-1-followup`** to main. `/verify/[id]` now calls the certificate RPC — needs step 1 applied or it errors.
+4. **Rebase and merge `qa/next15-upgrade`** — test on preview first (touched 27 files).
+5. **After the above are live and stable**, write a follow-up migration that drops the two now-redundant permissive SELECT policies (`"Public can verify certificates"`, `"anyone_can_read_active_join_codes"`). Intentionally NOT in the current PR stack — only safe once clients are confirmed on the RPCs in prod.
+
+### Items still open after this follow-up
+
+| Ref                     | Item                                                                                       | Notes                                                                   |
+| ----------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| P1-SEC-3/4 (final drop) | Drop the two permissive SELECT policies after client rollout                               | One-line migration once RPCs are hot.                                   |
+| P1-SEC-4 (client)       | Update the school-join UI to call `supabase.rpc('lookup_school_join_code', …)`             | RPC exists; join UI still reads via `.from(...)`. Spans multiple files. |
+| P1-SEC-7                | CSP nonces + COOP / CORP / frame-ancestors / form-action                                   | Uses Next 15 per-request nonces; do after `qa/next15-upgrade` lands.    |
+| P2-SEC-2                | Verify `parental_consents` doesn't have a permissive `FOR ALL USING (true)` policy on live | `pg_policies` query on live.                                            |
+| P2-SEC-5                | Commit the `webhook_events` table DDL                                                      | `pg_dump -s` of live schema.                                            |
+| Destructive tests       | Auth enumeration proofs, RBAC probes, live XSS, live AI prompt injection                   | Needs staging.                                                          |
+
+---
+
+## CYCLE 8 SUMMARY · 2026-04-19
+
+Follow-up strike force on `qa/cycle-1-followup`. No prior Cycle 6/7 summary
+marker in this log — prior cycle work was tracked in side documents. This
+entry covers only the changes landed in Cycle 8.
+
+### Commits shipped this cycle
+
+1. `fix(privacy): DSAR export + single-request fetch paths` — patched
+   `src/app/api/dsar/route.ts`, `/api/dsar/[id]/route.ts`, `/api/dsar/export/route.ts`.
+2. `feat(email): sendEmail multipart (attachments) support` — `src/lib/email.ts`
+   now accepts an `attachments[]` payload; DSAR export uses it.
+3. `feat(quiz): add /api/quiz/response POST` — new handler at
+   `src/app/api/quiz/response/route.ts` backed by the `quiz_responses` table
+   landed in `b74b598`.
+4. `refactor(cron): adopt shared runCron() wrapper` — `affiliate-confirm`,
+   `expire-invites` now funnel through the common Sentry + auth helper.
+5. `docs(polish): rename `AFFILIATE_IP_SALT`→`AFFILIATE_IP_HASH_SECRET` in
+affiliate README + add HMAC-SHA256 / rotation section`.
+6. `fix(consent): align school/consent route error shape` — minor.
+
+**Totals (working-tree scope):** 8 files changed (+188 / -95), 6 logical
+commits, 1 new route directory (`src/app/api/quiz/response/`).
+
+### Still open for the next cycle
+
+- **Doc-drift (minor):** `src/app/api/affiliate/README.md` still references
+  `Rewardful` in the integration checklist; re-sweep once the legacy flow
+  is actually decommissioned.
+- **`AFFILIATE_IP_SALT` legacy reference:** see grep audit — one doc line
+  already fixed here; no source-code hits remain (see Cycle 8 grep note).
+- **`runCron` rollout:** 2 of N crons migrated this cycle; remaining
+  cron endpoints (`src/app/api/cron/*`) still inline their Sentry/auth.
+- **Quiz responses:** schema and POST route in place, but no read/analytics
+  surface yet (teacher dashboard still mocks).
+- **Legacy Rewardful retirement:** `attribution.ts` + `utils.ts` under
+  `src/lib/affiliate/` remain; scheduled for removal once v2 is hot.
+
+---

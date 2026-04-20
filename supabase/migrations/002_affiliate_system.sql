@@ -34,9 +34,11 @@ CREATE TABLE IF NOT EXISTS public.affiliates (
 
   -- Age and legal compliance
   date_of_birth DATE NOT NULL,
-  is_minor BOOLEAN GENERATED ALWAYS AS (
-    EXTRACT(YEAR FROM AGE(date_of_birth)) < 18
-  ) STORED,
+  -- is_minor maintained by affiliates_set_is_minor trigger (see end of file).
+  -- Cannot use GENERATED ALWAYS AS (...) STORED because AGE() calls now(),
+  -- which is not immutable — Postgres rejects non-immutable expressions in
+  -- generated columns (applies even in Postgres 16+).
+  is_minor BOOLEAN NOT NULL DEFAULT FALSE,
 
   -- Legal documents
   affiliate_agreement_signed_at TIMESTAMPTZ,
@@ -295,3 +297,18 @@ CREATE TRIGGER referrals_updated_at
 CREATE TRIGGER payouts_updated_at
   BEFORE UPDATE ON public.affiliate_payouts
   FOR EACH ROW EXECUTE FUNCTION public.update_updated_at();
+
+-- is_minor auto-compute trigger (replaces the non-immutable generated column above).
+-- Fires BEFORE INSERT and BEFORE UPDATE OF date_of_birth so is_minor stays accurate
+-- without requiring application code to compute it.
+CREATE OR REPLACE FUNCTION public.set_affiliate_is_minor()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.is_minor = EXTRACT(YEAR FROM AGE(NEW.date_of_birth)) < 18;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER affiliates_set_is_minor
+  BEFORE INSERT OR UPDATE OF date_of_birth ON public.affiliates
+  FOR EACH ROW EXECUTE FUNCTION public.set_affiliate_is_minor();

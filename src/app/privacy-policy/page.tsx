@@ -341,6 +341,71 @@ export default function PrivacyPolicyPage() {
                 .
               </p>
             </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-1">
+                Vercel Analytics &amp; Speed Insights (Usage Analytics)
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Vercel, Inc. also provides privacy-friendly usage analytics (Vercel Analytics) and
+                page-performance measurement (Speed Insights). Both are loaded only after you have
+                accepted analytics cookies in our cookie banner. They collect aggregated page-view
+                counts and Web Vitals timings; they do not use cross-site tracking cookies and do
+                not build advertising profiles. Vercel&apos;s privacy policy is available at{' '}
+                <a
+                  href="https://vercel.com/legal/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-foreground"
+                >
+                  vercel.com/legal/privacy-policy
+                </a>
+                .
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-1">
+                Google Analytics 4 (Usage Analytics)
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Google LLC provides Google Analytics 4 to help us understand how visitors use the
+                site. GA4 is loaded only after you accept analytics cookies in our cookie banner.
+                We configure GA4 with IP anonymisation enabled. Google&apos;s privacy policy is
+                available at{' '}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-foreground"
+                >
+                  policies.google.com/privacy
+                </a>
+                .
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-1">
+                Rewardful (Affiliate Tracking)
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Rewardful, Inc. provides the affiliate attribution system that tracks referrals from
+                our affiliate partners. The Rewardful script is loaded only after you accept
+                marketing cookies in our cookie banner. It sets a first-party referral cookie so
+                that eligible affiliates can be credited for sign-ups they refer. Rewardful&apos;s
+                privacy policy is available at{' '}
+                <a
+                  href="https://www.rewardful.com/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-foreground"
+                >
+                  rewardful.com/privacy-policy
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </section>
 

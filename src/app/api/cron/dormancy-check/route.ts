@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma'
 import { processChildDormancy } from '@/lib/privacy/dormancy'
 import { sendEmail } from '@/lib/email'
 import { RETENTION_PERIODS } from '@/lib/data-retention'
+import { runCron } from '@/lib/cron/observability'
 
 export const dynamic = 'force-dynamic'
 
@@ -39,24 +40,19 @@ function daysAgo(days: number): Date {
  * Protected by CRON_SECRET to prevent unauthorized invocation.
  */
 export async function GET(request: NextRequest) {
-  const startTime = Date.now()
+  // ── Auth: verify CRON_SECRET ──────────────────────────────────────
+  const cronSecret = process.env.CRON_SECRET
+  if (!cronSecret) {
+    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
+  }
+  const authHeader = request.headers.get('authorization')
+  const incoming = Buffer.from(authHeader ?? '')
+  const expected = Buffer.from(`Bearer ${cronSecret}`)
+  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
 
-  try {
-    // ── Auth: verify CRON_SECRET ──────────────────────────────────────
-    const cronSecret = process.env.CRON_SECRET
-    if (!cronSecret) {
-      return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-    }
-    const authHeader = request.headers.get('authorization')
-    const incoming = Buffer.from(authHeader ?? '')
-    const expected = Buffer.from(`Bearer ${cronSecret}`)
-    if (
-      incoming.length !== expected.length ||
-      !timingSafeEqual(incoming, expected)
-    ) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-
+  return runCron('dormancy-check', async () => {
     // ── 1. Child dormancy (12-month threshold) ────────────────────────
     // Uses the dedicated Children's Code Standard 8 logic which both
     // sends warnings and processes deletions for the grace period.
@@ -81,11 +77,25 @@ export async function GET(request: NextRequest) {
     try {
       const inactiveCutoff = daysAgo(RETENTION_PERIODS.INACTIVE_ACCOUNT_DAYS)
 
+      // P1 (Cycle 2): was `updatedAt: { lte: inactiveCutoff }` — any row
+      // update (email change, preference toggle, Stripe customer id write)
+      // reset dormancy, and conversely a user who logged in daily but
+      // never triggered a write-path would be wrongly flagged. Now
+      // querying on `lastLoginAt` which is populated by the login
+      // handler. Fall back to `createdAt` when `lastLoginAt` is null —
+      // that's the case for pre-migration accounts that haven't logged
+      // in since the column was introduced; the fallback errs on the
+      // side of NOT deleting them until they log in once.
       const inactiveAdults = await prisma.user.findMany({
         where: {
           isMinor: false,
           accountStatus: 'ACTIVE',
-          updatedAt: { lte: inactiveCutoff },
+          OR: [
+            { lastLoginAt: { lte: inactiveCutoff } },
+            {
+              AND: [{ lastLoginAt: null }, { createdAt: { lte: inactiveCutoff } }],
+            },
+          ],
         },
         select: { id: true, email: true, firstName: true },
         take: 100, // Rate-limit per run
@@ -102,7 +112,7 @@ export async function GET(request: NextRequest) {
           // Calculate deletion date (30 days from now)
           const deletionDate = new Date()
           deletionDate.setDate(
-            deletionDate.getDate() + RETENTION_PERIODS.INACTIVE_WARNING_GRACE_DAYS
+            deletionDate.getDate() + RETENTION_PERIODS.INACTIVE_WARNING_GRACE_DAYS,
           )
 
           const formattedDate = deletionDate.toLocaleDateString('en-GB', {
@@ -115,7 +125,7 @@ export async function GET(request: NextRequest) {
           await sendEmail(
             user.email,
             'Your English Hub account will be deleted due to inactivity',
-            buildAdultDormancyWarningEmail(user.firstName, formattedDate)
+            buildAdultDormancyWarningEmail(user.firstName, formattedDate),
           )
 
           // Audit
@@ -172,20 +182,7 @@ export async function GET(request: NextRequest) {
       },
     })
 
-    const durationMs = Date.now() - startTime
-
-    console.log('[dormancy-check] Completed', {
-      durationMs,
-      childWarnings: childDormancy?.warningsSent.length ?? 0,
-      childDeletions: childDormancy?.deletions.length ?? 0,
-      adultWarnings: adultResult.warningsSent.length,
-      totalErrors:
-        (childDormancy?.errors.length ?? 0) + adultResult.errors.length,
-    })
-
-    return NextResponse.json({
-      ok: true,
-      durationMs,
+    return {
       childDormancy: childDormancy
         ? {
             warningsSent: childDormancy.warningsSent.length,
@@ -197,27 +194,13 @@ export async function GET(request: NextRequest) {
         warningsSent: adultResult.warningsSent.length,
         errors: adultResult.errors.length,
       },
-    })
-  } catch (error) {
-    const durationMs = Date.now() - startTime
-    console.error('[dormancy-check] Cron job failed:', error)
-    return NextResponse.json(
-      {
-        ok: false,
-        error: 'Dormancy check failed',
-        durationMs,
-      },
-      { status: 500 }
-    )
-  }
+    }
+  })
 }
 
 // ─── Email template ───────────────────────────────────────────────────────
 
-function buildAdultDormancyWarningEmail(
-  firstName: string,
-  deletionDate: string
-): string {
+function buildAdultDormancyWarningEmail(firstName: string, deletionDate: string): string {
   return `
     <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
       <div style="background-color: #1A5276; padding: 24px; border-radius: 12px 12px 0 0;">

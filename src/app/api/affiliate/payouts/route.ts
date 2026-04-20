@@ -60,13 +60,19 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    // 2. Fetch payouts paginated, newest first
+    // 2. Fetch payouts paginated, newest first.
+    // Cycle 4: switched from `affiliate_payouts` (legacy Rewardful table)
+    // to `affiliate_payout_batches` (new percentage-tier system, created
+    // by supabase/migrations/20260420_affiliates_v2.sql). The admin
+    // Rewardful payout route at src/app/api/admin/affiliates/payout.ts
+    // continues to use the legacy table — the two pipelines stay
+    // separate by design.
     const {
       data: payouts,
       error: payoutsErr,
       count,
     } = await admin
-      .from('affiliate_payouts')
+      .from('affiliate_payout_batches')
       .select(
         'id, period_start, period_end, amount_pence, currency, status, paid_at, payment_reference, created_at',
         { count: 'exact' },
@@ -82,7 +88,7 @@ export async function GET(request: NextRequest) {
 
     // 3. Summary: total paid, pending (unpaid commissions), tier info
     const { data: totals } = await admin
-      .from('affiliate_payouts')
+      .from('affiliate_payout_batches')
       .select('amount_pence, status')
       .eq('affiliate_id', account.id)
 

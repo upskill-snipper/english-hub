@@ -1,0 +1,35 @@
+-- ─── Drop permissive parental_consents SELECT/ALL policy (P0-DATA-5) ─────
+--
+-- Migration 20260322_new_features.sql:55-57 created:
+--
+--   CREATE POLICY "Service role full access on parental_consents"
+--     ON public.parental_consents FOR ALL
+--     USING (true) WITH CHECK (true);
+--
+-- `FOR ALL USING (true)` applies to anon AND authenticated roles, not
+-- just the service role. Despite the name, this policy lets any
+-- authenticated user (e.g. a logged-in student or teacher) read and
+-- modify every row in parental_consents — which contains consent
+-- tokens, parent emails, and minor-student linkage for every under-16
+-- on the platform. That is a Children's Code Standard 3 & 7 breach
+-- and exposes consent tokens that grant parental approval without
+-- further verification.
+--
+-- The Cycle 1 audit flagged 004_fix_school_rls.sql's intent to drop a
+-- similarly-named policy, but 004 runs BEFORE 20260322 in alphabetical
+-- order (004 < 20260322), so the DROP fires before the CREATE — a
+-- no-op. This migration runs AFTER 20260322 and actually clears it.
+--
+-- Legitimate service-role access is unaffected: `createServiceRoleClient()`
+-- in `src/lib/supabase/server.ts` authenticates as Postgres's
+-- SUPABASE_SERVICE_ROLE_KEY, which bypasses RLS entirely. RLS policies
+-- do not need to permit the service role — they constrain anon and
+-- authenticated clients.
+--
+-- The legitimate per-user SELECT policies from 20260322_new_features.sql
+-- (school admins viewing their school's consents; students viewing their
+-- own) remain in place.
+-- ──────────────────────────────────────────────────────────────────────
+
+DROP POLICY IF EXISTS "Service role full access on parental_consents"
+  ON public.parental_consents;

@@ -1,90 +1,91 @@
-import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { prisma } from "@/lib/prisma";
-import { isSiteAdmin } from "@/lib/site-admin";
+// Cycle 7 / Identity PR-3: lookups prefer supabaseUserId over email.
+import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { prisma } from '@/lib/prisma'
+import { isSiteAdmin } from '@/lib/site-admin'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
 export interface AdminUserSummary {
-  id: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  dateOfBirth: string;
-  country: string;
-  role: string;
-  isMinor: boolean;
-  accountStatus: string;
-  school: string | null;
-  createdAt: string;
-  subscriptionStatus: string | null;
-  essayCount: number;
+  id: string
+  email: string
+  firstName: string
+  lastName: string
+  dateOfBirth: string
+  country: string
+  role: string
+  isMinor: boolean
+  accountStatus: string
+  school: string | null
+  createdAt: string
+  subscriptionStatus: string | null
+  essayCount: number
 }
 
 export interface AdminUserDetail {
-  id: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  dateOfBirth: string;
-  country: string;
-  role: string;
-  isMinor: boolean;
-  accountStatus: string;
-  school: string | null;
-  createdAt: string;
-  updatedAt: string;
-  deletedAt: string | null;
-  age: number;
+  id: string
+  email: string
+  firstName: string
+  lastName: string
+  dateOfBirth: string
+  country: string
+  role: string
+  isMinor: boolean
+  accountStatus: string
+  school: string | null
+  createdAt: string
+  updatedAt: string
+  deletedAt: string | null
+  age: number
   subscription: {
-    plan: string;
-    status: string;
-    currentPeriodStart: string;
-    currentPeriodEnd: string;
-    cancelledAt: string | null;
-    coolingOffWaived: boolean;
-    paymentCount: number;
-  } | null;
+    plan: string
+    status: string
+    currentPeriodStart: string
+    currentPeriodEnd: string
+    cancelledAt: string | null
+    coolingOffWaived: boolean
+    paymentCount: number
+  } | null
   privacySettings: {
-    analyticsEnabled: boolean;
-    marketingEnabled: boolean;
-    aiTrainingOptIn: boolean;
-    schoolSharingEnabled: boolean;
-    researchDataEnabled: boolean;
-    profileVisibility: string;
-  } | null;
+    analyticsEnabled: boolean
+    marketingEnabled: boolean
+    aiTrainingOptIn: boolean
+    schoolSharingEnabled: boolean
+    researchDataEnabled: boolean
+    profileVisibility: string
+  } | null
   consents: {
-    id: string;
-    consentType: string;
-    version: string;
-    granted: boolean;
-    grantedAt: string;
-    withdrawnAt: string | null;
-    method: string;
-  }[];
-  essayCount: number;
+    id: string
+    consentType: string
+    version: string
+    granted: boolean
+    grantedAt: string
+    withdrawnAt: string | null
+    method: string
+  }[]
+  essayCount: number
   humanReviewRequests: {
-    id: string;
-    referenceNumber: string;
-    reason: string;
-    status: string;
-    submittedAt: string;
-    reviewedAt: string | null;
-  }[];
+    id: string
+    referenceNumber: string
+    reason: string
+    status: string
+    submittedAt: string
+    reviewedAt: string | null
+  }[]
   dataAccessRequests: {
-    id: string;
-    type: string;
-    status: string;
-    requestedAt: string;
-    completedAt: string | null;
-  }[];
+    id: string
+    type: string
+    status: string
+    requestedAt: string
+    completedAt: string | null
+  }[]
   auditLogs: {
-    id: string;
-    action: string;
-    resource: string;
-    resourceId: string;
-    timestamp: string;
-    details: unknown;
-  }[];
+    id: string
+    action: string
+    resource: string
+    resourceId: string
+    timestamp: string
+    details: unknown
+  }[]
 }
 
 // ─── Admin Role Check ───────────────────────────────────────────────────
@@ -94,40 +95,56 @@ export interface AdminUserDetail {
  * Returns the admin user record or throws an error.
  */
 export async function requireAdmin(): Promise<{
-  id: string;
-  email: string;
-  role: string;
+  id: string
+  email: string
+  role: string
 }> {
-  const supabase = createServerSupabaseClient();
-  const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+  const supabase = createServerSupabaseClient()
+  const {
+    data: { user: authUser },
+    error: authError,
+  } = await supabase.auth.getUser()
 
   if (authError || !authUser?.email) {
-    throw new AdminAuthError("Authentication required", 401);
+    throw new AdminAuthError('Authentication required', 401)
   }
 
-  const user = await prisma.user.findUnique({
-    where: { email: authUser.email },
+  const prismaUser = await prisma.user.findUnique({
+    where: { supabaseUserId: authUser.id },
     select: { id: true, email: true, role: true },
-  });
+  })
+  // Fallback for pre-backfill or mismatched rows — logged as a warning.
+  const user =
+    prismaUser ??
+    (await prisma.user.findUnique({
+      where: { email: authUser.email.toLowerCase() },
+      select: { id: true, email: true, role: true },
+    }))
+  if (user && !prismaUser) {
+    console.warn('[identity] Prisma row matched by email, not supabaseUserId', {
+      supabaseUserId: authUser.id,
+      prismaUserId: user.id,
+    })
+  }
 
   if (!user) {
-    throw new AdminAuthError("User not found", 404);
+    throw new AdminAuthError('User not found', 404)
   }
 
-  if (user.role !== "ADMIN" && !isSiteAdmin(user.email)) {
-    throw new AdminAuthError("Admin access required", 403);
+  if (user.role !== 'ADMIN' && !isSiteAdmin(user.email)) {
+    throw new AdminAuthError('Admin access required', 403)
   }
 
-  return user;
+  return user
 }
 
 export class AdminAuthError extends Error {
-  public statusCode: number;
+  public statusCode: number
 
   constructor(message: string, statusCode: number) {
-    super(message);
-    this.name = "AdminAuthError";
-    this.statusCode = statusCode;
+    super(message)
+    this.name = 'AdminAuthError'
+    this.statusCode = statusCode
   }
 }
 
@@ -136,19 +153,17 @@ export class AdminAuthError extends Error {
 /**
  * Compiles a full user profile for admin viewing.
  */
-export async function getUserDetails(
-  userId: string
-): Promise<AdminUserDetail> {
+export async function getUserDetails(userId: string): Promise<AdminUserDetail> {
   const user = await prisma.user.findUnique({
     where: { id: userId },
     include: {
       subscription: true,
       privacySettings: true,
       consents: {
-        orderBy: { grantedAt: "desc" },
+        orderBy: { grantedAt: 'desc' },
       },
       humanReviewRequests: {
-        orderBy: { submittedAt: "desc" },
+        orderBy: { submittedAt: 'desc' },
         select: {
           id: true,
           referenceNumber: true,
@@ -159,10 +174,10 @@ export async function getUserDetails(
         },
       },
       dataAccessRequests: {
-        orderBy: { requestedAt: "desc" },
+        orderBy: { requestedAt: 'desc' },
       },
       auditLogs: {
-        orderBy: { timestamp: "desc" },
+        orderBy: { timestamp: 'desc' },
         take: 100,
       },
       _count: {
@@ -171,22 +186,19 @@ export async function getUserDetails(
         },
       },
     },
-  });
+  })
 
   if (!user) {
-    throw new AdminAuthError("User not found", 404);
+    throw new AdminAuthError('User not found', 404)
   }
 
   // Calculate age
-  const today = new Date();
-  const dob = new Date(user.dateOfBirth);
-  let age = today.getFullYear() - dob.getFullYear();
-  const monthDiff = today.getMonth() - dob.getMonth();
-  if (
-    monthDiff < 0 ||
-    (monthDiff === 0 && today.getDate() < dob.getDate())
-  ) {
-    age--;
+  const today = new Date()
+  const dob = new Date(user.dateOfBirth)
+  let age = today.getFullYear() - dob.getFullYear()
+  const monthDiff = today.getMonth() - dob.getMonth()
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+    age--
   }
 
   return {
@@ -208,12 +220,9 @@ export async function getUserDetails(
       ? {
           plan: user.subscription.plan,
           status: user.subscription.status,
-          currentPeriodStart:
-            user.subscription.currentPeriodStart.toISOString(),
-          currentPeriodEnd:
-            user.subscription.currentPeriodEnd.toISOString(),
-          cancelledAt:
-            user.subscription.cancelledAt?.toISOString() ?? null,
+          currentPeriodStart: user.subscription.currentPeriodStart.toISOString(),
+          currentPeriodEnd: user.subscription.currentPeriodEnd.toISOString(),
+          cancelledAt: user.subscription.cancelledAt?.toISOString() ?? null,
           coolingOffWaived: user.subscription.coolingOffWaived,
           paymentCount: user.subscription.paymentCount,
         }
@@ -223,10 +232,8 @@ export async function getUserDetails(
           analyticsEnabled: user.privacySettings.analyticsEnabled,
           marketingEnabled: user.privacySettings.marketingEnabled,
           aiTrainingOptIn: user.privacySettings.aiTrainingOptIn,
-          schoolSharingEnabled:
-            user.privacySettings.schoolSharingEnabled,
-          researchDataEnabled:
-            user.privacySettings.researchDataEnabled,
+          schoolSharingEnabled: user.privacySettings.schoolSharingEnabled,
+          researchDataEnabled: user.privacySettings.researchDataEnabled,
           profileVisibility: user.privacySettings.profileVisibility,
         }
       : null,
@@ -263,7 +270,7 @@ export async function getUserDetails(
       timestamp: a.timestamp.toISOString(),
       details: a.details,
     })),
-  };
+  }
 }
 
 // ─── Suspend User ───────────────────────────────────────────────────────
@@ -275,36 +282,36 @@ export async function suspendUser(
   userId: string,
   reason: string,
   adminId: string,
-  ipAddress: string = "system"
+  ipAddress: string = 'system',
 ): Promise<void> {
   await prisma.$transaction(async (tx) => {
     const user = await tx.user.findUnique({
       where: { id: userId },
       select: { accountStatus: true },
-    });
+    })
 
     if (!user) {
-      throw new AdminAuthError("User not found", 404);
+      throw new AdminAuthError('User not found', 404)
     }
 
-    if (user.accountStatus === "DELETED") {
-      throw new Error("Cannot suspend a deleted account");
+    if (user.accountStatus === 'DELETED') {
+      throw new Error('Cannot suspend a deleted account')
     }
 
-    if (user.accountStatus === "SUSPENDED") {
-      throw new Error("Account is already suspended");
+    if (user.accountStatus === 'SUSPENDED') {
+      throw new Error('Account is already suspended')
     }
 
     await tx.user.update({
       where: { id: userId },
-      data: { accountStatus: "SUSPENDED" },
-    });
+      data: { accountStatus: 'SUSPENDED' },
+    })
 
     await tx.auditLog.create({
       data: {
         userId: adminId,
-        action: "ADMIN_USER_SUSPENDED",
-        resource: "User",
+        action: 'ADMIN_USER_SUSPENDED',
+        resource: 'User',
         resourceId: userId,
         details: {
           reason,
@@ -313,8 +320,8 @@ export async function suspendUser(
         },
         ipAddress,
       },
-    });
-  });
+    })
+  })
 }
 
 // ─── Unsuspend User ─────────────────────────────────────────────────────
@@ -325,32 +332,32 @@ export async function suspendUser(
 export async function unsuspendUser(
   userId: string,
   adminId: string,
-  ipAddress: string = "system"
+  ipAddress: string = 'system',
 ): Promise<void> {
   await prisma.$transaction(async (tx) => {
     const user = await tx.user.findUnique({
       where: { id: userId },
       select: { accountStatus: true },
-    });
+    })
 
     if (!user) {
-      throw new AdminAuthError("User not found", 404);
+      throw new AdminAuthError('User not found', 404)
     }
 
-    if (user.accountStatus !== "SUSPENDED") {
-      throw new Error("Account is not suspended");
+    if (user.accountStatus !== 'SUSPENDED') {
+      throw new Error('Account is not suspended')
     }
 
     await tx.user.update({
       where: { id: userId },
-      data: { accountStatus: "ACTIVE" },
-    });
+      data: { accountStatus: 'ACTIVE' },
+    })
 
     await tx.auditLog.create({
       data: {
         userId: adminId,
-        action: "ADMIN_USER_UNSUSPENDED",
-        resource: "User",
+        action: 'ADMIN_USER_UNSUSPENDED',
+        resource: 'User',
         resourceId: userId,
         details: {
           targetUserId: userId,
@@ -358,8 +365,8 @@ export async function unsuspendUser(
         },
         ipAddress,
       },
-    });
-  });
+    })
+  })
 }
 
 // ─── Process Account Deletion ───────────────────────────────────────────
@@ -371,22 +378,22 @@ export async function unsuspendUser(
 export async function processAccountDeletion(
   userId: string,
   adminId: string,
-  ipAddress: string = "system"
+  ipAddress: string = 'system',
 ): Promise<void> {
-  const anonymisedEmail = `deleted-${userId}@anonymised.invalid`;
+  const anonymisedEmail = `deleted-${userId}@anonymised.invalid`
 
   await prisma.$transaction(async (tx) => {
     const user = await tx.user.findUnique({
       where: { id: userId },
       select: { accountStatus: true },
-    });
+    })
 
     if (!user) {
-      throw new AdminAuthError("User not found", 404);
+      throw new AdminAuthError('User not found', 404)
     }
 
-    if (user.accountStatus === "DELETED") {
-      throw new Error("Account is already deleted");
+    if (user.accountStatus === 'DELETED') {
+      throw new Error('Account is already deleted')
     }
 
     // 1. Anonymise profile data
@@ -394,59 +401,59 @@ export async function processAccountDeletion(
       where: { id: userId },
       data: {
         email: anonymisedEmail,
-        firstName: "Deleted User",
-        lastName: "",
-        passwordHash: "",
+        firstName: 'Deleted User',
+        lastName: '',
+        passwordHash: '',
         school: null,
-        accountStatus: "DELETED",
+        accountStatus: 'DELETED',
         deletedAt: new Date(),
       },
-    });
+    })
 
     // 2. Remove essay content but keep metadata for audit
     await tx.essay.updateMany({
       where: { userId },
       data: {
-        content: "[Content removed pursuant to account deletion]",
-        title: "[Removed]",
+        content: '[Content removed pursuant to account deletion]',
+        title: '[Removed]',
         deletedAt: new Date(),
       },
-    });
+    })
 
     // 3. Remove privacy settings
     await tx.privacySettings.deleteMany({
       where: { userId },
-    });
+    })
 
     // 4. Cancel any active subscription
     const subscription = await tx.subscription.findUnique({
       where: { userId },
-    });
-    if (subscription && subscription.status === "ACTIVE") {
+    })
+    if (subscription && subscription.status === 'ACTIVE') {
       await tx.subscription.update({
         where: { userId },
         data: {
-          status: "CANCELLED",
+          status: 'CANCELLED',
           cancelledAt: new Date(),
         },
-      });
+      })
     }
 
     // 5. Create audit log entry
     await tx.auditLog.create({
       data: {
         userId: adminId,
-        action: "ADMIN_ACCOUNT_DELETED",
-        resource: "User",
+        action: 'ADMIN_ACCOUNT_DELETED',
+        resource: 'User',
         resourceId: userId,
         details: {
-          reason: "Admin-initiated account deletion",
+          reason: 'Admin-initiated account deletion',
           targetUserId: userId,
           performedBy: adminId,
           anonymisedAt: new Date().toISOString(),
         },
         ipAddress,
       },
-    });
-  });
+    })
+  })
 }

@@ -46,7 +46,16 @@ interface ClassPerformanceResponse {
   grade_distribution: GradeDistributionBand[]
   skill_breakdowns: SkillBreakdown[]
   trends: TrendDataPoint[]
+  /**
+   * Difference (class avg − school-wide avg) in percentage points.
+   * Baseline is scoped to THIS school only — NOT the whole platform —
+   * to avoid cross-tenant data exposure. Previously this was named
+   * `comparison_to_school_avg` but the baseline was actually platform-wide;
+   * the value is now correctly school-scoped so the old name is accurate.
+   */
   comparison_to_school_avg: number | null
+  /** Alias of comparison_to_school_avg — clarifies the baseline semantic. */
+  this_school_baseline_avg: number | null
   generated_at: string
 }
 
@@ -73,12 +82,18 @@ export async function GET(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -135,57 +150,89 @@ export async function GET(request: NextRequest) {
         skill_breakdowns: [],
         trends: [],
         comparison_to_school_avg: null,
+        this_school_baseline_avg: null,
         generated_at: new Date().toISOString(),
       }
       return NextResponse.json(emptyResponse)
     }
 
-    // Fetch module progress for these students
+    // Get ALL students belonging to this school (across every class) so the
+    // "school baseline" average is scoped to this tenant rather than the whole
+    // platform. Previously the baseline query below ran platform-wide with no
+    // school filter (Cycle 2 P0 finding: cross-tenant exposure + O(platform) scan).
+    const { data: schoolStudents } = await admin
+      .from('school_students')
+      .select('student_id')
+      .eq('school_id', member.school_id)
+
+    const schoolStudentIds = (schoolStudents || []).map((s: { student_id: string }) => s.student_id)
+
+    // TODO(platform-avg): If product wants a TRUE platform-wide comparison
+    // alongside the school baseline, expose it as a dedicated Postgres RPC
+    // that returns ONLY the aggregate number (not raw rows). Do NOT select
+    // untagged rows from module_progress in an API handler — it leaks shape
+    // and scales poorly. For now, the baseline is school-scoped only.
+
+    // Fetch module progress for these students + the school-wide progress
+    // for this school's students (used as the comparison baseline).
     const [progressResult, schoolProgressResult] = await Promise.all([
-      admin.from('module_progress')
-        .select('user_id, module_id, course_id, quiz_score, completed, time_spent_seconds, completed_at')
+      admin
+        .from('module_progress')
+        .select(
+          'user_id, module_id, course_id, quiz_score, completed, time_spent_seconds, completed_at',
+        )
         .in('user_id', studentIds),
-      // Also get school-wide progress for comparison
-      admin.from('module_progress')
-        .select('quiz_score')
-        .not('quiz_score', 'is', null),
+      // School-scoped baseline: only this school's own students.
+      schoolStudentIds.length > 0
+        ? admin
+            .from('module_progress')
+            .select('quiz_score')
+            .not('quiz_score', 'is', null)
+            .in('user_id', schoolStudentIds)
+        : Promise.resolve({ data: [] as Array<{ quiz_score: number }> }),
     ])
 
     const progress = (progressResult.data || []) as Array<{
-      user_id: string; module_id: string; course_id: string;
-      quiz_score: number | null; completed: boolean;
-      time_spent_seconds: number; completed_at: string | null
+      user_id: string
+      module_id: string
+      course_id: string
+      quiz_score: number | null
+      completed: boolean
+      time_spent_seconds: number
+      completed_at: string | null
     }>
 
     // ── Aggregate scores ──
     const allScores = progress
-      .filter(p => p.quiz_score !== null)
-      .map(p => p.quiz_score as number)
+      .filter((p) => p.quiz_score !== null)
+      .map((p) => p.quiz_score as number)
 
     const sortedScores = [...allScores].sort((a, b) => a - b)
-    const avgScore = allScores.length > 0
-      ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length)
-      : null
+    const avgScore =
+      allScores.length > 0
+        ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length)
+        : null
 
     let medianScore: number | null = null
     if (sortedScores.length > 0) {
       const mid = Math.floor(sortedScores.length / 2)
-      medianScore = sortedScores.length % 2 !== 0
-        ? sortedScores[mid]
-        : Math.round((sortedScores[mid - 1] + sortedScores[mid]) / 2)
+      medianScore =
+        sortedScores.length % 2 !== 0
+          ? sortedScores[mid]
+          : Math.round((sortedScores[mid - 1] + sortedScores[mid]) / 2)
     }
 
     const highestScore = sortedScores.length > 0 ? sortedScores[sortedScores.length - 1] : null
     const lowestScore = sortedScores.length > 0 ? sortedScores[0] : null
 
     // Pass rate: scores >= 40% (Grade 4 equivalent)
-    const passCount = allScores.filter(s => s >= 40).length
+    const passCount = allScores.filter((s) => s >= 40).length
     const passRate = allScores.length > 0 ? Math.round((passCount / allScores.length) * 100) : 0
 
     // Completion rate
-    const completedCount = progress.filter(p => p.completed).length
-    const completionRate = progress.length > 0
-      ? Math.round((completedCount / progress.length) * 100) : 0
+    const completedCount = progress.filter((p) => p.completed).length
+    const completionRate =
+      progress.length > 0 ? Math.round((completedCount / progress.length) * 100) : 0
 
     // ── Grade distribution (GCSE 9-1 scale mapped from percentage scores) ──
     const gradeBands = [
@@ -204,47 +251,55 @@ export async function GET(request: NextRequest) {
     const studentAvgScores: number[] = []
     for (const sid of studentIds) {
       const studentScores = progress
-        .filter(p => p.user_id === sid && p.quiz_score !== null)
-        .map(p => p.quiz_score as number)
+        .filter((p) => p.user_id === sid && p.quiz_score !== null)
+        .map((p) => p.quiz_score as number)
       if (studentScores.length > 0) {
         studentAvgScores.push(
-          Math.round(studentScores.reduce((a, b) => a + b, 0) / studentScores.length)
+          Math.round(studentScores.reduce((a, b) => a + b, 0) / studentScores.length),
         )
       }
     }
 
-    const gradeDistribution: GradeDistributionBand[] = gradeBands.map(band => {
-      const count = studentAvgScores.filter(s => s >= band.min && s <= band.max).length
+    const gradeDistribution: GradeDistributionBand[] = gradeBands.map((band) => {
+      const count = studentAvgScores.filter((s) => s >= band.min && s <= band.max).length
       return {
         band: band.band,
         label: band.label,
         count,
-        percentage: studentAvgScores.length > 0
-          ? Math.round((count / studentAvgScores.length) * 100) : 0,
+        percentage:
+          studentAvgScores.length > 0 ? Math.round((count / studentAvgScores.length) * 100) : 0,
       }
     })
 
     // ── Skill breakdowns ──
     // In production, these would come from tagged quiz questions or skill-specific assessments.
     // For now, we derive skill categories from course/module groupings.
-    const skillNames = ['Reading Comprehension', 'Creative Writing', 'SPaG', 'Analysis & Evaluation', 'Spoken Language']
+    const skillNames = [
+      'Reading Comprehension',
+      'Creative Writing',
+      'SPaG',
+      'Analysis & Evaluation',
+      'Spoken Language',
+    ]
     const skillBreakdowns: SkillBreakdown[] = skillNames.map((skill, i) => {
       // Use module_id hash to deterministically assign progress entries to skills
-      const skillProgress = progress.filter(p => {
+      const skillProgress = progress.filter((p) => {
         const hash = p.module_id.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0)
         return hash % skillNames.length === i
       })
       const skillScores = skillProgress
-        .filter(p => p.quiz_score !== null)
-        .map(p => p.quiz_score as number)
-      const uniqueStudents = new Set(skillProgress.map(p => p.user_id))
+        .filter((p) => p.quiz_score !== null)
+        .map((p) => p.quiz_score as number)
+      const uniqueStudents = new Set(skillProgress.map((p) => p.user_id))
 
       return {
         skill,
-        avg_score: skillScores.length > 0
-          ? Math.round(skillScores.reduce((a, b) => a + b, 0) / skillScores.length) : 0,
+        avg_score:
+          skillScores.length > 0
+            ? Math.round(skillScores.reduce((a, b) => a + b, 0) / skillScores.length)
+            : 0,
         student_count: uniqueStudents.size,
-        below_threshold: skillScores.filter(s => s < 50).length,
+        below_threshold: skillScores.filter((s) => s < 50).length,
       }
     })
 
@@ -257,45 +312,49 @@ export async function GET(request: NextRequest) {
       const weekEndISO = weekEnd.toISOString()
 
       const weekProgress = progress.filter(
-        p => p.completed_at && p.completed_at >= weekStartISO && p.completed_at < weekEndISO
+        (p) => p.completed_at && p.completed_at >= weekStartISO && p.completed_at < weekEndISO,
       )
       const weekScores = weekProgress
-        .filter(p => p.quiz_score !== null)
-        .map(p => p.quiz_score as number)
+        .filter((p) => p.quiz_score !== null)
+        .map((p) => p.quiz_score as number)
         .sort((a, b) => a - b)
 
-      const weekAvg = weekScores.length > 0
-        ? Math.round(weekScores.reduce((a, b) => a + b, 0) / weekScores.length) : 0
+      const weekAvg =
+        weekScores.length > 0
+          ? Math.round(weekScores.reduce((a, b) => a + b, 0) / weekScores.length)
+          : 0
 
       let weekMedian: number | null = null
       if (weekScores.length > 0) {
         const mid = Math.floor(weekScores.length / 2)
-        weekMedian = weekScores.length % 2 !== 0
-          ? weekScores[mid]
-          : Math.round((weekScores[mid - 1] + weekScores[mid]) / 2)
+        weekMedian =
+          weekScores.length % 2 !== 0
+            ? weekScores[mid]
+            : Math.round((weekScores[mid - 1] + weekScores[mid]) / 2)
       }
 
       trends.push({
         week_start: weekStart.toISOString().split('T')[0],
         avg_score: weekAvg,
         median_score: weekMedian,
-        active_students: new Set(weekProgress.map(p => p.user_id)).size,
-        modules_completed: weekProgress.filter(p => p.completed).length,
+        active_students: new Set(weekProgress.map((p) => p.user_id)).size,
+        modules_completed: weekProgress.filter((p) => p.completed).length,
         // In production, this would count actual assignment submissions
-        assignments_submitted: weekProgress.filter(p => p.completed).length,
+        assignments_submitted: weekProgress.filter((p) => p.completed).length,
       })
     }
 
-    // ── Comparison to school-wide average ──
-    const schoolScores = (schoolProgressResult.data || [])
-      .map((p: { quiz_score: number }) => p.quiz_score)
-    const schoolAvg = schoolScores.length > 0
-      ? Math.round(schoolScores.reduce((a: number, b: number) => a + b, 0) / schoolScores.length)
-      : null
+    // ── Comparison to THIS-SCHOOL average (tenant-scoped baseline) ──
+    const schoolScores = (schoolProgressResult.data || []).map(
+      (p: { quiz_score: number }) => p.quiz_score,
+    )
+    const thisSchoolBaselineAvg =
+      schoolScores.length > 0
+        ? Math.round(schoolScores.reduce((a: number, b: number) => a + b, 0) / schoolScores.length)
+        : null
 
-    const comparisonToSchoolAvg = avgScore !== null && schoolAvg !== null
-      ? avgScore - schoolAvg
-      : null
+    const comparisonToSchoolAvg =
+      avgScore !== null && thisSchoolBaselineAvg !== null ? avgScore - thisSchoolBaselineAvg : null
 
     const response: ClassPerformanceResponse = {
       class_id: classId,
@@ -313,6 +372,7 @@ export async function GET(request: NextRequest) {
       skill_breakdowns: skillBreakdowns,
       trends,
       comparison_to_school_avg: comparisonToSchoolAvg,
+      this_school_baseline_avg: thisSchoolBaselineAvg,
       generated_at: new Date().toISOString(),
     }
 

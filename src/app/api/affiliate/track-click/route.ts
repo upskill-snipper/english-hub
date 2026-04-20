@@ -15,6 +15,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
+import { createHmac } from 'crypto'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import {
@@ -56,7 +57,7 @@ async function parsePayload(request: NextRequest): Promise<ClickPayload | null> 
       referrer:
         typeof body.referrer === 'string'
           ? body.referrer
-          : request.headers.get('referer') ?? undefined,
+          : (request.headers.get('referer') ?? undefined),
     }
   } catch {
     return null
@@ -135,19 +136,27 @@ async function handle(request: NextRequest): Promise<NextResponse> {
 }
 
 /**
- * Hash IP addresses (salted) before storing. We only need rough uniqueness
- * for click-fraud detection, never the raw IP. Uses a weak DJB2 hash because
- * the edge runtime may not have Node crypto available; a migration-level
- * salt prevents cross-environment correlation.
+ * Hash IP addresses before storing. We only need rough uniqueness for
+ * click-fraud / deduplication, never the raw IP. Uses HMAC-SHA256 truncated
+ * to 16 hex chars (64 bits) — cryptographically secure and resistant to
+ * rainbow-table attacks across the IPv4 space (fix for Cycle 2 security
+ * deep-dive P2: previous DJB2 implementation was not cryptographically
+ * secure).
+ *
+ * The secret MUST be set via `AFFILIATE_IP_HASH_SECRET` in production.
+ * In dev, an unset secret falls back to a placeholder so the feature does
+ * not hard-fail — but IP deduplication is not secure until the env var is
+ * configured.
  */
 function hashIp(ip: string): string {
-  const salt = process.env.AFFILIATE_IP_SALT ?? 'teh-aff-default-salt'
-  const combined = `${salt}:${ip}`
-  let hash = 5381
-  for (let i = 0; i < combined.length; i++) {
-    hash = (hash * 33) ^ combined.charCodeAt(i)
+  let secret = process.env.AFFILIATE_IP_HASH_SECRET
+  if (!secret) {
+    console.error(
+      '[affiliate/track-click] AFFILIATE_IP_HASH_SECRET not set — using placeholder; IP deduplication is insecure until configured',
+    )
+    secret = 'teh-aff-dev-placeholder-configure-in-prod'
   }
-  return (hash >>> 0).toString(16)
+  return createHmac('sha256', secret).update(ip).digest('hex').slice(0, 16)
 }
 
 export async function GET(request: NextRequest) {

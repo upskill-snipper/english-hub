@@ -168,7 +168,19 @@ function RegisterForm() {
     })
 
     if (signUpError) {
-      setError(signUpError.message)
+      // Account-enumeration defence (P1-SEC-6): do NOT surface Supabase's
+      // raw "User already registered" message. That branch lets an attacker
+      // probe which emails have existing accounts on a platform used by
+      // minors. We show the same neutral response regardless of whether
+      // the email was new, existed, or any other failure reason — the
+      // user's expected next action is the same in every case (check the
+      // inbox for a verification email; Supabase sends one automatically
+      // on duplicate signup to the existing account).
+      setError(
+        'If this email address is valid and not already registered, we have ' +
+          'sent a verification link to it. Please check your inbox ' +
+          '(including spam) and follow the link to activate your account.',
+      )
       setLoading(false)
       return
     }
@@ -230,6 +242,27 @@ function RegisterForm() {
           // Non-blocking — don't fail signup for parent notification error
           console.error('Parent notification error:', err)
         }
+      }
+
+      // Fire-and-forget: create the Prisma User projection row. The Supabase
+      // signup above is the source of truth for credentials; this mirror row
+      // is a lagging index used by dormancy-check, data-retention, DSAR, and
+      // weekly-report features that query Prisma (see /api/auth/register
+      // route.ts header). Must not block the user's signup/verification flow.
+      if (dobYear && dobMonth && dobDay) {
+        const [firstName, ...rest] = fullName.trim().split(/\s+/)
+        const lastName = rest.join(' ') || firstName
+        fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            dateOfBirth,
+            country: 'GB',
+            role: accountType === 'teacher' ? 'TEACHER' : 'STUDENT',
+          }),
+        }).catch(() => {})
       }
     }
 

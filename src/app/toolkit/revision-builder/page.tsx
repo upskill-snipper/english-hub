@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react'
 import Link from 'next/link'
+import DOMPurify from 'dompurify'
 import {
   ArrowLeft,
   FileText,
@@ -126,24 +127,38 @@ export default function RevisionBuilderPage() {
 
   // Simple markdown to HTML converter
   const renderMarkdown = (md: string): string => {
-    return md
-      // Headers
-      .replace(/^### (.+)$/gm, '<h3 class="text-lg font-serif font-medium mt-6 mb-2">$1</h3>')
-      .replace(/^## (.+)$/gm, '<h2 class="text-xl font-serif font-medium mt-8 mb-3 pb-2 border-b border-border">$1</h2>')
-      .replace(/^# (.+)$/gm, '<h1 class="text-2xl font-serif font-medium mt-4 mb-4">$1</h1>')
-      // Bold and italic
-      .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>')
-      .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>')
-      // Unordered lists
-      .replace(/^- \[x\] (.+)$/gm, '<li class="flex items-center gap-2 text-emerald-600"><span class="text-emerald-500">&#10003;</span> $1</li>')
-      .replace(/^- \[ \] (.+)$/gm, '<li class="flex items-center gap-2"><span class="text-muted-foreground">&#9744;</span> $1</li>')
-      .replace(/^- (.+)$/gm, '<li class="ml-4 list-disc text-muted-foreground leading-relaxed">$1</li>')
-      // Horizontal rules
-      .replace(/^---$/gm, '<hr class="my-6 border-border" />')
-      // Paragraphs (double newline)
-      .replace(/\n\n/g, '</p><p class="text-muted-foreground leading-relaxed mb-3">')
-      // Single newlines within text
-      .replace(/\n/g, '<br />')
+    return (
+      md
+        // Headers
+        .replace(/^### (.+)$/gm, '<h3 class="text-lg font-serif font-medium mt-6 mb-2">$1</h3>')
+        .replace(
+          /^## (.+)$/gm,
+          '<h2 class="text-xl font-serif font-medium mt-8 mb-3 pb-2 border-b border-border">$1</h2>',
+        )
+        .replace(/^# (.+)$/gm, '<h1 class="text-2xl font-serif font-medium mt-4 mb-4">$1</h1>')
+        // Bold and italic
+        .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>')
+        // Unordered lists
+        .replace(
+          /^- \[x\] (.+)$/gm,
+          '<li class="flex items-center gap-2 text-emerald-600"><span class="text-emerald-500">&#10003;</span> $1</li>',
+        )
+        .replace(
+          /^- \[ \] (.+)$/gm,
+          '<li class="flex items-center gap-2"><span class="text-muted-foreground">&#9744;</span> $1</li>',
+        )
+        .replace(
+          /^- (.+)$/gm,
+          '<li class="ml-4 list-disc text-muted-foreground leading-relaxed">$1</li>',
+        )
+        // Horizontal rules
+        .replace(/^---$/gm, '<hr class="my-6 border-border" />')
+        // Paragraphs (double newline)
+        .replace(/\n\n/g, '</p><p class="text-muted-foreground leading-relaxed mb-3">')
+        // Single newlines within text
+        .replace(/\n/g, '<br />')
+    )
   }
 
   return (
@@ -225,9 +240,7 @@ export default function RevisionBuilderPage() {
                   <button
                     key={g}
                     onClick={() => setTargetGrade(g)}
-                    className={`chip ${
-                      targetGrade === g ? 'chip-active' : 'chip-inactive'
-                    }`}
+                    className={`chip ${targetGrade === g ? 'chip-active' : 'chip-inactive'}`}
                   >
                     Grade {g}
                   </button>
@@ -243,7 +256,11 @@ export default function RevisionBuilderPage() {
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {getWeakAreas().map((area) => (
-                    <Badge key={area} variant="outline" className="text-xs border-amber-500/30 text-amber-700">
+                    <Badge
+                      key={area}
+                      variant="outline"
+                      className="text-xs border-amber-500/30 text-amber-700"
+                    >
                       {area}
                     </Badge>
                   ))}
@@ -309,11 +326,19 @@ export default function RevisionBuilderPage() {
               </Button>
             </div>
 
-            {/* Rendered notes */}
+            {/* Rendered notes — sanitised via DOMPurify (P2-SEC-1) to
+                strip any HTML the AI might emit under prompt-injection
+                attack before it reaches a minor's browser. The markdown
+                converter above is whitespace-/regex-based and does not
+                itself guard against injected <script> or javascript:
+                URLs; DOMPurify is the defence of record here. */}
             <div
               className="rounded-xl border border-border bg-card p-6 sm:p-8 shadow-soft course-content"
               dangerouslySetInnerHTML={{
-                __html: `<p class="text-muted-foreground leading-relaxed mb-3">${renderMarkdown(notes)}</p>`,
+                __html: DOMPurify.sanitize(
+                  `<p class="text-muted-foreground leading-relaxed mb-3">${renderMarkdown(notes)}</p>`,
+                  { USE_PROFILES: { html: true } },
+                ),
               }}
             />
           </div>

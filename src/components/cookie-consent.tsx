@@ -46,6 +46,11 @@ export function CookieConsent() {
       enableGA4()
     }
 
+    // Notify any consent-gated components in the tree (e.g. analytics scripts)
+    // that consent has changed so they can mount/unmount immediately rather
+    // than waiting for a page reload.
+    window.dispatchEvent(new CustomEvent('cookie-consent-changed'))
+
     // Log consent choice server-side for PECR/ICO compliance (fire-and-forget)
     logConsentToServer(value)
   }
@@ -109,6 +114,7 @@ export function CookieConsent() {
       // Custom selection with analytics disabled — still log as "custom"
       localStorage.setItem('cookie-consent', 'essential')
       setVisible(false)
+      window.dispatchEvent(new CustomEvent('cookie-consent-changed'))
       logConsentToServerCustom(analyticsEnabled)
     }
   }

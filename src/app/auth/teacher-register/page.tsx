@@ -20,6 +20,7 @@ import {
   FileText,
   Star,
   CheckSquare,
+  Calendar,
 } from 'lucide-react'
 import {
   Card,
@@ -50,11 +51,33 @@ export default function TeacherRegisterPage() {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [schoolName, setSchoolName] = useState('')
+  const [selectedExamBoard, setSelectedExamBoard] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [dobDay, setDobDay] = useState('')
+  const [dobMonth, setDobMonth] = useState('')
+  const [dobYear, setDobYear] = useState('')
   const [isTeacher, setIsTeacher] = useState(false)
   const [agreeTerms, setAgreeTerms] = useState(false)
   const [agreePrivacy, setAgreePrivacy] = useState(false)
+
+  // Teacher age guard: client-side check for >= 18. The server
+  // (/api/auth/teacher-signup) only enforces >= 13, so this is purely a
+  // UX nudge; we treat it as informational rather than a hard block on
+  // the backend. Mirrors the DOB component pattern from /auth/register.
+  const calculateAge = (day: string, month: string, year: string): number | null => {
+    if (!day || !month || !year) return null
+    const dob = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+    const today = new Date()
+    let age = today.getFullYear() - dob.getFullYear()
+    const monthDiff = today.getMonth() - dob.getMonth()
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+      age--
+    }
+    return age
+  }
+  const teacherAge = calculateAge(dobDay, dobMonth, dobYear)
+  const isUnder18 = teacherAge !== null && teacherAge < 18
 
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
@@ -77,6 +100,11 @@ export default function TeacherRegisterPage() {
     else if (password.length < 8) errors.password = 'Password must be at least 8 characters.'
     if (!confirmPassword) errors.confirmPassword = 'Please confirm your password.'
     else if (password !== confirmPassword) errors.confirmPassword = 'Passwords do not match.'
+    if (!dobDay || !dobMonth || !dobYear) errors.dob = 'Date of birth is required.'
+    else if (isUnder18) {
+      errors.dob =
+        'Teacher accounts are for adults (18+). If you are a student, please use the student sign-up.'
+    }
     if (!isTeacher) errors.isTeacher = 'Please confirm you are a teacher.'
     if (!agreeTerms) errors.agreeTerms = 'You must accept the Terms of Service.'
     if (!agreePrivacy) errors.agreePrivacy = 'You must accept the Privacy Policy.'
@@ -123,6 +151,24 @@ export default function TeacherRegisterPage() {
           console.error('Profile upsert error:', profileError)
           // Don't block signup — profile can be updated later
         }
+
+        // Fire-and-forget: create the Prisma User projection row. Lagging
+        // mirror of Supabase Auth; feeds dormancy/DSAR/retention features
+        // (see /api/auth/teacher-signup route.ts header). Must not block
+        // the signup/verification UX.
+        const dateOfBirth = `${dobYear}-${dobMonth.padStart(2, '0')}-${dobDay.padStart(2, '0')}`
+        fetch('/api/auth/teacher-signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            firstName: firstName.trim(),
+            lastName: lastName.trim(),
+            dateOfBirth,
+            country: 'GB',
+            ...(schoolName.trim() ? { school: schoolName.trim() } : {}),
+            ...(selectedExamBoard ? { selectedExamBoard } : {}),
+          }),
+        }).catch(() => {})
       }
 
       setSuccess(true)
@@ -311,6 +357,35 @@ export default function TeacherRegisterPage() {
                     </p>
                   </div>
 
+                  {/* Exam board (optional) — whitelist matches Prisma ExamBoard enum
+                      in /api/auth/teacher-signup. Empty string is intentionally
+                      excluded from the fetch body below (handler treats absence
+                      as "not specified"). */}
+                  <div className="space-y-1.5">
+                    <Label htmlFor="selectedExamBoard">
+                      Exam board you primarily teach{' '}
+                      <span className="text-muted-foreground font-normal">(optional)</span>
+                    </Label>
+                    <div className="relative">
+                      <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <select
+                        id="selectedExamBoard"
+                        value={selectedExamBoard}
+                        onChange={(e) => setSelectedExamBoard(e.target.value)}
+                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-10 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                      >
+                        <option value="">Select exam board</option>
+                        <option value="AQA">AQA</option>
+                        <option value="EDEXCEL">Pearson Edexcel</option>
+                        <option value="OCR">OCR</option>
+                        <option value="EDUQAS">WJEC Eduqas</option>
+                        <option value="EDEXCEL_IGCSE">Pearson Edexcel IGCSE</option>
+                        <option value="CAMBRIDGE_0500">Cambridge IGCSE (0500)</option>
+                        <option value="CAMBRIDGE_0990">Cambridge IGCSE Global (0990)</option>
+                      </select>
+                    </div>
+                  </div>
+
                   {/* Password */}
                   <div className="space-y-1.5">
                     <Label htmlFor="password">
@@ -376,6 +451,86 @@ export default function TeacherRegisterPage() {
                       <p className="text-xs text-destructive">{fieldErrors.confirmPassword}</p>
                     )}
                   </div>
+
+                  {/* Date of birth — required for Prisma User projection (schema NOT NULL) */}
+                  <fieldset
+                    className="space-y-1.5"
+                    aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}
+                  >
+                    <legend className="text-sm font-medium leading-none">
+                      Date of birth <span className="text-destructive">*</span>
+                    </legend>
+                    <div className="relative">
+                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <div className="flex gap-2 pl-10">
+                        <select
+                          id="dobDay"
+                          value={dobDay}
+                          onChange={(e) => setDobDay(e.target.value)}
+                          className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                          aria-label="Day"
+                          aria-invalid={!!fieldErrors.dob}
+                        >
+                          <option value="">Day</option>
+                          {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
+                            <option key={d} value={String(d)}>
+                              {d}
+                            </option>
+                          ))}
+                        </select>
+                        <select
+                          id="dobMonth"
+                          value={dobMonth}
+                          onChange={(e) => setDobMonth(e.target.value)}
+                          className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                          aria-label="Month"
+                          aria-invalid={!!fieldErrors.dob}
+                        >
+                          <option value="">Month</option>
+                          {[
+                            'January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                            'July',
+                            'August',
+                            'September',
+                            'October',
+                            'November',
+                            'December',
+                          ].map((m, i) => (
+                            <option key={i + 1} value={String(i + 1)}>
+                              {m}
+                            </option>
+                          ))}
+                        </select>
+                        <select
+                          id="dobYear"
+                          value={dobYear}
+                          onChange={(e) => setDobYear(e.target.value)}
+                          className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                          aria-label="Year"
+                          aria-invalid={!!fieldErrors.dob}
+                        >
+                          <option value="">Year</option>
+                          {Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i).map(
+                            (y) => (
+                              <option key={y} value={String(y)}>
+                                {y}
+                              </option>
+                            ),
+                          )}
+                        </select>
+                      </div>
+                    </div>
+                    {fieldErrors.dob && (
+                      <p id="dob-error" className="text-xs text-destructive">
+                        {fieldErrors.dob}
+                      </p>
+                    )}
+                  </fieldset>
 
                   {/* Teacher confirmation checkbox */}
                   <div className="space-y-1.5">

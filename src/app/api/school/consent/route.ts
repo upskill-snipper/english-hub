@@ -22,6 +22,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { sendEmail } from '@/lib/email'
+import {
+  buildParentConsentEmail,
+  buildParentConsentApprovedEmail,
+  buildParentConsentDeniedEmail,
+} from '@/lib/email-templates/parent-consent'
 import crypto from 'crypto'
 
 export const dynamic = 'force-dynamic'
@@ -49,6 +55,98 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
 
+/**
+ * Partial mask of an email for log/error lines — parent_email is PII
+ * (safeguarding sensitive) so we never log the full address on send failures.
+ * Example: "p***@e***.com"
+ */
+function maskEmail(email: string): string {
+  const [local, domain] = email.split('@')
+  if (!local || !domain) return '***'
+  const [host, ...rest] = domain.split('.')
+  const maskedLocal = local.length <= 1 ? local : `${local[0]}***`
+  const maskedHost = host.length <= 1 ? host : `${host[0]}***`
+  return `${maskedLocal}@${maskedHost}${rest.length ? '.' + rest.join('.') : ''}`
+}
+
+function getSiteUrl(): string {
+  return process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
+}
+
+/**
+ * Send the parental consent-request email. Non-fatal: a Resend/SMTP outage
+ * must not break the consent flow — the DB row is the source of truth.
+ * Skips silently if SMTP isn't configured.
+ */
+async function sendConsentRequestEmail(args: {
+  parentEmail: string
+  studentName: string
+  schoolName: string
+  token: string
+}): Promise<void> {
+  if (!process.env.SMTP_HOST) {
+    console.warn('[consent] SMTP_HOST not configured — skipping parental consent email')
+    return
+  }
+  try {
+    const consentUrl = `${getSiteUrl()}/consent?token=${encodeURIComponent(args.token)}`
+    const { subject, html, text } = buildParentConsentEmail({
+      studentName: args.studentName,
+      schoolName: args.schoolName,
+      consentUrl,
+    })
+    const result = await sendEmail(args.parentEmail, subject, html, text)
+    if (!result.success) {
+      console.warn(
+        `[consent] Failed to send consent-request email to ${maskEmail(args.parentEmail)}: ${result.error ?? 'unknown error'}`,
+      )
+    }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'unknown error'
+    console.warn(
+      `[consent] Error sending consent-request email to ${maskEmail(args.parentEmail)}: ${message}`,
+    )
+  }
+}
+
+/**
+ * Send the post-decision confirmation email (approve or deny). Non-fatal.
+ */
+async function sendConsentDecisionEmail(args: {
+  parentEmail: string
+  studentName: string
+  schoolName: string
+  decision: 'approved' | 'denied'
+}): Promise<void> {
+  if (!process.env.SMTP_HOST) {
+    console.warn('[consent] SMTP_HOST not configured — skipping decision email')
+    return
+  }
+  try {
+    const built =
+      args.decision === 'approved'
+        ? buildParentConsentApprovedEmail({
+            studentName: args.studentName,
+            schoolName: args.schoolName,
+          })
+        : buildParentConsentDeniedEmail({
+            studentName: args.studentName,
+            schoolName: args.schoolName,
+          })
+    const result = await sendEmail(args.parentEmail, built.subject, built.html, built.text)
+    if (!result.success) {
+      console.warn(
+        `[consent] Failed to send ${args.decision} confirmation to ${maskEmail(args.parentEmail)}: ${result.error ?? 'unknown error'}`,
+      )
+    }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'unknown error'
+    console.warn(
+      `[consent] Error sending ${args.decision} confirmation to ${maskEmail(args.parentEmail)}: ${message}`,
+    )
+  }
+}
+
 // ---------------------------------------------------------------------------
 // GET — Check consent status for the authenticated student
 // ---------------------------------------------------------------------------
@@ -60,12 +158,18 @@ export async function GET(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'You must be logged in.' }, { status: 401 })
     }
@@ -115,12 +219,18 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many consent requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'You must be logged in.' }, { status: 401 })
     }
@@ -136,7 +246,10 @@ export async function POST(request: NextRequest) {
     const schoolId = (body.school_id ?? '').trim()
 
     if (!parentEmail || !isValidEmail(parentEmail)) {
-      return NextResponse.json({ error: 'Please provide a valid parent/guardian email address.' }, { status: 422 })
+      return NextResponse.json(
+        { error: 'Please provide a valid parent/guardian email address.' },
+        { status: 422 },
+      )
     }
 
     if (!schoolId) {
@@ -147,7 +260,7 @@ export async function POST(request: NextRequest) {
     if (user.email && parentEmail === user.email.toLowerCase()) {
       return NextResponse.json(
         { error: 'The parent/guardian email must be different from your own email.' },
-        { status: 422 }
+        { status: 422 },
       )
     }
 
@@ -161,7 +274,10 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (!profile?.date_of_birth || !isUnder16(profile.date_of_birth)) {
-      return NextResponse.json({ error: 'Parental consent is not required for your age group.' }, { status: 422 })
+      return NextResponse.json(
+        { error: 'Parental consent is not required for your age group.' },
+        { status: 422 },
+      )
     }
 
     // Verify the school exists
@@ -185,7 +301,10 @@ export async function POST(request: NextRequest) {
 
     if (existing) {
       if (existing.status === 'approved') {
-        return NextResponse.json({ error: 'Parental consent has already been granted.' }, { status: 422 })
+        return NextResponse.json(
+          { error: 'Parental consent has already been granted.' },
+          { status: 422 },
+        )
       }
 
       // Update existing pending/denied record with new token and parent email
@@ -205,8 +324,13 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Failed to send consent request.' }, { status: 500 })
       }
 
-      // TODO(Phase-5): Send consent email to parent via Resend with link: {SITE_URL}/consent?token={newToken}
-      // await sendConsentEmail(parentEmail, newToken, school.name, profile.full_name)
+      // Fire the consent-request email (non-fatal — DB write is source of truth)
+      await sendConsentRequestEmail({
+        parentEmail,
+        studentName: profile.full_name ?? 'your child',
+        schoolName: school.name,
+        token: newToken,
+      })
 
       return NextResponse.json({
         success: true,
@@ -216,23 +340,26 @@ export async function POST(request: NextRequest) {
 
     // Create new consent record
     const consentToken = generateConsentToken()
-    const { error: insertError } = await admin
-      .from('parental_consents')
-      .insert({
-        student_user_id: user.id,
-        school_id: schoolId,
-        parent_email: parentEmail,
-        consent_token: consentToken,
-        status: 'pending',
-      })
+    const { error: insertError } = await admin.from('parental_consents').insert({
+      student_user_id: user.id,
+      school_id: schoolId,
+      parent_email: parentEmail,
+      consent_token: consentToken,
+      status: 'pending',
+    })
 
     if (insertError) {
       console.error('Failed to create consent record:', insertError)
       return NextResponse.json({ error: 'Failed to send consent request.' }, { status: 500 })
     }
 
-    // TODO(Phase-5): Send consent email to parent via Resend with link: {SITE_URL}/consent?token={consentToken}
-    // await sendConsentEmail(parentEmail, consentToken, school.name, profile.full_name)
+    // Fire the consent-request email (non-fatal — DB write is source of truth)
+    await sendConsentRequestEmail({
+      parentEmail,
+      studentName: profile.full_name ?? 'your child',
+      schoolName: school.name,
+      token: consentToken,
+    })
 
     return NextResponse.json({
       success: true,
@@ -255,7 +382,10 @@ export async function PUT(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
@@ -282,26 +412,30 @@ export async function PUT(request: NextRequest) {
     // Look up the consent record by token
     const { data: consent, error: lookupError } = await admin
       .from('parental_consents')
-      .select('id, status, student_user_id, school_id')
+      .select('id, status, student_user_id, school_id, parent_email')
       .eq('consent_token', token)
       .single()
 
     if (lookupError || !consent) {
-      return NextResponse.json(
-        { error: 'Invalid or expired consent token.' },
-        { status: 404 }
-      )
+      return NextResponse.json({ error: 'Invalid or expired consent token.' }, { status: 404 })
     }
 
+    // Idempotency guard: a parent clicking their link twice (or a replayed
+    // form submit) must NOT trigger a second decision email. Because the
+    // token is nulled on the first successful update, a replay will fall
+    // into these 410 branches and short-circuit before any email is sent.
     if (consent.status === 'approved') {
       return NextResponse.json({ error: 'Consent has already been granted.' }, { status: 410 })
     }
 
     if (consent.status === 'denied') {
-      return NextResponse.json({ error: 'Consent has already been denied. The student can request a new consent form.' }, { status: 410 })
+      return NextResponse.json(
+        { error: 'Consent has already been denied. The student can request a new consent form.' },
+        { status: 410 },
+      )
     }
 
-    const newStatus = action === 'approve' ? 'approved' : 'denied'
+    const newStatus: 'approved' | 'denied' = action === 'approve' ? 'approved' : 'denied'
 
     const { error: updateError } = await admin
       .from('parental_consents')
@@ -317,12 +451,29 @@ export async function PUT(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to process consent.' }, { status: 500 })
     }
 
+    // Fetch student + school names for the confirmation email. If either
+    // lookup fails we still send with safe fallbacks — the email is
+    // notification-only and must never block the happy path.
+    const [{ data: studentProfile }, { data: school }] = await Promise.all([
+      admin.from('profiles').select('full_name').eq('id', consent.student_user_id).single(),
+      admin.from('schools').select('name').eq('id', consent.school_id).single(),
+    ])
+
+    // Fire the post-decision confirmation email (non-fatal).
+    await sendConsentDecisionEmail({
+      parentEmail: consent.parent_email,
+      studentName: studentProfile?.full_name ?? 'your child',
+      schoolName: school?.name ?? 'their school',
+      decision: newStatus,
+    })
+
     return NextResponse.json({
       success: true,
       status: newStatus,
-      message: action === 'approve'
-        ? 'Thank you. You have granted consent for your child to use The English Hub at their school.'
-        : 'You have denied consent. Your child\'s data will not be processed for school features.',
+      message:
+        action === 'approve'
+          ? 'Thank you. You have granted consent for your child to use The English Hub at their school.'
+          : "You have denied consent. Your child's data will not be processed for school features.",
     })
   } catch (error) {
     console.error('Consent confirm error:', error)

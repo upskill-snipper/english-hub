@@ -38,5 +38,30 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
-      - name: Check for known vulnerabilities
+
+      # BLOCKING: fail CI on any CRITICAL production-dependency vulnerability.
+      # Dev-only chains (e.g. @cyclonedx/cyclonedx-npm) are excluded via
+      # --omit=dev so transitive dev CVEs don't gate deploys. This is a
+      # minimum floor; the high-severity advisory bar lives in the
+      # advisory step below so it stays visible in logs without blocking
+      # on the existing Next.js 14 DoS CVE (fixed in the pending Next 15
+      # upgrade branch).
+      - name: Production-dependency audit (CRITICAL blocks)
+        run: npm audit --omit=dev --audit-level=critical
+
+      # ADVISORY: run a full high-and-above audit but don't fail CI.
+      # Output is retained in the job log for review; use it to track
+      # when the Next 15 upgrade clears the GHSA-h25m-26qc-wcjf DoS.
+      - name: Full audit (HIGH and above, advisory)
         run: npm audit --audit-level=high || true
+
+      # Runs on pull_request only — blocks NEW vulnerabilities introduced
+      # by a PR (existing CVEs are not reported as regressions). Keeps the
+      # high-severity floor in force for anything added without gating on
+      # pre-existing issues.
+      - name: Dependency review (PRs only)
+        if: github.event_name == 'pull_request'
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: always

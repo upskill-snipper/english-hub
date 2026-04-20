@@ -6,8 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 // ──────────────────────────────────────────────
@@ -136,6 +137,14 @@ enum ProfileVisibility {
 
 model User {
   id                String        @id @default(cuid())
+  // supabaseUserId: links this Prisma User row to the Supabase auth.users
+  // row that owns the identity (email + password hash + MFA factors).
+  // Added in Cycle 4 PR-1 (identity convergence plan). Nullable for the
+  // transition window; every endpoint that currently joins by email
+  // should read this instead once PR-3 ships, and a follow-up migration
+  // flips it to NOT NULL once backfill is verified. See
+  // EH_QA_MASTER_LOG.md Cycle 3 schema convergence plan.
+  supabaseUserId    String?       @unique @db.Uuid
   email             String        @unique
   passwordHash      String
   firstName         String
@@ -151,6 +160,12 @@ model User {
   linkedTeacherId   String?
   createdAt         DateTime      @default(now())
   updatedAt         DateTime      @updatedAt
+  // lastLoginAt: set by the login handler on successful Supabase sign-in.
+  // Cycle 2 P1 flagged that the dormancy check was using `updatedAt` as a
+  // proxy, which bumps on any profile update (email change, theme, etc.)
+  // and wrongly resets the 730-day inactive clock. Now driven by real
+  // login events. Nullable because pre-migration rows have no signal.
+  lastLoginAt       DateTime?
   deletedAt         DateTime?
 
   parent                 User?                @relation("ParentChild", fields: [parentId], references: [id])
@@ -234,6 +249,7 @@ model Essay {
   @@index([examBoard])
   @@index([deletedAt])
   @@index([userId, createdAt])
+  @@index([userId, deletedAt, createdAt])
 }
 
 model AIFeedback {
@@ -379,6 +395,7 @@ model AuditLog {
   @@index([action])
   @@index([resource, resourceId])
   @@index([timestamp])
+  @@index([userId, timestamp(sort: Desc)])
 }
 
 model PrivacySettings {

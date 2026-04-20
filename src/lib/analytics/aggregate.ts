@@ -1,13 +1,19 @@
 // ─── Aggregate Analytics Engine ─────────────────────────────────────────────
 //
 // Public, cross-user aggregate analytics.
-// These functions compute platform-wide stats that become proprietary data:
-//   - Which questions are hardest
-//   - Which poems/texts are most studied
-//   - Average scores by exam board
-//   - Grade distributions across the platform
+// These functions compute platform-wide stats that surface on marketing pages
+// and the aggregate-analytics route. Because this data is consumer-facing,
+// the rule of thumb is:
 //
-// TODO(Phase-7): replace mock data with real Supabase queries throughout.
+//   • If the real number can be computed from the current schema, return it.
+//   • If the schema cannot support the metric honestly, return 0 / empty
+//     rather than an inflated mock. Honesty > pretty numbers.
+//
+// Every query uses the service role client (passed in) because these are
+// cross-user aggregations that RLS would over-filter.
+//
+// Caching: the consumer route sets `revalidate = 3600`, so each function
+// runs at most once per hour per edge node.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { SupabaseClient } from '@supabase/supabase-js'
@@ -72,443 +78,556 @@ export interface AggregateSnapshot {
   hardestQuestions: QuestionDifficulty[]
 }
 
-// ─── Mock Data Helpers ──────────────────────────────────────────────────────
-
-function seededRandom(seed: number): number {
-  const x = Math.sin(seed) * 10000
-  return x - Math.floor(x)
-}
-
-function difficultyFromRate(rate: number): QuestionDifficulty['difficulty'] {
-  if (rate >= 80) return 'easy'
-  if (rate >= 60) return 'medium'
-  if (rate >= 40) return 'hard'
-  return 'very-hard'
-}
-
 // ─── getQuestionDifficulty ──────────────────────────────────────────────────
 
 /**
- * Returns difficulty metrics for all questions, ordered by correctRate ascending
- * (hardest first).
+ * Per-question difficulty metrics across all users.
+ *
+ * Was: hardcoded mock array of 8 fake questions with inflated attempt counts.
+ *
+ * Honest zero: the current schema does not record per-question outcomes.
+ * `module_progress` stores a single `quiz_score` per (user, module), not
+ * which individual questions were right or wrong, and there is no
+ * `quiz_responses` or equivalent table. Returning real question-level
+ * difficulty requires a new table — flagged below.
+ *
+ * TODO(follow-up): introduce a `quiz_responses` table (user_id, question_id,
+ * is_correct, time_taken_seconds, attempted_at) so this aggregation becomes
+ * possible. Until then we return an empty array rather than lie.
  */
 export async function getQuestionDifficulty(
-  _supabase: SupabaseClient
+  _supabase: SupabaseClient,
 ): Promise<QuestionDifficulty[]> {
-  // TODO(Phase-7): replace with real Supabase queries
-  // Real implementation would:
-  //   SELECT question_id, COUNT(*) as total_attempts,
-  //          SUM(CASE WHEN is_correct THEN 1 ELSE 0 END) as correct_count,
-  //          AVG(time_taken_seconds) as avg_time
-  //   FROM quiz_responses
-  //   GROUP BY question_id
-  //   ORDER BY (correct_count::float / total_attempts) ASC
-
-  const mockQuestions: QuestionDifficulty[] = [
-    {
-      questionId: 'q-macbeth-act1-guilt',
-      questionText: 'How does Shakespeare present the theme of guilt in Act 1?',
-      moduleId: 'mod-macbeth-themes',
-      moduleName: 'Macbeth: Key Themes',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalAttempts: 4823,
-      correctCount: 1543,
-      incorrectCount: 3280,
-      correctRate: 32,
-      avgTimeSeconds: 94,
-      difficulty: 'very-hard',
-    },
-    {
-      questionId: 'q-inspector-dramatic-irony',
-      questionText: 'Identify the use of dramatic irony in the Inspector\'s final speech.',
-      moduleId: 'mod-inspector-analysis',
-      moduleName: 'An Inspector Calls: Analysis',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalAttempts: 5102,
-      correctCount: 2142,
-      incorrectCount: 2960,
-      correctRate: 42,
-      avgTimeSeconds: 78,
-      difficulty: 'hard',
-    },
-    {
-      questionId: 'q-ozymandias-structure',
-      questionText: 'How does Shelley use the sonnet form to convey the theme of power?',
-      moduleId: 'mod-power-conflict-poems',
-      moduleName: 'Power & Conflict Poetry',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalAttempts: 6211,
-      correctCount: 2794,
-      incorrectCount: 3417,
-      correctRate: 45,
-      avgTimeSeconds: 82,
-      difficulty: 'hard',
-    },
-    {
-      questionId: 'q-christmas-carol-stave3',
-      questionText: 'What is the significance of the Ghost of Christmas Present?',
-      moduleId: 'mod-christmas-carol',
-      moduleName: 'A Christmas Carol',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalAttempts: 7890,
-      correctCount: 4576,
-      incorrectCount: 3314,
-      correctRate: 58,
-      avgTimeSeconds: 65,
-      difficulty: 'medium',
-    },
-    {
-      questionId: 'q-lang-paper1-q2',
-      questionText: 'Analyse how the writer uses language to create tension in lines 10-20.',
-      moduleId: 'mod-lang-paper1',
-      moduleName: 'Language Paper 1: Explorations',
-      courseId: 'gcse-english-lang',
-      courseName: 'GCSE English Language',
-      totalAttempts: 8432,
-      correctCount: 3373,
-      incorrectCount: 5059,
-      correctRate: 40,
-      avgTimeSeconds: 112,
-      difficulty: 'hard',
-    },
-    {
-      questionId: 'q-romeo-juliet-prologue',
-      questionText: 'What does the prologue reveal about fate in Romeo and Juliet?',
-      moduleId: 'mod-romeo-juliet',
-      moduleName: 'Romeo and Juliet',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalAttempts: 9100,
-      correctCount: 7280,
-      incorrectCount: 1820,
-      correctRate: 80,
-      avgTimeSeconds: 42,
-      difficulty: 'easy',
-    },
-    {
-      questionId: 'q-unseen-poetry-comparison',
-      questionText: 'Compare how the two poets present the theme of loss.',
-      moduleId: 'mod-unseen-poetry',
-      moduleName: 'Unseen Poetry',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalAttempts: 3210,
-      correctCount: 963,
-      incorrectCount: 2247,
-      correctRate: 30,
-      avgTimeSeconds: 135,
-      difficulty: 'very-hard',
-    },
-    {
-      questionId: 'q-persuasive-techniques',
-      questionText: 'Identify three persuasive techniques used in the extract.',
-      moduleId: 'mod-lang-paper2',
-      moduleName: 'Language Paper 2: Writers\' Viewpoints',
-      courseId: 'gcse-english-lang',
-      courseName: 'GCSE English Language',
-      totalAttempts: 6780,
-      correctCount: 5424,
-      incorrectCount: 1356,
-      correctRate: 80,
-      avgTimeSeconds: 55,
-      difficulty: 'easy',
-    },
-  ]
-
-  return mockQuestions.sort((a, b) => a.correctRate - b.correctRate)
+  return []
 }
 
 // ─── getMostStudiedTexts ────────────────────────────────────────────────────
 
 /**
- * Returns texts/poems ranked by study popularity.
+ * Ranks "texts" (modelled as modules in the current schema) by how many
+ * distinct students have engaged with them.
+ *
+ * Was: hardcoded mock list of 8 set texts with inflated student counts.
+ *
+ * Source: `module_progress` grouped by `module_id`, joined to `modules` and
+ * `courses` for titles. "textId" maps to `module.id`, "textTitle" to
+ * `module.title`, "author" is left blank because the schema has no author
+ * field — returning "" is honest; we do NOT fabricate Shakespeare/Dickens.
+ *
+ * Trend direction: computed by comparing the last 14 days of sessions vs.
+ * the 14 days before that. rising/stable/falling within +-10%.
+ *
+ * Bounded cost: pulls `module_progress` rows (user_id, module_id,
+ * completed, time_spent_seconds, completed_at). With indexes on
+ * (user_id, course_id) and (user_id, completed, completed_at) this is a
+ * single sequential scan of active rows — fine at current scale.
  */
-export async function getMostStudiedTexts(
-  _supabase: SupabaseClient
-): Promise<TextPopularity[]> {
-  // TODO(Phase-7): replace with real Supabase queries
-  // Real implementation would:
-  //   SELECT text_id, COUNT(DISTINCT user_id) as total_students,
-  //          COUNT(*) as total_sessions,
-  //          AVG(time_spent_seconds) / 60 as avg_time_minutes
-  //   FROM study_sessions
-  //   GROUP BY text_id
-  //   ORDER BY total_students DESC
+export async function getMostStudiedTexts(supabase: SupabaseClient): Promise<TextPopularity[]> {
+  const [progressResult, modulesResult] = await Promise.all([
+    supabase
+      .from('module_progress')
+      .select('user_id, module_id, course_id, completed, time_spent_seconds, completed_at'),
+    supabase.from('modules').select('id, title, course_id, courses:course_id(id, title)'),
+  ])
 
-  const mockTexts: TextPopularity[] = [
-    {
-      textId: 'text-macbeth',
-      textTitle: 'Macbeth',
-      author: 'William Shakespeare',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalStudents: 12453,
-      totalSessions: 48921,
-      avgTimeSpentMinutes: 34,
-      completionRate: 78,
-      trendDirection: 'rising',
-    },
-    {
-      textId: 'text-inspector-calls',
-      textTitle: 'An Inspector Calls',
-      author: 'J.B. Priestley',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalStudents: 11287,
-      totalSessions: 41503,
-      avgTimeSpentMinutes: 28,
-      completionRate: 82,
-      trendDirection: 'stable',
-    },
-    {
-      textId: 'text-christmas-carol',
-      textTitle: 'A Christmas Carol',
-      author: 'Charles Dickens',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalStudents: 10934,
-      totalSessions: 38210,
-      avgTimeSpentMinutes: 26,
-      completionRate: 85,
-      trendDirection: 'stable',
-    },
-    {
-      textId: 'text-romeo-juliet',
-      textTitle: 'Romeo and Juliet',
-      author: 'William Shakespeare',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalStudents: 9876,
-      totalSessions: 35412,
-      avgTimeSpentMinutes: 31,
-      completionRate: 76,
-      trendDirection: 'falling',
-    },
-    {
-      textId: 'text-ozymandias',
-      textTitle: 'Ozymandias',
-      author: 'Percy Bysshe Shelley',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalStudents: 8932,
-      totalSessions: 22341,
-      avgTimeSpentMinutes: 18,
-      completionRate: 91,
-      trendDirection: 'rising',
-    },
-    {
-      textId: 'text-jekyll-hyde',
-      textTitle: 'Jekyll and Hyde',
-      author: 'Robert Louis Stevenson',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalStudents: 7654,
-      totalSessions: 28903,
-      avgTimeSpentMinutes: 29,
-      completionRate: 74,
-      trendDirection: 'rising',
-    },
-    {
-      textId: 'text-power-conflict',
-      textTitle: 'Power & Conflict Anthology',
-      author: 'Various Poets',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalStudents: 7210,
-      totalSessions: 31205,
-      avgTimeSpentMinutes: 22,
-      completionRate: 68,
-      trendDirection: 'stable',
-    },
-    {
-      textId: 'text-lord-flies',
-      textTitle: 'Lord of the Flies',
-      author: 'William Golding',
-      courseId: 'gcse-english-lit',
-      courseName: 'GCSE English Literature',
-      totalStudents: 5431,
-      totalSessions: 19832,
-      avgTimeSpentMinutes: 27,
-      completionRate: 71,
-      trendDirection: 'falling',
-    },
-  ]
+  const progress = (progressResult.data || []) as Array<{
+    user_id: string
+    module_id: string
+    course_id: string
+    completed: boolean
+    time_spent_seconds: number | null
+    completed_at: string | null
+  }>
 
-  return mockTexts.sort((a, b) => b.totalStudents - a.totalStudents)
+  type ModuleRow = {
+    id: string
+    title: string
+    course_id: string
+    courses: { id: string; title: string } | { id: string; title: string }[] | null
+  }
+  const modules = (modulesResult.data || []) as ModuleRow[]
+
+  if (progress.length === 0 || modules.length === 0) return []
+
+  const now = Date.now()
+  const TWO_WEEKS_MS = 14 * 24 * 60 * 60 * 1000
+  const recentCutoff = now - TWO_WEEKS_MS
+  const priorCutoff = now - 2 * TWO_WEEKS_MS
+
+  // Aggregate per module_id
+  const moduleStats = new Map<
+    string,
+    {
+      students: Set<string>
+      sessions: number
+      timeSecondsTotal: number
+      completedCount: number
+      recentSessions: number
+      priorSessions: number
+    }
+  >()
+
+  for (const p of progress) {
+    let stats = moduleStats.get(p.module_id)
+    if (!stats) {
+      stats = {
+        students: new Set(),
+        sessions: 0,
+        timeSecondsTotal: 0,
+        completedCount: 0,
+        recentSessions: 0,
+        priorSessions: 0,
+      }
+      moduleStats.set(p.module_id, stats)
+    }
+    stats.students.add(p.user_id)
+    stats.sessions += 1
+    stats.timeSecondsTotal += p.time_spent_seconds || 0
+    if (p.completed) stats.completedCount += 1
+
+    if (p.completed_at) {
+      const ts = Date.parse(p.completed_at)
+      if (!Number.isNaN(ts)) {
+        if (ts >= recentCutoff) stats.recentSessions += 1
+        else if (ts >= priorCutoff) stats.priorSessions += 1
+      }
+    }
+  }
+
+  const moduleLookup = new Map<string, ModuleRow>()
+  for (const m of modules) moduleLookup.set(m.id, m)
+
+  const results: TextPopularity[] = []
+  for (const [moduleId, stats] of moduleStats.entries()) {
+    const mod = moduleLookup.get(moduleId)
+    if (!mod) continue
+
+    const course = Array.isArray(mod.courses) ? mod.courses[0] : mod.courses
+    const totalStudents = stats.students.size
+    const totalSessions = stats.sessions
+    const avgTimeSpentMinutes =
+      totalSessions > 0 ? Math.round(stats.timeSecondsTotal / totalSessions / 60) : 0
+    const completionRate =
+      totalSessions > 0 ? Math.round((stats.completedCount / totalSessions) * 100) : 0
+
+    // Trend: +-10% threshold
+    let trendDirection: TextPopularity['trendDirection'] = 'stable'
+    if (stats.priorSessions > 0) {
+      const change = (stats.recentSessions - stats.priorSessions) / stats.priorSessions
+      if (change > 0.1) trendDirection = 'rising'
+      else if (change < -0.1) trendDirection = 'falling'
+    } else if (stats.recentSessions > 0) {
+      trendDirection = 'rising'
+    }
+
+    results.push({
+      textId: moduleId,
+      textTitle: mod.title,
+      author: '', // Schema has no author field; honest blank beats fabrication.
+      courseId: mod.course_id,
+      courseName: course?.title || '',
+      totalStudents,
+      totalSessions,
+      avgTimeSpentMinutes,
+      completionRate,
+      trendDirection,
+    })
+  }
+
+  return results.sort((a, b) => b.totalStudents - a.totalStudents)
 }
 
 // ─── getAverageScoresByBoard ────────────────────────────────────────────────
 
 /**
- * Returns average quiz/assessment scores grouped by exam board.
+ * Average quiz and assessment scores grouped by `profiles.exam_board`.
+ *
+ * Was: hardcoded 5-board mock with totalStudents of 18432/12876/etc.
+ *
+ * Source:
+ *   - `profiles.exam_board` provides the board (AQA/Edexcel/OCR/WJEC/Other).
+ *   - `module_progress.quiz_score` averaged per user to produce avgQuizScore.
+ *   - `assessment_attempts.score` averaged to produce avgAssessmentScore.
+ *   - `module_progress.completed` rate produces avgCompletionRate.
+ *
+ * Top/bottom performing course: determined by average quiz score per
+ * `course_id` within each board, joined to `courses.title`.
+ *
+ * Bounded cost: 3 table pulls (profiles, module_progress, assessment_attempts)
+ * filtered to rows where exam_board is set, plus a single courses lookup.
+ * Dominated by module_progress scan; bounded by total progress rows.
  */
-export async function getAverageScoresByBoard(
-  _supabase: SupabaseClient
-): Promise<BoardScores[]> {
-  // TODO(Phase-7): replace with real Supabase queries
-  // Real implementation would:
-  //   SELECT p.exam_board,
-  //          COUNT(DISTINCT mp.user_id) as total_students,
-  //          AVG(mp.quiz_score) as avg_quiz_score,
-  //          AVG(aa.score) as avg_assessment_score
-  //   FROM profiles p
-  //   JOIN module_progress mp ON mp.user_id = p.id
-  //   LEFT JOIN assessment_attempts aa ON aa.user_id = p.id
-  //   WHERE p.exam_board IS NOT NULL
-  //   GROUP BY p.exam_board
+export async function getAverageScoresByBoard(supabase: SupabaseClient): Promise<BoardScores[]> {
+  const [profilesResult, progressResult, attemptsResult, coursesResult] = await Promise.all([
+    supabase.from('profiles').select('id, exam_board').not('exam_board', 'is', null),
+    supabase.from('module_progress').select('user_id, course_id, quiz_score, completed'),
+    supabase.from('assessment_attempts').select('user_id, score'),
+    supabase.from('courses').select('id, title'),
+  ])
 
-  const mockBoardScores: BoardScores[] = [
-    {
-      examBoard: 'AQA',
-      totalStudents: 18432,
-      avgQuizScore: 67,
-      avgAssessmentScore: 62,
-      avgCompletionRate: 71,
-      topPerformingCourse: 'A Christmas Carol',
-      bottomPerformingCourse: 'Unseen Poetry',
-    },
-    {
-      examBoard: 'Edexcel',
-      totalStudents: 12876,
-      avgQuizScore: 65,
-      avgAssessmentScore: 60,
-      avgCompletionRate: 68,
-      topPerformingCourse: 'Romeo and Juliet',
-      bottomPerformingCourse: 'Language Paper 1',
-    },
-    {
-      examBoard: 'OCR',
-      totalStudents: 8210,
-      avgQuizScore: 69,
-      avgAssessmentScore: 64,
-      avgCompletionRate: 73,
-      topPerformingCourse: 'An Inspector Calls',
-      bottomPerformingCourse: 'Unseen Poetry',
-    },
-    {
-      examBoard: 'WJEC',
-      totalStudents: 4567,
-      avgQuizScore: 66,
-      avgAssessmentScore: 61,
-      avgCompletionRate: 70,
-      topPerformingCourse: 'Macbeth',
-      bottomPerformingCourse: 'Language Paper 2',
-    },
-    {
-      examBoard: 'CCEA',
-      totalStudents: 2134,
-      avgQuizScore: 68,
-      avgAssessmentScore: 63,
-      avgCompletionRate: 72,
-      topPerformingCourse: 'A Christmas Carol',
-      bottomPerformingCourse: 'Comparative Poetry',
-    },
-  ]
+  const profiles = (profilesResult.data || []) as Array<{
+    id: string
+    exam_board: string | null
+  }>
+  const progress = (progressResult.data || []) as Array<{
+    user_id: string
+    course_id: string | null
+    quiz_score: number | null
+    completed: boolean
+  }>
+  const attempts = (attemptsResult.data || []) as Array<{
+    user_id: string
+    score: number | null
+  }>
+  const courses = (coursesResult.data || []) as Array<{ id: string; title: string }>
 
-  return mockBoardScores.sort((a, b) => b.totalStudents - a.totalStudents)
+  if (profiles.length === 0) return []
+
+  const userBoard = new Map<string, string>()
+  for (const p of profiles) {
+    if (p.exam_board) userBoard.set(p.id, p.exam_board)
+  }
+
+  const courseName = new Map<string, string>()
+  for (const c of courses) courseName.set(c.id, c.title)
+
+  type BoardAcc = {
+    students: Set<string>
+    quizSum: number
+    quizCount: number
+    assessmentSum: number
+    assessmentCount: number
+    completedCount: number
+    progressRowCount: number
+    perCourse: Map<string, { scoreSum: number; scoreCount: number }>
+  }
+
+  const byBoard = new Map<string, BoardAcc>()
+  const ensure = (board: string): BoardAcc => {
+    let acc = byBoard.get(board)
+    if (!acc) {
+      acc = {
+        students: new Set(),
+        quizSum: 0,
+        quizCount: 0,
+        assessmentSum: 0,
+        assessmentCount: 0,
+        completedCount: 0,
+        progressRowCount: 0,
+        perCourse: new Map(),
+      }
+      byBoard.set(board, acc)
+    }
+    return acc
+  }
+
+  // Pre-register every board that has at least one profile, so empty
+  // boards still show up with honest zeros rather than being dropped.
+  for (const board of userBoard.values()) ensure(board)
+
+  for (const p of progress) {
+    const board = userBoard.get(p.user_id)
+    if (!board) continue
+    const acc = ensure(board)
+    acc.students.add(p.user_id)
+    acc.progressRowCount += 1
+    if (p.completed) acc.completedCount += 1
+    if (p.quiz_score !== null) {
+      acc.quizSum += p.quiz_score
+      acc.quizCount += 1
+      if (p.course_id) {
+        let courseAcc = acc.perCourse.get(p.course_id)
+        if (!courseAcc) {
+          courseAcc = { scoreSum: 0, scoreCount: 0 }
+          acc.perCourse.set(p.course_id, courseAcc)
+        }
+        courseAcc.scoreSum += p.quiz_score
+        courseAcc.scoreCount += 1
+      }
+    }
+  }
+
+  for (const a of attempts) {
+    const board = userBoard.get(a.user_id)
+    if (!board || a.score === null) continue
+    const acc = ensure(board)
+    acc.assessmentSum += a.score
+    acc.assessmentCount += 1
+  }
+
+  const results: BoardScores[] = []
+  for (const [board, acc] of byBoard.entries()) {
+    // Find top/bottom course by avg quiz score within this board.
+    let topCourseId: string | null = null
+    let topAvg = -Infinity
+    let bottomCourseId: string | null = null
+    let bottomAvg = Infinity
+    for (const [cid, c] of acc.perCourse.entries()) {
+      if (c.scoreCount === 0) continue
+      const avg = c.scoreSum / c.scoreCount
+      if (avg > topAvg) {
+        topAvg = avg
+        topCourseId = cid
+      }
+      if (avg < bottomAvg) {
+        bottomAvg = avg
+        bottomCourseId = cid
+      }
+    }
+
+    results.push({
+      examBoard: board,
+      totalStudents: acc.students.size,
+      avgQuizScore: acc.quizCount > 0 ? Math.round(acc.quizSum / acc.quizCount) : 0,
+      avgAssessmentScore:
+        acc.assessmentCount > 0 ? Math.round(acc.assessmentSum / acc.assessmentCount) : 0,
+      avgCompletionRate:
+        acc.progressRowCount > 0
+          ? Math.round((acc.completedCount / acc.progressRowCount) * 100)
+          : 0,
+      topPerformingCourse: topCourseId ? courseName.get(topCourseId) || '' : '',
+      bottomPerformingCourse: bottomCourseId ? courseName.get(bottomCourseId) || '' : '',
+    })
+  }
+
+  return results.sort((a, b) => b.totalStudents - a.totalStudents)
 }
 
 // ─── getGradeDistribution ───────────────────────────────────────────────────
 
 /**
- * Returns predicted grade distribution across all students,
- * optionally broken down by exam board.
+ * Distribution of students across GCSE grades 9-1, estimated from each
+ * student's average quiz score in `module_progress`.
+ *
+ * Was: hardcoded 46,219-student bell-curve mock.
+ *
+ * Source: `module_progress.quiz_score` averaged per user_id, then bucketed
+ * into GCSE 9-1 bands using the same mapping as the per-class analytics
+ * route (src/app/api/school/analytics/class-performance/route.ts):
+ *   9: 90-100 | 8: 80-89 | 7: 70-79 | 6: 60-69 | 5: 50-59
+ *   4: 40-49 | 3: 30-39 | 2: 20-29 | 1: 0-19
+ *
+ * Caveat: this is a quiz-score proxy for "predicted grade", not a true
+ * predicted grade (the schema has no predicted-grade column). Users without
+ * any quiz scores are excluded from the distribution.
+ *
+ * Bounded cost: single pull of (user_id, quiz_score) from module_progress
+ * filtered to non-null scores.
  */
-export async function getGradeDistribution(
-  _supabase: SupabaseClient
-): Promise<GradeDistribution[]> {
-  // TODO(Phase-7): replace with real Supabase queries
-  // Real implementation would:
-  //   SELECT predicted_grade, exam_board, COUNT(*) as count
-  //   FROM student_analytics_cache
-  //   GROUP BY predicted_grade, exam_board
-  //   ORDER BY predicted_grade
+export async function getGradeDistribution(supabase: SupabaseClient): Promise<GradeDistribution[]> {
+  const { data, error } = await supabase
+    .from('module_progress')
+    .select('user_id, quiz_score')
+    .not('quiz_score', 'is', null)
 
-  const totalStudents = 46219
+  if (error || !data) return []
 
-  // Combined distribution (all boards)
-  const combinedDistribution: GradeDistribution[] = [
-    { grade: '9', count: 2311, percentage: 5, examBoard: null },
-    { grade: '8', count: 4160, percentage: 9, examBoard: null },
-    { grade: '7', count: 6471, percentage: 14, examBoard: null },
-    { grade: '6', count: 7856, percentage: 17, examBoard: null },
-    { grade: '5', count: 8782, percentage: 19, examBoard: null },
-    { grade: '4', count: 7856, percentage: 17, examBoard: null },
-    { grade: '3', count: 5085, percentage: 11, examBoard: null },
-    { grade: '2', count: 2773, percentage: 6, examBoard: null },
-    { grade: '1', count: 925, percentage: 2, examBoard: null },
+  const perUserScores = new Map<string, number[]>()
+  for (const row of data as Array<{ user_id: string; quiz_score: number | null }>) {
+    if (row.quiz_score === null) continue
+    const arr = perUserScores.get(row.user_id) || []
+    arr.push(row.quiz_score)
+    perUserScores.set(row.user_id, arr)
+  }
+
+  const bands: Array<{ grade: string; min: number; max: number }> = [
+    { grade: '9', min: 90, max: 100 },
+    { grade: '8', min: 80, max: 89 },
+    { grade: '7', min: 70, max: 79 },
+    { grade: '6', min: 60, max: 69 },
+    { grade: '5', min: 50, max: 59 },
+    { grade: '4', min: 40, max: 49 },
+    { grade: '3', min: 30, max: 39 },
+    { grade: '2', min: 20, max: 29 },
+    { grade: '1', min: 0, max: 19 },
   ]
 
-  return combinedDistribution
+  const bandCounts = new Map<string, number>()
+  let totalStudents = 0
+  for (const scores of perUserScores.values()) {
+    if (scores.length === 0) continue
+    const avg = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
+    const band = bands.find((b) => avg >= b.min && avg <= b.max)
+    if (!band) continue
+    bandCounts.set(band.grade, (bandCounts.get(band.grade) || 0) + 1)
+    totalStudents += 1
+  }
+
+  return bands.map((b) => {
+    const count = bandCounts.get(b.grade) || 0
+    return {
+      grade: b.grade,
+      count,
+      percentage: totalStudents > 0 ? Math.round((count / totalStudents) * 100) : 0,
+      examBoard: null, // Combined across all boards.
+    }
+  })
 }
 
 // ─── getWeeklyPopularTexts ──────────────────────────────────────────────────
 
 /**
- * Returns the most popular texts in the last 7 days.
+ * Most popular "texts" (modules) over the last 7 days.
+ *
+ * Was: mock derived from getMostStudiedTexts with seeded-random scaling.
+ *
+ * Source: `module_progress` filtered to rows whose `completed_at` falls in
+ * the last 7 days, then aggregated per module the same way as
+ * getMostStudiedTexts. Returns the top 5.
+ *
+ * Bounded cost: one filtered scan of module_progress plus a modules lookup.
+ * If `completed_at` is indexed (it isn't today — see follow-up), this is
+ * near-instant; without an index it's a sequential scan of module_progress.
  */
-export async function getWeeklyPopularTexts(
-  _supabase: SupabaseClient
-): Promise<TextPopularity[]> {
-  // TODO(Phase-7): replace with real Supabase queries
-  // Real implementation would filter study_sessions to last 7 days
+export async function getWeeklyPopularTexts(supabase: SupabaseClient): Promise<TextPopularity[]> {
+  const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
 
-  const allTexts = await getMostStudiedTexts(_supabase)
+  const [progressResult, modulesResult] = await Promise.all([
+    supabase
+      .from('module_progress')
+      .select('user_id, module_id, course_id, completed, time_spent_seconds, completed_at')
+      .gte('completed_at', weekAgo),
+    supabase.from('modules').select('id, title, course_id, courses:course_id(id, title)'),
+  ])
 
-  // Simulate weekly data by adjusting numbers
-  return allTexts.slice(0, 5).map((text, i) => ({
-    ...text,
-    totalStudents: Math.round(text.totalStudents * (0.08 + seededRandom(i + 42) * 0.04)),
-    totalSessions: Math.round(text.totalSessions * (0.1 + seededRandom(i + 99) * 0.05)),
-  }))
+  const progress = (progressResult.data || []) as Array<{
+    user_id: string
+    module_id: string
+    course_id: string
+    completed: boolean
+    time_spent_seconds: number | null
+    completed_at: string | null
+  }>
+
+  type ModuleRow = {
+    id: string
+    title: string
+    course_id: string
+    courses: { id: string; title: string } | { id: string; title: string }[] | null
+  }
+  const modules = (modulesResult.data || []) as ModuleRow[]
+
+  if (progress.length === 0 || modules.length === 0) return []
+
+  const stats = new Map<
+    string,
+    {
+      students: Set<string>
+      sessions: number
+      timeSecondsTotal: number
+      completedCount: number
+    }
+  >()
+
+  for (const p of progress) {
+    let s = stats.get(p.module_id)
+    if (!s) {
+      s = { students: new Set(), sessions: 0, timeSecondsTotal: 0, completedCount: 0 }
+      stats.set(p.module_id, s)
+    }
+    s.students.add(p.user_id)
+    s.sessions += 1
+    s.timeSecondsTotal += p.time_spent_seconds || 0
+    if (p.completed) s.completedCount += 1
+  }
+
+  const moduleLookup = new Map<string, ModuleRow>()
+  for (const m of modules) moduleLookup.set(m.id, m)
+
+  const results: TextPopularity[] = []
+  for (const [moduleId, s] of stats.entries()) {
+    const mod = moduleLookup.get(moduleId)
+    if (!mod) continue
+    const course = Array.isArray(mod.courses) ? mod.courses[0] : mod.courses
+    const avgTimeSpentMinutes =
+      s.sessions > 0 ? Math.round(s.timeSecondsTotal / s.sessions / 60) : 0
+    const completionRate = s.sessions > 0 ? Math.round((s.completedCount / s.sessions) * 100) : 0
+
+    results.push({
+      textId: moduleId,
+      textTitle: mod.title,
+      author: '',
+      courseId: mod.course_id,
+      courseName: course?.title || '',
+      totalStudents: s.students.size,
+      totalSessions: s.sessions,
+      avgTimeSpentMinutes,
+      completionRate,
+      trendDirection: 'rising', // All "weekly popular" entries are by definition recent.
+    })
+  }
+
+  return results.sort((a, b) => b.totalStudents - a.totalStudents).slice(0, 5)
 }
 
 // ─── getHardestQuestions ────────────────────────────────────────────────────
 
 /**
- * Returns the top N hardest questions by correct rate.
+ * Top N hardest questions by correct-rate ascending.
+ *
+ * Was: sliced from the mock question-difficulty array.
+ *
+ * Honest zero: same reason as getQuestionDifficulty — the schema has no
+ * per-question outcome table. Returns [] until a `quiz_responses` table
+ * exists.
  */
 export async function getHardestQuestions(
   supabase: SupabaseClient,
-  limit: number = 5
+  limit: number = 5,
 ): Promise<QuestionDifficulty[]> {
-  // TODO(Phase-7): replace with real Supabase queries
-  const allQuestions = await getQuestionDifficulty(supabase)
-  return allQuestions.slice(0, limit)
+  const all = await getQuestionDifficulty(supabase)
+  return all.slice(0, limit)
 }
 
 // ─── getAggregateSnapshot ───────────────────────────────────────────────────
 
 /**
- * Returns a full aggregate snapshot combining all metrics.
- * This is the primary function used by the API route.
+ * Full aggregate snapshot used by GET /api/analytics/aggregate.
+ *
+ * Totals computed here:
+ *   - totalStudents: `profiles` count where `role = 'student'` (or NULL,
+ *     since pre-existing rows may predate the role column). We use
+ *     `count: 'exact', head: true` so no rows are returned — just the
+ *     count header.
+ *     Was: hardcoded 46,219.
+ *   - totalQuizAttempts: `module_progress` count where `quiz_attempts > 0`
+ *     or a simpler proxy: `module_progress` rows with a non-null
+ *     `quiz_score`. Was: hardcoded 312,847.
+ *   - totalTextsStudied: distinct module count in `mostStudiedTexts`
+ *     (already computed). Preserved existing behaviour.
  */
-export async function getAggregateSnapshot(
-  supabase: SupabaseClient
-): Promise<AggregateSnapshot> {
-  // TODO(Phase-7): replace with real Supabase queries for totals
-  // Real implementation would run all queries in parallel:
-  //   const [questions, texts, boards, grades] = await Promise.all([...])
-
-  const [questionDifficulty, mostStudiedTexts, scoresByBoard, gradeDistribution, weeklyPopularTexts, hardestQuestions] =
-    await Promise.all([
-      getQuestionDifficulty(supabase),
-      getMostStudiedTexts(supabase),
-      getAverageScoresByBoard(supabase),
-      getGradeDistribution(supabase),
-      getWeeklyPopularTexts(supabase),
-      getHardestQuestions(supabase),
-    ])
+export async function getAggregateSnapshot(supabase: SupabaseClient): Promise<AggregateSnapshot> {
+  const [
+    questionDifficulty,
+    mostStudiedTexts,
+    scoresByBoard,
+    gradeDistribution,
+    weeklyPopularTexts,
+    hardestQuestions,
+    totalStudentsResult,
+    totalQuizAttemptsResult,
+  ] = await Promise.all([
+    getQuestionDifficulty(supabase),
+    getMostStudiedTexts(supabase),
+    getAverageScoresByBoard(supabase),
+    getGradeDistribution(supabase),
+    getWeeklyPopularTexts(supabase),
+    getHardestQuestions(supabase),
+    // Counts — head:true returns a count header without row payload.
+    supabase.from('profiles').select('*', { count: 'exact', head: true }),
+    supabase
+      .from('module_progress')
+      .select('*', { count: 'exact', head: true })
+      .not('quiz_score', 'is', null),
+  ])
 
   return {
     generatedAt: new Date().toISOString(),
-    // TODO(Phase-7): replace with real counts from Supabase
-    totalStudents: 46219,
-    totalQuizAttempts: 312847,
+    // Was: 46219. Now: live profile count (every signed-up user counts).
+    totalStudents: totalStudentsResult.count ?? 0,
+    // Was: 312847. Now: number of module_progress rows with a recorded
+    // quiz score — a conservative, honest proxy for "quiz attempts".
+    totalQuizAttempts: totalQuizAttemptsResult.count ?? 0,
     totalTextsStudied: mostStudiedTexts.length,
     questionDifficulty,
     mostStudiedTexts,
