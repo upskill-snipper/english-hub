@@ -11,7 +11,7 @@ type BoardSelectorCardsProps = {
   /** Current board (highlights the matching card). */
   currentBoard?: ExamBoard | null
   /** Restrict displayed boards (e.g. only 'gcse' or 'igcse'). */
-  filterType?: 'gcse' | 'igcse' | 'ial'
+  filterType?: 'gcse' | 'igcse' | 'ial' | 'a-level'
   className?: string
   /** Render the cards in a tighter grid — used inside the modal gate. */
   compact?: boolean
@@ -29,6 +29,10 @@ const BOARD_ICON: Record<ExamBoard, React.ComponentType<{ className?: string }>>
   'cambridge-0990': Globe2,
   'cambridge-0475': BookOpen,
   'ial-edexcel': Award,
+  'aqa-a-level': Award,
+  'edexcel-a-level': Award,
+  'ocr-a-level': Award,
+  'eduqas-a-level': Award,
 }
 
 const BOARD_TAGLINE: Record<ExamBoard, string> = {
@@ -43,6 +47,10 @@ const BOARD_TAGLINE: Record<ExamBoard, string> = {
   'cambridge-0990': 'First Language English (9-1)',
   'cambridge-0475': 'Literature in English — prose, poetry & drama',
   'ial-edexcel': 'International A-Level English',
+  'aqa-a-level': 'A-Level English Literature (7712) & Language (7702)',
+  'edexcel-a-level': 'A-Level English Literature (9ET0) & Language (9EN0)',
+  'ocr-a-level': 'A-Level English Literature (H472) & Language (H470)',
+  'eduqas-a-level': 'A-Level English Literature & Language',
 }
 
 const BOARD_BENEFITS: Record<ExamBoard, string[]> = {
@@ -57,6 +65,10 @@ const BOARD_BENEFITS: Record<ExamBoard, string[]> = {
   'cambridge-0990': ['Reading passages', 'Directed writing', 'Composition practice'],
   'cambridge-0475': ['Poetry analysis', 'Prose & drama texts', 'Unseen criticism'],
   'ial-edexcel': ['Advanced essay writing', 'Critical analysis', 'Comparative study'],
+  'aqa-a-level': ['Coming soon', 'Cross-board revision tools', 'Text library'],
+  'edexcel-a-level': ['Coming soon', 'Cross-board revision tools', 'Text library'],
+  'ocr-a-level': ['Coming soon', 'Cross-board revision tools', 'Text library'],
+  'eduqas-a-level': ['Coming soon', 'Cross-board revision tools', 'Text library'],
 }
 
 function BoardCard({
@@ -102,7 +114,10 @@ function BoardCard({
           )}
         >
           {isLoading ? (
-            <Loader2 className={cn('size-5 animate-spin', compact && 'size-4')} aria-hidden="true" />
+            <Loader2
+              className={cn('size-5 animate-spin', compact && 'size-4')}
+              aria-hidden="true"
+            />
           ) : (
             <Icon className={cn('size-5', compact && 'size-4')} aria-hidden="true" />
           )}
@@ -136,7 +151,10 @@ function BoardCard({
       </p>
 
       {!compact && (
-        <ul className="mt-auto flex flex-wrap gap-1.5 pt-1" aria-label={`What you get for ${board.name}`}>
+        <ul
+          className="mt-auto flex flex-wrap gap-1.5 pt-1"
+          aria-label={`What you get for ${board.name}`}
+        >
           {BOARD_BENEFITS[board.id].map((benefit) => (
             <li
               key={benefit}

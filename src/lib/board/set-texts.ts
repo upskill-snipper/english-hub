@@ -68,7 +68,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Othello',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['eduqas'],
+    boards: ['eduqas', 'aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -258,6 +258,74 @@ export const SET_TEXTS: SetText[] = [
     category: 'modern',
     boards: ['aqa'],
     copyrightStatus: 'copyright',
+  },
+
+  // ── A-Level — Shakespeare tragedies & histories ────────────────────────────
+  {
+    slug: 'hamlet',
+    title: 'Hamlet',
+    author: 'William Shakespeare',
+    category: 'shakespeare',
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    copyrightStatus: 'public-domain',
+  },
+  {
+    slug: 'king-lear',
+    title: 'King Lear',
+    author: 'William Shakespeare',
+    category: 'shakespeare',
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    copyrightStatus: 'public-domain',
+  },
+  {
+    slug: 'antony-and-cleopatra',
+    title: 'Antony and Cleopatra',
+    author: 'William Shakespeare',
+    category: 'shakespeare',
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    copyrightStatus: 'public-domain',
+  },
+
+  // ── A-Level — Modernist & 20th-century ─────────────────────────────────────
+  {
+    slug: 'the-waste-land',
+    title: 'The Waste Land',
+    author: 'T.S. Eliot',
+    category: 'poetry-anthology',
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'a-streetcar-named-desire',
+    title: 'A Streetcar Named Desire',
+    author: 'Tennessee Williams',
+    category: 'modern',
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'the-handmaids-tale',
+    title: "The Handmaid's Tale",
+    author: 'Margaret Atwood',
+    category: 'modern',
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'the-great-gatsby',
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    category: 'modern',
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    copyrightStatus: 'public-domain',
+  },
+  {
+    slug: 'a-dolls-house',
+    title: "A Doll's House",
+    author: 'Henrik Ibsen',
+    category: 'modern',
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    copyrightStatus: 'public-domain',
   },
 ]
 

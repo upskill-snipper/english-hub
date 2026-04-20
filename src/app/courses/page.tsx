@@ -22,13 +22,7 @@ import type { ExamBoard } from '@/hooks/useBoard'
 import { getBoardType } from '@/lib/board/board-filter'
 import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -50,11 +44,11 @@ const TIERS = ['All', 'KS3', 'GCSE', 'IGCSE'] as const
 type Tier = (typeof TIERS)[number]
 
 /** Map board type to the matching course tier. */
-function boardTypeToTier(boardType: 'ks3' | 'gcse' | 'igcse' | 'ial' | null): Tier {
+function boardTypeToTier(boardType: 'ks3' | 'gcse' | 'igcse' | 'ial' | 'a-level' | null): Tier {
   if (boardType === 'ks3') return 'KS3'
   if (boardType === 'gcse') return 'GCSE'
   if (boardType === 'igcse') return 'IGCSE'
-  // IAL doesn't have its own tier yet — fall through to 'All'
+  // IAL and UK A-Level don't have their own course tiers yet — fall through to 'All'
   return 'All'
 }
 
@@ -81,7 +75,6 @@ const COURSES_PER_PAGE = 9
 /* ================================================================
    Helpers
    ================================================================ */
-
 
 function deriveCategory(course: CourseData): CategoryId {
   const id = course.id.toLowerCase()
@@ -184,9 +177,7 @@ export default function CourseCataloguePage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [boardFilter, setBoardFilter] = useState<string>('all')
   const [sortKey, setSortKey] = useState<SortKey>('recommended')
-  const [expandedCategories, setExpandedCategories] = useState<Set<CategoryId>>(
-    new Set(),
-  )
+  const [expandedCategories, setExpandedCategories] = useState<Set<CategoryId>>(new Set())
 
   const hasManuallySelectedBoard = useRef(false)
 
@@ -241,8 +232,7 @@ export default function CourseCataloguePage() {
         )
           return false
       }
-      if (activeCategory !== 'all' && deriveCategory(c) !== activeCategory)
-        return false
+      if (activeCategory !== 'all' && deriveCategory(c) !== activeCategory) return false
       return true
     })
 
@@ -268,22 +258,13 @@ export default function CourseCataloguePage() {
         break
     }
     return sorted
-  }, [
-    courses,
-    activeTier,
-    activeBoardNames,
-    searchQuery,
-    activeCategory,
-    sortKey,
-  ])
+  }, [courses, activeTier, activeBoardNames, searchQuery, activeCategory, sortKey])
 
   /* ── recommended ───────────────────────────────────────────── */
 
   const recommended = useMemo(() => {
     if (activeTier === 'All') return filtered.slice(0, 4)
-    const m = filtered.filter(
-      (c) => c.tier?.toUpperCase() === activeTier,
-    )
+    const m = filtered.filter((c) => c.tier?.toUpperCase() === activeTier)
     return m.length > 0 ? m.slice(0, 4) : filtered.slice(0, 4)
   }, [filtered, activeTier])
 
@@ -314,8 +295,7 @@ export default function CourseCataloguePage() {
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = {}
     for (const cat of CATEGORIES)
-      counts[cat.id] =
-        cat.id === 'all' ? filtered.length : groupedByCategory[cat.id].length
+      counts[cat.id] = cat.id === 'all' ? filtered.length : groupedByCategory[cat.id].length
     return counts
   }, [filtered.length, groupedByCategory])
 
@@ -324,10 +304,7 @@ export default function CourseCataloguePage() {
   return (
     <main className="min-h-screen bg-background">
       {/* ── Breadcrumb ──────────────────────────────────────────── */}
-      <nav
-        className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8"
-        aria-label="Breadcrumb"
-      >
+      <nav className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="transition-colors hover:text-foreground">
@@ -368,9 +345,8 @@ export default function CourseCataloguePage() {
             <LearningTip categories={['course', 'study']} side="right" size="md" />
           </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Structured courses designed to take you from fundamentals to exam
-            confidence. Pick your level, choose a course, and start learning
-            today.
+            Structured courses designed to take you from fundamentals to exam confidence. Pick your
+            level, choose a course, and start learning today.
           </p>
         </div>
       </section>
@@ -386,11 +362,8 @@ export default function CourseCataloguePage() {
                     Subscribe to unlock all courses
                   </p>
                   <p className="mt-1 text-muted-foreground">
-                    <span className="font-bold text-primary">
-                      {PRICING.TRIAL_TEXT}!
-                    </span>{' '}
-                    Then just {PRICING_DISPLAY.monthly} on a rolling monthly
-                    contract. Cancel anytime.
+                    <span className="font-bold text-primary">{PRICING.TRIAL_TEXT}!</span> Then just{' '}
+                    {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
                   </p>
                 </div>
                 <Button
@@ -458,10 +431,7 @@ export default function CourseCataloguePage() {
             </Badge>
           )}
 
-          <Select
-            value={sortKey}
-            onValueChange={(v) => setSortKey(v as SortKey)}
-          >
+          <Select value={sortKey} onValueChange={(v) => setSortKey(v as SortKey)}>
             <SelectTrigger className="w-[150px]">
               <ArrowUpDown className="h-3.5 w-3.5 text-muted-foreground" />
               <SelectValue placeholder="Sort by" />
@@ -480,10 +450,7 @@ export default function CourseCataloguePage() {
         {isLoading ? (
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className="rounded-xl border border-border/40 bg-card p-5 animate-pulse"
-              >
+              <div key={i} className="rounded-xl border border-border/40 bg-card p-5 animate-pulse">
                 <div className="h-1 w-full bg-muted rounded mb-3" />
                 <div className="flex gap-2 mb-2">
                   <div className="h-5 w-12 bg-muted rounded-full" />
@@ -501,12 +468,10 @@ export default function CourseCataloguePage() {
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-muted">
               <GraduationCap className="h-6 w-6 text-muted-foreground" />
             </div>
-            <h3 className="mt-4 text-base font-semibold text-foreground">
-              No courses found
-            </h3>
+            <h3 className="mt-4 text-base font-semibold text-foreground">No courses found</h3>
             <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              There are no courses matching your current filters. Try adjusting
-              your search or filters.
+              There are no courses matching your current filters. Try adjusting your search or
+              filters.
             </p>
             <button
               onClick={() => {
@@ -523,34 +488,29 @@ export default function CourseCataloguePage() {
         ) : (
           <>
             {/* Featured / Recommended section */}
-            {activeCategory === 'all' &&
-              !searchQuery.trim() &&
-              recommended.length > 0 && (
-                <div className="mb-12 rounded-xl border border-amber-500/20 bg-amber-500/[0.03] p-5 sm:p-6">
-                  <div className="mb-5 flex items-center gap-2.5">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/15">
-                      <Star className="h-4 w-4 text-amber-600" />
-                    </div>
-                    <div>
-                      <h2 className="text-lg font-bold tracking-tight text-foreground">
-                        Recommended for You
-                      </h2>
-                      <p className="text-xs text-muted-foreground">
-                        Based on your level and preferences
-                      </p>
-                    </div>
-                    <LearningTip categories={['course', 'motivation']} />
+            {activeCategory === 'all' && !searchQuery.trim() && recommended.length > 0 && (
+              <div className="mb-12 rounded-xl border border-amber-500/20 bg-amber-500/[0.03] p-5 sm:p-6">
+                <div className="mb-5 flex items-center gap-2.5">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/15">
+                    <Star className="h-4 w-4 text-amber-600" />
                   </div>
-                  <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-                    {recommended.map((course) => (
-                      <CourseCard
-                        key={`rec-${course.id}`}
-                        course={course}
-                      />
-                    ))}
+                  <div>
+                    <h2 className="text-lg font-bold tracking-tight text-foreground">
+                      Recommended for You
+                    </h2>
+                    <p className="text-xs text-muted-foreground">
+                      Based on your level and preferences
+                    </p>
                   </div>
+                  <LearningTip categories={['course', 'motivation']} />
                 </div>
-              )}
+                <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                  {recommended.map((course) => (
+                    <CourseCard key={`rec-${course.id}`} course={course} />
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Course grid */}
             {activeCategory !== 'all' ? (
@@ -588,8 +548,8 @@ export default function CourseCataloguePage() {
             <LearningTip categories={['resource', 'study']} size="md" />
           </div>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Explore these complementary resources to deepen your understanding
-            and boost your exam preparation.
+            Explore these complementary resources to deepen your understanding and boost your exam
+            preparation.
           </p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -604,8 +564,7 @@ export default function CourseCataloguePage() {
                 href: '/resources/writing-skills',
                 icon: PenTool,
                 title: 'Writing Masterclass',
-                description:
-                  'Creative, persuasive, and analytical writing guides',
+                description: 'Creative, persuasive, and analytical writing guides',
               },
               {
                 href: '/resources/poetry',
@@ -629,9 +588,7 @@ export default function CourseCataloguePage() {
                 <h3 className="text-base font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {item.description}
-                </p>
+                <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
               </Link>
             ))}
           </div>
@@ -653,13 +610,7 @@ interface CategorySectionProps {
   showAll?: boolean
 }
 
-function CategorySection({
-  category,
-  courses,
-  expanded,
-  onToggle,
-  showAll,
-}: CategorySectionProps) {
+function CategorySection({ category, courses, expanded, onToggle, showAll }: CategorySectionProps) {
   const limit = showAll || expanded ? courses.length : COURSES_PER_PAGE
   const visible = courses.slice(0, limit)
   const hasMore = courses.length > COURSES_PER_PAGE
@@ -667,9 +618,7 @@ function CategorySection({
   return (
     <div className="mb-10">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-bold tracking-tight text-foreground">
-          {category.label}
-        </h2>
+        <h2 className="text-lg font-bold tracking-tight text-foreground">{category.label}</h2>
         <span className="text-sm text-muted-foreground tabular-nums">
           {courses.length} {courses.length === 1 ? 'course' : 'courses'}
         </span>
@@ -710,10 +659,7 @@ interface CourseCardProps {
 }
 
 const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
-  const totalLessons = course.moduleList.reduce(
-    (sum, mod) => sum + (mod.quiz?.length ?? 0),
-    0,
-  )
+  const totalLessons = course.moduleList.reduce((sum, mod) => sum + (mod.quiz?.length ?? 0), 0)
   const categoryLabel = deriveCategory(course)
 
   return (
@@ -721,10 +667,7 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
       <Link href={`/courses/${course.id}`}>
         <Card className="flex h-full flex-col overflow-hidden border-border/40 hover:border-primary/25 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5">
           {/* Colour accent bar */}
-          <div
-            className="h-1.5 w-full"
-            style={{ backgroundColor: course.color }}
-          />
+          <div className="h-1.5 w-full" style={{ backgroundColor: course.color }} />
 
           <CardHeader className="pb-1">
             {/* Badges row */}
@@ -761,9 +704,7 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
           </CardHeader>
 
           <CardContent className="flex-1 pt-1">
-            <p className="text-sm text-muted-foreground line-clamp-2">
-              {course.subtitle}
-            </p>
+            <p className="text-sm text-muted-foreground line-clamp-2">{course.subtitle}</p>
 
             {/* Stats grid */}
             <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs text-muted-foreground">

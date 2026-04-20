@@ -26,7 +26,23 @@ interface PaperInfo {
   paper2: { name: string; focus: string }
 }
 
-const BOARD_PAPERS: Record<Exclude<ExamBoard, 'ks3' | 'cambridge-0500' | 'cambridge-0990' | 'edexcel-igcse' | 'edexcel-igcse-lang' | 'cambridge-0475' | 'ial-edexcel'>, PaperInfo> = {
+const BOARD_PAPERS: Record<
+  Exclude<
+    ExamBoard,
+    | 'ks3'
+    | 'cambridge-0500'
+    | 'cambridge-0990'
+    | 'edexcel-igcse'
+    | 'edexcel-igcse-lang'
+    | 'cambridge-0475'
+    | 'ial-edexcel'
+    | 'aqa-a-level'
+    | 'edexcel-a-level'
+    | 'ocr-a-level'
+    | 'eduqas-a-level'
+  >,
+  PaperInfo
+> = {
   aqa: {
     paper1: {
       name: 'Paper 1: Explorations in Creative Reading and Writing',
@@ -34,7 +50,8 @@ const BOARD_PAPERS: Record<Exclude<ExamBoard, 'ks3' | 'cambridge-0500' | 'cambri
     },
     paper2: {
       name: "Paper 2: Writers' Viewpoints and Perspectives",
-      focus: 'Two linked non-fiction texts (one 19th century, one 20th/21st) and a transactional writing task.',
+      focus:
+        'Two linked non-fiction texts (one 19th century, one 20th/21st) and a transactional writing task.',
     },
   },
   edexcel: {
@@ -173,18 +190,13 @@ interface LanguageViewProps {
 }
 
 export default function LanguageView({ boardId, boardName }: LanguageViewProps) {
-  const { progress, toggleSection, completedCount, totalCount, percentage } =
-    useLanguageProgress()
+  const { progress, toggleSection, completedCount, totalCount, percentage } = useLanguageProgress()
   const [expandedTips, setExpandedTips] = useState<string | null>(null)
 
-  const heading = boardId
-    ? `${boardName} English Language Revision`
-    : 'English Language Revision'
+  const heading = boardId ? `${boardName} English Language Revision` : 'English Language Revision'
 
   const papers =
-    boardId && boardId in BOARD_PAPERS
-      ? BOARD_PAPERS[boardId as keyof typeof BOARD_PAPERS]
-      : null
+    boardId && boardId in BOARD_PAPERS ? BOARD_PAPERS[boardId as keyof typeof BOARD_PAPERS] : null
 
   const showIgcseBanner = isIgcseBoard(boardId)
 
@@ -207,9 +219,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
             <PenTool className="size-5 text-violet-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              {heading}
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">{heading}</h1>
             <p className="text-body-sm text-muted-foreground">
               Reading, writing, and SPaG mastery tailored to your exam board
             </p>
@@ -243,8 +253,8 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
                       boardId === 'cambridge-0500'
                         ? '/igcse/cambridge/0500'
                         : boardId === 'cambridge-0990'
-                        ? '/igcse/cambridge/0990'
-                        : '/igcse/edexcel'
+                          ? '/igcse/cambridge/0990'
+                          : '/igcse/edexcel'
                     }
                   />
                 }
@@ -262,9 +272,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="size-4 text-primary" />
-            <span className="text-sm font-medium text-foreground">
-              Your Progress
-            </span>
+            <span className="text-sm font-medium text-foreground">Your Progress</span>
           </div>
           <Badge variant="secondary">
             {completedCount}/{totalCount} sections
@@ -325,9 +333,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
                         <h2 className="text-heading-md font-heading text-foreground">
                           {section.title}
                         </h2>
-                        <span className="text-caption text-muted-foreground">
-                          {section.stats}
-                        </span>
+                        <span className="text-caption text-muted-foreground">{section.stats}</span>
                       </div>
                     </div>
                     <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
@@ -337,9 +343,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
                     {/* Quick tips toggle */}
                     <button
                       type="button"
-                      onClick={() =>
-                        setExpandedTips(tipsOpen ? null : key)
-                      }
+                      onClick={() => setExpandedTips(tipsOpen ? null : key)}
                       className="mt-3 flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
                     >
                       <Lightbulb className="size-3" />
@@ -362,11 +366,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
 
                     {/* CTA */}
                     <div className="mt-4">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        render={<Link href={section.href} />}
-                      >
+                      <Button variant="outline" size="sm" render={<Link href={section.href} />}>
                         Start revising
                         <ArrowRight className="size-3.5" />
                       </Button>
@@ -390,7 +390,9 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
-              <Badge variant="outline" className="mb-2 text-xs">Paper 1</Badge>
+              <Badge variant="outline" className="mb-2 text-xs">
+                Paper 1
+              </Badge>
               <p className="text-sm font-semibold text-foreground leading-snug">
                 {papers.paper1.name}
               </p>
@@ -399,7 +401,9 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
               </p>
             </div>
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
-              <Badge variant="outline" className="mb-2 text-xs">Paper 2</Badge>
+              <Badge variant="outline" className="mb-2 text-xs">
+                Paper 2
+              </Badge>
               <p className="text-sm font-semibold text-foreground leading-snug">
                 {papers.paper2.name}
               </p>
@@ -421,16 +425,11 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
             Language Paper Quick Reminder
           </h2>
           <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-            Select your exam board to see paper-specific guidance. Paper 1 and
-            Paper 2 structures vary by board, but reading, writing, and SPaG
-            skills are universal.
+            Select your exam board to see paper-specific guidance. Paper 1 and Paper 2 structures
+            vary by board, but reading, writing, and SPaG skills are universal.
           </p>
           <div className="mt-4">
-            <Button
-              variant="outline"
-              size="sm"
-              render={<Link href="/board-select" />}
-            >
+            <Button variant="outline" size="sm" render={<Link href="/board-select" />}>
               Select your exam board
             </Button>
           </div>

@@ -3,32 +3,66 @@ import type { ExamBoard } from './board-store'
 export type GradeSystem = '9-1' | 'A*-G'
 
 export const GRADE_SYSTEMS: Record<ExamBoard, GradeSystem> = {
-  'ks3': '9-1',
-  'aqa': '9-1',
-  'edexcel': '9-1',
-  'ocr': '9-1',
-  'eduqas': '9-1',
+  ks3: '9-1',
+  aqa: '9-1',
+  edexcel: '9-1',
+  ocr: '9-1',
+  eduqas: '9-1',
   'cambridge-0500': 'A*-G',
   'cambridge-0990': '9-1',
   'cambridge-0475': '9-1',
   'edexcel-igcse': '9-1',
   'edexcel-igcse-lang': '9-1',
   'ial-edexcel': 'A*-G', // IAL uses A*-E grading, closest match is A*-G
+  // UK A-Level boards use A*-E grading, closest match is A*-G
+  'aqa-a-level': 'A*-G',
+  'edexcel-a-level': 'A*-G',
+  'ocr-a-level': 'A*-G',
+  'eduqas-a-level': 'A*-G',
 }
 
 // Approximate grade boundaries (% of total marks) — update with real data
-export const GRADE_BOUNDARIES: Record<ExamBoard, Partial<Record<'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'A*'|'A'|'B'|'C'|'D'|'E'|'F'|'G', number>>> = {
-  'ks3': {},
-  'aqa': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
-  'edexcel': { '4': 40, '5': 50, '6': 58, '7': 68, '8': 78, '9': 85 },
-  'ocr': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 87 },
-  'eduqas': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 87 },
-  'cambridge-0500': { 'G': 20, 'F': 30, 'E': 40, 'D': 50, 'C': 60, 'B': 70, 'A': 80, 'A*': 88 },
+export const GRADE_BOUNDARIES: Record<
+  ExamBoard,
+  Partial<
+    Record<
+      | '1'
+      | '2'
+      | '3'
+      | '4'
+      | '5'
+      | '6'
+      | '7'
+      | '8'
+      | '9'
+      | 'A*'
+      | 'A'
+      | 'B'
+      | 'C'
+      | 'D'
+      | 'E'
+      | 'F'
+      | 'G',
+      number
+    >
+  >
+> = {
+  ks3: {},
+  aqa: { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
+  edexcel: { '4': 40, '5': 50, '6': 58, '7': 68, '8': 78, '9': 85 },
+  ocr: { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 87 },
+  eduqas: { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 87 },
+  'cambridge-0500': { G: 20, F: 30, E: 40, D: 50, C: 60, B: 70, A: 80, 'A*': 88 },
   'cambridge-0990': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
   'cambridge-0475': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
   'edexcel-igcse': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
   'edexcel-igcse-lang': { '4': 40, '5': 50, '6': 60, '7': 70, '8': 80, '9': 88 },
-  'ial-edexcel': { 'E': 40, 'D': 50, 'C': 60, 'B': 70, 'A': 80, 'A*': 88 }, // TODO: update with real IAL boundaries
+  'ial-edexcel': { E: 40, D: 50, C: 60, B: 70, A: 80, 'A*': 88 }, // TODO: update with real IAL boundaries
+  // TODO: update A-Level boundaries with real data from each board's specimen
+  'aqa-a-level': { E: 40, D: 50, C: 60, B: 70, A: 80, 'A*': 90 },
+  'edexcel-a-level': { E: 40, D: 50, C: 60, B: 70, A: 80, 'A*': 90 },
+  'ocr-a-level': { E: 40, D: 50, C: 60, B: 70, A: 80, 'A*': 90 },
+  'eduqas-a-level': { E: 40, D: 50, C: 60, B: 70, A: 80, 'A*': 90 },
 }
 
 export function getGradeSystemForBoard(board: ExamBoard | null): GradeSystem {
@@ -42,22 +76,35 @@ export function getGradeSystemForBoard(board: ExamBoard | null): GradeSystem {
  */
 export function gradeNineToLetterEquivalent(grade: '5' | '7' | '9'): 'C' | 'B' | 'A' | 'A*' {
   switch (grade) {
-    case '5': return 'C'
-    case '7': return 'A'
-    case '9': return 'A*'
+    case '5':
+      return 'C'
+    case '7':
+      return 'A'
+    case '9':
+      return 'A*'
   }
 }
 
-export function gradeLetterToNineOneEquivalent(letter: 'A*' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G'): string {
+export function gradeLetterToNineOneEquivalent(
+  letter: 'A*' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G',
+): string {
   switch (letter) {
-    case 'A*': return '8-9'
-    case 'A': return '7'
-    case 'B': return '6'
-    case 'C': return '4-5'
-    case 'D': return '3'
-    case 'E': return '2'
-    case 'F': return '1'
-    case 'G': return '1'
+    case 'A*':
+      return '8-9'
+    case 'A':
+      return '7'
+    case 'B':
+      return '6'
+    case 'C':
+      return '4-5'
+    case 'D':
+      return '3'
+    case 'E':
+      return '2'
+    case 'F':
+      return '1'
+    case 'G':
+      return '1'
   }
 }
 
@@ -96,20 +143,52 @@ export function getPaperReferencesForBoard(board: ExamBoard | null): {
 } {
   switch (board) {
     case 'aqa':
-      return { literature: 'AQA Paper 1 / Paper 2 (Literature)', language: 'AQA Paper 1 / Paper 2 (Language)', boardLabel: 'AQA GCSE' }
+      return {
+        literature: 'AQA Paper 1 / Paper 2 (Literature)',
+        language: 'AQA Paper 1 / Paper 2 (Language)',
+        boardLabel: 'AQA GCSE',
+      }
     case 'edexcel':
-      return { literature: 'Edexcel Paper 1 / Paper 2 (Literature)', language: 'Edexcel Paper 1 / Paper 2 (Language)', boardLabel: 'Pearson Edexcel GCSE' }
+      return {
+        literature: 'Edexcel Paper 1 / Paper 2 (Literature)',
+        language: 'Edexcel Paper 1 / Paper 2 (Language)',
+        boardLabel: 'Pearson Edexcel GCSE',
+      }
     case 'ocr':
-      return { literature: 'OCR Paper 1 / Paper 2 (Literature)', language: 'OCR Paper 1 / Paper 2 (Language)', boardLabel: 'OCR GCSE' }
+      return {
+        literature: 'OCR Paper 1 / Paper 2 (Literature)',
+        language: 'OCR Paper 1 / Paper 2 (Language)',
+        boardLabel: 'OCR GCSE',
+      }
     case 'eduqas':
-      return { literature: 'Eduqas Component 1 / Component 2 (Literature)', language: 'Eduqas Component 1 / Component 2 (Language)', boardLabel: 'WJEC Eduqas GCSE' }
+      return {
+        literature: 'Eduqas Component 1 / Component 2 (Literature)',
+        language: 'Eduqas Component 1 / Component 2 (Language)',
+        boardLabel: 'WJEC Eduqas GCSE',
+      }
     case 'edexcel-igcse':
-      return { literature: 'IGCSE Literature Paper 1 / Paper 2', language: 'IGCSE Literature Paper 1 / Paper 2', boardLabel: 'IGCSE English Literature' }
+      return {
+        literature: 'IGCSE Literature Paper 1 / Paper 2',
+        language: 'IGCSE Literature Paper 1 / Paper 2',
+        boardLabel: 'IGCSE English Literature',
+      }
     case 'cambridge-0500':
-      return { literature: 'IGCSE Language A Paper 1 / Paper 2', language: 'IGCSE Language A Paper 1 / Paper 2', boardLabel: 'IGCSE First Language English' }
+      return {
+        literature: 'IGCSE Language A Paper 1 / Paper 2',
+        language: 'IGCSE Language A Paper 1 / Paper 2',
+        boardLabel: 'IGCSE First Language English',
+      }
     case 'cambridge-0990':
-      return { literature: 'IGCSE Language B Paper 1 / Paper 2', language: 'IGCSE Language B Paper 1 / Paper 2', boardLabel: 'IGCSE First Language English (9-1)' }
+      return {
+        literature: 'IGCSE Language B Paper 1 / Paper 2',
+        language: 'IGCSE Language B Paper 1 / Paper 2',
+        boardLabel: 'IGCSE First Language English (9-1)',
+      }
     default:
-      return { literature: 'Literature Paper 1 / Paper 2', language: 'Language Paper 1 / Paper 2', boardLabel: 'GCSE English' }
+      return {
+        literature: 'Literature Paper 1 / Paper 2',
+        language: 'Language Paper 1 / Paper 2',
+        boardLabel: 'GCSE English',
+      }
   }
 }

@@ -17,10 +17,7 @@ import {
 } from 'lucide-react'
 
 import { events } from '@/lib/gtag'
-import {
-  useBoard,
-  type ExamBoard,
-} from '@/lib/board/board-store'
+import { useBoard, type ExamBoard } from '@/lib/board/board-store'
 import { cn } from '@/lib/utils'
 
 /* ────────────────────────────────────────────────────────────────────────────
@@ -42,8 +39,19 @@ type Props = {
  * Types for the funnel
  * ──────────────────────────────────────────────────────────────────────────── */
 
-type StudyLevel = 'ks3' | 'gcse' | 'igcse' | 'ial'
-type AwardingBody = 'aqa' | 'edexcel' | 'ocr' | 'eduqas' | 'pearson-igcse' | 'cambridge' | 'pearson-ial'
+type StudyLevel = 'ks3' | 'gcse' | 'igcse' | 'ial' | 'a-level'
+type AwardingBody =
+  | 'aqa'
+  | 'edexcel'
+  | 'ocr'
+  | 'eduqas'
+  | 'pearson-igcse'
+  | 'cambridge'
+  | 'pearson-ial'
+  | 'aqa-a-level'
+  | 'edexcel-a-level'
+  | 'ocr-a-level'
+  | 'eduqas-a-level'
 
 /* ────────────────────────────────────────────────────────────────────────────
  * Main component
@@ -71,7 +79,11 @@ export function BoardSelectorSection({
       setLoadingBoard(board)
       try {
         setBoard(board)
-        try { events.boardSelected(board) } catch { /* never break */ }
+        try {
+          events.boardSelected(board)
+        } catch {
+          /* never break */
+        }
         onSelected?.(board)
         if (!disableRedirect) {
           router.push(redirectTo)
@@ -103,13 +115,46 @@ export function BoardSelectorSection({
   const handleAwardingBodyPick = React.useCallback(
     (body: AwardingBody) => {
       // GCSE boards go directly to done
-      if (body === 'aqa') { handleSelect('aqa'); return }
-      if (body === 'edexcel') { handleSelect('edexcel'); return }
-      if (body === 'ocr') { handleSelect('ocr'); return }
-      if (body === 'eduqas') { handleSelect('eduqas'); return }
+      if (body === 'aqa') {
+        handleSelect('aqa')
+        return
+      }
+      if (body === 'edexcel') {
+        handleSelect('edexcel')
+        return
+      }
+      if (body === 'ocr') {
+        handleSelect('ocr')
+        return
+      }
+      if (body === 'eduqas') {
+        handleSelect('eduqas')
+        return
+      }
 
       // IAL has only one awarding body — done immediately
-      if (body === 'pearson-ial') { handleSelect('ial-edexcel'); return }
+      if (body === 'pearson-ial') {
+        handleSelect('ial-edexcel')
+        return
+      }
+
+      // UK A-Level boards — each maps 1:1 to an ExamBoard
+      if (body === 'aqa-a-level') {
+        handleSelect('aqa-a-level')
+        return
+      }
+      if (body === 'edexcel-a-level') {
+        handleSelect('edexcel-a-level')
+        return
+      }
+      if (body === 'ocr-a-level') {
+        handleSelect('ocr-a-level')
+        return
+      }
+      if (body === 'eduqas-a-level') {
+        handleSelect('eduqas-a-level')
+        return
+      }
 
       // IGCSE awarding bodies go to Step 3 for paper selection
       setAwardingBody(body)
@@ -136,11 +181,18 @@ export function BoardSelectorSection({
   const breadcrumbParts = React.useMemo(() => {
     const parts: string[] = []
     if (level) {
-      parts.push(level === 'ial' ? 'IAL' : level.toUpperCase())
+      if (level === 'ial') parts.push('IAL')
+      else if (level === 'a-level') parts.push('A-Level')
+      else parts.push(level.toUpperCase())
     }
     if (awardingBody) {
-      if (awardingBody === 'pearson-igcse' || awardingBody === 'pearson-ial') parts.push('Pearson Edexcel')
+      if (awardingBody === 'pearson-igcse' || awardingBody === 'pearson-ial')
+        parts.push('Pearson Edexcel')
       else if (awardingBody === 'cambridge') parts.push('Cambridge')
+      else if (awardingBody === 'aqa-a-level') parts.push('AQA')
+      else if (awardingBody === 'edexcel-a-level') parts.push('Pearson Edexcel')
+      else if (awardingBody === 'ocr-a-level') parts.push('OCR')
+      else if (awardingBody === 'eduqas-a-level') parts.push('WJEC Eduqas')
       else parts.push(awardingBody.charAt(0).toUpperCase() + awardingBody.slice(1))
     }
     return parts
@@ -152,7 +204,7 @@ export function BoardSelectorSection({
     if (!level) return 1
     if (level === 'ks3') return 1
     if (level === 'igcse') return 3
-    // GCSE and IAL are 2-step (level + awarding body)
+    // GCSE, IAL and UK A-Level are 2-step (level + awarding body)
     return 2
   }, [level])
 
@@ -160,11 +212,7 @@ export function BoardSelectorSection({
 
   if (step === 1) {
     return (
-      <LevelStep
-        onPick={handleLevelPick}
-        loadingKs3={loadingBoard === 'ks3'}
-        compact={compact}
-      />
+      <LevelStep onPick={handleLevelPick} loadingKs3={loadingBoard === 'ks3'} compact={compact} />
     )
   }
 
@@ -228,7 +276,12 @@ function LevelStep({
         </p>
       </header>
 
-      <div className={cn('mx-auto grid w-full max-w-5xl gap-5', 'sm:grid-cols-2 lg:grid-cols-4')}>
+      <div
+        className={cn(
+          'mx-auto grid w-full max-w-6xl gap-5',
+          'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5',
+        )}
+      >
         <LevelCard
           label="KS3"
           subLabel="Years 7-9"
@@ -261,8 +314,18 @@ function LevelStep({
           compact={compact}
         />
         <LevelCard
+          label="A-Level"
+          subLabel="Years 12-13, UK"
+          description="UK A-Level English Literature & Language"
+          icon={GraduationCap}
+          gradient="from-purple-500/20 via-fuchsia-500/10 to-pink-500/20"
+          iconGradient="from-purple-500 to-fuchsia-600"
+          onClick={() => onPick('a-level')}
+          compact={compact}
+        />
+        <LevelCard
           label="IAL"
-          subLabel="A-Level"
+          subLabel="International"
           description="International Advanced Level"
           icon={Award}
           gradient="from-amber-500/20 via-orange-500/10 to-yellow-500/20"
@@ -382,59 +445,134 @@ type AwardingBodyOption = {
 
 const GCSE_BODIES: AwardingBodyOption[] = [
   {
-    id: 'aqa', label: 'AQA', subtitle: 'Power & Conflict, Love & Relationships, AIC, Macbeth',
+    id: 'aqa',
+    label: 'AQA',
+    subtitle: 'Power & Conflict, Love & Relationships, AIC, Macbeth',
     icon: BookOpen,
     gradient: 'from-rose-500/10 via-rose-500/5 to-transparent',
-    ring: 'hover:ring-rose-400/40', iconBg: 'bg-rose-500/10 group-hover:bg-rose-500/20',
-    iconText: 'text-rose-500 dark:text-rose-400', accent: 'bg-rose-500',
+    ring: 'hover:ring-rose-400/40',
+    iconBg: 'bg-rose-500/10 group-hover:bg-rose-500/20',
+    iconText: 'text-rose-500 dark:text-rose-400',
+    accent: 'bg-rose-500',
   },
   {
-    id: 'edexcel', label: 'Pearson Edexcel', subtitle: 'Time & Place, Conflict anthology, AIC, Macbeth',
+    id: 'edexcel',
+    label: 'Pearson Edexcel',
+    subtitle: 'Time & Place, Conflict anthology, AIC, Macbeth',
     icon: GraduationCap,
     gradient: 'from-blue-500/10 via-blue-500/5 to-transparent',
-    ring: 'hover:ring-blue-400/40', iconBg: 'bg-blue-500/10 group-hover:bg-blue-500/20',
-    iconText: 'text-blue-500 dark:text-blue-400', accent: 'bg-blue-500',
+    ring: 'hover:ring-blue-400/40',
+    iconBg: 'bg-blue-500/10 group-hover:bg-blue-500/20',
+    iconText: 'text-blue-500 dark:text-blue-400',
+    accent: 'bg-blue-500',
   },
   {
-    id: 'ocr', label: 'OCR', subtitle: 'Towards a World Unknown, Shakespeare & set texts',
+    id: 'ocr',
+    label: 'OCR',
+    subtitle: 'Towards a World Unknown, Shakespeare & set texts',
     icon: Sparkles,
     gradient: 'from-amber-500/10 via-amber-500/5 to-transparent',
-    ring: 'hover:ring-amber-400/40', iconBg: 'bg-amber-500/10 group-hover:bg-amber-500/20',
-    iconText: 'text-amber-500', accent: 'bg-amber-500',
+    ring: 'hover:ring-amber-400/40',
+    iconBg: 'bg-amber-500/10 group-hover:bg-amber-500/20',
+    iconText: 'text-amber-500',
+    accent: 'bg-amber-500',
   },
   {
-    id: 'eduqas', label: 'WJEC Eduqas', subtitle: 'Single anthology, unseen poetry, Component 1 & 2',
+    id: 'eduqas',
+    label: 'WJEC Eduqas',
+    subtitle: 'Single anthology, unseen poetry, Component 1 & 2',
     icon: BookOpen,
     gradient: 'from-teal-500/10 via-teal-500/5 to-transparent',
-    ring: 'hover:ring-teal-400/40', iconBg: 'bg-teal-500/10 group-hover:bg-teal-500/20',
-    iconText: 'text-teal-500 dark:text-teal-400', accent: 'bg-teal-500',
+    ring: 'hover:ring-teal-400/40',
+    iconBg: 'bg-teal-500/10 group-hover:bg-teal-500/20',
+    iconText: 'text-teal-500 dark:text-teal-400',
+    accent: 'bg-teal-500',
   },
 ]
 
 const IGCSE_BODIES: AwardingBodyOption[] = [
   {
-    id: 'pearson-igcse', label: 'Pearson Edexcel', subtitle: 'IGCSE Literature & Language papers',
+    id: 'pearson-igcse',
+    label: 'Pearson Edexcel',
+    subtitle: 'IGCSE Literature & Language papers',
     icon: GraduationCap,
     gradient: 'from-indigo-500/10 via-indigo-500/5 to-transparent',
-    ring: 'hover:ring-indigo-400/40', iconBg: 'bg-indigo-500/10 group-hover:bg-indigo-500/20',
-    iconText: 'text-indigo-500 dark:text-indigo-400', accent: 'bg-indigo-500',
+    ring: 'hover:ring-indigo-400/40',
+    iconBg: 'bg-indigo-500/10 group-hover:bg-indigo-500/20',
+    iconText: 'text-indigo-500 dark:text-indigo-400',
+    accent: 'bg-indigo-500',
   },
   {
-    id: 'cambridge', label: 'Cambridge', subtitle: 'First Language English & Literature in English',
+    id: 'cambridge',
+    label: 'Cambridge',
+    subtitle: 'First Language English & Literature in English',
     icon: Globe2,
     gradient: 'from-violet-500/10 via-violet-500/5 to-transparent',
-    ring: 'hover:ring-violet-400/40', iconBg: 'bg-violet-500/10 group-hover:bg-violet-500/20',
-    iconText: 'text-violet-500 dark:text-violet-400', accent: 'bg-violet-500',
+    ring: 'hover:ring-violet-400/40',
+    iconBg: 'bg-violet-500/10 group-hover:bg-violet-500/20',
+    iconText: 'text-violet-500 dark:text-violet-400',
+    accent: 'bg-violet-500',
   },
 ]
 
 const IAL_BODIES: AwardingBodyOption[] = [
   {
-    id: 'pearson-ial', label: 'Pearson Edexcel', subtitle: 'International A-Level English',
+    id: 'pearson-ial',
+    label: 'Pearson Edexcel',
+    subtitle: 'International A-Level English',
     icon: Award,
     gradient: 'from-amber-500/10 via-amber-500/5 to-transparent',
-    ring: 'hover:ring-amber-400/40', iconBg: 'bg-amber-500/10 group-hover:bg-amber-500/20',
-    iconText: 'text-amber-600', accent: 'bg-amber-500',
+    ring: 'hover:ring-amber-400/40',
+    iconBg: 'bg-amber-500/10 group-hover:bg-amber-500/20',
+    iconText: 'text-amber-600',
+    accent: 'bg-amber-500',
+  },
+]
+
+const A_LEVEL_BODIES: AwardingBodyOption[] = [
+  {
+    id: 'aqa-a-level',
+    label: 'AQA',
+    subtitle: 'A-Level English Literature (7712) & Language (7702)',
+    icon: BookOpen,
+    gradient: 'from-rose-500/10 via-rose-500/5 to-transparent',
+    ring: 'hover:ring-rose-400/40',
+    iconBg: 'bg-rose-500/10 group-hover:bg-rose-500/20',
+    iconText: 'text-rose-500 dark:text-rose-400',
+    accent: 'bg-rose-500',
+  },
+  {
+    id: 'edexcel-a-level',
+    label: 'Pearson Edexcel',
+    subtitle: 'A-Level English Literature (9ET0) & Language (9EN0)',
+    icon: GraduationCap,
+    gradient: 'from-blue-500/10 via-blue-500/5 to-transparent',
+    ring: 'hover:ring-blue-400/40',
+    iconBg: 'bg-blue-500/10 group-hover:bg-blue-500/20',
+    iconText: 'text-blue-500 dark:text-blue-400',
+    accent: 'bg-blue-500',
+  },
+  {
+    id: 'ocr-a-level',
+    label: 'OCR',
+    subtitle: 'A-Level English Literature (H472) & Language (H470)',
+    icon: Sparkles,
+    gradient: 'from-amber-500/10 via-amber-500/5 to-transparent',
+    ring: 'hover:ring-amber-400/40',
+    iconBg: 'bg-amber-500/10 group-hover:bg-amber-500/20',
+    iconText: 'text-amber-500',
+    accent: 'bg-amber-500',
+  },
+  {
+    id: 'eduqas-a-level',
+    label: 'WJEC Eduqas',
+    subtitle: 'A-Level English Literature & Language',
+    icon: BookOpen,
+    gradient: 'from-teal-500/10 via-teal-500/5 to-transparent',
+    ring: 'hover:ring-teal-400/40',
+    iconBg: 'bg-teal-500/10 group-hover:bg-teal-500/20',
+    iconText: 'text-teal-500 dark:text-teal-400',
+    accent: 'bg-teal-500',
   },
 ]
 
@@ -455,23 +593,34 @@ function AwardingBodyStep({
   onBack: () => void
   onPick: (body: AwardingBody) => void
 }) {
-  const bodies = level === 'gcse' ? GCSE_BODIES : level === 'igcse' ? IGCSE_BODIES : IAL_BODIES
+  const bodies =
+    level === 'gcse'
+      ? GCSE_BODIES
+      : level === 'igcse'
+        ? IGCSE_BODIES
+        : level === 'a-level'
+          ? A_LEVEL_BODIES
+          : IAL_BODIES
 
   const heading =
     level === 'gcse'
       ? 'Which UK GCSE board?'
       : level === 'igcse'
         ? 'Which awarding body?'
-        : 'Which awarding body?'
+        : level === 'a-level'
+          ? 'Which UK A-Level board?'
+          : 'Which awarding body?'
 
   const subheading =
     level === 'gcse'
       ? 'Pick your board \u2014 we\u0027ll show you only the poems, set texts, and papers you actually study.'
       : level === 'igcse'
         ? 'Choose your awarding body below \u2014 each one has different set texts and assessment.'
-        : 'Select your awarding body to get started.'
+        : level === 'a-level'
+          ? 'Pick your UK A-Level board \u2014 full A-Level content is on our roadmap; in the meantime we\u0027ll unlock the cross-board revision tools.'
+          : 'Select your awarding body to get started.'
 
-  const levelLabel = level === 'ial' ? 'IAL' : level.toUpperCase()
+  const levelLabel = level === 'ial' ? 'IAL' : level === 'a-level' ? 'A-Level' : level.toUpperCase()
 
   // Map awarding body IDs to the ExamBoard they resolve to (for loading state)
   const bodyToBoard: Partial<Record<AwardingBody, ExamBoard>> = {
@@ -480,6 +629,10 @@ function AwardingBodyStep({
     ocr: 'ocr',
     eduqas: 'eduqas',
     'pearson-ial': 'ial-edexcel',
+    'aqa-a-level': 'aqa-a-level',
+    'edexcel-a-level': 'edexcel-a-level',
+    'ocr-a-level': 'ocr-a-level',
+    'eduqas-a-level': 'eduqas-a-level',
   }
 
   return (
@@ -503,9 +656,7 @@ function AwardingBodyStep({
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {heading}
           </h1>
-          <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-            {subheading}
-          </p>
+          <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">{subheading}</p>
         </div>
       </header>
 
@@ -548,8 +699,8 @@ function AwardingBodyStep({
       </div>
 
       <p className="mx-auto max-w-xl text-center text-xs text-muted-foreground">
-        Not sure which board you study? Check your exam timetable, ask your teacher,
-        or pick the closest match — you can change it later from your settings.
+        Not sure which board you study? Check your exam timetable, ask your teacher, or pick the
+        closest match — you can change it later from your settings.
       </p>
     </div>
   )
@@ -574,42 +725,67 @@ type PaperOption = {
 
 const EDEXCEL_IGCSE_PAPERS: PaperOption[] = [
   {
-    board: 'edexcel-igcse', label: 'Literature', subtitle: 'Poetry, prose, drama & Shakespeare',
-    examCode: '4ET1', icon: BookOpen,
+    board: 'edexcel-igcse',
+    label: 'Literature',
+    subtitle: 'Poetry, prose, drama & Shakespeare',
+    examCode: '4ET1',
+    icon: BookOpen,
     gradient: 'from-indigo-500/10 via-indigo-500/5 to-transparent',
-    ring: 'hover:ring-indigo-400/40', iconBg: 'bg-indigo-500/10 group-hover:bg-indigo-500/20',
-    iconText: 'text-indigo-500 dark:text-indigo-400', accent: 'bg-indigo-500',
+    ring: 'hover:ring-indigo-400/40',
+    iconBg: 'bg-indigo-500/10 group-hover:bg-indigo-500/20',
+    iconText: 'text-indigo-500 dark:text-indigo-400',
+    accent: 'bg-indigo-500',
   },
   {
-    board: 'edexcel-igcse-lang', label: 'Language', subtitle: 'Reading comprehension & transactional writing',
-    examCode: '4EA1', icon: GraduationCap,
+    board: 'edexcel-igcse-lang',
+    label: 'Language',
+    subtitle: 'Reading comprehension & transactional writing',
+    examCode: '4EA1',
+    icon: GraduationCap,
     gradient: 'from-sky-500/10 via-sky-500/5 to-transparent',
-    ring: 'hover:ring-sky-400/40', iconBg: 'bg-sky-500/10 group-hover:bg-sky-500/20',
-    iconText: 'text-sky-500 dark:text-sky-400', accent: 'bg-sky-500',
+    ring: 'hover:ring-sky-400/40',
+    iconBg: 'bg-sky-500/10 group-hover:bg-sky-500/20',
+    iconText: 'text-sky-500 dark:text-sky-400',
+    accent: 'bg-sky-500',
   },
 ]
 
 const CAMBRIDGE_IGCSE_PAPERS: PaperOption[] = [
   {
-    board: 'cambridge-0500', label: 'Language A', subtitle: 'First Language English — A*-G grading',
-    examCode: '0500', icon: Globe2,
+    board: 'cambridge-0500',
+    label: 'Language A',
+    subtitle: 'First Language English — A*-G grading',
+    examCode: '0500',
+    icon: Globe2,
     gradient: 'from-violet-500/10 via-violet-500/5 to-transparent',
-    ring: 'hover:ring-violet-400/40', iconBg: 'bg-violet-500/10 group-hover:bg-violet-500/20',
-    iconText: 'text-violet-500 dark:text-violet-400', accent: 'bg-violet-500',
+    ring: 'hover:ring-violet-400/40',
+    iconBg: 'bg-violet-500/10 group-hover:bg-violet-500/20',
+    iconText: 'text-violet-500 dark:text-violet-400',
+    accent: 'bg-violet-500',
   },
   {
-    board: 'cambridge-0990', label: 'Language B', subtitle: 'First Language English — 9-1 grading',
-    examCode: '0990', icon: Globe2,
+    board: 'cambridge-0990',
+    label: 'Language B',
+    subtitle: 'First Language English — 9-1 grading',
+    examCode: '0990',
+    icon: Globe2,
     gradient: 'from-fuchsia-500/10 via-fuchsia-500/5 to-transparent',
-    ring: 'hover:ring-fuchsia-400/40', iconBg: 'bg-fuchsia-500/10 group-hover:bg-fuchsia-500/20',
-    iconText: 'text-fuchsia-500 dark:text-fuchsia-400', accent: 'bg-fuchsia-500',
+    ring: 'hover:ring-fuchsia-400/40',
+    iconBg: 'bg-fuchsia-500/10 group-hover:bg-fuchsia-500/20',
+    iconText: 'text-fuchsia-500 dark:text-fuchsia-400',
+    accent: 'bg-fuchsia-500',
   },
   {
-    board: 'cambridge-0475', label: 'Literature', subtitle: 'Literature in English — prose, poetry & drama',
-    examCode: '0475', icon: BookOpen,
+    board: 'cambridge-0475',
+    label: 'Literature',
+    subtitle: 'Literature in English — prose, poetry & drama',
+    examCode: '0475',
+    icon: BookOpen,
     gradient: 'from-purple-500/10 via-purple-500/5 to-transparent',
-    ring: 'hover:ring-purple-400/40', iconBg: 'bg-purple-500/10 group-hover:bg-purple-500/20',
-    iconText: 'text-purple-500 dark:text-purple-400', accent: 'bg-purple-500',
+    ring: 'hover:ring-purple-400/40',
+    iconBg: 'bg-purple-500/10 group-hover:bg-purple-500/20',
+    iconText: 'text-purple-500 dark:text-purple-400',
+    accent: 'bg-purple-500',
   },
 ]
 
@@ -655,7 +831,8 @@ function PaperStep({
             Which {bodyLabel} paper?
           </h1>
           <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-            Each specification covers different skills and texts. Pick the one that matches your timetable.
+            Each specification covers different skills and texts. Pick the one that matches your
+            timetable.
           </p>
         </div>
       </header>
@@ -697,7 +874,8 @@ function PaperStep({
       </div>
 
       <p className="mx-auto max-w-xl text-center text-xs text-muted-foreground">
-        Not sure which paper? Check your exam timetable or ask your teacher — you can always change it later.
+        Not sure which paper? Check your exam timetable or ask your teacher — you can always change
+        it later.
       </p>
     </div>
   )
@@ -770,22 +948,23 @@ function OptionCard({
         )}
       />
       {/* Top accent bar */}
-      <div
-        aria-hidden="true"
-        className={cn('absolute inset-x-0 top-0 h-1', accent)}
-      />
+      <div aria-hidden="true" className={cn('absolute inset-x-0 top-0 h-1', accent)} />
 
       <div className="relative flex h-full flex-col gap-4">
         <div className="flex items-start justify-between">
           <div
             className={cn(
               'inline-flex size-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110',
-              iconBg, iconText,
+              iconBg,
+              iconText,
               compact && 'size-10',
             )}
           >
             {isLoading ? (
-              <Loader2 className={cn('size-6 animate-spin', compact && 'size-5')} aria-hidden="true" />
+              <Loader2
+                className={cn('size-6 animate-spin', compact && 'size-5')}
+                aria-hidden="true"
+              />
             ) : (
               <Icon className={cn('size-6', compact && 'size-5')} aria-hidden="true" />
             )}
@@ -813,15 +992,18 @@ function OptionCard({
             {label}
           </h3>
           {examCode && (
-            <p className={cn('font-mono font-medium text-muted-foreground', compact ? 'text-xs' : 'text-sm')}>
+            <p
+              className={cn(
+                'font-mono font-medium text-muted-foreground',
+                compact ? 'text-xs' : 'text-sm',
+              )}
+            >
               {examCode}
             </p>
           )}
         </div>
 
-        <p className={cn('text-muted-foreground', compact ? 'text-xs' : 'text-sm')}>
-          {subtitle}
-        </p>
+        <p className={cn('text-muted-foreground', compact ? 'text-xs' : 'text-sm')}>{subtitle}</p>
 
         <div className="mt-auto flex items-center gap-1.5 pt-2 text-xs font-medium text-foreground">
           <span className="transition-transform duration-300 group-hover:translate-x-0.5">
@@ -834,7 +1016,10 @@ function OptionCard({
                   : 'Choose this board'}
           </span>
           {!isLoading && (
-            <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            <ArrowRight
+              className="size-3.5 transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
           )}
         </div>
       </div>
@@ -850,7 +1035,10 @@ function Breadcrumb({ parts }: { parts: string[] }) {
   if (parts.length === 0) return null
 
   return (
-    <nav aria-label="Selection progress" className="flex items-center gap-1 text-xs text-muted-foreground">
+    <nav
+      aria-label="Selection progress"
+      className="flex items-center gap-1 text-xs text-muted-foreground"
+    >
       {parts.map((part, i) => (
         <React.Fragment key={i}>
           {i > 0 && <ChevronRight className="size-3 shrink-0" aria-hidden="true" />}

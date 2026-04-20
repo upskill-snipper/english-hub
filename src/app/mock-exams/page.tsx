@@ -681,6 +681,11 @@ const BOARD_ID_TO_LEGACY: Record<ExamBoard, string[]> = {
   'cambridge-0990': ['CAIE', 'Cambridge', 'Cambridge 0990'],
   'cambridge-0475': ['CAIE', 'Cambridge', 'Cambridge 0475'],
   'ial-edexcel': ['Edexcel', 'IAL'],
+  // UK A-Level boards — no mock exams authored yet; keep both generic tags
+  'aqa-a-level': ['AQA', 'A-Level'],
+  'edexcel-a-level': ['Edexcel', 'A-Level'],
+  'ocr-a-level': ['OCR', 'A-Level'],
+  'eduqas-a-level': ['WJEC', 'Eduqas', 'A-Level'],
 }
 
 export default function MockExamsPage() {

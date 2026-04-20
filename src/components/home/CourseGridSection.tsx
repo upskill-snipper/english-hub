@@ -6,12 +6,18 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { PRICING } from '@/constants/pricing'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
-import {
-  BookOpen,
-  Clock,
-} from 'lucide-react'
+import { BookOpen, Clock } from 'lucide-react'
 
-type CourseBoard = 'all' | 'KS3' | 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'Edexcel IGCSE' | 'Cambridge First Language' | 'Cambridge First Language (9-1)'
+type CourseBoard =
+  | 'all'
+  | 'KS3'
+  | 'AQA'
+  | 'Edexcel'
+  | 'OCR'
+  | 'WJEC'
+  | 'Edexcel IGCSE'
+  | 'Cambridge First Language'
+  | 'Cambridge First Language (9-1)'
 
 type Course = {
   title: string
@@ -60,7 +66,7 @@ const courses: readonly Course[] = [
     level: 'GCSE',
     levelColor: 'bg-primary/20 text-primary',
     duration: '8 weeks',
-    desc: "Writers\u2019 viewpoints and perspectives — non-fiction reading and writing for real purposes for AQA.",
+    desc: 'Writers\u2019 viewpoints and perspectives — non-fiction reading and writing for real purposes for AQA.',
     boards: ['AQA'],
   },
   {
@@ -124,8 +130,7 @@ const courses: readonly Course[] = [
     level: 'GCSE',
     levelColor: 'bg-orange-500/20 text-clay-600',
     duration: '8 weeks',
-    desc:
-      'Component 01 & 02 practice — non-fiction synthesis, evaluation, fiction analysis, and creative writing for OCR.',
+    desc: 'Component 01 & 02 practice — non-fiction synthesis, evaluation, fiction analysis, and creative writing for OCR.',
     boards: ['OCR'],
   },
   {
@@ -158,6 +163,11 @@ const BOARD_TO_LABEL: Record<ExamBoard, CourseBoard> = {
   'cambridge-0990': 'Cambridge First Language (9-1)',
   'cambridge-0475': 'Cambridge First Language',
   'ial-edexcel': 'Edexcel',
+  // A-Level scaffolds — no bespoke A-Level courses yet; fall back to board labels
+  'aqa-a-level': 'AQA',
+  'edexcel-a-level': 'Edexcel',
+  'ocr-a-level': 'OCR',
+  'eduqas-a-level': 'WJEC',
 }
 
 function filterCourses(all: readonly Course[], board: ExamBoard | null): readonly Course[] {
@@ -186,9 +196,7 @@ export default function CourseGridSection({ board }: { board?: ExamBoard | null 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {filtered.map((course) => (
             <Link key={course.title} href="/courses" className="block group">
-              <Card
-                className="overflow-hidden border-border/40 hover:border-primary/25 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5 flex flex-col"
-              >
+              <Card className="overflow-hidden border-border/40 hover:border-primary/25 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5 flex flex-col">
                 {/* Card header with gradient */}
                 <div className="h-28 bg-gradient-to-br from-primary/[0.06] via-card to-background flex items-center justify-center">
                   <BookOpen className="w-9 h-9 text-primary/30 group-hover:text-primary/50 transition-colors duration-300" />
@@ -208,10 +216,14 @@ export default function CourseGridSection({ board }: { board?: ExamBoard | null 
                   <h3 className="font-bold tracking-tight text-foreground mb-2 group-hover:text-primary transition-colors duration-200">
                     {course.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{course.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                    {course.desc}
+                  </p>
 
                   <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/40">
-                    <span className="text-xs text-muted-foreground">Included with subscription</span>
+                    <span className="text-xs text-muted-foreground">
+                      Included with subscription
+                    </span>
                     <span className="text-sm text-primary font-semibold group-hover:underline">
                       View Course &rarr;
                     </span>
@@ -224,7 +236,11 @@ export default function CourseGridSection({ board }: { board?: ExamBoard | null 
 
         {config && filtered.length > 0 && (
           <div className="text-center mt-10">
-            <Button variant="link" className="text-primary font-semibold" render={<Link href="/courses" />}>
+            <Button
+              variant="link"
+              className="text-primary font-semibold"
+              render={<Link href="/courses" />}
+            >
               Browse all {config.shortName} courses &rarr;
             </Button>
           </div>
