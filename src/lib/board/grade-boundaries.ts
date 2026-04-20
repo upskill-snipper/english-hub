@@ -1,6 +1,6 @@
 import type { ExamBoard } from './board-store'
 
-export type GradeSystem = '9-1' | 'A*-G'
+export type GradeSystem = '9-1' | 'A*-G' | 'A*-E'
 
 export const GRADE_SYSTEMS: Record<ExamBoard, GradeSystem> = {
   ks3: '9-1',
@@ -8,17 +8,39 @@ export const GRADE_SYSTEMS: Record<ExamBoard, GradeSystem> = {
   edexcel: '9-1',
   ocr: '9-1',
   eduqas: '9-1',
-  'cambridge-0500': 'A*-G',
+  'cambridge-0500': 'A*-G', // legacy IGCSE: full A*-G
   'cambridge-0990': '9-1',
   'cambridge-0475': '9-1',
   'edexcel-igcse': '9-1',
   'edexcel-igcse-lang': '9-1',
-  'ial-edexcel': 'A*-G', // IAL uses A*-E grading, closest match is A*-G
-  // UK A-Level boards use A*-E grading, closest match is A*-G
-  'aqa-a-level': 'A*-G',
-  'edexcel-a-level': 'A*-G',
-  'ocr-a-level': 'A*-G',
-  'eduqas-a-level': 'A*-G',
+  // IAL (International A-Level) uses A*-E — A*/A/B/C/D/E, no F or G.
+  // U below E = ungraded.
+  'ial-edexcel': 'A*-E',
+  // UK A-Level — A*-E
+  'aqa-a-level': 'A*-E',
+  'edexcel-a-level': 'A*-E',
+  'ocr-a-level': 'A*-E',
+  'eduqas-a-level': 'A*-E',
+}
+
+/**
+ * Board-aware display label for a 9-1 grade. For 9-1 boards returns
+ * "Grade N". For A*-G / A*-E boards returns the letter equivalent.
+ * A*-E boards clamp low grades to "E" (the lowest passing letter) or
+ * "U" below that.
+ */
+export function gradeDisplayLabel(
+  grade: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
+  board: ExamBoard | null,
+): string {
+  const system = board ? GRADE_SYSTEMS[board] : '9-1'
+  if (system === '9-1') return `Grade ${grade}`
+  const letter = gradeNineToLetterEquivalent(grade)
+  if (system === 'A*-E') {
+    // A*-E has no F or G — collapse to E (threshold) or U (ungraded).
+    if (letter === 'F' || letter === 'G') return 'U'
+  }
+  return letter
 }
 
 // Approximate grade boundaries (% of total marks) — update with real data

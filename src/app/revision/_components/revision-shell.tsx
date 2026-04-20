@@ -34,6 +34,7 @@ import { Badge } from '@/components/ui/badge'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
 import { isIgcseBoard, isGcseBoard } from '@/lib/board/board-filter'
+import { gradeDisplayLabel } from '@/lib/board/grade-boundaries'
 
 // ─── Nav items ──────────────────────────────────────────────────────────────
 
@@ -295,6 +296,7 @@ function SidebarNav({
 }) {
   const pathname = usePathname()
   const { progress, target, hasData } = useRevisionProgress(navItems)
+  const { board } = useBoard()
 
   // Target + two grades below — e.g. target=7 → show 5, 6, 7 with fill
   // reflecting how far through the 5→7 journey the student has travelled.
@@ -302,6 +304,13 @@ function SidebarNav({
   const gradeRight = target
   const gradeMid = Math.max(1, target - 1) as TargetGrade
   const gradeLeft = Math.max(1, target - 2) as TargetGrade
+
+  // Board-aware grade labels so IAL + A-Level render "A*/A/B" not "Grade 7/8/9"
+  // and Cambridge 0500 falls back to its A*-G letters. 9-1 boards keep
+  // "Grade N" as before.
+  const labelLeft = gradeDisplayLabel(String(gradeLeft) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9', board)
+  const labelMid = gradeDisplayLabel(String(gradeMid) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9', board)
+  const labelRight = gradeDisplayLabel(String(gradeRight) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9', board)
 
   return (
     <nav className="flex flex-col gap-1">
@@ -324,7 +333,7 @@ function SidebarNav({
       <div className="mb-4 rounded-xl border border-border/40 bg-background/50 p-3">
         <div className="mb-2 flex items-center justify-between">
           <span className="text-caption font-medium text-muted-foreground">Target grade</span>
-          <span className="text-caption font-semibold text-primary">Grade {gradeRight}</span>
+          <span className="text-caption font-semibold text-primary">{labelRight}</span>
         </div>
         <Progress value={progress}>
           <ProgressTrack className="h-2 bg-border/40">
@@ -332,9 +341,9 @@ function SidebarNav({
           </ProgressTrack>
         </Progress>
         <div className="mt-1.5 flex justify-between text-[10px] font-medium text-muted-foreground">
-          <span>Grade {gradeLeft}</span>
-          <span>Grade {gradeMid}</span>
-          <span className="text-primary">Grade {gradeRight}</span>
+          <span>{labelLeft}</span>
+          <span>{labelMid}</span>
+          <span className="text-primary">{labelRight}</span>
         </div>
         {!hasData && (
           <p className="mt-2 text-[10px] text-muted-foreground/70 italic">

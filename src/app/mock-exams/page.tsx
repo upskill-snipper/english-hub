@@ -170,6 +170,29 @@ const AQA_LIT_P1_BOUNDARIES: GradeBoundary[] = [
   { grade: 1, minMarks: 6 },
 ]
 
+// IAL uses A*-E grading. We represent A*=9, A=8, B=7, C=6, D=5, E=4 numerically
+// so the existing GradeBoundary/display logic works; the paper card's
+// examBoard label ("IAL") is enough of a hint that the numbers are letter-
+// equivalents. Boundaries below are approximate typical Pearson IAL cut-offs
+// (verify against the current live specification before exam entry).
+const IAL_LIT_BOUNDARIES_60: GradeBoundary[] = [
+  { grade: 9, minMarks: 48 }, // A*
+  { grade: 8, minMarks: 42 }, // A
+  { grade: 7, minMarks: 36 }, // B
+  { grade: 6, minMarks: 30 }, // C
+  { grade: 5, minMarks: 24 }, // D
+  { grade: 4, minMarks: 18 }, // E
+]
+
+const IAL_LIT_BOUNDARIES_40: GradeBoundary[] = [
+  { grade: 9, minMarks: 32 }, // A*
+  { grade: 8, minMarks: 28 }, // A
+  { grade: 7, minMarks: 24 }, // B
+  { grade: 6, minMarks: 20 }, // C
+  { grade: 5, minMarks: 16 }, // D
+  { grade: 4, minMarks: 12 }, // E
+]
+
 const AQA_LIT_P2_BOUNDARIES: GradeBoundary[] = [
   { grade: 9, minMarks: 79 },
   { grade: 8, minMarks: 71 },
@@ -321,6 +344,86 @@ const EXAM_CARDS: ExamCardData[] = [
       },
     ],
     gradeBoundaries: AQA_LIT_P2_BOUNDARIES,
+    pastGrade: null,
+  },
+  // ── Pearson Edexcel IAL Literature (WET01-04) ──────────────────────
+  // Four mock papers mirroring the real IAL unit structure. Boundary
+  // numbers 9/8/7/6/5/4 map to A*/A/B/C/D/E respectively (see
+  // IAL_LIT_BOUNDARIES_XX above). The examBoard is "IAL" so the
+  // BOARD_ID_TO_LEGACY mapping for 'ial-edexcel' matches them.
+  {
+    id: 'ial-wet01-full',
+    paperName: 'IAL Unit 1 — Poetry and Drama (WET01)',
+    paperType: 'literature',
+    paperNumber: 1,
+    examBoard: 'IAL',
+    timeAllowed: '2 hours 15 minutes',
+    timeMinutes: 135,
+    totalMarks: 60,
+    questionCount: 2,
+    difficulty: 'Higher',
+    paperId: 'ial-wet01-full',
+    questions: [
+      { number: 1, label: 'Unseen poem + anthology comparison (AO1/2/4)', marks: 30, type: 'Comparison' },
+      { number: 2, label: 'Drama essay (AO1/2/3)', marks: 30, type: 'Extended Response' },
+    ],
+    gradeBoundaries: IAL_LIT_BOUNDARIES_60,
+    pastGrade: null,
+  },
+  {
+    id: 'ial-wet02-full',
+    paperName: 'IAL Unit 2 — Prose (WET02)',
+    paperType: 'literature',
+    paperNumber: 2,
+    examBoard: 'IAL',
+    timeAllowed: '1 hour 45 minutes',
+    timeMinutes: 105,
+    totalMarks: 40,
+    questionCount: 1,
+    difficulty: 'Higher',
+    paperId: 'ial-wet02-full',
+    questions: [
+      { number: 1, label: 'Comparative prose essay — pre-1900 + post-1900 (AO1/2/3/4)', marks: 40, type: 'Comparative Analysis' },
+    ],
+    gradeBoundaries: IAL_LIT_BOUNDARIES_40,
+    pastGrade: null,
+  },
+  {
+    id: 'ial-wet03-full',
+    paperName: 'IAL Unit 3 — Poetry and Prose, A2 (WET03)',
+    paperType: 'literature',
+    paperNumber: 1,
+    examBoard: 'IAL',
+    timeAllowed: '2 hours 15 minutes',
+    timeMinutes: 135,
+    totalMarks: 60,
+    questionCount: 2,
+    difficulty: 'Higher',
+    paperId: 'ial-wet03-full',
+    questions: [
+      { number: 1, label: 'Unseen pre-1900 poem + anthology comparison (AO1/2/3/4)', marks: 30, type: 'Comparison' },
+      { number: 2, label: 'Prose essay with AO5 critical perspective', marks: 30, type: 'Extended Response' },
+    ],
+    gradeBoundaries: IAL_LIT_BOUNDARIES_60,
+    pastGrade: null,
+  },
+  {
+    id: 'ial-wet04-full',
+    paperName: 'IAL Unit 4 — Shakespeare + Pre-1900 Drama (WET04)',
+    paperType: 'literature',
+    paperNumber: 2,
+    examBoard: 'IAL',
+    timeAllowed: '2 hours 15 minutes',
+    timeMinutes: 135,
+    totalMarks: 60,
+    questionCount: 2,
+    difficulty: 'Higher',
+    paperId: 'ial-wet04-full',
+    questions: [
+      { number: 1, label: 'Shakespeare essay with AO5 (AO1/2/3/5)', marks: 30, type: 'Extended Response' },
+      { number: 2, label: 'Pre-1900 drama essay with AO5 (AO1/2/3/5)', marks: 30, type: 'Extended Response' },
+    ],
+    gradeBoundaries: IAL_LIT_BOUNDARIES_60,
     pastGrade: null,
   },
 ]
