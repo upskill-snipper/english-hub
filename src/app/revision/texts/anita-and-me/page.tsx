@@ -1,3 +1,4 @@
+// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -19,123 +20,187 @@ const data: TextGuideData = {
   author: 'Meera Syal',
   year: 'published 1996',
   category: 'Novel',
-  badge: 'AQA / Edexcel / OCR / Eduqas',
+  badge: 'AQA / Edexcel / Eduqas',
   intro:
-    "Meera Syal's semi-autobiographical novel follows Meena Kumar, a British-Punjabi girl growing up in the fictional Black Country mining village of Tollington in the early 1970s. Her dangerous, electric friendship with the older, white, working-class Anita Rutter forces her to navigate identity, belonging and casual racism on the cusp of adolescence.",
+    "Meera Syal's semi-autobiographical first novel, published in 1996 and shortlisted for the Guardian Fiction Prize, is a funny, painful and fiercely honest coming-of-age story. Narrated by the adult Meena looking back at her nine-year-old self, it follows a British-Punjabi girl growing up as the only Indian child in the fictional ex-mining village of Tollington in the West Midlands during 1972. Meena's intoxicating friendship with the older, white, working-class Anita Rutter forces her to confront questions of identity, belonging, class, language and racism on the cusp of adolescence. Syal writes with warmth and comic precision about immigrant family life, but she refuses to soften the moment when casual prejudice hardens into organised violence. The novel is set on every major GCSE English Literature specification where a modern prose text is offered.",
   quickInfo: {
-    genre: 'Bildungsroman / British-Asian coming-of-age',
-    setting: 'Tollington, Black Country, 1972',
-    length: '~110,000 words',
-    published: '1996',
+    genre: 'Bildungsroman / British-Asian coming-of-age novel',
+    setting: 'Tollington, West Midlands, 1972',
+    length: '~110,000 words (335 pages)',
+    published: '1996 (Flamingo / HarperCollins)',
   },
   plotSummary: [
-    'Nine-year-old Meena Kumar is the only child of Punjabi immigrant parents who have settled in Tollington, a small ex-mining village where theirs is the only Indian family. Meena loves her parents and the warm chaos of the extended community they call their aunties and uncles, but she longs for the freedom and glamour she sees in her white neighbours.',
-    "The charismatic and troubled Anita Rutter takes Meena under her wing. Through Anita, Meena enters a riskier world of shoplifting, lying and playground hierarchies. Meena hides parts of her home life from Anita and parts of Anita's influence from her parents, and the double life begins to fracture her sense of self.",
-    "Racial tensions sharpen as the summer wears on. The building of a new motorway threatens the village, Enoch Powell is on television, and Anita's older boyfriend Sam Lowbridge commits a shocking racist attack. Meena's family is directly targeted. The illusion that racism is someone else's problem collapses, and Meena begins to understand what her parents have been protecting her from.",
-    "A serious accident and the arrival of Meena's beloved Nanima from India reorient her. Reconnected to her Punjabi heritage and sobered by Anita's betrayals, Meena studies for her eleven-plus, passes into grammar school and prepares to leave Tollington. The novel closes with a bittersweet farewell to the village and to the version of herself she has outgrown.",
+    "The novel opens in the tiny fictional village of Tollington, a run-down ex-mining community in the West Midlands, where nine-year-old Meena Kumar lives with her Punjabi parents Shyam and Daljit, who she calls Papa and Mama. The Kumars are the only Indian family in the village and have created a warm substitute family from other Punjabi migrants — Auntie Shaila, Uncle Amman and a wide circle of 'aunties' and 'uncles' who gather every weekend for food, gossip, songs and mehfils. Meena narrates from the retrospective voice of her adult self, capturing both the textures of 1970s working-class England — the fish and chip shop, the sweet shop run by Mr Ormerod, the coal yard, the outside toilets — and the rich parallel world of her parents' memories of Partition and the Punjab. Meena is bright, mischievous and a compulsive storyteller, a habit she frames as the inheritance of those 'deprived of history'. She longs to be accepted as an ordinary Tollington child and is embarrassed by anything that marks her out: her mother's sari, the smell of spices, the visits of relatives who speak no English.",
+    "Meena's imagination is captured by Anita Rutter, a tougher, older girl from a chaotic white working-class home at the bottom of the village. Anita's mother Deirdre is glamorous, unhappy and eventually abandons the family; her father is distant; her younger sister Tracey is fragile and neglected. For Meena, Anita represents freedom, danger and a wider social world. She becomes Anita's chosen sidekick, joining her gang and graduating to shoplifting, minor cruelty and playground hierarchies. Meena lies constantly — to her parents about Anita, to Anita about her home — and the double life slowly fractures her sense of self. A series of small betrayals accumulates: Anita is casually racist when it suits her, she manipulates Tracey, and she bullies weaker children while demanding Meena's loyalty. Meanwhile, the building of a new motorway threatens to cut Tollington in half, the mine closures of the previous decade continue to bite, and a National Front–style politics starts to surface in the pub and in the talk of older boys.",
+    "The political temperature rises sharply around a village fete at which a local dignitary speaks. Anita's older boyfriend Sam Lowbridge, a charismatic and disaffected teenager on a moped, interrupts the speech with a racist outburst and soon leads a small gang in an attack on an elderly Indian man who is knocked down and robbed. Meena, standing in the crowd, recognises Sam and realises with horror that the racism she has treated as background noise has been aimed at people like her family all along. Her parents' quiet dignity in the aftermath — their refusal to make a scene, their protectiveness of Meena — changes how she sees them. The arrival of her maternal grandmother, Nanima, from India reorients her further: Nanima speaks almost no English but tells Meena Punjabi stories, teaches her songs and offers a model of rooted, unembarrassed identity. Meena's baby brother Sunil is born, and she has to share her parents' attention for the first time. When Tracey almost drowns in the pit pond after following Anita, Meena is the one who runs for help, and the experience cracks open her remaining illusions about her friend.",
+    "A serious accident — Meena is thrown from a horse and breaks her leg — forces her into a long convalescence, during which Nanima nurses her and she reads voraciously for the eleven-plus. Separated from Anita by distance and by her own hardening judgement, Meena passes the eleven-plus and wins a place at the local grammar school. The closing chapters are elegiac: the Kumars prepare to move to a nearby town, the motorway will soon erase half the village, and Sam Lowbridge stands trial for the assault. Meena confronts Anita one last time and refuses to forgive her; the friendship ends not with a fight but with a cold, adult clarity. The novel closes with Meena saying goodbye to Tollington, to Nanima who is returning to India, and to the child she has been. Syal leaves her poised on the edge of a new school, a new identity and a Britain that is, haltingly, learning to see her.",
   ],
   characters: [
     {
       name: 'Meena Kumar',
       role: 'Narrator and protagonist',
-      body: "Bright, imaginative and a compulsive storyteller, Meena speaks from the retrospective voice of her adult self while inhabiting her nine-year-old longings. Her inner conflict between cultures is the novel's engine.",
+      body: "Nine (turning ten) at the centre of the action, Meena is clever, imaginative, lonely and a compulsive liar. She narrates in the retrospective voice of her adult self, which lets Syal layer innocent perception with ironic hindsight. Meena swings between wanting to dissolve into white Tollington and moments of fierce pride in her Punjabi identity, especially after Nanima arrives. She is the novel's consciousness and its conscience: her gradual recognition that racism is not an abstract problem but a threat to her own family is the book's moral arc. Her final decision to refuse Anita is painful and grown-up, signalling the end of childhood.",
     },
     {
       name: 'Anita Rutter',
-      role: "Meena's dangerous best friend",
-      body: "Older, tougher and from a chaotic home, Anita fascinates Meena with her freedom. Syal gradually reveals the damage behind Anita's swagger, refusing to let the reader simply pity or condemn her.",
+      role: "Meena's older friend; the village's 'cock of the yard'",
+      body: "Thirteen, tough, glamorous to Meena's eyes, and from a chaotic home at the poorer end of the village. Anita fascinates Meena with her freedom and terrifies her with her cruelty. Syal refuses caricature: she shows the neglect, the missing mother, the hunger for attention that shapes Anita's behaviour, and she lets the reader feel the genuine warmth of the friendship before dismantling it. Anita's casual racism, her willingness to parrot Sam Lowbridge's politics and her betrayal of her sister Tracey finally make her unforgivable to Meena.",
     },
     {
-      name: 'Mama and Papa (Shyam and Daljit)',
-      role: "Meena's parents",
-      body: 'Warm, aspirational and self-sacrificing, they carry the weight of migration with grace. Their pain when racism touches the family is quietly devastating and reframes Meena\u2019s understanding of them.',
+      name: 'Papa (Shyam Kumar)',
+      role: "Meena's father",
+      body: "A clerical worker who sings ghazals at weekend parties and carries the displacement of Partition quietly inside him. Papa is gentle, aspirational and deeply loving. He chose Tollington partly because he believed its working-class warmth would welcome his family, and the slow erosion of that belief is one of the novel's saddest undercurrents. His refusal to be humiliated after the racist attack, and his insistence that Meena study for the eleven-plus, reveal a steely dignity beneath the warmth.",
+    },
+    {
+      name: 'Mama (Daljit Kumar)',
+      role: "Meena's mother",
+      body: "A primary school teacher, Mama is practical, warm, socially gifted and the anchor of the Kumar household. She is a brilliant cook, a fierce defender of her family and the keeper of the Punjabi community that fills the house at weekends. Syal uses her to show the cost of migration on women in particular: the loneliness of raising children far from her mother, the work of translating her family for a village that is sometimes hostile. Her relief and transformation when Nanima arrives is one of the novel's most tender moments.",
     },
     {
       name: 'Nanima',
       role: "Meena's maternal grandmother",
-      body: 'Arriving from India partway through the novel, Nanima speaks no English but reconnects Meena to her language, stories and sense of self. Her presence rebalances the book.',
+      body: "Arriving from the Punjab partway through the novel to help with the new baby, Nanima speaks almost no English but reshapes the book. She tells Meena stories, teaches her Punjabi songs, and gives her a living link to a culture Meena has until now half-rejected. Her presence rebalances the domestic world, supports Mama through Sunil's difficult infancy and allows Meena to see her heritage as a source of pride rather than embarrassment. Her eventual return to India is part of the novel's bittersweet ending.",
+    },
+    {
+      name: 'Sunil',
+      role: "Meena's younger brother",
+      body: "Born during the novel, Sunil is a demanding, often sickly baby who absorbs much of Mama's attention and forces Meena to step out of the spotlight. His arrival triggers some of her worst behaviour with Anita, but also helps her grow up: she learns to love him, to help care for him and to see her parents as people with burdens of their own.",
     },
     {
       name: 'Sam Lowbridge',
-      role: "Anita's racist boyfriend",
-      body: "Charismatic and violent, Sam embodies the racist politics seeping into Tollington. His targeted attack is the novel's turning point.",
+      role: "Anita's older boyfriend; village racist",
+      body: "A charismatic, moped-riding teenager from Tollington who seems romantic and rebellious until his politics emerge. Sam crystallises a local drift toward National Front–style racism: the grievance of a white working-class community whose mines have closed and whose futures feel stolen. His interruption of the fete speech and his attack on the elderly Indian man are the novel's moral turning point. Crucially, Syal shows that Sam has been smiling at Meena and drinking in her mother's kitchen — the racism is not coming from somewhere else, it is coming from the village.",
     },
     {
-      name: 'Auntie Shaila and the uncles',
-      role: 'Community family',
-      body: 'The unrelated Punjabi adults who make the Kumars\u2019 home a centre of laughter, food and argument. They show Meena that family is chosen as well as inherited.',
+      name: 'Tracey Rutter',
+      role: "Anita's younger sister",
+      body: "Small, quiet, fragile and largely ignored by her family, Tracey is the novel's most vulnerable child. Anita is cruel to her, drags her into danger and finally leaves her alone at the pit pond where she nearly drowns. Meena's decision to run for help when Anita runs away is a moment of moral reckoning that separates her from Anita for good. Tracey represents the collateral damage of a broken family and of Anita's self-centred hunger for freedom.",
     },
   ],
   themes: [
     {
-      title: 'Identity and belonging',
-      body: 'Meena swings between wanting to be British and discovering her Punjabi roots. Syal refuses a neat resolution and shows identity as something negotiated daily, not chosen once.',
+      title: 'Identity and biculturalism',
+      body: "Meena lives between two languages, two cuisines, two histories and two versions of herself. She is embarrassed by her parents' sari and spices at the start of the novel and supremely proud of a Punjabi suit at the end. Syal refuses to resolve this tension into a neat hybrid identity: instead she shows identity as something negotiated daily, under pressure, and sometimes chosen differently for different rooms. Nanima's arrival is decisive because it gives Meena access to a rooted Punjabi self that does not depend on being explained to white neighbours. By the close of the novel, Meena can hold both Tollington and the Punjab inside herself without the panic that characterises her early chapters.",
     },
     {
-      title: 'Racism and class',
-      body: 'Syal carefully distinguishes casual, ignorant prejudice from organised violence. The novel tracks how ordinary villagers drift toward racist politics when their own lives are squeezed.',
+      title: 'Belonging and exclusion',
+      body: "Syal is acutely interested in who gets to belong to a place. The Kumars have lived in Tollington for years, speak its idiom, send their daughter to its school and feed its neighbours, and yet their belonging is always conditional. The novel tracks the small daily acts of inclusion and exclusion — who is invited into the pub, who is mimicked behind their back, who is stopped on the street — and shows how quickly the scales can tip. The motorway threatening to bisect the village is a literal image of how communities are made and unmade by forces their inhabitants do not control. Meena's final departure is both exile and liberation.",
     },
     {
-      title: 'Friendship and betrayal',
-      body: 'Meena\u2019s love for Anita is genuine and the betrayals are real on both sides. The friendship is a mirror that shows Meena what she wants to be and what she is not.',
+      title: 'Racism and prejudice',
+      body: "Syal carefully distinguishes casual ignorance, knowing cruelty and organised political racism, and shows how each can feed into the others. For most of the novel racism is background — a nickname, a refused service, a joke Meena pretends not to hear — and Meena's strategy is to ignore it. The attack by Sam Lowbridge's gang collapses that strategy. Syal places the novel squarely in the wake of Enoch Powell's 1968 Rivers of Blood speech and the rise of the National Front, and she insists that racism in 1972 Britain was not an aberration but a political project with popular reach. At the same time she refuses to reduce the village to villains: the same neighbours who laugh at Powell jokes bring casseroles when Nanima arrives.",
     },
     {
-      title: 'Storytelling and voice',
-      body: 'Meena lies compulsively, and Syal makes lying the twin of creativity. The novel is also about finding a voice that can hold contradiction without flinching.',
+      title: 'Family and generational conflict',
+      body: "Meena's parents carry a history — Partition, migration, racial hostility, long hours — that she only half-understands, and much of the novel is about her catching up with them. Her embarrassment at their difference gives way to respect when she sees how they respond to the racist attack and to Sunil's illness. Nanima introduces a third generation and a direct link to the Punjab that shifts the whole household's centre of gravity. Syal is unsentimental about immigrant families — there are arguments, gossip, class snobberies inside the Punjabi community itself — but she presents family, in its extended and chosen forms, as Meena's deepest resource.",
     },
     {
-      title: 'Change and nostalgia',
-      body: "The motorway bulldozing Tollington stands in for the loss of a particular England. Syal's tone is affectionate but clear-eyed: not everything in the old village is worth keeping.",
+      title: 'Growing up and loss of innocence',
+      body: "Anita and Me is a classic bildungsroman structured around the year in which a child becomes something other than a child. Meena's progress is marked less by a single event than by a series of moral recognitions: that her parents can be hurt, that her friend is cruel, that racism is personal, that lies have consequences, that choosing a self involves refusing other selves. The horse accident and long convalescence give her the stillness she needs to read, to think and to prepare for the eleven-plus. By the end she has the grammar-school place, the refusal of Anita and the goodbye to Tollington; she is not yet adult, but she is no longer the liar of the opening chapter.",
+    },
+    {
+      title: 'Female friendship and betrayal',
+      body: "The friendship with Anita is the emotional spine of the novel and one of the most unsparing portraits of girlhood in contemporary British fiction. Syal captures the intoxication of being chosen by a charismatic older girl, the craving for her approval, the compromises that craving produces, and the slow accumulation of evidence that the friend is not who she seemed. The betrayal is mutual: Meena lies to Anita about her family, Anita lies to Meena about almost everything. The final refusal — 'I knew I could not forgive Anita' — is not a teenage tantrum but a considered moral act, and it is gendered: Meena has to learn to choose herself over a girl who mirrors a version of Englishness she can never fully inhabit.",
     },
   ],
   historicalContext: [
-    'Anita and Me is set in 1972, the year Meera Syal herself turned eleven. It captures a very specific moment in British-Asian history: families who arrived in the 1960s were putting down roots while the National Front and Enoch Powell\u2019s 1968 Rivers of Blood speech were sharpening public racism.',
-    'The Black Country — the post-industrial area west of Birmingham — had been shaped by coal mining and heavy industry. By the 1970s those industries were in decline, jobs were insecure and communities like Tollington were visibly changing. The novel captures that economic anxiety.',
-    "South Asian migration to the Midlands was driven by post-war labour shortages and then by the expulsion of Ugandan Asians in 1972. Many families experienced the gap between invitation and welcome that Syal dramatises through the Kumars' kindness to neighbours who sometimes repay it with suspicion.",
-    'Syal is also writing in the 1990s, the decade of Goodness Gracious Me and a flowering of British-Asian voices in comedy and fiction. The novel\u2019s retrospective warmth is shaped by that later confidence.',
+    "Anita and Me is set in 1972, a politically charged year for British-Asian families. Enoch Powell's 1968 'Rivers of Blood' speech had legitimised the language of racial grievance in mainstream politics, and the National Front grew rapidly in the Midlands and North in the early 1970s. The Commonwealth Immigrants Acts of 1962 and 1968 had tightened entry from former colonies, and in 1972 Idi Amin's expulsion of Ugandan Asians brought tens of thousands of East African Asians to Britain, many to the West Midlands. Syal writes Tollington inside that climate: Sam Lowbridge's rhetoric is recognisably the language of the street-level far right of the period.",
+    "The novel is rooted in the Black Country, the post-industrial region west of Birmingham historically shaped by coal mining, iron, chain-making and heavy engineering. By the early 1970s most of the deep mines had closed and the area was in visible economic decline. Tollington is fictional but composite: a village whose pit has gone, whose young people have few prospects, and whose streets will soon be cut by a new motorway. The economic anxiety Syal depicts — the closing mine, the motorway, the sense of a world slipping away — is crucial to the politics of the novel, because it is the soil in which Sam Lowbridge's racism grows.",
+    "South Asian migration to the Midlands accelerated after the Second World War, driven by labour shortages in foundries, textile mills and public transport. Punjabi Sikh communities in particular settled in Wolverhampton, Smethwick, Southall and surrounding towns, building gurdwaras, businesses and chain-migration networks. The Kumars are part of this wave, and their household — with its constant weekend mehfils and chosen 'aunties' and 'uncles' — reflects the real social fabric of the Midlands Punjabi diaspora. The 1964 Smethwick by-election, fought on an openly racist slogan a few miles from Syal's real childhood village, is a reminder of how visible this politics had become.",
+    "Meera Syal was born Meera Syal Chopra in 1961 to Punjabi Sikh parents and grew up in Essington, a small mining village in Staffordshire very like Tollington. Anita and Me is openly semi-autobiographical and was her first novel, published in 1996 when she was already well known as an actor and writer on Goodness Gracious Me. The novel arrived in a decade that saw an unprecedented flowering of British-Asian voices in fiction, comedy and music, and its retrospective warmth is shaped by the confidence of that later moment. Syal adapted the book into a feature film in 2002, and it has since become one of the most widely taught modern texts in the GCSE English Literature canon, appearing on AQA, Edexcel and Eduqas specifications.",
   ],
   quotations: [
     {
-      quote: '"I\'m really not a liar, I just learned very early on that those of us deprived of history sometimes need to turn to mythology."',
-      who: 'Meena — Chapter 1',
-      analysis: 'Links storytelling directly to migration and displacement. Syal\u2019s thesis in one sentence.',
+      quote: '"I\'m really not a liar, I just learnt very early on that those of us deprived of history sometimes need to turn to mythology."',
+      who: 'Meena — opening chapter',
+      analysis: "The novel's thesis statement. Syal links Meena's compulsive storytelling directly to migration and diaspora: without an inherited place in English history, Meena must invent one. Sets up the retrospective, self-aware adult narrator and the book's defence of creative self-making.",
     },
     {
-      quote: '"I began to realise that being an Indian in England was not the same as being Indian in India."',
-      who: 'Meena — Chapter 8',
-      analysis: 'Captures the diaspora experience and the impossibility of a single, unbroken identity.',
+      quote: '"I knew I was a freak of some kind, too mouthy, clumsy and scabby to be a real Indian girl, too Indian to be a real Tollington wench."',
+      who: 'Meena — early chapters',
+      analysis: "A textbook expression of Meena's bicultural double-bind. The paired insults — 'real Indian girl' and 'real Tollington wench' — show how both sides of her identity demand a purity she cannot perform. 'Freak' turns cultural in-betweenness into pathology, anticipating the novel's work to revalue it.",
     },
     {
       quote: '"Anita was the undisputed cock of our yard."',
-      who: 'Meena — Chapter 2',
-      analysis: 'Establishes Anita\u2019s dominance in Meena\u2019s imagination and the power imbalance in their friendship.',
+      who: 'Meena — on first meeting Anita',
+      analysis: "Establishes Anita's dominance and the power imbalance in their friendship. The deliberately masculine local idiom ('cock of the yard') signals Anita's transgression of gender norms and Meena's admiration for her swagger. The phrase places the reader inside Meena's vocabulary while the adult narrator smiles at it.",
     },
     {
-      quote: '"We don\'t want them here. Send them back."',
-      who: 'Sam Lowbridge — Chapter 9',
-      analysis: 'The novel\u2019s moment of explicit racist violence. Makes the political finally personal for Meena.',
+      quote: '"I wanted to be everything she was."',
+      who: 'Meena on Anita',
+      analysis: "The purest statement of Meena's longing to assimilate. Anita functions as a surrogate for a white Englishness Meena cannot possess; wanting to be 'everything she was' is also wanting not to be Indian, which is the fantasy the novel will dismantle.",
     },
     {
-      quote: '"I felt supremely beautiful for the first time in my short life."',
-      who: 'Meena — Chapter 13',
-      analysis: 'When she wears a Punjabi suit and reconnects with her culture. Identity is reframed as a source of pride, not shame.',
+      quote: '"The Tollington I knew was slowly being dismantled."',
+      who: 'Meena — later chapters',
+      analysis: "The motorway, the pit closures and the changing population all literalise Meena's interior loss. Syal uses the vanishing village as an image of the instability of any 'pure' Englishness Sam Lowbridge claims to be defending.",
+    },
+    {
+      quote: '"I\'m not talking about those, I\'m talking about them. The darkies."',
+      who: 'Sam Lowbridge — at the village fete',
+      analysis: "Sam's public outburst at the fete is the novel's political turning point. The word 'them' does the work of racism — it separates a group from the village's 'us' — and Meena hears herself named. The scene crystallises how Powellite rhetoric turns into street violence in a single speech act.",
+    },
+    {
+      quote: '"I realised that Sam Lowbridge had meant me, he had meant my Papa, he had meant my mama."',
+      who: 'Meena — after the attack',
+      analysis: "The collapse of Meena's strategy of ignoring racism. The repetition of 'he had meant' enacts her dawning recognition. Syal marks this as a loss of childhood innocence that is specifically racialised: Meena has lost the ability to imagine that racism is about other people.",
+    },
+    {
+      quote: '"Being an Indian in England was not the same as being Indian in India."',
+      who: 'Meena — reflecting on Nanima\'s arrival',
+      analysis: "Captures the diaspora experience and the impossibility of a single, unbroken cultural identity. Syal gently refuses nostalgic notions of an authentic homeland: Meena's Indianness is its own thing, formed in Tollington, and Nanima's presence enriches rather than corrects it.",
+    },
+    {
+      quote: '"I felt a sudden rush of something like pride."',
+      who: 'Meena — wearing a Punjabi suit',
+      analysis: "The 'something like' is important: it is a tentative, astonished feeling rather than a confident declaration. Syal refuses a triumphal identity arc. Pride arrives quietly, in the body, as the suit transforms how Meena sees herself in the mirror.",
+    },
+    {
+      quote: '"Nanima had the rare gift of making whoever she was with feel that they were the most important person in the world."',
+      who: 'Meena on her grandmother',
+      analysis: "Nanima's warmth is drawn in direct contrast with Anita's withholding approval. Where Anita makes Meena beg for attention, Nanima gives it freely and in Punjabi. The sentence models the kind of generous adult love Meena has been starved of outside her immediate family.",
+    },
+    {
+      quote: '"Everything she had taught me seemed like a way of standing still, of holding on."',
+      who: 'Meena on Nanima',
+      analysis: "A beautiful metaphor for cultural continuity in migration. Where Anita represents motion (shoplifting, running, Sam's moped), Nanima represents rootedness. Meena is learning that identity can be anchored rather than performed.",
+    },
+    {
+      quote: '"I could hear Tracey screaming."',
+      who: 'Meena — at the pit pond',
+      analysis: "The near-drowning of Tracey is the moral hinge of Meena's break with Anita. Anita runs; Meena acts. The short, uncluttered sentence registers shock and decision in the same breath. It is the moment Meena discovers she is not like Anita.",
     },
     {
       quote: '"I knew I could not forgive Anita."',
-      who: 'Meena — Chapter 14',
-      analysis: 'The painful moral clarity that closes out childhood and the friendship.',
+      who: 'Meena — toward the end',
+      analysis: "The novel's moment of moral clarity. The flat, declarative syntax refuses melodrama. Forgiveness is not refused in anger but in a settled adult judgement, and it marks the definitive end of Meena's childhood and of the friendship.",
+    },
+    {
+      quote: '"I don\'t need to be somebody else any more."',
+      who: 'Meena — closing chapters',
+      analysis: "The direct inversion of her earlier wish to be 'everything' Anita was. Identity has moved from imitation to ownership. Syal offers this as hard-won rather than easy, arriving only after the attack, Nanima's visit, the accident and the break with Anita.",
+    },
+    {
+      quote: '"My parents had come so far, but they were still, in many ways, travelling."',
+      who: 'Meena on her parents',
+      analysis: "A quietly devastating summary of the migrant condition. The physical journey from the Punjab to the Midlands is over, but the social and emotional journey continues. Meena's recognition of this re-places her parents as complex adults rather than embarrassments.",
+    },
+    {
+      quote: '"Tollington was nearly gone. I was nearly gone too."',
+      who: 'Meena — toward the end',
+      analysis: "The parallel between village and self captures how Syal ties place to identity. The motorway is erasing the Tollington of Meena's childhood at the same moment that the childhood itself is ending. The double 'nearly gone' gives the ending its elegiac rhythm.",
     },
     {
       quote: '"Goodbye, Tollington."',
-      who: 'Meena — Epilogue',
-      analysis: 'The novel\u2019s farewell carries loss and liberation in the same breath.',
+      who: 'Meena — final pages',
+      analysis: "The novel's farewell carries loss and liberation in a single breath. Meena is leaving the village that shaped and scarred her, and the voice that says goodbye is already the adult narrator. The farewell also opens the door to the grammar school and the new self the book has been preparing for.",
     },
   ],
 }
 
 export default async function AnitaAndMePage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr', 'eduqas']
+  const allowedBoards = ['aqa', 'edexcel', 'eduqas']
   if (board && !allowedBoards.includes(board)) {
     redirect('/revision/texts')
   }
@@ -143,6 +208,10 @@ export default async function AnitaAndMePage() {
   return (
     <>
       <StudyTools textName="Anita and Me" textType="novel" examBoard="AQA" />
+      <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
+        <strong className="block text-foreground">Draft study guide</strong>
+        <span>AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.</span>
+      </div>
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for criticism and review. Full text available from your school or local library.
