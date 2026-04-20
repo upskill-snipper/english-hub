@@ -89,6 +89,13 @@ const BOARD_ALLOWLIST_PREFIX: string[] = [
   // Compliance sub-pages
   '/legal/',
 
+  // Public cert + consent + verify flows — these can be landed on by
+  // external visitors (Ofqual moderators, parents checking a student's
+  // certificate) who have no board cookie. Must not bounce to /board-select.
+  '/verify/',
+  '/consent/',
+  '/certificate/',
+
   // Long-tail SEO content hub — board-agnostic analysis pages
   '/analysis/',
 
