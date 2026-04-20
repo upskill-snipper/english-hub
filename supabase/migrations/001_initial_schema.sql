@@ -123,22 +123,20 @@ ALTER TABLE public.courses ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.modules ENABLE ROW LEVEL SECURITY;
 
 -- Policies
-CREATE POLICY "Users can view own profile" ON public.profiles FOR SELECT USING (auth.uid() = id);
-CREATE POLICY "Users can update own profile" ON public.profiles FOR UPDATE USING (auth.uid() = id);
-CREATE POLICY "Users can insert own profile" ON public.profiles FOR INSERT WITH CHECK (auth.uid() = id);
-CREATE POLICY "Users can view own enrolments" ON public.enrolments FOR SELECT USING (auth.uid() = user_id);
--- Enrolment inserts are handled by the Stripe webhook using the service role client
-CREATE POLICY "Users can manage own progress" ON public.module_progress FOR ALL USING (auth.uid() = user_id);
-CREATE POLICY "Users can manage own assessments" ON public.assessment_attempts FOR ALL USING (auth.uid() = user_id);
-CREATE POLICY "Users can view own certificates" ON public.certificates FOR SELECT USING (auth.uid() = user_id);
--- Certificate inserts are handled server-side using the service role client
-CREATE POLICY "Public can verify certificates" ON public.certificates FOR SELECT USING (TRUE);
-CREATE POLICY "Courses are public" ON public.courses FOR SELECT USING (published = TRUE);
-CREATE POLICY "Modules preview public" ON public.modules FOR SELECT USING (is_preview = TRUE);
+-- NOTE: The original policies on profiles, enrolments, module_progress,
+-- assessment_attempts, certificates, courses, modules (preview), and
+-- practice_sessions were renamed on prod (e.g. "Users can view own profile"
+-- -> "Users view own profile"). The live-name versions are tracked under
+-- supabase/migrations/20260420_track_untracked_*.sql. The permissive
+-- "Public can verify certificates" policy was intentionally dropped
+-- (see 20260420_drop_permissive_certificate_policy.sql +
+-- 20260420_drop_untracked_public_verify_certs.sql); certificate verification
+-- now goes through the verify_certificate SECURITY DEFINER RPC.
+-- Enrolment inserts are handled by the Stripe webhook using the service role client.
+-- Certificate inserts are handled server-side using the service role client.
 CREATE POLICY "Enrolled users view modules" ON public.modules FOR SELECT USING (
   EXISTS (SELECT 1 FROM public.enrolments WHERE user_id = auth.uid() AND course_id = modules.course_id)
 );
-CREATE POLICY "Users can manage own practice" ON public.practice_sessions FOR ALL USING (auth.uid() = user_id);
 
 -- Trigger: auto-create profile on signup
 CREATE OR REPLACE FUNCTION public.handle_new_user()
