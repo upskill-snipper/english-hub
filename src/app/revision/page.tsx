@@ -17,6 +17,11 @@ import {
   Wrench,
   FolderOpen,
   LineChart,
+  ClipboardList,
+  Timer,
+  Dumbbell,
+  Gamepad2,
+  Flame,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -107,7 +112,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     icon: TrendingUp,
     colour: 'text-cyan-400',
     bgColour: 'bg-cyan-500/10',
-    stats: 'Grades 4-9',
+    stats: 'Grades 1-9',
   },
   {
     title: 'Quick Quizzes',
@@ -118,6 +123,46 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-clay-600',
     bgColour: 'bg-orange-500/10',
     stats: '100+ quizzes',
+  },
+  {
+    title: 'Reading Assessment',
+    description:
+      'Timed reading tests with extracts and mark schemes. Benchmark your comprehension against GCSE/IGCSE standards.',
+    href: '/assessment/reading',
+    icon: ClipboardList,
+    colour: 'text-blue-400',
+    bgColour: 'bg-blue-500/10',
+    stats: 'Diagnostic',
+  },
+  {
+    title: 'Mock Exams',
+    description:
+      'Full timed mock papers for every board with examiner-grade feedback. Build exam stamina before the real thing.',
+    href: '/mock-exams',
+    icon: Timer,
+    colour: 'text-emerald-400',
+    bgColour: 'bg-emerald-500/10',
+    stats: 'Full papers',
+  },
+  {
+    title: 'Practice',
+    description:
+      'Bite-sized practice tasks for every skill \u2014 analysis paragraphs, comparisons, creative writing prompts.',
+    href: '/practice',
+    icon: Dumbbell,
+    colour: 'text-violet-400',
+    bgColour: 'bg-violet-500/10',
+    stats: 'Daily drills',
+  },
+  {
+    title: 'Games',
+    description:
+      'Vocabulary, quote-match and terminology games \u2014 learn faster by playing.',
+    href: '/games',
+    icon: Gamepad2,
+    colour: 'text-clay-600',
+    bgColour: 'bg-amber-500/10',
+    stats: 'Play to learn',
   },
 ]
 
@@ -266,6 +311,75 @@ export default async function RevisionHubPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ── Headline analytics (streak, progress, AI feedback) ────────── */}
+      <section
+        aria-label="Your progress snapshot"
+        className="grid gap-4 sm:grid-cols-3"
+      >
+        <Link
+          href="/revision/analytics"
+          className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-emerald-500/40 hover:shadow-card-hover"
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
+              <Flame className="size-5 text-emerald-400" />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground">Streak</p>
+              <p className="text-heading-sm font-heading text-foreground">Your study streak</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Keep going daily — every session you complete on a quiz, set text, or mock exam builds your streak.
+          </p>
+          <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
+            View full analytics <ArrowRight className="size-3" />
+          </span>
+        </Link>
+        <Link
+          href="/revision/analytics"
+          className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-cyan-500/40 hover:shadow-card-hover"
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-cyan-500/10">
+              <TrendingUp className="size-5 text-cyan-400" />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground">Progress</p>
+              <p className="text-heading-sm font-heading text-foreground">
+                {boardName} coverage
+              </p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Track how much of the {boardName} syllabus you&apos;ve covered and where you still have gaps.
+          </p>
+          <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
+            See what&apos;s next <ArrowRight className="size-3" />
+          </span>
+        </Link>
+        <Link
+          href="/revision/analytics"
+          className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-violet-500/40 hover:shadow-card-hover"
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
+              <Sparkles className="size-5 text-violet-400" />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground">AI feedback</p>
+              <p className="text-heading-sm font-heading text-foreground">Latest marked work</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            AI grades on your recent essays, with the top three improvements to take forward.
+          </p>
+          <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
+            Open feedback <ArrowRight className="size-3" />
+          </span>
+        </Link>
       </section>
 
       {/* ── Study Plan CTA ──────────────────────────────────────────── */}

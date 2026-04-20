@@ -19,6 +19,11 @@ import {
   CalendarDays,
   BarChart3,
   Wrench,
+  Files,
+  Gamepad2,
+  ClipboardList,
+  Timer,
+  Dumbbell,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -53,8 +58,18 @@ const NAV_ITEMS: NavItem[] = [
     icon: BarChart3,
     colour: 'text-primary',
   },
-  { label: 'Your Toolkit', href: '/toolkit', icon: Wrench, colour: 'text-primary' },
+  { label: 'My Papers', href: '/dashboard/papers', icon: Files, colour: 'text-primary' },
+  { label: 'Study Tools', href: '/revision#toolkit', icon: Wrench, colour: 'text-primary' },
   { label: 'Study Plan', href: '/revision/study-plan', icon: CalendarDays, colour: 'text-primary' },
+  {
+    label: 'Reading Assessment',
+    href: '/assessment/reading',
+    icon: ClipboardList,
+    colour: 'text-blue-400',
+  },
+  { label: 'Mock Exams', href: '/mock-exams', icon: Timer, colour: 'text-emerald-400' },
+  { label: 'Practice', href: '/practice', icon: Dumbbell, colour: 'text-violet-400' },
+  { label: 'Games', href: '/games', icon: Gamepad2, colour: 'text-clay-600' },
   {
     label: 'Poetry',
     href: '/revision/poetry',

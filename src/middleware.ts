@@ -224,6 +224,15 @@ const BOARD_LANDING_REDIRECTS: Record<string, string> = {
   '/ial/edexcel': 'ial-edexcel',
 }
 
+// `/toolkit` is retired — every toolkit feature is surfaced from the
+// unified Your Hub at `/revision`. Landing on any toolkit URL sends the
+// user to the hub so the nav + analytics render consistently. Deep-link
+// sub-routes under `/toolkit/*` still work (the individual tools live
+// there); only the `/toolkit` index itself redirects.
+const RETIRED_PAGE_REDIRECTS: Record<string, string> = {
+  '/toolkit': '/revision',
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   // Web Crypto `randomUUID()` + `btoa` — edge-runtime safe, avoids the
@@ -241,6 +250,12 @@ export async function middleware(request: NextRequest) {
       sameSite: 'lax',
     })
     return response
+  }
+
+  // ── Retired-page redirect (e.g. /toolkit → /revision) ──────────────
+  const retiredTarget = RETIRED_PAGE_REDIRECTS[pathname]
+  if (retiredTarget) {
+    return NextResponse.redirect(new URL(retiredTarget, request.url))
   }
 
   // ── CSRF: Origin header validation for API mutations ─────────────

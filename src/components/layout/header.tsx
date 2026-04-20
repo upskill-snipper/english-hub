@@ -33,23 +33,13 @@ function getNavForBoardType(
   type: 'ks3' | 'gcse' | 'igcse' | 'ial' | 'a-level' | null,
   board: ExamBoard | null,
 ): NavLink[] {
-  // Board is set — simplified nav; deeper navigation lives in Paper Dashboard & Toolkit
+  // Board is set — streamlined top nav. "My Papers" and "Games" live in
+  // the Your Hub sidebar (see RevisionShell NAV_ITEMS) so they're reachable
+  // from everywhere inside the hub without crowding the site-wide header.
   if (type) {
-    // For IGCSE boards, "My Papers" goes to the board-specific IGCSE hub.
-    // For UK A-Level boards, route to the board-specific A-Level hub.
-    let papersHref: string
-    if (type === 'igcse') {
-      papersHref = getIgcseHubUrl(board) ?? '/igcse'
-    } else if (type === 'a-level') {
-      papersHref = getALevelHubUrl(board) ?? '/a-level'
-    } else {
-      papersHref = '/dashboard/papers'
-    }
-
+    void board
     return [
-      { href: papersHref, label: 'My Papers' },
       { href: '/revision', label: 'Your Hub' },
-      { href: '/games', label: 'Games' },
       { href: '/for-teachers', label: 'For Teachers' },
       { href: '/for-schools', label: 'For Schools' },
       { href: '/pricing', label: 'Pricing' },
