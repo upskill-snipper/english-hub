@@ -409,6 +409,167 @@ Create PR: https://github.com/upskill-snipper/english-hub/pull/new/qa/cycle-1-fo
 
 ---
 
+## CYCLE 2 SUMMARY · 2026-04-19
+
+Backfilled retrospectively from git log (original cycle tracking was in
+side documents, not this master log). Boundary inferred from a 16:45–16:47
+cluster of P0-tagged commits that opens a fresh findings pass after the
+Cycle 1 Wave B follow-up trailing close (`6ce921f`, 16:12 — dropped the
+permissive `school_join_codes` SELECT policy).
+
+### Commits shipped this cycle
+
+1. `fix(security): add PII scrubbers to instrumentation.ts + instrumentation-client.ts (P0)` — `b818a42`
+2. `feat(db): webhook_events + consent_tokens tables; drop parental_consents permissive policy; fix verify_certificate type (P0 × 4)` — `5987b63`
+3. `fix(security+infra): lock down affiliate conversion; Upstash validate-age; AbortController on AI; Sentry in all crons (P0/P1)` — `153de04`
+4. `fix(a11y+copy+privacy): teacher preview on all sub-routes; skip-to-content on school layouts; stray 'Limited to 10' sweep; hardDelete also deletes auth.users; login dead code (P0/P1)` — `ed1c9ac`
+
+Themes: PII scrubbing in observability, closing the `parental_consents`
+permissive RLS gap flagged as P2-SEC-2 in Cycle 1, affiliate-conversion
+abuse surface, and a wide a11y/copy/privacy sweep (teacher-preview banner
+propagated to every sub-route; hard-delete now cascades into `auth.users`).
+
+### Still open for the next cycle
+
+- Parent-consent email sending still a TODO (Phase-5) — deferred to Cycle 5.
+- `affiliate-conversion` v2 schema not yet promoted — queued for Cycle 4.
+- CSP / COOP / CORP still on Next 15 upgrade branch (no change this cycle).
+
+---
+
+## CYCLE 3 SUMMARY · 2026-04-19
+
+Boundary inferred from a 16:59–17:00 cluster focused on P1 data-integrity
+fixes. Short cycle — 3 commits.
+
+### Commits shipped this cycle
+
+1. `fix(retention): use real lastLoginAt signal for dormancy + record on login (P1)` — `899621e`
+2. `fix(db+api): atomic join-code increment + promo_codes column fix + school/contact rate-limit key (P1/P2)` — `daf0c7d`
+3. `fix(security): Stripe subscription ordering guard + DOMPurify on toolkit progress (P1/P2)` — `05af844`
+
+Themes: real dormancy signal so the retention cron doesn't nuke active
+accounts, race-safe join-code consumption, defence-in-depth DOMPurify on
+a second toolkit surface flagged in Cycle 1 as P2-SEC-1, and a Stripe
+subscription ordering guard against out-of-order webhook delivery.
+
+### Still open for the next cycle
+
+- Identity convergence (Prisma User ↔ Supabase auth.users) not yet started.
+- Bundle size still dominated by Vercel Analytics + Speed Insights on every route.
+
+---
+
+## CYCLE 4 SUMMARY · 2026-04-19
+
+Boundary inferred from a 17:13 cluster. Opens the identity-convergence
+effort (PR-1 of 3) and lands two bundle-perf wins alongside an affiliate
+v2 schema promotion.
+
+### Commits shipped this cycle
+
+1. `feat(db): identity convergence PR-1 — add User.supabaseUserId nullable UUID column (P0-DATA)` — `37352a6`
+2. `perf(bundle): lazy-load Vercel Analytics + Speed Insights via next/dynamic (P1)` — `018fbff`
+3. `perf(bundle): convert /for-schools to server component + extract client islands (P1)` — `a13fc0a`
+4. `feat(db): promote pending affiliate v2 schema with affiliate_payouts rename (P0-DATA)` — `1fdb463`
+
+Themes: start the long-running identity-convergence programme with a
+non-destructive additive column on Prisma `User`; shrink the marketing
+bundle by deferring analytics mounts and server-rendering `/for-schools`;
+promote the pending affiliate v2 schema so downstream Cycle 5-6 work has
+stable tables to target.
+
+### Still open for the next cycle
+
+- PR-2 (backfill) + PR-3 (read-path switch) of identity convergence.
+- Signup handler still doesn't write to Prisma `User` (P0 — Cycle 5).
+- `/api/review` still in-memory (P1 data-loss — Cycle 5).
+
+---
+
+## CYCLE 5 SUMMARY · 2026-04-19
+
+Boundary inferred from a 17:21–17:34 cluster. Closes the P0 "no Prisma
+User write path" gap (commit message explicitly says "closes Cycle 5 P0")
+and lands identity convergence PR-2.
+
+### Commits shipped this cycle
+
+1. `feat(db): identity convergence PR-2 — backfill User.supabaseUserId (P0-DATA)` — `e6e2d03`
+2. `fix(data): /api/review now persists to Supabase (closes P1 data-loss)` — `041f5a0`
+3. `feat(auth): Prisma User signup handler (closes Cycle 5 P0 — no write path)` — `6c243f5`
+4. `perf(bundle): /school/lessons server component + metadata projection (−1.83 MB)` — `75b8ec6`
+5. `fix(consent): wire parent consent email sends (closes Cycle 2 P0 Phase-5 TODO)` — `49d301c`
+
+Themes: the P0-DATA identity work continues — existing Supabase users get
+`supabaseUserId` backfilled on Prisma `User`; two data-loss holes close
+(review persistence + signup writing to Prisma); parent-consent emails
+now actually send (the TODO opened in Cycle 2); and another bundle-perf
+win on the school lessons surface (−1.83 MB).
+
+### Still open for the next cycle
+
+- Identity PR-3 (read-path switch to prefer `supabaseUserId` everywhere).
+- Several Prisma lookups still email-keyed (carries over to Cycle 6/7).
+- Teacher dashboard still mocks analytics (carries through Cycle 8).
+
+---
+
+## CYCLE 6 SUMMARY · 2026-04-19
+
+Short polish cycle — 2 commits at 17:36–17:37. Boundary ambiguous; this
+could reasonably be lumped with Cycle 5 or Cycle 7. Kept as its own entry
+because the commit themes (analytics mocks → real queries, HMAC
+hardening) are distinct from the surrounding identity work.
+
+### Commits shipped this cycle
+
+1. `perf(db+analytics): missing indexes migration + replace aggregate mocks with real queries (P1)` — `89f6cf9`
+2. `security+perf(polish): HMAC-SHA256 affiliate IP hash + expand optimizePackageImports (P2)` — `12c45b1`
+
+Themes: real queries behind the analytics surface (kills a class of
+"looks-real-but-isn't" mock data); HMAC-SHA256 replaces the SHA-256
+affiliate IP hash (a re-land of the same pattern later applied to the
+Cookie IP hash in Cycle 7); additional `optimizePackageImports` entries.
+
+### Still open for the next cycle
+
+- Cookie IP hash still unsalted SHA-256 — mirror pattern in Cycle 7.
+- Identity PR-3 read-path switch.
+
+---
+
+## CYCLE 7 SUMMARY · 2026-04-19
+
+Boundary inferred from a 17:53–17:54 cluster. Closes the identity
+convergence trilogy (PR-3, the read-path switch) and lands the
+`quiz_responses` schema + Prisma composite indexes that Cycle 8 builds
+the POST route on top of.
+
+### Commits shipped this cycle
+
+1. `feat(auth): wire register pages to Prisma User signup handler + add DOB to teacher register` — `4aa8644`
+2. `refactor(identity): PR-3 — prefer supabaseUserId over email in every Prisma lookup` — `d18529a`
+3. `security(cookie): HMAC-SHA256 replaces unsalted SHA-256 IP hash + document env vars (P2)` — `265c414`
+4. `feat(db): Prisma composite indexes (AuditLog, Essay) + quiz_responses table` — `b74b598`
+
+Themes: identity-convergence programme complete — every Prisma lookup
+now prefers `supabaseUserId`, register pages wired to the Cycle 5 signup
+handler, teacher register captures DOB; cookie IP hash promoted to
+HMAC-SHA256 to match the affiliate pattern; Prisma schema picks up
+composite indexes on AuditLog + Essay and introduces the `quiz_responses`
+table that Cycle 8's `POST /api/quiz/response` targets.
+
+### Still open for the next cycle (rolled into Cycle 8)
+
+- DSAR export / single-request handlers (session.id UUID bug).
+- `sendEmail` multipart/attachments support (for DSAR ZIP delivery).
+- POST `/api/quiz/response` route implementation.
+- Cron-wrapper rollout (`runCron()` across the `/api/cron/*` surface).
+- Affiliate README doc-drift (AFFILIATE_IP_SALT → AFFILIATE_IP_HASH_SECRET).
+
+---
+
 ## CYCLE 8 SUMMARY · 2026-04-19
 
 Follow-up strike force on `qa/cycle-1-followup`. No prior Cycle 6/7 summary
