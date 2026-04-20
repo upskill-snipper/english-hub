@@ -158,25 +158,33 @@ const ALLOWED_ORIGINS = new Set([
 // attach to <script> tags), and bake it into the Content-Security-Policy
 // response header so browsers match inline scripts against the same value.
 //
-// 'strict-dynamic' permits scripts that are loaded by nonced scripts to
-// themselves run without explicit host allow-listing — this is how Next's
-// bundled _next/*.js files get through.
-//
 // `extraScriptHashes` lets callers append content-addressed `'sha256-...'`
 // sources for scripts that can't carry a per-request nonce. The canonical
 // use case is `/analysis/[...slug]` — that route is `force-static` + 24 h
 // ISR, so `headers()` (and hence the nonce) is unavailable at render time.
 // Instead the middleware computes the SHA-256 of each JSON-LD body and
-// adds the hash here so modern browsers (which ignore `'unsafe-inline'`
-// when `'strict-dynamic'` is present) still execute them.
+// adds the hash here.
+//
+// NB — `'strict-dynamic'` was evaluated and dropped: older iOS Safari
+// (≤ 15.6) has known bugs where a script-src containing 'strict-dynamic'
+// is treated as malformed, causing every script on the page to be
+// blocked. Without strict-dynamic, modern browsers enforce the
+// nonce + explicit host allow-list (Stripe, Rewardful, GTM) and older
+// browsers fall back to the host allow-list + `'unsafe-inline'`. We
+// lose the "strict-dynamic" property that nonced scripts can load
+// further scripts transparently; in practice every external script we
+// load comes from a known host and is already allow-listed, so the
+// security drop is marginal. Re-introduce strict-dynamic once Next 15
+// ships server-side user-agent CSP tailoring, or once iOS 15.6 drops
+// below the support floor.
 function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   const extraSrc = extraScriptHashes.length ? ' ' + extraScriptHashes.join(' ') : ''
   return [
     `default-src 'self'`,
-    // 'unsafe-inline' is a FALLBACK for browsers that don't understand
-    // nonce/strict-dynamic (old iOS Safari etc.); modern browsers ignore
-    // it when 'nonce-...' or 'strict-dynamic' is present.
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com`,
+    // 'unsafe-inline' is a FALLBACK for browsers that don't honour nonces.
+    // Modern browsers ignore 'unsafe-inline' when a 'nonce-' is present on
+    // the same directive.
+    `script-src 'self' 'nonce-${nonce}' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com`,
     `style-src 'self' 'unsafe-inline'`, // Tailwind JIT inlines styles; acceptable.
     `img-src 'self' data: https:`,
     `font-src 'self' data:`,
