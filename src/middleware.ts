@@ -1,6 +1,6 @@
 import { updateSession } from '@/lib/supabase/middleware'
 import { applyAffiliateTracking } from '@/middleware-affiliate'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 import crypto from 'crypto'
 
 const BOARD_COOKIE = 'english-hub-board'
@@ -229,19 +229,18 @@ export async function middleware(request: NextRequest) {
 
   // Propagate nonce to downstream so server components can read it via
   // `headers()` and stamp it on inline <script> tags (e.g. JSON-LD).
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set('x-nonce', nonce)
+  // Mutating request.headers directly is the simplest working pattern:
+  // updateSession reads request.headers to build its NextResponse.next(),
+  // so the nonce is visible to server components without reconstructing
+  // the NextRequest (which doesn't have a safe clone constructor).
+  request.headers.set('x-nonce', nonce)
 
   // Preserve existing behaviour: supabase auth session refresh + affiliate tracking
-  const response = await updateSession(
-    new NextRequest(request.url, {
-      ...request,
-      headers: requestHeaders,
-    }),
-  )
+  const response = await updateSession(request)
 
-  // Attach the per-request nonce + CSP. Setting CSP here lets us emit a
-  // fresh nonce per request; next.config.js only supports static headers.
+  // Attach the per-request nonce + CSP to the response. Setting CSP here
+  // lets us emit a fresh nonce per request; next.config.js only supports
+  // static headers.
   response.headers.set('Content-Security-Policy', buildCsp(nonce))
   response.headers.set('x-nonce', nonce)
 
