@@ -105,7 +105,14 @@ const NAV_ITEMS: NavItem[] = [
     colour: 'text-cyan-400',
   },
   { label: 'Quick Quizzes', href: '/revision/quiz', icon: Zap, colour: 'text-clay-600' },
-  // Board-specific deep-link entries (IGCSE)
+  // Board-specific deep-link entries
+  {
+    label: 'IAL Specification Guide',
+    href: '/revision/ial',
+    icon: GraduationCap,
+    colour: 'text-primary',
+    boards: ['ial-edexcel'],
+  },
   {
     label: 'Edexcel IGCSE Hub',
     href: '/igcse/edexcel',

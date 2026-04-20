@@ -110,7 +110,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Great Expectations',
     author: 'Charles Dickens',
     category: '19th-century',
-    boards: ['aqa'],
+    boards: ['aqa', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -118,7 +118,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Jane Eyre',
     author: 'Charlotte Brontë',
     category: '19th-century',
-    boards: ['aqa', 'ocr'],
+    boards: ['aqa', 'ocr', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -126,7 +126,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Frankenstein',
     author: 'Mary Shelley',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'ocr'],
+    boards: ['aqa', 'edexcel', 'ocr', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -134,7 +134,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Pride and Prejudice',
     author: 'Jane Austen',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -266,7 +266,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Hamlet',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -274,7 +274,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'King Lear',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -282,7 +282,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Antony and Cleopatra',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
 
@@ -292,7 +292,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Waste Land',
     author: 'T.S. Eliot',
     category: 'poetry-anthology',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'copyright',
   },
   {
@@ -300,7 +300,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'A Streetcar Named Desire',
     author: 'Tennessee Williams',
     category: 'modern',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'copyright',
   },
   {
@@ -308,7 +308,7 @@ export const SET_TEXTS: SetText[] = [
     title: "The Handmaid's Tale",
     author: 'Margaret Atwood',
     category: 'modern',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'copyright',
   },
   {
@@ -316,7 +316,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Great Gatsby',
     author: 'F. Scott Fitzgerald',
     category: 'modern',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -324,7 +324,7 @@ export const SET_TEXTS: SetText[] = [
     title: "A Doll's House",
     author: 'Henrik Ibsen',
     category: 'modern',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
 ]
