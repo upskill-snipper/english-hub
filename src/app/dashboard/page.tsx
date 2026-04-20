@@ -34,6 +34,7 @@ import { loadAllCourses } from '@/data/course-loader'
 import { cn, formatDate } from '@/lib/utils'
 import { percentageToGCSEGradeLabel } from '@/lib/grades'
 import type { Enrolment, ModuleProgress, Certificate, CourseData } from '@/lib/types'
+import { DobNudge } from '@/components/profile/DobNudge'
 
 import {
   Card,
@@ -392,6 +393,7 @@ export default function DashboardPage() {
     <TooltipProvider>
       <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+          <DobNudge />
           {/* ── Greeting Header ─────────────────────────────────────────── */}
           <div className="mb-6 flex items-center gap-4 animate-fade-in">
             <Avatar size="lg">
