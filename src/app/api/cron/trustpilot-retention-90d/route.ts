@@ -17,6 +17,7 @@ import crypto from 'crypto'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { fireStudent90dRetention } from '@/lib/trustpilot/trigger-invite'
+import { runCron } from '@/lib/cron/observability'
 
 export const maxDuration = 300
 
@@ -32,7 +33,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
   }
 
-  try {
+  return runCron('trustpilot-retention-90d', async () => {
     const supabase = createServiceRoleClient()
 
     // ── Find candidates ──────────────────────────────────────────────
@@ -71,7 +72,7 @@ export async function POST(request: NextRequest) {
       })
 
     if (users.length === 0) {
-      return NextResponse.json({ ok: true, candidates: 0, sent: 0, skipped: 0 })
+      return { candidates: 0, sent: 0, skipped: 0 }
     }
 
     // ── Resolve email -> Supabase auth id + dispatch ────────────────
@@ -121,15 +122,11 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    return NextResponse.json({
-      ok: true,
+    return {
       candidates: users.length,
       sent,
       skipped,
       failed,
-    })
-  } catch (err) {
-    console.error('[cron/trustpilot-90d] unexpected error', err)
-    return NextResponse.json({ error: 'Unexpected error' }, { status: 500 })
-  }
+    }
+  })
 }

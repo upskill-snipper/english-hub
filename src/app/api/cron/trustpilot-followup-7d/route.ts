@@ -16,6 +16,7 @@ import crypto from 'crypto'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { fireStudentFirstMark7dFollowup } from '@/lib/trustpilot/trigger-invite'
+import { runCron } from '@/lib/cron/observability'
 
 export const maxDuration = 300
 
@@ -31,7 +32,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
   }
 
-  try {
+  return runCron('trustpilot-followup-7d', async () => {
     const supabase = createServiceRoleClient()
 
     // ── Find candidates ──────────────────────────────────────────────
@@ -53,13 +54,12 @@ export async function POST(request: NextRequest) {
       .lte('sent_at', windowEnd)
 
     if (firstMarkErr) {
-      console.error('[cron/trustpilot-7d] select error', firstMarkErr)
-      return NextResponse.json({ error: 'Database error' }, { status: 500 })
+      throw new Error(`trustpilot-followup-7d select failed: ${firstMarkErr.message}`)
     }
 
     const firstMarkUserIds = (firstMarkRows ?? []).map((r) => r.user_id)
     if (firstMarkUserIds.length === 0) {
-      return NextResponse.json({ ok: true, candidates: 0, sent: 0, skipped: 0 })
+      return { candidates: 0, sent: 0, skipped: 0 }
     }
 
     // Exclude any user who already has the followup row.
@@ -115,16 +115,12 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    return NextResponse.json({
-      ok: true,
+    return {
       candidates: firstMarkUserIds.length,
       tried: toTry.length,
       sent,
       skipped,
       failed,
-    })
-  } catch (err) {
-    console.error('[cron/trustpilot-7d] unexpected error', err)
-    return NextResponse.json({ error: 'Unexpected error' }, { status: 500 })
-  }
+    }
+  })
 }
