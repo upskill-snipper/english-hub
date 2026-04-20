@@ -1238,8 +1238,9 @@ import { caieMockExams } from "./mock-exams-caie"
 import { edexcelMockExams } from "./mock-exams-edexcel"
 import { expandedMockExams } from './mock-exams/index'
 import { aqaLitMockExams } from "./mock-exams-aqa-lit"
+import { ialMockExams } from "./mock-exams-ial"
 
-/** All mock exam papers — original 8 + 6 AQA Lit + 6 WJEC + 6 Edexcel + 6 CAIE + 120 expanded = 152 total */
+/** All mock exam papers — original 8 + 6 AQA Lit + 6 WJEC + 6 Edexcel + 6 CAIE + 120 expanded + 4 IAL = 156 total */
 
 export const allMockExamPapers: MockExamPaper[] = [
   ...mockExamPapers,
@@ -1248,6 +1249,7 @@ export const allMockExamPapers: MockExamPaper[] = [
   ...edexcelMockExams,
   ...caieMockExams,
   ...expandedMockExams,
+  ...ialMockExams,
 ]
 
 // ─── Helper Functions ────────────────────────────────────────────────────────

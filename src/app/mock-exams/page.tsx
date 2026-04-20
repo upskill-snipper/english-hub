@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import {
   Clock,
   FileText,
@@ -691,7 +692,15 @@ const BOARD_ID_TO_LEGACY: Record<ExamBoard, string[]> = {
 export default function MockExamsPage() {
   const allBoards = useMemo(() => getAvailableBoards(), [])
   const { board: userBoard, isHydrated: isBoardHydrated } = useBoard()
-  const boardConfig = getBoardConfig(userBoard)
+  const searchParams = useSearchParams()
+
+  // URL params take precedence over the cookie-derived board. Lets the
+  // IAL hub deep-link into /mock-exams?board=ial-edexcel&unit=WET04
+  // without the student having to flip their cookie first.
+  const boardParam = searchParams?.get('board')
+  const unitParam = searchParams?.get('unit') // e.g. "WET01", "WET04-full"
+  const effectiveBoard = (boardParam as ExamBoard | null) ?? userBoard
+  const boardConfig = getBoardConfig(effectiveBoard)
 
   const totalPapers = useMemo(
     () => allBoards.reduce((sum, b) => sum + getMockExamsByBoard(b).length, 0),
@@ -699,27 +708,42 @@ export default function MockExamsPage() {
   )
 
   // Restrict the visible exam cards to the user's chosen board.
-  // If the board cookie hasn't hydrated yet, show all cards (avoids flash of empty).
+  // If the board cookie hasn't hydrated yet AND no URL param is set, show all.
   const boardScopedExams = useMemo(() => {
-    if (!isBoardHydrated || !userBoard) return EXAM_CARDS
-    const legacy = BOARD_ID_TO_LEGACY[userBoard] ?? []
+    if (!boardParam && (!isBoardHydrated || !userBoard)) return EXAM_CARDS
+    const legacy = BOARD_ID_TO_LEGACY[effectiveBoard as ExamBoard] ?? []
     return EXAM_CARDS.filter((e) =>
       legacy.some((name) => e.examBoard.toLowerCase() === name.toLowerCase()),
     )
-  }, [userBoard, isBoardHydrated])
+  }, [effectiveBoard, userBoard, isBoardHydrated, boardParam])
+
+  // Additional unit-level filter — matches paper codes like "WET01" or
+  // exam ids containing "WET04-full". Only applies when `?unit=...` is
+  // explicitly passed; otherwise every board-scoped paper is shown.
+  const unitScopedExams = useMemo(() => {
+    if (!unitParam) return boardScopedExams
+    const needle = unitParam.toLowerCase()
+    return boardScopedExams.filter(
+      (e) =>
+        e.paperId.toLowerCase().includes(needle) ||
+        e.id.toLowerCase().includes(needle) ||
+        e.paperName.toLowerCase().includes(needle),
+    )
+  }, [boardScopedExams, unitParam])
 
   // Filter exam cards based on active tab
   const [activeTab, setActiveTab] = useState<string>('all')
 
   const filteredExams = useMemo(() => {
-    if (activeTab === 'all') return boardScopedExams
-    if (activeTab === 'language') return boardScopedExams.filter((e) => e.paperType === 'language')
+    if (activeTab === 'all') return unitScopedExams
+    if (activeTab === 'language') return unitScopedExams.filter((e) => e.paperType === 'language')
     if (activeTab === 'literature')
-      return boardScopedExams.filter((e) => e.paperType === 'literature')
-    return boardScopedExams
-  }, [activeTab, boardScopedExams])
+      return unitScopedExams.filter((e) => e.paperType === 'literature')
+    return unitScopedExams
+  }, [activeTab, unitScopedExams])
 
-  const showComingSoon = isBoardHydrated && !!userBoard && boardScopedExams.length === 0
+  const showComingSoon =
+    (isBoardHydrated || !!boardParam) && !!effectiveBoard && unitScopedExams.length === 0
 
   return (
     <div className="min-h-screen bg-background">

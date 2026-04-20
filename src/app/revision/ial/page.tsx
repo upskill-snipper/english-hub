@@ -267,7 +267,7 @@ const AI_SURFACES: AISurface[] = [
     title: 'AI critic simulator',
     description:
       'Unit 3 + 4 require AO5 — engagement with critical perspectives. The AI roleplays a named critic (feminist, Marxist, New Historicist) and pushes back on your thesis so you learn to defend.',
-    href: '/toolkit/test-builder?mode=critic&board=ial-edexcel',
+    href: '/toolkit/critic',
     icon: Brain,
     tag: 'AO5 trainer',
   },
