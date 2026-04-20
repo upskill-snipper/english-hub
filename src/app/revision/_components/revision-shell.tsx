@@ -17,16 +17,12 @@ import {
   ChevronRight,
   Home,
   CalendarDays,
+  BarChart3,
+  Wrench,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet'
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { Progress, ProgressTrack, ProgressIndicator } from '@/components/ui/progress'
 import { Badge } from '@/components/ui/badge'
 
@@ -50,7 +46,14 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Hub Home', href: '/revision', icon: Home, colour: 'text-primary' },
+  { label: 'Your Hub', href: '/revision', icon: Home, colour: 'text-primary' },
+  {
+    label: 'Your Analytics',
+    href: '/revision/analytics',
+    icon: BarChart3,
+    colour: 'text-primary',
+  },
+  { label: 'Your Toolkit', href: '/toolkit', icon: Wrench, colour: 'text-primary' },
   { label: 'Study Plan', href: '/revision/study-plan', icon: CalendarDays, colour: 'text-primary' },
   {
     label: 'Poetry',
@@ -67,10 +70,25 @@ const NAV_ITEMS: NavItem[] = [
     colour: 'text-blue-400',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
-  { label: 'Language Skills', href: '/revision/language', icon: PenTool, colour: 'text-violet-400' },
+  {
+    label: 'Language Skills',
+    href: '/revision/language',
+    icon: PenTool,
+    colour: 'text-violet-400',
+  },
   { label: 'Flashcards', href: '/revision/flashcards', icon: Layers, colour: 'text-clay-600' },
-  { label: 'Exam Technique', href: '/revision/exam-technique', icon: Target, colour: 'text-emerald-400' },
-  { label: 'Grade Targets', href: '/revision/grade-targets', icon: TrendingUp, colour: 'text-cyan-400' },
+  {
+    label: 'Exam Technique',
+    href: '/revision/exam-technique',
+    icon: Target,
+    colour: 'text-emerald-400',
+  },
+  {
+    label: 'Grade Targets',
+    href: '/revision/grade-targets',
+    icon: TrendingUp,
+    colour: 'text-cyan-400',
+  },
   { label: 'Quick Quizzes', href: '/revision/quiz', icon: Zap, colour: 'text-clay-600' },
   // Board-specific deep-link entries (IGCSE)
   {
@@ -103,9 +121,7 @@ function getNavItemsForBoard(board: ExamBoard | null): NavItem[] {
   return NAV_ITEMS.filter((item) => {
     if (!board) {
       // No board chosen yet — hide board-locked items (igcse-only / gcse-only)
-      return !item.igcseOnly && !item.gcseOnly && !item.boards
-        ? true
-        : !item.boards // generic items pass; board-pinned items hidden until board chosen
+      return !item.igcseOnly && !item.gcseOnly && !item.boards ? true : !item.boards // generic items pass; board-pinned items hidden until board chosen
     }
     if (item.boards && !item.boards.includes(board)) return false
     if (item.gcseOnly && !isGcseBoard(board)) return false
@@ -184,12 +200,8 @@ function SidebarNav({
       {/* Progress indicator */}
       <div className="mb-4 rounded-xl border border-border/40 bg-background/50 p-3">
         <div className="mb-2 flex items-center justify-between">
-          <span className="text-caption font-medium text-muted-foreground">
-            Overall Progress
-          </span>
-          <span className="text-caption font-semibold text-foreground">
-            {progress}%
-          </span>
+          <span className="text-caption font-medium text-muted-foreground">Overall Progress</span>
+          <span className="text-caption font-semibold text-foreground">{progress}%</span>
         </div>
         <Progress value={progress}>
           <ProgressTrack className="h-1.5">
@@ -213,23 +225,57 @@ function SidebarNav({
               isActive
                 ? 'bg-primary/10 text-primary'
                 : 'text-muted-foreground hover:bg-accent hover:text-foreground',
-              isHub && 'mb-1'
+              isHub && 'mb-1',
             )}
           >
-            <item.icon
-              className={cn(
-                'size-4 shrink-0',
-                isActive ? 'text-primary' : item.colour
-              )}
-            />
+            <item.icon className={cn('size-4 shrink-0', isActive ? 'text-primary' : item.colour)} />
             <span className="flex-1">{item.label}</span>
-            {isActive && (
-              <ChevronRight className="size-3.5 text-primary" />
-            )}
+            {isActive && <ChevronRight className="size-3.5 text-primary" />}
           </Link>
         )
       })}
     </nav>
+  )
+}
+
+// ─── Mobile scroll-chip rail ────────────────────────────────────────────────
+//
+// Horizontal, scrollable pill-rail that surfaces the same nav items as the
+// desktop sidebar on small screens. Complements the hamburger Sheet — both
+// are visible on mobile and click through to the same routes. Keeping this
+// additive avoids a full mobile-nav redesign while still giving the new
+// "Your Analytics" entry one-tap discoverability on phones.
+function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
+  const pathname = usePathname()
+  return (
+    <div
+      className="-mx-4 mb-4 overflow-x-auto px-4 pb-1 lg:hidden"
+      role="navigation"
+      aria-label="Revision sections"
+    >
+      <div className="flex min-w-max gap-2">
+        {navItems.map((item) => {
+          const isActive = pathname === item.href
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                'flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors',
+                isActive
+                  ? 'border-primary/60 bg-primary/10 text-primary'
+                  : 'border-border/60 bg-card text-muted-foreground hover:border-border hover:text-foreground',
+              )}
+            >
+              <item.icon
+                className={cn('size-3.5 shrink-0', isActive ? 'text-primary' : item.colour)}
+              />
+              {item.label}
+            </Link>
+          )
+        })}
+      </div>
+    </div>
   )
 }
 
@@ -281,7 +327,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
           <div className="sticky top-24">
             <div className="mb-4 flex items-center gap-2">
               <GraduationCap className="size-5 text-primary" />
-              <span className="text-heading-md font-heading text-foreground">Revision</span>
+              <span className="text-heading-md font-heading text-foreground">Your Hub</span>
             </div>
             <SidebarNav navItems={navItems} boardName={boardName} />
           </div>
@@ -305,9 +351,12 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
                   <SheetTitle>
                     <span className="flex items-center gap-2">
                       <GraduationCap className="size-4 text-primary" />
-                      Revision
+                      Your Hub
                       {boardName && (
-                        <Badge variant="secondary" className="ml-1 text-[0.65rem] uppercase tracking-wider">
+                        <Badge
+                          variant="secondary"
+                          className="ml-1 text-[0.65rem] uppercase tracking-wider"
+                        >
                           {boardName}
                         </Badge>
                       )}
@@ -324,7 +373,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
               </SheetContent>
             </Sheet>
             <h1 className="text-heading-md font-heading text-foreground">
-              Revision
+              Your Hub
               {boardName && (
                 <Badge variant="secondary" className="ml-2 text-[0.65rem] uppercase tracking-wider">
                   {boardName}
@@ -332,6 +381,11 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
               )}
             </h1>
           </div>
+
+          {/* Mobile scroll-chip rail — horizontal nav that supplements the */}
+          {/* hamburger menu above. Gives one-tap access to key sections   */}
+          {/* without requiring the user to open the full sheet.           */}
+          <MobileScrollRail navItems={navItems} />
 
           {children}
         </main>
