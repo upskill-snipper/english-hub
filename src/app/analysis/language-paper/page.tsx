@@ -117,8 +117,8 @@ const generalTechnique = [
   },
 ]
 
-export default function LanguagePaperAnalysisHub() {
-  const nonce = headers().get('x-nonce') ?? undefined
+export default async function LanguagePaperAnalysisHub() {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',

@@ -17,7 +17,7 @@ export type RelatedLink = {
   blurb: string
 }
 
-export function ArticleJsonLd({
+export async function ArticleJsonLd({
   headline,
   description,
   slug,
@@ -26,7 +26,7 @@ export function ArticleJsonLd({
   description: string
   slug: string
 }) {
-  const nonce = headers().get('x-nonce') ?? undefined
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',

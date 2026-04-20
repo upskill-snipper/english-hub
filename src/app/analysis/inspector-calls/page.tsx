@@ -164,8 +164,8 @@ const CHARACTER_THEME_PAGES: Entry[] = [
   },
 ]
 
-export default function InspectorCallsHubPage() {
-  const nonce = headers().get('x-nonce') ?? undefined
+export default async function InspectorCallsHubPage() {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',

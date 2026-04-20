@@ -141,8 +141,8 @@ const characterTheme = [
   },
 ]
 
-export default function JekyllHydeHubPage() {
-  const nonce = headers().get('x-nonce') ?? undefined
+export default async function JekyllHydeHubPage() {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   const hubJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',

@@ -22,7 +22,7 @@ export type AnalysisPageProps = {
 const SITE = 'https://theenglishhub.app'
 const AUTHOR = 'The English Hub GCSE Markers'
 
-export function ArticleJsonLd({
+export async function ArticleJsonLd({
   slug,
   headline,
   description,
@@ -35,7 +35,7 @@ export function ArticleJsonLd({
   datePublished?: string
   dateModified?: string
 }) {
-  const nonce = headers().get('x-nonce') ?? undefined
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',

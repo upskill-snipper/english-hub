@@ -168,8 +168,8 @@ const jsonLd = {
   },
 }
 
-export default function ChristmasCarolAnalysisHub() {
-  const nonce = headers().get('x-nonce') ?? undefined
+export default async function ChristmasCarolAnalysisHub() {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <div className="mx-auto max-w-5xl space-y-12 px-4 py-10 sm:px-6 lg:px-8">
       <script
