@@ -14,6 +14,9 @@ import {
   Zap,
   BarChart3,
   CalendarDays,
+  Wrench,
+  FolderOpen,
+  LineChart,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -118,9 +121,75 @@ const ALL_SECTIONS: RevisionSection[] = [
   },
 ]
 
+// ─── Toolkit sections (surfaced from /toolkit/* into the hub) ──────────────
+// These cards link to the existing /toolkit/* pages so deep links keep working.
+
+const TOOLKIT_SECTIONS: RevisionSection[] = [
+  {
+    title: 'Revision Builder',
+    description:
+      'Generate AI revision notes tailored to your weak areas, target grade, and study history.',
+    href: '/toolkit/revision-builder',
+    icon: FileText,
+    colour: 'text-blue-400',
+    bgColour: 'bg-blue-500/10',
+    stats: 'AI-powered',
+    tag: 'AI',
+  },
+  {
+    title: 'Test Builder',
+    description:
+      'Create custom tests from your board\u2019s texts and topics, auto-scored with grade equivalents.',
+    href: '/toolkit/test-builder',
+    icon: PenTool,
+    colour: 'text-violet-400',
+    bgColour: 'bg-violet-500/10',
+    stats: 'Custom tests',
+    tag: 'AI',
+  },
+  {
+    title: 'Personalised Revision',
+    description:
+      'A revision guide built from your data \u2014 targets weakest areas, then stretches you higher.',
+    href: '/toolkit/personalised-revision',
+    icon: Target,
+    colour: 'text-rose-400',
+    bgColour: 'bg-rose-500/10',
+    stats: 'Data-driven',
+    tag: 'New',
+  },
+  {
+    title: 'My Materials',
+    description:
+      'Every custom test, revision note, and quote bank you have saved, in one searchable place.',
+    href: '/toolkit/my-materials',
+    icon: FolderOpen,
+    colour: 'text-amber-400',
+    bgColour: 'bg-amber-500/10',
+    stats: 'Your library',
+  },
+  {
+    title: 'Progress',
+    description:
+      'Track scores, study streaks, and predicted grades based on everything you have done.',
+    href: '/toolkit/progress',
+    icon: BarChart3,
+    colour: 'text-emerald-400',
+    bgColour: 'bg-emerald-500/10',
+    stats: 'Grade predictor',
+  },
+]
+
 function getSectionsForBoard(board: ExamBoard | null): RevisionSection[] {
   if (!board) return ALL_SECTIONS
   return ALL_SECTIONS.filter((s) => !s.boards || s.boards.includes(board))
+}
+
+function getToolkitSectionsForBoard(board: ExamBoard | null): RevisionSection[] {
+  // Toolkit tools work across every board — no per-board filtering today,
+  // but we keep the same contract as revision sections for future gating.
+  if (!board) return TOOLKIT_SECTIONS
+  return TOOLKIT_SECTIONS.filter((s) => !s.boards || s.boards.includes(board))
 }
 
 // ─── Quick stats ──────────────────────────────────────────────────────────
@@ -138,6 +207,7 @@ export default async function RevisionHubPage() {
   const board = await getServerBoard()
   const config = getBoardConfig(board)
   const sections = getSectionsForBoard(board)
+  const toolkitSections = getToolkitSectionsForBoard(board)
   const isIgcse = isIgcseBoard(board)
   const isCambridge = board === 'cambridge-0500' || board === 'cambridge-0990'
 
@@ -151,23 +221,35 @@ export default async function RevisionHubPage() {
   return (
     <div className="space-y-10 pb-16">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section aria-labelledby="revision-hero-heading" className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
+      <section
+        aria-labelledby="revision-hero-heading"
+        className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10"
+      >
         {/* decorative glow */}
-        <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl"
+        />
 
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
             <Sparkles className="mr-1 size-3" aria-hidden="true" />
             {config ? config.fullName : 'GCSE English Revision'}
           </Badge>
-          <h1 id="revision-hero-heading" className="text-display-sm font-heading text-foreground sm:text-display">
-            {headingPrefix} Revision Hub
+          <h1
+            id="revision-hero-heading"
+            className="text-display-sm font-heading text-foreground sm:text-display"
+          >
+            {headingPrefix} Hub
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             {isCambridge
-              ? `Everything you need to ace ${boardName} First Language English. Reading and writing technique, exam strategy, and language analysis -- all built around your specification.`
-              : `Everything you need to ace your ${boardName} English exams in one place. Interactive study guides, smart review flashcards, and exam technique mastery -- built around your specification.`}
+              ? `Your unified home for ${boardName} First Language English. Revision, study tools, progress tracking, and exam technique \u2014 all built around your specification.`
+              : `Your unified home for ${boardName} English. Revision guides, AI study tools, progress tracking, and exam technique \u2014 all built around your specification.`}
           </p>
 
           {/* Quick stats */}
@@ -218,9 +300,7 @@ export default async function RevisionHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <GraduationCap className="size-5 text-primary" aria-hidden="true" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Explore Sections
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Explore Sections</h2>
           {config && (
             <Badge variant="outline" className="ml-1 text-xs">
               For {boardName}
@@ -278,9 +358,7 @@ export default async function RevisionHubPage() {
                 <GraduationCap className="size-5 text-cyan-400" aria-hidden="true" />
               </div>
               <div className="flex-1">
-                <h3 className="text-heading-md font-heading text-foreground">
-                  IGCSE Resources
-                </h3>
+                <h3 className="text-heading-md font-heading text-foreground">IGCSE Resources</h3>
                 <p className="mt-1 text-body-sm text-muted-foreground">
                   We have dedicated guides, exam papers, and walkthroughs for{' '}
                   {config?.fullName ?? 'your IGCSE specification'}.
@@ -310,6 +388,100 @@ export default async function RevisionHubPage() {
         )}
       </section>
 
+      {/* ── Your Toolkit ─────────────────────────────────────────────── */}
+      <section aria-labelledby="your-toolkit-heading">
+        <div className="mb-5 flex items-center gap-3">
+          <Wrench className="size-5 text-primary" aria-hidden="true" />
+          <h2 id="your-toolkit-heading" className="text-heading-lg font-heading text-foreground">
+            Your Toolkit
+          </h2>
+          {config && (
+            <Badge variant="outline" className="ml-1 text-xs">
+              For {boardName}
+            </Badge>
+          )}
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {toolkitSections.map((section) => (
+            <Link
+              key={section.href}
+              href={section.href}
+              className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
+            >
+              {section.tag && (
+                <Badge
+                  variant="default"
+                  className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
+                >
+                  {section.tag}
+                </Badge>
+              )}
+
+              <div className="mb-3 flex items-center gap-3">
+                <div
+                  className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
+                >
+                  <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
+                    {section.title}
+                  </h3>
+                  <span className="text-caption text-muted-foreground">{section.stats}</span>
+                </div>
+              </div>
+
+              <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
+                {section.description}
+              </p>
+
+              <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                Open tool
+                <ArrowRight className="size-3.5" aria-hidden="true" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Your Analytics CTA ───────────────────────────────────────── */}
+      <section aria-labelledby="your-analytics-heading">
+        <Link
+          href="/revision/analytics"
+          className="group flex flex-col gap-4 rounded-2xl border border-border/60 bg-gradient-to-br from-cyan-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8 transition-all duration-200 hover:border-border hover:shadow-card-hover sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div className="flex items-start gap-4">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10">
+              <LineChart className="size-6 text-cyan-400" aria-hidden="true" />
+            </div>
+            <div>
+              <Badge variant="secondary" className="mb-2">
+                <Sparkles className="mr-1 size-3" aria-hidden="true" />
+                New
+              </Badge>
+              <h2
+                id="your-analytics-heading"
+                className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors"
+              >
+                Your Analytics
+              </h2>
+              <p className="mt-1 max-w-xl text-body-sm text-muted-foreground">
+                Deep-dive dashboards showing time studied, accuracy by topic, predicted grade
+                trajectory, and where to focus next.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-1 text-sm font-medium text-primary">
+            Open analytics
+            <ArrowRight
+              className="size-4 transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
+          </div>
+        </Link>
+      </section>
+
       {/* ── Recently Studied (client) ────────────────────────────────── */}
       <RecentlyStudied />
 
@@ -322,9 +494,7 @@ export default async function RevisionHubPage() {
                 <BookText className="mr-1 size-3" aria-hidden="true" />
                 Featured for {boardName}
               </Badge>
-              <h2 className="text-heading-md font-heading text-foreground">
-                {featuredText.title}
-              </h2>
+              <h2 className="text-heading-md font-heading text-foreground">{featuredText.title}</h2>
               <p className="mt-1 text-body-sm text-muted-foreground">
                 by {featuredText.author}. One of the most-studied texts on your specification.
               </p>

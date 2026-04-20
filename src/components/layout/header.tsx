@@ -5,13 +5,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useAuthStore, useAuthUserLoading, useAuthProfile } from '@/store/auth-store'
 import { Menu, LogOut, School, Sparkles, BookOpen, ChevronDown, RefreshCw } from 'lucide-react'
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { Badge } from '@/components/ui/badge'
 import {
   DropdownMenu,
@@ -27,7 +21,7 @@ import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
-import { getBoardType, getIgcseHubUrl } from '@/lib/board/board-filter'
+import { getBoardType, getIgcseHubUrl, getALevelHubUrl } from '@/lib/board/board-filter'
 import type { ExamBoard } from '@/lib/board/board-store'
 
 type NavLink = {
@@ -35,17 +29,26 @@ type NavLink = {
   label: string
 }
 
-function getNavForBoardType(type: 'ks3' | 'gcse' | 'igcse' | 'ial' | null, board: ExamBoard | null): NavLink[] {
+function getNavForBoardType(
+  type: 'ks3' | 'gcse' | 'igcse' | 'ial' | 'a-level' | null,
+  board: ExamBoard | null,
+): NavLink[] {
   // Board is set — simplified nav; deeper navigation lives in Paper Dashboard & Toolkit
   if (type) {
-    // For IGCSE boards, "My Papers" goes to the board-specific IGCSE hub
-    const papersHref = type === 'igcse'
-      ? (getIgcseHubUrl(board) ?? '/igcse')
-      : '/dashboard/papers'
+    // For IGCSE boards, "My Papers" goes to the board-specific IGCSE hub.
+    // For UK A-Level boards, route to the board-specific A-Level hub.
+    let papersHref: string
+    if (type === 'igcse') {
+      papersHref = getIgcseHubUrl(board) ?? '/igcse'
+    } else if (type === 'a-level') {
+      papersHref = getALevelHubUrl(board) ?? '/a-level'
+    } else {
+      papersHref = '/dashboard/papers'
+    }
 
     return [
       { href: papersHref, label: 'My Papers' },
-      { href: '/toolkit', label: 'Toolkit' },
+      { href: '/revision', label: 'Your Hub' },
       { href: '/games', label: 'Games' },
       { href: '/for-teachers', label: 'For Teachers' },
       { href: '/for-schools', label: 'For Schools' },
@@ -76,7 +79,7 @@ export function Header() {
 
   const visibleNavLinks = useMemo(
     () => getNavForBoardType(isBoardHydrated ? getBoardType(board) : null, board),
-    [board, isBoardHydrated]
+    [board, isBoardHydrated],
   )
 
   const boardConfig = getBoardConfig(board)
@@ -109,7 +112,9 @@ export function Header() {
     }
 
     checkSchoolMembership()
-    return () => { cancelled = true }
+    return () => {
+      cancelled = true
+    }
   }, [user])
 
   return (
@@ -145,7 +150,10 @@ export function Header() {
         </div>
 
         {/* Desktop nav */}
-        <nav aria-label="Main navigation" className="hidden min-w-0 items-center gap-1 lg:flex justify-center">
+        <nav
+          aria-label="Main navigation"
+          className="hidden min-w-0 items-center gap-1 lg:flex justify-center"
+        >
           {visibleNavLinks.map((link) => {
             const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
             return (
@@ -155,9 +163,7 @@ export function Header() {
                 aria-current={isActive ? 'page' : undefined}
                 className={cn(
                   'px-3 py-1.5 rounded-full text-sm font-sans transition-colors duration-200',
-                  isActive
-                    ? 'text-[#FBF7F0] bg-white/10'
-                    : 'text-[#B5B8B3] hover:text-[#FBF7F0]'
+                  isActive ? 'text-[#FBF7F0] bg-white/10' : 'text-[#B5B8B3] hover:text-[#FBF7F0]',
                 )}
               >
                 {link.label}
@@ -271,9 +277,16 @@ export function Header() {
                         <BookOpen className="h-4 w-4 shrink-0 text-[#B5B8B3]" aria-hidden="true" />
                         <span className="text-xs font-medium text-[#B5B8B3]">Studying</span>
                       </div>
-                      <Badge variant="secondary" className="shrink-0 bg-white/10 text-[#FBF7F0] border-0">{boardConfig.shortName}</Badge>
+                      <Badge
+                        variant="secondary"
+                        className="shrink-0 bg-white/10 text-[#FBF7F0] border-0"
+                      >
+                        {boardConfig.shortName}
+                      </Badge>
                     </div>
-                    <p className="text-sm font-semibold text-[#FBF7F0] leading-tight">{boardConfig.fullName}</p>
+                    <p className="text-sm font-semibold text-[#FBF7F0] leading-tight">
+                      {boardConfig.fullName}
+                    </p>
                     <div className="flex flex-col gap-1.5">
                       <Link
                         href="/board-select?change=1"
@@ -324,7 +337,7 @@ export function Header() {
                       'w-full rounded-lg px-3 py-2 text-sm font-sans transition-colors duration-200',
                       isActive
                         ? 'bg-white/10 text-[#FBF7F0]'
-                        : 'text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5'
+                        : 'text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5',
                     )}
                   >
                     {link.label}
@@ -420,13 +433,7 @@ export function Header() {
   )
 }
 
-function BoardSwitcher({
-  board,
-  isHydrated,
-}: {
-  board: ExamBoard | null
-  isHydrated: boolean
-}) {
+function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydrated: boolean }) {
   const router = useRouter()
   const { clearBoard } = useBoard()
 
@@ -474,18 +481,12 @@ function BoardSwitcher({
         <DropdownMenuGroup>
           <DropdownMenuLabel>Your exam board</DropdownMenuLabel>
           <div className="px-1.5 pb-1.5">
-            <p className="text-sm font-semibold text-foreground leading-tight">
-              {config.fullName}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground leading-snug">
-              {config.description}
-            </p>
+            <p className="text-sm font-semibold text-foreground leading-tight">{config.fullName}</p>
+            <p className="mt-1 text-xs text-muted-foreground leading-snug">{config.description}</p>
           </div>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem
-          render={<Link href="/board-select?change=1" />}
-        >
+        <DropdownMenuItem render={<Link href="/board-select?change=1" />}>
           Change board
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleReset} className="text-destructive focus:text-destructive">

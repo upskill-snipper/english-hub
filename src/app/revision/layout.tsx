@@ -2,21 +2,17 @@ import type { Metadata } from 'next'
 import { RevisionShell } from './_components/revision-shell'
 
 export const metadata: Metadata = {
-  title: 'Revision -- The English Hub',
+  title: 'Your Hub -- The English Hub',
   description:
-    'Revise key English topics with interactive flashcards, technique guides and spaced-repetition tools for KS3, GCSE and IGCSE exam success.',
+    'Your unified home for English revision, study tools, progress tracking, and exam technique -- personalised to your exam board for KS3, GCSE, IGCSE and IAL success.',
   alternates: { canonical: 'https://theenglishhub.app/revision' },
   openGraph: {
-    title: 'Revision -- The English Hub',
+    title: 'Your Hub -- The English Hub',
     description:
-      'Revise key English topics with interactive flashcards, technique guides and spaced-repetition tools for KS3, GCSE and IGCSE exam success.',
+      'Your unified home for English revision, study tools, progress tracking, and exam technique -- personalised to your exam board.',
   },
 }
 
-export default function RevisionLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RevisionLayout({ children }: { children: React.ReactNode }) {
   return <RevisionShell>{children}</RevisionShell>
 }

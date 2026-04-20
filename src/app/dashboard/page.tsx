@@ -288,6 +288,13 @@ export default function DashboardPage() {
 
   const quickActions = [
     {
+      label: 'Your Hub',
+      href: '/revision',
+      icon: Layers,
+      color: 'text-primary',
+      bg: 'bg-primary/10',
+    },
+    {
       label: 'Browse Courses',
       href: '/courses',
       icon: BookOpen,
@@ -307,13 +314,6 @@ export default function DashboardPage() {
       icon: Sparkles,
       color: 'text-amber-600',
       bg: 'bg-amber-500/10',
-    },
-    {
-      label: 'Revision Cards',
-      href: '/revision',
-      icon: Layers,
-      color: 'text-purple-600',
-      bg: 'bg-purple-500/10',
     },
     {
       label: 'Mock Exams',
@@ -482,6 +482,28 @@ export default function DashboardPage() {
               </AlertDescription>
             </Alert>
           )}
+
+          {/* ── Your Hub CTA ─────────────────────────────────────────── */}
+          <Link
+            href="/revision"
+            className="group mb-6 flex items-center gap-4 rounded-xl border border-primary/20 bg-gradient-to-br from-primary/[0.08] via-card to-violet-500/[0.05] p-5 transition-all hover:border-primary/40 hover:shadow-card-hover"
+          >
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/15">
+              <Layers className="h-6 w-6 text-primary" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2">
+                <h2 className="font-semibold text-foreground">Your Hub</h2>
+                <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
+                  Revision · Toolkit · Analytics
+                </Badge>
+              </div>
+              <p className="mt-0.5 text-sm text-muted-foreground">
+                Your unified home for revision, study tools, progress tracking, and exam technique.
+              </p>
+            </div>
+            <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+          </Link>
 
           {/* ── Stats Row ──────────────────────────────────────────────── */}
           <div className="mb-2 flex items-center gap-1.5">
