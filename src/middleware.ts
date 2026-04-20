@@ -1,7 +1,11 @@
 import { updateSession } from '@/lib/supabase/middleware'
 import { applyAffiliateTracking } from '@/middleware-affiliate'
 import { NextResponse, type NextRequest } from 'next/server'
-import crypto from 'crypto'
+import { computeJsonLdHashes, extractAnalysisSlugKey } from '@/lib/seo/json-ld-hashes'
+// Note: the previous `import crypto from 'crypto'` worked on Vercel but
+// trips an edge-runtime warning in dev. We use the Web Crypto API
+// (`globalThis.crypto.randomUUID()` / `crypto.subtle.digest`) instead —
+// available in both Node 20+ and the Vercel edge runtime.
 
 const BOARD_COOKIE = 'english-hub-board'
 
@@ -157,13 +161,22 @@ const ALLOWED_ORIGINS = new Set([
 // 'strict-dynamic' permits scripts that are loaded by nonced scripts to
 // themselves run without explicit host allow-listing — this is how Next's
 // bundled _next/*.js files get through.
-function buildCsp(nonce: string): string {
+//
+// `extraScriptHashes` lets callers append content-addressed `'sha256-...'`
+// sources for scripts that can't carry a per-request nonce. The canonical
+// use case is `/analysis/[...slug]` — that route is `force-static` + 24 h
+// ISR, so `headers()` (and hence the nonce) is unavailable at render time.
+// Instead the middleware computes the SHA-256 of each JSON-LD body and
+// adds the hash here so modern browsers (which ignore `'unsafe-inline'`
+// when `'strict-dynamic'` is present) still execute them.
+function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
+  const extraSrc = extraScriptHashes.length ? ' ' + extraScriptHashes.join(' ') : ''
   return [
     `default-src 'self'`,
     // 'unsafe-inline' is a FALLBACK for browsers that don't understand
     // nonce/strict-dynamic (old iOS Safari etc.); modern browsers ignore
     // it when 'nonce-...' or 'strict-dynamic' is present.
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline' https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com`,
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com`,
     `style-src 'self' 'unsafe-inline'`, // Tailwind JIT inlines styles; acceptable.
     `img-src 'self' data: https:`,
     `font-src 'self' data:`,
@@ -178,7 +191,9 @@ function buildCsp(nonce: string): string {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
+  // Web Crypto `randomUUID()` + `btoa` — edge-runtime safe, avoids the
+  // node:crypto / Buffer imports which the edge runtime flags.
+  const nonce = btoa(globalThis.crypto.randomUUID())
 
   // ── CSRF: Origin header validation for API mutations ─────────────
   if (pathname.startsWith('/api/') && request.method !== 'GET' && request.method !== 'HEAD') {
@@ -238,10 +253,28 @@ export async function middleware(request: NextRequest) {
   // Preserve existing behaviour: supabase auth session refresh + affiliate tracking
   const response = await updateSession(request)
 
+  // For the `/analysis/[category]/[slug]` catch-all route we can't use the
+  // nonce (the page is `force-static`), so we append content hashes of the
+  // three JSON-LD scripts to the CSP instead. The helper memoises after the
+  // first hit per slug, so the crypto work runs at most 2–3 SHA-256 digests
+  // per cold slug and zero on warm paths.
+  let scriptHashes: string[] = []
+  const analysisSlug = extractAnalysisSlugKey(pathname)
+  if (analysisSlug) {
+    try {
+      scriptHashes = await computeJsonLdHashes(analysisSlug)
+    } catch {
+      // Hash compute should never throw for a registered slug, but if it
+      // does we degrade gracefully: the `'unsafe-inline'` fallback still
+      // carries old browsers, and we'd rather serve the page than 500.
+      scriptHashes = []
+    }
+  }
+
   // Attach the per-request nonce + CSP to the response. Setting CSP here
   // lets us emit a fresh nonce per request; next.config.js only supports
   // static headers.
-  response.headers.set('Content-Security-Policy', buildCsp(nonce))
+  response.headers.set('Content-Security-Policy', buildCsp(nonce, scriptHashes))
   response.headers.set('x-nonce', nonce)
 
   // Annotate the response with affiliate tracking cookie if ?ref=… is present.

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ANALYSIS_PAGE_MAP, ANALYSIS_PAGES, type AnalysisPageEntry } from '@/data/analysis'
 import { getCategoryContext } from '@/data/analysis/category-context'
+import { buildAnalysisJsonLdPayloads } from '@/lib/seo/json-ld-hashes'
 
 // ---------------------------------------------------------------------------
 // ISR: pages are generated on first request and cached for 24 hours.
@@ -75,7 +76,7 @@ function cleanTitle(title: string): string {
 
 function relatedEntries(category: string, currentKey: string): AnalysisPageEntry[] {
   return ANALYSIS_PAGES.filter(
-    (e) => e.category === category && e.slug.join('/') !== currentKey
+    (e) => e.category === category && e.slug.join('/') !== currentKey,
   ).slice(0, 6)
 }
 
@@ -105,56 +106,12 @@ export default function AnalysisPage({ params }: Props) {
   const pageSlug = entry.slug[1]
   const pageTopic = capitalise(pageSlug)
 
-  const canonical = `https://theenglishhub.app/analysis/${key}`
-
   // ---- Structured data ---------------------------------------------------
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: pageTitle,
-    author: {
-      '@type': 'Organization',
-      name: 'The English Hub — GCSE Markers',
-      url: 'https://theenglishhub.app',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'The English Hub',
-      url: 'https://theenglishhub.app',
-    },
-    description: entry.description,
-    mainEntityOfPage: canonical,
-    about: ctx?.label ?? categoryLabel,
-    educationalLevel: 'GCSE',
-    inLanguage: 'en-GB',
-  }
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Analysis', item: 'https://theenglishhub.app/analysis' },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: categoryLabel,
-        item: `https://theenglishhub.app/analysis/${category}`,
-      },
-      { '@type': 'ListItem', position: 3, name: pageTitle, item: canonical },
-    ],
-  }
-
-  const faqJsonLd = ctx?.faqs?.length
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: ctx.faqs.map((f) => ({
-          '@type': 'Question',
-          name: f.question,
-          acceptedAnswer: { '@type': 'Answer', text: f.answer },
-        })),
-      }
-    : null
+  // Constructed via the shared builder so the CSP hash helper in
+  // src/lib/seo/json-ld-hashes.ts hashes the exact same bytes that render
+  // here. Any divergence would break the `'sha256-...'` CSP match for
+  // modern browsers that ignore `'unsafe-inline'` under `'strict-dynamic'`.
+  const { articleJsonLd, breadcrumbJsonLd, faqJsonLd } = buildAnalysisJsonLdPayloads(entry, ctx)
 
   // ---- Render ------------------------------------------------------------
   return (
@@ -188,12 +145,9 @@ export default function AnalysisPage({ params }: Props) {
       </nav>
 
       {/* Title */}
-      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        {pageTitle}
-      </h1>
+      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{pageTitle}</h1>
       <p className="mt-3 text-sm text-muted-foreground">
-        Written by GCSE markers &middot; Covers{' '}
-        {ctx?.boards?.join(', ') ?? 'all UK exam boards'}
+        Written by GCSE markers &middot; Covers {ctx?.boards?.join(', ') ?? 'all UK exam boards'}
       </p>
 
       <article className="mt-10 space-y-10 text-muted-foreground leading-relaxed">
@@ -215,9 +169,7 @@ export default function AnalysisPage({ params }: Props) {
         {/* About the text / anthology */}
         {ctx?.about?.length && (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">
-              About {ctx.label}
-            </h2>
+            <h2 className="text-xl font-semibold text-foreground">About {ctx.label}</h2>
             <div className="mt-4 space-y-4">
               {ctx.about.map((para, i) => (
                 <p key={i}>{para}</p>
@@ -229,9 +181,7 @@ export default function AnalysisPage({ params }: Props) {
         {/* Assessment context */}
         {ctx?.assessmentContext?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">
-              How this is assessed
-            </h2>
+            <h2 className="text-xl font-semibold text-foreground">How this is assessed</h2>
             <div className="mt-4 space-y-6">
               {ctx.assessmentContext.map((ac, i) => (
                 <div key={i} className="rounded-lg border border-border p-5">
@@ -260,15 +210,10 @@ export default function AnalysisPage({ params }: Props) {
         {/* Key quotes */}
         {ctx?.keyQuotes?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">
-              Key quotes and analysis
-            </h2>
+            <h2 className="text-xl font-semibold text-foreground">Key quotes and analysis</h2>
             <div className="mt-4 space-y-5">
               {ctx.keyQuotes.map((q, i) => (
-                <blockquote
-                  key={i}
-                  className="border-l-2 border-primary/50 pl-4"
-                >
+                <blockquote key={i} className="border-l-2 border-primary/50 pl-4">
                   <p className="font-medium text-foreground">{q.quote}</p>
                   <p className="mt-1 text-sm italic">{q.source}</p>
                   <p className="mt-2 text-sm">{q.analysis}</p>
@@ -281,9 +226,7 @@ export default function AnalysisPage({ params }: Props) {
         {/* Exam tips */}
         {ctx?.examTips?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">
-              Exam tips for {ctx.label}
-            </h2>
+            <h2 className="text-xl font-semibold text-foreground">Exam tips for {ctx.label}</h2>
             <ol className="mt-4 list-decimal space-y-2 pl-6">
               {ctx.examTips.map((tip, i) => (
                 <li key={i}>{tip}</li>
@@ -295,9 +238,7 @@ export default function AnalysisPage({ params }: Props) {
         {/* Grade 9 indicators */}
         {ctx?.grade9Indicators?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">
-              What makes a Grade 9 answer
-            </h2>
+            <h2 className="text-xl font-semibold text-foreground">What makes a Grade 9 answer</h2>
             <ul className="mt-4 list-disc space-y-2 pl-6">
               {ctx.grade9Indicators.map((g, i) => (
                 <li key={i}>{g}</li>
@@ -308,9 +249,7 @@ export default function AnalysisPage({ params }: Props) {
 
         {/* Topic-specific section — generated from slug */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">
-            Applying this to {pageTopic}
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground">Applying this to {pageTopic}</h2>
           <p className="mt-4">
             {entry.description} Use the context, quotes, and exam tips above to structure your
             answer on {pageTopic.toLowerCase()}. A Grade 9 response will connect at least two of the
@@ -321,8 +260,8 @@ export default function AnalysisPage({ params }: Props) {
             <strong className="text-foreground">
               Want the board-specific marking for this topic?
             </strong>{' '}
-            Write your own practice paragraph and upload it to our AI marker — it applies your
-            exam board&rsquo;s specific AO weighting and returns feedback in the lexis of that
+            Write your own practice paragraph and upload it to our AI marker — it applies your exam
+            board&rsquo;s specific AO weighting and returns feedback in the lexis of that
             board&rsquo;s mark scheme.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -344,9 +283,7 @@ export default function AnalysisPage({ params }: Props) {
         {/* FAQs */}
         {ctx?.faqs?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">
-              Frequently asked questions
-            </h2>
+            <h2 className="text-xl font-semibold text-foreground">Frequently asked questions</h2>
             <div className="mt-4 space-y-4">
               {ctx.faqs.map((f, i) => (
                 <div key={i}>
@@ -371,9 +308,7 @@ export default function AnalysisPage({ params }: Props) {
                     href={`/analysis/${r.slug.join('/')}`}
                     className="block rounded-md border border-border p-4 hover:bg-muted"
                   >
-                    <p className="font-medium text-foreground">
-                      {cleanTitle(r.title)}
-                    </p>
+                    <p className="font-medium text-foreground">{cleanTitle(r.title)}</p>
                     <p className="mt-1 text-sm">{r.description}</p>
                   </Link>
                 </li>
@@ -384,10 +319,7 @@ export default function AnalysisPage({ params }: Props) {
 
         {/* Hub link */}
         <section className="border-t border-border pt-8">
-          <Link
-            href={`/analysis/${category}`}
-            className="text-sm underline hover:no-underline"
-          >
+          <Link href={`/analysis/${category}`} className="text-sm underline hover:no-underline">
             &larr; Back to all {categoryLabel} analysis
           </Link>
         </section>
