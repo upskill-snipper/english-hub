@@ -35,7 +35,14 @@ import { cn, formatDate } from '@/lib/utils'
 import { percentageToGCSEGradeLabel } from '@/lib/grades'
 import type { Enrolment, ModuleProgress, Certificate, CourseData } from '@/lib/types'
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -142,7 +149,7 @@ export default function DashboardPage() {
 
   const courseMap = useMemo(
     () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
-    [allCourses]
+    [allCourses],
   )
 
   // Load course data dynamically
@@ -175,18 +182,9 @@ export default function DashboardPage() {
         const userId = user!.id
 
         const [enrolRes, progressRes, certRes, activityRes, schoolMemberRes] = await Promise.all([
-          supabase
-            .from('enrolments')
-            .select('*')
-            .eq('user_id', userId),
-          supabase
-            .from('module_progress')
-            .select('*')
-            .eq('user_id', userId),
-          supabase
-            .from('certificates')
-            .select('*')
-            .eq('user_id', userId),
+          supabase.from('enrolments').select('*').eq('user_id', userId),
+          supabase.from('module_progress').select('*').eq('user_id', userId),
+          supabase.from('certificates').select('*').eq('user_id', userId),
           supabase
             .from('module_progress')
             .select('*')
@@ -213,7 +211,10 @@ export default function DashboardPage() {
         if (activityRes.data) setRecentActivity(activityRes.data)
 
         if (schoolMemberRes.data) {
-          const data = schoolMemberRes.data as unknown as { role: string; schools: { name: string } | null }
+          const data = schoolMemberRes.data as unknown as {
+            role: string
+            schools: { name: string } | null
+          }
           const schoolName = data.schools?.name ?? null
           if (schoolName) {
             setSchoolInfo({ name: schoolName, role: schoolMemberRes.data.role })
@@ -234,44 +235,46 @@ export default function DashboardPage() {
 
   const completedModulesCount = useMemo(
     () => moduleProgress.filter((mp) => mp.completed).length,
-    [moduleProgress]
+    [moduleProgress],
   )
 
   const enrolledCourses = useMemo(() => {
-    return enrolments.map((e) => {
-      const course = courseMap.get(e.course_id)
-      if (!course) return null
+    return enrolments
+      .map((e) => {
+        const course = courseMap.get(e.course_id)
+        if (!course) return null
 
-      const totalModules = course.moduleList.length
-      const completedModules = moduleProgress.filter(
-        (mp) => mp.course_id === e.course_id && mp.completed
-      ).length
+        const totalModules = course.moduleList.length
+        const completedModules = moduleProgress.filter(
+          (mp) => mp.course_id === e.course_id && mp.completed,
+        ).length
 
-      const completedModuleIds = new Set(
-        moduleProgress
-          .filter((mp) => mp.course_id === e.course_id && mp.completed)
-          .map((mp) => mp.module_id)
-      )
+        const completedModuleIds = new Set(
+          moduleProgress
+            .filter((mp) => mp.course_id === e.course_id && mp.completed)
+            .map((mp) => mp.module_id),
+        )
 
-      const nextModule = course.moduleList.find(
-        (m) => !completedModuleIds.has(m.id)
-      )
+        const nextModule = course.moduleList.find((m) => !completedModuleIds.has(m.id))
 
-      return {
-        ...e,
-        course,
-        totalModules,
-        completedModules,
-        progress: totalModules > 0 ? (completedModules / totalModules) * 100 : 0,
-        nextModule,
-      }
-    }).filter(Boolean) as Array<{
-      course: CourseData
-      totalModules: number
-      completedModules: number
-      progress: number
-      nextModule: CourseData['moduleList'][number] | undefined
-    } & Enrolment>
+        return {
+          ...e,
+          course,
+          totalModules,
+          completedModules,
+          progress: totalModules > 0 ? (completedModules / totalModules) * 100 : 0,
+          nextModule,
+        }
+      })
+      .filter(Boolean) as Array<
+      {
+        course: CourseData
+        totalModules: number
+        completedModules: number
+        progress: number
+        nextModule: CourseData['moduleList'][number] | undefined
+      } & Enrolment
+    >
   }, [enrolments, moduleProgress])
 
   const firstName = profile?.full_name?.split(' ')[0] ?? 'Student'
@@ -283,18 +286,81 @@ export default function DashboardPage() {
   // ── Quick Actions ───────────────────────────────────────────────────────
 
   const quickActions = [
-    { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-primary', bg: 'bg-primary/10' },
-    { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-600', bg: 'bg-blue-500/10' },
-    { label: 'Essay Feedback', href: '/dashboard/essay-feedback', icon: Sparkles, color: 'text-amber-600', bg: 'bg-amber-500/10' },
-    { label: 'Revision Cards', href: '/revision', icon: Layers, color: 'text-purple-600', bg: 'bg-purple-500/10' },
-    { label: 'Mock Exams', href: '/dashboard/mock-exam', icon: Timer, color: 'text-red-600', bg: 'bg-red-500/10' },
-    { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-600', bg: 'bg-green-500/10' },
-    { label: 'Reading Assessment', href: '/assessment/reading', icon: BookOpen, color: 'text-teal-700', bg: 'bg-emerald-500/10' },
-    { label: 'Analytics', href: '/dashboard/analytics', icon: BarChart3, color: 'text-cyan-600', bg: 'bg-cyan-500/10' },
+    {
+      label: 'Browse Courses',
+      href: '/courses',
+      icon: BookOpen,
+      color: 'text-primary',
+      bg: 'bg-primary/10',
+    },
+    {
+      label: 'Practice Questions',
+      href: '/practice',
+      icon: FileText,
+      color: 'text-blue-600',
+      bg: 'bg-blue-500/10',
+    },
+    {
+      label: 'Essay Feedback',
+      href: '/dashboard/essay-feedback',
+      icon: Sparkles,
+      color: 'text-amber-600',
+      bg: 'bg-amber-500/10',
+    },
+    {
+      label: 'Revision Cards',
+      href: '/revision',
+      icon: Layers,
+      color: 'text-purple-600',
+      bg: 'bg-purple-500/10',
+    },
+    {
+      label: 'Mock Exams',
+      href: '/dashboard/mock-exam',
+      icon: Timer,
+      color: 'text-red-600',
+      bg: 'bg-red-500/10',
+    },
+    {
+      label: 'Grade Dashboard',
+      href: '/dashboard/grades',
+      icon: TrendingUp,
+      color: 'text-green-600',
+      bg: 'bg-green-500/10',
+    },
+    {
+      label: 'Reading Assessment',
+      href: '/assessment/reading',
+      icon: BookOpen,
+      color: 'text-teal-700',
+      bg: 'bg-emerald-500/10',
+    },
+    {
+      label: 'Analytics',
+      href: '/dashboard/analytics',
+      icon: BarChart3,
+      color: 'text-cyan-600',
+      bg: 'bg-cyan-500/10',
+    },
     ...(schoolInfo
-      ? [{ label: 'School Dashboard', href: '/school', icon: School, color: 'text-indigo-600', bg: 'bg-indigo-500/10' }]
-      : [{ label: 'Join School', href: '/school/join', icon: UserPlus, color: 'text-indigo-600', bg: 'bg-indigo-500/10' }]
-    ),
+      ? [
+          {
+            label: 'School Dashboard',
+            href: '/school',
+            icon: School,
+            color: 'text-indigo-600',
+            bg: 'bg-indigo-500/10',
+          },
+        ]
+      : [
+          {
+            label: 'Join School',
+            href: '/school/join',
+            icon: UserPlus,
+            color: 'text-indigo-600',
+            bg: 'bg-indigo-500/10',
+          },
+        ]),
   ]
 
   // ── Initials for Avatar ─────────────────────────────────────────────────
@@ -326,7 +392,6 @@ export default function DashboardPage() {
     <TooltipProvider>
       <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-
           {/* ── Greeting Header ─────────────────────────────────────────── */}
           <div className="mb-6 flex items-center gap-4 animate-fade-in">
             <Avatar size="lg">
@@ -361,8 +426,9 @@ export default function DashboardPage() {
               <Gift className="h-4 w-4 text-primary" />
               <AlertTitle className="text-foreground">Welcome to English Hub!</AlertTitle>
               <AlertDescription className="text-muted-foreground">
-                You have 3 free uses of every premium feature. Try AI marking, lesson plans, and more.
-                Upgrade when you&apos;re ready — first month free.
+                You have 3 free uses of every premium feature. Try AI marking, lesson plans, and
+                more. When you&apos;re ready, start a 7-day free trial — card required, cancel
+                before day 7.
               </AlertDescription>
               <button
                 onClick={() => setShowWelcome(false)}
@@ -459,12 +525,18 @@ export default function DashboardPage() {
                 />
                 <StatCard
                   icon={
-                    profile?.subscription_status === 'pro'
-                      ? <Crown className="h-5 w-5" />
-                      : <Sparkles className="h-5 w-5" />
+                    profile?.subscription_status === 'pro' ? (
+                      <Crown className="h-5 w-5" />
+                    ) : (
+                      <Sparkles className="h-5 w-5" />
+                    )
                   }
                   iconBg={profile?.subscription_status === 'pro' ? 'bg-yellow-500/10' : 'bg-muted'}
-                  iconColor={profile?.subscription_status === 'pro' ? 'text-yellow-600' : 'text-muted-foreground'}
+                  iconColor={
+                    profile?.subscription_status === 'pro'
+                      ? 'text-yellow-600'
+                      : 'text-muted-foreground'
+                  }
                   label="Plan"
                   value={<SubscriptionBadge status={profile?.subscription_status ?? 'free'} />}
                   sub="current plan"
@@ -482,7 +554,9 @@ export default function DashboardPage() {
                 href={action.href}
                 className="group flex items-center gap-2 shrink-0 rounded-lg bg-card border border-border px-3 py-2 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:shadow-card-hover"
               >
-                <span className={cn('flex h-6 w-6 items-center justify-center rounded-md', action.bg)}>
+                <span
+                  className={cn('flex h-6 w-6 items-center justify-center rounded-md', action.bg)}
+                >
                   <action.icon className={cn('h-3.5 w-3.5', action.color)} />
                 </span>
                 {action.label}
@@ -498,16 +572,26 @@ export default function DashboardPage() {
             <Tabs defaultValue="continue">
               <div className="mb-3 flex items-center justify-between">
                 <TabsList className="bg-transparent gap-1.5 p-0">
-                  <TabsTrigger value="continue" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">
+                  <TabsTrigger
+                    value="continue"
+                    className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+                  >
                     Continue Learning
                     {activeCourses.length > 0 && (
-                      <Badge variant="secondary" className="ml-1.5">{activeCourses.length}</Badge>
+                      <Badge variant="secondary" className="ml-1.5">
+                        {activeCourses.length}
+                      </Badge>
                     )}
                   </TabsTrigger>
-                  <TabsTrigger value="completed" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">
+                  <TabsTrigger
+                    value="completed"
+                    className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+                  >
                     Completed
                     {completedCourses.length > 0 && (
-                      <Badge variant="secondary" className="ml-1.5">{completedCourses.length}</Badge>
+                      <Badge variant="secondary" className="ml-1.5">
+                        {completedCourses.length}
+                      </Badge>
                     )}
                   </TabsTrigger>
                 </TabsList>
@@ -571,7 +655,6 @@ export default function DashboardPage() {
 
           {/* ── Two-column: Activity + Certificates ──────────────────────── */}
           <div className="grid gap-4 lg:grid-cols-2">
-
             {/* Recent Activity */}
             <Card>
               <CardHeader>
@@ -591,16 +674,16 @@ export default function DashboardPage() {
                 ) : recentActivity.length === 0 ? (
                   <div className="py-8 text-center text-muted-foreground">
                     <Clock className="mx-auto mb-2 h-8 w-8 opacity-50" />
-                    <p className="text-sm">No activity yet. Start a course to track your progress.</p>
+                    <p className="text-sm">
+                      No activity yet. Start a course to track your progress.
+                    </p>
                   </div>
                 ) : (
                   <ScrollArea className="max-h-80">
                     <div className="space-y-0">
                       {recentActivity.map((activity, index) => {
                         const course = courseMap.get(activity.course_id)
-                        const mod = course?.moduleList.find(
-                          (m) => m.id === activity.module_id
-                        )
+                        const mod = course?.moduleList.find((m) => m.id === activity.module_id)
                         return (
                           <div key={activity.id}>
                             <div className="flex items-center gap-3 py-3">
@@ -763,11 +846,7 @@ function StatCard({
   )
 }
 
-function SubscriptionBadge({
-  status,
-}: {
-  status: string
-}) {
+function SubscriptionBadge({ status }: { status: string }) {
   const variantMap: Record<string, 'default' | 'secondary' | 'destructive' | 'outline'> = {
     free: 'secondary',
     pro: 'default',
@@ -791,9 +870,7 @@ function SubscriptionBadge({
   return (
     <Badge
       variant={variantMap[status] ?? 'secondary'}
-      className={cn(
-        status === 'pro' && 'bg-yellow-500/10 text-yellow-600 border-yellow-500/30',
-      )}
+      className={cn(status === 'pro' && 'bg-yellow-500/10 text-yellow-600 border-yellow-500/30')}
     >
       {status === 'pro' && <Crown className="mr-1 h-3.5 w-3.5" />}
       {labels[status] ?? 'Free'}
@@ -819,10 +896,7 @@ function GradeBadge({ grade }: { grade: string }) {
   }
 
   return (
-    <Badge
-      variant={getVariant()}
-      className={getColor()}
-    >
+    <Badge variant={getVariant()} className={getColor()}>
       {grade}
     </Badge>
   )

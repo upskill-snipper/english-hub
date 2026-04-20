@@ -32,7 +32,14 @@ import {
 } from '@/data/mock-exams'
 import { useBoard, getBoardConfig, type ExamBoard } from '@/hooks/useBoard'
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+} from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
@@ -191,10 +198,30 @@ const EXAM_CARDS: ExamCardData[] = [
     paperId: 'aqa-lang-p1',
     questions: [
       { number: 1, label: 'List 4 things', marks: 4, type: 'Retrieval' },
-      { number: 2, label: 'Language analysis (how does the writer use language...)', marks: 8, type: 'Language Analysis' },
-      { number: 3, label: 'Structure analysis (how does the writer structure...)', marks: 8, type: 'Structure' },
-      { number: 4, label: 'Evaluation (to what extent do you agree...)', marks: 20, type: 'Evaluation' },
-      { number: 5, label: 'Creative writing (description or narrative)', marks: 40, type: 'Creative Writing' },
+      {
+        number: 2,
+        label: 'Language analysis (how does the writer use language...)',
+        marks: 8,
+        type: 'Language Analysis',
+      },
+      {
+        number: 3,
+        label: 'Structure analysis (how does the writer structure...)',
+        marks: 8,
+        type: 'Structure',
+      },
+      {
+        number: 4,
+        label: 'Evaluation (to what extent do you agree...)',
+        marks: 20,
+        type: 'Evaluation',
+      },
+      {
+        number: 5,
+        label: 'Creative writing (description or narrative)',
+        marks: 40,
+        type: 'Creative Writing',
+      },
     ],
     gradeBoundaries: AQA_LANG_P1_BOUNDARIES,
     pastGrade: null,
@@ -214,9 +241,24 @@ const EXAM_CARDS: ExamCardData[] = [
     questions: [
       { number: 1, label: 'True or false statements', marks: 4, type: 'Retrieval' },
       { number: 2, label: 'Summary of differences/similarities', marks: 8, type: 'Summary' },
-      { number: 3, label: 'Language analysis (how does the writer use language...)', marks: 12, type: 'Language Analysis' },
-      { number: 4, label: 'Comparison of viewpoints and perspectives', marks: 16, type: 'Comparison' },
-      { number: 5, label: 'Transactional writing (letter, article, speech, leaflet)', marks: 40, type: 'Transactional Writing' },
+      {
+        number: 3,
+        label: 'Language analysis (how does the writer use language...)',
+        marks: 12,
+        type: 'Language Analysis',
+      },
+      {
+        number: 4,
+        label: 'Comparison of viewpoints and perspectives',
+        marks: 16,
+        type: 'Comparison',
+      },
+      {
+        number: 5,
+        label: 'Transactional writing (letter, article, speech, leaflet)',
+        marks: 40,
+        type: 'Transactional Writing',
+      },
     ],
     gradeBoundaries: AQA_LANG_P2_BOUNDARIES,
     pastGrade: null,
@@ -234,8 +276,18 @@ const EXAM_CARDS: ExamCardData[] = [
     difficulty: 'Higher',
     paperId: 'aqa-lit-p1',
     questions: [
-      { number: 1, label: 'Shakespeare play (extract-based essay + wider play)', marks: 34, type: 'Extract + Essay' },
-      { number: 2, label: '19th-century novel (extract-based essay + wider text)', marks: 30, type: 'Extract + Essay' },
+      {
+        number: 1,
+        label: 'Shakespeare play (extract-based essay + wider play)',
+        marks: 34,
+        type: 'Extract + Essay',
+      },
+      {
+        number: 2,
+        label: '19th-century novel (extract-based essay + wider text)',
+        marks: 30,
+        type: 'Extract + Essay',
+      },
     ],
     gradeBoundaries: AQA_LIT_P1_BOUNDARIES,
     pastGrade: null,
@@ -254,8 +306,18 @@ const EXAM_CARDS: ExamCardData[] = [
     paperId: 'aqa-lit-p2',
     questions: [
       { number: 1, label: 'Modern text (essay on theme or character)', marks: 34, type: 'Essay' },
-      { number: 2, label: 'Poetry anthology (comparison of two poems)', marks: 30, type: 'Comparison' },
-      { number: 3, label: 'Unseen poetry (analysis + comparison)', marks: 32, type: 'Analysis + Comparison' },
+      {
+        number: 2,
+        label: 'Poetry anthology (comparison of two poems)',
+        marks: 30,
+        type: 'Comparison',
+      },
+      {
+        number: 3,
+        label: 'Unseen poetry (analysis + comparison)',
+        marks: 32,
+        type: 'Analysis + Comparison',
+      },
     ],
     gradeBoundaries: AQA_LIT_P2_BOUNDARIES,
     pastGrade: null,
@@ -291,7 +353,13 @@ function getGradeBg(grade: number) {
 
 // ─── Grade Boundaries Component ──────────────────────────────────────────────
 
-function GradeBoundariesTable({ boundaries, totalMarks }: { boundaries: GradeBoundary[]; totalMarks: number }) {
+function GradeBoundariesTable({
+  boundaries,
+  totalMarks,
+}: {
+  boundaries: GradeBoundary[]
+  totalMarks: number
+}) {
   return (
     <div className="grid grid-cols-9 gap-1">
       {boundaries.map(({ grade, minMarks }) => (
@@ -303,11 +371,13 @@ function GradeBoundariesTable({ boundaries, totalMarks }: { boundaries: GradeBou
               ? 'bg-teal-50 border-teal-200'
               : grade >= 5
                 ? 'bg-amber-50 border-amber-200'
-                : 'bg-muted border-border'
+                : 'bg-muted border-border',
           )}
         >
           <div className={cn('text-sm font-bold', getGradeColor(grade))}>{grade}</div>
-          <div className="text-[10px] text-muted-foreground mt-0.5">{minMarks}/{totalMarks}</div>
+          <div className="text-[10px] text-muted-foreground mt-0.5">
+            {minMarks}/{totalMarks}
+          </div>
         </div>
       ))}
     </div>
@@ -325,7 +395,9 @@ function QuestionBreakdown({ questions }: { questions: QuestionSummary[] }) {
             {q.number}
           </span>
           <span className="text-foreground/80 flex-1 min-w-0">{q.label}</span>
-          <Badge variant="outline" className="text-xs shrink-0">{q.marks} marks</Badge>
+          <Badge variant="outline" className="text-xs shrink-0">
+            {q.marks} marks
+          </Badge>
         </div>
       ))}
     </div>
@@ -350,7 +422,13 @@ function PastPerformance({ grade }: { grade: number | null | undefined }) {
         <TrendingUp className="h-4 w-4" />
         <span>Best grade:</span>
       </div>
-      <div className={cn('flex items-center justify-center h-8 w-8 rounded-lg border font-bold text-sm', getGradeBg(grade), getGradeColor(grade))}>
+      <div
+        className={cn(
+          'flex items-center justify-center h-8 w-8 rounded-lg border font-bold text-sm',
+          getGradeBg(grade),
+          getGradeColor(grade),
+        )}
+      >
         {grade}
       </div>
     </div>
@@ -367,7 +445,14 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:border-border">
       {/* Header gradient strip */}
-      <div className={cn('h-1.5', isLanguage ? 'bg-gradient-to-r from-blue-500 to-cyan-500' : 'bg-gradient-to-r from-teal-800 to-clay-500')} />
+      <div
+        className={cn(
+          'h-1.5',
+          isLanguage
+            ? 'bg-gradient-to-r from-blue-500 to-cyan-500'
+            : 'bg-gradient-to-r from-teal-800 to-clay-500',
+        )}
+      />
 
       <CardHeader className="pb-0">
         <div className="flex items-start justify-between gap-3">
@@ -377,15 +462,28 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
               <Badge className={cn(getDifficultyBadge(exam.difficulty), 'text-xs border')}>
                 {exam.difficulty}
               </Badge>
-              <Badge variant="outline" className={cn('text-xs', isLanguage ? 'border-cyan-600/30 text-cyan-700' : 'border-pink-600/30 text-pink-700')}>
+              <Badge
+                variant="outline"
+                className={cn(
+                  'text-xs',
+                  isLanguage
+                    ? 'border-cyan-600/30 text-cyan-700'
+                    : 'border-pink-600/30 text-pink-700',
+                )}
+              >
                 {isLanguage ? 'Language' : 'Literature'}
               </Badge>
             </div>
-            <CardTitle className="text-lg">
-              {exam.paperName}
-            </CardTitle>
+            <CardTitle className="text-lg">{exam.paperName}</CardTitle>
             <CardDescription className="mt-1">
-              Explorations in {isLanguage ? (exam.paperNumber === 1 ? 'Creative Reading and Writing' : "Writers' Viewpoints and Perspectives") : (exam.paperNumber === 1 ? 'Shakespeare and the 19th-Century Novel' : 'Modern Texts and Poetry')}
+              Explorations in{' '}
+              {isLanguage
+                ? exam.paperNumber === 1
+                  ? 'Creative Reading and Writing'
+                  : "Writers' Viewpoints and Perspectives"
+                : exam.paperNumber === 1
+                  ? 'Shakespeare and the 19th-Century Novel'
+                  : 'Modern Texts and Poetry'}
             </CardDescription>
           </div>
         </div>
@@ -419,7 +517,9 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
             <Layers className="h-4 w-4 text-muted-foreground shrink-0" />
             <div>
               <p className="text-xs text-muted-foreground">Sections</p>
-              <p className="text-sm font-semibold text-foreground">{isLanguage ? '2 (Reading + Writing)' : exam.questionCount}</p>
+              <p className="text-sm font-semibold text-foreground">
+                {isLanguage ? '2 (Reading + Writing)' : exam.questionCount}
+              </p>
             </div>
           </div>
         </div>
@@ -457,7 +557,10 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
                 <BarChart3 className="h-4 w-4 text-primary" />
                 Grade Boundaries ({exam.examBoard})
               </h4>
-              <GradeBoundariesTable boundaries={exam.gradeBoundaries} totalMarks={exam.totalMarks} />
+              <GradeBoundariesTable
+                boundaries={exam.gradeBoundaries}
+                totalMarks={exam.totalMarks}
+              />
               <p className="text-xs text-muted-foreground mt-2 flex items-center gap-1">
                 <Info className="h-3 w-3" />
                 Based on recent {exam.examBoard} grade boundaries. Boundaries vary each year.
@@ -469,7 +572,8 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
 
       <CardFooter className="flex items-center justify-between gap-3 flex-wrap">
         <p className="text-xs text-muted-foreground">
-          {exam.examBoard} GCSE English {exam.paperType === 'language' ? 'Language' : 'Literature'} &middot; Paper {exam.paperNumber}
+          {exam.examBoard} GCSE English {exam.paperType === 'language' ? 'Language' : 'Literature'}{' '}
+          &middot; Paper {exam.paperNumber}
         </p>
         <Button size="default" render={<Link href={`/mock-exams/${exam.paperId}`} />}>
           <Play className="h-4 w-4 mr-1.5" />
@@ -487,32 +591,38 @@ function HowMockExamsWork() {
     {
       icon: Target,
       title: 'Simulate real exam conditions',
-      description: 'Each mock mirrors the exact format, timing, and mark allocation of the real GCSE exam. You will face the same question types and time pressure.',
+      description:
+        'Each mock mirrors the exact format, timing, and mark allocation of the real GCSE exam. You will face the same question types and time pressure.',
     },
     {
       icon: Clock,
       title: 'Build time management skills',
-      description: 'Learn to allocate your time effectively across sections. Language Paper 1 gives you 1 hour 45 minutes for 5 questions -- knowing when to move on is crucial.',
+      description:
+        'Learn to allocate your time effectively across sections. Language Paper 1 gives you 1 hour 45 minutes for 5 questions -- knowing when to move on is crucial.',
     },
     {
       icon: BarChart3,
       title: 'Track your progress in grades 1--9',
-      description: 'After each attempt, see your estimated GCSE grade based on real exam board grade boundaries. Watch your grade improve with each attempt.',
+      description:
+        'After each attempt, see your estimated GCSE grade based on real exam board grade boundaries. Watch your grade improve with each attempt.',
     },
     {
       icon: BookOpen,
       title: 'Learn from model answers',
-      description: 'Every question includes model answers at Grade 4-5, Grade 6-7, and Grade 8-9 so you can see exactly what markers are looking for at each level.',
+      description:
+        'Every question includes model answers at Grade 4-5, Grade 6-7, and Grade 8-9 so you can see exactly what markers are looking for at each level.',
     },
     {
       icon: CheckCircle2,
       title: 'Identify your weak areas',
-      description: 'Detailed mark breakdowns show whether you need to improve your reading analysis, creative writing, or essay technique.',
+      description:
+        'Detailed mark breakdowns show whether you need to improve your reading analysis, creative writing, or essay technique.',
     },
     {
       icon: Sparkles,
       title: 'Get AI-powered feedback',
-      description: 'Submit your written responses for instant AI feedback that grades your work and provides specific, actionable improvements.',
+      description:
+        'Submit your written responses for instant AI feedback that grades your work and provides specific, actionable improvements.',
     },
   ]
 
@@ -520,7 +630,10 @@ function HowMockExamsWork() {
     <section className="border-t border-border bg-card/20">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-10">
-          <Badge variant="outline" className="mb-4 border-primary/20 bg-primary/[0.06] text-primary text-sm gap-2 px-3 py-1">
+          <Badge
+            variant="outline"
+            className="mb-4 border-primary/20 bg-primary/[0.06] text-primary text-sm gap-2 px-3 py-1"
+          >
             <HelpCircle className="w-3.5 h-3.5" />
             How It Works
           </Badge>
@@ -528,8 +641,9 @@ function HowMockExamsWork() {
             How Mock Exams Help You Succeed
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Practising under real exam conditions is the single most effective way to improve your GCSE English grade.
-            Our mocks replicate the exact format used by AQA, Edexcel, OCR, and WJEC.
+            Practising under real exam conditions is the single most effective way to improve your
+            GCSE English grade. Our mocks replicate the exact format used by AQA, Edexcel, OCR, and
+            WJEC.
           </p>
         </div>
 
@@ -556,11 +670,11 @@ function HowMockExamsWork() {
 // Map a user's selected ExamBoard ID to the legacy `examBoard` strings used in
 // the static EXAM_CARDS list ("AQA", "Edexcel", "OCR", "WJEC", "CAIE").
 const BOARD_ID_TO_LEGACY: Record<ExamBoard, string[]> = {
-  'ks3': ['KS3'],
-  'aqa': ['AQA'],
-  'edexcel': ['Edexcel'],
-  'ocr': ['OCR'],
-  'eduqas': ['WJEC', 'Eduqas'],
+  ks3: ['KS3'],
+  aqa: ['AQA'],
+  edexcel: ['Edexcel'],
+  ocr: ['OCR'],
+  eduqas: ['WJEC', 'Eduqas'],
   'edexcel-igcse': ['Edexcel IGCSE', 'IGCSE'],
   'edexcel-igcse-lang': ['Edexcel IGCSE', 'IGCSE'],
   'cambridge-0500': ['CAIE', 'Cambridge', 'Cambridge 0500'],
@@ -576,7 +690,7 @@ export default function MockExamsPage() {
 
   const totalPapers = useMemo(
     () => allBoards.reduce((sum, b) => sum + getMockExamsByBoard(b).length, 0),
-    [allBoards]
+    [allBoards],
   )
 
   // Restrict the visible exam cards to the user's chosen board.
@@ -585,7 +699,7 @@ export default function MockExamsPage() {
     if (!isBoardHydrated || !userBoard) return EXAM_CARDS
     const legacy = BOARD_ID_TO_LEGACY[userBoard] ?? []
     return EXAM_CARDS.filter((e) =>
-      legacy.some((name) => e.examBoard.toLowerCase() === name.toLowerCase())
+      legacy.some((name) => e.examBoard.toLowerCase() === name.toLowerCase()),
     )
   }, [userBoard, isBoardHydrated])
 
@@ -595,7 +709,8 @@ export default function MockExamsPage() {
   const filteredExams = useMemo(() => {
     if (activeTab === 'all') return boardScopedExams
     if (activeTab === 'language') return boardScopedExams.filter((e) => e.paperType === 'language')
-    if (activeTab === 'literature') return boardScopedExams.filter((e) => e.paperType === 'literature')
+    if (activeTab === 'literature')
+      return boardScopedExams.filter((e) => e.paperType === 'literature')
     return boardScopedExams
   }, [activeTab, boardScopedExams])
 
@@ -609,8 +724,12 @@ export default function MockExamsPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[140px] pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-4 py-16 sm:py-20 text-center">
-          <Badge variant="outline" className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-6 gap-2 px-4 py-1.5">
-            <GraduationCap className="w-4 h-4" /> {boardConfig ? `${boardConfig.name} Mock Exams` : 'GCSE Mock Exams'}
+          <Badge
+            variant="outline"
+            className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-6 gap-2 px-4 py-1.5"
+          >
+            <GraduationCap className="w-4 h-4" />{' '}
+            {boardConfig ? `${boardConfig.name} Mock Exams` : 'GCSE Mock Exams'}
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-5 tracking-tight">
@@ -618,7 +737,9 @@ export default function MockExamsPage() {
           </h1>
 
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-            Full-length, timed mock exams matching the exact {boardConfig?.name ?? 'AQA'} format. Language Paper 1 and 2, Literature Paper 1 and 2 -- complete with grade boundaries, model answers, and marking guides.
+            Full-length, timed mock exams matching the exact {boardConfig?.name ?? 'AQA'} format.
+            Language Paper 1 and 2, Literature Paper 1 and 2 -- complete with grade boundaries,
+            model answers, and marking guides.
           </p>
 
           {/* Quick stats */}
@@ -655,9 +776,8 @@ export default function MockExamsPage() {
             {boardConfig ? `${boardConfig.name} Exam Papers` : 'Exam Papers'}
           </h2>
           <p className="text-muted-foreground max-w-2xl">
-            Choose a paper to start. Each mock follows the exact{' '}
-            {boardConfig?.name ?? 'GCSE'} specification with realistic questions,
-            proper timing, and accurate grade boundaries.
+            Choose a paper to start. Each mock follows the exact {boardConfig?.name ?? 'GCSE'}{' '}
+            specification with realistic questions, proper timing, and accurate grade boundaries.
           </p>
         </div>
 
@@ -679,12 +799,16 @@ export default function MockExamsPage() {
             </h3>
             <p className="text-muted-foreground max-w-xl mx-auto mb-5">
               We&apos;re building a full set of timed mock papers for{' '}
-              {boardConfig?.fullName ?? 'your selected board'}. In the meantime, you can
-              still use our flashcards, model answers, and revision notes.
+              {boardConfig?.fullName ?? 'your selected board'}. In the meantime, you can still use
+              our flashcards, model answers, and revision notes.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
-              <Button variant="secondary" render={<Link href="/revision" />}>Go to Revision Hub</Button>
-              <Button variant="outline" render={<Link href="/board-select" />}>Change exam board</Button>
+              <Button variant="secondary" render={<Link href="/revision" />}>
+                Go to Revision Hub
+              </Button>
+              <Button variant="outline" render={<Link href="/board-select" />}>
+                Change exam board
+              </Button>
             </div>
           </div>
         ) : (
@@ -699,7 +823,8 @@ export default function MockExamsPage() {
         {totalPapers > 4 && (
           <div className="mt-10 rounded-xl border border-border/40 bg-muted/30 p-6 text-center">
             <p className="text-sm text-muted-foreground mb-3">
-              We also have {totalPapers - 4}+ additional mock papers across {allBoards.length} exam boards including Edexcel, OCR, WJEC, and CAIE.
+              We also have {totalPapers - 4}+ additional mock papers across {allBoards.length} exam
+              boards including Edexcel, OCR, WJEC, and CAIE.
             </p>
             <Button variant="secondary" render={<Link href="/auth/register" />}>
               Sign Up for Full Access <ArrowRight className="ml-2 h-4 w-4" />
@@ -717,7 +842,8 @@ export default function MockExamsPage() {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               GCSE English is graded on a 1-9 scale, where 9 is the highest grade. A grade 4 is a
-              standard pass and a grade 5 is a strong pass. Here is how the grades map to the old letter system.
+              standard pass and a grade 5 is a strong pass. Here is how the grades map to the old
+              letter system.
             </p>
           </div>
 
@@ -741,8 +867,12 @@ export default function MockExamsPage() {
               ))}
             </div>
             <div className="flex justify-between mt-3 text-xs text-muted-foreground px-2">
-              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-amber-600" /> Grade 4 = Standard pass</span>
-              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-teal-800" /> Grade 5 = Strong pass</span>
+              <span className="flex items-center gap-1">
+                <CheckCircle2 className="h-3 w-3 text-amber-600" /> Grade 4 = Standard pass
+              </span>
+              <span className="flex items-center gap-1">
+                <CheckCircle2 className="h-3 w-3 text-teal-800" /> Grade 5 = Strong pass
+              </span>
             </div>
           </div>
         </div>
@@ -764,10 +894,15 @@ export default function MockExamsPage() {
                 Ready to Ace Your GCSE English?
               </h2>
               <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                Join thousands of students preparing for their GCSEs. Get access to all mock papers, AI essay feedback, model answers, and detailed grade tracking.
+                Join thousands of students preparing for their GCSEs. Get access to all mock papers,
+                AI essay feedback, model answers, and detailed grade tracking.
               </p>
               <div className="flex gap-3 justify-center">
-                <Button size="lg" className="shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
+                <Button
+                  size="lg"
+                  className="shadow-lg shadow-primary/20"
+                  render={<Link href="/auth/register" />}
+                >
                   Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button variant="secondary" size="lg" render={<Link href="/auth/login" />}>
@@ -775,7 +910,7 @@ export default function MockExamsPage() {
                 </Button>
               </div>
               <p className="mt-6 text-sm text-muted-foreground">
-                First month free &middot; Cancel anytime &middot; No commitment
+                7-day free trial (card required) &middot; Cancel before day 7 &middot; No lock-in
               </p>
             </div>
           </div>

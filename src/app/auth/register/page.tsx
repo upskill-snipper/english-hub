@@ -5,13 +5,36 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { useBoard } from '@/hooks/useBoard'
-import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff, Calendar, School, Sparkles, Gift, Zap } from 'lucide-react'
+import {
+  Mail,
+  Lock,
+  User,
+  GraduationCap,
+  BookOpen,
+  Loader2,
+  ArrowLeft,
+  CheckCircle,
+  Eye,
+  EyeOff,
+  Calendar,
+  School,
+  Sparkles,
+  Gift,
+  Zap,
+} from 'lucide-react'
 
 import { getUtmParams } from '@/lib/utm'
 import { getChildDefaults, getChildProfileDefaults } from '@/lib/privacy/child-defaults'
 import { trackEvent } from '@/lib/gtag'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+} from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -21,7 +44,7 @@ function RegisterForm() {
   const searchParams = useSearchParams()
   const { board: selectedBoard } = useBoard()
   const [accountType, setAccountType] = useState<'student' | 'teacher'>(
-    searchParams.get('type') === 'teacher' ? 'teacher' : 'student'
+    searchParams.get('type') === 'teacher' ? 'teacher' : 'student',
   )
   const [fullName, setFullName] = useState('')
   const [dobDay, setDobDay] = useState('')
@@ -166,11 +189,11 @@ function RegisterForm() {
         email,
         full_name: fullName,
         role: accountType,
-        year_group: accountType === 'student' ? (yearGroup || null) : null,
+        year_group: accountType === 'student' ? yearGroup || null : null,
         exam_board: examBoard || null,
-        school_name: accountType === 'teacher' ? (schoolName || null) : null,
+        school_name: accountType === 'teacher' ? schoolName || null : null,
         date_of_birth: accountType === 'student' ? dateOfBirth : null,
-        parent_guardian_email: accountType === 'student' ? (parentGuardianEmail || null) : null,
+        parent_guardian_email: accountType === 'student' ? parentGuardianEmail || null : null,
         is_minor: isMinorUser,
         // Children's Code (GAP-5A / GAP-7A): high-privacy defaults for under-16s
         ...(childProfileDefaults ?? {
@@ -222,28 +245,26 @@ function RegisterForm() {
           <Card className="text-center">
             <CardContent className="pt-8">
               <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-foreground mb-2">
-                Check your email
-              </h1>
+              <h1 className="text-2xl font-bold text-foreground mb-2">Check your email</h1>
               <p className="text-muted-foreground mb-4">
                 We&apos;ve sent a confirmation link to{' '}
-                <span className="text-foreground font-medium">{email}</span>.
-                Please click the link to verify your {accountType === 'teacher' ? 'teacher' : ''} account before signing in.
+                <span className="text-foreground font-medium">{email}</span>. Please click the link
+                to verify your {accountType === 'teacher' ? 'teacher' : ''} account before signing
+                in.
               </p>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6">
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">Your free trial is ready.</span>{' '}
-                  You have 3 free uses of every premium feature — AI marking, lesson plans, and more.
+                  <span className="font-medium text-foreground">Your free trial is ready.</span> You
+                  have 3 free uses of every premium feature — AI marking, lesson plans, and more.
                 </p>
               </div>
               {accountType === 'teacher' && (
                 <p className="text-sm text-muted-foreground mb-4">
-                  Once verified, you&apos;ll have access to the Teacher Dashboard with lesson planning, student analytics, and assessment tools.
+                  Once verified, you&apos;ll have access to the Teacher Dashboard with lesson
+                  planning, student analytics, and assessment tools.
                 </p>
               )}
-              <Button render={<Link href="/auth/login" />}>
-                Back to login
-              </Button>
+              <Button render={<Link href="/auth/login" />}>Back to login</Button>
             </CardContent>
           </Card>
         </div>
@@ -267,8 +288,8 @@ function RegisterForm() {
         {/* Teacher banner */}
         <div className="mb-4 flex items-center justify-between gap-3 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3">
           <p className="text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">Are you a teacher?</span>{' '}
-            Get lesson plans, AI marking, and analytics built for educators.
+            <span className="font-medium text-foreground">Are you a teacher?</span> Get lesson
+            plans, AI marking, and analytics built for educators.
           </p>
           <Button
             variant="outline"
@@ -283,7 +304,9 @@ function RegisterForm() {
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">
-              {accountType === 'teacher' ? 'Start your free teacher account' : 'Create your free account'}
+              {accountType === 'teacher'
+                ? 'Start your free teacher account'
+                : 'Create your free account'}
             </CardTitle>
             <CardDescription>
               {accountType === 'teacher'
@@ -305,12 +328,12 @@ function RegisterForm() {
                   Courses, revision notes, flashcards (unlimited)
                 </span>
                 <span className="flex items-center gap-2">
-                  <Sparkles className="h-3.5 w-3.5 text-primary shrink-0" />
-                  3 free uses of every AI tool (marking, lesson plans, and more)
+                  <Sparkles className="h-3.5 w-3.5 text-primary shrink-0" />3 free uses of every AI
+                  tool (marking, lesson plans, and more)
                 </span>
                 <span className="flex items-center gap-2">
                   <Zap className="h-3.5 w-3.5 text-primary shrink-0" />
-                  Upgrade when you&apos;re ready — first month free
+                  Upgrade when you&apos;re ready — 7-day free trial (card required)
                 </span>
               </div>
             </div>
@@ -375,77 +398,94 @@ function RegisterForm() {
                   />
                 </div>
                 {fieldErrors.fullName && (
-                  <p id="fullName-error" className="text-sm text-destructive mt-1">{fieldErrors.fullName}</p>
+                  <p id="fullName-error" className="text-sm text-destructive mt-1">
+                    {fieldErrors.fullName}
+                  </p>
                 )}
               </div>
 
               {accountType === 'student' && (
-              <fieldset className="space-y-1.5" aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}>
-                <legend className="text-sm font-medium leading-none">
-                  Date of Birth <span className="text-destructive">*</span>
-                </legend>
-                <div className="relative">
-                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
-                  <div className="flex gap-2 pl-11">
-                    <select
-                      id="dobDay"
-                      value={dobDay}
-                      onChange={(e) => setDobDay(e.target.value)}
-                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
-                      required
-                      aria-label="Day"
-                      aria-invalid={!!fieldErrors.dob}
-                    >
-                      <option value="">Day</option>
-                      {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
-                        <option key={d} value={String(d)}>
-                          {d}
-                        </option>
-                      ))}
-                    </select>
-                    <select
-                      id="dobMonth"
-                      value={dobMonth}
-                      onChange={(e) => setDobMonth(e.target.value)}
-                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
-                      required
-                      aria-label="Month"
-                      aria-invalid={!!fieldErrors.dob}
-                    >
-                      <option value="">Month</option>
-                      {[
-                        'January', 'February', 'March', 'April', 'May', 'June',
-                        'July', 'August', 'September', 'October', 'November', 'December'
-                      ].map((m, i) => (
-                        <option key={i + 1} value={String(i + 1)}>
-                          {m}
-                        </option>
-                      ))}
-                    </select>
-                    <select
-                      id="dobYear"
-                      value={dobYear}
-                      onChange={(e) => setDobYear(e.target.value)}
-                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
-                      required
-                      aria-label="Year"
-                      aria-invalid={!!fieldErrors.dob}
-                    >
-                      <option value="">Year</option>
-                      {Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i).map((y) => (
-                        <option key={y} value={String(y)}>
-                          {y}
-                        </option>
-                      ))}
-                    </select>
+                <fieldset
+                  className="space-y-1.5"
+                  aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}
+                >
+                  <legend className="text-sm font-medium leading-none">
+                    Date of Birth <span className="text-destructive">*</span>
+                  </legend>
+                  <div className="relative">
+                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <div className="flex gap-2 pl-11">
+                      <select
+                        id="dobDay"
+                        value={dobDay}
+                        onChange={(e) => setDobDay(e.target.value)}
+                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                        required
+                        aria-label="Day"
+                        aria-invalid={!!fieldErrors.dob}
+                      >
+                        <option value="">Day</option>
+                        {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
+                          <option key={d} value={String(d)}>
+                            {d}
+                          </option>
+                        ))}
+                      </select>
+                      <select
+                        id="dobMonth"
+                        value={dobMonth}
+                        onChange={(e) => setDobMonth(e.target.value)}
+                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                        required
+                        aria-label="Month"
+                        aria-invalid={!!fieldErrors.dob}
+                      >
+                        <option value="">Month</option>
+                        {[
+                          'January',
+                          'February',
+                          'March',
+                          'April',
+                          'May',
+                          'June',
+                          'July',
+                          'August',
+                          'September',
+                          'October',
+                          'November',
+                          'December',
+                        ].map((m, i) => (
+                          <option key={i + 1} value={String(i + 1)}>
+                            {m}
+                          </option>
+                        ))}
+                      </select>
+                      <select
+                        id="dobYear"
+                        value={dobYear}
+                        onChange={(e) => setDobYear(e.target.value)}
+                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                        required
+                        aria-label="Year"
+                        aria-invalid={!!fieldErrors.dob}
+                      >
+                        <option value="">Year</option>
+                        {Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i).map(
+                          (y) => (
+                            <option key={y} value={String(y)}>
+                              {y}
+                            </option>
+                          ),
+                        )}
+                      </select>
+                    </div>
                   </div>
-                </div>
-                {fieldErrors.dob && (
-                  <p id="dob-error" className="text-sm text-destructive mt-1">
-                    {fieldErrors.dob}
-                  </p>
-                )}
-              </fieldset>
+                  {fieldErrors.dob && (
+                    <p id="dob-error" className="text-sm text-destructive mt-1">
+                      {fieldErrors.dob}
+                    </p>
+                  )}
+                </fieldset>
               )}
 
               {accountType === 'teacher' && (
@@ -486,7 +526,9 @@ function RegisterForm() {
                   />
                 </div>
                 {fieldErrors.email && (
-                  <p id="email-error" className="text-sm text-destructive mt-1">{fieldErrors.email}</p>
+                  <p id="email-error" className="text-sm text-destructive mt-1">
+                    {fieldErrors.email}
+                  </p>
                 )}
               </div>
 
@@ -519,7 +561,9 @@ function RegisterForm() {
                   </button>
                 </div>
                 {fieldErrors.password && (
-                  <p id="password-error" className="text-sm text-destructive mt-1">{fieldErrors.password}</p>
+                  <p id="password-error" className="text-sm text-destructive mt-1">
+                    {fieldErrors.password}
+                  </p>
                 )}
               </div>
 
@@ -540,7 +584,9 @@ function RegisterForm() {
                     minLength={8}
                     autoComplete="new-password"
                     aria-invalid={!!fieldErrors.confirmPassword}
-                    aria-describedby={fieldErrors.confirmPassword ? 'confirmPassword-error' : undefined}
+                    aria-describedby={
+                      fieldErrors.confirmPassword ? 'confirmPassword-error' : undefined
+                    }
                   />
                   <button
                     type="button"
@@ -552,7 +598,9 @@ function RegisterForm() {
                   </button>
                 </div>
                 {fieldErrors.confirmPassword && (
-                  <p id="confirmPassword-error" className="text-sm text-destructive mt-1">{fieldErrors.confirmPassword}</p>
+                  <p id="confirmPassword-error" className="text-sm text-destructive mt-1">
+                    {fieldErrors.confirmPassword}
+                  </p>
                 )}
               </div>
 
@@ -573,38 +621,43 @@ function RegisterForm() {
                       required
                       autoComplete="email"
                       aria-invalid={!!fieldErrors.parentGuardianEmail}
-                      aria-describedby={fieldErrors.parentGuardianEmail ? 'parentGuardianEmail-error' : undefined}
+                      aria-describedby={
+                        fieldErrors.parentGuardianEmail ? 'parentGuardianEmail-error' : undefined
+                      }
                     />
                   </div>
                   {fieldErrors.parentGuardianEmail && (
-                    <p id="parentGuardianEmail-error" className="text-sm text-destructive mt-1">{fieldErrors.parentGuardianEmail}</p>
+                    <p id="parentGuardianEmail-error" className="text-sm text-destructive mt-1">
+                      {fieldErrors.parentGuardianEmail}
+                    </p>
                   )}
                   <p className="text-sm text-muted-foreground">
-                    As you are under 16, a parent or guardian must provide consent. We will email them a consent form.
+                    As you are under 16, a parent or guardian must provide consent. We will email
+                    them a consent form.
                   </p>
                 </div>
               )}
 
               {accountType === 'student' && (
-              <div className="space-y-1.5">
-                <Label htmlFor="yearGroup">Year group</Label>
-                <div className="relative">
-                  <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
-                  <select
-                    id="yearGroup"
-                    value={yearGroup}
-                    onChange={(e) => setYearGroup(e.target.value)}
-                    className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
-                  >
-                    <option value="">Select year group</option>
-                    {YEAR_GROUPS.map((yg) => (
-                      <option key={yg} value={yg}>
-                        {yg}
-                      </option>
-                    ))}
-                  </select>
+                <div className="space-y-1.5">
+                  <Label htmlFor="yearGroup">Year group</Label>
+                  <div className="relative">
+                    <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <select
+                      id="yearGroup"
+                      value={yearGroup}
+                      onChange={(e) => setYearGroup(e.target.value)}
+                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                    >
+                      <option value="">Select year group</option>
+                      {YEAR_GROUPS.map((yg) => (
+                        <option key={yg} value={yg}>
+                          {yg}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
-              </div>
               )}
 
               <div className="space-y-1.5">
@@ -629,11 +682,17 @@ function RegisterForm() {
 
               <p className="text-xs text-muted-foreground">
                 By creating an account, you agree to our{' '}
-                <Link href="/terms" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                <Link
+                  href="/terms"
+                  className="underline underline-offset-2 hover:text-foreground transition-colors"
+                >
                   Terms of Service
                 </Link>{' '}
                 and{' '}
-                <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                <Link
+                  href="/privacy-policy"
+                  className="underline underline-offset-2 hover:text-foreground transition-colors"
+                >
                   Privacy Policy
                 </Link>
                 .

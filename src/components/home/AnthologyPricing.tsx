@@ -8,8 +8,8 @@ const tiers = [
     name: 'Student',
     price: `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}`,
     period: '/month',
-    annual: `or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year (save 37%)`,
-    description: 'Full access for students — first month free.',
+    annual: `or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year · ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with code ${PRICING.AFFILIATE_PROMO_CODE}`,
+    description: 'Full access for students. Monthly or annual — cancel any time.',
     features: [
       'All 470+ structured lessons',
       'All 130+ mock exams',
@@ -19,9 +19,9 @@ const tiers = [
       '500+ quiz questions',
       'Grade 1–9 tracking & prediction',
       'All exam boards included',
-      'First month free — cancel anytime',
+      `${PRICING.TRIAL_TEXT} · card required · cancel before day 7`,
     ],
-    cta: { label: 'Start free month', href: '/auth/register' },
+    cta: { label: 'Start 7-day trial', href: '/auth/register' },
     featured: false,
     bg: 'bg-white border border-ink-200',
     text: 'text-ink-900',
@@ -33,7 +33,7 @@ const tiers = [
     name: 'Teacher',
     price: `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}`,
     period: '/month',
-    annual: `or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year (save 36%)`,
+    annual: `or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year (save 29%)`,
     description: 'Everything in Student plus teacher tools.',
     features: [
       'Everything in Student',
@@ -46,7 +46,7 @@ const tiers = [
       'Homework generator',
       'Teacher resource library',
     ],
-    cta: { label: 'Start free month', href: '/auth/register' },
+    cta: { label: 'Start 7-day trial', href: '/auth/register' },
     featured: true,
     bg: 'bg-teal-800',
     text: 'text-cream-50',
@@ -97,9 +97,13 @@ export default function AnthologyPricing() {
           >
             Simple, <em className="italic text-teal-800">honest</em> pricing.
           </h2>
-          <p className="mt-4 text-ink-600 text-lg max-w-lg mx-auto font-serif">
-            First month free for students and teachers. Founding schools get a locked-in rate — only{' '}
-            {PRICING.FOUNDER_SCHOOL_LIMIT} places.
+          <p className="mt-4 text-ink-600 text-lg max-w-xl mx-auto font-serif">
+            7-day free trial on every plan — card required, cancel before day 7. Students save £
+            {PRICING.STUDENT_ANNUAL_SAVINGS} on annual with any affiliate code or{' '}
+            <code className="font-mono text-teal-800 bg-teal-50 px-1.5 py-0.5 rounded">
+              {PRICING.AFFILIATE_PROMO_CODE}
+            </code>
+            .
           </p>
         </div>
 

@@ -62,9 +62,7 @@ function QuizCard({
         </span>
         {submitted && (
           <span
-            className={`text-sm font-semibold ${
-              isCorrect ? 'text-primary' : 'text-destructive'
-            }`}
+            className={`text-sm font-semibold ${isCorrect ? 'text-primary' : 'text-destructive'}`}
           >
             {isCorrect ? 'Correct!' : 'Incorrect'}
           </span>
@@ -151,13 +149,7 @@ function QuizCard({
 
 // ─── Progress Dots ───────────────────────────────────────────────────────────
 
-function QuizProgressDots({
-  total,
-  results,
-}: {
-  total: number
-  results: (boolean | null)[]
-}) {
+function QuizProgressDots({ total, results }: { total: number; results: (boolean | null)[] }) {
   return (
     <div className="flex items-center gap-2 flex-wrap mb-6">
       {Array.from({ length: total }).map((_, i) => (
@@ -193,13 +185,9 @@ function Sidebar({
   open: boolean
   onClose: () => void
 }) {
-  const completedCount = course.moduleList.filter((m) =>
-    completedModules.has(m.id)
-  ).length
+  const completedCount = course.moduleList.filter((m) => completedModules.has(m.id)).length
   const progressPercent =
-    course.moduleList.length > 0
-      ? Math.round((completedCount / course.moduleList.length) * 100)
-      : 0
+    course.moduleList.length > 0 ? Math.round((completedCount / course.moduleList.length) * 100) : 0
 
   const sidebarContent = (
     <div className="flex flex-col h-full">
@@ -254,18 +242,11 @@ function Sidebar({
                 >
                   <span className="flex-shrink-0 mt-0.5">
                     {isCompleted ? (
-                      <CheckCircle
-                        size={18}
-                        className="text-primary"
-                      />
+                      <CheckCircle size={18} className="text-primary" />
                     ) : (
                       <Circle
                         size={18}
-                        className={
-                          isCurrent
-                            ? 'text-primary'
-                            : 'text-muted-foreground/70'
-                        }
+                        className={isCurrent ? 'text-primary' : 'text-muted-foreground/70'}
                       />
                     )}
                   </span>
@@ -287,10 +268,7 @@ function Sidebar({
                     </span>
                   </div>
                   {isCurrent && (
-                    <ChevronRight
-                      size={16}
-                      className="text-primary flex-shrink-0 mt-0.5"
-                    />
+                    <ChevronRight size={16} className="text-primary flex-shrink-0 mt-0.5" />
                   )}
                 </button>
               </li>
@@ -395,13 +373,9 @@ export default function CoursePlayerPage() {
   }, [courseId])
 
   // Derive module info from loaded course
-  const moduleIndex = course
-    ? course.moduleList.findIndex((m) => m.id === moduleId)
-    : -1
-  const currentModule =
-    course && moduleIndex >= 0 ? course.moduleList[moduleIndex] : null
-  const prevModule =
-    course && moduleIndex > 0 ? course.moduleList[moduleIndex - 1] : null
+  const moduleIndex = course ? course.moduleList.findIndex((m) => m.id === moduleId) : -1
+  const currentModule = course && moduleIndex >= 0 ? course.moduleList[moduleIndex] : null
+  const prevModule = course && moduleIndex > 0 ? course.moduleList[moduleIndex - 1] : null
   const nextModule =
     course && moduleIndex < (course?.moduleList.length ?? 0) - 1
       ? course.moduleList[moduleIndex + 1]
@@ -517,17 +491,14 @@ export default function CoursePlayerPage() {
     }
   }, [currentModule])
 
-  const handleQuizAnswer = useCallback(
-    (index: number, correct: boolean) => {
-      setQuizResults((prev) => {
-        const next = [...prev]
-        next[index] = correct
-        return next
-      })
-      if (correct) setQuizScore((s) => s + 1)
-    },
-    []
-  )
+  const handleQuizAnswer = useCallback((index: number, correct: boolean) => {
+    setQuizResults((prev) => {
+      const next = [...prev]
+      next[index] = correct
+      return next
+    })
+    if (correct) setQuizScore((s) => s + 1)
+  }, [])
 
   const handleCompleteModule = useCallback(async () => {
     if (!user || !course || !currentModule || completing) return
@@ -537,9 +508,7 @@ export default function CoursePlayerPage() {
     const timeSpent = Math.round((Date.now() - startTimeRef.current) / 1000)
     const answeredCount = quizResults.filter((r) => r !== null).length
     const score =
-      answeredCount > 0
-        ? Math.round((quizScore / currentModule.quiz.length) * 100)
-        : null
+      answeredCount > 0 ? Math.round((quizScore / currentModule.quiz.length) * 100) : null
 
     try {
       const { error } = await supabase.from('module_progress').upsert(
@@ -553,7 +522,7 @@ export default function CoursePlayerPage() {
           time_spent_seconds: timeSpent,
           completed_at: new Date().toISOString(),
         },
-        { onConflict: 'user_id,module_id' }
+        { onConflict: 'user_id,module_id' },
       )
 
       if (error) throw error
@@ -581,7 +550,7 @@ export default function CoursePlayerPage() {
 
   const sanitizedContent = useMemo(
     () => DOMPurify.sanitize(currentModule?.content || ''),
-    [currentModule?.content]
+    [currentModule?.content],
   )
 
   if (courseLoading) {
@@ -625,26 +594,25 @@ export default function CoursePlayerPage() {
           <Lock className="w-12 h-12 text-muted-foreground mx-auto" />
           <h2 className="text-xl font-bold text-foreground">Upgrade to Continue</h2>
           <p className="text-muted-foreground">
-            This module requires a subscription. Try the free preview first, or subscribe to unlock all content.
+            This module requires a subscription. Try the free preview first, or subscribe to unlock
+            all content.
           </p>
           <div className="flex gap-3 justify-center">
-            <Link href={`/courses/${courseId}`} className="btn-primary">View Course</Link>
-            <Link href="/account/billing" className="btn-secondary">Subscribe</Link>
+            <Link href={`/courses/${courseId}`} className="btn-primary">
+              View Course
+            </Link>
+            <Link href="/account/billing" className="btn-secondary">
+              Subscribe
+            </Link>
           </div>
         </div>
       </div>
     )
   }
 
-  const completedCount = course.moduleList.filter((m) =>
-    completedModules.has(m.id)
-  ).length
-  const progressPercent = Math.round(
-    (completedCount / course.moduleList.length) * 100
-  )
-  const allQuizAnswered =
-    currentModule.quiz.length === 0 ||
-    quizResults.every((r) => r !== null)
+  const completedCount = course.moduleList.filter((m) => completedModules.has(m.id)).length
+  const progressPercent = Math.round((completedCount / course.moduleList.length) * 100)
+  const allQuizAnswered = currentModule.quiz.length === 0 || quizResults.every((r) => r !== null)
 
   return (
     <div className="flex min-h-screen bg-background">
@@ -672,16 +640,11 @@ export default function CoursePlayerPage() {
             </button>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
-                <a
-                  href={`/courses/${courseId}`}
-                  className="hover:text-primary transition-colors"
-                >
+                <a href={`/courses/${courseId}`} className="hover:text-primary transition-colors">
                   {course.title}
                 </a>
                 <ChevronRight size={14} />
-                <span className="truncate text-foreground">
-                  Module {moduleIndex + 1}
-                </span>
+                <span className="truncate text-foreground">Module {moduleIndex + 1}</span>
               </div>
               {/* Progress bar */}
               <div className="w-full h-1.5 bg-card rounded-full overflow-hidden">
@@ -717,9 +680,7 @@ export default function CoursePlayerPage() {
                   </span>
                 )}
               </div>
-              <h1 className="text-3xl font-bold text-foreground">
-                {currentModule.title}
-              </h1>
+              <h1 className="text-3xl font-bold text-foreground">{currentModule.title}</h1>
             </div>
 
             {/* HTML Content */}
@@ -731,17 +692,12 @@ export default function CoursePlayerPage() {
             {/* Quiz Section */}
             {currentModule.quiz.length > 0 && (
               <section className="mt-12 pt-8 border-t border-border">
-                <h2 className="text-2xl font-bold text-foreground mb-2">
-                  Knowledge Check
-                </h2>
+                <h2 className="text-2xl font-bold text-foreground mb-2">Knowledge Check</h2>
                 <p className="text-muted-foreground mb-6">
                   Test your understanding of this module.
                 </p>
 
-                <QuizProgressDots
-                  total={currentModule.quiz.length}
-                  results={quizResults}
-                />
+                <QuizProgressDots total={currentModule.quiz.length} results={quizResults} />
 
                 {currentModule.quiz.map((q, i) => (
                   <QuizCard
@@ -804,27 +760,21 @@ export default function CoursePlayerPage() {
 
             {moduleCompleted && (
               <div className="mt-8 card p-6 text-center border-primary/30">
-                <CheckCircle
-                  size={32}
-                  className="text-primary mx-auto mb-2"
-                />
-                <p className="text-foreground font-semibold">
-                  Module Completed
-                </p>
-                <p className="text-muted-foreground text-sm mt-1">
-                  Your progress has been saved.
-                </p>
+                <CheckCircle size={32} className="text-primary mx-auto mb-2" />
+                <p className="text-foreground font-semibold">Module Completed</p>
+                <p className="text-muted-foreground text-sm mt-1">Your progress has been saved.</p>
               </div>
             )}
 
             {/* Preview CTA — shown on free preview modules for non-subscribed users */}
-            {isPreviewModule && (!user || (profile?.subscription_status !== 'pro')) && (
+            {isPreviewModule && (!user || profile?.subscription_status !== 'pro') && (
               <div className="mt-10 rounded-xl border border-primary/30 bg-primary/5 p-6 sm:p-8 text-center">
                 <h3 className="text-xl font-bold text-foreground mb-2">
-                  Enjoying this? Subscribe for full access — first month free!
+                  Enjoying this? Start a 7-day free trial for full access.
                 </h3>
                 <p className="text-muted-foreground mb-5 max-w-lg mx-auto">
-                  Unlock all {course.moduleList.length} modules in this course, plus every course on the platform.
+                  Unlock all {course.moduleList.length} modules in this course, plus every course on
+                  the platform.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link href="/account/billing" className="btn-primary px-6 py-3 text-base">
@@ -841,9 +791,7 @@ export default function CoursePlayerPage() {
             <div className="flex items-center justify-between mt-8 pt-6 border-t border-border pb-8">
               {prevModule ? (
                 <button
-                  onClick={() =>
-                    router.push(`/learn/${courseId}/${prevModule.id}`)
-                  }
+                  onClick={() => router.push(`/learn/${courseId}/${prevModule.id}`)}
                   className="btn-secondary flex items-center gap-2"
                 >
                   <ArrowLeft size={18} />
@@ -858,9 +806,7 @@ export default function CoursePlayerPage() {
 
               {nextModule ? (
                 <button
-                  onClick={() =>
-                    router.push(`/learn/${courseId}/${nextModule.id}`)
-                  }
+                  onClick={() => router.push(`/learn/${courseId}/${nextModule.id}`)}
                   className="btn-primary flex items-center gap-2"
                 >
                   <span className="hidden sm:inline">Next:</span>

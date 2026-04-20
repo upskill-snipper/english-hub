@@ -84,29 +84,54 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">4. Subscription Plans</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            The English Hub offers the following annual subscription plans for individual users (as
-            of 19 April 2026):
+            The English Hub offers the following subscription plans for individual users (as of 20
+            April 2026). All plans renew automatically until cancelled.
           </p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
-              <strong>Student Plan:</strong> £20 per year, billed annually on a recurring basis.
-              Includes full access to every feature on the platform.
+              <strong>Student Plan — Monthly:</strong> £3.49 per month, billed monthly on a
+              recurring basis. Full access to every feature on the platform.
             </li>
             <li>
-              <strong>Teacher Plan:</strong> £67.99 per year, billed annually on a recurring basis.
-              Includes AI lesson planning, worksheet builder, bulk essay marking, and class
-              analytics in addition to all student features.
+              <strong>Student Plan — Annual:</strong> £29.99 per year, billed annually on a
+              recurring basis. Full access to every feature on the platform.
+            </li>
+            <li>
+              <strong>Student Plan — Annual with affiliate or promo code:</strong> £20 per year when
+              the checkout includes a valid affiliate code, or the public promotional code{' '}
+              <code>2026ENGLISH</code>. Feature access is identical to the standard annual plan.
+            </li>
+            <li>
+              <strong>Teacher Plan — Monthly:</strong> £7.99 per month, billed monthly on a
+              recurring basis. Includes AI lesson planning, worksheet builder, bulk essay marking,
+              and class analytics in addition to all student features.
+            </li>
+            <li>
+              <strong>Teacher Plan — Annual:</strong> £67.99 per year, billed annually on a
+              recurring basis. Same feature set as the Teacher Monthly plan.
             </li>
           </ul>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            Monthly plans are no longer offered to new subscribers. All new subscriptions are annual
-            and auto-renew.
+            <strong>7-day free trial.</strong> New subscribers are eligible for a single 7-day free
+            trial on their first paid plan. The trial requires full sign-up with a valid payment
+            method. During the trial period you will have full access to the platform. If you do not
+            cancel before the trial ends, your chosen subscription plan activates automatically and
+            your payment method is charged the applicable plan price. You will receive a reminder
+            email at least two days before the trial expires. Cancel any time before the end of day
+            seven from your account settings and you will not be charged.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            New subscribers are eligible for a 7-day free trial. During the trial period you will
-            have full access to the platform. If you do not cancel before the trial ends, your
-            chosen subscription plan will activate automatically and your payment method will be
-            charged. You will receive a reminder email at least 2 days before the trial expires.
+            <strong>Pre-paywall demo.</strong> Separately from the trial, every registered account
+            may use most premium features up to three times without providing payment details so you
+            can evaluate the product before committing.
+          </p>
+          <p className="mt-2 text-muted-foreground leading-relaxed">
+            <strong>Promotional and affiliate codes.</strong> Affiliate codes and the public code
+            <code> 2026ENGLISH</code> apply only to the Student Annual plan and reduce the first
+            year&apos;s price to £20. Subsequent renewals are charged at the then-current standard
+            annual rate (currently £29.99) unless a further valid code is applied at renewal.
+            Affiliate codes cannot be combined, and cannot be applied retroactively to existing
+            subscriptions.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             Subscriptions renew automatically at the end of each billing cycle unless cancelled. The

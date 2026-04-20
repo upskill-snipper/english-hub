@@ -66,11 +66,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
   const ctaHref = firstModuleHref
 
   const totalQuizzes = useMemo(
-    () =>
-      course.moduleList.reduce(
-        (sum, mod) => sum + (mod.quiz?.length ?? 0),
-        0,
-      ),
+    () => course.moduleList.reduce((sum, mod) => sum + (mod.quiz?.length ?? 0), 0),
     [course.moduleList],
   )
 
@@ -173,20 +169,14 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
           <div className="flex-1">
             {/* Description */}
             <div className="card p-6 sm:p-8">
-              <h2 className="mb-4 text-xl font-bold text-foreground">
-                About This Course
-              </h2>
-              <p className="leading-relaxed text-muted-foreground">
-                {course.description}
-              </p>
+              <h2 className="mb-4 text-xl font-bold text-foreground">About This Course</h2>
+              <p className="leading-relaxed text-muted-foreground">{course.description}</p>
             </div>
 
             {/* Module list */}
             <div className="card mt-6 p-6 sm:p-8">
               <div className="mb-6 flex items-center gap-2">
-                <h2 className="text-xl font-bold text-foreground">
-                  What You&apos;ll Learn
-                </h2>
+                <h2 className="text-xl font-bold text-foreground">What You&apos;ll Learn</h2>
                 <LearningTip categories={['course', 'study']} side="right" />
               </div>
 
@@ -202,10 +192,14 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                       {/* Number circle — uses stable original position, not filtered index */}
                       <span
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold ${locked ? 'bg-muted text-muted-foreground' : ''}`}
-                        style={locked ? undefined : {
-                          backgroundColor: `${course.color}20`,
-                          color: course.color,
-                        }}
+                        style={
+                          locked
+                            ? undefined
+                            : {
+                                backgroundColor: `${course.color}20`,
+                                color: course.color,
+                              }
+                        }
                       >
                         {stableNumber}
                       </span>
@@ -225,7 +219,9 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                         <div className="mt-0.5 flex items-center gap-3 text-xs text-muted-foreground">
                           <span>{mod.duration}</span>
                           {mod.quiz?.length > 0 && (
-                            <span>{mod.quiz.length} {mod.quiz.length === 1 ? 'quiz' : 'quizzes'}</span>
+                            <span>
+                              {mod.quiz.length} {mod.quiz.length === 1 ? 'quiz' : 'quizzes'}
+                            </span>
                           )}
                         </div>
                       </div>
@@ -242,9 +238,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                   return (
                     <li key={mod.id}>
                       {locked ? (
-                        <div
-                          className="group flex items-center gap-4 rounded-lg border px-4 py-3.5 transition-colors duration-200 border-border bg-background/50"
-                        >
+                        <div className="group flex items-center gap-4 rounded-lg border px-4 py-3.5 transition-colors duration-200 border-border bg-background/50">
                           {content}
                         </div>
                       ) : (
@@ -284,14 +278,10 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
         <div className="mx-auto flex max-w-lg items-center justify-between gap-4">
           <div>
             {hasAccess ? (
-              <span className="text-sm font-medium text-foreground">
-                Ready to learn
-              </span>
+              <span className="text-sm font-medium text-foreground">Ready to learn</span>
             ) : (
               <>
-                <span className="text-sm font-medium text-foreground">
-                  Try it free
-                </span>
+                <span className="text-sm font-medium text-foreground">Try it free</span>
                 <span className="ml-1.5 text-xs text-muted-foreground">No sign-up needed</span>
               </>
             )}
@@ -377,17 +367,16 @@ const SubscriptionCard = memo(function SubscriptionCard({
             )}
 
             <div className="mt-4 rounded-lg border border-border/60 bg-background/50 p-3 text-center">
-              <p className="text-xs text-muted-foreground">
-                Want full access to all courses?
-              </p>
+              <p className="text-xs text-muted-foreground">Want full access to all courses?</p>
               <Link
                 href={billingHref ?? '/account/billing'}
                 className="mt-1 inline-block text-sm font-semibold text-primary hover:underline"
               >
-                Subscribe — first month free
+                Start 7-day free trial
               </Link>
               <p className="mt-0.5 text-[10px] text-muted-foreground">
-                {PRICING.CURRENCY}{PRICING.MONTHLY}/mo after trial · Cancel anytime
+                {PRICING.CURRENCY}
+                {PRICING.STUDENT_MONTHLY}/mo after trial · Card required
               </p>
             </div>
           </>

@@ -16,12 +16,16 @@ interface FormData {
 
 const SUBSCRIPTION_PLANS = [
   { value: '', label: 'Select your plan' },
-  { value: 'student-annual', label: 'Student Annual (£20/year)' },
+  { value: 'student-monthly', label: 'Student Monthly (£3.49/month)' },
+  { value: 'student-annual', label: 'Student Annual (£29.99/year)' },
+  { value: 'student-annual-promo', label: 'Student Annual with affiliate code (£20/year)' },
+  { value: 'teacher-monthly', label: 'Teacher Monthly (£7.99/month)' },
   { value: 'teacher-annual', label: 'Teacher Annual (£67.99/year)' },
-  { value: 'student-monthly-legacy', label: 'Student Monthly (legacy — £8.99/month)' },
-  { value: 'student-annual-legacy', label: 'Student Annual (legacy — £67.99/year)' },
-  { value: 'teacher-monthly-legacy', label: 'Teacher Monthly (legacy — £12.99/month)' },
-  { value: 'teacher-annual-legacy', label: 'Teacher Annual (legacy — £99.99/year)' },
+  { value: 'student-annual-legacy-20', label: 'Student Annual (legacy — £20/year flat)' },
+  { value: 'student-monthly-legacy-899', label: 'Student Monthly (legacy — £8.99/month)' },
+  { value: 'student-annual-legacy-6799', label: 'Student Annual (legacy — £67.99/year)' },
+  { value: 'teacher-monthly-legacy-1299', label: 'Teacher Monthly (legacy — £12.99/month)' },
+  { value: 'teacher-annual-legacy-9999', label: 'Teacher Annual (legacy — £99.99/year)' },
   { value: 'school', label: 'School / Institutional Plan' },
 ]
 

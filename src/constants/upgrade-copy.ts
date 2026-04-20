@@ -17,20 +17,22 @@ export function isTeacherFeature(feature: GatedFeature): boolean {
   return TEACHER_FEATURES.has(feature)
 }
 
-// ─── Pricing display strings (annual-only since 19 April 2026) ─────────
+// ─── Pricing display strings ───────────────────────────────────────────
+// 20 April 2026: monthly plans restored. Headline is now the monthly price;
+// annual shown as the savings route.
 
-export const STUDENT_PRICE_STRING = `${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year`
-export const TEACHER_PRICE_STRING = `${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year`
+export const STUDENT_PRICE_STRING = `from ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year)`
+export const TEACHER_PRICE_STRING = `from ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year)`
 
 export function getPriceString(feature: GatedFeature): string {
   return isTeacherFeature(feature) ? TEACHER_PRICE_STRING : STUDENT_PRICE_STRING
 }
 
 export function getFullPricingLine(feature: GatedFeature): string {
-  const price = isTeacherFeature(feature)
-    ? `${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year (teachers)`
-    : `${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year (students)`
-  return `${price}. ${PRICING.TRIAL_TEXT}. Cancel anytime.`
+  if (isTeacherFeature(feature)) {
+    return `Teachers: ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year. ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`
+  }
+  return `Students: ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year (${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with code ${PRICING.AFFILIATE_PROMO_CODE}). ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`
 }
 
 // ─── Feature-specific lockout messages ─────────────────────────────────
@@ -82,16 +84,18 @@ export function getBenefits(isTeacher: boolean): readonly string[] {
 
 export const SOFT_NUDGE_COPY = {
   student: (featureName: string, usageCount: number, freeLimit: number) =>
-    `You've used ${usageCount} of your ${freeLimit} free ${featureName.toLowerCase()} submissions. Students who use AI marking regularly improve by a full grade. Upgrade to continue \u2014 first month free.`,
+    `You've used ${usageCount} of your ${freeLimit} free ${featureName.toLowerCase()} uses. Students who use AI marking regularly improve by a full grade. Start a ${PRICING.TRIAL_TEXT} to continue — card required, cancel before day 7.`,
   teacher: (featureName: string, usageCount: number, freeLimit: number) =>
-    `You've generated ${usageCount} of your ${freeLimit} free ${featureName.toLowerCase()} submissions. Upgrade for unlimited planning, marking, and analytics \u2014 first month free.`,
+    `You've generated ${usageCount} of your ${freeLimit} free ${featureName.toLowerCase()} uses. Unlock unlimited planning, marking, and analytics with a ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`,
 } as const
 
 // ─── Dashboard banner copy ─────────────────────────────────────────────
 
 export const DASHBOARD_BANNER_COPY = {
-  student:
-    "You're making progress. Premium students get unlimited AI marking, mock exams, and personalised study plans. 7-day free trial.",
-  teacher:
-    "You've started building with The English Hub. Unlock unlimited AI tools and full class analytics. 7-day free trial.",
+  student: `You're making progress. Premium students get unlimited AI marking, mock exams, and personalised study plans. Start a ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`,
+  teacher: `You've started building with The English Hub. Unlock unlimited AI tools and full class analytics with a ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`,
 } as const
+
+// ─── Promo banner (reusable across CTAs) ───────────────────────────────
+
+export const PROMO_BANNER_STUDENT_CODE = `Use code ${PRICING.AFFILIATE_PROMO_CODE} at checkout — annual plan ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE} (save ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_SAVINGS}).`

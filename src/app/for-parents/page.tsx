@@ -30,7 +30,6 @@ import {
   Zap,
 } from 'lucide-react'
 
-
 /* ───────────────────── FAQ Accordion ───────────────────── */
 
 const faqs = [
@@ -59,8 +58,8 @@ const faqs = [
     a: "Absolutely. Cancel anytime from your account settings. There are no contracts or hidden fees. You'll keep access until the end of your billing period.",
   },
   {
-    q: 'Is my child\'s data safe?',
-    a: 'Yes. We comply with UK GDPR and the Children\'s Code. Data is encrypted in transit and at rest. We never sell data to third parties. Parent access is strictly limited to learning progress data.',
+    q: "Is my child's data safe?",
+    a: "Yes. We comply with UK GDPR and the Children's Code. Data is encrypted in transit and at rest. We never sell data to third parties. Parent access is strictly limited to learning progress data.",
   },
 ]
 
@@ -77,14 +76,14 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         <ChevronDown
           className={cn(
             'w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300',
-            open ? 'rotate-180' : ''
+            open ? 'rotate-180' : '',
           )}
         />
       </button>
       <div
         className={cn(
           'grid transition-all duration-300',
-          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
         )}
       >
         <div className="overflow-hidden">
@@ -101,19 +100,22 @@ const testimonials = [
   {
     name: 'Sarah T.',
     role: 'Parent of Year 10 student',
-    quote: 'I can finally see exactly where my daughter needs help instead of guessing. Her English grade has gone from a 5 to a 7 in two terms.',
+    quote:
+      'I can finally see exactly where my daughter needs help instead of guessing. Her English grade has gone from a 5 to a 7 in two terms.',
     rating: 5,
   },
   {
     name: 'James M.',
     role: 'Parent of Year 11 student',
-    quote: 'The weekly progress reports are brilliant. I know exactly how much revision my son is doing without having to nag him about it.',
+    quote:
+      'The weekly progress reports are brilliant. I know exactly how much revision my son is doing without having to nag him about it.',
     rating: 5,
   },
   {
     name: 'Priya K.',
     role: 'Parent of Year 9 student',
-    quote: 'The weak area alerts told us she was struggling with creative writing. We got her extra help early and it made all the difference.',
+    quote:
+      'The weak area alerts told us she was struggling with creative writing. We got her extra help early and it made all the difference.',
     rating: 5,
   },
 ]
@@ -121,8 +123,6 @@ const testimonials = [
 /* ───────────────────── Main Page ───────────────────── */
 
 export default function ForParentsPage() {
-
-
   return (
     <main className="min-h-screen bg-background">
       {/* ━━━ HERO ━━━ */}
@@ -132,7 +132,10 @@ export default function ForParentsPage() {
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <Badge variant="outline" className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-10 gap-2 px-4 py-1.5">
+          <Badge
+            variant="outline"
+            className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-10 gap-2 px-4 py-1.5"
+          >
             <Users className="w-4 h-4" />
             For Parents &amp; Guardians
           </Badge>
@@ -144,21 +147,33 @@ export default function ForParentsPage() {
           </h1>
 
           <p className="mt-7 text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Get real-time insights into your child&rsquo;s revision progress, exam readiness, and areas for improvement.
-            No more guessing &mdash; see exactly what they&rsquo;re learning and where they need help.
+            Get real-time insights into your child&rsquo;s revision progress, exam readiness, and
+            areas for improvement. No more guessing &mdash; see exactly what they&rsquo;re learning
+            and where they need help.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="default" size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20" render={<Link href="/auth/register?role=parent" />}>
+            <Button
+              variant="default"
+              size="lg"
+              className="text-base px-8 h-12 shadow-lg shadow-primary/20"
+              render={<Link href="/auth/register?role=parent" />}
+            >
               Start Your Child&rsquo;s Free Trial
             </Button>
-            <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="#how-it-works" />}>
+            <Button
+              variant="secondary"
+              size="lg"
+              className="text-base px-8 h-12"
+              render={<Link href="#how-it-works" />}
+            >
               See How It Works
             </Button>
           </div>
 
           <p className="mt-5 text-sm text-muted-foreground">
-            {PRICING.TRIAL_DAYS}-day free trial &middot; No credit card required &middot; Cancel anytime
+            {PRICING.TRIAL_DAYS}-day free trial &middot; No credit card required &middot; Cancel
+            anytime
           </p>
         </div>
       </section>
@@ -168,15 +183,40 @@ export default function ForParentsPage() {
         <div className="max-w-5xl mx-auto px-6 py-10">
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
             {[
-              { icon: Users, color: 'text-primary bg-primary/10', value: '2,400+', label: 'Students Learning' },
-              { icon: TrendingUp, color: 'text-emerald-400 bg-emerald-500/10', value: '94%', label: 'See Grade Improvement' },
-              { icon: BookOpen, color: 'text-blue-400 bg-blue-500/10', value: '13', label: 'Structured Courses' },
-              { icon: Shield, color: 'text-clay-600 bg-amber-500/10', value: 'GDPR', label: 'Compliant & Secure' },
+              {
+                icon: Users,
+                color: 'text-primary bg-primary/10',
+                value: '2,400+',
+                label: 'Students Learning',
+              },
+              {
+                icon: TrendingUp,
+                color: 'text-emerald-400 bg-emerald-500/10',
+                value: '94%',
+                label: 'See Grade Improvement',
+              },
+              {
+                icon: BookOpen,
+                color: 'text-blue-400 bg-blue-500/10',
+                value: '13',
+                label: 'Structured Courses',
+              },
+              {
+                icon: Shield,
+                color: 'text-clay-600 bg-amber-500/10',
+                value: 'GDPR',
+                label: 'Compliant & Secure',
+              },
             ].map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-8 sm:gap-12">
                 {i > 0 && <div className="hidden sm:block w-px h-10 bg-border/50" />}
                 <div className="flex items-center gap-3">
-                  <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center', stat.color)}>
+                  <div
+                    className={cn(
+                      'w-10 h-10 rounded-xl flex items-center justify-center',
+                      stat.color,
+                    )}
+                  >
                     <stat.icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -194,9 +234,7 @@ export default function ForParentsPage() {
       <section id="how-it-works" className="py-24 sm:py-32">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              How It Works
-            </h2>
+            <h2 className="text-foreground">How It Works</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
               Three simple steps to start tracking your child&rsquo;s progress.
             </p>
@@ -214,7 +252,7 @@ export default function ForParentsPage() {
                 step: 2,
                 icon: Link2,
                 title: 'Link your parent account to theirs',
-                desc: 'Create your own parent account and link it to your child using their email or a unique invite code. They accept the link request and you\'re connected.',
+                desc: "Create your own parent account and link it to your child using their email or a unique invite code. They accept the link request and you're connected.",
               },
               {
                 step: 3,
@@ -223,7 +261,10 @@ export default function ForParentsPage() {
                 desc: 'View modules completed, practice scores, time spent, weak areas, and exam readiness. Get weekly email reports delivered straight to your inbox.',
               },
             ].map((item) => (
-              <Card key={item.step} className="p-6 flex items-start gap-5 border-border/40 hover:border-border/70 transition-colors duration-300">
+              <Card
+                key={item.step}
+                className="p-6 flex items-start gap-5 border-border/40 hover:border-border/70 transition-colors duration-300"
+              >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary font-bold text-lg">
                   {item.step}
                 </div>
@@ -234,9 +275,7 @@ export default function ForParentsPage() {
                       {item.title}
                     </h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {item.desc}
-                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               </Card>
             ))}
@@ -250,11 +289,10 @@ export default function ForParentsPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              Everything You Need to Support Their Success
-            </h2>
+            <h2 className="text-foreground">Everything You Need to Support Their Success</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Powerful insights that help you help them &mdash; without hovering over their shoulder.
+              Powerful insights that help you help them &mdash; without hovering over their
+              shoulder.
             </p>
           </div>
 
@@ -297,18 +335,22 @@ export default function ForParentsPage() {
                 desc: 'See what your child completed today, yesterday, and this week. Know they are putting in the work without having to ask.',
               },
             ].map((item) => (
-              <Card key={item.title} className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300">
+              <Card
+                key={item.title}
+                className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300"
+              >
                 <div
-                  className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-5', item.color)}
+                  className={cn(
+                    'w-11 h-11 rounded-xl flex items-center justify-center mb-5',
+                    item.color,
+                  )}
                 >
                   <item.icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.desc}
-                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </Card>
             ))}
           </div>
@@ -321,9 +363,7 @@ export default function ForParentsPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              What Parents Are Saying
-            </h2>
+            <h2 className="text-foreground">What Parents Are Saying</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
               Join hundreds of parents already supporting their children&rsquo;s English revision.
             </p>
@@ -356,9 +396,7 @@ export default function ForParentsPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-10">
-            <h2 className="text-foreground">
-              Simple, Transparent Pricing
-            </h2>
+            <h2 className="text-foreground">Simple, Transparent Pricing</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
               Same price as an individual plan. Parent pays, child learns.
             </p>
@@ -369,7 +407,9 @@ export default function ForParentsPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-bold text-foreground">Family Plan</h3>
-                  <p className="text-sm text-muted-foreground">Full access for your child + parent dashboard</p>
+                  <p className="text-sm text-muted-foreground">
+                    Full access for your child + parent dashboard
+                  </p>
                 </div>
                 <Badge variant="outline" className="border-primary/30 text-primary">
                   <Sparkles className="w-3.5 h-3.5 mr-1" />
@@ -381,12 +421,13 @@ export default function ForParentsPage() {
               <div className="mb-6">
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold tracking-tight text-foreground">
-                    {PRICING.CURRENCY}{PRICING.MONTHLY}
+                    {PRICING.CURRENCY}
+                    {PRICING.STUDENT_MONTHLY}
                   </span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
                 <p className="text-sm text-emerald-400 font-semibold mt-1">
-                  {PRICING.TRIAL_TEXT}
+                  {PRICING.TRIAL_TEXT} &middot; card required &middot; cancel before day 7
                 </p>
               </div>
 
@@ -402,7 +443,10 @@ export default function ForParentsPage() {
                   'Verifiable completion certificates',
                   `${PRICING.TRIAL_DAYS}-day free trial`,
                 ].map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <li
+                    key={feature}
+                    className="flex items-start gap-3 text-sm text-muted-foreground"
+                  >
                     <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                     {feature}
                   </li>
@@ -418,10 +462,12 @@ export default function ForParentsPage() {
                 Start Your Child&rsquo;s Free Trial
               </Button>
               <p className="text-center text-xs text-muted-foreground mt-3">
-                No credit card required &middot; Cancel anytime
+                Card required for 7-day trial &middot; 3 free demo uses without a card
               </p>
               <p className="text-center text-xs text-muted-foreground mt-2">
-                Or save with the annual plan: {PRICING.CURRENCY}{PRICING.ANNUAL}/year
+                Or save with the annual plan: {PRICING.CURRENCY}
+                {PRICING.STUDENT_ANNUAL}/year ({PRICING.CURRENCY}
+                {PRICING.STUDENT_ANNUAL_WITH_CODE} with code {PRICING.AFFILIATE_PROMO_CODE})
               </p>
             </CardContent>
           </Card>
@@ -434,9 +480,7 @@ export default function ForParentsPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              Frequently Asked Questions
-            </h2>
+            <h2 className="text-foreground">Frequently Asked Questions</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
               Everything you need to know about the parent dashboard.
             </p>
@@ -456,11 +500,10 @@ export default function ForParentsPage() {
       <section className="py-16 sm:py-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <Mail className="w-10 h-10 text-primary mx-auto mb-4" />
-          <h2 className="text-foreground mb-3">
-            Have a Question?
-          </h2>
+          <h2 className="text-foreground mb-3">Have a Question?</h2>
           <p className="text-muted-foreground text-body-lg mb-6">
-            We&rsquo;re here to help. If you have any questions about how the platform works, pricing, or your child&rsquo;s progress, please get in touch.
+            We&rsquo;re here to help. If you have any questions about how the platform works,
+            pricing, or your child&rsquo;s progress, please get in touch.
           </p>
           <a
             href="mailto:info@Upskillenergy.com"
@@ -478,18 +521,26 @@ export default function ForParentsPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[140px] pointer-events-none" />
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <GraduationCap className="w-12 h-12 text-primary mx-auto mb-6" />
-          <h2 className="text-foreground mb-4">
-            Ready to Support Their Success?
-          </h2>
+          <h2 className="text-foreground mb-4">Ready to Support Their Success?</h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-body-lg mb-10">
             Join hundreds of parents who are already helping their children improve in English.
             Start with a free trial and see the difference real progress tracking makes.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="default" size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20" render={<Link href="/auth/register?role=parent" />}>
+            <Button
+              variant="default"
+              size="lg"
+              className="text-base px-8 h-12 shadow-lg shadow-primary/20"
+              render={<Link href="/auth/register?role=parent" />}
+            >
               Start Your Child&rsquo;s Free Trial
             </Button>
-            <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/dashboard/parent" />}>
+            <Button
+              variant="secondary"
+              size="lg"
+              className="text-base px-8 h-12"
+              render={<Link href="/dashboard/parent" />}
+            >
               Go to Parent Dashboard
             </Button>
           </div>

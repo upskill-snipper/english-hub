@@ -83,12 +83,7 @@ interface SoftNudgeProps {
   className?: string
 }
 
-export function SoftNudge({
-  feature,
-  isTeacher,
-  onDismiss,
-  className,
-}: SoftNudgeProps) {
+export function SoftNudge({ feature, isTeacher, onDismiss, className }: SoftNudgeProps) {
   const [dismissed, setDismissed] = useState(false)
   const featureName = FEATURE_NAMES[feature]
   const usageCount = getFeatureUsage(feature)
@@ -122,11 +117,7 @@ export function SoftNudge({
         </div>
         <div className="space-y-2">
           <p className="text-sm leading-relaxed text-foreground">{message}</p>
-          <Button
-            render={<Link href="/pricing" />}
-            size="sm"
-            className="gap-1.5"
-          >
+          <Button render={<Link href="/pricing" />} size="sm" className="gap-1.5">
             <Crown className="size-3.5" />
             Upgrade Now
             <ArrowRight className="size-3.5" />
@@ -170,16 +161,13 @@ export function FinalUseWarning({
             This is your last free {featureName.toLowerCase()}
           </DialogTitle>
           <DialogDescription className="text-center">
-            After this, {featureName.toLowerCase()} will be locked until you
-            upgrade to Premium.
+            After this, {featureName.toLowerCase()} will be locked until you upgrade to Premium.
           </DialogDescription>
         </DialogHeader>
 
         {/* Benefits summary */}
         <div className="rounded-lg border border-border/60 bg-muted/30 p-4">
-          <p className="mb-2.5 text-sm font-semibold">
-            Premium includes:
-          </p>
+          <p className="mb-2.5 text-sm font-semibold">Premium includes:</p>
           <ul className="space-y-1.5 text-xs text-muted-foreground">
             {benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-1.5">
@@ -192,20 +180,14 @@ export function FinalUseWarning({
         </div>
 
         <DialogFooter className="sm:flex-col sm:gap-2">
-          <Button
-            render={<Link href="/pricing" />}
-            className="w-full"
-          >
+          <Button render={<Link href="/pricing" />} className="w-full">
             <Crown className="size-4" />
             Upgrade Now
             <ArrowRight className="size-4" />
           </Button>
           <DialogClose
             render={
-              <button
-                className={buttonVariants({ variant: 'outline' })}
-                onClick={onUseLastFree}
-              />
+              <button className={buttonVariants({ variant: 'outline' })} onClick={onUseLastFree} />
             }
           >
             Use Last Free {featureName}
@@ -239,43 +221,33 @@ export function LockoutCard({ feature, className }: LockoutCardProps) {
         </div>
         <CardTitle className="text-lg">{featureName} is now locked</CardTitle>
         <CardDescription>
-          You&apos;ve used all {FREE_USES_PER_FEATURE} of your free
-          submissions.
+          You&apos;ve used all {FREE_USES_PER_FEATURE} of your free submissions.
         </CardDescription>
       </CardHeader>
 
       <CardContent>
         <div className="rounded-lg border border-border/60 bg-muted/30 p-4">
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {benefitCopy}
-          </p>
+          <p className="text-sm leading-relaxed text-muted-foreground">{benefitCopy}</p>
         </div>
 
         <div className="mt-4 flex items-center justify-between rounded-lg border border-border/60 bg-muted/30 p-4">
           <div>
             <p className="text-sm font-semibold">{priceString}</p>
-            <p className="text-xs text-muted-foreground">First month free</p>
+            <p className="text-xs text-muted-foreground">7-day free trial · card required</p>
           </div>
-          <Badge
-            variant="default"
-            className="bg-emerald-600 hover:bg-emerald-600"
-          >
+          <Badge variant="default" className="bg-emerald-600 hover:bg-emerald-600">
             Cancel anytime
           </Badge>
         </div>
       </CardContent>
 
       <CardFooter className="flex-col gap-2">
-        <Button
-          render={<Link href="/pricing" />}
-          size="lg"
-          className="w-full"
-        >
+        <Button render={<Link href="/pricing" />} size="lg" className="w-full">
           <Crown className="size-4" />
-          Upgrade to Premium
+          Start 7-day trial
         </Button>
         <p className="text-center text-xs text-muted-foreground">
-          No obligation after your free trial.
+          Cancel before day 7 and you won&apos;t be charged.
         </p>
       </CardFooter>
     </Card>
@@ -293,10 +265,7 @@ interface DashboardUpgradeBannerProps {
   className?: string
 }
 
-export function DashboardUpgradeBanner({
-  isTeacher,
-  className,
-}: DashboardUpgradeBannerProps) {
+export function DashboardUpgradeBanner({ isTeacher, className }: DashboardUpgradeBannerProps) {
   const [dismissed, setDismissed] = useState(true) // default hidden until mounted
 
   useEffect(() => {
@@ -306,9 +275,7 @@ export function DashboardUpgradeBanner({
 
   if (dismissed) return null
 
-  const copy = isTeacher
-    ? DASHBOARD_BANNER_COPY.teacher
-    : DASHBOARD_BANNER_COPY.student
+  const copy = isTeacher ? DASHBOARD_BANNER_COPY.teacher : DASHBOARD_BANNER_COPY.student
 
   function handleDismiss() {
     setDismissed(true)
@@ -332,15 +299,8 @@ export function DashboardUpgradeBanner({
           <Crown className="size-4 text-primary" />
         </div>
         <div className="space-y-2">
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {copy}
-          </p>
-          <Button
-            render={<Link href="/pricing" />}
-            variant="outline"
-            size="sm"
-            className="gap-1.5"
-          >
+          <p className="text-sm leading-relaxed text-muted-foreground">{copy}</p>
+          <Button render={<Link href="/pricing" />} variant="outline" size="sm" className="gap-1.5">
             Learn more
             <ArrowRight className="size-3.5" />
           </Button>

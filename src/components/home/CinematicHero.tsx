@@ -94,25 +94,22 @@ export default function CinematicHero() {
   const chapter = CHAPTERS[chapterIdx]
 
   // Jump to a chapter
-  const goToChapter = useCallback(
-    (idx: number, userInit = false) => {
-      const i = ((idx % CHAPTERS.length) + CHAPTERS.length) % CHAPTERS.length
-      setChapterIdx(i)
-      setPhaseIdx(0)
-      setProgress(0)
-      startedAtRef.current = Date.now()
-      pausedProgressRef.current = 0
-      if (userInit) {
-        setPaused(true)
-        setTimeout(() => {
-          setPaused(false)
-          startedAtRef.current = Date.now()
-          pausedProgressRef.current = 0
-        }, 1500)
-      }
-    },
-    []
-  )
+  const goToChapter = useCallback((idx: number, userInit = false) => {
+    const i = ((idx % CHAPTERS.length) + CHAPTERS.length) % CHAPTERS.length
+    setChapterIdx(i)
+    setPhaseIdx(0)
+    setProgress(0)
+    startedAtRef.current = Date.now()
+    pausedProgressRef.current = 0
+    if (userInit) {
+      setPaused(true)
+      setTimeout(() => {
+        setPaused(false)
+        startedAtRef.current = Date.now()
+        pausedProgressRef.current = 0
+      }, 1500)
+    }
+  }, [])
 
   // Phase advancing within a chapter
   useEffect(() => {
@@ -152,7 +149,7 @@ export default function CinematicHero() {
 
   // Pause / resume on hover
   const handleMouseEnter = useCallback(() => {
-    pausedProgressRef.current = (Date.now() - startedAtRef.current) + pausedProgressRef.current
+    pausedProgressRef.current = Date.now() - startedAtRef.current + pausedProgressRef.current
     setPaused(true)
   }, [])
 
@@ -244,17 +241,21 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
         <span className="scene-tag">
           <span className="dot" /> For Schools
         </span>
-        <span className="scene-kicker">One licence &middot; every student &middot; every teacher</span>
+        <span className="scene-kicker">
+          One licence &middot; every student &middot; every teacher
+        </span>
       </div>
       {/* numeral removed */}
 
       {/* Phase rail */}
       <div className="phase-rail">
-        {['Trends', 'Department', 'Class drill-down', 'Student view', 'Intervention'].map((label, i) => (
-          <div key={i} className={`p ${phaseIdx === i ? 'on' : ''}`}>
-            <span className="n">{String(i + 1).padStart(2, '0')}</span> {label}
-          </div>
-        ))}
+        {['Trends', 'Department', 'Class drill-down', 'Student view', 'Intervention'].map(
+          (label, i) => (
+            <div key={i} className={`p ${phaseIdx === i ? 'on' : ''}`}>
+              <span className="n">{String(i + 1).padStart(2, '0')}</span> {label}
+            </div>
+          ),
+        )}
       </div>
 
       <div className="scene-content" style={{ gridTemplateColumns: '0.75fr 1.25fr' }}>
@@ -268,8 +269,12 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             closed the gap.
           </p>
           <div className="scene-actions">
-            <a href="/for-schools" className="scene-cta">Book a call &rarr;</a>
-            <a href="/demo/school" className="scene-btn-ghost">See the demo</a>
+            <a href="/for-schools" className="scene-cta">
+              Book a call &rarr;
+            </a>
+            <a href="/demo/school" className="scene-btn-ghost">
+              See the demo
+            </a>
           </div>
         </div>
 
@@ -320,17 +325,27 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                     <circle className="dot pulse-dot" cx="370" cy="52" r="4" fill="#5A9A94" />
                     <circle className="dot" cx="370" cy="42" r="3" fill="#E4BA4E" />
                     <circle className="dot" cx="370" cy="62" r="3" fill="#D97A4E" />
-                    <text x="10" y="195" className="ax">W1</text>
-                    <text x="105" y="195" className="ax">W4</text>
-                    <text x="205" y="195" className="ax">W8</text>
-                    <text x="345" y="195" className="ax">W12</text>
+                    <text x="10" y="195" className="ax">
+                      W1
+                    </text>
+                    <text x="105" y="195" className="ax">
+                      W4
+                    </text>
+                    <text x="205" y="195" className="ax">
+                      W8
+                    </text>
+                    <text x="345" y="195" className="ax">
+                      W12
+                    </text>
                   </svg>
                 </div>
               </div>
               <div className="lc-compare">
                 <div className="kpi-mini">
                   <span className="l">Avg grade</span>
-                  <span className="v"><em>6.4</em></span>
+                  <span className="v">
+                    <em>6.4</em>
+                  </span>
                   <span className="d">&uarr; 1.4 since term 1</span>
                   <div className="spark">
                     {[40, 48, 55, 62, 70, 78, 88].map((h, i) => (
@@ -340,7 +355,9 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                 </div>
                 <div className="kpi-mini">
                   <span className="l">Weekly active</span>
-                  <span className="v">92<em>%</em></span>
+                  <span className="v">
+                    92<em>%</em>
+                  </span>
                   <span className="d">&uarr; 18 pts vs term 1</span>
                 </div>
                 <div className="kpi-mini flag">
@@ -362,27 +379,55 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                 <span className="s">Spring &apos;26 &middot; 184 students &middot; 7 classes</span>
               </div>
               <div className="kpi-row">
-                <div className="kpi"><span className="v">+<em>1.4</em></span><span className="l">Avg grade uplift</span><span className="delta">&uarr; 0.3 vs term 1</span></div>
-                <div className="kpi"><span className="v">92<em>%</em></span><span className="l">Weekly active</span><span className="delta">&uarr; 8%</span></div>
-                <div className="kpi"><span className="v">68<em>%</em></span><span className="l">At/above target</span><span className="delta">&uarr; 12%</span></div>
-                <div className="kpi"><span className="v">14</span><span className="l">Flagged &middot; attention</span><span className="delta down">&darr; 5</span></div>
+                <div className="kpi">
+                  <span className="v">
+                    +<em>1.4</em>
+                  </span>
+                  <span className="l">Avg grade uplift</span>
+                  <span className="delta">&uarr; 0.3 vs term 1</span>
+                </div>
+                <div className="kpi">
+                  <span className="v">
+                    92<em>%</em>
+                  </span>
+                  <span className="l">Weekly active</span>
+                  <span className="delta">&uarr; 8%</span>
+                </div>
+                <div className="kpi">
+                  <span className="v">
+                    68<em>%</em>
+                  </span>
+                  <span className="l">At/above target</span>
+                  <span className="delta">&uarr; 12%</span>
+                </div>
+                <div className="kpi">
+                  <span className="v">14</span>
+                  <span className="l">Flagged &middot; attention</span>
+                  <span className="delta down">&darr; 5</span>
+                </div>
               </div>
               <div>
-                <div className="cohort-label">Class x AO performance &middot; hover a cell to drill</div>
+                <div className="cohort-label">
+                  Class x AO performance &middot; hover a cell to drill
+                </div>
                 <div className="cohort">
                   <span></span>
-                  {['AO1','AO2','AO3','AO4','AO5','AO6','Mocks','Essays','Read','Avg'].map(c => (
-                    <span key={c} className="col-label">{c}</span>
-                  ))}
+                  {['AO1', 'AO2', 'AO3', 'AO4', 'AO5', 'AO6', 'Mocks', 'Essays', 'Read', 'Avg'].map(
+                    (c) => (
+                      <span key={c} className="col-label">
+                        {c}
+                      </span>
+                    ),
+                  )}
                   {[
-                    { label: '11A', vals: [4,5,4,4,5,4,5,4,5,5] },
-                    { label: '11B', vals: [3,4,3,4,4,3,4,4,3,4] },
-                    { label: '11C', vals: [3,2,3,3,3,2,3,3,3,3] },
-                    { label: '11D', vals: [2,2,3,2,3,3,3,2,3,3] },
-                    { label: '11E', vals: [1,1,2,2,2,2,2,1,2,2] },
-                    { label: '11F', vals: [3,3,4,3,4,3,4,3,4,4] },
-                    { label: '11G', vals: [4,4,4,5,4,5,4,4,5,4] },
-                  ].map(row => (
+                    { label: '11A', vals: [4, 5, 4, 4, 5, 4, 5, 4, 5, 5] },
+                    { label: '11B', vals: [3, 4, 3, 4, 4, 3, 4, 4, 3, 4] },
+                    { label: '11C', vals: [3, 2, 3, 3, 3, 2, 3, 3, 3, 3] },
+                    { label: '11D', vals: [2, 2, 3, 2, 3, 3, 3, 2, 3, 3] },
+                    { label: '11E', vals: [1, 1, 2, 2, 2, 2, 2, 1, 2, 2] },
+                    { label: '11F', vals: [3, 3, 4, 3, 4, 3, 4, 3, 4, 4] },
+                    { label: '11G', vals: [4, 4, 4, 5, 4, 5, 4, 4, 5, 4] },
+                  ].map((row) => (
                     <React.Fragment key={row.label}>
                       <span className="row-label">{row.label}</span>
                       {row.vals.map((v, i) => (
@@ -419,17 +464,20 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                       { label: 'AO4', w: 55 },
                       { label: 'AO5', w: 66 },
                       { label: 'AO6', w: 60 },
-                    ].map(ao => (
+                    ].map((ao) => (
                       <div key={ao.label} className="ao-bar2">
                         <span className="label">{ao.label}</span>
-                        <div className="track"><i style={{ width: `${ao.w}%` }} /></div>
+                        <div className="track">
+                          <i style={{ width: `${ao.w}%` }} />
+                        </div>
                         <span className="v">{ao.w}</span>
                       </div>
                     ))}
                   </div>
                   <div className="recommendation-box">
                     <b>Recommendation:</b> AO2 (language analysis) consistently 14-18 points below
-                    other AOs. Assign the &ldquo;Language Analysis Booster&rdquo; pathway to 22 students.
+                    other AOs. Assign the &ldquo;Language Analysis Booster&rdquo; pathway to 22
+                    students.
                   </div>
                 </div>
                 <div>
@@ -438,7 +486,13 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                     {[
                       { name: 'Jamie P.', grade: 3, trend: '\u2193 1.2', cls: 'flag', dir: 'down' },
                       { name: 'Aisha R.', grade: 4, trend: '\u2193 0.8', cls: 'flag', dir: 'down' },
-                      { name: 'Evie M.', grade: 5, trend: '\u2191 1.6', cls: 'highlight', dir: 'up' },
+                      {
+                        name: 'Evie M.',
+                        grade: 5,
+                        trend: '\u2191 1.6',
+                        cls: 'highlight',
+                        dir: 'up',
+                      },
                       { name: 'Noah K.', grade: 5, trend: '\u2192 0.1', cls: '', dir: 'flat' },
                       { name: 'Priya S.', grade: 6, trend: '\u2191 0.4', cls: '', dir: 'up' },
                       { name: 'Liam D.', grade: 6, trend: '\u2191 0.9', cls: '', dir: 'up' },
@@ -447,7 +501,9 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                         <span className="name">{s.name}</span>
                         <span className="grade">{s.grade}</span>
                         <span className={`trend ${s.dir}`}>{s.trend}</span>
-                        <div className="bar"><i style={{ width: `${30 + s.grade * 7}%` }} /></div>
+                        <div className="bar">
+                          <i style={{ width: `${30 + s.grade * 7}%` }} />
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -469,25 +525,53 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                 <div className="avatar">EM</div>
                 <div>
                   <div className="sc-name">Evie Matthews</div>
-                  <div className="sc-meta">Year 11 &middot; 11E &middot; AQA &middot; Joined Sep &apos;25</div>
+                  <div className="sc-meta">
+                    Year 11 &middot; 11E &middot; AQA &middot; Joined Sep &apos;25
+                  </div>
                   <div className="sc-grades">
-                    <div className="gchip"><span className="l">Working at</span><span className="v">5</span></div>
-                    <div className="gchip"><span className="l">Predicted</span><span className="v">7<small>.8</small></span></div>
-                    <div className="gchip target"><span className="l">Target</span><span className="v">8</span></div>
-                    <div className="gchip flag"><span className="l">Gap</span><span className="v">AO2</span></div>
+                    <div className="gchip">
+                      <span className="l">Working at</span>
+                      <span className="v">5</span>
+                    </div>
+                    <div className="gchip">
+                      <span className="l">Predicted</span>
+                      <span className="v">
+                        7<small>.8</small>
+                      </span>
+                    </div>
+                    <div className="gchip target">
+                      <span className="l">Target</span>
+                      <span className="v">8</span>
+                    </div>
+                    <div className="gchip flag">
+                      <span className="l">Gap</span>
+                      <span className="v">AO2</span>
+                    </div>
                   </div>
                   <div className="sc-note">
-                    <strong>Pattern:</strong> Strong in essay structure and close reading. Slipping on
-                    language analysis under timed conditions &mdash; mocks 4 &amp; 5 both dropped 8+ marks
-                    on AO2. Assigned: <em>Language Analysis Booster</em>, 3x flashcard decks, 1x model
-                    answer walkthrough.
+                    <strong>Pattern:</strong> Strong in essay structure and close reading. Slipping
+                    on language analysis under timed conditions &mdash; mocks 4 &amp; 5 both dropped
+                    8+ marks on AO2. Assigned: <em>Language Analysis Booster</em>, 3x flashcard
+                    decks, 1x model answer walkthrough.
                   </div>
                 </div>
               </div>
               <div className="kpi-row" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-                <div className="kpi"><span className="v">47</span><span className="l">Lessons complete</span><span className="delta">&uarr; 12 this month</span></div>
-                <div className="kpi"><span className="v">9</span><span className="l">Essays marked</span><span className="delta">Avg grade 6.8</span></div>
-                <div className="kpi"><span className="v">6</span><span className="l">Mocks sat</span><span className="delta">Best: 72/80</span></div>
+                <div className="kpi">
+                  <span className="v">47</span>
+                  <span className="l">Lessons complete</span>
+                  <span className="delta">&uarr; 12 this month</span>
+                </div>
+                <div className="kpi">
+                  <span className="v">9</span>
+                  <span className="l">Essays marked</span>
+                  <span className="delta">Avg grade 6.8</span>
+                </div>
+                <div className="kpi">
+                  <span className="v">6</span>
+                  <span className="l">Mocks sat</span>
+                  <span className="delta">Best: 72/80</span>
+                </div>
               </div>
             </div>
           </div>
@@ -502,16 +586,41 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             </div>
             <div className="intervention">
               <div className="pipeline">
-                <span className="pipeline-title">The closed loop &middot; flag &rarr; act &rarr; prove</span>
+                <span className="pipeline-title">
+                  The closed loop &middot; flag &rarr; act &rarr; prove
+                </span>
                 {[
-                  { n: 1, title: 'Flagged by analytics', sub: 'AO2 14 pts below class \u00B7 auto-surfaced', meta: 'Week 1 \u00B7 Mon' },
-                  { n: 2, title: 'Pathway assigned \u00B7 4 lessons', sub: '"Language analysis booster" \u00B7 by Ms Whitmore', meta: 'Week 1 \u00B7 Tue' },
-                  { n: 3, title: 'Student completed lessons + 2 mocks', sub: '6.5 hrs on task \u00B7 AI feedback on 3 drafts', meta: 'Week 2\u20133' },
-                  { n: 4, title: 'AO2 re-tested \u00B7 +16 points', sub: 'Gap closed \u00B7 now above class average', meta: 'Week 4 \u00B7 live' },
-                ].map(step => (
+                  {
+                    n: 1,
+                    title: 'Flagged by analytics',
+                    sub: 'AO2 14 pts below class \u00B7 auto-surfaced',
+                    meta: 'Week 1 \u00B7 Mon',
+                  },
+                  {
+                    n: 2,
+                    title: 'Pathway assigned \u00B7 4 lessons',
+                    sub: '"Language analysis booster" \u00B7 by Ms Whitmore',
+                    meta: 'Week 1 \u00B7 Tue',
+                  },
+                  {
+                    n: 3,
+                    title: 'Student completed lessons + 2 mocks',
+                    sub: '6.5 hrs on task \u00B7 AI feedback on 3 drafts',
+                    meta: 'Week 2\u20133',
+                  },
+                  {
+                    n: 4,
+                    title: 'AO2 re-tested \u00B7 +16 points',
+                    sub: 'Gap closed \u00B7 now above class average',
+                    meta: 'Week 4 \u00B7 live',
+                  },
+                ].map((step) => (
                   <div key={step.n} className="pipe-row done">
                     <span className="n">{step.n}</span>
-                    <div className="line"><b>{step.title}</b><small>{step.sub}</small></div>
+                    <div className="line">
+                      <b>{step.title}</b>
+                      <small>{step.sub}</small>
+                    </div>
                     <span className="meta">{step.meta}</span>
                   </div>
                 ))}
@@ -520,14 +629,26 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                 <span className="impact-title">Before &middot; after &middot; evidence</span>
                 <h4>4 weeks. Gap closed.</h4>
                 <div className="before-after">
-                  <div className="col before"><span className="l">AO2 &middot; before</span><span className="v">44</span></div>
+                  <div className="col before">
+                    <span className="l">AO2 &middot; before</span>
+                    <span className="v">44</span>
+                  </div>
                   <div className="arrow">&rarr;</div>
-                  <div className="col after"><span className="l">AO2 &middot; after</span><span className="v">60</span></div>
+                  <div className="col after">
+                    <span className="l">AO2 &middot; after</span>
+                    <span className="v">60</span>
+                  </div>
                 </div>
                 <ul className="impact-list">
-                  <li><b>Predicted grade:</b> 6 &rarr; 7.8 in 4 weeks</li>
-                  <li><b>14 students</b> on parallel pathways this term</li>
-                  <li>Full audit trail &mdash; <b>exportable for parents&apos; evening</b></li>
+                  <li>
+                    <b>Predicted grade:</b> 6 &rarr; 7.8 in 4 weeks
+                  </li>
+                  <li>
+                    <b>14 students</b> on parallel pathways this term
+                  </li>
+                  <li>
+                    Full audit trail &mdash; <b>exportable for parents&apos; evening</b>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -557,7 +678,9 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
         <span className="scene-tag">
           <span className="dot" /> For Teachers
         </span>
-        <span className="scene-kicker">Plan &middot; teach &middot; mark &mdash; in one hour, not ten</span>
+        <span className="scene-kicker">
+          Plan &middot; teach &middot; mark &mdash; in one hour, not ten
+        </span>
       </div>
       {/* numeral removed */}
 
@@ -571,8 +694,12 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             paragraph-by-paragraph feedback aligned to your exam board.
           </p>
           <div className="scene-actions">
-            <a href="/for-teachers/free-resources" className="scene-cta">Try the teacher demo &rarr;</a>
-            <a href="/pricing" className="scene-btn-ghost">Plans &amp; pricing</a>
+            <a href="/for-teachers/free-resources" className="scene-cta">
+              Try the teacher demo &rarr;
+            </a>
+            <a href="/pricing" className="scene-btn-ghost">
+              Plans &amp; pricing
+            </a>
           </div>
         </div>
 
@@ -584,17 +711,27 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                 tag: 'AQA \u00B7 Language Paper 1',
                 title: 'Descriptive writing \u2014 pathetic fallacy',
                 body: 'Starter \u2192 model \u2192 shared write \u2192 independent paragraph \u2192 peer swap \u2192 plenary.',
-                grid: ['Starter \u00B7 5m', 'Model \u00B7 10m', 'Write \u00B7 25m', 'Plenary \u00B7 10m'],
+                grid: [
+                  'Starter \u00B7 5m',
+                  'Model \u00B7 10m',
+                  'Write \u00B7 25m',
+                  'Plenary \u00B7 10m',
+                ],
               },
               {
                 tag: 'OCR \u00B7 Component 01',
                 title: 'Non-fiction synthesis (Q3)',
                 body: 'Compare two extracts on travel. Cross-reference viewpoints with evidence stems provided.',
-                grid: ['Text A \u00B7 Victorian', 'Text B \u00B7 Modern', 'Sentence starters', 'Grade 6-7 model'],
+                grid: [
+                  'Text A \u00B7 Victorian',
+                  'Text B \u00B7 Modern',
+                  'Sentence starters',
+                  'Grade 6-7 model',
+                ],
               },
               {
                 tag: 'Edexcel \u00B7 Literature',
-                title: "An Inspector Calls \u2014 Sheila\u2019s arc",
+                title: 'An Inspector Calls \u2014 Sheila\u2019s arc',
                 body: 'Character development across Acts I\u2013III. Key quotations mapped to AO1/AO2/AO3.',
                 grid: ['Act I \u00B7 Act II', 'Act III', 'Quote bank', 'Essay stems'],
               },
@@ -615,24 +752,33 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
           {/* AI marking panel */}
           <div className={`mark-panel ${active ? 'active' : ''}`} style={{ maxWidth: 480 }}>
             <div className="mark-label">AI marking &middot; Student #2418</div>
-            The writer uses{' '}
-            <span className="hl-good">pathetic fallacy effectively</span> to mirror
+            The writer uses <span className="hl-good">pathetic fallacy effectively</span> to mirror
             Sheila&apos;s guilt, though{' '}
-            <span className="hl-imp">
-              the final paragraph lacks a clear thematic thread
-            </span>{' '}
-            back to responsibility.
+            <span className="hl-imp">the final paragraph lacks a clear thematic thread</span> back
+            to responsibility.
             <div className="grade">
               <div className="grade-pill">7</div>
               <div className="ao">
                 <div className="ao-row">
-                  AO1 <div className="ao-bar"><i style={{ '--w': '78%' } as React.CSSProperties} /></div> 78
+                  AO1{' '}
+                  <div className="ao-bar">
+                    <i style={{ '--w': '78%' } as React.CSSProperties} />
+                  </div>{' '}
+                  78
                 </div>
                 <div className="ao-row">
-                  AO2 <div className="ao-bar"><i style={{ '--w': '82%' } as React.CSSProperties} /></div> 82
+                  AO2{' '}
+                  <div className="ao-bar">
+                    <i style={{ '--w': '82%' } as React.CSSProperties} />
+                  </div>{' '}
+                  82
                 </div>
                 <div className="ao-row">
-                  AO3 <div className="ao-bar"><i style={{ '--w': '65%' } as React.CSSProperties} /></div> 65
+                  AO3{' '}
+                  <div className="ao-bar">
+                    <i style={{ '--w': '65%' } as React.CSSProperties} />
+                  </div>{' '}
+                  65
                 </div>
               </div>
             </div>
@@ -662,19 +808,26 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
         <span className="scene-tag">
           <span className="dot" /> For Students
         </span>
-        <span className="scene-kicker">Learn &middot; practise &middot; get feedback &middot; improve</span>
+        <span className="scene-kicker">
+          Learn &middot; practise &middot; get feedback &middot; improve
+        </span>
       </div>
       {/* numeral removed */}
 
       {/* Phase rail */}
       <div className="phase-rail tall">
-        {['Courses', 'Annotate', 'AI feedback', 'Writing coach', 'Mock exams', 'Revise \u00B7 predict'].map(
-          (label, i) => (
-            <div key={i} className={`p ${phaseIdx === i ? 'on' : ''}`}>
-              <span className="n">{String(i + 1).padStart(2, '0')}</span> {label}
-            </div>
-          )
-        )}
+        {[
+          'Courses',
+          'Annotate',
+          'AI feedback',
+          'Writing coach',
+          'Mock exams',
+          'Revise \u00B7 predict',
+        ].map((label, i) => (
+          <div key={i} className={`p ${phaseIdx === i ? 'on' : ''}`}>
+            <span className="n">{String(i + 1).padStart(2, '0')}</span> {label}
+          </div>
+        ))}
       </div>
 
       <div className="scene-content" style={{ gridTemplateColumns: '0.75fr 1.25fr' }}>
@@ -683,12 +836,17 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             Everything you need to <em>land the grade you want</em>.
           </h2>
           <p className="scene-desc">
-            Structured courses you can actually follow. AI feedback that reads like a teacher&apos;s.
-            Flashcards, mocks and grade-predicting games &mdash; all mapped to your exam board.
+            Structured courses you can actually follow. AI feedback that reads like a
+            teacher&apos;s. Flashcards, mocks and grade-predicting games &mdash; all mapped to your
+            exam board.
           </p>
           <div className="scene-actions">
-            <a href="/board-select" className="scene-cta">Start free &mdash; no card &rarr;</a>
-            <a href="/board-select" className="scene-btn-ghost">Browse courses</a>
+            <a href="/board-select" className="scene-cta">
+              Start free &mdash; no card &rarr;
+            </a>
+            <a href="/board-select" className="scene-btn-ghost">
+              Browse courses
+            </a>
           </div>
         </div>
 
@@ -705,26 +863,44 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                 <h4>Analysing language in fiction extracts</h4>
                 <div className="course-progress">
                   <span>38%</span>
-                  <div className="track"><i style={{ width: '38%' }} /></div>
+                  <div className="track">
+                    <i style={{ width: '38%' }} />
+                  </div>
                   <span>18 / 47</span>
                 </div>
                 <ul className="lesson-list">
-                  <li className="done"><span className="tick">&check;</span> Identifying methods &mdash; similes &amp; metaphors</li>
-                  <li className="done"><span className="tick">&check;</span> Effect on the reader &mdash; starter phrases</li>
-                  <li className="current"><span className="tick">&blacktriangleright;</span> Zoom in: single-word analysis</li>
-                  <li className="next"><span className="tick"></span> Writing a full AO2 paragraph</li>
-                  <li className="next"><span className="tick"></span> Checkpoint quiz &middot; grade predictor</li>
+                  <li className="done">
+                    <span className="tick">&check;</span> Identifying methods &mdash; similes &amp;
+                    metaphors
+                  </li>
+                  <li className="done">
+                    <span className="tick">&check;</span> Effect on the reader &mdash; starter
+                    phrases
+                  </li>
+                  <li className="current">
+                    <span className="tick">&blacktriangleright;</span> Zoom in: single-word analysis
+                  </li>
+                  <li className="next">
+                    <span className="tick"></span> Writing a full AO2 paragraph
+                  </li>
+                  <li className="next">
+                    <span className="tick"></span> Checkpoint quiz &middot; grade predictor
+                  </li>
                 </ul>
               </div>
               <div className="card-white card-dark">
-                <span className="ch">&ldquo;Don&apos;t just name the technique &mdash; show its job.&rdquo;</span>
+                <span className="ch">
+                  &ldquo;Don&apos;t just name the technique &mdash; show its job.&rdquo;
+                </span>
                 <div className="video-placeholder">
                   <div className="play-btn">&blacktriangleright;</div>
-                  <div className="video-bar"><div style={{ width: '42%' }} /></div>
+                  <div className="video-bar">
+                    <div style={{ width: '42%' }} />
+                  </div>
                 </div>
                 <p className="video-caption">
-                  Chapter 3 of 6 &middot; Ms Hughes explains why &ldquo;freezing&rdquo; matters more than
-                  &ldquo;cold&rdquo; in an extract from <em>Frankenstein</em>.
+                  Chapter 3 of 6 &middot; Ms Hughes explains why &ldquo;freezing&rdquo; matters more
+                  than &ldquo;cold&rdquo; in an extract from <em>Frankenstein</em>.
                 </p>
               </div>
             </div>
@@ -738,13 +914,21 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             </div>
             <div className="feat-body" style={{ gridTemplateColumns: '1.1fr 0.9fr' }}>
               <div className="card-white">
-                <span className="ch">AQA anthology &middot; Power &amp; Conflict &middot; &ldquo;Ozymandias&rdquo;</span>
+                <span className="ch">
+                  AQA anthology &middot; Power &amp; Conflict &middot; &ldquo;Ozymandias&rdquo;
+                </span>
                 <div className="poem-text">
-                  I met a <span className="hl-narrator">traveller</span> from an antique land,<br />
-                  Who said &mdash; &ldquo;<span className="hl-imagery">Two vast and trunkless legs of stone</span><br />
-                  Stand in the desert. . . . Near them, on the sand,<br />
-                  Half sunk a <span className="hl-quote">shattered visage</span> lies, whose frown,<br />
-                  And wrinkled lip, and <span className="hl-theme">sneer of cold command</span>,<br />
+                  I met a <span className="hl-narrator">traveller</span> from an antique land,
+                  <br />
+                  Who said &mdash; &ldquo;
+                  <span className="hl-imagery">Two vast and trunkless legs of stone</span>
+                  <br />
+                  Stand in the desert. . . . Near them, on the sand,
+                  <br />
+                  Half sunk a <span className="hl-quote">shattered visage</span> lies, whose frown,
+                  <br />
+                  And wrinkled lip, and <span className="hl-theme">sneer of cold command</span>,
+                  <br />
                   Tell that its sculptor well those passions read
                 </div>
                 <div className="anno-tags">
@@ -756,7 +940,9 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <div className="card-white" style={{ padding: '14px 16px' }}>
-                  <span className="ch">Click to reveal &middot; &ldquo;sneer of cold command&rdquo;</span>
+                  <span className="ch">
+                    Click to reveal &middot; &ldquo;sneer of cold command&rdquo;
+                  </span>
                   <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5 }}>
                     Shelley fuses the facial <b>sneer</b> with military <b>command</b> &mdash; the
                     despot&apos;s contempt is inseparable from his authority.
@@ -765,15 +951,17 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                 <div className="card-white" style={{ padding: '14px 16px' }}>
                   <span className="ch">Context card &middot; 1818</span>
                   <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5 }}>
-                    Published as Napoleon&apos;s legacy was collapsing. Shelley, a radical, read the ruin
-                    of tyrants as inevitable.
+                    Published as Napoleon&apos;s legacy was collapsing. Shelley, a radical, read the
+                    ruin of tyrants as inevitable.
                   </p>
                 </div>
                 <div className="card-white card-ochre" style={{ padding: '14px 16px' }}>
                   <span className="ch">Grade 9 hinge</span>
                   <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5 }}>
-                    <em>&ldquo;Shelley&apos;s traveller is a mediating voice &mdash; we never meet
-                    Ozymandias, only his wreckage, retold.&rdquo;</em>
+                    <em>
+                      &ldquo;Shelley&apos;s traveller is a mediating voice &mdash; we never meet
+                      Ozymandias, only his wreckage, retold.&rdquo;
+                    </em>
                   </p>
                 </div>
               </div>
@@ -788,16 +976,21 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             </div>
             <div className="feat-body">
               <div className="ai-panel">
-                <span className="ch">Your submission &middot; An Inspector Calls &middot; 428 words</span>
+                <span className="ch">
+                  Your submission &middot; An Inspector Calls &middot; 428 words
+                </span>
                 <div className="ess">
-                  Priestley presents Sheila as <span className="g">the emotional conscience</span> of the
-                  Birling family. At the start of Act I, her silly exclamations show she is still a child
-                  of privilege &mdash; <span className="r">but by the end of the play</span> she has become
-                  the character who most sharply condemns her parents. When she says{' '}
-                  <span className="g">&ldquo;these girls aren&apos;t cheap labour&rdquo;</span>, Priestley
-                  uses her voice to critique the capitalist assumptions her father takes for granted.
+                  Priestley presents Sheila as <span className="g">the emotional conscience</span>{' '}
+                  of the Birling family. At the start of Act I, her silly exclamations show she is
+                  still a child of privilege &mdash;{' '}
+                  <span className="r">but by the end of the play</span> she has become the character
+                  who most sharply condemns her parents. When she says{' '}
+                  <span className="g">&ldquo;these girls aren&apos;t cheap labour&rdquo;</span>,
+                  Priestley uses her voice to critique the capitalist assumptions her father takes
+                  for granted.
                   <span className="i">
-                    {' '}Her transformation is important because it shows that change is possible
+                    {' '}
+                    Her transformation is important because it shows that change is possible
                   </span>
                   , especially in the younger generation.
                 </div>
@@ -807,19 +1000,33 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                     <div className="small">est. grade</div>
                   </div>
                   <ul className="feedback-list">
-                    <li className="strength"><b>AO1 &middot; 82</b> &mdash; clear thesis, well-chosen quote embedded early.</li>
-                    <li className="strength"><b>AO3 &middot; 78</b> &mdash; links 1945 context to Priestley&apos;s political purpose.</li>
-                    <li className="improve"><b>AO2 &middot; 58</b> &mdash; zoom into &ldquo;cheap labour&rdquo; at word level, not just idea level.</li>
-                    <li className="improve"><b>Structure</b> &mdash; the <em>but by the end</em> jump skips Act II. Add a pivot sentence.</li>
+                    <li className="strength">
+                      <b>AO1 &middot; 82</b> &mdash; clear thesis, well-chosen quote embedded early.
+                    </li>
+                    <li className="strength">
+                      <b>AO3 &middot; 78</b> &mdash; links 1945 context to Priestley&apos;s
+                      political purpose.
+                    </li>
+                    <li className="improve">
+                      <b>AO2 &middot; 58</b> &mdash; zoom into &ldquo;cheap labour&rdquo; at word
+                      level, not just idea level.
+                    </li>
+                    <li className="improve">
+                      <b>Structure</b> &mdash; the <em>but by the end</em> jump skips Act II. Add a
+                      pivot sentence.
+                    </li>
                   </ul>
                 </div>
               </div>
               <div className="card-white card-teal">
                 <span className="ch">AI tutor &middot; next step</span>
-                <h4>&ldquo;You&apos;re a Grade 7 now. Here&apos;s what a Grade 9 would add.&rdquo;</h4>
+                <h4>
+                  &ldquo;You&apos;re a Grade 7 now. Here&apos;s what a Grade 9 would add.&rdquo;
+                </h4>
                 <div className="tutor-quote">
-                  &ldquo;Notice how Priestley splits the word: <b>cheap</b> (economic) and <b>labour</b>{' '}
-                  (moral). Sheila refuses the first adjective as a way of refusing the whole ideology.&rdquo;
+                  &ldquo;Notice how Priestley splits the word: <b>cheap</b> (economic) and{' '}
+                  <b>labour</b> (moral). Sheila refuses the first adjective as a way of refusing the
+                  whole ideology.&rdquo;
                 </div>
                 <div className="tutor-footer">
                   <span>Pathway: Language analysis booster &middot; 4 lessons</span>
@@ -838,18 +1045,28 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             <div className="coach-grid">
               <div className="writer">
                 <div className="writer-head">
-                  <span className="t">Practice &middot; &ldquo;How is Sheila presented as powerful?&rdquo;</span>
+                  <span className="t">
+                    Practice &middot; &ldquo;How is Sheila presented as powerful?&rdquo;
+                  </span>
                   <span className="count">287 words &middot; 14 min</span>
                 </div>
                 <div className="writer-body">
                   <span className="type-seg">From the opening of Act I, Sheila is </span>
-                  <span className="weak" title="Weak verb">shown</span>
+                  <span className="weak" title="Weak verb">
+                    shown
+                  </span>
                   <span className="type-seg"> as </span>
-                  <span className="weak" title="Vague adjective">nice</span>
+                  <span className="weak" title="Vague adjective">
+                    nice
+                  </span>
                   <span className="type-seg"> and </span>
-                  <span className="weak" title="Prompt wording reused">powerful</span>
-                  <span className="type-seg">. Priestley&apos;s stage directions describe her as
-                    &ldquo;very pleased with life&rdquo;, which </span>
+                  <span className="weak" title="Prompt wording reused">
+                    powerful
+                  </span>
+                  <span className="type-seg">
+                    . Priestley&apos;s stage directions describe her as &ldquo;very pleased with
+                    life&rdquo;, which{' '}
+                  </span>
                   <span className="strong">
                     sets up a fragile innocence the Inspector systematically dismantles
                   </span>
@@ -867,29 +1084,46 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
               <div className="tips">
                 <div className="tips-head">
                   <span className="t">Coach &middot; suggestions</span>
-                  <span className="live"><span className="d" /> Reading your draft</span>
+                  <span className="live">
+                    <span className="d" /> Reading your draft
+                  </span>
                 </div>
                 <div className="tip">
                   <span className="lead">Word choice &middot; AO2</span>
-                  &ldquo;<b>shown</b>&rdquo; is doing too little work. A verb like <b>positioned</b>,{' '}
-                  <b>framed</b> or <b>constructed</b> foregrounds Priestley as a craftsman.
-                  <div className="suggest">&ldquo;Sheila is <b>positioned</b> as the emotional conscience...&rdquo;</div>
+                  &ldquo;<b>shown</b>&rdquo; is doing too little work. A verb like <b>positioned</b>
+                  , <b>framed</b> or <b>constructed</b> foregrounds Priestley as a craftsman.
+                  <div className="suggest">
+                    &ldquo;Sheila is <b>positioned</b> as the emotional conscience...&rdquo;
+                  </div>
                 </div>
                 <div className="tip">
                   <span className="lead">Structure &middot; AO1</span>
-                  You&apos;ve picked a strong quote but <b>haven&apos;t said why it matters politically</b>.
-                  Add one sentence linking &ldquo;rotten shame&rdquo; to Priestley&apos;s 1945 audience.
+                  You&apos;ve picked a strong quote but{' '}
+                  <b>haven&apos;t said why it matters politically</b>. Add one sentence linking
+                  &ldquo;rotten shame&rdquo; to Priestley&apos;s 1945 audience.
                 </div>
                 <div className="tip">
                   <span className="lead">Technique &middot; AO2</span>
-                  You&apos;ve named repetition. Name its <b>effect</b>: repetition here mimics conviction
-                  &mdash; Sheila is finding her voice in real time.
+                  You&apos;ve named repetition. Name its <b>effect</b>: repetition here mimics
+                  conviction &mdash; Sheila is finding her voice in real time.
                 </div>
                 <div className="ao-live">
-                  <div className="ao-chip up"><span className="l">AO1</span><span className="v">7</span></div>
-                  <div className="ao-chip"><span className="l">AO2</span><span className="v">5</span></div>
-                  <div className="ao-chip up"><span className="l">AO3</span><span className="v">6</span></div>
-                  <div className="ao-chip"><span className="l">AO4</span><span className="v">&mdash;</span></div>
+                  <div className="ao-chip up">
+                    <span className="l">AO1</span>
+                    <span className="v">7</span>
+                  </div>
+                  <div className="ao-chip">
+                    <span className="l">AO2</span>
+                    <span className="v">5</span>
+                  </div>
+                  <div className="ao-chip up">
+                    <span className="l">AO3</span>
+                    <span className="v">6</span>
+                  </div>
+                  <div className="ao-chip">
+                    <span className="l">AO4</span>
+                    <span className="v">&mdash;</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -933,21 +1167,32 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                   </svg>
                   <div className="t-label">
                     <div>
-                      <div className="tt">31<small>:24</small></div>
+                      <div className="tt">
+                        31<small>:24</small>
+                      </div>
                       <div className="tl">Of 45:00 remaining</div>
                     </div>
                   </div>
                 </div>
                 <div className="mock-stats">
-                  <div className="ms"><div className="v">287</div><div className="l">Words</div></div>
-                  <div className="ms"><div className="v">6.4/m</div><div className="l">Pace</div></div>
-                  <div className="ms"><div className="v">2/2</div><div className="l">Quotes cited</div></div>
+                  <div className="ms">
+                    <div className="v">287</div>
+                    <div className="l">Words</div>
+                  </div>
+                  <div className="ms">
+                    <div className="v">6.4/m</div>
+                    <div className="l">Pace</div>
+                  </div>
+                  <div className="ms">
+                    <div className="v">2/2</div>
+                    <div className="l">Quotes cited</div>
+                  </div>
                 </div>
                 <div className="mock-hint">
                   <span className="icon">i</span>
                   <div>
-                    <b>Pace alert:</b> you&apos;re on track for 450 words. Grade 9 answers average 520+
-                    &mdash; consider tightening intro and starting Q1b.
+                    <b>Pace alert:</b> you&apos;re on track for 450 words. Grade 9 answers average
+                    520+ &mdash; consider tightening intro and starting Q1b.
                   </div>
                 </div>
               </div>
@@ -968,17 +1213,24 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                     <div className="fc">
                       <span className="tag">Literary device</span>
                       <span className="term">Sibilance</span>
-                      <span className="ex">&ldquo;the silver sea&rdquo; &mdash; clustered &apos;s&apos; sounds for softness or menace.</span>
+                      <span className="ex">
+                        &ldquo;the silver sea&rdquo; &mdash; clustered &apos;s&apos; sounds for
+                        softness or menace.
+                      </span>
                     </div>
                     <div className="fc">
                       <span className="tag">Poetic form</span>
                       <span className="term">Volta</span>
-                      <span className="ex">A turn in thought &mdash; often between octet and sestet.</span>
+                      <span className="ex">
+                        A turn in thought &mdash; often between octet and sestet.
+                      </span>
                     </div>
                     <div className="fc">
                       <span className="tag">Theme</span>
                       <span className="term">Pathetic fallacy</span>
-                      <span className="ex">Weather or nature mirroring a character&apos;s mood.</span>
+                      <span className="ex">
+                        Weather or nature mirroring a character&apos;s mood.
+                      </span>
                     </div>
                   </div>
                   <div className="flash-footer">
@@ -996,7 +1248,10 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                       { label: 'Round 3', grade: '8', active: true },
                       { label: 'Next', grade: '?', active: false, dashed: true },
                     ].map((r, i) => (
-                      <div key={i} className={`round ${r.active ? 'on' : ''} ${r.dashed ? 'dashed' : ''}`}>
+                      <div
+                        key={i}
+                        className={`round ${r.active ? 'on' : ''} ${r.dashed ? 'dashed' : ''}`}
+                      >
                         <div className="round-label">{r.label}</div>
                         <div className="round-grade">{r.grade}</div>
                       </div>
@@ -1012,9 +1267,18 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                     <div className="ring-value">8</div>
                   </div>
                   <div className="predictor-info">
-                    <div className="pred-line"><span>Working at</span><b>6</b></div>
-                    <div className="pred-line"><span>Predicted</span><b className="clay">8</b></div>
-                    <div className="pred-line"><span>Target</span><b className="teal">9</b></div>
+                    <div className="pred-line">
+                      <span>Working at</span>
+                      <b>6</b>
+                    </div>
+                    <div className="pred-line">
+                      <span>Predicted</span>
+                      <b className="clay">8</b>
+                    </div>
+                    <div className="pred-line">
+                      <span>Target</span>
+                      <b className="teal">9</b>
+                    </div>
                     <div className="pred-hint">
                       Complete <b>3 more AO2 lessons</b> + <b>1 mock</b> to unlock a 9.
                     </div>
@@ -1059,11 +1323,15 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
           </h2>
           <p className="scene-desc">
             Weekly progress summaries. Streaks, focus areas and predicted grades in plain English.
-            First month free &mdash; cancel any time from your account.
+            7-day free trial on any paid plan &mdash; card required, cancel before day 7.
           </p>
           <div className="scene-actions">
-            <a href="/board-select" className="scene-cta">Start first month free &rarr;</a>
-            <a href="/for-parents" className="scene-btn-ghost">Read the parent guide</a>
+            <a href="/board-select" className="scene-cta">
+              Start 7-day trial &rarr;
+            </a>
+            <a href="/for-parents" className="scene-btn-ghost">
+              Read the parent guide
+            </a>
           </div>
         </div>
 
@@ -1075,7 +1343,9 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             </div>
             <div className="ring-row">
               <div className="pring">
-                <div className="v">7<small>.8</small></div>
+                <div className="v">
+                  7<small>.8</small>
+                </div>
               </div>
               <div className="ring-info">
                 <h4>Predicted grade</h4>
@@ -1085,7 +1355,7 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             <div>
               <div className="streak-label">14-day streak</div>
               <div className="streak">
-                {[1,1,1,1,1,0,1, 1,1,1,1,1,1,2].map((v, i) => (
+                {[1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 2].map((v, i) => (
                   <div
                     key={i}
                     style={{
@@ -1107,7 +1377,12 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
               {[30, 38, 48, 58, 72, 90].map((h, i) => (
                 <div
                   key={i}
-                  style={{ height: `${h}%`, animationDelay: `${4000 + i * 200}ms` } as React.CSSProperties}
+                  style={
+                    {
+                      height: `${h}%`,
+                      animationDelay: `${4000 + i * 200}ms`,
+                    } as React.CSSProperties
+                  }
                   className={i === 5 ? 'highlight' : ''}
                 />
               ))}
@@ -1126,4 +1401,3 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
     </div>
   )
 }
-

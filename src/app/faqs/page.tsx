@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { PRICING } from '@/constants/pricing'
 import {
   Search,
   ChevronDown,
@@ -74,18 +75,16 @@ const FAQ_SECTIONS: FaqSection[] = [
     items: [
       {
         question: 'How much does The English Hub cost?',
-        answer:
-          'Students: £20/year, annual subscription, all access. Teachers: £67.99/year, annual subscription, includes lesson planning, AI marking, worksheet builder, class analytics. Schools: Founding Schools Programme from £3,000 (one-time, 10 places available). All plans include a 7-day free trial. Every feature also comes with 3 free uses — no card required. Cancel anytime.',
+        answer: `Students: £${PRICING.STUDENT_MONTHLY}/month or £${PRICING.STUDENT_ANNUAL}/year — and £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with any affiliate code or the public code ${PRICING.AFFILIATE_PROMO_CODE} (save £${PRICING.STUDENT_ANNUAL_SAVINGS}). Teachers: £${PRICING.TEACHER_MONTHLY}/month or £${PRICING.TEACHER_ANNUAL}/year (includes lesson planning, AI marking, worksheet builder, class analytics). Schools: Founding Schools Programme from £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year (${PRICING.FOUNDER_SCHOOL_LIMIT} places only). Every paid plan starts with a ${PRICING.TRIAL_TEXT} (card required). Before the paywall you also get ${PRICING.FREE_USES_PER_FEATURE} free uses of most features — no card required for those.`,
       },
       {
-        question: 'Is there a free trial?',
-        answer:
-          'Yes! Every feature comes with 3 free uses — no card required. When you subscribe, your first month is completely free with full access to all courses, mock exams, practice questions, and revision materials.',
+        question: 'Is there a free trial? Do I need a card?',
+        answer: `Yes. Every paid plan starts with a ${PRICING.TRIAL_TEXT}. The trial requires full sign-up with a valid payment method — so the subscription can convert automatically if you do not cancel before day 7. Separately, you can demo most premium features for ${PRICING.FREE_USES_PER_FEATURE} free uses without a card.`,
       },
       {
-        question: 'What happens after my free trial ends?',
+        question: 'What happens after my 7-day trial ends?',
         answer:
-          "We'll send you a reminder email before your free first month ends. If you've added a payment method and chosen a plan, your subscription will start automatically. If you haven't added payment details, your account will simply be paused — you won't be charged anything.",
+          'We send you a reminder email a couple of days before the trial ends. If you do nothing, your chosen subscription activates and your card is charged the plan price. Cancel any time before day 7 from your account settings and you will not be charged at all.',
       },
       {
         question: 'Can I cancel my subscription?',
@@ -201,8 +200,7 @@ const FAQ_SECTIONS: FaqSection[] = [
     items: [
       {
         question: 'How does the Founding Schools Programme work?',
-        answer:
-          'Our Founding Schools Programme is a strategic partnership limited to 10 schools, with pricing ranging from £3,000 to £7,000 per year depending on department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Visit our For Schools page or contact info@Upskillenergy.com for details.',
+        answer: `Our Founding Schools Programme is a strategic partnership limited to ${PRICING.FOUNDER_SCHOOL_LIMIT} schools, with pricing starting at £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year and scaling with department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2–3 years. Visit our For Schools page or contact info@upskillenergy.com for details.`,
       },
       {
         question: 'What does the teacher dashboard include?',

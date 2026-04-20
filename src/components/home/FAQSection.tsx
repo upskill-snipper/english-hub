@@ -7,8 +7,8 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    q: 'Is there a free trial?',
-    a: 'Yes! Your first month is completely free — no card required. You get full access to all courses, practice questions, flashcards, mock exams, and revision tools. Cancel anytime during the trial and you won\u2019t be charged a penny.',
+    q: 'Is there a free trial? Do I need a card?',
+    a: 'Two things. Every paid plan starts with a 7-day free trial — that requires full sign-up with a valid card. Cancel before day 7 from your account settings and you won\u2019t be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) so you can demo the product before putting a card down.',
   },
   {
     q: 'What exam boards do you cover?',
@@ -42,7 +42,10 @@ const faqs = [
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
-  const id = q.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  const id = q
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
   const triggerId = `faq-trigger-${id}`
   const panelId = `faq-panel-${id}`
   return (
@@ -58,7 +61,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         <ChevronDown
           className={cn(
             'w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300',
-            open ? 'rotate-180' : ''
+            open ? 'rotate-180' : '',
           )}
         />
       </button>
@@ -68,7 +71,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         aria-labelledby={triggerId}
         className={cn(
           'grid transition-all duration-300',
-          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
         )}
       >
         <div className="overflow-hidden">
@@ -84,9 +87,7 @@ export default function FAQSection() {
     <section className="py-24 sm:py-32 bg-card/20">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-foreground">
-            Frequently Asked Questions
-          </h2>
+          <h2 className="text-foreground">Frequently Asked Questions</h2>
         </div>
 
         <div className="space-y-3">

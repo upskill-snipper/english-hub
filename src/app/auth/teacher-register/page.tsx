@@ -21,19 +21,26 @@ import {
   Star,
   CheckSquare,
 } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+} from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
 const BENEFITS = [
-  { icon: BookOpen,      text: '300+ ready-made lesson plans' },
-  { icon: CheckSquare,   text: 'AI essay marking and feedback' },
-  { icon: BarChart2,     text: 'Real-time student analytics' },
+  { icon: BookOpen, text: '300+ ready-made lesson plans' },
+  { icon: CheckSquare, text: 'AI essay marking and feedback' },
+  { icon: BarChart2, text: 'Real-time student analytics' },
   { icon: ClipboardList, text: 'Homework management' },
-  { icon: FileText,      text: 'Mock exam papers for all boards' },
-  { icon: Star,          text: '3 free uses of every AI tool' },
+  { icon: FileText, text: 'Mock exam papers for all boards' },
+  { icon: Star, text: '3 free uses of every AI tool' },
 ]
 
 export default function TeacherRegisterPage() {
@@ -135,12 +142,15 @@ export default function TeacherRegisterPage() {
               <CheckCircle className="w-14 h-14 text-primary mx-auto mb-4" />
               <h1 className="text-2xl font-bold text-foreground mb-3">Account created!</h1>
               <p className="text-muted-foreground mb-4">
-                Check your email to verify your address, then log in to access your teacher dashboard.
+                Check your email to verify your address, then log in to access your teacher
+                dashboard.
               </p>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6 text-left">
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">Your free trial is ready.</span>{' '}
-                  You have 3 free uses of every premium feature — AI marking, lesson plans, and more. Upgrade for unlimited at &pound;12.99/month (first month free).
+                  <span className="font-medium text-foreground">Demo access ready.</span> You have 3
+                  free uses of every premium feature — AI marking, lesson plans, and more. When
+                  you&rsquo;re ready, start a 7-day free trial from &pound;7.99/month (card
+                  required, cancel before day 7).
                 </p>
               </div>
               <Button render={<Link href="/auth/login" />} className="w-full" size="lg">
@@ -169,14 +179,18 @@ export default function TeacherRegisterPage() {
 
         {/* Header */}
         <div className="text-center mb-10">
-          <Badge variant="secondary" className="mb-4">Teachers</Badge>
-          <h1 className="text-3xl font-bold text-foreground mb-3">Start your free teacher account</h1>
+          <Badge variant="secondary" className="mb-4">
+            Teachers
+          </Badge>
+          <h1 className="text-3xl font-bold text-foreground mb-3">
+            Start your free teacher account
+          </h1>
           <p className="text-muted-foreground max-w-xl mx-auto text-base">
-            Save 5+ hours per week with AI lesson planning and marking.
-            3 free uses of every AI tool. Upgrade for unlimited.
+            Save 5+ hours per week with AI lesson planning and marking. 3 free uses of every AI
+            tool. Upgrade for unlimited.
           </p>
           <p className="text-sm text-primary font-medium mt-2">
-            &pound;12.99/month &mdash; first month free
+            From &pound;7.99/month &mdash; 7-day free trial, card required, cancel before day 7
           </p>
         </div>
 
@@ -287,7 +301,10 @@ export default function TeacherRegisterPage() {
                     </div>
                     <p className="text-xs text-muted-foreground">
                       For school-wide access, ask your school admin or{' '}
-                      <Link href="/for-schools/register" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                      <Link
+                        href="/for-schools/register"
+                        className="underline underline-offset-2 hover:text-foreground transition-colors"
+                      >
                         register your school at /for-schools/register
                       </Link>
                       .
@@ -317,7 +334,11 @@ export default function TeacherRegisterPage() {
                         className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                         aria-label={showPassword ? 'Hide password' : 'Show password'}
                       >
-                        {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        {showPassword ? (
+                          <EyeOff className="w-4 h-4" />
+                        ) : (
+                          <Eye className="w-4 h-4" />
+                        )}
                       </button>
                     </div>
                     {fieldErrors.password && (
@@ -387,7 +408,10 @@ export default function TeacherRegisterPage() {
                       />
                       <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                         I agree to the{' '}
-                        <Link href="/terms" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                        <Link
+                          href="/terms"
+                          className="underline underline-offset-2 hover:text-foreground transition-colors"
+                        >
                           Terms of Service
                         </Link>
                       </span>
@@ -409,7 +433,10 @@ export default function TeacherRegisterPage() {
                       />
                       <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                         I have read and accept the{' '}
-                        <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                        <Link
+                          href="/privacy-policy"
+                          className="underline underline-offset-2 hover:text-foreground transition-colors"
+                        >
                           Privacy Policy
                         </Link>
                       </span>
@@ -436,7 +463,10 @@ export default function TeacherRegisterPage() {
                 {/* School CTA */}
                 <p className="text-xs text-muted-foreground text-center border-t border-border pt-4 w-full">
                   Is your school interested? Ask your Head of Department to{' '}
-                  <Link href="/for-schools" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                  <Link
+                    href="/for-schools"
+                    className="underline underline-offset-2 hover:text-foreground transition-colors"
+                  >
                     learn about the Founding Schools Programme
                   </Link>{' '}
                   for full department access.
@@ -463,7 +493,9 @@ export default function TeacherRegisterPage() {
             <div className="sticky top-8 space-y-4">
               <Card className="border-primary/20 bg-primary/5">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base text-primary">What&apos;s included free</CardTitle>
+                  <CardTitle className="text-base text-primary">
+                    What&apos;s included free
+                  </CardTitle>
                   <p className="text-xs text-muted-foreground">No credit card required</p>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -481,9 +513,14 @@ export default function TeacherRegisterPage() {
               <Card className="border-dashed">
                 <CardContent className="pt-5 pb-4">
                   <p className="text-sm text-muted-foreground text-center">
-                    <span className="block text-foreground font-semibold mb-1">Need school-wide access?</span>
+                    <span className="block text-foreground font-semibold mb-1">
+                      Need school-wide access?
+                    </span>
                     Register your school for a single subscription that covers all staff.{' '}
-                    <Link href="/for-schools/register" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                    <Link
+                      href="/for-schools/register"
+                      className="underline underline-offset-2 hover:text-foreground transition-colors"
+                    >
                       Learn more
                     </Link>
                   </p>

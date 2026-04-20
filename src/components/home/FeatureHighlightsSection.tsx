@@ -50,7 +50,7 @@ const features = [
   {
     icon: Shield,
     title: 'Cancel Anytime',
-    desc: 'No lock-in contracts. Your first month is free, and you can cancel anytime — no questions asked.',
+    desc: 'No lock-in contracts. Start with a 7-day free trial (card required) and cancel anytime — no questions asked.',
   },
 ]
 
@@ -59,9 +59,7 @@ export default function FeatureHighlightsSection() {
     <section className="py-24 sm:py-32 bg-card/20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-foreground">
-            Why Students Love Us
-          </h2>
+          <h2 className="text-foreground">Why Students Love Us</h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
             Everything you need to go from uncertain to unstoppable.
           </p>
@@ -73,12 +71,8 @@ export default function FeatureHighlightsSection() {
               <div className="inline-flex w-12 h-12 rounded-2xl bg-primary/10 items-center justify-center mb-5">
                 <f.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">
-                {f.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {f.desc}
-              </p>
+              <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">{f.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

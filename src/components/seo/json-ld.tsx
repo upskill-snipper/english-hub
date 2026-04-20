@@ -4,7 +4,8 @@ export function WebsiteJsonLd() {
     '@type': 'EducationalOrganization',
     name: 'The English Hub',
     url: 'https://theenglishhub.app',
-    description: 'Professional KS3, GCSE, and IGCSE English tutoring platform with structured courses, exam-style practice, and AI-powered feedback.',
+    description:
+      'Professional KS3, GCSE, and IGCSE English tutoring platform with structured courses, exam-style practice, and AI-powered feedback.',
     areaServed: { '@type': 'Country', name: 'United Kingdom' },
     audience: {
       '@type': 'EducationalAudience',
@@ -15,15 +16,31 @@ export function WebsiteJsonLd() {
     offers: [
       {
         '@type': 'Offer',
-        name: 'Monthly Plan',
-        price: '8.99',
+        name: 'Student Monthly Plan',
+        price: '3.49',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
         priceValidUntil: '2027-01-01',
       },
       {
         '@type': 'Offer',
-        name: 'Annual Plan',
+        name: 'Student Annual Plan',
+        price: '29.99',
+        priceCurrency: 'GBP',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2027-01-01',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Teacher Monthly Plan',
+        price: '7.99',
+        priceCurrency: 'GBP',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2027-01-01',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Teacher Annual Plan',
         price: '67.99',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
@@ -40,7 +57,15 @@ export function WebsiteJsonLd() {
   )
 }
 
-export function CourseJsonLd({ name, description, provider }: { name: string; description: string; provider?: string }) {
+export function CourseJsonLd({
+  name,
+  description,
+  provider,
+}: {
+  name: string
+  description: string
+  provider?: string
+}) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Course',

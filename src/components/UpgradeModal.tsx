@@ -62,8 +62,8 @@ export function UpgradeModal({
                 <span className="font-semibold text-foreground">
                   {remaining} of {FREE_USES_PER_FEATURE}
                 </span>{' '}
-                free uses remaining. After this, you&apos;ll need a Premium
-                subscription to continue using {featureName}.
+                free uses remaining. After this, you&apos;ll need a Premium subscription to continue
+                using {featureName}.
               </>
             ) : (
               <>
@@ -81,12 +81,10 @@ export function UpgradeModal({
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold">Premium Plan</p>
-              <p className="text-xs text-muted-foreground">
-                Unlimited access to all features
-              </p>
+              <p className="text-xs text-muted-foreground">Unlimited access to all features</p>
             </div>
             <Badge variant="default" className="bg-emerald-600 hover:bg-emerald-600">
-              First month free
+              7-day free trial
             </Badge>
           </div>
           <ul className="mt-3 space-y-1.5 text-xs text-muted-foreground">
@@ -110,10 +108,7 @@ export function UpgradeModal({
         </div>
 
         <DialogFooter className="sm:flex-col sm:gap-2">
-          <Button
-            render={<Link href="/pricing" />}
-            className="w-full"
-          >
+          <Button render={<Link href="/pricing" />} className="w-full">
             <Crown className="size-4" />
             Upgrade Now
           </Button>
@@ -129,13 +124,7 @@ export function UpgradeModal({
               Use my last free try
             </DialogClose>
           ) : (
-            <DialogClose
-              render={
-                <button
-                  className={buttonVariants({ variant: 'ghost' })}
-                />
-              }
-            >
+            <DialogClose render={<button className={buttonVariants({ variant: 'ghost' })} />}>
               Continue Free
             </DialogClose>
           )}

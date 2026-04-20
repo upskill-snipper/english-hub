@@ -51,12 +51,12 @@ const FAQ_JSON_LD_DATA: { question: string; answer: string }[] = [
   {
     question: 'How much does The English Hub cost?',
     answer:
-      'For students: £8.99/month or £67.99/year (save over 35%). For teachers: £12.99/month or £99.99/year. Both plans include a free first month and full, unrestricted access to every feature on the platform. Every feature also comes with 3 free uses — no card required. Cancel anytime.',
+      'Students: £3.49/month or £29.99/year — and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers: £7.99/month or £67.99/year. Every paid plan starts with a 7-day free trial (card required). You also get 3 free uses of most premium features before the paywall, no card required. Cancel anytime.',
   },
   {
-    question: 'Is there a free trial?',
+    question: 'Is there a free trial? Do I need a card?',
     answer:
-      'Yes! Every feature comes with 3 free uses — no card required. When you subscribe, your first month is completely free with full access to all courses, mock exams, practice questions, and revision materials.',
+      'Two things. Every paid plan starts with a 7-day free trial — that requires full sign-up with a valid card. Cancel before day 7 and you won\u2019t be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) with no card required, so you can demo the product first.',
   },
   {
     question: 'Can I cancel my subscription?',
@@ -84,7 +84,7 @@ const FAQ_JSON_LD_DATA: { question: string; answer: string }[] = [
   {
     question: 'How does the Founding Schools Programme work?',
     answer:
-      'Our Founding Schools Programme is a strategic partnership limited to 10 schools, with pricing ranging from £3,000 to £7,000 per year depending on department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Visit our For Schools page or contact info@Upskillenergy.com for details.',
+      'Our Founding Schools Programme is a strategic partnership limited to 10 schools, with pricing starting at £3,000 per year and scaling with department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Visit our For Schools page or contact info@upskillenergy.com for details.',
   },
   {
     question: 'Can we try it before committing to a school license?',
@@ -93,11 +93,7 @@ const FAQ_JSON_LD_DATA: { question: string; answer: string }[] = [
   },
 ]
 
-export default function FaqsLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function FaqsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <FAQPageJsonLd faqs={FAQ_JSON_LD_DATA} />

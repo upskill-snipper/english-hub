@@ -1,14 +1,11 @@
-"use client"
+'use client'
 
-import { useState, useEffect, useCallback } from "react"
-import Link from "next/link"
-import {
-  generateHomeworkPdf,
-  generateHomeworkMarkSchemePdf,
-} from "@/lib/generate-teaching-pdf"
-import type { HomeworkData } from "@/lib/generate-teaching-pdf"
-import { generateHomeworkWord } from "@/lib/generate-docx"
-import DemoBanner from "@/components/demo/DemoBanner"
+import { useState, useEffect, useCallback } from 'react'
+import Link from 'next/link'
+import { generateHomeworkPdf, generateHomeworkMarkSchemePdf } from '@/lib/generate-teaching-pdf'
+import type { HomeworkData } from '@/lib/generate-teaching-pdf'
+import { generateHomeworkWord } from '@/lib/generate-docx'
+import DemoBanner from '@/components/demo/DemoBanner'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -37,43 +34,43 @@ interface GeneratedHomework {
 // ─── Form Options ─────────────────────────────────────────────────────────────
 
 const TOPICS = [
-  "Macbeth",
-  "An Inspector Calls",
-  "A Christmas Carol",
-  "Of Mice and Men",
-  "Poetry Anthology",
-  "Romeo and Juliet",
-  "Unseen Poetry",
-  "Creative Writing",
-  "Rhetoric and Persuasion",
+  'Macbeth',
+  'An Inspector Calls',
+  'A Christmas Carol',
+  'Of Mice and Men',
+  'Poetry Anthology',
+  'Romeo and Juliet',
+  'Unseen Poetry',
+  'Creative Writing',
+  'Rhetoric and Persuasion',
 ] as const
 
 const HOMEWORK_TYPES = [
-  "Reading Comprehension",
-  "Essay",
-  "Quote Analysis",
-  "Creative Writing",
-  "Vocabulary",
-  "Revision Questions",
+  'Reading Comprehension',
+  'Essay',
+  'Quote Analysis',
+  'Creative Writing',
+  'Vocabulary',
+  'Revision Questions',
 ] as const
 
 const YEAR_GROUPS = [
-  "Year 7",
-  "Year 8",
-  "Year 9",
-  "Year 10",
-  "Year 11",
-  "Year 12",
-  "Year 13",
+  'Year 7',
+  'Year 8',
+  'Year 9',
+  'Year 10',
+  'Year 11',
+  'Year 12',
+  'Year 13',
 ] as const
 
 const TARGET_GRADES = [
-  "Grade 3-4 (Foundation)",
-  "Grade 4-5 (Developing)",
-  "Grade 5-6 (Secure)",
-  "Grade 6-7 (Strong)",
-  "Grade 7-8 (Excellent)",
-  "Grade 8-9 (Exceptional)",
+  'Grade 3-4 (Foundation)',
+  'Grade 4-5 (Developing)',
+  'Grade 5-6 (Secure)',
+  'Grade 6-7 (Strong)',
+  'Grade 7-8 (Excellent)',
+  'Grade 8-9 (Exceptional)',
 ] as const
 
 // ─── Pre-built Homework Templates ─────────────────────────────────────────────
@@ -81,15 +78,15 @@ const TARGET_GRADES = [
 const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
   // Macbeth - Quote Analysis
   {
-    id: "hw-macbeth-quotes",
-    title: "Macbeth Act 1: Key Quotation Analysis",
-    topic: "Macbeth",
-    homeworkType: "Quote Analysis",
-    yearGroup: "Year 10",
-    targetGrade: "Grade 5-6 (Secure)",
-    estimatedTime: "40-50 minutes",
+    id: 'hw-macbeth-quotes',
+    title: 'Macbeth Act 1: Key Quotation Analysis',
+    topic: 'Macbeth',
+    homeworkType: 'Quote Analysis',
+    yearGroup: 'Year 10',
+    targetGrade: 'Grade 5-6 (Secure)',
+    estimatedTime: '40-50 minutes',
     instructions:
-      "Analyse each quotation from Act 1 of Macbeth. For each quote, identify the speaker, explain the meaning in context, identify at least one language technique, and explain how it links to a key theme. Write in full sentences using PEEL paragraphs where indicated.",
+      'Analyse each quotation from Act 1 of Macbeth. For each quote, identify the speaker, explain the meaning in context, identify at least one language technique, and explain how it links to a key theme. Write in full sentences using PEEL paragraphs where indicated.',
     questions: [
       {
         question:
@@ -125,7 +122,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Compare two quotations from Act 1 that present the theme of ambition. Explain how Shakespeare develops this theme across the act.",
+          'Compare two quotations from Act 1 that present the theme of ambition. Explain how Shakespeare develops this theme across the act.',
         marks: 6,
         lines: 10,
         modelAnswer:
@@ -133,35 +130,35 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
     ],
     successCriteria: [
-      "I can identify language techniques and explain their effect on the reader/audience",
-      "I can link quotations to key themes of the play",
-      "I can embed contextual understanding (AO3) within my analysis",
-      "I can write in PEEL paragraphs with embedded quotations",
-      "I can use subject terminology accurately (soliloquy, metaphor, imperative, etc.)",
+      'I can identify language techniques and explain their effect on the reader/audience',
+      'I can link quotations to key themes of the play',
+      'I can embed contextual understanding (AO3) within my analysis',
+      'I can write in PEEL paragraphs with embedded quotations',
+      'I can use subject terminology accurately (soliloquy, metaphor, imperative, etc.)',
     ],
     extensionTasks: [
-      "Choose one quotation and write a paragraph exploring an alternative interpretation -- how might a modern audience respond differently from a Jacobean one?",
-      "Research the historical context of the Gunpowder Plot (1605) and write three sentences explaining how it connects to the themes of treason and deception in Macbeth.",
-      "Create a quotation map for Act 1, linking five key quotes with arrows showing how they connect thematically.",
+      'Choose one quotation and write a paragraph exploring an alternative interpretation -- how might a modern audience respond differently from a Jacobean one?',
+      'Research the historical context of the Gunpowder Plot (1605) and write three sentences explaining how it connects to the themes of treason and deception in Macbeth.',
+      'Create a quotation map for Act 1, linking five key quotes with arrows showing how they connect thematically.',
     ],
     markScheme: [
-      "Award marks for identification of language techniques with accurate terminology (1 mark per technique identified)",
-      "Award marks for explanation of effect on reader/audience (1-2 marks depending on depth)",
-      "Award marks for contextual links where the question requires it (1-2 marks)",
-      "Full marks require a developed, perceptive response with embedded quotation and fluent analytical writing",
-      "Deduct no marks for spelling errors but note SPaG for feedback purposes",
+      'Award marks for identification of language techniques with accurate terminology (1 mark per technique identified)',
+      'Award marks for explanation of effect on reader/audience (1-2 marks depending on depth)',
+      'Award marks for contextual links where the question requires it (1-2 marks)',
+      'Full marks require a developed, perceptive response with embedded quotation and fluent analytical writing',
+      'Deduct no marks for spelling errors but note SPaG for feedback purposes',
     ],
   },
 
   // An Inspector Calls - Reading Comprehension
   {
-    id: "hw-aic-comprehension",
-    title: "An Inspector Calls: Responsibility and Social Class",
-    topic: "An Inspector Calls",
-    homeworkType: "Reading Comprehension",
-    yearGroup: "Year 11",
-    targetGrade: "Grade 6-7 (Strong)",
-    estimatedTime: "45-55 minutes",
+    id: 'hw-aic-comprehension',
+    title: 'An Inspector Calls: Responsibility and Social Class',
+    topic: 'An Inspector Calls',
+    homeworkType: 'Reading Comprehension',
+    yearGroup: 'Year 11',
+    targetGrade: 'Grade 6-7 (Strong)',
+    estimatedTime: '45-55 minutes',
     instructions:
       "Answer all questions in full sentences. Use quotations from the play to support your answers where appropriate. Each question tests your ability to read, analyse, and evaluate Priestley's methods and messages. Aim for two to three sentences minimum per short answer and a full PEEL paragraph for extended responses.",
     questions: [
@@ -175,7 +172,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "How does Priestley use the character of Sheila to show that change is possible? Support your answer with evidence from the play.",
+          'How does Priestley use the character of Sheila to show that change is possible? Support your answer with evidence from the play.',
         marks: 5,
         lines: 8,
         modelAnswer:
@@ -183,7 +180,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Why does Priestley set the play in 1912 but write it in 1945? What effect does this have on the audience?",
+          'Why does Priestley set the play in 1912 but write it in 1945? What effect does this have on the audience?',
         marks: 5,
         lines: 8,
         modelAnswer:
@@ -191,7 +188,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Analyse how Priestley uses Mr Birling to criticise capitalism. Consider his language, his values, and how the audience is positioned to respond to him.",
+          'Analyse how Priestley uses Mr Birling to criticise capitalism. Consider his language, his values, and how the audience is positioned to respond to him.',
         marks: 6,
         lines: 10,
         modelAnswer:
@@ -208,40 +205,40 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
     ],
     successCriteria: [
       "I can explain Priestley's key messages about responsibility and social class",
-      "I can support my answers with relevant quotations from the text",
-      "I can analyse how Priestley uses characters to convey his socialist message",
+      'I can support my answers with relevant quotations from the text',
+      'I can analyse how Priestley uses characters to convey his socialist message',
       "I can evaluate the effectiveness of Priestley's dramatic techniques",
-      "I can integrate contextual understanding into my responses",
+      'I can integrate contextual understanding into my responses',
     ],
     extensionTasks: [
       "Write a diary entry as Sheila Birling, set the morning after the Inspector's visit. What has she learned? How has she changed?",
       "Research the creation of the NHS in 1948. Write a paragraph explaining how the Inspector's message about collective responsibility connects to the post-war welfare state.",
-      "Compare Mr Birling and the Inspector as speakers. Create a table showing three differences in their language, tone, and message.",
+      'Compare Mr Birling and the Inspector as speakers. Create a table showing three differences in their language, tone, and message.',
     ],
     markScheme: [
-      "Award 1-2 marks for basic understanding and identification of relevant content",
-      "Award 3-4 marks for developed explanations with supporting quotations",
-      "Award 5-6 marks for perceptive analysis integrating technique, effect, and context",
-      "Quotations must be embedded rather than free-standing for full marks",
-      "Contextual understanding should be woven into analysis, not bolted on as a separate paragraph",
+      'Award 1-2 marks for basic understanding and identification of relevant content',
+      'Award 3-4 marks for developed explanations with supporting quotations',
+      'Award 5-6 marks for perceptive analysis integrating technique, effect, and context',
+      'Quotations must be embedded rather than free-standing for full marks',
+      'Contextual understanding should be woven into analysis, not bolted on as a separate paragraph',
     ],
   },
 
   // Poetry - Essay
   {
-    id: "hw-poetry-essay",
-    title: "Poetry Comparison: Power and Conflict",
-    topic: "Poetry Anthology",
-    homeworkType: "Essay",
-    yearGroup: "Year 10",
-    targetGrade: "Grade 5-6 (Secure)",
-    estimatedTime: "50-60 minutes",
+    id: 'hw-poetry-essay',
+    title: 'Poetry Comparison: Power and Conflict',
+    topic: 'Poetry Anthology',
+    homeworkType: 'Essay',
+    yearGroup: 'Year 10',
+    targetGrade: 'Grade 5-6 (Secure)',
+    estimatedTime: '50-60 minutes',
     instructions:
       "Write a comparative essay responding to the question below. You should compare two poems from the Power and Conflict cluster, analysing how the poets present their ideas about power. Your essay should include an introduction, at least three comparative paragraphs, and a conclusion. Use the 'similarly/however' framework to structure your comparisons.",
     questions: [
       {
         question:
-          "Introduction: Set up your argument. Which two poems will you compare? What is your thesis about how they present power?",
+          'Introduction: Set up your argument. Which two poems will you compare? What is your thesis about how they present power?',
         marks: 3,
         lines: 8,
         modelAnswer:
@@ -249,7 +246,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Paragraph 1: Compare how the poets use voice and perspective to present powerful figures. Include quotations from both poems and analyse language techniques.",
+          'Paragraph 1: Compare how the poets use voice and perspective to present powerful figures. Include quotations from both poems and analyse language techniques.',
         marks: 6,
         lines: 14,
         modelAnswer:
@@ -257,7 +254,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Paragraph 2: Compare how the poets use imagery and symbolism to critique power. Embed quotations and analyse their effects.",
+          'Paragraph 2: Compare how the poets use imagery and symbolism to critique power. Embed quotations and analyse their effects.',
         marks: 6,
         lines: 14,
         modelAnswer:
@@ -265,7 +262,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Paragraph 3: Compare how the form and structure of each poem reinforce the theme of power. Consider the effects of the sonnet form and the dramatic monologue.",
+          'Paragraph 3: Compare how the form and structure of each poem reinforce the theme of power. Consider the effects of the sonnet form and the dramatic monologue.',
         marks: 6,
         lines: 14,
         modelAnswer:
@@ -273,7 +270,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Conclusion: Evaluate which poem presents a more powerful message about the nature of power. Justify your view.",
+          'Conclusion: Evaluate which poem presents a more powerful message about the nature of power. Justify your view.',
         marks: 5,
         lines: 8,
         modelAnswer:
@@ -281,35 +278,35 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
     ],
     successCriteria: [
-      "I can compare two poems using a clear comparative framework (similarly/however)",
-      "I can analyse language techniques from both poems with embedded quotations",
-      "I can discuss how form and structure contribute to meaning",
-      "I can integrate contextual understanding where relevant",
-      "I can write a structured essay with introduction, comparative paragraphs, and conclusion",
+      'I can compare two poems using a clear comparative framework (similarly/however)',
+      'I can analyse language techniques from both poems with embedded quotations',
+      'I can discuss how form and structure contribute to meaning',
+      'I can integrate contextual understanding where relevant',
+      'I can write a structured essay with introduction, comparative paragraphs, and conclusion',
     ],
     extensionTasks: [
-      "Write an additional paragraph comparing how both poems comment on the relationship between power and art. Consider what each poet suggests about whether art serves power or exposes its weaknesses.",
-      "Research the historical context of one poem and write a paragraph explaining how understanding the context deepens your interpretation.",
-      "Choose a third poem from the cluster that presents power differently. Write a paragraph explaining how it adds to or challenges the arguments in your essay.",
+      'Write an additional paragraph comparing how both poems comment on the relationship between power and art. Consider what each poet suggests about whether art serves power or exposes its weaknesses.',
+      'Research the historical context of one poem and write a paragraph explaining how understanding the context deepens your interpretation.',
+      'Choose a third poem from the cluster that presents power differently. Write a paragraph explaining how it adds to or challenges the arguments in your essay.',
     ],
     markScheme: [
-      "Introduction: 1 mark for identifying poems, 1 mark for thesis, 1 mark for sophistication of opening argument",
-      "Body paragraphs: 2 marks for comparison with quotations, 2 marks for language analysis, 2 marks for contextual/structural awareness",
-      "Conclusion: 2 marks for evaluative judgement, 2 marks for justified personal response, 1 mark for connection to wider themes",
-      "Deduct marks if paragraphs discuss poems separately rather than comparatively",
-      "Full marks require fluent academic register with embedded quotations and precise terminology",
+      'Introduction: 1 mark for identifying poems, 1 mark for thesis, 1 mark for sophistication of opening argument',
+      'Body paragraphs: 2 marks for comparison with quotations, 2 marks for language analysis, 2 marks for contextual/structural awareness',
+      'Conclusion: 2 marks for evaluative judgement, 2 marks for justified personal response, 1 mark for connection to wider themes',
+      'Deduct marks if paragraphs discuss poems separately rather than comparatively',
+      'Full marks require fluent academic register with embedded quotations and precise terminology',
     ],
   },
 
   // A Christmas Carol - Creative Writing
   {
-    id: "hw-acc-creative",
-    title: "Creative Writing: A Dickensian Scene",
-    topic: "A Christmas Carol",
-    homeworkType: "Creative Writing",
-    yearGroup: "Year 9",
-    targetGrade: "Grade 4-5 (Developing)",
-    estimatedTime: "35-45 minutes",
+    id: 'hw-acc-creative',
+    title: 'Creative Writing: A Dickensian Scene',
+    topic: 'A Christmas Carol',
+    homeworkType: 'Creative Writing',
+    yearGroup: 'Year 9',
+    targetGrade: 'Grade 4-5 (Developing)',
+    estimatedTime: '35-45 minutes',
     instructions:
       "Using the techniques you have studied in A Christmas Carol, write a descriptive piece inspired by Dickens's style. Choose ONE of the prompts below and write 250-350 words. Focus on sensory language, varied sentence structures, and creating atmosphere. Your writing should demonstrate that you can apply techniques from your reading to your own work.",
     questions: [
@@ -319,7 +316,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 10,
         lines: 20,
         modelAnswer:
-          "Fog crept through the alleyways like a living thing, curling around lamp posts and smothering the weak gaslight until the street existed only as a series of amber halos suspended in grey nothing. The cobblestones glistened with frost, each one a small, treacherous mirror reflecting the darkness above. A man hurried past, his collar turned up, his breath hanging in the air like speech bubbles emptied of words. From somewhere beyond the fog, a church bell tolled -- a single, solemn note that seemed to freeze in the air before dissolving. The smell of coal smoke and something sharper -- perhaps gin, perhaps despair -- drifted from the doorways where shadows huddled. A child, barefoot, pressed against a bakery window. Inside, the warm glow of an oven. Outside, nothing but the cold, which was not merely a temperature but a presence, a companion that walked beside the poor and never left them.",
+          'Fog crept through the alleyways like a living thing, curling around lamp posts and smothering the weak gaslight until the street existed only as a series of amber halos suspended in grey nothing. The cobblestones glistened with frost, each one a small, treacherous mirror reflecting the darkness above. A man hurried past, his collar turned up, his breath hanging in the air like speech bubbles emptied of words. From somewhere beyond the fog, a church bell tolled -- a single, solemn note that seemed to freeze in the air before dissolving. The smell of coal smoke and something sharper -- perhaps gin, perhaps despair -- drifted from the doorways where shadows huddled. A child, barefoot, pressed against a bakery window. Inside, the warm glow of an oven. Outside, nothing but the cold, which was not merely a temperature but a presence, a companion that walked beside the poor and never left them.',
       },
       {
         question:
@@ -327,7 +324,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 10,
         lines: 20,
         modelAnswer:
-          "The room told you everything about its occupant before you met him. A single chair, positioned precisely in front of a fireplace that held no fire. A table set for one, with a plate so clean it might never have been used. The curtains, once burgundy, had faded to the colour of old wounds. Mr Hartwell sat in his chair as he sat every Christmas Day -- upright, still, and utterly alone. His hands, thin as the legs of winter birds, rested on the arms of the chair. His eyes, which had once been the blue of summer, were now grey, washed out by years of looking at nothing worth seeing. On the mantelpiece, a clock ticked. It was the loudest sound in the house. It was the only sound. Somewhere in the street below, children were singing.",
+          'The room told you everything about its occupant before you met him. A single chair, positioned precisely in front of a fireplace that held no fire. A table set for one, with a plate so clean it might never have been used. The curtains, once burgundy, had faded to the colour of old wounds. Mr Hartwell sat in his chair as he sat every Christmas Day -- upright, still, and utterly alone. His hands, thin as the legs of winter birds, rested on the arms of the chair. His eyes, which had once been the blue of summer, were now grey, washed out by years of looking at nothing worth seeing. On the mantelpiece, a clock ticked. It was the loudest sound in the house. It was the only sound. Somewhere in the street below, children were singing.',
       },
       {
         question:
@@ -339,41 +336,41 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
     ],
     successCriteria: [
-      "I can use sensory language to create a vivid scene (sight, sound, smell, touch, taste)",
-      "I can vary my sentence structure for deliberate effect (short sentences for impact, complex sentences for detail)",
-      "I can use at least three literary techniques (e.g. simile, metaphor, personification, juxtaposition)",
-      "I can create atmosphere and mood through my word choices",
-      "I can write 250-350 words that demonstrate control and craftsmanship",
+      'I can use sensory language to create a vivid scene (sight, sound, smell, touch, taste)',
+      'I can vary my sentence structure for deliberate effect (short sentences for impact, complex sentences for detail)',
+      'I can use at least three literary techniques (e.g. simile, metaphor, personification, juxtaposition)',
+      'I can create atmosphere and mood through my word choices',
+      'I can write 250-350 words that demonstrate control and craftsmanship',
     ],
     extensionTasks: [
-      "Rewrite your opening paragraph in a completely different tone -- transform a gloomy scene into a joyful one, or vice versa. Annotate the changes you made and explain the effect.",
-      "Write a paragraph in the style of Dickens that describes your own school. Use his techniques of exaggeration, listing, and vivid characterisation.",
-      "Read the opening of Stave 1 of A Christmas Carol. Identify three techniques Dickens uses that you did not include in your own writing. Write a sentence for each, applying the technique to your scene.",
+      'Rewrite your opening paragraph in a completely different tone -- transform a gloomy scene into a joyful one, or vice versa. Annotate the changes you made and explain the effect.',
+      'Write a paragraph in the style of Dickens that describes your own school. Use his techniques of exaggeration, listing, and vivid characterisation.',
+      'Read the opening of Stave 1 of A Christmas Carol. Identify three techniques Dickens uses that you did not include in your own writing. Write a sentence for each, applying the technique to your scene.',
     ],
     markScheme: [
-      "Band 1 (1-3 marks): Basic descriptive writing with limited techniques. Simple sentence structures with some relevant vocabulary.",
-      "Band 2 (4-6 marks): Developed descriptive writing with some effective techniques. Varied sentence structures beginning to create atmosphere.",
-      "Band 3 (7-8 marks): Effective descriptive writing with well-chosen techniques. Deliberate sentence variation creating clear atmosphere and mood.",
-      "Band 4 (9-10 marks): Sophisticated descriptive writing with precise, controlled techniques. Impressive vocabulary and sentence craftsmanship. Writing demonstrates real flair.",
-      "Award extra credit for genuine stylistic echoes of Dickens that go beyond surface-level imitation.",
+      'Band 1 (1-3 marks): Basic descriptive writing with limited techniques. Simple sentence structures with some relevant vocabulary.',
+      'Band 2 (4-6 marks): Developed descriptive writing with some effective techniques. Varied sentence structures beginning to create atmosphere.',
+      'Band 3 (7-8 marks): Effective descriptive writing with well-chosen techniques. Deliberate sentence variation creating clear atmosphere and mood.',
+      'Band 4 (9-10 marks): Sophisticated descriptive writing with precise, controlled techniques. Impressive vocabulary and sentence craftsmanship. Writing demonstrates real flair.',
+      'Award extra credit for genuine stylistic echoes of Dickens that go beyond surface-level imitation.',
     ],
   },
 
   // Of Mice and Men - Vocabulary
   {
-    id: "hw-omam-vocab",
-    title: "Of Mice and Men: Key Vocabulary and Terminology",
-    topic: "Of Mice and Men",
-    homeworkType: "Vocabulary",
-    yearGroup: "Year 11",
-    targetGrade: "Grade 5-6 (Secure)",
-    estimatedTime: "30-40 minutes",
+    id: 'hw-omam-vocab',
+    title: 'Of Mice and Men: Key Vocabulary and Terminology',
+    topic: 'Of Mice and Men',
+    homeworkType: 'Vocabulary',
+    yearGroup: 'Year 11',
+    targetGrade: 'Grade 5-6 (Secure)',
+    estimatedTime: '30-40 minutes',
     instructions:
-      "Complete all vocabulary tasks below. These are designed to build your understanding of key terminology for discussing Of Mice and Men in your examination. Use a dictionary or your revision guide if needed, but aim to work from memory first.",
+      'Complete all vocabulary tasks below. These are designed to build your understanding of key terminology for discussing Of Mice and Men in your examination. Use a dictionary or your revision guide if needed, but aim to work from memory first.',
     questions: [
       {
         question:
-          "Define each of the following literary terms and provide an example from Of Mice and Men: (a) foreshadowing, (b) symbolism, (c) microcosm, (d) allegory, (e) pathos.",
+          'Define each of the following literary terms and provide an example from Of Mice and Men: (a) foreshadowing, (b) symbolism, (c) microcosm, (d) allegory, (e) pathos.',
         marks: 5,
         lines: 10,
         modelAnswer:
@@ -389,11 +386,11 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Write five sentences about Of Mice and Men, each using one of the following subject-specific words correctly: proletariat, itinerant, segregation, hierarchy, futility.",
+          'Write five sentences about Of Mice and Men, each using one of the following subject-specific words correctly: proletariat, itinerant, segregation, hierarchy, futility.',
         marks: 5,
         lines: 10,
         modelAnswer:
-          "(1) Steinbeck portrays the proletariat -- the working class -- as exploited by ranch owners who profit from their labour. (2) The itinerant workers move from ranch to ranch, never able to settle or build lasting relationships. (3) Crooks experiences racial segregation, forced to live apart from the other workers in a separate room. (4) The ranch operates within a strict hierarchy, with the boss at the top, Slim commanding respect, and Crooks and Lennie at the bottom. (5) The cyclical structure of the novel reinforces the futility of the American Dream for men like George and Lennie.",
+          '(1) Steinbeck portrays the proletariat -- the working class -- as exploited by ranch owners who profit from their labour. (2) The itinerant workers move from ranch to ranch, never able to settle or build lasting relationships. (3) Crooks experiences racial segregation, forced to live apart from the other workers in a separate room. (4) The ranch operates within a strict hierarchy, with the boss at the top, Slim commanding respect, and Crooks and Lennie at the bottom. (5) The cyclical structure of the novel reinforces the futility of the American Dream for men like George and Lennie.',
       },
       {
         question:
@@ -405,7 +402,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Create a revision flashcard set: write five key quotations from the novel on one side, and on the other write the technique, theme, and a one-sentence analysis for each.",
+          'Create a revision flashcard set: write five key quotations from the novel on one side, and on the other write the technique, theme, and a one-sentence analysis for each.',
         marks: 5,
         lines: 10,
         modelAnswer:
@@ -413,41 +410,41 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
     ],
     successCriteria: [
-      "I can define key literary terminology and apply it to the text",
-      "I can identify quotations and link them to characters and themes",
-      "I can use subject-specific vocabulary accurately in sentences",
+      'I can define key literary terminology and apply it to the text',
+      'I can identify quotations and link them to characters and themes',
+      'I can use subject-specific vocabulary accurately in sentences',
       "I can explain the connotations of Steinbeck's word choices",
-      "I can create useful revision materials from my learning",
+      'I can create useful revision materials from my learning',
     ],
     extensionTasks: [
-      "Create a glossary of twenty key terms for discussing Of Mice and Men, organised alphabetically, with definitions and examples from the text.",
+      'Create a glossary of twenty key terms for discussing Of Mice and Men, organised alphabetically, with definitions and examples from the text.',
       "Write a paragraph using at least five subject-specific terms to analyse Steinbeck's presentation of loneliness in Chapter 4.",
-      "Research three facts about the Great Depression that help explain the world Steinbeck depicts. Present them as a mini fact file.",
+      'Research three facts about the Great Depression that help explain the world Steinbeck depicts. Present them as a mini fact file.',
     ],
     markScheme: [
-      "Award 1 mark per correct definition with relevant textual example",
-      "Award 1 mark per correct character identification and 1 mark per explanation of significance",
-      "Award 1 mark per correct use of subject-specific vocabulary in a meaningful sentence",
-      "Deduct marks if quotations are inaccurate (minor errors acceptable, wholesale invention not)",
-      "Extension tasks assessed for depth of engagement rather than length",
+      'Award 1 mark per correct definition with relevant textual example',
+      'Award 1 mark per correct character identification and 1 mark per explanation of significance',
+      'Award 1 mark per correct use of subject-specific vocabulary in a meaningful sentence',
+      'Deduct marks if quotations are inaccurate (minor errors acceptable, wholesale invention not)',
+      'Extension tasks assessed for depth of engagement rather than length',
     ],
   },
 
   // Macbeth - Revision Questions
   {
-    id: "hw-macbeth-revision",
-    title: "Macbeth: Revision Questions for Exam Preparation",
-    topic: "Macbeth",
-    homeworkType: "Revision Questions",
-    yearGroup: "Year 11",
-    targetGrade: "Grade 7-8 (Excellent)",
-    estimatedTime: "45-55 minutes",
+    id: 'hw-macbeth-revision',
+    title: 'Macbeth: Revision Questions for Exam Preparation',
+    topic: 'Macbeth',
+    homeworkType: 'Revision Questions',
+    yearGroup: 'Year 11',
+    targetGrade: 'Grade 7-8 (Excellent)',
+    estimatedTime: '45-55 minutes',
     instructions:
       "Answer all questions in full, using quotations from the text where possible. These questions are designed to prepare you for the type of analysis expected in your examination. Focus on writing concise, analytical responses that demonstrate your understanding of Shakespeare's methods, not just the plot.",
     questions: [
       {
         question:
-          "How does Shakespeare present the witches as a subversive force in Act 1? Consider their language, their prophecies, and their effect on Macbeth.",
+          'How does Shakespeare present the witches as a subversive force in Act 1? Consider their language, their prophecies, and their effect on Macbeth.',
         marks: 5,
         lines: 8,
         modelAnswer:
@@ -455,7 +452,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Analyse how Shakespeare uses the motif of blood in the play. Track its development from Act 1 to Act 5 and explain its symbolic significance.",
+          'Analyse how Shakespeare uses the motif of blood in the play. Track its development from Act 1 to Act 5 and explain its symbolic significance.',
         marks: 6,
         lines: 10,
         modelAnswer:
@@ -463,7 +460,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Evaluate whether Macbeth is a villain or a victim. Use evidence from across the play to support your argument.",
+          'Evaluate whether Macbeth is a villain or a victim. Use evidence from across the play to support your argument.',
         marks: 6,
         lines: 10,
         modelAnswer:
@@ -471,7 +468,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "How does Shakespeare use the relationship between Macbeth and Lady Macbeth to explore the theme of power? Consider how their dynamic shifts across the play.",
+          'How does Shakespeare use the relationship between Macbeth and Lady Macbeth to explore the theme of power? Consider how their dynamic shifts across the play.',
         marks: 5,
         lines: 8,
         modelAnswer:
@@ -488,22 +485,22 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
     ],
     successCriteria: [
       "I can analyse Shakespeare's methods (language, structure, form) with precise terminology",
-      "I can track motifs and themes across the whole play, not just individual scenes",
-      "I can construct evaluative arguments that consider multiple perspectives",
-      "I can embed quotations fluently and analyse them in detail",
-      "I can integrate contextual understanding naturally within my analysis",
+      'I can track motifs and themes across the whole play, not just individual scenes',
+      'I can construct evaluative arguments that consider multiple perspectives',
+      'I can embed quotations fluently and analyse them in detail',
+      'I can integrate contextual understanding naturally within my analysis',
     ],
     extensionTasks: [
-      "Write a second exam paragraph answering the same question from a different angle -- choose a different key moment and analyse different methods.",
-      "Create a revision timeline of the play, plotting how the theme of guilt develops scene by scene. Use quotations at each key point.",
+      'Write a second exam paragraph answering the same question from a different angle -- choose a different key moment and analyse different methods.',
+      'Create a revision timeline of the play, plotting how the theme of guilt develops scene by scene. Use quotations at each key point.',
       "Compare Macbeth's guilt with Lady Macbeth's. Write a paragraph arguing who Shakespeare presents as more consumed by guilt, and why.",
     ],
     markScheme: [
-      "Award 1-2 marks for basic understanding of the text with some relevant reference",
-      "Award 3-4 marks for developed analysis with embedded quotations and technique identification",
+      'Award 1-2 marks for basic understanding of the text with some relevant reference',
+      'Award 3-4 marks for developed analysis with embedded quotations and technique identification',
       "Award 5-6 marks for perceptive, conceptualised responses that demonstrate sophisticated understanding of Shakespeare's methods and purposes",
-      "Evaluative questions must consider multiple perspectives for full marks",
-      "Practice exam paragraph should be assessed against exam mark scheme band descriptors",
+      'Evaluative questions must consider multiple perspectives for full marks',
+      'Practice exam paragraph should be assessed against exam mark scheme band descriptors',
     ],
   },
 ]
@@ -548,39 +545,39 @@ function homeworkToText(hw: GeneratedHomework): string {
   lines.push(`Topic: ${hw.topic} | Type: ${hw.homeworkType}`)
   lines.push(`Year Group: ${hw.yearGroup} | Target Grade: ${hw.targetGrade}`)
   lines.push(`Estimated Time: ${hw.estimatedTime}`)
-  lines.push("")
-  lines.push("INSTRUCTIONS:")
+  lines.push('')
+  lines.push('INSTRUCTIONS:')
   lines.push(hw.instructions)
-  lines.push("")
-  lines.push("SUCCESS CRITERIA:")
+  lines.push('')
+  lines.push('SUCCESS CRITERIA:')
   hw.successCriteria.forEach((s) => lines.push(`  - ${s}`))
-  lines.push("")
-  lines.push("QUESTIONS:")
+  lines.push('')
+  lines.push('QUESTIONS:')
   hw.questions.forEach((q, i) => {
     lines.push(`${i + 1}. ${q.question} [${q.marks} marks]`)
     if (q.modelAnswer) lines.push(`   Model Answer: ${q.modelAnswer}`)
-    lines.push("")
+    lines.push('')
   })
-  lines.push("EXTENSION TASKS:")
+  lines.push('EXTENSION TASKS:')
   hw.extensionTasks.forEach((t) => lines.push(`  - ${t}`))
-  lines.push("")
-  lines.push("MARK SCHEME:")
+  lines.push('')
+  lines.push('MARK SCHEME:')
   hw.markScheme.forEach((m) => lines.push(`  - ${m}`))
-  return lines.join("\n")
+  return lines.join('\n')
 }
 
 // ─── Typing Effect Lines ─────────────────────────────────────────────────────
 
 const TYPING_LINES = [
-  "Analysing topic and curriculum requirements...",
-  "Mapping assessment objectives to homework structure...",
-  "Selecting question types for target grade range...",
-  "Generating questions with appropriate challenge level...",
-  "Writing model answers with examiner-level detail...",
-  "Building success criteria and marking guidance...",
-  "Adding extension tasks for higher-ability students...",
-  "Estimating completion time...",
-  "Finalising homework assignment...",
+  'Analysing topic and curriculum requirements...',
+  'Mapping assessment objectives to homework structure...',
+  'Selecting question types for target grade range...',
+  'Generating questions with appropriate challenge level...',
+  'Writing model answers with examiner-level detail...',
+  'Building success criteria and marking guidance...',
+  'Adding extension tasks for higher-ability students...',
+  'Estimating completion time...',
+  'Finalising homework assignment...',
 ]
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -646,19 +643,19 @@ export default function HomeworkGeneratorDemo() {
   const handleDownloadPDF = useCallback(() => {
     if (!generatedHomework) return
     generateHomeworkPdf(toHomeworkData(generatedHomework))
-    showToast("Homework opened for printing/saving as PDF")
+    showToast('Homework opened for printing/saving as PDF')
   }, [generatedHomework, toHomeworkData])
 
   const handleDownloadMarkScheme = useCallback(() => {
     if (!generatedHomework) return
     generateHomeworkMarkSchemePdf(toHomeworkData(generatedHomework))
-    showToast("Mark scheme opened for printing/saving as PDF")
+    showToast('Mark scheme opened for printing/saving as PDF')
   }, [generatedHomework, toHomeworkData])
 
   const handleDownloadWord = useCallback(() => {
     if (!generatedHomework) return
     generateHomeworkWord(toHomeworkData(generatedHomework))
-    showToast("Homework downloaded as Word document")
+    showToast('Homework downloaded as Word document')
   }, [generatedHomework, toHomeworkData])
 
   const handleCopy = useCallback(async () => {
@@ -666,15 +663,15 @@ export default function HomeworkGeneratorDemo() {
     try {
       await navigator.clipboard.writeText(homeworkToText(generatedHomework))
       setCopied(true)
-      showToast("Copied to clipboard")
+      showToast('Copied to clipboard')
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      showToast("Failed to copy -- try again")
+      showToast('Failed to copy -- try again')
     }
   }, [generatedHomework])
 
   const handleAssign = useCallback(() => {
-    showToast("Assignment set for class (demo mode)")
+    showToast('Assignment set for class (demo mode)')
   }, [])
 
   const showToast = useCallback((message: string) => {
@@ -703,16 +700,11 @@ export default function HomeworkGeneratorDemo() {
             &larr; Back to Homework Dashboard
           </Link>
         </div>
-        <p className="text-[10px] uppercase tracking-[0.3em] text-ink-500 mb-4">
-          The English Hub
-        </p>
-        <h1 className="text-4xl sm:text-5xl font-light tracking-tight mb-3">
-          Homework Generator
-        </h1>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-ink-500 mb-4">The English Hub</p>
+        <h1 className="text-4xl sm:text-5xl font-light tracking-tight mb-3">Homework Generator</h1>
         <p className="text-ink-600 text-lg mb-8 max-w-2xl">
-          Generate complete, differentiated homework assignments in seconds.
-          Select your topic, homework type, year group, and target grade -- then
-          preview, download, or assign directly.
+          Generate complete, differentiated homework assignments in seconds. Select your topic,
+          homework type, year group, and target grade -- then preview, download, or assign directly.
         </p>
 
         {/* Demo Banner */}
@@ -722,10 +714,9 @@ export default function HomeworkGeneratorDemo() {
             <div>
               <p className="text-amber-700 font-medium text-sm">Demo Mode</p>
               <p className="text-amber-700/60 text-sm mt-1">
-                This is a preview of the homework generator. Generated
-                assignments use pre-built templates to demonstrate format and
-                quality. With a full account, every homework is uniquely
-                generated to your exact specification.
+                This is a preview of the homework generator. Generated assignments use pre-built
+                templates to demonstrate format and quality. With a full account, every homework is
+                uniquely generated to your exact specification.
               </p>
             </div>
           </div>
@@ -734,9 +725,7 @@ export default function HomeworkGeneratorDemo() {
         {/* ─── Configuration Form ─────────────────────────────────────── */}
         {!generatedHomework && !isGenerating && (
           <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
-            <h2 className="text-xl font-medium text-ink-900 mb-6">
-              Configure Your Homework
-            </h2>
+            <h2 className="text-xl font-medium text-ink-900 mb-6">Configure Your Homework</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormSelect
                 label="Topic / Text"
@@ -849,9 +838,7 @@ export default function HomeworkGeneratorDemo() {
                   <ul className="space-y-1.5 text-sm text-ink-600">
                     {generatedHomework.successCriteria.map((s, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-teal-700 mt-0.5 shrink-0">
-                          --
-                        </span>
+                        <span className="text-teal-700 mt-0.5 shrink-0">--</span>
                         {s}
                       </li>
                     ))}
@@ -862,10 +849,7 @@ export default function HomeworkGeneratorDemo() {
                 <Section title="Questions">
                   <div className="space-y-5">
                     {generatedHomework.questions.map((q, i) => (
-                      <div
-                        key={i}
-                        className="rounded-lg border border-ink-200 bg-white p-4"
-                      >
+                      <div key={i} className="rounded-lg border border-ink-200 bg-white p-4">
                         <div className="flex items-start justify-between gap-3 mb-2">
                           <p className="text-sm text-ink-900 font-medium">
                             {i + 1}. {q.question}
@@ -897,9 +881,7 @@ export default function HomeworkGeneratorDemo() {
                   <ul className="space-y-2 text-sm text-ink-600">
                     {generatedHomework.extensionTasks.map((t, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-teal-700 mt-0.5 shrink-0">
-                          {i + 1}.
-                        </span>
+                        <span className="text-teal-700 mt-0.5 shrink-0">{i + 1}.</span>
                         {t}
                       </li>
                     ))}
@@ -911,9 +893,7 @@ export default function HomeworkGeneratorDemo() {
                   <ul className="space-y-2 text-sm text-ink-600">
                     {generatedHomework.markScheme.map((m, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-clay-600/60 mt-0.5 shrink-0">
-                          *
-                        </span>
+                        <span className="text-clay-600/60 mt-0.5 shrink-0">*</span>
                         {m}
                       </li>
                     ))}
@@ -924,42 +904,28 @@ export default function HomeworkGeneratorDemo() {
 
             {/* ─── Action Buttons ──────────────────────────────────────── */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-6">
-              <ActionButton
-                onClick={handleDownloadPDF}
-                label="Download PDF"
-              />
-              <ActionButton
-                onClick={handleDownloadMarkScheme}
-                label="Mark Scheme (PDF)"
-              />
-              <ActionButton
-                onClick={handleDownloadWord}
-                label="Download Word"
-              />
-              <ActionButton
-                onClick={handleCopy}
-                label={copied ? "Copied!" : "Copy to Clipboard"}
-              />
+              <ActionButton onClick={handleDownloadPDF} label="Download PDF" />
+              <ActionButton onClick={handleDownloadMarkScheme} label="Mark Scheme (PDF)" />
+              <ActionButton onClick={handleDownloadWord} label="Download Word" />
+              <ActionButton onClick={handleCopy} label={copied ? 'Copied!' : 'Copy to Clipboard'} />
               <ActionButton onClick={handleReset} label="Generate Another" />
               <ActionButton onClick={handleAssign} label="Assign to Class" />
             </div>
 
             {/* ─── Assign to Class Panel ───────────────────────────────── */}
             <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
-              <h3 className="text-lg font-medium text-ink-900 mb-4">
-                Assign to Class
-              </h3>
+              <h3 className="text-lg font-medium text-ink-900 mb-4">Assign to Class</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <FormSelect
                   label="Class"
                   value="Select class..."
-                  onChange={() => showToast("Class selection available with full account")}
+                  onChange={() => showToast('Class selection available with full account')}
                   options={[
-                    "Select class...",
-                    "Year 10A - English Literature",
-                    "Year 11B - English Literature",
-                    "Year 9C - English Language",
-                    "Year 8D - English Language",
+                    'Select class...',
+                    'Year 10A - English Literature',
+                    'Year 11B - English Literature',
+                    'Year 9C - English Language',
+                    'Year 8D - English Language',
                   ]}
                 />
                 <div>
@@ -986,9 +952,9 @@ export default function HomeworkGeneratorDemo() {
                 Generate unlimited homework in seconds.
               </p>
               <p className="text-ink-600 text-sm mb-5">
-                Start your free month to access the full homework generator --
-                every assignment uniquely created, with mark schemes and
-                extension tasks included.
+                Start a 7-day free trial to access the full homework generator -- every assignment
+                uniquely created, with mark schemes and extension tasks included. Card required,
+                cancel before day 7.
               </p>
               <button className="rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-medium py-3 px-8 transition-colors text-sm">
                 Start Free Month
@@ -1026,9 +992,7 @@ function FormSelect({
 }) {
   return (
     <div>
-      <label className="block text-xs uppercase tracking-wider text-ink-600 mb-2">
-        {label}
-      </label>
+      <label className="block text-xs uppercase tracking-wider text-ink-600 mb-2">{label}</label>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -1044,30 +1008,16 @@ function FormSelect({
   )
 }
 
-function Section({
-  title,
-  children,
-}: {
-  title: string
-  children: React.ReactNode
-}) {
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="text-xs uppercase tracking-wider text-ink-500 mb-3 font-medium">
-        {title}
-      </h3>
+      <h3 className="text-xs uppercase tracking-wider text-ink-500 mb-3 font-medium">{title}</h3>
       {children}
     </div>
   )
 }
 
-function ActionButton({
-  onClick,
-  label,
-}: {
-  onClick: () => void
-  label: string
-}) {
+function ActionButton({ onClick, label }: { onClick: () => void; label: string }) {
   return (
     <button
       onClick={onClick}

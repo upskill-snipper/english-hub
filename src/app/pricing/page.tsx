@@ -75,20 +75,28 @@ const SCHOOL_RECEIVES = [
 
 const FAQ_ITEMS = [
   {
-    q: 'What do I get for free?',
-    a: 'Every account includes full access to exam-board aligned courses, revision notes, and flashcards at no cost. You also get 3 free uses of every premium feature so you can see the value before committing.',
+    q: 'What do I get for free before I subscribe?',
+    a: `Every visitor and registered user gets ${PRICING.FREE_USES_PER_FEATURE} free uses of most premium features (AI essay marking, mock exams, lesson plans, etc.) before the paywall. Exam-board aligned courses, revision notes, and flashcards remain free with a registered account.`,
   },
   {
-    q: 'Do I need a credit card to sign up?',
-    a: 'No. You can create a free account and start using the platform immediately. No card is required until you choose to upgrade.',
+    q: 'Do I need a credit card to start the 7-day trial?',
+    a: 'Yes. The 7-day free trial requires full sign-up with a valid payment method. Cancel any time before day 7 and you will not be charged. If you do nothing, the subscription activates automatically and your card is charged.',
   },
   {
-    q: 'How does the first month free work?',
-    a: 'When you subscribe to a monthly plan, your first month is completely free. You can cancel at any time during that first month and pay nothing.',
+    q: 'What does the Student plan cost?',
+    a: `£${PRICING.STUDENT_MONTHLY} per month, or £${PRICING.STUDENT_ANNUAL} per year. With any valid affiliate code — or the house code ${PRICING.AFFILIATE_PROMO_CODE} — the annual plan drops to £${PRICING.STUDENT_ANNUAL_WITH_CODE} (a £${PRICING.STUDENT_ANNUAL_SAVINGS} saving).`,
+  },
+  {
+    q: 'What does the Teacher plan cost?',
+    a: `£${PRICING.TEACHER_MONTHLY} per month, or £${PRICING.TEACHER_ANNUAL} per year. Teacher plans include everything in Student plus AI lesson planning, marking, analytics, and resource export.`,
+  },
+  {
+    q: 'How does the affiliate code discount work?',
+    a: `Enter any valid affiliate code at checkout to unlock the £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year student rate. Or use the public code ${PRICING.AFFILIATE_PROMO_CODE} — this works for everyone and applies the same discount. Only applies to annual student billing.`,
   },
   {
     q: 'Can I switch between monthly and annual billing?',
-    a: 'Yes. You can change your billing cycle at any time from your account settings. If you switch to annual, the remaining balance on your monthly plan is pro-rated.',
+    a: 'Yes. You can change your billing cycle at any time from your account settings. When switching to annual, the remaining balance on your monthly plan is pro-rated.',
   },
   {
     q: 'What exam boards do you support?',
@@ -96,11 +104,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Is the Founding Schools Programme a free trial?',
-    a: 'No. It is a strategic partnership limited to 10 schools. Pricing ranges from £3,000 to £7,000 per year depending on department size. Schools receive locked preferential pricing, early feature access, and direct product input.',
+    a: `No. It is a strategic partnership limited to ${PRICING.FOUNDER_SCHOOL_LIMIT} schools. Pricing starts at £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year and scales with department size. Founding schools receive locked preferential pricing, early feature access, and direct product input.`,
   },
   {
     q: 'Can I cancel anytime?',
-    a: 'Yes. Both monthly and annual plans can be cancelled from your account settings. There are no contracts or cancellation fees.',
+    a: 'Yes. Both monthly and annual plans can be cancelled from your account settings. No contracts, no cancellation fees. Cancel during the 7-day trial and you pay nothing.',
   },
 ]
 
@@ -217,10 +225,18 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 /* ------------------------------------------------------------------ */
 
 export default function PricingPage() {
-  // Monthly plans removed 19 April 2026 — student + teacher are annual-only.
-  // Savings calcs retained as zeros in case any legacy downstream code reads them.
-  const studentSavings = 0
-  const teacherSavings = 0
+  // 20 April 2026 correction: monthly plans restored.
+  //   Students:  £3.49/mo  ·  £29.99/yr  ·  £20/yr with affiliate code or 2026ENGLISH
+  //   Teachers:  £7.99/mo  ·  £67.99/yr (save 29%)
+  //   Trial:     7-day free trial — card required, auto-converts.
+  const studentAnnualSavingsVsMonthly = Math.max(
+    0,
+    Math.round((PRICING.STUDENT_MONTHLY * 12 - PRICING.STUDENT_ANNUAL) * 100) / 100,
+  )
+  const teacherAnnualSavingsVsMonthly = Math.max(
+    0,
+    Math.round((PRICING.TEACHER_MONTHLY * 12 - PRICING.TEACHER_ANNUAL) * 100) / 100,
+  )
 
   return (
     <main className="relative overflow-hidden">
@@ -254,11 +270,12 @@ export default function PricingPage() {
               </span>
             </div>
             <p className="text-foreground font-semibold text-lg sm:text-xl mb-2">
-              Start free. See results before you pay.
+              Try before you subscribe. No card needed to demo.
             </p>
             <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto mb-6">
-              Every account includes {PRICING.FREE_USES_PER_FEATURE} free uses of every premium
-              feature. No card required.
+              Every registered account gets {PRICING.FREE_USES_PER_FEATURE} free uses of most
+              premium features before the paywall. A card is only required when you start the{' '}
+              {PRICING.TRIAL_TEXT}.
             </p>
             <Button
               variant="default"
@@ -295,23 +312,41 @@ export default function PricingPage() {
                   Everything you need to ace your exams.
                 </p>
 
-                {/* Price */}
-                {/* Price — annual-only at £20/year */}
+                {/* Price — monthly (headline) + annual + discounted annual */}
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-5xl font-extrabold tracking-tight text-foreground">
                     {PRICING.CURRENCY}
-                    {PRICING.STUDENT_ANNUAL}
+                    {PRICING.STUDENT_MONTHLY}
                   </span>
-                  <span className="text-muted-foreground text-base">/year</span>
-                  <Badge
-                    variant="outline"
-                    className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-600 text-xs font-semibold"
-                  >
-                    Best value in the UK market
-                  </Badge>
+                  <span className="text-muted-foreground text-base">/month</span>
+                </div>
+                <p className="text-sm text-muted-foreground mb-2">
+                  or{' '}
+                  <span className="font-semibold text-foreground">
+                    {PRICING.CURRENCY}
+                    {PRICING.STUDENT_ANNUAL}/year
+                  </span>
+                  {studentAnnualSavingsVsMonthly > 0 && (
+                    <span className="text-muted-foreground/80">
+                      {' '}
+                      (save {PRICING.CURRENCY}
+                      {studentAnnualSavingsVsMonthly.toFixed(2)} vs monthly)
+                    </span>
+                  )}
+                </p>
+                <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-3 py-2 mb-3">
+                  <p className="text-xs font-semibold text-emerald-700">
+                    With any affiliate code or{' '}
+                    <code className="font-mono bg-emerald-500/15 px-1.5 py-0.5 rounded">
+                      {PRICING.AFFILIATE_PROMO_CODE}
+                    </code>
+                    : {PRICING.CURRENCY}
+                    {PRICING.STUDENT_ANNUAL_WITH_CODE}/year — save {PRICING.CURRENCY}
+                    {PRICING.STUDENT_ANNUAL_SAVINGS}.
+                  </p>
                 </div>
                 <p className="text-sm text-emerald-600 font-semibold mb-6">
-                  {PRICING.TRIAL_TEXT} · auto-renews annually · cancel anytime
+                  {PRICING.TRIAL_TEXT} · card required · cancel before day 7
                 </p>
 
                 {/* Free features */}
@@ -373,16 +408,30 @@ export default function PricingPage() {
                   AI-powered tools to save hours every week.
                 </p>
 
-                {/* Price — annual-only */}
+                {/* Price — monthly (headline) + annual */}
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-5xl font-extrabold tracking-tight text-foreground">
                     {PRICING.CURRENCY}
-                    {PRICING.TEACHER_ANNUAL}
+                    {PRICING.TEACHER_MONTHLY}
                   </span>
-                  <span className="text-muted-foreground text-base">/year</span>
+                  <span className="text-muted-foreground text-base">/month</span>
                 </div>
+                <p className="text-sm text-muted-foreground mb-4">
+                  or{' '}
+                  <span className="font-semibold text-foreground">
+                    {PRICING.CURRENCY}
+                    {PRICING.TEACHER_ANNUAL}/year
+                  </span>
+                  {teacherAnnualSavingsVsMonthly > 0 && (
+                    <span className="text-muted-foreground/80">
+                      {' '}
+                      (save {PRICING.CURRENCY}
+                      {teacherAnnualSavingsVsMonthly.toFixed(2)} vs monthly)
+                    </span>
+                  )}
+                </p>
                 <p className="text-sm text-emerald-600 font-semibold mb-6">
-                  {PRICING.TRIAL_TEXT} · auto-renews annually · cancel anytime
+                  {PRICING.TRIAL_TEXT} · card required · cancel before day 7
                 </p>
 
                 {/* Free features */}
@@ -541,7 +590,7 @@ export default function PricingPage() {
                 icon: Zap,
                 color: 'text-emerald-600 bg-emerald-500/10 border-emerald-500/20',
                 title: 'Upgrade',
-                desc: "When you're ready, subscribe and get your first month free on any monthly plan.",
+                desc: 'When you\u2019re ready, start a 7-day free trial. Card required — cancel before day 7 at no cost, or it converts automatically.',
               },
             ].map((item) => (
               <Card key={item.step} className="p-6 text-center border-border/40">

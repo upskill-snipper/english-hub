@@ -51,17 +51,17 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'What exam boards do you support?',
         answer:
-          'We support all major English exam boards: AQA, Edexcel, OCR, WJEC/Eduqas, and Cambridge IGCSE. When you set up your profile, select your exam board and we\'ll tailor all content, revision materials, and mock exams to match your specification.',
+          "We support all major English exam boards: AQA, Edexcel, OCR, WJEC/Eduqas, and Cambridge IGCSE. When you set up your profile, select your exam board and we'll tailor all content, revision materials, and mock exams to match your specification.",
       },
       {
         question: 'How do I choose my exam board and course?',
         answer:
-          'During registration, you\'ll be asked to select your exam board and whether you\'re studying English Language, English Literature, or both. You can change these at any time from your account settings.',
+          "During registration, you'll be asked to select your exam board and whether you're studying English Language, English Literature, or both. You can change these at any time from your account settings.",
       },
       {
-        question: 'Is there a free trial?',
+        question: 'Is there a free trial? Do I need a card?',
         answer:
-          'Yes! Every feature comes with 3 free uses — no card required. When you subscribe, your first month is completely free with full access to all features — courses, mock exams, practice questions, and revision materials.',
+          'Two things. Every paid plan starts with a 7-day free trial — that requires full sign-up with a valid card. Cancel before day 7 and you won\u2019t be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) with no card required, so you can demo the product first.',
       },
     ],
   },
@@ -80,7 +80,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'Are the courses aligned to my exam specification?',
         answer:
-          'Absolutely. Every course is mapped directly to the exam board specification you\'ve selected. Our content covers all the skills, texts, and question types you\'ll encounter in your actual exams.',
+          "Absolutely. Every course is mapped directly to the exam board specification you've selected. Our content covers all the skills, texts, and question types you'll encounter in your actual exams.",
       },
       {
         question: 'Can I study both English Language and Literature?',
@@ -104,7 +104,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'How do mock exams work?',
         answer:
-          'Our mock exams simulate the real exam experience. You\'ll answer questions in timed conditions that match your exam board\'s format. After completing a mock, you receive detailed feedback, a grade estimate, and suggestions for improvement.',
+          "Our mock exams simulate the real exam experience. You'll answer questions in timed conditions that match your exam board's format. After completing a mock, you receive detailed feedback, a grade estimate, and suggestions for improvement.",
       },
       {
         question: 'Are mock exams timed?',
@@ -157,12 +157,12 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'How much does The English Hub cost?',
         answer:
-          'For students: £8.99/month or £67.99/year (save over 35%). For teachers: £12.99/month or £99.99/year. Both plans include a free first month and full access to all features. Every feature also comes with 3 free uses — no card required. Cancel anytime.',
+          'Students: £3.49/month or £29.99/year — and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers: £7.99/month or £67.99/year. Every paid plan starts with a 7-day free trial (card required). You also get 3 free uses of most premium features before the paywall, no card required. Cancel anytime.',
       },
       {
         question: 'Can I cancel my subscription?',
         answer:
-          'Yes, you can cancel anytime from your account settings. If you cancel, you\'ll retain access until the end of your current billing period. There are no cancellation fees or penalties.',
+          "Yes, you can cancel anytime from your account settings. If you cancel, you'll retain access until the end of your current billing period. There are no cancellation fees or penalties.",
       },
       {
         question: 'How do I update my payment method?',
@@ -170,9 +170,9 @@ const HELP_CATEGORIES: HelpCategory[] = [
           'Go to Account Settings > Billing to update your payment card. All payments are processed securely through Stripe.',
       },
       {
-        question: 'What happens when my free trial ends?',
+        question: 'What happens when my 7-day trial ends?',
         answer:
-          'Near the end of your free first month, we\'ll send you a reminder email. If you\'ve added a payment method, your chosen plan will start automatically. If you haven\'t added payment details, your account will be paused until you subscribe.',
+          'We send a reminder email a couple of days before the trial ends. If you do nothing, your chosen subscription activates and your card is charged the plan price. Cancel any time before day 7 from your account settings and you won\u2019t be charged at all.',
       },
     ],
   },
@@ -203,14 +203,14 @@ const HELP_CATEGORIES: HelpCategory[] = [
   {
     id: 'parents',
     title: 'Parents',
-    description: 'Supporting your child\'s learning.',
+    description: "Supporting your child's learning.",
     icon: Users,
     color: 'text-teal-400 bg-teal-500/10 border-teal-500/20',
     items: [
       {
-        question: 'How can I track my child\'s progress?',
+        question: "How can I track my child's progress?",
         answer:
-          'Parents can link to their child\'s account to receive weekly progress reports via email. These reports cover time spent studying, topics completed, mock exam grades, and areas that need attention. Visit our For Parents page to learn more.',
+          "Parents can link to their child's account to receive weekly progress reports via email. These reports cover time spent studying, topics completed, mock exam grades, and areas that need attention. Visit our For Parents page to learn more.",
       },
       {
         question: 'Is the content safe and appropriate?',
@@ -237,19 +237,19 @@ const HELP_CATEGORIES: HelpCategory[] = [
           'The English Hub works on any device with a modern web browser — laptops, desktops, tablets, and smartphones. No app download is required. We recommend Chrome, Safari, Firefox, or Edge for the best experience.',
       },
       {
-        question: 'The site isn\'t loading properly. What should I do?',
+        question: "The site isn't loading properly. What should I do?",
         answer:
           'Try clearing your browser cache and cookies, then refresh the page. Make sure your browser is up to date. If the issue persists, try a different browser or device. You can also check our status page or contact support.',
       },
       {
-        question: 'I\'ve forgotten my password. How do I reset it?',
+        question: "I've forgotten my password. How do I reset it?",
         answer:
           'Click "Log In" then "Forgot Password". Enter your email address and we\'ll send you a password reset link. The link expires after 24 hours. If you signed up with Google, use the "Sign in with Google" option instead.',
       },
       {
-        question: 'My mock exam feedback isn\'t showing. What should I do?',
+        question: "My mock exam feedback isn't showing. What should I do?",
         answer:
-          'Feedback is usually generated within a few seconds of submitting your exam. If it hasn\'t appeared after a minute, try refreshing the page. If the problem continues, contact our support team with the exam name and the time you submitted it.',
+          "Feedback is usually generated within a few seconds of submitting your exam. If it hasn't appeared after a minute, try refreshing the page. If the problem continues, contact our support team with the exam name and the time you submitted it.",
       },
     ],
   },
@@ -272,11 +272,7 @@ function AccordionItem({ question, answer }: HelpItem) {
           className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
         />
       </button>
-      {open && (
-        <div className="pb-4 text-sm leading-relaxed text-muted-foreground">
-          {answer}
-        </div>
-      )}
+      {open && <div className="pb-4 text-sm leading-relaxed text-muted-foreground">{answer}</div>}
     </div>
   )
 }
@@ -292,7 +288,7 @@ export default function HelpCentrePage() {
       (item) =>
         !searchQuery ||
         item.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.answer.toLowerCase().includes(searchQuery.toLowerCase())
+        item.answer.toLowerCase().includes(searchQuery.toLowerCase()),
     ),
   })).filter((category) => category.items.length > 0)
 
@@ -304,8 +300,8 @@ export default function HelpCentrePage() {
           Help Centre
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Find answers to your questions about The English Hub. Can&apos;t find
-          what you&apos;re looking for?{' '}
+          Find answers to your questions about The English Hub. Can&apos;t find what you&apos;re
+          looking for?{' '}
           <Link href="/faqs" className="text-primary underline hover:text-primary/80">
             Check our FAQs
           </Link>{' '}
@@ -334,12 +330,8 @@ export default function HelpCentrePage() {
         {filteredCategories.length === 0 && (
           <div className="rounded-xl border border-border bg-card p-8 text-center">
             <p className="text-muted-foreground">
-              No results found for &ldquo;{searchQuery}&rdquo;. Try a different
-              search term or{' '}
-              <Link
-                href="/help/contact"
-                className="text-primary underline hover:text-primary/80"
-              >
+              No results found for &ldquo;{searchQuery}&rdquo;. Try a different search term or{' '}
+              <Link href="/help/contact" className="text-primary underline hover:text-primary/80">
                 contact our support team
               </Link>
               .
@@ -350,10 +342,7 @@ export default function HelpCentrePage() {
         {filteredCategories.map((category) => {
           const Icon = category.icon
           return (
-            <div
-              key={category.id}
-              className="rounded-xl border border-border bg-card p-6"
-            >
+            <div key={category.id} className="rounded-xl border border-border bg-card p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div
                   className={`flex h-10 w-10 items-center justify-center rounded-lg border ${category.color}`}
@@ -361,12 +350,8 @@ export default function HelpCentrePage() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold text-foreground">
-                    {category.title}
-                  </h2>
-                  <p className="text-sm text-muted-foreground">
-                    {category.description}
-                  </p>
+                  <h2 className="text-lg font-semibold text-foreground">{category.title}</h2>
+                  <p className="text-sm text-muted-foreground">{category.description}</p>
                 </div>
               </div>
 
@@ -387,12 +372,10 @@ export default function HelpCentrePage() {
       {/* Contact CTA */}
       <div className="mt-12 rounded-xl border border-border bg-card p-8 text-center">
         <Mail className="mx-auto h-8 w-8 text-primary" />
-        <h2 className="mt-4 text-xl font-semibold text-foreground">
-          Still need help?
-        </h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Still need help?</h2>
         <p className="mt-2 text-muted-foreground">
-          Our support team is here to help. Get in touch and we&apos;ll get back
-          to you as soon as possible.
+          Our support team is here to help. Get in touch and we&apos;ll get back to you as soon as
+          possible.
         </p>
         <Link
           href="/help/contact"
