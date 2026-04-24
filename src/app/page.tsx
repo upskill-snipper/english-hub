@@ -52,8 +52,9 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 3b. "Used in these schools" logo wall */}
-      <UsedInSchools />
+      {/* 3b. School logo wall hidden until we have signed, consenting schools.
+          Restore by re-rendering <UsedInSchools /> below once logos + consent
+          are in place. */}
 
       {/* 4. Pricing */}
       <AnthologyPricing />
@@ -97,20 +98,20 @@ function TrustPills() {
 
 function HeroHeadlineBlock() {
   return (
-    <section className="bg-background">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-10 pb-6 sm:pt-14 sm:pb-8 text-center">
+    <section className="bg-ink-950">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 pb-10 sm:pt-16 sm:pb-12 text-center">
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight">
           Built by examiners. Marked by AI.
           <br className="hidden sm:block" />
           <span className="text-clay-300 italic"> Trusted by 2,400 students across 6 exam boards.</span>
         </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-cream-200/70 leading-relaxed">
+        <p className="mt-5 max-w-2xl mx-auto text-base sm:text-lg text-cream-100/80 leading-relaxed">
           GCSE &amp; IGCSE English revision, AI-marked essays and mocks &mdash; built by senior
           examiners from every major UK board.
         </p>
-        <p className="text-xs text-slate-500 mt-2">
+        <p className="mt-3 text-xs text-cream-200/55">
           *As of April 2026 &mdash; see our{' '}
-          <a href="/growth" className="underline">
+          <a href="/growth" className="underline hover:text-cream-50 transition-colors">
             public growth dashboard
           </a>{' '}
           for current numbers.
