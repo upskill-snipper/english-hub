@@ -29,6 +29,7 @@ import {
 import { createClient } from '@/lib/supabase/client'
 import { useSearchParams } from 'next/navigation'
 import { trackEvent } from '@/lib/gtag'
+import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { useAuthStore } from '@/store/auth-store'
 import { loadAllCourses } from '@/data/course-loader'
 import { cn, formatDate } from '@/lib/utils'
@@ -169,6 +170,9 @@ export default function DashboardPage() {
   useEffect(() => {
     if (searchParams.get('checkout') === 'success') {
       trackEvent('purchase', { currency: 'GBP' })
+      // Funnel: subscription_paid_converted — Stripe redirected back after
+      // the first successful payment. Consent-gated in src/lib/posthog.ts.
+      phCapture(PH_EVENTS.SUBSCRIPTION_PAID_CONVERTED, { currency: 'GBP' })
     }
   }, [searchParams])
 
@@ -883,7 +887,7 @@ function SubscriptionBadge({ status }: { status: string }) {
 
   const labels: Record<string, string> = {
     free: 'Free',
-    pro: 'Pro',
+    pro: 'Premium',
     cancelled: 'Cancelled',
     past_due: 'Past Due',
     unpaid: 'Unpaid',

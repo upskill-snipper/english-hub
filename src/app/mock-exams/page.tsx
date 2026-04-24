@@ -865,13 +865,11 @@ export default function MockExamsPage() {
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-5 tracking-tight">
-            {boardConfig ? `${boardConfig.name} English Mock Exams` : 'GCSE English Mock Exams'}
+            172 full mock papers across 6 boards.
           </h1>
 
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-            Full-length, timed mock exams matching the exact {boardConfig?.name ?? 'AQA'} format.
-            Language Paper 1 and 2, Literature Paper 1 and 2 -- complete with grade boundaries,
-            model answers, and marking guides.
+            AI-marked in 60 seconds. Authentic exam format. Board-aligned markschemes.
           </p>
 
           {/* Quick stats */}
@@ -890,9 +888,23 @@ export default function MockExamsPage() {
             </span>
           </div>
 
-          <div className="flex gap-3 justify-center">
+          <div className="flex gap-3 justify-center flex-wrap">
             <Button size="lg" className="shadow-lg shadow-primary/20" render={<a href="#exams" />}>
               View Exam Papers <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            {/* TODO(founder): upload AQA GCSE English Language Paper 1 sample PDF to /public/sample-papers/ */}
+            <Button
+              variant="outline"
+              size="lg"
+              render={
+                <a
+                  href="/sample-papers/aqa-gcse-english-language-paper-1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+            >
+              Preview a sample paper (free, no sign-up)
             </Button>
             <Button variant="secondary" size="lg" render={<a href="#how-it-works" />}>
               How It Works

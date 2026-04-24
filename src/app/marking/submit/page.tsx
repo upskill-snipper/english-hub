@@ -100,7 +100,7 @@ function resolveMarkSchemeId(board: string, paper: string): string {
  */
 function friendlyError(status: number, body: string): string {
   if (status === 401) return "You need to sign in before submitting an essay for marking.";
-  if (status === 403) return body || "You don't have access to AI marking. Please upgrade to Pro.";
+  if (status === 403) return body || "You don't have access to AI marking. Please upgrade to Premium.";
   if (status === 429) return "You've reached the daily marking limit. Please try again tomorrow.";
   if (status === 400) return body || "There was a problem with your submission. Please check your essay and try again.";
   if (status === 503) return body || "The AI marking service is temporarily unavailable. Please try again in a few minutes.";

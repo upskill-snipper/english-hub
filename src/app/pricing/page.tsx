@@ -6,7 +6,9 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { PRICING } from '@/constants/pricing'
+import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
+import { TrackEvent } from '@/components/analytics/TrackEvent'
 import {
   CheckCircle,
   X,
@@ -226,10 +228,14 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 /* ------------------------------------------------------------------ */
 
 export default function PricingPage() {
-  // 20 April 2026 correction: monthly plans restored.
-  //   Students:  £3.49/mo  ·  £29.99/yr  ·  £20/yr with affiliate code or 2026ENGLISH
-  //   Teachers:  £7.99/mo  ·  £67.99/yr (save 29%)
-  //   Trial:     7-day free trial — card required, auto-converts.
+  // 21 April 2026 pricing pivot: two-tier Early Access / Standard with anchor.
+  //   Students: Early Access £3.99/mo · £29.99/yr · £20/yr with affiliate code or 2026ENGLISH
+  //             Standard (from Aug 2026) £7.99/mo · £69.99/yr — shown as strikethrough anchor
+  //   Teachers: Early Access £6.99/mo · £67.99/yr
+  //             Standard (from Aug 2026) £11.99/mo · £99/yr — shown as strikethrough anchor
+  //   Schools:  Founding £4,000 (first 10 only) vs Standard £8,000 (projected, Aug 2026)
+  //   Trial:    7-day free trial — card required, auto-converts.
+  //   Urgency:  Every banner carries "Prices increasing August 2026".
   const studentAnnualSavingsVsMonthly = Math.max(
     0,
     Math.round((PRICING.STUDENT_MONTHLY * 12 - PRICING.STUDENT_ANNUAL) * 100) / 100,
@@ -241,6 +247,8 @@ export default function PricingPage() {
 
   return (
     <main className="relative overflow-hidden">
+      {/* Funnel: pricing_viewed (consent-gated in src/lib/posthog.ts) */}
+      <TrackEvent event="pricing_viewed" />
       {/* Background gradient effects */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
@@ -257,6 +265,85 @@ export default function PricingPage() {
             title="The AI English platform trusted by schools, teachers, and students."
             subtitle="Exam-board aligned revision, AI marking, lesson planning, and analytics — built for results."
           />
+          <div className="mt-6 flex justify-center">
+            <TrustBox variant="micro-star" />
+          </div>
+        </div>
+      </section>
+
+      {/* ───────── Competitor Comparison ───────── */}
+      <section className="relative pb-16 sm:pb-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+              Compare to competitors
+            </h2>
+            <p className="mt-2 text-muted-foreground text-sm sm:text-base">
+              See how The English Hub stacks up against Seneca, GCSEPod, and Tassomai.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-border/60 bg-card">
+            <table className="w-full text-sm min-w-[720px]">
+              <thead>
+                <tr className="border-b border-border/60 bg-muted/30">
+                  <th className="text-left font-semibold text-foreground px-4 py-3">Feature</th>
+                  <th className="text-left font-bold text-primary px-4 py-3">The English Hub</th>
+                  <th className="text-left font-semibold text-muted-foreground px-4 py-3">Seneca</th>
+                  <th className="text-left font-semibold text-muted-foreground px-4 py-3">GCSEPod</th>
+                  <th className="text-left font-semibold text-muted-foreground px-4 py-3">Tassomai</th>
+                </tr>
+              </thead>
+              <tbody className="[&>tr]:border-b [&>tr]:border-border/40 [&>tr:last-child]:border-0">
+                <tr>
+                  <td className="px-4 py-3 font-medium text-foreground">Price per student / month</td>
+                  <td className="px-4 py-3 text-foreground">£3.49</td>
+                  <td className="px-4 py-3 text-muted-foreground">£0 (free) / £6.99 Premium</td>
+                  <td className="px-4 py-3 text-muted-foreground">£12–£18/yr via school only</td>
+                  <td className="px-4 py-3 text-muted-foreground">£3/mo</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-medium text-foreground">AI essay marking (AO-aligned)</td>
+                  <td className="px-4 py-3"><CheckCircle className="w-5 h-5 text-emerald-600" /></td>
+                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-medium text-foreground">IGCSE coverage</td>
+                  <td className="px-4 py-3 text-foreground flex items-center gap-2"><CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" /><span className="text-xs">AQA + Cambridge + CIE 0500</span></td>
+                  <td className="px-4 py-3 text-muted-foreground text-xs">Partial</td>
+                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                  <td className="px-4 py-3 text-muted-foreground text-xs">Partial</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-medium text-foreground">Mock-exam bank (full papers)</td>
+                  <td className="px-4 py-3 font-semibold text-foreground">172+</td>
+                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                  <td className="px-4 py-3"><CheckCircle className="w-5 h-5 text-emerald-600" /></td>
+                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-medium text-foreground">Built by examiners</td>
+                  <td className="px-4 py-3 text-foreground flex items-center gap-2"><CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" /><span className="text-xs">AQA · Pearson · Cambridge · OCR · WJEC</span></td>
+                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-medium text-foreground">Card-required trial</td>
+                  <td className="px-4 py-3 text-foreground font-semibold">No</td>
+                  <td className="px-4 py-3 text-muted-foreground">No</td>
+                  <td className="px-4 py-3 text-muted-foreground">n/a</td>
+                  <td className="px-4 py-3 text-muted-foreground">Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mt-4 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
+            Pricing and features as of April 2026 — may be out of date; contact competitors for latest.
+          </p>
         </div>
       </section>
 
@@ -309,31 +396,56 @@ export default function PricingPage() {
                 <h3 className="text-lg font-bold tracking-tight text-foreground mt-2">
                   For Students
                 </h3>
-                <p className="text-sm text-muted-foreground mt-1 mb-5">
+                <p className="text-sm text-muted-foreground mt-1 mb-3">
                   Everything you need to ace your exams.
                 </p>
 
-                {/* Price — monthly (headline) + annual + discounted annual */}
+                {/* Early-access label above the price */}
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700">
+                    {PRICING.EARLY_ACCESS_LABEL}
+                  </span>
+                  <span className="text-[10px] font-medium text-muted-foreground">
+                    · limited time
+                  </span>
+                </div>
+
+                {/* Price — early-access monthly with standard anchor */}
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-5xl font-extrabold tracking-tight text-foreground">
                     {PRICING.CURRENCY}
                     {PRICING.STUDENT_MONTHLY}
                   </span>
                   <span className="text-muted-foreground text-base">/month</span>
+                  <span className="text-sm text-muted-foreground line-through decoration-amber-500/60">
+                    {PRICING.CURRENCY}
+                    {PRICING.STUDENT_MONTHLY_STANDARD}
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-2">
                   or{' '}
                   <span className="font-semibold text-foreground">
                     {PRICING.CURRENCY}
                     {PRICING.STUDENT_ANNUAL}/year
+                  </span>{' '}
+                  <span className="text-muted-foreground/80">
+                    (was{' '}
+                    <span className="line-through decoration-amber-500/60">
+                      {PRICING.CURRENCY}
+                      {PRICING.STUDENT_ANNUAL_STANDARD}/year
+                    </span>
+                    )
                   </span>
                   {studentAnnualSavingsVsMonthly > 0 && (
                     <span className="text-muted-foreground/80">
                       {' '}
-                      (save {PRICING.CURRENCY}
-                      {studentAnnualSavingsVsMonthly.toFixed(2)} vs monthly)
+                      · save {PRICING.CURRENCY}
+                      {studentAnnualSavingsVsMonthly.toFixed(2)} vs monthly
                     </span>
                   )}
+                </p>
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-amber-700">
+                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
                 </p>
                 <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-3 py-2 mb-3">
                   <p className="text-xs font-semibold text-emerald-700">
@@ -346,8 +458,9 @@ export default function PricingPage() {
                     {PRICING.STUDENT_ANNUAL_SAVINGS}.
                   </p>
                 </div>
+                {/* TODO(backend): adjust trial logic to support no-card 14-day flow. See commercial-review item #08 */}
                 <p className="text-sm text-emerald-600 font-semibold mb-6">
-                  {PRICING.TRIAL_TEXT} · card required · cancel before day 7
+                  No card · 14 days free · then £3.49/mo or £29.99/yr
                 </p>
 
                 {/* Free features */}
@@ -385,7 +498,7 @@ export default function PricingPage() {
                   size="lg"
                   render={<Link href="/auth/register" />}
                 >
-                  Start Free
+                  Start free — no card
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>
@@ -405,31 +518,56 @@ export default function PricingPage() {
                 <h3 className="text-lg font-bold tracking-tight text-foreground mt-2">
                   For Teachers
                 </h3>
-                <p className="text-sm text-muted-foreground mt-1 mb-5">
+                <p className="text-sm text-muted-foreground mt-1 mb-3">
                   AI-powered tools to save hours every week.
                 </p>
 
-                {/* Price — monthly (headline) + annual */}
+                {/* Early-access label above the price */}
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700">
+                    {PRICING.EARLY_ACCESS_LABEL}
+                  </span>
+                  <span className="text-[10px] font-medium text-muted-foreground">
+                    · limited time
+                  </span>
+                </div>
+
+                {/* Price — early-access monthly with standard anchor */}
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-5xl font-extrabold tracking-tight text-foreground">
                     {PRICING.CURRENCY}
                     {PRICING.TEACHER_MONTHLY}
                   </span>
                   <span className="text-muted-foreground text-base">/month</span>
+                  <span className="text-sm text-muted-foreground line-through decoration-amber-500/60">
+                    {PRICING.CURRENCY}
+                    {PRICING.TEACHER_MONTHLY_STANDARD}
+                  </span>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-2">
                   or{' '}
                   <span className="font-semibold text-foreground">
                     {PRICING.CURRENCY}
                     {PRICING.TEACHER_ANNUAL}/year
+                  </span>{' '}
+                  <span className="text-muted-foreground/80">
+                    (was{' '}
+                    <span className="line-through decoration-amber-500/60">
+                      {PRICING.CURRENCY}
+                      {PRICING.TEACHER_ANNUAL_STANDARD}/year
+                    </span>
+                    )
                   </span>
                   {teacherAnnualSavingsVsMonthly > 0 && (
                     <span className="text-muted-foreground/80">
                       {' '}
-                      (save {PRICING.CURRENCY}
-                      {teacherAnnualSavingsVsMonthly.toFixed(2)} vs monthly)
+                      · save {PRICING.CURRENCY}
+                      {teacherAnnualSavingsVsMonthly.toFixed(2)} vs monthly
                     </span>
                   )}
+                </p>
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-amber-700">
+                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
                 </p>
                 <p className="text-sm text-emerald-600 font-semibold mb-6">
                   {PRICING.TRIAL_TEXT} · card required · cancel before day 7
@@ -507,17 +645,55 @@ export default function PricingPage() {
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/60 to-transparent" />
 
             <div className="p-8 sm:p-10">
-              {/* Price */}
-              <div className="text-center mb-8">
-                <div className="flex items-baseline justify-center gap-2">
-                  <span className="text-base text-muted-foreground">from</span>
-                  <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-                    {PRICING.CURRENCY}
-                    {PRICING.FOUNDER_SCHOOL_MIN.toLocaleString()}
+              {/* Price — Founding vs Standard anchor */}
+              <div className="grid gap-6 mb-8 sm:grid-cols-2">
+                {/* Founding Schools price */}
+                <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-6 text-center">
+                  <span className="inline-block rounded-full bg-amber-500/20 border border-amber-500/40 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-700 mb-3">
+                    Founding Pricing
                   </span>
+                  <div className="flex items-baseline justify-center gap-2">
+                    <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
+                      From {PRICING.CURRENCY}3,000
+                    </span>
+                    <span className="text-muted-foreground text-sm">/yr</span>
+                  </div>
+                  {/* TODO(backend): wire places-remaining to a Supabase row so counter updates automatically */}
+                  <p className="mt-3 text-sm font-semibold text-amber-700">
+                    6 places remaining · cohort closes 31 Dec 2026
+                  </p>
+                  <p className="mt-2 text-xs text-foreground/80">
+                    MAT pricing from {PRICING.CURRENCY}8,000/yr — bundled 3+ schools
+                  </p>
+                  <p className="text-muted-foreground text-xs mt-2">
+                    Founding partners lock in this rate for 2&ndash;3 years and shape the platform
+                    roadmap.
+                  </p>
                 </div>
-                <p className="text-muted-foreground text-sm mt-2">
-                  One-time founding partnership fee — scales with department size
+                {/* Standard (projected) price anchor */}
+                <div className="rounded-xl border border-border/60 bg-background/50 p-6 text-center">
+                  <span className="inline-block rounded-full bg-muted/40 border border-border px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-3">
+                    Standard Pricing
+                  </span>
+                  <div className="flex items-baseline justify-center gap-2">
+                    <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-muted-foreground">
+                      {PRICING.CURRENCY}
+                      {PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}
+                    </span>
+                    <span className="text-muted-foreground text-sm">/year</span>
+                  </div>
+                  <p className="text-muted-foreground text-xs mt-2">
+                    Estimated standard annual rate once Founders cohort closes. Exact figure set
+                    closer to launch.
+                  </p>
+                </div>
+              </div>
+
+              {/* Urgency banner */}
+              <div className="mb-8 rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-center">
+                <p className="text-sm font-semibold text-amber-700">
+                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE} &middot; Founding places fill on a first-come
+                  basis
                 </p>
               </div>
 
@@ -563,6 +739,11 @@ export default function PricingPage() {
               </div>
             </div>
           </Card>
+
+          <p className="mt-6 text-center text-sm text-slate-600 max-w-2xl mx-auto">
+            After the 10 founding places: Cohort 2 pricing opens September 2026 at £6,000–£12,000/yr.
+            Founding price is locked for the life of your contract.
+          </p>
 
           <p className="mt-8 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
             {VAT_LABEL}

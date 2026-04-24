@@ -32,6 +32,39 @@ export default function AboutPage() {
           </p>
         </section>
 
+        {/* Written by examiners — Founder */}
+        <section id="founder">
+          <h2 className="text-xl font-semibold text-foreground">Written by examiners</h2>
+          <div className="mt-4 grid md:grid-cols-[auto_1fr] gap-8">
+            <img
+              src="/founder/calum-johnson.jpg"
+              alt="Calum Johnson"
+              width={200}
+              height={200}
+              className="rounded-full"
+            />
+            <div>
+              <h3 className="text-lg font-semibold text-foreground">Calum Johnson — Founder</h3>
+              <p className="text-sm text-slate-500">Examiner: AQA · Pearson · Cambridge · OCR · WJEC</p>
+              <p className="text-sm text-slate-500">
+                English Language + English Literature · GCSE + IGCSE + A-Level
+              </p>
+              {/* TODO(founder): replace with real qualification + years-active summary */}
+              <p className="mt-3 text-muted-foreground leading-relaxed">
+                {/* TODO(founder): replace placeholder — why The English Hub exists (~3 sentences, focus on gap between examiner insight and published markschemes) */}
+                Placeholder paragraph 1 — why The English Hub exists. Keep this ~3 sentences; focus
+                on the gap between examiner insight and what students see in published markschemes.
+              </p>
+              <p className="mt-3 text-muted-foreground leading-relaxed">
+                {/* TODO(founder): replace placeholder — career marking totals (essays, boards, subjects) and how it informs AI feedback */}
+                Placeholder paragraph 2 — what the founder has marked across their career (total
+                essays, boards, subjects), and how that experience informs the AI feedback the
+                platform delivers.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* What We Offer */}
         <section>
           <h2 className="text-xl font-semibold text-foreground">What We Offer</h2>
@@ -132,6 +165,59 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Entity details */}
+        {/* CONFIRMED 2026-04-23: Company number is 16511479 per Companies House search. Remove this comment when reconciliation sweep is complete. */}
+        <section id="entity">
+          <h2 className="text-xl font-semibold text-foreground">Entity Details</h2>
+          <ul className="mt-4 space-y-1 text-muted-foreground leading-relaxed">
+            <li>The English Hub Ltd</li>
+            <li>Company No. 16511479</li>
+            <li>ICO Registration: [pending]</li>
+            <li>Registered address: United Kingdom</li>
+          </ul>
+        </section>
+
+        {/* Compliance */}
+        <section id="compliance">
+          <h2 className="text-xl font-semibold text-foreground">Compliance</h2>
+          {/* TODO(founder): upload PDFs to public/compliance/ when ready. See business-docs/ */}
+          <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+            <li>
+              <a className="underline hover:text-foreground" href="/compliance/dpia.pdf">
+                Data Protection Impact Assessment (PDF)
+              </a>
+            </li>
+            <li>
+              <a className="underline hover:text-foreground" href="/compliance/safeguarding-policy.pdf">
+                Safeguarding Policy (PDF)
+              </a>
+            </li>
+            <li>
+              <a className="underline hover:text-foreground" href="/compliance/vpat.pdf">
+                VPAT — Voluntary Product Accessibility Template (PDF)
+              </a>
+            </li>
+            <li>
+              <a className="underline hover:text-foreground" href="/accessibility">
+                Accessibility Statement (WCAG 2.1 AA target)
+              </a>
+            </li>
+            <li>
+              <a className="underline hover:text-foreground" href="/compliance/cyber-essentials.pdf">
+                Cyber Essentials certificate (filing Q3 2026)
+              </a>
+            </li>
+            <li>
+              <a
+                className="underline hover:text-foreground"
+                href="/compliance/data-processing-agreement.docx"
+              >
+                Data Processing Agreement template (Word)
+              </a>
+            </li>
+          </ul>
         </section>
       </div>
     </main>

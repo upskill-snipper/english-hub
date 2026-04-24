@@ -96,6 +96,15 @@ enum SubscriptionStatus {
   CANCELLED
   PAST_DUE
   TRIALING
+  PAUSED
+}
+
+// Billing rail that owns the active entitlement on a Subscription row.
+// WEB = Stripe-owned (existing path); IOS/ANDROID = RevenueCat-reconciled.
+enum SubscriptionPlatform {
+  WEB
+  IOS
+  ANDROID
 }
 
 enum ReminderType {
@@ -167,6 +176,13 @@ model User {
   // login events. Nullable because pre-migration rows have no signal.
   lastLoginAt       DateTime?
   deletedAt         DateTime?
+  // Mobile telemetry (Wave 4). Denormalised hot-path reads — the
+  // authoritative per-device record lives in MobileDevice. mobileDeviceCount
+  // is maintained by trigger on MobileDevice insert/revoke. pushTokens is an
+  // array of { token, platform, deviceId, addedAt } used for Expo push fan-out.
+  mobileDeviceCount Int           @default(0) @map("mobile_device_count")
+  pushTokens        Json          @default("[]") @map("push_tokens")
+  lastMobileVersion String?       @map("last_mobile_version")
 
   parent                 User?                @relation("ParentChild", fields: [parentId], references: [id])
   children               User[]               @relation("ParentChild")
@@ -185,6 +201,8 @@ model User {
   weeklyReportsAsStudent WeeklyReport[]       @relation("StudentReports")
   parentInvitesSent      ParentInvite[]       @relation("StudentInvites")
   parentInvitesUsed      ParentInvite[]       @relation("ParentInviteUsed")
+  mobileDevices          MobileDevice[]
+  offlineEssayQueueItems OfflineEssayQueueItem[]
 
   @@index([email])
   @@index([role])
@@ -301,21 +319,42 @@ model HumanReviewRequest {
 }
 
 model Subscription {
-  id                   String             @id @default(cuid())
-  userId               String             @unique
-  stripeCustomerId     String
-  stripeSubscriptionId String             @unique
+  id                   String               @id @default(cuid())
+  userId               String               @unique
+  // Stripe identity columns — NULL on mobile (RevenueCat-reconciled) rows.
+  // Made optional in 20260420_02_stripe_columns_nullable.sql so the mobile
+  // reconciler no longer needs to synthesise `rc_*` sentinel strings.
+  stripeCustomerId     String?
+  stripeSubscriptionId String?              @unique
   plan                 SubscriptionPlan
-  status               SubscriptionStatus @default(TRIALING)
+  status               SubscriptionStatus   @default(TRIALING)
   currentPeriodStart   DateTime
   currentPeriodEnd     DateTime
   cancelledAt          DateTime?
-  coolingOffWaived     Boolean            @default(false)
+  // Set by the RevenueCat REFUND / CHARGEBACK reconciler. Distinct from
+  // cancelledAt (user auto-renew off) so refund-driven revocation is queryable.
+  refundedAt           DateTime?            @map("refunded_at")
+  coolingOffWaived     Boolean              @default(false)
   coolingOffWaivedAt   DateTime?
-  paymentCount         Int                @default(0)
-  isTeacherPlan        Boolean            @default(false)
+  paymentCount         Int                  @default(0)
+  isTeacherPlan        Boolean              @default(false)
   maxStudents          Int?
   teacherPriceId       String?
+  // RevenueCat reconciliation fields (Wave 4). Populated by the mobile
+  // webhook handler when a Subscription row represents an iOS/Android
+  // IAP rather than a Stripe subscription. Nullable on web-originated rows.
+  revenuecatAppUserId  String?              @map("revenuecat_app_user_id")
+  revenuecatProductId  String?              @map("revenuecat_product_id")
+  platform             SubscriptionPlatform @default(WEB)
+  originalPurchaseDate DateTime?            @map("original_purchase_date")
+  // Grandfathering columns (R-031, 2026-04-21). Captured at signup, preserved
+  // across renewals so Early Access subscribers keep their locked price even
+  // after the Aug 2026 Standard rollover. See
+  // `src/lib/pricing/grandfather.ts` for capture logic and
+  // `supabase/migrations/20260421_01_subscription_grandfather_price.sql`.
+  grandfatheredPriceMinor Int?     @map("grandfathered_price_minor")
+  grandfatheredCurrency   String?  @map("grandfathered_currency") @db.Char(3)
+  pricingTier             String?  @map("pricing_tier")
 
   user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
   renewalReminders RenewalReminder[]
@@ -539,4 +578,113 @@ model WeeklyReport {
   @@index([studentId])
   @@index([weekStarting])
   @@index([parentId, weekStarting])
+}
+
+// ──────────────────────────────────────────────
+// Mobile / RevenueCat (Wave 4 prerequisite)
+// ──────────────────────────────────────────────
+//
+// Additive, non-breaking contributions from the mobile contribution plan.
+// FeatureFlag is intentionally deferred to a later wave — see DB_SCHEMA.md §4.3.
+
+// Platform enum for a registered mobile device. Distinct from
+// SubscriptionPlatform because a device is never "WEB" in practice, but we
+// keep the same vocabulary for parity with the billing platform field.
+enum DevicePlatform {
+  IOS
+  ANDROID
+  WEB
+}
+
+// One row per (user, device). A reinstall produces a new deviceId and
+// therefore a new row — identity is never mutated, only revoked and recreated.
+model MobileDevice {
+  id           String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId       String         @map("user_id")
+  deviceId     String         @map("device_id")
+  platform     DevicePlatform
+  osVersion    String?        @map("os_version")
+  appVersion   String?        @map("app_version")
+  pushToken    String?        @map("push_token")
+  lastActiveAt DateTime       @default(now()) @map("last_active_at") @db.Timestamptz(6)
+  createdAt    DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  revokedAt    DateTime?      @map("revoked_at") @db.Timestamptz(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, deviceId])
+  @@index([userId, lastActiveAt])
+  @@map("MobileDevice")
+}
+
+// Immutable journal for every inbound RevenueCat webhook. We persist BEFORE
+// processing so we can replay idempotently if the handler crashes mid-reconcile.
+// Append-only; processedAt / processingError are stamped by the worker.
+model RevenueCatEvent {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  eventType       String    @map("event_type")
+  appUserId       String    @map("app_user_id")
+  productId       String?   @map("product_id")
+  payload         Json
+  receivedAt      DateTime  @default(now()) @map("received_at") @db.Timestamptz(6)
+  processedAt     DateTime? @map("processed_at") @db.Timestamptz(6)
+  processingError String?   @map("processing_error")
+
+  @@index([appUserId, eventType])
+  @@map("RevenueCatEvent")
+}
+
+// Essays drafted on-device while offline. The client holds a local SQLite
+// mirror; on reconnect each record is pushed here and a server cron forwards
+// queued rows to the marking pipeline. The double-hop exists so the device
+// can be powered off between writing an essay and network availability.
+model OfflineEssayQueueItem {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId      String    @map("user_id")
+  deviceId    String    @map("device_id")
+  payload     Json
+  attempts    Int       @default(0)
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  submittedAt DateTime? @map("submitted_at") @db.Timestamptz(6)
+  failedAt    DateTime? @map("failed_at") @db.Timestamptz(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@map("OfflineEssayQueueItem")
+}
+
+// ──────────────────────────────────────────────
+// School bulk-upload job log (Wave 5, web-only)
+// ──────────────────────────────────────────────
+//
+// Every run of POST /api/school/bulk-upload/commit writes a row here before
+// performing the transactional upsert, then stamps completedAt at the end.
+// The errorsJson column stores the per-row ParseError[] so admins can re-view
+// failed imports without re-uploading. The idempotencyKey column lets clients
+// safely retry the same commit — a second request with the same key returns
+// the first response verbatim.
+//
+// Not user-scoped data; retention follows the school-admin audit policy and is
+// purged when a school licence ends.
+model BulkUploadJob {
+  id              String    @id @default(cuid())
+  adminUserId     String    @map("admin_user_id")
+  schoolId        String    @map("school_id")
+  fileName        String    @map("file_name")
+  idempotencyKey  String    @unique @map("idempotency_key")
+  rowCount        Int       @default(0) @map("row_count")
+  successCount    Int       @default(0) @map("success_count")
+  errorCount      Int       @default(0) @map("error_count")
+  createdCount    Int       @default(0) @map("created_count")
+  updatedCount    Int       @default(0) @map("updated_count")
+  skippedCount    Int       @default(0) @map("skipped_count")
+  errorsJson      Json?     @map("errors_json")
+  status          String    @default("pending")
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  completedAt     DateTime? @map("completed_at") @db.Timestamptz(6)
+
+  @@index([adminUserId])
+  @@index([schoolId, createdAt(sort: Desc)])
+  @@map("BulkUploadJob")
 }

@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
+import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import {
   GraduationCap,
@@ -115,7 +116,7 @@ const testimonials = [
 const faqs = [
   {
     q: 'How much does it cost?',
-    a: 'Every feature is free to try -- you get 3 free uses per tool with no card required. When you are ready to upgrade, the Teacher plan is £7.99 per month or £67.99 per year, with a 7-day free trial (card required, cancel before day 7). School plans are available through our Founding Schools Programme -- book a call to discuss pricing.',
+    a: 'Every feature is free to try -- you get 3 free uses per tool with no card required. When you are ready to upgrade, the Teacher plan is £6.99/month or £67.99/year at the Early Access / Founding rate (locked until August 2026; Standard pricing from August 2026 is £11.99/month or £99/year). Every paid plan starts with a 7-day free trial (card required, cancel before day 7). School plans are available through our Founding Schools Programme -- £4,000/year for the first 10 schools, anchored against projected Standard Pricing of £8,000/year. Book a call to discuss.',
   },
   {
     q: 'What features are included?',
@@ -231,6 +232,10 @@ export default function ForTeachersPage() {
             specifically for English teachers.
           </p>
 
+          <div className="mt-8 max-w-2xl mx-auto">
+            <TrustBox variant="mini-carousel" />
+          </div>
+
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               variant="default"
@@ -299,8 +304,8 @@ export default function ForTeachersPage() {
               {
                 icon: Users,
                 color: 'text-blue-600 bg-blue-500/10',
-                value: '1,000+',
-                label: 'Teachers',
+                value: '500+',
+                label: 'Teachers (Apr 2026)',
               },
             ].map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-8 sm:gap-14">
@@ -818,7 +823,7 @@ export default function ForTeachersPage() {
           <div className="text-center mb-16">
             <h2 className="text-foreground">What Teachers Are Saying</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Joining over 1,000 English teachers who have already made the switch.
+              Joining over 500 English teachers who have already made the switch.
             </p>
           </div>
 
@@ -985,15 +990,26 @@ export default function ForTeachersPage() {
               </div>
 
               <div className="mb-2">
-                <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-3">
-                  Teacher Premium
-                </p>
+                <div className="flex items-center gap-2 mb-3">
+                  <p className="text-xs font-semibold text-primary uppercase tracking-widest">
+                    Teacher Premium
+                  </p>
+                  <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
+                    Early Access
+                  </span>
+                </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-foreground tracking-tight">£7.99</span>
+                  <span className="text-4xl font-bold text-foreground tracking-tight">£6.99</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Standard <span className="line-through">£11.99/month</span> from August 2026
+                </p>
                 <p className="text-sm text-teal-700 font-semibold mt-1.5">
-                  or £67.99/year -- save 29%
+                  or £67.99/year (Standard <span className="line-through">£99</span> from Aug 2026)
+                </p>
+                <p className="mt-2 text-[11px] font-medium text-amber-700">
+                  ⚡ Prices increasing August 2026
                 </p>
               </div>
 
@@ -1035,16 +1051,23 @@ export default function ForTeachersPage() {
             {/* School plan */}
             <Card className="p-8 border-border/40 bg-card/60 flex flex-col">
               <div className="mb-2">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">
-                  School / Department
-                </p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-bold text-foreground tracking-tight">
-                    Tailored pricing
+                <div className="flex items-center gap-2 mb-3">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                    School / Department
+                  </p>
+                  <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
+                    Founding · 10 only
                   </span>
                 </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold text-foreground tracking-tight">£4,000</span>
+                  <span className="text-muted-foreground">/year</span>
+                </div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Standard <span className="line-through">£8,000/year</span> from August 2026
+                </p>
                 <p className="text-sm text-muted-foreground mt-1.5">
-                  Founding Schools Programme -- book a call
+                  Founding Schools Programme -- first 10 schools only
                 </p>
               </div>
 
@@ -1155,8 +1178,8 @@ export default function ForTeachersPage() {
 
               <p className="text-xs text-muted-foreground text-center">
                 By signing up you agree to our Terms of Service and Privacy Policy. Free tier
-                includes 3 uses per tool. Premium: £7.99/month or £67.99/year, 7-day free trial
-                (card required).
+                includes 3 uses per tool. Premium: £6.99/month or £67.99/year (Early Access — Standard
+                £11.99/£99 from August 2026). 7-day free trial, card required.
               </p>
             </div>
           </Card>
@@ -1192,17 +1215,19 @@ export default function ForTeachersPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.05] rounded-full blur-[140px] pointer-events-none" />
 
         <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <Badge
-            variant="outline"
-            className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-8 gap-1.5 px-3 py-1"
-          >
-            <Users className="w-3.5 h-3.5" />
-            Join 1,000+ Teachers
-          </Badge>
+          <Link href="/growth" className="inline-block mb-8">
+            <Badge
+              variant="outline"
+              className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold gap-1.5 px-3 py-1 hover:bg-primary/[0.1] transition-colors"
+            >
+              <Users className="w-3.5 h-3.5" />
+              Over 500 teachers — as of April 2026
+            </Badge>
+          </Link>
 
           <h2 className="text-foreground mb-6">Ready to Reclaim Your Evenings?</h2>
           <p className="text-muted-foreground text-xl max-w-xl mx-auto mb-10 leading-relaxed">
-            Join over 1,000 English teachers saving 5+ hours every week with The English Hub. Try
+            Join over 500 English teachers saving 5+ hours every week with The English Hub. Try
             every feature free -- upgrade when you are ready.
           </p>
 
@@ -1235,8 +1260,15 @@ export default function ForTeachersPage() {
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            3 free uses per tool. Premium from £7.99/month or £67.99/year — 7-day free trial, card
-            required.
+            3 free uses per tool. Early Access Premium from{' '}
+            <span className="font-semibold text-foreground">£6.99/month or £67.99/year</span>{' '}
+            <span className="text-muted-foreground/80">
+              (Standard <span className="line-through">£11.99/month</span> from August 2026)
+            </span>{' '}
+            — 7-day free trial, card required.
+          </p>
+          <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-amber-700">
+            ⚡ Prices increasing August 2026 — lock in Early Access today.
           </p>
           <p className="mt-3 text-xs text-muted-foreground/80 max-w-2xl mx-auto">{VAT_LABEL}</p>
         </div>

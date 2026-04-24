@@ -335,7 +335,7 @@ export default function AssessmentPage() {
         <div className="card max-w-md w-full text-center space-y-4 p-8">
           <Lock className="w-12 h-12 text-muted-foreground mx-auto" />
           <h2 className="text-xl font-bold text-foreground">Course Access Required</h2>
-          <p className="text-muted-foreground">You need to purchase this course or subscribe to Pro to access this content.</p>
+          <p className="text-muted-foreground">You need to purchase this course or subscribe to Premium to access this content.</p>
           <div className="flex gap-3 justify-center">
             <Link href={`/courses/${courseId}`} className="btn-primary">View Course</Link>
             <Link href="/account/billing" className="btn-secondary">Subscribe</Link>

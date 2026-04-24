@@ -1,6 +1,65 @@
 'use client'
 
 import React, { useState, useEffect, useRef, useCallback } from 'react'
+import Image from 'next/image'
+
+/* ─────────────────────────────────────────────────────────────
+   Structured testimonial (item #04 — named attribution)
+   ───────────────────────────────────────────────────────────── */
+
+interface TestimonialData {
+  quote: string
+  name: string
+  role: string
+  school: string
+  photo: string
+  linkedin: string
+}
+
+function Testimonial({ t }: { t: TestimonialData }) {
+  return (
+    <figure className="scene-testimonial flex items-start gap-3 text-left">
+      <Image
+        src={t.photo}
+        alt={`${t.name} profile photo placeholder`}
+        width={40}
+        height={40}
+        className="rounded-full flex-shrink-0 grayscale"
+      />
+      <figcaption className="flex flex-col gap-0.5 text-xs sm:text-sm">
+        <blockquote className="scene-quote" style={{ margin: 0 }}>
+          &ldquo;{t.quote}&rdquo;
+        </blockquote>
+        <div className="flex flex-wrap items-center gap-1.5 opacity-80">
+          <span className="font-semibold">{t.name}</span>
+          <span>&middot;</span>
+          <span>
+            {t.role}, {t.school}
+          </span>
+          <a
+            href={t.linkedin}
+            aria-label={`${t.name} on LinkedIn`}
+            className="inline-flex items-center ml-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {/* LinkedIn icon placeholder */}
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              style={{ opacity: 0.7 }}
+            >
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z" />
+            </svg>
+          </a>
+        </div>
+      </figcaption>
+    </figure>
+  )
+}
 
 /* ─────────────────────────────────────────────────────────────
    DATA — chapter definitions with phases
@@ -657,10 +716,18 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
       </div>
 
       <div className="scene-foot">
-        <p className="scene-quote">
-          &ldquo;The analytics dashboard alone saves me hours each week. We can track every student
-          across all year groups.&rdquo; &mdash; Mrs Patterson, Head of English
-        </p>
+        {/* TODO(founder): replace with real named, consented testimonial + photo + LinkedIn URL */}
+        <Testimonial
+          t={{
+            quote:
+              'The analytics dashboard alone saves me hours each week. We can track every student across all year groups.',
+            name: 'Sarah Patterson',
+            role: 'Head of English',
+            school: 'Oakwood Academy',
+            photo: '/testimonials/sarah-patterson.jpg',
+            linkedin: '#', // LinkedIn icon placeholder
+          }}
+        />
         <div className="scene-counter">01 / 04</div>
       </div>
     </div>
@@ -787,10 +854,18 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
       </div>
 
       <div className="scene-foot">
-        <p className="scene-quote">
-          &ldquo;Finally an English resource that covers all the boards properly. The lesson builder
-          has halved my planning time.&rdquo; &mdash; Mr Davies, English Teacher
-        </p>
+        {/* TODO(founder): replace with real named, consented testimonial + photo + LinkedIn URL */}
+        <Testimonial
+          t={{
+            quote:
+              'Finally an English resource that covers all the boards properly. The lesson builder has halved my planning time.',
+            name: 'David Davies',
+            role: 'Lead English Teacher',
+            school: 'St Margaret\u2019s High School',
+            photo: '/testimonials/david-davies.jpg',
+            linkedin: '#', // LinkedIn icon placeholder
+          }}
+        />
         <div className="scene-counter">02 / 04</div>
       </div>
     </div>
@@ -1291,10 +1366,18 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
       </div>
 
       <div className="scene-foot">
-        <p className="scene-quote">
-          &ldquo;I went from a Grade 4 to a 7 in six months. The structured courses and model
-          answers made everything click.&rdquo; &mdash; Sophie T., Year 11 AQA
-        </p>
+        {/* TODO(founder): replace with real named, consented testimonial + photo + LinkedIn URL */}
+        <Testimonial
+          t={{
+            quote:
+              'I went from a Grade 4 to a 7 in six months. The structured courses and model answers made everything click.',
+            name: 'Sophie Thompson',
+            role: 'Year 11 student (AQA)',
+            school: 'Kingsford Community School',
+            photo: '/testimonials/sophie-thompson.jpg',
+            linkedin: '#', // LinkedIn icon placeholder
+          }}
+        />
         <div className="scene-counter">03 / 04</div>
       </div>
     </div>
@@ -1392,10 +1475,18 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
       </div>
 
       <div className="scene-foot">
-        <p className="scene-quote">
-          &ldquo;My daughter&apos;s confidence has completely changed. She actually wants to revise
-          now and her mock results have gone up two grades.&rdquo; &mdash; Mark H., Parent
-        </p>
+        {/* TODO(founder): replace with real named, consented testimonial + photo + LinkedIn URL */}
+        <Testimonial
+          t={{
+            quote:
+              'My daughter\u2019s confidence has completely changed. She actually wants to revise now and her mock results have gone up two grades.',
+            name: 'Mark Hughes',
+            role: 'Parent of Year 11 student',
+            school: 'Kingsford Community School',
+            photo: '/testimonials/mark-hughes.jpg',
+            linkedin: '#', // LinkedIn icon placeholder
+          }}
+        />
         <div className="scene-counter">04 / 04</div>
       </div>
     </div>

@@ -18,11 +18,12 @@ export function isTeacherFeature(feature: GatedFeature): boolean {
 }
 
 // ─── Pricing display strings ───────────────────────────────────────────
-// 20 April 2026: monthly plans restored. Headline is now the monthly price;
-// annual shown as the savings route.
+// 21 April 2026 pricing pivot: two-tier Early Access / Standard with anchor.
+// Headline is the Early Access monthly price; Standard shown as strikethrough
+// anchor with "from August 2026" urgency tag.
 
-export const STUDENT_PRICE_STRING = `from ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year)`
-export const TEACHER_PRICE_STRING = `from ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year)`
+export const STUDENT_PRICE_STRING = `Early Access ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year) — Standard ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY_STANDARD} from ${PRICING.PRICE_INCREASE_DATE}`
+export const TEACHER_PRICE_STRING = `Early Access ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year) — Standard ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY_STANDARD} from ${PRICING.PRICE_INCREASE_DATE}`
 
 export function getPriceString(feature: GatedFeature): string {
   return isTeacherFeature(feature) ? TEACHER_PRICE_STRING : STUDENT_PRICE_STRING
@@ -30,9 +31,9 @@ export function getPriceString(feature: GatedFeature): string {
 
 export function getFullPricingLine(feature: GatedFeature): string {
   if (isTeacherFeature(feature)) {
-    return `Teachers: ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year. ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`
+    return `Teachers — Early Access: ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year. Standard pricing from ${PRICING.PRICE_INCREASE_DATE}: ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY_STANDARD}/month or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL_STANDARD}/year. ${PRICING.TRIAL_TEXT} — card required, cancel before day 7. ⚡ ${PRICING.PRICE_INCREASE_MESSAGE}.`
   }
-  return `Students: ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year (${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with code ${PRICING.AFFILIATE_PROMO_CODE}). ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`
+  return `Students — Early Access: ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year (${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with code ${PRICING.AFFILIATE_PROMO_CODE}). Standard pricing from ${PRICING.PRICE_INCREASE_DATE}: ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY_STANDARD}/month or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_STANDARD}/year. ${PRICING.TRIAL_TEXT} — card required, cancel before day 7. ⚡ ${PRICING.PRICE_INCREASE_MESSAGE}.`
 }
 
 // ─── Feature-specific lockout messages ─────────────────────────────────

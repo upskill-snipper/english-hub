@@ -77,9 +77,13 @@ export default function PricingSection() {
               Most Popular
             </Badge>
             <h3 className="text-lg font-bold tracking-tight text-foreground">Student</h3>
-            <p className="text-sm text-muted-foreground mt-1 mb-6">
+            <p className="text-sm text-muted-foreground mt-1 mb-3">
               Full access for learners — cancel anytime.
             </p>
+            {/* Early-access badge */}
+            <span className="mb-3 inline-flex w-fit items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-400">
+              {PRICING.EARLY_ACCESS_LABEL}
+            </span>
             <div className="mb-2 flex items-baseline gap-4 flex-wrap">
               <div>
                 <span className="text-4xl font-extrabold tracking-tight text-foreground">
@@ -87,6 +91,10 @@ export default function PricingSection() {
                   {PRICING.STUDENT_MONTHLY}
                 </span>
                 <span className="text-muted-foreground text-sm ml-1">/month</span>
+                <span className="ml-2 text-xs text-muted-foreground line-through decoration-amber-500/60">
+                  {PRICING.CURRENCY}
+                  {PRICING.STUDENT_MONTHLY_STANDARD}
+                </span>
               </div>
               <span className="text-muted-foreground text-sm">or</span>
               <div>
@@ -95,6 +103,10 @@ export default function PricingSection() {
                   {PRICING.STUDENT_ANNUAL}
                 </span>
                 <span className="text-muted-foreground text-sm ml-1">/year</span>
+                <span className="ml-2 text-xs text-muted-foreground line-through decoration-amber-500/60">
+                  {PRICING.CURRENCY}
+                  {PRICING.STUDENT_ANNUAL_STANDARD}
+                </span>
                 <Badge
                   variant="outline"
                   className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-400 text-xs font-semibold"
@@ -103,6 +115,9 @@ export default function PricingSection() {
                 </Badge>
               </div>
             </div>
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-amber-400">
+              ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
+            </p>
             <p className="text-sm text-emerald-400 font-semibold mb-2">
               {PRICING.TRIAL_TEXT} · card required · cancel before day 7
             </p>
@@ -143,9 +158,13 @@ export default function PricingSection() {
               <GraduationCap className="w-5 h-5 text-purple-400 shrink-0" />
               <h3 className="text-lg font-bold tracking-tight text-foreground">Teacher</h3>
             </div>
-            <p className="text-sm text-muted-foreground mt-1 mb-6">
+            <p className="text-sm text-muted-foreground mt-1 mb-3">
               Plan, teach &amp; track — all in one place.
             </p>
+            {/* Early-access badge */}
+            <span className="mb-3 inline-flex w-fit items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-400">
+              {PRICING.EARLY_ACCESS_LABEL}
+            </span>
             <div className="mb-2 flex items-baseline gap-4 flex-wrap">
               <div>
                 <span className="text-4xl font-extrabold tracking-tight text-foreground">
@@ -153,6 +172,10 @@ export default function PricingSection() {
                   {PRICING.TEACHER_MONTHLY}
                 </span>
                 <span className="text-muted-foreground text-sm ml-1">/month</span>
+                <span className="ml-2 text-xs text-muted-foreground line-through decoration-amber-500/60">
+                  {PRICING.CURRENCY}
+                  {PRICING.TEACHER_MONTHLY_STANDARD}
+                </span>
               </div>
               <span className="text-muted-foreground text-sm">or</span>
               <div>
@@ -161,6 +184,10 @@ export default function PricingSection() {
                   {PRICING.TEACHER_ANNUAL}
                 </span>
                 <span className="text-muted-foreground text-sm ml-1">/year</span>
+                <span className="ml-2 text-xs text-muted-foreground line-through decoration-amber-500/60">
+                  {PRICING.CURRENCY}
+                  {PRICING.TEACHER_ANNUAL_STANDARD}
+                </span>
                 <Badge
                   variant="outline"
                   className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-400 text-xs font-semibold"

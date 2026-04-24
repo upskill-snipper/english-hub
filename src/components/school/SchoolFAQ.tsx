@@ -18,7 +18,7 @@ const faqs: FAQItem[] = [
   {
     question: 'How much does it cost?',
     answer:
-      "Founding Schools Programme pricing ranges from \u00a33,000 to \u00a37,000 per year, depending on your department size. This is heavily discounted compared to our post-programme pricing. The exact package is discussed during your onboarding call. Book a call to find out your school's price.",
+      "Founding Schools Programme pricing is \u00a34,000 per year for the first 10 schools only -- heavily anchored against our projected Standard Pricing of \u00a38,000 per year from August 2026. Exact package scales with department size and is agreed during your onboarding call. Schools that joined in wave 1 at \u00a33,000 are grandfathered at that rate. Book a call to lock in your founding price before the cohort closes.",
   },
   {
     question: 'How does the Excel bulk upload work?',

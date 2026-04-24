@@ -8,8 +8,10 @@ import { getGradeSystemForBoard, GRADE_SYSTEMS, GRADE_BOUNDARIES, gradeNineToLet
 // ── board-config.ts ─────────────────────────────────────────────────────────
 
 describe('board-config', () => {
-  it('BOARDS has exactly 7 entries', () => {
-    expect(BOARDS).toHaveLength(7)
+  // Matrix updated 2026-04: BOARDS expanded to 15 entries covering KS3,
+  // 4 UK GCSE boards, 5 IGCSE variants, 1 IAL, and 4 UK A-Level boards.
+  it('BOARDS has exactly 15 entries', () => {
+    expect(BOARDS).toHaveLength(15)
   })
 
   it('every board has id, name, fullName, shortName, type, examCode, category, description', () => {
@@ -18,7 +20,7 @@ describe('board-config', () => {
       expect(board.name).toBeTruthy()
       expect(board.fullName).toBeTruthy()
       expect(board.shortName).toBeTruthy()
-      expect(board.type).toMatch(/^(gcse|igcse)$/)
+      expect(board.type).toMatch(/^(ks3|gcse|igcse|ial|a-level)$/)
       expect(board.examCode).toBeTruthy()
       expect(board.category).toBeTruthy()
       expect(board.description).toBeTruthy()
@@ -26,21 +28,36 @@ describe('board-config', () => {
   })
 
   it('every board has a valid category value', () => {
-    const validCategories = ['gcse', 'igcse-literature', 'igcse-language-a', 'igcse-language-b']
+    const validCategories = [
+      'ks3',
+      'gcse',
+      'igcse-literature',
+      'igcse-language-a',
+      'igcse-language-b',
+      'igcse-language',
+      'ial',
+      'a-level',
+    ]
     for (const board of BOARDS) {
       expect(validCategories).toContain(board.category)
     }
   })
 
-  it('IGCSE boards use new display names', () => {
+  it('IGCSE + Cambridge boards expose board-specific display names', () => {
+    // edexcel-igcse is labelled with the exam code (4ET1) to disambiguate
+    // it from the Language paper (4EA1). shortName is the student-friendly
+    // form used in the sidebar.
     const igcseLit = getBoardConfig('edexcel-igcse')
-    expect(igcseLit?.name).toBe('IGCSE Literature')
+    expect(igcseLit?.name).toBe('Edexcel IGCSE Literature (4ET1)')
+    expect(igcseLit?.shortName).toBe('IGCSE Lit')
 
     const langA = getBoardConfig('cambridge-0500')
-    expect(langA?.name).toBe('IGCSE Language A')
+    expect(langA?.name).toBe('Cambridge (A*-G)')
+    expect(langA?.category).toBe('igcse-language-a')
 
     const langB = getBoardConfig('cambridge-0990')
-    expect(langB?.name).toBe('IGCSE Language B')
+    expect(langB?.name).toBe('Cambridge (9-1)')
+    expect(langB?.category).toBe('igcse-language-b')
   })
 
   it('every board has a unique id', () => {
@@ -293,16 +310,21 @@ describe('grade-boundaries', () => {
     })
 
     it('every board has a grade system defined', () => {
+      // 'A*-E' added 2026-04 for IAL + UK A-Level boards (A*/A/B/C/D/E).
       for (const board of BOARDS) {
-        expect(GRADE_SYSTEMS[board.id]).toMatch(/^(9-1|A\*-G)$/)
+        expect(GRADE_SYSTEMS[board.id]).toMatch(/^(9-1|A\*-G|A\*-E)$/)
       }
     })
   })
 
   describe('GRADE_BOUNDARIES', () => {
-    it('every board has grade boundaries defined', () => {
+    it('every exam board has grade boundaries defined (ks3 excluded)', () => {
+      // KS3 is a foundation tier, not an exam spec, so it carries an empty
+      // boundaries map by design. Every other board must have at least one
+      // grade threshold defined.
       for (const board of BOARDS) {
         expect(GRADE_BOUNDARIES[board.id]).toBeDefined()
+        if (board.id === 'ks3') continue
         expect(Object.keys(GRADE_BOUNDARIES[board.id]).length).toBeGreaterThan(0)
       }
     })

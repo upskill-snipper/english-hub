@@ -171,8 +171,14 @@ export function SchoolComparison() {
 
       {/* Sub-note */}
       <p className="max-w-5xl mx-auto mt-4 text-center text-slate-500 text-sm">
-        Founding Schools Programme pricing ranges from £3,000 to £7,000 per year. Book a call to
-        discuss your package.
+        <span className="font-semibold text-amber-700">Founding Schools:</span> £4,000 / year
+        <span className="mx-2 text-slate-400">·</span>
+        <span className="text-slate-400 line-through">Standard £8,000</span>
+        <span className="mx-2 text-slate-400">·</span>
+        <span className="font-medium">first 10 schools only</span>
+      </p>
+      <p className="max-w-5xl mx-auto mt-1 text-center text-amber-700 text-xs font-medium">
+        ⚡ Prices increasing August 2026 — lock in your founding rate now.
       </p>
       <p className="max-w-5xl mx-auto mt-2 text-center text-slate-500 text-xs">{VAT_LABEL}</p>
     </section>

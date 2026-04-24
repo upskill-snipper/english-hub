@@ -260,9 +260,13 @@ function PoetryShell({
         </div>
       </section>
 
+      <PoetrySeoContent />
+
       <section>
         <div className="grid gap-4 sm:grid-cols-2">{children}</div>
       </section>
+
+      <AnthologyLinks />
     </div>
   )
 }
@@ -301,7 +305,166 @@ function BoardlessPoetryShell({ title, description }: { title: string; descripti
           </Button>
         </div>
       </section>
+
+      <PoetrySeoContent />
+
+      <AnthologyLinks />
     </div>
+  )
+}
+
+function PoetrySeoContent() {
+  return (
+    <section
+      aria-labelledby="poetry-seo-heading"
+      className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8"
+    >
+      <h2 id="poetry-seo-heading" className="sr-only">
+        About GCSE English poetry revision
+      </h2>
+
+      <div className="space-y-8">
+        <div className="space-y-3">
+          <h2 className="text-heading-md font-heading text-foreground">
+            How GCSE English poetry is marked
+          </h2>
+          <p className="text-body text-muted-foreground">
+            Every GCSE English Literature poetry question is marked against three assessment
+            objectives. AO1 rewards a clear, personal argument supported by well-chosen textual
+            references. AO2 asks you to analyse how the poet&apos;s choices of language, structure
+            and form shape meaning. AO3 credits your understanding of the contexts in which a poem
+            was written and read. As a rough guide, anthology comparison questions weight these
+            objectives at roughly AO1 33%, AO2 50% and AO3 17%, which is why close analysis of
+            poetic method is where most marks are won or lost.
+          </p>
+          <p className="text-body text-muted-foreground">
+            Each board introduces its own quirks. AQA Power and Conflict typically asks you to
+            analyse a single named poem in depth and then compare a second poem from the cluster.
+            Edexcel Conflict expects deeper historical contextualisation, because several of its
+            poems sit in very specific political and military moments. Eduqas mixes the anthology
+            with an unseen poem in the same paper, so you must flex between memorised material and
+            cold reading on the day. Unseen poetry is marked against the same AO grid, just without
+            the context-heavy AO3 element, so strong AO2 habits transfer directly.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <h2 className="text-heading-md font-heading text-foreground">
+            AO1 vs AO2 vs AO3 in poetry
+          </h2>
+          <p className="text-body text-muted-foreground">
+            AO1 is your argument. Examiners reward a clear thesis developed through three or four
+            precisely chosen quotations that build on one another, not a shopping list of anything
+            you noticed. A strong AO1 paragraph commits to a reading of the poem and then proves
+            it; a weak one lists features and hopes for the best. Keep quotations short, embedded
+            and purposeful.
+          </p>
+          <p className="text-body text-muted-foreground">
+            AO2 is analysis of method. The biggest upgrade most students can make is moving from
+            &ldquo;the poet uses a metaphor&rdquo; to analysing the effect of that metaphor on
+            meaning and on the reader. Name the technique, quote it, then explain what it does to
+            our understanding of the speaker, the situation or the central idea. Always link back
+            to the question. Form and structure count here too, so consider stanza shape, line
+            breaks, volta and pace, not just imagery.
+          </p>
+          <p className="text-body text-muted-foreground">
+            AO3 is context, used sparingly. A useful framework is to ask what was happening when
+            the poet wrote this and what that helps us see in the poem. Context should illuminate
+            the language, not replace it, so weave one sharp contextual point into an analytical
+            paragraph rather than parking a biography paragraph at the end.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <h2 className="text-heading-md font-heading text-foreground">
+            Poetry comparison questions explained
+          </h2>
+          <p className="text-body text-muted-foreground">
+            Roughly 45 to 50 per cent of your poetry marks come from comparison, so a reliable
+            method matters. We teach three structures. PEEL-C (point, evidence, explain, link,
+            compare) is the safest scaffold for students who want a clear paragraph shape. The
+            two-poem thread runs a single idea, such as powerlessness or memory, through both
+            poems in parallel, alternating evidence so the comparison is constant rather than
+            tacked on. The hinge-point approach picks one central image in each poem and uses
+            those paired images to open a sustained comparison of method and meaning.
+          </p>
+          <p className="text-body text-muted-foreground">
+            Whichever structure you choose, avoid shopping-list comparison. Stringing together
+            &ldquo;similarly&rdquo; and &ldquo;in contrast&rdquo; without analysing the poets&apos;
+            choices fails AO2, because you are comparing topics rather than techniques. Aim to
+            compare how each poet constructs meaning, not simply what each poem is about. When
+            you&apos;re ready to rehearse under timed conditions, work through our poetry mock
+            exams and mark schemes to build the habit of comparing method under pressure.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function AnthologyLinks() {
+  const links: Array<{ href: string; title: string; snippet: string }> = [
+    {
+      href: '/revision/poetry/aqa-power-and-conflict',
+      title: 'AQA Power & Conflict',
+      snippet:
+        'Fifteen poems on power, war and human struggle with annotations, themes and comparison pairings built for AQA.',
+    },
+    {
+      href: '/revision/poetry/aqa-love-and-relationships',
+      title: 'AQA Love & Relationships',
+      snippet:
+        'Romantic, familial and painful love across fifteen poems with method analysis and exam-ready comparison grids.',
+    },
+    {
+      href: '/revision/poetry/aqa-worlds-and-lives',
+      title: 'AQA Worlds & Lives',
+      snippet:
+        'The newer AQA cluster on identity, place and belonging with full annotations and thematic links between poems.',
+    },
+    {
+      href: '/revision/poetry/eduqas',
+      title: 'Eduqas Poetry',
+      snippet:
+        'All eighteen Eduqas anthology poems with strong pairing suggestions for the compulsory comparison question.',
+    },
+    {
+      href: '/revision/poetry/edexcel-conflict',
+      title: 'Edexcel Conflict',
+      snippet:
+        'Fifteen Edexcel Conflict poems with deeper historical context notes to hit AO3 confidently in the exam.',
+    },
+    {
+      href: '/revision/poetry/wjec',
+      title: 'WJEC Poetry',
+      snippet:
+        'WJEC anthology revision covering key poems, context and comparison technique for the Welsh specification paper.',
+    },
+  ]
+
+  return (
+    <section aria-labelledby="anthology-links-heading" className="space-y-4">
+      <h2
+        id="anthology-links-heading"
+        className="text-heading-md font-heading text-foreground"
+      >
+        Anthology-specific revision
+      </h2>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="group flex flex-col gap-1.5 rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-border hover:shadow-card-hover"
+          >
+            <h3 className="text-heading-sm font-heading text-foreground group-hover:text-primary">
+              {link.title}
+            </h3>
+            <p className="text-body-sm text-muted-foreground">{link.snippet}</p>
+          </Link>
+        ))}
+      </div>
+    </section>
   )
 }
 

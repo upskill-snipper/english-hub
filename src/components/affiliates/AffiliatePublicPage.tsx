@@ -47,9 +47,8 @@ export default function AffiliatePublicPage({
       <ImpactSection />
       <WhatYouGetSection />
       <FAQSection />
-      {!applicationStatus && (
-        <ApplicationSection isLoggedIn={isLoggedIn} />
-      )}
+      <ApplicationSection isLoggedIn={isLoggedIn} />
+      <ProgramBasicsSection />
       <BottomCTA isLoggedIn={isLoggedIn} applicationStatus={applicationStatus} />
     </div>
   )
@@ -92,7 +91,7 @@ function HeroSection({
               className="text-base px-10 h-13 shadow-lg shadow-primary/20"
               render={<a href="#apply" />}
             >
-              Apply to Partner
+              Get your code — instant
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
             <Button
@@ -116,9 +115,9 @@ function StatusBanner({ status }: { status: string }) {
   const config = {
     pending: {
       icon: Clock,
-      title: 'Application Under Review',
+      title: 'Legacy application on file',
       message:
-        "We've received your application and will review it within 48 hours. You'll receive an email when we have an update.",
+        "You have an older application on the legacy review queue. The programme is now self-serve — pick a code below and your account will activate instantly, overriding the old application.",
       color: 'bg-blue-500/10 border-blue-500/30 text-blue-400',
     },
     agreement_sent: {
@@ -217,18 +216,18 @@ function HowItWorksSection() {
   const steps = [
     {
       icon: ClipboardCheck,
-      title: 'Apply',
-      description: 'Fill out a short application telling us about you and your audience.',
+      title: 'Sign in',
+      description: 'Quick sign-in so your earnings tie to your account. 30 seconds.',
     },
     {
       icon: UserCheck,
-      title: 'Get Approved',
-      description: 'We review every application within 48 hours and send your partnership agreement.',
+      title: 'Get your code',
+      description: 'Pick a code (or we generate one). Instant activation — no review, no wait.',
     },
     {
       icon: Share2,
-      title: 'Share Your Link',
-      description: 'Get your unique affiliate link and start sharing with your audience.',
+      title: 'Share your link',
+      description: 'Copy the ready-made post templates, swap in your code, include #ad, post away.',
     },
     {
       icon: TrendingUp,
@@ -413,7 +412,7 @@ function WhatYouGetSection() {
     { icon: GraduationCap, text: 'Impact metrics — students helped, grades improved' },
     { icon: FileText, text: 'Ready-made social media content and captions' },
     { icon: Headphones, text: 'Priority support from our partnerships team' },
-    { icon: Award, text: 'Complimentary Pro subscription while you are an active partner' },
+    { icon: Award, text: 'Complimentary Premium subscription while you are an active partner' },
   ]
 
   return (
@@ -464,7 +463,7 @@ function FAQSection() {
     },
     {
       q: 'How long does approval take?',
-      a: 'We review every application within 48 hours. Once approved, you will receive a partnership agreement to sign, and your dashboard will be set up within 24 hours of signing.',
+      a: 'Zero. Enrolment is self-serve and instant — your code is live the moment you submit the form. We do not review applications.',
     },
     {
       q: 'Do I need a certain follower count?',
@@ -480,7 +479,7 @@ function FAQSection() {
     },
     {
       q: 'Do I get a free subscription?',
-      a: 'Active partners receive a complimentary Pro subscription for as long as they remain in the programme.',
+      a: 'Active partners receive a complimentary Premium subscription for as long as they remain in the programme.',
     },
   ]
 
@@ -533,48 +532,80 @@ function ApplicationSection({ isLoggedIn }: { isLoggedIn?: boolean }) {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Ready to Partner?
+            Get your affiliate code
           </h2>
           <p className="text-muted-foreground text-lg">
             {isLoggedIn
-              ? 'Complete the form below to apply for our partnership programme.'
-              : 'Create an account or sign in to submit your application.'}
+              ? 'Pick a code (or let us generate one) and start sharing immediately. No review, no wait.'
+              : 'Sign in or create an account first — takes 30 seconds.'}
           </p>
         </div>
 
         {isLoggedIn ? (
-          <ApplicationForm />
+          <EnrolForm />
         ) : (
           <Card className="p-0 border-border/40">
             <CardContent className="py-12 px-6 text-center">
               <UserCheck className="w-12 h-12 text-primary mx-auto mb-5" />
               <h3 className="text-xl font-semibold text-foreground mb-3">
-                Sign In to Apply
+                Sign in first
               </h3>
               <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-                You need an account to submit a partnership application. After
-                signing up, you will be redirected back here.
+                We need an account so your earnings are tied to you. Once signed in,
+                you will get your code on this page in one click.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
                   size="lg"
                   className="text-base px-8 h-12"
-                  render={<Link href="/auth/register?redirect=/affiliates" />}
+                  render={<Link href="/auth/register?redirect=/affiliates%23apply" />}
                 >
-                  Create Account to Apply
+                  Create account
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   className="text-base px-8 h-12"
-                  render={<Link href="/auth/login?redirect=/affiliates" />}
+                  render={<Link href="/auth/login?redirect=/affiliates%23apply" />}
                 >
-                  Sign In
+                  Sign in
                 </Button>
               </div>
             </CardContent>
           </Card>
         )}
+      </div>
+    </section>
+  )
+}
+
+/* ─── Program Basics ─────────────────────────────────────────── */
+
+function ProgramBasicsSection() {
+  return (
+    <section className="px-4 py-16 sm:py-20">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
+          Program basics
+        </h2>
+        <dl className="grid md:grid-cols-2 gap-4">
+          <div className="p-6 rounded-lg border border-border/40 bg-card">
+            <dt className="font-semibold text-foreground mb-2">Attribution window</dt>
+            <dd className="text-muted-foreground">30-day cookie. Last-touch model.</dd>
+          </div>
+          <div className="p-6 rounded-lg border border-border/40 bg-card">
+            <dt className="font-semibold text-foreground mb-2">Minimum payout</dt>
+            <dd className="text-muted-foreground">£20 — payments made bi-monthly via BACS or PayPal.</dd>
+          </div>
+          <div className="p-6 rounded-lg border border-border/40 bg-card">
+            <dt className="font-semibold text-foreground mb-2">Lifetime value tier</dt>
+            <dd className="text-muted-foreground">Top 20 partners earn a continued percentage on subscription renewals for the lifetime of the referred account.</dd>
+          </div>
+          <div className="p-6 rounded-lg border border-border/40 bg-card">
+            <dt className="font-semibold text-foreground mb-2">Commission</dt>
+            <dd className="text-muted-foreground">30% of first-year revenue for every paying student you refer; 15% of first-year revenue for school seat-licences.</dd>
+          </div>
+        </dl>
       </div>
     </section>
   )
@@ -603,14 +634,14 @@ function BottomCTA({
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto mb-8 text-base">
               Help students succeed while building a meaningful income stream.
-              Applications are reviewed within 48 hours.
+              Self-serve enrolment — your code is ready in one click.
             </p>
             <Button
               size="lg"
               className="text-base px-10 h-12 shadow-lg shadow-primary/20"
               render={<a href="#apply" />}
             >
-              Apply to Partner
+              Get your code
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
           </div>
@@ -620,21 +651,31 @@ function BottomCTA({
   )
 }
 
-/* ─── Application Form ───────────────────────────────────────── */
+/* ─── Enrolment Form ─────────────────────────────────────────── */
+// Self-serve instant-approve. No review. User picks (or generates) a code,
+// accepts the #ad disclosure + age gate, and gets their referral link +
+// starter post templates on the same page. No email wait.
 
-function ApplicationForm() {
+interface EnrolSuccess {
+  code: string
+  referral_url: string
+  dashboard_url: string
+  already_enrolled?: boolean
+}
+
+function EnrolForm() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [success, setSuccess] = useState(false)
-  const [isMinor, setIsMinor] = useState(false)
+  const [result, setResult] = useState<EnrolSuccess | null>(null)
+  const [chosenCode, setChosenCode] = useState('')
+  const [is18Plus, setIs18Plus] = useState(true)
+  const [understands, setUnderstands] = useState(false)
+  const [codePreview, setCodePreview] = useState('')
 
-  const checkAge = (dob: string) => {
-    if (!dob) return
-    const birthDate = new Date(dob)
-    const age = Math.floor(
-      (Date.now() - birthDate.getTime()) / (1000 * 60 * 60 * 24 * 365.25)
-    )
-    setIsMinor(age < 18)
+  // Live-normalise + preview the chosen code as the user types.
+  const handleCodeChange = (raw: string) => {
+    setChosenCode(raw)
+    setCodePreview(raw.trim().toUpperCase().replace(/[^A-Z0-9-]/g, ''))
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -643,57 +684,40 @@ function ApplicationForm() {
     setError(null)
 
     const formData = new FormData(e.currentTarget)
-    const data: Record<string, unknown> = {}
-    formData.forEach((value, key) => {
-      if (key.startsWith('understands_') || key === 'guardian_confirmed') {
-        data[key] = value === 'on'
-      } else {
-        data[key] = value
-      }
-    })
-
-    ;['understands_disclosure', 'understands_commission', 'understands_no_guarantee'].forEach(
-      (k) => {
-        if (!(k in data)) data[k] = false
-      }
-    )
+    const body = {
+      chosen_code: chosenCode.trim() || undefined,
+      display_name: (formData.get('display_name') as string) || undefined,
+      understands_disclosure: understands,
+      is_18_or_over: is18Plus,
+      guardian_name: (formData.get('guardian_name') as string) || undefined,
+      guardian_email: (formData.get('guardian_email') as string) || undefined,
+    }
 
     try {
-      const res = await fetch('/api/affiliates/apply', {
+      const res = await fetch('/api/affiliates/enrol', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(body),
       })
-
-      const result = await res.json()
-
+      const data = await res.json()
       if (!res.ok) {
-        setError(result.error || 'Something went wrong. Please try again.')
+        setError(data.error || 'Something went wrong. Please try again.')
       } else {
-        setSuccess(true)
+        setResult({
+          code: data.code,
+          referral_url: data.referral_url,
+          dashboard_url: data.dashboard_url,
+          already_enrolled: data.already_enrolled,
+        })
       }
     } catch {
       setError('Network error. Please try again.')
     }
-
     setSubmitting(false)
   }
 
-  if (success) {
-    return (
-      <Card className="p-0 border-border/40">
-        <CardContent className="py-12 px-6 text-center">
-          <CheckCircle2 className="w-12 h-12 text-primary mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-foreground mb-2">
-            Application Submitted!
-          </h3>
-          <p className="text-muted-foreground">
-            We will review your application within 48 hours and email you with
-            next steps.
-          </p>
-        </CardContent>
-      </Card>
-    )
+  if (result) {
+    return <EnrolSuccessCard result={result} />
   }
 
   return (
@@ -707,143 +731,279 @@ function ApplicationForm() {
             </div>
           )}
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="full_name" className="label">Full Name *</label>
-              <input type="text" id="full_name" name="full_name" required minLength={2} maxLength={100} className="input-field" />
-            </div>
-            <div>
-              <label htmlFor="email" className="label">Email Address *</label>
-              <input type="email" id="email" name="email" required className="input-field" />
-            </div>
-          </div>
-
           <div>
-            <label htmlFor="date_of_birth" className="label">Date of Birth *</label>
+            <label htmlFor="chosen_code" className="label">
+              Your affiliate code{' '}
+              <span className="text-muted-foreground font-normal">(optional — we will generate one if you leave this blank)</span>
+            </label>
             <input
-              type="date"
-              id="date_of_birth"
-              name="date_of_birth"
-              required
+              type="text"
+              id="chosen_code"
+              name="chosen_code"
+              value={chosenCode}
+              onChange={(e) => handleCodeChange(e.target.value)}
+              placeholder="e.g. SARAH25 or ENGLISH-WITH-MAYA"
+              maxLength={20}
+              className="input-field font-mono tracking-wide uppercase"
+              autoComplete="off"
+            />
+            <p className="text-xs text-muted-foreground mt-1.5">
+              4-20 characters. Letters, numbers, hyphens. We will uppercase it automatically.
+              {codePreview && codePreview !== chosenCode.trim() && (
+                <>
+                  {' '}Preview: <span className="font-mono text-foreground">{codePreview}</span>
+                </>
+              )}
+            </p>
+          </div>
+
+          <div>
+            <label htmlFor="display_name" className="label">
+              Display name{' '}
+              <span className="text-muted-foreground font-normal">(optional — shown on your dashboard)</span>
+            </label>
+            <input
+              type="text"
+              id="display_name"
+              name="display_name"
+              placeholder="Sarah"
+              maxLength={60}
               className="input-field"
-              onChange={(e) => checkAge(e.target.value)}
             />
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="tiktok_handle" className="label">TikTok Handle</label>
-              <input type="text" id="tiktok_handle" name="tiktok_handle" placeholder="@yourhandle" className="input-field" />
-            </div>
-            <div>
-              <label htmlFor="instagram_handle" className="label">Instagram Handle</label>
-              <input type="text" id="instagram_handle" name="instagram_handle" placeholder="@yourhandle" className="input-field" />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="approx_follower_count" className="label">Approximate Follower Count *</label>
-            <select id="approx_follower_count" name="approx_follower_count" required className="input-field">
-              <option value="">Select...</option>
-              <option value="<1K">&lt;1K</option>
-              <option value="1K-5K">1K - 5K</option>
-              <option value="5K-25K">5K - 25K</option>
-              <option value="25K-100K">25K - 100K</option>
-              <option value="100K+">100K+</option>
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="audience_description" className="label">
-              Describe your audience (who follows you?) *
-            </label>
-            <textarea
-              id="audience_description"
-              name="audience_description"
-              required
-              minLength={20}
-              maxLength={500}
-              rows={3}
-              className="input-field"
-              placeholder="e.g. Mostly Year 10-11 students in the UK doing GCSE English..."
-            />
-          </div>
-
-          <div>
-            <label htmlFor="best_post_url" className="label">
-              Link to your best post (optional)
-            </label>
-            <input type="url" id="best_post_url" name="best_post_url" placeholder="https://..." className="input-field" />
-          </div>
-
-          <div>
-            <label htmlFor="content_plan" className="label">
-              What kind of content would you create to promote The English Hub? *
-            </label>
-            <textarea
-              id="content_plan"
-              name="content_plan"
-              required
-              minLength={20}
-              maxLength={500}
-              rows={3}
-              className="input-field"
-              placeholder="e.g. I'd create TikTok videos showing how I use the app for revision..."
-            />
-          </div>
-
-          {/* Under-18 Guardian Fields */}
-          {isMinor && (
-            <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-5 space-y-4">
-              <p className="text-sm text-amber-800 font-medium">
-                Since you are under 18, we need your parent or guardian&apos;s details:
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="guardian_name" className="label">Guardian Name *</label>
-                  <input type="text" id="guardian_name" name="guardian_name" required className="input-field" />
-                </div>
-                <div>
-                  <label htmlFor="guardian_email" className="label">Guardian Email *</label>
-                  <input type="email" id="guardian_email" name="guardian_email" required className="input-field" />
-                </div>
-              </div>
-              <label className="flex items-start gap-3 cursor-pointer">
-                <input type="checkbox" name="guardian_confirmed" required className="mt-1" />
-                <span className="text-sm text-muted-foreground">
-                  My parent/guardian is aware of this application and consents to my participation
-                </span>
-              </label>
-            </div>
-          )}
-
-          {/* Legal Acknowledgements */}
+          {/* Age + guardian fields */}
           <div className="space-y-3 pt-2">
             <label className="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" name="understands_disclosure" required className="mt-1" />
+              <input
+                type="checkbox"
+                checked={is18Plus}
+                onChange={(e) => setIs18Plus(e.target.checked)}
+                className="mt-1"
+              />
               <span className="text-sm text-muted-foreground">
-                I understand every promotional post must include <strong className="text-foreground">#ad</strong> disclosure *
+                I am 18 or over
               </span>
             </label>
+
+            {!is18Plus && (
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-5 space-y-4">
+                <p className="text-sm text-amber-800 font-medium">
+                  Since you are under 18, we need a parent or guardian contact on file:
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="guardian_name" className="label">Guardian name *</label>
+                    <input type="text" id="guardian_name" name="guardian_name" required className="input-field" />
+                  </div>
+                  <div>
+                    <label htmlFor="guardian_email" className="label">Guardian email *</label>
+                    <input type="email" id="guardian_email" name="guardian_email" required className="input-field" />
+                  </div>
+                </div>
+              </div>
+            )}
+
             <label className="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" name="understands_commission" required className="mt-1" />
+              <input
+                type="checkbox"
+                checked={understands}
+                onChange={(e) => setUnderstands(e.target.checked)}
+                required
+                className="mt-1"
+              />
               <span className="text-sm text-muted-foreground">
-                I understand I earn commission per qualifying paid signup only *
-              </span>
-            </label>
-            <label className="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" name="understands_no_guarantee" required className="mt-1" />
-              <span className="text-sm text-muted-foreground">
-                I understand there is no guaranteed income from this programme *
+                I understand every promotional post must include a clear{' '}
+                <strong className="text-foreground">#ad</strong> disclosure (ASA + CAP Code).
+                I have read the <a href="/affiliates/resources" className="underline">posting guidelines</a>. *
               </span>
             </label>
           </div>
 
-          <Button type="submit" disabled={submitting} size="lg" className="w-full h-12 text-base">
-            {submitting ? 'Submitting...' : 'Submit Application'}
+          <Button type="submit" disabled={submitting || !understands} size="lg" className="w-full h-12 text-base">
+            {submitting ? 'Creating your code…' : 'Get my affiliate code'}
           </Button>
+
+          <p className="text-xs text-muted-foreground text-center">
+            Instant activation. No review queue. Share links the moment you click.
+          </p>
         </form>
       </CardContent>
     </Card>
+  )
+}
+
+/* ─── Success card — shown after enrolment ───────────────────── */
+
+function EnrolSuccessCard({ result }: { result: EnrolSuccess }) {
+  return (
+    <div className="space-y-6">
+      <Card className="p-0 border-border/40">
+        <CardContent className="py-10 px-6 sm:px-8">
+          <div className="flex items-center justify-center mb-5">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <CheckCircle2 className="w-7 h-7 text-primary" />
+            </div>
+          </div>
+          <h3 className="text-2xl font-bold text-foreground text-center mb-2">
+            {result.already_enrolled ? 'You are already enrolled' : 'You are in.'}
+          </h3>
+          <p className="text-muted-foreground text-center mb-8">
+            Start sharing — every signup through your link or code is tracked automatically.
+          </p>
+
+          <div className="space-y-4">
+            <CopyRow label="Your affiliate code" value={result.code} monospace />
+            <CopyRow label="Your referral link" value={result.referral_url} />
+          </div>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <Button
+              size="lg"
+              className="text-base px-6 h-12 flex-1"
+              render={<Link href={result.dashboard_url} />}
+            >
+              Go to your dashboard
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-base px-6 h-12"
+              render={<Link href="/affiliates/resources" />}
+            >
+              Full resources
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      <PostTemplates code={result.code} referralUrl={result.referral_url} />
+    </div>
+  )
+}
+
+function CopyRow({
+  label,
+  value,
+  monospace,
+}: {
+  label: string
+  value: string
+  monospace?: boolean
+}) {
+  const [copied, setCopied] = useState(false)
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(value)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      /* clipboard unavailable */
+    }
+  }
+  return (
+    <div>
+      <label className="label">{label}</label>
+      <div className="flex items-stretch gap-2">
+        <div
+          className={`flex-1 px-4 py-3 rounded-lg border border-border bg-muted/40 ${
+            monospace ? 'font-mono tracking-wide text-base' : 'text-sm'
+          } text-foreground break-all`}
+        >
+          {value}
+        </div>
+        <Button
+          type="button"
+          variant="outline"
+          onClick={handleCopy}
+          className="px-4 shrink-0"
+        >
+          {copied ? 'Copied' : 'Copy'}
+        </Button>
+      </div>
+    </div>
+  )
+}
+
+/* ─── Post templates (starter kit) ───────────────────────────── */
+
+function PostTemplates({ code, referralUrl }: { code: string; referralUrl: string }) {
+  const templates = [
+    {
+      platform: 'TikTok (15-30s)',
+      body: `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial — code ${code} at checkout for 14 days free, no card.\n\n👉 ${referralUrl}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`,
+    },
+    {
+      platform: 'Instagram (caption)',
+      body: `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor — instant feedback, as many essays as you want.\n\nUse code ${code} for a 14-day free trial (no card needed). Link: ${referralUrl}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`,
+    },
+    {
+      platform: 'X / Twitter',
+      body: `Revising for GCSE English? @theenglishhub marks your essays against real AQA / Edexcel / OCR / Eduqas / Cambridge mark schemes in ~60s.\n\nCode ${code} gets you a 14-day free trial, no card.\n\n${referralUrl}\n\n#GCSE #ad`,
+    },
+    {
+      platform: 'WhatsApp / text message',
+      body: `Came across this — The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 14 days free: ${referralUrl} (#ad)`,
+    },
+  ]
+
+  return (
+    <Card className="p-0 border-border/40">
+      <CardContent className="p-6 sm:p-8">
+        <div className="mb-6">
+          <h3 className="text-lg font-semibold text-foreground mb-1">
+            Starter post templates
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            Copy, paste, personalise. Every template already includes the mandatory{' '}
+            <strong className="text-foreground">#ad</strong> disclosure required by ASA + CAP Code.
+          </p>
+        </div>
+        <div className="space-y-5">
+          {templates.map((t) => (
+            <PostTemplateCard key={t.platform} platform={t.platform} body={t.body} />
+          ))}
+        </div>
+        <div className="mt-6 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-900">
+          <p className="font-semibold mb-1">Disclosure must be prominent</p>
+          <p>
+            <strong>#ad</strong> must appear at the start of a caption, not buried at the end, and
+            must be visible without &quot;more&quot;/&quot;read more&quot; truncation. On video:
+            say &quot;this is a paid partnership&quot; or show the word{' '}
+            <strong>ad</strong> on-screen for at least 3 seconds. Failing to disclose is an ASA
+            breach and we will suspend your account.
+          </p>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
+function PostTemplateCard({ platform, body }: { platform: string; body: string }) {
+  const [copied, setCopied] = useState(false)
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(body)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      /* clipboard unavailable */
+    }
+  }
+  return (
+    <div className="rounded-lg border border-border/40 bg-muted/20 p-4">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          {platform}
+        </span>
+        <Button type="button" variant="outline" size="sm" onClick={handleCopy}>
+          {copied ? 'Copied' : 'Copy'}
+        </Button>
+      </div>
+      <pre className="whitespace-pre-wrap text-sm text-foreground font-sans leading-relaxed">
+        {body}
+      </pre>
+    </div>
   )
 }

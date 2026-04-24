@@ -16,17 +16,28 @@ interface FormData {
 
 const SUBSCRIPTION_PLANS = [
   { value: '', label: 'Select your plan' },
-  { value: 'student-monthly', label: 'Student Monthly (£3.49/month)' },
-  { value: 'student-annual', label: 'Student Annual (£29.99/year)' },
+  // Current (Early Access / Founding) rates
+  { value: 'student-monthly', label: 'Student Monthly (£3.99/month — Early Access)' },
+  { value: 'student-annual', label: 'Student Annual (£29.99/year — Early Access)' },
   { value: 'student-annual-promo', label: 'Student Annual with affiliate code (£20/year)' },
-  { value: 'teacher-monthly', label: 'Teacher Monthly (£7.99/month)' },
-  { value: 'teacher-annual', label: 'Teacher Annual (£67.99/year)' },
+  { value: 'teacher-monthly', label: 'Teacher Monthly (£6.99/month — Early Access)' },
+  { value: 'teacher-annual', label: 'Teacher Annual (£67.99/year — Early Access)' },
+  // Projected Standard rates (from August 2026)
+  { value: 'student-monthly-standard', label: 'Student Monthly (£7.99/month — Standard)' },
+  { value: 'student-annual-standard', label: 'Student Annual (£69.99/year — Standard)' },
+  { value: 'teacher-monthly-standard', label: 'Teacher Monthly (£11.99/month — Standard)' },
+  { value: 'teacher-annual-standard', label: 'Teacher Annual (£99/year — Standard)' },
+  // Grandfathered legacy rates
+  { value: 'student-monthly-legacy-349', label: 'Student Monthly (legacy — £3.49/month)' },
   { value: 'student-annual-legacy-20', label: 'Student Annual (legacy — £20/year flat)' },
   { value: 'student-monthly-legacy-899', label: 'Student Monthly (legacy — £8.99/month)' },
   { value: 'student-annual-legacy-6799', label: 'Student Annual (legacy — £67.99/year)' },
+  { value: 'teacher-monthly-legacy-799', label: 'Teacher Monthly (legacy — £7.99/month)' },
   { value: 'teacher-monthly-legacy-1299', label: 'Teacher Monthly (legacy — £12.99/month)' },
   { value: 'teacher-annual-legacy-9999', label: 'Teacher Annual (legacy — £99.99/year)' },
-  { value: 'school', label: 'School / Institutional Plan' },
+  { value: 'school-founding-3k', label: 'Founding School (wave 1 — £3,000/year)' },
+  { value: 'school-founding-4k', label: 'Founding School (£4,000/year)' },
+  { value: 'school', label: 'School / Institutional Plan (other)' },
 ]
 
 const CANCELLATION_REASONS = [

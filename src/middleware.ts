@@ -135,6 +135,57 @@ const BOARD_ALLOWLIST_PREFIX: string[] = [
   '/_next/',
 ]
 
+// ── Paths that REQUIRE a board cookie (item #30 — soft-404 fix) ─────────
+//
+// Previously the middleware redirected ANY non-allowlisted path to
+// /board-select, which converted genuinely unknown URLs into 307→200
+// responses (soft-404s). That hurt SEO and failed security scans.
+//
+// Only paths inside this allowlist should ever bounce to /board-select.
+// Anything else falls through and Next.js can return a proper 404 via
+// `src/app/not-found.tsx`.
+const BOARD_REQUIRED_PREFIXES: string[] = [
+  '/revision/',
+  '/revision',
+  '/practice/',
+  '/practice',
+  '/mock-exams/',
+  '/mock-exams',
+  '/games/',
+  '/games',
+  '/assessment/',
+  '/assessment',
+  '/courses/',
+  '/courses',
+  '/igcse/',
+  '/igcse',
+  '/a-level/',
+  '/a-level',
+  '/learn/',
+  '/learn',
+  '/marking/',
+  '/marking',
+  '/toolkit/',
+  '/toolkit',
+  '/dashboard',
+  '/dashboard/',
+]
+
+export function getBoardRequiredPaths(): readonly string[] {
+  return BOARD_REQUIRED_PREFIXES
+}
+
+function isBoardRequired(pathname: string): boolean {
+  for (const p of BOARD_REQUIRED_PREFIXES) {
+    if (p.endsWith('/')) {
+      if (pathname.startsWith(p)) return true
+    } else if (pathname === p) {
+      return true
+    }
+  }
+  return false
+}
+
 function isStaticAsset(pathname: string): boolean {
   // Common static file extensions that shouldn't gate on board
   return /\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map|txt|xml|json|woff|woff2|ttf|otf|eot|mp4|webm|ogg|mp3|wav|pdf)$/i.test(
@@ -294,7 +345,11 @@ export async function middleware(request: NextRequest) {
   // Run this BEFORE supabase/affiliate so we don't do unnecessary work, but we still
   // preserve those flows for allowlisted paths.
   const hasBoardCookie = Boolean(request.cookies.get(BOARD_COOKIE)?.value)
-  if (!hasBoardCookie && !isBoardAllowlisted(pathname)) {
+  // Only redirect to /board-select for KNOWN board-gated routes. Previously
+  // we redirected any non-allowlisted path, which soft-404'd unknown URLs
+  // (item #30). Genuinely unknown URLs now fall through to Next.js's
+  // `not-found.tsx` with a real 404 status.
+  if (!hasBoardCookie && isBoardRequired(pathname) && !isBoardAllowlisted(pathname)) {
     // Extra guard: never redirect if we're already on /board-select (would loop)
     if (!pathname.startsWith('/board-select')) {
       const url = request.nextUrl.clone()

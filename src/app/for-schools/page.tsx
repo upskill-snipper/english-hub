@@ -10,9 +10,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { FAQItem } from '@/components/for-schools/FAQItem'
 import { BookCallForm } from '@/components/for-schools/BookCallForm'
 import { VAT_LABEL } from '@/lib/copy/pricing'
+import { PRICING } from '@/constants/pricing'
 import {
   BookOpen,
   GraduationCap,
@@ -242,7 +244,7 @@ const SCHOOL_FAQS = [
   },
   {
     q: 'How much does it cost?',
-    a: "Founding Schools Programme pricing ranges from £3,000 to £7,000 per year, depending on your department size. This is heavily discounted compared to our post-programme pricing. The exact package is discussed during your onboarding call. Book a call to find out your school's price.",
+    a: "Founding Schools Programme pricing starts at £4,000 per year for the first 10 schools only -- heavily anchored against our projected Standard Pricing of £8,000 per year from August 2026. Exact package scales with department size and is agreed during your onboarding call. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Book a call to lock in your founding price before the cohort closes.",
   },
   {
     q: 'How do students and teachers get access?',
@@ -293,16 +295,25 @@ export default function ForSchoolsPage() {
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-            The English Hub
+            10 schools. One English department.
             <br />
-            <span className="text-primary">for Schools</span>
+            <span className="text-primary">Every Head&apos;s Report in three clicks.</span>
           </h1>
 
           <p className="mt-7 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Reduce teacher workload by 5-8 hours per week. Real-time visibility across every
-            student. Ofsted-ready reporting. AI essay feedback, a full resource library, and a
-            department analytics dashboard -- all from one platform.
+            See the dashboard in action &mdash; no sign-up required.
           </p>
+
+          <div className="mt-10 max-w-3xl mx-auto">
+            {/* TODO(founder): replace with real Loom embed — target 90 seconds, English dept dashboard walkthrough */}
+            <div className="aspect-video bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center">
+              <p className="text-slate-500">Loom demo — 90s of the school dashboard</p>
+            </div>
+          </div>
+
+          <div className="mt-8 max-w-3xl mx-auto">
+            <TrustBox variant="starter" />
+          </div>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
@@ -311,16 +322,15 @@ export default function ForSchoolsPage() {
               render={<Link href="/contact" />}
             >
               <Phone className="w-4 h-4" />
-              Book a 20-Minute Call
+              Book a 20-min call
             </Button>
             <Button
               variant="outline"
               size="lg"
               className="text-base px-8 h-13 border-primary/40 text-primary hover:bg-primary/10 gap-2 font-semibold"
-              render={<Link href="/demo" />}
+              render={<Link href="/for-schools#pricing" />}
             >
-              <Eye className="w-4 h-4" />
-              View the Demo
+              See pricing
             </Button>
           </div>
 
@@ -513,13 +523,31 @@ export default function ForSchoolsPage() {
                   </p>
                 </div>
               </div>
-              <div className="mb-6">
-                <p className="text-lg font-bold text-foreground">
-                  £3,000 &ndash; £7,000{' '}
-                  <span className="text-sm font-normal text-muted-foreground">/ year</span>
-                </p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Tailored to your department size. Discussed during your onboarding call.
+              <div className="mb-6 space-y-3">
+                <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3">
+                  <span className="inline-block rounded-full bg-amber-500/20 border border-amber-500/40 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-700 mb-2">
+                    Founding Pricing · 10 only
+                  </span>
+                  <p className="text-2xl font-extrabold text-foreground">
+                    £{PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}{' '}
+                    <span className="text-sm font-normal text-muted-foreground">/ year</span>
+                  </p>
+                </div>
+                <div className="rounded-lg border border-border/60 bg-muted/20 px-4 py-3">
+                  <span className="inline-block rounded-full bg-muted/40 border border-border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-2">
+                    Standard Pricing (estimated)
+                  </span>
+                  <p className="text-2xl font-extrabold text-muted-foreground">
+                    £{PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}{' '}
+                    <span className="text-sm font-normal">/ year</span>
+                  </p>
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-amber-700 mt-2">
+                    ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
+                  </p>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Founding rate locked for 2&ndash;3 years. Tailored to your department size and
+                  discussed during your onboarding call.
                 </p>
               </div>
               <ul className="space-y-3 flex-1">
@@ -1111,7 +1139,11 @@ export default function ForSchoolsPage() {
               <div className="px-5 py-4 text-primary text-center border-r border-border/40">
                 School Partnership
                 <div className="text-xs font-normal text-muted-foreground">
-                  £3,000 – £7,000 / year
+                  Founding: £4,000/year{' '}
+                  <span className="text-muted-foreground/60 line-through">£8,000</span>
+                </div>
+                <div className="text-[10px] font-medium uppercase tracking-wide text-amber-600 mt-0.5">
+                  First 10 schools only
                 </div>
               </div>
               <div className="px-5 py-4 text-muted-foreground text-center">
@@ -1151,6 +1183,59 @@ export default function ForSchoolsPage() {
           <p className="text-center text-xs text-muted-foreground/80 mt-6 max-w-2xl mx-auto">
             {VAT_LABEL}
           </p>
+        </div>
+      </section>
+
+      {/* ════════════════ COMPLIANCE PACK ════════════════ */}
+      <section className="py-20 sm:py-24">
+        <div className="max-w-3xl mx-auto px-6">
+          {/* TODO(founder): upload the 4 PDFs under public/compliance/ when drafted. Links 404 until then. */}
+          <div className="border rounded-xl p-6 bg-white">
+            <h3 className="text-xl font-bold text-foreground mb-2">
+              Compliance pack — direct download
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              For DPOs and bursars. No form, no gate.
+            </p>
+            <ul className="space-y-2 mb-4">
+              <li>
+                <a
+                  href="/compliance/data-processing-agreement.docx"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Data Processing Agreement (Word)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/compliance/dpia.pdf"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Data Protection Impact Assessment (PDF)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/compliance/safeguarding-policy.pdf"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Safeguarding Policy (PDF)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/compliance/cyber-essentials.pdf"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Cyber Essentials certificate (filing Q3 2026)
+                </a>
+              </li>
+            </ul>
+            <p className="text-sm text-slate-600">
+              ICO ref: ZC016690 · Hosting: Supabase (EU) + Vercel (EU) · Sub-processors list on
+              request (legal@theenglishhub.app)
+            </p>
+          </div>
         </div>
       </section>
 

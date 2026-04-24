@@ -65,11 +65,11 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse('You must be signed in to use AI marking.')
     }
 
-    // 3. Pro subscription gate
-    const isPro = await hasActiveSubscription(supabase, user.id)
-    if (!isPro) {
+    // 3. Premium subscription gate
+    const isPremium = await hasActiveSubscription(supabase, user.id)
+    if (!isPremium) {
       return forbiddenResponse(
-        'AI marking is a Pro feature. Please upgrade to mark your essays against GCSE mark schemes.',
+        'AI marking is a Premium feature. Please upgrade to mark your essays against GCSE mark schemes.',
       )
     }
 

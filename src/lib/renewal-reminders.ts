@@ -181,7 +181,11 @@ async function sendReminderAndRecord(
     id: string;
     userId: string;
     plan: SubscriptionPlan;
-    stripeSubscriptionId: string;
+    // Nullable since 20260420_02_stripe_columns_nullable: mobile-originated
+    // (RevenueCat) Subscription rows carry `null` here. For renewal
+    // reminders we only need the ID to look up the Stripe amount; without
+    // one, we fall back to a generic per-plan price string.
+    stripeSubscriptionId: string | null;
     currentPeriodEnd: Date;
     user: { email: string; firstName: string };
   },
@@ -235,7 +239,14 @@ function daysBetween(a: Date, b: Date): number {
  * Fetches the upcoming invoice amount from Stripe.
  * Falls back to a placeholder if Stripe is unavailable.
  */
-async function getSubscriptionAmount(stripeSubscriptionId: string): Promise<string> {
+async function getSubscriptionAmount(
+  stripeSubscriptionId: string | null,
+): Promise<string> {
+  // Mobile (RevenueCat) rows have no Stripe subscription; Stripe's invoice
+  // preview API requires one, so skip the call and return the generic label.
+  if (!stripeSubscriptionId) {
+    return "your subscription amount";
+  }
   try {
     // Dynamic import to avoid loading Stripe when not needed
     const Stripe = (await import("stripe")).default;

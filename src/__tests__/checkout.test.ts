@@ -228,7 +228,10 @@ describe('POST /api/stripe/checkout', () => {
 
     const params = mockSessionCreate.mock.calls[0][0]
     expect(params.subscription_data).toBeDefined()
-    expect(params.subscription_data.trial_period_days).toBe(30)
+    // PRICING.TRIAL_DAYS === 7 — the 30-day trial was replaced by a 7-day
+    // card-required trial on 2026-04-20. If this assertion changes, update
+    // `src/constants/pricing.ts` (TRIAL_DAYS) first.
+    expect(params.subscription_data.trial_period_days).toBe(7)
     expect(params.allow_promotion_codes).toBe(true)
   })
 

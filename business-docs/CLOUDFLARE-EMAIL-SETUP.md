@@ -1,5 +1,7 @@
 # Cloudflare Email Routing — Step-by-Step (15 minutes, £0)
 
+> **Status: COMPLETE 2026-04-21 — all 8 aliases live, test emails verified.** All forward to `info@upskillenergy.com`. Walkthrough retained for reference and in case of future alias additions.
+
 **Why this doc exists:** I cannot log into your Cloudflare or Namecheap accounts. This walkthrough gets you from "no aliases" to "8 working email addresses" in 15 minutes. Every screen described literally. You only type the values in the right column.
 
 **Prerequisite:** You already own `theenglishhub.app` via Namecheap and `info@upskillenergy.com` is reachable in your inbox (Google Workspace — confirmed).

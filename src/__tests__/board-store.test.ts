@@ -14,19 +14,29 @@ describe('Board configuration', () => {
   // ── BOARDS constant ──────────────────────────────────────────────────────
 
   describe('BOARDS array', () => {
-    it('contains all 7 exam boards', () => {
-      expect(BOARDS).toHaveLength(7)
+    // Matrix updated 2026-04: now 15 entries covering KS3, GCSE, IGCSE,
+    // IAL and UK A-Level.
+    it('contains all 15 exam boards', () => {
+      expect(BOARDS).toHaveLength(15)
     })
 
     it('includes all expected board IDs', () => {
       const ids = BOARDS.map((b) => b.id)
+      expect(ids).toContain('ks3')
       expect(ids).toContain('aqa')
       expect(ids).toContain('edexcel')
       expect(ids).toContain('ocr')
       expect(ids).toContain('eduqas')
       expect(ids).toContain('edexcel-igcse')
+      expect(ids).toContain('edexcel-igcse-lang')
       expect(ids).toContain('cambridge-0500')
       expect(ids).toContain('cambridge-0990')
+      expect(ids).toContain('cambridge-0475')
+      expect(ids).toContain('ial-edexcel')
+      expect(ids).toContain('aqa-a-level')
+      expect(ids).toContain('edexcel-a-level')
+      expect(ids).toContain('ocr-a-level')
+      expect(ids).toContain('eduqas-a-level')
     })
 
     it('has unique IDs', () => {
@@ -34,11 +44,19 @@ describe('Board configuration', () => {
       expect(new Set(ids).size).toBe(ids.length)
     })
 
-    it('marks GCSE and IGCSE boards correctly', () => {
-      const gcse = BOARDS.filter((b) => b.type === 'gcse')
-      const igcse = BOARDS.filter((b) => b.type === 'igcse')
-      expect(gcse).toHaveLength(4)
-      expect(igcse).toHaveLength(3)
+    it('marks each board-type cohort correctly', () => {
+      const counts = {
+        ks3: BOARDS.filter((b) => b.type === 'ks3').length,
+        gcse: BOARDS.filter((b) => b.type === 'gcse').length,
+        igcse: BOARDS.filter((b) => b.type === 'igcse').length,
+        ial: BOARDS.filter((b) => b.type === 'ial').length,
+        'a-level': BOARDS.filter((b) => b.type === 'a-level').length,
+      }
+      expect(counts.ks3).toBe(1)
+      expect(counts.gcse).toBe(4)
+      expect(counts.igcse).toBe(5)
+      expect(counts.ial).toBe(1)
+      expect(counts['a-level']).toBe(4)
     })
 
     it('every board has required fields', () => {
@@ -48,14 +66,23 @@ describe('Board configuration', () => {
         expect(board.fullName).toBeTruthy()
         expect(board.shortName).toBeTruthy()
         expect(board.description).toBeTruthy()
-        expect(['gcse', 'igcse']).toContain(board.type)
+        expect(['ks3', 'gcse', 'igcse', 'ial', 'a-level']).toContain(board.type)
         expect(board.examCode).toBeTruthy()
         expect(board.category).toBeTruthy()
       }
     })
 
     it('every board has a valid category', () => {
-      const validCategories = ['gcse', 'igcse-literature', 'igcse-language-a', 'igcse-language-b']
+      const validCategories = [
+        'ks3',
+        'gcse',
+        'igcse-literature',
+        'igcse-language-a',
+        'igcse-language-b',
+        'igcse-language',
+        'ial',
+        'a-level',
+      ]
       for (const board of BOARDS) {
         expect(validCategories).toContain(board.category)
       }
@@ -68,12 +95,13 @@ describe('Board configuration', () => {
       }
     })
 
-    it('IGCSE boards each have a distinct IGCSE category', () => {
+    it('IGCSE boards span multiple IGCSE categories', () => {
       const igcse = BOARDS.filter((b) => b.type === 'igcse')
       const categories = igcse.map((b) => b.category)
       expect(categories).toContain('igcse-literature')
       expect(categories).toContain('igcse-language-a')
       expect(categories).toContain('igcse-language-b')
+      expect(categories).toContain('igcse-language')
     })
   })
 
@@ -136,16 +164,16 @@ describe('Board configuration', () => {
       expect(getDisplayName('aqa')).toBe('AQA')
     })
 
-    it('returns "IGCSE Literature" for edexcel-igcse', () => {
-      expect(getDisplayName('edexcel-igcse')).toBe('IGCSE Literature')
+    it('returns the Edexcel IGCSE Literature label (with exam code) for edexcel-igcse', () => {
+      expect(getDisplayName('edexcel-igcse')).toBe('Edexcel IGCSE Literature (4ET1)')
     })
 
-    it('returns "IGCSE Language A" for cambridge-0500', () => {
-      expect(getDisplayName('cambridge-0500')).toBe('IGCSE Language A')
+    it('returns "Cambridge (A*-G)" for the legacy cambridge-0500 spec', () => {
+      expect(getDisplayName('cambridge-0500')).toBe('Cambridge (A*-G)')
     })
 
-    it('returns "IGCSE Language B" for cambridge-0990', () => {
-      expect(getDisplayName('cambridge-0990')).toBe('IGCSE Language B')
+    it('returns "Cambridge (9-1)" for cambridge-0990', () => {
+      expect(getDisplayName('cambridge-0990')).toBe('Cambridge (9-1)')
     })
 
     it('returns the name field for every known board', () => {

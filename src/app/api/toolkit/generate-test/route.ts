@@ -12,7 +12,6 @@ import { hasActiveSubscription } from '@/lib/course-access'
 interface RequestBody {
   board: string
   topic: string
-  difficulty: 'Foundation' | 'Higher'
   questionCount: number
 }
 
@@ -33,7 +32,6 @@ interface GeneratedQuestion {
 function generateQuestionsFromSetTexts(
   board: string,
   topic: string,
-  difficulty: string,
   count: number
 ): GeneratedQuestion[] {
   const relevantTexts = SET_TEXTS.filter((t) => {
@@ -132,9 +130,7 @@ function generateQuestionsFromSetTexts(
     },
     {
       q: (title: string) =>
-        difficulty === 'Higher'
-          ? `Analyse how the context in which "${title}" was written influences its themes.`
-          : `What is the historical context of "${title}" and how does it affect the story?`,
+        `Analyse how the context in which "${title}" was written influences its themes.`,
       answer: (title: string) =>
         `The historical and social context of "${title}" directly influences its themes. Writers often reflect the concerns, values, and tensions of their time period in their work.`,
     },
@@ -188,11 +184,11 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  // 2. Subscription check — Pro-only feature
-  const isPro = await hasActiveSubscription(supabase, user.id)
-  if (!isPro) {
+  // 2. Subscription check — Premium-only feature
+  const isPremium = await hasActiveSubscription(supabase, user.id)
+  if (!isPremium) {
     return NextResponse.json(
-      { error: 'Custom test generation is a Pro feature. Please upgrade your subscription to continue.' },
+      { error: 'Custom test generation is a Premium feature. Please upgrade your subscription to continue.' },
       { status: 403 }
     )
   }
@@ -211,7 +207,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const body: RequestBody = await request.json()
-    const { board, topic, difficulty, questionCount } = body
+    const { board, topic, questionCount } = body
 
     if (!topic || !questionCount) {
       return NextResponse.json(
@@ -224,7 +220,6 @@ export async function POST(request: NextRequest) {
     const questions = generateQuestionsFromSetTexts(
       board || 'all',
       topic,
-      difficulty || 'Foundation',
       count
     )
 
@@ -232,7 +227,6 @@ export async function POST(request: NextRequest) {
       questions,
       metadata: {
         topic,
-        difficulty: difficulty || 'Foundation',
         board: board || 'all',
         generatedAt: new Date().toISOString(),
       },

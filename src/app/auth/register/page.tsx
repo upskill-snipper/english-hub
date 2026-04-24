@@ -26,6 +26,7 @@ import {
 import { getUtmParams } from '@/lib/utm'
 import { getChildDefaults, getChildProfileDefaults } from '@/lib/privacy/child-defaults'
 import { trackEvent } from '@/lib/gtag'
+import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
 import {
   Card,
@@ -117,6 +118,10 @@ function RegisterForm() {
     }
 
     setLoading(true)
+
+    // Funnel: signup_started — email has been entered and submit clicked.
+    // phCapture is consent-gated + minor-gated inside src/lib/posthog.ts.
+    phCapture(PH_EVENTS.SIGNUP_STARTED, { accountType })
 
     // Server-side age validation for students
     if (accountType === 'student' && dobDay && dobMonth && dobYear) {
@@ -267,6 +272,8 @@ function RegisterForm() {
     }
 
     trackEvent('sign_up', { method: 'email' })
+    // Funnel: signup_completed — Supabase returned a verified/created user.
+    phCapture(PH_EVENTS.SIGNUP_COMPLETED, { accountType })
     setSuccess(true)
     setLoading(false)
   }

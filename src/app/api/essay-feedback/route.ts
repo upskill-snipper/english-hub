@@ -131,10 +131,10 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse('You must be signed in to use essay feedback.')
     }
 
-    // 1b. Subscription check — essay feedback is a Pro feature
-    const isPro = await hasActiveSubscription(supabase, user.id)
-    if (!isPro) {
-      return forbiddenResponse('Essay feedback is a Pro feature. Please upgrade your subscription to access AI-powered feedback.')
+    // 1b. Subscription check — essay feedback is a Premium feature
+    const isPremium = await hasActiveSubscription(supabase, user.id)
+    if (!isPremium) {
+      return forbiddenResponse('Essay feedback is a Premium feature. Please upgrade your subscription to access AI-powered feedback.')
     }
 
     // 2. Parental consent check for minor users

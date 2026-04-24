@@ -285,11 +285,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // ── 2. Subscription check — Pro / Teacher feature ─────────────────
-    const isPro = await hasActiveSubscription(supabase, user.id)
-    if (!isPro) {
+    // ── 2. Subscription check — Premium / Teacher feature ─────────────
+    const isPremium = await hasActiveSubscription(supabase, user.id)
+    if (!isPremium) {
       return NextResponse.json(
-        { error: 'Lesson material generation is a Pro feature. Please upgrade your subscription to continue.' },
+        { error: 'Lesson material generation is a Premium feature. Please upgrade your subscription to continue.' },
         { status: 403 },
       )
     }

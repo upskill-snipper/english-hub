@@ -31,8 +31,12 @@ import {
 } from '@/components/toolkit/toolkit-types'
 
 // ─── AI Test Builder ──────────────────────────────────────────────────────
-// Student selects topic, difficulty, question count, then generates a test
+// Student selects topic and question count, then generates a test
 // via the API. They take it inline and see their results with GCSE grade.
+//
+// Note: there is no Foundation/Higher selector — the question bank is the
+// same and the student's answers determine the grade band via
+// percentageToGCSEGrade.
 // ──────────────────────────────────────────────────────────────────────────
 
 type Step = 'configure' | 'loading' | 'test' | 'results'
@@ -43,7 +47,6 @@ export default function TestBuilderPage() {
 
   // Config state
   const [topic, setTopic] = useState('')
-  const [difficulty, setDifficulty] = useState<'Foundation' | 'Higher'>('Foundation')
   const [questionCount, setQuestionCount] = useState(10)
 
   // Test state
@@ -70,7 +73,6 @@ export default function TestBuilderPage() {
         body: JSON.stringify({
           board: board || 'aqa',
           topic,
-          difficulty,
           questionCount,
         }),
       })
@@ -89,7 +91,7 @@ export default function TestBuilderPage() {
       setError(err instanceof Error ? err.message : 'Something went wrong')
       setStep('configure')
     }
-  }, [board, topic, difficulty, questionCount])
+  }, [board, topic, questionCount])
 
   // Submit answers and score
   const submitTest = useCallback(() => {
@@ -119,7 +121,6 @@ export default function TestBuilderPage() {
       correct,
       date: new Date().toISOString(),
       board: board || 'aqa',
-      difficulty,
     })
     lsSet(LS_KEYS.quizHistory, history)
 
@@ -127,7 +128,7 @@ export default function TestBuilderPage() {
     const streakDates = lsGet<string[]>(LS_KEYS.streakDates, [])
     streakDates.push(new Date().toISOString())
     lsSet(LS_KEYS.streakDates, streakDates)
-  }, [test, answers, topic, board, difficulty])
+  }, [test, answers, topic, board])
 
   // Save to My Materials
   const saveToMaterials = useCallback(() => {
@@ -135,7 +136,7 @@ export default function TestBuilderPage() {
     const materials = lsGet<SavedMaterial[]>(LS_KEYS.myMaterials, [])
     materials.push({
       id: `test-${Date.now()}`,
-      title: `${topic} Test (${difficulty})`,
+      title: `${topic} Test`,
       type: 'test',
       topic,
       board: board || 'aqa',
@@ -144,7 +145,7 @@ export default function TestBuilderPage() {
     })
     lsSet(LS_KEYS.myMaterials, materials)
     alert('Test saved to My Materials!')
-  }, [test, answers, score, topic, difficulty, board])
+  }, [test, answers, score, topic, board])
 
   // Download as PDF (simple print-based)
   const downloadPDF = useCallback(() => {
@@ -226,24 +227,6 @@ export default function TestBuilderPage() {
                   <option value="Exam Technique">Exam Technique</option>
                 </optgroup>
               </select>
-            </div>
-
-            {/* Difficulty */}
-            <div>
-              <label className="block text-sm font-medium text-muted-foreground mb-2">
-                Difficulty
-              </label>
-              <div className="flex gap-3">
-                {(['Foundation', 'Higher'] as const).map((d) => (
-                  <button
-                    key={d}
-                    onClick={() => setDifficulty(d)}
-                    className={`chip ${difficulty === d ? 'chip-active' : 'chip-inactive'}`}
-                  >
-                    {d}
-                  </button>
-                ))}
-              </div>
             </div>
 
             {/* Question count */}

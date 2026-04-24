@@ -84,17 +84,23 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">4. Subscription Plans</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            The English Hub offers the following subscription plans for individual users (as of 20
-            April 2026). All plans renew automatically until cancelled.
+            The English Hub offers the following subscription plans for individual users (as of 21
+            April 2026). All plans renew automatically until cancelled. The prices listed below are
+            &quot;Early Access / Founding&quot; rates and apply to all new sign-ups until 31 July
+            2026. From August 2026 the Standard rates shown in parentheses become the advertised
+            price; existing subscribers who joined on an Early Access rate keep their rate until the
+            subscription is cancelled or lapses.
           </p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
-              <strong>Student Plan — Monthly:</strong> £3.49 per month, billed monthly on a
-              recurring basis. Full access to every feature on the platform.
+              <strong>Student Plan — Monthly:</strong> £3.99 per month, billed monthly on a
+              recurring basis (Standard from August 2026: £7.99 per month). Full access to every
+              feature on the platform.
             </li>
             <li>
               <strong>Student Plan — Annual:</strong> £29.99 per year, billed annually on a
-              recurring basis. Full access to every feature on the platform.
+              recurring basis (Standard from August 2026: £69.99 per year). Full access to every
+              feature on the platform.
             </li>
             <li>
               <strong>Student Plan — Annual with affiliate or promo code:</strong> £20 per year when
@@ -102,20 +108,27 @@ export default function TermsPage() {
               <code>2026ENGLISH</code>. Feature access is identical to the standard annual plan.
             </li>
             <li>
-              <strong>Teacher Plan — Monthly:</strong> £7.99 per month, billed monthly on a
-              recurring basis. Includes AI lesson planning, worksheet builder, bulk essay marking,
-              and class analytics in addition to all student features.
+              <strong>Teacher Plan — Monthly:</strong> £6.99 per month, billed monthly on a
+              recurring basis (Standard from August 2026: £11.99 per month). Includes AI lesson
+              planning, worksheet builder, bulk essay marking, and class analytics in addition to
+              all student features.
             </li>
             <li>
               <strong>Teacher Plan — Annual:</strong> £67.99 per year, billed annually on a
-              recurring basis. Same feature set as the Teacher Monthly plan.
+              recurring basis (Standard from August 2026: £99 per year). Same feature set as the
+              Teacher Monthly plan.
+            </li>
+            <li>
+              <strong>Founding Schools Programme:</strong> £4,000 per year (Standard from August
+              2026: £8,000 per year). Strictly limited to the first 10 schools. Includes
+              whole-school licence, bulk onboarding, teacher dashboards, and locked preferential
+              pricing for 2–3 years. Schools who joined the programme in wave 1 at £3,000 per year
+              are grandfathered at that rate.
             </li>
           </ul>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            <strong>VAT.</strong> Prices shown in GBP. The English Hub is not currently
-            VAT-registered, so no VAT is added to the advertised price. If and when we cross the UK
-            VAT registration threshold, we will update this page and display VAT-inclusive prices
-            accordingly.
+            <strong>VAT.</strong> Prices shown in GBP. Where VAT applies at the point of sale, it is
+            included in the displayed price.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             <strong>7-day free trial.</strong> New subscribers are eligible for a single 7-day free
@@ -171,10 +184,8 @@ export default function TermsPage() {
             All payments are processed securely by Stripe, our third-party payment processor. We do
             not store your full payment card details on our servers. By providing your payment
             information, you authorise us to charge the applicable fees to your chosen payment
-            method. All prices are quoted in British Pounds Sterling (GBP). Upskill Energy Limited
-            is not currently registered for UK VAT (turnover is below the registration threshold),
-            so no VAT is charged on the prices shown. If we become VAT-registered in the future we
-            will update this policy and clearly display VAT-inclusive pricing.
+            method. All prices are quoted in British Pounds Sterling (GBP). Where VAT applies, it is
+            included in the displayed price.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             If a payment fails, we will attempt to process it again and notify you by email. If

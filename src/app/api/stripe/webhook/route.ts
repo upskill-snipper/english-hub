@@ -3,6 +3,8 @@ import Stripe from 'stripe'
 import { stripe } from '@/lib/stripe'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { attributeAffiliateReferral } from '@/lib/affiliate/attribution'
+import { prisma } from '@/lib/prisma'
+import { captureGrandfatherFields, type Plan as PricingPlan } from '@/lib/pricing/grandfather'
 
 // Disable body parsing — we need the raw body for signature verification
 export const runtime = 'nodejs'
@@ -135,7 +137,7 @@ export async function POST(request: NextRequest) {
             const html = [
               `<h2>Your payment was unsuccessful</h2>`,
               `<p>Hi there,</p>`,
-              `<p>We were unable to process your latest payment for <strong>The English Hub Pro</strong>.</p>`,
+              `<p>We were unable to process your latest payment for <strong>The English Hub Premium</strong>.</p>`,
               `<p>To avoid any interruption to your subscription, please update your payment method at your earliest convenience.</p>`,
               `<p><a href="${billingUrl}">Update your payment method</a></p>`,
               `<p>If you believe this is an error or need any help, feel free to reach out to our support team.</p>`,
@@ -393,6 +395,38 @@ async function handleCheckoutCompleted(
       console.error(`Failed to update subscription_status to ${subscriptionStatus}:`, error)
       throw error
     }
+
+    // Grandfathering capture (R-031). Lock the price + tier on the Prisma
+    // Subscription row at signup so renewals after the Aug 2026 Standard
+    // rollover still charge / display the Early Access price. Preserves any
+    // pre-existing locked price on an existing row — never overwrites.
+    try {
+      const existingSub = await prisma.subscription.findUnique({ where: { userId } })
+      if (!existingSub?.grandfatheredPriceMinor) {
+        const isTeacherPlan = existingSub?.isTeacherPlan ?? false
+        const plan: PricingPlan =
+          existingSub?.plan === 'ANNUAL' || subscription.items.data[0]?.price?.recurring?.interval === 'year'
+            ? 'ANNUAL'
+            : 'MONTHLY'
+        const grandfather = captureGrandfatherFields(
+          plan,
+          isTeacherPlan ? 'teacher' : 'student',
+        )
+        if (existingSub) {
+          await prisma.subscription.update({
+            where: { userId },
+            data: {
+              grandfatheredPriceMinor: grandfather.grandfatheredPriceMinor,
+              grandfatheredCurrency: grandfather.grandfatheredCurrency,
+              pricingTier: grandfather.pricingTier,
+            },
+          })
+        }
+      }
+    } catch (err) {
+      // Non-fatal — grandfathering capture must not break checkout.
+      console.error('[stripe/webhook] Grandfather capture failed (non-fatal):', err)
+    }
   }
 
   if (session.mode === 'payment') {
@@ -634,10 +668,10 @@ async function handleTrialWillEnd(
   const html = [
     `<h2>Your trial is ending ${trialEndFormatted === 'soon' ? 'soon' : `on ${trialEndFormatted}`}</h2>`,
     `<p>Hi there,</p>`,
-    `<p>Just a friendly heads-up that your free trial of <strong>The English Hub Pro</strong> ` +
+    `<p>Just a friendly heads-up that your free trial of <strong>The English Hub Premium</strong> ` +
       `will end <strong>${trialEndFormatted === 'soon' ? 'soon' : `on ${trialEndFormatted}`}</strong>.</p>`,
     `<p>After your trial ends, your subscription will automatically begin and you'll continue ` +
-      `to have full access to all Pro features.</p>`,
+      `to have full access to all Premium features.</p>`,
     `<p>If you'd like to make changes to your plan or cancel before the trial ends, you can ` +
       `manage your subscription from your account settings.</p>`,
     `<br />`,

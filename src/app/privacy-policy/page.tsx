@@ -490,6 +490,92 @@ export default function PrivacyPolicyPage() {
               ICO&apos;s Age Appropriate Design Code.
             </li>
           </ul>
+
+          <p className="text-muted-foreground leading-relaxed mt-6">
+            As an EdTech platform serving students aged 14+, we operate within scope of the UK
+            ICO&apos;s Age Appropriate Design Code (the &ldquo;Children&apos;s Code&rdquo;). The
+            table below tracks our commitments against each of the 15 standards.
+          </p>
+
+          <h3 className="text-lg font-semibold text-foreground mt-4 mb-3">
+            Our Children&apos;s Code commitments
+          </h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-border">
+              <thead>
+                <tr className="bg-muted/40">
+                  <th className="text-left font-semibold text-foreground p-3 border-b border-border">
+                    ICO Children&apos;s Code standard
+                  </th>
+                  <th className="text-left font-semibold text-foreground p-3 border-b border-border">
+                    How The English Hub meets it
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">1. Best interests of the child</td>
+                  <td className="p-3 align-top">All product decisions affecting under-18s are reviewed against the DPIA before release. Safeguarding lead has veto.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">2. Data protection impact assessments</td>
+                  <td className="p-3 align-top">DPIA published at /compliance/dpia.pdf. Updated on every material feature change.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">3. Age-appropriate application</td>
+                  <td className="p-3 align-top">Account flows branch by age at signup (13-15, 16-17, 18+). UI, copy, and defaults adapt per age cohort.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">4. Transparency</td>
+                  <td className="p-3 align-top">Privacy policy, data-use summary, and Children&apos;s Code matrix written in plain English. Tested with under-16 users for comprehension.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">5. Detrimental use of data</td>
+                  <td className="p-3 align-top">No advertising, no profiling for commercial purposes, no data sold to third parties. AI training opt-in is off by default for all minors.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">6. Policies and community standards</td>
+                  <td className="p-3 align-top">Published safeguarding policy enforced. Users can flag harmful content; human review within 24h.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">7. Default settings</td>
+                  <td className="p-3 align-top">All minor accounts default to: profile private, analytics off, marketing off, AI training opt-in off.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">8. Data minimisation</td>
+                  <td className="p-3 align-top">We collect email, DOB, and essay submissions only. No address, no phone, no payment info from minors (parent pays).</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">9. Data sharing</td>
+                  <td className="p-3 align-top">Sub-processors listed at /compliance. No third-party ad networks. EU hosting only.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">10. Geolocation</td>
+                  <td className="p-3 align-top">Not collected for minors. No location-based features.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">11. Parental controls</td>
+                  <td className="p-3 align-top">Parent accounts can be linked to child accounts. Parent sees child&apos;s essay history and weekly progress. Transparency flag shown to child when parent linkage is active.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">12. Profiling</td>
+                  <td className="p-3 align-top">No behavioural profiling. AI marking is deterministic per essay — no cross-essay inference that affects feature access.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">13. Nudge techniques</td>
+                  <td className="p-3 align-top">No gamification patterns that exploit developmental vulnerabilities. No &ldquo;streak&rdquo; pressure; progress is informational, not coercive.</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-3 align-top">14. Connected toys and devices</td>
+                  <td className="p-3 align-top">Not applicable — The English Hub is a web + mobile SaaS.</td>
+                </tr>
+                <tr>
+                  <td className="p-3 align-top">15. Online tools</td>
+                  <td className="p-3 align-top">Privacy tools (export, delete, correct) accessible from the account page. All actions complete in ≤30 days per UK GDPR.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         {/* 8. Your Rights Under UK GDPR */}

@@ -21,6 +21,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { markSchemes, getPapersForBoard, getQuestionTypes } from '@/data/mark-schemes'
 import { getQuestionsForType } from '@/data/exam-questions'
 import { cn } from '@/lib/utils'
+import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -221,6 +222,12 @@ export default function EssayFeedbackPage() {
       if (typeof data.remaining === 'number') {
         setRemaining(data.remaining)
       }
+      // Funnel: first_essay_submitted. We fire on every successful essay
+      // submission; PostHog de-dupes "first" via its built-in
+      // once-per-user-per-event analysis, which is cheaper and more
+      // reliable than tracking "first" client-side. Consent-gated in
+      // src/lib/posthog.ts.
+      phCapture(PH_EVENTS.FIRST_ESSAY_SUBMITTED, { board, paper, questionType })
     } catch {
       setError('Network error. Please check your connection and try again.')
     } finally {

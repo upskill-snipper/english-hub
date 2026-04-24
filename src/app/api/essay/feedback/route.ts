@@ -180,11 +180,11 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse();
     }
 
-    // 1b. Subscription check — essay feedback is a Pro feature
-    const isPro = await hasActiveSubscription(supabase, user.id);
-    if (!isPro) {
+    // 1b. Subscription check — essay feedback is a Premium feature
+    const isPremium = await hasActiveSubscription(supabase, user.id);
+    if (!isPremium) {
       return forbiddenResponse(
-        "Essay feedback is a Pro feature. Please upgrade your subscription to access AI-powered feedback."
+        "Essay feedback is a Premium feature. Please upgrade your subscription to access AI-powered feedback."
       );
     }
 

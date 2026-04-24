@@ -162,6 +162,14 @@ export default function ForParentsPage() {
               Start Your Child&rsquo;s Free Trial
             </Button>
             <Button
+              variant="outline"
+              size="lg"
+              className="text-base px-8 h-12"
+              render={<Link href="/assessment/reading" />}
+            >
+              Run a 20-minute reading-age check (free, no card)
+            </Button>
+            <Button
               variant="secondary"
               size="lg"
               className="text-base px-8 h-12"

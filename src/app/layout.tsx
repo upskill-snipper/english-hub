@@ -9,6 +9,8 @@ import { CookieConsent } from '@/components/cookie-consent'
 import { UtmCapture } from '@/components/utm-capture'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import { ConsentGatedAnalytics } from '@/components/ConsentGatedAnalytics'
+import { PostHogProvider } from '@/components/PostHogProvider'
+import { TrustpilotInviteScript } from '@/components/trustpilot/TrustpilotInviteScript'
 import { Suspense } from 'react'
 import { BoardGate } from '@/components/board/BoardGate'
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -68,6 +70,12 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
         <link rel="manifest" href="/manifest.json" />
+        {process.env.NEXT_PUBLIC_TRUSTPILOT_VERIFICATION_ID ? (
+          <meta
+            name="trustpilot-one-time-domain-verification-id"
+            content={process.env.NEXT_PUBLIC_TRUSTPILOT_VERIFICATION_ID}
+          />
+        ) : null}
         <WebsiteJsonLd />
         {/* Rewardful is loaded by <ConsentGatedAnalytics /> below after
             the visitor accepts analytics/marketing cookies. Loading it
@@ -79,9 +87,11 @@ export default async function RootLayout({
         </a>
         <SupabaseProvider>
           <TooltipProvider>
-            <RootLayoutShell>
-              <BoardGate initialBoard={initialBoard}>{children}</BoardGate>
-            </RootLayoutShell>
+            <PostHogProvider>
+              <RootLayoutShell>
+                <BoardGate initialBoard={initialBoard}>{children}</BoardGate>
+              </RootLayoutShell>
+            </PostHogProvider>
             <Toaster richColors position="bottom-right" />
             <CookieConsent />
             <UtmCapture />
@@ -94,6 +104,9 @@ export default async function RootLayout({
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
+        {/* Trustpilot InviteJS — async, non-blocking. No-op without
+            NEXT_PUBLIC_TRUSTPILOT_INVITE_KEY set. */}
+        <TrustpilotInviteScript />
       </body>
     </html>
   )

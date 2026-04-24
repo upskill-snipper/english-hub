@@ -4,13 +4,35 @@ import Link from 'next/link'
 import { PRICING } from '@/constants/pricing'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 
-const tiers = [
+type Tier = {
+  name: string
+  price: string
+  period: string
+  anchorPrice?: string
+  anchorPeriod?: string
+  annual: string
+  description: string
+  badge?: string
+  features: string[]
+  cta: { label: string; href: string }
+  featured: boolean
+  bg: string
+  text: string
+  sub: string
+  featureText: string
+  btnClass: string
+}
+
+const tiers: Tier[] = [
   {
     name: 'Student',
     price: `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}`,
     period: '/month',
+    anchorPrice: `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY_STANDARD}`,
+    anchorPeriod: '/month',
     annual: `or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year · ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with code ${PRICING.AFFILIATE_PROMO_CODE}`,
     description: 'Full access for students. Monthly or annual — cancel any time.',
+    badge: 'Early Access',
     features: [
       'All 470+ structured lessons',
       'All 130+ mock exams',
@@ -34,8 +56,11 @@ const tiers = [
     name: 'Teacher',
     price: `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}`,
     period: '/month',
-    annual: `or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year (save 29%)`,
+    anchorPrice: `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY_STANDARD}`,
+    anchorPeriod: '/month',
+    annual: `or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year (save 42%)`,
     description: 'Everything in Student plus teacher tools.',
+    badge: 'Early Access',
     features: [
       'Everything in Student',
       'AI lesson plan generator',
@@ -57,10 +82,13 @@ const tiers = [
   },
   {
     name: 'Founding School',
-    price: `From ${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k`,
+    price: `${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k`,
     period: '/year',
-    annual: `From ${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k · only ${PRICING.FOUNDER_SCHOOL_LIMIT} places`,
-    description: 'Whole-school licence at founding rate — locked in.',
+    anchorPrice: `${PRICING.CURRENCY}${(PRICING.SCHOOL_STANDARD / 1000).toFixed(0)}k`,
+    anchorPeriod: '/year',
+    annual: `Only ${PRICING.FOUNDER_SCHOOL_LIMIT} founding places — locked-in rate`,
+    description: 'Whole-school licence at the founding rate — first 10 schools only.',
+    badge: 'Founding · 10 only',
     features: [
       'Everything in Teacher',
       'Unlimited students & teachers',
@@ -106,6 +134,9 @@ export default function AnthologyPricing() {
             </code>
             .
           </p>
+          <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-[11px] font-mono font-medium uppercase tracking-[0.14em] text-amber-700">
+            ⚡ {PRICING.PRICE_INCREASE_MESSAGE} — lock in Early Access today
+          </p>
         </div>
 
         {/* 3-col pricing cards */}
@@ -117,12 +148,19 @@ export default function AnthologyPricing() {
                 tier.featured ? 'ring-2 ring-clay-400/40 scale-[1.02] shadow-lg' : ''
               }`}
             >
-              {/* Badge for featured */}
-              {tier.featured && (
-                <span className="self-start font-mono text-[10px] font-medium uppercase tracking-[0.14em] bg-clay-500 text-cream-50 px-3 py-1 rounded-full mb-4">
-                  Most popular
-                </span>
-              )}
+              {/* Badge row: Early Access / Founding + Most popular */}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                {tier.badge && (
+                  <span className="font-mono text-[10px] font-medium uppercase tracking-[0.14em] bg-amber-500/90 text-ink-900 px-3 py-1 rounded-full">
+                    {tier.badge}
+                  </span>
+                )}
+                {tier.featured && (
+                  <span className="font-mono text-[10px] font-medium uppercase tracking-[0.14em] bg-clay-500 text-cream-50 px-3 py-1 rounded-full">
+                    Most popular
+                  </span>
+                )}
+              </div>
 
               {/* Name */}
               <h3 className="text-lg font-semibold tracking-tight">{tier.name}</h3>
@@ -137,6 +175,18 @@ export default function AnthologyPricing() {
                 </span>
                 {tier.period && <span className={`text-sm ${tier.sub}`}>{tier.period}</span>}
               </div>
+
+              {/* Standard-price anchor (strikethrough) */}
+              {tier.anchorPrice && (
+                <p className={`text-xs ${tier.sub} mb-1 font-mono`}>
+                  Standard{' '}
+                  <span className="line-through decoration-2 decoration-clay-500/70">
+                    {tier.anchorPrice}
+                    {tier.anchorPeriod}
+                  </span>{' '}
+                  from {PRICING.PRICE_INCREASE_DATE}
+                </p>
+              )}
 
               {/* Annual option */}
               {tier.annual && <p className={`text-xs ${tier.sub} mb-2 font-mono`}>{tier.annual}</p>}

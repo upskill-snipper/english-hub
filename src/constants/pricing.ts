@@ -3,22 +3,35 @@
 // Single source of truth. Changing a value here cascades to every page,
 // email template, and pricing string in the app.
 //
-// 20 April 2026 pricing correction:
-//   - Students: £3.49/month OR £29.99/year.
-//   - Students get £20/year (save £9.99) with ANY valid affiliate code, or
-//     with the house promo code `2026ENGLISH`.
-//   - Teachers: £7.99/month (annual kept at £67.99 pending confirmation).
-//   - Trial: 7-day free trial, card-on-file required; auto-converts to
-//     paid subscription at the end of the trial unless cancelled.
-//   - Demo: 3 free uses of most features remain, before the paywall.
-//   - Founding Schools: from £3,000, no upper limit.
+// 2026-04-21 pricing pivot — two-tier "Early Access / Founding Price"
+// with anchor "Standard Pricing" to be enforced from August 2026.
 //
-// Supersedes the 19 April 2026 "annual-only £20" pivot (never shipped to prod).
+//   Students: Early Access £3.99/month  · £29.99/year
+//             Standard    £7.99/month  · £69.99/year
+//   Teachers: Early Access £6.99/month  · £67.99/year
+//             Standard    £11.99/month · £99/year
+//   Schools:  Founding     £4,000 (first 10 only — Founders Programme)
+//             Legacy       £3,000 (grandfathered for wave-1 founders)
+//             Standard     £8,000 projected post-founding price
+//
+// Every price banner must visibly anchor the Standard rate next to the
+// Early Access / Founding rate, plus the "Prices increasing August 2026"
+// urgency line. PRICING_DISPLAY below exposes pre-formatted strings for
+// both tiers so pages don't have to duplicate the £ formatting.
+//
+// Previously (20 Apr 2026): flat £3.49 / £29.99 student, £7.99 / £67.99
+// teacher, £3,000 floor for Founding Schools, no Standard anchor.
 
 export const PRICING = {
-  // ── Student tier ───────────────────────────────────────────────────
-  STUDENT_MONTHLY: 3.49,
+  // ── Student tier — early access + standard anchor ─────────────────
+  /** Early-access monthly (what a new signup actually pays). */
+  STUDENT_MONTHLY: 3.99,
+  /** Early-access annual (what a new signup actually pays). */
   STUDENT_ANNUAL: 29.99,
+  /** Standard monthly — displayed as the anchored "real price". */
+  STUDENT_MONTHLY_STANDARD: 7.99,
+  /** Standard annual — displayed as the anchored "real price". */
+  STUDENT_ANNUAL_STANDARD: 69.99,
   /** Discounted annual price unlocked via any affiliate code or `2026ENGLISH`. */
   STUDENT_ANNUAL_WITH_CODE: 20,
   /** Public house code that unlocks the discounted annual rate. */
@@ -26,15 +39,35 @@ export const PRICING = {
   /** Discount amount in £ when an affiliate / house code is used. */
   STUDENT_ANNUAL_SAVINGS: 9.99,
 
-  // ── Teacher tier ───────────────────────────────────────────────────
-  TEACHER_MONTHLY: 7.99,
+  // ── Teacher tier — early access + standard anchor ─────────────────
+  TEACHER_MONTHLY: 6.99,
   TEACHER_ANNUAL: 67.99,
+  TEACHER_MONTHLY_STANDARD: 11.99,
+  TEACHER_ANNUAL_STANDARD: 99,
 
-  // ── Founding Schools: £3,000 floor, no upper limit ────────────────
-  FOUNDER_SCHOOL_MIN: 3000,
-  /** @deprecated 2026-04-19 — no upper limit on Founding Schools. Range is "from £3,000". */
-  FOUNDER_SCHOOL_MAX: null as number | null,
+  // ── Founding Schools + projected standard ─────────────────────────
+  /** New Founding price — first 10 schools only. Anchored vs SCHOOL_STANDARD. */
+  FOUNDER_SCHOOL_MIN: 4000,
+  /** Legacy wave-1 founding price (£3k). Grandfathered for schools who
+   *  signed before the 21 Apr 2026 pivot; referenced in messaging but
+   *  no longer offered to new Founders. */
+  FOUNDER_SCHOOL_LEGACY: 3000,
+  /** Projected post-founding standard annual price per school — the
+   *  anchor shown alongside the £4k Founding rate. */
+  SCHOOL_STANDARD: 8000,
+  /** 10 places in the Founding cohort. */
   FOUNDER_SCHOOL_LIMIT: 10,
+  /** @deprecated 2026-04-19 — no upper limit once the cohort is capped. */
+  FOUNDER_SCHOOL_MAX: null as number | null,
+
+  // ── Urgency messaging (shown on every price banner) ───────────────
+  /** Month the standard pricing takes effect. Used for urgency copy. */
+  PRICE_INCREASE_DATE: 'August 2026',
+  /** Ready-made urgency line for price banners. */
+  PRICE_INCREASE_MESSAGE: 'Prices increasing August 2026',
+  EARLY_ACCESS_LABEL: 'Early Access — Founding Price',
+  FOUNDING_SCHOOLS_LABEL: 'Founding Schools Programme',
+  STANDARD_PRICE_LABEL: 'Standard Pricing (from August 2026)',
 
   // ── Misc ────────────────────────────────────────────────────────────
   FREE_USES_PER_FEATURE: 3,
@@ -44,35 +77,48 @@ export const PRICING = {
   // ── Trial ───────────────────────────────────────────────────────────
   TRIAL_DAYS: 7,
   TRIAL_TEXT: '7-day free trial',
-  /** Trials require a valid payment method on file. Auto-converts to paid. */
   TRIAL_REQUIRES_CARD: true,
-  /** Headline shown alongside every CTA. */
   TRIAL_HEADLINE: '7-day free trial · card required · cancel anytime before day 7',
 
   // ── Plan structure flags ────────────────────────────────────────────
-  /** Monthly plans ARE offered (students and teachers). */
   MONTHLY_PLAN_ENABLED: true,
-  /** Subscriptions auto-renew (monthly or annually depending on plan) unless cancelled. */
   AUTO_RENEWS: true,
 
   // ── Deprecated legacy aliases ───────────────────────────────────────
   /** @deprecated Use STUDENT_MONTHLY directly. Kept for historical imports. */
-  MONTHLY: 3.49,
+  MONTHLY: 3.99,
   /** @deprecated Use STUDENT_ANNUAL directly. Kept for historical imports. */
   ANNUAL: 29.99,
 } as const
 
 export const PRICING_DISPLAY = {
+  // Student — early access (what new signups actually pay)
   studentMonthly: `£${PRICING.STUDENT_MONTHLY}/month`,
   studentAnnual: `£${PRICING.STUDENT_ANNUAL}/year`,
+  // Student — standard anchor (displayed with strikethrough or "was")
+  studentMonthlyStandard: `£${PRICING.STUDENT_MONTHLY_STANDARD}/month`,
+  studentAnnualStandard: `£${PRICING.STUDENT_ANNUAL_STANDARD}/year`,
   studentAnnualDiscounted: `£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year`,
+  // Teacher — early access + standard
   teacherMonthly: `£${PRICING.TEACHER_MONTHLY}/month`,
   teacherAnnual: `£${PRICING.TEACHER_ANNUAL}/year`,
+  teacherMonthlyStandard: `£${PRICING.TEACHER_MONTHLY_STANDARD}/month`,
+  teacherAnnualStandard: `£${PRICING.TEACHER_ANNUAL_STANDARD}/year`,
+  // Schools
+  founderFromOnly: `from £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}`,
+  founderSchoolsPrice: `£${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}`,
+  founderSchoolsLegacyPrice: `£${PRICING.FOUNDER_SCHOOL_LEGACY.toLocaleString('en-GB')}`,
+  schoolStandardPrice: `£${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}`,
+  // Urgency
+  priceIncrease: PRICING.PRICE_INCREASE_MESSAGE,
+  priceIncreaseDate: PRICING.PRICE_INCREASE_DATE,
+  earlyAccessLabel: PRICING.EARLY_ACCESS_LABEL,
+  standardLabel: PRICING.STANDARD_PRICE_LABEL,
+  // Deprecated call-site aliases
   /** @deprecated Retained for call sites that previously read `annual`. */
   annual: `£${PRICING.STUDENT_ANNUAL}/year`,
   /** @deprecated Retained for call sites that previously read `monthly`. */
   monthly: `£${PRICING.STUDENT_MONTHLY}/month`,
-  founderFromOnly: `from £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}`,
   trialText: `${PRICING.TRIAL_TEXT} · card required`,
   promoBanner: `Use code ${PRICING.AFFILIATE_PROMO_CODE} — annual plan £${PRICING.STUDENT_ANNUAL_WITH_CODE} (save £${PRICING.STUDENT_ANNUAL_SAVINGS})`,
 } as const

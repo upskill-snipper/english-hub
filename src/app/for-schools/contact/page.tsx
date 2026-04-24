@@ -187,11 +187,18 @@ function FoundingSchoolsPanel() {
             </li>
           </ul>
 
-          <div className="rounded-md border border-yellow-500/30 bg-yellow-500/10 px-4 py-3">
+          <div className="rounded-md border border-yellow-500/30 bg-yellow-500/10 px-4 py-3 space-y-1.5">
             <p className="text-sm font-semibold text-amber-700">
-              First 10 schools get founding-partner pricing. Additional schools welcome at standard
-              rates.
+              Founding Schools:{' '}
+              <span className="text-foreground">£4,000/year</span>{' '}
+              <span className="text-muted-foreground/80">
+                (Standard <span className="line-through">£8,000</span> from August 2026)
+              </span>
             </p>
+            <p className="text-xs text-amber-700/90 font-medium">
+              First 10 schools only — additional schools welcome at Standard rates.
+            </p>
+            <p className="text-[11px] text-amber-700">⚡ Prices increasing August 2026.</p>
           </div>
         </CardContent>
       </Card>

@@ -9,7 +9,9 @@ import { useRewardful } from '@/hooks/useRewardful'
 import { PRICING } from '@/constants/pricing'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { trackEvent } from '@/lib/gtag'
+import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { getCourseName } from '@/lib/utils'
+import { fireTrustpilotInvite } from '@/lib/trustpilot/fire-invite-js'
 import {
   CreditCard,
   Crown,
@@ -66,6 +68,25 @@ export default function BillingPage() {
   }
 
   const isPro = profile?.subscription_status === 'pro'
+
+  // Trustpilot InviteJS — fire on mount for Premium subscribers returning to
+  // the billing page (the Stripe checkout return URL). The server-side
+  // `/api/trustpilot/fired-check` gates on age + opt-outs + dedup, so a
+  // minor or opted-out user reaching this page is a silent no-op.
+  useEffect(() => {
+    if (!user || !isPro) return
+    void fireTrustpilotInvite({
+      email: user.email ?? '',
+      // Trustpilot Invite wants a given name, not the full name. Profile
+      // stores `full_name` (one string) so we take the first whitespace-
+      // delimited token — good enough for Trustpilot's greeting, and empty
+      // string is an acceptable fallback per the InviteJS contract.
+      name: (profile?.full_name ?? '').trim().split(/\s+/)[0] ?? '',
+      referenceId: user.id,
+      products: ['subscription'],
+      trigger: 'student_90d_retention',
+    })
+  }, [user, isPro, profile])
   const isCancelled = profile?.subscription_status === 'cancelled'
   const subscriptionEnd = profile?.subscription_end_date
     ? new Date(profile.subscription_end_date)
@@ -95,6 +116,10 @@ export default function BillingPage() {
       }
 
       trackEvent('begin_checkout', { currency: 'GBP' })
+      // Funnel: subscription_started — 7-day free trial begins when the
+      // user lands on Stripe Checkout. Consent + minor gating happens in
+      // src/lib/posthog.ts.
+      phCapture(PH_EVENTS.SUBSCRIPTION_STARTED, { plan })
       window.location.href = data.url
     } catch {
       setError('Something went wrong. Please try again.')
@@ -158,7 +183,7 @@ export default function BillingPage() {
             <p className="font-semibold mb-1">Payment failed</p>
             <p>
               We were unable to process your last payment. Please update your payment method to keep
-              your Pro access.
+              your Premium access.
             </p>
             <button
               onClick={handleManageSubscription}
@@ -193,7 +218,7 @@ export default function BillingPage() {
               }`}
             >
               {isPro && <Sparkles className="w-3.5 h-3.5" />}
-              {isPro ? 'Pro' : isCancelled ? 'Pro (Cancelled)' : 'Free'}
+              {isPro ? 'Premium' : isCancelled ? 'Premium (Cancelled)' : 'Free'}
             </span>
           </div>
 
@@ -230,14 +255,19 @@ export default function BillingPage() {
           ) : (
             <div className="space-y-4">
               <p className="text-muted-foreground text-sm">
-                Upgrade to Pro for unlimited access to all courses, practice papers, and premium
+                Upgrade to Premium for unlimited access to all courses, practice papers, and premium
                 features.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {/* Student Monthly */}
                 <div className="border border-border rounded-xl p-5 hover:border-primary/50 transition-colors">
-                  <h3 className="text-lg font-semibold text-foreground mb-1">Student</h3>
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="text-lg font-semibold text-foreground">Student</h3>
+                    <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
+                      Early Access
+                    </span>
+                  </div>
                   <p className="text-2xl font-bold text-primary mb-1">
                     {PRICING.CURRENCY}
                     {PRICING.STUDENT_MONTHLY}
@@ -246,6 +276,16 @@ export default function BillingPage() {
                   <p className="text-xs text-muted-foreground mb-1">
                     or {PRICING.CURRENCY}
                     {PRICING.STUDENT_ANNUAL}/year
+                  </p>
+                  <p className="text-[11px] text-muted-foreground/80 mb-1">
+                    Standard{' '}
+                    <span className="line-through">
+                      {PRICING.CURRENCY}
+                      {PRICING.STUDENT_MONTHLY_STANDARD}/month
+                    </span>{' '}
+                    / {PRICING.CURRENCY}
+                    <span className="line-through">{PRICING.STUDENT_ANNUAL_STANDARD}/year</span>{' '}
+                    from {PRICING.PRICE_INCREASE_DATE}
                   </p>
                   <p className="text-sm text-emerald-500 font-semibold mb-2">
                     {PRICING.TRIAL_TEXT}
@@ -281,7 +321,12 @@ export default function BillingPage() {
 
                 {/* Teacher */}
                 <div className="border border-purple-500/30 rounded-xl p-5 hover:border-purple-500/50 transition-colors">
-                  <h3 className="text-lg font-semibold text-foreground mb-1">Teacher</h3>
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="text-lg font-semibold text-foreground">Teacher</h3>
+                    <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
+                      Early Access
+                    </span>
+                  </div>
                   <p className="text-2xl font-bold text-purple-400 mb-1">
                     {PRICING.CURRENCY}
                     {PRICING.TEACHER_MONTHLY}
@@ -290,6 +335,16 @@ export default function BillingPage() {
                   <p className="text-xs text-muted-foreground mb-1">
                     or {PRICING.CURRENCY}
                     {PRICING.TEACHER_ANNUAL}/year
+                  </p>
+                  <p className="text-[11px] text-muted-foreground/80 mb-1">
+                    Standard{' '}
+                    <span className="line-through">
+                      {PRICING.CURRENCY}
+                      {PRICING.TEACHER_MONTHLY_STANDARD}/month
+                    </span>{' '}
+                    / {PRICING.CURRENCY}
+                    <span className="line-through">{PRICING.TEACHER_ANNUAL_STANDARD}/year</span>{' '}
+                    from {PRICING.PRICE_INCREASE_DATE}
                   </p>
                   <p className="text-sm text-emerald-500 font-semibold mb-2">
                     {PRICING.TRIAL_TEXT}

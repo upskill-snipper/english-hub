@@ -157,7 +157,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'How much does The English Hub cost?',
         answer:
-          'Students: £3.49/month or £29.99/year — and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers: £7.99/month or £67.99/year. Every paid plan starts with a 7-day free trial (card required). You also get 3 free uses of most premium features before the paywall, no card required. Cancel anytime. Prices shown in GBP. The English Hub is not currently VAT-registered, so no VAT is added to the advertised price.',
+          'Early Access / Founding pricing (locked until August 2026): Students £3.99/month or £29.99/year — and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers £6.99/month or £67.99/year. Standard pricing from August 2026: Students £7.99/month or £69.99/year. Teachers £11.99/month or £99/year. Every paid plan starts with a 7-day free trial (card required). You also get 3 free uses of most premium features before the paywall, no card required. Cancel anytime. Prices shown in GBP.',
       },
       {
         question: 'Can I cancel my subscription?',
@@ -186,7 +186,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'Do you offer school plans?',
         answer:
-          'Yes! Our Founding Schools Programme is a strategic partnership limited to 10 schools, with pricing ranging from £3,000 to £7,000 per year depending on department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing. Visit our For Schools page or contact info@Upskillenergy.com to learn more.',
+          'Yes! Our Founding Schools Programme is a strategic partnership limited to the first 10 schools. Founding rate: £4,000/year — anchored against projected Standard Pricing of £8,000/year from August 2026. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing. Visit our For Schools page or contact info@Upskillenergy.com to learn more.',
       },
       {
         question: 'Is there a teacher dashboard?',
@@ -369,13 +369,29 @@ export default function HelpCentrePage() {
         })}
       </div>
 
+      {/* Response times */}
+      <section className="mt-12 rounded-xl border border-border bg-card p-8">
+        <h2 className="text-xl font-semibold text-foreground">Response times</h2>
+        <ul className="mt-4 space-y-2 text-sm text-muted-foreground list-disc pl-5">
+          <li><strong className="text-foreground">Student / parent:</strong> within 1 working day</li>
+          <li><strong className="text-foreground">Teacher:</strong> within 4 working hours (UK school hours, Mon-Fri)</li>
+          <li><strong className="text-foreground">School admin:</strong> within 2 hours during UK school hours (priority queue)</li>
+          <li>
+            <strong className="text-foreground">Security / vulnerability disclosures:</strong>{' '}
+            acknowledgement within 24 hours, full triage within 5 working days —{' '}
+            <a href="mailto:security@theenglishhub.app" className="text-primary underline hover:text-primary/80">
+              security@theenglishhub.app
+            </a>
+          </li>
+        </ul>
+      </section>
+
       {/* Contact CTA */}
       <div className="mt-12 rounded-xl border border-border bg-card p-8 text-center">
         <Mail className="mx-auto h-8 w-8 text-primary" />
         <h2 className="mt-4 text-xl font-semibold text-foreground">Still need help?</h2>
         <p className="mt-2 text-muted-foreground">
-          Our support team is here to help. Get in touch and we&apos;ll get back to you as soon as
-          possible.
+          Our support team is here to help. Response targets are listed above.
         </p>
         <Link
           href="/help/contact"
