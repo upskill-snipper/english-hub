@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder for the For-Teachers infographic">
+  <defs>
+    <pattern id="g-t" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#f3f4f6"/>
+      <path d="M0 40 L40 0" stroke="#e5e7eb" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#g-t)"/>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" fill="#64748b" text-anchor="middle">
+    <text x="768" y="480" font-size="48" font-weight="600" fill="#334155">For Teachers infographic</text>
+    <text x="768" y="530" font-size="22">Upload the final image to public/infographics/for-teachers.jpg</text>
+    <text x="768" y="560" font-size="18" fill="#94a3b8">1536 × 1024 JPG recommended — replaces this placeholder on next deploy.</text>
+  </g>
+</svg>

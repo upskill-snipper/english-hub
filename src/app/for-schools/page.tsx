@@ -15,6 +15,7 @@ import { FAQItem } from '@/components/for-schools/FAQItem'
 import { BookCallForm } from '@/components/for-schools/BookCallForm'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { PRICING } from '@/constants/pricing'
+import { InfographicBanner } from '@/components/marketing/InfographicBanner'
 import {
   BookOpen,
   GraduationCap,
@@ -280,6 +281,14 @@ const SCHOOL_FAQS = [
 export default function ForSchoolsPage() {
   return (
     <main className="min-h-screen bg-background">
+      {/* ════════════════ INFOGRAPHIC BANNER ════════════════
+          Whole-school overview: students-on-track, YoY uplift,
+          AI-identified focus areas, time saved, on-demand reports */}
+      <InfographicBanner
+        src="/infographics/for-schools.svg"
+        alt="Infographic: whole-school insight, smarter decisions, stronger outcomes. Shows 68% of students on track, predicted +5-15% YoY improvement, AI-identified focus areas (analysing language, structuring writing, vocabulary range, reading inference, spelling), 4.5+ teacher hours and 12+ school hours saved per week, and on-demand reports for classes, year groups, students."
+      />
+
       {/* ════════════════ HERO ════════════════ */}
       <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/[0.05] rounded-full blur-[180px] pointer-events-none" />

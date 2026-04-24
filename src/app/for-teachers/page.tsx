@@ -11,6 +11,7 @@ import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
 import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
+import { InfographicBanner } from '@/components/marketing/InfographicBanner'
 import {
   GraduationCap,
   BookOpen,
@@ -208,6 +209,14 @@ function ProgressBar({ label, value, color }: { label: string; value: number; co
 export default function ForTeachersPage() {
   return (
     <main className="min-h-screen bg-background">
+      {/* ================================================================
+          INFOGRAPHIC BANNER — one-glance product summary for teachers
+      ================================================================ */}
+      <InfographicBanner
+        src="/infographics/for-teachers.svg"
+        alt="Infographic: powerful AI tools and insights for English teachers — save time, teach with precision, personalise learning, track progress, plan with confidence. Shows class overview, focus areas (vocabulary, structuring writing, reading inference, spelling), AI Lesson Builder, 4.5 hours saved per week, and student reports."
+      />
+
       {/* ================================================================
           HERO
       ================================================================ */}
