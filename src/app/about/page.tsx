@@ -167,15 +167,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Entity details */}
-        {/* CONFIRMED 2026-04-23: Company number is 16511479 per Companies House search. Remove this comment when reconciliation sweep is complete. */}
+        {/* Entity details — reconciled against Companies House 2026-04-24 */}
         <section id="entity">
           <h2 className="text-xl font-semibold text-foreground">Entity Details</h2>
           <ul className="mt-4 space-y-1 text-muted-foreground leading-relaxed">
-            <li>The English Hub Ltd</li>
-            <li>Company No. 16511479</li>
-            <li>ICO Registration: [pending]</li>
-            <li>Registered address: United Kingdom</li>
+            <li>Upskill Energy Limited, trading as The English Hub</li>
+            <li>Company No. 16511479 (England &amp; Wales)</li>
+            <li>ICO Registration: ZC016690</li>
+            <li>Registered office: 110 Harington Road, Formby, Liverpool, L37 1PZ</li>
           </ul>
         </section>
 
