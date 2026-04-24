@@ -169,13 +169,22 @@ export function Header() {
           ) : user ? (
             <>
               {isPremium ? (
-                <Link
-                  href="/dashboard"
-                  className="rounded-full px-4 py-1.5 text-sm font-medium text-[#0F1411] transition-colors duration-200"
-                  style={{ background: '#E8A382' }}
-                >
-                  Dashboard
-                </Link>
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="rounded-full px-4 py-1.5 text-sm font-medium text-[#0F1411] transition-colors duration-200"
+                    style={{ background: '#E8A382' }}
+                  >
+                    Dashboard
+                  </Link>
+                  <Link
+                    href="/affiliates/dashboard"
+                    className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
+                  >
+                    <Handshake className="mr-1 h-3.5 w-3.5" />
+                    Affiliates
+                  </Link>
+                </>
               ) : (
                 <>
                   <Link
@@ -183,6 +192,13 @@ export function Header() {
                     className="rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
                   >
                     Dashboard
+                  </Link>
+                  <Link
+                    href="/affiliates/dashboard"
+                    className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
+                  >
+                    <Handshake className="mr-1 h-3.5 w-3.5" />
+                    Affiliates
                   </Link>
                   <Link
                     href="/pricing"
@@ -349,14 +365,24 @@ export function Header() {
               ) : user ? (
                 <>
                   {isPremium ? (
-                    <Link
-                      href="/dashboard"
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-center w-full rounded-full px-3 py-2 text-sm font-medium text-[#0F1411] transition-colors"
-                      style={{ background: '#E8A382' }}
-                    >
-                      Dashboard
-                    </Link>
+                    <>
+                      <Link
+                        href="/dashboard"
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center justify-center w-full rounded-full px-3 py-2 text-sm font-medium text-[#0F1411] transition-colors"
+                        style={{ background: '#E8A382' }}
+                      >
+                        Dashboard
+                      </Link>
+                      <Link
+                        href="/affiliates/dashboard"
+                        onClick={() => setMobileOpen(false)}
+                        className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
+                      >
+                        <Handshake className="mr-1.5 h-4 w-4" />
+                        Affiliates
+                      </Link>
+                    </>
                   ) : (
                     <>
                       <Link
@@ -365,6 +391,14 @@ export function Header() {
                         className="w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                       >
                         Dashboard
+                      </Link>
+                      <Link
+                        href="/affiliates/dashboard"
+                        onClick={() => setMobileOpen(false)}
+                        className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
+                      >
+                        <Handshake className="mr-1.5 h-4 w-4" />
+                        Affiliates
                       </Link>
                       <Link
                         href="/pricing"
