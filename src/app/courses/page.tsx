@@ -23,10 +23,12 @@ export const metadata: Metadata = {
   alternates: { canonical: selfCanonical('/courses') },
 }
 
-// Revalidate the aggregated course list every 6h — the underlying data is
-// code-imported so it only changes on deploy, but this lets ISR re-generate
-// without a full rebuild if we ever move to DB-backed courses.
-export const revalidate = 60 * 60 * 6
+// Revalidate the aggregated course list every 6h (21600 seconds) — the
+// underlying data is code-imported so it only changes on deploy, but this
+// lets ISR re-generate without a full rebuild if we ever move to DB-backed
+// courses. Next.js statically analyses this value, so it MUST be a plain
+// number literal (binary expressions like `60 * 60 * 6` are rejected).
+export const revalidate = 21600
 
 // Categories used for the server-rendered SEO skeleton. Kept in sync with the
 // client island — if you change categories there, change them here too.

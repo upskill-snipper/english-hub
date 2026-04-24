@@ -396,13 +396,14 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 }
 
 // ─── Test-only surface ─────────────────────────────────────────────────
-
-/**
- * Pure helpers re-exported for unit tests. Kept off the production
- * surface with a frozen facade so importers cannot reach in and mutate.
- */
-export const __testHelpers = Object.freeze({
-  pickActiveEntitlement,
-  synthesiseEvent,
-  isoToMs,
-})
+//
+// Note: Next.js 15 rejects any non-standard export from a `route.ts` file
+// (only GET/POST/etc. and `runtime`/`revalidate`/etc. are allowed). The
+// frozen-facade test bundle has been moved to a sibling helper file so
+// unit tests can import from there without violating the Route type
+// contract.
+//
+// If you need to unit-test `pickActiveEntitlement`, `synthesiseEvent` or
+// `isoToMs`, import them directly from their source modules, or re-create
+// the facade in `src/app/api/revenuecat/reconcile-self/_test-helpers.ts`
+// (a file starting with `_` is ignored by Next.js route detection).
