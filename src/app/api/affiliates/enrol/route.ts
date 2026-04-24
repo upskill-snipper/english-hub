@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceRoleClient, createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { sendAffiliateWelcomeEmail } from '@/lib/email/affiliate-welcome'
 
 // ─── POST /api/affiliates/enrol ────────────────────────────────────────────
 // Self-serve, instant-approve affiliate enrolment. No review queue.
@@ -201,13 +202,29 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    const referralUrl = `https://theenglishhub.app/?ref=${inserted.code}`
+    const dashboardUrl = '/affiliates/dashboard'
+
+    // Fire-and-forget welcome email. Never await — a mail-service outage
+    // must not block the user from seeing their code. Logs delivery
+    // outcomes inside sendViaResend.
+    void sendAffiliateWelcomeEmail({
+      toEmail: user.email,
+      displayName: display,
+      code: inserted.code,
+      referralUrl,
+      dashboardUrl,
+    }).catch((err) => {
+      console.warn('[affiliates/enrol] welcome email failed', err)
+    })
+
     return NextResponse.json({
       success: true,
       already_enrolled: false,
       code: inserted.code,
       status: inserted.status,
-      referral_url: `https://theenglishhub.app/?ref=${inserted.code}`,
-      dashboard_url: '/affiliates/dashboard',
+      referral_url: referralUrl,
+      dashboard_url: dashboardUrl,
     })
   } catch (error) {
     console.error('[affiliates/enrol] unexpected', error)
