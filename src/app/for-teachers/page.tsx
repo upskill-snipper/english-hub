@@ -213,7 +213,7 @@ export default function ForTeachersPage() {
           INFOGRAPHIC BANNER — one-glance product summary for teachers
       ================================================================ */}
       <InfographicBanner
-        src="/infographics/for-teachers.svg"
+        src="/infographics/for-teachers.png"
         alt="Infographic: powerful AI tools and insights for English teachers — save time, teach with precision, personalise learning, track progress, plan with confidence. Shows class overview, focus areas (vocabulary, structuring writing, reading inference, spelling), AI Lesson Builder, 4.5 hours saved per week, and student reports."
       />
 

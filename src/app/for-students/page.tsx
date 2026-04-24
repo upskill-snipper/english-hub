@@ -65,7 +65,7 @@ export default function ForStudentsPage() {
     <main className="min-h-screen bg-background">
       {/* Infographic banner — one-glance product summary for students */}
       <InfographicBanner
-        src="/infographics/for-students.svg"
+        src="/infographics/for-students.png"
         alt="Infographic: Learn English, build your future. Shows 78% progress toward goals, skills being built (reading, writing, listening, speaking), all-in-one learning, personalised recommendations, progress tracking, real-world confidence. Student testimonial: 'I'm more confident in English than ever before' \u2014 Aanya, Student."
       />
 

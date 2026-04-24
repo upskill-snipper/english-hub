@@ -285,7 +285,7 @@ export default function ForSchoolsPage() {
           Whole-school overview: students-on-track, YoY uplift,
           AI-identified focus areas, time saved, on-demand reports */}
       <InfographicBanner
-        src="/infographics/for-schools.svg"
+        src="/infographics/for-schools.png"
         alt="Infographic: whole-school insight, smarter decisions, stronger outcomes. Shows 68% of students on track, predicted +5-15% YoY improvement, AI-identified focus areas (analysing language, structuring writing, vocabulary range, reading inference, spelling), 4.5+ teacher hours and 12+ school hours saved per week, and on-demand reports for classes, year groups, students."
       />
 
