@@ -1,1 +1,6 @@
+#!/usr/bin/env sh
+# Husky v9 hook. The shebang lets git's CreateProcess spawn this directly on
+# Windows shells (without it, Cygwin / Git Bash / PowerShell-shell-out fails
+# with "Exec format error"). lint-staged formats only the files staged for
+# this commit so the hook stays fast.
 npx lint-staged
