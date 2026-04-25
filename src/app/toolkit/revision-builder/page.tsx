@@ -218,13 +218,49 @@ export default function RevisionBuilderPage() {
                     </option>
                   ))}
                 </optgroup>
-                <optgroup label="Skills & Techniques">
+                <optgroup label="Language Topics">
                   <option value="Language Analysis">Language Analysis</option>
                   <option value="Structure Analysis">Structure Analysis</option>
-                  <option value="Creative Writing">Creative Writing</option>
-                  <option value="Persuasive Writing">Persuasive Writing</option>
-                  <option value="Comparison Skills">Comparison Skills</option>
+                  <option value="Reading Comprehension">Reading Comprehension</option>
+                  <option value="Unseen Prose">Unseen Prose</option>
                   <option value="Unseen Poetry">Unseen Poetry</option>
+                  <option value="Poetry Comparison">Poetry Comparison</option>
+                  <option value="Power and Conflict Poetry">Power and Conflict Poetry</option>
+                  <option value="Love and Relationships Poetry">
+                    Love and Relationships Poetry
+                  </option>
+                  <option value="SPaG (Spelling, Punctuation, Grammar)">
+                    SPaG (Spelling, Punctuation, Grammar)
+                  </option>
+                  <option value="Vocabulary">Vocabulary</option>
+                  <option value="Literary Techniques">Literary Techniques</option>
+                  <option value="Structural Devices">Structural Devices</option>
+                </optgroup>
+                <optgroup label="Creative Writing">
+                  <option value="Creative Writing">Creative Writing</option>
+                  <option value="Descriptive Writing">Descriptive Writing</option>
+                  <option value="Narrative Writing">Narrative Writing</option>
+                  <option value="Persuasive Writing">Persuasive Writing</option>
+                  <option value="Transactional Writing">Transactional Writing</option>
+                  <option value="Analytical Writing">Analytical Writing</option>
+                  <option value="Show Don't Tell">Show Don&apos;t Tell</option>
+                  <option value="Sensory Language">Sensory Language</option>
+                  <option value="Dialogue and Voice">Dialogue and Voice</option>
+                  <option value="Story Openings and Endings">Story Openings and Endings</option>
+                </optgroup>
+                <optgroup label="Exam Technique">
+                  <option value="Essay Structure">Essay Structure</option>
+                  <option value="PEEL Paragraphs">PEEL Paragraphs</option>
+                  <option value="Comparison Essay Structure">Comparison Essay Structure</option>
+                  <option value="Question Types">Question Types</option>
+                  <option value="Time Management">Time Management</option>
+                  <option value="Common Mistakes">Common Mistakes</option>
+                  <option value="Grade 9 Secrets">Grade 9 Secrets</option>
+                  <option value="Mark Scheme Mastery">Mark Scheme Mastery</option>
+                  <option value="Exam Day Strategy">Exam Day Strategy</option>
+                  <option value="Quoting and Embedding Evidence">
+                    Quoting and Embedding Evidence
+                  </option>
                 </optgroup>
               </select>
             </div>
