@@ -179,6 +179,253 @@ export default async function TextsRevisionPage() {
             — memory, wartime, narrative unreliability; Cambridge IGCSE 0475
           </li>
         </ul>
+
+        <h3 className="mt-6 text-lg font-semibold">Pearson IGCSE Language A (4EA1) anthology</h3>
+        <p className="mt-1 text-sm text-slate-600">
+          Section A non-fiction, Section B poetry and Section C prose for the Pearson Edexcel
+          International GCSE English Language A specification.
+        </p>
+        <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
+          <li>
+            <strong>Non-fiction:</strong>{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/the-danger-of-a-single-story"
+            >
+              The Danger of a Single Story
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/a-passage-to-africa"
+            >
+              A Passage to Africa
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/the-explorers-daughter"
+            >
+              The Explorer&rsquo;s Daughter
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/explorers-or-boys-messing-about"
+            >
+              Explorers, or boys messing about?
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/between-a-rock-and-a-hard-place"
+            >
+              Between a Rock and a Hard Place
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/young-and-dyslexic"
+            >
+              Young and dyslexic?
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/a-game-of-polo-with-a-headless-goat"
+            >
+              A Game of Polo with a Headless Goat
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/beyond-the-sky-and-the-earth"
+            >
+              Beyond the Sky and the Earth
+            </Link>
+            ,{' '}
+            <Link className="text-blue-700 hover:underline" href="/revision/texts/h-is-for-hawk">
+              H is for Hawk
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/chinese-cinderella"
+            >
+              Chinese Cinderella
+            </Link>
+            .
+          </li>
+          <li>
+            <strong>Poetry:</strong>{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/disabled"
+            >
+              Disabled
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/out-out"
+            >
+              &lsquo;Out, Out&mdash;&rsquo;
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/an-unknown-girl"
+            >
+              An Unknown Girl
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/the-bright-lights-of-sarajevo"
+            >
+              The Bright Lights of Sarajevo
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/still-i-rise"
+            >
+              Still I Rise
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/do-not-go-gentle-into-that-good-night"
+            >
+              Do not go gentle into that good night
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/refugee-blues"
+            >
+              Refugee Blues
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/war-photographer"
+            >
+              War Photographer
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/if"
+            >
+              If&mdash;
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/prayer-before-birth"
+            >
+              Prayer Before Birth
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/piano"
+            >
+              Piano
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/hide-and-seek"
+            >
+              Hide and Seek
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/half-past-two"
+            >
+              Half-past Two
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/my-last-duchess"
+            >
+              My Last Duchess
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/poetry/pearson-igcse/sonnet-116"
+            >
+              Sonnet 116
+            </Link>
+            .
+          </li>
+          <li>
+            <strong>Prose:</strong>{' '}
+            <Link className="text-blue-700 hover:underline" href="/revision/texts/the-door">
+              The Door
+            </Link>
+            ,{' '}
+            <Link className="text-blue-700 hover:underline" href="/revision/texts/the-necklace">
+              The Necklace
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/significant-cigarettes"
+            >
+              Significant Cigarettes
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/whistle-and-ill-come-to-you"
+            >
+              Whistle and I&rsquo;ll Come to You
+            </Link>
+            ,{' '}
+            <Link className="text-blue-700 hover:underline" href="/revision/texts/night">
+              Night
+            </Link>
+            ,{' '}
+            <Link className="text-blue-700 hover:underline" href="/revision/texts/the-pedestrian">
+              The Pedestrian
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/the-yellow-wallpaper"
+            >
+              The Yellow Wall Paper
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/when-greek-meets-greek"
+            >
+              When Greek Meets Greek
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/the-man-who-loved-flowers"
+            >
+              The Man Who Loved Flowers
+            </Link>
+            ,{' '}
+            <Link
+              className="text-blue-700 hover:underline"
+              href="/revision/texts/the-story-of-an-hour"
+            >
+              The Story of an Hour
+            </Link>
+            .
+          </li>
+        </ul>
       </section>
 
       {board ? (

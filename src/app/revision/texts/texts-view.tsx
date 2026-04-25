@@ -13,6 +13,8 @@ import {
   Lightbulb,
   Search,
   FileText,
+  Newspaper,
+  Feather,
 } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -66,6 +68,23 @@ const CATEGORIES: {
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
   },
+  {
+    key: 'non-fiction',
+    label: 'Non-Fiction Anthology',
+    description:
+      'Speeches, memoirs, travel writing and journalism for IGCSE Language A Paper 1 Section A',
+    icon: Newspaper,
+    colour: 'text-clay-600',
+    bgColour: 'bg-amber-500/10',
+  },
+  {
+    key: 'prose',
+    label: 'Anthology Prose',
+    description: 'Short stories from the Pearson IGCSE Language A anthology Section C',
+    icon: Feather,
+    colour: 'text-rose-400',
+    bgColour: 'bg-rose-500/10',
+  },
 ]
 
 // ─── Local storage ──────────────────────────────────────────────────────────
@@ -116,7 +135,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
       (t) =>
         t.title.toLowerCase().includes(q) ||
         t.author.toLowerCase().includes(q) ||
-        (t.keyThemes ?? []).some((th) => th.toLowerCase().includes(q))
+        (t.keyThemes ?? []).some((th) => th.toLowerCase().includes(q)),
     )
   }, [search, texts])
 
@@ -126,11 +145,8 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
   })).filter((cat) => cat.texts.length > 0)
 
   const totalTexts = texts.length
-  const studiedInBoard = mounted
-    ? texts.filter((t) => studiedSlugs.has(t.slug)).length
-    : 0
-  const progressPercent =
-    totalTexts > 0 ? Math.round((studiedInBoard / totalTexts) * 100) : 0
+  const studiedInBoard = mounted ? texts.filter((t) => studiedSlugs.has(t.slug)).length : 0
+  const progressPercent = totalTexts > 0 ? Math.round((studiedInBoard / totalTexts) * 100) : 0
 
   // Suppress unused prop warning while keeping it available for future use
   void boardId
@@ -163,9 +179,9 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
             Your {boardName} Set Texts
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            In-depth study guides for every set text on your {boardName} exam board.
-            Shakespeare plays, 19th-century novels, and modern texts -- with character analysis,
-            theme tracking, and key quotations.
+            In-depth study guides for every set text on your {boardName} exam board. Shakespeare
+            plays, 19th-century novels, and modern texts -- with character analysis, theme tracking,
+            and key quotations.
           </p>
 
           {/* Progress tracker */}
@@ -215,12 +231,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
               : 'Try adjusting your search term.'}
           </p>
           {texts.length > 0 && (
-            <Button
-              variant="outline"
-              size="sm"
-              className="mt-4"
-              onClick={() => setSearch('')}
-            >
+            <Button variant="outline" size="sm" className="mt-4" onClick={() => setSearch('')}>
               Clear search
             </Button>
           )}
@@ -275,9 +286,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
                           </CardTitle>
                           <CardDescription className="mt-1">{text.author}</CardDescription>
                         </div>
-                        {isStudied && (
-                          <CheckCircle2 className="size-5 shrink-0 text-emerald-400" />
-                        )}
+                        {isStudied && <CheckCircle2 className="size-5 shrink-0 text-emerald-400" />}
                       </div>
                     </CardHeader>
 
@@ -347,9 +356,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Lightbulb className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Literature Revision Tips
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Literature Revision Tips</h2>
         </div>
 
         <Card className="overflow-hidden">
@@ -361,27 +368,21 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-2">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Learn key quotations
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">Learn key quotations</h3>
                 <p className="text-xs text-muted-foreground">
                   Aim for 10--15 short, versatile quotations per text. Choose ones that link to
                   multiple themes and contain analysable language techniques.
                 </p>
               </div>
               <div className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-2">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Connect themes to context
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">Connect themes to context</h3>
                 <p className="text-xs text-muted-foreground">
                   Always explain why the writer made specific choices. Link themes to the
                   historical, social, or biographical context of the text.
                 </p>
               </div>
               <div className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-2">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Practise essay planning
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">Practise essay planning</h3>
                 <p className="text-xs text-muted-foreground">
                   Before writing full essays, practise planning under timed conditions. Aim for
                   three clear paragraphs with a quotation, analysis, and context in each.
@@ -392,17 +393,15 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
                   Track character development
                 </h3>
                 <p className="text-xs text-muted-foreground">
-                  Note how key characters change throughout the text. Markers reward analysis
-                  of character arcs and what these reveal about the writer&apos;s message.
+                  Note how key characters change throughout the text. Markers reward analysis of
+                  character arcs and what these reveal about the writer&apos;s message.
                 </p>
               </div>
               <div className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-2">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Analyse structure
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">Analyse structure</h3>
                 <p className="text-xs text-muted-foreground">
-                  Do not just focus on language. Consider why events are ordered a certain way,
-                  how chapters or acts are structured, and what the opening and ending reveal.
+                  Do not just focus on language. Consider why events are ordered a certain way, how
+                  chapters or acts are structured, and what the opening and ending reveal.
                 </p>
               </div>
               <div className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-2">
