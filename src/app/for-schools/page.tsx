@@ -310,15 +310,12 @@ export default function ForSchoolsPage() {
           </h1>
 
           <p className="mt-7 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            See the dashboard in action &mdash; no sign-up required.
+            Bulk onboarding, teacher dashboards, AI essay marking, and Head&apos;s Reports &mdash;
+            see what every department gets when they join.
           </p>
 
-          <div className="mt-10 max-w-3xl mx-auto">
-            {/* TODO(founder): replace with real Loom embed — target 90 seconds, English dept dashboard walkthrough */}
-            <div className="aspect-video bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center">
-              <p className="text-slate-500">Loom demo — 90s of the school dashboard</p>
-            </div>
-          </div>
+          {/* Loom dashboard walk-through deferred until the recording is produced.
+              Restore by inserting a 16:9 iframe with the Loom embed URL once available. */}
 
           <div className="mt-8 max-w-3xl mx-auto">
             <TrustBox variant="starter" />

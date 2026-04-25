@@ -30,8 +30,7 @@ export default async function Home() {
     <main className="min-h-screen bg-background">
       {/* Funnel: home_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="home_viewed" />
-      {/* 0. Trust pill row — above the hero */}
-      <TrustPills />
+      {/* Trust pill row removed per founder request — was overweighting compliance copy. */}
 
       {/* 0b. Named hero H1 block — commercial-review item #02 */}
       <HeroHeadlineBlock />
