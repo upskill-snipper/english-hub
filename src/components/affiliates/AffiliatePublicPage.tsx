@@ -75,13 +75,11 @@ function HeroSection({
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
-          Partner with{' '}
-          <span className="text-primary">The English Hub</span>
+          Partner with <span className="text-primary">The English Hub</span>
         </h1>
 
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Help students achieve their potential. Earn while making a real
-          difference in education.
+          Help students achieve their potential. Earn while making a real difference in education.
         </p>
 
         {!applicationStatus && (
@@ -117,7 +115,7 @@ function StatusBanner({ status }: { status: string }) {
       icon: Clock,
       title: 'Legacy application on file',
       message:
-        "You have an older application on the legacy review queue. The programme is now self-serve — pick a code below and your account will activate instantly, overriding the old application.",
+        'You have an older application on the legacy review queue. The programme is now self-serve — pick a code below and your account will activate instantly, overriding the old application.',
       color: 'bg-blue-500/10 border-blue-500/30 text-blue-400',
     },
     agreement_sent: {
@@ -194,9 +192,14 @@ function WhyPartnerSection() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {reasons.map((r) => (
-            <Card key={r.title} className="text-center p-0 border-border/40 hover:border-border/80 transition-colors">
+            <Card
+              key={r.title}
+              className="text-center p-0 border-border/40 hover:border-border/80 transition-colors"
+            >
               <CardContent className="pt-8 pb-8 px-6">
-                <div className={`w-14 h-14 rounded-2xl ${r.color} flex items-center justify-center mx-auto mb-5`}>
+                <div
+                  className={`w-14 h-14 rounded-2xl ${r.color} flex items-center justify-center mx-auto mb-5`}
+                >
                   <r.icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-3">{r.title}</h3>
@@ -240,9 +243,7 @@ function HowItWorksSection() {
     <section id="how-it-works" className="px-4 py-20 sm:py-24 bg-muted/30">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            How It Works
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">How It Works</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From application to earning — a simple, transparent process.
           </p>
@@ -326,7 +327,8 @@ function CommissionSection() {
         </Card>
 
         <p className="text-muted-foreground text-sm mt-5 text-center">
-          Commissions confirmed after 30 days of active subscription. Paid monthly via bank transfer.
+          Commissions confirmed after 30 days of active subscription. Paid monthly via bank
+          transfer.
         </p>
       </div>
     </section>
@@ -419,9 +421,7 @@ function WhatYouGetSection() {
     <section className="px-4 py-20 sm:py-24">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            What You Get
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">What You Get</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Everything you need to succeed as a partner.
           </p>
@@ -517,9 +517,7 @@ function FAQ({ q, a }: { q: string; a: string }) {
           <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" />
         )}
       </button>
-      {open && (
-        <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed">{a}</div>
-      )}
+      {open && <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed">{a}</div>}
     </div>
   )
 }
@@ -547,12 +545,10 @@ function ApplicationSection({ isLoggedIn }: { isLoggedIn?: boolean }) {
           <Card className="p-0 border-border/40">
             <CardContent className="py-12 px-6 text-center">
               <UserCheck className="w-12 h-12 text-primary mx-auto mb-5" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                Sign in first
-              </h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">Sign in first</h3>
               <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-                We need an account so your earnings are tied to you. Once signed in,
-                you will get your code on this page in one click.
+                We need an account so your earnings are tied to you. Once signed in, you will get
+                your code on this page in one click.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
@@ -595,15 +591,23 @@ function ProgramBasicsSection() {
           </div>
           <div className="p-6 rounded-lg border border-border/40 bg-card">
             <dt className="font-semibold text-foreground mb-2">Minimum payout</dt>
-            <dd className="text-muted-foreground">£20 — payments made bi-monthly via BACS or PayPal.</dd>
+            <dd className="text-muted-foreground">
+              £20 — payments made bi-monthly via BACS or PayPal.
+            </dd>
           </div>
           <div className="p-6 rounded-lg border border-border/40 bg-card">
             <dt className="font-semibold text-foreground mb-2">Lifetime value tier</dt>
-            <dd className="text-muted-foreground">Top 20 partners earn a continued percentage on subscription renewals for the lifetime of the referred account.</dd>
+            <dd className="text-muted-foreground">
+              Top 20 partners earn a continued percentage on subscription renewals for the lifetime
+              of the referred account.
+            </dd>
           </div>
           <div className="p-6 rounded-lg border border-border/40 bg-card">
             <dt className="font-semibold text-foreground mb-2">Commission</dt>
-            <dd className="text-muted-foreground">30% of first-year revenue for every paying student you refer; 15% of first-year revenue for school seat-licences.</dd>
+            <dd className="text-muted-foreground">
+              30% of first-year revenue for every paying student you refer; 15% of first-year
+              revenue for school seat-licences.
+            </dd>
           </div>
         </dl>
       </div>
@@ -633,8 +637,8 @@ function BottomCTA({
               Join our growing community of partners
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto mb-8 text-base">
-              Help students succeed while building a meaningful income stream.
-              Self-serve enrolment — your code is ready in one click.
+              Help students succeed while building a meaningful income stream. Self-serve enrolment
+              — your code is ready in one click.
             </p>
             <Button
               size="lg"
@@ -675,7 +679,12 @@ function EnrolForm() {
   // Live-normalise + preview the chosen code as the user types.
   const handleCodeChange = (raw: string) => {
     setChosenCode(raw)
-    setCodePreview(raw.trim().toUpperCase().replace(/[^A-Z0-9-]/g, ''))
+    setCodePreview(
+      raw
+        .trim()
+        .toUpperCase()
+        .replace(/[^A-Z0-9-]/g, ''),
+    )
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -734,7 +743,9 @@ function EnrolForm() {
           <div>
             <label htmlFor="chosen_code" className="label">
               Your affiliate code{' '}
-              <span className="text-muted-foreground font-normal">(optional — we will generate one if you leave this blank)</span>
+              <span className="text-muted-foreground font-normal">
+                (optional — we will generate one if you leave this blank)
+              </span>
             </label>
             <input
               type="text"
@@ -751,7 +762,8 @@ function EnrolForm() {
               4-20 characters. Letters, numbers, hyphens. We will uppercase it automatically.
               {codePreview && codePreview !== chosenCode.trim() && (
                 <>
-                  {' '}Preview: <span className="font-mono text-foreground">{codePreview}</span>
+                  {' '}
+                  Preview: <span className="font-mono text-foreground">{codePreview}</span>
                 </>
               )}
             </p>
@@ -760,7 +772,9 @@ function EnrolForm() {
           <div>
             <label htmlFor="display_name" className="label">
               Display name{' '}
-              <span className="text-muted-foreground font-normal">(optional — shown on your dashboard)</span>
+              <span className="text-muted-foreground font-normal">
+                (optional — shown on your dashboard)
+              </span>
             </label>
             <input
               type="text"
@@ -781,9 +795,7 @@ function EnrolForm() {
                 onChange={(e) => setIs18Plus(e.target.checked)}
                 className="mt-1"
               />
-              <span className="text-sm text-muted-foreground">
-                I am 18 or over
-              </span>
+              <span className="text-sm text-muted-foreground">I am 18 or over</span>
             </label>
 
             {!is18Plus && (
@@ -793,12 +805,28 @@ function EnrolForm() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="guardian_name" className="label">Guardian name *</label>
-                    <input type="text" id="guardian_name" name="guardian_name" required className="input-field" />
+                    <label htmlFor="guardian_name" className="label">
+                      Guardian name *
+                    </label>
+                    <input
+                      type="text"
+                      id="guardian_name"
+                      name="guardian_name"
+                      required
+                      className="input-field"
+                    />
                   </div>
                   <div>
-                    <label htmlFor="guardian_email" className="label">Guardian email *</label>
-                    <input type="email" id="guardian_email" name="guardian_email" required className="input-field" />
+                    <label htmlFor="guardian_email" className="label">
+                      Guardian email *
+                    </label>
+                    <input
+                      type="email"
+                      id="guardian_email"
+                      name="guardian_email"
+                      required
+                      className="input-field"
+                    />
                   </div>
                 </div>
               </div>
@@ -814,13 +842,22 @@ function EnrolForm() {
               />
               <span className="text-sm text-muted-foreground">
                 I understand every promotional post must include a clear{' '}
-                <strong className="text-foreground">#ad</strong> disclosure (ASA + CAP Code).
-                I have read the <a href="/affiliates/resources" className="underline">posting guidelines</a>. *
+                <strong className="text-foreground">#ad</strong> disclosure (ASA + CAP Code). I have
+                read the{' '}
+                <a href="/affiliates/resources" className="underline">
+                  posting guidelines
+                </a>
+                . *
               </span>
             </label>
           </div>
 
-          <Button type="submit" disabled={submitting || !understands} size="lg" className="w-full h-12 text-base">
+          <Button
+            type="submit"
+            disabled={submitting || !understands}
+            size="lg"
+            className="w-full h-12 text-base"
+          >
             {submitting ? 'Creating your code…' : 'Get my affiliate code'}
           </Button>
 
@@ -913,12 +950,7 @@ function CopyRow({
         >
           {value}
         </div>
-        <Button
-          type="button"
-          variant="outline"
-          onClick={handleCopy}
-          className="px-4 shrink-0"
-        >
+        <Button type="button" variant="outline" onClick={handleCopy} className="px-4 shrink-0">
           {copied ? 'Copied' : 'Copy'}
         </Button>
       </div>
@@ -932,19 +964,19 @@ function PostTemplates({ code, referralUrl }: { code: string; referralUrl: strin
   const templates = [
     {
       platform: 'TikTok (15-30s)',
-      body: `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial — code ${code} at checkout for 14 days free, no card.\n\n👉 ${referralUrl}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`,
+      body: `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial — code ${code} at checkout for 7 days free.\n\n👉 ${referralUrl}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`,
     },
     {
       platform: 'Instagram (caption)',
-      body: `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor — instant feedback, as many essays as you want.\n\nUse code ${code} for a 14-day free trial (no card needed). Link: ${referralUrl}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`,
+      body: `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor — instant feedback, as many essays as you want.\n\nUse code ${code} for a 7-day free trial. Link: ${referralUrl}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`,
     },
     {
       platform: 'X / Twitter',
-      body: `Revising for GCSE English? @theenglishhub marks your essays against real AQA / Edexcel / OCR / Eduqas / Cambridge mark schemes in ~60s.\n\nCode ${code} gets you a 14-day free trial, no card.\n\n${referralUrl}\n\n#GCSE #ad`,
+      body: `Revising for GCSE English? @theenglishhub marks your essays against real AQA / Edexcel / OCR / Eduqas / Cambridge mark schemes in ~60s.\n\nCode ${code} gets you a 7-day free trial.\n\n${referralUrl}\n\n#GCSE #ad`,
     },
     {
       platform: 'WhatsApp / text message',
-      body: `Came across this — The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 14 days free: ${referralUrl} (#ad)`,
+      body: `Came across this — The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 7 days free: ${referralUrl} (#ad)`,
     },
   ]
 
@@ -952,9 +984,7 @@ function PostTemplates({ code, referralUrl }: { code: string; referralUrl: strin
     <Card className="p-0 border-border/40">
       <CardContent className="p-6 sm:p-8">
         <div className="mb-6">
-          <h3 className="text-lg font-semibold text-foreground mb-1">
-            Starter post templates
-          </h3>
+          <h3 className="text-lg font-semibold text-foreground mb-1">Starter post templates</h3>
           <p className="text-sm text-muted-foreground">
             Copy, paste, personalise. Every template already includes the mandatory{' '}
             <strong className="text-foreground">#ad</strong> disclosure required by ASA + CAP Code.
@@ -969,10 +999,10 @@ function PostTemplates({ code, referralUrl }: { code: string; referralUrl: strin
           <p className="font-semibold mb-1">Disclosure must be prominent</p>
           <p>
             <strong>#ad</strong> must appear at the start of a caption, not buried at the end, and
-            must be visible without &quot;more&quot;/&quot;read more&quot; truncation. On video:
-            say &quot;this is a paid partnership&quot; or show the word{' '}
-            <strong>ad</strong> on-screen for at least 3 seconds. Failing to disclose is an ASA
-            breach and we will suspend your account.
+            must be visible without &quot;more&quot;/&quot;read more&quot; truncation. On video: say
+            &quot;this is a paid partnership&quot; or show the word <strong>ad</strong> on-screen
+            for at least 3 seconds. Failing to disclose is an ASA breach and we will suspend your
+            account.
           </p>
         </div>
       </CardContent>

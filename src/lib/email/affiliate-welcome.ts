@@ -127,19 +127,19 @@ export async function sendAffiliateWelcomeEmail(
 // ─── Template bodies ────────────────────────────────────────────────────────
 
 function tiktokTemplate(code: string, url: string): string {
-  return `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial — code ${code} at checkout for 14 days free, no card.\n\n👉 ${url}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`
+  return `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial — code ${code} at checkout for 7 days free.\n\n👉 ${url}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`
 }
 
 function instagramTemplate(code: string, url: string): string {
-  return `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor — instant feedback, as many essays as you want.\n\nUse code ${code} for a 14-day free trial (no card needed). Link: ${url}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`
+  return `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor — instant feedback, as many essays as you want.\n\nUse code ${code} for a 7-day free trial. Link: ${url}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`
 }
 
 function xTemplate(code: string, url: string): string {
-  return `Revising for GCSE English? @theenglishhub marks your essays against real AQA / Edexcel / OCR / Eduqas / Cambridge mark schemes in ~60s.\n\nCode ${code} gets you a 14-day free trial, no card.\n\n${url}\n\n#GCSE #ad`
+  return `Revising for GCSE English? @theenglishhub marks your essays against real AQA / Edexcel / OCR / Eduqas / Cambridge mark schemes in ~60s.\n\nCode ${code} gets you a 7-day free trial.\n\n${url}\n\n#GCSE #ad`
 }
 
 function whatsappTemplate(code: string, url: string): string {
-  return `Came across this — The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 14 days free: ${url} (#ad)`
+  return `Came across this — The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 7 days free: ${url} (#ad)`
 }
 
 function renderTemplate(platform: string, body: string): string {

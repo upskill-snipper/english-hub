@@ -1,6 +1,7 @@
 import { CheckCircle, X } from 'lucide-react'
 import Link from 'next/link'
 import { VAT_LABEL } from '@/lib/copy/pricing'
+import { PRICING } from '@/constants/pricing'
 
 interface ComparisonRow {
   feature: string
@@ -12,7 +13,7 @@ const rows: ComparisonRow[] = [
   {
     feature: 'Price',
     individual: 'Per student per month',
-    school: '\u00a33,000 \u2013 \u00a37,000 / year',
+    school: `From \u00a3${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} / year`,
   },
   {
     feature: 'Students covered',

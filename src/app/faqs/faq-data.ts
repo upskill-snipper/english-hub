@@ -36,17 +36,17 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Which exam boards are supported?',
         answer:
-          "AQA, Edexcel (GCSE + International), OCR, WJEC / Eduqas, Cambridge IGCSE (0500 + 0475), and Pearson Edexcel International. Built by examiners active across all of these, so every course, mock exam, practice question, and revision note is tailored to your specific board and specification.",
+          'AQA, Edexcel (GCSE + International), OCR, WJEC / Eduqas, Cambridge IGCSE (0500 + 0475), and Pearson Edexcel International. Built by examiners active across all of these, so every course, mock exam, practice question, and revision note is tailored to your specific board and specification.',
       },
       {
         question: 'Is The English Hub suitable for IGCSE Cambridge 0500 and 0475?',
         answer:
-          "Yes. We cover Cambridge First Language English 0500 and Literature in English 0475 alongside UK GCSE (AQA, Edexcel, Eduqas, OCR) and International A-Level — with board-specific mark schemes, assessment objectives, and set-text coverage.",
+          'Yes. We cover Cambridge First Language English 0500 and Literature in English 0475 alongside UK GCSE (AQA, Edexcel, Eduqas, OCR) and International A-Level — with board-specific mark schemes, assessment objectives, and set-text coverage.',
       },
       {
         question: 'Does The English Hub cover AQA Power and Conflict?',
         answer:
-          "Yes — full revision notes, annotated model paragraphs, and past-paper practice for all 15 poems in the AQA Power and Conflict anthology, aligned to AO1 / AO2 / AO3 mark distribution.",
+          'Yes — full revision notes, annotated model paragraphs, and past-paper practice for all 15 poems in the AQA Power and Conflict anthology, aligned to AO1 / AO2 / AO3 mark distribution.',
       },
       {
         question: 'Do I need to download an app?',
@@ -142,7 +142,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Do you mark essays in real time in class?',
         answer:
-          "Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes — usually while the lesson is still running.",
+          'Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes — usually while the lesson is still running.',
       },
     ],
   },
@@ -219,7 +219,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Do you offer a free trial for schools?',
         answer:
-          "Yes — schools get a 14-day free pilot with up to 60 students. Book a 20-minute call at /demo/school to set it up.",
+          'Yes — schools get a 7-day free pilot with up to 60 students. Book a 20-minute call at /demo/school to set it up.',
       },
       {
         question: 'How does the Founding Schools Programme work?',

@@ -284,65 +284,170 @@ export default function PricingPage() {
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-border/60 bg-card">
-            <table className="w-full text-sm min-w-[720px]">
+            <table className="w-full text-sm min-w-[720px] table-fixed">
+              <colgroup>
+                <col className="w-[28%]" />
+                <col className="w-[18%]" />
+                <col className="w-[18%]" />
+                <col className="w-[18%]" />
+                <col className="w-[18%]" />
+              </colgroup>
               <thead>
                 <tr className="border-b border-border/60 bg-muted/30">
-                  <th className="text-left font-semibold text-foreground px-4 py-3">Feature</th>
-                  <th className="text-left font-bold text-primary px-4 py-3">The English Hub</th>
-                  <th className="text-left font-semibold text-muted-foreground px-4 py-3">Seneca</th>
-                  <th className="text-left font-semibold text-muted-foreground px-4 py-3">GCSEPod</th>
-                  <th className="text-left font-semibold text-muted-foreground px-4 py-3">Tassomai</th>
+                  <th className="text-left font-semibold text-foreground px-4 py-3 align-middle">
+                    Feature
+                  </th>
+                  <th className="text-center font-bold text-primary px-4 py-3 align-middle">
+                    The English Hub
+                  </th>
+                  <th className="text-center font-semibold text-muted-foreground px-4 py-3 align-middle">
+                    Seneca
+                  </th>
+                  <th className="text-center font-semibold text-muted-foreground px-4 py-3 align-middle">
+                    GCSEPod
+                  </th>
+                  <th className="text-center font-semibold text-muted-foreground px-4 py-3 align-middle">
+                    Tassomai
+                  </th>
                 </tr>
               </thead>
               <tbody className="[&>tr]:border-b [&>tr]:border-border/40 [&>tr:last-child]:border-0">
                 <tr>
-                  <td className="px-4 py-3 font-medium text-foreground">Price per student / month</td>
-                  <td className="px-4 py-3 text-foreground">£3.49</td>
-                  <td className="px-4 py-3 text-muted-foreground">£0 (free) / £6.99 Premium</td>
-                  <td className="px-4 py-3 text-muted-foreground">£12–£18/yr via school only</td>
-                  <td className="px-4 py-3 text-muted-foreground">£3/mo</td>
+                  <td className="px-4 py-3 font-medium text-foreground align-middle">
+                    Price per student / month
+                  </td>
+                  <td className="px-4 py-3 text-center text-foreground font-semibold align-middle">
+                    {PRICING.CURRENCY}
+                    {PRICING.STUDENT_MONTHLY}
+                  </td>
+                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
+                    Free / £6.99 Premium
+                  </td>
+                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
+                    £12–£18/yr (school only)
+                  </td>
+                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
+                    £3.00
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-foreground">AI essay marking (AO-aligned)</td>
-                  <td className="px-4 py-3"><CheckCircle className="w-5 h-5 text-emerald-600" /></td>
-                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
-                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
-                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                  <td className="px-4 py-3 font-medium text-foreground align-middle">
+                    AI essay marking (AO-aligned)
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <X className="w-5 h-5 text-red-500" />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <X className="w-5 h-5 text-red-500" />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <X className="w-5 h-5 text-red-500" />
+                    </div>
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-foreground">IGCSE coverage</td>
-                  <td className="px-4 py-3 text-foreground flex items-center gap-2"><CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" /><span className="text-xs">AQA + Cambridge + CIE 0500</span></td>
-                  <td className="px-4 py-3 text-muted-foreground text-xs">Partial</td>
-                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
-                  <td className="px-4 py-3 text-muted-foreground text-xs">Partial</td>
+                  <td className="px-4 py-3 font-medium text-foreground align-middle">
+                    IGCSE coverage
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center items-center gap-1.5">
+                      <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
+                      <span className="text-xs text-foreground">AQA · Cambridge</span>
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 text-center text-muted-foreground text-xs align-middle">
+                    Partial
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <X className="w-5 h-5 text-red-500" />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 text-center text-muted-foreground text-xs align-middle">
+                    Partial
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-foreground">Mock-exam bank (full papers)</td>
-                  <td className="px-4 py-3 font-semibold text-foreground">172+</td>
-                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
-                  <td className="px-4 py-3"><CheckCircle className="w-5 h-5 text-emerald-600" /></td>
-                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                  <td className="px-4 py-3 font-medium text-foreground align-middle">
+                    Mock-exam bank (full papers)
+                  </td>
+                  <td className="px-4 py-3 text-center font-semibold text-foreground align-middle">
+                    172+
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <X className="w-5 h-5 text-red-500" />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <X className="w-5 h-5 text-red-500" />
+                    </div>
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-foreground">Built by examiners</td>
-                  <td className="px-4 py-3 text-foreground flex items-center gap-2"><CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" /><span className="text-xs">AQA · Pearson · Cambridge · OCR · WJEC</span></td>
-                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
-                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
-                  <td className="px-4 py-3"><X className="w-5 h-5 text-red-500" /></td>
+                  <td className="px-4 py-3 font-medium text-foreground align-middle">
+                    Built by examiners
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center items-center gap-1.5">
+                      <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
+                      <span className="text-xs text-foreground">5 boards</span>
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <X className="w-5 h-5 text-red-500" />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <X className="w-5 h-5 text-red-500" />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <div className="flex justify-center">
+                      <X className="w-5 h-5 text-red-500" />
+                    </div>
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-foreground">Card-required trial</td>
-                  <td className="px-4 py-3 text-foreground font-semibold">No</td>
-                  <td className="px-4 py-3 text-muted-foreground">No</td>
-                  <td className="px-4 py-3 text-muted-foreground">n/a</td>
-                  <td className="px-4 py-3 text-muted-foreground">Yes</td>
+                  <td className="px-4 py-3 font-medium text-foreground align-middle">
+                    Free trial length
+                  </td>
+                  <td className="px-4 py-3 text-center text-foreground font-semibold align-middle">
+                    7 days
+                  </td>
+                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
+                    No trial
+                  </td>
+                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">n/a</td>
+                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
+                    7 days
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <p className="mt-4 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
-            Pricing and features as of April 2026 — may be out of date; contact competitors for latest.
+            Pricing and features as of April 2026 — may be out of date; contact competitors for
+            latest.
           </p>
         </div>
       </section>
@@ -410,7 +515,7 @@ export default function PricingPage() {
                   </span>
                 </div>
 
-                {/* Price — early-access monthly with standard anchor */}
+                {/* ONE primary price line — early-access monthly with standard anchor */}
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-5xl font-extrabold tracking-tight text-foreground">
                     {PRICING.CURRENCY}
@@ -422,19 +527,13 @@ export default function PricingPage() {
                     {PRICING.STUDENT_MONTHLY_STANDARD}
                   </span>
                 </div>
-                <p className="text-sm text-muted-foreground mb-2">
+
+                {/* ONE secondary annual offer */}
+                <p className="text-sm text-muted-foreground mb-3">
                   or{' '}
                   <span className="font-semibold text-foreground">
                     {PRICING.CURRENCY}
                     {PRICING.STUDENT_ANNUAL}/year
-                  </span>{' '}
-                  <span className="text-muted-foreground/80">
-                    (was{' '}
-                    <span className="line-through decoration-amber-500/60">
-                      {PRICING.CURRENCY}
-                      {PRICING.STUDENT_ANNUAL_STANDARD}/year
-                    </span>
-                    )
                   </span>
                   {studentAnnualSavingsVsMonthly > 0 && (
                     <span className="text-muted-foreground/80">
@@ -444,9 +543,13 @@ export default function PricingPage() {
                     </span>
                   )}
                 </p>
-                <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-amber-700">
-                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
+
+                {/* ONE trial line */}
+                <p className="text-sm text-emerald-600 font-semibold mb-3">
+                  {PRICING.TRIAL_TEXT} · card required · cancel before day 7
                 </p>
+
+                {/* ONE upgrade callout — affiliate code */}
                 <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-3 py-2 mb-3">
                   <p className="text-xs font-semibold text-emerald-700">
                     With any affiliate code or{' '}
@@ -458,9 +561,9 @@ export default function PricingPage() {
                     {PRICING.STUDENT_ANNUAL_SAVINGS}.
                   </p>
                 </div>
-                {/* TODO(backend): adjust trial logic to support no-card 14-day flow. See commercial-review item #08 */}
-                <p className="text-sm text-emerald-600 font-semibold mb-6">
-                  No card · 14 days free · then £3.49/mo or £29.99/yr
+
+                <p className="mb-6 text-[11px] font-semibold uppercase tracking-wider text-amber-700">
+                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
                 </p>
 
                 {/* Free features */}
@@ -654,7 +757,8 @@ export default function PricingPage() {
                   </span>
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-                      From {PRICING.CURRENCY}3,000
+                      From {PRICING.CURRENCY}
+                      {PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}
                     </span>
                     <span className="text-muted-foreground text-sm">/yr</span>
                   </div>
@@ -663,7 +767,8 @@ export default function PricingPage() {
                     6 places remaining · cohort closes 31 Dec 2026
                   </p>
                   <p className="mt-2 text-xs text-foreground/80">
-                    MAT pricing from {PRICING.CURRENCY}8,000/yr — bundled 3+ schools
+                    MAT pricing from {PRICING.CURRENCY}
+                    {PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}/yr — bundled 3+ schools
                   </p>
                   <p className="text-muted-foreground text-xs mt-2">
                     Founding partners lock in this rate for 2&ndash;3 years and shape the platform
@@ -741,8 +846,8 @@ export default function PricingPage() {
           </Card>
 
           <p className="mt-6 text-center text-sm text-slate-600 max-w-2xl mx-auto">
-            After the 10 founding places: Cohort 2 pricing opens September 2026 at £6,000–£12,000/yr.
-            Founding price is locked for the life of your contract.
+            After the 10 founding places: Cohort 2 pricing opens September 2026 at
+            £6,000–£12,000/yr. Founding price is locked for the life of your contract.
           </p>
 
           <p className="mt-8 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
