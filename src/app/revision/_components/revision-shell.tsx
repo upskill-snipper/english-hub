@@ -24,6 +24,12 @@ import {
   ClipboardList,
   Timer,
   Dumbbell,
+  Library,
+  CheckSquare,
+  GitCompare,
+  Quote,
+  Edit3,
+  StickyNote,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -106,6 +112,53 @@ const NAV_ITEMS: NavItem[] = [
     colour: 'text-cyan-400',
   },
   { label: 'Quick Quizzes', href: '/revision/quiz', icon: Zap, colour: 'text-clay-600' },
+  // Curated content libraries — surface the resources hub and its
+  // most-loved sections so students never have to dig through nav
+  // dropdowns to find revision notes, model answers, vocabulary
+  // banks, writing-skills guides or the comparison-essay walkthrough.
+  {
+    label: 'Resources Hub',
+    href: '/resources',
+    icon: Library,
+    colour: 'text-amber-400',
+  },
+  {
+    label: 'Revision Notes',
+    href: '/resources/revision-notes',
+    icon: StickyNote,
+    colour: 'text-blue-400',
+  },
+  {
+    label: 'Model Answers',
+    href: '/resources/model-answers',
+    icon: CheckSquare,
+    colour: 'text-emerald-400',
+  },
+  {
+    label: 'Comparison Essays',
+    href: '/revision/poetry/love-and-relationships/comparison-guide',
+    icon: GitCompare,
+    colour: 'text-violet-400',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
+  },
+  {
+    label: 'Vocabulary',
+    href: '/resources/vocabulary',
+    icon: Quote,
+    colour: 'text-rose-400',
+  },
+  {
+    label: 'Writing Skills',
+    href: '/resources/writing-skills',
+    icon: Edit3,
+    colour: 'text-cyan-400',
+  },
+  {
+    label: 'Toolkit',
+    href: '/toolkit',
+    icon: Wrench,
+    colour: 'text-primary',
+  },
   // Board-specific deep-link entries
   {
     label: 'IAL Specification Guide',

@@ -28,6 +28,12 @@ import {
   Dumbbell,
   Gamepad2,
   Flame,
+  Library,
+  CheckSquare,
+  GitCompare,
+  Quote,
+  Edit3,
+  StickyNote,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -169,6 +175,67 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     stats: 'Play to learn',
+  },
+  {
+    title: 'Resources Hub',
+    description:
+      'The full library: poetry guides, set-text packs, exam papers, themes, context, glossary and more.',
+    href: '/resources',
+    icon: Library,
+    colour: 'text-amber-400',
+    bgColour: 'bg-amber-500/10',
+    stats: '300+ guides',
+  },
+  {
+    title: 'Revision Notes',
+    description:
+      'Concise per-text revision notes you can skim before an exam \u2014 every set text, every key topic.',
+    href: '/resources/revision-notes',
+    icon: StickyNote,
+    colour: 'text-blue-400',
+    bgColour: 'bg-blue-500/10',
+    stats: '20+ texts',
+  },
+  {
+    title: 'Model Answers',
+    description:
+      'Top-grade exemplar answers for literature essays, language analysis and creative writing tasks.',
+    href: '/resources/model-answers',
+    icon: CheckSquare,
+    colour: 'text-emerald-400',
+    bgColour: 'bg-emerald-500/10',
+    stats: 'Grade 7-9',
+  },
+  {
+    title: 'Comparison Essay Guide',
+    description:
+      'Step-by-step structure, sentence stems and worked examples for poetry and unseen comparison questions.',
+    href: '/revision/poetry/love-and-relationships/comparison-guide',
+    icon: GitCompare,
+    colour: 'text-violet-400',
+    bgColour: 'bg-violet-500/10',
+    stats: 'Structure + stems',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
+  },
+  {
+    title: 'Vocabulary',
+    description:
+      'Academic, analytical and descriptive word banks to upgrade your essays and creative writing.',
+    href: '/resources/vocabulary',
+    icon: Quote,
+    colour: 'text-rose-400',
+    bgColour: 'bg-rose-500/10',
+    stats: '1000+ words',
+  },
+  {
+    title: 'Writing Skills',
+    description:
+      'Creative, analytical, persuasive and grammar guides \u2014 the craft skills behind every paper.',
+    href: '/resources/writing-skills',
+    icon: Edit3,
+    colour: 'text-cyan-400',
+    bgColour: 'bg-cyan-500/10',
+    stats: '4 skill areas',
   },
 ]
 
