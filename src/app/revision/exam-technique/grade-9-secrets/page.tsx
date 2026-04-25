@@ -558,9 +558,11 @@ export default function Grade9SecretsPage() {
         <Button
           variant="default"
           className="flex-1"
-          render={<Link href="/revision/exam-technique/practice-extracts" />}
+          disabled
+          aria-disabled="true"
+          title="Practice Extracts — coming soon"
         >
-          Practice Extracts
+          Practice Extracts (coming soon)
           <ArrowRight className="size-4" />
         </Button>
       </div>

@@ -364,8 +364,13 @@ export default async function MacbethAct3Page() {
         <Button variant="outline" render={<Link href="/revision/texts/macbeth/act-2" />}>
           <ArrowLeft className="size-4 mr-1" /> Act 2
         </Button>
-        <Button variant="outline" render={<Link href="/revision/texts/macbeth/act-4" />}>
-          Act 4 <ArrowRight className="size-4 ml-1" />
+        <Button
+          variant="outline"
+          disabled
+          aria-disabled="true"
+          title="Act 4 — coming soon"
+        >
+          Act 4 (coming soon) <ArrowRight className="size-4 ml-1" />
         </Button>
       </div>
     </div>

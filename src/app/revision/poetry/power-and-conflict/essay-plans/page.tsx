@@ -931,21 +931,21 @@ export default function EssayPlansPage() {
           <Button
             variant="default"
             size="lg"
-            render={
-              <Link href="/revision/poetry/power-and-conflict/comparison-guide" />
-            }
+            disabled
+            aria-disabled="true"
+            title="Comparison guide — coming soon"
           >
-            Comparison guide
+            Comparison guide (coming soon)
             <ArrowRight className="size-4" />
           </Button>
           <Button
             variant="outline"
             size="lg"
-            render={
-              <Link href="/revision/poetry/power-and-conflict/themes" />
-            }
+            disabled
+            aria-disabled="true"
+            title="Themes — coming soon"
           >
-            Explore themes
+            Explore themes (coming soon)
             <ArrowRight className="size-4" />
           </Button>
         </div>

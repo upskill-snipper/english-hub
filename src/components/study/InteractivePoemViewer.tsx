@@ -46,11 +46,11 @@ export interface PoemData {
 type AnalysisTab = 'context' | 'summary' | 'form' | 'quotes' | 'language'
 
 const TABS: { key: AnalysisTab; label: string; color: string; bgActive: string; bgHighlight: string }[] = [
-  { key: 'context',  label: 'Context',          color: 'text-blue-400',   bgActive: 'bg-blue-500/20 border-blue-500/50 text-blue-700',   bgHighlight: 'bg-blue-500/15' },
+  { key: 'context',  label: 'Context',          color: 'text-blue-700',   bgActive: 'bg-blue-500/20 border-blue-500/50 text-blue-700',   bgHighlight: 'bg-blue-500/15' },
   { key: 'summary',  label: 'Summary',          color: 'text-foreground', bgActive: 'bg-muted border-border text-foreground',            bgHighlight: '' },
-  { key: 'form',     label: 'Form & Structure', color: 'text-purple-400', bgActive: 'bg-purple-500/20 border-purple-500/50 text-purple-700', bgHighlight: 'bg-purple-500/15' },
-  { key: 'quotes',   label: 'Key Quotes',       color: 'text-clay-600',  bgActive: 'bg-amber-500/20 border-amber-500/50 text-amber-700',   bgHighlight: 'bg-amber-500/15' },
-  { key: 'language', label: 'Language Analysis', color: 'text-emerald-400', bgActive: 'bg-emerald-500/20 border-emerald-500/50 text-emerald-700', bgHighlight: 'bg-emerald-500/15' },
+  { key: 'form',     label: 'Form & Structure', color: 'text-purple-700', bgActive: 'bg-purple-500/20 border-purple-500/50 text-purple-700', bgHighlight: 'bg-purple-500/15' },
+  { key: 'quotes',   label: 'Key Quotes',       color: 'text-amber-700',  bgActive: 'bg-amber-500/20 border-amber-500/50 text-amber-700',   bgHighlight: 'bg-amber-500/15' },
+  { key: 'language', label: 'Language Analysis', color: 'text-emerald-700', bgActive: 'bg-emerald-500/20 border-emerald-500/50 text-emerald-700', bgHighlight: 'bg-emerald-500/15' },
 ]
 
 /* ── Line popover ───────────────────────────────────────────────── */

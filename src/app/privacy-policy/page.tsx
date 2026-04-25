@@ -519,7 +519,7 @@ export default function PrivacyPolicyPage() {
                 </tr>
                 <tr className="border-b border-border">
                   <td className="p-3 align-top">2. Data protection impact assessments</td>
-                  <td className="p-3 align-top">DPIA published at /compliance/dpia.pdf. Updated on every material feature change.</td>
+                  <td className="p-3 align-top">DPIA available on request from legal@theenglishhub.app. Updated on every material feature change.</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="p-3 align-top">3. Age-appropriate application</td>

@@ -207,22 +207,27 @@ export default function PressPage() {
               <div className="flex-1">
                 <p className="font-semibold text-foreground">The English Hub — press kit (ZIP)</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  TODO: founder to assemble{' '}
-                  <code className="font-mono text-xs">/public/brand/press-kit.zip</code> containing
-                  the assets listed above. Link below is inert until that archive is uploaded.
+                  Press kit ZIP coming soon. In the meantime, email{' '}
+                  <a
+                    href="mailto:press@theenglishhub.app"
+                    className="text-primary underline underline-offset-4"
+                  >
+                    press@theenglishhub.app
+                  </a>{' '}
+                  and we will send the latest assets within one working day.
                 </p>
                 <div className="mt-4">
-                  {/* TODO(founder): replace the href below with the real zip once assembled. */}
+                  {/* Press kit ZIP coming soon. Replace with real download once /public/brand/press-kit.zip exists. */}
                   <Button
                     variant="secondary"
                     size="sm"
-                    render={
-                      <a href="/brand/press-kit.zip" download aria-disabled="true">
-                        <Download className="w-4 h-4 mr-2" />
-                        Download press kit (pending)
-                      </a>
-                    }
-                  />
+                    disabled
+                    aria-disabled="true"
+                    title="Press kit coming soon"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Press kit — coming soon
+                  </Button>
                 </div>
               </div>
             </div>

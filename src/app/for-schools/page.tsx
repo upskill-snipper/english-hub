@@ -1195,46 +1195,37 @@ export default function ForSchoolsPage() {
       {/* ════════════════ COMPLIANCE PACK ════════════════ */}
       <section className="py-20 sm:py-24">
         <div className="max-w-3xl mx-auto px-6">
-          {/* TODO(founder): upload the 4 PDFs under public/compliance/ when drafted. Links 404 until then. */}
+          {/* Compliance documents will be published here once finalised. Currently available on request. */}
           <div className="border rounded-xl p-6 bg-white">
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Compliance pack — direct download
+              Compliance pack — available on request
             </h3>
             <p className="text-muted-foreground mb-4">
-              For DPOs and bursars. No form, no gate.
+              For DPOs and bursars. Email{' '}
+              <a
+                href="mailto:legal@theenglishhub.app"
+                className="text-primary underline underline-offset-4"
+              >
+                legal@theenglishhub.app
+              </a>{' '}
+              and we will send the latest versions within one working day.
             </p>
-            <ul className="space-y-2 mb-4">
+            <ul className="space-y-2 mb-4 text-muted-foreground">
               <li>
-                <a
-                  href="/compliance/data-processing-agreement.docx"
-                  className="text-primary underline underline-offset-4 hover:text-primary/80"
-                >
-                  Data Processing Agreement (Word)
-                </a>
+                Data Processing Agreement (Word){' '}
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
               </li>
               <li>
-                <a
-                  href="/compliance/dpia.pdf"
-                  className="text-primary underline underline-offset-4 hover:text-primary/80"
-                >
-                  Data Protection Impact Assessment (PDF)
-                </a>
+                Data Protection Impact Assessment (PDF){' '}
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
               </li>
               <li>
-                <a
-                  href="/compliance/safeguarding-policy.pdf"
-                  className="text-primary underline underline-offset-4 hover:text-primary/80"
-                >
-                  Safeguarding Policy (PDF)
-                </a>
+                Safeguarding Policy (PDF){' '}
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
               </li>
               <li>
-                <a
-                  href="/compliance/cyber-essentials.pdf"
-                  className="text-primary underline underline-offset-4 hover:text-primary/80"
-                >
-                  Cyber Essentials certificate (filing Q3 2026)
-                </a>
+                Cyber Essentials certificate (filing Q3 2026){' '}
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
               </li>
             </ul>
             <p className="text-sm text-slate-600">

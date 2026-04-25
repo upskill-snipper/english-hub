@@ -181,22 +181,19 @@ export default function AboutPage() {
         {/* Compliance */}
         <section id="compliance">
           <h2 className="text-xl font-semibold text-foreground">Compliance</h2>
-          {/* TODO(founder): upload PDFs to public/compliance/ when ready. See business-docs/ */}
+          {/* Compliance documents will be published here once finalised. See business-docs/. */}
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
-              <a className="underline hover:text-foreground" href="/compliance/dpia.pdf">
-                Data Protection Impact Assessment (PDF)
-              </a>
+              Data Protection Impact Assessment (PDF){' '}
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
             </li>
             <li>
-              <a className="underline hover:text-foreground" href="/compliance/safeguarding-policy.pdf">
-                Safeguarding Policy (PDF)
-              </a>
+              Safeguarding Policy (PDF){' '}
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
             </li>
             <li>
-              <a className="underline hover:text-foreground" href="/compliance/vpat.pdf">
-                VPAT — Voluntary Product Accessibility Template (PDF)
-              </a>
+              VPAT — Voluntary Product Accessibility Template (PDF){' '}
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
             </li>
             <li>
               <a className="underline hover:text-foreground" href="/accessibility">
@@ -204,17 +201,12 @@ export default function AboutPage() {
               </a>
             </li>
             <li>
-              <a className="underline hover:text-foreground" href="/compliance/cyber-essentials.pdf">
-                Cyber Essentials certificate (filing Q3 2026)
-              </a>
+              Cyber Essentials certificate (filing Q3 2026){' '}
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
             </li>
             <li>
-              <a
-                className="underline hover:text-foreground"
-                href="/compliance/data-processing-agreement.docx"
-              >
-                Data Processing Agreement template (Word)
-              </a>
+              Data Processing Agreement template (Word){' '}
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— available on request (legal@theenglishhub.app)</span>
             </li>
           </ul>
         </section>

@@ -50,41 +50,33 @@ export default function BrandPage() {
           <LogoAsset variant="icon" />
         </div>
         <div className="not-prose mt-6">
-          {/* TODO(founder): upload the real SVGs to /public/brand/ and update the hrefs below. */}
+          {/* Logo SVGs available on request. Drop final assets into /public/brand/ when ready. */}
           <Card className="p-5 border-dashed border-border/60 bg-card/40">
             <p className="font-semibold text-foreground mb-2">Downloads</p>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
               <li>
-                <a
-                  href="/brand/logo-primary.svg"
-                  className="text-primary underline underline-offset-4"
-                  aria-disabled="true"
-                >
-                  logo-primary.svg
-                </a>{' '}
-                <span className="text-xs">(TODO — awaiting upload)</span>
+                logo-primary.svg{' '}
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
               </li>
               <li>
-                <a
-                  href="/brand/logo-wordmark.svg"
-                  className="text-primary underline underline-offset-4"
-                  aria-disabled="true"
-                >
-                  logo-wordmark.svg
-                </a>{' '}
-                <span className="text-xs">(TODO — awaiting upload)</span>
+                logo-wordmark.svg{' '}
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
               </li>
               <li>
-                <a
-                  href="/brand/logo-icon.svg"
-                  className="text-primary underline underline-offset-4"
-                  aria-disabled="true"
-                >
-                  logo-icon.svg
-                </a>{' '}
-                <span className="text-xs">(TODO — awaiting upload)</span>
+                logo-icon.svg{' '}
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
               </li>
             </ul>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Need an asset right now? Email{' '}
+              <a
+                href="mailto:press@theenglishhub.app"
+                className="text-primary underline underline-offset-4"
+              >
+                press@theenglishhub.app
+              </a>
+              .
+            </p>
           </Card>
         </div>
       </PressSection>
@@ -268,18 +260,28 @@ export default function BrandPage() {
           page as a PDF.
         </p>
         <div className="not-prose mt-6">
-          {/* TODO(founder): produce /public/brand/brand-kit.zip and replace the inert link below. */}
+          {/* Brand kit ZIP — coming soon. Replace with real download once /public/brand/brand-kit.zip exists. */}
           <Button
             variant="secondary"
             size="lg"
             className="h-12"
-            render={
-              <a href="/brand/brand-kit.zip" download aria-disabled="true">
-                <Download className="w-4 h-4 mr-2" />
-                Download brand kit (pending)
-              </a>
-            }
-          />
+            disabled
+            aria-disabled="true"
+            title="Brand kit coming soon"
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Brand kit — coming soon
+          </Button>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Need the kit before it ships? Email{' '}
+            <a
+              href="mailto:press@theenglishhub.app"
+              className="text-primary underline underline-offset-4"
+            >
+              press@theenglishhub.app
+            </a>
+            .
+          </p>
         </div>
       </PressSection>
 

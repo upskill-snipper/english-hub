@@ -803,7 +803,7 @@ export default function FrankensteinReadPage() {
         </p>
         <Link
           href="/revision/texts/frankenstein"
-          className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-surface-raised transition-colors"
+          className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
         >
           Back to Study Guide
         </Link>

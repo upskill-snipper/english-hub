@@ -892,19 +892,15 @@ export default function MockExamsPage() {
             <Button size="lg" className="shadow-lg shadow-primary/20" render={<a href="#exams" />}>
               View Exam Papers <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            {/* TODO(founder): upload AQA GCSE English Language Paper 1 sample PDF to /public/sample-papers/ */}
+            {/* Sample-paper PDF coming soon — see public/sample-papers/ */}
             <Button
               variant="outline"
               size="lg"
-              render={
-                <a
-                  href="/sample-papers/aqa-gcse-english-language-paper-1.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-              }
+              disabled
+              aria-disabled="true"
+              title="Sample paper coming soon"
             >
-              Preview a sample paper (free, no sign-up)
+              Sample paper — coming soon
             </Button>
             <Button variant="secondary" size="lg" render={<a href="#how-it-works" />}>
               How It Works

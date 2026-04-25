@@ -59,10 +59,10 @@ export default function PoemOfTheDay() {
             </div>
 
             <Link
-              href="/poems"
+              href="/revision/poetry"
               className="inline-flex items-center self-start rounded-full bg-clay-500 px-6 py-2.5 text-sm font-bold text-cream-50 transition-colors hover:bg-clay-600 shadow-lg shadow-clay-500/20"
             >
-              Explore all 30 poems &rarr;
+              Explore the poetry library &rarr;
             </Link>
           </div>
         </div>

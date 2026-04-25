@@ -261,11 +261,11 @@ export default function RedeemPage() {
         <p className="text-xs text-muted-foreground">
           You will be redirected to Stripe to complete payment. By
           continuing, you agree to our{' '}
-          <Link href="/legal/terms" className="underline">
+          <Link href="/terms" className="underline">
             Terms of Service
           </Link>{' '}
           and{' '}
-          <Link href="/legal/privacy" className="underline">
+          <Link href="/privacy-policy" className="underline">
             Privacy Policy
           </Link>
           .

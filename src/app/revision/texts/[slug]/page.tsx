@@ -7,8 +7,10 @@ import {
   BookOpen,
   Crown,
   Drama,
+  Feather,
   FileText,
   Lightbulb,
+  Newspaper,
   Quote,
   Sparkles,
   Users,
@@ -67,20 +69,32 @@ const CATEGORY_META: Record<
   '19th-century': {
     label: '19th-Century Novel',
     icon: BookOpen,
-    colour: 'text-emerald-400',
+    colour: 'text-emerald-700',
     bgColour: 'bg-emerald-500/10',
   },
   modern: {
     label: 'Modern Text',
     icon: Drama,
-    colour: 'text-violet-400',
+    colour: 'text-violet-700',
     bgColour: 'bg-violet-500/10',
   },
   'poetry-anthology': {
     label: 'Poetry Anthology',
     icon: BookOpen,
-    colour: 'text-blue-400',
+    colour: 'text-blue-700',
     bgColour: 'bg-blue-500/10',
+  },
+  'non-fiction': {
+    label: 'Non-Fiction Anthology',
+    icon: Newspaper,
+    colour: 'text-clay-600',
+    bgColour: 'bg-amber-500/10',
+  },
+  prose: {
+    label: 'Anthology Prose',
+    icon: Feather,
+    colour: 'text-rose-700',
+    bgColour: 'bg-rose-500/10',
   },
 }
 
@@ -199,7 +213,7 @@ export default async function TextStudyGuidePage({
       {/* ── Study Resources ────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
-          <BookOpen className="size-5 text-blue-400" />
+          <BookOpen className="size-5 text-blue-700" />
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">
               Study Resources
@@ -215,7 +229,7 @@ export default async function TextStudyGuidePage({
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
-                  <FileText className="size-5 text-blue-400" />
+                  <FileText className="size-5 text-blue-700" />
                 </div>
                 <CardTitle className="text-heading-md font-heading">
                   Revision notes
@@ -243,7 +257,7 @@ export default async function TextStudyGuidePage({
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
-                    <Quote className="size-5 text-violet-400" />
+                    <Quote className="size-5 text-violet-700" />
                   </div>
                   <CardTitle className="text-heading-md font-heading">
                     In-depth analysis
@@ -272,7 +286,7 @@ export default async function TextStudyGuidePage({
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
-                    <Users className="size-5 text-emerald-400" />
+                    <Users className="size-5 text-emerald-700" />
                   </div>
                   <CardTitle className="text-heading-md font-heading">
                     Edexcel IGCSE guide
