@@ -341,17 +341,17 @@ function SectionSidebar({
             className={[
               'flex items-center gap-2 rounded-lg px-3 py-2 text-left text-sm transition-colors',
               isActive
-                ? 'bg-brand-accent/10 text-brand-accent font-medium'
-                : 'text-muted-foreground hover:bg-surface-raised hover:text-foreground',
+                ? 'bg-primary/10 text-primary font-medium'
+                : 'text-muted-foreground hover:bg-muted hover:text-foreground',
             ].join(' ')}
           >
             {isComplete ? (
-              <CheckCircleIcon className="h-4 w-4 flex-shrink-0 text-brand-accent" />
+              <CheckCircleIcon className="h-4 w-4 flex-shrink-0 text-primary" />
             ) : (
               <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center">
                 <span
                   className={`h-1.5 w-1.5 rounded-full ${
-                    isActive ? 'bg-brand-accent' : 'bg-muted-foreground/40'
+                    isActive ? 'bg-primary' : 'bg-muted-foreground/40'
                   }`}
                 />
               </span>
@@ -409,11 +409,11 @@ function SectionDropdown({
                 className={[
                   'flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm transition-colors',
                   isActive
-                    ? 'bg-brand-accent/10 text-brand-accent font-medium'
-                    : 'text-muted-foreground hover:bg-surface-raised hover:text-foreground',
+                    ? 'bg-primary/10 text-primary font-medium'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground',
                 ].join(' ')}
               >
-                {isComplete && <CheckCircleIcon className="h-4 w-4 flex-shrink-0 text-brand-accent" />}
+                {isComplete && <CheckCircleIcon className="h-4 w-4 flex-shrink-0 text-primary" />}
                 <span className="truncate">{section.title}</span>
               </button>
             )
@@ -446,7 +446,7 @@ function OverlayToggles({
                 'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all',
                 isActive
                   ? `${cfg.bg} ${cfg.color} ring-1 ring-inset ${cfg.border}`
-                  : 'bg-surface-raised text-muted-foreground hover:text-foreground hover:bg-surface-overlay',
+                  : 'bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80',
               ].join(' ')}
               aria-pressed={isActive}
             >
@@ -483,7 +483,7 @@ function ReadingModeSelector({
           className={[
             'rounded-md px-3 py-1.5 text-xs font-medium transition-all',
             mode === m.key
-              ? 'bg-brand-accent text-brand-bg shadow-glow-sm'
+              ? 'bg-primary text-primary-foreground shadow-glow-sm'
               : 'text-muted-foreground hover:text-foreground',
           ].join(' ')}
         >
@@ -522,7 +522,7 @@ function InfoPanel({
           <h2 className="text-lg font-bold text-foreground capitalize">{show}</h2>
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-muted-foreground hover:bg-surface-raised hover:text-foreground transition-colors"
+            className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
             aria-label="Close"
           >
             <XMarkIcon className="h-5 w-5" />
@@ -532,7 +532,7 @@ function InfoPanel({
         {show === 'characters' && (
           <div className="flex flex-col gap-4">
             {data.characters.map((char) => (
-              <div key={char.name} className="rounded-xl border border-border bg-surface-raised p-4">
+              <div key={char.name} className="rounded-xl border border-border bg-muted/30 p-4">
                 <h3 className="text-sm font-bold text-foreground">{char.name}</h3>
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                   {char.description}
@@ -558,7 +558,7 @@ function InfoPanel({
         {show === 'themes' && (
           <div className="flex flex-col gap-4">
             {data.themes.map((theme) => (
-              <div key={theme.name} className="rounded-xl border border-border bg-surface-raised p-4">
+              <div key={theme.name} className="rounded-xl border border-border bg-muted/30 p-4">
                 <h3 className="text-sm font-bold text-emerald-700">{theme.name}</h3>
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                   {theme.description}
@@ -579,7 +579,7 @@ function InfoPanel({
         )}
 
         {show === 'context' && (
-          <div className="rounded-xl border border-border bg-surface-raised p-4">
+          <div className="rounded-xl border border-border bg-muted/30 p-4">
             <p className="text-sm leading-relaxed text-muted-foreground whitespace-pre-line">
               {data.contextNotes}
             </p>
@@ -728,7 +728,7 @@ function InteractiveTextViewer({
   return (
     <div
       className={[
-        'flex flex-col rounded-2xl border border-border bg-brand-bg overflow-hidden',
+        'flex flex-col rounded-2xl border border-border bg-background overflow-hidden',
         'shadow-soft',
         className,
       ]
@@ -757,19 +757,19 @@ function InteractiveTextViewer({
           <div className="flex items-center gap-2">
             <button
               onClick={() => setInfoPanel('characters')}
-              className="rounded-lg border border-border bg-surface-raised px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-rose-500/40 transition-colors"
+              className="rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-rose-500/40 transition-colors"
             >
               Characters
             </button>
             <button
               onClick={() => setInfoPanel('themes')}
-              className="rounded-lg border border-border bg-surface-raised px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
+              className="rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
             >
               Themes
             </button>
             <button
               onClick={() => setInfoPanel('context')}
-              className="rounded-lg border border-border bg-surface-raised px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-blue-500/40 transition-colors"
+              className="rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-blue-500/40 transition-colors"
             >
               Context
             </button>
