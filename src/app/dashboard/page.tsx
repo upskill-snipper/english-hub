@@ -360,7 +360,7 @@ export default function DashboardPage() {
       : [
           {
             label: 'Join School',
-            href: '/school/join',
+            href: '/join-school',
             icon: UserPlus,
             color: 'text-indigo-600',
             bg: 'bg-indigo-500/10',

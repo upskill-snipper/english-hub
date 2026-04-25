@@ -355,22 +355,22 @@ function PoetrySeoContent() {
           <p className="text-body text-muted-foreground">
             AO1 is your argument. Examiners reward a clear thesis developed through three or four
             precisely chosen quotations that build on one another, not a shopping list of anything
-            you noticed. A strong AO1 paragraph commits to a reading of the poem and then proves
-            it; a weak one lists features and hopes for the best. Keep quotations short, embedded
-            and purposeful.
+            you noticed. A strong AO1 paragraph commits to a reading of the poem and then proves it;
+            a weak one lists features and hopes for the best. Keep quotations short, embedded and
+            purposeful.
           </p>
           <p className="text-body text-muted-foreground">
             AO2 is analysis of method. The biggest upgrade most students can make is moving from
             &ldquo;the poet uses a metaphor&rdquo; to analysing the effect of that metaphor on
             meaning and on the reader. Name the technique, quote it, then explain what it does to
-            our understanding of the speaker, the situation or the central idea. Always link back
-            to the question. Form and structure count here too, so consider stanza shape, line
-            breaks, volta and pace, not just imagery.
+            our understanding of the speaker, the situation or the central idea. Always link back to
+            the question. Form and structure count here too, so consider stanza shape, line breaks,
+            volta and pace, not just imagery.
           </p>
           <p className="text-body text-muted-foreground">
-            AO3 is context, used sparingly. A useful framework is to ask what was happening when
-            the poet wrote this and what that helps us see in the poem. Context should illuminate
-            the language, not replace it, so weave one sharp contextual point into an analytical
+            AO3 is context, used sparingly. A useful framework is to ask what was happening when the
+            poet wrote this and what that helps us see in the poem. Context should illuminate the
+            language, not replace it, so weave one sharp contextual point into an analytical
             paragraph rather than parking a biography paragraph at the end.
           </p>
         </div>
@@ -383,18 +383,18 @@ function PoetrySeoContent() {
             Roughly 45 to 50 per cent of your poetry marks come from comparison, so a reliable
             method matters. We teach three structures. PEEL-C (point, evidence, explain, link,
             compare) is the safest scaffold for students who want a clear paragraph shape. The
-            two-poem thread runs a single idea, such as powerlessness or memory, through both
-            poems in parallel, alternating evidence so the comparison is constant rather than
-            tacked on. The hinge-point approach picks one central image in each poem and uses
-            those paired images to open a sustained comparison of method and meaning.
+            two-poem thread runs a single idea, such as powerlessness or memory, through both poems
+            in parallel, alternating evidence so the comparison is constant rather than tacked on.
+            The hinge-point approach picks one central image in each poem and uses those paired
+            images to open a sustained comparison of method and meaning.
           </p>
           <p className="text-body text-muted-foreground">
             Whichever structure you choose, avoid shopping-list comparison. Stringing together
             &ldquo;similarly&rdquo; and &ldquo;in contrast&rdquo; without analysing the poets&apos;
             choices fails AO2, because you are comparing topics rather than techniques. Aim to
             compare how each poet constructs meaning, not simply what each poem is about. When
-            you&apos;re ready to rehearse under timed conditions, work through our poetry mock
-            exams and mark schemes to build the habit of comparing method under pressure.
+            you&apos;re ready to rehearse under timed conditions, work through our poetry mock exams
+            and mark schemes to build the habit of comparing method under pressure.
           </p>
         </div>
       </div>
@@ -405,13 +405,13 @@ function PoetrySeoContent() {
 function AnthologyLinks() {
   const links: Array<{ href: string; title: string; snippet: string }> = [
     {
-      href: '/revision/poetry/aqa-power-and-conflict',
+      href: '/revision/poetry/power-and-conflict',
       title: 'AQA Power & Conflict',
       snippet:
         'Fifteen poems on power, war and human struggle with annotations, themes and comparison pairings built for AQA.',
     },
     {
-      href: '/revision/poetry/aqa-love-and-relationships',
+      href: '/revision/poetry/love-and-relationships',
       title: 'AQA Love & Relationships',
       snippet:
         'Romantic, familial and painful love across fifteen poems with method analysis and exam-ready comparison grids.',
@@ -429,25 +429,22 @@ function AnthologyLinks() {
         'All eighteen Eduqas anthology poems with strong pairing suggestions for the compulsory comparison question.',
     },
     {
-      href: '/revision/poetry/edexcel-conflict',
+      href: '/revision/poetry/edexcel/conflict',
       title: 'Edexcel Conflict',
       snippet:
         'Fifteen Edexcel Conflict poems with deeper historical context notes to hit AO3 confidently in the exam.',
     },
     {
-      href: '/revision/poetry/wjec',
-      title: 'WJEC Poetry',
+      href: '/revision/poetry/ocr',
+      title: 'OCR Towards a World Unknown',
       snippet:
-        'WJEC anthology revision covering key poems, context and comparison technique for the Welsh specification paper.',
+        'OCR anthology revision covering Love and Relationships, Conflict, Youth and Age and Power and the Natural World clusters.',
     },
   ]
 
   return (
     <section aria-labelledby="anthology-links-heading" className="space-y-4">
-      <h2
-        id="anthology-links-heading"
-        className="text-heading-md font-heading text-foreground"
-      >
+      <h2 id="anthology-links-heading" className="text-heading-md font-heading text-foreground">
         Anthology-specific revision
       </h2>
       <div className="grid gap-4 sm:grid-cols-2">
