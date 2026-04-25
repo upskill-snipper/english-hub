@@ -20,6 +20,7 @@ import {
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-config'
 import { matchesPracticeBoard } from '@/lib/board-filter'
 import { practiceQuestions, type PracticeQuestion } from '@/data/practice-data'
 import { cn, formatTime } from '@/lib/utils'
@@ -31,7 +32,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { Separator } from '@/components/ui/separator'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
@@ -43,7 +50,9 @@ const GRADE_TABS = ['Grade 4-5', 'Grade 6-7', 'Grade 8-9'] as const
 
 // Derive unique question types from the data
 function getUniqueQuestionTypes(): string[] {
-  const types = new Set(practiceQuestions.map((q) => q.questionType || q.type || 'Other').filter(Boolean))
+  const types = new Set(
+    practiceQuestions.map((q) => q.questionType || q.type || 'Other').filter(Boolean),
+  )
   return ['All', ...Array.from(types).sort()]
 }
 
@@ -51,7 +60,7 @@ function getUniqueQuestionTypes(): string[] {
 
 function getContextualExaminerTip(
   questionType: string | undefined,
-  tips: { question: string; tips: string[] }[]
+  tips: { question: string; tips: string[] }[],
 ): { label: string; tip: string } | null {
   if (!tips.length) return null
 
@@ -60,7 +69,12 @@ function getContextualExaminerTip(
 
   if (qt.includes('language') || qt.includes('analysis')) {
     matched = tips.find((t) => /language|ao2/i.test(t.question))
-  } else if (qt.includes('creative') || qt.includes('writing') || qt.includes('narrative') || qt.includes('descriptive')) {
+  } else if (
+    qt.includes('creative') ||
+    qt.includes('writing') ||
+    qt.includes('narrative') ||
+    qt.includes('descriptive')
+  ) {
     matched = tips.find((t) => /creative|writing|ao5|ao6/i.test(t.question))
   } else if (qt.includes('evaluat')) {
     matched = tips.find((t) => /evaluat|ao4/i.test(t.question))
@@ -104,16 +118,19 @@ export default function PracticePage() {
   // Board exam guide for contextual tips
   const boardGuide = useMemo(
     () => (selectedBoard ? getGuideByBoard(selectedBoard) : undefined),
-    [selectedBoard]
+    [selectedBoard],
   )
 
   const contextualTip = useMemo(
     () =>
       boardGuide && currentQuestion
-        ? getContextualExaminerTip(currentQuestion.questionType || currentQuestion.type, boardGuide.examinerTips)
+        ? getContextualExaminerTip(
+            currentQuestion.questionType || currentQuestion.type,
+            boardGuide.examinerTips,
+          )
         : null,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [boardGuide, currentQuestion?.id]
+    [boardGuide, currentQuestion?.id],
   )
 
   // ── Filtered questions ─────────────────────────────────────────────────
@@ -125,7 +142,7 @@ export default function PracticePage() {
         if (questionType !== 'All' && (q.questionType || q.type) !== questionType) return false
         return true
       }),
-    [selectedBoard, questionType]
+    [selectedBoard, questionType],
   )
 
   // ── Pick random question ───────────────────────────────────────────────
@@ -149,11 +166,15 @@ export default function PracticePage() {
     }
   }, [filtered, timedMode])
 
-  // Pick initial question
+  // Pick initial question, and re-pick whenever the user's board (or filter)
+  // changes such that the current question no longer matches the user's
+  // active board+filter set. Without this, switching from AQA to Pearson
+  // IGCSE leaves an "AQA" question on screen until the next manual shuffle.
   useEffect(() => {
-    if (!currentQuestion) pickRandom()
+    const stillValid = currentQuestion != null && filtered.some((q) => q.id === currentQuestion.id)
+    if (!stillValid) pickRandom()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [filtered])
 
   // Handle timer toggle
   useEffect(() => {
@@ -215,9 +236,7 @@ export default function PracticePage() {
       <div className="border-b border-border bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
           <div className="flex items-center gap-2">
-            <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
-              Practice Mode
-            </h1>
+            <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Practice Mode</h1>
             <LearningTip categories={['practice', 'exam']} side="right" size="md" />
           </div>
           <p className="mt-2 text-muted-foreground">
@@ -234,14 +253,19 @@ export default function PracticePage() {
               <CardContent className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-lg font-bold text-foreground sm:text-xl">
-                    Unlock 40+ exam-style practice questions with detailed model answers and examiner tips
+                    Unlock 40+ exam-style practice questions with detailed model answers and
+                    examiner tips
                   </p>
                   <p className="mt-1 text-muted-foreground">
-                    <span className="font-semibold text-primary">{PRICING.TRIAL_TEXT}!</span>
-                    {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
+                    <span className="font-semibold text-primary">{PRICING.TRIAL_TEXT}!</span> Then{' '}
+                    {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
                   </p>
                 </div>
-                <Button render={<Link href="/auth/register" />} size="lg" className="shrink-0 px-6 py-3">
+                <Button
+                  render={<Link href="/auth/register" />}
+                  size="lg"
+                  className="shrink-0 px-6 py-3"
+                >
                   Start Free Trial
                 </Button>
               </CardContent>
@@ -287,11 +311,7 @@ export default function PracticePage() {
                   onClick={() => setTimedMode(!timedMode)}
                   className={cn(timedMode && 'text-primary')}
                 >
-                  {timedMode ? (
-                    <Clock className="h-4 w-4" />
-                  ) : (
-                    <ClockFading className="h-4 w-4" />
-                  )}
+                  {timedMode ? <Clock className="h-4 w-4" /> : <ClockFading className="h-4 w-4" />}
                   {timedMode ? 'Timed' : 'Untimed'}
                 </Button>
                 {/* New random question */}
@@ -319,18 +339,21 @@ export default function PracticePage() {
               </div>
             )}
 
-            {/* Meta badges */}
+            {/* Meta badges — prefer the user's selected board name over the
+                question's raw legacy tag so a Pearson IGCSE student never sees
+                "OCR" or "AQA" splashed across a generic practice question. */}
             <div className="flex flex-wrap items-center gap-2">
               <Badge className="bg-primary/15 text-primary">
-                {currentQuestion.board}
+                {getBoardConfig(selectedBoard)?.shortName ?? currentQuestion.board}
               </Badge>
               {currentQuestion.paper != null && (
-                <Badge variant="secondary">
-                  Paper {currentQuestion.paper}
-                </Badge>
+                <Badge variant="secondary">Paper {currentQuestion.paper}</Badge>
               )}
               <Badge className="bg-amber-500/15 text-amber-600 dark:text-clay-600">
-                {(currentQuestion.questionType || currentQuestion.type || 'General').split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                {(currentQuestion.questionType || currentQuestion.type || 'General')
+                  .split('-')
+                  .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+                  .join(' ')}
               </Badge>
             </div>
 
@@ -377,9 +400,7 @@ export default function PracticePage() {
                   <span className="font-semibold text-primary">Examiner Tip</span>
                   <span className="mx-1.5 text-border">·</span>
                   <span className="text-xs text-muted-foreground">{contextualTip.label}</span>
-                  <p className="mt-1 leading-relaxed text-muted-foreground">
-                    {contextualTip.tip}
-                  </p>
+                  <p className="mt-1 leading-relaxed text-muted-foreground">{contextualTip.tip}</p>
                 </div>
               </div>
             )}
@@ -403,7 +424,7 @@ export default function PracticePage() {
                       'text-sm font-medium',
                       answer.split(/\s+/).filter(Boolean).length >= 100
                         ? 'text-green-600 dark:text-green-400'
-                        : 'text-destructive'
+                        : 'text-destructive',
                     )}
                   >
                     {answer.split(/\s+/).filter(Boolean).length} / 100 words
@@ -436,7 +457,9 @@ export default function PracticePage() {
                 {user && currentQuestion && (
                   <EssayFeedbackInline
                     board={currentQuestion.board}
-                    paper={currentQuestion.paper != null ? `Paper ${currentQuestion.paper}` : 'Paper 1'}
+                    paper={
+                      currentQuestion.paper != null ? `Paper ${currentQuestion.paper}` : 'Paper 1'
+                    }
                     questionType={currentQuestion.questionType || currentQuestion.type || 'General'}
                     questionText={currentQuestion.question}
                     existingAnswer={answer}
@@ -476,7 +499,9 @@ export default function PracticePage() {
 
                 {/* Mark Scheme */}
                 {currentQuestion.markScheme &&
-                  (Array.isArray(currentQuestion.markScheme) ? currentQuestion.markScheme.length > 0 : Object.keys(currentQuestion.markScheme).length > 0) && (
+                  (Array.isArray(currentQuestion.markScheme)
+                    ? currentQuestion.markScheme.length > 0
+                    : Object.keys(currentQuestion.markScheme).length > 0) && (
                     <Card>
                       <CardContent>
                         <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
@@ -484,7 +509,12 @@ export default function PracticePage() {
                           Mark Scheme Points
                         </div>
                         <ul className="space-y-2">
-                          {(Array.isArray(currentQuestion.markScheme) ? currentQuestion.markScheme : Object.entries(currentQuestion.markScheme as Record<string, string[]>).flatMap(([cat, points]) => [`${cat}:`, ...points])).map((point, i) => (
+                          {(Array.isArray(currentQuestion.markScheme)
+                            ? currentQuestion.markScheme
+                            : Object.entries(
+                                currentQuestion.markScheme as Record<string, string[]>,
+                              ).flatMap(([cat, points]) => [`${cat}:`, ...points])
+                          ).map((point, i) => (
                             <li
                               key={i}
                               className="flex items-start gap-2 text-sm text-muted-foreground"
@@ -501,28 +531,27 @@ export default function PracticePage() {
                   )}
 
                 {/* Examiner Tips */}
-                {currentQuestion.examinerTips &&
-                  currentQuestion.examinerTips.length > 0 && (
-                    <Card className="border-amber-500/30">
-                      <CardContent>
-                        <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
-                          <Lightbulb className="h-4 w-4 text-amber-500" />
-                          Examiner Tips
-                        </div>
-                        <ul className="space-y-2">
-                          {currentQuestion.examinerTips.map((tip, i) => (
-                            <li
-                              key={i}
-                              className="flex items-start gap-2 text-sm text-muted-foreground"
-                            >
-                              <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
-                              {tip}
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  )}
+                {currentQuestion.examinerTips && currentQuestion.examinerTips.length > 0 && (
+                  <Card className="border-amber-500/30">
+                    <CardContent>
+                      <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
+                        <Lightbulb className="h-4 w-4 text-amber-500" />
+                        Examiner Tips
+                      </div>
+                      <ul className="space-y-2">
+                        {currentQuestion.examinerTips.map((tip, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
+                            <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+                            {tip}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                )}
 
                 {/* Self-rating */}
                 <Card>
@@ -545,15 +574,13 @@ export default function PracticePage() {
                               'h-7 w-7',
                               s <= (hoverRating || rating)
                                 ? 'fill-amber-500 text-amber-500'
-                                : 'text-border'
+                                : 'text-border',
                             )}
                           />
                         </button>
                       ))}
                       {rating > 0 && (
-                        <span className="ml-3 text-sm text-muted-foreground">
-                          {rating}/5
-                        </span>
+                        <span className="ml-3 text-sm text-muted-foreground">{rating}/5</span>
                       )}
                     </div>
                   </CardContent>
@@ -562,11 +589,7 @@ export default function PracticePage() {
                 {/* Save & Try Another */}
                 <div className="flex flex-wrap items-center gap-3">
                   {user && (
-                    <Button
-                      variant="secondary"
-                      onClick={saveSession}
-                      disabled={saving || saved}
-                    >
+                    <Button variant="secondary" onClick={saveSession} disabled={saving || saved}>
                       {saving ? (
                         <Loader2 className="h-4 w-4 animate-spin" />
                       ) : saved ? (
@@ -597,9 +620,7 @@ export default function PracticePage() {
           /* No questions match */
           <Card className="flex flex-col items-center justify-center p-12 text-center">
             <BookOpen className="mb-4 h-12 w-12 text-border" />
-            <h2 className="text-lg font-semibold text-foreground">
-              No questions found
-            </h2>
+            <h2 className="text-lg font-semibold text-foreground">No questions found</h2>
             <p className="mt-1 text-sm text-muted-foreground">
               Try adjusting your filters to see available questions.
             </p>

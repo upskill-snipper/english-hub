@@ -32,11 +32,25 @@ import {
   type MockExamSection,
 } from '@/data/mock-exams'
 import { useAuthUserLoading } from '@/store/auth-store'
-import { useExamStore, useExamPhaseStatus, useExamActions, useExamNavigation, useExamHistory, useExamAnswers } from '@/store/exam-store'
+import {
+  useExamStore,
+  useExamPhaseStatus,
+  useExamActions,
+  useExamNavigation,
+  useExamHistory,
+  useExamAnswers,
+} from '@/store/exam-store'
 import { useBoard } from '@/hooks/useBoard'
 import { useExamTimer, type TimerWarning } from '@/hooks/useExamTimer'
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
@@ -65,11 +79,64 @@ function wordCountForAnswer(text: string): number {
 
 // ─── Board Config ────────────────────────────────────────────────────────────
 
+const DEFAULT_BOARD_STYLE = {
+  color: 'text-foreground',
+  bg: 'bg-muted/30',
+  ring: 'ring-border',
+} as const
+
 const BOARD_CONFIG: Record<string, { color: string; bg: string; ring: string }> = {
   AQA: { color: 'text-blue-400', bg: 'bg-blue-500/10', ring: 'ring-blue-500/30' },
   Edexcel: { color: 'text-violet-400', bg: 'bg-violet-500/10', ring: 'ring-violet-500/30' },
   OCR: { color: 'text-clay-600', bg: 'bg-orange-500/10', ring: 'ring-orange-500/30' },
   WJEC: { color: 'text-red-400', bg: 'bg-red-500/10', ring: 'ring-red-500/30' },
+  Eduqas: { color: 'text-red-400', bg: 'bg-red-500/10', ring: 'ring-red-500/30' },
+  CAIE: { color: 'text-teal-300', bg: 'bg-teal-500/10', ring: 'ring-teal-500/30' },
+  Cambridge: { color: 'text-teal-300', bg: 'bg-teal-500/10', ring: 'ring-teal-500/30' },
+  'Edexcel IGCSE': { color: 'text-violet-400', bg: 'bg-violet-500/10', ring: 'ring-violet-500/30' },
+  IGCSE: { color: 'text-violet-400', bg: 'bg-violet-500/10', ring: 'ring-violet-500/30' },
+  IAL: { color: 'text-violet-400', bg: 'bg-violet-500/10', ring: 'ring-violet-500/30' },
+}
+
+/**
+ * Map a user's selected `ExamBoard` ID (cookie value) onto the legacy display
+ * names used inside the mock-exam data. A single board may have papers tagged
+ * across several legacy names (e.g. an IGCSE student should see "Edexcel
+ * IGCSE", "IGCSE", AND "Edexcel" tagged papers).
+ */
+function legacyBoardNamesForExamBoard(board: string | null): string[] {
+  if (!board) return []
+  switch (board) {
+    case 'aqa':
+      return ['AQA']
+    case 'edexcel':
+      return ['Edexcel']
+    case 'ocr':
+      return ['OCR']
+    case 'eduqas':
+      return ['WJEC', 'Eduqas']
+    case 'edexcel-igcse':
+    case 'edexcel-igcse-lang':
+      return ['Edexcel IGCSE', 'IGCSE', 'Edexcel']
+    case 'cambridge-0500':
+    case 'cambridge-0990':
+    case 'cambridge-0475':
+      return ['CAIE', 'Cambridge']
+    case 'ial-edexcel':
+      return ['IAL', 'Edexcel']
+    case 'aqa-a-level':
+      return ['AQA']
+    case 'edexcel-a-level':
+      return ['Edexcel']
+    case 'ocr-a-level':
+      return ['OCR']
+    case 'eduqas-a-level':
+      return ['WJEC', 'Eduqas']
+    case 'ks3':
+      return ['KS3']
+    default:
+      return []
+  }
 }
 
 // ─── Main Page ───────────────────────────────────────────────────────────────
@@ -124,20 +191,41 @@ export default function MockExamPage() {
 
 function ExamConfigScreen() {
   const { board: globalBoard } = useBoard()
-  const [selectedBoard, setSelectedBoard] = useState<string | null>(globalBoard)
+
+  // Restrict the visible boards to the legacy names that match the user's
+  // chosen exam board cookie. Falls back to the four GCSE boards only when
+  // the user has not yet picked a board (anonymous landing case).
+  const allowedBoardNames = useMemo(
+    () =>
+      legacyBoardNamesForExamBoard(globalBoard).length > 0
+        ? legacyBoardNamesForExamBoard(globalBoard)
+        : ['AQA', 'Edexcel', 'OCR', 'WJEC'],
+    [globalBoard],
+  )
+
+  const [selectedBoard, setSelectedBoard] = useState<string | null>(allowedBoardNames[0] ?? null)
   const [selectedExamId, setSelectedExamId] = useState<string | null>(null)
   const { startExam } = useExamActions()
   const examHistory = useExamHistory()
 
   // Sync local board state when global board changes (e.g. after hydration from localStorage)
   useEffect(() => {
-    if (globalBoard && globalBoard !== selectedBoard) {
-      setSelectedBoard(globalBoard)
-      setSelectedExamId(null)
+    if (globalBoard) {
+      const first = allowedBoardNames[0]
+      if (first && first !== selectedBoard) {
+        setSelectedBoard(first)
+        setSelectedExamId(null)
+      }
     }
-  }, [globalBoard]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [globalBoard, allowedBoardNames]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const availablePapers = selectedBoard ? getMockExamsByBoard(selectedBoard) : []
+  // Aggregate every paper across every legacy name that maps to the user's
+  // board. Important for IGCSE/IAL where papers may be tagged "IGCSE" or
+  // "Edexcel" in the underlying data.
+  const availablePapers = useMemo(() => {
+    if (!selectedBoard) return []
+    return allowedBoardNames.flatMap((name) => getMockExamsByBoard(name))
+  }, [selectedBoard, allowedBoardNames])
   const selectedPaper = selectedExamId ? getMockExamById(selectedExamId) : null
 
   const handleStart = () => {
@@ -145,7 +233,7 @@ function ExamConfigScreen() {
     startExam(selectedPaper.id, selectedPaper.totalTimeMinutes)
   }
 
-  const boards = ['AQA', 'Edexcel', 'OCR', 'WJEC']
+  const boards = allowedBoardNames
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8">
@@ -171,7 +259,7 @@ function ExamConfigScreen() {
         </h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {boards.map((board) => {
-            const config = BOARD_CONFIG[board]
+            const config = BOARD_CONFIG[board] ?? DEFAULT_BOARD_STYLE
             const isSelected = selectedBoard === board
             return (
               <button
@@ -185,14 +273,17 @@ function ExamConfigScreen() {
                   'hover:border-border/80 hover:shadow-sm',
                   isSelected
                     ? `border-2 ${config.ring} ${config.bg} shadow-sm`
-                    : 'border-border/50 bg-card'
+                    : 'border-border/50 bg-card',
                 )}
               >
-                <div className={cn('text-lg font-bold', isSelected ? config.color : 'text-foreground')}>
+                <div
+                  className={cn('text-lg font-bold', isSelected ? config.color : 'text-foreground')}
+                >
                   {board}
                 </div>
                 <div className="mt-0.5 text-xs text-muted-foreground">
-                  {getMockExamsByBoard(board).length} paper{getMockExamsByBoard(board).length !== 1 ? 's' : ''} available
+                  {getMockExamsByBoard(board).length} paper
+                  {getMockExamsByBoard(board).length !== 1 ? 's' : ''} available
                 </div>
                 {isSelected && (
                   <CheckCircle className={cn('absolute top-2 right-2 h-4 w-4', config.color)} />
@@ -212,7 +303,7 @@ function ExamConfigScreen() {
           <div className="grid gap-3 sm:grid-cols-2">
             {availablePapers.map((paper) => {
               const isSelected = selectedExamId === paper.id
-              const config = BOARD_CONFIG[paper.board]
+              const config = BOARD_CONFIG[paper.board] ?? DEFAULT_BOARD_STYLE
               return (
                 <button
                   key={paper.id}
@@ -222,7 +313,7 @@ function ExamConfigScreen() {
                     'hover:border-border/80 hover:shadow-sm',
                     isSelected
                       ? `border-2 ${config.ring} ${config.bg} shadow-sm`
-                      : 'border-border/50 bg-card'
+                      : 'border-border/50 bg-card',
                   )}
                 >
                   <div className="flex items-center gap-2 mb-1">
@@ -286,10 +377,12 @@ function ExamConfigScreen() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-foreground">
-                      {selectedPaper.sections.length} section{selectedPaper.sections.length !== 1 ? 's' : ''}
+                      {selectedPaper.sections.length} section
+                      {selectedPaper.sections.length !== 1 ? 's' : ''}
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      {selectedPaper.sections.reduce((a, s) => a + s.questions.length, 0)} questions total
+                      {selectedPaper.sections.reduce((a, s) => a + s.questions.length, 0)} questions
+                      total
                     </div>
                   </div>
                 </div>
@@ -312,9 +405,10 @@ function ExamConfigScreen() {
                 <div className="flex gap-2">
                   <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
                   <div className="text-sm text-muted-foreground">
-                    <strong className="text-foreground">Exam conditions:</strong> Once you start, a countdown timer will begin.
-                    The timer will warn you at 5 minutes and 1 minute remaining. You can pause for accessibility,
-                    but try to complete the exam in one sitting for the most realistic experience.
+                    <strong className="text-foreground">Exam conditions:</strong> Once you start, a
+                    countdown timer will begin. The timer will warn you at 5 minutes and 1 minute
+                    remaining. You can pause for accessibility, but try to complete the exam in one
+                    sitting for the most realistic experience.
                   </div>
                 </div>
               </div>
@@ -344,7 +438,9 @@ function ExamConfigScreen() {
             {examHistory.slice(0, 5).map((attempt) => {
               const paper = getMockExamById(attempt.examId)
               const timeUsed = Math.round(attempt.timeSpentSeconds / 60)
-              const answeredCount = Object.values(attempt.answers).filter((a) => a.trim().length > 0).length
+              const answeredCount = Object.values(attempt.answers).filter(
+                (a) => a.trim().length > 0,
+              ).length
               return (
                 <Card key={attempt.id} className="animate-fade-in">
                   <CardContent className="flex items-center justify-between py-3 px-4">
@@ -353,10 +449,10 @@ function ExamConfigScreen() {
                         {attempt.paperTitle}
                       </div>
                       <div className="flex items-center gap-3 mt-1">
-                        <Badge variant="outline" className="text-xs">{attempt.board}</Badge>
-                        <span className="text-xs text-muted-foreground">
-                          {timeUsed} min used
-                        </span>
+                        <Badge variant="outline" className="text-xs">
+                          {attempt.board}
+                        </Badge>
+                        <span className="text-xs text-muted-foreground">{timeUsed} min used</span>
                         <span className="text-xs text-muted-foreground">
                           {answeredCount} question{answeredCount !== 1 ? 's' : ''} answered
                         </span>
@@ -409,10 +505,19 @@ function ExamInProgress() {
     console.warn(`[Mock Exam] Tab switch detected (total: ${count})`)
   }, [])
 
-  const { formattedTime, isPaused, togglePause, warning, percentRemaining, isExpired, tabSwitchCount } = useExamTimer(
-    paper?.totalTimeMinutes ?? 0,
-    { onTimeUp: handleTimeUp, onWarning: handleWarning, onTabSwitch: handleTabSwitch }
-  )
+  const {
+    formattedTime,
+    isPaused,
+    togglePause,
+    warning,
+    percentRemaining,
+    isExpired,
+    tabSwitchCount,
+  } = useExamTimer(paper?.totalTimeMinutes ?? 0, {
+    onTimeUp: handleTimeUp,
+    onWarning: handleWarning,
+    onTabSwitch: handleTabSwitch,
+  })
 
   // Auto-submit if time expired on rehydration (e.g. user closed the tab and came back after time ran out)
   useEffect(() => {
@@ -437,11 +542,13 @@ function ExamInProgress() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Top Bar — Timer & Progress */}
-      <div className={cn(
-        'sticky top-14 z-40 border-b bg-background/95 backdrop-blur-sm',
-        warning === '1min' && 'border-red-500/50',
-        warning === '5min' && 'border-yellow-500/50',
-      )}>
+      <div
+        className={cn(
+          'sticky top-14 z-40 border-b bg-background/95 backdrop-blur-sm',
+          warning === '1min' && 'border-red-500/50',
+          warning === '5min' && 'border-yellow-500/50',
+        )}
+      >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
           {/* Left: Paper info */}
           <div className="hidden sm:block">
@@ -456,10 +563,7 @@ function ExamInProgress() {
             <span className="text-xs text-muted-foreground">
               {answeredCount}/{totalQuestions} answered
             </span>
-            <Progress
-              value={(answeredCount / totalQuestions) * 100}
-              className="w-24 sm:w-32"
-            />
+            <Progress value={(answeredCount / totalQuestions) * 100} className="w-24 sm:w-32" />
           </div>
 
           {/* Right: Timer */}
@@ -503,14 +607,14 @@ function ExamInProgress() {
         {/* Warning banners */}
         {warning === '5min' && !isPaused && (
           <div className="bg-yellow-500/10 border-b border-yellow-500/20 px-4 py-1.5 text-center text-sm font-medium text-clay-600">
-            <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />
-            5 minutes remaining! Consider finishing your current answer.
+            <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />5 minutes remaining! Consider
+            finishing your current answer.
           </div>
         )}
         {warning === '1min' && !isPaused && (
           <div className="bg-red-500/10 border-b border-red-500/20 px-4 py-1.5 text-center text-sm font-medium text-red-400">
-            <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />
-            1 minute remaining! Your exam will be submitted automatically.
+            <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />1 minute remaining! Your exam
+            will be submitted automatically.
           </div>
         )}
         {isPaused && (
@@ -522,7 +626,8 @@ function ExamInProgress() {
         {tabSwitchCount > 0 && (
           <div className="bg-orange-500/10 border-b border-orange-500/20 px-4 py-1.5 text-center text-sm font-medium text-clay-600">
             <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />
-            You have left this tab {tabSwitchCount} time{tabSwitchCount !== 1 ? 's' : ''}. In a real exam, this would be flagged.
+            You have left this tab {tabSwitchCount} time{tabSwitchCount !== 1 ? 's' : ''}. In a real
+            exam, this would be flagged.
           </div>
         )}
       </div>
@@ -536,7 +641,7 @@ function ExamInProgress() {
           <nav className="space-y-1">
             {paper.sections.map((s, i) => {
               const sectionAnswered = s.questions.filter(
-                (q) => answers[q.id]?.trim().length > 0
+                (q) => answers[q.id]?.trim().length > 0,
               ).length
               const isActive = i === currentSectionIndex
               return (
@@ -547,12 +652,14 @@ function ExamInProgress() {
                     'w-full rounded-lg px-3 py-2 text-left text-sm transition-colors',
                     isActive
                       ? 'bg-primary/10 text-primary font-medium'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted/50',
                   )}
                 >
                   <div className="truncate">{s.title}</div>
                   <div className="mt-0.5 flex items-center gap-1.5 text-xs">
-                    <span>{sectionAnswered}/{s.questions.length}</span>
+                    <span>
+                      {sectionAnswered}/{s.questions.length}
+                    </span>
                     {sectionAnswered === s.questions.length && (
                       <CheckCircle className="h-3 w-3 text-green-400" />
                     )}
@@ -567,10 +674,12 @@ function ExamInProgress() {
           <Dialog open={showSubmitDialog} onOpenChange={setShowSubmitDialog}>
             <DialogTrigger
               render={
-                <button className={cn(
-                  'w-full rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-                  'bg-primary/10 text-primary hover:bg-primary/20'
-                )} />
+                <button
+                  className={cn(
+                    'w-full rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                    'bg-primary/10 text-primary hover:bg-primary/20',
+                  )}
+                />
               }
             >
               <Send className="mr-1.5 inline h-3.5 w-3.5" />
@@ -594,8 +703,7 @@ function ExamInProgress() {
               </Badge>
               <Badge variant="secondary">{section.totalMarks} marks</Badge>
               <Badge variant="secondary">
-                <Clock className="mr-1 h-3 w-3" />
-                ~{section.suggestedTimeMinutes} min
+                <Clock className="mr-1 h-3 w-3" />~{section.suggestedTimeMinutes} min
               </Badge>
             </div>
             <h2 className="text-xl font-bold text-foreground">{section.title}</h2>
@@ -664,9 +772,11 @@ function ExamInProgress() {
                     className="min-h-[100px] resize-y"
                     style={{
                       minHeight:
-                        question.questionType === 'creative-writing' || question.questionType === 'transactional-writing'
+                        question.questionType === 'creative-writing' ||
+                        question.questionType === 'transactional-writing'
                           ? '250px'
-                          : question.questionType === 'evaluation' || question.questionType === 'comparison'
+                          : question.questionType === 'evaluation' ||
+                              question.questionType === 'comparison'
                             ? '180px'
                             : question.questionType === 'analysis'
                               ? '150px'
@@ -697,10 +807,14 @@ function ExamInProgress() {
             ) : (
               <Dialog open={showSubmitDialog} onOpenChange={setShowSubmitDialog}>
                 <DialogTrigger
-                  render={<button className={cn(
-                    'inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-all',
-                    'bg-primary text-primary-foreground hover:bg-primary/85 shadow-sm'
-                  )} />}
+                  render={
+                    <button
+                      className={cn(
+                        'inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-all',
+                        'bg-primary text-primary-foreground hover:bg-primary/85 shadow-sm',
+                      )}
+                    />
+                  }
                 >
                   <Send className="h-4 w-4" />
                   Submit Exam
@@ -718,7 +832,7 @@ function ExamInProgress() {
           <div className="mt-4 flex flex-wrap gap-1 lg:hidden">
             {paper.sections.map((s, i) => {
               const sectionAnswered = s.questions.filter(
-                (q) => answers[q.id]?.trim().length > 0
+                (q) => answers[q.id]?.trim().length > 0,
               ).length
               return (
                 <button
@@ -730,7 +844,7 @@ function ExamInProgress() {
                       ? 'bg-primary text-primary-foreground'
                       : sectionAnswered === s.questions.length
                         ? 'bg-green-500/10 text-green-400'
-                        : 'bg-muted text-muted-foreground'
+                        : 'bg-muted text-muted-foreground',
                   )}
                 >
                   S{i + 1}
@@ -769,14 +883,16 @@ function SubmitConfirmDialog({
       <div className="space-y-3 py-2">
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground">Questions answered</span>
-          <span className="font-medium text-foreground">{answeredCount} / {totalQuestions}</span>
+          <span className="font-medium text-foreground">
+            {answeredCount} / {totalQuestions}
+          </span>
         </div>
         {unanswered > 0 && (
           <div className="flex items-start gap-2 rounded-lg border border-yellow-500/20 bg-yellow-500/5 p-3">
             <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
             <span className="text-sm text-muted-foreground">
-              You have <strong className="text-clay-600">{unanswered}</strong> unanswered
-              question{unanswered !== 1 ? 's' : ''}. Are you sure you want to submit?
+              You have <strong className="text-clay-600">{unanswered}</strong> unanswered question
+              {unanswered !== 1 ? 's' : ''}. Are you sure you want to submit?
             </span>
           </div>
         )}
@@ -833,14 +949,19 @@ function ExamResults() {
 
   const timeSpentMinutes = Math.round(latestAttempt.timeSpentSeconds / 60)
   const totalQuestions = paper.sections.reduce((a, s) => a + s.questions.length, 0)
-  const answeredCount = Object.values(latestAttempt.answers).filter((a) => a.trim().length > 0).length
+  const answeredCount = Object.values(latestAttempt.answers).filter(
+    (a) => a.trim().length > 0,
+  ).length
   const completionPercent = Math.round((answeredCount / totalQuestions) * 100)
 
   // Grade estimate based on completion
   const getGradeEstimate = () => {
-    if (completionPercent >= 90) return { grade: '8-9', color: 'text-clay-600', bg: 'bg-yellow-500/10' }
-    if (completionPercent >= 75) return { grade: '6-7', color: 'text-blue-400', bg: 'bg-blue-500/10' }
-    if (completionPercent >= 50) return { grade: '4-5', color: 'text-green-400', bg: 'bg-green-500/10' }
+    if (completionPercent >= 90)
+      return { grade: '8-9', color: 'text-clay-600', bg: 'bg-yellow-500/10' }
+    if (completionPercent >= 75)
+      return { grade: '6-7', color: 'text-blue-400', bg: 'bg-blue-500/10' }
+    if (completionPercent >= 50)
+      return { grade: '4-5', color: 'text-green-400', bg: 'bg-green-500/10' }
     return { grade: '2-3', color: 'text-muted-foreground', bg: 'bg-muted' }
   }
   const gradeEstimate = getGradeEstimate()
@@ -877,7 +998,8 @@ function ExamResults() {
         <Card className="animate-fade-in">
           <CardContent className="py-4 px-3 text-center">
             <div className="text-2xl font-bold text-foreground">
-              {timeSpentMinutes}<span className="text-sm font-normal text-muted-foreground"> min</span>
+              {timeSpentMinutes}
+              <span className="text-sm font-normal text-muted-foreground"> min</span>
             </div>
             <div className="text-xs text-muted-foreground mt-1">
               of {paper.totalTimeMinutes} min allocated
@@ -887,7 +1009,8 @@ function ExamResults() {
         <Card className="animate-fade-in">
           <CardContent className="py-4 px-3 text-center">
             <div className="text-2xl font-bold text-foreground">
-              {answeredCount}<span className="text-sm font-normal text-muted-foreground"> / {totalQuestions}</span>
+              {answeredCount}
+              <span className="text-sm font-normal text-muted-foreground"> / {totalQuestions}</span>
             </div>
             <div className="text-xs text-muted-foreground mt-1">Questions answered</div>
           </CardContent>
@@ -912,8 +1035,8 @@ function ExamResults() {
           <Progress value={(timeSpentMinutes / paper.totalTimeMinutes) * 100} />
           {timeSpentMinutes < paper.totalTimeMinutes && (
             <p className="mt-2 text-xs text-muted-foreground">
-              You finished with {paper.totalTimeMinutes - timeSpentMinutes} minutes to spare.
-              In the real exam, use spare time to review your answers.
+              You finished with {paper.totalTimeMinutes - timeSpentMinutes} minutes to spare. In the
+              real exam, use spare time to review your answers.
             </p>
           )}
           {timeSpentMinutes >= paper.totalTimeMinutes && (
@@ -935,7 +1058,7 @@ function ExamResults() {
               'rounded-md px-2.5 py-1 text-xs font-medium transition-colors',
               selectedGrade === grade
                 ? 'bg-primary text-primary-foreground'
-                : 'bg-muted text-muted-foreground hover:text-foreground'
+                : 'bg-muted text-muted-foreground hover:text-foreground',
             )}
           >
             {grade}
@@ -947,7 +1070,7 @@ function ExamResults() {
       <div className="space-y-6">
         {paper.sections.map((section, sectionIdx) => {
           const sectionAnswered = section.questions.filter(
-            (q) => latestAttempt.answers[q.id]?.trim().length > 0
+            (q) => latestAttempt.answers[q.id]?.trim().length > 0,
           ).length
 
           return (
@@ -957,16 +1080,20 @@ function ExamResults() {
                   <div>
                     <CardTitle>{section.title}</CardTitle>
                     <CardDescription>
-                      {sectionAnswered}/{section.questions.length} answered | {section.totalMarks} marks available
+                      {sectionAnswered}/{section.questions.length} answered | {section.totalMarks}{' '}
+                      marks available
                     </CardDescription>
                   </div>
                   <Badge
                     variant={sectionAnswered === section.questions.length ? 'default' : 'secondary'}
                     className={cn(
-                      sectionAnswered === section.questions.length && 'bg-green-500/10 text-green-400 border-green-500/30'
+                      sectionAnswered === section.questions.length &&
+                        'bg-green-500/10 text-green-400 border-green-500/30',
                     )}
                   >
-                    {sectionAnswered === section.questions.length ? 'Complete' : `${sectionAnswered}/${section.questions.length}`}
+                    {sectionAnswered === section.questions.length
+                      ? 'Complete'
+                      : `${sectionAnswered}/${section.questions.length}`}
                   </Badge>
                 </div>
               </CardHeader>
@@ -1041,28 +1168,39 @@ function ExamResults() {
                             Model Answer ({selectedGrade})
                           </div>
                           <p className="text-sm text-foreground/90 whitespace-pre-line">
-                            {question.modelAnswers?.[selectedGrade]
-                              ?? question.modelAnswers?.['Grade 6-7']
-                              ?? question.modelAnswers?.['Grade 4-5']
-                              ?? 'Model answer not available for this grade band.'}
+                            {question.modelAnswers?.[selectedGrade] ??
+                              question.modelAnswers?.['Grade 6-7'] ??
+                              question.modelAnswers?.['Grade 4-5'] ??
+                              'Model answer not available for this grade band.'}
                           </p>
 
                           {/* Marking guide */}
-                          {question.markScheme && (Array.isArray(question.markScheme) ? question.markScheme.length > 0 : Object.keys(question.markScheme).length > 0) && (
-                            <div className="mt-3 border-t border-green-500/10 pt-3">
-                              <div className="mb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                                Marking Guide
+                          {question.markScheme &&
+                            (Array.isArray(question.markScheme)
+                              ? question.markScheme.length > 0
+                              : Object.keys(question.markScheme).length > 0) && (
+                              <div className="mt-3 border-t border-green-500/10 pt-3">
+                                <div className="mb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                                  Marking Guide
+                                </div>
+                                <ul className="space-y-0.5">
+                                  {(Array.isArray(question.markScheme)
+                                    ? question.markScheme
+                                    : Object.entries(
+                                        question.markScheme as Record<string, string[]>,
+                                      ).flatMap(([cat, points]) => [`${cat}:`, ...points])
+                                  ).map((point, i) => (
+                                    <li
+                                      key={i}
+                                      className="flex gap-1.5 text-xs text-muted-foreground"
+                                    >
+                                      <span className="text-primary">-</span>
+                                      {point}
+                                    </li>
+                                  ))}
+                                </ul>
                               </div>
-                              <ul className="space-y-0.5">
-                                {(Array.isArray(question.markScheme) ? question.markScheme : Object.entries(question.markScheme as Record<string, string[]>).flatMap(([cat, points]) => [`${cat}:`, ...points])).map((point, i) => (
-                                  <li key={i} className="flex gap-1.5 text-xs text-muted-foreground">
-                                    <span className="text-primary">-</span>
-                                    {point}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
+                            )}
                         </div>
                       )}
                     </div>
