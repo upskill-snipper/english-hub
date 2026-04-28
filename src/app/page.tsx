@@ -51,6 +51,9 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* 3b. Verified Content callout — content-quality signal */}
+      <VerifiedContentCallout />
+
       {/* 3b. School logo wall hidden until we have signed, consenting schools.
           Restore by re-rendering <UsedInSchools /> below once logos + consent
           are in place. */}
@@ -100,20 +103,16 @@ function HeroHeadlineBlock() {
     <section className="bg-ink-950">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 pb-10 sm:pt-16 sm:pb-12 text-center">
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight">
-          Built by examiners. Marked by AI.
+          Built by a teacher. Marked by AI.
           <br className="hidden sm:block" />
-          <span className="text-clay-300 italic"> Trusted by 2,400 students across 6 exam boards.</span>
+          <span className="text-clay-300 italic"> Against the real AO mark scheme.</span>
         </h1>
         <p className="mt-5 max-w-2xl mx-auto text-base sm:text-lg text-cream-100/80 leading-relaxed">
-          GCSE &amp; IGCSE English revision, AI-marked essays and mocks &mdash; built by senior
-          examiners from every major UK board.
+          GCSE &amp; IGCSE English revision, AI-marked essays and mocks &mdash; co-founded by a
+          serving UK secondary English teacher.
         </p>
         <p className="mt-3 text-xs text-cream-200/55">
-          *As of April 2026 &mdash; see our{' '}
-          <a href="/growth" className="underline hover:text-cream-50 transition-colors">
-            public growth dashboard
-          </a>{' '}
-          for current numbers.
+          We&rsquo;re at launch and we say so plainly. Founding pricing locked for the first cohort.
         </p>
       </div>
     </section>
@@ -154,13 +153,17 @@ function UsedInSchools() {
 /* ───────────────────── Trust strip (inline, server-rendered) ───────────────────── */
 
 function TrustStrip() {
+  // Removed 2026-04-25 (brand-voice \u00a711.5): "2,400 Students learning" and
+  // "4.9 Student rating / 5" \u2014 neither currently verifiable. "470+ lessons"
+  // and "130+ mock papers" also withdrawn pending founder content-DB count.
+  // Replaced with launch-honest verified facts only.
   const stats = [
-    { value: '470+', label: 'Structured lessons' },
-    { value: '130+', label: 'Mock papers' },
-    { value: '2,400', label: 'Students learning' },
+    { value: 'AO', label: 'Marked against the real mark scheme' },
     { value: '6', label: 'Exam boards covered' },
-    { value: '4.9', label: 'Student rating / 5' },
     { value: '1\u20139', label: 'Grade tracking' },
+    { value: '7-day', label: 'Free trial' },
+    { value: 'UK', label: 'Built and hosted in the UK' },
+    { value: 'AI', label: 'The language young people need next' },
   ]
 
   return (
@@ -176,6 +179,51 @@ function TrustStrip() {
             </span>
           </div>
         ))}
+      </div>
+    </section>
+  )
+}
+
+/* ───────────────────── Verified Content callout ───────────────────── */
+
+function VerifiedContentCallout() {
+  return (
+    <section
+      aria-labelledby="verified-content-heading"
+      className="bg-ink-950 pb-14 sm:pb-16 border-t border-cream-200/5"
+    >
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-10 sm:pt-12">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-emerald-400/20 bg-emerald-400/5 px-5 py-5 sm:px-7 sm:py-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-5">
+            <div
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-300"
+              aria-hidden="true"
+            >
+              <span className="font-mono text-sm font-bold">{'✓'}</span>
+            </div>
+            <div className="flex-1">
+              <h3
+                id="verified-content-heading"
+                className="font-mono text-[11px] tracking-[0.14em] uppercase text-emerald-300"
+              >
+                Verified content
+              </h3>
+              <p className="mt-1.5 text-sm sm:text-base text-cream-100/85 leading-relaxed">
+                Every quote, date, and biography on the platform is cross-checked against primary
+                sources &mdash; Project Gutenberg, the Folger Shakespeare Library, and official
+                exam-board syllabus PDFs.
+              </p>
+              <p className="mt-3">
+                <Link
+                  href="/about/verified-content"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-emerald-300 underline-offset-4 hover:text-emerald-200 hover:underline"
+                >
+                  See how we verify &rarr;
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

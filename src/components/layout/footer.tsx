@@ -90,6 +90,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
     generic: true,
     links: [
       { href: '/about', label: 'About' },
+      { href: '/about/verified-content', label: 'Verified content' },
       { href: '/for-teachers', label: 'For Teachers' },
       { href: '/for-schools', label: 'For Schools' },
       { href: '/for-parents', label: 'For Parents' },
@@ -220,13 +221,7 @@ export function Footer() {
             {process.env.NEXT_PUBLIC_EDTECH_IMPACT_LIVE === 'true' && (
               <div className="mt-3 flex items-center gap-2 text-[11px] font-mono tracking-wide text-[#B5B8B3]/70">
                 {/* Grey star icon */}
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="#B5B8B3"
-                  aria-hidden="true"
-                >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="#B5B8B3" aria-hidden="true">
                   <path d="M12 2l2.955 6.985L22 10.05l-5.27 4.94L18.18 22 12 18.27 5.82 22l1.45-7.01L2 10.05l7.045-1.065z" />
                 </svg>
                 <span>Reviewed on EdTech Impact (4.x &#9733; &mdash; listing live Q3 2026)</span>

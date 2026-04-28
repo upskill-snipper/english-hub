@@ -40,7 +40,7 @@ const prelude: PoemData = {
       ],
     },
     {
-      text: 'Within a rocky cave, its usual home.',
+      text: 'Within a rocky cove, its usual home.',
       annotations: [
         {
           type: 'Diction',
@@ -94,7 +94,7 @@ const prelude: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: 'The boat leaves a wake on either side - the speaker is making his mark on the previously undisturbed water. Nature\'s stillness is being broken.',
+          note: "The boat leaves a wake on either side - the speaker is making his mark on the previously undisturbed water. Nature's stillness is being broken.",
           color: '#10b981',
         },
       ],
@@ -160,7 +160,7 @@ const prelude: PoemData = {
       ],
     },
     {
-      text: 'The horizon\'s utmost boundary; far above',
+      text: "The horizon's utmost boundary; far above",
       annotations: [
         {
           type: 'Perspective',
@@ -230,7 +230,7 @@ const prelude: PoemData = {
       ],
     },
     {
-      text: 'The horizon\'s bound, a huge peak, black and huge,',
+      text: "The horizon's bound, a huge peak, black and huge,",
       annotations: [
         {
           type: 'Repetition',
@@ -395,7 +395,7 @@ const prelude: PoemData = {
       ],
     },
     {
-      text: 'Of unknown modes of being; o\'er my thoughts',
+      text: "Of unknown modes of being; o'er my thoughts",
       annotations: [
         {
           type: 'Key quote',
@@ -474,7 +474,7 @@ const prelude: PoemData = {
         },
         {
           type: 'Key quote',
-          note: 'This is the heart of Wordsworth\'s philosophy: powerful childhood experiences with nature shape the adult mind permanently.',
+          note: "This is the heart of Wordsworth's philosophy: powerful childhood experiences with nature shape the adult mind permanently.",
           color: '#f59e0b',
         },
       ],
@@ -560,7 +560,7 @@ Personification: Nature is constantly personified. The boat has a "home", the la
     {
       quote: 'unknown modes of being',
       analysis:
-        'After the experience, the speaker realises there are forms of consciousness he cannot understand. Nature is alive in ways beyond human comprehension. This phrase captures Wordsworth\'s philosophy: there are levels of existence the human mind can sense but not grasp.',
+        "After the experience, the speaker realises there are forms of consciousness he cannot understand. Nature is alive in ways beyond human comprehension. This phrase captures Wordsworth's philosophy: there are levels of existence the human mind can sense but not grasp.",
       themes: ['Sublime', 'Spirituality', 'Limits of understanding'],
     },
     {
@@ -580,16 +580,17 @@ Personification: Nature is constantly personified. The boat has a "home", the la
   languageDevices: [
     {
       device: 'Personification',
-      example: 'huge peak ... with voluntary power instinct, / Upreared its head ... Strode after me',
+      example:
+        'huge peak ... with voluntary power instinct, / Upreared its head ... Strode after me',
       effect:
-        'Wordsworth personifies the mountain as a living giant with intention. This is the central technique of the poem - nature is alive, conscious, and powerful. The personification captures both the child\'s terrified perception and Wordsworth\'s philosophical view of nature as a living force.',
+        "Wordsworth personifies the mountain as a living giant with intention. This is the central technique of the poem - nature is alive, conscious, and powerful. The personification captures both the child's terrified perception and Wordsworth's philosophical view of nature as a living force.",
       lineRef: 21,
     },
     {
       device: 'Repetition',
       example: 'a huge peak, black and huge / struck and struck again',
       effect:
-        'The repetitions show the speaker overwhelmed by experience - words fail him. They also create a sense of the mountain\'s relentlessness and the speaker\'s panic. The simple repeated language mirrors a child\'s response to fear.',
+        "The repetitions show the speaker overwhelmed by experience - words fail him. They also create a sense of the mountain's relentlessness and the speaker's panic. The simple repeated language mirrors a child's response to fear.",
       lineRef: 21,
     },
     {
@@ -624,7 +625,7 @@ Personification: Nature is constantly personified. The boat has a "home", the la
       device: 'First-person narration',
       example: 'I found ... I struck ... my brain',
       effect:
-        'The first person makes the experience intimate and confessional. We feel both the boy\'s immediate terror and the adult\'s reflective wisdom. This dual voice is essential to The Prelude\'s autobiographical project.',
+        "The first person makes the experience intimate and confessional. We feel both the boy's immediate terror and the adult's reflective wisdom. This dual voice is essential to The Prelude's autobiographical project.",
       lineRef: 1,
     },
   ],
@@ -644,28 +645,203 @@ const comparisons = [
     poet: 'Percy Bysshe Shelley',
     href: '/revision/poetry/eduqas/ozymandias',
     reason:
-      'Both poems show nature dwarfing human ambition. Wordsworth\'s mountain humbles a young boy; Shelley\'s desert erases an empire. Both Romantic poets warn of human pride.',
+      "Both poems show nature dwarfing human ambition. Wordsworth's mountain humbles a young boy; Shelley's desert erases an empire. Both Romantic poets warn of human pride.",
     themes: ['Power of nature', 'Pride', 'Romantic poetry'],
   },
 ]
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'pre-1', question: 'What does the young Wordsworth do?', type: 'multiple-choice', options: ['Goes swimming', 'Steals a boat and rows across a lake', 'Climbs a mountain', 'Walks through a forest'], correctIndex: 1, explanation: 'He finds a boat and rows it across a lake — an "act of stealth" that leads to a terrifying encounter with a mountain.', topic: 'Meaning', difficulty: 'foundation' },
-  { id: 'pre-2', question: 'What does the mountain appear to do?', type: 'multiple-choice', options: ['Crumble', 'Rise up and stride after the boy', 'Disappear', 'Shine'], correctIndex: 1, explanation: 'The mountain "Upreared its head" and "Strode after me" — personified as a living creature pursuing the terrified boy.', topic: 'Meaning', difficulty: 'foundation' },
-  { id: 'pre-3', question: 'What is "troubled pleasure"?', type: 'multiple-choice', options: ['Pure happiness', 'An oxymoron capturing excitement mixed with guilt', 'A type of boat', 'Weather'], correctIndex: 1, explanation: '"Troubled pleasure" combines contradictory emotions — thrill and guilt about stealing the boat.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'pre-4', question: 'What form is it in?', type: 'multiple-choice', options: ['Rhyming couplets', 'Blank verse (unrhymed iambic pentameter)', 'Free verse', 'A sonnet'], correctIndex: 1, explanation: 'Blank verse gives the poem a natural, conversational rhythm mirroring the flow of memory.', topic: 'Structure', difficulty: 'foundation' },
-  { id: 'pre-5', question: 'What does the contrast between "lustily" and "trembling" show?', type: 'multiple-choice', options: ['Weather changed', 'Nature replaces confidence with terror', 'Getting tired', 'Oars are broken'], correctIndex: 1, explanation: 'The shift from confident energy to fear demonstrates nature\'s power to humble even the self-assured.', topic: 'Language', difficulty: 'higher' },
-  { id: 'pre-6', question: 'What are "unknown modes of being"?', type: 'multiple-choice', options: ['A new species', 'Something beyond human comprehension — a spiritual power in nature', 'A new language', 'Memory loss'], correctIndex: 1, explanation: 'Deliberately abstract — the boy has glimpsed something transcendent that exceeds human understanding.', topic: 'Language', difficulty: 'higher' },
-  { id: 'pre-7', question: 'What is The Prelude?', type: 'multiple-choice', options: ['War poems', 'An epic autobiographical poem about the growth of Wordsworth\'s mind', 'A novel', 'A play'], correctIndex: 1, explanation: 'An epic autobiography tracing development from childhood to adulthood. This extract is from Book I.', topic: 'Context', difficulty: 'higher' },
-  { id: 'pre-8', question: 'What Romantic concept does this exemplify?', type: 'multiple-choice', options: ['Pathetic fallacy', 'The sublime — awe and terror from vast natural phenomena', 'The pastoral', 'The picturesque'], correctIndex: 1, explanation: 'The sublime: encounters with vast, powerful nature produce awe and spiritual transformation.', topic: 'Context', difficulty: 'higher' },
-  { id: 'pre-9', question: 'Why no stanza breaks?', type: 'multiple-choice', options: ['Forgotten', 'The continuous block reflects unbroken memory flow and how the experience consumed consciousness', 'Makes it shorter', 'Printer error'], correctIndex: 1, explanation: 'The single block mirrors how memory flows without divisions — the experience consumed everything.', topic: 'Structure', difficulty: 'grade-9' },
-  { id: 'pre-10', question: 'How does the experience permanently change the boy?', type: 'multiple-choice', options: ['It doesn\'t', '"Huge and mighty forms" replace pleasant images — nature is no longer comforting but overwhelming and unknowable', 'He becomes happier', 'He forgets'], correctIndex: 1, explanation: 'Familiar natural scenes are replaced by "huge and mighty forms" that haunt his thoughts by day and trouble his dreams. His relationship with nature is permanently altered.', topic: 'Themes', difficulty: 'grade-9' },
+  {
+    id: 'pre-1',
+    question: 'What does the young Wordsworth do?',
+    type: 'multiple-choice',
+    options: [
+      'Goes swimming',
+      'Steals a boat and rows across a lake',
+      'Climbs a mountain',
+      'Walks through a forest',
+    ],
+    correctIndex: 1,
+    explanation:
+      'He finds a boat and rows it across a lake — an "act of stealth" that leads to a terrifying encounter with a mountain.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pre-2',
+    question: 'What does the mountain appear to do?',
+    type: 'multiple-choice',
+    options: ['Crumble', 'Rise up and stride after the boy', 'Disappear', 'Shine'],
+    correctIndex: 1,
+    explanation:
+      'The mountain "Upreared its head" and "Strode after me" — personified as a living creature pursuing the terrified boy.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pre-3',
+    question: 'What is "troubled pleasure"?',
+    type: 'multiple-choice',
+    options: [
+      'Pure happiness',
+      'An oxymoron capturing excitement mixed with guilt',
+      'A type of boat',
+      'Weather',
+    ],
+    correctIndex: 1,
+    explanation:
+      '"Troubled pleasure" combines contradictory emotions — thrill and guilt about stealing the boat.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pre-4',
+    question: 'What form is it in?',
+    type: 'multiple-choice',
+    options: [
+      'Rhyming couplets',
+      'Blank verse (unrhymed iambic pentameter)',
+      'Free verse',
+      'A sonnet',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Blank verse gives the poem a natural, conversational rhythm mirroring the flow of memory.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'pre-5',
+    question: 'What does the contrast between "lustily" and "trembling" show?',
+    type: 'multiple-choice',
+    options: [
+      'Weather changed',
+      'Nature replaces confidence with terror',
+      'Getting tired',
+      'Oars are broken',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The shift from confident energy to fear demonstrates nature's power to humble even the self-assured.",
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pre-6',
+    question: 'What are "unknown modes of being"?',
+    type: 'multiple-choice',
+    options: [
+      'A new species',
+      'Something beyond human comprehension — a spiritual power in nature',
+      'A new language',
+      'Memory loss',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Deliberately abstract — the boy has glimpsed something transcendent that exceeds human understanding.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pre-7',
+    question: 'What is The Prelude?',
+    type: 'multiple-choice',
+    options: [
+      'War poems',
+      "An epic autobiographical poem about the growth of Wordsworth's mind",
+      'A novel',
+      'A play',
+    ],
+    correctIndex: 1,
+    explanation:
+      'An epic autobiography tracing development from childhood to adulthood. This extract is from Book I.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pre-8',
+    question: 'What Romantic concept does this exemplify?',
+    type: 'multiple-choice',
+    options: [
+      'Pathetic fallacy',
+      'The sublime — awe and terror from vast natural phenomena',
+      'The pastoral',
+      'The picturesque',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The sublime: encounters with vast, powerful nature produce awe and spiritual transformation.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'pre-9',
+    question: 'Why no stanza breaks?',
+    type: 'multiple-choice',
+    options: [
+      'Forgotten',
+      'The continuous block reflects unbroken memory flow and how the experience consumed consciousness',
+      'Makes it shorter',
+      'Printer error',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The single block mirrors how memory flows without divisions — the experience consumed everything.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'pre-10',
+    question: 'How does the experience permanently change the boy?',
+    type: 'multiple-choice',
+    options: [
+      "It doesn't",
+      '"Huge and mighty forms" replace pleasant images — nature is no longer comforting but overwhelming and unknowable',
+      'He becomes happier',
+      'He forgets',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Familiar natural scenes are replaced by "huge and mighty forms" that haunt his thoughts by day and trouble his dreams. His relationship with nature is permanently altered.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'The Prelude explores the power of nature, the Romantic sublime, growing up, and the lasting impact of formative experience.', keyPoints: ['Nature has "voluntary power" — it can humble humans', 'The sublime — overwhelming awe and terror', 'Growing up — confidence permanently replaced by uncertainty', 'Memory — the experience haunts him day and night'] },
-  { topic: 'Language & Imagery', summary: 'Wordsworth uses personification, contrast, simile, and abstract language to chart the shift from confidence to existential terror.', keyPoints: ['"Upreared its head", "Strode after me" — mountain personified', '"Lustily" vs "trembling" — confidence replaced by fear', 'Swan simile — grace before the terrifying encounter', '"Unknown modes of being" — beyond comprehension'] },
-  { topic: 'Structure & Form', summary: 'Blank verse in a single block, with enjambment mirroring memory\'s flow and the journey\'s momentum.', keyPoints: ['Blank verse — natural rhythm', 'Volta at the mountain encounter', 'Enjambment — momentum and overflow', 'First-person retrospective — adult reflecting on childhood'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      'The Prelude explores the power of nature, the Romantic sublime, growing up, and the lasting impact of formative experience.',
+    keyPoints: [
+      'Nature has "voluntary power" — it can humble humans',
+      'The sublime — overwhelming awe and terror',
+      'Growing up — confidence permanently replaced by uncertainty',
+      'Memory — the experience haunts him day and night',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary:
+      'Wordsworth uses personification, contrast, simile, and abstract language to chart the shift from confidence to existential terror.',
+    keyPoints: [
+      '"Upreared its head", "Strode after me" — mountain personified',
+      '"Lustily" vs "trembling" — confidence replaced by fear',
+      'Swan simile — grace before the terrifying encounter',
+      '"Unknown modes of being" — beyond comprehension',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary:
+      "Blank verse in a single block, with enjambment mirroring memory's flow and the journey's momentum.",
+    keyPoints: [
+      'Blank verse — natural rhythm',
+      'Volta at the mountain encounter',
+      'Enjambment — momentum and overflow',
+      'First-person retrospective — adult reflecting on childhood',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -683,11 +859,14 @@ export default function PreludeEduqasPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Eduqas Poetry", url: "https://theenglishhub.app/revision/poetry/eduqas" },
-          { name: "The Prelude", url: "https://theenglishhub.app/revision/poetry/eduqas/the-prelude" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
+          {
+            name: 'The Prelude',
+            url: 'https://theenglishhub.app/revision/poetry/eduqas/the-prelude',
+          },
         ]}
       />
       <div>
@@ -701,6 +880,14 @@ export default function PreludeEduqasPage() {
           Back to Eduqas Poetry
         </Button>
 
+        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
+          <p className="font-semibold mb-1">Legacy anthology notice</p>
+          <p className="text-amber-100/90 leading-relaxed">
+            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
+            does not include this poem. The content remains as a study reference.
+          </p>
+        </div>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
             <BookOpen className="size-5 text-emerald-400" />
@@ -712,7 +899,9 @@ export default function PreludeEduqasPage() {
             <p className="text-body-sm text-muted-foreground">
               William Wordsworth &middot; Eduqas Poetry Anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Eduqas</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              Eduqas
+            </Badge>
           </div>
         </div>
       </div>
@@ -736,9 +925,7 @@ export default function PreludeEduqasPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Strong Eduqas pairings for comparison questions involving The Prelude.
@@ -755,9 +942,7 @@ export default function PreludeEduqasPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span
@@ -774,10 +959,9 @@ export default function PreludeEduqasPage() {
       </section>
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        Poem text is reproduced for the purpose of private study and educational
-        criticism under UK fair-dealing provisions (Copyright, Designs and
-        Patents Act 1988, s.30). No commercial use is intended. All quotations
-        remain the intellectual property of the respective rights holders.
+        Extract from The Prelude (1850) by William Wordsworth is in the public domain. Source:
+        Project Gutenberg / Wikisource &mdash; verified against the Verified Library. Reproduced
+        freely for educational use.
       </footer>
     </div>
   )

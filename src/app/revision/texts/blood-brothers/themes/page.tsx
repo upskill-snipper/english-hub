@@ -1,14 +1,7 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Drama,
-  Lightbulb,
-  Quote,
-  Sparkles,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Drama, Lightbulb, Quote, Sparkles } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -21,8 +14,7 @@ export const metadata: Metadata = {
   description:
     'Detailed theme analysis for Blood Brothers by Willy Russell: Class, Nature vs Nurture, Superstition, Friendship, Violence and Fate.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/revision/texts/blood-brothers/themes',
+    canonical: 'https://theenglishhub.app/revision/texts/blood-brothers/themes',
   },
 }
 
@@ -72,9 +64,9 @@ const THEMES: ThemeData[] = [
   {
     title: 'Nature versus nurture',
     overview:
-      'Blood Brothers is structured as an experiment: take two identical subjects, place them in different environments, and observe the results. Russell\'s conclusion is unambiguous — nurture wins. Mickey and Edward share genes but not life chances, and every difference between them can be traced to upbringing.',
+      "Blood Brothers is structured as an experiment: take two identical subjects, place them in different environments, and observe the results. Russell's conclusion is unambiguous — nurture wins. Mickey and Edward share genes but not life chances, and every difference between them can be traced to upbringing.",
     howRussellPresentsIt:
-      'Russell stages the boys\' childhood as near-identical in personality: both are curious, generous and brave. The divergence begins when their environments impose different expectations. Edward is encouraged to read and play; Mickey is left to fend for himself. By adulthood, the gap is a chasm. Russell never allows the audience to attribute Mickey\'s decline to personal failings.',
+      "Russell stages the boys' childhood as near-identical in personality: both are curious, generous and brave. The divergence begins when their environments impose different expectations. Edward is encouraged to read and play; Mickey is left to fend for himself. By adulthood, the gap is a chasm. Russell never allows the audience to attribute Mickey's decline to personal failings.",
     keyQuotes: [
       {
         text: '"We\'re blood brothers."',
@@ -90,14 +82,14 @@ const THEMES: ThemeData[] = [
       },
     ],
     contextLink:
-      'The nature-versus-nurture debate was politically charged in the 1980s. Right-wing arguments attributed poverty to personal deficiency. Russell\'s play is a direct rebuttal: it insists that social conditions, not individual character, create outcomes.',
+      "The nature-versus-nurture debate was politically charged in the 1980s. Right-wing arguments attributed poverty to personal deficiency. Russell's play is a direct rebuttal: it insists that social conditions, not individual character, create outcomes.",
     examTip:
       'Link this theme explicitly to the play\'s structure as a "twin study." Examiners reward candidates who discuss Russell\'s dramatic method — the controlled experiment — not just the content of the argument.',
   },
   {
     title: 'Superstition and fate',
     overview:
-      'Superstition runs through the play as a constant motif — shoes on the table, broken mirrors, the Narrator\'s devilish warnings. But Russell uses superstition to critique, not to endorse. The real forces that destroy Mickey and Edward are economic and political, not magical. Superstition is the story society tells itself to avoid responsibility.',
+      "Superstition runs through the play as a constant motif — shoes on the table, broken mirrors, the Narrator's devilish warnings. But Russell uses superstition to critique, not to endorse. The real forces that destroy Mickey and Edward are economic and political, not magical. Superstition is the story society tells itself to avoid responsibility.",
     howRussellPresentsIt:
       'Mrs Lyons invents the twins superstition to control Mrs Johnstone, but it becomes a self-fulfilling prophecy not because of magic but because of the class structures that make the separation permanent. The Narrator\'s repeated refrain — "the devil\'s got your number" — sounds supernatural but functions as a metaphor for systemic injustice. In the final line, the Narrator asks the audience directly whether they blame superstition or something else.',
     keyQuotes: [
@@ -117,7 +109,7 @@ const THEMES: ThemeData[] = [
         text: '"And do we blame superstition for what came to pass?"',
         speaker: 'Narrator',
         analysis:
-          'The play\'s closing question. Russell rejects the supernatural reading and demands the audience find the real cause: inequality.',
+          "The play's closing question. Russell rejects the supernatural reading and demands the audience find the real cause: inequality.",
       },
     ],
     contextLink:
@@ -128,15 +120,15 @@ const THEMES: ThemeData[] = [
   {
     title: 'Friendship',
     overview:
-      'Mickey and Edward\'s friendship is genuine, unselfconscious and cross-class. As children, they see no difference between themselves. Russell uses their bond to expose how artificial and destructive class barriers are: the boys have to be taught to be separate. Friendship is natural; division is imposed.',
+      "Mickey and Edward's friendship is genuine, unselfconscious and cross-class. As children, they see no difference between themselves. Russell uses their bond to expose how artificial and destructive class barriers are: the boys have to be taught to be separate. Friendship is natural; division is imposed.",
     howRussellPresentsIt:
-      'The blood-brother ritual is the play\'s central symbol: a chosen bond that mirrors the biological bond the boys do not know about. Russell stages their childhood scenes in parallel — shared games, shared language, shared laughter — to make the later separation feel violent. As adults, the friendship cannot survive the pressure of inequality. Edward\'s privilege and Mickey\'s deprivation make genuine equality between them impossible.',
+      "The blood-brother ritual is the play's central symbol: a chosen bond that mirrors the biological bond the boys do not know about. Russell stages their childhood scenes in parallel — shared games, shared language, shared laughter — to make the later separation feel violent. As adults, the friendship cannot survive the pressure of inequality. Edward's privilege and Mickey's deprivation make genuine equality between them impossible.",
     keyQuotes: [
       {
         text: '"We\'re blood brothers."',
         speaker: 'Mickey and Edward',
         analysis:
-          'The title ritual enacts the play\'s argument: connection is instinctive, separation is artificial. Russell layers dramatic irony by making the boys literal twins.',
+          "The title ritual enacts the play's argument: connection is instinctive, separation is artificial. Russell layers dramatic irony by making the boys literal twins.",
       },
       {
         text: '"I\'ll get you a job."',
@@ -148,20 +140,20 @@ const THEMES: ThemeData[] = [
     contextLink:
       'Russell draws on his own Liverpool childhood, where cross-class friendships were common but rarely survived into adulthood. The play dramatises the moment when structural forces overwhelm personal bonds.',
     examTip:
-      'Discuss how friendship functions as evidence for Russell\'s argument: if the boys are natural friends, then only external forces can explain their destruction. Examiners value structural analysis over emotional summary.',
+      "Discuss how friendship functions as evidence for Russell's argument: if the boys are natural friends, then only external forces can explain their destruction. Examiners value structural analysis over emotional summary.",
   },
   {
     title: 'Violence',
     overview:
-      'Violence escalates steadily through the play, from Sammy\'s childhood aggression to the armed robbery to the fatal shooting. Russell traces this escalation to deprivation: violence is not innate but learned, and it intensifies as hope diminishes. The final scene — Mickey shooting Edward, police shooting Mickey — makes the link between personal violence and state violence explicit.',
+      "Violence escalates steadily through the play, from Sammy's childhood aggression to the armed robbery to the fatal shooting. Russell traces this escalation to deprivation: violence is not innate but learned, and it intensifies as hope diminishes. The final scene — Mickey shooting Edward, police shooting Mickey — makes the link between personal violence and state violence explicit.",
     howRussellPresentsIt:
-      'Russell uses Sammy as the early marker of violence, showing how poverty normalises aggression. Mickey resists violence for most of the play, but prison and depression push him toward it. The climax is deliberately chaotic: Mickey\'s gun goes off almost accidentally, and the police response is immediate and lethal. Russell refuses a clean moral: the violence is everyone\'s fault and no one\'s.',
+      "Russell uses Sammy as the early marker of violence, showing how poverty normalises aggression. Mickey resists violence for most of the play, but prison and depression push him toward it. The climax is deliberately chaotic: Mickey's gun goes off almost accidentally, and the police response is immediate and lethal. Russell refuses a clean moral: the violence is everyone's fault and no one's.",
     keyQuotes: [
       {
         text: '"There\'s a man gone mad in the town tonight."',
         speaker: 'Narrator',
         analysis:
-          'The Narrator frames Mickey\'s breakdown as both personal tragedy and social crisis. Russell uses the ballad form to universalise the violence.',
+          "The Narrator frames Mickey's breakdown as both personal tragedy and social crisis. Russell uses the ballad form to universalise the violence.",
       },
       {
         text: '"I\'ll get y\' after."',
@@ -171,19 +163,19 @@ const THEMES: ThemeData[] = [
       },
     ],
     contextLink:
-      'The 1981 Toxteth riots in Liverpool were a flashpoint of anger against unemployment, racism and police brutality. Russell\'s depiction of violence reflects a city where structural deprivation made conflict inevitable.',
+      "The 1981 Toxteth riots in Liverpool were a flashpoint of anger against unemployment, racism and police brutality. Russell's depiction of violence reflects a city where structural deprivation made conflict inevitable.",
     examTip:
       'Trace the escalation of violence across both acts. Examiners reward candidates who connect the final shooting to the broader pattern and argue that Russell presents violence as a symptom of inequality, not a character flaw.',
   },
   {
     title: 'Fate and free will',
     overview:
-      'The play opens with its ending: the audience knows from the first line that the twins will die. This creates a powerful sense of inevitability — but Russell\'s point is that the inevitability is social, not cosmic. The boys\' fate is sealed not by prophecy but by class. Free will exists in the play, but it is unequally distributed: the rich have choices, the poor do not.',
+      "The play opens with its ending: the audience knows from the first line that the twins will die. This creates a powerful sense of inevitability — but Russell's point is that the inevitability is social, not cosmic. The boys' fate is sealed not by prophecy but by class. Free will exists in the play, but it is unequally distributed: the rich have choices, the poor do not.",
     howRussellPresentsIt:
       'The prologue establishes dramatic irony that persists for the entire play. Every moment of childhood innocence is shadowed by the knowledge of the ending. Russell uses the Narrator as a fate figure, but his final question — "do we blame superstition?" — invites the audience to reject fate as an explanation. The real determinism is economic.',
     keyQuotes: [
       {
-        text: '"Did you ever hear the story of the Johnstone twins?"',
+        text: '"So did y’ hear the story of the Johnstone twins?"',
         speaker: 'Narrator',
         analysis:
           'Opens the play as a story already told, priming the audience for inevitability. Russell uses this frame to redirect attention from what happens to why.',
@@ -204,7 +196,7 @@ const THEMES: ThemeData[] = [
     contextLink:
       'Fatalism has historically been used to justify inequality: if poverty is "just the way things are," no one needs to act. Russell\'s play systematically dismantles this argument by showing that the twins\' fates are engineered by social forces that could be changed.',
     examTip:
-      'The best answers argue that Russell uses the appearance of fate to critique fatalism itself. Examiners reward candidates who distinguish between the play\'s atmospheric determinism and its political message of potential change.',
+      "The best answers argue that Russell uses the appearance of fate to critique fatalism itself. Examiners reward candidates who distinguish between the play's atmospheric determinism and its political message of potential change.",
   },
 ]
 
@@ -221,11 +213,14 @@ export default async function BloodBrothersThemesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Blood Brothers", url: "https://theenglishhub.app/revision/texts/blood-brothers" },
-          { name: "Themes", url: "https://theenglishhub.app/revision/texts/blood-brothers/themes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Blood Brothers',
+            url: 'https://theenglishhub.app/revision/texts/blood-brothers',
+          },
+          { name: 'Themes', url: 'https://theenglishhub.app/revision/texts/blood-brothers/themes' },
         ]}
       />
       {/* Hero */}
@@ -257,12 +252,10 @@ export default async function BloodBrothersThemesPage() {
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Theme Analysis
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">
-            Blood Brothers by Willy Russell
-          </p>
+          <p className="mt-2 text-body-lg text-muted-foreground">Blood Brothers by Willy Russell</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Six major themes explored in depth with Russell&apos;s methods, contextual links
-            and examiner guidance. All quotes are 15 words or fewer.
+            Six major themes explored in depth with Russell&apos;s methods, contextual links and
+            examiner guidance. All quotes are 15 words or fewer.
           </p>
         </div>
       </section>
@@ -291,9 +284,7 @@ export default async function BloodBrothersThemesPage() {
                   <h3 className="mb-1 text-sm font-semibold text-foreground">
                     How Russell presents it
                   </h3>
-                  <p className="text-body-sm text-muted-foreground">
-                    {t.howRussellPresentsIt}
-                  </p>
+                  <p className="text-body-sm text-muted-foreground">{t.howRussellPresentsIt}</p>
                 </div>
 
                 {/* Key quotes */}
@@ -304,9 +295,7 @@ export default async function BloodBrothersThemesPage() {
                       key={q.text}
                       className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-1.5"
                     >
-                      <p className="text-body-md font-medium italic text-foreground">
-                        {q.text}
-                      </p>
+                      <p className="text-body-md font-medium italic text-foreground">{q.text}</p>
                       <p className="text-caption uppercase tracking-wide text-primary">
                         {q.speaker}
                       </p>
@@ -317,9 +306,7 @@ export default async function BloodBrothersThemesPage() {
 
                 {/* Context link */}
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">
-                    Contextual link
-                  </h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">Contextual link</h3>
                   <p className="text-body-sm text-muted-foreground">{t.contextLink}</p>
                 </div>
 
@@ -377,9 +364,9 @@ export default async function BloodBrothersThemesPage() {
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright,
-        Designs and Patents Act 1988 for criticism and review. Full text available from
-        your school or local library.
+        <strong>Rights notice:</strong> &copy; Methuen Drama / Bloomsbury on behalf of Willy Russell
+        (b. 1947). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
+        review, quotation). For full text, students should consult the licensed school edition.
       </p>
     </div>
   )

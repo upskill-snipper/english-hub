@@ -191,23 +191,27 @@ export default function ForParentsPage() {
         <div className="max-w-5xl mx-auto px-6 py-10">
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
             {[
+              // 2026-04-25: previous stats ("2,400+ Students Learning",
+              // "94% See Grade Improvement", "13 Structured Courses")
+              // were not verifiable at launch and have been withdrawn
+              // per brand-voice §11.5. Replaced with launch-honest items.
               {
                 icon: Users,
                 color: 'text-primary bg-primary/10',
-                value: '2,400+',
-                label: 'Students Learning',
+                value: 'Launch',
+                label: 'Be among the first',
               },
               {
                 icon: TrendingUp,
                 color: 'text-emerald-400 bg-emerald-500/10',
-                value: '94%',
-                label: 'See Grade Improvement',
+                value: 'AO',
+                label: 'Marked against the real rubric',
               },
               {
                 icon: BookOpen,
                 color: 'text-blue-400 bg-blue-500/10',
-                value: '13',
-                label: 'Structured Courses',
+                value: '6',
+                label: 'Exam boards covered',
               },
               {
                 icon: Shield,

@@ -45,8 +45,8 @@ const QUOTE_PAGES: Entry[] = [
     blurb: "Biblical and WWI imagery in the Inspector's prophetic warning.",
   },
   {
-    href: '/analysis/inspector-calls/a-man-has-to-make-his-own-way',
-    title: 'A man has to make his own way',
+    href: '/analysis/inspector-calls/a-man-has-to-mind-his-own-business',
+    title: 'A man has to mind his own business',
     blurb: "Birling's individualism dismantled by Priestley in Act One.",
   },
   {
@@ -270,6 +270,11 @@ export default async function InspectorCallsHubPage() {
           <ArrowRight className="size-3.5" />
         </Button>
       </section>
+
+      <p className="text-[0.7rem] leading-relaxed text-muted-foreground/80">
+        © Samuel French / Concord Theatricals on behalf of the Priestley estate. Quotations are
+        short fair-dealing extracts.
+      </p>
     </PageContainer>
   )
 }

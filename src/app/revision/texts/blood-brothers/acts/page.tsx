@@ -1,14 +1,7 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Drama,
-  Quote,
-  Sparkles,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, Drama, Quote, Sparkles } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -21,8 +14,7 @@ export const metadata: Metadata = {
   description:
     'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/revision/texts/blood-brothers/acts',
+    canonical: 'https://theenglishhub.app/revision/texts/blood-brothers/acts',
   },
 }
 
@@ -42,7 +34,7 @@ const ACT_1: SceneBlock[] = [
       'The Narrator reveals the ending before it begins: twin brothers who die on the day they discover the truth. Mrs Johnstone, a working-class mother of seven, agrees to give one of her unborn twins to her employer Mrs Lyons. Russell immediately establishes that class power, not personal wickedness, drives the separation.',
     quotes: [
       {
-        text: '"Did you ever hear the story of the Johnstone twins?"',
+        text: '"So did y’ hear the story of the Johnstone twins?"',
         speaker: 'Narrator',
         analysis:
           'Opens as a ballad already told, creating dramatic irony. The audience watches knowing the outcome, which shifts attention from plot to cause.',
@@ -57,7 +49,7 @@ const ACT_1: SceneBlock[] = [
         text: '"Give one to me."',
         speaker: 'Mrs Lyons',
         analysis:
-          'A blunt imperative that exposes Mrs Lyons\'s sense of entitlement. She frames buying a child as a reasonable transaction because her class position lets her.',
+          "A blunt imperative that exposes Mrs Lyons's sense of entitlement. She frames buying a child as a reasonable transaction because her class position lets her.",
       },
     ],
     examFocus:
@@ -72,13 +64,13 @@ const ACT_1: SceneBlock[] = [
         text: '"I wish I was our Sammy."',
         speaker: 'Mickey',
         analysis:
-          'A child\'s song about wanting to be older. Russell uses it to foreshadow Mickey\'s later wish that he had Edward\'s life instead.',
+          "A child's song about wanting to be older. Russell uses it to foreshadow Mickey's later wish that he had Edward's life instead.",
       },
       {
         text: '"We\'re blood brothers."',
         speaker: 'Mickey and Edward',
         analysis:
-          'The title ritual. Russell makes the boys\' chosen bond mirror the biological bond they do not know about, layering irony.',
+          "The title ritual. Russell makes the boys' chosen bond mirror the biological bond they do not know about, layering irony.",
       },
       {
         text: '"You can\'t play with him."',
@@ -88,10 +80,10 @@ const ACT_1: SceneBlock[] = [
       },
     ],
     examFocus:
-      'Russell\'s controlled experiment: two genetically identical boys raised apart. The childhood scenes are crucial evidence for the nature-versus-nurture argument. Examiners expect you to connect innocence here to the destruction in Act 2.',
+      "Russell's controlled experiment: two genetically identical boys raised apart. The childhood scenes are crucial evidence for the nature-versus-nurture argument. Examiners expect you to connect innocence here to the destruction in Act 2.",
   },
   {
-    heading: 'Mrs Lyons\'s superstition & the move',
+    heading: "Mrs Lyons's superstition & the move",
     summary:
       'Mrs Lyons fabricates a superstition — that separated twins will die if they learn the truth — to control Mrs Johnstone. As the friendship grows, the Lyons family relocates to the countryside. Russell shows how wealth provides the power to simply move away from problems that the Johnstones cannot escape.',
     quotes: [
@@ -105,7 +97,7 @@ const ACT_1: SceneBlock[] = [
         text: '"Shoes upon the table."',
         speaker: 'Mrs Johnstone',
         analysis:
-          'Working-class superstition used as a motif. Russell parallels folk belief with Mrs Lyons\'s invented superstition to question who controls narratives of fate.',
+          "Working-class superstition used as a motif. Russell parallels folk belief with Mrs Lyons's invented superstition to question who controls narratives of fate.",
       },
     ],
     examFocus:
@@ -123,7 +115,7 @@ const ACT_2: SceneBlock[] = [
         text: '"If you\'d been born here, what would you have been?"',
         speaker: 'Linda',
         analysis:
-          'Linda voices the play\'s central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge.',
+          "Linda voices the play's central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge.",
       },
       {
         text: '"Take a letter, Miss Jones."',
@@ -133,12 +125,12 @@ const ACT_2: SceneBlock[] = [
       },
     ],
     examFocus:
-      'The adolescence section compresses years into minutes using songs and montage. Examiners reward discussion of Russell\'s theatrical techniques and how structure reflects the accelerating pressure of class forces.',
+      "The adolescence section compresses years into minutes using songs and montage. Examiners reward discussion of Russell's theatrical techniques and how structure reflects the accelerating pressure of class forces.",
   },
   {
     heading: 'Adulthood — unemployment and collapse',
     summary:
-      'Mickey leaves school for a factory job, then loses it in the recession. Edward goes to university. When Sammy involves Mickey in a robbery, Mickey is imprisoned. Released depressed and dependent on medication, he is unable to reconnect with Linda or himself. Russell makes the economic context explicit: this is Thatcher\'s Liverpool.',
+      "Mickey leaves school for a factory job, then loses it in the recession. Edward goes to university. When Sammy involves Mickey in a robbery, Mickey is imprisoned. Released depressed and dependent on medication, he is unable to reconnect with Linda or himself. Russell makes the economic context explicit: this is Thatcher's Liverpool.",
     quotes: [
       {
         text: '"I\'m not an adolescent, I\'m nearly eighteen."',
@@ -150,7 +142,7 @@ const ACT_2: SceneBlock[] = [
         text: '"There\'s a man gone mad in the town tonight."',
         speaker: 'Narrator',
         analysis:
-          'The Narrator\'s warning builds toward the climax. Russell uses the ballad form to make Mickey\'s breakdown feel both personal and systemic.',
+          "The Narrator's warning builds toward the climax. Russell uses the ballad form to make Mickey's breakdown feel both personal and systemic.",
       },
       {
         text: '"I could have been him."',
@@ -160,18 +152,18 @@ const ACT_2: SceneBlock[] = [
       },
     ],
     examFocus:
-      'Mickey\'s decline is Russell\'s strongest political argument: environment, not character, determines outcomes. Examiners expect contextual links to 1980s Liverpool, deindustrialisation and Thatcherism.',
+      "Mickey's decline is Russell's strongest political argument: environment, not character, determines outcomes. Examiners expect contextual links to 1980s Liverpool, deindustrialisation and Thatcherism.",
   },
   {
     heading: 'The climax — truth and death',
     summary:
-      'Mickey, armed and desperate, confronts Edward at the town hall. Mrs Johnstone arrives and tells both sons they are twins. The revelation destroys Mickey: everything could have been different. He accidentally fires the gun, killing Edward; the police shoot Mickey. The Narrator\'s prophecy is fulfilled, but Russell makes clear that the real killer is a society that assigns life chances at birth.',
+      "Mickey, armed and desperate, confronts Edward at the town hall. Mrs Johnstone arrives and tells both sons they are twins. The revelation destroys Mickey: everything could have been different. He accidentally fires the gun, killing Edward; the police shoot Mickey. The Narrator's prophecy is fulfilled, but Russell makes clear that the real killer is a society that assigns life chances at birth.",
     quotes: [
       {
         text: '"How come you didn\'t grow up like me?"',
         speaker: 'Mickey',
         analysis:
-          'Mickey\'s final cry of class rage. Russell gives him the play\'s thesis in ordinary speech, making the political argument viscerally human.',
+          "Mickey's final cry of class rage. Russell gives him the play's thesis in ordinary speech, making the political argument viscerally human.",
       },
       {
         text: '"Tell me it\'s not true, say it\'s just a story."',
@@ -183,11 +175,11 @@ const ACT_2: SceneBlock[] = [
         text: '"And do we blame superstition for what came to pass?"',
         speaker: 'Narrator',
         analysis:
-          'The Narrator\'s final question rejects the supernatural reading. Russell demands that the audience locate blame in class structures, not fate.',
+          "The Narrator's final question rejects the supernatural reading. Russell demands that the audience locate blame in class structures, not fate.",
       },
     ],
     examFocus:
-      'The ending rewards structural analysis: the prologue promised this death, so the audience\'s task is to understand why, not what. Examiners look for discussion of Russell\'s use of dramatic irony, the Narrator\'s choric function and the political message.',
+      "The ending rewards structural analysis: the prologue promised this death, so the audience's task is to understand why, not what. Examiners look for discussion of Russell's use of dramatic irony, the Narrator's choric function and the political message.",
   },
 ]
 
@@ -204,11 +196,17 @@ export default async function BloodBrothersActsPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Blood Brothers", url: "https://theenglishhub.app/revision/texts/blood-brothers" },
-          { name: "Act-by-Act Analysis", url: "https://theenglishhub.app/revision/texts/blood-brothers/acts" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Blood Brothers',
+            url: 'https://theenglishhub.app/revision/texts/blood-brothers',
+          },
+          {
+            name: 'Act-by-Act Analysis',
+            url: 'https://theenglishhub.app/revision/texts/blood-brothers/acts',
+          },
         ]}
       />
       {/* Hero */}
@@ -240,9 +238,7 @@ export default async function BloodBrothersActsPage() {
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Act-by-Act Analysis
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">
-            Blood Brothers by Willy Russell
-          </p>
+          <p className="mt-2 text-body-lg text-muted-foreground">Blood Brothers by Willy Russell</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
             A detailed walk-through of both acts with key quotations, Russell&apos;s methods and
             examiner-focused analysis. Every quote is 15 words or fewer for memorisation.
@@ -260,9 +256,7 @@ export default async function BloodBrothersActsPage() {
           {ACT_1.map((block) => (
             <Card key={block.heading}>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">
-                  {block.heading}
-                </CardTitle>
+                <CardTitle className="text-heading-md font-heading">{block.heading}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-body-sm text-muted-foreground">{block.summary}</p>
@@ -273,9 +267,7 @@ export default async function BloodBrothersActsPage() {
                       key={q.text}
                       className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-1.5"
                     >
-                      <p className="text-body-md font-medium italic text-foreground">
-                        {q.text}
-                      </p>
+                      <p className="text-body-md font-medium italic text-foreground">{q.text}</p>
                       <p className="text-caption uppercase tracking-wide text-primary">
                         {q.speaker}
                       </p>
@@ -309,9 +301,7 @@ export default async function BloodBrothersActsPage() {
           {ACT_2.map((block) => (
             <Card key={block.heading}>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">
-                  {block.heading}
-                </CardTitle>
+                <CardTitle className="text-heading-md font-heading">{block.heading}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-body-sm text-muted-foreground">{block.summary}</p>
@@ -322,9 +312,7 @@ export default async function BloodBrothersActsPage() {
                       key={q.text}
                       className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-1.5"
                     >
-                      <p className="text-body-md font-medium italic text-foreground">
-                        {q.text}
-                      </p>
+                      <p className="text-body-md font-medium italic text-foreground">{q.text}</p>
                       <p className="text-caption uppercase tracking-wide text-primary">
                         {q.speaker}
                       </p>
@@ -386,9 +374,9 @@ export default async function BloodBrothersActsPage() {
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright,
-        Designs and Patents Act 1988 for criticism and review. Full text available from
-        your school or local library.
+        <strong>Rights notice:</strong> &copy; Methuen Drama / Bloomsbury on behalf of Willy Russell
+        (b. 1947). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
+        review, quotation). For full text, students should consult the licensed school edition.
       </p>
     </div>
   )

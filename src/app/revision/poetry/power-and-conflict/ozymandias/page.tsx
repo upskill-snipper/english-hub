@@ -21,7 +21,7 @@ const ozymandias: PoemData = {
       annotations: [
         {
           type: 'Frame narrative',
-          note: 'Shelley distances himself from the story by using a second-hand account. The speaker never saw Ozymandias directly — the tale passes through multiple voices (traveller, sculptor, Ozymandias himself), undermining the permanence of the king\'s legacy.',
+          note: "Shelley distances himself from the story by using a second-hand account. The speaker never saw Ozymandias directly — the tale passes through multiple voices (traveller, sculptor, Ozymandias himself), undermining the permanence of the king's legacy.",
           color: '#3b82f6',
         },
         {
@@ -32,7 +32,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'Who said — "Two vast and trunkless legs of stone',
+      text: 'Who said: Two vast and trunkless legs of stone',
       annotations: [
         {
           type: 'Imagery',
@@ -47,22 +47,22 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'Stand in the desert. . . . Near them, on the sand,',
+      text: 'Stand in the desert. Near them, on the sand,',
       annotations: [
         {
           type: 'Symbolism',
-          note: 'The desert is a powerful symbol of emptiness and the erasure of civilisation. The ellipsis ("....") creates a visual pause, mirroring the vast empty space around the ruins.',
+          note: 'The desert is a powerful symbol of emptiness and the erasure of civilisation. The mid-line full stop after "desert" creates a visual pause, mirroring the vast empty space around the ruins.',
           color: '#10b981',
         },
         {
           type: 'Caesura',
-          note: 'The full stops mid-line create a caesura, forcing the reader to pause — echoing the desolation and stillness of the scene.',
+          note: 'The full stop mid-line ("Stand in the desert. Near them…") creates a caesura, forcing the reader to pause — echoing the desolation and stillness of the scene.',
           color: '#a855f7',
         },
       ],
     },
     {
-      text: 'Half sunk a shattered visage lies, whose frown,',
+      text: 'Half sunk, a shattered visage lies, whose frown,',
       annotations: [
         {
           type: 'Imagery',
@@ -112,7 +112,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'The hand that mocked them, and the heart that fed;',
+      text: 'The hand that mocked them and the heart that fed:',
       annotations: [
         {
           type: 'Ambiguity',
@@ -127,7 +127,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'And on the pedestal, these words appear:',
+      text: 'And on the pedestal these words appear:',
       annotations: [
         {
           type: 'Structure',
@@ -137,22 +137,22 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: '"My name is Ozymandias, King of Kings;',
+      text: "'My name is Ozymandias, king of kings:",
       annotations: [
         {
           type: 'Hubris',
-          note: '"King of Kings" is a superlative title claiming absolute supremacy over all other rulers. This grandiose self-declaration is made absurd by the surrounding destruction. The biblical echo (Revelation 19:16 uses the same phrase for God) suggests blasphemous arrogance.',
+          note: '"king of kings" is a superlative title claiming absolute supremacy over all other rulers. This grandiose self-declaration is made absurd by the surrounding destruction. The biblical echo (Revelation 19:16 uses the same phrase, capitalised for God) suggests blasphemous arrogance.',
           color: '#ef4444',
         },
         {
           type: 'Key quote',
-          note: 'Ozymandias\'s own words become the most powerful evidence against him. His claim to eternal greatness is permanently undercut by the ruin around the inscription.',
+          note: "Ozymandias's own words become the most powerful evidence against him. His claim to eternal greatness is permanently undercut by the ruin around the inscription.",
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'Look on my Works, ye Mighty, and despair!"',
+      text: "Look on my Works, ye Mighty, and despair!'",
       annotations: [
         {
           type: 'Dramatic irony',
@@ -176,7 +176,7 @@ const ozymandias: PoemData = {
         },
         {
           type: 'Key quote',
-          note: 'Three words that demolish the entire premise of Ozymandias\'s power. The starkness of the statement makes it devastating.',
+          note: "Three words that demolish the entire premise of Ozymandias's power. The starkness of the statement makes it devastating.",
           color: '#f59e0b',
         },
       ],
@@ -241,7 +241,7 @@ Lines 3--5: Near the legs, the traveller describes the statue's face ("visage") 
 
 Lines 6--8: These lines praise the sculptor's skill. He "read" the king's passions accurately and carved them so well that they "survive" — outlasting both the sculptor and the king. There is an important ambiguity in "the hand that mocked them, and the heart that fed" — this could refer to the sculptor's hand (which "mocked" by imitating the king's expression) or the king's hand (which "mocked" his subjects).
 
-Lines 9--11: The inscription on the pedestal delivers Ozymandias's boastful command: "My name is Ozymandias, King of Kings; / Look on my Works, ye Mighty, and despair!" He commands other powerful rulers to look at what he has built and feel hopeless in comparison.
+Lines 9--11: The inscription on the pedestal delivers Ozymandias's boastful command: "My name is Ozymandias, king of kings: / Look on my Works, ye Mighty, and despair!" He commands other powerful rulers to look at what he has built and feel hopeless in comparison.
 
 Lines 12--14: The sestet delivers the poem's devastating irony. "Nothing beside remains" — all the "Works" Ozymandias boasted about have vanished completely. Around the broken statue, the desert stretches endlessly. The "lone and level sands" have the final word, showing that nature and time triumph over even the most powerful human rulers.
 
@@ -281,15 +281,15 @@ Frame narrative: The poem uses three layers of voice — the speaker, the travel
       themes: ['Power and control', 'Tyranny', 'Human nature'],
     },
     {
-      quote: 'The hand that mocked them, and the heart that fed',
+      quote: 'The hand that mocked them and the heart that fed',
       analysis:
-        'This deliberately ambiguous line can be read in two ways. "The hand that mocked" could be the sculptor\'s hand (which copied/imitated the king\'s expression) or the king\'s hand (which mocked his subjects through cruel rule). "The heart that fed" could be the king\'s heart (which fed on power) or the people\'s hearts (which sustained the regime). This duality links art and tyranny as forms of power.',
+        "This deliberately ambiguous line can be read in two ways. \"The hand that mocked\" could be the sculptor's hand (which copied/imitated the king's expression) or the king's hand (which mocked his subjects through cruel rule). \"The heart that fed\" could be the king's heart (which fed on power) or the people's hearts (which sustained the regime). This duality links art and tyranny as forms of power.",
       themes: ['Art vs power', 'Ambiguity', 'Legacy'],
     },
     {
-      quote: 'My name is Ozymandias, King of Kings',
+      quote: 'My name is Ozymandias, king of kings',
       analysis:
-        'The inscription is Ozymandias speaking directly — the only time we hear the tyrant\'s own voice. "King of Kings" is a superlative that claims superiority over all other rulers. The phrase echoes biblical language used for God (Revelation 19:16), suggesting blasphemous arrogance. Naming himself is an attempt to ensure his identity lasts forever — yet the name now represents failure, not glory.',
+        'The inscription is Ozymandias speaking directly — the only time we hear the tyrant\'s own voice. "king of kings" is a superlative that claims superiority over all other rulers. The phrase echoes biblical language used for God (Revelation 19:16), suggesting blasphemous arrogance. Naming himself is an attempt to ensure his identity lasts forever — yet the name now represents failure, not glory.',
       themes: ['Pride and hubris', 'Power', 'Legacy'],
     },
     {
@@ -331,14 +331,14 @@ Frame narrative: The poem uses three layers of voice — the speaker, the travel
       device: 'Symbolism',
       example: 'the desert and the ruined statue',
       effect:
-        'The desert symbolises the erasure of human achievement by time and nature. The broken statue symbolises the inevitable fall of all tyrannical power. Together, they create a visual metaphor: no matter how grand a ruler\'s ambitions, nature will reclaim everything.',
+        "The desert symbolises the erasure of human achievement by time and nature. The broken statue symbolises the inevitable fall of all tyrannical power. Together, they create a visual metaphor: no matter how grand a ruler's ambitions, nature will reclaim everything.",
       lineRef: 2,
     },
     {
       device: 'Juxtaposition',
-      example: '"King of Kings" vs "Nothing beside remains"',
+      example: '"king of kings" vs "Nothing beside remains"',
       effect:
-        'The poem places Ozymandias\'s grandiose self-description directly beside the reality of his total obscurity. This contrast is the poem\'s central mechanism: the bigger the boast, the more devastating the reality. The juxtaposition forces the reader to see the absurdity of claiming eternal greatness.',
+        "The poem places Ozymandias's grandiose self-description directly beside the reality of his total obscurity. This contrast is the poem's central mechanism: the bigger the boast, the more devastating the reality. The juxtaposition forces the reader to see the absurdity of claiming eternal greatness.",
       lineRef: 11,
     },
     {
@@ -350,7 +350,7 @@ Frame narrative: The poem uses three layers of voice — the speaker, the travel
     },
     {
       device: 'Personification',
-      example: 'the hand that mocked them, and the heart that fed',
+      example: 'the hand that mocked them and the heart that fed',
       effect:
         'Human qualities ("mocked", "fed") are attributed to abstract concepts of artistry and power. The "hand" and "heart" become symbolic of the sculptor\'s craft and the ruler\'s ambition. By personifying these, Shelley suggests that both art and tyranny are driven by deeply human impulses.',
       lineRef: 7,
@@ -364,9 +364,9 @@ Frame narrative: The poem uses three layers of voice — the speaker, the travel
     },
     {
       device: 'Irony (situational)',
-      example: 'The sculptor\'s work survives, the king\'s does not',
+      example: "The sculptor's work survives, the king's does not",
       effect:
-        'Ozymandias commissioned the statue to immortalise his power, but it is the sculptor\'s skill — the accurate depiction of cruelty — that actually endures. Art outlasts political power. The irony is that the king is remembered not for his achievements but for his arrogance and the sculptor\'s talent.',
+        "Ozymandias commissioned the statue to immortalise his power, but it is the sculptor's skill — the accurate depiction of cruelty — that actually endures. Art outlasts political power. The irony is that the king is remembered not for his achievements but for his arrogance and the sculptor's talent.",
       lineRef: 5,
     },
   ],
@@ -379,9 +379,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'oz-1',
     question: 'What is the main theme of Ozymandias?',
     type: 'multiple-choice',
-    options: ['The power of nature over humanity', 'The transience of political power', 'The beauty of ancient art', 'The importance of travel and exploration'],
+    options: [
+      'The power of nature over humanity',
+      'The transience of political power',
+      'The beauty of ancient art',
+      'The importance of travel and exploration',
+    ],
     correctIndex: 1,
-    explanation: 'Shelley explores how even the mightiest rulers are eventually forgotten. The ruined statue symbolises the inevitable decline of all human power and ambition.',
+    explanation:
+      'Shelley explores how even the mightiest rulers are eventually forgotten. The ruined statue symbolises the inevitable decline of all human power and ambition.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -389,9 +395,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'oz-2',
     question: 'What does the phrase "sneer of cold command" reveal about Ozymandias?',
     type: 'multiple-choice',
-    options: ['He was a kind and generous ruler', 'He was a cruel and authoritarian tyrant', 'He was afraid of his enemies', 'He was an artist and sculptor'],
+    options: [
+      'He was a kind and generous ruler',
+      'He was a cruel and authoritarian tyrant',
+      'He was afraid of his enemies',
+      'He was an artist and sculptor',
+    ],
     correctIndex: 1,
-    explanation: '"Sneer" shows contempt for others, "cold" shows lack of empathy, and "command" shows absolute authority. Together they characterise Ozymandias as a heartless tyrant.',
+    explanation:
+      '"Sneer" shows contempt for others, "cold" shows lack of empathy, and "command" shows absolute authority. Together they characterise Ozymandias as a heartless tyrant.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -399,9 +411,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'oz-3',
     question: 'What is the effect of the line "Nothing beside remains"?',
     type: 'multiple-choice',
-    options: ['It shows the statue is well preserved', 'It devastatingly undercuts Ozymandias\'s boastful inscription', 'It describes the desert landscape positively', 'It suggests the traveller is lost'],
+    options: [
+      'It shows the statue is well preserved',
+      "It devastatingly undercuts Ozymandias's boastful inscription",
+      'It describes the desert landscape positively',
+      'It suggests the traveller is lost',
+    ],
     correctIndex: 1,
-    explanation: 'This short, blunt sentence directly contradicts the king\'s grand claims. After his boast about his "Works", three plain words demolish his legacy entirely.',
+    explanation:
+      'This short, blunt sentence directly contradicts the king\'s grand claims. After his boast about his "Works", three plain words demolish his legacy entirely.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -409,9 +427,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'oz-4',
     question: 'What form does Ozymandias take?',
     type: 'multiple-choice',
-    options: ['A free verse poem', 'A sonnet with an irregular rhyme scheme', 'A ballad with regular quatrains', 'A dramatic monologue in blank verse'],
+    options: [
+      'A free verse poem',
+      'A sonnet with an irregular rhyme scheme',
+      'A ballad with regular quatrains',
+      'A dramatic monologue in blank verse',
+    ],
     correctIndex: 1,
-    explanation: 'Ozymandias is a 14-line sonnet, but Shelley deliberately breaks from standard Petrarchan and Shakespearean rhyme schemes. The irregular structure mirrors the theme of breaking from established power.',
+    explanation:
+      'Ozymandias is a 14-line sonnet, but Shelley deliberately breaks from standard Petrarchan and Shakespearean rhyme schemes. The irregular structure mirrors the theme of breaking from established power.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -419,9 +443,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'oz-5',
     question: 'What is the significance of the sculptor in the poem?',
     type: 'multiple-choice',
-    options: ['He represents the failure of art', 'His work survives while the king\'s empire does not, showing art outlasts power', 'He was punished by Ozymandias for his work', 'He is the poem\'s narrator'],
+    options: [
+      'He represents the failure of art',
+      "His work survives while the king's empire does not, showing art outlasts power",
+      'He was punished by Ozymandias for his work',
+      "He is the poem's narrator",
+    ],
     correctIndex: 1,
-    explanation: 'The sculptor\'s art endures while the king\'s political achievements have vanished. This irony shows that art and craft outlast tyrannical power.',
+    explanation:
+      "The sculptor's art endures while the king's political achievements have vanished. This irony shows that art and craft outlast tyrannical power.",
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -431,7 +461,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: ['Verbal irony', 'Dramatic irony', 'Cosmic irony', 'Socratic irony'],
     correctIndex: 1,
-    explanation: 'Dramatic irony occurs because the reader knows something Ozymandias did not: that his "Works" have completely vanished. His command to "despair" now means something entirely different from what he intended.',
+    explanation:
+      'Dramatic irony occurs because the reader knows something Ozymandias did not: that his "Works" have completely vanished. His command to "despair" now means something entirely different from what he intended.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -439,9 +470,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'oz-7',
     question: 'Why does Shelley use a frame narrative (a story within a story)?',
     type: 'multiple-choice',
-    options: ['To make the poem longer', 'To distance the reader from Ozymandias, emphasising how his legacy has faded through retelling', 'To show that the traveller is unreliable', 'To create a happy ending'],
+    options: [
+      'To make the poem longer',
+      'To distance the reader from Ozymandias, emphasising how his legacy has faded through retelling',
+      'To show that the traveller is unreliable',
+      'To create a happy ending',
+    ],
     correctIndex: 1,
-    explanation: 'The tale passes through multiple voices (speaker, traveller, sculptor, Ozymandias). This layered retelling undermines the king\'s desire for a permanent, direct legacy.',
+    explanation:
+      "The tale passes through multiple voices (speaker, traveller, sculptor, Ozymandias). This layered retelling undermines the king's desire for a permanent, direct legacy.",
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -449,29 +486,49 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'oz-8',
     question: 'What historical figure is Ozymandias based on?',
     type: 'multiple-choice',
-    options: ['Alexander the Great', 'Julius Caesar', 'Ramesses II (Pharaoh of Egypt)', 'Genghis Khan'],
+    options: [
+      'Alexander the Great',
+      'Julius Caesar',
+      'Ramesses II (Pharaoh of Egypt)',
+      'Genghis Khan',
+    ],
     correctIndex: 2,
-    explanation: 'Ozymandias is the Greek name for Ramesses II, one of ancient Egypt\'s most powerful pharaohs. The British Museum had recently acquired a fragment of his statue, likely inspiring the poem.',
+    explanation:
+      "Ozymandias is the Greek name for Ramesses II, one of ancient Egypt's most powerful pharaohs. The British Museum had recently acquired a fragment of his statue, likely inspiring the poem.",
     topic: 'Context',
     difficulty: 'higher',
   },
   {
     id: 'oz-9',
-    question: 'How does the line "The lone and level sands stretch far away" contribute to the poem\'s message?',
+    question:
+      'How does the line "The lone and level sands stretch far away" contribute to the poem\'s message?',
     type: 'multiple-choice',
-    options: ['It celebrates the beauty of the Egyptian desert', 'It shows nature has completely erased Ozymandias\'s empire, giving nature the final word over human power', 'It suggests the traveller still has a long journey ahead', 'It describes where the statue was originally built'],
+    options: [
+      'It celebrates the beauty of the Egyptian desert',
+      "It shows nature has completely erased Ozymandias's empire, giving nature the final word over human power",
+      'It suggests the traveller still has a long journey ahead',
+      'It describes where the statue was originally built',
+    ],
     correctIndex: 1,
-    explanation: 'The final image of endless, flat desert shows nature has reclaimed everything. The sibilant sounds ("sands stretch") evoke wind erasing the king\'s memory. Nature, not the king, has the last word.',
+    explanation:
+      'The final image of endless, flat desert shows nature has reclaimed everything. The sibilant sounds ("sands stretch") evoke wind erasing the king\'s memory. Nature, not the king, has the last word.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
   {
     id: 'oz-10',
-    question: 'Which poem from the Power and Conflict anthology would be the strongest comparison for exploring the theme of the transience of power?',
+    question:
+      'Which poem from the Power and Conflict anthology would be the strongest comparison for exploring the theme of the transience of power?',
     type: 'multiple-choice',
-    options: ['Bayonet Charge by Ted Hughes', 'Tissue by Imtiaz Dharker', 'Remains by Simon Armitage', 'Poppies by Jane Weir'],
+    options: [
+      'Bayonet Charge by Ted Hughes',
+      'Tissue by Imtiaz Dharker',
+      'Remains by Simon Armitage',
+      'Poppies by Jane Weir',
+    ],
     correctIndex: 1,
-    explanation: 'Tissue by Imtiaz Dharker also explores impermanence and the fragility of human structures. Both poems argue that what humans build — empires or identities — is ultimately temporary, though they use very different imagery (stone vs paper).',
+    explanation:
+      'Tissue by Imtiaz Dharker also explores impermanence and the fragility of human structures. Both poems argue that what humans build — empires or identities — is ultimately temporary, though they use very different imagery (stone vs paper).',
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -480,17 +537,19 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
-    summary: 'Ozymandias explores the transience of political power, the arrogance of tyrants, and the supremacy of nature and time over human ambition.',
+    summary:
+      'Ozymandias explores the transience of political power, the arrogance of tyrants, and the supremacy of nature and time over human ambition.',
     keyPoints: [
       'Power is temporary — even the mightiest rulers are eventually forgotten',
-      'Art outlasts political power — the sculptor\'s work survives while the empire is gone',
+      "Art outlasts political power — the sculptor's work survives while the empire is gone",
       'Nature reclaims everything — the desert has the final word',
-      'Hubris (excessive pride) leads to downfall — Ozymandias\'s boast becomes evidence of his insignificance',
+      "Hubris (excessive pride) leads to downfall — Ozymandias's boast becomes evidence of his insignificance",
     ],
   },
   {
     topic: 'Language & Imagery',
-    summary: 'Shelley uses dramatic irony, alliteration, juxtaposition, and vivid imagery to contrast Ozymandias\'s grand claims with the reality of his ruined statue.',
+    summary:
+      "Shelley uses dramatic irony, alliteration, juxtaposition, and vivid imagery to contrast Ozymandias's grand claims with the reality of his ruined statue.",
     keyPoints: [
       '"Sneer of cold command" — characterises the tyrant through hard consonant sounds',
       '"Nothing beside remains" — blunt monosyllables demolish the inscription\'s grandeur',
@@ -500,7 +559,8 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Structure & Form',
-    summary: 'A 14-line sonnet with an irregular rhyme scheme that deliberately breaks from tradition, mirroring the poem\'s theme of dismantled power structures.',
+    summary:
+      "A 14-line sonnet with an irregular rhyme scheme that deliberately breaks from tradition, mirroring the poem's theme of dismantled power structures.",
     keyPoints: [
       'Irregular rhyme scheme (ababacdcedefef) — reflects decay and fragmentation',
       'Volta at line 12 ("Nothing beside remains") — the devastating turn',
@@ -510,12 +570,13 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Context',
-    summary: 'Written in 1817 during a period of political upheaval, the poem reflects Shelley\'s radical opposition to tyranny and absolute monarchy.',
+    summary:
+      "Written in 1817 during a period of political upheaval, the poem reflects Shelley's radical opposition to tyranny and absolute monarchy.",
     keyPoints: [
       'Shelley was a Romantic poet who opposed tyranny and institutional power',
       'Written during the aftermath of the French Revolution and Napoleonic Wars',
-      'Inspired by a fragment of Ramesses II\'s statue acquired by the British Museum',
-      'Part of a sonnet-writing competition with Horace Smith — Shelley\'s version became iconic',
+      "Inspired by a fragment of Ramesses II's statue acquired by the British Museum",
+      "Part of a sonnet-writing competition with Horace Smith — Shelley's version became iconic",
     ],
   },
 ]
@@ -534,7 +595,7 @@ const comparisons = [
     poet: 'Robert Browning',
     href: '/revision/poetry/power-and-conflict/my-last-duchess',
     reason:
-      'Both poems explore the abuse of power and how rulers try to control legacy. The Duke, like Ozymandias, seeks to dominate even after death — but while Ozymandias fails to preserve his power, the Duke\'s chilling monologue reveals a tyrant who is still in control.',
+      "Both poems explore the abuse of power and how rulers try to control legacy. The Duke, like Ozymandias, seeks to dominate even after death — but while Ozymandias fails to preserve his power, the Duke's chilling monologue reveals a tyrant who is still in control.",
     themes: ['Power and control', 'Pride', 'Legacy'],
   },
   {
@@ -542,7 +603,7 @@ const comparisons = [
     poet: 'William Blake',
     href: '/revision/poetry/power-and-conflict/london',
     reason:
-      'Both poems criticise those in power. Shelley attacks ancient tyranny; Blake attacks the institutions of his own time (the Church, the monarchy). Both suggest that power structures cause suffering, but while Ozymandias\'s power has crumbled, Blake\'s oppressors are still active.',
+      "Both poems criticise those in power. Shelley attacks ancient tyranny; Blake attacks the institutions of his own time (the Church, the monarchy). Both suggest that power structures cause suffering, but while Ozymandias's power has crumbled, Blake's oppressors are still active.",
     themes: ['Abuse of power', 'Suffering', 'Political critique'],
   },
   {
@@ -566,11 +627,17 @@ export default function OzymandiasPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
-          { name: "Ozymandias", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/ozymandias" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Power and Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
+          },
+          {
+            name: 'Ozymandias',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/ozymandias',
+          },
         ]}
       />
       {/* ── Breadcrumb / back ─────────────────────────────────────── */}
@@ -590,13 +657,13 @@ export default function OzymandiasPage() {
             <BookOpen className="size-5 text-rose-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              Ozymandias
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">Ozymandias</h1>
             <p className="text-body-sm text-muted-foreground">
               Percy Bysshe Shelley &middot; Power and Conflict anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              AQA
+            </Badge>
           </div>
         </div>
       </div>
@@ -623,13 +690,11 @@ export default function OzymandiasPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The AQA exam often asks you to compare two poems. These are strong
-          pairings with Ozymandias for the Power and Conflict cluster.
+          The AQA exam often asks you to compare two poems. These are strong pairings with
+          Ozymandias for the Power and Conflict cluster.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -643,9 +708,7 @@ export default function OzymandiasPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span
@@ -662,7 +725,8 @@ export default function OzymandiasPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Public domain &mdash; quotations from Ozymandias by Percy Bysshe Shelley reproduced freely.
+        Ozymandias by Percy Bysshe Shelley (1818) is in the public domain. Source: Project Gutenberg
+        / Wikisource &mdash; verified against the Verified Library.
       </p>
     </div>
   )

@@ -34,6 +34,7 @@ import {
   Quote,
   Edit3,
   StickyNote,
+  ShieldAlert,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -168,8 +169,7 @@ const ALL_SECTIONS: RevisionSection[] = [
   },
   {
     title: 'Games',
-    description:
-      'Vocabulary, quote-match and terminology games \u2014 learn faster by playing.',
+    description: 'Vocabulary, quote-match and terminology games \u2014 learn faster by playing.',
     href: '/games',
     icon: Gamepad2,
     colour: 'text-clay-600',
@@ -236,6 +236,17 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-cyan-400',
     bgColour: 'bg-cyan-500/10',
     stats: '4 skill areas',
+  },
+  {
+    title: 'Common Errors',
+    description:
+      '30 mistakes that cost marks \u2014 misquotations, wrong contexts, anthology version mix-ups. Verified against board specs.',
+    href: '/revision/common-errors',
+    icon: ShieldAlert,
+    colour: 'text-rose-400',
+    bgColour: 'bg-rose-500/10',
+    stats: '30 verified flags',
+    tag: 'New',
   },
 ]
 
@@ -387,10 +398,7 @@ export default async function RevisionHubPage() {
       </section>
 
       {/* ── Headline analytics (streak, progress, AI feedback) ────────── */}
-      <section
-        aria-label="Your progress snapshot"
-        className="grid gap-4 sm:grid-cols-3"
-      >
+      <section aria-label="Your progress snapshot" className="grid gap-4 sm:grid-cols-3">
         <Link
           href="/revision/analytics"
           className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-emerald-500/40 hover:shadow-card-hover"
@@ -405,7 +413,8 @@ export default async function RevisionHubPage() {
             </div>
           </div>
           <p className="mt-3 text-xs text-muted-foreground">
-            Keep going daily — every session you complete on a quiz, set text, or mock exam builds your streak.
+            Keep going daily — every session you complete on a quiz, set text, or mock exam builds
+            your streak.
           </p>
           <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
             View full analytics <ArrowRight className="size-3" />
@@ -421,13 +430,12 @@ export default async function RevisionHubPage() {
             </div>
             <div>
               <p className="text-xs uppercase tracking-wider text-muted-foreground">Progress</p>
-              <p className="text-heading-sm font-heading text-foreground">
-                {boardName} coverage
-              </p>
+              <p className="text-heading-sm font-heading text-foreground">{boardName} coverage</p>
             </div>
           </div>
           <p className="mt-3 text-xs text-muted-foreground">
-            Track how much of the {boardName} syllabus you&apos;ve covered and where you still have gaps.
+            Track how much of the {boardName} syllabus you&apos;ve covered and where you still have
+            gaps.
           </p>
           <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
             See what&apos;s next <ArrowRight className="size-3" />

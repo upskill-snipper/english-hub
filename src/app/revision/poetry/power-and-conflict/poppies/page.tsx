@@ -3,10 +3,7 @@
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {
-  InteractivePoemViewer,
-  type PoemData,
-} from '@/components/study'
+import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -18,74 +15,121 @@ const poppiesData: PoemData = {
   poet: 'Jane Weir',
   lines: [
     // Stanza 1
-    { text: 'Three days before Armistice Sunday', annotations: [
-      { type: 'Context', note: 'Armistice Sunday commemorates the end of World War I on 11 November. Setting the poem three days before places us in the anticipatory grief of Remembrance.', color: '#60a5fa' },
-    ] },
-    { text: 'and poppies had already been placed', annotations: [
-      { type: 'Symbolism', note: 'Poppies are the universal symbol of remembrance for fallen soldiers, originating from the fields of Flanders in WWI.', color: '#f59e0b' },
-    ] },
+    {
+      text: 'Three days before Armistice Sunday',
+      annotations: [
+        {
+          type: 'Context',
+          note: 'Armistice Sunday commemorates the end of World War I on 11 November. Setting the poem three days before places us in the anticipatory grief of Remembrance.',
+          color: '#60a5fa',
+        },
+      ],
+    },
+    {
+      text: 'and poppies had already been placed',
+      annotations: [
+        {
+          type: 'Symbolism',
+          note: 'Poppies are the universal symbol of remembrance for fallen soldiers, originating from the fields of Flanders in WWI.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: 'on individual white crosses in the graveyard.' },
-    { text: 'Before you left, I pinned one', annotations: [
-      { type: 'Domestic imagery', note: 'The intimate, maternal act of pinning — typically associated with school uniforms — blurs the boundary between sending a child to school and sending a soldier to war.', color: '#a78bfa' },
-    ] },
+    {
+      text: 'Before you left, I pinned one',
+      annotations: [
+        {
+          type: 'Domestic imagery',
+          note: 'The intimate, maternal act of pinning — typically associated with school uniforms — blurs the boundary between sending a child to school and sending a soldier to war.',
+          color: '#a78bfa',
+        },
+      ],
+    },
     { text: 'onto your lapel, crimped petals,' },
     { text: 'trembling, slowly melting' },
     { text: '' },
     // Stanza 2
-    { text: 'on my tongue. All my words', annotations: [
-      { type: 'Enjambment', note: 'The enjambment across the stanza break enacts the mother\'s loss of control — her words literally spill over the boundary.', color: '#34d399' },
-    ] },
+    {
+      text: 'on my tongue. All my words',
+      annotations: [
+        {
+          type: 'Enjambment',
+          note: "The enjambment across the stanza break enacts the mother's loss of control — her words literally spill over the boundary.",
+          color: '#34d399',
+        },
+      ],
+    },
     { text: 'flattened, rolled, turned into felt,' },
     { text: '' },
-    { text: 'slowly melting. I pinned one', annotations: [
-      { type: 'Repetition', note: 'The repeated phrase "I pinned one" and "slowly melting" create a cyclical, obsessive quality — the mother replays the memory.', color: '#f472b6' },
-    ] },
+    {
+      text: 'slowly melting. I pinned one',
+      annotations: [
+        {
+          type: 'Repetition',
+          note: 'The repeated phrase "I pinned one" and "slowly melting" create a cyclical, obsessive quality — the mother replays the memory.',
+          color: '#f472b6',
+        },
+      ],
+    },
     { text: 'onto your lapel, crimped petals,' },
-    { text: 'spasms of paper red, paper red', annotations: [
-      { type: 'Tactile imagery', note: '"Spasms" suggests involuntary, painful movement — the artificial poppy\'s crepe paper becomes a metaphor for the mother\'s convulsive grief. The repetition of "paper red" mimics the stuttering of someone in distress.', color: '#f59e0b' },
-    ] },
+    {
+      text: 'spasms of paper red, paper red',
+      annotations: [
+        {
+          type: 'Tactile imagery',
+          note: '"Spasms" suggests involuntary, painful movement — the artificial poppy\'s crepe paper becomes a metaphor for the mother\'s convulsive grief. The repetition of "paper red" mimics the stuttering of someone in distress.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: '' },
     // Stanza 3
     { text: 'blockade of yellow bias binding around your blazer.' },
     { text: '' },
-    { text: 'I made you play at being Eskimos', annotations: [
-      { type: 'Domestic language', note: 'The childhood game reinforces the mother\'s perspective — she still sees her child through memories of innocence and play.', color: '#a78bfa' },
-    ] },
-    { text: 'like a treasure chest to me,' },
-    { text: 'its blown, exhausted, yawning mouth.' },
+    // VERIFY: 'I made you play at being Eskimos / like a treasure chest to me, / its blown, exhausted, yawning mouth.' — does not appear in any verified Weir text I can confirm. Removed until cross-checked against the Templar Poetry / AQA anthology.
     { text: '' },
-    { text: 'After you\'d gone I went outside,' },
-    { text: 'paused, then released a song bird from its cage.', annotations: [
-      { type: 'Metaphor', note: 'The songbird released from its cage symbolises the mother letting her child go — an act that is both liberating and painful. It may also represent the child\'s spirit or the mother\'s suppressed emotions finally finding release.', color: '#60a5fa' },
-    ] },
+    { text: "After you'd gone I went outside," },
+    {
+      text: 'paused, then released a song bird from its cage.',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: "The songbird released from its cage symbolises the mother letting her child go — an act that is both liberating and painful. It may also represent the child's spirit or the mother's suppressed emotions finally finding release.",
+          color: '#60a5fa',
+        },
+      ],
+    },
     { text: '' },
     // Stanza 4
     { text: 'Later a single dove flew out from the pear tree,' },
-    { text: 'and this dove threw me for a second — in my chest' },
-    { text: 'as it were,' },
-    { text: 'as if pulling at the wishbone' },
-    { text: 'of my war-Loss nerves, my stomach busy' },
-    { text: 'making tucks, darts, pleats, hat-Loss, heart-Loss,' },
-    { text: 'and the world overflowing', annotations: [
-      { type: 'Sensory detail', note: '"The world overflowing" conveys the overwhelming nature of grief — emotions flood beyond containment, mirroring the enjambment that runs throughout the poem.', color: '#34d399' },
-    ] },
-    { text: 'like a treasure chest to me,' },
-    { text: 'your, its, our fire, ball of hair, its only treasure' },
+    // VERIFY: 'this dove threw me for a second — in my chest / as it were, / as if pulling at the wishbone / of my war-torn nerves, my stomach busy' — phrasing not confirmed against verified Weir text. Removed until cross-checked.
+    { text: 'pulling at a wishbone,' },
+    // VERIFY: original Weir text in this neighbourhood — a corruption artefact (hyphenated compound) was previously here and has been replaced with a conservative blank line. Do not restore until cross-checked against Templar Poetry / AQA anthology.
+    { text: '' },
+    {
+      text: 'and the world overflowing',
+      annotations: [
+        {
+          type: 'Sensory detail',
+          note: '"The world overflowing" conveys the overwhelming nature of grief — emotions flood beyond containment, mirroring the enjambment that runs throughout the poem.',
+          color: '#34d399',
+        },
+      ],
+    },
+    // VERIFY: 'like a treasure chest to me, / your, its, our fire, ball of hair, its only treasure' — does not appear in any verified Weir source I can confirm. Removed.
     { text: '' },
     { text: 'I traced the diary dates with my finger, longing' },
     { text: 'to graze my nose across the top of your head,' },
     { text: 'to breathe you in, to taste' },
     { text: '' },
     { text: 'the graze of your skin, playground voice.' },
-    { text: 'my hair\u2014Loss nerves. All you\u2014' },
+    // VERIFY: a corrupted token (hyphenated compound containing a substitution artefact) was previously here. Removed until cross-checked against the Weir primary text.
+    { text: '' },
     { text: '' },
     { text: 'I think I\u2014' },
     { text: '' },
-    { text: 'And now it rains.' },
-    { text: 'And the dove flew' },
-    { text: 'And I leaned against it like a bird.', annotations: [
-      { type: 'Simile', note: 'The mother leans against the war memorial "like a bird" — fragile, small, seeking shelter. The bird imagery connects back to the released songbird and the dove, creating a network of avian symbolism representing freedom, peace, and vulnerability.', color: '#60a5fa' },
-    ] },
+    // VERIFY: 'And now it rains. / And the dove flew / And I leaned against it like a bird.' — closing phrasing not verifiable against primary source. The widely-attested closing is 'I listened, hoping to hear / your playground voice catching on the wind.' Conservatively pruned.
     { text: 'I listened, hoping to hear' },
     { text: 'your playground voice catching on the wind.' },
   ],
@@ -119,42 +163,50 @@ TENSE SHIFTS: The poem shifts between past and present tense, blurring the bound
   keyQuotes: [
     {
       quote: 'three days before Armistice Sunday',
-      analysis: 'The specific temporal marker grounds the poem in the rituals of remembrance. "Three days before" creates anticipation and dread — the mother is already preparing for the formal acknowledgment of loss. The reference to Armistice Sunday connects individual grief to collective, national mourning.',
+      analysis:
+        'The specific temporal marker grounds the poem in the rituals of remembrance. "Three days before" creates anticipation and dread — the mother is already preparing for the formal acknowledgment of loss. The reference to Armistice Sunday connects individual grief to collective, national mourning.',
       themes: ['Loss and absence', 'Memory', 'War and conflict'],
     },
     {
       quote: 'spasms of paper red',
-      analysis: 'The word "spasms" transforms the artificial poppy into something visceral and bodily — it suggests involuntary pain, convulsions, even death throes. "Paper red" is a transferred epithet: the redness belongs to blood and poppies, but is applied to paper, collapsing the boundary between the symbolic poppy and real bloodshed.',
+      analysis:
+        'The word "spasms" transforms the artificial poppy into something visceral and bodily — it suggests involuntary pain, convulsions, even death throes. "Paper red" is a transferred epithet: the redness belongs to blood and poppies, but is applied to paper, collapsing the boundary between the symbolic poppy and real bloodshed.',
       themes: ['War and conflict', 'Grief', 'Symbolism'],
     },
     {
       quote: 'I pinned one onto your lapel',
-      analysis: 'The tender, domestic act of pinning a poppy carries enormous weight. It evokes a mother pinning a name badge on a school blazer, but also the formal ritual of wearing a poppy for Remembrance. The verb "pinned" suggests both attachment and the sharp pain of a pin — love and hurt are inseparable.',
+      analysis:
+        'The tender, domestic act of pinning a poppy carries enormous weight. It evokes a mother pinning a name badge on a school blazer, but also the formal ritual of wearing a poppy for Remembrance. The verb "pinned" suggests both attachment and the sharp pain of a pin — love and hurt are inseparable.',
       themes: ['Loss and absence', 'Family', 'Domestic vs military'],
     },
     {
       quote: 'released a song bird from its cage',
-      analysis: 'A central metaphor for letting go. The caged bird represents the child held safe at home; releasing it symbolises the mother allowing her son to leave for war. The "song bird" implies beauty and fragility, while the cage suggests both protection and confinement. The act is both generous and devastating.',
+      analysis:
+        'A central metaphor for letting go. The caged bird represents the child held safe at home; releasing it symbolises the mother allowing her son to leave for war. The "song bird" implies beauty and fragility, while the cage suggests both protection and confinement. The act is both generous and devastating.',
       themes: ['Loss and absence', 'Freedom', 'Family'],
     },
     {
       quote: 'the world overflowing',
-      analysis: 'This phrase captures the mother\'s sense of being overwhelmed — her grief is so vast that it cannot be contained. "Overflowing" connects to the enjambment throughout the poem: emotions, like the verse itself, refuse to stay within boundaries. It also suggests abundance — the world is full of things that remind her of her son.',
+      analysis:
+        'This phrase captures the mother\'s sense of being overwhelmed — her grief is so vast that it cannot be contained. "Overflowing" connects to the enjambment throughout the poem: emotions, like the verse itself, refuse to stay within boundaries. It also suggests abundance — the world is full of things that remind her of her son.',
       themes: ['Grief', 'Memory', 'Nature'],
     },
     {
       quote: 'leaned against it like a bird',
-      analysis: 'The simile compares the mother to a bird — small, fragile, vulnerable. She leans against the war memorial seeking support, just as a bird might press against a branch for shelter. The bird imagery connects to the earlier songbird and dove, creating a symbolic thread: the mother, like the birds, is caught between freedom and loss.',
+      analysis:
+        'The simile compares the mother to a bird — small, fragile, vulnerable. She leans against the war memorial seeking support, just as a bird might press against a branch for shelter. The bird imagery connects to the earlier songbird and dove, creating a symbolic thread: the mother, like the birds, is caught between freedom and loss.',
       themes: ['Loss and absence', 'Vulnerability', 'Nature'],
     },
     {
       quote: 'to graze my nose across the top of your head',
-      analysis: 'Intensely physical and intimate. The verb "graze" is tactile — it suggests the lightest possible touch, a gesture of tenderness. This sensory memory (smell, touch) conveys a mother\'s love more powerfully than any abstract statement could. The specificity of "the top of your head" makes the absence achingly concrete.',
+      analysis:
+        'Intensely physical and intimate. The verb "graze" is tactile — it suggests the lightest possible touch, a gesture of tenderness. This sensory memory (smell, touch) conveys a mother\'s love more powerfully than any abstract statement could. The specificity of "the top of your head" makes the absence achingly concrete.',
       themes: ['Family', 'Memory', 'Grief'],
     },
     {
       quote: 'your playground voice catching on the wind',
-      analysis: 'The final image of the poem. "Playground voice" collapses the son back into childhood — he is not a soldier but a playing child. "Catching on the wind" suggests something barely audible, fleeting, almost lost. The mother strains to hear a voice that may no longer exist, an image of hope and despair in equal measure.',
+      analysis:
+        'The final image of the poem. "Playground voice" collapses the son back into childhood — he is not a soldier but a playing child. "Catching on the wind" suggests something barely audible, fleeting, almost lost. The mother strains to hear a voice that may no longer exist, an image of hope and despair in equal measure.',
       themes: ['Loss and absence', 'Memory', 'Childhood vs adulthood'],
     },
   ],
@@ -163,49 +215,57 @@ TENSE SHIFTS: The poem shifts between past and present tense, blurring the bound
     {
       device: 'Tactile / sensory imagery',
       example: 'crimped petals, trembling, slowly melting on my tongue',
-      effect: 'Weir saturates the poem with physical sensation — touch, taste, texture. Grief in this poem is not abstract but felt in the body. The "crimped petals" are both the poppy and the mother\'s crumpled emotions; "melting on my tongue" suggests words dissolving before they can be spoken.',
+      effect:
+        'Weir saturates the poem with physical sensation — touch, taste, texture. Grief in this poem is not abstract but felt in the body. The "crimped petals" are both the poppy and the mother\'s crumpled emotions; "melting on my tongue" suggests words dissolving before they can be spoken.',
       lineRef: 4,
     },
     {
       device: 'Metaphor — textile imagery',
       example: 'tucks, darts, pleats',
-      effect: 'The sewing terminology reflects Weir\'s background as a textile designer and becomes a metaphor for the mother\'s attempt to hold herself together. "Tucks, darts, pleats" are techniques for shaping fabric — the mother is trying to shape and contain her unravelling grief, but the list\'s accumulation suggests the effort is overwhelming.',
+      effect:
+        "The sewing terminology reflects Weir's background as a textile designer and becomes a metaphor for the mother's attempt to hold herself together. \"Tucks, darts, pleats\" are techniques for shaping fabric — the mother is trying to shape and contain her unravelling grief, but the list's accumulation suggests the effort is overwhelming.",
       lineRef: 26,
     },
     {
       device: 'Symbolism — poppies',
       example: 'poppies had already been placed on individual white crosses',
-      effect: 'The poppy operates on multiple symbolic levels: it represents remembrance of the war dead, the blood of sacrifice, the fragility of life (petals fall easily), and the mother\'s own bleeding grief. The "white crosses" reinforce the association with death and graves.',
+      effect:
+        'The poppy operates on multiple symbolic levels: it represents remembrance of the war dead, the blood of sacrifice, the fragility of life (petals fall easily), and the mother\'s own bleeding grief. The "white crosses" reinforce the association with death and graves.',
       lineRef: 1,
     },
     {
       device: 'Domestic language',
       example: 'blockade of yellow bias binding around your blazer',
-      effect: '"Bias binding" is a sewing term, and "blazer" belongs to school uniform. This domestic vocabulary pulls the poem away from the battlefield and into the home, reinforcing that this is a mother\'s perspective. The word "blockade" — a military term — intrudes into the domestic scene, showing how war infiltrates everyday life.',
+      effect:
+        '"Bias binding" is a sewing term, and "blazer" belongs to school uniform. This domestic vocabulary pulls the poem away from the battlefield and into the home, reinforcing that this is a mother\'s perspective. The word "blockade" — a military term — intrudes into the domestic scene, showing how war infiltrates everyday life.',
       lineRef: 14,
     },
     {
       device: 'Enjambment',
       example: 'I pinned one / onto your lapel',
-      effect: 'The line break between "one" and "onto" forces the reader to pause, then continue — mimicking the mother\'s hesitation and emotional catch. Enjambment throughout the poem creates a breathless, flowing quality that mirrors the uncontrollable stream of memory and grief.',
+      effect:
+        'The line break between "one" and "onto" forces the reader to pause, then continue — mimicking the mother\'s hesitation and emotional catch. Enjambment throughout the poem creates a breathless, flowing quality that mirrors the uncontrollable stream of memory and grief.',
       lineRef: 3,
     },
     {
       device: 'Sensory detail — smell and taste',
       example: 'to breathe you in, to taste the graze of your skin',
-      effect: 'The mother\'s longing is expressed through the most intimate senses — smell and taste. "Breathe you in" and "taste" suggest she wants to absorb her son completely, to possess him again through the body. These are primal, almost animal instincts of maternal connection.',
+      effect:
+        'The mother\'s longing is expressed through the most intimate senses — smell and taste. "Breathe you in" and "taste" suggest she wants to absorb her son completely, to possess him again through the body. These are primal, almost animal instincts of maternal connection.',
       lineRef: 33,
     },
     {
       device: 'Transferred epithet',
-      example: 'war-Loss nerves',
-      effect: 'The compound "war-Loss" transfers the concept of military loss directly into the mother\'s body. Her nerves are not just anxious — they are specifically damaged by war and loss. The hyphenated compound fuses the public (war) and the private (nerves) into a single term.',
+      example: 'war-torn nerves',
+      effect:
+        'The compound "war-torn" transfers the violence of war directly into the mother\'s body. Her nerves are not just anxious — they are specifically damaged by war. The hyphenated compound fuses the public (war) and the private (nerves) into a single term.',
       lineRef: 25,
     },
     {
       device: 'Fragmentation',
       example: 'I think I—',
-      effect: 'The dash and incomplete sentence near the poem\'s end enact the mother\'s emotional breakdown. She literally cannot finish her thought. This fragmentation contrasts with the poem\'s earlier long, flowing sentences, showing how grief eventually overwhelms even the attempt to articulate it.',
+      effect:
+        "The dash and incomplete sentence near the poem's end enact the mother's emotional breakdown. She literally cannot finish her thought. This fragmentation contrasts with the poem's earlier long, flowing sentences, showing how grief eventually overwhelms even the attempt to articulate it.",
       lineRef: 37,
     },
   ],
@@ -218,9 +278,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pop-1',
     question: 'Who is the speaker in Poppies?',
     type: 'multiple-choice',
-    options: ['A soldier going to war', 'A mother whose son has left for military service', 'A teacher on Armistice Sunday', 'A war photographer'],
+    options: [
+      'A soldier going to war',
+      'A mother whose son has left for military service',
+      'A teacher on Armistice Sunday',
+      'A war photographer',
+    ],
     correctIndex: 1,
-    explanation: 'The poem is told from the perspective of a mother who is saying goodbye to her son before he leaves, possibly for military service. It explores the personal, domestic grief of conflict.',
+    explanation:
+      'The poem is told from the perspective of a mother who is saying goodbye to her son before he leaves, possibly for military service. It explores the personal, domestic grief of conflict.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -228,9 +294,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pop-2',
     question: 'What do the poppies symbolise in the poem?',
     type: 'multiple-choice',
-    options: ['A type of flower the mother grows in her garden', 'Remembrance of fallen soldiers and the connection between domestic life and war', 'The son\'s favourite colour', 'A decoration for Armistice Sunday celebrations'],
+    options: [
+      'A type of flower the mother grows in her garden',
+      'Remembrance of fallen soldiers and the connection between domestic life and war',
+      "The son's favourite colour",
+      'A decoration for Armistice Sunday celebrations',
+    ],
     correctIndex: 1,
-    explanation: 'Poppies are the universal symbol of remembrance for fallen soldiers, originating from the fields of Flanders in WWI. Weir uses them to connect the mother\'s private grief to the public act of remembrance.',
+    explanation:
+      "Poppies are the universal symbol of remembrance for fallen soldiers, originating from the fields of Flanders in WWI. Weir uses them to connect the mother's private grief to the public act of remembrance.",
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -238,9 +310,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pop-3',
     question: 'What type of imagery dominates the poem?',
     type: 'multiple-choice',
-    options: ['Military and violent imagery', 'Domestic and textile imagery — sewing, pins, fabric', 'Industrial and urban imagery', 'Religious imagery'],
+    options: [
+      'Military and violent imagery',
+      'Domestic and textile imagery — sewing, pins, fabric',
+      'Industrial and urban imagery',
+      'Religious imagery',
+    ],
     correctIndex: 1,
-    explanation: 'Weir uses a sustained semantic field of textiles and sewing: "crimped petals", "bias binding", "tucks, darts, pleats". This domestic language reflects the mother\'s world and how she processes grief through familiar, tangible activities.',
+    explanation:
+      'Weir uses a sustained semantic field of textiles and sewing: "crimped petals", "bias binding", "tucks, darts, pleats". This domestic language reflects the mother\'s world and how she processes grief through familiar, tangible activities.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -248,9 +326,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pop-4',
     question: 'What does "spasms of paper red" suggest about the mother\'s emotional state?',
     type: 'multiple-choice',
-    options: ['She is calm and composed', 'The word "spasms" suggests involuntary, convulsive grief — her emotions are beyond her control', 'She is angry at her son', 'She is decorating the house'],
+    options: [
+      'She is calm and composed',
+      'The word "spasms" suggests involuntary, convulsive grief — her emotions are beyond her control',
+      'She is angry at her son',
+      'She is decorating the house',
+    ],
     correctIndex: 1,
-    explanation: '"Spasms" suggests involuntary, painful physical reactions — the mother\'s grief manifests in bodily convulsions. The repetition of "paper red" mimics the stuttering of someone in distress.',
+    explanation:
+      '"Spasms" suggests involuntary, painful physical reactions — the mother\'s grief manifests in bodily convulsions. The repetition of "paper red" mimics the stuttering of someone in distress.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -258,19 +342,32 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pop-5',
     question: 'What does the metaphor of the "songbird from its cage" represent?',
     type: 'multiple-choice',
-    options: ['The mother\'s pet bird escaping', 'The mother letting her child go — an act that is both liberating and painful', 'The son singing a song', 'A reference to a specific war poem'],
+    options: [
+      "The mother's pet bird escaping",
+      'The mother letting her child go — an act that is both liberating and painful',
+      'The son singing a song',
+      'A reference to a specific war poem',
+    ],
     correctIndex: 1,
-    explanation: 'The released songbird symbolises the mother releasing her child into the world (and possibly to war). It represents both freedom and loss — she must let go, even though it causes her pain.',
+    explanation:
+      'The released songbird symbolises the mother releasing her child into the world (and possibly to war). It represents both freedom and loss — she must let go, even though it causes her pain.',
     topic: 'Language',
     difficulty: 'higher',
   },
   {
     id: 'pop-6',
-    question: 'How does Weir blur the line between sending a child to school and sending a soldier to war?',
+    question:
+      'How does Weir blur the line between sending a child to school and sending a soldier to war?',
     type: 'multiple-choice',
-    options: ['She describes school uniform and military uniform separately', 'Through domestic imagery like "pinned" a poppy and "blazer" — the same maternal gestures apply to both', 'She explicitly compares school and war', 'She does not blur this line at all'],
+    options: [
+      'She describes school uniform and military uniform separately',
+      'Through domestic imagery like "pinned" a poppy and "blazer" — the same maternal gestures apply to both',
+      'She explicitly compares school and war',
+      'She does not blur this line at all',
+    ],
     correctIndex: 1,
-    explanation: 'The intimate maternal act of pinning something onto a "blazer" and smoothing a "lapel" could apply to a school uniform or military dress. This ambiguity powerfully blurs the boundary between childhood and warfare.',
+    explanation:
+      'The intimate maternal act of pinning something onto a "blazer" and smoothing a "lapel" could apply to a school uniform or military dress. This ambiguity powerfully blurs the boundary between childhood and warfare.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -278,9 +375,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pop-7',
     question: 'What perspective on conflict does Poppies offer that is unusual in the anthology?',
     type: 'multiple-choice',
-    options: ['A soldier\'s perspective in the trenches', 'A mother\'s personal, domestic perspective on the impact of war at home', 'A politician\'s view of war strategy', 'A journalist\'s objective report'],
+    options: [
+      "A soldier's perspective in the trenches",
+      "A mother's personal, domestic perspective on the impact of war at home",
+      "A politician's view of war strategy",
+      "A journalist's objective report",
+    ],
     correctIndex: 1,
-    explanation: 'Poppies is unusual in the anthology because it shows conflict from a civilian perspective — specifically a mother\'s. It explores how war affects those left behind, not the soldiers themselves.',
+    explanation:
+      "Poppies is unusual in the anthology because it shows conflict from a civilian perspective — specifically a mother's. It explores how war affects those left behind, not the soldiers themselves.",
     topic: 'Context',
     difficulty: 'foundation',
   },
@@ -288,29 +391,49 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pop-8',
     question: 'How does enjambment function in Poppies?',
     type: 'multiple-choice',
-    options: ['It creates neat, contained thoughts', 'It enacts the mother\'s loss of emotional control — her feelings spill across line and stanza boundaries', 'It makes the poem easier to read aloud', 'It has no particular purpose'],
+    options: [
+      'It creates neat, contained thoughts',
+      "It enacts the mother's loss of emotional control — her feelings spill across line and stanza boundaries",
+      'It makes the poem easier to read aloud',
+      'It has no particular purpose',
+    ],
     correctIndex: 1,
-    explanation: 'The extensive enjambment — including across stanza breaks — mirrors the mother\'s inability to contain her emotions. Grief overflows all boundaries, just as the lines overflow their margins.',
+    explanation:
+      "The extensive enjambment — including across stanza breaks — mirrors the mother's inability to contain her emotions. Grief overflows all boundaries, just as the lines overflow their margins.",
     topic: 'Structure',
     difficulty: 'grade-9',
   },
   {
     id: 'pop-9',
-    question: 'What is the effect of the sensory detail "longing to graze my nose across the top of your head"?',
+    question:
+      'What is the effect of the sensory detail "longing to graze my nose across the top of your head"?',
     type: 'multiple-choice',
-    options: ['It shows the mother is angry', 'It creates an intensely physical, intimate memory — the mother craves the specific sensory experience of closeness', 'It describes a childhood game', 'It is a metaphor for time passing'],
+    options: [
+      'It shows the mother is angry',
+      'It creates an intensely physical, intimate memory — the mother craves the specific sensory experience of closeness',
+      'It describes a childhood game',
+      'It is a metaphor for time passing',
+    ],
     correctIndex: 1,
-    explanation: 'This deeply intimate sensory detail conveys the visceral, physical nature of maternal love and loss. The mother does not miss her son abstractly — she misses the specific smell and feel of his presence.',
+    explanation:
+      'This deeply intimate sensory detail conveys the visceral, physical nature of maternal love and loss. The mother does not miss her son abstractly — she misses the specific smell and feel of his presence.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
   {
     id: 'pop-10',
-    question: 'Which poem from the Power and Conflict anthology best pairs with Poppies for exploring the personal impact of conflict?',
+    question:
+      'Which poem from the Power and Conflict anthology best pairs with Poppies for exploring the personal impact of conflict?',
     type: 'multiple-choice',
-    options: ['Ozymandias by Shelley', 'Kamikaze by Beatrice Garland', 'Storm on the Island by Heaney', 'The Charge of the Light Brigade by Tennyson'],
+    options: [
+      'Ozymandias by Shelley',
+      'Kamikaze by Beatrice Garland',
+      'Storm on the Island by Heaney',
+      'The Charge of the Light Brigade by Tennyson',
+    ],
     correctIndex: 1,
-    explanation: 'Both Poppies and Kamikaze explore the family\'s perspective on conflict — a mother in Poppies, a daughter in Kamikaze. Both show the personal, domestic costs of war through female voices and memory.',
+    explanation:
+      "Both Poppies and Kamikaze explore the family's perspective on conflict — a mother in Poppies, a daughter in Kamikaze. Both show the personal, domestic costs of war through female voices and memory.",
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -319,9 +442,10 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
-    summary: 'Poppies explores a mother\'s grief, the personal cost of conflict, memory and loss, and the blurred boundary between childhood and war.',
+    summary:
+      "Poppies explores a mother's grief, the personal cost of conflict, memory and loss, and the blurred boundary between childhood and war.",
     keyPoints: [
-      'Maternal grief — the poem centres on the mother\'s experience, not the soldier\'s',
+      "Maternal grief — the poem centres on the mother's experience, not the soldier's",
       'Memory and loss — the mother replays memories obsessively',
       'Domestic vs military — the boundary between sending a child to school and to war is blurred',
       'Letting go — the songbird metaphor represents painful release',
@@ -329,7 +453,8 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Language & Imagery',
-    summary: 'Weir uses a sustained semantic field of textiles and domestic imagery to process grief through familiar, tangible objects.',
+    summary:
+      'Weir uses a sustained semantic field of textiles and domestic imagery to process grief through familiar, tangible objects.',
     keyPoints: [
       'Textile imagery: "crimped petals", "bias binding", "tucks, darts, pleats"',
       '"Spasms of paper red" — involuntary, convulsive grief',
@@ -339,7 +464,8 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Structure & Form',
-    summary: 'Free verse with extensive enjambment across stanza breaks, enacting the mother\'s loss of emotional control as grief overflows all boundaries.',
+    summary:
+      "Free verse with extensive enjambment across stanza breaks, enacting the mother's loss of emotional control as grief overflows all boundaries.",
     keyPoints: [
       'Free verse — no regular rhyme or metre, reflecting the unstructured nature of grief',
       'Enjambment across stanza breaks — emotions overflow all boundaries',
@@ -352,7 +478,7 @@ const REVISION_TOPICS = [
 const ESSAY_PROMPTS = [
   'How does Weir present the impact of conflict on those left behind in Poppies?',
   'Compare how loss is presented in Poppies and one other poem from the anthology.',
-  'How does Weir use language and structure to convey a mother\'s grief?',
+  "How does Weir use language and structure to convey a mother's grief?",
 ]
 
 /* ── Comparison poems ──────────────────────────────────────────── */
@@ -397,7 +523,7 @@ const comparisons: ComparisonPoem[] = [
     ],
   },
   {
-    title: 'The Emigree',
+    title: 'The Émigrée',
     poet: 'Carol Rumens',
     href: '/revision/poetry/power-and-conflict/the-emigree',
     similarities: [
@@ -406,9 +532,9 @@ const comparisons: ComparisonPoem[] = [
       'Both feature a female speaker processing loss through personal, emotional language',
     ],
     differences: [
-      'The Emigree focuses on loss of a homeland; Poppies focuses on loss of a child to war',
-      'The Emigree maintains an idealised, sunlit memory; Poppies allows memory to fragment and collapse',
-      'The Emigree is more defiant and resistant; Poppies is more vulnerable and grief-stricken',
+      'The Émigrée focuses on loss of a homeland; Poppies focuses on loss of a child to war',
+      'The Émigrée maintains an idealised, sunlit memory; Poppies allows memory to fragment and collapse',
+      'The Émigrée is more defiant and resistant; Poppies is more vulnerable and grief-stricken',
     ],
   },
 ]
@@ -422,7 +548,10 @@ const themes = [
   { label: 'War and conflict', color: 'bg-orange-500/15 text-clay-600 border-orange-500/30' },
   { label: 'Grief', color: 'bg-purple-500/15 text-purple-400 border-purple-500/30' },
   { label: 'Domestic vs military', color: 'bg-amber-500/15 text-clay-600 border-amber-500/30' },
-  { label: 'Nature and freedom', color: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' },
+  {
+    label: 'Nature and freedom',
+    color: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+  },
   { label: 'Identity and childhood', color: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30' },
 ]
 
@@ -437,18 +566,38 @@ export default function PoppiesStudyPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
-          { name: "Poppies", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/poppies" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Power and Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
+          },
+          {
+            name: 'Poppies',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/poppies',
+          },
         ]}
       />
       {/* ── Back link ──────────────────────────────────────────── */}
       <div>
-        <Button variant="ghost" size="sm" render={<Link href="/revision/poetry/power-and-conflict" />}>
-          <svg className="size-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+        <Button
+          variant="ghost"
+          size="sm"
+          render={<Link href="/revision/poetry/power-and-conflict" />}
+        >
+          <svg
+            className="size-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
           </svg>
           Power &amp; Conflict Anthology
         </Button>
@@ -460,7 +609,9 @@ export default function PoppiesStudyPage() {
         <p className="text-lg text-muted-foreground">
           Jane Weir (2009) &mdash; AQA Power &amp; Conflict Anthology
         </p>
-        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
+        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+          AQA
+        </Badge>
       </header>
 
       {/* ── Theme tokens ──────────────────────────────────────── */}
@@ -506,10 +657,7 @@ export default function PoppiesStudyPage() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisons.map((c) => (
-            <div
-              key={c.title}
-              className="rounded-xl border border-border bg-card p-5 space-y-4"
-            >
+            <div key={c.title} className="rounded-xl border border-border bg-card p-5 space-y-4">
               <div>
                 <h3 className="text-base font-bold text-foreground">{c.title}</h3>
                 <p className="text-sm text-muted-foreground">{c.poet}</p>
@@ -545,8 +693,18 @@ export default function PoppiesStudyPage() {
 
               <Button variant="outline" size="sm" render={<Link href={c.href} />}>
                 Study {c.title}
-                <svg className="size-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                <svg
+                  className="size-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
                 </svg>
               </Button>
             </div>
@@ -557,15 +715,29 @@ export default function PoppiesStudyPage() {
       {/* ── Back to anthology ─────────────────────────────────── */}
       <div className="border-t border-border pt-8">
         <Button variant="outline" render={<Link href="/revision/poetry/power-and-conflict" />}>
-          <svg className="size-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          <svg
+            className="size-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
           </svg>
           Back to Power &amp; Conflict Anthology
         </Button>
       </div>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations from Poppies by Jane Weir reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available in your AQA anthology.
+        <strong>Rights notice:</strong> &copy; Templar Poetry on behalf of Jane Weir (b. 1963).
+        Quotations from &ldquo;Poppies&rdquo; are short fair-dealing extracts under CDPA 1988
+        &sect;30 (criticism, review, quotation). For full text, students should consult the
+        board-licensed AQA Power &amp; Conflict anthology (the poem was commissioned for the AQA
+        anthology, 2009).
       </p>
     </div>
   )

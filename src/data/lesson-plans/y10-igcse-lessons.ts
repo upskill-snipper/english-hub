@@ -1,4 +1,4 @@
-import type { LessonPlan } from '@/types';
+import type { LessonPlan } from '@/types'
 
 export const y10IgcseLessons: LessonPlan[] = [
   // ═══════════════════════════════════════════════════════════════════════════
@@ -131,7 +131,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Why is it important to read the passage more than once before answering the questions? Give at least two reasons.',
         lines: 4,
         modelAnswer:
-          'First reading gives overall understanding of the text\'s content, tone and purpose. A second reading allows closer attention to specific language choices, structural techniques and implicit meanings that questions will target. Without re-reading, students often miss nuance and select superficial evidence.',
+          "First reading gives overall understanding of the text's content, tone and purpose. A second reading allows closer attention to specific language choices, structural techniques and implicit meanings that questions will target. Without re-reading, students often miss nuance and select superficial evidence.",
         marks: 2,
       },
       {
@@ -243,15 +243,14 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
     ],
     plenaryActivity: {
-      title: 'Examiner\'s Chair',
+      title: "Examiner's Chair",
       duration: '6 minutes',
       instructions:
         'Select two student responses (one retrieval, one inference) and display them anonymously on the board. The class acts as "examiners", awarding marks using the mark scheme and justifying their decisions. Teacher confirms the marks and highlights what would push each response to full marks. Students note one improvement target in their exercise books.',
       differentiation: {
         support: 'Provide the mark scheme as a simple checklist to follow.',
         core: 'Students justify their marks with reference to the mark scheme criteria.',
-        stretch:
-          'Students rewrite the weaker response to achieve full marks in two minutes.',
+        stretch: 'Students rewrite the weaker response to achieve full marks in two minutes.',
       },
     },
     homework:
@@ -286,7 +285,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'A student answers a 3-mark inference question with: "The character is scared." What is missing from this response? Rewrite it to achieve full marks.',
         lines: 6,
         modelAnswer:
-          'The response lacks textual evidence and developed explanation. A full-mark version: "The character is presented as scared. This is suggested by the detail \'his breath came in shallow, ragged gasps\', which implies he is physically affected by fear. The adjective \'ragged\' suggests a loss of control, conveying that his fear is overwhelming and involuntary, rather than a mild unease."',
+          "The response lacks textual evidence and developed explanation. A full-mark version: \"The character is presented as scared. This is suggested by the detail 'his breath came in shallow, ragged gasps', which implies he is physically affected by fear. The adjective 'ragged' suggests a loss of control, conveying that his fear is overwhelming and involuntary, rather than a mild unease.\"",
         marks: 3,
       },
       {
@@ -329,7 +328,7 @@ export const y10IgcseLessons: LessonPlan[] = [
     ],
     successCriteria: [
       'I can identify at least three language techniques in a given extract',
-      'I can analyse the effect of a writer\'s word choices, going beyond feature-spotting',
+      "I can analyse the effect of a writer's word choices, going beyond feature-spotting",
       'I can write a PEAL paragraph that moves from identification to analysis of effect',
       'I can use subject terminology such as metaphor, connotation, semantic field, and tone accurately',
     ],
@@ -380,7 +379,7 @@ export const y10IgcseLessons: LessonPlan[] = [
         title: 'From Feature-Spotting to Analysis: Writing PEAL Paragraphs',
         duration: '22 minutes',
         instructions:
-          'Teacher models a full PEAL (Point, Evidence, Analysis, Link) paragraph on the board using one technique from the passage, thinking aloud to show the process. Emphasise: Analysis means exploring connotations, explaining the effect on the reader, and considering the writer\'s purpose — not just naming the technique. Students then write two PEAL paragraphs of their own, choosing different techniques from their annotations. After 14 minutes of writing, two volunteers share their work under the visualiser. The class evaluates each paragraph against the AO2 mark scheme band descriptors, identifying what moves a response from Band 2 (identifies features) to Band 4 (analyses effects with precision).',
+          "Teacher models a full PEAL (Point, Evidence, Analysis, Link) paragraph on the board using one technique from the passage, thinking aloud to show the process. Emphasise: Analysis means exploring connotations, explaining the effect on the reader, and considering the writer's purpose — not just naming the technique. Students then write two PEAL paragraphs of their own, choosing different techniques from their annotations. After 14 minutes of writing, two volunteers share their work under the visualiser. The class evaluates each paragraph against the AO2 mark scheme band descriptors, identifying what moves a response from Band 2 (identifies features) to Band 4 (analyses effects with precision).",
         differentiation: {
           support:
             'Provide a PEAL writing frame with sentence starters: "The writer creates a sense of...", "This is evident in the phrase...", "The word ___ connotes...", "This suggests to the reader that...".',
@@ -462,7 +461,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       'Subject Terminology',
       'PEAL Paragraphs',
       'Connotation Analysis',
-      'Writer\'s Effect',
+      "Writer's Effect",
     ],
   },
 
@@ -657,10 +656,13 @@ export const y10IgcseLessons: LessonPlan[] = [
       differentiation: {
         support: 'Provide a strategy recap card summarising key points from Lessons 1-4.',
         core: 'Students answer from memory on mini-whiteboards.',
-        stretch:
-          'Students add a sixth question of their own to test a partner.',
+        stretch: 'Students add a sixth question of their own to test a partner.',
       },
-      resources: ['Quick-fire questions slide', 'Mini-whiteboards', 'Strategy recap card (support tier)'],
+      resources: [
+        'Quick-fire questions slide',
+        'Mini-whiteboards',
+        'Strategy recap card (support tier)',
+      ],
     },
     mainActivities: [
       {
@@ -707,7 +709,8 @@ export const y10IgcseLessons: LessonPlan[] = [
       instructions:
         'Distribute the mark scheme for both sections. Students self-assess their reading responses, awarding marks with justification. For the writing section, students use the band descriptors to identify which band their response falls into. Students then complete a target-setting pro forma: (1) My strongest area was... (2) I need to improve... (3) My specific target for next time is... Teacher collects these for review and uses them to inform future lesson planning.',
       differentiation: {
-        support: 'Provide a simplified mark scheme with student-friendly language and examples of each band.',
+        support:
+          'Provide a simplified mark scheme with student-friendly language and examples of each band.',
         core: 'Students self-assess using the full mark scheme and set specific targets.',
         stretch:
           'Students identify one reading answer and rewrite it to move up by one mark, annotating what they changed.',
@@ -721,7 +724,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Reflect on your timed reading responses. Which question type did you find most challenging: retrieval, inference, or language analysis? Explain why and identify one strategy to improve.',
         lines: 5,
         modelAnswer:
-          'Responses will vary. A strong reflection might say: "I found language analysis most challenging because I tended to identify techniques without fully analysing their effect. My strategy to improve is to practise the \'So what?\' technique — after naming a technique, I will ask myself \'So what does this do to the reader?\' and write at least two sentences of analysis before moving on."',
+          "Responses will vary. A strong reflection might say: \"I found language analysis most challenging because I tended to identify techniques without fully analysing their effect. My strategy to improve is to practise the 'So what?' technique — after naming a technique, I will ask myself 'So what does this do to the reader?' and write at least two sentences of analysis before moving on.\"",
         marks: 3,
       },
       {
@@ -737,7 +740,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Using the mark scheme, identify which band your best reading answer falls into. Quote the band descriptor that matches your response and explain why.',
         lines: 5,
         modelAnswer:
-          'Responses will vary. A strong self-assessment might say: "My inference response falls into Band 3 because I \'make clear inferences supported by relevant textual reference\' — I used a short quotation and explained what it suggests. To reach Band 4, I would need to \'analyse the effects of language with precision\', which means exploring word-level connotations in more depth."',
+          "Responses will vary. A strong self-assessment might say: \"My inference response falls into Band 3 because I 'make clear inferences supported by relevant textual reference' — I used a short quotation and explained what it suggests. To reach Band 4, I would need to 'analyse the effects of language with precision', which means exploring word-level connotations in more depth.\"",
         marks: 3,
       },
       {
@@ -861,7 +864,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
     ],
     plenaryActivity: {
-      title: 'One Thing I\'d Tell a Friend',
+      title: "One Thing I'd Tell a Friend",
       duration: '4 minutes',
       instructions:
         'Students write a single sentence summarising the most important thing to remember about this poem, as if explaining it to a friend who missed the lesson. Teacher selects three students to share and uses their responses to highlight the key takeaway: approaching poetry requires a systematic method, multiple readings, and attention to both what the poem says and how it says it.',
@@ -904,7 +907,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Choose one key quotation from the poem and write a PEAL paragraph analysing its effect.',
         lines: 8,
         modelAnswer:
-          'Responses will vary. A strong answer selects a short quotation, identifies the technique used, analyses word-level connotations, explains the effect on the reader, and links to the poem\'s wider theme or message. It moves beyond feature-spotting to genuine analysis of meaning and intent.',
+          "Responses will vary. A strong answer selects a short quotation, identifies the technique used, analyses word-level connotations, explains the effect on the reader, and links to the poem's wider theme or message. It moves beyond feature-spotting to genuine analysis of meaning and intent.",
         marks: 5,
       },
       {
@@ -967,11 +970,10 @@ export const y10IgcseLessons: LessonPlan[] = [
       instructions:
         'Display a line from an anthology poem with a key word blanked out. Provide three alternative words that could fill the blank. Students discuss in pairs which word the poet actually used and why it is the most effective choice. Reveal the original word and discuss: what does this word achieve that the alternatives do not? Focus on connotation, sound, and rhythm.',
       differentiation: {
-        support:
-          'Provide the definitions and connotations of each alternative word on the slide.',
+        support: 'Provide the definitions and connotations of each alternative word on the slide.',
         core: 'Students justify their choice by analysing connotations independently.',
         stretch:
-          'Students suggest a fourth alternative and argue whether it would be more or less effective than the poet\'s original choice.',
+          "Students suggest a fourth alternative and argue whether it would be more or less effective than the poet's original choice.",
       },
       resources: ['Word Swap slide with poem line and alternatives'],
     },
@@ -986,7 +988,7 @@ export const y10IgcseLessons: LessonPlan[] = [
             'Provide a terminology glossary and pre-highlight three examples of figurative language as starting points.',
           core: 'Students annotate independently and identify at least five examples with correct terminology.',
           stretch:
-            'Students identify patterns in the poet\'s language choices — do they favour a particular type of imagery? Does the type of figurative language change across the poem, and if so, why?',
+            "Students identify patterns in the poet's language choices — do they favour a particular type of imagery? Does the type of figurative language change across the poem, and if so, why?",
         },
         resources: [
           'Poem handout for annotation',
@@ -1019,10 +1021,11 @@ export const y10IgcseLessons: LessonPlan[] = [
       instructions:
         'Display a weak analytical sentence on the board, e.g. "The poet uses a simile which is effective." Students have 2 minutes to rewrite it as a full analytical sentence that includes word-level analysis and effect on the reader. Share and compare three upgraded versions, discussing what makes each one effective.',
       differentiation: {
-        support: 'Provide the simile being referenced so students have a concrete example to work with.',
+        support:
+          'Provide the simile being referenced so students have a concrete example to work with.',
         core: 'Students rewrite the sentence independently with word-level analysis.',
         stretch:
-          'Students write a second sentence that links their analysis to the poem\'s wider theme.',
+          "Students write a second sentence that links their analysis to the poem's wider theme.",
       },
     },
     homework:
@@ -1033,7 +1036,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Explain the difference between "imagery" and "figurative language". Can a poem have one without the other?',
         lines: 4,
         modelAnswer:
-          'Imagery refers to language that creates a picture or sensory experience in the reader\'s mind — it appeals to the senses (sight, sound, taste, touch, smell). Figurative language uses words in a non-literal way to create meaning (metaphor, simile, personification). A poem can have imagery without figurative language (e.g. a literal description of a sunset) and figurative language without vivid imagery, though they often overlap.',
+          "Imagery refers to language that creates a picture or sensory experience in the reader's mind — it appeals to the senses (sight, sound, taste, touch, smell). Figurative language uses words in a non-literal way to create meaning (metaphor, simile, personification). A poem can have imagery without figurative language (e.g. a literal description of a sunset) and figurative language without vivid imagery, though they often overlap.",
         marks: 3,
       },
       {
@@ -1095,13 +1098,13 @@ export const y10IgcseLessons: LessonPlan[] = [
     objectives: [
       'Understand how poets use form and structure to shape meaning',
       'Identify and analyse structural features including enjambment, caesura, stanza form, and volta',
-      'Explore the relationship between a poem\'s form and its content',
+      "Explore the relationship between a poem's form and its content",
       'Write analytical responses that address structure, not just language',
     ],
     successCriteria: [
       'I can define and identify enjambment, caesura, volta, and end-stopping in a poem',
-      'I can explain how a poem\'s structure (e.g. stanza length, line length, rhyme scheme) contributes to its meaning',
-      'I can analyse why a poet has chosen a particular form and how it supports the poem\'s themes',
+      "I can explain how a poem's structure (e.g. stanza length, line length, rhyme scheme) contributes to its meaning",
+      "I can analyse why a poet has chosen a particular form and how it supports the poem's themes",
       'I can write a paragraph that analyses a structural feature and its effect, rather than simply identifying it',
     ],
     keywords: [
@@ -1120,8 +1123,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       instructions:
         'Display the same short text arranged in three different ways: as a single block of prose, as a poem with regular stanzas, and as a poem with irregular line breaks and spacing. Ask students: "Which version is most powerful? Why?" Discuss how the arrangement of words on a page affects how we read and understand them. Introduce the idea that form and structure are deliberate choices that carry meaning.',
       differentiation: {
-        support:
-          'Provide a prompt card: "Think about: pace, pauses, emphasis, surprise."',
+        support: 'Provide a prompt card: "Think about: pace, pauses, emphasis, surprise."',
         core: 'Students identify at least two differences in effect between the versions.',
         stretch:
           'Students create a fourth arrangement of the same text and explain the effect they are trying to create.',
@@ -1151,7 +1153,7 @@ export const y10IgcseLessons: LessonPlan[] = [
         title: 'Analysing Structure in Context',
         duration: '20 minutes',
         instructions:
-          'Provide an anthology poem with rich structural features. Students annotate the poem focusing exclusively on structure (not language) for 8 minutes. Then, teacher models writing an analytical paragraph about a structural feature, emphasising: name the feature, quote or reference the specific moment, explain how it shapes the reader\'s experience, link to the poem\'s meaning. Students write two paragraphs analysing different structural features from their annotations. After writing, students peer-assess using a checklist: (1) Does the paragraph name a structural feature? (2) Does it reference a specific moment in the poem? (3) Does it explain the effect? (4) Does it link to meaning?',
+          "Provide an anthology poem with rich structural features. Students annotate the poem focusing exclusively on structure (not language) for 8 minutes. Then, teacher models writing an analytical paragraph about a structural feature, emphasising: name the feature, quote or reference the specific moment, explain how it shapes the reader's experience, link to the poem's meaning. Students write two paragraphs analysing different structural features from their annotations. After writing, students peer-assess using a checklist: (1) Does the paragraph name a structural feature? (2) Does it reference a specific moment in the poem? (3) Does it explain the effect? (4) Does it link to meaning?",
         differentiation: {
           support:
             'Provide sentence starters: "The poet uses enjambment in line __ to...", "The caesura in \'___\' creates the effect of...", "The shift in tone at the volta suggests...".',
@@ -1172,14 +1174,15 @@ export const y10IgcseLessons: LessonPlan[] = [
       instructions:
         'Each student writes a single sentence explaining how one structural feature contributes to the meaning of the poem studied. Teacher selects five examples and reads them aloud, asking the class to identify which structural feature each sentence refers to. This reinforces both the terminology and the principle that structure serves meaning.',
       differentiation: {
-        support: 'Provide the sentence frame: "The poet\'s use of ___ in line ___ creates the effect of ___, which reinforces the idea that...".',
+        support:
+          'Provide the sentence frame: "The poet\'s use of ___ in line ___ creates the effect of ___, which reinforces the idea that...".',
         core: 'Students write their sentence independently.',
         stretch:
-          'Students evaluate whether structure or language is more important to the poem\'s overall effect and justify their view.',
+          "Students evaluate whether structure or language is more important to the poem's overall effect and justify their view.",
       },
     },
     homework:
-      'Choose two poems from the anthology that use contrasting structures. For each, write a paragraph analysing one structural feature and its effect on meaning. In a final short paragraph, compare the two poems\' structural choices.',
+      "Choose two poems from the anthology that use contrasting structures. For each, write a paragraph analysing one structural feature and its effect on meaning. In a final short paragraph, compare the two poems' structural choices.",
     worksheetQuestions: [
       {
         question:
@@ -1292,7 +1295,7 @@ export const y10IgcseLessons: LessonPlan[] = [
             'Provide a completed model plan to reference alongside the blank template. Include a bank of comparative discourse markers.',
           core: 'Students complete the plan independently using the template.',
           stretch:
-            'Students add a fourth paragraph to their plan that compares contextual influences on each poet\'s perspective.',
+            "Students add a fourth paragraph to their plan that compares contextual influences on each poet's perspective.",
         },
         resources: [
           'Essay plan template',
@@ -1426,7 +1429,8 @@ export const y10IgcseLessons: LessonPlan[] = [
       instructions:
         'Rapid review: students answer four questions on mini-whiteboards: (1) What is the integrated method? (2) Name two structural features to analyse. (3) What does "word-level analysis" mean? (4) How many poems should you reference in each paragraph of a comparative essay? Teacher clarifies any uncertainties and displays a checklist of success criteria for the timed essay: analyse language, analyse structure, compare throughout, use quotations, use discourse markers.',
       differentiation: {
-        support: 'Provide the success criteria checklist as a printed card to keep beside them during writing.',
+        support:
+          'Provide the success criteria checklist as a printed card to keep beside them during writing.',
         core: 'Students answer from memory and note the checklist.',
         stretch:
           'Students add two additional success criteria of their own based on previous feedback.',
@@ -1500,7 +1504,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'What is the difference between a Band 2 and a Band 4 poetry response? Use the mark scheme to explain.',
         lines: 5,
         modelAnswer:
-          'A Band 2 response shows some awareness of the poem\'s meaning and identifies some features of language or structure, but analysis is limited or superficial. A Band 4 response demonstrates a perceptive, detailed understanding with sustained analysis of language, form, and structure. It offers a personal, evaluative response supported by well-selected, embedded quotations and explores the effects of the poet\'s choices with precision.',
+          "A Band 2 response shows some awareness of the poem's meaning and identifies some features of language or structure, but analysis is limited or superficial. A Band 4 response demonstrates a perceptive, detailed understanding with sustained analysis of language, form, and structure. It offers a personal, evaluative response supported by well-selected, embedded quotations and explores the effects of the poet's choices with precision.",
         marks: 4,
       },
       {
@@ -1508,7 +1512,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Write a brief exam-style plan for the following question: "Compare how the poets present conflict in Poem X and Poem Y." Include your introduction focus and three paragraph topics.',
         lines: 6,
         modelAnswer:
-          'Introduction: Both poems explore conflict but present it differently — Poem X focuses on internal, psychological conflict while Poem Y depicts external, physical conflict. Paragraph 1: Compare how imagery conveys the nature of conflict in each poem. Paragraph 2: Contrast the structural choices — Poem X uses irregular free verse to mirror inner turmoil; Poem Y uses regular stanzas to reflect military order. Paragraph 3: Compare the speakers\' attitudes to conflict and how tone shifts across each poem.',
+          "Introduction: Both poems explore conflict but present it differently — Poem X focuses on internal, psychological conflict while Poem Y depicts external, physical conflict. Paragraph 1: Compare how imagery conveys the nature of conflict in each poem. Paragraph 2: Contrast the structural choices — Poem X uses irregular free verse to mirror inner turmoil; Poem Y uses regular stanzas to reflect military order. Paragraph 3: Compare the speakers' attitudes to conflict and how tone shifts across each poem.",
         marks: 4,
       },
       {
@@ -1557,7 +1561,7 @@ export const y10IgcseLessons: LessonPlan[] = [
     yearGroup: 'Year 10',
     duration: '60 minutes',
     objectives: [
-      'Understand the historical and social context of 1930s America and its influence on Steinbeck\'s novella',
+      "Understand the historical and social context of 1930s America and its influence on Steinbeck's novella",
       'Identify the key themes of the text: the American Dream, loneliness, friendship, prejudice, and power',
       'Connect contextual knowledge to specific moments in the text',
       'Begin developing the ability to use context analytically rather than as a biographical bolt-on',
@@ -1597,7 +1601,7 @@ export const y10IgcseLessons: LessonPlan[] = [
         title: 'Contextual Knowledge Builder',
         duration: '18 minutes',
         instructions:
-          'Teacher delivers a focused contextual overview covering: the Great Depression (economic collapse, unemployment, poverty), migrant ranch workers (itinerant lifestyle, loneliness, lack of roots), the American Dream (aspiration, failure, illusion), racial segregation (Jim Crow laws, the experience of Black Americans), and women in 1930s society (limited agency, defined by relationships to men). Students take structured notes using a five-column grid: Context Factor, Key Facts, Characters/Moments in Text, Quotation Link, Steinbeck\'s Purpose. For each context factor, students must link to the text — this prevents context being treated as a separate essay paragraph.',
+          "Teacher delivers a focused contextual overview covering: the Great Depression (economic collapse, unemployment, poverty), migrant ranch workers (itinerant lifestyle, loneliness, lack of roots), the American Dream (aspiration, failure, illusion), racial segregation (Jim Crow laws, the experience of Black Americans), and women in 1930s society (limited agency, defined by relationships to men). Students take structured notes using a five-column grid: Context Factor, Key Facts, Characters/Moments in Text, Quotation Link, Steinbeck's Purpose. For each context factor, students must link to the text — this prevents context being treated as a separate essay paragraph.",
         differentiation: {
           support:
             'Provide the grid with Context Factor and Key Facts pre-completed. Students focus on linking to characters, quotations, and purpose.',
@@ -1636,7 +1640,8 @@ export const y10IgcseLessons: LessonPlan[] = [
       instructions:
         'Students write one sentence that links a contextual factor to the text analytically. Share three examples under the visualiser. Teacher evaluates: does the sentence use context to enhance analysis of the text, or does it feel bolted on? Emphasise: context should be woven into analysis, not treated as a separate paragraph.',
       differentiation: {
-        support: 'Provide the starter: "Steinbeck reflects the reality of ___ through his portrayal of ___, suggesting that...".',
+        support:
+          'Provide the starter: "Steinbeck reflects the reality of ___ through his portrayal of ___, suggesting that...".',
         core: 'Students write their sentence independently.',
         stretch:
           'Students explain why context used analytically is more effective than context used as a separate paragraph.',
@@ -1650,7 +1655,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Explain three ways in which the Great Depression affected the lives of migrant ranch workers in 1930s America.',
         lines: 5,
         modelAnswer:
-          '(1) Mass unemployment meant workers had to travel constantly to find temporary ranch work, living an itinerant lifestyle with no stability. (2) Poverty was widespread — workers were paid little and had no job security, making the American Dream feel increasingly unattainable. (3) Social isolation was common — workers moved alone, rarely forming lasting friendships, which Steinbeck reflects in the loneliness experienced by characters like Crooks, Candy, and Curley\'s wife.',
+          "(1) Mass unemployment meant workers had to travel constantly to find temporary ranch work, living an itinerant lifestyle with no stability. (2) Poverty was widespread — workers were paid little and had no job security, making the American Dream feel increasingly unattainable. (3) Social isolation was common — workers moved alone, rarely forming lasting friendships, which Steinbeck reflects in the loneliness experienced by characters like Crooks, Candy, and Curley's wife.",
         marks: 3,
       },
       {
@@ -1666,7 +1671,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'What is the "American Dream"? Why does Steinbeck present it as both powerful and dangerous in the novella?',
         lines: 5,
         modelAnswer:
-          'The American Dream is the belief that anyone can achieve success, prosperity, and happiness through hard work. Steinbeck presents it as powerful because it gives characters like George, Lennie, and Candy hope and purpose — their dream of owning a farm sustains them. However, he also presents it as dangerous because it is ultimately an illusion; the economic reality of the Depression makes the dream unattainable, and pursuing it makes the characters\' eventual failure more devastating.',
+          "The American Dream is the belief that anyone can achieve success, prosperity, and happiness through hard work. Steinbeck presents it as powerful because it gives characters like George, Lennie, and Candy hope and purpose — their dream of owning a farm sustains them. However, he also presents it as dangerous because it is ultimately an illusion; the economic reality of the Depression makes the dream unattainable, and pursuing it makes the characters' eventual failure more devastating.",
         marks: 4,
       },
       {
@@ -1682,7 +1687,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Choose one theme from the novella and explain how Steinbeck uses two different characters to explore it.',
         lines: 8,
         modelAnswer:
-          'Responses will vary. A strong answer selects a theme (e.g. loneliness), discusses two characters (e.g. Crooks and Curley\'s wife), provides quotations for each, analyses Steinbeck\'s methods, and considers his purpose — what is he saying about this aspect of society? The answer should integrate context and avoid plot retelling.',
+          "Responses will vary. A strong answer selects a theme (e.g. loneliness), discusses two characters (e.g. Crooks and Curley's wife), provides quotations for each, analyses Steinbeck's methods, and considers his purpose — what is he saying about this aspect of society? The answer should integrate context and avoid plot retelling.",
         marks: 5,
       },
     ],
@@ -1712,11 +1717,11 @@ export const y10IgcseLessons: LessonPlan[] = [
     objectives: [
       'Analyse how Steinbeck presents key characters through description, dialogue, actions, and the reactions of others',
       'Develop the ability to write about characters as constructs rather than real people',
-      'Select and analyse key quotations that reveal character traits and Steinbeck\'s intentions',
-      'Structure a character analysis paragraph that addresses the writer\'s methods',
+      "Select and analyse key quotations that reveal character traits and Steinbeck's intentions",
+      "Structure a character analysis paragraph that addresses the writer's methods",
     ],
     successCriteria: [
-      'I can identify how Steinbeck uses description, speech, actions, and others\' reactions to present a character',
+      "I can identify how Steinbeck uses description, speech, actions, and others' reactions to present a character",
       'I can use the phrase "Steinbeck presents..." to show I understand characters are the writer\'s creation',
       'I can select a key quotation and analyse it at word level to reveal character traits',
       'I can write a character analysis paragraph that focuses on methods rather than retelling plot',
@@ -1737,8 +1742,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       instructions:
         'Display two statements: (1) "George is mean to Lennie because he is frustrated." (2) "Steinbeck presents George as harsh towards Lennie to reveal the burden of responsibility he carries." Ask students: which statement would score higher in an exam and why? Establish the crucial principle: in literature essays, characters are constructs — they are created by the writer to convey meaning. We must discuss what the writer does, not what the character "is".',
       differentiation: {
-        support:
-          'Provide the terms "construct" and "authorial intent" with definitions on a card.',
+        support: 'Provide the terms "construct" and "authorial intent" with definitions on a card.',
         core: 'Students explain the difference between the two statements independently.',
         stretch:
           'Students rewrite a third "real person" statement about Lennie as a "construct" statement about Steinbeck\'s methods.',
@@ -1750,7 +1754,7 @@ export const y10IgcseLessons: LessonPlan[] = [
         title: 'Four Methods of Characterisation',
         duration: '20 minutes',
         instructions:
-          'Introduce four methods Steinbeck uses to present characters: (1) Physical description — what they look like and how they move. (2) Dialogue — what they say and how they say it. (3) Actions — what they do and how they behave. (4) Others\' reactions — how other characters respond to them. For each method, teacher displays a key quotation about a central character (e.g. Lennie) and models analysis. Students then work in pairs, each pair assigned a different character (George, Lennie, Curley, Curley\'s wife, Slim, Crooks, Candy). Each pair finds one quotation for each method of characterisation from the text and writes a brief analysis. Pairs feed back to the class, building a comprehensive character evidence bank.',
+          "Introduce four methods Steinbeck uses to present characters: (1) Physical description — what they look like and how they move. (2) Dialogue — what they say and how they say it. (3) Actions — what they do and how they behave. (4) Others' reactions — how other characters respond to them. For each method, teacher displays a key quotation about a central character (e.g. Lennie) and models analysis. Students then work in pairs, each pair assigned a different character (George, Lennie, Curley, Curley's wife, Slim, Crooks, Candy). Each pair finds one quotation for each method of characterisation from the text and writes a brief analysis. Pairs feed back to the class, building a comprehensive character evidence bank.",
         differentiation: {
           support:
             'Provide page references for where to find relevant quotations. Supply a four-column grid with the methods pre-labelled.',
@@ -1774,7 +1778,7 @@ export const y10IgcseLessons: LessonPlan[] = [
             'Provide a What-How-Why writing frame with sentence starters and a model paragraph to reference.',
           core: 'Students write two paragraphs independently using the What-How-Why method.',
           stretch:
-            'Students write a third paragraph that tracks how a character changes across the novella, analysing what this development reveals about Steinbeck\'s message.',
+            "Students write a third paragraph that tracks how a character changes across the novella, analysing what this development reveals about Steinbeck's message.",
         },
         resources: [
           'What-How-Why method slide/poster',
@@ -1791,8 +1795,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       differentiation: {
         support: 'Provide a reference card with "real person" phrases vs. "construct" phrases.',
         core: 'Students categorise independently and justify one decision.',
-        stretch:
-          'Students rewrite each "real person" statement as a "construct" statement.',
+        stretch: 'Students rewrite each "real person" statement as a "construct" statement.',
       },
     },
     homework:
@@ -1819,7 +1822,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Write a What-How-Why paragraph about how Steinbeck presents Slim in the novella.',
         lines: 8,
         modelAnswer:
-          'Steinbeck presents Slim as a figure of quiet authority and moral integrity. This is conveyed through the description of him as having "God-like eyes" and moving with a "majesty" achieved only by "master craftsmen." The religious imagery of "God-like" elevates Slim above the other ranch workers, suggesting he possesses wisdom and judgement that transcend the harsh environment. Steinbeck creates Slim as a moral compass within the novella — he is the only character who fully understands George\'s decision at the end, reflecting Steinbeck\'s belief that true leadership comes from empathy rather than aggression.',
+          'Steinbeck presents Slim as a figure of quiet authority and moral integrity. This is conveyed through the description of his face as "ageless" and the assertion that he "moves with a majesty only achieved by royalty and master craftsmen." The reverential register, including the claim that "his authority was so great that his word was taken on any subject", elevates Slim above the other ranch workers, suggesting he possesses wisdom and judgement that transcend the harsh environment. Steinbeck creates Slim as a moral compass within the novella — he is the only character who fully understands George\'s decision at the end, reflecting Steinbeck\'s belief that true leadership comes from empathy rather than aggression.',
         marks: 5,
       },
       {
@@ -1835,7 +1838,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Why is it important to track how a character changes across the text, not just describe them at one point?',
         lines: 4,
         modelAnswer:
-          'Tracking change shows understanding of the writer\'s craft — characters are shaped by events to develop themes. For example, Candy\'s shift from passive acceptance to desperate hope (when he joins the dream) to devastation (when the dream dies) mirrors the broader arc of the American Dream itself. Analysing change reveals Steinbeck\'s structural choices and deeper thematic intentions.',
+          "Tracking change shows understanding of the writer's craft — characters are shaped by events to develop themes. For example, Candy's shift from passive acceptance to desperate hope (when he joins the dream) to devastation (when the dream dies) mirrors the broader arc of the American Dream itself. Analysing change reveals Steinbeck's structural choices and deeper thematic intentions.",
         marks: 3,
       },
     ],
@@ -1857,22 +1860,22 @@ export const y10IgcseLessons: LessonPlan[] = [
   // ── Lesson 13: Writer's Methods – Language and Structure ─────────────────
   {
     id: 'y10-igcse-13-omam-writers-methods',
-    title: 'Of Mice and Men: Writer\'s Methods – Language and Structure',
+    title: "Of Mice and Men: Writer's Methods – Language and Structure",
     text: 'IGCSE English Literature – Prose',
     board: 'CIE IGCSE',
     yearGroup: 'Year 10',
     duration: '60 minutes',
     objectives: [
-      'Analyse Steinbeck\'s use of language techniques including imagery, symbolism, and dialect',
+      "Analyse Steinbeck's use of language techniques including imagery, symbolism, and dialect",
       'Explore structural methods including foreshadowing, cyclical structure, and narrative perspective',
       'Understand how language and structure work together to create meaning',
-      'Write analytical paragraphs that address both language and structure as writer\'s methods',
+      "Write analytical paragraphs that address both language and structure as writer's methods",
     ],
     successCriteria: [
       'I can identify and analyse examples of imagery, symbolism, and dialect in the novella',
       'I can explain how Steinbeck uses structural techniques such as foreshadowing and cyclical structure',
-      'I can write a paragraph that analyses a language or structural method and links it to Steinbeck\'s purpose',
-      'I can discuss Steinbeck\'s methods using subject terminology accurately',
+      "I can write a paragraph that analyses a language or structural method and links it to Steinbeck's purpose",
+      "I can discuss Steinbeck's methods using subject terminology accurately",
     ],
     keywords: [
       'symbolism',
@@ -1890,11 +1893,9 @@ export const y10IgcseLessons: LessonPlan[] = [
       instructions:
         'Display six statements about Of Mice and Men. Students sort them into two categories: "Plot" (what happens) and "Method" (how the writer creates meaning). Examples: "Lennie kills the puppy" (plot) vs. "Steinbeck foreshadows the tragedy through the repeated motif of Lennie accidentally killing soft things" (method). Discuss: examiners reward method analysis, not plot retelling.',
       differentiation: {
-        support:
-          'Provide definitions of "plot" and "method" with examples before sorting.',
+        support: 'Provide definitions of "plot" and "method" with examples before sorting.',
         core: 'Students sort independently and justify one categorisation.',
-        stretch:
-          'Students convert each "plot" statement into a "method" statement.',
+        stretch: 'Students convert each "plot" statement into a "method" statement.',
       },
       resources: ['Six statements sorting slide/cards'],
     },
@@ -1903,7 +1904,7 @@ export const y10IgcseLessons: LessonPlan[] = [
         title: 'Language Methods Deep Dive',
         duration: '22 minutes',
         instructions:
-          'Teacher introduces three key language methods in the novella: (1) Imagery — Steinbeck\'s descriptions of the natural setting (the Salinas River, the clearing in the woods) and how they create mood. (2) Symbolism — key symbols such as Lennie\'s puppy, Candy\'s dog, Curley\'s wife\'s red dress, and George\'s solitaire game. (3) Dialect — Steinbeck\'s use of colloquial speech and how it creates authenticity and reveals social status. For each method, teacher provides key quotations and models analysis. Students then work independently to find two additional examples of each method from the text and write a paragraph analysing one example in detail, focusing on Steinbeck\'s purpose.',
+          "Teacher introduces three key language methods in the novella: (1) Imagery — Steinbeck's descriptions of the natural setting (the Salinas River, the clearing in the woods) and how they create mood. (2) Symbolism — key symbols such as Lennie's puppy, Candy's dog, Curley's wife's red dress, and George's solitaire game. (3) Dialect — Steinbeck's use of colloquial speech and how it creates authenticity and reveals social status. For each method, teacher provides key quotations and models analysis. Students then work independently to find two additional examples of each method from the text and write a paragraph analysing one example in detail, focusing on Steinbeck's purpose.",
         differentiation: {
           support:
             'Provide a quotation bank organised by method and page reference. Students select from the bank rather than searching independently.',
@@ -1927,7 +1928,7 @@ export const y10IgcseLessons: LessonPlan[] = [
             'Provide the revision cards with definitions and examples pre-completed. Students add quotations and effects.',
           core: 'Students complete the revision cards independently and write the structural analysis paragraph.',
           stretch:
-            'Students compare the opening and closing scenes in detail, analysing what has changed and what has not, and consider what this reveals about Steinbeck\'s cyclical view of history.',
+            "Students compare the opening and closing scenes in detail, analysing what has changed and what has not, and consider what this reveals about Steinbeck's cyclical view of history.",
         },
         resources: [
           'Structural methods presentation slides',
@@ -1956,12 +1957,12 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Explain what "foreshadowing" means. Identify two examples of foreshadowing in Of Mice and Men and explain how they prepare the reader for the ending.',
         lines: 6,
         modelAnswer:
-          'Foreshadowing is when the writer gives hints or clues about what will happen later in the text. (1) The shooting of Candy\'s dog foreshadows the shooting of Lennie — both are acts of "mercy" that parallel each other structurally. (2) Lennie\'s repeated killing of soft things (mice, puppy) foreshadows his accidental killing of Curley\'s wife. Both examples build a pattern of tragic inevitability, suggesting Lennie\'s fate is sealed from the beginning.',
+          "Foreshadowing is when the writer gives hints or clues about what will happen later in the text. (1) The shooting of Candy's dog foreshadows the shooting of Lennie — both are acts of \"mercy\" that parallel each other structurally. (2) Lennie's repeated killing of soft things (mice, puppy) foreshadows his accidental killing of Curley's wife. Both examples build a pattern of tragic inevitability, suggesting Lennie's fate is sealed from the beginning.",
         marks: 5,
       },
       {
         question:
-          'Why is the cyclical structure of the novella significant? How does it contribute to Steinbeck\'s message?',
+          "Why is the cyclical structure of the novella significant? How does it contribute to Steinbeck's message?",
         lines: 5,
         modelAnswer:
           'The novella begins and ends at the same pool by the Salinas River. This cyclical structure suggests that nothing has fundamentally changed — despite the hopes and dreams of the characters, they are trapped in a cycle of poverty, loneliness, and violence. Steinbeck implies that the American Dream is a loop, not a ladder — migrant workers are doomed to repeat the same patterns, making the dream an illusion.',
@@ -1969,18 +1970,18 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'Analyse the symbolism of Candy\'s dog in the novella. What does the dog represent and how does it connect to wider themes?',
+          "Analyse the symbolism of Candy's dog in the novella. What does the dog represent and how does it connect to wider themes?",
         lines: 6,
         modelAnswer:
-          'Candy\'s dog symbolises those who are old, weak, and no longer productive. Carlson\'s insistence on shooting the dog because it is "no good to himself" reflects the ruthless utilitarianism of the ranch — and of Depression-era America. The dog\'s fate parallels Candy\'s own fear of being discarded and foreshadows Lennie\'s death. Steinbeck uses the dog to critique a society that values individuals only for their economic output.',
+          "Candy's dog symbolises those who are old, weak, and no longer productive. Carlson's insistence on shooting the dog because it is \"no good to himself\" reflects the ruthless utilitarianism of the ranch — and of Depression-era America. The dog's fate parallels Candy's own fear of being discarded and foreshadows Lennie's death. Steinbeck uses the dog to critique a society that values individuals only for their economic output.",
         marks: 5,
       },
       {
         question:
-          'Why does Steinbeck write the characters\' dialogue in dialect? What effect does this have on the reader?',
+          "Why does Steinbeck write the characters' dialogue in dialect? What effect does this have on the reader?",
         lines: 4,
         modelAnswer:
-          'Steinbeck uses dialect to create authenticity and realism — the reader feels immersed in the world of 1930s ranch workers. Dialect also reveals social status and education levels; for example, Lennie\'s simple, repetitive speech reflects his intellectual disability, while Slim\'s more measured speech conveys his authority. The dialect makes the characters feel real and specific to their historical moment.',
+          "Steinbeck uses dialect to create authenticity and realism — the reader feels immersed in the world of 1930s ranch workers. Dialect also reveals social status and education levels; for example, Lennie's simple, repetitive speech reflects his intellectual disability, while Slim's more measured speech conveys his authority. The dialect makes the characters feel real and specific to their historical moment.",
         marks: 3,
       },
       {
@@ -1999,7 +2000,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       'The revision cards created in this lesson are valuable — ensure students bring them to every subsequent lesson for reference.',
     ],
     targetedSkills: [
-      'Writer\'s Methods',
+      "Writer's Methods",
       'Language Analysis',
       'Structural Analysis',
       'Symbolism',
@@ -2038,14 +2039,14 @@ export const y10IgcseLessons: LessonPlan[] = [
       'thematic connection',
     ],
     starterActivity: {
-      title: 'Extract vs. Whole Text: What\'s the Balance?',
+      title: "Extract vs. Whole Text: What's the Balance?",
       duration: '6 minutes',
       instructions:
         'Display an extract-based question from a past paper. Ask students: "If this question is worth 25 marks, how would you divide your time and paragraphs between the extract and the wider text?" Students discuss in pairs and share. Teacher establishes the recommended balance: approximately 60% extract analysis, 40% wider text references. Explain that the extract is your anchor — analyse it in detail first, then branch out.',
       differentiation: {
         support:
           'Provide a visual pie chart showing the 60/40 balance and a simple essay structure diagram.',
-        core: 'Students discuss and justify their own balance before the teacher\'s recommendation.',
+        core: "Students discuss and justify their own balance before the teacher's recommendation.",
         stretch:
           'Students explain why the examiner provides an extract — what skills does it test that a general essay question does not?',
       },
@@ -2117,7 +2118,7 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Write a "bridge" sentence that transitions from analysis of Lennie\'s behaviour in an extract to a whole-text discussion of his characterisation.',
         lines: 3,
         modelAnswer:
-          '"Lennie\'s childlike confusion in this extract is characteristic of Steinbeck\'s sustained presentation of him as simultaneously powerful and vulnerable — a duality that Steinbeck develops from the opening description of Lennie drinking from the pool \'like a horse\' through to the tragic conclusion at the same location."',
+          "\"Lennie's childlike confusion in this extract is characteristic of Steinbeck's sustained presentation of him as simultaneously powerful and vulnerable — a duality that Steinbeck develops from the opening description of Lennie drinking from the pool 'like a horse' through to the tragic conclusion at the same location.\"",
         marks: 2,
       },
       {
@@ -2214,7 +2215,7 @@ export const y10IgcseLessons: LessonPlan[] = [
             'Allow access to a quotation revision sheet for whole-text references. Provide a planning template. Aim for a minimum of introduction and three paragraphs.',
           core: 'Students plan and write independently under full exam conditions.',
           stretch:
-            'Students aim for five analytical paragraphs plus a conclusion that makes an evaluative judgement about Steinbeck\'s most effective method of presenting the theme.',
+            "Students aim for five analytical paragraphs plus a conclusion that makes an evaluative judgement about Steinbeck's most effective method of presenting the theme.",
         },
         resources: [
           'Extract handout',
@@ -2248,9 +2249,10 @@ export const y10IgcseLessons: LessonPlan[] = [
       title: 'Exit Ticket: One Strength, One Target',
       duration: '5 minutes',
       instructions:
-        'Students write on a sticky note: one strength they demonstrated in today\'s essay and one specific target for their revision. Teacher collects all sticky notes and reads three anonymised examples, celebrating strengths and normalising the fact that everyone has areas to develop. Teacher uses the collected data to plan revision sessions and targeted intervention.',
+        "Students write on a sticky note: one strength they demonstrated in today's essay and one specific target for their revision. Teacher collects all sticky notes and reads three anonymised examples, celebrating strengths and normalising the fact that everyone has areas to develop. Teacher uses the collected data to plan revision sessions and targeted intervention.",
       differentiation: {
-        support: 'Provide sentence frames: "I did well at... because..." and "I need to improve... by...".',
+        support:
+          'Provide sentence frames: "I did well at... because..." and "I need to improve... by...".',
         core: 'Students write independently.',
         stretch:
           'Students write a specific study plan for the next two weeks, allocating time to their identified target area.',
@@ -2285,10 +2287,10 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'A student\'s essay includes these paragraphs: (1) Introduction, (2) Extract paragraph on language, (3) Extract paragraph on character, (4) Plot summary of the ending. What advice would you give about paragraph 4?',
+          "A student's essay includes these paragraphs: (1) Introduction, (2) Extract paragraph on language, (3) Extract paragraph on character, (4) Plot summary of the ending. What advice would you give about paragraph 4?",
         lines: 5,
         modelAnswer:
-          'Paragraph 4 is plot summary, not analysis. The student should replace it with an analytical whole-text paragraph that discusses the theme or character from the extract question at a different point in the novella. It should include a quotation, analyse Steinbeck\'s methods, and link to context or authorial intent. Plot summary scores zero marks — examiners assume you know the plot.',
+          "Paragraph 4 is plot summary, not analysis. The student should replace it with an analytical whole-text paragraph that discusses the theme or character from the extract question at a different point in the novella. It should include a quotation, analyse Steinbeck's methods, and link to context or authorial intent. Plot summary scores zero marks — examiners assume you know the plot.",
         marks: 3,
       },
       {
@@ -2302,7 +2304,7 @@ export const y10IgcseLessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'This is the culmination of the OMAM unit — use the self-assessment data to plan targeted revision sessions before the exam.',
-      'Compare students\' self-assessed bands with your own teacher assessment. Where there are discrepancies, hold individual conferences.',
+      "Compare students' self-assessed bands with your own teacher assessment. Where there are discrepancies, hold individual conferences.",
       'Collect both original and redrafted essays to track progress over time. The redraft is where real learning happens.',
       'Consider organising a "revision week" before the exam with focused sessions on the most common weaknesses identified across the class.',
       'The quotation memorisation question is deliberately practical — students who know their quotations perform significantly better in timed conditions.',
@@ -2315,4 +2317,4 @@ export const y10IgcseLessons: LessonPlan[] = [
       'Revision Planning',
     ],
   },
-];
+]

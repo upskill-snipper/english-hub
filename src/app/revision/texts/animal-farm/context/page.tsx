@@ -1,15 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  BookOpen,
-  Calendar,
-  Clock,
-  Lightbulb,
-  Sparkles,
-  Users,
-} from 'lucide-react'
+import { ArrowLeft, BookOpen, Calendar, Clock, Lightbulb, Sparkles, Users } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
 
@@ -125,20 +117,77 @@ type TimelineEvent = {
 }
 
 const TIMELINE: TimelineEvent[] = [
-  { year: '1903', event: 'Eric Arthur Blair (George Orwell) born in India', relevance: 'Raised in the British colonial system he later critiqued' },
-  { year: '1917', event: 'Russian Revolution', relevance: 'The historical foundation of the entire novel\u2019s allegory' },
-  { year: '1924', event: 'Lenin dies; Stalin vs Trotsky power struggle begins', relevance: 'Paralleled by Napoleon vs Snowball conflict' },
-  { year: '1929', event: 'Trotsky expelled from the Soviet Union', relevance: 'Paralleled by Snowball\u2019s expulsion in Chapter 5' },
-  { year: '1930s', event: 'Stalin\u2019s Great Purge and show trials', relevance: 'Paralleled by the animal confessions and executions in Chapter 7' },
-  { year: '1936\u201339', event: 'Spanish Civil War', relevance: 'Orwell fights, is wounded, witnesses Soviet betrayal of allies' },
-  { year: '1937', event: 'Barcelona May Days \u2014 communists attack allies', relevance: 'Direct inspiration for the pigs\u2019 betrayal of the revolution' },
-  { year: '1938', event: 'Orwell publishes Homage to Catalonia', relevance: 'Documents his Spanish experience; establishes anti-Stalinist position' },
-  { year: '1943\u201344', event: 'Orwell writes Animal Farm', relevance: 'Completed February 1944 during the wartime Soviet alliance' },
-  { year: '1944\u201345', event: 'Four publishers reject the manuscript', relevance: 'Self-censorship proves Orwell\u2019s point about propaganda' },
-  { year: 'Aug 1945', event: 'Animal Farm published by Secker and Warburg', relevance: 'Published as the wartime alliance collapses and the Cold War begins' },
-  { year: '1945', event: 'WWII ends; Cold War begins', relevance: 'Novel\u2019s anti-Stalin message becomes politically valuable to the West' },
-  { year: '1950', event: 'Orwell dies of tuberculosis, aged 46', relevance: 'Does not live to see the Cold War appropriation of his work' },
-  { year: '1954', event: 'CIA-funded animated film adaptation', relevance: 'Novel co-opted as Western propaganda; ending altered to remove anti-capitalist critique' },
+  {
+    year: '1903',
+    event: 'Eric Arthur Blair (George Orwell) born in India',
+    relevance: 'Raised in the British colonial system he later critiqued',
+  },
+  {
+    year: '1917',
+    event: 'Russian Revolution',
+    relevance: 'The historical foundation of the entire novel\u2019s allegory',
+  },
+  {
+    year: '1924',
+    event: 'Lenin dies; Stalin vs Trotsky power struggle begins',
+    relevance: 'Paralleled by Napoleon vs Snowball conflict',
+  },
+  {
+    year: '1929',
+    event: 'Trotsky expelled from the Soviet Union',
+    relevance: 'Paralleled by Snowball\u2019s expulsion in Chapter 5',
+  },
+  {
+    year: '1930s',
+    event: 'Stalin\u2019s Great Purge and show trials',
+    relevance: 'Paralleled by the animal confessions and executions in Chapter 7',
+  },
+  {
+    year: '1936\u201339',
+    event: 'Spanish Civil War',
+    relevance: 'Orwell fights, is wounded, witnesses Soviet betrayal of allies',
+  },
+  {
+    year: '1937',
+    event: 'Barcelona May Days \u2014 communists attack allies',
+    relevance: 'Direct inspiration for the pigs\u2019 betrayal of the revolution',
+  },
+  {
+    year: '1938',
+    event: 'Orwell publishes Homage to Catalonia',
+    relevance: 'Documents his Spanish experience; establishes anti-Stalinist position',
+  },
+  {
+    year: '1943\u201344',
+    event: 'Orwell writes Animal Farm',
+    relevance: 'Completed February 1944 during the wartime Soviet alliance',
+  },
+  {
+    year: '1944\u201345',
+    event: 'Four publishers reject the manuscript',
+    relevance: 'Self-censorship proves Orwell\u2019s point about propaganda',
+  },
+  {
+    year: 'Aug 1945',
+    event: 'Animal Farm published by Secker and Warburg',
+    relevance: 'Published as the wartime alliance collapses and the Cold War begins',
+  },
+  {
+    year: '1945',
+    event: 'WWII ends; Cold War begins',
+    relevance: 'Novel\u2019s anti-Stalin message becomes politically valuable to the West',
+  },
+  {
+    year: '1950',
+    event: 'Orwell dies of tuberculosis, aged 46',
+    relevance: 'Does not live to see the Cold War appropriation of his work',
+  },
+  {
+    year: '1954',
+    event: 'CIA-funded animated film adaptation',
+    relevance:
+      'Novel co-opted as Western propaganda; ending altered to remove anti-capitalist critique',
+  },
 ]
 
 /* ────────────────────────────────────────────────────────────────────── */
@@ -150,11 +199,11 @@ export default function AnimalFarmContextPage() {
     <div className="min-h-screen bg-cream-50 font-serif">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Animal Farm", url: "https://theenglishhub.app/revision/texts/animal-farm" },
-          { name: "Context", url: "https://theenglishhub.app/revision/texts/animal-farm/context" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Animal Farm', url: 'https://theenglishhub.app/revision/texts/animal-farm' },
+          { name: 'Context', url: 'https://theenglishhub.app/revision/texts/animal-farm/context' },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
@@ -163,13 +212,13 @@ export default function AnimalFarmContextPage() {
 
         {/* Hero */}
         <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-clay-200/[0.06] p-6 sm:p-8 lg:p-10">
-          <a
+          <Link
             href="/revision/texts/animal-farm"
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
           >
             <ArrowLeft className="size-3.5" />
             Back to Animal Farm
-          </a>
+          </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-clay-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
@@ -185,14 +234,11 @@ export default function AnimalFarmContextPage() {
           <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
             Animal Farm &mdash; Context
           </h1>
-          <p className="mt-2 text-lg text-ink-500">
-            by George Orwell &mdash; 1945
-          </p>
+          <p className="mt-2 text-lg text-ink-500">by George Orwell &mdash; 1945</p>
           <p className="mt-4 max-w-2xl text-ink-500">
-            Historical and social context for GCSE literature. Covers the Russian
-            Revolution, Stalin vs Trotsky, Orwell&rsquo;s democratic socialism,
-            the Spanish Civil War, allegory and satire, publication difficulties
-            and Cold War relevance.
+            Historical and social context for GCSE literature. Covers the Russian Revolution, Stalin
+            vs Trotsky, Orwell&rsquo;s democratic socialism, the Spanish Civil War, allegory and
+            satire, publication difficulties and Cold War relevance.
           </p>
         </section>
 
@@ -203,12 +249,11 @@ export default function AnimalFarmContextPage() {
             <div className="text-sm text-ink-600">
               <p className="mb-1 font-bold text-ink-800">AO3 &mdash; What examiners want</p>
               <p>
-                AO3 rewards you for showing how <strong>context shapes
-                meaning</strong>. Do not simply list facts about the Russian
-                Revolution &mdash; explain how the allegorical parallels affect
-                the reader&rsquo;s understanding of Orwell&rsquo;s purpose. The
-                best answers show <em>why</em> Orwell chose to tell this story
-                through animals on a farm.
+                AO3 rewards you for showing how <strong>context shapes meaning</strong>. Do not
+                simply list facts about the Russian Revolution &mdash; explain how the allegorical
+                parallels affect the reader&rsquo;s understanding of Orwell&rsquo;s purpose. The
+                best answers show <em>why</em> Orwell chose to tell this story through animals on a
+                farm.
               </p>
             </div>
           </div>
@@ -218,9 +263,7 @@ export default function AnimalFarmContextPage() {
         <section className="mt-10">
           <div className="flex items-center gap-2 mb-4">
             <Clock className="size-5 text-teal-600" />
-            <h2 className="font-serif text-2xl font-bold text-ink-900">
-              Key Timeline
-            </h2>
+            <h2 className="font-serif text-2xl font-bold text-ink-900">Key Timeline</h2>
           </div>
           <div className="relative ml-4 border-l-2 border-teal-400/20 pl-6 space-y-4">
             {TIMELINE.map((item, i) => (
@@ -245,9 +288,7 @@ export default function AnimalFarmContextPage() {
               <div className="flex size-10 items-center justify-center rounded-xl bg-clay-300/10">
                 <BookOpen className="size-5 text-clay-600" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-ink-900">
-                {section.title}
-              </h2>
+              <h2 className="font-serif text-2xl font-bold text-ink-900">{section.title}</h2>
             </div>
 
             {/* Body paragraphs */}
@@ -264,9 +305,7 @@ export default function AnimalFarmContextPage() {
               <p className="text-xs font-bold uppercase tracking-wider text-teal-700 mb-1">
                 Key Point
               </p>
-              <p className="text-sm leading-relaxed text-ink-700 font-medium">
-                {section.keyPoint}
-              </p>
+              <p className="text-sm leading-relaxed text-ink-700 font-medium">{section.keyPoint}</p>
             </div>
 
             {/* Exam link */}
@@ -277,17 +316,13 @@ export default function AnimalFarmContextPage() {
                   <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
                     Using This in Your Essay
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">
-                    {section.examLink}
-                  </p>
+                  <p className="text-sm leading-relaxed text-ink-600">{section.examLink}</p>
                 </div>
               </div>
             </div>
 
             {/* Divider */}
-            {idx < CONTEXT_SECTIONS.length - 1 && (
-              <div className="mt-10 border-t border-ink-100" />
-            )}
+            {idx < CONTEXT_SECTIONS.length - 1 && <div className="mt-10 border-t border-ink-100" />}
           </section>
         ))}
 
@@ -347,7 +382,9 @@ export default function AnimalFarmContextPage() {
                 </tr>
                 <tr className="bg-cream-100/40">
                   <td className="px-4 py-3 font-medium text-ink-700">The Windmill</td>
-                  <td className="px-4 py-3 text-ink-600">Soviet industrialisation / Five-Year Plans</td>
+                  <td className="px-4 py-3 text-ink-600">
+                    Soviet industrialisation / Five-Year Plans
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -356,41 +393,41 @@ export default function AnimalFarmContextPage() {
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">
-            Continue studying
-          </h3>
+          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
           <p className="mt-1 text-sm text-ink-500">
             Explore characters, themes, key quotes and essay plans for Animal Farm.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <a
+            <Link
               href="/revision/texts/animal-farm/characters"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
               Characters
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/animal-farm/themes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Themes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/animal-farm/key-quotes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Key Quotes
-            </a>
+            </Link>
           </div>
         </section>
 
-        {/* Fair-dealing notice */}
+        {/* Rights / fair-dealing notice */}
         <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
-          Short quotations (&le;15 words each) reproduced under the fair dealing
-          provision of the Copyright, Designs and Patents Act 1988 for the purpose
-          of criticism, review and educational study.{' '}
-          <em>Animal Farm</em> by George Orwell is published by Penguin Books.
-          Full text available from your school or local library.
+          <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in
+          2021, the Orwell estate (AM Heath) actively manages educational use. Quotations on this
+          page are short fair-dealing extracts; longer engagement should use a school-licensed
+          edition. Short quotations (&le;15 words each) reproduced under the fair dealing provision
+          of the Copyright, Designs and Patents Act 1988 (s.30) for the purpose of criticism, review
+          and educational study. <em>Animal Farm</em> by George Orwell is published by Penguin
+          Books. Full text available from your school or local library.
         </p>
       </div>
     </div>

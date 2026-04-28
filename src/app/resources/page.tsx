@@ -1,19 +1,19 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { getServerBoard } from "@/lib/board/get-server-board";
-import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config';
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { getServerBoard } from '@/lib/board/get-server-board'
+import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 
 export const metadata: Metadata = {
-  title: "Free English Resources",
+  title: 'Free English Resources',
   description:
-    "Free GCSE and IGCSE English resources: revision notes, poetry guides, writing skills, exam techniques, vocabulary builders, and study tools for all boards.",
-  alternates: { canonical: "https://theenglishhub.app/resources" },
+    'Free GCSE and IGCSE English resources: revision notes, poetry guides, writing skills, exam techniques, vocabulary builders, and study tools for all boards.',
+  alternates: { canonical: 'https://theenglishhub.app/resources' },
   openGraph: {
-    title: "Free English Resources — The English Hub",
+    title: 'Free English Resources — The English Hub',
     description:
-      "Free GCSE and IGCSE English resources: revision notes, poetry guides, writing skills, exam techniques, vocabulary builders, and study tools for all boards.",
+      'Free GCSE and IGCSE English resources: revision notes, poetry guides, writing skills, exam techniques, vocabulary builders, and study tools for all boards.',
   },
-};
+}
 import {
   BookOpen,
   PenTool,
@@ -34,102 +34,115 @@ import {
   ArrowRight,
   Library,
   type LucideIcon,
-} from "lucide-react";
-import { LearningTip } from "@/components/ui/learning-tip";
+} from 'lucide-react'
+import { LearningTip } from '@/components/ui/learning-tip'
 
 /* ─── Quick Start Cards ──────────────────────────────────────── */
 
 type ResourceCard = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
+  title: string
+  description: string
+  href: string
+  icon: LucideIcon
   // Boards this card is relevant to. Omit (or 'all') to show for everyone.
-  boards?: ExamBoard[];
-};
+  boards?: ExamBoard[]
+}
 
 const QUICK_START: ResourceCard[] = [
   {
-    title: "Revision Notes",
-    description: "Concise, exam-focused notes for every text and topic.",
-    href: "/resources/revision-notes",
+    title: 'Revision Notes',
+    description: 'Concise, exam-focused notes for every text and topic.',
+    href: '/resources/revision-notes',
     icon: BookOpen,
   },
   {
-    title: "Writing Skills",
-    description: "Master creative, persuasive, and analytical writing.",
-    href: "/resources/writing-skills",
+    title: 'Writing Skills',
+    description: 'Master creative, persuasive, and analytical writing.',
+    href: '/resources/writing-skills',
     icon: PenTool,
   },
   {
-    title: "Poetry Hub",
-    description: "Poem-by-poem guides for every anthology cluster.",
-    href: "/resources/poetry",
+    title: 'Poetry Hub',
+    description: 'Poem-by-poem guides for every anthology cluster.',
+    href: '/resources/poetry',
     icon: Feather,
     // Cambridge IGCSE has no set poetry anthology
-    boards: ["aqa", "edexcel", "ocr", "eduqas", "edexcel-igcse"],
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
-    title: "Techniques",
-    description: "Language and structural techniques with real examples.",
-    href: "/resources/techniques",
+    title: 'Techniques',
+    description: 'Language and structural techniques with real examples.',
+    href: '/resources/techniques',
     icon: Sparkles,
   },
   {
-    title: "Model Answers",
-    description: "Grade 9 exemplars with marker commentary.",
-    href: "/resources/model-answers",
+    title: 'Model Answers',
+    description: 'Grade 9 exemplars with marker commentary.',
+    href: '/resources/model-answers',
     icon: FileText,
   },
   {
-    title: "Study Tools",
-    description: "Flashcards, planners, and revision checklists.",
-    href: "/resources/study-tools",
+    title: 'Study Tools',
+    description: 'Flashcards, planners, and revision checklists.',
+    href: '/resources/study-tools',
     icon: Wrench,
   },
-];
+]
 
 /* ─── All Categories ─────────────────────────────────────────── */
 
 type Category = {
-  name: string;
-  href: string;
-  icon: LucideIcon;
-  boards?: ExamBoard[];
-};
-
-const ALL_CATEGORIES: Category[] = [
-  { name: "English Literature", href: "/resources/english-literature", icon: BookMarked, boards: ["aqa", "edexcel", "ocr", "eduqas", "edexcel-igcse"] },
-  { name: "English Language", href: "/resources/english-language", icon: MessageSquare },
-  { name: "Revision Notes", href: "/resources/revision-notes", icon: BookOpen },
-  { name: "Poetry", href: "/resources/poetry", icon: Feather, boards: ["aqa", "edexcel", "ocr", "eduqas", "edexcel-igcse"] },
-  { name: "Writing Skills", href: "/resources/writing-skills", icon: PenTool },
-  { name: "Techniques", href: "/resources/techniques", icon: Sparkles },
-  { name: "Model Answers", href: "/resources/model-answers", icon: FileText },
-  { name: "Exam Technique", href: "/resources/exam-technique", icon: GraduationCap },
-  { name: "Grade Targets", href: "/resources/grade-targets", icon: Target },
-  { name: "Study Tools", href: "/resources/study-tools", icon: Wrench },
-  { name: "Vocabulary", href: "/resources/vocabulary", icon: Search },
-  { name: "Glossary", href: "/resources/glossary", icon: Library },
-  { name: "Context", href: "/resources/context", icon: Lightbulb },
-  { name: "Themes", href: "/resources/themes", icon: Layers },
-  { name: "Spoken Language", href: "/resources/spoken-language", icon: Mic },
-  { name: "Teaching", href: "/resources/teaching", icon: Users },
-];
-
-function relevantToBoard<T extends { boards?: ExamBoard[] }>(items: T[], board: ExamBoard | null): T[] {
-  if (!board) return items;
-  return items.filter((item) => !item.boards || item.boards.includes(board));
+  name: string
+  href: string
+  icon: LucideIcon
+  boards?: ExamBoard[]
 }
 
+const ALL_CATEGORIES: Category[] = [
+  {
+    name: 'English Literature',
+    href: '/resources/english-literature',
+    icon: BookMarked,
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
+  },
+  { name: 'English Language', href: '/resources/english-language', icon: MessageSquare },
+  { name: 'Revision Notes', href: '/resources/revision-notes', icon: BookOpen },
+  {
+    name: 'Poetry',
+    href: '/resources/poetry',
+    icon: Feather,
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
+  },
+  { name: 'Writing Skills', href: '/resources/writing-skills', icon: PenTool },
+  { name: 'Techniques', href: '/resources/techniques', icon: Sparkles },
+  { name: 'Model Answers', href: '/resources/model-answers', icon: FileText },
+  { name: 'Exam Technique', href: '/resources/exam-technique', icon: GraduationCap },
+  { name: 'Grade Targets', href: '/resources/grade-targets', icon: Target },
+  { name: 'Study Tools', href: '/resources/study-tools', icon: Wrench },
+  { name: 'Vocabulary', href: '/resources/vocabulary', icon: Search },
+  { name: 'Glossary', href: '/resources/glossary', icon: Library },
+  { name: 'Context', href: '/resources/context', icon: Lightbulb },
+  { name: 'Themes', href: '/resources/themes', icon: Layers },
+  { name: 'Authors', href: '/resources/authors', icon: Quote },
+  { name: 'Spoken Language', href: '/resources/spoken-language', icon: Mic },
+  { name: 'Teaching', href: '/resources/teaching', icon: Users },
+]
+
+function relevantToBoard<T extends { boards?: ExamBoard[] }>(
+  items: T[],
+  board: ExamBoard | null,
+): T[] {
+  if (!board) return items
+  return items.filter((item) => !item.boards || item.boards.includes(board))
+}
 
 /* ─── Page ────────────────────────────────────────────────────── */
 
 export default async function ResourcesPage() {
-  const board = await getServerBoard();
-  const boardConfig = getBoardConfig(board);
-  const quickStart = relevantToBoard(QUICK_START, board);
-  const categories = relevantToBoard(ALL_CATEGORIES, board);
+  const board = await getServerBoard()
+  const boardConfig = getBoardConfig(board)
+  const quickStart = relevantToBoard(QUICK_START, board)
+  const categories = relevantToBoard(ALL_CATEGORIES, board)
 
   return (
     <main className="min-h-screen bg-background">
@@ -156,9 +169,8 @@ export default async function ResourcesPage() {
           )}
 
           <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
-            A comprehensive library of revision notes, model answers, technique
-            guides, and exam preparation tools -- built for GCSE and IGCSE
-            English students.
+            A comprehensive library of revision notes, model answers, technique guides, and exam
+            preparation tools -- built for GCSE and IGCSE English students.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -177,9 +189,7 @@ export default async function ResourcesPage() {
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-2">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">
-              Popular Resources
-            </h2>
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">Popular Resources</h2>
             <LearningTip categories={['resource', 'study']} />
           </div>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
@@ -188,7 +198,7 @@ export default async function ResourcesPage() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {quickStart.map((item) => {
-              const Icon = item.icon;
+              const Icon = item.icon
               return (
                 <Link
                   key={item.title}
@@ -205,7 +215,7 @@ export default async function ResourcesPage() {
                     {item.description}
                   </p>
                 </Link>
-              );
+              )
             })}
           </div>
         </div>
@@ -215,9 +225,7 @@ export default async function ResourcesPage() {
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">
-              All Categories
-            </h2>
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">All Categories</h2>
             <LearningTip categories={['resource', 'exam']} />
           </div>
           <p className="mt-2 text-muted-foreground">
@@ -226,7 +234,7 @@ export default async function ResourcesPage() {
 
           <div className="mt-10 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
             {categories.map((cat) => {
-              const Icon = cat.icon;
+              const Icon = cat.icon
               return (
                 <Link
                   key={cat.name}
@@ -234,17 +242,14 @@ export default async function ResourcesPage() {
                   className="group flex items-center gap-3 rounded-lg border border-transparent px-4 py-3 transition-colors hover:border-border hover:bg-muted"
                 >
                   <Icon className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
-                  <span className="text-sm font-medium text-foreground">
-                    {cat.name}
-                  </span>
+                  <span className="text-sm font-medium text-foreground">{cat.name}</span>
                   <ArrowRight className="ml-auto h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
                 </Link>
-              );
+              )
             })}
           </div>
         </div>
       </section>
-
     </main>
-  );
+  )
 }

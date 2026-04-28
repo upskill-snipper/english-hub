@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CourseData, CourseModule, CourseQuiz } from './courses';
+import type { CourseData, CourseModule, CourseQuiz } from './courses'
 
 // ─── AQA GCSE English Literature: A Christmas Carol ─────────────────────────
 
@@ -86,11 +86,12 @@ const accModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Dickens\'s father was imprisoned in the Marshalsea debtors\' prison, and the twelve-year-old Dickens was sent to Warren\'s Blacking Factory. This traumatic childhood experience fuelled his lifelong advocacy for the poor.',
+          "Dickens's father was imprisoned in the Marshalsea debtors' prison, and the twelve-year-old Dickens was sent to Warren's Blacking Factory. This traumatic childhood experience fuelled his lifelong advocacy for the poor.",
       },
       {
         id: 'aqa-acc-m1-q2',
-        question: 'What is the principle of "less eligibility" in the context of the 1834 Poor Law?',
+        question:
+          'What is the principle of "less eligibility" in the context of the 1834 Poor Law?',
         options: [
           'The poor were less eligible for government positions',
           'Workhouse conditions had to be worse than the worst conditions outside to deter people from entering',
@@ -129,16 +130,17 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m1-q5',
-        question: 'Which economic theory does Scrooge echo when he says the poor should "decrease the surplus population"?',
+        question:
+          'Which economic theory does Scrooge echo when he says the poor should "decrease the surplus population"?',
         options: [
           'Keynesian economics',
           'Marxist theory',
           'Malthusian economics',
-          'Adam Smith\'s free market theory',
+          "Adam Smith's free market theory",
         ],
         correct: 2,
         explanation:
-          'Thomas Malthus argued that population growth would outstrip food supply and that poverty was a natural check on overpopulation. Scrooge\'s language directly echoes this cold, utilitarian thinking, which Dickens despised.',
+          "Thomas Malthus argued that population growth would outstrip food supply and that poverty was a natural check on overpopulation. Scrooge's language directly echoes this cold, utilitarian thinking, which Dickens despised.",
       },
     ],
   },
@@ -283,11 +285,11 @@ const accModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'The simile conveys Scrooge\'s isolation, but the submerged metaphor of the pearl hints at the goodness hidden within his hard exterior — foreshadowing his eventual transformation.',
+          "The simile conveys Scrooge's isolation, but the submerged metaphor of the pearl hints at the goodness hidden within his hard exterior — foreshadowing his eventual transformation.",
       },
       {
         id: 'aqa-acc-m2-q2',
-        question: 'What does Marley\'s chain symbolise?',
+        question: "What does Marley's chain symbolise?",
         options: [
           'His imprisonment in the afterlife for committing crimes',
           'The spiritual burden of a lifetime spent prioritising money over humanity',
@@ -296,7 +298,7 @@ const accModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Marley\'s chain — made of cash-boxes, keys, padlocks, and ledgers — symbolises the spiritual consequences of a life devoted to greed at the expense of compassion. Each link represents a missed opportunity for kindness.',
+          "Marley's chain — made of cash-boxes, keys, padlocks, and ledgers — symbolises the spiritual consequences of a life devoted to greed at the expense of compassion. Each link represents a missed opportunity for kindness.",
       },
       {
         id: 'aqa-acc-m2-q3',
@@ -305,7 +307,7 @@ const accModules: CourseModule[] = [
           'Because Marley was a politician, not a businessman',
           'Because the word "business" puns on commercial business vs. moral duty — Marley pursued the former but neglected the latter',
           'Because Marley never actually ran a business',
-          'Because mankind did not want Marley\'s help',
+          "Because mankind did not want Marley's help",
         ],
         correct: 1,
         explanation:
@@ -313,29 +315,25 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m2-q4',
-        question: 'What technique does Dickens use when the fog and cold weather mirror Scrooge\'s personality?',
-        options: [
-          'Dramatic irony',
-          'Pathetic fallacy',
-          'Onomatopoeia',
-          'Foreshadowing',
-        ],
+        question:
+          "What technique does Dickens use when the fog and cold weather mirror Scrooge's personality?",
+        options: ['Dramatic irony', 'Pathetic fallacy', 'Onomatopoeia', 'Foreshadowing'],
         correct: 1,
         explanation:
-          'Pathetic fallacy is the attribution of human emotions to the natural world. Dickens uses the cold, bleak weather to mirror Scrooge\'s emotional frigidity, making the physical environment an extension of his character.',
+          "Pathetic fallacy is the attribution of human emotions to the natural world. Dickens uses the cold, bleak weather to mirror Scrooge's emotional frigidity, making the physical environment an extension of his character.",
       },
       {
         id: 'aqa-acc-m2-q5',
         question: 'What is the significance of the phantoms Scrooge sees through the window?',
         options: [
           'They show that ghosts are common in Victorian London',
-          'They broaden Dickens\'s critique from one man to an entire class of wealthy people who ignored their social duty',
+          "They broaden Dickens's critique from one man to an entire class of wealthy people who ignored their social duty",
           'They are simply added for a frightening effect',
           'They represent the charity collectors returning in ghostly form',
         ],
         correct: 1,
         explanation:
-          'The phantoms — many recognisable as former businessmen — extend Dickens\'s message beyond Scrooge. They represent an entire class punished for indifference, broadening the novella from personal redemption story to social critique.',
+          "The phantoms — many recognisable as former businessmen — extend Dickens's message beyond Scrooge. They represent an entire class punished for indifference, broadening the novella from personal redemption story to social critique.",
       },
     ],
   },
@@ -453,7 +451,7 @@ const accModules: CourseModule[] = [
     quiz: [
       {
         id: 'aqa-acc-m3-q1',
-        question: 'What does the Ghost of Christmas Past\'s light symbolise?',
+        question: "What does the Ghost of Christmas Past's light symbolise?",
         options: [
           'The warmth of a Christmas fire',
           'The illuminating power of memory and truth',
@@ -462,29 +460,29 @@ const accModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'The ghost\'s light symbolises the truth that memory reveals. Scrooge\'s attempt to extinguish it with the cap represents his desire to suppress painful self-knowledge — but truth cannot be fully hidden.',
+          "The ghost's light symbolises the truth that memory reveals. Scrooge's attempt to extinguish it with the cap represents his desire to suppress painful self-knowledge — but truth cannot be fully hidden.",
       },
       {
         id: 'aqa-acc-m3-q2',
         question: 'Why is Fezziwig significant as a character?',
         options: [
-          'He is Scrooge\'s father and provides context for Scrooge\'s childhood',
-          'He is a foil for Scrooge — a generous employer who uses his wealth to spread joy, contrasting with Scrooge\'s miserliness',
+          "He is Scrooge's father and provides context for Scrooge's childhood",
+          "He is a foil for Scrooge — a generous employer who uses his wealth to spread joy, contrasting with Scrooge's miserliness",
           'He is the Ghost of Christmas Past in human form',
           'He represents the greed of Victorian factory owners',
         ],
         correct: 1,
         explanation:
-          'Fezziwig is a foil for Scrooge — both are employers, but Fezziwig spends generously on his workers\' happiness. The contrast highlights Scrooge\'s failure as an employer and embodies Dickens\'s ideal of benevolent capitalism.',
+          "Fezziwig is a foil for Scrooge — both are employers, but Fezziwig spends generously on his workers' happiness. The contrast highlights Scrooge's failure as an employer and embodies Dickens's ideal of benevolent capitalism.",
       },
       {
         id: 'aqa-acc-m3-q3',
         question: 'What does Belle mean when she says "a golden idol has displaced me"?',
         options: [
           'Scrooge has replaced her with a golden statue',
-          'Money has replaced love in Scrooge\'s heart — the biblical allusion suggests his worship of wealth is a form of idolatry',
+          "Money has replaced love in Scrooge's heart — the biblical allusion suggests his worship of wealth is a form of idolatry",
           'Scrooge has begun worshipping a new religion',
-          'Belle has been fired from her job at a goldsmith\'s shop',
+          "Belle has been fired from her job at a goldsmith's shop",
         ],
         correct: 1,
         explanation:
@@ -492,7 +490,7 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m3-q4',
-        question: 'What is the first sign that Scrooge\'s conscience is awakening in Stave 2?',
+        question: "What is the first sign that Scrooge's conscience is awakening in Stave 2?",
         options: [
           'He attacks the Ghost of Christmas Past',
           'He weeps at seeing his lonely childhood self and wishes he had given something to the carol singer he turned away',
@@ -505,16 +503,17 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m3-q5',
-        question: 'Why does Dickens reveal that Scrooge\'s father was harsh and that Fan died young?',
+        question:
+          "Why does Dickens reveal that Scrooge's father was harsh and that Fan died young?",
         options: [
           'To make the story more dramatic and entertaining',
           'To generate sympathy for Scrooge by showing that his coldness is rooted in childhood neglect and loss, not innate cruelty',
           'To explain why Scrooge became a successful businessman',
-          'To introduce a subplot about Scrooge\'s family inheritance',
+          "To introduce a subplot about Scrooge's family inheritance",
         ],
         correct: 1,
         explanation:
-          'Dickens reveals Scrooge\'s painful backstory to generate sympathy and show that greed is a learned response to trauma. This makes Scrooge\'s redemption psychologically convincing — he is recovering his original nature, not gaining a new one.',
+          "Dickens reveals Scrooge's painful backstory to generate sympathy and show that greed is a learned response to trauma. This makes Scrooge's redemption psychologically convincing — he is recovering his original nature, not gaining a new one.",
       },
     ],
   },
@@ -610,7 +609,7 @@ const accModules: CourseModule[] = [
 <li><strong>"If he be like to die, he had better do it, and decrease the surplus population."</strong> — The Spirit echoes Scrooge's own Malthusian language back at him, showing its cruelty in the context of a beloved child.</li>
 <li><strong>"God bless us, every one!"</strong> — Tiny Tim's blessing is unconditional and all-encompassing, the novella's statement of universal goodwill.</li>
 <li><strong>"I mean to give him the same chance every year, whether he likes it or not, for I pity him."</strong> — Fred's persistent kindness; he pities Scrooge's misery, not the poor.</li>
-<li><strong>"Are there no prisons? No workhouses?"</strong> — The Spirit echoes Scrooge's earlier dismissal, showing its inadequacy in addressing poverty.</li>
+<li><strong>"Are there no prisons? Are there no workhouses?"</strong> — The Spirit echoes Scrooge's earlier dismissal, showing its inadequacy in addressing poverty.</li>
 <li><strong>"Beware them both, but most of all beware this boy, for on his brow I see that written which is Doom."</strong> — Ignorance is presented as the greatest threat; an uneducated poor class is a threat to society itself.</li>
 <li><strong>"More than eighteen hundred years this day have had birth, and I have never felt the want of company."</strong> — The Spirit's eternity; Christmas time is eternal, transcending any individual lifetime.</li>
 </ul>
@@ -650,7 +649,7 @@ const accModules: CourseModule[] = [
         id: 'aqa-acc-m4-q1',
         question: 'What do Ignorance and Want allegorically represent?',
         options: [
-          'Scrooge\'s two worst personality traits',
+          "Scrooge's two worst personality traits",
           'The failure to educate and provide for the poor — social ills that will doom society if unaddressed',
           'Two orphans that Scrooge must adopt to complete his redemption',
           'The ghosts of children who died in workhouses',
@@ -661,7 +660,7 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m4-q2',
-        question: 'How does Dickens use the Cratchit family to challenge Scrooge\'s worldview?',
+        question: "How does Dickens use the Cratchit family to challenge Scrooge's worldview?",
         options: [
           'By showing they are wealthier than Scrooge realises',
           'By showing they are materially poor but spiritually rich — inverting the expected hierarchy of wealth and happiness',
@@ -674,29 +673,31 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m4-q3',
-        question: 'Why does the Ghost repeat Scrooge\'s own words — "decrease the surplus population" and "Are there no prisons?"?',
+        question:
+          'Why does the Ghost repeat Scrooge\'s own words — "decrease the surplus population" and "Are there no prisons?"?',
         options: [
           'The Ghost has a poor memory and can only repeat things it has heard',
-          'To throw Scrooge\'s callous words back at him, forcing him to confront their cruelty in a new context',
-          'To show that the Ghost agrees with Scrooge\'s earlier views',
+          "To throw Scrooge's callous words back at him, forcing him to confront their cruelty in a new context",
+          "To show that the Ghost agrees with Scrooge's earlier views",
           'To test whether Scrooge remembers what he said in Stave 1',
         ],
         correct: 1,
         explanation:
-          'By echoing Scrooge\'s words in contexts that reveal their cruelty (Tiny Tim\'s potential death, Ignorance and Want), the Ghost forces Scrooge — and the reader — to recognise the human cost of such attitudes.',
+          "By echoing Scrooge's words in contexts that reveal their cruelty (Tiny Tim's potential death, Ignorance and Want), the Ghost forces Scrooge — and the reader — to recognise the human cost of such attitudes.",
       },
       {
         id: 'aqa-acc-m4-q4',
-        question: 'What is the significance of the Ghost of Christmas Present ageing during the stave?',
+        question:
+          'What is the significance of the Ghost of Christmas Present ageing during the stave?',
         options: [
           'It shows that ghosts are mortal like humans',
           'It reminds the reader that the present is fleeting — the opportunity to act with generosity exists only now',
-          'It symbolises Scrooge\'s own ageing process',
+          "It symbolises Scrooge's own ageing process",
           'It creates a horror effect typical of ghost stories',
         ],
         correct: 1,
         explanation:
-          'The Ghost\'s rapid ageing and one-day lifespan emphasise the transience of the present moment. Dickens implies that the time to act with compassion is always now — delay risks permanent consequences.',
+          "The Ghost's rapid ageing and one-day lifespan emphasise the transience of the present moment. Dickens implies that the time to act with compassion is always now — delay risks permanent consequences.",
       },
     ],
   },
@@ -843,35 +844,36 @@ const accModules: CourseModule[] = [
         question: 'Why is the Ghost of Christmas Yet to Come silent throughout Stave 4?',
         options: [
           'Because it is angry with Scrooge',
-          'Because silence evokes death\'s implacability and forces Scrooge to interpret the visions himself, shifting him from passive observer to active moral reasoner',
+          "Because silence evokes death's implacability and forces Scrooge to interpret the visions himself, shifting him from passive observer to active moral reasoner",
           'Because Victorian ghosts were traditionally depicted as mute',
           'Because the Ghost has no mouth beneath its hood',
         ],
         correct: 1,
         explanation:
-          'The silence serves multiple purposes: it evokes the Grim Reaper, conveys the finality of death, and — crucially — forces Scrooge to actively interpret what he sees rather than being guided by the Spirit\'s commentary.',
+          "The silence serves multiple purposes: it evokes the Grim Reaper, conveys the finality of death, and — crucially — forces Scrooge to actively interpret what he sees rather than being guided by the Spirit's commentary.",
       },
       {
         id: 'aqa-acc-m5-q2',
-        question: 'What is the significance of Tiny Tim\'s empty chair and preserved crutch?',
+        question: "What is the significance of Tiny Tim's empty chair and preserved crutch?",
         options: [
           'They show the Cratchits are too poor to afford new furniture',
-          'They symbolise absence and enduring love — Tim\'s memory is cherished, contrasting with the unmourned dead businessman',
+          "They symbolise absence and enduring love — Tim's memory is cherished, contrasting with the unmourned dead businessman",
           'They are simply realistic details of a Victorian household',
           'They foreshadow that another Cratchit child will become ill',
         ],
         correct: 1,
         explanation:
-          'The empty chair and carefully preserved crutch symbolise the absence of a beloved child whose memory endures in a loving family. This contrasts sharply with the dead businessman (Scrooge) whom nobody mourns, reinforcing Dickens\'s message that love, not wealth, gives life meaning.',
+          "The empty chair and carefully preserved crutch symbolise the absence of a beloved child whose memory endures in a loving family. This contrasts sharply with the dead businessman (Scrooge) whom nobody mourns, reinforcing Dickens's message that love, not wealth, gives life meaning.",
       },
       {
         id: 'aqa-acc-m5-q3',
-        question: 'What is the importance of Scrooge\'s question: "Are these the shadows of things that Will be, or May be?"',
+        question:
+          'What is the importance of Scrooge\'s question: "Are these the shadows of things that Will be, or May be?"',
         options: [
           'It shows Scrooge is confused about how ghosts work',
           'It reveals Scrooge asking whether the future is fixed or changeable — whether redemption is still possible',
           'It is a rhetorical question that Scrooge does not expect an answer to',
-          'It shows Scrooge doubting the Ghost\'s authority',
+          "It shows Scrooge doubting the Ghost's authority",
         ],
         correct: 1,
         explanation:
@@ -879,7 +881,8 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m5-q4',
-        question: 'What structural technique does Dickens use by having Scrooge not realise the dead man is himself?',
+        question:
+          'What structural technique does Dickens use by having Scrooge not realise the dead man is himself?',
         options: [
           'Unreliable narration',
           'Dramatic irony — the reader suspects the truth before Scrooge does, creating suspense and deepening the emotional impact',
@@ -895,13 +898,13 @@ const accModules: CourseModule[] = [
         question: 'How does Dickens juxtapose the two deaths in Stave 4?',
         options: [
           'He compares a natural death with a murder',
-          'He contrasts the businessman\'s unmourned death (met with indifference and theft) with Tiny Tim\'s deeply mourned death (met with love and grief)',
+          "He contrasts the businessman's unmourned death (met with indifference and theft) with Tiny Tim's deeply mourned death (met with love and grief)",
           'He shows that rich people have better funerals than poor people',
           'He contrasts a peaceful death with a violent one',
         ],
         correct: 1,
         explanation:
-          'Dickens places the two deaths side by side: the wealthy miser is robbed and forgotten, while the poor child is mourned with overwhelming love. The juxtaposition argues that life\'s value is measured by love, not wealth.',
+          "Dickens places the two deaths side by side: the wealthy miser is robbed and forgotten, while the poor child is mourned with overwhelming love. The juxtaposition argues that life's value is measured by love, not wealth.",
       },
     ],
   },
@@ -980,7 +983,8 @@ const accModules: CourseModule[] = [
     quiz: [
       {
         id: 'aqa-acc-m6-q1',
-        question: 'What is the significance of Scrooge comparing himself to "a schoolboy" in Stave 5?',
+        question:
+          'What is the significance of Scrooge comparing himself to "a schoolboy" in Stave 5?',
         options: [
           'He is mocking his own old age',
           'It recalls the lonely schoolboy of Stave 2, suggesting Scrooge has recovered his lost innocence and capacity for joy',
@@ -996,7 +1000,7 @@ const accModules: CourseModule[] = [
         question: 'Why does Dickens capitalise "NOT" in "Tiny Tim, who did NOT die"?',
         options: [
           'It was a printing error in the first edition',
-          'It is an authorial intrusion — a shout of triumph that breaks the narrative voice, expressing Dickens\'s joy at the changed outcome',
+          "It is an authorial intrusion — a shout of triumph that breaks the narrative voice, expressing Dickens's joy at the changed outcome",
           'It emphasises that Tiny Tim was never really ill',
           'It follows standard Victorian punctuation conventions',
         ],
@@ -1009,7 +1013,7 @@ const accModules: CourseModule[] = [
         question: 'Why does the novella\'s final line shift from "him" to "us"?',
         options: [
           'It is a grammatical error',
-          'Dickens breaks the fictional frame to challenge every reader to follow Scrooge\'s example, making the moral demand personal',
+          "Dickens breaks the fictional frame to challenge every reader to follow Scrooge's example, making the moral demand personal",
           'It refers to a different character who joins Scrooge at the end',
           'It shows that the narrator is one of the characters in the story',
         ],
@@ -1117,49 +1121,49 @@ const accModules: CourseModule[] = [
     quiz: [
       {
         id: 'aqa-acc-m7-q1',
-        question: 'How does Dickens structure Scrooge\'s transformation across the novella?',
+        question: "How does Dickens structure Scrooge's transformation across the novella?",
         options: [
           'It happens suddenly in Stave 5 with no prior warning',
           'It is gradual — each ghost addresses a different psychological need (memory, empathy, fear), creating a credible arc across all five staves',
           'Scrooge changes in Stave 3 and the remaining staves are unnecessary',
-          'The transformation is entirely driven by Marley\'s ghost in Stave 1',
+          "The transformation is entirely driven by Marley's ghost in Stave 1",
         ],
         correct: 1,
         explanation:
-          'Dickens structures the transformation gradually: the Past awakens memory and regret, the Present shows the human cost of Scrooge\'s behaviour, and the Future terrifies him into action. Each stage builds on the last, making the change psychologically convincing.',
+          "Dickens structures the transformation gradually: the Past awakens memory and regret, the Present shows the human cost of Scrooge's behaviour, and the Future terrifies him into action. Each stage builds on the last, making the change psychologically convincing.",
       },
       {
         id: 'aqa-acc-m7-q2',
         question: 'Why does Bob Cratchit toast Scrooge as "the Founder of the Feast"?',
         options: [
-          'Because Scrooge paid for the Cratchits\' Christmas dinner',
-          'Because Bob\'s moral generosity leads him to be civil even to his oppressor — his goodness implicitly shames Scrooge',
+          "Because Scrooge paid for the Cratchits' Christmas dinner",
+          "Because Bob's moral generosity leads him to be civil even to his oppressor — his goodness implicitly shames Scrooge",
           'Because Mrs Cratchit insists on it',
           'Because Bob is being sarcastic',
         ],
         correct: 1,
         explanation:
-          'Bob toasts Scrooge despite Scrooge\'s cruelty, showing extraordinary moral generosity. Mrs Cratchit\'s angry refusal highlights how remarkable Bob\'s civility is. The contrast subtly shames Scrooge and the reader.',
+          "Bob toasts Scrooge despite Scrooge's cruelty, showing extraordinary moral generosity. Mrs Cratchit's angry refusal highlights how remarkable Bob's civility is. The contrast subtly shames Scrooge and the reader.",
       },
       {
         id: 'aqa-acc-m7-q3',
-        question: 'What is the function of the three ghosts\' escalating severity?',
+        question: "What is the function of the three ghosts' escalating severity?",
         options: [
           'It adds variety to the plot',
-          'It mirrors the escalating pressure on Scrooge\'s conscience — from gentle memory to empathic challenge to terrifying consequences',
+          "It mirrors the escalating pressure on Scrooge's conscience — from gentle memory to empathic challenge to terrifying consequences",
           'It reflects the fact that ghosts get angrier over time',
           'It shows that each ghost is more powerful than the last',
         ],
         correct: 1,
         explanation:
-          'The ghosts\' progression — from warm and conversational to challenging to silent and terrifying — structurally mirrors the escalating pressure needed to break through Scrooge\'s defences. This is a key structural method for AO2.',
+          "The ghosts' progression — from warm and conversational to challenging to silent and terrifying — structurally mirrors the escalating pressure needed to break through Scrooge's defences. This is a key structural method for AO2.",
       },
       {
         id: 'aqa-acc-m7-q4',
         question: 'How does Tiny Tim function as both character and symbol?',
         options: [
           'He is a character because he appears in the story and a symbol because he is named after a real person',
-          'As a character, he is a disabled child in a loving family; as a symbol, he represents all vulnerable children endangered by poverty and society\'s indifference',
+          "As a character, he is a disabled child in a loving family; as a symbol, he represents all vulnerable children endangered by poverty and society's indifference",
           'He is a character in the present scenes and a symbol in the future scenes',
           'He functions only as a character — calling him a symbol is too simplistic',
         ],
@@ -1169,12 +1173,13 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m7-q5',
-        question: 'What does the repetition of "sole" in the description of Scrooge and Marley\'s relationship emphasise?',
+        question:
+          'What does the repetition of "sole" in the description of Scrooge and Marley\'s relationship emphasise?',
         options: [
-          'That Scrooge was legally responsible for Marley\'s estate',
+          "That Scrooge was legally responsible for Marley's estate",
           'The absolute isolation of both men — they had no one else in their lives, highlighting the loneliness that greed creates',
-          'That Scrooge stole Marley\'s possessions after his death',
-          'That Marley\'s soul was the only thing Scrooge could not possess',
+          "That Scrooge stole Marley's possessions after his death",
+          "That Marley's soul was the only thing Scrooge could not possess",
         ],
         correct: 1,
         explanation:
@@ -1288,7 +1293,7 @@ const accModules: CourseModule[] = [
         ],
         correct: 2,
         explanation:
-          'Fred defines Christmas as a time of kindness, forgiveness, and charity — and crucially, as a time when social barriers dissolve and the wealthy recognise the poor as fellow human beings. This defines the novella\'s moral compass.',
+          "Fred defines Christmas as a time of kindness, forgiveness, and charity — and crucially, as a time when social barriers dissolve and the wealthy recognise the poor as fellow human beings. This defines the novella's moral compass.",
       },
       {
         id: 'aqa-acc-m8-q3',
@@ -1308,26 +1313,26 @@ const accModules: CourseModule[] = [
         question: 'How does Dickens link isolation to moral decline in the novella?',
         options: [
           'He shows that isolated people commit more crimes',
-          'He presents Scrooge\'s self-imposed isolation as both a symptom and cause of his moral failure — cutting himself off from others leads to spiritual death',
+          "He presents Scrooge's self-imposed isolation as both a symptom and cause of his moral failure — cutting himself off from others leads to spiritual death",
           'He argues that only married people can be morally good',
           'He shows that isolation is healthy in moderation',
         ],
         correct: 1,
         explanation:
-          'Scrooge\'s isolation is both a symptom of his greed (he pushes people away) and a cause of his moral decline (without human connection, he loses empathy). His transformation is marked by reconnection with others.',
+          "Scrooge's isolation is both a symptom of his greed (he pushes people away) and a cause of his moral decline (without human connection, he loses empathy). His transformation is marked by reconnection with others.",
       },
       {
         id: 'aqa-acc-m8-q5',
         question: 'Which thematic connection would strengthen an essay about redemption?',
         options: [
           'Linking redemption to the supernatural — Scrooge is redeemed by magic',
-          'Linking redemption to social responsibility — Scrooge\'s personal transformation is expressed through practical action to help others',
+          "Linking redemption to social responsibility — Scrooge's personal transformation is expressed through practical action to help others",
           'Linking redemption to weather — the cold represents sin',
           'Linking redemption to food — Scrooge starts eating better',
         ],
         correct: 1,
         explanation:
-          'Linking redemption to social responsibility shows that Scrooge\'s transformation is not just internal but expressed through concrete action — sending the turkey, donating to charity, raising Bob\'s salary. This creates the interconnected, conceptualised response that AQA rewards.',
+          "Linking redemption to social responsibility shows that Scrooge's transformation is not just internal but expressed through concrete action — sending the turkey, donating to charity, raising Bob's salary. This creates the interconnected, conceptualised response that AQA rewards.",
       },
     ],
   },
@@ -1428,11 +1433,11 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m9-q2',
-        question: 'How does the supernatural framework serve Dickens\'s moral purpose?',
+        question: "How does the supernatural framework serve Dickens's moral purpose?",
         options: [
           'It makes the story scarier and more entertaining',
-          'It allows Dickens to literalise metaphors (Marley\'s chain), compress time (past/present/future in one night), and bypass Scrooge\'s psychological defences',
-          'It reflects Dickens\'s personal belief in ghosts',
+          "It allows Dickens to literalise metaphors (Marley's chain), compress time (past/present/future in one night), and bypass Scrooge's psychological defences",
+          "It reflects Dickens's personal belief in ghosts",
           'It was required by Victorian publishing conventions',
         ],
         correct: 1,
@@ -1454,7 +1459,8 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m9-q4',
-        question: 'Which of the following correctly analyses a technique rather than just identifying it?',
+        question:
+          'Which of the following correctly analyses a technique rather than just identifying it?',
         options: [
           '"Dickens uses pathetic fallacy in Stave 1."',
           '"Dickens uses pathetic fallacy in Stave 1 to externalise Scrooge\'s emotional coldness, making the fog and freezing weather a physical manifestation of his inner frigidity."',
@@ -1463,7 +1469,7 @@ const accModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Option B not only identifies the technique but explains its effect — showing how pathetic fallacy makes Scrooge\'s internal state visible and tangible. AO2 requires analysis of effect, not just identification of technique.',
+          "Option B not only identifies the technique but explains its effect — showing how pathetic fallacy makes Scrooge's internal state visible and tangible. AO2 requires analysis of effect, not just identification of technique.",
       },
       {
         id: 'aqa-acc-m9-q5',
@@ -1476,7 +1482,7 @@ const accModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Dickens\'s narrator is warm, direct, and morally engaged — frequently addressing the reader to guide their interpretation. This authorial intrusion creates an intimate, fireside quality and ensures the social message is unmistakable.',
+          "Dickens's narrator is warm, direct, and morally engaged — frequently addressing the reader to guide their interpretation. This authorial intrusion creates an intimate, fireside quality and ensures the social message is unmistakable.",
       },
     ],
   },
@@ -1616,7 +1622,8 @@ const accModules: CourseModule[] = [
     quiz: [
       {
         id: 'aqa-acc-m10-q1',
-        question: 'What does the word "present" mean in the AQA question "How does Dickens present..."?',
+        question:
+          'What does the word "present" mean in the AQA question "How does Dickens present..."?',
         options: [
           'What gifts does Dickens give to his characters',
           'How does Dickens construct or create meaning for the reader through his methods (language, form, structure)',
@@ -1638,7 +1645,7 @@ const accModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'WHAT = your interpretation (AO1). HOW = the writer\'s technique and its effect (AO2). WHY = the contextual purpose and reader response (AO3). This framework ensures every paragraph addresses the three main what markers look for.',
+          "WHAT = your interpretation (AO1). HOW = the writer's technique and its effect (AO2). WHY = the contextual purpose and reader response (AO3). This framework ensures every paragraph addresses the three main what markers look for.",
       },
       {
         id: 'aqa-acc-m10-q3',
@@ -1658,9 +1665,9 @@ const accModules: CourseModule[] = [
         question: 'What is "bolted-on" context, and why should you avoid it?',
         options: [
           'Context added at the end of an essay — it is fine for AO3',
-          'A detached historical fact with no connection to the text\'s language, themes, or effects — it scores poorly for AO3',
+          "A detached historical fact with no connection to the text's language, themes, or effects — it scores poorly for AO3",
           'Context taken from a different text — it is considered plagiarism',
-          'Context about Dickens\'s biography — it is irrelevant to the exam',
+          "Context about Dickens's biography — it is irrelevant to the exam",
         ],
         correct: 1,
         explanation:
@@ -1681,7 +1688,7 @@ const accModules: CourseModule[] = [
       },
     ],
   },
-];
+]
 
 // ─── Assessment Questions ────────────────────────────────────────────────────
 
@@ -1692,20 +1699,20 @@ const assessmentQuestions: CourseQuiz[] = [
     options: ['1837', '1840', '1843', '1848'],
     correct: 2,
     explanation:
-      'A Christmas Carol was published in December 1843. Dickens wrote it in just six weeks, driven by outrage at the treatment of the poor.',
+      'A Christmas Carol was published on 19 December 1843 by Chapman & Hall. Dickens wrote it in just six weeks, driven by outrage at the treatment of the poor and by the cruelty of the workhouse system created by the 1834 New Poor Law.',
   },
   {
     id: 'aqa-acc-aq2',
     question: 'Which parliamentary report partly inspired Dickens to write A Christmas Carol?',
     options: [
       'The Factory Act of 1833',
-      'The Second Report of the Children\'s Employment Commission',
+      "The Second Report of the Children's Employment Commission",
       'The Corn Laws Report of 1842',
       'The Public Health Act Report',
     ],
     correct: 1,
     explanation:
-      'The Second Report of the Children\'s Employment Commission detailed the abuse of children in factories and mines. Dickens initially planned a pamphlet but chose a Christmas story to reach a wider audience.',
+      "The Second Report of the Children's Employment Commission detailed the abuse of children in factories and mines. Dickens initially planned a pamphlet but chose a Christmas story to reach a wider audience.",
   },
   {
     id: 'aqa-acc-aq3',
@@ -1718,19 +1725,20 @@ const assessmentQuestions: CourseQuiz[] = [
     ],
     correct: 2,
     explanation:
-      'Thomas Malthus argued that population growth outstrips food supply and poverty is a natural check. Scrooge\'s language echoes this ideology, which Dickens despised and sought to expose as cruel.',
+      "Thomas Malthus argued that population growth outstrips food supply and poverty is a natural check. Scrooge's language echoes this ideology, which Dickens despised and sought to expose as cruel.",
   },
   {
     id: 'aqa-acc-aq4',
-    question: 'What literary technique does Dickens employ when the cold weather mirrors Scrooge\'s personality?',
+    question:
+      "What literary technique does Dickens employ when the cold weather mirrors Scrooge's personality?",
     options: ['Dramatic irony', 'Pathetic fallacy', 'Onomatopoeia', 'Hyperbole'],
     correct: 1,
     explanation:
-      'Pathetic fallacy is the attribution of human emotions or qualities to the natural world. The cold, fog, and darkness in Stave 1 externalise Scrooge\'s emotional frigidity.',
+      "Pathetic fallacy is the attribution of human emotions or qualities to the natural world. The cold, fog, and darkness in Stave 1 externalise Scrooge's emotional frigidity.",
   },
   {
     id: 'aqa-acc-aq5',
-    question: 'What is the deeper significance of Marley\'s chain?',
+    question: "What is the deeper significance of Marley's chain?",
     options: [
       'It represents his criminal record',
       'It symbolises the spiritual burden of a life spent prioritising money over compassion — each link a missed opportunity for kindness',
@@ -1748,24 +1756,24 @@ const assessmentQuestions: CourseQuiz[] = [
       'Because oysters are actually social creatures',
       'Because it conveys isolation on the surface but an oyster contains a pearl — hinting at hidden goodness within Scrooge',
       'Because Dickens was known to dislike seafood',
-      'Because oysters were expensive in Victorian times, suggesting Scrooge\'s wealth',
+      "Because oysters were expensive in Victorian times, suggesting Scrooge's wealth",
     ],
     correct: 1,
     explanation:
-      'The simile works on two levels: the surface meaning conveys isolation, but the pearl metaphor subtly foreshadows Scrooge\'s latent capacity for goodness. This layered analysis demonstrates sophisticated AO2 skills.',
+      "The simile works on two levels: the surface meaning conveys isolation, but the pearl metaphor subtly foreshadows Scrooge's latent capacity for goodness. This layered analysis demonstrates sophisticated AO2 skills.",
   },
   {
     id: 'aqa-acc-aq7',
-    question: 'What role does Fan play in explaining Scrooge\'s treatment of Fred?',
+    question: "What role does Fan play in explaining Scrooge's treatment of Fred?",
     options: [
       'Fan told Scrooge to avoid Fred',
-      'Fan\'s early death (giving birth to Fred) means Fred is a living reminder of the sister Scrooge lost — his rejection of Fred is a defence against grief',
+      "Fan's early death (giving birth to Fred) means Fred is a living reminder of the sister Scrooge lost — his rejection of Fred is a defence against grief",
       'Fan and Fred never met, so there is no connection',
       'Fan asked Scrooge to raise Fred, which he refused to do',
     ],
     correct: 1,
     explanation:
-      'Fan died giving birth to Fred. Dickens implies that Scrooge\'s cold treatment of his nephew is not mere grumpiness but a defence mechanism — engaging with Fred means confronting the grief of losing his beloved sister.',
+      "Fan died giving birth to Fred. Dickens implies that Scrooge's cold treatment of his nephew is not mere grumpiness but a defence mechanism — engaging with Fred means confronting the grief of losing his beloved sister.",
   },
   {
     id: 'aqa-acc-aq8',
@@ -1784,10 +1792,10 @@ const assessmentQuestions: CourseQuiz[] = [
     id: 'aqa-acc-aq9',
     question: 'What do Ignorance and Want represent as allegorical figures?',
     options: [
-      'Scrooge\'s two worst fears',
-      'Society\'s failure to educate and provide for its poorest members — social ills that will doom civilisation if unaddressed',
+      "Scrooge's two worst fears",
+      "Society's failure to educate and provide for its poorest members — social ills that will doom civilisation if unaddressed",
       'The two children Scrooge never had',
-      'The orphans from Dickens\'s personal life',
+      "The orphans from Dickens's personal life",
     ],
     correct: 1,
     explanation:
@@ -1798,17 +1806,18 @@ const assessmentQuestions: CourseQuiz[] = [
     question: 'Why is the Ghost of Christmas Yet to Come silent?',
     options: [
       'Because it is not a real ghost but a hallucination',
-      'Because silence evokes death\'s implacability and forces Scrooge into active moral reasoning rather than passive observation',
+      "Because silence evokes death's implacability and forces Scrooge into active moral reasoning rather than passive observation",
       'Because Dickens ran out of dialogue ideas',
       'Because Victorian tradition held that future ghosts could not speak',
     ],
     correct: 1,
     explanation:
-      'The Ghost\'s silence serves multiple purposes: it evokes the Grim Reaper, conveys the finality of death, and forces Scrooge to interpret the visions himself — shifting from passive observation to active moral engagement.',
+      "The Ghost's silence serves multiple purposes: it evokes the Grim Reaper, conveys the finality of death, and forces Scrooge to interpret the visions himself — shifting from passive observation to active moral engagement.",
   },
   {
     id: 'aqa-acc-aq11',
-    question: 'What does the triple negative "unwatched, unwept, uncared for" convey about Scrooge\'s death?',
+    question:
+      'What does the triple negative "unwatched, unwept, uncared for" convey about Scrooge\'s death?',
     options: [
       'That Scrooge died peacefully',
       'That his death was unexpected',
@@ -1821,12 +1830,13 @@ const assessmentQuestions: CourseQuiz[] = [
   },
   {
     id: 'aqa-acc-aq12',
-    question: 'What is the significance of the distinction between "Will be" and "May be" at the gravestone?',
+    question:
+      'What is the significance of the distinction between "Will be" and "May be" at the gravestone?',
     options: [
       'It shows Scrooge is confused about grammar',
       'Scrooge asks whether the future is fixed or changeable — whether redemption is still possible — marking the turning point of the entire narrative',
       'It is a philosophical question with no practical significance',
-      'It shows Scrooge doubting the Ghost\'s powers',
+      "It shows Scrooge doubting the Ghost's powers",
     ],
     correct: 1,
     explanation:
@@ -1863,7 +1873,7 @@ const assessmentQuestions: CourseQuiz[] = [
     question: 'What is the effect of the novella\'s final line shifting from "him" to "us"?',
     options: [
       'It is a grammatical error',
-      'Dickens breaks the fictional frame to challenge every reader to follow Scrooge\'s example — the moral demand becomes personal and inescapable',
+      "Dickens breaks the fictional frame to challenge every reader to follow Scrooge's example — the moral demand becomes personal and inescapable",
       'It refers to the other characters joining Scrooge',
       'It shows the narrator revealing his identity',
     ],
@@ -1889,17 +1899,18 @@ const assessmentQuestions: CourseQuiz[] = [
     question: 'How should AO3 context be integrated into an AQA essay?',
     options: [
       'In a separate "context paragraph" at the start of the essay',
-      'Embedded into analytical points — connecting historical facts to Dickens\'s language, purpose, and effects rather than bolting them on separately',
+      "Embedded into analytical points — connecting historical facts to Dickens's language, purpose, and effects rather than bolting them on separately",
       'Only in the conclusion',
       'Context is not required for the 19th-century novel question',
     ],
     correct: 1,
     explanation:
-      'AO3 context should be woven into analysis, not bolted on. Connect contextual knowledge to specific textual moments and Dickens\'s purpose — e.g., linking Scrooge\'s language to Malthusian economics while analysing its effect on the reader.',
+      "AO3 context should be woven into analysis, not bolted on. Connect contextual knowledge to specific textual moments and Dickens's purpose — e.g., linking Scrooge's language to Malthusian economics while analysing its effect on the reader.",
   },
   {
     id: 'aqa-acc-aq18',
-    question: 'Which technique does Dickens use in "secret, and self-contained, and solitary as an oyster"?',
+    question:
+      'Which technique does Dickens use in "secret, and self-contained, and solitary as an oyster"?',
     options: [
       'Onomatopoeia and alliteration',
       'Sibilance and tricolon — the repeated "s" sounds create a sealed, hissing quality, and the three-part list builds rhythmic emphasis',
@@ -1912,16 +1923,17 @@ const assessmentQuestions: CourseQuiz[] = [
   },
   {
     id: 'aqa-acc-aq19',
-    question: 'Why is Belle\'s phrase "You fear the world too much" significant for understanding Scrooge?',
+    question:
+      'Why is Belle\'s phrase "You fear the world too much" significant for understanding Scrooge?',
     options: [
       'It shows Belle is afraid of Scrooge',
-      'It reveals that Scrooge\'s greed is rooted in fear — fear of poverty and vulnerability — humanising him even as it condemns his choices',
+      "It reveals that Scrooge's greed is rooted in fear — fear of poverty and vulnerability — humanising him even as it condemns his choices",
       'It suggests Scrooge should travel less',
       'It shows that Scrooge was once a brave person',
     ],
     correct: 1,
     explanation:
-      'Belle identifies that Scrooge\'s greed is a fear response — fear of the poverty and vulnerability he experienced as a child. This humanises Scrooge and suggests his greed is a learned defence mechanism, not an innate flaw.',
+      "Belle identifies that Scrooge's greed is a fear response — fear of the poverty and vulnerability he experienced as a child. This humanises Scrooge and suggests his greed is a learned defence mechanism, not an innate flaw.",
   },
   {
     id: 'aqa-acc-aq20',
@@ -1936,7 +1948,7 @@ const assessmentQuestions: CourseQuiz[] = [
     explanation:
       'AQA explicitly requires you to write about the extract and the novella as a whole. Aim for roughly equal coverage. Writing only about the extract limits you to the lower mark bands.',
   },
-];
+]
 
 // ─── Course Export ───────────────────────────────────────────────────────────
 
@@ -1951,8 +1963,8 @@ export const christmasCarolCourse: CourseData = {
   duration: '9 hours',
   level: 'GCSE',
   description:
-    'A comprehensive 10-module course covering Charles Dickens\'s A Christmas Carol for AQA GCSE English Literature. Includes detailed stave-by-stave analysis, character studies, thematic exploration, writer\'s methods, and AQA-specific exam technique with extract-based essay practice.',
+    "A comprehensive 10-module course covering Charles Dickens's A Christmas Carol for AQA GCSE English Literature. Includes detailed stave-by-stave analysis, character studies, thematic exploration, writer's methods, and AQA-specific exam technique with extract-based essay practice.",
   color: '#b91c1c',
   moduleList: accModules,
   assessmentQuestions,
-};
+}

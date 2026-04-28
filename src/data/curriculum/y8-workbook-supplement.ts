@@ -7,9 +7,9 @@
 // =============================================================================
 
 export interface WorkbookExercise {
-  id: string;
-  title: string;
-  termUnit: string;
+  id: string
+  title: string
+  termUnit: string
   type:
     | 'comprehension'
     | 'analysis'
@@ -22,34 +22,28 @@ export interface WorkbookExercise {
     | 'quotation-practice'
     | 'language-analysis'
     | 'speech-writing'
-    | 'media-literacy';
-  instructions: string;
-  modelAnswer: string;
-  marks: number;
-  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery';
-  keywords: string[];
-  linkedObjectives: string[];
+    | 'media-literacy'
+  instructions: string
+  modelAnswer: string
+  marks: number
+  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery'
+  keywords: string[]
+  linkedObjectives: string[]
 }
 
 export interface HomeworkTask {
-  id: string;
-  title: string;
-  halfTerm: number;
-  weekNumber: number;
-  type:
-    | 'reading-response'
-    | 'extended-writing'
-    | 'research'
-    | 'creative'
-    | 'revision'
-    | 'analysis';
-  instructions: string;
-  modelAnswer: string;
-  marks: number;
-  estimatedMinutes: number;
-  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery';
-  keywords: string[];
-  linkedObjectives: string[];
+  id: string
+  title: string
+  halfTerm: number
+  weekNumber: number
+  type: 'reading-response' | 'extended-writing' | 'research' | 'creative' | 'revision' | 'analysis'
+  instructions: string
+  modelAnswer: string
+  marks: number
+  estimatedMinutes: number
+  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery'
+  keywords: string[]
+  linkedObjectives: string[]
 }
 
 // =============================================================================
@@ -64,19 +58,26 @@ export const y8Term2WorkbookExercises: WorkbookExercise[] = [
     termUnit: 'T2: Conflict Poetry & Macbeth',
     type: 'analysis',
     instructions:
-      '<p>Read Tennyson\'s <em>The Charge of the Light Brigade</em> carefully before answering.</p>' +
+      "<p>Read Tennyson's <em>The Charge of the Light Brigade</em> carefully before answering.</p>" +
       '<ol>' +
-      '<li>Identify the poem\'s rhyme scheme and explain how it mirrors the rhythm of a cavalry charge. (3 marks)</li>' +
+      "<li>Identify the poem's rhyme scheme and explain how it mirrors the rhythm of a cavalry charge. (3 marks)</li>" +
       '<li>Explain the effect of Tennyson\'s repeated phrase "Into the valley of Death." (3 marks)</li>' +
       '<li>How does Tennyson present the soldiers as simultaneously heroic and powerless? Use two quotations. (6 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'The poem uses a predominantly dactylic metre (DUM-da-da) that propels the reader forward, replicating the relentless gallop of horses into battle. The irregular line lengths create a sense of chaos and urgency. ' +
+      'The poem uses a predominantly anapaestic dimeter (da-da-DUM da-da-DUM), with the refrain "Rode the six hundred" sustaining the same propulsive metre. Together these features propel the reader forward, replicating the relentless gallop of horses into battle. The irregular line lengths create a sense of chaos and urgency. ' +
       'The repeated phrase "Into the valley of Death" functions as an anaphora that builds a sense of doom. Each repetition deepens the reader\'s awareness that the soldiers are riding to certain destruction, making their courage more admirable and the tragedy more acute. ' +
       'The soldiers are heroic: "Theirs not to reason why, / Theirs but to do and die" presents unquestioning obedience as noble. Yet they are simultaneously powerless: they ride into "the jaws of Death," imagery that frames them as prey consumed by forces beyond their control. Tennyson honours their sacrifice while implicitly critiquing the commanders who ordered a doomed charge.',
     marks: 12,
     difficulty: 'developing',
-    keywords: ['conflict poetry', 'anaphora', 'dactylic metre', 'heroism', 'Tennyson'],
+    keywords: [
+      'conflict poetry',
+      'anaphora',
+      'anapaestic dimeter',
+      'refrain',
+      'heroism',
+      'Tennyson',
+    ],
     linkedObjectives: ['Y8.R5', 'Y8.R7', 'Y8.R8'],
   },
   // 2. comparison
@@ -111,20 +112,27 @@ export const y8Term2WorkbookExercises: WorkbookExercise[] = [
       '<p>Read Macbeth\'s soliloquy from Act 2, Scene 1: "Is this a dagger which I see before me..."</p>' +
       '<ol>' +
       '<li>What is a soliloquy, and why does Shakespeare use this technique here? (3 marks)</li>' +
-      '<li>Identify three language techniques in the soliloquy and explain what each reveals about Macbeth\'s state of mind. (9 marks)</li>' +
+      "<li>Identify three language techniques in the soliloquy and explain what each reveals about Macbeth's state of mind. (9 marks)</li>" +
       '</ol>',
     modelAnswer:
-      'A soliloquy is a speech delivered by a character alone on stage, revealing their innermost thoughts directly to the audience. Shakespeare uses it here so the audience can witness Macbeth\'s psychological unravelling in real time -- we see his guilt and ambition tearing him apart before he commits the murder, making us both horrified and complicit. ' +
+      "A soliloquy is a speech delivered by a character alone on stage, revealing their innermost thoughts directly to the audience. Shakespeare uses it here so the audience can witness Macbeth's psychological unravelling in real time -- we see his guilt and ambition tearing him apart before he commits the murder, making us both horrified and complicit. " +
       'Three techniques: (1) Apostrophe -- "Come, let me clutch thee" -- Macbeth addresses the hallucinated dagger as though it is real, suggesting his mind is fracturing under the weight of his intention. (2) Interrogative sentences -- "Art thou not, fatal vision, sensible / To feeling as to sight?" -- the frantic questioning shows his desperate need to rationalise the vision, revealing he cannot fully commit to the act with a clear conscience. (3) Semantic field of darkness -- "witchcraft," "Hecate," "wolf," "murder" -- the accumulation of dark imagery shows Macbeth consciously aligning himself with evil, as if naming the darkness gives him the courage to proceed.',
     marks: 12,
     difficulty: 'secure',
-    keywords: ['soliloquy', 'Macbeth', 'Shakespeare', 'apostrophe', 'semantic field', 'language analysis'],
+    keywords: [
+      'soliloquy',
+      'Macbeth',
+      'Shakespeare',
+      'apostrophe',
+      'semantic field',
+      'language analysis',
+    ],
     linkedObjectives: ['Y8.R5', 'Y8.R7', 'Y8.W3'],
   },
   // 4. language-analysis (Shakespeare)
   {
     id: 'y8t2-wb-04',
-    title: "Lady Macbeth: Language of Manipulation",
+    title: 'Lady Macbeth: Language of Manipulation',
     termUnit: 'T2: Conflict Poetry & Macbeth',
     type: 'language-analysis',
     instructions:
@@ -166,8 +174,8 @@ export const y8Term2WorkbookExercises: WorkbookExercise[] = [
       '</ol>',
     modelAnswer:
       '1. The Witches, Act 1. Chiasmus/paradox; introduces the theme of appearance vs reality -- nothing in this world is what it seems, and the moral order has inverted. ' +
-      '2. Macbeth, Act 1 -- he has just heard the witches\' prophecy. Apostrophe addressed to the stars; reveals his ambition is fully formed but recognises its darkness, establishing the theme of hidden evil beneath a noble exterior. ' +
-      '3. Macbeth, Act 2, immediately after killing Duncan. Rhetorical question and hyperbole; the vastness of Neptune\'s ocean unable to clean one pair of hands shows Macbeth understands his guilt is absolute and beyond redemption. ' +
+      "2. Macbeth, Act 1 -- he has just heard the witches' prophecy. Apostrophe addressed to the stars; reveals his ambition is fully formed but recognises its darkness, establishing the theme of hidden evil beneath a noble exterior. " +
+      "3. Macbeth, Act 2, immediately after killing Duncan. Rhetorical question and hyperbole; the vastness of Neptune's ocean unable to clean one pair of hands shows Macbeth understands his guilt is absolute and beyond redemption. " +
       '4. Lady Macbeth, Act 5 -- she is sleepwalking. Imperative and repetition; the fragmented, obsessive speech contrasts with her earlier cold control, showing that guilt eventually destroys even those who claimed to be above it. ' +
       '5. Macbeth, Act 3. Extended metaphor of blood as a river; he recognises he is past the point of no return, suggesting that unchecked ambition entraps the one who pursues it. ' +
       '6. The Second Witch, Act 4, as Macbeth approaches. Sinister announcement; Macbeth has become so associated with evil that the witches recognise him as one of their own -- his transformation from "brave Macbeth" to "something wicked" is complete.',
@@ -187,21 +195,28 @@ export const y8Term2WorkbookExercises: WorkbookExercise[] = [
       '<ol>' +
       '<li>How does Armitage use colloquial language to position the speaker? (4 marks)</li>' +
       '<li>Analyse how the poem presents the theme of psychological trauma. Use two embedded quotations. (6 marks)</li>' +
-      '<li>How does the poem\'s form (loosely structured stanzas, enjambment) reflect the speaker\'s mental state? (4 marks)</li>' +
+      "<li>How does the poem's form (loosely structured stanzas, enjambment) reflect the speaker's mental state? (4 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Armitage uses colloquial language ("legs it," "on the ground," "tosses his guts") to place the speaker firmly in an ordinary, working-class voice. This informality is deliberately jarring -- violence described in everyday language suggests the soldier has been conditioned to normalise killing. It also creates authenticity, making the psychological unravelling that follows feel more credible and devastating. ' +
       'The poem presents trauma through haunting repetition: "his blood-shadow stays on the street" suggests the dead man leaves a permanent imprint that cannot be erased. Furthermore, "he\'s here in my head / when I close my eyes" makes the trauma invasive and inescapable, showing that the real conflict continues long after the physical one ends. ' +
-      'The loosely structured stanzas and frequent enjambment mirror the speaker\'s fragmented, unstable thought process. Lines do not end where expected -- they spill over, just as the soldier\'s trauma spills beyond the moment of violence. The lack of a neat formal structure suggests there is no resolution or peace, only ongoing mental disruption.',
+      "The loosely structured stanzas and frequent enjambment mirror the speaker's fragmented, unstable thought process. Lines do not end where expected -- they spill over, just as the soldier's trauma spills beyond the moment of violence. The lack of a neat formal structure suggests there is no resolution or peace, only ongoing mental disruption.",
     marks: 14,
     difficulty: 'secure',
-    keywords: ['Remains', 'Simon Armitage', 'colloquial language', 'trauma', 'enjambment', 'conflict'],
+    keywords: [
+      'Remains',
+      'Simon Armitage',
+      'colloquial language',
+      'trauma',
+      'enjambment',
+      'conflict',
+    ],
     linkedObjectives: ['Y8.R5', 'Y8.R7', 'Y8.R8', 'Y8.W3'],
   },
   // 7. creative-writing
   {
     id: 'y8t2-wb-07',
-    title: 'Creative Writing: A Soldier\'s Inner Monologue',
+    title: "Creative Writing: A Soldier's Inner Monologue",
     termUnit: 'T2: Conflict Poetry & Macbeth',
     type: 'creative-writing',
     instructions:
@@ -221,32 +236,38 @@ export const y8Term2WorkbookExercises: WorkbookExercise[] = [
       'The best responses will create a character who feels real and morally complicated -- neither a hero nor a villain -- and whose inner conflict resonates with the reader beyond the immediate situation.',
     marks: 16,
     difficulty: 'secure',
-    keywords: ['interior monologue', 'conflict', 'creative writing', 'psychological', 'sensory detail'],
+    keywords: [
+      'interior monologue',
+      'conflict',
+      'creative writing',
+      'psychological',
+      'sensory detail',
+    ],
     linkedObjectives: ['Y8.W4', 'Y8.W5', 'Y8.W6'],
   },
   // 8. evaluation
   {
     id: 'y8t2-wb-08',
-    title: "Evaluation: Is Macbeth a Villain or a Victim?",
+    title: 'Evaluation: Is Macbeth a Villain or a Victim?',
     termUnit: 'T2: Conflict Poetry & Macbeth',
     type: 'evaluation',
     instructions:
-      '<p>Some readers see Macbeth as a cold-blooded villain; others argue he is a victim of his own ambition, his wife\'s manipulation, and the witches\' prophecies.</p>' +
+      "<p>Some readers see Macbeth as a cold-blooded villain; others argue he is a victim of his own ambition, his wife's manipulation, and the witches' prophecies.</p>" +
       '<ol>' +
       '<li>List three pieces of evidence that support the view that Macbeth is a villain. (3 marks)</li>' +
       '<li>List three pieces of evidence that support the view that Macbeth is a victim. (3 marks)</li>' +
       '<li>Write a well-structured paragraph presenting your own view, using evidence from the play. (8 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'Villain evidence: he murders the sleeping King Duncan (a guest under his protection, a deeply dishonourable act); he orders the massacre of Macduff\'s innocent family; he returns to the witches of his own will in Act 4, actively seeking power. ' +
-      'Victim evidence: the witches target Macbeth specifically, planting the seed of ambition; Lady Macbeth systematically dismantles his conscience and sense of self; he is tortured by guilt from the moment of Duncan\'s murder, suggesting he is not fundamentally evil. ' +
+      "Villain evidence: he murders the sleeping King Duncan (a guest under his protection, a deeply dishonourable act); he orders the massacre of Macduff's innocent family; he returns to the witches of his own will in Act 4, actively seeking power. " +
+      "Victim evidence: the witches target Macbeth specifically, planting the seed of ambition; Lady Macbeth systematically dismantles his conscience and sense of self; he is tortured by guilt from the moment of Duncan's murder, suggesting he is not fundamentally evil. " +
       'Evaluative paragraph: Shakespeare presents Macbeth as a deeply tragic figure whose capacity for both greatness and destruction makes him impossible to reduce to a simple villain. He chooses to act on the witches\' prophecy -- "I am settled, and bend up / Each corporal agent to this terrible feat" -- showing agency and deliberate commitment to evil. Yet his vivid moral imagination, expressed through the dagger hallucination and post-murder torment, reveals a man whose conscience never entirely surrenders. Perhaps Shakespeare\'s most disturbing suggestion is that Macbeth is neither villain nor victim, but a warning: that ordinary human ambition, given the right conditions, can destroy everything it touches.',
     marks: 14,
     difficulty: 'mastery',
     keywords: ['evaluation', 'Macbeth', 'villain', 'victim', 'ambition', 'Shakespeare'],
     linkedObjectives: ['Y8.R4', 'Y8.R6', 'Y8.W2', 'Y8.W3'],
   },
-];
+]
 
 // =============================================================================
 // TERM 3 SUPPLEMENT: Rhetoric & Media
@@ -333,7 +354,7 @@ export const y8Term3WorkbookExercises: WorkbookExercise[] = [
       '<p>Study the advertisement provided (a print or digital advert chosen by your teacher).</p>' +
       '<ol>' +
       '<li>Identify the target audience and explain how you know. (3 marks)</li>' +
-      '<li>List three persuasive techniques used in the advert\'s text or visuals. For each, explain the intended effect. (9 marks)</li>' +
+      "<li>List three persuasive techniques used in the advert's text or visuals. For each, explain the intended effect. (9 marks)</li>" +
       '<li>Is this advert ethical? Consider whether it uses exaggeration, false needs, or manipulation of insecurity. Write a judgment paragraph. (6 marks)</li>' +
       '</ol>',
     modelAnswer:
@@ -342,7 +363,14 @@ export const y8Term3WorkbookExercises: WorkbookExercise[] = [
       'The ethical judgment should apply specific criteria: does the advert make truthful claims? Does it exploit insecurities (common in beauty/diet adverts)? Does it target vulnerable groups? A strong response will weigh evidence on both sides before reaching a clear, qualified conclusion.',
     marks: 18,
     difficulty: 'secure',
-    keywords: ['advertising', 'media literacy', 'target audience', 'persuasion', 'ethics', 'visual media'],
+    keywords: [
+      'advertising',
+      'media literacy',
+      'target audience',
+      'persuasion',
+      'ethics',
+      'visual media',
+    ],
     linkedObjectives: ['Y8.R9', 'Y8.R10', 'Y8.W2'],
   },
   // 5. language-analysis
@@ -352,9 +380,9 @@ export const y8Term3WorkbookExercises: WorkbookExercise[] = [
     termUnit: 'T3: Rhetoric & Media',
     type: 'language-analysis',
     instructions:
-      '<p>Read the extract from Greta Thunberg\'s address to the UN Climate Action Summit, September 2019.</p>' +
+      "<p>Read the extract from Greta Thunberg's address to the UN Climate Action Summit, September 2019.</p>" +
       '<ol>' +
-      '<li>Identify the dominant emotion in Thunberg\'s speech. How is this emotion conveyed through word choice? (4 marks)</li>' +
+      "<li>Identify the dominant emotion in Thunberg's speech. How is this emotion conveyed through word choice? (4 marks)</li>" +
       '<li>Analyse the effect of Thunberg\'s repeated phrase "How dare you!" (4 marks)</li>' +
       '<li>How does Thunberg use personal narrative to strengthen her argument? Write a PEEL paragraph. (6 marks)</li>' +
       '</ol>',
@@ -364,7 +392,14 @@ export const y8Term3WorkbookExercises: WorkbookExercise[] = [
       'PEEL paragraph: Thunberg uses personal narrative to anchor global catastrophe in human experience. She states that scientists have been warning about climate change "for more than thirty years," establishing that the problem is not new and that inaction has been a choice. By positioning herself as a teenager whose childhood "was stolen," she creates pathos -- her individual loss stands in for the future of an entire generation. Collins\' tactic of personalising statistics transforms abstract data into lived injustice, giving the audience an emotional reason to act where logic alone has failed.',
     marks: 14,
     difficulty: 'secure',
-    keywords: ['Greta Thunberg', 'anaphora', 'language analysis', 'pathos', 'rhetoric', 'personal narrative'],
+    keywords: [
+      'Greta Thunberg',
+      'anaphora',
+      'language analysis',
+      'pathos',
+      'rhetoric',
+      'personal narrative',
+    ],
     linkedObjectives: ['Y8.R5', 'Y8.R9', 'Y8.W3'],
   },
   // 6. persuasive writing
@@ -411,7 +446,13 @@ export const y8Term3WorkbookExercises: WorkbookExercise[] = [
       'The comparison of inclusive language should note both the similarity (both speeches create a shared identity) and the difference (the context of "we" changes its meaning -- national unity, class solidarity, or shared humanity carry different implications). The best responses will consider who is included in "we" and, crucially, who is excluded.',
     marks: 14,
     difficulty: 'mastery',
-    keywords: ['political speech', 'rhetorical technique', 'ethos', 'inclusive language', 'comparison'],
+    keywords: [
+      'political speech',
+      'rhetorical technique',
+      'ethos',
+      'inclusive language',
+      'comparison',
+    ],
     linkedObjectives: ['Y8.R5', 'Y8.R9', 'Y8.W3'],
   },
   // 8. evaluation
@@ -436,7 +477,7 @@ export const y8Term3WorkbookExercises: WorkbookExercise[] = [
     keywords: ['rhetoric', 'manipulation', 'evaluation', 'propaganda', 'ethics', 'persuasion'],
     linkedObjectives: ['Y8.R9', 'Y8.W2', 'Y8.W3'],
   },
-];
+]
 
 // =============================================================================
 // TERM 2 HOMEWORK TASKS: Conflict Poetry & Macbeth
@@ -447,7 +488,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
   // ── Half-Term 3 (T2a: Conflict Poetry) ──────────────────────────────────
   {
     id: 'y8t2-hw-01',
-    title: "Reading Response: A Conflict Poem of Your Choice",
+    title: 'Reading Response: A Conflict Poem of Your Choice',
     halfTerm: 3,
     weekNumber: 1,
     type: 'reading-response',
@@ -464,12 +505,18 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
     marks: 15,
     estimatedMinutes: 40,
     difficulty: 'developing',
-    keywords: ['conflict poetry', 'annotation', 'personal response', 'technique', 'independent reading'],
+    keywords: [
+      'conflict poetry',
+      'annotation',
+      'personal response',
+      'technique',
+      'independent reading',
+    ],
     linkedObjectives: ['Y8.R5', 'Y8.R7', 'Y8.W3'],
   },
   {
     id: 'y8t2-hw-02',
-    title: "Research Task: The Reality of World War One",
+    title: 'Research Task: The Reality of World War One',
     halfTerm: 3,
     weekNumber: 2,
     type: 'research',
@@ -477,7 +524,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
       '<p>Research the conditions faced by soldiers on the Western Front during World War One.</p>' +
       '<ol>' +
       '<li>Write a factual summary (100 words) of life in the trenches. (4 marks)</li>' +
-      '<li>Find one primary source (a soldier\'s letter, diary entry, or contemporary photograph). Describe what it reveals about the experience of conflict. (5 marks)</li>' +
+      "<li>Find one primary source (a soldier's letter, diary entry, or contemporary photograph). Describe what it reveals about the experience of conflict. (5 marks)</li>" +
       '<li>How does your research change or deepen your understanding of the Owen poems studied in class? (6 marks)</li>' +
       '</ol>' +
       '<p>List your sources in a brief bibliography.</p>',
@@ -493,7 +540,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t2-hw-03',
-    title: "Analytical Paragraph: A Conflict Poem Key Moment",
+    title: 'Analytical Paragraph: A Conflict Poem Key Moment',
     halfTerm: 3,
     weekNumber: 4,
     type: 'analysis',
@@ -507,7 +554,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
       '<li>Link to the wider theme of conflict in the poem</li>' +
       '</ul>',
     modelAnswer:
-      'A strong paragraph will have a clear analytical point (not a retelling of events), a well-chosen embedded quotation, detailed exploration of a language technique\'s connotations and effect, and a convincing link to a theme of conflict (e.g., futility, heroism, trauma, civilian experience, remembrance). ' +
+      "A strong paragraph will have a clear analytical point (not a retelling of events), a well-chosen embedded quotation, detailed exploration of a language technique's connotations and effect, and a convincing link to a theme of conflict (e.g., futility, heroism, trauma, civilian experience, remembrance). " +
       'The PEEL structure should be evident but not mechanical -- the best responses will read as fluent analytical writing rather than a checklist. The link (L) should extend beyond the immediate poem to consider what the moment reveals about conflict more broadly.',
     marks: 10,
     estimatedMinutes: 30,
@@ -517,7 +564,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t2-hw-04',
-    title: "Creative Writing: A Poem About Modern Conflict",
+    title: 'Creative Writing: A Poem About Modern Conflict',
     halfTerm: 3,
     weekNumber: 6,
     type: 'creative',
@@ -543,7 +590,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
   // ── Half-Term 4 (T2b: Macbeth) ──────────────────────────────────────────
   {
     id: 'y8t2-hw-05',
-    title: "Reading Response: Macbeth Act 1 -- First Impressions",
+    title: 'Reading Response: Macbeth Act 1 -- First Impressions',
     halfTerm: 4,
     weekNumber: 1,
     type: 'reading-response',
@@ -566,7 +613,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t2-hw-06',
-    title: "Extended Writing: How Does Shakespeare Present Power in Macbeth?",
+    title: 'Extended Writing: How Does Shakespeare Present Power in Macbeth?',
     halfTerm: 4,
     weekNumber: 2,
     type: 'extended-writing',
@@ -580,9 +627,9 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
       '<li>Consider how power shifts and changes through the play</li>' +
       '</ul>',
     modelAnswer:
-      'A strong response will identify different dimensions of power in the play: political power (kingship, divine right), psychological power (Lady Macbeth\'s manipulation, the witches\' influence), and the corrupting nature of illegitimately gained power. ' +
+      "A strong response will identify different dimensions of power in the play: political power (kingship, divine right), psychological power (Lady Macbeth's manipulation, the witches' influence), and the corrupting nature of illegitimately gained power. " +
       'Points should be clearly stated, supported with embedded quotations, and developed through analysis of specific language choices. The response should demonstrate an understanding that power in Macbeth is never stable -- it shifts, corrupts, and ultimately destroys those who seek it through betrayal. ' +
-      'The best responses will consider how Shakespeare\'s original audience (in the context of the Gunpowder Plot and James I\'s belief in divine right) would have understood the play\'s treatment of power as a political warning.',
+      "The best responses will consider how Shakespeare's original audience (in the context of the Gunpowder Plot and James I's belief in divine right) would have understood the play's treatment of power as a political warning.",
     marks: 20,
     estimatedMinutes: 50,
     difficulty: 'secure',
@@ -591,7 +638,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t2-hw-07',
-    title: "Revision: Macbeth Character Profile",
+    title: 'Revision: Macbeth Character Profile',
     halfTerm: 4,
     weekNumber: 4,
     type: 'revision',
@@ -626,7 +673,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
       '<p>Choose ONE of the following:</p>' +
       '<ul>' +
       '<li>The Gunpowder Plot of 1605 and its connection to the play</li>' +
-      '<li>King James I\'s beliefs about witchcraft (see his book <em>Daemonologie</em>)</li>' +
+      "<li>King James I's beliefs about witchcraft (see his book <em>Daemonologie</em>)</li>" +
       '<li>The concept of the "Divine Right of Kings" in Jacobean England</li>' +
       '</ul>' +
       '<ol>' +
@@ -641,22 +688,29 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
     marks: 15,
     estimatedMinutes: 45,
     difficulty: 'secure',
-    keywords: ['Shakespeare', 'context', 'Jacobean', 'Gunpowder Plot', 'divine right', 'witchcraft'],
+    keywords: [
+      'Shakespeare',
+      'context',
+      'Jacobean',
+      'Gunpowder Plot',
+      'divine right',
+      'witchcraft',
+    ],
     linkedObjectives: ['Y8.R4', 'Y8.R6', 'Y8.W2'],
   },
   {
     id: 'y8t2-hw-09',
-    title: "Extended Writing: Conflict in Macbeth -- Internal and External",
+    title: 'Extended Writing: Conflict in Macbeth -- Internal and External',
     halfTerm: 4,
     weekNumber: 6,
     type: 'extended-writing',
     instructions:
       '<p>Write a response (200-250 words) to: <strong>"Explore how Shakespeare presents conflict in <em>Macbeth</em>."</strong></p>' +
-      '<p>Consider BOTH internal conflict (within a character\'s mind) and external conflict (between characters or forces).</p>' +
+      "<p>Consider BOTH internal conflict (within a character's mind) and external conflict (between characters or forces).</p>" +
       '<p>You must use at least three embedded quotations and analyse a technique in each case.</p>',
     modelAnswer:
       'Strong responses will recognise that conflict operates on multiple levels simultaneously in Macbeth. Internal conflict is most powerfully dramatised in Macbeth\'s soliloquies -- the dagger speech, the "I am settled" speech, and the "Tomorrow and tomorrow and tomorrow" speech chart the arc of a man at war with himself. ' +
-      'External conflict includes: Macbeth vs Duncan (power), Macbeth vs Macduff (justice), the witches vs the natural order. The best responses will argue that the internal and external conflicts are interdependent -- Macbeth\'s internal conflict weakens, which enables external forces to destroy him. ' +
+      "External conflict includes: Macbeth vs Duncan (power), Macbeth vs Macduff (justice), the witches vs the natural order. The best responses will argue that the internal and external conflicts are interdependent -- Macbeth's internal conflict weakens, which enables external forces to destroy him. " +
       'Quotation analysis should demonstrate ability to explore connotations and technique rather than merely explaining meaning.',
     marks: 20,
     estimatedMinutes: 50,
@@ -666,7 +720,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t2-hw-10',
-    title: "Revision: Conflict Poetry and Macbeth -- Key Connections",
+    title: 'Revision: Conflict Poetry and Macbeth -- Key Connections',
     halfTerm: 4,
     weekNumber: 7,
     type: 'revision',
@@ -680,7 +734,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
       '<p>Then write one paragraph (80-100 words) explaining which text you think presents conflict most powerfully, and why. (15 marks total)</p>',
     modelAnswer:
       'The mind map or notes should demonstrate the ability to make genuine thematic connections across texts rather than treating them as entirely separate units. ' +
-      'The psychological cost section might connect Macbeth\'s hallucinations to the trauma in "Remains." The power and conflict section might connect Lady Macbeth\'s manipulation to the authority of military commanders in Owen\'s poems. ' +
+      "The psychological cost section might connect Macbeth's hallucinations to the trauma in \"Remains.\" The power and conflict section might connect Lady Macbeth's manipulation to the authority of military commanders in Owen's poems. " +
       'The comparative paragraph should be specific and evaluative, presenting a clear preference with reasons rather than simply describing both texts. The best responses will identify a dimension of conflict that one text explores more fully or more powerfully than the other.',
     marks: 15,
     estimatedMinutes: 45,
@@ -688,7 +742,7 @@ export const y8Term2HomeworkTasks: HomeworkTask[] = [
     keywords: ['revision', 'conflict', 'Macbeth', 'poetry', 'connections', 'comparison'],
     linkedObjectives: ['Y8.R5', 'Y8.R7', 'Y8.W2', 'Y8.W3'],
   },
-];
+]
 
 // =============================================================================
 // TERM 3 HOMEWORK TASKS: Rhetoric & Media
@@ -699,7 +753,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
   // ── Half-Term 5 (T3a: Rhetoric) ─────────────────────────────────────────
   {
     id: 'y8t3-hw-01',
-    title: "Research Task: A Great Rhetorical Speech",
+    title: 'Research Task: A Great Rhetorical Speech',
     halfTerm: 5,
     weekNumber: 1,
     type: 'research',
@@ -728,7 +782,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t3-hw-02',
-    title: "Reading Response: Analysing a Speech Extract",
+    title: 'Reading Response: Analysing a Speech Extract',
     halfTerm: 5,
     weekNumber: 2,
     type: 'reading-response',
@@ -740,7 +794,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
       '</ol>',
     modelAnswer:
       'Annotations should identify techniques correctly and note their intended effect rather than just labelling them. Strong annotations will consider the cumulative effect of techniques working together. ' +
-      'The analytical paragraph should demonstrate a clear argument (not just a list of techniques) and show how language choices serve the speaker\'s persuasive purpose. The best responses will consider the intended audience and how specific techniques are calibrated to appeal to that audience\'s values, fears, or aspirations.',
+      "The analytical paragraph should demonstrate a clear argument (not just a list of techniques) and show how language choices serve the speaker's persuasive purpose. The best responses will consider the intended audience and how specific techniques are calibrated to appeal to that audience's values, fears, or aspirations.",
     marks: 15,
     estimatedMinutes: 35,
     difficulty: 'developing',
@@ -749,7 +803,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t3-hw-03',
-    title: "Creative Task: Write and Perform a Two-Minute Speech",
+    title: 'Creative Task: Write and Perform a Two-Minute Speech',
     halfTerm: 5,
     weekNumber: 4,
     type: 'creative',
@@ -770,18 +824,25 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 55,
     difficulty: 'secure',
-    keywords: ['speech writing', 'rhetoric', 'creative', 'spoken language', 'persuasion', 'structure'],
+    keywords: [
+      'speech writing',
+      'rhetoric',
+      'creative',
+      'spoken language',
+      'persuasion',
+      'structure',
+    ],
     linkedObjectives: ['Y8.W2', 'Y8.W5', 'Y8.S1', 'Y8.S2'],
   },
   {
     id: 'y8t3-hw-04',
-    title: "Extended Writing: Ethos, Pathos, and Logos in a Text You Have Chosen",
+    title: 'Extended Writing: Ethos, Pathos, and Logos in a Text You Have Chosen',
     halfTerm: 5,
     weekNumber: 6,
     type: 'extended-writing',
     instructions:
       '<p>Choose any persuasive text you encounter in everyday life (an advert, a charity appeal, a political leaflet, a newspaper editorial, or an online opinion piece).</p>' +
-      '<p>Write a response (200-250 words) analysing how Aristotle\'s three modes of persuasion (ethos, pathos, logos) are used. For each mode:</p>' +
+      "<p>Write a response (200-250 words) analysing how Aristotle's three modes of persuasion (ethos, pathos, logos) are used. For each mode:</p>" +
       '<ul>' +
       '<li>Provide a specific example from your chosen text</li>' +
       '<li>Explain the effect on the target audience</li>' +
@@ -799,7 +860,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t3-hw-05',
-    title: "Revision: Rhetoric Techniques Quick-Reference Guide",
+    title: 'Revision: Rhetoric Techniques Quick-Reference Guide',
     halfTerm: 5,
     weekNumber: 7,
     type: 'revision',
@@ -818,13 +879,21 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
     marks: 15,
     estimatedMinutes: 40,
     difficulty: 'foundation',
-    keywords: ['rhetoric', 'revision', 'anaphora', 'tricolon', 'rhetorical question', 'antithesis', 'techniques'],
+    keywords: [
+      'rhetoric',
+      'revision',
+      'anaphora',
+      'tricolon',
+      'rhetorical question',
+      'antithesis',
+      'techniques',
+    ],
     linkedObjectives: ['Y8.V2', 'Y8.R9', 'Y8.W2'],
   },
   // ── Half-Term 6 (T3b: Media Literacy) ──────────────────────────────────
   {
     id: 'y8t3-hw-06',
-    title: "Media Literacy: Comparing News Coverage of the Same Story",
+    title: 'Media Literacy: Comparing News Coverage of the Same Story',
     halfTerm: 6,
     weekNumber: 1,
     type: 'analysis',
@@ -836,7 +905,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
       '<li>What does this comparison reveal about how news is constructed rather than simply reported? Write a paragraph. (6 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'The two-sentence summary tests students\' ability to identify shared, verified facts and resist editorialising. ' +
+      "The two-sentence summary tests students' ability to identify shared, verified facts and resist editorialising. " +
       'The differences should be significant and specific: not just "one used a more dramatic headline" but an analysis of what different vocabulary choices imply, whose voices are included or excluded, what images are chosen, and what context is or is not provided. ' +
       'The analytical paragraph should demonstrate an understanding that all news involves selection, framing, and perspective -- this is not necessarily sinister (it may reflect different readerships and purposes) but it means that no single source gives the complete picture. The best responses will avoid a cynical "all news is lying" conclusion in favour of a nuanced understanding of how media works.',
     marks: 15,
@@ -847,7 +916,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t3-hw-07',
-    title: "Creative Task: Design a Responsible Advert",
+    title: 'Creative Task: Design a Responsible Advert',
     halfTerm: 6,
     weekNumber: 2,
     type: 'creative',
@@ -863,7 +932,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
     modelAnswer:
       'The slogan should be memorable, concise, and demonstrate a clearly identifiable rhetorical technique (e.g., alliteration, antithesis, rhetorical question). It should feel genuine rather than corporate. ' +
       'The body text should demonstrate a clear understanding of which mode of persuasion is most appropriate for the cause and audience. A mental health advert may rely on pathos; an environmental advert may use logos (statistics); a community initiative may use ethos (shared local identity). ' +
-      'The commentary should reflect critically on the ethical dimension: responsible advertising is honest, does not exploit vulnerability, and serves the audience\'s interests rather than manipulating them against their own.',
+      "The commentary should reflect critically on the ethical dimension: responsible advertising is honest, does not exploit vulnerability, and serves the audience's interests rather than manipulating them against their own.",
     marks: 15,
     estimatedMinutes: 40,
     difficulty: 'developing',
@@ -872,7 +941,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t3-hw-08',
-    title: "Research Task: The History of Propaganda",
+    title: 'Research Task: The History of Propaganda',
     halfTerm: 6,
     weekNumber: 4,
     type: 'research',
@@ -889,9 +958,9 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
       '<li>Why is understanding propaganda history important for media literacy today? (7 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'The description should be specific and detailed enough that a reader could picture the propaganda piece. Students should explain both its explicit message and its implied assumptions (e.g., a WWI recruitment poster\'s implied message about masculinity and shame). ' +
+      "The description should be specific and detailed enough that a reader could picture the propaganda piece. Students should explain both its explicit message and its implied assumptions (e.g., a WWI recruitment poster's implied message about masculinity and shame). " +
       'Rhetorical techniques in visual propaganda might include: appeal to emotion (pathos through imagery), authority figures (ethos), simple binary oppositions (us vs them), use of colour and symbolism. ' +
-      'The contemporary relevance question should produce genuine, thoughtful analysis. Strong responses will argue that understanding propaganda\'s historical techniques helps us identify when similar tactics are used in modern media: identifying loaded imagery, recognising dehumanising language, questioning whose voices are absent from a narrative.',
+      "The contemporary relevance question should produce genuine, thoughtful analysis. Strong responses will argue that understanding propaganda's historical techniques helps us identify when similar tactics are used in modern media: identifying loaded imagery, recognising dehumanising language, questioning whose voices are absent from a narrative.",
     marks: 15,
     estimatedMinutes: 45,
     difficulty: 'secure',
@@ -900,7 +969,7 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
   },
   {
     id: 'y8t3-hw-09',
-    title: "Extended Writing: Are We More Susceptible to Persuasion Online?",
+    title: 'Extended Writing: Are We More Susceptible to Persuasion Online?',
     halfTerm: 6,
     weekNumber: 6,
     type: 'extended-writing',
@@ -920,12 +989,19 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 50,
     difficulty: 'mastery',
-    keywords: ['digital media', 'persuasion', 'media literacy', 'algorithm', 'extended writing', 'critical thinking'],
+    keywords: [
+      'digital media',
+      'persuasion',
+      'media literacy',
+      'algorithm',
+      'extended writing',
+      'critical thinking',
+    ],
     linkedObjectives: ['Y8.R9', 'Y8.R10', 'Y8.W2', 'Y8.W3'],
   },
   {
     id: 'y8t3-hw-10',
-    title: "Revision: Year 8 Term 3 -- Key Skills and Concepts",
+    title: 'Revision: Year 8 Term 3 -- Key Skills and Concepts',
     halfTerm: 6,
     weekNumber: 7,
     type: 'revision',
@@ -947,4 +1023,4 @@ export const y8Term3HomeworkTasks: HomeworkTask[] = [
     keywords: ['revision', 'rhetoric', 'media literacy', 'PEEL', 'vocabulary', 'reflection'],
     linkedObjectives: ['Y8.R9', 'Y8.W2', 'Y8.W3', 'Y8.V2'],
   },
-];
+]

@@ -2,7 +2,7 @@
 // [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
 
 import Link from 'next/link'
-import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { ArrowLeft, BookOpen, GitCompare, AlertTriangle } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
@@ -25,7 +25,7 @@ const poem: PoemData = {
         },
         {
           type: 'Ambiguity',
-          note: '"A woman" is deliberately impersonal — we don\'t know who she is. This anonymity lets her stand for all womanhood, including (as we\'ll see) the speaker\'s mother.',
+          note: "\"A woman\" is deliberately impersonal — we don't know who she is. This anonymity lets her stand for all womanhood, including (as we'll see) the speaker's mother.",
           color: '#a855f7',
         },
       ],
@@ -54,7 +54,7 @@ const poem: PoemData = {
           color: '#10b981',
         },
         {
-          type: 'Child\'s perspective',
+          type: "Child's perspective",
           note: 'The child is placed underneath the instrument — an unusual, intimate vantage point. The physical closeness to the music becomes closeness to the mother at the keys.',
           color: '#3b82f6',
         },
@@ -320,7 +320,7 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
       device: 'Circular structure',
       example: 'A child sitting under the piano… I weep like a child for the past',
       effect:
-        'The poem begins with an image of the child and ends with the adult speaker returning to the same state. The circularity is the poem\'s quiet argument: time does not move in a line. Memory and music can put you back exactly where you started.',
+        "The poem begins with an image of the child and ends with the adult speaker returning to the same state. The circularity is the poem's quiet argument: time does not move in a line. Memory and music can put you back exactly where you started.",
       lineRef: 11,
     },
   ],
@@ -334,7 +334,7 @@ const comparisons = [
     poet: 'Alice Walker',
     href: '/igcse/edexcel/poetry',
     reason:
-      'Both poems are about an adult remembering a loved, lost parent. Both speakers find themselves now carrying forward the parent\'s gentleness. Compare Lawrence\'s overwhelmed surrender with Walker\'s calmer, more reflective grief.',
+      "Both poems are about an adult remembering a loved, lost parent. Both speakers find themselves now carrying forward the parent's gentleness. Compare Lawrence's overwhelmed surrender with Walker's calmer, more reflective grief.",
     themes: ['Parent–child memory', 'Grief', 'Nostalgia'],
   },
   {
@@ -342,7 +342,7 @@ const comparisons = [
     poet: 'U.A. Fanthorpe',
     href: '/igcse/edexcel/poetry',
     reason:
-      'Both poems see through a child\'s eyes. Piano remembers a warm, safe childhood; Half-past Two shows a bewildered, lonely one. Compare how each writer captures the way children experience time and adult attention.',
+      "Both poems see through a child's eyes. Piano remembers a warm, safe childhood; Half-past Two shows a bewildered, lonely one. Compare how each writer captures the way children experience time and adult attention.",
     themes: ['Childhood perspective', 'Memory', 'Time'],
   },
   {
@@ -376,9 +376,7 @@ export default function PianoPage() {
             <BookOpen className="size-5 text-rose-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              Piano
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">Piano</h1>
             <p className="text-body-sm text-muted-foreground">
               D.H. Lawrence &middot; Edexcel IGCSE Anthology
             </p>
@@ -389,6 +387,25 @@ export default function PianoPage() {
         </div>
       </div>
 
+      <section
+        aria-label="Anthology scope notice"
+        className="rounded-xl border border-amber-500/40 bg-amber-500/[0.08] p-5 text-body-sm text-card-foreground"
+      >
+        <div className="flex items-start gap-3">
+          <AlertTriangle className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
+          <div>
+            <p>
+              <strong className="text-foreground">
+                This poem is not in the current Edexcel IGCSE 4ET1 anthology.
+              </strong>{' '}
+              It may have been included in earlier syllabus cycles or is provided as wider-reading
+              content. Confirm via the official Pearson Edexcel anthology before relying on it for
+              assessment.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <InteractivePoemViewer poem={poem} />
 
       <StudyTools textName="Piano" textType="poem" examBoard="Edexcel" variant="compact" />
@@ -396,13 +413,11 @@ export default function PianoPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another
-          from the anthology. These are strong pairings for Piano.
+          The Edexcel exam asks you to compare the named poem with another from the anthology. These
+          are strong pairings for Piano.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -416,9 +431,7 @@ export default function PianoPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span

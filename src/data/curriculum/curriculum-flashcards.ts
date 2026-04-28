@@ -1,4 +1,4 @@
-import { FlashcardDeck } from '../flashcard-data';
+import { FlashcardDeck } from '../flashcard-data'
 
 // ============================================================
 // YEAR 7 FLASHCARDS (80 cards)
@@ -11,28 +11,108 @@ const year7LiteraryTechniques: FlashcardDeck = {
   category: 'Literary Techniques',
   board: 'Year 7',
   cards: [
-    { id: 'y7lt-1', front: 'Metaphor', back: 'A direct comparison saying something IS something else, without using "like" or "as."\n\nExample: "The classroom was a zoo."\n\nEffect: Creates a vivid picture and implies a deeper connection between two things.' },
-    { id: 'y7lt-2', front: 'Simile', back: 'A comparison using "like" or "as."\n\nExample: "He ran like the wind."\n\nEffect: Helps the reader picture something by comparing it to something familiar.' },
-    { id: 'y7lt-3', front: 'Personification', back: 'Giving human qualities to something non-human.\n\nExample: "The sun smiled down on us."\n\nEffect: Makes objects or nature feel alive and relatable.' },
-    { id: 'y7lt-4', front: 'Alliteration', back: 'Repetition of the same consonant sound at the start of nearby words.\n\nExample: "The big, bad bear bit back."\n\nEffect: Creates rhythm and draws attention to particular words or phrases.' },
-    { id: 'y7lt-5', front: 'Onomatopoeia', back: 'A word that imitates the sound it describes.\n\nExample: "The fire crackled and popped."\n\nEffect: Appeals to the sense of hearing and makes writing more vivid.' },
-    { id: 'y7lt-6', front: 'Hyperbole', back: 'Deliberate exaggeration for emphasis or humour.\n\nExample: "I\'m so hungry I could eat a horse."\n\nEffect: Emphasises a point and conveys strong feelings.' },
-    { id: 'y7lt-7', front: 'Repetition', back: 'Using the same word or phrase more than once for effect.\n\nExample: "Never, never, never give up."\n\nEffect: Emphasises key ideas, creates rhythm, and makes writing memorable.' },
-    { id: 'y7lt-8', front: 'Rhyme', back: 'Words that share the same ending sound.\n\nExample: "cat" and "hat"; "light" and "night."\n\nEffect: Creates a musical quality, aids memory, and can create a playful or serious tone.' },
-    { id: 'y7lt-9', front: 'Imagery', back: 'Language that appeals to any of the five senses: sight, sound, touch, taste, smell.\n\nExample: "The sweet, sticky honey dripped slowly from the comb."\n\nEffect: Helps the reader experience the scene as if they were there.' },
-    { id: 'y7lt-10', front: 'Symbolism', back: 'When an object, colour, or image represents a deeper meaning.\n\nExample: A dove symbolises peace; darkness can symbolise evil or fear.\n\nEffect: Adds layers of meaning beyond the literal.' },
-    { id: 'y7lt-11', front: 'Foreshadowing', back: 'Hints or clues about what will happen later in the story.\n\nExample: "She didn\'t know that this would be the last time she saw him."\n\nEffect: Builds tension and suspense for the reader.' },
-    { id: 'y7lt-12', front: 'Rhetorical Question', back: 'A question asked for effect, not expecting an answer.\n\nExample: "Who wouldn\'t want to be free?"\n\nEffect: Makes the reader think and implies the answer is obvious.' },
-    { id: 'y7lt-13', front: 'Emotive Language', back: 'Words chosen deliberately to make the reader feel a strong emotion.\n\nExample: "The tiny, abandoned kitten shivered in the cold."\n\nEffect: Provokes sympathy, anger, fear, or other emotions in the reader.' },
-    { id: 'y7lt-14', front: 'Sibilance', back: 'Repetition of "s," "sh," or soft "c" sounds.\n\nExample: "The snake slithered silently across the sand."\n\nEffect: Creates a smooth, sinister, or secretive atmosphere.' },
-    { id: 'y7lt-15', front: 'Rule of Three (Tricolon)', back: 'Listing three words or phrases for emphasis.\n\nExample: "Blood, sweat, and tears."\n\nEffect: Creates rhythm and makes ideas memorable.' },
-    { id: 'y7lt-16', front: 'Pathetic Fallacy', back: 'Using weather or nature to reflect a character\'s mood or the atmosphere.\n\nExample: "Dark storm clouds gathered as the villain appeared."\n\nEffect: Sets mood without telling the reader directly how to feel.' },
-    { id: 'y7lt-17', front: 'Tone', back: 'The overall feeling or attitude in a piece of writing.\n\nExamples: cheerful, threatening, mysterious, sarcastic.\n\nHow to spot it: Look at word choices, sentence length, and punctuation.' },
-    { id: 'y7lt-18', front: 'Direct Address', back: 'Speaking directly to the reader using "you."\n\nExample: "You know how it feels to be left out."\n\nEffect: Creates a personal connection with the reader.' },
-    { id: 'y7lt-19', front: 'Irony', back: 'When the reality is the opposite of what is expected or said.\n\nExample: A fire station burning down.\n\nEffect: Can create humour, surprise, or highlight absurdity.' },
-    { id: 'y7lt-20', front: 'Contrast', back: 'Placing two opposite ideas or images next to each other.\n\nExample: "The rich feasted while the poor starved."\n\nEffect: Highlights differences and forces the reader to compare.' },
+    {
+      id: 'y7lt-1',
+      front: 'Metaphor',
+      back: 'A direct comparison saying something IS something else, without using "like" or "as."\n\nExample: "The classroom was a zoo."\n\nEffect: Creates a vivid picture and implies a deeper connection between two things.',
+    },
+    {
+      id: 'y7lt-2',
+      front: 'Simile',
+      back: 'A comparison using "like" or "as."\n\nExample: "He ran like the wind."\n\nEffect: Helps the reader picture something by comparing it to something familiar.',
+    },
+    {
+      id: 'y7lt-3',
+      front: 'Personification',
+      back: 'Giving human qualities to something non-human.\n\nExample: "The sun smiled down on us."\n\nEffect: Makes objects or nature feel alive and relatable.',
+    },
+    {
+      id: 'y7lt-4',
+      front: 'Alliteration',
+      back: 'Repetition of the same consonant sound at the start of nearby words.\n\nExample: "The big, bad bear bit back."\n\nEffect: Creates rhythm and draws attention to particular words or phrases.',
+    },
+    {
+      id: 'y7lt-5',
+      front: 'Onomatopoeia',
+      back: 'A word that imitates the sound it describes.\n\nExample: "The fire crackled and popped."\n\nEffect: Appeals to the sense of hearing and makes writing more vivid.',
+    },
+    {
+      id: 'y7lt-6',
+      front: 'Hyperbole',
+      back: 'Deliberate exaggeration for emphasis or humour.\n\nExample: "I\'m so hungry I could eat a horse."\n\nEffect: Emphasises a point and conveys strong feelings.',
+    },
+    {
+      id: 'y7lt-7',
+      front: 'Repetition',
+      back: 'Using the same word or phrase more than once for effect.\n\nExample: "Never, never, never give up."\n\nEffect: Emphasises key ideas, creates rhythm, and makes writing memorable.',
+    },
+    {
+      id: 'y7lt-8',
+      front: 'Rhyme',
+      back: 'Words that share the same ending sound.\n\nExample: "cat" and "hat"; "light" and "night."\n\nEffect: Creates a musical quality, aids memory, and can create a playful or serious tone.',
+    },
+    {
+      id: 'y7lt-9',
+      front: 'Imagery',
+      back: 'Language that appeals to any of the five senses: sight, sound, touch, taste, smell.\n\nExample: "The sweet, sticky honey dripped slowly from the comb."\n\nEffect: Helps the reader experience the scene as if they were there.',
+    },
+    {
+      id: 'y7lt-10',
+      front: 'Symbolism',
+      back: 'When an object, colour, or image represents a deeper meaning.\n\nExample: A dove symbolises peace; darkness can symbolise evil or fear.\n\nEffect: Adds layers of meaning beyond the literal.',
+    },
+    {
+      id: 'y7lt-11',
+      front: 'Foreshadowing',
+      back: 'Hints or clues about what will happen later in the story.\n\nExample: "She didn\'t know that this would be the last time she saw him."\n\nEffect: Builds tension and suspense for the reader.',
+    },
+    {
+      id: 'y7lt-12',
+      front: 'Rhetorical Question',
+      back: 'A question asked for effect, not expecting an answer.\n\nExample: "Who wouldn\'t want to be free?"\n\nEffect: Makes the reader think and implies the answer is obvious.',
+    },
+    {
+      id: 'y7lt-13',
+      front: 'Emotive Language',
+      back: 'Words chosen deliberately to make the reader feel a strong emotion.\n\nExample: "The tiny, abandoned kitten shivered in the cold."\n\nEffect: Provokes sympathy, anger, fear, or other emotions in the reader.',
+    },
+    {
+      id: 'y7lt-14',
+      front: 'Sibilance',
+      back: 'Repetition of "s," "sh," or soft "c" sounds.\n\nExample: "The snake slithered silently across the sand."\n\nEffect: Creates a smooth, sinister, or secretive atmosphere.',
+    },
+    {
+      id: 'y7lt-15',
+      front: 'Rule of Three (Tricolon)',
+      back: 'Listing three words or phrases for emphasis.\n\nExample: "Blood, sweat, and tears."\n\nEffect: Creates rhythm and makes ideas memorable.',
+    },
+    {
+      id: 'y7lt-16',
+      front: 'Pathetic Fallacy',
+      back: 'Using weather or nature to reflect a character\'s mood or the atmosphere.\n\nExample: "Dark storm clouds gathered as the villain appeared."\n\nEffect: Sets mood without telling the reader directly how to feel.',
+    },
+    {
+      id: 'y7lt-17',
+      front: 'Tone',
+      back: 'The overall feeling or attitude in a piece of writing.\n\nExamples: cheerful, threatening, mysterious, sarcastic.\n\nHow to spot it: Look at word choices, sentence length, and punctuation.',
+    },
+    {
+      id: 'y7lt-18',
+      front: 'Direct Address',
+      back: 'Speaking directly to the reader using "you."\n\nExample: "You know how it feels to be left out."\n\nEffect: Creates a personal connection with the reader.',
+    },
+    {
+      id: 'y7lt-19',
+      front: 'Irony',
+      back: 'When the reality is the opposite of what is expected or said.\n\nExample: A fire station burning down.\n\nEffect: Can create humour, surprise, or highlight absurdity.',
+    },
+    {
+      id: 'y7lt-20',
+      front: 'Contrast',
+      back: 'Placing two opposite ideas or images next to each other.\n\nExample: "The rich feasted while the poor starved."\n\nEffect: Highlights differences and forces the reader to compare.',
+    },
   ],
-};
+}
 
 const year7GrammarTerms: FlashcardDeck = {
   id: 'y7-grammar-terms',
@@ -41,28 +121,108 @@ const year7GrammarTerms: FlashcardDeck = {
   category: 'Grammar',
   board: 'Year 7',
   cards: [
-    { id: 'y7gr-1', front: 'Noun', back: 'A word that names a person, place, thing, or idea.\n\nTypes: Common (dog, city), Proper (London, Shakespeare), Abstract (love, freedom), Collective (flock, team).' },
-    { id: 'y7gr-2', front: 'Verb', back: 'A word that describes an action, state, or occurrence.\n\nExamples: run, think, is, become.\n\nVerbs are the engine of every sentence.' },
-    { id: 'y7gr-3', front: 'Adjective', back: 'A word that describes a noun.\n\nExample: "The tall, ancient tree swayed."\n\nAdjectives add detail and help build imagery in writing.' },
-    { id: 'y7gr-4', front: 'Adverb', back: 'A word that modifies a verb, adjective, or another adverb. Often ends in "-ly."\n\nExample: "She spoke softly." / "He ran incredibly fast."\n\nAdverbs tell us how, when, where, or to what extent.' },
-    { id: 'y7gr-5', front: 'Conjunction', back: 'A word that joins words, phrases, or clauses.\n\nCoordinating: for, and, nor, but, or, yet, so (FANBOYS).\nSubordinating: because, although, when, if, while.' },
-    { id: 'y7gr-6', front: 'Pronoun', back: 'A word that replaces a noun to avoid repetition.\n\nExamples: he, she, it, they, we, who, which.\n\n"Sarah picked up Sarah\'s bag" becomes "Sarah picked up her bag."' },
-    { id: 'y7gr-7', front: 'Preposition', back: 'A word that shows the relationship between a noun and other words, often indicating position or time.\n\nExamples: in, on, under, between, before, after, through.' },
-    { id: 'y7gr-8', front: 'Article', back: 'A word that comes before a noun to identify it.\n\nDefinite article: "the" (specific).\nIndefinite articles: "a" / "an" (non-specific).\n\nExample: "The cat sat on a mat."' },
-    { id: 'y7gr-9', front: 'Clause', back: 'A group of words containing a subject and a verb.\n\nMain clause: Makes sense on its own ("The dog barked").\nSubordinate clause: Depends on the main clause ("because it was scared").' },
-    { id: 'y7gr-10', front: 'Sentence Types', back: 'Simple: One main clause ("The boy ran.").\nCompound: Two main clauses joined by a conjunction ("The boy ran and the girl followed.").\nComplex: A main clause with one or more subordinate clauses ("The boy ran because he was late.").' },
-    { id: 'y7gr-11', front: 'Subject', back: 'The person or thing performing the action in a sentence.\n\nExample: "The cat chased the mouse." (The cat is the subject.)\n\nEvery sentence needs a subject.' },
-    { id: 'y7gr-12', front: 'Object', back: 'The person or thing receiving the action in a sentence.\n\nExample: "The cat chased the mouse." (The mouse is the object.)\n\nNot every sentence has an object.' },
-    { id: 'y7gr-13', front: 'Tense', back: 'The form of a verb that shows when an action happens.\n\nPast: "She walked." Present: "She walks." Future: "She will walk."\n\nWriters choose tense carefully for effect.' },
-    { id: 'y7gr-14', front: 'Punctuation: Full Stop, Comma, Exclamation Mark', back: 'Full stop (.): Ends a sentence.\nComma (,): Separates items in a list, adds a pause, or separates clauses.\nExclamation mark (!): Shows strong emotion or emphasis.' },
-    { id: 'y7gr-15', front: 'Apostrophe', back: 'Two uses:\n\n1. Contraction (omission): don\'t = do not.\n2. Possession: "The girl\'s book" = the book belonging to the girl.\n\nCommon error: "it\'s" (it is) vs "its" (belonging to it).' },
-    { id: 'y7gr-16', front: 'Speech Marks (Inverted Commas)', back: 'Used to show direct speech (the exact words someone says).\n\nExample: "Come here," she said.\n\nRules: New speaker = new line. Punctuation goes inside the speech marks.' },
-    { id: 'y7gr-17', front: 'Paragraph', back: 'A group of related sentences about one topic or idea.\n\nNew paragraph when: Time changes, Place changes, Topic changes, Person changes (TiPToP).' },
-    { id: 'y7gr-18', front: 'Active Voice', back: 'The subject performs the action.\n\nExample: "The dog bit the man."\n\nEffect: Direct, clear, and dynamic.' },
-    { id: 'y7gr-19', front: 'Passive Voice', back: 'The subject receives the action.\n\nExample: "The man was bitten by the dog."\n\nEffect: Shifts focus to the receiver; can hide who did the action.' },
-    { id: 'y7gr-20', front: 'Determiner', back: 'A word that comes before a noun to clarify what it refers to.\n\nExamples: the, a, this, that, my, some, every, each.\n\n"This book" vs "a book" vs "every book."' },
+    {
+      id: 'y7gr-1',
+      front: 'Noun',
+      back: 'A word that names a person, place, thing, or idea.\n\nTypes: Common (dog, city), Proper (London, Shakespeare), Abstract (love, freedom), Collective (flock, team).',
+    },
+    {
+      id: 'y7gr-2',
+      front: 'Verb',
+      back: 'A word that describes an action, state, or occurrence.\n\nExamples: run, think, is, become.\n\nVerbs are the engine of every sentence.',
+    },
+    {
+      id: 'y7gr-3',
+      front: 'Adjective',
+      back: 'A word that describes a noun.\n\nExample: "The tall, ancient tree swayed."\n\nAdjectives add detail and help build imagery in writing.',
+    },
+    {
+      id: 'y7gr-4',
+      front: 'Adverb',
+      back: 'A word that modifies a verb, adjective, or another adverb. Often ends in "-ly."\n\nExample: "She spoke softly." / "He ran incredibly fast."\n\nAdverbs tell us how, when, where, or to what extent.',
+    },
+    {
+      id: 'y7gr-5',
+      front: 'Conjunction',
+      back: 'A word that joins words, phrases, or clauses.\n\nCoordinating: for, and, nor, but, or, yet, so (FANBOYS).\nSubordinating: because, although, when, if, while.',
+    },
+    {
+      id: 'y7gr-6',
+      front: 'Pronoun',
+      back: 'A word that replaces a noun to avoid repetition.\n\nExamples: he, she, it, they, we, who, which.\n\n"Sarah picked up Sarah\'s bag" becomes "Sarah picked up her bag."',
+    },
+    {
+      id: 'y7gr-7',
+      front: 'Preposition',
+      back: 'A word that shows the relationship between a noun and other words, often indicating position or time.\n\nExamples: in, on, under, between, before, after, through.',
+    },
+    {
+      id: 'y7gr-8',
+      front: 'Article',
+      back: 'A word that comes before a noun to identify it.\n\nDefinite article: "the" (specific).\nIndefinite articles: "a" / "an" (non-specific).\n\nExample: "The cat sat on a mat."',
+    },
+    {
+      id: 'y7gr-9',
+      front: 'Clause',
+      back: 'A group of words containing a subject and a verb.\n\nMain clause: Makes sense on its own ("The dog barked").\nSubordinate clause: Depends on the main clause ("because it was scared").',
+    },
+    {
+      id: 'y7gr-10',
+      front: 'Sentence Types',
+      back: 'Simple: One main clause ("The boy ran.").\nCompound: Two main clauses joined by a conjunction ("The boy ran and the girl followed.").\nComplex: A main clause with one or more subordinate clauses ("The boy ran because he was late.").',
+    },
+    {
+      id: 'y7gr-11',
+      front: 'Subject',
+      back: 'The person or thing performing the action in a sentence.\n\nExample: "The cat chased the mouse." (The cat is the subject.)\n\nEvery sentence needs a subject.',
+    },
+    {
+      id: 'y7gr-12',
+      front: 'Object',
+      back: 'The person or thing receiving the action in a sentence.\n\nExample: "The cat chased the mouse." (The mouse is the object.)\n\nNot every sentence has an object.',
+    },
+    {
+      id: 'y7gr-13',
+      front: 'Tense',
+      back: 'The form of a verb that shows when an action happens.\n\nPast: "She walked." Present: "She walks." Future: "She will walk."\n\nWriters choose tense carefully for effect.',
+    },
+    {
+      id: 'y7gr-14',
+      front: 'Punctuation: Full Stop, Comma, Exclamation Mark',
+      back: 'Full stop (.): Ends a sentence.\nComma (,): Separates items in a list, adds a pause, or separates clauses.\nExclamation mark (!): Shows strong emotion or emphasis.',
+    },
+    {
+      id: 'y7gr-15',
+      front: 'Apostrophe',
+      back: 'Two uses:\n\n1. Contraction (omission): don\'t = do not.\n2. Possession: "The girl\'s book" = the book belonging to the girl.\n\nCommon error: "it\'s" (it is) vs "its" (belonging to it).',
+    },
+    {
+      id: 'y7gr-16',
+      front: 'Speech Marks (Inverted Commas)',
+      back: 'Used to show direct speech (the exact words someone says).\n\nExample: "Come here," she said.\n\nRules: New speaker = new line. Punctuation goes inside the speech marks.',
+    },
+    {
+      id: 'y7gr-17',
+      front: 'Paragraph',
+      back: 'A group of related sentences about one topic or idea.\n\nNew paragraph when: Time changes, Place changes, Topic changes, Person changes (TiPToP).',
+    },
+    {
+      id: 'y7gr-18',
+      front: 'Active Voice',
+      back: 'The subject performs the action.\n\nExample: "The dog bit the man."\n\nEffect: Direct, clear, and dynamic.',
+    },
+    {
+      id: 'y7gr-19',
+      front: 'Passive Voice',
+      back: 'The subject receives the action.\n\nExample: "The man was bitten by the dog."\n\nEffect: Shifts focus to the receiver; can hide who did the action.',
+    },
+    {
+      id: 'y7gr-20',
+      front: 'Determiner',
+      back: 'A word that comes before a noun to clarify what it refers to.\n\nExamples: the, a, this, that, my, some, every, each.\n\n"This book" vs "a book" vs "every book."',
+    },
   ],
-};
+}
 
 const year7KeyQuotations: FlashcardDeck = {
   id: 'y7-key-quotations',
@@ -71,28 +231,113 @@ const year7KeyQuotations: FlashcardDeck = {
   category: 'Quotations',
   board: 'Year 7',
   cards: [
-    { id: 'y7kq-1', front: 'Who said: "All animals are equal"?', back: 'Old Major in Animal Farm by George Orwell.\n\nContext: Old Major\'s speech inspiring rebellion. Later corrupted to "All animals are equal, but some animals are more equal than others."' },
-    { id: 'y7kq-2', front: 'Who said: "It was a bright cold day in April, and the clocks were striking thirteen"?', back: 'The opening line of Nineteen Eighty-Four by George Orwell.\n\nEffect: Immediately creates an unsettling, dystopian atmosphere. Thirteen strikes is unnatural.' },
-    { id: 'y7kq-3', front: 'Which text: "The boy with fair hair lowered himself down the last few feet of rock"?', back: 'The opening of Lord of the Flies by William Golding.\n\nThe boy is Ralph. The description sets a scene of isolation on an uninhabited island.' },
-    { id: 'y7kq-4', front: 'Who said: "If music be the food of love, play on"?', back: 'Duke Orsino in Twelfth Night by Shakespeare.\n\nContext: The opening line of the play. Orsino is lovesick and wants music to feed his romantic feelings.' },
-    { id: 'y7kq-5', front: 'Which text: "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife"?', back: 'The opening of Pride and Prejudice by Jane Austen.\n\nEffect: Ironic tone immediately satirises society\'s obsession with marriage and money.' },
-    { id: 'y7kq-6', front: 'Who said: "Some pigs are more equal than others"?', back: 'The pigs (Napoleon\'s regime) in Animal Farm by George Orwell.\n\nContext: The final corruption of the original commandment, showing how power corrupts ideals.' },
-    { id: 'y7kq-7', front: 'Which poem contains: "I wandered lonely as a cloud"?', back: '"Daffodils" by William Wordsworth.\n\nThis simile compares the speaker to a cloud drifting alone, establishing a mood of solitary reflection.' },
-    { id: 'y7kq-8', front: 'Who said: "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife"?', back: 'The opening line of Pride and Prejudice by Jane Austen.\n\nEffect: Immediately ironic in tone, satirising society\'s obsession with marriage and money.' },
-    { id: 'y7kq-9', front: 'Which text: "Call me Ishmael"?', back: 'The opening of Moby-Dick by Herman Melville.\n\nOne of the most famous opening lines in English literature. Direct address draws the reader in immediately.' },
-    { id: 'y7kq-10', front: 'Who said: "The creatures outside looked from pig to man, and from man to pig... but already it was impossible to say which was which"?', back: 'The narrator in Animal Farm by George Orwell.\n\nContext: The chilling final line of the novel, showing the pigs have become indistinguishable from the humans they overthrew.' },
-    { id: 'y7kq-11', front: 'Which poem: "Tyger Tyger, burning bright, In the forests of the night"?', back: '"The Tyger" by William Blake (from Songs of Experience).\n\nThe poem questions who could have created such a fearsome, powerful creature.' },
-    { id: 'y7kq-12', front: 'Which text: "It was the best of times, it was the worst of times"?', back: 'The opening of A Tale of Two Cities by Charles Dickens.\n\nTechnique: Antithesis. Sets up the novel\'s theme of duality and contrast between London and Paris.' },
-    { id: 'y7kq-13', front: 'Who said: "Friends, Romans, countrymen, lend me your ears"?', back: 'Mark Antony in Julius Caesar by Shakespeare.\n\nContext: Antony\'s famous funeral speech, using rhetoric to turn the crowd against the conspirators.' },
-    { id: 'y7kq-14', front: 'Which poem: "Half a league, half a league, Half a league onward"?', back: '"The Charge of the Light Brigade" by Alfred, Lord Tennyson.\n\nThe repetition creates a relentless, galloping rhythm, reflecting the cavalry charge.' },
-    { id: 'y7kq-15', front: 'Who said: "To be, or not to be, that is the question"?', back: 'Hamlet in Hamlet by Shakespeare.\n\nContext: Hamlet\'s most famous soliloquy, contemplating life, death, and existence.' },
-    { id: 'y7kq-16', front: 'Which text: "Last night I dreamt I went to Manderley again"?', back: 'The opening of Rebecca by Daphne du Maurier.\n\nEffect: Creates mystery and nostalgia. The dream-like quality suggests loss and haunting memories.' },
-    { id: 'y7kq-17', front: 'Which poem: "I must go down to the seas again, to the lonely sea and the sky"?', back: '"Sea Fever" by John Masefield.\n\nThe poem expresses a deep longing for the sea and a life of adventure on the waves.' },
-    { id: 'y7kq-18', front: 'Who said: "Double, double toil and trouble; Fire burn, and cauldron bubble"?', back: 'The three witches in Macbeth by Shakespeare.\n\nContext: The witches\' chant while brewing their potion. The rhyme and rhythm create an eerie, spell-like atmosphere.' },
-    { id: 'y7kq-19', front: 'Which text: "Whether I shall turn out to be the hero of my own life... these pages must show"?', back: 'The opening of David Copperfield by Charles Dickens.\n\nA classic example of first-person retrospective narration, inviting the reader into the story.' },
-    { id: 'y7kq-20', front: 'Which poem: "Do not go gentle into that good night"?', back: '"Do Not Go Gentle into That Good Night" by Dylan Thomas.\n\nA villanelle urging his dying father to fight against death. "Good night" is a metaphor for death.' },
+    {
+      id: 'y7kq-1',
+      front: 'Who said: "All animals are equal"?',
+      back: 'Old Major in Animal Farm by George Orwell.\n\nContext: Old Major\'s speech inspiring rebellion. Later corrupted to "All animals are equal, but some animals are more equal than others."',
+    },
+    {
+      id: 'y7kq-2',
+      front:
+        'Who said: "It was a bright cold day in April, and the clocks were striking thirteen"?',
+      back: 'The opening line of Nineteen Eighty-Four by George Orwell.\n\nEffect: Immediately creates an unsettling, dystopian atmosphere. Thirteen strikes is unnatural.',
+    },
+    {
+      id: 'y7kq-3',
+      front: 'Which text: "The boy with fair hair lowered himself down the last few feet of rock"?',
+      back: 'The opening of Lord of the Flies by William Golding.\n\nThe boy is Ralph. The description sets a scene of isolation on an uninhabited island.',
+    },
+    {
+      id: 'y7kq-4',
+      front: 'Who said: "If music be the food of love, play on"?',
+      back: 'Duke Orsino in Twelfth Night by Shakespeare.\n\nContext: The opening line of the play. Orsino is lovesick and wants music to feed his romantic feelings.',
+    },
+    {
+      id: 'y7kq-5',
+      front:
+        'Which text: "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife"?',
+      back: "The opening of Pride and Prejudice by Jane Austen.\n\nEffect: Ironic tone immediately satirises society's obsession with marriage and money.",
+    },
+    {
+      id: 'y7kq-6',
+      front: 'Complete the line: "All animals are equal, but ___"',
+      back: 'The full line is: "All animals are equal, but some animals are more equal than others." — the altered final commandment in Animal Farm by George Orwell (Chapter 10).\n\nContext: The pigs have rewritten the Seven Commandments down to this single hypocritical sentence, showing how power corrupts ideals and how language is manipulated to justify inequality.',
+    },
+    {
+      id: 'y7kq-7',
+      front: 'Which poem contains: "I wandered lonely as a cloud"?',
+      back: '"Daffodils" by William Wordsworth.\n\nThis simile compares the speaker to a cloud drifting alone, establishing a mood of solitary reflection.',
+    },
+    {
+      id: 'y7kq-8',
+      front:
+        'Who said: "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife"?',
+      back: "The opening line of Pride and Prejudice by Jane Austen.\n\nEffect: Immediately ironic in tone, satirising society's obsession with marriage and money.",
+    },
+    {
+      id: 'y7kq-9',
+      front: 'Which text: "Call me Ishmael"?',
+      back: 'The opening of Moby-Dick by Herman Melville.\n\nOne of the most famous opening lines in English literature. Direct address draws the reader in immediately.',
+    },
+    {
+      id: 'y7kq-10',
+      front:
+        'Who said: "The creatures outside looked from pig to man, and from man to pig... but already it was impossible to say which was which"?',
+      back: 'The narrator in Animal Farm by George Orwell.\n\nContext: The chilling final line of the novel, showing the pigs have become indistinguishable from the humans they overthrew.',
+    },
+    {
+      id: 'y7kq-11',
+      front: 'Which poem: "Tyger Tyger, burning bright, In the forests of the night"?',
+      back: '"The Tyger" by William Blake (from Songs of Experience).\n\nThe poem questions who could have created such a fearsome, powerful creature.',
+    },
+    {
+      id: 'y7kq-12',
+      front: 'Which text: "It was the best of times, it was the worst of times"?',
+      back: "The opening of A Tale of Two Cities by Charles Dickens.\n\nTechnique: Antithesis. Sets up the novel's theme of duality and contrast between London and Paris.",
+    },
+    {
+      id: 'y7kq-13',
+      front: 'Who said: "Friends, Romans, countrymen, lend me your ears"?',
+      back: "Mark Antony in Julius Caesar by Shakespeare.\n\nContext: Antony's famous funeral speech, using rhetoric to turn the crowd against the conspirators.",
+    },
+    {
+      id: 'y7kq-14',
+      front: 'Which poem: "Half a league, half a league, Half a league onward"?',
+      back: '"The Charge of the Light Brigade" by Alfred, Lord Tennyson.\n\nThe repetition creates a relentless, galloping rhythm, reflecting the cavalry charge.',
+    },
+    {
+      id: 'y7kq-15',
+      front: 'Who said: "To be, or not to be, that is the question"?',
+      back: "Hamlet in Hamlet by Shakespeare.\n\nContext: Hamlet's most famous soliloquy, contemplating life, death, and existence.",
+    },
+    {
+      id: 'y7kq-16',
+      front: 'Which text: "Last night I dreamt I went to Manderley again"?',
+      back: 'The opening of Rebecca by Daphne du Maurier.\n\nEffect: Creates mystery and nostalgia. The dream-like quality suggests loss and haunting memories.',
+    },
+    {
+      id: 'y7kq-17',
+      front: 'Which poem: "I must go down to the seas again, to the lonely sea and the sky"?',
+      back: '"Sea Fever" by John Masefield.\n\nThe poem expresses a deep longing for the sea and a life of adventure on the waves.',
+    },
+    {
+      id: 'y7kq-18',
+      front: 'Who said: "Double, double toil and trouble; Fire burn, and cauldron bubble"?',
+      back: "The three witches in Macbeth by Shakespeare.\n\nContext: The witches' chant while brewing their potion. The rhyme and rhythm create an eerie, spell-like atmosphere.",
+    },
+    {
+      id: 'y7kq-19',
+      front:
+        'Which text: "Whether I shall turn out to be the hero of my own life... these pages must show"?',
+      back: 'The opening of David Copperfield by Charles Dickens.\n\nA classic example of first-person retrospective narration, inviting the reader into the story.',
+    },
+    {
+      id: 'y7kq-20',
+      front: 'Which poem: "Do not go gentle into that good night"?',
+      back: '"Do Not Go Gentle into That Good Night" by Dylan Thomas.\n\nA villanelle urging his dying father to fight against death. "Good night" is a metaphor for death.',
+    },
   ],
-};
+}
 
 const year7VocabularyBuilding: FlashcardDeck = {
   id: 'y7-vocabulary-building',
@@ -101,28 +346,108 @@ const year7VocabularyBuilding: FlashcardDeck = {
   category: 'Vocabulary',
   board: 'Year 7',
   cards: [
-    { id: 'y7vb-1', front: 'Atmosphere', back: 'The mood or feeling created in a text through language, setting, and imagery.\n\nExample: A dark forest at night creates a tense, eerie atmosphere.\n\nUseful phrase: "The writer creates an atmosphere of..."' },
-    { id: 'y7vb-2', front: 'Tension', back: 'A feeling of suspense or anxiety created in the reader.\n\nWriters build tension through: short sentences, unanswered questions, foreshadowing, cliffhangers.' },
-    { id: 'y7vb-3', front: 'Connotation', back: 'The feeling or idea suggested by a word, beyond its literal meaning.\n\nExample: "Snake" literally means a reptile, but connotes danger, evil, or treachery.' },
-    { id: 'y7vb-4', front: 'Protagonist', back: 'The main character in a story.\n\nExample: Macbeth, Scout Finch, Pip (in Great Expectations).\n\nThe protagonist drives the action and is usually the character the audience roots for.' },
-    { id: 'y7vb-5', front: 'Antagonist', back: 'The character or force that opposes the protagonist.\n\nExample: Lady Macbeth, Inspector Goole (opposing the Birlings), Jack (in Lord of the Flies).\n\nThe antagonist creates conflict in the story.' },
-    { id: 'y7vb-6', front: 'Narrative', back: 'The story or account of events told by a narrator.\n\nKey questions: Who is telling the story? In what order? From whose perspective?' },
-    { id: 'y7vb-7', front: 'Genre', back: 'A category or type of text.\n\nExamples: horror, romance, science fiction, comedy, tragedy, mystery, dystopian.\n\nEach genre has its own conventions and expectations.' },
-    { id: 'y7vb-8', front: 'Theme', back: 'The central idea or message explored in a text.\n\nExamples: love, power, justice, identity, growing up.\n\nThemes are not the same as the plot (what happens).' },
-    { id: 'y7vb-9', front: 'Context', back: 'The historical, social, or cultural background that influences a text.\n\nExample: Dickens wrote about poverty because of the harsh conditions of Victorian England.\n\nUseful phrase: "The context of... influences..."' },
-    { id: 'y7vb-10', front: 'Inference', back: 'Working out meaning from clues in the text, rather than being told directly.\n\nAlso called "reading between the lines."\n\nUseful phrase: "This suggests that..." or "This implies..."' },
-    { id: 'y7vb-11', front: 'Explicit', back: 'Information that is stated directly and clearly in the text.\n\nExample: "The boy was sad" is explicit.\n\nOpposite of implicit (implied).' },
-    { id: 'y7vb-12', front: 'Implicit', back: 'Information that is suggested or hinted at, rather than stated directly.\n\nExample: "The boy stared at the floor and said nothing" implies sadness.\n\nYou must infer implicit meaning.' },
-    { id: 'y7vb-13', front: 'Empathy', back: 'The ability to understand and share the feelings of another person.\n\nIn English: Writers create empathy by showing a character\'s thoughts, feelings, and struggles.\n\nUseful phrase: "The reader feels empathy for... because..."' },
-    { id: 'y7vb-14', front: 'Moral', back: 'The lesson or message that a story teaches.\n\nExample: Aesop\'s fable "The Tortoise and the Hare" teaches that persistence beats overconfidence.\n\nFables and parables often have a clear moral.' },
-    { id: 'y7vb-15', front: 'Persuade', back: 'To convince someone to agree with your point of view.\n\nPersuasive techniques: rhetorical questions, emotive language, statistics, expert opinion, anecdotes.' },
-    { id: 'y7vb-16', front: 'Audience', back: 'The intended reader, listener, or viewer of a text.\n\nKey question: Who is the writer trying to reach?\n\nWriters adjust their language, tone, and style based on their audience.' },
-    { id: 'y7vb-17', front: 'Purpose', back: 'The reason a text has been written.\n\nCommon purposes: to persuade, inform, entertain, advise, argue, describe.\n\nA text can have more than one purpose.' },
-    { id: 'y7vb-18', front: 'Structure', back: 'How a text is organised and arranged.\n\nIncludes: opening, ending, paragraph order, flashbacks, shifts in focus, cyclical structure.\n\nStructure is just as important as language in creating effects.' },
-    { id: 'y7vb-19', front: 'Dialogue', back: 'The spoken words of characters in a text.\n\nPurpose: Reveals character, advances the plot, creates tension, shows relationships.\n\nIn scripts, dialogue is the main form of storytelling.' },
-    { id: 'y7vb-20', front: 'Narrator', back: 'The voice that tells the story.\n\nTypes: First person ("I"), second person ("you"), third person ("he/she/they").\n\nThe narrator may or may not be a character in the story.' },
+    {
+      id: 'y7vb-1',
+      front: 'Atmosphere',
+      back: 'The mood or feeling created in a text through language, setting, and imagery.\n\nExample: A dark forest at night creates a tense, eerie atmosphere.\n\nUseful phrase: "The writer creates an atmosphere of..."',
+    },
+    {
+      id: 'y7vb-2',
+      front: 'Tension',
+      back: 'A feeling of suspense or anxiety created in the reader.\n\nWriters build tension through: short sentences, unanswered questions, foreshadowing, cliffhangers.',
+    },
+    {
+      id: 'y7vb-3',
+      front: 'Connotation',
+      back: 'The feeling or idea suggested by a word, beyond its literal meaning.\n\nExample: "Snake" literally means a reptile, but connotes danger, evil, or treachery.',
+    },
+    {
+      id: 'y7vb-4',
+      front: 'Protagonist',
+      back: 'The main character in a story.\n\nExample: Macbeth, Scout Finch, Pip (in Great Expectations).\n\nThe protagonist drives the action and is usually the character the audience roots for.',
+    },
+    {
+      id: 'y7vb-5',
+      front: 'Antagonist',
+      back: 'The character or force that opposes the protagonist.\n\nExample: Lady Macbeth, Inspector Goole (opposing the Birlings), Jack (in Lord of the Flies).\n\nThe antagonist creates conflict in the story.',
+    },
+    {
+      id: 'y7vb-6',
+      front: 'Narrative',
+      back: 'The story or account of events told by a narrator.\n\nKey questions: Who is telling the story? In what order? From whose perspective?',
+    },
+    {
+      id: 'y7vb-7',
+      front: 'Genre',
+      back: 'A category or type of text.\n\nExamples: horror, romance, science fiction, comedy, tragedy, mystery, dystopian.\n\nEach genre has its own conventions and expectations.',
+    },
+    {
+      id: 'y7vb-8',
+      front: 'Theme',
+      back: 'The central idea or message explored in a text.\n\nExamples: love, power, justice, identity, growing up.\n\nThemes are not the same as the plot (what happens).',
+    },
+    {
+      id: 'y7vb-9',
+      front: 'Context',
+      back: 'The historical, social, or cultural background that influences a text.\n\nExample: Dickens wrote about poverty because of the harsh conditions of Victorian England.\n\nUseful phrase: "The context of... influences..."',
+    },
+    {
+      id: 'y7vb-10',
+      front: 'Inference',
+      back: 'Working out meaning from clues in the text, rather than being told directly.\n\nAlso called "reading between the lines."\n\nUseful phrase: "This suggests that..." or "This implies..."',
+    },
+    {
+      id: 'y7vb-11',
+      front: 'Explicit',
+      back: 'Information that is stated directly and clearly in the text.\n\nExample: "The boy was sad" is explicit.\n\nOpposite of implicit (implied).',
+    },
+    {
+      id: 'y7vb-12',
+      front: 'Implicit',
+      back: 'Information that is suggested or hinted at, rather than stated directly.\n\nExample: "The boy stared at the floor and said nothing" implies sadness.\n\nYou must infer implicit meaning.',
+    },
+    {
+      id: 'y7vb-13',
+      front: 'Empathy',
+      back: 'The ability to understand and share the feelings of another person.\n\nIn English: Writers create empathy by showing a character\'s thoughts, feelings, and struggles.\n\nUseful phrase: "The reader feels empathy for... because..."',
+    },
+    {
+      id: 'y7vb-14',
+      front: 'Moral',
+      back: 'The lesson or message that a story teaches.\n\nExample: Aesop\'s fable "The Tortoise and the Hare" teaches that persistence beats overconfidence.\n\nFables and parables often have a clear moral.',
+    },
+    {
+      id: 'y7vb-15',
+      front: 'Persuade',
+      back: 'To convince someone to agree with your point of view.\n\nPersuasive techniques: rhetorical questions, emotive language, statistics, expert opinion, anecdotes.',
+    },
+    {
+      id: 'y7vb-16',
+      front: 'Audience',
+      back: 'The intended reader, listener, or viewer of a text.\n\nKey question: Who is the writer trying to reach?\n\nWriters adjust their language, tone, and style based on their audience.',
+    },
+    {
+      id: 'y7vb-17',
+      front: 'Purpose',
+      back: 'The reason a text has been written.\n\nCommon purposes: to persuade, inform, entertain, advise, argue, describe.\n\nA text can have more than one purpose.',
+    },
+    {
+      id: 'y7vb-18',
+      front: 'Structure',
+      back: 'How a text is organised and arranged.\n\nIncludes: opening, ending, paragraph order, flashbacks, shifts in focus, cyclical structure.\n\nStructure is just as important as language in creating effects.',
+    },
+    {
+      id: 'y7vb-19',
+      front: 'Dialogue',
+      back: 'The spoken words of characters in a text.\n\nPurpose: Reveals character, advances the plot, creates tension, shows relationships.\n\nIn scripts, dialogue is the main form of storytelling.',
+    },
+    {
+      id: 'y7vb-20',
+      front: 'Narrator',
+      back: 'The voice that tells the story.\n\nTypes: First person ("I"), second person ("you"), third person ("he/she/they").\n\nThe narrator may or may not be a character in the story.',
+    },
   ],
-};
+}
 
 // ============================================================
 // YEAR 8 FLASHCARDS (80 cards)
@@ -135,28 +460,108 @@ const year8AdvancedTechniques: FlashcardDeck = {
   category: 'Advanced Techniques',
   board: 'Year 8',
   cards: [
-    { id: 'y8at-1', front: 'Juxtaposition', back: 'Placing two contrasting ideas, images, or characters side by side to highlight differences.\n\nExample: "The mansion stood grandly beside the crumbling slum."\n\nEffect: Forces the reader to compare and consider inequality, conflict, or complexity.' },
-    { id: 'y8at-2', front: 'Oxymoron', back: 'Two contradictory words placed together.\n\nExamples: "bitter sweet," "living death," "deafening silence."\n\nEffect: Highlights internal conflict, paradox, or complexity in a character or situation.' },
-    { id: 'y8at-3', front: 'Pathetic Fallacy (Advanced)', back: 'Nature or weather reflecting human emotion or foreshadowing events.\n\nAdvanced use: Consider why the writer chose this particular weather. Is it ironic? Does it shift?\n\nEffect: Externalises internal emotions without stating them directly.' },
-    { id: 'y8at-4', front: 'Extended Metaphor', back: 'A metaphor that is sustained across several lines or an entire text.\n\nExample: Life described as a journey throughout an entire poem.\n\nEffect: Develops a complex, layered comparison that deepens meaning.' },
-    { id: 'y8at-5', front: 'Allegory', back: 'A narrative where characters, events, and settings represent abstract ideas or moral qualities.\n\nExample: Animal Farm as an allegory for the Russian Revolution.\n\nEffect: Allows writers to comment on real events through fiction.' },
-    { id: 'y8at-6', front: 'Motif', back: 'A recurring image, symbol, word, or idea that runs throughout a text.\n\nExample: Blood as a motif in Macbeth (guilt, violence, power).\n\nEffect: Reinforces themes and creates structural unity.' },
-    { id: 'y8at-7', front: 'Dramatic Monologue', back: 'A poem or speech where a single character speaks to a silent listener, revealing their personality.\n\nExample: "My Last Duchess" by Robert Browning.\n\nEffect: We learn about the speaker through what they say and how they say it.' },
-    { id: 'y8at-8', front: 'Unreliable Narrator', back: 'A narrator whose account of events cannot be fully trusted.\n\nClues: Contradictions, bias, gaps in memory, overly defensive tone.\n\nEffect: Creates suspense and makes the reader question the truth.' },
-    { id: 'y8at-9', front: 'Euphemism', back: 'A mild or indirect expression used in place of a harsh or blunt one.\n\nExample: "He passed away" instead of "He died."\n\nEffect: Softens reality, shows sensitivity, or can be used to conceal the truth.' },
-    { id: 'y8at-10', front: 'Antithesis', back: 'Contrasting ideas expressed in a balanced, parallel structure.\n\nExample: "It was the best of times, it was the worst of times."\n\nEffect: Creates a memorable, rhythmic opposition that highlights conflict.' },
-    { id: 'y8at-11', front: 'Zoomorphism', back: 'Giving animal qualities to a human.\n\nExample: "He prowled the corridors, his eyes sharp and predatory."\n\nEffect: Can suggest primitive instincts, threat, or loss of humanity.' },
-    { id: 'y8at-12', front: 'Plosive Sounds', back: 'Hard consonant sounds: b, d, g, p, t, k.\n\nExample: "The bitter, brutal wind cut through him."\n\nEffect: Creates a harsh, aggressive, or explosive tone.' },
-    { id: 'y8at-13', front: 'Semantic Field', back: 'A group of words in a text that all relate to the same topic or theme.\n\nExample: "sword," "shield," "battle," "charge" form a semantic field of war.\n\nEffect: Builds and sustains a particular mood or theme.' },
-    { id: 'y8at-14', front: 'Cyclical Structure', back: 'When a text ends where it began, returning to the opening image, idea, or setting.\n\nEffect: Creates a sense of inevitability, entrapment, or completion. Can suggest nothing has changed.' },
-    { id: 'y8at-15', front: 'In Medias Res', back: 'Starting a story in the middle of the action.\n\nLatin: "in the middle of things."\n\nEffect: Immediately grabs the reader\'s attention and creates intrigue about what happened before.' },
-    { id: 'y8at-16', front: 'Bildungsroman', back: 'A coming-of-age story following a character\'s growth from youth to maturity.\n\nExamples: Great Expectations, Jane Eyre, The Catcher in the Rye.\n\nKey feature: The protagonist learns through experience.' },
-    { id: 'y8at-17', front: 'Gothic Genre', back: 'A literary genre featuring darkness, decay, the supernatural, and psychological terror.\n\nConventions: Isolated settings, doubles, secrets, madness, the sublime.\n\nExamples: Frankenstein, Dracula, Jekyll and Hyde.' },
-    { id: 'y8at-18', front: 'Asyndetic List', back: 'A list without conjunctions.\n\nExample: "He ran, fell, crawled, stopped."\n\nEffect: Creates pace, urgency, or an overwhelming accumulation of ideas.' },
-    { id: 'y8at-19', front: 'Syndetic List', back: 'A list with conjunctions between each item.\n\nExample: "She packed books and clothes and food and blankets."\n\nEffect: Can suggest endlessness, thoroughness, or a childlike voice.' },
-    { id: 'y8at-20', front: 'Colloquial Language', back: 'Informal, everyday language including slang and dialect.\n\nExample: "He was proper gutted about it, like."\n\nEffect: Creates an authentic voice, suggests social class, region, or time period.' },
+    {
+      id: 'y8at-1',
+      front: 'Juxtaposition',
+      back: 'Placing two contrasting ideas, images, or characters side by side to highlight differences.\n\nExample: "The mansion stood grandly beside the crumbling slum."\n\nEffect: Forces the reader to compare and consider inequality, conflict, or complexity.',
+    },
+    {
+      id: 'y8at-2',
+      front: 'Oxymoron',
+      back: 'Two contradictory words placed together.\n\nExamples: "bitter sweet," "living death," "deafening silence."\n\nEffect: Highlights internal conflict, paradox, or complexity in a character or situation.',
+    },
+    {
+      id: 'y8at-3',
+      front: 'Pathetic Fallacy (Advanced)',
+      back: 'Nature or weather reflecting human emotion or foreshadowing events.\n\nAdvanced use: Consider why the writer chose this particular weather. Is it ironic? Does it shift?\n\nEffect: Externalises internal emotions without stating them directly.',
+    },
+    {
+      id: 'y8at-4',
+      front: 'Extended Metaphor',
+      back: 'A metaphor that is sustained across several lines or an entire text.\n\nExample: Life described as a journey throughout an entire poem.\n\nEffect: Develops a complex, layered comparison that deepens meaning.',
+    },
+    {
+      id: 'y8at-5',
+      front: 'Allegory',
+      back: 'A narrative where characters, events, and settings represent abstract ideas or moral qualities.\n\nExample: Animal Farm as an allegory for the Russian Revolution.\n\nEffect: Allows writers to comment on real events through fiction.',
+    },
+    {
+      id: 'y8at-6',
+      front: 'Motif',
+      back: 'A recurring image, symbol, word, or idea that runs throughout a text.\n\nExample: Blood as a motif in Macbeth (guilt, violence, power).\n\nEffect: Reinforces themes and creates structural unity.',
+    },
+    {
+      id: 'y8at-7',
+      front: 'Dramatic Monologue',
+      back: 'A poem or speech where a single character speaks to a silent listener, revealing their personality.\n\nExample: "My Last Duchess" by Robert Browning.\n\nEffect: We learn about the speaker through what they say and how they say it.',
+    },
+    {
+      id: 'y8at-8',
+      front: 'Unreliable Narrator',
+      back: 'A narrator whose account of events cannot be fully trusted.\n\nClues: Contradictions, bias, gaps in memory, overly defensive tone.\n\nEffect: Creates suspense and makes the reader question the truth.',
+    },
+    {
+      id: 'y8at-9',
+      front: 'Euphemism',
+      back: 'A mild or indirect expression used in place of a harsh or blunt one.\n\nExample: "He passed away" instead of "He died."\n\nEffect: Softens reality, shows sensitivity, or can be used to conceal the truth.',
+    },
+    {
+      id: 'y8at-10',
+      front: 'Antithesis',
+      back: 'Contrasting ideas expressed in a balanced, parallel structure.\n\nExample: "It was the best of times, it was the worst of times."\n\nEffect: Creates a memorable, rhythmic opposition that highlights conflict.',
+    },
+    {
+      id: 'y8at-11',
+      front: 'Zoomorphism',
+      back: 'Giving animal qualities to a human.\n\nExample: "He prowled the corridors, his eyes sharp and predatory."\n\nEffect: Can suggest primitive instincts, threat, or loss of humanity.',
+    },
+    {
+      id: 'y8at-12',
+      front: 'Plosive Sounds',
+      back: 'Hard consonant sounds: b, d, g, p, t, k.\n\nExample: "The bitter, brutal wind cut through him."\n\nEffect: Creates a harsh, aggressive, or explosive tone.',
+    },
+    {
+      id: 'y8at-13',
+      front: 'Semantic Field',
+      back: 'A group of words in a text that all relate to the same topic or theme.\n\nExample: "sword," "shield," "battle," "charge" form a semantic field of war.\n\nEffect: Builds and sustains a particular mood or theme.',
+    },
+    {
+      id: 'y8at-14',
+      front: 'Cyclical Structure',
+      back: 'When a text ends where it began, returning to the opening image, idea, or setting.\n\nEffect: Creates a sense of inevitability, entrapment, or completion. Can suggest nothing has changed.',
+    },
+    {
+      id: 'y8at-15',
+      front: 'In Medias Res',
+      back: 'Starting a story in the middle of the action.\n\nLatin: "in the middle of things."\n\nEffect: Immediately grabs the reader\'s attention and creates intrigue about what happened before.',
+    },
+    {
+      id: 'y8at-16',
+      front: 'Bildungsroman',
+      back: "A coming-of-age story following a character's growth from youth to maturity.\n\nExamples: Great Expectations, Jane Eyre, The Catcher in the Rye.\n\nKey feature: The protagonist learns through experience.",
+    },
+    {
+      id: 'y8at-17',
+      front: 'Gothic Genre',
+      back: 'A literary genre featuring darkness, decay, the supernatural, and psychological terror.\n\nConventions: Isolated settings, doubles, secrets, madness, the sublime.\n\nExamples: Frankenstein, Dracula, Jekyll and Hyde.',
+    },
+    {
+      id: 'y8at-18',
+      front: 'Asyndetic List',
+      back: 'A list without conjunctions.\n\nExample: "He ran, fell, crawled, stopped."\n\nEffect: Creates pace, urgency, or an overwhelming accumulation of ideas.',
+    },
+    {
+      id: 'y8at-19',
+      front: 'Syndetic List',
+      back: 'A list with conjunctions between each item.\n\nExample: "She packed books and clothes and food and blankets."\n\nEffect: Can suggest endlessness, thoroughness, or a childlike voice.',
+    },
+    {
+      id: 'y8at-20',
+      front: 'Colloquial Language',
+      back: 'Informal, everyday language including slang and dialect.\n\nExample: "He was proper gutted about it, like."\n\nEffect: Creates an authentic voice, suggests social class, region, or time period.',
+    },
   ],
-};
+}
 
 const year8ShakespeareTerms: FlashcardDeck = {
   id: 'y8-shakespeare-terms',
@@ -165,28 +570,108 @@ const year8ShakespeareTerms: FlashcardDeck = {
   category: 'Shakespeare',
   board: 'Year 8',
   cards: [
-    { id: 'y8sh-1', front: 'Soliloquy', back: 'A speech where a character speaks their thoughts aloud, alone on stage.\n\nPurpose: Reveals the character\'s true feelings and inner conflict to the audience.\n\nFamous example: "To be, or not to be" (Hamlet).' },
-    { id: 'y8sh-2', front: 'Aside', back: 'A short comment made by a character to the audience that other characters on stage cannot hear.\n\nPurpose: Shares secret thoughts, creates dramatic irony, or adds humour.' },
-    { id: 'y8sh-3', front: 'Dramatic Irony', back: 'When the audience knows something that the characters on stage do not.\n\nExample: In Romeo and Juliet, the audience knows Juliet is alive, but Romeo does not.\n\nEffect: Creates tension, suspense, or tragic inevitability.' },
-    { id: 'y8sh-4', front: 'Iambic Pentameter', back: 'A line of poetry with five pairs of syllables: unstressed then stressed (da-DUM x5).\n\nExample: "But SOFT, what LIGHT through YON-der WIN-dow BREAKS?"\n\nUsed by: Noble characters in Shakespeare. Shows status and order.' },
-    { id: 'y8sh-5', front: 'Prose (in Shakespeare)', back: 'Ordinary speech without a regular rhythm or rhyme pattern.\n\nUsed by: Lower-class characters, comic scenes, or characters in emotional distress.\n\nContrast with verse (iambic pentameter) used by nobility.' },
-    { id: 'y8sh-6', front: 'Blank Verse', back: 'Unrhymed iambic pentameter.\n\nThe most common verse form in Shakespeare\'s plays.\n\nUsed for: Serious, important speeches by noble characters.' },
-    { id: 'y8sh-7', front: 'Couplet', back: 'Two consecutive lines of poetry that rhyme.\n\nOften used at the end of a scene or speech in Shakespeare to create a sense of finality.\n\nExample: "The play is done, the curtain drops, / Slow falling to the prompter\'s bell..."' },
-    { id: 'y8sh-8', front: 'Tragedy', back: 'A play where the protagonist\'s fatal flaw leads to their downfall and death.\n\nShakespearean tragedies: Macbeth, Hamlet, Othello, King Lear, Romeo and Juliet.\n\nKey elements: hamartia, hubris, catharsis.' },
-    { id: 'y8sh-9', front: 'Comedy (Shakespearean)', back: 'A play that ends happily, usually with marriage.\n\nFeatures: Mistaken identity, wordplay, disguise, love triangles, a "green world."\n\nExamples: A Midsummer Night\'s Dream, Twelfth Night, Much Ado About Nothing.' },
-    { id: 'y8sh-10', front: 'Hamartia (Tragic Flaw)', back: 'A fatal character flaw that leads to the tragic hero\'s downfall.\n\nExamples: Macbeth\'s ambition, Othello\'s jealousy, Hamlet\'s indecision.\n\nThe flaw makes the hero both human and vulnerable.' },
-    { id: 'y8sh-11', front: 'Hubris', back: 'Excessive pride or arrogance that leads to a character\'s downfall.\n\nExample: Macbeth\'s belief that he is untouchable after hearing the witches\' prophecies.\n\nHubris often blinds characters to danger.' },
-    { id: 'y8sh-12', front: 'Catharsis', back: 'The emotional release experienced by the audience at the end of a tragedy.\n\nAristotle\'s idea: Watching a tragedy should purge feelings of pity and fear.\n\nThe audience feels moved, cleansed, or reflective.' },
-    { id: 'y8sh-13', front: 'Foil', back: 'A character who contrasts with another character, highlighting their qualities.\n\nExample: Banquo is a foil to Macbeth (both hear prophecies but respond differently).\n\nEffect: Makes character traits more visible through comparison.' },
-    { id: 'y8sh-14', front: 'Prologue', back: 'An introduction spoken before the main action of the play begins.\n\nExample: The Chorus in Romeo and Juliet tells us the lovers are "star-crossed" and will die.\n\nEffect: Sets the scene, creates dramatic irony, or foreshadows events.' },
-    { id: 'y8sh-15', front: 'Epilogue', back: 'A speech or scene at the end of a play, often addressing the audience directly.\n\nExample: Puck\'s speech at the end of A Midsummer Night\'s Dream.\n\nPurpose: Sums up themes, asks for applause, or offers a moral.' },
-    { id: 'y8sh-16', front: 'Monologue', back: 'A long speech by one character, addressed to other characters on stage.\n\nDifferent from a soliloquy (which is spoken alone).\n\nExample: Portia\'s "quality of mercy" speech in The Merchant of Venice.' },
-    { id: 'y8sh-17', front: 'Machiavellian Villain', back: 'A character who is cunning, manipulative, and willing to use deception to gain power.\n\nNamed after Niccolo Machiavelli.\n\nExamples: Iago (Othello), Edmund (King Lear), Lady Macbeth.' },
-    { id: 'y8sh-18', front: 'Elizabethan / Jacobean Audience', back: 'Elizabethan: During Queen Elizabeth I\'s reign (1558-1603).\nJacobean: During King James I\'s reign (1603-1625).\n\nThese audiences believed in the divine right of kings, witchcraft, and the Great Chain of Being.' },
-    { id: 'y8sh-19', front: 'The Great Chain of Being', back: 'The Elizabethan belief that everything in the universe had a fixed place in a hierarchy: God > Angels > King > Nobles > Commoners > Animals.\n\nDisrupting this order (e.g., killing a king) brought chaos to nature and society.' },
-    { id: 'y8sh-20', front: 'Patriarchal Society', back: 'A society where men hold power and authority over women.\n\nIn Shakespeare\'s time: Women could not act on stage, own property independently, or hold political power.\n\nShakespeare often explores and challenges this through strong female characters.' },
+    {
+      id: 'y8sh-1',
+      front: 'Soliloquy',
+      back: 'A speech where a character speaks their thoughts aloud, alone on stage.\n\nPurpose: Reveals the character\'s true feelings and inner conflict to the audience.\n\nFamous example: "To be, or not to be" (Hamlet).',
+    },
+    {
+      id: 'y8sh-2',
+      front: 'Aside',
+      back: 'A short comment made by a character to the audience that other characters on stage cannot hear.\n\nPurpose: Shares secret thoughts, creates dramatic irony, or adds humour.',
+    },
+    {
+      id: 'y8sh-3',
+      front: 'Dramatic Irony',
+      back: 'When the audience knows something that the characters on stage do not.\n\nExample: In Romeo and Juliet, the audience knows Juliet is alive, but Romeo does not.\n\nEffect: Creates tension, suspense, or tragic inevitability.',
+    },
+    {
+      id: 'y8sh-4',
+      front: 'Iambic Pentameter',
+      back: 'A line of poetry with five pairs of syllables: unstressed then stressed (da-DUM x5).\n\nExample: "But SOFT, what LIGHT through YON-der WIN-dow BREAKS?"\n\nUsed by: Noble characters in Shakespeare. Shows status and order.',
+    },
+    {
+      id: 'y8sh-5',
+      front: 'Prose (in Shakespeare)',
+      back: 'Ordinary speech without a regular rhythm or rhyme pattern.\n\nUsed by: Lower-class characters, comic scenes, or characters in emotional distress.\n\nContrast with verse (iambic pentameter) used by nobility.',
+    },
+    {
+      id: 'y8sh-6',
+      front: 'Blank Verse',
+      back: "Unrhymed iambic pentameter.\n\nThe most common verse form in Shakespeare's plays.\n\nUsed for: Serious, important speeches by noble characters.",
+    },
+    {
+      id: 'y8sh-7',
+      front: 'Couplet',
+      back: 'Two consecutive lines of poetry that rhyme.\n\nOften used at the end of a scene or speech in Shakespeare to create a sense of finality.\n\nExample: "The play is done, the curtain drops, / Slow falling to the prompter\'s bell..."',
+    },
+    {
+      id: 'y8sh-8',
+      front: 'Tragedy',
+      back: "A play where the protagonist's fatal flaw leads to their downfall and death.\n\nShakespearean tragedies: Macbeth, Hamlet, Othello, King Lear, Romeo and Juliet.\n\nKey elements: hamartia, hubris, catharsis.",
+    },
+    {
+      id: 'y8sh-9',
+      front: 'Comedy (Shakespearean)',
+      back: 'A play that ends happily, usually with marriage.\n\nFeatures: Mistaken identity, wordplay, disguise, love triangles, a "green world."\n\nExamples: A Midsummer Night\'s Dream, Twelfth Night, Much Ado About Nothing.',
+    },
+    {
+      id: 'y8sh-10',
+      front: 'Hamartia (Tragic Flaw)',
+      back: "A fatal character flaw that leads to the tragic hero's downfall.\n\nExamples: Macbeth's ambition, Othello's jealousy, Hamlet's indecision.\n\nThe flaw makes the hero both human and vulnerable.",
+    },
+    {
+      id: 'y8sh-11',
+      front: 'Hubris',
+      back: "Excessive pride or arrogance that leads to a character's downfall.\n\nExample: Macbeth's belief that he is untouchable after hearing the witches' prophecies.\n\nHubris often blinds characters to danger.",
+    },
+    {
+      id: 'y8sh-12',
+      front: 'Catharsis',
+      back: "The emotional release experienced by the audience at the end of a tragedy.\n\nAristotle's idea: Watching a tragedy should purge feelings of pity and fear.\n\nThe audience feels moved, cleansed, or reflective.",
+    },
+    {
+      id: 'y8sh-13',
+      front: 'Foil',
+      back: 'A character who contrasts with another character, highlighting their qualities.\n\nExample: Banquo is a foil to Macbeth (both hear prophecies but respond differently).\n\nEffect: Makes character traits more visible through comparison.',
+    },
+    {
+      id: 'y8sh-14',
+      front: 'Prologue',
+      back: 'An introduction spoken before the main action of the play begins.\n\nExample: The Chorus in Romeo and Juliet tells us the lovers are "star-crossed" and will die.\n\nEffect: Sets the scene, creates dramatic irony, or foreshadows events.',
+    },
+    {
+      id: 'y8sh-15',
+      front: 'Epilogue',
+      back: "A speech or scene at the end of a play, often addressing the audience directly.\n\nExample: Puck's speech at the end of A Midsummer Night's Dream.\n\nPurpose: Sums up themes, asks for applause, or offers a moral.",
+    },
+    {
+      id: 'y8sh-16',
+      front: 'Monologue',
+      back: 'A long speech by one character, addressed to other characters on stage.\n\nDifferent from a soliloquy (which is spoken alone).\n\nExample: Portia\'s "quality of mercy" speech in The Merchant of Venice.',
+    },
+    {
+      id: 'y8sh-17',
+      front: 'Machiavellian Villain',
+      back: 'A character who is cunning, manipulative, and willing to use deception to gain power.\n\nNamed after Niccolo Machiavelli.\n\nExamples: Iago (Othello), Edmund (King Lear), Lady Macbeth.',
+    },
+    {
+      id: 'y8sh-18',
+      front: 'Elizabethan / Jacobean Audience',
+      back: "Elizabethan: During Queen Elizabeth I's reign (1558-1603).\nJacobean: During King James I's reign (1603-1625).\n\nThese audiences believed in the divine right of kings, witchcraft, and the Great Chain of Being.",
+    },
+    {
+      id: 'y8sh-19',
+      front: 'The Great Chain of Being',
+      back: 'The Elizabethan belief that everything in the universe had a fixed place in a hierarchy: God > Angels > King > Nobles > Commoners > Animals.\n\nDisrupting this order (e.g., killing a king) brought chaos to nature and society.',
+    },
+    {
+      id: 'y8sh-20',
+      front: 'Patriarchal Society',
+      back: "A society where men hold power and authority over women.\n\nIn Shakespeare's time: Women could not act on stage, own property independently, or hold political power.\n\nShakespeare often explores and challenges this through strong female characters.",
+    },
   ],
-};
+}
 
 const year8RhetoricalDevices: FlashcardDeck = {
   id: 'y8-rhetorical-devices',
@@ -195,28 +680,108 @@ const year8RhetoricalDevices: FlashcardDeck = {
   category: 'Rhetoric',
   board: 'Year 8',
   cards: [
-    { id: 'y8rh-1', front: 'Ethos', back: 'Persuasion through credibility or authority.\n\nHow it works: The speaker establishes trust by showing expertise, experience, or moral character.\n\nExample: "As a doctor with 20 years\' experience, I can tell you..."' },
-    { id: 'y8rh-2', front: 'Pathos', back: 'Persuasion through emotion.\n\nHow it works: The speaker appeals to the audience\'s feelings (sympathy, fear, anger, hope).\n\nExample: "Imagine your child, cold and hungry, with nowhere to turn."' },
-    { id: 'y8rh-3', front: 'Logos', back: 'Persuasion through logic and evidence.\n\nHow it works: The speaker uses facts, statistics, and reasoned arguments.\n\nExample: "Studies show that 73% of students perform better with regular breaks."' },
-    { id: 'y8rh-4', front: 'Anaphora', back: 'Repeating a word or phrase at the start of consecutive sentences or clauses.\n\nExample: "We will fight for justice. We will fight for equality. We will fight for freedom."\n\nEffect: Builds momentum, rhythm, and emotional power.' },
-    { id: 'y8rh-5', front: 'Epistrophe', back: 'Repeating a word or phrase at the end of consecutive sentences or clauses.\n\nExample: "...of the people, by the people, for the people."\n\nEffect: Creates emphasis and a sense of conclusion.' },
-    { id: 'y8rh-6', front: 'Antithesis (Rhetorical)', back: 'Placing contrasting ideas in a balanced, parallel structure.\n\nExample: "Ask not what your country can do for you; ask what you can do for your country." (JFK)\n\nEffect: Creates a memorable, sharp contrast.' },
-    { id: 'y8rh-7', front: 'Chiasmus', back: 'Reversing the order of words in two parallel phrases.\n\nExample: "Never let a fool kiss you, or a kiss fool you."\n\nEffect: Creates wit, surprise, and memorability.' },
-    { id: 'y8rh-8', front: 'Hypophora', back: 'Asking a question and then immediately answering it.\n\nExample: "Is this fair? Of course it isn\'t. And here\'s why..."\n\nEffect: Guides the audience\'s thinking and anticipates their objections.' },
-    { id: 'y8rh-9', front: 'Litotes', back: 'Deliberate understatement, often using a double negative.\n\nExample: "She\'s not unkind" (meaning she is kind).\n\nEffect: Creates ironic emphasis or modesty.' },
-    { id: 'y8rh-10', front: 'Anadiplosis', back: 'Repeating the last word of one clause at the beginning of the next.\n\nExample: "Fear leads to anger. Anger leads to hate. Hate leads to suffering."\n\nEffect: Creates a logical chain and builds intensity.' },
-    { id: 'y8rh-11', front: 'Polysyndeton', back: 'Using multiple conjunctions in quick succession.\n\nExample: "We ran and jumped and laughed and cried."\n\nEffect: Creates a sense of abundance, breathlessness, or overwhelming experience.' },
-    { id: 'y8rh-12', front: 'Asyndeton', back: 'Removing conjunctions from a list.\n\nExample: "He came, he saw, he conquered."\n\nEffect: Creates pace, urgency, and a punchy, authoritative tone.' },
-    { id: 'y8rh-13', front: 'Parallelism', back: 'Using the same grammatical structure in successive phrases or clauses.\n\nExample: "Reading makes a full man, conference a ready man, writing an exact man."\n\nEffect: Creates balance, rhythm, and elegance.' },
-    { id: 'y8rh-14', front: 'Appeal to Authority', back: 'Citing an expert, leader, or respected figure to support your argument.\n\nExample: "As Einstein once said..."\n\nEffect: Adds weight and credibility to the argument.' },
-    { id: 'y8rh-15', front: 'Inclusive Language', back: 'Using "we," "us," and "our" to create a sense of shared identity.\n\nExample: "We must act together to solve this crisis."\n\nEffect: Unites speaker and audience, making them feel part of the same cause.' },
-    { id: 'y8rh-16', front: 'Counter-argument', back: 'Acknowledging an opposing viewpoint before refuting it.\n\nExample: "Some may argue that... However, the evidence clearly shows..."\n\nEffect: Shows fairness and strengthens your own argument.' },
-    { id: 'y8rh-17', front: 'Anecdote', back: 'A short personal story used to illustrate a point.\n\nExample: "I remember the first time I saw poverty first-hand..."\n\nEffect: Makes an argument relatable and emotionally engaging.' },
-    { id: 'y8rh-18', front: 'Imperative (Commands)', back: 'Using commands to urge the audience to act.\n\nExample: "Stand up. Speak out. Make a difference."\n\nEffect: Creates urgency and directly instructs the audience.' },
-    { id: 'y8rh-19', front: 'Loaded Language', back: 'Words with strong positive or negative connotations, chosen to influence the reader\'s opinion.\n\nExample: "Freedom fighters" vs "terrorists" (same group, different bias).\n\nEffect: Shapes how the audience perceives an issue.' },
-    { id: 'y8rh-20', front: 'Call to Action', back: 'A direct appeal urging the audience to do something specific.\n\nExample: "Sign the petition today. Donate now. Make your voice heard."\n\nEffect: Gives the audience a concrete next step and creates urgency.' },
+    {
+      id: 'y8rh-1',
+      front: 'Ethos',
+      back: 'Persuasion through credibility or authority.\n\nHow it works: The speaker establishes trust by showing expertise, experience, or moral character.\n\nExample: "As a doctor with 20 years\' experience, I can tell you..."',
+    },
+    {
+      id: 'y8rh-2',
+      front: 'Pathos',
+      back: 'Persuasion through emotion.\n\nHow it works: The speaker appeals to the audience\'s feelings (sympathy, fear, anger, hope).\n\nExample: "Imagine your child, cold and hungry, with nowhere to turn."',
+    },
+    {
+      id: 'y8rh-3',
+      front: 'Logos',
+      back: 'Persuasion through logic and evidence.\n\nHow it works: The speaker uses facts, statistics, and reasoned arguments.\n\nExample: "Studies show that 73% of students perform better with regular breaks."',
+    },
+    {
+      id: 'y8rh-4',
+      front: 'Anaphora',
+      back: 'Repeating a word or phrase at the start of consecutive sentences or clauses.\n\nExample: "We will fight for justice. We will fight for equality. We will fight for freedom."\n\nEffect: Builds momentum, rhythm, and emotional power.',
+    },
+    {
+      id: 'y8rh-5',
+      front: 'Epistrophe',
+      back: 'Repeating a word or phrase at the end of consecutive sentences or clauses.\n\nExample: "...of the people, by the people, for the people."\n\nEffect: Creates emphasis and a sense of conclusion.',
+    },
+    {
+      id: 'y8rh-6',
+      front: 'Antithesis (Rhetorical)',
+      back: 'Placing contrasting ideas in a balanced, parallel structure.\n\nExample: "Ask not what your country can do for you; ask what you can do for your country." (JFK)\n\nEffect: Creates a memorable, sharp contrast.',
+    },
+    {
+      id: 'y8rh-7',
+      front: 'Chiasmus',
+      back: 'Reversing the order of words in two parallel phrases.\n\nExample: "Never let a fool kiss you, or a kiss fool you."\n\nEffect: Creates wit, surprise, and memorability.',
+    },
+    {
+      id: 'y8rh-8',
+      front: 'Hypophora',
+      back: "Asking a question and then immediately answering it.\n\nExample: \"Is this fair? Of course it isn't. And here's why...\"\n\nEffect: Guides the audience's thinking and anticipates their objections.",
+    },
+    {
+      id: 'y8rh-9',
+      front: 'Litotes',
+      back: 'Deliberate understatement, often using a double negative.\n\nExample: "She\'s not unkind" (meaning she is kind).\n\nEffect: Creates ironic emphasis or modesty.',
+    },
+    {
+      id: 'y8rh-10',
+      front: 'Anadiplosis',
+      back: 'Repeating the last word of one clause at the beginning of the next.\n\nExample: "Fear leads to anger. Anger leads to hate. Hate leads to suffering."\n\nEffect: Creates a logical chain and builds intensity.',
+    },
+    {
+      id: 'y8rh-11',
+      front: 'Polysyndeton',
+      back: 'Using multiple conjunctions in quick succession.\n\nExample: "We ran and jumped and laughed and cried."\n\nEffect: Creates a sense of abundance, breathlessness, or overwhelming experience.',
+    },
+    {
+      id: 'y8rh-12',
+      front: 'Asyndeton',
+      back: 'Removing conjunctions from a list.\n\nExample: "He came, he saw, he conquered."\n\nEffect: Creates pace, urgency, and a punchy, authoritative tone.',
+    },
+    {
+      id: 'y8rh-13',
+      front: 'Parallelism',
+      back: 'Using the same grammatical structure in successive phrases or clauses.\n\nExample: "Reading makes a full man, conference a ready man, writing an exact man."\n\nEffect: Creates balance, rhythm, and elegance.',
+    },
+    {
+      id: 'y8rh-14',
+      front: 'Appeal to Authority',
+      back: 'Citing an expert, leader, or respected figure to support your argument.\n\nExample: "As Einstein once said..."\n\nEffect: Adds weight and credibility to the argument.',
+    },
+    {
+      id: 'y8rh-15',
+      front: 'Inclusive Language',
+      back: 'Using "we," "us," and "our" to create a sense of shared identity.\n\nExample: "We must act together to solve this crisis."\n\nEffect: Unites speaker and audience, making them feel part of the same cause.',
+    },
+    {
+      id: 'y8rh-16',
+      front: 'Counter-argument',
+      back: 'Acknowledging an opposing viewpoint before refuting it.\n\nExample: "Some may argue that... However, the evidence clearly shows..."\n\nEffect: Shows fairness and strengthens your own argument.',
+    },
+    {
+      id: 'y8rh-17',
+      front: 'Anecdote',
+      back: 'A short personal story used to illustrate a point.\n\nExample: "I remember the first time I saw poverty first-hand..."\n\nEffect: Makes an argument relatable and emotionally engaging.',
+    },
+    {
+      id: 'y8rh-18',
+      front: 'Imperative (Commands)',
+      back: 'Using commands to urge the audience to act.\n\nExample: "Stand up. Speak out. Make a difference."\n\nEffect: Creates urgency and directly instructs the audience.',
+    },
+    {
+      id: 'y8rh-19',
+      front: 'Loaded Language',
+      back: 'Words with strong positive or negative connotations, chosen to influence the reader\'s opinion.\n\nExample: "Freedom fighters" vs "terrorists" (same group, different bias).\n\nEffect: Shapes how the audience perceives an issue.',
+    },
+    {
+      id: 'y8rh-20',
+      front: 'Call to Action',
+      back: 'A direct appeal urging the audience to do something specific.\n\nExample: "Sign the petition today. Donate now. Make your voice heard."\n\nEffect: Gives the audience a concrete next step and creates urgency.',
+    },
   ],
-};
+}
 
 const year8PoetryTerminology: FlashcardDeck = {
   id: 'y8-poetry-terminology',
@@ -225,28 +790,108 @@ const year8PoetryTerminology: FlashcardDeck = {
   category: 'Poetry',
   board: 'Year 8',
   cards: [
-    { id: 'y8pt-1', front: 'Enjambment', back: 'When a sentence or phrase runs over from one line of poetry to the next without punctuation.\n\nEffect: Creates a sense of momentum, urgency, or overflow of emotion. Can mirror the content (e.g., something spilling over).' },
-    { id: 'y8pt-2', front: 'Caesura', back: 'A pause in the middle of a line of poetry, usually created by punctuation.\n\nExample: "I am -- yet what I am none cares or knows."\n\nEffect: Creates emphasis, disrupts rhythm, or reflects hesitation and conflict.' },
-    { id: 'y8pt-3', front: 'Volta', back: 'A turning point or shift in a poem where the mood, argument, or focus changes.\n\nCommon in: Sonnets (usually line 9 or the final couplet).\n\nEffect: Creates contrast, surprise, or a new perspective.' },
-    { id: 'y8pt-4', front: 'Stanza', back: 'A group of lines in a poem, separated by a space (like a paragraph in prose).\n\nTypes: Couplet (2 lines), Tercet (3), Quatrain (4), Sestet (6), Octave (8).\n\nStanza breaks can signal shifts in time, mood, or focus.' },
-    { id: 'y8pt-5', front: 'Rhyme Scheme', back: 'The pattern of rhymes at the end of each line, labelled with letters.\n\nExamples: ABAB (alternate), AABB (couplets), ABBA (enclosed).\n\nRhyme scheme creates rhythm and can reinforce meaning.' },
-    { id: 'y8pt-6', front: 'Free Verse', back: 'Poetry without a regular rhyme scheme, metre, or structure.\n\nEffect: Can feel conversational, natural, or reflect freedom and rebellion.\n\nNot the same as blank verse (which has metre but no rhyme).' },
-    { id: 'y8pt-7', front: 'Sonnet', back: 'A 14-line poem, traditionally about love.\n\nShakespearean: 3 quatrains + couplet (ABAB CDCD EFEF GG).\nPetrarchan: Octave + sestet (ABBAABBA + CDECDE).\n\nThe volta marks the shift in argument or emotion.' },
-    { id: 'y8pt-8', front: 'Metre', back: 'The pattern of stressed and unstressed syllables in a line of poetry.\n\nCommon metres: Iambic (da-DUM), Trochaic (DUM-da), Dactylic (DUM-da-da).\n\nMetre creates the underlying rhythm of a poem.' },
-    { id: 'y8pt-9', front: 'End-stopped Line', back: 'A line of poetry that ends with punctuation (a pause).\n\nExample: "I wandered lonely as a cloud."\n\nEffect: Creates a sense of completeness, certainty, or control.' },
-    { id: 'y8pt-10', front: 'Refrain', back: 'A line or phrase that is repeated at intervals throughout a poem.\n\nEffect: Creates rhythm, reinforces a theme, and can build emotional intensity with each repetition.' },
-    { id: 'y8pt-11', front: 'Ballad', back: 'A narrative poem that tells a story, often with a regular rhyme scheme and rhythm.\n\nTraditional ballads: Oral tradition, themes of love, death, adventure.\n\nFeatures: ABCB rhyme scheme, quatrains, repetition.' },
-    { id: 'y8pt-12', front: 'Elegy', back: 'A poem written in mourning for someone who has died.\n\nTone: Reflective, sorrowful, sometimes celebratory of the person\'s life.\n\nExample: Tennyson\'s "In Memoriam" for Arthur Hallam.' },
-    { id: 'y8pt-13', front: 'Ode', back: 'A formal poem, often praising a subject (a person, object, or idea).\n\nTone: Elevated, serious, admiring.\n\nExamples: Keats\'s "Ode to a Nightingale," Shelley\'s "Ode to the West Wind."' },
-    { id: 'y8pt-14', front: 'Villanelle', back: 'A 19-line poem with two repeating rhymes and two alternating refrains.\n\nStructure: Five tercets and a final quatrain.\n\nFamous example: "Do Not Go Gentle into That Good Night" by Dylan Thomas.' },
-    { id: 'y8pt-15', front: 'Internal Rhyme', back: 'Rhyme that occurs within a single line of poetry (not at the end).\n\nExample: "Once upon a midnight dreary, while I pondered, weak and weary."\n\nEffect: Creates a musical quality and quickens pace.' },
-    { id: 'y8pt-16', front: 'Half Rhyme (Slant Rhyme)', back: 'Words that almost rhyme but do not match exactly.\n\nExamples: "moon/gone," "love/move," "eyes/light."\n\nEffect: Creates dissonance, unease, or a sense that something is slightly wrong.' },
-    { id: 'y8pt-17', front: 'Persona', back: 'The voice or character adopted by the poet in a poem.\n\nThe persona is NOT necessarily the poet themselves.\n\nExample: In "My Last Duchess," Browning adopts the persona of a possessive Duke.' },
-    { id: 'y8pt-18', front: 'Apostrophe (Poetic)', back: 'Addressing an absent person, a dead person, or an abstract concept as if it were present.\n\nExample: "O Death, where is thy sting?"\n\nEffect: Creates intensity, emotion, and a sense of direct confrontation.' },
-    { id: 'y8pt-19', front: 'Sibilance (in Poetry)', back: 'Repetition of "s," "sh," or soft "c" sounds.\n\nExample: "And the silken, sad, uncertain rustling of each purple curtain" (Poe).\n\nEffect: Creates a hushed, sinister, or soothing sound quality.' },
-    { id: 'y8pt-20', front: 'Ambiguity', back: 'When a word, phrase, or line can be interpreted in more than one way.\n\nExample: "They are hunting dogs" (dogs that hunt, or people hunting dogs?).\n\nEffect: Creates depth, invites multiple readings, and rewards close analysis.' },
+    {
+      id: 'y8pt-1',
+      front: 'Enjambment',
+      back: 'When a sentence or phrase runs over from one line of poetry to the next without punctuation.\n\nEffect: Creates a sense of momentum, urgency, or overflow of emotion. Can mirror the content (e.g., something spilling over).',
+    },
+    {
+      id: 'y8pt-2',
+      front: 'Caesura',
+      back: 'A pause in the middle of a line of poetry, usually created by punctuation.\n\nExample: "I am -- yet what I am none cares or knows."\n\nEffect: Creates emphasis, disrupts rhythm, or reflects hesitation and conflict.',
+    },
+    {
+      id: 'y8pt-3',
+      front: 'Volta',
+      back: 'A turning point or shift in a poem where the mood, argument, or focus changes.\n\nCommon in: Sonnets (usually line 9 or the final couplet).\n\nEffect: Creates contrast, surprise, or a new perspective.',
+    },
+    {
+      id: 'y8pt-4',
+      front: 'Stanza',
+      back: 'A group of lines in a poem, separated by a space (like a paragraph in prose).\n\nTypes: Couplet (2 lines), Tercet (3), Quatrain (4), Sestet (6), Octave (8).\n\nStanza breaks can signal shifts in time, mood, or focus.',
+    },
+    {
+      id: 'y8pt-5',
+      front: 'Rhyme Scheme',
+      back: 'The pattern of rhymes at the end of each line, labelled with letters.\n\nExamples: ABAB (alternate), AABB (couplets), ABBA (enclosed).\n\nRhyme scheme creates rhythm and can reinforce meaning.',
+    },
+    {
+      id: 'y8pt-6',
+      front: 'Free Verse',
+      back: 'Poetry without a regular rhyme scheme, metre, or structure.\n\nEffect: Can feel conversational, natural, or reflect freedom and rebellion.\n\nNot the same as blank verse (which has metre but no rhyme).',
+    },
+    {
+      id: 'y8pt-7',
+      front: 'Sonnet',
+      back: 'A 14-line poem, traditionally about love.\n\nShakespearean: 3 quatrains + couplet (ABAB CDCD EFEF GG).\nPetrarchan: Octave + sestet (ABBAABBA + CDECDE).\n\nThe volta marks the shift in argument or emotion.',
+    },
+    {
+      id: 'y8pt-8',
+      front: 'Metre',
+      back: 'The pattern of stressed and unstressed syllables in a line of poetry.\n\nCommon metres: Iambic (da-DUM), Trochaic (DUM-da), Dactylic (DUM-da-da).\n\nMetre creates the underlying rhythm of a poem.',
+    },
+    {
+      id: 'y8pt-9',
+      front: 'End-stopped Line',
+      back: 'A line of poetry that ends with punctuation (a pause).\n\nExample: "I wandered lonely as a cloud."\n\nEffect: Creates a sense of completeness, certainty, or control.',
+    },
+    {
+      id: 'y8pt-10',
+      front: 'Refrain',
+      back: 'A line or phrase that is repeated at intervals throughout a poem.\n\nEffect: Creates rhythm, reinforces a theme, and can build emotional intensity with each repetition.',
+    },
+    {
+      id: 'y8pt-11',
+      front: 'Ballad',
+      back: 'A narrative poem that tells a story, often with a regular rhyme scheme and rhythm.\n\nTraditional ballads: Oral tradition, themes of love, death, adventure.\n\nFeatures: ABCB rhyme scheme, quatrains, repetition.',
+    },
+    {
+      id: 'y8pt-12',
+      front: 'Elegy',
+      back: 'A poem written in mourning for someone who has died.\n\nTone: Reflective, sorrowful, sometimes celebratory of the person\'s life.\n\nExample: Tennyson\'s "In Memoriam" for Arthur Hallam.',
+    },
+    {
+      id: 'y8pt-13',
+      front: 'Ode',
+      back: 'A formal poem, often praising a subject (a person, object, or idea).\n\nTone: Elevated, serious, admiring.\n\nExamples: Keats\'s "Ode to a Nightingale," Shelley\'s "Ode to the West Wind."',
+    },
+    {
+      id: 'y8pt-14',
+      front: 'Villanelle',
+      back: 'A 19-line poem with two repeating rhymes and two alternating refrains.\n\nStructure: Five tercets and a final quatrain.\n\nFamous example: "Do Not Go Gentle into That Good Night" by Dylan Thomas.',
+    },
+    {
+      id: 'y8pt-15',
+      front: 'Internal Rhyme',
+      back: 'Rhyme that occurs within a single line of poetry (not at the end).\n\nExample: "Once upon a midnight dreary, while I pondered, weak and weary."\n\nEffect: Creates a musical quality and quickens pace.',
+    },
+    {
+      id: 'y8pt-16',
+      front: 'Half Rhyme (Slant Rhyme)',
+      back: 'Words that almost rhyme but do not match exactly.\n\nExamples: "moon/gone," "love/move," "eyes/light."\n\nEffect: Creates dissonance, unease, or a sense that something is slightly wrong.',
+    },
+    {
+      id: 'y8pt-17',
+      front: 'Persona',
+      back: 'The voice or character adopted by the poet in a poem.\n\nThe persona is NOT necessarily the poet themselves.\n\nExample: In "My Last Duchess," Browning adopts the persona of a possessive Duke.',
+    },
+    {
+      id: 'y8pt-18',
+      front: 'Apostrophe (Poetic)',
+      back: 'Addressing an absent person, a dead person, or an abstract concept as if it were present.\n\nExample: "O Death, where is thy sting?"\n\nEffect: Creates intensity, emotion, and a sense of direct confrontation.',
+    },
+    {
+      id: 'y8pt-19',
+      front: 'Sibilance (in Poetry)',
+      back: 'Repetition of "s," "sh," or soft "c" sounds.\n\nExample: "And the silken, sad, uncertain rustling of each purple curtain" (Poe).\n\nEffect: Creates a hushed, sinister, or soothing sound quality.',
+    },
+    {
+      id: 'y8pt-20',
+      front: 'Ambiguity',
+      back: 'When a word, phrase, or line can be interpreted in more than one way.\n\nExample: "They are hunting dogs" (dogs that hunt, or people hunting dogs?).\n\nEffect: Creates depth, invites multiple readings, and rewards close analysis.',
+    },
   ],
-};
+}
 
 // ============================================================
 // YEAR 9 FLASHCARDS (60 cards)
@@ -259,28 +904,108 @@ const year9ConceptualVocabulary: FlashcardDeck = {
   category: 'Conceptual Vocabulary',
   board: 'Year 9',
   cards: [
-    { id: 'y9cv-1', front: 'Redemption', back: 'The act of being saved from sin, error, or suffering; making amends for past wrongs.\n\nIn literature: Characters seek redemption through sacrifice, change, or good deeds.\n\nExample: Scrooge\'s redemption in A Christmas Carol.' },
-    { id: 'y9cv-2', front: 'Morality', back: 'Principles of right and wrong behaviour.\n\nIn literature: Texts explore moral dilemmas, asking what is "right" and who decides.\n\nExample: Is it moral for Jean Valjean to steal bread to feed his family?' },
-    { id: 'y9cv-3', front: 'Allegory', back: 'A story in which characters and events symbolise broader ideas, moral principles, or historical events.\n\nExample: Animal Farm is an allegory for the Russian Revolution and the corruption of power.' },
-    { id: 'y9cv-4', front: 'Duality', back: 'The idea that something or someone has two contrasting aspects.\n\nExample: Jekyll and Hyde represents the duality of human nature (good and evil within one person).\n\nAlso: Public vs private self, appearance vs reality.' },
-    { id: 'y9cv-5', front: 'Social Inequality', back: 'The unequal distribution of resources, opportunities, and power in society.\n\nIn literature: Dickens exposes the gap between rich and poor; Steinbeck shows the plight of migrant workers.\n\nKey question: Whose voices are silenced?' },
-    { id: 'y9cv-6', front: 'Hubris', back: 'Excessive pride or arrogance that leads to a character\'s downfall.\n\nClassical origin: Greek tragedy.\n\nExample: Macbeth\'s belief in his own invincibility; Shelley\'s Ozymandias.' },
-    { id: 'y9cv-7', front: 'Catharsis', back: 'The emotional release experienced by the audience at the end of a tragedy.\n\nAristotle\'s theory: Tragedy purges feelings of pity and fear.\n\nThe audience feels moved, reflective, or emotionally cleansed.' },
-    { id: 'y9cv-8', front: 'Oppression', back: 'The exercise of authority or power in a cruel, unjust, or burdensome way.\n\nIn literature: Characters experience oppression due to class, race, gender, or political systems.\n\nKey question: How do the oppressed resist?' },
-    { id: 'y9cv-9', front: 'Patriarchy', back: 'A social system in which men hold primary power and authority.\n\nIn literature: Female characters often navigate, challenge, or are constrained by patriarchal expectations.\n\nExample: Curley\'s wife in Of Mice and Men.' },
-    { id: 'y9cv-10', front: 'Transformation', back: 'A significant change in a character, society, or situation.\n\nIn literature: Characters may undergo moral, emotional, or physical transformation.\n\nExample: Scrooge transforms from miser to philanthropist.' },
-    { id: 'y9cv-11', front: 'Sacrifice', back: 'Giving up something valuable for the sake of something more important.\n\nIn literature: Characters sacrifice freedom, happiness, or life for love, family, or ideals.\n\nExample: Sydney Carton in A Tale of Two Cities.' },
-    { id: 'y9cv-12', front: 'Justice', back: 'Fairness and the punishment of wrongdoing.\n\nIn literature: Texts explore whether justice is achieved and who defines it.\n\nKey question: Is revenge the same as justice?' },
-    { id: 'y9cv-13', front: 'Ambition', back: 'A strong desire to achieve something, often power or success.\n\nIn literature: Ambition can be positive (drive, determination) or destructive (greed, ruthlessness).\n\nExample: Macbeth\'s "vaulting ambition" leads to his downfall.' },
-    { id: 'y9cv-14', front: 'Prejudice', back: 'Preconceived opinions not based on reason or experience; bias against a group.\n\nIn literature: Texts explore racial, gender, class, and religious prejudice.\n\nExample: Racial prejudice in To Kill a Mockingbird; class prejudice in An Inspector Calls.' },
-    { id: 'y9cv-15', front: 'Hypocrisy', back: 'Claiming to have moral standards or beliefs that one\'s behaviour does not reflect.\n\nIn literature: Characters or institutions say one thing but do another.\n\nExample: The pigs in Animal Farm who become the very tyrants they overthrew.' },
-    { id: 'y9cv-16', front: 'Isolation', back: 'The state of being separated from others, physically or emotionally.\n\nIn literature: Characters may be isolated by society, circumstance, or choice.\n\nExample: The Monster in Frankenstein; George and Lennie vs the other ranch workers.' },
-    { id: 'y9cv-17', front: 'Power', back: 'The ability to control, influence, or dominate others.\n\nTypes: Political, physical, intellectual, emotional, social.\n\nKey question: How is power gained, maintained, abused, and lost in the text?' },
-    { id: 'y9cv-18', front: 'Guilt', back: 'A feeling of responsibility for wrongdoing.\n\nIn literature: Guilt can haunt characters, drive them to confession, madness, or redemption.\n\nExample: Lady Macbeth\'s guilt manifests as sleepwalking and hand-washing.' },
-    { id: 'y9cv-19', front: 'Fate vs Free Will', back: 'The tension between destiny (events are predetermined) and choice (individuals shape their own future).\n\nIn literature: Characters struggle against prophecy, social expectations, or inevitable doom.\n\nExample: Romeo and Juliet as "star-crossed lovers."' },
-    { id: 'y9cv-20', front: 'Microcosm', back: 'A small world that represents society as a whole.\n\nExample: The ranch in Of Mice and Men is a microcosm of 1930s American society.\n\nEffect: Allows the writer to explore broad social themes through a contained setting.' },
+    {
+      id: 'y9cv-1',
+      front: 'Redemption',
+      back: "The act of being saved from sin, error, or suffering; making amends for past wrongs.\n\nIn literature: Characters seek redemption through sacrifice, change, or good deeds.\n\nExample: Scrooge's redemption in A Christmas Carol.",
+    },
+    {
+      id: 'y9cv-2',
+      front: 'Morality',
+      back: 'Principles of right and wrong behaviour.\n\nIn literature: Texts explore moral dilemmas, asking what is "right" and who decides.\n\nExample: Is it moral for Jean Valjean to steal bread to feed his family?',
+    },
+    {
+      id: 'y9cv-3',
+      front: 'Allegory',
+      back: 'A story in which characters and events symbolise broader ideas, moral principles, or historical events.\n\nExample: Animal Farm is an allegory for the Russian Revolution and the corruption of power.',
+    },
+    {
+      id: 'y9cv-4',
+      front: 'Duality',
+      back: 'The idea that something or someone has two contrasting aspects.\n\nExample: Jekyll and Hyde represents the duality of human nature (good and evil within one person).\n\nAlso: Public vs private self, appearance vs reality.',
+    },
+    {
+      id: 'y9cv-5',
+      front: 'Social Inequality',
+      back: 'The unequal distribution of resources, opportunities, and power in society.\n\nIn literature: Dickens exposes the gap between rich and poor; Steinbeck shows the plight of migrant workers.\n\nKey question: Whose voices are silenced?',
+    },
+    {
+      id: 'y9cv-6',
+      front: 'Hubris',
+      back: "Excessive pride or arrogance that leads to a character's downfall.\n\nClassical origin: Greek tragedy.\n\nExample: Macbeth's belief in his own invincibility; Shelley's Ozymandias.",
+    },
+    {
+      id: 'y9cv-7',
+      front: 'Catharsis',
+      back: "The emotional release experienced by the audience at the end of a tragedy.\n\nAristotle's theory: Tragedy purges feelings of pity and fear.\n\nThe audience feels moved, reflective, or emotionally cleansed.",
+    },
+    {
+      id: 'y9cv-8',
+      front: 'Oppression',
+      back: 'The exercise of authority or power in a cruel, unjust, or burdensome way.\n\nIn literature: Characters experience oppression due to class, race, gender, or political systems.\n\nKey question: How do the oppressed resist?',
+    },
+    {
+      id: 'y9cv-9',
+      front: 'Patriarchy',
+      back: "A social system in which men hold primary power and authority.\n\nIn literature: Female characters often navigate, challenge, or are constrained by patriarchal expectations.\n\nExample: Curley's wife in Of Mice and Men.",
+    },
+    {
+      id: 'y9cv-10',
+      front: 'Transformation',
+      back: 'A significant change in a character, society, or situation.\n\nIn literature: Characters may undergo moral, emotional, or physical transformation.\n\nExample: Scrooge transforms from miser to philanthropist.',
+    },
+    {
+      id: 'y9cv-11',
+      front: 'Sacrifice',
+      back: 'Giving up something valuable for the sake of something more important.\n\nIn literature: Characters sacrifice freedom, happiness, or life for love, family, or ideals.\n\nExample: Sydney Carton in A Tale of Two Cities.',
+    },
+    {
+      id: 'y9cv-12',
+      front: 'Justice',
+      back: 'Fairness and the punishment of wrongdoing.\n\nIn literature: Texts explore whether justice is achieved and who defines it.\n\nKey question: Is revenge the same as justice?',
+    },
+    {
+      id: 'y9cv-13',
+      front: 'Ambition',
+      back: 'A strong desire to achieve something, often power or success.\n\nIn literature: Ambition can be positive (drive, determination) or destructive (greed, ruthlessness).\n\nExample: Macbeth\'s "vaulting ambition" leads to his downfall.',
+    },
+    {
+      id: 'y9cv-14',
+      front: 'Prejudice',
+      back: 'Preconceived opinions not based on reason or experience; bias against a group.\n\nIn literature: Texts explore racial, gender, class, and religious prejudice.\n\nExample: Racial prejudice in To Kill a Mockingbird; class prejudice in An Inspector Calls.',
+    },
+    {
+      id: 'y9cv-15',
+      front: 'Hypocrisy',
+      back: "Claiming to have moral standards or beliefs that one's behaviour does not reflect.\n\nIn literature: Characters or institutions say one thing but do another.\n\nExample: The pigs in Animal Farm who become the very tyrants they overthrew.",
+    },
+    {
+      id: 'y9cv-16',
+      front: 'Isolation',
+      back: 'The state of being separated from others, physically or emotionally.\n\nIn literature: Characters may be isolated by society, circumstance, or choice.\n\nExample: The Monster in Frankenstein; George and Lennie vs the other ranch workers.',
+    },
+    {
+      id: 'y9cv-17',
+      front: 'Power',
+      back: 'The ability to control, influence, or dominate others.\n\nTypes: Political, physical, intellectual, emotional, social.\n\nKey question: How is power gained, maintained, abused, and lost in the text?',
+    },
+    {
+      id: 'y9cv-18',
+      front: 'Guilt',
+      back: "A feeling of responsibility for wrongdoing.\n\nIn literature: Guilt can haunt characters, drive them to confession, madness, or redemption.\n\nExample: Lady Macbeth's guilt manifests as sleepwalking and hand-washing.",
+    },
+    {
+      id: 'y9cv-19',
+      front: 'Fate vs Free Will',
+      back: 'The tension between destiny (events are predetermined) and choice (individuals shape their own future).\n\nIn literature: Characters struggle against prophecy, social expectations, or inevitable doom.\n\nExample: Romeo and Juliet as "star-crossed lovers."',
+    },
+    {
+      id: 'y9cv-20',
+      front: 'Microcosm',
+      back: 'A small world that represents society as a whole.\n\nExample: The ranch in Of Mice and Men is a microcosm of 1930s American society.\n\nEffect: Allows the writer to explore broad social themes through a contained setting.',
+    },
   ],
-};
+}
 
 const year9VictorianContext: FlashcardDeck = {
   id: 'y9-victorian-context',
@@ -289,28 +1014,108 @@ const year9VictorianContext: FlashcardDeck = {
   category: 'Context',
   board: 'Year 9',
   cards: [
-    { id: 'y9vc-1', front: 'Workhouse', back: 'Institutions where the destitute were housed and forced to work in harsh conditions.\n\nRelevance: Central to Dickens\'s Oliver Twist and A Christmas Carol. Symbolises cruelty of the Poor Law.\n\nThe 1834 Poor Law Amendment Act made workhouses deliberately grim.' },
-    { id: 'y9vc-2', front: 'Philanthropy', back: 'The practice of helping others through charitable acts, donations, or social reform.\n\nRelevance: Dickens advocated for philanthropy. Scrooge\'s transformation is from miser to philanthropist.\n\nVictorian philanthropists: Barnardo, Peabody, Cadbury.' },
-    { id: 'y9vc-3', front: 'Thomas Malthus', back: 'Economist who argued that population growth would outstrip food supply, and that poverty was inevitable.\n\nRelevance: Scrooge echoes Malthusian ideas: "Are there no prisons? Are there no workhouses?"\n\nDickens uses Scrooge to criticise this view.' },
-    { id: 'y9vc-4', front: 'Industrial Revolution', back: 'The rapid shift from agricultural to industrial society in Britain (c. 1760-1840).\n\nEffects: Urbanisation, factory work, child labour, pollution, wealth for factory owners, poverty for workers.\n\nContext for much 19th-century literature.' },
-    { id: 'y9vc-5', front: 'Social Class (Victorian)', back: 'Victorian society was rigidly divided:\n\nUpper class: Aristocracy and gentry.\nMiddle class: Professionals, merchants, factory owners.\nWorking class: Labourers, servants, factory workers.\n\nSocial mobility was limited; birth largely determined your fate.' },
-    { id: 'y9vc-6', front: 'The Poor Law (1834)', back: 'Legislation that created workhouses for the poor and made poverty a source of shame.\n\nPrinciple of "less eligibility": Conditions in workhouses had to be worse than the poorest paid work.\n\nDickens fiercely criticised this system.' },
-    { id: 'y9vc-7', front: 'Victorian Morality', back: 'A strict moral code emphasising duty, respectability, hard work, and self-restraint.\n\nHypocrisy: The public veneer of morality often concealed private vices.\n\nRelevance: Jekyll and Hyde explores this duality.' },
-    { id: 'y9vc-8', front: 'Empire and Colonialism', back: 'Britain controlled a vast empire during the Victorian era, ruling over many countries.\n\nThe British believed in their racial and cultural superiority ("civilising mission").\n\nRelevance: Shapes attitudes in texts like The Tempest and Heart of Darkness.' },
-    { id: 'y9vc-9', front: 'Child Labour', back: 'Children as young as 5 worked in factories, mines, and as chimney sweeps.\n\nConditions: Dangerous, long hours, low pay, no education.\n\nDickens campaigned against child labour. Oliver Twist exposes its cruelty.' },
-    { id: 'y9vc-10', front: 'Urbanisation', back: 'The mass movement of people from the countryside to cities during the Industrial Revolution.\n\nEffects: Overcrowding, disease, pollution, slums.\n\nDickens\'s London is a vivid depiction of the urban poor.' },
-    { id: 'y9vc-11', front: 'Darwinism / Evolution', back: 'Charles Darwin\'s theory (1859) that species evolve through natural selection.\n\nImpact: Challenged religious beliefs about creation. Led to fears about regression and "degeneration."\n\nRelevance: Influences Jekyll and Hyde (the beast within).' },
-    { id: 'y9vc-12', front: 'Separate Spheres', back: 'The Victorian belief that men and women occupied different realms:\n\nMen: Public sphere (work, politics, business).\nWomen: Private sphere (home, family, morality).\n\nWomen who challenged this were seen as transgressive.' },
-    { id: 'y9vc-13', front: 'The Gothic (Victorian)', back: 'A genre featuring darkness, supernatural elements, madness, and moral corruption.\n\nVictorian Gothic: Often set in urban environments (London fog, laboratories).\n\nExamples: Jekyll and Hyde, Frankenstein, Dracula.' },
-    { id: 'y9vc-14', front: 'Utilitarianism', back: 'The philosophy that the best action is the one that produces the greatest good for the greatest number.\n\nAssociated with: Jeremy Bentham, John Stuart Mill.\n\nDickens satirised utilitarian thinking in Hard Times (Mr Gradgrind).' },
-    { id: 'y9vc-15', front: 'Temperance Movement', back: 'A social movement campaigning against alcohol consumption.\n\nContext: Alcohol abuse was widespread among the Victorian poor.\n\nRelevance: Connects to themes of self-control and morality in Victorian literature.' },
-    { id: 'y9vc-16', front: 'Social Responsibility', back: 'The idea that the wealthy have a duty to help the poor and improve society.\n\nRelevance: Central theme of A Christmas Carol and An Inspector Calls.\n\nDickens and Priestley both argue that we are responsible for each other.' },
-    { id: 'y9vc-17', front: 'Capitalism', back: 'An economic system based on private ownership and profit.\n\nIn Victorian England: Factory owners grew rich while workers lived in poverty.\n\nRelevance: Scrooge represents unchecked capitalism; his redemption is a rejection of greed.' },
-    { id: 'y9vc-18', front: 'Penny Dreadfuls', back: 'Cheap, sensational serial publications popular in Victorian England.\n\nContent: Crime, horror, adventure.\n\nRelevance: Reflect Victorian fascination with the dark, criminal underworld.' },
-    { id: 'y9vc-19', front: 'The Supernatural (Victorian)', back: 'Victorians were fascinated by ghosts, spiritualism, and the afterlife.\n\nContext: Seances were popular; many Victorians believed in communicating with the dead.\n\nRelevance: The ghosts in A Christmas Carol; the Gothic tradition.' },
-    { id: 'y9vc-20', front: 'Reform Movements', back: 'Throughout the Victorian era, campaigners fought for:\n\nFactory Acts (better working conditions), Education Acts (schooling for all), Suffrage (extending the right to vote), Abolition of slavery.\n\nLiterature was a key tool for social reform.' },
+    {
+      id: 'y9vc-1',
+      front: 'Workhouse',
+      back: "Institutions where the destitute were housed and forced to work in harsh conditions.\n\nRelevance: Central to Dickens's Oliver Twist and A Christmas Carol. Symbolises cruelty of the Poor Law.\n\nThe 1834 Poor Law Amendment Act made workhouses deliberately grim.",
+    },
+    {
+      id: 'y9vc-2',
+      front: 'Philanthropy',
+      back: "The practice of helping others through charitable acts, donations, or social reform.\n\nRelevance: Dickens advocated for philanthropy. Scrooge's transformation is from miser to philanthropist.\n\nVictorian philanthropists: Barnardo, Peabody, Cadbury.",
+    },
+    {
+      id: 'y9vc-3',
+      front: 'Thomas Malthus',
+      back: 'Economist who argued that population growth would outstrip food supply, and that poverty was inevitable.\n\nRelevance: Scrooge echoes Malthusian ideas: "Are there no prisons? Are there no workhouses?"\n\nDickens uses Scrooge to criticise this view.',
+    },
+    {
+      id: 'y9vc-4',
+      front: 'Industrial Revolution',
+      back: 'The rapid shift from agricultural to industrial society in Britain (c. 1760-1840).\n\nEffects: Urbanisation, factory work, child labour, pollution, wealth for factory owners, poverty for workers.\n\nContext for much 19th-century literature.',
+    },
+    {
+      id: 'y9vc-5',
+      front: 'Social Class (Victorian)',
+      back: 'Victorian society was rigidly divided:\n\nUpper class: Aristocracy and gentry.\nMiddle class: Professionals, merchants, factory owners.\nWorking class: Labourers, servants, factory workers.\n\nSocial mobility was limited; birth largely determined your fate.',
+    },
+    {
+      id: 'y9vc-6',
+      front: 'The Poor Law (1834)',
+      back: 'Legislation that created workhouses for the poor and made poverty a source of shame.\n\nPrinciple of "less eligibility": Conditions in workhouses had to be worse than the poorest paid work.\n\nDickens fiercely criticised this system.',
+    },
+    {
+      id: 'y9vc-7',
+      front: 'Victorian Morality',
+      back: 'A strict moral code emphasising duty, respectability, hard work, and self-restraint.\n\nHypocrisy: The public veneer of morality often concealed private vices.\n\nRelevance: Jekyll and Hyde explores this duality.',
+    },
+    {
+      id: 'y9vc-8',
+      front: 'Empire and Colonialism',
+      back: 'Britain controlled a vast empire during the Victorian era, ruling over many countries.\n\nThe British believed in their racial and cultural superiority ("civilising mission").\n\nRelevance: Shapes attitudes in texts like The Tempest and Heart of Darkness.',
+    },
+    {
+      id: 'y9vc-9',
+      front: 'Child Labour',
+      back: 'Children as young as 5 worked in factories, mines, and as chimney sweeps.\n\nConditions: Dangerous, long hours, low pay, no education.\n\nDickens campaigned against child labour. Oliver Twist exposes its cruelty.',
+    },
+    {
+      id: 'y9vc-10',
+      front: 'Urbanisation',
+      back: "The mass movement of people from the countryside to cities during the Industrial Revolution.\n\nEffects: Overcrowding, disease, pollution, slums.\n\nDickens's London is a vivid depiction of the urban poor.",
+    },
+    {
+      id: 'y9vc-11',
+      front: 'Darwinism / Evolution',
+      back: 'Charles Darwin\'s theory (1859) that species evolve through natural selection.\n\nImpact: Challenged religious beliefs about creation. Led to fears about regression and "degeneration."\n\nRelevance: Influences Jekyll and Hyde (the beast within).',
+    },
+    {
+      id: 'y9vc-12',
+      front: 'Separate Spheres',
+      back: 'The Victorian belief that men and women occupied different realms:\n\nMen: Public sphere (work, politics, business).\nWomen: Private sphere (home, family, morality).\n\nWomen who challenged this were seen as transgressive.',
+    },
+    {
+      id: 'y9vc-13',
+      front: 'The Gothic (Victorian)',
+      back: 'A genre featuring darkness, supernatural elements, madness, and moral corruption.\n\nVictorian Gothic: Often set in urban environments (London fog, laboratories).\n\nExamples: Jekyll and Hyde, Frankenstein, Dracula.',
+    },
+    {
+      id: 'y9vc-14',
+      front: 'Utilitarianism',
+      back: 'The philosophy that the best action is the one that produces the greatest good for the greatest number.\n\nAssociated with: Jeremy Bentham, John Stuart Mill.\n\nDickens satirised utilitarian thinking in Hard Times (Mr Gradgrind).',
+    },
+    {
+      id: 'y9vc-15',
+      front: 'Temperance Movement',
+      back: 'A social movement campaigning against alcohol consumption.\n\nContext: Alcohol abuse was widespread among the Victorian poor.\n\nRelevance: Connects to themes of self-control and morality in Victorian literature.',
+    },
+    {
+      id: 'y9vc-16',
+      front: 'Social Responsibility',
+      back: 'The idea that the wealthy have a duty to help the poor and improve society.\n\nRelevance: Central theme of A Christmas Carol and An Inspector Calls.\n\nDickens and Priestley both argue that we are responsible for each other.',
+    },
+    {
+      id: 'y9vc-17',
+      front: 'Capitalism',
+      back: 'An economic system based on private ownership and profit.\n\nIn Victorian England: Factory owners grew rich while workers lived in poverty.\n\nRelevance: Scrooge represents unchecked capitalism; his redemption is a rejection of greed.',
+    },
+    {
+      id: 'y9vc-18',
+      front: 'Penny Dreadfuls',
+      back: 'Cheap, sensational serial publications popular in Victorian England.\n\nContent: Crime, horror, adventure.\n\nRelevance: Reflect Victorian fascination with the dark, criminal underworld.',
+    },
+    {
+      id: 'y9vc-19',
+      front: 'The Supernatural (Victorian)',
+      back: 'Victorians were fascinated by ghosts, spiritualism, and the afterlife.\n\nContext: Seances were popular; many Victorians believed in communicating with the dead.\n\nRelevance: The ghosts in A Christmas Carol; the Gothic tradition.',
+    },
+    {
+      id: 'y9vc-20',
+      front: 'Reform Movements',
+      back: 'Throughout the Victorian era, campaigners fought for:\n\nFactory Acts (better working conditions), Education Acts (schooling for all), Suffrage (extending the right to vote), Abolition of slavery.\n\nLiterature was a key tool for social reform.',
+    },
   ],
-};
+}
 
 const year9AmericanContext: FlashcardDeck = {
   id: 'y9-american-context',
@@ -319,28 +1124,108 @@ const year9AmericanContext: FlashcardDeck = {
   category: 'Context',
   board: 'Year 9',
   cards: [
-    { id: 'y9ac-1', front: 'The Great Depression', back: 'A severe worldwide economic downturn (1929-1939) triggered by the Wall Street Crash.\n\nEffects in America: Mass unemployment, poverty, homelessness, bank failures.\n\nRelevance: The backdrop of Of Mice and Men.' },
-    { id: 'y9ac-2', front: 'Itinerant Workers', back: 'Workers who moved from place to place, often doing seasonal agricultural work.\n\nConditions: Low pay, no job security, loneliness, no permanent home.\n\nRelevance: George and Lennie are itinerant workers in Of Mice and Men.' },
-    { id: 'y9ac-3', front: 'Segregation', back: 'The enforced separation of different racial groups in public places, housing, and schools.\n\nJim Crow Laws: Legal segregation in southern US states (1870s-1960s).\n\nRelevance: Crooks is segregated from the other ranch workers in Of Mice and Men.' },
-    { id: 'y9ac-4', front: 'The American Dream', back: 'The belief that anyone in America can achieve success and prosperity through hard work.\n\nReality: The Dream was often unattainable, especially for the poor, minorities, and women.\n\nRelevance: George and Lennie\'s dream of owning land; Gatsby\'s dream.' },
-    { id: 'y9ac-5', front: 'Dust Bowl', back: 'Severe dust storms in the 1930s that devastated American prairie farmland.\n\nCauses: Drought and poor farming practices.\n\nEffects: Thousands of families (especially from Oklahoma) migrated west to California for work.' },
-    { id: 'y9ac-6', front: 'Wall Street Crash (1929)', back: 'The sudden collapse of the US stock market on "Black Tuesday" (29 October 1929).\n\nEffects: Triggered the Great Depression; banks failed, businesses closed, millions lost everything.\n\nMarked the end of the "Roaring Twenties."' },
-    { id: 'y9ac-7', front: 'Migrant Workers', back: 'People who moved to find work, often in agriculture.\n\nIn 1930s California: Workers followed harvests, living in camps, earning very low wages.\n\nSteinbeck wrote about their experiences in Of Mice and Men and The Grapes of Wrath.' },
-    { id: 'y9ac-8', front: 'Racial Discrimination', back: 'Treating people unfairly because of their race or ethnicity.\n\nIn 1930s America: African Americans faced systemic racism including segregation, violence, and limited rights.\n\nRelevance: Crooks experiences racial isolation and dehumanisation.' },
-    { id: 'y9ac-9', front: 'Soledad', back: 'The town near which Of Mice and Men is set, in the Salinas Valley, California.\n\nSignificance: "Soledad" means "loneliness" in Spanish, reflecting the novel\'s central theme.' },
-    { id: 'y9ac-10', front: 'Manifest Destiny', back: 'The 19th-century belief that American expansion across the continent was inevitable and divinely ordained.\n\nConnection: Feeds into the American Dream and the idea of the frontier as a place of opportunity.' },
-    { id: 'y9ac-11', front: 'Ranch Life (1930s)', back: 'Ranch workers in 1930s California lived in bunkhouses, worked long hours, and had few possessions.\n\nSocial life: Isolation, limited entertainment, visits to town on weekends.\n\nRelevance: The setting and social world of Of Mice and Men.' },
-    { id: 'y9ac-12', front: 'Gender Roles (1930s America)', back: 'Women had limited independence and were often defined by their relationships to men.\n\nOptions: Marriage, domestic work, or marginalised professions.\n\nRelevance: Curley\'s wife has no name and no power; she is defined only as Curley\'s possession.' },
-    { id: 'y9ac-13', front: 'Euthanasia / Mercy Killing', back: 'The act of ending a life to relieve suffering.\n\nIn Of Mice and Men: George kills Lennie to spare him from a violent mob.\n\nMoral question: Was George\'s act murder or mercy? Parallels Candy\'s dog.' },
-    { id: 'y9ac-14', front: 'Naturalism (Literary Movement)', back: 'A literary movement that depicts characters as shaped by forces beyond their control (environment, biology, social conditions).\n\nSteinbeck is a naturalist writer: his characters are often trapped by circumstance.\n\nKey idea: Free will is an illusion.' },
-    { id: 'y9ac-15', front: 'Friendship / Companionship', back: 'In Of Mice and Men, George and Lennie\'s friendship is unusual and precious in a world of isolation.\n\n"A guy needs somebody... A guy goes nuts if he ain\'t got nobody."\n\nTheir bond provides hope, purpose, and humanity.' },
-    { id: 'y9ac-16', front: 'Mental Disability (1930s Attitudes)', back: 'People with learning disabilities were often institutionalised, mocked, or feared.\n\nRelevance: Lennie has a learning disability. He is vulnerable, misunderstood, and ultimately destroyed by a society that cannot accommodate him.' },
-    { id: 'y9ac-17', front: 'Prohibition and the Roaring Twenties', back: 'Prohibition (1920-1933): The ban on alcohol in America.\nThe Roaring Twenties: A decade of jazz, flappers, and economic boom.\n\nRelevance: Context for The Great Gatsby. The crash ended the party.' },
-    { id: 'y9ac-18', front: 'John Steinbeck', back: 'American author (1902-1968) who wrote about the lives of working-class Americans.\n\nKey works: Of Mice and Men, The Grapes of Wrath, East of Eden.\n\nWon the Nobel Prize for Literature in 1962. Championed the poor and marginalised.' },
-    { id: 'y9ac-19', front: 'Hierarchy on the Ranch', back: 'The ranch in Of Mice and Men has a clear social hierarchy:\n\nBoss > Slim > Curley > Workers > Crooks > Curley\'s wife > Lennie/Candy.\n\nPower is based on wealth, skill, race, gender, and physical ability.' },
-    { id: 'y9ac-20', front: 'The Land / Nature', back: 'In American literature, the land often symbolises freedom, possibility, and the American Dream.\n\nIn Of Mice and Men: George and Lennie dream of owning land ("live offa the fatta the lan\'").\n\nThe dream of land represents independence and dignity.' },
+    {
+      id: 'y9ac-1',
+      front: 'The Great Depression',
+      back: 'A severe worldwide economic downturn (1929-1939) triggered by the Wall Street Crash.\n\nEffects in America: Mass unemployment, poverty, homelessness, bank failures.\n\nRelevance: The backdrop of Of Mice and Men.',
+    },
+    {
+      id: 'y9ac-2',
+      front: 'Itinerant Workers',
+      back: 'Workers who moved from place to place, often doing seasonal agricultural work.\n\nConditions: Low pay, no job security, loneliness, no permanent home.\n\nRelevance: George and Lennie are itinerant workers in Of Mice and Men.',
+    },
+    {
+      id: 'y9ac-3',
+      front: 'Segregation',
+      back: 'The enforced separation of different racial groups in public places, housing, and schools.\n\nJim Crow Laws: Legal segregation in southern US states (1870s-1960s).\n\nRelevance: Crooks is segregated from the other ranch workers in Of Mice and Men.',
+    },
+    {
+      id: 'y9ac-4',
+      front: 'The American Dream',
+      back: "The belief that anyone in America can achieve success and prosperity through hard work.\n\nReality: The Dream was often unattainable, especially for the poor, minorities, and women.\n\nRelevance: George and Lennie's dream of owning land; Gatsby's dream.",
+    },
+    {
+      id: 'y9ac-5',
+      front: 'Dust Bowl',
+      back: 'Severe dust storms in the 1930s that devastated American prairie farmland.\n\nCauses: Drought and poor farming practices.\n\nEffects: Thousands of families (especially from Oklahoma) migrated west to California for work.',
+    },
+    {
+      id: 'y9ac-6',
+      front: 'Wall Street Crash (1929)',
+      back: 'The sudden collapse of the US stock market on "Black Tuesday" (29 October 1929).\n\nEffects: Triggered the Great Depression; banks failed, businesses closed, millions lost everything.\n\nMarked the end of the "Roaring Twenties."',
+    },
+    {
+      id: 'y9ac-7',
+      front: 'Migrant Workers',
+      back: 'People who moved to find work, often in agriculture.\n\nIn 1930s California: Workers followed harvests, living in camps, earning very low wages.\n\nSteinbeck wrote about their experiences in Of Mice and Men and The Grapes of Wrath.',
+    },
+    {
+      id: 'y9ac-8',
+      front: 'Racial Discrimination',
+      back: 'Treating people unfairly because of their race or ethnicity.\n\nIn 1930s America: African Americans faced systemic racism including segregation, violence, and limited rights.\n\nRelevance: Crooks experiences racial isolation and dehumanisation.',
+    },
+    {
+      id: 'y9ac-9',
+      front: 'Soledad',
+      back: 'The town near which Of Mice and Men is set, in the Salinas Valley, California.\n\nSignificance: "Soledad" means "loneliness" in Spanish, reflecting the novel\'s central theme.',
+    },
+    {
+      id: 'y9ac-10',
+      front: 'Manifest Destiny',
+      back: 'The 19th-century belief that American expansion across the continent was inevitable and divinely ordained.\n\nConnection: Feeds into the American Dream and the idea of the frontier as a place of opportunity.',
+    },
+    {
+      id: 'y9ac-11',
+      front: 'Ranch Life (1930s)',
+      back: 'Ranch workers in 1930s California lived in bunkhouses, worked long hours, and had few possessions.\n\nSocial life: Isolation, limited entertainment, visits to town on weekends.\n\nRelevance: The setting and social world of Of Mice and Men.',
+    },
+    {
+      id: 'y9ac-12',
+      front: 'Gender Roles (1930s America)',
+      back: "Women had limited independence and were often defined by their relationships to men.\n\nOptions: Marriage, domestic work, or marginalised professions.\n\nRelevance: Curley's wife has no name and no power; she is defined only as Curley's possession.",
+    },
+    {
+      id: 'y9ac-13',
+      front: 'Euthanasia / Mercy Killing',
+      back: "The act of ending a life to relieve suffering.\n\nIn Of Mice and Men: George kills Lennie to spare him from a violent mob.\n\nMoral question: Was George's act murder or mercy? Parallels Candy's dog.",
+    },
+    {
+      id: 'y9ac-14',
+      front: 'Naturalism (Literary Movement)',
+      back: 'A literary movement that depicts characters as shaped by forces beyond their control (environment, biology, social conditions).\n\nSteinbeck is a naturalist writer: his characters are often trapped by circumstance.\n\nKey idea: Free will is an illusion.',
+    },
+    {
+      id: 'y9ac-15',
+      front: 'Friendship / Companionship',
+      back: 'In Of Mice and Men, George and Lennie\'s friendship is unusual and precious in a world of isolation.\n\n"A guy needs somebody... A guy goes nuts if he ain\'t got nobody."\n\nTheir bond provides hope, purpose, and humanity.',
+    },
+    {
+      id: 'y9ac-16',
+      front: 'Mental Disability (1930s Attitudes)',
+      back: 'People with learning disabilities were often institutionalised, mocked, or feared.\n\nRelevance: Lennie has a learning disability. He is vulnerable, misunderstood, and ultimately destroyed by a society that cannot accommodate him.',
+    },
+    {
+      id: 'y9ac-17',
+      front: 'Prohibition and the Roaring Twenties',
+      back: 'Prohibition (1920-1933): The ban on alcohol in America.\nThe Roaring Twenties: A decade of jazz, flappers, and economic boom.\n\nRelevance: Context for The Great Gatsby. The crash ended the party.',
+    },
+    {
+      id: 'y9ac-18',
+      front: 'John Steinbeck',
+      back: 'American author (1902-1968) who wrote about the lives of working-class Americans.\n\nKey works: Of Mice and Men, The Grapes of Wrath, East of Eden.\n\nWon the Nobel Prize for Literature in 1962. Championed the poor and marginalised.',
+    },
+    {
+      id: 'y9ac-19',
+      front: 'Hierarchy on the Ranch',
+      back: "The ranch in Of Mice and Men has a clear social hierarchy:\n\nBoss > Slim > Curley > Workers > Crooks > Curley's wife > Lennie/Candy.\n\nPower is based on wealth, skill, race, gender, and physical ability.",
+    },
+    {
+      id: 'y9ac-20',
+      front: 'The Land / Nature',
+      back: 'In American literature, the land often symbolises freedom, possibility, and the American Dream.\n\nIn Of Mice and Men: George and Lennie dream of owning land ("live offa the fatta the lan\'").\n\nThe dream of land represents independence and dignity.',
+    },
   ],
-};
+}
 
 // ============================================================
 // IGCSE FLASHCARDS (60 cards)
@@ -353,23 +1238,83 @@ const igcseExamCommandWords: FlashcardDeck = {
   category: 'Exam Skills',
   board: 'IGCSE',
   cards: [
-    { id: 'igcw-1', front: 'Analyse', back: 'Examine in detail, breaking something down into its component parts.\n\nWhat to do: Identify techniques/features, explain how they work, and discuss their effects.\n\nGo beyond description -- explore WHY and HOW.' },
-    { id: 'igcw-2', front: 'Evaluate', back: 'Make a judgement based on evidence.\n\nWhat to do: Weigh up different perspectives, consider strengths and weaknesses, and reach a supported conclusion.\n\nUse phrases like: "This is effective because..." or "However, one could argue..."' },
-    { id: 'igcw-3', front: 'Compare', back: 'Identify similarities AND differences between two things.\n\nWhat to do: Use connectives like "similarly," "in contrast," "whereas," "both... however..."\n\nAlways cover both texts/viewpoints, not just one.' },
-    { id: 'igcw-4', front: 'Explain', back: 'Make something clear by giving reasons and evidence.\n\nWhat to do: Show your understanding by developing your points with "because," "this means that," "this suggests."\n\nMore than describe -- show understanding.' },
-    { id: 'igcw-5', front: 'Explore', back: 'Investigate thoroughly, considering different possibilities and interpretations.\n\nWhat to do: Look at multiple meanings, alternative readings, and the effect on the reader.\n\nShow depth and range of thinking.' },
-    { id: 'igcw-6', front: 'Identify', back: 'Recognise and name something.\n\nWhat to do: Pick out specific features, techniques, or information from the text.\n\nUsually a shorter, more focused task.' },
-    { id: 'igcw-7', front: 'Describe', back: 'Give a detailed account of something.\n\nWhat to do: Say what you see, hear, or notice. Focus on features and characteristics.\n\nNote: Description alone is rarely enough -- most questions also require explanation or analysis.' },
-    { id: 'igcw-8', front: 'Summarise', back: 'Give a brief account of the main points.\n\nWhat to do: Select key information, express it concisely in your own words.\n\nAvoid: Copying whole sentences, including unnecessary detail, adding your own opinion.' },
-    { id: 'igcw-9', front: 'How does the writer...', back: 'Focus on the writer\'s methods and techniques.\n\nWhat to do: Identify what the writer does (technique), quote evidence, explain the effect on the reader.\n\nStructure: What? How? Why?' },
-    { id: 'igcw-10', front: 'To what extent...', back: 'Consider how far you agree with a statement.\n\nWhat to do: Present arguments for and against, use evidence, reach a balanced conclusion.\n\nAvoid: Sitting completely on one side without acknowledging the other.' },
-    { id: 'igcw-11', front: 'Discuss', back: 'Present different viewpoints and come to a conclusion.\n\nWhat to do: Consider multiple perspectives, use evidence, show balanced thinking.\n\nSimilar to "evaluate" but often broader in scope.' },
-    { id: 'igcw-12', front: 'Comment on', back: 'Give your opinion supported by evidence from the text.\n\nWhat to do: Make a point, support it with a quotation or reference, explain its significance.\n\nSimilar to "analyse" but can be more personal.' },
-    { id: 'igcw-13', front: 'Select', back: 'Choose relevant information or quotations from the text.\n\nWhat to do: Pick out specific details that are directly relevant to the question.\n\nBe precise -- short, embedded quotations are best.' },
-    { id: 'igcw-14', front: 'Contrast', back: 'Show the differences between two things.\n\nWhat to do: Focus on what makes them different. Use: "whereas," "on the other hand," "in contrast to."\n\nDifferent from "compare" (which includes similarities).' },
-    { id: 'igcw-15', front: 'Justify', back: 'Give reasons or evidence to support your answer.\n\nWhat to do: Explain WHY you have reached your conclusion. Back up every point with evidence.\n\nKey phrase: "This is justified because..."' },
+    {
+      id: 'igcw-1',
+      front: 'Analyse',
+      back: 'Examine in detail, breaking something down into its component parts.\n\nWhat to do: Identify techniques/features, explain how they work, and discuss their effects.\n\nGo beyond description -- explore WHY and HOW.',
+    },
+    {
+      id: 'igcw-2',
+      front: 'Evaluate',
+      back: 'Make a judgement based on evidence.\n\nWhat to do: Weigh up different perspectives, consider strengths and weaknesses, and reach a supported conclusion.\n\nUse phrases like: "This is effective because..." or "However, one could argue..."',
+    },
+    {
+      id: 'igcw-3',
+      front: 'Compare',
+      back: 'Identify similarities AND differences between two things.\n\nWhat to do: Use connectives like "similarly," "in contrast," "whereas," "both... however..."\n\nAlways cover both texts/viewpoints, not just one.',
+    },
+    {
+      id: 'igcw-4',
+      front: 'Explain',
+      back: 'Make something clear by giving reasons and evidence.\n\nWhat to do: Show your understanding by developing your points with "because," "this means that," "this suggests."\n\nMore than describe -- show understanding.',
+    },
+    {
+      id: 'igcw-5',
+      front: 'Explore',
+      back: 'Investigate thoroughly, considering different possibilities and interpretations.\n\nWhat to do: Look at multiple meanings, alternative readings, and the effect on the reader.\n\nShow depth and range of thinking.',
+    },
+    {
+      id: 'igcw-6',
+      front: 'Identify',
+      back: 'Recognise and name something.\n\nWhat to do: Pick out specific features, techniques, or information from the text.\n\nUsually a shorter, more focused task.',
+    },
+    {
+      id: 'igcw-7',
+      front: 'Describe',
+      back: 'Give a detailed account of something.\n\nWhat to do: Say what you see, hear, or notice. Focus on features and characteristics.\n\nNote: Description alone is rarely enough -- most questions also require explanation or analysis.',
+    },
+    {
+      id: 'igcw-8',
+      front: 'Summarise',
+      back: 'Give a brief account of the main points.\n\nWhat to do: Select key information, express it concisely in your own words.\n\nAvoid: Copying whole sentences, including unnecessary detail, adding your own opinion.',
+    },
+    {
+      id: 'igcw-9',
+      front: 'How does the writer...',
+      back: "Focus on the writer's methods and techniques.\n\nWhat to do: Identify what the writer does (technique), quote evidence, explain the effect on the reader.\n\nStructure: What? How? Why?",
+    },
+    {
+      id: 'igcw-10',
+      front: 'To what extent...',
+      back: 'Consider how far you agree with a statement.\n\nWhat to do: Present arguments for and against, use evidence, reach a balanced conclusion.\n\nAvoid: Sitting completely on one side without acknowledging the other.',
+    },
+    {
+      id: 'igcw-11',
+      front: 'Discuss',
+      back: 'Present different viewpoints and come to a conclusion.\n\nWhat to do: Consider multiple perspectives, use evidence, show balanced thinking.\n\nSimilar to "evaluate" but often broader in scope.',
+    },
+    {
+      id: 'igcw-12',
+      front: 'Comment on',
+      back: 'Give your opinion supported by evidence from the text.\n\nWhat to do: Make a point, support it with a quotation or reference, explain its significance.\n\nSimilar to "analyse" but can be more personal.',
+    },
+    {
+      id: 'igcw-13',
+      front: 'Select',
+      back: 'Choose relevant information or quotations from the text.\n\nWhat to do: Pick out specific details that are directly relevant to the question.\n\nBe precise -- short, embedded quotations are best.',
+    },
+    {
+      id: 'igcw-14',
+      front: 'Contrast',
+      back: 'Show the differences between two things.\n\nWhat to do: Focus on what makes them different. Use: "whereas," "on the other hand," "in contrast to."\n\nDifferent from "compare" (which includes similarities).',
+    },
+    {
+      id: 'igcw-15',
+      front: 'Justify',
+      back: 'Give reasons or evidence to support your answer.\n\nWhat to do: Explain WHY you have reached your conclusion. Back up every point with evidence.\n\nKey phrase: "This is justified because..."',
+    },
   ],
-};
+}
 
 const igcseAssessmentObjectives: FlashcardDeck = {
   id: 'igcse-assessment-objectives',
@@ -378,23 +1323,83 @@ const igcseAssessmentObjectives: FlashcardDeck = {
   category: 'Exam Skills',
   board: 'IGCSE',
   cards: [
-    { id: 'igao-1', front: 'AO1: Reading - Show Understanding', back: 'Demonstrate understanding of explicit and implicit meanings in texts.\n\nWhat this means: Show you can identify what a text says (explicit) AND what it suggests (implicit).\n\nKey skills: Inference, selecting evidence, summarising.' },
-    { id: 'igao-2', front: 'AO2: Reading - Analyse Language', back: 'Analyse the language used by the writer and its effects.\n\nWhat this means: Identify specific words, phrases, and techniques. Explain HOW they create meaning.\n\nKey skills: Close reading, terminology, effect on reader.' },
-    { id: 'igao-3', front: 'AO3: Reading - Analyse Structure', back: 'Analyse how writers use structure to achieve effects.\n\nWhat this means: Consider how the text is organised (openings, endings, shifts, focus, pacing).\n\nKey skills: Identifying structural features, explaining their effects.' },
-    { id: 'igao-4', front: 'AO4: Reading - Evaluate Critically', back: 'Evaluate texts critically, supporting with textual references.\n\nWhat this means: Give your opinion on how effective a text is, backed by evidence.\n\nKey skills: Making judgements, supporting with quotations, considering alternatives.' },
-    { id: 'igao-5', front: 'AO5: Writing - Content & Organisation', back: 'Communicate clearly and effectively; organise information and ideas.\n\nWhat this means: Write with a clear purpose, audience, and structure. Use paragraphs, discourse markers, and varied sentence forms.\n\nKey skills: Planning, paragraphing, coherent argument.' },
-    { id: 'igao-6', front: 'AO6: Writing - Technical Accuracy', back: 'Use a range of vocabulary and sentence structures with accurate spelling, punctuation, and grammar.\n\nWhat this means: Write accurately and ambitiously. Vary sentence types. Spell and punctuate correctly.\n\nKey skills: Proofreading, vocabulary range, SPaG.' },
-    { id: 'igao-7', front: 'Textual Evidence', back: 'Quotations or references from the text used to support your points.\n\nBest practice: Keep quotations short and embed them in your sentences.\n\nExample: The writer describes him as "hollow-eyed," suggesting exhaustion and despair.' },
-    { id: 'igao-8', front: 'Writer\'s Methods', back: 'The techniques and choices a writer makes to create meaning.\n\nIncludes: Language (word choice, imagery), Structure (order, focus), Form (genre, narrative voice).\n\nAlways ask: WHY did the writer choose this method?' },
-    { id: 'igao-9', front: 'Effect on the Reader', back: 'How the writer\'s choices make the reader think, feel, or respond.\n\nKey phrases: "This makes the reader feel..." / "This creates a sense of..." / "The reader is positioned to..."\n\nAvoid: "This makes the reader want to read on" (too vague).' },
-    { id: 'igao-10', front: 'Implicit Meaning', back: 'Meaning that is suggested or implied rather than stated directly.\n\nHow to find it: Look for connotations, imagery, tone, and what is NOT said.\n\nKey skill: Inference -- reading between the lines.' },
-    { id: 'igao-11', front: 'Explicit Meaning', back: 'Meaning that is clearly and directly stated in the text.\n\nExample: "The boy was ten years old" is explicit.\n\nUseful for: Comprehension questions, summary tasks, identifying key details.' },
-    { id: 'igao-12', front: 'Discourse Markers', back: 'Words and phrases that organise and connect ideas in writing.\n\nExamples: However, Furthermore, In contrast, Consequently, On the other hand.\n\nPurpose: Guide the reader through your argument and show relationships between ideas.' },
-    { id: 'igao-13', front: 'Topic Sentence', back: 'The first sentence of a paragraph that introduces its main idea.\n\nPurpose: Tells the reader what the paragraph will be about.\n\nExample: "Dickens uses the character of Scrooge to criticise Victorian attitudes to poverty."' },
-    { id: 'igao-14', front: 'Cohesion', back: 'The way a text holds together through logical connections between ideas.\n\nAchieved through: Discourse markers, pronouns, repetition, consistent tense, paragraph links.\n\nA cohesive essay flows smoothly from point to point.' },
-    { id: 'igao-15', front: 'Register', back: 'The level of formality in language, adjusted for audience and purpose.\n\nFormal register: Academic essays, letters to authorities.\nInformal register: Diary entries, speech to friends.\n\nMatching register to task is essential for top marks.' },
+    {
+      id: 'igao-1',
+      front: 'AO1: Reading - Show Understanding',
+      back: 'Demonstrate understanding of explicit and implicit meanings in texts.\n\nWhat this means: Show you can identify what a text says (explicit) AND what it suggests (implicit).\n\nKey skills: Inference, selecting evidence, summarising.',
+    },
+    {
+      id: 'igao-2',
+      front: 'AO2: Reading - Analyse Language',
+      back: 'Analyse the language used by the writer and its effects.\n\nWhat this means: Identify specific words, phrases, and techniques. Explain HOW they create meaning.\n\nKey skills: Close reading, terminology, effect on reader.',
+    },
+    {
+      id: 'igao-3',
+      front: 'AO3: Reading - Analyse Structure',
+      back: 'Analyse how writers use structure to achieve effects.\n\nWhat this means: Consider how the text is organised (openings, endings, shifts, focus, pacing).\n\nKey skills: Identifying structural features, explaining their effects.',
+    },
+    {
+      id: 'igao-4',
+      front: 'AO4: Reading - Evaluate Critically',
+      back: 'Evaluate texts critically, supporting with textual references.\n\nWhat this means: Give your opinion on how effective a text is, backed by evidence.\n\nKey skills: Making judgements, supporting with quotations, considering alternatives.',
+    },
+    {
+      id: 'igao-5',
+      front: 'AO5: Writing - Content & Organisation',
+      back: 'Communicate clearly and effectively; organise information and ideas.\n\nWhat this means: Write with a clear purpose, audience, and structure. Use paragraphs, discourse markers, and varied sentence forms.\n\nKey skills: Planning, paragraphing, coherent argument.',
+    },
+    {
+      id: 'igao-6',
+      front: 'AO6: Writing - Technical Accuracy',
+      back: 'Use a range of vocabulary and sentence structures with accurate spelling, punctuation, and grammar.\n\nWhat this means: Write accurately and ambitiously. Vary sentence types. Spell and punctuate correctly.\n\nKey skills: Proofreading, vocabulary range, SPaG.',
+    },
+    {
+      id: 'igao-7',
+      front: 'Textual Evidence',
+      back: 'Quotations or references from the text used to support your points.\n\nBest practice: Keep quotations short and embed them in your sentences.\n\nExample: The writer describes him as "hollow-eyed," suggesting exhaustion and despair.',
+    },
+    {
+      id: 'igao-8',
+      front: "Writer's Methods",
+      back: 'The techniques and choices a writer makes to create meaning.\n\nIncludes: Language (word choice, imagery), Structure (order, focus), Form (genre, narrative voice).\n\nAlways ask: WHY did the writer choose this method?',
+    },
+    {
+      id: 'igao-9',
+      front: 'Effect on the Reader',
+      back: 'How the writer\'s choices make the reader think, feel, or respond.\n\nKey phrases: "This makes the reader feel..." / "This creates a sense of..." / "The reader is positioned to..."\n\nAvoid: "This makes the reader want to read on" (too vague).',
+    },
+    {
+      id: 'igao-10',
+      front: 'Implicit Meaning',
+      back: 'Meaning that is suggested or implied rather than stated directly.\n\nHow to find it: Look for connotations, imagery, tone, and what is NOT said.\n\nKey skill: Inference -- reading between the lines.',
+    },
+    {
+      id: 'igao-11',
+      front: 'Explicit Meaning',
+      back: 'Meaning that is clearly and directly stated in the text.\n\nExample: "The boy was ten years old" is explicit.\n\nUseful for: Comprehension questions, summary tasks, identifying key details.',
+    },
+    {
+      id: 'igao-12',
+      front: 'Discourse Markers',
+      back: 'Words and phrases that organise and connect ideas in writing.\n\nExamples: However, Furthermore, In contrast, Consequently, On the other hand.\n\nPurpose: Guide the reader through your argument and show relationships between ideas.',
+    },
+    {
+      id: 'igao-13',
+      front: 'Topic Sentence',
+      back: 'The first sentence of a paragraph that introduces its main idea.\n\nPurpose: Tells the reader what the paragraph will be about.\n\nExample: "Dickens uses the character of Scrooge to criticise Victorian attitudes to poverty."',
+    },
+    {
+      id: 'igao-14',
+      front: 'Cohesion',
+      back: 'The way a text holds together through logical connections between ideas.\n\nAchieved through: Discourse markers, pronouns, repetition, consistent tense, paragraph links.\n\nA cohesive essay flows smoothly from point to point.',
+    },
+    {
+      id: 'igao-15',
+      front: 'Register',
+      back: 'The level of formality in language, adjusted for audience and purpose.\n\nFormal register: Academic essays, letters to authorities.\nInformal register: Diary entries, speech to friends.\n\nMatching register to task is essential for top marks.',
+    },
   ],
-};
+}
 
 const igcseSetTextQuotations: FlashcardDeck = {
   id: 'igcse-set-text-quotations',
@@ -404,41 +1409,169 @@ const igcseSetTextQuotations: FlashcardDeck = {
   board: 'IGCSE',
   cards: [
     // A Christmas Carol (10)
-    { id: 'igstq-1', front: 'A Christmas Carol: "a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner"', back: 'Description of Scrooge in the opening.\n\nTechnique: Asyndetic list of adjectives.\n\nEffect: The accumulation of negative words creates an overwhelmingly miserly portrait. Each word intensifies Scrooge\'s greed and cold-heartedness.' },
-    { id: 'igstq-2', front: 'A Christmas Carol: "Are there no prisons? Are there no workhouses?"', back: 'Scrooge\'s response when asked to donate to the poor.\n\nTechnique: Rhetorical questions echoing Malthusian philosophy.\n\nEffect: Shows Scrooge\'s callousness and reflects the attitudes of the wealthy Victorian upper class.' },
-    { id: 'igstq-3', front: 'A Christmas Carol: "Mankind was my business"', back: 'Marley\'s Ghost to Scrooge.\n\nMeaning: Marley regrets focusing on money instead of helping others.\n\nTheme: Social responsibility. Dickens argues that caring for others IS our business.' },
-    { id: 'igstq-4', front: 'A Christmas Carol: "I will honour Christmas in my heart, and try to keep it all the year"', back: 'Scrooge\'s declaration after his transformation.\n\nMeaning: Scrooge commits to generosity and kindness permanently, not just at Christmas.\n\nTheme: Redemption and transformation.' },
-    { id: 'igstq-5', front: 'A Christmas Carol: "decrease the surplus population"', back: 'Scrooge\'s cruel words about the poor.\n\nContext: Echoes Thomas Malthus\'s theories about overpopulation.\n\nEffect: Dickens shows the inhumanity of treating people as statistics. These words later haunt Scrooge.' },
-    { id: 'igstq-6', front: 'A Christmas Carol: "a solitary child, neglected by his friends"', back: 'The Ghost of Christmas Past shows Scrooge his lonely childhood.\n\nEffect: Creates sympathy for Scrooge and explains how his cold personality developed.\n\nTheme: The roots of emotional damage; isolation.' },
-    { id: 'igstq-7', front: 'A Christmas Carol: "This boy is Ignorance. This girl is Want"', back: 'The Ghost of Christmas Present reveals two starving children beneath his robes.\n\nAllegory: They represent society\'s neglect of the poor.\n\nDickens\'s message: Ignorance and poverty are society\'s greatest dangers.' },
-    { id: 'igstq-8', front: 'A Christmas Carol: "I am as light as a feather, I am as happy as an angel"', back: 'Scrooge after his transformation on Christmas morning.\n\nTechnique: Similes showing joy and lightness.\n\nContrast: From "hard and sharp as flint" to "light as a feather" -- his complete transformation.' },
-    { id: 'igstq-9', front: 'A Christmas Carol: "Old Marley was as dead as a door-nail"', back: 'The opening line of A Christmas Carol.\n\nTechnique: Simile, direct address, conversational tone.\n\nPurpose: Establishes that Marley is dead (important for the ghost\'s later appearance) and creates a darkly humorous opening.' },
-    { id: 'igstq-10', front: 'A Christmas Carol: "He became as good a friend, as good a master, and as good a man as the good old City knew"', back: 'The narrator describing Scrooge after his transformation.\n\nTechnique: Tricolon with repetition of "good."\n\nTheme: Redemption is possible. Scrooge proves that people can change.' },
+    {
+      id: 'igstq-1',
+      front:
+        'A Christmas Carol: "a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner"',
+      back: "Description of Scrooge in the opening.\n\nTechnique: Asyndetic list of adjectives.\n\nEffect: The accumulation of negative words creates an overwhelmingly miserly portrait. Each word intensifies Scrooge's greed and cold-heartedness.",
+    },
+    {
+      id: 'igstq-2',
+      front: 'A Christmas Carol: "Are there no prisons? Are there no workhouses?"',
+      back: "Scrooge's response when asked to donate to the poor.\n\nTechnique: Rhetorical questions echoing Malthusian philosophy.\n\nEffect: Shows Scrooge's callousness and reflects the attitudes of the wealthy Victorian upper class.",
+    },
+    {
+      id: 'igstq-3',
+      front: 'A Christmas Carol: "Mankind was my business"',
+      back: "Marley's Ghost to Scrooge.\n\nMeaning: Marley regrets focusing on money instead of helping others.\n\nTheme: Social responsibility. Dickens argues that caring for others IS our business.",
+    },
+    {
+      id: 'igstq-4',
+      front:
+        'A Christmas Carol: "I will honour Christmas in my heart, and try to keep it all the year"',
+      back: "Scrooge's declaration after his transformation.\n\nMeaning: Scrooge commits to generosity and kindness permanently, not just at Christmas.\n\nTheme: Redemption and transformation.",
+    },
+    {
+      id: 'igstq-5',
+      front: 'A Christmas Carol: "decrease the surplus population"',
+      back: "Scrooge's cruel words about the poor.\n\nContext: Echoes Thomas Malthus's theories about overpopulation.\n\nEffect: Dickens shows the inhumanity of treating people as statistics. These words later haunt Scrooge.",
+    },
+    {
+      id: 'igstq-6',
+      front: 'A Christmas Carol: "a solitary child, neglected by his friends"',
+      back: 'The Ghost of Christmas Past shows Scrooge his lonely childhood.\n\nEffect: Creates sympathy for Scrooge and explains how his cold personality developed.\n\nTheme: The roots of emotional damage; isolation.',
+    },
+    {
+      id: 'igstq-7',
+      front: 'A Christmas Carol: "This boy is Ignorance. This girl is Want"',
+      back: "The Ghost of Christmas Present reveals two starving children beneath his robes.\n\nAllegory: They represent society's neglect of the poor.\n\nDickens's message: Ignorance and poverty are society's greatest dangers.",
+    },
+    {
+      id: 'igstq-8',
+      front: 'A Christmas Carol: "I am as light as a feather, I am as happy as an angel"',
+      back: 'Scrooge after his transformation on Christmas morning.\n\nTechnique: Similes showing joy and lightness.\n\nContrast: From "hard and sharp as flint" to "light as a feather" -- his complete transformation.',
+    },
+    {
+      id: 'igstq-9',
+      front: 'A Christmas Carol: "Old Marley was as dead as a door-nail"',
+      back: "The opening line of A Christmas Carol.\n\nTechnique: Simile, direct address, conversational tone.\n\nPurpose: Establishes that Marley is dead (important for the ghost's later appearance) and creates a darkly humorous opening.",
+    },
+    {
+      id: 'igstq-10',
+      front:
+        'A Christmas Carol: "He became as good a friend, as good a master, and as good a man as the good old City knew"',
+      back: 'The narrator describing Scrooge after his transformation.\n\nTechnique: Tricolon with repetition of "good."\n\nTheme: Redemption is possible. Scrooge proves that people can change.',
+    },
     // Macbeth (10)
-    { id: 'igstq-11', front: 'Macbeth: "Fair is foul, and foul is fair"', back: 'The witches in Act 1, Scene 1.\n\nMeaning: Nothing is as it seems; good and evil are intertwined.\n\nTheme: Appearance vs reality, moral confusion. Sets the tone for the entire play.' },
-    { id: 'igstq-12', front: 'Macbeth: "Look like th\'innocent flower, But be the serpent under\'t"', back: 'Lady Macbeth advising Macbeth to hide his murderous intentions.\n\nTechnique: Simile, biblical allusion (serpent = Satan).\n\nTheme: Deception, appearance vs reality, the corrupting influence of ambition.' },
-    { id: 'igstq-13', front: 'Macbeth: "Is this a dagger which I see before me?"', back: 'Macbeth\'s soliloquy before murdering Duncan (Act 2, Scene 1).\n\nTechnique: Rhetorical question, hallucination.\n\nEffect: Shows Macbeth\'s psychological torment and deteriorating sanity. The dagger symbolises guilt and ambition.' },
-    { id: 'igstq-14', front: 'Macbeth: "Out, damned spot! Out, I say!"', back: 'Lady Macbeth sleepwalking (Act 5, Scene 1).\n\nMeaning: She is trying to wash imaginary blood from her hands.\n\nTheme: Guilt, madness, the psychological consequences of violence.' },
-    { id: 'igstq-15', front: 'Macbeth: "Vaulting ambition, which o\'erleaps itself"', back: 'Macbeth acknowledging that his only motivation for murder is ambition.\n\nTechnique: Metaphor of ambition as a horse jumping too high and falling.\n\nTheme: Ambition as hamartia (tragic flaw).' },
-    { id: 'igstq-16', front: 'Macbeth: "Unsex me here"', back: 'Lady Macbeth\'s invocation to the spirits (Act 1, Scene 5).\n\nMeaning: She asks to be stripped of feminine qualities so she can be ruthless enough to help murder Duncan.\n\nTheme: Gender, power, the supernatural.' },
-    { id: 'igstq-17', front: 'Macbeth: "Will all great Neptune\'s ocean wash this blood clean from my hand?"', back: 'Macbeth after killing Duncan (Act 2, Scene 2).\n\nTechnique: Hyperbole, rhetorical question.\n\nMeaning: His guilt is so great that not even an ocean could cleanse it. Contrasts with Lady Macbeth\'s "a little water clears us of this deed."' },
-    { id: 'igstq-18', front: 'Macbeth: "Life\'s but a walking shadow, a poor player that struts and frets his hour upon the stage"', back: 'Macbeth\'s nihilistic speech after Lady Macbeth\'s death (Act 5, Scene 5).\n\nTechnique: Extended metaphor (life as a theatrical performance).\n\nTheme: Meaninglessness, despair, the futility of ambition.' },
-    { id: 'igstq-19', front: 'Macbeth: "By the pricking of my thumbs, Something wicked this way comes"', back: 'The witches sensing Macbeth\'s approach (Act 4, Scene 1).\n\nSignificance: Macbeth is now described as "wicked" -- he has become the evil he once feared.\n\nTheme: Moral decline, the supernatural.' },
-    { id: 'igstq-20', front: 'Macbeth: "Stars, hide your fires; Let not light see my black and deep desires"', back: 'Macbeth after hearing the prophecy (Act 1, Scene 4).\n\nTechnique: Apostrophe, light/dark imagery.\n\nMeaning: Macbeth wants to hide his ambition and dark thoughts from the world and perhaps from himself.' },
+    {
+      id: 'igstq-11',
+      front: 'Macbeth: "Fair is foul, and foul is fair"',
+      back: 'The witches in Act 1, Scene 1.\n\nMeaning: Nothing is as it seems; good and evil are intertwined.\n\nTheme: Appearance vs reality, moral confusion. Sets the tone for the entire play.',
+    },
+    {
+      id: 'igstq-12',
+      front: 'Macbeth: "Look like th\'innocent flower, But be the serpent under\'t"',
+      back: 'Lady Macbeth advising Macbeth to hide his murderous intentions.\n\nTechnique: Simile, biblical allusion (serpent = Satan).\n\nTheme: Deception, appearance vs reality, the corrupting influence of ambition.',
+    },
+    {
+      id: 'igstq-13',
+      front: 'Macbeth: "Is this a dagger which I see before me?"',
+      back: "Macbeth's soliloquy before murdering Duncan (Act 2, Scene 1).\n\nTechnique: Rhetorical question, hallucination.\n\nEffect: Shows Macbeth's psychological torment and deteriorating sanity. The dagger symbolises guilt and ambition.",
+    },
+    {
+      id: 'igstq-14',
+      front: 'Macbeth: "Out, damned spot! Out, I say!"',
+      back: 'Lady Macbeth sleepwalking (Act 5, Scene 1).\n\nMeaning: She is trying to wash imaginary blood from her hands.\n\nTheme: Guilt, madness, the psychological consequences of violence.',
+    },
+    {
+      id: 'igstq-15',
+      front: 'Macbeth: "Vaulting ambition, which o\'erleaps itself"',
+      back: 'Macbeth acknowledging that his only motivation for murder is ambition.\n\nTechnique: Metaphor of ambition as a horse jumping too high and falling.\n\nTheme: Ambition as hamartia (tragic flaw).',
+    },
+    {
+      id: 'igstq-16',
+      front: 'Macbeth: "Unsex me here"',
+      back: "Lady Macbeth's invocation to the spirits (Act 1, Scene 5).\n\nMeaning: She asks to be stripped of feminine qualities so she can be ruthless enough to help murder Duncan.\n\nTheme: Gender, power, the supernatural.",
+    },
+    {
+      id: 'igstq-17',
+      front: 'Macbeth: "Will all great Neptune\'s ocean wash this blood clean from my hand?"',
+      back: 'Macbeth after killing Duncan (Act 2, Scene 2).\n\nTechnique: Hyperbole, rhetorical question.\n\nMeaning: His guilt is so great that not even an ocean could cleanse it. Contrasts with Lady Macbeth\'s "a little water clears us of this deed."',
+    },
+    {
+      id: 'igstq-18',
+      front:
+        'Macbeth: "Life\'s but a walking shadow, a poor player that struts and frets his hour upon the stage"',
+      back: "Macbeth's nihilistic speech after Lady Macbeth's death (Act 5, Scene 5).\n\nTechnique: Extended metaphor (life as a theatrical performance).\n\nTheme: Meaninglessness, despair, the futility of ambition.",
+    },
+    {
+      id: 'igstq-19',
+      front: 'Macbeth: "By the pricking of my thumbs, Something wicked this way comes"',
+      back: 'The witches sensing Macbeth\'s approach (Act 4, Scene 1).\n\nSignificance: Macbeth is now described as "wicked" -- he has become the evil he once feared.\n\nTheme: Moral decline, the supernatural.',
+    },
+    {
+      id: 'igstq-20',
+      front: 'Macbeth: "Stars, hide your fires; Let not light see my black and deep desires"',
+      back: 'Macbeth after hearing the prophecy (Act 1, Scene 4).\n\nTechnique: Apostrophe, light/dark imagery.\n\nMeaning: Macbeth wants to hide his ambition and dark thoughts from the world and perhaps from himself.',
+    },
     // An Inspector Calls (5)
-    { id: 'igstq-21', front: 'An Inspector Calls: "We are members of one body. We are responsible for each other"', back: 'Inspector Goole\'s final speech.\n\nMeaning: Everyone in society is connected; we must take responsibility for how our actions affect others.\n\nTheme: Social responsibility. Priestley\'s central message.' },
-    { id: 'igstq-22', front: 'An Inspector Calls: "Fire and blood and anguish"', back: 'Inspector Goole\'s warning in his final speech.\n\nMeaning: If society does not learn to care for one another, there will be terrible consequences.\n\nContext: Written in 1945, set in 1912 -- the audience knows WWI and WWII proved this true.' },
-    { id: 'igstq-23', front: 'An Inspector Calls: "a man has to make his own way"', back: 'Mr Birling\'s philosophy of individualism.\n\nMeaning: Birling believes everyone should look after themselves, not others.\n\nPriestley\'s intention: The audience sees Birling is wrong. His selfishness causes harm.' },
-    { id: 'igstq-24', front: 'An Inspector Calls: "But these girls aren\'t cheap labour -- they\'re people"', back: 'Sheila Birling challenging her father\'s treatment of workers.\n\nSignificance: Shows Sheila\'s growing social conscience.\n\nTheme: Generational change -- the younger generation can learn and change.' },
-    { id: 'igstq-25', front: 'An Inspector Calls: "You\'re not the kind of father a chap could go to when he\'s in trouble"', back: 'Eric to Mr Birling.\n\nSignificance: Reveals the breakdown of the Birling family and Mr Birling\'s failure as a father.\n\nTheme: Family dysfunction beneath a respectable surface.' },
+    {
+      id: 'igstq-21',
+      front: 'An Inspector Calls: "We are members of one body. We are responsible for each other"',
+      back: "Inspector Goole's final speech.\n\nMeaning: Everyone in society is connected; we must take responsibility for how our actions affect others.\n\nTheme: Social responsibility. Priestley's central message.",
+    },
+    {
+      id: 'igstq-22',
+      front: 'An Inspector Calls: "Fire and blood and anguish"',
+      back: "Inspector Goole's warning in his final speech.\n\nMeaning: If society does not learn to care for one another, there will be terrible consequences.\n\nContext: Written in 1945, set in 1912 -- the audience knows WWI and WWII proved this true.",
+    },
+    {
+      id: 'igstq-23',
+      front: 'An Inspector Calls: "a man has to make his own way"',
+      back: "Mr Birling's philosophy of individualism.\n\nMeaning: Birling believes everyone should look after themselves, not others.\n\nPriestley's intention: The audience sees Birling is wrong. His selfishness causes harm.",
+    },
+    {
+      id: 'igstq-24',
+      front: 'An Inspector Calls: "But these girls aren\'t cheap labour -- they\'re people"',
+      back: "Sheila Birling challenging her father's treatment of workers.\n\nSignificance: Shows Sheila's growing social conscience.\n\nTheme: Generational change -- the younger generation can learn and change.",
+    },
+    {
+      id: 'igstq-25',
+      front:
+        'An Inspector Calls: "You\'re not the kind of father a chap could go to when he\'s in trouble"',
+      back: "Eric to Mr Birling.\n\nSignificance: Reveals the breakdown of the Birling family and Mr Birling's failure as a father.\n\nTheme: Family dysfunction beneath a respectable surface.",
+    },
     // Of Mice and Men (5)
-    { id: 'igstq-26', front: 'Of Mice and Men: "Guys like us, that work on ranches, are the loneliest guys in the world"', back: 'George to Lennie.\n\nMeaning: Itinerant workers have no home, family, or lasting connections.\n\nSignificance: Establishes the central theme of loneliness AND highlights what makes George and Lennie different -- they have each other.' },
-    { id: 'igstq-27', front: 'Of Mice and Men: "I could get you strung up on a tree so easy it ain\'t even funny"', back: 'Curley\'s wife threatening Crooks.\n\nContext: A white woman reminding a black man of the very real threat of lynching.\n\nTheme: Racial violence, power dynamics, the precariousness of Crooks\'s position.' },
-    { id: 'igstq-28', front: 'Of Mice and Men: "A guy needs somebody -- to be near him. A guy goes nuts if he ain\'t got nobody"', back: 'Crooks to Lennie.\n\nMeaning: Human beings need companionship; isolation leads to psychological damage.\n\nTheme: Loneliness, the need for human connection.' },
-    { id: 'igstq-29', front: 'Of Mice and Men: "I seen hundreds of men come by on the road... every damn one of \'em\'s got a little piece of land in his head"', back: 'Crooks\'s cynical view of the American Dream.\n\nMeaning: Everyone dreams of owning land, but nobody achieves it.\n\nTheme: The impossibility of the American Dream for working-class men.' },
-    { id: 'igstq-30', front: 'Of Mice and Men: "An\' live off the fatta the lan\'"', back: 'George and Lennie\'s shared dream.\n\nMeaning: They dream of owning their own farm and living independently.\n\nTechnique: Colloquial language, refrain (repeated throughout the novel).\n\nTheme: Hope, the American Dream, companionship.' },
+    {
+      id: 'igstq-26',
+      front:
+        'Of Mice and Men: "Guys like us, that work on ranches, are the loneliest guys in the world"',
+      back: 'George to Lennie.\n\nMeaning: Itinerant workers have no home, family, or lasting connections.\n\nSignificance: Establishes the central theme of loneliness AND highlights what makes George and Lennie different -- they have each other.',
+    },
+    {
+      id: 'igstq-27',
+      front: 'Of Mice and Men: "I could get you strung up on a tree so easy it ain\'t even funny"',
+      back: "Curley's wife threatening Crooks.\n\nContext: A white woman reminding a black man of the very real threat of lynching.\n\nTheme: Racial violence, power dynamics, the precariousness of Crooks's position.",
+    },
+    {
+      id: 'igstq-28',
+      front:
+        'Of Mice and Men: "A guy needs somebody -- to be near him. A guy goes nuts if he ain\'t got nobody"',
+      back: 'Crooks to Lennie.\n\nMeaning: Human beings need companionship; isolation leads to psychological damage.\n\nTheme: Loneliness, the need for human connection.',
+    },
+    {
+      id: 'igstq-29',
+      front:
+        'Of Mice and Men: "I seen hundreds of men come by on the road... every damn one of \'em\'s got a little piece of land in his head"',
+      back: "Crooks's cynical view of the American Dream.\n\nMeaning: Everyone dreams of owning land, but nobody achieves it.\n\nTheme: The impossibility of the American Dream for working-class men.",
+    },
+    {
+      id: 'igstq-30',
+      front: 'Of Mice and Men: "An\' live off the fatta the lan\'"',
+      back: "George and Lennie's shared dream.\n\nMeaning: They dream of owning their own farm and living independently.\n\nTechnique: Colloquial language, refrain (repeated throughout the novel).\n\nTheme: Hope, the American Dream, companionship.",
+    },
   ],
-};
+}
 
 // ============================================================
 // IAL FLASHCARDS (40 cards)
@@ -451,28 +1584,108 @@ const ialLinguisticFramework: FlashcardDeck = {
   category: 'Linguistics',
   board: 'IAL',
   cards: [
-    { id: 'iallf-1', front: 'Phonology', back: 'The study of the sound system of a language.\n\nIncludes: Phonemes (individual sounds), stress, rhythm, intonation, accent.\n\nExample analysis: How a regional accent changes the pronunciation of vowel sounds.' },
-    { id: 'iallf-2', front: 'Morphology', back: 'The study of the structure and formation of words.\n\nKey concepts: Morphemes (smallest units of meaning), prefixes, suffixes, root words.\n\nFree morphemes (can stand alone: "dog") vs bound morphemes (must attach: "un-", "-ing").' },
-    { id: 'iallf-3', front: 'Syntax', back: 'The study of how words are arranged to form sentences.\n\nIncludes: Word order, sentence types (simple, compound, complex), clause structure.\n\nExample: English typically uses Subject-Verb-Object (SVO) order.' },
-    { id: 'iallf-4', front: 'Semantics', back: 'The study of meaning in language.\n\nIncludes: Denotation (literal meaning), connotation (associated meaning), semantic fields, ambiguity.\n\nExample: "Thin" and "skinny" denote the same thing but carry different connotations.' },
-    { id: 'iallf-5', front: 'Pragmatics', back: 'The study of how context affects meaning.\n\nKey ideas: Implied meaning, inference, conversational implicature, politeness strategies.\n\nExample: "It\'s cold in here" can be a request to close the window (implied meaning).' },
-    { id: 'iallf-6', front: 'Discourse', back: 'Language above the sentence level; the study of how texts are structured and how meaning is created across a whole text.\n\nIncludes: Cohesion, coherence, turn-taking, topic management.' },
-    { id: 'iallf-7', front: 'Graphology', back: 'The visual aspects of a text: layout, font, colour, images, spacing.\n\nRelevant to: Advertisements, websites, newspapers, social media.\n\nExample: Bold headlines, use of white space, logo placement.' },
-    { id: 'iallf-8', front: 'Lexis', back: 'The vocabulary of a language or text.\n\nKey concepts: Lexical fields, formal/informal lexis, archaic lexis, neologisms, jargon.\n\nLexical choice reveals tone, audience, purpose, and context.' },
-    { id: 'iallf-9', front: 'Idiolect', back: 'An individual\'s unique way of speaking.\n\nInfluenced by: Age, region, education, social class, personal habits.\n\nEveryone has an idiolect -- it is your personal linguistic fingerprint.' },
-    { id: 'iallf-10', front: 'Sociolect', back: 'A variety of language associated with a particular social group.\n\nExamples: Teenage slang, professional jargon, upper-class speech.\n\nSociolects can signal group membership and identity.' },
-    { id: 'iallf-11', front: 'Register', back: 'The level of formality in language, determined by context, audience, and purpose.\n\nFormal register: Academic writing, legal documents.\nInformal register: Text messages, conversations with friends.\n\nSpeakers shift register depending on situation.' },
-    { id: 'iallf-12', front: 'Mode', back: 'The medium of communication: spoken, written, or multimodal.\n\nSpoken mode: Spontaneous, interactive, uses prosody.\nWritten mode: Planned, permanent, uses punctuation.\nMultimodal: Combines modes (e.g., websites, presentations).' },
-    { id: 'iallf-13', front: 'Deixis', back: 'Words whose meaning depends on context (who, where, when).\n\nExamples: "this," "that," "here," "there," "now," "then," "I," "you."\n\nDeictic expressions only make sense if you know the context of the utterance.' },
-    { id: 'iallf-14', front: 'Adjacency Pair', back: 'A pair of utterances in conversation where the first requires a specific type of response.\n\nExamples: Question/Answer, Greeting/Greeting, Invitation/Acceptance or Refusal.\n\nPart of conversation analysis.' },
-    { id: 'iallf-15', front: 'Presupposition', back: 'An assumption embedded in a statement that is taken for granted.\n\nExample: "Have you stopped cheating?" presupposes you were cheating.\n\nPresuppositions can manipulate or mislead.' },
-    { id: 'iallf-16', front: 'Hedging', back: 'Using vague or cautious language to soften a statement or avoid commitment.\n\nExamples: "sort of," "maybe," "I think," "it could be argued."\n\nFunction: Politeness, tentativeness, or lack of certainty.' },
-    { id: 'iallf-17', front: 'Collocation', back: 'Words that frequently appear together in natural language.\n\nExamples: "make a decision" (not "do a decision"), "heavy rain" (not "strong rain").\n\nCollocations are learned through exposure and feel "right" to native speakers.' },
-    { id: 'iallf-18', front: 'Cohesion', back: 'The grammatical and lexical linking within a text that holds it together.\n\nTypes: Reference (pronouns), conjunction (however, therefore), lexical cohesion (repetition, synonyms), ellipsis.\n\nCohesion makes a text readable and coherent.' },
-    { id: 'iallf-19', front: 'Speech Act Theory', back: 'The idea that utterances perform actions (Austin & Searle).\n\nLocutionary act: What is said.\nIllocutionary act: What is meant (the intended function).\nPerlocutionary act: The effect on the listener.\n\nExample: "It\'s late" = statement / hint to leave / makes someone feel guilty.' },
-    { id: 'iallf-20', front: 'Code-switching', back: 'Switching between languages, dialects, or registers within a conversation.\n\nReasons: To signal identity, fit in with a group, show authority, or mark a change in topic.\n\nExample: A bilingual speaker switching from English to Spanish mid-sentence.' },
+    {
+      id: 'iallf-1',
+      front: 'Phonology',
+      back: 'The study of the sound system of a language.\n\nIncludes: Phonemes (individual sounds), stress, rhythm, intonation, accent.\n\nExample analysis: How a regional accent changes the pronunciation of vowel sounds.',
+    },
+    {
+      id: 'iallf-2',
+      front: 'Morphology',
+      back: 'The study of the structure and formation of words.\n\nKey concepts: Morphemes (smallest units of meaning), prefixes, suffixes, root words.\n\nFree morphemes (can stand alone: "dog") vs bound morphemes (must attach: "un-", "-ing").',
+    },
+    {
+      id: 'iallf-3',
+      front: 'Syntax',
+      back: 'The study of how words are arranged to form sentences.\n\nIncludes: Word order, sentence types (simple, compound, complex), clause structure.\n\nExample: English typically uses Subject-Verb-Object (SVO) order.',
+    },
+    {
+      id: 'iallf-4',
+      front: 'Semantics',
+      back: 'The study of meaning in language.\n\nIncludes: Denotation (literal meaning), connotation (associated meaning), semantic fields, ambiguity.\n\nExample: "Thin" and "skinny" denote the same thing but carry different connotations.',
+    },
+    {
+      id: 'iallf-5',
+      front: 'Pragmatics',
+      back: 'The study of how context affects meaning.\n\nKey ideas: Implied meaning, inference, conversational implicature, politeness strategies.\n\nExample: "It\'s cold in here" can be a request to close the window (implied meaning).',
+    },
+    {
+      id: 'iallf-6',
+      front: 'Discourse',
+      back: 'Language above the sentence level; the study of how texts are structured and how meaning is created across a whole text.\n\nIncludes: Cohesion, coherence, turn-taking, topic management.',
+    },
+    {
+      id: 'iallf-7',
+      front: 'Graphology',
+      back: 'The visual aspects of a text: layout, font, colour, images, spacing.\n\nRelevant to: Advertisements, websites, newspapers, social media.\n\nExample: Bold headlines, use of white space, logo placement.',
+    },
+    {
+      id: 'iallf-8',
+      front: 'Lexis',
+      back: 'The vocabulary of a language or text.\n\nKey concepts: Lexical fields, formal/informal lexis, archaic lexis, neologisms, jargon.\n\nLexical choice reveals tone, audience, purpose, and context.',
+    },
+    {
+      id: 'iallf-9',
+      front: 'Idiolect',
+      back: "An individual's unique way of speaking.\n\nInfluenced by: Age, region, education, social class, personal habits.\n\nEveryone has an idiolect -- it is your personal linguistic fingerprint.",
+    },
+    {
+      id: 'iallf-10',
+      front: 'Sociolect',
+      back: 'A variety of language associated with a particular social group.\n\nExamples: Teenage slang, professional jargon, upper-class speech.\n\nSociolects can signal group membership and identity.',
+    },
+    {
+      id: 'iallf-11',
+      front: 'Register',
+      back: 'The level of formality in language, determined by context, audience, and purpose.\n\nFormal register: Academic writing, legal documents.\nInformal register: Text messages, conversations with friends.\n\nSpeakers shift register depending on situation.',
+    },
+    {
+      id: 'iallf-12',
+      front: 'Mode',
+      back: 'The medium of communication: spoken, written, or multimodal.\n\nSpoken mode: Spontaneous, interactive, uses prosody.\nWritten mode: Planned, permanent, uses punctuation.\nMultimodal: Combines modes (e.g., websites, presentations).',
+    },
+    {
+      id: 'iallf-13',
+      front: 'Deixis',
+      back: 'Words whose meaning depends on context (who, where, when).\n\nExamples: "this," "that," "here," "there," "now," "then," "I," "you."\n\nDeictic expressions only make sense if you know the context of the utterance.',
+    },
+    {
+      id: 'iallf-14',
+      front: 'Adjacency Pair',
+      back: 'A pair of utterances in conversation where the first requires a specific type of response.\n\nExamples: Question/Answer, Greeting/Greeting, Invitation/Acceptance or Refusal.\n\nPart of conversation analysis.',
+    },
+    {
+      id: 'iallf-15',
+      front: 'Presupposition',
+      back: 'An assumption embedded in a statement that is taken for granted.\n\nExample: "Have you stopped cheating?" presupposes you were cheating.\n\nPresuppositions can manipulate or mislead.',
+    },
+    {
+      id: 'iallf-16',
+      front: 'Hedging',
+      back: 'Using vague or cautious language to soften a statement or avoid commitment.\n\nExamples: "sort of," "maybe," "I think," "it could be argued."\n\nFunction: Politeness, tentativeness, or lack of certainty.',
+    },
+    {
+      id: 'iallf-17',
+      front: 'Collocation',
+      back: 'Words that frequently appear together in natural language.\n\nExamples: "make a decision" (not "do a decision"), "heavy rain" (not "strong rain").\n\nCollocations are learned through exposure and feel "right" to native speakers.',
+    },
+    {
+      id: 'iallf-18',
+      front: 'Cohesion',
+      back: 'The grammatical and lexical linking within a text that holds it together.\n\nTypes: Reference (pronouns), conjunction (however, therefore), lexical cohesion (repetition, synonyms), ellipsis.\n\nCohesion makes a text readable and coherent.',
+    },
+    {
+      id: 'iallf-19',
+      front: 'Speech Act Theory',
+      back: 'The idea that utterances perform actions (Austin & Searle).\n\nLocutionary act: What is said.\nIllocutionary act: What is meant (the intended function).\nPerlocutionary act: The effect on the listener.\n\nExample: "It\'s late" = statement / hint to leave / makes someone feel guilty.',
+    },
+    {
+      id: 'iallf-20',
+      front: 'Code-switching',
+      back: 'Switching between languages, dialects, or registers within a conversation.\n\nReasons: To signal identity, fit in with a group, show authority, or mark a change in topic.\n\nExample: A bilingual speaker switching from English to Spanish mid-sentence.',
+    },
   ],
-};
+}
 
 const ialLanguageChange: FlashcardDeck = {
   id: 'ial-language-change',
@@ -481,28 +1694,108 @@ const ialLanguageChange: FlashcardDeck = {
   category: 'Language Change',
   board: 'IAL',
   cards: [
-    { id: 'iallc-1', front: 'Old English (Anglo-Saxon)', back: 'The earliest form of English, spoken c. 450-1100 AD.\n\nCharacteristics: Heavily inflected (word endings showed grammar), Germanic vocabulary.\n\nExample: "Hwet! We Gardena in geardagum..." (opening of Beowulf).\n\nLargely unintelligible to modern readers.' },
-    { id: 'iallc-2', front: 'Middle English', back: 'English as spoken c. 1100-1500, after the Norman Conquest.\n\nCharacteristics: Simplified inflections, French vocabulary (government, law, food), regional variation.\n\nExample: Chaucer\'s Canterbury Tales. More recognisable to modern readers than Old English.' },
-    { id: 'iallc-3', front: 'Early Modern English', back: 'English as spoken c. 1500-1700, the era of Shakespeare and the King James Bible.\n\nCharacteristics: "Thee/thou," verb endings ("-eth," "-est"), expanding vocabulary.\n\nThe Great Vowel Shift changed pronunciation dramatically.' },
-    { id: 'iallc-4', front: 'The Great Vowel Shift', back: 'A major change in English pronunciation (c. 1400-1700) where long vowel sounds shifted upward in the mouth.\n\nEffect: Changed how words were pronounced without changing spelling.\n\nThis is why English spelling is so irregular today.' },
-    { id: 'iallc-5', front: 'Standardisation', back: 'The process by which one variety of a language becomes the accepted norm.\n\nKey events: The printing press (Caxton, 1476), dictionaries (Johnson, 1755), grammar books.\n\nStandardisation privileges certain dialects and marginalises others.' },
-    { id: 'iallc-6', front: 'Prescriptivism', back: 'The belief that there are strict rules for "correct" language use and that these should be enforced.\n\nExamples: "Don\'t split infinitives," "Don\'t end sentences with prepositions."\n\nPrescriptivists see language change as decline.' },
-    { id: 'iallc-7', front: 'Descriptivism', back: 'The belief that language should be studied and described as it is actually used, without judgment.\n\nDescriptivists see language change as natural evolution, not decline.\n\nMost modern linguists take a descriptivist approach.' },
-    { id: 'iallc-8', front: 'Neologism', back: 'A newly coined word or expression.\n\nExamples: "selfie," "blog," "binge-watch," "gaslighting."\n\nNeologisms enter the language through technology, culture, media, and social change.' },
-    { id: 'iallc-9', front: 'Archaism', back: 'A word or expression that is no longer in common use.\n\nExamples: "thee," "thou," "hither," "whence," "forsooth."\n\nArchaisms may be used for literary, religious, or humorous effect.' },
-    { id: 'iallc-10', front: 'Semantic Change', back: 'When a word\'s meaning changes over time.\n\nTypes:\n- Broadening: "dog" once meant a specific breed.\n- Narrowing: "meat" once meant any food.\n- Amelioration: "nice" once meant "foolish."\n- Pejoration: "villain" once meant "farmworker."' },
-    { id: 'iallc-11', front: 'Amelioration', back: 'When a word\'s meaning becomes more positive over time.\n\nExample: "Nice" originally meant "foolish" or "ignorant" (from Latin "nescius").\n\nNow means "pleasant" or "kind."' },
-    { id: 'iallc-12', front: 'Pejoration', back: 'When a word\'s meaning becomes more negative over time.\n\nExample: "Villain" originally meant "farmworker" (from Latin "villanus").\n\nNow means an evil or criminal person.' },
-    { id: 'iallc-13', front: 'Borrowing (Loanwords)', back: 'Words adopted from other languages.\n\nExamples: "ballet" (French), "kindergarten" (German), "tsunami" (Japanese), "algebra" (Arabic).\n\nEnglish has borrowed extensively from Latin, French, Norse, Greek, and many other languages.' },
-    { id: 'iallc-14', front: 'Etymology', back: 'The study of the origin and history of words.\n\nExample: "Breakfast" = "break" + "fast" (breaking the overnight fast).\n\nKnowing etymology helps understand meaning, spelling, and language change.' },
-    { id: 'iallc-15', front: 'The Printing Press (Caxton)', back: 'William Caxton introduced the printing press to England in 1476.\n\nImpact: Helped standardise English spelling and grammar, spread literacy, made books affordable.\n\nCaxton chose the London dialect, which became the basis of Standard English.' },
-    { id: 'iallc-16', front: 'Inkhorn Terms', back: 'Latin and Greek words borrowed into English during the Renaissance, often criticised as unnecessarily complex.\n\nExamples: "educate," "celebrate," "democracy."\n\nSome survived; others ("adminiculation," "fatigate") did not. A major debate of the 16th century.' },
-    { id: 'iallc-17', front: 'Globalisation and English', back: 'English has become a global lingua franca due to British colonialism, American cultural influence, and the internet.\n\nVarieties: American English, Indian English, Nigerian English, Singlish.\n\nDebate: Is global English diversity or dilution?' },
-    { id: 'iallc-18', front: 'Lexical Gap', back: 'When a language lacks a word for a particular concept.\n\nSolutions: Borrow from another language, create a neologism, use a phrase.\n\nExample: English borrowed "schadenfreude" (German: pleasure at others\' misfortune) to fill a lexical gap.' },
-    { id: 'iallc-19', front: 'Grammaticalisation', back: 'The process by which words develop grammatical functions over time.\n\nExample: "Going to" (movement) became "gonna" (future tense marker).\n\n"Will" was originally a verb meaning "to wish" and evolved into a future tense auxiliary.' },
-    { id: 'iallc-20', front: 'Language Death', back: 'When a language ceases to be spoken as a native language.\n\nCauses: Colonisation, globalisation, social pressure to speak dominant languages.\n\nApproximately one language dies every two weeks. Preservation efforts include documentation and revitalisation programmes.' },
+    {
+      id: 'iallc-1',
+      front: 'Old English (Anglo-Saxon)',
+      back: 'The earliest form of English, spoken c. 450-1100 AD.\n\nCharacteristics: Heavily inflected (word endings showed grammar), Germanic vocabulary.\n\nExample: "Hwet! We Gardena in geardagum..." (opening of Beowulf).\n\nLargely unintelligible to modern readers.',
+    },
+    {
+      id: 'iallc-2',
+      front: 'Middle English',
+      back: "English as spoken c. 1100-1500, after the Norman Conquest.\n\nCharacteristics: Simplified inflections, French vocabulary (government, law, food), regional variation.\n\nExample: Chaucer's Canterbury Tales. More recognisable to modern readers than Old English.",
+    },
+    {
+      id: 'iallc-3',
+      front: 'Early Modern English',
+      back: 'English as spoken c. 1500-1700, the era of Shakespeare and the King James Bible.\n\nCharacteristics: "Thee/thou," verb endings ("-eth," "-est"), expanding vocabulary.\n\nThe Great Vowel Shift changed pronunciation dramatically.',
+    },
+    {
+      id: 'iallc-4',
+      front: 'The Great Vowel Shift',
+      back: 'A major change in English pronunciation (c. 1400-1700) where long vowel sounds shifted upward in the mouth.\n\nEffect: Changed how words were pronounced without changing spelling.\n\nThis is why English spelling is so irregular today.',
+    },
+    {
+      id: 'iallc-5',
+      front: 'Standardisation',
+      back: 'The process by which one variety of a language becomes the accepted norm.\n\nKey events: The printing press (Caxton, 1476), dictionaries (Johnson, 1755), grammar books.\n\nStandardisation privileges certain dialects and marginalises others.',
+    },
+    {
+      id: 'iallc-6',
+      front: 'Prescriptivism',
+      back: 'The belief that there are strict rules for "correct" language use and that these should be enforced.\n\nExamples: "Don\'t split infinitives," "Don\'t end sentences with prepositions."\n\nPrescriptivists see language change as decline.',
+    },
+    {
+      id: 'iallc-7',
+      front: 'Descriptivism',
+      back: 'The belief that language should be studied and described as it is actually used, without judgment.\n\nDescriptivists see language change as natural evolution, not decline.\n\nMost modern linguists take a descriptivist approach.',
+    },
+    {
+      id: 'iallc-8',
+      front: 'Neologism',
+      back: 'A newly coined word or expression.\n\nExamples: "selfie," "blog," "binge-watch," "gaslighting."\n\nNeologisms enter the language through technology, culture, media, and social change.',
+    },
+    {
+      id: 'iallc-9',
+      front: 'Archaism',
+      back: 'A word or expression that is no longer in common use.\n\nExamples: "thee," "thou," "hither," "whence," "forsooth."\n\nArchaisms may be used for literary, religious, or humorous effect.',
+    },
+    {
+      id: 'iallc-10',
+      front: 'Semantic Change',
+      back: 'When a word\'s meaning changes over time.\n\nTypes:\n- Broadening: "dog" once meant a specific breed.\n- Narrowing: "meat" once meant any food.\n- Amelioration: "nice" once meant "foolish."\n- Pejoration: "villain" once meant "farmworker."',
+    },
+    {
+      id: 'iallc-11',
+      front: 'Amelioration',
+      back: 'When a word\'s meaning becomes more positive over time.\n\nExample: "Nice" originally meant "foolish" or "ignorant" (from Latin "nescius").\n\nNow means "pleasant" or "kind."',
+    },
+    {
+      id: 'iallc-12',
+      front: 'Pejoration',
+      back: 'When a word\'s meaning becomes more negative over time.\n\nExample: "Villain" originally meant "farmworker" (from Latin "villanus").\n\nNow means an evil or criminal person.',
+    },
+    {
+      id: 'iallc-13',
+      front: 'Borrowing (Loanwords)',
+      back: 'Words adopted from other languages.\n\nExamples: "ballet" (French), "kindergarten" (German), "tsunami" (Japanese), "algebra" (Arabic).\n\nEnglish has borrowed extensively from Latin, French, Norse, Greek, and many other languages.',
+    },
+    {
+      id: 'iallc-14',
+      front: 'Etymology',
+      back: 'The study of the origin and history of words.\n\nExample: "Breakfast" = "break" + "fast" (breaking the overnight fast).\n\nKnowing etymology helps understand meaning, spelling, and language change.',
+    },
+    {
+      id: 'iallc-15',
+      front: 'The Printing Press (Caxton)',
+      back: 'William Caxton introduced the printing press to England in 1476.\n\nImpact: Helped standardise English spelling and grammar, spread literacy, made books affordable.\n\nCaxton chose the London dialect, which became the basis of Standard English.',
+    },
+    {
+      id: 'iallc-16',
+      front: 'Inkhorn Terms',
+      back: 'Latin and Greek words borrowed into English during the Renaissance, often criticised as unnecessarily complex.\n\nExamples: "educate," "celebrate," "democracy."\n\nSome survived; others ("adminiculation," "fatigate") did not. A major debate of the 16th century.',
+    },
+    {
+      id: 'iallc-17',
+      front: 'Globalisation and English',
+      back: 'English has become a global lingua franca due to British colonialism, American cultural influence, and the internet.\n\nVarieties: American English, Indian English, Nigerian English, Singlish.\n\nDebate: Is global English diversity or dilution?',
+    },
+    {
+      id: 'iallc-18',
+      front: 'Lexical Gap',
+      back: 'When a language lacks a word for a particular concept.\n\nSolutions: Borrow from another language, create a neologism, use a phrase.\n\nExample: English borrowed "schadenfreude" (German: pleasure at others\' misfortune) to fill a lexical gap.',
+    },
+    {
+      id: 'iallc-19',
+      front: 'Grammaticalisation',
+      back: 'The process by which words develop grammatical functions over time.\n\nExample: "Going to" (movement) became "gonna" (future tense marker).\n\n"Will" was originally a verb meaning "to wish" and evolved into a future tense auxiliary.',
+    },
+    {
+      id: 'iallc-20',
+      front: 'Language Death',
+      back: 'When a language ceases to be spoken as a native language.\n\nCauses: Colonisation, globalisation, social pressure to speak dominant languages.\n\nApproximately one language dies every two weeks. Preservation efforts include documentation and revitalisation programmes.',
+    },
   ],
-};
+}
 
 // ============================================================
 // EXPORT
@@ -530,4 +1823,4 @@ export const curriculumFlashcards: FlashcardDeck[] = [
   // IAL (40 cards)
   ialLinguisticFramework,
   ialLanguageChange,
-];
+]

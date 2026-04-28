@@ -44,7 +44,8 @@ export const TEACHER_RESOURCES: TeacherResource[] = [
     subcategory: 'Grade 9',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'A full Grade 9 response to an extract question on Macbeth (Act 1, Scene 7 — "If it were done when \'tis done").',
+    description:
+      'A full Grade 9 response to an extract question on Macbeth (Act 1, Scene 7 — "If it were done when \'tis done").',
     content: `QUESTION: Starting with this extract (Act 1 Scene 7), how does Shakespeare present the theme of ambition?
 
 GRADE 9 MODEL ANSWER:
@@ -59,7 +60,16 @@ Crucially, Shakespeare contrasts this with the image of "vaulting ambition, whic
 
 Across the play, Shakespeare traces a trajectory from this moment of hesitation to Lady Macbeth's sleepwalking guilt and Macbeth's nihilistic "Tomorrow and tomorrow and tomorrow" speech. The initial fracturing of language in this soliloquy — the euphemisms, conditionals, and broken syntax — intensifies into full psychological collapse, suggesting that ambition, once it displaces moral certainty, leaves only a void.`,
     printable: true,
-    tags: ['Macbeth', 'Shakespeare', 'ambition', 'extract question', 'Grade 9', 'AO1', 'AO2', 'AO3'],
+    tags: [
+      'Macbeth',
+      'Shakespeare',
+      'ambition',
+      'extract question',
+      'Grade 9',
+      'AO1',
+      'AO2',
+      'AO3',
+    ],
   },
   {
     id: 'model-inspector-calls-grade7',
@@ -68,7 +78,8 @@ Across the play, Shakespeare traces a trajectory from this moment of hesitation 
     subcategory: 'Grade 7',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Grade 7 model answer exploring how Priestley presents Mr Birling as a symbol of capitalist irresponsibility.',
+    description:
+      'Grade 7 model answer exploring how Priestley presents Mr Birling as a symbol of capitalist irresponsibility.',
     content: `QUESTION: How does Priestley present the character of Mr Birling?
 
 GRADE 7 MODEL ANSWER:
@@ -83,7 +94,16 @@ The stage directions describe Birling as "heavy-looking, rather portentous," imm
 
 Through Birling, Priestley argues that unchecked capitalism creates individuals incapable of empathy. When confronted with Eva Smith's death, Birling's primary concern is that "there'll be a public scandal." The noun "scandal" reveals that his moral compass is calibrated entirely by social reputation rather than human suffering. Priestley suggests this is the inevitable consequence of a society that values profit over people.`,
     printable: true,
-    tags: ['An Inspector Calls', 'Mr Birling', 'character', 'Grade 7', 'AO1', 'AO2', 'AO3', 'Priestley'],
+    tags: [
+      'An Inspector Calls',
+      'Mr Birling',
+      'character',
+      'Grade 7',
+      'AO1',
+      'AO2',
+      'AO3',
+      'Priestley',
+    ],
   },
   {
     id: 'model-lang-p1-q5-grade5',
@@ -92,7 +112,8 @@ Through Birling, Priestley argues that unchecked capitalism creates individuals 
     subcategory: 'Grade 5',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'A solid Grade 5 descriptive writing response to a picture prompt (abandoned building).',
+    description:
+      'A solid Grade 5 descriptive writing response to a picture prompt (abandoned building).',
     content: `QUESTION: Describe a place that has been forgotten. (40 marks)
 
 GRADE 5 MODEL ANSWER:
@@ -122,7 +143,8 @@ This response achieves Grade 5 through clear, deliberate structural choices (mov
     subcategory: 'Grade 9',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Grade 9 comparison of "Ozymandias" and "My Last Duchess" exploring how poets present power.',
+    description:
+      'Grade 9 comparison of "Ozymandias" and "My Last Duchess" exploring how poets present power.',
     content: `QUESTION: Compare how poets present ideas about power in "Ozymandias" and one other poem from the anthology.
 
 GRADE 9 MODEL ANSWER:
@@ -137,7 +159,14 @@ The crucial difference lies in each poem's treatment of art. For Shelley, art ou
 
 Ultimately, Shelley offers the Romantic consolation that nature and time will defeat all tyranny — the "lone and level sands" are democratic in their erasure. Browning provides no such comfort: his poem ends mid-negotiation for a new wife, the Duke's power undiminished, his art collection about to grow.`,
     printable: true,
-    tags: ['poetry comparison', 'Ozymandias', 'My Last Duchess', 'power', 'Grade 9', 'Power & Conflict'],
+    tags: [
+      'poetry comparison',
+      'Ozymandias',
+      'My Last Duchess',
+      'power',
+      'Grade 9',
+      'Power & Conflict',
+    ],
   },
 
   // ╔══════════════════════════════════════════════════════════════════════════╗
@@ -150,7 +179,8 @@ Ultimately, Shelley offers the Romantic consolation that nature and time will de
     subcategory: 'AQA Literature',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Teacher-friendly breakdown of AQA Lit Paper 1 mark bands with student-facing descriptors.',
+    description:
+      'Teacher-friendly breakdown of AQA Lit Paper 1 mark bands with student-facing descriptors.',
     content: `AQA ENGLISH LITERATURE PAPER 1 — SIMPLIFIED MARK SCHEME
 Shakespeare (Section A) & 19th-Century Novel (Section B)
 
@@ -206,7 +236,15 @@ KEY WORDS: simple, limited
 
 TEACHER TIP: Print this for students to self-assess. Ask them to highlight the descriptors they think apply to their work, then discuss the gap to the next band.`,
     printable: true,
-    tags: ['AQA', 'Literature', 'Paper 1', 'mark scheme', 'Shakespeare', '19th century novel', 'assessment'],
+    tags: [
+      'AQA',
+      'Literature',
+      'Paper 1',
+      'mark scheme',
+      'Shakespeare',
+      '19th century novel',
+      'assessment',
+    ],
   },
   {
     id: 'ms-aqa-lang-p1-simplified',
@@ -215,7 +253,8 @@ TEACHER TIP: Print this for students to self-assess. Ask them to highlight the d
     subcategory: 'AQA Language',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Question-by-question breakdown of AQA Language Paper 1 with clear mark bands and tips.',
+    description:
+      'Question-by-question breakdown of AQA Language Paper 1 with clear mark bands and tips.',
     content: `AQA ENGLISH LANGUAGE PAPER 1 — SIMPLIFIED MARK SCHEME
 Explorations in Creative Reading and Writing
 
@@ -323,7 +362,8 @@ TEACHER TIP: Edexcel rewards "exploratory" reading earlier than AQA. Encourage s
     subcategory: 'OCR Literature',
     examBoard: ['OCR'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Simplified OCR English Literature J352 mark bands for teacher and student reference.',
+    description:
+      'Simplified OCR English Literature J352 mark bands for teacher and student reference.',
     content: `OCR ENGLISH LITERATURE (J352) — SIMPLIFIED MARK SCHEME
 
 ASSESSMENT OBJECTIVES:
@@ -376,7 +416,8 @@ TEACHER TIP: OCR mark schemes reward "illuminating" — teach students to find u
     subcategory: 'PEEL Paragraphs',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
-    description: 'Structured PEEL paragraph template with sentence starters and progression guidance.',
+    description:
+      'Structured PEEL paragraph template with sentence starters and progression guidance.',
     content: `PEEL PARAGRAPH WRITING FRAME
 
 Use this frame to build analytical paragraphs for Literature and Language essays.
@@ -446,7 +487,8 @@ Grade 9: Alternative interpretations + structural/form analysis + critical vocab
     subcategory: 'Comparison Templates',
     examBoard: ['AQA', 'Edexcel', 'OCR'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Step-by-step template for structuring a poetry comparison essay with integrated comparison.',
+    description:
+      'Step-by-step template for structuring a poetry comparison essay with integrated comparison.',
     content: `POETRY COMPARISON ESSAY TEMPLATE
 
 ──────────────────────────────────────────────
@@ -494,7 +536,13 @@ COMMON MISTAKES TO AVOID:
 ✗ Forgetting to compare methods (not just ideas)
 ✓ Weave comparison THROUGHOUT every paragraph`,
     printable: true,
-    tags: ['poetry comparison', 'essay template', 'writing frame', 'structure', 'comparative writing'],
+    tags: [
+      'poetry comparison',
+      'essay template',
+      'writing frame',
+      'structure',
+      'comparative writing',
+    ],
   },
   {
     id: 'wf-creative-writing-plan',
@@ -503,7 +551,8 @@ COMMON MISTAKES TO AVOID:
     subcategory: 'Creative Writing Plans',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Five-minute planning template for Paper 1 Q5 creative writing with structural guidance.',
+    description:
+      'Five-minute planning template for Paper 1 Q5 creative writing with structural guidance.',
     content: `CREATIVE WRITING 5-MINUTE PLANNING FRAME
 Use this to plan your response BEFORE you start writing. Spend 5 minutes here to save 10 minutes of wandering later.
 
@@ -558,7 +607,13 @@ _______________________________________________
 
 REMEMBER: Quality over quantity. 350–500 well-crafted words beats 700 rushed words every time.`,
     printable: true,
-    tags: ['creative writing', 'planning', 'descriptive writing', 'narrative writing', 'Paper 1 Q5'],
+    tags: [
+      'creative writing',
+      'planning',
+      'descriptive writing',
+      'narrative writing',
+      'Paper 1 Q5',
+    ],
   },
   {
     id: 'wf-language-analysis-frame',
@@ -567,7 +622,8 @@ REMEMBER: Quality over quantity. 350–500 well-crafted words beats 700 rushed w
     subcategory: 'PEEL Paragraphs',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Focused writing frame for AQA Language Paper 1 Question 2 (8-mark language analysis).',
+    description:
+      'Focused writing frame for AQA Language Paper 1 Question 2 (8-mark language analysis).',
     content: `LANGUAGE ANALYSIS WRITING FRAME — AQA Paper 1 Q2 (8 marks)
 Time: 8–10 minutes | 2 developed paragraphs
 
@@ -621,7 +677,8 @@ TOP TIP: You only have 8 marks. Pick 2 quotations and analyse them DEEPLY rather
     subcategory: 'Literary Techniques',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
-    description: 'Comprehensive glossary of literary and language techniques with definitions and examples.',
+    description:
+      'Comprehensive glossary of literary and language techniques with definitions and examples.',
     content: `LITERARY & LANGUAGE TECHNIQUES — SUBJECT TERMINOLOGY GLOSSARY
 
 LANGUAGE TECHNIQUES:
@@ -672,7 +729,13 @@ Ballad — A narrative poem, often with a regular rhyme and rhythm.
 Elegy — A poem of mourning or lamentation.
 Ode — A poem of praise or celebration.`,
     printable: true,
-    tags: ['vocabulary', 'literary techniques', 'subject terminology', 'glossary', 'language devices'],
+    tags: [
+      'vocabulary',
+      'literary techniques',
+      'subject terminology',
+      'glossary',
+      'language devices',
+    ],
   },
   {
     id: 'vocab-evaluation-language',
@@ -681,7 +744,8 @@ Ode — A poem of praise or celebration.`,
     subcategory: 'Academic Vocabulary',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
-    description: 'Vocabulary upgrade list replacing basic words with sophisticated analytical language.',
+    description:
+      'Vocabulary upgrade list replacing basic words with sophisticated analytical language.',
     content: `ANALYTICAL VOCABULARY — UPGRADE YOUR WORD CHOICES
 
 Instead of "shows" → use:
@@ -730,7 +794,13 @@ However… Conversely… In contrast… On the other hand…
 Consequently… As a result… Therefore… Thus…
 Perhaps more significantly… Most strikingly… Crucially…`,
     printable: true,
-    tags: ['vocabulary', 'academic language', 'analytical writing', 'word choices', 'essay vocabulary'],
+    tags: [
+      'vocabulary',
+      'academic language',
+      'analytical writing',
+      'word choices',
+      'essay vocabulary',
+    ],
   },
   {
     id: 'vocab-macbeth-key-terms',
@@ -814,7 +884,15 @@ Fourth Wall — Priestley wanted the final phone call to make the audience feel 
 PRIESTLEY'S "LLANDINAM LETTER" (key quote):
 "We don't live alone. We are members of one body. We are responsible for each other." — This is essentially the Inspector's final speech, and Priestley's central thesis.`,
     printable: true,
-    tags: ['An Inspector Calls', 'vocabulary', 'context', 'Priestley', 'key terms', 'socialism', 'capitalism'],
+    tags: [
+      'An Inspector Calls',
+      'vocabulary',
+      'context',
+      'Priestley',
+      'key terms',
+      'socialism',
+      'capitalism',
+    ],
   },
 
   // ╔══════════════════════════════════════════════════════════════════════════╗
@@ -881,7 +959,16 @@ POWER & KINGSHIP
 "Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day" (5.5)
 → Nihilism. Repetition creates weariness. Life is "a tale told by an idiot, full of sound and fury, / Signifying nothing."`,
     printable: true,
-    tags: ['Macbeth', 'quotes', 'themes', 'ambition', 'guilt', 'supernatural', 'power', 'Shakespeare'],
+    tags: [
+      'Macbeth',
+      'quotes',
+      'themes',
+      'ambition',
+      'guilt',
+      'supernatural',
+      'power',
+      'Shakespeare',
+    ],
   },
   {
     id: 'quotes-inspector-calls-by-character',
@@ -890,7 +977,8 @@ POWER & KINGSHIP
     subcategory: 'By Character',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Key quotations from An Inspector Calls organised by character with analytical notes.',
+    description:
+      'Key quotations from An Inspector Calls organised by character with analytical notes.',
     content: `AN INSPECTOR CALLS — KEY QUOTES BY CHARACTER
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -953,7 +1041,15 @@ ERIC
 "My God — I'm not likely to forget" (Act 3)
 → Like Sheila, Eric is changed permanently. Generational hope.`,
     printable: true,
-    tags: ['An Inspector Calls', 'quotes', 'characters', 'Mr Birling', 'Sheila', 'Inspector', 'Priestley'],
+    tags: [
+      'An Inspector Calls',
+      'quotes',
+      'characters',
+      'Mr Birling',
+      'Sheila',
+      'Inspector',
+      'Priestley',
+    ],
   },
   {
     id: 'quotes-christmas-carol-by-stave',
@@ -1019,7 +1115,15 @@ STAVE 5: THE END OF IT
 "He became as good a friend, as good a master, and as good a man, as the good old city knew" [TRANSFORMATION]
 → Anaphora: "as good." Repetition emphasises completeness of change across all social roles.`,
     printable: true,
-    tags: ['A Christmas Carol', 'quotes', 'Dickens', 'themes', 'staves', 'redemption', 'social responsibility'],
+    tags: [
+      'A Christmas Carol',
+      'quotes',
+      'Dickens',
+      'themes',
+      'staves',
+      'redemption',
+      'social responsibility',
+    ],
   },
   {
     id: 'quotes-power-conflict-anthology',
@@ -1028,7 +1132,8 @@ STAVE 5: THE END OF IT
     subcategory: 'By Text',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Key quotations from every Power & Conflict anthology poem with brief analytical notes.',
+    description:
+      'Key quotations from every Power & Conflict anthology poem with brief analytical notes.',
     content: `POWER & CONFLICT ANTHOLOGY — KEY QUOTES
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1063,7 +1168,7 @@ STORM ON THE ISLAND — Seamus Heaney
 REMAINS — Simon Armitage
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "probably armed, possibly not" → "Probably" / "possibly" — uncertainty haunts the soldier.
-"his blood-Loss shadow" → Compound adjective. The dead man is reduced to a stain.
+"his blood-shadow" → Compound adjective. The dead man is reduced to a stain.
 "his bloody life in my bloody hands" → "Bloody" shifts from literal to expressive. Guilt.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1076,11 +1181,20 @@ EXPOSURE — Wilfred Owen
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CHARGE OF THE LIGHT BRIGADE — Alfred Lord Tennyson
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"Into the valley of Death / Rode the six hundred" → Biblical allusion. Dactylic rhythm mimics galloping.
+"Into the valley of Death / Rode the six hundred" → Biblical allusion (Psalm 23). The body is in anapaestic dimeter; the refrain "Rode the six hundred" falls in dactyls — the galloping rhythm mimics horses charging.
 "Theirs not to reason why, / Theirs but to do and die" → Obedience to authority, even unto death.
 "Cannon to right of them, / Cannon to left of them" → Repetition. Surrounded, trapped.`,
     printable: true,
-    tags: ['Power & Conflict', 'poetry', 'quotes', 'AQA', 'anthology', 'Ozymandias', 'London', 'Remains'],
+    tags: [
+      'Power & Conflict',
+      'poetry',
+      'quotes',
+      'AQA',
+      'anthology',
+      'Ozymandias',
+      'London',
+      'Remains',
+    ],
   },
 
   // ╔══════════════════════════════════════════════════════════════════════════╗
@@ -1093,7 +1207,8 @@ CHARGE OF THE LIGHT BRIGADE — Alfred Lord Tennyson
     subcategory: 'Literature',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'A general-purpose grading rubric for Literature essays, aligned to GCSE mark scheme bands.',
+    description:
+      'A general-purpose grading rubric for Literature essays, aligned to GCSE mark scheme bands.',
     content: `LITERATURE ESSAY GRADING RUBRIC
 
 Student: _____________ Date: _______ Text: _____________ Grade: ___
@@ -1147,7 +1262,8 @@ NEXT STEPS:
     subcategory: 'Language',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Teacher grading template for AQA Language Paper 1 Q5 (descriptive/narrative writing).',
+    description:
+      'Teacher grading template for AQA Language Paper 1 Q5 (descriptive/narrative writing).',
     content: `CREATIVE WRITING GRADING RUBRIC — AQA Paper 1 Q5 (40 marks)
 
 Student: _____________ Date: _______ Prompt: _____________ Grade: ___
@@ -1231,7 +1347,8 @@ TARGETS:
     subcategory: 'Spoken Language',
     examBoard: ['AQA', 'Edexcel', 'OCR'],
     yearGroup: ['Year 10', 'Year 11'],
-    description: 'Grading template for the spoken language endorsement (presentation, Q&A, listening).',
+    description:
+      'Grading template for the spoken language endorsement (presentation, Q&A, listening).',
     content: `SPOKEN LANGUAGE ENDORSEMENT — ASSESSMENT SHEET
 
 Student: _____________ Date: _______ Topic: _____________
@@ -1297,7 +1414,8 @@ _____________________________________________`,
     subcategory: 'AQA Literature',
     examBoard: ['AQA'],
     yearGroup: ['Year 11'],
-    description: 'Student-facing revision checklist for AQA Literature Paper 1 (Shakespeare + 19th Century Novel).',
+    description:
+      'Student-facing revision checklist for AQA Literature Paper 1 (Shakespeare + 19th Century Novel).',
     content: `AQA ENGLISH LITERATURE PAPER 1 — REVISION CHECKLIST
 Shakespeare and the 19th-Century Novel | 1 hr 45 min
 
@@ -1360,7 +1478,15 @@ ___ ___________________________________
 
 CONFIDENCE RATING: □ Not confident  □ OK  □ Confident  □ Very confident`,
     printable: true,
-    tags: ['revision', 'checklist', 'AQA', 'Literature', 'Paper 1', 'Shakespeare', '19th century novel'],
+    tags: [
+      'revision',
+      'checklist',
+      'AQA',
+      'Literature',
+      'Paper 1',
+      'Shakespeare',
+      '19th century novel',
+    ],
   },
   {
     id: 'checklist-aqa-lang-p1',
@@ -1369,7 +1495,8 @@ CONFIDENCE RATING: □ Not confident  □ OK  □ Confident  □ Very confident`
     subcategory: 'AQA Language',
     examBoard: ['AQA'],
     yearGroup: ['Year 11'],
-    description: 'Student-facing revision checklist for AQA Language Paper 1 (Creative Reading & Writing).',
+    description:
+      'Student-facing revision checklist for AQA Language Paper 1 (Creative Reading & Writing).',
     content: `AQA ENGLISH LANGUAGE PAPER 1 — REVISION CHECKLIST
 Explorations in Creative Reading and Writing | 1 hr 45 min
 
@@ -1427,7 +1554,15 @@ ACTION PLAN:
 _____________________________________________
 _____________________________________________`,
     printable: true,
-    tags: ['revision', 'checklist', 'AQA', 'Language', 'Paper 1', 'creative reading', 'creative writing'],
+    tags: [
+      'revision',
+      'checklist',
+      'AQA',
+      'Language',
+      'Paper 1',
+      'creative reading',
+      'creative writing',
+    ],
   },
   {
     id: 'checklist-edexcel-lang',
@@ -1490,7 +1625,16 @@ KEY DIFFERENCES FROM AQA:
 
 CONFIDENCE: □ Paper 1 Reading  □ Paper 1 Writing  □ Paper 2 Reading  □ Paper 2 Writing`,
     printable: true,
-    tags: ['revision', 'checklist', 'Edexcel', 'Language', 'Paper 1', 'Paper 2', 'fiction', 'non-fiction'],
+    tags: [
+      'revision',
+      'checklist',
+      'Edexcel',
+      'Language',
+      'Paper 1',
+      'Paper 2',
+      'fiction',
+      'non-fiction',
+    ],
   },
   {
     id: 'checklist-aqa-lit-p2',
@@ -1499,7 +1643,8 @@ CONFIDENCE: □ Paper 1 Reading  □ Paper 1 Writing  □ Paper 2 Reading  □ P
     subcategory: 'AQA Literature',
     examBoard: ['AQA'],
     yearGroup: ['Year 11'],
-    description: 'Student-facing revision checklist for AQA Literature Paper 2 (Modern Text + Poetry).',
+    description:
+      'Student-facing revision checklist for AQA Literature Paper 2 (Modern Text + Poetry).',
     content: `AQA ENGLISH LITERATURE PAPER 2 — REVISION CHECKLIST
 Modern Texts and Poetry | 2 hr 15 min
 
@@ -1568,7 +1713,16 @@ MY TOP 3 PRIORITIES:
 2. _____________________________________________
 3. _____________________________________________`,
     printable: true,
-    tags: ['revision', 'checklist', 'AQA', 'Literature', 'Paper 2', 'modern text', 'poetry', 'unseen poetry'],
+    tags: [
+      'revision',
+      'checklist',
+      'AQA',
+      'Literature',
+      'Paper 2',
+      'modern text',
+      'poetry',
+      'unseen poetry',
+    ],
   },
 
   // ╔══════════════════════════════════════════════════════════════════════════╗
@@ -1685,7 +1839,8 @@ TRACKING: Keep a class leaderboard across the term. Students love the competitio
     subcategory: 'Analysis Skills',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
-    description: '5-minute starter where students identify and analyse techniques in short extracts.',
+    description:
+      '5-minute starter where students identify and analyse techniques in short extracts.',
     content: `TECHNIQUE SPOTTER — 5-MINUTE ANALYSIS WARM-UP
 
 INSTRUCTIONS: Display a short extract (3–5 lines). Students:
@@ -1732,7 +1887,15 @@ Foundation: Identify 2 techniques and name them.
 Higher: Identify techniques AND analyse the effect of one in a full sentence.
 Challenge: Analyse the effect AND suggest why the writer made this choice.`,
     printable: true,
-    tags: ['starter', 'technique', 'analysis', 'language', '5 minutes', 'warm-up', 'identification'],
+    tags: [
+      'starter',
+      'technique',
+      'analysis',
+      'language',
+      '5 minutes',
+      'warm-up',
+      'identification',
+    ],
   },
   {
     id: 'starter-creative-writing-warmup',
@@ -1741,7 +1904,8 @@ Challenge: Analyse the effect AND suggest why the writer made this choice.`,
     subcategory: 'Creative Writing',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
-    description: '5-minute sentence-level creative writing exercises to build fluency and ambition.',
+    description:
+      '5-minute sentence-level creative writing exercises to build fluency and ambition.',
     content: `SENTENCE CRAFTING — 5-MINUTE CREATIVE WRITING WARM-UP
 
 INSTRUCTIONS: Choose ONE challenge per lesson. Students write for 3 minutes, then 2–3 share their best sentence. Celebrate the best with "Sentence of the Day."
@@ -1797,6 +1961,14 @@ Describe this image using EXACTLY 5 sentences:
 
 TEACHER TIP: Collect the best sentences on a "Wall of Wonder" display. Students love seeing their work celebrated and it sets an aspirational standard.`,
     printable: true,
-    tags: ['starter', 'creative writing', 'sentences', '5 minutes', 'warm-up', 'vocabulary', 'craft'],
+    tags: [
+      'starter',
+      'creative writing',
+      'sentences',
+      '5 minutes',
+      'warm-up',
+      'vocabulary',
+      'craft',
+    ],
   },
 ]

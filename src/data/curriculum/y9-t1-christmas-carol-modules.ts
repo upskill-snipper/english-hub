@@ -1,4 +1,4 @@
-import type { CourseModule } from '../courses';
+import type { CourseModule } from '../courses'
 
 export const y9T1ChristmasCarolModules: CourseModule[] = [
   {
@@ -35,11 +35,68 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 <h3>Why This Matters for Your Analysis</h3>
 <p>Context is not a bolt-on. It is not something you add in a separate paragraph. At Year 9 level and beyond, context should be woven into every analytical point you make. When you analyse Scrooge's language, you should be thinking about what attitudes he represents. When you analyse the Cratchit family, you should be thinking about what they reveal about working-class life. The text is a product of its time, and understanding that time transforms a good essay into an outstanding one.</p>`,
     quiz: [
-      { id: 'y9t1-acc-m1-q1', question: 'What was the principle of "less eligibility" in relation to workhouses?', options: ['Workhouse conditions had to be better than outside conditions to attract the poor', 'Workhouse conditions had to be worse than the worst conditions outside to deter people from entering', 'Workhouses were only available to those deemed eligible by a committee', 'Only those earning less than a certain amount could enter a workhouse'], correct: 1, explanation: 'The principle of "less eligibility" meant that life inside the workhouse had to be more miserable than the worst life outside it. This was designed to deter all but the most desperate from seeking relief, essentially punishing people for being poor.' },
-      { id: 'y9t1-acc-m1-q2', question: 'When Scrooge refers to "decreasing the surplus population," which thinker\'s ideas is Dickens alluding to?', options: ['Karl Marx', 'Adam Smith', 'Thomas Malthus', 'Charles Darwin'], correct: 2, explanation: 'Thomas Malthus argued that population growth inevitably outstripped food supply, making poverty and death necessary population controls. Dickens loathed this view and puts Malthusian language in Scrooge\'s mouth to expose its inhumanity -- the Ghost of Christmas Present later throws these words back at Scrooge.' },
-      { id: 'y9t1-acc-m1-q3', question: 'What did Benjamin Disraeli mean by his "two nations" description of Victorian Britain?', options: ['Britain and its colonies were separate civilisations', 'England and Scotland had irreconcilable differences', 'The rich and the poor lived in such separate worlds they might as well be different nations', 'The educated and uneducated could never communicate effectively'], correct: 2, explanation: 'Disraeli identified a fundamental divide between rich and poor in Victorian Britain -- they had no understanding of or sympathy for each other\'s lives. Dickens dramatises this exact divide through Scrooge\'s ignorance of the poverty surrounding him.' },
-      { id: 'y9t1-acc-m1-q4', question: 'Why does Dickens set the novella at Christmas specifically?', options: ['Because ghost stories were traditionally told at Christmas', 'Because Christmas was the only time Victorians had leisure to read', 'Because the Christian values of charity and compassion associated with Christmas expose the hypocrisy of a society that neglects its poor', 'Because Dickens wanted to increase his book sales during the holiday season'], correct: 2, explanation: 'The Christmas setting is a deliberate structural choice. Christmas represents generosity, goodwill, and Christian charity. By setting the story at Christmas, Dickens forces his readers to confront the contradiction between their professed Christian values and their tolerance of mass poverty.' },
-      { id: 'y9t1-acc-m1-q5', question: 'How should context be integrated into an analytical essay at this level?', options: ['In a separate introductory paragraph about Victorian life', 'Woven into every analytical point to show how the text is shaped by its historical moment', 'Only mentioned in the conclusion as background information', 'Listed as bullet points at the start of each paragraph'], correct: 1, explanation: 'At Year 9 and GCSE level, context should not be a separate add-on. It should be embedded within your analysis, showing how historical conditions shaped Dickens\' choices of language, character, and structure. This demonstrates a sophisticated understanding of the relationship between text and context.' },
+      {
+        id: 'y9t1-acc-m1-q1',
+        question: 'What was the principle of "less eligibility" in relation to workhouses?',
+        options: [
+          'Workhouse conditions had to be better than outside conditions to attract the poor',
+          'Workhouse conditions had to be worse than the worst conditions outside to deter people from entering',
+          'Workhouses were only available to those deemed eligible by a committee',
+          'Only those earning less than a certain amount could enter a workhouse',
+        ],
+        correct: 1,
+        explanation:
+          'The principle of "less eligibility" meant that life inside the workhouse had to be more miserable than the worst life outside it. This was designed to deter all but the most desperate from seeking relief, essentially punishing people for being poor.',
+      },
+      {
+        id: 'y9t1-acc-m1-q2',
+        question:
+          'When Scrooge refers to "decreasing the surplus population," which thinker\'s ideas is Dickens alluding to?',
+        options: ['Karl Marx', 'Adam Smith', 'Thomas Malthus', 'Charles Darwin'],
+        correct: 2,
+        explanation:
+          "Thomas Malthus argued that population growth inevitably outstripped food supply, making poverty and death necessary population controls. Dickens loathed this view and puts Malthusian language in Scrooge's mouth to expose its inhumanity -- the Ghost of Christmas Present later throws these words back at Scrooge.",
+      },
+      {
+        id: 'y9t1-acc-m1-q3',
+        question:
+          'What did Benjamin Disraeli mean by his "two nations" description of Victorian Britain?',
+        options: [
+          'Britain and its colonies were separate civilisations',
+          'England and Scotland had irreconcilable differences',
+          'The rich and the poor lived in such separate worlds they might as well be different nations',
+          'The educated and uneducated could never communicate effectively',
+        ],
+        correct: 2,
+        explanation:
+          "Disraeli identified a fundamental divide between rich and poor in Victorian Britain -- they had no understanding of or sympathy for each other's lives. Dickens dramatises this exact divide through Scrooge's ignorance of the poverty surrounding him.",
+      },
+      {
+        id: 'y9t1-acc-m1-q4',
+        question: 'Why does Dickens set the novella at Christmas specifically?',
+        options: [
+          'Because ghost stories were traditionally told at Christmas',
+          'Because Christmas was the only time Victorians had leisure to read',
+          'Because the Christian values of charity and compassion associated with Christmas expose the hypocrisy of a society that neglects its poor',
+          'Because Dickens wanted to increase his book sales during the holiday season',
+        ],
+        correct: 2,
+        explanation:
+          'The Christmas setting is a deliberate structural choice. Christmas represents generosity, goodwill, and Christian charity. By setting the story at Christmas, Dickens forces his readers to confront the contradiction between their professed Christian values and their tolerance of mass poverty.',
+      },
+      {
+        id: 'y9t1-acc-m1-q5',
+        question: 'How should context be integrated into an analytical essay at this level?',
+        options: [
+          'In a separate introductory paragraph about Victorian life',
+          'Woven into every analytical point to show how the text is shaped by its historical moment',
+          'Only mentioned in the conclusion as background information',
+          'Listed as bullet points at the start of each paragraph',
+        ],
+        correct: 1,
+        explanation:
+          "At Year 9 and GCSE level, context should not be a separate add-on. It should be embedded within your analysis, showing how historical conditions shaped Dickens' choices of language, character, and structure. This demonstrates a sophisticated understanding of the relationship between text and context.",
+      },
     ],
   },
   {
@@ -76,18 +133,79 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Use the phrase "Dickens uses... to..." in your essays. For example: "Dickens uses the idealised portrayal of Tiny Tim to elicit sympathy from his middle-class readership, compelling them to recognise their moral obligation to society's most vulnerable." This keeps your analysis focused on authorial intent rather than simple description.</div>
 
 <h3>Publication and Impact</h3>
-<p>Dickens self-published <em>A Christmas Carol</em> in December 1843, pricing it at five shillings to make it affordable to a wide readership. The first edition of six thousand copies sold out by Christmas Eve. The novella was an immediate cultural sensation. It was adapted for the stage within weeks. It fundamentally shaped the way the British public thought about Christmas, charity, and social responsibility.</p>
+<p><em>A Christmas Carol</em> was published by Chapman &amp; Hall on 19 December 1843, priced at five shillings to make it affordable to a wide readership (Dickens funded the production costs himself, including John Leech's hand-coloured illustrations). The first edition of six thousand copies sold out by Christmas Eve. The novella was an immediate cultural sensation. It was adapted for the stage within weeks. It fundamentally shaped the way the British public thought about Christmas, charity, and social responsibility.</p>
 
 <p>More importantly, it entered the language. The phrase "Bah! Humbug!" became shorthand for mean-spirited scepticism. "Scrooge" became a noun meaning a miser. The novella did not single-handedly reform Victorian society, but it contributed to a gradual shift in public attitudes that eventually led to legislative change, improved working conditions, and a growing sense that the wealthy had obligations to the poor.</p>
 
 <h3>Applying This to Your Analysis</h3>
 <p>Understanding Dickens as a social reformer means treating every element of the text as purposeful. Nothing is accidental. The ghosts are not just supernatural beings; they are rhetorical devices. Scrooge is not just a character; he is a representative of a class. The Cratchit family are not just a family; they are an argument for compassion. When you write about the text at this level, you are writing about how fiction can change the world.</p>`,
     quiz: [
-      { id: 'y9t1-acc-m2-q1', question: 'What personal experience shaped Dickens\' understanding of poverty?', options: ['He grew up in a workhouse', 'He was sent to work in a blacking factory as a child when his father was imprisoned for debt', 'He lost his fortune in a business venture as an adult', 'He worked as a teacher in a Ragged School'], correct: 1, explanation: 'At twelve, Dickens was sent to Warren\'s Blacking Factory while his father was in debtors\' prison. This traumatic experience gave him a personal understanding of poverty, shame, and the vulnerability of children that profoundly shaped his writing throughout his career.' },
-      { id: 'y9t1-acc-m2-q2', question: 'Why did Dickens choose to write a story rather than a political pamphlet?', options: ['He believed a story would sell more copies than a pamphlet', 'A pamphlet would only reach those who already agreed, whereas a story could bypass rational objections and appeal to emotions', 'He had no experience of political writing and lacked the expertise', 'His publisher refused to print a pamphlet on poverty'], correct: 1, explanation: 'Dickens realised that fiction could reach people who would never read a political pamphlet. A story works on the emotions -- it makes readers feel, not just think. This was a deliberate rhetorical strategy to maximise the impact of his social criticism.' },
-      { id: 'y9t1-acc-m2-q3', question: 'Why is Scrooge made a wealthy, middle-class character rather than a working-class one?', options: ['Because wealthy characters are more interesting to read about', 'Because Dickens needed a character who could afford to buy Christmas presents at the end', 'Because it forces Dickens\' middle-class readers to see themselves reflected in Scrooge and examine their own attitudes', 'Because working-class characters were not allowed in Victorian literature'], correct: 2, explanation: 'Dickens\' target audience was the middle and upper classes -- the people with the power to change society. By making Scrooge one of them, he forces these readers to confront their own complicity in the suffering of the poor. It is a mirror, not a window.' },
-      { id: 'y9t1-acc-m2-q4', question: 'What is meant by describing the novella as "didactic"?', options: ['It is difficult to understand without a teacher\'s guidance', 'It is intended to teach a moral or political lesson', 'It uses a dictionary-like approach to define key terms', 'It follows a strict academic structure'], correct: 1, explanation: 'A didactic text is one written with the explicit purpose of teaching its audience. A Christmas Carol is didactic because Dickens\' primary aim is not entertainment but moral instruction -- he wants to change how his readers think and behave.' },
-      { id: 'y9t1-acc-m2-q5', question: 'How does Dickens use the Ghost of Christmas Yet to Come as a rhetorical device?', options: ['To provide a satisfying plot twist at the end of the story', 'To appeal to readers\' self-interest by showing the personal consequences of selfishness -- a lonely, unmourned death', 'To introduce a supernatural element that distinguishes the novella from realistic fiction', 'To demonstrate that the future cannot be changed once set in motion'], correct: 1, explanation: 'The Ghost of Christmas Yet to Come is strategically placed to appeal to fear and self-interest. Dickens knows that compassion alone may not motivate change, so he shows Scrooge -- and by extension the reader -- what happens to those who refuse to reform: isolation, contempt, and an unmourned grave.' },
+      {
+        id: 'y9t1-acc-m2-q1',
+        question: "What personal experience shaped Dickens' understanding of poverty?",
+        options: [
+          'He grew up in a workhouse',
+          'He was sent to work in a blacking factory as a child when his father was imprisoned for debt',
+          'He lost his fortune in a business venture as an adult',
+          'He worked as a teacher in a Ragged School',
+        ],
+        correct: 1,
+        explanation:
+          "At twelve, Dickens was sent to Warren's Blacking Factory while his father was in debtors' prison. This traumatic experience gave him a personal understanding of poverty, shame, and the vulnerability of children that profoundly shaped his writing throughout his career.",
+      },
+      {
+        id: 'y9t1-acc-m2-q2',
+        question: 'Why did Dickens choose to write a story rather than a political pamphlet?',
+        options: [
+          'He believed a story would sell more copies than a pamphlet',
+          'A pamphlet would only reach those who already agreed, whereas a story could bypass rational objections and appeal to emotions',
+          'He had no experience of political writing and lacked the expertise',
+          'His publisher refused to print a pamphlet on poverty',
+        ],
+        correct: 1,
+        explanation:
+          'Dickens realised that fiction could reach people who would never read a political pamphlet. A story works on the emotions -- it makes readers feel, not just think. This was a deliberate rhetorical strategy to maximise the impact of his social criticism.',
+      },
+      {
+        id: 'y9t1-acc-m2-q3',
+        question:
+          'Why is Scrooge made a wealthy, middle-class character rather than a working-class one?',
+        options: [
+          'Because wealthy characters are more interesting to read about',
+          'Because Dickens needed a character who could afford to buy Christmas presents at the end',
+          "Because it forces Dickens' middle-class readers to see themselves reflected in Scrooge and examine their own attitudes",
+          'Because working-class characters were not allowed in Victorian literature',
+        ],
+        correct: 2,
+        explanation:
+          "Dickens' target audience was the middle and upper classes -- the people with the power to change society. By making Scrooge one of them, he forces these readers to confront their own complicity in the suffering of the poor. It is a mirror, not a window.",
+      },
+      {
+        id: 'y9t1-acc-m2-q4',
+        question: 'What is meant by describing the novella as "didactic"?',
+        options: [
+          "It is difficult to understand without a teacher's guidance",
+          'It is intended to teach a moral or political lesson',
+          'It uses a dictionary-like approach to define key terms',
+          'It follows a strict academic structure',
+        ],
+        correct: 1,
+        explanation:
+          "A didactic text is one written with the explicit purpose of teaching its audience. A Christmas Carol is didactic because Dickens' primary aim is not entertainment but moral instruction -- he wants to change how his readers think and behave.",
+      },
+      {
+        id: 'y9t1-acc-m2-q5',
+        question: 'How does Dickens use the Ghost of Christmas Yet to Come as a rhetorical device?',
+        options: [
+          'To provide a satisfying plot twist at the end of the story',
+          "To appeal to readers' self-interest by showing the personal consequences of selfishness -- a lonely, unmourned death",
+          'To introduce a supernatural element that distinguishes the novella from realistic fiction',
+          'To demonstrate that the future cannot be changed once set in motion',
+        ],
+        correct: 1,
+        explanation:
+          'The Ghost of Christmas Yet to Come is strategically placed to appeal to fear and self-interest. Dickens knows that compassion alone may not motivate change, so he shows Scrooge -- and by extension the reader -- what happens to those who refuse to reform: isolation, contempt, and an unmourned grave.',
+      },
     ],
   },
   {
@@ -125,11 +243,75 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>Critically, Scrooge does not merely feel differently; he acts differently. He sends a turkey to the Cratchits, raises Bob's salary, donates to charity, and reconciles with his nephew Fred. Dickens insists that transformation must be demonstrated through action, not just sentiment. This is another part of his social message: feeling sorry for the poor is not enough. You must do something.</p>`,
     quiz: [
-      { id: 'y9t1-acc-m3-q1', question: 'How does Dickens invert the convention of pathetic fallacy in his presentation of Scrooge?', options: ['The weather is always sunny around Scrooge to create ironic contrast', 'Rather than the environment reflecting Scrooge\'s mood, Scrooge\'s coldness radiates outward and affects the world around him', 'Scrooge is unaffected by weather because he stays indoors throughout the novella', 'Dickens describes the weather changing to match each ghost\'s personality'], correct: 1, explanation: 'Dickens inverts pathetic fallacy by making Scrooge the source of coldness rather than its victim. External weather has "little influence" on him because his internal coldness is already absolute. This symbolises how the selfishness of the wealthy creates suffering in the broader community.' },
-      { id: 'y9t1-acc-m3-q2', question: 'Why is the Fezziwig scene strategically important to Scrooge\'s transformation?', options: ['It provides comic relief between the darker scenes of the novella', 'It demonstrates that wealth and compassion are compatible, prompting Scrooge to reconsider how he treats Bob Cratchit', 'It shows that Scrooge was always a generous person who simply forgot his values', 'It introduces a character who will reappear in Stave Five to help Scrooge reform'], correct: 1, explanation: 'Fezziwig proves that being a successful businessman does not require being cruel. He is both prosperous and generous. This forces Scrooge to recognise that his own harshness is a choice, not a necessity -- and it creates the first crack in his emotional armour.' },
-      { id: 'y9t1-acc-m3-q3', question: 'What is the rhetorical function of the Ghost of Christmas Yet to Come showing Scrooge two contrasting deaths?', options: ['To prove that death is inevitable regardless of how one lives', 'To create a moral equation: selfishness leads to isolation and contempt, while love leads to mourning and remembrance', 'To demonstrate that Tiny Tim\'s death is entirely Scrooge\'s fault', 'To frighten Scrooge into donating to charity through simple fear'], correct: 1, explanation: 'Dickens juxtaposes Scrooge\'s unmourned death with Tiny Tim\'s deeply mourned death to construct a moral argument. The contrast shows that the quality of your death -- whether you are loved or despised -- is determined by the quality of your life. This appeals to both Scrooge\'s fear and his desire for connection.' },
-      { id: 'y9t1-acc-m3-q4', question: 'Why does Dickens make Scrooge\'s transformation in Stave Five deliberately excessive?', options: ['Because Dickens ran out of space and needed to wrap up the story quickly', 'Because he wants readers to feel the exhilarating possibility of moral rebirth and be inspired to act', 'Because Victorian readers expected unrealistically happy endings in all fiction', 'Because Scrooge\'s guilt makes him overcompensate before returning to his old ways'], correct: 1, explanation: 'The deliberate excess of Stave Five is a rhetorical choice. Dickens wants to show that the rewards of generosity are immediate, overwhelming, and joyful. By making the transformation so exuberant, he inspires his readers to believe that change is not only possible but deeply satisfying.' },
-      { id: 'y9t1-acc-m3-q5', question: 'Why is it significant that Scrooge\'s transformation is shown through actions, not just feelings?', options: ['Because Victorian novels required action-filled endings to maintain reader interest', 'Because Dickens is arguing that genuine moral change must manifest in concrete behaviour -- feeling compassion is not enough without acting on it', 'Because Scrooge is incapable of expressing emotions due to his upbringing', 'Because the ghosts instructed Scrooge to perform specific charitable acts'], correct: 1, explanation: 'Dickens insists that transformation must be demonstrated through deeds: sending the turkey, raising Bob\'s salary, donating to charity. This reinforces his social message that sympathy alone is insufficient -- the wealthy must take tangible action to address poverty and suffering.' },
+      {
+        id: 'y9t1-acc-m3-q1',
+        question:
+          'How does Dickens invert the convention of pathetic fallacy in his presentation of Scrooge?',
+        options: [
+          'The weather is always sunny around Scrooge to create ironic contrast',
+          "Rather than the environment reflecting Scrooge's mood, Scrooge's coldness radiates outward and affects the world around him",
+          'Scrooge is unaffected by weather because he stays indoors throughout the novella',
+          "Dickens describes the weather changing to match each ghost's personality",
+        ],
+        correct: 1,
+        explanation:
+          'Dickens inverts pathetic fallacy by making Scrooge the source of coldness rather than its victim. External weather has "little influence" on him because his internal coldness is already absolute. This symbolises how the selfishness of the wealthy creates suffering in the broader community.',
+      },
+      {
+        id: 'y9t1-acc-m3-q2',
+        question: "Why is the Fezziwig scene strategically important to Scrooge's transformation?",
+        options: [
+          'It provides comic relief between the darker scenes of the novella',
+          'It demonstrates that wealth and compassion are compatible, prompting Scrooge to reconsider how he treats Bob Cratchit',
+          'It shows that Scrooge was always a generous person who simply forgot his values',
+          'It introduces a character who will reappear in Stave Five to help Scrooge reform',
+        ],
+        correct: 1,
+        explanation:
+          'Fezziwig proves that being a successful businessman does not require being cruel. He is both prosperous and generous. This forces Scrooge to recognise that his own harshness is a choice, not a necessity -- and it creates the first crack in his emotional armour.',
+      },
+      {
+        id: 'y9t1-acc-m3-q3',
+        question:
+          'What is the rhetorical function of the Ghost of Christmas Yet to Come showing Scrooge two contrasting deaths?',
+        options: [
+          'To prove that death is inevitable regardless of how one lives',
+          'To create a moral equation: selfishness leads to isolation and contempt, while love leads to mourning and remembrance',
+          "To demonstrate that Tiny Tim's death is entirely Scrooge's fault",
+          'To frighten Scrooge into donating to charity through simple fear',
+        ],
+        correct: 1,
+        explanation:
+          "Dickens juxtaposes Scrooge's unmourned death with Tiny Tim's deeply mourned death to construct a moral argument. The contrast shows that the quality of your death -- whether you are loved or despised -- is determined by the quality of your life. This appeals to both Scrooge's fear and his desire for connection.",
+      },
+      {
+        id: 'y9t1-acc-m3-q4',
+        question:
+          "Why does Dickens make Scrooge's transformation in Stave Five deliberately excessive?",
+        options: [
+          'Because Dickens ran out of space and needed to wrap up the story quickly',
+          'Because he wants readers to feel the exhilarating possibility of moral rebirth and be inspired to act',
+          'Because Victorian readers expected unrealistically happy endings in all fiction',
+          "Because Scrooge's guilt makes him overcompensate before returning to his old ways",
+        ],
+        correct: 1,
+        explanation:
+          'The deliberate excess of Stave Five is a rhetorical choice. Dickens wants to show that the rewards of generosity are immediate, overwhelming, and joyful. By making the transformation so exuberant, he inspires his readers to believe that change is not only possible but deeply satisfying.',
+      },
+      {
+        id: 'y9t1-acc-m3-q5',
+        question:
+          "Why is it significant that Scrooge's transformation is shown through actions, not just feelings?",
+        options: [
+          'Because Victorian novels required action-filled endings to maintain reader interest',
+          'Because Dickens is arguing that genuine moral change must manifest in concrete behaviour -- feeling compassion is not enough without acting on it',
+          'Because Scrooge is incapable of expressing emotions due to his upbringing',
+          'Because the ghosts instructed Scrooge to perform specific charitable acts',
+        ],
+        correct: 1,
+        explanation:
+          "Dickens insists that transformation must be demonstrated through deeds: sending the turkey, raising Bob's salary, donating to charity. This reinforces his social message that sympathy alone is insufficient -- the wealthy must take tangible action to address poverty and suffering.",
+      },
     ],
   },
   {
@@ -172,11 +354,73 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 <h3>The Structural Escalation</h3>
 <p>The three ghosts form a pattern of escalation. The first appeals to personal emotion (nostalgia, regret). The second appeals to social conscience (empathy, guilt). The third appeals to existential fear (mortality, legacy). Dickens is systematically dismantling Scrooge's defences, attacking from different angles. If sentiment does not work, try empathy. If empathy does not work, try terror. This escalating structure ensures that even the most hardened reader -- or the most hardened miser -- will be reached by at least one of the approaches.</p>`,
     quiz: [
-      { id: 'y9t1-acc-m4-q1', question: 'What is the structural function of Marley\'s Ghost appearing before the three Christmas spirits?', options: ['To provide exposition about Scrooge\'s business background', 'To establish the moral stakes and rules of the supernatural world, showing Scrooge the consequences of failing to change', 'To add an additional ghost for dramatic variety', 'To represent Scrooge\'s guilty conscience about his business practices'], correct: 1, explanation: 'Marley\'s appearance establishes the stakes before the transformation begins. His chain shows the physical consequences of a selfish life, and his warning that Scrooge faces the same fate creates urgency. Without Marley, the three ghosts would lack the threat that motivates Scrooge to engage with their lessons.' },
-      { id: 'y9t1-acc-m4-q2', question: 'Why is the Ghost of Christmas Past described as flickering between youth and age?', options: ['Because Dickens could not decide on a single physical description', 'Because it reflects the ambiguous nature of memory itself, which contains both innocence and experience, joy and pain', 'Because it represents the passage of time speeding up during the vision sequences', 'Because Victorian readers expected ghosts to be physically unstable'], correct: 1, explanation: 'The ghost\'s contradictory appearance mirrors the nature of the past: simultaneously distant and vivid, comforting and painful. Its childlike quality connects to innocence and lost youth, while its aged appearance suggests wisdom gained through suffering. This ambiguity reflects the complex emotions that memory evokes.' },
-      { id: 'y9t1-acc-m4-q3', question: 'What do the allegorical children Ignorance and Want represent?', options: ['Scrooge\'s own neglected children whom he abandoned years ago', 'The twin failures of Victorian society: the refusal to educate the poor and the refusal to address their material deprivation', 'The dangers of Christmas excess and overindulgence', 'The spiritual consequences of failing to attend church'], correct: 1, explanation: 'Ignorance and Want are allegorical -- they represent abstract social failures, not real children. Dickens uses them to deliver his most directly political message: society is failing the poor through lack of education and lack of material provision, and this failure threatens everyone.' },
-      { id: 'y9t1-acc-m4-q4', question: 'Why is the Ghost of Christmas Yet to Come silent throughout its stave?', options: ['Because it has no mouth under its shroud', 'Because silence forces Scrooge into active moral reasoning rather than passive reception, reflecting Dickens\' belief that true change must come from within', 'Because the ghost is angry at Scrooge and refuses to communicate', 'Because future events cannot be spoken about in the supernatural world'], correct: 1, explanation: 'The silence is a deliberate rhetorical choice. The previous ghosts explained and guided; this ghost simply shows. Scrooge must interpret the visions and draw his own moral conclusions. This makes his transformation more psychologically authentic -- he is not told what to think but forced to think for himself.' },
-      { id: 'y9t1-acc-m4-q5', question: 'How do the three ghosts form a pattern of rhetorical escalation?', options: ['They get progressively larger in physical size', 'They move from personal emotion (nostalgia) to social conscience (empathy) to existential fear (mortality), systematically dismantling Scrooge\'s defences', 'They represent morning, afternoon, and evening in a single day', 'Each ghost shows increasingly happy visions to build towards the joyful ending'], correct: 1, explanation: 'The three ghosts attack Scrooge\'s resistance from different angles in escalating intensity. If personal memory does not break through, social reality might. If social reality fails, the fear of death will succeed. This systematic approach ensures that every possible defence is addressed.' },
+      {
+        id: 'y9t1-acc-m4-q1',
+        question:
+          "What is the structural function of Marley's Ghost appearing before the three Christmas spirits?",
+        options: [
+          "To provide exposition about Scrooge's business background",
+          'To establish the moral stakes and rules of the supernatural world, showing Scrooge the consequences of failing to change',
+          'To add an additional ghost for dramatic variety',
+          "To represent Scrooge's guilty conscience about his business practices",
+        ],
+        correct: 1,
+        explanation:
+          "Marley's appearance establishes the stakes before the transformation begins. His chain shows the physical consequences of a selfish life, and his warning that Scrooge faces the same fate creates urgency. Without Marley, the three ghosts would lack the threat that motivates Scrooge to engage with their lessons.",
+      },
+      {
+        id: 'y9t1-acc-m4-q2',
+        question:
+          'Why is the Ghost of Christmas Past described as flickering between youth and age?',
+        options: [
+          'Because Dickens could not decide on a single physical description',
+          'Because it reflects the ambiguous nature of memory itself, which contains both innocence and experience, joy and pain',
+          'Because it represents the passage of time speeding up during the vision sequences',
+          'Because Victorian readers expected ghosts to be physically unstable',
+        ],
+        correct: 1,
+        explanation:
+          "The ghost's contradictory appearance mirrors the nature of the past: simultaneously distant and vivid, comforting and painful. Its childlike quality connects to innocence and lost youth, while its aged appearance suggests wisdom gained through suffering. This ambiguity reflects the complex emotions that memory evokes.",
+      },
+      {
+        id: 'y9t1-acc-m4-q3',
+        question: 'What do the allegorical children Ignorance and Want represent?',
+        options: [
+          "Scrooge's own neglected children whom he abandoned years ago",
+          'The twin failures of Victorian society: the refusal to educate the poor and the refusal to address their material deprivation',
+          'The dangers of Christmas excess and overindulgence',
+          'The spiritual consequences of failing to attend church',
+        ],
+        correct: 1,
+        explanation:
+          'Ignorance and Want are allegorical -- they represent abstract social failures, not real children. Dickens uses them to deliver his most directly political message: society is failing the poor through lack of education and lack of material provision, and this failure threatens everyone.',
+      },
+      {
+        id: 'y9t1-acc-m4-q4',
+        question: 'Why is the Ghost of Christmas Yet to Come silent throughout its stave?',
+        options: [
+          'Because it has no mouth under its shroud',
+          "Because silence forces Scrooge into active moral reasoning rather than passive reception, reflecting Dickens' belief that true change must come from within",
+          'Because the ghost is angry at Scrooge and refuses to communicate',
+          'Because future events cannot be spoken about in the supernatural world',
+        ],
+        correct: 1,
+        explanation:
+          'The silence is a deliberate rhetorical choice. The previous ghosts explained and guided; this ghost simply shows. Scrooge must interpret the visions and draw his own moral conclusions. This makes his transformation more psychologically authentic -- he is not told what to think but forced to think for himself.',
+      },
+      {
+        id: 'y9t1-acc-m4-q5',
+        question: 'How do the three ghosts form a pattern of rhetorical escalation?',
+        options: [
+          'They get progressively larger in physical size',
+          "They move from personal emotion (nostalgia) to social conscience (empathy) to existential fear (mortality), systematically dismantling Scrooge's defences",
+          'They represent morning, afternoon, and evening in a single day',
+          'Each ghost shows increasingly happy visions to build towards the joyful ending',
+        ],
+        correct: 1,
+        explanation:
+          "The three ghosts attack Scrooge's resistance from different angles in escalating intensity. If personal memory does not break through, social reality might. If social reality fails, the fear of death will succeed. This systematic approach ensures that every possible defence is addressed.",
+      },
     ],
   },
   {
@@ -228,11 +472,74 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing "This creates an image in the reader's mind" or "This makes the reader feel sad." These are generic responses that could apply to almost any text. Instead, explain specifically what image is created and why it matters in the context of Dickens' argument.</div>`,
     quiz: [
-      { id: 'y9t1-acc-m5-q1', question: 'In the description of Scrooge as "hard and sharp as flint, from which no steel had ever struck out generous fire," how many levels of meaning does the simile operate on?', options: ['One -- it describes his physical appearance', 'Two -- it describes his appearance and personality', 'Four -- physical, emotional, moral, and social', 'It is a simple comparison with no deeper meaning'], correct: 2, explanation: 'The simile operates on four levels simultaneously: physical (cold and hard), emotional (incapable of warmth), moral (no generous impulse), and social (no contribution to community). This density of meaning is characteristic of Dickens\' most effective imagery.' },
-      { id: 'y9t1-acc-m5-q2', question: 'What does Scrooge\'s attempt to extinguish the Ghost of Christmas Past\'s light symbolise?', options: ['His desire to end the ghost\'s visit and return to sleep', 'His attempt to suppress uncomfortable truths about his own history and the moral awareness that memory brings', 'His fear of fire and bright lights', 'His practical concern about the light disturbing his neighbours'], correct: 1, explanation: 'Light symbolises truth and moral awareness throughout the novella. Scrooge\'s attempt to extinguish the ghost\'s light represents his desire to suppress painful self-knowledge. The fact that the light streams out despite his efforts symbolises Dickens\' argument that truth cannot be permanently hidden.' },
-      { id: 'y9t1-acc-m5-q3', question: 'At how many levels does Marley\'s chain function as a symbol?', options: ['One -- it represents guilt', 'Two -- it represents guilt and wealth', 'Three -- it represents guilt literally, self-imprisonment metaphorically, and Dickens\' argument about wealth without social responsibility ideologically', 'It is simply a ghost story prop with no symbolic meaning'], correct: 2, explanation: 'The chain functions at three levels: literally as the burden of guilt, metaphorically as the self-imprisonment caused by greed, and ideologically as Dickens\' argument that wealth hoarded rather than shared becomes a curse. Analysing all three levels demonstrates sophisticated understanding.' },
-      { id: 'y9t1-acc-m5-q4', question: 'Why is the Cratchit family\'s modest dinner described with as much reverence as the Ghost of Christmas Present\'s lavish feast?', options: ['Because Dickens wanted to show that poor people eat the same food as rich people', 'Because Dickens is arguing that the value of food lies in the spirit of sharing, not in quantity -- connecting to his broader argument about the moral use of wealth', 'Because Mrs Cratchit is presented as a better cook than wealthy households', 'Because Dickens needed to fill space and repeated similar descriptions'], correct: 1, explanation: 'Food in the novella is symbolic of generosity and community. The Cratchit dinner is described with warmth because it is shared with love and gratitude. Dickens argues that abundance without generosity is meaningless, while modesty shared with love is precious -- a direct parallel to his argument about wealth and social responsibility.' },
-      { id: 'y9t1-acc-m5-q5', question: 'What is the difference between intermediate and advanced language analysis?', options: ['Advanced analysis uses more technical terminology', 'Advanced analysis names the technique, provides multiple examples, explains effects at multiple levels, and connects to the text\'s wider thematic argument', 'Advanced analysis is simply longer than intermediate analysis', 'Advanced analysis focuses on the reader\'s emotional response'], correct: 1, explanation: 'Advanced analysis is characterised by depth, not length. It identifies the technique precisely, provides textual evidence, explores multiple layers of meaning, and connects the language to the writer\'s broader argument. The key difference is the integration of language analysis with thematic and contextual understanding.' },
+      {
+        id: 'y9t1-acc-m5-q1',
+        question:
+          'In the description of Scrooge as "hard and sharp as flint, from which no steel had ever struck out generous fire," how many levels of meaning does the simile operate on?',
+        options: [
+          'One -- it describes his physical appearance',
+          'Two -- it describes his appearance and personality',
+          'Four -- physical, emotional, moral, and social',
+          'It is a simple comparison with no deeper meaning',
+        ],
+        correct: 2,
+        explanation:
+          "The simile operates on four levels simultaneously: physical (cold and hard), emotional (incapable of warmth), moral (no generous impulse), and social (no contribution to community). This density of meaning is characteristic of Dickens' most effective imagery.",
+      },
+      {
+        id: 'y9t1-acc-m5-q2',
+        question:
+          "What does Scrooge's attempt to extinguish the Ghost of Christmas Past's light symbolise?",
+        options: [
+          "His desire to end the ghost's visit and return to sleep",
+          'His attempt to suppress uncomfortable truths about his own history and the moral awareness that memory brings',
+          'His fear of fire and bright lights',
+          'His practical concern about the light disturbing his neighbours',
+        ],
+        correct: 1,
+        explanation:
+          "Light symbolises truth and moral awareness throughout the novella. Scrooge's attempt to extinguish the ghost's light represents his desire to suppress painful self-knowledge. The fact that the light streams out despite his efforts symbolises Dickens' argument that truth cannot be permanently hidden.",
+      },
+      {
+        id: 'y9t1-acc-m5-q3',
+        question: "At how many levels does Marley's chain function as a symbol?",
+        options: [
+          'One -- it represents guilt',
+          'Two -- it represents guilt and wealth',
+          "Three -- it represents guilt literally, self-imprisonment metaphorically, and Dickens' argument about wealth without social responsibility ideologically",
+          'It is simply a ghost story prop with no symbolic meaning',
+        ],
+        correct: 2,
+        explanation:
+          "The chain functions at three levels: literally as the burden of guilt, metaphorically as the self-imprisonment caused by greed, and ideologically as Dickens' argument that wealth hoarded rather than shared becomes a curse. Analysing all three levels demonstrates sophisticated understanding.",
+      },
+      {
+        id: 'y9t1-acc-m5-q4',
+        question:
+          "Why is the Cratchit family's modest dinner described with as much reverence as the Ghost of Christmas Present's lavish feast?",
+        options: [
+          'Because Dickens wanted to show that poor people eat the same food as rich people',
+          'Because Dickens is arguing that the value of food lies in the spirit of sharing, not in quantity -- connecting to his broader argument about the moral use of wealth',
+          'Because Mrs Cratchit is presented as a better cook than wealthy households',
+          'Because Dickens needed to fill space and repeated similar descriptions',
+        ],
+        correct: 1,
+        explanation:
+          'Food in the novella is symbolic of generosity and community. The Cratchit dinner is described with warmth because it is shared with love and gratitude. Dickens argues that abundance without generosity is meaningless, while modesty shared with love is precious -- a direct parallel to his argument about wealth and social responsibility.',
+      },
+      {
+        id: 'y9t1-acc-m5-q5',
+        question: 'What is the difference between intermediate and advanced language analysis?',
+        options: [
+          'Advanced analysis uses more technical terminology',
+          "Advanced analysis names the technique, provides multiple examples, explains effects at multiple levels, and connects to the text's wider thematic argument",
+          'Advanced analysis is simply longer than intermediate analysis',
+          "Advanced analysis focuses on the reader's emotional response",
+        ],
+        correct: 1,
+        explanation:
+          "Advanced analysis is characterised by depth, not length. It identifies the technique precisely, provides textual evidence, explores multiple layers of meaning, and connects the language to the writer's broader argument. The key difference is the integration of language analysis with thematic and contextual understanding.",
+      },
     ],
   },
   {
@@ -276,11 +583,72 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 <h3>The Limits of Dickens' Vision</h3>
 <p>It is worth noting, for a truly sophisticated analysis, that Dickens' vision of redemption has limitations. He does not advocate systemic political change -- he does not call for new laws, trade unions, or the redistribution of wealth. His solution is individual moral transformation: if enough rich people become generous, poverty will be alleviated. Critics have argued that this is naive -- that charity is not a substitute for justice, and that structural inequality requires structural solutions. Understanding this critique does not undermine your analysis of the text; it enriches it by showing you can evaluate the writer's argument as well as describe it.</p>`,
     quiz: [
-      { id: 'y9t1-acc-m6-q1', question: 'How does Dickens secularise the concept of redemption in the novella?', options: ['By setting the story outside of church and avoiding all religious references', 'By presenting redemption as achievable through empathy and human connection rather than through religious ritual or divine intervention', 'By replacing the Christian God with supernatural ghosts', 'By arguing that redemption is impossible without attending Christmas services'], correct: 1, explanation: 'Dickens draws on the Christian redemption narrative (fall, suffering, repentance, salvation) but achieves Scrooge\'s transformation through empathy and action rather than through prayer or divine forgiveness. This makes the moral message accessible to all readers, regardless of their religious beliefs.' },
-      { id: 'y9t1-acc-m6-q2', question: 'Why does Dickens show young Scrooge as a sensitive, vulnerable child?', options: ['To create sympathy for the villain so readers do not dislike him too much', 'To suggest that his hardness is a defence mechanism born from trauma rather than an innate quality, adding psychological nuance to the redemption narrative', 'To demonstrate that all children are innocent regardless of how they turn out', 'To provide backstory that is unrelated to the main theme of the novella'], correct: 1, explanation: 'Showing young Scrooge as vulnerable adds psychological depth to the redemption theme. Dickens argues that cruelty is often the product of suffering, not inherent evil. This makes the redemption more credible: Scrooge is not changing his nature but recovering a nature that was damaged by painful experiences.' },
-      { id: 'y9t1-acc-m6-q3', question: 'What is the significance of the novella ending with Scrooge\'s public actions rather than his private feelings?', options: ['Because Victorian readers did not value descriptions of internal emotions', 'Because Dickens is arguing that genuine morality must be enacted through behaviour, not merely felt as sentiment -- true redemption changes how you treat others', 'Because Scrooge is incapable of expressing his feelings verbally', 'Because Dickens needed to create a satisfying narrative conclusion'], correct: 1, explanation: 'Dickens insists that redemption is demonstrated through action. Donating money, raising wages, and joining family celebrations are concrete changes that affect other people\'s lives. This reinforces his social message: compassion without action is inadequate, and morality is defined by what you do, not what you feel.' },
-      { id: 'y9t1-acc-m6-q4', question: 'How does Dickens\' moral framework challenge the dominant Victorian ideology?', options: ['By arguing that religion is more important than economics', 'By rejecting the idea that wealth is a reward for merit and poverty a punishment for failure, instead presenting wealth as a moral test that carries obligations', 'By advocating for the abolition of the class system', 'By suggesting that the poor are morally superior to the rich in all circumstances'], correct: 1, explanation: 'Victorian capitalism held that the free market was inherently moral. Dickens rejects this by presenting wealth not as a sign of virtue but as a test of character. Those who hoard wealth fail the test; those who share it pass. This directly challenges the laissez-faire argument that the rich owe nothing to the poor.' },
-      { id: 'y9t1-acc-m6-q5', question: 'What is one valid criticism of Dickens\' vision of social reform in the novella?', options: ['That he wrote too many pages about poverty', 'That his solution relies on individual generosity rather than systemic political change, which critics argue cannot address structural inequality', 'That he should have made Scrooge a working-class character instead', 'That the ghost story format undermines the seriousness of his message'], correct: 1, explanation: 'A sophisticated analysis acknowledges that Dickens\' solution -- individual moral transformation -- does not address the structural causes of poverty. Critics argue that charity is not a substitute for justice, and that inequality requires legislative and systemic change rather than relying on the goodwill of individual wealthy people.' },
+      {
+        id: 'y9t1-acc-m6-q1',
+        question: 'How does Dickens secularise the concept of redemption in the novella?',
+        options: [
+          'By setting the story outside of church and avoiding all religious references',
+          'By presenting redemption as achievable through empathy and human connection rather than through religious ritual or divine intervention',
+          'By replacing the Christian God with supernatural ghosts',
+          'By arguing that redemption is impossible without attending Christmas services',
+        ],
+        correct: 1,
+        explanation:
+          "Dickens draws on the Christian redemption narrative (fall, suffering, repentance, salvation) but achieves Scrooge's transformation through empathy and action rather than through prayer or divine forgiveness. This makes the moral message accessible to all readers, regardless of their religious beliefs.",
+      },
+      {
+        id: 'y9t1-acc-m6-q2',
+        question: 'Why does Dickens show young Scrooge as a sensitive, vulnerable child?',
+        options: [
+          'To create sympathy for the villain so readers do not dislike him too much',
+          'To suggest that his hardness is a defence mechanism born from trauma rather than an innate quality, adding psychological nuance to the redemption narrative',
+          'To demonstrate that all children are innocent regardless of how they turn out',
+          'To provide backstory that is unrelated to the main theme of the novella',
+        ],
+        correct: 1,
+        explanation:
+          'Showing young Scrooge as vulnerable adds psychological depth to the redemption theme. Dickens argues that cruelty is often the product of suffering, not inherent evil. This makes the redemption more credible: Scrooge is not changing his nature but recovering a nature that was damaged by painful experiences.',
+      },
+      {
+        id: 'y9t1-acc-m6-q3',
+        question:
+          "What is the significance of the novella ending with Scrooge's public actions rather than his private feelings?",
+        options: [
+          'Because Victorian readers did not value descriptions of internal emotions',
+          'Because Dickens is arguing that genuine morality must be enacted through behaviour, not merely felt as sentiment -- true redemption changes how you treat others',
+          'Because Scrooge is incapable of expressing his feelings verbally',
+          'Because Dickens needed to create a satisfying narrative conclusion',
+        ],
+        correct: 1,
+        explanation:
+          "Dickens insists that redemption is demonstrated through action. Donating money, raising wages, and joining family celebrations are concrete changes that affect other people's lives. This reinforces his social message: compassion without action is inadequate, and morality is defined by what you do, not what you feel.",
+      },
+      {
+        id: 'y9t1-acc-m6-q4',
+        question: "How does Dickens' moral framework challenge the dominant Victorian ideology?",
+        options: [
+          'By arguing that religion is more important than economics',
+          'By rejecting the idea that wealth is a reward for merit and poverty a punishment for failure, instead presenting wealth as a moral test that carries obligations',
+          'By advocating for the abolition of the class system',
+          'By suggesting that the poor are morally superior to the rich in all circumstances',
+        ],
+        correct: 1,
+        explanation:
+          'Victorian capitalism held that the free market was inherently moral. Dickens rejects this by presenting wealth not as a sign of virtue but as a test of character. Those who hoard wealth fail the test; those who share it pass. This directly challenges the laissez-faire argument that the rich owe nothing to the poor.',
+      },
+      {
+        id: 'y9t1-acc-m6-q5',
+        question: "What is one valid criticism of Dickens' vision of social reform in the novella?",
+        options: [
+          'That he wrote too many pages about poverty',
+          'That his solution relies on individual generosity rather than systemic political change, which critics argue cannot address structural inequality',
+          'That he should have made Scrooge a working-class character instead',
+          'That the ghost story format undermines the seriousness of his message',
+        ],
+        correct: 1,
+        explanation:
+          "A sophisticated analysis acknowledges that Dickens' solution -- individual moral transformation -- does not address the structural causes of poverty. Critics argue that charity is not a substitute for justice, and that inequality requires legislative and systemic change rather than relying on the goodwill of individual wealthy people.",
+      },
     ],
   },
   {
@@ -319,11 +687,72 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 <h3>Collective vs Individual Responsibility</h3>
 <p>One of the tensions within the novella is between individual and collective responsibility. Dickens' explicit solution is individual: Scrooge must choose to be generous. But the text implicitly acknowledges that individual generosity is not enough. The existence of workhouses, prisons, and widespread destitution suggests systemic failures that cannot be solved by one man sending a turkey to one family. Dickens never fully resolves this tension, but recognising it demonstrates critical sophistication in your analysis.</p>`,
     quiz: [
-      { id: 'y9t1-acc-m7-q1', question: 'What does the term "ideological characterisation" mean in relation to Scrooge?', options: ['Scrooge has strong political opinions that he shares throughout the novella', 'Scrooge is constructed to represent and voice a set of upper-class beliefs about poverty, functioning as much as an ideology as a realistic individual', 'Scrooge\'s character is based on a real Victorian politician', 'Scrooge changes his ideology from conservative to liberal during the story'], correct: 1, explanation: 'In Stave One, Scrooge does not speak as a unique individual -- he channels the dominant attitudes of the Victorian upper class towards the poor. His references to prisons, workhouses, and "surplus population" are recognisable ideological positions. Dickens constructs him this way to critique an entire system of belief, not just one man.' },
-      { id: 'y9t1-acc-m7-q2', question: 'Why does Dickens idealise the Cratchit family?', options: ['Because he believed all poor families were genuinely happy', 'To make his argument that poverty does not destroy human goodness, while simultaneously showing that the happiness of the poor is precarious without support from those with power', 'Because realistic portrayals of poverty would have been too disturbing for Victorian readers', 'To contrast them with Scrooge\'s family, who are presented as equally idealised'], correct: 1, explanation: 'The idealisation is strategic. By making the Cratchits loving and warm despite their poverty, Dickens demonstrates that the poor are not morally inferior. But he also shows their happiness is fragile -- Tiny Tim will die without intervention. This dual portrayal argues both for the dignity of the poor and the urgency of support from the wealthy.' },
-      { id: 'y9t1-acc-m7-q3', question: 'Why does the Ghost of Christmas Present say Ignorance is more dangerous than Want?', options: ['Because education is more expensive than food', 'Because an uneducated populace threatens social stability -- without education, the poor may turn to revolution, making Ignorance dangerous to the wealthy as well', 'Because ignorant people commit more crimes than hungry people', 'Because Dickens himself was a teacher and valued education above all else'], correct: 1, explanation: 'Dickens is making a pragmatic argument as well as a moral one. An uneducated population has no path to improvement and may resort to violent uprising -- as had happened in France. By warning that Ignorance leads to "Doom," Dickens appeals to his wealthy readers\' self-interest: address poverty and ignorance now, or face revolution later.' },
-      { id: 'y9t1-acc-m7-q4', question: 'What does the Scrooge-Cratchit employment relationship represent?', options: ['A fair Victorian business arrangement between employer and employee', 'A microcosm of the class system, showing how poverty is not just about money but about the powerlessness created by structural inequality', 'Dickens\' belief that all employers are inherently cruel', 'The ideal partnership between capital and labour that Dickens advocated for'], correct: 1, explanation: 'The relationship illustrates structural power imbalance: Scrooge controls Bob\'s wages, conditions, and time off, while Bob cannot resist without risking his family\'s survival. This is a microcosm of the Victorian class system, where poverty meant total dependence on the goodwill of the powerful.' },
-      { id: 'y9t1-acc-m7-q5', question: 'What tension within the novella does a sophisticated analysis recognise?', options: ['The tension between Dickens wanting the story to be funny and also wanting it to be serious', 'The tension between Dickens\' explicit solution (individual generosity) and the implicit acknowledgement that systemic poverty requires systemic solutions beyond one person\'s charity', 'The tension between the realistic and supernatural elements of the plot', 'The tension between Scrooge\'s desire for money and his desire for love'], correct: 1, explanation: 'Dickens\' stated solution -- individual moral transformation -- does not fully address the structural causes of poverty that the text itself reveals. Recognising this tension between the novella\'s explicit argument and its implicit acknowledgements demonstrates critical sophistication and evaluative thinking.' },
+      {
+        id: 'y9t1-acc-m7-q1',
+        question: 'What does the term "ideological characterisation" mean in relation to Scrooge?',
+        options: [
+          'Scrooge has strong political opinions that he shares throughout the novella',
+          'Scrooge is constructed to represent and voice a set of upper-class beliefs about poverty, functioning as much as an ideology as a realistic individual',
+          "Scrooge's character is based on a real Victorian politician",
+          'Scrooge changes his ideology from conservative to liberal during the story',
+        ],
+        correct: 1,
+        explanation:
+          'In Stave One, Scrooge does not speak as a unique individual -- he channels the dominant attitudes of the Victorian upper class towards the poor. His references to prisons, workhouses, and "surplus population" are recognisable ideological positions. Dickens constructs him this way to critique an entire system of belief, not just one man.',
+      },
+      {
+        id: 'y9t1-acc-m7-q2',
+        question: 'Why does Dickens idealise the Cratchit family?',
+        options: [
+          'Because he believed all poor families were genuinely happy',
+          'To make his argument that poverty does not destroy human goodness, while simultaneously showing that the happiness of the poor is precarious without support from those with power',
+          'Because realistic portrayals of poverty would have been too disturbing for Victorian readers',
+          "To contrast them with Scrooge's family, who are presented as equally idealised",
+        ],
+        correct: 1,
+        explanation:
+          'The idealisation is strategic. By making the Cratchits loving and warm despite their poverty, Dickens demonstrates that the poor are not morally inferior. But he also shows their happiness is fragile -- Tiny Tim will die without intervention. This dual portrayal argues both for the dignity of the poor and the urgency of support from the wealthy.',
+      },
+      {
+        id: 'y9t1-acc-m7-q3',
+        question:
+          'Why does the Ghost of Christmas Present say Ignorance is more dangerous than Want?',
+        options: [
+          'Because education is more expensive than food',
+          'Because an uneducated populace threatens social stability -- without education, the poor may turn to revolution, making Ignorance dangerous to the wealthy as well',
+          'Because ignorant people commit more crimes than hungry people',
+          'Because Dickens himself was a teacher and valued education above all else',
+        ],
+        correct: 1,
+        explanation:
+          'Dickens is making a pragmatic argument as well as a moral one. An uneducated population has no path to improvement and may resort to violent uprising -- as had happened in France. By warning that Ignorance leads to "Doom," Dickens appeals to his wealthy readers\' self-interest: address poverty and ignorance now, or face revolution later.',
+      },
+      {
+        id: 'y9t1-acc-m7-q4',
+        question: 'What does the Scrooge-Cratchit employment relationship represent?',
+        options: [
+          'A fair Victorian business arrangement between employer and employee',
+          'A microcosm of the class system, showing how poverty is not just about money but about the powerlessness created by structural inequality',
+          "Dickens' belief that all employers are inherently cruel",
+          'The ideal partnership between capital and labour that Dickens advocated for',
+        ],
+        correct: 1,
+        explanation:
+          "The relationship illustrates structural power imbalance: Scrooge controls Bob's wages, conditions, and time off, while Bob cannot resist without risking his family's survival. This is a microcosm of the Victorian class system, where poverty meant total dependence on the goodwill of the powerful.",
+      },
+      {
+        id: 'y9t1-acc-m7-q5',
+        question: 'What tension within the novella does a sophisticated analysis recognise?',
+        options: [
+          'The tension between Dickens wanting the story to be funny and also wanting it to be serious',
+          "The tension between Dickens' explicit solution (individual generosity) and the implicit acknowledgement that systemic poverty requires systemic solutions beyond one person's charity",
+          'The tension between the realistic and supernatural elements of the plot',
+          "The tension between Scrooge's desire for money and his desire for love",
+        ],
+        correct: 1,
+        explanation:
+          "Dickens' stated solution -- individual moral transformation -- does not fully address the structural causes of poverty that the text itself reveals. Recognising this tension between the novella's explicit argument and its implicit acknowledgements demonstrates critical sophistication and evaluative thinking.",
+      },
     ],
   },
   {
@@ -378,11 +807,72 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>This narrative voice is structurally important because it creates complicity. The reader is drawn into a relationship with the narrator and, through the narrator, with the text's moral argument. When the narrator condemns Scrooge's behaviour, the reader feels included in that condemnation. When the narrator celebrates Scrooge's transformation, the reader celebrates too. The narrative voice is, in effect, another rhetorical device: it creates an emotional environment in which the reader is predisposed to accept Dickens' argument.</p>`,
     quiz: [
-      { id: 'y9t1-acc-m8-q1', question: 'Why did Dickens choose to write a novella rather than a full-length serialised novel?', options: ['Because he lacked the material for a longer work', 'Because the concentrated, single-sitting format creates immediate emotional impact, matching the urgency of his social message and mirroring Scrooge\'s single-night transformation', 'Because novellas were more popular and profitable than novels in the 1840s', 'Because his publisher set a strict word limit for the project'], correct: 1, explanation: 'The novella form allows Dickens to deliver his argument with concentrated force. The reader absorbs the entire moral journey in one sitting, experiencing the same compressed intensity as Scrooge experiences in one night. A serialised novel would have diluted this impact over months.' },
-      { id: 'y9t1-acc-m8-q2', question: 'Why does Dickens use the term "staves" instead of "chapters"?', options: ['Because he wanted to seem more educated than other authors', 'Because a stave is a section of a musical composition, framing the novella as a carol -- a communal, performed, shared piece of art rather than a private reading experience', 'Because the term "chapter" had not been widely adopted in the 1840s', 'Because each section was originally set to music and performed as a song'], correct: 1, explanation: 'The musical terminology is deliberate. By calling the sections "staves," Dickens connects the novella to its title as a "carol" -- a song meant to be shared. This positions the text as communal rather than private, reinforcing its message about the importance of collective celebration and social connection.' },
-      { id: 'y9t1-acc-m8-q3', question: 'How does the circular structure of the novella reinforce its themes?', options: ['By showing that nothing really changes and Scrooge will return to his old ways', 'By beginning and ending at the same time and place but with a transformed character, the structural contrast emphasises that moral change transforms everything', 'By creating a sense of repetition that mirrors the repetitive nature of Christmas celebrations', 'By allowing readers to re-read the opening after finishing and notice foreshadowing'], correct: 1, explanation: 'The circular structure creates a before-and-after effect. Same time, same place, same character -- but everything is different because Scrooge has changed. The structural contrast between the cold, dark Christmas of Stave One and the warm, joyful Christmas of Stave Five visually reinforces the theme of transformation.' },
-      { id: 'y9t1-acc-m8-q4', question: 'What is the purpose of the conversational narrative voice in the novella?', options: ['To make the text easier to read for less educated audiences', 'To create complicity between narrator and reader, drawing the audience into an emotional relationship that predisposes them to accept Dickens\' moral argument', 'To demonstrate Dickens\' witty personality to his Victorian fans', 'To compensate for the lack of dialogue between characters in the early staves'], correct: 1, explanation: 'The warm, conversational narrator creates intimacy with the reader. This intimacy makes the reader feel included in the narrator\'s moral judgements: when the narrator condemns Scrooge, the reader condemns him too. The narrative voice is itself a rhetorical device that supports Dickens\' persuasive purpose.' },
-      { id: 'y9t1-acc-m8-q5', question: 'How does reading the text as an allegory enhance analysis?', options: ['It allows you to ignore the literal story and focus only on abstract ideas', 'It enables you to interpret characters and events on both literal and symbolic levels simultaneously, showing how Scrooge represents a class, the ghosts represent moral education, and the transformation represents social reform', 'It means treating the text as a coded religious message', 'It requires identifying a single hidden meaning that Dickens concealed within the story'], correct: 1, explanation: 'Allegorical reading means interpreting the text on multiple levels simultaneously. The best analysis moves between the literal (what happens in the story) and the allegorical (what the events represent), showing how each level enriches the other. This demonstrates sophisticated understanding of how fiction constructs meaning.' },
+      {
+        id: 'y9t1-acc-m8-q1',
+        question:
+          'Why did Dickens choose to write a novella rather than a full-length serialised novel?',
+        options: [
+          'Because he lacked the material for a longer work',
+          "Because the concentrated, single-sitting format creates immediate emotional impact, matching the urgency of his social message and mirroring Scrooge's single-night transformation",
+          'Because novellas were more popular and profitable than novels in the 1840s',
+          'Because his publisher set a strict word limit for the project',
+        ],
+        correct: 1,
+        explanation:
+          'The novella form allows Dickens to deliver his argument with concentrated force. The reader absorbs the entire moral journey in one sitting, experiencing the same compressed intensity as Scrooge experiences in one night. A serialised novel would have diluted this impact over months.',
+      },
+      {
+        id: 'y9t1-acc-m8-q2',
+        question: 'Why does Dickens use the term "staves" instead of "chapters"?',
+        options: [
+          'Because he wanted to seem more educated than other authors',
+          'Because a stave is a section of a musical composition, framing the novella as a carol -- a communal, performed, shared piece of art rather than a private reading experience',
+          'Because the term "chapter" had not been widely adopted in the 1840s',
+          'Because each section was originally set to music and performed as a song',
+        ],
+        correct: 1,
+        explanation:
+          'The musical terminology is deliberate. By calling the sections "staves," Dickens connects the novella to its title as a "carol" -- a song meant to be shared. This positions the text as communal rather than private, reinforcing its message about the importance of collective celebration and social connection.',
+      },
+      {
+        id: 'y9t1-acc-m8-q3',
+        question: 'How does the circular structure of the novella reinforce its themes?',
+        options: [
+          'By showing that nothing really changes and Scrooge will return to his old ways',
+          'By beginning and ending at the same time and place but with a transformed character, the structural contrast emphasises that moral change transforms everything',
+          'By creating a sense of repetition that mirrors the repetitive nature of Christmas celebrations',
+          'By allowing readers to re-read the opening after finishing and notice foreshadowing',
+        ],
+        correct: 1,
+        explanation:
+          'The circular structure creates a before-and-after effect. Same time, same place, same character -- but everything is different because Scrooge has changed. The structural contrast between the cold, dark Christmas of Stave One and the warm, joyful Christmas of Stave Five visually reinforces the theme of transformation.',
+      },
+      {
+        id: 'y9t1-acc-m8-q4',
+        question: 'What is the purpose of the conversational narrative voice in the novella?',
+        options: [
+          'To make the text easier to read for less educated audiences',
+          "To create complicity between narrator and reader, drawing the audience into an emotional relationship that predisposes them to accept Dickens' moral argument",
+          "To demonstrate Dickens' witty personality to his Victorian fans",
+          'To compensate for the lack of dialogue between characters in the early staves',
+        ],
+        correct: 1,
+        explanation:
+          "The warm, conversational narrator creates intimacy with the reader. This intimacy makes the reader feel included in the narrator's moral judgements: when the narrator condemns Scrooge, the reader condemns him too. The narrative voice is itself a rhetorical device that supports Dickens' persuasive purpose.",
+      },
+      {
+        id: 'y9t1-acc-m8-q5',
+        question: 'How does reading the text as an allegory enhance analysis?',
+        options: [
+          'It allows you to ignore the literal story and focus only on abstract ideas',
+          'It enables you to interpret characters and events on both literal and symbolic levels simultaneously, showing how Scrooge represents a class, the ghosts represent moral education, and the transformation represents social reform',
+          'It means treating the text as a coded religious message',
+          'It requires identifying a single hidden meaning that Dickens concealed within the story',
+        ],
+        correct: 1,
+        explanation:
+          'Allegorical reading means interpreting the text on multiple levels simultaneously. The best analysis moves between the literal (what happens in the story) and the allegorical (what the events represent), showing how each level enriches the other. This demonstrates sophisticated understanding of how fiction constructs meaning.',
+      },
     ],
   },
   {
@@ -444,11 +934,73 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Making conceptual points that are too vague. "This shows that society was bad" is not a conceptual interpretation. "This suggests that Dickens views the commodification of human life as the ultimate moral failure of industrial capitalism" is. Be specific about what idea you are connecting to and what the text says about that idea.</div>`,
     quiz: [
-      { id: 'y9t1-acc-m9-q1', question: 'What is the key difference between analytical and conceptual interpretation?', options: ['Conceptual interpretation is longer and uses more quotations', 'Analytical interpretation explains how the text works, while conceptual interpretation connects the text to broader ideas about society, humanity, or morality', 'Conceptual interpretation focuses on the writer\'s biography while analytical interpretation focuses on the text', 'There is no real difference -- they are the same skill described in different words'], correct: 1, explanation: 'Analytical interpretation examines how the text creates meaning (techniques, effects, authorial choices). Conceptual interpretation takes this further by connecting the text\'s meaning to broader ideas: what does it say about society, human nature, or moral philosophy? The conceptual layer adds depth and intellectual sophistication.' },
-      { id: 'y9t1-acc-m9-q2', question: 'Why is the word "perhaps" valuable in analytical writing?', options: ['Because it allows you to avoid committing to any argument', 'Because it signals intellectual humility and tentativeness, suggesting you are exploring ideas rather than stating fixed truths -- a hallmark of sophisticated analysis', 'Because examiners give extra marks for every use of the word "perhaps"', 'Because it makes your sentences longer and more impressive'], correct: 1, explanation: '"Perhaps" signals that you are exploring ideas rather than declaring absolute truths. This tentativeness is a sign of intellectual maturity -- it shows you understand that texts can be interpreted in multiple ways and that your reading is one possibility among several.' },
-      { id: 'y9t1-acc-m9-q3', question: 'How does the inversion of wealth and moral worth in the novella function as a conceptual argument?', options: ['It proves that all wealthy people are morally corrupt', 'It challenges the Victorian assumption that wealth equals virtue by showing the richest character as morally bankrupt and the poorest as morally wealthy', 'It suggests that money has no value in any context', 'It demonstrates that Dickens was opposed to all forms of economic activity'], correct: 1, explanation: 'By making Scrooge (wealthy) the most morally impoverished character and the Cratchits (poor) the most morally rich, Dickens inverts the Victorian equation of wealth with virtue. This challenges the prevailing ideology that the rich deserved their success and the poor deserved their suffering.' },
-      { id: 'y9t1-acc-m9-q4', question: 'Which of these is the strongest conceptual interpretation of Tiny Tim\'s "God bless us, every one!"?', options: ['Tim is a religious character who prays regularly', 'The phrase "every one" insists on universal inclusion in a society that divides people into deserving and undeserving, reflecting Dickens\' plea for a society that cares for all its members without exception', 'Tim is being polite because his parents taught him good manners', 'Tim is grateful for his Christmas dinner and wants to thank God for it'], correct: 1, explanation: 'The strongest conceptual interpretation connects Tim\'s words to a broader social argument. "Every one" -- with no exceptions -- challenges a society that categorised the poor as deserving or undeserving. This reading connects the personal moment to Dickens\' wider political argument for universal compassion and social inclusion.' },
-      { id: 'y9t1-acc-m9-q5', question: 'Why is generating multiple interpretations of a single moment valuable?', options: ['Because it fills more space in your essay', 'Because it demonstrates flexible, critical thinking and shows you understand that texts can sustain multiple valid readings simultaneously', 'Because examiners want to see at least four interpretations of every quotation', 'Because one interpretation is always wrong and you need alternatives'], correct: 1, explanation: 'The ability to generate multiple valid readings of a single moment demonstrates intellectual flexibility and critical sophistication. It shows you understand that great literature is ambiguous -- it can mean several things at once -- and that the richest analysis explores this ambiguity rather than reducing it to a single "correct" answer.' },
+      {
+        id: 'y9t1-acc-m9-q1',
+        question: 'What is the key difference between analytical and conceptual interpretation?',
+        options: [
+          'Conceptual interpretation is longer and uses more quotations',
+          'Analytical interpretation explains how the text works, while conceptual interpretation connects the text to broader ideas about society, humanity, or morality',
+          "Conceptual interpretation focuses on the writer's biography while analytical interpretation focuses on the text",
+          'There is no real difference -- they are the same skill described in different words',
+        ],
+        correct: 1,
+        explanation:
+          "Analytical interpretation examines how the text creates meaning (techniques, effects, authorial choices). Conceptual interpretation takes this further by connecting the text's meaning to broader ideas: what does it say about society, human nature, or moral philosophy? The conceptual layer adds depth and intellectual sophistication.",
+      },
+      {
+        id: 'y9t1-acc-m9-q2',
+        question: 'Why is the word "perhaps" valuable in analytical writing?',
+        options: [
+          'Because it allows you to avoid committing to any argument',
+          'Because it signals intellectual humility and tentativeness, suggesting you are exploring ideas rather than stating fixed truths -- a hallmark of sophisticated analysis',
+          'Because examiners give extra marks for every use of the word "perhaps"',
+          'Because it makes your sentences longer and more impressive',
+        ],
+        correct: 1,
+        explanation:
+          '"Perhaps" signals that you are exploring ideas rather than declaring absolute truths. This tentativeness is a sign of intellectual maturity -- it shows you understand that texts can be interpreted in multiple ways and that your reading is one possibility among several.',
+      },
+      {
+        id: 'y9t1-acc-m9-q3',
+        question:
+          'How does the inversion of wealth and moral worth in the novella function as a conceptual argument?',
+        options: [
+          'It proves that all wealthy people are morally corrupt',
+          'It challenges the Victorian assumption that wealth equals virtue by showing the richest character as morally bankrupt and the poorest as morally wealthy',
+          'It suggests that money has no value in any context',
+          'It demonstrates that Dickens was opposed to all forms of economic activity',
+        ],
+        correct: 1,
+        explanation:
+          'By making Scrooge (wealthy) the most morally impoverished character and the Cratchits (poor) the most morally rich, Dickens inverts the Victorian equation of wealth with virtue. This challenges the prevailing ideology that the rich deserved their success and the poor deserved their suffering.',
+      },
+      {
+        id: 'y9t1-acc-m9-q4',
+        question:
+          'Which of these is the strongest conceptual interpretation of Tiny Tim\'s "God bless us, every one!"?',
+        options: [
+          'Tim is a religious character who prays regularly',
+          'The phrase "every one" insists on universal inclusion in a society that divides people into deserving and undeserving, reflecting Dickens\' plea for a society that cares for all its members without exception',
+          'Tim is being polite because his parents taught him good manners',
+          'Tim is grateful for his Christmas dinner and wants to thank God for it',
+        ],
+        correct: 1,
+        explanation:
+          'The strongest conceptual interpretation connects Tim\'s words to a broader social argument. "Every one" -- with no exceptions -- challenges a society that categorised the poor as deserving or undeserving. This reading connects the personal moment to Dickens\' wider political argument for universal compassion and social inclusion.',
+      },
+      {
+        id: 'y9t1-acc-m9-q5',
+        question: 'Why is generating multiple interpretations of a single moment valuable?',
+        options: [
+          'Because it fills more space in your essay',
+          'Because it demonstrates flexible, critical thinking and shows you understand that texts can sustain multiple valid readings simultaneously',
+          'Because examiners want to see at least four interpretations of every quotation',
+          'Because one interpretation is always wrong and you need alternatives',
+        ],
+        correct: 1,
+        explanation:
+          'The ability to generate multiple valid readings of a single moment demonstrates intellectual flexibility and critical sophistication. It shows you understand that great literature is ambiguous -- it can mean several things at once -- and that the richest analysis explores this ambiguity rather than reducing it to a single "correct" answer.',
+      },
     ],
   },
   {
@@ -505,11 +1057,72 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The test for properly integrated context is this: if you can lift your contextual sentence out of the paragraph without affecting the analysis, it is not integrated. Context should be load-bearing -- it should be so intertwined with your analysis that removing it would collapse the paragraph's argument.</div>`,
     quiz: [
-      { id: 'y9t1-acc-m10-q1', question: 'What is the main problem with a "context paragraph" in an essay?', options: ['It takes up too much word count', 'It presents historical information in isolation from the textual analysis, treating context as decorative background rather than functional explanation of the writer\'s choices', 'It is always factually inaccurate', 'It repeats information that the examiner already knows'], correct: 1, explanation: 'A separate context paragraph fails because it treats context as bolt-on background rather than as an integral part of the analysis. Context should explain why the writer makes specific choices of language, character, and structure -- if it does not connect to the text, it serves no analytical purpose.' },
-      { id: 'y9t1-acc-m10-q2', question: 'Which of these phrases best integrates context into analysis?', options: ['In Victorian times, people were very poor.', 'Dickens, writing in the aftermath of the 1834 Poor Law, uses Scrooge\'s dismissal of the charity collectors to channel the callous rhetoric of an establishment that had institutionalised the punishment of poverty.', 'The context of Victorian poverty is important for understanding this novella.', 'Many historians have written about how poor Victorian people were.'], correct: 1, explanation: 'Option B integrates context (the 1834 Poor Law, establishment rhetoric) directly into the analytical sentence about Scrooge. The context is not separate from the analysis -- it explains why Dickens makes Scrooge speak as he does and what his language represents.' },
-      { id: 'y9t1-acc-m10-q3', question: 'What is the "removal test" for checking whether context is properly integrated?', options: ['If removing the context makes your essay shorter, it was unnecessary', 'If you can remove the contextual sentence without affecting the analysis, it is not properly integrated -- context should be load-bearing', 'If the context can be moved to a different paragraph without changing its meaning', 'If the context takes more than two sentences to explain'], correct: 1, explanation: 'The removal test asks: does removing this contextual information collapse the paragraph\'s argument? If the analysis works perfectly without it, the context was decorative rather than functional. Properly integrated context is so intertwined with the analysis that removing it would leave a gap in the reasoning.' },
-      { id: 'y9t1-acc-m10-q4', question: 'What types of context are relevant for analysing A Christmas Carol?', options: ['Only historical facts about the Victorian period', 'Historical, social, political, biographical, and literary context -- any external information that helps explain the text\'s meaning and purpose', 'Only Dickens\' personal biography and childhood experiences', 'Only the political context of the 1834 Poor Law'], correct: 1, explanation: 'Context is multidimensional. Historical context (workhouses, poverty), social context (attitudes to the poor), political context (Malthusian economics), biographical context (Dickens\' childhood), and literary context (ghost story tradition) all contribute to a full understanding of why Dickens makes the choices he does.' },
-      { id: 'y9t1-acc-m10-q5', question: 'Why is Dickens\' solution to poverty described as "paternalistic rather than structural"?', options: ['Because he wanted to become a father figure to the poor', 'Because his solution relies on wealthy individuals choosing to be generous (paternalistic) rather than on changing the political and economic systems that cause poverty (structural)', 'Because he only wrote about fathers and their children in his novels', 'Because he believed the government should act as a parent to all citizens'], correct: 1, explanation: 'Dickens\' model of social change depends on individual wealthy people like Scrooge choosing to be generous -- this is paternalistic because it keeps power in the hands of the wealthy. A structural solution would change the systems (laws, wages, institutions) that create poverty in the first place. Recognising this distinction demonstrates critical sophistication.' },
+      {
+        id: 'y9t1-acc-m10-q1',
+        question: 'What is the main problem with a "context paragraph" in an essay?',
+        options: [
+          'It takes up too much word count',
+          "It presents historical information in isolation from the textual analysis, treating context as decorative background rather than functional explanation of the writer's choices",
+          'It is always factually inaccurate',
+          'It repeats information that the examiner already knows',
+        ],
+        correct: 1,
+        explanation:
+          'A separate context paragraph fails because it treats context as bolt-on background rather than as an integral part of the analysis. Context should explain why the writer makes specific choices of language, character, and structure -- if it does not connect to the text, it serves no analytical purpose.',
+      },
+      {
+        id: 'y9t1-acc-m10-q2',
+        question: 'Which of these phrases best integrates context into analysis?',
+        options: [
+          'In Victorian times, people were very poor.',
+          "Dickens, writing in the aftermath of the 1834 Poor Law, uses Scrooge's dismissal of the charity collectors to channel the callous rhetoric of an establishment that had institutionalised the punishment of poverty.",
+          'The context of Victorian poverty is important for understanding this novella.',
+          'Many historians have written about how poor Victorian people were.',
+        ],
+        correct: 1,
+        explanation:
+          'Option B integrates context (the 1834 Poor Law, establishment rhetoric) directly into the analytical sentence about Scrooge. The context is not separate from the analysis -- it explains why Dickens makes Scrooge speak as he does and what his language represents.',
+      },
+      {
+        id: 'y9t1-acc-m10-q3',
+        question: 'What is the "removal test" for checking whether context is properly integrated?',
+        options: [
+          'If removing the context makes your essay shorter, it was unnecessary',
+          'If you can remove the contextual sentence without affecting the analysis, it is not properly integrated -- context should be load-bearing',
+          'If the context can be moved to a different paragraph without changing its meaning',
+          'If the context takes more than two sentences to explain',
+        ],
+        correct: 1,
+        explanation:
+          "The removal test asks: does removing this contextual information collapse the paragraph's argument? If the analysis works perfectly without it, the context was decorative rather than functional. Properly integrated context is so intertwined with the analysis that removing it would leave a gap in the reasoning.",
+      },
+      {
+        id: 'y9t1-acc-m10-q4',
+        question: 'What types of context are relevant for analysing A Christmas Carol?',
+        options: [
+          'Only historical facts about the Victorian period',
+          "Historical, social, political, biographical, and literary context -- any external information that helps explain the text's meaning and purpose",
+          "Only Dickens' personal biography and childhood experiences",
+          'Only the political context of the 1834 Poor Law',
+        ],
+        correct: 1,
+        explanation:
+          "Context is multidimensional. Historical context (workhouses, poverty), social context (attitudes to the poor), political context (Malthusian economics), biographical context (Dickens' childhood), and literary context (ghost story tradition) all contribute to a full understanding of why Dickens makes the choices he does.",
+      },
+      {
+        id: 'y9t1-acc-m10-q5',
+        question:
+          'Why is Dickens\' solution to poverty described as "paternalistic rather than structural"?',
+        options: [
+          'Because he wanted to become a father figure to the poor',
+          'Because his solution relies on wealthy individuals choosing to be generous (paternalistic) rather than on changing the political and economic systems that cause poverty (structural)',
+          'Because he only wrote about fathers and their children in his novels',
+          'Because he believed the government should act as a parent to all citizens',
+        ],
+        correct: 1,
+        explanation:
+          "Dickens' model of social change depends on individual wealthy people like Scrooge choosing to be generous -- this is paternalistic because it keeps power in the hands of the wealthy. A structural solution would change the systems (laws, wages, institutions) that create poverty in the first place. Recognising this distinction demonstrates critical sophistication.",
+      },
     ],
   },
   {
@@ -578,11 +1191,72 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Starting paragraphs with "Another way Dickens shows..." This turns your essay into a list. Instead, start each paragraph with a topic sentence that develops the argument: "However, Dickens complicates Scrooge's function as ideological villain by revealing the personal trauma that shaped his worldview."</div>`,
     quiz: [
-      { id: 'y9t1-acc-m11-q1', question: 'What is the difference between a thesis and a topic?', options: ['A thesis is longer than a topic', 'A thesis is a specific, debatable argument you defend with evidence, while a topic is simply what the essay is about', 'A thesis comes at the end of the essay while a topic comes at the beginning', 'There is no difference -- they are the same thing'], correct: 1, explanation: 'A topic tells you the subject area (e.g., "social responsibility in A Christmas Carol"). A thesis takes a specific, arguable position on that topic (e.g., "Dickens presents social responsibility as a lived practice requiring concrete action, not merely an abstract principle"). The thesis drives the essay; the topic merely frames it.' },
-      { id: 'y9t1-acc-m11-q2', question: 'What does "building an argument" mean in the context of essay writing?', options: ['Making your paragraphs progressively longer', 'Ensuring each paragraph develops, deepens, or complicates the previous one so the essay moves forward rather than repeating the same idea', 'Including more quotations in each successive paragraph', 'Starting with your weakest point and ending with your strongest'], correct: 1, explanation: 'Building an argument means each paragraph advances the essay\'s central claim. Rather than presenting disconnected observations, each paragraph should develop, complicate, or deepen the argument established by the previous one. The essay should feel like a journey towards a destination, not a list of stops.' },
-      { id: 'y9t1-acc-m11-q3', question: 'Why should you avoid starting paragraphs with "Another way Dickens shows..."?', options: ['Because examiners dislike the word "another"', 'Because it turns the essay into a list of separate observations rather than a developing argument, breaking the logical progression', 'Because it makes your essay too long', 'Because it repeats the question too many times'], correct: 1, explanation: '"Another way Dickens shows..." signals that your points are disconnected -- they could appear in any order. This produces a list, not an argument. Instead, use topic sentences that show how each paragraph develops, complicates, or extends the previous one, creating logical progression.' },
-      { id: 'y9t1-acc-m11-q4', question: 'What should a strong conclusion do?', options: ['Summarise every point made in the essay', 'Arrive at a final insight that feels earned by the essay\'s argument -- not repeating but refining, evaluating, or complicating the thesis', 'Introduce entirely new evidence not discussed in the body', 'State that you have successfully answered the question'], correct: 1, explanation: 'A strong conclusion is a destination, not a summary. It should offer a final insight that the reader could not have reached without reading the whole essay. This might be an evaluation of Dickens\' argument, a conceptual observation, or a reflection on the text\'s limitations or relevance.' },
-      { id: 'y9t1-acc-m11-q5', question: 'Which of these is the strongest opening sentence for an essay on Scrooge and social responsibility?', options: ['In this essay I will discuss how Dickens uses Scrooge to show social responsibility.', 'A Christmas Carol was written by Charles Dickens in 1843 during the Victorian era.', 'Dickens constructs Scrooge not merely as a miser but as the embodiment of a callous ideology that treated poverty as a moral failing rather than a social injustice.', 'Scrooge is a character in A Christmas Carol who starts off mean and becomes nice.'], correct: 2, explanation: 'Option C is the strongest because it immediately states a specific, arguable thesis. It identifies what Scrooge represents (an ideology, not just an individual), what that ideology does (treats poverty as moral failing), and sets up a claim that can be developed across the essay. The other options are either procedural, generic, or oversimplified.' },
+      {
+        id: 'y9t1-acc-m11-q1',
+        question: 'What is the difference between a thesis and a topic?',
+        options: [
+          'A thesis is longer than a topic',
+          'A thesis is a specific, debatable argument you defend with evidence, while a topic is simply what the essay is about',
+          'A thesis comes at the end of the essay while a topic comes at the beginning',
+          'There is no difference -- they are the same thing',
+        ],
+        correct: 1,
+        explanation:
+          'A topic tells you the subject area (e.g., "social responsibility in A Christmas Carol"). A thesis takes a specific, arguable position on that topic (e.g., "Dickens presents social responsibility as a lived practice requiring concrete action, not merely an abstract principle"). The thesis drives the essay; the topic merely frames it.',
+      },
+      {
+        id: 'y9t1-acc-m11-q2',
+        question: 'What does "building an argument" mean in the context of essay writing?',
+        options: [
+          'Making your paragraphs progressively longer',
+          'Ensuring each paragraph develops, deepens, or complicates the previous one so the essay moves forward rather than repeating the same idea',
+          'Including more quotations in each successive paragraph',
+          'Starting with your weakest point and ending with your strongest',
+        ],
+        correct: 1,
+        explanation:
+          "Building an argument means each paragraph advances the essay's central claim. Rather than presenting disconnected observations, each paragraph should develop, complicate, or deepen the argument established by the previous one. The essay should feel like a journey towards a destination, not a list of stops.",
+      },
+      {
+        id: 'y9t1-acc-m11-q3',
+        question: 'Why should you avoid starting paragraphs with "Another way Dickens shows..."?',
+        options: [
+          'Because examiners dislike the word "another"',
+          'Because it turns the essay into a list of separate observations rather than a developing argument, breaking the logical progression',
+          'Because it makes your essay too long',
+          'Because it repeats the question too many times',
+        ],
+        correct: 1,
+        explanation:
+          '"Another way Dickens shows..." signals that your points are disconnected -- they could appear in any order. This produces a list, not an argument. Instead, use topic sentences that show how each paragraph develops, complicates, or extends the previous one, creating logical progression.',
+      },
+      {
+        id: 'y9t1-acc-m11-q4',
+        question: 'What should a strong conclusion do?',
+        options: [
+          'Summarise every point made in the essay',
+          "Arrive at a final insight that feels earned by the essay's argument -- not repeating but refining, evaluating, or complicating the thesis",
+          'Introduce entirely new evidence not discussed in the body',
+          'State that you have successfully answered the question',
+        ],
+        correct: 1,
+        explanation:
+          "A strong conclusion is a destination, not a summary. It should offer a final insight that the reader could not have reached without reading the whole essay. This might be an evaluation of Dickens' argument, a conceptual observation, or a reflection on the text's limitations or relevance.",
+      },
+      {
+        id: 'y9t1-acc-m11-q5',
+        question:
+          'Which of these is the strongest opening sentence for an essay on Scrooge and social responsibility?',
+        options: [
+          'In this essay I will discuss how Dickens uses Scrooge to show social responsibility.',
+          'A Christmas Carol was written by Charles Dickens in 1843 during the Victorian era.',
+          'Dickens constructs Scrooge not merely as a miser but as the embodiment of a callous ideology that treated poverty as a moral failing rather than a social injustice.',
+          'Scrooge is a character in A Christmas Carol who starts off mean and becomes nice.',
+        ],
+        correct: 2,
+        explanation:
+          'Option C is the strongest because it immediately states a specific, arguable thesis. It identifies what Scrooge represents (an ideology, not just an individual), what that ideology does (treats poverty as moral failing), and sets up a claim that can be developed across the essay. The other options are either procedural, generic, or oversimplified.',
+      },
     ],
   },
   {
@@ -666,11 +1340,72 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Practise writing full essays under timed conditions at least three times before the exam. Familiarity with the time pressure reduces anxiety and improves performance. Use a timer, write by hand, and do not look at your notes. Treat each practice as a dress rehearsal.</div>`,
     quiz: [
-      { id: 'y9t1-acc-m12-q1', question: 'How should you allocate your time in a 45-minute essay?', options: ['Start writing immediately and use all 45 minutes for writing', '8-10 minutes planning, 30-32 minutes writing, 3-5 minutes checking', '5 minutes planning, 35 minutes writing, 5 minutes rewriting the introduction', '15 minutes planning, 30 minutes writing, no time for checking'], correct: 1, explanation: 'Effective time allocation gives substantial time to planning (8-10 minutes) because a good plan produces a more coherent essay. Writing time (30-32 minutes) allows four to five developed paragraphs. Checking time (3-5 minutes) catches errors and ensures the argument makes sense.' },
-      { id: 'y9t1-acc-m12-q2', question: 'What is the most important element of an exam essay plan?', options: ['A list of every quotation you have memorised', 'A clear thesis and paragraph topics arranged in an order that builds an argument', 'A detailed outline of the plot from Stave One to Stave Five', 'A list of every technique Dickens uses in the novella'], correct: 1, explanation: 'A plan should map your argument, not list quotations or plot points. The thesis gives your essay direction, and the paragraph order ensures the argument builds in complexity. Each paragraph topic should include a key quotation and the point it supports, arranged to create logical progression.' },
-      { id: 'y9t1-acc-m12-q3', question: 'If you cannot remember the exact words of a quotation in the exam, what should you do?', options: ['Leave a blank space and move on', 'Make up a quotation that sounds like it could be from the text', 'Paraphrase the quotation and describe what Dickens says in your own words', 'Skip the point entirely and write about something else'], correct: 2, explanation: 'Paraphrasing is always better than silence. Writing "Dickens describes Scrooge as cold and hard, comparing him to flint" shows you know the text even if you cannot remember the exact phrasing. This is less effective than direct quotation but far better than leaving a gap or abandoning the point.' },
-      { id: 'y9t1-acc-m12-q4', question: 'What is the biggest risk when writing under timed pressure?', options: ['Using too many quotations', 'Defaulting to plot narration instead of analysis -- writing about what happens rather than how and why Dickens makes it happen', 'Writing too neatly and running out of time', 'Using too much contextual information'], correct: 1, explanation: 'Under pressure, students often retreat to their comfort zone: retelling the story. But examiners give marks for analysis (how does Dickens use language/structure?), not description (what happens?). If you find yourself writing "and then..." you are narrating. Refocus on the question and analyse specific language choices.' },
-      { id: 'y9t1-acc-m12-q5', question: 'Why is three well-developed paragraphs better than five rushed ones?', options: ['Because examiners prefer shorter essays', 'Because quality of analysis matters more than quantity -- three paragraphs with deep language analysis, integrated context, and conceptual thinking score higher than five paragraphs of superficial observation', 'Because five paragraphs will always exceed the word limit', 'Because the introduction and conclusion already count as two paragraphs'], correct: 1, explanation: 'Marks are awarded for the quality of analysis, not the number of points. A paragraph that zooms in on specific language, integrates context purposefully, and connects to wider ideas is worth far more than several paragraphs that merely name techniques or summarise the plot. Depth always beats breadth.' },
+      {
+        id: 'y9t1-acc-m12-q1',
+        question: 'How should you allocate your time in a 45-minute essay?',
+        options: [
+          'Start writing immediately and use all 45 minutes for writing',
+          '8-10 minutes planning, 30-32 minutes writing, 3-5 minutes checking',
+          '5 minutes planning, 35 minutes writing, 5 minutes rewriting the introduction',
+          '15 minutes planning, 30 minutes writing, no time for checking',
+        ],
+        correct: 1,
+        explanation:
+          'Effective time allocation gives substantial time to planning (8-10 minutes) because a good plan produces a more coherent essay. Writing time (30-32 minutes) allows four to five developed paragraphs. Checking time (3-5 minutes) catches errors and ensures the argument makes sense.',
+      },
+      {
+        id: 'y9t1-acc-m12-q2',
+        question: 'What is the most important element of an exam essay plan?',
+        options: [
+          'A list of every quotation you have memorised',
+          'A clear thesis and paragraph topics arranged in an order that builds an argument',
+          'A detailed outline of the plot from Stave One to Stave Five',
+          'A list of every technique Dickens uses in the novella',
+        ],
+        correct: 1,
+        explanation:
+          'A plan should map your argument, not list quotations or plot points. The thesis gives your essay direction, and the paragraph order ensures the argument builds in complexity. Each paragraph topic should include a key quotation and the point it supports, arranged to create logical progression.',
+      },
+      {
+        id: 'y9t1-acc-m12-q3',
+        question:
+          'If you cannot remember the exact words of a quotation in the exam, what should you do?',
+        options: [
+          'Leave a blank space and move on',
+          'Make up a quotation that sounds like it could be from the text',
+          'Paraphrase the quotation and describe what Dickens says in your own words',
+          'Skip the point entirely and write about something else',
+        ],
+        correct: 2,
+        explanation:
+          'Paraphrasing is always better than silence. Writing "Dickens describes Scrooge as cold and hard, comparing him to flint" shows you know the text even if you cannot remember the exact phrasing. This is less effective than direct quotation but far better than leaving a gap or abandoning the point.',
+      },
+      {
+        id: 'y9t1-acc-m12-q4',
+        question: 'What is the biggest risk when writing under timed pressure?',
+        options: [
+          'Using too many quotations',
+          'Defaulting to plot narration instead of analysis -- writing about what happens rather than how and why Dickens makes it happen',
+          'Writing too neatly and running out of time',
+          'Using too much contextual information',
+        ],
+        correct: 1,
+        explanation:
+          'Under pressure, students often retreat to their comfort zone: retelling the story. But examiners give marks for analysis (how does Dickens use language/structure?), not description (what happens?). If you find yourself writing "and then..." you are narrating. Refocus on the question and analyse specific language choices.',
+      },
+      {
+        id: 'y9t1-acc-m12-q5',
+        question: 'Why is three well-developed paragraphs better than five rushed ones?',
+        options: [
+          'Because examiners prefer shorter essays',
+          'Because quality of analysis matters more than quantity -- three paragraphs with deep language analysis, integrated context, and conceptual thinking score higher than five paragraphs of superficial observation',
+          'Because five paragraphs will always exceed the word limit',
+          'Because the introduction and conclusion already count as two paragraphs',
+        ],
+        correct: 1,
+        explanation:
+          'Marks are awarded for the quality of analysis, not the number of points. A paragraph that zooms in on specific language, integrates context purposefully, and connects to wider ideas is worth far more than several paragraphs that merely name techniques or summarise the plot. Depth always beats breadth.',
+      },
     ],
   },
-];
+]

@@ -145,6 +145,11 @@ const HELP_CATEGORIES: HelpCategory[] = [
         answer:
           'Yes. You can filter practice questions and revision materials by topic, question type, or difficulty level. Your dashboard also highlights weak areas based on your mock exam and practice results, so you know where to focus.',
       },
+      {
+        question: 'Where can I see the most common mistakes that cost marks?',
+        answer:
+          'We have two guides. Visit /revision/common-errors for the 30 most common factual errors — misquotations, wrong contexts, anthology version mix-ups — verified against board specifications and primary sources. For technique and craft mistakes (retelling the story, no terminology, vague effects), see /revision/exam-technique/common-mistakes.',
+      },
     ],
   },
   {
@@ -373,13 +378,24 @@ export default function HelpCentrePage() {
       <section className="mt-12 rounded-xl border border-border bg-card p-8">
         <h2 className="text-xl font-semibold text-foreground">Response times</h2>
         <ul className="mt-4 space-y-2 text-sm text-muted-foreground list-disc pl-5">
-          <li><strong className="text-foreground">Student / parent:</strong> within 1 working day</li>
-          <li><strong className="text-foreground">Teacher:</strong> within 4 working hours (UK school hours, Mon-Fri)</li>
-          <li><strong className="text-foreground">School admin:</strong> within 2 hours during UK school hours (priority queue)</li>
+          <li>
+            <strong className="text-foreground">Student / parent:</strong> within 1 working day
+          </li>
+          <li>
+            <strong className="text-foreground">Teacher:</strong> within 4 working hours (UK school
+            hours, Mon-Fri)
+          </li>
+          <li>
+            <strong className="text-foreground">School admin:</strong> within 2 hours during UK
+            school hours (priority queue)
+          </li>
           <li>
             <strong className="text-foreground">Security / vulnerability disclosures:</strong>{' '}
             acknowledgement within 24 hours, full triage within 5 working days —{' '}
-            <a href="mailto:security@theenglishhub.app" className="text-primary underline hover:text-primary/80">
+            <a
+              href="mailto:security@theenglishhub.app"
+              className="text-primary underline hover:text-primary/80"
+            >
               security@theenglishhub.app
             </a>
           </li>

@@ -460,22 +460,202 @@ const comparisons = [
 ]
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'ise-1', question: 'What is the poem about on one level?', type: 'multiple-choice', options: ['Walking a dog on the beach', 'A walk to the sea that becomes an encounter with a powerful, pursuing force — often read as a metaphor for desire, death, or nature\'s power', 'A boat trip', 'Fishing'], correctIndex: 1, explanation: 'On the surface, the speaker walks to the sea. But the sea pursues her aggressively, and she barely escapes. The poem is widely interpreted as a metaphor for sexual desire, death, or overwhelming power.', topic: 'Meaning', difficulty: 'foundation' },
-  { id: 'ise-2', question: 'How is the sea personified?', type: 'multiple-choice', options: ['As a gentle friend', 'As an aggressive, pursuing masculine force that advances on the speaker', 'As a mother', 'As a child'], correctIndex: 1, explanation: 'The sea is personified as a masculine force that pursues the female speaker — advancing, rising, threatening to consume her. It can be read as a metaphor for desire or death.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'ise-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Ballad form (common metre) with ABCB rhyme — Dickinson\'s characteristic form', 'Blank verse', 'Free verse'], correctIndex: 1, explanation: 'Dickinson uses her characteristic ballad/hymn form with common metre (alternating 8 and 6 syllable lines) and ABCB rhyme — deceptively simple for complex content.', topic: 'Structure', difficulty: 'foundation' },
-  { id: 'ise-4', question: 'What does the tide\'s retreat at the end suggest?', type: 'multiple-choice', options: ['Normal tidal patterns', 'The speaker escapes the overwhelming force — she retreats to safety (the solid town) before being consumed', 'The sea is tired', 'It is evening'], correctIndex: 1, explanation: 'The speaker escapes by retreating to the town — solid, human territory. The sea cannot follow her there. This suggests reason or civilisation provides a boundary against overwhelming natural or emotional forces.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'ise-5', question: 'Who was Emily Dickinson?', type: 'multiple-choice', options: ['A Victorian travel writer', 'An American poet (1830-1886) who lived in near-total seclusion and published almost nothing in her lifetime', 'A British war poet', 'An Irish novelist'], correctIndex: 1, explanation: 'Emily Dickinson (1830-1886) lived a reclusive life in Amherst, Massachusetts. She wrote nearly 1,800 poems but published fewer than a dozen in her lifetime.', topic: 'Context', difficulty: 'higher' },
-  { id: 'ise-6', question: 'What does "He followed — Loss Loss close behind" suggest about the sea?', type: 'multiple-choice', options: ['The sea is friendly', 'The pursuit is relentless and threatening — the sea/masculine force refuses to let the speaker go', 'The speaker is slow', 'It describes a dog following'], correctIndex: 1, explanation: 'The sea\'s pursuit becomes increasingly aggressive. "Close behind" suggests an inescapable, predatory force — the speaker is being hunted by something she cannot outrun.', topic: 'Language', difficulty: 'higher' },
-  { id: 'ise-7', question: 'How does the poem\'s simple form contrast with its content?', type: 'multiple-choice', options: ['There is no contrast', 'The nursery-rhyme-like form disguises deeply complex themes of desire, power, and mortality', 'The content is also simple', 'The form is complex'], correctIndex: 1, explanation: 'Dickinson\'s characteristic technique: the hymn-like, childlike form (familiar, comforting) contains disturbing, adult content about overwhelming power, sexual threat, or death.', topic: 'Structure', difficulty: 'grade-9' },
-  { id: 'ise-8', question: 'What does the mermaids and frigates imagery suggest?', type: 'multiple-choice', options: ['The speaker is at a harbour', 'The sea is imagined as a realm of fantasy and danger — both enchanting and threatening', 'She is reading a book', 'The navy is nearby'], correctIndex: 1, explanation: 'Mermaids (enchantment) and frigates (military power) combine fantasy with threat. The sea is simultaneously alluring and dangerous — like desire itself.', topic: 'Language', difficulty: 'grade-9' },
-  { id: 'ise-9', question: 'What is the poem\'s attitude to the overwhelming force?', type: 'multiple-choice', options: ['Pure terror', 'Ambivalent — the speaker is both attracted to and frightened by the sea\'s power, creating tension between desire and self-preservation', 'Pure joy', 'Indifference'], correctIndex: 1, explanation: 'The poem is crucially ambivalent. The speaker is both fascinated and terrified. This tension between attraction and self-preservation is what gives the poem its power.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'ise-10', question: 'What does the "Solid Town" represent?', type: 'multiple-choice', options: ['A specific place', 'Safety, civilisation, and rational control — a boundary that keeps the overwhelming force at bay', 'A prison', 'Loneliness'], correctIndex: 1, explanation: 'The "Solid Town" represents human civilisation, rational control, and safety. It is the boundary that the sea (nature/desire/death) cannot cross — the speaker retreats to solid ground.', topic: 'Language', difficulty: 'grade-9' },
+  {
+    id: 'ise-1',
+    question: 'What is the poem about on one level?',
+    type: 'multiple-choice',
+    options: [
+      'Walking a dog on the beach',
+      "A walk to the sea that becomes an encounter with a powerful, pursuing force — often read as a metaphor for desire, death, or nature's power",
+      'A boat trip',
+      'Fishing',
+    ],
+    correctIndex: 1,
+    explanation:
+      'On the surface, the speaker walks to the sea. But the sea pursues her aggressively, and she barely escapes. The poem is widely interpreted as a metaphor for sexual desire, death, or overwhelming power.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ise-2',
+    question: 'How is the sea personified?',
+    type: 'multiple-choice',
+    options: [
+      'As a gentle friend',
+      'As an aggressive, pursuing masculine force that advances on the speaker',
+      'As a mother',
+      'As a child',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The sea is personified as a masculine force that pursues the female speaker — advancing, rising, threatening to consume her. It can be read as a metaphor for desire or death.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ise-3',
+    question: 'What form does the poem use?',
+    type: 'multiple-choice',
+    options: [
+      'A sonnet',
+      "Ballad form (common metre) with ABCB rhyme — Dickinson's characteristic form",
+      'Blank verse',
+      'Free verse',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Dickinson uses her characteristic ballad/hymn form with common metre (alternating 8 and 6 syllable lines) and ABCB rhyme — deceptively simple for complex content.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ise-4',
+    question: "What does the tide's retreat at the end suggest?",
+    type: 'multiple-choice',
+    options: [
+      'Normal tidal patterns',
+      'The speaker escapes the overwhelming force — she retreats to safety (the solid town) before being consumed',
+      'The sea is tired',
+      'It is evening',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The speaker escapes by retreating to the town — solid, human territory. The sea cannot follow her there. This suggests reason or civilisation provides a boundary against overwhelming natural or emotional forces.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ise-5',
+    question: 'Who was Emily Dickinson?',
+    type: 'multiple-choice',
+    options: [
+      'A Victorian travel writer',
+      'An American poet (1830-1886) who lived in near-total seclusion and published almost nothing in her lifetime',
+      'A British war poet',
+      'An Irish novelist',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Emily Dickinson (1830-1886) lived a reclusive life in Amherst, Massachusetts. She wrote nearly 1,800 poems but published fewer than a dozen in her lifetime.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ise-6',
+    question: 'What does "He followed — close behind" suggest about the sea?',
+    type: 'multiple-choice',
+    options: [
+      'The sea is friendly',
+      'The pursuit is relentless and threatening — the sea/masculine force refuses to let the speaker go',
+      'The speaker is slow',
+      'It describes a dog following',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The sea\'s pursuit becomes increasingly aggressive. "Close behind" suggests an inescapable, predatory force — the speaker is being hunted by something she cannot outrun.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ise-7',
+    question: "How does the poem's simple form contrast with its content?",
+    type: 'multiple-choice',
+    options: [
+      'There is no contrast',
+      'The nursery-rhyme-like form disguises deeply complex themes of desire, power, and mortality',
+      'The content is also simple',
+      'The form is complex',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Dickinson's characteristic technique: the hymn-like, childlike form (familiar, comforting) contains disturbing, adult content about overwhelming power, sexual threat, or death.",
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ise-8',
+    question: 'What does the mermaids and frigates imagery suggest?',
+    type: 'multiple-choice',
+    options: [
+      'The speaker is at a harbour',
+      'The sea is imagined as a realm of fantasy and danger — both enchanting and threatening',
+      'She is reading a book',
+      'The navy is nearby',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Mermaids (enchantment) and frigates (military power) combine fantasy with threat. The sea is simultaneously alluring and dangerous — like desire itself.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ise-9',
+    question: "What is the poem's attitude to the overwhelming force?",
+    type: 'multiple-choice',
+    options: [
+      'Pure terror',
+      "Ambivalent — the speaker is both attracted to and frightened by the sea's power, creating tension between desire and self-preservation",
+      'Pure joy',
+      'Indifference',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The poem is crucially ambivalent. The speaker is both fascinated and terrified. This tension between attraction and self-preservation is what gives the poem its power.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ise-10',
+    question: 'What does the "Solid Town" represent?',
+    type: 'multiple-choice',
+    options: [
+      'A specific place',
+      'Safety, civilisation, and rational control — a boundary that keeps the overwhelming force at bay',
+      'A prison',
+      'Loneliness',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The "Solid Town" represents human civilisation, rational control, and safety. It is the boundary that the sea (nature/desire/death) cannot cross — the speaker retreats to solid ground.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'I Started Early explores the power of nature (or desire/death), the tension between attraction and self-preservation, and boundaries between the wild and civilised.', keyPoints: ['The sea as overwhelming force — nature, desire, or death', 'Pursuit — the speaker is hunted by something she cannot control', 'Ambivalence — both attracted to and frightened by the force', 'Escape to the "Solid Town" — civilisation as safety'] },
-  { topic: 'Language & Imagery', summary: 'Dickinson uses personification of the sea as a masculine pursuer, maritime imagery, and deceptively simple language for complex themes.', keyPoints: ['Sea personified as aggressive masculine force', 'Mermaids and frigates — enchantment and military threat', '"He followed — close behind" — relentless pursuit', 'Simple diction containing complex, disturbing ideas'] },
-  { topic: 'Structure & Form', summary: 'Ballad/hymn form with common metre — the deceptively simple, nursery-rhyme-like structure disguises dark, complex content.', keyPoints: ['Common metre (8/6 syllable lines) — childlike simplicity', 'ABCB rhyme — familiar, hymn-like pattern', 'Simple form for complex content — Dickinson\'s signature technique', 'Narrative progression — approach, encounter, retreat, escape'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      'I Started Early explores the power of nature (or desire/death), the tension between attraction and self-preservation, and boundaries between the wild and civilised.',
+    keyPoints: [
+      'The sea as overwhelming force — nature, desire, or death',
+      'Pursuit — the speaker is hunted by something she cannot control',
+      'Ambivalence — both attracted to and frightened by the force',
+      'Escape to the "Solid Town" — civilisation as safety',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary:
+      'Dickinson uses personification of the sea as a masculine pursuer, maritime imagery, and deceptively simple language for complex themes.',
+    keyPoints: [
+      'Sea personified as aggressive masculine force',
+      'Mermaids and frigates — enchantment and military threat',
+      '"He followed — close behind" — relentless pursuit',
+      'Simple diction containing complex, disturbing ideas',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary:
+      'Ballad/hymn form with common metre — the deceptively simple, nursery-rhyme-like structure disguises dark, complex content.',
+    keyPoints: [
+      'Common metre (8/6 syllable lines) — childlike simplicity',
+      'ABCB rhyme — familiar, hymn-like pattern',
+      "Simple form for complex content — Dickinson's signature technique",
+      'Narrative progression — approach, encounter, retreat, escape',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -493,11 +673,14 @@ export default function IStartedEarlyPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Edexcel Poetry", url: "https://theenglishhub.app/revision/poetry/edexcel" },
-          { name: "I Started Early — Took My Dog", url: "https://theenglishhub.app/revision/poetry/edexcel/i-started-early-took-my-dog" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'Edexcel Poetry', url: 'https://theenglishhub.app/revision/poetry/edexcel' },
+          {
+            name: 'I Started Early — Took My Dog',
+            url: 'https://theenglishhub.app/revision/poetry/edexcel/i-started-early-took-my-dog',
+          },
         ]}
       />
       <div>
@@ -522,7 +705,9 @@ export default function IStartedEarlyPage() {
             <p className="text-body-sm text-muted-foreground">
               Emily Dickinson &middot; Edexcel Time and Place anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Edexcel</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              Edexcel
+            </Badge>
           </div>
         </div>
       </div>
@@ -549,7 +734,8 @@ export default function IStartedEarlyPage() {
           <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings with I started Early &ndash; Took my Dog from the Edexcel Time and Place cluster.
+          Strong pairings with I started Early &ndash; Took my Dog from the Edexcel Time and Place
+          cluster.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -581,10 +767,9 @@ export default function IStartedEarlyPage() {
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[0.7rem] leading-relaxed text-muted-foreground">
         <p>
-          &ldquo;I started Early &ndash; Took my Dog&rdquo; by Emily Dickinson
-          (c. 1862) is in the public domain. All quotations on this page are
-          used for the purpose of criticism, review and educational study under
-          fair dealing (s.30 Copyright, Designs and Patents Act 1988).
+          &ldquo;I started Early &ndash; Took my Dog&rdquo; by Emily Dickinson (c. 1862) is in the
+          public domain. All quotations on this page are used for the purpose of criticism, review
+          and educational study under fair dealing (s.30 Copyright, Designs and Patents Act 1988).
         </p>
       </footer>
     </div>

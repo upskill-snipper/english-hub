@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { useState, useMemo } from "react";
-import Link from "next/link";
+import { useState, useMemo } from 'react'
+import Link from 'next/link'
 
 /* ================================================================== */
 /*  Reusable Components                                                */
@@ -15,14 +15,14 @@ function Section({
   children,
   defaultOpen = false,
 }: {
-  id: string;
-  title: string;
-  poet: string;
-  studyHref?: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
+  id: string
+  title: string
+  poet: string
+  studyHref?: string
+  children: React.ReactNode
+  defaultOpen?: boolean
 }) {
-  const [open, setOpen] = useState(defaultOpen);
+  const [open, setOpen] = useState(defaultOpen)
   return (
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
@@ -39,7 +39,7 @@ function Section({
           </div>
         </div>
         <svg
-          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? 'rotate-180' : ''}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -58,8 +58,18 @@ function Section({
                 className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
               >
                 Study this poem in depth
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
                 </svg>
               </Link>
             </div>
@@ -67,7 +77,7 @@ function Section({
         </div>
       )}
     </div>
-  );
+  )
 }
 
 function SubSection({ title, children }: { title: string; children: React.ReactNode }) {
@@ -76,7 +86,7 @@ function SubSection({ title, children }: { title: string; children: React.ReactN
       <h3 className="text-base font-bold text-primary mb-2">{title}</h3>
       {children}
     </div>
-  );
+  )
 }
 
 function Quote({
@@ -84,9 +94,9 @@ function Quote({
   technique,
   analysis,
 }: {
-  text: string;
-  technique: string;
-  analysis: string;
+  text: string
+  technique: string
+  analysis: string
 }) {
   return (
     <div className="rounded-lg border-l-4 border-accent bg-primary/5 p-4">
@@ -94,7 +104,7 @@ function Quote({
       <p className="mt-1 text-xs font-semibold text-primary">{technique}</p>
       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{analysis}</p>
     </div>
-  );
+  )
 }
 
 function ThemeTag({ theme }: { theme: string }) {
@@ -102,7 +112,7 @@ function ThemeTag({ theme }: { theme: string }) {
     <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
       {theme}
     </span>
-  );
+  )
 }
 
 function ComparisonSuggestion({ poem, reason }: { poem: string; reason: string }) {
@@ -110,7 +120,7 @@ function ComparisonSuggestion({ poem, reason }: { poem: string; reason: string }
     <li className="text-sm text-muted-foreground">
       <span className="font-semibold text-foreground">{poem}</span> &mdash; {reason}
     </li>
-  );
+  )
 }
 
 /* ================================================================== */
@@ -118,86 +128,290 @@ function ComparisonSuggestion({ poem, reason }: { poem: string; reason: string }
 /* ================================================================== */
 
 const COMPARISON_DATA: {
-  poem: string;
-  poet: string;
-  type: string;
-  themes: string;
-  tone: string;
-  form: string;
+  poem: string
+  poet: string
+  type: string
+  themes: string
+  tone: string
+  form: string
 }[] = [
-  { poem: "Ozymandias", poet: "Shelley", type: "Romantic", themes: "Power of nature, pride, transience", tone: "Ironic, mocking", form: "Irregular sonnet, iambic pentameter" },
-  { poem: "London", poet: "Blake", type: "Romantic", themes: "Power of humans, corruption, suffering", tone: "Angry, despairing", form: "Four quatrains, ABAB rhyme" },
-  { poem: "Extract from The Prelude", poet: "Wordsworth", type: "Romantic", themes: "Power of nature, fear, memory", tone: "Awe, terror, reflective", form: "Blank verse, epic style" },
-  { poem: "My Last Duchess", poet: "Browning", type: "Victorian", themes: "Power, pride, control, jealousy", tone: "Sinister, controlled", form: "Dramatic monologue, rhyming couplets" },
-  { poem: "The Charge of the Light Brigade", poet: "Tennyson", type: "Victorian", themes: "War, honour, duty, patriotism", tone: "Admiring, energetic, mournful", form: "Dactylic dimeter, irregular stanzas" },
-  { poem: "Exposure", poet: "Owen", type: "WWI", themes: "Reality of war, suffering, futility", tone: "Bleak, hopeless, numb", form: "Eight stanzas, pararhyme" },
-  { poem: "Storm on the Island", poet: "Heaney", type: "Modern", themes: "Power of nature, conflict, fear", tone: "Conversational to fearful", form: "Blank verse, single stanza" },
-  { poem: "Bayonet Charge", poet: "Hughes", type: "Modern", themes: "Reality of war, terror, futility", tone: "Frantic, violent, confused", form: "Free verse, three stanzas, enjambment" },
-  { poem: "Remains", poet: "Armitage", type: "Modern", themes: "Reality of war, guilt, PTSD", tone: "Colloquial, haunted", form: "Free verse, colloquial monologue" },
-  { poem: "Poppies", poet: "Weir", type: "Modern", themes: "Loss, grief, memory, identity", tone: "Tender, sorrowful", form: "Free verse, four stanzas" },
-  { poem: "War Photographer", poet: "Duffy", type: "Modern", themes: "War, guilt, media, suffering", tone: "Detached, angry, compassionate", form: "Four sestets, ABBCDD rhyme" },
-  { poem: "Tissue", poet: "Dharker", type: "Modern", themes: "Power, fragility, identity, control", tone: "Reflective, philosophical", form: "Ten quatrains + single line, enjambment" },
-  { poem: "The Emigree", poet: "Rumens", type: "Modern", themes: "Identity, memory, displacement, conflict", tone: "Defiant, nostalgic", form: "Three stanzas, free verse, refrain" },
-  { poem: "Checking Out Me History", poet: "Agard", type: "Modern", themes: "Identity, power, colonialism, anger", tone: "Angry, celebratory, defiant", form: "Alternating stanzas, phonetic dialect" },
-  { poem: "Kamikaze", poet: "Garland", type: "Modern", themes: "Conflict, honour, shame, family", tone: "Reflective, ambiguous", form: "Seven sestets + couplet, third-person narrative" },
-];
+  {
+    poem: 'Ozymandias',
+    poet: 'Shelley',
+    type: 'Romantic',
+    themes: 'Power of nature, pride, transience',
+    tone: 'Ironic, mocking',
+    form: 'Irregular sonnet, iambic pentameter',
+  },
+  {
+    poem: 'London',
+    poet: 'Blake',
+    type: 'Romantic',
+    themes: 'Power of humans, corruption, suffering',
+    tone: 'Angry, despairing',
+    form: 'Four quatrains, ABAB rhyme',
+  },
+  {
+    poem: 'Extract from The Prelude',
+    poet: 'Wordsworth',
+    type: 'Romantic',
+    themes: 'Power of nature, fear, memory',
+    tone: 'Awe, terror, reflective',
+    form: 'Blank verse, epic style',
+  },
+  {
+    poem: 'My Last Duchess',
+    poet: 'Browning',
+    type: 'Victorian',
+    themes: 'Power, pride, control, jealousy',
+    tone: 'Sinister, controlled',
+    form: 'Dramatic monologue, rhyming couplets',
+  },
+  {
+    poem: 'The Charge of the Light Brigade',
+    poet: 'Tennyson',
+    type: 'Victorian',
+    themes: 'War, honour, duty, patriotism',
+    tone: 'Admiring, energetic, mournful',
+    form: 'Anapaestic dimeter (with dactylic refrain), six irregular stanzas, end-stopped lines',
+  },
+  {
+    poem: 'Exposure',
+    poet: 'Owen',
+    type: 'WWI',
+    themes: 'Reality of war, suffering, futility',
+    tone: 'Bleak, hopeless, numb',
+    form: 'Eight stanzas, pararhyme',
+  },
+  {
+    poem: 'Storm on the Island',
+    poet: 'Heaney',
+    type: 'Modern',
+    themes: 'Power of nature, conflict, fear',
+    tone: 'Conversational to fearful',
+    form: 'Blank verse, single stanza',
+  },
+  {
+    poem: 'Bayonet Charge',
+    poet: 'Hughes',
+    type: 'Modern',
+    themes: 'Reality of war, terror, futility',
+    tone: 'Frantic, violent, confused',
+    form: 'Free verse, three stanzas, enjambment',
+  },
+  {
+    poem: 'Remains',
+    poet: 'Armitage',
+    type: 'Modern',
+    themes: 'Reality of war, guilt, PTSD',
+    tone: 'Colloquial, haunted',
+    form: 'Free verse, colloquial monologue',
+  },
+  {
+    poem: 'Poppies',
+    poet: 'Weir',
+    type: 'Modern',
+    themes: 'Loss, grief, memory, identity',
+    tone: 'Tender, sorrowful',
+    form: 'Free verse, four stanzas',
+  },
+  {
+    poem: 'War Photographer',
+    poet: 'Duffy',
+    type: 'Modern',
+    themes: 'War, guilt, media, suffering',
+    tone: 'Detached, angry, compassionate',
+    form: 'Four sestets, ABBCDD rhyme',
+  },
+  {
+    poem: 'Tissue',
+    poet: 'Dharker',
+    type: 'Modern',
+    themes: 'Power, fragility, identity, control',
+    tone: 'Reflective, philosophical',
+    form: "10 quatrains + final isolated single-line stanza ('turned into your skin.'), enjambment",
+  },
+  {
+    poem: 'The Émigrée',
+    poet: 'Rumens',
+    type: 'Modern',
+    themes: 'Identity, memory, displacement, conflict',
+    tone: 'Defiant, nostalgic',
+    form: 'Three stanzas, free verse, refrain',
+  },
+  {
+    poem: 'Checking Out Me History',
+    poet: 'Agard',
+    type: 'Modern',
+    themes: 'Identity, power, colonialism, anger',
+    tone: 'Angry, celebratory, defiant',
+    form: 'Alternating stanzas, phonetic dialect',
+  },
+  {
+    poem: 'Kamikaze',
+    poet: 'Garland',
+    type: 'Modern',
+    themes: 'Conflict, honour, shame, family',
+    tone: 'Reflective, ambiguous',
+    form: 'Seven sestets + couplet, third-person narrative',
+  },
+]
 
 /* ================================================================== */
 /*  Poem metadata for search & filter                                  */
 /* ================================================================== */
 
 const POEM_META = [
-  { id: "ozymandias", title: "Ozymandias", poet: "Percy Bysshe Shelley", themes: ["Power of nature", "Pride and arrogance", "Transience of power"], period: "Romantic" },
-  { id: "london", title: "London", poet: "William Blake", themes: ["Power of humans", "Corruption and injustice", "Suffering and oppression"], period: "Romantic" },
-  { id: "the-prelude", title: "Extract from The Prelude", poet: "William Wordsworth", themes: ["Power of nature", "Fear and awe", "Memory and reflection"], period: "Romantic" },
-  { id: "my-last-duchess", title: "My Last Duchess", poet: "Robert Browning", themes: ["Power of humans", "Pride and arrogance", "Control and dominance"], period: "Victorian" },
-  { id: "charge-of-the-light-brigade", title: "The Charge of the Light Brigade", poet: "Alfred Lord Tennyson", themes: ["Reality of conflict", "Honour and duty", "Loss and grief"], period: "Victorian" },
-  { id: "exposure", title: "Exposure", poet: "Wilfred Owen", themes: ["Reality of conflict", "Suffering and oppression", "Loss and grief", "Power of nature"], period: "WWI" },
-  { id: "storm-on-the-island", title: "Storm on the Island", poet: "Seamus Heaney", themes: ["Power of nature", "Fear and awe", "Identity and belonging"], period: "Modern" },
-  { id: "bayonet-charge", title: "Bayonet Charge", poet: "Ted Hughes", themes: ["Reality of conflict", "Fear and awe", "Loss and grief"], period: "Modern" },
-  { id: "remains", title: "Remains", poet: "Simon Armitage", themes: ["Reality of conflict", "Guilt and responsibility", "Memory and reflection"], period: "Modern" },
-  { id: "poppies", title: "Poppies", poet: "Jane Weir", themes: ["Loss and grief", "Memory and reflection", "Identity and belonging"], period: "Modern" },
-  { id: "war-photographer", title: "War Photographer", poet: "Carol Ann Duffy", themes: ["Reality of conflict", "Guilt and responsibility", "Suffering and oppression"], period: "Modern" },
-  { id: "tissue", title: "Tissue", poet: "Imtiaz Dharker", themes: ["Power of humans", "Transience of power", "Identity and belonging"], period: "Modern" },
-  { id: "the-emigree", title: "The Emigree", poet: "Carol Rumens", themes: ["Identity and belonging", "Memory and reflection", "Control and dominance"], period: "Modern" },
-  { id: "checking-out-me-history", title: "Checking Out Me History", poet: "John Agard", themes: ["Identity and belonging", "Power of humans", "Corruption and injustice"], period: "Modern" },
-  { id: "kamikaze", title: "Kamikaze", poet: "Beatrice Garland", themes: ["Honour and duty", "Identity and belonging", "Memory and reflection", "Loss and grief"], period: "Modern" },
-];
+  {
+    id: 'ozymandias',
+    title: 'Ozymandias',
+    poet: 'Percy Bysshe Shelley',
+    themes: ['Power of nature', 'Pride and arrogance', 'Transience of power'],
+    period: 'Romantic',
+  },
+  {
+    id: 'london',
+    title: 'London',
+    poet: 'William Blake',
+    themes: ['Power of humans', 'Corruption and injustice', 'Suffering and oppression'],
+    period: 'Romantic',
+  },
+  {
+    id: 'the-prelude',
+    title: 'Extract from The Prelude',
+    poet: 'William Wordsworth',
+    themes: ['Power of nature', 'Fear and awe', 'Memory and reflection'],
+    period: 'Romantic',
+  },
+  {
+    id: 'my-last-duchess',
+    title: 'My Last Duchess',
+    poet: 'Robert Browning',
+    themes: ['Power of humans', 'Pride and arrogance', 'Control and dominance'],
+    period: 'Victorian',
+  },
+  {
+    id: 'charge-of-the-light-brigade',
+    title: 'The Charge of the Light Brigade',
+    poet: 'Alfred Lord Tennyson',
+    themes: ['Reality of conflict', 'Honour and duty', 'Loss and grief'],
+    period: 'Victorian',
+  },
+  {
+    id: 'exposure',
+    title: 'Exposure',
+    poet: 'Wilfred Owen',
+    themes: [
+      'Reality of conflict',
+      'Suffering and oppression',
+      'Loss and grief',
+      'Power of nature',
+    ],
+    period: 'WWI',
+  },
+  {
+    id: 'storm-on-the-island',
+    title: 'Storm on the Island',
+    poet: 'Seamus Heaney',
+    themes: ['Power of nature', 'Fear and awe', 'Identity and belonging'],
+    period: 'Modern',
+  },
+  {
+    id: 'bayonet-charge',
+    title: 'Bayonet Charge',
+    poet: 'Ted Hughes',
+    themes: ['Reality of conflict', 'Fear and awe', 'Loss and grief'],
+    period: 'Modern',
+  },
+  {
+    id: 'remains',
+    title: 'Remains',
+    poet: 'Simon Armitage',
+    themes: ['Reality of conflict', 'Guilt and responsibility', 'Memory and reflection'],
+    period: 'Modern',
+  },
+  {
+    id: 'poppies',
+    title: 'Poppies',
+    poet: 'Jane Weir',
+    themes: ['Loss and grief', 'Memory and reflection', 'Identity and belonging'],
+    period: 'Modern',
+  },
+  {
+    id: 'war-photographer',
+    title: 'War Photographer',
+    poet: 'Carol Ann Duffy',
+    themes: ['Reality of conflict', 'Guilt and responsibility', 'Suffering and oppression'],
+    period: 'Modern',
+  },
+  {
+    id: 'tissue',
+    title: 'Tissue',
+    poet: 'Imtiaz Dharker',
+    themes: ['Power of humans', 'Transience of power', 'Identity and belonging'],
+    period: 'Modern',
+  },
+  {
+    id: 'the-emigree',
+    title: 'The Émigrée',
+    poet: 'Carol Rumens',
+    themes: ['Identity and belonging', 'Memory and reflection', 'Control and dominance'],
+    period: 'Modern',
+  },
+  {
+    id: 'checking-out-me-history',
+    title: 'Checking Out Me History',
+    poet: 'John Agard',
+    themes: ['Identity and belonging', 'Power of humans', 'Corruption and injustice'],
+    period: 'Modern',
+  },
+  {
+    id: 'kamikaze',
+    title: 'Kamikaze',
+    poet: 'Beatrice Garland',
+    themes: [
+      'Honour and duty',
+      'Identity and belonging',
+      'Memory and reflection',
+      'Loss and grief',
+    ],
+    period: 'Modern',
+  },
+]
 
-const ALL_THEMES = Array.from(new Set(POEM_META.flatMap((p) => p.themes))).sort();
-const ALL_PERIODS = Array.from(new Set(POEM_META.map((p) => p.period)));
+const ALL_THEMES = Array.from(new Set(POEM_META.flatMap((p) => p.themes))).sort()
+const ALL_PERIODS = Array.from(new Set(POEM_META.map((p) => p.period)))
 
 /* ================================================================== */
 /*  Page                                                               */
 /* ================================================================== */
 
 export default function PowerAndConflictPage() {
-  const [showTable, setShowTable] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeTheme, setActiveTheme] = useState<string | null>(null);
-  const [activePeriod, setActivePeriod] = useState<string | null>(null);
+  const [showTable, setShowTable] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [activeTheme, setActiveTheme] = useState<string | null>(null)
+  const [activePeriod, setActivePeriod] = useState<string | null>(null)
 
   const visiblePoemIds = useMemo(() => {
-    const query = searchQuery.toLowerCase().trim();
+    const query = searchQuery.toLowerCase().trim()
     return new Set(
       POEM_META.filter((p) => {
         const matchesSearch =
           !query ||
           p.title.toLowerCase().includes(query) ||
           p.poet.toLowerCase().includes(query) ||
-          p.themes.some((t) => t.toLowerCase().includes(query));
-        const matchesTheme = !activeTheme || p.themes.includes(activeTheme);
-        const matchesPeriod = !activePeriod || p.period === activePeriod;
-        return matchesSearch && matchesTheme && matchesPeriod;
-      }).map((p) => p.id)
-    );
-  }, [searchQuery, activeTheme, activePeriod]);
+          p.themes.some((t) => t.toLowerCase().includes(query))
+        const matchesTheme = !activeTheme || p.themes.includes(activeTheme)
+        const matchesPeriod = !activePeriod || p.period === activePeriod
+        return matchesSearch && matchesTheme && matchesPeriod
+      }).map((p) => p.id),
+    )
+  }, [searchQuery, activeTheme, activePeriod])
 
-  const matchCount = visiblePoemIds.size;
+  const matchCount = visiblePoemIds.size
 
   return (
     <>
-
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
@@ -208,11 +422,16 @@ export default function PowerAndConflictPage() {
             Power and Conflict
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Complete analysis of all 15 poems in the Power and Conflict cluster. Key quotations, techniques, themes, context, and comparison guidance for every poem.
+            Complete analysis of all 15 poems in the Power and Conflict cluster. Key quotations,
+            techniques, themes, context, and comparison guidance for every poem.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">15 Poems</span>
-            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">60+ Key Quotes</span>
+            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
+              15 Poems
+            </span>
+            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
+              60+ Key Quotes
+            </span>
           </div>
         </div>
       </section>
@@ -229,7 +448,11 @@ export default function PowerAndConflictPage() {
               strokeWidth={2}
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
             </svg>
             <input
               type="text"
@@ -240,11 +463,17 @@ export default function PowerAndConflictPage() {
             />
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery("")}
+                onClick={() => setSearchQuery('')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-muted-foreground"
                 aria-label="Clear search"
               >
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -253,7 +482,9 @@ export default function PowerAndConflictPage() {
 
           {/* Theme filters */}
           <div>
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Filter by theme</p>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+              Filter by theme
+            </p>
             <div className="flex flex-wrap gap-2">
               {ALL_THEMES.map((theme) => (
                 <button
@@ -261,8 +492,8 @@ export default function PowerAndConflictPage() {
                   onClick={() => setActiveTheme(activeTheme === theme ? null : theme)}
                   className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                     activeTheme === theme
-                      ? "bg-primary text-white"
-                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                      ? 'bg-primary text-white'
+                      : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground'
                   }`}
                 >
                   {theme}
@@ -273,7 +504,9 @@ export default function PowerAndConflictPage() {
 
           {/* Period filters */}
           <div>
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Filter by period</p>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+              Filter by period
+            </p>
             <div className="flex flex-wrap gap-2">
               {ALL_PERIODS.map((period) => (
                 <button
@@ -281,8 +514,8 @@ export default function PowerAndConflictPage() {
                   onClick={() => setActivePeriod(activePeriod === period ? null : period)}
                   className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                     activePeriod === period
-                      ? "bg-primary text-white"
-                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                      ? 'bg-primary text-white'
+                      : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground'
                   }`}
                 >
                   {period}
@@ -290,7 +523,11 @@ export default function PowerAndConflictPage() {
               ))}
               {(activeTheme || activePeriod || searchQuery) && (
                 <button
-                  onClick={() => { setActiveTheme(null); setActivePeriod(null); setSearchQuery(""); }}
+                  onClick={() => {
+                    setActiveTheme(null)
+                    setActivePeriod(null)
+                    setSearchQuery('')
+                  }}
                   className="rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-600 hover:bg-red-500/15 transition-colors"
                 >
                   Clear all filters
@@ -302,8 +539,9 @@ export default function PowerAndConflictPage() {
           {/* Result count */}
           {(searchQuery || activeTheme || activePeriod) && (
             <p className="text-sm text-muted-foreground">
-              Showing <span className="font-semibold text-foreground">{matchCount}</span> of 15 poems
-              {matchCount === 0 && " — try broadening your search."}
+              Showing <span className="font-semibold text-foreground">{matchCount}</span> of 15
+              poems
+              {matchCount === 0 && ' — try broadening your search.'}
             </p>
           )}
         </div>
@@ -336,26 +574,47 @@ export default function PowerAndConflictPage() {
       {/* Poems */}
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="space-y-4">
-
           {matchCount === 0 && (
             <div className="rounded-xl border border-dashed border-border bg-muted p-8 text-center">
-              <p className="text-muted-foreground text-sm">No poems match your current filters. Try adjusting your search or clearing filters.</p>
+              <p className="text-muted-foreground text-sm">
+                No poems match your current filters. Try adjusting your search or clearing filters.
+              </p>
             </div>
           )}
 
           {/* ───────────────────── 1. Ozymandias ───────────────────── */}
-          <div id="ozymandias" style={{ display: visiblePoemIds.has("ozymandias") ? undefined : "none" }}>
-            <Section id="ozymandias" title="Ozymandias" poet="Percy Bysshe Shelley (1818)" studyHref="/revision/poetry/power-and-conflict/ozymandias" defaultOpen>
-
+          <div
+            id="ozymandias"
+            style={{ display: visiblePoemIds.has('ozymandias') ? undefined : 'none' }}
+          >
+            <Section
+              id="ozymandias"
+              title="Ozymandias"
+              poet="Percy Bysshe Shelley (1818)"
+              studyHref="/revision/poetry/power-and-conflict/ozymandias"
+              defaultOpen
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker recounts a traveller&apos;s description of a ruined statue in the desert. The statue depicts Ozymandias (the Greek name for the Egyptian pharaoh Ramesses II), whose arrogant inscription boasts of his supreme power. Yet all that remains is a shattered monument surrounded by empty desert, undermining his claims. Shelley uses this image to argue that all human power is temporary, and nature ultimately triumphs over even the mightiest rulers.
+                  The speaker recounts a traveller&apos;s description of a ruined statue in the
+                  desert. The statue depicts Ozymandias (the Greek name for the Egyptian pharaoh
+                  Ramesses II), whose arrogant inscription boasts of his supreme power. Yet all that
+                  remains is a shattered monument surrounded by empty desert, undermining his
+                  claims. Shelley uses this image to argue that all human power is temporary, and
+                  nature ultimately triumphs over even the mightiest rulers.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  An irregular sonnet (loosely Petrarchan) with an unconventional rhyme scheme (ABABACDCEDEFEF) that mirrors the fragmented, broken statue it describes. The poem uses iambic pentameter, but this is frequently disrupted, reflecting the ruined grandeur. The narrative is framed through multiple voices (the speaker, the traveller, the sculptor, Ozymandias himself), distancing the reader from Ozymandias and diminishing his authority. The volta occurs around line 9 where the inscription is revealed, followed by the devastating ironic contrast of the empty desert.
+                  An irregular sonnet (loosely Petrarchan) with an unconventional rhyme scheme
+                  (ABABACDCEDEFEF) that mirrors the fragmented, broken statue it describes. The poem
+                  uses iambic pentameter, but this is frequently disrupted, reflecting the ruined
+                  grandeur. The narrative is framed through multiple voices (the speaker, the
+                  traveller, the sculptor, Ozymandias himself), distancing the reader from
+                  Ozymandias and diminishing his authority. The volta occurs around line 9 where the
+                  inscription is revealed, followed by the devastating ironic contrast of the empty
+                  desert.
                 </p>
               </SubSection>
 
@@ -400,28 +659,51 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="My Last Duchess" reason="Both explore arrogant, controlling figures who abuse power. However, the Duke's power is current while Ozymandias's has been destroyed by time." />
-                  <ComparisonSuggestion poem="London" reason="Both critique abuses of power. Shelley targets individual tyranny while Blake targets institutional and systemic oppression." />
-                  <ComparisonSuggestion poem="Tissue" reason="Both explore the fragility and transience of human power, though Dharker focuses on modern constructs while Shelley uses an ancient setting." />
+                  <ComparisonSuggestion
+                    poem="My Last Duchess"
+                    reason="Both explore arrogant, controlling figures who abuse power. However, the Duke's power is current while Ozymandias's has been destroyed by time."
+                  />
+                  <ComparisonSuggestion
+                    poem="London"
+                    reason="Both critique abuses of power. Shelley targets individual tyranny while Blake targets institutional and systemic oppression."
+                  />
+                  <ComparisonSuggestion
+                    poem="Tissue"
+                    reason="Both explore the fragility and transience of human power, though Dharker focuses on modern constructs while Shelley uses an ancient setting."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 2. London ───────────────────── */}
-          <div id="london" style={{ display: visiblePoemIds.has("london") ? undefined : "none" }}>
-            <Section id="london" title="London" poet="William Blake (1794)" studyHref="/revision/poetry/power-and-conflict/london">
-
+          <div id="london" style={{ display: visiblePoemIds.has('london') ? undefined : 'none' }}>
+            <Section
+              id="london"
+              title="London"
+              poet="William Blake (1794)"
+              studyHref="/revision/poetry/power-and-conflict/london"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker walks through the streets of London, observing suffering and oppression everywhere. Each stanza presents a different aspect of the city&apos;s misery: the restricted lives of its people, the cries of chimney sweepers and soldiers, and the moral corruption symbolised by disease and exploitation. Blake attacks the institutions he blames &mdash; the Church, the monarchy, and the government &mdash; for creating and maintaining this suffering.
+                  The speaker walks through the streets of London, observing suffering and
+                  oppression everywhere. Each stanza presents a different aspect of the city&apos;s
+                  misery: the restricted lives of its people, the cries of chimney sweepers and
+                  soldiers, and the moral corruption symbolised by disease and exploitation. Blake
+                  attacks the institutions he blames &mdash; the Church, the monarchy, and the
+                  government &mdash; for creating and maintaining this suffering.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Four quatrains with a regular ABAB rhyme scheme create a relentless, inescapable rhythm that mirrors the trapped, cyclical nature of suffering in the city. The poem is structured as a walk through London, with each stanza presenting a new scene of misery. The use of first person (&ldquo;I wander&rdquo;) makes the speaker a direct witness, increasing authenticity. The repetition of &ldquo;every&rdquo; and &ldquo;charter&apos;d&rdquo; creates a sense of universal, inescapable oppression.
+                  Four quatrains with a regular ABAB rhyme scheme create a relentless, inescapable
+                  rhythm that mirrors the trapped, cyclical nature of suffering in the city. The
+                  poem is structured as a walk through London, with each stanza presenting a new
+                  scene of misery. The use of first person (&ldquo;I wander&rdquo;) makes the
+                  speaker a direct witness, increasing authenticity. The repetition of
+                  &ldquo;every&rdquo; and &ldquo;charter&apos;d&rdquo; creates a sense of universal,
+                  inescapable oppression.
                 </p>
               </SubSection>
 
@@ -466,28 +748,70 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Ozymandias" reason="Both Romantic poets critique abuses of power, but Blake focuses on institutional oppression while Shelley targets individual tyranny." />
-                  <ComparisonSuggestion poem="Checking Out Me History" reason="Both protest against oppressive systems. Blake attacks the Church and monarchy; Agard attacks the colonial education system." />
-                  <ComparisonSuggestion poem="Exposure" reason="Both present individuals suffering under powerful forces beyond their control. Blake's victims are oppressed by institutions; Owen's soldiers by war and nature." />
+                  <ComparisonSuggestion
+                    poem="Ozymandias"
+                    reason="Both Romantic poets critique abuses of power, but Blake focuses on institutional oppression while Shelley targets individual tyranny."
+                  />
+                  <ComparisonSuggestion
+                    poem="Checking Out Me History"
+                    reason="Both protest against oppressive systems. Blake attacks the Church and monarchy; Agard attacks the colonial education system."
+                  />
+                  <ComparisonSuggestion
+                    poem="Exposure"
+                    reason="Both present individuals suffering under powerful forces beyond their control. Blake's victims are oppressed by institutions; Owen's soldiers by war and nature."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 3. Extract from The Prelude ───────────────────── */}
-          <div id="the-prelude" style={{ display: visiblePoemIds.has("the-prelude") ? undefined : "none" }}>
-            <Section id="the-prelude" title="Extract from The Prelude" poet="William Wordsworth (1850)" studyHref="/revision/poetry/power-and-conflict/the-prelude">
+          <div
+            id="the-prelude"
+            style={{ display: visiblePoemIds.has('the-prelude') ? undefined : 'none' }}
+          >
+            <Section
+              id="the-prelude"
+              title="Extract from The Prelude"
+              poet="William Wordsworth (1850, posthumous)"
+              studyHref="/revision/poetry/power-and-conflict/the-prelude"
+            >
+              <SubSection title="Version note">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  <strong>
+                    AQA prescribes the 1850 published <em>Prelude</em>
+                  </strong>{' '}
+                  (revised across Wordsworth&apos;s life and printed after his death). OCR
+                  prescribes the{' '}
+                  <strong>
+                    1799 two-part <em>Prelude</em>
+                  </strong>{' '}
+                  &mdash; the wording is materially different. Always quote from the AQA-anthology
+                  (1850) version on this page.
+                </p>
+              </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  This autobiographical extract describes a young Wordsworth stealing a rowing boat at night and rowing across a lake. Initially confident and excited, he is terrified when a huge mountain appears to rise up and pursue him. He returns the boat and is left deeply unsettled for days, haunted by the experience. The episode represents a key moment in his spiritual development, where nature asserts its sublime power over human confidence.
+                  This autobiographical extract describes a young Wordsworth stealing a rowing boat
+                  at night and rowing across a lake. Initially confident and excited, he is
+                  terrified when a huge mountain appears to rise up and pursue him. He returns the
+                  boat and is left deeply unsettled for days, haunted by the experience. The episode
+                  represents a key moment in his spiritual development &mdash; one of his
+                  &ldquo;spots of time&rdquo; &mdash; where nature asserts its sublime power over
+                  human confidence.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Written in blank verse (unrhymed iambic pentameter), the epic style reflects the grandeur of the subject and Wordsworth&apos;s ambition to write a great autobiographical poem. The extract has a clear narrative arc: confidence, terror, and lasting psychological impact. Enjambment creates a breathless, flowing quality that mirrors the movement of the boat and the escalating fear. The shift from first-person active agency (&ldquo;I&rdquo; rowing) to the mountain&apos;s dominance structurally enacts the transfer of power from human to nature.
+                  Written in blank verse (unrhymed iambic pentameter), the epic style reflects the
+                  grandeur of the subject and Wordsworth&apos;s ambition to write a great
+                  autobiographical poem. The extract has a clear narrative arc: confidence, terror,
+                  and lasting psychological impact. Enjambment creates a breathless, flowing quality
+                  that mirrors the movement of the boat and the escalating fear. The shift from
+                  first-person active agency (&ldquo;I&rdquo; rowing) to the mountain&apos;s
+                  dominance structurally enacts the transfer of power from human to nature.
                 </p>
               </SubSection>
 
@@ -532,28 +856,55 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Storm on the Island" reason="Both explore nature's power to terrify and overwhelm. Wordsworth's experience is solitary and transformative; Heaney's community is collectively threatened." />
-                  <ComparisonSuggestion poem="Exposure" reason="Both present nature as an overwhelming force. Wordsworth's experience is a single formative moment; Owen presents nature as a relentless enemy in war." />
-                  <ComparisonSuggestion poem="Ozymandias" reason="Both explore the insignificance of human power against greater forces, though Shelley focuses on time's erosion while Wordsworth focuses on nature's immediate, terrifying presence." />
+                  <ComparisonSuggestion
+                    poem="Storm on the Island"
+                    reason="Both explore nature's power to terrify and overwhelm. Wordsworth's experience is solitary and transformative; Heaney's community is collectively threatened."
+                  />
+                  <ComparisonSuggestion
+                    poem="Exposure"
+                    reason="Both present nature as an overwhelming force. Wordsworth's experience is a single formative moment; Owen presents nature as a relentless enemy in war."
+                  />
+                  <ComparisonSuggestion
+                    poem="Ozymandias"
+                    reason="Both explore the insignificance of human power against greater forces, though Shelley focuses on time's erosion while Wordsworth focuses on nature's immediate, terrifying presence."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 4. My Last Duchess ───────────────────── */}
-          <div id="my-last-duchess" style={{ display: visiblePoemIds.has("my-last-duchess") ? undefined : "none" }}>
-            <Section id="my-last-duchess" title="My Last Duchess" poet="Robert Browning (1842)" studyHref="/revision/poetry/power-and-conflict/my-last-duchess">
-
+          <div
+            id="my-last-duchess"
+            style={{ display: visiblePoemIds.has('my-last-duchess') ? undefined : 'none' }}
+          >
+            <Section
+              id="my-last-duchess"
+              title="My Last Duchess"
+              poet="Robert Browning (1842)"
+              studyHref="/revision/poetry/power-and-conflict/my-last-duchess"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Set in Renaissance Italy, the Duke of Ferrara shows a visitor (an envoy negotiating his next marriage) a portrait of his previous wife. Through his monologue, the Duke reveals his jealousy and controlling nature: he resented that the Duchess smiled at everyone equally and appeared to value simple pleasures as much as his noble name. He strongly implies that he had her killed (&ldquo;I gave commands; / Then all smiles stopped together&rdquo;). Now he controls her image as a painting, the ultimate act of possession.
+                  Set in Renaissance Italy, the Duke of Ferrara shows a visitor (an envoy
+                  negotiating his next marriage) a portrait of his previous wife. Through his
+                  monologue, the Duke reveals his jealousy and controlling nature: he resented that
+                  the Duchess smiled at everyone equally and appeared to value simple pleasures as
+                  much as his noble name. He strongly implies that he had her killed (&ldquo;I gave
+                  commands; / Then all smiles stopped together&rdquo;). Now he controls her image as
+                  a painting, the ultimate act of possession.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A dramatic monologue in rhyming couplets (heroic couplets in iambic pentameter). The rhyming couplets suggest the Duke&apos;s desire for order and control, but the heavy use of enjambment works against the neat rhyme, mirroring the way his controlled surface barely conceals his sinister nature. The single, unbroken stanza reflects the Duke&apos;s domination of the conversation &mdash; the envoy never speaks. The poem&apos;s structure mirrors the Duke&apos;s character: polished on the surface, disturbing beneath.
+                  A dramatic monologue in rhyming couplets (heroic couplets in iambic pentameter).
+                  The rhyming couplets suggest the Duke&apos;s desire for order and control, but the
+                  heavy use of enjambment works against the neat rhyme, mirroring the way his
+                  controlled surface barely conceals his sinister nature. The single, unbroken
+                  stanza reflects the Duke&apos;s domination of the conversation &mdash; the envoy
+                  never speaks. The poem&apos;s structure mirrors the Duke&apos;s character:
+                  polished on the surface, disturbing beneath.
                 </p>
               </SubSection>
 
@@ -593,28 +944,59 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Ozymandias" reason="Both present arrogant, powerful men. However, Ozymandias's power has been destroyed by time, while the Duke's remains terrifyingly intact." />
-                  <ComparisonSuggestion poem="Checking Out Me History" reason="Both explore how those in power control narratives. The Duke controls his wife's story; colonial powers control history." />
-                  <ComparisonSuggestion poem="London" reason="Both explore abuses of power. Browning focuses on individual tyranny; Blake on institutional oppression." />
+                  <ComparisonSuggestion
+                    poem="Ozymandias"
+                    reason="Both present arrogant, powerful men. However, Ozymandias's power has been destroyed by time, while the Duke's remains terrifyingly intact."
+                  />
+                  <ComparisonSuggestion
+                    poem="Checking Out Me History"
+                    reason="Both explore how those in power control narratives. The Duke controls his wife's story; colonial powers control history."
+                  />
+                  <ComparisonSuggestion
+                    poem="London"
+                    reason="Both explore abuses of power. Browning focuses on individual tyranny; Blake on institutional oppression."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 5. The Charge of the Light Brigade ───────────────────── */}
-          <div id="charge-of-the-light-brigade" style={{ display: visiblePoemIds.has("charge-of-the-light-brigade") ? undefined : "none" }}>
-            <Section id="charge-of-the-light-brigade" title="The Charge of the Light Brigade" poet="Alfred Lord Tennyson (1854)" studyHref="/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade">
-
+          <div
+            id="charge-of-the-light-brigade"
+            style={{
+              display: visiblePoemIds.has('charge-of-the-light-brigade') ? undefined : 'none',
+            }}
+          >
+            <Section
+              id="charge-of-the-light-brigade"
+              title="The Charge of the Light Brigade"
+              poet="Alfred Lord Tennyson (1854)"
+              studyHref="/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Tennyson commemorates the disastrous cavalry charge at the Battle of Balaclava during the Crimean War (1854), in which 600 British soldiers rode into a valley surrounded by Russian cannon due to a miscommunicated order. The poem celebrates the soldiers&apos; courage and obedience while acknowledging the catastrophic blunder that sent them to their deaths. It moves from the charge itself, through the battle, to a memorial honouring their sacrifice.
+                  Tennyson commemorates the disastrous cavalry charge at the Battle of Balaclava
+                  during the Crimean War (1854), in which 600 British soldiers rode into a valley
+                  surrounded by Russian cannon due to a miscommunicated order. The poem celebrates
+                  the soldiers&apos; courage and obedience while acknowledging the catastrophic
+                  blunder that sent them to their deaths. It moves from the charge itself, through
+                  the battle, to a memorial honouring their sacrifice.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Six stanzas of varying length use dactylic dimeter (a stressed syllable followed by two unstressed) to create a galloping, rhythmic effect that mimics the charge of the horses. Heavy repetition (&ldquo;Cannon to right of them,&rdquo; &ldquo;rode the six hundred&rdquo;) creates a ritualistic, memorial quality. The poem&apos;s structure mirrors the charge: stanzas 1&ndash;3 ride into the valley, stanzas 4&ndash;5 describe the fighting and retreat, and stanza 6 serves as a eulogy. The narrowing and expanding stanza lengths mirror the advance into and retreat from the valley.
+                  Six stanzas of varying length, predominantly in anapaestic dimeter (two unstressed
+                  syllables followed by a stressed: da-da-DUM da-da-DUM), with the recurring refrain
+                  &ldquo;Rode the six hundred&rdquo; falling in dactyls (DUM-da-da). The lines are
+                  largely end-stopped, reinforcing a galloping, drumbeat effect that mimics horses
+                  charging. Heavy repetition (&ldquo;Cannon to right of them,&rdquo; &ldquo;rode the
+                  six hundred&rdquo;) creates a ritualistic, memorial quality. The poem&apos;s
+                  structure mirrors the charge: stanzas 1&ndash;3 ride into the valley, stanzas
+                  4&ndash;5 describe the fighting and retreat, and stanza 6 serves as a eulogy. The
+                  narrowing and expanding stanza lengths mirror the advance into and retreat from
+                  the valley.
                 </p>
               </SubSection>
 
@@ -654,35 +1036,62 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Exposure" reason="Both depict the reality of war, but Tennyson glorifies sacrifice while Owen presents war as futile and pointless. Compare their contrasting attitudes to duty." />
-                  <ComparisonSuggestion poem="Bayonet Charge" reason="Both describe soldiers in the act of charging, but Tennyson celebrates collective heroism while Hughes focuses on individual terror and the collapse of patriotic ideals." />
-                  <ComparisonSuggestion poem="Remains" reason="Contrast Tennyson's memorialising tone with Armitage's raw, guilt-ridden account. Both deal with the aftermath of conflict on those who survive." />
+                  <ComparisonSuggestion
+                    poem="Exposure"
+                    reason="Both depict the reality of war, but Tennyson glorifies sacrifice while Owen presents war as futile and pointless. Compare their contrasting attitudes to duty."
+                  />
+                  <ComparisonSuggestion
+                    poem="Bayonet Charge"
+                    reason="Both describe soldiers in the act of charging, but Tennyson celebrates collective heroism while Hughes focuses on individual terror and the collapse of patriotic ideals."
+                  />
+                  <ComparisonSuggestion
+                    poem="Remains"
+                    reason="Contrast Tennyson's memorialising tone with Armitage's raw, guilt-ridden account. Both deal with the aftermath of conflict on those who survive."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 6. Exposure ───────────────────── */}
-          <div id="exposure" style={{ display: visiblePoemIds.has("exposure") ? undefined : "none" }}>
-            <Section id="exposure" title="Exposure" poet="Wilfred Owen (1917)" studyHref="/revision/poetry/power-and-conflict/exposure">
-
+          <div
+            id="exposure"
+            style={{ display: visiblePoemIds.has('exposure') ? undefined : 'none' }}
+          >
+            <Section
+              id="exposure"
+              title="Exposure"
+              poet="Wilfred Owen (1917)"
+              studyHref="/revision/poetry/power-and-conflict/exposure"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Owen describes soldiers in the trenches of World War I, not fighting but simply enduring the brutal cold. The real enemy is not the opposing army but the weather itself: freezing winds, snow, and rain that slowly drain the soldiers of life and hope. The poem conveys the monotony, futility, and psychological torment of trench warfare. The soldiers question what they are fighting for, and each stanza returns to the same bleak refrain: &ldquo;But nothing happens.&rdquo;
+                  Owen describes soldiers in the trenches of World War I, not fighting but simply
+                  enduring the brutal cold. The real enemy is not the opposing army but the weather
+                  itself: freezing winds, snow, and rain that slowly drain the soldiers of life and
+                  hope. The poem conveys the monotony, futility, and psychological torment of trench
+                  warfare. The soldiers question what they are fighting for, and each stanza returns
+                  to the same bleak refrain: &ldquo;But nothing happens.&rdquo;
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Eight five-line stanzas with a consistent ABBAC rhyme scheme use pararhyme (half-rhyme), where consonants match but vowels differ (e.g. &ldquo;knive us&rdquo; / &ldquo;nervous&rdquo;). This creates a sense of discord, unease, and incompleteness that reflects the soldiers&apos; suffering. Each stanza ends with a shortened final line, often returning to the refrain &ldquo;But nothing happens,&rdquo; which enacts the futility and monotony of their situation. The cyclical structure (the poem seems to go nowhere) mirrors the soldiers&apos; entrapment.
+                  Eight five-line stanzas with a consistent ABBAC rhyme scheme use pararhyme
+                  (half-rhyme), where consonants match but vowels differ (e.g. &ldquo;knive
+                  us&rdquo; / &ldquo;nervous&rdquo;). This creates a sense of discord, unease, and
+                  incompleteness that reflects the soldiers&apos; suffering. Each stanza ends with a
+                  shortened final line, often returning to the refrain &ldquo;But nothing
+                  happens,&rdquo; which enacts the futility and monotony of their situation. The
+                  cyclical structure (the poem seems to go nowhere) mirrors the soldiers&apos;
+                  entrapment.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="Our brains ache, in the merciless east winds that knive us"
+                    text="Our brains ache, in the merciless iced east winds that knive us"
                     technique="Personification / violent verb"
                     analysis="The opening immediately establishes the wind as the enemy, personified with the violent verb 'knive' (an invented word from 'knife'). Nature is presented as deliberately cruel ('merciless'), actively attacking the soldiers. The collective 'our' creates solidarity in suffering."
                   />
@@ -720,28 +1129,56 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Storm on the Island" reason="Both present nature as a threatening, powerful force. Owen's soldiers are helpless victims; Heaney's community tries to prepare but is still overwhelmed." />
-                  <ComparisonSuggestion poem="The Charge of the Light Brigade" reason="Stark contrast: Tennyson glorifies war and sacrifice; Owen presents war as futile suffering with no glory or purpose." />
-                  <ComparisonSuggestion poem="Bayonet Charge" reason="Both WWI-inspired poems that strip away patriotic ideals to reveal the terror and futility of conflict." />
+                  <ComparisonSuggestion
+                    poem="Storm on the Island"
+                    reason="Both present nature as a threatening, powerful force. Owen's soldiers are helpless victims; Heaney's community tries to prepare but is still overwhelmed."
+                  />
+                  <ComparisonSuggestion
+                    poem="The Charge of the Light Brigade"
+                    reason="Stark contrast: Tennyson glorifies war and sacrifice; Owen presents war as futile suffering with no glory or purpose."
+                  />
+                  <ComparisonSuggestion
+                    poem="Bayonet Charge"
+                    reason="Both WWI-inspired poems that strip away patriotic ideals to reveal the terror and futility of conflict."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 7. Storm on the Island ───────────────────── */}
-          <div id="storm-on-the-island" style={{ display: visiblePoemIds.has("storm-on-the-island") ? undefined : "none" }}>
-            <Section id="storm-on-the-island" title="Storm on the Island" poet="Seamus Heaney (1966)" studyHref="/revision/poetry/power-and-conflict/storm-on-the-island">
-
+          <div
+            id="storm-on-the-island"
+            style={{ display: visiblePoemIds.has('storm-on-the-island') ? undefined : 'none' }}
+          >
+            <Section
+              id="storm-on-the-island"
+              title="Storm on the Island"
+              poet="Seamus Heaney (1966)"
+              studyHref="/revision/poetry/power-and-conflict/storm-on-the-island"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker describes a remote island community preparing for and enduring a violent storm. The inhabitants initially appear confident in their preparations &mdash; their houses are solidly built, they have no trees that could fall. However, as the storm intensifies, the poem reveals that nature&apos;s power is terrifying precisely because it is invisible and uncontrollable. The poem can also be read as an allegory for the political conflict in Northern Ireland (the first eight letters spell &ldquo;STORMONT,&rdquo; the seat of the Northern Irish government).
+                  The speaker describes a remote island community preparing for and enduring a
+                  violent storm. The inhabitants initially appear confident in their preparations
+                  &mdash; their houses are solidly built, they have no trees that could fall.
+                  However, as the storm intensifies, the poem reveals that nature&apos;s power is
+                  terrifying precisely because it is invisible and uncontrollable. The poem can also
+                  be read as an allegory for the political conflict in Northern Ireland (the first
+                  eight letters spell &ldquo;STORMONT,&rdquo; the seat of the Northern Irish
+                  government).
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Written in blank verse (unrhymed iambic pentameter) in a single continuous stanza, the form reflects both the relentless force of the storm and conversational, seemingly casual speech (&ldquo;We are prepared: we build our houses squat&rdquo;). The poem moves from confident preparation to growing unease, and the final lines reveal a profound shift: what was dismissed as &ldquo;nothing&rdquo; becomes terrifying. The enjambment mirrors the unpredictable, unstoppable force of the wind.
+                  Written in blank verse (unrhymed iambic pentameter) in a single continuous stanza,
+                  the form reflects both the relentless force of the storm and conversational,
+                  seemingly casual speech (&ldquo;We are prepared: we build our houses
+                  squat&rdquo;). The poem moves from confident preparation to growing unease, and
+                  the final lines reveal a profound shift: what was dismissed as
+                  &ldquo;nothing&rdquo; becomes terrifying. The enjambment mirrors the
+                  unpredictable, unstoppable force of the wind.
                 </p>
               </SubSection>
 
@@ -781,28 +1218,59 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Extract from The Prelude" reason="Both explore nature's power to overwhelm and terrify. Wordsworth experiences nature alone; Heaney's community faces it together." />
-                  <ComparisonSuggestion poem="Exposure" reason="Both use nature as a threatening force, with military language blurring the line between natural and human conflict." />
-                  <ComparisonSuggestion poem="Ozymandias" reason="Both show human efforts dwarfed by greater forces. Heaney's storm threatens the present; Shelley's desert has already erased the past." />
+                  <ComparisonSuggestion
+                    poem="Extract from The Prelude"
+                    reason="Both explore nature's power to overwhelm and terrify. Wordsworth experiences nature alone; Heaney's community faces it together."
+                  />
+                  <ComparisonSuggestion
+                    poem="Exposure"
+                    reason="Both use nature as a threatening force, with military language blurring the line between natural and human conflict."
+                  />
+                  <ComparisonSuggestion
+                    poem="Ozymandias"
+                    reason="Both show human efforts dwarfed by greater forces. Heaney's storm threatens the present; Shelley's desert has already erased the past."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 8. Bayonet Charge ───────────────────── */}
-          <div id="bayonet-charge" style={{ display: visiblePoemIds.has("bayonet-charge") ? undefined : "none" }}>
-            <Section id="bayonet-charge" title="Bayonet Charge" poet="Ted Hughes (1957)" studyHref="/revision/poetry/power-and-conflict/bayonet-charge">
-
+          <div
+            id="bayonet-charge"
+            style={{ display: visiblePoemIds.has('bayonet-charge') ? undefined : 'none' }}
+          >
+            <Section
+              id="bayonet-charge"
+              title="Bayonet Charge"
+              poet="Ted Hughes (1957)"
+              studyHref="/revision/poetry/power-and-conflict/bayonet-charge"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The poem describes a single soldier&apos;s experience during a bayonet charge in World War I. It begins in medias res (in the middle of action) with the soldier already running. He is overwhelmed by terror and confusion, and the second stanza sees him freeze as patriotic ideals (&ldquo;King, honour, human dignity&rdquo;) dissolve under the reality of combat. The final stanza presents him as reduced to a terrified animal, driven by raw survival instinct rather than any noble cause.
+                  The poem imagines a single soldier&apos;s experience during a WWI-style bayonet
+                  charge. (Ted Hughes, 1930–1998, was born in 1930 and never fought in any war — he
+                  drew on his father William&apos;s WWI accounts, and William survived Gallipoli as
+                  one of only seventeen survivors of his Lancashire Fusiliers regiment.) It begins
+                  in medias res (in the middle of action) with the soldier already running. He is
+                  overwhelmed by terror and confusion, and the second stanza sees him freeze as
+                  patriotic ideals (&ldquo;King, honour, human dignity, etcetera&rdquo;) dissolve
+                  under the reality of combat. The final stanza presents him as reduced to a
+                  terrified animal, driven by raw survival instinct rather than any noble cause.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Three stanzas of irregular length use free verse with no consistent rhyme scheme, reflecting the chaos and disorder of battle. The poem begins in medias res, plunging the reader into the action without warning, just as the soldier is thrown into combat. The second stanza slows dramatically as the soldier pauses, creating a structural contrast between frantic action and frozen thought. Heavy enjambment and long, breathless sentences mirror the soldier&apos;s panicked running.
+                  Three stanzas of irregular length use free verse (NOT iambic) with no consistent
+                  rhyme scheme or fixed metre, reflecting the chaos and disorder of battle. Hughes
+                  uses sudden rhythm shifts and a third-person omniscient voice that zooms tightly
+                  into the single soldier&apos;s perspective. The poem begins in medias res,
+                  plunging the reader into the action without warning, just as the soldier is thrown
+                  into combat. The second stanza slows dramatically as the soldier pauses, creating
+                  a structural contrast between frantic action and frozen thought. Heavy enjambment
+                  and long, breathless sentences mirror the soldier&apos;s panicked running.
+                  Published by Faber &amp; Faber in <em>The Hawk in the Rain</em> (1957).
                 </p>
               </SubSection>
 
@@ -821,7 +1289,7 @@ export default function PowerAndConflictPage() {
                   <Quote
                     text="King, honour, human dignity, etcetera / Dropped like luxuries"
                     technique="Bathos / simile"
-                    analysis="The dismissive 'etcetera' reduces patriotic ideals to an afterthought, stripping them of meaning. These abstract concepts are compared to 'luxuries' — pleasant but non-essential things that are abandoned when survival is at stake. Hughes devastatingly critiques the ideals used to justify war."
+                    analysis="Hughes writes 'etcetera' once — cite exactly as printed; do not abbreviate to 'etc.', and don't double the word. The single, dismissive 'etcetera' reduces patriotic ideals to throwaway filler, stripping them of meaning. These abstract concepts are compared to 'luxuries' — pleasant but non-essential things that are abandoned when survival is at stake. Hughes devastatingly critiques the ideals used to justify war."
                   />
                   <Quote
                     text="a yellow hare that rolled like a flame"
@@ -842,28 +1310,51 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="The Charge of the Light Brigade" reason="Both depict soldiers charging into battle, but Tennyson glorifies collective duty while Hughes reveals individual terror and the collapse of ideology." />
-                  <ComparisonSuggestion poem="Exposure" reason="Both present the reality of WWI, stripping away patriotic glamour. Owen focuses on the torment of waiting; Hughes on the terror of action." />
-                  <ComparisonSuggestion poem="Remains" reason="Both explore the psychological impact of conflict on individual soldiers, though Hughes captures the moment of combat while Armitage focuses on the aftermath." />
+                  <ComparisonSuggestion
+                    poem="The Charge of the Light Brigade"
+                    reason="Both depict soldiers charging into battle, but Tennyson glorifies collective duty while Hughes reveals individual terror and the collapse of ideology."
+                  />
+                  <ComparisonSuggestion
+                    poem="Exposure"
+                    reason="Both present the reality of WWI, stripping away patriotic glamour. Owen focuses on the torment of waiting; Hughes on the terror of action."
+                  />
+                  <ComparisonSuggestion
+                    poem="Remains"
+                    reason="Both explore the psychological impact of conflict on individual soldiers, though Hughes captures the moment of combat while Armitage focuses on the aftermath."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 9. Remains ───────────────────── */}
-          <div id="remains" style={{ display: visiblePoemIds.has("remains") ? undefined : "none" }}>
-            <Section id="remains" title="Remains" poet="Simon Armitage (2008)" studyHref="/revision/poetry/power-and-conflict/remains">
-
+          <div id="remains" style={{ display: visiblePoemIds.has('remains') ? undefined : 'none' }}>
+            <Section
+              id="remains"
+              title="Remains"
+              poet="Simon Armitage (2008)"
+              studyHref="/revision/poetry/power-and-conflict/remains"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Based on the real testimony of a soldier, the speaker describes shooting a looter while on patrol. The soldier and his colleagues open fire, and the man is left dying in the road. The speaker is then haunted by the memory: the dead man&apos;s image stays with him, appearing when he tries to sleep, walk, or even think. The poem explores how a single act of violence can cause lasting psychological trauma, presenting the reality of PTSD (post-traumatic stress disorder).
+                  Based on the real testimony of a soldier, the speaker describes shooting a looter
+                  while on patrol. The soldier and his colleagues open fire, and the man is left
+                  dying in the road. The speaker is then haunted by the memory: the dead man&apos;s
+                  image stays with him, appearing when he tries to sleep, walk, or even think. The
+                  poem explores how a single act of violence can cause lasting psychological trauma,
+                  presenting the reality of PTSD (post-traumatic stress disorder).
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Written in free verse with a colloquial, conversational tone that mimics a soldier recounting his experience. The poem begins with the casual &ldquo;On another occasion,&rdquo; as if this is just one of many stories, but this ordinariness makes the content more disturbing. The stanzas are mostly regular quatrains until the final couplet, where the structure breaks down, mirroring the soldier&apos;s psychological disintegration. The shift from past tense (the event) to present tense (the haunting) shows the trauma is ongoing and inescapable.
+                  Written in free verse with a colloquial, conversational tone that mimics a soldier
+                  recounting his experience. The poem begins with the casual &ldquo;On another
+                  occasion,&rdquo; as if this is just one of many stories, but this ordinariness
+                  makes the content more disturbing. The stanzas are mostly regular quatrains until
+                  the final couplet, where the structure breaks down, mirroring the soldier&apos;s
+                  psychological disintegration. The shift from past tense (the event) to present
+                  tense (the haunting) shows the trauma is ongoing and inescapable.
                 </p>
               </SubSection>
 
@@ -880,7 +1371,7 @@ export default function PowerAndConflictPage() {
                     analysis="The informal 'legs it' is strikingly casual for a moment of life-or-death violence. This reflects how soldiers use everyday language to process extraordinary events, and how military culture can normalise violence."
                   />
                   <Quote
-                    text="his blood-Loss shadow stays on the street"
+                    text="his blood-shadow stays on the street"
                     technique="Imagery / double meaning"
                     analysis="The bloodstain literally remains on the road, but 'shadow' also suggests the dead man's presence lingers as a ghost or memory. The image foreshadows the psychological haunting that dominates the second half of the poem."
                   />
@@ -908,28 +1399,50 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="War Photographer" reason="Both explore the lasting psychological impact of witnessing violence. Armitage's speaker is a soldier; Duffy's is a civilian photographer. Both struggle to process what they have seen." />
-                  <ComparisonSuggestion poem="Bayonet Charge" reason="Both strip away patriotic ideals to reveal the raw, terrifying reality of combat. Hughes captures the moment; Armitage captures the aftermath." />
-                  <ComparisonSuggestion poem="Poppies" reason="Both explore the human cost of war, but from different perspectives: the soldier who inflicts violence and the mother who loses a child to it." />
+                  <ComparisonSuggestion
+                    poem="War Photographer"
+                    reason="Both explore the lasting psychological impact of witnessing violence. Armitage's speaker is a soldier; Duffy's is a civilian photographer. Both struggle to process what they have seen."
+                  />
+                  <ComparisonSuggestion
+                    poem="Bayonet Charge"
+                    reason="Both strip away patriotic ideals to reveal the raw, terrifying reality of combat. Hughes captures the moment; Armitage captures the aftermath."
+                  />
+                  <ComparisonSuggestion
+                    poem="Poppies"
+                    reason="Both explore the human cost of war, but from different perspectives: the soldier who inflicts violence and the mother who loses a child to it."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 10. Poppies ───────────────────── */}
-          <div id="poppies" style={{ display: visiblePoemIds.has("poppies") ? undefined : "none" }}>
-            <Section id="poppies" title="Poppies" poet="Jane Weir (2009)" studyHref="/revision/poetry/power-and-conflict/poppies">
-
+          <div id="poppies" style={{ display: visiblePoemIds.has('poppies') ? undefined : 'none' }}>
+            <Section
+              id="poppies"
+              title="Poppies"
+              poet="Jane Weir (2009)"
+              studyHref="/revision/poetry/power-and-conflict/poppies"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A mother describes the experience of her son leaving for military service. The poem moves between different moments in time: pinning a poppy to his lapel, smoothing his collar, and later visiting a war memorial. Through domestic imagery and sensory details, Weir captures the private, personal grief of a mother whose loss is set against the public rituals of remembrance. The poem does not confirm whether the son has been killed, leaving the grief ambiguous and universal.
+                  A mother describes the experience of her son leaving for military service. The
+                  poem moves between different moments in time: pinning a poppy to his lapel,
+                  smoothing his collar, and later visiting a war memorial. Through domestic imagery
+                  and sensory details, Weir captures the private, personal grief of a mother whose
+                  loss is set against the public rituals of remembrance. The poem does not confirm
+                  whether the son has been killed, leaving the grief ambiguous and universal.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Written in free verse with four stanzas of irregular length, the lack of a fixed structure reflects the mother&apos;s fragmented emotional state and the non-linear nature of memory. Enjambment creates a flowing, stream-of-consciousness quality as memories merge and overlap. The poem moves between past and present, domestic space and public memorial, personal grief and national remembrance. The lack of rhyme creates an intimate, prose-like tone that suits the personal subject matter.
+                  Written in free verse with four stanzas of irregular length, the lack of a fixed
+                  structure reflects the mother&apos;s fragmented emotional state and the non-linear
+                  nature of memory. Enjambment creates a flowing, stream-of-consciousness quality as
+                  memories merge and overlap. The poem moves between past and present, domestic
+                  space and public memorial, personal grief and national remembrance. The lack of
+                  rhyme creates an intimate, prose-like tone that suits the personal subject matter.
                 </p>
               </SubSection>
 
@@ -941,17 +1454,17 @@ export default function PowerAndConflictPage() {
                     analysis="The Sellotape from craft activities becomes a 'bandage,' transforming an innocent domestic object into a symbol of injury and healing. The mother's emotional wounds are expressed through everyday objects, grounding the poem in the personal and domestic."
                   />
                   <Quote
-                    text="the world overflowing / like a treasure chest"
+                    text="the world overflowing"
                     technique="Simile / enjambment"
                     analysis="This simile captures the mother's memory of her son's childhood wonder and excitement. The enjambment across lines mirrors the 'overflowing' quality. It contrasts painfully with the present moment of loss, making the grief more acute."
                   />
                   <Quote
-                    text="I was brave, as I walked / with you, to the front door"
+                    text="three days before Armistice Sunday"
                     technique="Military language / double meaning"
                     analysis="'Brave' and 'front' carry military connotations, but are used in a domestic context. The mother must be as courageous as a soldier to let her son go. 'The front door' also echoes 'the front' (the front line), blurring the boundary between home and battlefield."
                   />
                   <Quote
-                    text="released a bird from its cage"
+                    text="released a song bird from its cage"
                     technique="Metaphor / symbolism"
                     analysis="The metaphor of releasing a caged bird captures both the freedom of the son leaving and the mother's act of letting go. There is tenderness but also loss: the bird is free, but the cage-holder is left empty. It also suggests the irreversibility of the departure."
                   />
@@ -974,28 +1487,56 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Remains" reason="Both explore the personal cost of conflict, but from opposite perspectives: the soldier's guilt and the mother's grief." />
-                  <ComparisonSuggestion poem="War Photographer" reason="Both examine the gap between those who experience conflict directly and those who observe from a distance." />
-                  <ComparisonSuggestion poem="Kamikaze" reason="Both explore family responses to conflict and the tension between duty and personal relationships." />
+                  <ComparisonSuggestion
+                    poem="Remains"
+                    reason="Both explore the personal cost of conflict, but from opposite perspectives: the soldier's guilt and the mother's grief."
+                  />
+                  <ComparisonSuggestion
+                    poem="War Photographer"
+                    reason="Both examine the gap between those who experience conflict directly and those who observe from a distance."
+                  />
+                  <ComparisonSuggestion
+                    poem="Kamikaze"
+                    reason="Both explore family responses to conflict and the tension between duty and personal relationships."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 11. War Photographer ───────────────────── */}
-          <div id="war-photographer" style={{ display: visiblePoemIds.has("war-photographer") ? undefined : "none" }}>
-            <Section id="war-photographer" title="War Photographer" poet="Carol Ann Duffy (1985)" studyHref="/revision/poetry/power-and-conflict/war-photographer">
-
+          <div
+            id="war-photographer"
+            style={{ display: visiblePoemIds.has('war-photographer') ? undefined : 'none' }}
+          >
+            <Section
+              id="war-photographer"
+              title="War Photographer"
+              poet="Carol Ann Duffy (1985)"
+              studyHref="/revision/poetry/power-and-conflict/war-photographer"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A war photographer develops his photographs in a darkroom after returning from a conflict zone. As the images emerge, he remembers the suffering he witnessed. The poem contrasts the horror of war zones (Belfast, Phnom Penh, somewhere from which the &ldquo;running children in a nightmare heat&rdquo; come) with &ldquo;Rural England&rdquo; and its comfortable indifference. Duffy explores the photographer&apos;s moral conflict: he records suffering for a living, but the public barely engages with the images before moving on. The poem ends with him boarding a plane to another war zone, trapped in a cycle.
+                  A war photographer develops his photographs in a darkroom after returning from a
+                  conflict zone. As the images emerge, he remembers the suffering he witnessed. The
+                  poem contrasts the horror of war zones (Belfast, Phnom Penh, somewhere from which
+                  the &ldquo;running children in a nightmare heat&rdquo; come) with &ldquo;Rural
+                  England&rdquo; and its comfortable indifference. Duffy explores the
+                  photographer&apos;s moral conflict: he records suffering for a living, but the
+                  public barely engages with the images before moving on. The poem ends with him
+                  boarding a plane to another war zone, trapped in a cycle.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Four sestets (six-line stanzas) with a regular ABBCDD rhyme scheme create a controlled, ordered structure that mirrors the photographer&apos;s attempt to impose order on chaotic, traumatic memories. The regularity contrasts with the disturbing content, just as the neat rows of photographs contrast with the chaos they depict. The poem moves from the darkroom to the war zone and back, with a cyclical ending as the photographer prepares to leave again &mdash; suggesting the cycle of violence and indifference is unbroken.
+                  Four sestets (six-line stanzas) with a regular ABBCDD rhyme scheme create a
+                  controlled, ordered structure that mirrors the photographer&apos;s attempt to
+                  impose order on chaotic, traumatic memories. The regularity contrasts with the
+                  disturbing content, just as the neat rows of photographs contrast with the chaos
+                  they depict. The poem moves from the darkroom to the war zone and back, with a
+                  cyclical ending as the photographer prepares to leave again &mdash; suggesting the
+                  cycle of violence and indifference is unbroken.
                 </p>
               </SubSection>
 
@@ -1040,28 +1581,53 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Remains" reason="Both explore the psychological impact of witnessing violence. The photographer is haunted by images; the soldier is haunted by memories. Both struggle to process what they have seen." />
-                  <ComparisonSuggestion poem="Poppies" reason="Both examine the distance between those who experience conflict and those who observe it from safety. Both explore how individuals process grief and suffering." />
-                  <ComparisonSuggestion poem="London" reason="Both critique society's failure to respond adequately to suffering. Blake's speaker witnesses London's misery; Duffy's photographer records distant wars for an indifferent audience." />
+                  <ComparisonSuggestion
+                    poem="Remains"
+                    reason="Both explore the psychological impact of witnessing violence. The photographer is haunted by images; the soldier is haunted by memories. Both struggle to process what they have seen."
+                  />
+                  <ComparisonSuggestion
+                    poem="Poppies"
+                    reason="Both examine the distance between those who experience conflict and those who observe it from safety. Both explore how individuals process grief and suffering."
+                  />
+                  <ComparisonSuggestion
+                    poem="London"
+                    reason="Both critique society's failure to respond adequately to suffering. Blake's speaker witnesses London's misery; Duffy's photographer records distant wars for an indifferent audience."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 12. Tissue ───────────────────── */}
-          <div id="tissue" style={{ display: visiblePoemIds.has("tissue") ? undefined : "none" }}>
-            <Section id="tissue" title="Tissue" poet="Imtiaz Dharker (2006)" studyHref="/revision/poetry/power-and-conflict/tissue">
-
+          <div id="tissue" style={{ display: visiblePoemIds.has('tissue') ? undefined : 'none' }}>
+            <Section
+              id="tissue"
+              title="Tissue"
+              poet="Imtiaz Dharker (2006)"
+              studyHref="/revision/poetry/power-and-conflict/tissue"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Dharker uses paper as an extended metaphor to explore the structures humans create &mdash; maps, religious texts, receipts, architecture &mdash; and how fragile these constructs really are. The poem suggests that the things we use to organise, record, and control life (borders, money, buildings) are as thin and temporary as tissue paper. In the final stanza, the poem shifts to the human body itself, suggesting that human life is the most important &ldquo;tissue&rdquo; of all, more significant than any constructed system.
+                  Dharker uses paper as an extended metaphor to explore the structures humans create
+                  &mdash; maps, religious texts, receipts, architecture &mdash; and how fragile
+                  these constructs really are. The poem suggests that the things we use to organise,
+                  record, and control life (borders, money, buildings) are as thin and temporary as
+                  tissue paper. In the final stanza, the poem shifts to the human body itself,
+                  suggesting that human life is the most important &ldquo;tissue&rdquo; of all, more
+                  significant than any constructed system.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Ten quatrains followed by a single isolated line create a structure that itself feels thin and fragile, like layers of tissue. The heavy use of enjambment (both within and between stanzas) means ideas flow across boundaries, mirroring the poem&apos;s argument that human-made borders and structures are artificial. The final single line (&ldquo;turned into your skin&rdquo;) breaks the pattern, drawing attention to its message: human life matters more than any system. The lack of rhyme and loose metre create a reflective, philosophical tone.
+                  10 quatrains followed by a final isolated single-line stanza (&ldquo;turned into
+                  your skin.&rdquo;) create a structure that itself feels thin and fragile, like
+                  layers of tissue. The heavy use of enjambment (both within and between stanzas)
+                  means ideas flow across boundaries, mirroring the poem&apos;s argument that
+                  human-made borders and structures are artificial. The final isolated line is
+                  structurally significant &mdash; Dharker breaks the regularity of the quatrains to
+                  emphasise the volta from paper to flesh. The lack of rhyme and loose metre create
+                  a reflective, philosophical tone.
                 </p>
               </SubSection>
 
@@ -1083,9 +1649,9 @@ export default function PowerAndConflictPage() {
                     analysis="The image of lives as paper kites suggests both freedom (kites soaring) and fragility (paper tearing). It imagines a world where we hold our structures lightly, accepting their impermanence rather than clinging to them."
                   />
                   <Quote
-                    text="turned into your skin"
-                    technique="Direct address / structural shift"
-                    analysis="The final single line shifts from the abstract to the personal. 'Your skin' is the most fragile tissue of all, yet also the most important. The direct address ('your') involves the reader personally, suggesting that human identity and the body matter more than any paper structure."
+                    text="turned into your skin."
+                    technique="Isolated single-line stanza / direct address / volta"
+                    analysis="This is the final isolated single-line stanza, deliberately separated from the ten preceding quatrains. The structural break is significant -- Dharker disrupts the regularity of the quatrains to emphasise the volta from paper to flesh. 'Your skin' is the most fragile tissue of all, yet also the most important. The direct address ('your') involves the reader personally, suggesting that human identity and the body matter more than any paper structure."
                   />
                 </div>
               </SubSection>
@@ -1101,28 +1667,55 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Ozymandias" reason="Both explore the impermanence of human power and constructs. Shelley uses a ruined statue; Dharker uses the metaphor of paper. Both suggest nature and time outlast human ambition." />
-                  <ComparisonSuggestion poem="London" reason="Both critique human-made systems of control. Blake attacks specific institutions; Dharker questions the concept of human structures more broadly." />
-                  <ComparisonSuggestion poem="The Emigree" reason="Both explore borders, identity, and belonging. Dharker questions the validity of borders; Rumens explores how displacement reshapes identity." />
+                  <ComparisonSuggestion
+                    poem="Ozymandias"
+                    reason="Both explore the impermanence of human power and constructs. Shelley uses a ruined statue; Dharker uses the metaphor of paper. Both suggest nature and time outlast human ambition."
+                  />
+                  <ComparisonSuggestion
+                    poem="London"
+                    reason="Both critique human-made systems of control. Blake attacks specific institutions; Dharker questions the concept of human structures more broadly."
+                  />
+                  <ComparisonSuggestion
+                    poem="The Émigrée"
+                    reason="Both explore borders, identity, and belonging. Dharker questions the validity of borders; Rumens explores how displacement reshapes identity."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
-          {/* ───────────────────── 13. The Emigree ───────────────────── */}
-          <div id="the-emigree" style={{ display: visiblePoemIds.has("the-emigree") ? undefined : "none" }}>
-            <Section id="the-emigree" title="The Emigree" poet="Carol Rumens (1993)" studyHref="/revision/poetry/power-and-conflict/the-emigree">
-
+          {/* ───────────────────── 13. The Émigrée ───────────────────── */}
+          <div
+            id="the-emigree"
+            style={{ display: visiblePoemIds.has('the-emigree') ? undefined : 'none' }}
+          >
+            <Section
+              id="the-emigree"
+              title="The Émigrée"
+              poet="Carol Rumens (1993)"
+              studyHref="/revision/poetry/power-and-conflict/the-emigree"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker reflects on a country they left as a child. Despite knowing the place has been affected by conflict or political oppression (&ldquo;There once was a country... I left it as a child&rdquo;), their memory of it remains sunlit and idealised. External forces &mdash; &ldquo;they&rdquo; who are &ldquo;at the door&rdquo; &mdash; try to intimidate and erase the speaker&apos;s connection to their homeland, but the speaker defiantly clings to their memories and identity. The poem explores how memory, language, and identity persist even under threat.
+                  The speaker reflects on a country they left as a child. Despite knowing the place
+                  has been affected by conflict or political oppression (&ldquo;There once was a
+                  country... I left it as a child&rdquo;), their memory of it remains sunlit and
+                  idealised. External forces &mdash; &ldquo;they&rdquo; who are &ldquo;at the
+                  door&rdquo; &mdash; try to intimidate and erase the speaker&apos;s connection to
+                  their homeland, but the speaker defiantly clings to their memories and identity.
+                  The poem explores how memory, language, and identity persist even under threat.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Three stanzas of eight to nine lines with no regular rhyme scheme. Each stanza ends with a refrain about the city being &ldquo;sunlight,&rdquo; creating a defiant, resilient structure that resists the threats described. The poem moves from childhood memory to present-day threat, but the consistent light imagery shows that the speaker&apos;s inner world remains unbroken. The unnamed country and vague threats create a sense of universality: this could be any displaced person&apos;s experience.
+                  Three stanzas of eight to nine lines with no regular rhyme scheme. Each stanza
+                  ends with a refrain about the city being &ldquo;sunlight,&rdquo; creating a
+                  defiant, resilient structure that resists the threats described. The poem moves
+                  from childhood memory to present-day threat, but the consistent light imagery
+                  shows that the speaker&apos;s inner world remains unbroken. The unnamed country
+                  and vague threats create a sense of universality: this could be any displaced
+                  person&apos;s experience.
                 </p>
               </SubSection>
 
@@ -1148,10 +1741,11 @@ export default function PowerAndConflictPage() {
                     technique="Ambiguity / irony"
                     analysis="'Dark' is ambiguous: it could refer to skin colour (racial prejudice), secretiveness, or being 'unenlightened.' The irony of 'free city' is sharp: a place that claims to be free yet discriminates against outsiders. The pronoun 'they' creates a faceless, threatening force."
                   />
+                  {/* VERIFY: previous quote "my city takes me dancing through the city / of walls" was FABRICATED — actual Rumens line is just "My city takes me dancing through the streets". The phrase "city of walls" does not appear in The Émigrée. */}
                   <Quote
-                    text="my city takes me dancing through the city / of walls"
-                    technique="Personification / contrast"
-                    analysis="The speaker's remembered city is personified as a joyful companion that 'takes me dancing,' contrasting with the oppressive 'city of walls' that surrounds them. The internal, remembered city triumphs over the external, hostile one. Memory becomes an act of resistance."
+                    text="My city takes me dancing through the streets"
+                    technique="Personification"
+                    analysis="The speaker's remembered city is personified as a joyful companion that actively 'takes me dancing,' creating an image of intimate, embodied belonging. The personification gives memory the agency political force has stripped away — the homeland reaches back for her. Memory becomes an act of resistance."
                   />
                 </div>
               </SubSection>
@@ -1167,28 +1761,55 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Checking Out Me History" reason="Both explore identity under threat from external forces. Rumens's speaker resists through memory; Agard's speaker resists through reclaiming history." />
-                  <ComparisonSuggestion poem="Tissue" reason="Both question the power of borders and human-made structures. Dharker suggests these are fragile; Rumens shows how memory can transcend them." />
-                  <ComparisonSuggestion poem="Kamikaze" reason="Both explore the tension between individual identity and social/political pressure, and how memory shapes a person's sense of self." />
+                  <ComparisonSuggestion
+                    poem="Checking Out Me History"
+                    reason="Both explore identity under threat from external forces. Rumens's speaker resists through memory; Agard's speaker resists through reclaiming history."
+                  />
+                  <ComparisonSuggestion
+                    poem="Tissue"
+                    reason="Both question the power of borders and human-made structures. Dharker suggests these are fragile; Rumens shows how memory can transcend them."
+                  />
+                  <ComparisonSuggestion
+                    poem="Kamikaze"
+                    reason="Both explore the tension between individual identity and social/political pressure, and how memory shapes a person's sense of self."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 14. Checking Out Me History ───────────────────── */}
-          <div id="checking-out-me-history" style={{ display: visiblePoemIds.has("checking-out-me-history") ? undefined : "none" }}>
-            <Section id="checking-out-me-history" title="Checking Out Me History" poet="John Agard (1996)" studyHref="/revision/poetry/power-and-conflict/checking-out-me-history">
-
+          <div
+            id="checking-out-me-history"
+            style={{ display: visiblePoemIds.has('checking-out-me-history') ? undefined : 'none' }}
+          >
+            <Section
+              id="checking-out-me-history"
+              title="Checking Out Me History"
+              poet="John Agard (1996)"
+              studyHref="/revision/poetry/power-and-conflict/checking-out-me-history"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Agard, a Guyanese-British poet, protests against a Eurocentric education system that taught him about British historical figures (Guy Fawkes, Lord Nelson, Florence Nightingale) while ignoring the achievements of Black and Caribbean figures (Toussaint L&apos;Ouverture, Nanny de Maroon, Mary Seacole). The poem alternates between mocking the British history he was taught and celebrating the figures who were hidden from him. It is a powerful statement about identity, education, and the politics of who controls historical narratives.
+                  Agard, a Guyanese-British poet, protests against a Eurocentric education system
+                  that taught him about British historical figures (Guy Fawkes, Lord Nelson,
+                  Florence Nightingale) while ignoring the achievements of Black and Caribbean
+                  figures (Toussaint L&apos;Ouverture, Nanny de Maroon, Mary Seacole). The poem
+                  alternates between mocking the British history he was taught and celebrating the
+                  figures who were hidden from him. It is a powerful statement about identity,
+                  education, and the politics of who controls historical narratives.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The poem alternates between two distinct visual styles: italicised stanzas about Black historical figures and non-italicised stanzas about the British education system. This structural division physically enacts the separation between the two histories. The poem uses Caribbean dialect (&ldquo;dem,&rdquo; &ldquo;me,&rdquo; &ldquo;dat&rdquo;) as an act of linguistic resistance against Standard English. No regular rhyme scheme, but heavy use of rhythm and repetition creates a spoken-word, performance quality.
+                  The poem alternates between two distinct visual styles: italicised stanzas about
+                  Black historical figures and non-italicised stanzas about the British education
+                  system. This structural division physically enacts the separation between the two
+                  histories. The poem uses Caribbean dialect (&ldquo;dem,&rdquo; &ldquo;me,&rdquo;
+                  &ldquo;dat&rdquo;) as an act of linguistic resistance against Standard English. No
+                  regular rhyme scheme, but heavy use of rhythm and repetition creates a
+                  spoken-word, performance quality.
                 </p>
               </SubSection>
 
@@ -1205,9 +1826,9 @@ export default function PowerAndConflictPage() {
                     analysis="The metaphor of blindfolding suggests that the colonial education system deliberately prevents the speaker from seeing his own heritage. 'Bandage' implies injury: his identity has been wounded by the erasure of his history. Using 'me own history' as the blindfold is deeply ironic — his history is used against him."
                   />
                   <Quote
-                    text="a healing star / among the wounded"
-                    technique="Metaphor / imagery"
-                    analysis="Mary Seacole is described with luminous, celestial imagery ('star') that elevates her above the British figures listed dismissively elsewhere. The contrast between the reverent tone used for Caribbean heroes and the mocking tone for British history is structurally significant."
+                    text="From Jamaica / she travel far / to de Crimean War / she volunteer to go"
+                    technique="Short reverent lines / dialect"
+                    analysis="Mary Seacole's stanza uses short, hymn-like lines that elevate her above the British figures listed dismissively elsewhere. The Caribbean Creole 'de' and the simplicity of 'she travel far' give her story dignity and weight, contrasting with the mocking tone used for the British curriculum."
                   />
                   <Quote
                     text="But now I checking out me own history"
@@ -1228,28 +1849,57 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="London" reason="Both protest against oppressive systems. Blake attacks the Church and monarchy; Agard attacks the colonial education system. Both use repetition to build anger." />
-                  <ComparisonSuggestion poem="The Emigree" reason="Both explore identity threatened by external forces. Agard resists through reclaiming history; Rumens resists through preserving memory." />
-                  <ComparisonSuggestion poem="My Last Duchess" reason="Both explore who controls narratives. The Duke controls his wife's story; the colonial system controls which histories are told." />
+                  <ComparisonSuggestion
+                    poem="London"
+                    reason="Both protest against oppressive systems. Blake attacks the Church and monarchy; Agard attacks the colonial education system. Both use repetition to build anger."
+                  />
+                  <ComparisonSuggestion
+                    poem="The Émigrée"
+                    reason="Both explore identity threatened by external forces. Agard resists through reclaiming history; Rumens resists through preserving memory."
+                  />
+                  <ComparisonSuggestion
+                    poem="My Last Duchess"
+                    reason="Both explore who controls narratives. The Duke controls his wife's story; the colonial system controls which histories are told."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 15. Kamikaze ───────────────────── */}
-          <div id="kamikaze" style={{ display: visiblePoemIds.has("kamikaze") ? undefined : "none" }}>
-            <Section id="kamikaze" title="Kamikaze" poet="Beatrice Garland (2013)" studyHref="/revision/poetry/power-and-conflict/kamikaze">
-
+          <div
+            id="kamikaze"
+            style={{ display: visiblePoemIds.has('kamikaze') ? undefined : 'none' }}
+          >
+            <Section
+              id="kamikaze"
+              title="Kamikaze"
+              poet="Beatrice Garland (2013)"
+              studyHref="/revision/poetry/power-and-conflict/kamikaze"
+            >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The poem tells the story of a Japanese kamikaze pilot who turns his plane around instead of completing his suicide mission. As he flies towards his target, he sees the sea below and is reminded of his childhood &mdash; fishing with his father, the beauty of the natural world. These memories overpower his sense of duty, and he returns home. However, his family and community treat him as if he were dead: his wife refuses to speak to him, his children learn to act as if he does not exist. The poem ends ambiguously, questioning whether his decision was an act of courage or cowardice.
+                  The poem tells the story of a Japanese kamikaze pilot who turns his plane around
+                  instead of completing his suicide mission. As he flies towards his target, he sees
+                  the sea below and is reminded of his childhood &mdash; fishing with his father,
+                  the beauty of the natural world. These memories overpower his sense of duty, and
+                  he returns home. However, his family and community treat him as if he were dead:
+                  his wife refuses to speak to him, his children learn to act as if he does not
+                  exist. The poem ends ambiguously, questioning whether his decision was an act of
+                  courage or cowardice.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Seven sestets (six-line stanzas) followed by a final couplet. The poem is narrated in the third person by the pilot&apos;s daughter, creating distance and suggesting the story has been passed down. The regular stanza length contrasts with the emotional turbulence of the content. The shift from third person to first person in the final lines (&ldquo;he must have wondered / which had been the better way to die&rdquo;) is devastating, as the daughter imagines her father&apos;s perspective. Enjambment creates a flowing, reflective quality that mirrors the act of remembering.
+                  Seven sestets (six-line stanzas) followed by a final couplet. The poem is narrated
+                  in the third person by the pilot&apos;s daughter, creating distance and suggesting
+                  the story has been passed down. The regular stanza length contrasts with the
+                  emotional turbulence of the content. The shift from third person to first person
+                  in the final lines (&ldquo;he must have wondered / which had been the better way
+                  to die&rdquo;) is devastating, as the daughter imagines her father&apos;s
+                  perspective. Enjambment creates a flowing, reflective quality that mirrors the act
+                  of remembering.
                 </p>
               </SubSection>
 
@@ -1295,15 +1945,22 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="The Charge of the Light Brigade" reason="Both explore duty and obedience. Tennyson's soldiers follow orders to their deaths; Garland's pilot defies orders but faces social death instead." />
-                  <ComparisonSuggestion poem="Poppies" reason="Both explore the impact of conflict on families. Weir's mother loses her son to war; Garland's pilot loses his family by refusing to die." />
-                  <ComparisonSuggestion poem="The Emigree" reason="Both explore how identity is shaped by memory and how individuals are ostracised or displaced by forces beyond their control." />
+                  <ComparisonSuggestion
+                    poem="The Charge of the Light Brigade"
+                    reason="Both explore duty and obedience. Tennyson's soldiers follow orders to their deaths; Garland's pilot defies orders but faces social death instead."
+                  />
+                  <ComparisonSuggestion
+                    poem="Poppies"
+                    reason="Both explore the impact of conflict on families. Weir's mother loses her son to war; Garland's pilot loses his family by refusing to die."
+                  />
+                  <ComparisonSuggestion
+                    poem="The Émigrée"
+                    reason="Both explore how identity is shaped by memory and how individuals are ostracised or displaced by forces beyond their control."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
-
         </div>
       </section>
 
@@ -1314,16 +1971,17 @@ export default function PowerAndConflictPage() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">Comparison Table</h2>
           <p className="mt-2 text-muted-foreground">
-            Use this at-a-glance table to find poems that work well together for your comparison essay. Click to expand.
+            Use this at-a-glance table to find poems that work well together for your comparison
+            essay. Click to expand.
           </p>
 
           <button
             onClick={() => setShowTable((o) => !o)}
             className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
           >
-            {showTable ? "Hide" : "Show"} Comparison Table
+            {showTable ? 'Hide' : 'Show'} Comparison Table
             <svg
-              className={`h-4 w-4 transition-transform ${showTable ? "rotate-180" : ""}`}
+              className={`h-4 w-4 transition-transform ${showTable ? 'rotate-180' : ''}`}
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
@@ -1348,13 +2006,16 @@ export default function PowerAndConflictPage() {
                 </thead>
                 <tbody>
                   {COMPARISON_DATA.map((row, i) => (
-                    <tr
-                      key={row.poem}
-                      className={i % 2 === 0 ? "bg-card" : "bg-muted"}
-                    >
-                      <td className="px-4 py-3 font-semibold text-primary whitespace-nowrap">{row.poem}</td>
-                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.poet}</td>
-                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.type}</td>
+                    <tr key={row.poem} className={i % 2 === 0 ? 'bg-card' : 'bg-muted'}>
+                      <td className="px-4 py-3 font-semibold text-primary whitespace-nowrap">
+                        {row.poem}
+                      </td>
+                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">
+                        {row.poet}
+                      </td>
+                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">
+                        {row.type}
+                      </td>
                       <td className="px-4 py-3 text-muted-foreground">{row.themes}</td>
                       <td className="px-4 py-3 text-muted-foreground">{row.tone}</td>
                       <td className="px-4 py-3 text-muted-foreground">{row.form}</td>
@@ -1379,49 +2040,66 @@ export default function PowerAndConflictPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              theme: "Power of Nature",
-              poems: ["Ozymandias", "Extract from The Prelude", "Storm on the Island", "Exposure"],
-              colour: "border-accent",
+              theme: 'Power of Nature',
+              poems: ['Ozymandias', 'Extract from The Prelude', 'Storm on the Island', 'Exposure'],
+              colour: 'border-accent',
             },
             {
-              theme: "Reality of Conflict",
-              poems: ["Exposure", "Bayonet Charge", "Remains", "War Photographer", "The Charge of the Light Brigade"],
-              colour: "border-warn",
+              theme: 'Reality of Conflict',
+              poems: [
+                'Exposure',
+                'Bayonet Charge',
+                'Remains',
+                'War Photographer',
+                'The Charge of the Light Brigade',
+              ],
+              colour: 'border-warn',
             },
             {
-              theme: "Pride, Power and Control",
-              poems: ["Ozymandias", "My Last Duchess", "London", "Checking Out Me History"],
-              colour: "border-primary",
+              theme: 'Pride, Power and Control',
+              poems: ['Ozymandias', 'My Last Duchess', 'London', 'Checking Out Me History'],
+              colour: 'border-primary',
             },
             {
-              theme: "Identity and Belonging",
-              poems: ["The Emigree", "Checking Out Me History", "Kamikaze", "Tissue"],
-              colour: "border-success",
+              theme: 'Identity and Belonging',
+              poems: ['The Émigrée', 'Checking Out Me History', 'Kamikaze', 'Tissue'],
+              colour: 'border-success',
             },
             {
-              theme: "Loss and Grief",
-              poems: ["Poppies", "Remains", "War Photographer", "The Charge of the Light Brigade", "Kamikaze"],
-              colour: "border-accent",
+              theme: 'Loss and Grief',
+              poems: [
+                'Poppies',
+                'Remains',
+                'War Photographer',
+                'The Charge of the Light Brigade',
+                'Kamikaze',
+              ],
+              colour: 'border-accent',
             },
             {
-              theme: "Memory and Its Power",
-              poems: ["Extract from The Prelude", "Remains", "Poppies", "The Emigree", "Kamikaze"],
-              colour: "border-warn",
+              theme: 'Memory and Its Power',
+              poems: ['Extract from The Prelude', 'Remains', 'Poppies', 'The Émigrée', 'Kamikaze'],
+              colour: 'border-warn',
             },
             {
-              theme: "Guilt and Responsibility",
-              poems: ["Remains", "War Photographer", "London"],
-              colour: "border-primary",
+              theme: 'Guilt and Responsibility',
+              poems: ['Remains', 'War Photographer', 'London'],
+              colour: 'border-primary',
             },
             {
-              theme: "Fear and Vulnerability",
-              poems: ["Storm on the Island", "Bayonet Charge", "Extract from The Prelude", "Exposure"],
-              colour: "border-success",
+              theme: 'Fear and Vulnerability',
+              poems: [
+                'Storm on the Island',
+                'Bayonet Charge',
+                'Extract from The Prelude',
+                'Exposure',
+              ],
+              colour: 'border-success',
             },
             {
-              theme: "Honour, Duty and Patriotism",
-              poems: ["The Charge of the Light Brigade", "Kamikaze", "Bayonet Charge"],
-              colour: "border-accent",
+              theme: 'Honour, Duty and Patriotism',
+              poems: ['The Charge of the Light Brigade', 'Kamikaze', 'Bayonet Charge'],
+              colour: 'border-accent',
             },
           ].map((group) => (
             <div
@@ -1451,7 +2129,7 @@ export default function PowerAndConflictPage() {
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Choose Your Comparison Wisely",
+                title: 'Choose Your Comparison Wisely',
                 text: "You'll be given one poem and asked to compare it to another of your choice. Pick a poem with clear thematic or structural links — not just the one you know best. If given 'Exposure,' choosing 'Storm on the Island' (both explore nature's power) is stronger than a loosely connected choice.",
               },
               {
@@ -1459,20 +2137,20 @@ export default function PowerAndConflictPage() {
                 text: "Avoid writing about one poem then the other. Instead, make a point about both poems together, using connectives: 'similarly,' 'in contrast,' 'whereas,' 'however.' A comparative essay should feel like a conversation between two poems.",
               },
               {
-                title: "Short Quotes, Big Analysis",
+                title: 'Short Quotes, Big Analysis',
                 text: "Embed single words or short phrases into your sentences. Long block quotes waste time. Instead, zoom in on individual word choices and their effects. For example, analyse 'knive us' from Exposure rather than quoting the entire line.",
               },
               {
-                title: "Comment on Form and Structure",
+                title: 'Comment on Form and Structure',
                 text: "Always discuss the poet's choice of form (sonnet, monologue, free verse), rhyme scheme, line length, and structural features like volta, refrain, or cyclical endings. Link form to meaning: why did the poet choose this structure?",
               },
               {
-                title: "Link Context to Meaning",
+                title: 'Link Context to Meaning',
                 text: "Don't just state facts about the poet's life or historical period. Explain how context shapes meaning: 'Owen's experience in the trenches creates the poem's tone of futile despair' is better than simply noting he was a WWI soldier.",
               },
               {
-                title: "Use Subject Terminology",
-                text: "Name techniques accurately: enjambment, caesura, sibilance, volta, dramatic monologue, pararhyme. But always explain the effect — feature-spotting without analysis scores poorly. Say what the technique does, not just what it is.",
+                title: 'Use Subject Terminology',
+                text: 'Name techniques accurately: enjambment, caesura, sibilance, volta, dramatic monologue, pararhyme. But always explain the effect — feature-spotting without analysis scores poorly. Say what the technique does, not just what it is.',
               },
             ].map((tip) => (
               <div
@@ -1487,19 +2165,43 @@ export default function PowerAndConflictPage() {
         </div>
       </section>
 
+      {/* Rights notice */}
+      <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">Rights notice.</strong> Several AQA Power &amp;
+          Conflict poems remain in copyright &mdash; including Heaney&rsquo;s{' '}
+          <em>Storm on the Island</em> (&copy; Faber &amp; Faber), Armitage&rsquo;s <em>Remains</em>{' '}
+          (&copy; Faber &amp; Faber), Weir&rsquo;s <em>Poppies</em> (&copy; Templar Poetry),
+          Duffy&rsquo;s <em>War Photographer</em> (&copy; Picador / Pan Macmillan and Rogers
+          Coleridge &amp; White) and Garland&rsquo;s <em>Kamikaze</em> (&copy; Enitharmon Press).
+          Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
+          quotation). For full text, students should consult the board-licensed AQA Power &amp;
+          Conflict anthology.
+        </div>
+      </section>
+
       {/* Back link */}
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <Link
           href="/resources/poetry"
           className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-primary transition-colors"
         >
-          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          <svg
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
           </svg>
           Back to Poetry Hub
         </Link>
       </section>
-
     </>
-  );
+  )
 }

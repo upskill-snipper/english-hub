@@ -186,9 +186,10 @@ export default async function ChristmasCarolAnalysisHub() {
           A Christmas Carol Analysis
         </h1>
         <p className="max-w-3xl text-lg text-muted-foreground">
-          In-depth GCSE analysis of Charles Dickens&apos;s 1843 novella A Christmas Carol. Browse
-          full quotation analyses, character studies, theme guides and marker essay advice, all
-          written by experienced GCSE English Literature markers.
+          In-depth GCSE analysis of Charles Dickens&apos;s novella A Christmas Carol, published by
+          Chapman &amp; Hall on 19 December 1843. Browse full quotation analyses, character studies,
+          theme guides and marker essay advice, all written by experienced GCSE English Literature
+          markers.
         </p>
         <p className="text-sm text-muted-foreground">
           Written by GCSE markers · Updated for 2026 specifications

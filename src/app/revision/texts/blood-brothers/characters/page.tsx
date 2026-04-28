@@ -1,14 +1,7 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Drama,
-  Quote,
-  Sparkles,
-  Users,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Drama, Quote, Sparkles, Users } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -21,8 +14,7 @@ export const metadata: Metadata = {
   description:
     'In-depth character analysis for Blood Brothers by Willy Russell: Mickey, Eddie, Mrs Johnstone, Mrs Lyons, Linda, Narrator and Sammy.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/revision/texts/blood-brothers/characters',
+    canonical: 'https://theenglishhub.app/revision/texts/blood-brothers/characters',
   },
 }
 
@@ -42,20 +34,20 @@ const CHARACTERS: CharacterProfile[] = [
     name: 'Mickey Johnstone',
     role: 'The twin raised in poverty',
     overview:
-      'Mickey is energetic, funny and warm as a child, then ground down by unemployment, prison and depression as an adult. Russell uses his trajectory to argue that environment, not innate character, decides a person\'s life. Mickey begins as the more charismatic twin but ends broken, while Edward — genetically identical — thrives.',
-    arc: 'Mickey moves from childhood innocence through teenage swagger to adult desperation. His decline mirrors Liverpool\'s economic collapse in the 1980s. After prison, he becomes dependent on antidepressants and cannot reconnect with Linda or with his own sense of self. His final confrontation with Edward is driven not by jealousy alone but by the unbearable realisation that his suffering was arbitrary.',
+      "Mickey is energetic, funny and warm as a child, then ground down by unemployment, prison and depression as an adult. Russell uses his trajectory to argue that environment, not innate character, decides a person's life. Mickey begins as the more charismatic twin but ends broken, while Edward — genetically identical — thrives.",
+    arc: "Mickey moves from childhood innocence through teenage swagger to adult desperation. His decline mirrors Liverpool's economic collapse in the 1980s. After prison, he becomes dependent on antidepressants and cannot reconnect with Linda or with his own sense of self. His final confrontation with Edward is driven not by jealousy alone but by the unbearable realisation that his suffering was arbitrary.",
     keyQuotes: [
       {
         text: '"I wish I was our Sammy."',
         context: 'Act 1 — childhood song',
         analysis:
-          'Innocent wish to be older that foreshadows Mickey\'s later, devastating wish to have been Edward. Russell plants the pattern of wanting a different life early.',
+          "Innocent wish to be older that foreshadows Mickey's later, devastating wish to have been Edward. Russell plants the pattern of wanting a different life early.",
       },
       {
         text: '"How come you didn\'t grow up like me?"',
         context: 'Act 2 — final scene',
         analysis:
-          'The play\'s thesis in five words. Mickey articulates class rage in ordinary speech, making the political argument viscerally personal.',
+          "The play's thesis in five words. Mickey articulates class rage in ordinary speech, making the political argument viscerally personal.",
       },
       {
         text: '"I could have been him."',
@@ -65,13 +57,13 @@ const CHARACTERS: CharacterProfile[] = [
       },
     ],
     examTip:
-      'Always connect Mickey\'s decline to context: 1980s deindustrialisation, Thatcherism and mass unemployment in Liverpool. Examiners reward candidates who treat Mickey as Russell\'s political argument, not just a tragic individual.',
+      "Always connect Mickey's decline to context: 1980s deindustrialisation, Thatcherism and mass unemployment in Liverpool. Examiners reward candidates who treat Mickey as Russell's political argument, not just a tragic individual.",
   },
   {
     name: 'Edward Lyons',
     role: 'The twin raised in wealth',
     overview:
-      'Edward is kind, bookish and generous, but his privilege is unmistakable. Russell carefully shows that the same warmth is read as charming in Edward and foolish in Mickey, simply because of accent and address. Edward\'s advantages — private school, university, a career in local politics — are not earned but inherited.',
+      "Edward is kind, bookish and generous, but his privilege is unmistakable. Russell carefully shows that the same warmth is read as charming in Edward and foolish in Mickey, simply because of accent and address. Edward's advantages — private school, university, a career in local politics — are not earned but inherited.",
     arc: 'Edward moves from sheltered childhood through boarding school to university and a council career. He remains generous throughout, yet Russell never lets the audience forget that his generosity is underwritten by wealth. His attempt to help Mickey in adulthood is well-meaning but patronising, and it accelerates the catastrophe.',
     keyQuotes: [
       {
@@ -84,7 +76,7 @@ const CHARACTERS: CharacterProfile[] = [
         text: '"I\'ll get you a job."',
         context: 'Act 2 — adulthood',
         analysis:
-          'Edward\'s offer of help exposes the power imbalance. What he sees as friendship, Mickey experiences as charity — a gulf Russell makes structurally inevitable.',
+          "Edward's offer of help exposes the power imbalance. What he sees as friendship, Mickey experiences as charity — a gulf Russell makes structurally inevitable.",
       },
     ],
     examTip:
@@ -94,8 +86,8 @@ const CHARACTERS: CharacterProfile[] = [
     name: 'Mrs Johnstone',
     role: 'Biological mother of both boys',
     overview:
-      'Warm, funny, exhausted and trapped, Mrs Johnstone is Russell\'s portrait of working-class motherhood under Thatcherism. She is not feckless or negligent — she gives up her child because Mrs Lyons exploits her economic vulnerability. Her opening and closing songs frame the play as her testimony.',
-    arc: 'Mrs Johnstone begins as a young woman abandoned by her husband, working to feed seven children. She agrees to the pact not from greed but from desperation. Throughout the play she carries guilt silently. Her final revelation of the truth to both boys is an act of honesty that arrives too late, underlining Russell\'s point that class structures deny working-class people the power to shape their own stories.',
+      "Warm, funny, exhausted and trapped, Mrs Johnstone is Russell's portrait of working-class motherhood under Thatcherism. She is not feckless or negligent — she gives up her child because Mrs Lyons exploits her economic vulnerability. Her opening and closing songs frame the play as her testimony.",
+    arc: "Mrs Johnstone begins as a young woman abandoned by her husband, working to feed seven children. She agrees to the pact not from greed but from desperation. Throughout the play she carries guilt silently. Her final revelation of the truth to both boys is an act of honesty that arrives too late, underlining Russell's point that class structures deny working-class people the power to shape their own stories.",
     keyQuotes: [
       {
         text: '"Tell me it\'s not true, say it\'s just a story."',
@@ -107,17 +99,17 @@ const CHARACTERS: CharacterProfile[] = [
         text: '"Shoes upon the table."',
         context: 'Act 1 — superstition motif',
         analysis:
-          'Working-class superstition used as a motif. Russell parallels genuine folk belief with Mrs Lyons\'s invented curse to question who controls narratives of fate.',
+          "Working-class superstition used as a motif. Russell parallels genuine folk belief with Mrs Lyons's invented curse to question who controls narratives of fate.",
       },
       {
         text: '"Already mine, already mine."',
         context: 'Act 1 — giving up the baby',
         analysis:
-          'Mrs Johnstone\'s anguish when she tries to reclaim the child. Russell shows that maternal love is powerless against class privilege.',
+          "Mrs Johnstone's anguish when she tries to reclaim the child. Russell shows that maternal love is powerless against class privilege.",
       },
     ],
     examTip:
-      'Examiners reward candidates who discuss Mrs Johnstone as a structural victim of class, not a bad mother. Connect her songs to Russell\'s use of the musical form to give working-class women a voice.',
+      "Examiners reward candidates who discuss Mrs Johnstone as a structural victim of class, not a bad mother. Connect her songs to Russell's use of the musical form to give working-class women a voice.",
   },
   {
     name: 'Mrs Lyons',
@@ -142,7 +134,7 @@ const CHARACTERS: CharacterProfile[] = [
         text: '"You can\'t play with him."',
         context: 'Act 1 — forbidding friendship',
         analysis:
-          'Mrs Lyons polices the class boundary. Her fear is not of Mickey but of what his existence reveals about Edward\'s origins.',
+          "Mrs Lyons polices the class boundary. Her fear is not of Mickey but of what his existence reveals about Edward's origins.",
       },
     ],
     examTip:
@@ -150,7 +142,7 @@ const CHARACTERS: CharacterProfile[] = [
   },
   {
     name: 'Linda',
-    role: 'Mickey\'s childhood sweetheart and wife',
+    role: "Mickey's childhood sweetheart and wife",
     overview:
       'Feisty, loyal and outspoken as a girl, Linda grows up alongside Mickey and Edward. She marries Mickey, but as his depression deepens she is left isolated and desperate. Russell uses her to show how poverty and mental illness do not just destroy individuals — they destroy relationships.',
     arc: 'Linda begins as a bold, equal presence in the childhood trio. As an adult, she supports Mickey through unemployment and prison. When Mickey withdraws into medication, she turns to Edward for help — an act of pragmatism, not betrayal. Russell makes clear that her choices are constrained by the same class forces that crush Mickey.',
@@ -159,7 +151,7 @@ const CHARACTERS: CharacterProfile[] = [
         text: '"If you\'d been born here, what would you have been?"',
         context: 'Act 2 — adolescence',
         analysis:
-          'Linda voices the play\'s central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge.',
+          "Linda voices the play's central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge.",
       },
       {
         text: '"Bright girl. An\' beautiful."',
@@ -169,14 +161,14 @@ const CHARACTERS: CharacterProfile[] = [
       },
     ],
     examTip:
-      'Avoid blaming Linda for turning to Edward. Russell constructs her as a victim of the same system. Examiners reward discussion of how Russell presents women\'s limited choices under poverty.',
+      "Avoid blaming Linda for turning to Edward. Russell constructs her as a victim of the same system. Examiners reward discussion of how Russell presents women's limited choices under poverty.",
   },
   {
     name: 'The Narrator',
     role: 'Choric commentator',
     overview:
       'A brooding, almost supernatural figure who threads the play together with songs and warnings. The Narrator is not a character in the realist sense but a dramatic device. He embodies the sense of class-driven fate, asking the audience to decide whether the tragedy is caused by superstition or by society.',
-    arc: 'The Narrator is present from the first line to the last. He does not change; instead, his repeated warnings create an atmosphere of inevitability. Russell uses him to keep the audience at a critical distance, preventing pure emotional identification and forcing analytical engagement with the play\'s politics.',
+    arc: "The Narrator is present from the first line to the last. He does not change; instead, his repeated warnings create an atmosphere of inevitability. Russell uses him to keep the audience at a critical distance, preventing pure emotional identification and forcing analytical engagement with the play's politics.",
     keyQuotes: [
       {
         text: '"You know the devil\'s got your number."',
@@ -188,13 +180,13 @@ const CHARACTERS: CharacterProfile[] = [
         text: '"There\'s a man gone mad in the town tonight."',
         context: 'Act 2 — approaching climax',
         analysis:
-          'The Narrator\'s warning drives rising dread. Russell uses the ballad form to make Mickey\'s breakdown feel both personal and historically inevitable.',
+          "The Narrator's warning drives rising dread. Russell uses the ballad form to make Mickey's breakdown feel both personal and historically inevitable.",
       },
       {
         text: '"And do we blame superstition for what came to pass?"',
         context: 'Act 2 — final line',
         analysis:
-          'The Narrator\'s closing question rejects the supernatural reading. Russell demands the audience locate blame in class structures, not fate.',
+          "The Narrator's closing question rejects the supernatural reading. Russell demands the audience locate blame in class structures, not fate.",
       },
     ],
     examTip:
@@ -202,16 +194,16 @@ const CHARACTERS: CharacterProfile[] = [
   },
   {
     name: 'Sammy Johnstone',
-    role: 'Mickey\'s older brother',
+    role: "Mickey's older brother",
     overview:
       'Sammy is aggressive, reckless and violent, but Russell does not present him as naturally bad. He is a product of the same deprivation that shapes Mickey. His trajectory from petty childhood troublemaker to armed robber illustrates how poverty escalates risk and narrows choices.',
-    arc: 'Sammy moves from childhood mischief to violent crime. He drags Mickey into an armed robbery that leads to Mickey\'s imprisonment. Russell uses Sammy to show the spectrum of working-class outcomes: where Mickey is ground down, Sammy lashes out. Both responses are consequences of the same environment.',
+    arc: "Sammy moves from childhood mischief to violent crime. He drags Mickey into an armed robbery that leads to Mickey's imprisonment. Russell uses Sammy to show the spectrum of working-class outcomes: where Mickey is ground down, Sammy lashes out. Both responses are consequences of the same environment.",
     keyQuotes: [
       {
         text: '"Sammy, don\'t... leave him alone."',
         context: 'Act 1 — childhood',
         analysis:
-          'Even as children, Sammy\'s aggression is apparent. Russell establishes early that the Johnstone environment produces different survival strategies.',
+          "Even as children, Sammy's aggression is apparent. Russell establishes early that the Johnstone environment produces different survival strategies.",
       },
       {
         text: '"I\'ll get y\' after."',
@@ -238,11 +230,17 @@ export default async function BloodBrothersCharactersPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Blood Brothers", url: "https://theenglishhub.app/revision/texts/blood-brothers" },
-          { name: "Characters", url: "https://theenglishhub.app/revision/texts/blood-brothers/characters" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Blood Brothers',
+            url: 'https://theenglishhub.app/revision/texts/blood-brothers',
+          },
+          {
+            name: 'Characters',
+            url: 'https://theenglishhub.app/revision/texts/blood-brothers/characters',
+          },
         ]}
       />
       {/* Hero */}
@@ -274,12 +272,10 @@ export default async function BloodBrothersCharactersPage() {
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Character Analysis
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">
-            Blood Brothers by Willy Russell
-          </p>
+          <p className="mt-2 text-body-lg text-muted-foreground">Blood Brothers by Willy Russell</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Deep profiles for every major character: overview, arc, key quotations and
-            examiner tips. All quotes are 15 words or fewer.
+            Deep profiles for every major character: overview, arc, key quotations and examiner
+            tips. All quotes are 15 words or fewer.
           </p>
         </div>
       </section>
@@ -306,9 +302,7 @@ export default async function BloodBrothersCharactersPage() {
 
                 {/* Arc */}
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">
-                    Character arc
-                  </h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">Character arc</h3>
                   <p className="text-body-sm text-muted-foreground">{c.arc}</p>
                 </div>
 
@@ -320,9 +314,7 @@ export default async function BloodBrothersCharactersPage() {
                       key={q.text}
                       className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-1.5"
                     >
-                      <p className="text-body-md font-medium italic text-foreground">
-                        {q.text}
-                      </p>
+                      <p className="text-body-md font-medium italic text-foreground">{q.text}</p>
                       <p className="text-caption uppercase tracking-wide text-primary">
                         {q.context}
                       </p>
@@ -385,9 +377,9 @@ export default async function BloodBrothersCharactersPage() {
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright,
-        Designs and Patents Act 1988 for criticism and review. Full text available from
-        your school or local library.
+        <strong>Rights notice:</strong> &copy; Methuen Drama / Bloomsbury on behalf of Willy Russell
+        (b. 1947). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
+        review, quotation). For full text, students should consult the licensed school edition.
       </p>
     </div>
   )

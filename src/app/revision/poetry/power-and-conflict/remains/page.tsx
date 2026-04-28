@@ -2,10 +2,7 @@ import { ArrowLeft, BookOpen, Swords, Brain, Skull, HeartCrack, Eye } from 'luci
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import {
-  InteractivePoemViewer,
-  type PoemData,
-} from '@/components/study/InteractivePoemViewer'
+import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -45,13 +42,16 @@ const REMAINS: PoemData = {
         },
       ],
     },
-    { text: 'probably armed, possibly not.', annotations: [
-      {
-        type: 'Ambiguity',
-        note: 'The uncertainty over whether the looter was armed introduces moral doubt. "Probably" shifts to the weaker "possibly" -- the soldier cannot justify the killing with certainty.',
-        color: '#f59e0b',
-      },
-    ] },
+    {
+      text: 'probably armed, possibly not.',
+      annotations: [
+        {
+          type: 'Ambiguity',
+          note: 'The uncertainty over whether the looter was armed introduces moral doubt. "Probably" shifts to the weaker "possibly" -- the soldier cannot justify the killing with certainty.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: '' },
 
     // Stanza 2
@@ -118,13 +118,13 @@ const REMAINS: PoemData = {
       annotations: [
         {
           type: 'Volta / Turning point',
-          note: 'This caesura marks the poem\'s structural and emotional pivot. The speaker tries to dismiss the event but cannot -- the trauma persists.',
+          note: "This caesura marks the poem's structural and emotional pivot. The speaker tries to dismiss the event but cannot -- the trauma persists.",
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'His blood-Loss shadow on the street, the',
+      text: 'His blood-shadow stays on the street, and out on patrol',
       annotations: [
         {
           type: 'Metaphor',
@@ -133,12 +133,13 @@ const REMAINS: PoemData = {
         },
       ],
     },
-    { text: 'blood-Loss shadow on the street, the' },
+    { text: 'I walk right over it week after week.' },
+    { text: 'Then I’m home on leave. But I blink' },
     { text: '' },
 
     // Stanza 7
     {
-      text: 'drink and the drugs won\'t flush him out --',
+      text: "drink and the drugs won't flush him out --",
       annotations: [
         {
           type: 'PTSD',
@@ -148,7 +149,7 @@ const REMAINS: PoemData = {
       ],
     },
     {
-      text: 'he\'s here in my head when I close my eyes,',
+      text: "he's here in my head when I close my eyes,",
       annotations: [
         {
           type: 'Shift to present tense',
@@ -168,7 +169,7 @@ const REMAINS: PoemData = {
       ],
     },
     {
-      text: 'not left for dead in some distant, sun-stunned, sand-Loss',
+      text: 'not left for dead in some distant, sun-stunned, sand-smothered',
       annotations: [
         {
           type: 'Sibilance',
@@ -185,7 +186,7 @@ const REMAINS: PoemData = {
       annotations: [
         {
           type: 'Isolation',
-          note: 'The final couplet is isolated from the rest of the poem, mirroring the speaker\'s emotional isolation and the way the memory cannot be contained within a neat structure.',
+          note: "The final couplet is isolated from the rest of the poem, mirroring the speaker's emotional isolation and the way the memory cannot be contained within a neat structure.",
           color: '#a78bfa',
         },
       ],
@@ -207,14 +208,15 @@ const REMAINS: PoemData = {
     },
   ],
 
-  context: `<p><strong>Simon Armitage</strong> (born 1963) is a contemporary English poet who became the UK Poet Laureate in 2019. He is known for writing in an accessible, conversational style that draws on everyday Northern English speech.</p>
+  context: `<p><strong>Simon Armitage</strong> (born 1963) is a contemporary English poet from Marsden, West Yorkshire. He has been UK Poet Laureate since May 2019, succeeding Carol Ann Duffy (who held the post 2009-2019). He originally trained as a probation officer, is now a professor at Leeds University, and served as Oxford Professor of Poetry from 2015 to 2019. He is known for writing in an accessible, conversational style that draws on everyday Northern English speech.</p>
 
-<p><strong>"Remains"</strong> is taken from Armitage's 2008 collection <em>The Not Dead</em>, which accompanied a Channel 4 documentary of the same name. The poem is based on the <strong>real testimony of a soldier</strong>, Guardsman Tromans, who served in Iraq (Basra) and later suffered severe PTSD.</p>
+<p><strong>Important biographical note:</strong> Armitage never served in any military or combat role. <em>"Remains"</em> (2007) was written for Channel 4's documentary <em>The Not Dead</em> and is based on interviews with Iraq War veterans — not on personal experience. The poem draws on the testimony of a soldier (often identified as Guardsman Tromans, who served in Basra and later suffered severe PTSD); Armitage's role was to act as a poetic translator of these accounts.</p>
 
 <p>The poem explores the <strong>psychological aftermath of killing</strong> in modern warfare. Unlike older war poetry that focused on trenches and patriotism, "Remains" confronts the reality that soldiers carry the trauma of combat long after they return home.</p>
 
 <p><strong>Key contextual points:</strong></p>
 <ul>
+  <li>Armitage himself never served in any war — the poem is based on documentary interviews, not personal experience</li>
   <li>Based on a real soldier's account -- Armitage acts as a mouthpiece for veterans who struggle to articulate their experiences</li>
   <li>Set during the Iraq War (2003 onwards) -- a controversial conflict where the justification for war was questioned</li>
   <li>The ambiguity over whether the looter was armed reflects the moral complexity of modern urban warfare, where combatants and civilians are hard to distinguish</li>
@@ -279,17 +281,17 @@ KEY STRUCTURAL EFFECTS:
     {
       quote: 'dug in behind enemy lines',
       analysis:
-        'Extended military metaphor. The dead man has invaded the speaker\'s mind like a soldier entrenched in hostile territory. Ironically, the speaker\'s own psyche has become the battlefield -- the war has followed him home.',
+        "Extended military metaphor. The dead man has invaded the speaker's mind like a soldier entrenched in hostile territory. Ironically, the speaker's own psyche has become the battlefield -- the war has followed him home.",
       themes: ['Power of memory', 'PTSD', 'Conflict'],
     },
     {
-      quote: 'his blood-shadow on the street',
+      quote: 'blood-shadow stays on the street',
       analysis:
-        'A compound metaphor fusing blood stain and shadow. The "shadow" suggests the man\'s death has left a permanent, dark imprint -- both on the street and on the speaker\'s conscience. It cannot be washed away.',
+        'A compound metaphor fusing blood stain and shadow. The verb "stays" insists the trace will not leave; the "shadow" suggests the man\'s death has left a permanent, dark imprint — both on the street and on the speaker\'s conscience.',
       themes: ['Guilt', 'Power of memory'],
     },
     {
-      quote: 'he\'s here in my head when I close my eyes',
+      quote: "he's here in my head when I close my eyes",
       analysis:
         'The shift to present tense makes the haunting immediate and ongoing. "Here in my head" shows the dead man has become an inescapable mental presence -- the speaker cannot find peace even in sleep.',
       themes: ['PTSD', 'Power of memory', 'Individual vs. authority'],
@@ -300,12 +302,7 @@ KEY STRUCTURAL EFFECTS:
         'A devastating pun: "bloody" works as a colloquial intensifier (swearing) and literal description (blood-stained). The idiom "blood on your hands" (meaning guilt for a death) is made horrifyingly literal. The end-stopped final line is inescapable and definitive.',
       themes: ['Guilt', 'Reality of conflict', 'PTSD'],
     },
-    {
-      quote: 'near to the knuckle',
-      analysis:
-        'An idiom meaning uncomfortably close to the truth. The phrase also has a physical, visceral quality -- "knuckle" connects to the body, hands, and the violence the speaker has committed. It suggests the memory is raw and painful.',
-      themes: ['PTSD', 'Guilt'],
-    },
+    // VERIFY: previously contained fabricated key quote 'near to the knuckle' — this idiom does NOT appear in Armitage's Remains. Removed.
   ],
 
   languageDevices: [
@@ -341,14 +338,14 @@ KEY STRUCTURAL EFFECTS:
       device: 'Pun ("bloody")',
       example: 'His bloody life in my bloody hands',
       effect:
-        'The word operates on two levels simultaneously: as a common British swear word expressing frustration, and as a literal description of blood-stained hands. This dual meaning captures both the speaker\'s emotional anguish and physical guilt in a single devastating line.',
+        "The word operates on two levels simultaneously: as a common British swear word expressing frustration, and as a literal description of blood-stained hands. This dual meaning captures both the speaker's emotional anguish and physical guilt in a single devastating line.",
       lineRef: 29,
     },
     {
       device: 'Enjambment',
       example: 'the / blood-shadow on the street',
       effect:
-        'Lines spill over stanza breaks, mirroring how the speaker\'s thoughts and memories overflow beyond his control. The fractured line structure reflects a fractured mind -- he cannot contain the memory within neat boundaries.',
+        "Lines spill over stanza breaks, mirroring how the speaker's thoughts and memories overflow beyond his control. The fractured line structure reflects a fractured mind -- he cannot contain the memory within neat boundaries.",
       lineRef: 19,
     },
     {
@@ -385,9 +382,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'rem-1',
     question: 'What event does the speaker describe in Remains?',
     type: 'multiple-choice',
-    options: ['A training exercise', 'Shooting a looter during a deployment, then being haunted by the memory', 'Rescuing a civilian from a warzone', 'Returning home from war to a hero\'s welcome'],
+    options: [
+      'A training exercise',
+      'Shooting a looter during a deployment, then being haunted by the memory',
+      'Rescuing a civilian from a warzone',
+      "Returning home from war to a hero's welcome",
+    ],
     correctIndex: 1,
-    explanation: 'The speaker describes shooting a looter who was raiding a bank. The uncertainty about whether the man was armed, and the graphic aftermath, haunt the soldier long after the event.',
+    explanation:
+      'The speaker describes shooting a looter who was raiding a bank. The uncertainty about whether the man was armed, and the graphic aftermath, haunt the soldier long after the event.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -395,9 +398,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'rem-2',
     question: 'What does "probably armed, possibly not" reveal?',
     type: 'multiple-choice',
-    options: ['The soldier was certain the looter had a weapon', 'The moral ambiguity and guilt — the soldier cannot be sure the killing was justified', 'The soldier did not care about the situation', 'The looter was definitely unarmed'],
+    options: [
+      'The soldier was certain the looter had a weapon',
+      'The moral ambiguity and guilt — the soldier cannot be sure the killing was justified',
+      'The soldier did not care about the situation',
+      'The looter was definitely unarmed',
+    ],
     correctIndex: 1,
-    explanation: 'The shift from "probably" to the weaker "possibly" shows the soldier\'s uncertainty. He cannot justify the killing with confidence, and this moral doubt becomes the source of his guilt and PTSD.',
+    explanation:
+      'The shift from "probably" to the weaker "possibly" shows the soldier\'s uncertainty. He cannot justify the killing with confidence, and this moral doubt becomes the source of his guilt and PTSD.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -405,9 +414,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'rem-3',
     question: 'Why does Armitage use colloquial language like "legs it" and "tosses his guts"?',
     type: 'multiple-choice',
-    options: ['He is a careless writer', 'It makes the poem feel like a real soldier talking, not a polished literary voice', 'It is meant to be humorous', 'It shows the soldier is uneducated'],
+    options: [
+      'He is a careless writer',
+      'It makes the poem feel like a real soldier talking, not a polished literary voice',
+      'It is meant to be humorous',
+      'It shows the soldier is uneducated',
+    ],
     correctIndex: 1,
-    explanation: 'The informal, colloquial language mimics the way a real soldier would recount the incident. It creates authenticity and makes the sudden shift to haunting imagery more shocking.',
+    explanation:
+      'The informal, colloquial language mimics the way a real soldier would recount the incident. It creates authenticity and makes the sudden shift to haunting imagery more shocking.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -415,19 +430,31 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'rem-4',
     question: 'What does the poem explore about the psychological effects of war?',
     type: 'multiple-choice',
-    options: ['War makes soldiers stronger', 'The trauma of killing someone stays with you forever — PTSD and guilt', 'Soldiers forget about war quickly', 'War has no lasting psychological effects'],
+    options: [
+      'War makes soldiers stronger',
+      'The trauma of killing someone stays with you forever — PTSD and guilt',
+      'Soldiers forget about war quickly',
+      'War has no lasting psychological effects',
+    ],
     correctIndex: 1,
-    explanation: 'Remains is fundamentally about PTSD (Post-Traumatic Stress Disorder). The dead man\'s image is permanently "dug in behind my eyes" — the soldier cannot escape the memory, even through drink or drugs.',
+    explanation:
+      'Remains is fundamentally about PTSD (Post-Traumatic Stress Disorder). The dead man is "dug in behind enemy lines" inside the soldier\'s head — he cannot escape the memory, even through drink or drugs.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
   {
     id: 'rem-5',
-    question: 'What is the effect of "his blood-Loss Loss loss shadow stays on the street"?',
+    question: 'What is the effect of "blood-shadow stays on the street"?',
     type: 'multiple-choice',
-    options: ['It describes a clean crime scene', 'The bloodstain becomes a permanent mark — literally and metaphorically, the killing leaves a stain that cannot be removed', 'It shows the street is dangerous', 'It describes sunset'],
+    options: [
+      'It describes a clean crime scene',
+      'The bloodstain becomes a permanent mark — literally and metaphorically, the killing leaves a stain that cannot be removed',
+      'It shows the street is dangerous',
+      'It describes sunset',
+    ],
     correctIndex: 1,
-    explanation: 'The bloodstain becomes a permanent shadow — a stain on both the street and the soldier\'s conscience. It cannot be washed away, symbolising how guilt persists long after the physical event.',
+    explanation:
+      "The bloodstain becomes a permanent shadow — a stain on both the street and the soldier's conscience. It cannot be washed away, symbolising how guilt persists long after the physical event.",
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -435,9 +462,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'rem-6',
     question: 'How does the poem shift between its two halves?',
     type: 'multiple-choice',
-    options: ['It shifts from casual anecdote to haunting, inescapable guilt', 'It shifts from sadness to happiness', 'It stays in the same tone throughout', 'It shifts from a warzone to a hospital'],
+    options: [
+      'It shifts from casual anecdote to haunting, inescapable guilt',
+      'It shifts from sadness to happiness',
+      'It stays in the same tone throughout',
+      'It shifts from a warzone to a hospital',
+    ],
     correctIndex: 0,
-    explanation: 'The first half uses casual, anecdotal language as if telling a story in a pub. The second half shifts dramatically as the dead man\'s image invades the soldier\'s waking life and dreams, and guilt takes over.',
+    explanation:
+      "The first half uses casual, anecdotal language as if telling a story in a pub. The second half shifts dramatically as the dead man's image invades the soldier's waking life and dreams, and guilt takes over.",
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -445,9 +478,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'rem-7',
     question: 'What is the significance of the final line "his bloody life in my bloody hands"?',
     type: 'multiple-choice',
-    options: ['It is a swear word with no deeper meaning', 'The double meaning of "bloody" — both literal blood and the colloquial intensifier — captures the soldier\'s guilt and casual horror simultaneously', 'It describes the soldier washing his hands', 'It refers to a different incident'],
+    options: [
+      'It is a swear word with no deeper meaning',
+      'The double meaning of "bloody" — both literal blood and the colloquial intensifier — captures the soldier\'s guilt and casual horror simultaneously',
+      'It describes the soldier washing his hands',
+      'It refers to a different incident',
+    ],
     correctIndex: 1,
-    explanation: '"Bloody" works as both a swear word (casual, colloquial) and a literal description (covered in blood). This duality mirrors the poem\'s central tension between the soldier\'s casual surface and his deep psychological trauma.',
+    explanation:
+      '"Bloody" works as both a swear word (casual, colloquial) and a literal description (covered in blood). This duality mirrors the poem\'s central tension between the soldier\'s casual surface and his deep psychological trauma.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -455,9 +494,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'rem-8',
     question: 'Where does Remains come from and what is its context?',
     type: 'multiple-choice',
-    options: ['It was written during World War I', 'It is based on a real soldier\'s testimony from the documentary The Not Dead, about British soldiers in Iraq', 'It is entirely fictional', 'It is based on the Falklands War'],
+    options: [
+      'It was written during World War I',
+      "It is based on a real soldier's testimony from the documentary The Not Dead, about British soldiers in Iraq",
+      'It is entirely fictional',
+      'It is based on the Falklands War',
+    ],
     correctIndex: 1,
-    explanation: 'Remains is based on the real testimony of a soldier named Guardsman Tromans, featured in the Channel 4 documentary The Not Dead (2007). Armitage wrote the poem as part of a collection giving voice to modern soldiers\' experiences.',
+    explanation:
+      "Remains is based on the real testimony of a soldier named Guardsman Tromans, featured in the Channel 4 documentary The Not Dead (2007). Armitage wrote the poem as part of a collection giving voice to modern soldiers' experiences.",
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -465,19 +510,32 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'rem-9',
     question: 'How does Armitage use the present tense to convey the experience of PTSD?',
     type: 'multiple-choice',
-    options: ['The present tense makes the poem feel outdated', 'The shift to present tense in the second half shows the memory is not past — it is permanently happening now, refusing to become a memory', 'The present tense is used throughout without change', 'It creates a light, cheerful tone'],
+    options: [
+      'The present tense makes the poem feel outdated',
+      'The shift to present tense in the second half shows the memory is not past — it is permanently happening now, refusing to become a memory',
+      'The present tense is used throughout without change',
+      'It creates a light, cheerful tone',
+    ],
     correctIndex: 1,
-    explanation: 'The poem begins in past tense ("we got sent out") but shifts to present ("he\'s here in my head"). This tense shift is crucial: PTSD means the traumatic event never becomes "past" — it remains present, inescapable.',
+    explanation:
+      'The poem begins in past tense ("we got sent out") but shifts to present ("he\'s here in my head"). This tense shift is crucial: PTSD means the traumatic event never becomes "past" — it remains present, inescapable.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
   {
     id: 'rem-10',
-    question: 'Which poem from the Power and Conflict anthology best pairs with Remains for exploring guilt and the psychological effects of conflict?',
+    question:
+      'Which poem from the Power and Conflict anthology best pairs with Remains for exploring guilt and the psychological effects of conflict?',
     type: 'multiple-choice',
-    options: ['Ozymandias by Shelley', 'War Photographer by Carol Ann Duffy', 'Tissue by Dharker', 'Storm on the Island by Heaney'],
+    options: [
+      'Ozymandias by Shelley',
+      'War Photographer by Carol Ann Duffy',
+      'Tissue by Dharker',
+      'Storm on the Island by Heaney',
+    ],
     correctIndex: 1,
-    explanation: 'Both Remains and War Photographer explore the lasting psychological impact of witnessing violence. The photographer and the soldier are both haunted by what they have seen — but while the photographer observes, the soldier has directly caused death.',
+    explanation:
+      'Both Remains and War Photographer explore the lasting psychological impact of witnessing violence. The photographer and the soldier are both haunted by what they have seen — but while the photographer observes, the soldier has directly caused death.',
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -486,29 +544,32 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
-    summary: 'Remains explores the psychological aftermath of killing in war — guilt, PTSD, moral ambiguity, and the impossibility of escaping traumatic memory.',
+    summary:
+      'Remains explores the psychological aftermath of killing in war — guilt, PTSD, moral ambiguity, and the impossibility of escaping traumatic memory.',
     keyPoints: [
       'Guilt and moral ambiguity — "probably armed, possibly not"',
-      'PTSD — the dead man is permanently "dug in behind my eyes"',
+      'PTSD — the dead man is "dug in behind enemy lines" inside the speaker\'s head',
       'The gap between the casual telling and the devastating psychological reality',
       'Individual responsibility vs shared guilt — "all three of us open fire"',
     ],
   },
   {
     topic: 'Language & Imagery',
-    summary: 'Armitage uses colloquial voice, graphic imagery, and dual-meaning words to create a tension between casual storytelling and deep psychological trauma.',
+    summary:
+      'Armitage uses colloquial voice, graphic imagery, and dual-meaning words to create a tension between casual storytelling and deep psychological trauma.',
     keyPoints: [
       'Colloquial language ("legs it", "tosses his guts") — authentic soldier\'s voice',
-      '"Dug in behind my eyes" — military metaphor for inescapable memory',
+      '"Dug in behind enemy lines" — military metaphor for inescapable memory',
       '"Bloody life in my bloody hands" — double meaning captures guilt',
       'Graphic imagery of the shooting creates visceral, unforgettable scenes',
     ],
   },
   {
     topic: 'Structure & Form',
-    summary: 'Free verse with irregular stanza lengths, shifting from anecdotal past tense to haunting present tense as PTSD takes hold.',
+    summary:
+      'Free verse with irregular stanza lengths, shifting from anecdotal past tense to haunting present tense as PTSD takes hold.',
     keyPoints: [
-      'Free verse — no regular rhyme or metre, mirroring the soldier\'s fractured state',
+      "Free verse — no regular rhyme or metre, mirroring the soldier's fractured state",
       'Tense shift from past to present — the trauma refuses to become memory',
       'First half is narrative; second half is psychological torment',
       'Conversational tone gradually breaks down as guilt overwhelms',
@@ -554,7 +615,7 @@ const COMPARISONS = [
     points: [
       'Both explore the conflict between duty (military orders) and personal conscience',
       'Both question whether following orders is morally justified',
-      'Kamikaze\'s pilot chooses not to kill and is punished by society; Armitage\'s soldier follows orders and is punished by his own mind',
+      "Kamikaze's pilot chooses not to kill and is punished by society; Armitage's soldier follows orders and is punished by his own mind",
       'Both poems examine how war destroys individuals -- whether through action or inaction',
     ],
   },
@@ -571,11 +632,17 @@ export default function RemainsPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
-          { name: "Remains", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/remains" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Power and Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
+          },
+          {
+            name: 'Remains',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/remains',
+          },
         ]}
       />
       {/* ── Breadcrumb / back ── */}
@@ -599,7 +666,9 @@ export default function RemainsPage() {
             <p className="text-body-sm text-muted-foreground">
               Simon Armitage &middot; Power and Conflict Anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              AQA
+            </Badge>
           </div>
         </div>
       </div>
@@ -637,12 +706,10 @@ export default function RemainsPage() {
 
       {/* ── Comparison poems ── */}
       <section className="space-y-4">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Comparison Poems
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Comparison Poems</h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl">
-          For the AQA exam, you must compare two poems from the anthology. These are
-          the strongest pairings with "Remains" and the key points of comparison.
+          For the AQA exam, you must compare two poems from the anthology. These are the strongest
+          pairings with "Remains" and the key points of comparison.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -677,7 +744,11 @@ export default function RemainsPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations from Remains by Simon Armitage reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available in your AQA anthology.
+        <strong>Rights notice:</strong> &copy; Faber &amp; Faber on behalf of Simon Armitage (b.
+        1963). Quotations from &ldquo;Remains&rdquo; are short fair-dealing extracts under CDPA 1988
+        &sect;30 (criticism, review, quotation). For full text, students should consult the
+        board-licensed AQA Power &amp; Conflict anthology or Armitage&rsquo;s collection{' '}
+        <em>The Not Dead</em> (2008).
       </p>
     </div>
   )

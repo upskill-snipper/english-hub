@@ -46,8 +46,7 @@ const paper1Sections = [
   {
     heading: 'Section A — Unseen Poetry',
     label: 'Paper 1 Section A',
-    detail:
-      'One question on a single unseen poem. Comment on language, structure and meaning.',
+    detail: 'One question on a single unseen poem. Comment on language, structure and meaning.',
     href: '/igcse/edexcel/unseen-poetry',
     subLinks: [
       { label: 'Approach', href: '/igcse/edexcel/unseen-poetry/approach' },
@@ -60,12 +59,10 @@ const paper1Sections = [
   {
     heading: 'Section B — Anthology Poetry',
     label: 'Paper 1 Section B',
-    detail:
-      'One question comparing two poems from the Pearson Edexcel Poetry Anthology (15 poems).',
+    detail: 'One question comparing two poems from the Pearson Edexcel Poetry Anthology.',
     href: '/igcse/edexcel/poetry',
     subLinks: [
-      { label: 'If', href: '/igcse/edexcel/poetry/if' },
-      { label: 'Piano', href: '/igcse/edexcel/poetry/piano' },
+      { label: 'If—', href: '/igcse/edexcel/poetry/if' },
       { label: 'Remember', href: '/igcse/edexcel/poetry/remember' },
       { label: 'Sonnet 116', href: '/igcse/edexcel/poetry/sonnet-116' },
       { label: 'The Tyger', href: '/igcse/edexcel/poetry/the-tyger' },
@@ -75,8 +72,7 @@ const paper1Sections = [
   {
     heading: 'Section C — Modern Prose',
     label: 'Paper 1 Section C',
-    detail:
-      'One essay question on a studied modern prose text. Closed book.',
+    detail: 'One essay question on a studied modern prose text. Closed book.',
     href: '/igcse/edexcel/prose',
     texts: [
       {
@@ -93,17 +89,13 @@ const paper1Sections = [
         name: 'Of Mice and Men',
         author: 'John Steinbeck',
         href: '/igcse/edexcel/prose/of-mice-and-men',
-        subLinks: [
-          { label: 'Themes', href: '/igcse/edexcel/prose/of-mice-and-men/themes' },
-        ],
+        subLinks: [{ label: 'Themes', href: '/igcse/edexcel/prose/of-mice-and-men/themes' }],
       },
       {
         name: 'Things Fall Apart',
         author: 'Chinua Achebe',
         href: '/igcse/edexcel/prose/things-fall-apart',
-        subLinks: [
-          { label: 'Themes', href: '/igcse/edexcel/prose/things-fall-apart/themes' },
-        ],
+        subLinks: [{ label: 'Themes', href: '/igcse/edexcel/prose/things-fall-apart/themes' }],
       },
     ] as TextEntry[],
   },
@@ -113,8 +105,7 @@ const paper2Sections = [
   {
     heading: 'Section A — Modern Drama',
     label: 'Paper 2 Section A',
-    detail:
-      'One extract-based question on a studied modern drama text.',
+    detail: 'One extract-based question on a studied modern drama text.',
     href: '/igcse/edexcel/drama',
     texts: [
       {
@@ -131,25 +122,20 @@ const paper2Sections = [
         name: 'A View from the Bridge',
         author: 'Arthur Miller',
         href: '/igcse/edexcel/drama/a-view-from-the-bridge',
-        subLinks: [
-          { label: 'Themes', href: '/igcse/edexcel/drama/a-view-from-the-bridge/themes' },
-        ],
+        subLinks: [{ label: 'Themes', href: '/igcse/edexcel/drama/a-view-from-the-bridge/themes' }],
       },
       {
         name: 'The Curious Incident of the Dog in the Night-Time',
         author: 'Simon Stephens',
         href: '/igcse/edexcel/drama/curious-incident',
-        subLinks: [
-          { label: 'Themes', href: '/igcse/edexcel/drama/curious-incident/themes' },
-        ],
+        subLinks: [{ label: 'Themes', href: '/igcse/edexcel/drama/curious-incident/themes' }],
       },
     ] as TextEntry[],
   },
   {
     heading: 'Section B — Literary Heritage',
     label: 'Paper 2 Section B',
-    detail:
-      'One essay question on a studied Shakespeare play. Closed book.',
+    detail: 'One essay question on a studied Shakespeare play. Closed book.',
     href: '/igcse/edexcel/shakespeare',
     texts: [
       {
@@ -222,22 +208,19 @@ const studyTools = [
 const examResources = [
   {
     title: 'Past Papers',
-    description:
-      'Where to find official Edexcel past papers plus study tips for using them.',
+    description: 'Where to find official Edexcel past papers plus study tips for using them.',
     href: '/igcse/edexcel/past-papers',
     icon: FileText,
   },
   {
     title: 'Exam Technique',
-    description:
-      'IGCSE-specific strategies for comparison, extract and essay questions.',
+    description: 'IGCSE-specific strategies for comparison, extract and essay questions.',
     href: '/igcse/edexcel/exam-technique',
     icon: Target,
   },
   {
     title: 'Essay Technique',
-    description:
-      'How to structure and develop Literature essays across all papers.',
+    description: 'How to structure and develop Literature essays across all papers.',
     href: '/igcse/edexcel/essay-technique',
     icon: PenTool,
   },
@@ -262,19 +245,14 @@ function TextCard({ text }: { text: TextEntry }) {
     <div className="group/text rounded-xl border border-border/60 bg-card transition-all duration-200 hover:border-primary/30 hover:shadow-card-hover">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
         ]}
       />
-      <Link
-        href={text.href}
-        className="flex items-center justify-between gap-3 p-4"
-      >
+      <Link href={text.href} className="flex items-center justify-between gap-3 p-4">
         <div className="min-w-0">
-          <h4 className="font-heading text-body text-foreground truncate">
-            {text.name}
-          </h4>
+          <h4 className="font-heading text-body text-foreground truncate">{text.name}</h4>
           <p className="text-body-xs text-muted-foreground">{text.author}</p>
         </div>
         <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover/text:translate-x-0.5 group-hover/text:text-primary" />
@@ -392,18 +370,16 @@ export default async function EdexcelIgcseHubPage() {
             Pearson Edexcel IGCSE Literature
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            The Pearson Edexcel International GCSE in English Literature
-            is a two-paper qualification studied in over 85 countries.
-            It covers <strong className="text-foreground">poetry, modern
-            prose, modern drama</strong> and a{' '}
-            <strong className="text-foreground">literary heritage
-            Shakespeare play</strong>, all assessed closed book.
+            The Pearson Edexcel International GCSE in English Literature is a two-paper
+            qualification studied in over 85 countries. It covers{' '}
+            <strong className="text-foreground">poetry, modern prose, modern drama</strong> and a{' '}
+            <strong className="text-foreground">literary heritage Shakespeare play</strong>, all
+            assessed closed book.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <ScrollText className="size-3.5" />
-              2 papers
+              <ScrollText className="size-3.5" />2 papers
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
               <Clock className="size-3.5" />
@@ -415,6 +391,39 @@ export default async function EdexcelIgcseHubPage() {
             </span>
           </div>
         </div>
+      </section>
+
+      {/* ── Anthology version disclaimer ────────────────────────────── */}
+      <section
+        aria-label="Anthology version notice"
+        className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
+      >
+        <p className="mb-2">
+          <strong className="text-foreground">Anthology version:</strong> This site teaches the{' '}
+          <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
+          978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
+          freely-available online versions include:
+        </p>
+        <ol className="mb-2 list-decimal space-y-1 pl-5 text-muted-foreground">
+          <li>
+            <em>Half-Caste</em> uses Agard&rsquo;s spelling &lsquo;yu&rsquo; (not
+            &lsquo;you&rsquo;);
+          </li>
+          <li>
+            <em>The Bright Lights of Sarajevo</em> has additional stanza breaks not in
+            Harrison&rsquo;s original <em>Guardian</em> publication;
+          </li>
+          <li>
+            the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
+            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals — always use the
+            anthology version when answering Edexcel questions.
+          </li>
+        </ol>
+        <p className="text-body-xs text-muted-foreground">
+          © Pearson Education — quotations on individual set-text pages are short fair-dealing
+          extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
+          school-licensed editions.
+        </p>
       </section>
 
       {/* ── Paper 1 ─────────────────────────────────────────────────── */}
@@ -469,9 +478,7 @@ export default async function EdexcelIgcseHubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <GraduationCap className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Study Tools
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Study Tools</h2>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -487,12 +494,8 @@ export default async function EdexcelIgcseHubPage() {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">
-                    {tool.title}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {tool.description}
-                  </p>
+                  <h3 className="font-heading text-body text-foreground">{tool.title}</h3>
+                  <p className="text-body-xs text-muted-foreground">{tool.description}</p>
                 </div>
                 <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>
@@ -507,9 +510,7 @@ export default async function EdexcelIgcseHubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <Target className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Exam Resources
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Exam Resources</h2>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -525,12 +526,8 @@ export default async function EdexcelIgcseHubPage() {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">
-                    {res.title}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {res.description}
-                  </p>
+                  <h3 className="font-heading text-body text-foreground">{res.title}</h3>
+                  <p className="text-body-xs text-muted-foreground">{res.description}</p>
                 </div>
                 <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>
@@ -541,7 +538,7 @@ export default async function EdexcelIgcseHubPage() {
 
       {/* ── Footer ──────────────────────────────────────────────────── */}
       <footer className="pt-4 text-center text-body-xs text-muted-foreground">
-        Aligned with Pearson Edexcel specification 4ET1
+        Aligned with Pearson Edexcel specification 4ET1 &middot; Audited April 2026
       </footer>
     </div>
   )

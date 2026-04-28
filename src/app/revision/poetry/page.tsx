@@ -120,7 +120,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
     )
   }
 
-  // ── Eduqas: single 18-poem anthology ────────────────────────────────
+  // ── Eduqas: single 12-poem anthology (2025 specification) ──────────
   if (board === 'eduqas') {
     return (
       <>
@@ -128,7 +128,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <PoetryShell
           boardLabel="WJEC Eduqas"
           title="Eduqas Poetry Anthology"
-          description="The Eduqas anthology has 18 poems that all students study. You'll be asked to compare two of them in the exam — strong pairings are essential."
+          description="The Eduqas 2025 anthology has 12 poems that all students study. You'll be asked to compare two of them in the exam — strong pairings are essential. Six of the twelve remain in copyright; quotations are short fair-dealing extracts."
           wrongBoard={wrongBoard}
         >
           <div className="sm:col-span-2">
@@ -426,7 +426,7 @@ function AnthologyLinks() {
       href: '/revision/poetry/eduqas',
       title: 'Eduqas Poetry',
       snippet:
-        'All eighteen Eduqas anthology poems with strong pairing suggestions for the compulsory comparison question.',
+        'All twelve poems from the Eduqas 2025 GCSE anthology with strong pairing suggestions for the compulsory comparison question.',
     },
     {
       href: '/revision/poetry/edexcel/conflict',

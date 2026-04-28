@@ -39,7 +39,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'I\'m half-caste',
+      text: "I'm half-caste",
       annotations: [
         {
           type: 'Irony',
@@ -61,52 +61,52 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: '[Extract: Picasso mix red an green]',
+      text: '[See anthology — Picasso analogy: mixing paint colours]',
       annotations: [
         {
           type: 'Analogy — Art',
-          note: 'Agard argues that when Picasso mixed colours on canvas, nobody called the painting "half-caste". Mixing is seen as creative genius in art but as something lesser in human beings. This exposes the double standard.',
+          note: 'Agard argues that when a great artist mixed colours on canvas, nobody called the painting "half-caste". Mixing is seen as creative genius in art but as something lesser in human beings. This exposes the double standard. Refer to the anthology for the exact wording.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: '[Extract: Tchaikovsky mix a black key / wid a white key]',
+      text: '[See anthology — Tchaikovsky analogy: black and white piano keys]',
       annotations: [
         {
           type: 'Analogy — Music',
-          note: 'A second analogy: Tchaikovsky combined black and white piano keys to create beautiful music. Nobody calls a symphony "half-caste". Agard shows that mixing is natural and beautiful in every field except racial identity, where prejudice distorts our judgement.',
+          note: 'A second analogy: Tchaikovsky combined black and white piano keys to create beautiful music. Nobody calls a symphony "half-caste". Agard shows that mixing is natural and beautiful in every field except racial identity, where prejudice distorts our judgement. Refer to the anthology for the exact wording.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: '[Extract: England weather / nearly always half-caste]',
+      text: '[See anthology — English weather analogy: sun and cloud]',
       annotations: [
         {
           type: 'Analogy — Weather',
-          note: 'A third, humorous analogy: English weather is a mix of sun and cloud. Is the weather "half-caste"? The bathos of comparing racial prejudice to weather is deliberately comic, making the term look silly and small.',
+          note: 'A third, humorous analogy: English weather is a mix of sun and cloud. The bathos of comparing racial prejudice to weather is deliberately comic, making the term look silly and small. Refer to the anthology for the exact wording.',
           color: '#10b981',
         },
       ],
     },
     { text: '' },
     {
-      text: '[Extract: I half-caste human being / cast half-a-shadow]',
+      text: '[See anthology — literalisation: casting half-a-shadow]',
       annotations: [
         {
           type: 'Literalisation',
-          note: 'Agard takes "half" literally: if he is only half a person, he casts half a shadow. The physical impossibility exposes the linguistic cruelty of the word. The technique of literalising the metaphor runs throughout the poem.',
+          note: 'Agard takes "half" literally: if he is only half a person, he casts half a shadow. The physical impossibility exposes the linguistic cruelty of the word. The technique of literalising the metaphor runs throughout the poem. Refer to the anthology for the exact wording.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: '[Extract: half-a-dream / half-a-eye]',
+      text: '[See anthology — accumulating list of "halves": dream, eye, ear]',
       annotations: [
         {
           type: 'Accumulation',
-          note: 'The speaker lists more "halves" — half a dream, half an eye, half an ear. The list accumulates until the idea becomes obviously absurd. This rhetorical strategy of piling up examples overwhelms the reader with the foolishness of the term.',
+          note: 'The speaker lists more "halves" — half a dream, half an eye, half an ear. The list accumulates until the idea becomes obviously absurd. This rhetorical strategy of piling up examples overwhelms the reader with the foolishness of the term. Refer to the anthology for the exact wording.',
           color: '#a855f7',
         },
       ],
@@ -159,7 +159,7 @@ Agard uses three analogies to show that mixing is valued everywhere except in ra
 
 The speaker then literalises the metaphor of "half". If he is only half a person, he must cast half a shadow, dream half a dream, see with half an eye, listen with half an ear. The accumulation of physical impossibilities makes the term look increasingly stupid.
 
-The poem ends with a powerful challenge. The speaker tells the listener to "come back tomorrow / wid de whole of yu eye / an de whole of yu ear / an de whole of yu mind". Only when the listener approaches as a whole, unprejudiced person will the speaker share "de other half / of my story". The reversal is complete: it is the listener, not the speaker, who has been incomplete all along.
+The poem ends with a powerful challenge. The speaker tells the listener to "come back tomorrow / wid de whole of yu eye" (and to bring the whole of their ear and mind). Only when the listener approaches as a whole, unprejudiced person will the speaker share "de other half / of my story". The reversal is complete: it is the listener, not the speaker, who has been incomplete all along.
 
 Overall meaning: "Half-Caste" is a poem that uses humour, irony and Caribbean dialect to confront racial prejudice. Agard reclaims an offensive word, exposes its absurdity through analogies and literalisation, and ultimately shifts power from the labeller to the labelled.`,
 
@@ -184,7 +184,7 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
 
   keyQuotes: [
     {
-      quote: 'Excuse me / standing on one leg / I\'m half-caste',
+      quote: "Excuse me / standing on one leg / I'm half-caste",
       analysis:
         'The opening is brilliantly ironic. "Excuse me" is mock-polite — the speaker pretends to apologise for existing. "Standing on one leg" literalises "half" immediately, showing that if the term were true, the speaker would be physically incomplete. The absurdity is deliberate and sets the tone for the whole poem.',
       themes: ['Identity', 'Irony', 'Absurdity'],
@@ -196,27 +196,27 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       themes: ['Power', 'Language', 'Challenge'],
     },
     {
-      quote: 'when Picasso mix red an green / is a half-caste canvas?',
+      quote: '[See anthology — Picasso paint-mixing analogy]',
       analysis:
-        'The first of three analogies. When a great artist mixes colours, the result is celebrated as genius. Nobody calls a Picasso painting "half-caste". The analogy exposes the double standard: mixing is valued in art but denigrated in human identity. The rhetorical question demands the listener confront their own inconsistency.',
+        'The first of three analogies. When a great artist mixes colours, the result is celebrated as genius. Nobody calls a Picasso painting "half-caste". The analogy exposes the double standard: mixing is valued in art but denigrated in human identity. The rhetorical question demands the listener confront their own inconsistency. Refer to your Edexcel IGCSE anthology for the exact wording.',
       themes: ['Art', 'Double standards', 'Mixing'],
     },
     {
-      quote: 'when Tchaikovsky / mix a black key / wid a white key',
+      quote: '[See anthology — Tchaikovsky black-and-white-keys analogy]',
       analysis:
-        'The musical analogy is particularly sharp because it uses "black" and "white" — the very colours of racial categorisation — applied to piano keys. Nobody calls a chord "half-caste". The pun on black/white exposes how arbitrary racial categories are when applied to harmony.',
+        'The musical analogy is particularly sharp because it uses black and white piano keys — the very colours of racial categorisation. Nobody calls a chord "half-caste". The pun on black/white exposes how arbitrary racial categories are when applied to harmony. Refer to your Edexcel IGCSE anthology for the exact wording.',
       themes: ['Music', 'Race', 'Harmony'],
     },
     {
-      quote: 'I half-caste human being / cast half-a-shadow',
+      quote: '[See anthology — half-a-shadow literalisation]',
       analysis:
-        'The literalisation of "half" reaches its most powerful point. If the speaker is truly half a person, he would cast half a shadow — a physical impossibility. By making the metaphor literal, Agard reveals it as nonsense. The image is both comic and chilling: to call someone "half-caste" is to deny them their full humanity.',
+        'The literalisation of "half" reaches its most powerful point. If the speaker is truly half a person, he would cast half a shadow — a physical impossibility. By making the metaphor literal, Agard reveals it as nonsense. The image is both comic and chilling: to call someone "half-caste" is to deny them their full humanity. Refer to your Edexcel IGCSE anthology for the exact wording.',
       themes: ['Dehumanisation', 'Literalisation', 'Identity'],
     },
     {
-      quote: 'half-a-dream / half-a-eye / half-a-ear',
+      quote: '[See anthology — accumulating list of "halves"]',
       analysis:
-        'The accumulation of "halves" builds to a crescendo of absurdity. Half a dream, half an eye, half an ear — each image is more ridiculous than the last. The list overwhelms the listener with evidence that the concept of "half" a person makes no sense. The technique is rhetorically powerful: quantity becomes quality.',
+        'The accumulation of "halves" builds to a crescendo of absurdity. Half a dream, half an eye, half an ear — each image is more ridiculous than the last. The list overwhelms the listener with evidence that the concept of "half" a person makes no sense. The technique is rhetorically powerful: quantity becomes quality. Refer to your Edexcel IGCSE anthology for the exact wording.',
       themes: ['Accumulation', 'Absurdity', 'Rhetoric'],
     },
     {
@@ -236,21 +236,21 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
   languageDevices: [
     {
       device: 'Literalisation of metaphor',
-      example: 'standing on one leg... cast half-a-shadow',
+      example: 'standing on one leg (opening); see anthology for the half-a-shadow image',
       effect:
         'Agard takes the word "half" literally: if "half-caste" is true, the speaker can only stand on one leg, cast half a shadow, dream half a dream. By making the metaphor literal, the poet exposes it as absurd and cruel. This is the poem\'s central technique.',
       lineRef: 1,
     },
     {
       device: 'Analogy',
-      example: 'Picasso mix red an green... Tchaikovsky mix a black key wid a white key',
+      example: 'See anthology — Picasso paint, Tchaikovsky piano keys, English weather',
       effect:
         'Three analogies (art, music, weather) show that mixing is celebrated everywhere except race. Each analogy adds another layer of evidence that the term "half-caste" is intellectually bankrupt. The analogies move from high culture (Picasso, Tchaikovsky) to everyday life (weather), showing that the principle applies universally.',
       lineRef: 6,
     },
     {
       device: 'Caribbean Creole dialect',
-      example: 'Explain yuself / wha yu mean / wid',
+      example: 'Explain yuself / wha yu mean',
       effect:
         'Writing in Creole English is itself a political act. Standard English represents colonial power; Creole represents Caribbean identity. By refusing Standard English, Agard asserts the value of his heritage. The dialect also makes the poem feel spoken, direct and personal — a real voice, not a literary exercise.',
       lineRef: 4,
@@ -264,7 +264,7 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
     },
     {
       device: 'Rhetorical questions',
-      example: 'is a half-caste canvas?... is a half-caste symphony?',
+      example: 'See anthology — Agard frames each analogy as a rhetorical question',
       effect:
         'The rhetorical questions force the listener to answer "no" — of course a painting isn\'t "half-caste". Each "no" builds the logical case that a person isn\'t "half-caste" either. The questions are unanswerable, which is the point: the term cannot be defended.',
       lineRef: 6,
@@ -295,7 +295,7 @@ const comparisons = [
     poet: 'D.H. Lawrence',
     href: '/igcse/edexcel/poetry/piano',
     reason:
-      'Both poems explore identity and belonging. Lawrence mourns a lost childhood self; Agard defends a present adult self. Compare how each speaker\'s sense of identity is shaped by their past — Lawrence by memory, Agard by cultural heritage.',
+      "Both poems explore identity and belonging. Lawrence mourns a lost childhood self; Agard defends a present adult self. Compare how each speaker's sense of identity is shaped by their past — Lawrence by memory, Agard by cultural heritage.",
     themes: ['Identity', 'Belonging', 'Memory'],
   },
   {
@@ -303,7 +303,7 @@ const comparisons = [
     poet: 'Rudyard Kipling',
     href: '/igcse/edexcel/poetry/if',
     reason:
-      'Both poems are directly addressed to a listener. Kipling instructs his son in how to be a man; Agard instructs his listener in how to see a whole person. Compare the contrasting views of British identity — Kipling\'s imperial confidence and Agard\'s postcolonial challenge.',
+      "Both poems are directly addressed to a listener. Kipling instructs his son in how to be a man; Agard instructs his listener in how to see a whole person. Compare the contrasting views of British identity — Kipling's imperial confidence and Agard's postcolonial challenge.",
     themes: ['British identity', 'Direct address', 'Power'],
   },
 ]
@@ -329,9 +329,7 @@ export default function HalfCastePage() {
             <BookOpen className="size-5 text-clay-600" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              Half-Caste
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">Half-Caste</h1>
             <p className="text-body-sm text-muted-foreground">
               John Agard &middot; Edexcel IGCSE Anthology
             </p>
@@ -346,11 +344,52 @@ export default function HalfCastePage() {
       <div className="flex items-start gap-3 rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
         <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" />
         <p className="text-xs leading-relaxed text-muted-foreground">
-          <strong className="text-foreground">Copyright notice:</strong> &quot;Half-Caste&quot;
-          by John Agard is in copyright. Only short extracts (key phrases) are reproduced here
-          for the purpose of criticism, review and study, in accordance with fair dealing
-          provisions (Copyright, Designs and Patents Act 1988, s.30). For the full text, refer
-          to your Edexcel IGCSE anthology.
+          <strong className="text-foreground">Copyright notice:</strong> &quot;Half-Caste&quot; by
+          John Agard is in copyright. Only short extracts (key phrases) are reproduced here for the
+          purpose of criticism, review and study, in accordance with fair dealing provisions
+          (Copyright, Designs and Patents Act 1988, s.30). The full poem is published by{' '}
+          <strong className="text-foreground">Hodder Education</strong> in the
+          <em> Edexcel International GCSE English Anthology (Issue 2, ISBN 978-1-446-93108-0)</em>.
+          For the full text, refer to your Edexcel IGCSE anthology.
+        </p>
+      </div>
+
+      {/* Teacher note: Caribbean creole spelling */}
+      <div className="flex items-start gap-3 rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
+        <BookOpen className="mt-0.5 size-4 shrink-0 text-purple-500" />
+        <div className="text-xs leading-relaxed text-muted-foreground">
+          <p className="mb-1">
+            <strong className="text-foreground">Teacher note &mdash; on the spelling:</strong>
+          </p>
+          <p>
+            Agard&apos;s Caribbean creole spelling (<strong>&quot;yu&quot;</strong> for
+            &quot;you&quot;, <strong>&quot;wha&quot;</strong> for &quot;what&quot;,
+            <strong> &quot;yuself&quot;</strong> for &quot;yourself&quot;) is{' '}
+            <strong className="text-foreground">
+              deliberate and central to the poem&apos;s meaning
+            </strong>
+            . Do not &quot;correct&quot; to Standard English &mdash; the creole is itself a
+            political statement. The Edexcel IGCSE Anthology (Issue 2) preserves Agard&apos;s
+            spelling, and students should quote it exactly as printed. &quot;Correcting&quot; the
+            dialect in an essay loses marks for accuracy and misses the poem&apos;s argument that
+            mixed languages, like mixed identities, are valid in their own right.
+          </p>
+        </div>
+      </div>
+
+      {/* Audit notice */}
+      <div className="flex items-start gap-3 rounded-lg border border-sky-500/30 bg-sky-500/5 p-4">
+        <AlertTriangle className="mt-0.5 size-4 shrink-0 text-sky-500" />
+        <p className="text-xs leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">Page audited April 2026:</strong> Direct quotations
+          from mid-poem analogies (Picasso, Tchaikovsky, weather, half-a-shadow, accumulating
+          &quot;halves&quot;) and other passages we could not verify against a primary source have
+          been replaced with paraphrases or pointers to the anthology. The well-attested opening
+          (&ldquo;Excuse me / standing on one leg / I&rsquo;m half-caste&rdquo;), the refrain
+          (&ldquo;Explain yuself / wha yu mean&rdquo;) and the closing lines (&ldquo;come back
+          tomorrow / wid de whole of yu eye&rdquo; and &ldquo;de other half / of my story&rdquo;)
+          are retained. Quote from your Edexcel IGCSE Anthology (Issue 2) for the exact wording of
+          all other passages.
         </p>
       </div>
 
@@ -361,13 +400,11 @@ export default function HalfCastePage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another
-          from the anthology. These are strong pairings for Half-Caste.
+          The Edexcel exam asks you to compare the named poem with another from the anthology. These
+          are strong pairings for Half-Caste.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -381,9 +418,7 @@ export default function HalfCastePage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span

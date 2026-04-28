@@ -87,11 +87,11 @@ const POEMS: Poem[] = [
     hook: 'Wordsworth, a country poet, is silenced by the early-morning beauty of London.',
   },
   {
-    title: 'The Prelude (extract)',
+    title: 'The Prelude (extract) — 1799 two-part Prelude (Part First, lines 81–129)',
     poet: 'William Wordsworth',
     slug: 'the-prelude',
     publicDomain: true,
-    hook: 'A stolen boat ride becomes a terrifying encounter with the power of nature.',
+    hook: 'A stolen boat ride becomes a terrifying encounter with the power of nature. OCR prescribes the 1799 two-part Prelude (Part First, lines 81–129) — not the 1850 posthumous Prelude used by AQA. The wording is materially different.',
   },
   {
     title: 'From a Mother in a Refugee Camp',
@@ -168,7 +168,12 @@ export default function OCRPowerAndNaturalWorldPage() {
         </div>
       </section>
 
-      <StudyTools textName="OCR Power and Natural World Poetry" textType="anthology" examBoard="OCR" variant="banner" />
+      <StudyTools
+        textName="OCR Power and Natural World Poetry"
+        textType="anthology"
+        examBoard="OCR"
+        variant="banner"
+      />
 
       <section>
         <div className="mb-5 flex items-center gap-3">
@@ -220,23 +225,44 @@ export default function OCRPowerAndNaturalWorldPage() {
         </div>
       </section>
 
-      <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
+      <section className="rounded-2xl border border-amber-500/40 bg-amber-500/[0.04] p-5 sm:p-6">
         <h2 className="text-heading-sm font-heading text-foreground">
-          Why are some poems locked?
+          Version note: The Prelude (1799 two-part edition)
         </h2>
+        <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
+          OCR prescribes the <strong>1799 two-part Prelude</strong>, drafted in Wordsworth&apos;s
+          lifetime but unpublished until 1973. The boat-stealing episode appears in
+          <strong> Part First, lines 81&ndash;129</strong>. AQA prescribes the
+          <strong> 1850 posthumous Prelude</strong> (edited by Wordsworth&apos;s widow Mary). The
+          wording is materially different between the two editions &mdash; never cross-quote between
+          versions. If you are revising for OCR, use only the 1799 text.
+        </p>
+      </section>
+
+      <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
+        <h2 className="text-heading-sm font-heading text-foreground">Why are some poems locked?</h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
           Older poems are public domain so we provide full annotated study pages. More recent poems
           are still in copyright -- for those we offer context, themes and key quotation analysis
           only. You will need a copy of the OCR <em>Towards a World Unknown</em> anthology to read
           the full text.
         </p>
+        <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
+          <strong className="text-foreground">Rights notice.</strong> Several poems in this cluster
+          remain in copyright &mdash; Hughes&rsquo;s <em>Wind</em> and Heaney&rsquo;s{' '}
+          <em>Storm on the Island</em> and <em>At a Potato Digging</em> (&copy; Faber &amp; Faber),
+          Dharker&rsquo;s <em>Living Space</em> (&copy; Bloodaxe Books), Achebe&rsquo;s{' '}
+          <em>From a Mother in a Refugee Camp</em> (&copy; Carcanet Press), MacNeice&rsquo;s{' '}
+          <em>Snow</em> (&copy; Faber &amp; Faber) and others. Quotations on individual set-text
+          pages are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
+          quotation). For full text, students should consult the board-licensed OCR{' '}
+          <em>Towards a World Unknown</em> anthology.
+        </p>
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-emerald-400" />
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Explore other clusters
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Explore other clusters</h2>
         <Button
           variant="default"
           size="lg"

@@ -207,19 +207,11 @@ export function TextGuide({ data }: { data: TextGuideData }) {
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              <Button
-                variant="default"
-                size="sm"
-                render={<Link href="/revision/flashcards" />}
-              >
+              <Button variant="default" size="sm" render={<Link href="/revision/flashcards" />}>
                 Flashcards
                 <ArrowRight className="size-3.5" />
               </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                render={<Link href="/revision/quiz" />}
-              >
+              <Button variant="outline" size="sm" render={<Link href="/revision/quiz" />}>
                 Quiz hub
                 <ArrowRight className="size-3.5" />
               </Button>

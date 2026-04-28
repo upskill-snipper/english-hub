@@ -1,4 +1,4 @@
-import type { CourseModule } from '../courses';
+import type { CourseModule } from '../courses'
 
 export const y9T3OmamModules: CourseModule[] = [
   // ──────────────────────────────────────────────
@@ -49,11 +49,68 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <p>By the end of this module, you should be able to explain the key features of 1930s America, connect them to specific elements of the novella, and use contextual knowledge to deepen your analysis rather than simply listing historical facts.</p>`,
     quiz: [
-      { id: 'y9t3-omam-m1-q1', question: 'What was the approximate unemployment rate in America at the peak of the Great Depression?', options: ['5%', '10%', '25%', '50%'], correct: 2, explanation: 'Unemployment reached approximately 25% by 1933 — one in four working-age adults had no job. This level of economic devastation is crucial context for understanding the desperation of characters like George and Lennie.' },
-      { id: 'y9t3-omam-m1-q2', question: 'What was the Dust Bowl?', options: ['A type of ranch in California', 'A severe period of dust storms that devastated farmland on the Great Plains', 'A sporting event popular with migrant workers', 'A nickname for the bunkhouses on ranches'], correct: 1, explanation: 'The Dust Bowl was an ecological disaster caused by drought and over-farming. It destroyed agriculture across the Great Plains and forced hundreds of thousands of families to migrate to California seeking work.' },
-      { id: 'y9t3-omam-m1-q3', question: 'How does the American Dream function in Of Mice and Men?', options: ['It is achieved by George and Lennie at the end', 'It is presented as a realistic goal for anyone who works hard', 'It is shown as a powerful but ultimately unattainable ideal for the working poor', 'It is never mentioned in the novella'], correct: 2, explanation: 'Steinbeck presents the American Dream as something the characters desperately cling to, but the novella ultimately shows it to be an illusion — the economic and social system makes it impossible for people like George and Lennie to achieve it.' },
-      { id: 'y9t3-omam-m1-q4', question: 'Why is it important to integrate context into analysis rather than writing separate context paragraphs?', options: ['Because examiners do not care about context', 'Because it shows you understand how history directly shapes the meaning of the text', 'Because context is worth fewer marks than quotations', 'Because the exam does not allow you to mention history'], correct: 1, explanation: 'Integrated context demonstrates that you understand how historical and social conditions directly shape characters, themes, and events in the text. A standalone context paragraph feels disconnected and does not show analytical skill.' },
-      { id: 'y9t3-omam-m1-q5', question: 'What was Steinbeck\'s primary purpose in writing Of Mice and Men?', options: ['To provide entertainment for ranch workers', 'To expose social injustice and generate empathy for marginalised people', 'To celebrate the success of the American Dream', 'To write a historical textbook about the 1930s'], correct: 1, explanation: 'Steinbeck was a socially conscious writer who aimed to expose the suffering of the working poor and marginalised groups. The novella is designed to make readers empathise with people society had forgotten.' },
+      {
+        id: 'y9t3-omam-m1-q1',
+        question:
+          'What was the approximate unemployment rate in America at the peak of the Great Depression?',
+        options: ['5%', '10%', '25%', '50%'],
+        correct: 2,
+        explanation:
+          'Unemployment reached approximately 25% by 1933 — one in four working-age adults had no job. This level of economic devastation is crucial context for understanding the desperation of characters like George and Lennie.',
+      },
+      {
+        id: 'y9t3-omam-m1-q2',
+        question: 'What was the Dust Bowl?',
+        options: [
+          'A type of ranch in California',
+          'A severe period of dust storms that devastated farmland on the Great Plains',
+          'A sporting event popular with migrant workers',
+          'A nickname for the bunkhouses on ranches',
+        ],
+        correct: 1,
+        explanation:
+          'The Dust Bowl was an ecological disaster caused by drought and over-farming. It destroyed agriculture across the Great Plains and forced hundreds of thousands of families to migrate to California seeking work.',
+      },
+      {
+        id: 'y9t3-omam-m1-q3',
+        question: 'How does the American Dream function in Of Mice and Men?',
+        options: [
+          'It is achieved by George and Lennie at the end',
+          'It is presented as a realistic goal for anyone who works hard',
+          'It is shown as a powerful but ultimately unattainable ideal for the working poor',
+          'It is never mentioned in the novella',
+        ],
+        correct: 2,
+        explanation:
+          'Steinbeck presents the American Dream as something the characters desperately cling to, but the novella ultimately shows it to be an illusion — the economic and social system makes it impossible for people like George and Lennie to achieve it.',
+      },
+      {
+        id: 'y9t3-omam-m1-q4',
+        question:
+          'Why is it important to integrate context into analysis rather than writing separate context paragraphs?',
+        options: [
+          'Because examiners do not care about context',
+          'Because it shows you understand how history directly shapes the meaning of the text',
+          'Because context is worth fewer marks than quotations',
+          'Because the exam does not allow you to mention history',
+        ],
+        correct: 1,
+        explanation:
+          'Integrated context demonstrates that you understand how historical and social conditions directly shape characters, themes, and events in the text. A standalone context paragraph feels disconnected and does not show analytical skill.',
+      },
+      {
+        id: 'y9t3-omam-m1-q5',
+        question: "What was Steinbeck's primary purpose in writing Of Mice and Men?",
+        options: [
+          'To provide entertainment for ranch workers',
+          'To expose social injustice and generate empathy for marginalised people',
+          'To celebrate the success of the American Dream',
+          'To write a historical textbook about the 1930s',
+        ],
+        correct: 1,
+        explanation:
+          'Steinbeck was a socially conscious writer who aimed to expose the suffering of the working poor and marginalised groups. The novella is designed to make readers empathise with people society had forgotten.',
+      },
     ],
   },
 
@@ -107,11 +164,71 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <p>Is George's act merciful euthanasia or cold-blooded murder? Steinbeck refuses to give a simple answer, and neither should you. The best analytical responses explore the <strong>ambiguity</strong>: George acts out of love, sparing Lennie the brutal death Curley intends, but he also acts out of self-preservation, knowing that protecting Lennie has become impossible. The final image of George, alone and shattered, is Steinbeck's bleakest statement about the cost of compassion in a merciless world.</p>`,
     quiz: [
-      { id: 'y9t3-omam-m2-q1', question: 'Why does Slim describe George and Lennie\'s friendship as unusual?', options: ['Because they argue constantly', 'Because migrant workers almost never travelled in pairs', 'Because Lennie is older than George', 'Because they are related by blood'], correct: 1, explanation: 'Slim observes that most ranch workers travel alone. The fact that George and Lennie travel together marks them as extraordinary in a world defined by isolation and loneliness.' },
-      { id: 'y9t3-omam-m2-q2', question: 'What is the function of the dream of the farm in the novella?', options: ['It provides comic relief', 'It acts as a shared bond that gives George and Lennie purpose and hope', 'It is a realistic business plan that nearly succeeds', 'It is only mentioned once in passing'], correct: 1, explanation: 'The dream gives their lives meaning, provides emotional sustenance, and symbolises the hope for independence. It also serves as a measure of the novella\'s deepening tragedy as it becomes increasingly unattainable.' },
-      { id: 'y9t3-omam-m2-q3', question: 'What is a "foil" in literary terms?', options: ['A villain who opposes the protagonist', 'A character who contrasts with another to highlight specific qualities', 'A narrative technique that reverses the plot', 'A type of dramatic irony'], correct: 1, explanation: 'A foil is a character whose contrasting traits highlight the qualities of another character. George and Lennie are foils — George is small and sharp, Lennie is large and slow — and their differences make each other\'s characteristics more vivid.' },
-      { id: 'y9t3-omam-m2-q4', question: 'How does Steinbeck use animal imagery to characterise Lennie?', options: ['To show that Lennie is dangerous and evil', 'To emphasise his physicality, instinctive behaviour, and lack of rational thought', 'To suggest Lennie is an actual animal', 'To make the novella more humorous'], correct: 1, explanation: 'Steinbeck compares Lennie to horses and bears, describes his hands as "paws," and shows him acting on instinct rather than reason. This imagery emphasises his physical power and his inability to control it through rational thought.' },
-      { id: 'y9t3-omam-m2-q5', question: 'Why is the ending of the novella considered ambiguous?', options: ['Because it is unclear whether Lennie actually dies', 'Because George\'s act can be interpreted as both merciful and self-serving', 'Because Curley forgives George immediately', 'Because the dream comes true despite Lennie\'s death'], correct: 1, explanation: 'George kills Lennie out of compassion (sparing him a brutal death at Curley\'s hands) but also because continuing to protect Lennie has become impossible. This moral complexity is deliberate — Steinbeck resists simple judgements.' },
+      {
+        id: 'y9t3-omam-m2-q1',
+        question: "Why does Slim describe George and Lennie's friendship as unusual?",
+        options: [
+          'Because they argue constantly',
+          'Because migrant workers almost never travelled in pairs',
+          'Because Lennie is older than George',
+          'Because they are related by blood',
+        ],
+        correct: 1,
+        explanation:
+          'Slim observes that most ranch workers travel alone. The fact that George and Lennie travel together marks them as extraordinary in a world defined by isolation and loneliness.',
+      },
+      {
+        id: 'y9t3-omam-m2-q2',
+        question: 'What is the function of the dream of the farm in the novella?',
+        options: [
+          'It provides comic relief',
+          'It acts as a shared bond that gives George and Lennie purpose and hope',
+          'It is a realistic business plan that nearly succeeds',
+          'It is only mentioned once in passing',
+        ],
+        correct: 1,
+        explanation:
+          "The dream gives their lives meaning, provides emotional sustenance, and symbolises the hope for independence. It also serves as a measure of the novella's deepening tragedy as it becomes increasingly unattainable.",
+      },
+      {
+        id: 'y9t3-omam-m2-q3',
+        question: 'What is a "foil" in literary terms?',
+        options: [
+          'A villain who opposes the protagonist',
+          'A character who contrasts with another to highlight specific qualities',
+          'A narrative technique that reverses the plot',
+          'A type of dramatic irony',
+        ],
+        correct: 1,
+        explanation:
+          "A foil is a character whose contrasting traits highlight the qualities of another character. George and Lennie are foils — George is small and sharp, Lennie is large and slow — and their differences make each other's characteristics more vivid.",
+      },
+      {
+        id: 'y9t3-omam-m2-q4',
+        question: 'How does Steinbeck use animal imagery to characterise Lennie?',
+        options: [
+          'To show that Lennie is dangerous and evil',
+          'To emphasise his physicality, instinctive behaviour, and lack of rational thought',
+          'To suggest Lennie is an actual animal',
+          'To make the novella more humorous',
+        ],
+        correct: 1,
+        explanation:
+          'Steinbeck compares Lennie to horses and bears, describes his hands as "paws," and shows him acting on instinct rather than reason. This imagery emphasises his physical power and his inability to control it through rational thought.',
+      },
+      {
+        id: 'y9t3-omam-m2-q5',
+        question: 'Why is the ending of the novella considered ambiguous?',
+        options: [
+          'Because it is unclear whether Lennie actually dies',
+          "Because George's act can be interpreted as both merciful and self-serving",
+          'Because Curley forgives George immediately',
+          "Because the dream comes true despite Lennie's death",
+        ],
+        correct: 1,
+        explanation:
+          "George kills Lennie out of compassion (sparing him a brutal death at Curley's hands) but also because continuing to protect Lennie has become impossible. This moral complexity is deliberate — Steinbeck resists simple judgements.",
+      },
     ],
   },
 
@@ -120,7 +237,7 @@ export const y9T3OmamModules: CourseModule[] = [
   // ──────────────────────────────────────────────
   {
     id: 'y9t3-omam-m3',
-    title: 'Curley\'s Wife — Marginalised Voices',
+    title: "Curley's Wife — Marginalised Voices",
     duration: '50 min',
     content: `
 <h2>The Only Woman on the Ranch</h2>
@@ -163,11 +280,72 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Calling Curley's wife a villain or blaming her for the tragedy. Steinbeck deliberately presents her as a victim of circumstance — trapped, lonely, and powerless. A strong essay will analyse her as a symbol of marginalisation rather than judging her by the standards of the male characters.</div>`,
     quiz: [
-      { id: 'y9t3-omam-m3-q1', question: 'Why does Steinbeck choose not to give Curley\'s wife a name?', options: ['He forgot to name her', 'To reflect how women\'s identities were defined entirely by their husbands in 1930s society', 'Because she is not an important character', 'To make the novella shorter'], correct: 1, explanation: 'The absence of a name is a deliberate critique of patriarchal society. It shows that in this world, a woman exists only as an extension of her husband — she has no independent identity.' },
-      { id: 'y9t3-omam-m3-q2', question: 'How do the ranch workers perceive Curley\'s wife, and how does Steinbeck want the reader to perceive her?', options: ['The workers admire her; Steinbeck wants readers to fear her', 'The workers see her as dangerous and flirtatious; Steinbeck invites readers to see her loneliness and vulnerability', 'The workers ignore her; Steinbeck presents her as powerful', 'The workers and readers are meant to see her the same way'], correct: 1, explanation: 'Steinbeck creates a gap between the men\'s hostile perception of Curley\'s wife and the reader\'s deeper understanding of her isolation and dashed dreams. This gap generates sympathy and demonstrates dramatic irony.' },
-      { id: 'y9t3-omam-m3-q3', question: 'What happened to Curley\'s wife\'s dream of being in the movies?', options: ['She rejected the opportunity to stay with Curley', 'A man likely lied to her about a movie career, and the promised letter never arrived', 'She successfully appeared in several films before marrying Curley', 'She never had any dreams or ambitions'], correct: 1, explanation: 'A man told her she could be in pictures and promised to write, but the letter never came. She blamed her mother and married Curley as an escape, but this only trapped her further. Her dream mirrors the wider theme of the unattainable American Dream.' },
-      { id: 'y9t3-omam-m3-q4', question: 'What is dramatic irony?', options: ['When a character makes a joke', 'When the audience understands more about a situation than the characters do', 'When the ending of a story is happy', 'When two characters argue about different things'], correct: 1, explanation: 'Dramatic irony occurs when the reader or audience has knowledge that the characters lack. We understand that Curley\'s wife is lonely and seeking connection, even though the ranch workers only see her as a threat.' },
-      { id: 'y9t3-omam-m3-q5', question: 'How does Steinbeck describe Curley\'s wife after her death?', options: ['As frightening and cold', 'As peaceful and beautiful, with the discontent and ache for attention gone', 'As angry and resentful', 'He does not describe her after death'], correct: 1, explanation: 'Steinbeck shows her face as peaceful and sweet in death, stripping away the "meanness" and "discontent" that life had forced upon her. This reminds the reader that she was a young woman whose potential was destroyed by the world around her.' },
+      {
+        id: 'y9t3-omam-m3-q1',
+        question: "Why does Steinbeck choose not to give Curley's wife a name?",
+        options: [
+          'He forgot to name her',
+          "To reflect how women's identities were defined entirely by their husbands in 1930s society",
+          'Because she is not an important character',
+          'To make the novella shorter',
+        ],
+        correct: 1,
+        explanation:
+          'The absence of a name is a deliberate critique of patriarchal society. It shows that in this world, a woman exists only as an extension of her husband — she has no independent identity.',
+      },
+      {
+        id: 'y9t3-omam-m3-q2',
+        question:
+          "How do the ranch workers perceive Curley's wife, and how does Steinbeck want the reader to perceive her?",
+        options: [
+          'The workers admire her; Steinbeck wants readers to fear her',
+          'The workers see her as dangerous and flirtatious; Steinbeck invites readers to see her loneliness and vulnerability',
+          'The workers ignore her; Steinbeck presents her as powerful',
+          'The workers and readers are meant to see her the same way',
+        ],
+        correct: 1,
+        explanation:
+          "Steinbeck creates a gap between the men's hostile perception of Curley's wife and the reader's deeper understanding of her isolation and dashed dreams. This gap generates sympathy and demonstrates dramatic irony.",
+      },
+      {
+        id: 'y9t3-omam-m3-q3',
+        question: "What happened to Curley's wife's dream of being in the movies?",
+        options: [
+          'She rejected the opportunity to stay with Curley',
+          'A man likely lied to her about a movie career, and the promised letter never arrived',
+          'She successfully appeared in several films before marrying Curley',
+          'She never had any dreams or ambitions',
+        ],
+        correct: 1,
+        explanation:
+          'A man told her she could be in pictures and promised to write, but the letter never came. She blamed her mother and married Curley as an escape, but this only trapped her further. Her dream mirrors the wider theme of the unattainable American Dream.',
+      },
+      {
+        id: 'y9t3-omam-m3-q4',
+        question: 'What is dramatic irony?',
+        options: [
+          'When a character makes a joke',
+          'When the audience understands more about a situation than the characters do',
+          'When the ending of a story is happy',
+          'When two characters argue about different things',
+        ],
+        correct: 1,
+        explanation:
+          "Dramatic irony occurs when the reader or audience has knowledge that the characters lack. We understand that Curley's wife is lonely and seeking connection, even though the ranch workers only see her as a threat.",
+      },
+      {
+        id: 'y9t3-omam-m3-q5',
+        question: "How does Steinbeck describe Curley's wife after her death?",
+        options: [
+          'As frightening and cold',
+          'As peaceful and beautiful, with the discontent and ache for attention gone',
+          'As angry and resentful',
+          'He does not describe her after death',
+        ],
+        correct: 1,
+        explanation:
+          'Steinbeck shows her face as peaceful and sweet in death, stripping away the "meanness" and "discontent" that life had forced upon her. This reminds the reader that she was a young woman whose potential was destroyed by the world around her.',
+      },
     ],
   },
 
@@ -217,11 +395,71 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating Crooks and Candy as minor characters who do not deserve detailed analysis. Both are essential to the novella's themes. Examiners reward students who explore marginalised characters in depth, connecting their experiences to wider social criticism.</div>`,
     quiz: [
-      { id: 'y9t3-omam-m4-q1', question: 'Why does Crooks live separately from the other workers?', options: ['He prefers to be alone', 'He is racially segregated due to the prejudice of 1930s America', 'The barn is warmer than the bunkhouse', 'He was punished for bad behaviour'], correct: 1, explanation: 'Crooks is separated from the other workers because of racial discrimination. Although California did not have formal Jim Crow laws, social segregation was deeply entrenched, and Black workers were routinely excluded from white spaces.' },
-      { id: 'y9t3-omam-m4-q2', question: 'What is the significance of Candy\'s dog being shot?', options: ['It shows that Carlson is a villain', 'It parallels Lennie\'s death and critiques a society that disposes of those it considers useless', 'It is unconnected to the rest of the plot', 'It demonstrates that the ranch workers are kind to animals'], correct: 1, explanation: 'The shooting of Candy\'s dog directly foreshadows George shooting Lennie. Both are killed because they are deemed "useless" or burdensome. The parallel reinforces Steinbeck\'s critique of a society that values people only for their productivity.' },
-      { id: 'y9t3-omam-m4-q3', question: 'What happens when Crooks briefly believes in the dream of the farm?', options: ['He buys land immediately', 'He tentatively asks to join but withdraws after Curley\'s wife threatens him', 'He refuses to believe it could ever happen', 'He tells the boss about the plan'], correct: 1, explanation: 'Crooks allows himself a moment of hope, asking if he could work on the farm. But when Curley\'s wife threatens him with racial violence, he retreats into isolation, demonstrating how the social hierarchy crushes hope for marginalised people.' },
-      { id: 'y9t3-omam-m4-q4', question: 'What does Candy regret most about his dog\'s death?', options: ['That the dog suffered in its final moments', 'That he did not shoot the dog himself rather than letting a stranger do it', 'That he did not get a new dog sooner', 'That he argued with Carlson'], correct: 1, explanation: 'Candy tells George, "I ought to of shot that dog myself." He regrets allowing someone else to perform the act, wishing he had taken responsibility. This directly foreshadows George\'s decision to shoot Lennie rather than let Curley do it.' },
-      { id: 'y9t3-omam-m4-q5', question: 'Why does the dream collapse after Lennie kills Curley\'s wife?', options: ['Because the farm was too expensive', 'Because George never actually wanted the farm', 'Because Lennie was essential to the dream\'s emotional and practical foundation', 'Because Candy withdrew his money'], correct: 2, explanation: 'The dream existed because Lennie believed in it so completely — his faith sustained George\'s hope. Without Lennie, George has no one to dream for, and the practical plan falls apart because Lennie must flee or face execution.' },
+      {
+        id: 'y9t3-omam-m4-q1',
+        question: 'Why does Crooks live separately from the other workers?',
+        options: [
+          'He prefers to be alone',
+          'He is racially segregated due to the prejudice of 1930s America',
+          'The barn is warmer than the bunkhouse',
+          'He was punished for bad behaviour',
+        ],
+        correct: 1,
+        explanation:
+          'Crooks is separated from the other workers because of racial discrimination. Although California did not have formal Jim Crow laws, social segregation was deeply entrenched, and Black workers were routinely excluded from white spaces.',
+      },
+      {
+        id: 'y9t3-omam-m4-q2',
+        question: "What is the significance of Candy's dog being shot?",
+        options: [
+          'It shows that Carlson is a villain',
+          "It parallels Lennie's death and critiques a society that disposes of those it considers useless",
+          'It is unconnected to the rest of the plot',
+          'It demonstrates that the ranch workers are kind to animals',
+        ],
+        correct: 1,
+        explanation:
+          'The shooting of Candy\'s dog directly foreshadows George shooting Lennie. Both are killed because they are deemed "useless" or burdensome. The parallel reinforces Steinbeck\'s critique of a society that values people only for their productivity.',
+      },
+      {
+        id: 'y9t3-omam-m4-q3',
+        question: 'What happens when Crooks briefly believes in the dream of the farm?',
+        options: [
+          'He buys land immediately',
+          "He tentatively asks to join but withdraws after Curley's wife threatens him",
+          'He refuses to believe it could ever happen',
+          'He tells the boss about the plan',
+        ],
+        correct: 1,
+        explanation:
+          "Crooks allows himself a moment of hope, asking if he could work on the farm. But when Curley's wife threatens him with racial violence, he retreats into isolation, demonstrating how the social hierarchy crushes hope for marginalised people.",
+      },
+      {
+        id: 'y9t3-omam-m4-q4',
+        question: "What does Candy regret most about his dog's death?",
+        options: [
+          'That the dog suffered in its final moments',
+          'That he did not shoot the dog himself rather than letting a stranger do it',
+          'That he did not get a new dog sooner',
+          'That he argued with Carlson',
+        ],
+        correct: 1,
+        explanation:
+          'Candy tells George, "I ought to of shot that dog myself." He regrets allowing someone else to perform the act, wishing he had taken responsibility. This directly foreshadows George\'s decision to shoot Lennie rather than let Curley do it.',
+      },
+      {
+        id: 'y9t3-omam-m4-q5',
+        question: "Why does the dream collapse after Lennie kills Curley's wife?",
+        options: [
+          'Because the farm was too expensive',
+          'Because George never actually wanted the farm',
+          "Because Lennie was essential to the dream's emotional and practical foundation",
+          'Because Candy withdrew his money',
+        ],
+        correct: 2,
+        explanation:
+          "The dream existed because Lennie believed in it so completely — his faith sustained George's hope. Without Lennie, George has no one to dream for, and the practical plan falls apart because Lennie must flee or face execution.",
+      },
     ],
   },
 
@@ -273,11 +511,71 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Ignoring setting entirely and focusing only on characters and themes. Setting is a fundamental analytical tool, especially in a novella where Steinbeck uses physical spaces as symbols of social conditions. A response that ignores setting misses a major layer of meaning.</div>`,
     quiz: [
-      { id: 'y9t3-omam-m5-q1', question: 'What does "microcosm" mean in the context of the novella?', options: ['A very small ranch', 'A small world that reflects the characteristics of a larger society', 'A type of literary technique used in dialogue', 'A microscope used to examine texts closely'], correct: 1, explanation: 'A microcosm is a small community that mirrors the structures, values, and problems of the wider society. The ranch reflects 1930s America\'s class divisions, racial prejudice, and gender inequality in miniature.' },
-      { id: 'y9t3-omam-m5-q2', question: 'What does the bunkhouse reveal about the ranch workers\' lives?', options: ['They live in luxury and comfort', 'They have no privacy, no permanence, and no personal space — they are disposable labour', 'They are well-cared-for by the ranch owner', 'They choose to live simply because they prefer it'], correct: 1, explanation: 'The bunkhouse\'s cramped, impersonal conditions reflect the workers\' lack of status, security, and individuality. They own almost nothing and can be replaced at any moment, which the setting makes visible.' },
-      { id: 'y9t3-omam-m5-q3', question: 'Why is the novella\'s cyclical structure significant?', options: ['It makes the plot easier to follow', 'It reinforces the message that there is no escape from cycles of exploitation and tragedy', 'It was a mistake by Steinbeck', 'It suggests the characters will eventually find happiness'], correct: 1, explanation: 'By beginning and ending at the clearing by the river, Steinbeck creates a structural loop that mirrors the inescapable cycles of poverty, loneliness, and violence experienced by migrant workers. The return to the same place with a devastating outcome underscores hopelessness.' },
-      { id: 'y9t3-omam-m5-q4', question: 'What is the significance of Crooks owning a copy of the California civil code?', options: ['It shows he is a lawyer', 'It shows he knows his legal rights but they offer no real protection against prejudice', 'It proves that laws protected Black workers in the 1930s', 'It is an unimportant background detail'], correct: 1, explanation: 'The civil code represents Crooks\'s awareness of his rights. However, in a society governed by racial prejudice rather than legal fairness, knowing your rights does not protect you. The detail highlights the gap between legal theory and social reality.' },
-      { id: 'y9t3-omam-m5-q5', question: 'What is pathetic fallacy?', options: ['A logical error in an argument', 'When a character tells a sad story', 'When the natural environment reflects or contrasts with the mood of the narrative', 'When the weather is described in detail for no reason'], correct: 2, explanation: 'Pathetic fallacy is when aspects of the natural world — weather, landscape, light — mirror or contrast with the emotional tone of the story. Steinbeck uses the peaceful clearing to contrast with the violence that occurs there, making the tragedy more painful.' },
+      {
+        id: 'y9t3-omam-m5-q1',
+        question: 'What does "microcosm" mean in the context of the novella?',
+        options: [
+          'A very small ranch',
+          'A small world that reflects the characteristics of a larger society',
+          'A type of literary technique used in dialogue',
+          'A microscope used to examine texts closely',
+        ],
+        correct: 1,
+        explanation:
+          "A microcosm is a small community that mirrors the structures, values, and problems of the wider society. The ranch reflects 1930s America's class divisions, racial prejudice, and gender inequality in miniature.",
+      },
+      {
+        id: 'y9t3-omam-m5-q2',
+        question: "What does the bunkhouse reveal about the ranch workers' lives?",
+        options: [
+          'They live in luxury and comfort',
+          'They have no privacy, no permanence, and no personal space — they are disposable labour',
+          'They are well-cared-for by the ranch owner',
+          'They choose to live simply because they prefer it',
+        ],
+        correct: 1,
+        explanation:
+          "The bunkhouse's cramped, impersonal conditions reflect the workers' lack of status, security, and individuality. They own almost nothing and can be replaced at any moment, which the setting makes visible.",
+      },
+      {
+        id: 'y9t3-omam-m5-q3',
+        question: "Why is the novella's cyclical structure significant?",
+        options: [
+          'It makes the plot easier to follow',
+          'It reinforces the message that there is no escape from cycles of exploitation and tragedy',
+          'It was a mistake by Steinbeck',
+          'It suggests the characters will eventually find happiness',
+        ],
+        correct: 1,
+        explanation:
+          'By beginning and ending at the clearing by the river, Steinbeck creates a structural loop that mirrors the inescapable cycles of poverty, loneliness, and violence experienced by migrant workers. The return to the same place with a devastating outcome underscores hopelessness.',
+      },
+      {
+        id: 'y9t3-omam-m5-q4',
+        question: 'What is the significance of Crooks owning a copy of the California civil code?',
+        options: [
+          'It shows he is a lawyer',
+          'It shows he knows his legal rights but they offer no real protection against prejudice',
+          'It proves that laws protected Black workers in the 1930s',
+          'It is an unimportant background detail',
+        ],
+        correct: 1,
+        explanation:
+          "The civil code represents Crooks's awareness of his rights. However, in a society governed by racial prejudice rather than legal fairness, knowing your rights does not protect you. The detail highlights the gap between legal theory and social reality.",
+      },
+      {
+        id: 'y9t3-omam-m5-q5',
+        question: 'What is pathetic fallacy?',
+        options: [
+          'A logical error in an argument',
+          'When a character tells a sad story',
+          'When the natural environment reflects or contrasts with the mood of the narrative',
+          'When the weather is described in detail for no reason',
+        ],
+        correct: 2,
+        explanation:
+          'Pathetic fallacy is when aspects of the natural world — weather, landscape, light — mirror or contrast with the emotional tone of the story. Steinbeck uses the peaceful clearing to contrast with the violence that occurs there, making the tragedy more painful.',
+      },
     ],
   },
 
@@ -327,11 +625,71 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Discussing themes in isolation from each other. Dreams, loneliness, and power are interconnected in the novella. The strongest essays show how these themes weave together — for example, how powerlessness creates loneliness, and loneliness fuels desperate dreaming.</div>`,
     quiz: [
-      { id: 'y9t3-omam-m6-q1', question: 'What structural pattern do the characters\' dreams follow in the novella?', options: ['They start small and gradually come true', 'They follow a trajectory of hope, brief possibility, and destruction', 'They are mentioned once and never revisited', 'They become more realistic as the novella progresses'], correct: 1, explanation: 'Steinbeck creates a repeated pattern: each dream is introduced, given a moment of seeming possibility, and then crushed. This repetition is a structural argument that the American Dream is unattainable for marginalised people.' },
-      { id: 'y9t3-omam-m6-q2', question: 'What do the rabbits symbolise in the novella?', options: ['Wealth and financial success', 'Lennie\'s desire for comfort and tenderness in a harsh world', 'George\'s farming ambitions', 'The dangers of ranch life'], correct: 1, explanation: 'The rabbits represent Lennie\'s longing for softness, comfort, and gentle connection. They are the emotional core of the dream — not a practical farming plan, but a symbol of everything Lennie lacks in his harsh, transient life.' },
-      { id: 'y9t3-omam-m6-q3', question: 'How does Steinbeck present loneliness in the novella?', options: ['As a personal choice made by weak characters', 'As a structural condition created by social inequality and the migrant labour system', 'As a minor inconvenience that characters easily overcome', 'As something only experienced by Crooks'], correct: 1, explanation: 'Steinbeck shows loneliness as systemic — it is caused by the economic system, racial segregation, gender inequality, and age discrimination, not by personal failings. Every character is lonely for different but structurally connected reasons.' },
-      { id: 'y9t3-omam-m6-q4', question: 'Why is Curley\'s wife\'s dream significant thematically?', options: ['It shows she is foolish and gullible', 'It demonstrates how false promises exploit vulnerable people, reinforcing the critique of the American Dream', 'It proves that anyone can succeed in Hollywood', 'It is only mentioned to provide backstory'], correct: 1, explanation: 'Her dream of Hollywood was based on a man\'s false promise, and it led her to marry Curley in desperation. This mirrors the way the American Dream itself offers false hope to the vulnerable, trapping them rather than freeing them.' },
-      { id: 'y9t3-omam-m6-q5', question: 'How are dreams, loneliness, and power connected in the novella?', options: ['They are separate themes with no relationship to each other', 'Powerlessness creates loneliness, and loneliness fuels desperate dreaming — the themes are interwoven', 'Only powerful characters have dreams', 'Loneliness is caused by dreaming too much'], correct: 1, explanation: 'The themes work together: characters are lonely because the social system denies them power and connection, and their loneliness drives them to dream of escape. The dreams fail because the same power structures that cause loneliness also prevent change.' },
+      {
+        id: 'y9t3-omam-m6-q1',
+        question: "What structural pattern do the characters' dreams follow in the novella?",
+        options: [
+          'They start small and gradually come true',
+          'They follow a trajectory of hope, brief possibility, and destruction',
+          'They are mentioned once and never revisited',
+          'They become more realistic as the novella progresses',
+        ],
+        correct: 1,
+        explanation:
+          'Steinbeck creates a repeated pattern: each dream is introduced, given a moment of seeming possibility, and then crushed. This repetition is a structural argument that the American Dream is unattainable for marginalised people.',
+      },
+      {
+        id: 'y9t3-omam-m6-q2',
+        question: 'What do the rabbits symbolise in the novella?',
+        options: [
+          'Wealth and financial success',
+          "Lennie's desire for comfort and tenderness in a harsh world",
+          "George's farming ambitions",
+          'The dangers of ranch life',
+        ],
+        correct: 1,
+        explanation:
+          "The rabbits represent Lennie's longing for softness, comfort, and gentle connection. They are the emotional core of the dream — not a practical farming plan, but a symbol of everything Lennie lacks in his harsh, transient life.",
+      },
+      {
+        id: 'y9t3-omam-m6-q3',
+        question: 'How does Steinbeck present loneliness in the novella?',
+        options: [
+          'As a personal choice made by weak characters',
+          'As a structural condition created by social inequality and the migrant labour system',
+          'As a minor inconvenience that characters easily overcome',
+          'As something only experienced by Crooks',
+        ],
+        correct: 1,
+        explanation:
+          'Steinbeck shows loneliness as systemic — it is caused by the economic system, racial segregation, gender inequality, and age discrimination, not by personal failings. Every character is lonely for different but structurally connected reasons.',
+      },
+      {
+        id: 'y9t3-omam-m6-q4',
+        question: "Why is Curley's wife's dream significant thematically?",
+        options: [
+          'It shows she is foolish and gullible',
+          'It demonstrates how false promises exploit vulnerable people, reinforcing the critique of the American Dream',
+          'It proves that anyone can succeed in Hollywood',
+          'It is only mentioned to provide backstory',
+        ],
+        correct: 1,
+        explanation:
+          "Her dream of Hollywood was based on a man's false promise, and it led her to marry Curley in desperation. This mirrors the way the American Dream itself offers false hope to the vulnerable, trapping them rather than freeing them.",
+      },
+      {
+        id: 'y9t3-omam-m6-q5',
+        question: 'How are dreams, loneliness, and power connected in the novella?',
+        options: [
+          'They are separate themes with no relationship to each other',
+          'Powerlessness creates loneliness, and loneliness fuels desperate dreaming — the themes are interwoven',
+          'Only powerful characters have dreams',
+          'Loneliness is caused by dreaming too much',
+        ],
+        correct: 1,
+        explanation:
+          'The themes work together: characters are lonely because the social system denies them power and connection, and their loneliness drives them to dream of escape. The dreams fail because the same power structures that cause loneliness also prevent change.',
+      },
     ],
   },
 
@@ -340,7 +698,7 @@ export const y9T3OmamModules: CourseModule[] = [
   // ──────────────────────────────────────────────
   {
     id: 'y9t3-omam-m7',
-    title: 'Steinbeck\'s Language — Dialect, Description, Dialogue',
+    title: "Steinbeck's Language — Dialect, Description, Dialogue",
     duration: '50 min',
     content: `
 <h2>How Steinbeck Uses Language to Create Meaning</h2>
@@ -381,11 +739,71 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Analysing only what characters say, not how they say it. The way a character speaks — their vocabulary, sentence length, tone, dialect features — is just as important as the content of their words. Always comment on both meaning and method.</div>`,
     quiz: [
-      { id: 'y9t3-omam-m7-q1', question: 'Why does Steinbeck write the characters\' speech in dialect?', options: ['Because he could not write in standard English', 'To create authenticity, reveal class and education, and build empathy', 'To make the novella difficult to read', 'Because all novels use dialect'], correct: 1, explanation: 'Steinbeck uses dialect to ground the novella in social reality, reveal the characters\' backgrounds and class positions, and encourage readers to take working-class voices seriously. It is a deliberate artistic choice.' },
-      { id: 'y9t3-omam-m7-q2', question: 'How does Steinbeck use light and darkness symbolically?', options: ['Light always means happiness and darkness always means sadness', 'Scenes of hope tend to be lit naturally while tension and tragedy occur in dim or fading light', 'There is no symbolic use of light in the novella', 'Darkness represents Lennie and light represents George'], correct: 1, explanation: 'Steinbeck associates hope with warm, natural light and tragedy with dimness or fading light. The final scene takes place as the sun sets, symbolising the death of hope as George prepares to kill Lennie.' },
-      { id: 'y9t3-omam-m7-q3', question: 'What is the purpose of animal imagery in the novella?', options: ['To provide background detail about ranch life', 'To symbolise vulnerability — creatures destroyed by forces stronger than themselves, mirroring the human characters', 'To show that Lennie is actually part animal', 'To entertain younger readers'], correct: 1, explanation: 'Animals in the novella — mice, dogs, puppies, rabbits, water snakes — consistently symbolise innocence and vulnerability. They are destroyed by stronger forces, just as marginalised humans are destroyed by social systems they cannot control.' },
-      { id: 'y9t3-omam-m7-q4', question: 'What is a character\'s "register"?', options: ['Their name on the ranch payroll', 'The level of formality, vocabulary, and complexity in their speech', 'The volume at which they speak', 'Their physical position in a scene'], correct: 1, explanation: 'Register refers to the style and level of language a character uses. Slim speaks with measured authority, Curley with aggressive brevity, and Lennie with childlike simplicity. Register reveals personality, education, and social position.' },
-      { id: 'y9t3-omam-m7-q5', question: 'Why was Of Mice and Men originally conceived as a "play-novelette"?', options: ['Because Steinbeck could not write full novels', 'Because he wanted it to be easily adapted for stage, with character revealed primarily through dialogue', 'Because plays were more profitable in the 1930s', 'Because the publisher demanded a short book'], correct: 1, explanation: 'Steinbeck designed the novella so it could work on stage with minimal changes. This means most characterisation and drama comes through dialogue and action rather than an intrusive narrator, giving the reader a direct, unmediated experience of the characters.' },
+      {
+        id: 'y9t3-omam-m7-q1',
+        question: "Why does Steinbeck write the characters' speech in dialect?",
+        options: [
+          'Because he could not write in standard English',
+          'To create authenticity, reveal class and education, and build empathy',
+          'To make the novella difficult to read',
+          'Because all novels use dialect',
+        ],
+        correct: 1,
+        explanation:
+          "Steinbeck uses dialect to ground the novella in social reality, reveal the characters' backgrounds and class positions, and encourage readers to take working-class voices seriously. It is a deliberate artistic choice.",
+      },
+      {
+        id: 'y9t3-omam-m7-q2',
+        question: 'How does Steinbeck use light and darkness symbolically?',
+        options: [
+          'Light always means happiness and darkness always means sadness',
+          'Scenes of hope tend to be lit naturally while tension and tragedy occur in dim or fading light',
+          'There is no symbolic use of light in the novella',
+          'Darkness represents Lennie and light represents George',
+        ],
+        correct: 1,
+        explanation:
+          'Steinbeck associates hope with warm, natural light and tragedy with dimness or fading light. The final scene takes place as the sun sets, symbolising the death of hope as George prepares to kill Lennie.',
+      },
+      {
+        id: 'y9t3-omam-m7-q3',
+        question: 'What is the purpose of animal imagery in the novella?',
+        options: [
+          'To provide background detail about ranch life',
+          'To symbolise vulnerability — creatures destroyed by forces stronger than themselves, mirroring the human characters',
+          'To show that Lennie is actually part animal',
+          'To entertain younger readers',
+        ],
+        correct: 1,
+        explanation:
+          'Animals in the novella — mice, dogs, puppies, rabbits, water snakes — consistently symbolise innocence and vulnerability. They are destroyed by stronger forces, just as marginalised humans are destroyed by social systems they cannot control.',
+      },
+      {
+        id: 'y9t3-omam-m7-q4',
+        question: 'What is a character\'s "register"?',
+        options: [
+          'Their name on the ranch payroll',
+          'The level of formality, vocabulary, and complexity in their speech',
+          'The volume at which they speak',
+          'Their physical position in a scene',
+        ],
+        correct: 1,
+        explanation:
+          'Register refers to the style and level of language a character uses. Slim speaks with measured authority, Curley with aggressive brevity, and Lennie with childlike simplicity. Register reveals personality, education, and social position.',
+      },
+      {
+        id: 'y9t3-omam-m7-q5',
+        question: 'Why was Of Mice and Men originally conceived as a "play-novelette"?',
+        options: [
+          'Because Steinbeck could not write full novels',
+          'Because he wanted it to be easily adapted for stage, with character revealed primarily through dialogue',
+          'Because plays were more profitable in the 1930s',
+          'Because the publisher demanded a short book',
+        ],
+        correct: 1,
+        explanation:
+          'Steinbeck designed the novella so it could work on stage with minimal changes. This means most characterisation and drama comes through dialogue and action rather than an intrusive narrator, giving the reader a direct, unmediated experience of the characters.',
+      },
     ],
   },
 
@@ -445,11 +863,68 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Mentioning foreshadowing without explaining its effect. It is not enough to say "this foreshadows Curley's wife's death." You must explain what the foreshadowing achieves — does it create tension? Does it make the tragedy feel inevitable? Does it invite the reader to feel dread? Always analyse the effect on the reader.</div>`,
     quiz: [
-      { id: 'y9t3-omam-m8-q1', question: 'What is the correct order of Lennie\'s escalating acts of accidental violence?', options: ['Puppy, mouse, Curley, Curley\'s wife', 'Mouse, girl in Weed, Curley\'s hand, puppy, Curley\'s wife', 'Curley\'s wife, puppy, mouse', 'Mouse, puppy, Curley\'s wife'], correct: 1, explanation: 'The chain of escalation runs: dead mouse, the girl\'s dress in Weed, Curley\'s crushed hand, the dead puppy, and finally Curley\'s wife. Each incident increases in severity, making the final tragedy feel inevitable.' },
-      { id: 'y9t3-omam-m8-q2', question: 'What effect does the cyclical structure have on the novella\'s meaning?', options: ['It makes the plot confusing', 'It reinforces the inescapable cycle of poverty and exploitation experienced by migrant workers', 'It suggests the characters are happy with their lives', 'It is a common feature of all novellas and has no special significance'], correct: 1, explanation: 'Returning to the clearing where the novella began creates a structural loop that mirrors the inescapable cycles of the characters\' lives. They have journeyed through hope and tragedy only to end up where they started, with everything lost.' },
-      { id: 'y9t3-omam-m8-q3', question: 'Over how many days does the novella take place?', options: ['One day', 'Approximately three days', 'Several weeks', 'A full year'], correct: 1, explanation: 'The compressed timeframe of roughly three days creates intensity and urgency. Events unfold rapidly, reinforcing the fragility of the dream and the powerlessness of the characters to change their circumstances.' },
-      { id: 'y9t3-omam-m8-q4', question: 'What is the significance of the heron eating the water snake in the final chapter?', options: ['It provides a calm, peaceful atmosphere before the climax', 'It mirrors the larger tragedy — the weak are consumed by the strong, reflecting the brutal hierarchy of nature and society', 'It shows that the clearing is a dangerous place for all creatures', 'It is a random detail with no symbolic meaning'], correct: 1, explanation: 'The heron consuming the snake is a small act of predation that mirrors the novella\'s larger dynamic: the strong destroy the weak. It foreshadows Lennie\'s death and reinforces Steinbeck\'s view that cruelty is embedded in both nature and society.' },
-      { id: 'y9t3-omam-m8-q5', question: 'Why is it important to explain the EFFECT of foreshadowing, not just identify it?', options: ['Because identifying it is worth zero marks', 'Because explaining the effect shows analytical skill — how it builds tension, creates inevitability, or generates dread in the reader', 'Because examiners do not care about foreshadowing', 'Because foreshadowing does not actually matter to the plot'], correct: 1, explanation: 'Simply spotting foreshadowing is low-level observation. Explaining its effect — how it makes the tragedy feel inevitable, builds dramatic tension, or positions the reader to feel dread — demonstrates the analytical skill that earns higher marks.' },
+      {
+        id: 'y9t3-omam-m8-q1',
+        question: "What is the correct order of Lennie's escalating acts of accidental violence?",
+        options: [
+          "Puppy, mouse, Curley, Curley's wife",
+          "Mouse, girl in Weed, Curley's hand, puppy, Curley's wife",
+          "Curley's wife, puppy, mouse",
+          "Mouse, puppy, Curley's wife",
+        ],
+        correct: 1,
+        explanation:
+          "The chain of escalation runs: dead mouse, the girl's dress in Weed, Curley's crushed hand, the dead puppy, and finally Curley's wife. Each incident increases in severity, making the final tragedy feel inevitable.",
+      },
+      {
+        id: 'y9t3-omam-m8-q2',
+        question: "What effect does the cyclical structure have on the novella's meaning?",
+        options: [
+          'It makes the plot confusing',
+          'It reinforces the inescapable cycle of poverty and exploitation experienced by migrant workers',
+          'It suggests the characters are happy with their lives',
+          'It is a common feature of all novellas and has no special significance',
+        ],
+        correct: 1,
+        explanation:
+          "Returning to the clearing where the novella began creates a structural loop that mirrors the inescapable cycles of the characters' lives. They have journeyed through hope and tragedy only to end up where they started, with everything lost.",
+      },
+      {
+        id: 'y9t3-omam-m8-q3',
+        question: 'Over how many days does the novella take place?',
+        options: ['One day', 'Approximately three days', 'Several weeks', 'A full year'],
+        correct: 1,
+        explanation:
+          'The compressed timeframe of roughly three days creates intensity and urgency. Events unfold rapidly, reinforcing the fragility of the dream and the powerlessness of the characters to change their circumstances.',
+      },
+      {
+        id: 'y9t3-omam-m8-q4',
+        question:
+          'What is the significance of the heron eating the water snake in the final chapter?',
+        options: [
+          'It provides a calm, peaceful atmosphere before the climax',
+          'It mirrors the larger tragedy — the weak are consumed by the strong, reflecting the brutal hierarchy of nature and society',
+          'It shows that the clearing is a dangerous place for all creatures',
+          'It is a random detail with no symbolic meaning',
+        ],
+        correct: 1,
+        explanation:
+          "The heron consuming the snake is a small act of predation that mirrors the novella's larger dynamic: the strong destroy the weak. It foreshadows Lennie's death and reinforces Steinbeck's view that cruelty is embedded in both nature and society.",
+      },
+      {
+        id: 'y9t3-omam-m8-q5',
+        question:
+          'Why is it important to explain the EFFECT of foreshadowing, not just identify it?',
+        options: [
+          'Because identifying it is worth zero marks',
+          'Because explaining the effect shows analytical skill — how it builds tension, creates inevitability, or generates dread in the reader',
+          'Because examiners do not care about foreshadowing',
+          'Because foreshadowing does not actually matter to the plot',
+        ],
+        correct: 1,
+        explanation:
+          'Simply spotting foreshadowing is low-level observation. Explaining its effect — how it makes the tragedy feel inevitable, builds dramatic tension, or positions the reader to feel dread — demonstrates the analytical skill that earns higher marks.',
+      },
     ],
   },
 
@@ -467,7 +942,7 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <h3>George and Slim: Two Types of Authority</h3>
 
-<p>George and Slim are the two most morally thoughtful characters in the novella, but they exercise their influence in very different ways. George's authority is personal — it extends only to Lennie, and it is characterised by frustration, affection, and exhaustion. Slim's authority is <strong>social</strong> — he commands the respect of every man on the ranch through skill, calmness, and quiet wisdom. Slim is described as having "God-like eyes" and moving with a grace that commands natural authority.</p>
+<p>George and Slim are the two most morally thoughtful characters in the novella, but they exercise their influence in very different ways. George's authority is personal — it extends only to Lennie, and it is characterised by frustration, affection, and exhaustion. Slim's authority is <strong>social</strong> — he commands the respect of every man on the ranch through skill, calmness, and quiet wisdom. Steinbeck describes Slim's face as "ageless" and says he "moves with a majesty only achieved by royalty and master craftsmen", calling him "the prince of the ranch".</p>
 
 <p>The comparison reveals something important about the novella's social structure. George's personal authority counts for nothing in the larger system — he cannot protect Lennie from Curley, cannot prevent the tragedy, and cannot achieve the dream. Slim's authority, while respected, is also limited — he understands what is happening but cannot change the system. Together, they demonstrate that <strong>individual goodness is insufficient to overcome structural injustice</strong>.</p>
 
@@ -504,11 +979,72 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about two characters separately without ever connecting them. A comparison is not two mini-essays placed next to each other — it must actively explore similarities, differences, and what those reveal about the text's meaning.</div>`,
     quiz: [
-      { id: 'y9t3-omam-m9-q1', question: 'What is the "ping-pong" approach to comparison, and why should you avoid it?', options: ['Alternating between characters paragraph by paragraph, which prevents genuine analytical comparison', 'Comparing characters in a single sentence, which is too brief', 'Only writing about one character, which is incomplete', 'Using too many quotations from both characters'], correct: 0, explanation: 'The ping-pong approach alternates between characters without connecting them analytically. It produces two separate character studies rather than a genuine comparison. Instead, organise around shared themes and use comparative connectives.' },
-      { id: 'y9t3-omam-m9-q2', question: 'What does the parallel between Lennie and Candy\'s dog reveal?', options: ['That Steinbeck loves animals more than people', 'That society measures worth by productivity and disposes of those it considers useless', 'That dogs and humans have the same intelligence', 'That Candy should have protected his dog better'], correct: 1, explanation: 'Both Lennie and the dog are killed because they are seen as burdens rather than valued for their relationships. The parallel critiques a society that values people only for their economic usefulness.' },
-      { id: 'y9t3-omam-m9-q3', question: 'How does the confrontation between Crooks and Curley\'s wife illustrate intersecting forms of oppression?', options: ['It shows that all marginalised people support each other', 'It reveals that even the most powerless white woman can exercise racial power over a Black man', 'It proves that gender discrimination is worse than racial discrimination', 'It demonstrates that Crooks is more powerful than Curley\'s wife'], correct: 1, explanation: 'Curley\'s wife is marginalised by gender but can still threaten Crooks with racial violence. This demonstrates how different forms of oppression interact and how power operates along multiple axes simultaneously.' },
-      { id: 'y9t3-omam-m9-q4', question: 'What should the final sentence of a comparative paragraph do?', options: ['Introduce a new character', 'Summarise the quotations used', 'Explain what the comparison reveals about the novella\'s wider themes or Steinbeck\'s purpose', 'Ask a rhetorical question'], correct: 2, explanation: 'The evaluative conclusion ties the comparison back to the novella\'s broader meaning. It shows the examiner that you understand why the comparison matters, not just what the similarities and differences are.' },
-      { id: 'y9t3-omam-m9-q5', question: 'Why does Steinbeck create parallels between characters?', options: ['To make the novella longer', 'To reinforce themes by showing how different characters experience the same social forces', 'Because he ran out of original ideas for characterisation', 'To confuse the reader'], correct: 1, explanation: 'Parallels between characters (such as Lennie and the dog, or Crooks and Curley\'s wife) reinforce themes by showing that loneliness, powerlessness, and the destruction of dreams are not individual problems but systemic ones affecting many people in different ways.' },
+      {
+        id: 'y9t3-omam-m9-q1',
+        question: 'What is the "ping-pong" approach to comparison, and why should you avoid it?',
+        options: [
+          'Alternating between characters paragraph by paragraph, which prevents genuine analytical comparison',
+          'Comparing characters in a single sentence, which is too brief',
+          'Only writing about one character, which is incomplete',
+          'Using too many quotations from both characters',
+        ],
+        correct: 0,
+        explanation:
+          'The ping-pong approach alternates between characters without connecting them analytically. It produces two separate character studies rather than a genuine comparison. Instead, organise around shared themes and use comparative connectives.',
+      },
+      {
+        id: 'y9t3-omam-m9-q2',
+        question: "What does the parallel between Lennie and Candy's dog reveal?",
+        options: [
+          'That Steinbeck loves animals more than people',
+          'That society measures worth by productivity and disposes of those it considers useless',
+          'That dogs and humans have the same intelligence',
+          'That Candy should have protected his dog better',
+        ],
+        correct: 1,
+        explanation:
+          'Both Lennie and the dog are killed because they are seen as burdens rather than valued for their relationships. The parallel critiques a society that values people only for their economic usefulness.',
+      },
+      {
+        id: 'y9t3-omam-m9-q3',
+        question:
+          "How does the confrontation between Crooks and Curley's wife illustrate intersecting forms of oppression?",
+        options: [
+          'It shows that all marginalised people support each other',
+          'It reveals that even the most powerless white woman can exercise racial power over a Black man',
+          'It proves that gender discrimination is worse than racial discrimination',
+          "It demonstrates that Crooks is more powerful than Curley's wife",
+        ],
+        correct: 1,
+        explanation:
+          "Curley's wife is marginalised by gender but can still threaten Crooks with racial violence. This demonstrates how different forms of oppression interact and how power operates along multiple axes simultaneously.",
+      },
+      {
+        id: 'y9t3-omam-m9-q4',
+        question: 'What should the final sentence of a comparative paragraph do?',
+        options: [
+          'Introduce a new character',
+          'Summarise the quotations used',
+          "Explain what the comparison reveals about the novella's wider themes or Steinbeck's purpose",
+          'Ask a rhetorical question',
+        ],
+        correct: 2,
+        explanation:
+          "The evaluative conclusion ties the comparison back to the novella's broader meaning. It shows the examiner that you understand why the comparison matters, not just what the similarities and differences are.",
+      },
+      {
+        id: 'y9t3-omam-m9-q5',
+        question: 'Why does Steinbeck create parallels between characters?',
+        options: [
+          'To make the novella longer',
+          'To reinforce themes by showing how different characters experience the same social forces',
+          'Because he ran out of original ideas for characterisation',
+          'To confuse the reader',
+        ],
+        correct: 1,
+        explanation:
+          "Parallels between characters (such as Lennie and the dog, or Crooks and Curley's wife) reinforce themes by showing that loneliness, powerlessness, and the destruction of dreams are not individual problems but systemic ones affecting many people in different ways.",
+      },
     ],
   },
 
@@ -577,11 +1113,72 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Making context statements that are too general. "In the 1930s, life was hard" tells us nothing specific. "Migrant ranch workers in 1930s California had no legal protections, no job security, and no permanent home" is specific, relevant, and can be directly connected to the text.</div>`,
     quiz: [
-      { id: 'y9t3-omam-m10-q1', question: 'What is the difference between "bolt-on" and "integrated" context?', options: ['Bolt-on context uses more historical detail', 'Bolt-on context is separate from analysis; integrated context is woven into the argument about specific textual details', 'Integrated context is longer than bolt-on context', 'There is no difference — both are equally effective'], correct: 1, explanation: 'Bolt-on context sits in a separate paragraph disconnected from analysis. Integrated context is embedded within analytical paragraphs, directly explaining how historical conditions shape the meaning of specific words, characters, or events.' },
-      { id: 'y9t3-omam-m10-q2', question: 'Which phrase signals that a student is treating context as bolt-on?', options: ['"Steinbeck arguably critiques..."', '"This reflects the endemic isolation of Depression-era workers..."', '"This is the context for the novella..."', '"George\'s use of the collective pronoun \'us\' suggests..."'], correct: 2, explanation: '"This is the context" is a red flag because it separates context from analysis. It announces that the student is about to describe background information rather than integrate it into a textual argument.' },
-      { id: 'y9t3-omam-m10-q3', question: 'What is social realism?', options: ['A literary movement depicting everyday lives of ordinary people, often highlighting social injustice', 'A philosophy that reality is socially constructed', 'A type of documentary filmmaking', 'A painting style from the Renaissance'], correct: 0, explanation: 'Social realism is a literary approach that presents the lives of working-class and ordinary people realistically, often to expose injustice. Steinbeck is one of its most important practitioners, using fiction to advocate for social change.' },
-      { id: 'y9t3-omam-m10-q4', question: 'Why should you use hedging language like "perhaps" or "arguably" when discussing authorial intent?', options: ['Because you are unsure about the text', 'Because it shows you are offering a sophisticated interpretation rather than stating an unchallengeable fact', 'Because examiners prefer uncertain answers', 'Because Steinbeck never explained his intentions'], correct: 1, explanation: 'Hedging language demonstrates analytical maturity. It shows you understand that interpretations of authorial intent are arguments to be supported, not facts to be asserted. This is a hallmark of sophisticated critical writing.' },
-      { id: 'y9t3-omam-m10-q5', question: 'How does Candy\'s fear of being fired connect to 1930s historical context?', options: ['It reflects his personal anxiety about ageing', 'It reflects the absence of welfare, pensions, or disability protections — older workers faced destitution when they could no longer perform manual labour', 'It shows that the ranch boss was unusually cruel', 'It is unconnected to the historical period'], correct: 1, explanation: 'In 1930s America, there was no social safety net. Workers who became too old, injured, or unproductive were simply dismissed with no support. Candy\'s terror is not just personal — it reflects a systemic failure to protect vulnerable workers.' },
+      {
+        id: 'y9t3-omam-m10-q1',
+        question: 'What is the difference between "bolt-on" and "integrated" context?',
+        options: [
+          'Bolt-on context uses more historical detail',
+          'Bolt-on context is separate from analysis; integrated context is woven into the argument about specific textual details',
+          'Integrated context is longer than bolt-on context',
+          'There is no difference — both are equally effective',
+        ],
+        correct: 1,
+        explanation:
+          'Bolt-on context sits in a separate paragraph disconnected from analysis. Integrated context is embedded within analytical paragraphs, directly explaining how historical conditions shape the meaning of specific words, characters, or events.',
+      },
+      {
+        id: 'y9t3-omam-m10-q2',
+        question: 'Which phrase signals that a student is treating context as bolt-on?',
+        options: [
+          '"Steinbeck arguably critiques..."',
+          '"This reflects the endemic isolation of Depression-era workers..."',
+          '"This is the context for the novella..."',
+          "\"George's use of the collective pronoun 'us' suggests...\"",
+        ],
+        correct: 2,
+        explanation:
+          '"This is the context" is a red flag because it separates context from analysis. It announces that the student is about to describe background information rather than integrate it into a textual argument.',
+      },
+      {
+        id: 'y9t3-omam-m10-q3',
+        question: 'What is social realism?',
+        options: [
+          'A literary movement depicting everyday lives of ordinary people, often highlighting social injustice',
+          'A philosophy that reality is socially constructed',
+          'A type of documentary filmmaking',
+          'A painting style from the Renaissance',
+        ],
+        correct: 0,
+        explanation:
+          'Social realism is a literary approach that presents the lives of working-class and ordinary people realistically, often to expose injustice. Steinbeck is one of its most important practitioners, using fiction to advocate for social change.',
+      },
+      {
+        id: 'y9t3-omam-m10-q4',
+        question:
+          'Why should you use hedging language like "perhaps" or "arguably" when discussing authorial intent?',
+        options: [
+          'Because you are unsure about the text',
+          'Because it shows you are offering a sophisticated interpretation rather than stating an unchallengeable fact',
+          'Because examiners prefer uncertain answers',
+          'Because Steinbeck never explained his intentions',
+        ],
+        correct: 1,
+        explanation:
+          'Hedging language demonstrates analytical maturity. It shows you understand that interpretations of authorial intent are arguments to be supported, not facts to be asserted. This is a hallmark of sophisticated critical writing.',
+      },
+      {
+        id: 'y9t3-omam-m10-q5',
+        question: "How does Candy's fear of being fired connect to 1930s historical context?",
+        options: [
+          'It reflects his personal anxiety about ageing',
+          'It reflects the absence of welfare, pensions, or disability protections — older workers faced destitution when they could no longer perform manual labour',
+          'It shows that the ranch boss was unusually cruel',
+          'It is unconnected to the historical period',
+        ],
+        correct: 1,
+        explanation:
+          "In 1930s America, there was no social safety net. Workers who became too old, injured, or unproductive were simply dismissed with no support. Candy's terror is not just personal — it reflects a systemic failure to protect vulnerable workers.",
+      },
     ],
   },
 
@@ -666,11 +1263,72 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Starting every paragraph with "Another way Steinbeck presents loneliness is..." This creates a list rather than an argument. Instead, use varied topic sentences that build on each other: "While George experiences loneliness despite having companionship, Crooks embodies the more extreme isolation of enforced segregation..."</div>`,
     quiz: [
-      { id: 'y9t3-omam-m11-q1', question: 'What is a thesis statement?', options: ['A summary of the plot', 'A clear, arguable claim that guides your entire essay', 'The first sentence of your conclusion', 'A quotation from the text'], correct: 1, explanation: 'A thesis statement is a single sentence that presents your overall argument. It guides the direction of every paragraph and gives your essay a coherent, unified purpose.' },
-      { id: 'y9t3-omam-m11-q2', question: 'How long should you spend planning an essay?', options: ['No time — start writing immediately', 'At least five minutes', 'At least thirty minutes', 'The entire exam period'], correct: 1, explanation: 'Five minutes of planning prevents repetition, ensures you cover the question fully, and gives your argument logical progression. A planned essay is always stronger than a longer, rambling one.' },
-      { id: 'y9t3-omam-m11-q3', question: 'What should an introduction do?', options: ['Describe the historical context in detail', 'Summarise the entire plot of the novella', 'Address the question directly, establish your thesis, and signal the scope of your argument', 'List all the characters you will discuss'], correct: 2, explanation: 'An effective introduction gets straight to the point: it engages with the question, presents your thesis, and tells the reader what aspects of the text you will examine. It should be concise and purposeful.' },
-      { id: 'y9t3-omam-m11-q4', question: 'Why is starting every paragraph with "Another way Steinbeck presents..." a weak approach?', options: ['Because it uses too many words', 'Because it creates a list rather than a developing argument', 'Because examiners do not like repetition of the author\'s name', 'Because it is grammatically incorrect'], correct: 1, explanation: 'Repetitive paragraph openings produce a list of disconnected points rather than a building argument. Varied, purposeful topic sentences show that each paragraph develops, deepens, or complicates the previous one.' },
-      { id: 'y9t3-omam-m11-q5', question: 'What should a conclusion do?', options: ['Repeat the introduction word for word', 'Introduce a completely new argument', 'Synthesise the essay\'s points and offer a final evaluative judgement', 'Provide a plot summary'], correct: 2, explanation: 'A strong conclusion pulls together the threads of your argument and offers a final, evaluative statement — perhaps about Steinbeck\'s purpose or the novella\'s wider significance. It should feel like an arrival, not a repetition.' },
+      {
+        id: 'y9t3-omam-m11-q1',
+        question: 'What is a thesis statement?',
+        options: [
+          'A summary of the plot',
+          'A clear, arguable claim that guides your entire essay',
+          'The first sentence of your conclusion',
+          'A quotation from the text',
+        ],
+        correct: 1,
+        explanation:
+          'A thesis statement is a single sentence that presents your overall argument. It guides the direction of every paragraph and gives your essay a coherent, unified purpose.',
+      },
+      {
+        id: 'y9t3-omam-m11-q2',
+        question: 'How long should you spend planning an essay?',
+        options: [
+          'No time — start writing immediately',
+          'At least five minutes',
+          'At least thirty minutes',
+          'The entire exam period',
+        ],
+        correct: 1,
+        explanation:
+          'Five minutes of planning prevents repetition, ensures you cover the question fully, and gives your argument logical progression. A planned essay is always stronger than a longer, rambling one.',
+      },
+      {
+        id: 'y9t3-omam-m11-q3',
+        question: 'What should an introduction do?',
+        options: [
+          'Describe the historical context in detail',
+          'Summarise the entire plot of the novella',
+          'Address the question directly, establish your thesis, and signal the scope of your argument',
+          'List all the characters you will discuss',
+        ],
+        correct: 2,
+        explanation:
+          'An effective introduction gets straight to the point: it engages with the question, presents your thesis, and tells the reader what aspects of the text you will examine. It should be concise and purposeful.',
+      },
+      {
+        id: 'y9t3-omam-m11-q4',
+        question:
+          'Why is starting every paragraph with "Another way Steinbeck presents..." a weak approach?',
+        options: [
+          'Because it uses too many words',
+          'Because it creates a list rather than a developing argument',
+          "Because examiners do not like repetition of the author's name",
+          'Because it is grammatically incorrect',
+        ],
+        correct: 1,
+        explanation:
+          'Repetitive paragraph openings produce a list of disconnected points rather than a building argument. Varied, purposeful topic sentences show that each paragraph develops, deepens, or complicates the previous one.',
+      },
+      {
+        id: 'y9t3-omam-m11-q5',
+        question: 'What should a conclusion do?',
+        options: [
+          'Repeat the introduction word for word',
+          'Introduce a completely new argument',
+          "Synthesise the essay's points and offer a final evaluative judgement",
+          'Provide a plot summary',
+        ],
+        correct: 2,
+        explanation:
+          "A strong conclusion pulls together the threads of your argument and offers a final, evaluative statement — perhaps about Steinbeck's purpose or the novella's wider significance. It should feel like an arrival, not a repetition.",
+      },
     ],
   },
 
@@ -773,11 +1431,71 @@ export const y9T3OmamModules: CourseModule[] = [
 
 <p>Timed writing is a skill, and like all skills, it improves with <strong>deliberate practice</strong>. The more you practise under realistic conditions, the more comfortable and confident you will feel when the real exam arrives. Start with generous time limits and gradually reduce them as your fluency increases.</p>`,
     quiz: [
-      { id: 'y9t3-omam-m12-q1', question: 'How long should you spend planning an exam essay?', options: ['No time at all — start writing immediately', 'About five minutes', 'At least fifteen minutes', 'Half the total time available'], correct: 1, explanation: 'Five minutes of planning is the ideal balance — long enough to create a structured argument with quotations and contextual links, short enough to leave maximum time for writing. Skipping the plan always leads to weaker essays.' },
-      { id: 'y9t3-omam-m12-q2', question: 'What should you do if you are running out of time in an exam?', options: ['Stop writing and leave the rest blank', 'Write your remaining points in bullet form with quotations', 'Copy out long passages from memory', 'Start a completely new essay on a different question'], correct: 1, explanation: 'If time is running out, switch to bullet points with embedded quotations. Examiners can award marks for clear analytical thinking even in abbreviated form. A half-finished argument with evidence is always better than an abandoned essay.' },
-      { id: 'y9t3-omam-m12-q3', question: 'What is "analytical density"?', options: ['How many pages your essay covers', 'The amount of insight packed into each sentence — evidence, analysis, context, or argumentation', 'The number of quotations you use', 'How complex your vocabulary is'], correct: 1, explanation: 'Analytical density means every sentence earns its place by contributing evidence, analysis, contextual knowledge, or argumentation. High-density writing avoids filler, plot retelling, and vague generalisations.' },
-      { id: 'y9t3-omam-m12-q4', question: 'Which of these is a waste of time in an exam essay?', options: ['Embedding short quotations', 'Analysing specific word choices', 'Retelling the plot of the novella', 'Integrating contextual knowledge'], correct: 2, explanation: 'The examiner has read the book and does not need a plot summary. Every sentence spent retelling the story is a sentence not spent analysing it. State events briefly only when necessary to introduce evidence.' },
-      { id: 'y9t3-omam-m12-q5', question: 'Why is "quality over quantity" important in timed exam essays?', options: ['Because examiners only read the first three paragraphs', 'Because three excellent, analytically dense paragraphs will outscore five thin, repetitive ones', 'Because long essays are automatically penalised', 'Because the exam only allows a limited number of pages'], correct: 1, explanation: 'Examiners reward depth of analysis, not length. Three paragraphs with precise quotations, close language analysis, and integrated context will always earn more marks than five paragraphs of superficial commentary and plot retelling.' },
+      {
+        id: 'y9t3-omam-m12-q1',
+        question: 'How long should you spend planning an exam essay?',
+        options: [
+          'No time at all — start writing immediately',
+          'About five minutes',
+          'At least fifteen minutes',
+          'Half the total time available',
+        ],
+        correct: 1,
+        explanation:
+          'Five minutes of planning is the ideal balance — long enough to create a structured argument with quotations and contextual links, short enough to leave maximum time for writing. Skipping the plan always leads to weaker essays.',
+      },
+      {
+        id: 'y9t3-omam-m12-q2',
+        question: 'What should you do if you are running out of time in an exam?',
+        options: [
+          'Stop writing and leave the rest blank',
+          'Write your remaining points in bullet form with quotations',
+          'Copy out long passages from memory',
+          'Start a completely new essay on a different question',
+        ],
+        correct: 1,
+        explanation:
+          'If time is running out, switch to bullet points with embedded quotations. Examiners can award marks for clear analytical thinking even in abbreviated form. A half-finished argument with evidence is always better than an abandoned essay.',
+      },
+      {
+        id: 'y9t3-omam-m12-q3',
+        question: 'What is "analytical density"?',
+        options: [
+          'How many pages your essay covers',
+          'The amount of insight packed into each sentence — evidence, analysis, context, or argumentation',
+          'The number of quotations you use',
+          'How complex your vocabulary is',
+        ],
+        correct: 1,
+        explanation:
+          'Analytical density means every sentence earns its place by contributing evidence, analysis, contextual knowledge, or argumentation. High-density writing avoids filler, plot retelling, and vague generalisations.',
+      },
+      {
+        id: 'y9t3-omam-m12-q4',
+        question: 'Which of these is a waste of time in an exam essay?',
+        options: [
+          'Embedding short quotations',
+          'Analysing specific word choices',
+          'Retelling the plot of the novella',
+          'Integrating contextual knowledge',
+        ],
+        correct: 2,
+        explanation:
+          'The examiner has read the book and does not need a plot summary. Every sentence spent retelling the story is a sentence not spent analysing it. State events briefly only when necessary to introduce evidence.',
+      },
+      {
+        id: 'y9t3-omam-m12-q5',
+        question: 'Why is "quality over quantity" important in timed exam essays?',
+        options: [
+          'Because examiners only read the first three paragraphs',
+          'Because three excellent, analytically dense paragraphs will outscore five thin, repetitive ones',
+          'Because long essays are automatically penalised',
+          'Because the exam only allows a limited number of pages',
+        ],
+        correct: 1,
+        explanation:
+          'Examiners reward depth of analysis, not length. Three paragraphs with precise quotations, close language analysis, and integrated context will always earn more marks than five paragraphs of superficial commentary and plot retelling.',
+      },
     ],
   },
-];
+]

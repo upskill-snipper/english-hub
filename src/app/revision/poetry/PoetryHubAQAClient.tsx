@@ -34,7 +34,11 @@ const POWER_AND_CONFLICT: Poem[] = [
   { title: 'London', poet: 'William Blake', slug: 'london' },
   { title: 'Extract from The Prelude', poet: 'William Wordsworth', slug: 'the-prelude' },
   { title: 'My Last Duchess', poet: 'Robert Browning', slug: 'my-last-duchess' },
-  { title: 'The Charge of the Light Brigade', poet: 'Alfred Lord Tennyson', slug: 'charge-of-the-light-brigade' },
+  {
+    title: 'The Charge of the Light Brigade',
+    poet: 'Alfred Lord Tennyson',
+    slug: 'charge-of-the-light-brigade',
+  },
   { title: 'Exposure', poet: 'Wilfred Owen', slug: 'exposure' },
   { title: 'Storm on the Island', poet: 'Seamus Heaney', slug: 'storm-on-the-island' },
   { title: 'Bayonet Charge', poet: 'Ted Hughes', slug: 'bayonet-charge' },
@@ -42,7 +46,7 @@ const POWER_AND_CONFLICT: Poem[] = [
   { title: 'Poppies', poet: 'Jane Weir', slug: 'poppies' },
   { title: 'War Photographer', poet: 'Carol Ann Duffy', slug: 'war-photographer' },
   { title: 'Tissue', poet: 'Imtiaz Dharker', slug: 'tissue' },
-  { title: 'The Emigree', poet: 'Carol Rumens', slug: 'the-emigree' },
+  { title: 'The Émigrée', poet: 'Carol Rumens', slug: 'the-emigree' },
   { title: 'Kamikaze', poet: 'Beatrice Garland', slug: 'kamikaze' },
   { title: 'Checking Out Me History', poet: 'John Agard', slug: 'checking-out-me-history' },
 ]
@@ -51,11 +55,15 @@ const LOVE_AND_RELATIONSHIPS: Poem[] = [
   { title: 'When We Two Parted', poet: 'Lord Byron', slug: 'when-we-two-parted' },
   { title: "Love's Philosophy", poet: 'Percy Bysshe Shelley', slug: 'loves-philosophy' },
   { title: "Porphyria's Lover", poet: 'Robert Browning', slug: 'porphyrias-lover' },
-  { title: "Sonnet 29 -- 'I think of thee!'", poet: 'Elizabeth Barrett Browning', slug: 'sonnet-29' },
+  {
+    title: "Sonnet 29 -- 'I think of thee!'",
+    poet: 'Elizabeth Barrett Browning',
+    slug: 'sonnet-29',
+  },
   { title: 'Neutral Tones', poet: 'Thomas Hardy', slug: 'neutral-tones' },
   { title: 'Letters from Yorkshire', poet: 'Maura Dooley', slug: 'letters-from-yorkshire' },
   { title: "The Farmer's Bride", poet: 'Charlotte Mew', slug: 'the-farmers-bride' },
-  { title: 'Walking Away', poet: 'Cecil Day Lewis', slug: 'walking-away' },
+  { title: 'Walking Away', poet: 'Cecil Day-Lewis', slug: 'walking-away' },
   { title: 'Eden Rock', poet: 'Charles Causley', slug: 'eden-rock' },
   { title: 'Follower', poet: 'Seamus Heaney', slug: 'follower' },
   { title: 'Mother, Any Distance', poet: 'Simon Armitage', slug: 'mother-any-distance' },
@@ -79,7 +87,10 @@ const POETRY_TECHNIQUES = [
   { name: 'Juxtaposition', description: 'Placing contrasting ideas side by side for effect' },
   { name: 'Pathetic fallacy', description: 'Using weather or nature to reflect mood or emotion' },
   { name: 'Oxymoron', description: 'Two contradictory words placed together' },
-  { name: 'Semantic field', description: 'A group of words related to a particular theme or subject' },
+  {
+    name: 'Semantic field',
+    description: 'A group of words related to a particular theme or subject',
+  },
 ]
 
 // ─── Comparison pairings ──────────────────────────────────────────────────────
@@ -105,7 +116,7 @@ const COMPARISON_PAIRINGS = [
   },
   {
     theme: 'Identity and Place',
-    poems: ['The Emigree', 'Checking Out Me History'],
+    poems: ['The Émigrée', 'Checking Out Me History'],
     anthology: 'power-and-conflict' as const,
     tip: 'Compare how both speakers assert their identity against dominant powers.',
   },
@@ -206,9 +217,7 @@ export function PoetryHubAQAClient() {
           {mounted && (
             <div className="mt-6 max-w-md">
               <div className="mb-2 flex items-center justify-between">
-                <span className="text-sm font-medium text-foreground">
-                  Poems studied
-                </span>
+                <span className="text-sm font-medium text-foreground">Poems studied</span>
                 <span className="text-sm text-muted-foreground">
                   {studiedCount} / {totalPoems}
                 </span>
@@ -282,7 +291,9 @@ export function PoetryHubAQAClient() {
                   <Heart className="size-5 text-pink-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-heading-md font-heading">Love & Relationships</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">
+                    Love & Relationships
+                  </CardTitle>
                   <CardDescription>15 poems</CardDescription>
                 </div>
               </div>
@@ -401,8 +412,8 @@ export function PoetryHubAQAClient() {
                     Tackling Unseen Poetry
                   </h3>
                   <p className="mt-1 text-body-sm text-muted-foreground">
-                    Section C of the poetry paper tests your ability to analyse a poem you have never
-                    seen before. Here are the key strategies:
+                    Section C of the poetry paper tests your ability to analyse a poem you have
+                    never seen before. Here are the key strategies:
                   </p>
                 </div>
                 <ul className="grid gap-2 sm:grid-cols-2 text-body-sm text-muted-foreground">
@@ -522,7 +533,9 @@ export function PoetryHubAQAClient() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Sparkles className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Sharpen Your Poetry Marks</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            Sharpen Your Poetry Marks
+          </h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <Link
@@ -533,8 +546,12 @@ export function PoetryHubAQAClient() {
               <FileText className="size-4 text-emerald-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Essay Structure</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Build sustained poetry comparisons.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Essay Structure
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Build sustained poetry comparisons.
+              </p>
             </div>
           </Link>
           <Link
@@ -545,8 +562,12 @@ export function PoetryHubAQAClient() {
               <GitCompareArrows className="size-4 text-emerald-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Compare Command Words</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Decode the comparison question.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Compare Command Words
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Decode the comparison question.
+              </p>
             </div>
           </Link>
           <Link
@@ -557,8 +578,12 @@ export function PoetryHubAQAClient() {
               <Sparkles className="size-4 text-cyan-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 9 Poetry</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Conceptualised, top-band readings.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Grade 9 Poetry
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Conceptualised, top-band readings.
+              </p>
             </div>
           </Link>
           <Link
@@ -569,8 +594,12 @@ export function PoetryHubAQAClient() {
               <Wand2 className="size-4 text-clay-600" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Poetry Quizzes</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Test your quote and context recall.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Poetry Quizzes
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Test your quote and context recall.
+              </p>
             </div>
           </Link>
         </div>
@@ -579,9 +608,7 @@ export function PoetryHubAQAClient() {
       {/* ── Motivational CTA ────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-rose-500/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">
         <FileText className="mx-auto mb-3 size-8 text-rose-400" />
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Start with one poem a day
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Start with one poem a day</h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           Studying just one poem per day means you will cover the entire anthology in a month. Pick
           the poem you find hardest and start there -- progress beats perfection.

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CourseData, CourseModule, CourseQuiz } from './courses';
+import type { CourseData, CourseModule, CourseQuiz } from './courses'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Edexcel IGCSE Literature — Poetry Anthology Set 2
@@ -17,8 +17,10 @@ const laBelleDameModules: CourseModule[] = [
     content: `
 <h2>La Belle Dame sans Merci — John Keats (1819)</h2>
 
+<div class="version-note" style="border-left:3px solid #f59e0b;background:rgba(245,158,11,0.08);padding:0.85rem 1rem;border-radius:6px;margin-bottom:1rem;"><strong>Version note:</strong> The Edexcel IGCSE anthology uses the 1820 <em>Indicator</em> version of the poem (with "knight-at-arms"). Some online sources reproduce Keats's later 1848 (Milnes) revision, which differs in several lines — most notably replacing "knight-at-arms" with "wretched wight" and "I see a lily on thy brow" with "I see death's lily on thy brow". Always quote from the anthology version when answering Edexcel questions; this study guide uses the 1820 text throughout.</div>
+
 <h3>Context</h3>
-<p>John Keats (1795–1821) was one of the principal figures of the English Romantic movement. He died of tuberculosis at just twenty-five, yet produced some of the most enduring poetry in the English language. <strong>"La Belle Dame sans Merci"</strong> (French for "The Beautiful Lady Without Mercy") was composed in April 1819, the same extraordinarily productive period that yielded his great odes.</p>
+<p>John Keats (1795–1821) was one of the principal figures of the English Romantic movement. He died of tuberculosis at just twenty-five, yet produced some of the most enduring poetry in the English language. <strong>"La Belle Dame sans Merci"</strong> (French for "The Beautiful Lady Without Mercy") was composed on 21 April 1819, the same extraordinarily productive period that yielded his great odes. The poem was first published in Leigh Hunt's <em>The Indicator</em> in May 1820 — the version Keats himself prepared for the press, and the version printed in the Edexcel anthology. A revised text was published posthumously by Richard Monckton Milnes in 1848.</p>
 
 <p>The title is borrowed from a medieval poem by Alain Chartier (1424). Keats was deeply influenced by medieval romance and balladry, and the poem imitates the form and atmosphere of the traditional ballad. At the time of writing, Keats was falling in love with Fanny Brawne, but was also acutely aware of his deteriorating health and his inability to provide for a wife. This tension between desire and doom pervades the poem.</p>
 
@@ -56,8 +58,7 @@ const laBelleDameModules: CourseModule[] = [
       },
       {
         id: 'igp2-labelle-m1-q2',
-        question:
-          'Which literary tradition does Keats draw upon in this poem?',
+        question: 'Which literary tradition does Keats draw upon in this poem?',
         options: [
           'The epic tradition of Homer and Virgil',
           'The Augustan tradition of Pope and Dryden',
@@ -70,8 +71,7 @@ const laBelleDameModules: CourseModule[] = [
       },
       {
         id: 'igp2-labelle-m1-q3',
-        question:
-          'What personal context is relevant to Keats\'s writing of this poem?',
+        question: "What personal context is relevant to Keats's writing of this poem?",
         options: [
           'He had recently returned from travelling in Italy',
           'He was falling in love with Fanny Brawne while suffering from tuberculosis',
@@ -133,20 +133,14 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
         id: 'igp2-labelle-m2-q1',
         question:
           'What technique is used in "The sedge has wither\'d from the lake, / And no birds sing"?',
-        options: [
-          'Personification',
-          'Pathetic fallacy',
-          'Hyperbole',
-          'Oxymoron',
-        ],
+        options: ['Personification', 'Pathetic fallacy', 'Hyperbole', 'Oxymoron'],
         correct: 1,
         explanation:
-          'The withered, lifeless landscape mirrors the knight\'s emotional desolation — this is pathetic fallacy, where the natural environment reflects the character\'s inner state.',
+          "The withered, lifeless landscape mirrors the knight's emotional desolation — this is pathetic fallacy, where the natural environment reflects the character's inner state.",
       },
       {
         id: 'igp2-labelle-m2-q2',
-        question:
-          'Why is the word "as" significant in "She look\'d at me as she did love"?',
+        question: 'Why is the word "as" significant in "She look\'d at me as she did love"?',
         options: [
           'It confirms that the lady truly loved the knight',
           'It introduces ambiguity — she appeared to love him but may not have',
@@ -159,11 +153,10 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
       },
       {
         id: 'igp2-labelle-m2-q3',
-        question:
-          'What effect does the repetition of "pale" in stanza 10 create?',
+        question: 'What effect does the repetition of "pale" in stanza 10 create?',
         options: [
           'It suggests the kings are physically cold',
-          'It creates a haunting crescendo that links the victims to the knight\'s own pallor',
+          "It creates a haunting crescendo that links the victims to the knight's own pallor",
           'It emphasises the beauty of the supernatural world',
           'It shows that the knight is imagining things',
         ],
@@ -216,8 +209,7 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
     quiz: [
       {
         id: 'igp2-labelle-m3-q1',
-        question:
-          'What is the effect of the shortened fourth line in each stanza?',
+        question: 'What is the effect of the shortened fourth line in each stanza?',
         options: [
           'It speeds up the pace of the poem',
           'It creates a dying fall that mirrors loss and incompleteness',
@@ -226,11 +218,11 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
         ],
         correct: 1,
         explanation:
-          'The dramatically shortened fourth line creates a sense of trailing off — a dying fall — that echoes the knight\'s depletion and the fading of enchantment. Each stanza feels incomplete, just as the knight\'s experience is.',
+          "The dramatically shortened fourth line creates a sense of trailing off — a dying fall — that echoes the knight's depletion and the fading of enchantment. Each stanza feels incomplete, just as the knight's experience is.",
       },
       {
         id: 'igp2-labelle-m3-q2',
-        question: 'What is the significance of the poem\'s circular structure?',
+        question: "What is the significance of the poem's circular structure?",
         options: [
           'It shows the knight has learned from his experience',
           'It suggests the knight is trapped in an endless cycle of loss',
@@ -247,12 +239,12 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
         options: [
           'To make the poem longer and more complex',
           'To show that the unnamed speaker is the real protagonist',
-          'To distance us from the events and raise questions about the knight\'s reliability',
+          "To distance us from the events and raise questions about the knight's reliability",
           'To allow two different rhyme schemes to be used',
         ],
         correct: 2,
         explanation:
-          'The frame narrative distances us from the enchantment — we hear the story second-hand through the knight\'s subjective account, which raises questions about whether his perception has been distorted by obsession.',
+          "The frame narrative distances us from the enchantment — we hear the story second-hand through the knight's subjective account, which raises questions about whether his perception has been distorted by obsession.",
       },
     ],
   },
@@ -312,13 +304,12 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
     quiz: [
       {
         id: 'igp2-labelle-m4-q1',
-        question:
-          'What should be the first step when planning an exam response on a poem?',
+        question: 'What should be the first step when planning an exam response on a poem?',
         options: [
           'Write down every quotation you can remember',
-          'Establish your overarching argument about the poem\'s meaning',
+          "Establish your overarching argument about the poem's meaning",
           'List all the literary devices in the poem',
-          'Write a paragraph about the poet\'s biography',
+          "Write a paragraph about the poet's biography",
         ],
         correct: 1,
         explanation:
@@ -326,22 +317,20 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
       },
       {
         id: 'igp2-labelle-m4-q2',
-        question:
-          'How should context be used in an IGCSE Literature essay?',
+        question: 'How should context be used in an IGCSE Literature essay?',
         options: [
           'As a separate introductory paragraph before the analysis',
           'Only in the conclusion to round off the essay',
-          'Integrated into the literary analysis, linked to the writer\'s choices',
+          "Integrated into the literary analysis, linked to the writer's choices",
           'Context is not required for the IGCSE Literature exam',
         ],
         correct: 2,
         explanation:
-          'Context should be woven into your analysis — for example, linking Keats\'s personal experience of mortality to the poem\'s themes — rather than presented as a detached biographical paragraph.',
+          "Context should be woven into your analysis — for example, linking Keats's personal experience of mortality to the poem's themes — rather than presented as a detached biographical paragraph.",
       },
       {
         id: 'igp2-labelle-m4-q3',
-        question:
-          'Which of these is the strongest analytical statement about the poem?',
+        question: 'Which of these is the strongest analytical statement about the poem?',
         options: [
           'Keats uses a metaphor when he talks about the lady',
           'The knight meets a beautiful lady and falls in love with her',
@@ -354,7 +343,7 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
       },
     ],
   },
-];
+]
 
 const laBelleDameCourse: CourseData = {
   id: 'igcse-lit-poem-la-belle-dame',
@@ -370,7 +359,7 @@ const laBelleDameCourse: CourseData = {
     'A comprehensive study of Keats\'s "La Belle Dame sans Merci" covering context, language and imagery analysis, structure and form, and exam practice with model responses.',
   color: '#7C3AED',
   moduleList: laBelleDameModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 2. Poem at Thirty-Nine — Alice Walker
@@ -410,22 +399,20 @@ const poemAtThirtyNineModules: CourseModule[] = [
     quiz: [
       {
         id: 'igp2-thirty9-m1-q1',
-        question:
-          'What kind of poem is "Poem at Thirty-Nine"?',
+        question: 'What kind of poem is "Poem at Thirty-Nine"?',
         options: [
           'A dramatic monologue addressed to a living person',
           'A sonnet about romantic love',
-          'An elegy reflecting on the death of Walker\'s father',
+          "An elegy reflecting on the death of Walker's father",
           'A protest poem about racial injustice',
         ],
         correct: 2,
         explanation:
-          'The poem is an elegy — a reflective poem mourning Walker\'s father, who died in 1973. It moves from grief to celebration of his legacy and influence on her life.',
+          "The poem is an elegy — a reflective poem mourning Walker's father, who died in 1973. It moves from grief to celebration of his legacy and influence on her life.",
       },
       {
         id: 'igp2-thirty9-m1-q2',
-        question:
-          'What was Alice Walker\'s father\'s background?',
+        question: "What was Alice Walker's father's background?",
         options: [
           'He was a university professor in Atlanta',
           'He was an African American sharecropper in rural Georgia',
@@ -434,12 +421,11 @@ const poemAtThirtyNineModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Walker\'s father was a sharecropper — a poor farmer who worked land owned by someone else. Despite poverty and racial oppression, he valued education, creativity, and generosity.',
+          "Walker's father was a sharecropper — a poor farmer who worked land owned by someone else. Despite poverty and racial oppression, he valued education, creativity, and generosity.",
       },
       {
         id: 'igp2-thirty9-m1-q3',
-        question:
-          'What is the poem\'s overall emotional arc?',
+        question: "What is the poem's overall emotional arc?",
         options: [
           'From happiness to despair',
           'From anger to forgiveness',
@@ -495,13 +481,12 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
     quiz: [
       {
         id: 'igp2-thirty9-m2-q1',
-        question:
-          'What does the cooking imagery in the poem symbolise?',
+        question: 'What does the cooking imagery in the poem symbolise?',
         options: [
-          'Walker\'s desire to become a professional chef',
+          "Walker's desire to become a professional chef",
           'The domestic role expected of women in the 1980s',
           'Creativity and individuality — taking inherited values and making something new',
-          'The poverty of Walker\'s childhood',
+          "The poverty of Walker's childhood",
         ],
         correct: 2,
         explanation:
@@ -509,8 +494,7 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
       },
       {
         id: 'igp2-thirty9-m2-q2',
-        question:
-          'What is the effect of the conditional tense ("He would have...")?',
+        question: 'What is the effect of the conditional tense ("He would have...")?',
         options: [
           'It shows Walker is uncertain about her memories',
           'It creates a sense of simultaneous presence and absence — imagining what can never happen',
@@ -519,12 +503,11 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
         ],
         correct: 1,
         explanation:
-          'The conditional tense imagines the father\'s reactions vividly while reminding us that he is gone. It creates a poignant blend of presence and absence, keeping him alive through imagination.',
+          "The conditional tense imagines the father's reactions vividly while reminding us that he is gone. It creates a poignant blend of presence and absence, keeping him alive through imagination.",
       },
       {
         id: 'igp2-thirty9-m2-q3',
-        question:
-          'Why is the opening line "How I miss my father" effective?',
+        question: 'Why is the opening line "How I miss my father" effective?',
         options: [
           'It uses elaborate figurative language to express grief',
           'Its stark simplicity conveys deep emotion without sentimentality',
@@ -605,12 +588,11 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
       },
       {
         id: 'igp2-thirty9-m3-q3',
-        question:
-          'What is the poem\'s overall structural movement?',
+        question: "What is the poem's overall structural movement?",
         options: [
           'From celebration to grief',
           'From the present to the distant past',
-          'From grief and loss to recognition and celebration of her father\'s legacy',
+          "From grief and loss to recognition and celebration of her father's legacy",
           'From anger at her father to eventual forgiveness',
         ],
         correct: 2,
@@ -662,13 +644,12 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
     quiz: [
       {
         id: 'igp2-thirty9-m4-q1',
-        question:
-          'Which of these is the strongest conceptualised argument about the poem?',
+        question: 'Which of these is the strongest conceptualised argument about the poem?',
         options: [
           'Alice Walker writes about her father who died',
           'The poem uses free verse and enjambment throughout',
-          'Walker presents inheritance as creative transformation — her father\'s values live on, reshaped by her own identity',
-          'The poem lists things Walker\'s father taught her',
+          "Walker presents inheritance as creative transformation — her father's values live on, reshaped by her own identity",
+          "The poem lists things Walker's father taught her",
         ],
         correct: 2,
         explanation:
@@ -676,10 +657,9 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
       },
       {
         id: 'igp2-thirty9-m4-q2',
-        question:
-          'How does the cooking metaphor function in an analytical essay?',
+        question: 'How does the cooking metaphor function in an analytical essay?',
         options: [
-          'It provides biographical information about Walker\'s childhood',
+          "It provides biographical information about Walker's childhood",
           'It links to the theme of identity — showing how Walker transforms inherited values into something uniquely her own',
           'It demonstrates that Walker preferred cooking to writing',
           'It is only relevant if the exam question specifically mentions food',
@@ -690,21 +670,20 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
       },
       {
         id: 'igp2-thirty9-m4-q3',
-        question:
-          'What is the most effective way to use context in an essay on this poem?',
+        question: 'What is the most effective way to use context in an essay on this poem?',
         options: [
-          'Write a separate paragraph about Walker\'s biography before beginning analysis',
+          "Write a separate paragraph about Walker's biography before beginning analysis",
           'Mention context only in the conclusion',
-          'Integrate contextual points into the analysis, linking them to Walker\'s choices',
+          "Integrate contextual points into the analysis, linking them to Walker's choices",
           'Avoid context entirely and focus only on language',
         ],
         correct: 2,
         explanation:
-          'Context should be woven into your analysis — for example, linking Walker\'s father\'s life as a sharecropper to the poem\'s theme that moral inheritance matters more than material wealth.',
+          "Context should be woven into your analysis — for example, linking Walker's father's life as a sharecropper to the poem's theme that moral inheritance matters more than material wealth.",
       },
     ],
   },
-];
+]
 
 const poemAtThirtyNineCourse: CourseData = {
   id: 'igcse-lit-poem-at-thirty-nine',
@@ -720,7 +699,7 @@ const poemAtThirtyNineCourse: CourseData = {
     'A comprehensive study of Alice Walker\'s "Poem at Thirty-Nine" covering context, language and imagery analysis, structure and form, and exam practice with model responses.',
   color: '#7C3AED',
   moduleList: poemAtThirtyNineModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 3. War Photographer — Carol Ann Duffy
@@ -758,8 +737,7 @@ const warPhotographerModules: CourseModule[] = [
     quiz: [
       {
         id: 'igp2-warpho-m1-q1',
-        question:
-          'Who inspired Duffy to write "War Photographer"?',
+        question: 'Who inspired Duffy to write "War Photographer"?',
         options: [
           'Soldiers she met during a war',
           'War photographers such as Don McCullin whom she knew personally',
@@ -772,12 +750,11 @@ const warPhotographerModules: CourseModule[] = [
       },
       {
         id: 'igp2-warpho-m1-q2',
-        question:
-          'What is the poem\'s central tension?',
+        question: "What is the poem's central tension?",
         options: [
           'The conflict between two rival photographers',
           'The gap between the reality of war and the comfortable detachment of those who view it from safety',
-          'The photographer\'s desire to stop working and retire',
+          "The photographer's desire to stop working and retire",
           'The difference between colour and black-and-white photography',
         ],
         correct: 1,
@@ -786,8 +763,7 @@ const warPhotographerModules: CourseModule[] = [
       },
       {
         id: 'igp2-warpho-m1-q3',
-        question:
-          'What is the setting of the poem?',
+        question: 'What is the setting of the poem?',
         options: [
           'A battlefield in Vietnam',
           'A newspaper office in London',
@@ -796,7 +772,7 @@ const warPhotographerModules: CourseModule[] = [
         ],
         correct: 2,
         explanation:
-          'The poem is set in the photographer\'s darkroom as he develops his images. This quiet, ordered setting contrasts sharply with the chaotic suffering recorded in the photographs.',
+          "The poem is set in the photographer's darkroom as he develops his images. This quiet, ordered setting contrasts sharply with the chaotic suffering recorded in the photographs.",
       },
     ],
   },
@@ -835,8 +811,7 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
     quiz: [
       {
         id: 'igp2-warpho-m2-q1',
-        question:
-          'What is the effect of the simile comparing the darkroom to a church?',
+        question: 'What is the effect of the simile comparing the darkroom to a church?',
         options: [
           'It suggests the photographer is deeply religious',
           'It elevates his work to a sacred ritual of bearing witness to suffering',
@@ -849,13 +824,12 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
       },
       {
         id: 'igp2-warpho-m2-q2',
-        question:
-          'What does "Belfast. Beirut. Phnom Penh." achieve through its structure?',
+        question: 'What does "Belfast. Beirut. Phnom Penh." achieve through its structure?',
         options: [
           'It shows the photographer has only visited three countries',
           'The tricolon and full stops create a litany of suffering, suggesting the relentless accumulation of wars',
           'It is a list of places where the photographer wants to visit next',
-          'It demonstrates the photographer\'s geographical knowledge',
+          "It demonstrates the photographer's geographical knowledge",
         ],
         correct: 1,
         explanation:
@@ -863,17 +837,16 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
       },
       {
         id: 'igp2-warpho-m2-q3',
-        question:
-          'What is the effect of "between the bath and pre-lunch beers"?',
+        question: 'What is the effect of "between the bath and pre-lunch beers"?',
         options: [
           'It shows the readers are alcoholics',
-          'It contrasts the readers\' comfortable routine with the suffering in the photographs, highlighting indifference',
-          'It describes the photographer\'s own weekend habits',
+          "It contrasts the readers' comfortable routine with the suffering in the photographs, highlighting indifference",
+          "It describes the photographer's own weekend habits",
           'It suggests the newspaper is published at lunchtime',
         ],
         correct: 1,
         explanation:
-          'The juxtaposition of momentary tears with a comfortable domestic routine exposes the shallowness of the public\'s response — suffering is consumed briefly before being dismissed in favour of everyday pleasures.',
+          "The juxtaposition of momentary tears with a comfortable domestic routine exposes the shallowness of the public's response — suffering is consumed briefly before being dismissed in favour of everyday pleasures.",
       },
     ],
   },
@@ -911,36 +884,33 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
     quiz: [
       {
         id: 'igp2-warpho-m3-q1',
-        question:
-          'Why does Duffy use a regular six-line stanza form?',
+        question: 'Why does Duffy use a regular six-line stanza form?',
         options: [
           'Because she always writes in six-line stanzas',
-          'To mirror the photographer\'s attempt to impose order on the chaos of war',
+          "To mirror the photographer's attempt to impose order on the chaos of war",
           'To make the poem easier to memorise for exams',
           'Because the poem describes six different photographs',
         ],
         correct: 1,
         explanation:
-          'The regular, controlled form reflects the photographer\'s professional discipline — his need to impose order on chaotic, disturbing material. The tension between neat form and disturbing content mirrors his internal conflict.',
+          "The regular, controlled form reflects the photographer's professional discipline — his need to impose order on chaotic, disturbing material. The tension between neat form and disturbing content mirrors his internal conflict.",
       },
       {
         id: 'igp2-warpho-m3-q2',
-        question:
-          'What is significant about the shift in perspective in stanza 4?',
+        question: 'What is significant about the shift in perspective in stanza 4?',
         options: [
-          'It introduces a new character, the photographer\'s assistant',
-          'It moves from the photographer\'s private world to the public\'s indifferent consumption, implicating the reader',
+          "It introduces a new character, the photographer's assistant",
+          "It moves from the photographer's private world to the public's indifferent consumption, implicating the reader",
           'It returns to the opening scene in the darkroom',
           'It shifts from third person to first person narration',
         ],
         correct: 1,
         explanation:
-          'The shift from the photographer\'s intimate experience to the public\'s casual consumption forces the reader to confront their own potential indifference. After sharing the photographer\'s pain, we see how easily it is dismissed.',
+          "The shift from the photographer's intimate experience to the public's casual consumption forces the reader to confront their own potential indifference. After sharing the photographer's pain, we see how easily it is dismissed.",
       },
       {
         id: 'igp2-warpho-m3-q3',
-        question:
-          'How do the half-rhymes in the poem contribute to meaning?',
+        question: 'How do the half-rhymes in the poem contribute to meaning?',
         options: [
           'They show Duffy could not find perfect rhymes',
           'They suggest control that is not quite complete — composure always on the verge of cracking',
@@ -949,7 +919,7 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
         ],
         correct: 1,
         explanation:
-          'The near-regular rhyme scheme that doesn\'t quite hold together mirrors the photographer\'s composure — he maintains professionalism, but his control is imperfect and always threatened by the horror of what he has witnessed.',
+          "The near-regular rhyme scheme that doesn't quite hold together mirrors the photographer's composure — he maintains professionalism, but his control is imperfect and always threatened by the horror of what he has witnessed.",
       },
     ],
   },
@@ -1068,8 +1038,7 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
     quiz: [
       {
         id: 'igp2-warpho-m4-q1',
-        question:
-          'What is the poem primarily critiquing?',
+        question: 'What is the poem primarily critiquing?',
         options: [
           'The photographer for exploiting suffering',
           'The military for causing wars',
@@ -1078,12 +1047,11 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
         ],
         correct: 2,
         explanation:
-          'Duffy\'s critique is directed at the public who view images of suffering briefly and move on. The photographer is presented sympathetically — it is the readers\' indifference that the poem condemns.',
+          "Duffy's critique is directed at the public who view images of suffering briefly and move on. The photographer is presented sympathetically — it is the readers' indifference that the poem condemns.",
       },
       {
         id: 'igp2-warpho-m4-q2',
-        question:
-          'How should religious imagery be discussed in an essay on this poem?',
+        question: 'How should religious imagery be discussed in an essay on this poem?',
         options: [
           'As a single isolated point in one paragraph',
           'As a through-line tracked across the poem, showing how Duffy systematically constructs the photographer as a secular priest',
@@ -1110,7 +1078,7 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
       },
     ],
   },
-];
+]
 
 const warPhotographerCourse: CourseData = {
   id: 'igcse-lit-poem-war-photographer',
@@ -1126,7 +1094,7 @@ const warPhotographerCourse: CourseData = {
     'A comprehensive study of Carol Ann Duffy\'s "War Photographer" covering context, language and imagery analysis, structure and form, and exam practice with model responses.',
   color: '#7C3AED',
   moduleList: warPhotographerModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 4. The Tyger — William Blake
@@ -1164,8 +1132,7 @@ const theTygerModules: CourseModule[] = [
     quiz: [
       {
         id: 'igp2-tyger-m1-q1',
-        question:
-          'Which collection does "The Tyger" belong to?',
+        question: 'Which collection does "The Tyger" belong to?',
         options: [
           'Songs of Innocence (1789)',
           'Songs of Experience (1794)',
@@ -1178,22 +1145,15 @@ const theTygerModules: CourseModule[] = [
       },
       {
         id: 'igp2-tyger-m1-q2',
-        question:
-          'What is the companion poem to "The Tyger"?',
-        options: [
-          '"London"',
-          '"The Chimney Sweeper"',
-          '"The Lamb"',
-          '"Holy Thursday"',
-        ],
+        question: 'What is the companion poem to "The Tyger"?',
+        options: ['"London"', '"The Chimney Sweeper"', '"The Lamb"', '"Holy Thursday"'],
         correct: 2,
         explanation:
           '"The Lamb" from Songs of Innocence presents a gentle, benevolent Creator. "The Tyger" is its counterpart, asking whether the same God could have made both the gentle lamb and the fearsome predator.',
       },
       {
         id: 'igp2-tyger-m1-q3',
-        question:
-          'What historical event provides important context for the poem?',
+        question: 'What historical event provides important context for the poem?',
         options: [
           'The English Civil War',
           'The Industrial Revolution',
@@ -1245,12 +1205,11 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
     quiz: [
       {
         id: 'igp2-tyger-m2-q1',
-        question:
-          'What does "fearful symmetry" mean?',
+        question: 'What does "fearful symmetry" mean?',
         options: [
           'The tiger is afraid of its own reflection',
           'The tiger is both terrifying and perfectly proportioned — beauty fused with terror',
-          'The tiger\'s stripes are not symmetrical',
+          "The tiger's stripes are not symmetrical",
           'The poet is afraid to write about the tiger',
         ],
         correct: 1,
@@ -1259,8 +1218,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
       },
       {
         id: 'igp2-tyger-m2-q2',
-        question:
-          'Why is the change from "Could frame" to "Dare frame" significant?',
+        question: 'Why is the change from "Could frame" to "Dare frame" significant?',
         options: [
           'It corrects a grammatical error in the first stanza',
           'It shifts the question from capability to morality — from whether the Creator could make the tiger to whether it was right to do so',
@@ -1322,8 +1280,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
     quiz: [
       {
         id: 'igp2-tyger-m3-q1',
-        question:
-          'What effect does the trochaic metre create?',
+        question: 'What effect does the trochaic metre create?',
         options: [
           'A gentle, soothing rhythm like a lullaby',
           'A relentless, hammering pulse that mirrors the blacksmith imagery and creates urgency',
@@ -1336,8 +1293,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
       },
       {
         id: 'igp2-tyger-m3-q2',
-        question:
-          'Why is it significant that the poem consists entirely of questions?',
+        question: 'Why is it significant that the poem consists entirely of questions?',
         options: [
           'Because Blake could not find the answers',
           'Because the mystery of creation is beyond human comprehension — the unanswered questions create awe and irresolution',
@@ -1350,8 +1306,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
       },
       {
         id: 'igp2-tyger-m3-q3',
-        question:
-          'How does the circular structure work in this poem?',
+        question: 'How does the circular structure work in this poem?',
         options: [
           'The first and last stanzas are identical, showing nothing has changed',
           'The first and last stanzas are almost identical, but "Could" becomes "Dare," showing the speaker\'s deepened awareness',
@@ -1484,10 +1439,10 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
         question:
           'What is the most important thing to remember when writing about "The Tyger" in an exam?',
         options: [
-          'Describe the tiger\'s physical appearance in detail',
+          "Describe the tiger's physical appearance in detail",
           'Focus on the tiger as a symbol — for creation, power, and the paradox of good and evil',
           'Compare it only with other animal poems',
-          'Write about Blake\'s painting technique',
+          "Write about Blake's painting technique",
         ],
         correct: 1,
         explanation:
@@ -1495,8 +1450,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
       },
       {
         id: 'igp2-tyger-m4-q2',
-        question:
-          'How should "The Lamb" be used when writing about "The Tyger"?',
+        question: 'How should "The Lamb" be used when writing about "The Tyger"?',
         options: [
           'It should never be mentioned',
           'It should be discussed as the companion poem that establishes the innocence the tiger threatens',
@@ -1509,8 +1463,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
       },
       {
         id: 'igp2-tyger-m4-q3',
-        question:
-          'Which contextual point is most relevant to an essay on this poem?',
+        question: 'Which contextual point is most relevant to an essay on this poem?',
         options: [
           'Blake was a vegetarian',
           'The French Revolution made Blake consider the relationship between creation and destruction',
@@ -1523,7 +1476,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
       },
     ],
   },
-];
+]
 
 const theTygerCourse: CourseData = {
   id: 'igcse-lit-poem-the-tyger',
@@ -1539,7 +1492,7 @@ const theTygerCourse: CourseData = {
     'A comprehensive study of William Blake\'s "The Tyger" covering context, language and imagery analysis, structure and form, and exam practice with model responses.',
   color: '#7C3AED',
   moduleList: theTygerModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 5. My Last Duchess — Robert Browning
@@ -1577,22 +1530,20 @@ const myLastDuchessModules: CourseModule[] = [
     quiz: [
       {
         id: 'igp2-duchess-m1-q1',
-        question:
-          'Who is the historical figure the Duke is based on?',
+        question: 'Who is the historical figure the Duke is based on?',
         options: [
-          'Lorenzo de\' Medici, ruler of Florence',
+          "Lorenzo de' Medici, ruler of Florence",
           'Alfonso II, Duke of Ferrara, whose first wife died under suspicious circumstances',
-          'Cosimo de\' Medici, patron of the arts',
+          "Cosimo de' Medici, patron of the arts",
           'Cesare Borgia, son of Pope Alexander VI',
         ],
         correct: 1,
         explanation:
-          'The Duke is based on Alfonso II of Ferrara, whose first wife Lucrezia de\' Medici died at seventeen, possibly poisoned. He was negotiating a new marriage shortly afterward — the situation the poem dramatises.',
+          "The Duke is based on Alfonso II of Ferrara, whose first wife Lucrezia de' Medici died at seventeen, possibly poisoned. He was negotiating a new marriage shortly afterward — the situation the poem dramatises.",
       },
       {
         id: 'igp2-duchess-m1-q2',
-        question:
-          'What is a dramatic monologue?',
+        question: 'What is a dramatic monologue?',
         options: [
           'A poem written as a dialogue between two characters',
           'A poem in which a single speaker addresses a silent listener, unintentionally revealing their character',
@@ -1605,8 +1556,7 @@ const myLastDuchessModules: CourseModule[] = [
       },
       {
         id: 'igp2-duchess-m1-q3',
-        question:
-          'Why does the Duke dislike the Duchess?',
+        question: 'Why does the Duke dislike the Duchess?',
         options: [
           'She was unfaithful to him with another nobleman',
           'She was too kind and generous with her smiles, treating everyone equally rather than reserving her favour for him',
@@ -1658,39 +1608,36 @@ The Duke casually draws attention to another art object as they leave. The bronz
     quiz: [
       {
         id: 'igp2-duchess-m2-q1',
-        question:
-          'What does the curtain over the portrait symbolise?',
+        question: 'What does the curtain over the portrait symbolise?',
         options: [
-          'The Duke\'s desire to protect the painting from sunlight',
-          'The Duke\'s control — he alone decides who sees the Duchess\'s image',
-          'The Duchess\'s modesty during her lifetime',
+          "The Duke's desire to protect the painting from sunlight",
+          "The Duke's control — he alone decides who sees the Duchess's image",
+          "The Duchess's modesty during her lifetime",
           'A mourning custom of the Renaissance period',
         ],
         correct: 1,
         explanation:
-          'The curtain symbolises the Duke\'s obsessive need for control. In life, he could not control the Duchess\'s smiles; in death, he controls even who may look at her portrait.',
+          "The curtain symbolises the Duke's obsessive need for control. In life, he could not control the Duchess's smiles; in death, he controls even who may look at her portrait.",
       },
       {
         id: 'igp2-duchess-m2-q2',
-        question:
-          'What does the Neptune statue at the end of the poem represent?',
+        question: 'What does the Neptune statue at the end of the poem represent?',
         options: [
-          'The Duke\'s interest in Greek mythology',
+          "The Duke's interest in Greek mythology",
           'A gift from the Duchess before she died',
-          'The Duke\'s identification with a powerful god who tames and controls',
-          'The envoy\'s wealth and artistic taste',
+          "The Duke's identification with a powerful god who tames and controls",
+          "The envoy's wealth and artistic taste",
         ],
         correct: 2,
         explanation:
-          'Neptune taming a sea-horse mirrors the Duke\'s own desire to tame and control. He identifies with the powerful god dominating a smaller creature — revealing that he sees relationships as exercises of power.',
+          "Neptune taming a sea-horse mirrors the Duke's own desire to tame and control. He identifies with the powerful god dominating a smaller creature — revealing that he sees relationships as exercises of power.",
       },
       {
         id: 'igp2-duchess-m2-q3',
-        question:
-          'Why is "I gave commands; Then all smiles stopped together" so effective?',
+        question: 'Why is "I gave commands; Then all smiles stopped together" so effective?',
         options: [
           'Because it directly states that the Duke killed the Duchess',
-          'Because the euphemism and ambiguity reveal the Duke\'s chilling ability to mask violence with civilised language',
+          "Because the euphemism and ambiguity reveal the Duke's chilling ability to mask violence with civilised language",
           'Because it shows the Duke was kind and only asked the Duchess to stop smiling',
           'Because it uses alliteration to create a musical effect',
         ],
@@ -1742,38 +1689,35 @@ The Duke casually draws attention to another art object as they leave. The bronz
     quiz: [
       {
         id: 'igp2-duchess-m3-q1',
-        question:
-          'Why does Browning use enjambment to disguise the rhyming couplet form?',
+        question: 'Why does Browning use enjambment to disguise the rhyming couplet form?',
         options: [
           'Because he could not write regular rhymes',
-          'To create the illusion of natural speech while maintaining underlying control, mirroring the Duke\'s character',
+          "To create the illusion of natural speech while maintaining underlying control, mirroring the Duke's character",
           'To make the poem harder to read',
           'Because enjambment was fashionable in the 1840s',
         ],
         correct: 1,
         explanation:
-          'The disguised couplets create the effect of casual, natural speech while maintaining formal control beneath the surface — exactly mirroring the Duke\'s own surface civility masking calculated cruelty.',
+          "The disguised couplets create the effect of casual, natural speech while maintaining formal control beneath the surface — exactly mirroring the Duke's own surface civility masking calculated cruelty.",
       },
       {
         id: 'igp2-duchess-m3-q2',
-        question:
-          'What is the significance of the single-stanza form?',
+        question: 'What is the significance of the single-stanza form?',
         options: [
           'Browning forgot to add stanza breaks',
-          'It mirrors the Duke\'s uninterrupted control of the conversation — he allows no one else to speak',
+          "It mirrors the Duke's uninterrupted control of the conversation — he allows no one else to speak",
           'It makes the poem easier to memorise',
           'It was a requirement of the publisher',
         ],
         correct: 1,
         explanation:
-          'The unbroken block of text visually represents the Duke\'s dominance. He controls the conversation from start to finish, never pausing for the envoy\'s response, never allowing interruption.',
+          "The unbroken block of text visually represents the Duke's dominance. He controls the conversation from start to finish, never pausing for the envoy's response, never allowing interruption.",
       },
       {
         id: 'igp2-duchess-m3-q3',
-        question:
-          'What dramatic irony does the dramatic monologue form create?',
+        question: 'What dramatic irony does the dramatic monologue form create?',
         options: [
-          'The envoy knows more than the Duke about the Duchess\'s death',
+          "The envoy knows more than the Duke about the Duchess's death",
           'The Duke intends to seem cultured and reasonable but inadvertently reveals himself as controlling and murderous',
           'The reader sympathises with the Duke throughout the poem',
           'Browning speaks directly to the reader through footnotes',
@@ -1819,27 +1763,25 @@ The Duke casually draws attention to another art object as they leave. The bronz
     quiz: [
       {
         id: 'igp2-duchess-m4-q1',
-        question:
-          'What should you always discuss when writing about "My Last Duchess" in an exam?',
+        question: 'What should you always discuss when writing about "My Last Duchess" in an exam?',
         options: [
           'The history of Renaissance Italy in great detail',
-          'The dramatic monologue form and how it reveals the Duke\'s character through dramatic irony',
+          "The dramatic monologue form and how it reveals the Duke's character through dramatic irony",
           'A comparison with every other poem in the anthology',
-          'The painting techniques used in the Duke\'s portrait',
+          "The painting techniques used in the Duke's portrait",
         ],
         correct: 1,
         explanation:
-          'The dramatic monologue form is inseparable from the poem\'s meaning. The Duke reveals his cruelty inadvertently — discussing this form and the dramatic irony it creates is essential.',
+          "The dramatic monologue form is inseparable from the poem's meaning. The Duke reveals his cruelty inadvertently — discussing this form and the dramatic irony it creates is essential.",
       },
       {
         id: 'igp2-duchess-m4-q2',
-        question:
-          'Which approach to context is most effective for this poem?',
+        question: 'Which approach to context is most effective for this poem?',
         options: [
           'Spending a paragraph describing the life of Alfonso II of Ferrara',
-          'Linking the historical context to Browning\'s wider critique of patriarchal power and the treatment of women as property',
+          "Linking the historical context to Browning's wider critique of patriarchal power and the treatment of women as property",
           'Ignoring context entirely',
-          'Discussing Browning\'s marriage to Elizabeth Barrett Browning',
+          "Discussing Browning's marriage to Elizabeth Barrett Browning",
         ],
         correct: 1,
         explanation:
@@ -1857,11 +1799,11 @@ The Duke casually draws attention to another art object as they leave. The bronz
         ],
         correct: 1,
         explanation:
-          'The casual transition from implied murder to dowry negotiations reveals the Duke\'s terrifying indifference. The Duchess was a possession — now disposed of — and his concern is acquiring the next one on favourable terms.',
+          "The casual transition from implied murder to dowry negotiations reveals the Duke's terrifying indifference. The Duchess was a possession — now disposed of — and his concern is acquiring the next one on favourable terms.",
       },
     ],
   },
-];
+]
 
 const myLastDuchessCourse: CourseData = {
   id: 'igcse-lit-poem-my-last-duchess',
@@ -1877,7 +1819,7 @@ const myLastDuchessCourse: CourseData = {
     'A comprehensive study of Robert Browning\'s "My Last Duchess" covering context, language and imagery analysis, structure and form, and exam practice with model responses.',
   color: '#7C3AED',
   moduleList: myLastDuchessModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 6. Half-caste — John Agard
@@ -1917,8 +1859,7 @@ const halfCasteModules: CourseModule[] = [
     quiz: [
       {
         id: 'igp2-halfcaste-m1-q1',
-        question:
-          'What does the term "half-caste" literally imply?',
+        question: 'What does the term "half-caste" literally imply?',
         options: [
           'Half-born',
           'Half-pure — suggesting mixed-race people are incomplete or contaminated',
@@ -1931,8 +1872,7 @@ const halfCasteModules: CourseModule[] = [
       },
       {
         id: 'igp2-halfcaste-m1-q2',
-        question:
-          'What strategy does Agard use to challenge the term "half-caste"?',
+        question: 'What strategy does Agard use to challenge the term "half-caste"?',
         options: [
           'He provides scientific evidence about genetics',
           'He uses absurd analogies — if mixing is inferior, then Picasso and Tchaikovsky are also "half-caste"',
@@ -1945,8 +1885,7 @@ const halfCasteModules: CourseModule[] = [
       },
       {
         id: 'igp2-halfcaste-m1-q3',
-        question:
-          'Why does Agard use phonetic spelling in the poem?',
+        question: 'Why does Agard use phonetic spelling in the poem?',
         options: [
           'Because he could not spell in Standard English',
           'To make the poem difficult to read',
@@ -1955,7 +1894,7 @@ const halfCasteModules: CourseModule[] = [
         ],
         correct: 2,
         explanation:
-          'Phonetic spelling represents Agard\'s Caribbean Creole voice on the page, asserting its value and legitimacy. It is a political choice — refusing to conform to Standard English mirrors the poem\'s theme of resisting imposed labels.',
+          "Phonetic spelling represents Agard's Caribbean Creole voice on the page, asserting its value and legitimacy. It is a political choice — refusing to conform to Standard English mirrors the poem's theme of resisting imposed labels.",
       },
     ],
   },
@@ -1994,17 +1933,18 @@ The poem's powerful conclusion turns the accusation back on the accuser. It is t
   <li><strong>Direct address:</strong> The persistent "yu" creates a confrontational dynamic — the reader is implicated as the person being challenged.</li>
 </ul>
 
+<div class="common-mistake"><strong>Teacher note &mdash; on the spelling:</strong> Agard's Caribbean creole spelling (<strong>"yu"</strong> for "you", <strong>"wha"</strong> for "what", <strong>"yuself"</strong> for "yourself") is <strong>deliberate and central to the poem's meaning</strong>. Do not "correct" to Standard English &mdash; the creole is itself a political statement. The Edexcel IGCSE Anthology (Issue 2, ISBN 978-1-446-93108-0, published by Hodder) preserves Agard's spelling, and students should quote it exactly as printed. "Correcting" the dialect in an essay loses marks for accuracy and misses the poem's central argument that mixed languages, like mixed identities, are valid in their own right.</div>
+
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The strength of this poem lies in the analogies. In your essay, analyse at least two analogies in detail, explaining exactly how they expose the illogic of the term "half-caste." Don't just describe them — explain why they are effective.</div>
 `,
     quiz: [
       {
         id: 'igp2-halfcaste-m2-q1',
-        question:
-          'What does the Picasso analogy achieve?',
+        question: 'What does the Picasso analogy achieve?',
         options: [
           'It shows Agard is a fan of modern art',
           'It exposes the absurdity of calling mixing inferior by applying the same logic to a masterpiece of art',
-          'It compares Agard\'s poetry to Picasso\'s paintings',
+          "It compares Agard's poetry to Picasso's paintings",
           'It suggests Picasso was also of mixed heritage',
         ],
         correct: 1,
@@ -2027,17 +1967,16 @@ The poem's powerful conclusion turns the accusation back on the accuser. It is t
       },
       {
         id: 'igp2-halfcaste-m2-q3',
-        question:
-          'Why is the use of Caribbean Creole English significant?',
+        question: 'Why is the use of Caribbean Creole English significant?',
         options: [
           'It makes the poem harder for English readers to understand',
-          'It asserts the value and legitimacy of Agard\'s own voice, resisting the dominance of Standard English',
+          "It asserts the value and legitimacy of Agard's own voice, resisting the dominance of Standard English",
           'It was the only language Agard could write in',
           'It is used for comic effect only',
         ],
         correct: 1,
         explanation:
-          'Writing in Creole is a political act — it refuses to conform to the standard that declares some forms of English superior. His language is whole and complete, mirroring the poem\'s argument that he is whole, not half.',
+          "Writing in Creole is a political act — it refuses to conform to the standard that declares some forms of English superior. His language is whole and complete, mirroring the poem's argument that he is whole, not half.",
       },
     ],
   },
@@ -2073,11 +2012,10 @@ The poem's powerful conclusion turns the accusation back on the accuser. It is t
     quiz: [
       {
         id: 'igp2-halfcaste-m3-q1',
-        question:
-          'Why does Agard avoid standard punctuation and capitalisation?',
+        question: 'Why does Agard avoid standard punctuation and capitalisation?',
         options: [
           'Because he did not learn punctuation rules',
-          'To reject the conventions of Standard English, mirroring the poem\'s rejection of imposed labels',
+          "To reject the conventions of Standard English, mirroring the poem's rejection of imposed labels",
           'To make the poem easier to read aloud',
           'Because punctuation was not used in Guyanese poetry',
         ],
@@ -2087,8 +2025,7 @@ The poem's powerful conclusion turns the accusation back on the accuser. It is t
       },
       {
         id: 'igp2-halfcaste-m3-q2',
-        question:
-          'What is the structural effect of the repeated phrase "Explain yuself"?',
+        question: 'What is the structural effect of the repeated phrase "Explain yuself"?',
         options: [
           'It creates a soothing, meditative quality',
           'It functions as a confrontational refrain that escalates the demand for justification',
@@ -2101,17 +2038,16 @@ The poem's powerful conclusion turns the accusation back on the accuser. It is t
       },
       {
         id: 'igp2-halfcaste-m3-q3',
-        question:
-          'Why is it important that this poem is performance poetry?',
+        question: 'Why is it important that this poem is performance poetry?',
         options: [
           'Because written poetry is always inferior to performed poetry',
-          'Because the oral delivery, rhythm, and direct address connect to Caribbean poetic tradition and amplify the poem\'s confrontational energy',
+          "Because the oral delivery, rhythm, and direct address connect to Caribbean poetic tradition and amplify the poem's confrontational energy",
           'Because Agard could not find a publisher for the written version',
           'Because all IGCSE poems must be performed in the exam',
         ],
         correct: 1,
         explanation:
-          'As performance poetry, the poem\'s power comes from being spoken aloud — the rhythm, repetition, and direct address create a physical, communal, confrontational experience rooted in Caribbean oral tradition.',
+          "As performance poetry, the poem's power comes from being spoken aloud — the rhythm, repetition, and direct address create a physical, communal, confrontational experience rooted in Caribbean oral tradition.",
       },
     ],
   },
@@ -2149,8 +2085,7 @@ The poem's powerful conclusion turns the accusation back on the accuser. It is t
     quiz: [
       {
         id: 'igp2-halfcaste-m4-q1',
-        question:
-          'What makes the analogies in "Half-caste" effective exam material?',
+        question: 'What makes the analogies in "Half-caste" effective exam material?',
         options: [
           'They are easy to remember because they mention famous people',
           'They provide rich opportunities to analyse how Agard exposes the illogic of racist terminology through specific literary techniques',
@@ -2159,26 +2094,24 @@ The poem's powerful conclusion turns the accusation back on the accuser. It is t
         ],
         correct: 1,
         explanation:
-          'The analogies are rich analytical material because they combine humour, rhetorical questions, racial language mapped onto art/music, and logical argument. Each analogy can be unpacked in detail to show how Agard\'s techniques serve his message.',
+          "The analogies are rich analytical material because they combine humour, rhetorical questions, racial language mapped onto art/music, and logical argument. Each analogy can be unpacked in detail to show how Agard's techniques serve his message.",
       },
       {
         id: 'igp2-halfcaste-m4-q2',
-        question:
-          'How should the poem\'s form be discussed in an essay?',
+        question: "How should the poem's form be discussed in an essay?",
         options: [
           'As a weakness — the poem lacks proper grammar',
           'As a deliberate political choice — the rejection of Standard English conventions mirrors the rejection of racist labels',
-          'As irrelevant to the poem\'s meaning',
+          "As irrelevant to the poem's meaning",
           'As evidence that performance poetry is less literary than written poetry',
         ],
         correct: 1,
         explanation:
-          'The form is a political act: rejecting Standard English conventions mirrors the poem\'s rejection of imposed racial categories. Always frame formal choices as deliberate and meaningful, not as errors.',
+          "The form is a political act: rejecting Standard English conventions mirrors the poem's rejection of imposed racial categories. Always frame formal choices as deliberate and meaningful, not as errors.",
       },
       {
         id: 'igp2-halfcaste-m4-q3',
-        question:
-          'What is the strongest way to discuss humour in this poem?',
+        question: 'What is the strongest way to discuss humour in this poem?',
         options: [
           'List the funny moments without analysis',
           'Explain how humour functions as a weapon — dismantling prejudice by exposing its logical absurdity',
@@ -2191,7 +2124,7 @@ The poem's powerful conclusion turns the accusation back on the accuser. It is t
       },
     ],
   },
-];
+]
 
 const halfCasteCourse: CourseData = {
   id: 'igcse-lit-poem-half-caste',
@@ -2207,7 +2140,7 @@ const halfCasteCourse: CourseData = {
     'A comprehensive study of John Agard\'s "Half-caste" covering context, language and imagery analysis, structure and form, and exam practice with model responses.',
   color: '#7C3AED',
   moduleList: halfCasteModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 7. Do not go gentle into that good night — Dylan Thomas
@@ -2245,11 +2178,10 @@ const doNotGoGentleModules: CourseModule[] = [
     quiz: [
       {
         id: 'igp2-donotgo-m1-q1',
-        question:
-          'Who is the poem addressed to?',
+        question: 'Who is the poem addressed to?',
         options: [
-          'Thomas\'s wife, Caitlin',
-          'Thomas\'s dying father, who was going blind',
+          "Thomas's wife, Caitlin",
+          "Thomas's dying father, who was going blind",
           'A close friend who was terminally ill',
           'Death personified',
         ],
@@ -2259,8 +2191,7 @@ const doNotGoGentleModules: CourseModule[] = [
       },
       {
         id: 'igp2-donotgo-m1-q2',
-        question:
-          'What is a villanelle?',
+        question: 'What is a villanelle?',
         options: [
           'A 14-line poem with a volta at line 9',
           'A 19-line poem with repeating refrains, two rhymes, five tercets, and a final quatrain',
@@ -2273,8 +2204,7 @@ const doNotGoGentleModules: CourseModule[] = [
       },
       {
         id: 'igp2-donotgo-m1-q3',
-        question:
-          'What is the poem\'s central message?',
+        question: "What is the poem's central message?",
         options: [
           'Accept death peacefully and without struggle',
           'Death should be resisted with passion and fury — do not give in quietly',
@@ -2326,8 +2256,7 @@ The final personal plea is extraordinary. <em>Curse, bless</em> — the oxymoron
     quiz: [
       {
         id: 'igp2-donotgo-m2-q1',
-        question:
-          'What does "good night" in the refrain symbolise?',
+        question: 'What does "good night" in the refrain symbolise?',
         options: [
           'A pleasant evening spent with family',
           'Death — "night" as darkness and "good night" as a farewell',
@@ -2340,8 +2269,7 @@ The final personal plea is extraordinary. <em>Curse, bless</em> — the oxymoron
       },
       {
         id: 'igp2-donotgo-m2-q2',
-        question:
-          'What is the effect of the oxymoron "fierce tears"?',
+        question: 'What is the effect of the oxymoron "fierce tears"?',
         options: [
           'It shows the father is angry with his son',
           'It combines vulnerability (tears) with strength (fierce), refusing to see grief as weakness',
@@ -2409,26 +2337,24 @@ The final personal plea is extraordinary. <em>Curse, bless</em> — the oxymoron
     quiz: [
       {
         id: 'igp2-donotgo-m3-q1',
-        question:
-          'How does the villanelle form contribute to the poem\'s meaning?',
+        question: "How does the villanelle form contribute to the poem's meaning?",
         options: [
           'It makes the poem sound musical and pleasant',
-          'The repeating refrains create obsessive, prayer-like insistence, mirroring the speaker\'s desperate plea against death',
+          "The repeating refrains create obsessive, prayer-like insistence, mirroring the speaker's desperate plea against death",
           'It allows Thomas to use more rhymes than other forms',
           'It was the only form Thomas knew how to write in',
         ],
         correct: 1,
         explanation:
-          'The villanelle\'s repetition creates a mantra-like quality — the refrains return obsessively because the speaker cannot stop pleading. The rigid form mirrors death\'s inevitability while the emotional content represents resistance.',
+          "The villanelle's repetition creates a mantra-like quality — the refrains return obsessively because the speaker cannot stop pleading. The rigid form mirrors death's inevitability while the emotional content represents resistance.",
       },
       {
         id: 'igp2-donotgo-m3-q2',
-        question:
-          'What is the structural significance of the final stanza?',
+        question: 'What is the structural significance of the final stanza?',
         options: [
           'It introduces a new theme unrelated to the rest of the poem',
           'It summarises the four types of men described earlier',
-          'It shifts from universal examples to a direct, personal plea to the poet\'s father',
+          "It shifts from universal examples to a direct, personal plea to the poet's father",
           'It repeats the first stanza exactly',
         ],
         correct: 2,
@@ -2437,8 +2363,7 @@ The final personal plea is extraordinary. <em>Curse, bless</em> — the oxymoron
       },
       {
         id: 'igp2-donotgo-m3-q3',
-        question:
-          'Why are there four types of men in the poem?',
+        question: 'Why are there four types of men in the poem?',
         options: [
           'To pad out the poem to the required length',
           'Because Thomas knew exactly four dying men',
@@ -2486,24 +2411,22 @@ The final personal plea is extraordinary. <em>Curse, bless</em> — the oxymoron
     quiz: [
       {
         id: 'igp2-donotgo-m4-q1',
-        question:
-          'What is the most important formal feature to discuss in an essay on this poem?',
+        question: 'What is the most important formal feature to discuss in an essay on this poem?',
         options: [
           'The use of simile in stanza 5',
           'The villanelle form and its repeating refrains',
-          'The poem\'s Welsh cultural context',
+          "The poem's Welsh cultural context",
           'The alliteration in the title',
         ],
         correct: 1,
         explanation:
-          'The villanelle form is central — the repeating refrains, the rigid structure, and the tension between formal inevitability and emotional resistance are the poem\'s defining features.',
+          "The villanelle form is central — the repeating refrains, the rigid structure, and the tension between formal inevitability and emotional resistance are the poem's defining features.",
       },
       {
         id: 'igp2-donotgo-m4-q2',
-        question:
-          'How should you balance the personal and universal in an essay on this poem?',
+        question: 'How should you balance the personal and universal in an essay on this poem?',
         options: [
-          'Focus only on the biographical context — it is about Thomas\'s father',
+          "Focus only on the biographical context — it is about Thomas's father",
           'Ignore the personal element and discuss only universal themes',
           'Show how the poem moves from universal argument (the four types of men) to personal plea (the father), and how both reinforce the central message',
           'Discuss the personal element in the introduction and the universal element in the conclusion',
@@ -2514,8 +2437,7 @@ The final personal plea is extraordinary. <em>Curse, bless</em> — the oxymoron
       },
       {
         id: 'igp2-donotgo-m4-q3',
-        question:
-          'Which other poems would pair well with this one for a comparison question?',
+        question: 'Which other poems would pair well with this one for a comparison question?',
         options: [
           'Poems about animals and nature',
           'Poems about romantic love',
@@ -2528,7 +2450,7 @@ The final personal plea is extraordinary. <em>Curse, bless</em> — the oxymoron
       },
     ],
   },
-];
+]
 
 const doNotGoGentleCourse: CourseData = {
   id: 'igcse-lit-poem-do-not-go-gentle',
@@ -2544,7 +2466,7 @@ const doNotGoGentleCourse: CourseData = {
     'A comprehensive study of Dylan Thomas\'s "Do not go gentle into that good night" covering context, language and imagery analysis, structure and form, and exam practice with model responses.',
   color: '#7C3AED',
   moduleList: doNotGoGentleModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 8. Remember — Christina Rossetti
@@ -2582,8 +2504,7 @@ const rememberModules: CourseModule[] = [
     quiz: [
       {
         id: 'igp2-remember-m1-q1',
-        question:
-          'What form does "Remember" take?',
+        question: 'What form does "Remember" take?',
         options: [
           'A Shakespearean (English) sonnet',
           'A Petrarchan (Italian) sonnet',
@@ -2596,8 +2517,7 @@ const rememberModules: CourseModule[] = [
       },
       {
         id: 'igp2-remember-m1-q2',
-        question:
-          'What shift occurs at the volta of the poem?',
+        question: 'What shift occurs at the volta of the poem?',
         options: [
           'The speaker changes from addressing a lover to addressing God',
           'The speaker shifts from demanding remembrance to accepting that forgetting is preferable to grief',
@@ -2610,13 +2530,12 @@ const rememberModules: CourseModule[] = [
       },
       {
         id: 'igp2-remember-m1-q3',
-        question:
-          'What does "the silent land" represent?',
+        question: 'What does "the silent land" represent?',
         options: [
           'A foreign country the speaker is travelling to',
           'Death and the afterlife, presented through euphemism',
           'A monastery where the speaker plans to live in silence',
-          'The speaker\'s childhood home',
+          "The speaker's childhood home",
         ],
         correct: 1,
         explanation:
@@ -2664,8 +2583,7 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
     quiz: [
       {
         id: 'igp2-remember-m2-q1',
-        question:
-          'What is the effect of the euphemism "the silent land"?',
+        question: 'What is the effect of the euphemism "the silent land"?',
         options: [
           'It makes death sound frightening and violent',
           'It softens death through gentle language while conveying the finality of silence and the impossibility of communication',
@@ -2678,27 +2596,25 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
       },
       {
         id: 'igp2-remember-m2-q2',
-        question:
-          'How does the antithesis "forget and smile / remember and be sad" function?',
+        question: 'How does the antithesis "forget and smile / remember and be sad" function?',
         options: [
           'It creates confusion about what the speaker actually wants',
-          'It presents two balanced alternatives and clearly prioritises the loved one\'s happiness over the speaker\'s memorialisation',
+          "It presents two balanced alternatives and clearly prioritises the loved one's happiness over the speaker's memorialisation",
           'It shows the speaker is indecisive',
           'It is a rhetorical question the reader must answer',
         ],
         correct: 1,
         explanation:
-          'The perfectly balanced antithesis crystallises the poem\'s central argument: happiness matters more than memory. The speaker selflessly chooses the loved one\'s smile over her own remembrance.',
+          "The perfectly balanced antithesis crystallises the poem's central argument: happiness matters more than memory. The speaker selflessly chooses the loved one's smile over her own remembrance.",
       },
       {
         id: 'igp2-remember-m2-q3',
-        question:
-          'Why is the repetition of "Remember" significant?',
+        question: 'Why is the repetition of "Remember" significant?',
         options: [
           'It shows the speaker has a poor memory',
-          'It creates an insistent, pleading tone in the octave that gives way to release in the sestet — tracking the poem\'s emotional arc',
+          "It creates an insistent, pleading tone in the octave that gives way to release in the sestet — tracking the poem's emotional arc",
           'It is the title of the poem and must be repeated',
-          'It fills space in the octave to meet the sonnet\'s line count',
+          "It fills space in the octave to meet the sonnet's line count",
         ],
         correct: 1,
         explanation:
@@ -2751,36 +2667,28 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
     quiz: [
       {
         id: 'igp2-remember-m3-q1',
-        question:
-          'Why is the Petrarchan sonnet form suited to this poem?',
+        question: 'Why is the Petrarchan sonnet form suited to this poem?',
         options: [
           'Because Rossetti was Italian',
-          'Because its structural division (octave/sestet) mirrors the poem\'s emotional shift from demanding remembrance to accepting forgetting',
+          "Because its structural division (octave/sestet) mirrors the poem's emotional shift from demanding remembrance to accepting forgetting",
           'Because it has 14 lines, and Rossetti wanted exactly 14 lines',
           'Because the Petrarchan form always deals with death',
         ],
         correct: 1,
         explanation:
-          'The Petrarchan sonnet\'s built-in division between octave and sestet perfectly supports the poem\'s emotional reversal. The octave presents the plea; the sestet resolves it. Form and meaning work together.',
+          "The Petrarchan sonnet's built-in division between octave and sestet perfectly supports the poem's emotional reversal. The octave presents the plea; the sestet resolves it. Form and meaning work together.",
       },
       {
         id: 'igp2-remember-m3-q2',
-        question:
-          'What word signals the volta?',
-        options: [
-          '"Remember"',
-          '"Yet"',
-          '"Better"',
-          '"Gone"',
-        ],
+        question: 'What word signals the volta?',
+        options: ['"Remember"', '"Yet"', '"Better"', '"Gone"'],
         correct: 1,
         explanation:
           '"Yet" at the start of line 9 signals the reversal. It is a concessive conjunction — acknowledging the possibility that contradicts everything the octave demanded. Everything after "Yet" moves toward acceptance.',
       },
       {
         id: 'igp2-remember-m3-q3',
-        question:
-          'How does the poem\'s tone change from octave to sestet?',
+        question: "How does the poem's tone change from octave to sestet?",
         options: [
           'From angry to joyful',
           'From imperative and insistent to conditional and gently accepting',
@@ -2908,31 +2816,29 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
     quiz: [
       {
         id: 'igp2-remember-m4-q1',
-        question:
-          'What is the single most important feature to discuss in an essay on "Remember"?',
+        question: 'What is the single most important feature to discuss in an essay on "Remember"?',
         options: [
           'The use of iambic pentameter',
           'The volta — the shift from demanding remembrance to accepting forgetting',
-          'The biographical details of Rossetti\'s life',
+          "The biographical details of Rossetti's life",
           'The rhyme scheme of the octave',
         ],
         correct: 1,
         explanation:
-          'The volta is the poem\'s defining moment — it transforms the entire poem from a plea for remembrance into an act of selfless love. Any essay on this poem must analyse this shift in detail.',
+          "The volta is the poem's defining moment — it transforms the entire poem from a plea for remembrance into an act of selfless love. Any essay on this poem must analyse this shift in detail.",
       },
       {
         id: 'igp2-remember-m4-q2',
-        question:
-          'How does Rossetti present love in this poem?',
+        question: 'How does Rossetti present love in this poem?',
         options: [
           'As possessive and demanding — the speaker insists on being remembered',
-          'As selfless — the speaker ultimately prioritises the beloved\'s happiness over her own memorialisation',
+          "As selfless — the speaker ultimately prioritises the beloved's happiness over her own memorialisation",
           'As passionate and physical — dominated by images of touch and desire',
           'As tragic and bitter — the speaker resents being forgotten',
         ],
         correct: 1,
         explanation:
-          'While the octave\'s imperatives might seem demanding, the sestet reveals a deeply selfless love. The speaker would rather be forgotten than cause grief — her love prioritises the beloved\'s wellbeing.',
+          "While the octave's imperatives might seem demanding, the sestet reveals a deeply selfless love. The speaker would rather be forgotten than cause grief — her love prioritises the beloved's wellbeing.",
       },
       {
         id: 'igp2-remember-m4-q3',
@@ -2950,7 +2856,7 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
       },
     ],
   },
-];
+]
 
 const rememberCourse: CourseData = {
   id: 'igcse-lit-poem-remember',
@@ -2966,7 +2872,7 @@ const rememberCourse: CourseData = {
     'A comprehensive study of Christina Rossetti\'s "Remember" covering context, language and imagery analysis, structure and form, and exam practice with model responses.',
   color: '#7C3AED',
   moduleList: rememberModules,
-};
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Export
@@ -2981,4 +2887,4 @@ export const igcsePoetry2Courses: CourseData[] = [
   halfCasteCourse,
   doNotGoGentleCourse,
   rememberCourse,
-];
+]

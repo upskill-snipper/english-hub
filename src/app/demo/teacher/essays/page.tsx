@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import Link from "next/link"
+import { useState } from 'react'
+import Link from 'next/link'
 import {
   Sparkles,
   CheckCircle2,
@@ -13,8 +13,8 @@ import {
   Loader2,
   Star,
   X,
-} from "lucide-react"
-import DemoBanner from "@/components/demo/DemoBanner"
+} from 'lucide-react'
+import DemoBanner from '@/components/demo/DemoBanner'
 
 // ---------------------------------------------------------------------------
 // Sample essays
@@ -43,18 +43,18 @@ interface SampleEssay {
 
 const SAMPLE_ESSAYS: SampleEssay[] = [
   {
-    title: "How does Priestley present responsibility in An Inspector Calls?",
-    student: "Emily Chen - Year 11B",
+    title: 'How does Priestley present responsibility in An Inspector Calls?',
+    student: 'Emily Chen - Year 11B',
     text: `Priestley presents responsibility as a central theme in An Inspector Calls, using the Birling family to explore how different generations respond to their moral obligations. The play, written in 1945 but set in 1912, allows Priestley to critique the capitalist attitudes of the Edwardian era.
 
 Mr Birling is presented as irresponsible from the outset. His dismissal of Eva Smith's request for higher wages reveals his prioritisation of profit over people. Priestley uses dramatic irony when Birling declares the Titanic is "unsinkable," undermining his authority and suggesting that those who reject social responsibility are fundamentally misguided.
 
 In contrast, Sheila represents hope for change. Her immediate guilt upon learning of her role in Eva's death -- "I'll never, never do it again" -- shows genuine remorse. The repetition of "never" emphasises her determination to change, and Priestley uses her as a mouthpiece for socialist values.
 
-The Inspector himself functions as a moral authority. His final speech warning that "we are all members of one body" echoes socialist principles and serves as a direct address to the audience. Priestley deliberately breaks the fourth wall to challenge the audience's own sense of responsibility.
+The Inspector himself functions as a moral authority. His final speech warning that "we are members of one body" echoes socialist principles and serves as a direct address to the audience. Priestley deliberately breaks the fourth wall to challenge the audience's own sense of responsibility.
 
 Ultimately, Priestley suggests that responsibility cannot be avoided. The cyclical structure of the play, with the final phone call announcing a real inspector, implies that those who refuse to accept responsibility will be forced to confront it again and again.`,
-    grade: "6",
+    grade: '6',
     ao1: 14,
     ao1Max: 20,
     ao2: 12,
@@ -68,13 +68,13 @@ Ultimately, Priestley suggests that responsibility cannot be avoided. The cyclic
     percentage: 63,
     strengths: [
       "Clear understanding of Priestley's intentions and socialist message",
-      "Effective use of embedded quotations throughout the response",
-      "Good structural analysis identifying dramatic irony and cyclical structure",
-      "Strong paragraph organisation with clear topic sentences",
+      'Effective use of embedded quotations throughout the response',
+      'Good structural analysis identifying dramatic irony and cyclical structure',
+      'Strong paragraph organisation with clear topic sentences',
     ],
     improvements: [
-      "Develop AO3 contextual links more fully -- the 1912/1945 contrast needs deeper exploration",
-      "Include alternative interpretations to access the highest mark bands",
+      'Develop AO3 contextual links more fully -- the 1912/1945 contrast needs deeper exploration',
+      'Include alternative interpretations to access the highest mark bands',
       "Analyse individual word choices more closely for AO2 (e.g. 'body' as metaphor)",
       "Consider the audience's perspective and how Priestley manipulates their response",
     ],
@@ -84,8 +84,8 @@ Ultimately, Priestley suggests that responsibility cannot be avoided. The cyclic
     ],
   },
   {
-    title: "How does Shakespeare present ambition in Macbeth?",
-    student: "James Wilson - Year 10A",
+    title: 'How does Shakespeare present ambition in Macbeth?',
+    student: 'James Wilson - Year 10A',
     text: `Shakespeare presents ambition as a destructive force in Macbeth, showing how it corrupts both Macbeth and Lady Macbeth throughout the play. Set in medieval Scotland, the play explores the consequences of unchecked ambition and its impact on the natural order.
 
 Macbeth's ambition is first revealed through his reaction to the witches' prophecy. The aside "why do I yield to that suggestion whose horrid image doth unfix my hair" shows that thoughts of murder already exist within him. Shakespeare's use of the word "yield" suggests Macbeth is surrendering to his darker impulses, implying ambition was always present beneath his loyal exterior.
@@ -95,7 +95,7 @@ Lady Macbeth's ambition initially appears even stronger than her husband's. Her 
 However, Shakespeare shows that ambition ultimately leads to destruction. Macbeth's paranoia after becoming king -- "full of scorpions is my mind" -- uses a metaphor of internal torment to show how ambition has poisoned his mental state. Similarly, Lady Macbeth's sleepwalking in Act 5 reveals that her ambition has been replaced by overwhelming guilt.
 
 Shakespeare's message is clear: ambition that overrides morality leads to inevitable downfall, reflecting the Jacobean belief in the Divine Right of Kings.`,
-    grade: "7",
+    grade: '7',
     ao1: 16,
     ao1Max: 20,
     ao2: 15,
@@ -108,15 +108,15 @@ Shakespeare's message is clear: ambition that overrides morality leads to inevit
     totalMax: 70,
     percentage: 74,
     strengths: [
-      "Excellent close analysis of language with precise terminology",
-      "Sophisticated vocabulary and academic register throughout",
+      'Excellent close analysis of language with precise terminology',
+      'Sophisticated vocabulary and academic register throughout',
       "Strong understanding of both characters' relationship with ambition",
       "Effective use of the word 'yield' analysis showing individual word-level focus",
     ],
     improvements: [
-      "AO3 context could be developed further -- explore Gunpowder Plot and regicide fears",
-      "Consider structural choices: why does Shakespeare reveal ambition gradually?",
-      "Include a counter-argument or alternative reading for top marks",
+      'AO3 context could be developed further -- explore Gunpowder Plot and regicide fears',
+      'Consider structural choices: why does Shakespeare reveal ambition gradually?',
+      'Include a counter-argument or alternative reading for top marks',
       "The conclusion could be more nuanced rather than stating Shakespeare's message is 'clear'",
     ],
     feedback: [
@@ -126,7 +126,7 @@ Shakespeare's message is clear: ambition that overrides morality leads to inevit
   },
   {
     title: "How does Dickens present Scrooge's transformation in A Christmas Carol?",
-    student: "Sophie Taylor - Year 9C",
+    student: 'Sophie Taylor - Year 9C',
     text: `In A Christmas Carol, Dickens presents Scrooge as a cold and selfish character who undergoes a dramatic transformation. The novella was written in 1843 to highlight the plight of the poor in Victorian England.
 
 At the beginning, Scrooge is described as "a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner." The list of adjectives emphasises his greed, and the harsh sounds create an unpleasant impression. Dickens wants the reader to dislike Scrooge so that his later transformation feels more powerful.
@@ -136,7 +136,7 @@ The Ghost of Christmas Past begins Scrooge's change by showing him memories of h
 By the end of the story, Scrooge has completely changed. He buys the biggest turkey for the Cratchit family and raises Bob Cratchit's salary. Dickens writes that Scrooge "knew how to keep Christmas well." This simple statement contrasts with the complex list of negative adjectives at the start, showing that goodness is straightforward while greed is complicated.
 
 Dickens uses Scrooge's transformation to argue that anyone can change and that the wealthy have a duty to help the poor.`,
-    grade: "4",
+    grade: '4',
     ao1: 11,
     ao1Max: 20,
     ao2: 9,
@@ -150,16 +150,16 @@ Dickens uses Scrooge's transformation to argue that anyone can change and that t
     percentage: 50,
     strengths: [
       "Clear narrative understanding of Scrooge's transformation arc",
-      "Good selection of quotations that are relevant to the question",
-      "Interesting final point comparing complex adjectives with simple goodness",
+      'Good selection of quotations that are relevant to the question',
+      'Interesting final point comparing complex adjectives with simple goodness',
       "Awareness of Dickens' purpose in writing the novella",
     ],
     improvements: [
-      "Analysis needs more depth -- move beyond identifying techniques to explaining their effects",
-      "Explore the role of all three ghosts, not just Christmas Past",
-      "Develop contextual understanding: link to Poor Law, workhouses, and Malthusian economics",
+      'Analysis needs more depth -- move beyond identifying techniques to explaining their effects',
+      'Explore the role of all three ghosts, not just Christmas Past',
+      'Develop contextual understanding: link to Poor Law, workhouses, and Malthusian economics',
       "Use more analytical vocabulary: 'presents', 'conveys', 'implies' rather than 'shows' and 'wants'",
-      "Consider structural choices and how Dickens builds tension across the staves",
+      'Consider structural choices and how Dickens builds tension across the staves',
     ],
     feedback: [
       "A solid response that shows you understand Scrooge's journey from miser to generous benefactor. Your point about the contrast between complex negative adjectives and simple goodness is genuinely insightful and shows original thinking.",
@@ -224,7 +224,8 @@ export default function EssayMarkingDemoPage() {
             <h1 className="text-2xl font-bold text-ink-900">AI Essay Marking</h1>
           </div>
           <p className="text-ink-500 text-sm mt-1">
-            AI-powered essay analysis with AO scoring, detailed feedback, and improvement suggestions.
+            AI-powered essay analysis with AO scoring, detailed feedback, and improvement
+            suggestions.
           </p>
         </div>
 
@@ -276,7 +277,9 @@ export default function EssayMarkingDemoPage() {
         {loading && (
           <div className="rounded-xl border border-clay-500/20 bg-clay-500/5 p-8 text-center">
             <Loader2 className="h-8 w-8 animate-spin text-clay-600 mx-auto mb-3" />
-            <p className="text-sm text-clay-600">Analysing essay against GCSE assessment objectives...</p>
+            <p className="text-sm text-clay-600">
+              Analysing essay against GCSE assessment objectives...
+            </p>
             <p className="text-xs text-ink-500 mt-1">Evaluating AO1, AO2, AO3, and AO4 criteria</p>
           </div>
         )}
@@ -294,19 +297,23 @@ export default function EssayMarkingDemoPage() {
                 <div>
                   <p className="text-xs text-ink-500">Predicted Grade</p>
                   <p className="text-lg font-bold text-ink-900">Grade {essay.grade}</p>
-                  <p className="text-xs text-ink-500">{essay.total}/{essay.totalMax} ({essay.percentage}%)</p>
+                  <p className="text-xs text-ink-500">
+                    {essay.total}/{essay.totalMax} ({essay.percentage}%)
+                  </p>
                 </div>
               </div>
 
               {/* AO scores */}
               <div className="md:col-span-4 rounded-xl border border-ink-200 bg-white p-5">
-                <h3 className="text-xs font-medium text-ink-500 mb-3 uppercase tracking-wider">Assessment Objectives</h3>
+                <h3 className="text-xs font-medium text-ink-500 mb-3 uppercase tracking-wider">
+                  Assessment Objectives
+                </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {[
-                    { label: "AO1 Reading", score: essay.ao1, max: essay.ao1Max },
-                    { label: "AO2 Analysis", score: essay.ao2, max: essay.ao2Max },
-                    { label: "AO3 Context", score: essay.ao3, max: essay.ao3Max },
-                    { label: "AO4 SPaG", score: essay.ao4, max: essay.ao4Max },
+                    { label: 'AO1 Reading', score: essay.ao1, max: essay.ao1Max },
+                    { label: 'AO2 Analysis', score: essay.ao2, max: essay.ao2Max },
+                    { label: 'AO3 Context', score: essay.ao3, max: essay.ao3Max },
+                    { label: 'AO4 SPaG', score: essay.ao4, max: essay.ao4Max },
                   ].map((ao) => (
                     <div key={ao.label} className="text-center">
                       <div className="relative mx-auto mb-2 h-14 w-14">
@@ -337,7 +344,9 @@ export default function EssayMarkingDemoPage() {
                           </defs>
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-xs font-bold text-ink-900">{ao.score}/{ao.max}</span>
+                          <span className="text-xs font-bold text-ink-900">
+                            {ao.score}/{ao.max}
+                          </span>
                         </div>
                       </div>
                       <p className="text-xs text-ink-500">{ao.label}</p>
@@ -397,7 +406,9 @@ export default function EssayMarkingDemoPage() {
             {/* CTA */}
             <div className="rounded-xl border border-ink-200 bg-gradient-to-r from-clay-500/10 via-pink-500/10 to-clay-400/10 p-6 text-center">
               <Sparkles className="h-6 w-6 text-clay-600 mx-auto mb-2" />
-              <h3 className="text-lg font-semibold text-ink-900 mb-1">Use AI marking with your students</h3>
+              <h3 className="text-lg font-semibold text-ink-900 mb-1">
+                Use AI marking with your students
+              </h3>
               <p className="text-sm text-ink-500 mb-4">
                 Save hours of marking time with instant, detailed feedback on every essay.
               </p>

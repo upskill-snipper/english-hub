@@ -38,18 +38,18 @@ const sections: ContextSection[] = [
     content: [
       'A Christmas Carol was published on 19 December 1843, during a period of extreme economic inequality in Victorian England. The Industrial Revolution had created enormous wealth for factory owners, financiers and the emerging middle class, but it had also driven millions of working-class families into grinding poverty. Cities like London were overcrowded, polluted and disease-ridden. Cholera, typhus and tuberculosis were common. The gap between rich and poor was vast and growing, and many wealthy Victorians regarded poverty as a moral failing rather than an economic injustice.',
       'Average life expectancy in industrial cities was shockingly low -- around 26 years in Liverpool and Manchester, compared to 45 in rural areas. Child mortality was high: roughly one in five children in London died before their fifth birthday. The working poor lived in cramped, unsanitary conditions, often with entire families sharing a single room. Clean water was scarce, sewage ran through the streets, and the air was thick with factory smoke.',
-      'London in the 1840s was a city of extremes. Grand townhouses and gentlemen\'s clubs sat alongside slums, gin palaces and begging children. Dickens walked these streets obsessively, often covering twenty miles in a night, and his fiction draws directly on what he saw. A Christmas Carol is set in this London -- its fog, its cold, its dark alleyways, and its sharp division between those who feast and those who starve.',
+      "London in the 1840s was a city of extremes. Grand townhouses and gentlemen's clubs sat alongside slums, gin palaces and begging children. Dickens walked these streets obsessively, often covering twenty miles in a night, and his fiction draws directly on what he saw. A Christmas Carol is set in this London -- its fog, its cold, its dark alleyways, and its sharp division between those who feast and those who starve.",
     ],
     keyFacts: [
-      'Britain\'s population doubled between 1801 and 1851 (from 10.5 million to 21 million), driven largely by urbanisation.',
+      "Britain's population doubled between 1801 and 1851 (from 10.5 million to 21 million), driven largely by urbanisation.",
       'By 1843, over 50% of the British population lived in cities for the first time in history.',
       'The average working-class family spent 70-80% of their income on food alone.',
       'There was no compulsory education, no National Health Service, and no unemployment insurance.',
     ],
     textLinks: [
-      'Bob Cratchit\'s fifteen shillings a week places him among the working poor. His freezing office and one-coal fire reflect real workplace conditions.',
-      'Tiny Tim\'s disability and vulnerability represent the thousands of children who suffered and died because society would not care for them.',
-      'Scrooge\'s cold, dark counting-house mirrors the real conditions of Victorian offices and warehouses.',
+      "Bob Cratchit's fifteen shillings a week places him among the working poor. His freezing office and one-coal fire reflect real workplace conditions.",
+      "Tiny Tim's disability and vulnerability represent the thousands of children who suffered and died because society would not care for them.",
+      "Scrooge's cold, dark counting-house mirrors the real conditions of Victorian offices and warehouses.",
     ],
   },
   {
@@ -75,50 +75,51 @@ const sections: ContextSection[] = [
     ],
   },
   {
-    title: 'Dickens\' Personal Experience with Poverty',
+    title: "Dickens' Personal Experience with Poverty",
     icon: Users,
     iconColour: 'text-violet-400',
     content: [
-      'Charles Dickens had personal experience of poverty and its humiliations that shaped his entire literary career. When he was twelve years old, his father John Dickens was imprisoned in the Marshalsea debtors\' prison in Southwark, London. Unable to pay his debts, John Dickens was confined there with most of his family while young Charles was sent to work at Warren\'s Blacking Factory, pasting labels on bottles of boot polish for six shillings a week.',
+      "Charles Dickens had personal experience of poverty and its humiliations that shaped his entire literary career. When he was twelve years old, his father John Dickens was imprisoned in the Marshalsea debtors' prison in Southwark, London. Unable to pay his debts, John Dickens was confined there with most of his family while young Charles was sent to work at Warren's Blacking Factory, pasting labels on bottles of boot polish for six shillings a week.",
       'The blacking factory experience was traumatic and formative. Dickens later described it as a period of overwhelming shame and abandonment. He worked alongside other boys in grim conditions, his education interrupted, his expectations of a middle-class life apparently destroyed. Even after his father was released (through a small inheritance), the memory haunted Dickens for the rest of his life. He rarely spoke of it even to his closest friends, and only a few people knew about it during his lifetime.',
       'This personal experience gave Dickens a lifelong empathy with the poor and a particular fury at those who dismissed their suffering as laziness or moral weakness. He knew from his own experience that poverty could happen to anyone, that it was not a matter of character but of circumstance, and that children were its most innocent victims. Every child character in his fiction -- Oliver Twist, David Copperfield, Tiny Tim -- carries something of the twelve-year-old boy in the blacking factory.',
-      'In 1843, the year he wrote A Christmas Carol, Dickens visited the Field Lane Ragged School in Clerkenwell, London. Ragged schools were charitable institutions that provided free education to the poorest children -- children too destitute even for the workhouse schools. What Dickens saw appalled him: filthy, starving, uneducated children living in conditions of extreme deprivation. He also read the Second Report of the Children\'s Employment Commission, a government document detailing the horrific conditions of child labour in mines and factories. These experiences directly inspired the novella.',
+      "In 1843, the year he wrote A Christmas Carol, Dickens visited the Field Lane Ragged School in Clerkenwell, London. Ragged schools were charitable institutions that provided free education to the poorest children -- children too destitute even for the workhouse schools. What Dickens saw appalled him: filthy, starving, uneducated children living in conditions of extreme deprivation. He also read the Second Report of the Children's Employment Commission, a government document detailing the horrific conditions of child labour in mines and factories. These experiences directly inspired the novella.",
     ],
     keyFacts: [
-      'Dickens was 12 when his father was imprisoned for debt. He worked at Warren\'s Blacking Factory for several months.',
-      'He earned six shillings a week pasting labels -- comparable to Bob Cratchit\'s meagre earnings.',
-      'Dickens kept his blacking factory experience secret for most of his life. His friend John Forster published the details only after Dickens\'s death.',
+      "Dickens was 12 when his father was imprisoned for debt. He worked at Warren's Blacking Factory for several months.",
+      "He earned six shillings a week pasting labels -- comparable to Bob Cratchit's meagre earnings.",
+      "Dickens kept his blacking factory experience secret for most of his life. His friend John Forster published the details only after Dickens's death.",
       'In 1843, Dickens visited Field Lane Ragged School and was deeply affected by what he saw.',
       'He originally planned to write a political pamphlet called "An Appeal to the People of England on Behalf of the Poor Man\'s Child" but chose fiction instead.',
     ],
     textLinks: [
-      'The lonely schoolboy left behind at Christmas in Stave 2 draws on Dickens\'s own feelings of abandonment and isolation as a child.',
-      'Tiny Tim\'s vulnerability reflects the real children Dickens saw at the ragged schools -- children whose lives depended on whether society would help them.',
+      "The lonely schoolboy left behind at Christmas in Stave 2 draws on Dickens's own feelings of abandonment and isolation as a child.",
+      "Tiny Tim's vulnerability reflects the real children Dickens saw at the ragged schools -- children whose lives depended on whether society would help them.",
       'The children Ignorance and Want were directly inspired by the children Dickens saw at Field Lane and the conditions described in the 1843 child labour report.',
     ],
   },
   {
-    title: 'Publication Context: 1843',
+    title: 'Publication Context: 19 December 1843',
     icon: Scroll,
     iconColour: 'text-emerald-400',
     content: [
       'Dickens wrote A Christmas Carol in just six weeks, from mid-October to late November 1843. He was under financial pressure -- his previous novel, Martin Chuzzlewit, was selling poorly, and he had a growing family to support. He also felt an urgent need to respond to the social conditions he had witnessed at the ragged schools and read about in the child labour report.',
       'He originally planned to write a political pamphlet, but he realised that a story would reach more people and move more hearts than an argument. As he later wrote, "I have a great faith in the poor; to the best of my ability I always endeavour to present them in a favourable light to the rich." Fiction, he believed, could create empathy in ways that statistics and arguments could not.',
-      'Dickens insisted on controlling every aspect of the book\'s production. He chose the binding (salmon and gold cloth), the illustrations (by John Leech), and the gilt-edged pages. He also insisted on a low price -- five shillings -- so that ordinary middle-class readers could afford it. This meant his profit margin was small, which became a source of frustration, but it ensured the book\'s wide distribution.',
-      'The first edition of 6,000 copies sold out by Christmas Eve 1843. By the end of 1844, the book had gone through thirteen editions. Reviews were overwhelmingly positive. William Makepeace Thackeray called it "a national benefit, and to every man and woman who reads it a personal kindness." The novella was immediately adapted for the stage, and unauthorised dramatic versions appeared within weeks of publication.',
+      "Dickens insisted on controlling every aspect of the book's production. He chose the binding (salmon and gold cloth), the illustrations (by John Leech), and the gilt-edged pages. He also insisted on a low price -- five shillings -- so that ordinary middle-class readers could afford it. This meant his profit margin was small, which became a source of frustration, but it ensured the book's wide distribution.",
+      'A Christmas Carol was published by Chapman & Hall on 19 December 1843. The first edition of 6,000 copies sold out by Christmas Eve 1843. By the end of 1844, the book had gone through thirteen editions. Reviews were overwhelmingly positive. William Makepeace Thackeray called it "a national benefit, and to every man and woman who reads it a personal kindness." The novella was immediately adapted for the stage, and unauthorised dramatic versions appeared within weeks of publication.',
     ],
     keyFacts: [
+      'Published by Chapman & Hall on 19 December 1843.',
       'Written in six weeks (mid-October to late November 1843).',
       'First edition: 6,000 copies, priced at five shillings. Sold out by Christmas Eve.',
       'Thirteen editions published by the end of 1844.',
-      'Dickens chose every detail of the book\'s physical design, including salmon-and-gold cloth binding.',
+      "Dickens chose every detail of the book's physical design, including salmon-and-gold cloth binding.",
       'Despite huge sales, Dickens earned only 230 pounds from the first edition due to his insistence on expensive production and a low cover price.',
       'Unauthorised stage adaptations appeared within weeks. Dickens sued but won only minimal damages.',
     ],
     textLinks: [
-      'The novella\'s compact five-stave structure reflects its rapid composition -- Dickens wrote it with urgency and energy.',
+      "The novella's compact five-stave structure reflects its rapid composition -- Dickens wrote it with urgency and energy.",
       'The conversational narrative voice ("I am going to relate") reflects Dickens\'s intention to create a spoken story, as if told by a fireside at Christmas.',
-      'The five-shilling price point reflects Dickens\'s social mission: he wanted the book read by as many people as possible, not just the wealthy.',
+      "The five-shilling price point reflects Dickens's social mission: he wanted the book read by as many people as possible, not just the wealthy.",
     ],
   },
   {
@@ -126,8 +127,8 @@ const sections: ContextSection[] = [
     icon: Factory,
     iconColour: 'text-clay-600',
     content: [
-      'The Industrial Revolution transformed Britain between roughly 1760 and 1840, turning it from a largely agricultural economy into the world\'s first industrial nation. Factories, railways, and new technologies created unprecedented wealth, but they also created unprecedented misery. Workers -- including children as young as five -- laboured for twelve to sixteen hours a day in dangerous conditions. There were no safety regulations, no sick pay, no holiday entitlement, and no minimum wage.',
-      'The factory system changed the relationship between employer and employee. In the pre-industrial economy, an employer like Fezziwig might know his workers personally and take a paternal interest in their welfare. In the new industrial economy, employers like Scrooge saw workers as economic units -- costs to be minimised. Bob Cratchit\'s fifteen shillings a week and freezing office reflect the reality of millions of workers who had no bargaining power and no legal protection.',
+      "The Industrial Revolution transformed Britain between roughly 1760 and 1840, turning it from a largely agricultural economy into the world's first industrial nation. Factories, railways, and new technologies created unprecedented wealth, but they also created unprecedented misery. Workers -- including children as young as five -- laboured for twelve to sixteen hours a day in dangerous conditions. There were no safety regulations, no sick pay, no holiday entitlement, and no minimum wage.",
+      "The factory system changed the relationship between employer and employee. In the pre-industrial economy, an employer like Fezziwig might know his workers personally and take a paternal interest in their welfare. In the new industrial economy, employers like Scrooge saw workers as economic units -- costs to be minimised. Bob Cratchit's fifteen shillings a week and freezing office reflect the reality of millions of workers who had no bargaining power and no legal protection.",
       'The concentration of wealth in the hands of factory owners and financiers was extreme. The richest 10% of the population controlled over 70% of national wealth. Meanwhile, the working poor lived in slums, ate adulterated food, and died young. The "Hungry Forties" -- the decade in which A Christmas Carol was written -- saw widespread unemployment, food riots, and the rise of the Chartist movement, which demanded democratic reform and workers\' rights.',
     ],
     keyFacts: [
@@ -135,12 +136,12 @@ const sections: ContextSection[] = [
       'The Factory Act of 1833 limited children aged 9-13 to 8 hours of work per day. Children under 9 were banned from factories (but not other industries).',
       'Average working hours: 12-16 hours per day, 6 days a week.',
       'The 1840s were known as the "Hungry Forties" due to widespread unemployment and poverty.',
-      'The Chartist movement (1838-1857) demanded universal suffrage and workers\' rights but was repeatedly suppressed.',
+      "The Chartist movement (1838-1857) demanded universal suffrage and workers' rights but was repeatedly suppressed.",
     ],
     textLinks: [
       'Fezziwig represents the pre-industrial employer who knew his workers personally. Scrooge represents the new industrial employer who sees workers only as costs.',
-      'Bob Cratchit\'s working conditions -- the tiny fire, the freezing office, the exploitative wage -- reflect real Victorian employment practices.',
-      'Dickens\'s critique of Scrooge is a critique of laissez-faire capitalism: the idea that employers owe nothing to their workers beyond a wage.',
+      "Bob Cratchit's working conditions -- the tiny fire, the freezing office, the exploitative wage -- reflect real Victorian employment practices.",
+      "Dickens's critique of Scrooge is a critique of laissez-faire capitalism: the idea that employers owe nothing to their workers beyond a wage.",
     ],
   },
   {
@@ -150,7 +151,7 @@ const sections: ContextSection[] = [
     content: [
       'Victorian society was rigidly stratified by class. The aristocracy and gentry owned land. The growing middle class -- merchants, professionals, factory owners -- were accumulating wealth and social influence. The working class -- labourers, servants, factory workers -- had few rights and little economic security. Below them were the "undeserving poor," a category used to distinguish those deemed morally worthy of help from those judged responsible for their own misfortune.',
       'Philanthropy -- charitable giving by the wealthy -- was a major feature of Victorian life. Wealthy individuals and families funded hospitals, schools, orphanages, and missionary societies. But philanthropy was often paternalistic and conditional. It was given on the understanding that the poor would be grateful, deferential, and morally reformed. Many Victorians believed that indiscriminate charity encouraged laziness and dependency -- an attitude that Scrooge embodies when he asks why he should donate when prisons and workhouses already exist.',
-      'Dickens occupied an unusual position in the class system. He was born into the lower middle class, experienced genuine poverty during his father\'s imprisonment, and rose to become one of the wealthiest and most famous writers in England. He understood both poverty and wealth from the inside. His fiction consistently argues that moral worth has nothing to do with social class -- the Cratchits are morally superior to Scrooge despite (or because of) their poverty.',
+      "Dickens occupied an unusual position in the class system. He was born into the lower middle class, experienced genuine poverty during his father's imprisonment, and rose to become one of the wealthiest and most famous writers in England. He understood both poverty and wealth from the inside. His fiction consistently argues that moral worth has nothing to do with social class -- the Cratchits are morally superior to Scrooge despite (or because of) their poverty.",
     ],
     keyFacts: [
       'The concept of the "deserving" vs "undeserving" poor was central to Victorian attitudes toward charity.',
@@ -159,8 +160,8 @@ const sections: ContextSection[] = [
       'The charity collectors in Stave 1 represent real organisations that operated in Victorian London, collecting door-to-door for the poor.',
     ],
     textLinks: [
-      'The charity collectors in Stave 1 represent Victorian philanthropy. Scrooge\'s dismissal of them represents the refusal to engage in personal charity.',
-      'The Cratchits\' moral superiority despite their poverty challenges the Victorian assumption that class determines character.',
+      "The charity collectors in Stave 1 represent Victorian philanthropy. Scrooge's dismissal of them represents the refusal to engage in personal charity.",
+      "The Cratchits' moral superiority despite their poverty challenges the Victorian assumption that class determines character.",
       'Fred\'s argument that Christmas is "the only time... when men and women seem by one consent to open their shut-up hearts freely" advocates for universal, unconditional generosity.',
     ],
   },
@@ -183,7 +184,7 @@ const sections: ContextSection[] = [
       'Hundreds of film, stage, and television adaptations have been produced, making it one of the most adapted stories in English literature.',
     ],
     textLinks: [
-      'The novella\'s lasting impact proves Dickens was right: a story can change hearts more effectively than a pamphlet or a political argument.',
+      "The novella's lasting impact proves Dickens was right: a story can change hearts more effectively than a pamphlet or a political argument.",
       'Its influence on Christmas traditions connects to the theme of Christmas spirit as a permanent moral principle, not just a festive custom.',
       'The universality of the story -- adaptable across cultures and centuries -- suggests that its themes (redemption, generosity, social responsibility) are not limited to Victorian England.',
     ],
@@ -197,11 +198,17 @@ export default function ContextPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "A Christmas Carol", url: "https://theenglishhub.app/revision/texts/a-christmas-carol" },
-          { name: "Context", url: "https://theenglishhub.app/revision/texts/a-christmas-carol/context" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'A Christmas Carol',
+            url: 'https://theenglishhub.app/revision/texts/a-christmas-carol',
+          },
+          {
+            name: 'Context',
+            url: 'https://theenglishhub.app/revision/texts/a-christmas-carol/context',
+          },
         ]}
       />
       {/* Study Tools */}
@@ -240,11 +247,10 @@ export default function ContextPage() {
             A Christmas Carol by Charles Dickens
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Understanding the world Dickens was writing about -- and writing FOR.
-            Seven sections covering Victorian social conditions, the Poor Law,
-            Dickens&apos;s own experience of poverty, publication context, the
-            Industrial Revolution, the class system, and the novella&apos;s
-            reception and lasting impact.
+            Understanding the world Dickens was writing about -- and writing FOR. Seven sections
+            covering Victorian social conditions, the Poor Law, Dickens&apos;s own experience of
+            poverty, publication context, the Industrial Revolution, the class system, and the
+            novella&apos;s reception and lasting impact.
           </p>
         </div>
       </section>
@@ -253,9 +259,7 @@ export default function ContextPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 text-heading-md font-heading text-foreground">
-              Jump to a Section
-            </h2>
+            <h2 className="mb-4 text-heading-md font-heading text-foreground">Jump to a Section</h2>
             <div className="grid gap-2 sm:grid-cols-2">
               {sections.map((s) => {
                 const Icon = s.icon
@@ -293,9 +297,7 @@ export default function ContextPage() {
               <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                 <Icon className={`size-5 ${section.iconColour}`} />
               </div>
-              <h2 className="text-heading-lg font-heading text-foreground">
-                {section.title}
-              </h2>
+              <h2 className="text-heading-lg font-heading text-foreground">{section.title}</h2>
             </div>
 
             {/* Content paragraphs */}
@@ -365,46 +367,41 @@ export default function ContextPage() {
         <Card>
           <CardContent className="space-y-4 p-5 sm:p-6 text-body-sm text-muted-foreground">
             <p>
-              Context is worth marks in every GCSE English Literature exam, but
-              it must be embedded in your argument -- not bolted on as a separate
-              paragraph. Here are the key principles:
+              Context is worth marks in every GCSE English Literature exam, but it must be embedded
+              in your argument -- not bolted on as a separate paragraph. Here are the key
+              principles:
             </p>
             <ul className="list-disc space-y-3 pl-4">
               <li>
-                <strong className="text-foreground">Integrate, don&apos;t isolate.</strong>{' '}
-                Weave context into your analysis rather than writing a standalone
-                &ldquo;context paragraph.&rdquo; For example: &ldquo;Scrooge&apos;s
-                suggestion that the poor should &lsquo;decrease the surplus
-                population&rsquo; echoes the Malthusian economics that Dickens
-                despised, revealing how deeply entrenched these attitudes
-                were.&rdquo;
+                <strong className="text-foreground">Integrate, don&apos;t isolate.</strong> Weave
+                context into your analysis rather than writing a standalone &ldquo;context
+                paragraph.&rdquo; For example: &ldquo;Scrooge&apos;s suggestion that the poor should
+                &lsquo;decrease the surplus population&rsquo; echoes the Malthusian economics that
+                Dickens despised, revealing how deeply entrenched these attitudes were.&rdquo;
               </li>
               <li>
-                <strong className="text-foreground">Focus on Dickens&apos;s purpose.</strong>{' '}
-                Always ask: WHY did Dickens include this? What was he trying to
-                make his readers think, feel, or do? Context explains purpose.
+                <strong className="text-foreground">Focus on Dickens&apos;s purpose.</strong> Always
+                ask: WHY did Dickens include this? What was he trying to make his readers think,
+                feel, or do? Context explains purpose.
               </li>
               <li>
-                <strong className="text-foreground">Use specific details.</strong>{' '}
-                &ldquo;Victorian times were hard for the poor&rdquo; is vague.
-                &ldquo;The 1834 Poor Law created workhouses designed to make
-                poverty as unpleasant as possible&rdquo; is specific and
+                <strong className="text-foreground">Use specific details.</strong> &ldquo;Victorian
+                times were hard for the poor&rdquo; is vague. &ldquo;The 1834 Poor Law created
+                workhouses designed to make poverty as unpleasant as possible&rdquo; is specific and
                 impressive.
               </li>
               <li>
-                <strong className="text-foreground">Link context to technique.</strong>{' '}
-                The strongest answers connect what Dickens is saying (context) to
-                HOW he says it (technique). For example: &ldquo;Dickens uses the
-                allegory of Ignorance and Want -- inspired by his visit to the
-                Field Lane ragged school -- to turn social statistics into
-                a visceral, supernatural warning.&rdquo;
+                <strong className="text-foreground">Link context to technique.</strong> The
+                strongest answers connect what Dickens is saying (context) to HOW he says it
+                (technique). For example: &ldquo;Dickens uses the allegory of Ignorance and Want --
+                inspired by his visit to the Field Lane ragged school -- to turn social statistics
+                into a visceral, supernatural warning.&rdquo;
               </li>
               <li>
                 <strong className="text-foreground">Remember the publication context.</strong>{' '}
-                Dickens wrote A Christmas Carol to be read at Christmas 1843, by
-                middle-class readers who could afford five shillings. His
-                audience is crucial: he is trying to persuade the wealthy to
-                change, not to comfort the poor.
+                Dickens wrote A Christmas Carol to be read at Christmas 1843, by middle-class
+                readers who could afford five shillings. His audience is crucial: he is trying to
+                persuade the wealthy to change, not to comfort the poor.
               </li>
             </ul>
           </CardContent>
@@ -413,9 +410,8 @@ export default function ContextPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A Christmas Carol by Charles Dickens (1843) is in the public domain.
-        Quotations are reproduced freely as the text is no longer subject to
-        copyright.
+        A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are
+        reproduced freely as the text is no longer subject to copyright.
       </p>
     </div>
   )

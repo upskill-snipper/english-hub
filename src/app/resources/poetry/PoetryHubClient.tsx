@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import Link from "next/link";
-import { useBoard } from "@/hooks/useBoard";
-import { getBoardConfig } from "@/lib/board/board-store";
+import Link from 'next/link'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-store'
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -10,100 +10,128 @@ import { getBoardConfig } from "@/lib/board/board-store";
 
 const ANTHOLOGY_SECTIONS = [
   {
-    title: "Power and Conflict",
-    href: "/resources/poetry/power-and-conflict",
+    title: 'Power and Conflict',
+    href: '/resources/poetry/power-and-conflict',
     description:
-      "All 15 poems analysed in depth: Ozymandias, London, The Prelude, My Last Duchess, Charge of the Light Brigade, Exposure, Storm on the Island, Bayonet Charge, Remains, Poppies, War Photographer, Tissue, The Emigree, Kamikaze, and Checking Out Me History.",
+      'All 15 poems analysed in depth: Ozymandias, London, The Prelude, My Last Duchess, Charge of the Light Brigade, Exposure, Storm on the Island, Bayonet Charge, Remains, Poppies, War Photographer, Tissue, The Émigrée, Kamikaze, and Checking Out Me History.',
     poems: 15,
-    board: "AQA",
+    board: 'AQA',
   },
   {
-    title: "Love and Relationships",
-    href: "/resources/poetry/love-and-relationships",
+    title: 'Love and Relationships',
+    href: '/resources/poetry/love-and-relationships',
     description:
       "All 15 poems analysed: When We Two Parted, Love's Philosophy, Porphyria's Lover, Sonnet 29, Neutral Tones, Letters from Yorkshire, The Farmer's Bride, Walking Away, Eden Rock, Follower, Mother Any Distance, Before You Were Mine, Winter Swans, Singh Song!, and Climbing My Grandfather.",
     poems: 15,
-    board: "AQA",
+    board: 'AQA',
   },
-];
+]
 
 const EDEXCEL_SECTIONS = [
   {
-    title: "Conflict",
-    href: "/revision/poetry/edexcel/conflict",
+    title: 'Conflict',
+    href: '/revision/poetry/edexcel/conflict',
     description:
-      "All 15 poems in the Edexcel Conflict anthology, exploring war, prejudice, family tension and internal struggle. Featured study pages: A Poison Tree (Blake) and The Destruction of Sennacherib (Byron).",
+      'All 15 poems in the Edexcel Conflict anthology, exploring war, prejudice, family tension and internal struggle. Featured study pages: A Poison Tree (Blake) and The Destruction of Sennacherib (Byron).',
     poems: 15,
-    board: "Edexcel",
+    board: 'Edexcel',
   },
   {
-    title: "Time and Place",
-    href: "/revision/poetry/edexcel/time-and-place",
+    title: 'Time and Place',
+    href: '/revision/poetry/edexcel/time-and-place',
     description:
-      "All 15 poems in the Edexcel Time and Place anthology, exploring landscape, memory and identity. Featured study pages: To Autumn (Keats), Composed Upon Westminster Bridge (Wordsworth), London (Blake) and I started Early - Took my Dog (Dickinson).",
+      'All 15 poems in the Edexcel Time and Place anthology, exploring landscape, memory and identity. Featured study pages: To Autumn (Keats), Composed Upon Westminster Bridge (Wordsworth), London (Blake) and I started Early - Took my Dog (Dickinson).',
     poems: 15,
-    board: "Edexcel",
+    board: 'Edexcel',
   },
-];
+]
 
 const EDUQAS_SECTIONS = [
   {
-    title: "WJEC Eduqas Anthology",
-    href: "/revision/poetry/eduqas",
+    title: 'WJEC Eduqas Anthology (2025)',
+    href: '/revision/poetry/eduqas',
     description:
-      "All 18 poems in the single Eduqas anthology, grouped by theme: Nature, War, Love, Power and Identity. Featured study pages: Ozymandias, London, The Prelude, To Autumn, Dulce et Decorum Est, The Soldier, A Wife in London and Sonnet 43.",
-    poems: 18,
-    board: "Eduqas",
+      "All 12 poems in the Eduqas GCSE 2025 anthology, grouped by theme: Childhood & Nature, Love & Relationships, War & Conflict, and Identity & Voice. Includes Blake's The Schoolboy, Wordsworth's Daffodils, Barrett Browning's Sonnet 29, Rossetti's Cousin Kate, Hardy's Drummer Hodge (Boer War 1899), McKay's I Shall Return, Owen's Disabled, Ghose's Decomposition, Clarke's Catrin, Heaney's Blackberry Picking, Garland's Kamikaze and Ewing's Origin Story. Six remain in copyright — quotations are short fair-dealing extracts.",
+    poems: 12,
+    board: 'Eduqas',
   },
-];
+]
 
 const SKILL_GUIDES = [
   {
-    title: "Poetry Analysis Techniques",
-    href: "/resources/poetry/techniques",
+    title: 'Poetry Analysis Techniques',
+    href: '/resources/poetry/techniques',
     description:
-      "Master 25+ poetic devices: metaphor, simile, enjambment, caesura, volta, sibilance, and more. Definitions, examples, effects, and how to write about them in your exam.",
-    tag: "Essential",
-    icon: "techniques" as const,
+      'Master 25+ poetic devices: metaphor, simile, enjambment, caesura, volta, sibilance, and more. Definitions, examples, effects, and how to write about them in your exam.',
+    tag: 'Essential',
+    icon: 'techniques' as const,
   },
   {
-    title: "Unseen Poetry",
-    href: "/resources/poetry/unseen-poetry",
+    title: 'Unseen Poetry',
+    href: '/resources/poetry/unseen-poetry',
     description:
-      "Step-by-step method for tackling unseen poetry in the exam. Annotation strategies, timed approaches, comparison techniques, and practice examples with model responses.",
-    tag: "Exam Skill",
-    icon: "unseen" as const,
+      'Step-by-step method for tackling unseen poetry in the exam. Annotation strategies, timed approaches, comparison techniques, and practice examples with model responses.',
+    tag: 'Exam Skill',
+    icon: 'unseen' as const,
   },
   {
-    title: "How to Compare Poems",
-    href: "/resources/poetry/techniques#comparing-poems",
+    title: 'How to Compare Poems',
+    href: '/resources/poetry/techniques#comparing-poems',
     description:
-      "A structured approach to comparison questions. Learn how to weave both poems together, choose strong comparison points, and write integrated paragraphs that impress examiners.",
-    tag: "Key Skill",
-    icon: "compare" as const,
+      'A structured approach to comparison questions. Learn how to weave both poems together, choose strong comparison points, and write integrated paragraphs that impress examiners.',
+    tag: 'Key Skill',
+    icon: 'compare' as const,
   },
-];
+]
 
 const TOP_TEN_POEMS = [
-  { title: "Ozymandias", poet: "Percy Bysshe Shelley", href: "/revision/poetry/power-and-conflict/ozymandias" },
-  { title: "London", poet: "William Blake", href: "/revision/poetry/power-and-conflict/london" },
-  { title: "My Last Duchess", poet: "Robert Browning", href: "/revision/poetry/power-and-conflict/my-last-duchess" },
-  { title: "Remains", poet: "Simon Armitage", href: "/revision/poetry/power-and-conflict/remains" },
-  { title: "Exposure", poet: "Wilfred Owen", href: "/revision/poetry/power-and-conflict/exposure" },
-  { title: "Porphyria's Lover", poet: "Robert Browning", href: "/revision/poetry/love-and-relationships/porphyrias-lover" },
-  { title: "Neutral Tones", poet: "Thomas Hardy", href: "/revision/poetry/love-and-relationships/neutral-tones" },
-  { title: "When We Two Parted", poet: "Lord Byron", href: "/revision/poetry/love-and-relationships/when-we-two-parted" },
-  { title: "War Photographer", poet: "Carol Ann Duffy", href: "/revision/poetry/power-and-conflict/war-photographer" },
-  { title: "The Charge of the Light Brigade", poet: "Alfred, Lord Tennyson", href: "/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade" },
-];
+  {
+    title: 'Ozymandias',
+    poet: 'Percy Bysshe Shelley',
+    href: '/revision/poetry/power-and-conflict/ozymandias',
+  },
+  { title: 'London', poet: 'William Blake', href: '/revision/poetry/power-and-conflict/london' },
+  {
+    title: 'My Last Duchess',
+    poet: 'Robert Browning',
+    href: '/revision/poetry/power-and-conflict/my-last-duchess',
+  },
+  { title: 'Remains', poet: 'Simon Armitage', href: '/revision/poetry/power-and-conflict/remains' },
+  { title: 'Exposure', poet: 'Wilfred Owen', href: '/revision/poetry/power-and-conflict/exposure' },
+  {
+    title: "Porphyria's Lover",
+    poet: 'Robert Browning',
+    href: '/revision/poetry/love-and-relationships/porphyrias-lover',
+  },
+  {
+    title: 'Neutral Tones',
+    poet: 'Thomas Hardy',
+    href: '/revision/poetry/love-and-relationships/neutral-tones',
+  },
+  {
+    title: 'When We Two Parted',
+    poet: 'Lord Byron',
+    href: '/revision/poetry/love-and-relationships/when-we-two-parted',
+  },
+  {
+    title: 'War Photographer',
+    poet: 'Carol Ann Duffy',
+    href: '/revision/poetry/power-and-conflict/war-photographer',
+  },
+  {
+    title: 'The Charge of the Light Brigade',
+    poet: 'Alfred, Lord Tennyson',
+    href: '/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
+  },
+]
 
 const QUICK_TIPS = [
   {
-    title: "Memorise Key Quotations",
-    text: "For anthology poems, aim for 5 short quotations per poem. Single words or phrases are easier to remember and more flexible in an essay than long passages.",
+    title: 'Memorise Key Quotations',
+    text: 'For anthology poems, aim for 5 short quotations per poem. Single words or phrases are easier to remember and more flexible in an essay than long passages.',
   },
   {
-    title: "Always Identify Technique + Effect",
+    title: 'Always Identify Technique + Effect',
     text: "Naming a device is not enough. You must explain WHY the poet chose it and WHAT effect it creates on the reader. Link to the poem's themes.",
   },
   {
@@ -111,18 +139,18 @@ const QUICK_TIPS = [
     text: "In comparison questions, weave both poems together. Use connectives like 'similarly', 'in contrast', 'whereas', and 'however' to show your analytical thinking.",
   },
   {
-    title: "Context Is Not Biography",
+    title: 'Context Is Not Biography',
     text: "Don't narrate the poet's life story. Instead, explain how historical, social, or cultural factors shape the poem's meaning and the reader's interpretation.",
   },
   {
-    title: "Structure Matters",
-    text: "Comment on form (sonnet, dramatic monologue), stanza shape, line length, enjambment, and caesura. Examiners reward students who analyse structure, not just language.",
+    title: 'Structure Matters',
+    text: 'Comment on form (sonnet, dramatic monologue), stanza shape, line length, enjambment, and caesura. Examiners reward students who analyse structure, not just language.',
   },
   {
-    title: "Plan Your Comparison",
-    text: "Spend 5 minutes planning. Pick 3 points of comparison. For each, have a quote from both poems. This prevents you from writing about one poem far more than the other.",
+    title: 'Plan Your Comparison',
+    text: 'Spend 5 minutes planning. Pick 3 points of comparison. For each, have a quote from both poems. This prevents you from writing about one poem far more than the other.',
   },
-];
+]
 
 /* ------------------------------------------------------------------ */
 /*  Icons                                                              */
@@ -130,55 +158,101 @@ const QUICK_TIPS = [
 
 function ArrowRight() {
   return (
-    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+    <svg
+      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+    >
       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
     </svg>
-  );
+  )
 }
 
 function PoemIcon() {
   return (
-    <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+    <svg
+      className="h-5 w-5 text-primary"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+      />
     </svg>
-  );
+  )
 }
 
 function TechniquesIcon() {
   return (
-    <svg className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+    <svg
+      className="h-7 w-7 text-primary"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+      />
     </svg>
-  );
+  )
 }
 
 function UnseenIcon() {
   return (
-    <svg className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+    <svg
+      className="h-7 w-7 text-primary"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+      />
       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
     </svg>
-  );
+  )
 }
 
 function CompareIcon() {
   return (
-    <svg className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+    <svg
+      className="h-7 w-7 text-primary"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+      />
     </svg>
-  );
+  )
 }
 
 function getSkillIcon(icon: string) {
   switch (icon) {
-    case "techniques":
-      return <TechniquesIcon />;
-    case "unseen":
-      return <UnseenIcon />;
-    case "compare":
-      return <CompareIcon />;
+    case 'techniques':
+      return <TechniquesIcon />
+    case 'unseen':
+      return <UnseenIcon />
+    case 'compare':
+      return <CompareIcon />
     default:
-      return <TechniquesIcon />;
+      return <TechniquesIcon />
   }
 }
 
@@ -187,22 +261,21 @@ function getSkillIcon(icon: string) {
 /* ------------------------------------------------------------------ */
 
 export function PoetryHubClient() {
-  const { board, isHydrated } = useBoard();
-  const boardConfig = getBoardConfig(board);
+  const { board, isHydrated } = useBoard()
+  const boardConfig = getBoardConfig(board)
 
   // STRICT board filtering: once hydrated, only render the anthology
   // section that matches the user's selected board. While rehydrating we
   // render nothing board-specific to avoid leaking the wrong content.
   // If no board is set (fresh visitor), show AQA + Edexcel + Eduqas as
   // the default "something useful to look at" set.
-  const showAQA = isHydrated && (!board || board === "aqa");
-  const showEdexcel = isHydrated && (!board || board === "edexcel");
-  const showEduqas = isHydrated && (!board || board === "eduqas");
-  const showOCR = isHydrated && board === "ocr";
-  const showEdexcelIgcse = isHydrated && board === "edexcel-igcse";
+  const showAQA = isHydrated && (!board || board === 'aqa')
+  const showEdexcel = isHydrated && (!board || board === 'edexcel')
+  const showEduqas = isHydrated && (!board || board === 'eduqas')
+  const showOCR = isHydrated && board === 'ocr'
+  const showEdexcelIgcse = isHydrated && board === 'edexcel-igcse'
   // Cambridge IGCSE has no set poetry anthology
-  const noAnthology =
-    isHydrated && (board === "cambridge-0500" || board === "cambridge-0990");
+  const noAnthology = isHydrated && (board === 'cambridge-0500' || board === 'cambridge-0990')
 
   return (
     <>
@@ -223,19 +296,27 @@ export function PoetryHubClient() {
             </div>
           )}
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Everything you need to master GCSE poetry. Anthology analysis,
-            poetic techniques, unseen poetry strategies, and comparison skills
-            &mdash; all in one place.
+            Everything you need to master GCSE poetry. Anthology analysis, poetic techniques, unseen
+            poetry strategies, and comparison skills &mdash; all in one place.
           </p>
           {isHydrated && noAnthology && (
             <div className="mx-auto mt-5 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-2xl text-left">
-              <svg className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+              <svg
+                className="mt-0.5 h-4 w-4 shrink-0 text-clay-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+                />
               </svg>
               <p className="text-sm text-muted-foreground">
-                Your exam board ({boardConfig?.shortName}) does not require a
-                set poetry anthology. You can still use the unseen poetry and
-                analysis technique guides below to prepare.
+                Your exam board ({boardConfig?.shortName}) does not require a set poetry anthology.
+                You can still use the unseen poetry and analysis technique guides below to prepare.
               </p>
             </div>
           )}
@@ -244,150 +325,139 @@ export function PoetryHubClient() {
 
       {/* ── AQA Anthology sections ───────────────────────────────── */}
       {showAQA && (
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
-          <h2 className="text-2xl font-bold text-foreground">
-            AQA Anthology Analysis
-          </h2>
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            AQA
-          </span>
-        </div>
-        <p className="mt-2 max-w-3xl text-muted-foreground">
-          In-depth analysis of every poem in the AQA GCSE anthology.
-          Stanza-by-stanza breakdowns, key quotations with technique
-          identification, themes, context, and comparison links.
-        </p>
+        <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-foreground">AQA Anthology Analysis</h2>
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              AQA
+            </span>
+          </div>
+          <p className="mt-2 max-w-3xl text-muted-foreground">
+            In-depth analysis of every poem in the AQA GCSE anthology. Stanza-by-stanza breakdowns,
+            key quotations with technique identification, themes, context, and comparison links.
+          </p>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {ANTHOLOGY_SECTIONS.map((section) => (
-            <Link
-              key={section.href}
-              href={section.href}
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
-            >
-              <div className="flex items-center gap-1.5">
-                <PoemIcon />
-                <span className="text-sm font-semibold text-foreground">
-                  {section.poems} poems
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {ANTHOLOGY_SECTIONS.map((section) => (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
+              >
+                <div className="flex items-center gap-1.5">
+                  <PoemIcon />
+                  <span className="text-sm font-semibold text-foreground">
+                    {section.poems} poems
+                  </span>
+                  <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
+                    {section.board}
+                  </span>
+                </div>
+                <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+                  {section.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {section.description}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
+                  View analysis <ArrowRight />
                 </span>
-                <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
-                  {section.board}
-                </span>
-              </div>
-              <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
-                {section.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {section.description}
-              </p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                View analysis <ArrowRight />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
 
       {/* ── Edexcel Anthology sections ───────────────────────────── */}
       {showEdexcel && (
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
-          <h2 className="text-2xl font-bold text-foreground">
-            Edexcel Anthology Analysis
-          </h2>
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            Edexcel
-          </span>
-        </div>
-        <p className="mt-2 max-w-3xl text-muted-foreground">
-          The Pearson Edexcel anthology has two themed clusters &mdash; you only
-          study one. Choose your cluster below for poem-by-poem study pages,
-          key quotations and comparison practice.
-        </p>
+        <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-foreground">Edexcel Anthology Analysis</h2>
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              Edexcel
+            </span>
+          </div>
+          <p className="mt-2 max-w-3xl text-muted-foreground">
+            The Pearson Edexcel anthology has two themed clusters &mdash; you only study one. Choose
+            your cluster below for poem-by-poem study pages, key quotations and comparison practice.
+          </p>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {EDEXCEL_SECTIONS.map((section) => (
-            <Link
-              key={section.href}
-              href={section.href}
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
-            >
-              <div className="flex items-center gap-1.5">
-                <PoemIcon />
-                <span className="text-sm font-semibold text-foreground">
-                  {section.poems} poems
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {EDEXCEL_SECTIONS.map((section) => (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
+              >
+                <div className="flex items-center gap-1.5">
+                  <PoemIcon />
+                  <span className="text-sm font-semibold text-foreground">
+                    {section.poems} poems
+                  </span>
+                  <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
+                    {section.board}
+                  </span>
+                </div>
+                <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+                  {section.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {section.description}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
+                  View analysis <ArrowRight />
                 </span>
-                <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
-                  {section.board}
-                </span>
-              </div>
-              <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
-                {section.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {section.description}
-              </p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                View analysis <ArrowRight />
-              </span>
-            </Link>
-          ))}
-        </div>
-
-      </section>
-
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
 
       {/* ── WJEC Eduqas Anthology section ────────────────────────── */}
       {showEduqas && (
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
-          <h2 className="text-2xl font-bold text-foreground">
-            WJEC Eduqas Anthology Analysis
-          </h2>
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            Eduqas
-          </span>
-        </div>
-        <p className="mt-2 max-w-3xl text-muted-foreground">
-          The WJEC Eduqas anthology has 18 poems that all students study,
-          grouped by theme. The exam asks you to compare two poems &mdash;
-          building strong pairings is essential.
-        </p>
+        <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-foreground">WJEC Eduqas Anthology Analysis</h2>
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              Eduqas
+            </span>
+          </div>
+          <p className="mt-2 max-w-3xl text-muted-foreground">
+            The WJEC Eduqas 2025 anthology has 12 poems that all students study, grouped by theme.
+            The exam asks you to compare two poems &mdash; building strong pairings is essential.
+            Six of the twelve remain in copyright; quotations on this site are short fair-dealing
+            extracts.
+          </p>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {EDUQAS_SECTIONS.map((section) => (
-            <Link
-              key={section.href}
-              href={section.href}
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
-            >
-              <div className="flex items-center gap-1.5">
-                <PoemIcon />
-                <span className="text-sm font-semibold text-foreground">
-                  {section.poems} poems
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {EDUQAS_SECTIONS.map((section) => (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
+              >
+                <div className="flex items-center gap-1.5">
+                  <PoemIcon />
+                  <span className="text-sm font-semibold text-foreground">
+                    {section.poems} poems
+                  </span>
+                  <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
+                    {section.board}
+                  </span>
+                </div>
+                <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+                  {section.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {section.description}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
+                  View analysis <ArrowRight />
                 </span>
-                <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
-                  {section.board}
-                </span>
-              </div>
-              <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
-                {section.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {section.description}
-              </p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                View analysis <ArrowRight />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
 
       {/* ── OCR placeholder note ─────────────────────────────────── */}
@@ -396,9 +466,8 @@ export function PoetryHubClient() {
           <div className="rounded-xl border border-border bg-card p-6">
             <h2 className="text-xl font-bold text-foreground">OCR Poetry Anthology</h2>
             <p className="mt-2 text-muted-foreground">
-              Detailed OCR anthology study guides are coming soon. In the
-              meantime, the analysis techniques and unseen poetry resources
-              below will help you prepare for your OCR exam.
+              Detailed OCR anthology study guides are coming soon. In the meantime, the analysis
+              techniques and unseen poetry resources below will help you prepare for your OCR exam.
             </p>
           </div>
         </section>
@@ -410,8 +479,8 @@ export function PoetryHubClient() {
           <div className="rounded-xl border border-border bg-card p-6">
             <h2 className="text-xl font-bold text-foreground">Edexcel IGCSE Poetry Anthology</h2>
             <p className="mt-2 text-muted-foreground">
-              Edexcel IGCSE anthology study guides are coming soon. The skills
-              and unseen poetry guides below apply to your specification.
+              Edexcel IGCSE anthology study guides are coming soon. The skills and unseen poetry
+              guides below apply to your specification.
             </p>
           </div>
         </section>
@@ -422,8 +491,7 @@ export function PoetryHubClient() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">Poetry Skills</h2>
           <p className="mt-2 text-muted-foreground">
-            Build the analytical skills you need for both anthology and unseen
-            poetry questions.
+            Build the analytical skills you need for both anthology and unseen poetry questions.
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -456,46 +524,39 @@ export function PoetryHubClient() {
 
       {/* ── Top 10 most tested poems (AQA-specific) ──────────────── */}
       {showAQA && (
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">
-          10 Most Commonly Tested Poems
-        </h2>
-        <p className="mt-2 text-muted-foreground">
-          Quick access to the poems that appear most frequently in GCSE exams.
-          Start your revision here.
-        </p>
+        <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-foreground">10 Most Commonly Tested Poems</h2>
+          <p className="mt-2 text-muted-foreground">
+            Quick access to the poems that appear most frequently in GCSE exams. Start your revision
+            here.
+          </p>
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {TOP_TEN_POEMS.map((poem, i) => (
-            <Link
-              key={poem.href}
-              href={poem.href}
-              className="group flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-md transition hover:border-primary/40 hover:shadow-lg"
-            >
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                {i + 1}
-              </span>
-              <div className="min-w-0">
-                <h3 className="truncate text-sm font-bold text-foreground transition-colors group-hover:text-primary">
-                  {poem.title}
-                </h3>
-                <p className="mt-0.5 truncate text-xs text-muted-foreground">
-                  {poem.poet}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {TOP_TEN_POEMS.map((poem, i) => (
+              <Link
+                key={poem.href}
+                href={poem.href}
+                className="group flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-md transition hover:border-primary/40 hover:shadow-lg"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
+                  {i + 1}
+                </span>
+                <div className="min-w-0">
+                  <h3 className="truncate text-sm font-bold text-foreground transition-colors group-hover:text-primary">
+                    {poem.title}
+                  </h3>
+                  <p className="mt-0.5 truncate text-xs text-muted-foreground">{poem.poet}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
 
       {/* ── Quick tips ───────────────────────────────────────────── */}
       <section className="border-y border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-foreground">
-            Top Poetry Exam Tips
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground">Top Poetry Exam Tips</h2>
           <p className="mt-2 text-muted-foreground">
             Essential strategies to maximise your marks in the poetry section.
           </p>
@@ -507,9 +568,7 @@ export function PoetryHubClient() {
                 className="rounded-xl border border-border bg-card p-5 shadow-md"
               >
                 <h3 className="font-semibold text-foreground">{tip.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {tip.text}
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{tip.text}</p>
               </div>
             ))}
           </div>
@@ -519,50 +578,41 @@ export function PoetryHubClient() {
       {/* ── How poetry is assessed ───────────────────────────────── */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">
-            How Poetry Is Assessed
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground">How Poetry Is Assessed</h2>
           <p className="mt-2 text-muted-foreground">
-            Understanding the assessment objectives helps you target your
-            revision and write answers that hit every mark.
+            Understanding the assessment objectives helps you target your revision and write answers
+            that hit every mark.
           </p>
 
           <div className="mt-6 space-y-4">
             {[
               {
-                ao: "AO1",
+                ao: 'AO1',
                 detail:
-                  "Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations of the poems.",
-                tip: "Embed short quotations fluently into your sentences rather than bolting them on as afterthoughts.",
+                  'Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations of the poems.',
+                tip: 'Embed short quotations fluently into your sentences rather than bolting them on as afterthoughts.',
               },
               {
-                ao: "AO2",
+                ao: 'AO2',
                 detail:
-                  "Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.",
+                  'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.',
                 tip: "Name the technique, quote it, then explain the effect. Do not just 'feature-spot' without analysis.",
               },
               {
-                ao: "AO3",
+                ao: 'AO3',
                 detail:
-                  "Show understanding of the relationships between texts and the contexts in which they were written.",
+                  'Show understanding of the relationships between texts and the contexts in which they were written.',
                 tip: "Link context to meaning. For example, Wilfred Owen's experience in the trenches shapes every image in Exposure.",
               },
             ].map((obj) => (
-              <div
-                key={obj.ao}
-                className="rounded-lg border border-border bg-card p-5 shadow-md"
-              >
+              <div key={obj.ao} className="rounded-lg border border-border bg-card p-5 shadow-md">
                 <div className="flex items-start gap-4">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                     {obj.ao}
                   </span>
                   <div>
-                    <p className="leading-relaxed text-foreground">
-                      {obj.detail}
-                    </p>
-                    <p className="mt-2 text-sm font-medium text-primary">
-                      Tip: {obj.tip}
-                    </p>
+                    <p className="leading-relaxed text-foreground">{obj.detail}</p>
+                    <p className="mt-2 text-sm font-medium text-primary">Tip: {obj.tip}</p>
                   </div>
                 </div>
               </div>
@@ -571,5 +621,5 @@ export function PoetryHubClient() {
         </div>
       </section>
     </>
-  );
+  )
 }

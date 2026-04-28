@@ -383,7 +383,7 @@ const poetryQuestions: QuizQuestion[] = [
     options: ['World War II', 'The Crimean War', 'World War I', 'The Korean War'],
     correctIndex: 2,
     explanation:
-      'Though Hughes wrote the poem later, "Bayonet Charge" depicts a World War I infantry charge, capturing the raw terror of going over the top.',
+      '"Bayonet Charge" depicts a World War I infantry charge, capturing the raw terror of going over the top. Hughes was born in 1930 and never fought in any war — he drew on his father William\'s WWI accounts (William survived Gallipoli, one of only seventeen of his Lancashire Fusiliers regiment to return) to imagine the soldier\'s experience.',
     boards: ['aqa'],
   },
   {
@@ -560,11 +560,11 @@ const poetryQuestions: QuizQuestion[] = [
   {
     id: 'p117',
     topic: 'poetry',
-    question: 'Who wrote "The Emigree"?',
+    question: 'Who wrote "The Émigrée"?',
     options: ['Imtiaz Dharker', 'Carol Rumens', 'Carol Ann Duffy', 'Beatrice Garland'],
     correctIndex: 1,
     explanation:
-      'Carol Rumens wrote "The Emigree", exploring the speaker\'s idealised memories of a homeland they can never return to.',
+      'Carol Rumens wrote "The Émigrée", exploring the speaker\'s idealised memories of a homeland they can never return to.',
     boards: ['aqa'],
   },
   {
@@ -726,7 +726,7 @@ const poetryQuestions: QuizQuestion[] = [
     topic: 'poetry',
     question:
       'Which poem in the Power & Conflict anthology is a dramatic monologue about a controlling Renaissance duke?',
-    options: ['"Ozymandias"', '"My Last Duchess"', '"Checking Out Me History"', '"The Emigree"'],
+    options: ['"Ozymandias"', '"My Last Duchess"', '"Checking Out Me History"', '"The Émigrée"'],
     correctIndex: 1,
     explanation:
       '"My Last Duchess" by Robert Browning is a dramatic monologue in which the Duke reveals his jealous, controlling nature as he discusses his late wife.',

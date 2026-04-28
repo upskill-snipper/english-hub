@@ -65,6 +65,39 @@ export default function PearsonIgcsePoetryHub() {
         </div>
       </section>
 
+      {/* ── Anthology version disclaimer ────────────────────────────── */}
+      <section
+        aria-label="Anthology version notice"
+        className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
+      >
+        <p className="mb-2">
+          <strong className="text-foreground">Anthology version:</strong> This site teaches the{' '}
+          <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
+          978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
+          freely-available online versions include:
+        </p>
+        <ol className="mb-2 list-decimal space-y-1 pl-5 text-muted-foreground">
+          <li>
+            <em>Half-Caste</em> uses Agard&rsquo;s spelling &lsquo;yu&rsquo; (not
+            &lsquo;you&rsquo;);
+          </li>
+          <li>
+            <em>The Bright Lights of Sarajevo</em> has additional stanza breaks not in
+            Harrison&rsquo;s original <em>Guardian</em> publication;
+          </li>
+          <li>
+            the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
+            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals — always use the
+            anthology version when answering Edexcel questions.
+          </li>
+        </ol>
+        <p className="text-body-xs text-muted-foreground">
+          © Pearson Education — quotations on individual set-text pages are short fair-dealing
+          extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
+          school-licensed editions.
+        </p>
+      </section>
+
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-blue-700" />

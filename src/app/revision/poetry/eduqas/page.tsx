@@ -9,12 +9,14 @@ import {
   Leaf,
   Swords,
   Heart,
-  Crown,
   User,
   GitCompareArrows,
   Info,
   CheckCircle2,
   Lock,
+  AlertTriangle,
+  ShieldAlert,
+  Scale,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -22,7 +24,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import StudyTools from '@/components/study/StudyTools'
 
-/* ── Poem data ────────────────────────────────────────────────────── */
+/* ── Poem data (Eduqas GCSE 2025 anthology — 12 poems) ────────────── */
 
 interface EduqasPoem {
   title: string
@@ -30,88 +32,186 @@ interface EduqasPoem {
   slug: string | null
   publicDomain: boolean
   themes: string[]
+  bio?: string
+  flag?: string
 }
 
-const NATURE: EduqasPoem[] = [
-  { title: 'The Prelude: stealing the boat', poet: 'William Wordsworth', slug: 'the-prelude', publicDomain: true, themes: ['Nature', 'Power', 'Memory'] },
-  { title: 'To Autumn', poet: 'John Keats', slug: 'to-autumn', publicDomain: true, themes: ['Nature', 'Time', 'Beauty'] },
-  { title: 'Death of a Naturalist', poet: 'Seamus Heaney', slug: null, publicDomain: false, themes: ['Nature', 'Childhood', 'Fear'] },
-  { title: 'Hawk Roosting', poet: 'Ted Hughes', slug: null, publicDomain: false, themes: ['Nature', 'Power', 'Violence'] },
-  { title: 'As Imperceptibly as Grief', poet: 'Emily Dickinson', slug: null, publicDomain: true, themes: ['Nature', 'Time', 'Loss'] },
+const CHILDHOOD_AND_NATURE: EduqasPoem[] = [
+  {
+    title: 'The Schoolboy',
+    poet: 'William Blake',
+    slug: null,
+    publicDomain: true,
+    themes: ['Childhood', 'Nature', 'Freedom'],
+  },
+  {
+    title: 'I Wandered Lonely as a Cloud',
+    poet: 'William Wordsworth',
+    slug: null,
+    publicDomain: true,
+    themes: ['Nature', 'Memory', 'Joy'],
+  },
+  {
+    title: 'Blackberry Picking',
+    poet: 'Seamus Heaney',
+    slug: null,
+    publicDomain: false,
+    themes: ['Childhood', 'Nature', 'Loss'],
+  },
 ]
 
-const WAR: EduqasPoem[] = [
-  { title: 'Dulce et Decorum Est', poet: 'Wilfred Owen', slug: 'dulce-et-decorum-est', publicDomain: true, themes: ['War', 'Suffering', 'Reality'] },
-  { title: 'The Soldier', poet: 'Rupert Brooke', slug: 'the-soldier', publicDomain: true, themes: ['War', 'Patriotism', 'Death'] },
-  { title: 'A Wife in London', poet: 'Thomas Hardy', slug: 'a-wife-in-london', publicDomain: true, themes: ['War', 'Loss', 'Irony'] },
-  { title: 'Mametz Wood', poet: 'Owen Sheers', slug: null, publicDomain: false, themes: ['War', 'History', 'Memory'] },
+const LOVE_AND_RELATIONSHIPS: EduqasPoem[] = [
+  {
+    title: 'Sonnet 29 ("I think of thee")',
+    poet: 'Elizabeth Barrett Browning',
+    slug: null,
+    publicDomain: true,
+    themes: ['Love', 'Longing', 'Devotion'],
+  },
+  {
+    title: 'Cousin Kate',
+    poet: 'Christina Rossetti',
+    slug: 'cousin-kate',
+    publicDomain: true,
+    themes: ['Love', 'Betrayal', 'Class'],
+  },
+  {
+    title: 'Catrin',
+    poet: 'Gillian Clarke',
+    slug: null,
+    publicDomain: false,
+    themes: ['Family', 'Love', 'Conflict'],
+  },
 ]
 
-const LOVE: EduqasPoem[] = [
-  { title: 'Sonnet 43', poet: 'Elizabeth Barrett Browning', slug: 'sonnet-43', publicDomain: true, themes: ['Love', 'Devotion', 'Faith'] },
-  { title: 'Cozy Apologia', poet: 'Rita Dove', slug: null, publicDomain: false, themes: ['Love', 'Domesticity', 'Modernity'] },
-  { title: 'Valentine', poet: 'Carol Ann Duffy', slug: null, publicDomain: false, themes: ['Love', 'Honesty', 'Modernity'] },
-  { title: 'Afternoons', poet: 'Philip Larkin', slug: null, publicDomain: false, themes: ['Love', 'Time', 'Disillusion'] },
+const WAR_AND_CONFLICT: EduqasPoem[] = [
+  {
+    title: 'Drummer Hodge',
+    poet: 'Thomas Hardy',
+    slug: 'drummer-hodge',
+    publicDomain: true,
+    themes: ['War', 'Death', 'Identity'],
+    flag: 'Setting: Second Boer War 1899 — NOT World War I.',
+  },
+  {
+    title: 'Disabled',
+    poet: 'Wilfred Owen',
+    slug: null,
+    publicDomain: true,
+    themes: ['War', 'Loss', 'Suffering'],
+  },
+  {
+    title: 'Kamikaze',
+    poet: 'Beatrice Garland',
+    slug: null,
+    publicDomain: false,
+    themes: ['War', 'Family', 'Honour'],
+  },
 ]
 
-const POWER: EduqasPoem[] = [
-  { title: 'Ozymandias', poet: 'Percy Bysshe Shelley', slug: 'ozymandias', publicDomain: true, themes: ['Power', 'Pride', 'Time'] },
-  { title: 'London', poet: 'William Blake', slug: 'london', publicDomain: true, themes: ['Power', 'Suffering', 'Oppression'] },
-]
-
-const IDENTITY: EduqasPoem[] = [
-  { title: 'Living Space', poet: 'Imtiaz Dharker', slug: null, publicDomain: false, themes: ['Identity', 'Place', 'Faith'] },
-  { title: 'Tissue', poet: 'Imtiaz Dharker', slug: null, publicDomain: false, themes: ['Identity', 'Power', 'Fragility'] },
-  { title: 'Excerpt from The Emigrée', poet: 'Carol Rumens', slug: null, publicDomain: false, themes: ['Identity', 'Memory', 'Place'] },
+const IDENTITY_AND_VOICE: EduqasPoem[] = [
+  {
+    title: 'I Shall Return',
+    poet: 'Claude McKay',
+    slug: null,
+    publicDomain: true,
+    themes: ['Identity', 'Place', 'Belonging'],
+  },
+  {
+    title: 'Decomposition',
+    poet: 'Zulfikar Ghose',
+    slug: null,
+    publicDomain: false,
+    themes: ['Identity', 'Poverty', 'Photography'],
+    flag: 'Source confidence: LOW — verify against Eduqas anthology edition before use.',
+  },
+  {
+    title: 'Origin Story',
+    poet: 'Eve L. Ewing',
+    slug: null,
+    publicDomain: false,
+    themes: ['Identity', 'Race', 'Memory'],
+    bio: 'Eve L. Ewing (b.1986) — American sociologist and poet; *Origin Story* from *Electric Arches* (Haymarket, 2017). Note: distinct from the common phrase "origin story".',
+  },
 ]
 
 const THEME_GROUPS = [
-  { id: 'nature', label: 'Nature', icon: Leaf, accent: 'text-emerald-400', bg: 'bg-emerald-500/10', poems: NATURE },
-  { id: 'war', label: 'War & Conflict', icon: Swords, accent: 'text-red-400', bg: 'bg-red-500/10', poems: WAR },
-  { id: 'love', label: 'Love & Relationships', icon: Heart, accent: 'text-pink-400', bg: 'bg-pink-500/10', poems: LOVE },
-  { id: 'power', label: 'Power & Politics', icon: Crown, accent: 'text-clay-600', bg: 'bg-amber-500/10', poems: POWER },
-  { id: 'identity', label: 'Identity & Place', icon: User, accent: 'text-violet-400', bg: 'bg-violet-500/10', poems: IDENTITY },
+  {
+    id: 'childhood-nature',
+    label: 'Childhood & Nature',
+    icon: Leaf,
+    accent: 'text-emerald-400',
+    bg: 'bg-emerald-500/10',
+    poems: CHILDHOOD_AND_NATURE,
+  },
+  {
+    id: 'love',
+    label: 'Love & Relationships',
+    icon: Heart,
+    accent: 'text-pink-400',
+    bg: 'bg-pink-500/10',
+    poems: LOVE_AND_RELATIONSHIPS,
+  },
+  {
+    id: 'war',
+    label: 'War & Conflict',
+    icon: Swords,
+    accent: 'text-red-400',
+    bg: 'bg-red-500/10',
+    poems: WAR_AND_CONFLICT,
+  },
+  {
+    id: 'identity',
+    label: 'Identity & Voice',
+    icon: User,
+    accent: 'text-violet-400',
+    bg: 'bg-violet-500/10',
+    poems: IDENTITY_AND_VOICE,
+  },
 ] as const
 
-/* ── Comparison pairings (Eduqas) ────────────────────────────────── */
+/* ── Comparison pairings (Eduqas 2025 anthology) ─────────────────── */
 
 const COMPARISON_PAIRINGS = [
   {
-    theme: 'Power of Nature',
-    poems: ['The Prelude: stealing the boat', 'To Autumn'],
-    tip: 'Compare how Wordsworth presents nature as sublime and threatening, while Keats depicts it as gentle and abundant.',
+    theme: 'Childhood & Nature',
+    poems: ['I Wandered Lonely as a Cloud', 'Blackberry Picking'],
+    tip: "Compare Wordsworth's joyful Romantic recollection of daffodils with Heaney's more bittersweet childhood memory of harvest and decay.",
+  },
+  {
+    theme: 'Constraint vs Freedom',
+    poems: ['The Schoolboy', 'I Wandered Lonely as a Cloud'],
+    tip: 'Blake critiques the cage of formal schooling; Wordsworth celebrates the freedom of wandering in nature. Both prize unforced encounter with the natural world.',
   },
   {
     theme: 'Reality of War',
-    poems: ['Dulce et Decorum Est', 'The Soldier'],
-    tip: 'Owen exposes the horror of war; Brooke romanticises death in battle. A perfect contrast in tone and message.',
+    poems: ['Disabled', 'Drummer Hodge'],
+    tip: "Owen's WWI veteran is alive but broken; Hardy's drummer boy of the Second Boer War (1899) lies anonymously in foreign earth. Compare physical and existential erasure.",
   },
   {
-    theme: 'Suffering at Home',
-    poems: ['A Wife in London', 'London'],
-    tip: 'Both poems use London as a setting for grief and oppression. Compare Hardy\'s personal tragedy with Blake\'s political critique.',
+    theme: 'Love, Longing and Devotion',
+    poems: ['Sonnet 29 ("I think of thee")', 'Cousin Kate'],
+    tip: "Barrett Browning's passionate longing for the absent beloved compared with Rossetti's bitter retrospective on a love built on class betrayal.",
   },
   {
-    theme: 'Love and Devotion',
-    poems: ['Sonnet 43', 'Cozy Apologia'],
-    tip: 'A Victorian declaration of love compared to a modern, ironic view of domestic affection.',
+    theme: 'Family and Conflict',
+    poems: ['Catrin', 'Kamikaze'],
+    tip: "Clarke's mother-daughter struggle for separateness compared with Garland's family rejection of a returning kamikaze pilot. Both examine the cost of love within families.",
   },
   {
-    theme: 'Power and Pride',
-    poems: ['Ozymandias', 'Hawk Roosting'],
-    tip: 'Both speakers (or subjects) believe themselves invincible. Compare Shelley\'s ironic critique with Hughes\'s direct voice of power.',
-  },
-  {
-    theme: 'Time and Change',
-    poems: ['As Imperceptibly as Grief', 'To Autumn'],
-    tip: 'Both poems explore the gradual passing of summer and the quiet acceptance of change.',
+    theme: 'Identity and Belonging',
+    poems: ['I Shall Return', 'Origin Story'],
+    tip: "McKay's Jamaican-American return to a beloved homeland compared with Ewing's reimagined origins for Black American identity.",
   },
 ]
 
 /* ── Page component ───────────────────────────────────────────────── */
 
 const totalPoems =
-  NATURE.length + WAR.length + LOVE.length + POWER.length + IDENTITY.length
+  CHILDHOOD_AND_NATURE.length +
+  LOVE_AND_RELATIONSHIPS.length +
+  WAR_AND_CONFLICT.length +
+  IDENTITY_AND_VOICE.length
 
 export default function EduqasPoetryPage() {
   return (
@@ -134,30 +234,50 @@ export default function EduqasPoetryPage() {
 
           <Badge variant="secondary" className="mb-4">
             <Sparkles className="mr-1 size-3" />
-            Eduqas Poetry Anthology
+            Eduqas GCSE 2025 Anthology
           </Badge>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             WJEC Eduqas Poetry
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Master all {totalPoems} poems from the WJEC Eduqas GCSE English
-            Literature anthology. Interactive study pages, key quotations,
-            technique analysis, and comparison practice.
+            Master all {totalPoems} poems from the WJEC Eduqas GCSE English Literature 2025
+            anthology. Interactive study pages, key quotations, technique analysis, and comparison
+            practice.
           </p>
 
           <div className="mt-5 flex items-start gap-2 rounded-lg bg-blue-500/5 border border-blue-500/10 p-3 max-w-2xl">
             <Info className="mt-0.5 size-4 shrink-0 text-blue-400" />
             <p className="text-caption text-muted-foreground">
-              Eduqas students study a <strong className="text-foreground">single anthology of {totalPoems} poems</strong> for
-              Component 1. The exam asks you to compare two poems from the
-              anthology, so practising pairings is essential.
+              Eduqas students study a{' '}
+              <strong className="text-foreground">single anthology of {totalPoems} poems</strong>{' '}
+              for Component 1. The exam asks you to compare two poems from the anthology, so
+              practising pairings is essential.
+            </p>
+          </div>
+
+          {/* Cluster-level rights notice */}
+          <div className="mt-3 flex items-start gap-2 rounded-lg bg-amber-500/5 border border-amber-500/10 p-3 max-w-2xl">
+            <Scale className="mt-0.5 size-4 shrink-0 text-clay-600" />
+            <p className="text-caption text-muted-foreground">
+              <strong className="text-foreground">Rights notice:</strong> Six of these twelve Eduqas
+              poems remain in copyright &mdash; Heaney&rsquo;s <em>Blackberry Picking</em> (&copy;
+              Faber &amp; Faber), Clarke&rsquo;s <em>Catrin</em> (&copy; Carcanet Press),
+              Garland&rsquo;s <em>Kamikaze</em> (&copy; Enitharmon Press), Ewing&rsquo;s{' '}
+              <em>Origin Story</em> (&copy; Haymarket Books) and others. Quotations on this site are
+              short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation).
+              For full text, students should consult the board-licensed Eduqas Poetry Anthology.
             </p>
           </div>
         </div>
       </section>
 
-      <StudyTools textName="Eduqas Poetry Anthology" textType="anthology" examBoard="Eduqas" variant="banner" />
+      <StudyTools
+        textName="Eduqas Poetry Anthology"
+        textType="anthology"
+        examBoard="Eduqas"
+        variant="banner"
+      />
 
       {/* ── Poems grouped by theme ────────────────────────────────── */}
       <section>
@@ -197,18 +317,16 @@ export default function EduqasPoetryPage() {
                             <p className="truncate text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                               {poem.title}
                             </p>
-                            <p className="truncate text-xs text-muted-foreground">
-                              {poem.poet}
-                            </p>
+                            <p className="truncate text-xs text-muted-foreground">{poem.poet}</p>
                           </div>
                           {poem.slug ? (
                             <ArrowRight className="size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
-                          ) : (
+                          ) : !poem.publicDomain ? (
                             <Lock
                               className="size-3.5 shrink-0 text-muted-foreground"
-                              aria-label="Copyrighted - notes only"
+                              aria-label="In copyright — study notes only"
                             />
-                          )}
+                          ) : null}
                         </div>
                         <div className="flex flex-wrap gap-1">
                           {poem.themes.map((t) => (
@@ -220,9 +338,27 @@ export default function EduqasPoetryPage() {
                             </span>
                           ))}
                         </div>
-                        {!poem.slug && (
+                        {poem.bio && (
+                          <p className="text-[11px] text-muted-foreground leading-snug">
+                            {poem.bio}
+                          </p>
+                        )}
+                        {poem.flag && (
+                          <div className="flex items-start gap-1.5 rounded bg-amber-500/10 border border-amber-500/20 px-2 py-1">
+                            <AlertTriangle className="mt-0.5 size-3 shrink-0 text-clay-600" />
+                            <p className="text-[11px] text-foreground/90 leading-snug">
+                              {poem.flag}
+                            </p>
+                          </div>
+                        )}
+                        {!poem.slug && !poem.publicDomain && (
                           <p className="text-[11px] text-muted-foreground italic">
-                            Copyrighted - study notes only
+                            In copyright — study notes only (short fair-dealing extracts)
+                          </p>
+                        )}
+                        {!poem.slug && poem.publicDomain && (
+                          <p className="text-[11px] text-muted-foreground italic">
+                            Public domain — study page coming soon
                           </p>
                         )}
                       </>
@@ -274,10 +410,9 @@ export default function EduqasPoetryPage() {
                     How the Eduqas comparison question works
                   </h3>
                   <p className="mt-1 text-body-sm text-muted-foreground">
-                    Component 1 Section B will give you one named poem and ask
-                    you to compare it with another poem from the anthology of
-                    your choice. Choose your second poem carefully - it must
-                    share a clear theme or contrast.
+                    Component 1 Section B will give you one named poem and ask you to compare it
+                    with another poem from the anthology of your choice. Choose your second poem
+                    carefully - it must share a clear theme or contrast.
                   </p>
                 </div>
                 <ul className="grid gap-2 sm:grid-cols-2 text-body-sm text-muted-foreground">
@@ -312,8 +447,8 @@ export default function EduqasPoetryPage() {
         </Card>
 
         <p className="mb-4 text-body-sm text-muted-foreground max-w-2xl">
-          Strong pairings to practise. Each pair shares a clear thematic link,
-          letting you draw both similarities and contrasts.
+          Strong pairings to practise. Each pair shares a clear thematic link, letting you draw both
+          similarities and contrasts.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -344,32 +479,23 @@ export default function EduqasPoetryPage() {
         <Card className="group relative flex flex-col overflow-hidden transition-all duration-200 hover:border-border hover:shadow-card-hover">
           <CardHeader className="pb-3">
             <div className="mb-2 flex items-center gap-3">
-              <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
-                <Sparkles className="size-5 text-primary" />
+              <div className="flex size-10 items-center justify-center rounded-xl bg-pink-500/10">
+                <Heart className="size-5 text-pink-400" />
               </div>
               <div>
-                <CardTitle className="text-heading-md font-heading">Start with a classic</CardTitle>
-                <CardDescription>Perfect first poem to study</CardDescription>
+                <CardTitle className="text-heading-md font-heading">
+                  Love &amp; betrayal pair
+                </CardTitle>
+                <CardDescription>A Victorian comparison anchor</CardDescription>
               </div>
             </div>
           </CardHeader>
           <CardContent className="flex flex-1 flex-col gap-4">
             <p className="text-body-sm text-muted-foreground">
-              Ozymandias is a brilliant entry point to the Eduqas anthology.
-              Short, powerful, and rich in techniques you can use as model
-              examples for any comparison question.
+              Sonnet 29 (Barrett Browning) and Cousin Kate (Rossetti) are both Victorian, both from
+              female speakers, and both about absent or lost lovers — a strong cluster pairing for
+              the comparison question.
             </p>
-            <div className="mt-auto pt-2">
-              <Button
-                variant="default"
-                size="sm"
-                className="w-full"
-                render={<Link href="/revision/poetry/eduqas/ozymandias" />}
-              >
-                Start with Ozymandias
-                <ArrowRight className="size-3.5" />
-              </Button>
-            </div>
           </CardContent>
         </Card>
 
@@ -380,34 +506,24 @@ export default function EduqasPoetryPage() {
                 <Swords className="size-5 text-red-400" />
               </div>
               <div>
-                <CardTitle className="text-heading-md font-heading">War poetry pair</CardTitle>
-                <CardDescription>The Eduqas exam favourite</CardDescription>
+                <CardTitle className="text-heading-md font-heading">
+                  War &amp; identity pair
+                </CardTitle>
+                <CardDescription>Two wars, two erasures</CardDescription>
               </div>
             </div>
           </CardHeader>
           <CardContent className="flex flex-1 flex-col gap-4">
             <p className="text-body-sm text-muted-foreground">
-              Dulce et Decorum Est and The Soldier are the most-asked-about
-              pairing in Eduqas papers. Owen and Brooke present completely
-              opposing views of war - perfect contrast material.
+              Hardy&apos;s <em>Drummer Hodge</em> (Second Boer War, 1899) and Owen&apos;s{' '}
+              <em>Disabled</em> (WWI) both interrogate what war takes from young men. Strong
+              contrast in form, voice, and the kind of loss each poet exposes.
             </p>
-            <div className="mt-auto pt-2 flex gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex-1"
-                render={<Link href="/revision/poetry/eduqas/dulce-et-decorum-est" />}
-              >
-                Dulce et Decorum Est
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex-1"
-                render={<Link href="/revision/poetry/eduqas/the-soldier" />}
-              >
-                The Soldier
-              </Button>
+            <div className="mt-auto pt-2 flex items-start gap-2 rounded-md bg-amber-500/5 border border-amber-500/10 p-2">
+              <ShieldAlert className="mt-0.5 size-3.5 shrink-0 text-clay-600" />
+              <p className="text-[11px] text-muted-foreground leading-snug">
+                Note: <em>Drummer Hodge</em> is a Boer War poem (1899), not WWI.
+              </p>
             </div>
           </CardContent>
         </Card>

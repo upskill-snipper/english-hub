@@ -1,31 +1,40 @@
 // @ts-nocheck
+//
+// FABRICATION WARNING (FC20 audit, 2026-04-28):
+// Several Shakespeare and Dickens "extracts" in this file are quote-collages or
+// paraphrases — NOT verbatim source text. The R&J Act 3 Sc 1 extract
+// (edexcel-lit-001 q1) reorders dialogue and adds invented connective material;
+// the Marley extract (edexcel-lit-003 q1) inserts the fabricated line "Every
+// man is bound up in some such chain. Every man must justify his existence—or
+// sink into oblivion" and other invented passages. Treat all extracts as
+// practice stimuli; verify against primary text before classroom citation.
 export interface MockExamPaper {
-  id: string;
-  title: string;
-  board: string;
-  subject: string;
-  tier?: string;
-  duration: number; // minutes
-  totalMarks: number;
-  sections: MockExamSection[];
+  id: string
+  title: string
+  board: string
+  subject: string
+  tier?: string
+  duration: number // minutes
+  totalMarks: number
+  sections: MockExamSection[]
 }
 
 export interface MockExamSection {
-  id: string;
-  title: string;
-  instructions: string;
-  questions: MockExamQuestion[];
+  id: string
+  title: string
+  instructions: string
+  questions: MockExamQuestion[]
 }
 
 export interface MockExamQuestion {
-  id: string;
-  questionNumber: number;
-  marks: number;
-  questionText: string;
-  extract?: string;
-  bulletPoints?: string[];
-  markScheme: string;
-  modelAnswer?: string;
+  id: string
+  questionNumber: number
+  marks: number
+  questionText: string
+  extract?: string
+  bulletPoints?: string[]
+  markScheme: string
+  modelAnswer?: string
 }
 
 export const edexcelLitMockExams: MockExamPaper[] = [
@@ -40,13 +49,15 @@ export const edexcelLitMockExams: MockExamPaper[] = [
       {
         id: 'section-1',
         title: 'Section A: Shakespeare',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question. You should refer closely to the extract provided and to other parts of the play.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question. You should refer closely to the extract provided and to other parts of the play.',
         questions: [
           {
             id: 'q1',
             questionNumber: 1,
             marks: 40,
-            questionText: 'Read the following extract from Act 3, Scene 1 of Romeo and Juliet, where Romeo kills Tybalt. Explore how Shakespeare presents violence and its consequences in this scene. In your answer, you should consider the dramatic impact of the language and action on the audience.',
+            questionText:
+              'Read the following extract from Act 3, Scene 1 of Romeo and Juliet, where Romeo kills Tybalt. Explore how Shakespeare presents violence and its consequences in this scene. In your answer, you should consider the dramatic impact of the language and action on the audience.',
             extract: `TYBALT: Thou, wretched boy, that didst consort him here,
 Shalt with him hence.
 
@@ -80,18 +91,19 @@ The language after the killing reveals the internal consequence of violence on R
 
 The entrance of Benvolio, with his urgency - "Romeo, away, be gone!" - and the reference to the Prince's law establish the external consequences. The repetition of "streets filled with these tragic broils" emphasises the dangerous environment created by the feud. By naming the Prince and his decree, Shakespeare reminds the audience that Romeo has not merely committed a murder in personal terms - he has directly violated the Prince's edict that "If ever you disturb our streets again, your lives shall pay the forfeit." This detail makes Romeo's fate legally sealed as well as personally tragic.
 
-The dramatic impact on the audience is profound because Shakespeare shows violence as the inevitable outcome of the feud's toxic atmosphere, yet also as the moment when love becomes disaster. Romeo's brief moment of peace - just hours as Juliet's husband - is shattered by the obligation to avenge Mercutio. This scene teaches the audience that in Verona, violence is not simply wrong; it is the mechanism by which the feud destroys love itself.`
+The dramatic impact on the audience is profound because Shakespeare shows violence as the inevitable outcome of the feud's toxic atmosphere, yet also as the moment when love becomes disaster. Romeo's brief moment of peace - just hours as Juliet's husband - is shattered by the obligation to avenge Mercutio. This scene teaches the audience that in Verona, violence is not simply wrong; it is the mechanism by which the feud destroys love itself.`,
           },
           {
             id: 'q2',
             questionNumber: 2,
             marks: 40,
-            questionText: 'Explore the relationship between Romeo and Juliet and how it is presented throughout the play. Consider how Shakespeare uses language, dramatic irony, and significant moments to show the development and impact of their love.',
+            questionText:
+              'Explore the relationship between Romeo and Juliet and how it is presented throughout the play. Consider how Shakespeare uses language, dramatic irony, and significant moments to show the development and impact of their love.',
             bulletPoints: [
               'You should consider the rapid development of their relationship',
               'The imagery and language Shakespeare uses to describe their love',
               'How other characters view their relationship',
-              'The tragic consequences of their love within the context of the feud'
+              'The tragic consequences of their love within the context of the feud',
             ],
             markScheme: `Band 5 (32-40 marks): Sustained, perceptive exploration of the relationship's presentation. Analyzes key scenes with sophisticated understanding of how Shakespeare develops the relationship through language and imagery. Strong grasp of dramatic irony (e.g., their love accelerating their deaths). Excellent integration of textual references. Shows awareness of thematic significance.
 
@@ -110,13 +122,14 @@ The balcony scene develops their love through imagery of light and stars. Romeo 
 
 The dramatic irony intensifies as Shakespeare shows their love accelerating events toward tragedy. The audience understands what Romeo and Juliet cannot: that their passionate love, born from the feud, can only end in death. Other characters sense this darkness. The Friar agrees to marry them hoping their union will end the feud, yet his action paradoxically ensures their destruction. When Romeo kills Tybalt hours after marrying Juliet, the structural inevitability becomes clear - the feud will not permit their love to flourish.
 
-Shakespeare's final presentation of their love occurs in the tomb scene, where Romeo and Juliet are reunited only in death. The poetry here reaches its height of intensity, yet it is poetry spoken over a corpse. Romeo's final words - "Thus with a kiss I die" - recalls their spiritual first meeting but now represents the ultimate tragic consequence of love born within hatred. Shakespeare presents their love as genuine, beautiful, and ultimately more powerful than the feud - but only in death.`
+Shakespeare's final presentation of their love occurs in the tomb scene, where Romeo and Juliet are reunited only in death. The poetry here reaches its height of intensity, yet it is poetry spoken over a corpse. Romeo's final words - "Thus with a kiss I die" - recalls their spiritual first meeting but now represents the ultimate tragic consequence of love born within hatred. Shakespeare presents their love as genuine, beautiful, and ultimately more powerful than the feud - but only in death.`,
           },
           {
             id: 'q3',
             questionNumber: 3,
             marks: 40,
-            questionText: 'Read the extract below from Act 2, Scene 2 (the balcony scene). How does Shakespeare use language to convey Romeo\'s passion and Juliet\'s complexity in this moment?',
+            questionText:
+              "Read the extract below from Act 2, Scene 2 (the balcony scene). How does Shakespeare use language to convey Romeo's passion and Juliet's complexity in this moment?",
             extract: `ROMEO: But soft, what light through yonder window breaks?
 It is the east, and Juliet is the sun.
 Arise, fair sun, and kill the envious moon,
@@ -148,25 +161,27 @@ Romeo's passion is conveyed through elaborate metaphorical language, particularl
 
 Juliet's response introduces a more grounded, intellectual perspective. Her famous question "What's in a name?" demonstrates philosophical sophistication. While Romeo speaks in extravagant celestial imagery, Juliet cuts through to the logical heart of the matter: names are arbitrary social constructs that should not determine human connection. The simile "that which we call a rose / By any other name would smell as sweet" is characteristically elegant and pragmatic. While romantic, it suggests Juliet is thinking clearly about the absurdity of their situation - their love is real and genuine regardless of the names Montague and Capulet.
 
-The dramatic irony embedded in Juliet's language heightens the scene's complexity. When she says "'Tis but thy name that is my enemy," she attempts to minimize the feud as merely nomenclature. Yet the audience understands that names carry weight - the names Montague and Capulet will ultimately prove to be far more than superficial labels. Juliet's intellectual confidence in this moment becomes tragic in retrospect.`
-          }
-        ]
+The dramatic irony embedded in Juliet's language heightens the scene's complexity. When she says "'Tis but thy name that is my enemy," she attempts to minimize the feud as merely nomenclature. Yet the audience understands that names carry weight - the names Montague and Capulet will ultimately prove to be far more than superficial labels. Juliet's intellectual confidence in this moment becomes tragic in retrospect.`,
+          },
+        ],
       },
       {
         id: 'section-2',
         title: 'Section B: Post-1914 Literature',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question.',
         questions: [
           {
             id: 'q4',
             questionNumber: 4,
             marks: 40,
-            questionText: 'Choose one text from the post-1914 literature anthology. Explain how the writer presents a significant theme or character. You should consider language, structure, and the writer\'s methods.',
+            questionText:
+              "Choose one text from the post-1914 literature anthology. Explain how the writer presents a significant theme or character. You should consider language, structure, and the writer's methods.",
             bulletPoints: [
               'Identify your chosen text clearly',
               'Explain the theme or character in detail',
-              'Analyze the writer\'s language and structure',
-              'Consider the effect on the reader'
+              "Analyze the writer's language and structure",
+              'Consider the effect on the reader',
             ],
             markScheme: `Band 5 (32-40 marks): Excellent understanding of text. Detailed analysis of language and structure. Sustained exploration of theme/character. Sophisticated understanding of writer's methods and their effects.
 
@@ -176,11 +191,11 @@ Band 3 (16-23 marks): Adequate understanding. Some analysis of techniques. Basic
 
 Band 2 (8-15 marks): Limited understanding. Basic identification of features.
 
-Band 1 (0-7 marks): Minimal response.`
-          }
-        ]
-      }
-    ]
+Band 1 (0-7 marks): Minimal response.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'edexcel-lit-002',
@@ -193,13 +208,15 @@ Band 1 (0-7 marks): Minimal response.`
       {
         id: 'section-1',
         title: 'Section A: Shakespeare',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question. You should refer closely to the extract provided and to other parts of the play.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question. You should refer closely to the extract provided and to other parts of the play.',
         questions: [
           {
             id: 'q1',
             questionNumber: 1,
             marks: 40,
-            questionText: 'Read the extract below from Act 5, Scene 5 of Macbeth, where Macbeth responds to news of his wife\'s death. Explore how Shakespeare presents Macbeth\'s psychological state at this moment and how his language reflects his spiritual and emotional collapse.',
+            questionText:
+              "Read the extract below from Act 5, Scene 5 of Macbeth, where Macbeth responds to news of his wife's death. Explore how Shakespeare presents Macbeth's psychological state at this moment and how his language reflects his spiritual and emotional collapse.",
             extract: `MACBETH: She should have died hereafter;
 There would have been a time for such a word.
 To-morrow, and to-morrow, and to-morrow,
@@ -229,18 +246,19 @@ The famous repetition "To-morrow, and to-morrow, and to-morrow" creates a hypnot
 
 The extended metaphor that follows constitutes Shakespeare's most profound nihilistic statement. Life is not glorious, not meaningful, but "a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more." The theatrical metaphor is particularly appropriate for a play; Macbeth recognizes life as mere performance, sound without substance. The final image - "a tale / Told by an idiot, full of sound and fury, / Signifying nothing" - represents complete meaninglessness. After murdering his way to the crown, Macbeth has achieved nothing. All his actions have been sound and fury, performed by an idiot (himself) who failed to understand the witches' equivocal prophecies.
 
-The image of the "brief candle" summarizes Macbeth's understanding: human life, which once burned with ambition and hope, is a mere flicker extinguished by darkness. Shakespeare uses this soliloquy to show how ambition and evil corrode the soul, leaving only nihilistic emptiness. Macbeth has lost not merely his wife, but his capacity for meaning itself.`
+The image of the "brief candle" summarizes Macbeth's understanding: human life, which once burned with ambition and hope, is a mere flicker extinguished by darkness. Shakespeare uses this soliloquy to show how ambition and evil corrode the soul, leaving only nihilistic emptiness. Macbeth has lost not merely his wife, but his capacity for meaning itself.`,
           },
           {
             id: 'q2',
             questionNumber: 2,
             marks: 40,
-            questionText: 'Explore how Shakespeare presents ambition as a destructive force in Macbeth. Consider the consequences of Macbeth\'s actions throughout the play and the methods Shakespeare uses to show ambition\'s corrupting influence.',
+            questionText:
+              "Explore how Shakespeare presents ambition as a destructive force in Macbeth. Consider the consequences of Macbeth's actions throughout the play and the methods Shakespeare uses to show ambition's corrupting influence.",
             bulletPoints: [
-              'How ambition drives Macbeth\'s initial decision to murder Duncan',
+              "How ambition drives Macbeth's initial decision to murder Duncan",
               'The psychological consequences of pursuing power through evil',
-              'How other characters are affected by Macbeth\'s ambition',
-              'The ultimate consequences of ambition by the play\'s end'
+              "How other characters are affected by Macbeth's ambition",
+              "The ultimate consequences of ambition by the play's end",
             ],
             markScheme: `Band 5 (32-40 marks): Sustained, perceptive exploration of ambition as destructive. Analyzes progression from initial ambition to complete moral collapse. Sophisticated understanding of psychological degradation. Excellent analysis of key scenes and language. Shows understanding of thematic development.
 
@@ -261,25 +279,27 @@ The psychological consequences unfold relentlessly. Once Macbeth has secured the
 
 Other characters suffer profoundly from Macbeth's ambition. Lady Macbeth, who encouraged his ambition, is ultimately destroyed by her conscience. Her sleepwalking scene shows complete psychological collapse - "Out, damned spot!" she cries, unable to wash the imagined blood from her hands. Her suicide (reported offstage) is directly caused by her complicity in Macbeth's ambitious murders. Macduff loses his entire family because Macbeth's paranoid ambition extends to murdering innocent women and children. The witches' prophecy that "none of woman born shall harm Macbeth" proves ironically true only because Macduff was born through Caesarean section, but it is Macbeth's ambition to prevent this harm that drives him to massacre Macduff's family, ensuring his own defeat.
 
-By the final acts, ambition has transformed Macbeth into a hollow tyrant. He speaks of life as meaningless precisely because ambition has stripped his life of all meaning except power. The tragic culmination shows that ambition has not brought him satisfaction but has instead led to his downfall - he dies not as a great king but as a despised tyrant, killed by the very man whose family his ambition drove him to murder. Shakespeare's ultimate statement about ambition is that it promises everything but delivers only destruction, and that the most ambitious may ultimately achieve everything except the contentment or legacy they sought.`
-          }
-        ]
+By the final acts, ambition has transformed Macbeth into a hollow tyrant. He speaks of life as meaningless precisely because ambition has stripped his life of all meaning except power. The tragic culmination shows that ambition has not brought him satisfaction but has instead led to his downfall - he dies not as a great king but as a despised tyrant, killed by the very man whose family his ambition drove him to murder. Shakespeare's ultimate statement about ambition is that it promises everything but delivers only destruction, and that the most ambitious may ultimately achieve everything except the contentment or legacy they sought.`,
+          },
+        ],
       },
       {
         id: 'section-2',
         title: 'Section B: Post-1914 Literature',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question.',
         questions: [
           {
             id: 'q4',
             questionNumber: 4,
             marks: 40,
-            questionText: 'Choose one text from the post-1914 literature anthology. Explain how the writer uses a particular technique or device to develop meaning. You should consider the effect on the reader and the significance of this technique to the text as a whole.',
+            questionText:
+              'Choose one text from the post-1914 literature anthology. Explain how the writer uses a particular technique or device to develop meaning. You should consider the effect on the reader and the significance of this technique to the text as a whole.',
             bulletPoints: [
               'Clearly identify your chosen text',
               'Name the specific technique or literary device',
               'Analyze how it develops meaning',
-              'Consider its significance to the overall narrative or theme'
+              'Consider its significance to the overall narrative or theme',
             ],
             markScheme: `Band 5 (32-40 marks): Excellent analysis of technique and its effects. Sophisticated understanding of how technique develops meaning. Sustained focus on significance. Excellent integration of textual evidence.
 
@@ -289,11 +309,11 @@ Band 3 (16-23 marks): Adequate analysis. Some understanding of technique and eff
 
 Band 2 (8-15 marks): Limited analysis. Basic understanding.
 
-Band 1 (0-7 marks): Minimal response.`
-          }
-        ]
-      }
-    ]
+Band 1 (0-7 marks): Minimal response.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'edexcel-lit-003',
@@ -306,13 +326,15 @@ Band 1 (0-7 marks): Minimal response.`
       {
         id: 'section-1',
         title: 'Section A: 19th Century Novel',
-        instructions: 'Answer one question from this section. You should spend approximately 60 minutes on this question. You should refer closely to the extract provided and to other parts of the novel.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 60 minutes on this question. You should refer closely to the extract provided and to other parts of the novel.',
         questions: [
           {
             id: 'q1',
             questionNumber: 1,
             marks: 48,
-            questionText: 'Read the extract below from Stave 1 of A Christmas Carol, where the Ghost of Marley appears to Scrooge. Explore how Dickens uses language, imagery, and the supernatural to establish Marley\'s role as a warning and messenger. Consider how this moment begins Scrooge\'s transformation.',
+            questionText:
+              "Read the extract below from Stave 1 of A Christmas Carol, where the Ghost of Marley appears to Scrooge. Explore how Dickens uses language, imagery, and the supernatural to establish Marley's role as a warning and messenger. Consider how this moment begins Scrooge's transformation.",
             extract: `MARLEY: I am here to-night to warn you, that you have yet a chance and hope of escaping my fate. You will be haunted by Three Spirits. Without their visits, you cannot hope to shun the path I tread. Expect the first to-morrow, when the bell tolls One.
 
 SCROOGE: Couldn't I take them all at once, and have it over, Jacob?
@@ -345,18 +367,19 @@ The physical description of the chains - their terrible weight and length - make
 
 The philosophical pronouncement - "Every man is bound up in some such chain... Every man must justify his existence—or sink into oblivion" - universalizes the warning. Dickens is not suggesting Marley's fate applies only to him; every human is forging chains through their choices. This elevates the scene beyond personal narrative into social commentary: Dickens is warning all readers, particularly wealthy readers like Scrooge, that their choices have eternal consequences. To "sink into oblivion" is perhaps worse than damnation - it is complete meaninglessness, the erasure of any positive legacy.
 
-The supernatural framework is essential to Dickens's purpose. A living man confronting Scrooge could be ignored or dismissed; a ghost, particularly one Scrooge knew and respects, forces acknowledgment. The supernatural operates as the language of revelation - it breaks through Scrooge's rational defenses to reach his conscience. The appearance of Marley initiates Scrooge's transformation not through argument but through terror and recognition. Scrooge sees what he might become: a man whose life was meaningful only in acquisition, whose chains will bind him eternally because he failed to "justify his existence" through compassion and human connection.`
+The supernatural framework is essential to Dickens's purpose. A living man confronting Scrooge could be ignored or dismissed; a ghost, particularly one Scrooge knew and respects, forces acknowledgment. The supernatural operates as the language of revelation - it breaks through Scrooge's rational defenses to reach his conscience. The appearance of Marley initiates Scrooge's transformation not through argument but through terror and recognition. Scrooge sees what he might become: a man whose life was meaningful only in acquisition, whose chains will bind him eternally because he failed to "justify his existence" through compassion and human connection.`,
           },
           {
             id: 'q2',
             questionNumber: 2,
             marks: 48,
-            questionText: 'Explore how Dickens presents the theme of social responsibility in A Christmas Carol. Consider how different characters embody different responses to this theme and how Dickens uses their portrayal to comment on Victorian society.',
+            questionText:
+              'Explore how Dickens presents the theme of social responsibility in A Christmas Carol. Consider how different characters embody different responses to this theme and how Dickens uses their portrayal to comment on Victorian society.',
             bulletPoints: [
               'How Scrooge initially represents a rejection of social responsibility',
               'The contrast with characters like the Cratchits and Fred',
-              'Dickens\'s use of the Spirits and their lessons to communicate social values',
-              'The significance of Scrooge\'s transformation in the context of social responsibility'
+              "Dickens's use of the Spirits and their lessons to communicate social values",
+              "The significance of Scrooge's transformation in the context of social responsibility",
             ],
             markScheme: `Band 5 (40-48 marks): Excellent, sustained exploration of social responsibility as theme. Sophisticated analysis of character contrasts and their symbolic significance. Perceptive understanding of how Dickens uses supernatural framework to teach social values. Excellent integration of textual references. Strong contextual awareness of Victorian social issues.
 
@@ -377,27 +400,29 @@ The Cratchit family represents the virtuous poor. Despite their poverty, they ma
 
 Dickens uses the three spirits to teach progressive lessons about social responsibility. The Ghost of Christmas Past shows Scrooge his own losses - how his choice of money over Bella, his beloved, reveals the corrupting influence of greed. The Ghost of Christmas Present shows him the actual lives of the poor with journalistic specificity - the Cratchits' small joy, Tiny Tim's approaching death, Scrooge's nephew Fred's genuine happiness despite less wealth. This spirit insists Scrooge see human reality, not economic abstraction. The Ghost of Christmas Yet to Come presents the consequences of continued indifference: Tiny Tim dies, Scrooge's own death is barely noted, and his possessions are picked over by grave robbers and poor people. This final spirit dramatizes the ultimate isolation of the selfish.
 
-Scrooge's transformation is presented as regeneration through recognition of social responsibility. His famous conclusion - "I will honour Christmas in my heart, and keep it all the year" - translates into specific actions: he raises Cratchit's wage, he helps the poor, he becomes "as good a friend, as good a master, and as good a man, as the good old city knew." These concrete commitments show that Dickens does not present social responsibility as sentiment but as practice. The novel concludes: "And so, as Tiny Tim observed, God bless Us, Every One!" This benediction suggests that salvation - spiritual, moral, and social - comes through mutual responsibility and compassion.
+Scrooge's transformation is presented as regeneration through recognition of social responsibility. His famous conclusion - "I will honour Christmas in my heart, and try to keep it all the year" - translates into specific actions: he raises Cratchit's wage, he helps the poor, he becomes "as good a friend, as good a master, and as good a man, as the good old city knew." These concrete commitments show that Dickens does not present social responsibility as sentiment but as practice. The novel concludes: "And so, as Tiny Tim observed, God bless Us, Every One!" This benediction suggests that salvation - spiritual, moral, and social - comes through mutual responsibility and compassion.
 
-In the context of Victorian society, Dickens's novel is a direct challenge to laissez-faire capitalism and the doctrine that poverty is deserved. By showing that the poor (Cratchits) maintain virtue and dignity while the wealthy (Scrooge) become spiritually deformed through selfishness, Dickens inverts the moral hierarchy of his society. He suggests that wealth without compassion is not success but failure of the highest order. The novel's enduring power lies in its argument that individuals can transform society through choices to exercise social responsibility, and that such transformation is both spiritually necessary and morally imperative.`
-          }
-        ]
+In the context of Victorian society, Dickens's novel is a direct challenge to laissez-faire capitalism and the doctrine that poverty is deserved. By showing that the poor (Cratchits) maintain virtue and dignity while the wealthy (Scrooge) become spiritually deformed through selfishness, Dickens inverts the moral hierarchy of his society. He suggests that wealth without compassion is not success but failure of the highest order. The novel's enduring power lies in its argument that individuals can transform society through choices to exercise social responsibility, and that such transformation is both spiritually necessary and morally imperative.`,
+          },
+        ],
       },
       {
         id: 'section-2',
         title: 'Section B: Poetry',
-        instructions: 'Answer one question from this section. You should spend approximately 75 minutes on this question. You may choose to write about one poem in detail or compare two poems. You should consider form, language, and the poet\'s methods.',
+        instructions:
+          "Answer one question from this section. You should spend approximately 75 minutes on this question. You may choose to write about one poem in detail or compare two poems. You should consider form, language, and the poet's methods.",
         questions: [
           {
             id: 'q3',
             questionNumber: 3,
             marks: 48,
-            questionText: 'Choose one poem from the anthology. Explore how the poet uses language and form to create meaning. Consider the effects of specific poetic devices such as imagery, rhythm, and word choice.',
+            questionText:
+              'Choose one poem from the anthology. Explore how the poet uses language and form to create meaning. Consider the effects of specific poetic devices such as imagery, rhythm, and word choice.',
             bulletPoints: [
-              'Identify your chosen poem clearly, with poet\'s name',
+              "Identify your chosen poem clearly, with poet's name",
               'Discuss the form of the poem (rhyme scheme, meter, structure)',
               'Analyze specific language choices and imagery',
-              'Consider the cumulative effect of the poet\'s techniques'
+              "Consider the cumulative effect of the poet's techniques",
             ],
             markScheme: `Band 5 (40-48 marks): Excellent understanding of poem and its techniques. Sophisticated analysis of form and language. Detailed discussion of imagery and word choice. Excellent understanding of cumulative effects. Insightful interpretation.
 
@@ -407,18 +432,19 @@ Band 3 (24-31 marks): Adequate understanding. Some analysis of techniques. Basic
 
 Band 2 (16-23 marks): Limited understanding. Basic identification of features.
 
-Band 1 (0-15 marks): Minimal response.`
+Band 1 (0-15 marks): Minimal response.`,
           },
           {
             id: 'q4',
             questionNumber: 4,
             marks: 48,
-            questionText: 'Compare two poems from the anthology. Explore how both poets present a similar theme or emotion. Consider their language, form, and methods, and evaluate which poem you find more effective in conveying its meaning.',
+            questionText:
+              'Compare two poems from the anthology. Explore how both poets present a similar theme or emotion. Consider their language, form, and methods, and evaluate which poem you find more effective in conveying its meaning.',
             bulletPoints: [
               'Clearly identify both poems and poets',
               'Establish the shared theme or emotion',
-              'Analyze both poems\' approaches to this theme',
-              'Make a judgment about effectiveness'
+              "Analyze both poems' approaches to this theme",
+              'Make a judgment about effectiveness',
             ],
             markScheme: `Band 5 (40-48 marks): Excellent comparative analysis. Sophisticated understanding of both poems. Detailed analysis of language and form in each. Perceptive evaluation of effectiveness. Sustained focus on comparison.
 
@@ -428,11 +454,11 @@ Band 3 (24-31 marks): Adequate comparison. Identifies similarities and differenc
 
 Band 2 (16-23 marks): Limited comparison. Basic points about both poems.
 
-Band 1 (0-15 marks): Minimal response.`
-          }
-        ]
-      }
-    ]
+Band 1 (0-15 marks): Minimal response.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'edexcel-lit-004',
@@ -445,13 +471,15 @@ Band 1 (0-15 marks): Minimal response.`
       {
         id: 'section-1',
         title: 'Section A: 19th Century Novel',
-        instructions: 'Answer one question from this section. You should spend approximately 60 minutes on this question. You should refer closely to the extract provided and to other parts of the novel.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 60 minutes on this question. You should refer closely to the extract provided and to other parts of the novel.',
         questions: [
           {
             id: 'q1',
             questionNumber: 1,
             marks: 48,
-            questionText: 'Read the extract below from "Dr Jekyll and Mr Hyde" which depicts Jekyll\'s transformation. Explore how Stevenson uses language, sensory imagery, and scientific language to convey both the horror and allure of the transformation.',
+            questionText:
+              'Read the extract below from "Dr Jekyll and Mr Hyde" which depicts Jekyll\'s transformation. Explore how Stevenson uses language, sensory imagery, and scientific language to convey both the horror and allure of the transformation.',
             extract: `I felt younger, lighter, happier in body; within I was conscious of a heady recklessness, a current of disordered sensual images running like a millrace through the chambers of my brain; yet the hand of Henry Jekyll... as I lay in bed that morning after the experiment, I was amazed at the violence of imitation. But I had accepted my fate as a chemist accepts the inevitable effect upon the composition of matter. I made my preparations. I purchased at utter risk of my life and fame a great quantity of a particular salt which I knew, by my experiment, to be the last ingredient required; and which I could now recognise by the smell. I was already committed.`,
             markScheme: `Band 5 (40-48 marks): Perceptive analysis of how Stevenson presents the transformation. Sophisticated analysis of language: sensory imagery (heady, current, millrace), juxtaposition of physical and moral change, scientific vocabulary. Excellent understanding of dual perspective - both allure and horror. Shows how this moment reveals Jekyll's psychological state and foreshadows tragedy.
 
@@ -472,18 +500,19 @@ Stevenson's use of third-person reference - "the hand of Henry Jekyll" - creates
 
 The scientific language is crucial to understanding Stevenson's argument about the nature of transformation. Jekyll speaks of "the violence of imitation" and presents himself as "a chemist" who accepts "the inevitable effect upon the composition of matter." This language normalizes and rationalizes what is actually a violation of natural law. The transformation is presented as chemically inevitable, following scientific laws as surely as matter follows physical principles. Yet Stevenson's irony is profound: Jekyll uses scientific rationalism to justify something that is fundamentally irrational and transgressive. The "inevitability" of the chemical reaction mirrors the psychological inevitability of the transformation - once begun, it cannot be stopped.
 
-The final sentence reveals Jekyll's willing complicity in his doom: "I was already committed." The word "committed" operates on multiple levels - committed to the experiment, committed to the path, and potentially committed (as to an asylum) to a fate he cannot escape. The grammatical structure of this short, definitive statement conveys the weight of commitment; there is no way back. Stevenson suggests that Jekyll has made a Faustian bargain, trading control for freedom, rationality for sensation, and ultimately his identity for the satisfaction of his darker impulses.`
+The final sentence reveals Jekyll's willing complicity in his doom: "I was already committed." The word "committed" operates on multiple levels - committed to the experiment, committed to the path, and potentially committed (as to an asylum) to a fate he cannot escape. The grammatical structure of this short, definitive statement conveys the weight of commitment; there is no way back. Stevenson suggests that Jekyll has made a Faustian bargain, trading control for freedom, rationality for sensation, and ultimately his identity for the satisfaction of his darker impulses.`,
           },
           {
             id: 'q2',
             questionNumber: 2,
             marks: 48,
-            questionText: 'Explore how Stevenson presents the theme of duality - the conflict between respectability and forbidden desire - in "Dr Jekyll and Mr Hyde". Consider how different characters perceive Jekyll and Hyde, and how Stevenson uses this to comment on Victorian society.',
+            questionText:
+              'Explore how Stevenson presents the theme of duality - the conflict between respectability and forbidden desire - in "Dr Jekyll and Mr Hyde". Consider how different characters perceive Jekyll and Hyde, and how Stevenson uses this to comment on Victorian society.',
             bulletPoints: [
-              'How Jekyll\'s respectable persona conflicts with his hidden desires',
+              "How Jekyll's respectable persona conflicts with his hidden desires",
               'How others perceive Jekyll and Hyde differently',
-              'What Stevenson\'s portrayal suggests about Victorian hypocrisy',
-              'The ultimate consequences of attempting to separate good from evil'
+              "What Stevenson's portrayal suggests about Victorian hypocrisy",
+              'The ultimate consequences of attempting to separate good from evil',
             ],
             markScheme: `Band 5 (40-48 marks): Excellent exploration of duality theme. Sophisticated understanding of how Stevenson presents respectability versus desire. Excellent analysis of how different characters perceive Jekyll/Hyde. Perceptive commentary on Victorian hypocrisy and social values. Strong textual support.
 
@@ -506,25 +535,27 @@ Stevenson's commentary on Victorian society is damning. The novel suggests that 
 
 The transformation of Jekyll into Hyde and the eventual dominance of Hyde represents the psychological cost of this sustained hypocrisy. Jekyll's initial ability to control the transformations gradually diminishes; Hyde becomes increasingly dominant. Stevenson suggests that repression cannot be maintained indefinitely - the repressed will return, and with violent force. Jekyll's final confession reveals the tragedy of the duality: he has treated his own shadow self with such revulsion that he cannot integrate it, reabsorb it, or coexist with it. Instead, he chooses death.
 
-The ultimate message is that Stevenson rejects the Victorian attempt to perfect social respectability through the denial of human nature. True integration, psychological wholeness, and moral development require acknowledging and integrating all aspects of oneself, not attempting to split them into separate personas. The novel is both a psychological tragedy and a social critique - a warning that societies built on systematic hypocrisy, where people are forced to hide essential aspects of themselves, create conditions for psychological fragmentation and moral catastrophe.`
-          }
-        ]
+The ultimate message is that Stevenson rejects the Victorian attempt to perfect social respectability through the denial of human nature. True integration, psychological wholeness, and moral development require acknowledging and integrating all aspects of oneself, not attempting to split them into separate personas. The novel is both a psychological tragedy and a social critique - a warning that societies built on systematic hypocrisy, where people are forced to hide essential aspects of themselves, create conditions for psychological fragmentation and moral catastrophe.`,
+          },
+        ],
       },
       {
         id: 'section-2',
         title: 'Section B: Poetry',
-        instructions: 'Answer one question from this section. You should spend approximately 75 minutes on this question.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 75 minutes on this question.',
         questions: [
           {
             id: 'q3',
             questionNumber: 3,
             marks: 48,
-            questionText: 'Choose one poem from the anthology. Analyze how the poet uses form and language to explore a significant theme or emotion. Consider the effect on the reader of the poet\'s specific choices.',
+            questionText:
+              "Choose one poem from the anthology. Analyze how the poet uses form and language to explore a significant theme or emotion. Consider the effect on the reader of the poet's specific choices.",
             bulletPoints: [
               'Clearly identify poem and poet',
               'Discuss the form (meter, rhyme, stanza structure)',
               'Analyze language, imagery, and word choice',
-              'Evaluate the overall effect on the reader'
+              'Evaluate the overall effect on the reader',
             ],
             markScheme: `Band 5 (40-48 marks): Excellent analysis of form and language. Sophisticated understanding of how technical choices create meaning. Detailed analysis of imagery and word choice. Insightful understanding of reader effect.
 
@@ -534,11 +565,11 @@ Band 3 (24-31 marks): Adequate analysis. Some discussion of form and language.
 
 Band 2 (16-23 marks): Limited analysis. Basic identification of features.
 
-Band 1 (0-15 marks): Minimal response.`
-          }
-        ]
-      }
-    ]
+Band 1 (0-15 marks): Minimal response.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'edexcel-lit-005',
@@ -551,18 +582,20 @@ Band 1 (0-15 marks): Minimal response.`
       {
         id: 'section-1',
         title: 'Section A: Shakespeare',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question.',
         questions: [
           {
             id: 'q1',
             questionNumber: 1,
             marks: 40,
-            questionText: 'Answer on one of the set Shakespeare texts. You should refer closely to the extract provided and to other parts of the play.',
+            questionText:
+              'Answer on one of the set Shakespeare texts. You should refer closely to the extract provided and to other parts of the play.',
             bulletPoints: [
               'Write about your chosen Shakespeare text',
               'Analyze language and dramatic techniques',
               'Consider characterization and relationships',
-              'Discuss the play\'s themes and ideas'
+              "Discuss the play's themes and ideas",
             ],
             markScheme: `Band 5 (32-40 marks): Excellent understanding and analysis. Sophisticated discussion of language, characterization, and thematic significance. Excellent integration of textual references.
 
@@ -572,20 +605,22 @@ Band 3 (16-23 marks): Adequate understanding. Some analysis of key features.
 
 Band 2 (8-15 marks): Limited understanding. Basic analysis.
 
-Band 1 (0-7 marks): Minimal response.`
-          }
-        ]
+Band 1 (0-7 marks): Minimal response.`,
+          },
+        ],
       },
       {
         id: 'section-2',
         title: 'Section B: Post-1914 Literature',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question. You should refer closely to the extract provided and to other parts of the play.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question. You should refer closely to the extract provided and to other parts of the play.',
         questions: [
           {
             id: 'q2',
             questionNumber: 2,
             marks: 40,
-            questionText: 'Read the extract below from An Inspector Calls where Inspector Goole questions Sheila about her role in Eva Smith\'s dismissal. Explore how Priestley uses language, dramatic tension, and Sheila\'s response to reveal character and develop the play\'s themes about social responsibility.',
+            questionText:
+              "Read the extract below from An Inspector Calls where Inspector Goole questions Sheila about her role in Eva Smith's dismissal. Explore how Priestley uses language, dramatic tension, and Sheila's response to reveal character and develop the play's themes about social responsibility.",
             extract: `INSPECTOR: Miss Sheila, did you know this girl—Eva Smith?
 
 SHEILA: No—that is—not to know very well.
@@ -628,18 +663,19 @@ Priestley's dramatic technique in this scene is subtle but powerful. Rather than
 
 The scene develops Priestley's central theme about social responsibility through Sheila's emotional journey. Initially, she cannot conceive of herself as responsible for Eva's dismissal - in her view, Eva deserved to be sacked for "impertinence." The Inspector's questioning forces her to recognize that Eva was a human being dependent on her job, and that Sheila's actions had serious consequences for someone of lower social status. This marks the beginning of Sheila's moral education. Unlike her father, who refuses to accept responsibility, or her mother, who remains obtuse, Sheila begins to understand the interconnectedness of social classes and the moral implications of her privilege.
 
-Priestley suggests through this scene that responsibility is not primarily a matter of intention but of action and consequence. Sheila did not set out to ruin Eva deliberately, but her casual cruelty had devastating effects. The play uses her growing discomfort as a moral compass - she is beginning to feel shame, and that shame is the catalyst for genuine change. By the play's end, Sheila will be the only family member prepared to accept full responsibility and consider how she might live differently.`
+Priestley suggests through this scene that responsibility is not primarily a matter of intention but of action and consequence. Sheila did not set out to ruin Eva deliberately, but her casual cruelty had devastating effects. The play uses her growing discomfort as a moral compass - she is beginning to feel shame, and that shame is the catalyst for genuine change. By the play's end, Sheila will be the only family member prepared to accept full responsibility and consider how she might live differently.`,
           },
           {
             id: 'q3',
             questionNumber: 3,
             marks: 40,
-            questionText: 'Explore how Priestley presents the Inspector\'s role in An Inspector Calls. Consider how he functions as a moral voice and the effect he has on different family members. What does this suggest about Priestley\'s own views on social responsibility?',
+            questionText:
+              "Explore how Priestley presents the Inspector's role in An Inspector Calls. Consider how he functions as a moral voice and the effect he has on different family members. What does this suggest about Priestley's own views on social responsibility?",
             bulletPoints: [
-              'The Inspector\'s methods and manner',
+              "The Inspector's methods and manner",
               'His effect on each family member',
               'The mystery surrounding his identity',
-              'What his role suggests about Priestley\'s social philosophy'
+              "What his role suggests about Priestley's social philosophy",
             ],
             markScheme: `Band 5 (32-40 marks): Excellent analysis of the Inspector as moral voice and dramatic device. Sophisticated understanding of his psychological manipulation and its effects on different characters. Excellent analysis of how his ambiguous identity functions. Perceptive discussion of Priestley's social philosophy and critique of capitalism.
 
@@ -649,11 +685,11 @@ Band 3 (16-23 marks): Adequate analysis. Identifies the Inspector's methods and 
 
 Band 2 (8-15 marks): Limited analysis. Basic points about the Inspector.
 
-Band 1 (0-7 marks): Minimal response.`
-          }
-        ]
-      }
-    ]
+Band 1 (0-7 marks): Minimal response.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'edexcel-lit-006',
@@ -666,13 +702,15 @@ Band 1 (0-7 marks): Minimal response.`
       {
         id: 'section-1',
         title: 'Section A: 19th Century Novel',
-        instructions: 'Answer one question from this section. You should spend approximately 60 minutes on this question. You should refer closely to the extract provided and to other parts of the novel.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 60 minutes on this question. You should refer closely to the extract provided and to other parts of the novel.',
         questions: [
           {
             id: 'q1',
             questionNumber: 1,
             marks: 48,
-            questionText: 'Read the extract below from Great Expectations where Pip encounters the convict Magwitch in the marshes. Explore how Dickens uses setting, language, and atmosphere to create a powerful first impression and to foreshadow Magwitch\'s later significance to Pip\'s story.',
+            questionText:
+              "Read the extract below from Great Expectations where Pip encounters the convict Magwitch in the marshes. Explore how Dickens uses setting, language, and atmosphere to create a powerful first impression and to foreshadow Magwitch's later significance to Pip's story.",
             extract: `A fearful man, all in coarse grey, with a great iron on his leg. A man with no hat, and with broken shoes, and with an old rag tied round his head. A man who had been soaked in water, and smothered in mud, and lamed by stones, and cut by flints, and stung by nettles, and torn by briars; who limped, and shivered, and glared and growled; and whose teeth chattered in his head as he took me by both arms.
 
 "O! Don't cut my throat, sir," I pleaded in terror. "Pray don't do it!"
@@ -707,18 +745,19 @@ Magwitch's urgent demand - "Quick!" repeated multiple times - conveys desperatio
 
 The dramatic irony is profound. Young Pip, terrified by Magwitch's appearance, judges him as dangerous and criminal. The novel's entire trajectory becomes a revelation of how wrong this first judgment is. Magwitch, though technically guilty of crime, is revealed to be more morally sensitive and generous than many of the respectable characters Pip encounters. His transformation from frightening convict to beloved benefactor becomes possible precisely because of the novel's insistence that we look beyond appearance and social status to the human reality beneath.
 
-Dickens uses this scene to establish the novel's central concern: that Victorian society's rigid class distinctions and judgment based on appearance do profound damage, both to individuals like Magwitch and to the moral development of characters like Pip. The mist that shrouds both the marshes and Magwitch represents the obscurity imposed by poverty and criminality - it literally obscures clear moral vision. Only by moving beyond first impressions can the truth about Magwitch, and more broadly about human nature, be perceived.`
+Dickens uses this scene to establish the novel's central concern: that Victorian society's rigid class distinctions and judgment based on appearance do profound damage, both to individuals like Magwitch and to the moral development of characters like Pip. The mist that shrouds both the marshes and Magwitch represents the obscurity imposed by poverty and criminality - it literally obscures clear moral vision. Only by moving beyond first impressions can the truth about Magwitch, and more broadly about human nature, be perceived.`,
           },
           {
             id: 'q2',
             questionNumber: 2,
             marks: 48,
-            questionText: 'Explore how Dickens presents the theme of social class and social aspiration in Great Expectations. Consider how Pip\'s desire to become a gentleman reflects the novel\'s critique of Victorian values and class consciousness. How does Dickens use other characters to develop this theme?',
+            questionText:
+              "Explore how Dickens presents the theme of social class and social aspiration in Great Expectations. Consider how Pip's desire to become a gentleman reflects the novel's critique of Victorian values and class consciousness. How does Dickens use other characters to develop this theme?",
             bulletPoints: [
-              'Pip\'s initial shame about his origins and working-class status',
+              "Pip's initial shame about his origins and working-class status",
               'The sources of Pip\'s "great expectations" and what this reveals about class',
               'How characters like Magwitch, Estella, and Miss Havisham embody different relationships to class',
-              'Dickens\'s final statement about the value of self-improvement versus inherited status'
+              "Dickens's final statement about the value of self-improvement versus inherited status",
             ],
             markScheme: `Band 5 (40-48 marks): Excellent, sustained exploration of class as central theme. Sophisticated analysis of Pip's psychology and moral development. Excellent analysis of how supporting characters illuminate the theme. Strong understanding of Dickens's critique of social hierarchy. Excellent contextual awareness of Victorian class obsession.
 
@@ -745,25 +784,27 @@ Joe Gargery represents the novel's alternative value system. Honest, loyal, humb
 
 Dickens's final statement about class comes through Pip's realization that his "great expectations" were misguided. The novel does not dismiss the possibility of improvement or aspiration, but it distinguishes between self-improvement through honest education and moral development versus advancement through class climbing and the rejection of one's origins. Pip's greatest achievement is not becoming a gentleman but becoming genuinely good - learning to see beyond social appearances to human worth.
 
-The novel is ultimately both a critique of rigid Victorian class hierarchy and a subtle warning about the dangers of aspiration based on shame. Dickens argues for a society in which birth and status matter less than character, and in which people are valued for their moral qualities rather than their gentility. Magwitch's transformation through love for Pip, and Pip's transformation through suffering and moral awakening, suggest that society's redemption lies in transcending the class system that produces such damaged and limiting identities.`
-          }
-        ]
+The novel is ultimately both a critique of rigid Victorian class hierarchy and a subtle warning about the dangers of aspiration based on shame. Dickens argues for a society in which birth and status matter less than character, and in which people are valued for their moral qualities rather than their gentility. Magwitch's transformation through love for Pip, and Pip's transformation through suffering and moral awakening, suggest that society's redemption lies in transcending the class system that produces such damaged and limiting identities.`,
+          },
+        ],
       },
       {
         id: 'section-2',
         title: 'Section B: Poetry',
-        instructions: 'Answer one question from this section. You should spend approximately 75 minutes on this question.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 75 minutes on this question.',
         questions: [
           {
             id: 'q3',
             questionNumber: 3,
             marks: 48,
-            questionText: 'Choose one poem from the anthology. Explore how the poet uses language and form to convey a particular emotion or idea. Consider the effects of specific poetic techniques on the reader.',
+            questionText:
+              'Choose one poem from the anthology. Explore how the poet uses language and form to convey a particular emotion or idea. Consider the effects of specific poetic techniques on the reader.',
             bulletPoints: [
               'Clearly identify the poem and poet',
               'Discuss the form of the poem (meter, stanza structure, rhyme)',
               'Analyze language choices and their effects',
-              'Consider the cumulative emotional or intellectual impact'
+              'Consider the cumulative emotional or intellectual impact',
             ],
             markScheme: `Band 5 (40-48 marks): Excellent analysis of form and language. Sophisticated understanding of how technical choices create meaning. Detailed analysis of specific techniques and their effects. Excellent understanding of cumulative impact.
 
@@ -773,18 +814,19 @@ Band 3 (24-31 marks): Adequate analysis. Some discussion of form and language te
 
 Band 2 (16-23 marks): Limited analysis. Basic identification of features.
 
-Band 1 (0-15 marks): Minimal response.`
+Band 1 (0-15 marks): Minimal response.`,
           },
           {
             id: 'q4',
             questionNumber: 4,
             marks: 48,
-            questionText: 'Compare two poems from the anthology. Explore how both poets present a similar theme, emotion, or human experience. Evaluate which poem you find more effective in conveying its meaning, referring closely to language and form.',
+            questionText:
+              'Compare two poems from the anthology. Explore how both poets present a similar theme, emotion, or human experience. Evaluate which poem you find more effective in conveying its meaning, referring closely to language and form.',
             bulletPoints: [
               'Clearly identify both poems and poets',
               'Establish the shared theme or experience',
-              'Analyze both poems\' treatment with specific textual references',
-              'Make a supported judgment about effectiveness'
+              "Analyze both poems' treatment with specific textual references",
+              'Make a supported judgment about effectiveness',
             ],
             markScheme: `Band 5 (40-48 marks): Excellent comparative analysis. Sophisticated analysis of both poems. Detailed discussion of form and language in each. Perceptive evaluation of effectiveness with clear reasoning.
 
@@ -794,10 +836,10 @@ Band 3 (24-31 marks): Adequate comparison. Identifies similarities and differenc
 
 Band 2 (16-23 marks): Limited comparison. Basic points about both poems.
 
-Band 1 (0-15 marks): Minimal response.`
-          }
-        ]
-      }
-    ]
-  }
-];
+Band 1 (0-15 marks): Minimal response.`,
+          },
+        ],
+      },
+    ],
+  },
+]

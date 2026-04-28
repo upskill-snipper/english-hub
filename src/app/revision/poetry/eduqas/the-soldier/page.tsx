@@ -30,7 +30,7 @@ const soldier: PoemData = {
       ],
     },
     {
-      text: '   That there\'s some corner of a foreign field',
+      text: "   That there's some corner of a foreign field",
       annotations: [
         {
           type: 'Key quote',
@@ -80,7 +80,7 @@ const soldier: PoemData = {
       ],
     },
     {
-      text: 'A body of England\'s, breathing English air,',
+      text: "A body of England's, breathing English air,",
       annotations: [
         {
           type: 'Repetition',
@@ -99,7 +99,7 @@ const soldier: PoemData = {
         },
         {
           type: 'Key quote',
-          note: 'The octave\'s closing line completes the picture: the soldier\'s body is England\'s in every way, blessed by English nature. This is the foundation for his sacrifice.',
+          note: "The octave's closing line completes the picture: the soldier's body is England's in every way, blessed by English nature. This is the foundation for his sacrifice.",
           color: '#f59e0b',
         },
       ],
@@ -233,7 +233,7 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       themes: ['Patriotism', 'Identity', 'Personification'],
     },
     {
-      quote: 'A body of England\'s, breathing English air',
+      quote: "A body of England's, breathing English air",
       analysis:
         'The speaker is not just from England - he IS England. His body is "England\'s", his breath is "English". The repetition obliterates any separation between self and nation. This is total patriotism.',
       themes: ['Identity', 'Nationalism', 'Repetition'],
@@ -259,7 +259,7 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
     {
       quote: 'In hearts at peace, under an English heaven',
       analysis:
-        'The closing line is the poem\'s most extreme image - even heaven is English. Brooke imagines paradise as having a national identity. This is the height of patriotic devotion: not just England forever, but England in eternity. The image is beautiful, troubling, and entirely typical of pre-trench-warfare patriotism.',
+        "The closing line is the poem's most extreme image - even heaven is English. Brooke imagines paradise as having a national identity. This is the height of patriotic devotion: not just England forever, but England in eternity. The image is beautiful, troubling, and entirely typical of pre-trench-warfare patriotism.",
       themes: ['Heaven', 'Nationalism', 'Eternal England'],
     },
   ],
@@ -269,12 +269,12 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       device: 'Personification',
       example: 'A dust whom England bore, shaped, made aware ... her flowers to love',
       effect:
-        'England is personified as a mother throughout the poem. She gives birth, shapes character, provides flowers and freedom. This makes patriotism feel familial and natural - dying for England becomes like dying for one\'s mother.',
+        "England is personified as a mother throughout the poem. She gives birth, shapes character, provides flowers and freedom. This makes patriotism feel familial and natural - dying for England becomes like dying for one's mother.",
       lineRef: 5,
     },
     {
       device: 'Repetition',
-      example: 'England ... English ... England\'s ... English ... English',
+      example: "England ... English ... England's ... English ... English",
       effect:
         'England and English are repeated 8 times in 14 lines. The repetition functions like an incantation, fixing England as the only meaningful identity. The reader cannot escape the word - just as the speaker cannot escape his national identity.',
       lineRef: 3,
@@ -290,7 +290,7 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       device: 'Sonnet form',
       example: 'Traditional Petrarchan sonnet with octave/sestet division',
       effect:
-        'The sonnet form is traditionally used for love poetry. Brooke writes a love poem to his country. The form\'s dignified tradition gives the patriotic content authority and beauty - it sounds inherited, eternal, sacred.',
+        "The sonnet form is traditionally used for love poetry. Brooke writes a love poem to his country. The form's dignified tradition gives the patriotic content authority and beauty - it sounds inherited, eternal, sacred.",
       lineRef: 1,
     },
     {
@@ -323,7 +323,7 @@ const comparisons = [
     poet: 'Wilfred Owen',
     href: '/revision/poetry/eduqas/dulce-et-decorum-est',
     reason:
-      'The most famous Eduqas pairing. Brooke romanticises war; Owen exposes its horror. Brooke\'s patriotic ideal is exactly the lie Owen attacks. The contrast in tone, imagery, and message could not be sharper.',
+      "The most famous Eduqas pairing. Brooke romanticises war; Owen exposes its horror. Brooke's patriotic ideal is exactly the lie Owen attacks. The contrast in tone, imagery, and message could not be sharper.",
     themes: ['War', 'Patriotism', 'Anti-war'],
   },
   {
@@ -345,28 +345,208 @@ const comparisons = [
 ]
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'ts-1', question: 'What is the speaker imagining?', type: 'multiple-choice', options: ['Returning home from war', 'His own death in battle — and how the foreign soil where he is buried will become "a corner that is for ever England"', 'A holiday abroad', 'Retirement'], correctIndex: 1, explanation: 'The speaker imagines dying in battle abroad. He sees his death as a gift to the foreign land — his English body will sanctify it, making that spot "for ever England."', topic: 'Meaning', difficulty: 'foundation' },
-  { id: 'ts-2', question: 'What does "a corner of a foreign field that is for ever England" mean?', type: 'multiple-choice', options: ['England owns foreign territory', 'The soldier\'s buried body transforms foreign soil into sacred English ground — death for England is a form of colonisation', 'A cricket ground abroad', 'An embassy'], correctIndex: 1, explanation: 'The soldier believes his English body will consecrate foreign soil, making it permanently English. This reveals a deeply patriotic — and arguably imperialist — view of English identity.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'ts-3', question: 'What form is the poem?', type: 'multiple-choice', options: ['Free verse', 'A Petrarchan sonnet — the octave imagines death, the sestet imagines an afterlife', 'A ballad', 'Blank verse'], correctIndex: 1, explanation: 'A Petrarchan sonnet with an octave (lines 1-8) imagining the physical death and burial, and a sestet (lines 9-14) imagining a spiritual afterlife of peace and English values.', topic: 'Structure', difficulty: 'foundation' },
-  { id: 'ts-4', question: 'How does Brooke present England?', type: 'multiple-choice', options: ['As a flawed country', 'As an idealised, perfect motherland — gentle, pastoral, and worth dying for', 'As a military power', 'As a modern city'], correctIndex: 1, explanation: 'England is idealised as a gentle, nurturing motherland — "her flowers", "her ways", "English air". It is presented as a paradise worth any sacrifice.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'ts-5', question: 'When was it written and how does this affect its meaning?', type: 'multiple-choice', options: ['After the war ended', 'In 1914, before the reality of trench warfare — it reflects early-war idealism that was shattered by 1915', 'During the Victorian era', 'In 1918'], correctIndex: 1, explanation: 'Written in 1914 before the horrors of trench warfare became known. It reflects the idealistic patriotism of the war\'s early months, which was soon replaced by the disillusionment of Owen and Sassoon.', topic: 'Context', difficulty: 'higher' },
-  { id: 'ts-6', question: 'Who was Rupert Brooke?', type: 'multiple-choice', options: ['A trench soldier who survived the war', 'A poet who died of sepsis in 1915 without seeing combat — his poetry represents pre-war idealism', 'A war correspondent', 'A general'], correctIndex: 1, explanation: 'Rupert Brooke (1887-1915) died of blood poisoning on a troop ship before reaching Gallipoli. He never experienced trench combat, and his poetry represents the naive patriotism of 1914.', topic: 'Context', difficulty: 'higher' },
-  { id: 'ts-7', question: 'What does "a dust whom England bore, shaped, made aware" suggest?', type: 'multiple-choice', options: ['The soldier is dusty from travel', 'The soldier sees himself as entirely created by England — his body, mind, and values are English through and through', 'He is made of actual dust', 'He is cleaning'], correctIndex: 1, explanation: 'The soldier presents himself as a product of England — born from her soil, shaped by her culture, made conscious by her influence. His identity is entirely English, making his death a gift back to the motherland.', topic: 'Language', difficulty: 'higher' },
-  { id: 'ts-8', question: 'What is the tone of the poem?', type: 'multiple-choice', options: ['Angry and bitter', 'Calm, accepting, and idealistically patriotic — death is presented as peaceful and meaningful', 'Terrified', 'Sarcastic'], correctIndex: 1, explanation: 'The tone is remarkably calm and serene. Death is not feared but welcomed as a meaningful act. The speaker imagines peace, beauty, and an English heaven — a stark contrast to the reality of war.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'ts-9', question: 'How does The Soldier contrast with Owen\'s war poetry?', type: 'multiple-choice', options: ['They share the same view', 'Brooke idealises death for one\'s country as noble; Owen calls it "the old Lie" — they represent opposite poles of war poetry', 'Owen\'s is more patriotic', 'They were written at the same time'], correctIndex: 1, explanation: 'Brooke represents the idealistic patriotism of 1914; Owen represents the disillusioned realism of 1917-18. Together they show how attitudes to war changed as its reality became clear.', topic: 'Comparison', difficulty: 'grade-9' },
-  { id: 'ts-10', question: 'What is problematic about the poem\'s view of England and sacrifice?', type: 'multiple-choice', options: ['Nothing — it is perfectly balanced', 'The poem can be read as imperialist — English soil is presented as superior, and the soldier\'s death as colonising foreign land', 'It is too short', 'The rhyme scheme is wrong'], correctIndex: 1, explanation: 'Modern readers may find the poem\'s assumptions problematic: England is unquestioningly idealised, foreign land needs English bodies to improve it, and death in war is presented without any horror or doubt.', topic: 'Themes', difficulty: 'grade-9' },
+  {
+    id: 'ts-1',
+    question: 'What is the speaker imagining?',
+    type: 'multiple-choice',
+    options: [
+      'Returning home from war',
+      'His own death in battle — and how the foreign soil where he is buried will become "a corner that is for ever England"',
+      'A holiday abroad',
+      'Retirement',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The speaker imagines dying in battle abroad. He sees his death as a gift to the foreign land — his English body will sanctify it, making that spot "for ever England."',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ts-2',
+    question: 'What does "a corner of a foreign field that is for ever England" mean?',
+    type: 'multiple-choice',
+    options: [
+      'England owns foreign territory',
+      "The soldier's buried body transforms foreign soil into sacred English ground — death for England is a form of colonisation",
+      'A cricket ground abroad',
+      'An embassy',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The soldier believes his English body will consecrate foreign soil, making it permanently English. This reveals a deeply patriotic — and arguably imperialist — view of English identity.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ts-3',
+    question: 'What form is the poem?',
+    type: 'multiple-choice',
+    options: [
+      'Free verse',
+      'A Petrarchan sonnet — the octave imagines death, the sestet imagines an afterlife',
+      'A ballad',
+      'Blank verse',
+    ],
+    correctIndex: 1,
+    explanation:
+      'A Petrarchan sonnet with an octave (lines 1-8) imagining the physical death and burial, and a sestet (lines 9-14) imagining a spiritual afterlife of peace and English values.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ts-4',
+    question: 'How does Brooke present England?',
+    type: 'multiple-choice',
+    options: [
+      'As a flawed country',
+      'As an idealised, perfect motherland — gentle, pastoral, and worth dying for',
+      'As a military power',
+      'As a modern city',
+    ],
+    correctIndex: 1,
+    explanation:
+      'England is idealised as a gentle, nurturing motherland — "her flowers", "her ways", "English air". It is presented as a paradise worth any sacrifice.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ts-5',
+    question: 'When was it written and how does this affect its meaning?',
+    type: 'multiple-choice',
+    options: [
+      'After the war ended',
+      'In 1914, before the reality of trench warfare — it reflects early-war idealism that was shattered by 1915',
+      'During the Victorian era',
+      'In 1918',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Written in 1914 before the horrors of trench warfare became known. It reflects the idealistic patriotism of the war's early months, which was soon replaced by the disillusionment of Owen and Sassoon.",
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ts-6',
+    question: 'Who was Rupert Brooke?',
+    type: 'multiple-choice',
+    options: [
+      'A trench soldier who survived the war',
+      'A poet who died of sepsis in 1915 without seeing combat — his poetry represents pre-war idealism',
+      'A war correspondent',
+      'A general',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Rupert Brooke (1887-1915) died of blood poisoning on a troop ship before reaching Gallipoli. He never experienced trench combat, and his poetry represents the naive patriotism of 1914.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ts-7',
+    question: 'What does "a dust whom England bore, shaped, made aware" suggest?',
+    type: 'multiple-choice',
+    options: [
+      'The soldier is dusty from travel',
+      'The soldier sees himself as entirely created by England — his body, mind, and values are English through and through',
+      'He is made of actual dust',
+      'He is cleaning',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The soldier presents himself as a product of England — born from her soil, shaped by her culture, made conscious by her influence. His identity is entirely English, making his death a gift back to the motherland.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ts-8',
+    question: 'What is the tone of the poem?',
+    type: 'multiple-choice',
+    options: [
+      'Angry and bitter',
+      'Calm, accepting, and idealistically patriotic — death is presented as peaceful and meaningful',
+      'Terrified',
+      'Sarcastic',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The tone is remarkably calm and serene. Death is not feared but welcomed as a meaningful act. The speaker imagines peace, beauty, and an English heaven — a stark contrast to the reality of war.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ts-9',
+    question: "How does The Soldier contrast with Owen's war poetry?",
+    type: 'multiple-choice',
+    options: [
+      'They share the same view',
+      'Brooke idealises death for one\'s country as noble; Owen calls it "the old Lie" — they represent opposite poles of war poetry',
+      "Owen's is more patriotic",
+      'They were written at the same time',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Brooke represents the idealistic patriotism of 1914; Owen represents the disillusioned realism of 1917-18. Together they show how attitudes to war changed as its reality became clear.',
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ts-10',
+    question: "What is problematic about the poem's view of England and sacrifice?",
+    type: 'multiple-choice',
+    options: [
+      'Nothing — it is perfectly balanced',
+      "The poem can be read as imperialist — English soil is presented as superior, and the soldier's death as colonising foreign land",
+      'It is too short',
+      'The rhyme scheme is wrong',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Modern readers may find the poem's assumptions problematic: England is unquestioningly idealised, foreign land needs English bodies to improve it, and death in war is presented without any horror or doubt.",
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'The Soldier presents patriotic self-sacrifice as noble, beautiful, and meaningful — reflecting the idealism of 1914 before the reality of trench warfare.', keyPoints: ['Patriotism — England idealised as a nurturing motherland', 'Noble sacrifice — death for England is presented as peaceful and purposeful', 'Identity — the soldier sees himself as entirely made by England', 'Pre-war idealism — contrasts sharply with later disillusionment'] },
-  { topic: 'Language & Imagery', summary: 'Brooke uses pastoral imagery, personification of England as a mother, and serene, elevated language to present death as beautiful.', keyPoints: ['"A corner of a foreign field that is for ever England" — death as colonisation', '"A dust whom England bore, shaped, made aware" — identity as entirely English', 'Pastoral imagery — flowers, air, rivers — England as paradise', 'Calm, accepting tone — no fear, no horror, only peace'] },
-  { topic: 'Structure & Form', summary: 'A Petrarchan sonnet — octave imagines physical death, sestet imagines spiritual afterlife. The traditional form suits the traditional values.', keyPoints: ['Petrarchan sonnet — classical form for classical ideals', 'Octave: physical death and burial abroad', 'Sestet: spiritual afterlife of peace and English values', 'Regular iambic pentameter — calm, controlled, unhurried'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      'The Soldier presents patriotic self-sacrifice as noble, beautiful, and meaningful — reflecting the idealism of 1914 before the reality of trench warfare.',
+    keyPoints: [
+      'Patriotism — England idealised as a nurturing motherland',
+      'Noble sacrifice — death for England is presented as peaceful and purposeful',
+      'Identity — the soldier sees himself as entirely made by England',
+      'Pre-war idealism — contrasts sharply with later disillusionment',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary:
+      'Brooke uses pastoral imagery, personification of England as a mother, and serene, elevated language to present death as beautiful.',
+    keyPoints: [
+      '"A corner of a foreign field that is for ever England" — death as colonisation',
+      '"A dust whom England bore, shaped, made aware" — identity as entirely English',
+      'Pastoral imagery — flowers, air, rivers — England as paradise',
+      'Calm, accepting tone — no fear, no horror, only peace',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary:
+      'A Petrarchan sonnet — octave imagines physical death, sestet imagines spiritual afterlife. The traditional form suits the traditional values.',
+    keyPoints: [
+      'Petrarchan sonnet — classical form for classical ideals',
+      'Octave: physical death and burial abroad',
+      'Sestet: spiritual afterlife of peace and English values',
+      'Regular iambic pentameter — calm, controlled, unhurried',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
   'How does Brooke present patriotism and sacrifice in The Soldier?',
   'Compare how attitudes to war are presented in The Soldier and one other poem from the anthology.',
-  'How does Brooke use language and the sonnet form to idealise death for one\'s country?',
+  "How does Brooke use language and the sonnet form to idealise death for one's country?",
 ]
 
 export default function SoldierEduqasPage() {
@@ -378,11 +558,14 @@ export default function SoldierEduqasPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Eduqas Poetry", url: "https://theenglishhub.app/revision/poetry/eduqas" },
-          { name: "The Soldier", url: "https://theenglishhub.app/revision/poetry/eduqas/the-soldier" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
+          {
+            name: 'The Soldier',
+            url: 'https://theenglishhub.app/revision/poetry/eduqas/the-soldier',
+          },
         ]}
       />
       <div>
@@ -396,18 +579,26 @@ export default function SoldierEduqasPage() {
           Back to Eduqas Poetry
         </Button>
 
+        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
+          <p className="font-semibold mb-1">Legacy anthology notice</p>
+          <p className="text-amber-100/90 leading-relaxed">
+            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
+            does not include this poem. The content remains as a study reference.
+          </p>
+        </div>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-red-500/10">
             <BookOpen className="size-5 text-red-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              The Soldier
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">The Soldier</h1>
             <p className="text-body-sm text-muted-foreground">
               Rupert Brooke &middot; Eduqas Poetry Anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Eduqas</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              Eduqas
+            </Badge>
           </div>
         </div>
       </div>
@@ -431,9 +622,7 @@ export default function SoldierEduqasPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Strong Eduqas pairings for war poetry comparison questions.
@@ -450,9 +639,7 @@ export default function SoldierEduqasPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span
@@ -469,10 +656,10 @@ export default function SoldierEduqasPage() {
       </section>
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        Poem text is reproduced for the purpose of private study and educational
-        criticism under UK fair-dealing provisions (Copyright, Designs and
-        Patents Act 1988, s.30). No commercial use is intended. All quotations
-        remain the intellectual property of the respective rights holders.
+        Poem text is reproduced for the purpose of private study and educational criticism under UK
+        fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial use
+        is intended. All quotations remain the intellectual property of the respective rights
+        holders.
       </footer>
     </div>
   )

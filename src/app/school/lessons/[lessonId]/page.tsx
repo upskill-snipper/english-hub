@@ -33,10 +33,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import {
-  PrintableWorksheet,
-  type WorksheetSection,
-} from '@/components/school/PrintableWorksheet'
+import { PrintableWorksheet, type WorksheetSection } from '@/components/school/PrintableWorksheet'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -111,12 +108,36 @@ const LESSONS: Record<string, LessonData> = {
       'I can use connectives of comparison and contrast fluently',
     ],
     keywords: [
-      { term: 'enjambment', definition: 'A line of poetry that continues onto the next line without punctuation, creating momentum or urgency' },
-      { term: 'caesura', definition: 'A pause in the middle of a line of poetry, often created by punctuation, used for emphasis or to shift tone' },
-      { term: 'stanza', definition: 'A grouped set of lines within a poem, separated by a blank line, similar to a paragraph in prose' },
-      { term: 'juxtaposition', definition: 'Placing two contrasting ideas, images, or words side by side to highlight their differences' },
-      { term: 'comparison connective', definition: 'Words or phrases used to link ideas across texts (similarly, however, in contrast, whereas)' },
-      { term: 'semantic field', definition: 'A group of words related in meaning, used to create a dominant impression (e.g. war, nature, religion)' },
+      {
+        term: 'enjambment',
+        definition:
+          'A line of poetry that continues onto the next line without punctuation, creating momentum or urgency',
+      },
+      {
+        term: 'caesura',
+        definition:
+          'A pause in the middle of a line of poetry, often created by punctuation, used for emphasis or to shift tone',
+      },
+      {
+        term: 'stanza',
+        definition:
+          'A grouped set of lines within a poem, separated by a blank line, similar to a paragraph in prose',
+      },
+      {
+        term: 'juxtaposition',
+        definition:
+          'Placing two contrasting ideas, images, or words side by side to highlight their differences',
+      },
+      {
+        term: 'comparison connective',
+        definition:
+          'Words or phrases used to link ideas across texts (similarly, however, in contrast, whereas)',
+      },
+      {
+        term: 'semantic field',
+        definition:
+          'A group of words related in meaning, used to create a dominant impression (e.g. war, nature, religion)',
+      },
     ],
     priorKnowledge: [
       'Basic knowledge of the Power & Conflict anthology',
@@ -134,12 +155,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Starter',
         duration: '10 min',
         title: 'Quick-Fire Technique Recall',
-        description: 'Students match structural/language techniques to their definitions on mini-whiteboards. Teacher reads a definition, students hold up the term. Recap key vocabulary needed for the lesson.',
-        teacherNotes: 'Focus on: enjambment, caesura, volta, semantic field, juxtaposition. This warms up analytical vocabulary and identifies any gaps.',
+        description:
+          'Students match structural/language techniques to their definitions on mini-whiteboards. Teacher reads a definition, students hold up the term. Recap key vocabulary needed for the lesson.',
+        teacherNotes:
+          'Focus on: enjambment, caesura, volta, semantic field, juxtaposition. This warms up analytical vocabulary and identifies any gaps.',
         activities: {
-          support: 'Provide a word bank of 8 techniques with definitions partially completed. Students match and fill in the gaps.',
+          support:
+            'Provide a word bank of 8 techniques with definitions partially completed. Students match and fill in the gaps.',
           core: 'Match 12 techniques to definitions from memory, then self-check against the answer slide.',
-          stretch: 'Match techniques and provide an example from a poem studied this term for each one.',
+          stretch:
+            'Match techniques and provide an example from a poem studied this term for each one.',
         },
         assessmentQuestions: [
           'Can students recall key terminology without prompts?',
@@ -150,12 +175,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Main Activity 1',
         duration: '15 min',
         title: 'Guided Annotation: Identifying Comparison Points',
-        description: 'Teacher models annotating the first poem for structural features, then students independently annotate the second poem. Class discussion identifies 3-4 key comparison points.',
-        teacherNotes: 'Use "Exposure" and "Bayonet Charge" as paired poems. Model the first annotation thinking aloud. Circulate during independent work to check understanding.',
+        description:
+          'Teacher models annotating the first poem for structural features, then students independently annotate the second poem. Class discussion identifies 3-4 key comparison points.',
+        teacherNotes:
+          'Use "Exposure" and "Bayonet Charge" as paired poems. Model the first annotation thinking aloud. Circulate during independent work to check understanding.',
         activities: {
-          support: 'Pre-annotated first poem provided. Students complete a guided annotation frame for the second poem with prompts.',
+          support:
+            'Pre-annotated first poem provided. Students complete a guided annotation frame for the second poem with prompts.',
           core: 'Annotate both poems using a colour-coding system (structure = blue, language = green, tone = red).',
-          stretch: 'Annotate independently and begin ranking comparison points by significance, justifying their top choice.',
+          stretch:
+            'Annotate independently and begin ranking comparison points by significance, justifying their top choice.',
         },
         assessmentQuestions: [
           'Are students identifying structural features or only language features?',
@@ -166,12 +195,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Main Activity 2',
         duration: '20 min',
         title: 'Comparative Paragraph Writing',
-        description: 'Using the comparison framework sheet, students write a comparative paragraph addressing one structural feature across both poems. Teacher circulates for targeted feedback.',
-        teacherNotes: 'Display the sentence starters and connective bank. Emphasise "similarly/however/in contrast/whereas" as key connectives. Aim for at least one completed paragraph.',
+        description:
+          'Using the comparison framework sheet, students write a comparative paragraph addressing one structural feature across both poems. Teacher circulates for targeted feedback.',
+        teacherNotes:
+          'Display the sentence starters and connective bank. Emphasise "similarly/however/in contrast/whereas" as key connectives. Aim for at least one completed paragraph.',
         activities: {
-          support: 'Use the scaffolded paragraph frame with sentence starters for each sentence. Focus on completing one solid paragraph.',
+          support:
+            'Use the scaffolded paragraph frame with sentence starters for each sentence. Focus on completing one solid paragraph.',
           core: 'Write one comparative paragraph using the framework, then attempt a second without the scaffold.',
-          stretch: 'Write two comparative paragraphs and include contextual links in each. Aim to explore alternative interpretations.',
+          stretch:
+            'Write two comparative paragraphs and include contextual links in each. Aim to explore alternative interpretations.',
         },
         assessmentQuestions: [
           'Are students addressing BOTH poems equally or focusing on one?',
@@ -182,14 +215,19 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Plenary',
         duration: '15 min',
         title: 'Peer Assessment & Gallery Walk',
-        description: 'Students exchange paragraphs with a partner for peer assessment using the success criteria. Selected paragraphs shared on the visualiser. Exit ticket: one strength and one target.',
-        teacherNotes: 'Use a visualiser or project 2-3 strong examples. Highlight what makes them effective. Collect exit tickets to inform next lesson planning.',
+        description:
+          'Students exchange paragraphs with a partner for peer assessment using the success criteria. Selected paragraphs shared on the visualiser. Exit ticket: one strength and one target.',
+        teacherNotes:
+          'Use a visualiser or project 2-3 strong examples. Highlight what makes them effective. Collect exit tickets to inform next lesson planning.',
         activities: {
-          support: 'Peer assess using a simplified 3-star checklist (comparison connective used, both poems discussed, technique named).',
+          support:
+            'Peer assess using a simplified 3-star checklist (comparison connective used, both poems discussed, technique named).',
           core: 'Peer assess using full success criteria. Write one "even better if" suggestion.',
-          stretch: 'Peer assess and rewrite one sentence from their partner\'s paragraph to improve it, explaining the change.',
+          stretch:
+            "Peer assess and rewrite one sentence from their partner's paragraph to improve it, explaining the change.",
         },
-        exitTicket: 'Write down: (1) One thing you did well in your comparative paragraph. (2) One specific target for next time.',
+        exitTicket:
+          'Write down: (1) One thing you did well in your comparative paragraph. (2) One specific target for next time.',
         assessmentQuestions: [
           'Can students identify strengths and weaknesses in peer work?',
           'Do exit tickets show understanding of what makes a strong comparison?',
@@ -199,41 +237,51 @@ const LESSONS: Record<string, LessonData> = {
     worksheetSections: [
       {
         title: 'Section A: Technique Identification',
-        instructions: 'Read the extracts from both poems below. Identify and name the technique used in each highlighted section.',
+        instructions:
+          'Read the extracts from both poems below. Identify and name the technique used in each highlighted section.',
         questions: [
           {
             number: 1,
-            question: 'In "Exposure", Wilfred Owen writes: "Our brains ache, in the merciless iced east winds that knive us..." Name the technique used in "knive us" and explain its effect.',
+            question:
+              'In "Exposure", Wilfred Owen writes: "Our brains ache, in the merciless iced east winds that knive us..." Name the technique used in "knive us" and explain its effect.',
             marks: 3,
             lines: 4,
-            modelAnswer: 'Owen uses a verb (or metaphor) "knive us" to suggest the wind is a deliberate attacker, personifying the cold as a violent force. This conveys the soldiers\' suffering by making nature seem hostile and aggressive, as if it is intentionally harming them.',
+            modelAnswer:
+              'Owen uses a verb (or metaphor) "knive us" to suggest the wind is a deliberate attacker, personifying the cold as a violent force. This conveys the soldiers\' suffering by making nature seem hostile and aggressive, as if it is intentionally harming them.',
           },
           {
             number: 2,
-            question: 'In "Bayonet Charge", Ted Hughes writes: "Suddenly he awoke and was running - raw / In raw-seamed hot khaki..." Identify the structural choice at the start and explain why Hughes begins the poem this way.',
+            question:
+              'In "Bayonet Charge", Ted Hughes writes: "Suddenly he awoke and was running - raw / In raw-seamed hot khaki..." Identify the structural choice at the start and explain why Hughes begins the poem this way.',
             marks: 3,
             lines: 4,
-            modelAnswer: 'Hughes uses an in medias res opening ("Suddenly he awoke and was running") which plunges the reader directly into the action. This creates immediacy and mirrors the soldier\'s disorientation - there is no build-up, reflecting how war gives no time for preparation.',
+            modelAnswer:
+              'Hughes uses an in medias res opening ("Suddenly he awoke and was running") which plunges the reader directly into the action. This creates immediacy and mirrors the soldier\'s disorientation - there is no build-up, reflecting how war gives no time for preparation.',
           },
           {
             number: 3,
-            question: 'Compare how both poets use enjambment in the extracts above. What effect does this create in each poem?',
+            question:
+              'Compare how both poets use enjambment in the extracts above. What effect does this create in each poem?',
             marks: 4,
             lines: 5,
-            modelAnswer: 'Both Owen and Hughes use enjambment to create a sense of momentum. In "Exposure", the enjambment across "iced east winds that knive us..." creates a relentless, drawn-out quality mirroring the soldiers\' endless waiting. In contrast, Hughes\' enjambment in "raw / In raw-seamed" creates urgency and breathlessness, reflecting the frantic pace of the charge. While Owen\'s enjambment emphasises stasis and suffering, Hughes\' emphasises chaotic movement.',
+            modelAnswer:
+              'Both Owen and Hughes use enjambment to create a sense of momentum. In "Exposure", the enjambment across "iced east winds that knive us..." creates a relentless, drawn-out quality mirroring the soldiers\' endless waiting. In contrast, Hughes\' enjambment in "raw / In raw-seamed" creates urgency and breathlessness, reflecting the frantic pace of the charge. While Owen\'s enjambment emphasises stasis and suffering, Hughes\' emphasises chaotic movement.',
           },
         ],
       },
       {
         title: 'Section B: Comparative Paragraph',
-        instructions: 'Using the framework below, write a comparative paragraph about how both poets present the experience of conflict. Use comparison connectives (similarly, however, in contrast, whereas).',
+        instructions:
+          'Using the framework below, write a comparative paragraph about how both poets present the experience of conflict. Use comparison connectives (similarly, however, in contrast, whereas).',
         questions: [
           {
             number: 4,
-            question: 'Compare how Owen in "Exposure" and Hughes in "Bayonet Charge" present the physical experience of conflict. You should compare: the poets\' use of language, the effects on the reader.',
+            question:
+              'Compare how Owen in "Exposure" and Hughes in "Bayonet Charge" present the physical experience of conflict. You should compare: the poets\' use of language, the effects on the reader.',
             marks: 8,
             lines: 12,
-            modelAnswer: 'Both Owen and Hughes present the physical experience of conflict as overwhelming and dehumanising, though they do so in contrasting ways. Owen uses the metaphor "knive us" to present nature itself as a weapon, suggesting that the soldiers suffer not just from enemy fire but from the environment. The verb "knive" implies deliberate cruelty, as if nature conspires against them. Similarly, Hughes presents physical suffering through visceral imagery: "raw / In raw-seamed hot khaki" uses the adjective "raw" to suggest skin rubbed open, creating a painful, sensory image. However, while Owen\'s soldiers experience a slow, numbing suffering emphasised by the cyclical structure, Hughes\' soldier endures a frantic, overwhelming rush conveyed through the breathless enjambment and present tense. This contrast highlights different aspects of conflict: Owen reveals the torment of waiting, whereas Hughes captures the terror of action.',
+            modelAnswer:
+              'Both Owen and Hughes present the physical experience of conflict as overwhelming and dehumanising, though they do so in contrasting ways. Owen uses the metaphor "knive us" to present nature itself as a weapon, suggesting that the soldiers suffer not just from enemy fire but from the environment. The verb "knive" implies deliberate cruelty, as if nature conspires against them. Similarly, Hughes presents physical suffering through visceral imagery: "raw / In raw-seamed hot khaki" uses the adjective "raw" to suggest skin rubbed open, creating a painful, sensory image. However, while Owen\'s soldiers experience a slow, numbing suffering emphasised by the cyclical structure, Hughes\' soldier endures a frantic, overwhelming rush conveyed through the breathless enjambment and present tense. This contrast highlights different aspects of conflict: Owen reveals the torment of waiting, whereas Hughes captures the terror of action.',
           },
         ],
       },
@@ -241,7 +289,8 @@ const LESSONS: Record<string, LessonData> = {
     modelAnswers: [
       {
         question: 'How do both poets use structure to convey the experience of war?',
-        answer: 'Owen structures "Exposure" with a cyclical, repetitive form - the refrain "But nothing happens" creates a sense of futile waiting that mirrors the stalemate of trench warfare. The half-rhymes (e.g., "knive us"/"nervous") create discomfort rather than resolution. In contrast, Hughes structures "Bayonet Charge" as a single, breathless narrative that mirrors the soldier\'s forward momentum. The three-stanza structure moves from action to hesitation to dehumanised instinct, charting the soldier\'s psychological breakdown. Both structures reflect the poets\' different perspectives: Owen shows war as endless stasis, Hughes shows it as overwhelming chaos.',
+        answer:
+          'Owen structures "Exposure" with a cyclical, repetitive form - the refrain "But nothing happens" creates a sense of futile waiting that mirrors the stalemate of trench warfare. The half-rhymes (e.g., "knive us"/"nervous") create discomfort rather than resolution. In contrast, Hughes structures "Bayonet Charge" as a single, breathless narrative that mirrors the soldier\'s forward momentum. The three-stanza structure moves from action to hesitation to dehumanised instinct, charting the soldier\'s psychological breakdown. Both structures reflect the poets\' different perspectives: Owen shows war as endless stasis, Hughes shows it as overwhelming chaos.',
       },
     ],
     homeworkTasks: [
@@ -249,13 +298,28 @@ const LESSONS: Record<string, LessonData> = {
       'Create a revision flashcard set for 8 key structural and language terms covered in this lesson. Each card should include: term, definition, example from a poem.',
     ],
     extensionTasks: [
-      'Research the biographical context of Wilfred Owen and Ted Hughes. How might their personal experiences have influenced the structural choices in "Exposure" and "Bayonet Charge"?',
+      'Research the biographical context of Wilfred Owen and Ted Hughes. Note the crucial difference: Owen served in WWI as an officer and wrote from direct experience, whereas Hughes was born in 1930 and never fought — he drew on his father William\'s WWI accounts (William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment) to imagine combat. How might Owen\'s direct experience and Hughes\'s second-hand imagining have influenced the structural choices in "Exposure" and "Bayonet Charge"?',
       'Write a full comparative essay (3 paragraphs) comparing the presentation of conflict in the two poems, addressing structure, language, and tone.',
     ],
     assessmentCriteria: [
-      { band: 'Band 1 (1-4 marks)', description: 'Simple comparison with limited reference to both texts. Basic identification of features with little explanation of effect.', marks: '1-4' },
-      { band: 'Band 2 (5-8 marks)', description: 'Clear comparison addressing both poems. Language and/or structure analysed with some explanation of effects. Comparison connectives used.', marks: '5-8' },
-      { band: 'Band 3 (9-12 marks)', description: 'Detailed, perceptive comparison of both poems. Sophisticated analysis of language and structure with exploration of effects on the reader. Fluent use of comparison connectives and subject terminology.', marks: '9-12' },
+      {
+        band: 'Band 1 (1-4 marks)',
+        description:
+          'Simple comparison with limited reference to both texts. Basic identification of features with little explanation of effect.',
+        marks: '1-4',
+      },
+      {
+        band: 'Band 2 (5-8 marks)',
+        description:
+          'Clear comparison addressing both poems. Language and/or structure analysed with some explanation of effects. Comparison connectives used.',
+        marks: '5-8',
+      },
+      {
+        band: 'Band 3 (9-12 marks)',
+        description:
+          'Detailed, perceptive comparison of both poems. Sophisticated analysis of language and structure with exploration of effects on the reader. Fluent use of comparison connectives and subject terminology.',
+        marks: '9-12',
+      },
     ],
   },
   'macbeth-ambition': {
@@ -270,8 +334,8 @@ const LESSONS: Record<string, LessonData> = {
     difficulty: 'Intermediate',
     learningObjectives: [
       'Trace how Shakespeare presents ambition across key scenes',
-      'Analyse how language reveals Macbeth\'s psychological state',
-      'Evaluate Shakespeare\'s message about unchecked ambition for a Jacobean audience',
+      "Analyse how language reveals Macbeth's psychological state",
+      "Evaluate Shakespeare's message about unchecked ambition for a Jacobean audience",
     ],
     successCriteria: [
       'I can identify at least 3 key quotations about ambition from different acts',
@@ -280,13 +344,37 @@ const LESSONS: Record<string, LessonData> = {
       'I can construct an analytical paragraph with embedded quotations',
     ],
     keywords: [
-      { term: 'hamartia', definition: 'A fatal flaw in a tragic hero that leads to their downfall' },
-      { term: 'hubris', definition: 'Excessive pride or self-confidence, often leading to a character\'s ruin' },
-      { term: 'soliloquy', definition: 'A speech in which a character speaks their thoughts aloud, alone on stage' },
-      { term: 'aside', definition: 'A remark spoken to the audience that other characters on stage do not hear' },
-      { term: 'Divine Right of Kings', definition: 'The belief that monarchs are chosen by God and their authority cannot be questioned' },
-      { term: 'tragic hero', definition: 'A noble character whose fatal flaw causes their downfall, evoking pity and fear' },
-      { term: 'vaulting ambition', definition: 'Ambition that overreaches itself; from Macbeth\'s own description of his desire for power' },
+      {
+        term: 'hamartia',
+        definition: 'A fatal flaw in a tragic hero that leads to their downfall',
+      },
+      {
+        term: 'hubris',
+        definition: "Excessive pride or self-confidence, often leading to a character's ruin",
+      },
+      {
+        term: 'soliloquy',
+        definition: 'A speech in which a character speaks their thoughts aloud, alone on stage',
+      },
+      {
+        term: 'aside',
+        definition: 'A remark spoken to the audience that other characters on stage do not hear',
+      },
+      {
+        term: 'Divine Right of Kings',
+        definition:
+          'The belief that monarchs are chosen by God and their authority cannot be questioned',
+      },
+      {
+        term: 'tragic hero',
+        definition:
+          'A noble character whose fatal flaw causes their downfall, evoking pity and fear',
+      },
+      {
+        term: 'vaulting ambition',
+        definition:
+          "Ambition that overreaches itself; from Macbeth's own description of his desire for power",
+      },
     ],
     priorKnowledge: [
       'Plot overview of Macbeth (Acts 1-5)',
@@ -305,12 +393,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Starter',
         duration: '10 min',
         title: 'Ambition Spectrum',
-        description: 'Students position characters on an "ambition spectrum" from least to most ambitious. Discussion: is ambition always negative? When does healthy ambition become destructive?',
-        teacherNotes: 'Include: Macbeth, Lady Macbeth, Banquo, Malcolm, Macduff. Key debate point: Banquo is ambitious but resists temptation - why? This sets up the moral framework for the lesson.',
+        description:
+          'Students position characters on an "ambition spectrum" from least to most ambitious. Discussion: is ambition always negative? When does healthy ambition become destructive?',
+        teacherNotes:
+          'Include: Macbeth, Lady Macbeth, Banquo, Malcolm, Macduff. Key debate point: Banquo is ambitious but resists temptation - why? This sets up the moral framework for the lesson.',
         activities: {
-          support: 'Use character cards with a key quotation for each. Place on a physical spectrum line on desks.',
+          support:
+            'Use character cards with a key quotation for each. Place on a physical spectrum line on desks.',
           core: 'Position characters and justify each placement with a quotation from memory or text.',
-          stretch: 'Position characters and evaluate whether Shakespeare presents ambition differently for male and female characters.',
+          stretch:
+            'Position characters and evaluate whether Shakespeare presents ambition differently for male and female characters.',
         },
         assessmentQuestions: [
           'Can students distinguish between positive and destructive ambition?',
@@ -321,12 +413,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Main Activity 1',
         duration: '15 min',
         title: 'Quotation Tracking: Ambition Across the Play',
-        description: 'Students work through 5 key extracts chronologically, highlighting language that reveals ambition. They complete a tracking sheet noting how ambition changes across the play.',
-        teacherNotes: 'Key extracts: Act 1 Scene 7 "vaulting ambition", Act 1 Scene 5 Lady Macbeth\'s soliloquy, Act 3 Scene 1 "To be thus is nothing", Act 5 Scene 5 "Tomorrow" soliloquy. Show how ambition transforms from aspiration to despair.',
+        description:
+          'Students work through 5 key extracts chronologically, highlighting language that reveals ambition. They complete a tracking sheet noting how ambition changes across the play.',
+        teacherNotes:
+          'Key extracts: Act 1 Scene 7 "vaulting ambition", Act 1 Scene 5 Lady Macbeth\'s soliloquy, Act 3 Scene 1 "To be thus is nothing", Act 5 Scene 5 "Tomorrow" soliloquy. Show how ambition transforms from aspiration to despair.',
         activities: {
-          support: 'Pre-highlighted extracts with guided questions for each (What does this tell us about ambition here?)',
+          support:
+            'Pre-highlighted extracts with guided questions for each (What does this tell us about ambition here?)',
           core: 'Annotate extracts independently and track the shift in ambition across acts using a timeline chart.',
-          stretch: 'Track ambition in both Macbeth and Lady Macbeth, noting how their arcs mirror and invert each other.',
+          stretch:
+            'Track ambition in both Macbeth and Lady Macbeth, noting how their arcs mirror and invert each other.',
         },
         assessmentQuestions: [
           'Can students identify HOW ambition changes, not just THAT it changes?',
@@ -337,12 +433,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Main Activity 2',
         duration: '20 min',
         title: 'Analytical Paragraph: How Does Shakespeare Present Ambition?',
-        description: 'Using the model paragraph as a guide, students write an analytical paragraph exploring how Shakespeare uses language to present ambition in a chosen extract.',
-        teacherNotes: 'Model paragraph should demonstrate: embedded quotation, language analysis (word level), link to context (Jacobean attitudes to ambition/regicide), writer\'s intention. Circulate to provide verbal feedback.',
+        description:
+          'Using the model paragraph as a guide, students write an analytical paragraph exploring how Shakespeare uses language to present ambition in a chosen extract.',
+        teacherNotes:
+          "Model paragraph should demonstrate: embedded quotation, language analysis (word level), link to context (Jacobean attitudes to ambition/regicide), writer's intention. Circulate to provide verbal feedback.",
         activities: {
-          support: 'Fill-in-the-gap paragraph frame focusing on one quotation. Teacher works with this group.',
+          support:
+            'Fill-in-the-gap paragraph frame focusing on one quotation. Teacher works with this group.',
           core: 'Write a full paragraph using the model as a guide. Must include: quotation, technique, effect, context.',
-          stretch: 'Write two paragraphs exploring contrasting presentations of ambition. Include alternative interpretations.',
+          stretch:
+            'Write two paragraphs exploring contrasting presentations of ambition. Include alternative interpretations.',
         },
         assessmentQuestions: [
           'Are students embedding quotations rather than bolt-on quoting?',
@@ -352,15 +452,19 @@ const LESSONS: Record<string, LessonData> = {
       {
         phase: 'Plenary',
         duration: '15 min',
-        title: 'Shakespeare\'s Message: Discussion & Exit Ticket',
-        description: 'Class discussion: What is Shakespeare\'s overall message about ambition? Students complete an exit ticket with their most confident quotation and one aspect they need to revise.',
-        teacherNotes: 'Guide towards: Shakespeare presents ambition as inherently destructive when it overrides moral conscience. Link to the Great Chain of Being and Divine Right of Kings. Collect exit tickets to plan differentiation for next lesson.',
+        title: "Shakespeare's Message: Discussion & Exit Ticket",
+        description:
+          "Class discussion: What is Shakespeare's overall message about ambition? Students complete an exit ticket with their most confident quotation and one aspect they need to revise.",
+        teacherNotes:
+          'Guide towards: Shakespeare presents ambition as inherently destructive when it overrides moral conscience. Link to the Great Chain of Being and Divine Right of Kings. Collect exit tickets to plan differentiation for next lesson.',
         activities: {
           support: 'Complete a sentence: "Shakespeare shows that ambition is... because..."',
-          core: 'Write a 3-sentence summary of Shakespeare\'s message about ambition with one supporting quotation.',
-          stretch: 'Write a counter-argument: Could Shakespeare be presenting ambition as natural but corrupted by external forces (the witches, Lady Macbeth)?',
+          core: "Write a 3-sentence summary of Shakespeare's message about ambition with one supporting quotation.",
+          stretch:
+            'Write a counter-argument: Could Shakespeare be presenting ambition as natural but corrupted by external forces (the witches, Lady Macbeth)?',
         },
-        exitTicket: 'Write: (1) Your most confident quotation about ambition and a one-sentence analysis. (2) One thing you need to revise before the next lesson.',
+        exitTicket:
+          'Write: (1) Your most confident quotation about ambition and a one-sentence analysis. (2) One thing you need to revise before the next lesson.',
         assessmentQuestions: [
           'Can students articulate Shakespeare\'s message beyond "ambition is bad"?',
           'Do exit tickets reveal understanding of the contextual dimension?',
@@ -370,50 +474,74 @@ const LESSONS: Record<string, LessonData> = {
     worksheetSections: [
       {
         title: 'Section A: Quotation Analysis',
-        instructions: 'For each quotation, identify the speaker, the context, and analyse how it presents the theme of ambition.',
+        instructions:
+          'For each quotation, identify the speaker, the context, and analyse how it presents the theme of ambition.',
         questions: [
           {
             number: 1,
-            question: '"I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o\'erleaps itself / And falls on th\'other." Explain how Shakespeare presents ambition in this quotation.',
+            question:
+              '"I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o\'erleaps itself / And falls on th\'other." Explain how Shakespeare presents ambition in this quotation.',
             marks: 4,
             lines: 5,
-            modelAnswer: 'Shakespeare uses the metaphor of horse-riding ("spur", "vaulting") to present ambition as something that requires external motivation and can easily overreach. The verb "o\'erleaps" suggests ambition going beyond its natural limits, while "falls" foreshadows Macbeth\'s eventual downfall. Shakespeare is warning that ambition without moral justification ("no spur") leads to destruction. For a Jacobean audience, this would reinforce the idea that disrupting the natural order brings punishment.',
+            modelAnswer:
+              'Shakespeare uses the metaphor of horse-riding ("spur", "vaulting") to present ambition as something that requires external motivation and can easily overreach. The verb "o\'erleaps" suggests ambition going beyond its natural limits, while "falls" foreshadows Macbeth\'s eventual downfall. Shakespeare is warning that ambition without moral justification ("no spur") leads to destruction. For a Jacobean audience, this would reinforce the idea that disrupting the natural order brings punishment.',
           },
           {
             number: 2,
-            question: '"Stars, hide your fires; / Let not light see my black and deep desires." How does Shakespeare use imagery here to reveal Macbeth\'s ambition?',
+            question:
+              '"Stars, hide your fires; / Let not light see my black and deep desires." How does Shakespeare use imagery here to reveal Macbeth\'s ambition?',
             marks: 4,
             lines: 5,
-            modelAnswer: 'Shakespeare uses the contrast between "light" and "black" to present Macbeth\'s ambition as something dark and shameful that must be hidden. The imperative "hide your fires" personifies the stars and suggests Macbeth wants to conceal his intentions from God/heaven - the stars representing divine oversight. The adjectives "black and deep" suggest his desires are both morally corrupt ("black") and profoundly dangerous ("deep"). This reveals that Macbeth is aware his ambition is sinful, creating dramatic irony as he proceeds anyway.',
+            modelAnswer:
+              'Shakespeare uses the contrast between "light" and "black" to present Macbeth\'s ambition as something dark and shameful that must be hidden. The imperative "hide your fires" personifies the stars and suggests Macbeth wants to conceal his intentions from God/heaven - the stars representing divine oversight. The adjectives "black and deep" suggest his desires are both morally corrupt ("black") and profoundly dangerous ("deep"). This reveals that Macbeth is aware his ambition is sinful, creating dramatic irony as he proceeds anyway.',
           },
           {
             number: 3,
-            question: 'Compare how ambition is presented in the two quotations above. How does Macbeth\'s relationship with his own ambition change?',
+            question:
+              "Compare how ambition is presented in the two quotations above. How does Macbeth's relationship with his own ambition change?",
             marks: 6,
             lines: 8,
-            modelAnswer: 'In the first quotation, Macbeth presents his ambition as something separate from himself - an external force ("vaulting ambition") that he observes almost objectively. He recognises its danger and seems to resist it, acknowledging it could "fall". However, in the second quotation, ambition has become internalised as "my... desires" - it is now part of his identity. Rather than resisting, he now seeks to conceal it, suggesting he has accepted the ambition even though he knows it is "black". This shift from resistance to concealment traces Macbeth\'s moral deterioration and foreshadows his eventual inability to control his ambition once it fully consumes him.',
+            modelAnswer:
+              'In the first quotation, Macbeth presents his ambition as something separate from himself - an external force ("vaulting ambition") that he observes almost objectively. He recognises its danger and seems to resist it, acknowledging it could "fall". However, in the second quotation, ambition has become internalised as "my... desires" - it is now part of his identity. Rather than resisting, he now seeks to conceal it, suggesting he has accepted the ambition even though he knows it is "black". This shift from resistance to concealment traces Macbeth\'s moral deterioration and foreshadows his eventual inability to control his ambition once it fully consumes him.',
           },
         ],
       },
     ],
     modelAnswers: [
       {
-        question: 'How does Shakespeare present the destructive nature of ambition throughout Macbeth?',
-        answer: 'Shakespeare presents ambition as a force that corrupts the soul progressively. Initially, Macbeth is a "valiant" warrior whose ambition is channelled into loyal service. However, once the witches\' prophecy awakens his latent desire for power, ambition becomes a destructive force. The metaphor "vaulting ambition, which o\'erleaps itself" in Act 1 Scene 7 presents ambition as exceeding natural limits - like a rider jumping too far and falling. As the play progresses, Macbeth\'s language shifts from hesitation to paranoia ("To be thus is nothing; but to be safely thus"), showing how one act of ambition demands further acts to maintain power. Shakespeare\'s message, directed at his Jacobean audience who had witnessed the Gunpowder Plot, is that ambition which disrupts the divine order leads inevitably to self-destruction. The final image of Macbeth as a "dead butcher" shows how ambition has stripped him of all humanity.',
+        question:
+          'How does Shakespeare present the destructive nature of ambition throughout Macbeth?',
+        answer:
+          'Shakespeare presents ambition as a force that corrupts the soul progressively. Initially, Macbeth is a "valiant" warrior whose ambition is channelled into loyal service. However, once the witches\' prophecy awakens his latent desire for power, ambition becomes a destructive force. The metaphor "vaulting ambition, which o\'erleaps itself" in Act 1 Scene 7 presents ambition as exceeding natural limits - like a rider jumping too far and falling. As the play progresses, Macbeth\'s language shifts from hesitation to paranoia ("To be thus is nothing; but to be safely thus"), showing how one act of ambition demands further acts to maintain power. Shakespeare\'s message, directed at his Jacobean audience who had witnessed the Gunpowder Plot, is that ambition which disrupts the divine order leads inevitably to self-destruction. The final image of Macbeth as a "dead butcher" shows how ambition has stripped him of all humanity.',
       },
     ],
     homeworkTasks: [
       'Learn 5 key quotations about ambition from Macbeth. For each, write one sentence explaining how it presents the theme.',
-      'Write an analytical paragraph answering: How does Shakespeare use the soliloquy form to reveal Macbeth\'s inner conflict about ambition?',
+      "Write an analytical paragraph answering: How does Shakespeare use the soliloquy form to reveal Macbeth's inner conflict about ambition?",
     ],
     extensionTasks: [
       'Compare how ambition is presented in Macbeth and Ozymandias. What similarities and differences can you identify in how both writers warn about the dangers of excessive ambition?',
-      'Research the Gunpowder Plot of 1605. Write a paragraph explaining how this event might have influenced Shakespeare\'s presentation of ambition and regicide in Macbeth.',
+      "Research the Gunpowder Plot of 1605. Write a paragraph explaining how this event might have influenced Shakespeare's presentation of ambition and regicide in Macbeth.",
     ],
     assessmentCriteria: [
-      { band: 'Band 1 (1-10 marks)', description: 'Simple awareness of theme with narrative/descriptive response. Limited quotation use. Basic understanding of context.', marks: '1-10' },
-      { band: 'Band 2 (11-20 marks)', description: 'Clear understanding of how ambition is presented. Relevant quotations with some analysis of language. References to context that support the argument.', marks: '11-20' },
-      { band: 'Band 3 (21-30 marks)', description: 'Detailed, critical analysis of Shakespeare\'s presentation of ambition. Precise, embedded quotations with perceptive language analysis. Sophisticated integration of context throughout.', marks: '21-30' },
+      {
+        band: 'Band 1 (1-10 marks)',
+        description:
+          'Simple awareness of theme with narrative/descriptive response. Limited quotation use. Basic understanding of context.',
+        marks: '1-10',
+      },
+      {
+        band: 'Band 2 (11-20 marks)',
+        description:
+          'Clear understanding of how ambition is presented. Relevant quotations with some analysis of language. References to context that support the argument.',
+        marks: '11-20',
+      },
+      {
+        band: 'Band 3 (21-30 marks)',
+        description:
+          "Detailed, critical analysis of Shakespeare's presentation of ambition. Precise, embedded quotations with perceptive language analysis. Sophisticated integration of context throughout.",
+        marks: '21-30',
+      },
     ],
   },
   'language-paper1-q2': {
@@ -437,13 +565,33 @@ const LESSONS: Record<string, LessonData> = {
       'I can use subject terminology accurately',
     ],
     keywords: [
-      { term: 'connotation', definition: 'The associated meaning or feeling a word suggests beyond its literal definition' },
-      { term: 'imagery', definition: 'Visually descriptive language that creates pictures in the reader\'s mind' },
-      { term: 'semantic field', definition: 'A group of words related in meaning used to create a dominant impression' },
-      { term: 'pathetic fallacy', definition: 'Attributing human emotions to weather or nature to reflect mood' },
-      { term: 'sibilance', definition: 'Repetition of "s" sounds to create a hissing, sinister, or soft effect' },
-      { term: 'plosive', definition: 'Harsh consonant sounds (b, d, g, k, p, t) that create a forceful, aggressive tone' },
-      { term: 'tone', definition: 'The attitude or feeling conveyed by the writer\'s word choices' },
+      {
+        term: 'connotation',
+        definition:
+          'The associated meaning or feeling a word suggests beyond its literal definition',
+      },
+      {
+        term: 'imagery',
+        definition: "Visually descriptive language that creates pictures in the reader's mind",
+      },
+      {
+        term: 'semantic field',
+        definition: 'A group of words related in meaning used to create a dominant impression',
+      },
+      {
+        term: 'pathetic fallacy',
+        definition: 'Attributing human emotions to weather or nature to reflect mood',
+      },
+      {
+        term: 'sibilance',
+        definition: 'Repetition of "s" sounds to create a hissing, sinister, or soft effect',
+      },
+      {
+        term: 'plosive',
+        definition:
+          'Harsh consonant sounds (b, d, g, k, p, t) that create a forceful, aggressive tone',
+      },
+      { term: 'tone', definition: "The attitude or feeling conveyed by the writer's word choices" },
     ],
     priorKnowledge: [
       'Basic understanding of language techniques',
@@ -460,12 +608,15 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Starter',
         duration: '8 min',
         title: 'Technique Speed Round',
-        description: 'Display 6 short sentences on the board. Students identify the technique in each and write the effect in one sentence. Quick-fire review as a class.',
-        teacherNotes: 'Use sentences with clear examples: a simile, metaphor, personification, alliteration, short sentence, listing. This builds confidence before tackling a full extract.',
+        description:
+          'Display 6 short sentences on the board. Students identify the technique in each and write the effect in one sentence. Quick-fire review as a class.',
+        teacherNotes:
+          'Use sentences with clear examples: a simile, metaphor, personification, alliteration, short sentence, listing. This builds confidence before tackling a full extract.',
         activities: {
           support: 'Provide a technique word bank. Students match technique to sentence.',
           core: 'Identify technique and write the effect in one sentence per example.',
-          stretch: 'Identify technique, explain effect, and suggest what the writer\'s intention might be.',
+          stretch:
+            "Identify technique, explain effect, and suggest what the writer's intention might be.",
         },
         assessmentQuestions: [
           'Can all students name at least 4 basic techniques?',
@@ -476,12 +627,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Main Activity 1',
         duration: '12 min',
         title: 'Model Response Deconstruction',
-        description: 'Teacher displays a model Q2 response. Students highlight the "What" (quotation), "How" (technique), and "Why" (effect) in three different colours. Class discusses what makes it effective.',
-        teacherNotes: 'Use a response that scores 7/8 marks. Emphasise: short embedded quotations, precise terminology, focus on the reader\'s response ("this creates a sense of..." / "this suggests to the reader...").',
+        description:
+          'Teacher displays a model Q2 response. Students highlight the "What" (quotation), "How" (technique), and "Why" (effect) in three different colours. Class discusses what makes it effective.',
+        teacherNotes:
+          'Use a response that scores 7/8 marks. Emphasise: short embedded quotations, precise terminology, focus on the reader\'s response ("this creates a sense of..." / "this suggests to the reader...").',
         activities: {
-          support: 'Pre-highlighted model with labels. Students copy the framework into their notes.',
-          core: 'Highlight the model independently, then compare with the teacher\'s annotations.',
-          stretch: 'Highlight and evaluate: what could make this response even stronger? Suggest an improvement.',
+          support:
+            'Pre-highlighted model with labels. Students copy the framework into their notes.',
+          core: "Highlight the model independently, then compare with the teacher's annotations.",
+          stretch:
+            'Highlight and evaluate: what could make this response even stronger? Suggest an improvement.',
         },
         assessmentQuestions: [
           'Can students distinguish between the "How" and the "Why"?',
@@ -492,12 +647,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Main Activity 2',
         duration: '15 min',
         title: 'Independent Practice: Writing a Q2 Response',
-        description: 'Students read a new extract and write their own Q2 response using the "What, How, Why" framework. Aim for 2-3 analytical points in 10-12 minutes (exam timing).',
-        teacherNotes: 'Circulate and provide live feedback. Common issues: quotations too long, technique not named, effect too vague. This is the core assessed task of the lesson.',
+        description:
+          'Students read a new extract and write their own Q2 response using the "What, How, Why" framework. Aim for 2-3 analytical points in 10-12 minutes (exam timing).',
+        teacherNotes:
+          'Circulate and provide live feedback. Common issues: quotations too long, technique not named, effect too vague. This is the core assessed task of the lesson.',
         activities: {
-          support: 'Quotations pre-selected. Students analyse using the framework with sentence starters.',
+          support:
+            'Quotations pre-selected. Students analyse using the framework with sentence starters.',
           core: 'Select own quotations and write 2-3 points using the framework independently.',
-          stretch: 'Write 3 points and include a comment on how techniques work together to create an overall effect.',
+          stretch:
+            'Write 3 points and include a comment on how techniques work together to create an overall effect.',
         },
         assessmentQuestions: [
           'Are students working within exam timing (10-12 minutes)?',
@@ -508,14 +667,18 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Plenary',
         duration: '10 min',
         title: 'Self-Assessment Against Mark Scheme',
-        description: 'Students use a simplified AQA mark scheme to self-assess their response. They highlight evidence of each skill and identify their current band. Set a personal target.',
-        teacherNotes: 'Display band descriptors 2 (5-6 marks) and 3 (7-8 marks). Students should be aiming for Band 2 minimum. Collect responses for teacher marking.',
+        description:
+          'Students use a simplified AQA mark scheme to self-assess their response. They highlight evidence of each skill and identify their current band. Set a personal target.',
+        teacherNotes:
+          'Display band descriptors 2 (5-6 marks) and 3 (7-8 marks). Students should be aiming for Band 2 minimum. Collect responses for teacher marking.',
         activities: {
-          support: 'Use a tick-sheet version of the mark scheme. Identify which skills are present.',
+          support:
+            'Use a tick-sheet version of the mark scheme. Identify which skills are present.',
           core: 'Self-assess against the mark scheme and write a target for improvement.',
           stretch: 'Self-assess and rewrite their weakest point to move it into the next band.',
         },
-        exitTicket: 'Rate your confidence 1-5 for: (a) selecting quotations, (b) naming techniques, (c) explaining effect on the reader.',
+        exitTicket:
+          'Rate your confidence 1-5 for: (a) selecting quotations, (b) naming techniques, (c) explaining effect on the reader.',
         assessmentQuestions: [
           'Are students able to honestly self-assess?',
           'Do targets show specific understanding of what to improve?',
@@ -525,28 +688,35 @@ const LESSONS: Record<string, LessonData> = {
     worksheetSections: [
       {
         title: 'Language Paper 1, Question 2 Practice',
-        instructions: 'Read the extract carefully. How does the writer use language to describe the setting? Refer to the text in your answer. [8 marks]',
+        instructions:
+          'Read the extract carefully. How does the writer use language to describe the setting? Refer to the text in your answer. [8 marks]',
         questions: [
           {
             number: 1,
-            question: 'Select a quotation from lines 1-5 that describes the setting. Name the technique used and explain the effect on the reader.',
+            question:
+              'Select a quotation from lines 1-5 that describes the setting. Name the technique used and explain the effect on the reader.',
             marks: 3,
             lines: 5,
-            modelAnswer: 'The writer uses the metaphor "the fog crept like a thief through the alleyways" to personify the fog as something sinister and criminal. The verb "crept" has connotations of stealth and danger, suggesting the setting is threatening. This creates a sense of unease for the reader, as the fog seems to have malicious intent.',
+            modelAnswer:
+              'The writer uses the metaphor "the fog crept like a thief through the alleyways" to personify the fog as something sinister and criminal. The verb "crept" has connotations of stealth and danger, suggesting the setting is threatening. This creates a sense of unease for the reader, as the fog seems to have malicious intent.',
           },
           {
             number: 2,
-            question: 'Select a second quotation from the extract. Analyse how the writer\'s language choice creates a specific atmosphere.',
+            question:
+              "Select a second quotation from the extract. Analyse how the writer's language choice creates a specific atmosphere.",
             marks: 3,
             lines: 5,
-            modelAnswer: 'The writer describes the street as "a corridor of shadows, each doorway a gaping mouth." The noun "corridor" suggests the character is trapped, while "gaping mouth" personifies the doorways as threatening, as if they might swallow anyone who enters. The semantic field of enclosure and threat creates a claustrophobic, gothic atmosphere.',
+            modelAnswer:
+              'The writer describes the street as "a corridor of shadows, each doorway a gaping mouth." The noun "corridor" suggests the character is trapped, while "gaping mouth" personifies the doorways as threatening, as if they might swallow anyone who enters. The semantic field of enclosure and threat creates a claustrophobic, gothic atmosphere.',
           },
           {
             number: 3,
-            question: 'How do the language techniques across the extract work together to create an overall impression of the setting?',
+            question:
+              'How do the language techniques across the extract work together to create an overall impression of the setting?',
             marks: 2,
             lines: 4,
-            modelAnswer: 'Across the extract, the writer consistently uses personification and dark imagery to present the setting as hostile and alive with threat. The accumulation of sinister details builds gradually, creating an escalating sense of dread that mirrors the character\'s growing fear.',
+            modelAnswer:
+              "Across the extract, the writer consistently uses personification and dark imagery to present the setting as hostile and alive with threat. The accumulation of sinister details builds gradually, creating an escalating sense of dread that mirrors the character's growing fear.",
           },
         ],
       },
@@ -554,7 +724,8 @@ const LESSONS: Record<string, LessonData> = {
     modelAnswers: [
       {
         question: 'Full model Q2 response for this extract',
-        answer: 'The writer uses language to present the setting as threatening and oppressive. The metaphor "the fog crept like a thief" personifies the fog as a criminal, with the verb "crept" suggesting stealth and danger. This makes the reader feel uneasy, as if the setting itself is a predator. Furthermore, the writer describes doorways as "gaping mouths", using personification to suggest the buildings are alive and threatening. The adjective "gaping" implies something hungry and consuming, creating a gothic atmosphere of entrapment. Finally, the short sentence "There was no escape" creates a blunt, definitive tone that mirrors the character\'s desperation. The abrupt syntax contrasts with the flowing descriptive sentences before it, shocking the reader and emphasising the character\'s hopelessness.',
+        answer:
+          'The writer uses language to present the setting as threatening and oppressive. The metaphor "the fog crept like a thief" personifies the fog as a criminal, with the verb "crept" suggesting stealth and danger. This makes the reader feel uneasy, as if the setting itself is a predator. Furthermore, the writer describes doorways as "gaping mouths", using personification to suggest the buildings are alive and threatening. The adjective "gaping" implies something hungry and consuming, creating a gothic atmosphere of entrapment. Finally, the short sentence "There was no escape" creates a blunt, definitive tone that mirrors the character\'s desperation. The abrupt syntax contrasts with the flowing descriptive sentences before it, shocking the reader and emphasising the character\'s hopelessness.',
       },
     ],
     homeworkTasks: [
@@ -563,12 +734,27 @@ const LESSONS: Record<string, LessonData> = {
     ],
     extensionTasks: [
       'Find a paragraph from a novel you are reading at home. Write a Q2-style analysis of the language used to create mood or atmosphere.',
-      'Compare two extracts from different centuries. How do the writers\' language choices reflect their time period?',
+      "Compare two extracts from different centuries. How do the writers' language choices reflect their time period?",
     ],
     assessmentCriteria: [
-      { band: 'Band 1 (1-2 marks)', description: 'Simple identification of language features. Limited or no analysis of effects. Quotations may be absent or too long.', marks: '1-2' },
-      { band: 'Band 2 (3-5 marks)', description: 'Clear identification with some analysis of effects. Relevant quotations selected. Some use of subject terminology.', marks: '3-5' },
-      { band: 'Band 3 (6-8 marks)', description: 'Detailed, perceptive analysis of language. Short, well-chosen quotations embedded fluently. Precise subject terminology. Exploration of effects on the reader.', marks: '6-8' },
+      {
+        band: 'Band 1 (1-2 marks)',
+        description:
+          'Simple identification of language features. Limited or no analysis of effects. Quotations may be absent or too long.',
+        marks: '1-2',
+      },
+      {
+        band: 'Band 2 (3-5 marks)',
+        description:
+          'Clear identification with some analysis of effects. Relevant quotations selected. Some use of subject terminology.',
+        marks: '3-5',
+      },
+      {
+        band: 'Band 3 (6-8 marks)',
+        description:
+          'Detailed, perceptive analysis of language. Short, well-chosen quotations embedded fluently. Precise subject terminology. Exploration of effects on the reader.',
+        marks: '6-8',
+      },
     ],
   },
   'pee-paragraphs': {
@@ -592,12 +778,24 @@ const LESSONS: Record<string, LessonData> = {
       'I can link my explanation to the effect on the reader',
     ],
     keywords: [
-      { term: 'point', definition: 'The opening analytical statement that directly answers the question' },
-      { term: 'evidence', definition: 'A short, relevant quotation from the text that supports your point' },
-      { term: 'explanation', definition: 'Analysis of HOW and WHY the evidence supports your point' },
+      {
+        term: 'point',
+        definition: 'The opening analytical statement that directly answers the question',
+      },
+      {
+        term: 'evidence',
+        definition: 'A short, relevant quotation from the text that supports your point',
+      },
+      {
+        term: 'explanation',
+        definition: 'Analysis of HOW and WHY the evidence supports your point',
+      },
       { term: 'quotation', definition: 'The exact words from a text, placed in quotation marks' },
       { term: 'embed', definition: 'To weave a quotation naturally into your own sentence' },
-      { term: 'analyse', definition: 'To examine something in detail, exploring how and why it works' },
+      {
+        term: 'analyse',
+        definition: 'To examine something in detail, exploring how and why it works',
+      },
       { term: 'effect', definition: 'The impact a technique or word choice has on the reader' },
     ],
     priorKnowledge: [
@@ -615,12 +813,15 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Starter',
         duration: '8 min',
         title: 'Paragraph Surgery',
-        description: 'Display a "broken" PEE paragraph with common mistakes (no quotation, vague point, retelling instead of analysing). Students diagnose the problems and suggest fixes.',
-        teacherNotes: 'Common mistakes to include: Point that retells plot, evidence that is too long (full sentence), explanation that says "this shows" without saying how. Make it fun - "Doctor, what is wrong with this paragraph?"',
+        description:
+          'Display a "broken" PEE paragraph with common mistakes (no quotation, vague point, retelling instead of analysing). Students diagnose the problems and suggest fixes.',
+        teacherNotes:
+          'Common mistakes to include: Point that retells plot, evidence that is too long (full sentence), explanation that says "this shows" without saying how. Make it fun - "Doctor, what is wrong with this paragraph?"',
         activities: {
           support: 'Identify 2 problems from a checklist of options.',
           core: 'Identify all problems and rewrite one sentence to fix it.',
-          stretch: 'Identify problems, fix them all, and improve the paragraph to include subject terminology.',
+          stretch:
+            'Identify problems, fix them all, and improve the paragraph to include subject terminology.',
         },
         assessmentQuestions: [
           'Can students identify the difference between retelling and analysing?',
@@ -631,12 +832,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Main Activity 1',
         duration: '12 min',
         title: 'Colour-Coded Modelling',
-        description: 'Teacher models writing a PEE paragraph live on the board, thinking aloud. Point in blue, Evidence in green, Explanation in red. Students annotate their copy in the same colours.',
-        teacherNotes: 'Use a simple, accessible text (e.g. a descriptive paragraph about a storm). Emphasise the thinking process: "My point answers the question...", "I need a SHORT quotation...", "Now I explain HOW this works..."',
+        description:
+          'Teacher models writing a PEE paragraph live on the board, thinking aloud. Point in blue, Evidence in green, Explanation in red. Students annotate their copy in the same colours.',
+        teacherNotes:
+          'Use a simple, accessible text (e.g. a descriptive paragraph about a storm). Emphasise the thinking process: "My point answers the question...", "I need a SHORT quotation...", "Now I explain HOW this works..."',
         activities: {
-          support: 'Follow along with a partially completed paragraph frame. Fill in the gaps as the teacher models.',
+          support:
+            'Follow along with a partially completed paragraph frame. Fill in the gaps as the teacher models.',
           core: 'Annotate the model independently and then write their own point for a different aspect of the text.',
-          stretch: 'Annotate and extend: add a fourth sentence that explores an alternative interpretation.',
+          stretch:
+            'Annotate and extend: add a fourth sentence that explores an alternative interpretation.',
         },
         assessmentQuestions: [
           'Are students understanding the thinking process, not just copying the product?',
@@ -647,12 +852,16 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Main Activity 2',
         duration: '15 min',
         title: 'Independent PEE Practice',
-        description: 'Students write 2 PEE paragraphs about the practice extract. Teacher circulates providing targeted feedback to each group.',
-        teacherNotes: 'Prioritise circulating to the support group first. Encourage students to colour-code their own writing. Display a checklist: Did you make a clear point? Is your quotation short? Did you explain the EFFECT?',
+        description:
+          'Students write 2 PEE paragraphs about the practice extract. Teacher circulates providing targeted feedback to each group.',
+        teacherNotes:
+          'Prioritise circulating to the support group first. Encourage students to colour-code their own writing. Display a checklist: Did you make a clear point? Is your quotation short? Did you explain the EFFECT?',
         activities: {
-          support: 'Write 1 paragraph using the sentence starter frame. Second paragraph with fewer prompts.',
+          support:
+            'Write 1 paragraph using the sentence starter frame. Second paragraph with fewer prompts.',
           core: 'Write 2 paragraphs independently using the framework as a reference.',
-          stretch: 'Write 2 paragraphs without the framework. Add context or alternative interpretations.',
+          stretch:
+            'Write 2 paragraphs without the framework. Add context or alternative interpretations.',
         },
         assessmentQuestions: [
           'Are paragraphs following the PEE structure consistently?',
@@ -663,14 +872,18 @@ const LESSONS: Record<string, LessonData> = {
         phase: 'Plenary',
         duration: '10 min',
         title: 'Traffic Light Self-Assessment',
-        description: 'Students rate their confidence (red/amber/green) for each part of PEE. Share one strong paragraph on the visualiser. Exit ticket: write the "explain" sentence for a given point and quotation.',
-        teacherNotes: 'The exit ticket tests the hardest skill (explanation). Collect these to identify students who need further support. Green = confident, Amber = mostly there, Red = need more practice.',
+        description:
+          'Students rate their confidence (red/amber/green) for each part of PEE. Share one strong paragraph on the visualiser. Exit ticket: write the "explain" sentence for a given point and quotation.',
+        teacherNotes:
+          'The exit ticket tests the hardest skill (explanation). Collect these to identify students who need further support. Green = confident, Amber = mostly there, Red = need more practice.',
         activities: {
           support: 'Complete the exit ticket with a sentence starter provided.',
           core: 'Complete the exit ticket independently.',
-          stretch: 'Complete the exit ticket and write an improved version that includes subject terminology.',
+          stretch:
+            'Complete the exit ticket and write an improved version that includes subject terminology.',
         },
-        exitTicket: 'Given: Point - "The writer presents the character as powerful." Evidence - "iron fist". Write the Explanation sentence.',
+        exitTicket:
+          'Given: Point - "The writer presents the character as powerful." Evidence - "iron fist". Write the Explanation sentence.',
         assessmentQuestions: [
           'Can students write an explanation independently?',
           'Is the exit ticket showing analysis of HOW, not just WHAT?',
@@ -680,21 +893,26 @@ const LESSONS: Record<string, LessonData> = {
     worksheetSections: [
       {
         title: 'Section A: Identifying PEE',
-        instructions: 'Read each paragraph below. Underline the Point in blue, the Evidence in green, and the Explanation in red.',
+        instructions:
+          'Read each paragraph below. Underline the Point in blue, the Evidence in green, and the Explanation in red.',
         questions: [
           {
             number: 1,
-            question: '"The writer presents the character as threatening. This is shown through the simile "he loomed over her like a dark cloud." The comparison to a "dark cloud" suggests danger and an approaching storm, making the reader feel that something bad is about to happen." Label each part of this paragraph (Point / Evidence / Explanation).',
+            question:
+              '"The writer presents the character as threatening. This is shown through the simile "he loomed over her like a dark cloud." The comparison to a "dark cloud" suggests danger and an approaching storm, making the reader feel that something bad is about to happen." Label each part of this paragraph (Point / Evidence / Explanation).',
             marks: 2,
             lines: 3,
-            modelAnswer: 'Point: "The writer presents the character as threatening." Evidence: "he loomed over her like a dark cloud." Explanation: "The comparison to a dark cloud suggests danger and an approaching storm, making the reader feel that something bad is about to happen."',
+            modelAnswer:
+              'Point: "The writer presents the character as threatening." Evidence: "he loomed over her like a dark cloud." Explanation: "The comparison to a dark cloud suggests danger and an approaching storm, making the reader feel that something bad is about to happen."',
           },
           {
             number: 2,
-            question: 'Write your own PEE paragraph about the following quotation from a description of a forest: "The trees stretched their gnarled fingers towards the grey sky."',
+            question:
+              'Write your own PEE paragraph about the following quotation from a description of a forest: "The trees stretched their gnarled fingers towards the grey sky."',
             marks: 4,
             lines: 6,
-            modelAnswer: 'The writer presents the forest as unsettling and hostile. The personification "the trees stretched their gnarled fingers" gives the trees human qualities, making them seem alive and reaching out as if to grab someone. The adjective "gnarled" has connotations of age, decay and ugliness, suggesting the forest is ancient and unwelcoming. This creates an eerie atmosphere for the reader, as the natural world seems threatening rather than peaceful.',
+            modelAnswer:
+              'The writer presents the forest as unsettling and hostile. The personification "the trees stretched their gnarled fingers" gives the trees human qualities, making them seem alive and reaching out as if to grab someone. The adjective "gnarled" has connotations of age, decay and ugliness, suggesting the forest is ancient and unwelcoming. This creates an eerie atmosphere for the reader, as the natural world seems threatening rather than peaceful.',
           },
         ],
       },
@@ -702,7 +920,8 @@ const LESSONS: Record<string, LessonData> = {
     modelAnswers: [
       {
         question: 'What makes a strong PEE paragraph?',
-        answer: 'A strong PEE paragraph starts with a clear, analytical point that directly answers the question (not plot retelling). The evidence should be a short, embedded quotation - ideally just a few key words rather than a whole sentence. The explanation should analyse HOW the quotation supports the point, naming a technique where possible and exploring the EFFECT on the reader. The strongest paragraphs also consider connotations of individual words and link to the writer\'s intention or context.',
+        answer:
+          "A strong PEE paragraph starts with a clear, analytical point that directly answers the question (not plot retelling). The evidence should be a short, embedded quotation - ideally just a few key words rather than a whole sentence. The explanation should analyse HOW the quotation supports the point, naming a technique where possible and exploring the EFFECT on the reader. The strongest paragraphs also consider connotations of individual words and link to the writer's intention or context.",
       },
     ],
     homeworkTasks: [
@@ -714,9 +933,24 @@ const LESSONS: Record<string, LessonData> = {
       'Write a PEE paragraph, then rewrite it as a PETER paragraph (Point, Evidence, Technique, Explain, Reader response). Compare the two: which is more effective?',
     ],
     assessmentCriteria: [
-      { band: 'Developing', description: 'Can identify parts of a PEE paragraph. Point may retell rather than analyse. Quotations present but may be too long. Explanation is basic or restates the point.', marks: '1-3' },
-      { band: 'Secure', description: 'Clear analytical point. Short, relevant quotation selected. Explanation analyses the effect with some reference to technique. Structure is consistent.', marks: '4-6' },
-      { band: 'Excelling', description: 'Precise, insightful point. Embedded quotation. Detailed explanation exploring connotations, technique, and reader response. May include alternative interpretations.', marks: '7-9' },
+      {
+        band: 'Developing',
+        description:
+          'Can identify parts of a PEE paragraph. Point may retell rather than analyse. Quotations present but may be too long. Explanation is basic or restates the point.',
+        marks: '1-3',
+      },
+      {
+        band: 'Secure',
+        description:
+          'Clear analytical point. Short, relevant quotation selected. Explanation analyses the effect with some reference to technique. Structure is consistent.',
+        marks: '4-6',
+      },
+      {
+        band: 'Excelling',
+        description:
+          'Precise, insightful point. Embedded quotation. Detailed explanation exploring connotations, technique, and reader response. May include alternative interpretations.',
+        marks: '7-9',
+      },
     ],
   },
 }
@@ -737,13 +971,28 @@ function getDefaultLesson(id: string): LessonData {
     yearGroup: 'Year 10',
     duration: 60,
     difficulty: 'Intermediate',
-    learningObjectives: ['Develop key analytical skills', 'Apply techniques to exam-style questions'],
-    successCriteria: ['I can analyse a text using appropriate terminology', 'I can write a structured analytical paragraph'],
+    learningObjectives: [
+      'Develop key analytical skills',
+      'Apply techniques to exam-style questions',
+    ],
+    successCriteria: [
+      'I can analyse a text using appropriate terminology',
+      'I can write a structured analytical paragraph',
+    ],
     keywords: [
-      { term: 'analysis', definition: 'Examining something in detail to understand its meaning and effect' },
-      { term: 'technique', definition: 'A specific method or device used by a writer to create effect' },
+      {
+        term: 'analysis',
+        definition: 'Examining something in detail to understand its meaning and effect',
+      },
+      {
+        term: 'technique',
+        definition: 'A specific method or device used by a writer to create effect',
+      },
       { term: 'effect', definition: 'The impact or response created in the reader' },
-      { term: 'evidence', definition: 'A quotation or reference from the text that supports your point' },
+      {
+        term: 'evidence',
+        definition: 'A quotation or reference from the text that supports your point',
+      },
     ],
     priorKnowledge: ['Basic reading comprehension', 'Familiarity with the text'],
     resources: ['Text copies', 'Worksheet'],
@@ -753,21 +1002,33 @@ function getDefaultLesson(id: string): LessonData {
         duration: '10 min',
         title: 'Retrieval Practice',
         description: 'Quick recall activity based on prior learning.',
-        activities: { support: 'Guided recall with prompts.', core: 'Independent recall.', stretch: 'Recall and extend with application.' },
+        activities: {
+          support: 'Guided recall with prompts.',
+          core: 'Independent recall.',
+          stretch: 'Recall and extend with application.',
+        },
       },
       {
         phase: 'Main Activity',
         duration: '35 min',
         title: 'Core Learning Task',
         description: 'Focused analytical work on the key skill area.',
-        activities: { support: 'Scaffolded task with framework.', core: 'Independent analysis task.', stretch: 'Extended analysis with alternative interpretations.' },
+        activities: {
+          support: 'Scaffolded task with framework.',
+          core: 'Independent analysis task.',
+          stretch: 'Extended analysis with alternative interpretations.',
+        },
       },
       {
         phase: 'Plenary',
         duration: '15 min',
         title: 'Review & Assessment',
         description: 'Peer or self-assessment against success criteria.',
-        activities: { support: 'Checklist self-assessment.', core: 'Full success criteria assessment.', stretch: 'Assessment plus improvement rewrite.' },
+        activities: {
+          support: 'Checklist self-assessment.',
+          core: 'Full success criteria assessment.',
+          stretch: 'Assessment plus improvement rewrite.',
+        },
       },
     ],
     worksheetSections: [],
@@ -789,9 +1050,26 @@ function difficultyColor(d: string): string {
 }
 
 function phaseColor(phase: string): { bg: string; text: string; border: string; icon: string } {
-  if (phase.toLowerCase().includes('starter')) return { bg: 'bg-amber-500/10', text: 'text-clay-600', border: 'border-amber-500/20', icon: 'text-clay-600' }
-  if (phase.toLowerCase().includes('plenary')) return { bg: 'bg-purple-500/10', text: 'text-purple-400', border: 'border-purple-500/20', icon: 'text-purple-400' }
-  return { bg: 'bg-blue-500/10', text: 'text-blue-400', border: 'border-blue-500/20', icon: 'text-blue-400' }
+  if (phase.toLowerCase().includes('starter'))
+    return {
+      bg: 'bg-amber-500/10',
+      text: 'text-clay-600',
+      border: 'border-amber-500/20',
+      icon: 'text-clay-600',
+    }
+  if (phase.toLowerCase().includes('plenary'))
+    return {
+      bg: 'bg-purple-500/10',
+      text: 'text-purple-400',
+      border: 'border-purple-500/20',
+      icon: 'text-purple-400',
+    }
+  return {
+    bg: 'bg-blue-500/10',
+    text: 'text-blue-400',
+    border: 'border-blue-500/20',
+    icon: 'text-blue-400',
+  }
 }
 
 function phaseIndex(phase: string): number {
@@ -937,7 +1215,10 @@ export default function LessonDetailPage() {
   // Prev/Next navigation
   const currentIndex = LESSON_ORDER.indexOf(lessonId)
   const prevLesson = currentIndex > 0 ? LESSONS[LESSON_ORDER[currentIndex - 1]] : null
-  const nextLesson = currentIndex >= 0 && currentIndex < LESSON_ORDER.length - 1 ? LESSONS[LESSON_ORDER[currentIndex + 1]] : null
+  const nextLesson =
+    currentIndex >= 0 && currentIndex < LESSON_ORDER.length - 1
+      ? LESSONS[LESSON_ORDER[currentIndex + 1]]
+      : null
 
   function toggleTiming(index: number) {
     setExpandedTimings((prev) => {
@@ -970,7 +1251,9 @@ export default function LessonDetailPage() {
     }
     const styles = document.querySelectorAll('style, link[rel="stylesheet"]')
     let styleHtml = ''
-    styles.forEach((s) => { styleHtml += s.outerHTML })
+    styles.forEach((s) => {
+      styleHtml += s.outerHTML
+    })
     printWindow.document.write(`
       <!DOCTYPE html>
       <html><head><title>${lesson.title} - Worksheet</title>${styleHtml}
@@ -1016,7 +1299,6 @@ export default function LessonDetailPage() {
 
       <div className="min-h-screen bg-background print-container">
         <div className="px-4 py-6 sm:px-6 lg:px-8">
-
           {/* Back link */}
           <Link
             href="/school/lessons"
@@ -1038,9 +1320,16 @@ export default function LessonDetailPage() {
                       Suggested by Analytics
                     </Badge>
                   )}
-                  <Badge variant="outline" className="text-xs">{lesson.examBoard}</Badge>
-                  <Badge variant="outline" className="text-xs">{lesson.yearGroup}</Badge>
-                  <Badge variant="outline" className={cn('text-xs', difficultyColor(lesson.difficulty))}>
+                  <Badge variant="outline" className="text-xs">
+                    {lesson.examBoard}
+                  </Badge>
+                  <Badge variant="outline" className="text-xs">
+                    {lesson.yearGroup}
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className={cn('text-xs', difficultyColor(lesson.difficulty))}
+                  >
                     {lesson.difficulty}
                   </Badge>
                   <Badge variant="outline" className="text-xs">
@@ -1095,10 +1384,8 @@ export default function LessonDetailPage() {
 
           {/* ── MAIN GRID: Content + Vocabulary Sidebar ──────────── */}
           <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
-
             {/* Left column: main content */}
             <div className="min-w-0 space-y-6">
-
               {/* ── Learning Objectives with Checkboxes ──────────── */}
               <Card className="print-section">
                 <CardHeader className="pb-3">
@@ -1116,23 +1403,25 @@ export default function LessonDetailPage() {
                           className="mt-0.5 shrink-0 no-print"
                           data-print-hide
                         >
-                          <div className={cn(
-                            'h-4 w-4 rounded border-2 transition-colors flex items-center justify-center',
-                            checkedObjectives.has(i)
-                              ? 'bg-primary border-primary text-primary-foreground'
-                              : 'border-muted-foreground/30 hover:border-primary/50',
-                          )}>
-                            {checkedObjectives.has(i) && (
-                              <CheckCircle className="h-3 w-3" />
+                          <div
+                            className={cn(
+                              'h-4 w-4 rounded border-2 transition-colors flex items-center justify-center',
+                              checkedObjectives.has(i)
+                                ? 'bg-primary border-primary text-primary-foreground'
+                                : 'border-muted-foreground/30 hover:border-primary/50',
                             )}
+                          >
+                            {checkedObjectives.has(i) && <CheckCircle className="h-3 w-3" />}
                           </div>
                         </button>
                         {/* Print-only checkbox */}
                         <span className="objective-checkbox hidden print:inline-block" />
-                        <span className={cn(
-                          'transition-colors',
-                          checkedObjectives.has(i) && 'line-through text-muted-foreground',
-                        )}>
+                        <span
+                          className={cn(
+                            'transition-colors',
+                            checkedObjectives.has(i) && 'line-through text-muted-foreground',
+                          )}
+                        >
                           {obj}
                         </span>
                       </li>
@@ -1158,22 +1447,24 @@ export default function LessonDetailPage() {
                           className="mt-0.5 shrink-0 no-print"
                           data-print-hide
                         >
-                          <div className={cn(
-                            'h-4 w-4 rounded border-2 transition-colors flex items-center justify-center',
-                            checkedCriteria.has(i)
-                              ? 'bg-green-500 border-green-500 text-white'
-                              : 'border-muted-foreground/30 hover:border-green-500/50',
-                          )}>
-                            {checkedCriteria.has(i) && (
-                              <CheckCircle className="h-3 w-3" />
+                          <div
+                            className={cn(
+                              'h-4 w-4 rounded border-2 transition-colors flex items-center justify-center',
+                              checkedCriteria.has(i)
+                                ? 'bg-green-500 border-green-500 text-white'
+                                : 'border-muted-foreground/30 hover:border-green-500/50',
                             )}
+                          >
+                            {checkedCriteria.has(i) && <CheckCircle className="h-3 w-3" />}
                           </div>
                         </button>
                         <span className="objective-checkbox hidden print:inline-block" />
-                        <span className={cn(
-                          'transition-colors',
-                          checkedCriteria.has(i) && 'line-through text-muted-foreground',
-                        )}>
+                        <span
+                          className={cn(
+                            'transition-colors',
+                            checkedCriteria.has(i) && 'line-through text-muted-foreground',
+                          )}
+                        >
                           {sc}
                         </span>
                       </li>
@@ -1249,12 +1540,17 @@ export default function LessonDetailPage() {
                       return (
                         <div key={i} className="relative sm:pl-12">
                           {/* Timeline dot */}
-                          <div className={cn(
-                            'absolute left-2.5 top-5 h-3 w-3 rounded-full border-2 bg-background hidden sm:block z-10',
-                            colors.border, colors.bg,
-                          )} />
+                          <div
+                            className={cn(
+                              'absolute left-2.5 top-5 h-3 w-3 rounded-full border-2 bg-background hidden sm:block z-10',
+                              colors.border,
+                              colors.bg,
+                            )}
+                          />
 
-                          <Card className={cn('transition-all', isExpanded && 'ring-1 ring-border')}>
+                          <Card
+                            className={cn('transition-all', isExpanded && 'ring-1 ring-border')}
+                          >
                             <button
                               onClick={() => toggleTiming(i)}
                               className="w-full text-left px-5 py-4 flex items-center gap-3 hover:bg-accent/30 transition-colors rounded-xl no-print"
@@ -1262,12 +1558,19 @@ export default function LessonDetailPage() {
                             >
                               <Badge
                                 variant="outline"
-                                className={cn('shrink-0 text-xs font-bold', colors.bg, colors.text, colors.border)}
+                                className={cn(
+                                  'shrink-0 text-xs font-bold',
+                                  colors.bg,
+                                  colors.text,
+                                  colors.border,
+                                )}
                               >
                                 {timing.phase}
                               </Badge>
                               <div className="flex-1 min-w-0">
-                                <span className="text-sm font-semibold text-foreground">{timing.title}</span>
+                                <span className="text-sm font-semibold text-foreground">
+                                  {timing.title}
+                                </span>
                               </div>
                               <span className="text-xs text-muted-foreground shrink-0 flex items-center gap-1">
                                 <Clock className="h-3 w-3" />
@@ -1290,10 +1593,14 @@ export default function LessonDetailPage() {
                             </div>
 
                             {/* Expanded content (always visible in print) */}
-                            <div className={cn(
-                              'timing-content overflow-hidden transition-all',
-                              isExpanded ? 'max-h-[3000px] opacity-100' : 'max-h-0 opacity-0 print:max-h-none print:opacity-100',
-                            )}>
+                            <div
+                              className={cn(
+                                'timing-content overflow-hidden transition-all',
+                                isExpanded
+                                  ? 'max-h-[3000px] opacity-100'
+                                  : 'max-h-0 opacity-0 print:max-h-none print:opacity-100',
+                              )}
+                            >
                               <CardContent className="pt-0 pb-5 px-5">
                                 <p className="text-sm text-foreground mb-4">{timing.description}</p>
 
@@ -1302,7 +1609,9 @@ export default function LessonDetailPage() {
                                     <p className="text-xs font-semibold text-clay-600 mb-1 uppercase tracking-wider">
                                       Teacher Notes
                                     </p>
-                                    <p className="text-sm text-muted-foreground">{timing.teacherNotes}</p>
+                                    <p className="text-sm text-muted-foreground">
+                                      {timing.teacherNotes}
+                                    </p>
                                   </div>
                                 )}
 
@@ -1316,39 +1625,49 @@ export default function LessonDetailPage() {
                                     <p className="text-[10px] font-bold uppercase tracking-wider text-green-400 mb-1">
                                       Support (LA)
                                     </p>
-                                    <p className="text-xs text-foreground">{timing.activities.support}</p>
+                                    <p className="text-xs text-foreground">
+                                      {timing.activities.support}
+                                    </p>
                                   </div>
                                   <div className="diff-core rounded-lg border border-blue-500/20 bg-blue-500/5 p-3">
                                     <p className="text-[10px] font-bold uppercase tracking-wider text-blue-400 mb-1">
                                       Core (MA)
                                     </p>
-                                    <p className="text-xs text-foreground">{timing.activities.core}</p>
+                                    <p className="text-xs text-foreground">
+                                      {timing.activities.core}
+                                    </p>
                                   </div>
                                   <div className="diff-stretch rounded-lg border border-purple-500/20 bg-purple-500/5 p-3">
                                     <p className="text-[10px] font-bold uppercase tracking-wider text-purple-400 mb-1">
                                       Stretch (HA)
                                     </p>
-                                    <p className="text-xs text-foreground">{timing.activities.stretch}</p>
+                                    <p className="text-xs text-foreground">
+                                      {timing.activities.stretch}
+                                    </p>
                                   </div>
                                 </div>
 
                                 {/* Assessment questions for this phase */}
-                                {timing.assessmentQuestions && timing.assessmentQuestions.length > 0 && (
-                                  <div className="mt-4">
-                                    <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 flex items-center gap-1.5">
-                                      <ClipboardList className="h-3.5 w-3.5" />
-                                      Assessment Checkpoints
-                                    </h4>
-                                    <ul className="space-y-1">
-                                      {timing.assessmentQuestions.map((q, qi) => (
-                                        <li key={qi} className="text-xs text-muted-foreground flex items-start gap-1.5">
-                                          <span className="mt-1.5 h-1 w-1 rounded-full bg-primary/50 shrink-0" />
-                                          {q}
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                )}
+                                {timing.assessmentQuestions &&
+                                  timing.assessmentQuestions.length > 0 && (
+                                    <div className="mt-4">
+                                      <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 flex items-center gap-1.5">
+                                        <ClipboardList className="h-3.5 w-3.5" />
+                                        Assessment Checkpoints
+                                      </h4>
+                                      <ul className="space-y-1">
+                                        {timing.assessmentQuestions.map((q, qi) => (
+                                          <li
+                                            key={qi}
+                                            className="text-xs text-muted-foreground flex items-start gap-1.5"
+                                          >
+                                            <span className="mt-1.5 h-1 w-1 rounded-full bg-primary/50 shrink-0" />
+                                            {q}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  )}
 
                                 {/* Exit ticket */}
                                 {timing.exitTicket && (
@@ -1434,17 +1753,29 @@ export default function LessonDetailPage() {
                       <table className="assessment-table w-full text-sm">
                         <thead>
                           <tr className="border-b border-border">
-                            <th className="py-2 px-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground w-[140px]">Band</th>
-                            <th className="py-2 px-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">Descriptor</th>
-                            <th className="py-2 px-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground w-[80px]">Marks</th>
+                            <th className="py-2 px-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground w-[140px]">
+                              Band
+                            </th>
+                            <th className="py-2 px-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                              Descriptor
+                            </th>
+                            <th className="py-2 px-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground w-[80px]">
+                              Marks
+                            </th>
                           </tr>
                         </thead>
                         <tbody>
                           {lesson.assessmentCriteria.map((criterion, i) => (
                             <tr key={i} className="border-b border-border/50 last:border-b-0">
-                              <td className="py-2.5 px-3 font-medium text-foreground text-xs">{criterion.band}</td>
-                              <td className="py-2.5 px-3 text-muted-foreground text-xs leading-relaxed">{criterion.description}</td>
-                              <td className="py-2.5 px-3 text-foreground text-xs font-mono">{criterion.marks}</td>
+                              <td className="py-2.5 px-3 font-medium text-foreground text-xs">
+                                {criterion.band}
+                              </td>
+                              <td className="py-2.5 px-3 text-muted-foreground text-xs leading-relaxed">
+                                {criterion.description}
+                              </td>
+                              <td className="py-2.5 px-3 text-foreground text-xs font-mono">
+                                {criterion.marks}
+                              </td>
                             </tr>
                           ))}
                         </tbody>
@@ -1460,14 +1791,22 @@ export default function LessonDetailPage() {
               <Tabs defaultValue="worksheet" className="print-section">
                 <div className="flex items-center justify-between mb-4 no-print" data-print-hide>
                   <TabsList className="bg-transparent gap-1.5 p-0">
-                    <TabsTrigger value="worksheet" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">
+                    <TabsTrigger
+                      value="worksheet"
+                      className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+                    >
                       <FileText className="h-3.5 w-3.5 mr-1.5" />
                       Worksheet
                       {totalMarks > 0 && (
-                        <Badge variant="secondary" className="ml-2 text-[10px]">{totalMarks} marks</Badge>
+                        <Badge variant="secondary" className="ml-2 text-[10px]">
+                          {totalMarks} marks
+                        </Badge>
                       )}
                     </TabsTrigger>
-                    <TabsTrigger value="answers" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">
+                    <TabsTrigger
+                      value="answers"
+                      className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+                    >
                       <GraduationCap className="h-3.5 w-3.5 mr-1.5" />
                       Model Answers
                     </TabsTrigger>
@@ -1481,9 +1820,13 @@ export default function LessonDetailPage() {
                       className="text-xs"
                     >
                       {showAnswers ? (
-                        <><EyeOff className="h-3.5 w-3.5" /> Hide Answers</>
+                        <>
+                          <EyeOff className="h-3.5 w-3.5" /> Hide Answers
+                        </>
                       ) : (
-                        <><Eye className="h-3.5 w-3.5" /> Show Answers</>
+                        <>
+                          <Eye className="h-3.5 w-3.5" /> Show Answers
+                        </>
                       )}
                     </Button>
                     {lesson.worksheetSections.length > 0 && (
@@ -1531,9 +1874,7 @@ export default function LessonDetailPage() {
                       {lesson.modelAnswers.map((ma, i) => (
                         <Card key={i}>
                           <CardHeader className="pb-3">
-                            <CardTitle className="text-sm text-foreground">
-                              {ma.question}
-                            </CardTitle>
+                            <CardTitle className="text-sm text-foreground">{ma.question}</CardTitle>
                           </CardHeader>
                           <CardContent>
                             <div className="rounded-lg border border-dashed border-green-500/30 bg-green-500/5 p-4">
@@ -1561,7 +1902,6 @@ export default function LessonDetailPage() {
                   )}
                 </TabsContent>
               </Tabs>
-
             </div>
 
             {/* ── RIGHT SIDEBAR: Key Vocabulary ─────────────────── */}
@@ -1580,7 +1920,10 @@ export default function LessonDetailPage() {
                 <CardContent>
                   <dl className="vocab-sidebar space-y-3">
                     {lesson.keywords.map((kw, i) => (
-                      <div key={i} className="border-b border-border/30 pb-2.5 last:border-b-0 last:pb-0">
+                      <div
+                        key={i}
+                        className="border-b border-border/30 pb-2.5 last:border-b-0 last:pb-0"
+                      >
                         <dt className="text-sm font-semibold text-foreground capitalize">
                           {kw.term}
                         </dt>
@@ -1612,7 +1955,9 @@ export default function LessonDetailPage() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Objectives</span>
-                    <span className="font-medium text-foreground">{lesson.learningObjectives.length}</span>
+                    <span className="font-medium text-foreground">
+                      {lesson.learningObjectives.length}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Worksheet</span>
@@ -1622,7 +1967,10 @@ export default function LessonDetailPage() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Difficulty</span>
-                    <Badge variant="outline" className={cn('text-[10px]', difficultyColor(lesson.difficulty))}>
+                    <Badge
+                      variant="outline"
+                      className={cn('text-[10px]', difficultyColor(lesson.difficulty))}
+                    >
                       {lesson.difficulty}
                     </Badge>
                   </div>
@@ -1643,8 +1991,12 @@ export default function LessonDetailPage() {
                 >
                   <ArrowLeft className="h-4 w-4 text-muted-foreground group-hover:text-foreground shrink-0 transition-colors" />
                   <div className="min-w-0">
-                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Previous Lesson</p>
-                    <p className="text-sm font-medium text-foreground truncate">{prevLesson.title}</p>
+                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                      Previous Lesson
+                    </p>
+                    <p className="text-sm font-medium text-foreground truncate">
+                      {prevLesson.title}
+                    </p>
                   </div>
                 </Link>
               ) : (
@@ -1658,8 +2010,12 @@ export default function LessonDetailPage() {
                   className="group flex items-center gap-3 rounded-lg border border-border p-3 hover:bg-accent/30 transition-colors max-w-xs text-right"
                 >
                   <div className="min-w-0">
-                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Next Lesson</p>
-                    <p className="text-sm font-medium text-foreground truncate">{nextLesson.title}</p>
+                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                      Next Lesson
+                    </p>
+                    <p className="text-sm font-medium text-foreground truncate">
+                      {nextLesson.title}
+                    </p>
                   </div>
                   <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground shrink-0 transition-colors" />
                 </Link>
@@ -1668,7 +2024,6 @@ export default function LessonDetailPage() {
               )}
             </div>
           </nav>
-
         </div>
       </div>
     </>

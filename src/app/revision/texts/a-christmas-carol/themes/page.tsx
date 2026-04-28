@@ -107,13 +107,13 @@ const themes: ThemeData[] = [
     contextLinks: [
       'Dickens believed in the possibility of individual moral reform. He supported reformatory schools and charitable institutions.',
       'The novella was written as a deliberate alternative to a political pamphlet -- Dickens chose story over argument because he believed narrative could change hearts.',
-      'Victorian Christianity emphasised the possibility of repentance and salvation -- Scrooge\'s transformation mirrors a conversion narrative.',
+      "Victorian Christianity emphasised the possibility of repentance and salvation -- Scrooge's transformation mirrors a conversion narrative.",
     ],
     essayTips: [
       'Structure an essay around the three stages of change: regret (Stave 2), empathy (Stave 3), and fear (Stave 4). Which is most important?',
       'The word "try" in Scrooge\'s vow is worth close analysis -- it adds realism and humility.',
       'Compare Marley (who cannot change) with Scrooge (who can) to show that timing matters.',
-      'Always link to Dickens\'s PURPOSE: he wanted to convince his wealthy readers that personal change was possible and necessary.',
+      "Always link to Dickens's PURPOSE: he wanted to convince his wealthy readers that personal change was possible and necessary.",
     ],
   },
   {
@@ -123,7 +123,7 @@ const themes: ThemeData[] = [
     definition:
       'The moral obligation of the wealthy and powerful to care for the poor and vulnerable in society.',
     overview:
-      'Dickens wrote A Christmas Carol partly as a direct response to the 1843 parliamentary report on child labour. When Scrooge asks "Are there no prisons? Are there no workhouses?", Dickens puts the callous language of Victorian political economy into his mouth to expose its cruelty. The novella argues that poverty is a social failure, not a personal one, and that the wealthy have a duty to help those less fortunate. The children Ignorance and Want are Dickens\'s most explicit statement: society\'s neglect of the poor leads to collective doom.',
+      'Dickens wrote A Christmas Carol partly as a direct response to the 1843 parliamentary report on child labour and to the 1834 New Poor Law (Poor Law Amendment Act), which had created the brutal workhouse system. When Scrooge asks "Are there no prisons? Are there no workhouses?", Dickens puts the callous language of Victorian political economy directly into his mouth -- the workhouses created by the 1834 Act were deliberately harsh under the principle of "less eligibility," designed to make poverty so unpleasant that families would do anything to avoid them. The novella argues that poverty is a social failure, not a personal one, and that the wealthy have a duty to help those less fortunate. The children Ignorance and Want are Dickens\'s most explicit statement: society\'s neglect of the poor leads to collective doom.',
     staveEvidence: [
       {
         stave: 'Stave 1',
@@ -138,12 +138,12 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 3',
         evidence:
-          'The Cratchit family\'s poverty is shown in loving detail -- the small goose, the tiny pudding, Tiny Tim\'s crutch. The children Ignorance and Want, hidden beneath the Ghost\'s robe, are Dickens\'s most powerful political statement.',
+          "The Cratchit family's poverty is shown in loving detail -- the small goose, the tiny pudding, Tiny Tim's crutch. The children Ignorance and Want, hidden beneath the Ghost's robe, are Dickens's most powerful political statement.",
       },
       {
         stave: 'Stave 4',
         evidence:
-          'Tiny Tim\'s death in the alternative future demonstrates the ultimate consequence of social indifference. A child dies because society refuses to help.',
+          "Tiny Tim's death in the alternative future demonstrates the ultimate consequence of social indifference. A child dies because society refuses to help.",
       },
       {
         stave: 'Stave 5',
@@ -181,7 +181,7 @@ const themes: ThemeData[] = [
     ],
     essayTips: [
       'Marley\'s redefinition of "business" from commerce to compassion is the thesis statement of the novella. Build an essay around it.',
-      'Ignorance and Want are the most explicitly political passage -- link them to Dickens\'s real-world context.',
+      "Ignorance and Want are the most explicitly political passage -- link them to Dickens's real-world context.",
       'Scrooge\'s "surplus population" line is echoed back by the Ghost in Stave 3. Analyse this structural echo and its devastating effect.',
       'Discuss whether Dickens blames individuals (Scrooge) or systems (the Poor Law) -- the best answers consider both.',
     ],
@@ -198,7 +198,7 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 1',
         evidence:
-          'Fred\'s passionate speech defends Christmas against Scrooge\'s "Humbug!" The contrast between Fred\'s warmth and Scrooge\'s coldness establishes the moral framework.',
+          "Fred's passionate speech defends Christmas against Scrooge's \"Humbug!\" The contrast between Fred's warmth and Scrooge's coldness establishes the moral framework.",
       },
       {
         stave: 'Stave 2',
@@ -208,7 +208,7 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 3',
         evidence:
-          'The Ghost of Christmas Present embodies abundance and sharing. London\'s streets glow with Christmas spirit. The Cratchit dinner transforms poverty into celebration through love and gratitude.',
+          "The Ghost of Christmas Present embodies abundance and sharing. London's streets glow with Christmas spirit. The Cratchit dinner transforms poverty into celebration through love and gratitude.",
       },
       {
         stave: 'Stave 4',
@@ -218,7 +218,7 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 5',
         evidence:
-          'Scrooge\'s transformation is expressed entirely through acts of generosity: the turkey, the donation, Fred\'s dinner, Bob\'s raise. Dickens shows that giving is a source of delight, not sacrifice.',
+          "Scrooge's transformation is expressed entirely through acts of generosity: the turkey, the donation, Fred's dinner, Bob's raise. Dickens shows that giving is a source of delight, not sacrifice.",
       },
     ],
     keyQuotes: [
@@ -244,8 +244,8 @@ const themes: ThemeData[] = [
       'Victorian Christmas traditions (turkey, family gatherings, charity) were being established during this period, and Dickens helped define them.',
     ],
     essayTips: [
-      'Fred\'s Stave 1 speech is the novella\'s definition of Christmas spirit. Learn it and use it as a thesis quote.',
-      'Compare Scrooge\'s joyful giving in Stave 5 with his miserable hoarding in Stave 1 -- Dickens argues that generosity is more enjoyable than greed.',
+      "Fred's Stave 1 speech is the novella's definition of Christmas spirit. Learn it and use it as a thesis quote.",
+      "Compare Scrooge's joyful giving in Stave 5 with his miserable hoarding in Stave 1 -- Dickens argues that generosity is more enjoyable than greed.",
       'Discuss how Dickens extends Christmas from a single day to a permanent moral principle: "I will honour Christmas in my heart, and try to keep it all the year."',
     ],
   },
@@ -256,7 +256,7 @@ const themes: ThemeData[] = [
     definition:
       'The contrast between the warmth of family connection and the misery of self-imposed isolation.',
     overview:
-      'Every happy scene in the novella revolves around family: young Scrooge welcomed by Fan, Fezziwig\'s party, Fred\'s dinner, and above all the Cratchit Christmas. Every miserable scene shows isolation: Scrooge alone at school, alone in his chambers, alone and dead with no one to mourn him. Dickens makes the connection between loneliness and cruelty absolute -- Scrooge\'s refusal to participate in family life is both symptom and cause of his moral failure. His transformation is marked by his return to family: attending Fred\'s dinner and becoming "a second father" to Tiny Tim.',
+      "Every happy scene in the novella revolves around family: young Scrooge welcomed by Fan, Fezziwig's party, Fred's dinner, and above all the Cratchit Christmas. Every miserable scene shows isolation: Scrooge alone at school, alone in his chambers, alone and dead with no one to mourn him. Dickens makes the connection between loneliness and cruelty absolute -- Scrooge's refusal to participate in family life is both symptom and cause of his moral failure. His transformation is marked by his return to family: attending Fred's dinner and becoming \"a second father\" to Tiny Tim.",
     staveEvidence: [
       {
         stave: 'Stave 1',
@@ -266,17 +266,17 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 2',
         evidence:
-          'The lonely schoolboy is the key to Scrooge\'s character. Fan\'s arrival brings warmth. Belle\'s departure removes it. Scrooge is shown how he chose isolation over love.',
+          "The lonely schoolboy is the key to Scrooge's character. Fan's arrival brings warmth. Belle's departure removes it. Scrooge is shown how he chose isolation over love.",
       },
       {
         stave: 'Stave 3',
         evidence:
-          'The Cratchit family\'s togetherness contrasts with Scrooge\'s loneliness. Fred\'s party is full of warmth and laughter. Even the poorest families celebrate together.',
+          "The Cratchit family's togetherness contrasts with Scrooge's loneliness. Fred's party is full of warmth and laughter. Even the poorest families celebrate together.",
       },
       {
         stave: 'Stave 4',
         evidence:
-          'The dead man has no family to mourn him. The Cratchits\' grief for Tiny Tim proves the value of family bonds. The contrast between the two deaths is devastating.',
+          "The dead man has no family to mourn him. The Cratchits' grief for Tiny Tim proves the value of family bonds. The contrast between the two deaths is devastating.",
       },
       {
         stave: 'Stave 5',
@@ -302,14 +302,14 @@ const themes: ThemeData[] = [
       },
     ],
     contextLinks: [
-      'Victorian society idealised the family unit. Dickens himself was deeply affected by his family\'s separation during his father\'s imprisonment.',
+      "Victorian society idealised the family unit. Dickens himself was deeply affected by his family's separation during his father's imprisonment.",
       'The workhouse system deliberately separated families -- a cruelty Dickens particularly abhorred.',
       'The novella helped establish Christmas as specifically a family occasion in British culture.',
     ],
     essayTips: [
       'Map the contrast between isolation and family systematically across all five staves.',
-      'The lonely schoolboy of Stave 2 explains Scrooge\'s adult cruelty. Discuss how Dickens uses backstory to generate sympathy.',
-      'Scrooge\'s return to Fred\'s dinner in Stave 5 completes a journey from rejection (Stave 1) to acceptance. Analyse this structural echo.',
+      "The lonely schoolboy of Stave 2 explains Scrooge's adult cruelty. Discuss how Dickens uses backstory to generate sympathy.",
+      "Scrooge's return to Fred's dinner in Stave 5 completes a journey from rejection (Stave 1) to acceptance. Analyse this structural echo.",
     ],
   },
   {
@@ -317,7 +317,7 @@ const themes: ThemeData[] = [
     icon: Clock,
     iconColour: 'text-teal-400',
     definition:
-      'The novella\'s structural use of past, present and future to argue that understanding where you came from is essential to changing where you are going.',
+      "The novella's structural use of past, present and future to argue that understanding where you came from is essential to changing where you are going.",
     overview:
       'The three-ghost structure is fundamentally about time. The Ghost of Christmas Past forces Scrooge to confront his memories. The Ghost of Christmas Present forces him to see reality as it is now. The Ghost of Christmas Yet to Come shows him the consequences of inaction. Dickens argues that these three temporal perspectives are all necessary for moral change: you must understand how you got here (past), see the reality of your current impact (present), and understand where your current path leads (future). The novella also explores nostalgia -- the bittersweet power of memory to reveal both what was beautiful and what was lost.',
     staveEvidence: [
@@ -367,10 +367,10 @@ const themes: ThemeData[] = [
     contextLinks: [
       'Dickens called his chapters "staves" -- a musical term meaning lines on which notes are written. The structure mirrors a carol: each stave builds toward a harmonious conclusion.',
       'Victorian interest in the supernatural was growing. Dickens uses the ghost story tradition to explore psychological and moral questions about time.',
-      'The novella was published in December 1843, designed to be read at Christmas -- its temporal structure mirrors the reader\'s own experience of the season.',
+      "The novella was published in December 1843, designed to be read at Christmas -- its temporal structure mirrors the reader's own experience of the season.",
     ],
     essayTips: [
-      'The three-ghost structure is itself a metaphor for moral education. Discuss how each temporal stage contributes to Scrooge\'s change.',
+      "The three-ghost structure is itself a metaphor for moral education. Discuss how each temporal stage contributes to Scrooge's change.",
       'Analyse the conditional language around the future ("may be" vs "will be") -- this is philosophically important.',
       'The Ghost of Christmas Present aging and dying within one stave is worth analysing: the present is fleeting and must be seized.',
     ],
@@ -392,7 +392,7 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 2',
         evidence:
-          'Fan\'s death is mentioned briefly but significantly -- she died young, leaving Fred behind. This adds to the pattern of loss in Scrooge\'s life.',
+          "Fan's death is mentioned briefly but significantly -- she died young, leaving Fred behind. This adds to the pattern of loss in Scrooge's life.",
       },
       {
         stave: 'Stave 3',
@@ -402,7 +402,7 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 4',
         evidence:
-          'The entire stave is about death: the dead man whose possessions are stolen, the body lying alone and unattended, the gravestone bearing Scrooge\'s name. The Cratchits\' grief for Tiny Tim contrasts with the contempt shown to the dead miser.',
+          "The entire stave is about death: the dead man whose possessions are stolen, the body lying alone and unattended, the gravestone bearing Scrooge's name. The Cratchits' grief for Tiny Tim contrasts with the contempt shown to the dead miser.",
       },
       {
         stave: 'Stave 5',
@@ -434,7 +434,7 @@ const themes: ThemeData[] = [
     ],
     essayTips: [
       'Compare the two deaths in Stave 4: the unmourned miser vs the deeply mourned Tiny Tim. This contrast is the moral argument.',
-      'The novella opens and closes with death (Marley\'s death / Tiny Tim\'s averted death). Discuss how death frames the narrative.',
+      "The novella opens and closes with death (Marley's death / Tiny Tim's averted death). Discuss how death frames the narrative.",
       'Link to the "memento mori" tradition and Victorian attitudes to death for contextual marks.',
     ],
   },
@@ -443,7 +443,7 @@ const themes: ThemeData[] = [
     icon: Flame,
     iconColour: 'text-clay-600',
     definition:
-      'Dickens\'s critique of the idea that the pursuit of individual wealth should take priority over collective welfare.',
+      "Dickens's critique of the idea that the pursuit of individual wealth should take priority over collective welfare.",
     overview:
       'Dickens sets up a stark moral opposition throughout the novella. Scrooge\'s wealth makes him wretched; the Cratchits\' poverty does not prevent their joy. Fezziwig spends only "three or four pounds" but creates enormous happiness. Marley\'s chains are forged from "cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel" -- the instruments of commerce become instruments of eternal punishment. Dickens does not argue against wealth itself but against the hoarding of wealth at the expense of others. Money spent on others creates happiness; money hoarded creates only isolation and spiritual death.',
     staveEvidence: [
@@ -455,17 +455,17 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 2',
         evidence:
-          'Belle identifies money as Scrooge\'s "golden idol" -- he has committed idolatry by worshipping wealth. The contrast between Fezziwig\'s modest spending and Scrooge\'s hoarding highlights the moral failure of greed.',
+          "Belle identifies money as Scrooge's \"golden idol\" -- he has committed idolatry by worshipping wealth. The contrast between Fezziwig's modest spending and Scrooge's hoarding highlights the moral failure of greed.",
       },
       {
         stave: 'Stave 3',
         evidence:
-          'The Cratchits\' tiny goose and pudding are transformed into a feast by love. Scrooge\'s wealth has not brought him any of this joy. The message: happiness comes from giving, not hoarding.',
+          "The Cratchits' tiny goose and pudding are transformed into a feast by love. Scrooge's wealth has not brought him any of this joy. The message: happiness comes from giving, not hoarding.",
       },
       {
         stave: 'Stave 4',
         evidence:
-          'At Old Joe\'s shop, the dead man\'s possessions are sold for pennies. His bed curtains, his shirt, even his buttons are stripped away. A lifetime of hoarding produces nothing but contempt.',
+          "At Old Joe's shop, the dead man's possessions are sold for pennies. His bed curtains, his shirt, even his buttons are stripped away. A lifetime of hoarding produces nothing but contempt.",
       },
       {
         stave: 'Stave 5',
@@ -496,9 +496,9 @@ const themes: ThemeData[] = [
       'Dickens was not opposed to capitalism -- he was a successful businessman himself -- but he argued passionately for ethical capitalism that included social responsibility.',
     ],
     essayTips: [
-      'Marley\'s chain is the central symbol of greed\'s consequences. Always analyse its components -- the instruments of commerce become instruments of punishment.',
+      "Marley's chain is the central symbol of greed's consequences. Always analyse its components -- the instruments of commerce become instruments of punishment.",
       'Dickens does not condemn wealth itself -- Scrooge is still wealthy in Stave 5. He condemns the hoarding of wealth. Make this distinction.',
-      'Compare Fezziwig (ethical employer) with Scrooge (exploitative employer) to demonstrate Dickens\'s vision of how capitalism should work.',
+      "Compare Fezziwig (ethical employer) with Scrooge (exploitative employer) to demonstrate Dickens's vision of how capitalism should work.",
       'Belle\'s "golden idol" line uses biblical allusion. Discuss how Dickens frames greed as spiritual corruption, not just a personality flaw.',
     ],
   },
@@ -511,11 +511,17 @@ export default function ThemesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "A Christmas Carol", url: "https://theenglishhub.app/revision/texts/a-christmas-carol" },
-          { name: "Themes", url: "https://theenglishhub.app/revision/texts/a-christmas-carol/themes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'A Christmas Carol',
+            url: 'https://theenglishhub.app/revision/texts/a-christmas-carol',
+          },
+          {
+            name: 'Themes',
+            url: 'https://theenglishhub.app/revision/texts/a-christmas-carol/themes',
+          },
         ]}
       />
       {/* Study Tools */}
@@ -554,9 +560,8 @@ export default function ThemesPage() {
             A Christmas Carol by Charles Dickens
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Seven major themes explored in depth: definition, evidence from each
-            stave, key quotations, links to historical context, and essay
-            planning tips for GCSE success.
+            Seven major themes explored in depth: definition, evidence from each stave, key
+            quotations, links to historical context, and essay planning tips for GCSE success.
           </p>
         </div>
       </section>
@@ -565,9 +570,7 @@ export default function ThemesPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 text-heading-md font-heading text-foreground">
-              Jump to a Theme
-            </h2>
+            <h2 className="mb-4 text-heading-md font-heading text-foreground">Jump to a Theme</h2>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {themes.map((th) => {
                 const Icon = th.icon
@@ -606,12 +609,8 @@ export default function ThemesPage() {
                 <Icon className={`size-5 ${theme.iconColour}`} />
               </div>
               <div>
-                <h2 className="text-heading-lg font-heading text-foreground">
-                  {theme.title}
-                </h2>
-                <p className="text-body-sm italic text-muted-foreground">
-                  {theme.definition}
-                </p>
+                <h2 className="text-heading-lg font-heading text-foreground">{theme.title}</h2>
+                <p className="text-body-sm italic text-muted-foreground">{theme.definition}</p>
               </div>
             </div>
 
@@ -639,9 +638,7 @@ export default function ThemesPage() {
               <CardContent className="space-y-4 text-body-sm text-muted-foreground">
                 {theme.staveEvidence.map((se) => (
                   <div key={se.stave}>
-                    <h4 className="mb-1 text-sm font-semibold text-foreground">
-                      {se.stave}
-                    </h4>
+                    <h4 className="mb-1 text-sm font-semibold text-foreground">{se.stave}</h4>
                     <p>{se.evidence}</p>
                   </div>
                 ))}
@@ -652,17 +649,13 @@ export default function ThemesPage() {
             <div>
               <div className="mb-4 flex items-center gap-2">
                 <Quote className="size-4 text-violet-400" />
-                <h3 className="text-heading-md font-heading text-foreground">
-                  Key Quotations
-                </h3>
+                <h3 className="text-heading-md font-heading text-foreground">Key Quotations</h3>
               </div>
               <div className="grid gap-3">
                 {theme.keyQuotes.map((q, i) => (
                   <Card key={i}>
                     <CardContent className="p-4">
-                      <p className="font-medium italic text-foreground">
-                        {q.text}
-                      </p>
+                      <p className="font-medium italic text-foreground">{q.text}</p>
                       <p className="mt-1 text-xs font-mono text-primary">
                         {q.speaker} -- {q.stave}
                       </p>
@@ -709,9 +702,8 @@ export default function ThemesPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A Christmas Carol by Charles Dickens (1843) is in the public domain.
-        Quotations are reproduced freely as the text is no longer subject to
-        copyright.
+        A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are
+        reproduced freely as the text is no longer subject to copyright.
       </p>
     </div>
   )

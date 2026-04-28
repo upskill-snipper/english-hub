@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { ArrowLeft, BookOpen, GitCompare, AlertTriangle } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
@@ -107,7 +107,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Woe\'s me for joy thereof,',
+      text: "Woe's me for joy thereof,",
       annotations: [
         {
           type: 'Paradox',
@@ -183,7 +183,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'He saw you at your father\'s gate,',
+      text: "He saw you at your father's gate,",
       annotations: [
         {
           type: 'Detail',
@@ -218,7 +218,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Who knows if you\'d have been so good,',
+      text: "Who knows if you'd have been so good,",
       annotations: [],
     },
     {
@@ -227,7 +227,7 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: 'Yet I\'ve a gift you have not got,',
+      text: "Yet I've a gift you have not got,",
       annotations: [
         {
           type: 'Key quote',
@@ -346,7 +346,7 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout — from nos
     {
       quote: 'Not mindful I was fair',
       analysis:
-        'She did not know she was beautiful, or did not think about it. This unconscious beauty made her vulnerable — she had no defences because she did not know she needed them. The line also establishes her as without vanity or ambition, making the lord\'s exploitation of her innocence more cruel.',
+        "She did not know she was beautiful, or did not think about it. This unconscious beauty made her vulnerable — she had no defences because she did not know she needed them. The line also establishes her as without vanity or ambition, making the lord's exploitation of her innocence more cruel.",
       themes: ['Innocence', 'Beauty', 'Vulnerability'],
     },
     {
@@ -399,7 +399,7 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout — from nos
       device: 'Dramatic monologue / Direct address',
       example: 'O Lady Kate, my cousin Kate',
       effect:
-        'The poem is addressed directly to Kate, creating an intimate confrontation. The speaker is not making a public argument but a private accusation. The direct address forces the reader into Kate\'s position — we must listen, as Kate must, to the speaker\'s pain and challenge.',
+        "The poem is addressed directly to Kate, creating an intimate confrontation. The speaker is not making a public argument but a private accusation. The direct address forces the reader into Kate's position — we must listen, as Kate must, to the speaker's pain and challenge.",
       lineRef: 18,
     },
     {
@@ -483,9 +483,7 @@ export default function CousinKatePage() {
             <BookOpen className="size-5 text-pink-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              Cousin Kate
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">Cousin Kate</h1>
             <p className="text-body-sm text-muted-foreground">
               Christina Rossetti &middot; Edexcel IGCSE Anthology
             </p>
@@ -496,6 +494,37 @@ export default function CousinKatePage() {
         </div>
       </div>
 
+      <section
+        aria-label="Anthology scope notice"
+        className="rounded-xl border border-amber-500/40 bg-amber-500/[0.08] p-5 text-body-sm text-card-foreground"
+      >
+        <div className="flex items-start gap-3">
+          <AlertTriangle className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
+          <div className="space-y-2">
+            <p>
+              <strong className="text-foreground">
+                This poem is not in the current Edexcel IGCSE 4ET1 anthology.
+              </strong>{' '}
+              It may have been included in earlier syllabus cycles or is provided as wider-reading
+              content. Confirm via the official Pearson Edexcel anthology before relying on it for
+              assessment.
+            </p>
+            <p>
+              "Cousin Kate" is a set text in the{' '}
+              <strong className="text-foreground">Eduqas GCSE 2025 poetry cluster</strong>. For the
+              canonical cluster context (set alongside the other Eduqas anthology poems), see{' '}
+              <Link
+                href="/revision/poetry/eduqas/cousin-kate"
+                className="underline underline-offset-2 hover:text-foreground"
+              >
+                the Eduqas Cousin Kate page
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
       <InteractivePoemViewer poem={poem} />
 
       <StudyTools textName="Cousin Kate" textType="poem" examBoard="Edexcel" variant="compact" />
@@ -503,13 +532,11 @@ export default function CousinKatePage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another
-          from the anthology. These are strong pairings for Cousin Kate.
+          The Edexcel exam asks you to compare the named poem with another from the anthology. These
+          are strong pairings for Cousin Kate.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -523,9 +550,7 @@ export default function CousinKatePage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span

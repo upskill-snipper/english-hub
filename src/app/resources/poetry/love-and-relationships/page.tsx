@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { useState, useMemo } from "react";
-import Link from "next/link";
+import { useState, useMemo } from 'react'
+import Link from 'next/link'
 
 /* ================================================================== */
 /*  Reusable Components                                                */
@@ -15,14 +15,14 @@ function Section({
   children,
   defaultOpen = false,
 }: {
-  id: string;
-  title: string;
-  poet: string;
-  studyHref?: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
+  id: string
+  title: string
+  poet: string
+  studyHref?: string
+  children: React.ReactNode
+  defaultOpen?: boolean
 }) {
-  const [open, setOpen] = useState(defaultOpen);
+  const [open, setOpen] = useState(defaultOpen)
   return (
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
@@ -39,7 +39,7 @@ function Section({
           </div>
         </div>
         <svg
-          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? 'rotate-180' : ''}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -58,8 +58,18 @@ function Section({
                 className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
               >
                 Study this poem in depth
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
                 </svg>
               </Link>
             </div>
@@ -67,7 +77,7 @@ function Section({
         </div>
       )}
     </div>
-  );
+  )
 }
 
 function SubSection({ title, children }: { title: string; children: React.ReactNode }) {
@@ -76,7 +86,7 @@ function SubSection({ title, children }: { title: string; children: React.ReactN
       <h3 className="text-base font-bold text-primary mb-2">{title}</h3>
       {children}
     </div>
-  );
+  )
 }
 
 function Quote({
@@ -84,9 +94,9 @@ function Quote({
   technique,
   analysis,
 }: {
-  text: string;
-  technique: string;
-  analysis: string;
+  text: string
+  technique: string
+  analysis: string
 }) {
   return (
     <div className="rounded-lg border-l-4 border-accent bg-primary/5 p-4">
@@ -94,7 +104,7 @@ function Quote({
       <p className="mt-1 text-xs font-semibold text-primary">{technique}</p>
       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{analysis}</p>
     </div>
-  );
+  )
 }
 
 function ThemeTag({ theme }: { theme: string }) {
@@ -102,7 +112,7 @@ function ThemeTag({ theme }: { theme: string }) {
     <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
       {theme}
     </span>
-  );
+  )
 }
 
 function ComparisonSuggestion({ poem, reason }: { poem: string; reason: string }) {
@@ -110,7 +120,7 @@ function ComparisonSuggestion({ poem, reason }: { poem: string; reason: string }
     <li className="text-sm text-muted-foreground">
       <span className="font-semibold text-foreground">{poem}</span> &mdash; {reason}
     </li>
-  );
+  )
 }
 
 /* ================================================================== */
@@ -118,86 +128,285 @@ function ComparisonSuggestion({ poem, reason }: { poem: string; reason: string }
 /* ================================================================== */
 
 const COMPARISON_DATA: {
-  poem: string;
-  poet: string;
-  type: string;
-  themes: string;
-  tone: string;
-  form: string;
+  poem: string
+  poet: string
+  type: string
+  themes: string
+  tone: string
+  form: string
 }[] = [
-  { poem: "When We Two Parted", poet: "Byron", type: "Romantic", themes: "Loss, betrayal, secrecy", tone: "Bitter, sorrowful", form: "Regular quatrains, ABAB rhyme" },
-  { poem: "Love's Philosophy", poet: "Shelley", type: "Romantic", themes: "Desire, nature, persuasion", tone: "Passionate, frustrated", form: "Two octets, ABABCDCD rhyme" },
-  { poem: "Porphyria's Lover", poet: "Browning", type: "Romantic", themes: "Obsession, power, madness", tone: "Disturbing, calm", form: "Dramatic monologue, ABABB rhyme" },
-  { poem: "Sonnet 29", poet: "Barrett Browning", type: "Romantic", themes: "Love as transformative, devotion", tone: "Tender, uplifting", form: "Petrarchan sonnet, iambic pentameter" },
-  { poem: "Neutral Tones", poet: "Hardy", type: "Victorian", themes: "Loss of love, disillusionment, memory", tone: "Bleak, bitter", form: "Four quatrains, cyclical structure" },
-  { poem: "Letters from Yorkshire", poet: "Dooley", type: "Modern", themes: "Distance, connection, nature vs technology", tone: "Reflective, admiring", form: "Free verse, no rhyme" },
-  { poem: "The Farmer's Bride", poet: "Mew", type: "Victorian", themes: "Isolation, desire, gender", tone: "Frustrated, possessive", form: "Dramatic monologue, varied rhyme" },
-  { poem: "Walking Away", poet: "Day Lewis", type: "Modern", themes: "Parent–child love, letting go", tone: "Nostalgic, accepting", form: "Four quintains, loose rhyme" },
-  { poem: "Eden Rock", poet: "Causley", type: "Modern", themes: "Memory, family, death", tone: "Serene, dreamlike", form: "Free verse, varied stanzas" },
-  { poem: "Follower", poet: "Heaney", type: "Modern", themes: "Admiration, ageing, role reversal", tone: "Admiring to guilty", form: "Six quatrains, ABAB half-rhyme" },
-  { poem: "Mother, Any Distance", poet: "Armitage", type: "Modern", themes: "Parent–child bond, independence", tone: "Uncertain, bittersweet", form: "Extended sonnet (16 lines)" },
-  { poem: "Before You Were Mine", poet: "Duffy", type: "Modern", themes: "Memory, possession, mother–daughter", tone: "Celebratory, possessive", form: "Four quintains, free verse" },
-  { poem: "Winter Swans", poet: "Sheers", type: "Modern", themes: "Reconciliation, nature, love", tone: "Tender, hopeful", form: "Tercets then final couplet" },
-  { poem: "Singh Song!", poet: "Nagra", type: "Modern", themes: "Love, cultural identity, marriage", tone: "Playful, joyful", form: "Free verse, phonetic spelling" },
-  { poem: "Climbing My Grandfather", poet: "Waterhouse", type: "Modern", themes: "Family bond, memory, admiration", tone: "Warm, determined", form: "Free verse, extended metaphor" },
-];
+  {
+    poem: 'When We Two Parted',
+    poet: 'Byron',
+    type: 'Romantic',
+    themes: 'Loss, betrayal, secrecy',
+    tone: 'Bitter, sorrowful',
+    form: 'Regular quatrains, ABAB rhyme',
+  },
+  {
+    poem: "Love's Philosophy",
+    poet: 'Shelley',
+    type: 'Romantic',
+    themes: 'Desire, nature, persuasion',
+    tone: 'Passionate, frustrated',
+    form: 'Two octets, ABABCDCD rhyme',
+  },
+  {
+    poem: "Porphyria's Lover",
+    poet: 'Browning',
+    type: 'Romantic',
+    themes: 'Obsession, power, madness',
+    tone: 'Disturbing, calm',
+    form: 'Dramatic monologue, ABABB rhyme',
+  },
+  {
+    poem: 'Sonnet 29',
+    poet: 'Barrett Browning',
+    type: 'Romantic',
+    themes: 'Love as transformative, devotion',
+    tone: 'Tender, uplifting',
+    form: 'Petrarchan sonnet, iambic pentameter',
+  },
+  {
+    poem: 'Neutral Tones',
+    poet: 'Hardy',
+    type: 'Victorian',
+    themes: 'Loss of love, disillusionment, memory',
+    tone: 'Bleak, bitter',
+    form: 'Four quatrains, cyclical structure',
+  },
+  {
+    poem: 'Letters from Yorkshire',
+    poet: 'Dooley',
+    type: 'Modern',
+    themes: 'Distance, connection, nature vs technology',
+    tone: 'Reflective, admiring',
+    form: 'Free verse, no rhyme',
+  },
+  {
+    poem: "The Farmer's Bride",
+    poet: 'Mew',
+    type: 'Victorian',
+    themes: 'Isolation, desire, gender',
+    tone: 'Frustrated, possessive',
+    form: 'Dramatic monologue, varied rhyme',
+  },
+  {
+    poem: 'Walking Away',
+    poet: 'Day-Lewis',
+    type: 'Modern',
+    themes: 'Parent–child love, letting go',
+    tone: 'Nostalgic, accepting',
+    form: 'Five quintains, loose ABACA rhyme',
+  },
+  {
+    poem: 'Eden Rock',
+    poet: 'Causley',
+    type: 'Modern',
+    themes: 'Memory, family, death',
+    tone: 'Serene, dreamlike',
+    form: 'Free verse, varied stanzas',
+  },
+  {
+    poem: 'Follower',
+    poet: 'Heaney',
+    type: 'Modern',
+    themes: 'Admiration, ageing, role reversal',
+    tone: 'Admiring to guilty',
+    form: 'Six quatrains, ABAB half-rhyme',
+  },
+  {
+    poem: 'Mother, Any Distance',
+    poet: 'Armitage',
+    type: 'Modern',
+    themes: 'Parent–child bond, independence',
+    tone: 'Uncertain, bittersweet',
+    form: 'Extended sonnet (16 lines)',
+  },
+  {
+    poem: 'Before You Were Mine',
+    poet: 'Duffy',
+    type: 'Modern',
+    themes: 'Memory, possession, mother–daughter',
+    tone: 'Celebratory, possessive',
+    form: 'Four quintains, free verse',
+  },
+  {
+    poem: 'Winter Swans',
+    poet: 'Sheers',
+    type: 'Modern',
+    themes: 'Reconciliation, nature, love',
+    tone: 'Tender, hopeful',
+    form: 'Tercets then final couplet',
+  },
+  {
+    poem: 'Singh Song!',
+    poet: 'Nagra',
+    type: 'Modern',
+    themes: 'Love, cultural identity, marriage',
+    tone: 'Playful, joyful',
+    form: 'Free verse, phonetic spelling',
+  },
+  {
+    poem: 'Climbing My Grandfather',
+    poet: 'Waterhouse',
+    type: 'Modern',
+    themes: 'Family bond, memory, admiration',
+    tone: 'Warm, determined',
+    form: 'Free verse, extended metaphor',
+  },
+]
 
 /* ================================================================== */
 /*  Poem metadata for search & filter                                  */
 /* ================================================================== */
 
 const POEM_META = [
-  { id: "when-we-two-parted", title: "When We Two Parted", poet: "Lord Byron", themes: ["Loss and heartbreak", "Romantic love", "Distance and separation"], period: "Romantic" },
-  { id: "love-s-philosophy", title: "Love's Philosophy", poet: "Percy Bysshe Shelley", themes: ["Romantic love", "Nature and love", "Desire and longing"], period: "Romantic" },
-  { id: "porphyria-s-lover", title: "Porphyria's Lover", poet: "Robert Browning", themes: ["Romantic love", "Power and possession", "Loss and heartbreak"], period: "Romantic" },
-  { id: "sonnet-29", title: "Sonnet 29", poet: "Elizabeth Barrett Browning", themes: ["Romantic love", "Nature and love", "Distance and separation"], period: "Romantic" },
-  { id: "neutral-tones", title: "Neutral Tones", poet: "Thomas Hardy", themes: ["Loss and heartbreak", "Nature and love"], period: "Victorian" },
-  { id: "letters-from-yorkshire", title: "Letters from Yorkshire", poet: "Maura Dooley", themes: ["Distance and separation", "Nature and love", "Reconciliation and healing"], period: "Modern" },
-  { id: "the-farmer-s-bride", title: "The Farmer's Bride", poet: "Charlotte Mew", themes: ["Loss and heartbreak", "Power and possession"], period: "Victorian" },
-  { id: "walking-away", title: "Walking Away", poet: "Cecil Day Lewis", themes: ["Parent-child love", "Distance and separation", "Family and memory"], period: "Modern" },
-  { id: "eden-rock", title: "Eden Rock", poet: "Charles Causley", themes: ["Family and memory", "Parent-child love"], period: "Modern" },
-  { id: "follower", title: "Follower", poet: "Seamus Heaney", themes: ["Parent-child love", "Family and memory"], period: "Modern" },
-  { id: "mother--any-distance", title: "Mother, Any Distance", poet: "Simon Armitage", themes: ["Parent-child love", "Identity and independence"], period: "Modern" },
-  { id: "before-you-were-mine", title: "Before You Were Mine", poet: "Carol Ann Duffy", themes: ["Parent-child love", "Family and memory", "Power and possession", "Identity and independence"], period: "Modern" },
-  { id: "winter-swans", title: "Winter Swans", poet: "Owen Sheers", themes: ["Romantic love", "Nature and love", "Reconciliation and healing"], period: "Modern" },
-  { id: "singh-song-", title: "Singh Song!", poet: "Daljit Nagra", themes: ["Romantic love", "Identity and independence"], period: "Modern" },
-  { id: "climbing-my-grandfather", title: "Climbing My Grandfather", poet: "Andrew Waterhouse", themes: ["Family and memory", "Parent-child love"], period: "Modern" },
-];
+  {
+    id: 'when-we-two-parted',
+    title: 'When We Two Parted',
+    poet: 'Lord Byron',
+    themes: ['Loss and heartbreak', 'Romantic love', 'Distance and separation'],
+    period: 'Romantic',
+  },
+  {
+    id: 'love-s-philosophy',
+    title: "Love's Philosophy",
+    poet: 'Percy Bysshe Shelley',
+    themes: ['Romantic love', 'Nature and love', 'Desire and longing'],
+    period: 'Romantic',
+  },
+  {
+    id: 'porphyria-s-lover',
+    title: "Porphyria's Lover",
+    poet: 'Robert Browning',
+    themes: ['Romantic love', 'Power and possession', 'Loss and heartbreak'],
+    period: 'Romantic',
+  },
+  {
+    id: 'sonnet-29',
+    title: 'Sonnet 29',
+    poet: 'Elizabeth Barrett Browning',
+    themes: ['Romantic love', 'Nature and love', 'Distance and separation'],
+    period: 'Romantic',
+  },
+  {
+    id: 'neutral-tones',
+    title: 'Neutral Tones',
+    poet: 'Thomas Hardy',
+    themes: ['Loss and heartbreak', 'Nature and love'],
+    period: 'Victorian',
+  },
+  {
+    id: 'letters-from-yorkshire',
+    title: 'Letters from Yorkshire',
+    poet: 'Maura Dooley',
+    themes: ['Distance and separation', 'Nature and love', 'Reconciliation and healing'],
+    period: 'Modern',
+  },
+  {
+    id: 'the-farmer-s-bride',
+    title: "The Farmer's Bride",
+    poet: 'Charlotte Mew',
+    themes: ['Loss and heartbreak', 'Power and possession'],
+    period: 'Victorian',
+  },
+  {
+    id: 'walking-away',
+    title: 'Walking Away',
+    poet: 'C. Day-Lewis',
+    themes: ['Parent-child love', 'Distance and separation', 'Family and memory'],
+    period: 'Modern',
+  },
+  {
+    id: 'eden-rock',
+    title: 'Eden Rock',
+    poet: 'Charles Causley',
+    themes: ['Family and memory', 'Parent-child love'],
+    period: 'Modern',
+  },
+  {
+    id: 'follower',
+    title: 'Follower',
+    poet: 'Seamus Heaney',
+    themes: ['Parent-child love', 'Family and memory'],
+    period: 'Modern',
+  },
+  {
+    id: 'mother--any-distance',
+    title: 'Mother, Any Distance',
+    poet: 'Simon Armitage',
+    themes: ['Parent-child love', 'Identity and independence'],
+    period: 'Modern',
+  },
+  {
+    id: 'before-you-were-mine',
+    title: 'Before You Were Mine',
+    poet: 'Carol Ann Duffy',
+    themes: [
+      'Parent-child love',
+      'Family and memory',
+      'Power and possession',
+      'Identity and independence',
+    ],
+    period: 'Modern',
+  },
+  {
+    id: 'winter-swans',
+    title: 'Winter Swans',
+    poet: 'Owen Sheers',
+    themes: ['Romantic love', 'Nature and love', 'Reconciliation and healing'],
+    period: 'Modern',
+  },
+  {
+    id: 'singh-song-',
+    title: 'Singh Song!',
+    poet: 'Daljit Nagra',
+    themes: ['Romantic love', 'Identity and independence'],
+    period: 'Modern',
+  },
+  {
+    id: 'climbing-my-grandfather',
+    title: 'Climbing My Grandfather',
+    poet: 'Andrew Waterhouse',
+    themes: ['Family and memory', 'Parent-child love'],
+    period: 'Modern',
+  },
+]
 
-const ALL_THEMES = Array.from(new Set(POEM_META.flatMap((p) => p.themes))).sort();
-const ALL_PERIODS = Array.from(new Set(POEM_META.map((p) => p.period)));
+const ALL_THEMES = Array.from(new Set(POEM_META.flatMap((p) => p.themes))).sort()
+const ALL_PERIODS = Array.from(new Set(POEM_META.map((p) => p.period)))
 
 /* ================================================================== */
 /*  Page                                                               */
 /* ================================================================== */
 
 export default function LoveAndRelationshipsPage() {
-  const [showTable, setShowTable] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeTheme, setActiveTheme] = useState<string | null>(null);
-  const [activePeriod, setActivePeriod] = useState<string | null>(null);
+  const [showTable, setShowTable] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [activeTheme, setActiveTheme] = useState<string | null>(null)
+  const [activePeriod, setActivePeriod] = useState<string | null>(null)
 
   const visiblePoemIds = useMemo(() => {
-    const query = searchQuery.toLowerCase().trim();
+    const query = searchQuery.toLowerCase().trim()
     return new Set(
       POEM_META.filter((p) => {
         const matchesSearch =
           !query ||
           p.title.toLowerCase().includes(query) ||
           p.poet.toLowerCase().includes(query) ||
-          p.themes.some((t) => t.toLowerCase().includes(query));
-        const matchesTheme = !activeTheme || p.themes.includes(activeTheme);
-        const matchesPeriod = !activePeriod || p.period === activePeriod;
-        return matchesSearch && matchesTheme && matchesPeriod;
-      }).map((p) => p.id)
-    );
-  }, [searchQuery, activeTheme, activePeriod]);
+          p.themes.some((t) => t.toLowerCase().includes(query))
+        const matchesTheme = !activeTheme || p.themes.includes(activeTheme)
+        const matchesPeriod = !activePeriod || p.period === activePeriod
+        return matchesSearch && matchesTheme && matchesPeriod
+      }).map((p) => p.id),
+    )
+  }, [searchQuery, activeTheme, activePeriod])
 
-  const matchCount = visiblePoemIds.size;
+  const matchCount = visiblePoemIds.size
 
   return (
     <>
-
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
@@ -208,11 +417,16 @@ export default function LoveAndRelationshipsPage() {
             Love and Relationships
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Complete analysis of all 15 poems in the Love and Relationships cluster. Key quotations, techniques, themes, context, and comparison guidance for every poem.
+            Complete analysis of all 15 poems in the Love and Relationships cluster. Key quotations,
+            techniques, themes, context, and comparison guidance for every poem.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">15 Poems</span>
-            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">75+ Key Quotes</span>
+            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
+              15 Poems
+            </span>
+            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
+              75+ Key Quotes
+            </span>
           </div>
         </div>
       </section>
@@ -229,7 +443,11 @@ export default function LoveAndRelationshipsPage() {
               strokeWidth={2}
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
             </svg>
             <input
               type="text"
@@ -240,11 +458,17 @@ export default function LoveAndRelationshipsPage() {
             />
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery("")}
+                onClick={() => setSearchQuery('')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-muted-foreground"
                 aria-label="Clear search"
               >
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -253,7 +477,9 @@ export default function LoveAndRelationshipsPage() {
 
           {/* Theme filters */}
           <div>
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Filter by theme</p>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+              Filter by theme
+            </p>
             <div className="flex flex-wrap gap-2">
               {ALL_THEMES.map((theme) => (
                 <button
@@ -261,8 +487,8 @@ export default function LoveAndRelationshipsPage() {
                   onClick={() => setActiveTheme(activeTheme === theme ? null : theme)}
                   className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                     activeTheme === theme
-                      ? "bg-primary text-white"
-                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                      ? 'bg-primary text-white'
+                      : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground'
                   }`}
                 >
                   {theme}
@@ -273,7 +499,9 @@ export default function LoveAndRelationshipsPage() {
 
           {/* Period filters */}
           <div>
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Filter by period</p>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+              Filter by period
+            </p>
             <div className="flex flex-wrap gap-2">
               {ALL_PERIODS.map((period) => (
                 <button
@@ -281,8 +509,8 @@ export default function LoveAndRelationshipsPage() {
                   onClick={() => setActivePeriod(activePeriod === period ? null : period)}
                   className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                     activePeriod === period
-                      ? "bg-primary text-white"
-                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                      ? 'bg-primary text-white'
+                      : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground'
                   }`}
                 >
                   {period}
@@ -290,7 +518,11 @@ export default function LoveAndRelationshipsPage() {
               ))}
               {(activeTheme || activePeriod || searchQuery) && (
                 <button
-                  onClick={() => { setActiveTheme(null); setActivePeriod(null); setSearchQuery(""); }}
+                  onClick={() => {
+                    setActiveTheme(null)
+                    setActivePeriod(null)
+                    setSearchQuery('')
+                  }}
                   className="rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-600 hover:bg-red-500/15 transition-colors"
                 >
                   Clear all filters
@@ -302,8 +534,9 @@ export default function LoveAndRelationshipsPage() {
           {/* Result count */}
           {(searchQuery || activeTheme || activePeriod) && (
             <p className="text-sm text-muted-foreground">
-              Showing <span className="font-semibold text-foreground">{matchCount}</span> of 15 poems
-              {matchCount === 0 && " — try broadening your search."}
+              Showing <span className="font-semibold text-foreground">{matchCount}</span> of 15
+              poems
+              {matchCount === 0 && ' — try broadening your search.'}
             </p>
           )}
         </div>
@@ -336,32 +569,54 @@ export default function LoveAndRelationshipsPage() {
       {/* Poems */}
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="space-y-4">
-
           {matchCount === 0 && (
             <div className="rounded-xl border border-dashed border-border bg-muted p-8 text-center">
-              <p className="text-muted-foreground text-sm">No poems match your current filters. Try adjusting your search or clearing filters.</p>
+              <p className="text-muted-foreground text-sm">
+                No poems match your current filters. Try adjusting your search or clearing filters.
+              </p>
             </div>
           )}
 
           {/* ───────────────────── 1. When We Two Parted ───────────────────── */}
-          <div id="when-we-two-parted" style={{ display: visiblePoemIds.has("when-we-two-parted") ? undefined : "none" }}>
-            <Section id="when-we-two-parted" title="When We Two Parted" poet="Lord Byron (1816)" studyHref="/revision/poetry/love-and-relationships/when-we-two-parted" defaultOpen>
-
+          <div
+            id="when-we-two-parted"
+            style={{ display: visiblePoemIds.has('when-we-two-parted') ? undefined : 'none' }}
+          >
+            <Section
+              id="when-we-two-parted"
+              title="When We Two Parted"
+              poet="Lord Byron (1816)"
+              studyHref="/revision/poetry/love-and-relationships/when-we-two-parted"
+              defaultOpen
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Written by the Romantic poet Lord Byron, this poem is believed to address his secret affair with Lady Frances Wedderburn Webster. When rumours of her later affair with the Duke of Wellington surfaced, Byron felt betrayed. The poem was written in 1816 but backdated to 1808, possibly to distance Byron from the scandal. The secretive nature of the affair is central to the poem&apos;s meaning.
+                  Written by the Romantic poet Lord Byron, this poem is believed to address his
+                  secret affair with Lady Frances Wedderburn Webster. When rumours of her later
+                  affair with the Duke of Wellington surfaced, Byron felt betrayed. The poem was
+                  written in 1816 but backdated to 1808, possibly to distance Byron from the
+                  scandal. The secretive nature of the affair is central to the poem&apos;s meaning.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker reflects on the painful end of a secret love affair. The poem moves through memories of their parting (silence, tears, and coldness), the present pain of hearing the former lover&apos;s name spoken by others, and the speaker&apos;s sense of betrayal. The cyclical structure returns to the opening image, suggesting the pain is unresolved and ongoing.
+                  The speaker reflects on the painful end of a secret love affair. The poem moves
+                  through memories of their parting (silence, tears, and coldness), the present pain
+                  of hearing the former lover&apos;s name spoken by others, and the speaker&apos;s
+                  sense of betrayal. The cyclical structure returns to the opening image, suggesting
+                  the pain is unresolved and ongoing.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Four regular quatrains with an ABAB rhyme scheme create a controlled, restrained tone that mirrors the secrecy of the affair. The anapaestic metre creates a mournful, rhythmic quality. The cyclical structure (the final stanza echoes the first) reinforces that the speaker is trapped in grief. Short, monosyllabic words (&ldquo;pale,&rdquo; &ldquo;cold,&rdquo; &ldquo;half&rdquo;) emphasise emotional numbness.
+                  Four regular quatrains with an ABAB rhyme scheme create a controlled, restrained
+                  tone that mirrors the secrecy of the affair. The anapaestic metre creates a
+                  mournful, rhythmic quality. The cyclical structure (the final stanza echoes the
+                  first) reinforces that the speaker is trapped in grief. Short, monosyllabic words
+                  (&ldquo;pale,&rdquo; &ldquo;cold,&rdquo; &ldquo;half&rdquo;) emphasise emotional
+                  numbness.
                 </p>
               </SubSection>
 
@@ -406,34 +661,61 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Neutral Tones" reason="Both present love as something that has died, using cold, bleak imagery and cyclical structures." />
-                  <ComparisonSuggestion poem="Love's Philosophy" reason="Contrasts Byron's bitter loss with Shelley's passionate desire; both Romantic poets exploring unrequited feeling." />
-                  <ComparisonSuggestion poem="Sonnet 29" reason="Contrasts: Barrett Browning presents love as joyful and transformative, whereas Byron shows love as destructive." />
+                  <ComparisonSuggestion
+                    poem="Neutral Tones"
+                    reason="Both present love as something that has died, using cold, bleak imagery and cyclical structures."
+                  />
+                  <ComparisonSuggestion
+                    poem="Love's Philosophy"
+                    reason="Contrasts Byron's bitter loss with Shelley's passionate desire; both Romantic poets exploring unrequited feeling."
+                  />
+                  <ComparisonSuggestion
+                    poem="Sonnet 29"
+                    reason="Contrasts: Barrett Browning presents love as joyful and transformative, whereas Byron shows love as destructive."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 2. Love's Philosophy ───────────────────── */}
-          <div id="love-s-philosophy" style={{ display: visiblePoemIds.has("love-s-philosophy") ? undefined : "none" }}>
-            <Section id="loves-philosophy" title="Love's Philosophy" poet="Percy Bysshe Shelley (1820)" studyHref="/revision/poetry/love-and-relationships/loves-philosophy">
-
+          <div
+            id="love-s-philosophy"
+            style={{ display: visiblePoemIds.has('love-s-philosophy') ? undefined : 'none' }}
+          >
+            <Section
+              id="loves-philosophy"
+              title="Love's Philosophy"
+              poet="Percy Bysshe Shelley (1820)"
+              studyHref="/revision/poetry/love-and-relationships/loves-philosophy"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Shelley was a key Romantic poet who championed emotion, nature, and individual passion. This poem was written as a persuasive love lyric, using the natural world to argue that everything in nature exists in union, so the speaker and their beloved should too. The &ldquo;philosophy&rdquo; of the title is essentially a rhetorical argument for love.
+                  Shelley was a key Romantic poet who championed emotion, nature, and individual
+                  passion. This poem was written as a persuasive love lyric, using the natural world
+                  to argue that everything in nature exists in union, so the speaker and their
+                  beloved should too. The &ldquo;philosophy&rdquo; of the title is essentially a
+                  rhetorical argument for love.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker uses a series of examples from the natural world &mdash; rivers meeting the sea, winds merging, flowers clasping &mdash; to argue that all things in nature exist in pairs and unions. The rhetorical logic is: if nature is designed for togetherness, then the beloved&apos;s refusal to reciprocate love is unnatural. Each stanza ends with a direct, frustrated appeal.
+                  The speaker uses a series of examples from the natural world &mdash; rivers
+                  meeting the sea, winds merging, flowers clasping &mdash; to argue that all things
+                  in nature exist in pairs and unions. The rhetorical logic is: if nature is
+                  designed for togetherness, then the beloved&apos;s refusal to reciprocate love is
+                  unnatural. Each stanza ends with a direct, frustrated appeal.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Two octets (eight-line stanzas) with an ABABCDCD rhyme scheme. The regular, lilting rhythm mimics a gentle, persuasive tone. Both stanzas build through examples from nature before ending with a frustrated rhetorical question, creating a pattern of argument then appeal. The second stanza intensifies the first, escalating from nature to divine law.
+                  Two octets (eight-line stanzas) with an ABABCDCD rhyme scheme. The regular,
+                  lilting rhythm mimics a gentle, persuasive tone. Both stanzas build through
+                  examples from nature before ending with a frustrated rhetorical question, creating
+                  a pattern of argument then appeal. The second stanza intensifies the first,
+                  escalating from nature to divine law.
                 </p>
               </SubSection>
 
@@ -483,34 +765,64 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="When We Two Parted" reason="Both Romantic poets; Shelley desires union, Byron mourns its loss." />
-                  <ComparisonSuggestion poem="Sonnet 29" reason="Both celebrate the power of love, though Shelley's love is unrequited while Barrett Browning's is fulfilled." />
-                  <ComparisonSuggestion poem="Singh Song!" reason="Both present love joyfully, though Shelley's is frustrated while Nagra's speakers are happily united." />
+                  <ComparisonSuggestion
+                    poem="When We Two Parted"
+                    reason="Both Romantic poets; Shelley desires union, Byron mourns its loss."
+                  />
+                  <ComparisonSuggestion
+                    poem="Sonnet 29"
+                    reason="Both celebrate the power of love, though Shelley's love is unrequited while Barrett Browning's is fulfilled."
+                  />
+                  <ComparisonSuggestion
+                    poem="Singh Song!"
+                    reason="Both present love joyfully, though Shelley's is frustrated while Nagra's speakers are happily united."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 3. Porphyria's Lover ───────────────────── */}
-          <div id="porphyria-s-lover" style={{ display: visiblePoemIds.has("porphyria-s-lover") ? undefined : "none" }}>
-            <Section id="porphyrias-lover" title="Porphyria's Lover" poet="Robert Browning (1836)" studyHref="/revision/poetry/love-and-relationships/porphyrias-lover">
-
+          <div
+            id="porphyria-s-lover"
+            style={{ display: visiblePoemIds.has('porphyria-s-lover') ? undefined : 'none' }}
+          >
+            <Section
+              id="porphyrias-lover"
+              title="Porphyria's Lover"
+              poet="Robert Browning (1836)"
+              studyHref="/revision/poetry/love-and-relationships/porphyrias-lover"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Robert Browning was a Victorian poet known for his dramatic monologues that explore the psychology of disturbed or morally complex speakers. This poem is one of his earliest, published in 1836. It was written during the Victorian era when strict social hierarchies governed relationships &mdash; Porphyria appears to be of a higher social class. The poem explores obsessive love and the desire to possess another person completely.
+                  Robert Browning was a Victorian poet known for his dramatic monologues that
+                  explore the psychology of disturbed or morally complex speakers. This poem is one
+                  of his earliest, published in 1836. It was written during the Victorian era when
+                  strict social hierarchies governed relationships &mdash; Porphyria appears to be
+                  of a higher social class. The poem explores obsessive love and the desire to
+                  possess another person completely.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  On a stormy night, Porphyria visits her lover in his cottage. She lights a fire, sits beside him, and declares her love. The speaker, realising she loves him but cannot fully commit due to social constraints, decides to preserve the perfect moment forever by strangling her with her own hair. He then sits with her corpse all night, noting that &ldquo;God has not said a word,&rdquo; as though expecting divine judgement that does not come.
+                  On a stormy night, Porphyria visits her lover in his cottage. She lights a fire,
+                  sits beside him, and declares her love. The speaker, realising she loves him but
+                  cannot fully commit due to social constraints, decides to preserve the perfect
+                  moment forever by strangling her with her own hair. He then sits with her corpse
+                  all night, noting that &ldquo;God has not said a word,&rdquo; as though expecting
+                  divine judgement that does not come.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A dramatic monologue in a single unbroken stanza of 60 lines with an ABABB rhyme scheme. The continuous form mirrors the speaker&apos;s unbroken, obsessive thought process. Enjambment and caesura create an unsettling, conversational rhythm that contrasts with the horrific content. The rhyme scheme is subtly irregular, reflecting the speaker&apos;s unstable mind. The turning point (the murder) occurs exactly at the poem&apos;s centre, around line 30.
+                  A dramatic monologue in a single unbroken stanza of 60 lines with an ABABB rhyme
+                  scheme. The continuous form mirrors the speaker&apos;s unbroken, obsessive thought
+                  process. Enjambment and caesura create an unsettling, conversational rhythm that
+                  contrasts with the horrific content. The rhyme scheme is subtly irregular,
+                  reflecting the speaker&apos;s unstable mind. The turning point (the murder) occurs
+                  exactly at the poem&apos;s centre, around line 30.
                 </p>
               </SubSection>
 
@@ -555,34 +867,62 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="The Farmer's Bride" reason="Both dramatic monologues with male speakers who desire women they cannot truly possess; both explore disturbing power dynamics." />
-                  <ComparisonSuggestion poem="Sonnet 29" reason="Contrasts: Barrett Browning presents love as selfless devotion; Browning shows love as violent possession." />
-                  <ComparisonSuggestion poem="Singh Song!" reason="Contrasts: Nagra presents a healthy, equal, joyful relationship; Browning presents destructive obsession." />
+                  <ComparisonSuggestion
+                    poem="The Farmer's Bride"
+                    reason="Both dramatic monologues with male speakers who desire women they cannot truly possess; both explore disturbing power dynamics."
+                  />
+                  <ComparisonSuggestion
+                    poem="Sonnet 29"
+                    reason="Contrasts: Barrett Browning presents love as selfless devotion; Browning shows love as violent possession."
+                  />
+                  <ComparisonSuggestion
+                    poem="Singh Song!"
+                    reason="Contrasts: Nagra presents a healthy, equal, joyful relationship; Browning presents destructive obsession."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 4. Sonnet 29 ───────────────────── */}
-          <div id="sonnet-29" style={{ display: visiblePoemIds.has("sonnet-29") ? undefined : "none" }}>
-            <Section id="sonnet-29" title="Sonnet 29 — 'I think of thee!'" poet="Elizabeth Barrett Browning (1850)" studyHref="/revision/poetry/love-and-relationships/sonnet-29">
-
+          <div
+            id="sonnet-29"
+            style={{ display: visiblePoemIds.has('sonnet-29') ? undefined : 'none' }}
+          >
+            <Section
+              id="sonnet-29"
+              title="Sonnet 29 — 'I think of thee!'"
+              poet="Elizabeth Barrett Browning (1850)"
+              studyHref="/revision/poetry/love-and-relationships/sonnet-29"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Part of Barrett Browning&apos;s <em>Sonnets from the Portuguese</em>, a sequence of 44 love sonnets written during her courtship with Robert Browning. Elizabeth was an invalid dominated by her controlling father; her love for Robert represented liberation and self-assertion. Sonnet 29 explores the intensity of thinking about an absent lover and the superiority of their real presence over mere thoughts.
+                  Part of Barrett Browning&apos;s <em>Sonnets from the Portuguese</em>, a sequence
+                  of 44 love sonnets written during her courtship with Robert Browning. Elizabeth
+                  was an invalid dominated by her controlling father; her love for Robert
+                  represented liberation and self-assertion. Sonnet 29 explores the intensity of
+                  thinking about an absent lover and the superiority of their real presence over
+                  mere thoughts.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker describes how her thoughts of her beloved have grown so abundant that they obscure him, like vines covering a tree. She then commands her thoughts to dissolve, because the real, living presence of her lover is more powerful than any imagined version. The poem moves from passive longing to active desire, asserting that lived experience surpasses fantasy.
+                  The speaker describes how her thoughts of her beloved have grown so abundant that
+                  they obscure him, like vines covering a tree. She then commands her thoughts to
+                  dissolve, because the real, living presence of her lover is more powerful than any
+                  imagined version. The poem moves from passive longing to active desire, asserting
+                  that lived experience surpasses fantasy.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A Petrarchan sonnet with an octave and sestet. Iambic pentameter gives a steady, heartbeat-like rhythm appropriate for a love poem. The volta (turn) occurs around lines 7&ndash;8, shifting from passive thoughts to an active command for the beloved to appear. Heavy use of enjambment conveys the overwhelming, uncontrollable nature of her thoughts.
+                  A Petrarchan sonnet with an octave and sestet. Iambic pentameter gives a steady,
+                  heartbeat-like rhythm appropriate for a love poem. The volta (turn) occurs around
+                  lines 7&ndash;8, shifting from passive thoughts to an active command for the
+                  beloved to appear. Heavy use of enjambment conveys the overwhelming,
+                  uncontrollable nature of her thoughts.
                 </p>
               </SubSection>
 
@@ -627,34 +967,61 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Love's Philosophy" reason="Both use nature to express love; Shelley argues for love, Barrett Browning celebrates existing love." />
-                  <ComparisonSuggestion poem="When We Two Parted" reason="Both deal with absent lovers, but Barrett Browning's separation is temporary and hopeful; Byron's is permanent and bitter." />
-                  <ComparisonSuggestion poem="Winter Swans" reason="Both show love's power to transform, using natural imagery as central metaphors." />
+                  <ComparisonSuggestion
+                    poem="Love's Philosophy"
+                    reason="Both use nature to express love; Shelley argues for love, Barrett Browning celebrates existing love."
+                  />
+                  <ComparisonSuggestion
+                    poem="When We Two Parted"
+                    reason="Both deal with absent lovers, but Barrett Browning's separation is temporary and hopeful; Byron's is permanent and bitter."
+                  />
+                  <ComparisonSuggestion
+                    poem="Winter Swans"
+                    reason="Both show love's power to transform, using natural imagery as central metaphors."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 5. Neutral Tones ───────────────────── */}
-          <div id="neutral-tones" style={{ display: visiblePoemIds.has("neutral-tones") ? undefined : "none" }}>
-            <Section id="neutral-tones" title="Neutral Tones" poet="Thomas Hardy (1867)" studyHref="/revision/poetry/love-and-relationships/neutral-tones">
-
+          <div
+            id="neutral-tones"
+            style={{ display: visiblePoemIds.has('neutral-tones') ? undefined : 'none' }}
+          >
+            <Section
+              id="neutral-tones"
+              title="Neutral Tones"
+              poet="Thomas Hardy (1867)"
+              studyHref="/revision/poetry/love-and-relationships/neutral-tones"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Written when Hardy was 27, this poem reflects on a failed relationship. Hardy would later become known for his pessimistic worldview, exploring how fate and nature are indifferent to human suffering. The poem was likely inspired by his relationship with Tryphena Sparks, though this is debated. It was published in 1898 in <em>Wessex Poems</em>.
+                  Written when Hardy was 27, this poem reflects on a failed relationship. Hardy
+                  would later become known for his pessimistic worldview, exploring how fate and
+                  nature are indifferent to human suffering. The poem was likely inspired by his
+                  relationship with Tryphena Sparks, though this is debated. It was published in
+                  1898 in <em>Wessex Poems</em>.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker recalls standing by a pond on a winter day with a lover. Everything is drained of colour and vitality: the sun is white, the leaves are grey, the smiles are dead. The conversation reveals their love has died. The poem ends by returning to the pond image, showing how this painful memory has become permanently associated with the landscape.
+                  The speaker recalls standing by a pond on a winter day with a lover. Everything is
+                  drained of colour and vitality: the sun is white, the leaves are grey, the smiles
+                  are dead. The conversation reveals their love has died. The poem ends by returning
+                  to the pond image, showing how this painful memory has become permanently
+                  associated with the landscape.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Four quatrains with an ABBA rhyme scheme (envelope rhyme). The cyclical structure &mdash; beginning and ending at the pond &mdash; traps the speaker in the painful memory, suggesting they cannot move past it. The regularity of the form contrasts with the emotional devastation, creating an effect of numb control. The &ldquo;neutral&rdquo; title is ironic: nothing here is emotionally neutral.
+                  Four quatrains with an ABBA rhyme scheme (envelope rhyme). The cyclical structure
+                  &mdash; beginning and ending at the pond &mdash; traps the speaker in the painful
+                  memory, suggesting they cannot move past it. The regularity of the form contrasts
+                  with the emotional devastation, creating an effect of numb control. The
+                  &ldquo;neutral&rdquo; title is ironic: nothing here is emotionally neutral.
                 </p>
               </SubSection>
 
@@ -699,34 +1066,61 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="When We Two Parted" reason="Both use cold, deathly imagery to convey the end of love; both have cyclical structures suggesting inescapable grief." />
-                  <ComparisonSuggestion poem="Winter Swans" reason="Both use nature to reflect on a relationship, but Hardy shows love dying while Sheers shows love recovering." />
-                  <ComparisonSuggestion poem="Love's Philosophy" reason="Contrasts: Shelley finds evidence for love in nature, Hardy finds only bleakness and indifference." />
+                  <ComparisonSuggestion
+                    poem="When We Two Parted"
+                    reason="Both use cold, deathly imagery to convey the end of love; both have cyclical structures suggesting inescapable grief."
+                  />
+                  <ComparisonSuggestion
+                    poem="Winter Swans"
+                    reason="Both use nature to reflect on a relationship, but Hardy shows love dying while Sheers shows love recovering."
+                  />
+                  <ComparisonSuggestion
+                    poem="Love's Philosophy"
+                    reason="Contrasts: Shelley finds evidence for love in nature, Hardy finds only bleakness and indifference."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 6. Letters from Yorkshire ───────────────────── */}
-          <div id="letters-from-yorkshire" style={{ display: visiblePoemIds.has("letters-from-yorkshire") ? undefined : "none" }}>
-            <Section id="letters-yorkshire" title="Letters from Yorkshire" poet="Maura Dooley (2002)" studyHref="/revision/poetry/love-and-relationships/letters-from-yorkshire">
-
+          <div
+            id="letters-from-yorkshire"
+            style={{ display: visiblePoemIds.has('letters-from-yorkshire') ? undefined : 'none' }}
+          >
+            <Section
+              id="letters-yorkshire"
+              title="Letters from Yorkshire"
+              poet="Maura Dooley (2002)"
+              studyHref="/revision/poetry/love-and-relationships/letters-from-yorkshire"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Maura Dooley is a contemporary poet. This poem explores the connection between two people who live very different lives &mdash; one in Yorkshire, connected to the land and seasons, the other presumably in a city, working with words and screens. The poem questions whether a life closer to nature is more authentic and celebrates how communication can bridge distance.
+                  Maura Dooley is a contemporary poet. This poem explores the connection between two
+                  people who live very different lives &mdash; one in Yorkshire, connected to the
+                  land and seasons, the other presumably in a city, working with words and screens.
+                  The poem questions whether a life closer to nature is more authentic and
+                  celebrates how communication can bridge distance.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker describes receiving letters from a man in Yorkshire who writes about his daily life: digging the garden, seeing the first lapwings of the year. She contrasts his physical, outdoor life with her own word-based, indoor existence. Despite the distance, the letters create a powerful connection. The poem suggests that true communication transcends physical proximity.
+                  The speaker describes receiving letters from a man in Yorkshire who writes about
+                  his daily life: digging the garden, seeing the first lapwings of the year. She
+                  contrasts his physical, outdoor life with her own word-based, indoor existence.
+                  Despite the distance, the letters create a powerful connection. The poem suggests
+                  that true communication transcends physical proximity.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Free verse with no regular rhyme scheme, reflecting the conversational, letter-like quality of the poem. The varied line lengths mirror the natural rhythms of thought. The poem alternates between descriptions of his life and her reflections, structurally enacting the back-and-forth of correspondence. Enjambment connects ideas across lines, just as letters connect the two people.
+                  Free verse with no regular rhyme scheme, reflecting the conversational,
+                  letter-like quality of the poem. The varied line lengths mirror the natural
+                  rhythms of thought. The poem alternates between descriptions of his life and her
+                  reflections, structurally enacting the back-and-forth of correspondence.
+                  Enjambment connects ideas across lines, just as letters connect the two people.
                 </p>
               </SubSection>
 
@@ -771,34 +1165,62 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Sonnet 29" reason="Both explore longing for someone absent, and both suggest that connection transcends physical distance." />
-                  <ComparisonSuggestion poem="Walking Away" reason="Both reflect on relationships across distance and time; both use nature imagery to frame human connection." />
-                  <ComparisonSuggestion poem="Eden Rock" reason="Both present a sense of reaching across a divide to connect with loved ones." />
+                  <ComparisonSuggestion
+                    poem="Sonnet 29"
+                    reason="Both explore longing for someone absent, and both suggest that connection transcends physical distance."
+                  />
+                  <ComparisonSuggestion
+                    poem="Walking Away"
+                    reason="Both reflect on relationships across distance and time; both use nature imagery to frame human connection."
+                  />
+                  <ComparisonSuggestion
+                    poem="Eden Rock"
+                    reason="Both present a sense of reaching across a divide to connect with loved ones."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 7. The Farmer's Bride ───────────────────── */}
-          <div id="the-farmer-s-bride" style={{ display: visiblePoemIds.has("the-farmer-s-bride") ? undefined : "none" }}>
-            <Section id="farmers-bride" title="The Farmer's Bride" poet="Charlotte Mew (1916)" studyHref="/revision/poetry/love-and-relationships/the-farmers-bride">
-
+          <div
+            id="the-farmer-s-bride"
+            style={{ display: visiblePoemIds.has('the-farmer-s-bride') ? undefined : 'none' }}
+          >
+            <Section
+              id="farmers-bride"
+              title="The Farmer's Bride"
+              poet="Charlotte Mew (1916)"
+              studyHref="/revision/poetry/love-and-relationships/the-farmers-bride"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Charlotte Mew was a Victorian/Edwardian poet whose work often explores isolation and unfulfilled desire. This dramatic monologue is spoken by a farmer whose young bride has become terrified of him and of physical intimacy. The poem reflects Victorian attitudes to marriage, where wives were essentially property, and the farmer&apos;s frustration reveals the oppressive gender dynamics of the era.
+                  Charlotte Mew was a Victorian/Edwardian poet whose work often explores isolation
+                  and unfulfilled desire. This dramatic monologue is spoken by a farmer whose young
+                  bride has become terrified of him and of physical intimacy. The poem reflects
+                  Victorian attitudes to marriage, where wives were essentially property, and the
+                  farmer&apos;s frustration reveals the oppressive gender dynamics of the era.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The farmer narrates the story of his young wife who, three years into their marriage, ran away. The community helped him catch her and bring her back. She now lives in the house but avoids him, preferring the company of animals. The farmer describes her beauty with increasing frustration and desire. The final stanza reveals the intensity of his longing, which borders on threat.
+                  The farmer narrates the story of his young wife who, three years into their
+                  marriage, ran away. The community helped him catch her and bring her back. She now
+                  lives in the house but avoids him, preferring the company of animals. The farmer
+                  describes her beauty with increasing frustration and desire. The final stanza
+                  reveals the intensity of his longing, which borders on threat.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A dramatic monologue with irregular stanza lengths and varied rhyme, reflecting the farmer&apos;s agitated, uneven emotional state. The stanzas grow shorter towards the end, building tension and urgency. The shift from third person (&ldquo;we&rdquo;) to first person (&ldquo;I&rdquo;) in the final stanza isolates the farmer with his desires. Dialect words (&ldquo;maid,&rdquo; &ldquo;abed&rdquo;) ground the poem in rural life.
+                  A dramatic monologue with irregular stanza lengths and varied rhyme, reflecting
+                  the farmer&apos;s agitated, uneven emotional state. The stanzas grow shorter
+                  towards the end, building tension and urgency. The shift from third person
+                  (&ldquo;we&rdquo;) to first person (&ldquo;I&rdquo;) in the final stanza isolates
+                  the farmer with his desires. Dialect words (&ldquo;maid,&rdquo;
+                  &ldquo;abed&rdquo;) ground the poem in rural life.
                 </p>
               </SubSection>
 
@@ -843,34 +1265,66 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Porphyria's Lover" reason="Both dramatic monologues with male speakers who desire women they cannot truly possess. Both end with disturbing implications." />
-                  <ComparisonSuggestion poem="Singh Song!" reason="Contrasts: Nagra presents a joyful, equal marriage; Mew presents a marriage defined by fear and power." />
-                  <ComparisonSuggestion poem="Neutral Tones" reason="Both present relationships drained of warmth and connection, though Mew adds the dimension of gender-based power." />
+                  <ComparisonSuggestion
+                    poem="Porphyria's Lover"
+                    reason="Both dramatic monologues with male speakers who desire women they cannot truly possess. Both end with disturbing implications."
+                  />
+                  <ComparisonSuggestion
+                    poem="Singh Song!"
+                    reason="Contrasts: Nagra presents a joyful, equal marriage; Mew presents a marriage defined by fear and power."
+                  />
+                  <ComparisonSuggestion
+                    poem="Neutral Tones"
+                    reason="Both present relationships drained of warmth and connection, though Mew adds the dimension of gender-based power."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 8. Walking Away ───────────────────── */}
-          <div id="walking-away" style={{ display: visiblePoemIds.has("walking-away") ? undefined : "none" }}>
-            <Section id="walking-away" title="Walking Away" poet="Cecil Day Lewis (1962)" studyHref="/revision/poetry/love-and-relationships/walking-away">
-
+          <div
+            id="walking-away"
+            style={{ display: visiblePoemIds.has('walking-away') ? undefined : 'none' }}
+          >
+            <Section
+              id="walking-away"
+              title="Walking Away"
+              poet="C. Day-Lewis (1956)"
+              studyHref="/revision/poetry/love-and-relationships/walking-away"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Cecil Day Lewis was Poet Laureate and the father of actor Daniel Day-Lewis. This poem is addressed to his son Sean, recalling the day he first dropped him off at boarding school. Written nearly two decades after the event, the poem explores how a parent&apos;s love means learning to let go, and how that moment of separation remains vivid and painful years later.
+                  C. Day-Lewis (1904&ndash;1972) was UK Poet Laureate from 1968 until his death. The
+                  poem was published in 1956 in <em>The Gate and Other Poems</em> and is dedicated
+                  to his eldest son <strong>Sean Day-Lewis</strong> (the journalist), who at age 18
+                  had just started boarding school. (Note: this is <em>not</em> Daniel Day-Lewis the
+                  actor &mdash; Daniel was the poet&apos;s youngest son and was not yet born when
+                  the poem was written in 1956.) Written eighteen years after the event, the poem
+                  explores how a parent&apos;s love means learning to let go, and how that moment of
+                  separation remains vivid and painful years later.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker recalls watching his son walk away to his first football game at school, 18 years earlier. The child looked uncertain, &ldquo;like a satellite / Wrenched from its orbit.&rdquo; The father reflects on how painful it was to let his child go, but acknowledges that love must allow independence. The poem concludes that &ldquo;selfhood begins with a walking away&rdquo; &mdash; independence requires separation.
+                  The speaker recalls watching his son walk away to his first football game at
+                  school, 18 years earlier. The child looked uncertain, &ldquo;like a satellite /
+                  Wrenched from its orbit.&rdquo; The father reflects on how painful it was to let
+                  his child go, but acknowledges that love must allow independence. The poem
+                  concludes that &ldquo;selfhood begins with a walking away&rdquo; &mdash;
+                  independence requires separation.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Four quintains (five-line stanzas) with a loose ABACA rhyme scheme. The regular form provides stability, reflecting the parent&apos;s steady, enduring love. Enjambment across stanzas mimics the ongoing, unresolved nature of parental anxiety. The poem moves chronologically from the specific memory (stanza 1) to broader philosophical reflection (stanza 4), showing how the father has processed the experience over time.
+                  Five quintains (five-line stanzas) with a loose ABACA rhyme scheme. The regular
+                  form provides stability, reflecting the parent&apos;s steady, enduring love.
+                  Enjambment across stanzas mimics the ongoing, unresolved nature of parental
+                  anxiety. The poem moves chronologically from the specific memory (stanzas
+                  1&ndash;3) to broader philosophical reflection (stanzas 4&ndash;5), showing how
+                  the father has processed the experience over time.
                 </p>
               </SubSection>
 
@@ -915,41 +1369,72 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Mother, Any Distance" reason="Both explore parent-child separation, but from opposite perspectives: parent watching child leave vs. child leaving parent." />
-                  <ComparisonSuggestion poem="Follower" reason="Both about father-child relationships; both explore how roles change over time." />
-                  <ComparisonSuggestion poem="Eden Rock" reason="Both parents reflecting on family bonds; Walking Away is about separation in life, Eden Rock about separation through death." />
+                  <ComparisonSuggestion
+                    poem="Mother, Any Distance"
+                    reason="Both explore parent-child separation, but from opposite perspectives: parent watching child leave vs. child leaving parent."
+                  />
+                  <ComparisonSuggestion
+                    poem="Follower"
+                    reason="Both about father-child relationships; both explore how roles change over time."
+                  />
+                  <ComparisonSuggestion
+                    poem="Eden Rock"
+                    reason="Both parents reflecting on family bonds; Walking Away is about separation in life, Eden Rock about separation through death."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 9. Eden Rock ───────────────────── */}
-          <div id="eden-rock" style={{ display: visiblePoemIds.has("eden-rock") ? undefined : "none" }}>
-            <Section id="eden-rock" title="Eden Rock" poet="Charles Causley (1988)" studyHref="/revision/poetry/love-and-relationships/eden-rock">
-
+          <div
+            id="eden-rock"
+            style={{ display: visiblePoemIds.has('eden-rock') ? undefined : 'none' }}
+          >
+            <Section
+              id="eden-rock"
+              title="Eden Rock"
+              poet="Charles Causley (1988)"
+              studyHref="/revision/poetry/love-and-relationships/eden-rock"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Charles Causley was a Cornish poet who wrote this poem late in life, after both his parents had died. His father died when Causley was young, and his mother later. The poem imagines a reunion with his parents in an idealised, Eden-like landscape. &ldquo;Eden Rock&rdquo; is a real place in Cornwall but also evokes the Garden of Eden, suggesting paradise and the afterlife. The poem is widely read as being about approaching death.
+                  Charles Causley was a Cornish poet who wrote this poem late in life, after both
+                  his parents had died. His father died when Causley was young, and his mother
+                  later. The poem imagines a reunion with his parents in an idealised, Eden-like
+                  landscape. &ldquo;Eden Rock&rdquo; is an invented threshold place. Causley
+                  confirmed: &ldquo;I have no idea, I mean I made it up!&rdquo; Some interpretations
+                  link it to the biblical Eden + Causley&rsquo;s Cornish landscape, but the place
+                  itself is fictional. The poem is widely read as being about approaching death.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker describes his parents at a picnic by a stream, depicted with precise, loving detail &mdash; his mother&apos;s hair, his father&apos;s suit, the specific items in the picnic. His parents beckon him to cross the stream to join them. The final line, &ldquo;I had not thought that it would be like this,&rdquo; suggests the speaker is approaching death and finding it calmer and more peaceful than expected.
+                  The speaker describes his parents at a picnic by a stream, depicted with precise,
+                  loving detail &mdash; his mother&apos;s hair, his father&apos;s suit, the specific
+                  items in the picnic. His parents beckon him to cross the stream to join them. The
+                  final line, &ldquo;I had not thought that it would be like this,&rdquo; suggests
+                  the speaker is approaching death and finding it calmer and more peaceful than
+                  expected.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Free verse with varied stanza lengths. The precise, concrete details (his mother is &ldquo;twenty-three,&rdquo; wearing a &ldquo;sprigged dress&rdquo;) create a hyper-real quality that paradoxically makes the scene feel dreamlike. The final single-line stanza stands alone, separated like the speaker from his parents &mdash; or like the boundary between life and death. The calm, measured tone creates serenity rather than grief.
+                  Free verse with varied stanza lengths. The precise, concrete details (his mother
+                  is &ldquo;twenty-three,&rdquo; wearing a &ldquo;sprigged dress&rdquo;) create a
+                  hyper-real quality that paradoxically makes the scene feel dreamlike. The final
+                  single-line stanza stands alone, separated like the speaker from his parents
+                  &mdash; or like the boundary between life and death. The calm, measured tone
+                  creates serenity rather than grief.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="They are waiting for me somewhere beyond Eden Rock"
+                    text="They are waiting for me somewhere beyond Eden Rock:"
                     technique="Biblical allusion / spatial metaphor"
                     analysis="'Eden' evokes paradise, suggesting the afterlife. 'Beyond' implies something past the boundary of the known world. The present tense 'are waiting' makes the vision feel real and ongoing, as though his parents genuinely exist somewhere, waiting."
                   />
@@ -987,34 +1472,64 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Walking Away" reason="Both parents and children connected across time; Walking Away is about living separation, Eden Rock about separation through death." />
-                  <ComparisonSuggestion poem="Follower" reason="Both explore father-child relationships and the passage of time, with memory central to both poems." />
-                  <ComparisonSuggestion poem="Before You Were Mine" reason="Both speakers reimagine parents at a younger age, using memory to collapse time." />
+                  <ComparisonSuggestion
+                    poem="Walking Away"
+                    reason="Both parents and children connected across time; Walking Away is about living separation, Eden Rock about separation through death."
+                  />
+                  <ComparisonSuggestion
+                    poem="Follower"
+                    reason="Both explore father-child relationships and the passage of time, with memory central to both poems."
+                  />
+                  <ComparisonSuggestion
+                    poem="Before You Were Mine"
+                    reason="Both speakers reimagine parents at a younger age, using memory to collapse time."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 10. Follower ───────────────────── */}
-          <div id="follower" style={{ display: visiblePoemIds.has("follower") ? undefined : "none" }}>
-            <Section id="follower" title="Follower" poet="Seamus Heaney (1966)" studyHref="/revision/poetry/love-and-relationships/follower">
-
+          <div
+            id="follower"
+            style={{ display: visiblePoemIds.has('follower') ? undefined : 'none' }}
+          >
+            <Section
+              id="follower"
+              title="Follower"
+              poet="Seamus Heaney (1966)"
+              studyHref="/revision/poetry/love-and-relationships/follower"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Seamus Heaney grew up on a farm in rural Northern Ireland. Much of his poetry draws on his childhood, farming life, and the Irish landscape. &ldquo;Follower&rdquo; explores his relationship with his father, Patrick Heaney, a skilled ploughman. The poem charts the shift from childhood admiration to adult guilt as the father ages and the roles reverse. Heaney won the Nobel Prize in Literature in 1995.
+                  Seamus Heaney grew up on a farm in rural Northern Ireland. Much of his poetry
+                  draws on his childhood, farming life, and the Irish landscape.
+                  &ldquo;Follower&rdquo; explores his relationship with his father, Patrick Heaney,
+                  a skilled ploughman. The poem charts the shift from childhood admiration to adult
+                  guilt as the father ages and the roles reverse. Heaney won the Nobel Prize in
+                  Literature in 1995.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker remembers following his father as he ploughed the fields, admiring his skill and strength. The young Heaney stumbled behind, wanting to be just like his father but always falling short. The poem&apos;s final stanza reverses the relationship: now the ageing father follows the adult son, and the speaker feels the burden of this role reversal, closing with the blunt, guilty admission that his father &ldquo;will not go away.&rdquo;
+                  The speaker remembers following his father as he ploughed the fields, admiring his
+                  skill and strength. The young Heaney stumbled behind, wanting to be just like his
+                  father but always falling short. The poem&apos;s final stanza reverses the
+                  relationship: now the ageing father follows the adult son, and the speaker feels
+                  the burden of this role reversal, closing with the blunt, guilty admission that
+                  his father &ldquo;will not go away.&rdquo;
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Six quatrains with an ABAB half-rhyme scheme. The regular, sturdy form mirrors the disciplined, rhythmic work of ploughing. The poem is structured chronologically, with the final stanza creating a sudden reversal. Half-rhymes (&ldquo;plough/follow,&rdquo; &ldquo;sock/pluck&rdquo;) create a sense of things not quite fitting together, reflecting the son&apos;s inability to match his father.
+                  Six quatrains with an ABAB half-rhyme scheme. The regular, sturdy form mirrors the
+                  disciplined, rhythmic work of ploughing. The poem is structured chronologically,
+                  with the final stanza creating a sudden reversal. Half-rhymes
+                  (&ldquo;plough/follow,&rdquo; &ldquo;sock/pluck&rdquo;) create a sense of things
+                  not quite fitting together, reflecting the son&apos;s inability to match his
+                  father.
                 </p>
               </SubSection>
 
@@ -1059,34 +1574,67 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Walking Away" reason="Both explore parent-child bonds with changing roles; both use physical imagery to convey emotional truths." />
-                  <ComparisonSuggestion poem="Climbing My Grandfather" reason="Both present children admiring strong, physical grandfather/father figures. Both use extended physical metaphors." />
-                  <ComparisonSuggestion poem="Mother, Any Distance" reason="Both about parent-child relationships and the tension between connection and independence." />
+                  <ComparisonSuggestion
+                    poem="Walking Away"
+                    reason="Both explore parent-child bonds with changing roles; both use physical imagery to convey emotional truths."
+                  />
+                  <ComparisonSuggestion
+                    poem="Climbing My Grandfather"
+                    reason="Both present children admiring strong, physical grandfather/father figures. Both use extended physical metaphors."
+                  />
+                  <ComparisonSuggestion
+                    poem="Mother, Any Distance"
+                    reason="Both about parent-child relationships and the tension between connection and independence."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 11. Mother, Any Distance ───────────────────── */}
-          <div id="mother--any-distance" style={{ display: visiblePoemIds.has("mother--any-distance") ? undefined : "none" }}>
-            <Section id="mother-any-distance" title="Mother, Any Distance" poet="Simon Armitage (1993)" studyHref="/revision/poetry/love-and-relationships/mother-any-distance">
-
+          <div
+            id="mother--any-distance"
+            style={{ display: visiblePoemIds.has('mother--any-distance') ? undefined : 'none' }}
+          >
+            <Section
+              id="mother-any-distance"
+              title="Mother, Any Distance"
+              poet="Simon Armitage (1993)"
+              studyHref="/revision/poetry/love-and-relationships/mother-any-distance"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Simon Armitage is a contemporary poet and current Poet Laureate. This poem comes from his collection <em>Book of Matches</em>, where each poem is designed to be read in the time it takes a match to burn. The poem describes a son measuring up a new house with his mother&apos;s help, using the tape measure as a metaphor for the bond between parent and child as the child gains independence.
+                  Simon Armitage is a contemporary Yorkshire-born poet and the UK Poet Laureate
+                  since May 2019 (succeeding Carol Ann Duffy, 2009-2019). He originally trained as a
+                  probation officer and is now a professor at Leeds University. (Although his work
+                  includes war poems such as <em>Remains</em> and <em>The Manhunt</em>, Armitage
+                  never served in any military or combat role — those poems are based on interviews
+                  with veterans.) This poem comes from his collection <em>Book of Matches</em>,
+                  where each poem is designed to be read in the time it takes a match to burn. The
+                  poem describes a son measuring up a new house with his mother&apos;s help, using
+                  the tape measure as a metaphor for the bond between parent and child as the child
+                  gains independence.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker asks his mother to help him measure his new home using a tape measure. She holds the base (the &ldquo;zero-end&rdquo;) while he walks further and further away, up the stairs, to the loft. The tape measure becomes a metaphor for the umbilical cord connecting them. As he reaches the skylight, he is at the point of breaking free, caught between the safety of his mother and the freedom of the open sky.
+                  The speaker asks his mother to help him measure his new home using a tape measure.
+                  She holds the base (the &ldquo;zero-end&rdquo;) while he walks further and further
+                  away, up the stairs, to the loft. The tape measure becomes a metaphor for the
+                  umbilical cord connecting them. As he reaches the skylight, he is at the point of
+                  breaking free, caught between the safety of his mother and the freedom of the open
+                  sky.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  An extended sonnet of 16 lines (two lines beyond the traditional 14), reflecting how the speaker stretches beyond the conventional form just as he stretches beyond his mother&apos;s reach. The near-sonnet form connects the poem to the tradition of love poetry. The poem moves spatially upward through the house (ground floor, stairs, loft, skylight), mirroring the child&apos;s growth toward independence.
+                  An extended sonnet of 16 lines (two lines beyond the traditional 14), reflecting
+                  how the speaker stretches beyond the conventional form just as he stretches beyond
+                  his mother&apos;s reach. The near-sonnet form connects the poem to the tradition
+                  of love poetry. The poem moves spatially upward through the house (ground floor,
+                  stairs, loft, skylight), mirroring the child&apos;s growth toward independence.
                 </p>
               </SubSection>
 
@@ -1131,34 +1679,64 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Walking Away" reason="Both explore parent-child separation, from opposite perspectives. Both end with the tension of letting go." />
-                  <ComparisonSuggestion poem="Before You Were Mine" reason="Both Armitage and Duffy write about their mothers, exploring the complex dynamics of parent-child love." />
-                  <ComparisonSuggestion poem="Follower" reason="Both use physical, practical activities as metaphors for parent-child relationships and changing roles." />
+                  <ComparisonSuggestion
+                    poem="Walking Away"
+                    reason="Both explore parent-child separation, from opposite perspectives. Both end with the tension of letting go."
+                  />
+                  <ComparisonSuggestion
+                    poem="Before You Were Mine"
+                    reason="Both Armitage and Duffy write about their mothers, exploring the complex dynamics of parent-child love."
+                  />
+                  <ComparisonSuggestion
+                    poem="Follower"
+                    reason="Both use physical, practical activities as metaphors for parent-child relationships and changing roles."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 12. Before You Were Mine ───────────────────── */}
-          <div id="before-you-were-mine" style={{ display: visiblePoemIds.has("before-you-were-mine") ? undefined : "none" }}>
-            <Section id="before-you-were-mine" title="Before You Were Mine" poet="Carol Ann Duffy (1993)" studyHref="/revision/poetry/love-and-relationships/before-you-were-mine">
-
+          <div
+            id="before-you-were-mine"
+            style={{ display: visiblePoemIds.has('before-you-were-mine') ? undefined : 'none' }}
+          >
+            <Section
+              id="before-you-were-mine"
+              title="Before You Were Mine"
+              poet="Carol Ann Duffy (1993)"
+              studyHref="/revision/poetry/love-and-relationships/before-you-were-mine"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Carol Ann Duffy was the first female Poet Laureate. This poem imagines her mother&apos;s life before she became a parent, using old photographs as a starting point. Duffy reimagines her mother as a glamorous, carefree young woman and expresses a possessive, retrospective longing for a version of her mother she never knew. The title reverses the usual parent-child dynamic: it is the child who &ldquo;owns&rdquo; the parent.
+                  Carol Ann Duffy was the first female Poet Laureate. This poem imagines her
+                  mother&apos;s life before she became a parent, using old photographs as a starting
+                  point. Duffy reimagines her mother as a glamorous, carefree young woman and
+                  expresses a possessive, retrospective longing for a version of her mother she
+                  never knew. The title reverses the usual parent-child dynamic: it is the child who
+                  &ldquo;owns&rdquo; the parent.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker imagines her mother ten years before her birth: laughing with friends on a Glasgow street, dancing, being glamorous. She contrasts this carefree youth with the reality of motherhood, suggesting that becoming a parent meant her mother lost some of her sparkle. The poem is possessive &mdash; the speaker repeatedly claims her mother (&ldquo;you were mine&rdquo;) and suggests that even before birth, the mother somehow belonged to the future child.
+                  The speaker imagines her mother ten years before her birth: laughing with friends
+                  on a Glasgow street, dancing, being glamorous. She contrasts this carefree youth
+                  with the reality of motherhood, suggesting that becoming a parent meant her mother
+                  lost some of her sparkle. The poem is possessive &mdash; the speaker repeatedly
+                  claims her mother (&ldquo;you were mine&rdquo;) and suggests that even before
+                  birth, the mother somehow belonged to the future child.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Four quintains (five-line stanzas) in free verse, each stanza roughly corresponding to a different time period or photograph. The poem moves non-chronologically, jumping between past and present, mimicking how we browse photographs. The consistent use of second person (&ldquo;you&rdquo;) throughout creates intimacy and a sense of direct address, as though speaking to the photograph.
+                  Four quintains (five-line stanzas) in free verse, each stanza roughly
+                  corresponding to a different time period or photograph. The poem moves
+                  non-chronologically, jumping between past and present, mimicking how we browse
+                  photographs. The consistent use of second person (&ldquo;you&rdquo;) throughout
+                  creates intimacy and a sense of direct address, as though speaking to the
+                  photograph.
                 </p>
               </SubSection>
 
@@ -1203,34 +1781,62 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Eden Rock" reason="Both reimagine parents at a younger age, using memory/imagination to collapse time and restore them to their youth." />
-                  <ComparisonSuggestion poem="Mother, Any Distance" reason="Both children writing about their mothers, exploring love, dependency, and the complex dynamics of the relationship." />
-                  <ComparisonSuggestion poem="Walking Away" reason="Contrasts: Day Lewis writes from the parent's perspective; Duffy writes from the child's. Both explore the sacrifices of parenthood." />
+                  <ComparisonSuggestion
+                    poem="Eden Rock"
+                    reason="Both reimagine parents at a younger age, using memory/imagination to collapse time and restore them to their youth."
+                  />
+                  <ComparisonSuggestion
+                    poem="Mother, Any Distance"
+                    reason="Both children writing about their mothers, exploring love, dependency, and the complex dynamics of the relationship."
+                  />
+                  <ComparisonSuggestion
+                    poem="Walking Away"
+                    reason="Contrasts: Day-Lewis writes from the parent's perspective; Duffy writes from the child's. Both explore the sacrifices of parenthood."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 13. Winter Swans ───────────────────── */}
-          <div id="winter-swans" style={{ display: visiblePoemIds.has("winter-swans") ? undefined : "none" }}>
-            <Section id="winter-swans" title="Winter Swans" poet="Owen Sheers (2005)" studyHref="/revision/poetry/love-and-relationships/winter-swans">
-
+          <div
+            id="winter-swans"
+            style={{ display: visiblePoemIds.has('winter-swans') ? undefined : 'none' }}
+          >
+            <Section
+              id="winter-swans"
+              title="Winter Swans"
+              poet="Owen Sheers (2005)"
+              studyHref="/revision/poetry/love-and-relationships/winter-swans"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Owen Sheers is a Welsh poet. This poem describes a couple walking by a lake after an argument, who observe swans and find reconciliation in the natural world. Swans are traditionally symbols of lifelong fidelity (they mate for life), and the poem uses this symbolism to suggest that the couple&apos;s bond, though strained, is enduring. The poem comes from his 2005 collection <em>Skirrid Hill</em> (skirrid meaning &ldquo;divorce&rdquo; or &ldquo;separation&rdquo; in Welsh).
+                  Owen Sheers is a Welsh poet. This poem describes a couple walking by a lake after
+                  an argument, who observe swans and find reconciliation in the natural world. Swans
+                  are traditionally symbols of lifelong fidelity (they mate for life), and the poem
+                  uses this symbolism to suggest that the couple&apos;s bond, though strained, is
+                  enduring. The poem comes from his 2005 collection <em>Skirrid Hill</em> (skirrid
+                  meaning &ldquo;divorce&rdquo; or &ldquo;separation&rdquo; in Welsh).
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  After two days of rain (and implied arguments), a couple walk silently by a lake. They observe swans tipping their bodies into the water and resurfacing. The sight of the swans prompts a reconnection: the couple&apos;s hands eventually find each other &ldquo;like a pair of wings settling after flight.&rdquo; The poem traces a journey from distance and tension to quiet reconciliation.
+                  After two days of rain (and implied arguments), a couple walk silently by a lake.
+                  They observe swans tipping their bodies into the water and resurfacing. The sight
+                  of the swans prompts a reconnection: the couple&apos;s hands eventually find each
+                  other &ldquo;like a pair of wings settling after flight.&rdquo; The poem traces a
+                  journey from distance and tension to quiet reconciliation.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Mostly tercets (three-line stanzas) with a final couplet. The tercets create an uneven, off-balance feeling &mdash; like the couple&apos;s relationship. The shift to a couplet at the end symbolises the couple coming back together: two lines united, just as two people reunite. Enjambment throughout mirrors the continuous, flowing movement of the walk and the gradual process of reconciliation.
+                  Mostly tercets (three-line stanzas) with a final couplet. The tercets create an
+                  uneven, off-balance feeling &mdash; like the couple&apos;s relationship. The shift
+                  to a couplet at the end symbolises the couple coming back together: two lines
+                  united, just as two people reunite. Enjambment throughout mirrors the continuous,
+                  flowing movement of the walk and the gradual process of reconciliation.
                 </p>
               </SubSection>
 
@@ -1275,34 +1881,66 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Neutral Tones" reason="Both use nature to reflect on a relationship, but Hardy shows love dying while Sheers shows it recovering." />
-                  <ComparisonSuggestion poem="Sonnet 29" reason="Both present love as powerful and transformative, using natural imagery as their central vehicle." />
-                  <ComparisonSuggestion poem="Letters from Yorkshire" reason="Both explore quiet, understated forms of connection, finding meaning in shared experience rather than grand gestures." />
+                  <ComparisonSuggestion
+                    poem="Neutral Tones"
+                    reason="Both use nature to reflect on a relationship, but Hardy shows love dying while Sheers shows it recovering."
+                  />
+                  <ComparisonSuggestion
+                    poem="Sonnet 29"
+                    reason="Both present love as powerful and transformative, using natural imagery as their central vehicle."
+                  />
+                  <ComparisonSuggestion
+                    poem="Letters from Yorkshire"
+                    reason="Both explore quiet, understated forms of connection, finding meaning in shared experience rather than grand gestures."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 14. Singh Song! ───────────────────── */}
-          <div id="singh-song-" style={{ display: visiblePoemIds.has("singh-song-") ? undefined : "none" }}>
-            <Section id="singh-song" title="Singh Song!" poet="Daljit Nagra (2007)" studyHref="/revision/poetry/love-and-relationships/singh-song">
-
+          <div
+            id="singh-song-"
+            style={{ display: visiblePoemIds.has('singh-song-') ? undefined : 'none' }}
+          >
+            <Section
+              id="singh-song"
+              title="Singh Song!"
+              poet="Daljit Nagra (2007)"
+              studyHref="/revision/poetry/love-and-relationships/singh-song"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Daljit Nagra is a British poet of Punjabi heritage. This poem explores the dual identity of a British-Indian shopkeeper who balances running his father&apos;s corner shop with his love for his new wife. The poem celebrates cultural hybridity, using phonetic Punjabi-English to capture the vitality of a multicultural Britain. The exclamation mark in the title suggests joy and energy. &ldquo;Singh&rdquo; puns on &ldquo;sing&rdquo; &mdash; this is literally a song of love.
+                  Daljit Nagra is a British poet of Punjabi heritage. This poem explores the dual
+                  identity of a British-Indian shopkeeper who balances running his father&apos;s
+                  corner shop with his love for his new wife. The poem celebrates cultural
+                  hybridity, using phonetic Punjabi-English to capture the vitality of a
+                  multicultural Britain. The exclamation mark in the title suggests joy and energy.
+                  &ldquo;Singh&rdquo; puns on &ldquo;sing&rdquo; &mdash; this is literally a song of
+                  love.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker is a young shopkeeper who repeatedly leaves his father&apos;s shop unattended to be with his new wife upstairs. Customers complain about the state of the shop, but the speaker doesn&apos;t care &mdash; his wife is more important. The poem alternates between the complaints of customers (in italics) and the speaker&apos;s joyful descriptions of his wife and their love. The poem ends with the couple sitting in the shop at midnight, looking at the moon, completely absorbed in each other.
+                  The speaker is a young shopkeeper who repeatedly leaves his father&apos;s shop
+                  unattended to be with his new wife upstairs. Customers complain about the state of
+                  the shop, but the speaker doesn&apos;t care &mdash; his wife is more important.
+                  The poem alternates between the complaints of customers (in italics) and the
+                  speaker&apos;s joyful descriptions of his wife and their love. The poem ends with
+                  the couple sitting in the shop at midnight, looking at the moon, completely
+                  absorbed in each other.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Free verse with no regular rhyme scheme, but a strong internal musicality created by phonetic spelling and repetition. The alternation between customers&apos; complaints (italicised) and the speaker&apos;s voice creates a comic, rhythmic contrast. The poem&apos;s structure mirrors the speaker&apos;s life: shuttling between shop duties and love. Refrain-like repetitions (&ldquo;my bride&rdquo;) create a song-like quality, fitting the title.
+                  Free verse with no regular rhyme scheme, but a strong internal musicality created
+                  by phonetic spelling and repetition. The alternation between customers&apos;
+                  complaints (italicised) and the speaker&apos;s voice creates a comic, rhythmic
+                  contrast. The poem&apos;s structure mirrors the speaker&apos;s life: shuttling
+                  between shop duties and love. Refrain-like repetitions (&ldquo;my bride&rdquo;)
+                  create a song-like quality, fitting the title.
                 </p>
               </SubSection>
 
@@ -1347,34 +1985,64 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Love's Philosophy" reason="Both celebrate love's power; Shelley's is frustrated, Nagra's is fulfilled and joyful." />
-                  <ComparisonSuggestion poem="The Farmer's Bride" reason="Stark contrast: Nagra shows a joyful, equal marriage; Mew shows a marriage defined by fear and imbalance." />
-                  <ComparisonSuggestion poem="Letters from Yorkshire" reason="Both explore how relationships exist within the context of everyday working life." />
+                  <ComparisonSuggestion
+                    poem="Love's Philosophy"
+                    reason="Both celebrate love's power; Shelley's is frustrated, Nagra's is fulfilled and joyful."
+                  />
+                  <ComparisonSuggestion
+                    poem="The Farmer's Bride"
+                    reason="Stark contrast: Nagra shows a joyful, equal marriage; Mew shows a marriage defined by fear and imbalance."
+                  />
+                  <ComparisonSuggestion
+                    poem="Letters from Yorkshire"
+                    reason="Both explore how relationships exist within the context of everyday working life."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
 
           {/* ───────────────────── 15. Climbing My Grandfather ───────────────────── */}
-          <div id="climbing-my-grandfather" style={{ display: visiblePoemIds.has("climbing-my-grandfather") ? undefined : "none" }}>
-            <Section id="climbing-grandfather" title="Climbing My Grandfather" poet="Andrew Waterhouse (2000)" studyHref="/revision/poetry/love-and-relationships/climbing-my-grandfather">
-
+          <div
+            id="climbing-my-grandfather"
+            style={{ display: visiblePoemIds.has('climbing-my-grandfather') ? undefined : 'none' }}
+          >
+            <Section
+              id="climbing-grandfather"
+              title="Climbing My Grandfather"
+              poet="Andrew Waterhouse (2000)"
+              studyHref="/revision/poetry/love-and-relationships/climbing-my-grandfather"
+            >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Andrew Waterhouse was a young British poet and ecologist who died in 2001. This poem uses an extended metaphor of mountain climbing to describe exploring and understanding his grandfather. The grandfather is presented as a vast, awe-inspiring landscape to be scaled, suggesting the child&apos;s sense of the grandfather as monumental and enduring. The poem is a celebration of familial love and the desire to truly know another person.
+                  Andrew Waterhouse was a young British poet and ecologist who died in 2001. This
+                  poem uses an extended metaphor of mountain climbing to describe exploring and
+                  understanding his grandfather. The grandfather is presented as a vast,
+                  awe-inspiring landscape to be scaled, suggesting the child&apos;s sense of the
+                  grandfather as monumental and enduring. The poem is a celebration of familial love
+                  and the desire to truly know another person.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker describes climbing their grandfather as though he were a mountain. Starting at the foot (his shoes), the speaker ascends via his legs, belt, chest, and face, using features like wrinkles and liver spots as handholds. The journey culminates at the summit &mdash; the grandfather&apos;s head &mdash; where the speaker feels his heartbeat and the &ldquo;slow pulse of his good heart.&rdquo; The climb represents getting to know someone deeply.
+                  The speaker describes climbing their grandfather as though he were a mountain.
+                  Starting at the foot (his shoes), the speaker ascends via his legs, belt, chest,
+                  and face, using features like wrinkles and liver spots as handholds. The journey
+                  culminates at the summit &mdash; the grandfather&apos;s head &mdash; where the
+                  speaker feels his heartbeat and the &ldquo;slow pulse of his good heart.&rdquo;
+                  The climb represents getting to know someone deeply.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A single continuous stanza in free verse, reflecting the unbroken, sustained effort of the climb. The lack of stanza breaks mirrors the continuous, intimate journey of exploring the grandfather. The poem moves logically upward through the body, creating spatial coherence. Enjambment propels the reader forward, mimicking the climber&apos;s momentum. The absence of punctuation at the end suggests the relationship is ongoing and unfinished.
+                  A single continuous stanza in free verse, reflecting the unbroken, sustained
+                  effort of the climb. The lack of stanza breaks mirrors the continuous, intimate
+                  journey of exploring the grandfather. The poem moves logically upward through the
+                  body, creating spatial coherence. Enjambment propels the reader forward, mimicking
+                  the climber&apos;s momentum. The absence of punctuation at the end suggests the
+                  relationship is ongoing and unfinished.
                 </p>
               </SubSection>
 
@@ -1419,15 +2087,22 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Comparison Suggestions">
                 <ul className="space-y-2 list-none">
-                  <ComparisonSuggestion poem="Follower" reason="Both present admiring portraits of strong, physical father/grandfather figures. Both use extended physical imagery as their central technique." />
-                  <ComparisonSuggestion poem="Eden Rock" reason="Both celebrate grandparents/parents with precise, loving physical detail. Both explore the desire to know and connect with older family members." />
-                  <ComparisonSuggestion poem="Walking Away" reason="Both explore intergenerational love, though from different perspectives (child looking up vs. parent watching child leave)." />
+                  <ComparisonSuggestion
+                    poem="Follower"
+                    reason="Both present admiring portraits of strong, physical father/grandfather figures. Both use extended physical imagery as their central technique."
+                  />
+                  <ComparisonSuggestion
+                    poem="Eden Rock"
+                    reason="Both celebrate grandparents/parents with precise, loving physical detail. Both explore the desire to know and connect with older family members."
+                  />
+                  <ComparisonSuggestion
+                    poem="Walking Away"
+                    reason="Both explore intergenerational love, though from different perspectives (child looking up vs. parent watching child leave)."
+                  />
                 </ul>
               </SubSection>
-
             </Section>
           </div>
-
         </div>
       </section>
 
@@ -1438,16 +2113,17 @@ export default function LoveAndRelationshipsPage() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">Comparison Table</h2>
           <p className="mt-2 text-muted-foreground">
-            Use this at-a-glance table to find poems that work well together for your comparison essay. Click to expand.
+            Use this at-a-glance table to find poems that work well together for your comparison
+            essay. Click to expand.
           </p>
 
           <button
             onClick={() => setShowTable((o) => !o)}
             className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
           >
-            {showTable ? "Hide" : "Show"} Comparison Table
+            {showTable ? 'Hide' : 'Show'} Comparison Table
             <svg
-              className={`h-4 w-4 transition-transform ${showTable ? "rotate-180" : ""}`}
+              className={`h-4 w-4 transition-transform ${showTable ? 'rotate-180' : ''}`}
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
@@ -1472,13 +2148,16 @@ export default function LoveAndRelationshipsPage() {
                 </thead>
                 <tbody>
                   {COMPARISON_DATA.map((row, i) => (
-                    <tr
-                      key={row.poem}
-                      className={i % 2 === 0 ? "bg-card" : "bg-muted"}
-                    >
-                      <td className="px-4 py-3 font-semibold text-primary whitespace-nowrap">{row.poem}</td>
-                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.poet}</td>
-                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.type}</td>
+                    <tr key={row.poem} className={i % 2 === 0 ? 'bg-card' : 'bg-muted'}>
+                      <td className="px-4 py-3 font-semibold text-primary whitespace-nowrap">
+                        {row.poem}
+                      </td>
+                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">
+                        {row.poet}
+                      </td>
+                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">
+                        {row.type}
+                      </td>
                       <td className="px-4 py-3 text-muted-foreground">{row.themes}</td>
                       <td className="px-4 py-3 text-muted-foreground">{row.tone}</td>
                       <td className="px-4 py-3 text-muted-foreground">{row.form}</td>
@@ -1503,49 +2182,49 @@ export default function LoveAndRelationshipsPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              theme: "Romantic Love",
-              poems: ["Love's Philosophy", "Sonnet 29", "Porphyria's Lover", "Singh Song!"],
-              colour: "border-accent",
+              theme: 'Romantic Love',
+              poems: ["Love's Philosophy", 'Sonnet 29', "Porphyria's Lover", 'Singh Song!'],
+              colour: 'border-accent',
             },
             {
-              theme: "Loss and Heartbreak",
-              poems: ["When We Two Parted", "Neutral Tones", "The Farmer's Bride"],
-              colour: "border-warn",
+              theme: 'Loss and Heartbreak',
+              poems: ['When We Two Parted', 'Neutral Tones', "The Farmer's Bride"],
+              colour: 'border-warn',
             },
             {
-              theme: "Parent-Child Love",
-              poems: ["Walking Away", "Follower", "Mother, Any Distance", "Before You Were Mine"],
-              colour: "border-success",
+              theme: 'Parent-Child Love',
+              poems: ['Walking Away', 'Follower', 'Mother, Any Distance', 'Before You Were Mine'],
+              colour: 'border-success',
             },
             {
-              theme: "Family and Memory",
-              poems: ["Eden Rock", "Climbing My Grandfather", "Before You Were Mine", "Follower"],
-              colour: "border-primary",
+              theme: 'Family and Memory',
+              poems: ['Eden Rock', 'Climbing My Grandfather', 'Before You Were Mine', 'Follower'],
+              colour: 'border-primary',
             },
             {
-              theme: "Nature and Love",
-              poems: ["Love's Philosophy", "Sonnet 29", "Winter Swans", "Neutral Tones"],
-              colour: "border-accent",
+              theme: 'Nature and Love',
+              poems: ["Love's Philosophy", 'Sonnet 29', 'Winter Swans', 'Neutral Tones'],
+              colour: 'border-accent',
             },
             {
-              theme: "Power and Possession",
-              poems: ["Porphyria's Lover", "The Farmer's Bride", "Before You Were Mine"],
-              colour: "border-warn",
+              theme: 'Power and Possession',
+              poems: ["Porphyria's Lover", "The Farmer's Bride", 'Before You Were Mine'],
+              colour: 'border-warn',
             },
             {
-              theme: "Distance and Separation",
-              poems: ["Letters from Yorkshire", "Walking Away", "When We Two Parted", "Sonnet 29"],
-              colour: "border-primary",
+              theme: 'Distance and Separation',
+              poems: ['Letters from Yorkshire', 'Walking Away', 'When We Two Parted', 'Sonnet 29'],
+              colour: 'border-primary',
             },
             {
-              theme: "Reconciliation and Healing",
-              poems: ["Winter Swans", "Letters from Yorkshire", "Sonnet 29"],
-              colour: "border-success",
+              theme: 'Reconciliation and Healing',
+              poems: ['Winter Swans', 'Letters from Yorkshire', 'Sonnet 29'],
+              colour: 'border-success',
             },
             {
-              theme: "Identity and Independence",
-              poems: ["Mother, Any Distance", "Singh Song!", "Before You Were Mine"],
-              colour: "border-accent",
+              theme: 'Identity and Independence',
+              poems: ['Mother, Any Distance', 'Singh Song!', 'Before You Were Mine'],
+              colour: 'border-accent',
             },
           ].map((group) => (
             <div
@@ -1571,11 +2250,13 @@ export default function LoveAndRelationshipsPage() {
       {/* ================================================================== */}
       <section className="bg-card px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-foreground">Exam Tips for Love and Relationships</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            Exam Tips for Love and Relationships
+          </h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Choose Your Comparison Wisely",
+                title: 'Choose Your Comparison Wisely',
                 text: "You'll be given one poem and asked to compare it to another of your choice. Pick a poem with clear thematic or structural links — not just the one you know best.",
               },
               {
@@ -1583,20 +2264,20 @@ export default function LoveAndRelationshipsPage() {
                 text: "Avoid writing about one poem then the other. Instead, make a point about both poems together, using connectives: 'similarly,' 'in contrast,' 'whereas,' 'however.'",
               },
               {
-                title: "Short Quotes, Big Analysis",
-                text: "Embed single words or short phrases into your sentences. Long block quotes waste time. Instead, zoom in on individual word choices and their effects.",
+                title: 'Short Quotes, Big Analysis',
+                text: 'Embed single words or short phrases into your sentences. Long block quotes waste time. Instead, zoom in on individual word choices and their effects.',
               },
               {
-                title: "Comment on Form and Structure",
+                title: 'Comment on Form and Structure',
                 text: "Always discuss the poet's choice of form (sonnet, monologue, free verse), rhyme scheme, line length, and structural features like volta or cyclical endings.",
               },
               {
-                title: "Link Context to Meaning",
+                title: 'Link Context to Meaning',
                 text: "Don't just state facts about the poet's life. Explain how context shapes the poem's meaning: 'Byron's secret affair creates the poem's tone of shame and bitterness.'",
               },
               {
-                title: "Use Subject Terminology",
-                text: "Name techniques accurately: enjambment, caesura, sibilance, volta, dramatic monologue. But always explain the effect — feature-spotting without analysis scores poorly.",
+                title: 'Use Subject Terminology',
+                text: 'Name techniques accurately: enjambment, caesura, sibilance, volta, dramatic monologue. But always explain the effect — feature-spotting without analysis scores poorly.',
               },
             ].map((tip) => (
               <div
@@ -1611,19 +2292,43 @@ export default function LoveAndRelationshipsPage() {
         </div>
       </section>
 
+      {/* Rights notice */}
+      <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">Rights notice.</strong> Several AQA Love &amp;
+          Relationships poems remain in copyright &mdash; including Heaney&rsquo;s <em>Follower</em>{' '}
+          (&copy; Faber &amp; Faber), Sheers&rsquo;s <em>Winter Swans</em> (&copy; Seren Books),
+          Duffy&rsquo;s <em>Before You Were Mine</em> (&copy; Picador / Pan Macmillan and Rogers
+          Coleridge &amp; White), Nagra&rsquo;s <em>Singh Song!</em> (&copy; Faber &amp; Faber) and
+          Waterhouse&rsquo;s <em>Climbing My Grandfather</em> (&copy; Faber &amp; Faber). Quotations
+          are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation).
+          For full text, students should consult the board-licensed AQA Love &amp; Relationships
+          anthology.
+        </div>
+      </section>
+
       {/* Back link */}
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <Link
           href="/resources/poetry"
           className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-primary transition-colors"
         >
-          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          <svg
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
           </svg>
           Back to Poetry Hub
         </Link>
       </section>
-
     </>
-  );
+  )
 }

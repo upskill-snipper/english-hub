@@ -45,7 +45,7 @@ const QUESTIONS: AnalysisQuestion[] = [
   },
   {
     extract: '"The rain set early in to-night,\nThe sullen wind was soon awake."',
-    source: 'Porphyria\'s Lover — Browning',
+    source: "Porphyria's Lover — Browning",
     correctDevice: 'Pathetic fallacy',
     options: ['Pathetic fallacy', 'Personification', 'Imagery', 'Symbolism'],
   },
@@ -80,7 +80,8 @@ const QUESTIONS: AnalysisQuestion[] = [
     options: ['Rhetorical question', 'Soliloquy', 'Metaphor', 'Allusion'],
   },
   {
-    extract: '"Bent double, like old beggars under sacks,\nKnock-kneed, coughing like hags, we cursed through sludge."',
+    extract:
+      '"Bent double, like old beggars under sacks,\nKnock-kneed, coughing like hags, we cursed through sludge."',
     source: 'Dulce et Decorum Est — Owen',
     correctDevice: 'Simile',
     options: ['Simile', 'Metaphor', 'Hyperbole', 'Imagery'],
@@ -128,7 +129,8 @@ const QUESTIONS: AnalysisQuestion[] = [
     options: ['Personification', 'Metaphor', 'Simile', 'Pathetic fallacy'],
   },
   {
-    extract: '"Let us go then, you and I,\nWhen the evening is spread out against the sky\nLike a patient etherised upon a table."',
+    extract:
+      '"Let us go then, you and I,\nWhen the evening is spread out against the sky\nLike a patient etherised upon a table."',
     source: 'Prufrock — Eliot',
     correctDevice: 'Simile',
     options: ['Simile', 'Metaphor', 'Enjambment', 'Imagery'],
@@ -158,7 +160,7 @@ const QUESTIONS: AnalysisQuestion[] = [
     options: ['Personification', 'Alliteration', 'Pathetic fallacy', 'Apostrophe'],
   },
   {
-    extract: '"Half a league, half a league,\nHalf a league onward."',
+    extract: '"Half a league, half a league,\nHalf a league onward,"',
     source: 'Charge of the Light Brigade — Tennyson',
     correctDevice: 'Repetition',
     options: ['Repetition', 'Anaphora', 'Alliteration', 'Rhythm'],
@@ -176,8 +178,13 @@ const QUESTIONS: AnalysisQuestion[] = [
     options: ['Metaphor', 'Alliteration', 'Repetition', 'Symbolism'],
   },
   {
+    // UK rights notice: Robert Frost died 1963; UK copyright (CDPA 1988 §12: life
+    // + 70 years) expires 31 December 2033. Frost is public domain in the United
+    // States, but not in the UK. The quotation below is a 14-word fair-dealing
+    // extract for criticism/teaching; do not expand it without legal review.
     extract: '"And miles to go before I sleep,\nAnd miles to go before I sleep."',
-    source: 'Stopping by Woods — Frost',
+    source:
+      '"Stopping by Woods on a Snowy Evening" — Robert Frost (fair-dealing extract; UK copyright until 2034)',
     correctDevice: 'Repetition',
     options: ['Repetition', 'Anaphora', 'Refrain', 'Enjambment'],
   },
@@ -188,7 +195,8 @@ const QUESTIONS: AnalysisQuestion[] = [
     options: ['Personification', 'Metaphor', 'Imagery', 'Simile'],
   },
   {
-    extract: '"I should have been a pair of ragged claws\nScuttling across the floors of silent seas."',
+    extract:
+      '"I should have been a pair of ragged claws\nScuttling across the floors of silent seas."',
     source: 'Prufrock — Eliot',
     correctDevice: 'Metaphor',
     options: ['Metaphor', 'Simile', 'Synecdoche', 'Imagery'],
@@ -283,25 +291,17 @@ export default function SpeedAnalysisPage() {
         }
       }, 1200)
     },
-    [answered, currentQ, qIdx, questions.length]
+    [answered, currentQ, qIdx, questions.length],
   )
 
   const timerColor =
-    timer <= 5
-      ? 'text-red-400'
-      : timer <= 15
-        ? 'text-clay-600'
-        : 'text-muted-foreground'
+    timer <= 5 ? 'text-red-400' : timer <= 15 ? 'text-clay-600' : 'text-muted-foreground'
 
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between gap-4">
-          <Button
-            variant="ghost"
-            size="sm"
-            render={<Link href="/games" />}
-          >
+          <Button variant="ghost" size="sm" render={<Link href="/games" />}>
             <ArrowLeft className="size-4 mr-1" />
             Back to Games
           </Button>
@@ -341,7 +341,7 @@ export default function SpeedAnalysisPage() {
                 <div
                   className={cn(
                     'h-full rounded-full transition-all duration-1000 ease-linear',
-                    timer <= 5 ? 'bg-red-500' : timer <= 15 ? 'bg-amber-500' : 'bg-primary'
+                    timer <= 5 ? 'bg-red-500' : timer <= 15 ? 'bg-amber-500' : 'bg-primary',
                   )}
                   style={{ width: `${(timer / SECONDS_PER_QUESTION) * 100}%` }}
                 />
@@ -368,8 +368,7 @@ export default function SpeedAnalysisPage() {
                   if (answered) {
                     if (isCorrect)
                       optClass = 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
-                    else if (isChosen)
-                      optClass = 'border-red-500 bg-red-500/10 text-red-400'
+                    else if (isChosen) optClass = 'border-red-500 bg-red-500/10 text-red-400'
                     else optClass = 'opacity-40 border-border'
                   }
 
@@ -380,7 +379,7 @@ export default function SpeedAnalysisPage() {
                       disabled={!!answered}
                       className={cn(
                         'rounded-lg border px-4 py-3 text-sm font-medium transition-all duration-150 text-left',
-                        optClass
+                        optClass,
                       )}
                     >
                       {opt}

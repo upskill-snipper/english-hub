@@ -128,7 +128,7 @@ const THEME_GROUPS: ThemeGroup[] = [
       },
       {
         title: 'Walking Away',
-        poet: 'C. Day Lewis',
+        poet: 'C. Day-Lewis',
         slug: 'walking-away',
         hook: 'A father watches his son leave for the first time and grieves the loss.',
         themes: ['Family', 'Letting go', 'Love'],
@@ -237,10 +237,7 @@ const TAG_COLOURS: Record<string, string> = {
 export default function LoveAndRelationshipsPage() {
   const { studied, mounted } = useStudiedPoems()
 
-  const studiedCount = useMemo(
-    () => ALL_POEMS.filter((p) => studied.has(p.slug)).length,
-    [studied]
-  )
+  const studiedCount = useMemo(() => ALL_POEMS.filter((p) => studied.has(p.slug)).length, [studied])
 
   const progressPercent = Math.round((studiedCount / TOTAL_POEMS) * 100)
 
@@ -270,17 +267,15 @@ export default function LoveAndRelationshipsPage() {
               <Sparkles className="mr-1 size-3" />
               AQA GCSE English Literature
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              AQA Only
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">AQA Only</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Love &amp; Relationships Poetry
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Master all 15 poems in the AQA Love and Relationships anthology.
-            Each study page includes annotations, key quotations, context, and
-            comparison notes to help you write top-grade essays.
+            Master all 15 poems in the AQA Love and Relationships anthology. Each study page
+            includes annotations, key quotations, context, and comparison notes to help you write
+            top-grade essays.
           </p>
 
           {/* Progress bar */}
@@ -300,24 +295,39 @@ export default function LoveAndRelationshipsPage() {
         </div>
       </section>
 
-      <StudyTools textName="Love & Relationships Anthology" textType="anthology" examBoard="AQA" variant="banner" />
+      <StudyTools
+        textName="Love & Relationships Anthology"
+        textType="anthology"
+        examBoard="AQA"
+        variant="banner"
+      />
+
+      {/* ── Rights notice ───────────────────────────────────────────── */}
+      <section className="rounded-xl border border-border/60 bg-muted/30 px-4 py-3 text-caption text-muted-foreground">
+        <p>
+          <span className="font-medium text-foreground">Rights notice: </span>
+          Seven of these fifteen poems remain in copyright &mdash; Heaney&rsquo;s <em>Follower</em>,
+          Nagra&rsquo;s <em>Singh Song!</em> and Waterhouse&rsquo;s <em>Climbing My Grandfather</em>{' '}
+          (&copy; Faber &amp; Faber), Causley&rsquo;s <em>Eden Rock</em> (&copy; David Higham
+          Associates), Day-Lewis&rsquo;s <em>Walking Away</em> (&copy; Peters Fraser &amp; Dunlop),
+          Duffy&rsquo;s <em>Before You Were Mine</em> (&copy; Picador / Pan Macmillan) and
+          Sheers&rsquo;s <em>Winter Swans</em> (&copy; Seren Books). Quotations are short
+          fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For full
+          text, students should consult the board-licensed AQA Anthology of Poetry.
+        </p>
+      </section>
 
       {/* ── Poem groups ─────────────────────────────────────────────── */}
       {THEME_GROUPS.map((group) => (
         <section key={group.label}>
           <div className="mb-5 flex items-center gap-3">
-            <div
-              className={`flex size-8 items-center justify-center rounded-lg ${group.bgColour}`}
-            >
+            <div className={`flex size-8 items-center justify-center rounded-lg ${group.bgColour}`}>
               <group.icon className={`size-4 ${group.colour}`} />
             </div>
-            <h2 className="text-heading-lg font-heading text-foreground">
-              {group.label}
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">{group.label}</h2>
             {mounted && (
               <Badge variant="outline" className="ml-auto text-xs">
-                {group.poems.filter((p) => studied.has(p.slug)).length}/
-                {group.poems.length} studied
+                {group.poems.filter((p) => studied.has(p.slug)).length}/{group.poems.length} studied
               </Badge>
             )}
           </div>
@@ -345,9 +355,7 @@ export default function LoveAndRelationshipsPage() {
                   <h3 className="pr-8 text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
                     {poem.title}
                   </h3>
-                  <p className="mt-0.5 text-caption text-muted-foreground">
-                    {poem.poet}
-                  </p>
+                  <p className="mt-0.5 text-caption text-muted-foreground">{poem.poet}</p>
 
                   <p className="mt-3 flex-1 text-body-sm text-muted-foreground leading-relaxed">
                     {poem.hook}
@@ -359,8 +367,7 @@ export default function LoveAndRelationshipsPage() {
                       <span
                         key={theme}
                         className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[0.65rem] font-medium ${
-                          TAG_COLOURS[theme] ??
-                          'bg-muted text-muted-foreground border-border'
+                          TAG_COLOURS[theme] ?? 'bg-muted text-muted-foreground border-border'
                         }`}
                       >
                         {theme}
@@ -396,9 +403,9 @@ export default function LoveAndRelationshipsPage() {
               Pair contrasting perspectives
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              The exam asks you to compare two poems. Choose poems that share a
-              theme but differ in tone — for example, the obsessive love of
-              Porphyria&apos;s Lover against the tender longing of Sonnet 29.
+              The exam asks you to compare two poems. Choose poems that share a theme but differ in
+              tone — for example, the obsessive love of Porphyria&apos;s Lover against the tender
+              longing of Sonnet 29.
             </p>
           </div>
 
@@ -407,9 +414,9 @@ export default function LoveAndRelationshipsPage() {
               Examine the speaker, not the poet
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Each poem has a constructed speaker. Analyse how that voice
-              presents love — possessive, nostalgic, joyful or grieving — and
-              what techniques the poet uses to shape it.
+              Each poem has a constructed speaker. Analyse how that voice presents love —
+              possessive, nostalgic, joyful or grieving — and what techniques the poet uses to shape
+              it.
             </p>
           </div>
 
@@ -418,9 +425,9 @@ export default function LoveAndRelationshipsPage() {
               Compare methods, not just content
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Top-band responses compare how poets use language, structure and
-              form. Notice how Heaney uses end-stopped lines to create
-              steadiness while Duffy uses fragmented imagery.
+              Top-band responses compare how poets use language, structure and form. Notice how
+              Heaney uses end-stopped lines to create steadiness while Duffy uses fragmented
+              imagery.
             </p>
           </div>
 
@@ -429,8 +436,8 @@ export default function LoveAndRelationshipsPage() {
               Learn 2–3 key quotes per poem
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              You don&apos;t need to memorise entire poems. Focus on short,
-              technique-rich quotations you can analyse in depth.
+              You don&apos;t need to memorise entire poems. Focus on short, technique-rich
+              quotations you can analyse in depth.
             </p>
           </div>
         </div>
@@ -443,8 +450,8 @@ export default function LoveAndRelationshipsPage() {
           Ready to explore more poetry?
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Head back to the Poetry hub to explore Power and Conflict, the
-          Edexcel anthology, and unseen poetry techniques.
+          Head back to the Poetry hub to explore Power and Conflict, the Edexcel anthology, and
+          unseen poetry techniques.
         </p>
         <Button
           variant="default"

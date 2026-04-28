@@ -4,6 +4,20 @@
 // Edexcel International GCSE Specification
 // Paper 1 (3 mocks): Drama and Poetry Anthology
 // Paper 2 (3 mocks): Unseen Prose, Unseen Poetry, and Comparative Texts
+//
+// FABRICATION WARNING (FC20 audit, 2026-04-28):
+// The poetry extracts attributed to "Carol Ann Duffy, 'Little Red Cap'",
+// "Gillian Clarke, 'Vultures'", "Derek Mahon, 'Everything Everything'",
+// "Seamus Heaney, 'Funeral Rites'" and "Liz Lochhead, 'The Krewe'" are
+// FABRICATED. Either the poem title does not exist in the named poet's work
+// or the rendered text does not match the genuine poem (e.g. Duffy's
+// "Little Red-Cap" begins "At childhood's end, the houses petered out");
+// Heaney's "Funeral Rites" is real but its actual text differs from what is
+// printed here. The model answer for the Mahon stimulus quotes lines that do
+// not exist in any Mahon poem. Treat ALL named-poet poetry extracts in this
+// file as fabricated stimuli; do not cite as real poems by those poets.
+// Pre-1928 Shakespeare/Marlowe drama extracts (Tempest, Faustus) and the
+// "Unseen Contemporary Prose/Poem" labelled stimuli are unaffected.
 
 import type { MockExamPaper, MockExamSection, MockExamQuestion } from './mock-exams'
 
@@ -78,13 +92,6 @@ the prices slashed, the stock reduced to nothing.
 Nothing will remain of this: no memory,
 no evidence that we were ever here.`
 
-const POETRY_EXTRACT_4_HEANEY = `Funeral Rites
-
-When they lowered you down in that dark mass
-of Bogland, I thought of the queen of the dead,
-how she would wrap you in her bog-dark arms,
-how the centuries would cover you gently.`
-
 const POETRY_EXTRACT_5_LOCHHEAD = `The Krewe
 
 Listen: they come, bright with their own parade,
@@ -116,7 +123,8 @@ const MOCK_EXAM_1_DRAMA: MockExamPaper = {
     {
       id: 'section-a-drama',
       title: 'Section A: Drama',
-      description: 'Answer one question from this section. Study the extract and answer the question that follows.',
+      description:
+        'Answer one question from this section. Study the extract and answer the question that follows.',
       totalMarks: 40,
       suggestedTimeMinutes: 50,
       questions: [
@@ -151,13 +159,13 @@ The language describes beautiful things—towers, palaces, temples—but these a
 The statement "We are such stuff / As dreams are made on" and the final line about life being "rounded with a sleep" both suggest that human life is temporary. Sleep might represent death, and the speech overall shows Prospero accepting this mortality. This shows his character has changed from the beginning of the play.`,
           },
           markScheme: [
-            'Analyse Shakespeare\'s use of theatrical metaphor and its effectiveness in conveying impermanence',
+            "Analyse Shakespeare's use of theatrical metaphor and its effectiveness in conveying impermanence",
             'Discuss the imagery of dissolution and grandeur: towers, palaces, temples',
             'Examine language devices: alliteration, paradox, metaphor (dreams, sleep)',
             'Consider the philosophical implications of equating human life with dreams and theatrical performance',
-            'Evaluate the dramatic significance of this speech within Prospero\'s character arc',
-            'Discuss context: Prospero\'s journey from vengeance to wisdom and acceptance of mortality',
-            'Consider how the speech reflects Renaissance ideas about the nature of reality and human insignificance'
+            "Evaluate the dramatic significance of this speech within Prospero's character arc",
+            "Discuss context: Prospero's journey from vengeance to wisdom and acceptance of mortality",
+            'Consider how the speech reflects Renaissance ideas about the nature of reality and human insignificance',
           ],
         },
         {
@@ -183,7 +191,8 @@ The resolution reveals power's transformation: Prospero renounces magic and acce
     {
       id: 'section-b-poetry',
       title: 'Section B: Poetry Anthology',
-      description: 'Answer one question from this section. Study the extract and answer the question that follows.',
+      description:
+        'Answer one question from this section. Study the extract and answer the question that follows.',
       totalMarks: 40,
       suggestedTimeMinutes: 50,
       questions: [
@@ -195,15 +204,16 @@ The resolution reveals power's transformation: Prospero renounces magic and acce
           suggestedTimeMinutes: 50,
           questionType: 'analysis',
           extract: POETRY_EXTRACT_3_MAHON,
-          extractSource: 'Derek Mahon, "Everything Everything"',
+          // FACT-CHECK 2026-04: source attribution corrected per verified-library audit
+          extractSource: 'Anonymous (twentieth-century poetic style; not a real Derek Mahon poem)',
           modelAnswers: {
-            'Band 5 (32-40)': `Mahon's poem employs a deceptively simple form to convey profound anxiety about loss and erasure. The stark repetition of "Everything everything" in the opening immediately establishes a tone of urgency and inevitability. The poem's central concern—that commercial reduction ("prices slashed," "stock reduced to nothing") mirrors existential obliteration—transforms mundane retail language into metaphysical commentary. "Must go" carries double meaning: both commercial necessity and existential departure.
+            'Band 5 (32-40)': `The poem employs a deceptively simple form to convey profound anxiety about loss and erasure. The stark repetition of "Everything everything" in the opening immediately establishes a tone of urgency and inevitability. The poem's central concern—that commercial reduction ("prices slashed," "stock reduced to nothing") mirrors existential obliteration—transforms mundane retail language into metaphysical commentary. "Must go" carries double meaning: both commercial necessity and existential departure.
 
-The anaphoric repetition of "nothing" in "reduced to nothing / Nothing will remain" creates rhythmic acceleration toward absolute negation. Mahon's noun "Nothing" capitalized and isolated at line beginning emphasizes its philosophical weight. The final statement "no evidence that we were ever here" extends personal mortality into cosmic erasure—the possibility that existence leaves no trace, no mark on the universe.
+The anaphoric repetition of "nothing" in "reduced to nothing / Nothing will remain" creates rhythmic acceleration toward absolute negation. The noun "Nothing" capitalized and isolated at line beginning emphasizes its philosophical weight. The final statement "no evidence that we were ever here" extends personal mortality into cosmic erasure—the possibility that existence leaves no trace, no mark on the universe.
 
 Structurally, the short lines and minimal punctuation suggest fragmentation and collapse. The poem's form mirrors its content: declining word counts and diminishing capital letters suggest language itself being stripped away. The title "Everything Everything" emphasizes totality and repetition, suggesting cycles of consumption and disposal.
 
-The poem's key innovation is collapsing commercial and existential registers. Department store slogans about clearance sales become meditation on human meaninglessness. This collapse forces readers to recognize how casual consumer language masks profound anxiety about mortality and insignificance. Mahon's final question "what evidence that we were ever here" expresses simultaneously personal anxiety and philosophical nihilism, connecting individual mortality to cosmic indifference.`,
+The poem's key innovation is collapsing commercial and existential registers. Department store slogans about clearance sales become meditation on human meaninglessness. This collapse forces readers to recognize how casual consumer language masks profound anxiety about mortality and insignificance. The final question "what evidence that we were ever here" expresses simultaneously personal anxiety and philosophical nihilism, connecting individual mortality to cosmic indifference.`,
           },
           questionType: 'analysis',
         },
@@ -272,13 +282,14 @@ The scene's dramatic power lies in the contrast between what Elizabeth could say
           suggestedTimeMinutes: 50,
           questionType: 'comparison',
           modelAnswers: {
-            'Band 5 (32-40)': `Carol Ann Duffy's "Little Red Cap" and other anthology poems often explore vulnerability through violations of boundaries and innocence. Duffy uses second-person address and vivid narrative to expose the vulnerability of those seduced by apparent gentleness. "He'd come to me with dead flowers in his hands" employs pathetic fallacy—dead flowers suggest deception and predation masked by romantic gesture. The confessional tone ("At last he has confessed") reveals how vulnerability involves trusting false presentations.
+            // FACT-CHECK 2026-04: model answer scrubbed of fabricated poet attributions per verified-library audit
+            'Band 5 (32-40)': `The first stimulus poem (a confessional narrative on betrayed trust) explores vulnerability through violations of boundaries and innocence. The poet uses second-person address and vivid narrative to expose the vulnerability of those seduced by apparent gentleness. "He'd come to me with dead flowers in his hands" employs pathetic fallacy—dead flowers suggest deception and predation masked by romantic gesture. The confessional tone ("At last he has confessed") reveals how vulnerability involves trusting false presentations.
 
-Duffy's accessibility of language—short lines, contemporary diction, narrative clarity—contrasts with more formally complex poets. Her vulnerability emerges through directness rather than abstraction. The poem's exposure of predatory relationships demonstrates how vulnerability can be weaponized, how those who appear vulnerable may actually be dangerous.
+The first poem's accessibility of language—short lines, contemporary diction, narrative clarity—contrasts with more formally complex contemporary work. Vulnerability emerges through directness rather than abstraction. The exposure of predatory relationships demonstrates how vulnerability can be weaponized, how those who appear vulnerable may actually be dangerous.
 
-Conversely, poets like Seamus Heaney explore vulnerability through historical trauma and linguistic layering. His "Funeral Rites" presents vulnerability through burial rituals and the attempt to protect the dead through ancient ceremonial. "How she would wrap you in her bog-dark arms" anthropomorphizes earth as maternal protector, suggesting vulnerability requires surrogate protection. Heaney's complex form (irregular stanzas, dense imagery) contrasts with Duffy's narrative accessibility.
+Conversely, the second stimulus poem (an elegiac meditation on burial) explores vulnerability through historical trauma and linguistic layering. It presents vulnerability through burial rituals and the attempt to protect the dead through ancient ceremonial. "How she would wrap you in her bog-dark arms" anthropomorphizes earth as maternal protector, suggesting vulnerability requires surrogate protection. The second poem's complex form (irregular stanzas, dense imagery) contrasts with the first poem's narrative accessibility.
 
-Where Duffy's vulnerability is contemporary and interpersonal, Heaney's is historical and metaphysical. Duffy exposes individual predation; Heaney explores collective trauma. Duffy's language is declarative; Heaney's is allusive and elliptical. Yet both poets ultimately argue that vulnerability is inseparable from human experience—neither offering protection but rather witness to exposure and suffering.`,
+Where the first poem's vulnerability is contemporary and interpersonal, the second's is historical and metaphysical. The first exposes individual predation; the second explores collective trauma. The first poem's language is declarative; the second's is allusive and elliptical. Yet both poems ultimately argue that vulnerability is inseparable from human experience—neither offering protection but rather witness to exposure and suffering.`,
           },
           questionType: 'comparison',
         },
@@ -348,7 +359,8 @@ For the audience, this soliloquy functions as a final reckoning: Faustus trades 
           suggestedTimeMinutes: 50,
           questionType: 'analysis',
           extract: POETRY_EXTRACT_5_LOCHHEAD,
-          extractSource: 'Liz Lochhead, "The Krew" (or contemporary anthology poem)',
+          // FACT-CHECK 2026-04: source attribution corrected per verified-library audit
+          extractSource: 'Anonymous (twentieth-century poetic style; not a real Liz Lochhead poem)',
           modelAnswers: {
             'Band 5 (32-40)': `The poem presents masked parade as metaphor for hidden identities and concealed suffering. "Listen: they come, bright with their own parade" employs imperative command—"Listen"—demanding audience attention to surfaces (parade, brightness) while the poem's subsequent logic reveals hidden depths beneath. The participial phrase "bright with their own parade" suggests self-generated spectacle, masking emptiness beneath.
 
@@ -474,7 +486,8 @@ const MOCK_EXAM_4_UNSEEN_PROSE_POETRY: MockExamPaper = {
     {
       id: 'section-a-unseen-prose',
       title: 'Section A: Unseen Prose',
-      description: 'Read the extract below and answer the question that follows. You should spend approximately 40 minutes on this question.',
+      description:
+        'Read the extract below and answer the question that follows. You should spend approximately 40 minutes on this question.',
       totalMarks: 40,
       suggestedTimeMinutes: 40,
       questions: [
@@ -507,7 +520,8 @@ The writer's overall effect is ambiguous: is Margaret's withdrawal peaceful wisd
     {
       id: 'section-b-unseen-poetry',
       title: 'Section B: Unseen Poetry',
-      description: 'Read the poem below and answer the question that follows. You should spend approximately 40 minutes on this question.',
+      description:
+        'Read the poem below and answer the question that follows. You should spend approximately 40 minutes on this question.',
       totalMarks: 40,
       suggestedTimeMinutes: 40,
       questions: [

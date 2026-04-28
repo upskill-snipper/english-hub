@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CourseData, CourseModule, CourseQuiz } from './courses';
+import type { CourseData, CourseModule, CourseQuiz } from './courses'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Edexcel IGCSE Literature — Individual Drama Text Courses
@@ -52,7 +52,8 @@ const viewFromBridgeModules: CourseModule[] = [
     quiz: [
       {
         id: 'vftb-m1-q1',
-        question: 'What real-life experience informed Miller\'s understanding of the working-class world depicted in the play?',
+        question:
+          "What real-life experience informed Miller's understanding of the working-class world depicted in the play?",
         options: [
           'He grew up in a wealthy Manhattan household',
           'He worked in a warehouse and encountered dock workers and labourers',
@@ -60,7 +61,8 @@ const viewFromBridgeModules: CourseModule[] = [
           'He was an immigration lawyer in Red Hook',
         ],
         correct: 1,
-        explanation: 'Miller worked in a warehouse to pay for university, where he encountered the kind of working-class men who populate his plays. His family\'s financial ruin during the Great Depression also gave him direct experience of economic hardship.',
+        explanation:
+          "Miller worked in a warehouse to pay for university, where he encountered the kind of working-class men who populate his plays. His family's financial ruin during the Great Depression also gave him direct experience of economic hardship.",
       },
       {
         id: 'vftb-m1-q2',
@@ -69,22 +71,25 @@ const viewFromBridgeModules: CourseModule[] = [
           'He acts as the protagonist with a tragic flaw',
           'He serves as the antagonist who drives the conflict',
           'He functions like a Greek chorus, commenting on the action and foreshadowing catastrophe',
-          'He represents the gods who control the characters\' fates',
+          "He represents the gods who control the characters' fates",
         ],
         correct: 2,
-        explanation: 'Alfieri acts as a narrator-chorus figure drawn from Greek tragedy. He comments on the action, addresses the audience directly, and warns of the inevitable catastrophe — creating a sense of tragic inevitability.',
+        explanation:
+          'Alfieri acts as a narrator-chorus figure drawn from Greek tragedy. He comments on the action, addresses the audience directly, and warns of the inevitable catastrophe — creating a sense of tragic inevitability.',
       },
       {
         id: 'vftb-m1-q3',
-        question: 'Why was informing on illegal immigrants considered the worst possible betrayal in the Red Hook community?',
+        question:
+          'Why was informing on illegal immigrants considered the worst possible betrayal in the Red Hook community?',
         options: [
           'Because it was a federal crime to harbour immigrants',
-          'Because it violated the community\'s code of loyalty and silence, endangering vulnerable people the community had pledged to protect',
+          "Because it violated the community's code of loyalty and silence, endangering vulnerable people the community had pledged to protect",
           'Because the police would arrest everyone in the neighbourhood',
           'Because immigrants were the only source of cheap labour',
         ],
         correct: 1,
-        explanation: 'The Italian-American community operated by a code of loyalty and mutual protection. Illegal immigrants were sheltered collectively, and informing on them was seen as a betrayal of the entire community — not just the individuals involved.',
+        explanation:
+          'The Italian-American community operated by a code of loyalty and mutual protection. Illegal immigrants were sheltered collectively, and informing on them was seen as a betrayal of the entire community — not just the individuals involved.',
       },
     ],
   },
@@ -138,16 +143,17 @@ const viewFromBridgeModules: CourseModule[] = [
         question: 'What structural purpose does the Vinny Bolzano story serve in Act One?',
         options: [
           'It provides comic relief to lighten the mood',
-          'It foreshadows Eddie\'s own betrayal and creates dramatic irony when he later informs on Marco and Rodolpho',
+          "It foreshadows Eddie's own betrayal and creates dramatic irony when he later informs on Marco and Rodolpho",
           'It introduces a subplot about another family in Red Hook',
           'It explains why immigration is illegal in the United States',
         ],
         correct: 1,
-        explanation: 'The Vinny Bolzano story establishes that informing on immigrants is the ultimate betrayal. When Eddie later does exactly what he condemned, the audience recognises the devastating irony — this is the structural purpose of the early anecdote.',
+        explanation:
+          'The Vinny Bolzano story establishes that informing on immigrants is the ultimate betrayal. When Eddie later does exactly what he condemned, the audience recognises the devastating irony — this is the structural purpose of the early anecdote.',
       },
       {
         id: 'vftb-m2-q2',
-        question: 'What does Marco\'s chair-lifting at the end of Act One symbolise?',
+        question: "What does Marco's chair-lifting at the end of Act One symbolise?",
         options: [
           'His desire to impress Catherine',
           'His physical fitness from working on the docks',
@@ -155,11 +161,13 @@ const viewFromBridgeModules: CourseModule[] = [
           'His gratitude to Eddie for housing him',
         ],
         correct: 2,
-        explanation: 'Marco lifts the chair above Eddie\'s head as a silent but unmistakable warning: he has the physical power to protect Rodolpho if Eddie crosses a line. It foreshadows the final violent confrontation.',
+        explanation:
+          "Marco lifts the chair above Eddie's head as a silent but unmistakable warning: he has the physical power to protect Rodolpho if Eddie crosses a line. It foreshadows the final violent confrontation.",
       },
       {
         id: 'vftb-m2-q3',
-        question: 'Why does Miller have Alfieri tell the audience the story ends badly at the very beginning?',
+        question:
+          'Why does Miller have Alfieri tell the audience the story ends badly at the very beginning?',
         options: [
           'To spoil the ending so the audience focuses on character and theme rather than plot suspense',
           'To create a sense of tragic inevitability — echoing Greek tragedy where the outcome is known but cannot be prevented',
@@ -167,7 +175,8 @@ const viewFromBridgeModules: CourseModule[] = [
           'To establish that Alfieri is an unreliable narrator',
         ],
         correct: 1,
-        explanation: 'By revealing the tragic outcome at the start, Miller creates a sense of inevitability drawn from Greek tragedy. The audience watches not to discover what happens, but to understand why and how it happens — deepening the dramatic experience.',
+        explanation:
+          'By revealing the tragic outcome at the start, Miller creates a sense of inevitability drawn from Greek tragedy. The audience watches not to discover what happens, but to understand why and how it happens — deepening the dramatic experience.',
       },
     ],
   },
@@ -233,7 +242,7 @@ const viewFromBridgeModules: CourseModule[] = [
     quiz: [
       {
         id: 'vftb-m3-q1',
-        question: 'What is Eddie Carbone\'s hamartia (tragic flaw)?',
+        question: "What is Eddie Carbone's hamartia (tragic flaw)?",
         options: [
           'His physical weakness compared to Marco',
           'His inability to recognise and control his incestuous desire for Catherine, combined with rigid masculinity',
@@ -241,11 +250,13 @@ const viewFromBridgeModules: CourseModule[] = [
           'His laziness and refusal to work on the docks',
         ],
         correct: 1,
-        explanation: 'Eddie\'s tragic flaw is his repressed, unacknowledgeable desire for Catherine, compounded by a rigid model of masculinity that prevents him from confronting his own emotions. This drives every destructive decision he makes.',
+        explanation:
+          "Eddie's tragic flaw is his repressed, unacknowledgeable desire for Catherine, compounded by a rigid model of masculinity that prevents him from confronting his own emotions. This drives every destructive decision he makes.",
       },
       {
         id: 'vftb-m3-q2',
-        question: 'What is the significance of Beatrice\'s final line: "You want somethin\' else, Eddie, and you can never have her!"?',
+        question:
+          'What is the significance of Beatrice\'s final line: "You want somethin\' else, Eddie, and you can never have her!"?',
         options: [
           'She is telling Eddie that Catherine has already left the country',
           'She forces Eddie to confront the incestuous nature of his feelings for Catherine — the truth he has denied throughout the play',
@@ -253,7 +264,8 @@ const viewFromBridgeModules: CourseModule[] = [
           'She is telling Eddie to focus on his career instead of his family',
         ],
         correct: 1,
-        explanation: 'Beatrice\'s line is the play\'s most devastating moment of truth. She names what Eddie has refused to acknowledge — his sexual desire for Catherine — stripping away his self-deception in his final moments.',
+        explanation:
+          "Beatrice's line is the play's most devastating moment of truth. She names what Eddie has refused to acknowledge — his sexual desire for Catherine — stripping away his self-deception in his final moments.",
       },
       {
         id: 'vftb-m3-q3',
@@ -261,11 +273,12 @@ const viewFromBridgeModules: CourseModule[] = [
         options: [
           'Marco becomes a judge in the American legal system',
           'Marco forgives Eddie and advocates for mercy',
-          'Marco publicly accuses Eddie of betrayal and becomes the instrument of his physical downfall, delivering the community\'s moral verdict',
+          "Marco publicly accuses Eddie of betrayal and becomes the instrument of his physical downfall, delivering the community's moral verdict",
           'Marco writes a letter to the immigration authorities defending Eddie',
         ],
         correct: 2,
-        explanation: 'Marco functions as the force of natural justice that American law cannot provide. His public accusation destroys Eddie\'s reputation, and their final confrontation delivers a moral verdict that the legal system was unable to reach.',
+        explanation:
+          "Marco functions as the force of natural justice that American law cannot provide. His public accusation destroys Eddie's reputation, and their final confrontation delivers a moral verdict that the legal system was unable to reach.",
       },
     ],
   },
@@ -319,31 +332,35 @@ const viewFromBridgeModules: CourseModule[] = [
           'He argues that Eddie should have become a lawyer to solve his problems',
         ],
         correct: 2,
-        explanation: 'Miller presents both systems as flawed. Alfieri\'s law cannot help Eddie with his emotional crisis, but the community\'s code of natural justice leads to violence and death. The play asks whether true justice is possible when human passions overwhelm both systems.',
+        explanation:
+          "Miller presents both systems as flawed. Alfieri's law cannot help Eddie with his emotional crisis, but the community's code of natural justice leads to violence and death. The play asks whether true justice is possible when human passions overwhelm both systems.",
       },
       {
         id: 'vftb-m4-q2',
-        question: 'What does Eddie\'s hostility towards Rodolpho reveal about his own masculinity?',
+        question: "What does Eddie's hostility towards Rodolpho reveal about his own masculinity?",
         options: [
           'That Eddie is naturally aggressive towards all younger men',
-          'That Eddie\'s rigid model of masculinity is a defence mechanism masking his own insecurity and unacknowledged desires',
+          "That Eddie's rigid model of masculinity is a defence mechanism masking his own insecurity and unacknowledged desires",
           'That Eddie genuinely believes Rodolpho is a criminal',
-          'That Eddie is jealous of Rodolpho\'s singing talent',
+          "That Eddie is jealous of Rodolpho's singing talent",
         ],
         correct: 1,
-        explanation: 'Eddie\'s attacks on Rodolpho\'s masculinity are projections of his own insecurity. His accusations that Rodolpho is "not right" reflect Eddie\'s fear that his own desires are the ones that are transgressive. Miller uses this to critique toxic, rigid masculinity.',
+        explanation:
+          "Eddie's attacks on Rodolpho's masculinity are projections of his own insecurity. His accusations that Rodolpho is \"not right\" reflect Eddie's fear that his own desires are the ones that are transgressive. Miller uses this to critique toxic, rigid masculinity.",
       },
       {
         id: 'vftb-m4-q3',
-        question: 'Why does Miller establish the Vinny Bolzano story before Eddie\'s act of betrayal?',
+        question:
+          "Why does Miller establish the Vinny Bolzano story before Eddie's act of betrayal?",
         options: [
           'To introduce a subplot about another immigrant family',
           'To show that Eddie is already planning to inform on his cousins',
-          'To ensure the audience understands the community\'s code and the consequences of informing, so Eddie\'s later betrayal carries maximum dramatic weight',
+          "To ensure the audience understands the community's code and the consequences of informing, so Eddie's later betrayal carries maximum dramatic weight",
           'To demonstrate that informing on immigrants is morally acceptable',
         ],
         correct: 2,
-        explanation: 'The Vinny Bolzano story establishes the community\'s code of loyalty and the severe consequences of betrayal. When Eddie later does exactly what he condemned, the audience understands the full weight of his transgression — this is careful structural foreshadowing.',
+        explanation:
+          "The Vinny Bolzano story establishes the community's code of loyalty and the severe consequences of betrayal. When Eddie later does exactly what he condemned, the audience understands the full weight of his transgression — this is careful structural foreshadowing.",
       },
     ],
   },
@@ -389,31 +406,34 @@ const viewFromBridgeModules: CourseModule[] = [
     quiz: [
       {
         id: 'vftb-m5-q1',
-        question: 'Why is Eddie\'s inarticacy dramatically significant?',
+        question: "Why is Eddie's inarticacy dramatically significant?",
         options: [
-          'It shows that he is uneducated and therefore not worth the audience\'s sympathy',
+          "It shows that he is uneducated and therefore not worth the audience's sympathy",
           'It reflects his inability to confront or express his true feelings — his tragedy is rooted in what he cannot say',
           'It is a realistic feature of Brooklyn dialect with no deeper meaning',
           'It makes the play easier for audiences to follow',
         ],
         correct: 1,
-        explanation: 'Eddie\'s fragmented, repetitive speech reflects his psychological repression. He cannot articulate his desires because he cannot face them. His inarticacy is a dramatic expression of his tragic flaw — the gap between what he feels and what he can acknowledge.',
+        explanation:
+          "Eddie's fragmented, repetitive speech reflects his psychological repression. He cannot articulate his desires because he cannot face them. His inarticacy is a dramatic expression of his tragic flaw — the gap between what he feels and what he can acknowledge.",
       },
       {
         id: 'vftb-m5-q2',
         question: 'What does the title "A View from the Bridge" symbolise?',
         options: [
           'The physical bridge connecting Brooklyn to Manhattan',
-          'Alfieri\'s elevated perspective as a narrator looking back on events',
+          "Alfieri's elevated perspective as a narrator looking back on events",
           'The connection between the old world (Italian tradition) and the new world (American law), on which Eddie is fatally caught',
           'Both B and C — the title carries multiple symbolic meanings',
         ],
         correct: 3,
-        explanation: 'The title works on multiple levels: it refers to Alfieri\'s retrospective view of the tragedy (a view from above/outside), and it symbolises the bridge between Italian codes of honour and American legal systems — the cultural divide that Eddie cannot navigate.',
+        explanation:
+          "The title works on multiple levels: it refers to Alfieri's retrospective view of the tragedy (a view from above/outside), and it symbolises the bridge between Italian codes of honour and American legal systems — the cultural divide that Eddie cannot navigate.",
       },
       {
         id: 'vftb-m5-q3',
-        question: 'Why does Miller convey key dramatic moments through physical action rather than dialogue?',
+        question:
+          'Why does Miller convey key dramatic moments through physical action rather than dialogue?',
         options: [
           'Because the actors found dialogue too difficult to memorise',
           'Because physical action is cheaper to stage than spoken scenes',
@@ -421,7 +441,8 @@ const viewFromBridgeModules: CourseModule[] = [
           'Because audiences in the 1950s preferred action to dialogue',
         ],
         correct: 2,
-        explanation: 'The boxing scene, the chair lift, the kisses, and the knife fight all convey meaning that is beyond words. Eddie\'s desires and conflicts are too repressed and too primal for verbal expression — physical action becomes the language of his unconscious.',
+        explanation:
+          "The boxing scene, the chair lift, the kisses, and the knife fight all convey meaning that is beyond words. Eddie's desires and conflicts are too repressed and too primal for verbal expression — physical action becomes the language of his unconscious.",
       },
     ],
   },
@@ -493,19 +514,21 @@ const viewFromBridgeModules: CourseModule[] = [
           'Memorising quotations from the wider text',
         ],
         correct: 2,
-        explanation: 'Spending 5 minutes planning ensures your essay has a clear structure, a conceptualised argument, and a balance between extract analysis and wider text discussion. Rushing into writing without a plan typically produces disorganised, unfocused responses.',
+        explanation:
+          'Spending 5 minutes planning ensures your essay has a clear structure, a conceptualised argument, and a balance between extract analysis and wider text discussion. Rushing into writing without a plan typically produces disorganised, unfocused responses.',
       },
       {
         id: 'vftb-m6-q2',
         question: 'Why should you refer to "Miller" by name throughout your essay?',
         options: [
-          'Because the exam mark scheme requires the playwright\'s name in every sentence',
-          'Because it keeps your focus on the writer\'s craft and demonstrates you understand characters are deliberate constructs, not real people',
+          "Because the exam mark scheme requires the playwright's name in every sentence",
+          "Because it keeps your focus on the writer's craft and demonstrates you understand characters are deliberate constructs, not real people",
           'Because it helps you meet the word count',
           'Because naming the author is a formal academic requirement with no analytical benefit',
         ],
         correct: 1,
-        explanation: 'Referring to "Miller" by name signals to the examiner that you understand characters and events are deliberate authorial choices. It keeps your analysis focused on the writer\'s craft (AO2) rather than treating the play as a factual account of real people.',
+        explanation:
+          'Referring to "Miller" by name signals to the examiner that you understand characters and events are deliberate authorial choices. It keeps your analysis focused on the writer\'s craft (AO2) rather than treating the play as a factual account of real people.',
       },
       {
         id: 'vftb-m6-q3',
@@ -517,11 +540,12 @@ const viewFromBridgeModules: CourseModule[] = [
           'Listing quotations with brief explanations after each one',
         ],
         correct: 1,
-        explanation: 'Depth beats breadth in Literature exams. A few well-developed paragraphs with close language analysis, embedded context, and sustained argument will score far higher than many superficial points. Aim for 4–5 substantial paragraphs in a 45-minute response.',
+        explanation:
+          'Depth beats breadth in Literature exams. A few well-developed paragraphs with close language analysis, embedded context, and sustained argument will score far higher than many superficial points. Aim for 4–5 substantial paragraphs in a 45-minute response.',
       },
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 2. An Inspector Calls — J B Priestley
@@ -576,12 +600,13 @@ const inspectorCallsIGModules: CourseModule[] = [
         question: 'Why is the dual time frame (written 1945, set 1912) so important to the play?',
         options: [
           'It allows Priestley to use historically accurate costumes',
-          'It creates dramatic irony — the 1945 audience knows that Birling\'s confident predictions about the future are catastrophically wrong',
+          "It creates dramatic irony — the 1945 audience knows that Birling's confident predictions about the future are catastrophically wrong",
           'It makes the play feel nostalgic for a better time',
           'It allows Priestley to avoid addressing World War II directly',
         ],
         correct: 1,
-        explanation: 'The dual time frame creates dramatic irony that undermines Birling\'s authority. The 1945 audience knows the Titanic sank and two world wars occurred — making Birling\'s confident predictions laughably wrong and discrediting his capitalist philosophy.',
+        explanation:
+          "The dual time frame creates dramatic irony that undermines Birling's authority. The 1945 audience knows the Titanic sank and two world wars occurred — making Birling's confident predictions laughably wrong and discrediting his capitalist philosophy.",
       },
       {
         id: 'aic-ig-m1-q2',
@@ -593,7 +618,8 @@ const inspectorCallsIGModules: CourseModule[] = [
           'Conservatism — the preservation of traditional class hierarchies',
         ],
         correct: 2,
-        explanation: 'Priestley was a committed socialist who believed in collective responsibility. The Inspector embodies these values, and the play argues that selfish individualism (Birling\'s philosophy) leads to suffering and social breakdown.',
+        explanation:
+          "Priestley was a committed socialist who believed in collective responsibility. The Inspector embodies these values, and the play argues that selfish individualism (Birling's philosophy) leads to suffering and social breakdown.",
       },
       {
         id: 'aic-ig-m1-q3',
@@ -605,7 +631,8 @@ const inspectorCallsIGModules: CourseModule[] = [
           'By making him physically unattractive in the stage directions',
         ],
         correct: 2,
-        explanation: 'Birling\'s predictions about the Titanic, war, and social progress are all wrong. Priestley uses dramatic irony to ensure the audience distrusts Birling\'s judgement before the Inspector even arrives, priming them to reject his capitalist worldview.',
+        explanation:
+          "Birling's predictions about the Titanic, war, and social progress are all wrong. Priestley uses dramatic irony to ensure the audience distrusts Birling's judgement before the Inspector even arrives, priming them to reject his capitalist worldview.",
       },
     ],
   },
@@ -653,7 +680,7 @@ const inspectorCallsIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'aic-ig-m2-q1',
-        question: 'Why does Priestley set the entire play in the Birlings\' dining room?',
+        question: "Why does Priestley set the entire play in the Birlings' dining room?",
         options: [
           'Because it was cheaper to stage with a single set',
           'To adhere to the classical unities and create a claustrophobic, inescapable space that forces the characters to confront their guilt',
@@ -661,11 +688,13 @@ const inspectorCallsIGModules: CourseModule[] = [
           'To show how wealthy the Birling family is',
         ],
         correct: 1,
-        explanation: 'The single setting creates a pressure-cooker atmosphere. The characters cannot escape the Inspector\'s questioning or each other. The classical unity of place reinforces the play\'s themes of inescapable moral accountability.',
+        explanation:
+          "The single setting creates a pressure-cooker atmosphere. The characters cannot escape the Inspector's questioning or each other. The classical unity of place reinforces the play's themes of inescapable moral accountability.",
       },
       {
         id: 'aic-ig-m2-q2',
-        question: 'What is the dramatic significance of Mrs Birling insisting that "the father" of Eva\'s child should be held responsible?',
+        question:
+          'What is the dramatic significance of Mrs Birling insisting that "the father" of Eva\'s child should be held responsible?',
         options: [
           'She is correctly identifying the main culprit',
           'She creates devastating dramatic irony — the audience realises before she does that the father is her own son Eric',
@@ -673,7 +702,8 @@ const inspectorCallsIGModules: CourseModule[] = [
           'She is expressing a feminist viewpoint about male responsibility',
         ],
         correct: 1,
-        explanation: 'Mrs Birling\'s insistence creates dramatic irony because the audience realises (or suspects) that the father is Eric. She unwittingly condemns her own son — demonstrating how her cold moral certainty is built on ignorance of her own family\'s failings.',
+        explanation:
+          "Mrs Birling's insistence creates dramatic irony because the audience realises (or suspects) that the father is Eric. She unwittingly condemns her own son — demonstrating how her cold moral certainty is built on ignorance of her own family's failings.",
       },
       {
         id: 'aic-ig-m2-q3',
@@ -685,7 +715,8 @@ const inspectorCallsIGModules: CourseModule[] = [
           'That the Birling family will be arrested for murder',
         ],
         correct: 2,
-        explanation: 'The cyclical ending suggests that the Birlings\' attempt to dismiss the evening\'s lessons has failed. Priestley implies that moral responsibility is inescapable — if you refuse to learn, the consequences will return, potentially more severely.',
+        explanation:
+          "The cyclical ending suggests that the Birlings' attempt to dismiss the evening's lessons has failed. Priestley implies that moral responsibility is inescapable — if you refuse to learn, the consequences will return, potentially more severely.",
       },
     ],
   },
@@ -753,19 +784,20 @@ const inspectorCallsIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'aic-ig-m3-q1',
-        question: 'Why does Priestley leave the Inspector\'s true identity deliberately ambiguous?',
+        question: "Why does Priestley leave the Inspector's true identity deliberately ambiguous?",
         options: [
           'Because he could not decide how to end the play',
-          'To focus the audience\'s attention on the Inspector\'s message rather than his nature — the moral lesson matters more than the mystery',
+          "To focus the audience's attention on the Inspector's message rather than his nature — the moral lesson matters more than the mystery",
           'Because real police inspectors would not behave as Goole does',
           'To set up a sequel to the play',
         ],
         correct: 1,
-        explanation: 'Priestley keeps the Inspector\'s identity ambiguous so that the audience focuses on his message of collective responsibility rather than trying to solve a detective mystery. Whether he is real, supernatural, or symbolic is less important than whether his moral argument is valid.',
+        explanation:
+          "Priestley keeps the Inspector's identity ambiguous so that the audience focuses on his message of collective responsibility rather than trying to solve a detective mystery. Whether he is real, supernatural, or symbolic is less important than whether his moral argument is valid.",
       },
       {
         id: 'aic-ig-m3-q2',
-        question: 'What does Sheila\'s character arc represent in terms of Priestley\'s message?',
+        question: "What does Sheila's character arc represent in terms of Priestley's message?",
         options: [
           'That young people are more easily deceived than their parents',
           'That the younger generation has the capacity to learn from the past and build a more just society',
@@ -773,7 +805,8 @@ const inspectorCallsIGModules: CourseModule[] = [
           'That education is the solution to all social problems',
         ],
         correct: 1,
-        explanation: 'Sheila represents Priestley\'s hope for the future. Her transformation from a spoiled young woman to a morally conscious individual demonstrates that the younger generation can reject the selfish values of their parents and embrace collective responsibility.',
+        explanation:
+          "Sheila represents Priestley's hope for the future. Her transformation from a spoiled young woman to a morally conscious individual demonstrates that the younger generation can reject the selfish values of their parents and embrace collective responsibility.",
       },
       {
         id: 'aic-ig-m3-q3',
@@ -785,7 +818,8 @@ const inspectorCallsIGModules: CourseModule[] = [
           'Because she died before the play begins',
         ],
         correct: 2,
-        explanation: 'Eva\'s absence is a deliberate dramatic choice. Priestley shows how working-class people are discussed, judged, and discarded by those in power without ever being given a voice of their own. Her invisibility on stage mirrors her invisibility in Edwardian society.',
+        explanation:
+          "Eva's absence is a deliberate dramatic choice. Priestley shows how working-class people are discussed, judged, and discarded by those in power without ever being given a voice of their own. Her invisibility on stage mirrors her invisibility in Edwardian society.",
       },
     ],
   },
@@ -844,19 +878,22 @@ const inspectorCallsIGModules: CourseModule[] = [
           'He argues that young people should always obey their parents',
         ],
         correct: 1,
-        explanation: 'The generational divide is central to Priestley\'s message. Birling and Mrs Birling represent the old, selfish attitudes that led to two world wars. Sheila and Eric represent the younger generation\'s potential to learn and build a more just society.',
+        explanation:
+          "The generational divide is central to Priestley's message. Birling and Mrs Birling represent the old, selfish attitudes that led to two world wars. Sheila and Eric represent the younger generation's potential to learn and build a more just society.",
       },
       {
         id: 'aic-ig-m4-q2',
-        question: 'What does the Inspector\'s final speech — "fire and blood and anguish" — refer to?',
+        question:
+          'What does the Inspector\'s final speech — "fire and blood and anguish" — refer to?',
         options: [
-          'The fire at Birling\'s factory',
+          "The fire at Birling's factory",
           'A biblical prophecy about the end of the world',
           'The two world wars that the 1945 audience had lived through — the consequences of failing to learn collective responsibility',
-          'The Inspector\'s threat to arrest the entire family',
+          "The Inspector's threat to arrest the entire family",
         ],
         correct: 2,
-        explanation: 'The "fire and blood and anguish" is a direct reference to the two world wars. Priestley argues that the selfish, individualist attitudes of 1912 led directly to these catastrophes. The 1945 audience would have recognised this immediately.',
+        explanation:
+          'The "fire and blood and anguish" is a direct reference to the two world wars. Priestley argues that the selfish, individualist attitudes of 1912 led directly to these catastrophes. The 1945 audience would have recognised this immediately.',
       },
       {
         id: 'aic-ig-m4-q3',
@@ -868,7 +905,8 @@ const inspectorCallsIGModules: CourseModule[] = [
           'Because she keeps changing her identity to improve her social standing',
         ],
         correct: 1,
-        explanation: 'Eva\'s multiple names (Eva Smith, Daisy Renton) suggest she may be a composite figure representing all working-class victims of exploitation. The name "Eva" echoes "Eve" — suggesting she represents all women; "Smith" is the most common English surname — suggesting she represents everyone.',
+        explanation:
+          'Eva\'s multiple names (Eva Smith, Daisy Renton) suggest she may be a composite figure representing all working-class victims of exploitation. The name "Eva" echoes "Eve" — suggesting she represents all women; "Smith" is the most common English surname — suggesting she represents everyone.',
       },
     ],
   },
@@ -915,39 +953,43 @@ const inspectorCallsIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'aic-ig-m5-q1',
-        question: 'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?',
+        question:
+          'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?',
         options: [
           'That the Birlings need to save electricity',
           'The shift from comfortable self-deception to harsh moral scrutiny — the Inspector forces the family to see themselves clearly',
           'That it is getting later in the evening and the room needs more light',
-          'The Inspector\'s preference for bright working conditions',
+          "The Inspector's preference for bright working conditions",
         ],
         correct: 1,
-        explanation: 'The lighting shift is one of Priestley\'s most important stage directions. "Pink and intimate" represents the Birlings\' comfortable, self-congratulatory bubble. "Brighter and harder" represents the Inspector\'s moral scrutiny, forcing them to confront the reality of their actions.',
+        explanation:
+          'The lighting shift is one of Priestley\'s most important stage directions. "Pink and intimate" represents the Birlings\' comfortable, self-congratulatory bubble. "Brighter and harder" represents the Inspector\'s moral scrutiny, forcing them to confront the reality of their actions.',
       },
       {
         id: 'aic-ig-m5-q2',
         question: 'Why does the Inspector show the photograph to only one character at a time?',
         options: [
           'Because he only has one copy of the photograph',
-          'To maintain the ambiguity about whether each character is connected to the same girl — deepening the play\'s mystery and suggesting Eva represents many victims',
+          "To maintain the ambiguity about whether each character is connected to the same girl — deepening the play's mystery and suggesting Eva represents many victims",
           'Because showing it to everyone would be rude',
           'To speed up the investigation by focusing on one person at a time',
         ],
         correct: 1,
-        explanation: 'By showing the photograph one at a time, Priestley raises the possibility that each character may have wronged a different girl. This deepens the play\'s ambiguity and reinforces the idea that Eva may represent all working-class victims of exploitation.',
+        explanation:
+          "By showing the photograph one at a time, Priestley raises the possibility that each character may have wronged a different girl. This deepens the play's ambiguity and reinforces the idea that Eva may represent all working-class victims of exploitation.",
       },
       {
         id: 'aic-ig-m5-q3',
-        question: 'How does Sheila\'s language change reflect her character development?',
+        question: "How does Sheila's language change reflect her character development?",
         options: [
           'She starts speaking in a foreign language',
           'Her language stays the same throughout, showing consistency',
           'She moves from light, colloquial language ("mummy," "squiffy") to more serious, assertive speech — reflecting her moral growth',
-          'She begins to imitate the Inspector\'s formal register',
+          "She begins to imitate the Inspector's formal register",
         ],
         correct: 2,
-        explanation: 'Sheila\'s linguistic shift mirrors her moral development. Her early language is youthful and superficial; as she accepts responsibility and gains moral awareness, her speech becomes more thoughtful, direct, and assertive — Priestley uses language to track character growth.',
+        explanation:
+          "Sheila's linguistic shift mirrors her moral development. Her early language is youthful and superficial; as she accepts responsibility and gains moral awareness, her speech becomes more thoughtful, direct, and assertive — Priestley uses language to track character growth.",
       },
     ],
   },
@@ -1001,7 +1043,8 @@ const inspectorCallsIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'aic-ig-m6-q1',
-        question: 'Why does the Inspector\'s speech echo biblical language ("We are members of one body")?',
+        question:
+          'Why does the Inspector\'s speech echo biblical language ("We are members of one body")?',
         options: [
           'Because Priestley was a devout Christian',
           'Because the Inspector is a religious figure',
@@ -1009,23 +1052,27 @@ const inspectorCallsIGModules: CourseModule[] = [
           'To confuse the Birling family with unfamiliar language',
         ],
         correct: 2,
-        explanation: 'Priestley frames his socialist message in biblical terms to give it moral authority and broad appeal. The allusion to 1 Corinthians transforms collective responsibility from a political argument into a universal moral imperative.',
+        explanation:
+          'Priestley frames his socialist message in biblical terms to give it moral authority and broad appeal. The allusion to 1 Corinthians transforms collective responsibility from a political argument into a universal moral imperative.',
       },
       {
         id: 'aic-ig-m6-q2',
-        question: 'What should you always connect your textual analysis to in an IGCSE Literature essay?',
+        question:
+          'What should you always connect your textual analysis to in an IGCSE Literature essay?',
         options: [
           'The biography of the author in as much detail as possible',
-          'The playwright\'s purpose — why they want the audience to think, feel, or understand something specific',
+          "The playwright's purpose — why they want the audience to think, feel, or understand something specific",
           'Other texts you have studied on the course',
           'Your personal experience of similar situations',
         ],
         correct: 1,
-        explanation: 'The best responses treat every textual detail as a deliberate authorial choice. Connecting your analysis to Priestley\'s purpose — what he wants the audience to think or feel — demonstrates the kind of critical awareness that examiners reward most highly.',
+        explanation:
+          "The best responses treat every textual detail as a deliberate authorial choice. Connecting your analysis to Priestley's purpose — what he wants the audience to think or feel — demonstrates the kind of critical awareness that examiners reward most highly.",
       },
       {
         id: 'aic-ig-m6-q3',
-        question: 'Why is the Inspector\'s final speech placed after all five characters have been exposed?',
+        question:
+          "Why is the Inspector's final speech placed after all five characters have been exposed?",
         options: [
           'Because Priestley ran out of plot ideas before writing the speech',
           'Because its structural position means the full scale of collective guilt has been revealed, giving the speech maximum moral and dramatic weight',
@@ -1033,11 +1080,12 @@ const inspectorCallsIGModules: CourseModule[] = [
           'Because the audience would not pay attention to a speech at the beginning',
         ],
         correct: 1,
-        explanation: 'The speech\'s placement after all revelations ensures the audience understands the full scope of the Birlings\' collective guilt. This structural position transforms the Inspector from investigator into judge and prophet, giving his message maximum dramatic impact.',
+        explanation:
+          "The speech's placement after all revelations ensures the audience understands the full scope of the Birlings' collective guilt. This structural position transforms the Inspector from investigator into judge and prophet, giving his message maximum dramatic impact.",
       },
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 3. The Curious Incident of the Dog in the Night-time — Mark Haddon
@@ -1088,23 +1136,27 @@ const curiousIncidentModules: CourseModule[] = [
           'Because the story is actually about a murder mystery',
         ],
         correct: 1,
-        explanation: 'Haddon wanted the story to be about difference and seeing the world in a surprising way. Reducing it to "a book about autism" narrows its scope and invites pity rather than understanding.',
+        explanation:
+          'Haddon wanted the story to be about difference and seeing the world in a surprising way. Reducing it to "a book about autism" narrows its scope and invites pity rather than understanding.',
       },
       {
         id: 'ci-m1-q2',
-        question: 'How does Simon Stephens solve the challenge of adapting a first-person novel for the stage?',
+        question:
+          'How does Simon Stephens solve the challenge of adapting a first-person novel for the stage?',
         options: [
           'By using a traditional narrator who stands at the side of the stage',
-          'By having Siobhan read from Christopher\'s book, creating a frame narrative that gives access to his inner world',
-          'By cutting all of Christopher\'s interior thoughts',
+          "By having Siobhan read from Christopher's book, creating a frame narrative that gives access to his inner world",
+          "By cutting all of Christopher's interior thoughts",
           'By having Christopher speak directly to the audience throughout',
         ],
         correct: 1,
-        explanation: 'Stephens uses Siobhan as a bridge between Christopher\'s written account and the theatrical performance, allowing the audience to access his inner world while maintaining dramatic naturalism.',
+        explanation:
+          "Stephens uses Siobhan as a bridge between Christopher's written account and the theatrical performance, allowing the audience to access his inner world while maintaining dramatic naturalism.",
       },
       {
         id: 'ci-m1-q3',
-        question: 'What does Christopher\'s journey to London demonstrate about assumptions regarding neurodiversity?',
+        question:
+          "What does Christopher's journey to London demonstrate about assumptions regarding neurodiversity?",
         options: [
           'That people who think differently should not travel alone',
           'That Christopher is exactly the same as everyone else',
@@ -1112,7 +1164,8 @@ const curiousIncidentModules: CourseModule[] = [
           'That London is a dangerous city for everyone',
         ],
         correct: 2,
-        explanation: 'Christopher\'s journey proves he is far more capable than many characters assume. The play challenges condescending attitudes towards neurological difference.',
+        explanation:
+          "Christopher's journey proves he is far more capable than many characters assume. The play challenges condescending attitudes towards neurological difference.",
       },
     ],
   },
@@ -1157,31 +1210,35 @@ const curiousIncidentModules: CourseModule[] = [
     quiz: [
       {
         id: 'ci-m2-q1',
-        question: 'How does the play shift structurally after Christopher discovers his mother is alive?',
+        question:
+          'How does the play shift structurally after Christopher discovers his mother is alive?',
         options: [
           'It becomes a comedy about family reunions',
-          'It transforms from a detective mystery into a family drama — the real investigation becomes about Christopher\'s broken family',
+          "It transforms from a detective mystery into a family drama — the real investigation becomes about Christopher's broken family",
           'It returns to the Wellington mystery as the central plot',
           'It ends abruptly because the mystery is solved',
         ],
         correct: 1,
-        explanation: 'The revelation about Judy transforms the play\'s genre. The detective framework was a vehicle for a deeper investigation into family breakdown, trust, and truth.',
+        explanation:
+          "The revelation about Judy transforms the play's genre. The detective framework was a vehicle for a deeper investigation into family breakdown, trust, and truth.",
       },
       {
         id: 'ci-m2-q2',
-        question: 'Why is Christopher\'s journey to London structurally significant?',
+        question: "Why is Christopher's journey to London structurally significant?",
         options: [
           'It provides an opportunity for set changes',
-          'It is both the physical and emotional climax — the moment of Christopher\'s greatest challenge and greatest growth',
+          "It is both the physical and emotional climax — the moment of Christopher's greatest challenge and greatest growth",
           'It introduces new characters who drive the remaining plot',
           'It provides comic relief after the serious revelations',
         ],
         correct: 1,
-        explanation: 'The London journey is the play\'s centrepiece — the ultimate test of Christopher\'s independence and resilience. His success proves his capability.',
+        explanation:
+          "The London journey is the play's centrepiece — the ultimate test of Christopher's independence and resilience. His success proves his capability.",
       },
       {
         id: 'ci-m2-q3',
-        question: 'What does Christopher\'s final question — "Does that mean I can do anything?" — suggest?',
+        question:
+          'What does Christopher\'s final question — "Does that mean I can do anything?" — suggest?',
         options: [
           'That he has become arrogant and overconfident',
           'That he has gained quiet confidence from his achievements and is beginning to believe in his own extraordinary capability',
@@ -1189,7 +1246,8 @@ const curiousIncidentModules: CourseModule[] = [
           'That he is uncertain whether his accomplishments matter',
         ],
         correct: 1,
-        explanation: 'Christopher\'s question marks the culmination of his growth. He has solved a mystery, survived a terrifying journey, and achieved academic excellence. It is a tentative, hopeful recognition of his own potential.',
+        explanation:
+          "Christopher's question marks the culmination of his growth. He has solved a mystery, survived a terrifying journey, and achieved academic excellence. It is a tentative, hopeful recognition of his own potential.",
       },
     ],
   },
@@ -1246,7 +1304,8 @@ const curiousIncidentModules: CourseModule[] = [
           'Because they remind him of his mother',
         ],
         correct: 2,
-        explanation: 'Christopher\'s dislike of metaphors reflects his commitment to literal truth. Saying "he was the apple of her eye" is, to Christopher, a lie. This reveals his fundamental honesty and different relationship with language.',
+        explanation:
+          'Christopher\'s dislike of metaphors reflects his commitment to literal truth. Saying "he was the apple of her eye" is, to Christopher, a lie. This reveals his fundamental honesty and different relationship with language.',
       },
       {
         id: 'ci-m3-q2',
@@ -1258,19 +1317,21 @@ const curiousIncidentModules: CourseModule[] = [
           'Because Christopher forgives him immediately',
         ],
         correct: 1,
-        explanation: 'Ed has sacrificed enormously for his son but his emotional resources are limited. His failings arise from love, desperation, and exhaustion — making him human rather than villainous.',
+        explanation:
+          'Ed has sacrificed enormously for his son but his emotional resources are limited. His failings arise from love, desperation, and exhaustion — making him human rather than villainous.',
       },
       {
         id: 'ci-m3-q3',
         question: 'What dual dramatic function does Siobhan serve?',
         options: [
-          'She is both Christopher\'s teacher and the play\'s comic relief',
-          'She is both a character within the story and the narrator who reads from Christopher\'s book, framing the theatrical experience',
+          "She is both Christopher's teacher and the play's comic relief",
+          "She is both a character within the story and the narrator who reads from Christopher's book, framing the theatrical experience",
           'She is both a teacher and a detective helping solve the mystery',
-          'She is both Christopher\'s teacher and his mother\'s friend',
+          "She is both Christopher's teacher and his mother's friend",
         ],
         correct: 1,
-        explanation: 'Siobhan serves two roles: within the story she is Christopher\'s supportive teacher; in the adaptation she reads from his book, creating the frame narrative that gives the audience access to his inner world.',
+        explanation:
+          "Siobhan serves two roles: within the story she is Christopher's supportive teacher; in the adaptation she reads from his book, creating the frame narrative that gives the audience access to his inner world.",
       },
     ],
   },
@@ -1402,7 +1463,7 @@ Stephens stages Christopher's journey through London as a series of obstacles th
     quiz: [
       {
         id: 'ci-m4-q1',
-        question: 'How does the play present Christopher\'s relationship with truth?',
+        question: "How does the play present Christopher's relationship with truth?",
         options: [
           'As a social skill he needs to overcome',
           'As a moral strength that, while socially difficult, is superior to the convenient deceptions adults rely on',
@@ -1410,11 +1471,13 @@ Stephens stages Christopher's journey through London as a series of obstacles th
           'As something he grows out of during the play',
         ],
         correct: 1,
-        explanation: 'Christopher\'s commitment to truth is presented as morally admirable. Ed\'s lie and its devastating consequences vindicate Christopher\'s instinct that honesty is always preferable.',
+        explanation:
+          "Christopher's commitment to truth is presented as morally admirable. Ed's lie and its devastating consequences vindicate Christopher's instinct that honesty is always preferable.",
       },
       {
         id: 'ci-m4-q2',
-        question: 'What question does the play ultimately ask about Christopher\'s place in the world?',
+        question:
+          "What question does the play ultimately ask about Christopher's place in the world?",
         options: [
           '"What is wrong with Christopher?"',
           '"How can Christopher be cured?"',
@@ -1422,7 +1485,8 @@ Stephens stages Christopher's journey through London as a series of obstacles th
           '"Why can\'t Christopher be more like other teenagers?"',
         ],
         correct: 2,
-        explanation: 'The play shifts the problem from Christopher to the world around him, challenging the audience to reconsider assumptions about normality.',
+        explanation:
+          'The play shifts the problem from Christopher to the world around him, challenging the audience to reconsider assumptions about normality.',
       },
       {
         id: 'ci-m4-q3',
@@ -1434,7 +1498,8 @@ Stephens stages Christopher's journey through London as a series of obstacles th
           'That his school provides better teaching than mainstream schools',
         ],
         correct: 2,
-        explanation: 'The A* represents more than academic achievement — it symbolises Christopher\'s potential to define his own future using his strengths.',
+        explanation:
+          "The A* represents more than academic achievement — it symbolises Christopher's potential to define his own future using his strengths.",
       },
     ],
   },
@@ -1475,7 +1540,8 @@ Stephens stages Christopher's journey through London as a series of obstacles th
     quiz: [
       {
         id: 'ci-m5-q1',
-        question: 'Why does Christopher describe emotions through their physical effects rather than naming them?',
+        question:
+          'Why does Christopher describe emotions through their physical effects rather than naming them?',
         options: [
           'Because the script was poorly written',
           'Because he does not experience emotions',
@@ -1483,19 +1549,21 @@ Stephens stages Christopher's journey through London as a series of obstacles th
           'Because he wants to confuse the audience',
         ],
         correct: 2,
-        explanation: 'Christopher experiences emotions intensely but processes them as physical sensations. This forces the audience to work to understand his emotional state, creating deeper empathy through active engagement.',
+        explanation:
+          'Christopher experiences emotions intensely but processes them as physical sensations. This forces the audience to work to understand his emotional state, creating deeper empathy through active engagement.',
       },
       {
         id: 'ci-m5-q2',
         question: 'What is the purpose of the grid-like set design with LED lights?',
         options: [
           'To save money on traditional set pieces',
-          'To create a mathematical, diagrammatic environment that reflects Christopher\'s way of seeing and organising the world',
+          "To create a mathematical, diagrammatic environment that reflects Christopher's way of seeing and organising the world",
           'To make the stage look futuristic',
           'To help actors find their positions on stage',
         ],
         correct: 1,
-        explanation: 'The grid set externalises Christopher\'s mathematical mind, creating a visual language of order and logic that makes his inner world visible to the audience.',
+        explanation:
+          "The grid set externalises Christopher's mathematical mind, creating a visual language of order and logic that makes his inner world visible to the audience.",
       },
       {
         id: 'ci-m5-q3',
@@ -1507,7 +1575,8 @@ Stephens stages Christopher's journey through London as a series of obstacles th
           'A play based on a novel',
         ],
         correct: 1,
-        explanation: 'The layered structure — book within staging within audience experience — creates a self-aware theatrical framework that mirrors Christopher\'s analytical mind.',
+        explanation:
+          "The layered structure — book within staging within audience experience — creates a self-aware theatrical framework that mirrors Christopher's analytical mind.",
       },
     ],
   },
@@ -1548,7 +1617,8 @@ Stephens stages Christopher's journey through London as a series of obstacles th
     quiz: [
       {
         id: 'ci-m6-q1',
-        question: 'Why should you refer to "Stephens" rather than "Haddon" when analysing dramatic techniques?',
+        question:
+          'Why should you refer to "Stephens" rather than "Haddon" when analysing dramatic techniques?',
         options: [
           'Because Haddon is not a real author',
           'Because the exam text is the stage adaptation, and Stephens made the dramatic and staging choices',
@@ -1556,7 +1626,8 @@ Stephens stages Christopher's journey through London as a series of obstacles th
           'Because Haddon asked not to be credited',
         ],
         correct: 1,
-        explanation: 'The studied text is Stephens\' stage adaptation. Dramatic choices are Stephens\' decisions. Refer to Haddon only when discussing the original novel as context.',
+        explanation:
+          "The studied text is Stephens' stage adaptation. Dramatic choices are Stephens' decisions. Refer to Haddon only when discussing the original novel as context.",
       },
       {
         id: 'ci-m6-q2',
@@ -1568,7 +1639,8 @@ Stephens stages Christopher's journey through London as a series of obstacles th
           'It lists every dramatic technique used in the play',
         ],
         correct: 2,
-        explanation: 'The paragraph integrates close analysis of stagecraft with character insight, thematic exploration, and audience effect, sustaining a clear argument about empathy through immersive staging.',
+        explanation:
+          'The paragraph integrates close analysis of stagecraft with character insight, thematic exploration, and audience effect, sustaining a clear argument about empathy through immersive staging.',
       },
       {
         id: 'ci-m6-q3',
@@ -1576,15 +1648,16 @@ Stephens stages Christopher's journey through London as a series of obstacles th
         options: [
           'Simply describe what happens on stage',
           'Ignore staging and focus only on dialogue',
-          'Analyse how staging choices affect the audience\'s understanding and emotional response — connecting technique to purpose and effect',
+          "Analyse how staging choices affect the audience's understanding and emotional response — connecting technique to purpose and effect",
           'List all the technical equipment used',
         ],
         correct: 2,
-        explanation: 'Explain how specific staging choices shape the audience\'s understanding and generate empathy — always connecting technique to meaning.',
+        explanation:
+          "Explain how specific staging choices shape the audience's understanding and generate empathy — always connecting technique to meaning.",
       },
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 4. Kindertransport — Diane Samuels
@@ -1629,11 +1702,13 @@ const kindertransportModules: CourseModule[] = [
           'A post-war scheme to reunite Jewish families',
         ],
         correct: 1,
-        explanation: 'The Kindertransport saved nearly 10,000 Jewish children by bringing them to Britain. Most never saw their parents again.',
+        explanation:
+          'The Kindertransport saved nearly 10,000 Jewish children by bringing them to Britain. Most never saw their parents again.',
       },
       {
         id: 'kt-m1-q2',
-        question: 'Why does Samuels focus on the aftermath of trauma rather than depicting the Holocaust directly?',
+        question:
+          'Why does Samuels focus on the aftermath of trauma rather than depicting the Holocaust directly?',
         options: [
           'Because she was not allowed to depict the Holocaust on stage',
           'Because this approach is both ethically sensitive and dramatically powerful — showing how trauma reverberates across decades and generations',
@@ -1641,11 +1716,12 @@ const kindertransportModules: CourseModule[] = [
           'Because direct depiction would have been too expensive to stage',
         ],
         correct: 1,
-        explanation: 'Focusing on the aftermath allows the play to examine how trauma shapes identity and family relationships across generations — an ethically sensitive and dramatically powerful approach.',
+        explanation:
+          'Focusing on the aftermath allows the play to examine how trauma shapes identity and family relationships across generations — an ethically sensitive and dramatically powerful approach.',
       },
       {
         id: 'kt-m1-q3',
-        question: 'What recurring theme from survivors\' testimonies most influenced the play?',
+        question: "What recurring theme from survivors' testimonies most influenced the play?",
         options: [
           'Their gratitude to the British government',
           'Their desire to return to Germany',
@@ -1653,7 +1729,8 @@ const kindertransportModules: CourseModule[] = [
           'Their successful integration into British society',
         ],
         correct: 2,
-        explanation: 'Samuels was struck by how survivors buried their identities, carried unresolved guilt, and transmitted trauma to their children. These themes drive the play.',
+        explanation:
+          'Samuels was struck by how survivors buried their identities, carried unresolved guilt, and transmitted trauma to their children. These themes drive the play.',
       },
     ],
   },
@@ -1710,31 +1787,34 @@ const kindertransportModules: CourseModule[] = [
           'To confuse the audience and create suspense',
         ],
         correct: 1,
-        explanation: 'The simultaneous staging reflects the psychological reality of unprocessed trauma — it coexists with the present, always threatening to resurface.',
+        explanation:
+          'The simultaneous staging reflects the psychological reality of unprocessed trauma — it coexists with the present, always threatening to resurface.',
       },
       {
         id: 'kt-m2-q2',
-        question: 'What is the play\'s most agonising moment?',
+        question: "What is the play's most agonising moment?",
         options: [
-          'Eva\'s arrival in England',
+          "Eva's arrival in England",
           'Faith discovering the box in the attic',
           'Eva/Evelyn rejecting her birth mother Helga after the war, choosing her English identity over her Jewish one',
           'Lil teaching Eva to speak English',
         ],
         correct: 2,
-        explanation: 'Eva\'s rejection of Helga dramatises the impossible choices forced on Kindertransport survivors — the rescue that saved her life also destroyed her most important relationship.',
+        explanation:
+          "Eva's rejection of Helga dramatises the impossible choices forced on Kindertransport survivors — the rescue that saved her life also destroyed her most important relationship.",
       },
       {
         id: 'kt-m2-q3',
         question: 'What does the Ratcatcher symbolise?',
         options: [
-          'Lil\'s cruelty towards Eva',
-          'The forces that tear children from their parents — Nazi persecution and Evelyn\'s own self-imposed separation from her heritage',
-          'Faith\'s desire to leave home',
+          "Lil's cruelty towards Eva",
+          "The forces that tear children from their parents — Nazi persecution and Evelyn's own self-imposed separation from her heritage",
+          "Faith's desire to leave home",
           'British immigration policy',
         ],
         correct: 1,
-        explanation: 'The Ratcatcher represents the forces that remove children from their parents — Nazi persecution on one level, but also Evelyn\'s own choice to cut herself off from her heritage.',
+        explanation:
+          "The Ratcatcher represents the forces that remove children from their parents — Nazi persecution on one level, but also Evelyn's own choice to cut herself off from her heritage.",
       },
     ],
   },
@@ -1798,11 +1878,12 @@ const kindertransportModules: CourseModule[] = [
           'To show that people change naturally as they age',
         ],
         correct: 1,
-        explanation: 'The near-separation dramatises the psychological cost of forced assimilation. Evelyn has buried Eva so completely that they function as different people.',
+        explanation:
+          'The near-separation dramatises the psychological cost of forced assimilation. Evelyn has buried Eva so completely that they function as different people.',
       },
       {
         id: 'kt-m3-q2',
-        question: 'Why is Helga\'s rejection by Eva/Evelyn so devastating?',
+        question: "Why is Helga's rejection by Eva/Evelyn so devastating?",
         options: [
           'Because Helga is a cruel mother',
           'Because Helga saved Eva through extraordinary love, survived the Holocaust, and then lost her daughter to the very assimilation that was supposed to protect her',
@@ -1810,7 +1891,8 @@ const kindertransportModules: CourseModule[] = [
           'Because Lil forces Eva to reject Helga',
         ],
         correct: 1,
-        explanation: 'The rescue that saved Eva\'s life also destroyed the mother-daughter relationship. Helga sacrificed everything, survived the Holocaust, and was rejected by the daughter she saved.',
+        explanation:
+          "The rescue that saved Eva's life also destroyed the mother-daughter relationship. Helga sacrificed everything, survived the Holocaust, and was rejected by the daughter she saved.",
       },
       {
         id: 'kt-m3-q3',
@@ -1819,10 +1901,11 @@ const kindertransportModules: CourseModule[] = [
           'The possibility of forgetting the past entirely',
           'The third generation who inherits trauma without understanding its origins — and whose curiosity forces the buried past to resurface',
           'A character with no connection to the Holocaust',
-          'The British government\'s response to refugees',
+          "The British government's response to refugees",
         ],
         correct: 1,
-        explanation: 'Faith has inherited Evelyn\'s emotional patterns without understanding their source. Her discovery of the attic box forces the truth into the open.',
+        explanation:
+          "Faith has inherited Evelyn's emotional patterns without understanding their source. Her discovery of the attic box forces the truth into the open.",
       },
     ],
   },
@@ -2004,27 +2087,29 @@ The Kindertransport operated with good intentions but catastrophic cultural cons
     quiz: [
       {
         id: 'kt-m4-q1',
-        question: 'What does Eva\'s name change symbolise?',
+        question: "What does Eva's name change symbolise?",
         options: [
           'A natural process of growing up',
           'An amputation of identity — cutting away the German-Jewish self to fit a new English mould',
-          'Eva\'s desire to become famous',
-          'Lil\'s inability to pronounce German names',
+          "Eva's desire to become famous",
+          "Lil's inability to pronounce German names",
         ],
         correct: 1,
-        explanation: 'The name change symbolises identity erasure — a deliberate severing of the self. "Evelyn" is built on the denial of "Eva."',
+        explanation:
+          'The name change symbolises identity erasure — a deliberate severing of the self. "Evelyn" is built on the denial of "Eva."',
       },
       {
         id: 'kt-m4-q2',
         question: 'How does the play demonstrate intergenerational trauma?',
         options: [
           'Faith has the same genetic conditions as Eva',
-          'Faith has inherited Evelyn\'s anxiety and fear of abandonment without understanding their origins in the Kindertransport experience',
+          "Faith has inherited Evelyn's anxiety and fear of abandonment without understanding their origins in the Kindertransport experience",
           'Faith wants to visit Germany',
           'Faith refuses to speak to Evelyn',
         ],
         correct: 1,
-        explanation: 'Faith has absorbed her mother\'s trauma patterns without knowing why. Silence about trauma transmits the damage without explanation.',
+        explanation:
+          "Faith has absorbed her mother's trauma patterns without knowing why. Silence about trauma transmits the damage without explanation.",
       },
       {
         id: 'kt-m4-q3',
@@ -2032,11 +2117,12 @@ The Kindertransport operated with good intentions but catastrophic cultural cons
         options: [
           'As always positive and necessary',
           'As both a necessary survival strategy and a form of cultural self-destruction — protective but damaging',
-          'As entirely Lil\'s fault',
+          "As entirely Lil's fault",
           'As something Eva should never have done',
         ],
         correct: 1,
-        explanation: 'Samuels avoids a simple answer. Assimilation kept Eva safe but destroyed her connection to her heritage and her birth mother — both necessary and tragic.',
+        explanation:
+          'Samuels avoids a simple answer. Assimilation kept Eva safe but destroyed her connection to her heritage and her birth mother — both necessary and tragic.',
       },
     ],
   },
@@ -2078,15 +2164,16 @@ The Kindertransport operated with good intentions but catastrophic cultural cons
     quiz: [
       {
         id: 'kt-m5-q1',
-        question: 'What does Eva\'s linguistic shift from German to English symbolise?',
+        question: "What does Eva's linguistic shift from German to English symbolise?",
         options: [
           'Her growing intelligence',
           'The loss of her cultural identity — each English word represents a part of her heritage abandoned',
-          'Lil\'s excellent teaching',
+          "Lil's excellent teaching",
           'The superiority of English over German',
         ],
         correct: 1,
-        explanation: 'Language carries identity. When Eva stops speaking German, she loses her connection to her parents, culture, and original self.',
+        explanation:
+          'Language carries identity. When Eva stops speaking German, she loses her connection to her parents, culture, and original self.',
       },
       {
         id: 'kt-m5-q2',
@@ -2094,11 +2181,12 @@ The Kindertransport operated with good intentions but catastrophic cultural cons
         options: [
           'Because Evelyn cannot afford a larger house',
           'Because attics are traditional dramatic settings',
-          'Because the attic is where Evelyn has literally stored her past — Faith\'s rummaging is a physical metaphor for uncovering buried memories',
+          "Because the attic is where Evelyn has literally stored her past — Faith's rummaging is a physical metaphor for uncovering buried memories",
           'Because the stage required a small space',
         ],
         correct: 2,
-        explanation: 'The attic is a physical metaphor for Evelyn\'s psychological state — her past stored away in boxes, hidden, until Faith forces it back into the present.',
+        explanation:
+          "The attic is a physical metaphor for Evelyn's psychological state — her past stored away in boxes, hidden, until Faith forces it back into the present.",
       },
       {
         id: 'kt-m5-q3',
@@ -2110,7 +2198,8 @@ The Kindertransport operated with good intentions but catastrophic cultural cons
           'A narrator who explains historical context',
         ],
         correct: 2,
-        explanation: 'The Ratcatcher operates on multiple levels — childhood story character, symbol of persecution, and representation of Evelyn\'s self-imposed separation from her heritage.',
+        explanation:
+          "The Ratcatcher operates on multiple levels — childhood story character, symbol of persecution, and representation of Evelyn's self-imposed separation from her heritage.",
       },
     ],
   },
@@ -2261,7 +2350,8 @@ The Kindertransport operated with good intentions but catastrophic cultural cons
           'It compares the play to other Holocaust literature',
         ],
         correct: 1,
-        explanation: 'The paragraph takes a single word and explores its multiple layers of meaning across the entire play, connecting it to the broader theme of intergenerational trauma.',
+        explanation:
+          'The paragraph takes a single word and explores its multiple layers of meaning across the entire play, connecting it to the broader theme of intergenerational trauma.',
       },
       {
         id: 'kt-m6-q2',
@@ -2273,7 +2363,8 @@ The Kindertransport operated with good intentions but catastrophic cultural cons
           'Provide as much historical detail as possible',
         ],
         correct: 2,
-        explanation: 'Integrate context into analysis rather than separating them. Connect specific textual moments to their historical significance.',
+        explanation:
+          'Integrate context into analysis rather than separating them. Connect specific textual moments to their historical significance.',
       },
       {
         id: 'kt-m6-q3',
@@ -2285,11 +2376,12 @@ The Kindertransport operated with good intentions but catastrophic cultural cons
           'The use of a narrator',
         ],
         correct: 1,
-        explanation: 'Simultaneous staging externalises the psychological reality that unprocessed trauma coexists with the present, distorting relationships and identity.',
+        explanation:
+          'Simultaneous staging externalises the psychological reality that unprocessed trauma coexists with the present, distorting relationships and identity.',
       },
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 5. Death and the King's Horseman — Wole Soyinka
@@ -2334,7 +2426,8 @@ const deathKingsHorsemanModules: CourseModule[] = [
     quiz: [
       {
         id: 'dkh-m1-q1',
-        question: 'Why does Soyinka insist the play should not be reduced to a "clash of cultures"?',
+        question:
+          'Why does Soyinka insist the play should not be reduced to a "clash of cultures"?',
         options: [
           'Because the play has no cultural content',
           'Because the play is primarily concerned with the Yoruba metaphysical worldview and questions of individual will and communal duty, not simply a debate between African and European values',
@@ -2342,7 +2435,8 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'Because the colonial characters are sympathetic',
         ],
         correct: 1,
-        explanation: 'Soyinka warns against reducing the play to a simple cultural conflict. Its deeper concerns are metaphysical — the relationship between the living, dead, and unborn — and moral — the question of individual responsibility to the community.',
+        explanation:
+          'Soyinka warns against reducing the play to a simple cultural conflict. Its deeper concerns are metaphysical — the relationship between the living, dead, and unborn — and moral — the question of individual responsibility to the community.',
       },
       {
         id: 'dkh-m1-q2',
@@ -2354,7 +2448,8 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'Past, present, and future',
         ],
         correct: 1,
-        explanation: 'Yoruba cosmology recognises three interconnected realms that form a continuous cycle. The horseman\'s ritual transition maintains the balance between these worlds — it is a cosmic duty, not a personal choice.',
+        explanation:
+          "Yoruba cosmology recognises three interconnected realms that form a continuous cycle. The horseman's ritual transition maintains the balance between these worlds — it is a cosmic duty, not a personal choice.",
       },
       {
         id: 'dkh-m1-q3',
@@ -2366,7 +2461,8 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'Because the exam mark scheme penalises the word',
         ],
         correct: 1,
-        explanation: 'Calling it "suicide" applies a Western moral judgement that misrepresents the Yoruba worldview. Soyinka uses terms like "transition" and "passage" to convey that this is a sacred duty, not a desperate act.',
+        explanation:
+          'Calling it "suicide" applies a Western moral judgement that misrepresents the Yoruba worldview. Soyinka uses terms like "transition" and "passage" to convey that this is a sacred duty, not a desperate act.',
       },
     ],
   },
@@ -2408,39 +2504,43 @@ const deathKingsHorsemanModules: CourseModule[] = [
     quiz: [
       {
         id: 'dkh-m2-q1',
-        question: 'Why is Pilkings\' wearing of egungun costumes to the ball significant?',
+        question: "Why is Pilkings' wearing of egungun costumes to the ball significant?",
         options: [
           'It shows his appreciation of Yoruba culture',
           'It is an act of profound cultural desecration — he treats sacred objects as fancy dress, revealing colonial ignorance and disrespect',
           'It is a requirement of the colonial dress code',
-          'It helps him understand Elesin\'s ritual',
+          "It helps him understand Elesin's ritual",
         ],
         correct: 1,
-        explanation: 'The egungun robes are sacred — they represent the ancestors. Pilkings wearing them as a costume for entertainment is a powerful symbol of colonial ignorance, reducing a sacred tradition to a trivial amusement.',
+        explanation:
+          'The egungun robes are sacred — they represent the ancestors. Pilkings wearing them as a costume for entertainment is a powerful symbol of colonial ignorance, reducing a sacred tradition to a trivial amusement.',
       },
       {
         id: 'dkh-m2-q2',
-        question: 'Why is Olunde\'s death a dramatic reversal?',
+        question: "Why is Olunde's death a dramatic reversal?",
         options: [
-          'Because he was expected to support Pilkings\' intervention',
+          "Because he was expected to support Pilkings' intervention",
           'Because he was expected to be the "Westernised" son who had abandoned tradition — instead, he fulfils the duty his father failed',
           'Because he was supposed to become a doctor',
           'Because the audience expected him to save Elesin',
         ],
         correct: 1,
-        explanation: 'Olunde studied medicine in England and seemed to represent Western modernity. His decision to complete the ritual his father failed subverts expectations and reveals that his Western education deepened rather than destroyed his understanding of Yoruba duty.',
+        explanation:
+          'Olunde studied medicine in England and seemed to represent Western modernity. His decision to complete the ritual his father failed subverts expectations and reveals that his Western education deepened rather than destroyed his understanding of Yoruba duty.',
       },
       {
         id: 'dkh-m2-q3',
-        question: 'Is Elesin\'s failure to complete the transition caused entirely by Pilkings\' intervention?',
+        question:
+          "Is Elesin's failure to complete the transition caused entirely by Pilkings' intervention?",
         options: [
           'Yes — Pilkings is solely responsible',
-          'No — Soyinka deliberately leaves this ambiguous, suggesting Elesin\'s own attachment to life (his new bride, his enjoyment of the market) may have weakened his will',
+          "No — Soyinka deliberately leaves this ambiguous, suggesting Elesin's own attachment to life (his new bride, his enjoyment of the market) may have weakened his will",
           'No — Elesin never intended to complete the ritual',
           'Yes — the play explicitly states that only external force stopped him',
         ],
         correct: 1,
-        explanation: 'Soyinka leaves the cause deliberately ambiguous. Pilkings\' intervention provides a convenient external excuse, but Elesin\'s demand for a bride and his attachment to worldly pleasure suggest his will may already have been compromised.',
+        explanation:
+          "Soyinka leaves the cause deliberately ambiguous. Pilkings' intervention provides a convenient external excuse, but Elesin's demand for a bride and his attachment to worldly pleasure suggest his will may already have been compromised.",
       },
     ],
   },
@@ -2492,7 +2592,8 @@ const deathKingsHorsemanModules: CourseModule[] = [
     quiz: [
       {
         id: 'dkh-m3-q1',
-        question: 'What does Elesin\'s demand for a young bride suggest about his readiness for the transition?',
+        question:
+          "What does Elesin's demand for a young bride suggest about his readiness for the transition?",
         options: [
           'That he is following correct Yoruba custom without any ambiguity',
           'That his attachment to the pleasures of the living world may be compromising his will to complete the ritual — though this is deliberately ambiguous',
@@ -2500,31 +2601,34 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'That the bride will accompany him into the ancestral realm',
         ],
         correct: 1,
-        explanation: 'The bride request is deliberately ambiguous. It may be a legitimate customary claim, but it also signals Elesin\'s sensual attachment to life — suggesting his will may not be as firm as his words declare.',
+        explanation:
+          "The bride request is deliberately ambiguous. It may be a legitimate customary claim, but it also signals Elesin's sensual attachment to life — suggesting his will may not be as firm as his words declare.",
       },
       {
         id: 'dkh-m3-q2',
-        question: 'What is surprising about Olunde\'s role in the play?',
+        question: "What is surprising about Olunde's role in the play?",
         options: [
-          'He supports Pilkings\' intervention completely',
+          "He supports Pilkings' intervention completely",
           'He was expected to be "Westernised" and detached from tradition, but his education deepened rather than destroyed his understanding of Yoruba duty',
           'He refuses to participate in any Yoruba customs',
           'He becomes a colonial administrator',
         ],
         correct: 1,
-        explanation: 'Olunde subverts the expectation that Western education corrupts. His medical training in England has given him a sophisticated understanding of both cultures, and he fulfils his father\'s duty with clear-eyed conviction.',
+        explanation:
+          "Olunde subverts the expectation that Western education corrupts. His medical training in England has given him a sophisticated understanding of both cultures, and he fulfils his father's duty with clear-eyed conviction.",
       },
       {
         id: 'dkh-m3-q3',
-        question: 'What does Pilkings\' intervention ultimately achieve?',
+        question: "What does Pilkings' intervention ultimately achieve?",
         options: [
-          'It saves Elesin\'s life and prevents unnecessary death',
+          "It saves Elesin's life and prevents unnecessary death",
           'It creates worse outcomes — Olunde dies instead, and Elesin kills himself anyway, while the cosmic balance is disrupted',
           'It helps the community understand Western values',
           'It brings peace between the colonial administration and the Yoruba community',
         ],
         correct: 1,
-        explanation: 'Pilkings\' "rescue" produces catastrophic consequences. Instead of one ritual death, two people die — and the cosmic balance the ritual was meant to maintain is disrupted. His intervention demonstrates the destructive arrogance of colonial paternalism.',
+        explanation:
+          'Pilkings\' "rescue" produces catastrophic consequences. Instead of one ritual death, two people die — and the cosmic balance the ritual was meant to maintain is disrupted. His intervention demonstrates the destructive arrogance of colonial paternalism.',
       },
     ],
   },
@@ -2560,27 +2664,30 @@ const deathKingsHorsemanModules: CourseModule[] = [
     quiz: [
       {
         id: 'dkh-m4-q1',
-        question: 'Why does Soyinka hold Elesin accountable even while condemning colonial intervention?',
+        question:
+          'Why does Soyinka hold Elesin accountable even while condemning colonial intervention?',
         options: [
           'Because Soyinka supports colonialism',
           'Because the play is only about individual moral failure',
-          'Because Elesin\'s own attachment to life and weakened will contributed to his failure — colonial intervention was a catalyst, not the sole cause',
+          "Because Elesin's own attachment to life and weakened will contributed to his failure — colonial intervention was a catalyst, not the sole cause",
           'Because Elesin broke a law that applies in both cultures',
         ],
         correct: 2,
-        explanation: 'Soyinka presents a complex picture: Pilkings\' intervention is arrogant and destructive, but Elesin\'s own sensual attachment to life suggests his will was already compromised. The play holds both accountable.',
+        explanation:
+          "Soyinka presents a complex picture: Pilkings' intervention is arrogant and destructive, but Elesin's own sensual attachment to life suggests his will was already compromised. The play holds both accountable.",
       },
       {
         id: 'dkh-m4-q2',
         question: 'How does the play challenge Western assumptions about death?',
         options: [
           'It argues that death is always positive',
-          'It presents death in Yoruba cosmology as a transition between interconnected worlds rather than an ending — making Elesin\'s ritual a sacred duty, not a tragedy',
+          "It presents death in Yoruba cosmology as a transition between interconnected worlds rather than an ending — making Elesin's ritual a sacred duty, not a tragedy",
           'It suggests that Western medicine should not try to prevent death',
           'It claims that all cultures view death identically',
         ],
         correct: 1,
-        explanation: 'Soyinka reframes death through the Yoruba worldview: it is a transition, not an ending. Elesin\'s ritual death maintains cosmic balance. The tragedy is not the death itself but Elesin\'s failure to complete it.',
+        explanation:
+          "Soyinka reframes death through the Yoruba worldview: it is a transition, not an ending. Elesin's ritual death maintains cosmic balance. The tragedy is not the death itself but Elesin's failure to complete it.",
       },
       {
         id: 'dkh-m4-q3',
@@ -2592,7 +2699,8 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'The economic competition between Nigerian and British trade',
         ],
         correct: 1,
-        explanation: 'The market is a sacred, living cultural space where community and ritual intersect. The colonial ball is superficial entertainment. Soyinka juxtaposes them to expose the emptiness of colonial culture compared to the depth of Yoruba tradition.',
+        explanation:
+          'The market is a sacred, living cultural space where community and ritual intersect. The colonial ball is superficial entertainment. Soyinka juxtaposes them to expose the emptiness of colonial culture compared to the depth of Yoruba tradition.',
       },
     ],
   },
@@ -2637,7 +2745,8 @@ const deathKingsHorsemanModules: CourseModule[] = [
     quiz: [
       {
         id: 'dkh-m5-q1',
-        question: 'Why does Soyinka give the Yoruba characters a richer, more poetic language than the colonial characters?',
+        question:
+          'Why does Soyinka give the Yoruba characters a richer, more poetic language than the colonial characters?',
         options: [
           'To make the play more entertaining for audiences',
           'To dramatise the cultural contrast — the Yoruba language carries ancestral wisdom and spiritual depth, while the colonial register reflects a worldview that has traded symbolic richness for rational efficiency',
@@ -2645,23 +2754,25 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'Because Soyinka could not write convincing English dialogue',
         ],
         correct: 1,
-        explanation: 'The linguistic contrast embodies the play\'s themes. Yoruba poetic language connects speakers to tradition and the metaphysical world; colonial English is functional but symbolically impoverished. Language itself becomes a site of cultural conflict.',
+        explanation:
+          "The linguistic contrast embodies the play's themes. Yoruba poetic language connects speakers to tradition and the metaphysical world; colonial English is functional but symbolically impoverished. Language itself becomes a site of cultural conflict.",
       },
       {
         id: 'dkh-m5-q2',
         question: 'What function do drumming, chanting, and dance serve in the play?',
         options: [
           'Background entertainment to keep the audience engaged',
-          'Essential dramatic actions that embody the community\'s spiritual participation in Elesin\'s transition — they are not decorative but integral to the ritual',
+          "Essential dramatic actions that embody the community's spiritual participation in Elesin's transition — they are not decorative but integral to the ritual",
           'A way to fill time between dialogue scenes',
           'Historical accuracy about Nigerian music',
         ],
         correct: 1,
-        explanation: 'Music and dance are not background — they are the ritual itself. They embody the community\'s collective spiritual participation in Elesin\'s passage between worlds. Removing them would destroy the play\'s meaning.',
+        explanation:
+          "Music and dance are not background — they are the ritual itself. They embody the community's collective spiritual participation in Elesin's passage between worlds. Removing them would destroy the play's meaning.",
       },
       {
         id: 'dkh-m5-q3',
-        question: 'How does Olunde\'s bilingualism function dramatically?',
+        question: "How does Olunde's bilingualism function dramatically?",
         options: [
           'It shows he has forgotten his culture',
           'It demonstrates his cultural sophistication — he can engage in rational Western debate and understand Yoruba metaphysical language, revealing that education deepened rather than destroyed his cultural identity',
@@ -2669,7 +2780,8 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'It helps him translate for Pilkings',
         ],
         correct: 1,
-        explanation: 'Olunde\'s fluency in both registers makes him the play\'s most culturally sophisticated character. He can match Jane in rational debate while also understanding the deep symbolic language of his heritage — subverting the assumption that Western education erases cultural identity.',
+        explanation:
+          "Olunde's fluency in both registers makes him the play's most culturally sophisticated character. He can match Jane in rational debate while also understanding the deep symbolic language of his heritage — subverting the assumption that Western education erases cultural identity.",
       },
     ],
   },
@@ -2718,7 +2830,8 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'Because Soyinka is a Nobel Prize winner',
         ],
         correct: 1,
-        explanation: 'Soyinka explicitly warns against reducing the play to Western judgements about "barbaric" practices. Engaging with the Yoruba worldview on its own terms demonstrates sophisticated understanding and produces stronger analytical responses.',
+        explanation:
+          'Soyinka explicitly warns against reducing the play to Western judgements about "barbaric" practices. Engaging with the Yoruba worldview on its own terms demonstrates sophisticated understanding and produces stronger analytical responses.',
       },
       {
         id: 'dkh-m6-q2',
@@ -2730,11 +2843,12 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'It compares the play to other African literature',
         ],
         correct: 1,
-        explanation: 'The paragraph analyses specific dramatic techniques, connects them to the play\'s central themes, and identifies the seed of the tragedy in the opening scene — demonstrating both close reading and structural awareness.',
+        explanation:
+          "The paragraph analyses specific dramatic techniques, connects them to the play's central themes, and identifies the seed of the tragedy in the opening scene — demonstrating both close reading and structural awareness.",
       },
       {
         id: 'dkh-m6-q3',
-        question: 'What should you focus on when analysing the Praise-Singer\'s role?',
+        question: "What should you focus on when analysing the Praise-Singer's role?",
         options: [
           'His singing ability and musical talent',
           'His function as a chorus figure who represents the communal voice, supports the transition, and embodies the connection between individual and community',
@@ -2742,11 +2856,12 @@ const deathKingsHorsemanModules: CourseModule[] = [
           'His political views about colonialism',
         ],
         correct: 1,
-        explanation: 'The Praise-Singer functions like a Greek chorus — representing the community\'s voice, urging the protagonist forward, and maintaining the ritual\'s communal dimension. His call-and-response with Elesin embodies the play\'s theme of interconnection.',
+        explanation:
+          "The Praise-Singer functions like a Greek chorus — representing the community's voice, urging the protagonist forward, and maintaining the ritual's communal dimension. His call-and-response with Elesin embodies the play's theme of interconnection.",
       },
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 6. Romeo and Juliet — William Shakespeare
@@ -2791,31 +2906,36 @@ const romeoJulietIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'rj-ig-m1-q1',
-        question: 'Why did Shakespeare compress the timeline from months (in his source) to four days?',
+        question:
+          'Why did Shakespeare compress the timeline from months (in his source) to four days?',
         options: [
           'Because the actors could not remember a longer play',
-          'To intensify the urgency and tragic inevitability — the compressed timeline makes the lovers\' passion feel unstoppable and their fate inescapable',
+          "To intensify the urgency and tragic inevitability — the compressed timeline makes the lovers' passion feel unstoppable and their fate inescapable",
           'Because he wanted the play to be shorter than other tragedies',
           'Because the historical events actually took four days',
         ],
         correct: 1,
-        explanation: 'Compressing the timeline creates a breathless pace that mirrors the intensity of young love and makes the tragic outcome feel inevitable. Everything happens too fast for reason or caution to intervene.',
+        explanation:
+          'Compressing the timeline creates a breathless pace that mirrors the intensity of young love and makes the tragic outcome feel inevitable. Everything happens too fast for reason or caution to intervene.',
       },
       {
         id: 'rj-ig-m1-q2',
-        question: 'Why is Juliet\'s defiance of her father particularly significant in its Elizabethan context?',
+        question:
+          "Why is Juliet's defiance of her father particularly significant in its Elizabethan context?",
         options: [
-          'Because daughters were expected to be obedient and fathers had legal authority to choose husbands — Juliet\'s refusal is both radical and dangerous',
-          'Because Juliet is too young to understand her father\'s wishes',
+          "Because daughters were expected to be obedient and fathers had legal authority to choose husbands — Juliet's refusal is both radical and dangerous",
+          "Because Juliet is too young to understand her father's wishes",
           'Because Lord Capulet is a villain who deserves to be disobeyed',
           'Because Elizabethan women routinely defied their fathers',
         ],
         correct: 0,
-        explanation: 'In Elizabethan society, patriarchal authority was near-absolute. Juliet\'s refusal to marry Paris is a radical act of defiance that the audience would have found both admirable and terrifying.',
+        explanation:
+          "In Elizabethan society, patriarchal authority was near-absolute. Juliet's refusal to marry Paris is a radical act of defiance that the audience would have found both admirable and terrifying.",
       },
       {
         id: 'rj-ig-m1-q3',
-        question: 'What does the Prologue\'s phrase "star-cross\'d lovers" tell us about the play\'s treatment of fate?',
+        question:
+          "What does the Prologue's phrase \"star-cross'd lovers\" tell us about the play's treatment of fate?",
         options: [
           'That Romeo and Juliet study astronomy',
           'That the lovers are lucky and destined for happiness',
@@ -2823,7 +2943,8 @@ const romeoJulietIGModules: CourseModule[] = [
           'That the play is set during a meteor shower',
         ],
         correct: 2,
-        explanation: '"Star-cross\'d" means thwarted by the stars — by fate. Shakespeare establishes from the very first lines that this story ends in tragedy, creating dramatic irony and a sense of inevitability throughout.',
+        explanation:
+          '"Star-cross\'d" means thwarted by the stars — by fate. Shakespeare establishes from the very first lines that this story ends in tragedy, creating dramatic irony and a sense of inevitability throughout.',
       },
     ],
   },
@@ -2878,31 +2999,34 @@ const romeoJulietIGModules: CourseModule[] = [
           'To make the play shorter by summarising the plot',
         ],
         correct: 1,
-        explanation: 'Revealing the ending creates dramatic irony that pervades every scene. The audience watches Romeo and Juliet fall in love while knowing they will die, making every moment of joy simultaneously heartbreaking.',
+        explanation:
+          'Revealing the ending creates dramatic irony that pervades every scene. The audience watches Romeo and Juliet fall in love while knowing they will die, making every moment of joy simultaneously heartbreaking.',
       },
       {
         id: 'rj-ig-m2-q2',
-        question: 'Why is Mercutio\'s death the play\'s structural turning point?',
+        question: "Why is Mercutio's death the play's structural turning point?",
         options: [
           'Because Mercutio is the main character',
-          'Because his death transforms the play from romantic comedy to tragedy — it triggers Romeo\'s banishment and makes the catastrophe inevitable',
+          "Because his death transforms the play from romantic comedy to tragedy — it triggers Romeo's banishment and makes the catastrophe inevitable",
           'Because it is the longest scene in the play',
           'Because the audience liked Mercutio best',
         ],
         correct: 1,
-        explanation: 'Mercutio\'s death is the hinge on which the entire play turns. Before it, the play could end happily. After it, Romeo\'s violence, banishment, and eventual death become inevitable. It marks the point of no return.',
+        explanation:
+          "Mercutio's death is the hinge on which the entire play turns. Before it, the play could end happily. After it, Romeo's violence, banishment, and eventual death become inevitable. It marks the point of no return.",
       },
       {
         id: 'rj-ig-m2-q3',
-        question: 'What does the undelivered letter emphasise about the play\'s view of fate?',
+        question: "What does the undelivered letter emphasise about the play's view of fate?",
         options: [
           'That the postal service in Verona was unreliable',
-          'That Friar Lawrence\'s plan was poorly designed',
+          "That Friar Lawrence's plan was poorly designed",
           'That a tiny accident of chance can trigger catastrophe — emphasising the cruelty of fate and the fragility of human plans',
           'That Romeo should have used a more reliable messenger',
         ],
         correct: 2,
-        explanation: 'The undelivered letter is a devastating device. The entire catastrophe hinges on a tiny accident of timing. Shakespeare uses this to emphasise how fate and chance conspire against the lovers.',
+        explanation:
+          'The undelivered letter is a devastating device. The entire catastrophe hinges on a tiny accident of timing. Shakespeare uses this to emphasise how fate and chance conspire against the lovers.',
       },
     ],
   },
@@ -2959,15 +3083,16 @@ const romeoJulietIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'rj-ig-m3-q1',
-        question: 'How does Juliet\'s character arc demonstrate her growth?',
+        question: "How does Juliet's character arc demonstrate her growth?",
         options: [
-          'She learns to accept her parents\' decisions without question',
+          "She learns to accept her parents' decisions without question",
           'She moves from passive obedience to fierce independence — choosing love over submission and facing death alone when all allies abandon her',
           'She becomes more like Romeo as the play progresses',
           'She decides that love is not worth the danger',
         ],
         correct: 1,
-        explanation: 'Juliet\'s arc is one of Shakespeare\'s most dramatic. She transforms from an obedient girl who defers to her parents into a courageous young woman who defies patriarchal authority and faces death alone.',
+        explanation:
+          "Juliet's arc is one of Shakespeare's most dramatic. She transforms from an obedient girl who defers to her parents into a courageous young woman who defies patriarchal authority and faces death alone.",
       },
       {
         id: 'rj-ig-m3-q2',
@@ -2979,19 +3104,21 @@ const romeoJulietIGModules: CourseModule[] = [
           'The city of Verona for its poor medical care',
         ],
         correct: 2,
-        explanation: 'Mercutio\'s curse condemns both Montagues and Capulets — and by extension the entire culture of feuding that has killed him. It is Shakespeare\'s judgement on the destructive futility of honour-based violence.',
+        explanation:
+          "Mercutio's curse condemns both Montagues and Capulets — and by extension the entire culture of feuding that has killed him. It is Shakespeare's judgement on the destructive futility of honour-based violence.",
       },
       {
         id: 'rj-ig-m3-q3',
-        question: 'Why is Romeo\'s impulsiveness both attractive and destructive?',
+        question: "Why is Romeo's impulsiveness both attractive and destructive?",
         options: [
           'Because impulsive people are always entertaining but dangerous',
           'Because his emotional intensity makes his love powerful and genuine, but it also leads him to kill Tybalt and take poison without reflection — passion unchecked by reason destroys him',
-          'Because he does not listen to Friar Lawrence\'s advice',
+          "Because he does not listen to Friar Lawrence's advice",
           'Because Juliet prefers cautious men',
         ],
         correct: 1,
-        explanation: 'Romeo\'s impulsiveness is the source of both his passionate love and his destruction. The same emotional intensity that makes him a compelling lover also makes him a killer and ultimately drives his premature death.',
+        explanation:
+          "Romeo's impulsiveness is the source of both his passionate love and his destruction. The same emotional intensity that makes him a compelling lover also makes him a killer and ultimately drives his premature death.",
       },
     ],
   },
@@ -3038,7 +3165,8 @@ const romeoJulietIGModules: CourseModule[] = [
           'The light imagery refers only to physical descriptions of the characters',
         ],
         correct: 1,
-        explanation: 'The light/dark paradox is central. The lovers illuminate each other ("Juliet is the sun") but must love in secret and darkness. Their light exists within a dark world that will extinguish it.',
+        explanation:
+          'The light/dark paradox is central. The lovers illuminate each other ("Juliet is the sun") but must love in secret and darkness. Their light exists within a dark world that will extinguish it.',
       },
       {
         id: 'rj-ig-m4-q2',
@@ -3050,11 +3178,12 @@ const romeoJulietIGModules: CourseModule[] = [
           'Because the cause is revealed in another play',
         ],
         correct: 2,
-        explanation: 'The feud\'s lack of cause is deliberate. By never explaining why the families hate each other, Shakespeare emphasises the absurd, self-perpetuating nature of honour-based violence — people die for a grudge no one can even explain.',
+        explanation:
+          "The feud's lack of cause is deliberate. By never explaining why the families hate each other, Shakespeare emphasises the absurd, self-perpetuating nature of honour-based violence — people die for a grudge no one can even explain.",
       },
       {
         id: 'rj-ig-m4-q3',
-        question: 'What is the effect of the play\'s compressed four-day timeline?',
+        question: "What is the effect of the play's compressed four-day timeline?",
         options: [
           'It makes the play feel unrealistic and unbelievable',
           'It mirrors the intensity of young love while creating a sense of tragic inevitability — there is no time for reflection, caution, or compromise',
@@ -3062,7 +3191,8 @@ const romeoJulietIGModules: CourseModule[] = [
           'It allows Shakespeare to observe the classical unity of time',
         ],
         correct: 1,
-        explanation: 'The compressed timeline mirrors the breathless intensity of first love while ensuring the tragedy feels inevitable. There is no time for the moderate voices (Friar Lawrence, the Prince) to intervene effectively.',
+        explanation:
+          'The compressed timeline mirrors the breathless intensity of first love while ensuring the tragedy feels inevitable. There is no time for the moderate voices (Friar Lawrence, the Prince) to intervene effectively.',
       },
     ],
   },
@@ -3107,27 +3237,31 @@ const romeoJulietIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'rj-ig-m5-q1',
-        question: 'What is the significance of Romeo and Juliet sharing a sonnet at their first meeting?',
+        question:
+          'What is the significance of Romeo and Juliet sharing a sonnet at their first meeting?',
         options: [
           'It shows they are both well-educated',
-          'It suggests a deep, instinctive harmony — they spontaneously co-create a love poem, completing each other\'s thoughts in a world of discord',
-          'It is a common way for Shakespeare\'s characters to introduce themselves',
+          "It suggests a deep, instinctive harmony — they spontaneously co-create a love poem, completing each other's thoughts in a world of discord",
+          "It is a common way for Shakespeare's characters to introduce themselves",
           'It demonstrates that they have rehearsed their meeting',
         ],
         correct: 1,
-        explanation: 'The shared sonnet is an extraordinary dramatic device. Two strangers create a perfect poem together, line by line, suggesting an instinctive connection that transcends the social barriers separating them.',
+        explanation:
+          'The shared sonnet is an extraordinary dramatic device. Two strangers create a perfect poem together, line by line, suggesting an instinctive connection that transcends the social barriers separating them.',
       },
       {
         id: 'rj-ig-m5-q2',
-        question: 'Why does Shakespeare use oxymorons ("loving hate," "heavy lightness") in Romeo\'s early speeches?',
+        question:
+          'Why does Shakespeare use oxymorons ("loving hate," "heavy lightness") in Romeo\'s early speeches?',
         options: [
           'To show that Romeo is confused and irrational',
-          'To capture the paradox of love existing within hatred and joy within danger — the contradictions reflect the play\'s central tensions',
-          'To demonstrate Romeo\'s poetic skill',
-          'To make the audience laugh at Romeo\'s melodrama',
+          "To capture the paradox of love existing within hatred and joy within danger — the contradictions reflect the play's central tensions",
+          "To demonstrate Romeo's poetic skill",
+          "To make the audience laugh at Romeo's melodrama",
         ],
         correct: 1,
-        explanation: 'The oxymorons capture the play\'s fundamental paradoxes — love and hate, joy and danger, life and death are inseparable. Romeo\'s contradictory language reflects a world where opposites are fatally intertwined.',
+        explanation:
+          "The oxymorons capture the play's fundamental paradoxes — love and hate, joy and danger, life and death are inseparable. Romeo's contradictory language reflects a world where opposites are fatally intertwined.",
       },
       {
         id: 'rj-ig-m5-q3',
@@ -3139,7 +3273,8 @@ const romeoJulietIGModules: CourseModule[] = [
           'That Juliet is imprisoned by her father',
         ],
         correct: 1,
-        explanation: 'The vertical separation of the stage levels physically represents the social barriers between Romeo and Juliet. They can speak and fall in love, but they remain separated — foreshadowing the forces that will ultimately keep them apart.',
+        explanation:
+          'The vertical separation of the stage levels physically represents the social barriers between Romeo and Juliet. They can speak and fall in love, but they remain separated — foreshadowing the forces that will ultimately keep them apart.',
       },
     ],
   },
@@ -3181,7 +3316,7 @@ const romeoJulietIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'rj-ig-m6-q1',
-        question: 'How does Romeo\'s language for Juliet differ from his language for Rosaline?',
+        question: "How does Romeo's language for Juliet differ from his language for Rosaline?",
         options: [
           'It is simpler and less poetic',
           'It shifts from conventional Petrarchan cliches to powerful, original cosmic imagery — suggesting genuine, transformative love rather than shallow infatuation',
@@ -3189,23 +3324,26 @@ const romeoJulietIGModules: CourseModule[] = [
           'It becomes more cynical and disillusioned',
         ],
         correct: 1,
-        explanation: 'Romeo\'s Rosaline language is artificial and conventional; his Juliet language is original and cosmic. This linguistic transformation demonstrates that his love for Juliet is genuine and transformative, not another passing infatuation.',
+        explanation:
+          "Romeo's Rosaline language is artificial and conventional; his Juliet language is original and cosmic. This linguistic transformation demonstrates that his love for Juliet is genuine and transformative, not another passing infatuation.",
       },
       {
         id: 'rj-ig-m6-q2',
-        question: 'Why is it important to connect the balcony scene to the play\'s wider themes?',
+        question: "Why is it important to connect the balcony scene to the play's wider themes?",
         options: [
           'Because the examiner will not give marks for isolated analysis',
-          'Because the scene\'s imagery of light and transcendence must be connected to the play\'s pattern of love destroyed by darkness and violence — this shows structural awareness',
+          "Because the scene's imagery of light and transcendence must be connected to the play's pattern of love destroyed by darkness and violence — this shows structural awareness",
           'Because the balcony scene is not important enough to analyse on its own',
           'Because you need to fill your word count',
         ],
         correct: 1,
-        explanation: 'Connecting the balcony scene to wider themes demonstrates structural awareness and conceptualised thinking. The scene\'s light imagery gains depth when connected to the play\'s overall pattern of love existing within, and ultimately destroyed by, a world of violence.',
+        explanation:
+          "Connecting the balcony scene to wider themes demonstrates structural awareness and conceptualised thinking. The scene's light imagery gains depth when connected to the play's overall pattern of love existing within, and ultimately destroyed by, a world of violence.",
       },
       {
         id: 'rj-ig-m6-q3',
-        question: 'What contrast does Shakespeare create between Romeo and Juliet in the balcony scene?',
+        question:
+          'What contrast does Shakespeare create between Romeo and Juliet in the balcony scene?',
         options: [
           'Romeo is older and more experienced while Juliet is naive',
           'Romeo soars in poetic idealism while Juliet is grounded in practical reality — enriching the scene by showing love and danger coexisting',
@@ -3213,11 +3351,12 @@ const romeoJulietIGModules: CourseModule[] = [
           'Romeo speaks in prose while Juliet speaks in verse',
         ],
         correct: 1,
-        explanation: 'The contrast between Romeo\'s ecstatic poetry and Juliet\'s practical concerns ("they will murder thee") creates dramatic tension. Their love is real, but it exists in a dangerous world that Juliet, more than Romeo, recognises.',
+        explanation:
+          'The contrast between Romeo\'s ecstatic poetry and Juliet\'s practical concerns ("they will murder thee") creates dramatic tension. Their love is real, but it exists in a dangerous world that Juliet, more than Romeo, recognises.',
       },
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 7. Macbeth — William Shakespeare
@@ -3260,29 +3399,32 @@ const macbethIGModules: CourseModule[] = [
         id: 'mac-ig-m1-q1',
         question: 'Why did Shakespeare present Banquo as a noble, moral character?',
         options: [
-          'Because Banquo was the play\'s protagonist',
-          'Because James I claimed descent from Banquo — Shakespeare honoured the king\'s ancestor by making him resist the witches\' temptation',
+          "Because Banquo was the play's protagonist",
+          "Because James I claimed descent from Banquo — Shakespeare honoured the king's ancestor by making him resist the witches' temptation",
           'Because historical records show Banquo was virtuous',
           'Because Shakespeare needed a comic character',
         ],
         correct: 1,
-        explanation: 'James I traced his lineage to Banquo. By presenting Banquo as a man of integrity who resists temptation, Shakespeare flatters the king and legitimises his claim to the throne.',
+        explanation:
+          'James I traced his lineage to Banquo. By presenting Banquo as a man of integrity who resists temptation, Shakespeare flatters the king and legitimises his claim to the throne.',
       },
       {
         id: 'mac-ig-m1-q2',
         question: 'What is the Great Chain of Being and how does it relate to the play?',
         options: [
           'A chain worn by Scottish kings as a symbol of power',
-          'A divinely ordained hierarchy from God to nature — disrupting it (by killing a king) causes chaos throughout the natural world, as shown in the play\'s unnatural events after Duncan\'s murder',
+          "A divinely ordained hierarchy from God to nature — disrupting it (by killing a king) causes chaos throughout the natural world, as shown in the play's unnatural events after Duncan's murder",
           'A chain of command in the Scottish military',
           'A metaphor Shakespeare invented for the play',
         ],
         correct: 1,
-        explanation: 'The Great Chain of Being was a Jacobean belief in a divinely ordered hierarchy. Duncan\'s murder violates this order, and Shakespeare dramatises the cosmic consequences — storms, darkness, animals acting unnaturally.',
+        explanation:
+          "The Great Chain of Being was a Jacobean belief in a divinely ordered hierarchy. Duncan's murder violates this order, and Shakespeare dramatises the cosmic consequences — storms, darkness, animals acting unnaturally.",
       },
       {
         id: 'mac-ig-m1-q3',
-        question: 'Why would Lady Macbeth\'s "unsex me" speech have been particularly disturbing to a Jacobean audience?',
+        question:
+          'Why would Lady Macbeth\'s "unsex me" speech have been particularly disturbing to a Jacobean audience?',
         options: [
           'Because women were not allowed to speak on stage',
           'Because it violated rigid gender expectations — a woman rejecting femininity and invoking evil spirits would have been seen as unnatural and demonic',
@@ -3290,7 +3432,8 @@ const macbethIGModules: CourseModule[] = [
           'Because Lady Macbeth was based on a real person',
         ],
         correct: 1,
-        explanation: 'Jacobean society had strict gender roles. Lady Macbeth\'s deliberate rejection of femininity — calling on spirits to fill her with cruelty — would have seemed profoundly unnatural and aligned her with the demonic forces of the witches.',
+        explanation:
+          "Jacobean society had strict gender roles. Lady Macbeth's deliberate rejection of femininity — calling on spirits to fill her with cruelty — would have seemed profoundly unnatural and aligned her with the demonic forces of the witches.",
       },
     ],
   },
@@ -3334,7 +3477,7 @@ const macbethIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'mac-ig-m2-q1',
-        question: 'How do the witches\' prophecies function as a structural device?',
+        question: "How do the witches' prophecies function as a structural device?",
         options: [
           'They provide accurate predictions that help Macbeth plan his future',
           'They are technically true but deliberately misleading, creating dramatic irony — the audience sees the trap before Macbeth does',
@@ -3342,7 +3485,8 @@ const macbethIGModules: CourseModule[] = [
           'They serve only as supernatural decoration',
         ],
         correct: 1,
-        explanation: 'The prophecies are equivocal — true in ways Macbeth does not expect. "No man born of woman" seems to guarantee safety but is undone by Macduff\'s Caesarean birth. This creates dramatic irony and drives the tragic plot.',
+        explanation:
+          'The prophecies are equivocal — true in ways Macbeth does not expect. "No man born of woman" seems to guarantee safety but is undone by Macduff\'s Caesarean birth. This creates dramatic irony and drives the tragic plot.',
       },
       {
         id: 'mac-ig-m2-q2',
@@ -3354,11 +3498,13 @@ const macbethIGModules: CourseModule[] = [
           'Lady Macbeth becomes stronger while Macbeth becomes weaker',
         ],
         correct: 1,
-        explanation: 'Shakespeare creates a devastating parallel: Macbeth moves from guilt-ridden hesitation to cold tyranny, while Lady Macbeth moves from cold determination to guilt-driven madness. Their arcs are inverse reflections of each other.',
+        explanation:
+          'Shakespeare creates a devastating parallel: Macbeth moves from guilt-ridden hesitation to cold tyranny, while Lady Macbeth moves from cold determination to guilt-driven madness. Their arcs are inverse reflections of each other.',
       },
       {
         id: 'mac-ig-m2-q3',
-        question: 'Why does Shakespeare make Macbeth\'s crimes escalate from one murder to mass slaughter?',
+        question:
+          "Why does Shakespeare make Macbeth's crimes escalate from one murder to mass slaughter?",
         options: [
           'To make the play more violent and exciting',
           'To show that each crime necessitates the next — moral corruption accelerates, trapping Macbeth in a cycle he cannot escape',
@@ -3366,7 +3512,8 @@ const macbethIGModules: CourseModule[] = [
           'To fill the five-act structure with enough plot events',
         ],
         correct: 1,
-        explanation: 'The escalating violence dramatises moral corruption. Each crime creates new threats that require further crimes, trapping Macbeth in a self-perpetuating cycle. The structural acceleration mirrors the theme that sin breeds sin.',
+        explanation:
+          'The escalating violence dramatises moral corruption. Each crime creates new threats that require further crimes, trapping Macbeth in a self-perpetuating cycle. The structural acceleration mirrors the theme that sin breeds sin.',
       },
     ],
   },
@@ -3413,7 +3560,7 @@ const macbethIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'mac-ig-m3-q1',
-        question: 'Why is Macbeth\'s moral awareness before Duncan\'s murder dramatically important?',
+        question: "Why is Macbeth's moral awareness before Duncan's murder dramatically important?",
         options: [
           'Because it shows he is a coward who needs persuading',
           'Because his understanding of the horror of what he is about to do makes his choice to proceed more tragic — he acts against his own conscience',
@@ -3421,11 +3568,12 @@ const macbethIGModules: CourseModule[] = [
           'Because it gives the audience time to sympathise with Duncan',
         ],
         correct: 1,
-        explanation: 'Macbeth\'s soliloquies show he knows what he is doing is wrong. This makes his decision more tragic — he is not deceived or ignorant but willingly corrupts himself. A Macbeth who did not understand would be less tragic.',
+        explanation:
+          "Macbeth's soliloquies show he knows what he is doing is wrong. This makes his decision more tragic — he is not deceived or ignorant but willingly corrupts himself. A Macbeth who did not understand would be less tragic.",
       },
       {
         id: 'mac-ig-m3-q2',
-        question: 'How does Lady Macbeth\'s arc mirror and invert Macbeth\'s?',
+        question: "How does Lady Macbeth's arc mirror and invert Macbeth's?",
         options: [
           'They both become more powerful and confident',
           'She moves from cold determination to guilt-driven madness, while he moves from guilt-ridden hesitation to cold tyranny — their arcs are inverse',
@@ -3433,19 +3581,21 @@ const macbethIGModules: CourseModule[] = [
           'She becomes more rational while he becomes more emotional',
         ],
         correct: 1,
-        explanation: 'Their arcs are devastatingly inverse. Lady Macbeth begins as the strong, decisive partner and ends broken by guilt. Macbeth begins hesitant and conscience-stricken and ends as a hardened tyrant. They swap psychological positions.',
+        explanation:
+          'Their arcs are devastatingly inverse. Lady Macbeth begins as the strong, decisive partner and ends broken by guilt. Macbeth begins hesitant and conscience-stricken and ends as a hardened tyrant. They swap psychological positions.',
       },
       {
         id: 'mac-ig-m3-q3',
-        question: 'What role do the witches play in Macbeth\'s downfall?',
+        question: "What role do the witches play in Macbeth's downfall?",
         options: [
-          'They directly control Macbeth\'s actions throughout the play',
+          "They directly control Macbeth's actions throughout the play",
           'They have no influence whatsoever — Macbeth would have acted the same without them',
-          'They present possibilities and ignite pre-existing ambition, but the moral choice to act remains Macbeth\'s — the play deliberately leaves their influence ambiguous',
+          "They present possibilities and ignite pre-existing ambition, but the moral choice to act remains Macbeth's — the play deliberately leaves their influence ambiguous",
           'They represent God punishing Macbeth for his sins',
         ],
         correct: 2,
-        explanation: 'The witches do not create Macbeth\'s ambition or command his actions. They ignite what is already there and present tempting possibilities. The moral responsibility remains with Macbeth — this ambiguity is central to the play.',
+        explanation:
+          "The witches do not create Macbeth's ambition or command his actions. They ignite what is already there and present tempting possibilities. The moral responsibility remains with Macbeth — this ambiguity is central to the play.",
       },
     ],
   },
@@ -3488,7 +3638,8 @@ const macbethIGModules: CourseModule[] = [
           'As a theme relevant only to Lady Macbeth',
         ],
         correct: 1,
-        explanation: 'Guilt in Macbeth cannot be suppressed. It manifests as hallucinations (the dagger, Banquo\'s ghost), Lady Macbeth\'s sleepwalking, and the blood imagery that pervades the text. Shakespeare presents guilt as a force that destroys the mind if not acknowledged.',
+        explanation:
+          "Guilt in Macbeth cannot be suppressed. It manifests as hallucinations (the dagger, Banquo's ghost), Lady Macbeth's sleepwalking, and the blood imagery that pervades the text. Shakespeare presents guilt as a force that destroys the mind if not acknowledged.",
       },
       {
         id: 'mac-ig-m4-q2',
@@ -3500,7 +3651,8 @@ const macbethIGModules: CourseModule[] = [
           'By hiding his emotions to appear tough',
         ],
         correct: 1,
-        explanation: 'Macduff challenges Lady Macbeth\'s definition of manhood. When Malcolm tells him to "Dispute it like a man," Macduff responds that he must "feel it as a man" — asserting that genuine masculinity includes grief, compassion, and emotional honesty.',
+        explanation:
+          'Macduff challenges Lady Macbeth\'s definition of manhood. When Malcolm tells him to "Dispute it like a man," Macduff responds that he must "feel it as a man" — asserting that genuine masculinity includes grief, compassion, and emotional honesty.',
       },
       {
         id: 'mac-ig-m4-q3',
@@ -3512,7 +3664,8 @@ const macbethIGModules: CourseModule[] = [
           'That the play takes place during a storm',
         ],
         correct: 1,
-        explanation: 'The witches\' paradox establishes the play\'s central theme of deceptive appearances. Throughout the play, characters cannot trust what they see — Macbeth appears loyal but is murderous; the witches\' truths are traps. Moral certainty is constantly undermined.',
+        explanation:
+          "The witches' paradox establishes the play's central theme of deceptive appearances. Throughout the play, characters cannot trust what they see — Macbeth appears loyal but is murderous; the witches' truths are traps. Moral certainty is constantly undermined.",
       },
     ],
   },
@@ -3561,10 +3714,11 @@ const macbethIGModules: CourseModule[] = [
           'Physical violence only — it has no deeper meaning',
           'Guilt that cannot be washed away — blood functions as a psychological stain that haunts both Macbeth and Lady Macbeth',
           'The colour of the Scottish flag',
-          'Macbeth\'s bravery in battle',
+          "Macbeth's bravery in battle",
         ],
         correct: 1,
-        explanation: 'Blood begins as literal (Duncan\'s murder) and becomes psychological (Lady Macbeth\'s "damned spot"). It symbolises guilt that cannot be cleansed. Macbeth asks if the ocean could wash his hands; Lady Macbeth proves it cannot.',
+        explanation:
+          'Blood begins as literal (Duncan\'s murder) and becomes psychological (Lady Macbeth\'s "damned spot"). It symbolises guilt that cannot be cleansed. Macbeth asks if the ocean could wash his hands; Lady Macbeth proves it cannot.',
       },
       {
         id: 'mac-ig-m5-q2',
@@ -3576,11 +3730,12 @@ const macbethIGModules: CourseModule[] = [
           'Because it reveals new plot information',
         ],
         correct: 1,
-        explanation: 'The sleepwalking scene is powerful because it shows Lady Macbeth\'s complete reversal. The woman who dismissed guilt ("A little water clears us of this deed") is now consumed by it. Her broken prose, repetitive washing, and fragmented speech are the sounds of a mind destroyed.',
+        explanation:
+          'The sleepwalking scene is powerful because it shows Lady Macbeth\'s complete reversal. The woman who dismissed guilt ("A little water clears us of this deed") is now consumed by it. Her broken prose, repetitive washing, and fragmented speech are the sounds of a mind destroyed.',
       },
       {
         id: 'mac-ig-m5-q3',
-        question: 'What is the effect of the witches\' equivocal language?',
+        question: "What is the effect of the witches' equivocal language?",
         options: [
           'It makes the play confusing for the audience',
           'It creates dramatic irony — the audience recognises the traps in the prophecies before Macbeth does, increasing tension and tragic inevitability',
@@ -3588,7 +3743,8 @@ const macbethIGModules: CourseModule[] = [
           'It provides evidence that the witches are not real',
         ],
         correct: 1,
-        explanation: 'The witches\' half-truths create dramatic irony. The audience can see that "no man born of woman" has a loophole, but Macbeth cannot. This builds tension and reinforces the theme that Macbeth is deceived by his own desire to believe.',
+        explanation:
+          'The witches\' half-truths create dramatic irony. The audience can see that "no man born of woman" has a loophole, but Macbeth cannot. This builds tension and reinforces the theme that Macbeth is deceived by his own desire to believe.',
       },
     ],
   },
@@ -3613,7 +3769,7 @@ const macbethIGModules: CourseModule[] = [
   <tr><td>"Fair is foul, and foul is fair"</td><td>Witches, Act 1</td><td>Appearance vs. reality, supernatural</td></tr>
   <tr><td>"vaulting ambition"</td><td>Macbeth, Act 1</td><td>Ambition, tragic flaw</td></tr>
   <tr><td>"unsex me here"</td><td>Lady Macbeth, Act 1</td><td>Gender, power, supernatural</td></tr>
-  <tr><td>"Will all great Neptune's ocean wash this blood"</td><td>Macbeth, Act 2</td><td>Guilt, blood imagery, conscience</td></tr>
+  <tr><td>"Will all great Neptune's ocean wash this blood / Clean from my hand?"</td><td>Macbeth, Act 2 Scene 2</td><td>Guilt, blood imagery, conscience</td></tr>
   <tr><td>"Out, damned spot!"</td><td>Lady Macbeth, Act 5</td><td>Guilt, psychological collapse</td></tr>
   <tr><td>"Tomorrow, and tomorrow, and tomorrow"</td><td>Macbeth, Act 5</td><td>Nihilism, despair, futility</td></tr>
 </table>
@@ -3630,7 +3786,8 @@ const macbethIGModules: CourseModule[] = [
     quiz: [
       {
         id: 'mac-ig-m6-q1',
-        question: 'Why does the model paragraph trace guilt across the play rather than just analysing the extract?',
+        question:
+          'Why does the model paragraph trace guilt across the play rather than just analysing the extract?',
         options: [
           'Because the exam question only asks about the wider text',
           'Because tracking how guilt develops from extract to wider text demonstrates structural awareness and shows the theme has a trajectory that mirrors the tragic arc',
@@ -3638,23 +3795,27 @@ const macbethIGModules: CourseModule[] = [
           'To increase the word count',
         ],
         correct: 1,
-        explanation: 'Connecting the extract to the wider text shows structural awareness — the strongest analytical skill. Tracing guilt from Macbeth\'s immediate horror to Lady Macbeth\'s later breakdown reveals the theme\'s development across the play.',
+        explanation:
+          "Connecting the extract to the wider text shows structural awareness — the strongest analytical skill. Tracing guilt from Macbeth's immediate horror to Lady Macbeth's later breakdown reveals the theme's development across the play.",
       },
       {
         id: 'mac-ig-m6-q2',
-        question: 'What creates the structural irony between "A little water" and "Out, damned spot"?',
+        question:
+          'What creates the structural irony between "A little water" and "Out, damned spot"?',
         options: [
           'They are both about cleaning',
-          'Lady Macbeth\'s dismissal of guilt in Act 2 is devastatingly contradicted by her psychological collapse in Act 5 — the blood she claimed could be washed away has become an ineradicable torment',
+          "Lady Macbeth's dismissal of guilt in Act 2 is devastatingly contradicted by her psychological collapse in Act 5 — the blood she claimed could be washed away has become an ineradicable torment",
           'They show that Lady Macbeth has become more hygienic',
           'They demonstrate that water is a recurring symbol',
         ],
         correct: 1,
-        explanation: 'Lady Macbeth\'s confident "A little water" is revealed as catastrophically wrong by her sleepwalking scene. The structural irony traces the play\'s argument: guilt cannot be suppressed, only delayed, and it will destroy the mind that tried to contain it.',
+        explanation:
+          'Lady Macbeth\'s confident "A little water" is revealed as catastrophically wrong by her sleepwalking scene. The structural irony traces the play\'s argument: guilt cannot be suppressed, only delayed, and it will destroy the mind that tried to contain it.',
       },
       {
         id: 'mac-ig-m6-q3',
-        question: 'How should you approach the "wider text" element of an extract question on Macbeth?',
+        question:
+          'How should you approach the "wider text" element of an extract question on Macbeth?',
         options: [
           'Write a separate essay about the rest of the play',
           'Ignore the extract and focus entirely on the wider text',
@@ -3662,11 +3823,12 @@ const macbethIGModules: CourseModule[] = [
           'List every scene in the play that relates to the question topic',
         ],
         correct: 2,
-        explanation: 'The best responses weave between extract and wider text, using connective phrases to show how themes develop across the play. This demonstrates both close reading skills and structural awareness.',
+        explanation:
+          'The best responses weave between extract and wider text, using connective phrases to show how themes develop across the play. This demonstrates both close reading skills and structural awareness.',
       },
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 8. The Merchant of Venice — William Shakespeare
@@ -3711,7 +3873,8 @@ const merchantVeniceModules: CourseModule[] = [
           'Because the play was banned for anti-Semitism',
         ],
         correct: 1,
-        explanation: 'The play uses anti-Semitic stereotypes that were common in Elizabethan culture, but it also gives Shylock moments of profound humanity. Whether Shakespeare critiques or endorses prejudice is the play\'s most debated question.',
+        explanation:
+          "The play uses anti-Semitic stereotypes that were common in Elizabethan culture, but it also gives Shylock moments of profound humanity. Whether Shakespeare critiques or endorses prejudice is the play's most debated question.",
       },
       {
         id: 'mov-m1-q2',
@@ -3723,7 +3886,8 @@ const merchantVeniceModules: CourseModule[] = [
           'Because the real merchant the play is based on lived in Venice',
         ],
         correct: 1,
-        explanation: 'Venice\'s reputation for commerce and its Jewish ghetto made it the perfect setting for a play about the tension between economic necessity and social prejudice. The Christians depend on Shylock\'s money while despising him.',
+        explanation:
+          "Venice's reputation for commerce and its Jewish ghetto made it the perfect setting for a play about the tension between economic necessity and social prejudice. The Christians depend on Shylock's money while despising him.",
       },
       {
         id: 'mov-m1-q3',
@@ -3735,7 +3899,8 @@ const merchantVeniceModules: CourseModule[] = [
           'A play written to address a specific social problem',
         ],
         correct: 2,
-        explanation: 'A problem play defies simple classification as comedy or tragedy and raises uncomfortable moral questions without providing clear answers. The Merchant of Venice fits this category because its treatment of Shylock complicates its comic structure.',
+        explanation:
+          'A problem play defies simple classification as comedy or tragedy and raises uncomfortable moral questions without providing clear answers. The Merchant of Venice fits this category because its treatment of Shylock complicates its comic structure.',
       },
     ],
   },
@@ -3787,24 +3952,26 @@ const merchantVeniceModules: CourseModule[] = [
         question: 'What is the structural significance of the Venice/Belmont contrast?',
         options: [
           'It shows that Shakespeare wanted variety in his settings',
-          'Venice represents commerce, law, and conflict while Belmont represents love and harmony — but their interdependence complicates this, since Belmont\'s wealth comes from Venice\'s commerce',
+          "Venice represents commerce, law, and conflict while Belmont represents love and harmony — but their interdependence complicates this, since Belmont's wealth comes from Venice's commerce",
           'Venice is where the villains live and Belmont is where the heroes live',
           'It allows Shakespeare to include Italian geography in the play',
         ],
         correct: 1,
-        explanation: 'The Venice/Belmont alternation creates a structural contrast between the material world and the romantic world. But Shakespeare complicates this: Belmont\'s harmony depends on Venice\'s wealth, and its comic resolution is shadowed by Shylock\'s treatment.',
+        explanation:
+          "The Venice/Belmont alternation creates a structural contrast between the material world and the romantic world. But Shakespeare complicates this: Belmont's harmony depends on Venice's wealth, and its comic resolution is shadowed by Shylock's treatment.",
       },
       {
         id: 'mov-m2-q2',
-        question: 'Why is Shylock\'s forced conversion dramatically significant?',
+        question: "Why is Shylock's forced conversion dramatically significant?",
         options: [
           'Because it shows the Christians are generous and welcoming',
-          'Because it strips Shylock of his identity, religion, and community — representing the ultimate act of cultural violence and complicating the play\'s comic ending',
+          "Because it strips Shylock of his identity, religion, and community — representing the ultimate act of cultural violence and complicating the play's comic ending",
           'Because it allows Shylock to start a new life',
           'Because it resolves the conflict between Jews and Christians',
         ],
         correct: 1,
-        explanation: 'The forced conversion is devastating — it strips away Shylock\'s identity and faith. What the Christians present as mercy is actually destruction. This moment complicates the comic ending and is a key reason the play is classified as a "problem play."',
+        explanation:
+          'The forced conversion is devastating — it strips away Shylock\'s identity and faith. What the Christians present as mercy is actually destruction. This moment complicates the comic ending and is a key reason the play is classified as a "problem play."',
       },
       {
         id: 'mov-m2-q3',
@@ -3816,7 +3983,8 @@ const merchantVeniceModules: CourseModule[] = [
           'She reveals that Antonio has already repaid the debt',
         ],
         correct: 1,
-        explanation: 'Portia uses the same insistence on the letter of the law that Shylock championed, turning his own weapon against him. The flesh/blood distinction is a legal technicality that defeats Shylock by his own standards — a devastating structural reversal.',
+        explanation:
+          'Portia uses the same insistence on the letter of the law that Shylock championed, turning his own weapon against him. The flesh/blood distinction is a legal technicality that defeats Shylock by his own standards — a devastating structural reversal.',
       },
     ],
   },
@@ -3867,15 +4035,16 @@ const merchantVeniceModules: CourseModule[] = [
         options: [
           'Because it is the longest speech in the play',
           'Because it is one of the most powerful pleas for common humanity in literature — Shylock asserts his shared humanity with the Christians who have dehumanised him',
-          'Because it reveals Shylock\'s evil plan',
+          "Because it reveals Shylock's evil plan",
           'Because it is spoken by Portia in disguise',
         ],
         correct: 1,
-        explanation: 'The speech is a devastating assertion of shared humanity. Shylock argues that Jews feel, bleed, and suffer exactly as Christians do — exposing the cruelty of the prejudice he faces. It complicates any reading of Shylock as a simple villain.',
+        explanation:
+          'The speech is a devastating assertion of shared humanity. Shylock argues that Jews feel, bleed, and suffer exactly as Christians do — exposing the cruelty of the prejudice he faces. It complicates any reading of Shylock as a simple villain.',
       },
       {
         id: 'mov-m3-q2',
-        question: 'What contradiction does Shakespeare build into Portia\'s character?',
+        question: "What contradiction does Shakespeare build into Portia's character?",
         options: [
           'She is intelligent but cannot read',
           'She advocates powerfully for mercy ("The quality of mercy is not strain\'d") but shows no mercy to Shylock when she has the power — raising questions about hypocrisy',
@@ -3883,11 +4052,12 @@ const merchantVeniceModules: CourseModule[] = [
           'She is brave in court but timid at home',
         ],
         correct: 1,
-        explanation: 'Portia\'s mercy speech is one of the play\'s most beautiful moments — but she then uses the law to destroy Shylock without mercy. This contradiction is deliberate: Shakespeare complicates the moral landscape by making the champion of mercy merciless.',
+        explanation:
+          "Portia's mercy speech is one of the play's most beautiful moments — but she then uses the law to destroy Shylock without mercy. This contradiction is deliberate: Shakespeare complicates the moral landscape by making the champion of mercy merciless.",
       },
       {
         id: 'mov-m3-q3',
-        question: 'Why is Antonio\'s isolation at the end of the play significant?',
+        question: "Why is Antonio's isolation at the end of the play significant?",
         options: [
           'Because he has decided to travel abroad',
           'Because his exclusion from the happy pairings in Act 5 suggests that the comic resolution does not extend to everyone — his melancholy remains unresolved',
@@ -3895,7 +4065,8 @@ const merchantVeniceModules: CourseModule[] = [
           'Because he has lost all his money permanently',
         ],
         correct: 1,
-        explanation: 'Antonio starts the play melancholy and ends it alone — excluded from the romantic pairings that resolve the comedy. His isolation suggests that the comic ending is incomplete, shadowed by the same sadness that opened the play.',
+        explanation:
+          'Antonio starts the play melancholy and ends it alone — excluded from the romantic pairings that resolve the comedy. His isolation suggests that the comic ending is incomplete, shadowed by the same sadness that opened the play.',
       },
     ],
   },
@@ -3937,19 +4108,21 @@ const merchantVeniceModules: CourseModule[] = [
           'By demonstrating that neither mercy nor justice has any value',
         ],
         correct: 1,
-        explanation: 'The trial exposes hypocrisy on both sides. Shylock demands strict justice but is motivated by revenge. The Christians preach mercy but impose a devastating punishment (forced conversion) that is itself merciless. Neither side practises what it preaches.',
+        explanation:
+          'The trial exposes hypocrisy on both sides. Shylock demands strict justice but is motivated by revenge. The Christians preach mercy but impose a devastating punishment (forced conversion) that is itself merciless. Neither side practises what it preaches.',
       },
       {
         id: 'mov-m4-q2',
         question: 'What does the casket test symbolise about true value?',
         options: [
           'That gold is always the most valuable metal',
-          'That real worth lies beneath appearances — the humble lead casket contains Portia\'s portrait while the flashy gold one contains a warning',
-          'That Portia\'s father was cruel and unfair',
+          "That real worth lies beneath appearances — the humble lead casket contains Portia's portrait while the flashy gold one contains a warning",
+          "That Portia's father was cruel and unfair",
           'That choosing correctly requires luck rather than insight',
         ],
         correct: 1,
-        explanation: 'The casket test embodies the theme of appearance versus reality. The gold casket\'s message — "All that glisters is not gold" — warns against surface judgements. Bassanio\'s choice of lead demonstrates an understanding that real value is not flashy.',
+        explanation:
+          'The casket test embodies the theme of appearance versus reality. The gold casket\'s message — "All that glisters is not gold" — warns against surface judgements. Bassanio\'s choice of lead demonstrates an understanding that real value is not flashy.',
       },
       {
         id: 'mov-m4-q3',
@@ -3961,7 +4134,8 @@ const merchantVeniceModules: CourseModule[] = [
           'By demonstrating that Venetian law protects Shylock from discrimination',
         ],
         correct: 1,
-        explanation: 'Shakespeare shows prejudice as systemic, not just personal. Shylock is excluded from mainstream professions, pushed into usury, and then hated for being a usurer. The system creates the very thing it claims to despise.',
+        explanation:
+          'Shakespeare shows prejudice as systemic, not just personal. Shylock is excluded from mainstream professions, pushed into usury, and then hated for being a usurer. The system creates the very thing it claims to despise.',
       },
     ],
   },
@@ -4012,11 +4186,12 @@ const merchantVeniceModules: CourseModule[] = [
           'By showing that mercy always leads to worse outcomes',
         ],
         correct: 1,
-        explanation: 'The irony of the mercy speech is devastating. Portia argues that mercy is divine and superior to justice — then uses the law to destroy Shylock without mercy. Shakespeare creates a deliberate gap between her words and her actions.',
+        explanation:
+          'The irony of the mercy speech is devastating. Portia argues that mercy is divine and superior to justice — then uses the law to destroy Shylock without mercy. Shakespeare creates a deliberate gap between her words and her actions.',
       },
       {
         id: 'mov-m5-q2',
-        question: 'What is the dramatic effect of Portia\'s disguise as Balthasar?',
+        question: "What is the dramatic effect of Portia's disguise as Balthasar?",
         options: [
           'It provides simple comic entertainment',
           'It creates dramatic irony (the audience knows her identity) and raises questions about gender and power — a woman exercises authority in a male-dominated courtroom',
@@ -4024,7 +4199,8 @@ const merchantVeniceModules: CourseModule[] = [
           'It proves that Portia is dishonest',
         ],
         correct: 1,
-        explanation: 'Portia\'s disguise creates multiple effects: dramatic irony (the audience knows what the court does not), a critique of gender-based power (a woman succeeds where men fail), and thematic resonance with the play\'s exploration of appearance versus reality.',
+        explanation:
+          "Portia's disguise creates multiple effects: dramatic irony (the audience knows what the court does not), a critique of gender-based power (a woman succeeds where men fail), and thematic resonance with the play's exploration of appearance versus reality.",
       },
       {
         id: 'mov-m5-q3',
@@ -4036,7 +4212,8 @@ const merchantVeniceModules: CourseModule[] = [
           'Because it uses metaphors that the audience would not understand',
         ],
         correct: 1,
-        explanation: 'The speech\'s power lies in its relentless accumulation of undeniable truths. Each question ("Hath not a Jew hands?") can only be answered "yes," building an argument for common humanity that no honest listener can refuse.',
+        explanation:
+          'The speech\'s power lies in its relentless accumulation of undeniable truths. Each question ("Hath not a Jew hands?") can only be answered "yes," building an argument for common humanity that no honest listener can refuse.',
       },
     ],
   },
@@ -4078,31 +4255,34 @@ const merchantVeniceModules: CourseModule[] = [
     quiz: [
       {
         id: 'mov-m6-q1',
-        question: 'Why should you avoid arguing that Shylock is simply a villain or simply a victim?',
+        question:
+          'Why should you avoid arguing that Shylock is simply a villain or simply a victim?',
         options: [
           'Because the examiner does not care about Shylock',
-          'Because the play\'s power lies in the tension between these readings — the best essays explore Shylock\'s moral complexity rather than reducing him to one dimension',
+          "Because the play's power lies in the tension between these readings — the best essays explore Shylock's moral complexity rather than reducing him to one dimension",
           'Because there is not enough evidence for either interpretation',
           'Because the exam question will never ask about Shylock',
         ],
         correct: 1,
-        explanation: 'Shylock is simultaneously a victim of horrific prejudice and a character whose demand for flesh is merciless. The strongest analytical responses explore this tension, demonstrating sophisticated engagement with the play\'s moral complexity.',
+        explanation:
+          "Shylock is simultaneously a victim of horrific prejudice and a character whose demand for flesh is merciless. The strongest analytical responses explore this tension, demonstrating sophisticated engagement with the play's moral complexity.",
       },
       {
         id: 'mov-m6-q2',
         question: 'What makes the model paragraph effective?',
         options: [
           'It provides a detailed plot summary of the trial scene',
-          'It analyses specific language (the mercy speech), identifies dramatic irony (Portia\'s disguise, her later mercilessness), and connects the extract to the wider play\'s thematic argument about hypocrisy',
+          "It analyses specific language (the mercy speech), identifies dramatic irony (Portia's disguise, her later mercilessness), and connects the extract to the wider play's thematic argument about hypocrisy",
           'It takes a strong position that Shylock is the hero',
           'It compares the play to other Shakespeare works',
         ],
         correct: 1,
-        explanation: 'The paragraph works because it analyses language closely, identifies dramatic irony, connects extract to wider play, and explores the play\'s moral complexity — it does not simplify but engages with ambiguity.',
+        explanation:
+          "The paragraph works because it analyses language closely, identifies dramatic irony, connects extract to wider play, and explores the play's moral complexity — it does not simplify but engages with ambiguity.",
       },
       {
         id: 'mov-m6-q3',
-        question: 'How should you handle the play\'s moral ambiguity in an exam essay?',
+        question: "How should you handle the play's moral ambiguity in an exam essay?",
         options: [
           'Pick one interpretation and ignore evidence that contradicts it',
           'Explore the tension between competing interpretations, showing how Shakespeare deliberately creates moral complexity that resists simple judgement',
@@ -4110,12 +4290,12 @@ const merchantVeniceModules: CourseModule[] = [
           'State that Shakespeare did not intend any moral message',
         ],
         correct: 1,
-        explanation: 'The strongest essays explore moral ambiguity rather than resolving it. Show that Shakespeare deliberately creates competing readings — the play\'s richness comes from its refusal to offer easy moral answers.',
+        explanation:
+          "The strongest essays explore moral ambiguity rather than resolving it. Show that Shakespeare deliberately creates competing readings — the play's richness comes from its refusal to offer easy moral answers.",
       },
     ],
   },
-];
-
+]
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Course Definitions
@@ -4133,9 +4313,9 @@ const viewFromBridge: CourseData = {
   level: 'IGCSE',
   color: '#6366f1',
   description:
-    'A comprehensive study guide for Arthur Miller\'s A View from the Bridge for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    "A comprehensive study guide for Arthur Miller's A View from the Bridge for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.",
   moduleList: viewFromBridgeModules,
-};
+}
 
 const inspectorCallsIG: CourseData = {
   id: 'igcse-lit-drama-inspector-calls',
@@ -4149,9 +4329,9 @@ const inspectorCallsIG: CourseData = {
   level: 'IGCSE',
   color: '#8b5cf6',
   description:
-    'A comprehensive study guide for J B Priestley\'s An Inspector Calls for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    "A comprehensive study guide for J B Priestley's An Inspector Calls for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.",
   moduleList: inspectorCallsIGModules,
-};
+}
 
 const curiousIncident: CourseData = {
   id: 'igcse-lit-drama-curious-incident',
@@ -4167,7 +4347,7 @@ const curiousIncident: CourseData = {
   description:
     'A comprehensive study guide for The Curious Incident of the Dog in the Night-time (adapted by Simon Stephens) for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, stagecraft, and exam technique with model responses.',
   moduleList: curiousIncidentModules,
-};
+}
 
 const kindertransport: CourseData = {
   id: 'igcse-lit-drama-kindertransport',
@@ -4181,13 +4361,13 @@ const kindertransport: CourseData = {
   level: 'IGCSE',
   color: '#7c3aed',
   description:
-    'A comprehensive study guide for Diane Samuels\' Kindertransport for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    "A comprehensive study guide for Diane Samuels' Kindertransport for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.",
   moduleList: kindertransportModules,
-};
+}
 
 const deathKingsHorseman: CourseData = {
   id: 'igcse-lit-drama-death-kings-horseman',
-  title: 'Death and the King\'s Horseman',
+  title: "Death and the King's Horseman",
   subtitle: 'Edexcel IGCSE Literature — Wole Soyinka',
   tier: 'IGCSE',
   board: 'Edexcel',
@@ -4197,9 +4377,9 @@ const deathKingsHorseman: CourseData = {
   level: 'IGCSE',
   color: '#6d28d9',
   description:
-    'A comprehensive study guide for Wole Soyinka\'s Death and the King\'s Horseman for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    "A comprehensive study guide for Wole Soyinka's Death and the King's Horseman for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.",
   moduleList: deathKingsHorsemanModules,
-};
+}
 
 const romeoJulietIG: CourseData = {
   id: 'igcse-lit-drama-romeo-juliet',
@@ -4213,9 +4393,9 @@ const romeoJulietIG: CourseData = {
   level: 'IGCSE',
   color: '#5b21b6',
   description:
-    'A comprehensive study guide for Shakespeare\'s Romeo and Juliet for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    "A comprehensive study guide for Shakespeare's Romeo and Juliet for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.",
   moduleList: romeoJulietIGModules,
-};
+}
 
 const macbethIG: CourseData = {
   id: 'igcse-lit-drama-macbeth',
@@ -4229,9 +4409,9 @@ const macbethIG: CourseData = {
   level: 'IGCSE',
   color: '#4c1d95',
   description:
-    'A comprehensive study guide for Shakespeare\'s Macbeth for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    "A comprehensive study guide for Shakespeare's Macbeth for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.",
   moduleList: macbethIGModules,
-};
+}
 
 const merchantVenice: CourseData = {
   id: 'igcse-lit-drama-merchant-of-venice',
@@ -4245,9 +4425,9 @@ const merchantVenice: CourseData = {
   level: 'IGCSE',
   color: '#3b0764',
   description:
-    'A comprehensive study guide for Shakespeare\'s The Merchant of Venice for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.',
+    "A comprehensive study guide for Shakespeare's The Merchant of Venice for Edexcel IGCSE Literature. Covers context, plot, character analysis, themes, language and stagecraft, and exam technique with model responses.",
   moduleList: merchantVeniceModules,
-};
+}
 
 export const igcseDramaCourses: CourseData[] = [
   viewFromBridge,
@@ -4258,4 +4438,4 @@ export const igcseDramaCourses: CourseData[] = [
   romeoJulietIG,
   macbethIG,
   merchantVenice,
-];
+]

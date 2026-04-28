@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CourseData } from './courses';
+import type { CourseData } from './courses'
 
 export const aqaPowerConflictCourse: CourseData = {
   id: 'aqa-lit-power-conflict',
@@ -139,28 +139,22 @@ Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>
       quiz: [
         {
           id: 'aqa-pc-m1-q1',
-          question:
-            'What is the rhyme scheme of Ozymandias, and why is it significant?',
+          question: 'What is the rhyme scheme of Ozymandias, and why is it significant?',
           options: [
             'Regular ABABCDCD — reflecting order and control',
             'Irregular and loosely sonnet-like — mirroring the decay of power',
             'Free verse with no rhyme — symbolising total chaos',
-            'Couplets throughout — emphasising Ozymandias\' authority',
+            "Couplets throughout — emphasising Ozymandias' authority",
           ],
           correct: 1,
           explanation:
-            'Shelley uses a loosely sonnet-shaped poem with an unconventional rhyme scheme (ABABACDCEDEFEF). The irregularity mirrors the crumbling of Ozymandias\' once-rigid authority.',
+            "Shelley uses a loosely sonnet-shaped poem with an unconventional rhyme scheme (ABABACDCEDEFEF). The irregularity mirrors the crumbling of Ozymandias' once-rigid authority.",
         },
         {
           id: 'aqa-pc-m1-q2',
           question:
             'What technique is created by the inscription boasting of great "Works" while nothing remains?',
-          options: [
-            'Pathetic fallacy',
-            'Dramatic irony',
-            'Onomatopoeia',
-            'Oxymoron',
-          ],
+          options: ['Pathetic fallacy', 'Dramatic irony', 'Onomatopoeia', 'Oxymoron'],
           correct: 1,
           explanation:
             'The reader understands that the "Works" have completely vanished, but the inscription still boasts about them — this gap between the king\'s words and reality is dramatic irony.',
@@ -171,32 +165,26 @@ Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>
             'Why does Shelley use a layered narrative (traveller tells speaker, speaker tells reader)?',
           options: [
             'To show Shelley visited Egypt himself',
-            'To emphasise how distant and irrelevant Ozymandias\' power has become',
+            "To emphasise how distant and irrelevant Ozymandias' power has become",
             'To make the poem more entertaining',
             'To prove the story is historically accurate',
           ],
           correct: 1,
           explanation:
-            'The layered narration distances the reader from Ozymandias, reinforcing the idea that his once-fearsome authority is now just a second-hand traveller\'s tale — utterly diminished by time.',
+            "The layered narration distances the reader from Ozymandias, reinforcing the idea that his once-fearsome authority is now just a second-hand traveller's tale — utterly diminished by time.",
         },
         {
           id: 'aqa-pc-m1-q4',
           question:
             'Which poem is the BEST comparison for exploring how power is eventually undermined?',
-          options: [
-            'Poppies',
-            'My Last Duchess',
-            'Bayonet Charge',
-            'Remains',
-          ],
+          options: ['Poppies', 'My Last Duchess', 'Bayonet Charge', 'Remains'],
           correct: 1,
           explanation:
-            'My Last Duchess also presents a powerful figure (the Duke) whose attempts to control are exposed by the poet\'s irony. Both poems show how absolute power reveals the flaws of the powerful.',
+            "My Last Duchess also presents a powerful figure (the Duke) whose attempts to control are exposed by the poet's irony. Both poems show how absolute power reveals the flaws of the powerful.",
         },
         {
           id: 'aqa-pc-m1-q5',
-          question:
-            'What dual meaning does the word "mocked" carry in the poem?',
+          question: 'What dual meaning does the word "mocked" carry in the poem?',
           options: [
             'To frighten and to anger',
             'To copy and to ridicule',
@@ -221,7 +209,7 @@ Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>
 <h2>London — William Blake (1794)</h2>
 
 <h3>Context</h3>
-<p>William Blake (1743–1827) was an engraver, painter, and poet whose radical ideas set him apart from his contemporaries. <strong>London</strong> was published in 1794 in <em>Songs of Experience</em>, the companion collection to <em>Songs of Innocence</em>. Blake wrote during the aftermath of the French Revolution (1789) and at a time when Britain's own poor were suffering under industrialisation, child labour, and severe political repression.</p>
+<p>William Blake (1757–1827) was an engraver, painter, and poet whose radical ideas set him apart from his contemporaries. <strong>London</strong> was published in 1794 in <em>Songs of Experience</em>, the companion collection to <em>Songs of Innocence</em>. Blake wrote during the aftermath of the French Revolution (1789) and at a time when Britain's own poor were suffering under industrialisation, child labour, and severe political repression.</p>
 
 <p>Blake was deeply critical of the Church, the monarchy, and the emerging capitalist class. He saw London not as a grand capital but as a place of suffering, where institutions exploit the powerless.</p>
 
@@ -244,7 +232,7 @@ Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>
 </ul>
 
 <h3>Poet Context: Ted Hughes & the Burden of War Memory</h3>
-<p>Ted Hughes (1930–1998) was one of the most significant English poets of the twentieth century, later serving as Poet Laureate (1984–1998). Hughes was fascinated by nature, power, and violence—themes he explored in stark, visceral imagery. Though Hughes did not experience WWI himself, his father, Captain William Henry Hughes, survived the Gallipoli campaign (1915)—one of the bloodiest battles of WWI. His father rarely spoke of the experience, and this silence profoundly affected Hughes. The unspoken trauma, the things his father could not articulate, haunted Hughes throughout his life and career. <em>Bayonet Charge</em>, published in Hughes's first collection <em>The Hawk in the Rain</em> (1957), represents Hughes's attempt to imaginatively reconstruct the soldier's experience—to give voice to what his father could not or would not say. Hughes's approach is distinctly different from Romantic war poetry (like Tennyson's): rather than celebrating heroism or patriotic duty, Hughes strips away all rhetoric and presents raw, physical terror and confusion. Hughes's spare, intense language and his focus on the body—the soldier's physical sensations and animal instincts—became characteristic of his mature style.</p>
+<p>Ted Hughes (1930–1998) was one of the most significant English poets of the twentieth century, later serving as UK Poet Laureate (1984–1998), succeeding John Betjeman and followed by Andrew Motion. Yorkshire-born, husband of Sylvia Plath and father of Frieda and Nicholas Hughes, he was fascinated by nature, power, and violence—themes he explored in stark, visceral imagery. Hughes was born in 1930 and never fought in any war. He drew on his father William's WWI accounts — William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment — to imagine the soldier's terror in this poem. William rarely spoke of his experiences, and that silence shaped Hughes's lifelong WWI imagination. <em>Bayonet Charge</em>, published in Hughes's debut collection <em>The Hawk in the Rain</em> (1957) by Faber &amp; Faber, represents Hughes's attempt to imaginatively reconstruct the soldier's experience—to give voice to what his father could not or would not say. Hughes's approach is distinctly different from Romantic war poetry (like Tennyson's): rather than celebrating heroism or patriotic duty, Hughes strips away all rhetoric and presents raw, physical terror and confusion. Hughes's spare, intense language and his focus on the body—the soldier's physical sensations and animal instincts—became characteristic of his mature style.</p>
 
 <h3>Key Quotations &amp; Analysis</h3>
 
@@ -293,7 +281,7 @@ A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blak
 <div class="model-paragraph">
 <p><strong>Sample Question: How does Hughes present the reality of war in Bayonet Charge?</strong></p>
 
-<p>Hughes presents war not as a heroic struggle but as a dehumanising experience that reduces the soldier to a body driven by terror and instinct. The in medias res opening—"Suddenly he awoke and was running"—offers no context or explanation; the reader is thrown into chaos just as the soldier is. Crucially, the soldier is unnamed and depersonalised—he is never given individuality or agency. Hughes emphasises the physical body: "raw-seamed hot khaki" focuses on the painful uniform; "stumbling across a field of clods" shows ungainly, desperate movement. Most devastatingly, the second stanza presents a moment of existential questioning: "In what cold clockwork of the stars and the nations / Was he the hand pointing that second?" The soldier realises he is merely an instrument, a "hand" on the "clock" of larger historical forces. The repeated phrase "King, honour, human dignity, etcetera" dismissively reduces patriotic ideals to meaningless clichés. The word "etcetera" is crushing—these supposed reasons for dying are not worth fully naming. The poem's structure enacts this dehumanisation: irregular lines and no rhyme scheme create chaos, mirroring the loss of order and meaning in combat. Unlike Tennyson's celebration of the soldier's brave obedience, Hughes reveals that bravery is irrelevant; survival depends only on the body's animal response to threat.</p>
+<p>Hughes presents war not as a heroic struggle but as a dehumanising experience that reduces the soldier to a body driven by terror and instinct. The in medias res opening—"Suddenly he awoke and was running"—offers no context or explanation; the reader is thrown into chaos just as the soldier is. Crucially, the soldier is unnamed and depersonalised—he is never given individuality or agency. Hughes emphasises the physical body: "raw-seamed hot khaki" focuses on the painful uniform; "stumbling across a field of clods" shows ungainly, desperate movement. Most devastatingly, the second stanza presents a moment of existential questioning: "In what cold clockwork of the stars and the nations / Was he the hand pointing that second?" The soldier realises he is merely an instrument, a "hand" on the "clock" of larger historical forces. The phrase "King, honour, human dignity, etcetera" dismissively reduces patriotic ideals to meaningless clichés. Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don't double the word. The single, dismissive "etcetera" is crushing—these supposed reasons for dying are not worth fully naming. The poem's structure enacts this dehumanisation: irregular lines and no rhyme scheme create chaos, mirroring the loss of order and meaning in combat. Unlike Tennyson's celebration of the soldier's brave obedience, Hughes reveals that bravery is irrelevant; survival depends only on the body's animal response to threat.</p>
 </div>
 
 <h3>Quotation Bank for Essays</h3>
@@ -328,7 +316,7 @@ A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blak
 <ul>
   <li><strong>Ozymandias</strong> — Both poems critique the abuse of power, though Blake attacks contemporary institutions while Shelley targets ancient tyranny.</li>
   <li><strong>Checking Out Me History</strong> — Both protest against institutional control (Blake: Church and monarchy; Agard: colonial education system).</li>
-  <li><strong>The Emigrée</strong> — Both present visions of a city, but the Emigrée's memory is idealised while Blake's London is nightmarish.</li>
+  <li><strong>The Émigrée</strong> — Both present visions of a city, but the Émigrée's memory is idealised while Blake's London is nightmarish.</li>
   <li><strong>Exposure</strong> — Both present suffering caused by those in power — Blake's victims are Londoners; Owen's are soldiers.</li>
 </ul>
 
@@ -363,8 +351,7 @@ A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blak
         },
         {
           id: 'aqa-pc-m2-q3',
-          question:
-            'What type of power does Blake primarily criticise in London?',
+          question: 'What type of power does Blake primarily criticise in London?',
           options: [
             'The power of nature',
             'Military power abroad',
@@ -377,8 +364,7 @@ A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blak
         },
         {
           id: 'aqa-pc-m2-q4',
-          question:
-            'Why does Blake use a regular ABAB rhyme and iambic tetrameter?',
+          question: 'Why does Blake use a regular ABAB rhyme and iambic tetrameter?',
           options: [
             'To make the poem sound cheerful and musical',
             'To reflect the monotonous, inescapable nature of suffering',
@@ -400,14 +386,16 @@ A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blak
       title: 'The Prelude: Stealing the Boat — William Wordsworth',
       duration: '55 min',
       content: `
-<h2>The Prelude: Stealing the Boat — William Wordsworth (1850)</h2>
+<h2>The Prelude: Stealing the Boat — William Wordsworth (1850, posthumous)</h2>
+
+<div class="version-note"><strong>Version note:</strong> AQA prescribes the <strong>1850 published <em>Prelude</em></strong> (revised across Wordsworth's life and printed after his death). OCR prescribes the <strong>1799 two-part <em>Prelude</em></strong> — the wording is materially different. Always quote from the AQA-anthology (1850) version below.</div>
 
 <h3>Context</h3>
-<p>William Wordsworth (1770–1850) was a central figure of the Romantic movement. <em>The Prelude</em> is his epic autobiographical poem, tracing "the growth of a poet's mind." The extract studied in the AQA anthology comes from Book I and describes a childhood experience in the Lake District in which the young Wordsworth takes a boat without permission and is overwhelmed by the power of nature.</p>
+<p>William Wordsworth (1770–1850) was a central figure of the Romantic movement and was made Poet Laureate in 1843. <em>The Prelude</em> is his epic autobiographical poem, tracing "the growth of a poet's mind." He began drafting it in 1799, revised it across his life (1805 in 13 books, 1850 in 14 books) and it was published <strong>posthumously in 1850</strong>. The extract studied in the AQA anthology comes from Book I and describes a childhood experience on Ullswater in the Lake District in which the young Wordsworth takes a boat without permission and is overwhelmed by the power of nature — one of his "spots of time" (formative childhood memories that shape the adult poet's imagination).</p>
 
 <p>The Romantics believed nature was a source of spiritual and moral education. For Wordsworth, this episode illustrates how nature disciplined him — transforming youthful arrogance into humility and awe.</p>
 
-<div class="key-term"><strong>Key Term: The Sublime</strong> — An overwhelming experience of awe and terror inspired by nature's grandeur. The mountain in this extract provokes a sublime response in the young Wordsworth, making him feel tiny and insignificant.</div>
+<div class="key-term"><strong>Key Term: The Sublime</strong> — An overwhelming experience of awe and terror inspired by nature's grandeur. <strong>Edmund Burke</strong> (1757) defined the sublime as the union of terror and awe; <strong>Immanuel Kant</strong> (<em>Critique of Judgement</em>, 1790) refined this as the mind's confrontation with something so vast that imagination is overwhelmed yet reason is affirmed. The mountain in this extract provokes a Burkean–Kantian sublime response in the young Wordsworth, making him feel tiny and insignificant.</div>
 
 <h3>Form &amp; Structure</h3>
 <ul>
@@ -520,8 +508,7 @@ The experience does not end when the boat is returned. The phrase suggests lasti
       quiz: [
         {
           id: 'aqa-pc-m3-q1',
-          question:
-            'What is blank verse, and why is it significant in The Prelude?',
+          question: 'What is blank verse, and why is it significant in The Prelude?',
           options: [
             'Rhyming couplets — it makes the poem sound musical',
             'Unrhymed iambic pentameter — it gives the poem an epic, grand quality',
@@ -530,26 +517,19 @@ The experience does not end when the boat is returned. The phrase suggests lasti
           ],
           correct: 1,
           explanation:
-            'Blank verse is unrhymed iambic pentameter. Wordsworth chose this form because it is associated with epic poetry (e.g. Milton\'s Paradise Lost), elevating his personal autobiography to the level of an epic journey.',
+            "Blank verse is unrhymed iambic pentameter. Wordsworth chose this form because it is associated with epic poetry (e.g. Milton's Paradise Lost), elevating his personal autobiography to the level of an epic journey.",
         },
         {
           id: 'aqa-pc-m3-q2',
-          question:
-            'What Romantic concept is illustrated by the boy\'s reaction to the mountain?',
-          options: [
-            'Pathetic fallacy',
-            'The sublime',
-            'The pastoral',
-            'Neoclassicism',
-          ],
+          question: "What Romantic concept is illustrated by the boy's reaction to the mountain?",
+          options: ['Pathetic fallacy', 'The sublime', 'The pastoral', 'Neoclassicism'],
           correct: 1,
           explanation:
-            'The sublime is the Romantic concept of experiencing awe mixed with terror in the face of nature\'s overwhelming power. The mountain provokes exactly this response in the young Wordsworth.',
+            "The sublime is the Romantic concept of experiencing awe mixed with terror in the face of nature's overwhelming power. The mountain provokes exactly this response in the young Wordsworth.",
         },
         {
           id: 'aqa-pc-m3-q3',
-          question:
-            'How does the tone shift across the extract?',
+          question: 'How does the tone shift across the extract?',
           options: [
             'From sadness to joy',
             'From anger to calm',
@@ -694,8 +674,7 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
       quiz: [
         {
           id: 'aqa-pc-m4-q1',
-          question:
-            'What is a dramatic monologue?',
+          question: 'What is a dramatic monologue?',
           options: [
             'A poem with two speakers debating',
             'A poem where a single speaker addresses a silent listener, revealing their character',
@@ -708,8 +687,7 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
         },
         {
           id: 'aqa-pc-m4-q2',
-          question:
-            'Why does Browning use enjambment across the rhyming couplets?',
+          question: 'Why does Browning use enjambment across the rhyming couplets?',
           options: [
             'Because he could not write regular couplets',
             'To make the Duke sound hesitant and nervous',
@@ -718,21 +696,20 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
           ],
           correct: 2,
           explanation:
-            'The enjambment makes the rhymes barely noticeable, creating an effect of polished, flowing speech. This reflects the Duke\'s total control of the conversation — he speaks without interruption, steering the listener wherever he wants.',
+            "The enjambment makes the rhymes barely noticeable, creating an effect of polished, flowing speech. This reflects the Duke's total control of the conversation — he speaks without interruption, steering the listener wherever he wants.",
         },
         {
           id: 'aqa-pc-m4-q3',
-          question:
-            'What does the Neptune statue at the end symbolise?',
+          question: 'What does the Neptune statue at the end symbolise?',
           options: [
-            'The Duke\'s love of Italian art',
-            'The envoy\'s wealth',
+            "The Duke's love of Italian art",
+            "The envoy's wealth",
             'The Duke\'s desire to dominate and "tame" those around him',
             'The beauty of Renaissance sculpture',
           ],
           correct: 2,
           explanation:
-            'Neptune taming a sea-horse mirrors the Duke\'s desire to tame and control the Duchess. He identifies with the god — seeing domination as natural and even admirable.',
+            "Neptune taming a sea-horse mirrors the Duke's desire to tame and control the Duchess. He identifies with the god — seeing domination as natural and even admirable.",
         },
         {
           id: 'aqa-pc-m4-q4',
@@ -752,15 +729,10 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
           id: 'aqa-pc-m4-q5',
           question:
             'Which poem is the best comparison for exploring how powerful individuals control others?',
-          options: [
-            'Exposure',
-            'Ozymandias',
-            'Bayonet Charge',
-            'Tissue',
-          ],
+          options: ['Exposure', 'Ozymandias', 'Bayonet Charge', 'Tissue'],
           correct: 1,
           explanation:
-            'Ozymandias also features a powerful ruler whose arrogance is exposed. Both poems use irony to undercut the powerful figure — Shelley through the ruined statue, Browning through the Duke\'s unintentional self-revelation.',
+            "Ozymandias also features a powerful ruler whose arrogance is exposed. Both poems use irony to undercut the powerful figure — Shelley through the ruined statue, Browning through the Duke's unintentional self-revelation.",
         },
       ],
     },
@@ -780,12 +752,13 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
 
 <p>As Poet Laureate, Tennyson had a quasi-official role to respond to national events. The poem honours the soldiers' bravery and obedience while implicitly questioning the competence of their commanders.</p>
 
-<div class="key-term"><strong>Key Term: Dactylic Dimeter</strong> — A metrical pattern of a stressed syllable followed by two unstressed syllables (DUM-da-da). Tennyson uses this rhythm to mimic the galloping of horses charging into battle.</div>
+<div class="key-term"><strong>Key Term: Anapaestic Dimeter</strong> — A metrical pattern of two unstressed syllables followed by a stressed one (da-da-DUM), with two such feet per line. Tennyson uses this rhythm — alongside a dactylic refrain ("Rode the six hundred") — to mimic the galloping of horses charging into battle.</div>
 
 <h3>Form &amp; Structure</h3>
 <ul>
   <li><strong>Six stanzas</strong> of varying length — the irregular structure mirrors the chaos and disorder of battle.</li>
-  <li><strong>Dactylic dimeter:</strong> The driving, galloping rhythm — "Half a league, half a league" — captures the relentless pace of the charge.</li>
+  <li><strong>Anapaestic dimeter (with dactylic refrain):</strong> The body of the poem is largely anapaestic dimeter (da-da-DUM da-da-DUM), while the refrain "Rode the six hundred" falls in dactyls. The opening line "Half a league, half a league" is a dactylic flourish that sets the gallop in motion.</li>
+  <li><strong>End-stopped lines:</strong> Most lines end with punctuation, reinforcing the drumbeat regularity of the charge.</li>
   <li><strong>Repetition and anaphora:</strong> Phrases like "Cannon to right of them" and "Into the valley of Death" are repeated, creating a sense of inevitability and entrapment.</li>
   <li><strong>Narrative structure:</strong> The poem follows the charge chronologically — approach, attack, retreat — before ending with a tribute. This mirrors the arc of the event itself.</li>
   <li><strong>Rhyme:</strong> Irregular but insistent, often using repeated words rather than true rhymes, adding to the pounding, relentless energy.</li>
@@ -890,8 +863,7 @@ The imperative directly addresses the reader, demanding respect and remembrance.
       quiz: [
         {
           id: 'aqa-pc-m5-q1',
-          question:
-            'What historical event does The Charge of the Light Brigade describe?',
+          question: 'What historical event does The Charge of the Light Brigade describe?',
           options: [
             'The Battle of Waterloo in 1815',
             'A disastrous cavalry charge at the Battle of Balaclava in the Crimean War',
@@ -905,7 +877,7 @@ The imperative directly addresses the reader, demanding respect and remembrance.
         {
           id: 'aqa-pc-m5-q2',
           question:
-            'What effect does the dactylic rhythm create?',
+            'What effect does the galloping metre (anapaestic dimeter with a dactylic refrain) create?',
           options: [
             'A slow, mournful pace',
             'A galloping, relentless momentum',
@@ -914,12 +886,11 @@ The imperative directly addresses the reader, demanding respect and remembrance.
           ],
           correct: 1,
           explanation:
-            'The dactylic rhythm (DUM-da-da) mimics the thundering gallop of horses charging into battle, creating a relentless forward momentum that drives the poem.',
+            'The body of the poem is in anapaestic dimeter (da-da-DUM) and the refrain "Rode the six hundred" in dactyls (DUM-da-da). Together they mimic the thundering gallop of horses charging into battle, creating a relentless forward momentum that drives the poem.',
         },
         {
           id: 'aqa-pc-m5-q3',
-          question:
-            'What tension exists within the poem?',
+          question: 'What tension exists within the poem?',
           options: [
             'Between the soldiers and each other',
             'Between celebration of bravery and acknowledgement of a military blunder',
@@ -928,18 +899,13 @@ The imperative directly addresses the reader, demanding respect and remembrance.
           ],
           correct: 1,
           explanation:
-            'Tennyson both celebrates the soldiers\' heroic obedience and acknowledges that "Someone had blunder\'d." This creates a tension between glorifying duty and criticising the commanders\' incompetence.',
+            "Tennyson both celebrates the soldiers' heroic obedience and acknowledges that \"Someone had blunder'd.\" This creates a tension between glorifying duty and criticising the commanders' incompetence.",
         },
         {
           id: 'aqa-pc-m5-q4',
           question:
             'Which poem is the best comparison for contrasting attitudes to a military charge?',
-          options: [
-            'Tissue',
-            'The Emigrée',
-            'Bayonet Charge',
-            'Checking Out Me History',
-          ],
+          options: ['Tissue', 'The Émigrée', 'Bayonet Charge', 'Checking Out Me History'],
           correct: 2,
           explanation:
             'Bayonet Charge (Ted Hughes) also describes a charge into danger, but Hughes focuses on individual terror and confusion rather than collective heroism. The two poems offer contrasting perspectives on the experience of battle.',
@@ -1075,8 +1041,7 @@ The final image: the soldiers' eyes are literally frozen. The monosyllables and 
       quiz: [
         {
           id: 'aqa-pc-m6-q1',
-          question:
-            'What is pararhyme, and why does Owen use it?',
+          question: 'What is pararhyme, and why does Owen use it?',
           options: [
             'Perfect rhyme — to create a musical, pleasant tone',
             'Imperfect rhyme where consonants match but vowels differ — to create unease and a sense that nothing resolves',
@@ -1089,22 +1054,20 @@ The final image: the soldiers' eyes are literally frozen. The monosyllables and 
         },
         {
           id: 'aqa-pc-m6-q2',
-          question:
-            'What is the effect of the repeated refrain "But nothing happens"?',
+          question: 'What is the effect of the repeated refrain "But nothing happens"?',
           options: [
             'It creates excitement and anticipation',
-            'It emphasises the monotonous futility of the soldiers\' suffering',
+            "It emphasises the monotonous futility of the soldiers' suffering",
             'It shows that the soldiers are safe',
             'It suggests the war is nearly over',
           ],
           correct: 1,
           explanation:
-            'The refrain hammers home the futility of the soldiers\' ordeal. Despite their immense suffering, there is no battle, no progress, and no resolution — just endless, meaningless exposure to the cold.',
+            "The refrain hammers home the futility of the soldiers' ordeal. Despite their immense suffering, there is no battle, no progress, and no resolution — just endless, meaningless exposure to the cold.",
         },
         {
           id: 'aqa-pc-m6-q3',
-          question:
-            'What is the main "enemy" in Exposure?',
+          question: 'What is the main "enemy" in Exposure?',
           options: [
             'The German army',
             'The British commanders',
@@ -1117,17 +1080,16 @@ The final image: the soldiers' eyes are literally frozen. The monosyllables and 
         },
         {
           id: 'aqa-pc-m6-q4',
-          question:
-            'Which poem is the best contrast for attitudes to war?',
+          question: 'Which poem is the best contrast for attitudes to war?',
           options: [
             'The Charge of the Light Brigade',
             'Tissue',
-            'The Emigrée',
+            'The Émigrée',
             'Checking Out Me History',
           ],
           correct: 0,
           explanation:
-            'The Charge of the Light Brigade celebrates active heroism and duty, while Exposure shows the unheroic, agonising reality of soldiers slowly dying from cold. The contrast between Tennyson\'s glorification and Owen\'s brutal honesty is a powerful comparison.',
+            "The Charge of the Light Brigade celebrates active heroism and duty, while Exposure shows the unheroic, agonising reality of soldiers slowly dying from cold. The contrast between Tennyson's glorification and Owen's brutal honesty is a powerful comparison.",
         },
       ],
     },
@@ -1254,8 +1216,7 @@ The paradoxical ending: the thing feared is <em>nothing</em> — invisible and i
       quiz: [
         {
           id: 'aqa-pc-m7-q1',
-          question:
-            'What do the first eight letters of "Storm on the Island" spell?',
+          question: 'What do the first eight letters of "Storm on the Island" spell?',
           options: [
             'STORMING',
             'STORMONT — the seat of the Northern Irish government',
@@ -1268,8 +1229,7 @@ The paradoxical ending: the thing feared is <em>nothing</em> — invisible and i
         },
         {
           id: 'aqa-pc-m7-q2',
-          question:
-            'What does the simile "spits like a tame cat / Turned savage" suggest?',
+          question: 'What does the simile "spits like a tame cat / Turned savage" suggest?',
           options: [
             'That the islanders keep pets',
             'That something familiar and domestic can become violent and threatening',
@@ -1282,8 +1242,7 @@ The paradoxical ending: the thing feared is <em>nothing</em> — invisible and i
         },
         {
           id: 'aqa-pc-m7-q3',
-          question:
-            'Why does Heaney use military language like "strafes" and "salvo"?',
+          question: 'Why does Heaney use military language like "strafes" and "salvo"?',
           options: [
             'To describe actual military combat',
             'To support the allegorical reading of the storm as political violence',
@@ -1296,8 +1255,7 @@ The paradoxical ending: the thing feared is <em>nothing</em> — invisible and i
         },
         {
           id: 'aqa-pc-m7-q4',
-          question:
-            'What is paradoxical about the final line?',
+          question: 'What is paradoxical about the final line?',
           options: [
             'It rhymes with the first line',
             'It says the islanders are no longer afraid',
@@ -1322,7 +1280,7 @@ The paradoxical ending: the thing feared is <em>nothing</em> — invisible and i
 <h2>Bayonet Charge — Ted Hughes (1957)</h2>
 
 <h3>Context</h3>
-<p>Ted Hughes (1930–1998) was one of the most significant English poets of the twentieth century, later becoming Poet Laureate. <strong>Bayonet Charge</strong> was published in his first collection, <em>The Hawk in the Rain</em> (1957). Although Hughes did not experience WWI himself, his father survived the Gallipoli campaign and rarely spoke of it — the silence itself made a profound impression.</p>
+<p>Ted Hughes (1930–1998) was one of the most significant English poets of the twentieth century, later becoming UK Poet Laureate (1984–1998), succeeding John Betjeman and followed by Andrew Motion. Yorkshire-born, he was husband of Sylvia Plath and father of Frieda and Nicholas Hughes. <strong>Bayonet Charge</strong> was published in his debut collection, <em>The Hawk in the Rain</em> (1957), by Faber &amp; Faber. Hughes was born in 1930 and never fought in any war. He drew on his father William's WWI accounts — William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment — to imagine the soldier's terror in this poem. William rarely spoke of his experiences, and that silence shaped Hughes's lifelong WWI imagination.</p>
 
 <p>The poem imagines a single soldier's experience during a bayonet charge, focusing on the raw, physical terror of the moment rather than any patriotic narrative. Hughes strips away the rhetoric of glory to reveal the primal fear at the heart of combat.</p>
 
@@ -1366,7 +1324,7 @@ A philosophical moment: the soldier suddenly questions the larger forces (fate, 
 The soldier questions whether he is an agent or a mere instrument. The image of a clock <em>hand</em> reduces him to a mechanism — he has no free will.</p>
 
 <p><strong>7. "King, honour, human dignity, etcetera"</strong><br/>
-The dismissive <em>etcetera</em> is devastating — patriotic ideals are reduced to an afterthought. In the moment of terror, these concepts are utterly meaningless.</p>
+Hughes writes <em>etcetera</em> once — cite exactly as printed; do not abbreviate to "etc.", and don't double the word. The dismissive single "etcetera" is devastating: patriotic ideals are reduced to throwaway filler. In the moment of terror, these concepts are utterly meaningless.</p>
 
 <p><strong>8. "His terror's touchy dynamite"</strong><br/>
 A metaphor comparing his fear to explosives. <em>Touchy</em> means unstable — the slightest thing could set him off. The alliterative "t" sounds are sharp and percussive.</p>
@@ -1384,13 +1342,12 @@ The hare — an innocent, natural creature — is caught in the crossfire, its s
   <li><strong>The Prelude</strong> — Both feature a dramatic shift from initial momentum to overwhelming fear, though in very different contexts.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Calling it "Ted Hughes' war poem" and implying he fought in WWI. Hughes was born in 1930 and never fought in the trenches. He was influenced by his father's silence about Gallipoli. Always get the context right.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Calling it "Ted Hughes' war poem" and implying he fought in WWI. Hughes was born in 1930 and never fought in any war. He drew on his father William's WWI accounts — William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment — to imagine the soldier's terror. Always get the context right. (Also: Hughes's word is "etcetera" — singular. Do not abbreviate to "etc.", and don't double the word to "etcetera etcetera".)</div>
 `,
       quiz: [
         {
           id: 'aqa-pc-m8-q1',
-          question:
-            'What narrative technique does Hughes use to open the poem?',
+          question: 'What narrative technique does Hughes use to open the poem?',
           options: [
             'Flashback',
             'In medias res — beginning in the middle of the action',
@@ -1404,41 +1361,35 @@ The hare — an innocent, natural creature — is caught in the crossfire, its s
         {
           id: 'aqa-pc-m8-q2',
           question:
-            'What is the effect of the word "etcetera" after "King, honour, human dignity"?',
+            'What is the effect of the dismissive "etcetera" after "King, honour, human dignity"?',
           options: [
-            'It shows the soldier\'s deep patriotism',
+            "It shows the soldier's deep patriotism",
             'It reduces patriotic ideals to an afterthought, showing they are meaningless in combat',
             'It proves the soldier is well educated',
             'It creates a respectful tone toward authority',
           ],
           correct: 1,
           explanation:
-            'The dismissive "etcetera" devastatingly reduces patriotic ideals to an afterthought. In the moment of raw terror, concepts like "King" and "honour" are utterly irrelevant — only survival matters.',
+            'Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don\'t double the word. The single, dismissive "etcetera" devastatingly reduces patriotic ideals to throwaway filler. In the moment of raw terror, concepts like "King" and "honour" are utterly irrelevant — only survival matters.',
         },
         {
           id: 'aqa-pc-m8-q3',
-          question:
-            'What does the yellow hare symbolise?',
+          question: 'What does the yellow hare symbolise?',
           options: [
             'The beauty of the countryside',
             'The enemy soldiers',
             'Innocent vulnerability caught in the violence of war',
-            'The soldier\'s childhood memories',
+            "The soldier's childhood memories",
           ],
           correct: 2,
           explanation:
-            'The hare is an innocent, natural creature caught in the crossfire — its suffering mirrors the soldier\'s own helpless vulnerability. Both are victims of a conflict they did not choose.',
+            "The hare is an innocent, natural creature caught in the crossfire — its suffering mirrors the soldier's own helpless vulnerability. Both are victims of a conflict they did not choose.",
         },
         {
           id: 'aqa-pc-m8-q4',
           question:
             'Which poem provides the best contrast in its presentation of a military charge?',
-          options: [
-            'Poppies',
-            'The Charge of the Light Brigade',
-            'London',
-            'Tissue',
-          ],
+          options: ['Poppies', 'The Charge of the Light Brigade', 'London', 'Tissue'],
           correct: 1,
           explanation:
             'Tennyson presents the charge as collective heroism ("Honour the charge they made!"), while Hughes presents it as individual terror and dehumanisation. This makes them an ideal comparison pair.',
@@ -1457,7 +1408,7 @@ The hare — an innocent, natural creature — is caught in the crossfire, its s
 <h2>Remains — Simon Armitage (2008)</h2>
 
 <h3>Context</h3>
-<p>Simon Armitage (b. 1963) is the current Poet Laureate. <strong>Remains</strong> was published in <em>The Not Dead</em> (2008), a collection based on real interviews with soldiers who served in conflicts including Iraq and the Gulf War. The poem is inspired by the testimony of Sergeant Rob Thompson, who described shooting a looter during his service and being haunted by the memory afterwards.</p>
+<p>Simon Armitage (b. 1963) is the UK Poet Laureate (appointed May 2019, succeeding Carol Ann Duffy who held the post 2009-2019). Yorkshire-born, he originally trained as a probation officer and is now a professor at Leeds University; he served as Oxford Professor of Poetry from 2015 to 2019. <strong>Armitage never served in any military or combat role.</strong> <em>Remains</em> (2007) was written for Channel 4's documentary <em>The Not Dead</em> and is based on interviews with Iraq War veterans — not on personal experience. The poem draws on the testimony of soldiers who described shooting a looter and being haunted by the memory afterwards; Armitage acts as a poetic translator of their words.</p>
 
 <p>The poem addresses Post-Traumatic Stress Disorder (PTSD), a condition that was not widely recognised until the late twentieth century. Armitage gives voice to soldiers who struggle to process their experiences after returning home.</p>
 
@@ -1481,7 +1432,7 @@ The hare — an innocent, natural creature — is caught in the crossfire, its s
 </ul>
 
 <h3>Poet Context: Simon Armitage & Contemporary War Poetry</h3>
-<p>Simon Armitage (b. 1963) is the current Poet Laureate of the United Kingdom (appointed 2019). Before his appointment, Armitage was known for accessible, contemporary poetry that often employs colloquial Yorkshire dialect. "Remains" appears in The Not Dead (2008), a collection based on interviews with real soldiers who served in Iraq and Afghanistan. Rather than creating his own narrative, Armitage acts as a poetic translator, taking soldiers' oral testimonies and reshaping them into verse. This approach is deeply political: it insists that soldiers' voices — typically silenced by military hierarchy and government rhetoric — be heard. The poem reflects the growing recognition of PTSD as a serious psychological condition affecting modern warfare. Unlike traditional war poetry, which often emphasized collective sacrifice or patriotic duty, Remains emphasizes individual psychological trauma. Armitage's colloquial, conversational style makes the poem feel like an overheard confession, which intensifies its emotional impact. The poem challenges the sanitised rhetoric surrounding military action, showing instead the psychological cost of modern conflict.</p>
+<p>Simon Armitage (b. 1963) has been UK Poet Laureate since May 2019 (succeeding Carol Ann Duffy, 2009-2019). Yorkshire-born and originally trained as a probation officer, he is a professor at Leeds University and previously served as Oxford Professor of Poetry (2015-2019). He is known for accessible, contemporary poetry that often employs colloquial Yorkshire dialect. <strong>Crucially, Armitage himself never served in any military or combat role.</strong> "Remains" was written for Channel 4's documentary <em>The Not Dead</em> (2007) and appears in the collection of the same name; it is based on interviews with Iraq War veterans, not on personal experience. Rather than creating his own narrative, Armitage acts as a poetic translator, taking soldiers' oral testimonies and reshaping them into verse. This approach is deeply political: it insists that soldiers' voices — typically silenced by military hierarchy and government rhetoric — be heard. The poem reflects the growing recognition of PTSD as a serious psychological condition affecting modern warfare. Unlike traditional war poetry, which often emphasized collective sacrifice or patriotic duty, Remains emphasizes individual psychological trauma. Armitage's colloquial, conversational style makes the poem feel like an overheard confession, which intensifies its emotional impact. The poem challenges the sanitised rhetoric surrounding military action, showing instead the psychological cost of modern conflict.</p>
 
 <h3>Key Quotations &amp; Analysis</h3>
 
@@ -1497,7 +1448,7 @@ Shockingly graphic — the casualness of <em>tosses</em> (like tossing rubbish) 
 <p><strong>4. "End of story, except not really"</strong><br/>
 A pivotal moment: the soldier tries to close the narrative but cannot. <em>Except not really</em> introduces the poem's second half — the haunting.</p>
 
-<p><strong>5. "his blood-Loss, shadow stays on the street"</strong><br/>
+<p><strong>5. "his blood-shadow stays on the street"</strong><br/>
 The bloodstain literally <em>stays</em> on the street — an indelible mark. <em>Shadow</em> suggests the victim has become a ghost that cannot be cleaned away.</p>
 
 <p><strong>6. "he's here in my head when I close my eyes"</strong><br/>
@@ -1568,8 +1519,7 @@ The repetition of <em>bloody</em> creates a double meaning — literally covered
       quiz: [
         {
           id: 'aqa-pc-m9-q1',
-          question:
-            'Why is the shift from "we" to "I" significant in Remains?',
+          question: 'Why is the shift from "we" to "I" significant in Remains?',
           options: [
             'It shows the soldier has been promoted',
             'It shows the soldier moving from shared responsibility to isolated, personal guilt',
@@ -1582,8 +1532,7 @@ The repetition of <em>bloody</em> creates a double meaning — literally covered
         },
         {
           id: 'aqa-pc-m9-q2',
-          question:
-            'What condition does the poem primarily explore?',
+          question: 'What condition does the poem primarily explore?',
           options: [
             'Physical injury from combat',
             'Homesickness',
@@ -1596,13 +1545,12 @@ The repetition of <em>bloody</em> creates a double meaning — literally covered
         },
         {
           id: 'aqa-pc-m9-q3',
-          question:
-            'What is the effect of "probably armed, possibly not"?',
+          question: 'What is the effect of "probably armed, possibly not"?',
           options: [
             'It proves the man was definitely armed',
             'It introduces moral ambiguity — the soldier may have killed an innocent person',
             'It shows the soldier did not care either way',
-            'It criticises the army\'s intelligence',
+            "It criticises the army's intelligence",
           ],
           correct: 1,
           explanation:
@@ -1624,11 +1572,10 @@ The repetition of <em>bloody</em> creates a double meaning — literally covered
         },
         {
           id: 'aqa-pc-m9-q5',
-          question:
-            'What does "dug in behind enemy lines" mean metaphorically?',
+          question: 'What does "dug in behind enemy lines" mean metaphorically?',
           options: [
             'The soldier is still in combat',
-            'The dead man\'s memory has embedded itself in the soldier\'s mind like a soldier in a trench',
+            "The dead man's memory has embedded itself in the soldier's mind like a soldier in a trench",
             'The army has returned to the battlefield',
             'The soldier is hiding from his commanders',
           ],
@@ -1720,8 +1667,7 @@ The final image: she listens for her son's <em>childhood</em> voice, not his adu
       quiz: [
         {
           id: 'aqa-pc-m10-q1',
-          question:
-            'What two semantic fields does Weir interweave throughout the poem?',
+          question: 'What two semantic fields does Weir interweave throughout the poem?',
           options: [
             'Nature and religion',
             'Textiles/sewing and warfare/remembrance',
@@ -1734,8 +1680,7 @@ The final image: she listens for her son's <em>childhood</em> voice, not his adu
         },
         {
           id: 'aqa-pc-m10-q2',
-          question:
-            'What does "leaned against it like a war memorial" suggest?',
+          question: 'What does "leaned against it like a war memorial" suggest?',
           options: [
             'The mother is physically tired',
             'The mother has become a living monument to grief and loss',
@@ -1748,11 +1693,10 @@ The final image: she listens for her son's <em>childhood</em> voice, not his adu
         },
         {
           id: 'aqa-pc-m10-q3',
-          question:
-            'Why is the son\'s fate left ambiguous?',
+          question: "Why is the son's fate left ambiguous?",
           options: [
             'Because Weir forgot to finish the poem',
-            'Because the uncertainty mirrors the mother\'s agonising wait and not knowing',
+            "Because the uncertainty mirrors the mother's agonising wait and not knowing",
             'Because the poem is set before any conflict',
             'Because the son is still a child',
           ],
@@ -1764,15 +1708,10 @@ The final image: she listens for her son's <em>childhood</em> voice, not his adu
           id: 'aqa-pc-m10-q4',
           question:
             'Which poem is the best comparison for exploring the personal, domestic impact of conflict?',
-          options: [
-            'Ozymandias',
-            'Kamikaze',
-            'London',
-            'Storm on the Island',
-          ],
+          options: ['Ozymandias', 'Kamikaze', 'London', 'Storm on the Island'],
           correct: 1,
           explanation:
-            'Kamikaze also explores the family\'s perspective on a soldier\'s departure and the personal consequences of conflict. Both poems show that war\'s impact extends far beyond the battlefield into the home.',
+            "Kamikaze also explores the family's perspective on a soldier's departure and the personal consequences of conflict. Both poems show that war's impact extends far beyond the battlefield into the home.",
         },
       ],
     },
@@ -1904,8 +1843,7 @@ The bluntest statement in the poem. After all the photographer's anguish, the pu
       quiz: [
         {
           id: 'aqa-pc-m11-q1',
-          question:
-            'Why does Duffy compare the darkroom to a church?',
+          question: 'Why does Duffy compare the darkroom to a church?',
           options: [
             'Because the photographer is religious',
             'Because developing the images is a solemn, reverent act — like a sacred ritual for the dead',
@@ -1918,13 +1856,12 @@ The bluntest statement in the poem. After all the photographer's anguish, the pu
         },
         {
           id: 'aqa-pc-m11-q2',
-          question:
-            'What is the effect of "Belfast. Beirut. Phnom Penh."?',
+          question: 'What is the effect of "Belfast. Beirut. Phnom Penh."?',
           options: [
             'It shows the photographer has travelled widely for pleasure',
             'The staccato listing of conflict zones emphasises the overwhelming accumulation of global suffering',
             'It rhymes with the previous line',
-            'It names the photographer\'s favourite cities',
+            "It names the photographer's favourite cities",
           ],
           correct: 1,
           explanation:
@@ -1932,12 +1869,11 @@ The bluntest statement in the poem. After all the photographer's anguish, the pu
         },
         {
           id: 'aqa-pc-m11-q3',
-          question:
-            'Who does Duffy ultimately criticise in the poem?',
+          question: 'Who does Duffy ultimately criticise in the poem?',
           options: [
             'The photographer',
             'The soldiers',
-            'The general public for their indifference to war\'s suffering',
+            "The general public for their indifference to war's suffering",
             'The newspaper editors',
           ],
           correct: 2,
@@ -1948,12 +1884,7 @@ The bluntest statement in the poem. After all the photographer's anguish, the pu
           id: 'aqa-pc-m11-q4',
           question:
             'Which poem is the best comparison for exploring the psychological aftermath of witnessing violence?',
-          options: [
-            'Ozymandias',
-            'London',
-            'Remains',
-            'Tissue',
-          ],
+          options: ['Ozymandias', 'London', 'Remains', 'Tissue'],
           correct: 2,
           explanation:
             'Remains also features a protagonist haunted by what he has witnessed. Both the soldier and the photographer carry traumatic memories they cannot escape — making them an excellent comparison pair for the theme of psychological aftermath.',
@@ -1980,7 +1911,7 @@ The bluntest statement in the poem. After all the photographer's anguish, the pu
 
 <h3>Form &amp; Structure</h3>
 <ul>
-  <li><strong>Ten quatrains and a final single line:</strong> The quatrains are regular, but the final isolated line ("turned into your skin") breaks the pattern, drawing attention to the personal, physical conclusion.</li>
+  <li><strong>10 quatrains followed by a final isolated single-line stanza ("turned into your skin."):</strong> The quatrains are regular, but the final isolated line stands ALONE as its own one-line stanza, breaking the pattern. <em>Teacher annotation:</em> The isolated final line is structurally significant — Dharker breaks the regularity of the quatrains to emphasise the volta from paper to flesh.</li>
   <li><strong>No regular rhyme scheme:</strong> The lack of rhyme gives the poem a flowing, meditative quality — like paper drifting.</li>
   <li><strong>Enjambment</strong> is used extensively, allowing ideas to flow across lines and stanzas — mirroring the layering of paper and the interconnectedness of the ideas.</li>
   <li><strong>Light, airy tone:</strong> Short lines and gentle imagery create a delicate texture that mirrors tissue paper itself.</li>
@@ -2021,8 +1952,10 @@ Even receipts are records of human life. <em>Fine slips</em> emphasises their ph
 <p><strong>7. "might fly our lives like paper kites"</strong><br/>
 A beautiful simile: lives as <em>paper kites</em> — light, fragile, airborne, beautiful, but also vulnerable to tearing. The image combines freedom with fragility.</p>
 
-<p><strong>8. "turned into your skin"</strong><br/>
-The final, isolated line. The poem suddenly becomes personal — <em>your</em> addresses the reader directly. <em>Skin</em> is the most intimate kind of tissue, connecting the extended metaphor to the human body. We are all as fragile as paper.</p>
+<p><strong>8. "turned into your skin." (final isolated single-line stanza)</strong><br/>
+The final, isolated single-line stanza, structurally separated from the ten preceding quatrains. The poem suddenly becomes personal — <em>your</em> addresses the reader directly. <em>Skin</em> is the most intimate kind of tissue, connecting the extended metaphor to the human body. We are all as fragile as paper. <em>Teacher annotation:</em> The isolated final line is structurally significant — Dharker breaks the regularity of the quatrains to emphasise the volta from paper to flesh.</p>
+
+<div class="rights-notice"><strong>Rights:</strong> "Tissue" by Imtiaz Dharker is from <em>The terrorist at my table</em> (Bloodaxe Books, 2006). All rights held by Bloodaxe Books (bloodaxebooks.com). Quotations reproduced under fair dealing for criticism and review (CDPA 1988).</div>
 
 <div class="examiner-tip"><strong>Marker Tip:</strong> <em>Tissue</em> is often considered the hardest poem in the anthology. Focus on the <strong>extended metaphor of paper</strong> and track how Dharker applies it to different areas (religion, architecture, borders, money, the body). This gives your essay a clear structure.</div>
 
@@ -2050,7 +1983,7 @@ The final, isolated line. The poem suddenly becomes personal — <em>your</em> a
   </tr>
   <tr>
     <td>Fragility of All Human Structures</td>
-    <td>"Paper that lets the light / shine through" / "if buildings were paper" / "turned into your skin"</td>
+    <td>"Paper that lets the light / shine through" / "if buildings were paper" / "turned into your skin." (final isolated single-line stanza)</td>
   </tr>
   <tr>
     <td>Arbitrariness of Borders &amp; Power</td>
@@ -2066,7 +1999,7 @@ The final, isolated line. The poem suddenly becomes personal — <em>your</em> a
   </tr>
   <tr>
     <td>Universal Human Mortality</td>
-    <td>"turned into your skin"</td>
+    <td>"turned into your skin." (final isolated single-line stanza)</td>
   </tr>
 </table>
 
@@ -2074,7 +2007,7 @@ The final, isolated line. The poem suddenly becomes personal — <em>your</em> a
 <ul>
   <li><strong>Ozymandias</strong> — Both argue that human power and structures are ultimately temporary and fragile.</li>
   <li><strong>London</strong> — Both critique human-made structures (Blake: institutions; Dharker: borders, buildings), though Dharker's tone is hopeful where Blake's is despairing.</li>
-  <li><strong>The Emigrée</strong> — Both explore borders, identity, and the power of memory to transcend physical structures.</li>
+  <li><strong>The Émigrée</strong> — Both explore borders, identity, and the power of memory to transcend physical structures.</li>
   <li><strong>Storm on the Island</strong> — Both explore the vulnerability of human constructions when faced with larger forces.</li>
 </ul>
 
@@ -2083,8 +2016,7 @@ The final, isolated line. The poem suddenly becomes personal — <em>your</em> a
       quiz: [
         {
           id: 'aqa-pc-m12-q1',
-          question:
-            'What does paper represent in the poem\'s extended metaphor?',
+          question: "What does paper represent in the poem's extended metaphor?",
           options: [
             'Only religious texts',
             'Human structures, records, identities, and life itself — all of which are fragile',
@@ -2097,8 +2029,7 @@ The final, isolated line. The poem suddenly becomes personal — <em>your</em> a
         },
         {
           id: 'aqa-pc-m12-q2',
-          question:
-            'Why does the final line stand alone?',
+          question: 'Why does the final line stand alone?',
           options: [
             'Because Dharker ran out of space',
             'To draw attention to the personal, physical conclusion — connecting paper to the human body',
@@ -2107,12 +2038,11 @@ The final, isolated line. The poem suddenly becomes personal — <em>your</em> a
           ],
           correct: 1,
           explanation:
-            'The isolated final line ("turned into your skin") breaks the pattern of quatrains, making the reader pause. It shifts from abstract ideas about paper to the intimate, physical reality of the human body — we are all as fragile as tissue.',
+            'The isolated final single-line stanza ("turned into your skin.") stands ALONE, breaking the pattern of the ten preceding quatrains. Dharker breaks the regularity of the quatrains to emphasise the volta from paper to flesh, shifting from abstract ideas about paper to the intimate, physical reality of the human body — we are all as fragile as tissue.',
         },
         {
           id: 'aqa-pc-m12-q3',
-          question:
-            'What does "let the daylight break through capitals and monoliths" mean?',
+          question: 'What does "let the daylight break through capitals and monoliths" mean?',
           options: [
             'Cities should have more windows',
             'Dharker wants natural forces (light) to penetrate rigid human power structures',
@@ -2127,12 +2057,7 @@ The final, isolated line. The poem suddenly becomes personal — <em>your</em> a
           id: 'aqa-pc-m12-q4',
           question:
             'Which poem is the best comparison for exploring the impermanence of human power?',
-          options: [
-            'Remains',
-            'Bayonet Charge',
-            'Ozymandias',
-            'Poppies',
-          ],
+          options: ['Remains', 'Bayonet Charge', 'Ozymandias', 'Poppies'],
           correct: 2,
           explanation:
             'Ozymandias also argues that human power and structures are ultimately temporary. Both poems present the fragility of what seems permanent — Shelley through a ruined statue, Dharker through the metaphor of paper.',
@@ -2141,17 +2066,17 @@ The final, isolated line. The poem suddenly becomes personal — <em>your</em> a
     },
 
     // ──────────────────────────────────────────────
-    // MODULE 13 — The Emigrée (Carol Rumens)
+    // MODULE 13 — The Émigrée (Carol Rumens)
     // ──────────────────────────────────────────────
     {
       id: 'aqa-pc-m13',
-      title: 'The Emigrée — Carol Rumens',
+      title: 'The Émigrée — Carol Rumens',
       duration: '55 min',
       content: `
-<h2>The Emigrée — Carol Rumens (1993)</h2>
+<h2>The Émigrée — Carol Rumens (1993)</h2>
 
 <h3>Context</h3>
-<p>Carol Rumens (b. 1944) is an English poet, novelist, and critic. <strong>The Emigrée</strong> was published in <em>Thinking of Skins</em> (1993). The poem is written from the perspective of a person (the feminine <em>emigrée</em> suggests a woman) who left her homeland as a child and now lives in a new country. Despite reports of conflict or oppression in her former home, her childhood memory of the place remains beautiful and idealised.</p>
+<p>Carol Rumens (b. 1944) is an English poet, novelist, and critic. <strong>The Émigrée</strong> was published in <em>Thinking of Skins</em> (1993). The poem is written from the perspective of a person (the feminine <em>émigrée</em> suggests a woman) who left her homeland as a child and now lives in a new country. Despite reports of conflict or oppression in her former home, her childhood memory of the place remains beautiful and idealised.</p>
 
 <p>The poem does not name a specific country — it could apply to any displaced person. This universality makes it relevant to refugees from any conflict, whether in Eastern Europe, the Middle East, or elsewhere.</p>
 
@@ -2159,7 +2084,7 @@ The final, isolated line. The poem suddenly becomes personal — <em>your</em> a
 
 <h3>Form &amp; Structure</h3>
 <ul>
-  <li><strong>Three stanzas</strong> of irregular length — the lack of uniformity reflects the displaced, fragmented experience of an emigrée.</li>
+  <li><strong>Three stanzas</strong> of irregular length — the lack of uniformity reflects the displaced, fragmented experience of an émigrée.</li>
   <li><strong>Free verse</strong> with no regular metre or rhyme — this openness contrasts with the restrictions the speaker faces.</li>
   <li><strong>Refrain:</strong> Each stanza ends with a reference to the city being "sunlight" — this insistent repetition shows the speaker's determination to preserve her idealised memory.</li>
   <li><strong>Present tense:</strong> "There once was a country" but "my memory of it is sunlight-clear" — past and present are layered together.</li>
@@ -2207,22 +2132,21 @@ The threatening <em>they</em> now <em>mutter death</em>. Her very <em>shadow</em
 
 <h3>Comparison Links</h3>
 <ul>
-  <li><strong>London</strong> — Both present visions of a city, but Blake's is nightmarish while the emigrée's is idealised. Both explore the relationship between place and identity.</li>
+  <li><strong>London</strong> — Both present visions of a city, but Blake's is nightmarish while the émigrée's is idealised. Both explore the relationship between place and identity.</li>
   <li><strong>Tissue</strong> — Both explore borders, identity, and the fragility of human-made divisions.</li>
   <li><strong>Checking Out Me History</strong> — Both speakers resist an identity imposed on them by an oppressive system.</li>
   <li><strong>Kamikaze</strong> — Both explore the tension between personal identity and societal expectation, and both feature outsiders who are defined by others' judgments.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Naming a specific country as the emigrée's homeland. Rumens deliberately leaves it unnamed so the poem applies universally to all displaced people. Discuss the <em>universality</em>, not a specific historical event.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Naming a specific country as the émigrée's homeland. Rumens deliberately leaves it unnamed so the poem applies universally to all displaced people. Discuss the <em>universality</em>, not a specific historical event.</div>
 `,
       quiz: [
         {
           id: 'aqa-pc-m13-q1',
-          question:
-            'Why does each stanza end with a reference to "sunlight"?',
+          question: 'Why does each stanza end with a reference to "sunlight"?',
           options: [
             'Because the poem is set in summer',
-            'To emphasise the speaker\'s persistent, idealised memory that she refuses to let go of',
+            "To emphasise the speaker's persistent, idealised memory that she refuses to let go of",
             'Because the poet likes bright imagery',
             'To contrast with the cold climate of her new country',
           ],
@@ -2232,8 +2156,7 @@ The threatening <em>they</em> now <em>mutter death</em>. Her very <em>shadow</em
         },
         {
           id: 'aqa-pc-m13-q2',
-          question:
-            'What does "branded by an impression of sunlight" suggest?',
+          question: 'What does "branded by an impression of sunlight" suggest?',
           options: [
             'She has a sunburn',
             'Her childhood memory is permanently marked on her identity — both a gift and a mark of difference',
@@ -2246,8 +2169,7 @@ The threatening <em>they</em> now <em>mutter death</em>. Her very <em>shadow</em
         },
         {
           id: 'aqa-pc-m13-q3',
-          question:
-            'Who are "they" in the poem?',
+          question: 'Who are "they" in the poem?',
           options: [
             'Her family members',
             'An unnamed, threatening force representing hostility, suspicion, and oppression in her new country',
@@ -2323,7 +2245,7 @@ The <em>samurai sword</em> symbolises Japanese warrior honour and duty. The pilo
 <p><strong>4. "the little fishing boats strung out like bunting"</strong><br/>
 A beautiful simile — the boats look like festive decorations (<em>bunting</em>). This peaceful, celebratory image of home life may be what persuades the pilot to turn back.</p>
 
-<p><strong>5. "a huge flag-Loss, waving"</strong><br/>
+<p><strong>5. "a huge flag waved"</strong><br/>
 The fish's tail is compared to a flag — but notably not the Japanese flag of militarism. This is nature's flag, suggesting the pilot reconnects with the natural world rather than nationalist ideology.</p>
 
 <p><strong>6. "he must have wondered / which way to tip his rigging"</strong><br/>
@@ -2348,7 +2270,7 @@ The past tense <em>loved</em> is heartbreaking — the family's love has been ex
   <li><strong>The Charge of the Light Brigade</strong> — Both explore duty and sacrifice; Tennyson's soldiers obey orders, Garland's pilot defies them — both face devastating consequences.</li>
   <li><strong>Poppies</strong> — Both explore the family's perspective on a loved one's involvement in conflict.</li>
   <li><strong>Remains</strong> — Both explore the aftermath of a pivotal wartime moment — one soldier kills and is haunted; the other refuses to kill and is shunned.</li>
-  <li><strong>The Emigrée</strong> — Both feature speakers navigating identity and belonging; both experience being treated as outsiders by their own community.</li>
+  <li><strong>The Émigrée</strong> — Both feature speakers navigating identity and belonging; both experience being treated as outsiders by their own community.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Only writing about the pilot's decision and ignoring the family's response. The poem's emotional weight lies in the <em>consequences</em> of his return — particularly the family's silence. Always address both the decision and its aftermath.</div>
@@ -2356,8 +2278,7 @@ The past tense <em>loved</em> is heartbreaking — the family's love has been ex
       quiz: [
         {
           id: 'aqa-pc-m14-q1',
-          question:
-            'What is the significance of the father\'s silence throughout the poem?',
+          question: "What is the significance of the father's silence throughout the poem?",
           options: [
             'He is shy',
             'He never speaks in the poem — mirroring how his family refuses to speak to him and how his story has been erased',
@@ -2366,12 +2287,11 @@ The past tense <em>loved</em> is heartbreaking — the family's love has been ex
           ],
           correct: 1,
           explanation:
-            'The father\'s voicelessness is a structural choice that mirrors the family\'s silence towards him. He has been socially erased — denied both a voice in the family and a voice in the poem. His story is told only through his daughter\'s uncertain reconstruction.',
+            "The father's voicelessness is a structural choice that mirrors the family's silence towards him. He has been socially erased — denied both a voice in the family and a voice in the poem. His story is told only through his daughter's uncertain reconstruction.",
         },
         {
           id: 'aqa-pc-m14-q2',
-          question:
-            'What conflict does the pilot face?',
+          question: 'What conflict does the pilot face?',
           options: [
             'A conflict with enemy soldiers',
             'A conflict between cultural duty (dying with honour) and the instinct to survive',
@@ -2384,8 +2304,7 @@ The past tense <em>loved</em> is heartbreaking — the family's love has been ex
         },
         {
           id: 'aqa-pc-m14-q3',
-          question:
-            'What role does nature play in the poem?',
+          question: 'What role does nature play in the poem?',
           options: [
             'It is purely decorative',
             'It may have inspired the pilot to turn back — the beauty of the natural world contrasts with the ideology of sacrifice',
@@ -2394,29 +2313,23 @@ The past tense <em>loved</em> is heartbreaking — the family's love has been ex
           ],
           correct: 1,
           explanation:
-            'The natural imagery (fishing boats, fish, the sea) represents the peaceful, beautiful reality of home life. This beauty may have persuaded the pilot that life is worth preserving — nature\'s power to inspire life defies the ideology of death.',
+            "The natural imagery (fishing boats, fish, the sea) represents the peaceful, beautiful reality of home life. This beauty may have persuaded the pilot that life is worth preserving — nature's power to inspire life defies the ideology of death.",
         },
         {
           id: 'aqa-pc-m14-q4',
           question:
             'Which poem is the best comparison for exploring the consequences of defying duty?',
-          options: [
-            'London',
-            'Tissue',
-            'The Charge of the Light Brigade',
-            'Ozymandias',
-          ],
+          options: ['London', 'Tissue', 'The Charge of the Light Brigade', 'Ozymandias'],
           correct: 2,
           explanation:
             'The Charge of the Light Brigade explores soldiers who obey duty unquestioningly ("Theirs not to reason why"), while Kamikaze explores a soldier who defies it. Both poems examine the relationship between the individual and military authority.',
         },
         {
           id: 'aqa-pc-m14-q5',
-          question:
-            'What does "was no longer the father we loved" reveal?',
+          question: 'What does "was no longer the father we loved" reveal?',
           options: [
             'He had physically changed',
-            'The family\'s love has been extinguished by cultural shame — he is emotionally dead to them despite being alive',
+            "The family's love has been extinguished by cultural shame — he is emotionally dead to them despite being alive",
             'He moved to another country',
             'The daughter never loved him',
           ],
@@ -2472,16 +2385,16 @@ British history (the Norman Conquest) is dismissed with the casual <em>all dat</
 <p><strong>3. "Dem tell me bout Lord Nelson and Waterloo"</strong><br/>
 Nelson is a British naval hero — but from the Caribbean perspective, British naval power was used to enforce slavery. Agard questions whose hero Nelson really is.</p>
 
-<p><strong>4. "Toussaint L'Ouverture / a slave / with a vision"</strong><br/>
-Toussaint L'Ouverture led the Haitian Revolution — the only successful slave revolt in history. The short, emphatic lines (<em>a slave / with a vision</em>) create a powerful, dignified portrait.</p>
+<p><strong>4. "Toussaint / a slave / with vision"</strong><br/>
+Toussaint L'Ouverture led the Haitian Revolution — the only successful slave revolt in history. The short, emphatic lines (<em>a slave / with vision</em>) create a powerful, dignified portrait.</p>
 
-<p><strong>5. "a Beacon / a Caribbean Beacon"</strong><br/>
-The metaphor of a <em>beacon</em> (a guiding light) elevates Toussaint to a heroic, almost mythic status. The repetition insists that Caribbean history has its own heroes.</p>
+<p><strong>5. "Toussaint de thorn / to de French / Toussaint de beacon / of de Haitian Revolution"</strong><br/>
+The dual metaphor of <em>thorn</em> (pain to oppressors) and <em>beacon</em> (guiding light to the oppressed) elevates Toussaint to a heroic, almost mythic status. The Caribbean Creole "de" insists that this history must be told in its own voice.</p>
 
-<p><strong>6. "Nanny de Maroon / see-Loss, far woman / of mountain dream"</strong><br/>
+<p><strong>6. "Nanny / see-far woman / of mountain dream"</strong><br/>
 Nanny of the Maroons was a Jamaican resistance leader. <em>See-far woman</em> (a visionary) and <em>mountain dream</em> combine respect with almost spiritual reverence.</p>
 
-<p><strong>7. "Mary Seacole / from de Caribbean / she volunteer"</strong><br/>
+<p><strong>7. "Mary Seacole / From Jamaica / she travel far / to de Crimean War / she volunteer to go"</strong><br/>
 Mary Seacole nursed British soldiers in the Crimean War but was largely forgotten by British history in favour of Florence Nightingale. Agard reclaims her story.</p>
 
 <p><strong>8. "But now I checking out me own history"</strong><br/>
@@ -2495,7 +2408,7 @@ The final, climactic image. <em>Carving</em> is a verb of physical creation — 
 <h3>Comparison Links</h3>
 <ul>
   <li><strong>London</strong> — Both protest against institutional oppression (Blake: Church and monarchy; Agard: colonial education system).</li>
-  <li><strong>The Emigrée</strong> — Both speakers resist having their identity defined by an external, hostile authority.</li>
+  <li><strong>The Émigrée</strong> — Both speakers resist having their identity defined by an external, hostile authority.</li>
   <li><strong>Ozymandias</strong> — Both explore the relationship between power and narrative control — Ozymandias tried to control his legacy; the colonial system controls whose stories are told.</li>
   <li><strong>My Last Duchess</strong> — Both explore how those in power control narratives — the Duke controls the Duchess's story; the education system controls historical narratives.</li>
 </ul>
@@ -2505,8 +2418,7 @@ The final, climactic image. <em>Carving</em> is a verb of physical creation — 
       quiz: [
         {
           id: 'aqa-pc-m15-q1',
-          question:
-            'Why does Agard use Creole dialect in the poem?',
+          question: 'Why does Agard use Creole dialect in the poem?',
           options: [
             'Because he cannot write in Standard English',
             'To assert his Caribbean identity and resist the dominance of Standard English as a political and cultural choice',
@@ -2515,12 +2427,11 @@ The final, climactic image. <em>Carving</em> is a verb of physical creation — 
           ],
           correct: 1,
           explanation:
-            'Agard\'s use of Creole is a deliberate political act. By writing in his own dialect rather than Standard English, he asserts his Caribbean identity and resists the cultural dominance of the colonial language. The dialect IS the message.',
+            "Agard's use of Creole is a deliberate political act. By writing in his own dialect rather than Standard English, he asserts his Caribbean identity and resists the cultural dominance of the colonial language. The dialect IS the message.",
         },
         {
           id: 'aqa-pc-m15-q2',
-          question:
-            'What is the effect of the alternating standard and italicised stanzas?',
+          question: 'What is the effect of the alternating standard and italicised stanzas?',
           options: [
             'It makes the poem look attractive on the page',
             'It visually embodies the conflict between the imposed British curriculum and the reclaimed Caribbean history',
@@ -2533,8 +2444,7 @@ The final, climactic image. <em>Carving</em> is a verb of physical creation — 
         },
         {
           id: 'aqa-pc-m15-q3',
-          question:
-            'What does "I carving out me identity" suggest?',
+          question: 'What does "I carving out me identity" suggest?',
           options: [
             'The speaker is a professional sculptor',
             'The speaker is actively creating his own sense of self, rather than accepting the identity imposed on him',
@@ -2547,8 +2457,7 @@ The final, climactic image. <em>Carving</em> is a verb of physical creation — 
         },
         {
           id: 'aqa-pc-m15-q4',
-          question:
-            'Who is Toussaint L\'Ouverture and why is he important to the poem?',
+          question: "Who is Toussaint L'Ouverture and why is he important to the poem?",
           options: [
             'A French general celebrated in the British curriculum',
             'A Haitian revolutionary who led the only successful slave revolt — an example of suppressed Caribbean history',
@@ -2557,23 +2466,18 @@ The final, climactic image. <em>Carving</em> is a verb of physical creation — 
           ],
           correct: 1,
           explanation:
-            'Toussaint L\'Ouverture led the Haitian Revolution (1791–1804), the only successful slave revolt in history. He represents the kind of heroic figure that was excluded from Agard\'s British education — exactly the history the poem seeks to reclaim.',
+            "Toussaint L'Ouverture led the Haitian Revolution (1791–1804), the only successful slave revolt in history. He represents the kind of heroic figure that was excluded from Agard's British education — exactly the history the poem seeks to reclaim.",
         },
         {
           id: 'aqa-pc-m15-q5',
           question:
             'Which poem is the best comparison for exploring how institutions control people?',
-          options: [
-            'Poppies',
-            'Bayonet Charge',
-            'London',
-            'Storm on the Island',
-          ],
+          options: ['Poppies', 'Bayonet Charge', 'London', 'Storm on the Island'],
           correct: 2,
           explanation:
-            'London also protests against institutional oppression — Blake attacks the Church, monarchy, and political system, while Agard attacks the colonial education system. Both poets use their art to challenge the power structures that control people\'s lives and minds.',
+            "London also protests against institutional oppression — Blake attacks the Church, monarchy, and political system, while Agard attacks the colonial education system. Both poets use their art to challenge the power structures that control people's lives and minds.",
         },
       ],
     },
   ],
-};
+}

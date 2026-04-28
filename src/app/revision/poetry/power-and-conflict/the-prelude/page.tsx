@@ -4,10 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {
-  InteractivePoemViewer,
-  type PoemData,
-} from '@/components/study'
+import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -22,20 +19,36 @@ const POEM: PoemData = {
     {
       text: 'One summer evening (led by her) I found',
       annotations: [
-        { type: 'Personification', note: 'Nature is personified as a female guide ("her"), suggesting a nurturing, maternal force leading the young Wordsworth.', color: '#f59e0b' },
-        { type: 'Context', note: 'The parenthetical "(led by her)" implies nature has agency and purpose, a key Romantic idea.', color: '#3b82f6' },
+        {
+          type: 'Personification',
+          note: 'Nature is personified as a female guide ("her"), suggesting a nurturing, maternal force leading the young Wordsworth.',
+          color: '#f59e0b',
+        },
+        {
+          type: 'Context',
+          note: 'The parenthetical "(led by her)" implies nature has agency and purpose, a key Romantic idea.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
       text: 'A little boat tied to a willow tree',
       annotations: [
-        { type: 'Imagery', note: 'The pastoral setting with the willow tree creates a sense of calm innocence before the dramatic shift.', color: '#10b981' },
+        {
+          type: 'Imagery',
+          note: 'The pastoral setting with the willow tree creates a sense of calm innocence before the dramatic shift.',
+          color: '#10b981',
+        },
       ],
     },
     {
-      text: 'Within a rocky cave, its usual home.',
+      text: 'Within a rocky cove, its usual home.',
       annotations: [
-        { type: 'Setting', note: 'The boat has a "usual home" -- it belongs to someone else. This foreshadows the transgression of stealing it.', color: '#8b5cf6' },
+        {
+          type: 'Setting',
+          note: 'The boat has a "usual home" -- it belongs to someone else. This foreshadows the transgression of stealing it. ("Cove" = sheltered inlet, the verified 1850 reading.)',
+          color: '#8b5cf6',
+        },
       ],
     },
     {
@@ -44,20 +57,97 @@ const POEM: PoemData = {
     {
       text: 'Pushed from the shore. It was an act of stealth',
       annotations: [
-        { type: 'Moral awareness', note: '"Act of stealth" shows Wordsworth knows this is wrong -- he is conscious of his transgression against nature.', color: '#ef4444' },
+        {
+          type: 'Moral awareness',
+          note: '"Act of stealth" shows Wordsworth knows this is wrong -- he is conscious of his transgression against nature.',
+          color: '#ef4444',
+        },
       ],
     },
     {
-      text: 'And troubled pleasure. She was an elfin pinnace;',
+      text: 'And troubled pleasure, nor without the voice',
       annotations: [
-        { type: 'Oxymoron', note: '"Troubled pleasure" reveals internal conflict -- excitement mixed with guilt. This duality drives the extract.', color: '#f59e0b' },
-        { type: 'Personification', note: 'The boat is called "she" and described as an "elfin pinnace" (fairy-like small boat), maintaining the magical, almost supernatural tone.', color: '#10b981' },
+        {
+          type: 'Oxymoron',
+          note: '"Troubled pleasure" reveals internal conflict -- excitement mixed with guilt. This duality drives the extract.',
+          color: '#f59e0b',
+        },
       ],
     },
     {
-      text: 'Lustily I dipped my oars into the lake,',
+      text: 'Of mountain-echoes did my boat move on;',
       annotations: [
-        { type: 'Adverb', note: '"Lustily" conveys youthful energy, enthusiasm, and physical confidence. The boy feels powerful and in control.', color: '#f59e0b' },
+        {
+          type: 'Imagery',
+          note: '"Mountain-echoes" foreshadow the mountain\'s later sublime presence. Even the boat\'s departure is observed by the natural world.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Leaving behind her still, on either side,',
+    },
+    {
+      text: 'Small circles glittering idly in the moon,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'Visual beauty of light on water -- the calm, picturesque mood before the volta.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Until they melted all into one track',
+    },
+    {
+      text: 'Of sparkling light. But now, like one who rows,',
+    },
+    {
+      text: 'Proud of his skill, to reach a chosen point',
+      annotations: [
+        {
+          type: 'Pride / hubris',
+          note: '"Proud of his skill" signals the boy\'s confidence -- the very pride that nature is about to humble.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'With an unswerving line, I fixed my view',
+    },
+    {
+      text: 'Upon the summit of a craggy ridge,',
+    },
+    {
+      text: "The horizon's utmost boundary; far above",
+    },
+    {
+      text: 'Was nothing but the stars and the grey sky.',
+    },
+    {
+      text: 'She was an elfin pinnace; lustily',
+      annotations: [
+        {
+          type: 'Personification',
+          note: 'The boat is called "she" and described as an "elfin pinnace" (fairy-like small boat), maintaining the magical, almost supernatural tone.',
+          color: '#10b981',
+        },
+        {
+          type: 'Adverb',
+          note: '"Lustily" conveys youthful energy, enthusiasm, and physical confidence. The boy feels powerful and in control.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'I dipped my oars into the silent lake,',
+      annotations: [
+        {
+          type: 'Adjective',
+          note: '"Silent" creates an ominous, expectant atmosphere -- the calm before the terrifying encounter.',
+          color: '#ef4444',
+        },
       ],
     },
     {
@@ -66,70 +156,124 @@ const POEM: PoemData = {
     {
       text: 'Went heaving through the water like a swan;',
       annotations: [
-        { type: 'Simile', note: 'The swan simile suggests grace, elegance, and harmony with nature. The boy feels at one with his surroundings.', color: '#10b981' },
+        {
+          type: 'Simile',
+          note: 'The swan simile suggests grace, elegance, and harmony with nature. The boy feels at one with his surroundings.',
+          color: '#10b981',
+        },
       ],
-    },
-    {
-      text: 'The horizon\'s utmost boundary; far above',
-    },
-    {
-      text: 'Was nothing but the stars and the grey sky.',
-    },
-    {
-      text: 'She was an elfin pinnace; lustily',
-      annotations: [
-        { type: 'Repetition', note: 'The repetition of "elfin pinnace" and "lustily" reinforces the dreamy, enchanted mood before the volta.', color: '#8b5cf6' },
-      ],
-    },
-    {
-      text: 'I dipped my oars into the silent lake,',
-      annotations: [
-        { type: 'Adjective', note: '"Silent" creates an ominous, expectant atmosphere -- the calm before the terrifying encounter.', color: '#ef4444' },
-      ],
-    },
-    {
-      text: 'And, as I rose upon the stroke, my boat',
-    },
-    {
-      text: 'Went heaving through the water like a swan.',
     },
     {
       text: 'When, from behind that craggy steep till then',
       annotations: [
-        { type: 'Volta', note: 'This marks the dramatic turning point. "When" signals the sudden, unexpected encounter with the mountain.', color: '#ef4444' },
+        {
+          type: 'Volta',
+          note: 'This marks the dramatic turning point. "When" signals the sudden, unexpected encounter with the mountain.',
+          color: '#ef4444',
+        },
       ],
     },
     {
-      text: 'The horizon\'s bound, a huge peak, black and huge,',
+      text: "The horizon's bound, a huge peak, black and huge,",
       annotations: [
-        { type: 'Repetition', note: '"Huge" is repeated for emphasis, stressing the overwhelming scale of the mountain. The adjective "black" adds menace.', color: '#f59e0b' },
-        { type: 'Sublime', note: 'This is the moment of the Romantic sublime -- an encounter with something so vast and terrifying it overwhelms human understanding.', color: '#3b82f6' },
+        {
+          type: 'Repetition',
+          note: '"Huge" is repeated for emphasis, stressing the overwhelming scale of the mountain. The adjective "black" adds menace.',
+          color: '#f59e0b',
+        },
+        {
+          type: 'Sublime',
+          note: 'This is the moment of the Romantic sublime -- an encounter with something so vast and terrifying it overwhelms human understanding.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
       text: 'As if with voluntary power instinct,',
       annotations: [
-        { type: 'Personification', note: 'The mountain is given "voluntary power" -- it seems to have its own will and consciousness, making it deeply threatening.', color: '#f59e0b' },
+        {
+          type: 'Personification',
+          note: 'The mountain is given "voluntary power" -- it seems to have its own will and consciousness, making it deeply threatening.',
+          color: '#f59e0b',
+        },
       ],
     },
     {
-      text: 'Upreared its head. With measured motion like a living thing,',
+      text: 'Upreared its head. I struck and struck again,',
       annotations: [
-        { type: 'Personification', note: '"Upreared its head" makes the mountain seem like a giant creature rising up. The mountain becomes a living, purposeful being.', color: '#f59e0b' },
-        { type: 'Simile', note: '"Like a living thing" makes the comparison explicit -- the mountain appears animate and threatening.', color: '#10b981' },
+        {
+          type: 'Personification',
+          note: '"Upreared its head" makes the mountain seem like a giant creature rising up. The mountain becomes a living, purposeful being.',
+          color: '#f59e0b',
+        },
+        {
+          type: 'Repetition',
+          note: '"Struck and struck again" conveys frantic, panicked rowing -- the boy\'s confidence is gone.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'And growing still in stature the grim shape',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The mountain "grows" as he watches -- a psychological effect, but rendered as if literal. Fear distorts perception.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'Towered up between me and the stars, and still,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The mountain blocks the stars -- it cuts him off from the heavens, isolating him with its overwhelming presence.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'For so it seemed, with purpose of its own',
+    },
+    {
+      text: 'And measured motion like a living thing,',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"Like a living thing" makes the comparison explicit -- the mountain appears animate and threatening.',
+          color: '#10b981',
+        },
+        {
+          type: 'Sublime',
+          note: '"Measured motion" suggests slow, deliberate, controlled pursuit -- terrifying because it is purposeful.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
       text: 'Strode after me. With trembling oars I turned,',
       annotations: [
-        { type: 'Personification', note: '"Strode after me" gives the mountain human movement -- it seems to pursue the boy like a predator.', color: '#f59e0b' },
-        { type: 'Contrast', note: '"Trembling oars" contrasts sharply with the earlier "lustily I dipped" -- confidence has been replaced by terror.', color: '#ef4444' },
+        {
+          type: 'Personification',
+          note: '"Strode after me" gives the mountain human movement -- it seems to pursue the boy like a predator. The short sentence ("Strode after me.") is itself a stylistic feature, abruptly underlining the threat.',
+          color: '#f59e0b',
+        },
+        {
+          type: 'Contrast',
+          note: '"Trembling oars" contrasts sharply with the earlier "lustily I dipped" -- confidence has been replaced by terror.',
+          color: '#ef4444',
+        },
       ],
     },
     {
       text: 'And through the silent water stole my way',
       annotations: [
-        { type: 'Verb choice', note: '"Stole" echoes the earlier "act of stealth" -- the boy is now the one sneaking away, his power reversed.', color: '#8b5cf6' },
+        {
+          type: 'Verb choice',
+          note: '"Stole" echoes the earlier "act of stealth" -- the boy is now the one sneaking away, his power reversed.',
+          color: '#8b5cf6',
+        },
       ],
     },
     {
@@ -141,7 +285,11 @@ const POEM: PoemData = {
     {
       text: 'And through the meadows homeward went, in grave',
       annotations: [
-        { type: 'Adjective', note: '"Grave" suggests seriousness and a weighty, solemn mood -- the boy has been profoundly changed by the experience.', color: '#8b5cf6' },
+        {
+          type: 'Adjective',
+          note: '"Grave" suggests seriousness and a weighty, solemn mood -- the boy has been profoundly changed by the experience.',
+          color: '#8b5cf6',
+        },
       ],
     },
     {
@@ -150,63 +298,96 @@ const POEM: PoemData = {
     {
       text: 'That spectacle, for many days, my brain',
       annotations: [
-        { type: 'Enjambment', note: 'The enjambment across these lines mirrors the way the experience lingers and spills over into the boy\'s everyday thoughts.', color: '#8b5cf6' },
+        {
+          type: 'Enjambment',
+          note: "The enjambment across these lines mirrors the way the experience lingers and spills over into the boy's everyday thoughts.",
+          color: '#8b5cf6',
+        },
       ],
     },
     {
       text: 'Worked with a dim and undetermined sense',
     },
     {
-      text: 'Of unknown modes of being; o\'er my thoughts',
+      text: "Of unknown modes of being; o'er my thoughts",
       annotations: [
-        { type: 'Abstract language', note: '"Unknown modes of being" suggests the boy has glimpsed something beyond human comprehension -- a spiritual or transcendent power in nature.', color: '#3b82f6' },
+        {
+          type: 'Abstract language',
+          note: '"Unknown modes of being" suggests the boy has glimpsed something beyond human comprehension -- a spiritual or transcendent power in nature.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
       text: 'There hung a darkness, call it solitude',
       annotations: [
-        { type: 'Metaphor', note: 'Darkness "hung" over his thoughts like a physical weight. Nature\'s power has left a lasting psychological imprint.', color: '#f59e0b' },
+        {
+          type: 'Metaphor',
+          note: 'Darkness "hung" over his thoughts like a physical weight. Nature\'s power has left a lasting psychological imprint.',
+          color: '#f59e0b',
+        },
       ],
     },
     {
       text: 'Or blank desertion. No familiar shapes',
       annotations: [
-        { type: 'Imagery', note: '"Blank desertion" and "No familiar shapes" convey a loss of certainty -- the comforting, familiar world has been stripped away.', color: '#ef4444' },
+        {
+          type: 'Imagery',
+          note: '"Blank desertion" and "No familiar shapes" convey a loss of certainty -- the comforting, familiar world has been stripped away.',
+          color: '#ef4444',
+        },
       ],
     },
     {
       text: 'Remained, no pleasant images of trees,',
     },
     {
-      text: 'Of sea, or sky, no colours of green fields;',
+      text: 'Of sea or sky, no colours of green fields;',
       annotations: [
-        { type: 'Listing', note: 'The list of absent natural images emphasises what has been lost. Previously comforting pastoral scenes can no longer reassure.', color: '#8b5cf6' },
+        {
+          type: 'Listing',
+          note: 'The list of absent natural images emphasises what has been lost. Previously comforting pastoral scenes can no longer reassure.',
+          color: '#8b5cf6',
+        },
       ],
     },
     {
       text: 'But huge and mighty forms, that do not live',
       annotations: [
-        { type: 'Contrast', note: '"Huge and mighty forms" replace "pleasant images" -- nature is no longer comforting but overwhelming and unknowable.', color: '#ef4444' },
+        {
+          type: 'Contrast',
+          note: '"Huge and mighty forms" replace "pleasant images" -- nature is no longer comforting but overwhelming and unknowable.',
+          color: '#ef4444',
+        },
       ],
     },
     {
-      text: 'Like living men, moved slowly through the mind,',
+      text: 'Like living men, moved slowly through the mind',
       annotations: [
-        { type: 'Simile', note: 'The forms move "like living men" through his consciousness, suggesting the experience has become part of his inner life permanently.', color: '#10b981' },
+        {
+          type: 'Simile',
+          note: 'The forms move "like living men" through his consciousness, suggesting the experience has become part of his inner life permanently.',
+          color: '#10b981',
+        },
       ],
     },
     {
       text: 'By day, and were a trouble to my dreams.',
       annotations: [
-        { type: 'Time', note: '"By day" and "dreams" -- the experience haunts him both awake and asleep, showing its total psychological impact.', color: '#8b5cf6' },
+        {
+          type: 'Time',
+          note: '"By day" and "dreams" -- the experience haunts him both awake and asleep, showing its total psychological impact.',
+          color: '#8b5cf6',
+        },
       ],
     },
   ],
 
   context: `<p><strong>William Wordsworth</strong> (1770--1850) was one of the founders of the <strong>Romantic movement</strong> in English poetry. He grew up in the <strong>Lake District</strong>, and the natural landscapes of Cumbria profoundly shaped his writing and philosophy.</p>
-<p><em>The Prelude</em> is Wordsworth's epic <strong>autobiographical poem</strong>, tracing the growth of his mind from childhood to adulthood. He began writing it in <strong>1799</strong>, revised it extensively (the 1805 version in 13 books; the final 1850 version in 14 books), and it was published after his death. The AQA extract comes from <strong>Book I</strong>, recounting a childhood experience on Ullswater.</p>
-<p>The Romantics valued <strong>emotion over reason</strong>, celebrated the <strong>power and beauty of nature</strong>, and explored the concept of <strong>the sublime</strong> -- the idea that encounters with vast, powerful, or terrifying natural phenomena could produce awe, wonder, and even spiritual transformation.</p>
-<p>In this extract, the young Wordsworth steals a boat and rows across a lake at night. A mountain appears to rise up and pursue him, filling him with existential terror. The experience permanently changes his understanding of nature from something nurturing to something vast and unknowable.</p>`,
+<p><em>The Prelude</em> is Wordsworth's epic <strong>autobiographical poem</strong>, tracing the growth of his mind from childhood to adulthood. He began drafting it in <strong>1799</strong>, revised it extensively across his life (the 1805 version in 13 books; the final 1850 version in 14 books), and it was <strong>published posthumously in 1850</strong>. <strong>The AQA Power &amp; Conflict anthology prescribes the 1850 (posthumous) Prelude</strong>, and the extract comes from <strong>Book I</strong>, recounting a childhood boat-stealing incident on Ullswater.</p>
+<p><strong>Version note:</strong> AQA prescribes the <strong>1850 published <em>Prelude</em></strong>. OCR prescribes the <strong>1799 two-part <em>Prelude</em></strong> -- the wording is materially different. Always quote from the AQA-anthology (1850) version on this page.</p>
+<p>The Romantics valued <strong>emotion over reason</strong>, celebrated the <strong>power and beauty of nature</strong>, and explored the concept of <strong>the sublime</strong> -- the idea that encounters with vast, powerful, or terrifying natural phenomena could produce awe, wonder, and even spiritual transformation. <strong>Edmund Burke</strong> (in <em>A Philosophical Enquiry into the Origin of Our Ideas of the Sublime and Beautiful</em>, 1757) defined the sublime as the union of <strong>terror and awe</strong>; <strong>Immanuel Kant</strong> later refined this in his <em>Critique of Judgement</em> (1790), arguing the sublime arises when the mind confronts something so vast it overwhelms the imagination yet ultimately affirms reason's grandeur. Wordsworth's mountain encounter dramatises exactly this Burkean--Kantian sublime.</p>
+<p>In this extract, the young Wordsworth steals a boat and rows across a lake at night. A mountain appears to rise up and pursue him, filling him with existential terror. The experience permanently changes his understanding of nature from something nurturing to something vast and unknowable -- a "spot of time" (Wordsworth's term for a formative memory) that shapes the adult poet's mind.</p>`,
 
   summary: `CONFIDENCE AND FREEDOM (Lines 1--11)
 The speaker recalls a summer evening when, guided by nature ("led by her"), he found a small boat and impulsively took it out onto a lake. He rows with energy and confidence ("lustily I dipped my oars"), feeling at one with the natural world. The boat moves gracefully, compared to a swan, and the scene is calm and beautiful.
@@ -321,14 +502,14 @@ The extract is one continuous block of text with no stanza breaks, reflecting th
       device: 'Enjambment',
       example: 'my brain / Worked with a dim and undetermined sense',
       effect:
-        'Lines spill into each other without pause, mirroring both the physical momentum of the boat and the way the experience overflows into the boy\'s consciousness, refusing to be contained.',
+        "Lines spill into each other without pause, mirroring both the physical momentum of the boat and the way the experience overflows into the boy's consciousness, refusing to be contained.",
       lineRef: 25,
     },
     {
       device: 'Contrast',
       example: '"lustily I dipped" vs "trembling oars I turned"',
       effect:
-        'The dramatic contrast between the boy\'s confident outward journey and his terrified return underscores nature\'s power to humble and transform. His physical control gives way to emotional vulnerability.',
+        "The dramatic contrast between the boy's confident outward journey and his terrified return underscores nature's power to humble and transform. His physical control gives way to emotional vulnerability.",
       lineRef: 19,
     },
     {
@@ -342,7 +523,7 @@ The extract is one continuous block of text with no stanza breaks, reflecting th
       device: 'Oxymoron',
       example: 'troubled pleasure',
       effect:
-        'Combines contradictory emotions -- pleasure in the adventure, trouble from the guilt. This compression captures the complexity of the boy\'s emotional state and foreshadows the deeper psychological disturbance to come.',
+        "Combines contradictory emotions -- pleasure in the adventure, trouble from the guilt. This compression captures the complexity of the boy's emotional state and foreshadows the deeper psychological disturbance to come.",
       lineRef: 5,
     },
     {
@@ -362,9 +543,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pre-1',
     question: 'What does the young Wordsworth do at the start of the extract?',
     type: 'multiple-choice',
-    options: ['He goes swimming in a lake', 'He steals a boat and rows across a lake', 'He climbs a mountain', 'He walks through a forest'],
+    options: [
+      'He goes swimming in a lake',
+      'He steals a boat and rows across a lake',
+      'He climbs a mountain',
+      'He walks through a forest',
+    ],
     correctIndex: 1,
-    explanation: 'The young Wordsworth finds a small boat tied to a willow tree, unlooses its chain, and rows it out across a lake — an "act of stealth" that he knows is wrong.',
+    explanation:
+      'The young Wordsworth finds a small boat tied to a willow tree, unlooses its chain, and rows it out across a lake — an "act of stealth" that he knows is wrong.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -372,9 +559,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pre-2',
     question: 'What does the mountain appear to do in the poem?',
     type: 'multiple-choice',
-    options: ['It crumbles and falls into the lake', 'It rises up and seems to stride after the boy', 'It is covered in beautiful flowers', 'It disappears behind clouds'],
+    options: [
+      'It crumbles and falls into the lake',
+      'It rises up and seems to stride after the boy',
+      'It is covered in beautiful flowers',
+      'It disappears behind clouds',
+    ],
     correctIndex: 1,
-    explanation: 'The mountain "Upreared its head" and "Strode after me" — it is personified as a living creature that pursues the terrified boy, demonstrating nature\'s overwhelming power.',
+    explanation:
+      'The mountain "Upreared its head" and "Strode after me" — it is personified as a living creature that pursues the terrified boy, demonstrating nature\'s overwhelming power.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -382,9 +575,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pre-3',
     question: 'What is the effect of the oxymoron "troubled pleasure"?',
     type: 'multiple-choice',
-    options: ['It shows the boy is happy throughout', 'It captures the mix of excitement and guilt about stealing the boat', 'It describes the weather conditions', 'It refers to the mountain\'s appearance'],
+    options: [
+      'It shows the boy is happy throughout',
+      'It captures the mix of excitement and guilt about stealing the boat',
+      'It describes the weather conditions',
+      "It refers to the mountain's appearance",
+    ],
     correctIndex: 1,
-    explanation: '"Troubled pleasure" combines contradictory emotions — the thrill of adventure with the guilt of transgression. It foreshadows the deeper psychological disturbance to come.',
+    explanation:
+      '"Troubled pleasure" combines contradictory emotions — the thrill of adventure with the guilt of transgression. It foreshadows the deeper psychological disturbance to come.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -392,19 +591,32 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pre-4',
     question: 'What form is the extract written in?',
     type: 'multiple-choice',
-    options: ['Rhyming couplets', 'Blank verse (unrhymed iambic pentameter)', 'Free verse with no regular metre', 'A Shakespearean sonnet'],
+    options: [
+      'Rhyming couplets',
+      'Blank verse (unrhymed iambic pentameter)',
+      'Free verse with no regular metre',
+      'A Shakespearean sonnet',
+    ],
     correctIndex: 1,
-    explanation: 'The extract is written in blank verse — unrhymed iambic pentameter. This gives the poem a natural, conversational rhythm that mirrors the flow of memory and thought.',
+    explanation:
+      'The extract is written in blank verse — unrhymed iambic pentameter. This gives the poem a natural, conversational rhythm that mirrors the flow of memory and thought.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
   {
     id: 'pre-5',
-    question: 'How does the contrast between "lustily I dipped" and "trembling oars" reflect the poem\'s message?',
+    question:
+      'How does the contrast between "lustily I dipped" and "trembling oars" reflect the poem\'s message?',
     type: 'multiple-choice',
-    options: ['It shows the weather changed', 'It shows the boy\'s confidence being replaced by terror as nature asserts its power', 'It shows the boy is getting tired', 'It shows the oars are broken'],
+    options: [
+      'It shows the weather changed',
+      "It shows the boy's confidence being replaced by terror as nature asserts its power",
+      'It shows the boy is getting tired',
+      'It shows the oars are broken',
+    ],
     correctIndex: 1,
-    explanation: 'The dramatic shift from confident energy ("lustily") to fear ("trembling") demonstrates how nature can humble even the most self-assured individual, which is the poem\'s central theme.',
+    explanation:
+      'The dramatic shift from confident energy ("lustily") to fear ("trembling") demonstrates how nature can humble even the most self-assured individual, which is the poem\'s central theme.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -412,9 +624,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pre-6',
     question: 'What does the phrase "unknown modes of being" suggest?',
     type: 'multiple-choice',
-    options: ['The boy has discovered a new species', 'The boy has glimpsed something beyond human comprehension — a spiritual power in nature', 'The boy has learned a new language', 'The boy has forgotten who he is'],
+    options: [
+      'The boy has discovered a new species',
+      'The boy has glimpsed something beyond human comprehension — a spiritual power in nature',
+      'The boy has learned a new language',
+      'The boy has forgotten who he is',
+    ],
     correctIndex: 1,
-    explanation: '"Unknown modes of being" is deliberately abstract. It suggests the boy has encountered something transcendent and unknowable — a power in nature that exceeds human understanding, central to the Romantic concept of the sublime.',
+    explanation:
+      '"Unknown modes of being" is deliberately abstract. It suggests the boy has encountered something transcendent and unknowable — a power in nature that exceeds human understanding, central to the Romantic concept of the sublime.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -422,9 +640,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pre-7',
     question: 'What is The Prelude?',
     type: 'multiple-choice',
-    options: ['A collection of war poems', 'An epic autobiographical poem tracing the growth of Wordsworth\'s mind', 'A novel about the Lake District', 'A play about the French Revolution'],
+    options: [
+      'A collection of war poems',
+      "An epic autobiographical poem tracing the growth of Wordsworth's mind",
+      'A novel about the Lake District',
+      'A play about the French Revolution',
+    ],
     correctIndex: 1,
-    explanation: 'The Prelude is Wordsworth\'s epic autobiographical poem, tracing the development of his mind from childhood to adulthood. This extract comes from Book I, recounting a childhood experience on a lake.',
+    explanation:
+      "The Prelude is Wordsworth's epic autobiographical poem, tracing the development of his mind from childhood to adulthood. This extract comes from Book I, recounting a childhood experience on a lake.",
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -432,9 +656,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pre-8',
     question: 'What Romantic concept does the encounter with the mountain best exemplify?',
     type: 'multiple-choice',
-    options: ['Pathetic fallacy', 'The sublime — awe and terror caused by vast, powerful natural phenomena', 'The pastoral — peaceful harmony with nature', 'The picturesque — nature as beautiful scenery'],
+    options: [
+      'Pathetic fallacy',
+      'The sublime — awe and terror caused by vast, powerful natural phenomena',
+      'The pastoral — peaceful harmony with nature',
+      'The picturesque — nature as beautiful scenery',
+    ],
     correctIndex: 1,
-    explanation: 'The sublime is the Romantic concept that encounters with vast, powerful, or terrifying natural phenomena can produce awe, wonder, and spiritual transformation. The mountain encounter is a textbook example.',
+    explanation:
+      'The sublime is the Romantic concept that encounters with vast, powerful, or terrifying natural phenomena can produce awe, wonder, and spiritual transformation. The mountain encounter is a textbook example.',
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -442,19 +672,32 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'pre-9',
     question: 'Why is the extract written as a single verse paragraph with no stanza breaks?',
     type: 'multiple-choice',
-    options: ['Wordsworth forgot to add breaks', 'The continuous block reflects the unbroken flow of memory and how the experience consumed his consciousness entirely', 'It makes the poem shorter', 'It was a printer\'s error'],
+    options: [
+      'Wordsworth forgot to add breaks',
+      'The continuous block reflects the unbroken flow of memory and how the experience consumed his consciousness entirely',
+      'It makes the poem shorter',
+      "It was a printer's error",
+    ],
     correctIndex: 1,
-    explanation: 'The single continuous block of text mirrors the way memory flows without neat divisions. The experience was so overwhelming it consumed his entire consciousness, refusing to be compartmentalised.',
+    explanation:
+      'The single continuous block of text mirrors the way memory flows without neat divisions. The experience was so overwhelming it consumed his entire consciousness, refusing to be compartmentalised.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
   {
     id: 'pre-10',
-    question: 'Which poem from the Power and Conflict anthology best pairs with The Prelude for comparing the power of nature?',
+    question:
+      'Which poem from the Power and Conflict anthology best pairs with The Prelude for comparing the power of nature?',
     type: 'multiple-choice',
-    options: ['My Last Duchess by Browning', 'Storm on the Island by Seamus Heaney', 'Checking Out Me History by Agard', 'Remains by Simon Armitage'],
+    options: [
+      'My Last Duchess by Browning',
+      'Storm on the Island by Seamus Heaney',
+      'Checking Out Me History by Agard',
+      'Remains by Simon Armitage',
+    ],
     correctIndex: 1,
-    explanation: 'Both The Prelude and Storm on the Island explore the terrifying power of nature and humanity\'s vulnerability. Both use first-person speakers who shift from confidence to fear in the face of natural forces.',
+    explanation:
+      "Both The Prelude and Storm on the Island explore the terrifying power of nature and humanity's vulnerability. Both use first-person speakers who shift from confidence to fear in the face of natural forces.",
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -463,17 +706,19 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
-    summary: 'The extract explores the power of nature, the Romantic sublime, the transition from innocence to experience, and the lasting psychological impact of a formative childhood encounter.',
+    summary:
+      'The extract explores the power of nature, the Romantic sublime, the transition from innocence to experience, and the lasting psychological impact of a formative childhood encounter.',
     keyPoints: [
       'Nature is a powerful, autonomous force — it has "voluntary power" and can humble humans',
       'The sublime — encountering something so vast it overwhelms understanding',
-      'Growing up — the boy\'s confidence is permanently replaced by awe and uncertainty',
+      "Growing up — the boy's confidence is permanently replaced by awe and uncertainty",
       'Memory — the experience haunts him "by day" and in his "dreams", showing its lasting impact',
     ],
   },
   {
     topic: 'Language & Imagery',
-    summary: 'Wordsworth uses personification, contrast, simile, and increasingly abstract language to chart the shift from youthful confidence to existential terror.',
+    summary:
+      'Wordsworth uses personification, contrast, simile, and increasingly abstract language to chart the shift from youthful confidence to existential terror.',
     keyPoints: [
       'Personification of the mountain: "Upreared its head", "Strode after me"',
       'Contrast: "lustily I dipped" vs "trembling oars" — confidence replaced by fear',
@@ -483,11 +728,12 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Structure & Form',
-    summary: 'Written in blank verse as a single verse paragraph, with extensive enjambment that mirrors the flow of memory and the momentum of the boat journey.',
+    summary:
+      'Written in blank verse as a single verse paragraph, with extensive enjambment that mirrors the flow of memory and the momentum of the boat journey.',
     keyPoints: [
       'Blank verse (unrhymed iambic pentameter) — natural, conversational rhythm',
       'Volta at "When, from behind that craggy steep" — the dramatic turning point',
-      'Enjambment creates momentum, mirroring both the boat\'s movement and overflowing memory',
+      "Enjambment creates momentum, mirroring both the boat's movement and overflowing memory",
       'First-person retrospective narration — adult reflecting on childhood experience',
     ],
   },
@@ -507,9 +753,9 @@ const COMPARE_WITH = [
     poet: 'Seamus Heaney',
     link: '/revision/poetry/power-and-conflict/storm-on-the-island',
     points: [
-      'Both explore the terrifying power of nature and humanity\'s vulnerability',
+      "Both explore the terrifying power of nature and humanity's vulnerability",
       'Both use first-person speakers who shift from confidence to fear',
-      'Heaney\'s storm is literal and present; Wordsworth\'s mountain is remembered and internalised',
+      "Heaney's storm is literal and present; Wordsworth's mountain is remembered and internalised",
     ],
     themes: ['Power of nature', 'Fear', 'The sublime'],
   },
@@ -519,8 +765,8 @@ const COMPARE_WITH = [
     link: '/revision/poetry/power-and-conflict/exposure',
     points: [
       'Both show nature as an overwhelming, hostile force that dwarfs human power',
-      'Owen\'s soldiers are physically destroyed by nature; Wordsworth\'s boy is psychologically transformed',
-      'Both use repetition and sensory imagery to convey nature\'s relentless presence',
+      "Owen's soldiers are physically destroyed by nature; Wordsworth's boy is psychologically transformed",
+      "Both use repetition and sensory imagery to convey nature's relentless presence",
     ],
     themes: ['Power of nature', 'Suffering', 'Fear'],
   },
@@ -548,11 +794,17 @@ export default function ThePreludePage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
-          { name: "The Prelude", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/the-prelude" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Power and Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
+          },
+          {
+            name: 'The Prelude',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/the-prelude',
+          },
         ]}
       />
       {/* ── Header ──────────────────────────────────────────────── */}
@@ -578,7 +830,9 @@ export default function ThePreludePage() {
             <p className="text-body-sm text-muted-foreground">
               William Wordsworth &middot; Power and Conflict Anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              AQA
+            </Badge>
           </div>
         </div>
       </div>
@@ -603,18 +857,14 @@ export default function ThePreludePage() {
 
       {/* ── Compare with ───────────────────────────────────────── */}
       <section>
-        <h2 className="text-heading-md font-heading text-foreground mb-4">
-          Compare with
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground mb-4">Compare with</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {COMPARE_WITH.map((cmp) => (
             <div
               key={cmp.title}
               className="rounded-xl border border-border bg-card p-5 flex flex-col"
             >
-              <h3 className="text-sm font-semibold text-foreground">
-                {cmp.title}
-              </h3>
+              <h3 className="text-sm font-semibold text-foreground">{cmp.title}</h3>
               <p className="text-xs text-muted-foreground mb-3">{cmp.poet}</p>
 
               <ul className="space-y-1.5 mb-4 flex-1">
@@ -653,7 +903,8 @@ export default function ThePreludePage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Public domain &mdash; quotations from The Prelude by William Wordsworth reproduced freely.
+        The Prelude (1850) by William Wordsworth is in the public domain. Source: Project Gutenberg
+        / Wikisource &mdash; verified against the Verified Library.
       </p>
     </div>
   )

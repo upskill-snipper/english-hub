@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CourseData } from './courses';
+import type { CourseData } from './courses'
 
 export const inspectorCallsCourse: CourseData = {
   id: 'aqa-lit-inspector-calls',
@@ -11,7 +11,7 @@ export const inspectorCallsCourse: CourseData = {
   duration: '10 modules · approx 12 hours',
   level: 'GCSE',
   description:
-    'A comprehensive course covering J.B. Priestley\'s An Inspector Calls for AQA GCSE English Literature Paper 2 Section A. Includes act-by-act analysis, character studies, thematic exploration, key quotations, and exam technique — all tailored to the closed-book, no-extract AQA format.',
+    "A comprehensive course covering J.B. Priestley's An Inspector Calls for AQA GCSE English Literature Paper 2 Section A. Includes act-by-act analysis, character studies, thematic exploration, key quotations, and exam technique — all tailored to the closed-book, no-extract AQA format.",
   color: '#8B0000',
   moduleList: [
     // ──────────────────────────────────────────────
@@ -119,7 +119,7 @@ export const inspectorCallsCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'The play was written in 1945 but set in 1912. This dual time frame allows Priestley to use dramatic irony — the 1945 audience knows the characters\' predictions about the future are disastrously wrong.',
+            "The play was written in 1945 but set in 1912. This dual time frame allows Priestley to use dramatic irony — the 1945 audience knows the characters' predictions about the future are disastrously wrong.",
         },
         {
           id: 'aic-m1-q2',
@@ -149,7 +149,7 @@ export const inspectorCallsCourse: CourseData = {
         },
         {
           id: 'aic-m1-q4',
-          question: 'Why does Arthur Birling\'s reference to the Titanic create dramatic irony?',
+          question: "Why does Arthur Birling's reference to the Titanic create dramatic irony?",
           options: [
             'Because the Titanic had not yet been built in 1912',
             'Because the 1945 audience knew the Titanic sank, making Birling look foolish and arrogant',
@@ -163,12 +163,7 @@ export const inspectorCallsCourse: CourseData = {
         {
           id: 'aic-m1-q5',
           question: 'How many marks is the AQA Paper 2 Section A question worth?',
-          options: [
-            '20 marks',
-            '30 marks + 4 SPaG marks',
-            '40 marks',
-            '25 marks + 8 SPaG marks',
-          ],
+          options: ['20 marks', '30 marks + 4 SPaG marks', '40 marks', '25 marks + 8 SPaG marks'],
           correct: 1,
           explanation:
             'The Modern Texts question is worth 30 marks plus 4 additional marks for spelling, punctuation, and grammar (SPaG), giving a total of 34 marks.',
@@ -183,7 +178,7 @@ export const inspectorCallsCourse: CourseData = {
       id: 'aic-m2',
       title: 'Act 1: The Birling Household',
       duration: '60 min',
-content: `
+      content: `
 <h2>Act 1 — The Birling Household</h2>
 
 <p>Act 1 establishes the Birling family at the height of their complacency. They are celebrating Sheila's engagement to Gerald Croft over dinner. The mood is one of wealth, self-satisfaction, and confidence — all of which Priestley will systematically dismantle once the Inspector arrives.</p>
@@ -341,7 +336,8 @@ content: `
       quiz: [
         {
           id: 'aic-m2-q1',
-          question: 'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?',
+          question:
+            'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?',
           options: [
             'The Birlings are having a power cut',
             'The shift from comfortable illusion to the harsh light of truth when the Inspector arrives',
@@ -350,7 +346,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'The lighting change is a deliberate stage direction by Priestley. The pink glow represents the Birlings\' comfortable, self-deceptive world; the harsh light represents the Inspector\'s scrutiny and the painful truth he brings.',
+            "The lighting change is a deliberate stage direction by Priestley. The pink glow represents the Birlings' comfortable, self-deceptive world; the harsh light represents the Inspector's scrutiny and the painful truth he brings.",
         },
         {
           id: 'aic-m2-q2',
@@ -358,12 +354,12 @@ content: `
           options: [
             'To show that Birling is uneducated',
             'To create comedy for the audience',
-            'To discredit Birling\'s capitalist philosophy through dramatic irony',
+            "To discredit Birling's capitalist philosophy through dramatic irony",
             'Because Priestley had not researched the history properly',
           ],
           correct: 2,
           explanation:
-            'Priestley stacks Birling\'s wrong predictions to discredit him. If Birling is wrong about the Titanic, about war, and about prosperity, why should the audience trust his philosophy of selfish individualism?',
+            "Priestley stacks Birling's wrong predictions to discredit him. If Birling is wrong about the Titanic, about war, and about prosperity, why should the audience trust his philosophy of selfish individualism?",
         },
         {
           id: 'aic-m2-q3',
@@ -380,7 +376,7 @@ content: `
         },
         {
           id: 'aic-m2-q4',
-          question: 'How does Sheila react to learning about her role in Eva\'s story?',
+          question: "How does Sheila react to learning about her role in Eva's story?",
           options: [
             'She denies all involvement',
             'She blames Eva for being too attractive',
@@ -504,7 +500,8 @@ content: `
         },
         {
           id: 'aic-m3-q2',
-          question: 'Why is Mrs Birling\'s demand that "the young man" be punished an example of dramatic irony?',
+          question:
+            'Why is Mrs Birling\'s demand that "the young man" be punished an example of dramatic irony?',
           options: [
             'Because she is talking about Gerald',
             'Because the Inspector already knows who the father is',
@@ -517,7 +514,8 @@ content: `
         },
         {
           id: 'aic-m3-q3',
-          question: 'What does Sheila mean by "He\'s giving us the rope — so that we\'ll hang ourselves"?',
+          question:
+            'What does Sheila mean by "He\'s giving us the rope — so that we\'ll hang ourselves"?',
           options: [
             'That the Inspector is threatening them with execution',
             'That the Inspector lets the characters condemn themselves through their own words',
@@ -526,7 +524,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Sheila has understood the Inspector\'s technique: he does not need to make accusations because each character reveals their guilt through their own admissions. This shows Sheila\'s growing perceptiveness.',
+            "Sheila has understood the Inspector's technique: he does not need to make accusations because each character reveals their guilt through their own admissions. This shows Sheila's growing perceptiveness.",
         },
         {
           id: 'aic-m3-q4',
@@ -642,12 +640,13 @@ content: `
       quiz: [
         {
           id: 'aic-m4-q1',
-          question: 'What does the phrase "fire and blood and anguish" refer to through dramatic irony?',
+          question:
+            'What does the phrase "fire and blood and anguish" refer to through dramatic irony?',
           options: [
             'A fire at the Birling factory',
             'The two world wars that the 1945 audience had already experienced',
             'A biblical prophecy about the end of the world',
-            'The method of Eva Smith\'s death',
+            "The method of Eva Smith's death",
           ],
           correct: 1,
           explanation:
@@ -664,7 +663,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Birling and Mrs Birling celebrate when they think the Inspector was not real. Sheila and Eric insist that the Inspector\'s identity is irrelevant — what matters is how they treated Eva. This generational divide is central to Priestley\'s message.',
+            "Birling and Mrs Birling celebrate when they think the Inspector was not real. Sheila and Eric insist that the Inspector's identity is irrelevant — what matters is how they treated Eva. This generational divide is central to Priestley's message.",
         },
         {
           id: 'aic-m4-q3',
@@ -677,7 +676,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'The phone call shatters the Birlings\' relief and denies them any escape. Priestley\'s message is that moral responsibility cannot be avoided — if you refuse to learn the lesson, it will be forced upon you.',
+            "The phone call shatters the Birlings' relief and denies them any escape. Priestley's message is that moral responsibility cannot be avoided — if you refuse to learn the lesson, it will be forced upon you.",
         },
         {
           id: 'aic-m4-q4',
@@ -694,7 +693,7 @@ content: `
         },
         {
           id: 'aic-m4-q5',
-          question: 'What did Eric steal money from his father\'s office for?',
+          question: "What did Eric steal money from his father's office for?",
           options: [
             'To pay off his gambling debts',
             'To support Eva Smith, who was pregnant with his child',
@@ -800,7 +799,7 @@ content: `
 <h3>Key Quotation Bank — Arthur Birling</h3>
 <ol>
   <li><strong>"heavy-looking, rather portentous"</strong> — stage direction; self-importance.</li>
-  <li><strong>"a man has to mind his own business and look after himself"</strong> — capitalist philosophy.</li>
+  <li><strong>"a man has to mind his own business and look after himself and his own"</strong> — capitalist philosophy.</li>
   <li><strong>"community and all that nonsense"</strong> — dismissal of collective responsibility.</li>
   <li><strong>"unsinkable, absolutely unsinkable"</strong> — dramatic irony; arrogance.</li>
   <li><strong>"I can't accept any responsibility"</strong> — refusal to change.</li>
@@ -811,7 +810,8 @@ content: `
       quiz: [
         {
           id: 'aic-m5-q1',
-          question: 'What is the significance of the word "awkward" in Birling\'s line about responsibility?',
+          question:
+            'What is the significance of the word "awkward" in Birling\'s line about responsibility?',
           options: [
             'It shows that Birling is physically uncomfortable',
             'It reveals that Birling sees moral responsibility as a practical inconvenience, not a moral duty',
@@ -833,7 +833,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Birling\'s inability to change is deliberate. Priestley uses it to argue that the capitalist establishment is too entrenched in privilege to reform itself. The hope for a better society lies with the younger generation — Sheila and Eric.',
+            "Birling's inability to change is deliberate. Priestley uses it to argue that the capitalist establishment is too entrenched in privilege to reform itself. The hope for a better society lies with the younger generation — Sheila and Eric.",
         },
         {
           id: 'aic-m5-q3',
@@ -846,7 +846,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Birling name-drops his social connections to try to intimidate the Inspector. This reveals how the ruling class uses networks of influence to shield themselves from accountability — a key part of Priestley\'s social critique.',
+            "Birling name-drops his social connections to try to intimidate the Inspector. This reveals how the ruling class uses networks of influence to shield themselves from accountability — a key part of Priestley's social critique.",
         },
         {
           id: 'aic-m5-q4',
@@ -962,7 +962,8 @@ content: `
       quiz: [
         {
           id: 'aic-m6-q1',
-          question: 'Why is Sheila\'s use of "mummy" and "daddy" at the start of the play significant?',
+          question:
+            'Why is Sheila\'s use of "mummy" and "daddy" at the start of the play significant?',
           options: [
             'It shows she is younger than the other characters',
             'It establishes her as emotionally immature and sheltered, making her later transformation more dramatic',
@@ -971,11 +972,11 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Sheila\'s childish language at the start establishes her as naive and sheltered. This makes her transformation — into an assertive, morally independent woman who challenges her parents — all the more striking and significant.',
+            "Sheila's childish language at the start establishes her as naive and sheltered. This makes her transformation — into an assertive, morally independent woman who challenges her parents — all the more striking and significant.",
         },
         {
           id: 'aic-m6-q2',
-          question: 'What does Sheila\'s return of the engagement ring symbolise?',
+          question: "What does Sheila's return of the engagement ring symbolise?",
           options: [
             'She no longer loves Gerald',
             'She rejects the materialistic, transactional values her family represents and chooses moral integrity over security',
@@ -991,13 +992,13 @@ content: `
           question: 'How does Sheila function as a "chorus figure" in the play?',
           options: [
             'She sings during the intervals',
-            'She repeats the other characters\' lines',
-            'She comments on the action and interprets the Inspector\'s purpose for the audience',
+            "She repeats the other characters' lines",
+            "She comments on the action and interprets the Inspector's purpose for the audience",
             'She reads from a script that tells the audience what to think',
           ],
           correct: 2,
           explanation:
-            'Like a Greek chorus, Sheila comments on the action, interprets the Inspector\'s methods, and articulates the moral lessons. She warns characters not to lie and insists on accountability, effectively becoming the Inspector\'s ally.',
+            "Like a Greek chorus, Sheila comments on the action, interprets the Inspector's methods, and articulates the moral lessons. She warns characters not to lie and insists on accountability, effectively becoming the Inspector's ally.",
         },
         {
           id: 'aic-m6-q4',
@@ -1010,20 +1011,21 @@ content: `
           ],
           correct: 1,
           explanation:
-            'The contrast between Sheila (who accepts responsibility) and Mrs Birling (who refuses it) dramatises Priestley\'s argument that the older generation is entrenched in privilege while the younger generation can learn and change. This is central to his message of hope.',
+            "The contrast between Sheila (who accepts responsibility) and Mrs Birling (who refuses it) dramatises Priestley's argument that the older generation is entrenched in privilege while the younger generation can learn and change. This is central to his message of hope.",
         },
         {
           id: 'aic-m6-q5',
-          question: 'What makes Sheila\'s line "you don\'t seem to have learnt anything" so important?',
+          question:
+            'What makes Sheila\'s line "you don\'t seem to have learnt anything" so important?',
           options: [
             'It is the funniest line in the play',
-            'It directly addresses Priestley\'s central concern — whether society will learn from its mistakes or repeat them',
+            "It directly addresses Priestley's central concern — whether society will learn from its mistakes or repeat them",
             'It proves that Sheila is the cleverest character',
             'It is a quotation from the Bible',
           ],
           correct: 1,
           explanation:
-            'This line speaks directly to Priestley\'s purpose. The play\'s fundamental question is: will people learn to take responsibility for each other? Sheila\'s accusation is directed at her parents on stage but also at the audience — will you learn, or will you repeat the same mistakes?',
+            "This line speaks directly to Priestley's purpose. The play's fundamental question is: will people learn to take responsibility for each other? Sheila's accusation is directed at her parents on stage but also at the audience — will you learn, or will you repeat the same mistakes?",
         },
       ],
     },
@@ -1152,7 +1154,7 @@ content: `
             'It is the name of a famous detective',
             'It is a homophone of "ghoul," hinting at the Inspector\'s supernatural nature',
             'It means "wise" in old English',
-            'It is Priestley\'s middle name',
+            "It is Priestley's middle name",
           ],
           correct: 1,
           explanation:
@@ -1176,17 +1178,17 @@ content: `
           question: 'What role does the Inspector play in the structure of the drama?',
           options: [
             'He is purely a plot device with no thematic significance',
-            'He drives the plot, controls the pace of revelations, and functions as Priestley\'s mouthpiece for socialist ideas',
+            "He drives the plot, controls the pace of revelations, and functions as Priestley's mouthpiece for socialist ideas",
             'He is a minor character who appears only briefly',
             'He narrates the play from outside the action',
           ],
           correct: 1,
           explanation:
-            'The Inspector is both a character and a structural device. He determines the order of revelations, prevents interruptions, and delivers Priestley\'s key messages. The play literally could not function without him.',
+            "The Inspector is both a character and a structural device. He determines the order of revelations, prevents interruptions, and delivers Priestley's key messages. The play literally could not function without him.",
         },
         {
           id: 'aic-m7-q4',
-          question: 'Which of the following best describes the Inspector\'s final speech?',
+          question: "Which of the following best describes the Inspector's final speech?",
           options: [
             'A legal summary of the case',
             'A structured sermon that moves from the specific (Eva) to the universal (all working people) to the prophetic (fire and blood and anguish)',
@@ -1195,7 +1197,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'The final speech is structured like a sermon — moving from Eva\'s individual case to the millions of working-class people, to the prophetic warning about the consequences of ignoring responsibility. This gives it moral and spiritual weight.',
+            "The final speech is structured like a sermon — moving from Eva's individual case to the millions of working-class people, to the prophetic warning about the consequences of ignoring responsibility. This gives it moral and spiritual weight.",
         },
       ],
     },
@@ -1307,7 +1309,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Eva\'s absence is a deliberate structural choice. She is talked about, acted upon, and destroyed — but never heard. This mirrors the real voicelessness of working-class women in Edwardian society, reinforcing Priestley\'s social critique.',
+            "Eva's absence is a deliberate structural choice. She is talked about, acted upon, and destroyed — but never heard. This mirrors the real voicelessness of working-class women in Edwardian society, reinforcing Priestley's social critique.",
         },
         {
           id: 'aic-m8-q2',
@@ -1320,13 +1322,13 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Despite being young, Gerald acts like the older generation. He helps investigate the Inspector\'s identity, celebrates the lack of scandal, and tries to give Sheila the ring back. Sheila refuses — she has changed, but Gerald has not.',
+            "Despite being young, Gerald acts like the older generation. He helps investigate the Inspector's identity, celebrates the lack of scandal, and tries to give Sheila the ring back. Sheila refuses — she has changed, but Gerald has not.",
         },
         {
           id: 'aic-m8-q3',
           question: 'What is the symbolic significance of the name "Eva Smith"?',
           options: [
-            'It sounds like a detective\'s alias',
+            "It sounds like a detective's alias",
             '"Eva" echoes Eve (representing all women) and "Smith" is the most common surname (representing the working class) — making her an everywoman figure',
             'It is the name of a real person Priestley knew',
             'It is a randomly chosen name with no significance',
@@ -1337,7 +1339,8 @@ content: `
         },
         {
           id: 'aic-m8-q4',
-          question: 'How does Mrs Birling\'s refusal to accept responsibility differ from the other characters?',
+          question:
+            "How does Mrs Birling's refusal to accept responsibility differ from the other characters?",
           options: [
             'She accepts responsibility privately but not publicly',
             'She is the only character who never shows any remorse at any point in the play',
@@ -1353,13 +1356,13 @@ content: `
           question: 'What does Eric\'s line "I\'m ashamed of you" represent?',
           options: [
             'A typical family argument',
-            'A generational reversal — the child judging the parents — representing Priestley\'s argument that moral authority has shifted to the young',
-            'Eric\'s embarrassment at being caught stealing',
-            'Eric\'s anger at not receiving a bigger inheritance',
+            "A generational reversal — the child judging the parents — representing Priestley's argument that moral authority has shifted to the young",
+            "Eric's embarrassment at being caught stealing",
+            "Eric's anger at not receiving a bigger inheritance",
           ],
           correct: 1,
           explanation:
-            'Eric\'s line reverses the expected parent-child dynamic. Instead of the parents judging the children, the child judges the parents. This represents Priestley\'s belief that the older generation has lost its moral authority and the young must now take the lead.',
+            "Eric's line reverses the expected parent-child dynamic. Instead of the parents judging the children, the child judges the parents. This represents Priestley's belief that the older generation has lost its moral authority and the young must now take the lead.",
         },
       ],
     },
@@ -1494,8 +1497,8 @@ content: `
           options: [
             'Religion vs. atheism',
             'Birling\'s capitalist individualism ("look after himself") vs. the Inspector\'s socialist collectivism ("members of one body")',
-            'Men\'s responsibility vs. women\'s responsibility',
-            'The government\'s responsibility vs. the individual\'s responsibility',
+            "Men's responsibility vs. women's responsibility",
+            "The government's responsibility vs. the individual's responsibility",
           ],
           correct: 1,
           explanation:
@@ -1503,7 +1506,7 @@ content: `
         },
         {
           id: 'aic-m9-q2',
-          question: 'How does Eva Smith\'s journey illustrate the theme of power?',
+          question: "How does Eva Smith's journey illustrate the theme of power?",
           options: [
             'Eva gains power as the play progresses',
             'Each character uses a different form of power — economic, social, sexual, institutional — to exploit Eva, showing how the powerless are crushed by a system, not just by individuals',
@@ -1525,7 +1528,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Gerald is young but acts like the older generation — he helps investigate the Inspector\'s identity and tries to return to the status quo. This shows that change requires not just youth but willingness to confront uncomfortable truths.',
+            "Gerald is young but acts like the older generation — he helps investigate the Inspector's identity and tries to return to the status quo. This shows that change requires not just youth but willingness to confront uncomfortable truths.",
         },
         {
           id: 'aic-m9-q4',
@@ -1538,11 +1541,12 @@ content: `
           ],
           correct: 1,
           explanation:
-            'The capacity for guilt determines each character\'s moral potential. Sheila and Eric feel genuine guilt and change; Birling and Mrs Birling feel none and learn nothing. Priestley argues that guilt is the first step towards moral responsibility.',
+            "The capacity for guilt determines each character's moral potential. Sheila and Eric feel genuine guilt and change; Birling and Mrs Birling feel none and learn nothing. Priestley argues that guilt is the first step towards moral responsibility.",
         },
         {
           id: 'aic-m9-q5',
-          question: 'Why does Priestley present Mrs Birling judging Eva for being pregnant but not judging Eric?',
+          question:
+            'Why does Priestley present Mrs Birling judging Eva for being pregnant but not judging Eric?',
           options: [
             'Because Mrs Birling does not know Eric is involved until later',
             'To expose the moral double standard — the "fallen woman" is condemned while the man who caused her situation is protected',
@@ -1551,7 +1555,7 @@ content: `
           ],
           correct: 1,
           explanation:
-            'Mrs Birling judges Eva as immoral for being pregnant and unmarried, but the same moral standard is not applied to Eric. This exposes the gender double standard of Edwardian society — women are judged for the consequences of men\'s actions.',
+            "Mrs Birling judges Eva as immoral for being pregnant and unmarried, but the same moral standard is not applied to Eric. This exposes the gender double standard of Edwardian society — women are judged for the consequences of men's actions.",
         },
       ],
     },
@@ -1724,19 +1728,15 @@ content: `
         {
           id: 'aic-m10-q1',
           question: 'How much is AQA Paper 2 Section A worth in total?',
-          options: [
-            '20 marks',
-            '30 marks',
-            '34 marks (30 + 4 SPaG)',
-            '40 marks',
-          ],
+          options: ['20 marks', '30 marks', '34 marks (30 + 4 SPaG)', '40 marks'],
           correct: 2,
           explanation:
-            'Section A is worth 34 marks: 12 for AO1 (ideas and quotations), 12 for AO2 (writer\'s methods), 6 for AO3 (context), and 4 for AO4 (spelling, punctuation, grammar).',
+            "Section A is worth 34 marks: 12 for AO1 (ideas and quotations), 12 for AO2 (writer's methods), 6 for AO3 (context), and 4 for AO4 (spelling, punctuation, grammar).",
         },
         {
           id: 'aic-m10-q2',
-          question: 'What is the most important difference between AQA and Edexcel for An Inspector Calls?',
+          question:
+            'What is the most important difference between AQA and Edexcel for An Inspector Calls?',
           options: [
             'AQA tests the play in Paper 1 instead of Paper 2',
             'AQA provides no extract — students must write entirely from memory',
@@ -1779,7 +1779,7 @@ content: `
           options: [
             '5–10 long quotations',
             '25–30 short quotations (3–8 words each)',
-            'You don\'t need to memorise any — you can paraphrase',
+            "You don't need to memorise any — you can paraphrase",
             '50+ quotations of any length',
           ],
           correct: 1,
@@ -1805,7 +1805,7 @@ content: `
       ],
       correct: 1,
       explanation:
-        'Priestley wrote the play in 1945 but set it in 1912. The dual time frame enables dramatic irony — the 1945 audience knows the characters\' confident predictions are catastrophically wrong.',
+        "Priestley wrote the play in 1945 but set it in 1912. The dual time frame enables dramatic irony — the 1945 audience knows the characters' confident predictions are catastrophically wrong.",
     },
     {
       id: 'aic-aq2',
@@ -1822,29 +1822,31 @@ content: `
     },
     {
       id: 'aic-aq3',
-      question: 'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?',
+      question:
+        'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?',
       options: [
         'The time of day changing',
         'A power cut in the Birling house',
         'The shift from comfortable illusion to the harsh truth brought by the Inspector',
-        'The Inspector\'s preference for bright lights',
+        "The Inspector's preference for bright lights",
       ],
       correct: 2,
       explanation:
-        'The pink light symbolises the Birlings\' comfortable self-deception; the harder light symbolises the painful scrutiny the Inspector brings. This is a key AO2 point about Priestley\'s use of stage directions.',
+        "The pink light symbolises the Birlings' comfortable self-deception; the harder light symbolises the painful scrutiny the Inspector brings. This is a key AO2 point about Priestley's use of stage directions.",
     },
     {
       id: 'aic-aq4',
-      question: 'Why does Priestley give Arthur Birling so many wrong predictions about the future?',
+      question:
+        'Why does Priestley give Arthur Birling so many wrong predictions about the future?',
       options: [
         'To show that Birling is uneducated',
-        'To create dramatic irony that discredits Birling\'s capitalist philosophy — if he is wrong about everything, his worldview is wrong too',
+        "To create dramatic irony that discredits Birling's capitalist philosophy — if he is wrong about everything, his worldview is wrong too",
         'For comic relief',
         'Because Priestley did not research history properly',
       ],
       correct: 1,
       explanation:
-        'The dramatic irony of the Titanic, the war, and prosperity predictions systematically destroys Birling\'s credibility. Priestley\'s purpose is to discredit the capitalist individualism Birling represents.',
+        "The dramatic irony of the Titanic, the war, and prosperity predictions systematically destroys Birling's credibility. Priestley's purpose is to discredit the capitalist individualism Birling represents.",
     },
     {
       id: 'aic-aq5',
@@ -1857,7 +1859,7 @@ content: `
       ],
       correct: 1,
       explanation:
-        'Eva\'s absence is a deliberate structural choice. She is talked about, acted upon, and destroyed — but never heard. This mirrors the real voicelessness of the working class in Edwardian society.',
+        "Eva's absence is a deliberate structural choice. She is talked about, acted upon, and destroyed — but never heard. This mirrors the real voicelessness of the working class in Edwardian society.",
     },
     {
       id: 'aic-aq6',
@@ -1874,7 +1876,7 @@ content: `
     },
     {
       id: 'aic-aq7',
-      question: 'How does Sheila\'s language change across the play?',
+      question: "How does Sheila's language change across the play?",
       options: [
         'She speaks less as the play progresses',
         'She moves from childish terms like "mummy" and "daddy" to assertive, morally independent challenges like "you don\'t seem to have learnt anything"',
@@ -1900,7 +1902,8 @@ content: `
     },
     {
       id: 'aic-aq9',
-      question: 'Why is Mrs Birling\'s demand that "the young man" be punished a key moment of dramatic irony?',
+      question:
+        'Why is Mrs Birling\'s demand that "the young man" be punished a key moment of dramatic irony?',
       options: [
         'Because the young man is Gerald',
         'Because she is unknowingly condemning her own son, Eric',
@@ -1909,14 +1912,14 @@ content: `
       ],
       correct: 1,
       explanation:
-        'Mrs Birling repeatedly insists the father of Eva\'s child should be held responsible, not realising it is Eric. She unwittingly condemns her own son — one of the play\'s most devastating moments of dramatic irony.',
+        "Mrs Birling repeatedly insists the father of Eva's child should be held responsible, not realising it is Eric. She unwittingly condemns her own son — one of the play's most devastating moments of dramatic irony.",
     },
     {
       id: 'aic-aq10',
       question: 'What does "fire and blood and anguish" refer to through dramatic irony?',
       options: [
         'A fire at the Birling factory',
-        'The Inspector\'s threat to arrest the Birlings',
+        "The Inspector's threat to arrest the Birlings",
         'The two world wars that the 1945 audience had already lived through',
         'A biblical prophecy about hell',
       ],
@@ -1935,7 +1938,7 @@ content: `
       ],
       correct: 1,
       explanation:
-        'The phone call shatters the Birlings\' relief and creates a cyclical structure — suggesting that if the lesson is not learned, it will be repeated. This denies any comfortable escape from Priestley\'s moral argument.',
+        "The phone call shatters the Birlings' relief and creates a cyclical structure — suggesting that if the lesson is not learned, it will be repeated. This denies any comfortable escape from Priestley's moral argument.",
     },
     {
       id: 'aic-aq12',
@@ -1948,16 +1951,17 @@ content: `
       ],
       correct: 1,
       explanation:
-        '"Intensely grateful" reveals that Eva\'s position was one of dependence, not equality. Gerald\'s wealth and status gave him all the power; Eva\'s gratitude was the product of desperation, not genuine choice.',
+        "\"Intensely grateful\" reveals that Eva's position was one of dependence, not equality. Gerald's wealth and status gave him all the power; Eva's gratitude was the product of desperation, not genuine choice.",
     },
     {
       id: 'aic-aq13',
-      question: 'Why is Birling described as "heavy-looking, rather portentous" in the stage directions?',
+      question:
+        'Why is Birling described as "heavy-looking, rather portentous" in the stage directions?',
       options: [
         'To suggest he is physically unwell',
         'To establish him as self-important and pompous — someone who takes himself far more seriously than he deserves',
         'To show he is a strong, authoritative figure',
-        'To contrast with the Inspector\'s thin appearance',
+        "To contrast with the Inspector's thin appearance",
       ],
       correct: 1,
       explanation:
@@ -1978,16 +1982,17 @@ content: `
     },
     {
       id: 'aic-aq15',
-      question: 'What does Eric mean when he says "You\'re not the kind of father a chap could go to when he\'s in trouble"?',
+      question:
+        'What does Eric mean when he says "You\'re not the kind of father a chap could go to when he\'s in trouble"?',
       options: [
         'Birling is too busy with work to help',
-        'The Birling family\'s focus on wealth and respectability has destroyed genuine emotional connection, leaving Eric unable to seek help',
+        "The Birling family's focus on wealth and respectability has destroyed genuine emotional connection, leaving Eric unable to seek help",
         'Birling is physically intimidating',
         'Eric is angry about not receiving his inheritance',
       ],
       correct: 1,
       explanation:
-        'Eric\'s line reveals that the Birlings\' wealth has not created a loving family but an emotionally hollow one. Their focus on status and appearances has made genuine communication impossible — a devastating indictment of their values.',
+        "Eric's line reveals that the Birlings' wealth has not created a loving family but an emotionally hollow one. Their focus on status and appearances has made genuine communication impossible — a devastating indictment of their values.",
     },
     {
       id: 'aic-aq16',
@@ -2013,14 +2018,14 @@ content: `
       ],
       correct: 1,
       explanation:
-        'The contrast between Mrs Birling (refuses guilt, remains unchanged) and Sheila (accepts guilt, transforms morally) dramatises Priestley\'s central argument about generations. The old must be replaced by the new.',
+        "The contrast between Mrs Birling (refuses guilt, remains unchanged) and Sheila (accepts guilt, transforms morally) dramatises Priestley's central argument about generations. The old must be replaced by the new.",
     },
     {
       id: 'aic-aq18',
       question: 'What does "We are members of one body" echo, and why?',
       options: [
         'A speech by Karl Marx, to make the play explicitly communist',
-        'The Christian idea of the Body of Christ (1 Corinthians 12), giving Priestley\'s socialist message moral and spiritual authority',
+        "The Christian idea of the Body of Christ (1 Corinthians 12), giving Priestley's socialist message moral and spiritual authority",
         'A line from another Priestley play',
         'A popular wartime slogan',
       ],
@@ -2055,4 +2060,4 @@ content: `
         '"Priestley uses dramatic irony to discredit..." demonstrates AO2 because it identifies a specific writer\'s method (dramatic irony), names the writer (Priestley), and explains its purpose (discrediting capitalism). This is the kind of analytical phrasing markers reward.',
     },
   ],
-};
+}

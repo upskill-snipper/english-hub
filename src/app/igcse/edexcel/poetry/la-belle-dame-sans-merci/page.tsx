@@ -92,7 +92,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'The squirrel\'s granary is full,',
+      text: "The squirrel's granary is full,",
       annotations: [
         {
           type: 'Irony of setting',
@@ -102,7 +102,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And the harvest\'s done.',
+      text: "And the harvest's done.",
       annotations: [
         {
           type: 'Symbolism',
@@ -169,7 +169,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Full beautiful—a faery\'s child,',
+      text: "Full beautiful—a faery's child,",
       annotations: [
         {
           type: 'Supernatural',
@@ -276,7 +276,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'A faery\'s song.',
+      text: "A faery's song.",
       annotations: [
         {
           type: 'Supernatural',
@@ -317,7 +317,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: '\'I love thee true\'.',
+      text: "'I love thee true'.",
       annotations: [
         {
           type: 'Ambiguity',
@@ -338,7 +338,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And there she wept and sighed full sore,',
+      text: 'And there she wept, and sighed full sore,',
       annotations: [
         {
           type: 'Mystery',
@@ -410,7 +410,7 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: 'I saw pale kings and princes too,',
+      text: 'I saw pale kings, and princes too,',
       annotations: [
         {
           type: 'Vision',
@@ -430,7 +430,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'They cried—\'La Belle Dame sans Merci',
+      text: "They cried—'La Belle Dame sans Merci",
       annotations: [
         {
           type: 'Key quote',
@@ -445,11 +445,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Thee hath in thrall!\'',
+      text: "Hath thee in thrall!'",
       annotations: [
         {
           type: 'Key quote',
-          note: '"In thrall" means enslaved, bewitched. The dream-kings warn the knight that she has him in her power — but the warning comes too late.',
+          note: '"In thrall" means enslaved, bewitched. The dream-kings warn the knight that she "hath" (has) him in her power — but the warning comes too late.',
           color: '#f59e0b',
         },
       ],
@@ -486,7 +486,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'On the cold hill\'s side.',
+      text: "On the cold hill's side.",
       annotations: [
         {
           type: 'Echo',
@@ -511,7 +511,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Refrain',
-          note: 'The poem returns to its opening phrase. The knight is now revealed as the speaker of the first stanza\'s description of himself. The circular structure is complete.',
+          note: "The poem returns to its opening phrase. The knight is now revealed as the speaker of the first stanza's description of himself. The circular structure is complete.",
           color: '#a855f7',
         },
       ],
@@ -539,11 +539,13 @@ const poem: PoemData = {
   ],
 
   context: `
+    <div class="version-note" style="border-left:3px solid #f59e0b;background:rgba(245,158,11,0.08);padding:0.85rem 1rem;border-radius:6px;margin-bottom:1rem;"><strong>Version note:</strong> The Edexcel IGCSE anthology uses the 1820 <em>Indicator</em> version of the poem (the version printed here, with "knight-at-arms"). Some online sources reproduce Keats's later 1848 (Milnes) revision, which differs in several lines — most notably replacing "knight-at-arms" with "wretched wight" and "I see a lily on thy brow" with "I see death's lily on thy brow". Always quote from the anthology version when answering Edexcel questions.</div>
+
     <h3>John Keats (1795–1821)</h3>
     <p>Keats was one of the great English Romantic poets, alongside Shelley, Byron, Wordsworth and Coleridge. He trained as a surgeon before dedicating himself to poetry. He wrote a series of masterpieces — including this poem, "Ode to a Nightingale", "To Autumn" and "Ode on a Grecian Urn" — in a single astonishing year (1819), before dying of tuberculosis in Rome at the age of 25.</p>
 
     <h3>Composition and date</h3>
-    <p>"La Belle Dame sans Merci" was written on 21 April 1819 — part of the "Great Year" of Keats\'s creativity. The poem went through two versions; the one most commonly anthologised is the earlier 1819 version. Keats\'s brother Tom had died of tuberculosis the previous December, and Keats himself was already unwell. <strong>Illness and the fear of death</strong> shadow the poem.</p>
+    <p>"La Belle Dame sans Merci" was written on 21 April 1819 — part of the "Great Year" of Keats\'s creativity. The poem exists in <strong>two distinct versions</strong>: the earlier text published in Leigh Hunt's <em>Indicator</em> in May 1820 (which Keats prepared for press himself) and a revised text published posthumously in Richard Monckton Milnes\'s 1848 <em>Life, Letters and Literary Remains</em>. The Edexcel anthology prints the <strong>1820 Indicator version</strong> — the one used here. Keats\'s brother Tom had died of tuberculosis the previous December, and Keats himself was already unwell. <strong>Illness and the fear of death</strong> shadow the poem.</p>
 
     <h3>Fanny Brawne</h3>
     <p>In 1819 Keats fell passionately in love with his neighbour <strong>Fanny Brawne</strong>, but their engagement was impossible — he had no money and knew his health was failing. Many critics read the poem as an expression of Keats\'s own sense that love itself was dangerous for him: a beautiful woman would only lead him, like the knight, to wasted isolation. Keats called himself "half in love with easeful Death".</p>
@@ -568,7 +570,7 @@ Stanzas 6–7 (lines 21–28): He set her on his horse and saw nothing else all 
 
 Stanzas 8–9 (lines 29–36): She took him to her "elfin grot" (fairy cave). There she wept and sighed, and he shut her "wild wild eyes" with four kisses. She lulled him asleep — and there he had the most terrible dream of his life, on the cold hill side.
 
-Stanzas 10–11 (lines 37–44): In the dream he saw "pale kings and princes" and "pale warriors" — previous victims of the lady. They warned him, crying "La Belle Dame sans Merci / Thee hath in thrall!" ("The beautiful lady without mercy has you in her power"). Their starved lips gaped open in silent warning.
+Stanzas 10–11 (lines 37–44): In the dream he saw "pale kings and princes" and "pale warriors" — previous victims of the lady. They warned him, crying "La Belle Dame sans Merci / Hath thee in thrall!" ("The beautiful lady without mercy has you in her power"). Their starved lips gaped open in silent warning.
 
 Stanza 12 (lines 45–48): He awoke and found himself alone on the cold hill side. This is why he now lingers there, "alone and palely loitering", in a landscape where the sedge is withered and no birds sing. He cannot leave.
 
@@ -609,7 +611,7 @@ Archaic diction: Keats uses words like "ail", "thee", "haggard", "woe-begone", "
       themes: ['Pathetic fallacy', 'Desolation', 'Silence'],
     },
     {
-      quote: 'Full beautiful—a faery\'s child',
+      quote: "Full beautiful—a faery's child",
       analysis:
         'Her beauty is so striking the line needs an em-dash to contain it. But the very next phrase, "a faery\'s child", immediately qualifies that beauty with danger. Fairies in folklore are not safe creatures — they enchant, they steal, they destroy. The combination of "beautiful" and "faery\'s child" sets up the poem\'s central tension: desire and danger are the same thing.',
       themes: ['Beauty', 'Danger', 'Supernatural'],
@@ -621,19 +623,19 @@ Archaic diction: Keats uses words like "ail", "thee", "haggard", "woe-begone", "
       themes: ['Warning signs', 'Wildness', 'Missed danger'],
     },
     {
-      quote: 'And sure in language strange she said— / \'I love thee true\'',
+      quote: "And sure in language strange she said— / 'I love thee true'",
       analysis:
         'Crucial moment. She spoke in "language strange" — a language the knight could not understand. And yet he "sure"-ly interprets her words as "I love thee true". We never hear her own voice. The declaration of love is his translation, possibly his invention. This raises the unsettling possibility that the whole love affair was a projection. He heard what he wanted to hear.',
       themes: ['Misunderstanding', 'Projection', 'Unreliable narrator'],
     },
     {
-      quote: 'La Belle Dame sans Merci / Thee hath in thrall!',
+      quote: 'La Belle Dame sans Merci / Hath thee in thrall!',
       analysis:
         'The title appears in direct speech — cried out by the ghostly kings in the knight\'s dream. "Sans merci" means "without mercy"; "in thrall" means enslaved or bewitched. The fact that the warning comes from previous victims, in a dream, and in French, gives it the weight of inherited folklore. They know what has happened because they lived it. The dream-warning is the closest the poem comes to revealing the lady\'s true nature.',
       themes: ['Warning', 'Enslavement', 'Femme fatale'],
     },
     {
-      quote: 'I saw pale kings and princes too, / Pale warriors, death-pale were they all',
+      quote: 'I saw pale kings, and princes too, / Pale warriors, death-pale were they all',
       analysis:
         'The triple repetition of "pale" — ending in "death-pale" — drains the line of colour and life. The fact that the previous victims are kings, princes and warriors (powerful men) emphasises that power offers no protection against this kind of love. The knight is simply the latest in a long line. He is not special; he is interchangeable. The vision universalises his plight.',
       themes: ['Universal danger', 'Power defeated', 'Pallor'],
@@ -658,7 +660,7 @@ Archaic diction: Keats uses words like "ail", "thee", "haggard", "woe-begone", "
       device: 'Pathetic fallacy',
       example: 'The sedge has withered from the lake, / And no birds sing',
       effect:
-        'The dead, silent landscape reflects the knight\'s inner state. Nature itself has stopped — it is as if the knight\'s emotional condition has drained the world of sound and colour. The pathetic fallacy turns setting into a mirror of feeling.',
+        "The dead, silent landscape reflects the knight's inner state. Nature itself has stopped — it is as if the knight's emotional condition has drained the world of sound and colour. The pathetic fallacy turns setting into a mirror of feeling.",
       lineRef: 2,
     },
     {
@@ -716,7 +718,7 @@ const comparisons = [
     poet: 'Louis MacNeice',
     href: '/igcse/edexcel/poetry',
     reason:
-      'Both poems feature speakers who cannot escape their fate — the knight trapped on the hillside, the unborn child dreading the adult world. Compare the ballad\'s circular entrapment with MacNeice\'s modernist pleading.',
+      "Both poems feature speakers who cannot escape their fate — the knight trapped on the hillside, the unborn child dreading the adult world. Compare the ballad's circular entrapment with MacNeice's modernist pleading.",
     themes: ['Trapped speakers', 'Fate', 'Helplessness'],
   },
 ]
@@ -757,19 +759,21 @@ export default function LaBelleDamePage() {
 
       <InteractivePoemViewer poem={poem} />
 
-      <StudyTools textName="La Belle Dame sans Merci" textType="poem" examBoard="Edexcel" variant="compact" />
+      <StudyTools
+        textName="La Belle Dame sans Merci"
+        textType="poem"
+        examBoard="Edexcel"
+        variant="compact"
+      />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another
-          from the anthology. These are strong pairings for La Belle Dame
-          sans Merci.
+          The Edexcel exam asks you to compare the named poem with another from the anthology. These
+          are strong pairings for La Belle Dame sans Merci.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -783,9 +787,7 @@ export default function LaBelleDamePage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span

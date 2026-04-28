@@ -1,23 +1,29 @@
 export interface CPDResource {
-  id: string;
-  title: string;
-  type: 'subject-knowledge' | 'pedagogy' | 'assessment' | 'curriculum' | 'research-summary' | 'reflective-practice';
-  yearGroupFocus: string[];
-  description: string;
-  keyPoints: string[];
-  practicalTakeaways: string[];
-  furtherReading: string[];
-  estimatedTime: string;
+  id: string
+  title: string
+  type:
+    | 'subject-knowledge'
+    | 'pedagogy'
+    | 'assessment'
+    | 'curriculum'
+    | 'research-summary'
+    | 'reflective-practice'
+  yearGroupFocus: string[]
+  description: string
+  keyPoints: string[]
+  practicalTakeaways: string[]
+  furtherReading: string[]
+  estimatedTime: string
 }
 
 export interface SubjectKnowledgeNote {
-  id: string;
-  topic: string;
-  yearGroupRelevance: string[];
-  essentialKnowledge: string;
-  commonTeacherGaps: string[];
-  deeperDive: string;
-  usefulResources: string[];
+  id: string
+  topic: string
+  yearGroupRelevance: string[]
+  essentialKnowledge: string
+  commonTeacherGaps: string[]
+  deeperDive: string
+  usefulResources: string[]
 }
 
 export const cpdResources: CPDResource[] = [
@@ -73,13 +79,13 @@ export const cpdResources: CPDResource[] = [
     practicalTakeaways: [
       'Introduce a "talk toolkit" visible in the classroom: sentence stems for agreeing, disagreeing, building on, and questioning',
       'Use "snowball" discussions: pairs to fours to eights, each time requiring the group to report the best point from the smaller group',
-      'Assign talk roles in group activities: questioner, devil\'s advocate, evidence-finder, summariser -- rotate weekly',
+      "Assign talk roles in group activities: questioner, devil's advocate, evidence-finder, summariser -- rotate weekly",
       'Record a discussion (with consent) and play back a 90-second clip for the class to identify effective oracy behaviours',
       'Set a no-hands-up norm and use a randomiser or seating plan for cold calling -- pair with adequate thinking time and a "phone a friend" option',
       'Use "talking homework": ask students to record a 60-second verbal response on a topic before a written task',
     ],
     furtherReading: [
-      'Mercer, N. and Littleton, K. (2007) Dialogue and the Development of Children\'s Thinking. Routledge',
+      "Mercer, N. and Littleton, K. (2007) Dialogue and the Development of Children's Thinking. Routledge",
       'Oracy Cambridge -- research hub: www.oracycambridge.org',
       'Voice 21 -- oracy framework and school resources: www.voice21.org',
       'Alexander, R. (2017) Towards Dialogic Teaching (5th ed.). Dialogos',
@@ -134,7 +140,7 @@ export const cpdResources: CPDResource[] = [
       'Translanguaging -- allowing students to use their home language as a thinking tool before producing English -- is supported by research and does not impede English development',
       'Vocabulary-rich environments are particularly beneficial: word walls, glossaries, pre-teaching of tier 2 vocabulary before a unit',
       'Literature texts with accessible cultural contexts or universal themes are more accessible entry points than texts heavy in culturally specific idiom',
-      'In assessments, EAL learners may qualify for additional time or a bilingual dictionary -- check your school\'s access arrangements policy',
+      "In assessments, EAL learners may qualify for additional time or a bilingual dictionary -- check your school's access arrangements policy",
     ],
     practicalTakeaways: [
       'Pre-teach five to eight tier 2 vocabulary items before each new text or unit -- use the Frayer model (definition, example, non-example, illustration)',
@@ -162,7 +168,7 @@ export const cpdResources: CPDResource[] = [
       'Grammar teaching divorced from authentic reading and writing contexts has weak evidence for impact on student writing quality. This resource explores the "grammar in context" approach -- teaching grammatical choices as a repertoire of meaningful decisions writers make -- and provides subject knowledge support for teachers who feel uncertain about grammatical terminology.',
     keyPoints: [
       'The SPaG (Spelling, Punctuation and Grammar) marks on GCSE papers reward grammatical control, but rote grammar exercises do not reliably improve writing quality',
-      'Debra Myhill\'s research at Exeter University demonstrates that grammar taught in the context of writing purpose is significantly more effective than decontextualised exercises',
+      "Debra Myhill's research at Exeter University demonstrates that grammar taught in the context of writing purpose is significantly more effective than decontextualised exercises",
       'Key grammatical concepts for IGCSE and A-Level English: sentence types (simple, compound, complex, minor), clause types (main, subordinate, relative), noun phrases, verb forms (tense, aspect, modality), cohesive devices',
       'The distinction between prescriptive and descriptive grammar is important -- Language teachers especially need to model non-judgmental attitudes to dialect and non-standard forms',
       'Stylistic grammar: students should be able to discuss the effect of passive voice, fronted adverbials, parenthetical asides, sentence fragments -- not just identify them',
@@ -269,7 +275,7 @@ export const cpdResources: CPDResource[] = [
     ],
     practicalTakeaways: [
       'Set a "reading log" expectation from the start of Year 12: students record their independent reading with a brief critical response each time -- review half-termly',
-      'Introduce one named critic per text and require students to engage with that critic\'s argument in their essays by the end of Year 12',
+      "Introduce one named critic per text and require students to engage with that critic's argument in their essays by the end of Year 12",
       'Use a "seminar passport" where students must contribute a prepared question, a developed point, and a response to a peer in each seminar -- tracked and fed back upon',
       'Model the academic essay explicitly: write a paragraph collaboratively as a class, then discuss the choices made for register, citation, and argumentation',
       'Assign paired presentations on critical perspectives (Marxist, feminist, post-colonial readings, etc.) so students teach each other the frameworks',
@@ -303,9 +309,9 @@ export const cpdResources: CPDResource[] = [
       'After each practice paper, complete a class item analysis grid: for each question, note the average mark and the most common error type -- this becomes the agenda for the next teaching sequence',
       'Use a simple traffic-light tracker for key skills (e.g. embedding evidence, writing introductions, analysing language effect) and update it half-termly based on written work',
       'Build a "vulnerable students" briefing into your department\'s planning cycle: identify two or three students per class who need a specific adjustment before each assessment',
-      'Triangulate data: if a student\'s grade is declining, look at reading log, homework submission, and verbal contribution alongside the written grade before drawing conclusions',
+      "Triangulate data: if a student's grade is declining, look at reading log, homework submission, and verbal contribution alongside the written grade before drawing conclusions",
       'Share item-level data with students: "65% of the class lost marks on Question 3b -- here is why, and here is what we are doing about it" -- this makes data a collaborative resource',
-      'Conduct annual reading-for-pleasure surveys to track attitude change over a student\'s time in your school -- attitude data is as valuable as attainment data',
+      "Conduct annual reading-for-pleasure surveys to track attitude change over a student's time in your school -- attitude data is as valuable as attainment data",
     ],
     furtherReading: [
       'Christodoulou, D. (2017) Making Good Progress? Oxford University Press',
@@ -344,7 +350,7 @@ export const cpdResources: CPDResource[] = [
       'Hart, S. et al. (2004) Learning Without Limits. Open University Press',
       'Tomlinson, C.A. (2014) The Differentiated Classroom (2nd ed.). ASCD',
       'EEF: Flexible Grouping -- a summary of evidence (2018)',
-      'Sherrington, T. (2019) Rosenshine\'s Principles in Action. John Catt Educational',
+      "Sherrington, T. (2019) Rosenshine's Principles in Action. John Catt Educational",
       'Didau, D. and Rose, N. (2016) What Every Teacher Needs to Know about Psychology. John Catt Educational',
     ],
     estimatedTime: '75 minutes',
@@ -357,7 +363,7 @@ export const cpdResources: CPDResource[] = [
     description:
       'Feedback is only valuable if it changes what a learner does next. This resource examines the research on effective feedback in English, the common failure modes of teacher feedback, and how to design a feedback loop that reliably produces growth in writing quality over time.',
     keyPoints: [
-      'Hattie and Timperley\'s (2007) landmark study identified four levels of feedback: task, process, self-regulation, and self -- the most effective feedback addresses process and self-regulation',
+      "Hattie and Timperley's (2007) landmark study identified four levels of feedback: task, process, self-regulation, and self -- the most effective feedback addresses process and self-regulation",
       'Feedback that refers to fixed ability ("You are a natural writer") undermines growth mindset; feedback that refers to strategy and effort drives improvement',
       'Written feedback on student essays is only effective if students read it, understand it, and have structured time to act on it -- all three are often absent',
       'The most common written feedback failure: the comment describes the problem ("your argument lacks structure") without specifying a strategy ("next time, plan three points before you start writing")',
@@ -371,7 +377,7 @@ export const cpdResources: CPDResource[] = [
       'Use a personal target card for each student: a folded card on their desk with their current top two writing targets -- refer to it when giving verbal feedback and when marking',
       'Reserve written comments for the two or three things that will make the most difference -- not a comprehensive list of all issues, which overwhelms and demotivates',
       'End each extended writing lesson with a "one thing I will do differently next time" exit card -- file these and return them before the next writing task',
-      'Build modelling into the feedback process: when a student makes a structural error, write the corrected version alongside the student\'s version so they can see the difference',
+      "Build modelling into the feedback process: when a student makes a structural error, write the corrected version alongside the student's version so they can see the difference",
     ],
     furtherReading: [
       'Hattie, J. and Timperley, H. (2007) "The Power of Feedback." Review of Educational Research 77(1)',
@@ -393,10 +399,10 @@ export const cpdResources: CPDResource[] = [
       'PISA data consistently shows that reading enjoyment is a stronger predictor of academic success than socioeconomic background -- building reading habit is high-impact, equity-relevant work',
       'The Matthew Effect in reading: students who read widely get better at reading, which makes them read more; those who do not fall further behind annually',
       'Sustained Silent Reading (SSR) programmes without teacher modelling, book choice agency, or reading discussion have weak evidence -- the quality of the programme matters, not just the time',
-      'Teacher book recommendations are among the most cited influences on young readers\' choices -- a well-read teacher who talks enthusiastically about books has a disproportionate impact',
+      "Teacher book recommendations are among the most cited influences on young readers' choices -- a well-read teacher who talks enthusiastically about books has a disproportionate impact",
       'Diverse representation in the library and reading curriculum matters: students who see themselves in texts are more likely to engage with reading as an identity practice',
       'Reading aloud by the teacher is one of the most powerful reading-for-pleasure tools available -- it models fluency, exposes students to complex texts, and builds a shared reading culture',
-      'Boys\' reading motivation is particularly vulnerable in secondary school -- choice, humour, non-fiction, and peer social reading are all evidence-based motivators',
+      "Boys' reading motivation is particularly vulnerable in secondary school -- choice, humour, non-fiction, and peer social reading are all evidence-based motivators",
     ],
     practicalTakeaways: [
       'Start each half-term with a teacher "book talk": a three-minute enthusiastic recommendation of a book you have genuinely enjoyed -- include a compelling first line or passage',
@@ -462,7 +468,7 @@ export const cpdResources: CPDResource[] = [
       'Data collection ethics must be observed: consent forms for interviews, anonymisation of participants, institutional permission for collecting texts',
       'The commentary component requires students to reflect on their methods and findings -- this metacognitive element is often rushed and poorly done',
       'Teacher feedback on investigations must be developmental (pointing to areas for improvement) rather than corrective (making the corrections) -- Pearson and AQA both penalise over-assisted work',
-      'Moderation standards: teachers must be familiar with the board\'s assessment criteria and be able to justify a mark in a moderation meeting',
+      "Moderation standards: teachers must be familiar with the board's assessment criteria and be able to justify a mark in a moderation meeting",
     ],
     practicalTakeaways: [
       'Run a "title clinic" session in October of Year 12: students pitch three possible titles to the group and receive structured peer and teacher feedback before committing',
@@ -489,10 +495,10 @@ export const cpdResources: CPDResource[] = [
     description:
       'Coursework supervision carries significant professional responsibility. This resource covers the legal and regulatory dimensions of coursework oversight (authentication, malpractice, reasonable assistance), alongside pedagogical guidance on how to support coursework quality without crossing the line into over-assistance.',
     keyPoints: [
-      'Authentication: the teacher must be confident that the work submitted is the student\'s own -- this requires knowing the student\'s capability and observing the writing process across the unit',
+      "Authentication: the teacher must be confident that the work submitted is the student's own -- this requires knowing the student's capability and observing the writing process across the unit",
       'The JCQ regulations on coursework assistance are specific: teachers may give general advice, respond to drafts with general comments, and indicate areas for improvement, but may not correct errors or rewrite sections',
       'AI-generated text in coursework is a growing compliance issue: schools must have an AI use policy that students have signed, and teachers must be familiar with detection approaches and the limits of detection tools',
-      'Malpractice reporting: if a teacher suspects plagiarism or collusion, the school\'s exams officer must be informed -- teachers should not attempt to resolve this themselves',
+      "Malpractice reporting: if a teacher suspects plagiarism or collusion, the school's exams officer must be informed -- teachers should not attempt to resolve this themselves",
       'The moderation sample: teachers should keep annotated copies of all marked coursework in the moderation sample, with clear justification notes for the marks awarded',
       'Centre-assessed marks are statistically moderated by the exam board -- teachers who mark too generously will have marks adjusted downward; consistent and defensible marking avoids this',
       'Supporting weaker students: teachers can legitimately structure the task more tightly, provide worked examples, and offer more frequent check-ins -- but all students must receive equitable levels of support',
@@ -503,7 +509,7 @@ export const cpdResources: CPDResource[] = [
       'Keep a supervision log for each class: date, student initials, brief note on the feedback given -- this is your evidence of reasonable assistance in the event of a query',
       'Teach academic integrity explicitly: what constitutes plagiarism, how to reference sources, the difference between paraphrase and copy -- do not assume students know this',
       'Before submitting your sample for moderation, conduct a self-moderation session with a colleague: each marks three scripts independently, then compares and discusses discrepancies',
-      'Review the exam board\'s standardisation materials and grade descriptor updates each year before beginning the marking cycle -- standards do shift slightly between cohorts',
+      "Review the exam board's standardisation materials and grade descriptor updates each year before beginning the marking cycle -- standards do shift slightly between cohorts",
     ],
     furtherReading: [
       'JCQ: Instructions for Conducting Non-Examination Assessments (updated annually) -- available at jcq.org.uk',
@@ -514,7 +520,7 @@ export const cpdResources: CPDResource[] = [
     ],
     estimatedTime: '90 minutes',
   },
-];
+]
 
 export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
   {
@@ -528,7 +534,7 @@ export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
       'Not knowing the specific Malthus connection to the "surplus population" line -- students often use this quotation without the ideological precision it deserves',
       'Assuming the Corn Laws are too obscure to teach -- they are in fact relevant to why food was expensive for the Cratchits and others',
       'Underestimating the radicalism of the text -- the novella is socialist in its moral economy, and Dickens was deeply critical of laissez-faire capitalism, not merely sentimental',
-      'Presenting the Ghost of Christmas Present\'s reveal of Ignorance and Want as a metaphor when Dickens intended it as a direct political statement about the consequences of neglecting the poor',
+      "Presenting the Ghost of Christmas Present's reveal of Ignorance and Want as a metaphor when Dickens intended it as a direct political statement about the consequences of neglecting the poor",
     ],
     deeperDive:
       'The novella\'s form is significant: Dickens published it as a small gift book at Christmas (it cost five shillings) deliberately making it accessible. The "stave" structure (a musical term for a staff of notation) supports the reading of the text as a kind of carol -- a seasonal, communal, morally uplifting piece. The Ghost of Christmas Present\'s torch, which he uses to "season" people\'s food, connects charitable generosity to the season itself. Scrooge\'s name is likely derived from the verb "to scrouge" (to crowd or squeeze), and his arc follows a conversion narrative structurally similar to Evangelical tract literature -- Dickens was clearly playing with, and against, religious forms. The ending is genuinely ambiguous: does Scrooge become good because he is frightened of his own grave, or does he undergo genuine moral transformation? The text supports both readings and this is worth exploring with Year 11 students as a demonstration of interpretive complexity.',
@@ -549,8 +555,8 @@ export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
     commonTeacherGaps: [
       'Not knowing the specific geography: the Salinas Valley is in central California, and the ranch is near Soledad -- "soledad" means loneliness in Spanish, which is thematically significant',
       'Underplaying the racism: Crooks is not incidentally excluded, he is legally and violently excluded -- the threat of lynching is real and explicit in the text ("I could get you strung up on a tree")',
-      'Conflating the Dust Bowl migration with the novel\'s characters -- George and Lennie are itinerant Californian workers, not Okies, though they exist in the same economic system',
-      'Missing the labour movement context: the 1930s were a period of intense union organising, and Steinbeck was sympathetic to labour rights -- Curley\'s wife\'s complaint about the ranch is implicitly a critique of this system',
+      "Conflating the Dust Bowl migration with the novel's characters -- George and Lennie are itinerant Californian workers, not Okies, though they exist in the same economic system",
+      "Missing the labour movement context: the 1930s were a period of intense union organising, and Steinbeck was sympathetic to labour rights -- Curley's wife's complaint about the ranch is implicitly a critique of this system",
       'Not knowing that Steinbeck won the Nobel Prize in 1962 partly for this novel and The Grapes of Wrath -- his status as a serious literary figure is worth establishing with students',
     ],
     deeperDive:
@@ -568,16 +574,16 @@ export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
     topic: 'Jacobean Context for Macbeth',
     yearGroupRelevance: ['Y10', 'Y11', 'Y12'],
     essentialKnowledge:
-      'Macbeth was written around 1606, during the reign of James I (James VI of Scotland), who had come to the English throne in 1603. James was the son of Mary Queen of Scots and had a significant interest in demonology -- he had personally supervised the torture of witches in the North Berwick witch trials (1590-91) and published Daemonologie (1597), a scholarly treatise on witchcraft. The play\'s witches are therefore not merely atmospheric; they connect to a live ideological debate about the nature of evil, prophecy, and the Devil\'s power to deceive. The doctrine of the Divine Right of Kings held that monarchs derived their authority directly from God and were therefore sacred -- to murder a king was not merely treason but sacrilege. Macbeth\'s murder of Duncan destabilises the "Great Chain of Being" (the hierarchical order of the universe from God to angels to humans to animals to plants) -- the unnatural weather, the horses eating each other, and Duncan\'s horses running wild are all markers of this cosmic disturbance. The Gunpowder Plot of November 1605 -- just a year before the play\'s probable first performance -- makes the theme of treacherous subjects (and the question of equivocation) sharply topical. The Porter\'s speech explicitly references equivocation, and the Chief Jesuit Henry Garnet, who was hanged in May 1606 after being convicted of complicity in the Plot, had written a defence of equivocation. The play is also partly a compliment to James: Banquo, the king\'s legendary ancestor, is presented as noble and innocent, and the line of kings shown to Macbeth in the cauldron scene extends to a figure holding two orbs -- a reference to James\'s union of the Scottish and English crowns.',
+      "Macbeth was written around 1606, during the reign of James I (James VI of Scotland), who had come to the English throne in 1603. James was the son of Mary Queen of Scots and had a significant interest in demonology -- he had personally supervised the torture of witches in the North Berwick witch trials (1590-91) and published Daemonologie (1597), a scholarly treatise on witchcraft. The play's witches are therefore not merely atmospheric; they connect to a live ideological debate about the nature of evil, prophecy, and the Devil's power to deceive. The doctrine of the Divine Right of Kings held that monarchs derived their authority directly from God and were therefore sacred -- to murder a king was not merely treason but sacrilege. Macbeth's murder of Duncan destabilises the \"Great Chain of Being\" (the hierarchical order of the universe from God to angels to humans to animals to plants) -- the unnatural weather, the horses eating each other, and Duncan's horses running wild are all markers of this cosmic disturbance. The Gunpowder Plot of November 1605 -- just a year before the play's probable first performance -- makes the theme of treacherous subjects (and the question of equivocation) sharply topical. The Porter's speech explicitly references equivocation, and the Chief Jesuit Henry Garnet, who was hanged in May 1606 after being convicted of complicity in the Plot, had written a defence of equivocation. The play is also partly a compliment to James: Banquo, the king's legendary ancestor, is presented as noble and innocent, and the line of kings shown to Macbeth in the cauldron scene extends to a figure holding two orbs -- a reference to James's union of the Scottish and English crowns.",
     commonTeacherGaps: [
       'Teaching witches as straightforwardly evil without exploring the ideological complexity: the Jacobean audience would have debated whether the witches had any real power or merely revealed what was already latent in Macbeth',
-      'Not knowing the Gunpowder Plot connection to the Porter\'s equivocation speech -- this is one of the clearest examples of topical political reference in the play',
-      'Underplaying the Divine Right of Kings doctrine -- without it, Duncan\'s murder seems like merely a political crime rather than a cosmic transgression',
-      'Confusing Elizabethan and Jacobean context -- the play is Jacobean, not Elizabethan, and the shift in patronage (the King\'s Men) matters',
-      'Missing the significance of the witches\' gender in a patriarchal society: their power over male characters (including a king) is itself transgressive and threatening',
+      "Not knowing the Gunpowder Plot connection to the Porter's equivocation speech -- this is one of the clearest examples of topical political reference in the play",
+      "Underplaying the Divine Right of Kings doctrine -- without it, Duncan's murder seems like merely a political crime rather than a cosmic transgression",
+      "Confusing Elizabethan and Jacobean context -- the play is Jacobean, not Elizabethan, and the shift in patronage (the King's Men) matters",
+      "Missing the significance of the witches' gender in a patriarchal society: their power over male characters (including a king) is itself transgressive and threatening",
     ],
     deeperDive:
-      'The text of Macbeth we have is likely not the original: the Folio text (1623) shows signs of revision, and the Hecate scenes (3.5 and 4.1) are widely believed to be later interpolations, possibly by Thomas Middleton, who wrote The Witch around 1616. This matters because Hecate\'s somewhat comic, operatic quality is at odds with the grimmer tone of the "original" witch scenes, and a teacher who presents the witches as a unified creation is technically incorrect. The play is Shakespeare\'s shortest tragedy, which may itself be a sign of revision and cutting. The structural speed of Macbeth\'s fall -- compared to Hamlet\'s protracted delay or Othello\'s manipulated degradation -- creates a different kind of tragic momentum: we watch a capable, admired man disintegrate within what feels like weeks. Macbeth is unusual among Shakespeare\'s tragic heroes in that his acts are not errors of judgement (as Othello\'s are) but deliberate crimes -- and yet he retains audience sympathy throughout. Exploring why this is the case (his eloquent self-awareness, his suffering conscience, Lady Macbeth\'s complicity) is a rich area for Year 12 discussion.',
+      "The text of Macbeth we have is likely not the original: the Folio text (1623) shows signs of revision, and the Hecate scenes (3.5 and 4.1) are widely believed to be later interpolations, possibly by Thomas Middleton, who wrote The Witch around 1616. This matters because Hecate's somewhat comic, operatic quality is at odds with the grimmer tone of the \"original\" witch scenes, and a teacher who presents the witches as a unified creation is technically incorrect. The play is Shakespeare's shortest tragedy, which may itself be a sign of revision and cutting. The structural speed of Macbeth's fall -- compared to Hamlet's protracted delay or Othello's manipulated degradation -- creates a different kind of tragic momentum: we watch a capable, admired man disintegrate within what feels like weeks. Macbeth is unusual among Shakespeare's tragic heroes in that his acts are not errors of judgement (as Othello's are) but deliberate crimes -- and yet he retains audience sympathy throughout. Exploring why this is the case (his eloquent self-awareness, his suffering conscience, Lady Macbeth's complicity) is a rich area for Year 12 discussion.",
     usefulResources: [
       'James I (1597) Daemonologie -- available in facsimile and modern edition; read the introduction at minimum',
       'Greenblatt, S. (2004) Will in the World. Norton -- excellent contextual chapter on witchcraft',
@@ -591,11 +597,11 @@ export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
     topic: "Priestley's Socialist Message in An Inspector Calls",
     yearGroupRelevance: ['Y10', 'Y11'],
     essentialKnowledge:
-      "An Inspector Calls was written in 1945, though it is set in 1912. This temporal displacement is deliberate: Priestley was writing after the Second World War, when there was widespread political appetite for social reform (the Beveridge Report of 1942 had laid the groundwork for the post-war welfare state, and Labour won a landslide victory in July 1945). By setting the play in 1912, Priestley could use the audience's knowledge of subsequent history (two world wars, the Titanic, the failure of the old class system to sustain civilisation) as a dramatic irony device -- Birling's confident predictions about the Titanic and war are immediately recognisable as wrong to a 1945 audience. Priestley was a committed democratic socialist, though not a Marxist. His politics were more in the tradition of the English dissenting conscience: community obligation, decency, and the rejection of individual selfishness as a social principle. The Inspector's famous final speech ('We are members of one body -- we are responsible for each other') is a statement of collective moral responsibility rather than Marxist class analysis. The Birling family represents different degrees of resistance to and acceptance of this message: Arthur represents unreconstructed capitalism and self-interest; Sybil represents class snobbery and denial; Sheila and Eric represent the possibility of moral growth; Gerald represents a more complex moral position (genuine feeling for Eva/Daisy, but ultimately self-protecting). The cyclical structure (the phone call at the end mirroring the start) suggests that without genuine moral change, the cycle of exploitation will repeat -- which it has, in the form of another inspector coming.",
+      "An Inspector Calls was written in 1945, though it is set in 1912. This temporal displacement is deliberate: Priestley was writing after the Second World War, when there was widespread political appetite for social reform (the Beveridge Report of 1942 had laid the groundwork for the post-war welfare state, and Labour won a landslide victory in July 1945). By setting the play in 1912, Priestley could use the audience's knowledge of subsequent history (two world wars, the Titanic, the failure of the old class system to sustain civilisation) as a dramatic irony device -- Birling's confident predictions about the Titanic and war are immediately recognisable as wrong to a 1945 audience. Priestley was a committed democratic socialist, though not a Marxist. His politics were more in the tradition of the English dissenting conscience: community obligation, decency, and the rejection of individual selfishness as a social principle. The Inspector's famous final speech ('We are members of one body. We are responsible for each other.') is a statement of collective moral responsibility rather than Marxist class analysis. The Birling family represents different degrees of resistance to and acceptance of this message: Arthur represents unreconstructed capitalism and self-interest; Sybil represents class snobbery and denial; Sheila and Eric represent the possibility of moral growth; Gerald represents a more complex moral position (genuine feeling for Eva/Daisy, but ultimately self-protecting). The cyclical structure (the phone call at the end mirroring the start) suggests that without genuine moral change, the cycle of exploitation will repeat -- which it has, in the form of another inspector coming.",
     commonTeacherGaps: [
       "Describing Priestley as simply 'left-wing' without the specific political and historical detail -- his 1945 context and the Beveridge Report connection are examinable",
       'Not knowing that the play premiered in the Soviet Union (1945) before England -- an interesting historical footnote that positions the play in a Cold War context',
-      'Missing the dramatic irony dimension: Birling\'s complacency about the Titanic, the war, and progress is specifically designed to make him appear foolish to a 1945 audience who know what happened',
+      "Missing the dramatic irony dimension: Birling's complacency about the Titanic, the war, and progress is specifically designed to make him appear foolish to a 1945 audience who know what happened",
       'Overlooking the generational structure: Sheila and Eric are positioned as representatives of a new generation capable of change, which is a political point about who can build the post-war world',
       'Teaching the Inspector as a realistic police inspector rather than as a symbolic or supernatural figure -- his name, Goole (ghoul), and his apparent omniscience suggest he is allegorical',
     ],
@@ -614,10 +620,10 @@ export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
     topic: 'Linguistics Frameworks Overview for A-Level English Language',
     yearGroupRelevance: ['Y12', 'Y13'],
     essentialKnowledge:
-      'A-Level English Language requires students to analyse language using a range of theoretical frameworks. The main frameworks are: (1) Lexis and Semantics -- the study of vocabulary (word choice, connotation, denotation, semantic fields, register, neologism, euphemism, dysphemism, metaphor). (2) Grammar and Syntax -- the study of sentence and clause structure (sentence types, clause elements, phrase types, tense, aspect, modality, voice). (3) Phonology and Phonetics -- the study of sound systems (phonemes, prosodic features such as stress, intonation, rhythm; orthography and graphology). (4) Pragmatics and Discourse -- the study of how context shapes meaning (speech acts, implicature, Grice\'s maxims, politeness theory, discourse structure, coherence and cohesion). (5) Sociolinguistics -- the study of how social factors (gender, class, age, ethnicity, region) influence language use (dialect, sociolect, idiolect, register, code-switching). (6) Historical and Comparative Linguistics -- the study of language change over time (lexical change, semantic change, grammatical change, orthographic standardisation). Students are expected to select appropriate frameworks for analysis rather than applying all frameworks to every text -- this requires developed analytical judgement. The frameworks are tools for revealing meaning, not ends in themselves.',
+      "A-Level English Language requires students to analyse language using a range of theoretical frameworks. The main frameworks are: (1) Lexis and Semantics -- the study of vocabulary (word choice, connotation, denotation, semantic fields, register, neologism, euphemism, dysphemism, metaphor). (2) Grammar and Syntax -- the study of sentence and clause structure (sentence types, clause elements, phrase types, tense, aspect, modality, voice). (3) Phonology and Phonetics -- the study of sound systems (phonemes, prosodic features such as stress, intonation, rhythm; orthography and graphology). (4) Pragmatics and Discourse -- the study of how context shapes meaning (speech acts, implicature, Grice's maxims, politeness theory, discourse structure, coherence and cohesion). (5) Sociolinguistics -- the study of how social factors (gender, class, age, ethnicity, region) influence language use (dialect, sociolect, idiolect, register, code-switching). (6) Historical and Comparative Linguistics -- the study of language change over time (lexical change, semantic change, grammatical change, orthographic standardisation). Students are expected to select appropriate frameworks for analysis rather than applying all frameworks to every text -- this requires developed analytical judgement. The frameworks are tools for revealing meaning, not ends in themselves.",
     commonTeacherGaps: [
       'Conflating phonology (the sound system of a language) and phonetics (the physical production of sounds) -- at A-Level the distinction matters',
-      'Not having a confident command of Grice\'s maxims (quantity, quality, relation, manner) and their application to real speech -- these are examinable and frequently misapplied by students',
+      "Not having a confident command of Grice's maxims (quantity, quality, relation, manner) and their application to real speech -- these are examinable and frequently misapplied by students",
       'Underconfidence with grammatical terminology for phrases: noun phrase, verb phrase, adverbial phrase, prepositional phrase -- and the distinction between these and clauses',
       'Not knowing the key sociolinguistic researchers: Labov (social stratification and language), Trudgill (dialect levelling), Lakoff (language and gender), Tannen (gendered discourse styles)',
       'Confusing pragmatic implicature (what a speaker implies) with semantic meaning (what words mean) -- this distinction is fundamental to pragmatics',
@@ -640,7 +646,7 @@ export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
       "Child language acquisition (CLA) is a major topic in A-Level English Language. The key debate is between nativist, behaviourist, and interactionist accounts of how children acquire language. Behaviourist (Skinner, 1957): language is learned through operant conditioning -- children are reinforced for correct utterances and corrected for errors. This account is widely rejected as insufficient because children acquire grammar that they have never heard, make systematic errors ('goed' instead of 'went') that suggest rule-application rather than imitation, and acquire language at broadly similar rates regardless of the quantity of reinforcement they receive. Nativist (Chomsky, 1959): humans have an innate Language Acquisition Device (LAD) containing a Universal Grammar -- the abstract principles common to all human languages. Evidence: all children pass through the same acquisition stages (babbling, one-word, two-word, telegraphic), children are rarely corrected for grammatical errors (they are corrected for truth, not grammar), and the speed of acquisition is too fast to be explained by input alone (the 'poverty of the stimulus' argument). Interactionist (Bruner, Vygotsky): language acquisition requires both innate capacity and social interaction. Bruner's Language Acquisition Support System (LASS) complements Chomsky's LAD -- the child needs a caring adult who provides scaffolded language interaction. Vygotsky's Zone of Proximal Development (ZPD) suggests that children can perform beyond their independent level with support. Child-directed speech (formerly 'motherese'): adults simplify, repeat, and exaggerate when speaking to young children, which may scaffold acquisition. Key acquisition stages: babbling (6-8 months), one-word holophrases (12 months), two-word utterances (18-24 months), telegraphic speech (24-30 months), and then rapid grammatical expansion from age 3.",
     commonTeacherGaps: [
       "Not being able to articulate the 'poverty of the stimulus' argument clearly -- this is the core nativist evidence and students frequently misstate it",
-      'Conflating Chomsky\'s LAD with Universal Grammar -- the LAD is the hypothetical innate mechanism; Universal Grammar is the abstract grammatical knowledge it contains',
+      "Conflating Chomsky's LAD with Universal Grammar -- the LAD is the hypothetical innate mechanism; Universal Grammar is the abstract grammatical knowledge it contains",
       "Not knowing Halliday's seven functions of children's early language (instrumental, regulatory, interactional, personal, heuristic, imaginative, representational) -- these are frequently cited in exam answers",
       "Missing the distinction between 'virtuous errors' (systematic over-regularisation like 'goed', 'mouses') and random errors -- virtuous errors are evidence for the nativist position",
       'Not having example CLA data: students should be able to analyse transcripts of child speech and apply frameworks, so teachers need to be confident reading these',
@@ -687,7 +693,7 @@ export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
     commonTeacherGaps: [
       'Conflating pathetic fallacy (specifically weather/natural world reflecting emotion) with personification (giving any non-human thing human attributes) -- these are not synonyms',
       'Using "imagery" as a synonym for "metaphor" -- imagery is the broader category; metaphor is a specific type of imagery',
-      'Not knowing the distinction between a sonnet\'s octave (first eight lines) and sestet (final six lines), or Shakespearean (three quatrains plus couplet) versus Petrarchan sonnet forms',
+      "Not knowing the distinction between a sonnet's octave (first eight lines) and sestet (final six lines), or Shakespearean (three quatrains plus couplet) versus Petrarchan sonnet forms",
       'Applying "dramatic irony" to prose narrative -- dramatic irony is a theatrical term but is correctly applied to prose when the reader knows something a character does not',
       'Not modelling the analysis of these terms: identifying the technique is only the first step; explaining the effect is the analytical move that earns marks',
     ],
@@ -706,16 +712,16 @@ export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
     topic: 'Assessment Objectives Breakdown for IGCSE and A-Level Specifications',
     yearGroupRelevance: ['Y10', 'Y11', 'Y12', 'Y13'],
     essentialKnowledge:
-      "Assessment Objectives (AOs) define what is being measured in an examination. Teachers must know these precisely to teach and mark effectively. Edexcel IGCSE English Literature AOs: AO1 -- Show understanding of the texts studied and the ability to develop and sustain interpretations (respond to the question with a clear, relevant argument, supported by evidence from the text). AO2 -- Understand and analyse how writers use language, form, and structure to create effects and influence readers (close language analysis and structural awareness). AO3 -- Explore connections and comparisons between different literary texts, informed by interpretations of other readers (comparative analysis; this AO is primarily tested in Paper 1 and the coursework). AO4 -- Show understanding of the relationship between texts and the contexts in which they were written and received (historical, social, biographical, literary historical context). Cambridge IGCSE English Literature (0475): AO1 -- Respond to literary texts by developing informed personal interpretations. AO2 -- Understand and analyse the language, structure, and form of texts. AO3 -- Explore contexts and make connections. Edexcel IAL English Literature (A-Level): AO1 -- Articulate informed, personal and creative responses to literary texts. AO2 -- Analyse ways in which meanings are shaped in literary texts. AO3 -- Demonstrate understanding of the significance and influence of the contexts in which literary texts are written and received. AO4 -- Explore connections across literary texts. AO5 -- Demonstrate understanding of literary critical concepts and apply relevant literary theory. The relative weighting of AOs varies by paper and specification -- teachers must check their specific mark scheme annually as weightings can be adjusted.",
+      'Assessment Objectives (AOs) define what is being measured in an examination. Teachers must know these precisely to teach and mark effectively. Edexcel IGCSE English Literature AOs: AO1 -- Show understanding of the texts studied and the ability to develop and sustain interpretations (respond to the question with a clear, relevant argument, supported by evidence from the text). AO2 -- Understand and analyse how writers use language, form, and structure to create effects and influence readers (close language analysis and structural awareness). AO3 -- Explore connections and comparisons between different literary texts, informed by interpretations of other readers (comparative analysis; this AO is primarily tested in Paper 1 and the coursework). AO4 -- Show understanding of the relationship between texts and the contexts in which they were written and received (historical, social, biographical, literary historical context). Cambridge IGCSE English Literature (0475): AO1 -- Respond to literary texts by developing informed personal interpretations. AO2 -- Understand and analyse the language, structure, and form of texts. AO3 -- Explore contexts and make connections. Edexcel IAL English Literature (A-Level): AO1 -- Articulate informed, personal and creative responses to literary texts. AO2 -- Analyse ways in which meanings are shaped in literary texts. AO3 -- Demonstrate understanding of the significance and influence of the contexts in which literary texts are written and received. AO4 -- Explore connections across literary texts. AO5 -- Demonstrate understanding of literary critical concepts and apply relevant literary theory. The relative weighting of AOs varies by paper and specification -- teachers must check their specific mark scheme annually as weightings can be adjusted.',
     commonTeacherGaps: [
       "Teaching 'context' as a general requirement without knowing which papers and at what percentage context is assessed -- this leads to wasted time on context that is not credit-bearing in certain questions",
       "Not distinguishing AO2 (language, form, structure -- the 'how') from AO1 (interpretation -- the 'what') in marking and teaching",
-      "At A-Level, underplaying AO5 (critical theory) because the teacher is not confident in the frameworks -- AO5 is typically worth 20% of the total marks and cannot be taught superficially",
+      'At A-Level, underplaying AO5 (critical theory) because the teacher is not confident in the frameworks -- AO5 is typically worth 20% of the total marks and cannot be taught superficially',
       "Not knowing that 'connections' at IGCSE (AO3 in Edexcel) is a lower-order skill than at A-Level (AO4) -- the expectations are qualitatively different",
       'Applying the same mark scheme language to both tiers (Foundation and Higher at GCSE; Core and Extended at IGCSE) -- descriptor language differs between tiers',
     ],
     deeperDive:
-      "The AO framework was introduced to make assessment transparent and consistent, but it can also reduce teaching to mechanical AO coverage rather than genuine literary education. The most skilled English teachers use AOs as a background organising framework while foregrounding genuine intellectual engagement with texts. Students who can identify which AO a question is assessing will also be more strategic in their use of time: a question weighted 60% AO1 and 40% AO2 requires more interpretive argument and less technical language analysis than the weighting might suggest, because AO1 is fundamentally about the quality of sustained argument. The best preparation for AO assessment is not AO-labelled exercises but the development of genuine analytical habits: close reading, exploratory interpretation, contextual awareness, and the ability to compare meaningfully.",
+      'The AO framework was introduced to make assessment transparent and consistent, but it can also reduce teaching to mechanical AO coverage rather than genuine literary education. The most skilled English teachers use AOs as a background organising framework while foregrounding genuine intellectual engagement with texts. Students who can identify which AO a question is assessing will also be more strategic in their use of time: a question weighted 60% AO1 and 40% AO2 requires more interpretive argument and less technical language analysis than the weighting might suggest, because AO1 is fundamentally about the quality of sustained argument. The best preparation for AO assessment is not AO-labelled exercises but the development of genuine analytical habits: close reading, exploratory interpretation, contextual awareness, and the ability to compare meaningfully.',
     usefulResources: [
       'Edexcel IGCSE English Literature specification (9-1) -- full AO weightings by paper',
       'Cambridge IGCSE English Literature specification (0475/0992) -- full AO breakdown',
@@ -747,4 +753,4 @@ export const subjectKnowledgeNotes: SubjectKnowledgeNote[] = [
       'Cambridge Assessment: Coursework Handbook for Centres -- for Cambridge IGCSE specifications',
     ],
   },
-];
+]

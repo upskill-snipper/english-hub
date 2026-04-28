@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CourseData, CourseModule, CourseQuiz } from './courses';
+import type { CourseData, CourseModule, CourseQuiz } from './courses'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Edexcel IGCSE Literature — Anthology Poetry
@@ -60,23 +60,20 @@ const ifKiplingModules: CourseModule[] = [
         options: [
           'Queen Victoria',
           'Leander Starr Jameson',
-          'Kipling\'s own father',
+          "Kipling's own father",
           'Lord Tennyson',
         ],
         correct: 1,
-        explanation: 'The poem is widely believed to have been inspired by Leander Starr Jameson, whose composure after the failed Jameson Raid of 1895–96 exemplified the stoic resilience the poem celebrates.',
+        explanation:
+          'The poem is widely believed to have been inspired by Leander Starr Jameson, whose composure after the failed Jameson Raid of 1895–96 exemplified the stoic resilience the poem celebrates.',
       },
       {
         id: 'iglit-if-m1-q2',
         question: 'What does the speaker call Triumph and Disaster?',
-        options: [
-          'Two brothers',
-          'Two impostors',
-          'Two teachers',
-          'Two strangers',
-        ],
+        options: ['Two brothers', 'Two impostors', 'Two teachers', 'Two strangers'],
         correct: 1,
-        explanation: 'Kipling personifies Triumph and Disaster as "those two impostors", suggesting that both success and failure are deceptive and should not be allowed to destabilise one\'s composure.',
+        explanation:
+          'Kipling personifies Triumph and Disaster as "those two impostors", suggesting that both success and failure are deceptive and should not be allowed to destabilise one\'s composure.',
       },
       {
         id: 'iglit-if-m1-q3',
@@ -88,7 +85,8 @@ const ifKiplingModules: CourseModule[] = [
           'A place in heaven',
         ],
         correct: 2,
-        explanation: 'The final couplet promises "Yours is the Earth and everything that\'s in it, / And — which is more — you\'ll be a Man, my son!" The ultimate reward is not material but moral — achieving true manhood.',
+        explanation:
+          'The final couplet promises "Yours is the Earth and everything that\'s in it, / And — which is more — you\'ll be a Man, my son!" The ultimate reward is not material but moral — achieving true manhood.',
       },
     ],
   },
@@ -141,19 +139,17 @@ const ifKiplingModules: CourseModule[] = [
           'It is a grammatical error typical of Victorian poetry',
         ],
         correct: 1,
-        explanation: 'Capitalising these abstract nouns personifies them as figures you might "meet", and calling them "impostors" implies that both success and failure present false versions of reality that should not be trusted.',
+        explanation:
+          'Capitalising these abstract nouns personifies them as figures you might "meet", and calling them "impostors" implies that both success and failure present false versions of reality that should not be trusted.',
       },
       {
         id: 'iglit-if-m2-q2',
-        question: 'What literary technique is used in the pairing of "kings" and "the common touch"?',
-        options: [
-          'Simile',
-          'Onomatopoeia',
-          'Antithesis',
-          'Hyperbole',
-        ],
+        question:
+          'What literary technique is used in the pairing of "kings" and "the common touch"?',
+        options: ['Simile', 'Onomatopoeia', 'Antithesis', 'Hyperbole'],
         correct: 2,
-        explanation: 'Antithesis — the pairing of opposites — is used extensively throughout "If—" to reinforce the central theme of balance. The ideal person can move between extremes without being defined by either.',
+        explanation:
+          'Antithesis — the pairing of opposites — is used extensively throughout "If—" to reinforce the central theme of balance. The ideal person can move between extremes without being defined by either.',
       },
       {
         id: 'iglit-if-m2-q3',
@@ -165,7 +161,8 @@ const ifKiplingModules: CourseModule[] = [
           'It was required by Victorian poetic conventions',
         ],
         correct: 2,
-        explanation: 'The conditional structure means the reward ("you\'ll be a Man") is always deferred and never guaranteed. The accumulating "If" clauses pile up expectations, mirroring the poem\'s message that the ideal is demanding and aspirational rather than easily achieved.',
+        explanation:
+          'The conditional structure means the reward ("you\'ll be a Man") is always deferred and never guaranteed. The accumulating "If" clauses pile up expectations, mirroring the poem\'s message that the ideal is demanding and aspirational rather than easily achieved.',
       },
     ],
   },
@@ -205,14 +202,10 @@ const ifKiplingModules: CourseModule[] = [
       {
         id: 'iglit-if-m3-q1',
         question: 'What is the rhyme scheme of each stanza in "If—"?',
-        options: [
-          'AABBCCDD',
-          'ABBAABBA',
-          'ABABCDCD',
-          'ABCABC',
-        ],
+        options: ['AABBCCDD', 'ABBAABBA', 'ABABCDCD', 'ABCABC'],
         correct: 2,
-        explanation: 'Each stanza follows an ABABCDCD rhyme scheme, creating a steady, predictable rhythm that reinforces the poem\'s tone of calm, measured authority.',
+        explanation:
+          "Each stanza follows an ABABCDCD rhyme scheme, creating a steady, predictable rhythm that reinforces the poem's tone of calm, measured authority.",
       },
       {
         id: 'iglit-if-m3-q2',
@@ -224,19 +217,17 @@ const ifKiplingModules: CourseModule[] = [
           'It makes each stanza independent from the others',
         ],
         correct: 1,
-        explanation: 'The single conditional sentence creates a powerful sense of delayed gratification. The reader must absorb all the demanding conditions before learning the reward, mirroring the poem\'s message that moral excellence requires sustained effort.',
+        explanation:
+          "The single conditional sentence creates a powerful sense of delayed gratification. The reader must absorb all the demanding conditions before learning the reward, mirroring the poem's message that moral excellence requires sustained effort.",
       },
       {
         id: 'iglit-if-m3-q3',
-        question: 'What is the term for the repetition of "If you can" at the start of successive lines?',
-        options: [
-          'Epistrophe',
-          'Assonance',
-          'Anaphora',
-          'Alliteration',
-        ],
+        question:
+          'What is the term for the repetition of "If you can" at the start of successive lines?',
+        options: ['Epistrophe', 'Assonance', 'Anaphora', 'Alliteration'],
         correct: 2,
-        explanation: 'Anaphora is the repetition of a word or phrase at the beginning of successive clauses or lines. In "If—", the repeated "If you can" creates a rhythmic, incantatory quality and a sense of mounting pressure.',
+        explanation:
+          'Anaphora is the repetition of a word or phrase at the beginning of successive clauses or lines. In "If—", the repeated "If you can" creates a rhythmic, incantatory quality and a sense of mounting pressure.',
       },
     ],
   },
@@ -294,7 +285,8 @@ const ifKiplingModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-if-m4-q1',
-        question: 'In a model paragraph on "If—", why is it important to analyse the word "impostors" specifically?',
+        question:
+          'In a model paragraph on "If—", why is it important to analyse the word "impostors" specifically?',
         options: [
           'Because it is the longest word in the poem',
           'Because zooming in on individual words and exploring their connotations demonstrates close analysis (AO2)',
@@ -302,11 +294,13 @@ const ifKiplingModules: CourseModule[] = [
           'Because it is a word students are unlikely to know',
         ],
         correct: 1,
-        explanation: 'Analysing individual word choices and their connotations is at the heart of AO2 (language analysis). Exploring what "impostors" implies — that success and failure are deceptive — shows the examiner you can move from the micro level to the macro meaning.',
+        explanation:
+          'Analysing individual word choices and their connotations is at the heart of AO2 (language analysis). Exploring what "impostors" implies — that success and failure are deceptive — shows the examiner you can move from the micro level to the macro meaning.',
       },
       {
         id: 'iglit-if-m4-q2',
-        question: 'What is the "tennis match" approach to comparison, and why should it be avoided?',
+        question:
+          'What is the "tennis match" approach to comparison, and why should it be avoided?',
         options: [
           'Writing about sport in a literature essay',
           'Alternating between poems paragraph by paragraph, which creates a disjointed rather than thematic response',
@@ -314,11 +308,13 @@ const ifKiplingModules: CourseModule[] = [
           'Writing about each poem for exactly the same number of paragraphs',
         ],
         correct: 1,
-        explanation: 'The "tennis match" approach alternates between poems without integrating them thematically. A stronger approach is to organise by theme and discuss both poems within each paragraph, creating a cohesive comparative argument.',
+        explanation:
+          'The "tennis match" approach alternates between poems without integrating them thematically. A stronger approach is to organise by theme and discuss both poems within each paragraph, creating a cohesive comparative argument.',
       },
       {
         id: 'iglit-if-m4-q3',
-        question: 'Why should candidates discuss the conditional sentence structure of "If—" in their essay?',
+        question:
+          'Why should candidates discuss the conditional sentence structure of "If—" in their essay?',
         options: [
           'Because grammar is tested in the Literature exam',
           'Because the form of the poem creates meaning — the delayed resolution mirrors the sustained effort required for moral growth',
@@ -326,11 +322,12 @@ const ifKiplingModules: CourseModule[] = [
           'Because the examiner wants to know if students understand grammar',
         ],
         correct: 1,
-        explanation: 'Discussing how the conditional structure creates meaning — delayed gratification, mounting demands, aspirational rather than guaranteed reward — demonstrates analysis of form (AO2) and shows the examiner you understand the relationship between structure and meaning.',
+        explanation:
+          'Discussing how the conditional structure creates meaning — delayed gratification, mounting demands, aspirational rather than guaranteed reward — demonstrates analysis of form (AO2) and shows the examiner you understand the relationship between structure and meaning.',
       },
     ],
   },
-];
+]
 
 const ifKiplingCourse: CourseData = {
   id: 'igcse-lit-poem-if',
@@ -342,10 +339,11 @@ const ifKiplingCourse: CourseData = {
   price: 0,
   duration: '3 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive study of Kipling\'s "If—", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
+  description:
+    'A comprehensive study of Kipling\'s "If—", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
   color: '#7c3aed',
   moduleList: ifKiplingModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 2. "Prayer Before Birth" by Louis MacNeice
@@ -391,7 +389,8 @@ const prayerBeforeBirthModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-pbb-m1-q1',
-        question: 'In what year was "Prayer Before Birth" written, and what historical event was taking place?',
+        question:
+          'In what year was "Prayer Before Birth" written, and what historical event was taking place?',
         options: [
           '1918, during World War I',
           '1944, during World War II',
@@ -399,7 +398,8 @@ const prayerBeforeBirthModules: CourseModule[] = [
           '1930, during the Great Depression',
         ],
         correct: 1,
-        explanation: 'The poem was written in 1944, during the final years of World War II. The horrors of the war — totalitarianism, genocide, dehumanisation — directly inform the unborn child\'s fears.',
+        explanation:
+          "The poem was written in 1944, during the final years of World War II. The horrors of the war — totalitarianism, genocide, dehumanisation — directly inform the unborn child's fears.",
       },
       {
         id: 'iglit-pbb-m1-q2',
@@ -411,11 +411,12 @@ const prayerBeforeBirthModules: CourseModule[] = [
           'A mother praying for her child',
         ],
         correct: 2,
-        explanation: 'The poem is a dramatic monologue spoken by an unborn child. This choice of speaker gives voice to the most vulnerable of all humans, heightening the emotional impact of the poem\'s warnings about a corrupt world.',
+        explanation:
+          "The poem is a dramatic monologue spoken by an unborn child. This choice of speaker gives voice to the most vulnerable of all humans, heightening the emotional impact of the poem's warnings about a corrupt world.",
       },
       {
         id: 'iglit-pbb-m1-q3',
-        question: 'What does the child ask for at the poem\'s devastating conclusion?',
+        question: "What does the child ask for at the poem's devastating conclusion?",
         options: [
           'To be born into a better world',
           'To be given special powers of protection',
@@ -423,7 +424,8 @@ const prayerBeforeBirthModules: CourseModule[] = [
           'To be remembered after its death',
         ],
         correct: 2,
-        explanation: 'The final plea — "kill me" — is the poem\'s most devastating moment. The unborn child would rather not exist than be born into a world that will strip away its humanity.',
+        explanation:
+          'The final plea — "kill me" — is the poem\'s most devastating moment. The unborn child would rather not exist than be born into a world that will strip away its humanity.',
       },
     ],
   },
@@ -462,24 +464,26 @@ const prayerBeforeBirthModules: CourseModule[] = [
         question: 'What is the effect of MacNeice borrowing the form of a litany?',
         options: [
           'It makes the poem sound old-fashioned',
-          'It elevates the child\'s pleas to something resembling a sacred, ritualistic appeal',
+          "It elevates the child's pleas to something resembling a sacred, ritualistic appeal",
           'It shows MacNeice was a religious poet',
           'It makes the poem easier to memorise for the exam',
         ],
         correct: 1,
-        explanation: 'The litany form — a series of petitions with repeated openings — gives the unborn child\'s pleas a ritualistic, urgent quality. It elevates personal anxiety into a sacred appeal, invoking a higher moral authority.',
+        explanation:
+          "The litany form — a series of petitions with repeated openings — gives the unborn child's pleas a ritualistic, urgent quality. It elevates personal anxiety into a sacred appeal, invoking a higher moral authority.",
       },
       {
         id: 'iglit-pbb-m2-q2',
         question: 'What does the metaphor "a cog in a machine" represent?',
         options: [
-          'The child\'s interest in engineering',
+          "The child's interest in engineering",
           'The dehumanising effects of totalitarian systems and conformist society',
           'The industrial revolution',
-          'The child\'s fear of factory work',
+          "The child's fear of factory work",
         ],
         correct: 1,
-        explanation: 'The "cog in a machine" metaphor captures the fear of dehumanisation — being reduced from a living, individual human being to a mere component in a system that strips away agency, individuality, and moral responsibility.',
+        explanation:
+          'The "cog in a machine" metaphor captures the fear of dehumanisation — being reduced from a living, individual human being to a mere component in a system that strips away agency, individuality, and moral responsibility.',
       },
       {
         id: 'iglit-pbb-m2-q3',
@@ -491,7 +495,8 @@ const prayerBeforeBirthModules: CourseModule[] = [
           'They shift from human threats to natural disasters',
         ],
         correct: 2,
-        explanation: 'The threats escalate deliberately: from supernatural fears (bats, ghouls) to social corruption (betrayal, lecturing) to political dehumanisation (cog in a machine) to the ultimate conclusion that non-existence is preferable. This escalation is both a linguistic and structural feature.',
+        explanation:
+          'The threats escalate deliberately: from supernatural fears (bats, ghouls) to social corruption (betrayal, lecturing) to political dehumanisation (cog in a machine) to the ultimate conclusion that non-existence is preferable. This escalation is both a linguistic and structural feature.',
       },
     ],
   },
@@ -540,19 +545,21 @@ const prayerBeforeBirthModules: CourseModule[] = [
           'They are designed to confuse the reader',
         ],
         correct: 1,
-        explanation: 'The visual layout of the poem — with dramatically varying line lengths and indentation — creates a wave-like pattern that can represent breathing, heartbeat, or contractions. This makes the poem feel physically alive, appropriate for a speaker who is an unborn child.',
+        explanation:
+          'The visual layout of the poem — with dramatically varying line lengths and indentation — creates a wave-like pattern that can represent breathing, heartbeat, or contractions. This makes the poem feel physically alive, appropriate for a speaker who is an unborn child.',
       },
       {
         id: 'iglit-pbb-m3-q2',
         question: 'Why is the final line "Otherwise kill me" structurally significant?',
         options: [
           'It is the only line that rhymes',
-          'Its abrupt brevity after long, expanding stanzas creates a shocking structural contrast that concentrates the poem\'s anguish',
+          "Its abrupt brevity after long, expanding stanzas creates a shocking structural contrast that concentrates the poem's anguish",
           'It is the first time the child speaks directly',
           'It is written in a different language from the rest of the poem',
         ],
         correct: 1,
-        explanation: 'After stanzas that grow progressively longer and more expansive, the final three-word line creates a devastating structural contrast. Its brevity concentrates all the poem\'s accumulated anguish into a blunt ultimatum — the child has nothing left to say.',
+        explanation:
+          "After stanzas that grow progressively longer and more expansive, the final three-word line creates a devastating structural contrast. Its brevity concentrates all the poem's accumulated anguish into a blunt ultimatum — the child has nothing left to say.",
       },
       {
         id: 'iglit-pbb-m3-q3',
@@ -564,7 +571,8 @@ const prayerBeforeBirthModules: CourseModule[] = [
           'Because the unborn child is growing physically larger',
         ],
         correct: 2,
-        explanation: 'The structural expansion mirrors the escalation of the child\'s fears. As the threats multiply and intensify — from personal anxieties to political horrors — the stanzas expand to contain them, reflecting the overwhelming accumulation of anxiety.',
+        explanation:
+          "The structural expansion mirrors the escalation of the child's fears. As the threats multiply and intensify — from personal anxieties to political horrors — the stanzas expand to contain them, reflecting the overwhelming accumulation of anxiety.",
       },
     ],
   },
@@ -661,7 +669,7 @@ const prayerBeforeBirthModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-pbb-m4-q1',
-        question: 'What makes the model paragraph\'s use of context effective?',
+        question: "What makes the model paragraph's use of context effective?",
         options: [
           'It provides a long history of World War II',
           'It integrates specific historical references (totalitarian regimes) naturally into the literary analysis',
@@ -669,11 +677,13 @@ const prayerBeforeBirthModules: CourseModule[] = [
           'It places context in a separate paragraph',
         ],
         correct: 1,
-        explanation: 'Effective use of context means integrating specific historical references into your literary analysis — not writing a separate history paragraph. The model connects the "cog in a machine" metaphor to totalitarian regimes naturally, showing how context illuminates the poem\'s meaning.',
+        explanation:
+          'Effective use of context means integrating specific historical references into your literary analysis — not writing a separate history paragraph. The model connects the "cog in a machine" metaphor to totalitarian regimes naturally, showing how context illuminates the poem\'s meaning.',
       },
       {
         id: 'iglit-pbb-m4-q2',
-        question: 'Which poem would create the most effective contrast with "Prayer Before Birth" on the theme of personal values?',
+        question:
+          'Which poem would create the most effective contrast with "Prayer Before Birth" on the theme of personal values?',
         options: [
           '"Sonnet 116" — because both are about love',
           '"If—" — because Kipling\'s confident, stoic tone contrasts with MacNeice\'s desperate, fearful tone',
@@ -681,7 +691,8 @@ const prayerBeforeBirthModules: CourseModule[] = [
           '"Blessing" — because both are set in hot countries',
         ],
         correct: 1,
-        explanation: '"If—" and "Prayer Before Birth" both explore personal values and identity, but their tones are dramatically different. Kipling\'s speaker is confident and instructional; MacNeice\'s unborn child is desperate and pleading. This contrast creates rich comparison opportunities.',
+        explanation:
+          '"If—" and "Prayer Before Birth" both explore personal values and identity, but their tones are dramatically different. Kipling\'s speaker is confident and instructional; MacNeice\'s unborn child is desperate and pleading. This contrast creates rich comparison opportunities.',
       },
       {
         id: 'iglit-pbb-m4-q3',
@@ -693,11 +704,12 @@ const prayerBeforeBirthModules: CourseModule[] = [
           'Because it is the first word of the poem',
         ],
         correct: 1,
-        explanation: 'Zooming into individual words and exploring their connotations (smallness, replaceability, subordination) demonstrates the close analytical skill that examiners reward with the highest AO2 marks. It shows you can move from micro-level detail to macro-level meaning.',
+        explanation:
+          'Zooming into individual words and exploring their connotations (smallness, replaceability, subordination) demonstrates the close analytical skill that examiners reward with the highest AO2 marks. It shows you can move from micro-level detail to macro-level meaning.',
       },
     ],
   },
-];
+]
 
 const prayerBeforeBirthCourse: CourseData = {
   id: 'igcse-lit-poem-prayer-before-birth',
@@ -709,10 +721,11 @@ const prayerBeforeBirthCourse: CourseData = {
   price: 0,
   duration: '3 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive study of MacNeice\'s "Prayer Before Birth", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
+  description:
+    'A comprehensive study of MacNeice\'s "Prayer Before Birth", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
   color: '#6d28d9',
   moduleList: prayerBeforeBirthModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 3. "Blessing" by Imtiaz Dharker
@@ -726,7 +739,9 @@ const blessingModules: CourseModule[] = [
     content: `
 <h2>"Blessing" by Imtiaz Dharker: Context &amp; Overview</h2>
 
-<p>Imtiaz Dharker (born 1954) is a Pakistani-born British poet, artist, and filmmaker. She grew up in Glasgow, Scotland, and her poetry often explores themes of <strong>identity, displacement, community, and faith</strong>. "Blessing" is set in a slum in Mumbai (then Bombay), India, and describes the moment a water pipe bursts, bringing a sudden, miraculous abundance of water to a community that normally endures severe scarcity.</p>
+<p>Imtiaz Dharker (born 1954) is a Pakistani-born British poet; raised in Glasgow; divides time between London and Mumbai. Working as a poet, artist, and filmmaker, her poetry often explores themes of <strong>identity, displacement, community, and faith</strong>. "Blessing" is set in a slum in Mumbai (then Bombay), India, and describes the moment a water pipe bursts, bringing a sudden, miraculous abundance of water to a community that normally endures severe scarcity.</p>
+
+<p class="rights-notice"><em>&copy; Bloodaxe Books &mdash; fair-dealing extract. Quotations from "Blessing" used here for educational commentary; full text licence available from <a href="https://www.bloodaxebooks.com">bloodaxebooks.com</a>.</em></p>
 
 <h3>Context: Water Scarcity</h3>
 <p>The poem draws on the real experience of communities in the developing world where access to clean water is not guaranteed. In the slums of Mumbai, water is often rationed and supplied through communal taps for limited periods. A burst pipe — which in a wealthy country would be an inconvenience — becomes in this context a moment of <strong>joy, celebration, and almost religious ecstasy</strong>.</p>
@@ -763,11 +778,12 @@ const blessingModules: CourseModule[] = [
           'A fishing village in Pakistan',
         ],
         correct: 1,
-        explanation: '"Blessing" is set in a slum in Mumbai (then Bombay), India, where water scarcity is a daily reality. A burst municipal pipe becomes a moment of extraordinary joy and communal celebration.',
+        explanation:
+          '"Blessing" is set in a slum in Mumbai (then Bombay), India, where water scarcity is a daily reality. A burst municipal pipe becomes a moment of extraordinary joy and communal celebration.',
       },
       {
         id: 'iglit-bl-m1-q2',
-        question: 'What event triggers the community\'s celebration in the poem?',
+        question: "What event triggers the community's celebration in the poem?",
         options: [
           'A religious festival',
           'A rainfall after a long drought',
@@ -775,19 +791,21 @@ const blessingModules: CourseModule[] = [
           'A new well being dug',
         ],
         correct: 2,
-        explanation: 'The central event of the poem is a municipal water pipe bursting, flooding the area with water. This accident becomes a "blessing" for a community that normally endures severe water scarcity.',
+        explanation:
+          'The central event of the poem is a municipal water pipe bursting, flooding the area with water. This accident becomes a "blessing" for a community that normally endures severe water scarcity.',
       },
       {
         id: 'iglit-bl-m1-q3',
         question: 'What is significant about the poem\'s final image of children\'s "small bones"?',
         options: [
           'It shows the children are playing a game',
-          'It reminds us of the community\'s physical fragility and vulnerability even in a moment of joy',
+          "It reminds us of the community's physical fragility and vulnerability even in a moment of joy",
           'It describes a skeleton found in the ground',
           'It suggests the children are well-fed and healthy',
         ],
         correct: 1,
-        explanation: 'The reference to "small bones" is a reminder of the children\'s physical fragility — they are thin, vulnerable, and malnourished. Even in a moment of ecstatic joy, Dharker does not let the reader forget the underlying poverty.',
+        explanation:
+          'The reference to "small bones" is a reminder of the children\'s physical fragility — they are thin, vulnerable, and malnourished. Even in a moment of ecstatic joy, Dharker does not let the reader forget the underlying poverty.',
       },
     ],
   },
@@ -834,7 +852,8 @@ const blessingModules: CourseModule[] = [
           'It indicates that everyone is singing hymns',
         ],
         correct: 1,
-        explanation: '"Congregation" is a word normally used for worshippers gathered in a place of worship. By applying it to the community gathered around a burst pipe, Dharker elevates the experience of receiving water into something sacred and communal.',
+        explanation:
+          '"Congregation" is a word normally used for worshippers gathered in a place of worship. By applying it to the community gathered around a burst pipe, Dharker elevates the experience of receiving water into something sacred and communal.',
       },
       {
         id: 'iglit-bl-m2-q2',
@@ -846,7 +865,8 @@ const blessingModules: CourseModule[] = [
           'Because the simile is too vague to have any specific meaning',
         ],
         correct: 1,
-        explanation: 'The simile is ambiguous because a pod cracking can suggest both the suffering of drought and the potential for new life — pods crack open to release seeds. This duality anticipates the poem\'s movement from scarcity to abundance.',
+        explanation:
+          "The simile is ambiguous because a pod cracking can suggest both the suffering of drought and the potential for new life — pods crack open to release seeds. This duality anticipates the poem's movement from scarcity to abundance.",
       },
       {
         id: 'iglit-bl-m2-q3',
@@ -858,7 +878,8 @@ const blessingModules: CourseModule[] = [
           'It is a scientific term for a type of weather',
         ],
         correct: 1,
-        explanation: '"Liquid sun" is a striking oxymoron — the sun, which causes the drought and suffering, is transformed through the medium of water into something beautiful and life-giving. It captures the poem\'s central transformation from scarcity to blessing.',
+        explanation:
+          '"Liquid sun" is a striking oxymoron — the sun, which causes the drought and suffering, is transformed through the medium of water into something beautiful and life-giving. It captures the poem\'s central transformation from scarcity to blessing.',
       },
     ],
   },
@@ -911,7 +932,8 @@ const blessingModules: CourseModule[] = [
           'Because it is an epigraph, not part of the main poem',
         ],
         correct: 1,
-        explanation: 'The single-line opening visually represents the scarcity that defines the community\'s daily life — there is so little that there is not even enough to fill a stanza. Its brevity also creates a stark, attention-grabbing opening.',
+        explanation:
+          "The single-line opening visually represents the scarcity that defines the community's daily life — there is so little that there is not even enough to fill a stanza. Its brevity also creates a stark, attention-grabbing opening.",
       },
       {
         id: 'iglit-bl-m3-q2',
@@ -923,7 +945,8 @@ const blessingModules: CourseModule[] = [
           'It slows the poem down to create a peaceful mood',
         ],
         correct: 1,
-        explanation: 'The enjambment in the longest stanza creates a sense of unstoppable forward movement, mirroring the rush of water from the burst pipe. The words spill over line breaks just as the water overflows — form enacts content.',
+        explanation:
+          'The enjambment in the longest stanza creates a sense of unstoppable forward movement, mirroring the rush of water from the burst pipe. The words spill over line breaks just as the water overflows — form enacts content.',
       },
       {
         id: 'iglit-bl-m3-q3',
@@ -935,7 +958,8 @@ const blessingModules: CourseModule[] = [
           'Past, present, future — like a timeline',
         ],
         correct: 1,
-        explanation: 'The poem moves from the stillness and dryness of the opening through the explosive energy of the burst pipe to the calm, contemplative final image of children in "liquid sun". This arc mirrors the experience itself and gives the poem a musical shape.',
+        explanation:
+          'The poem moves from the stillness and dryness of the opening through the explosive energy of the burst pipe to the calm, contemplative final image of children in "liquid sun". This arc mirrors the experience itself and gives the poem a musical shape.',
       },
     ],
   },
@@ -966,6 +990,7 @@ const blessingModules: CourseModule[] = [
 <div class="text-extract">
 <p><em>Dharker uses a semantic field of religion to transform the arrival of water from a mundane accident into a transcendent experience. The crowd that gathers is described as a "congregation" — a word that reframes the dusty street as a place of worship and the burst pipe as an altar. The phrase "the voice of a kindly god" attributes divine agency to the sound of flowing water, suggesting that for this community, the arrival of water is as profound and miraculous as a religious revelation. The title itself — "Blessing" — frames the entire poem within a spiritual vocabulary. Dharker does not present poverty as a condition to be pitied but as a context in which people find deep meaning and joy in what others take for granted. This challenges the reader's assumptions about happiness and value, implicitly questioning whether affluent societies — which waste water daily — are truly richer in any meaningful sense.</em></p>
 </div>
+<p class="rights-notice"><em>Quotations from "Blessing" by Imtiaz Dharker. &copy; Bloodaxe Books &mdash; fair-dealing extract.</em></p>
 
 <h3>What Makes This Paragraph Effective?</h3>
 <ul>
@@ -996,7 +1021,8 @@ const blessingModules: CourseModule[] = [
           'Because patronising language loses AO4 marks',
         ],
         correct: 1,
-        explanation: 'Dharker celebrates the community\'s capacity for joy and finds the sacred in everyday life. A reading that only sees suffering misses the poem\'s complexity and its implicit challenge to Western assumptions about happiness and value.',
+        explanation:
+          "Dharker celebrates the community's capacity for joy and finds the sacred in everyday life. A reading that only sees suffering misses the poem's complexity and its implicit challenge to Western assumptions about happiness and value.",
       },
       {
         id: 'iglit-bl-m4-q2',
@@ -1008,11 +1034,13 @@ const blessingModules: CourseModule[] = [
           'First-person narration',
         ],
         correct: 1,
-        explanation: 'The model paragraph identifies and analyses a semantic field of religion ("kindly god", "congregation", "blessing"), showing how Dharker uses this pattern of religious language to elevate the arrival of water into a transcendent, sacred experience.',
+        explanation:
+          'The model paragraph identifies and analyses a semantic field of religion ("kindly god", "congregation", "blessing"), showing how Dharker uses this pattern of religious language to elevate the arrival of water into a transcendent, sacred experience.',
       },
       {
         id: 'iglit-bl-m4-q3',
-        question: 'What implicit challenge does the poem pose to the reader, according to the model paragraph?',
+        question:
+          'What implicit challenge does the poem pose to the reader, according to the model paragraph?',
         options: [
           'It challenges the reader to donate money to water charities',
           'It questions whether affluent societies that waste water daily are truly richer in any meaningful sense',
@@ -1020,11 +1048,12 @@ const blessingModules: CourseModule[] = [
           'It challenges the reader to visit Mumbai',
         ],
         correct: 1,
-        explanation: 'The poem implicitly questions whether affluent societies — which take water for granted and waste it — are truly richer than communities that find profound joy and sacred meaning in its arrival. This is a subtle but powerful challenge to the reader\'s assumptions.',
+        explanation:
+          "The poem implicitly questions whether affluent societies — which take water for granted and waste it — are truly richer than communities that find profound joy and sacred meaning in its arrival. This is a subtle but powerful challenge to the reader's assumptions.",
       },
     ],
   },
-];
+]
 
 const blessingCourse: CourseData = {
   id: 'igcse-lit-poem-blessing',
@@ -1036,10 +1065,11 @@ const blessingCourse: CourseData = {
   price: 0,
   duration: '3 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive study of Dharker\'s "Blessing", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
+  description:
+    'A comprehensive study of Dharker\'s "Blessing", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
   color: '#2563eb',
   moduleList: blessingModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 4. "Search For My Tongue" by Sujata Bhatt
@@ -1090,25 +1120,27 @@ const searchForMyTongueModules: CourseModule[] = [
         id: 'iglit-sfmt-m1-q1',
         question: 'What is the double meaning of "tongue" in the poem?',
         options: [
-          'It refers to both a snake\'s tongue and a human tongue',
+          "It refers to both a snake's tongue and a human tongue",
           'It refers to both the physical tongue in the mouth and language (mother tongue)',
           'It refers to both speaking and eating',
           'It refers to both Gujarati and Hindi',
         ],
         correct: 1,
-        explanation: 'Bhatt exploits the double meaning of "tongue" — it is both the physical organ used for speaking and a metaphor for language ("mother tongue"). This creates a powerful extended metaphor in which losing a language is described as losing part of the body.',
+        explanation:
+          'Bhatt exploits the double meaning of "tongue" — it is both the physical organ used for speaking and a metaphor for language ("mother tongue"). This creates a powerful extended metaphor in which losing a language is described as losing part of the body.',
       },
       {
         id: 'iglit-sfmt-m1-q2',
-        question: 'What happens to the mother tongue in the poem\'s central metaphor?',
+        question: "What happens to the mother tongue in the poem's central metaphor?",
         options: [
           'It is translated into English',
           'It rots and dies but grows back like a plant in dreams',
           'It is written down in a book',
-          'It is taught to the speaker\'s children',
+          "It is taught to the speaker's children",
         ],
         correct: 1,
-        explanation: 'The mother tongue is described as rotting and dying — but then growing back in the speaker\'s dreams like a plant, with "a stump of a shoot" that "grows longer, grows moist, grows strong veins" and eventually "blossoms". This metaphor conveys resilience.',
+        explanation:
+          'The mother tongue is described as rotting and dying — but then growing back in the speaker\'s dreams like a plant, with "a stump of a shoot" that "grows longer, grows moist, grows strong veins" and eventually "blossoms". This metaphor conveys resilience.',
       },
       {
         id: 'iglit-sfmt-m1-q3',
@@ -1120,7 +1152,8 @@ const searchForMyTongueModules: CourseModule[] = [
           'Because the poem was originally written entirely in Gujarati',
         ],
         correct: 2,
-        explanation: 'The Gujarati section physically embodies the mother tongue within the poem. For English-speaking readers, encountering an unfamiliar script replicates the experience of linguistic displacement — the reader momentarily feels what it is like to be unable to understand a language around them.',
+        explanation:
+          'The Gujarati section physically embodies the mother tongue within the poem. For English-speaking readers, encountering an unfamiliar script replicates the experience of linguistic displacement — the reader momentarily feels what it is like to be unable to understand a language around them.',
       },
     ],
   },
@@ -1162,7 +1195,8 @@ const searchForMyTongueModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-sfmt-m2-q1',
-        question: 'What is the effect of the triple repetition "grows longer, grows moist, grows strong veins"?',
+        question:
+          'What is the effect of the triple repetition "grows longer, grows moist, grows strong veins"?',
         options: [
           'It slows the poem down',
           'It enacts the process of growth in the language itself, with each repetition adding strength and complexity',
@@ -1170,7 +1204,8 @@ const searchForMyTongueModules: CourseModule[] = [
           'It is a typical feature of Gujarati poetry',
         ],
         correct: 1,
-        explanation: 'The triple repetition of "grows" enacts growth through the language itself. Each repetition adds a new quality — length, moisture, veins — suggesting the tongue is becoming progressively stronger, more vital, and more complex. Form mirrors content.',
+        explanation:
+          'The triple repetition of "grows" enacts growth through the language itself. Each repetition adds a new quality — length, moisture, veins — suggesting the tongue is becoming progressively stronger, more vital, and more complex. Form mirrors content.',
       },
       {
         id: 'iglit-sfmt-m2-q2',
@@ -1182,7 +1217,8 @@ const searchForMyTongueModules: CourseModule[] = [
           'Because she does not know who her reader is',
         ],
         correct: 2,
-        explanation: 'The second-person address creates an intimate, conversational tone and forces the reader to imagine what it would feel like to have "two tongues in your mouth". The reader cannot remain a detached observer — they are drawn into the experience.',
+        explanation:
+          'The second-person address creates an intimate, conversational tone and forces the reader to imagine what it would feel like to have "two tongues in your mouth". The reader cannot remain a detached observer — they are drawn into the experience.',
       },
       {
         id: 'iglit-sfmt-m2-q3',
@@ -1194,7 +1230,8 @@ const searchForMyTongueModules: CourseModule[] = [
           'The arrival of spring weather',
         ],
         correct: 1,
-        explanation: '"Blossoms" carries connotations of beauty, vitality, and natural abundance. It is the triumphant climax of the botanical metaphor — the mother tongue, which seemed to have rotted and died, has not only survived but flourished.',
+        explanation:
+          '"Blossoms" carries connotations of beauty, vitality, and natural abundance. It is the triumphant climax of the botanical metaphor — the mother tongue, which seemed to have rotted and died, has not only survived but flourished.',
       },
     ],
   },
@@ -1242,12 +1279,13 @@ const searchForMyTongueModules: CourseModule[] = [
         question: 'Why is the Gujarati section significant structurally?',
         options: [
           'It is just a translation of the English text',
-          'It enacts the poem\'s argument by interrupting English and physically embodying the mother tongue on the page',
+          "It enacts the poem's argument by interrupting English and physically embodying the mother tongue on the page",
           'It is included only for decoration',
           'It is a standard feature of all Edexcel anthology poems',
         ],
         correct: 1,
-        explanation: 'The Gujarati section enacts the poem\'s argument: the mother tongue interrupts the English text just as it interrupts the speaker\'s life. For English-speaking readers, it creates a moment of linguistic displacement that mirrors the speaker\'s own experience.',
+        explanation:
+          "The Gujarati section enacts the poem's argument: the mother tongue interrupts the English text just as it interrupts the speaker's life. For English-speaking readers, it creates a moment of linguistic displacement that mirrors the speaker's own experience.",
       },
       {
         id: 'iglit-sfmt-m3-q2',
@@ -1259,7 +1297,8 @@ const searchForMyTongueModules: CourseModule[] = [
           'Question, evidence, conclusion — like an essay',
         ],
         correct: 1,
-        explanation: 'The poem follows a crisis → dream → resolution arc. The speaker begins in despair (the tongue is rotting), enters a dreamlike space (the Gujarati section), and emerges with renewed hope (the tongue blossoms). This arc demonstrates the resilience of cultural identity.',
+        explanation:
+          'The poem follows a crisis → dream → resolution arc. The speaker begins in despair (the tongue is rotting), enters a dreamlike space (the Gujarati section), and emerges with renewed hope (the tongue blossoms). This arc demonstrates the resilience of cultural identity.',
       },
       {
         id: 'iglit-sfmt-m3-q3',
@@ -1268,10 +1307,11 @@ const searchForMyTongueModules: CourseModule[] = [
           'It makes the poem seem unprofessional',
           'It creates intimacy and urgency by making the reader feel directly addressed',
           'It shows the speaker is not a skilled poet',
-          'It distances the reader from the poem\'s themes',
+          "It distances the reader from the poem's themes",
         ],
         correct: 1,
-        explanation: 'The conversational opening ("You ask me what I mean...") creates intimacy and urgency. The reader feels directly addressed and drawn into the speaker\'s experience, preventing detached, distant reading.',
+        explanation:
+          'The conversational opening ("You ask me what I mean...") creates intimacy and urgency. The reader feels directly addressed and drawn into the speaker\'s experience, preventing detached, distant reading.',
       },
     ],
   },
@@ -1327,28 +1367,31 @@ const searchForMyTongueModules: CourseModule[] = [
         question: 'Why is the Gujarati section a "political as well as a poetic gesture"?',
         options: [
           'Because Bhatt is a political activist',
-          'Because it challenges the cultural dominance of English by asserting Gujarati\'s equal validity as a poetic language',
+          "Because it challenges the cultural dominance of English by asserting Gujarati's equal validity as a poetic language",
           'Because it criticises the Indian government',
           'Because it was required by the publisher',
         ],
         correct: 1,
-        explanation: 'Including Gujarati script in an English-language poem challenges the assumption that English is the default or superior language of literature. Bhatt asserts that Gujarati is equally valid as a medium of expression — a political statement about linguistic hierarchy.',
+        explanation:
+          'Including Gujarati script in an English-language poem challenges the assumption that English is the default or superior language of literature. Bhatt asserts that Gujarati is equally valid as a medium of expression — a political statement about linguistic hierarchy.',
       },
       {
         id: 'iglit-sfmt-m4-q2',
-        question: 'How does the model paragraph connect the Gujarati section to the poem\'s overall structure?',
+        question:
+          "How does the model paragraph connect the Gujarati section to the poem's overall structure?",
         options: [
           'It says the Gujarati section is decorative',
-          'It identifies it as the poem\'s turning point — the dream in which the mother tongue grows back — placed between two English sections',
+          "It identifies it as the poem's turning point — the dream in which the mother tongue grows back — placed between two English sections",
           'It argues the Gujarati section should have been translated',
-          'It says the Gujarati section is the poem\'s conclusion',
+          "It says the Gujarati section is the poem's conclusion",
         ],
         correct: 1,
-        explanation: 'The model paragraph identifies the Gujarati section as the poem\'s structural turning point — the dream in which the mother tongue reasserts itself. Its placement between two English sections enacts the poem\'s argument about the mother tongue persisting beneath the acquired language.',
+        explanation:
+          "The model paragraph identifies the Gujarati section as the poem's structural turning point — the dream in which the mother tongue reasserts itself. Its placement between two English sections enacts the poem's argument about the mother tongue persisting beneath the acquired language.",
       },
       {
         id: 'iglit-sfmt-m4-q3',
-        question: 'What is the poem\'s overall argument about cultural identity?',
+        question: "What is the poem's overall argument about cultural identity?",
         options: [
           'Cultural identity is easily destroyed by displacement',
           'English is superior to all other languages',
@@ -1356,11 +1399,12 @@ const searchForMyTongueModules: CourseModule[] = [
           'People should only speak one language',
         ],
         correct: 2,
-        explanation: 'The poem argues that cultural identity, embodied in the mother tongue, is resilient and cannot be permanently destroyed. Even when it seems to have "rotted", it "blossoms" back — suggesting that identity runs deeper than conscious linguistic practice.',
+        explanation:
+          'The poem argues that cultural identity, embodied in the mother tongue, is resilient and cannot be permanently destroyed. Even when it seems to have "rotted", it "blossoms" back — suggesting that identity runs deeper than conscious linguistic practice.',
       },
     ],
   },
-];
+]
 
 const searchForMyTongueCourse: CourseData = {
   id: 'igcse-lit-poem-search-for-my-tongue',
@@ -1372,10 +1416,11 @@ const searchForMyTongueCourse: CourseData = {
   price: 0,
   duration: '3 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive study of Bhatt\'s "Search For My Tongue", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
+  description:
+    'A comprehensive study of Bhatt\'s "Search For My Tongue", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
   color: '#0891b2',
   moduleList: searchForMyTongueModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 5. "Half-past Two" by U A Fanthorpe
@@ -1417,7 +1462,7 @@ const halfPastTwoModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-hpt-m1-q1',
-        question: 'Why can the child not obey the teacher\'s instruction?',
+        question: "Why can the child not obey the teacher's instruction?",
         options: [
           'He is being deliberately disobedient',
           'He has not learned to tell the time and knows it only through personal landmarks',
@@ -1425,7 +1470,8 @@ const halfPastTwoModules: CourseModule[] = [
           'He cannot hear the teacher',
         ],
         correct: 1,
-        explanation: 'The child has not yet learned to read a clock. He knows time only through his own sensory landmarks — "gettinguptime", "taborgotime" — which means the teacher\'s instruction to stay until "Half-past Two" is meaningless to him.',
+        explanation:
+          'The child has not yet learned to read a clock. He knows time only through his own sensory landmarks — "gettinguptime", "taborgotime" — which means the teacher\'s instruction to stay until "Half-past Two" is meaningless to him.',
       },
       {
         id: 'iglit-hpt-m1-q2',
@@ -1437,19 +1483,21 @@ const halfPastTwoModules: CourseModule[] = [
           'He learns to tell the time by himself',
         ],
         correct: 2,
-        explanation: 'Unable to track time on the clock, the child drifts into a timeless state — "the clockless land forever" — experiencing a profound, almost transcendent moment outside the constraints of measured time.',
+        explanation:
+          'Unable to track time on the clock, the child drifts into a timeless state — "the clockless land forever" — experiencing a profound, almost transcendent moment outside the constraints of measured time.',
       },
       {
         id: 'iglit-hpt-m1-q3',
         question: 'What does the poem gently satirise?',
         options: [
           'Children who misbehave in school',
-          'The inadequacy of the British education system\'s funding',
+          "The inadequacy of the British education system's funding",
           'Adult authority that assumes children understand adult systems like clock time',
           'The concept of time itself',
         ],
         correct: 2,
-        explanation: 'The poem gently satirises the teacher\'s assumption that the child understands clock time. Her punishment is meaningless because it relies on a system the child has not yet learned — revealing the gap between adult assumptions and childhood experience.',
+        explanation:
+          "The poem gently satirises the teacher's assumption that the child understands clock time. Her punishment is meaningless because it relies on a system the child has not yet learned — revealing the gap between adult assumptions and childhood experience.",
       },
     ],
   },
@@ -1485,12 +1533,13 @@ const halfPastTwoModules: CourseModule[] = [
         question: 'What is the purpose of the compound time-words like "gettinguptime"?',
         options: [
           'They show the child is poorly educated',
-          'They replicate the child\'s intuitive, sensory experience of time as undifferentiated flow',
+          "They replicate the child's intuitive, sensory experience of time as undifferentiated flow",
           'They are real words used by young children',
           'They are humorous nonsense with no analytical significance',
         ],
         correct: 1,
-        explanation: 'The compound time-words represent the child\'s pre-literate understanding of time. Written without spaces, they show that the child perceives time as a continuous, sensory experience rather than as discrete units on a clock. Time is emotional and experiential, not abstract.',
+        explanation:
+          "The compound time-words represent the child's pre-literate understanding of time. Written without spaces, they show that the child perceives time as a continuous, sensory experience rather than as discrete units on a clock. Time is emotional and experiential, not abstract.",
       },
       {
         id: 'iglit-hpt-m2-q2',
@@ -1502,19 +1551,21 @@ const halfPastTwoModules: CourseModule[] = [
           'She was kind and understanding',
         ],
         correct: 1,
-        explanation: '"Slotted" suggests the child is an object being placed into a machine or system. It evokes conformity, loss of individuality, and the mechanical nature of institutional education — the child\'s transcendent experience is abruptly ended as he is forced back into "schooltime".',
+        explanation:
+          '"Slotted" suggests the child is an object being placed into a machine or system. It evokes conformity, loss of individuality, and the mechanical nature of institutional education — the child\'s transcendent experience is abruptly ended as he is forced back into "schooltime".',
       },
       {
         id: 'iglit-hpt-m2-q3',
         question: 'Why is "the clockless land forever" significant?',
         options: [
           'It describes a real geographical location',
-          'It represents the child\'s entry into a timeless, almost mystical state beyond measured time',
+          "It represents the child's entry into a timeless, almost mystical state beyond measured time",
           'It is a reference to Narnia',
-          'It describes the child\'s dream during a nap',
+          "It describes the child's dream during a nap",
         ],
         correct: 1,
-        explanation: '"The clockless land forever" is the poem\'s central image. It describes a timeless, almost transcendent state that the child enters because he cannot tell the time. "Land" suggests a real place, and "forever" captures the child\'s sense of infinite, boundless experience.',
+        explanation:
+          '"The clockless land forever" is the poem\'s central image. It describes a timeless, almost transcendent state that the child enters because he cannot tell the time. "Land" suggests a real place, and "forever" captures the child\'s sense of infinite, boundless experience.',
       },
     ],
   },
@@ -1554,39 +1605,43 @@ const halfPastTwoModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-hpt-m3-q1',
-        question: 'What is the significance of the final line standing alone, outside the tercet pattern?',
+        question:
+          'What is the significance of the final line standing alone, outside the tercet pattern?',
         options: [
-          'It is a mistake in the poem\'s formatting',
+          "It is a mistake in the poem's formatting",
           'It draws attention to the lasting significance of the experience by breaking the established structural pattern',
           'It shows the poem is unfinished',
-          'It represents the teacher\'s final words',
+          "It represents the teacher's final words",
         ],
         correct: 1,
-        explanation: 'The final line breaks the tercet pattern to stand alone, drawing the reader\'s attention to its importance. It shifts from narrative to retrospection, emphasising that this childhood experience permanently altered the speaker — the word "escaped" frames the clockless land as a liberation.',
+        explanation:
+          'The final line breaks the tercet pattern to stand alone, drawing the reader\'s attention to its importance. It shifts from narrative to retrospection, emphasising that this childhood experience permanently altered the speaker — the word "escaped" frames the clockless land as a liberation.',
       },
       {
         id: 'iglit-hpt-m3-q2',
         question: 'What dual perspective does the poem create?',
         options: [
           'Male and female perspectives',
-          'A child\'s sensory experience and an adult\'s retrospective understanding of its significance',
-          'The teacher\'s and headmaster\'s perspectives',
+          "A child's sensory experience and an adult's retrospective understanding of its significance",
+          "The teacher's and headmaster's perspectives",
           'A first-person and second-person perspective',
         ],
         correct: 1,
-        explanation: 'The past-tense narration creates a dual perspective: the reader experiences the event through the child\'s eyes (compound words, sensory impressions) while also sensing the adult narrator\'s understanding that this was a transcendent, significant moment.',
+        explanation:
+          "The past-tense narration creates a dual perspective: the reader experiences the event through the child's eyes (compound words, sensory impressions) while also sensing the adult narrator's understanding that this was a transcendent, significant moment.",
       },
       {
         id: 'iglit-hpt-m3-q3',
         question: 'Why are the tercets significant?',
         options: [
-          'They create an ordered appearance that contrasts with the child\'s disordered, fluid experience of time',
+          "They create an ordered appearance that contrasts with the child's disordered, fluid experience of time",
           'They are the standard form for all poems about childhood',
           'They represent the three hands of a clock',
           'They were required by the publisher',
         ],
         correct: 0,
-        explanation: 'The regular tercet form creates a neat, ordered structure — like the tidy world of school — but the chaotic, fluid content within resists this orderliness. This tension between form and content mirrors the poem\'s central theme: the child\'s experience overflows the adult structures imposed upon it.',
+        explanation:
+          "The regular tercet form creates a neat, ordered structure — like the tidy world of school — but the chaotic, fluid content within resists this orderliness. This tension between form and content mirrors the poem's central theme: the child's experience overflows the adult structures imposed upon it.",
       },
     ],
   },
@@ -1679,19 +1734,22 @@ const halfPastTwoModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-hpt-m4-q1',
-        question: 'In the model paragraph, why does the writer say the child\'s understanding of time is "not inferior but fundamentally different"?',
+        question:
+          'In the model paragraph, why does the writer say the child\'s understanding of time is "not inferior but fundamentally different"?',
         options: [
           'Because children are smarter than adults',
-          'Because the compound words show the child\'s perception is embodied, experiential, and rooted in daily rhythms — not less valid, just different',
+          "Because the compound words show the child's perception is embodied, experiential, and rooted in daily rhythms — not less valid, just different",
           'Because the poem says so explicitly',
           'Because all children eventually learn to tell the time',
         ],
         correct: 1,
-        explanation: 'The model paragraph avoids the simplistic reading that the child is just "wrong" about time. Instead, it argues that the child\'s understanding — rooted in sensory experience and daily rhythms — is fundamentally different from, not inferior to, the adult\'s abstract, numerical concept of time.',
+        explanation:
+          'The model paragraph avoids the simplistic reading that the child is just "wrong" about time. Instead, it argues that the child\'s understanding — rooted in sensory experience and daily rhythms — is fundamentally different from, not inferior to, the adult\'s abstract, numerical concept of time.',
       },
       {
         id: 'iglit-hpt-m4-q2',
-        question: 'Which poem would create an effective comparison with "Half-past Two" on the theme of childhood memory?',
+        question:
+          'Which poem would create an effective comparison with "Half-past Two" on the theme of childhood memory?',
         options: [
           '"Sonnet 116" — because both are about love',
           '"Blessing" — because both are set in schools',
@@ -1699,23 +1757,25 @@ const halfPastTwoModules: CourseModule[] = [
           '"If—" — because both are about education',
         ],
         correct: 2,
-        explanation: '"Piano" and "Half-past Two" both explore an adult looking back on a childhood experience with a sense of loss and wonder. Both poems suggest that childhood perception has a richness and intensity that cannot be fully recovered in adulthood.',
+        explanation:
+          '"Piano" and "Half-past Two" both explore an adult looking back on a childhood experience with a sense of loss and wonder. Both poems suggest that childhood perception has a richness and intensity that cannot be fully recovered in adulthood.',
       },
       {
         id: 'iglit-hpt-m4-q3',
         question: 'What aspect of the poem should candidates not overlook in their essays?',
         options: [
-          'The poem\'s rhyme scheme',
-          'The poem\'s gentle humour and warmth — Fanthorpe\'s wit and affectionate satire of the teacher',
+          "The poem's rhyme scheme",
+          "The poem's gentle humour and warmth — Fanthorpe's wit and affectionate satire of the teacher",
           'The historical context of the British education system',
-          'The biographical details of Fanthorpe\'s life',
+          "The biographical details of Fanthorpe's life",
         ],
         correct: 1,
-        explanation: 'The poem\'s gentle humour is an important part of its effect. Fanthorpe gently satirises the teacher\'s assumptions and affectionately recreates the logic of childhood. Ignoring the poem\'s warmth and wit produces a reading that misses an important dimension.',
+        explanation:
+          "The poem's gentle humour is an important part of its effect. Fanthorpe gently satirises the teacher's assumptions and affectionately recreates the logic of childhood. Ignoring the poem's warmth and wit produces a reading that misses an important dimension.",
       },
     ],
   },
-];
+]
 
 const halfPastTwoCourse: CourseData = {
   id: 'igcse-lit-poem-half-past-two',
@@ -1727,10 +1787,11 @@ const halfPastTwoCourse: CourseData = {
   price: 0,
   duration: '3 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive study of Fanthorpe\'s "Half-past Two", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
+  description:
+    'A comprehensive study of Fanthorpe\'s "Half-past Two", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
   color: '#059669',
   moduleList: halfPastTwoModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 6. "Piano" by D H Lawrence
@@ -1781,23 +1842,25 @@ const pianoModules: CourseModule[] = [
           'A letter from his mother',
         ],
         correct: 2,
-        explanation: 'The trigger is musical — a woman singing softly in the present moment. The sound of her singing involuntarily transports the speaker back to childhood memories of sitting under the piano while his mother played and sang.',
+        explanation:
+          'The trigger is musical — a woman singing softly in the present moment. The sound of her singing involuntarily transports the speaker back to childhood memories of sitting under the piano while his mother played and sang.',
       },
       {
         id: 'iglit-pi-m1-q2',
         question: 'Why does the speaker try to resist the memory?',
         options: [
           'Because the memory is unpleasant',
-          'Because he finds the woman\'s singing annoying',
+          "Because he finds the woman's singing annoying",
           'Because he recognises the "insidious mastery" of nostalgia and tries to maintain emotional control',
           'Because he does not like music',
         ],
         correct: 2,
-        explanation: 'The speaker tries to resist because he recognises that nostalgia is "insidious" — it works deceptively and against his will. The word "betrays" suggests he sees emotional surrender as a kind of defeat. This reflects early 20th-century attitudes to male emotional restraint.',
+        explanation:
+          'The speaker tries to resist because he recognises that nostalgia is "insidious" — it works deceptively and against his will. The word "betrays" suggests he sees emotional surrender as a kind of defeat. This reflects early 20th-century attitudes to male emotional restraint.',
       },
       {
         id: 'iglit-pi-m1-q3',
-        question: 'What is the emotional state of the speaker at the poem\'s end?',
+        question: "What is the emotional state of the speaker at the poem's end?",
         options: [
           'Calm and contented',
           'Angry and resentful',
@@ -1805,7 +1868,8 @@ const pianoModules: CourseModule[] = [
           'Indifferent and bored',
         ],
         correct: 2,
-        explanation: 'By the end of the poem, the speaker has surrendered completely to nostalgia and weeps "like a child for the past". The simile "like a child" is ironic — he is weeping for his lost childhood while simultaneously reverting to a childlike state of helpless emotion.',
+        explanation:
+          'By the end of the poem, the speaker has surrendered completely to nostalgia and weeps "like a child for the past". The simile "like a child" is ironic — he is weeping for his lost childhood while simultaneously reverting to a childlike state of helpless emotion.',
       },
     ],
   },
@@ -1844,7 +1908,8 @@ const pianoModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-pi-m2-q1',
-        question: 'What does the word "insidious" suggest about the effect of music on the speaker?',
+        question:
+          'What does the word "insidious" suggest about the effect of music on the speaker?',
         options: [
           'The music is beautiful and enjoyable',
           'The music works deceptively and against his will, undermining his rational self-control',
@@ -1852,7 +1917,8 @@ const pianoModules: CourseModule[] = [
           'The music is boring and repetitive',
         ],
         correct: 1,
-        explanation: '"Insidious" means proceeding in a gradual, subtle way but with harmful effects. It presents music/nostalgia as a deceptive force that undermines the speaker\'s composure without him being able to prevent it — treacherous and manipulative.',
+        explanation:
+          '"Insidious" means proceeding in a gradual, subtle way but with harmful effects. It presents music/nostalgia as a deceptive force that undermines the speaker\'s composure without him being able to prevent it — treacherous and manipulative.',
       },
       {
         id: 'iglit-pi-m2-q2',
@@ -1864,7 +1930,8 @@ const pianoModules: CourseModule[] = [
           'Because children are not allowed to cry',
         ],
         correct: 1,
-        explanation: 'The simile is doubly ironic: the speaker weeps for his lost childhood in the manner of a child — helplessly, without restraint. The act of remembering has dissolved the boundary between his adult and child selves, and he has become the very thing he mourns.',
+        explanation:
+          'The simile is doubly ironic: the speaker weeps for his lost childhood in the manner of a child — helplessly, without restraint. The act of remembering has dissolved the boundary between his adult and child selves, and he has become the very thing he mourns.',
       },
       {
         id: 'iglit-pi-m2-q3',
@@ -1876,7 +1943,8 @@ const pianoModules: CourseModule[] = [
           'Because the singer cannot see the speaker',
         ],
         correct: 2,
-        explanation: '"Vain" means futile or useless. The present-day performance, however passionate ("appassionato"), is emotionally empty compared to the simple, domestic music of the speaker\'s childhood. The present cannot compete with the overwhelming power of the past.',
+        explanation:
+          '"Vain" means futile or useless. The present-day performance, however passionate ("appassionato"), is emotionally empty compared to the simple, domestic music of the speaker\'s childhood. The present cannot compete with the overwhelming power of the past.',
       },
     ],
   },
@@ -1923,7 +1991,8 @@ const pianoModules: CourseModule[] = [
           'It was required by the publisher',
         ],
         correct: 1,
-        explanation: 'The AABB rhyme scheme creates a musical quality appropriate for a poem about music. Its simplicity mirrors the security of the childhood world, and its regularity creates a sense of inevitability — the emotional surrender feels predetermined.',
+        explanation:
+          'The AABB rhyme scheme creates a musical quality appropriate for a poem about music. Its simplicity mirrors the security of the childhood world, and its regularity creates a sense of inevitability — the emotional surrender feels predetermined.',
       },
       {
         id: 'iglit-pi-m3-q2',
@@ -1935,11 +2004,12 @@ const pianoModules: CourseModule[] = [
           'Childhood, adolescence, adulthood',
         ],
         correct: 1,
-        explanation: 'The poem follows a clear arc: music triggers memory (stanza 1), the speaker tries to resist (stanza 2), and finally surrenders completely to emotion (stanza 3). This gives the short poem a dramatic shape.',
+        explanation:
+          'The poem follows a clear arc: music triggers memory (stanza 1), the speaker tries to resist (stanza 2), and finally surrenders completely to emotion (stanza 3). This gives the short poem a dramatic shape.',
       },
       {
         id: 'iglit-pi-m3-q3',
-        question: 'What tension exists between the poem\'s form and its content?',
+        question: "What tension exists between the poem's form and its content?",
         options: [
           'The poem is too short for its subject',
           'The neat, regular form (rhyme, quatrains) contrasts with the emotional chaos (weeping, loss of control)',
@@ -1947,7 +2017,8 @@ const pianoModules: CourseModule[] = [
           'The stanzas are too long',
         ],
         correct: 1,
-        explanation: 'The neat quatrains and regular AABB rhyme create formal order, but the content — overwhelming nostalgia, loss of composure, weeping — is emotionally chaotic. This tension mirrors the speaker\'s own conflict between composure and collapse.',
+        explanation:
+          "The neat quatrains and regular AABB rhyme create formal order, but the content — overwhelming nostalgia, loss of composure, weeping — is emotionally chaotic. This tension mirrors the speaker's own conflict between composure and collapse.",
       },
     ],
   },
@@ -2041,7 +2112,8 @@ const pianoModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-pi-m4-q1',
-        question: 'Why does the model paragraph focus on just one short phrase ("the insidious mastery of song")?',
+        question:
+          'Why does the model paragraph focus on just one short phrase ("the insidious mastery of song")?',
         options: [
           'Because the rest of the poem is not worth analysing',
           'Because close analysis of a key phrase demonstrates the depth of engagement that earns the highest marks, especially on a short poem',
@@ -2049,23 +2121,26 @@ const pianoModules: CourseModule[] = [
           'Because the paragraph ran out of space',
         ],
         correct: 1,
-        explanation: 'On a short poem like "Piano", examiners expect extremely close, detailed analysis. Focusing on a key phrase and extracting multiple layers of meaning (individual word connotations, context, thematic connections) demonstrates the depth of engagement that earns the highest AO2 marks.',
+        explanation:
+          'On a short poem like "Piano", examiners expect extremely close, detailed analysis. Focusing on a key phrase and extracting multiple layers of meaning (individual word connotations, context, thematic connections) demonstrates the depth of engagement that earns the highest AO2 marks.',
       },
       {
         id: 'iglit-pi-m4-q2',
         question: 'How does the model paragraph integrate context?',
         options: [
-          'It writes a separate paragraph about Lawrence\'s biography',
+          "It writes a separate paragraph about Lawrence's biography",
           'It naturally connects the language analysis to early 20th-century masculine ideals of emotional restraint',
           'It avoids context entirely',
           'It lists historical facts about 1918',
         ],
         correct: 1,
-        explanation: 'The model paragraph integrates context by connecting the language analysis (the speaker viewing emotional surrender as a "defeat") to early 20th-century masculine ideals that valued emotional restraint. Context is woven into analysis, not bolted on as a separate section.',
+        explanation:
+          'The model paragraph integrates context by connecting the language analysis (the speaker viewing emotional surrender as a "defeat") to early 20th-century masculine ideals that valued emotional restraint. Context is woven into analysis, not bolted on as a separate section.',
       },
       {
         id: 'iglit-pi-m4-q3',
-        question: 'Which poem would pair most effectively with "Piano" for a comparison on the theme of memory?',
+        question:
+          'Which poem would pair most effectively with "Piano" for a comparison on the theme of memory?',
         options: [
           '"Blessing" — both are about water',
           '"If—" — both are about fathers',
@@ -2073,11 +2148,12 @@ const pianoModules: CourseModule[] = [
           '"Prayer Before Birth" — both are spoken by children',
         ],
         correct: 2,
-        explanation: '"Half-past Two" and "Piano" both feature an adult looking back on a childhood experience, and in both poems the past is presented as more vivid and significant than the present. This makes them an effective pairing for a comparison essay on memory.',
+        explanation:
+          '"Half-past Two" and "Piano" both feature an adult looking back on a childhood experience, and in both poems the past is presented as more vivid and significant than the present. This makes them an effective pairing for a comparison essay on memory.',
       },
     ],
   },
-];
+]
 
 const pianoCourse: CourseData = {
   id: 'igcse-lit-poem-piano',
@@ -2089,10 +2165,11 @@ const pianoCourse: CourseData = {
   price: 0,
   duration: '3 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive study of Lawrence\'s "Piano", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
+  description:
+    'A comprehensive study of Lawrence\'s "Piano", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
   color: '#dc2626',
   moduleList: pianoModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 7. "Hide and Seek" by Vernon Scannell
@@ -2142,31 +2219,34 @@ const hideAndSeekModules: CourseModule[] = [
           'He realises he was hiding in the wrong place',
         ],
         correct: 2,
-        explanation: 'The child emerges triumphantly, expecting to be declared the winner, but discovers the other children have left. They have abandoned the game — and him — creating a devastating moment of isolation and bewilderment.',
+        explanation:
+          'The child emerges triumphantly, expecting to be declared the winner, but discovers the other children have left. They have abandoned the game — and him — creating a devastating moment of isolation and bewilderment.',
       },
       {
         id: 'iglit-has-m1-q2',
         question: 'On an allegorical level, what does the game of hide-and-seek represent?',
         options: [
           'The importance of exercise for children',
-          'Life\'s journey from confident innocence to isolation and adult awareness',
+          "Life's journey from confident innocence to isolation and adult awareness",
           'The rules of a traditional British game',
-          'The child\'s desire to be the best at everything',
+          "The child's desire to be the best at everything",
         ],
         correct: 1,
-        explanation: 'The game operates as an allegory for life. The child\'s journey from excitement through waiting to abandonment mirrors the broader human experience of confidence giving way to isolation — the realisation that the world does not always reward those who play by the rules.',
+        explanation:
+          "The game operates as an allegory for life. The child's journey from excitement through waiting to abandonment mirrors the broader human experience of confidence giving way to isolation — the realisation that the world does not always reward those who play by the rules.",
       },
       {
         id: 'iglit-has-m1-q3',
         question: 'What is the effect of the final line "But where are they who sought you?"',
         options: [
-          'It is a practical question about the seekers\' location',
+          "It is a practical question about the seekers' location",
           'It shifts from third person to second person, addressing the reader directly and transforming the game into a universal metaphor',
           'It suggests the child should look for his friends',
-          'It is spoken by the child\'s mother',
+          "It is spoken by the child's mother",
         ],
         correct: 1,
-        explanation: 'The shift to direct address ("you") breaks the narrative frame and draws the reader into the poem\'s meaning. The question transforms the specific game into a universal meditation on abandonment — "where are they who sought you?" asks not just about the children but about all the people who once cared.',
+        explanation:
+          'The shift to direct address ("you") breaks the narrative frame and draws the reader into the poem\'s meaning. The question transforms the specific game into a universal meditation on abandonment — "where are they who sought you?" asks not just about the children but about all the people who once cared.',
       },
     ],
   },
@@ -2217,12 +2297,13 @@ const hideAndSeekModules: CourseModule[] = [
         question: 'What is the effect of the personification "the bushes hold their breath"?',
         options: [
           'It describes the wind stopping',
-          'It creates an eerie silence where nature seems complicit in the child\'s abandonment',
+          "It creates an eerie silence where nature seems complicit in the child's abandonment",
           'It shows the bushes are alive',
           'It suggests the child is in a magical garden',
         ],
         correct: 1,
-        explanation: 'The personification creates an eerie, watchful silence. The bushes seem to be withholding something — complicit in the child\'s abandonment. This pathetic fallacy mirrors the child\'s growing fear as the friendly garden becomes a threatening, isolating space.',
+        explanation:
+          "The personification creates an eerie, watchful silence. The bushes seem to be withholding something — complicit in the child's abandonment. This pathetic fallacy mirrors the child's growing fear as the friendly garden becomes a threatening, isolating space.",
       },
       {
         id: 'iglit-has-m2-q2',
@@ -2231,10 +2312,11 @@ const hideAndSeekModules: CourseModule[] = [
           'It is a grammatical error',
           'It creates an immersive effect and, in the final line, broadens the poem from a specific child to a universal human experience',
           'It shows the poem is a letter',
-          'It is addressed to Scannell\'s own children',
+          "It is addressed to Scannell's own children",
         ],
         correct: 1,
-        explanation: 'The second-person address draws the reader into the experience — you feel the excitement and the isolation as if it were happening to you. In the final line, "you" shifts from the specific child to a universal address, transforming the game into a metaphor for all human experience.',
+        explanation:
+          'The second-person address draws the reader into the experience — you feel the excitement and the isolation as if it were happening to you. In the final line, "you" shifts from the specific child to a universal address, transforming the game into a metaphor for all human experience.',
       },
       {
         id: 'iglit-has-m2-q3',
@@ -2246,7 +2328,8 @@ const hideAndSeekModules: CourseModule[] = [
           'It moves from fear to excitement',
         ],
         correct: 1,
-        explanation: 'The poem shifts from short, punchy, excited sentences to longer, more hesitant ones; from vocabulary of excitement ("uncanny", "prowl") to dread ("darkening", "cold"); from bustling sounds to eerie silence. This tonal arc is the poem\'s most powerful structural effect.',
+        explanation:
+          'The poem shifts from short, punchy, excited sentences to longer, more hesitant ones; from vocabulary of excitement ("uncanny", "prowl") to dread ("darkening", "cold"); from bustling sounds to eerie silence. This tonal arc is the poem\'s most powerful structural effect.',
       },
     ],
   },
@@ -2293,7 +2376,8 @@ const hideAndSeekModules: CourseModule[] = [
           'Because the poem is too short for stanza breaks',
         ],
         correct: 1,
-        explanation: 'The single continuous stanza mirrors the unbroken flow of the child\'s experience and creates a sense of entrapment — both child and reader are locked into the narrative without pause. There is no visual resting point on the page.',
+        explanation:
+          "The single continuous stanza mirrors the unbroken flow of the child's experience and creates a sense of entrapment — both child and reader are locked into the narrative without pause. There is no visual resting point on the page.",
       },
       {
         id: 'iglit-has-m3-q2',
@@ -2305,7 +2389,8 @@ const hideAndSeekModules: CourseModule[] = [
           'It rhymes with the previous line',
         ],
         correct: 1,
-        explanation: 'The triumphant exclamation "Yes here I am!" is structurally placed immediately before the devastating discovery that the other children have left. This dramatic irony — confidence immediately followed by collapse — is the poem\'s emotional crux.',
+        explanation:
+          'The triumphant exclamation "Yes here I am!" is structurally placed immediately before the devastating discovery that the other children have left. This dramatic irony — confidence immediately followed by collapse — is the poem\'s emotional crux.',
       },
       {
         id: 'iglit-has-m3-q3',
@@ -2317,7 +2402,8 @@ const hideAndSeekModules: CourseModule[] = [
           'It asks the reader to solve a mystery',
         ],
         correct: 1,
-        explanation: 'The unanswered question "But where are they who sought you?" transforms the poem from a story about a specific game into a universal meditation on abandonment. Left hanging, it invites the reader to consider their own experiences of being left behind.',
+        explanation:
+          'The unanswered question "But where are they who sought you?" transforms the poem from a story about a specific game into a universal meditation on abandonment. Left hanging, it invites the reader to consider their own experiences of being left behind.',
       },
     ],
   },
@@ -2370,19 +2456,22 @@ const hideAndSeekModules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-has-m4-q1',
-        question: 'Why does the model paragraph discuss both literal and symbolic meanings of "the sun is going down"?',
+        question:
+          'Why does the model paragraph discuss both literal and symbolic meanings of "the sun is going down"?',
         options: [
           'Because the exam question asked specifically about symbolism',
-          'Because discussing both levels demonstrates understanding of the poem\'s allegorical structure, which is essential for the highest marks',
+          "Because discussing both levels demonstrates understanding of the poem's allegorical structure, which is essential for the highest marks",
           'Because there is nothing else to say about the line',
           'Because symbolism is the only thing examiners care about',
         ],
         correct: 1,
-        explanation: '"Hide and Seek" operates on two levels — a literal game and a symbolic allegory. Discussing both demonstrates understanding of this dual structure and shows the examiner you can move between surface meaning and deeper significance.',
+        explanation:
+          '"Hide and Seek" operates on two levels — a literal game and a symbolic allegory. Discussing both demonstrates understanding of this dual structure and shows the examiner you can move between surface meaning and deeper significance.',
       },
       {
         id: 'iglit-has-m4-q2',
-        question: 'What evaluative statement does the model paragraph make about Scannell\'s technique?',
+        question:
+          "What evaluative statement does the model paragraph make about Scannell's technique?",
         options: [
           'That Scannell is the greatest poet of the 20th century',
           'That the shift from confidence to isolation is achieved through quiet restraint rather than melodrama, making it more devastating',
@@ -2390,11 +2479,13 @@ const hideAndSeekModules: CourseModule[] = [
           'That Scannell should have written more poems about children',
         ],
         correct: 1,
-        explanation: 'The model paragraph evaluates Scannell\'s technique by noting that the tonal shift is achieved without melodrama — the quiet, restrained language makes the child\'s abandonment all the more devastating. This kind of evaluative comment demonstrates critical thinking.',
+        explanation:
+          "The model paragraph evaluates Scannell's technique by noting that the tonal shift is achieved without melodrama — the quiet, restrained language makes the child's abandonment all the more devastating. This kind of evaluative comment demonstrates critical thinking.",
       },
       {
         id: 'iglit-has-m4-q3',
-        question: 'Which poem is recommended as an effective comparison with "Hide and Seek" on the theme of childhood innocence?',
+        question:
+          'Which poem is recommended as an effective comparison with "Hide and Seek" on the theme of childhood innocence?',
         options: [
           '"Sonnet 116" — both are about love',
           '"If—" — both are about values',
@@ -2402,11 +2493,12 @@ const hideAndSeekModules: CourseModule[] = [
           '"Blessing" — both are about games',
         ],
         correct: 2,
-        explanation: '"Half-past Two" and "Hide and Seek" both recreate childhood experience from the inside and explore the gap between child and adult understanding. Both involve a child whose perception of the world is fundamentally different from the adult structures around them.',
+        explanation:
+          '"Half-past Two" and "Hide and Seek" both recreate childhood experience from the inside and explore the gap between child and adult understanding. Both involve a child whose perception of the world is fundamentally different from the adult structures around them.',
       },
     ],
   },
-];
+]
 
 const hideAndSeekCourse: CourseData = {
   id: 'igcse-lit-poem-hide-and-seek',
@@ -2418,10 +2510,11 @@ const hideAndSeekCourse: CourseData = {
   price: 0,
   duration: '3 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive study of Scannell\'s "Hide and Seek", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
+  description:
+    'A comprehensive study of Scannell\'s "Hide and Seek", covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
   color: '#d97706',
   moduleList: hideAndSeekModules,
-};
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 8. "Sonnet 116" by William Shakespeare
@@ -2473,11 +2566,12 @@ const sonnet116Modules: CourseModule[] = [
           'Villanelle — repeating lines',
         ],
         correct: 2,
-        explanation: 'Sonnet 116 follows the Shakespearean (English) sonnet form: three quatrains (4-line stanzas) followed by a concluding couplet (2 lines). This structure allows Shakespeare to develop his argument across three stages before delivering a bold conclusion.',
+        explanation:
+          'Sonnet 116 follows the Shakespearean (English) sonnet form: three quatrains (4-line stanzas) followed by a concluding couplet (2 lines). This structure allows Shakespeare to develop his argument across three stages before delivering a bold conclusion.',
       },
       {
         id: 'iglit-s116-m1-q2',
-        question: 'What is the poem\'s central argument?',
+        question: "What is the poem's central argument?",
         options: [
           'Love is a temporary emotion that fades with time',
           'True love is permanent, unchanging, and endures all challenges including time and death',
@@ -2485,11 +2579,13 @@ const sonnet116Modules: CourseModule[] = [
           'Love should be expressed through grand gestures',
         ],
         correct: 1,
-        explanation: 'The poem argues that true love is permanent and unchanging — it does not alter when circumstances change, it withstands storms, and it endures beyond physical aging and death. Love is defined by its constancy.',
+        explanation:
+          'The poem argues that true love is permanent and unchanging — it does not alter when circumstances change, it withstands storms, and it endures beyond physical aging and death. Love is defined by its constancy.',
       },
       {
         id: 'iglit-s116-m1-q3',
-        question: 'What does the speaker stake on the truth of his definition in the final couplet?',
+        question:
+          'What does the speaker stake on the truth of his definition in the final couplet?',
         options: [
           'His wealth and reputation',
           'His relationship with the Fair Youth',
@@ -2497,7 +2593,8 @@ const sonnet116Modules: CourseModule[] = [
           'His belief in God',
         ],
         correct: 2,
-        explanation: 'In the couplet, Shakespeare makes an extraordinary claim: if his definition is wrong, then no one has ever loved and he has never written. He stakes everything — his art and the entire concept of love — on the truth of his argument.',
+        explanation:
+          'In the couplet, Shakespeare makes an extraordinary claim: if his definition is wrong, then no one has ever loved and he has never written. He stakes everything — his art and the entire concept of love — on the truth of his argument.',
       },
     ],
   },
@@ -2538,13 +2635,14 @@ const sonnet116Modules: CourseModule[] = [
         id: 'iglit-s116-m2-q1',
         question: 'What does "an ever-fixed mark" refer to?',
         options: [
-          'A scar on the speaker\'s body',
+          "A scar on the speaker's body",
           'A lighthouse or sea-mark — a permanent navigational guide that love resembles',
           'A tattoo representing love',
           'A cross on a treasure map',
         ],
         correct: 1,
-        explanation: 'The "ever-fixed mark" is a lighthouse or sea-mark — a permanent, immovable guide for ships. It is part of an extended nautical metaphor comparing love to a fixed point of reference that guides lost ships ("wand\'ring barks") through storms ("tempests").',
+        explanation:
+          'The "ever-fixed mark" is a lighthouse or sea-mark — a permanent, immovable guide for ships. It is part of an extended nautical metaphor comparing love to a fixed point of reference that guides lost ships ("wand\'ring barks") through storms ("tempests").',
       },
       {
         id: 'iglit-s116-m2-q2',
@@ -2556,7 +2654,8 @@ const sonnet116Modules: CourseModule[] = [
           'Because he wants to criticise other love poets',
         ],
         correct: 1,
-        explanation: 'Defining love through negation is rhetorically powerful because it strips away false versions — infatuation, conditional attachment, lust — to reveal the ideal. By telling us what love is not, Shakespeare progressively narrows the definition until only the genuine article remains.',
+        explanation:
+          'Defining love through negation is rhetorically powerful because it strips away false versions — infatuation, conditional attachment, lust — to reveal the ideal. By telling us what love is not, Shakespeare progressively narrows the definition until only the genuine article remains.',
       },
       {
         id: 'iglit-s116-m2-q3',
@@ -2568,7 +2667,8 @@ const sonnet116Modules: CourseModule[] = [
           'It is a coincidence that has no analytical significance',
         ],
         correct: 1,
-        explanation: 'By echoing the marriage service ("If any of you know cause, or just impediment..."), Shakespeare frames his definition of love as a solemn, formal declaration. This gives his argument the weight of a legal oath and connects his ideal of love to the institution of marriage.',
+        explanation:
+          'By echoing the marriage service ("If any of you know cause, or just impediment..."), Shakespeare frames his definition of love as a solemn, formal declaration. This gives his argument the weight of a legal oath and connects his ideal of love to the institution of marriage.',
       },
     ],
   },
@@ -2616,7 +2716,7 @@ const sonnet116Modules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-s116-m3-q1',
-        question: 'How does the three-quatrain structure support the poem\'s argument?',
+        question: "How does the three-quatrain structure support the poem's argument?",
         options: [
           'Each quatrain tells a different love story',
           'It moves from negative definition to positive definition to love vs. Time, building a cumulative argument',
@@ -2624,31 +2724,34 @@ const sonnet116Modules: CourseModule[] = [
           'The three quatrains have no connection to each other',
         ],
         correct: 1,
-        explanation: 'The three quatrains build progressively: Quatrain 1 defines love by negation, Quatrain 2 defines it positively through metaphor, and Quatrain 3 sets love against its greatest adversary (Time). This cumulative structure creates a persuasive, developing argument.',
+        explanation:
+          'The three quatrains build progressively: Quatrain 1 defines love by negation, Quatrain 2 defines it positively through metaphor, and Quatrain 3 sets love against its greatest adversary (Time). This cumulative structure creates a persuasive, developing argument.',
       },
       {
         id: 'iglit-s116-m3-q2',
         question: 'What is the effect of the regular iambic pentameter?',
         options: [
           'It makes the poem boring and predictable',
-          'Its unwavering regularity reinforces the poem\'s theme of constancy and permanence — the metre, like love, does not waver',
+          "Its unwavering regularity reinforces the poem's theme of constancy and permanence — the metre, like love, does not waver",
           'It is simply the convention and has no thematic significance',
           'It makes the poem sound angry',
         ],
         correct: 1,
-        explanation: 'The regular iambic pentameter reinforces the poem\'s central theme: just as the metre is constant and unwavering, so too is true love. The form embodies the content — constancy in rhythm mirrors constancy in love.',
+        explanation:
+          "The regular iambic pentameter reinforces the poem's central theme: just as the metre is constant and unwavering, so too is true love. The form embodies the content — constancy in rhythm mirrors constancy in love.",
       },
       {
         id: 'iglit-s116-m3-q3',
         question: 'Why is the final couplet described as a "logical lock"?',
         options: [
           'Because it uses a padlock metaphor',
-          'Because its conditional claim — if I\'m wrong, then no one has ever loved — is self-evidently impossible to disprove',
+          "Because its conditional claim — if I'm wrong, then no one has ever loved — is self-evidently impossible to disprove",
           'Because the rhyme locks the poem closed',
           'Because Shakespeare was trained in formal logic',
         ],
         correct: 1,
-        explanation: 'The couplet creates a logical lock because its negation is absurd: if love is not permanent, then no one has ever loved and Shakespeare never wrote. Since we are reading the poem, the second claim is self-evidently false, which forces us to accept the first. The argument becomes irrefutable.',
+        explanation:
+          'The couplet creates a logical lock because its negation is absurd: if love is not permanent, then no one has ever loved and Shakespeare never wrote. Since we are reading the poem, the second claim is self-evidently false, which forces us to accept the first. The argument becomes irrefutable.',
       },
     ],
   },
@@ -2701,7 +2804,8 @@ const sonnet116Modules: CourseModule[] = [
     quiz: [
       {
         id: 'iglit-s116-m4-q1',
-        question: 'What does the model paragraph identify as significant about the verb "looks on"?',
+        question:
+          'What does the model paragraph identify as significant about the verb "looks on"?',
         options: [
           'It means love is just watching and not doing anything',
           'It implies love observes storms with calm, unperturbed confidence rather than merely enduring them passively',
@@ -2709,7 +2813,8 @@ const sonnet116Modules: CourseModule[] = [
           'It is an insignificant verb choice',
         ],
         correct: 1,
-        explanation: 'The model paragraph analyses "looks on" as suggesting calm, confident observation rather than passive endurance. Love does not merely survive storms — it watches them with unshaken composure. This level of word-level analysis earns high AO2 marks.',
+        explanation:
+          'The model paragraph analyses "looks on" as suggesting calm, confident observation rather than passive endurance. Love does not merely survive storms — it watches them with unshaken composure. This level of word-level analysis earns high AO2 marks.',
       },
       {
         id: 'iglit-s116-m4-q2',
@@ -2721,11 +2826,13 @@ const sonnet116Modules: CourseModule[] = [
           'It focuses only on the couplet',
         ],
         correct: 1,
-        explanation: 'The model paragraph tracks how the nautical metaphor develops: from a lighthouse (earthly, human-made) to the North Star (celestial, eternal). This shows the examiner that you can follow how an extended metaphor grows in scale and significance across lines.',
+        explanation:
+          'The model paragraph tracks how the nautical metaphor develops: from a lighthouse (earthly, human-made) to the North Star (celestial, eternal). This shows the examiner that you can follow how an extended metaphor grows in scale and significance across lines.',
       },
       {
         id: 'iglit-s116-m4-q3',
-        question: 'Which poem would pair well with Sonnet 116 for a comparison on the theme of ideals?',
+        question:
+          'Which poem would pair well with Sonnet 116 for a comparison on the theme of ideals?',
         options: [
           '"Blessing" — both define what people need',
           '"If—" — both present ideals through a declarative, authoritative voice and define their subject through what it endures',
@@ -2733,11 +2840,12 @@ const sonnet116Modules: CourseModule[] = [
           '"Search For My Tongue" — both are about language',
         ],
         correct: 1,
-        explanation: '"If—" and Sonnet 116 both present ideals (manhood and love respectively) through a confident, declarative voice. Both define their subject by what it endures rather than what it is. This makes them a strong pairing for a comparison essay on idealism.',
+        explanation:
+          '"If—" and Sonnet 116 both present ideals (manhood and love respectively) through a confident, declarative voice. Both define their subject by what it endures rather than what it is. This makes them a strong pairing for a comparison essay on idealism.',
       },
     ],
   },
-];
+]
 
 const sonnet116Course: CourseData = {
   id: 'igcse-lit-poem-sonnet-116',
@@ -2749,10 +2857,11 @@ const sonnet116Course: CourseData = {
   price: 0,
   duration: '3 weeks',
   level: 'IGCSE',
-  description: 'A comprehensive study of Shakespeare\'s Sonnet 116, covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.',
+  description:
+    "A comprehensive study of Shakespeare's Sonnet 116, covering context, language, structure, and exam technique for the Edexcel IGCSE Literature anthology.",
   color: '#9333ea',
   moduleList: sonnet116Modules,
-};
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Export all poetry courses
@@ -2767,4 +2876,4 @@ export const igcsePoetry1Courses: CourseData[] = [
   pianoCourse,
   hideAndSeekCourse,
   sonnet116Course,
-];
+]

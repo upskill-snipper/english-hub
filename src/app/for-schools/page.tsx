@@ -200,41 +200,20 @@ const COMPARISON_ROWS = [
 ]
 
 /* ─────────────── Testimonials ─────────────── */
+// REMOVED 2026-04-25: previous TESTIMONIALS array contained fabricated quotes
+// attributed to non-existent named-school roles (Birmingham, Kent, Manchester,
+// Leeds). Brand-voice rule §9 forbids fabricated stats, quotes, or press
+// mentions. We are at launch; real testimonials will be added once consenting
+// Founding Schools provide them. The render block below renders an empty-state
+// "Founding teachers' words coming soon" call instead.
 
-const TESTIMONIALS = [
-  {
-    quote:
-      'The analytics dashboard alone is worth it. I can see exactly which students are falling behind before it becomes a problem at parents evening.',
-    name: 'Head of English',
-    school: 'Secondary Academy, Birmingham',
-    initials: 'HE',
-    color: 'bg-primary/10 text-primary',
-  },
-  {
-    quote:
-      'We rolled this out across Year 10 and 11 in September. The AI essay feedback means students are practising more because they get instant responses.',
-    name: 'English Teacher',
-    school: 'Grammar School, Kent',
-    initials: 'ET',
-    color: 'bg-blue-500/10 text-blue-600',
-  },
-  {
-    quote:
-      'Setting up was genuinely easy. The onboarding team handled everything and by Tuesday every student had an account and could log in.',
-    name: 'Second in Department',
-    school: 'Comprehensive, Manchester',
-    initials: 'SD',
-    color: 'bg-emerald-500/10 text-teal-700',
-  },
-  {
-    quote:
-      'I save 5-6 hours a week on planning and marking. The resources are mapped to our spec so I never have to check if something matches our board.',
-    name: 'NQT English Teacher',
-    school: 'Academy Trust, Leeds',
-    initials: 'NT',
-    color: 'bg-purple-500/10 text-purple-600',
-  },
-]
+const TESTIMONIALS: Array<{
+  quote: string
+  name: string
+  school: string
+  initials: string
+  color: string
+}> = []
 
 /* ─────────────── FAQs ─────────────── */
 
@@ -245,7 +224,7 @@ const SCHOOL_FAQS = [
   },
   {
     q: 'How much does it cost?',
-    a: "Founding Schools Programme pricing starts at £4,000 per year for the first 10 schools only -- heavily anchored against our projected Standard Pricing of £8,000 per year from August 2026. Exact package scales with department size and is agreed during your onboarding call. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Book a call to lock in your founding price before the cohort closes.",
+    a: 'Founding Schools Programme pricing starts at £4,000 per year for the first 10 schools only -- heavily anchored against our projected Standard Pricing of £8,000 per year from August 2026. Exact package scales with department size and is agreed during your onboarding call. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Book a call to lock in your founding price before the cohort closes.',
   },
   {
     q: 'How do students and teachers get access?',
@@ -1081,42 +1060,56 @@ export default function ForSchoolsPage() {
               From Schools Using the Platform
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              What Teachers Are Saying
+              Founding teachers' words, coming soon.
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              Hear from English departments already using The English Hub.
+              We are launching now. Real testimonials will appear here as the first Founding Schools
+              join the programme. Be one of them.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {TESTIMONIALS.map((t) => (
-              <Card key={t.name} className="p-6 border-border/40 flex flex-col">
-                <div className="flex items-center gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} className="w-3.5 h-3.5 text-amber-600 fill-amber-500" />
-                  ))}
-                </div>
-                <Quote className="w-7 h-7 text-primary/15 mb-3" />
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1 italic">
-                  &quot;{t.quote}&quot;
+          {TESTIMONIALS.length > 0 ? (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {TESTIMONIALS.map((t) => (
+                <Card key={t.name} className="p-6 border-border/40 flex flex-col">
+                  <div className="flex items-center gap-1 mb-4">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <Star key={s} className="w-3.5 h-3.5 text-amber-600 fill-amber-500" />
+                    ))}
+                  </div>
+                  <Quote className="w-7 h-7 text-primary/15 mb-3" />
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1 italic">
+                    &quot;{t.quote}&quot;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={cn(
+                        'w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold shrink-0',
+                        t.color,
+                      )}
+                    >
+                      {t.initials}
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                      <p className="text-xs text-muted-foreground">{t.school}</p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="max-w-2xl mx-auto text-center">
+              <Card className="p-8 border-dashed border-border/60 bg-card/40">
+                <Quote className="w-8 h-8 text-primary/20 mx-auto mb-4" />
+                <p className="text-sm text-muted-foreground italic">
+                  We are at launch and we say so plainly. As Founding Schools come on board, their
+                  teachers' words will sit here — verified, attributable, and used only with
+                  explicit consent.
                 </p>
-                <div className="flex items-center gap-3">
-                  <div
-                    className={cn(
-                      'w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold shrink-0',
-                      t.color,
-                    )}
-                  >
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.school}</p>
-                  </div>
-                </div>
               </Card>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -1213,19 +1206,27 @@ export default function ForSchoolsPage() {
             <ul className="space-y-2 mb-4 text-muted-foreground">
               <li>
                 Data Processing Agreement (Word){' '}
-                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                  — coming soon
+                </span>
               </li>
               <li>
                 Data Protection Impact Assessment (PDF){' '}
-                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                  — coming soon
+                </span>
               </li>
               <li>
                 Safeguarding Policy (PDF){' '}
-                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                  — coming soon
+                </span>
               </li>
               <li>
                 Cyber Essentials certificate (filing Q3 2026){' '}
-                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                  — coming soon
+                </span>
               </li>
             </ul>
             <p className="text-sm text-slate-600">

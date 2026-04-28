@@ -22,10 +22,8 @@ import { Button } from '@/components/ui/button'
 const FRAMES = [
   {
     name: 'Shared territory frame',
-    structure:
-      'Both poets... / However, whereas Poet A..., Poet B... / This reveals that...',
-    useFor:
-      'Opening a comparative paragraph when the similarity is the stronger starting point.',
+    structure: 'Both poets... / However, whereas Poet A..., Poet B... / This reveals that...',
+    useFor: 'Opening a comparative paragraph when the similarity is the stronger starting point.',
     example:
       'Both Barrett Browning and Shelley use natural imagery to express desire. However, whereas Barrett Browning\'s vine metaphor becomes something she must actively reject ("burst, shattered, everywhere!"), Shelley\'s catalogue of natural pairings remains a smooth, uninterrupted argument. This reveals a key difference: Barrett Browning treats desire as something that must be wrestled with, while Shelley treats it as a self-evident truth.',
   },
@@ -45,7 +43,7 @@ const FRAMES = [
     useFor:
       'When Poem B intensifies or complicates an idea that Poem A introduces. A high-level analytical move.',
     example:
-      'Day Lewis establishes that parental love means accepting separation ("love is proved in the letting go"). Heaney pushes this further by showing what happens after the letting go -- the parent becomes a dependent who "keeps stumbling / Behind me, and will not go away." Together they suggest that the parent-child reversal is not a single moment of release but an ongoing, uncomfortable process that never fully resolves.',
+      'Day-Lewis establishes that parental love means accepting separation ("love is proved in the letting go"). Heaney pushes this further by showing what happens after the letting go -- the parent becomes a dependent who "keeps stumbling / Behind me, and will not go away." Together they suggest that the parent-child reversal is not a single moment of release but an ongoing, uncomfortable process that never fully resolves.',
   },
 ]
 
@@ -82,19 +80,19 @@ const STRONG_PAIRINGS = [
     theme: 'Desire and longing',
     poemA: 'Sonnet 29',
     poemB: "Love's Philosophy",
-    why: 'Both use nature to express desire, but Barrett Browning rejects fantasy for reality while Shelley\'s plea goes unanswered. Strong contrast between desire fulfilled and desire frustrated.',
+    why: "Both use nature to express desire, but Barrett Browning rejects fantasy for reality while Shelley's plea goes unanswered. Strong contrast between desire fulfilled and desire frustrated.",
   },
   {
     theme: 'Obsessive / possessive love',
     poemA: "Porphyria's Lover",
     poemB: "The Farmer's Bride",
-    why: 'Both use dramatic monologue to expose a speaker whose desire dehumanises the beloved. Browning\'s acts; Mew\'s is paralysed. Two faces of the same possessive impulse.',
+    why: "Both use dramatic monologue to expose a speaker whose desire dehumanises the beloved. Browning's acts; Mew's is paralysed. Two faces of the same possessive impulse.",
   },
   {
     theme: 'Parent-child love',
     poemA: 'Walking Away',
     poemB: 'Follower',
-    why: 'Both explore how parent-child roles reverse over time. Day Lewis frames it as noble sacrifice; Heaney finds it unsettling. Contrasting emotional responses to the same structural truth.',
+    why: 'Both explore how parent-child roles reverse over time. Day-Lewis frames it as noble sacrifice; Heaney finds it unsettling. Contrasting emotional responses to the same structural truth.',
   },
   {
     theme: 'Memory and loss',
@@ -103,10 +101,10 @@ const STRONG_PAIRINGS = [
     why: 'Both reach towards a parent they cannot fully access. Duffy possessively reclaims; Causley gently accepts. Two opposite models of how memory handles loss.',
   },
   {
-    theme: 'Love\'s ending',
+    theme: "Love's ending",
     poemA: 'Neutral Tones',
     poemB: 'When We Two Parted',
-    why: 'Both present love\'s aftermath as more powerful than love itself. Hardy is bitter and nihilistic; Byron is mournful and ashamed. Different emotional textures of grief.',
+    why: "Both present love's aftermath as more powerful than love itself. Hardy is bitter and nihilistic; Byron is mournful and ashamed. Different emotional textures of grief.",
   },
   {
     theme: 'Nature and reconciliation',
@@ -130,7 +128,7 @@ const STRONG_PAIRINGS = [
     theme: 'Power dynamics in love',
     poemA: "The Farmer's Bride",
     poemB: 'Sonnet 29',
-    why: 'Both negotiate desire within power structures. The farmer\'s desire entraps; Barrett Browning\'s evolves into mutual respect. Desire as imprisonment versus liberation.',
+    why: "Both negotiate desire within power structures. The farmer's desire entraps; Barrett Browning's evolves into mutual respect. Desire as imprisonment versus liberation.",
   },
   {
     theme: 'Time and family',
@@ -201,18 +199,15 @@ export default function ComparisonGuidePage() {
               <Sparkles className="mr-1 size-3" />
               AQA GCSE English Literature
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              AQA Only
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">AQA Only</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             How to Compare Love &amp; Relationships Poems
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            A complete guide to AQA Paper 2 Section B. Learn the
-            point-by-point method, build Grade 9 thesis statements, choose
-            strong pairings, and avoid the mistakes that cap otherwise good
-            essays at Grade 6.
+            A complete guide to AQA Paper 2 Section B. Learn the point-by-point method, build Grade
+            9 thesis statements, choose strong pairings, and avoid the mistakes that cap otherwise
+            good essays at Grade 6.
           </p>
         </div>
       </section>
@@ -227,8 +222,8 @@ export default function ComparisonGuidePage() {
         </div>
         <div className="rounded-xl border border-border/40 bg-background/50 p-5">
           <p className="text-body-sm italic text-foreground/90 leading-relaxed mb-3">
-            &quot;Compare how poets present [theme/idea] in &apos;[named
-            poem]&apos; and in one other poem from your anthology.&quot;
+            &quot;Compare how poets present [theme/idea] in &apos;[named poem]&apos; and in one
+            other poem from your anthology.&quot;
           </p>
           <ul className="space-y-2 text-body-sm text-muted-foreground">
             <li className="flex gap-2">
@@ -237,18 +232,15 @@ export default function ComparisonGuidePage() {
             </li>
             <li className="flex gap-2">
               <span className="text-primary font-bold">2.</span>
-              You choose the second poem. This is where strong pairing
-              knowledge wins marks.
+              You choose the second poem. This is where strong pairing knowledge wins marks.
             </li>
             <li className="flex gap-2">
               <span className="text-primary font-bold">3.</span>
-              You must compare throughout -- not write about one, then the
-              other.
+              You must compare throughout -- not write about one, then the other.
             </li>
             <li className="flex gap-2">
               <span className="text-primary font-bold">4.</span>
-              30 marks total: AO1 (12), AO2 (12), AO3 (6). You have roughly
-              45 minutes.
+              30 marks total: AO1 (12), AO2 (12), AO3 (6). You have roughly 45 minutes.
             </li>
           </ul>
         </div>
@@ -266,19 +258,14 @@ export default function ComparisonGuidePage() {
           <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.04] p-5">
             <div className="mb-2 flex items-center gap-2">
               <CheckCircle2 className="size-4 text-emerald-400" />
-              <h3 className="text-sm font-semibold text-foreground">
-                Point-by-point
-              </h3>
-              <Badge
-                variant="secondary"
-                className="text-[0.65rem]"
-              >
+              <h3 className="text-sm font-semibold text-foreground">Point-by-point</h3>
+              <Badge variant="secondary" className="text-[0.65rem]">
                 Recommended
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed mb-3">
-              Each paragraph takes one idea and compares both poems within it.
-              Every paragraph scores comparison marks.
+              Each paragraph takes one idea and compares both poems within it. Every paragraph
+              scores comparison marks.
             </p>
             <div className="rounded-xl border border-border/40 bg-background/50 p-3">
               <p className="text-xs font-mono text-foreground/80 leading-relaxed">
@@ -298,28 +285,21 @@ export default function ComparisonGuidePage() {
           <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.04] p-5">
             <div className="mb-2 flex items-center gap-2">
               <AlertTriangle className="size-4 text-clay-600" />
-              <h3 className="text-sm font-semibold text-foreground">
-                Block then block
-              </h3>
-              <Badge
-                variant="secondary"
-                className="text-[0.65rem]"
-              >
+              <h3 className="text-sm font-semibold text-foreground">Block then block</h3>
+              <Badge variant="secondary" className="text-[0.65rem]">
                 Avoid
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed mb-3">
-              Write about Poem A in full, then Poem B in full with links back.
-              This is the single most common reason good candidates miss Grade
-              8. It caps your comparison marks.
+              Write about Poem A in full, then Poem B in full with links back. This is the single
+              most common reason good candidates miss Grade 8. It caps your comparison marks.
             </p>
             <div className="rounded-xl border border-border/40 bg-background/50 p-3">
               <p className="text-xs font-mono text-foreground/80 leading-relaxed">
                 P1-P2: Poem A analysis
                 <br />
                 P3-P4: Poem B analysis (with backlinks)
-                <br />
-                = limited comparison throughout
+                <br />= limited comparison throughout
               </p>
             </div>
           </div>
@@ -330,27 +310,18 @@ export default function ComparisonGuidePage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Target className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Three Levels of Thesis
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Three Levels of Thesis</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          Your thesis is the single most important sentence in the essay. Here
-          are three versions of the same basic comparison, pitched at Grade 5,
-          7, and 9. Notice how the top version reads both poems through a
-          single analytical lens.
+          Your thesis is the single most important sentence in the essay. Here are three versions of
+          the same basic comparison, pitched at Grade 5, 7, and 9. Notice how the top version reads
+          both poems through a single analytical lens.
         </p>
 
         <div className="grid gap-4">
           {THESIS_LEVELS.map((t) => (
-            <div
-              key={t.grade}
-              className="rounded-2xl border border-border/60 bg-card p-5"
-            >
-              <Badge
-                variant="secondary"
-                className="mb-3 text-[0.65rem] uppercase tracking-wider"
-              >
+            <div key={t.grade} className="rounded-2xl border border-border/60 bg-card p-5">
+              <Badge variant="secondary" className="mb-3 text-[0.65rem] uppercase tracking-wider">
                 {t.grade}
               </Badge>
               <p className="text-body-sm italic text-foreground/90 leading-relaxed mb-3">
@@ -369,37 +340,26 @@ export default function ComparisonGuidePage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Layers className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Three Paragraph Frames
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Three Paragraph Frames</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          These frames give you a reliable structure for every comparative
-          paragraph. Pick the frame that fits the point you are making, and
-          vary them across the essay so each paragraph feels fresh.
+          These frames give you a reliable structure for every comparative paragraph. Pick the frame
+          that fits the point you are making, and vary them across the essay so each paragraph feels
+          fresh.
         </p>
 
         <div className="space-y-4">
           {FRAMES.map((f) => (
-            <div
-              key={f.name}
-              className="rounded-2xl border border-border/60 bg-card p-5"
-            >
-              <h3 className="text-heading-md font-heading text-foreground mb-2">
-                {f.name}
-              </h3>
+            <div key={f.name} className="rounded-2xl border border-border/60 bg-card p-5">
+              <h3 className="text-heading-md font-heading text-foreground mb-2">{f.name}</h3>
               <div className="mb-3 rounded-xl border border-border/40 bg-background/50 p-3">
                 <p className="text-xs font-semibold uppercase tracking-wider text-foreground mb-1">
                   Structure
                 </p>
-                <p className="text-xs font-mono text-muted-foreground">
-                  {f.structure}
-                </p>
+                <p className="text-xs font-mono text-muted-foreground">{f.structure}</p>
               </div>
               <p className="text-body-sm text-muted-foreground leading-relaxed mb-3">
-                <span className="font-semibold text-foreground">
-                  Use for:{' '}
-                </span>
+                <span className="font-semibold text-foreground">Use for: </span>
                 {f.useFor}
               </p>
               <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.06] p-4">
@@ -424,20 +384,15 @@ export default function ComparisonGuidePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          For any named poem, you need a strong second choice ready. These
-          pairings are built around shared themes with contrasting approaches
-          -- the combination that produces the richest comparisons.
+          For any named poem, you need a strong second choice ready. These pairings are built around
+          shared themes with contrasting approaches -- the combination that produces the richest
+          comparisons.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
           {STRONG_PAIRINGS.map((pair) => (
-            <div
-              key={pair.theme}
-              className="rounded-xl border border-border/60 bg-card p-4"
-            >
-              <Badge
-                className="mb-2 bg-rose-500/10 text-rose-400 border-rose-500/20 text-[0.65rem]"
-              >
+            <div key={pair.theme} className="rounded-xl border border-border/60 bg-card p-4">
+              <Badge className="mb-2 bg-rose-500/10 text-rose-400 border-rose-500/20 text-[0.65rem]">
                 {pair.theme}
               </Badge>
               <div className="mb-2 flex items-center gap-2 text-sm font-medium text-foreground">
@@ -445,9 +400,7 @@ export default function ComparisonGuidePage() {
                 <span className="text-muted-foreground">+</span>
                 <span>{pair.poemB}</span>
               </div>
-              <p className="text-body-sm text-muted-foreground leading-relaxed">
-                {pair.why}
-              </p>
+              <p className="text-body-sm text-muted-foreground leading-relaxed">{pair.why}</p>
             </div>
           ))}
         </div>
@@ -457,29 +410,21 @@ export default function ComparisonGuidePage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Target className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            AQA Mark Scheme Decoded
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">AQA Mark Scheme Decoded</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          Understanding what examiners are actually looking for at each grade
-          boundary helps you target your revision. Paper 2 Section B is marked
-          across three Assessment Objectives.
+          Understanding what examiners are actually looking for at each grade boundary helps you
+          target your revision. Paper 2 Section B is marked across three Assessment Objectives.
         </p>
 
         <div className="space-y-4">
           {AO_BANDS.map((ao) => (
-            <div
-              key={ao.ao}
-              className="rounded-2xl border border-border/60 bg-card p-5"
-            >
+            <div key={ao.ao} className="rounded-2xl border border-border/60 bg-card p-5">
               <div className="mb-2 flex items-center gap-2">
                 <Badge variant="secondary" className="text-[0.65rem]">
                   {ao.ao}
                 </Badge>
-                <h3 className="text-sm font-semibold text-foreground">
-                  {ao.label}
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">{ao.label}</h3>
               </div>
               <div className="space-y-2">
                 {ao.descriptors.map((d) => (
@@ -487,10 +432,7 @@ export default function ComparisonGuidePage() {
                     key={d}
                     className="flex gap-3 rounded-lg border border-border/30 bg-background/50 p-3"
                   >
-                    <Badge
-                      variant="outline"
-                      className="shrink-0 text-[0.6rem]"
-                    >
+                    <Badge variant="outline" className="shrink-0 text-[0.6rem]">
                       {d.split(':')[0]}
                     </Badge>
                     <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -523,9 +465,7 @@ export default function ComparisonGuidePage() {
           ].map((m) => (
             <li key={m} className="flex gap-3">
               <span className="mt-1 text-clay-600">-</span>
-              <p className="text-body-sm text-muted-foreground leading-relaxed">
-                {m}
-              </p>
+              <p className="text-body-sm text-muted-foreground leading-relaxed">{m}</p>
             </li>
           ))}
         </ul>
@@ -540,8 +480,8 @@ export default function ComparisonGuidePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4 max-w-2xl">
-          In the exam, spend 5 minutes planning before you write. Here is
-          exactly what to do in those 5 minutes.
+          In the exam, spend 5 minutes planning before you write. Here is exactly what to do in
+          those 5 minutes.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
@@ -557,9 +497,7 @@ export default function ComparisonGuidePage() {
               className="flex gap-3 rounded-xl border border-border/40 bg-background/50 p-4"
             >
               <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
-              <p className="text-body-sm text-muted-foreground leading-relaxed">
-                {item}
-              </p>
+              <p className="text-body-sm text-muted-foreground leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
@@ -574,9 +512,8 @@ export default function ComparisonGuidePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4 max-w-2xl">
-          Vary your comparative connectives. Using &quot;similarly&quot; and
-          &quot;however&quot; repeatedly sounds mechanical. Here are better
-          alternatives.
+          Vary your comparative connectives. Using &quot;similarly&quot; and &quot;however&quot;
+          repeatedly sounds mechanical. Here are better alternatives.
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
@@ -613,17 +550,14 @@ export default function ComparisonGuidePage() {
           See these techniques in action
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          10 fully worked essay plans showing the point-by-point method,
-          Grade 9 theses, and comparative paragraphs for real AQA-style
-          questions.
+          10 fully worked essay plans showing the point-by-point method, Grade 9 theses, and
+          comparative paragraphs for real AQA-style questions.
         </p>
         <Button
           variant="default"
           size="lg"
           className="mt-5"
-          render={
-            <Link href="/revision/poetry/love-and-relationships/essay-plans" />
-          }
+          render={<Link href="/revision/poetry/love-and-relationships/essay-plans" />}
         >
           Essay Plans
           <ArrowRight className="size-4" />

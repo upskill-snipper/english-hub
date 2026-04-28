@@ -38,23 +38,37 @@ const paper1Sections = [
       'Questions on the 10 prescribed non-fiction texts from the Pearson Edexcel anthology. Retrieval, language analysis, and structural analysis.',
     href: '/igcse/edexcel-lang/anthology',
     subLinks: [
-      { label: 'The Danger of a Single Story', href: '/igcse/edexcel-lang/anthology/the-danger-of-a-single-story' },
+      {
+        label: 'The Danger of a Single Story',
+        href: '/igcse/edexcel-lang/anthology/the-danger-of-a-single-story',
+      },
       { label: 'A Passage to Africa', href: '/igcse/edexcel-lang/anthology/a-passage-to-africa' },
-      { label: "The Explorer's Daughter", href: '/igcse/edexcel-lang/anthology/the-explorers-daughter' },
-      { label: 'Explorers or Boys Messing About', href: '/igcse/edexcel-lang/anthology/explorers-or-boys-messing-about' },
+      {
+        label: "The Explorer's Daughter",
+        href: '/igcse/edexcel-lang/anthology/the-explorers-daughter',
+      },
+      {
+        label: 'Explorers or Boys Messing About',
+        href: '/igcse/edexcel-lang/anthology/explorers-or-boys-messing-about',
+      },
       { label: '127 Hours', href: '/igcse/edexcel-lang/anthology/127-hours' },
     ],
   },
   {
     heading: 'Section A — Anthology (continued)',
     label: 'Paper 1 Section A',
-    detail:
-      'The remaining five prescribed non-fiction texts for the anthology study.',
+    detail: 'The remaining five prescribed non-fiction texts for the anthology study.',
     href: '/igcse/edexcel-lang/anthology',
     subLinks: [
       { label: 'Young and Dyslexic', href: '/igcse/edexcel-lang/anthology/young-and-dyslexic' },
-      { label: 'A Game of Polo with a Headless Goat', href: '/igcse/edexcel-lang/anthology/a-game-of-polo-with-a-headless-goat' },
-      { label: 'Beyond the Sky and the Earth', href: '/igcse/edexcel-lang/anthology/beyond-the-sky-and-the-earth' },
+      {
+        label: 'A Game of Polo with a Headless Goat',
+        href: '/igcse/edexcel-lang/anthology/a-game-of-polo-with-a-headless-goat',
+      },
+      {
+        label: 'Beyond the Sky and the Earth',
+        href: '/igcse/edexcel-lang/anthology/beyond-the-sky-and-the-earth',
+      },
       { label: 'H is for Hawk', href: '/igcse/edexcel-lang/anthology/h-is-for-hawk' },
       { label: 'Chinese Cinderella', href: '/igcse/edexcel-lang/anthology/chinese-cinderella' },
     ],
@@ -94,9 +108,9 @@ export default async function EdexcelIgcseLangHubPage() {
     <div className="space-y-12 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Language", url: "https://theenglishhub.app/igcse/edexcel-lang" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Language', url: 'https://theenglishhub.app/igcse/edexcel-lang' },
         ]}
       />
       {/* ── Back link ───────────────────────────────────────────────── */}
@@ -128,18 +142,17 @@ export default async function EdexcelIgcseLangHubPage() {
             Pearson Edexcel IGCSE Language A
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            The Pearson Edexcel International GCSE in English Language (Specification A)
-            is a two-paper qualification covering{' '}
+            The Pearson Edexcel International GCSE in English Language (Specification A) is a
+            two-paper qualification covering{' '}
             <strong className="text-foreground">non-fiction reading</strong>,{' '}
             <strong className="text-foreground">transactional writing</strong> and a{' '}
-            <strong className="text-foreground">prescribed anthology</strong> of
-            ten non-fiction texts studied for Paper 1 Section A.
+            <strong className="text-foreground">prescribed anthology</strong> of ten non-fiction
+            texts studied for Paper 1 Section A.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <ScrollText className="size-3.5" />
-              2 papers
+              <ScrollText className="size-3.5" />2 papers
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
               <Clock className="size-3.5" />
@@ -151,6 +164,39 @@ export default async function EdexcelIgcseLangHubPage() {
             </span>
           </div>
         </div>
+      </section>
+
+      {/* ── Anthology version disclaimer ────────────────────────────── */}
+      <section
+        aria-label="Anthology version notice"
+        className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
+      >
+        <p className="mb-2">
+          <strong className="text-foreground">Anthology version:</strong> This site teaches the{' '}
+          <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
+          978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
+          freely-available online versions include:
+        </p>
+        <ol className="mb-2 list-decimal space-y-1 pl-5 text-muted-foreground">
+          <li>
+            <em>Half-Caste</em> uses Agard&rsquo;s spelling &lsquo;yu&rsquo; (not
+            &lsquo;you&rsquo;);
+          </li>
+          <li>
+            <em>The Bright Lights of Sarajevo</em> has additional stanza breaks not in
+            Harrison&rsquo;s original <em>Guardian</em> publication;
+          </li>
+          <li>
+            the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
+            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals — always use the
+            anthology version when answering Edexcel questions.
+          </li>
+        </ol>
+        <p className="text-body-xs text-muted-foreground">
+          © Pearson Education — quotations on individual set-text pages are short fair-dealing
+          extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
+          school-licensed editions.
+        </p>
       </section>
 
       {/* ── Paper 1 ─────────────────────────────────────────────────── */}
@@ -237,9 +283,7 @@ export default async function EdexcelIgcseLangHubPage() {
                 <span className="mb-1 block font-mono text-body-xs text-muted-foreground uppercase tracking-wider">
                   {section.label}
                 </span>
-                <h3 className="font-heading text-heading-sm text-foreground">
-                  {section.heading}
-                </h3>
+                <h3 className="font-heading text-heading-sm text-foreground">{section.heading}</h3>
                 <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
                   {section.detail}
                 </p>
@@ -255,9 +299,7 @@ export default async function EdexcelIgcseLangHubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <GraduationCap className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Quick Links
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Quick Links</h2>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -292,12 +334,8 @@ export default async function EdexcelIgcseLangHubPage() {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">
-                    {tool.title}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {tool.description}
-                  </p>
+                  <h3 className="font-heading text-body text-foreground">{tool.title}</h3>
+                  <p className="text-body-xs text-muted-foreground">{tool.description}</p>
                 </div>
                 <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>

@@ -1,15 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Heart,
-  Sparkles,
-  BookOpen,
-  Lock,
-  CheckCircle2,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Heart, Sparkles, BookOpen, Lock, CheckCircle2 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
@@ -105,7 +97,7 @@ const POEMS: Poem[] = [
     poet: 'Jen Hadfield',
     slug: 'loves-dog',
     publicDomain: false,
-    hook: "A list-poem cataloguing what the speaker loves and hates about love itself.",
+    hook: 'A list-poem cataloguing what the speaker loves and hates about love itself.',
   },
   {
     title: 'Nettles',
@@ -119,7 +111,7 @@ const POEMS: Poem[] = [
     poet: 'Charlotte Mew',
     slug: 'the-farmers-bride',
     publicDomain: true,
-    hook: 'A frustrated farmer narrates his wife\'s flight from him in a chilling rural monologue.',
+    hook: "A frustrated farmer narrates his wife's flight from him in a chilling rural monologue.",
   },
   {
     title: 'Taller',
@@ -170,15 +162,18 @@ export default function OCRLoveAndRelationshipsPage() {
         </div>
       </section>
 
-      <StudyTools textName="OCR Love and Relationships" textType="anthology" examBoard="OCR" variant="banner" />
+      <StudyTools
+        textName="OCR Love and Relationships"
+        textType="anthology"
+        examBoard="OCR"
+        variant="banner"
+      />
 
       {/* ── Poem grid ───────────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Heart className="size-5 text-pink-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            All 15 Poems
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">All 15 Poems</h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -186,9 +181,7 @@ export default function OCRLoveAndRelationshipsPage() {
             <Link
               key={poem.slug}
               href={
-                poem.publicDomain
-                  ? `/revision/poetry/ocr/love-and-relationships/${poem.slug}`
-                  : '#'
+                poem.publicDomain ? `/revision/poetry/ocr/love-and-relationships/${poem.slug}` : '#'
               }
               className={`group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 ${
                 poem.publicDomain
@@ -210,9 +203,7 @@ export default function OCRLoveAndRelationshipsPage() {
               <h3 className="pr-8 text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
                 {poem.title}
               </h3>
-              <p className="mt-0.5 text-caption text-muted-foreground">
-                {poem.poet}
-              </p>
+              <p className="mt-0.5 text-caption text-muted-foreground">{poem.poet}</p>
               <p className="mt-3 flex-1 text-body-sm text-muted-foreground leading-relaxed">
                 {poem.hook}
               </p>
@@ -235,23 +226,27 @@ export default function OCRLoveAndRelationshipsPage() {
 
       {/* ── Copyright note ──────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">
-          Why are some poems locked?
-        </h2>
+        <h2 className="text-heading-sm font-heading text-foreground">Rights notice</h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
           Older poems by Byron, Wordsworth, Hardy, Browning and Mew are in the public domain, so we
-          provide full annotated study pages. More recent poems are still in copyright, so for those
-          we offer context, themes and key quotation analysis only -- you will need a copy of the
-          OCR <em>Towards a World Unknown</em> anthology to read the full text.
+          provide full annotated study pages. More recent poems in this cluster remain in copyright
+          &mdash; Harrison&rsquo;s <em>Long Distance II</em> (&copy; Bloodaxe Books),
+          Armitage&rsquo;s <em>The Manhunt</em> (&copy; Faber &amp; Faber), Duffy&rsquo;s{' '}
+          <em>Valentine</em> (&copy; Picador / Pan Macmillan), Jennings&rsquo;s <em>One Flesh</em>{' '}
+          (&copy; Carcanet Press), Cooper Clarke&rsquo;s <em>i wanna be yours</em> (&copy; Vintage /
+          Penguin Random House), Hadfield&rsquo;s <em>Love&rsquo;s Dog</em> (&copy; Bloodaxe Books),
+          Scannell&rsquo;s <em>Nettles</em> (&copy; estate of Vernon Scannell) and Campion&rsquo;s{' '}
+          <em>Taller</em> (&copy; Burning Eye Books). Quotations are short fair-dealing extracts
+          under CDPA 1988 &sect;30 (criticism, review, quotation) &mdash; for full text, you will
+          need a copy of the board-licensed OCR <em>Towards a World Unknown</em> anthology (J352,
+          ISBN 9781398384408).
         </p>
       </section>
 
       {/* ── Back CTA ────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-pink-400" />
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Explore other clusters
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Explore other clusters</h2>
         <Button
           variant="default"
           size="lg"

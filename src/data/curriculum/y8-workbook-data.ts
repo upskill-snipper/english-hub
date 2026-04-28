@@ -3,9 +3,9 @@
 // =============================================================================
 
 export interface WorkbookExercise {
-  id: string;
-  title: string;
-  termUnit: string;
+  id: string
+  title: string
+  termUnit: string
   type:
     | 'comprehension'
     | 'analysis'
@@ -18,34 +18,28 @@ export interface WorkbookExercise {
     | 'quotation-practice'
     | 'language-analysis'
     | 'speech-writing'
-    | 'media-literacy';
-  instructions: string;
-  modelAnswer: string;
-  marks: number;
-  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery';
-  keywords: string[];
-  linkedObjectives: string[];
+    | 'media-literacy'
+  instructions: string
+  modelAnswer: string
+  marks: number
+  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery'
+  keywords: string[]
+  linkedObjectives: string[]
 }
 
 export interface HomeworkTask {
-  id: string;
-  title: string;
-  halfTerm: number;
-  weekNumber: number;
-  type:
-    | 'reading-response'
-    | 'extended-writing'
-    | 'research'
-    | 'creative'
-    | 'revision'
-    | 'analysis';
-  instructions: string;
-  modelAnswer: string;
-  marks: number;
-  estimatedMinutes: number;
-  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery';
-  keywords: string[];
-  linkedObjectives: string[];
+  id: string
+  title: string
+  halfTerm: number
+  weekNumber: number
+  type: 'reading-response' | 'extended-writing' | 'research' | 'creative' | 'revision' | 'analysis'
+  instructions: string
+  modelAnswer: string
+  marks: number
+  estimatedMinutes: number
+  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery'
+  keywords: string[]
+  linkedObjectives: string[]
 }
 
 // =============================================================================
@@ -84,7 +78,7 @@ const t1Exercises: WorkbookExercise[] = [
       '<ol>' +
       '<li>List four methods the Capitol uses to control the districts. (4 marks)</li>' +
       '<li>Explain how the Hunger Games themselves are a tool of power. Use the concept of "bread and circuses." (4 marks)</li>' +
-      '<li>Compare the Capitol\'s control to a real-world example of authoritarian power. (4 marks)</li>' +
+      "<li>Compare the Capitol's control to a real-world example of authoritarian power. (4 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Methods of control: the Hunger Games as punishment and entertainment; restricting food supply and resources; the Peacekeepers who enforce rules through violence; propaganda via mandatory viewing of the Games. ' +
@@ -124,14 +118,14 @@ const t1Exercises: WorkbookExercise[] = [
     instructions:
       '<p>Read the extract where Katniss volunteers for Prim at the Reaping.</p>' +
       '<ol>' +
-      '<li>What can we infer about Katniss and Prim\'s relationship? (2 marks)</li>' +
-      '<li>What can we infer about the crowd\'s reaction when they refuse to clap? (3 marks)</li>' +
+      "<li>What can we infer about Katniss and Prim's relationship? (2 marks)</li>" +
+      "<li>What can we infer about the crowd's reaction when they refuse to clap? (3 marks)</li>" +
       '<li>Explain what the three-finger salute implies about the people of District 12. (3 marks)</li>' +
       '<li>How does Collins use this moment to develop the theme of resistance? (4 marks)</li>' +
       '</ol>',
     modelAnswer:
       'We can infer Katniss loves Prim unconditionally and would sacrifice herself without hesitation -- this is instinctive, not calculated. Their bond is the emotional heart of the story. ' +
-      'The crowd\'s refusal to clap is a silent act of defiance. We can infer they are disgusted by the system but afraid to speak out openly. Their silence is more powerful than cheering would be. ' +
+      "The crowd's refusal to clap is a silent act of defiance. We can infer they are disgusted by the system but afraid to speak out openly. Their silence is more powerful than cheering would be. " +
       'The three-finger salute implies District 12 has its own culture of quiet resistance -- a shared gesture of respect and solidarity that the Capitol cannot control. ' +
       'Collins uses this moment to plant the seeds of rebellion. The personal act of love (volunteering) becomes political because it exposes the cruelty of the system and unites the crowd in shared grief and anger.',
     marks: 12,
@@ -199,7 +193,7 @@ const t1Exercises: WorkbookExercise[] = [
       '<li>Write a comparative paragraph linking the role of media in Panem to reality television today. (6 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'The Capitol uses media as propaganda -- mandatory viewing ensures all citizens witness the consequences of rebellion. The Games are edited and narrated to create the Capitol\'s preferred story, controlling truth. ' +
+      "The Capitol uses media as propaganda -- mandatory viewing ensures all citizens witness the consequences of rebellion. The Games are edited and narrated to create the Capitol's preferred story, controlling truth. " +
       'The interview segment is significant because it forces tributes to become performers. They must suppress fear and present a likeable persona to win sponsors, showing how the system commodifies human life. ' +
       'Collins draws deliberate parallels to reality television. Just as contestants on modern shows are edited into heroes or villains, tributes are packaged for entertainment. The audience in Panem, like viewers today, becomes desensitised to suffering when it is framed as spectacle. Collins challenges us to question our own complicity as consumers of dramatic content.',
     marks: 12,
@@ -231,7 +225,7 @@ const t1Exercises: WorkbookExercise[] = [
       '(2) The televised Games serve as propaganda, presenting the Capitol as generous and just. ' +
       '(3) The tessera system reinforces inequality by disproportionately endangering poorer children. ' +
       '(4) The districts suffer daily oppression through food shortages, surveillance, and violent enforcement. ' +
-      '(5) Katniss\'s defiance at the Reaping plants the first seeds of rebellion against the Capitol.',
+      "(5) Katniss's defiance at the Reaping plants the first seeds of rebellion against the Capitol.",
     marks: 10,
     difficulty: 'foundation',
     keywords: ['totalitarian', 'propaganda', 'inequality', 'oppression', 'rebellion'],
@@ -239,7 +233,7 @@ const t1Exercises: WorkbookExercise[] = [
   },
   {
     id: 'y8-t1-ex09',
-    title: 'Writer\'s Methods: How Collins Builds Tension',
+    title: "Writer's Methods: How Collins Builds Tension",
     termUnit: 'T1: Dystopian Fiction',
     type: 'language-analysis',
     instructions:
@@ -250,7 +244,7 @@ const t1Exercises: WorkbookExercise[] = [
       '<li>How does Collins use sentence structure to create a sense of urgency? (3 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'Three techniques: (1) First-person present tense narration creates immediacy, making the reader feel they are experiencing the countdown alongside Katniss; (2) Short, declarative sentences mirror Katniss\'s racing thoughts and quickened heartbeat, increasing pace; (3) Sensory detail -- sounds, physical sensations -- grounds the reader in the terrifying moment. ' +
+      "Three techniques: (1) First-person present tense narration creates immediacy, making the reader feel they are experiencing the countdown alongside Katniss; (2) Short, declarative sentences mirror Katniss's racing thoughts and quickened heartbeat, increasing pace; (3) Sensory detail -- sounds, physical sensations -- grounds the reader in the terrifying moment. " +
       'Collins uses sentence structure strategically: the sentences become progressively shorter as the countdown approaches zero, mimicking rising panic. Fragments and minor sentences strip away description, leaving only raw action and instinct. This structural shift forces the reader to read faster, physically replicating the urgency Katniss feels.',
     marks: 12,
     difficulty: 'secure',
@@ -332,14 +326,14 @@ const t1Exercises: WorkbookExercise[] = [
     instructions:
       '<p>In the arena, tributes must decide how far they will go to survive.</p>' +
       '<ol>' +
-      '<li>How does Katniss\'s approach to survival differ from the Career tributes? (3 marks)</li>' +
+      "<li>How does Katniss's approach to survival differ from the Career tributes? (3 marks)</li>" +
       '<li>Is Katniss morally justified in her actions during the Games? Argue both sides. (6 marks)</li>' +
       '<li>What is Collins saying about human nature through the arena? (3 marks)</li>' +
       '</ol>',
     modelAnswer:
       'Katniss survives through evasion, resourcefulness, and alliances built on genuine connection, while the Careers treat the Games as sport, having trained for violence. This contrast highlights different responses to systemic cruelty. ' +
       'For justification: Katniss kills only in self-defence or to protect allies; she did not choose to enter the arena; the system is designed to force violence. Against: she still participates in the killing; her alliance choices are partly strategic; surviving means others die. ' +
-      'Collins suggests that extreme systems corrupt moral choices. The arena strips away civilisation and forces impossible decisions, but characters like Katniss and Rue who maintain compassion expose the system\'s cruelty more powerfully than those who embrace it.',
+      "Collins suggests that extreme systems corrupt moral choices. The arena strips away civilisation and forces impossible decisions, but characters like Katniss and Rue who maintain compassion expose the system's cruelty more powerfully than those who embrace it.",
     marks: 12,
     difficulty: 'mastery',
     keywords: ['morality', 'survival', 'ethics', 'human nature', 'evaluation'],
@@ -384,7 +378,7 @@ const t1Exercises: WorkbookExercise[] = [
       '<li>Explore the theme of appearance versus reality in this scene. (6 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'Cinna transforms Katniss from a coal miner\'s daughter into a figure of fire and power, directly challenging the Capitol\'s view of District 12 as expendable. Fashion becomes protest. ' +
+      "Cinna transforms Katniss from a coal miner's daughter into a figure of fire and power, directly challenging the Capitol's view of District 12 as expendable. Fashion becomes protest. " +
       'The irony is devastating: the audience adores the tributes as celebrities while knowing they are being sent to slaughter. Their enthusiasm reveals a complete disconnection between spectacle and suffering. ' +
       'Appearance vs reality operates on multiple levels: Katniss appears confident but is terrified; the parade appears celebratory but marks the beginning of a death sentence; the Capitol appears generous but is profoundly cruel. Collins uses this scene to show how surface glamour disguises systemic violence.',
     marks: 12,
@@ -402,12 +396,12 @@ const t1Exercises: WorkbookExercise[] = [
       '<ol>' +
       '<li>List three advantages of first-person narration for this story. (3 marks)</li>' +
       '<li>List two limitations of first-person narration. (2 marks)</li>' +
-      '<li>How would the story change if it were told from a Capitol citizen\'s perspective? Write a paragraph. (5 marks)</li>' +
+      "<li>How would the story change if it were told from a Capitol citizen's perspective? Write a paragraph. (5 marks)</li>" +
       '</ol>',
     modelAnswer:
-      'Advantages: (1) Creates intimacy -- we experience Katniss\'s fear, confusion, and determination directly; (2) Present tense adds urgency and uncertainty about survival; (3) Limited perspective mirrors the information control in the dystopia -- we only know what Katniss knows. ' +
-      'Limitations: (1) We cannot see events Katniss does not witness, limiting our understanding of other characters\' motivations; (2) We only get Katniss\'s interpretation of events, which may be biased. ' +
-      'From a Capitol citizen\'s perspective, the Games might seem exciting and justified. The narrative would likely present the tributes as willing participants, the Capitol as benevolent, and the violence as deserved punishment. This shift would expose how perspective shapes morality and truth.',
+      "Advantages: (1) Creates intimacy -- we experience Katniss's fear, confusion, and determination directly; (2) Present tense adds urgency and uncertainty about survival; (3) Limited perspective mirrors the information control in the dystopia -- we only know what Katniss knows. " +
+      "Limitations: (1) We cannot see events Katniss does not witness, limiting our understanding of other characters' motivations; (2) We only get Katniss's interpretation of events, which may be biased. " +
+      "From a Capitol citizen's perspective, the Games might seem exciting and justified. The narrative would likely present the tributes as willing participants, the Capitol as benevolent, and the violence as deserved punishment. This shift would expose how perspective shapes morality and truth.",
     marks: 10,
     difficulty: 'secure',
     keywords: ['first person', 'narration', 'perspective', 'present tense', 'unreliable narrator'],
@@ -422,13 +416,13 @@ const t1Exercises: WorkbookExercise[] = [
       '<p>Rue is one of the youngest tributes and forms an alliance with Katniss.</p>' +
       '<ol>' +
       '<li>How does Collins present Rue as innocent and vulnerable? (3 marks)</li>' +
-      '<li>Why is Rue\'s death a turning point in the novel? (4 marks)</li>' +
-      '<li>How does Katniss\'s response to Rue\'s death become an act of defiance? (5 marks)</li>' +
+      "<li>Why is Rue's death a turning point in the novel? (4 marks)</li>" +
+      "<li>How does Katniss's response to Rue's death become an act of defiance? (5 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Rue is presented as innocent through her small size, her association with nature and birdsong, and her resemblance to Prim -- all suggesting she should be protected, not hunted. ' +
-      'Rue\'s death is a turning point because it transforms Katniss from a survivor into a symbol of resistance. The death forces both Katniss and the reader to confront the true horror of the system -- children killing children. ' +
-      'Katniss\'s response -- decorating Rue\'s body with flowers -- is an act of defiance because it humanises a tribute the Capitol wants to treat as disposable. By honouring Rue, Katniss rejects the Games\' premise and broadcasts her grief as a political statement. District 11\'s response (sending bread) confirms that this personal act has become a catalyst for collective resistance.',
+      "Rue's death is a turning point because it transforms Katniss from a survivor into a symbol of resistance. The death forces both Katniss and the reader to confront the true horror of the system -- children killing children. " +
+      "Katniss's response -- decorating Rue's body with flowers -- is an act of defiance because it humanises a tribute the Capitol wants to treat as disposable. By honouring Rue, Katniss rejects the Games' premise and broadcasts her grief as a political statement. District 11's response (sending bread) confirms that this personal act has become a catalyst for collective resistance.",
     marks: 12,
     difficulty: 'secure',
     keywords: ['innocence', 'symbolism', 'turning point', 'defiance', 'catalyst'],
@@ -451,10 +445,16 @@ const t1Exercises: WorkbookExercise[] = [
       '<p>Write 250-300 words. (14 marks)</p>',
     modelAnswer:
       'A strong response will adopt formal register ("I write to urge you to consider..."), present clear arguments (moral cost, economic waste, risk of rebellion), use persuasive techniques (rhetorical questions: "How long can a nation built on the blood of its children endure?"; tricolon: "The Games bring fear, division, and suffering"; emotive language: "innocent children torn from their families"). ' +
-      'The counter-argument should acknowledge the Capitol\'s position (maintaining order, preventing rebellion) before dismantling it (the Games breed resentment, not obedience). The tone should be respectful but urgent, showing understanding of power dynamics while arguing for change.',
+      "The counter-argument should acknowledge the Capitol's position (maintaining order, preventing rebellion) before dismantling it (the Games breed resentment, not obedience). The tone should be respectful but urgent, showing understanding of power dynamics while arguing for change.",
     marks: 14,
     difficulty: 'mastery',
-    keywords: ['persuasion', 'formal register', 'rhetorical techniques', 'argument', 'counter-argument'],
+    keywords: [
+      'persuasion',
+      'formal register',
+      'rhetorical techniques',
+      'argument',
+      'counter-argument',
+    ],
     linkedObjectives: ['Y8.W2', 'Y8.W4', 'Y8.W6'],
   },
   {
@@ -471,7 +471,7 @@ const t1Exercises: WorkbookExercise[] = [
       '</ol>',
     modelAnswer:
       'Fire symbolises multiple things: during the tribute parade, it represents transformation and power (Katniss becomes "the girl on fire"); in the arena, fire is a weapon the Gamemakers use against Katniss, representing the Capitol\'s destructive control; metaphorically, fire represents the spark of rebellion that cannot be extinguished. ' +
-      'The mockingjay becomes a symbol of resistance because the bird itself is unintended -- a hybrid the Capitol did not plan. Like the mockingjay, resistance grows organically and cannot be fully controlled. Katniss\'s mockingjay pin becomes a rallying symbol for the districts. ' +
+      "The mockingjay becomes a symbol of resistance because the bird itself is unintended -- a hybrid the Capitol did not plan. Like the mockingjay, resistance grows organically and cannot be fully controlled. Katniss's mockingjay pin becomes a rallying symbol for the districts. " +
       'Symbols are powerful in dystopian fiction because they communicate ideas that cannot be spoken openly under oppressive regimes. A symbol can unite people, carry meaning across borders, and persist even when words are censored. They give resistance a visual identity.',
     marks: 12,
     difficulty: 'mastery',
@@ -491,20 +491,20 @@ const t1Exercises: WorkbookExercise[] = [
       '<li>Have a clear introduction with your argument</li>' +
       '<li>Include at least three developed paragraphs using PEEL structure</li>' +
       '<li>Embed quotations from the text</li>' +
-      '<li>Analyse writer\'s methods (language, structure, symbolism)</li>' +
+      "<li>Analyse writer's methods (language, structure, symbolism)</li>" +
       '<li>Reach a clear conclusion</li>' +
       '</ul>' +
       '<p>Write 400-500 words. (20 marks)</p>',
     modelAnswer:
-      'A top-level response will clearly argue agreement or partial agreement, addressing all three themes (power, inequality, entertainment) in separate paragraphs. Each paragraph should follow PEEL, embed quotations smoothly, and analyse Collins\'s methods rather than simply retelling the plot. ' +
-      'The introduction should establish a clear thesis. Body paragraphs should move from point to evidence to explanation to link, with analysis of how language choices, structural decisions, and symbolic elements convey Collins\'s critique. ' +
-      'The conclusion should synthesise the argument and may connect to the modern world, considering whether Collins\'s warnings are relevant today. The strongest essays will demonstrate personal engagement and independent thinking while maintaining a formal analytical register.',
+      "A top-level response will clearly argue agreement or partial agreement, addressing all three themes (power, inequality, entertainment) in separate paragraphs. Each paragraph should follow PEEL, embed quotations smoothly, and analyse Collins's methods rather than simply retelling the plot. " +
+      "The introduction should establish a clear thesis. Body paragraphs should move from point to evidence to explanation to link, with analysis of how language choices, structural decisions, and symbolic elements convey Collins's critique. " +
+      "The conclusion should synthesise the argument and may connect to the modern world, considering whether Collins's warnings are relevant today. The strongest essays will demonstrate personal engagement and independent thinking while maintaining a formal analytical register.",
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['essay', 'PEEL', 'thesis', 'analysis', 'writer\'s methods', 'conclusion'],
+    keywords: ['essay', 'PEEL', 'thesis', 'analysis', "writer's methods", 'conclusion'],
     linkedObjectives: ['Y8.R4', 'Y8.R5', 'Y8.R6', 'Y8.W2', 'Y8.W3'],
   },
-];
+]
 
 // =============================================================================
 // TERM 2 WORKBOOK: Poetry & Shakespeare (Macbeth focus)
@@ -546,7 +546,7 @@ const t2Exercises: WorkbookExercise[] = [
       '</ol>',
     modelAnswer:
       'Simile: a comparison using "like" or "as" (e.g., "My love is like a red, red rose" -- creates a vivid visual connection between love and beauty/nature). ' +
-      'Metaphor: a direct comparison stating something is something else (e.g., "Life is a broken-winged bird" -- Hughes suggests life without dreams is damaged and grounded, unable to reach potential). ' +
+      'Metaphor: a direct comparison stating something is something else (e.g., "Life is a broken-winged bird" -- Langston Hughes (the American Harlem Renaissance poet, 1902-1967, NOT Ted Hughes) suggests life without dreams is damaged and grounded, unable to reach potential). ' +
       'Personification: giving human qualities to non-human things (e.g., "The wind howled in anger" -- makes nature feel threatening and emotional, creating atmosphere). ' +
       'The evaluative response should demonstrate genuine personal preference with specific reasoning about why that technique resonates, considering factors like vividness, emotional impact, and subtlety.',
     marks: 16,
@@ -606,15 +606,15 @@ const t2Exercises: WorkbookExercise[] = [
       '<p>Before studying the play, explore its context.</p>' +
       '<ol>' +
       '<li>When was <em>Macbeth</em> written? Who was the monarch at the time? (2 marks)</li>' +
-      '<li>Why would Shakespeare\'s audience have been interested in a play about a Scottish king? (3 marks)</li>' +
+      "<li>Why would Shakespeare's audience have been interested in a play about a Scottish king? (3 marks)</li>" +
       '<li>What was the "Divine Right of Kings"? Why is this relevant to the play? (3 marks)</li>' +
       '<li>What did Jacobean audiences believe about witchcraft? How might this affect their response to the play? (4 marks)</li>' +
       '</ol>',
     modelAnswer:
       'Macbeth was written around 1606. James I (James VI of Scotland) was the monarch, having recently united the English and Scottish crowns. ' +
-      'The play flattered James by dramatising his supposed ancestor, Banquo, and by showing the dangers of regicide -- reinforcing James\'s legitimacy. A play about Scottish history would resonate with a king proud of his heritage. ' +
+      "The play flattered James by dramatising his supposed ancestor, Banquo, and by showing the dangers of regicide -- reinforcing James's legitimacy. A play about Scottish history would resonate with a king proud of his heritage. " +
       'The Divine Right of Kings held that monarchs were chosen by God and that overthrowing them was a sin against divine order. This is central to Macbeth because the murder of Duncan disrupts natural and spiritual order. ' +
-      'Jacobean audiences genuinely believed in witchcraft. James I himself wrote a treatise on the subject. The witches would have been terrifying rather than theatrical, and the play\'s warning about supernatural temptation would have felt urgent and real.',
+      "Jacobean audiences genuinely believed in witchcraft. James I himself wrote a treatise on the subject. The witches would have been terrifying rather than theatrical, and the play's warning about supernatural temptation would have felt urgent and real.",
     marks: 12,
     difficulty: 'developing',
     keywords: ['Jacobean', 'James I', 'Divine Right of Kings', 'witchcraft', 'context'],
@@ -626,15 +626,15 @@ const t2Exercises: WorkbookExercise[] = [
     termUnit: 'T2: Poetry & Shakespeare',
     type: 'analysis',
     instructions:
-      '<p>Read Act 1 Scene 1 and the witches\' prophecies in Act 1 Scene 3.</p>' +
+      "<p>Read Act 1 Scene 1 and the witches' prophecies in Act 1 Scene 3.</p>" +
       '<ol>' +
       '<li>What atmosphere does Shakespeare create in the opening scene? How? (3 marks)</li>' +
       '<li>What do the witches predict for Macbeth and Banquo? (3 marks)</li>' +
-      '<li>Are the witches responsible for Macbeth\'s downfall, or do they simply reveal his existing ambition? Argue your view. (6 marks)</li>' +
+      "<li>Are the witches responsible for Macbeth's downfall, or do they simply reveal his existing ambition? Argue your view. (6 marks)</li>" +
       '</ol>',
     modelAnswer:
       'The opening creates an atmosphere of chaos, evil, and moral confusion. The short scene with thunder, the chanting rhythm, and the paradox "Fair is foul, and foul is fair" establishes that the world of the play is one where normal values are inverted. ' +
-      'The witches predict Macbeth will be Thane of Cawdor and King, and that Banquo\'s descendants will be kings though he will not. ' +
+      "The witches predict Macbeth will be Thane of Cawdor and King, and that Banquo's descendants will be kings though he will not. " +
       'Students should argue either position with evidence: the witches as catalysts (they plant the idea but Macbeth chooses to act) or as puppet-masters (supernatural forces drive events). The strongest answers will acknowledge the deliberate ambiguity -- Shakespeare leaves this unresolved, forcing the audience to question the nature of fate versus free will.',
     marks: 12,
     difficulty: 'secure',
@@ -643,11 +643,11 @@ const t2Exercises: WorkbookExercise[] = [
   },
   {
     id: 'y8-t2-ex07',
-    title: 'Shakespeare\'s Language: Understanding Early Modern English',
+    title: "Shakespeare's Language: Understanding Early Modern English",
     termUnit: 'T2: Poetry & Shakespeare',
     type: 'vocabulary',
     instructions:
-      '<p>Shakespeare\'s language can seem unfamiliar, but many patterns help us decode it.</p>' +
+      "<p>Shakespeare's language can seem unfamiliar, but many patterns help us decode it.</p>" +
       '<ol>' +
       '<li>Translate these Shakespearean words into modern English (5 marks):<br/>' +
       'a) thou / thee<br/>' +
@@ -661,7 +661,7 @@ const t2Exercises: WorkbookExercise[] = [
     modelAnswer:
       'a) thou/thee = you (subject/object forms); b) hath = has; c) wherefore = why (not "where"); d) hither = here/to this place; e) prithee = I pray thee / please. ' +
       'Modern translation: "Is this a dagger I can see in front of me, with its handle pointing towards my hand? Come here, let me grab you." The translation should preserve the questioning, uncertain tone. ' +
-      'Shakespeare uses verse (iambic pentameter) for noble characters and important speeches, reflecting elevated status and heightened emotion. Prose is used for lower-status characters, comic scenes, or moments of madness (e.g., Lady Macbeth\'s sleepwalking). The shift between verse and prose signals changes in status, sanity, or significance.',
+      "Shakespeare uses verse (iambic pentameter) for noble characters and important speeches, reflecting elevated status and heightened emotion. Prose is used for lower-status characters, comic scenes, or moments of madness (e.g., Lady Macbeth's sleepwalking). The shift between verse and prose signals changes in status, sanity, or significance.",
     marks: 12,
     difficulty: 'developing',
     keywords: ['iambic pentameter', 'verse', 'prose', 'Early Modern English', 'Shakespeare'],
@@ -697,12 +697,12 @@ const t2Exercises: WorkbookExercise[] = [
       '<p>Read Macbeth\'s "Is this a dagger" soliloquy (Act 2, Scene 1).</p>' +
       '<ol>' +
       '<li>What is happening at this point in the play? (2 marks)</li>' +
-      '<li>Is the dagger real or imaginary? What does this suggest about Macbeth\'s state of mind? (3 marks)</li>' +
+      "<li>Is the dagger real or imaginary? What does this suggest about Macbeth's state of mind? (3 marks)</li>" +
       '<li>Analyse three language features Shakespeare uses in this speech and explain their effects. (9 marks)</li>' +
       '</ol>',
     modelAnswer:
       'Macbeth is about to murder King Duncan. He is alone, preparing himself for the act, when he sees a dagger floating before him. ' +
-      'The dagger is imaginary -- a hallucination. This suggests Macbeth\'s mind is fracturing under the pressure of guilt and ambition. He cannot distinguish reality from fantasy, indicating that the decision to murder is destroying his reason. ' +
+      "The dagger is imaginary -- a hallucination. This suggests Macbeth's mind is fracturing under the pressure of guilt and ambition. He cannot distinguish reality from fantasy, indicating that the decision to murder is destroying his reason. " +
       'Language features: (1) Rhetorical questions ("Is this a dagger...?") reveal his uncertainty and inner turmoil -- he is arguing with himself. (2) Imperative verbs ("Come, let me clutch thee") show his desperation to make the vision real, to commit fully. (3) The shift to darkness imagery ("witchcraft celebrates," "wicked dreams") as the speech progresses shows Macbeth surrendering to evil, with the natural world itself becoming corrupt to match his intentions.',
     marks: 14,
     difficulty: 'secure',
@@ -723,7 +723,7 @@ const t2Exercises: WorkbookExercise[] = [
       '</ol>',
     modelAnswer:
       'Three references: (1) Early -- blood represents honour and bravery in battle; (2) Middle -- blood represents guilt after Duncan\'s murder ("Will all great Neptune\'s ocean wash this blood clean from my hand?"); (3) Late -- Lady Macbeth\'s sleepwalking ("Out, damned spot") shows blood as inescapable psychological torment. ' +
-      'Blood transforms from a symbol of heroism to guilt to madness. This arc mirrors Macbeth\'s moral decline and Shakespeare\'s exploration of how violence corrupts. ' +
+      "Blood transforms from a symbol of heroism to guilt to madness. This arc mirrors Macbeth's moral decline and Shakespeare's exploration of how violence corrupts. " +
       'Comparison: Macbeth confronts the blood immediately after the murder, recognising his guilt intellectually. Lady Macbeth initially dismisses the blood as easily washed away, but it returns to haunt her subconsciously in her sleepwalking. Shakespeare suggests that suppressed guilt is ultimately more destructive than guilt that is faced.',
     marks: 12,
     difficulty: 'secure',
@@ -743,7 +743,7 @@ const t2Exercises: WorkbookExercise[] = [
       '<li>Peer-assess or self-assess your paragraph using the PEETAL checklist. Note what you did well and what you could improve. (4 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'Guide: Point -- a clear topic sentence stating your argument; Evidence -- a short embedded quotation; Explain -- what the evidence shows on a surface level; Technique -- identify the specific method the writer uses; Analyse -- explore the deeper meaning, connotations, and effect on the reader; Link -- connect to the poem\'s wider themes or to context. ' +
+      "Guide: Point -- a clear topic sentence stating your argument; Evidence -- a short embedded quotation; Explain -- what the evidence shows on a surface level; Technique -- identify the specific method the writer uses; Analyse -- explore the deeper meaning, connotations, and effect on the reader; Link -- connect to the poem's wider themes or to context. " +
       'The paragraph should demonstrate all six elements in sequence, with the analysis being the most developed section. Quotations should be embedded, not dropped in. ' +
       'The self-assessment should honestly identify strengths (e.g., "My evidence was well-chosen") and targets (e.g., "I need to develop my analysis of the technique\'s effect further").',
     marks: 18,
@@ -759,14 +759,14 @@ const t2Exercises: WorkbookExercise[] = [
     instructions:
       '<p>A foil is a character who contrasts with another to highlight particular qualities.</p>' +
       '<ol>' +
-      '<li>How do Macbeth and Banquo respond differently to the witches\' prophecies? (4 marks)</li>' +
+      "<li>How do Macbeth and Banquo respond differently to the witches' prophecies? (4 marks)</li>" +
       '<li>What does this contrast reveal about each character? (4 marks)</li>' +
       '<li>Why does Shakespeare use Banquo as a foil for Macbeth? What is the dramatic purpose? (4 marks)</li>' +
       '</ol>',
     modelAnswer:
       'Macbeth is immediately fascinated and consumed by the prophecies, asking for more information and dwelling on their implications. Banquo is cautious and suspicious, warning that evil can use truth as bait. ' +
-      'This reveals Macbeth\'s pre-existing ambition -- he is susceptible because the prophecies align with his desires. Banquo\'s restraint shows moral strength and rationality, making Macbeth\'s fall a choice rather than inevitability. ' +
-      'Shakespeare uses Banquo as a foil to demonstrate that the same situation (hearing the prophecy) can lead to different outcomes depending on character. Banquo proves that moral alternatives exist, which increases Macbeth\'s culpability. Additionally, Banquo\'s integrity contrasts with Macbeth\'s corruption, making the tragedy more acute.',
+      "This reveals Macbeth's pre-existing ambition -- he is susceptible because the prophecies align with his desires. Banquo's restraint shows moral strength and rationality, making Macbeth's fall a choice rather than inevitability. " +
+      "Shakespeare uses Banquo as a foil to demonstrate that the same situation (hearing the prophecy) can lead to different outcomes depending on character. Banquo proves that moral alternatives exist, which increases Macbeth's culpability. Additionally, Banquo's integrity contrasts with Macbeth's corruption, making the tragedy more acute.",
     marks: 12,
     difficulty: 'secure',
     keywords: ['foil', 'contrast', 'characterisation', 'Banquo', 'dramatic purpose'],
@@ -797,20 +797,20 @@ const t2Exercises: WorkbookExercise[] = [
   },
   {
     id: 'y8-t2-ex14',
-    title: 'The Banquet Scene: Macbeth\'s Guilt',
+    title: "The Banquet Scene: Macbeth's Guilt",
     termUnit: 'T2: Poetry & Shakespeare',
     type: 'analysis',
     instructions:
-      '<p>Read the banquet scene (Act 3, Scene 4) where Macbeth sees Banquo\'s ghost.</p>' +
+      "<p>Read the banquet scene (Act 3, Scene 4) where Macbeth sees Banquo's ghost.</p>" +
       '<ol>' +
       '<li>Why is it significant that the ghost appears at a banquet? (3 marks)</li>' +
       '<li>How does Lady Macbeth respond to his outburst? What does this show about their relationship? (4 marks)</li>' +
       '<li>Analyse how Shakespeare uses dramatic irony in this scene. (5 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'The ghost appearing at a banquet is significant because the banquet represents Macbeth\'s attempt to perform legitimate kingship -- feasting with his lords. The ghost shatters this illusion, showing that his reign is built on murder and cannot sustain the appearance of normality. ' +
+      "The ghost appearing at a banquet is significant because the banquet represents Macbeth's attempt to perform legitimate kingship -- feasting with his lords. The ghost shatters this illusion, showing that his reign is built on murder and cannot sustain the appearance of normality. " +
       'Lady Macbeth tries to cover for him by dismissing his behaviour as a childhood ailment, then privately berates him. This shows the shift in their relationship: she is still managing appearances, but her control is weakening and his instability threatens them both. ' +
-      'Dramatic irony operates powerfully: the audience and Macbeth know Banquo is dead because Macbeth ordered the murder, but the lords are confused. Macbeth\'s toast to Banquo\'s absence is ironic because he caused it. The audience watches the public mask crumble, creating tension as we wonder if the truth will be exposed.',
+      "Dramatic irony operates powerfully: the audience and Macbeth know Banquo is dead because Macbeth ordered the murder, but the lords are confused. Macbeth's toast to Banquo's absence is ironic because he caused it. The audience watches the public mask crumble, creating tension as we wonder if the truth will be exposed.",
     marks: 12,
     difficulty: 'secure',
     keywords: ['dramatic irony', 'banquet', 'guilt', 'ghost', 'public vs private'],
@@ -839,13 +839,13 @@ const t2Exercises: WorkbookExercise[] = [
   },
   {
     id: 'y8-t2-ex16',
-    title: 'Macbeth\'s Tragic Arc',
+    title: "Macbeth's Tragic Arc",
     termUnit: 'T2: Poetry & Shakespeare',
     type: 'evaluation',
     instructions:
       '<p>A tragic hero typically moves from greatness to downfall through a fatal flaw (<em>hamartia</em>).</p>' +
       '<ol>' +
-      '<li>What is Macbeth\'s status at the beginning of the play? (2 marks)</li>' +
+      "<li>What is Macbeth's status at the beginning of the play? (2 marks)</li>" +
       '<li>What is his fatal flaw? How does it lead to his downfall? (4 marks)</li>' +
       '<li>Does Macbeth deserve sympathy? Write a balanced argument. (6 marks)</li>' +
       '</ol>',
@@ -881,11 +881,11 @@ const t2Exercises: WorkbookExercise[] = [
   },
   {
     id: 'y8-t2-ex18',
-    title: 'Lady Macbeth\'s Decline',
+    title: "Lady Macbeth's Decline",
     termUnit: 'T2: Poetry & Shakespeare',
     type: 'analysis',
     instructions:
-      '<p>Track Lady Macbeth\'s transformation from Act 1 to Act 5.</p>' +
+      "<p>Track Lady Macbeth's transformation from Act 1 to Act 5.</p>" +
       '<ol>' +
       '<li>How is Lady Macbeth presented in Act 1? (3 marks)</li>' +
       '<li>How has she changed by Act 5, Scene 1 (the sleepwalking scene)? (3 marks)</li>' +
@@ -952,7 +952,7 @@ const t2Exercises: WorkbookExercise[] = [
     keywords: ['comparison', 'essay', 'PEETAL', 'connectives', 'poetry analysis'],
     linkedObjectives: ['Y8.R5', 'Y8.R7', 'Y8.R8', 'Y8.W2', 'Y8.W3'],
   },
-];
+]
 
 // =============================================================================
 // TERM 3 WORKBOOK: Rhetoric, Speech Writing & Media Literacy
@@ -989,10 +989,10 @@ const t3Exercises: WorkbookExercise[] = [
     instructions:
       '<p>Read the speech extract provided (e.g., a speech by Malala Yousafzai, Greta Thunberg, or a historical figure).</p>' +
       '<ol>' +
-      '<li>What is the speaker\'s purpose? (2 marks)</li>' +
+      "<li>What is the speaker's purpose? (2 marks)</li>" +
       '<li>Identify and explain the effect of five rhetorical techniques used. (10 marks)</li>' +
       '<li>How does the speaker establish their credibility (ethos)? (3 marks)</li>' +
-      '<li>Rate the speech\'s effectiveness out of 10 and justify your score. (3 marks)</li>' +
+      "<li>Rate the speech's effectiveness out of 10 and justify your score. (3 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Answers depend on the chosen speech. Purpose should identify the specific change the speaker wants to achieve (e.g., to persuade world leaders to act on climate change). ' +
@@ -1033,7 +1033,14 @@ const t3Exercises: WorkbookExercise[] = [
       'Imperative: command form of a verb; "Stand up. Speak out. Make a difference"; creates urgency and calls the audience to action.',
     marks: 16,
     difficulty: 'developing',
-    keywords: ['rhetorical question', 'tricolon', 'anaphora', 'hyperbole', 'antithesis', 'imperative'],
+    keywords: [
+      'rhetorical question',
+      'tricolon',
+      'anaphora',
+      'hyperbole',
+      'antithesis',
+      'imperative',
+    ],
     linkedObjectives: ['Y8.V2', 'Y8.V3', 'Y8.W2'],
   },
   {
@@ -1171,7 +1178,7 @@ const t3Exercises: WorkbookExercise[] = [
     instructions:
       '<p>Read the extract from a political speech provided by your teacher.</p>' +
       '<ol>' +
-      '<li>What is the speaker\'s main argument or message? (2 marks)</li>' +
+      "<li>What is the speaker's main argument or message? (2 marks)</li>" +
       '<li>How does the speaker use ethos, pathos, and logos? Give one example of each. (6 marks)</li>' +
       '<li>Identify the target audience. How does the speaker tailor their language for this audience? (4 marks)</li>' +
       '<li>Is the speech effective? Evaluate its strengths and weaknesses. (4 marks)</li>' +
@@ -1232,7 +1239,13 @@ const t3Exercises: WorkbookExercise[] = [
       'Guidelines should include practical advice such as: check the source, look for evidence, consider who benefits, read beyond headlines, seek opposing viewpoints, be sceptical of emotional manipulation, and distinguish between information and advertising.',
     marks: 16,
     difficulty: 'secure',
-    keywords: ['social media', 'echo chamber', 'algorithm', 'critical thinking', 'digital literacy'],
+    keywords: [
+      'social media',
+      'echo chamber',
+      'algorithm',
+      'critical thinking',
+      'digital literacy',
+    ],
     linkedObjectives: ['Y8.R9', 'Y8.R10', 'Y8.W2'],
   },
   {
@@ -1241,11 +1254,11 @@ const t3Exercises: WorkbookExercise[] = [
     termUnit: 'T3: Rhetoric & Media',
     type: 'language-analysis',
     instructions:
-      '<p>The same information can be presented emotively or objectively depending on the writer\'s purpose.</p>' +
+      "<p>The same information can be presented emotively or objectively depending on the writer's purpose.</p>" +
       '<ol>' +
       '<li>Rewrite each emotive sentence in objective language (4 marks):<br/>' +
       'a) Innocent children are being cruelly torn from their loving families.<br/>' +
-      'b) The government\'s reckless spending has plunged the nation into chaos.</li>' +
+      "b) The government's reckless spending has plunged the nation into chaos.</li>" +
       '<li>Rewrite each objective sentence in emotive language (4 marks):<br/>' +
       'a) The policy led to a 15% reduction in funding for after-school clubs.<br/>' +
       'b) Approximately 200 trees were removed to make way for the development.</li>' +
@@ -1291,7 +1304,7 @@ const t3Exercises: WorkbookExercise[] = [
     instructions:
       '<p>Read the charity campaign text provided (a leaflet, webpage, or advertisement).</p>' +
       '<ol>' +
-      '<li>What is the campaign\'s purpose? Who is the target audience? (2 marks)</li>' +
+      "<li>What is the campaign's purpose? Who is the target audience? (2 marks)</li>" +
       '<li>How does the text use pathos to engage the reader? Give two examples with analysis. (6 marks)</li>' +
       '<li>How does the text establish ethos (credibility)? (3 marks)</li>' +
       '<li>Evaluate the effectiveness of the campaign. What does it do well? What could be improved? (5 marks)</li>' +
@@ -1328,7 +1341,13 @@ const t3Exercises: WorkbookExercise[] = [
       ' The rewrite should demonstrate conscious sentence variety: a simple opener for clarity, a complex sentence with tricolon for impact, a compound-complex sentence for nuance, and a minor sentence for dramatic force.',
     marks: 10,
     difficulty: 'developing',
-    keywords: ['simple sentence', 'compound sentence', 'complex sentence', 'minor sentence', 'variety'],
+    keywords: [
+      'simple sentence',
+      'compound sentence',
+      'complex sentence',
+      'minor sentence',
+      'variety',
+    ],
     linkedObjectives: ['Y8.G1', 'Y8.G2', 'Y8.W1'],
   },
   {
@@ -1348,7 +1367,7 @@ const t3Exercises: WorkbookExercise[] = [
       'Propaganda is the systematic distribution of information (often misleading) to promote a political cause or point of view. It differs from persuasion in its intent to manipulate rather than inform, its willingness to distort truth, and its connection to institutional or political power. ' +
       'Techniques: Bandwagon -- suggesting everyone is doing it, so you should too (creates social pressure); Scapegoating -- blaming a group for problems to redirect anger (creates division); Appeal to fear -- warning of terrible consequences if the audience does not comply (overrides rational thinking). ' +
       'Poster analysis should identify visual and textual techniques with specific details. ' +
-      'Modern examples might include: political campaign advertisements that oversimplify opponents\' positions, or social media campaigns that use emotional imagery to promote particular viewpoints without evidence.',
+      "Modern examples might include: political campaign advertisements that oversimplify opponents' positions, or social media campaigns that use emotional imagery to promote particular viewpoints without evidence.",
     marks: 17,
     difficulty: 'mastery',
     keywords: ['propaganda', 'bandwagon', 'scapegoating', 'manipulation', 'critical thinking'],
@@ -1422,7 +1441,13 @@ const t3Exercises: WorkbookExercise[] = [
       'Media literacy is essential because we consume more information than ever, through platforms with minimal editorial oversight. Without the skills to evaluate sources, identify bias, and distinguish fact from opinion, citizens are vulnerable to manipulation, polarisation, and poor decision-making.',
     marks: 16,
     difficulty: 'secure',
-    keywords: ['misinformation', 'disinformation', 'fake news', 'media literacy', 'source evaluation'],
+    keywords: [
+      'misinformation',
+      'disinformation',
+      'fake news',
+      'media literacy',
+      'source evaluation',
+    ],
     linkedObjectives: ['Y8.R9', 'Y8.R10', 'Y8.W2'],
   },
   {
@@ -1453,7 +1478,7 @@ const t3Exercises: WorkbookExercise[] = [
     keywords: ['speech', 'rhetoric', 'persuasion', 'ethos', 'pathos', 'logos', 'assessment'],
     linkedObjectives: ['Y8.R9', 'Y8.S1', 'Y8.W2', 'Y8.W4', 'Y8.W6'],
   },
-];
+]
 
 // =============================================================================
 // HOMEWORK TASKS (18 total: 3 per half-term)
@@ -1472,12 +1497,12 @@ export const y8HomeworkTasks: HomeworkTask[] = [
       '<p>Your entry must:</p>' +
       '<ul>' +
       '<li>Establish the rules and restrictions of your society</li>' +
-      '<li>Reveal the character\'s feelings about the system through inference (show, don\'t tell)</li>' +
+      "<li>Reveal the character's feelings about the system through inference (show, don't tell)</li>" +
       '<li>Include at least one moment of tension or conflict</li>' +
       '<li>Use first-person narration and present tense</li>' +
       '</ul>',
     modelAnswer:
-      'A strong response will create an original dystopian setting with specific, believable details rather than generic oppression. The character\'s emotions should be conveyed through actions, observations, and internal thoughts rather than direct statements. ' +
+      "A strong response will create an original dystopian setting with specific, believable details rather than generic oppression. The character's emotions should be conveyed through actions, observations, and internal thoughts rather than direct statements. " +
       'The tension could be an encounter with authority, a forbidden act, or a moment of realisation. The first-person present tense should create immediacy, drawing the reader into the world.',
     marks: 15,
     estimatedMinutes: 40,
@@ -1518,7 +1543,7 @@ export const y8HomeworkTasks: HomeworkTask[] = [
       '<p>Choose a key moment from <em>The Hunger Games</em> that you found powerful or significant.</p>' +
       '<p>Write one PEEL paragraph (100-150 words) analysing how Collins presents this moment. You must:</p>' +
       '<ul>' +
-      '<li>State a clear point about the moment\'s significance</li>' +
+      "<li>State a clear point about the moment's significance</li>" +
       '<li>Embed a quotation as evidence</li>' +
       '<li>Explain the effect of a specific language technique</li>' +
       '<li>Link to a wider theme of the novel</li>' +
@@ -1544,18 +1569,24 @@ export const y8HomeworkTasks: HomeworkTask[] = [
       '<p>Write an alternative ending to <em>The Hunger Games</em> (250-300 words). Begin from the moment Katniss and Peeta are the last two tributes.</p>' +
       '<p>Your ending must:</p>' +
       '<ul>' +
-      '<li>Maintain Katniss\'s voice and character</li>' +
+      "<li>Maintain Katniss's voice and character</li>" +
       '<li>Present a different resolution to the final conflict</li>' +
       '<li>Include at least one moment of internal conflict</li>' +
-      '<li>Consider the consequences of Katniss\'s choices for the wider world of Panem</li>' +
+      "<li>Consider the consequences of Katniss's choices for the wider world of Panem</li>" +
       '</ul>',
     modelAnswer:
-      'A strong response will capture Katniss\'s narrative voice convincingly -- her directness, her practical thinking, her emotional guardedness. The alternative ending should feel plausible within the world Collins has created, not simply wish fulfilment. ' +
+      "A strong response will capture Katniss's narrative voice convincingly -- her directness, her practical thinking, her emotional guardedness. The alternative ending should feel plausible within the world Collins has created, not simply wish fulfilment. " +
       'Internal conflict should be shown through thought and hesitation rather than stated. The wider consequences should demonstrate understanding of the political stakes beyond personal survival.',
     marks: 15,
     estimatedMinutes: 45,
     difficulty: 'secure',
-    keywords: ['creative writing', 'narrative voice', 'alternative ending', 'character', 'consequence'],
+    keywords: [
+      'creative writing',
+      'narrative voice',
+      'alternative ending',
+      'character',
+      'consequence',
+    ],
     linkedObjectives: ['Y8.W4', 'Y8.W5', 'Y8.W6'],
   },
   {
@@ -1593,7 +1624,7 @@ export const y8HomeworkTasks: HomeworkTask[] = [
       '<ol>' +
       '<li>Write a thesis statement. (2 marks)</li>' +
       '<li>Plan three PEEL paragraphs with: point, quotation, technique to analyse, link to theme. (9 marks)</li>' +
-      '<li>Plan your conclusion: what is Collins\'s overall message about survival? (4 marks)</li>' +
+      "<li>Plan your conclusion: what is Collins's overall message about survival? (4 marks)</li>" +
       '</ol>',
     modelAnswer:
       'The thesis should present a clear argument about survival (e.g., "Collins presents survival as both a physical necessity and a moral challenge, suggesting that true survival requires preserving one\'s humanity"). ' +
@@ -1689,8 +1720,8 @@ export const y8HomeworkTasks: HomeworkTask[] = [
       '<ol>' +
       '<li>Key traits with evidence (quotations) from at least three different scenes. (6 marks)</li>' +
       '<li>How the character changes across the play (arc diagram or timeline). (4 marks)</li>' +
-      '<li>The character\'s relationship with one other character. (3 marks)</li>' +
-      '<li>One sentence summarising Shakespeare\'s message through this character. (2 marks)</li>' +
+      "<li>The character's relationship with one other character. (3 marks)</li>" +
+      "<li>One sentence summarising Shakespeare's message through this character. (2 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Traits should be specific and evidenced from different points in the play, showing understanding of character development. The arc should track clear changes (e.g., Macbeth: brave warrior to ambitious plotter to guilt-ridden king to isolated tyrant). ' +
@@ -1719,7 +1750,7 @@ export const y8HomeworkTasks: HomeworkTask[] = [
       '</ul>',
     modelAnswer:
       'The modern version should capture the emotional truth of the scene while using natural contemporary language. Stage directions should show understanding of subtext and character motivation. ' +
-      'The reflection note should thoughtfully consider what modern language gains (accessibility, clarity) and what it loses (rhythm, poetry, historical resonance, the weight of Shakespeare\'s imagery).',
+      "The reflection note should thoughtfully consider what modern language gains (accessibility, clarity) and what it loses (rhythm, poetry, historical resonance, the weight of Shakespeare's imagery).",
     marks: 15,
     estimatedMinutes: 45,
     difficulty: 'secure',
@@ -1793,7 +1824,7 @@ export const y8HomeworkTasks: HomeworkTask[] = [
       '<li>End with a strong concluding statement</li>' +
       '</ul>',
     modelAnswer:
-      'The headline should be engaging and hint at the article\'s angle. The opening should grab a teenage reader\'s attention immediately. ' +
+      "The headline should be engaging and hint at the article's angle. The opening should grab a teenage reader's attention immediately. " +
       'Arguments should be relevant to the school community and supported with evidence or relatable examples. Rhetorical techniques should enhance the argument without feeling forced. ' +
       'The register should be appropriate for a school magazine -- informed and passionate but accessible, not overly formal or academic. The conclusion should leave the reader thinking.',
     marks: 15,
@@ -1899,7 +1930,7 @@ export const y8HomeworkTasks: HomeworkTask[] = [
     keywords: ['reflection', 'metacognition', 'self-assessment', 'targets', 'growth'],
     linkedObjectives: ['Y8.W4', 'Y8.W6', 'Y8.S2'],
   },
-];
+]
 
 // =============================================================================
 // COMBINED EXPORT
@@ -1909,4 +1940,4 @@ export const y8WorkbookExercises: WorkbookExercise[] = [
   ...t1Exercises,
   ...t2Exercises,
   ...t3Exercises,
-];
+]

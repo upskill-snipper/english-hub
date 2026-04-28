@@ -1,4 +1,4 @@
-import type { LessonPlan } from '@/types';
+import type { LessonPlan } from '@/types'
 
 export const y9Term3Lessons: LessonPlan[] = [
   // ── Lesson 1: 1930s America — Context and the American Dream ─────────────
@@ -61,7 +61,7 @@ export const y9Term3Lessons: LessonPlan[] = [
             'Provide a pre-annotated version of the sheet with one "This matters because..." example completed. Students add two more of their own.',
           core: 'Students annotate the full sheet and complete the two-column chart independently.',
           stretch:
-            'Students write a paragraph using the two-column chart, integrating at least two contextual points into an analytical statement about Steinbeck\'s purpose rather than simply listing facts.',
+            "Students write a paragraph using the two-column chart, integrating at least two contextual points into an analytical statement about Steinbeck's purpose rather than simply listing facts.",
         },
         resources: [
           'Context Information Sheet (Great Depression, Dust Bowl, American Dream)',
@@ -98,11 +98,11 @@ export const y9Term3Lessons: LessonPlan[] = [
           'Provide sentence frames: "One fact I have learned is... This connects to the novella because..."',
         core: 'Students write all three facts and one clear connection in their own words.',
         stretch:
-          'Students include a comment on Steinbeck\'s authorial intent: what he wanted readers to think or feel by setting the novella in this period.',
+          "Students include a comment on Steinbeck's authorial intent: what he wanted readers to think or feel by setting the novella in this period.",
       },
     },
     homework:
-      'Research one aspect of 1930s America not covered in class (e.g. Jim Crow laws, women\'s rights, the role of Hollywood). Write a paragraph explaining what you found and how it might connect to Of Mice and Men.',
+      "Research one aspect of 1930s America not covered in class (e.g. Jim Crow laws, women's rights, the role of Hollywood). Write a paragraph explaining what you found and how it might connect to Of Mice and Men.",
     worksheetQuestions: [
       {
         question:
@@ -125,7 +125,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           'What is the American Dream? How does Steinbeck engage with this concept in Of Mice and Men?',
         lines: 5,
         modelAnswer:
-          'The American Dream is the belief that anyone in America, regardless of birth or background, can achieve success and prosperity through hard work. Steinbeck engages with this concept by showing that for migrant workers in the 1930s, the Dream was an illusion. George and Lennie\'s farm represents the Dream, but it is systematically destroyed, suggesting that the economic and social system makes genuine independence impossible for the working poor.',
+          "The American Dream is the belief that anyone in America, regardless of birth or background, can achieve success and prosperity through hard work. Steinbeck engages with this concept by showing that for migrant workers in the 1930s, the Dream was an illusion. George and Lennie's farm represents the Dream, but it is systematically destroyed, suggesting that the economic and social system makes genuine independence impossible for the working poor.",
         marks: 5,
       },
       {
@@ -141,7 +141,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           'Why is it important to integrate context into analytical writing rather than writing a separate "context paragraph"?',
         lines: 4,
         modelAnswer:
-          'Integrated context demonstrates understanding of how historical and social forces directly shape the meaning of the text. A standalone context paragraph simply lists historical facts and does not show analytical skill. Examiners reward students who connect context to specific quotations, characters, and authorial choices, showing that history is not background decoration but the very fabric from which the novella\'s meaning is woven.',
+          "Integrated context demonstrates understanding of how historical and social forces directly shape the meaning of the text. A standalone context paragraph simply lists historical facts and does not show analytical skill. Examiners reward students who connect context to specific quotations, characters, and authorial choices, showing that history is not background decoration but the very fabric from which the novella's meaning is woven.",
         marks: 4,
       },
     ],
@@ -170,14 +170,14 @@ export const y9Term3Lessons: LessonPlan[] = [
     duration: '60 minutes',
     objectives: [
       'Analyse the relationship between George and Lennie and explain why it is unusual in its context (9R.2)',
-      'Explore Steinbeck\'s use of animal imagery and foil characterisation (9R.4)',
-      'Discuss the ambiguity of the novella\'s ending and evaluate George\'s final act (9R.6)',
+      "Explore Steinbeck's use of animal imagery and foil characterisation (9R.4)",
+      "Discuss the ambiguity of the novella's ending and evaluate George's final act (9R.6)",
       'Write an analytical paragraph about the relationship using embedded quotations (9W.4)',
     ],
     successCriteria: [
-      'I can explain why Slim considers George and Lennie\'s friendship unusual',
+      "I can explain why Slim considers George and Lennie's friendship unusual",
       'I can analyse at least two examples of animal imagery used to describe Lennie',
-      'I can discuss the complexity of George\'s character, including his frustration and his loyalty',
+      "I can discuss the complexity of George's character, including his frustration and his loyalty",
       'I can write an analytical paragraph with an embedded quotation and a contextual link',
     ],
     keywords: [
@@ -201,10 +201,10 @@ export const y9Term3Lessons: LessonPlan[] = [
           'Provide a prompt card with three possible reasons why two people might form an unlikely friendship (shared goals, mutual need, habit) to scaffold discussion.',
         core: 'Students discuss freely and share one developed point.',
         stretch:
-          'Students consider whether unequal friendships might actually be stronger than equal ones, and whether Steinbeck invites us to view George and Lennie\'s relationship as equal or exploitative.',
+          "Students consider whether unequal friendships might actually be stronger than equal ones, and whether Steinbeck invites us to view George and Lennie's relationship as equal or exploitative.",
       },
       resources: [
-        'Slim\'s quotation displayed on board',
+        "Slim's quotation displayed on board",
         'Discussion prompt cards for support students',
       ],
     },
@@ -219,7 +219,7 @@ export const y9Term3Lessons: LessonPlan[] = [
             'Provide a pre-highlighted extract with three quotations already marked. Students write one annotation for each marked quotation using the sentence frames provided.',
           core: 'Students annotate the full passage and identify at least three points covering animal imagery, frustration, and care.',
           stretch:
-            'Students consider how the opening chapter creates reader sympathy for both characters simultaneously, and write a sentence explaining the dual effect — why we sympathise with George\'s frustration and with Lennie\'s vulnerability at the same time.',
+            "Students consider how the opening chapter creates reader sympathy for both characters simultaneously, and write a sentence explaining the dual effect — why we sympathise with George's frustration and with Lennie's vulnerability at the same time.",
         },
         resources: [
           'Class copies of Of Mice and Men (Chapter 1)',
@@ -237,7 +237,7 @@ export const y9Term3Lessons: LessonPlan[] = [
             'Provide a paragraph frame: "Steinbeck presents the relationship as [adjective] through [technique]. For example, [embedded quotation]. This suggests [explanation]. In the context of [historical detail], this is significant because [link]."',
           core: 'Students write a full independent paragraph following the PEEC structure.',
           stretch:
-            'Students write two contrasting paragraphs: one exploring George\'s frustration and one exploring his loyalty, then write a concluding sentence that holds both ideas in tension.',
+            "Students write two contrasting paragraphs: one exploring George's frustration and one exploring his loyalty, then write a concluding sentence that holds both ideas in tension.",
         },
         resources: [
           'Model paragraph displayed on board',
@@ -247,7 +247,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
     ],
     plenaryActivity: {
-      title: 'Hot Take — Is George\'s Final Act Love or Murder?',
+      title: "Hot Take — Is George's Final Act Love or Murder?",
       duration: '8 minutes',
       instructions:
         'Present the question: "George\'s killing of Lennie is an act of love, not murder. Do you agree?" Students write their view in one sentence, then share and defend. Teacher challenges students to find textual evidence for both sides. Establish that the ambiguity is deliberate and that strong essays explore rather than resolve it. Students add the word "ambiguity" to their keyword glossary.',
@@ -264,7 +264,7 @@ export const y9Term3Lessons: LessonPlan[] = [
     worksheetQuestions: [
       {
         question:
-          'Why does Slim describe George and Lennie\'s friendship as unusual? What does this tell us about the world they live in?',
+          "Why does Slim describe George and Lennie's friendship as unusual? What does this tell us about the world they live in?",
         lines: 5,
         modelAnswer:
           'Slim says he has "hardly never seen two guys travel together," which highlights how rare genuine companionship is among migrant ranch workers. In the context of the Great Depression, men moved alone out of necessity — competing for scarce jobs, trusting no one. George and Lennie\'s friendship therefore marks them as extraordinary and makes their eventual separation all the more devastating.',
@@ -280,7 +280,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          'How does Steinbeck show both George\'s frustration with Lennie and his genuine affection for him in Chapter 1?',
+          "How does Steinbeck show both George's frustration with Lennie and his genuine affection for him in Chapter 1?",
         lines: 5,
         modelAnswer:
           'George\'s frustration is shown when he tells Lennie his life "would be so easy" without him, yet his affection is revealed when he recites the dream of the farm in response to Lennie\'s pleading. He tells the dream with both weariness and tenderness — it is clearly a ritual they have repeated many times. Steinbeck presents George as a complex figure whose resentment and love coexist, reflecting the genuine cost of compassion in a harsh world.',
@@ -291,7 +291,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           'What is a foil character? How are George and Lennie used as foils for each other?',
         lines: 4,
         modelAnswer:
-          'A foil is a character whose contrasting qualities highlight another character\'s traits. George and Lennie are foils: George is small, sharp, and quick-thinking, while Lennie is physically enormous but intellectually limited. Their contrasts make each other\'s qualities more vivid — George\'s intelligence seems sharper against Lennie\'s simplicity, and Lennie\'s gentleness seems more poignant against the harsh world George navigates on his behalf.',
+          "A foil is a character whose contrasting qualities highlight another character's traits. George and Lennie are foils: George is small, sharp, and quick-thinking, while Lennie is physically enormous but intellectually limited. Their contrasts make each other's qualities more vivid — George's intelligence seems sharper against Lennie's simplicity, and Lennie's gentleness seems more poignant against the harsh world George navigates on his behalf.",
         marks: 4,
       },
       {
@@ -329,13 +329,13 @@ export const y9Term3Lessons: LessonPlan[] = [
       "Analyse Steinbeck's presentation of Curley's wife as a victim of patriarchal society (9R.4)",
       "Explore the significance of Curley's wife having no name (9R.6)",
       "Distinguish between how male characters perceive Curley's wife and how Steinbeck presents her to the reader (9R.5)",
-      "Write analytically about gender, power, and marginalisation (9W.4)",
+      'Write analytically about gender, power, and marginalisation (9W.4)',
     ],
     successCriteria: [
       "I can explain why Steinbeck chose not to give Curley's wife a name and what this reveals",
       "I can identify the gap between the male characters' perception and the reader's understanding",
       "I can analyse at least two moments where Steinbeck generates sympathy for Curley's wife",
-      'I can connect her characterisation to the context of women\'s lives in 1930s America',
+      "I can connect her characterisation to the context of women's lives in 1930s America",
     ],
     keywords: [
       'patriarchy',
@@ -413,7 +413,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           "Provide two sentence frames: 'Although [character]... Steinbeck actually...' to help students structure contradictory truths.",
         core: 'Students generate their own two contrasting statements independently.',
         stretch:
-          'Students write a third statement that reconciles the first two, demonstrating how both can be true simultaneously and what that reveals about Steinbeck\'s craft.',
+          "Students write a third statement that reconciles the first two, demonstrating how both can be true simultaneously and what that reveals about Steinbeck's craft.",
       },
     },
     homework:
@@ -462,7 +462,7 @@ export const y9Term3Lessons: LessonPlan[] = [
     ],
     teacherNotes: [
       "Some students may initially sympathise with the male characters' view of Curley's wife, particularly if they have read her first appearance without context. The two-extract close reading is designed to shift this view — use the Chapter 5 monologue to rebuild a more complete picture.",
-      "The concept of dramatic irony is introduced here but will be revisited in several subsequent lessons. It is one of the key analytical tools for this text, so ensure students can define it and apply it before moving on.",
+      'The concept of dramatic irony is introduced here but will be revisited in several subsequent lessons. It is one of the key analytical tools for this text, so ensure students can define it and apply it before moving on.',
       "Students from backgrounds where gender inequality remains prevalent may engage strongly with this material. Handle with sensitivity, framing the historical context as Steinbeck's critique rather than a universal truth.",
       "It is worth explicitly addressing the common exam mistake of calling Curley's wife a villain. Write it on the board: 'Avoid: She is the villain. Aim for: She is presented as a victim of a society that...' and ask students to revise any instance of this in their work.",
     ],
@@ -483,15 +483,15 @@ export const y9Term3Lessons: LessonPlan[] = [
     yearGroup: 'Year 9',
     duration: '60 minutes',
     objectives: [
-      'Analyse Steinbeck\'s presentation of Crooks as a victim of racial discrimination (9R.4)',
-      'Explore the significance of Crooks\'s room as a symbol of segregation and isolation (9R.5)',
+      "Analyse Steinbeck's presentation of Crooks as a victim of racial discrimination (9R.4)",
+      "Explore the significance of Crooks's room as a symbol of segregation and isolation (9R.5)",
       'Examine the scene in which Crooks briefly allows himself to believe in the dream, and its destruction (9R.6)',
       'Write analytically about power, race, and aspiration using embedded quotation and context (9W.4)',
     ],
     successCriteria: [
-      'I can explain how racial segregation shaped Crooks\'s daily life on the ranch',
-      'I can analyse what Crooks\'s room symbolises about his position in the social hierarchy',
-      'I can explain why Crooks\'s moment of hope is so significant and why its destruction is so devastating',
+      "I can explain how racial segregation shaped Crooks's daily life on the ranch",
+      "I can analyse what Crooks's room symbolises about his position in the social hierarchy",
+      "I can explain why Crooks's moment of hope is so significant and why its destruction is so devastating",
       'I can write a paragraph that integrates context about Jim Crow-era America into analysis of Crooks',
     ],
     keywords: [
@@ -517,10 +517,7 @@ export const y9Term3Lessons: LessonPlan[] = [
         stretch:
           'Students annotate the map with symbolic interpretations of each location, connecting spatial separation to social hierarchy.',
       },
-      resources: [
-        'Printed ranch sketch maps',
-        'Character labels for support students',
-      ],
+      resources: ['Printed ranch sketch maps', 'Character labels for support students'],
     },
     mainActivities: [
       {
@@ -541,7 +538,7 @@ export const y9Term3Lessons: LessonPlan[] = [
         ],
       },
       {
-        title: "Crooks and the Dream — Hope and Its Destruction",
+        title: 'Crooks and the Dream — Hope and Its Destruction',
         duration: '18 minutes',
         instructions:
           "Students read two moments: (1) Crooks tentatively asking to join the dream of the farm; (2) Curley's wife entering and threatening him with lynching. After reading, pose the question: 'Why is this moment — hope raised and immediately destroyed — so central to the novella?' Students discuss briefly, then write a paragraph in response to: 'How does Steinbeck use Crooks to explore the theme of aspiration in Of Mice and Men?' Teacher circulates, encouraging students to connect Crooks's withdrawal from the dream to the broader argument that the social hierarchy makes hope impossible for the most marginalised.",
@@ -569,7 +566,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           'Provide a brief summary sentence of each moment to help students recall and evaluate.',
         core: 'Students vote and defend their choice with a reference to the text.',
         stretch:
-          'Students argue that the four moments form a deliberate arc in Steinbeck\'s characterisation, explaining the logic and purpose of each stage.',
+          "Students argue that the four moments form a deliberate arc in Steinbeck's characterisation, explaining the logic and purpose of each stage.",
       },
     },
     homework:
@@ -601,7 +598,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          "Why is the moment when Crooks asks to join the dream so significant? Why is its destruction immediately afterwards even more significant?",
+          'Why is the moment when Crooks asks to join the dream so significant? Why is its destruction immediately afterwards even more significant?',
         lines: 5,
         modelAnswer:
           "When Crooks tentatively asks to join the dream, it is one of the most emotionally powerful moments in the novella — a man who has spent years suppressing hope briefly allows himself to feel it. This makes the destruction of that hope by Curley's wife's racial threat all the more devastating. In one exchange, Steinbeck shows how racial power operates: even the most marginalised white woman can silence and diminish a Black man. Crooks's withdrawal — 'I didn't mean it. Jus' foolin'' — demonstrates how thoroughly discrimination has taught him to deny his own desires.",
@@ -625,7 +622,7 @@ export const y9Term3Lessons: LessonPlan[] = [
     targetedSkills: [
       '9R.4 — Analysing language, symbolism, and characterisation',
       '9R.5 — Interpreting implied meaning',
-      '9R.6 — Evaluating Steinbeck\'s social critique',
+      "9R.6 — Evaluating Steinbeck's social critique",
       '9W.4 — Analytical writing with embedded quotation and contextual integration',
     ],
   },
@@ -641,13 +638,13 @@ export const y9Term3Lessons: LessonPlan[] = [
     objectives: [
       "Analyse Steinbeck's use of setting to reflect and critique the social structure of 1930s America (9R.4)",
       'Understand the term microcosm and apply it to the ranch setting (9R.1)',
-      'Explore how each key setting (bunkhouse, Crooks\'s room, barn, clearing) carries symbolic meaning (9R.5)',
+      "Explore how each key setting (bunkhouse, Crooks's room, barn, clearing) carries symbolic meaning (9R.5)",
       'Write an analytical paragraph about setting that connects physical space to thematic meaning (9W.4)',
     ],
     successCriteria: [
       'I can define microcosm and explain how the ranch functions as one',
       'I can analyse what at least two specific settings reveal about power and inequality',
-      'I can explain how the cyclical structure (clearing to clearing) reinforces the novella\'s themes',
+      "I can explain how the cyclical structure (clearing to clearing) reinforces the novella's themes",
       'I can write a paragraph connecting a setting to a theme using specific textual evidence',
     ],
     keywords: [
@@ -673,10 +670,7 @@ export const y9Term3Lessons: LessonPlan[] = [
         stretch:
           'Students consider whether any setting changes its position on the spectrum across the course of the novella — does the clearing move from freedom towards imprisonment as the story progresses?',
       },
-      resources: [
-        'Spectrum line drawn on board',
-        'Setting description cards for support students',
-      ],
+      resources: ['Spectrum line drawn on board', 'Setting description cards for support students'],
     },
     mainActivities: [
       {
@@ -689,10 +683,10 @@ export const y9Term3Lessons: LessonPlan[] = [
             'Assign the bunkhouse extract to support students, as it is the most straightforward. Provide annotation prompts: "What does this detail suggest about the workers\' status?", "What does this reveal about who has power here?"',
           core: 'Students analyse their assigned extract and contribute to whole-class discussion.',
           stretch:
-            "Students compare their extract to one other setting and write a comparative observation about how Steinbeck uses different spaces to convey different aspects of the social hierarchy.",
+            'Students compare their extract to one other setting and write a comparative observation about how Steinbeck uses different spaces to convey different aspects of the social hierarchy.',
         },
         resources: [
-          'Printed extracts: opening clearing, bunkhouse description, Crooks\'s room description',
+          "Printed extracts: opening clearing, bunkhouse description, Crooks's room description",
           'Annotation prompt cards for support students',
         ],
       },
@@ -729,7 +723,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
     },
     homework:
-      'Steinbeck describes the bunkhouse in Chapter 2 as a space that reveals the workers\' lack of permanence and individuality. Write a paragraph (8–10 sentences) analysing one specific detail from the bunkhouse description and explaining what it reveals about the workers\' lives. Include an embedded quotation and a contextual link.',
+      "Steinbeck describes the bunkhouse in Chapter 2 as a space that reveals the workers' lack of permanence and individuality. Write a paragraph (8–10 sentences) analysing one specific detail from the bunkhouse description and explaining what it reveals about the workers' lives. Include an embedded quotation and a contextual link.",
     worksheetQuestions: [
       {
         question:
@@ -740,8 +734,7 @@ export const y9Term3Lessons: LessonPlan[] = [
         marks: 4,
       },
       {
-        question:
-          "What does the bunkhouse reveal about the ranch workers' lives and status?",
+        question: "What does the bunkhouse reveal about the ranch workers' lives and status?",
         lines: 4,
         modelAnswer:
           "The bunkhouse's impersonal layout — rows of beds, apple-box shelves, nothing permanent — reveals that the workers are treated as disposable labour rather than individuals with dignity. They own almost nothing, have no privacy, and could be replaced at any moment. The presence of insecticide on the shelf suggests even basic sanitary conditions are unreliable. Steinbeck uses the bunkhouse to make visible the workers' lack of security and individuality.",
@@ -749,7 +742,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          "What is pathetic fallacy? Give one example of how Steinbeck uses the natural setting to reflect or contrast with the mood of the narrative.",
+          'What is pathetic fallacy? Give one example of how Steinbeck uses the natural setting to reflect or contrast with the mood of the narrative.',
         lines: 4,
         modelAnswer:
           'Pathetic fallacy is when natural features of the setting — weather, light, landscape — reflect or contrast with the emotional mood of the narrative. Steinbeck uses it in the final chapter when the clearing, described so peacefully in Chapter 1, is revisited as George prepares to kill Lennie. The natural beauty of the setting — sunlight, trees, a pool of water — contrasts painfully with the human tragedy about to occur, intensifying the emotional devastation through that contrast.',
@@ -757,7 +750,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          "Why does Steinbeck begin and end the novella in the same location — the clearing by the Salinas River? What effect does this cyclical structure create?",
+          'Why does Steinbeck begin and end the novella in the same location — the clearing by the Salinas River? What effect does this cyclical structure create?',
         lines: 5,
         modelAnswer:
           "The cyclical structure reinforces the novella's central argument that migrant workers are trapped in inescapable cycles of poverty, exploitation, and loneliness. By returning to the exact same location, Steinbeck shows that despite everything the characters have experienced — the hope, the friendship, the dream — they end up in the same place they started, except all hope has been destroyed. The structure mirrors the lives of migrant workers who moved from ranch to ranch without ever escaping the system.",
@@ -839,7 +832,7 @@ export const y9Term3Lessons: LessonPlan[] = [
         title: 'Thematic Analysis — The Function of the Farm Dream',
         duration: '20 minutes',
         instructions:
-          'Read together the passage in Chapter 1 where George tells the dream for the first time, and the passage in Chapter 6 where he tells it for the last time before killing Lennie. Students annotate for: (a) what language George uses both times, (b) what Lennie\'s response reveals about why the dream matters to him, (c) what changes between the two tellings. Teacher facilitates discussion: the dream is told identically — but everything that surrounds it has changed. This is Steinbeck\'s design: the dream itself is unchanged because the system that denies it is unchanged. The dream is both comfort and cruel illusion simultaneously.',
+          "Read together the passage in Chapter 1 where George tells the dream for the first time, and the passage in Chapter 6 where he tells it for the last time before killing Lennie. Students annotate for: (a) what language George uses both times, (b) what Lennie's response reveals about why the dream matters to him, (c) what changes between the two tellings. Teacher facilitates discussion: the dream is told identically — but everything that surrounds it has changed. This is Steinbeck's design: the dream itself is unchanged because the system that denies it is unchanged. The dream is both comfort and cruel illusion simultaneously.",
         differentiation: {
           support:
             'Provide the two passages printed side by side with annotation prompts: "Circle any repeated words or phrases. What does George\'s tone suggest each time? How does Lennie respond?"',
@@ -862,7 +855,7 @@ export const y9Term3Lessons: LessonPlan[] = [
             'Provide a three-point scaffold: (1) State the pattern (every dream is destroyed). (2) Link to loneliness (why do characters dream — because they are lonely and powerless). (3) Link to context (the system makes the dream impossible). Students write a sentence for each point, then connect them into a paragraph.',
           core: 'Students write an independent analytical paragraph following the PEEC structure.',
           stretch:
-            'Students write two paragraphs — one focusing on the farm dream and one on a secondary character\'s dream — and conclude with a sentence explaining what the destruction of both dreams reveals about Steinbeck\'s view of the American Dream as a systemic lie.',
+            "Students write two paragraphs — one focusing on the farm dream and one on a secondary character's dream — and conclude with a sentence explaining what the destruction of both dreams reveals about Steinbeck's view of the American Dream as a systemic lie.",
         },
         resources: [
           'Model topic sentence on board',
@@ -908,7 +901,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           'How are the themes of dreams, loneliness, and powerlessness interconnected in Of Mice and Men?',
         lines: 5,
         modelAnswer:
-          "Characters dream because they are lonely, and they are lonely because they are powerless. The social and economic system — racial segregation, gender inequality, age discrimination, class exploitation — denies them the connections and security that would make dreaming unnecessary. Steinbeck shows that loneliness is not a personal failing but a structural condition: the system keeps workers isolated, competitive, and desperate, which in turn fuels the very dreams that the system is designed to prevent. Dreams, loneliness, and powerlessness form a closed loop.",
+          'Characters dream because they are lonely, and they are lonely because they are powerless. The social and economic system — racial segregation, gender inequality, age discrimination, class exploitation — denies them the connections and security that would make dreaming unnecessary. Steinbeck shows that loneliness is not a personal failing but a structural condition: the system keeps workers isolated, competitive, and desperate, which in turn fuels the very dreams that the system is designed to prevent. Dreams, loneliness, and powerlessness form a closed loop.',
         marks: 5,
       },
       {
@@ -929,7 +922,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'The key pedagogical shift in this lesson is from character-level analysis (each character has a dream) to structural-level analysis (the pattern of all dreams is the same, and that pattern is Steinbeck\'s argument). Push students towards the structural insight rather than letting them simply list examples.',
+      "The key pedagogical shift in this lesson is from character-level analysis (each character has a dream) to structural-level analysis (the pattern of all dreams is the same, and that pattern is Steinbeck's argument). Push students towards the structural insight rather than letting them simply list examples.",
       'The Chapter 1 and Chapter 6 dream-telling comparison is very powerful if read aloud by the teacher with deliberate pacing. The first telling should sound hopeful; the second should sound quiet and devastated. Do not rush this reading.',
       'The interconnection of dreams, loneliness, and power is the most sophisticated analytical point in this unit. Not all students will reach it in a single lesson — flag it as the target for top-grade work and return to it in subsequent lessons.',
       "Students who focus only on George and Lennie's dream will struggle with the broader thematic question. The Dreams Tracker activity in the starter is designed to ensure all four characters' dreams are on the table before any analytical writing begins.",
@@ -957,9 +950,9 @@ export const y9Term3Lessons: LessonPlan[] = [
       'Write an analytical paragraph that comments on both the meaning and the method of a quotation (9W.4)',
     ],
     successCriteria: [
-      'I can explain three purposes of Steinbeck\'s use of dialect',
+      "I can explain three purposes of Steinbeck's use of dialect",
       'I can analyse at least two examples of animal imagery and explain their symbolic meaning',
-      'I can identify how different characters\' registers reveal their personalities',
+      "I can identify how different characters' registers reveal their personalities",
       'I can write an analytical sentence that comments on how a quotation works, not just what it means',
     ],
     keywords: [
@@ -983,7 +976,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           'Provide three observations about what the dialect adds (e.g. authenticity, character voice, class markers) for students to agree or disagree with and explain.',
         core: 'Students identify what is lost in the standard English version and explain why.',
         stretch:
-          'Students argue whether George\'s dialect makes his profound observations more or less powerful, and why Steinbeck might have chosen to give weighty observations to characters who speak in working-class dialect.',
+          "Students argue whether George's dialect makes his profound observations more or less powerful, and why Steinbeck might have chosen to give weighty observations to characters who speak in working-class dialect.",
       },
       resources: [
         'Dialect vs Standard English comparison displayed on board',
@@ -1001,7 +994,7 @@ export const y9Term3Lessons: LessonPlan[] = [
             "Provide annotation sentence starters at each station: 'The [technique] of [quotation] suggests...' and 'This is effective because...'",
           core: 'Students annotate at each station and contribute to whole-class discussion.',
           stretch:
-            'At each station, students write an additional observation connecting the extract\'s language to the novella\'s broader themes or Steinbeck\'s purpose.',
+            "At each station, students write an additional observation connecting the extract's language to the novella's broader themes or Steinbeck's purpose.",
         },
         resources: [
           'Four station extracts (printed)',
@@ -1038,7 +1031,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           'Students can nominate a sentence from their worksheet work or from a provided model, adding one word or phrase of their own.',
         core: 'Students nominate from their own written work.',
         stretch:
-          "Students identify not only why the sentence is strong but also how it could be improved — what is the next level beyond what has been achieved?",
+          'Students identify not only why the sentence is strong but also how it could be improved — what is the next level beyond what has been achieved?',
       },
     },
     homework:
@@ -1065,7 +1058,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           'What is a character\'s "register"? Identify the registers of two different characters and explain what each reveals.',
         lines: 5,
         modelAnswer:
-          "A character's register is the level of formality, vocabulary, and complexity in their speech. Slim speaks with measured, authoritative language — 'God-like eyes' are attributed to him, and his speech is calm and considered, which reveals his natural authority and wisdom. In contrast, Curley speaks in short, aggressive sentences with confrontational vocabulary, reflecting his insecurity and the way he uses physical intimidation to assert dominance. Register reveals personality, social position, and power dynamics without requiring direct authorial comment.",
+          "A character's register is the level of formality, vocabulary, and complexity in their speech. Slim speaks with measured, authoritative language — Steinbeck tells us his 'slow speech had overtones not of thought, but of understanding beyond thought', and his speech is calm and considered, which reveals his natural authority and wisdom. In contrast, Curley speaks in short, aggressive sentences with confrontational vocabulary, reflecting his insecurity and the way he uses physical intimidation to assert dominance. Register reveals personality, social position, and power dynamics without requiring direct authorial comment.",
         marks: 5,
       },
       {
@@ -1073,7 +1066,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           'How does Steinbeck use light and darkness symbolically in the novella? Give one specific example.',
         lines: 4,
         modelAnswer:
-          "Steinbeck associates warm, natural light with hope and the possibility of connection, while fading or dim light accompanies tension and tragedy. In the final chapter, as George prepares to shoot Lennie, the description emphasises a setting sun — the light is diminishing at the moment the dream is finally extinguished. This is a deliberate example of pathetic fallacy: the dying light mirrors the death of hope. The opening chapter, by contrast, is bathed in golden light, establishing the clearing as a place of beauty and possibility — which makes its final function as the site of tragedy all the more devastating.",
+          'Steinbeck associates warm, natural light with hope and the possibility of connection, while fading or dim light accompanies tension and tragedy. In the final chapter, as George prepares to shoot Lennie, the description emphasises a setting sun — the light is diminishing at the moment the dream is finally extinguished. This is a deliberate example of pathetic fallacy: the dying light mirrors the death of hope. The opening chapter, by contrast, is bathed in golden light, establishing the clearing as a place of beauty and possibility — which makes its final function as the site of tragedy all the more devastating.',
         marks: 4,
       },
       {
@@ -1081,7 +1074,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           "Rewrite the following 'what' comment as a 'how' comment that analyses language technique: 'The quotation shows that Crooks is lonely and has been isolated from others.'",
         lines: 6,
         modelAnswer:
-          "A strong 'how' comment might read: 'Steinbeck uses the second person address in Crooks's observation that 'a guy goes nuts if he ain't got nobody' to make loneliness feel like a universal condition rather than a personal complaint — the shift from 'I' to 'a guy' implies that this is the experience of all men in Crooks's position, not merely his own. The colloquial 'goes nuts' carries a weight of genuine psychological suffering beneath its casual language, suggesting a man who has learned to speak plainly about pain that is actually devastating. The dialect form 'ain't got nobody' — with its double negative — intensifies the absolute emptiness he describes: there is not merely an absence of one person but an absence of everyone.'" ,
+          "A strong 'how' comment might read: 'Steinbeck uses the second person address in Crooks's observation that 'a guy goes nuts if he ain't got nobody' to make loneliness feel like a universal condition rather than a personal complaint — the shift from 'I' to 'a guy' implies that this is the experience of all men in Crooks's position, not merely his own. The colloquial 'goes nuts' carries a weight of genuine psychological suffering beneath its casual language, suggesting a man who has learned to speak plainly about pain that is actually devastating. The dialect form 'ain't got nobody' — with its double negative — intensifies the absolute emptiness he describes: there is not merely an absence of one person but an absence of everyone.'",
         marks: 6,
       },
     ],
@@ -1109,13 +1102,13 @@ export const y9Term3Lessons: LessonPlan[] = [
     duration: '60 minutes',
     objectives: [
       'Trace the chain of foreshadowing through the novella and explain how each incident builds towards the climax (9R.3)',
-      'Analyse the effect of the cyclical structure on the reader\'s experience of the novella (9R.5)',
+      "Analyse the effect of the cyclical structure on the reader's experience of the novella (9R.5)",
       'Understand how the six-chapter structure mirrors a dramatic three-act play (9R.4)',
       'Write analytically about structure, connecting structural choices to thematic meaning (9W.5)',
     ],
     successCriteria: [
       'I can identify at least four moments of foreshadowing and explain the chain they create',
-      'I can explain the effect of the cyclical structure on the novella\'s themes of inevitability and entrapment',
+      "I can explain the effect of the cyclical structure on the novella's themes of inevitability and entrapment",
       'I can connect the compressed three-day timeframe to the feeling of urgency and powerlessness',
       'I can write an analytical paragraph about structure that links technique to effect to theme',
     ],
@@ -1142,10 +1135,7 @@ export const y9Term3Lessons: LessonPlan[] = [
         stretch:
           'Students consider whether anything in the novella feels genuinely unpredictable, or whether Steinbeck creates a sense of total inevitability — and what narrative purpose this serves.',
       },
-      resources: [
-        'Timeline drawn on board',
-        'Event list cards for support students',
-      ],
+      resources: ['Timeline drawn on board', 'Event list cards for support students'],
     },
     mainActivities: [
       {
@@ -1173,7 +1163,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           "Model how to write about structure as a technique: demonstrate the difference between 'the novella is structured in six chapters' (observation) and 'Steinbeck's six-chapter structure, mirroring the three-act structure of a play, creates a relentless dramatic momentum that strips characters of the time and space to reflect, adapt, or escape — the tragedy feels less like misfortune than like the inevitable working-out of a system' (analysis). Students write a paragraph in response to: 'How does Steinbeck use foreshadowing to create a sense of inevitability in Of Mice and Men?' Circulate and challenge students to explain why the technique matters to the reader's experience, not just what the technique is.",
         differentiation: {
           support:
-            'Provide a scaffold: (1) Name a foreshadowing incident. (2) Describe what it hints at. (3) Explain how it makes the reader feel. (4) Connect to Steinbeck\'s purpose. Students write one sentence for each step, then join them into a paragraph.',
+            "Provide a scaffold: (1) Name a foreshadowing incident. (2) Describe what it hints at. (3) Explain how it makes the reader feel. (4) Connect to Steinbeck's purpose. Students write one sentence for each step, then join them into a paragraph.",
           core: 'Students write an independent paragraph following PEEC structure.',
           stretch:
             'Students write about foreshadowing and cyclical structure in the same paragraph, arguing that together they create an inescapable tragic architecture — not just hinting at the ending but making it feel as though it could never have been otherwise.',
@@ -1198,11 +1188,11 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
     },
     homework:
-      'The novella takes place over approximately three days. Write a paragraph (8–10 sentences) explaining: why Steinbeck might have chosen such a compressed timeframe, what effect this creates for the reader, and how it connects to the novella\'s themes of inevitability and powerlessness. Use at least one embedded quotation.',
+      "The novella takes place over approximately three days. Write a paragraph (8–10 sentences) explaining: why Steinbeck might have chosen such a compressed timeframe, what effect this creates for the reader, and how it connects to the novella's themes of inevitability and powerlessness. Use at least one embedded quotation.",
     worksheetQuestions: [
       {
         question:
-          "List the chain of foreshadowing incidents in the novella in chronological order. Explain what each one foreshadows and what effect the chain creates.",
+          'List the chain of foreshadowing incidents in the novella in chronological order. Explain what each one foreshadows and what effect the chain creates.',
         lines: 8,
         modelAnswer:
           "The chain runs: (1) Lennie kills a mouse by petting it too hard — foreshadows his pattern of loving what he destroys. (2) The girl's dress in Weed (George describes how Lennie grabbed it) — foreshadows the same pattern applied to Curley's wife. (3) Lennie crushes Curley's hand — demonstrates that when panicking, Lennie holds on and does not let go, exactly what happens with Curley's wife. (4) Lennie kills his puppy — directly precedes Curley's wife's death, making the fatal outcome impossible to avoid. Together, the chain creates a sense of inevitable tragedy: by the time we reach Chapter 5, Steinbeck has made the ending feel predetermined.",
@@ -1213,12 +1203,12 @@ export const y9Term3Lessons: LessonPlan[] = [
           "Why does Steinbeck compress the novella's action into approximately three days? What effect does this create?",
         lines: 4,
         modelAnswer:
-          "The compressed timeframe creates intensity and urgency — events unfold so rapidly that characters have no time to reflect, adapt, or find an alternative. This reinforces the sense that they are powerless within the system. It also reflects the reality of migrant life: everything can change in an instant. The brevity emphasises the fragility of the dream — it takes only moments to destroy what has taken a lifetime to build.",
+          'The compressed timeframe creates intensity and urgency — events unfold so rapidly that characters have no time to reflect, adapt, or find an alternative. This reinforces the sense that they are powerless within the system. It also reflects the reality of migrant life: everything can change in an instant. The brevity emphasises the fragility of the dream — it takes only moments to destroy what has taken a lifetime to build.',
         marks: 4,
       },
       {
         question:
-          'Explain the effect of the cyclical structure on the novella\'s meaning. What message does it convey about the lives of migrant workers?',
+          "Explain the effect of the cyclical structure on the novella's meaning. What message does it convey about the lives of migrant workers?",
         lines: 5,
         modelAnswer:
           "By beginning and ending at the same clearing, Steinbeck creates a structural loop that mirrors the inescapable cycles of migrant life. George and Lennie arrive at the clearing full of the dream; George leaves alone, shattered. The physical return to the starting point shows that despite everything — the hope, the friendship, the near-achievement of the dream — nothing has actually changed in the world that trapped them. The cycle of poverty, loneliness, and exploitation continues unchanged. The structure is Steinbeck's bleakest argument: there is no way out.",
@@ -1226,7 +1216,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          "What is the significance of the heron eating the water snake in Chapter 6? How does this detail function structurally?",
+          'What is the significance of the heron eating the water snake in Chapter 6? How does this detail function structurally?',
         lines: 4,
         modelAnswer:
           "The heron catching and eating the snake is a small act of natural predation that mirrors the human tragedy about to occur. It reminds the reader that nature, like society, operates on a hierarchy in which the strong consume the weak. Structurally, it functions as a final piece of foreshadowing immediately before Lennie's death, connecting the human story to a pattern embedded in nature itself. This universalises the tragedy: the strong destroying the vulnerable is not a social accident but, Steinbeck implies bleakly, the way of all things.",
@@ -1383,10 +1373,10 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          'Why is Steinbeck\'s biographical context relevant to Of Mice and Men? How does it affect your reading of the novella?',
+          "Why is Steinbeck's biographical context relevant to Of Mice and Men? How does it affect your reading of the novella?",
         lines: 4,
         modelAnswer:
-          "Steinbeck worked on ranches in California and spent time with migrant workers, so his portrayal is drawn from direct observation rather than imagined. This gives the novella its documentary quality — the bunkhouse conditions, the dialect, the social dynamics, and the emotional reality all carry the authority of lived experience. Knowing this context, the reader can trust that Steinbeck is not sentimentalising the working poor but presenting their lives with honest and informed empathy. His authorial intent — to generate social conscience — is strengthened by this authenticity.",
+          'Steinbeck worked on ranches in California and spent time with migrant workers, so his portrayal is drawn from direct observation rather than imagined. This gives the novella its documentary quality — the bunkhouse conditions, the dialect, the social dynamics, and the emotional reality all carry the authority of lived experience. Knowing this context, the reader can trust that Steinbeck is not sentimentalising the working poor but presenting their lives with honest and informed empathy. His authorial intent — to generate social conscience — is strengthened by this authenticity.',
         marks: 4,
       },
       {
@@ -1469,7 +1459,7 @@ export const y9Term3Lessons: LessonPlan[] = [
           "Assessment question: 'How does Steinbeck present the idea that the lives of ordinary people are shaped by forces beyond their control in Of Mice and Men?' Students write their essay response independently under timed conditions. Class copies of the novel are available for reference (quotation checking only). Teacher circulates silently, available to clarify the question if genuinely misunderstood but not offering content or structural support. At the 20-minute mark, write '20 minutes remaining' on the board. At the 35-minute mark, write '5 minutes remaining' as a signal to complete the current paragraph and begin a conclusion. Students who finish early should be directed to reread and improve embedded quotations, language analysis, and context integration.",
         differentiation: {
           support:
-            'Provide a planning grid completed during the starter activity. Students may also use a paragraph frame for their first paragraph to establish the pattern: Point → Embedded quotation → Language analysis → Context link → Steinbeck\'s purpose.',
+            "Provide a planning grid completed during the starter activity. Students may also use a paragraph frame for their first paragraph to establish the pattern: Point → Embedded quotation → Language analysis → Context link → Steinbeck's purpose.",
           core: 'Students write independently using their plan.',
           stretch:
             'Students aim for four full paragraphs plus a conclusion, and include structural analysis (foreshadowing, cyclical structure, or the compressed timeframe) as a distinct point within their response rather than a single passing comment.',
@@ -1485,13 +1475,13 @@ export const y9Term3Lessons: LessonPlan[] = [
         title: 'Self-Assessment and Targeted Improvement',
         duration: '5 minutes',
         instructions:
-          'With 5 minutes remaining in the lesson, students stop writing and complete a brief self-assessment. They annotate their own essay with three symbols: (Q) wherever they have embedded a quotation and analysed the language, (C) wherever they have integrated context, and (A) wherever they have made an explicit statement about Steinbeck\'s purpose or authorial intent. Students count each symbol type and note which they have used least — this becomes their personal target for improvement when the work is returned.',
+          "With 5 minutes remaining in the lesson, students stop writing and complete a brief self-assessment. They annotate their own essay with three symbols: (Q) wherever they have embedded a quotation and analysed the language, (C) wherever they have integrated context, and (A) wherever they have made an explicit statement about Steinbeck's purpose or authorial intent. Students count each symbol type and note which they have used least — this becomes their personal target for improvement when the work is returned.",
         differentiation: {
           support:
             'Provide a self-assessment checklist: "Have I... used at least three quotations? Commented on specific words or phrases? Mentioned the historical/social context? Explained what Steinbeck wanted the reader to think or feel?" Students tick each criterion and write one sentence noting what they would add if they had more time.',
           core: 'Students complete the symbol annotation and personal target note.',
           stretch:
-            "Students write two sentences: one identifying the strongest analytical moment in their essay, and one identifying where the argument is weakest and how they would strengthen it with a specific quotation or contextual point.",
+            'Students write two sentences: one identifying the strongest analytical moment in their essay, and one identifying where the argument is weakest and how they would strengthen it with a specific quotation or contextual point.',
         },
         resources: [
           'Self-assessment checklist for support students',
@@ -1525,7 +1515,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          "Write one full analytical paragraph exploring how George and Lennie are shaped by forces beyond their control. Include an embedded quotation, language analysis, and contextual integration.",
+          'Write one full analytical paragraph exploring how George and Lennie are shaped by forces beyond their control. Include an embedded quotation, language analysis, and contextual integration.',
         lines: 10,
         modelAnswer:
           "George and Lennie's rootlessness is not a choice but a structural consequence of the Great Depression's destruction of stable employment. When George tells Lennie that 'guys like us, that work on ranches, are the loneliest guys in the world,' the inclusive pronoun 'us' positions their loneliness as collective rather than individual — it is the condition of an entire class of dispossessed workers, not two men's personal misfortune. The colloquial directness of 'guys like us' is itself significant: it is the language of a man speaking from inside the suffering, not observing it from outside. Steinbeck, who had worked on ranches and knew migrant workers personally, ensures that George's words carry the authority of lived experience rather than sentiment. The adjective 'loneliest' is carefully chosen — not merely alone, but superlatively isolated, suggesting a complete absence of the human connection that makes life meaningful. That this loneliness is systemic rather than chosen is the force beyond George's control: the Depression has stripped migrant workers of permanence, security, and community, leaving them with nothing but the dream — which, as the novella demonstrates with devastating clarity, the same system will also destroy.",
@@ -1541,7 +1531,7 @@ export const y9Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          "Write one full analytical paragraph exploring how Crooks is shaped by forces beyond his control. Include an embedded quotation, language analysis, and contextual integration.",
+          'Write one full analytical paragraph exploring how Crooks is shaped by forces beyond his control. Include an embedded quotation, language analysis, and contextual integration.',
         lines: 10,
         modelAnswer:
           "Crooks's isolation is the direct product of racial discrimination so deeply embedded in 1930s American society that it has been internalised by its victim as well as enforced by its perpetrators. His segregated room — described as 'a little shed that leaned off the wall of the barn' — is the physical manifestation of his social exclusion: a space defined by its subordination to the larger structure, just as Crooks himself is subordinated within the racial hierarchy. The diminutive 'little' infantilises the space, and the verb 'leaned' suggests precariousness — both the structure and its occupant are at the mercy of the main building. When Crooks reflects, 'I seen hundreds of men come by on the road an' on the ranches, with their bindles on their back an' that same damn thing in their heads. An' never a God damn one of 'em gets it,' his cynicism is not misanthropy but a rational response to decades of watching the same social forces crush the same dreams. The word 'hundreds' conveys the scale of this pattern — it is not George and Lennie who are unusual in failing; it is the system that is unusually effective at preventing success. Steinbeck uses Crooks to present racial discrimination not as a Southern aberration but as a nationwide condition, making his suffering a comment on an entire society's moral failure.",
@@ -1570,4 +1560,4 @@ export const y9Term3Lessons: LessonPlan[] = [
       '9W.9 — Sustaining analytical register and argument across a full essay response',
     ],
   },
-];
+]

@@ -108,7 +108,8 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote: '"They told me to take a streetcar named Desire, and transfer to one called Cemeteries, and ride six blocks and get off at \u2014 Elysian Fields!"',
+      quote:
+        '"They told me to take a streetcar named Desire, and transfer to one called Cemeteries, and ride six blocks and get off at \u2014 Elysian Fields!"',
       who: 'Blanche \u2014 Scene 1',
       analysis:
         'Blanche\u2019s arrival line makes her journey a symbolic one: from Desire, via Cemeteries, to the afterlife of Elysian Fields. Williams loads the whole trajectory of the play \u2014 desire leading to death leading to institutional exile \u2014 into a single set of street names.',
@@ -132,8 +133,9 @@ const data: TextGuideData = {
         'Stanley\u2019s anguished cry from the foot of the outside staircase, after he has struck the pregnant Stella, is one of the play\u2019s defining images. The moment fuses violence and dependence, and Stella\u2019s return into his arms states the terms of the marriage that Blanche cannot accept.',
     },
     {
-      quote: '"Deliberate cruelty is not forgivable. It is the one unforgivable thing in my opinion and it is the one thing of which I have never, never been guilty."',
-      who: 'Blanche \u2014 Scene 11 (in Scene 10 conversation recalled)',
+      quote:
+        '"Deliberate cruelty is not forgivable. It is the one unforgivable thing in my opinion and it is the one thing of which I have never, never been guilty."',
+      who: 'Blanche \u2014 Scene 11',
       analysis:
         'Blanche\u2019s moral statement \u2014 delivered to Mitch \u2014 sets out the single standard against which Stanley\u2019s behaviour is judged. The play tests whether the working-class, post-war world it depicts can meet any such ethical benchmark.',
     },
@@ -162,20 +164,23 @@ const data: TextGuideData = {
         'Stella\u2019s understatement to Blanche names the class and cultural gulf that drives the play. Williams gives her the language of diplomatic compromise \u2014 the register of a woman who has chosen Stanley\u2019s world and will not be argued out of it.',
     },
     {
-      quote: '"There are thousands of papers, stretching back over hundreds of years, affecting Belle Reve as, piece by piece, our improvident grandfathers and father and uncles and brothers exchanged the land for their epic fornications."',
+      quote:
+        '"There are thousands of papers, stretching back over hundreds of years, affecting Belle Reve as, piece by piece, our improvident grandfathers and father and uncles and brothers exchanged the land for their epic fornications."',
       who: 'Blanche \u2014 Scene 2',
       analysis:
         'Blanche\u2019s account of the loss of Belle Reve is both an indictment of the DuBois men and an economic explanation of her ruin. The rhetorical grandeur (\u201cepic fornications\u201d) is itself a kind of illusion, turning decline into mythology.',
     },
     {
-      quote: '"He acts like an animal, has an animal\u2019s habits! Eats like one, moves like one, talks like one! \u2026 Thousands and thousands of years have passed him right by, and there he is \u2014 Stanley Kowalski."',
+      quote:
+        '"He acts like an animal, has an animal\u2019s habits! Eats like one, moves like one, talks like one! \u2026 Thousands and thousands of years have passed him right by, and there he is \u2014 Stanley Kowalski."',
       who: 'Blanche \u2014 Scene 4',
       analysis:
         'Blanche\u2019s attack on Stanley, overheard by him, fuses class snobbery with a Darwinian vocabulary. Williams lets Stanley listen from the doorway, so that the audience watches the precise moment her destruction begins.',
     },
     {
-      quote: '"I pulled you down off them columns and how you loved it, having them coloured lights going!"',
-      who: 'Stanley \u2014 Scene 8 (recalled Scene 7/8 exchange with Stella)',
+      quote:
+        '"I pulled you down off them columns and how you loved it, having them coloured lights going!"',
+      who: 'Stanley \u2014 Scene 8',
       analysis:
         'Stanley\u2019s account of his sexual life with Stella \u2014 the \u201ccoloured lights\u201d \u2014 offers a rival theory of desire to Blanche\u2019s paper-lantern version. Williams makes the body\u2019s pleasure a political force capable of pulling a woman down from the plantation.',
     },
@@ -204,25 +209,22 @@ const data: TextGuideData = {
         'One of Blanche\u2019s earliest and most repeated self-instructions. The line, delivered to an empty apartment, establishes from the start that the play will be the story of someone trying, and failing, to hold a self together.',
     },
     {
-      quote: '"What you are talking about is brutal desire \u2014 just \u2014 Desire! \u2014 the name of that rattle-trap street-car that bangs through the Quarter, up one old narrow street and down another."',
+      quote:
+        '"What you are talking about is brutal desire \u2014 just \u2014 Desire! \u2014 the name of that rattle-trap street-car that bangs through the Quarter, up one old narrow street and down another."',
       who: 'Blanche \u2014 Scene 4',
       analysis:
         'Blanche\u2019s attempt to dismiss Stella\u2019s sexual bond as \u201cbrutal desire\u201d turns the streetcar into a symbol of rattling, indiscriminate sexual energy. Williams lets the geography of New Orleans and the geography of the body become the same map.',
     },
     {
-      quote: '"It\u2019s only a paper moon, sailing over a cardboard sea \u2014 but it wouldn\u2019t be make-believe if you believed in me!"',
+      quote:
+        '"It\u2019s only a paper moon, sailing over a cardboard sea \u2014 but it wouldn\u2019t be make-believe if you believed in me!"',
       who: 'Blanche \u2014 Scene 7 (singing in the bath)',
       analysis:
         'Blanche sings the Harold Arlen song from the bath as Stanley, in the next room, reveals her history to Stella. Williams sets her fragile fiction of belief against Stanley\u2019s hard narrative, so that the two scenes interrupt and indict each other.',
     },
     {
-      quote: '"They told me that the town was mine, but I had to go and get it."',
-      who: 'Stanley \u2014 Scene 2 (paraphrase of \u201cNapoleonic code\u201d speech)',
-      analysis:
-        'Stanley\u2019s appeal to the Napoleonic Code \u2014 \u201cwhat belongs to the wife belongs to the husband\u201d \u2014 makes legal ownership the ground of his claim over Blanche\u2019s papers. Williams exposes the link between property law and male authority inside the marriage.',
-    },
-    {
-      quote: '"Don\u2019t ever believe it. Life has got to go on. No matter what happens, you\u2019ve got to keep on going."',
+      quote:
+        '"Don\u2019t ever believe it. Life has got to go on. No matter what happens, you\u2019ve got to keep on going."',
       who: 'Eunice \u2014 Scene 11',
       analysis:
         'Eunice\u2019s advice to Stella, as Blanche is being led out, names the moral compromise of the play. Williams gives it to a minor character, as if to show that it belongs to the community rather than to any one person.',
@@ -231,34 +233,361 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'sc-1', question: 'Which streetcar does Blanche take to reach Stella\'s apartment?', type: 'multiple-choice', options: ['A streetcar named Elysian Fields', 'A streetcar named Desire, transferring to Cemeteries', 'A streetcar named Laurel', 'A streetcar named New Orleans'], correctIndex: 1, explanation: 'Blanche travels on the streetcar Desire, transferring to one called Cemeteries, before arriving at Elysian Fields. Williams makes the journey itself a symbol: Desire leads through Cemeteries to the "afterlife" of Elysian Fields.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'sc-2', question: 'Where is the play set?', type: 'multiple-choice', options: ['Laurel, Mississippi', 'Belle Reve plantation', 'The French Quarter of New Orleans', 'New York City'], correctIndex: 2, explanation: 'The play is set at Elysian Fields in the French Quarter of New Orleans in the late 1940s. The neighbourhood is working-class, ethnically mixed, and saturated with blues and "blue piano" music.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'sc-3', question: 'How many scenes does A Streetcar Named Desire have?', type: 'multiple-choice', options: ['Three acts', 'Five acts', 'Eleven scenes (no acts)', 'Seven scenes'], correctIndex: 2, explanation: 'The play is structured in eleven scenes, not acts. This unusual choice gives the tragedy a cinematic, continuous feel rather than the traditional five-act shape of classical drama.', topic: 'Writer\'s Methods', difficulty: 'foundation' },
-  { id: 'sc-4', question: 'What is the name of the lost DuBois family plantation?', type: 'multiple-choice', options: ['Laurel', 'Belle Reve', 'Elysian Fields', 'Magnolia'], correctIndex: 1, explanation: 'Belle Reve means "beautiful dream" in French. Its loss to the "epic fornications" of the DuBois men is both economic and symbolic, marking the decline of the Old South that Blanche represents.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'sc-5', question: 'Who is Allan Grey?', type: 'multiple-choice', options: ['Blanche\'s father', 'Mitch\'s brother', 'Blanche\'s young husband, who shot himself after she confronted him about his male lover', 'Stella\'s first boyfriend'], correctIndex: 2, explanation: 'Allan Grey was Blanche\'s young husband. She discovered him with an older male lover and, on the dance floor later that night, told him "You disgust me." He then shot himself \u2014 a trauma that haunts her throughout the play, signalled by the Varsouviana polka.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'sc-6', question: 'Who says "Stella! Stella!" in Scene 3?', type: 'multiple-choice', options: ['Blanche', 'Mitch', 'Stanley', 'Steve'], correctIndex: 2, explanation: 'Stanley cries "Stella! Stella!" from the foot of the outdoor staircase after striking her during the poker night. She returns into his arms, defining the violent, physically bound marriage that Blanche cannot accept.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'sc-7', question: 'What does Blanche hang over the naked lightbulb in Stella\'s apartment?', type: 'multiple-choice', options: ['A lace shawl', 'A Chinese paper lantern', 'A silk scarf', 'A curtain'], correctIndex: 1, explanation: 'Blanche covers the naked lightbulb with a Chinese paper lantern so she does not have to be seen clearly. Mitch tearing it off in Scene 9 is the play\'s defining image of forced illumination.', topic: 'Writer\'s Methods', difficulty: 'foundation' },
-  { id: 'sc-8', question: 'In which scene is Blanche raped by Stanley?', type: 'multiple-choice', options: ['Scene 7', 'Scene 8', 'Scene 10', 'Scene 11'], correctIndex: 2, explanation: 'Stanley rapes Blanche in Scene 10, while Stella is in hospital giving birth. His line "We\'ve had this date with each other from the beginning" frames the act as inevitable from the perpetrator\'s point of view.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'sc-9', question: 'What famously haunts Blanche\'s mind whenever her past closes in?', type: 'multiple-choice', options: ['A church bell', 'The Varsouviana polka', 'A jazz trumpet', 'A nursery rhyme'], correctIndex: 1, explanation: 'The Varsouviana polka is the tune that was playing when Allan Grey shot himself. Williams uses it as a non-naturalistic sound cue, audible to Blanche and the audience but not to the other characters, to stage her psychological disintegration.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'sc-10', question: 'What does Blanche mean by "I don\'t want realism. I want magic!"?', type: 'multiple-choice', options: ['She enjoys stage tricks', 'She prefers comforting illusion to harsh truth, and treats deception as a moral choice', 'She wants Mitch to perform for her', 'She is rejecting modern theatre'], correctIndex: 1, explanation: 'Blanche\'s declaration to Mitch in Scene 9 defends her whole way of surviving \u2014 the paper lantern, the soft voice, the invented admirers \u2014 as a necessary kindness rather than a lie. The play tests this claim against Stanley\'s "realism."', topic: 'Themes', difficulty: 'higher' },
-  { id: 'sc-11', question: 'What is Stanley\'s ethnic background, and why does Williams make this significant?', type: 'multiple-choice', options: ['English; it marks him as upper class', 'Polish-American; it links him to immigrant, working-class, post-war America that has displaced the Old South', 'French Creole; it ties him to New Orleans tradition', 'Irish-American; it connects him to the labour movement'], correctIndex: 1, explanation: 'Stanley is of Polish descent. Blanche\'s slurs ("Polack," "ape-like") expose her snobbery and situate the conflict inside a historical shift in which immigrant, industrial America is replacing the plantation South.', topic: 'Context', difficulty: 'higher' },
-  { id: 'sc-12', question: 'How does Williams use the paper lantern as a symbol?', type: 'multiple-choice', options: ['It represents wealth', 'It symbolises the fragile illusions that allow Blanche to survive, with Mitch tearing it off the bulb in Scene 9 marking her forced exposure', 'It represents Stella\'s child', 'It symbolises the feud between North and South'], correctIndex: 1, explanation: 'The Chinese paper lantern over the naked bulb is Blanche\'s chosen defence against being seen. When Mitch rips it off in Scene 9, the physical act dramatises the destruction of her illusion and prefigures Stanley\'s final exposure of her in Scene 10.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'sc-13', question: 'What does Stella choose at the end of the play, and why?', type: 'multiple-choice', options: ['She leaves Stanley and takes Blanche home', 'She refuses to believe Blanche\'s account of the rape and stays with Stanley, allowing Blanche to be committed', 'She confronts Stanley publicly and divorces him', 'She moves back to Belle Reve with the baby'], correctIndex: 1, explanation: 'Stella makes the central moral compromise of the play: to believe Blanche would make her marriage impossible, so she chooses not to believe. Eunice pronounces this survival logic in Scene 11: "Life has got to go on."', topic: 'Characters', difficulty: 'higher' },
-  { id: 'sc-14', question: 'Why does Mitch reject Blanche in Scene 9?', type: 'multiple-choice', options: ['She refuses to marry him', 'He has learned from Stanley about her sexual past and tells her she is "not clean enough" to bring home to his mother', 'She tells him she is ill', 'He meets another woman'], correctIndex: 1, explanation: 'Stanley has told Mitch about the Flamingo Hotel and the seventeen-year-old pupil. Mitch\'s rejection \u2014 "not clean enough" \u2014 enforces the sexual double standard of his world and leaves Blanche alone in the apartment just before Stanley\'s return.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'sc-15', question: 'What does Blanche mean by "Deliberate cruelty is not forgivable"?', type: 'multiple-choice', options: ['She forgives all forms of unkindness', 'She sets out a single moral standard \u2014 that intentional cruelty is uniquely unforgivable \u2014 against which Stanley\'s behaviour is implicitly judged', 'She is talking about animals', 'She is threatening Mitch'], correctIndex: 1, explanation: 'Blanche\'s statement to Mitch names the ethical line the play is interested in. Williams measures the post-war, working-class world of Elysian Fields against this standard, and finds it wanting.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'sc-16', question: 'How is the figure of the Doctor in the final scene significant?', type: 'multiple-choice', options: ['He is an old friend of Blanche\'s', 'He is the last "stranger" whose kindness she accepts, and symbolically enacts the institutional system that will dispose of her', 'He is Stanley\'s brother', 'He refuses to take Blanche away'], correctIndex: 1, explanation: 'The unnamed Doctor offers Blanche a gentle arm where the Matron offered force. His kindness lets her leave with dignity, but the play is clear that he represents a psychiatric system that now formally ends her story \u2014 a scene shadowed by Williams\'s own sister Rose\'s lobotomy in 1943.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'sc-17', question: 'How does Williams\'s own biography shape the play?', type: 'multiple-choice', options: ['It doesn\'t', 'His sister Rose was institutionalised and lobotomised in 1943, and as a gay man writing under censorship he could not directly name Allan Grey\'s homosexuality', 'He grew up in New Orleans himself', 'He had been a soldier like Stanley'], correctIndex: 1, explanation: 'Williams\'s sister Rose underwent a prefrontal lobotomy in 1943, a trauma that shadows Blanche\'s institutionalisation. As a gay writer in the censored American theatre of the 1940s, Williams could only imply Allan Grey\'s homosexuality, which is central to Blanche\'s backstory but never explicitly spoken.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'sc-18', question: 'How does the play\'s 11-scene structure, rather than acts, affect its dramatic impact?', type: 'multiple-choice', options: ['It is purely traditional', 'It creates a cinematic, continuous feel and allows a slow, inexorable disintegration rather than a classical rise and fall', 'It confuses the audience', 'It copies Shakespearean structure'], correctIndex: 1, explanation: 'Williams\'s choice of eleven scenes with no act breaks gives the play an unbroken, cumulative rhythm. Blanche\'s collapse is staged as a series of short, interlocking episodes \u2014 closer to film than to the conventional three- or five-act theatre of the period.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'sc-19', question: 'How does Williams use music in the play?', type: 'multiple-choice', options: ['Only as background', 'The "blue piano" of the Quarter places the play in a living Black and Creole culture, while the Varsouviana polka functions as a non-naturalistic sound cue tied to Blanche\'s traumatic memory', 'He avoids music entirely', 'Only to mark scene changes'], correctIndex: 1, explanation: 'The "blue piano" and blues music in Williams\'s stage directions root the action in a specific ethnic and musical culture. The Varsouviana polka, by contrast, is heard only by Blanche and the audience, staging her inner world directly.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'sc-20', question: 'What does the play suggest about the collision between the Old South and post-war industrial America?', type: 'multiple-choice', options: ['The Old South wins', 'It is evenly matched', 'The Old South, represented by Blanche and Belle Reve, is economically and culturally defeated by the immigrant, working-class America embodied in Stanley', 'The conflict is resolved happily'], correctIndex: 2, explanation: 'Blanche\'s plantation world has already lost Belle Reve before the play begins; Stanley\'s demand for documents, his veteran\'s confidence and his physical ownership of the apartment stage the victory of a new order. Williams sets their class and cultural conflict at the centre of the tragedy.', topic: 'Context', difficulty: 'grade-9' },
+  {
+    id: 'sc-1',
+    question: "Which streetcar does Blanche take to reach Stella's apartment?",
+    type: 'multiple-choice',
+    options: [
+      'A streetcar named Elysian Fields',
+      'A streetcar named Desire, transferring to Cemeteries',
+      'A streetcar named Laurel',
+      'A streetcar named New Orleans',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Blanche travels on the streetcar Desire, transferring to one called Cemeteries, before arriving at Elysian Fields. Williams makes the journey itself a symbol: Desire leads through Cemeteries to the "afterlife" of Elysian Fields.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sc-2',
+    question: 'Where is the play set?',
+    type: 'multiple-choice',
+    options: [
+      'Laurel, Mississippi',
+      'Belle Reve plantation',
+      'The French Quarter of New Orleans',
+      'New York City',
+    ],
+    correctIndex: 2,
+    explanation:
+      'The play is set at Elysian Fields in the French Quarter of New Orleans in the late 1940s. The neighbourhood is working-class, ethnically mixed, and saturated with blues and "blue piano" music.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sc-3',
+    question: 'How many scenes does A Streetcar Named Desire have?',
+    type: 'multiple-choice',
+    options: ['Three acts', 'Five acts', 'Eleven scenes (no acts)', 'Seven scenes'],
+    correctIndex: 2,
+    explanation:
+      'The play is structured in eleven scenes, not acts. This unusual choice gives the tragedy a cinematic, continuous feel rather than the traditional five-act shape of classical drama.',
+    topic: "Writer's Methods",
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sc-4',
+    question: 'What is the name of the lost DuBois family plantation?',
+    type: 'multiple-choice',
+    options: ['Laurel', 'Belle Reve', 'Elysian Fields', 'Magnolia'],
+    correctIndex: 1,
+    explanation:
+      'Belle Reve means "beautiful dream" in French. Its loss to the "epic fornications" of the DuBois men is both economic and symbolic, marking the decline of the Old South that Blanche represents.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sc-5',
+    question: 'Who is Allan Grey?',
+    type: 'multiple-choice',
+    options: [
+      "Blanche's father",
+      "Mitch's brother",
+      "Blanche's young husband, who shot himself after she confronted him about his male lover",
+      "Stella's first boyfriend",
+    ],
+    correctIndex: 2,
+    explanation:
+      'Allan Grey was Blanche\'s young husband. She discovered him with an older male lover and, on the dance floor later that night, told him "You disgust me." He then shot himself \u2014 a trauma that haunts her throughout the play, signalled by the Varsouviana polka.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sc-6',
+    question: 'Who says "Stella! Stella!" in Scene 3?',
+    type: 'multiple-choice',
+    options: ['Blanche', 'Mitch', 'Stanley', 'Steve'],
+    correctIndex: 2,
+    explanation:
+      'Stanley cries "Stella! Stella!" from the foot of the outdoor staircase after striking her during the poker night. She returns into his arms, defining the violent, physically bound marriage that Blanche cannot accept.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sc-7',
+    question: "What does Blanche hang over the naked lightbulb in Stella's apartment?",
+    type: 'multiple-choice',
+    options: ['A lace shawl', 'A Chinese paper lantern', 'A silk scarf', 'A curtain'],
+    correctIndex: 1,
+    explanation:
+      "Blanche covers the naked lightbulb with a Chinese paper lantern so she does not have to be seen clearly. Mitch tearing it off in Scene 9 is the play's defining image of forced illumination.",
+    topic: "Writer's Methods",
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sc-8',
+    question: 'In which scene is Blanche raped by Stanley?',
+    type: 'multiple-choice',
+    options: ['Scene 7', 'Scene 8', 'Scene 10', 'Scene 11'],
+    correctIndex: 2,
+    explanation:
+      'Stanley rapes Blanche in Scene 10, while Stella is in hospital giving birth. His line "We\'ve had this date with each other from the beginning" frames the act as inevitable from the perpetrator\'s point of view.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sc-9',
+    question: "What famously haunts Blanche's mind whenever her past closes in?",
+    type: 'multiple-choice',
+    options: ['A church bell', 'The Varsouviana polka', 'A jazz trumpet', 'A nursery rhyme'],
+    correctIndex: 1,
+    explanation:
+      'The Varsouviana polka is the tune that was playing when Allan Grey shot himself. Williams uses it as a non-naturalistic sound cue, audible to Blanche and the audience but not to the other characters, to stage her psychological disintegration.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'sc-10',
+    question: 'What does Blanche mean by "I don\'t want realism. I want magic!"?',
+    type: 'multiple-choice',
+    options: [
+      'She enjoys stage tricks',
+      'She prefers comforting illusion to harsh truth, and treats deception as a moral choice',
+      'She wants Mitch to perform for her',
+      'She is rejecting modern theatre',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Blanche\'s declaration to Mitch in Scene 9 defends her whole way of surviving \u2014 the paper lantern, the soft voice, the invented admirers \u2014 as a necessary kindness rather than a lie. The play tests this claim against Stanley\'s "realism."',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'sc-11',
+    question: "What is Stanley's ethnic background, and why does Williams make this significant?",
+    type: 'multiple-choice',
+    options: [
+      'English; it marks him as upper class',
+      'Polish-American; it links him to immigrant, working-class, post-war America that has displaced the Old South',
+      'French Creole; it ties him to New Orleans tradition',
+      'Irish-American; it connects him to the labour movement',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Stanley is of Polish descent. Blanche\'s slurs ("Polack," "ape-like") expose her snobbery and situate the conflict inside a historical shift in which immigrant, industrial America is replacing the plantation South.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'sc-12',
+    question: 'How does Williams use the paper lantern as a symbol?',
+    type: 'multiple-choice',
+    options: [
+      'It represents wealth',
+      'It symbolises the fragile illusions that allow Blanche to survive, with Mitch tearing it off the bulb in Scene 9 marking her forced exposure',
+      "It represents Stella's child",
+      'It symbolises the feud between North and South',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The Chinese paper lantern over the naked bulb is Blanche's chosen defence against being seen. When Mitch rips it off in Scene 9, the physical act dramatises the destruction of her illusion and prefigures Stanley's final exposure of her in Scene 10.",
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'sc-13',
+    question: 'What does Stella choose at the end of the play, and why?',
+    type: 'multiple-choice',
+    options: [
+      'She leaves Stanley and takes Blanche home',
+      "She refuses to believe Blanche's account of the rape and stays with Stanley, allowing Blanche to be committed",
+      'She confronts Stanley publicly and divorces him',
+      'She moves back to Belle Reve with the baby',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Stella makes the central moral compromise of the play: to believe Blanche would make her marriage impossible, so she chooses not to believe. Eunice pronounces this survival logic in Scene 11: "Life has got to go on."',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'sc-14',
+    question: 'Why does Mitch reject Blanche in Scene 9?',
+    type: 'multiple-choice',
+    options: [
+      'She refuses to marry him',
+      'He has learned from Stanley about her sexual past and tells her she is "not clean enough" to bring home to his mother',
+      'She tells him she is ill',
+      'He meets another woman',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Stanley has told Mitch about the Flamingo Hotel and the seventeen-year-old pupil. Mitch\'s rejection \u2014 "not clean enough" \u2014 enforces the sexual double standard of his world and leaves Blanche alone in the apartment just before Stanley\'s return.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'sc-15',
+    question: 'What does Blanche mean by "Deliberate cruelty is not forgivable"?',
+    type: 'multiple-choice',
+    options: [
+      'She forgives all forms of unkindness',
+      "She sets out a single moral standard \u2014 that intentional cruelty is uniquely unforgivable \u2014 against which Stanley's behaviour is implicitly judged",
+      'She is talking about animals',
+      'She is threatening Mitch',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Blanche's statement to Mitch names the ethical line the play is interested in. Williams measures the post-war, working-class world of Elysian Fields against this standard, and finds it wanting.",
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'sc-16',
+    question: 'How is the figure of the Doctor in the final scene significant?',
+    type: 'multiple-choice',
+    options: [
+      "He is an old friend of Blanche's",
+      'He is the last "stranger" whose kindness she accepts, and symbolically enacts the institutional system that will dispose of her',
+      "He is Stanley's brother",
+      'He refuses to take Blanche away',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The unnamed Doctor offers Blanche a gentle arm where the Matron offered force. His kindness lets her leave with dignity, but the play is clear that he represents a psychiatric system that now formally ends her story \u2014 a scene shadowed by Williams's own sister Rose's lobotomy in 1943.",
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'sc-17',
+    question: "How does Williams's own biography shape the play?",
+    type: 'multiple-choice',
+    options: [
+      "It doesn't",
+      "His sister Rose was institutionalised and lobotomised in 1943, and as a gay man writing under censorship he could not directly name Allan Grey's homosexuality",
+      'He grew up in New Orleans himself',
+      'He had been a soldier like Stanley',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Williams's sister Rose underwent a prefrontal lobotomy in 1943, a trauma that shadows Blanche's institutionalisation. As a gay writer in the censored American theatre of the 1940s, Williams could only imply Allan Grey's homosexuality, which is central to Blanche's backstory but never explicitly spoken.",
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'sc-18',
+    question:
+      "How does the play's 11-scene structure, rather than acts, affect its dramatic impact?",
+    type: 'multiple-choice',
+    options: [
+      'It is purely traditional',
+      'It creates a cinematic, continuous feel and allows a slow, inexorable disintegration rather than a classical rise and fall',
+      'It confuses the audience',
+      'It copies Shakespearean structure',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Williams's choice of eleven scenes with no act breaks gives the play an unbroken, cumulative rhythm. Blanche's collapse is staged as a series of short, interlocking episodes \u2014 closer to film than to the conventional three- or five-act theatre of the period.",
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'sc-19',
+    question: 'How does Williams use music in the play?',
+    type: 'multiple-choice',
+    options: [
+      'Only as background',
+      'The "blue piano" of the Quarter places the play in a living Black and Creole culture, while the Varsouviana polka functions as a non-naturalistic sound cue tied to Blanche\'s traumatic memory',
+      'He avoids music entirely',
+      'Only to mark scene changes',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The "blue piano" and blues music in Williams\'s stage directions root the action in a specific ethnic and musical culture. The Varsouviana polka, by contrast, is heard only by Blanche and the audience, staging her inner world directly.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'sc-20',
+    question:
+      'What does the play suggest about the collision between the Old South and post-war industrial America?',
+    type: 'multiple-choice',
+    options: [
+      'The Old South wins',
+      'It is evenly matched',
+      'The Old South, represented by Blanche and Belle Reve, is economically and culturally defeated by the immigrant, working-class America embodied in Stanley',
+      'The conflict is resolved happily',
+    ],
+    correctIndex: 2,
+    explanation:
+      "Blanche's plantation world has already lost Belle Reve before the play begins; Stanley's demand for documents, his veteran's confidence and his physical ownership of the apartment stage the victory of a new order. Williams sets their class and cultural conflict at the centre of the tragedy.",
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Desire and Destruction', summary: 'Desire in the play is both life-giving and lethal; the streetcar Desire transfers to Cemeteries before reaching Elysian Fields.', keyPoints: ['The streetcar journey is a symbolic map of desire leading to death', 'Allan Grey\'s suicide, the Flamingo Hotel and the pupil in Laurel all trace Blanche\'s destructive desire', 'Stanley and Stella\'s "coloured lights" present desire as communal and binding', 'The rape in Scene 10 is the play\'s most violent statement of desire as power', 'Williams refuses to moralise: society\'s denial of desire is part of what makes it lethal'] },
-  { topic: 'Reality vs Illusion', summary: 'Blanche\'s paper lantern over the naked bulb is the play\'s central image of protective illusion.', keyPoints: ['"I don\'t want realism. I want magic!" defines Blanche\'s stance', 'Stanley\'s demand for documents and the Napoleonic Code represents the opposite pole', 'Mitch tearing the lantern off the bulb in Scene 9 is the turning point', 'Light \u2014 the streetlamp, the bare bulb \u2014 is repeatedly used as a weapon', 'The play tests whether "magic" is survival or delusion'] },
-  { topic: 'Old South vs Industrial Modernity', summary: 'Blanche\'s plantation world has already lost Belle Reve; Stanley\'s urban, immigrant America has replaced it.', keyPoints: ['Belle Reve ("beautiful dream") is lost to "epic fornications"', 'Stanley\'s Polish heritage and factory job place him inside post-war industrial America', 'Blanche\'s slurs ("Polack," "ape-like") expose her class snobbery', 'The Napoleonic Code dramatises ownership inside the marriage', 'The French Quarter, with its blues music and mixed community, embodies the new order'] },
-  { topic: 'Gender and Power', summary: 'Women in the play survive through men; the play exposes the violence of that economy.', keyPoints: ['Stella needs Stanley\'s wages and body; Blanche needs Mitch or Shep Huntleigh', 'Stanley\'s slap, the poker table and the Napoleonic Code enforce male ownership', 'The sexual double standard destroys Blanche when her history is told', 'The rape in Scene 10 is the play\'s most direct statement of male power', 'Eunice\'s advice "life has got to go on" normalises the system'] },
-  { topic: 'Madness and Institutionalisation', summary: 'Blanche\'s collapse is presented as the cumulative effect of grief, sexual trauma and disbelief, with the asylum as social disposal.', keyPoints: ['The Varsouviana polka and bells stage her inner world non-naturalistically', 'Allan Grey\'s suicide, Belle Reve\'s deaths, and the rape are the layers of her trauma', 'The Doctor and Matron are symbolic figures of psychiatric authority', 'Stella\'s refusal to believe is the family\'s complicity in her committal', 'Williams\'s sister Rose\'s 1943 lobotomy gives the scene autobiographical weight'] },
+  {
+    topic: 'Desire and Destruction',
+    summary:
+      'Desire in the play is both life-giving and lethal; the streetcar Desire transfers to Cemeteries before reaching Elysian Fields.',
+    keyPoints: [
+      'The streetcar journey is a symbolic map of desire leading to death',
+      "Allan Grey's suicide, the Flamingo Hotel and the pupil in Laurel all trace Blanche's destructive desire",
+      'Stanley and Stella\'s "coloured lights" present desire as communal and binding',
+      "The rape in Scene 10 is the play's most violent statement of desire as power",
+      "Williams refuses to moralise: society's denial of desire is part of what makes it lethal",
+    ],
+  },
+  {
+    topic: 'Reality vs Illusion',
+    summary:
+      "Blanche's paper lantern over the naked bulb is the play's central image of protective illusion.",
+    keyPoints: [
+      '"I don\'t want realism. I want magic!" defines Blanche\'s stance',
+      "Stanley's demand for documents and the Napoleonic Code represents the opposite pole",
+      'Mitch tearing the lantern off the bulb in Scene 9 is the turning point',
+      'Light \u2014 the streetlamp, the bare bulb \u2014 is repeatedly used as a weapon',
+      'The play tests whether "magic" is survival or delusion',
+    ],
+  },
+  {
+    topic: 'Old South vs Industrial Modernity',
+    summary:
+      "Blanche's plantation world has already lost Belle Reve; Stanley's urban, immigrant America has replaced it.",
+    keyPoints: [
+      'Belle Reve ("beautiful dream") is lost to "epic fornications"',
+      "Stanley's Polish heritage and factory job place him inside post-war industrial America",
+      'Blanche\'s slurs ("Polack," "ape-like") expose her class snobbery',
+      'The Napoleonic Code dramatises ownership inside the marriage',
+      'The French Quarter, with its blues music and mixed community, embodies the new order',
+    ],
+  },
+  {
+    topic: 'Gender and Power',
+    summary:
+      'Women in the play survive through men; the play exposes the violence of that economy.',
+    keyPoints: [
+      "Stella needs Stanley's wages and body; Blanche needs Mitch or Shep Huntleigh",
+      "Stanley's slap, the poker table and the Napoleonic Code enforce male ownership",
+      'The sexual double standard destroys Blanche when her history is told',
+      "The rape in Scene 10 is the play's most direct statement of male power",
+      'Eunice\'s advice "life has got to go on" normalises the system',
+    ],
+  },
+  {
+    topic: 'Madness and Institutionalisation',
+    summary:
+      "Blanche's collapse is presented as the cumulative effect of grief, sexual trauma and disbelief, with the asylum as social disposal.",
+    keyPoints: [
+      'The Varsouviana polka and bells stage her inner world non-naturalistically',
+      "Allan Grey's suicide, Belle Reve's deaths, and the rape are the layers of her trauma",
+      'The Doctor and Matron are symbolic figures of psychiatric authority',
+      "Stella's refusal to believe is the family's complicity in her committal",
+      "Williams's sister Rose's 1943 lobotomy gives the scene autobiographical weight",
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -284,10 +613,13 @@ export default async function AStreetcarNamedDesirePage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "A Streetcar Named Desire", url: "https://theenglishhub.app/revision/texts/a-streetcar-named-desire" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'A Streetcar Named Desire',
+            url: 'https://theenglishhub.app/revision/texts/a-streetcar-named-desire',
+          },
         ]}
       />
       <TextStudyHub
@@ -296,15 +628,57 @@ export default async function AStreetcarNamedDesirePage() {
         examBoard="AQA"
         basePath="/revision/texts/a-streetcar-named-desire"
         subPages={[
-          { id: 'read', href: '/revision/texts/a-streetcar-named-desire/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
-          { id: 'acts', href: '/revision/texts/a-streetcar-named-desire/acts', icon: 'acts' as const, title: 'Scene-by-Scene Analysis', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/a-streetcar-named-desire/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/a-streetcar-named-desire/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/a-streetcar-named-desire/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/a-streetcar-named-desire/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
-          { id: 'essays', href: '/revision/texts/a-streetcar-named-desire/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'A-Level essay plans' },
+          {
+            id: 'read',
+            href: '/revision/texts/a-streetcar-named-desire/read',
+            icon: 'read' as const,
+            title: 'Read Full Text',
+            description: 'With annotations',
+          },
+          {
+            id: 'acts',
+            href: '/revision/texts/a-streetcar-named-desire/acts',
+            icon: 'acts' as const,
+            title: 'Scene-by-Scene Analysis',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/a-streetcar-named-desire/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/a-streetcar-named-desire/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/a-streetcar-named-desire/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/a-streetcar-named-desire/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/a-streetcar-named-desire/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'A-Level essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -316,7 +690,7 @@ export default async function AStreetcarNamedDesirePage() {
           'How far can Blanche DuBois be considered a tragic heroine?',
           'How does Williams present the Old South and its decline in A Streetcar Named Desire?',
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}
@@ -330,7 +704,9 @@ export default async function AStreetcarNamedDesirePage() {
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">Draft study guide</strong>
-        <span>AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.</span>
+        <span>
+          AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.
+        </span>
       </div>
       <TextGuide data={data} />
     </>

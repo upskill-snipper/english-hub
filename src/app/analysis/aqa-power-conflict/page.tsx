@@ -27,7 +27,7 @@ const comparisonPages = [
   },
   {
     slug: 'checking-out-me-history-vs-the-emigree',
-    title: 'Checking Out Me History vs The Emigrée',
+    title: 'Checking Out Me History vs The Émigrée',
   },
   { slug: 'kamikaze-vs-my-last-duchess', title: 'Kamikaze vs My Last Duchess' },
   { slug: 'tissue-vs-ozymandias', title: 'Tissue vs Ozymandias' },

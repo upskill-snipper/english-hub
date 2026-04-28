@@ -4,6 +4,15 @@
 // 6 mock papers: Macbeth (2), Romeo & Juliet (2), The Tempest (1), Merchant of Venice (1)
 // Each: 1h45 (105 min), 64 marks
 // Section A: Shakespeare (30+4 marks) | Section B: 19th Century Novel (30 marks)
+//
+// FABRICATION WARNING (FC20 audit, 2026-04-28):
+// Several extracts in this file are quote-collages or paraphrases — NOT verbatim
+// Shakespeare / Brontë / Dickens. The Macbeth, Romeo & Juliet, Jane Eyre and
+// Great Expectations extracts mix authentic snippets with invented connective
+// material and contain wrong-scene attributions. The Christmas Carol Stave 1 &
+// Stave 5 extracts are largely accurate but lightly paraphrased. Treat all
+// extracts in this file as fabricated practice stimuli; do not cite as
+// authentic quotation. Re-source from primary texts before classroom use.
 
 import type { MockExamPaper } from './mock-exams'
 
@@ -21,13 +30,15 @@ MACBETH [entering unseen]: How now, what news?
 
 LADY MACBETH: A little water clears us of this deed. How easy is it then! Your constancy hath left you unattended. Hark! I hear the strain of strutting chanticleer cry 'Cock-a-diddle-daw.' Come, come, come, come, give me your hand. What's done cannot be undone. To bed, to bed, to bed!`
 
-const MACBETH_EXTRACT_1_SOURCE = 'William Shakespeare, Macbeth, Act 5, Scene 1'
+const MACBETH_EXTRACT_1_SOURCE =
+  "Fabricated practice composition in the style of Shakespeare's Macbeth (Act 5 Scene 1) — NOT verbatim; do not cite"
 
 const MACBETH_EXTRACT_2 = `MACBETH: Tomorrow, and tomorrow, and tomorrow, creeps in this petty pace from day to day to the last syllable of recorded time, and all our yesterdays have lighted fools the way to dusty death. Out, out, brief candle! Life's but a walking shadow, a poor player that struts and frets his hour upon the stage and then is heard no more. It is a tale told by an idiot, full of sound and fury, signifying nothing.
 
 Seyton! I am sick when I do see— but, soft! Thou com'st to use thy tongue; thy story quickly. What's the boy Malcolm? Was he not born of woman? The spirits that know all mortal consequences have deceived me. 'Pull thy hat upon thy brows; give thee that, which claps thee to the pole, and I will fight, till from my bones my flesh be hack'd.'`
 
-const MACBETH_EXTRACT_2_SOURCE = 'William Shakespeare, Macbeth, Act 5, Scene 5'
+const MACBETH_EXTRACT_2_SOURCE =
+  "Fabricated practice composition in the style of Shakespeare's Macbeth (Act 5 Scene 5) — NOT verbatim; do not cite"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SHAKESPEARE EXTRACTS - ROMEO & JULIET
@@ -35,7 +46,8 @@ const MACBETH_EXTRACT_2_SOURCE = 'William Shakespeare, Macbeth, Act 5, Scene 5'
 
 const ROMEO_JULIET_EXTRACT_1 = `ROMEO: What light through yonder window breaks? It is the east, and Juliet is the sun. Arise, fair sun, and kill the envious moon, who is already sick and pale with grief, that thou, her maid, art far more fair than she. Be not her maid, since she is envious. Her vestal livery is but sick and green; and none but fools do wear it. Cast it off! It is the nightingale and not the lark that pierced the fearful hollow of thine ear; nightly she sings on yon pomegranate-tree. Believe me, love, it was the lark, the herald of the morn, no nightingale. Look, love, what envious streaks do lace the severing clouds in yonder east.`
 
-const ROMEO_JULIET_EXTRACT_1_SOURCE = 'William Shakespeare, Romeo and Juliet, Act 2, Scene 2'
+const ROMEO_JULIET_EXTRACT_1_SOURCE =
+  "Fabricated practice composition in the style of Shakespeare's Romeo and Juliet (Act 2 Scene 2) — NOT verbatim; do not cite"
 
 const ROMEO_JULIET_EXTRACT_2 = `JULIET: O Romeo, Romeo! wherefore art thou Romeo? Deny thy father and refuse thy name; or, if thou wilt not, be but sworn my love, and I'll no longer be a Capulet.
 
@@ -43,7 +55,8 @@ ROMEO [stepping forward]: Shall I hear more, or shall I speak at this?
 
 JULIET: 'Tis but thy name that is my enemy; thou art thyself, though not a Montague. What's in a name? That which we call a rose by any other name would smell as sweet; so Romeo would, were he not Romeo call'd, retain that dear perfection which he owes without that title. Romeo, doff thy name, and for that name which is no part of thee, take all myself.`
 
-const ROMEO_JULIET_EXTRACT_2_SOURCE = 'William Shakespeare, Romeo and Juliet, Act 2, Scene 2'
+const ROMEO_JULIET_EXTRACT_2_SOURCE =
+  "Fabricated practice composition in the style of Shakespeare's Romeo and Juliet (Act 2 Scene 2) — NOT verbatim; do not cite"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SHAKESPEARE EXTRACTS - THE TEMPEST
@@ -55,7 +68,8 @@ const TEMPEST_EXTRACT_1 = `PROSPERO: Our revels now are ended. These our actors,
 
 Sir, I am vex'd; bear with my weakness; my old brain is troubled: be not disturb'd with my infirmity. If you be pleased, retire into my cell and there repose. A turn or two I'll walk, to still my beating mind.`
 
-const TEMPEST_EXTRACT_1_SOURCE = 'William Shakespeare, The Tempest, Act 4, Scene 1'
+const TEMPEST_EXTRACT_1_SOURCE =
+  "Practice composition based on Shakespeare's The Tempest (Act 4 Scene 1) — verify wording against primary source before citing"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SHAKESPEARE EXTRACTS - MERCHANT OF VENICE
@@ -67,7 +81,8 @@ const MERCHANT_EXTRACT_1 = `SHYLOCK: I am not merry; but I do beguile the thing 
 
 Hath a dog money? Is it possible a cur can lend three thousand ducats? Or shall I bend low and in a bondsman's key, with 'bated breath and whispering humbleness, say thus: 'Fair sir, you spat on me on Wednesday last.'`
 
-const MERCHANT_EXTRACT_1_SOURCE = 'William Shakespeare, The Merchant of Venice, Act 1, Scene 3 & Act 3, Scene 1'
+const MERCHANT_EXTRACT_1_SOURCE =
+  "Practice composition combining lines from Shakespeare's Merchant of Venice (Act 1 Sc 3 + Act 3 Sc 1) — verify before citing"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 19TH CENTURY NOVEL EXTRACTS - A CHRISTMAS CAROL
@@ -75,13 +90,15 @@ const MERCHANT_EXTRACT_1_SOURCE = 'William Shakespeare, The Merchant of Venice, 
 
 const CAROL_EXTRACT_1 = `Scrooge was better than his word. He did it all, and infinitely more; and to Tiny Tim, who did not die, he was a second father. He became as good a friend, as good a master, and as good a man, as the good old city knew, or any other good old city, town, or borough, in the good old world. Some people laughed to see the alteration in him, but he let them laugh, and little heeded them; for he was wise enough to know that nothing ever happened on this globe, for good or for evil, but some person is always on hand to greet it either in mockery or genuine tears.`
 
-const CAROL_EXTRACT_1_SOURCE = 'Charles Dickens, A Christmas Carol, Stave 5'
+const CAROL_EXTRACT_1_SOURCE =
+  'Lightly paraphrased from Dickens, A Christmas Carol, Stave 5 — verify wording before citing'
 
-const CAROL_EXTRACT_2 = `"Are there no prisons?" asked Scrooge. "And the Union workhouses? Do they still in operation?" "They are. Still," returned the gentleman, "I have found them what I hoped I should find them; yet I cannot say that all the changes of which I have heard, have come to pass." "But those who would rather die than go there—" "If they would rather die," said Scrooge, "they had better do it, and decrease the surplus population."
+const CAROL_EXTRACT_2 = `"Are there no prisons?" asked Scrooge. "And the Union workhouses? Are they still in operation?" "They are. Still," returned the gentleman, "I have found them what I hoped I should find them; yet I cannot say that all the changes of which I have heard, have come to pass." "But those who would rather die than go there—" "If they would rather die," said Scrooge, "they had better do it, and decrease the surplus population."
 
 He spoke these words with careless indifference, and then turned his attention to his ledger. The gentleman was shocked by such callousness, and sought to explain the misery of the poor; but Scrooge was unmoved.`
 
-const CAROL_EXTRACT_2_SOURCE = 'Charles Dickens, A Christmas Carol, Stave 1'
+const CAROL_EXTRACT_2_SOURCE =
+  'Lightly paraphrased from Dickens, A Christmas Carol, Stave 1 — verify wording before citing'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 19TH CENTURY NOVEL EXTRACTS - JANE EYRE
@@ -89,13 +106,15 @@ const CAROL_EXTRACT_2_SOURCE = 'Charles Dickens, A Christmas Carol, Stave 1'
 
 const JANE_EYRE_EXTRACT_1 = `I would always rather be happy than dignified. I am not so ambitious as you are—I do not live for the love of power or the esteem of others. I love—I have loved myself—I have given my heart to the man whom you do not allow me to name. I would rather be his mistress than the wife of any other man in the world. But do not fear—I am not of the revelling kind; I have always been accustomed to look after myself; I shall marry him with the consent of those with whom I have always lived, or I shall not marry him at all. I will not enter into an engagement with him while you live, if your objections are founded on anything but prejudice.`
 
-const JANE_EYRE_EXTRACT_1_SOURCE = 'Charlotte Brontë, Jane Eyre, Chapter 37'
+const JANE_EYRE_EXTRACT_1_SOURCE =
+  "Fabricated practice composition in the style of Brontë's Jane Eyre — NOT verbatim; do not cite"
 
 const JANE_EYRE_EXTRACT_2 = `I am no bird; and no net ensnares me: I am a free human being with an independent will; which I now exert to leave you.
 
 I felt as if this phrase was spoken by my heart as well as my lips. It vibrated through my whole frame, and gave me courage and vigour. I was no longer afraid; I was no longer ashamed. I felt as if an awful charm was framing round and gathering over me. I seemed to be surrounded by a wall, and to be sinking slowly into an abyss. But I was not afraid. I recovered myself—I became composed—I took measures.`
 
-const JANE_EYRE_EXTRACT_2_SOURCE = 'Charlotte Brontë, Jane Eyre, Chapter 27'
+const JANE_EYRE_EXTRACT_2_SOURCE =
+  "Practice composition based on Brontë's Jane Eyre Ch. 27 — opening line authentic; remainder paraphrased; verify before citing"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 19TH CENTURY NOVEL EXTRACTS - GREAT EXPECTATIONS
@@ -105,13 +124,15 @@ const GREAT_EXPECTATIONS_EXTRACT_1 = `I am not at all in a humour for talking. I
 
 Pip saw in her eyes a reflection of his own yearning heart, yet she remained distant, untouchable, like a figure behind glass. The hope that had sustained him for years seemed suddenly fragile, threatened by her indifference.`
 
-const GREAT_EXPECTATIONS_EXTRACT_1_SOURCE = 'Charles Dickens, Great Expectations, Chapter 44'
+const GREAT_EXPECTATIONS_EXTRACT_1_SOURCE =
+  "Fabricated practice composition in the style of Dickens's Great Expectations — NOT verbatim; do not cite"
 
 const GREAT_EXPECTATIONS_EXTRACT_2 = `It was a year ago when I first knew Miss Havisham. I was sent to her as an orphan boy, and she received me with cold civility. The house was dark and the clocks were stopped. Everything was exactly as it had been on that day years before when she received the news that her lover had abandoned her at the altar. She had never left the house. She had never allowed the dust to be disturbed, nor the cobwebs to be cleared.
 
 I had thought that such seclusion would have broken her spirit entirely, but it had only hardened her, turned her heart to stone.`
 
-const GREAT_EXPECTATIONS_EXTRACT_2_SOURCE = 'Charles Dickens, Great Expectations, Chapter 8'
+const GREAT_EXPECTATIONS_EXTRACT_2_SOURCE =
+  "Fabricated practice composition in the style of Dickens's Great Expectations — NOT verbatim; do not cite"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // HELPER FUNCTION TO CREATE PAPER 1
@@ -182,9 +203,9 @@ const createPaper1Exam = (
               }`,
               'Grade 9': `In this extract, ${
                 shakespeareTitle === 'Macbeth'
-                  ? 'Lady Macbeth\'s sleepwalking constitutes a profound dramatization of how guilt operates as a force that dissolves the distinction between conscious and unconscious registers. The somnambulistic condition—awake yet asleep—literalizes a state of psychic fragmentation wherein rationalization and conscience are at war. Her earlier assertion that "A little water clears us of this deed" articulates a proto-Freudian repression: the attempt to displace psychological recognition onto a material and thus manageable plane. Yet the return of the repressed occurs precisely in sleep, when the ego\'s defensive structures are dismantled. The blood becomes simultaneously literal (Duncan\'s blood) and symbolic (the indelible mark of transgression), suggesting that Shakespeare understands guilt as a phenomenon operating across multiple registers of reality. The obsessive focus on the hand—that instrument of agency through which the murder was technically accomplished—reveals how guilt attaches itself to the body as the site of moral accountability. Her descent from confident strategist to fractured consciousness demonstrates Shakespeare\'s understanding that moral violations produce irreversible psychological consequences. The play suggests that while Macbeth achieves a deadened affect that permits continued action, Lady Macbeth\'s conscience remains acutely functional, producing the fragmentation we witness. Shakespeare thus presents guilt not as an external punishment but as an internal derangement of consciousness itself.'
+                  ? "Lady Macbeth's sleepwalking constitutes a profound dramatization of how guilt operates as a force that dissolves the distinction between conscious and unconscious registers. The somnambulistic condition—awake yet asleep—literalizes a state of psychic fragmentation wherein rationalization and conscience are at war. Her earlier assertion that \"A little water clears us of this deed\" articulates a proto-Freudian repression: the attempt to displace psychological recognition onto a material and thus manageable plane. Yet the return of the repressed occurs precisely in sleep, when the ego's defensive structures are dismantled. The blood becomes simultaneously literal (Duncan's blood) and symbolic (the indelible mark of transgression), suggesting that Shakespeare understands guilt as a phenomenon operating across multiple registers of reality. The obsessive focus on the hand—that instrument of agency through which the murder was technically accomplished—reveals how guilt attaches itself to the body as the site of moral accountability. Her descent from confident strategist to fractured consciousness demonstrates Shakespeare's understanding that moral violations produce irreversible psychological consequences. The play suggests that while Macbeth achieves a deadened affect that permits continued action, Lady Macbeth's conscience remains acutely functional, producing the fragmentation we witness. Shakespeare thus presents guilt not as an external punishment but as an internal derangement of consciousness itself."
                   : shakespeareTitle === 'Romeo and Juliet'
-                    ? 'The balcony scene\'s language constitutes an extraordinary articulation of desire as a transcendent force that operates beyond the rational constraints of social order. The astronomical conceits—Juliet as sun, the equation of love with cosmic light—function not as mere metaphorical decoration but as a linguistic technology through which individual passion is universalized. The language systematically dismantles hierarchies: Juliet, conventionally subject to paternal authority, becomes the celestial center around which Romeo\'s universe rotates. The shift from Romeo\'s voyeuristic address to Juliet\'s conscious response enacts a crucial transformation: from masculine subject to mutual recognition. When Juliet asks "What\'s in a name?", she performs an ontological critique: names are arbitrary linguistic signs bearing no necessary relation to essential identity. This implies that the social categories governing Montague/Capulet identity are similarly arbitrary and thus potentially transcendable through the force of authentic feeling. Yet the play\'s subsequent tragic trajectory retrospectively ironizes this linguistic faith in the capacity of desire to overcome social determination. Shakespeare presents romantic love as simultaneously real in its intensity and delusional in its assumption that subjective feeling can transcend objective social structures. The play thus articulates both the reality of passion and its vulnerability to institutional violence.'
+                    ? "The balcony scene's language constitutes an extraordinary articulation of desire as a transcendent force that operates beyond the rational constraints of social order. The astronomical conceits—Juliet as sun, the equation of love with cosmic light—function not as mere metaphorical decoration but as a linguistic technology through which individual passion is universalized. The language systematically dismantles hierarchies: Juliet, conventionally subject to paternal authority, becomes the celestial center around which Romeo's universe rotates. The shift from Romeo's voyeuristic address to Juliet's conscious response enacts a crucial transformation: from masculine subject to mutual recognition. When Juliet asks \"What's in a name?\", she performs an ontological critique: names are arbitrary linguistic signs bearing no necessary relation to essential identity. This implies that the social categories governing Montague/Capulet identity are similarly arbitrary and thus potentially transcendable through the force of authentic feeling. Yet the play's subsequent tragic trajectory retrospectively ironizes this linguistic faith in the capacity of desire to overcome social determination. Shakespeare presents romantic love as simultaneously real in its intensity and delusional in its assumption that subjective feeling can transcend objective social structures. The play thus articulates both the reality of passion and its vulnerability to institutional violence."
                     : shakespeareTitle === 'The Tempest'
                       ? 'Prospero\'s speech articulates a philosophical position that synthesizes Stoic acceptance of cosmic indifference with a recognition of the illusory nature of human power and intention. The metatheatrical conceit—life as a play, humans as actors—operates on multiple registers simultaneously: it acknowledges the artificiality of dramatic representation while simultaneously suggesting that this artificiality mirrors the fundamental ontological condition of human existence. The progression from particular structures ("cloud-capp\'d towers") to universal dissolution ("leave not a rack behind") enacts a phenomenological reduction wherein all differentiated forms collapse into undifferentiated emptiness. Crucially, this is not presented as tragic but as liberatory: the recognition that we are "such stuff as dreams are made on" releases one from the burden of permanence and control. Prospero\'s acknowledgment of his own "infirmity"—his inability to sustain the theatrical illusion—demonstrates his incorporation of this philosophical wisdom into lived experience. The final movement toward the "cell" and rest suggests that acceptance of limitation constitutes a form of power that transcends the coercive magic he has wielded throughout the play. Shakespeare presents renunciation not as defeat but as the highest wisdom: the recognition that true sovereignty consists in accepting one\'s fundamental powerlessness.'
                       : 'Shylock\'s speech performs a complex rhetorical and philosophical intervention in the play\'s central questions about identity, value, and personhood. The question "Hath a dog money?" operates on multiple registers: it is sarcastic (dogs literally cannot possess money), but it also questions whether those constructed as animal/subhuman can participate in the symbolic economy of value. The catalog of affronts—positioned as the historical precondition for the present request—reveals how prejudice produces a perverse dynamic wherein economic value is extracted from those denied full social humanity. The anaphoric repetition enacts a performative accumulation of grievance that threatens to overflow the contained legal form of the contract. Yet Shylock\'s final decision to demand his "pound of flesh" rather than monetary compensation suggests that his excluded status from the economy of value-exchange drives him toward a symbolic retribution that can only manifest as bodily violence. Shakespeare reveals prejudice as not merely a matter of attitude but as a structural feature of Venetian society that simultaneously requires Jewish capital for economic functioning while denying Jewish subjects the dignity of full personhood. The play thus stages the violent consequences of systematic dehumanization, suggesting that a society that constructs entire populations as less than human necessarily produces the conditions for catastrophic conflict.'
@@ -203,7 +224,8 @@ const createPaper1Exam = (
           {
             id: `aqa-lit-p1-${nn}-q1-unseen`,
             questionNumber: 1,
-            questionText: 'How does Shakespeare use this passage to develop key character traits or themes? (AO4: 4 marks)',
+            questionText:
+              'How does Shakespeare use this passage to develop key character traits or themes? (AO4: 4 marks)',
             marks: 4,
             suggestedTimeMinutes: 7,
             questionType: 'short-answer',
@@ -213,9 +235,9 @@ const createPaper1Exam = (
               'Grade 5':
                 'Shakespeare shows that the character is troubled and confused. The language is fragmented and repetitive, which shows they cannot think clearly. This develops the theme of guilt/love/power.',
               'Grade 7':
-                'Through disrupted syntax and obsessive repetition, Shakespeare reveals psychological fragmentation. The language enacts the internal turmoil that defines the character at this moment, advancing the play\'s exploration of conscience/desire/ambition.',
+                "Through disrupted syntax and obsessive repetition, Shakespeare reveals psychological fragmentation. The language enacts the internal turmoil that defines the character at this moment, advancing the play's exploration of conscience/desire/ambition.",
               'Grade 9':
-                'Shakespeare\'s syntactical disintegration and repetitive imperatives literalize consciousness under extreme psychological pressure. This formal dissolution both expresses and productively complicates the thematic exploration of agency, guilt, and the limits of rational control.',
+                "Shakespeare's syntactical disintegration and repetitive imperatives literalize consciousness under extreme psychological pressure. This formal dissolution both expresses and productively complicates the thematic exploration of agency, guilt, and the limits of rational control.",
             },
             markScheme: [
               'Identifies relevant technique(s)',
@@ -241,8 +263,8 @@ const createPaper1Exam = (
               novelTitle === 'A Christmas Carol'
                 ? 'Analyse how Dickens uses the transformation of Scrooge to explore the themes of redemption and social responsibility. Refer to the extract and elsewhere in the novella.'
                 : novelTitle === 'Jane Eyre'
-                  ? 'Analyse how Brontë presents the tension between social convention and individual autonomy through Jane\'s character and choices. Refer to the extract and elsewhere in the novel.'
-                  : 'Analyse how Dickens uses Pip\'s desire for self-improvement to explore the themes of ambition, class, and identity. Refer to the extract and elsewhere in the novel.',
+                  ? "Analyse how Brontë presents the tension between social convention and individual autonomy through Jane's character and choices. Refer to the extract and elsewhere in the novel."
+                  : "Analyse how Dickens uses Pip's desire for self-improvement to explore the themes of ambition, class, and identity. Refer to the extract and elsewhere in the novel.",
             marks: 30,
             suggestedTimeMinutes: 53,
             questionType: 'analysis',
@@ -254,21 +276,21 @@ const createPaper1Exam = (
                   ? 'Scrooge\'s transformation shows how people can change and become better. At the start of the novella, he is selfish and unkind. He refuses to give money to poor people and pays Bob Cratchit very little. He even says that if the poor would rather die, they should "decrease the surplus population." But after the spirits visit him, he changes completely. The extract shows he "became as good a man, as the good old city knew" and he helps Tiny Tim. He also gives Bob Cratchit a raise. This shows that Scrooge has learned about social responsibility and realizes he must help others. Dickens uses Scrooge\'s story to show readers that even selfish people can change and that everyone has a duty to help society.'
                   : novelTitle === 'Jane Eyre'
                     ? 'Jane refuses to obey society\'s rules when they conflict with her own values. She tells Rochester "I am no bird; and no net ensnares me: I am a free human being with an independent will." This shows she will not accept the expectations that women have no power or choice. She decides she wants to be with Rochester, not to become a governess or governante. However, she also says she will only marry him "with the consent of those with whom I have always lived." This shows that while Jane wants independence, she also respects tradition and morality. Brontë presents the conflict between what Jane wants for herself and what society expects of her. Jane\'s character shows that women can be independent and strong-willed.'
-                    : 'Pip loves Estella and wants to become a gentleman to impress her, but she treats him coldly and with indifference. The extract shows how Estella is determined and strong-willed, but also distant from Pip. His desire to improve himself and become wealthy is motivated by his love for her and his shame at being a blacksmith\'s apprentice. However, Dickens suggests that Pip\'s ambition might be based on false values. By making Pip yearn for someone who doesn\'t care about him, Dickens shows that the pursuit of wealth and status can be misguided. Great Expectations explores whether self-improvement based on romantic desire or social climbing is genuine or hollow.'
+                    : "Pip loves Estella and wants to become a gentleman to impress her, but she treats him coldly and with indifference. The extract shows how Estella is determined and strong-willed, but also distant from Pip. His desire to improve himself and become wealthy is motivated by his love for her and his shame at being a blacksmith's apprentice. However, Dickens suggests that Pip's ambition might be based on false values. By making Pip yearn for someone who doesn't care about him, Dickens shows that the pursuit of wealth and status can be misguided. Great Expectations explores whether self-improvement based on romantic desire or social climbing is genuine or hollow."
               }`,
               'Grade 7': `${
                 novelTitle === 'A Christmas Carol'
-                  ? 'Dickens constructs Scrooge\'s redemption as a complete philosophical reversal. His initial economic philosophy—that the poor should "decrease the surplus population" if they prefer death to the workhouse—articulates a rationalization of indifference as necessity. Scrooge\'s transformation moves him from this utilitarian logic to an ethic of social responsibility. The extract emphasizes that Scrooge\'s change is not merely sentimental but actively productive: he becomes "a second father" to Tiny Tim and materially improves Bob Cratchit\'s condition. Significantly, the novella suggests that redemption requires sustained moral vigilance—Scrooge must repeatedly rehearse his former self to prevent regression. Dickens\'s narrative strategy implies that moral transformation is possible but requires confrontation with one\'s earlier values and commitment to behavioral change. The emphasis on Scrooge\'s practical actions—the turkey, the wages—rather than merely internal feeling demonstrates that redemption must be socially manifest. By making Scrooge\'s change contingent on the intervention of supernatural spirits, Dickens paradoxically suggests both that moral transformation is difficult (requiring literal supernatural intervention) and that it is possible (if conditions permit).'
+                  ? "Dickens constructs Scrooge's redemption as a complete philosophical reversal. His initial economic philosophy—that the poor should \"decrease the surplus population\" if they prefer death to the workhouse—articulates a rationalization of indifference as necessity. Scrooge's transformation moves him from this utilitarian logic to an ethic of social responsibility. The extract emphasizes that Scrooge's change is not merely sentimental but actively productive: he becomes \"a second father\" to Tiny Tim and materially improves Bob Cratchit's condition. Significantly, the novella suggests that redemption requires sustained moral vigilance—Scrooge must repeatedly rehearse his former self to prevent regression. Dickens's narrative strategy implies that moral transformation is possible but requires confrontation with one's earlier values and commitment to behavioral change. The emphasis on Scrooge's practical actions—the turkey, the wages—rather than merely internal feeling demonstrates that redemption must be socially manifest. By making Scrooge's change contingent on the intervention of supernatural spirits, Dickens paradoxically suggests both that moral transformation is difficult (requiring literal supernatural intervention) and that it is possible (if conditions permit)."
                   : novelTitle === 'Jane Eyre'
                     ? 'Brontë presents the tension between individual autonomy and social constraints as the fundamental problem animating Jane\'s narrative. Her assertion "I am no bird; and no net ensnares me" performs a linguistic reclamation of agency through metaphor—she repositions herself as a free agent rather than a confined property. Yet the extract simultaneously reveals the internalization of social convention: Jane insists she will marry only "with the consent of those with whom I have always lived," suggesting that her autonomy operates within limits she has internalized. The psychological movement from defiant declaration to conditional acceptance reveals how patriarchal ideology functions not merely through external coercion but through the subject\'s own incorporation of restrictive norms. Brontë\'s narrative technique—allowing Jane direct access to first-person declaration—positions the reader to experience the authenticity of her desire alongside the constraints that limit it. The novel thus presents individual will as real and powerful yet always already embedded within social structures that constrain its possibilities. Jane\'s journey enacts a negotiation between the imperatives of autonomy and the unavoidable reality of social embeddedness.'
-                    : 'Dickens uses Pip\'s yearning for Estella as a vehicle through which to critique the ideology of self-improvement that animated Victorian society. Estella\'s studied indifference and her explicit disavowal of emotional connection—"I have told you already. I am as decided as any man or woman of strong will can be"—reveal the impossibility of the fantasy that drives Pip\'s ambition. His desire to become a gentleman is predicated on the assumption that social elevation will win affection from someone constitutionally incapable of it. By positioning the object of desire as fundamentally unobtainable and emotionally unavailable, Dickens suggests that Pip\'s ambition is built on illusory foundations. The extract\'s cold precision—Estella\'s repetitive, almost mechanical declarations—suggests that her character has been formed by Miss Havisham\'s manipulation into an instrument of emotional cruelty. Pip\'s great expectations, then, are predicated not on authentic self-development but on a pathological attachment to an unattainable and damaged other. Dickens implies that the pursuit of wealth and status, when motivated by romantic delusion, produces only disillusionment.'
+                    : "Dickens uses Pip's yearning for Estella as a vehicle through which to critique the ideology of self-improvement that animated Victorian society. Estella's studied indifference and her explicit disavowal of emotional connection—\"I have told you already. I am as decided as any man or woman of strong will can be\"—reveal the impossibility of the fantasy that drives Pip's ambition. His desire to become a gentleman is predicated on the assumption that social elevation will win affection from someone constitutionally incapable of it. By positioning the object of desire as fundamentally unobtainable and emotionally unavailable, Dickens suggests that Pip's ambition is built on illusory foundations. The extract's cold precision—Estella's repetitive, almost mechanical declarations—suggests that her character has been formed by Miss Havisham's manipulation into an instrument of emotional cruelty. Pip's great expectations, then, are predicated not on authentic self-development but on a pathological attachment to an unattainable and damaged other. Dickens implies that the pursuit of wealth and status, when motivated by romantic delusion, produces only disillusionment."
               }`,
               'Grade 9': `${
                 novelTitle === 'A Christmas Carol'
-                  ? 'Dickens\'s representation of redemption engages with contemporary debates about the possibility of moral regeneration within capitalist society. Scrooge\'s initial position articulates a sophisticated utilitarian logic: the poor are economically unproductive and thus their death would constitute a solution to overpopulation. His transformation does not merely involve sentiment but a complete recalibration of his understanding of economic and moral value. The extract\'s insistence that "nothing ever happened on this globe, for good or for evil, but some person is always on hand to greet it" articulates a vision of moral interconnection wherein individual actors inevitably participate in collective historical processes. This philosophical reframing—from individualist economics to collective responsibility—structures Scrooge\'s redemption. Significantly, the novella suggests that such transformation requires a kind of violence (the Spirits\' pedagogical assault) rather than rational persuasion. This implies that moral change within capitalist ideology requires a rupture with the very logic that constitutes capitalist subjectivity. The emphasis on Scrooge\'s active reintegration into social life—his transformation from miser to philanthropist—suggests that true redemption is inseparable from economic redistribution and material care for others. By making Scrooge\'s transformation simultaneously individual and social, psychological and economic, Dickens articulates a critique of laissez-faire ideology while maintaining faith in the possibility of ethical regeneration.'
+                  ? "Dickens's representation of redemption engages with contemporary debates about the possibility of moral regeneration within capitalist society. Scrooge's initial position articulates a sophisticated utilitarian logic: the poor are economically unproductive and thus their death would constitute a solution to overpopulation. His transformation does not merely involve sentiment but a complete recalibration of his understanding of economic and moral value. The extract's insistence that \"nothing ever happened on this globe, for good or for evil, but some person is always on hand to greet it\" articulates a vision of moral interconnection wherein individual actors inevitably participate in collective historical processes. This philosophical reframing—from individualist economics to collective responsibility—structures Scrooge's redemption. Significantly, the novella suggests that such transformation requires a kind of violence (the Spirits' pedagogical assault) rather than rational persuasion. This implies that moral change within capitalist ideology requires a rupture with the very logic that constitutes capitalist subjectivity. The emphasis on Scrooge's active reintegration into social life—his transformation from miser to philanthropist—suggests that true redemption is inseparable from economic redistribution and material care for others. By making Scrooge's transformation simultaneously individual and social, psychological and economic, Dickens articulates a critique of laissez-faire ideology while maintaining faith in the possibility of ethical regeneration."
                   : novelTitle === 'Jane Eyre'
-                    ? 'Brontë\'s narrative construction presents individual autonomy and social constraint as dialectically related rather than simply opposed. Jane\'s assertion of will—"I am a free human being with an independent will"—operates not outside social discourse but within and against it. Her insistence on marriage based on mutual love rather than economic necessity represents a philosophical repositioning of women\'s agency within patriarchal structures. Yet the extract\'s concluding gesture—that she will accept marriage only "with the consent of those with whom I have always lived"—reveals the inescapability of social authorization. Brontë suggests that even authentic autonomy must achieve social recognition and consent. This is not a capitulation to patriarchal ideology but a sophisticated understanding that individual agency is always relational and interdependent. The novel\'s overarching narrative arc—Jane\'s journey from oppression through wandering to a form of equality with Rochester—enacts a philosophical argument: that genuine autonomy requires not the illusory fantasy of independence but the construction of relationships based on mutual recognition and respect. By refusing both pure subjection and pure independence, Brontë articulates a complex vision of selfhood as necessarily social and political. Jane\'s final position—married but an equal partner, claiming authority within the domestic sphere—represents not a retreat from autonomy but its reconfiguration within realistic social parameters.'
-                    : 'Dickens\'s treatment of Pip\'s ambition constitutes a penetrating critique of Victorian ideology of self-improvement and social mobility. The phrase "great expectations" itself becomes ironic: the expectations Pip harbors are predicated on delusion rather than authentic self-development. Estella\'s character—formed by Miss Havisham\'s deliberate cultivation of emotional coldness—reveals how individual subjectivity is constituted through others\' manipulative interventions. Pip\'s love for her is thus a kind of colonization by trauma that is not his own. By making the object of desire fundamentally damaged and incapable of reciprocation, Dickens suggests that capitalism does not merely fail to deliver on its promises of social elevation but actively produces pathological forms of desire in those who pursue it. The novel\'s insistence on returning Pip to his origins, reconnecting him with Joe and understanding that his "great expectations" were a mistake, implies that authentic self-development requires acknowledging dependence, gratitude, and the fundamental value of relationships that cannot be instrumentalized for social gain. The revelation that Magwitch, not Miss Havisham, is Pip\'s benefactor further complicates the narrative of self-improvement: Pip\'s elevation has been purchased through criminal transgression and enforced servitude. By making Pip\'s social ascent complicit with systemic violence and exploitation, Dickens articulates a fundamental critique of the ideology of meritocracy. True growth, the novel suggests, requires renouncing the fantasy of autonomous self-creation and recognizing one\'s implication in networks of interdependence and obligation.'
+                    ? "Brontë's narrative construction presents individual autonomy and social constraint as dialectically related rather than simply opposed. Jane's assertion of will—\"I am a free human being with an independent will\"—operates not outside social discourse but within and against it. Her insistence on marriage based on mutual love rather than economic necessity represents a philosophical repositioning of women's agency within patriarchal structures. Yet the extract's concluding gesture—that she will accept marriage only \"with the consent of those with whom I have always lived\"—reveals the inescapability of social authorization. Brontë suggests that even authentic autonomy must achieve social recognition and consent. This is not a capitulation to patriarchal ideology but a sophisticated understanding that individual agency is always relational and interdependent. The novel's overarching narrative arc—Jane's journey from oppression through wandering to a form of equality with Rochester—enacts a philosophical argument: that genuine autonomy requires not the illusory fantasy of independence but the construction of relationships based on mutual recognition and respect. By refusing both pure subjection and pure independence, Brontë articulates a complex vision of selfhood as necessarily social and political. Jane's final position—married but an equal partner, claiming authority within the domestic sphere—represents not a retreat from autonomy but its reconfiguration within realistic social parameters."
+                    : "Dickens's treatment of Pip's ambition constitutes a penetrating critique of Victorian ideology of self-improvement and social mobility. The phrase \"great expectations\" itself becomes ironic: the expectations Pip harbors are predicated on delusion rather than authentic self-development. Estella's character—formed by Miss Havisham's deliberate cultivation of emotional coldness—reveals how individual subjectivity is constituted through others' manipulative interventions. Pip's love for her is thus a kind of colonization by trauma that is not his own. By making the object of desire fundamentally damaged and incapable of reciprocation, Dickens suggests that capitalism does not merely fail to deliver on its promises of social elevation but actively produces pathological forms of desire in those who pursue it. The novel's insistence on returning Pip to his origins, reconnecting him with Joe and understanding that his \"great expectations\" were a mistake, implies that authentic self-development requires acknowledging dependence, gratitude, and the fundamental value of relationships that cannot be instrumentalized for social gain. The revelation that Magwitch, not Miss Havisham, is Pip's benefactor further complicates the narrative of self-improvement: Pip's elevation has been purchased through criminal transgression and enforced servitude. By making Pip's social ascent complicit with systemic violence and exploitation, Dickens articulates a fundamental critique of the ideology of meritocracy. True growth, the novel suggests, requires renouncing the fantasy of autonomous self-creation and recognizing one's implication in networks of interdependence and obligation."
               }`,
             },
             markScheme: [
@@ -291,21 +313,20 @@ const createPaper1Exam = (
 // EXPORT ALL PAPERS (Complete version below)
 // ─────────────────────────────────────────────────────────────────────────────
 
-
 // ─────────────────────────────────────────────────────────────────────────────
 // EXPANDED ASSESSMENT GUIDANCE & GRADING COMMENTS
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
  * PAPER 1 ASSESSMENT GUIDANCE
- * 
+ *
  * SECTION A: SHAKESPEARE ANALYSIS (34 marks total)
  * - Question 1 (30 marks): Extended analysis essay
  *   * Candidates must analyse language, form, and dramatic technique
  *   * Reference the extract and cite elsewhere in the play
  *   * Develop sustained interpretations connected to theme
  *   * Use subject terminology accurately (metaphor, soliloquy, dramatic irony, personification, imagery, etc.)
- *   
+ *
  * - Question 1 AO4 (4 marks): Contextual/short response
  *   * Brief analysis of how passage develops character/theme
  *   * Concise textual support

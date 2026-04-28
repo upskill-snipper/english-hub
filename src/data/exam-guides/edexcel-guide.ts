@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { BoardExamGuide } from './types';
+import type { BoardExamGuide } from './types'
 
 export const edexcelGuide: BoardExamGuide = {
   boardId: 'Edexcel',
@@ -39,7 +39,7 @@ export const edexcelGuide: BoardExamGuide = {
     {
       code: 'AO3',
       description:
-        'Compare writers\' ideas and perspectives, as well as how these are conveyed, across two or more texts.',
+        "Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.",
       weighting: '~10%',
     },
     {
@@ -134,8 +134,7 @@ export const edexcelGuide: BoardExamGuide = {
                 'Embed short quotations and analyse specific word choices, imagery, and rhetorical techniques. Always explain the <em>effect</em> on the reader rather than simply naming techniques. Two well-developed analytical points are sufficient. Use evaluative verbs: "implies", "connotes", "evokes", "suggests".',
             },
             {
-              question:
-                'Q4 — Critically evaluate the text with reference to a given focus',
+              question: 'Q4 — Critically evaluate the text with reference to a given focus',
               marks: 15,
               ao: 'AO4',
               skill: 'Critical evaluation with textual references',
@@ -177,8 +176,7 @@ export const edexcelGuide: BoardExamGuide = {
           marks: 56,
           questions: [
             {
-              question:
-                'Q1 — Identify four true statements from a list of eight (Source A)',
+              question: 'Q1 — Identify four true statements from a list of eight (Source A)',
               marks: 4,
               ao: 'AO1',
               skill: 'Identify explicit information (true/false)',
@@ -271,7 +269,7 @@ export const edexcelGuide: BoardExamGuide = {
               skill: 'Extract-to-whole analysis of Shakespeare play',
               time: '50–55 minutes',
               advice:
-                'Divide your response roughly 40/60 between the extract and the wider play. Analyse the extract in close detail first — Shakespeare\'s word-level choices, imagery, dramatic irony, use of verse or prose, and rhetorical devices. Then broaden to the whole play, exploring how the theme or character develops across the text. Weave context (AO3) naturally into your analysis — do not bolt it on as a separate paragraph. AO4 rewards accurate written expression, so spell literary terms correctly and punctuate quotations accurately. Select quotations <strong>judiciously</strong> — Edexcel\'s marking guide specifically rewards quality of selection over quantity.',
+                "Divide your response roughly 40/60 between the extract and the wider play. Analyse the extract in close detail first — Shakespeare's word-level choices, imagery, dramatic irony, use of verse or prose, and rhetorical devices. Then broaden to the whole play, exploring how the theme or character develops across the text. Weave context (AO3) naturally into your analysis — do not bolt it on as a separate paragraph. AO4 rewards accurate written expression, so spell literary terms correctly and punctuate quotations accurately. Select quotations <strong>judiciously</strong> — Edexcel's marking guide specifically rewards quality of selection over quantity.",
             },
           ],
         },
@@ -314,7 +312,7 @@ export const edexcelGuide: BoardExamGuide = {
               skill: 'Extract-to-whole analysis of 19th-century novel',
               time: '55–60 minutes',
               advice:
-                'Begin with detailed analysis of the extract — close-read the writer\'s language choices, sentence structures, and narrative techniques. Then broaden to the whole novel, selecting key moments that develop the theme or character. Context (AO3) is important for 19th-century texts — integrate understanding of Victorian society, class, gender, or morality where it illuminates meaning. Embed quotations fluently and analyse at word level. This is a high-tariff question, so plan carefully and maintain analytical depth throughout.',
+                "Begin with detailed analysis of the extract — close-read the writer's language choices, sentence structures, and narrative techniques. Then broaden to the whole novel, selecting key moments that develop the theme or character. Context (AO3) is important for 19th-century texts — integrate understanding of Victorian society, class, gender, or morality where it illuminates meaning. Embed quotations fluently and analyse at word level. This is a high-tariff question, so plan carefully and maintain analytical depth throughout.",
             },
           ],
         },
@@ -327,10 +325,11 @@ export const edexcelGuide: BoardExamGuide = {
                 'Compare a named poem from your studied collection with one other poem of your choice from the same collection',
               marks: 30,
               ao: 'AO1 + AO2 + AO3',
-              skill: 'Poetry comparison — named poem (printed) with free-choice poem from same cluster',
+              skill:
+                'Poetry comparison — named poem (printed) with free-choice poem from same cluster',
               time: '35–40 minutes',
               advice:
-                'The exam names one poem and prints it on the paper — you must choose the second from your studied collection and write about it from memory. Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic or methodological links. Structure comparatively throughout: do not write about one poem then the other. Each paragraph should address both poems using comparative connectives. Analyse language, form, and structure in both poems. Context (AO3) should be integrated concisely — comment on how biographical or historical factors shape the poets\' perspectives.',
+                "The exam names one poem and prints it on the paper — you must choose the second from your studied collection and write about it from memory. Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic or methodological links. Structure comparatively throughout: do not write about one poem then the other. Each paragraph should address both poems using comparative connectives. Analyse language, form, and structure in both poems. Context (AO3) should be integrated concisely — comment on how biographical or historical factors shape the poets' perspectives.",
             },
           ],
         },
@@ -346,11 +345,10 @@ export const edexcelGuide: BoardExamGuide = {
               skill: 'Analyse one unseen poem independently',
               time: '10–12 minutes',
               advice:
-                'Read the poem at least twice before writing. Identify the poem\'s subject, tone, and shifts in mood. Analyse language devices (imagery, diction, sound) and structural features (form, enjambment, stanza breaks). Use short embedded quotations and explore multiple layers of meaning. Do not try to cover every line — select the richest details and analyse them in depth.',
+                "Read the poem at least twice before writing. Identify the poem's subject, tone, and shifts in mood. Analyse language devices (imagery, diction, sound) and structural features (form, enjambment, stanza breaks). Use short embedded quotations and explore multiple layers of meaning. Do not try to cover every line — select the richest details and analyse them in depth.",
             },
             {
-              question:
-                'Part 2: Compare how the poets present a shared theme in both unseen poems',
+              question: 'Part 2: Compare how the poets present a shared theme in both unseen poems',
               marks: 4,
               ao: 'AO2',
               skill: 'Compare two unseen poems on a shared theme',
@@ -377,7 +375,7 @@ export const edexcelGuide: BoardExamGuide = {
       level: 5,
       descriptor: 'Thoughtful, developed response',
       ao1: 'Thoughtful, developed response with apt textual detail. Well-chosen references integrated into a sustained interpretation. Secure critical style throughout.',
-      ao2: 'Thoughtful, developed analysis of writer\'s methods. Thorough exploration of effects on the reader. Accurate and effective use of subject terminology.',
+      ao2: "Thoughtful, developed analysis of writer's methods. Thorough exploration of effects on the reader. Accurate and effective use of subject terminology.",
       ao3: 'Thoughtful, developed understanding of contextual factors with detailed links between context and textual meaning.',
     },
     {
@@ -391,7 +389,7 @@ export const edexcelGuide: BoardExamGuide = {
       level: 3,
       descriptor: 'Some explained response',
       ao1: 'Some understanding of the text with general references. Some explained points but not always consistently developed.',
-      ao2: 'Some comment on writer\'s methods with some use of subject terminology. Some reference to effect on the reader.',
+      ao2: "Some comment on writer's methods with some use of subject terminology. Some reference to effect on the reader.",
       ao3: 'Some understanding of context with some links to the text.',
     },
     {
@@ -405,7 +403,7 @@ export const edexcelGuide: BoardExamGuide = {
       level: 1,
       descriptor: 'Simple, limited response',
       ao1: 'Simple, limited comment with little reference to the text. Response may be largely descriptive or narrative.',
-      ao2: 'Basic identification of writer\'s methods. Minimal or no use of subject terminology. Little reference to effect on the reader.',
+      ao2: "Basic identification of writer's methods. Minimal or no use of subject terminology. Little reference to effect on the reader.",
       ao3: 'Basic, minimal awareness of context.',
     },
   ],
@@ -474,7 +472,7 @@ export const edexcelGuide: BoardExamGuide = {
         'Vary sentence openings (adverbial, participial, one-word) and lengths (short for impact, long for description).',
         'Use the full punctuation range: semicolons, colons, dashes, ellipses, parenthetical commas.',
         'End with circularity — echo your opening image, phrase, or motif to create a satisfying structure.',
-        'AO6 (16 marks) is assessed on Edexcel\'s explicit SPaG grid — proofread your work and correct errors.',
+        "AO6 (16 marks) is assessed on Edexcel's explicit SPaG grid — proofread your work and correct errors.",
       ],
     },
     {
@@ -490,7 +488,7 @@ export const edexcelGuide: BoardExamGuide = {
       question: 'Language Paper 2, Q5–Q6 — Dual Transactional Writing (16 + 24 marks)',
       tips: [
         'Edexcel uniquely requires <strong>two</strong> writing tasks on Paper 2 — manage your time carefully between them.',
-        'Match your register precisely to each task\'s specified form, audience, and purpose.',
+        "Match your register precisely to each task's specified form, audience, and purpose.",
         'The shorter task (Q5, ~16 marks) should be focused and purposeful — do not over-elaborate.',
         'The longer task (Q6, ~24 marks) allows you to demonstrate sustained control of argument and rhetoric.',
         'Use rhetorical techniques (tricolon, anaphora, direct address, counter-argument) with confident control.',
@@ -501,7 +499,7 @@ export const edexcelGuide: BoardExamGuide = {
       question: 'Literature Paper 1 — Shakespeare (40 marks)',
       tips: [
         'The extract is printed, but you must also write about the whole play. Divide your response roughly 40/60 between extract and wider text.',
-        'Analyse Shakespeare\'s word-level choices: imagery, verse form, rhetorical devices, dramatic irony, use of prose vs. verse.',
+        "Analyse Shakespeare's word-level choices: imagery, verse form, rhetorical devices, dramatic irony, use of prose vs. verse.",
         'Select quotations <strong>judiciously</strong> — Edexcel specifically rewards quality of selection over quantity.',
         'Weave context (AO3) naturally into your analysis rather than bolting it on as a separate paragraph.',
         'The 4 SPaG marks reward accurate spelling of literary terms, clear expression, and correct quotation punctuation.',
@@ -553,84 +551,245 @@ export const edexcelGuide: BoardExamGuide = {
     {
       title: 'An Inspector Calls',
       author: 'J.B. Priestley',
-      themes: ['Social responsibility', 'Class', 'Gender', 'Generational conflict', 'Socialism vs. capitalism'],
+      themes: [
+        'Social responsibility',
+        'Class',
+        'Gender',
+        'Generational conflict',
+        'Socialism vs. capitalism',
+      ],
       context:
         'Written in 1945 but set in 1912, allowing Priestley to use dramatic irony to critique Edwardian complacency. Priestley was a committed socialist who used the play to advocate for collective responsibility in the post-war welfare state.',
       characters: [
-        { name: 'Inspector Goole', description: 'Mysterious, authoritative figure who represents conscience and social justice. His name echoes "ghoul", suggesting a supernatural or allegorical role.' },
-        { name: 'Mr Birling', description: 'Prosperous industrialist whose confident predictions about the Titanic and war are dramatically ironic. Represents capitalist self-interest and wilful ignorance.' },
-        { name: 'Sheila Birling', description: 'Begins as a frivolous young woman but undergoes the most significant moral transformation. Represents hope for generational change.' },
-        { name: 'Eric Birling', description: 'The youngest Birling, whose alcoholism and exploitation of Eva Smith reveal the darker side of privilege. Ultimately accepts responsibility.' },
-        { name: 'Mrs Birling', description: 'Cold, class-conscious matriarch who refuses to accept responsibility. Her charity work is exposed as hypocritical.' },
-        { name: 'Gerald Croft', description: 'Upper-class fiancé of Sheila whose affair with Daisy Renton reveals both genuine compassion and ultimate complicity in the class system.' },
+        {
+          name: 'Inspector Goole',
+          description:
+            'Mysterious, authoritative figure who represents conscience and social justice. His name echoes "ghoul", suggesting a supernatural or allegorical role.',
+        },
+        {
+          name: 'Mr Birling',
+          description:
+            'Prosperous industrialist whose confident predictions about the Titanic and war are dramatically ironic. Represents capitalist self-interest and wilful ignorance.',
+        },
+        {
+          name: 'Sheila Birling',
+          description:
+            'Begins as a frivolous young woman but undergoes the most significant moral transformation. Represents hope for generational change.',
+        },
+        {
+          name: 'Eric Birling',
+          description:
+            'The youngest Birling, whose alcoholism and exploitation of Eva Smith reveal the darker side of privilege. Ultimately accepts responsibility.',
+        },
+        {
+          name: 'Mrs Birling',
+          description:
+            'Cold, class-conscious matriarch who refuses to accept responsibility. Her charity work is exposed as hypocritical.',
+        },
+        {
+          name: 'Gerald Croft',
+          description:
+            'Upper-class fiancé of Sheila whose affair with Daisy Renton reveals both genuine compassion and ultimate complicity in the class system.',
+        },
       ],
       quotations: [
-        { quote: 'We don\'t live alone. We are members of one body. We are responsible for each other.', analysis: 'The Inspector\'s final speech encapsulates Priestley\'s socialist message. "Members of one body" echoes Christian and collectivist imagery, asserting interdependence against Birling\'s individualism.' },
-        { quote: 'If men will not learn that lesson, then they will be taught it in fire and blood and anguish.', analysis: 'A prophetic warning that gains power from dramatic irony — the audience knows two world wars followed 1912. "Fire and blood and anguish" uses a tricolon of increasingly visceral nouns.' },
-        { quote: 'But these girls aren\'t cheap labour — they\'re people.', analysis: 'Sheila\'s rebuke to her father marks her moral awakening. The dash creates a rhetorical pivot, contrasting Birling\'s economic view of workers with their humanity.' },
+        {
+          quote:
+            "We don't live alone. We are members of one body. We are responsible for each other.",
+          analysis:
+            "The Inspector's final speech encapsulates Priestley's socialist message. \"Members of one body\" echoes Christian and collectivist imagery, asserting interdependence against Birling's individualism.",
+        },
+        {
+          quote:
+            'If men will not learn that lesson, then they will be taught it in fire and blood and anguish.',
+          analysis:
+            'A prophetic warning that gains power from dramatic irony — the audience knows two world wars followed 1912. "Fire and blood and anguish" uses a tricolon of increasingly visceral nouns.',
+        },
+        {
+          quote: "But these girls aren't cheap labour — they're people.",
+          analysis:
+            "Sheila's rebuke to her father marks her moral awakening. The dash creates a rhetorical pivot, contrasting Birling's economic view of workers with their humanity.",
+        },
       ],
       examStrategy:
-        'For Edexcel, focus on Priestley\'s dramatic methods — staging, dramatic irony, the well-made play structure, and the Inspector as a dramatic device. The post-1914 question carries 40 marks and demands both extract analysis and whole-text knowledge. Memorise quotations from across the play and structure your essay thematically. Context should focus on the 1912/1945 dual setting and Priestley\'s political purpose.',
+        "For Edexcel, focus on Priestley's dramatic methods — staging, dramatic irony, the well-made play structure, and the Inspector as a dramatic device. The post-1914 question carries 40 marks and demands both extract analysis and whole-text knowledge. Memorise quotations from across the play and structure your essay thematically. Context should focus on the 1912/1945 dual setting and Priestley's political purpose.",
     },
     {
       title: 'A Christmas Carol',
       author: 'Charles Dickens',
-      themes: ['Redemption', 'Social injustice', 'Christmas and generosity', 'Isolation vs. community', 'Memory and regret'],
+      themes: [
+        'Redemption',
+        'Social injustice',
+        'Christmas and generosity',
+        'Isolation vs. community',
+        'Memory and regret',
+      ],
       context:
-        'Published in 1843 during a period of extreme poverty and inequality in Victorian England. Dickens was deeply influenced by visits to Ragged Schools and Manchester\'s industrial slums. The novella was a deliberate attempt to change public attitudes toward the poor.',
+        "Published in 1843 during a period of extreme poverty and inequality in Victorian England. Dickens was deeply influenced by visits to Ragged Schools and Manchester's industrial slums. The novella was a deliberate attempt to change public attitudes toward the poor.",
       characters: [
-        { name: 'Ebenezer Scrooge', description: 'A miserly, cold-hearted businessman who undergoes a profound transformation through supernatural visitation. His journey from isolation to generosity is the moral centre of the text.' },
-        { name: 'Bob Cratchit', description: 'Scrooge\'s underpaid clerk who embodies cheerful resilience despite poverty. His family — especially Tiny Tim — personalise the human cost of Scrooge\'s greed.' },
-        { name: 'Tiny Tim', description: 'Bob\'s disabled youngest son whose potential death serves as the emotional catalyst for Scrooge\'s transformation. Represents the vulnerable poor.' },
-        { name: 'Jacob Marley', description: 'Scrooge\'s dead business partner, bound by chains he "forged in life" through selfishness. His ghost serves as a warning of the consequences of greed.' },
-        { name: 'The Ghost of Christmas Present', description: 'A jovial, abundant spirit who reveals both celebration and suffering. Conceals the allegorical children Ignorance and Want beneath his robes.' },
+        {
+          name: 'Ebenezer Scrooge',
+          description:
+            'A miserly, cold-hearted businessman who undergoes a profound transformation through supernatural visitation. His journey from isolation to generosity is the moral centre of the text.',
+        },
+        {
+          name: 'Bob Cratchit',
+          description:
+            "Scrooge's underpaid clerk who embodies cheerful resilience despite poverty. His family — especially Tiny Tim — personalise the human cost of Scrooge's greed.",
+        },
+        {
+          name: 'Tiny Tim',
+          description:
+            "Bob's disabled youngest son whose potential death serves as the emotional catalyst for Scrooge's transformation. Represents the vulnerable poor.",
+        },
+        {
+          name: 'Jacob Marley',
+          description:
+            'Scrooge\'s dead business partner, bound by chains he "forged in life" through selfishness. His ghost serves as a warning of the consequences of greed.',
+        },
+        {
+          name: 'The Ghost of Christmas Present',
+          description:
+            'A jovial, abundant spirit who reveals both celebration and suffering. Conceals the allegorical children Ignorance and Want beneath his robes.',
+        },
       ],
       quotations: [
-        { quote: 'Are there no prisons? Are there no workhouses?', analysis: 'Scrooge\'s callous rhetorical questions echo the real arguments of Malthusian political economists. Dickens uses Scrooge to satirise the dehumanising attitude of the wealthy toward poverty.' },
-        { quote: 'I wear the chain I forged in life. I made it link by link, and yard by yard.', analysis: 'Marley\'s metaphor of the chain makes moral consequences tangible and physical. The repetition of "link by link, and yard by yard" creates a slow, relentless accumulation that mirrors a lifetime of selfish choices.' },
-        { quote: 'He was better than his word. He did everything he said, and infinitely more.', analysis: 'The narrator\'s summary of Scrooge\'s transformation uses the superlative "infinitely more" to emphasise the completeness of his redemption. The shift to present tense creates immediacy and universality.' },
+        {
+          quote: 'Are there no prisons? Are there no workhouses?',
+          analysis:
+            "Scrooge's callous rhetorical questions echo the real arguments of Malthusian political economists. Dickens uses Scrooge to satirise the dehumanising attitude of the wealthy toward poverty.",
+        },
+        {
+          quote: 'I wear the chain I forged in life. I made it link by link, and yard by yard.',
+          analysis:
+            'Marley\'s metaphor of the chain makes moral consequences tangible and physical. The repetition of "link by link, and yard by yard" creates a slow, relentless accumulation that mirrors a lifetime of selfish choices.',
+        },
+        {
+          quote: 'He was better than his word. He did everything he said, and infinitely more.',
+          analysis:
+            'The narrator\'s summary of Scrooge\'s transformation uses the superlative "infinitely more" to emphasise the completeness of his redemption. The shift to present tense creates immediacy and universality.',
+        },
       ],
       examStrategy:
-        'For Edexcel\'s 19th-century novel question (Paper 2, Section A, 40 marks), you will receive a printed extract and must write about both the extract and the whole text. Prioritise close language analysis (AO2) of Dickens\'s methods — his use of listing, personification, pathetic fallacy, and contrast. Context (AO3) should focus on Victorian attitudes to poverty, the Poor Law, and Dickens\'s social purpose. Memorise quotations from each Stave to demonstrate whole-text knowledge.',
+        "For Edexcel's 19th-century novel question (Paper 2, Section A, 40 marks), you will receive a printed extract and must write about both the extract and the whole text. Prioritise close language analysis (AO2) of Dickens's methods — his use of listing, personification, pathetic fallacy, and contrast. Context (AO3) should focus on Victorian attitudes to poverty, the Poor Law, and Dickens's social purpose. Memorise quotations from each Stave to demonstrate whole-text knowledge.",
     },
     {
       title: 'Romeo and Juliet',
       author: 'William Shakespeare',
-      themes: ['Love vs. hate', 'Fate and free will', 'Youth vs. age', 'Honour and violence', 'Light and dark imagery'],
+      themes: [
+        'Love vs. hate',
+        'Fate and free will',
+        'Youth vs. age',
+        'Honour and violence',
+        'Light and dark imagery',
+      ],
       context:
-        'Written c.1594–96, drawing on Arthur Brooke\'s narrative poem. Set in Verona, the play reflects Elizabethan concerns about family honour, patriarchal authority, and the disruptive power of passion. The Prologue\'s revelation of the lovers\' fate creates dramatic irony throughout.',
+        "Written c.1594–96, drawing on Arthur Brooke's narrative poem. Set in Verona, the play reflects Elizabethan concerns about family honour, patriarchal authority, and the disruptive power of passion. The Prologue's revelation of the lovers' fate creates dramatic irony throughout.",
       characters: [
-        { name: 'Romeo', description: 'Impulsive young Montague who transitions from Petrarchan infatuation with Rosaline to genuine passion for Juliet. His impetuousness drives the tragedy.' },
-        { name: 'Juliet', description: 'Begins as an obedient daughter but shows remarkable courage and intelligence. Her language matures from conventional imagery to bold, assertive rhetoric.' },
-        { name: 'Mercutio', description: 'Romeo\'s witty, cynical friend whose Queen Mab speech reveals imagination beneath his bravado. His death — "a plague o\' both your houses" — marks the play\'s tonal shift from comedy to tragedy.' },
-        { name: 'Tybalt', description: 'Juliet\'s fiery cousin, the "Prince of Cats", whose aggression and rigid adherence to honour catalyse the play\'s violence.' },
-        { name: 'Friar Lawrence', description: 'Well-intentioned but ultimately ineffective mediator whose secret schemes contribute to the tragic outcome. Represents the limitations of adult authority.' },
+        {
+          name: 'Romeo',
+          description:
+            'Impulsive young Montague who transitions from Petrarchan infatuation with Rosaline to genuine passion for Juliet. His impetuousness drives the tragedy.',
+        },
+        {
+          name: 'Juliet',
+          description:
+            'Begins as an obedient daughter but shows remarkable courage and intelligence. Her language matures from conventional imagery to bold, assertive rhetoric.',
+        },
+        {
+          name: 'Mercutio',
+          description:
+            "Romeo's witty, cynical friend whose Queen Mab speech reveals imagination beneath his bravado. His death — \"a plague o' both your houses\" — marks the play's tonal shift from comedy to tragedy.",
+        },
+        {
+          name: 'Tybalt',
+          description:
+            'Juliet\'s fiery cousin, the "Prince of Cats", whose aggression and rigid adherence to honour catalyse the play\'s violence.',
+        },
+        {
+          name: 'Friar Lawrence',
+          description:
+            'Well-intentioned but ultimately ineffective mediator whose secret schemes contribute to the tragic outcome. Represents the limitations of adult authority.',
+        },
       ],
       quotations: [
-        { quote: 'But soft, what light through yonder window breaks? It is the east, and Juliet is the sun.', analysis: 'Romeo\'s extended metaphor elevates Juliet to a cosmic force. "Soft" creates a hushed, reverential tone, while the sun imagery contrasts with the darkness of the feud and foreshadows the dawn that will repeatedly force the lovers apart.' },
-        { quote: 'My only love sprung from my only hate! Too early seen unknown, and known too late!', analysis: 'Juliet\'s rhyming couplet creates antithesis between "love" and "hate", "early" and "late", "unknown" and "known". The exclamatory tone conveys shock, while the paradox encapsulates the central conflict of the play.' },
-        { quote: 'A pair of star-crossed lovers take their life.', analysis: 'The Prologue\'s use of "star-crossed" introduces the motif of fate and celestial imagery that runs throughout. "Take their life" carries the double meaning of living their lives and ending them, establishing tragic inevitability.' },
+        {
+          quote:
+            'But soft, what light through yonder window breaks? It is the east, and Juliet is the sun.',
+          analysis:
+            'Romeo\'s extended metaphor elevates Juliet to a cosmic force. "Soft" creates a hushed, reverential tone, while the sun imagery contrasts with the darkness of the feud and foreshadows the dawn that will repeatedly force the lovers apart.',
+        },
+        {
+          quote:
+            'My only love sprung from my only hate! Too early seen unknown, and known too late!',
+          analysis:
+            'Juliet\'s rhyming couplet creates antithesis between "love" and "hate", "early" and "late", "unknown" and "known". The exclamatory tone conveys shock, while the paradox encapsulates the central conflict of the play.',
+        },
+        {
+          quote: 'A pair of star-crossed lovers take their life.',
+          analysis:
+            'The Prologue\'s use of "star-crossed" introduces the motif of fate and celestial imagery that runs throughout. "Take their life" carries the double meaning of living their lives and ending them, establishing tragic inevitability.',
+        },
       ],
       examStrategy:
-        'For Edexcel\'s Shakespeare question (Paper 1, Section A, 40 marks), you receive a printed extract and must write about both the extract and the whole play. Begin with close analysis of the extract — word-level choices, imagery, verse form, dramatic techniques — then broaden to the whole play. Weave context naturally into your analysis. Select quotations judiciously: a few well-chosen, deeply analysed quotations will outscore many superficial ones.',
+        "For Edexcel's Shakespeare question (Paper 1, Section A, 40 marks), you receive a printed extract and must write about both the extract and the whole play. Begin with close analysis of the extract — word-level choices, imagery, verse form, dramatic techniques — then broaden to the whole play. Weave context naturally into your analysis. Select quotations judiciously: a few well-chosen, deeply analysed quotations will outscore many superficial ones.",
     },
     {
       title: 'Macbeth',
       author: 'William Shakespeare',
-      themes: ['Ambition', 'Guilt and conscience', 'Supernatural', 'Masculinity and gender', 'Tyranny and kingship', 'Appearance vs. reality'],
+      themes: [
+        'Ambition',
+        'Guilt and conscience',
+        'Supernatural',
+        'Masculinity and gender',
+        'Tyranny and kingship',
+        'Appearance vs. reality',
+      ],
       context:
         'Written c.1606 for James I, who was fascinated by witchcraft and claimed descent from Banquo. The play reflects Jacobean anxieties about regicide (following the Gunpowder Plot of 1605), the Divine Right of Kings, and the moral consequences of unchecked ambition.',
       characters: [
-        { name: 'Macbeth', description: 'A valiant warrior whose "vaulting ambition" leads him from loyalty to regicide, tyranny, and destruction. His soliloquies reveal a deeply conflicted conscience that makes him tragic rather than villainous.' },
-        { name: 'Lady Macbeth', description: 'Ambitious, manipulative, and rhetorically powerful in the early acts, she subverts gender expectations by calling on dark spirits to "unsex" her. Her descent into guilt-ridden madness mirrors and inverts Macbeth\'s arc.' },
-        { name: 'The Witches', description: 'Ambiguous figures who speak in trochaic tetrameter and paradox ("fair is foul"). They catalyse the action but leave open the question of whether they cause Macbeth\'s choices or merely predict them.' },
-        { name: 'Banquo', description: 'Macbeth\'s loyal friend and foil, who resists the Witches\' temptation. His ghost symbolises Macbeth\'s guilt and the impossibility of escaping consequence.' },
-        { name: 'Macduff', description: 'The moral avenger who ultimately kills Macbeth. His grief at his family\'s murder ("He has no children") is one of the play\'s most powerful emotional moments.' },
+        {
+          name: 'Macbeth',
+          description:
+            'A valiant warrior whose "vaulting ambition" leads him from loyalty to regicide, tyranny, and destruction. His soliloquies reveal a deeply conflicted conscience that makes him tragic rather than villainous.',
+        },
+        {
+          name: 'Lady Macbeth',
+          description:
+            'Ambitious, manipulative, and rhetorically powerful in the early acts, she subverts gender expectations by calling on dark spirits to "unsex" her. Her descent into guilt-ridden madness mirrors and inverts Macbeth\'s arc.',
+        },
+        {
+          name: 'The Witches',
+          description:
+            'Ambiguous figures who speak in trochaic tetrameter and paradox ("fair is foul"). They catalyse the action but leave open the question of whether they cause Macbeth\'s choices or merely predict them.',
+        },
+        {
+          name: 'Banquo',
+          description:
+            "Macbeth's loyal friend and foil, who resists the Witches' temptation. His ghost symbolises Macbeth's guilt and the impossibility of escaping consequence.",
+        },
+        {
+          name: 'Macduff',
+          description:
+            'The moral avenger who ultimately kills Macbeth. His grief at his family\'s murder ("He has no children") is one of the play\'s most powerful emotional moments.',
+        },
       ],
       quotations: [
-        { quote: 'Look like th\' innocent flower, But be the serpent under \'t.', analysis: 'Lady Macbeth\'s imperative uses the biblical serpent image to align deception with the Fall. The contrast between "flower" and "serpent" encapsulates the play\'s theme of appearance vs. reality. The enjambment across the line break mirrors the hidden danger.' },
-        { quote: 'Is this a dagger which I see before me, The handle toward my hand?', analysis: 'Macbeth\'s soliloquy uses a rhetorical question that reveals his psychological torment. The hallucinated dagger — "handle toward my hand" — with its alliterative pull suggests the murder is both invitation and compulsion.' },
-        { quote: 'Out, damned spot! Out, I say!', analysis: 'Lady Macbeth\'s sleepwalking exclamation reduces her earlier commanding rhetoric to desperate, fragmented utterance. The irremovable "spot" of blood symbolises guilt that cannot be washed away — a physical manifestation of moral stain.' },
+        {
+          quote: "Look like th' innocent flower, But be the serpent under 't.",
+          analysis:
+            'Lady Macbeth\'s imperative uses the biblical serpent image to align deception with the Fall. The contrast between "flower" and "serpent" encapsulates the play\'s theme of appearance vs. reality. The enjambment across the line break mirrors the hidden danger.',
+        },
+        {
+          quote: 'Is this a dagger which I see before me, The handle toward my hand?',
+          analysis:
+            'Macbeth\'s soliloquy uses a rhetorical question that reveals his psychological torment. The hallucinated dagger — "handle toward my hand" — with its alliterative pull suggests the murder is both invitation and compulsion.',
+        },
+        {
+          quote: 'Out, damned spot! Out, I say!',
+          analysis:
+            'Lady Macbeth\'s sleepwalking exclamation reduces her earlier commanding rhetoric to desperate, fragmented utterance. The irremovable "spot" of blood symbolises guilt that cannot be washed away — a physical manifestation of moral stain.',
+        },
       ],
       examStrategy:
         'For Edexcel\'s Shakespeare question, focus on close language analysis of the extract before broadening to the whole play. Macbeth is rich in imagery (blood, darkness, clothing, disease) — track these patterns across the text. Context should centre on Jacobean attitudes to regicide, the supernatural, and gender roles, but always link context to the effect on the audience rather than presenting it as standalone knowledge. The marking guide rewards "judicious" quotation — select the most revealing phrases and analyse them in depth.',
@@ -644,7 +803,7 @@ export const edexcelGuide: BoardExamGuide = {
       poet: 'Christina Rossetti',
       era: 'Victorian',
       themes: ['Betrayal', 'Jealousy', 'Class', 'Motherhood'],
-      topComparison: 'The Farmer\'s Bride',
+      topComparison: "The Farmer's Bride",
       formAnalysis:
         'Ballad form with a regular ABAB rhyme scheme, giving the poem a song-like, folk quality that contrasts with its bitter content.',
       keyQuotation: '"Why did a great lord find me out, / And praise my flaxen hair?"',
@@ -666,8 +825,9 @@ export const edexcelGuide: BoardExamGuide = {
       themes: ['War trauma', 'Love', 'Physical and emotional scars', 'Intimacy'],
       topComparison: 'Poppies',
       formAnalysis:
-        'Series of couplets tracing the body from surface to depth, mirroring the wife\'s gradual discovery of her husband\'s hidden injuries.',
-      keyQuotation: '"and feel the hurt / of his survey-Loss"',
+        "Series of couplets tracing the body from surface to depth, mirroring the wife's gradual discovery of her husband's hidden injuries.",
+      // VERIFY: keyQuotation withheld — the previous text contained an unverifiable corruption. Restore an exact phrase from Simon Armitage's "The Manhunt" only against a verified primary source (e.g. The Not Dead, Pomona, 2008).
+      keyQuotation: '[Quotation withheld pending source verification.]',
     },
     {
       title: 'Hour',
@@ -677,16 +837,17 @@ export const edexcelGuide: BoardExamGuide = {
       topComparison: 'To His Coy Mistress',
       formAnalysis:
         'Sonnet form — subverts Petrarchan conventions by celebrating a single hour rather than eternal devotion. The form itself becomes an argument about the preciousness of limited time.',
-      keyQuotation: '"Love\'s time\'s beggar, but even a single hour, / bright as a dropped coin, makes love rich"',
+      keyQuotation:
+        '"Love\'s time\'s beggar, but even a single hour, / bright as a dropped coin, makes love rich"',
     },
     {
       title: 'My Last Duchess',
       poet: 'Robert Browning',
       era: 'Victorian',
       themes: ['Jealousy', 'Power', 'Possession', 'Art and control'],
-      topComparison: 'The Farmer\'s Bride',
+      topComparison: "The Farmer's Bride",
       formAnalysis:
-        'Dramatic monologue in heroic couplets with heavy enjambment, reflecting the Duke\'s controlling nature masked by conversational fluency.',
+        "Dramatic monologue in heroic couplets with heavy enjambment, reflecting the Duke's controlling nature masked by conversational fluency.",
       keyQuotation: '"I gave commands; / Then all smiles stopped together"',
     },
     {
@@ -696,8 +857,9 @@ export const edexcelGuide: BoardExamGuide = {
       themes: ['Conflict', 'Guilt', 'Apathy', 'Suffering vs. comfort'],
       topComparison: 'Poppies',
       formAnalysis:
-        'Four regular sestets with a near-rhyme scheme. The controlled form mirrors the photographer\'s professional detachment, which is gradually undermined by emotion.',
-      keyQuotation: '"A hundred agonies in black and white / from which his editor will pick out five or six"',
+        "Four regular sestets with a near-rhyme scheme. The controlled form mirrors the photographer's professional detachment, which is gradually undermined by emotion.",
+      keyQuotation:
+        '"A hundred agonies in black and white / from which his editor will pick out five or six"',
     },
     {
       title: 'Poppies',
@@ -707,7 +869,8 @@ export const edexcelGuide: BoardExamGuide = {
       topComparison: 'The Manhunt',
       formAnalysis:
         'Free verse with domestic imagery woven through military references. No regular rhyme — reflecting the disorientation of grief.',
-      keyQuotation: '"I traced / the gilt lettering on the war memorial, / leaning against it like a wishbone"',
+      keyQuotation:
+        '"I traced / the gilt lettering on the war memorial, / leaning against it like a wishbone"',
     },
     {
       title: 'Exposure',
@@ -716,7 +879,7 @@ export const edexcelGuide: BoardExamGuide = {
       themes: ['Suffering', 'Futility', 'Nature as enemy', 'Inaction'],
       topComparison: 'Futility',
       formAnalysis:
-        'Eight stanzas of five lines each, with a truncated final line. Pararhyme creates an unsettling, unresolved sound that mirrors the soldiers\' discomfort.',
+        "Eight stanzas of five lines each, with a truncated final line. Pararhyme creates an unsettling, unresolved sound that mirrors the soldiers' discomfort.",
       keyQuotation: '"But nothing happens"',
     },
     {
@@ -726,7 +889,7 @@ export const edexcelGuide: BoardExamGuide = {
       themes: ['Duty', 'Heroism', 'Military blunders', 'Honour'],
       topComparison: 'Bayonet Charge',
       formAnalysis:
-        'Dactylic rhythm imitates the galloping horses. Anaphora and repetition create a relentless, driving momentum.',
+        'Predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") — the galloping rhythm imitates horses charging. End-stopped lines, anaphora and repetition create relentless, driving momentum across six irregular stanzas.',
       keyQuotation: '"Theirs not to reason why, / Theirs but to do and die"',
     },
     {
@@ -736,7 +899,7 @@ export const edexcelGuide: BoardExamGuide = {
       themes: ['Seduction', 'Time', 'Mortality', 'Carpe diem'],
       topComparison: 'Hour',
       formAnalysis:
-        'Three-part argument (if/but/therefore) in rhyming couplets. Iambic tetrameter drives the poem\'s persuasive momentum.',
+        "Three-part argument (if/but/therefore) in rhyming couplets. Iambic tetrameter drives the poem's persuasive momentum.",
       keyQuotation: '"But at my back I always hear / Time\'s wingèd chariot hurrying near"',
     },
   ],
@@ -752,4 +915,4 @@ export const edexcelGuide: BoardExamGuide = {
     '"Judicious" quotation is specifically rewarded in the marking guide: Edexcel\'s top-band descriptors emphasise quality of textual selection over quantity, rewarding students who choose the most revealing quotations rather than the most copious.',
     'Both domestic GCSE and International GCSE available: Edexcel is unique in offering both 1EN0/1ET0 (UK) and 4EA1 (international) pathways, giving schools worldwide access to Pearson qualifications.',
   ],
-};
+}

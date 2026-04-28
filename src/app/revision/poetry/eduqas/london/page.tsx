@@ -15,7 +15,7 @@ const london: PoemData = {
   poet: 'William Blake',
   lines: [
     {
-      text: 'I wander thro\' each charter\'d street,',
+      text: "I wander thro' each charter'd street,",
       annotations: [
         {
           type: 'Diction',
@@ -30,7 +30,7 @@ const london: PoemData = {
       ],
     },
     {
-      text: 'Near where the charter\'d Thames does flow.',
+      text: "Near where the charter'd Thames does flow.",
       annotations: [
         {
           type: 'Repetition',
@@ -95,7 +95,7 @@ const london: PoemData = {
       ],
     },
     {
-      text: 'The mind-forg\'d manacles I hear.',
+      text: "The mind-forg'd manacles I hear.",
       annotations: [
         {
           type: 'Metaphor',
@@ -149,7 +149,7 @@ const london: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: 'A shocking visual: the soldier\'s sigh becomes literal blood staining the palace. The monarchy is responsible for soldiers\' deaths in foreign wars. Blake makes the king\'s guilt visible.',
+          note: "A shocking visual: the soldier's sigh becomes literal blood staining the palace. The monarchy is responsible for soldiers' deaths in foreign wars. Blake makes the king's guilt visible.",
           color: '#10b981',
         },
         {
@@ -160,7 +160,7 @@ const london: PoemData = {
       ],
     },
     {
-      text: 'But most thro\' midnight streets I hear',
+      text: "But most thro' midnight streets I hear",
       annotations: [
         {
           type: 'Time shift',
@@ -184,7 +184,7 @@ const london: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: 'The harlot\'s curse "blasts" (destroys) the newborn\'s tear - meaning the child is born infected with venereal disease. The prostitute\'s suffering passes directly to the next generation.',
+          note: "The harlot's curse \"blasts\" (destroys) the newborn's tear - meaning the child is born infected with venereal disease. The prostitute's suffering passes directly to the next generation.",
           color: '#10b981',
         },
       ],
@@ -199,7 +199,7 @@ const london: PoemData = {
         },
         {
           type: 'Key quote',
-          note: 'The poem ends with this devastating oxymoron. London\'s corruption infects everything, even the most sacred institutions.',
+          note: "The poem ends with this devastating oxymoron. London's corruption infects everything, even the most sacred institutions.",
           color: '#f59e0b',
         },
       ],
@@ -249,7 +249,7 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
 
   keyQuotes: [
     {
-      quote: 'each charter\'d street ... charter\'d Thames',
+      quote: "each charter'd street ... charter'd Thames",
       analysis:
         'The repetition of "charter\'d" suggests total control. Streets being owned is one thing, but the Thames - a natural river - being "charter\'d" shows the absurdity. Even nature has been claimed by the wealthy. Blake protests against the privatisation of common space.',
       themes: ['Oppression', 'Power', 'Capitalism'],
@@ -261,7 +261,7 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
       themes: ['Suffering', 'Universal misery', 'Oppression'],
     },
     {
-      quote: 'The mind-forg\'d manacles I hear',
+      quote: "The mind-forg'd manacles I hear",
       analysis:
         'The most famous line in the poem. "Mind-forg\'d manacles" is a metaphor for psychological imprisonment - Londoners have internalised their oppression and accepted it as natural. They forge their own chains. This is more devastating than physical chains because it cannot be removed by revolution alone - it requires a change of consciousness.',
       themes: ['Mental imprisonment', 'Oppression', 'Powerlessness'],
@@ -275,7 +275,7 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
     {
       quote: 'Runs in blood down Palace walls',
       analysis:
-        'A shocking visual: the soldier\'s sigh becomes literal blood staining the palace. Blake makes the monarchy\'s guilt physical and visible. The image foreshadows revolution - blood on palace walls echoes the French Revolution Blake supported.',
+        "A shocking visual: the soldier's sigh becomes literal blood staining the palace. Blake makes the monarchy's guilt physical and visible. The image foreshadows revolution - blood on palace walls echoes the French Revolution Blake supported.",
       themes: ['War', 'Monarchy', 'Revolution'],
     },
     {
@@ -308,9 +308,9 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
     },
     {
       device: 'Metaphor',
-      example: 'The mind-forg\'d manacles I hear',
+      example: "The mind-forg'd manacles I hear",
       effect:
-        'Blake\'s most famous metaphor describes mental imprisonment. The chains are not external but internal - Londoners have created their own oppression by accepting the system. This makes the suffering harder to escape than literal chains, because revolution alone cannot break it.',
+        "Blake's most famous metaphor describes mental imprisonment. The chains are not external but internal - Londoners have created their own oppression by accepting the system. This makes the suffering harder to escape than literal chains, because revolution alone cannot break it.",
       lineRef: 7,
     },
     {
@@ -324,7 +324,7 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
       device: 'Oxymoron',
       example: 'Marriage hearse',
       effect:
-        'The poem\'s devastating closing image. Marriage (life, love, hope) is paired with hearse (death, ending). The oxymoron captures how London\'s corruption infects even the most sacred institutions. It leaves the reader with a permanent jolt of disgust.',
+        "The poem's devastating closing image. Marriage (life, love, hope) is paired with hearse (death, ending). The oxymoron captures how London's corruption infects even the most sacred institutions. It leaves the reader with a permanent jolt of disgust.",
       lineRef: 15,
     },
     {
@@ -336,7 +336,7 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
     },
     {
       device: 'Repetition',
-      example: 'charter\'d street ... charter\'d Thames / marks of weakness, marks of woe',
+      example: "charter'd street ... charter'd Thames / marks of weakness, marks of woe",
       effect:
         'Heavy repetition creates a hammering, oppressive rhythm. The reader cannot escape the words just as Londoners cannot escape suffering. "Charter\'d" repeated emphasises that even nature has been controlled.',
       lineRef: 1,
@@ -379,22 +379,196 @@ const comparisons = [
 ]
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'lon-1', question: 'What does "charter\'d" suggest about London?', type: 'multiple-choice', options: ['The streets are well-maintained', 'Everything is controlled, owned, and commercialised', 'The streets are full of tourists', 'London is free'], correctIndex: 1, explanation: 'Blake uses "charter\'d" to suggest even streets and the Thames are controlled. Freedom is an illusion.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'lon-2', question: 'What are "mind-forg\'d manacles"?', type: 'multiple-choice', options: ['Physical chains', 'Psychological chains — people imprisoned by acceptance of oppression', 'Bracelets', 'Laws'], correctIndex: 1, explanation: 'The chains are mental — people have internalised their oppression and accepted it as normal.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'lon-3', question: 'What institutions does Blake attack?', type: 'multiple-choice', options: ['Schools and hospitals', 'The Church and the monarchy', 'Factories and shops', 'The army'], correctIndex: 1, explanation: 'Blake attacks the Church for ignoring child chimney sweeps and the monarchy for sending soldiers to die.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'lon-4', question: 'What is the oxymoron "Marriage hearse"?', type: 'multiple-choice', options: ['A wedding tradition', 'Love and death fused — corruption has poisoned every aspect of life', 'A funeral procession', 'A type of carriage'], correctIndex: 1, explanation: 'Marriage (love) combined with hearse (death) shows corruption has destroyed even sacred institutions.', topic: 'Language', difficulty: 'higher' },
-  { id: 'lon-5', question: 'What dominates stanza 2?', type: 'multiple-choice', options: ['Rhyming couplets', 'Anaphora — "In every" repeated four times', 'A volta', 'Lack of punctuation'], correctIndex: 1, explanation: 'The repetition creates overwhelming, cumulative effect making suffering feel universal.', topic: 'Structure', difficulty: 'higher' },
-  { id: 'lon-6', question: 'What does "Runs in blood down Palace walls" suggest?', type: 'multiple-choice', options: ['The Palace is being painted', 'Blake directly blames the monarchy for soldiers\' deaths', 'Soldiers are protecting the Palace', 'The Palace is under renovation'], correctIndex: 1, explanation: 'Blood on "Palace walls" makes the monarchy\'s responsibility for death undeniable.', topic: 'Language', difficulty: 'higher' },
-  { id: 'lon-7', question: 'When was the poem published?', type: 'multiple-choice', options: ['1818', '1794, during the Industrial Revolution', '1850', '1914'], correctIndex: 1, explanation: 'Published in Songs of Experience (1794) during the Industrial Revolution and aftermath of the French Revolution.', topic: 'Context', difficulty: 'higher' },
-  { id: 'lon-8', question: 'What metre does Blake use?', type: 'multiple-choice', options: ['Free verse', 'Iambic tetrameter — steady marching rhythm', 'Iambic pentameter', 'Anapaestic'], correctIndex: 1, explanation: 'The four-beat rhythm sounds like footsteps, reinforcing relentless oppression.', topic: 'Structure', difficulty: 'higher' },
-  { id: 'lon-9', question: 'How does the cyclical structure reinforce the message?', type: 'multiple-choice', options: ['London is improving', 'Suffering repeats endlessly from generation to generation', 'There is resolution', 'The streets are circular'], correctIndex: 1, explanation: 'The poem begins with a baby\'s cry and ends with a new-born infant\'s tear — suffering passes from generation to generation.', topic: 'Structure', difficulty: 'grade-9' },
-  { id: 'lon-10', question: 'Which theme is most central to the poem?', type: 'multiple-choice', options: ['Nature\'s beauty', 'Institutional oppression and its effects on ordinary people', 'Romantic love', 'Travel'], correctIndex: 1, explanation: 'The poem attacks every level of institutional power — commercial, religious, royal — and shows how they destroy innocence and freedom.', topic: 'Themes', difficulty: 'grade-9' },
+  {
+    id: 'lon-1',
+    question: 'What does "charter\'d" suggest about London?',
+    type: 'multiple-choice',
+    options: [
+      'The streets are well-maintained',
+      'Everything is controlled, owned, and commercialised',
+      'The streets are full of tourists',
+      'London is free',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Blake uses "charter\'d" to suggest even streets and the Thames are controlled. Freedom is an illusion.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'lon-2',
+    question: 'What are "mind-forg\'d manacles"?',
+    type: 'multiple-choice',
+    options: [
+      'Physical chains',
+      'Psychological chains — people imprisoned by acceptance of oppression',
+      'Bracelets',
+      'Laws',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The chains are mental — people have internalised their oppression and accepted it as normal.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'lon-3',
+    question: 'What institutions does Blake attack?',
+    type: 'multiple-choice',
+    options: [
+      'Schools and hospitals',
+      'The Church and the monarchy',
+      'Factories and shops',
+      'The army',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Blake attacks the Church for ignoring child chimney sweeps and the monarchy for sending soldiers to die.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'lon-4',
+    question: 'What is the oxymoron "Marriage hearse"?',
+    type: 'multiple-choice',
+    options: [
+      'A wedding tradition',
+      'Love and death fused — corruption has poisoned every aspect of life',
+      'A funeral procession',
+      'A type of carriage',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Marriage (love) combined with hearse (death) shows corruption has destroyed even sacred institutions.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'lon-5',
+    question: 'What dominates stanza 2?',
+    type: 'multiple-choice',
+    options: [
+      'Rhyming couplets',
+      'Anaphora — "In every" repeated four times',
+      'A volta',
+      'Lack of punctuation',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The repetition creates overwhelming, cumulative effect making suffering feel universal.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'lon-6',
+    question: 'What does "Runs in blood down Palace walls" suggest?',
+    type: 'multiple-choice',
+    options: [
+      'The Palace is being painted',
+      "Blake directly blames the monarchy for soldiers' deaths",
+      'Soldiers are protecting the Palace',
+      'The Palace is under renovation',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Blood on "Palace walls" makes the monarchy\'s responsibility for death undeniable.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'lon-7',
+    question: 'When was the poem published?',
+    type: 'multiple-choice',
+    options: ['1818', '1794, during the Industrial Revolution', '1850', '1914'],
+    correctIndex: 1,
+    explanation:
+      'Published in Songs of Experience (1794) during the Industrial Revolution and aftermath of the French Revolution.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'lon-8',
+    question: 'What metre does Blake use?',
+    type: 'multiple-choice',
+    options: [
+      'Free verse',
+      'Iambic tetrameter — steady marching rhythm',
+      'Iambic pentameter',
+      'Anapaestic',
+    ],
+    correctIndex: 1,
+    explanation: 'The four-beat rhythm sounds like footsteps, reinforcing relentless oppression.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'lon-9',
+    question: 'How does the cyclical structure reinforce the message?',
+    type: 'multiple-choice',
+    options: [
+      'London is improving',
+      'Suffering repeats endlessly from generation to generation',
+      'There is resolution',
+      'The streets are circular',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The poem begins with a baby's cry and ends with a new-born infant's tear — suffering passes from generation to generation.",
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'lon-10',
+    question: 'Which theme is most central to the poem?',
+    type: 'multiple-choice',
+    options: [
+      "Nature's beauty",
+      'Institutional oppression and its effects on ordinary people',
+      'Romantic love',
+      'Travel',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The poem attacks every level of institutional power — commercial, religious, royal — and shows how they destroy innocence and freedom.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'London explores corruption of power, suffering of ordinary people, and loss of innocence in an industrialised city.', keyPoints: ['Power corrupts — Church, monarchy, and commercial interests cause suffering', 'Oppression is both external and internal ("mind-forg\'d manacles")', 'Innocence destroyed — children suffer from birth', 'Cyclical suffering repeats across generations'] },
-  { topic: 'Language & Imagery', summary: 'Blake uses metaphor, repetition, oxymoron, and visceral imagery to create unrelenting suffering.', keyPoints: ['"Mind-forg\'d manacles" — psychological chains', '"Marriage hearse" — oxymoron fusing love with death', '"Runs in blood down Palace walls" — monarchy blamed', 'Semantic field of suffering throughout'] },
-  { topic: 'Structure & Form', summary: 'Four quatrains in ABAB rhyme with iambic tetrameter — rigid structure mirrors charter\'d restrictions.', keyPoints: ['Regular ABAB rhyme — form as constrained as the city', 'Anaphora in stanza 2 — overwhelming cumulative effect', '"But most" signals volta to darkest imagery', 'First-person narrator as eyewitness'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      'London explores corruption of power, suffering of ordinary people, and loss of innocence in an industrialised city.',
+    keyPoints: [
+      'Power corrupts — Church, monarchy, and commercial interests cause suffering',
+      'Oppression is both external and internal ("mind-forg\'d manacles")',
+      'Innocence destroyed — children suffer from birth',
+      'Cyclical suffering repeats across generations',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary:
+      'Blake uses metaphor, repetition, oxymoron, and visceral imagery to create unrelenting suffering.',
+    keyPoints: [
+      '"Mind-forg\'d manacles" — psychological chains',
+      '"Marriage hearse" — oxymoron fusing love with death',
+      '"Runs in blood down Palace walls" — monarchy blamed',
+      'Semantic field of suffering throughout',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary:
+      "Four quatrains in ABAB rhyme with iambic tetrameter — rigid structure mirrors charter'd restrictions.",
+    keyPoints: [
+      'Regular ABAB rhyme — form as constrained as the city',
+      'Anaphora in stanza 2 — overwhelming cumulative effect',
+      '"But most" signals volta to darkest imagery',
+      'First-person narrator as eyewitness',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -412,11 +586,11 @@ export default function LondonEduqasPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Eduqas Poetry", url: "https://theenglishhub.app/revision/poetry/eduqas" },
-          { name: "London", url: "https://theenglishhub.app/revision/poetry/eduqas/london" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
+          { name: 'London', url: 'https://theenglishhub.app/revision/poetry/eduqas/london' },
         ]}
       />
       <div>
@@ -430,18 +604,26 @@ export default function LondonEduqasPage() {
           Back to Eduqas Poetry
         </Button>
 
+        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
+          <p className="font-semibold mb-1">Legacy anthology notice</p>
+          <p className="text-amber-100/90 leading-relaxed">
+            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
+            does not include this poem. The content remains as a study reference.
+          </p>
+        </div>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
             <BookOpen className="size-5 text-clay-600" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              London
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">London</h1>
             <p className="text-body-sm text-muted-foreground">
               William Blake &middot; Eduqas Poetry Anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Eduqas</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              Eduqas
+            </Badge>
           </div>
         </div>
       </div>
@@ -465,9 +647,7 @@ export default function LondonEduqasPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Strong Eduqas pairings for comparison questions involving London.
@@ -484,9 +664,7 @@ export default function LondonEduqasPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span
@@ -503,10 +681,10 @@ export default function LondonEduqasPage() {
       </section>
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        Poem text is reproduced for the purpose of private study and educational
-        criticism under UK fair-dealing provisions (Copyright, Designs and
-        Patents Act 1988, s.30). No commercial use is intended. All quotations
-        remain the intellectual property of the respective rights holders.
+        Poem text is reproduced for the purpose of private study and educational criticism under UK
+        fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial use
+        is intended. All quotations remain the intellectual property of the respective rights
+        holders.
       </footer>
     </div>
   )

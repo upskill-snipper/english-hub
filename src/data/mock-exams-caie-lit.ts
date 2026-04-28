@@ -1,31 +1,31 @@
 // @ts-nocheck
 export interface MockExamPaper {
-  id: string;
-  title: string;
-  board: string;
-  subject: string;
-  tier?: string;
-  duration: number;
-  totalMarks: number;
-  sections: MockExamSection[];
+  id: string
+  title: string
+  board: string
+  subject: string
+  tier?: string
+  duration: number
+  totalMarks: number
+  sections: MockExamSection[]
 }
 
 export interface MockExamSection {
-  id: string;
-  title: string;
-  instructions: string;
-  questions: MockExamQuestion[];
+  id: string
+  title: string
+  instructions: string
+  questions: MockExamQuestion[]
 }
 
 export interface MockExamQuestion {
-  id: string;
-  questionNumber: number;
-  marks: number;
-  questionText: string;
-  extract?: string;
-  bulletPoints?: string[];
-  markScheme: string;
-  modelAnswer?: string;
+  id: string
+  questionNumber: number
+  marks: number
+  questionText: string
+  extract?: string
+  bulletPoints?: string[]
+  markScheme: string
+  modelAnswer?: string
 }
 
 export const caieLitMockExams: MockExamPaper[] = [
@@ -40,19 +40,21 @@ export const caieLitMockExams: MockExamPaper[] = [
       {
         id: 'section-a',
         title: 'Section A: Poetry',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on one poem from the specified anthology.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on one poem from the specified anthology.',
         questions: [
           {
             id: 'q1-poetry-a',
             questionNumber: 1,
             marks: 25,
-            questionText: 'Compare how poets present the theme of love in two poems from the Songs of Ourselves anthology. You should consider language, structure, and poetic techniques in your answer.',
+            questionText:
+              'Compare how poets present the theme of love in two poems from the Songs of Ourselves anthology. You should consider language, structure, and poetic techniques in your answer.',
             bulletPoints: [
               'Consider the emotional intensity of love in each poem',
               'Explore the use of imagery and metaphor',
-              'Examine how structure supports the poem\'s meaning',
-              'Analyse the poets\' use of sound devices such as alliteration and assonance',
-              'Discuss the historical and cultural contexts of each poem'
+              "Examine how structure supports the poem's meaning",
+              "Analyse the poets' use of sound devices such as alliteration and assonance",
+              'Discuss the historical and cultural contexts of each poem',
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -77,19 +79,20 @@ Barrett Browning's volta in the final couplet, "And, if God choose, I shall but 
 
 The formal difference proves significant: Byron's stanza creates visual and spatial presence ("She walks"), while Barrett Browning's sonnet creates abstract immensity ("How do I love thee?"). Byron's metric regularity suggests equilibrium; Barrett Browning's rising tide of emotion in the sestet suggests escalating intensity. Yet both poets ultimately suggest love's ineffable quality—the inadequacy of language to capture love's essence. Byron achieves this through paradox and condensed imagery; Barrett Browning achieves this through accumulating abstractions that exceed quantification.
 
-Both poems reflect their historical moments: Byron's Romantic aesthetics privilege visual beauty and emotional immediacy; Barrett Browning's Victorian context emphasizes emotional depth and spiritual transcendence. Yet both ultimately articulate the same philosophical position: love transcends ordinary language and perception, demanding new linguistic and formal strategies for its articulation.`
+Both poems reflect their historical moments: Byron's Romantic aesthetics privilege visual beauty and emotional immediacy; Barrett Browning's Victorian context emphasizes emotional depth and spiritual transcendence. Yet both ultimately articulate the same philosophical position: love transcends ordinary language and perception, demanding new linguistic and formal strategies for its articulation.`,
           },
           {
             id: 'q2-poetry-a',
             questionNumber: 2,
             marks: 25,
-            questionText: 'Explore how a poet from the anthology presents conflict or tension. Consider the poet\'s use of language and structure in your response.',
+            questionText:
+              "Explore how a poet from the anthology presents conflict or tension. Consider the poet's use of language and structure in your response.",
             bulletPoints: [
               'Identify the nature of the conflict (external, internal, social)',
               'Analyse how language choices intensify conflict',
               'Consider the structural choices and their effect',
               'Discuss how the poem resolves or leaves conflict unresolved',
-              'Evaluate the significance of the conflict for the poem\'s meaning'
+              "Evaluate the significance of the conflict for the poem's meaning",
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -112,26 +115,28 @@ Structurally, the poem's interlocking tercets (ABA BCB CDC) create a claustropho
 
 The final stanza's structure proves crucial: the haunting repetition, "But nothing happens," appears multiple times, accumulating meaning through redundancy. "Nothing happens" articulates the deepest conflict: soldiers face annihilation not through heroic combat but through slow erosion by indifferent natural forces. This "nothing" proves devastating precisely because it lacks dramatic content or heroic narrative. The poem refuses conventional conflict resolution; tension remains unresolved to mirror the historical reality of trench warfare's grinding attrition.
 
-Owen's method—creating conflict between soldiers' expectations (combat, heroic action) and reality (exposure, waiting, diminishment)—uses formal innovation to embody meaning. The poem's structure doesn't resolve conflict; it enacts perpetual irresolution, making readers experience the psychological toll of enduring without resolution. The final repeated "But nothing happens" becomes increasingly hollow through repetition, suggesting how "nothing" paradoxically becomes everything when confronted repeatedly.`
-          }
-        ]
+Owen's method—creating conflict between soldiers' expectations (combat, heroic action) and reality (exposure, waiting, diminishment)—uses formal innovation to embody meaning. The poem's structure doesn't resolve conflict; it enacts perpetual irresolution, making readers experience the psychological toll of enduring without resolution. The final repeated "But nothing happens" becomes increasingly hollow through repetition, suggesting how "nothing" paradoxically becomes everything when confronted repeatedly.`,
+          },
+        ],
       },
       {
         id: 'section-b',
         title: 'Section B: Prose',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on a specified prose text.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on a specified prose text.',
         questions: [
           {
             id: 'q3-prose-a',
             questionNumber: 3,
             marks: 25,
-            questionText: 'How does the writer use characterization to explore themes of ambition and morality? You should consider the methods the writer uses to portray character development.',
+            questionText:
+              'How does the writer use characterization to explore themes of ambition and morality? You should consider the methods the writer uses to portray character development.',
             bulletPoints: [
-              'Examine how the protagonist\'s ambitions drive the narrative',
+              "Examine how the protagonist's ambitions drive the narrative",
               'Consider moral dilemmas the character faces',
               'Analyse dialogue and internal monologue for character revelation',
-              'Evaluate how secondary characters challenge or support the protagonist\'s choices',
-              'Discuss how character development reflects thematic concerns'
+              "Evaluate how secondary characters challenge or support the protagonist's choices",
+              'Discuss how character development reflects thematic concerns',
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -156,11 +161,11 @@ Secondary characters function diagnostically: Joe Gargery embodies authentic mor
 
 Dickens's portrayal of Magwitch provides the novel's moral turning point. Pip's discovery that his benefactor is the convict he once helped forces a complete revaluation of his ambitions. The characterization technique of delayed revelation demonstrates how ambition blinds moral judgment. Yet Pip's subsequent compassion toward Magwitch—his determination to help the convict escape despite the loss of his great expectations—marks his recovery of moral agency. Pip chooses genuine human connection (loyalty to Magwitch) over the social advancement he has spent the novel pursuing.
 
-Ultimately, Pip's character development suggests that authentic moral growth requires rejecting false ambitions and recognizing the true value of genuine human connection over social status. Dickens's characterization method—contrasting Pip's early moral decency with his later moral corruption and finally his moral recovery—argues that ambition proves morally corrosive when pursued as independent value but can be redeemed through recognition of human interconnection and mutual obligation.`
-          }
-        ]
-      }
-    ]
+Ultimately, Pip's character development suggests that authentic moral growth requires rejecting false ambitions and recognizing the true value of genuine human connection over social status. Dickens's characterization method—contrasting Pip's early moral decency with his later moral corruption and finally his moral recovery—argues that ambition proves morally corrosive when pursued as independent value but can be redeemed through recognition of human interconnection and mutual obligation.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'paper1-poetry-prose-b',
@@ -173,19 +178,21 @@ Ultimately, Pip's character development suggests that authentic moral growth req
       {
         id: 'section-a-b',
         title: 'Section A: Poetry',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on one poem from the specified anthology.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on one poem from the specified anthology.',
         questions: [
           {
             id: 'q1-poetry-b',
             questionNumber: 1,
             marks: 25,
-            questionText: 'Examine how a poet uses nature imagery to convey emotional or spiritual meaning. You should consider the significance of specific images and the techniques the poet employs.',
+            questionText:
+              'Examine how a poet uses nature imagery to convey emotional or spiritual meaning. You should consider the significance of specific images and the techniques the poet employs.',
             bulletPoints: [
               'Identify recurring natural images and their symbolic value',
               'Analyse the sensory language used to describe nature',
               'Consider whether nature is presented as benign, indifferent, or hostile',
               'Explore how natural imagery extends beyond literal description',
-              'Evaluate the relationship between nature and human emotion'
+              'Evaluate the relationship between nature and human emotion',
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -198,27 +205,28 @@ Level 2 (13-17 marks): Some analysis of nature imagery. Interpretation emerging 
 Level 1 (9-12 marks): Limited analysis of images. Basic identification of meaning with some textual support. Explanation may predominate over analysis.
 
 Below Level 1 (0-8 marks): Minimal engagement or understanding. Insufficient textual support.`,
-            modelAnswer: `John Keats's "La Belle Dame sans Merci" employs nature imagery to embody the dangerous allure of romantic desire and the devastating consequences of obsessive love. The natural landscape functions not merely as setting but as external manifestation of the speaker's psychological state, creating symbolic correlation between internal emotion and external environment.
+            modelAnswer: `John Keats's "La Belle Dame sans Merci" (1820 Indicator version) employs nature imagery to embody the dangerous allure of romantic desire and the devastating consequences of obsessive love. The natural landscape functions not merely as setting but as external manifestation of the speaker's psychological state, creating symbolic correlation between internal emotion and external environment. (Note: this model answer quotes from the 1820 Indicator text — the version printed in major UK exam anthologies including Edexcel IGCSE; some online sources reproduce Keats's later 1848 (Milnes) revision, which differs in several lines.)
 
-Keats establishes nature's threatening potential through the opening interrogation: "What can ail thee, knight-at-arms, / Alone and palely loitering?" The desolate landscape—"the sedge has withered from the lake, / And no birds sing"—reflects the knight's spiritual desolation. The absence of bird song, traditionally associated with vitality, joy, and Renaissance poetry, underscores emotional emptiness and spiritual death-in-life. This technique of depicting external nature as mirror to internal emotional state creates unified symbolic system where natural decay corresponds directly to romantic devastation.
+Keats establishes nature's threatening potential through the opening interrogation: "O what can ail thee, knight-at-arms, / Alone and palely loitering?" The desolate landscape—"The sedge has wither'd from the lake, / And no birds sing"—reflects the knight's spiritual desolation. The absence of bird song, traditionally associated with vitality and joy, underscores emotional emptiness and spiritual death-in-life. This technique of depicting external nature as mirror to internal emotional state creates a unified symbolic system where natural decay corresponds directly to romantic devastation.
 
-The poem's central section employs sensory nature imagery to convey seduction. The "wild wild eyes" and "wild lorn hair" of the mysterious lady are described through nature metaphors, suggesting that romantic attraction operates through assimilation to natural forces. The knight dwells in a landscape of flowers and honey: "There is a pallet-bed of straw," "wild rye," "blooming myrtle." The lush, sensory imagery—evoking fertility and natural abundance—creates immediate seductive appeal. Yet these pastoral elements become retrospectively sinister as the knight's fate becomes apparent; the beauty that seduced proves to be the very beauty that damned.
+The poem's central section employs sensory nature imagery to convey seduction. The lady's "wild wild eyes" are described through a charged repetition that suggests romantic attraction operates through assimilation to untamed natural forces. The knight dwells in a landscape of flowers and food: she "found me roots of relish sweet, / And honey wild, and manna-dew," and he makes "a garland for her head, / And bracelets too, and fragrant zone." The lush, sensory imagery—evoking fertility and natural abundance—creates immediate seductive appeal. Yet these pastoral elements become retrospectively sinister as the knight's fate becomes apparent; the beauty that seduced proves to be the very beauty that damned.
 
 Significantly, the poem employs seasonal imagery to suggest cyclical disillusionment. The dream landscape represents eternal spring or summer—a timeless pastoral paradise. When the knight awakens to find himself "alone and palely loitering" on the desolate hillside, the contrast between the dream landscape and the actual barren terrain articulates the spiritual cost of romantic obsession. The "cold hill's side" represents cold reality underlying romantic illusion; the season has turned to autumn or winter, reflecting psychological desolation.
 
-Keats's nature imagery ultimately conveys deeply pessimistic vision of love: while natural beauty seduces and enchants, genuine fulfillment remains eternally unattainable. The returning image of the palely loitering knight suggests that romantic obsession condemns the lover to perpetual desolation, trapped in landscape where beauty masks danger and illusion proves indistinguishable from reality. The poem never resolves the fundamental question: whether the lady is actual supernatural being or projection of the knight's fantasy, whether the landscape is literally encountered or entirely psychological. This ambiguity—mirrored in the fluid relationship between natural imagery and internal state—reinforces the poem's exploration of how romantic obsession distorts perception itself.`
+Keats's nature imagery ultimately conveys deeply pessimistic vision of love: while natural beauty seduces and enchants, genuine fulfillment remains eternally unattainable. The returning image of the palely loitering knight suggests that romantic obsession condemns the lover to perpetual desolation, trapped in landscape where beauty masks danger and illusion proves indistinguishable from reality. The poem never resolves the fundamental question: whether the lady is actual supernatural being or projection of the knight's fantasy, whether the landscape is literally encountered or entirely psychological. This ambiguity—mirrored in the fluid relationship between natural imagery and internal state—reinforces the poem's exploration of how romantic obsession distorts perception itself.`,
           },
           {
             id: 'q2-poetry-b',
             questionNumber: 2,
             marks: 25,
-            questionText: 'Analyse how a poem uses form and structure to create meaning. Consider the poet\'s choice of stanza form, rhyme scheme, meter, and how these choices contribute to the poem\'s overall effect.',
+            questionText:
+              "Analyse how a poem uses form and structure to create meaning. Consider the poet's choice of stanza form, rhyme scheme, meter, and how these choices contribute to the poem's overall effect.",
             bulletPoints: [
               'Identify the formal features of the poem (stanza, rhyme, meter)',
               'Explain how formal choices support thematic concerns',
               'Consider variations or departures from established patterns',
-              'Evaluate how form contributes to the reader\'s emotional response',
-              'Discuss how structure relates to the poem\'s philosophical claims'
+              "Evaluate how form contributes to the reader's emotional response",
+              "Discuss how structure relates to the poem's philosophical claims",
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -241,26 +249,28 @@ Structurally, Thomas categorizes four types of men in stanzas 2-5: the "wise men
 
 The final, unprecedented stanza collapses these categories as the dying father becomes singular, immediate, no longer abstract example but concrete reality. The shift to direct address—"And you, my father, there on the sad height"—transforms the poem from universal meditation into personal plea. The formal constraint becomes almost unbearable here; Thomas must fit personal emotion into the villanelle's rigid structure, creating tension between form and content that mirrors the final struggle between reason and emotion.
 
-The villanelle's formal rigidity ultimately enacts the poem's philosophical content: human resistance operates within constraints we cannot transcend, yet the struggle itself—the return and return to defiant affirmation—constitutes meaningful human existence. Form becomes inseparable from meaning; we rage not because we expect triumph, but because raging within constraint is the human condition itself. The structure forces readers to experience repetition without resolution, embodying the relentless return of mortality and the corresponding necessity of renewed resistance.`
-          }
-        ]
+The villanelle's formal rigidity ultimately enacts the poem's philosophical content: human resistance operates within constraints we cannot transcend, yet the struggle itself—the return and return to defiant affirmation—constitutes meaningful human existence. Form becomes inseparable from meaning; we rage not because we expect triumph, but because raging within constraint is the human condition itself. The structure forces readers to experience repetition without resolution, embodying the relentless return of mortality and the corresponding necessity of renewed resistance.`,
+          },
+        ],
       },
       {
         id: 'section-b-b',
         title: 'Section B: Prose',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on a specified prose text.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on a specified prose text.',
         questions: [
           {
             id: 'q3-prose-b',
             questionNumber: 3,
             marks: 25,
-            questionText: 'How does the writer explore the relationship between individual agency and social constraint? Consider how characters negotiate between personal desire and social expectation.',
+            questionText:
+              'How does the writer explore the relationship between individual agency and social constraint? Consider how characters negotiate between personal desire and social expectation.',
             bulletPoints: [
               'Identify instances where characters face conflict between desire and duty',
               'Analyse how the writer portrays social institutions and their power',
               'Consider whether characters achieve agency or remain constrained',
               'Evaluate how narrative structure reflects this thematic concern',
-              'Discuss the writer\'s philosophical position regarding human freedom'
+              "Discuss the writer's philosophical position regarding human freedom",
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -283,11 +293,11 @@ Elizabeth's rejection of Mr. Darcy's first proposal represents the novel's most 
 
 The novel's resolution appears to celebrate individual agency: Elizabeth and Darcy marry for mutual affection and transformed understanding, apparently transcending mercenary social pressure. Yet Austen's ironic commentary—the observation that Jane and Bingley "were always meant to be together"—suggests that social forces ultimately orchestrate outcomes that appear freely chosen. Austen hints that individual agency and social constraint prove inseparable; apparent freedom conceals hidden determinations.
 
-Austen's philosophical position proves ambiguous: she neither celebrates individual agency as absolute nor surrenders to determinism. Rather, she suggests that authentic agency consists in recognizing constraint and making choices within it. Elizabeth achieves her agency not by transcending social limitation but by becoming conscious of it and choosing deliberately within its bounds. Her final happiness derives not from escaping patriarchal marriage market but from marrying on her own terms—for genuine affection with someone who respects her intelligence.`
-          }
-        ]
-      }
-    ]
+Austen's philosophical position proves ambiguous: she neither celebrates individual agency as absolute nor surrenders to determinism. Rather, she suggests that authentic agency consists in recognizing constraint and making choices within it. Elizabeth achieves her agency not by transcending social limitation but by becoming conscious of it and choosing deliberately within its bounds. Her final happiness derives not from escaping patriarchal marriage market but from marrying on her own terms—for genuine affection with someone who respects her intelligence.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'paper2-drama-inspector-calls',
@@ -300,20 +310,22 @@ Austen's philosophical position proves ambiguous: she neither celebrates individ
       {
         id: 'section-a-drama',
         title: 'Section A: Extract Question',
-        instructions: 'Answer this compulsory question. You should spend approximately 45 minutes on this question. Analyse the given extract in detail, considering how the playwright creates dramatic effect.',
+        instructions:
+          'Answer this compulsory question. You should spend approximately 45 minutes on this question. Analyse the given extract in detail, considering how the playwright creates dramatic effect.',
         questions: [
           {
             id: 'q1-drama-extract',
             questionNumber: 1,
             marks: 30,
             extract: `INSPECTOR: \n"And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish. Good night."\n[The INSPECTOR leaves. The door slams. For a moment the family stands in stunned silence, staring at the door.]`,
-            questionText: 'Analyse this extract, paying close attention to how Priestley uses language, stage directions, and dramatic effect to create a powerful conclusion to Act Three.',
+            questionText:
+              'Analyse this extract, paying close attention to how Priestley uses language, stage directions, and dramatic effect to create a powerful conclusion to Act Three.',
             bulletPoints: [
-              'Consider the prophetic tone of the Inspector\'s final words',
+              "Consider the prophetic tone of the Inspector's final words",
               'Analyse the language choices and their emotional impact',
               'Evaluate the stage directions and their significance',
               'Discuss how this moment functions within the overall drama',
-              'Consider the ambiguity of the Inspector\'s identity and its effect'
+              "Consider the ambiguity of the Inspector's identity and its effect",
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -336,26 +348,28 @@ The extraction's dramatic power derives from radical ambiguity regarding the Ins
 
 Structurally, this moment suspends the drama rather than resolving it. The family's journey—from defensive self-interest to begrudging acknowledgment of responsibility—reaches psychological climax with the Inspector's exit, but resolution remains permanently deferred. Priestley's dramatic effect lies in this deferment: audiences must contemplate whether the family will remember this moral reckoning or revert to self-protective denial. The ending leaves audiences uncertain, preventing comfortable moral closure.
 
-The timing proves historically crucial. The prophecy of "fire and blood and anguish" resonates with historical knowledge that audiences watching in 1945 would recognize as ominous foreshadowing of World War II. Priestley thus transforms personal drama into historical commentary, suggesting that individual moral failures have collective catastrophic consequences. The Inspector's exit marks the moment when personal accountability expands into social and historical reckoning, implicating audiences themselves in moral complicity.`
-          }
-        ]
+The timing proves historically crucial. The prophecy of "fire and blood and anguish" resonates with historical knowledge that audiences watching in 1945 would recognize as ominous foreshadowing of World War II. Priestley thus transforms personal drama into historical commentary, suggesting that individual moral failures have collective catastrophic consequences. The Inspector's exit marks the moment when personal accountability expands into social and historical reckoning, implicating audiences themselves in moral complicity.`,
+          },
+        ],
       },
       {
         id: 'section-b-drama',
         title: 'Section B: Thematic Questions',
-        instructions: 'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on a specific act or moment from the play.',
+        instructions:
+          'Answer one question from this section. You should spend approximately 45 minutes on this question. Base your answer on a specific act or moment from the play.',
         questions: [
           {
             id: 'q2-drama-theme',
             questionNumber: 2,
             marks: 20,
-            questionText: 'How does Priestley explore the theme of collective responsibility throughout the play? Consider how different characters respond to moral accusation.',
+            questionText:
+              'How does Priestley explore the theme of collective responsibility throughout the play? Consider how different characters respond to moral accusation.',
             bulletPoints: [
-              'Identify how each family member is implicated in Eva Smith\'s death',
+              "Identify how each family member is implicated in Eva Smith's death",
               'Analyse their initial defensive responses',
               'Consider how some characters show growth while others resist',
-              'Evaluate Priestley\'s message about social interdependence',
-              'Discuss how the play challenges audience complicity'
+              "Evaluate Priestley's message about social interdependence",
+              'Discuss how the play challenges audience complicity',
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -378,11 +392,11 @@ Gerald's seduction of Eva represents emotional exploitation of economic desperat
 
 Mrs. Birling's refusal of responsibility proves most chilling. Despite learning that Eva sought her charitable assistance while pregnant, Mrs. Birling maintains that "she got exactly what she deserved." Her response exemplifies how comfortable classes rationalize suffering as moral failure rather than systemic injustice. Her claim that Eva should face consequences becomes monstrous when the consequence proves to be death. Priestley portrays Mrs. Birling as incapable of recognizing her complicity; she attributes Eva's death to Eva's moral degradation rather than to collective negligence.
 
-Priestley's genius lies in suggesting that this distributed guilt proves inescapable: none individually bears sufficient responsibility to justify unique culpability, yet collectively they bear complete responsibility for Eva's destruction. The play insists that within capitalist society, individual conscience proves insufficient; systemic change requires recognizing how personal comfort depends on others' exploitation. The final revelation—that a second inspector may be approaching—suggests that moral reckoning cannot be permanently avoided; conscience returns perpetually to demand recognition.`
-          }
-        ]
-      }
-    ]
+Priestley's genius lies in suggesting that this distributed guilt proves inescapable: none individually bears sufficient responsibility to justify unique culpability, yet collectively they bear complete responsibility for Eva's destruction. The play insists that within capitalist society, individual conscience proves insufficient; systemic change requires recognizing how personal comfort depends on others' exploitation. The final revelation—that a second inspector may be approaching—suggests that moral reckoning cannot be permanently avoided; conscience returns perpetually to demand recognition.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'paper2-drama-view-from-bridge',
@@ -395,20 +409,22 @@ Priestley's genius lies in suggesting that this distributed guilt proves inescap
       {
         id: 'section-a-drama-2',
         title: 'Section A: Extract Question',
-        instructions: 'Answer this compulsory question. You should spend approximately 45 minutes on this question. Analyse the given extract in detail, considering how Miller creates dramatic effect through language and stagecraft.',
+        instructions:
+          'Answer this compulsory question. You should spend approximately 45 minutes on this question. Analyse the given extract in detail, considering how Miller creates dramatic effect through language and stagecraft.',
         questions: [
           {
             id: 'q1-drama-extract-2',
             questionNumber: 1,
             marks: 30,
             extract: `EDDIE: "I want my name back. I can run the whole goddam warehouse; I pull down maybe one hundred and forty a week, but I don't get no respect... [He turns to the women] Beatrice, I want to... [He turns to MARCO] So now don't you think I'm gonna take you out!"\n[MARCO begins to move toward him in a threatening manner. EDDIE suddenly draws a knife. The stage erupts into chaos.]`,
-            questionText: 'Analyse this extract, considering how Miller uses language, physicality, and dramatic action to convey Eddie\'s psychological breakdown and the play\'s tragic culmination.',
+            questionText:
+              "Analyse this extract, considering how Miller uses language, physicality, and dramatic action to convey Eddie's psychological breakdown and the play's tragic culmination.",
             bulletPoints: [
-              'Examine Eddie\'s obsession with respect and masculine identity',
+              "Examine Eddie's obsession with respect and masculine identity",
               'Analyse the progression from verbal confession to violent action',
               'Consider the significance of the knife and what it represents',
               'Evaluate how the stage directions create theatrical impact',
-              'Discuss how this moment functions as tragic climax'
+              'Discuss how this moment functions as tragic climax',
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -431,11 +447,11 @@ The knife itself carries profound symbolic weight beyond its practical weaponry 
 
 The stage direction "The stage erupts into chaos" marks the boundary where psychological drama becomes physical tragedy. The chaos proves inevitable rather than surprising; Miller has constructed the drama to make Eddie's violence appear overdetermined, the inevitable consequence of impossible emotional configurations. Eddie cannot achieve the respect he demands, cannot successfully control Catherine's sexuality, cannot articulate the jealous desire driving his actions. Violence becomes the only available response to this psychological impasse, the eruption of what cannot be articulated.
 
-Miller's tragedy derives from recognition that Eddie's violence proves simultaneously comprehensible and irrevocable. We understand his wounded masculinity and desperate need for respect; we recognize his genuine suffering and psychological desperation. Yet we cannot condone the violence toward which these feelings propel him. The tragic effect emerges from this impossible ambiguity: Eddie is simultaneously victim and perpetrator, driven by understandable emotions toward incomprehensible actions. The play forces audiences to hold both positions simultaneously, creating genuine tragic tension.`
-          }
-        ]
-      }
-    ]
+Miller's tragedy derives from recognition that Eddie's violence proves simultaneously comprehensible and irrevocable. We understand his wounded masculinity and desperate need for respect; we recognize his genuine suffering and psychological desperation. Yet we cannot condone the violence toward which these feelings propel him. The tragic effect emerges from this impossible ambiguity: Eddie is simultaneously victim and perpetrator, driven by understandable emotions toward incomprehensible actions. The play forces audiences to hold both positions simultaneously, creating genuine tragic tension.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'paper3-unseen',
@@ -448,19 +464,21 @@ Miller's tragedy derives from recognition that Eddie's violence proves simultane
       {
         id: 'section-a-unseen',
         title: 'Section A: Unseen Poetry',
-        instructions: 'Answer this question on an unseen poem. You should spend approximately 35 minutes on this question. Read the poem carefully before answering.',
+        instructions:
+          'Answer this question on an unseen poem. You should spend approximately 35 minutes on this question. Read the poem carefully before answering.',
         questions: [
           {
             id: 'q1-unseen-poetry',
             questionNumber: 1,
             marks: 20,
-            questionText: 'Analyse how the poet presents loss or change in the given poem. Consider the poet\'s use of language, imagery, and structure in your response.',
+            questionText:
+              "Analyse how the poet presents loss or change in the given poem. Consider the poet's use of language, imagery, and structure in your response.",
             bulletPoints: [
               'Identify the nature of loss or change depicted',
               'Analyse specific linguistic and imagistic choices',
               'Consider how structure reinforces thematic concerns',
               'Evaluate the emotional impact of the poem',
-              'Discuss the speaker\'s attitude toward loss or change'
+              "Discuss the speaker's attitude toward loss or change",
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -477,26 +495,28 @@ Below Level 1 (0-8 marks): Minimal engagement or insufficient understanding.`,
 
 Strong responses identify the poem's speaker, recognizing their reliability and perspective. They recognize temporal shifts within the poem, understanding how time functions thematically. They consider how the poem's form (sonnet, free verse, structured stanzas) relates to its thematic concerns about loss or change—whether form provides closure or perpetuates openness. The most sophisticated responses recognize paradoxes: loss might bring clarity, change might enable growth, and seemingly negative experiences might contain unexpected value.
 
-Demonstrate technical vocabulary precision: distinguish between enjambment and line break effects, recognize metaphorical systems rather than isolated images, understand how meter creates rhetorical emphasis. Analyze sound devices not in isolation but in relation to meaning. Consider the relationship between form and content—whether the poem's structure reinforces or complicates its thematic claims about loss or change.`
-          }
-        ]
+Demonstrate technical vocabulary precision: distinguish between enjambment and line break effects, recognize metaphorical systems rather than isolated images, understand how meter creates rhetorical emphasis. Analyze sound devices not in isolation but in relation to meaning. Consider the relationship between form and content—whether the poem's structure reinforces or complicates its thematic claims about loss or change.`,
+          },
+        ],
       },
       {
         id: 'section-b-unseen',
         title: 'Section B: Unseen Prose',
-        instructions: 'Answer this question on an unseen prose extract. You should spend approximately 40 minutes on this question. Read the extract carefully before answering.',
+        instructions:
+          'Answer this question on an unseen prose extract. You should spend approximately 40 minutes on this question. Read the extract carefully before answering.',
         questions: [
           {
             id: 'q2-unseen-prose',
             questionNumber: 2,
             marks: 20,
-            questionText: 'Analyse how the writer uses narrative perspective and language to create atmosphere and reveal character in the given extract. Consider the significance of specific details and stylistic choices.',
+            questionText:
+              'Analyse how the writer uses narrative perspective and language to create atmosphere and reveal character in the given extract. Consider the significance of specific details and stylistic choices.',
             bulletPoints: [
               'Identify the narrative perspective and its effects',
               'Analyse how language choices create atmosphere',
               'Consider what physical and psychological details reveal about character',
               'Evaluate how syntax and sentence structure contribute to meaning',
-              'Discuss how style relates to thematic concerns'
+              'Discuss how style relates to thematic concerns',
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -513,11 +533,11 @@ Below Level 1 (0-8 marks): Minimal engagement or insufficient understanding.`,
 
 Sophisticated responses recognize that reliable narrators can still be self-deceived, that unreliable narration proves significant for what it reveals about the narrator rather than the events described, and that atmosphere emerges not from single images but from sustained sensory detail patterns. Strong responses analyze how sentence length, punctuation, and rhythm affect reader experience—short sentences create urgency or anxiety, long complex sentences might suggest confusion or elaborate rationalization, fragments suggest disruption or emotion.
 
-The most accomplished responses connect specific stylistic choices to thematic concerns: if a character is emotionally detached, the narrative employs distanced clinical language; if overwhelmed, syntax fragments and becomes halting. They demonstrate precision: distinguishing between tone and atmosphere, recognizing how adjectives shape perception, understanding that character revelation often occurs through perspective and interpretation rather than direct judgment. They analyze how the writer's stylistic choices create complicity, distance, or emotional investment between reader and character.`
-          }
-        ]
-      }
-    ]
+The most accomplished responses connect specific stylistic choices to thematic concerns: if a character is emotionally detached, the narrative employs distanced clinical language; if overwhelmed, syntax fragments and becomes halting. They demonstrate precision: distinguishing between tone and atmosphere, recognizing how adjectives shape perception, understanding that character revelation often occurs through perspective and interpretation rather than direct judgment. They analyze how the writer's stylistic choices create complicity, distance, or emotional investment between reader and character.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'paper4-coursework',
@@ -530,18 +550,20 @@ The most accomplished responses connect specific stylistic choices to thematic c
       {
         id: 'section-a-coursework',
         title: 'Section A: Independent Study Questions',
-        instructions: 'Answer both questions in this section. You should spend approximately 60 minutes on these questions combined. Base your answers on texts you have studied in depth as part of an independent project.',
+        instructions:
+          'Answer both questions in this section. You should spend approximately 60 minutes on these questions combined. Base your answers on texts you have studied in depth as part of an independent project.',
         questions: [
           {
             id: 'q1-coursework-1',
             questionNumber: 1,
             marks: 15,
-            questionText: 'Describe the independent literary text you have chosen for study. Explain why this text interested you and what you hoped to explore through close analysis.',
+            questionText:
+              'Describe the independent literary text you have chosen for study. Explain why this text interested you and what you hoped to explore through close analysis.',
             bulletPoints: [
               'Identify the text clearly (author, title, date, genre)',
-              'Describe the text\'s major themes and literary significance',
+              "Describe the text's major themes and literary significance",
               'Explain your personal motivation for selecting this text',
-              'Indicate the specific analytical questions you pursued'
+              'Indicate the specific analytical questions you pursued',
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -558,19 +580,20 @@ Below Level 1 (0-7 marks): Insufficient description or engagement.`,
 
 Through close analysis, I pursued three interconnected research questions: First, how does Ellison employ unreliable narration to represent the protagonist's evolving consciousness? The narrator's interpretation of events changes dramatically as his understanding develops; Ellison uses narrative unreliability not as failure but as vehicle for representing psychological growth and philosophical insight. Second, I investigated how Ellison's use of surrealist imagery—the "machine" scene at the factory hospital, the paint factory explosion—creates what I termed "psychological realism," depicting the protagonist's psychological disintegration through distorted but emotionally authentic events that externalize internal states. Third, I examined how the prologue and epilogue frame the narrative as philosophical meditation rather than conventional autobiography, suggesting that the novel's true subject is not the events depicted but the consciousness interpreting those events.
 
-The text proved enormously rich for analysis because Ellison consistently demonstrates how narrative form embodies meaning. The circular structure—beginning and ending in darkness—mirrors the protagonist's cyclical discovery that no final truth exists to explain his invisibility. This formal choice supports the novel's philosophical claim that identity proves unstable and constructed rather than essential.`
+The text proved enormously rich for analysis because Ellison consistently demonstrates how narrative form embodies meaning. The circular structure—beginning and ending in darkness—mirrors the protagonist's cyclical discovery that no final truth exists to explain his invisibility. This formal choice supports the novel's philosophical claim that identity proves unstable and constructed rather than essential.`,
           },
           {
             id: 'q2-coursework-2',
             questionNumber: 2,
             marks: 15,
-            questionText: 'Present one sustained analysis of a significant theme in your chosen text. Support your argument with detailed reference to textual evidence and acknowledge other critical perspectives.',
+            questionText:
+              'Present one sustained analysis of a significant theme in your chosen text. Support your argument with detailed reference to textual evidence and acknowledge other critical perspectives.',
             bulletPoints: [
               'Articulate a clear thesis about the theme',
               'Develop argument through multiple supporting points',
               'Integrate specific textual evidence thoroughly',
               'Reference alternative critical interpretations',
-              'Draw thematic conclusions supported by evidence'
+              'Draw thematic conclusions supported by evidence',
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -591,26 +614,28 @@ The mysterious figure of Rinehart—who appears multiple times throughout the no
 
 Yet Ellison suggests risks inherent in Rinehart's approach: complete identity fluidity proves as damaging as forced social invisibility. When the protagonist momentarily becomes Rinehart, he experiences terrifying dissolution of self. Ellison's nuance lies in suggesting that authentic identity requires neither absolute social recognition nor complete self-construction, but rather conscious awareness of how language and naming constrain and enable subjectivity.
 
-The novel concludes with the protagonist's decision to emerge from hibernation and engage with the world. This emergence implies neither revelation of authentic self nor complete submission to social naming, but rather conscious participation in ongoing self-construction. The final address to the reader—"Who knows but that, on the lower frequencies, I speak for you too?"—suggests that identity proves relational, constituted through communication and recognition rather than pre-existing essence. Ellison argues that in naming ourselves and being named by others, we navigate between individual authenticity and social determination.`
-          }
-        ]
+The novel concludes with the protagonist's decision to emerge from hibernation and engage with the world. This emergence implies neither revelation of authentic self nor complete submission to social naming, but rather conscious participation in ongoing self-construction. The final address to the reader—"Who knows but that, on the lower frequencies, I speak for you too?"—suggests that identity proves relational, constituted through communication and recognition rather than pre-existing essence. Ellison argues that in naming ourselves and being named by others, we navigate between individual authenticity and social determination.`,
+          },
+        ],
       },
       {
         id: 'section-b-coursework',
         title: 'Section B: Comparative Questions',
-        instructions: 'Answer both questions in this section. You should spend approximately 60 minutes on these questions combined. Draw on knowledge of multiple texts studied in your coursework.',
+        instructions:
+          'Answer both questions in this section. You should spend approximately 60 minutes on these questions combined. Draw on knowledge of multiple texts studied in your coursework.',
         questions: [
           {
             id: 'q3-coursework-comparison',
             questionNumber: 3,
             marks: 15,
-            questionText: 'Compare how two texts of different genres address a common theme or concern. Explain what each text\'s approach reveals about its form and historical context.',
+            questionText:
+              "Compare how two texts of different genres address a common theme or concern. Explain what each text's approach reveals about its form and historical context.",
             bulletPoints: [
               'Identify the common thematic concern clearly',
-              'Analyse how genre shapes each text\'s treatment',
+              "Analyse how genre shapes each text's treatment",
               'Consider historical and cultural contexts',
               'Evaluate what formal differences suggest about meaning',
-              'Draw conclusions about the relationship between form and theme'
+              'Draw conclusions about the relationship between form and theme',
             ],
             markScheme: `ASSESSMENT CRITERIA:
 
@@ -631,14 +656,14 @@ Eliot's "Prufrock," by contrast, employs fragmented monologue, nested quotations
 
 These formal differences reflect their historical moments. Joyce wrote "Araby" (1914) when realist conventions still possessed cultural authority; narrative progression toward epiphanic understanding seemed aesthetically viable. Eliot wrote "Prufrock" during World War I (1915), amid cultural crisis that undermined faith in progressive narrative and coherent selfhood. His fragmented form reflects modernist skepticism toward totalizing meaning.
 
-The contrast suggests that generic form embodies historical consciousness: realism's linear causality articulates faith in knowable meaning through experience, while modernist fragmentation articulates skepticism toward such knowability. Both texts address desire's futility, yet their formal choices—narrative completion versus psychological circularity—suggest divergent philosophical positions regarding whether meaning remains accessible to human consciousness.`
-          }
-        ]
-      }
-    ]
-  }
+The contrast suggests that generic form embodies historical consciousness: realism's linear causality articulates faith in knowable meaning through experience, while modernist fragmentation articulates skepticism toward such knowability. Both texts address desire's futility, yet their formal choices—narrative completion versus psychological circularity—suggest divergent philosophical positions regarding whether meaning remains accessible to human consciousness.`,
+          },
+        ],
+      },
+    ],
+  },
 
-/* 
+  /* 
 GRADING GUIDANCE FOR CAIE MOCK EXAM PAPERS:
 
 All mark schemes employ four-level assessment framework (Level 4-1) aligned with Cambridge IGCSE grade descriptors. Level 4 represents Grade 9 work (90-100%), Level 3 represents Grade 7-8 work (80-89%), Level 2 represents Grade 5-6 work (70-79%), and Level 1 represents Grade 4 work (60-69%). Below Level 1 indicates work below Grade 4 standard.
@@ -659,4 +684,4 @@ Total assessment marks: 200 marks
 Students should complete each paper within the specified duration to develop examination technique and time management skills. These papers provide comprehensive coverage of all assessment objectives: reading and interpreting literature, understanding how writers create meaning through language and form, and making informed judgments about literary merit and significance.
 
 Feedback should emphasize: (1) quality of textual engagement with precise evidence, (2) sophistication of analytical language demonstrating subject knowledge, (3) integration of evidence into developing argument rather than isolated quotation, (4) recognition of textual complexity and ambiguity, (5) awareness of alternative interpretations and critical perspectives.*/
-];
+]

@@ -60,7 +60,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'To bend with apples the moss\'d cottage-trees,',
+      text: "To bend with apples the moss'd cottage-trees,",
       annotations: [
         {
           type: 'Imagery',
@@ -114,13 +114,13 @@ const toAutumn: PoemData = {
       annotations: [
         {
           type: 'Foreshadowing',
-          note: 'The bees believe summer will last forever - but the reader knows it won\'t. There is gentle dramatic irony here. The illusion of permanence sets up the seasonal change.',
+          note: "The bees believe summer will last forever - but the reader knows it won't. There is gentle dramatic irony here. The illusion of permanence sets up the seasonal change.",
           color: '#a855f7',
         },
       ],
     },
     {
-      text: 'For summer has o\'er-brimm\'d their clammy cells.',
+      text: "For summer has o'er-brimm'd their clammy cells.",
       annotations: [
         {
           type: 'Imagery',
@@ -175,7 +175,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Or on a half-reap\'d furrow sound asleep,',
+      text: "Or on a half-reap'd furrow sound asleep,",
       annotations: [
         {
           type: 'Imagery',
@@ -185,7 +185,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Drows\'d with the fume of poppies, while thy hook',
+      text: "Drows'd with the fume of poppies, while thy hook",
       annotations: [
         {
           type: 'Allusion',
@@ -430,21 +430,21 @@ Closing image: The poem ends with swallows gathering to leave - the very symbol 
       themes: ['Ripeness', 'Perfection', 'Transience'],
     },
     {
-      quote: 'Drows\'d with the fume of poppies, while thy hook / Spares the next swath',
+      quote: "Drows'd with the fume of poppies, while thy hook / Spares the next swath",
       analysis:
-        'Autumn falls asleep among the harvest, drugged by poppy fumes (poppies produce opium). The reaper\'s hook lies idle. Even labour pauses. The image is dreamy and pastoral, capturing the lazy, hot afternoons of harvest time.',
+        "Autumn falls asleep among the harvest, drugged by poppy fumes (poppies produce opium). The reaper's hook lies idle. Even labour pauses. The image is dreamy and pastoral, capturing the lazy, hot afternoons of harvest time.",
       themes: ['Slowness of time', 'Pastoral life', 'Personification'],
     },
     {
       quote: 'Where are the songs of Spring? Ay, where are they? / Think not of them',
       analysis:
-        'The volta. The speaker briefly asks where spring\'s songs are, then immediately tells autumn (and himself) not to think about them. This is the philosophical heart of the poem: each season has its own value. Don\'t mourn what is gone.',
+        "The volta. The speaker briefly asks where spring's songs are, then immediately tells autumn (and himself) not to think about them. This is the philosophical heart of the poem: each season has its own value. Don't mourn what is gone.",
       themes: ['Acceptance', 'Time', 'Philosophy'],
     },
     {
       quote: 'thou hast thy music too',
       analysis:
-        'A gentle, reassuring statement. Autumn doesn\'t need spring\'s music - it has its own. The line implicitly applies to mortality: every stage of life has its own beauty. Read in light of Keats\'s impending death, this is profoundly moving.',
+        "A gentle, reassuring statement. Autumn doesn't need spring's music - it has its own. The line implicitly applies to mortality: every stage of life has its own beauty. Read in light of Keats's impending death, this is profoundly moving.",
       themes: ['Acceptance', 'Beauty', 'Equality of seasons'],
     },
     {
@@ -456,7 +456,7 @@ Closing image: The poem ends with swallows gathering to leave - the very symbol 
     {
       quote: 'gathering swallows twitter in the skies',
       analysis:
-        'The famous closing line. The swallows are gathering to migrate south - the end of summer, the year\'s decline. But the focus is on their twittering (their music), not their departure. The poem ends with sound, not silence. Beauty continues right to the edge of the ending.',
+        "The famous closing line. The swallows are gathering to migrate south - the end of summer, the year's decline. But the focus is on their twittering (their music), not their departure. The poem ends with sound, not silence. Beauty continues right to the edge of the ending.",
       themes: ['Time', 'Acceptance', 'Music of nature'],
     },
   ],
@@ -464,14 +464,15 @@ Closing image: The poem ends with swallows gathering to leave - the very symbol 
   languageDevices: [
     {
       device: 'Personification',
-      example: 'Close bosom-friend of the maturing sun ... Thee sitting careless on a granary floor',
+      example:
+        'Close bosom-friend of the maturing sun ... Thee sitting careless on a granary floor',
       effect:
         'Autumn is personified throughout, addressed as "thou" and described as a worker resting in the fields. This makes the season intimate and tangible, transforming an abstract idea into a companion. It is the central technique of the poem.',
       lineRef: 2,
     },
     {
       device: 'Sensory imagery',
-      example: 'mists and mellow fruitfulness / Drows\'d with the fume of poppies',
+      example: "mists and mellow fruitfulness / Drows'd with the fume of poppies",
       effect:
         'Each stanza emphasises a different sense. Stanza 1 is visual and tactile (ripe fruit). Stanza 2 is languid and dreamy (drowsiness, slow movement). Stanza 3 is auditory (songs and music). The poem becomes a total sensory experience of autumn.',
       lineRef: 1,
@@ -499,7 +500,8 @@ Closing image: The poem ends with swallows gathering to leave - the very symbol 
     },
     {
       device: 'Cataloguing',
-      example: 'gnats mourn ... lambs loud bleat ... crickets sing ... red-breast whistles ... swallows twitter',
+      example:
+        'gnats mourn ... lambs loud bleat ... crickets sing ... red-breast whistles ... swallows twitter',
       effect:
         'The third stanza catalogues the music of autumn. Each creature has its own song, building up to a full chorus. The catalogue suggests that autumn is rich with sound, not silent.',
       lineRef: 25,
@@ -508,7 +510,7 @@ Closing image: The poem ends with swallows gathering to leave - the very symbol 
       device: 'Diction',
       example: 'mellow ... swell ... plump ... ripeness ... laden',
       effect:
-        'Keats\'s word choices throughout emphasise fullness, weight, and ripeness. The language itself feels heavy with abundance, mirroring the season\'s overflow.',
+        "Keats's word choices throughout emphasise fullness, weight, and ripeness. The language itself feels heavy with abundance, mirroring the season's overflow.",
       lineRef: 1,
     },
   ],
@@ -534,22 +536,202 @@ const comparisons = [
 ]
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'ta-1', question: 'What is the poem celebrating?', type: 'multiple-choice', options: ['Spring', 'The richness and beauty of autumn — presented as a season of fulfilment rather than decay', 'Winter', 'Summer'], correctIndex: 1, explanation: 'Keats celebrates autumn as a season of abundance and beauty rather than decline, presenting it as the culmination of the year\'s growth.', topic: 'Meaning', difficulty: 'foundation' },
-  { id: 'ta-2', question: 'How is Autumn personified?', type: 'multiple-choice', options: ['As a warrior', 'As a relaxed figure sitting, sleeping, and gleaning among the harvest', 'As a child', 'As an old man'], correctIndex: 1, explanation: 'Autumn is personified as a figure sitting on a granary floor, sleeping in a half-reaped furrow, and watching cider press. Each image shows abundance and leisure.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'ta-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Three stanzas of 11 lines each — an ode form', 'A sonnet', 'Quatrains'], correctIndex: 1, explanation: 'An ode with three regular 11-line stanzas, each with a consistent rhyme scheme. The ode form is suited to celebrating a subject with elevated language.', topic: 'Structure', difficulty: 'foundation' },
-  { id: 'ta-4', question: 'How does each stanza focus on a different sense?', type: 'multiple-choice', options: ['They don\'t', 'Stanza 1: sight/touch (ripeness), Stanza 2: sight (personification), Stanza 3: sound (music)', 'All focus on smell', 'All focus on taste'], correctIndex: 1, explanation: 'Each stanza emphasises a different sensory experience — tactile abundance (1), visual personification (2), and aural music (3) — creating a complete sensory immersion in autumn.', topic: 'Structure', difficulty: 'higher' },
-  { id: 'ta-5', question: 'When was the poem written?', type: 'multiple-choice', options: ['1850', '19 September 1819, after Keats walked through the water-meadows near Winchester', '1794', '1914'], correctIndex: 1, explanation: 'Written on 19 September 1819 after an evening walk near Winchester. Keats was deeply moved by the warm stubble-fields and the gathering swallows.', topic: 'Context', difficulty: 'higher' },
-  { id: 'ta-6', question: 'What does "Where are the songs of Spring?" acknowledge?', type: 'multiple-choice', options: ['Spring is better', 'The passing of time — but Keats immediately insists autumn has its own, equally beautiful music', 'Spring will return', 'The speaker is sad'], correctIndex: 1, explanation: 'The rhetorical question briefly acknowledges loss, but Keats immediately asserts that autumn has its own beauty: "Think not of them, thou hast thy music too."', topic: 'Language', difficulty: 'higher' },
-  { id: 'ta-7', question: 'What does "Close bosom-friend of the maturing sun" suggest?', type: 'multiple-choice', options: ['The sun is hot', 'Autumn and the sun are intimate allies working together to bring fruit to perfect ripeness', 'Sunburn', 'The sun is setting'], correctIndex: 1, explanation: 'Autumn and the sun are presented as intimate friends conspiring to ripen everything. The warmth of their relationship mirrors the warmth of the season.', topic: 'Language', difficulty: 'higher' },
-  { id: 'ta-8', question: 'How does Keats handle the theme of mortality?', type: 'multiple-choice', options: ['He ignores it', 'Autumn\'s beauty is heightened by its transience — the beauty is more precious because it is fleeting', 'He fears death directly', 'He celebrates immortality'], correctIndex: 1, explanation: 'Keats (who was dying of tuberculosis) creates beauty from transience. Autumn is beautiful precisely because it is passing — the awareness of endings makes the present more vivid.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'ta-9', question: 'What is the effect of the gathering swallows at the end?', type: 'multiple-choice', options: ['Spring is coming', 'The swallows preparing to migrate signal the end of autumn and approaching winter — beauty accompanied by gentle farewell', 'The birds are feeding', 'It describes morning'], correctIndex: 1, explanation: 'The gathering swallows are preparing to leave for winter. This final image is both beautiful and poignant — autumn\'s music includes its own farewell.', topic: 'Language', difficulty: 'grade-9' },
-  { id: 'ta-10', question: 'Why is To Autumn considered one of the greatest English poems?', type: 'multiple-choice', options: ['It rhymes well', 'It perfectly balances sensory richness with philosophical depth — celebrating beauty while acknowledging its transience', 'It is very old', 'It is very long'], correctIndex: 1, explanation: 'To Autumn achieves a rare balance: it is sensorially rich (every line is full of texture, sound, and colour) while carrying profound philosophical weight about time, mortality, and acceptance.', topic: 'Themes', difficulty: 'grade-9' },
+  {
+    id: 'ta-1',
+    question: 'What is the poem celebrating?',
+    type: 'multiple-choice',
+    options: [
+      'Spring',
+      'The richness and beauty of autumn — presented as a season of fulfilment rather than decay',
+      'Winter',
+      'Summer',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Keats celebrates autumn as a season of abundance and beauty rather than decline, presenting it as the culmination of the year's growth.",
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ta-2',
+    question: 'How is Autumn personified?',
+    type: 'multiple-choice',
+    options: [
+      'As a warrior',
+      'As a relaxed figure sitting, sleeping, and gleaning among the harvest',
+      'As a child',
+      'As an old man',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Autumn is personified as a figure sitting on a granary floor, sleeping in a half-reaped furrow, and watching cider press. Each image shows abundance and leisure.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ta-3',
+    question: 'What form does the poem use?',
+    type: 'multiple-choice',
+    options: [
+      'Free verse',
+      'Three stanzas of 11 lines each — an ode form',
+      'A sonnet',
+      'Quatrains',
+    ],
+    correctIndex: 1,
+    explanation:
+      'An ode with three regular 11-line stanzas, each with a consistent rhyme scheme. The ode form is suited to celebrating a subject with elevated language.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ta-4',
+    question: 'How does each stanza focus on a different sense?',
+    type: 'multiple-choice',
+    options: [
+      "They don't",
+      'Stanza 1: sight/touch (ripeness), Stanza 2: sight (personification), Stanza 3: sound (music)',
+      'All focus on smell',
+      'All focus on taste',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Each stanza emphasises a different sensory experience — tactile abundance (1), visual personification (2), and aural music (3) — creating a complete sensory immersion in autumn.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ta-5',
+    question: 'When was the poem written?',
+    type: 'multiple-choice',
+    options: [
+      '1850',
+      '19 September 1819, after Keats walked through the water-meadows near Winchester',
+      '1794',
+      '1914',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Written on 19 September 1819 after an evening walk near Winchester. Keats was deeply moved by the warm stubble-fields and the gathering swallows.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ta-6',
+    question: 'What does "Where are the songs of Spring?" acknowledge?',
+    type: 'multiple-choice',
+    options: [
+      'Spring is better',
+      'The passing of time — but Keats immediately insists autumn has its own, equally beautiful music',
+      'Spring will return',
+      'The speaker is sad',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The rhetorical question briefly acknowledges loss, but Keats immediately asserts that autumn has its own beauty: "Think not of them, thou hast thy music too."',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ta-7',
+    question: 'What does "Close bosom-friend of the maturing sun" suggest?',
+    type: 'multiple-choice',
+    options: [
+      'The sun is hot',
+      'Autumn and the sun are intimate allies working together to bring fruit to perfect ripeness',
+      'Sunburn',
+      'The sun is setting',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Autumn and the sun are presented as intimate friends conspiring to ripen everything. The warmth of their relationship mirrors the warmth of the season.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ta-8',
+    question: 'How does Keats handle the theme of mortality?',
+    type: 'multiple-choice',
+    options: [
+      'He ignores it',
+      "Autumn's beauty is heightened by its transience — the beauty is more precious because it is fleeting",
+      'He fears death directly',
+      'He celebrates immortality',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Keats (who was dying of tuberculosis) creates beauty from transience. Autumn is beautiful precisely because it is passing — the awareness of endings makes the present more vivid.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ta-9',
+    question: 'What is the effect of the gathering swallows at the end?',
+    type: 'multiple-choice',
+    options: [
+      'Spring is coming',
+      'The swallows preparing to migrate signal the end of autumn and approaching winter — beauty accompanied by gentle farewell',
+      'The birds are feeding',
+      'It describes morning',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The gathering swallows are preparing to leave for winter. This final image is both beautiful and poignant — autumn's music includes its own farewell.",
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ta-10',
+    question: 'Why is To Autumn considered one of the greatest English poems?',
+    type: 'multiple-choice',
+    options: [
+      'It rhymes well',
+      'It perfectly balances sensory richness with philosophical depth — celebrating beauty while acknowledging its transience',
+      'It is very old',
+      'It is very long',
+    ],
+    correctIndex: 1,
+    explanation:
+      'To Autumn achieves a rare balance: it is sensorially rich (every line is full of texture, sound, and colour) while carrying profound philosophical weight about time, mortality, and acceptance.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'To Autumn celebrates the richness of the season while gently acknowledging mortality and the passage of time.', keyPoints: ['Abundance — autumn as fulfilment rather than decay', 'Transience — beauty is more precious because it is fleeting', 'Acceptance — the poem embraces endings rather than fearing them', 'Keats was dying — personal mortality informs the gentle farewell'] },
-  { topic: 'Language & Imagery', summary: 'Keats uses personification, sensory imagery across all five senses, and rich, accumulative language to immerse the reader in autumn.', keyPoints: ['Autumn personified as a relaxed figure among the harvest', '"Close bosom-friend of the maturing sun" — intimate alliance', 'Multi-sensory — sight, touch, taste, smell, sound', '"Gathering swallows" — gentle farewell image'] },
-  { topic: 'Structure & Form', summary: 'An ode in three 11-line stanzas, each focused on a different sense, progressing from abundance to acceptance.', keyPoints: ['Ode form — elevated celebration', 'Three stanzas: ripeness (1), personification (2), music (3)', 'Progression from morning to evening — time passing', 'Regular rhyme scheme — orderly celebration'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      'To Autumn celebrates the richness of the season while gently acknowledging mortality and the passage of time.',
+    keyPoints: [
+      'Abundance — autumn as fulfilment rather than decay',
+      'Transience — beauty is more precious because it is fleeting',
+      'Acceptance — the poem embraces endings rather than fearing them',
+      'Keats was dying — personal mortality informs the gentle farewell',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary:
+      'Keats uses personification, sensory imagery across all five senses, and rich, accumulative language to immerse the reader in autumn.',
+    keyPoints: [
+      'Autumn personified as a relaxed figure among the harvest',
+      '"Close bosom-friend of the maturing sun" — intimate alliance',
+      'Multi-sensory — sight, touch, taste, smell, sound',
+      '"Gathering swallows" — gentle farewell image',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary:
+      'An ode in three 11-line stanzas, each focused on a different sense, progressing from abundance to acceptance.',
+    keyPoints: [
+      'Ode form — elevated celebration',
+      'Three stanzas: ripeness (1), personification (2), music (3)',
+      'Progression from morning to evening — time passing',
+      'Regular rhyme scheme — orderly celebration',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -567,11 +749,11 @@ export default function ToAutumnEduqasPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Eduqas Poetry", url: "https://theenglishhub.app/revision/poetry/eduqas" },
-          { name: "To Autumn", url: "https://theenglishhub.app/revision/poetry/eduqas/to-autumn" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
+          { name: 'To Autumn', url: 'https://theenglishhub.app/revision/poetry/eduqas/to-autumn' },
         ]}
       />
       <div>
@@ -585,18 +767,26 @@ export default function ToAutumnEduqasPage() {
           Back to Eduqas Poetry
         </Button>
 
+        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
+          <p className="font-semibold mb-1">Legacy anthology notice</p>
+          <p className="text-amber-100/90 leading-relaxed">
+            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
+            does not include this poem. The content remains as a study reference.
+          </p>
+        </div>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
             <BookOpen className="size-5 text-emerald-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              To Autumn
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">To Autumn</h1>
             <p className="text-body-sm text-muted-foreground">
               John Keats &middot; Eduqas Poetry Anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Eduqas</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              Eduqas
+            </Badge>
           </div>
         </div>
       </div>
@@ -620,9 +810,7 @@ export default function ToAutumnEduqasPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Strong Eduqas pairings for comparison questions involving To Autumn.
@@ -639,9 +827,7 @@ export default function ToAutumnEduqasPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span
@@ -658,10 +844,10 @@ export default function ToAutumnEduqasPage() {
       </section>
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        Poem text is reproduced for the purpose of private study and educational
-        criticism under UK fair-dealing provisions (Copyright, Designs and
-        Patents Act 1988, s.30). No commercial use is intended. All quotations
-        remain the intellectual property of the respective rights holders.
+        Poem text is reproduced for the purpose of private study and educational criticism under UK
+        fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial use
+        is intended. All quotations remain the intellectual property of the respective rights
+        holders.
       </footer>
     </div>
   )

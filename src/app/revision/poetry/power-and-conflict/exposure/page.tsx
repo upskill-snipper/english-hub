@@ -4,10 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, Swords, Snowflake, Clock, Skull, HelpCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import {
-  InteractivePoemViewer,
-  type PoemData,
-} from '@/components/study'
+import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -29,9 +26,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'exp-1',
     question: 'What is the main enemy of the soldiers in Exposure?',
     type: 'multiple-choice',
-    options: ['The German army', 'The weather and the agonising wait — nature, not combat', 'Their commanding officers', 'Disease in the trenches'],
+    options: [
+      'The German army',
+      'The weather and the agonising wait — nature, not combat',
+      'Their commanding officers',
+      'Disease in the trenches',
+    ],
     correctIndex: 1,
-    explanation: 'Owen presents the soldiers\' greatest enemy not as enemy combatants but as the "merciless iced east winds" and the endless, futile waiting. The refrain "But nothing happens" emphasises this.',
+    explanation:
+      'Owen presents the soldiers\' greatest enemy not as enemy combatants but as the "merciless iced east winds" and the endless, futile waiting. The refrain "But nothing happens" emphasises this.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -39,9 +42,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'exp-2',
     question: 'What is the effect of the refrain "But nothing happens"?',
     type: 'multiple-choice',
-    options: ['It creates excitement and suspense', 'It emphasises the futility and monotony of trench warfare — the anticlimax is the point', 'It shows the soldiers are safe', 'It indicates the war is nearly over'],
+    options: [
+      'It creates excitement and suspense',
+      'It emphasises the futility and monotony of trench warfare — the anticlimax is the point',
+      'It shows the soldiers are safe',
+      'It indicates the war is nearly over',
+    ],
     correctIndex: 1,
-    explanation: 'The devastating refrain appears at the end of multiple stanzas. The anticlimax is the poem\'s central argument: soldiers die not in heroic battle but in agonising, purposeless waiting.',
+    explanation:
+      "The devastating refrain appears at the end of multiple stanzas. The anticlimax is the poem's central argument: soldiers die not in heroic battle but in agonising, purposeless waiting.",
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -49,9 +58,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'exp-3',
     question: 'What does "merciless iced east winds that knive us" suggest about nature?',
     type: 'multiple-choice',
-    options: ['Nature is a comforting presence', 'Nature is personified as a cruel, deliberate attacker — a weapon as dangerous as any enemy', 'The soldiers enjoy the cold weather', 'The wind is gentle and refreshing'],
+    options: [
+      'Nature is a comforting presence',
+      'Nature is personified as a cruel, deliberate attacker — a weapon as dangerous as any enemy',
+      'The soldiers enjoy the cold weather',
+      'The wind is gentle and refreshing',
+    ],
     correctIndex: 1,
-    explanation: 'Owen personifies the wind as a merciless, deliberate attacker. The verb "knive" (Owen\'s own coinage) turns nature into a weapon, blurring the line between the weather and the enemy.',
+    explanation:
+      'Owen personifies the wind as a merciless, deliberate attacker. The verb "knive" (Owen\'s own coinage) turns nature into a weapon, blurring the line between the weather and the enemy.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -59,9 +74,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'exp-4',
     question: 'What does the rhetorical question "What are we doing here?" express?',
     type: 'multiple-choice',
-    options: ['Curiosity about geography', 'The soldiers\' bewilderment and growing sense of the war\'s futility', 'Excitement about being at the front', 'A request for new orders'],
+    options: [
+      'Curiosity about geography',
+      "The soldiers' bewilderment and growing sense of the war's futility",
+      'Excitement about being at the front',
+      'A request for new orders',
+    ],
     correctIndex: 1,
-    explanation: 'This direct question breaks the descriptive mode to express the soldiers\' deep confusion about the purpose of their suffering. It hints at the futility that Owen felt characterised the war.',
+    explanation:
+      "This direct question breaks the descriptive mode to express the soldiers' deep confusion about the purpose of their suffering. It hints at the futility that Owen felt characterised the war.",
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -69,9 +90,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'exp-5',
     question: 'How does Owen subvert the traditional symbolism of dawn in the poem?',
     type: 'multiple-choice',
-    options: ['Dawn brings rescue and hope', 'Dawn brings "poignant misery" — it reveals suffering rather than offering salvation', 'Dawn signals the end of the war', 'Dawn is not mentioned in the poem'],
+    options: [
+      'Dawn brings rescue and hope',
+      'Dawn brings "poignant misery" — it reveals suffering rather than offering salvation',
+      'Dawn signals the end of the war',
+      'Dawn is not mentioned in the poem',
+    ],
     correctIndex: 1,
-    explanation: 'Dawn is usually a symbol of hope and new beginnings, but Owen subverts this: "The poignant misery of dawn begins to grow." Dawn here brings only more visible suffering, not relief.',
+    explanation:
+      'Dawn is usually a symbol of hope and new beginnings, but Owen subverts this: "The poignant misery of dawn begins to grow." Dawn here brings only more visible suffering, not relief.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -79,9 +106,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'exp-6',
     question: 'What is the significance of the half-rhymes Owen uses throughout?',
     type: 'multiple-choice',
-    options: ['He could not find proper rhymes', 'They create a sense of dissonance and incompleteness, mirroring the soldiers\' disturbed mental state', 'They make the poem easier to read', 'They are a mistake by the printer'],
+    options: [
+      'He could not find proper rhymes',
+      "They create a sense of dissonance and incompleteness, mirroring the soldiers' disturbed mental state",
+      'They make the poem easier to read',
+      'They are a mistake by the printer',
+    ],
     correctIndex: 1,
-    explanation: 'Owen\'s half-rhymes (e.g., "knive us" / "nervous", "silent" / "salient") create deliberate dissonance. The failure to rhyme properly mirrors the wrongness of war and the soldiers\' fractured psychological state.',
+    explanation:
+      'Owen\'s half-rhymes (e.g., "knive us" / "nervous", "silent" / "salient") create deliberate dissonance. The failure to rhyme properly mirrors the wrongness of war and the soldiers\' fractured psychological state.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -89,9 +122,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'exp-7',
     question: 'Who was Wilfred Owen, and when was Exposure written?',
     type: 'multiple-choice',
-    options: ['A Victorian poet who wrote about the Industrial Revolution', 'A WWI soldier-poet who wrote from direct experience of trench warfare, writing Exposure in 1917-18', 'A WWII war correspondent', 'A Romantic poet who opposed Napoleon'],
+    options: [
+      'A Victorian poet who wrote about the Industrial Revolution',
+      'A WWI soldier-poet who wrote from direct experience of trench warfare, writing Exposure in 1917-18',
+      'A WWII war correspondent',
+      'A Romantic poet who opposed Napoleon',
+    ],
     correctIndex: 1,
-    explanation: 'Wilfred Owen was a soldier in the trenches of World War I. He wrote Exposure in 1917-18 from direct personal experience. He was killed on 4 November 1918, one week before the Armistice.',
+    explanation:
+      'Wilfred Owen was a soldier in the trenches of World War I. He wrote Exposure in 1917-18 from direct personal experience. He was killed on 4 November 1918, one week before the Armistice.',
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -99,29 +138,48 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'exp-8',
     question: 'What does "Dawn massing in the east her melancholy army" suggest?',
     type: 'multiple-choice',
-    options: ['The army is preparing to attack at dawn', 'Dawn is personified as a military general, making nature itself an enemy force attacking the soldiers', 'The sun is rising normally', 'The soldiers are excited about morning'],
+    options: [
+      'The army is preparing to attack at dawn',
+      'Dawn is personified as a military general, making nature itself an enemy force attacking the soldiers',
+      'The sun is rising normally',
+      'The soldiers are excited about morning',
+    ],
     correctIndex: 1,
-    explanation: 'Dawn is personified as a female general gathering an army of clouds. Nature becomes a military force just as lethal as the human enemy — the soldiers are attacked from all sides.',
+    explanation:
+      'Dawn is personified as a female general gathering an army of clouds. Nature becomes a military force just as lethal as the human enemy — the soldiers are attacked from all sides.',
     topic: 'Language',
     difficulty: 'higher',
   },
   {
     id: 'exp-9',
-    question: 'How does the structure of each stanza reinforce the poem\'s message of futility?',
+    question: "How does the structure of each stanza reinforce the poem's message of futility?",
     type: 'multiple-choice',
-    options: ['Each stanza builds to a climactic action scene', 'Each stanza builds tension through sensory description then deflates with the anticlimax "But nothing happens"', 'The stanzas get progressively shorter', 'The stanzas alternate between hope and despair equally'],
+    options: [
+      'Each stanza builds to a climactic action scene',
+      'Each stanza builds tension through sensory description then deflates with the anticlimax "But nothing happens"',
+      'The stanzas get progressively shorter',
+      'The stanzas alternate between hope and despair equally',
+    ],
     correctIndex: 1,
-    explanation: 'Each eight-line stanza builds atmospheric tension through vivid imagery, only to be deflated by the short, blunt final line. This repeated anticlimax structurally enacts the soldiers\' experience of endless, purposeless suffering.',
+    explanation:
+      "Each eight-line stanza builds atmospheric tension through vivid imagery, only to be deflated by the short, blunt final line. This repeated anticlimax structurally enacts the soldiers' experience of endless, purposeless suffering.",
     topic: 'Structure',
     difficulty: 'grade-9',
   },
   {
     id: 'exp-10',
-    question: 'Which poem from the Power and Conflict anthology best contrasts with Exposure in its presentation of soldiers?',
+    question:
+      'Which poem from the Power and Conflict anthology best contrasts with Exposure in its presentation of soldiers?',
     type: 'multiple-choice',
-    options: ['The Charge of the Light Brigade by Tennyson', 'Tissue by Imtiaz Dharker', 'The Emigrée by Carol Rumens', 'London by William Blake'],
+    options: [
+      'The Charge of the Light Brigade by Tennyson',
+      'Tissue by Imtiaz Dharker',
+      'The Émigrée by Carol Rumens',
+      'London by William Blake',
+    ],
     correctIndex: 0,
-    explanation: 'Tennyson glorifies soldiers\' courage and noble sacrifice, while Owen strips war of all heroism, showing only futile suffering. They offer opposing views of the soldier\'s role: one heroic, one devastatingly anti-heroic.',
+    explanation:
+      "Tennyson glorifies soldiers' courage and noble sacrifice, while Owen strips war of all heroism, showing only futile suffering. They offer opposing views of the soldier's role: one heroic, one devastatingly anti-heroic.",
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -130,7 +188,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
-    summary: 'Exposure presents the futility and horror of trench warfare, with nature as the true enemy and the soldiers\' suffering rendered meaningless by inaction.',
+    summary:
+      "Exposure presents the futility and horror of trench warfare, with nature as the true enemy and the soldiers' suffering rendered meaningless by inaction.",
     keyPoints: [
       'Futility — "But nothing happens" — suffering without purpose or progress',
       'Power of nature — the weather is more deadly than the enemy',
@@ -140,7 +199,8 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Language & Imagery',
-    summary: 'Owen uses personification, synaesthesia, half-rhyme, and a sustained semantic field of cold and death to immerse the reader in the soldiers\' suffering.',
+    summary:
+      "Owen uses personification, synaesthesia, half-rhyme, and a sustained semantic field of cold and death to immerse the reader in the soldiers' suffering.",
     keyPoints: [
       '"Merciless iced east winds that knive us" — nature personified as a deliberate attacker',
       '"Dawn massing in the east her melancholy army" — dawn as a military general',
@@ -150,11 +210,12 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Structure & Form',
-    summary: 'Eight-line stanzas with half-rhyme and a devastating refrain. Each stanza builds tension only to deflate with "But nothing happens."',
+    summary:
+      'Eight-line stanzas with half-rhyme and a devastating refrain. Each stanza builds tension only to deflate with "But nothing happens."',
     keyPoints: [
       'Refrain "But nothing happens" — structural embodiment of futility',
       'Half-rhyme — creates dissonance and a sense that nothing resolves properly',
-      'Each stanza builds and deflates — mirroring the soldiers\' experience',
+      "Each stanza builds and deflates — mirroring the soldiers' experience",
       'Present tense — places the reader in the trenches with the soldiers',
     ],
   },
@@ -181,14 +242,14 @@ const COMPARISONS = [
     poet: 'Seamus Heaney',
     link: '/revision/poetry/power-and-conflict/storm-on-the-island',
     reason:
-      'Both poems personify nature as a hostile, attacking force. Heaney\'s storm batters an island community, while Owen\'s weather slowly kills soldiers in the trenches. Compare the power of nature and how each poet uses it as an extended metaphor.',
+      "Both poems personify nature as a hostile, attacking force. Heaney's storm batters an island community, while Owen's weather slowly kills soldiers in the trenches. Compare the power of nature and how each poet uses it as an extended metaphor.",
   },
   {
     title: 'The Charge of the Light Brigade',
     poet: 'Alfred, Lord Tennyson',
     link: '/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
     reason:
-      'Tennyson glorifies soldiers\' bravery and sacrifice in battle, while Owen strips war of all heroism, showing only futile suffering. Compare how each poet presents the role of the ordinary soldier and the purpose (or purposelessness) of conflict.',
+      "Tennyson glorifies soldiers' bravery and sacrifice in battle, while Owen strips war of all heroism, showing only futile suffering. Compare how each poet presents the role of the ordinary soldier and the purpose (or purposelessness) of conflict.",
   },
 ]
 
@@ -200,143 +261,407 @@ const exposureData: PoemData = {
 
   lines: [
     // Stanza 1
-    { text: 'Our brains ache, in the merciless iced east winds that knive us...', annotations: [
-      { type: 'Language', note: 'Opening with collective "Our" immerses the reader in the soldiers\' shared suffering. The ellipsis trails off into exhausted silence.', color: '#60a5fa' },
-      { type: 'Imagery', note: '"Merciless iced east winds that knive us" -- nature is personified as a cruel, deliberate attacker. The verb "knive" (an Owen coinage) makes the wind a weapon.', color: '#f59e0b' },
-    ]},
-    { text: 'Wearied we keep awake because the night is silent...', annotations: [
-      { type: 'Structure', note: 'Inversion ("Wearied we") foregrounds exhaustion. The silence is threatening -- they cannot sleep because quiet may mean an imminent attack.', color: '#a78bfa' },
-    ]},
-    { text: 'Low drooping flares confuse our memory of the salient...', annotations: [
-      { type: 'Imagery', note: 'Flares distort perception and memory, blurring the boundary between reality and hallucination. "Salient" is a military term for a bulge in the front line.', color: '#f59e0b' },
-    ]},
-    { text: 'Worried by silence, sentries whisper, curious, nervous,', annotations: [
-      { type: 'Language', note: 'List of adjectives ("curious, nervous") builds tension. Sibilance in "silence, sentries, whisper" creates a hushed, anxious atmosphere.', color: '#60a5fa' },
-    ]},
-    { text: 'But nothing happens.', annotations: [
-      { type: 'Refrain', note: 'The devastating refrain. The anticlimax is the poem\'s central point: the soldiers\' greatest enemy is not combat but the agonising wait and exposure to the elements.', color: '#ef4444' },
-    ]},
+    {
+      text: 'Our brains ache, in the merciless iced east winds that knive us ...',
+      annotations: [
+        {
+          type: 'Language',
+          note: 'Opening with collective "Our" immerses the reader in the soldiers\' shared suffering. The ellipsis trails off into exhausted silence.',
+          color: '#60a5fa',
+        },
+        {
+          type: 'Imagery',
+          note: '"Merciless iced east winds that knive us" -- nature is personified as a cruel, deliberate attacker. The verb "knive" (an Owen coinage) makes the wind a weapon.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Wearied we keep awake because the night is silent ...',
+      annotations: [
+        {
+          type: 'Structure',
+          note: 'Inversion ("Wearied we") foregrounds exhaustion. The silence is threatening -- they cannot sleep because quiet may mean an imminent attack.',
+          color: '#a78bfa',
+        },
+      ],
+    },
+    {
+      text: 'Low, drooping flares confuse our memory of the salient ...',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'Flares distort perception and memory, blurring the boundary between reality and hallucination. "Salient" is a military term for a bulge in the front line.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Worried by silence, sentries whisper, curious, nervous,',
+      annotations: [
+        {
+          type: 'Language',
+          note: 'List of adjectives ("curious, nervous") builds tension. Sibilance in "silence, sentries, whisper" creates a hushed, anxious atmosphere.',
+          color: '#60a5fa',
+        },
+      ],
+    },
+    {
+      text: 'But nothing happens.',
+      annotations: [
+        {
+          type: 'Refrain',
+          note: "The devastating refrain. The anticlimax is the poem's central point: the soldiers' greatest enemy is not combat but the agonising wait and exposure to the elements.",
+          color: '#ef4444',
+        },
+      ],
+    },
     { text: '' },
 
     // Stanza 2
-    { text: 'Watching, we hear the mad gusts tugging on the wire,', annotations: [
-      { type: 'Language', note: 'Synaesthesia -- "Watching, we hear" blends senses, reflecting disorientation. "Mad gusts" personifies the wind as insane and unpredictable.', color: '#60a5fa' },
-    ]},
-    { text: 'Like twitching agonies of men among its brambles.', annotations: [
-      { type: 'Imagery', note: 'Simile compares barbed wire to brambles and wind-shaken wire to dying men twitching. Nature and war horror merge.', color: '#f59e0b' },
-    ]},
-    { text: 'Northward, incessantly, the flickering gunnery rumbles,', annotations: [
-      { type: 'Sound', note: 'Onomatopoeia in "flickering" and "rumbles" creates a background soundscape of distant, constant bombardment.', color: '#34d399' },
-    ]},
-    { text: 'Far off, like a dull rumour of some other war.', annotations: [
-      { type: 'Imagery', note: 'The fighting feels remote and unreal, emphasising the soldiers\' isolation. "Some other war" suggests detachment from the conflict\'s purpose.', color: '#f59e0b' },
-    ]},
-    { text: 'What are we doing here?', annotations: [
-      { type: 'Language', note: 'Direct rhetorical question breaks the descriptive mode. Expresses bewilderment and hints at the futility the soldiers feel.', color: '#60a5fa' },
-    ]},
+    {
+      text: 'Watching, we hear the mad gusts tugging on the wire,',
+      annotations: [
+        {
+          type: 'Language',
+          note: 'Synaesthesia -- "Watching, we hear" blends senses, reflecting disorientation. "Mad gusts" personifies the wind as insane and unpredictable.',
+          color: '#60a5fa',
+        },
+      ],
+    },
+    {
+      text: 'Like twitching agonies of men among its brambles.',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'Simile compares barbed wire to brambles and wind-shaken wire to dying men twitching. Nature and war horror merge.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Northward, incessantly, the flickering gunnery rumbles,',
+      annotations: [
+        {
+          type: 'Sound',
+          note: 'Onomatopoeia in "flickering" and "rumbles" creates a background soundscape of distant, constant bombardment.',
+          color: '#34d399',
+        },
+      ],
+    },
+    {
+      text: 'Far off, like a dull rumour of some other war.',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The fighting feels remote and unreal, emphasising the soldiers\' isolation. "Some other war" suggests detachment from the conflict\'s purpose.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'What are we doing here?',
+      annotations: [
+        {
+          type: 'Language',
+          note: 'Direct rhetorical question breaks the descriptive mode. Expresses bewilderment and hints at the futility the soldiers feel.',
+          color: '#60a5fa',
+        },
+      ],
+    },
     { text: '' },
 
     // Stanza 3
-    { text: 'The poignant misery of dawn begins to grow...', annotations: [
-      { type: 'Imagery', note: 'Dawn, usually a symbol of hope, instead brings "poignant misery". Owen subverts expectations -- light reveals suffering rather than salvation.', color: '#f59e0b' },
-    ]},
+    {
+      text: 'The poignant misery of dawn begins to grow ...',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'Dawn, usually a symbol of hope, instead brings "poignant misery". Owen subverts expectations -- light reveals suffering rather than salvation.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: 'We only know war lasts, rain soaks, and clouds sag stormy.' },
-    { text: 'Dawn massing in the east her melancholy army', annotations: [
-      { type: 'Personification', note: 'Dawn is personified as a female general gathering an army of clouds. Nature becomes a military force attacking the soldiers, just as lethal as the human enemy.', color: '#f59e0b' },
-    ]},
-    { text: 'Attacks once more in ranks on shivering ranks of grey,', annotations: [
-      { type: 'Structure', note: '"Ranks on ranks" creates ambiguity -- it could describe rows of clouds or rows of soldiers. The repetition emphasises the relentless, wave-like assault of cold.', color: '#a78bfa' },
-    ]},
-    { text: 'But nothing happens.', annotations: [
-      { type: 'Refrain', note: 'Repeated refrain reinforces the cyclical, pointless nature of their suffering. Despite dawn\'s "attack", the stalemate continues.', color: '#ef4444' },
-    ]},
+    {
+      text: 'Dawn massing in the east her melancholy army',
+      annotations: [
+        {
+          type: 'Personification',
+          note: 'Dawn is personified as a female general gathering an army of clouds. Nature becomes a military force attacking the soldiers, just as lethal as the human enemy.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Attacks once more in ranks on shivering ranks of grey,',
+      annotations: [
+        {
+          type: 'Structure',
+          note: '"Ranks on ranks" creates ambiguity -- it could describe rows of clouds or rows of soldiers. The repetition emphasises the relentless, wave-like assault of cold.',
+          color: '#a78bfa',
+        },
+      ],
+    },
+    {
+      text: 'But nothing happens.',
+      annotations: [
+        {
+          type: 'Refrain',
+          note: 'Repeated refrain reinforces the cyclical, pointless nature of their suffering. Despite dawn\'s "attack", the stalemate continues.',
+          color: '#ef4444',
+        },
+      ],
+    },
     { text: '' },
 
     // Stanza 4
-    { text: 'Sudden successive flights of bullets streak the silence.', annotations: [
-      { type: 'Sound', note: 'Sibilance and plosive alliteration ("Sudden successive") mimics the rapid burst of gunfire cutting through quiet. A rare moment of action.', color: '#34d399' },
-    ]},
-    { text: 'Less deadly than the air that shudders black with snow,', annotations: [
-      { type: 'Key idea', note: 'The central paradox of the poem: bullets are "less deadly" than the weather. The cold kills more soldiers than the enemy.', color: '#ef4444' },
-    ]},
-    { text: 'With sidelong flowing flakes that flock, pause, and renew,', annotations: [
-      { type: 'Language', note: 'Snowflakes are described with the verb "flock", suggesting living creatures gathering. The rhythm of "flock, pause, and renew" mimics the stop-start pattern of snowfall.', color: '#60a5fa' },
-    ]},
-    { text: 'We watch them wandering up and down the wind\'s nonchalance,', annotations: [
-      { type: 'Personification', note: '"Wind\'s nonchalance" -- the wind is indifferent to the soldiers\' suffering. Nature does not care; it kills without malice or purpose.', color: '#f59e0b' },
-    ]},
-    { text: 'And turn our backs to our dying.', annotations: [
-      { type: 'Key idea', note: 'Devastating understatement. The soldiers passively accept death. "Turn our backs" suggests both resignation and a refusal to confront their fate.', color: '#ef4444' },
-    ]},
+    {
+      text: 'Sudden successive flights of bullets streak the silence.',
+      annotations: [
+        {
+          type: 'Sound',
+          note: 'Sibilance and plosive alliteration ("Sudden successive") mimics the rapid burst of gunfire cutting through quiet. A rare moment of action.',
+          color: '#34d399',
+        },
+      ],
+    },
+    {
+      text: 'Less deadly than the air that shudders black with snow,',
+      annotations: [
+        {
+          type: 'Key idea',
+          note: 'The central paradox of the poem: bullets are "less deadly" than the weather. The cold kills more soldiers than the enemy.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'With sidelong flowing flakes that flock, pause, and renew;',
+      annotations: [
+        {
+          type: 'Language',
+          note: 'Snowflakes are described with the verb "flock", suggesting living creatures gathering. The rhythm of "flock, pause, and renew" mimics the stop-start pattern of snowfall.',
+          color: '#60a5fa',
+        },
+      ],
+    },
+    {
+      text: "We watch them wandering up and down the wind's nonchalance,",
+      annotations: [
+        {
+          type: 'Personification',
+          note: '"Wind\'s nonchalance" -- the wind is indifferent to the soldiers\' suffering. Nature does not care; it kills without malice or purpose.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'But nothing happens.',
+      annotations: [
+        {
+          type: 'Refrain',
+          note: 'The refrain returns. Even amid bullets and snow, "nothing" of consequence happens to alter the soldiers\' agonising stalemate.',
+          color: '#ef4444',
+        },
+      ],
+    },
     { text: '' },
 
     // Stanza 5
-    { text: 'Since we believe not otherwise can kind fires burn;', annotations: [
-      { type: 'Imagery', note: 'The soldiers begin to hallucinate about home fires. "Kind fires" contrasts with the hostile cold -- warmth is associated with domestic life, now impossibly remote.', color: '#f59e0b' },
-    ]},
-    { text: 'Now ever suns smile true on child, or field, or fruit.', annotations: [
-      { type: 'Language', note: 'Idyllic imagery of home ("child, or field, or fruit") represents what the soldiers are fighting for, yet also what they can never return to.', color: '#60a5fa' },
-    ]},
-    { text: 'For God\'s invincible spring our love is made afraid;', annotations: [
-      { type: 'Key idea', note: '"God\'s invincible spring" -- the natural cycle of renewal feels impossible. Their love of life and home has been destroyed by the war.', color: '#ef4444' },
-    ]},
-    { text: 'Therefore, not loath, we lie out here; therefore were born,', annotations: [
-      { type: 'Language', note: '"Not loath" -- not unwilling. A deeply ambiguous phrase: have they accepted their fate, or have they simply lost the will to resist?', color: '#60a5fa' },
-    ]},
-    { text: 'For love of God seems dying.', annotations: [
-      { type: 'Key idea', note: 'Deeply ambiguous: either their love of God is dying, or God\'s love for them is dying. Both readings suggest spiritual abandonment and loss of faith.', color: '#ef4444' },
-    ]},
+    {
+      text: 'Pale flakes with fingering stealth come feeling for our faces --',
+      annotations: [
+        {
+          type: 'Personification',
+          note: '"Fingering stealth" personifies the snow as a creeping, almost sinister presence. The flakes "feel" for the soldiers\' faces like an attacker probing for weakness.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'We cringe in holes, back on forgotten dreams, and stare, snow-dazed,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Snow-dazed" captures the way prolonged exposure to cold dulls perception. The soldiers retreat physically (into "holes") and mentally (into "forgotten dreams").',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    { text: 'Deep into grassier ditches. So we drowse, sun-dozed,' },
+    {
+      text: 'Littered with blossoms trickling where the blackbird fusses.',
+      annotations: [
+        {
+          type: 'Juxtaposition',
+          note: 'A vision of summer ("blossoms", "blackbird") interrupts the freezing trench. The hallucinated warmth of home contrasts brutally with the snowbound reality.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Is it that we are dying?',
+      annotations: [
+        {
+          type: 'Language',
+          note: 'Rhetorical question. The soldiers are so numbed by cold and exhaustion that they cannot tell whether they are alive or dead.',
+          color: '#60a5fa',
+        },
+      ],
+    },
     { text: '' },
 
     // Stanza 6
-    { text: 'Tonight, this frost will fasten on this mud and us,', annotations: [
-      { type: 'Imagery', note: '"Fasten" suggests the frost gripping them like a predator. The soldiers are becoming part of the landscape, fusing with the mud.', color: '#f59e0b' },
-    ]},
-    { text: 'Shrivelling many hands, and puckering foreheads crisp.', annotations: [
-      { type: 'Imagery', note: 'Graphic physical detail of frostbite. "Shrivelling" and "puckering" describe the body deteriorating. "Crisp" is horrifyingly tactile.', color: '#f59e0b' },
-    ]},
-    { text: 'The burying-party, picks and shovels in their shaking grasp,', annotations: [
-      { type: 'Structure', note: 'The "burying-party" arrives -- the dead are being buried. The men digging are also shaking from the cold, suggesting they will soon follow.', color: '#a78bfa' },
-    ]},
-    { text: 'Pause over half-known faces. All their eyes are ice,', annotations: [
-      { type: 'Imagery', note: '"Half-known faces" -- the dead are barely recognisable, dehumanised by death and cold. "All their eyes are ice" is a chilling metaphor: they have literally frozen.', color: '#f59e0b' },
-    ]},
-    { text: 'But nothing happens.', annotations: [
-      { type: 'Refrain', note: 'Final repetition of the refrain. Even death changes nothing -- the war, the cold, the suffering all continue. The ultimate expression of futility.', color: '#ef4444' },
-    ]},
+    {
+      text: 'Slowly our ghosts drag home: glimpsing the sunk fires, glozed',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The soldiers imagine their spirits leaving their bodies and returning home. "Ghosts" implies they are already dead. "Glozed" means glazed or dimmed -- the home fires are fading.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'With crusted dark-red jewels; crickets jingle there;',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'Dying embers are "crusted dark-red jewels" -- beautiful yet extinguished. "Crickets jingle" evokes peaceful domestic sounds, painfully distant from the trenches.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'For hours the innocent mice rejoice: the house is theirs;',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'Mice have taken over the empty homes. "Innocent" and "rejoice" contrast with the soldiers\' guilt and misery. Life continues at home without them.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Shutters and doors, all closed: on us the doors are closed, --',
+      annotations: [
+        {
+          type: 'Structure',
+          note: 'Repetition of "closed" with a shift in meaning: first literal (the house is shut up), then metaphorical (they are shut out from home and life). The dash trails into despair.',
+          color: '#a78bfa',
+        },
+      ],
+    },
+    {
+      text: 'We turn back to our dying.',
+      annotations: [
+        {
+          type: 'Refrain',
+          note: 'A devastating variation on "But nothing happens." The soldiers do not escape into the imagined home; they return to the slow process of dying.',
+          color: '#ef4444',
+        },
+      ],
+    },
     { text: '' },
 
     // Stanza 7
-    { text: 'Slowly our ghosts drag home: glimpsing the sunk fires, glozed', annotations: [
-      { type: 'Imagery', note: 'The soldiers imagine their spirits leaving their bodies and returning home. "Ghosts" implies they are already dead. "Glozed" means glazed or dimmed -- the home fires are fading.', color: '#f59e0b' },
-    ]},
-    { text: 'With crusted dark-red jewels; crickets jingle there;', annotations: [
-      { type: 'Imagery', note: 'Dying embers are "crusted dark-red jewels" -- beautiful yet extinguished. "Crickets jingle" evokes peaceful domestic sounds, painfully distant from the trenches.', color: '#f59e0b' },
-    ]},
-    { text: 'For hours the innocent mice rejoice, the house is theirs;', annotations: [
-      { type: 'Imagery', note: 'Mice have taken over the empty homes. "Innocent" and "rejoice" contrast with the soldiers\' guilt and misery. Life continues at home without them.', color: '#f59e0b' },
-    ]},
-    { text: 'Shutters and doors, all closed: on us the doors are closed, --', annotations: [
-      { type: 'Structure', note: 'Repetition of "closed" with a shift in meaning: first literal (the house is shut up), then metaphorical (they are shut out from home and life). The dash trails into despair.', color: '#a78bfa' },
-    ]},
-    { text: 'We turn back to our dying.', annotations: [
-      { type: 'Refrain', note: 'Variation of the earlier "turn our backs to our dying" -- they cannot escape death. The hallucination of home offers no comfort.', color: '#ef4444' },
-    ]},
+    {
+      text: 'Since we believe not otherwise can kind fires burn;',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The soldiers begin to hallucinate about home fires. "Kind fires" contrasts with the hostile cold -- warmth is associated with domestic life, now impossibly remote.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Nor ever suns smile true on child, or field, or fruit.',
+      annotations: [
+        {
+          type: 'Language',
+          note: 'Idyllic imagery of home ("child, or field, or fruit") represents what the soldiers are fighting for, yet also what they can never return to.',
+          color: '#60a5fa',
+        },
+      ],
+    },
+    {
+      text: "For God's invincible spring our love is made afraid;",
+      annotations: [
+        {
+          type: 'Key idea',
+          note: '"God\'s invincible spring" -- the natural cycle of renewal feels impossible. Their love of life and home has been destroyed by the war.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'Therefore, not loath, we lie out here; therefore were born,',
+      annotations: [
+        {
+          type: 'Language',
+          note: '"Not loath" -- not unwilling. A deeply ambiguous phrase: have they accepted their fate, or have they simply lost the will to resist?',
+          color: '#60a5fa',
+        },
+      ],
+    },
+    {
+      text: 'For love of God seems dying.',
+      annotations: [
+        {
+          type: 'Key idea',
+          note: "Deeply ambiguous: either their love of God is dying, or God's love for them is dying. Both readings suggest spiritual abandonment and loss of faith.",
+          color: '#ef4444',
+        },
+      ],
+    },
     { text: '' },
 
     // Stanza 8
-    { text: 'Is it that we are dying?', annotations: [
-      { type: 'Language', note: 'Rhetorical question opens the final stanza. The soldiers are so numbed they cannot even tell if they are alive or dead.', color: '#60a5fa' },
-    ]},
-    { text: 'Slowly our ghosts drag home: glimpsing the sunk fires, glozed' },
+    {
+      text: 'To-night, His frost will fasten on this mud and us,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Fasten" suggests the frost gripping them like a predator. "His" capitalised suggests God\'s frost: nature\'s violence is also divine.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Shrugging wide shoulders out the cold, and crucifix.',
+      annotations: [
+        {
+          type: 'Religious imagery',
+          note: '"Crucifix" connects the soldiers\' suffering to Christ\'s. They are sacrificed in the cold; their bodies will be marked like the crucified Christ.',
+          color: '#a78bfa',
+        },
+      ],
+    },
+    {
+      text: 'Slowly our ghosts drag home: glimpsing the sunk fires, glozed',
+      annotations: [
+        {
+          type: 'Structure',
+          note: 'The near-exact repetition of stanza 6 creates a haunting, cyclical effect -- the soldiers are trapped in an endless loop of suffering with no resolution.',
+          color: '#a78bfa',
+        },
+      ],
+    },
     { text: 'With crusted dark-red jewels; crickets jingle there;' },
-    { text: 'For hours the innocent mice rejoice, the house is theirs;' },
-    { text: 'Shutters and doors, all closed: on us the doors are closed, --', annotations: [
-      { type: 'Structure', note: 'The near-exact repetition of stanza 7 creates a haunting, cyclical effect -- the soldiers are trapped in an endless loop of suffering with no resolution.', color: '#a78bfa' },
-    ]},
-    { text: 'We turn back to our dying.', annotations: [
-      { type: 'Refrain', note: 'The poem ends not with death itself but with the perpetual process of dying. There is no climax, no resolution -- only the endless, grinding exposure.', color: '#ef4444' },
-    ]},
+    { text: 'For hours the innocent mice rejoice: the house is theirs;' },
+    { text: 'Shutters and doors, all closed: on us the doors are closed, --' },
+    {
+      text: 'But nothing happens.',
+      annotations: [
+        {
+          type: 'Refrain',
+          note: 'The poem closes with the refrain that defines it. After all the suffering, all the dying, nothing changes -- the ultimate expression of futility.',
+          color: '#ef4444',
+        },
+      ],
+    },
   ],
 
   context: `<p><strong>Wilfred Owen</strong> (1893--1918) is widely regarded as the greatest poet of the First World War. He enlisted in 1915 and experienced the horrors of trench warfare on the Western Front first-hand, including the Battle of the Somme.</p>
@@ -410,14 +735,8 @@ CYCLICAL STRUCTURE:
     {
       quote: 'For love of God seems dying',
       analysis:
-        'Deliberately ambiguous: their love of God is fading, or God\'s love for them is dying. Either reading suggests spiritual abandonment. Owen, who had been deeply religious, implies that the horrors of war have destroyed faith itself.',
+        "Deliberately ambiguous: their love of God is fading, or God's love for them is dying. Either reading suggests spiritual abandonment. Owen, who had been deeply religious, implies that the horrors of war have destroyed faith itself.",
       themes: ['Futility / Loss', 'Suffering'],
-    },
-    {
-      quote: 'All their eyes are ice',
-      analysis:
-        'A stark, monosyllabic metaphor describing the frozen dead. The short vowel sounds create a cold, hard effect. The dead soldiers\' eyes, once full of life, are now literally and metaphorically frozen -- they reflect nothing.',
-      themes: ['Suffering', 'Power of Nature'],
     },
     {
       quote: 'Shutters and doors, all closed: on us the doors are closed',
@@ -439,14 +758,14 @@ CYCLICAL STRUCTURE:
       device: 'Pararhyme (half-rhyme)',
       example: 'knive us / nervous; silence / nonchalance; snow / renew',
       effect:
-        'Owen\'s signature technique. The consonants match but the vowels shift, producing sounds that almost rhyme but never quite resolve. This creates a persistent sense of discomfort and incompleteness that mirrors the soldiers\' unresolved suffering and the poem\'s refusal to offer closure.',
+        "Owen's signature technique. The consonants match but the vowels shift, producing sounds that almost rhyme but never quite resolve. This creates a persistent sense of discomfort and incompleteness that mirrors the soldiers' unresolved suffering and the poem's refusal to offer closure.",
       lineRef: 3,
     },
     {
       device: 'Rhetorical questions',
       example: 'What are we doing here?',
       effect:
-        'Breaks the descriptive mode with a direct, unanswerable question. It voices the soldiers\' bewilderment and sense of purposelessness. There is no answer because the war itself has no justifiable purpose in Owen\'s view.',
+        "Breaks the descriptive mode with a direct, unanswerable question. It voices the soldiers' bewilderment and sense of purposelessness. There is no answer because the war itself has no justifiable purpose in Owen's view.",
       lineRef: 11,
     },
     {
@@ -467,12 +786,12 @@ CYCLICAL STRUCTURE:
       device: 'Ellipsis',
       example: 'Our brains ache, in the merciless iced east winds that knive us...',
       effect:
-        'Owen uses trailing ellipses at the ends of lines to suggest thoughts left unfinished, energy fading, and the endless, unresolvable nature of the soldiers\' wait. The dots visually enact the soldiers trailing off into silence and exhaustion.',
+        "Owen uses trailing ellipses at the ends of lines to suggest thoughts left unfinished, energy fading, and the endless, unresolvable nature of the soldiers' wait. The dots visually enact the soldiers trailing off into silence and exhaustion.",
       lineRef: 0,
     },
     {
       device: 'Juxtaposition (home vs. trenches)',
-      example: 'kind fires burn / All their eyes are ice',
+      example: 'kind fires burn / But nothing happens',
       effect:
         'Owen repeatedly contrasts the warmth and safety of home ("kind fires", "crickets jingle", "innocent mice") with the frozen horror of the trenches. This juxtaposition emphasises what the soldiers have lost and highlights the unbridgeable gap between civilian life and the reality of war.',
       lineRef: 24,
@@ -491,11 +810,17 @@ export default function ExposurePage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
-          { name: "Exposure", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/exposure" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Power and Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
+          },
+          {
+            name: 'Exposure',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/exposure',
+          },
         ]}
       />
       {/* ── Navigation ── */}
@@ -519,7 +844,9 @@ export default function ExposurePage() {
             <p className="text-body-sm text-muted-foreground">
               Wilfred Owen &middot; Power and Conflict Anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              AQA
+            </Badge>
           </div>
         </div>
       </div>
@@ -533,6 +860,37 @@ export default function ExposurePage() {
           </Badge>
         ))}
       </div>
+
+      {/* ── Verified context block ── */}
+      <aside className="rounded-xl border border-border/60 bg-card/50 p-5 space-y-2">
+        <h2 className="text-sm font-semibold text-foreground">Context at a glance</h2>
+        <ul className="text-xs text-muted-foreground space-y-1 list-disc pl-4">
+          <li>
+            <strong>Setting:</strong> WWI Western Front, winter 1917-18 (trenches near Beaumont
+            Hamel).
+          </li>
+          <li>
+            <strong>Composition:</strong> Drafted 1917; published posthumously 1920. Owen killed 4
+            November 1918.
+          </li>
+          <li>
+            <strong>Focus:</strong> Weather as antagonist -- the wind, frost and snow are the true
+            enemy, not the opposing army.
+          </li>
+          <li>
+            <strong>Form:</strong> Free-verse-leaning quintains (8 stanzas of 5 lines) with a
+            recurring refrain "But nothing happens."
+          </li>
+          <li>
+            <strong>Rhyme:</strong> AABBC pararhyme scheme -- consonants match but vowels shift,
+            producing deliberate dissonance.
+          </li>
+          <li>
+            <strong>Textual note:</strong> "knive" (Line 1) is Owen's deliberate coinage -- cite
+            exactly as printed; do not "correct" to "knife".
+          </li>
+        </ul>
+      </aside>
 
       {/* ── Interactive poem viewer ── */}
       <StudyTools
@@ -554,9 +912,7 @@ export default function ExposurePage() {
 
       {/* ── Comparison poems ── */}
       <section className="space-y-4">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Compare With
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Compare With</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {COMPARISONS.map((c) => (
             <div
@@ -566,9 +922,7 @@ export default function ExposurePage() {
               <div>
                 <h3 className="text-sm font-semibold text-foreground">{c.title}</h3>
                 <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-                <p className="text-sm text-card-foreground leading-relaxed">
-                  {c.reason}
-                </p>
+                <p className="text-sm text-card-foreground leading-relaxed">{c.reason}</p>
               </div>
               <Button
                 variant="outline"
@@ -584,7 +938,8 @@ export default function ExposurePage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Public domain &mdash; quotations from Exposure by Wilfred Owen reproduced freely.
+        Exposure by Wilfred Owen (1917-18) is in the public domain. Source: Wikisource &mdash;
+        verified against the Verified Library.
       </p>
     </div>
   )

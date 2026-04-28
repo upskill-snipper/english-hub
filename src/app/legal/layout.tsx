@@ -1,47 +1,43 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const legalPages = [
-  { href: "/terms", label: "Terms & Conditions" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/cookie-policy", label: "Cookie Policy" },
-  { href: "/refund-policy", label: "Refund Policy" },
-  { href: "/legal/cancellation", label: "Cancellation Policy" },
-  { href: "/legal/acceptable-use", label: "Acceptable Use Policy" },
-  { href: "/legal/ai-transparency", label: "AI Transparency" },
-  { href: "/legal/safeguarding", label: "Safeguarding Policy" },
-  { href: "/accessibility", label: "Accessibility Statement" },
-  { href: "/legal/complaints", label: "Complaints Procedure" },
-  { href: "/legal/cancellation-form", label: "Cancellation Form" },
-  { href: "/data-processing", label: "Data Processing" },
-  { href: "/legal/privacy-qatar", label: "Qatar Privacy Notice" },
-  { href: "/legal/disclaimer", label: "Full Disclaimer" },
-];
+  { href: '/terms', label: 'Terms & Conditions' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/cookie-policy', label: 'Cookie Policy' },
+  { href: '/refund-policy', label: 'Refund Policy' },
+  { href: '/legal/cancellation', label: 'Cancellation Policy' },
+  { href: '/legal/acceptable-use', label: 'Acceptable Use Policy' },
+  { href: '/legal/ai-transparency', label: 'AI Transparency' },
+  { href: '/legal/safeguarding', label: 'Safeguarding Policy' },
+  { href: '/accessibility', label: 'Accessibility Statement' },
+  { href: '/legal/complaints', label: 'Complaints Procedure' },
+  { href: '/legal/cancellation-form', label: 'Cancellation Form' },
+  { href: '/data-processing', label: 'Data Processing' },
+  { href: '/legal/privacy-qatar', label: 'Qatar Privacy Notice' },
+  { href: '/legal/disclaimer', label: 'Full Disclaimer' },
+  { href: '/legal/rights', label: 'Rights & Permissions' },
+]
 
 function ExamBoardDisclaimer() {
   return (
     <div className="mt-12 border-t border-border pt-8 text-sm text-muted-foreground">
       <p className="font-semibold text-muted-foreground mb-2">Exam Board Disclaimer</p>
       <p>
-        The English Hub is an independent educational platform. We are not
-        endorsed by, affiliated with, or formally connected to any examination
-        board, including AQA, Edexcel (Pearson), OCR, Cambridge Assessment
-        International Education (CAIE), or WJEC/Eduqas. All exam board names,
-        logos, and trademarks are the property of their respective owners and are
-        used for identification and reference purposes only.
+        The English Hub is an independent educational platform. We are not endorsed by, affiliated
+        with, or formally connected to any examination board, including AQA, Edexcel (Pearson), OCR,
+        Cambridge Assessment International Education (CAIE), or WJEC/Eduqas. All exam board names,
+        logos, and trademarks are the property of their respective owners and are used for
+        identification and reference purposes only.
       </p>
     </div>
-  );
+  )
 }
 
-export default function LegalLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const pathname = usePathname();
+export default function LegalLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
 
   return (
     <div className="min-h-screen bg-background">
@@ -70,38 +66,31 @@ export default function LegalLayout({
               </h2>
               <ul className="space-y-1">
                 {legalPages.map((page) => {
-                  const isActive = pathname === page.href;
+                  const isActive = pathname === page.href
                   return (
                     <li key={page.href}>
                       <Link
                         href={page.href}
                         className={`block px-3 py-2 rounded-md text-sm transition-colors ${
                           isActive
-                            ? "bg-primary text-white font-medium"
-                            : "text-muted-foreground hover:bg-muted"
+                            ? 'bg-primary text-white font-medium'
+                            : 'text-muted-foreground hover:bg-muted'
                         }`}
                       >
                         {page.label}
                       </Link>
                     </li>
-                  );
+                  )
                 })}
               </ul>
 
               <div className="mt-6 pt-4 border-t border-border">
-                <p className="text-xs text-muted-foreground">
-                  Last updated: 22 March 2026
-                </p>
+                <p className="text-xs text-muted-foreground">Last updated: 22 March 2026</p>
                 <button
                   onClick={() => window.print()}
                   className="mt-3 flex items-center gap-2 text-sm text-foreground hover:underline cursor-pointer"
                 >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -136,21 +125,21 @@ export default function LegalLayout({
               </summary>
               <ul className="mt-2 bg-card rounded-lg shadow-md border border-border overflow-hidden">
                 {legalPages.map((page) => {
-                  const isActive = pathname === page.href;
+                  const isActive = pathname === page.href
                   return (
                     <li key={page.href}>
                       <Link
                         href={page.href}
                         className={`block px-4 py-2.5 text-sm border-b border-border last:border-b-0 ${
                           isActive
-                            ? "bg-primary/5 text-foreground font-medium"
-                            : "text-muted-foreground hover:bg-muted"
+                            ? 'bg-primary/5 text-foreground font-medium'
+                            : 'text-muted-foreground hover:bg-muted'
                         }`}
                       >
                         {page.label}
                       </Link>
                     </li>
-                  );
+                  )
                 })}
               </ul>
             </details>
@@ -168,5 +157,5 @@ export default function LegalLayout({
         </div>
       </div>
     </div>
-  );
+  )
 }

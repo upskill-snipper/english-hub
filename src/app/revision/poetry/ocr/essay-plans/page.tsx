@@ -80,17 +80,17 @@ const ESSAY_PLANS: EssayPlan[] = [
           'Wordsworth builds his argument in a single sustained stanza that gathers emotional force. The lack of breaks creates a sense of relentless, building grief.',
       },
       {
-        topic: 'Tone and the speaker\'s attitude to loss',
+        topic: "Tone and the speaker's attitude to loss",
         poemADetail:
-          'Hardy\'s tone is bitterly resigned. The speaker has learned a permanent lesson about love\'s capacity to deceive, and the final image suggests this moment has coloured all subsequent experience.',
+          "Hardy's tone is bitterly resigned. The speaker has learned a permanent lesson about love's capacity to deceive, and the final image suggests this moment has coloured all subsequent experience.",
         poemBDetail:
-          'Wordsworth\'s tone is more openly sorrowful -- he acknowledges what has been lost and grieves for it directly, without Hardy\'s protective cynicism.',
+          "Wordsworth's tone is more openly sorrowful -- he acknowledges what has been lost and grieves for it directly, without Hardy's protective cynicism.",
       },
     ],
     conclusion:
-      'While both poets present lost love as devastating, Hardy internalises the pain into a permanent scar on memory, whereas Wordsworth expresses grief more openly. Hardy\'s restraint is arguably the more unsettling of the two.',
+      "While both poets present lost love as devastating, Hardy internalises the pain into a permanent scar on memory, whereas Wordsworth expresses grief more openly. Hardy's restraint is arguably the more unsettling of the two.",
     examTip:
-      'When comparing these poems, focus on the different functions of natural imagery. Hardy\'s landscape is symbolic; Wordsworth\'s fountain is an extended metaphor. Naming the technique precisely shows the examiner you understand poetic method.',
+      "When comparing these poems, focus on the different functions of natural imagery. Hardy's landscape is symbolic; Wordsworth's fountain is an extended metaphor. Naming the technique precisely shows the examiner you understand poetic method.",
   },
   {
     id: 2,
@@ -116,12 +116,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: 'Abstract versus physical imagery',
         poemADetail:
-          'Barrett Browning\'s love is defined in abstract, spiritual terms -- depth, breadth, height -- pushing the poem beyond the body into something transcendent. The cumulative listing creates a sense of limitless devotion.',
+          "Barrett Browning's love is defined in abstract, spiritual terms -- depth, breadth, height -- pushing the poem beyond the body into something transcendent. The cumulative listing creates a sense of limitless devotion.",
         poemBDetail:
           'Byron balances light and dark imagery, finding beauty in the meeting point of opposites. His imagery is visual and sensory, rooted in the physical appearance of the woman he describes.',
       },
       {
-        topic: 'Context and the speaker\'s position',
+        topic: "Context and the speaker's position",
         poemADetail:
           'Barrett Browning writes from lived experience; the poem is addressed to her future husband, Robert Browning. This biographical context gives the declaration an authenticity that elevates it beyond convention.',
         poemBDetail:
@@ -147,12 +147,12 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetB: 'Alfred Lord Tennyson',
     thematicFocus: 'War, suffering, duty, the gap between reality and glory',
     intro:
-      'Owen and Tennyson both depict soldiers in extreme danger, yet their perspectives are starkly opposed. Owen dismantles any notion of glory; Tennyson celebrates heroic obedience. Comparing them reveals how poetic form and context shape the reader\'s response to war.',
+      "Owen and Tennyson both depict soldiers in extreme danger, yet their perspectives are starkly opposed. Owen dismantles any notion of glory; Tennyson celebrates heroic obedience. Comparing them reveals how poetic form and context shape the reader's response to war.",
     points: [
       {
         topic: 'The depiction of the enemy',
         poemADetail:
-          'In Owen\'s poem, the real enemy is not the opposing army but the weather itself. The soldiers are slowly killed by cold and boredom rather than combat, undermining any narrative of heroic battle.',
+          "In Owen's poem, the real enemy is not the opposing army but the weather itself. The soldiers are slowly killed by cold and boredom rather than combat, undermining any narrative of heroic battle.",
         poemBDetail:
           'Tennyson presents a clearly defined enemy in the Russian guns, creating a dramatic scenario of soldiers riding bravely into the "valley of Death". The enemy provides a stage for heroism.',
       },
@@ -161,10 +161,10 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemADetail:
           'Owen uses half-rhyme and a refrain-like repetition of "But nothing happens" to create a sense of stagnation and futility. The form itself enacts the monotony of trench warfare.',
         poemBDetail:
-          'Tennyson uses galloping dactylic rhythm and insistent repetition to recreate the momentum of a cavalry charge. The sound of the poem is designed to inspire awe and admiration.',
+          'Tennyson uses a galloping rhythm — predominantly anapaestic dimeter (da-da-DUM) with a dactylic refrain ("Rode the six hundred") — and insistent repetition to recreate the momentum of a cavalry charge. The sound of the poem is designed to inspire awe and admiration.',
       },
       {
-        topic: 'The poets\' relationship to the conflict',
+        topic: "The poets' relationship to the conflict",
         poemADetail:
           'Owen wrote from direct experience of the Western Front. His authority comes from having witnessed the suffering he describes, and his poetry is explicitly intended to expose the truth about war.',
         poemBDetail:
@@ -172,9 +172,9 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
     ],
     conclusion:
-      'Owen and Tennyson show that the way a poet presents war depends heavily on their relationship to it. Owen\'s first-hand experience produces an anti-war poem; Tennyson\'s distance produces a celebration of duty. Together they demonstrate how context shapes poetic purpose.',
+      "Owen and Tennyson show that the way a poet presents war depends heavily on their relationship to it. Owen's first-hand experience produces an anti-war poem; Tennyson's distance produces a celebration of duty. Together they demonstrate how context shapes poetic purpose.",
     examTip:
-      'When the question asks about "reality", address whose reality is being presented. Owen\'s reality is the soldier\'s; Tennyson\'s is the nation\'s. Making this distinction shows sophisticated thinking.',
+      "When the question asks about \"reality\", address whose reality is being presented. Owen's reality is the soldier's; Tennyson's is the nation's. Making this distinction shows sophisticated thinking.",
   },
   {
     id: 4,
@@ -207,13 +207,13 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: 'How form reinforces meaning',
         poemADetail:
-          'Byron\'s anapaestic tetrameter creates a galloping, relentless rhythm that mirrors the speed of divine destruction. The regularity of the form suggests the inevitability of the army\'s defeat.',
+          "Byron's anapaestic tetrameter creates a galloping, relentless rhythm that mirrors the speed of divine destruction. The regularity of the form suggests the inevitability of the army's defeat.",
         poemBDetail:
           'Rossetti uses a ballad form with a refrain-like structure, echoing folk traditions of wronged women telling their stories. The simplicity of the form makes the injustice feel timeless and universal.',
       },
     ],
     conclusion:
-      'Byron and Rossetti both condemn the abuse of power, but from vastly different scales. Byron\'s is cosmic and impersonal; Rossetti\'s is intimate and gendered. Together they demonstrate that conflict can operate at every level of human experience.',
+      "Byron and Rossetti both condemn the abuse of power, but from vastly different scales. Byron's is cosmic and impersonal; Rossetti's is intimate and gendered. Together they demonstrate that conflict can operate at every level of human experience.",
     examTip:
       'Cross-cluster comparisons are not required in the OCR exam, but comparing poems within the Conflict cluster that address different kinds of conflict shows range and independence of thought.',
   },
@@ -234,7 +234,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       'Both Keats and Tennyson confront their own mortality, but their emotional responses could not be more different. Keats is terrified of dying before he can fulfil his potential; Tennyson faces death with calm acceptance. Comparing them reveals contrasting attitudes to time and legacy.',
     points: [
       {
-        topic: 'The speaker\'s attitude to death',
+        topic: "The speaker's attitude to death",
         poemADetail:
           'Keats expresses raw fear. His poem catalogues what he stands to lose -- unwritten books, unexperienced love, the beauty of the night sky -- creating a crescendo of anxiety about time running out.',
         poemBDetail:
@@ -279,7 +279,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemADetail:
           'Jonson\'s poem is an elegy for his seven-year-old son. The pain is sharpened by the metaphor of the child as his "best piece of poetry" -- a creator mourning the destruction of his finest creation.',
         poemBDetail:
-          'Yeats\'s speaker is not grieving a death but a way of life. The old mother\'s daily labour -- kindling fires, cleaning, cooking -- is contrasted with the ease of the young, creating a tone of weary bitterness.',
+          "Yeats's speaker is not grieving a death but a way of life. The old mother's daily labour -- kindling fires, cleaning, cooking -- is contrasted with the ease of the young, creating a tone of weary bitterness.",
       },
       {
         topic: 'Use of voice and address',
@@ -293,11 +293,11 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemADetail:
           'Jonson tries to console himself by arguing that his son has escaped the suffering of growing old. Time is the enemy that the child has been spared.',
         poemBDetail:
-          'For Yeats\'s speaker, time is a relentless cycle of labour. The daily round of tasks -- fire to fire, dawn to dusk -- creates a sense of time as entrapment.',
+          "For Yeats's speaker, time is a relentless cycle of labour. The daily round of tasks -- fire to fire, dawn to dusk -- creates a sense of time as entrapment.",
       },
     ],
     conclusion:
-      'Jonson and Yeats both reveal that parenthood is defined by sacrifice, but Jonson\'s sacrifice is endured in grief while Yeats\'s is endured in exhaustion. Both poems gain power from their simplicity of language.',
+      "Jonson and Yeats both reveal that parenthood is defined by sacrifice, but Jonson's sacrifice is endured in grief while Yeats's is endured in exhaustion. Both poems gain power from their simplicity of language.",
     examTip:
       'The question may ask about "relationships" broadly. Framing parent-child relationships as a specific type of relationship shows you can narrow your focus effectively.',
   },
@@ -313,34 +313,34 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'Percy Bysshe Shelley',
     poemB: 'Ode to the West Wind',
     poetB: 'Percy Bysshe Shelley',
-    thematicFocus: 'Nature\'s power, human impermanence, destruction and renewal',
+    thematicFocus: "Nature's power, human impermanence, destruction and renewal",
     intro:
-      'Both poems are by Shelley, yet they present nature\'s power in different lights. In Ozymandias, nature is a silent destroyer that outlasts human arrogance. In Ode to the West Wind, nature is an active, elemental force that the speaker longs to harness. Comparing two poems by the same poet reveals how context and form shape meaning.',
+      "Both poems are by Shelley, yet they present nature's power in different lights. In Ozymandias, nature is a silent destroyer that outlasts human arrogance. In Ode to the West Wind, nature is an active, elemental force that the speaker longs to harness. Comparing two poems by the same poet reveals how context and form shape meaning.",
     points: [
       {
         topic: 'Nature as destroyer versus nature as creator',
         poemADetail:
-          'In Ozymandias, nature works through time. The desert has buried an empire and eroded a statue to rubble. Nature\'s power is patient, irresistible, and humbling.',
+          "In Ozymandias, nature works through time. The desert has buried an empire and eroded a statue to rubble. Nature's power is patient, irresistible, and humbling.",
         poemBDetail:
           'In Ode to the West Wind, nature is both destroyer and preserver simultaneously. The wind scatters dead leaves but also carries seeds. Its power is dynamic and cyclical rather than merely erosive.',
       },
       {
-        topic: 'The speaker\'s relationship to nature',
+        topic: "The speaker's relationship to nature",
         poemADetail:
-          'The speaker of Ozymandias is a detached observer, reporting a traveller\'s story. He stands outside the scene, inviting the reader to draw their own conclusions about human vanity.',
+          "The speaker of Ozymandias is a detached observer, reporting a traveller's story. He stands outside the scene, inviting the reader to draw their own conclusions about human vanity.",
         poemBDetail:
           'The speaker of Ode to the West Wind is passionately engaged with nature, begging the wind to lift him, carry him, and make him its instrument. The relationship is one of desperate identification.',
       },
       {
         topic: 'Form and its effect on meaning',
         poemADetail:
-          'Ozymandias is a sonnet -- a compact, controlled form that mirrors the theme of containment and collapse. The fragmented syntax of the inscription mimics the statue\'s physical decay.',
+          "Ozymandias is a sonnet -- a compact, controlled form that mirrors the theme of containment and collapse. The fragmented syntax of the inscription mimics the statue's physical decay.",
         poemBDetail:
           'Ode to the West Wind uses terza rima, a demanding interlocking rhyme scheme that propels the reader forward, mirroring the unstoppable momentum of the wind itself.',
       },
     ],
     conclusion:
-      'Comparing two Shelley poems reveals his range: Ozymandias uses nature to humble human arrogance, while Ode to the West Wind uses nature as a model for creative and political energy. Both demonstrate that nature\'s power dwarfs human ambition.',
+      "Comparing two Shelley poems reveals his range: Ozymandias uses nature to humble human arrogance, while Ode to the West Wind uses nature as a model for creative and political energy. Both demonstrate that nature's power dwarfs human ambition.",
     examTip:
       'Comparing two poems by the same poet is a strong strategy. It allows you to argue that differences in form and context produce different meanings even from the same authorial voice.',
   },
@@ -356,7 +356,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetB: 'William Wordsworth',
     thematicFocus: 'City, nature, perspective, social criticism',
     intro:
-      'Blake and Wordsworth both write about London, yet they see entirely different cities. Blake walks the streets at night and hears suffering; Wordsworth gazes at the skyline at dawn and sees beauty. Together they show how the poet\'s purpose and timing transform the same subject.',
+      "Blake and Wordsworth both write about London, yet they see entirely different cities. Blake walks the streets at night and hears suffering; Wordsworth gazes at the skyline at dawn and sees beauty. Together they show how the poet's purpose and timing transform the same subject.",
     points: [
       {
         topic: 'What the poet chooses to see',
@@ -375,9 +375,9 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: 'Tone and purpose',
         poemADetail:
-          'Blake\'s tone is angry and accusatory. He is writing protest poetry, designed to expose injustice and provoke change.',
+          "Blake's tone is angry and accusatory. He is writing protest poetry, designed to expose injustice and provoke change.",
         poemBDetail:
-          'Wordsworth\'s tone is awestruck and reverent. He is writing a Petrarchan sonnet of praise, designed to capture a single transcendent moment of beauty.',
+          "Wordsworth's tone is awestruck and reverent. He is writing a Petrarchan sonnet of praise, designed to capture a single transcendent moment of beauty.",
       },
     ],
     conclusion:
@@ -399,19 +399,19 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetB: 'Thomas Hardy',
     thematicFocus: 'Inner conflict, disillusionment, the gap between expectation and reality',
     intro:
-      'Both poems are by Hardy and both explore a kind of disillusionment -- one romantic, the other military. In Neutral Tones, a relationship has died; in The Man He Killed, a soldier realises the absurdity of killing a stranger. Comparing them reveals Hardy\'s consistent interest in the cruelty of circumstance.',
+      "Both poems are by Hardy and both explore a kind of disillusionment -- one romantic, the other military. In Neutral Tones, a relationship has died; in The Man He Killed, a soldier realises the absurdity of killing a stranger. Comparing them reveals Hardy's consistent interest in the cruelty of circumstance.",
     points: [
       {
         topic: 'The nature of the conflict',
         poemADetail:
           'The conflict in Neutral Tones is internal and emotional. The speaker revisits a moment when love died and recognises that the relationship had been built on deception.',
         poemBDetail:
-          'The conflict in The Man He Killed is both external (the act of killing) and internal (the speaker\'s inability to justify it). The colloquial tone masks a deep moral crisis.',
+          "The conflict in The Man He Killed is both external (the act of killing) and internal (the speaker's inability to justify it). The colloquial tone masks a deep moral crisis.",
       },
       {
         topic: 'Use of setting and atmosphere',
         poemADetail:
-          'Hardy uses a bleak winter scene -- a white sun, a grey pond, fallen leaves -- to externalise the speaker\'s emotional state. The setting is as dead as the relationship.',
+          "Hardy uses a bleak winter scene -- a white sun, a grey pond, fallen leaves -- to externalise the speaker's emotional state. The setting is as dead as the relationship.",
         poemBDetail:
           'Hardy uses the setting of a pub, where the speaker tells his story informally. The casual, domestic setting makes the violence he describes even more jarring by contrast.',
       },
@@ -459,11 +459,11 @@ const ESSAY_PLANS: EssayPlan[] = [
           'Hopkins uses his signature sprung rhythm and compound words to capture the energy of the natural world. His language is dense, inventive, and physically demanding to read, mirroring the wildness he describes.',
       },
       {
-        topic: 'The poet\'s message about nature and time',
+        topic: "The poet's message about nature and time",
         poemADetail:
-          'Hood\'s message is personal and elegiac: childhood and its natural settings are gone forever, and adulthood is a diminished state. Nature marks what has been lost.',
+          "Hood's message is personal and elegiac: childhood and its natural settings are gone forever, and adulthood is a diminished state. Nature marks what has been lost.",
         poemBDetail:
-          'Hopkins\'s message is urgent and public: wild places must be protected from human interference. His final plea is a direct argument for conservation, ahead of its time.',
+          "Hopkins's message is urgent and public: wild places must be protected from human interference. His final plea is a direct argument for conservation, ahead of its time.",
       },
     ],
     conclusion:
@@ -479,12 +479,9 @@ const CLUSTER_BADGE: Record<string, string> = {
   'Love and Relationships': 'bg-pink-500/15 text-pink-300 border-pink-500/20',
   Conflict: 'bg-red-500/15 text-red-300 border-red-500/20',
   'Youth and Age': 'bg-amber-500/15 text-amber-700 border-amber-500/20',
-  'Power and the Natural World':
-    'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
-  'Love and Relationships / Conflict':
-    'bg-violet-500/15 text-violet-300 border-violet-500/20',
-  'Youth and Age / Power and the Natural World':
-    'bg-teal-500/15 text-teal-300 border-teal-500/20',
+  'Power and the Natural World': 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
+  'Love and Relationships / Conflict': 'bg-violet-500/15 text-violet-300 border-violet-500/20',
+  'Youth and Age / Power and the Natural World': 'bg-teal-500/15 text-teal-300 border-teal-500/20',
 }
 
 // ─── Expandable plan card ────────────────────────────────────────────────────
@@ -502,14 +499,11 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
           <PenLine className="size-5 text-primary" />
         </div>
         <div className="flex-1">
-          <h3 className="text-heading-md font-heading text-foreground pr-8">
-            {plan.title}
-          </h3>
+          <h3 className="text-heading-md font-heading text-foreground pr-8">{plan.title}</h3>
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <span
               className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[0.65rem] font-medium ${
-                CLUSTER_BADGE[plan.cluster] ??
-                'bg-muted text-muted-foreground border-border'
+                CLUSTER_BADGE[plan.cluster] ?? 'bg-muted text-muted-foreground border-border'
               }`}
             >
               {plan.cluster}
@@ -533,19 +527,13 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
             <p className="text-caption font-semibold uppercase tracking-wider text-muted-foreground">
               Thematic focus
             </p>
-            <p className="mt-1 text-body-sm text-foreground">
-              {plan.thematicFocus}
-            </p>
+            <p className="mt-1 text-body-sm text-foreground">{plan.thematicFocus}</p>
           </div>
 
           {/* Introduction */}
           <div className="mb-6">
-            <h4 className="mb-2 text-sm font-semibold text-foreground">
-              Introduction
-            </h4>
-            <p className="text-body-sm text-muted-foreground leading-relaxed">
-              {plan.intro}
-            </p>
+            <h4 className="mb-2 text-sm font-semibold text-foreground">Introduction</h4>
+            <p className="text-body-sm text-muted-foreground leading-relaxed">{plan.intro}</p>
           </div>
 
           {/* Main body points */}
@@ -579,12 +567,8 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
 
           {/* Conclusion */}
           <div className="mb-5">
-            <h4 className="mb-2 text-sm font-semibold text-foreground">
-              Conclusion
-            </h4>
-            <p className="text-body-sm text-muted-foreground leading-relaxed">
-              {plan.conclusion}
-            </p>
+            <h4 className="mb-2 text-sm font-semibold text-foreground">Conclusion</h4>
+            <p className="text-body-sm text-muted-foreground leading-relaxed">{plan.conclusion}</p>
           </div>
 
           {/* Exam tip */}
@@ -592,9 +576,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
             <div className="flex items-start gap-2">
               <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600" />
               <div>
-                <p className="text-caption font-semibold text-amber-700">
-                  Exam tip
-                </p>
+                <p className="text-caption font-semibold text-amber-700">Exam tip</p>
                 <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
                   {plan.examTip}
                 </p>
@@ -636,18 +618,15 @@ export default function OCREssayPlansPage() {
               <Sparkles className="mr-1 size-3" />
               OCR Towards a World Unknown
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              OCR
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Poetry Comparison Essay Plans
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            10 ready-made essay plans covering all 4 OCR clusters. Each plan
-            pairs two poems, provides a three-point structure with side-by-side
-            analysis, and includes an exam tip.
+            10 ready-made essay plans covering all 4 OCR clusters. Each plan pairs two poems,
+            provides a three-point structure with side-by-side analysis, and includes an exam tip.
           </p>
         </div>
       </section>
@@ -657,24 +636,20 @@ export default function OCREssayPlansPage() {
         <div className="flex items-start gap-3">
           <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div>
-            <h2 className="text-heading-sm font-heading text-foreground">
-              How to use these plans
-            </h2>
+            <h2 className="text-heading-sm font-heading text-foreground">How to use these plans</h2>
             <ul className="mt-2 space-y-1.5 text-body-sm text-muted-foreground leading-relaxed">
               <li>
-                Each plan follows a proven comparison structure: shared theme,
-                three analytical points comparing both poems, and a conclusion
-                that weighs up the differences.
+                Each plan follows a proven comparison structure: shared theme, three analytical
+                points comparing both poems, and a conclusion that weighs up the differences.
               </li>
               <li>
-                Use them as starting points -- adapt the points to your own
-                interpretation and add your own quotation analysis from the
-                anthology.
+                Use them as starting points -- adapt the points to your own interpretation and add
+                your own quotation analysis from the anthology.
               </li>
               <li>
-                The OCR exam asks you to compare poems from the cluster you have
-                studied. Cross-cluster plans (marked below) are included for
-                additional practice but will not appear as exam questions.
+                The OCR exam asks you to compare poems from the cluster you have studied.
+                Cross-cluster plans (marked below) are included for additional practice but will not
+                appear as exam questions.
               </li>
             </ul>
           </div>
@@ -685,9 +660,7 @@ export default function OCREssayPlansPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            All 10 Essay Plans
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">All 10 Essay Plans</h2>
         </div>
 
         <div className="space-y-4">
@@ -699,14 +672,11 @@ export default function OCREssayPlansPage() {
 
       {/* ── Copyright note ────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">
-          A note on quotations
-        </h2>
+        <h2 className="text-heading-sm font-heading text-foreground">A note on quotations</h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          These essay plans discuss themes, methods and context rather than
-          reproducing copyrighted poem text. To complete your essays you will
-          need to select and analyse your own quotations from the OCR{' '}
-          <em>Towards a World Unknown</em> anthology (ISBN 9781398384408).
+          These essay plans discuss themes, methods and context rather than reproducing copyrighted
+          poem text. To complete your essays you will need to select and analyse your own quotations
+          from the OCR <em>Towards a World Unknown</em> anthology (ISBN 9781398384408).
           Public-domain poems have full study pages available on this site.
         </p>
       </section>
@@ -714,12 +684,10 @@ export default function OCREssayPlansPage() {
       {/* ── Back CTA ──────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-primary" />
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Explore the anthology
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Explore the anthology</h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Head back to the OCR hub to study individual poems, explore themes, or
-          learn how to write a comparison essay.
+          Head back to the OCR hub to study individual poems, explore themes, or learn how to write
+          a comparison essay.
         </p>
         <Button
           variant="default"

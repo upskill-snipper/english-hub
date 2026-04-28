@@ -1,4 +1,4 @@
-import type { CourseModule } from '../courses';
+import type { CourseModule } from '../courses'
 
 export const y10IgcseLitOmamModules: CourseModule[] = [
   // ──────────────────────────────────────────────
@@ -67,32 +67,44 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
         question: 'In what year was Of Mice and Men published?',
         options: ['1929', '1934', '1937', '1939'],
         correct: 2,
-        explanation: 'Of Mice and Men was published in 1937, during the Great Depression. Steinbeck had researched migrant labour camps in California the previous year, and the material informed both this novella and his later novel The Grapes of Wrath (1939).',
+        explanation:
+          'Of Mice and Men was published in 1937, during the Great Depression. Steinbeck had researched migrant labour camps in California the previous year, and the material informed both this novella and his later novel The Grapes of Wrath (1939).',
       },
       {
         id: 'omam-m1-q2',
-        question: 'What does the Spanish word "Soledad" — the name of the town where the novella is set — mean in English?',
+        question:
+          'What does the Spanish word "Soledad" — the name of the town where the novella is set — mean in English?',
         options: ['Freedom', 'Loneliness', 'Hope', 'Strength'],
         correct: 1,
-        explanation: '"Soledad" translates as "solitude" or "loneliness" in English. Steinbeck deliberately chose this setting to reinforce the novella\'s central theme: every character is isolated in some way, whether by race, gender, age, disability, or economic circumstance.',
+        explanation:
+          '"Soledad" translates as "solitude" or "loneliness" in English. Steinbeck deliberately chose this setting to reinforce the novella\'s central theme: every character is isolated in some way, whether by race, gender, age, disability, or economic circumstance.',
       },
       {
         id: 'omam-m1-q3',
         question: 'What term did Steinbeck use to describe the literary form of Of Mice and Men?',
         options: ['Social novel', 'Play-novelette', 'Epistolary fiction', 'Picaresque tale'],
         correct: 1,
-        explanation: 'Steinbeck described Of Mice and Men as a "play-novelette" — a hybrid form designed to be read as prose fiction and performed as a stage play with minimal adaptation. Each chapter functions as a self-contained scene with defined settings and dialogue-driven action.',
+        explanation:
+          'Steinbeck described Of Mice and Men as a "play-novelette" — a hybrid form designed to be read as prose fiction and performed as a stage play with minimal adaptation. Each chapter functions as a self-contained scene with defined settings and dialogue-driven action.',
       },
       {
         id: 'omam-m1-q4',
-        question: 'Which environmental catastrophe of the 1930s drove millions of Americans westward to California?',
-        options: ['The San Francisco Earthquake', 'The Dust Bowl', 'The Great Flood', 'The Mississippi Drought'],
+        question:
+          'Which environmental catastrophe of the 1930s drove millions of Americans westward to California?',
+        options: [
+          'The San Francisco Earthquake',
+          'The Dust Bowl',
+          'The Great Flood',
+          'The Mississippi Drought',
+        ],
         correct: 1,
-        explanation: 'The Dust Bowl (roughly 1930–1936) devastated the Great Plains states. Drought and destructive farming practices stripped the topsoil, displacing an estimated 2.5 million people, many of whom migrated to California seeking agricultural work.',
+        explanation:
+          'The Dust Bowl (roughly 1930–1936) devastated the Great Plains states. Drought and destructive farming practices stripped the topsoil, displacing an estimated 2.5 million people, many of whom migrated to California seeking agricultural work.',
       },
       {
         id: 'omam-m1-q5',
-        question: 'According to this module, what is the best way to use context in an IGCSE Literature essay?',
+        question:
+          'According to this module, what is the best way to use context in an IGCSE Literature essay?',
         options: [
           'Write a separate introductory paragraph summarising the historical background',
           'Embed contextual knowledge within analytical points about the text',
@@ -100,7 +112,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Only mention context if the question specifically asks for it',
         ],
         correct: 1,
-        explanation: 'Examiners reward students who weave context into their analytical points rather than bolting it on as a separate paragraph. For example, linking the characters\' dreams directly to the economic realities of the Depression demonstrates integrated contextual understanding.',
+        explanation:
+          "Examiners reward students who weave context into their analytical points rather than bolting it on as a separate paragraph. For example, linking the characters' dreams directly to the economic realities of the Depression demonstrates integrated contextual understanding.",
       },
     ],
   },
@@ -156,7 +169,7 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
   <li><strong>The Boss</strong> — Suspicious of George and Lennie's friendship ("I never seen one guy take so much trouble for another guy"). His suspicion reveals a world in which friendship itself is abnormal — itinerant workers travel alone, and any deviation from this pattern is treated with distrust.</li>
   <li><strong>Curley</strong> — The boss's son, small, aggressive, and immediately hostile to Lennie. Curley embodies toxic masculinity and the abuse of inherited power. His glove "fulla Vaseline" (allegedly to keep his hand soft for his wife) is a grotesque detail that sexualises and commodifies his marriage.</li>
   <li><strong>Curley's wife</strong> — She appears in the doorway of the bunkhouse, described through the men's eyes in heavily sexualised language: "full, rouged lips," "red mules" with ostrich feathers. She is immediately labelled a "tart" and a "tramp" by George. Steinbeck presents her through the male gaze to expose the way women are reduced to sexual objects in this environment, yet her restless presence also signals loneliness and unmet needs.</li>
-  <li><strong>Slim</strong> — The jerkline skinner, introduced with language that borders on reverence: his "God-like eyes" and the suggestion that "his authority was so great that his word was taken on any subject." Slim represents a moral authority that operates outside the ranch's economic hierarchy — he is respected for his competence, empathy, and integrity.</li>
+  <li><strong>Slim</strong> — The jerkline skinner, introduced with language that borders on reverence: his face is "ageless", he "moves with a majesty only achieved by royalty and master craftsmen", and "his authority was so great that his word was taken on any subject." Slim represents a moral authority that operates outside the ranch's economic hierarchy — he is respected for his competence, empathy, and integrity.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students often describe Curley's wife as simply "flirtatious" or "a troublemaker." This misses Steinbeck's point. She is the only woman on the ranch, denied a name, denied companionship, and denied autonomy. Her behaviour is a product of her isolation, not evidence of moral failing. Examiners reward responses that recognise this complexity.</div>
@@ -176,17 +189,21 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
     quiz: [
       {
         id: 'omam-m2-q1',
-        question: 'What literary mode does Steinbeck use in the opening description of the Salinas River clearing?',
+        question:
+          'What literary mode does Steinbeck use in the opening description of the Salinas River clearing?',
         options: ['Gothic', 'Pastoral', 'Satirical', 'Epistolary'],
         correct: 1,
-        explanation: 'Steinbeck opens the novella with pastoral imagery — willows, sycamores, rabbits, a heron — creating an idyllic natural landscape. This pastoral mode contrasts with the harsh social reality of the ranch, and the clearing functions as a symbolic space of innocence that frames the novella\'s cyclical structure.',
+        explanation:
+          "Steinbeck opens the novella with pastoral imagery — willows, sycamores, rabbits, a heron — creating an idyllic natural landscape. This pastoral mode contrasts with the harsh social reality of the ranch, and the clearing functions as a symbolic space of innocence that frames the novella's cyclical structure.",
       },
       {
         id: 'omam-m2-q2',
-        question: 'To which animal is Lennie first compared when he and George arrive at the clearing?',
+        question:
+          'To which animal is Lennie first compared when he and George arrive at the clearing?',
         options: ['A horse', 'A puppy', 'A bear', 'A bull'],
         correct: 2,
-        explanation: 'Lennie is described as dragging his feet "the way a bear drags his paws." This is the first of many animal similes that position Lennie outside human social structures, emphasising his physical power, lack of social awareness, and fundamental innocence.',
+        explanation:
+          'Lennie is described as dragging his feet "the way a bear drags his paws." This is the first of many animal similes that position Lennie outside human social structures, emphasising his physical power, lack of social awareness, and fundamental innocence.',
       },
       {
         id: 'omam-m2-q3',
@@ -198,31 +215,35 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'He suspects they are union organisers',
         ],
         correct: 1,
-        explanation: 'The Boss says he has "never seen one guy take so much trouble for another guy." His suspicion reveals a social world in which friendship between itinerant workers is abnormal — most travel alone, and companionship is treated with distrust.',
+        explanation:
+          'The Boss says he has "never seen one guy take so much trouble for another guy." His suspicion reveals a social world in which friendship between itinerant workers is abnormal — most travel alone, and companionship is treated with distrust.',
       },
       {
         id: 'omam-m2-q4',
-        question: 'What structural device does Steinbeck establish in Chapter 1 that becomes significant in the final chapter?',
+        question:
+          'What structural device does Steinbeck establish in Chapter 1 that becomes significant in the final chapter?',
         options: [
-          'Lennie\'s inability to remember instructions',
+          "Lennie's inability to remember instructions",
           'George telling Lennie to return to the clearing if anything goes wrong',
           'The description of the ranch as a prosperous workplace',
-          'Slim\'s authority over the other workers',
+          "Slim's authority over the other workers",
         ],
         correct: 1,
-        explanation: 'George instructs Lennie to return to the clearing by the Salinas River if anything goes wrong. This establishes the location for the novella\'s final scene, creating a cyclical structure that reinforces the themes of entrapment and inevitability.',
+        explanation:
+          "George instructs Lennie to return to the clearing by the Salinas River if anything goes wrong. This establishes the location for the novella's final scene, creating a cyclical structure that reinforces the themes of entrapment and inevitability.",
       },
       {
         id: 'omam-m2-q5',
-        question: 'How does Steinbeck initially present Curley\'s wife in Chapter 2?',
+        question: "How does Steinbeck initially present Curley's wife in Chapter 2?",
         options: [
           'As a confident, independent woman who challenges the ranch hierarchy',
-          'Through the male gaze, using heavily sexualised language and the men\'s dismissive judgements',
+          "Through the male gaze, using heavily sexualised language and the men's dismissive judgements",
           'As a sympathetic character whose loneliness is immediately apparent',
           'Through her own internal monologue about her unfulfilled dreams',
         ],
         correct: 1,
-        explanation: 'Curley\'s wife is introduced through the male gaze — described via her appearance ("full, rouged lips," "red mules") and immediately labelled a "tart" by George. Steinbeck uses this technique to expose how women are reduced to sexual objects in this environment, while also hinting at the loneliness behind her restless behaviour.',
+        explanation:
+          'Curley\'s wife is introduced through the male gaze — described via her appearance ("full, rouged lips," "red mules") and immediately labelled a "tart" by George. Steinbeck uses this technique to expose how women are reduced to sexual objects in this environment, while also hinting at the loneliness behind her restless behaviour.',
       },
     ],
   },
@@ -290,7 +311,7 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
     quiz: [
       {
         id: 'omam-m3-q1',
-        question: 'What is the significance of the shooting of Candy\'s dog?',
+        question: "What is the significance of the shooting of Candy's dog?",
         options: [
           'It shows that the workers are cruel and enjoy violence',
           'It foreshadows how George will kill Lennie and reflects how the weak are discarded',
@@ -298,11 +319,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'It is included only to create sympathy for Candy as a character',
         ],
         correct: 1,
-        explanation: 'The shooting of Candy\'s dog foreshadows the killing of Lennie — both are shot in the back of the head with the same gun. It also reflects the novella\'s broader theme that those who are old, weak, or dangerous are eliminated with cold pragmatism in a world that values only economic utility.',
+        explanation:
+          "The shooting of Candy's dog foreshadows the killing of Lennie — both are shot in the back of the head with the same gun. It also reflects the novella's broader theme that those who are old, weak, or dangerous are eliminated with cold pragmatism in a world that values only economic utility.",
       },
       {
         id: 'omam-m3-q2',
-        question: 'Why does Candy offer his savings to join George and Lennie\'s dream?',
+        question: "Why does Candy offer his savings to join George and Lennie's dream?",
         options: [
           'He wants to make a profitable investment',
           'He has lost his dog and needs a new reason to endure — the dream replaces his last emotional connection',
@@ -310,11 +332,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'He has always wanted to own a farm and sees an opportunity',
         ],
         correct: 1,
-        explanation: 'Candy offers his savings immediately after the shooting of his dog. The dream replaces the dog as his emotional anchor — he needs something to live for, and the farm represents both security and companionship in a world that is about to discard him.',
+        explanation:
+          'Candy offers his savings immediately after the shooting of his dog. The dream replaces the dog as his emotional anchor — he needs something to live for, and the farm represents both security and companionship in a world that is about to discard him.',
       },
       {
         id: 'omam-m3-q3',
-        question: 'What threat does Curley\'s wife make to Crooks in Chapter 4?',
+        question: "What threat does Curley's wife make to Crooks in Chapter 4?",
         options: [
           'She threatens to have him fired from the ranch',
           'She threatens to tell Curley he was being disrespectful',
@@ -322,31 +345,35 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'She threatens to destroy his room and possessions',
         ],
         correct: 2,
-        explanation: 'Curley\'s wife threatens Crooks with lynching — "I could get you strung up on a tree so easy it ain\'t even funny." This threat was not empty in 1930s America, where racial violence was widespread. It immediately destroys Crooks\'s momentary hope and demonstrates how racial power structures override all other relationships on the ranch.',
+        explanation:
+          "Curley's wife threatens Crooks with lynching — \"I could get you strung up on a tree so easy it ain't even funny.\" This threat was not empty in 1930s America, where racial violence was widespread. It immediately destroys Crooks's momentary hope and demonstrates how racial power structures override all other relationships on the ranch.",
       },
       {
         id: 'omam-m3-q4',
-        question: 'What does Crooks\'s speech about loneliness — "A guy goes nuts if he ain\'t got nobody" — represent thematically?',
+        question:
+          'What does Crooks\'s speech about loneliness — "A guy goes nuts if he ain\'t got nobody" — represent thematically?',
         options: [
-          'It is a minor detail about Crooks\'s personal frustration',
-          'It is Steinbeck\'s most direct articulation of the novella\'s central theme that loneliness is psychologically destructive',
+          "It is a minor detail about Crooks's personal frustration",
+          "It is Steinbeck's most direct articulation of the novella's central theme that loneliness is psychologically destructive",
           'It shows that Crooks wants to join George and Lennie on their travels',
           'It is evidence that Crooks is mentally unstable',
         ],
         correct: 1,
-        explanation: 'Crooks\'s speech directly articulates the novella\'s central concern: that loneliness is not simply unpleasant but dehumanising. It erodes identity and self-worth. His insight carries special authority because he has experienced the most extreme form of isolation — enforced racial segregation.',
+        explanation:
+          "Crooks's speech directly articulates the novella's central concern: that loneliness is not simply unpleasant but dehumanising. It erodes identity and self-worth. His insight carries special authority because he has experienced the most extreme form of isolation — enforced racial segregation.",
       },
       {
         id: 'omam-m3-q5',
-        question: 'How does Steinbeck convey Candy\'s grief after his dog is shot?',
+        question: "How does Steinbeck convey Candy's grief after his dog is shot?",
         options: [
-          'Through an extended internal monologue describing Candy\'s emotions',
+          "Through an extended internal monologue describing Candy's emotions",
           'Through a conversation where Candy expresses his anger to Carlson',
           'Through narrative restraint — Candy rolls to face the wall and lies silent',
           'Through a flashback showing memories of the dog in its youth',
         ],
         correct: 2,
-        explanation: 'Steinbeck uses narrative restraint: rather than describing Candy\'s grief directly, he simply notes that Candy "rolled slowly over and faced the wall and lay silent." This technique — showing rather than telling — forces the reader to imagine the depth of loss, making the moment more powerful than any narrated emotion could be.',
+        explanation:
+          'Steinbeck uses narrative restraint: rather than describing Candy\'s grief directly, he simply notes that Candy "rolled slowly over and faced the wall and lay silent." This technique — showing rather than telling — forces the reader to imagine the depth of loss, making the moment more powerful than any narrated emotion could be.',
       },
     ],
   },
@@ -412,7 +439,7 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
     quiz: [
       {
         id: 'omam-m4-q1',
-        question: 'What structural pattern does the death of Curley\'s wife complete?',
+        question: "What structural pattern does the death of Curley's wife complete?",
         options: [
           'A pattern of three confrontations between Lennie and Curley',
           'A tripartite pattern of accidental killing: mouse, puppy, woman',
@@ -420,11 +447,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Three visits to the clearing by the Salinas River',
         ],
         correct: 1,
-        explanation: 'Steinbeck constructs a tripartite pattern of accidental killing — mouse (Chapter 1), puppy (Chapter 5), woman (Chapter 5) — each caused by Lennie\'s uncontrollable desire to touch soft things. The escalation creates tragic inevitability, making the final death feel predetermined rather than random.',
+        explanation:
+          "Steinbeck constructs a tripartite pattern of accidental killing — mouse (Chapter 1), puppy (Chapter 5), woman (Chapter 5) — each caused by Lennie's uncontrollable desire to touch soft things. The escalation creates tragic inevitability, making the final death feel predetermined rather than random.",
       },
       {
         id: 'omam-m4-q2',
-        question: 'What does Curley\'s wife reveal about her past in Chapter 5?',
+        question: "What does Curley's wife reveal about her past in Chapter 5?",
         options: [
           'She ran away from an abusive family',
           'She was once a successful actress in New York',
@@ -432,7 +460,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'She married Curley because she loved him deeply',
         ],
         correct: 2,
-        explanation: 'Curley\'s wife reveals that a man once told her she was "a natural" and promised to write about putting her in movies. The letter never arrived — the promise was almost certainly false. She married Curley as an escape, and her dream of stardom, like all dreams in the novella, is built on illusion.',
+        explanation:
+          'Curley\'s wife reveals that a man once told her she was "a natural" and promised to write about putting her in movies. The letter never arrived — the promise was almost certainly false. She married Curley as an escape, and her dream of stardom, like all dreams in the novella, is built on illusion.',
       },
       {
         id: 'omam-m4-q3',
@@ -444,23 +473,27 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'He has forgotten that he needs to kill Lennie and gets carried away',
         ],
         correct: 1,
-        explanation: 'George tells the dream so that Lennie dies in a state of happiness, imagining the farm and the rabbits, rather than facing the terror of a mob execution. The retelling transforms the killing from an act of pure violence into an act of mercy, though the moral cost to George is immense.',
+        explanation:
+          'George tells the dream so that Lennie dies in a state of happiness, imagining the farm and the rabbits, rather than facing the terror of a mob execution. The retelling transforms the killing from an act of pure violence into an act of mercy, though the moral cost to George is immense.',
       },
       {
         id: 'omam-m4-q4',
-        question: 'What is the significance of Carlson\'s final line: "Now what the hell ya suppose is eatin\' them two guys?"',
+        question:
+          'What is the significance of Carlson\'s final line: "Now what the hell ya suppose is eatin\' them two guys?"',
         options: [
           'It shows that Carlson suspects George of committing a crime',
-          'It reveals that Carlson is genuinely curious about George\'s emotional state',
+          "It reveals that Carlson is genuinely curious about George's emotional state",
           'It demonstrates the emotional illiteracy of the ranch world — an act of love is invisible to those who witness it',
-          'It suggests that Carlson will become George\'s new companion',
+          "It suggests that Carlson will become George's new companion",
         ],
         correct: 2,
-        explanation: 'Carlson\'s final line is Steinbeck\'s parting indictment of the ranch world. The dramatic irony — the reader understands the devastation George feels, but Carlson is oblivious — highlights the emotional poverty of a society where loneliness is the norm and genuine human connection is invisible.',
+        explanation:
+          "Carlson's final line is Steinbeck's parting indictment of the ranch world. The dramatic irony — the reader understands the devastation George feels, but Carlson is oblivious — highlights the emotional poverty of a society where loneliness is the norm and genuine human connection is invisible.",
       },
       {
         id: 'omam-m4-q5',
-        question: 'How does the cyclical structure of the novella — beginning and ending at the clearing — reinforce its themes?',
+        question:
+          'How does the cyclical structure of the novella — beginning and ending at the clearing — reinforce its themes?',
         options: [
           'It suggests that George will find new hope and start a better life',
           'It creates a sense of inescapable fate: the characters end where they started, having achieved nothing',
@@ -468,7 +501,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'It shows that the clearing is the safest place for the characters',
         ],
         correct: 1,
-        explanation: 'The cyclical structure — returning to the same setting with the same natural description — creates a sense of entrapment and inevitability. George and Lennie end where they began, but everything has been lost. The repetition underscores Steinbeck\'s deterministic vision: these characters were never going to escape their circumstances.',
+        explanation:
+          "The cyclical structure — returning to the same setting with the same natural description — creates a sense of entrapment and inevitability. George and Lennie end where they began, but everything has been lost. The repetition underscores Steinbeck's deterministic vision: these characters were never going to escape their circumstances.",
       },
     ],
   },
@@ -524,15 +558,17 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
         options: [
           'He once abandoned Lennie at a previous ranch',
           'He used to play cruel tricks on Lennie, including telling him to jump into a river',
-          'He stole money from Lennie\'s family',
+          "He stole money from Lennie's family",
           'He refused to share food with Lennie during a drought',
         ],
         correct: 1,
-        explanation: 'George confesses to Slim that he used to torment Lennie — telling him to jump into rivers, laughing at his blind obedience — until the day Lennie nearly drowned. This revelation shows George\'s capacity for self-reflection and moral growth, and partly explains the guilt that drives his protective behaviour.',
+        explanation:
+          "George confesses to Slim that he used to torment Lennie — telling him to jump into rivers, laughing at his blind obedience — until the day Lennie nearly drowned. This revelation shows George's capacity for self-reflection and moral growth, and partly explains the guilt that drives his protective behaviour.",
       },
       {
         id: 'omam-m5-q2',
-        question: 'How would you best describe George\'s relationship with the dream of owning a farm?',
+        question:
+          "How would you best describe George's relationship with the dream of owning a farm?",
         options: [
           'He believes in it with the same absolute faith as Lennie',
           'He knows it is impossible and only tells it to manipulate Lennie',
@@ -540,11 +576,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'He has no emotional investment in the dream whatsoever',
         ],
         correct: 2,
-        explanation: 'George tells the dream with practised rhythms, like a bedtime story, but his narration sometimes carries a note of weariness. When Candy\'s money makes it materially possible, George is genuinely surprised — suggesting he never truly expected it to become real. His relationship with the dream is complex and ambivalent.',
+        explanation:
+          "George tells the dream with practised rhythms, like a bedtime story, but his narration sometimes carries a note of weariness. When Candy's money makes it materially possible, George is genuinely surprised — suggesting he never truly expected it to become real. His relationship with the dream is complex and ambivalent.",
       },
       {
         id: 'omam-m5-q3',
-        question: 'What is the effect of George\'s killing of Lennie on George himself?',
+        question: "What is the effect of George's killing of Lennie on George himself?",
         options: [
           'He is relieved and free to pursue his own life',
           'He is arrested and sent to prison',
@@ -552,7 +589,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'He immediately forms a new partnership with Slim',
         ],
         correct: 2,
-        explanation: 'With Lennie\'s death, George loses the only person who needed him and the dream that gave his life purpose. He becomes the very thing he once claimed to want but actually feared — a man alone, facing the same loneliness that defines every other itinerant worker on the ranch.',
+        explanation:
+          "With Lennie's death, George loses the only person who needed him and the dream that gave his life purpose. He becomes the very thing he once claimed to want but actually feared — a man alone, facing the same loneliness that defines every other itinerant worker on the ranch.",
       },
       {
         id: 'omam-m5-q4',
@@ -564,11 +602,13 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Because he protects the dream but is pragmatic about abandoning Lennie',
         ],
         correct: 1,
-        explanation: 'George is a protector because he cares for Lennie and shields him from danger. He is a pragmatist because he understands the social world of the ranch — identifying threats, managing perceptions, and making calculated decisions. These two qualities coexist and create the tension at the heart of his character.',
+        explanation:
+          'George is a protector because he cares for Lennie and shields him from danger. He is a pragmatist because he understands the social world of the ranch — identifying threats, managing perceptions, and making calculated decisions. These two qualities coexist and create the tension at the heart of his character.',
       },
       {
         id: 'omam-m5-q5',
-        question: 'According to this module, what argument does Steinbeck make through George\'s character about morality in an unjust society?',
+        question:
+          "According to this module, what argument does Steinbeck make through George's character about morality in an unjust society?",
         options: [
           'That moral people always succeed in the end',
           'That moral goodness is not rewarded but simply endured',
@@ -576,7 +616,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'That individuals should prioritise their own survival over others',
         ],
         correct: 1,
-        explanation: 'Steinbeck uses George to argue that in a world structured by exploitation and inequality, moral goodness is not rewarded — it is endured. George does the right thing in impossible circumstances and is destroyed by it. His integrity is both his finest quality and the source of his deepest suffering.',
+        explanation:
+          'Steinbeck uses George to argue that in a world structured by exploitation and inequality, moral goodness is not rewarded — it is endured. George does the right thing in impossible circumstances and is destroyed by it. His integrity is both his finest quality and the source of his deepest suffering.',
       },
     ],
   },
@@ -643,7 +684,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
     quiz: [
       {
         id: 'omam-m6-q1',
-        question: 'What is the primary function of the animal imagery Steinbeck uses to describe Lennie?',
+        question:
+          'What is the primary function of the animal imagery Steinbeck uses to describe Lennie?',
         options: [
           'To show that Lennie is less important than the human characters',
           'To position Lennie outside human social structures and foreshadow his fate',
@@ -651,11 +693,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'To entertain the reader with humorous comparisons',
         ],
         correct: 1,
-        explanation: 'The animal imagery positions Lennie outside human social structures, reflecting how society excludes those with intellectual disabilities. It also foreshadows his fate — in the novella, animals are routinely killed when they become inconvenient or dangerous, just as Lennie ultimately is.',
+        explanation:
+          'The animal imagery positions Lennie outside human social structures, reflecting how society excludes those with intellectual disabilities. It also foreshadows his fate — in the novella, animals are routinely killed when they become inconvenient or dangerous, just as Lennie ultimately is.',
       },
       {
         id: 'omam-m6-q2',
-        question: 'What is the tragic irony of Lennie\'s desire to touch soft things?',
+        question: "What is the tragic irony of Lennie's desire to touch soft things?",
         options: [
           'Soft things are too expensive for itinerant workers to own',
           'The desire for tenderness itself becomes lethal when housed in uncontrollable strength',
@@ -663,31 +706,35 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Lennie prefers animals to people, which causes social isolation',
         ],
         correct: 1,
-        explanation: 'Every soft thing Lennie touches, he kills — the mouse, the puppy, Curley\'s wife. Steinbeck creates a devastating paradox: the desire for gentleness becomes lethal when combined with physical strength that cannot be controlled and a mind that cannot comprehend its own power.',
+        explanation:
+          "Every soft thing Lennie touches, he kills — the mouse, the puppy, Curley's wife. Steinbeck creates a devastating paradox: the desire for gentleness becomes lethal when combined with physical strength that cannot be controlled and a mind that cannot comprehend its own power.",
       },
       {
         id: 'omam-m6-q3',
-        question: 'What do Lennie\'s hallucinations in Chapter 6 reveal about his inner world?',
+        question: "What do Lennie's hallucinations in Chapter 6 reveal about his inner world?",
         options: [
           'That he is losing his grip on reality due to illness',
           'That he has internalised shame — he has absorbed the message that he is a burden',
-          'That he is experiencing guilt for killing Curley\'s wife',
+          "That he is experiencing guilt for killing Curley's wife",
           'That he is imagining a better future for himself',
         ],
         correct: 1,
-        explanation: 'The hallucinations of Aunt Clara and the giant rabbit externalise Lennie\'s internalised shame. Even with his limited understanding, he has absorbed society\'s judgement that he is a problem and a burden. Steinbeck shows that the marginalised do not simply suffer external oppression — they internalise it.',
+        explanation:
+          "The hallucinations of Aunt Clara and the giant rabbit externalise Lennie's internalised shame. Even with his limited understanding, he has absorbed society's judgement that he is a problem and a burden. Steinbeck shows that the marginalised do not simply suffer external oppression — they internalise it.",
       },
       {
         id: 'omam-m6-q4',
-        question: 'What does the surname "Small" reveal about Steinbeck\'s characterisation of Lennie?',
+        question:
+          'What does the surname "Small" reveal about Steinbeck\'s characterisation of Lennie?',
         options: [
           'It is a mistake — Steinbeck intended a different surname',
-          'It refers to Lennie\'s small appetite compared to the other workers',
+          "It refers to Lennie's small appetite compared to the other workers",
           'It is ironic: Lennie is physically huge but "small" in social power, agency, and understanding',
           'It suggests that Lennie will eventually shrink in importance to the story',
         ],
         correct: 2,
-        explanation: 'The surname "Small" is ironic on multiple levels. Lennie is physically enormous but has no social power, limited intellectual capacity, and no agency. His name is a constant reminder that in the ranch hierarchy, physical size means nothing — power is determined by intelligence, status, and economic position.',
+        explanation:
+          'The surname "Small" is ironic on multiple levels. Lennie is physically enormous but has no social power, limited intellectual capacity, and no agency. His name is a constant reminder that in the ranch hierarchy, physical size means nothing — power is determined by intelligence, status, and economic position.',
       },
       {
         id: 'omam-m6-q5',
@@ -699,7 +746,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'By suggesting that people with disabilities should live in institutions',
         ],
         correct: 2,
-        explanation: 'Steinbeck shows that in 1930s America, the only options for a man like Lennie are individual protection (George), incarceration, or death. There are no support structures, no medical understanding, no institutional care. The novella indicts a society that treats disability with either private charity or public violence.',
+        explanation:
+          'Steinbeck shows that in 1930s America, the only options for a man like Lennie are individual protection (George), incarceration, or death. There are no support structures, no medical understanding, no institutional care. The novella indicts a society that treats disability with either private charity or public violence.',
       },
     ],
   },
@@ -757,19 +805,21 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
     quiz: [
       {
         id: 'omam-m7-q1',
-        question: 'Why is Curley\'s wife never given a name in the novella?',
+        question: "Why is Curley's wife never given a name in the novella?",
         options: [
           'Steinbeck forgot to name her during the writing process',
-          'It reflects the period\'s convention that married women took their husband\'s identity',
-          'It is a deliberate act of symbolic erasure that mirrors the real erasure of women\'s identities in patriarchal societies',
+          "It reflects the period's convention that married women took their husband's identity",
+          "It is a deliberate act of symbolic erasure that mirrors the real erasure of women's identities in patriarchal societies",
           'It is because she dies early and does not need a full characterisation',
         ],
         correct: 2,
-        explanation: 'Curley\'s wife\'s namelessness is Steinbeck\'s most powerful statement about women\'s status in 1930s America. She exists only in relation to her husband, with no independent identity. Her namelessness is symbolic erasure that mirrors the real erasure of women\'s identities under patriarchy.',
+        explanation:
+          "Curley's wife's namelessness is Steinbeck's most powerful statement about women's status in 1930s America. She exists only in relation to her husband, with no independent identity. Her namelessness is symbolic erasure that mirrors the real erasure of women's identities under patriarchy.",
       },
       {
         id: 'omam-m7-q2',
-        question: 'What do Crooks\'s possessions — books, a dictionary, the California Civil Code — reveal about his character?',
+        question:
+          "What do Crooks's possessions — books, a dictionary, the California Civil Code — reveal about his character?",
         options: [
           'That he is wealthier than the other workers',
           'That he is planning a legal case against the ranch',
@@ -777,11 +827,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'That he has stolen property from the other workers',
         ],
         correct: 2,
-        explanation: 'Crooks\'s possessions signal education, intelligence, and a desire for justice. His intellectual capacity makes his racial exclusion more painful, not less — he understands exactly what is being done to him and why. The California Civil Code in particular suggests an awareness of his legal rights that cannot be exercised.',
+        explanation:
+          "Crooks's possessions signal education, intelligence, and a desire for justice. His intellectual capacity makes his racial exclusion more painful, not less — he understands exactly what is being done to him and why. The California Civil Code in particular suggests an awareness of his legal rights that cannot be exercised.",
       },
       {
         id: 'omam-m7-q3',
-        question: 'How does Candy\'s old dog function symbolically in the novella?',
+        question: "How does Candy's old dog function symbolically in the novella?",
         options: [
           'It represents the beauty of the natural world',
           'It mirrors Candy himself — old, disabled, and facing the threat of being discarded when no longer useful',
@@ -789,11 +840,13 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'It demonstrates that the ranch workers are kind to animals',
         ],
         correct: 1,
-        explanation: 'Candy\'s dog is a mirror for Candy himself. The dog is old, blind, and no longer useful — exactly the fate Candy fears for himself. When the dog is shot, Candy understands the implicit message: the ranch discards the old and the broken.',
+        explanation:
+          "Candy's dog is a mirror for Candy himself. The dog is old, blind, and no longer useful — exactly the fate Candy fears for himself. When the dog is shot, Candy understands the implicit message: the ranch discards the old and the broken.",
       },
       {
         id: 'omam-m7-q4',
-        question: 'What happens when the marginalised characters are brought together in Chapter 4?',
+        question:
+          'What happens when the marginalised characters are brought together in Chapter 4?',
         options: [
           'They form a united front against Curley and the boss',
           'They ignore each other and focus on their own problems',
@@ -801,11 +854,13 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'They share their dreams and find common ground',
         ],
         correct: 2,
-        explanation: 'In Chapter 4, the marginalised characters do not form solidarity — they reproduce the hierarchies that oppress them. Curley\'s wife wields racial power over Crooks, Crooks dominates Lennie intellectually, and Candy asserts status through his association with the dream. Steinbeck shows that the system keeps the oppressed divided.',
+        explanation:
+          "In Chapter 4, the marginalised characters do not form solidarity — they reproduce the hierarchies that oppress them. Curley's wife wields racial power over Crooks, Crooks dominates Lennie intellectually, and Candy asserts status through his association with the dream. Steinbeck shows that the system keeps the oppressed divided.",
       },
       {
         id: 'omam-m7-q5',
-        question: 'Why does Candy blame Curley\'s wife after her death, calling her "you God damn tramp"?',
+        question:
+          'Why does Candy blame Curley\'s wife after her death, calling her "you God damn tramp"?',
         options: [
           'Because he genuinely believes she deserved to die',
           'Because he is expressing the grief of a man whose last hope has been destroyed and cannot face the structural reality',
@@ -813,7 +868,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Because he is angry that she entered the barn without permission',
         ],
         correct: 1,
-        explanation: 'Candy\'s anger toward the dead woman is not rational — it is the grief of a man whose last hope (the dream) has been destroyed. He blames Curley\'s wife because he cannot face the structural reality that the dream was always fragile and the world was always hostile to marginalised men like him.',
+        explanation:
+          "Candy's anger toward the dead woman is not rational — it is the grief of a man whose last hope (the dream) has been destroyed. He blames Curley's wife because he cannot face the structural reality that the dream was always fragile and the world was always hostile to marginalised men like him.",
       },
     ],
   },
@@ -889,19 +945,22 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'A passage from the Bible about stewardship of the land',
         ],
         correct: 1,
-        explanation: 'The title comes from Robert Burns\'s 1785 poem "To a Mouse": "The best laid schemes o\' mice an\' men / Gang aft agley" (often go awry). The allusion suggests that all plans are vulnerable to forces beyond human control and establishes the novella\'s deterministic worldview.',
+        explanation:
+          'The title comes from Robert Burns\'s 1785 poem "To a Mouse": "The best laid schemes o\' mice an\' men / Gang aft agley" (often go awry). The allusion suggests that all plans are vulnerable to forces beyond human control and establishes the novella\'s deterministic worldview.',
       },
       {
         id: 'omam-m8-q2',
-        question: 'According to this module, what is the deeper structural cause of the American Dream\'s failure in the novella?',
+        question:
+          "According to this module, what is the deeper structural cause of the American Dream's failure in the novella?",
         options: [
-          'Lennie\'s disability, which makes stable employment impossible',
-          'George\'s lack of ambition and willingness to settle for less',
+          "Lennie's disability, which makes stable employment impossible",
+          "George's lack of ambition and willingness to settle for less",
           'The economic system, racial hierarchy, and social isolation that make the dream unattainable for those at the bottom',
-          'The other ranch workers\' jealousy and interference',
+          "The other ranch workers' jealousy and interference",
         ],
         correct: 2,
-        explanation: 'While Lennie\'s actions are the immediate cause of the dream\'s collapse, the deeper cause is structural: the economic system, racial hierarchy, and social isolation systematically prevent those at the bottom of the hierarchy from achieving prosperity. The most sophisticated essays distinguish between immediate and structural causes.',
+        explanation:
+          "While Lennie's actions are the immediate cause of the dream's collapse, the deeper cause is structural: the economic system, racial hierarchy, and social isolation systematically prevent those at the bottom of the hierarchy from achieving prosperity. The most sophisticated essays distinguish between immediate and structural causes.",
       },
       {
         id: 'omam-m8-q3',
@@ -913,11 +972,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'It is something George uses to control and manipulate Lennie',
         ],
         correct: 1,
-        explanation: 'The dream functions as a narrative of hope — a story George and Lennie tell each other when the world is harsh. It sustains them through hardship, gives their labour a purpose beyond survival, and binds them together in a shared vision. Its psychological value is real even though its material realisation proves impossible.',
+        explanation:
+          'The dream functions as a narrative of hope — a story George and Lennie tell each other when the world is harsh. It sustains them through hardship, gives their labour a purpose beyond survival, and binds them together in a shared vision. Its psychological value is real even though its material realisation proves impossible.',
       },
       {
         id: 'omam-m8-q4',
-        question: 'What does Steinbeck suggest about the American Dream\'s function as ideology?',
+        question: "What does Steinbeck suggest about the American Dream's function as ideology?",
         options: [
           'That it empowers workers to fight for better conditions',
           'That it is a harmless fantasy with no social consequences',
@@ -925,11 +985,13 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'That it is the foundation of a just and equal society',
         ],
         correct: 2,
-        explanation: 'Steinbeck suggests the dream functions as ideology — a mechanism of social control that encourages workers to accept exploitation by promising that hard work will eventually lead to prosperity. It directs energy toward individual aspiration rather than collective action, maintaining the economic status quo.',
+        explanation:
+          'Steinbeck suggests the dream functions as ideology — a mechanism of social control that encourages workers to accept exploitation by promising that hard work will eventually lead to prosperity. It directs energy toward individual aspiration rather than collective action, maintaining the economic status quo.',
       },
       {
         id: 'omam-m8-q5',
-        question: 'Why is it significant that the dream comes close to being realised when Candy offers his savings?',
+        question:
+          'Why is it significant that the dream comes close to being realised when Candy offers his savings?',
         options: [
           'It proves the dream was always achievable if they had tried harder',
           'It creates excruciating hope that makes the subsequent destruction even more devastating',
@@ -937,7 +999,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'It demonstrates that money alone can solve all social problems',
         ],
         correct: 1,
-        explanation: 'The near-realisation of the dream is not a sign that it was achievable — it is Steinbeck\'s way of showing how cruel the illusion of possibility can be. By bringing the dream tantalisingly close to reality, Steinbeck makes its destruction even more devastating for both the characters and the reader.',
+        explanation:
+          "The near-realisation of the dream is not a sign that it was achievable — it is Steinbeck's way of showing how cruel the illusion of possibility can be. By bringing the dream tantalisingly close to reality, Steinbeck makes its destruction even more devastating for both the characters and the reader.",
       },
     ],
   },
@@ -1002,19 +1065,21 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
     quiz: [
       {
         id: 'omam-m9-q1',
-        question: 'Why does the Boss find George and Lennie\'s friendship suspicious?',
+        question: "Why does the Boss find George and Lennie's friendship suspicious?",
         options: [
           'Because itinerant workers typically travel in groups of four or more',
           'Because companionship is so rare among itinerant workers that it is treated as abnormal',
-          'Because he thinks George is stealing Lennie\'s wages',
+          "Because he thinks George is stealing Lennie's wages",
           'Because he has a policy against workers forming friendships',
         ],
         correct: 1,
-        explanation: 'The Boss says he has "never seen one guy take so much trouble for another guy." His suspicion reveals a social world in which companionship among itinerant workers is so rare that it is treated as abnormal — a sign that friendship itself has been eroded by the competitive, isolating labour system.',
+        explanation:
+          'The Boss says he has "never seen one guy take so much trouble for another guy." His suspicion reveals a social world in which companionship among itinerant workers is so rare that it is treated as abnormal — a sign that friendship itself has been eroded by the competitive, isolating labour system.',
       },
       {
         id: 'omam-m9-q2',
-        question: 'What does Slim mean when he says "Maybe ever\'body in the whole damn world is scared of each other"?',
+        question:
+          'What does Slim mean when he says "Maybe ever\'body in the whole damn world is scared of each other"?',
         options: [
           'That the ranch workers are cowards who avoid conflict',
           'That fear prevents human connection, making loneliness universal',
@@ -1022,7 +1087,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'That George and Lennie should be more cautious around others',
         ],
         correct: 1,
-        explanation: 'Slim articulates the novella\'s central insight: loneliness is universal because fear prevents genuine connection. People are afraid to be vulnerable, afraid to trust, afraid to need others — and this fear produces the systemic isolation that defines the world of the ranch.',
+        explanation:
+          "Slim articulates the novella's central insight: loneliness is universal because fear prevents genuine connection. People are afraid to be vulnerable, afraid to trust, afraid to need others — and this fear produces the systemic isolation that defines the world of the ranch.",
       },
       {
         id: 'omam-m9-q3',
@@ -1030,11 +1096,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
         options: [
           'As a place of safety and community for the workers',
           'As a symbol of proximity without connection — men live side by side but remain fundamentally alone',
-          'As a representation of the American Dream\'s promise',
+          "As a representation of the American Dream's promise",
           'As evidence that the ranch provides good living conditions',
         ],
         correct: 1,
-        explanation: 'The bunkhouse is a space of proximity without connection. The men live side by side but their interactions are superficial — card games, gossip, arguments. There is no intimacy or genuine sharing. The impersonal possessions and interchangeable occupants reinforce the theme that the workers are reduced to their labour value.',
+        explanation:
+          'The bunkhouse is a space of proximity without connection. The men live side by side but their interactions are superficial — card games, gossip, arguments. There is no intimacy or genuine sharing. The impersonal possessions and interchangeable occupants reinforce the theme that the workers are reduced to their labour value.',
       },
       {
         id: 'omam-m9-q4',
@@ -1046,11 +1113,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'That violence is the only way to overcome loneliness',
         ],
         correct: 2,
-        explanation: 'Steinbeck suggests that in a society structured by loneliness, violence becomes the primary means of interaction. When genuine connection is impossible, people relate through conflict, domination, and destruction. The novella\'s violence is the logical consequence of a system that denies people the connections they need.',
+        explanation:
+          "Steinbeck suggests that in a society structured by loneliness, violence becomes the primary means of interaction. When genuine connection is impossible, people relate through conflict, domination, and destruction. The novella's violence is the logical consequence of a system that denies people the connections they need.",
       },
       {
         id: 'omam-m9-q5',
-        question: 'In what sense is George and Lennie\'s friendship a form of resistance?',
+        question: "In what sense is George and Lennie's friendship a form of resistance?",
         options: [
           'They organise the other workers into a union',
           'They refuse to accept the loneliness the itinerant labour system imposes',
@@ -1058,7 +1126,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'They plan to overthrow the economic system through political action',
         ],
         correct: 1,
-        explanation: 'George and Lennie\'s friendship is existential resistance — by travelling together, sharing a dream, and caring for one another, they refuse to accept the dehumanising isolation that the system imposes. Their companionship challenges the logic of loneliness that sustains the itinerant labour system.',
+        explanation:
+          "George and Lennie's friendship is existential resistance — by travelling together, sharing a dream, and caring for one another, they refuse to accept the dehumanising isolation that the system imposes. Their companionship challenges the logic of loneliness that sustains the itinerant labour system.",
       },
     ],
   },
@@ -1136,19 +1205,22 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
     quiz: [
       {
         id: 'omam-m10-q1',
-        question: 'What is the effect of Steinbeck\'s "dual register" — using lyrical English for narration and phonetic dialect for dialogue?',
+        question:
+          'What is the effect of Steinbeck\'s "dual register" — using lyrical English for narration and phonetic dialect for dialogue?',
         options: [
           'It makes the novella difficult to read and alienates the audience',
-          'It creates a contrast between the beauty of the natural world and the poverty of the characters\' social existence',
+          "It creates a contrast between the beauty of the natural world and the poverty of the characters' social existence",
           'It shows that the narrator is more intelligent than the characters',
           'It is a common feature of all American novels from the 1930s',
         ],
         correct: 1,
-        explanation: 'The dual register creates a deliberate contrast: the poetic descriptions of nature come from a different linguistic world than the characters\' speech, reinforcing the distance between the natural beauty of the setting and the social harshness of the characters\' lives.',
+        explanation:
+          "The dual register creates a deliberate contrast: the poetic descriptions of nature come from a different linguistic world than the characters' speech, reinforcing the distance between the natural beauty of the setting and the social harshness of the characters' lives.",
       },
       {
         id: 'omam-m10-q2',
-        question: 'What is the significance of the novella\'s cyclical structure — beginning and ending at the same clearing?',
+        question:
+          "What is the significance of the novella's cyclical structure — beginning and ending at the same clearing?",
         options: [
           'It suggests that George will start a new, happier life',
           'It creates a sense of entrapment: the characters return to where they started, having achieved nothing',
@@ -1156,11 +1228,13 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'It demonstrates that nature is unchanging and eternal',
         ],
         correct: 1,
-        explanation: 'The cyclical structure creates a sense of entrapment and inevitability. George and Lennie end where they began, suggesting that nothing has changed and nothing can change. Combined with the linear escalation of events, it produces the feeling that the ending is both inevitable and devastating.',
+        explanation:
+          'The cyclical structure creates a sense of entrapment and inevitability. George and Lennie end where they began, suggesting that nothing has changed and nothing can change. Combined with the linear escalation of events, it produces the feeling that the ending is both inevitable and devastating.',
       },
       {
         id: 'omam-m10-q3',
-        question: 'Why does Steinbeck\'s systematic use of foreshadowing create a sense of determinism?',
+        question:
+          "Why does Steinbeck's systematic use of foreshadowing create a sense of determinism?",
         options: [
           'Because it confuses the reader about the order of events',
           'Because it suggests events are predetermined and characters are trapped in patterns they cannot alter',
@@ -1168,14 +1242,17 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Because it shows that Steinbeck ran out of original plot ideas',
         ],
         correct: 1,
-        explanation: 'The density of foreshadowing — mouse to puppy to woman, Candy\'s dog to Lennie — creates the sense that events are predetermined. This structural determinism mirrors the thematic argument: the characters are trapped by social, economic, and biological forces beyond their control.',
+        explanation:
+          "The density of foreshadowing — mouse to puppy to woman, Candy's dog to Lennie — creates the sense that events are predetermined. This structural determinism mirrors the thematic argument: the characters are trapped by social, economic, and biological forces beyond their control.",
       },
       {
         id: 'omam-m10-q4',
-        question: 'What recurring motif is associated with power and powerlessness throughout the novella?',
+        question:
+          'What recurring motif is associated with power and powerlessness throughout the novella?',
         options: ['Water', 'Hands', 'Food', 'Weather'],
         correct: 1,
-        explanation: 'Hands recur as symbols of power and powerlessness. Lennie\'s massive hands are instruments of both gentleness and death. Candy\'s missing hand symbolises his diminished usefulness. Curley\'s crushed hand represents the destruction of his aggressive masculinity.',
+        explanation:
+          "Hands recur as symbols of power and powerlessness. Lennie's massive hands are instruments of both gentleness and death. Candy's missing hand symbolises his diminished usefulness. Curley's crushed hand represents the destruction of his aggressive masculinity.",
       },
       {
         id: 'omam-m10-q5',
@@ -1183,11 +1260,12 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
         options: [
           'The narrator directly tells the reader what each character is thinking',
           'The narrator describes only external behaviour, forcing the reader to infer emotional states',
-          'The narrator switches between different characters\' perspectives in each chapter',
-          'The narrator uses footnotes to explain characters\' psychological motivations',
+          "The narrator switches between different characters' perspectives in each chapter",
+          "The narrator uses footnotes to explain characters' psychological motivations",
         ],
         correct: 1,
-        explanation: 'Steinbeck\'s behaviourist approach means the narrator describes what characters do and say but rarely reveals their inner thoughts directly. Emotional states are shown through external signs — body language, tone, silence — forcing the reader to infer meaning from observable behaviour.',
+        explanation:
+          "Steinbeck's behaviourist approach means the narrator describes what characters do and say but rarely reveals their inner thoughts directly. Emotional states are shown through external signs — body language, tone, silence — forcing the reader to infer meaning from observable behaviour.",
       },
     ],
   },
@@ -1304,11 +1382,13 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Comparing the extract to other novels by Steinbeck',
         ],
         correct: 1,
-        explanation: 'WHAT-HOW-WHY moves you from identifying a technique (WHAT), through explaining how it creates meaning (HOW), to connecting it to the novella\'s broader themes (WHY). This progression from identification to analysis to evaluation is what distinguishes top-band responses from mid-range ones.',
+        explanation:
+          "WHAT-HOW-WHY moves you from identifying a technique (WHAT), through explaining how it creates meaning (HOW), to connecting it to the novella's broader themes (WHY). This progression from identification to analysis to evaluation is what distinguishes top-band responses from mid-range ones.",
       },
       {
         id: 'omam-m11-q2',
-        question: 'What is the most common mistake students make in part (b) of the IGCSE Literature response?',
+        question:
+          'What is the most common mistake students make in part (b) of the IGCSE Literature response?',
         options: [
           'Writing too much about language techniques',
           'Using too many quotations from the extract',
@@ -1316,7 +1396,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Spending too much time on their introduction',
         ],
         correct: 2,
-        explanation: 'The most common mistake is writing part (b) as a narrative summary — "first this happens, then this happens." Part (b) must be analytical: each paragraph should make a claim about Steinbeck\'s methods and support it with evidence and analysis, not simply retell the plot.',
+        explanation:
+          'The most common mistake is writing part (b) as a narrative summary — "first this happens, then this happens." Part (b) must be analytical: each paragraph should make a claim about Steinbeck\'s methods and support it with evidence and analysis, not simply retell the plot.',
       },
       {
         id: 'omam-m11-q3',
@@ -1328,7 +1409,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'A comparison with another text studied in class',
         ],
         correct: 1,
-        explanation: 'The "+" in PEA+ represents an extension — connecting your analysis to the social/historical context, offering an alternative interpretation, or linking the point to the wider novella. This additional layer of insight is what elevates a response from competent analysis to sophisticated evaluation.',
+        explanation:
+          'The "+" in PEA+ represents an extension — connecting your analysis to the social/historical context, offering an alternative interpretation, or linking the point to the wider novella. This additional layer of insight is what elevates a response from competent analysis to sophisticated evaluation.',
       },
       {
         id: 'omam-m11-q4',
@@ -1340,7 +1422,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'With a quotation from a literary critic',
         ],
         correct: 1,
-        explanation: 'Begin with a brief contextualisation (2-3 sentences) that places the extract within the novella — where does it come from, what has just happened, what is about to happen. This orientates the examiner without wasting time on narrative summary.',
+        explanation:
+          'Begin with a brief contextualisation (2-3 sentences) that places the extract within the novella — where does it come from, what has just happened, what is about to happen. This orientates the examiner without wasting time on narrative summary.',
       },
       {
         id: 'omam-m11-q5',
@@ -1352,7 +1435,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Because planning uses more of the time allocation than writing',
         ],
         correct: 1,
-        explanation: 'A brief plan (3-5 minutes) that identifies key quotations, paragraph topics, and a thesis statement makes the actual writing faster, more focused, and more analytical. Without a plan, essays tend to become narrative summaries rather than structured arguments.',
+        explanation:
+          'A brief plan (3-5 minutes) that identifies key quotations, paragraph topics, and a thesis statement makes the actual writing faster, more focused, and more analytical. Without a plan, essays tend to become narrative summaries rather than structured arguments.',
       },
     ],
   },
@@ -1464,11 +1548,13 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'A response that quotes at least ten passages from the text',
         ],
         correct: 1,
-        explanation: 'A conceptualised response is organised around a central idea or argument (a concept) rather than the chronology of the text. It begins with a thesis, develops it through analytical paragraphs, and returns to it in the conclusion. This is the hallmark of a grade 7-9 essay.',
+        explanation:
+          'A conceptualised response is organised around a central idea or argument (a concept) rather than the chronology of the text. It begins with a thesis, develops it through analytical paragraphs, and returns to it in the conclusion. This is the hallmark of a grade 7-9 essay.',
       },
       {
         id: 'omam-m12-q2',
-        question: 'What is the single most effective technique for pushing a response from mid-range to top-band?',
+        question:
+          'What is the single most effective technique for pushing a response from mid-range to top-band?',
         options: [
           'Using longer quotations from the text',
           'Writing more paragraphs than other students',
@@ -1476,11 +1562,13 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Including biographical information about Steinbeck in every paragraph',
         ],
         correct: 2,
-        explanation: 'Micro-analysis — selecting a single word from a quotation and exploring its connotations, associations, and effects in depth — is the most effective way to reach the top band. One word analysed perceptively is worth more than ten quotations merely identified.',
+        explanation:
+          'Micro-analysis — selecting a single word from a quotation and exploring its connotations, associations, and effects in depth — is the most effective way to reach the top band. One word analysed perceptively is worth more than ten quotations merely identified.',
       },
       {
         id: 'omam-m12-q3',
-        question: 'Why should you use tentative language such as "perhaps suggests" or "could be read as" in your essays?',
+        question:
+          'Why should you use tentative language such as "perhaps suggests" or "could be read as" in your essays?',
         options: [
           'Because you are not sure about your answer and need to hedge',
           'Because examiners prefer responses that sound uncertain',
@@ -1488,7 +1576,8 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Because it allows you to avoid committing to a specific argument',
         ],
         correct: 2,
-        explanation: 'Tentative language demonstrates critical sophistication by showing the examiner that you understand literature is open to multiple readings. It does not mean you are uncertain — it means you are intellectually mature enough to acknowledge interpretive complexity.',
+        explanation:
+          'Tentative language demonstrates critical sophistication by showing the examiner that you understand literature is open to multiple readings. It does not mean you are uncertain — it means you are intellectually mature enough to acknowledge interpretive complexity.',
       },
       {
         id: 'omam-m12-q4',
@@ -1500,20 +1589,23 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
           'Bolted-on context is preferred by examiners because it is clearer',
         ],
         correct: 1,
-        explanation: 'Integrated context is woven into analytical sentences (e.g., "Crooks\'s isolation — a product of 1930s racial segregation — transforms his room into a symbol of systemic exclusion"), while bolted-on context sits in a separate paragraph disconnected from the analysis. Integrated context is rewarded far more highly.',
+        explanation:
+          'Integrated context is woven into analytical sentences (e.g., "Crooks\'s isolation — a product of 1930s racial segregation — transforms his room into a symbol of systemic exclusion"), while bolted-on context sits in a separate paragraph disconnected from the analysis. Integrated context is rewarded far more highly.',
       },
       {
         id: 'omam-m12-q5',
-        question: 'According to the self-assessment checklist, what should every analytical point in your essay connect to?',
+        question:
+          'According to the self-assessment checklist, what should every analytical point in your essay connect to?',
         options: [
-          'A biographical fact about Steinbeck\'s life',
+          "A biographical fact about Steinbeck's life",
           'A comparison with another text studied in class',
-          'The novella\'s broader themes',
-          'A personal opinion about the characters\' decisions',
+          "The novella's broader themes",
+          "A personal opinion about the characters' decisions",
         ],
         correct: 2,
-        explanation: 'Every analytical point should connect to the novella\'s broader themes — loneliness, the American Dream, power, marginalisation, etc. This ensures your response is conceptualised (organised around ideas) rather than descriptive (organised around events).',
+        explanation:
+          "Every analytical point should connect to the novella's broader themes — loneliness, the American Dream, power, marginalisation, etc. This ensures your response is conceptualised (organised around ideas) rather than descriptive (organised around events).",
       },
     ],
   },
-];
+]

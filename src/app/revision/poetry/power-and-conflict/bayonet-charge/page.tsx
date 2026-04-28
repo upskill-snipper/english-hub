@@ -27,26 +27,46 @@ const BAYONET_CHARGE: PoemData = {
     {
       text: 'Suddenly he awoke and was running - raw',
       annotations: [
-        { type: 'In medias res', note: 'The poem begins mid-action with "Suddenly", plunging the reader into chaos without context or preparation — mirroring the soldier\'s disorientation.', color: '#f59e0b' },
-        { type: 'Enjambment', note: '"raw" carries over to the next line, creating breathlessness and momentum that mirrors the soldier\'s desperate sprint.', color: '#a855f7' },
+        {
+          type: 'In medias res',
+          note: 'The poem begins mid-action with "Suddenly", plunging the reader into chaos without context or preparation — mirroring the soldier\'s disorientation.',
+          color: '#f59e0b',
+        },
+        {
+          type: 'Enjambment',
+          note: '"raw" carries over to the next line, creating breathlessness and momentum that mirrors the soldier\'s desperate sprint.',
+          color: '#a855f7',
+        },
       ],
     },
     {
       text: 'In raw-seamed hot khaki, his sweat heavy,',
       annotations: [
-        { type: 'Tactile imagery', note: '"Raw-seamed hot khaki" — the rough, chafing uniform emphasises physical discomfort and the reality of war, far from any romantic ideal.', color: '#22c55e' },
+        {
+          type: 'Tactile imagery',
+          note: '"Raw-seamed hot khaki" — the rough, chafing uniform emphasises physical discomfort and the reality of war, far from any romantic ideal.',
+          color: '#22c55e',
+        },
       ],
     },
     {
       text: 'Stumbling across a field of clods towards a green hedge',
       annotations: [
-        { type: 'Verbs', note: '"Stumbling" conveys clumsiness and lack of control — the soldier is not heroic but desperate and uncoordinated.', color: '#22c55e' },
+        {
+          type: 'Verbs',
+          note: '"Stumbling" conveys clumsiness and lack of control — the soldier is not heroic but desperate and uncoordinated.',
+          color: '#22c55e',
+        },
       ],
     },
     {
       text: 'That dazzled with rifle fire, he lugged a rifle numb',
       annotations: [
-        { type: 'Contrast', note: '"Dazzled" creates a jarring beauty amid violence. "Numb" shows emotional and physical shutdown.', color: '#3b82f6' },
+        {
+          type: 'Contrast',
+          note: '"Dazzled" creates a jarring beauty amid violence. "Numb" shows emotional and physical shutdown.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
@@ -60,32 +80,52 @@ const BAYONET_CHARGE: PoemData = {
     {
       text: 'The patriotic tear that had brimmed in his eye',
       annotations: [
-        { type: 'Irony', note: '"The patriotic tear" is presented as something that once motivated him, but is now meaningless in the face of real combat.', color: '#f59e0b' },
+        {
+          type: 'Irony',
+          note: '"The patriotic tear" is presented as something that once motivated him, but is now meaningless in the face of real combat.',
+          color: '#f59e0b',
+        },
       ],
     },
     {
       text: 'Sweating like molten iron from the centre of his chest, –',
       annotations: [
-        { type: 'Simile', note: '"Like molten iron" — an industrial, painful image suggesting patriotism has become a burning, destructive force inside him.', color: '#22c55e' },
+        {
+          type: 'Simile',
+          note: '"Like molten iron" — an industrial, painful image suggesting patriotism has become a burning, destructive force inside him.',
+          color: '#22c55e',
+        },
       ],
     },
     { text: '' },
     {
       text: 'In bewilderment then he almost stopped –',
       annotations: [
-        { type: 'Caesura', note: 'The dash creates a pause, mirroring the soldier\'s hesitation as he questions why he is fighting.', color: '#a855f7' },
+        {
+          type: 'Caesura',
+          note: "The dash creates a pause, mirroring the soldier's hesitation as he questions why he is fighting.",
+          color: '#a855f7',
+        },
       ],
     },
     {
       text: 'In what cold clockwork of the stars and the nations',
       annotations: [
-        { type: 'Metaphor', note: '"Cold clockwork" suggests the war machine is impersonal and mechanical — soldiers are just cogs.', color: '#22c55e' },
+        {
+          type: 'Metaphor',
+          note: '"Cold clockwork" suggests the war machine is impersonal and mechanical — soldiers are just cogs.',
+          color: '#22c55e',
+        },
       ],
     },
     {
       text: 'Was he the hand pointing that second? He was running',
       annotations: [
-        { type: 'Rhetorical question', note: 'The soldier questions his place in a vast, indifferent system — a moment of existential doubt.', color: '#3b82f6' },
+        {
+          type: 'Rhetorical question',
+          note: 'The soldier questions his place in a vast, indifferent system — a moment of existential doubt.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
@@ -94,7 +134,11 @@ const BAYONET_CHARGE: PoemData = {
     {
       text: 'Listening between his footfalls for the reason',
       annotations: [
-        { type: 'Simile', note: 'Comparing himself to a man waking in darkness — he acts instinctively but searches desperately for meaning or reason.', color: '#22c55e' },
+        {
+          type: 'Simile',
+          note: 'Comparing himself to a man waking in darkness — he acts instinctively but searches desperately for meaning or reason.',
+          color: '#22c55e',
+        },
       ],
     },
     {
@@ -103,7 +147,11 @@ const BAYONET_CHARGE: PoemData = {
     {
       text: 'Statuary in mid-stride. Then the shot-slashed furrows',
       annotations: [
-        { type: 'Imagery', note: '"Statuary in mid-stride" freezes the soldier like a monument — a powerful image of paralysis between thought and action.', color: '#22c55e' },
+        {
+          type: 'Imagery',
+          note: '"Statuary in mid-stride" freezes the soldier like a monument — a powerful image of paralysis between thought and action.',
+          color: '#22c55e',
+        },
       ],
     },
     { text: '' },
@@ -111,8 +159,16 @@ const BAYONET_CHARGE: PoemData = {
     {
       text: 'Threw up a yellow hare that rolled like a flame',
       annotations: [
-        { type: 'Symbolism', note: 'The hare represents innocent nature caught in human conflict — its suffering is vivid and purposeless.', color: '#f59e0b' },
-        { type: 'Simile', note: '"Rolled like a flame" — the hare\'s agony is compared to fire, linking it to the destruction of war.', color: '#22c55e' },
+        {
+          type: 'Symbolism',
+          note: 'The hare represents innocent nature caught in human conflict — its suffering is vivid and purposeless.',
+          color: '#f59e0b',
+        },
+        {
+          type: 'Simile',
+          note: '"Rolled like a flame" — the hare\'s agony is compared to fire, linking it to the destruction of war.',
+          color: '#22c55e',
+        },
       ],
     },
     {
@@ -127,39 +183,48 @@ const BAYONET_CHARGE: PoemData = {
     {
       text: 'King, honour, human dignity, etcetera',
       annotations: [
-        { type: 'Listing / Tricolon', note: 'Abstract patriotic ideals are listed dismissively. "Etcetera" reduces them to meaningless words — a devastating anti-war statement.', color: '#f59e0b' },
-        { type: 'Bathos', note: '"Etcetera" deflates the grand concepts that came before, showing the soldier\'s disillusionment.', color: '#3b82f6' },
+        {
+          type: 'Listing / Bathos',
+          note: 'Abstract patriotic ideals are listed dismissively. Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don\'t double the word. The trailing single word reduces the noble concepts to throwaway filler, a devastating anti-war gesture.',
+          color: '#f59e0b',
+        },
+        {
+          type: 'Teacher note',
+          note: 'Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don\'t double the word.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
       text: 'Dropped like luxuries in a yelling alarm',
       annotations: [
-        { type: 'Simile', note: 'Patriotic ideals are compared to luxuries — unnecessary extras abandoned when survival is at stake.', color: '#22c55e' },
+        {
+          type: 'Simile',
+          note: 'Patriotic ideals are compared to luxuries — unnecessary extras abandoned when survival is at stake.',
+          color: '#22c55e',
+        },
       ],
     },
     {
       text: 'To get out of that blue crackling air',
       annotations: [
-        { type: 'Synaesthesia / Onomatopoeia', note: '"Blue crackling air" blends colour and sound to evoke the terrifying sensory overload of a battlefield under fire.', color: '#22c55e' },
+        {
+          type: 'Synaesthesia / Onomatopoeia',
+          note: '"Blue crackling air" blends colour and sound to evoke the terrifying sensory overload of a battlefield under fire.',
+          color: '#22c55e',
+        },
       ],
     },
-    {
-      text: 'His terror\'s survey, he ran, and his survey',
-    },
-    {
-      text: 'As a survey of heat – to get out –',
-    },
-    {
-      text: 'Of the survey of pain.',
-    },
+    // VERIFY: previously contained fabricated lines using the word 'survey' three times ("His terror's survey, he ran, and his survey / As a survey of heat – to get out – / Of the survey of pain."). The actual Hughes ending is 'His terror's touchy dynamite.' but until full closing verified against The Hawk in the Rain, lines removed conservatively.
+    { text: "His terror's touchy dynamite." },
   ],
 
   /* ── Context ──────────────────────────────────────────────────── */
 
-  context: `<p><strong>Ted Hughes</strong> (1930–1998) was one of Britain's most celebrated poets and served as Poet Laureate from 1984 until his death. He is renowned for his visceral depictions of nature and violence.</p>
-<p><strong>Bayonet Charge</strong> was published in Hughes's first collection, <em>The Hawk in the Rain</em> (1957). Although Hughes did not fight in either World War, his <strong>father, William Hughes, served in the First World War</strong> at Gallipoli and in France. William rarely spoke of his experiences, but Hughes grew up acutely aware of the trauma his father carried. The poem draws on these inherited memories.</p>
+  context: `<p><strong>Ted Hughes</strong> (1930–1998) was one of Britain's most celebrated poets and served as UK Poet Laureate from 1984 until his death (succeeding John Betjeman, followed by Andrew Motion). Yorkshire-born, he was the husband of Sylvia Plath and father of Frieda and Nicholas Hughes. He is renowned for his visceral depictions of nature and violence; major collections include <em>The Hawk in the Rain</em> (1957), <em>Crow</em> (1970), and <em>Birthday Letters</em> (1998).</p>
+<p><strong>Bayonet Charge</strong> was published in Hughes's debut collection, <em>The Hawk in the Rain</em> (1957) by Faber &amp; Faber. Hughes was born in 1930 and never fought in any war. He drew on his father William's WWI accounts — William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment — to imagine the soldier's terror in this poem. William rarely spoke of his experiences, and that silence shaped Hughes's lifelong WWI imagination.</p>
 <p>The soldier in the poem is deliberately <strong>unnamed and universal</strong> — referred to only as "he". This makes him an everyman figure, representing any soldier in any conflict. Hughes strips away the glory and romance traditionally associated with warfare to present <strong>raw, terrifying reality</strong>.</p>
-<p>The poem is fundamentally <strong>anti-war</strong>. It challenges patriotic propaganda by showing how abstract ideals like "King, honour, human dignity" become meaningless when a soldier faces death. Hughes was influenced by the <strong>First World War poets</strong> (Owen, Sassoon) and the existentialist idea that war reduces humans to mere bodies acting on survival instinct.</p>
+<p>The poem is fundamentally <strong>anti-war</strong>. It challenges patriotic propaganda by showing how abstract ideals like "King, honour, human dignity, etcetera" become meaningless when a soldier faces death. (Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don't double the word.) Hughes was influenced by the <strong>First World War poets</strong> (Owen, Sassoon) and the existentialist idea that war reduces humans to mere bodies acting on survival instinct.</p>
 <p>Published in <strong>1957</strong>, twelve years after WWII and during the early Cold War, the poem reflects a society still reckoning with the cost of conflict and suspicious of the rhetoric used to justify it.</p>`,
 
   /* ── Summary ──────────────────────────────────────────────────── */
@@ -170,20 +235,22 @@ Stanza 1: The poem opens in medias res — the soldier is already running across
 
 Stanza 2: The action slows as the soldier's thoughts take over. He questions why he is fighting and what patriotism really means when faced with the reality of death. He is caught between instinct and reason, nearly stopping as he searches for meaning. The stanza captures a frozen moment of existential crisis.
 
-Stanza 3: A yellow hare, injured and writhing in the crossfire, jolts the soldier back to action. Confronted by this image of innocent suffering, he abandons all abstract ideals — "King, honour, human dignity, etcetera" — and charges forward driven purely by terror and the survival instinct to escape the "blue crackling air" of the battlefield.
+Stanza 3: A yellow hare, injured and writhing in the crossfire, jolts the soldier back to action. Confronted by this image of innocent suffering, he abandons all abstract ideals — "King, honour, human dignity, etcetera" — and charges forward driven purely by terror and the survival instinct to escape the "blue crackling air" of the battlefield. (Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don't double the word.)
 
 The poem's arc moves from action to thought and back to action, but the final action is fundamentally different: it is no longer motivated by patriotism but by primal fear.`,
 
   /* ── Form & Structure ─────────────────────────────────────────── */
 
-  formAndStructure: `Structure: Three stanzas of roughly equal length, following a clear arc:
+  formAndStructure: `Form: Free verse — three stanzas with no regular metre and no fixed rhyme scheme. The poem is NOT iambic; it has no consistent metrical foot. Hughes uses sudden rhythmic shifts and a third-person omniscient voice that zooms tightly into a single soldier's perspective.
+
+Structure: Three stanzas of roughly equal length, following a clear arc:
 • Stanza 1 (action) — the physical reality of the charge
 • Stanza 2 (thought) — the soldier's internal questioning
 • Stanza 3 (action) — return to action, but now driven by terror, not patriotism
 
 Opening: The poem begins in medias res with "Suddenly he awoke and was running", throwing the reader straight into the chaos without introduction or context.
 
-No regular rhyme scheme or metre: The lack of a fixed pattern reflects the chaos and disorder of battle. Lines vary in length, mirroring the soldier's erratic movements and thoughts.
+No regular rhyme scheme or metre: The lack of a fixed pattern (free verse, not iambic) reflects the chaos and disorder of battle. Lines vary in length, mirroring the soldier's erratic movements and thoughts.
 
 Enjambment: Used extensively throughout (e.g. "raw / In raw-seamed hot khaki"), creating a breathless, urgent pace that mirrors the soldier running. The reader is pulled forward just as the soldier is.
 
@@ -223,7 +290,7 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
     {
       quote: 'King, honour, human dignity, etcetera',
       analysis:
-        'The dismissive listing of patriotic abstractions, punctuated by "etcetera", is Hughes\'s most devastating anti-war line. These grand ideals are reduced to a meaningless list — luxuries the soldier cannot afford in the face of death.',
+        'The dismissive listing of patriotic abstractions, punctuated by Hughes\'s trailing "etcetera", is his most devastating anti-war line. Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don\'t double the word. These grand ideals are reduced to throwaway filler — luxuries the soldier cannot afford in the face of death.',
       themes: ['Patriotism vs reality', 'Loss of innocence', 'Anti-war'],
     },
     {
@@ -253,7 +320,7 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       device: 'In medias res',
       example: 'Suddenly he awoke and was running',
       effect:
-        'The poem begins mid-action, immersing the reader in chaos without warning. This mirrors the soldier\'s own disorientation — there is no preparation, no context, just the raw terror of combat.',
+        "The poem begins mid-action, immersing the reader in chaos without warning. This mirrors the soldier's own disorientation — there is no preparation, no context, just the raw terror of combat.",
       lineRef: 0,
     },
     {
@@ -264,17 +331,17 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       lineRef: 8,
     },
     {
-      device: 'Listing / Tricolon',
+      device: 'Listing / Bathos',
       example: 'King, honour, human dignity, etcetera',
       effect:
-        'Three grand abstract nouns are listed then brutally dismissed with "etcetera". The listing initially builds gravitas, but "etcetera" collapses it — showing how meaningless these ideals are in combat.',
+        'Three grand abstract nouns are listed then brutally dismissed with a trailing "etcetera". Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don\'t double the word. The listing initially builds gravitas, but the single dismissive "etcetera" collapses it, showing how meaningless these ideals are in combat.',
       lineRef: 22,
     },
     {
       device: 'Caesura',
       example: 'Almost stopped –',
       effect:
-        'The abrupt dash and short line create a physical pause, mirroring the soldier\'s hesitation on the battlefield. It dramatises the tension between the instinct to flee and the impulse to stop and think.',
+        "The abrupt dash and short line create a physical pause, mirroring the soldier's hesitation on the battlefield. It dramatises the tension between the instinct to flee and the impulse to stop and think.",
       lineRef: 5,
     },
     {
@@ -295,7 +362,7 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       device: 'Symbolism',
       example: 'a yellow hare that rolled like a flame',
       effect:
-        'The hare symbolises nature and innocence caught in human violence. Its suffering — silent, wide-eyed, purposeless — mirrors the soldier\'s own. It becomes the catalyst that strips away his last patriotic illusions.',
+        "The hare symbolises nature and innocence caught in human violence. Its suffering — silent, wide-eyed, purposeless — mirrors the soldier's own. It becomes the catalyst that strips away his last patriotic illusions.",
       lineRef: 19,
     },
     {
@@ -315,9 +382,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'bc-1',
     question: 'What does the opening word "Suddenly" achieve?',
     type: 'multiple-choice',
-    options: ['It creates a calm, reflective opening', 'It plunges the reader into chaos mid-action (in medias res), mirroring the soldier\'s disorientation', 'It introduces a flashback', 'It signals the end of the battle'],
+    options: [
+      'It creates a calm, reflective opening',
+      "It plunges the reader into chaos mid-action (in medias res), mirroring the soldier's disorientation",
+      'It introduces a flashback',
+      'It signals the end of the battle',
+    ],
     correctIndex: 1,
-    explanation: 'The poem begins in medias res — mid-action. "Suddenly" throws both soldier and reader into the chaos of a charge without preparation or context, creating immediate disorientation.',
+    explanation:
+      'The poem begins in medias res — mid-action. "Suddenly" throws both soldier and reader into the chaos of a charge without preparation or context, creating immediate disorientation.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -325,19 +398,31 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'bc-2',
     question: 'What does "raw-seamed hot khaki" describe?',
     type: 'multiple-choice',
-    options: ['A comfortable, well-fitted uniform', 'The rough, chafing reality of a soldier\'s uniform — far from heroic', 'A type of camouflage', 'The colour of the battlefield'],
+    options: [
+      'A comfortable, well-fitted uniform',
+      "The rough, chafing reality of a soldier's uniform — far from heroic",
+      'A type of camouflage',
+      'The colour of the battlefield',
+    ],
     correctIndex: 1,
-    explanation: 'The tactile imagery of "raw-seamed hot khaki" emphasises physical discomfort and the unglamorous reality of war. The uniform chafes and burns — war is bodily suffering, not heroic romance.',
+    explanation:
+      'The tactile imagery of "raw-seamed hot khaki" emphasises physical discomfort and the unglamorous reality of war. The uniform chafes and burns — war is bodily suffering, not heroic romance.',
     topic: 'Language',
     difficulty: 'foundation',
   },
   {
     id: 'bc-3',
-    question: 'What happens to the soldier\'s patriotic motivation during the poem?',
+    question: "What happens to the soldier's patriotic motivation during the poem?",
     type: 'multiple-choice',
-    options: ['It grows stronger throughout', 'It disintegrates — patriotism becomes meaningless in the reality of combat', 'It helps him complete the charge successfully', 'It is replaced by religious faith'],
+    options: [
+      'It grows stronger throughout',
+      'It disintegrates — patriotism becomes meaningless in the reality of combat',
+      'It helps him complete the charge successfully',
+      'It is replaced by religious faith',
+    ],
     correctIndex: 1,
-    explanation: '"The patriotic tear that had brimmed in his eye" is now meaningless. Patriotism, which once motivated him, dissolves under the reality of bullets, terror, and confusion. Ideology cannot survive contact with real violence.',
+    explanation:
+      '"The patriotic tear that had brimmed in his eye" is now meaningless. Patriotism, which once motivated him, dissolves under the reality of bullets, terror, and confusion. Ideology cannot survive contact with real violence.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -345,9 +430,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'bc-4',
     question: 'What does the metaphor "cold clockwork of the stars and the nations" suggest?',
     type: 'multiple-choice',
-    options: ['The soldier admires the night sky', 'War is presented as an impersonal, mechanical system — soldiers are just cogs', 'The soldier is reading a compass', 'The stars are guiding him to safety'],
+    options: [
+      'The soldier admires the night sky',
+      'War is presented as an impersonal, mechanical system — soldiers are just cogs',
+      'The soldier is reading a compass',
+      'The stars are guiding him to safety',
+    ],
     correctIndex: 1,
-    explanation: '"Cold clockwork" suggests war is a vast, impersonal machine. The individual soldier is just a cog in the mechanism of nations and their political machinery — his humanity is irrelevant.',
+    explanation:
+      '"Cold clockwork" suggests war is a vast, impersonal machine. The individual soldier is just a cog in the mechanism of nations and their political machinery — his humanity is irrelevant.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -355,9 +446,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'bc-5',
     question: 'What does the image of the hare symbolise in stanza 3?',
     type: 'multiple-choice',
-    options: ['A lucky omen for the soldier', 'An innocent creature caught in human violence — mirroring the soldier\'s own helplessness', 'A target for hunting practice', 'The speed of the charge'],
+    options: [
+      'A lucky omen for the soldier',
+      "An innocent creature caught in human violence — mirroring the soldier's own helplessness",
+      'A target for hunting practice',
+      'The speed of the charge',
+    ],
     correctIndex: 1,
-    explanation: 'The hare "rolled like a flame" becomes a powerful symbol of innocent nature destroyed by human conflict. Its helpless suffering mirrors the soldier\'s own — both are caught in something beyond their control.',
+    explanation:
+      'The hare "rolled like a flame" becomes a powerful symbol of innocent nature destroyed by human conflict. Its helpless suffering mirrors the soldier\'s own — both are caught in something beyond their control.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -365,9 +462,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'bc-6',
     question: 'How does Hughes use enjambment in the poem?',
     type: 'multiple-choice',
-    options: ['To create neat, contained sentences', 'To create breathless momentum that mirrors the soldier\'s desperate sprint across the battlefield', 'To slow the poem down', 'To separate the stanzas clearly'],
+    options: [
+      'To create neat, contained sentences',
+      "To create breathless momentum that mirrors the soldier's desperate sprint across the battlefield",
+      'To slow the poem down',
+      'To separate the stanzas clearly',
+    ],
     correctIndex: 1,
-    explanation: 'Extensive enjambment carries lines forward without pause, creating the breathless, headlong momentum of the charge. The reader is swept forward just as the soldier is swept across the battlefield.',
+    explanation:
+      'Extensive enjambment carries lines forward without pause, creating the breathless, headlong momentum of the charge. The reader is swept forward just as the soldier is swept across the battlefield.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -375,9 +478,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'bc-7',
     question: 'Who was Ted Hughes and what influenced this poem?',
     type: 'multiple-choice',
-    options: ['A WWI soldier who experienced bayonet charges firsthand', 'Poet Laureate who drew on his father\'s WWI experiences to write about the reality of combat', 'A war correspondent during WWII', 'A pacifist who never discussed war'],
+    options: [
+      'A WWI soldier who experienced bayonet charges firsthand',
+      "Poet Laureate who drew on his father's WWI experiences to write about the reality of combat",
+      'A war correspondent during WWII',
+      'A pacifist who never discussed war',
+    ],
     correctIndex: 1,
-    explanation: 'Ted Hughes (1930-1998) was Poet Laureate. His father fought in WWI at Gallipoli and survived. Hughes drew on these second-hand accounts and his vivid imagination to create an intensely physical portrayal of combat.',
+    explanation:
+      "Hughes was born in 1930 and never fought in any war. He drew on his father William's WWI accounts — William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment — to imagine the soldier's terror in this poem. Hughes was UK Poet Laureate from 1984 until his death in 1998 (succeeding John Betjeman; followed by Andrew Motion).",
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -385,9 +494,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'bc-8',
     question: 'What form does the poem take?',
     type: 'multiple-choice',
-    options: ['Regular quatrains with a clear rhyme scheme', 'Three stanzas of irregular length with no consistent rhyme — reflecting the chaos of battle', 'A sonnet', 'Rhyming couplets throughout'],
+    options: [
+      'Regular quatrains with a clear rhyme scheme',
+      'Three stanzas in free verse with no consistent rhyme or metre — reflecting the chaos of battle',
+      'A sonnet in iambic pentameter',
+      'Rhyming couplets throughout',
+    ],
     correctIndex: 1,
-    explanation: 'The poem has three stanzas of unequal length with no regular rhyme scheme. This irregular structure mirrors the chaos and unpredictability of a bayonet charge.',
+    explanation:
+      'The poem is in free verse — three stanzas of unequal length with no regular rhyme scheme and no iambic metre. This irregular structure mirrors the chaos and unpredictability of a bayonet charge.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -395,19 +510,32 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'bc-9',
     question: 'How does the simile "sweating like molten iron" transform the idea of patriotism?',
     type: 'multiple-choice',
-    options: ['It shows patriotism makes the soldier strong', 'It presents patriotism as a burning, painful, industrial force inside the soldier — destructive rather than noble', 'It describes the temperature of the battlefield', 'It compares the soldier to a blacksmith'],
+    options: [
+      'It shows patriotism makes the soldier strong',
+      'It presents patriotism as a burning, painful, industrial force inside the soldier — destructive rather than noble',
+      'It describes the temperature of the battlefield',
+      'It compares the soldier to a blacksmith',
+    ],
     correctIndex: 1,
-    explanation: 'Patriotism is no longer a noble ideal but a painful, burning substance like molten metal. The industrial imagery suggests the soldier has been forged by the machinery of war — his idealism has become a source of agony.',
+    explanation:
+      'Patriotism is no longer a noble ideal but a painful, burning substance like molten metal. The industrial imagery suggests the soldier has been forged by the machinery of war — his idealism has become a source of agony.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
   {
     id: 'bc-10',
-    question: 'Which poem from the Power and Conflict anthology provides the best comparison with Bayonet Charge on the reality of combat?',
+    question:
+      'Which poem from the Power and Conflict anthology provides the best comparison with Bayonet Charge on the reality of combat?',
     type: 'multiple-choice',
-    options: ['Ozymandias by Shelley', 'Exposure by Wilfred Owen', 'Tissue by Dharker', 'The Emigrée by Rumens'],
+    options: [
+      'Ozymandias by Shelley',
+      'Exposure by Wilfred Owen',
+      'Tissue by Dharker',
+      'The Émigrée by Rumens',
+    ],
     correctIndex: 1,
-    explanation: 'Both Bayonet Charge and Exposure present the horror of war, but while Exposure shows soldiers enduring passive suffering from the elements, Bayonet Charge captures the terrifying momentum of active combat.',
+    explanation:
+      'Both Bayonet Charge and Exposure present the horror of war, but while Exposure shows soldiers enduring passive suffering from the elements, Bayonet Charge captures the terrifying momentum of active combat.',
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -416,7 +544,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
-    summary: 'Bayonet Charge explores the terror of combat, the collapse of patriotic ideals under fire, and the dehumanising effect of war on the individual soldier.',
+    summary:
+      'Bayonet Charge explores the terror of combat, the collapse of patriotic ideals under fire, and the dehumanising effect of war on the individual soldier.',
     keyPoints: [
       'Terror and chaos — the soldier is disoriented, stumbling, barely in control',
       'Collapse of patriotism — ideology crumbles under the reality of violence',
@@ -426,7 +555,8 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Language & Imagery',
-    summary: 'Hughes uses visceral tactile imagery, violent similes, and industrial metaphor to create an intensely physical experience of combat.',
+    summary:
+      'Hughes uses visceral tactile imagery, violent similes, and industrial metaphor to create an intensely physical experience of combat.',
     keyPoints: [
       '"Raw-seamed hot khaki" — tactile imagery emphasising bodily discomfort',
       '"Cold clockwork of the stars and the nations" — war as impersonal machinery',
@@ -436,7 +566,8 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Structure & Form',
-    summary: 'Three irregular stanzas with no consistent rhyme, using enjambment and caesura to create breathless momentum interrupted by moments of frozen terror.',
+    summary:
+      'Three irregular stanzas with no consistent rhyme, using enjambment and caesura to create breathless momentum interrupted by moments of frozen terror.',
     keyPoints: [
       'In medias res opening — "Suddenly" drops reader into mid-action chaos',
       'Enjambment creates breathless, headlong momentum',
@@ -472,7 +603,7 @@ const COMPARISONS = [
     href: '/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
     points: [
       'Both depict a military charge, but with completely opposing perspectives on war.',
-      'Tennyson glorifies the soldiers\' obedience and sacrifice; Hughes shows a terrified individual driven by survival instinct.',
+      "Tennyson glorifies the soldiers' obedience and sacrifice; Hughes shows a terrified individual driven by survival instinct.",
       'Tennyson uses a regular, galloping rhythm to celebrate the charge; Hughes uses irregular lines and enjambment to convey chaos.',
       'Tennyson\'s soldiers are noble ("Theirs not to reason why"); Hughes\'s soldier desperately searches for reason and finds none.',
     ],
@@ -514,11 +645,17 @@ export default function BayonetChargePage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
-          { name: "Bayonet Charge", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/bayonet-charge" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Power and Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
+          },
+          {
+            name: 'Bayonet Charge',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/bayonet-charge',
+          },
         ]}
       />
       {/* ── Back nav ──────────────────────────────────────────────── */}
@@ -533,13 +670,13 @@ export default function BayonetChargePage() {
           Back to Power &amp; Conflict
         </Button>
 
-        <h1 className="text-heading-lg font-heading text-foreground">
-          Bayonet Charge
-        </h1>
+        <h1 className="text-heading-lg font-heading text-foreground">Bayonet Charge</h1>
         <p className="text-body-sm text-muted-foreground">
           Ted Hughes &middot; <em>The Hawk in the Rain</em> (1957)
         </p>
-        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
+        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+          AQA
+        </Badge>
       </div>
 
       {/* ── Theme tokens ─────────────────────────────────────────── */}
@@ -574,29 +711,19 @@ export default function BayonetChargePage() {
 
       {/* ── Comparisons ──────────────────────────────────────────── */}
       <section className="space-y-4">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Compare with other poems
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Compare with other poems</h2>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {COMPARISONS.map((c) => (
-            <div
-              key={c.poem}
-              className="rounded-xl border border-border bg-card p-5 space-y-3"
-            >
+            <div key={c.poem} className="rounded-xl border border-border bg-card p-5 space-y-3">
               <div>
-                <h3 className="text-sm font-semibold text-foreground">
-                  {c.poem}
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">{c.poem}</h3>
                 <p className="text-xs text-muted-foreground">{c.poet}</p>
               </div>
 
               <ul className="space-y-1.5">
                 {c.points.map((point, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-2 text-xs leading-relaxed text-card-foreground"
-                  >
+                  <li key={i} className="flex gap-2 text-xs leading-relaxed text-card-foreground">
                     <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/40" />
                     {point}
                   </li>
@@ -617,7 +744,10 @@ export default function BayonetChargePage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations from Bayonet Charge by Ted Hughes reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available in your AQA anthology.
+        &ldquo;Bayonet Charge&rdquo; by Ted Hughes is published by Faber &amp; Faber in{' '}
+        <em>The Hawk in the Rain</em> (1957). Short quotations are reproduced here under the fair
+        dealing provision of the CDPA 1988 for the purposes of criticism and review. Full text
+        available in your AQA Power &amp; Conflict anthology.
       </p>
     </div>
   )

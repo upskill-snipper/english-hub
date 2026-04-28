@@ -24,13 +24,13 @@ const features = [
   },
   {
     icon: Star,
-    title: 'Rated 4.9/5 by Students',
-    desc: 'Students love the clear explanations, structured approach, and exam-focused content.',
+    title: 'Built for Top Grades',
+    desc: 'Clear explanations, structured approach, exam-focused content — designed by a serving UK secondary English teacher.',
   },
   {
     icon: BookOpen,
-    title: '470+ Full Courses',
-    desc: 'From KS3 Reading to GCSE and IGCSE Literature — comprehensive courses for every stage of your English journey.',
+    title: 'Full Course Library',
+    desc: 'From KS3 Reading to GCSE and IGCSE Literature — courses for every stage of your English journey, with new content added regularly.',
   },
   {
     icon: Sparkles,

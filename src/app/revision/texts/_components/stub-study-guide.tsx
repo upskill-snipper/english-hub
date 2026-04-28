@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, BookOpen, Construction, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, Construction, Scale, Sparkles } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -87,6 +87,22 @@ export function StubStudyGuide({
           )}
         </div>
       </section>
+
+      {text.ukRightsNotice && (
+        <Card className="border-blue-500/40 bg-blue-500/[0.04]">
+          <CardHeader>
+            <div className="flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
+                <Scale className="size-5 text-blue-700" />
+              </div>
+              <CardTitle className="text-heading-md font-heading">UK rights notice</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-2 text-body-sm text-muted-foreground">
+            <p>{text.ukRightsNotice}</p>
+          </CardContent>
+        </Card>
+      )}
 
       <Card className="border-amber-500/40 bg-amber-500/[0.04]">
         <CardHeader>

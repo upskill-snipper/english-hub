@@ -197,12 +197,6 @@ const data: TextGuideData = {
         'Eliot names Godfrey\u2019s moral failing with unusual directness. By calling Chance a "god" worshipped by the weak, she exposes the drift by which Godfrey has allowed his situation to rot, hoping that something accidental will save him from the consequences of his concealment. The formulation also stands behind the whole novel\u2019s treatment of chance events, which are never presented as neutral but always as moral tests the characters can pass or fail.',
     },
     {
-      quote: '"The gold\u2014the gold is not my treasure any more; my treasure is my child."',
-      who: 'Silas Marner \u2014 paraphrased sentiment, Part Two',
-      analysis:
-        'Silas\u2019s explicit substitution of Eppie for his hoarded coins is the emotional centre of Part Two. The language consciously echoes the Gospel formulation "where your treasure is, there will your heart be also," making Eppie the focus of a recovered, secular religious devotion. The fact that Silas can speak these words once his gold is even returned shows how completely his values have been remade, and how little the recovered coins can now mean to him in comparison with the child.',
-    },
-    {
       quote: '"Raveloe was not a place where moral censure was severe."',
       who: 'Narrator \u2014 Chapter 3',
       analysis:

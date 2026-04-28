@@ -52,7 +52,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "Worked busily a day, and there she stands.",
+      text: 'Worked busily a day, and there she stands.',
     },
     {
       text: "Will't please you sit and look at her? I said",
@@ -88,7 +88,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Power & control',
-          note: 'The curtain is a symbol of the Duke\'s absolute control. Only he decides who sees her now — the possessiveness he could not enforce in life is total in death.',
+          note: "The curtain is a symbol of the Duke's absolute control. Only he decides who sees her now — the possessiveness he could not enforce in life is total in death.",
           color: '#ef4444',
         },
       ],
@@ -113,7 +113,7 @@ const poemData: PoemData = {
       text: "Her husband's presence only, made that spot",
     },
     {
-      text: 'Of joy into the Duchess\' cheek; perhaps',
+      text: "Of joy into the Duchess' cheek; perhaps",
       annotations: [
         {
           type: 'Jealousy',
@@ -163,7 +163,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Too easily impressed; she liked whate\'er',
+      text: "Too easily impressed; she liked whate'er",
     },
     {
       text: 'She looked on, and her looks went everywhere.',
@@ -176,7 +176,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Sir, \'twas all one! My favour at her breast,',
+      text: "Sir, 'twas all one! My favour at her breast,",
       annotations: [
         {
           type: 'Indignation',
@@ -218,7 +218,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "Somehow — I know not how — as if she ranked",
+      text: 'Somehow — I know not how — as if she ranked',
       annotations: [
         {
           type: 'False uncertainty',
@@ -308,7 +308,7 @@ const poemData: PoemData = {
         },
         {
           type: 'Caesura',
-          note: 'Three short clauses separated by semicolons mimic the Duke\'s cold, matter-of-fact delivery. The rhythm enacts his emotional detachment from the act of murder.',
+          note: "Three short clauses separated by semicolons mimic the Duke's cold, matter-of-fact delivery. The rhythm enacts his emotional detachment from the act of murder.",
           color: '#a855f7',
         },
       ],
@@ -324,7 +324,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'As if alive. Will\'t please you rise? We\'ll meet',
+      text: "As if alive. Will't please you rise? We'll meet",
       annotations: [
         {
           type: 'Repetition',
@@ -353,7 +353,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Though his fair daughter\'s self, as I avowed',
+      text: "Though his fair daughter's self, as I avowed",
     },
     {
       text: "At starting, is my object. Nay, we'll go",
@@ -445,7 +445,8 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       themes: ['Jealousy', 'Patriarchy', 'Pride'],
     },
     {
-      quote: 'She thanked men — good! but thanked / Somehow — I know not how — as if she ranked / My gift of a nine-hundred-years-old name / With anybody\'s gift',
+      quote:
+        "She thanked men — good! but thanked / Somehow — I know not how — as if she ranked / My gift of a nine-hundred-years-old name / With anybody's gift",
       analysis:
         'The Duke\'s fury is that his aristocratic lineage — his entire identity — was not valued above all else. The compound modifier "nine-hundred-years-old" emphasises the weight he places on status. The Duchess\'s egalitarian spirit is, to him, an insult.',
       themes: ['Pride', 'Status', 'Patriarchy'],
@@ -463,7 +464,7 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       themes: ['Power', 'Violence', 'Control'],
     },
     {
-      quote: "Notice Neptune, though, / Taming a sea-horse",
+      quote: 'Notice Neptune, though, / Taming a sea-horse',
       analysis:
         'The final image is a metaphor for the Duke himself: like Neptune (god of the sea), he tames and subdues those beneath him. The sea-horse represents the Duchess — a beautiful, wild creature broken by a more powerful force. That the sculpture was "cast in bronze for me" shows art serving his ego.',
       themes: ['Power', 'Dominance', 'Possession'],
@@ -471,7 +472,7 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
     {
       quote: "his fair daughter's self, as I avowed / At starting, is my object",
       analysis:
-        '"Object" carries a sinister double meaning: it ostensibly means \'objective\' or \'aim,\' but it also implies the next wife will be another possession, another item in his collection. The cycle of ownership and potential destruction is set to repeat.',
+        "\"Object\" carries a sinister double meaning: it ostensibly means 'objective' or 'aim,' but it also implies the next wife will be another possession, another item in his collection. The cycle of ownership and potential destruction is set to repeat.",
       themes: ['Objectification', 'Patriarchy', 'Cyclical power'],
     },
   ],
@@ -480,7 +481,7 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       device: 'Dramatic irony',
       example: 'which I have not',
       effect:
-        'The Duke claims he lacks skill in speech, yet the entire poem is a masterclass in rhetorical manipulation. Browning creates dramatic irony: the reader sees through the Duke\'s false modesty to recognise a calculating, eloquent predator.',
+        "The Duke claims he lacks skill in speech, yet the entire poem is a masterclass in rhetorical manipulation. Browning creates dramatic irony: the reader sees through the Duke's false modesty to recognise a calculating, eloquent predator.",
       lineRef: 35,
     },
     {
@@ -494,7 +495,7 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       device: 'Symbolism (the curtain)',
       example: 'The curtain I have drawn for you, but I',
       effect:
-        'The curtain over the painting symbolises the Duke\'s control. In life, the Duchess\'s smiles were public and uncontrollable; in death, her image is hidden behind a curtain only the Duke can draw. The painting has given him the power he lacked in the marriage.',
+        "The curtain over the painting symbolises the Duke's control. In life, the Duchess's smiles were public and uncontrollable; in death, her image is hidden behind a curtain only the Duke can draw. The painting has given him the power he lacked in the marriage.",
       lineRef: 9,
     },
     {
@@ -515,7 +516,7 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       device: 'Enjambment',
       example: 'she thanked / Men — good! but thanked / Somehow',
       effect:
-        'The enjambment across line breaks enacts the Duke\'s loss of composure. His anger overflows the neat couplet form, just as the Duchess\'s behaviour overflowed the boundaries he tried to impose. The tension between form and content mirrors his internal conflict.',
+        "The enjambment across line breaks enacts the Duke's loss of composure. His anger overflows the neat couplet form, just as the Duchess's behaviour overflowed the boundaries he tried to impose. The tension between form and content mirrors his internal conflict.",
       lineRef: 30,
     },
     {
@@ -544,7 +545,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: ['A sonnet', 'A dramatic monologue in rhyming couplets', 'Free verse', 'A ballad'],
     correctIndex: 1,
-    explanation: 'My Last Duchess is a dramatic monologue — a single speaker (the Duke) reveals his character to a silent listener. It uses rhyming couplets in iambic pentameter.',
+    explanation:
+      'My Last Duchess is a dramatic monologue — a single speaker (the Duke) reveals his character to a silent listener. It uses rhyming couplets in iambic pentameter.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -552,9 +554,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'mld-2',
     question: 'Who is the Duke speaking to in the poem?',
     type: 'multiple-choice',
-    options: ['His dead wife', 'An envoy arranging his next marriage', 'A judge at a trial', 'The sculptor of the painting'],
+    options: [
+      'His dead wife',
+      'An envoy arranging his next marriage',
+      'A judge at a trial',
+      'The sculptor of the painting',
+    ],
     correctIndex: 1,
-    explanation: 'The Duke is speaking to an envoy (messenger) sent by the Count, whose daughter the Duke intends to marry next. The poem is essentially a negotiation for a new wife.',
+    explanation:
+      'The Duke is speaking to an envoy (messenger) sent by the Count, whose daughter the Duke intends to marry next. The poem is essentially a negotiation for a new wife.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -562,9 +570,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'mld-3',
     question: 'What does the curtain over the painting symbolise?',
     type: 'multiple-choice',
-    options: ['The Duke\'s grief over his wife\'s death', 'The Duke\'s absolute control — only he decides who sees her now', 'The painting is damaged and needs protection', 'The Duke\'s modesty about art'],
+    options: [
+      "The Duke's grief over his wife's death",
+      "The Duke's absolute control — only he decides who sees her now",
+      'The painting is damaged and needs protection',
+      "The Duke's modesty about art",
+    ],
     correctIndex: 1,
-    explanation: 'The curtain represents the Duke\'s possessive control. In life, he could not control who the Duchess smiled at. In death, he controls everything — only he draws the curtain and decides who sees her.',
+    explanation:
+      "The curtain represents the Duke's possessive control. In life, he could not control who the Duchess smiled at. In death, he controls everything — only he draws the curtain and decides who sees her.",
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -572,9 +586,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'mld-4',
     question: 'What happened to the last Duchess?',
     type: 'multiple-choice',
-    options: ['She left the Duke for another man', 'She is strongly implied to have been killed on the Duke\'s orders', 'She died of natural illness', 'She ran away to another country'],
+    options: [
+      'She left the Duke for another man',
+      "She is strongly implied to have been killed on the Duke's orders",
+      'She died of natural illness',
+      'She ran away to another country',
+    ],
     correctIndex: 1,
-    explanation: 'The Duke says "I gave commands; / Then all smiles stopped together." This chilling euphemism strongly implies he had her killed because her friendliness to others wounded his pride.',
+    explanation:
+      'The Duke says "I gave commands; / Then all smiles stopped together." This chilling euphemism strongly implies he had her killed because her friendliness to others wounded his pride.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -582,9 +602,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'mld-5',
     question: 'What does the phrase "I gave commands; then all smiles stopped together" reveal?',
     type: 'multiple-choice',
-    options: ['The Duke asked her politely to stop smiling', 'The Duke coldly ordered her death — the euphemism makes him more chilling', 'The Duchess agreed to be more serious', 'The painting was completed'],
+    options: [
+      'The Duke asked her politely to stop smiling',
+      'The Duke coldly ordered her death — the euphemism makes him more chilling',
+      'The Duchess agreed to be more serious',
+      'The painting was completed',
+    ],
     correctIndex: 1,
-    explanation: 'This is the poem\'s most sinister moment. The casual, euphemistic language ("gave commands") combined with the finality of "all smiles stopped" reveals a man who views murder as a simple administrative matter.',
+    explanation:
+      'This is the poem\'s most sinister moment. The casual, euphemistic language ("gave commands") combined with the finality of "all smiles stopped" reveals a man who views murder as a simple administrative matter.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -592,19 +618,32 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'mld-6',
     question: 'Why does Browning use enjambment and caesura throughout the poem?',
     type: 'multiple-choice',
-    options: ['He was a careless writer', 'They create a conversational flow while the caesura disrupts it, mirroring the Duke\'s controlled yet unstable nature', 'They make the poem rhyme better', 'They were common in Victorian poetry'],
+    options: [
+      'He was a careless writer',
+      "They create a conversational flow while the caesura disrupts it, mirroring the Duke's controlled yet unstable nature",
+      'They make the poem rhyme better',
+      'They were common in Victorian poetry',
+    ],
     correctIndex: 1,
-    explanation: 'Enjambment makes the Duke\'s speech flow naturally, but caesura creates unsettling pauses that hint at what he is concealing. The tension between flow and interruption mirrors the Duke\'s controlled exterior hiding violent impulses.',
+    explanation:
+      "Enjambment makes the Duke's speech flow naturally, but caesura creates unsettling pauses that hint at what he is concealing. The tension between flow and interruption mirrors the Duke's controlled exterior hiding violent impulses.",
     topic: 'Structure',
     difficulty: 'higher',
   },
   {
     id: 'mld-7',
-    question: 'What does the Duke\'s mention of his "nine-hundred-years-old name" reveal about his character?',
+    question:
+      'What does the Duke\'s mention of his "nine-hundred-years-old name" reveal about his character?',
     type: 'multiple-choice',
-    options: ['He is proud of his family but not arrogant', 'He is obsessed with status, lineage, and social superiority', 'He is interested in history as a hobby', 'He is trying to impress the envoy with humour'],
+    options: [
+      'He is proud of his family but not arrogant',
+      'He is obsessed with status, lineage, and social superiority',
+      'He is interested in history as a hobby',
+      'He is trying to impress the envoy with humour',
+    ],
     correctIndex: 1,
-    explanation: 'The Duke values his aristocratic heritage above all else. The fact that the Duchess treated everyone equally — regardless of rank — was an intolerable insult to his sense of superiority.',
+    explanation:
+      'The Duke values his aristocratic heritage above all else. The fact that the Duchess treated everyone equally — regardless of rank — was an intolerable insult to his sense of superiority.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -612,9 +651,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'mld-8',
     question: 'When was My Last Duchess written, and what context is relevant?',
     type: 'multiple-choice',
-    options: ['1842 — based loosely on the real Duke of Ferrara, Alfonso II, whose young wife died suspiciously', '1818 — during the Romantic period', '1914 — at the start of WWI', '1794 — during the French Revolution'],
+    options: [
+      '1842 — based loosely on the real Duke of Ferrara, Alfonso II, whose young wife died suspiciously',
+      '1818 — during the Romantic period',
+      '1914 — at the start of WWI',
+      '1794 — during the French Revolution',
+    ],
     correctIndex: 0,
-    explanation: 'Written in 1842, the poem is loosely based on Alfonso II, Duke of Ferrara, whose first wife Lucrezia de\' Medici died aged 17 under suspicious circumstances. He then negotiated to marry the niece of a Count.',
+    explanation:
+      "Written in 1842, the poem is loosely based on Alfonso II, Duke of Ferrara, whose first wife Lucrezia de' Medici died aged 17 under suspicious circumstances. He then negotiated to marry the niece of a Count.",
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -622,19 +667,32 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'mld-9',
     question: 'How does the final reference to Neptune "taming a sea-horse" function in the poem?',
     type: 'multiple-choice',
-    options: ['It is an irrelevant detail about art', 'It symbolises the Duke\'s desire to dominate and control, even nature — paralleling his treatment of the Duchess', 'It shows the Duke is a generous art collector', 'It represents the envoy\'s gift to the Duke'],
+    options: [
+      'It is an irrelevant detail about art',
+      "It symbolises the Duke's desire to dominate and control, even nature — paralleling his treatment of the Duchess",
+      'It shows the Duke is a generous art collector',
+      "It represents the envoy's gift to the Duke",
+    ],
     correctIndex: 1,
-    explanation: 'Neptune (god of the sea) taming a sea-horse mirrors the Duke\'s desire to control everything around him. The Duchess, like the sea-horse, was something natural and free that the Duke sought to dominate.',
+    explanation:
+      "Neptune (god of the sea) taming a sea-horse mirrors the Duke's desire to control everything around him. The Duchess, like the sea-horse, was something natural and free that the Duke sought to dominate.",
     topic: 'Language',
     difficulty: 'grade-9',
   },
   {
     id: 'mld-10',
-    question: 'Which poem from the Power and Conflict anthology offers the best comparison with My Last Duchess on the theme of controlling power?',
+    question:
+      'Which poem from the Power and Conflict anthology offers the best comparison with My Last Duchess on the theme of controlling power?',
     type: 'multiple-choice',
-    options: ['Exposure by Wilfred Owen', 'Ozymandias by Percy Bysshe Shelley', 'Bayonet Charge by Ted Hughes', 'Poppies by Jane Weir'],
+    options: [
+      'Exposure by Wilfred Owen',
+      'Ozymandias by Percy Bysshe Shelley',
+      'Bayonet Charge by Ted Hughes',
+      'Poppies by Jane Weir',
+    ],
     correctIndex: 1,
-    explanation: 'Both Ozymandias and My Last Duchess explore how powerful men use art to assert dominance. The Duke controls his wife through a portrait; Ozymandias through a statue. Both poems use irony to critique tyrannical power.',
+    explanation:
+      'Both Ozymandias and My Last Duchess explore how powerful men use art to assert dominance. The Duke controls his wife through a portrait; Ozymandias through a statue. Both poems use irony to critique tyrannical power.',
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -643,7 +701,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
-    summary: 'My Last Duchess explores the abuse of power, male possessiveness, objectification of women, jealousy, and the relationship between art and control.',
+    summary:
+      'My Last Duchess explores the abuse of power, male possessiveness, objectification of women, jealousy, and the relationship between art and control.',
     keyPoints: [
       'Power and control — the Duke treats his wife as a possession to be owned and displayed',
       'Jealousy — her friendliness to others enrages him because it diminishes his status',
@@ -653,20 +712,22 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Language & Imagery',
-    summary: 'Browning uses possessive pronouns, euphemism, dramatic irony, and carefully chosen verbs to reveal the Duke\'s controlling, violent nature through his own words.',
+    summary:
+      "Browning uses possessive pronouns, euphemism, dramatic irony, and carefully chosen verbs to reveal the Duke's controlling, violent nature through his own words.",
     keyPoints: [
       '"My last Duchess" — possessive pronoun treats her as property',
       '"I gave commands" — chilling euphemism for ordering her death',
-      '"Sneer of cold command" — the Duke\'s authority revealed in language',
-      'Neptune taming a sea-horse — symbolises the Duke\'s desire to dominate',
+      '"Who\'d stoop to blame... I choose / Never to stoop" — pride and refusal to communicate',
+      "Neptune taming a sea-horse — symbolises the Duke's desire to dominate",
     ],
   },
   {
     topic: 'Structure & Form',
-    summary: 'A dramatic monologue in rhyming couplets with iambic pentameter. The Duke\'s controlled verse form masks his violent psychology.',
+    summary:
+      "A dramatic monologue in rhyming couplets with iambic pentameter. The Duke's controlled verse form masks his violent psychology.",
     keyPoints: [
       'Dramatic monologue — the Duke unwittingly reveals his true nature to the listener',
-      'Rhyming couplets — controlled form mirrors the Duke\'s controlled exterior',
+      "Rhyming couplets — controlled form mirrors the Duke's controlled exterior",
       'Enjambment — conversational flow suggests the Duke is casual about horrifying things',
       'Caesura — disruptive pauses hint at what lurks beneath the polished surface',
     ],
@@ -676,7 +737,7 @@ const REVISION_TOPICS = [
 const ESSAY_PROMPTS = [
   'How does Browning present the Duke as a controlling figure in My Last Duchess?',
   'Compare how power is presented in My Last Duchess and one other poem from the anthology.',
-  'How does Browning use the dramatic monologue form to reveal the Duke\'s true character?',
+  "How does Browning use the dramatic monologue form to reveal the Duke's true character?",
 ]
 
 /* ── Comparison poems ──────────────────────────────────────────── */
@@ -693,8 +754,8 @@ const comparisons: Comparison[] = [
     link: '/revision/poetry/power-and-conflict/ozymandias',
     points: [
       'Both explore how powerful men use art to assert dominance — the Duke through his portrait collection, Ozymandias through his statue.',
-      'Ozymandias shows power destroyed by time; the Duke\'s power remains intact, making his poem arguably more disturbing.',
-      'Both use irony: Ozymandias\'s inscription is undercut by the desert; the Duke\'s self-presentation is undercut by what he reveals.',
+      "Ozymandias shows power destroyed by time; the Duke's power remains intact, making his poem arguably more disturbing.",
+      "Both use irony: Ozymandias's inscription is undercut by the desert; the Duke's self-presentation is undercut by what he reveals.",
       'Shelley critiques tyranny from the outside; Browning lets the tyrant speak, exposing him through his own words.',
     ],
   },
@@ -705,7 +766,7 @@ const comparisons: Comparison[] = [
       'Both are Browning dramatic monologues in which a male speaker kills a woman he claims to love.',
       'The Duke kills through social power ("I gave commands"); Porphyria\'s lover kills with his own hands, making the violence more visceral.',
       'Both speakers are motivated by a desire to possess and freeze a moment of devotion — the Duke through a painting, the lover through murder.',
-      'Porphyria\'s lover shows visible madness; the Duke\'s chilling rationality makes him arguably more frightening.',
+      "Porphyria's lover shows visible madness; the Duke's chilling rationality makes him arguably more frightening.",
     ],
   },
   {
@@ -713,8 +774,8 @@ const comparisons: Comparison[] = [
     link: '/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
     points: [
       'Both explore the consequences of unchecked authority — the Duke\'s commands kill his wife; the military "blunder" kills six hundred soldiers.',
-      'Tennyson critiques those who give orders from a distance; Browning\'s Duke is himself the one giving lethal commands.',
-      'The Light Brigade\'s soldiers are celebrated; the Duchess is silenced and forgotten — both poems question who holds power and who suffers.',
+      "Tennyson critiques those who give orders from a distance; Browning's Duke is himself the one giving lethal commands.",
+      "The Light Brigade's soldiers are celebrated; the Duchess is silenced and forgotten — both poems question who holds power and who suffers.",
       'Both use euphemism to distance the powerful from violence: "someone had blundered" and "I gave commands."',
     ],
   },
@@ -731,11 +792,17 @@ export default function MyLastDuchessPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
-          { name: "My Last Duchess", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/my-last-duchess" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Power and Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
+          },
+          {
+            name: 'My Last Duchess',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/my-last-duchess',
+          },
         ]}
       />
       {/* Navigation */}
@@ -754,13 +821,13 @@ export default function MyLastDuchessPage() {
             <BookOpen className="size-5 text-rose-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              My Last Duchess
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">My Last Duchess</h1>
             <p className="text-body-sm text-muted-foreground">
               Robert Browning &middot; Power and Conflict anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              AQA
+            </Badge>
           </div>
         </div>
       </div>
@@ -785,19 +852,12 @@ export default function MyLastDuchessPage() {
 
       {/* Comparison section */}
       <section className="space-y-4">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Compare with other poems
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Compare with other poems</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisons.map((c) => (
-            <div
-              key={c.poem}
-              className="rounded-xl border border-border bg-card p-5 space-y-3"
-            >
+            <div key={c.poem} className="rounded-xl border border-border bg-card p-5 space-y-3">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-semibold text-foreground">
-                  {c.poem}
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">{c.poem}</h3>
                 <Button
                   variant="ghost"
                   size="sm"

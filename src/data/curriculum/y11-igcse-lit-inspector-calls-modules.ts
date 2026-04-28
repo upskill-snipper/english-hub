@@ -1,4 +1,4 @@
-import type { CourseModule } from '../courses';
+import type { CourseModule } from '../courses'
 
 export const y11IgcseLitInspectorModules: CourseModule[] = [
   // ──────────────────────────────────────────────
@@ -31,7 +31,7 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
 
 <p>J.B. Priestley was a committed <strong>democratic socialist</strong> who believed passionately in social justice, equality, and collective responsibility. During the Second World War, he gave a series of hugely popular radio broadcasts — the <em>Postscripts</em> — in which he argued that ordinary people deserved better lives after the war, and that the old class-based society must be reformed. These broadcasts were so politically influential that they were eventually taken off air, reportedly under pressure from the Conservative government. Priestley was also a founding member of the <strong>Common Wealth Party</strong>, which advocated public ownership and greater democracy.</p>
 
-<p>In <em>An Inspector Calls</em>, Priestley uses the Inspector as his <strong>mouthpiece</strong> — the character through whom he delivers his socialist message directly to the audience. The Inspector's final speech, with its warning that we are all members of one body and must look after one another, is essentially Priestley's political manifesto dramatised for the stage. The play is not merely a detective story or a family drama — it is a carefully constructed piece of <strong>political theatre</strong> designed to persuade the 1945 audience to embrace social change and reject the selfish individualism of the Edwardian era.</p>
+<p>In <em>An Inspector Calls</em>, Priestley uses the Inspector as his <strong>mouthpiece</strong> — the character through whom he delivers his socialist message directly to the audience. The Inspector's final speech, with its warning that "we are members of one body" and must look after one another, is essentially Priestley's political manifesto dramatised for the stage. The play is not merely a detective story or a family drama — it is a carefully constructed piece of <strong>political theatre</strong> designed to persuade the 1945 audience to embrace social change and reject the selfish individualism of the Edwardian era.</p>
 
 <h3>Why the Dual Time Setting Matters</h3>
 
@@ -54,11 +54,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Set in 1918, written in 1945',
         ],
         correct: 1,
-        explanation: 'The play is set in 1912 but was written in 1945. Priestley chose this dual time setting to exploit dramatic irony — the 1945 audience knows that Birling\'s confident predictions about the Titanic and war are tragically wrong.',
+        explanation:
+          "The play is set in 1912 but was written in 1945. Priestley chose this dual time setting to exploit dramatic irony — the 1945 audience knows that Birling's confident predictions about the Titanic and war are tragically wrong.",
       },
       {
         id: 'ic-m1-q2',
-        question: 'What political party won the 1945 general election in a landslide, reflecting the desire for social change that Priestley championed?',
+        question:
+          'What political party won the 1945 general election in a landslide, reflecting the desire for social change that Priestley championed?',
         options: [
           'The Conservative Party',
           'The Liberal Party',
@@ -66,35 +68,29 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'The Common Wealth Party',
         ],
         correct: 2,
-        explanation: 'The Labour Party under Clement Attlee won a landslide victory in 1945. They introduced the welfare state and the NHS — the kind of collective social responsibility that Priestley advocates through the Inspector\'s message.',
+        explanation:
+          "The Labour Party under Clement Attlee won a landslide victory in 1945. They introduced the welfare state and the NHS — the kind of collective social responsibility that Priestley advocates through the Inspector's message.",
       },
       {
         id: 'ic-m1-q3',
-        question: 'What is the term for when the audience knows something that the characters on stage do not?',
-        options: [
-          'Situational irony',
-          'Dramatic irony',
-          'Verbal irony',
-          'Tragic irony',
-        ],
+        question:
+          'What is the term for when the audience knows something that the characters on stage do not?',
+        options: ['Situational irony', 'Dramatic irony', 'Verbal irony', 'Tragic irony'],
         correct: 1,
-        explanation: 'Dramatic irony occurs when the audience possesses knowledge that characters lack. In An Inspector Calls, this is central to the play\'s effect — the audience knows Birling\'s predictions are wrong, undermining his authority from the very start.',
+        explanation:
+          "Dramatic irony occurs when the audience possesses knowledge that characters lack. In An Inspector Calls, this is central to the play's effect — the audience knows Birling's predictions are wrong, undermining his authority from the very start.",
       },
       {
         id: 'ic-m1-q4',
-        question: 'What were Priestley\'s wartime radio broadcasts called?',
-        options: [
-          'The Fireside Chats',
-          'The Postscripts',
-          'The People\'s Hour',
-          'The Home Front',
-        ],
+        question: "What were Priestley's wartime radio broadcasts called?",
+        options: ['The Fireside Chats', 'The Postscripts', "The People's Hour", 'The Home Front'],
         correct: 1,
-        explanation: 'Priestley\'s Postscripts were hugely popular BBC radio broadcasts during the Second World War. He used them to argue for social reform and greater equality, and they were so influential that they were reportedly taken off air under political pressure.',
+        explanation:
+          "Priestley's Postscripts were hugely popular BBC radio broadcasts during the Second World War. He used them to argue for social reform and greater equality, and they were so influential that they were reportedly taken off air under political pressure.",
       },
       {
         id: 'ic-m1-q5',
-        question: 'Which best describes Priestley\'s political views as expressed in the play?',
+        question: "Which best describes Priestley's political views as expressed in the play?",
         options: [
           'Conservative — believing in maintaining traditional class structures',
           'Liberal — believing in moderate reform within the existing system',
@@ -102,7 +98,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Anarchist — believing in the abolition of all government',
         ],
         correct: 2,
-        explanation: 'Priestley was a committed democratic socialist who believed in collective responsibility, social equality, and the welfare state. The Inspector serves as his mouthpiece, delivering the socialist message that we are all responsible for one another.',
+        explanation:
+          'Priestley was a committed democratic socialist who believed in collective responsibility, social equality, and the welfare state. The Inspector serves as his mouthpiece, delivering the socialist message that we are all responsible for one another.',
       },
     ],
   },
@@ -154,7 +151,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
     quiz: [
       {
         id: 'ic-m2-q1',
-        question: 'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?',
+        question:
+          'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?',
         options: [
           'The family is having a party that becomes more energetic',
           'The transition from comfortable self-deception to the harsh light of truth',
@@ -162,11 +160,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'The time of day is changing from evening to night',
         ],
         correct: 1,
-        explanation: 'The lighting change is a visual metaphor. The pink light represents the Birlings\' rose-tinted, comfortable view of their lives, while the brighter, harder light represents the Inspector\'s moral scrutiny and the uncomfortable truths he brings.',
+        explanation:
+          "The lighting change is a visual metaphor. The pink light represents the Birlings' rose-tinted, comfortable view of their lives, while the brighter, harder light represents the Inspector's moral scrutiny and the uncomfortable truths he brings.",
       },
       {
         id: 'ic-m2-q2',
-        question: 'Which of Mr Birling\'s predictions is used by Priestley to create dramatic irony?',
+        question:
+          "Which of Mr Birling's predictions is used by Priestley to create dramatic irony?",
         options: [
           'That Eva Smith would find another job',
           'That the Inspector would not find any evidence',
@@ -174,11 +174,12 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'That Sheila and Gerald would have a happy marriage',
         ],
         correct: 2,
-        explanation: 'Birling\'s claim that the Titanic is "absolutely unsinkable" is a key example of dramatic irony. The 1945 audience knew the Titanic sank on its maiden voyage in 1912, which undermines Birling\'s credibility and the capitalist certainty he represents.',
+        explanation:
+          'Birling\'s claim that the Titanic is "absolutely unsinkable" is a key example of dramatic irony. The 1945 audience knew the Titanic sank on its maiden voyage in 1912, which undermines Birling\'s credibility and the capitalist certainty he represents.',
       },
       {
         id: 'ic-m2-q3',
-        question: 'Why was Eva Smith dismissed from Birling\'s factory?',
+        question: "Why was Eva Smith dismissed from Birling's factory?",
         options: [
           'She was caught stealing',
           'She was a ringleader in a strike demanding higher wages',
@@ -186,11 +187,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'She insulted Mr Birling directly',
         ],
         correct: 1,
-        explanation: 'Eva Smith was one of the ringleaders of a strike demanding a pay rise from twenty-two shillings and sixpence to twenty-five shillings a week. Birling fired her and the other leaders to maintain control and keep costs down.',
+        explanation:
+          'Eva Smith was one of the ringleaders of a strike demanding a pay rise from twenty-two shillings and sixpence to twenty-five shillings a week. Birling fired her and the other leaders to maintain control and keep costs down.',
       },
       {
         id: 'ic-m2-q4',
-        question: 'How does Sheila\'s response to her involvement in Eva\'s story differ from her father\'s?',
+        question:
+          "How does Sheila's response to her involvement in Eva's story differ from her father's?",
         options: [
           'She is more defensive than her father',
           'She blames Gerald instead of herself',
@@ -198,11 +201,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'She refuses to listen to the Inspector',
         ],
         correct: 2,
-        explanation: 'Unlike Mr Birling, who refuses to accept responsibility, Sheila immediately feels distressed and guilty. She acknowledges her behaviour was driven by jealousy and that she acted like a "spoilt child". This begins the generational divide central to the play.',
+        explanation:
+          'Unlike Mr Birling, who refuses to accept responsibility, Sheila immediately feels distressed and guilty. She acknowledges her behaviour was driven by jealousy and that she acted like a "spoilt child". This begins the generational divide central to the play.',
       },
       {
         id: 'ic-m2-q5',
-        question: 'What impression does the Inspector create when he first arrives, according to the stage directions?',
+        question:
+          'What impression does the Inspector create when he first arrives, according to the stage directions?',
         options: [
           'He is physically imposing and intimidating',
           'He creates "an impression of massiveness, solidity and purposefulness"',
@@ -210,7 +215,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'He is friendly and puts the family at ease',
         ],
         correct: 1,
-        explanation: 'The stage directions describe the Inspector as creating "an impression of massiveness, solidity and purposefulness". He is not necessarily physically large but has a moral weight and authority that dominates the room and unsettles the family.',
+        explanation:
+          'The stage directions describe the Inspector as creating "an impression of massiveness, solidity and purposefulness". He is not necessarily physically large but has a moral weight and authority that dominates the room and unsettles the family.',
       },
     ],
   },
@@ -265,10 +271,11 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'At Milwards department store',
           'At the Palace Bar',
           'At the Birling factory',
-          'At the Brumley Women\'s Charity',
+          "At the Brumley Women's Charity",
         ],
         correct: 1,
-        explanation: 'Gerald met Daisy Renton at the Palace Bar, described as a place where "women of the town" go. He claims he rescued her from Alderman Meggarty and then began an affair with her, installing her in a friend\'s rooms.',
+        explanation:
+          'Gerald met Daisy Renton at the Palace Bar, described as a place where "women of the town" go. He claims he rescued her from Alderman Meggarty and then began an affair with her, installing her in a friend\'s rooms.',
       },
       {
         id: 'ic-m3-q2',
@@ -280,7 +287,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Eva had already been helped by the charity before',
         ],
         correct: 2,
-        explanation: 'Mrs Birling was offended that Eva used the name "Mrs Birling" and perceived her as impertinent. She also dismissed Eva as a girl of "that sort", revealing deep class prejudice that led her to reject someone in desperate need.',
+        explanation:
+          'Mrs Birling was offended that Eva used the name "Mrs Birling" and perceived her as impertinent. She also dismissed Eva as a girl of "that sort", revealing deep class prejudice that led her to reject someone in desperate need.',
       },
       {
         id: 'ic-m3-q3',
@@ -292,23 +300,27 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'She sides with Gerald against the Inspector',
         ],
         correct: 1,
-        explanation: 'Sheila increasingly acts as a second inspector throughout Act 2. She watches others carefully, anticipates the Inspector\'s questions, and presses Gerald and her mother for truth when they try to evade it.',
+        explanation:
+          "Sheila increasingly acts as a second inspector throughout Act 2. She watches others carefully, anticipates the Inspector's questions, and presses Gerald and her mother for truth when they try to evade it.",
       },
       {
         id: 'ic-m3-q4',
-        question: 'What is the dramatic irony in Mrs Birling\'s demand that the father of Eva\'s child be held responsible?',
+        question:
+          "What is the dramatic irony in Mrs Birling's demand that the father of Eva's child be held responsible?",
         options: [
           'The father has already fled the country',
           'The Inspector already knows the father is Gerald',
           'She is unknowingly condemning her own son, Eric',
-          'The child is actually Mr Birling\'s',
+          "The child is actually Mr Birling's",
         ],
         correct: 2,
-        explanation: 'Mrs Birling does not realise that the father of Eva\'s child is her own son, Eric. By demanding the harshest treatment for the father, she is unknowingly building a case against her own child — a devastating example of dramatic irony.',
+        explanation:
+          "Mrs Birling does not realise that the father of Eva's child is her own son, Eric. By demanding the harshest treatment for the father, she is unknowingly building a case against her own child — a devastating example of dramatic irony.",
       },
       {
         id: 'ic-m3-q5',
-        question: 'What does the power imbalance in Gerald and Daisy\'s relationship reveal about Priestley\'s message?',
+        question:
+          "What does the power imbalance in Gerald and Daisy's relationship reveal about Priestley's message?",
         options: [
           'That love can overcome class differences',
           'That even well-meaning individuals can exploit others when the social system permits it',
@@ -316,7 +328,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'That Daisy was happy with the arrangement',
         ],
         correct: 1,
-        explanation: 'Priestley uses the power imbalance to show that even well-intentioned actions can be exploitative when one person holds all the economic and social power. Gerald\'s relationship with Daisy reflects systemic class and gender inequality.',
+        explanation:
+          "Priestley uses the power imbalance to show that even well-intentioned actions can be exploitative when one person holds all the economic and social power. Gerald's relationship with Daisy reflects systemic class and gender inequality.",
       },
     ],
   },
@@ -371,16 +384,18 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
         question: 'What does Eric confess to having done to support Eva Smith financially?',
         options: [
           'He borrowed money from Gerald',
-          'He stole approximately fifty pounds from his father\'s office',
-          'He pawned his mother\'s jewellery',
-          'He took out a bank loan in his father\'s name',
+          "He stole approximately fifty pounds from his father's office",
+          "He pawned his mother's jewellery",
+          "He took out a bank loan in his father's name",
         ],
         correct: 1,
-        explanation: 'Eric stole approximately fifty pounds from his father\'s office to give to Eva. When she discovered the money was stolen, she refused to accept any more, demonstrating greater moral integrity than Eric himself.',
+        explanation:
+          "Eric stole approximately fifty pounds from his father's office to give to Eva. When she discovered the money was stolen, she refused to accept any more, demonstrating greater moral integrity than Eric himself.",
       },
       {
         id: 'ic-m4-q2',
-        question: 'What does the Inspector mean when he warns the Birlings about "fire and blood and anguish"?',
+        question:
+          'What does the Inspector mean when he warns the Birlings about "fire and blood and anguish"?',
         options: [
           'He is threatening them with physical violence',
           'He is predicting a house fire at the Birling residence',
@@ -388,11 +403,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'He is describing what happened to Eva Smith',
         ],
         correct: 2,
-        explanation: 'The phrase "fire and blood and anguish" is a direct reference to the two world wars. Priestley is telling the 1945 audience that the catastrophes of the twentieth century were, in part, consequences of the selfish individualism the Birlings represent.',
+        explanation:
+          'The phrase "fire and blood and anguish" is a direct reference to the two world wars. Priestley is telling the 1945 audience that the catastrophes of the twentieth century were, in part, consequences of the selfish individualism the Birlings represent.',
       },
       {
         id: 'ic-m4-q3',
-        question: 'How do Mr and Mrs Birling react when they discover the Inspector may not have been genuine?',
+        question:
+          'How do Mr and Mrs Birling react when they discover the Inspector may not have been genuine?',
         options: [
           'They feel deeply ashamed of their behaviour',
           'They become triumphant and smug, believing they have escaped consequences',
@@ -400,7 +417,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'They argue with each other about who was most to blame',
         ],
         correct: 1,
-        explanation: 'Mr Birling becomes "triumphant" and Mrs Birling becomes "smug" when they believe the Inspector was not real. They think they have avoided any consequences, revealing that their concern was always about reputation, not genuine moral responsibility.',
+        explanation:
+          'Mr Birling becomes "triumphant" and Mrs Birling becomes "smug" when they believe the Inspector was not real. They think they have avoided any consequences, revealing that their concern was always about reputation, not genuine moral responsibility.',
       },
       {
         id: 'ic-m4-q4',
@@ -412,19 +430,22 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Sheila and Eric leave the family home in protest',
         ],
         correct: 2,
-        explanation: 'The play ends with a telephone call revealing that a girl has just died after swallowing disinfectant and a police inspector is on the way. This twist means the family must face the same investigation again — there is no escape from responsibility.',
+        explanation:
+          'The play ends with a telephone call revealing that a girl has just died after swallowing disinfectant and a police inspector is on the way. This twist means the family must face the same investigation again — there is no escape from responsibility.',
       },
       {
         id: 'ic-m4-q5',
-        question: 'What does Sheila\'s sarcastic remark, "I suppose we\'re all nice people now," reveal?',
+        question:
+          'What does Sheila\'s sarcastic remark, "I suppose we\'re all nice people now," reveal?',
         options: [
           'She is relieved that the family has been vindicated',
           'She is congratulating her parents on handling the situation well',
-          'She is bitterly highlighting the moral emptiness of her parents\' position',
+          "She is bitterly highlighting the moral emptiness of her parents' position",
           'She is agreeing with Gerald that the Inspector was a fraud',
         ],
         correct: 2,
-        explanation: 'Sheila\'s sarcasm highlights that whether or not the Inspector was real, the things the family did were real. She recognises that her parents are prioritising reputation over genuine moral responsibility, and she is disgusted by their refusal to change.',
+        explanation:
+          "Sheila's sarcasm highlights that whether or not the Inspector was real, the things the family did were real. She recognises that her parents are prioritising reputation over genuine moral responsibility, and she is disgusted by their refusal to change.",
       },
     ],
   },
@@ -474,15 +495,17 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
     quiz: [
       {
         id: 'ic-m5-q1',
-        question: 'What is Mr Birling primarily motivated by regarding Sheila\'s engagement to Gerald?',
+        question:
+          "What is Mr Birling primarily motivated by regarding Sheila's engagement to Gerald?",
         options: [
           'He genuinely wants his daughter to be happy',
           'He hopes the marriage will lead to a business merger between the two firms',
           'He wants Gerald to take over the family business',
-          'He is trying to pay off a debt to Gerald\'s father',
+          "He is trying to pay off a debt to Gerald's father",
         ],
         correct: 1,
-        explanation: 'Birling\'s enthusiasm for the engagement is driven primarily by business considerations. He hopes the marriage will lead to a merger between Birling and Company and Crofts Limited, revealing that he views even family relationships through a capitalist lens.',
+        explanation:
+          "Birling's enthusiasm for the engagement is driven primarily by business considerations. He hopes the marriage will lead to a merger between Birling and Company and Crofts Limited, revealing that he views even family relationships through a capitalist lens.",
       },
       {
         id: 'ic-m5-q2',
@@ -494,7 +517,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'He confesses everything and asks for mercy',
         ],
         correct: 1,
-        explanation: 'Birling immediately tries to use his social connections to intimidate the Inspector, mentioning his friendship with the Chief Constable and his past as an alderman and Lord Mayor. This reveals his belief that social status should place him above moral scrutiny.',
+        explanation:
+          'Birling immediately tries to use his social connections to intimidate the Inspector, mentioning his friendship with the Chief Constable and his past as an alderman and Lord Mayor. This reveals his belief that social status should place him above moral scrutiny.',
       },
       {
         id: 'ic-m5-q3',
@@ -506,11 +530,12 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'It refers specifically to the strike leaders',
         ],
         correct: 2,
-        explanation: 'The phrase "these people" creates a clear division between the respectable classes and the working class, whom Birling sees as a separate, inferior category. This dehumanising language enables and justifies exploitation.',
+        explanation:
+          'The phrase "these people" creates a clear division between the respectable classes and the working class, whom Birling sees as a separate, inferior category. This dehumanising language enables and justifies exploitation.',
       },
       {
         id: 'ic-m5-q4',
-        question: 'What is Birling\'s primary concern after the Inspector leaves?',
+        question: "What is Birling's primary concern after the Inspector leaves?",
         options: [
           'Whether Eva Smith really died',
           'Whether his children will forgive him',
@@ -518,19 +543,22 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Whether he should donate to charity',
         ],
         correct: 2,
-        explanation: 'Birling\'s concern is entirely about reputation — he fears a "public scandal" that might cost him his expected knighthood. He has no genuine interest in whether Eva suffered; he only cares about whether he will face social consequences.',
+        explanation:
+          'Birling\'s concern is entirely about reputation — he fears a "public scandal" that might cost him his expected knighthood. He has no genuine interest in whether Eva suffered; he only cares about whether he will face social consequences.',
       },
       {
         id: 'ic-m5-q5',
-        question: 'Why does Priestley place Birling\'s speech about self-interest before the Inspector\'s arrival?',
+        question:
+          "Why does Priestley place Birling's speech about self-interest before the Inspector's arrival?",
         options: [
           'To show that Birling is a good public speaker',
           'To give the audience background information about the economy',
-          'So that the entire drama becomes a systematic dismantling of Birling\'s philosophy',
+          "So that the entire drama becomes a systematic dismantling of Birling's philosophy",
           'To demonstrate that Birling is a loving family man',
         ],
         correct: 2,
-        explanation: 'Priestley places the speech first so that everything that follows — the Inspector\'s investigation and final message — systematically dismantles Birling\'s philosophy of self-interest. The play is structured as a refutation of capitalist individualism.',
+        explanation:
+          "Priestley places the speech first so that everything that follows — the Inspector's investigation and final message — systematically dismantles Birling's philosophy of self-interest. The play is structured as a refutation of capitalist individualism.",
       },
     ],
   },
@@ -585,14 +613,16 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Eva was rude to Sheila in the shop',
           'Sheila was jealous because Eva looked prettier in a dress',
           'Eva stole something from the shop',
-          'The shop manager asked Sheila\'s advice on staffing',
+          "The shop manager asked Sheila's advice on staffing",
         ],
         correct: 1,
-        explanation: 'Sheila had Eva dismissed because she was jealous — Eva looked prettier in a dress than Sheila did. Sheila acknowledges this was petty and calls herself "a spoilt child", showing the honesty and self-awareness that distinguishes her from her parents.',
+        explanation:
+          'Sheila had Eva dismissed because she was jealous — Eva looked prettier in a dress than Sheila did. Sheila acknowledges this was petty and calls herself "a spoilt child", showing the honesty and self-awareness that distinguishes her from her parents.',
       },
       {
         id: 'ic-m6-q2',
-        question: 'What does Eric shout at his mother when he discovers she turned Eva away from the charity?',
+        question:
+          'What does Eric shout at his mother when he discovers she turned Eva away from the charity?',
         options: [
           '"You should be ashamed of yourself"',
           '"How could you do that to a stranger?"',
@@ -600,11 +630,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           '"I\'ll never forgive you for this"',
         ],
         correct: 2,
-        explanation: 'Eric\'s accusation — "you killed her — and the child she\'d have had too" — is one of the most emotionally raw moments in the play. It reflects his genuine understanding of the moral consequences of his mother\'s actions and his refusal to let her escape responsibility.',
+        explanation:
+          "Eric's accusation — \"you killed her — and the child she'd have had too\" — is one of the most emotionally raw moments in the play. It reflects his genuine understanding of the moral consequences of his mother's actions and his refusal to let her escape responsibility.",
       },
       {
         id: 'ic-m6-q3',
-        question: 'How are the stage directions used to characterise Eric at the start of the play?',
+        question:
+          'How are the stage directions used to characterise Eric at the start of the play?',
         options: [
           'He is described as confident and assertive',
           'He is described as "not quite at ease, half shy, half assertive"',
@@ -612,7 +644,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'He is described as physically imposing like the Inspector',
         ],
         correct: 1,
-        explanation: 'Eric is described as "not quite at ease, half shy, half assertive". This suggests he is uncomfortable in his family environment despite their wealth, hinting at the emotional dysfunction and his drinking problem that are revealed later.',
+        explanation:
+          'Eric is described as "not quite at ease, half shy, half assertive". This suggests he is uncomfortable in his family environment despite their wealth, hinting at the emotional dysfunction and his drinking problem that are revealed later.',
       },
       {
         id: 'ic-m6-q4',
@@ -624,19 +657,22 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'She gives it to the Inspector as evidence',
         ],
         correct: 2,
-        explanation: 'Sheila returns the ring to Gerald, recognising that their relationship was built on dishonesty. This represents her moral growth — she values truth and integrity over the comfortable life that the engagement would have provided.',
+        explanation:
+          'Sheila returns the ring to Gerald, recognising that their relationship was built on dishonesty. This represents her moral growth — she values truth and integrity over the comfortable life that the engagement would have provided.',
       },
       {
         id: 'ic-m6-q5',
-        question: 'Why is the generational divide in the play particularly significant for the 1945 audience?',
+        question:
+          'Why is the generational divide in the play particularly significant for the 1945 audience?',
         options: [
           'The audience was entirely made up of elderly people',
           'Britain was at a crossroads and Priestley was urging the younger generation to build a better society',
           'The play was only performed for school children',
-          'The older generation had already accepted Priestley\'s message',
+          "The older generation had already accepted Priestley's message",
         ],
         correct: 1,
-        explanation: 'In 1945, Britain was choosing between returning to the old social order or building something better. Priestley uses the generational divide to urge the younger generation — many of whom had fought in the war — to choose the path of social responsibility over selfish individualism.',
+        explanation:
+          'In 1945, Britain was choosing between returning to the old social order or building something better. Priestley uses the generational divide to urge the younger generation — many of whom had fought in the war — to choose the path of social responsibility over selfish individualism.',
       },
     ],
   },
@@ -694,11 +730,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'It means "investigator" in Old English',
         ],
         correct: 1,
-        explanation: 'The name "Goole" is a homophone of "ghoul" — a supernatural being associated with death and moral judgement. This auditory pun is a deliberate clue from Priestley that the Inspector may not be a real policeman but a supernatural or allegorical figure.',
+        explanation:
+          'The name "Goole" is a homophone of "ghoul" — a supernatural being associated with death and moral judgement. This auditory pun is a deliberate clue from Priestley that the Inspector may not be a real policeman but a supernatural or allegorical figure.',
       },
       {
         id: 'ic-m7-q2',
-        question: 'Why does the Inspector insist on dealing with "one person and one line of inquiry at a time"?',
+        question:
+          'Why does the Inspector insist on dealing with "one person and one line of inquiry at a time"?',
         options: [
           'Because this is standard police procedure',
           'Because he is not very experienced as a detective',
@@ -706,11 +744,12 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Because Mr Birling asked him to follow this approach',
         ],
         correct: 2,
-        explanation: 'The Inspector\'s method is dramatic rather than procedural. By dealing with one person at a time, he builds the narrative of Eva\'s life step by step, increasing the emotional and moral pressure on the family. A real detective would work differently.',
+        explanation:
+          "The Inspector's method is dramatic rather than procedural. By dealing with one person at a time, he builds the narrative of Eva's life step by step, increasing the emotional and moral pressure on the family. A real detective would work differently.",
       },
       {
         id: 'ic-m7-q3',
-        question: 'What does the stage direction say about the Inspector\'s physical presence?',
+        question: "What does the stage direction say about the Inspector's physical presence?",
         options: [
           'He is described as very tall and physically intimidating',
           'He creates "an impression of massiveness, solidity and purposefulness" though he need not be a big man',
@@ -718,7 +757,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'He is described as elderly and frail',
         ],
         correct: 1,
-        explanation: 'The Inspector creates "an impression of massiveness, solidity and purposefulness" even though he "need not be a big man". His imposing quality is moral rather than physical — he has a weight and authority that dominates the room.',
+        explanation:
+          'The Inspector creates "an impression of massiveness, solidity and purposefulness" even though he "need not be a big man". His imposing quality is moral rather than physical — he has a weight and authority that dominates the room.',
       },
       {
         id: 'ic-m7-q4',
@@ -727,14 +767,16 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'A supernatural figure delivering a moral warning',
           'A symbol of collective social conscience',
           'A corrupt policeman trying to blackmail the family',
-          'A dramatic device for structuring the play\'s argument',
+          "A dramatic device for structuring the play's argument",
         ],
         correct: 2,
-        explanation: 'The Inspector is commonly interpreted as a supernatural figure, a symbol of conscience, a representative of time, or a dramatic device. He is never interpreted as corrupt or self-interested — his purpose is entirely moral and political.',
+        explanation:
+          'The Inspector is commonly interpreted as a supernatural figure, a symbol of conscience, a representative of time, or a dramatic device. He is never interpreted as corrupt or self-interested — his purpose is entirely moral and political.',
       },
       {
         id: 'ic-m7-q5',
-        question: 'What register does the Inspector\'s final speech use, and why is this significant?',
+        question:
+          "What register does the Inspector's final speech use, and why is this significant?",
         options: [
           'A casual, conversational register to put the family at ease',
           'A legal register full of technical terms',
@@ -742,7 +784,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'A scientific register emphasising facts and evidence',
         ],
         correct: 2,
-        explanation: 'The Inspector\'s final speech uses a biblical, prophetic register ("fire and blood and anguish", "we are members of one body") that elevates him from a police detective to a moral authority. This register speaks not just to the Birlings but to the entire audience.',
+        explanation:
+          'The Inspector\'s final speech uses a biblical, prophetic register ("fire and blood and anguish", "we are members of one body") that elevates him from a police detective to a moral authority. This register speaks not just to the Birlings but to the entire audience.',
       },
     ],
   },
@@ -802,7 +845,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Past responsibility vs future responsibility',
         ],
         correct: 1,
-        explanation: 'The play presents Mr Birling\'s individual responsibility ("mind his own business") against the Inspector\'s collective responsibility ("we are members of one body"). This opposition is the central ideological conflict of the play.',
+        explanation:
+          'The play presents Mr Birling\'s individual responsibility ("mind his own business") against the Inspector\'s collective responsibility ("we are members of one body"). This opposition is the central ideological conflict of the play.',
       },
       {
         id: 'ic-m8-q2',
@@ -814,7 +858,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Genuine guilt affects only the younger characters; fear affects the Inspector',
         ],
         correct: 1,
-        explanation: 'Sheila and Eric feel genuine guilt — moral remorse that leads to change. Mr and Mrs Birling fear exposure — they are concerned about reputation and scandal, not about what they actually did. This distinction is central to Priestley\'s moral argument.',
+        explanation:
+          "Sheila and Eric feel genuine guilt — moral remorse that leads to change. Mr and Mrs Birling fear exposure — they are concerned about reputation and scandal, not about what they actually did. This distinction is central to Priestley's moral argument.",
       },
       {
         id: 'ic-m8-q3',
@@ -826,7 +871,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'To make the play more dramatic and suspenseful',
         ],
         correct: 1,
-        explanation: 'The chain structure shows that Eva\'s destruction was not caused by one bad individual but by a system in which the privileged consistently abuse their power. Each character acted according to the values of their class, revealing systemic exploitation.',
+        explanation:
+          "The chain structure shows that Eva's destruction was not caused by one bad individual but by a system in which the privileged consistently abuse their power. Each character acted according to the values of their class, revealing systemic exploitation.",
       },
       {
         id: 'ic-m8-q4',
@@ -838,7 +884,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Only the Inspector and Sheila',
         ],
         correct: 2,
-        explanation: 'The inclusive pronoun "we" in "we are members of one body" addresses both the Birling family and the theatre audience. Priestley is challenging everyone — not just his characters — to accept responsibility for others.',
+        explanation:
+          'The inclusive pronoun "we" in "we are members of one body" addresses both the Birling family and the theatre audience. Priestley is challenging everyone — not just his characters — to accept responsibility for others.',
       },
       {
         id: 'ic-m8-q5',
@@ -850,7 +897,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'That the Inspector will return as a different character',
         ],
         correct: 2,
-        explanation: 'The cyclical ending — with a real inspector on the way — suggests that the question of responsibility is ongoing. If society does not learn to care for its members, it will face the same moral reckoning repeatedly, "in fire and blood and anguish".',
+        explanation:
+          'The cyclical ending — with a real inspector on the way — suggests that the question of responsibility is ongoing. If society does not learn to care for its members, it will face the same moral reckoning repeatedly, "in fire and blood and anguish".',
       },
     ],
   },
@@ -909,12 +957,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
         question: 'What does Mrs Birling\'s phrase "a girl of that sort" reveal?',
         options: [
           'She knows Eva personally',
-          'She is expressing concern for Eva\'s welfare',
+          "She is expressing concern for Eva's welfare",
           'She is using class prejudice to dismiss Eva as inherently inferior and undeserving',
           'She is quoting something the Inspector told her',
         ],
         correct: 2,
-        explanation: 'The euphemism "a girl of that sort" simultaneously condemns Eva\'s morality and dismisses her as inherently inferior because of her class. It reveals Mrs Birling\'s deep class prejudice and her use of it to justify refusing help to a desperate woman.',
+        explanation:
+          'The euphemism "a girl of that sort" simultaneously condemns Eva\'s morality and dismisses her as inherently inferior because of her class. It reveals Mrs Birling\'s deep class prejudice and her use of it to justify refusing help to a desperate woman.',
       },
       {
         id: 'ic-m9-q2',
@@ -926,7 +975,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'She is abandoned by both Gerald and Eric',
         ],
         correct: 1,
-        explanation: 'Eva faces a double burden of class and gender oppression. As a working-class woman, she has fewer options than a working-class man would, is more vulnerable to sexual exploitation, and is judged more harshly for her behaviour by society.',
+        explanation:
+          'Eva faces a double burden of class and gender oppression. As a working-class woman, she has fewer options than a working-class man would, is more vulnerable to sexual exploitation, and is judged more harshly for her behaviour by society.',
       },
       {
         id: 'ic-m9-q3',
@@ -938,7 +988,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'He is the bridge that brings the generations together',
         ],
         correct: 1,
-        explanation: 'Gerald occupies an ambiguous position. Although young in age, he quickly joins Mr and Mrs Birling in trying to discredit the Inspector after he leaves, prioritising reputation over truth. His class values align him with the older generation.',
+        explanation:
+          'Gerald occupies an ambiguous position. Although young in age, he quickly joins Mr and Mrs Birling in trying to discredit the Inspector after he leaves, prioritising reputation over truth. His class values align him with the older generation.',
       },
       {
         id: 'ic-m9-q4',
@@ -950,7 +1001,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'It ensures that everyone receives fair treatment under the law',
         ],
         correct: 1,
-        explanation: 'Each character\'s ability to harm Eva derives directly from their class position: Birling owns the factory, Sheila is a valued customer, Gerald controls housing and money, Mrs Birling controls the charity, and Eric\'s status protects him from consequences.',
+        explanation:
+          "Each character's ability to harm Eva derives directly from their class position: Birling owns the factory, Sheila is a valued customer, Gerald controls housing and money, Mrs Birling controls the charity, and Eric's status protects him from consequences.",
       },
       {
         id: 'ic-m9-q5',
@@ -959,10 +1011,11 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'She judges men more harshly than women',
           'She treats rich and poor women equally',
           'She condemns Eva for her sexual behaviour while making no moral judgement about the men who exploited her',
-          'She supports Eva\'s right to make her own choices',
+          "She supports Eva's right to make her own choices",
         ],
         correct: 2,
-        explanation: 'Mrs Birling condemns Eva for having a relationship outside marriage and being pregnant, but makes no moral judgement about the men who exploited her. This patriarchal double standard shows Mrs Birling enforcing the very system that oppresses women.',
+        explanation:
+          'Mrs Birling condemns Eva for having a relationship outside marriage and being pregnant, but makes no moral judgement about the men who exploited her. This patriarchal double standard shows Mrs Birling enforcing the very system that oppresses women.',
       },
     ],
   },
@@ -1026,11 +1079,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Conflict, climax, and resolution',
         ],
         correct: 2,
-        explanation: 'Priestley follows the classical unities of time (one evening), place (one room), and action (one investigation). This creates claustrophobia and inescapability, mirroring the moral pressure the Inspector applies to the family.',
+        explanation:
+          'Priestley follows the classical unities of time (one evening), place (one room), and action (one investigation). This creates claustrophobia and inescapability, mirroring the moral pressure the Inspector applies to the family.',
       },
       {
         id: 'ic-m10-q2',
-        question: 'What is the symbolic significance of the Inspector arriving to interrupt Birling\'s speech?',
+        question:
+          "What is the symbolic significance of the Inspector arriving to interrupt Birling's speech?",
         options: [
           'It shows the Inspector is rude and impatient',
           'It literally cuts off capitalist ideology and replaces it with moral investigation',
@@ -1038,7 +1093,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'It is simply a coincidence of timing',
         ],
         correct: 1,
-        explanation: 'The Inspector literally interrupts and disrupts Birling\'s philosophy of self-interest. This symbolic interruption signals that the entire drama will systematically dismantle the capitalist worldview Birling has just expressed.',
+        explanation:
+          "The Inspector literally interrupts and disrupts Birling's philosophy of self-interest. This symbolic interruption signals that the entire drama will systematically dismantle the capitalist worldview Birling has just expressed.",
       },
       {
         id: 'ic-m10-q3',
@@ -1050,7 +1106,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Because the photograph is too small for multiple people to see',
         ],
         correct: 1,
-        explanation: 'Showing the photograph individually allows the Inspector to control information flow. It also raises thematic questions about identity — whether the Birlings exploited one woman or many — reinforcing the point that millions of people face similar treatment.',
+        explanation:
+          'Showing the photograph individually allows the Inspector to control information flow. It also raises thematic questions about identity — whether the Birlings exploited one woman or many — reinforcing the point that millions of people face similar treatment.',
       },
       {
         id: 'ic-m10-q4',
@@ -1062,11 +1119,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'It allows the audience to decide for themselves what happened',
         ],
         correct: 1,
-        explanation: 'The cyclical ending — with a real inspector on the way — suggests that moral responsibility cannot be avoided. If society does not learn its lesson, it will face the same questions again, making the play\'s message urgently relevant to the audience.',
+        explanation:
+          "The cyclical ending — with a real inspector on the way — suggests that moral responsibility cannot be avoided. If society does not learn its lesson, it will face the same questions again, making the play's message urgently relevant to the audience.",
       },
       {
         id: 'ic-m10-q5',
-        question: 'What does the lighting change from "pink and intimate" to "brighter and harder" represent?',
+        question:
+          'What does the lighting change from "pink and intimate" to "brighter and harder" represent?',
         options: [
           'The time changing from evening to night',
           'The Inspector turning on extra lights for the investigation',
@@ -1074,7 +1133,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'The family saving electricity before the Inspector arrives',
         ],
         correct: 2,
-        explanation: 'The lighting is a visual metaphor: the pink light represents the Birlings\' rose-tinted, comfortable worldview, while the brighter, harder light represents the Inspector\'s moral scrutiny and the uncomfortable truths he forces the family to confront.',
+        explanation:
+          "The lighting is a visual metaphor: the pink light represents the Birlings' rose-tinted, comfortable worldview, while the brighter, harder light represents the Inspector's moral scrutiny and the uncomfortable truths he forces the family to confront.",
       },
     ],
   },
@@ -1155,7 +1215,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
     quiz: [
       {
         id: 'ic-m11-q1',
-        question: 'What is the typical two-part structure of an IGCSE literature essay on a set text?',
+        question:
+          'What is the typical two-part structure of an IGCSE literature essay on a set text?',
         options: [
           'Introduction and conclusion',
           'Close analysis of an extract and extension to the whole text',
@@ -1163,11 +1224,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Historical context and personal response',
         ],
         correct: 1,
-        explanation: 'IGCSE literature essays typically require close analysis of a provided extract followed by discussion of the whole text. This tests both detailed close reading skills and broader knowledge of the play\'s themes, characters, and the writer\'s methods.',
+        explanation:
+          "IGCSE literature essays typically require close analysis of a provided extract followed by discussion of the whole text. This tests both detailed close reading skills and broader knowledge of the play's themes, characters, and the writer's methods.",
       },
       {
         id: 'ic-m11-q2',
-        question: 'Why is it important to write "Priestley presents..." rather than "Birling says..."?',
+        question:
+          'Why is it important to write "Priestley presents..." rather than "Birling says..."?',
         options: [
           'It sounds more formal and academic',
           'It is a rule set by all exam boards',
@@ -1175,11 +1238,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'It makes your essay longer',
         ],
         correct: 2,
-        explanation: 'Writing "Priestley presents..." shows the examiner that you understand the play is a deliberately constructed text with a political purpose. It keeps the focus on the writer\'s methods and intentions rather than simply describing what characters do.',
+        explanation:
+          'Writing "Priestley presents..." shows the examiner that you understand the play is a deliberately constructed text with a political purpose. It keeps the focus on the writer\'s methods and intentions rather than simply describing what characters do.',
       },
       {
         id: 'ic-m11-q3',
-        question: 'Approximately how should you divide your essay between the extract and the whole text?',
+        question:
+          'Approximately how should you divide your essay between the extract and the whole text?',
         options: [
           'Equal halves — 50% extract, 50% whole text',
           'Approximately two-thirds on the extract, one-third on the whole text',
@@ -1187,11 +1252,13 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Almost entirely on the extract with no reference to the wider play',
         ],
         correct: 1,
-        explanation: 'A common guideline is two-thirds on the extract (detailed close analysis) and one-third on the whole text (broader connections). This ensures you demonstrate both close reading skills and comprehensive knowledge of the play.',
+        explanation:
+          'A common guideline is two-thirds on the extract (detailed close analysis) and one-third on the whole text (broader connections). This ensures you demonstrate both close reading skills and comprehensive knowledge of the play.',
       },
       {
         id: 'ic-m11-q4',
-        question: 'Which of the following is an example of analysing Priestley\'s methods rather than retelling the story?',
+        question:
+          "Which of the following is an example of analysing Priestley's methods rather than retelling the story?",
         options: [
           '"Birling fires Eva Smith from his factory because she asked for more money"',
           '"In Act 1, the family are having dinner when the Inspector arrives"',
@@ -1199,7 +1266,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           '"Eva Smith goes to work at Milwards after being fired from the factory"',
         ],
         correct: 2,
-        explanation: 'Analysing methods means discussing HOW Priestley achieves his effects — identifying the technique (dramatic irony), explaining what it does (discredits Birling), and linking it to purpose (undermining capitalism). The other options simply retell the story.',
+        explanation:
+          'Analysing methods means discussing HOW Priestley achieves his effects — identifying the technique (dramatic irony), explaining what it does (discredits Birling), and linking it to purpose (undermining capitalism). The other options simply retell the story.',
       },
       {
         id: 'ic-m11-q5',
@@ -1211,7 +1279,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Only use quotations from the extract, never from the wider play',
         ],
         correct: 1,
-        explanation: 'Short, precise quotations of individual words or phrases are most effective because they allow detailed close analysis of language choices, connotations, and effects. Long quotations are harder to analyse closely and often lead to narrative description rather than analysis.',
+        explanation:
+          'Short, precise quotations of individual words or phrases are most effective because they allow detailed close analysis of language choices, connotations, and effects. Long quotations are harder to analyse closely and often lead to narrative description rather than analysis.',
       },
     ],
   },
@@ -1317,7 +1386,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Spend 40 minutes on the extract and 5 minutes on the whole text',
         ],
         correct: 1,
-        explanation: 'A recommended breakdown is: 5 minutes planning, 25 minutes on the extract analysis, 12 minutes on the whole-text extension, and 3 minutes checking. This ensures both sections are adequately covered and the essay is well-structured.',
+        explanation:
+          'A recommended breakdown is: 5 minutes planning, 25 minutes on the extract analysis, 12 minutes on the whole-text extension, and 3 minutes checking. This ensures both sections are adequately covered and the essay is well-structured.',
       },
       {
         id: 'ic-m12-q2',
@@ -1329,7 +1399,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Including biographical details about Priestley',
         ],
         correct: 1,
-        explanation: 'Context dumping is writing a disconnected paragraph about historical context without linking it to your analytical argument. Context should be woven into analytical paragraphs, supporting your points about Priestley\'s methods and purpose.',
+        explanation:
+          "Context dumping is writing a disconnected paragraph about historical context without linking it to your analytical argument. Context should be woven into analytical paragraphs, supporting your points about Priestley's methods and purpose.",
       },
       {
         id: 'ic-m12-q3',
@@ -1341,7 +1412,8 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Focusing too much on one feature of the text',
         ],
         correct: 2,
-        explanation: 'Feature spotting means identifying a technique ("Priestley uses dramatic irony") without analysing its effect and purpose. Simply naming a technique earns minimal marks; explaining WHY it is used and WHAT effect it creates earns significantly more.',
+        explanation:
+          'Feature spotting means identifying a technique ("Priestley uses dramatic irony") without analysing its effect and purpose. Simply naming a technique earns minimal marks; explaining WHY it is used and WHAT effect it creates earns significantly more.',
       },
       {
         id: 'ic-m12-q4',
@@ -1349,11 +1421,12 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
         options: [
           'Long quotations are more effective than short ones',
           'Context should be kept separate from analysis',
-          'Detailed examination of specific words, linking to connotations, contrast, and Priestley\'s purpose',
+          "Detailed examination of specific words, linking to connotations, contrast, and Priestley's purpose",
           'You should summarise the entire plot before analysing quotations',
         ],
         correct: 2,
-        explanation: 'The model paragraph demonstrates how to select specific words ("body", "we"), explore their connotations and effects, contrast them with opposing views (Birling\'s mechanistic view), and link everything to Priestley\'s purpose and the historical context.',
+        explanation:
+          'The model paragraph demonstrates how to select specific words ("body", "we"), explore their connotations and effects, contrast them with opposing views (Birling\'s mechanistic view), and link everything to Priestley\'s purpose and the historical context.',
       },
       {
         id: 'ic-m12-q5',
@@ -1365,8 +1438,9 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
           'Pre-written essays are always too short for exam requirements',
         ],
         correct: 1,
-        explanation: 'The exam question will focus on a specific extract and require a specific angle of analysis. A memorised essay rarely fits the question well enough to earn high marks. Instead, build flexible knowledge of characters, themes, and techniques that you can adapt to any question.',
+        explanation:
+          'The exam question will focus on a specific extract and require a specific angle of analysis. A memorised essay rarely fits the question well enough to earn high marks. Instead, build flexible knowledge of characters, themes, and techniques that you can adapt to any question.',
       },
     ],
   },
-];
+]

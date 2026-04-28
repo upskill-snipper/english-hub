@@ -9,31 +9,47 @@
 // They are identical to the interfaces in y9-workbook-data.ts.
 
 export interface WorkbookExercise {
-  id: string;
-  title: string;
-  termUnit: string;
-  type: 'analysis' | 'context' | 'creative' | 'transactional' | 'essay' | 'exam-technique' | 'comprehension' | 'planning';
-  instructions: string;
-  modelAnswer: string;
-  marks: number;
-  difficulty: 'foundation' | 'intermediate' | 'higher' | 'extension';
-  keywords: string[];
-  linkedObjectives: string[];
+  id: string
+  title: string
+  termUnit: string
+  type:
+    | 'analysis'
+    | 'context'
+    | 'creative'
+    | 'transactional'
+    | 'essay'
+    | 'exam-technique'
+    | 'comprehension'
+    | 'planning'
+  instructions: string
+  modelAnswer: string
+  marks: number
+  difficulty: 'foundation' | 'intermediate' | 'higher' | 'extension'
+  keywords: string[]
+  linkedObjectives: string[]
 }
 
 export interface HomeworkTask {
-  id: string;
-  title: string;
-  termUnit: string;
-  type: 'analysis' | 'context' | 'creative' | 'transactional' | 'essay' | 'exam-technique' | 'comprehension' | 'planning';
-  instructions: string;
-  modelAnswer: string;
-  marks: number;
-  difficulty: 'foundation' | 'intermediate' | 'higher' | 'extension';
-  keywords: string[];
-  linkedObjectives: string[];
-  estimatedTime: string;
-  dueWeek: number;
+  id: string
+  title: string
+  termUnit: string
+  type:
+    | 'analysis'
+    | 'context'
+    | 'creative'
+    | 'transactional'
+    | 'essay'
+    | 'exam-technique'
+    | 'comprehension'
+    | 'planning'
+  instructions: string
+  modelAnswer: string
+  marks: number
+  difficulty: 'foundation' | 'intermediate' | 'higher' | 'extension'
+  keywords: string[]
+  linkedObjectives: string[]
+  estimatedTime: string
+  dueWeek: number
 }
 
 // ===============================================================
@@ -67,14 +83,22 @@ export const y9Term1WorkbookExercises: WorkbookExercise[] = [
 5. On Christmas morning, Scrooge sends an enormous turkey to the Cratchit family, gives a generous donation to the charity collectors he dismissed the day before, and raises Bob Cratchit's salary while promising to help his struggling family.`,
     marks: 10,
     difficulty: 'foundation',
-    keywords: ['Marley', 'chain', 'three spirits', 'transformation', 'Cratchit', 'Tiny Tim', 'gravestone'],
+    keywords: [
+      'Marley',
+      'chain',
+      'three spirits',
+      'transformation',
+      'Cratchit',
+      'Tiny Tim',
+      'gravestone',
+    ],
     linkedObjectives: ['AO1-comprehension', 'AO1-textual-reference'],
   },
 
   // ── 2. Analysis ──────────────────────────────────────────────
   {
     id: 'y9t1-wb-02',
-    title: 'Analysis: Dickens\'s Presentation of Fred',
+    title: "Analysis: Dickens's Presentation of Fred",
     termUnit: 'T1-U1',
     type: 'analysis',
     instructions: `<h3>Character Analysis: Fred as a Foil to Scrooge</h3>
@@ -92,7 +116,15 @@ export const y9Term1WorkbookExercises: WorkbookExercise[] = [
 Structurally, Dickens uses Fred as a bookend device. He appears in Stave One, rejected by Scrooge, and again in Stave Five when the transformed Scrooge turns up at his Christmas dinner, finally accepting the invitation. This structural repetition measures the distance of Scrooge's journey. Fred's consistent warmth throughout -- he never abandons his good feeling toward his uncle despite years of rejection -- also serves as a quiet challenge to the reader: if Fred can maintain such generosity toward someone as unpleasant as Scrooge, what excuse do we have for withholding compassion from anyone? Dickens gives Fred the final laugh precisely because his values, not Scrooge's, are presented as the correct way to live.`,
     marks: 12,
     difficulty: 'intermediate',
-    keywords: ['foil', 'Fred', 'moral opposite', 'inversion', 'structure', 'bookend', 'spiritual wealth'],
+    keywords: [
+      'foil',
+      'Fred',
+      'moral opposite',
+      'inversion',
+      'structure',
+      'bookend',
+      'spiritual wealth',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO2-structural-analysis', 'AO3-writer-purpose'],
   },
 
@@ -118,7 +150,15 @@ The Ghost of Christmas Past carries "a bright clear jet of light" from its crown
 In Stave Five, after Scrooge's transformation, Dickens describes the morning as "clear, bright, jovial, stirring, cold; cold, piping for the blood to dance to." The repeated adjectives, particularly "bright" and "clear," function as a moral weather report: the world that was foggy and dim in Stave One is now luminous and sharp. The change is not in the weather but in Scrooge's perception -- he now sees the world with open eyes, and it is beautiful. Dickens uses the imagery of a crisp winter dawn to suggest that moral regeneration brings a heightened experience of being alive, as if the world itself celebrates alongside the reformed miser.`,
     marks: 15,
     difficulty: 'higher',
-    keywords: ['light imagery', 'darkness', 'fog', 'moral blindness', 'jet of light', 'transformation', 'symbolism'],
+    keywords: [
+      'light imagery',
+      'darkness',
+      'fog',
+      'moral blindness',
+      'jet of light',
+      'transformation',
+      'symbolism',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO1-interpretation', 'AO3-writer-purpose'],
   },
 
@@ -145,7 +185,15 @@ The graveyard setting at the climax of Stave Four deploys classic Gothic imagery
 The scavengers -- the charwoman, the laundress, and Joe the pawnbroker -- who cheerfully divide Scrooge's stolen belongings are perhaps the most disturbing Gothic detail. Their laughter over the dead man's possessions strips death of all dignity and shows the logical endpoint of treating people as economic units: when you die, others treat your possessions the same way you treated theirs. Dickens uses the Gothic not for mere sensation but as a moral amplifier: the horror of this stave is the horror of a wasted life, and the reader is meant to feel it viscerally.`,
     marks: 15,
     difficulty: 'higher',
-    keywords: ['Gothic', 'Stave Four', 'silent phantom', 'graveyard', 'scavengers', 'dread', 'moral urgency'],
+    keywords: [
+      'Gothic',
+      'Stave Four',
+      'silent phantom',
+      'graveyard',
+      'scavengers',
+      'dread',
+      'moral urgency',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO2-genre-conventions', 'AO3-writer-purpose'],
   },
 
@@ -175,14 +223,21 @@ The scavengers -- the charwoman, the laundress, and Joe the pawnbroker -- who ch
 4. The simile "I am as light as a feather" marks Scrooge's transformation by inverting the physical metaphors used to describe him at the novel's opening, when he was associated with cold, hard, and heavy materials. The lightness suggests that generosity and connection do not weigh a person down but liberate them -- that the emotional armour Scrooge wore was itself the burden.`,
     marks: 12,
     difficulty: 'intermediate',
-    keywords: ['embedding quotations', 'PEA', 'analytical sentence', 'fluency', 'evidence', 'zoom in'],
+    keywords: [
+      'embedding quotations',
+      'PEA',
+      'analytical sentence',
+      'fluency',
+      'evidence',
+      'zoom in',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO1-textual-reference', 'AO1-writing-skill'],
   },
 
   // ── 6. Evaluation ───────────────────────────────────────────
   {
     id: 'y9t1-wb-06',
-    title: 'Evaluation: Is Scrooge\'s Transformation Convincing?',
+    title: "Evaluation: Is Scrooge's Transformation Convincing?",
     termUnit: 'T1-U4',
     type: 'essay',
     instructions: `<h3>Critical Evaluation: Scrooge's Redemption</h3>
@@ -199,14 +254,22 @@ However, there are strong arguments for the transformation's coherence. The Ghos
 My own view is that Dickens never intended the transformation to be read as naturalistic psychology. A Christmas Carol is a moral fable -- its structure is allegorical and its characters are archetypes as much as they are individuals. The relevant question is not "would this happen in real life?" but "does it work as a story?" And it does: Scrooge's change is earned because the reader understands precisely what he is recovering from and why. The tears he sheds at the sight of his lonely schoolboy self, the anguish he feels at Belle's departure -- these moments establish that the capacity for feeling was never truly extinguished. Dickens gives us enough emotional truth to make the leap feel spiritually, if not clinically, convincing.`,
     marks: 20,
     difficulty: 'extension',
-    keywords: ['evaluation', 'transformation', 'psychological realism', 'allegory', 'fable', 'counterargument', 'judgement'],
+    keywords: [
+      'evaluation',
+      'transformation',
+      'psychological realism',
+      'allegory',
+      'fable',
+      'counterargument',
+      'judgement',
+    ],
     linkedObjectives: ['AO1-evaluation', 'AO2-language-analysis', 'AO3-writer-purpose'],
   },
 
   // ── 7. Language Analysis ─────────────────────────────────────
   {
     id: 'y9t1-wb-07',
-    title: 'Language Analysis: The Narrator\'s Voice',
+    title: "Language Analysis: The Narrator's Voice",
     termUnit: 'T1-U1',
     type: 'analysis',
     instructions: `<h3>Analysing Narrative Voice in <em>A Christmas Carol</em></h3>
@@ -227,7 +290,15 @@ The self-deprecating comedy that follows -- the narrator's admission that he can
 The hyperbolic final joke, "or the Country's done for," deploys an inflated register -- the language of national crisis -- to describe the risk of tampering with a cliche about door-nails. The bathetic gap between the grandiose phrasing and the trivial subject is the source of the humour, and it also signals Dickens's satirical sensibility. By using the language of political urgency for something absurd, he gently mocks the pomposity of those who speak in such terms about genuinely important matters. This narrative voice positions the reader as a knowing, intelligent companion -- not someone being preached at, but someone in on the joke.`,
     marks: 12,
     difficulty: 'higher',
-    keywords: ['narrative voice', 'intrusive narrator', 'bathos', 'register', 'self-deprecation', 'humour', 'reader positioning'],
+    keywords: [
+      'narrative voice',
+      'intrusive narrator',
+      'bathos',
+      'register',
+      'self-deprecation',
+      'humour',
+      'reader positioning',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO1-interpretation', 'AO3-writer-purpose'],
   },
 
@@ -256,10 +327,18 @@ He lived in a tall, crooked house in Bread Street, three floors of generosity pi
 Reader, he was a problem. But he was a magnificent one. [MORAL COMMENTARY -- DIRECT ADDRESS]`,
     marks: 20,
     difficulty: 'extension',
-    keywords: ['pastiche', 'Victorian style', 'intrusive narrator', 'Dickensian', 'character description', 'comic exaggeration', 'atmosphere'],
+    keywords: [
+      'pastiche',
+      'Victorian style',
+      'intrusive narrator',
+      'Dickensian',
+      'character description',
+      'comic exaggeration',
+      'atmosphere',
+    ],
     linkedObjectives: ['AO5-creative-writing', 'AO5-style-and-register', 'AO6-accuracy'],
   },
-];
+]
 
 // ===============================================================
 // TERM 3 SUPPLEMENT -- OF MICE AND MEN (8 workbook exercises)
@@ -292,14 +371,23 @@ export const y9Term3WorkbookExercises: WorkbookExercise[] = [
 5. George shoots Lennie himself to spare him a violent and terrifying death at the hands of Curley, who has promised to "shoot him in the guts." By doing it himself, George ensures Lennie dies painlessly, while talking about the farm dream, believing in it -- a final act of love and mercy.`,
     marks: 10,
     difficulty: 'foundation',
-    keywords: ['Weed', 'the dream', 'Candy', 'Curley\'s wife', 'barn', 'mercy killing', 'George', 'Lennie'],
+    keywords: [
+      'Weed',
+      'the dream',
+      'Candy',
+      "Curley's wife",
+      'barn',
+      'mercy killing',
+      'George',
+      'Lennie',
+    ],
     linkedObjectives: ['AO1-comprehension', 'AO1-textual-reference'],
   },
 
   // ── 2. Analysis ──────────────────────────────────────────────
   {
     id: 'y9t3-wb-02',
-    title: 'Analysis: George and Lennie\'s Relationship',
+    title: "Analysis: George and Lennie's Relationship",
     termUnit: 'T3-U1',
     type: 'analysis',
     instructions: `<h3>Character Analysis: The Relationship Between George and Lennie</h3>
@@ -316,14 +404,23 @@ export const y9Term3WorkbookExercises: WorkbookExercise[] = [
 The repeated ritual of the dream is one of the novel's most structurally significant elements. George tells the story of the farm not once but multiple times throughout the novel, and each time Lennie prompts him with "Tell me about the rabbits, George." The repetition suggests that the story functions less as a practical plan and more as a shared liturgy -- a form of comfort and meaning that binds the two men together. For Lennie, the story provides reassurance and hope; for George, the act of telling it is an affirmation that he is not alone. Steinbeck uses this motif to explore his central theme of loneliness: in a world where, as Crooks observes, "a guy goes nuts if he ain't got nobody," the simple act of dreaming together is a form of profound companionship. When George tells the story for the last time, seconds before he shoots Lennie, the ritual becomes almost unbearably elegiac -- a final gift of hope before the world's cruelty makes hope impossible.`,
     marks: 15,
     difficulty: 'higher',
-    keywords: ['George', 'Lennie', 'ambivalence', 'dream', 'ritual', 'loneliness', 'companionship', 'obligation'],
+    keywords: [
+      'George',
+      'Lennie',
+      'ambivalence',
+      'dream',
+      'ritual',
+      'loneliness',
+      'companionship',
+      'obligation',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO2-structural-analysis', 'AO3-writer-purpose'],
   },
 
   // ── 3. Analysis ──────────────────────────────────────────────
   {
     id: 'y9t3-wb-03',
-    title: 'Analysis: Curley\'s Wife as a Tragic Figure',
+    title: "Analysis: Curley's Wife as a Tragic Figure",
     termUnit: 'T3-U2',
     type: 'analysis',
     instructions: `<h3>Character Analysis: Curley\'s Wife</h3>
@@ -343,7 +440,15 @@ The conversation she has with Lennie in the barn is the most humanising scene in
 Her death is the fulcrum on which the novel's themes of powerlessness and thwarted dreams turn. She is, in many ways, as much a victim of the American Dream's broken promises as George and Lennie themselves. After her death, Steinbeck describes her as young and peaceful, the "meanness and the plannings and the discontent" gone from her face, as if death alone has restored her innocence. It is a deeply compassionate image that implicitly condemns the world that reduced her to this -- a world in which women, like migrant workers, are ultimately disposable.`,
     marks: 15,
     difficulty: 'higher',
-    keywords: ['Curley\'s wife', 'nameless', 'tragic figure', 'Hollywood dream', 'powerlessness', 'male gaze', 'identity'],
+    keywords: [
+      "Curley's wife",
+      'nameless',
+      'tragic figure',
+      'Hollywood dream',
+      'powerlessness',
+      'male gaze',
+      'identity',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO1-character-analysis', 'AO3-context'],
   },
 
@@ -371,7 +476,16 @@ The tragedy is that both are denied it. Crooks withdraws his request the moment 
 Steinbeck uses both characters to argue that loneliness in 1930s America was not an individual failing but a social condition imposed upon those whom society deemed expendable. The cruelty is not that these men lack the capacity for connection -- both demonstrate profound hunger for it -- but that the world they inhabit is structured to deny them that connection at every turn.`,
     marks: 20,
     difficulty: 'extension',
-    keywords: ['Crooks', 'Candy', 'loneliness', 'comparison', 'race', 'age', 'the dream', 'American society'],
+    keywords: [
+      'Crooks',
+      'Candy',
+      'loneliness',
+      'comparison',
+      'race',
+      'age',
+      'the dream',
+      'American society',
+    ],
     linkedObjectives: ['AO1-comparison', 'AO2-language-analysis', 'AO3-context'],
   },
 
@@ -398,7 +512,15 @@ The detail of the apple-box shelves, however, introduces a note of pathos. These
 The final clause is the richest: the men read Western magazines and "scoff at and secretly wonder about" them. Westerns are the mythology of the American frontier dream -- stories of open land, independence, and self-determination. The detail that the men scoff at them publicly but wonder at them privately is an image of the entire novel in miniature. They know the dream is probably a lie. They need it anyway. Steinbeck uses this single observation to establish that the desire for something better -- land, freedom, dignity -- is not naive but deeply human, and its denial is the novel's central tragedy.`,
     marks: 12,
     difficulty: 'intermediate',
-    keywords: ['bunkhouse', 'setting', 'migrant workers', 'personal belongings', 'Western magazines', 'American Dream', 'pathos'],
+    keywords: [
+      'bunkhouse',
+      'setting',
+      'migrant workers',
+      'personal belongings',
+      'Western magazines',
+      'American Dream',
+      'pathos',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO2-structural-analysis', 'AO3-context'],
   },
 
@@ -422,7 +544,15 @@ However, to say the ending feels "merely inevitable" rather than tragic misses w
 My view is that Steinbeck deliberately uses inevitability as a structural tool to argue that the tragedy is not an accident but a product of systemic forces -- poverty, transience, intellectual disability, a world with no safety net. The ending was always going to come. That is the point. The novel mourns not just Lennie but the countless ways in which the American dream fails the people who need it most.`,
     marks: 20,
     difficulty: 'extension',
-    keywords: ['foreshadowing', 'inevitability', 'tragedy', 'structural pattern', 'mercy killing', 'Candy\'s dog', 'American Dream'],
+    keywords: [
+      'foreshadowing',
+      'inevitability',
+      'tragedy',
+      'structural pattern',
+      'mercy killing',
+      "Candy's dog",
+      'American Dream',
+    ],
     linkedObjectives: ['AO1-evaluation', 'AO2-structural-analysis', 'AO3-writer-purpose'],
   },
 
@@ -455,7 +585,15 @@ My view is that Steinbeck deliberately uses inevitability as a structural tool t
 6. Lennie's parroted retelling of the dream -- "live on the fatta the lan'" -- is rendered in his phonetic dialect, which both characterises his limited speech and underscores that for him the dream is pure, uncomplicated feeling rather than practical planning. His repetition of it is not stupidity but faith.`,
     marks: 12,
     difficulty: 'intermediate',
-    keywords: ['embedding quotations', 'loneliness', 'Crooks', 'Candy', 'dream', 'Curley\'s wife', 'close analysis'],
+    keywords: [
+      'embedding quotations',
+      'loneliness',
+      'Crooks',
+      'Candy',
+      'dream',
+      "Curley's wife",
+      'close analysis',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO1-textual-reference', 'AO1-writing-skill'],
   },
 
@@ -490,10 +628,25 @@ The ending of the novel destroys not just Lennie's life but the dream itself. Ca
 Steinbeck's overall message is both compassionate and unsentimental. He does not mock the men who dream -- he grieves with them. But he insists that we see clearly why their dreams fail: not because they lack effort or intelligence but because a society structured around inequality will always ensure that those at the bottom remain there. The American Dream, in Of Mice and Men, is less a promise than a consolation -- and a false one at that.`,
     marks: 30,
     difficulty: 'extension',
-    keywords: ['American Dream', 'Great Depression', 'Crooks', 'Candy', 'George', 'Lennie', 'inequality', 'aspiration', 'failure'],
-    linkedObjectives: ['AO1-extended-essay', 'AO2-language-analysis', 'AO3-context', 'AO1-evaluation'],
+    keywords: [
+      'American Dream',
+      'Great Depression',
+      'Crooks',
+      'Candy',
+      'George',
+      'Lennie',
+      'inequality',
+      'aspiration',
+      'failure',
+    ],
+    linkedObjectives: [
+      'AO1-extended-essay',
+      'AO2-language-analysis',
+      'AO3-context',
+      'AO1-evaluation',
+    ],
   },
-];
+]
 
 // ===============================================================
 // TERM 1 HOMEWORK TASKS -- A CHRISTMAS CAROL (10 tasks)
@@ -526,7 +679,13 @@ One interesting contrast: in the 1840s, Christmas Day was not a public holiday, 
 **Source:** Hewitt, M. (ed.), *The Victorian World* (2012).`,
     marks: 15,
     difficulty: 'foundation',
-    keywords: ['Victorian Christmas', 'traditions', 'Christmas card', 'Christmas tree', 'Dickens influence'],
+    keywords: [
+      'Victorian Christmas',
+      'traditions',
+      'Christmas card',
+      'Christmas tree',
+      'Dickens influence',
+    ],
     linkedObjectives: ['AO3-context', 'AO1-research-skills'],
     estimatedTime: '40 mins',
     dueWeek: 2,
@@ -547,7 +706,14 @@ One interesting contrast: in the 1840s, Christmas Day was not a public holiday, 
     modelAnswer: `Dickens reveals that Scrooge retains a dormant capacity for warmth in his reaction to the Fezziwig party, even as he watches it as a ghost. Steinbeck describes how Scrooge's "heart and soul were in the scene, and with his former self." The phrase "heart and soul" suggests a total, unguarded emotional investment -- this is not the cynical observer we met in Stave One but a man moved to the core by the sight of happiness freely shared. The possessive construction "his former self" is significant: Dickens reminds us that the laughing young man at the party is not a different person but an earlier version of Scrooge, implying that his warmth was not invented by the ghost but merely buried. Most powerfully, Scrooge spontaneously wishes he could speak to his clerk Bob Cratchit -- "he had a small matter he should like to say to Bob Cratchit just then." This unplanned impulse toward generosity, emerging without the ghost's prompting, demonstrates that transformation has already begun: Scrooge's conscience has been stirred, and Dickens uses this moment to suggest that genuine change must come from within rather than being imposed from without.`,
     marks: 12,
     difficulty: 'intermediate',
-    keywords: ['Fezziwig', 'close reading', 'joy', 'transformation', 'heart and soul', 'embedded quotation'],
+    keywords: [
+      'Fezziwig',
+      'close reading',
+      'joy',
+      'transformation',
+      'heart and soul',
+      'embedded quotation',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO1-textual-reference', 'AO3-writer-purpose'],
     estimatedTime: '35 mins',
     dueWeek: 3,
@@ -613,14 +779,22 @@ One interesting contrast: in the 1840s, Christmas Day was not a public holiday, 
 The ghost's distinction between the two children is central to Dickens's argument: Want (poverty) is terrible, but Ignorance is worse. The "Doom" written on the boy's brow points toward revolution -- Dickens was acutely aware, as were many Victorian reformers, that an uneducated, desperate underclass was a social time bomb. The ghost warns that if the writing is not "erased" -- if education and compassion are not extended to the poor -- the consequences will be catastrophic for everyone, including the wealthy. Dickens is making a pragmatic as well as a moral argument: addressing poverty and educating the poor is not merely a matter of charity but of self-preservation. By placing this warning in the mouth of a festive spirit who has just shown Scrooge scenes of innocent joy, Dickens makes the contrast between what Christmas should be and what society allows it to become inescapably clear.`,
     marks: 15,
     difficulty: 'higher',
-    keywords: ['Ignorance', 'Want', 'allegory', 'social message', 'Victorian reform', 'children', 'doom'],
+    keywords: [
+      'Ignorance',
+      'Want',
+      'allegory',
+      'social message',
+      'Victorian reform',
+      'children',
+      'doom',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO3-context', 'AO3-writer-purpose'],
     estimatedTime: '45 mins',
     dueWeek: 5,
   },
   {
     id: 'y9t1-hw-05',
-    title: 'HW5: Creative -- Scrooge\'s Diary Entry',
+    title: "HW5: Creative -- Scrooge's Diary Entry",
     termUnit: 'T1-U2',
     type: 'creative',
     instructions: `<h3>Homework: Creative Writing -- Scrooge\'s Diary</h3>
@@ -648,7 +822,15 @@ I do not know what came over me last night. I know only this: whatever it was, I
 E. Scrooge`,
     marks: 15,
     difficulty: 'intermediate',
-    keywords: ['creative writing', 'diary', 'Scrooge', 'first person', 'Victorian voice', 'transformation', 'humour'],
+    keywords: [
+      'creative writing',
+      'diary',
+      'Scrooge',
+      'first person',
+      'Victorian voice',
+      'transformation',
+      'humour',
+    ],
     linkedObjectives: ['AO5-creative-writing', 'AO5-voice-and-register', 'AO6-accuracy'],
     estimatedTime: '40 mins',
     dueWeek: 6,
@@ -676,14 +858,27 @@ Elsewhere in the novella, Dickens traces the stages of Scrooge's transformation 
 Dickens presents the completed transformation in Stave Five with deliberate exuberance -- Scrooge laughs, dances, and describes himself as "as giddy as a drunken man." This apparent excess is purposeful: Dickens wants the reader to feel the release as much as Scrooge does. After four staves of moral darkness, the brightness of Stave Five is a structural reward, and Scrooge's joy is presented as infectious and deserved. His final transformation into the second father of Tiny Tim completes the pattern: the man who once refused to acknowledge the poor as human now takes personal responsibility for their welfare.`,
     marks: 30,
     difficulty: 'higher',
-    keywords: ['AQA-style', 'exam technique', 'Stave Five', 'transformation', 'extract', 'whole text', 'timed'],
-    linkedObjectives: ['AO1-extended-response', 'AO2-language-analysis', 'AO2-structural-analysis', 'AO3-context'],
+    keywords: [
+      'AQA-style',
+      'exam technique',
+      'Stave Five',
+      'transformation',
+      'extract',
+      'whole text',
+      'timed',
+    ],
+    linkedObjectives: [
+      'AO1-extended-response',
+      'AO2-language-analysis',
+      'AO2-structural-analysis',
+      'AO3-context',
+    ],
     estimatedTime: '45 mins',
     dueWeek: 7,
   },
   {
     id: 'y9t1-hw-07',
-    title: 'HW7: Character Web -- Scrooge\'s Relationships',
+    title: "HW7: Character Web -- Scrooge's Relationships",
     termUnit: 'T1-U3',
     type: 'planning',
     instructions: `<h3>Homework: Mapping Scrooge\'s Relationships</h3>
@@ -707,7 +902,16 @@ Dickens presents the completed transformation in Stave Five with deliberate exub
 | Ghost of Christmas Present | Supernatural guide / social conscience | "Are there no prisons? Are there no workhouses?" -- echoing Scrooge's words back at him (Stave Three) | The ghost's use of Scrooge's own words as a weapon against him is one of the novella's most devastating structural choices, forcing Scrooge to hear his callousness from the outside. |`,
     marks: 14,
     difficulty: 'intermediate',
-    keywords: ['character web', 'relationships', 'Scrooge', 'Bob Cratchit', 'Fred', 'Belle', 'Marley', 'planning'],
+    keywords: [
+      'character web',
+      'relationships',
+      'Scrooge',
+      'Bob Cratchit',
+      'Fred',
+      'Belle',
+      'Marley',
+      'planning',
+    ],
     linkedObjectives: ['AO1-character-analysis', 'AO2-language-analysis', 'AO3-writer-purpose'],
     estimatedTime: '40 mins',
     dueWeek: 8,
@@ -733,7 +937,15 @@ These experiences are directly visible in A Christmas Carol. The scene in Stave 
 As an adult, Dickens used his fame to campaign for reform. He visited ragged schools -- free schools for destitute children -- and wrote about them in his journalism to raise awareness. He was appalled by the conditions of the New Poor Law workhouses and drew on them repeatedly in his fiction. He intended A Christmas Carol partly as a counterblast to a report by the Children's Employment Commission, which had documented the appalling conditions of child labour in factories and mines. By writing a popular story rather than a tract, he reached a far wider audience than any pamphlet could -- and ensured his arguments would be read, remembered, and felt.`,
     marks: 15,
     difficulty: 'intermediate',
-    keywords: ['Dickens', 'blacking factory', 'Marshalsea', 'social reform', 'ragged schools', 'context', 'autobiography'],
+    keywords: [
+      'Dickens',
+      'blacking factory',
+      'Marshalsea',
+      'social reform',
+      'ragged schools',
+      'context',
+      'autobiography',
+    ],
     linkedObjectives: ['AO3-context', 'AO3-writer-intentions', 'AO1-research-skills'],
     estimatedTime: '45 mins',
     dueWeek: 9,
@@ -755,7 +967,15 @@ As an adult, Dickens used his fame to campaign for reform. He visited ragged sch
     modelAnswer: `In Stave One, Dickens presents Scrooge through a relentless accumulation of negative images: he is described as "hard and sharp as flint, from which no steel had ever struck out generous fire," a simile that presents him as not merely cold but actively dangerous -- capable of wounding anyone who comes close. The phrase "no steel had ever struck out generous fire" suggests that attempts to reach him have always failed, framing his isolation as impenetrable. By contrast, in Stave Five, Dickens presents the reformed Scrooge through images of lightness and movement: he is "as giddy as a drunken man," laughing, dancing, and rushing into the street to greet a world he previously locked out. Whereas the Stave One Scrooge was defined by what he refused -- warmth, connection, generosity -- the Stave Five Scrooge is defined by what he embraces. The shift from the static, mineral imagery of flint to the kinetic, almost childlike energy of Stave Five is Dickens's structural reward to the reader: having endured Scrooge's coldness for four staves, we are invited to celebrate his release from it. Dickens's purpose throughout is to demonstrate that transformation is possible at any stage of life, and that the capacity for compassion, however deeply buried, can always be recovered.`,
     marks: 12,
     difficulty: 'higher',
-    keywords: ['comparison', 'Stave One', 'Stave Five', 'flint', 'giddy', 'transformation', 'structure'],
+    keywords: [
+      'comparison',
+      'Stave One',
+      'Stave Five',
+      'flint',
+      'giddy',
+      'transformation',
+      'structure',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO2-structural-analysis', 'AO3-writer-purpose'],
     estimatedTime: '35 mins',
     dueWeek: 10,
@@ -787,12 +1007,25 @@ The redemption Dickens presents is thoroughly practical rather than merely spiri
 Dickens ultimately argues that redemption is not only possible but necessary -- and that its possibility is what makes the story worth telling at all. The novella is a ghost story structured as a moral fable: the supernatural machinery exists not to entertain but to accelerate what therapy, grief, and honest self-reflection can achieve over years. Scrooge's transformation is both extraordinary and ordinary. Extraordinary because it happens overnight; ordinary because the ingredients -- memory, empathy, fear of meaninglessness, desire to matter -- are available to every human being. Dickens's final word is one of radical hope: it is never too late to become the person we were always capable of being.`,
     marks: 30,
     difficulty: 'extension',
-    keywords: ['redemption', 'transformation', 'self-knowledge', 'compassion', 'Christianity', 'ghost story', 'moral fable'],
-    linkedObjectives: ['AO1-extended-essay', 'AO2-language-analysis', 'AO2-structural-analysis', 'AO3-context'],
+    keywords: [
+      'redemption',
+      'transformation',
+      'self-knowledge',
+      'compassion',
+      'Christianity',
+      'ghost story',
+      'moral fable',
+    ],
+    linkedObjectives: [
+      'AO1-extended-essay',
+      'AO2-language-analysis',
+      'AO2-structural-analysis',
+      'AO3-context',
+    ],
     estimatedTime: '50 mins',
     dueWeek: 12,
   },
-];
+]
 
 // ===============================================================
 // TERM 3 HOMEWORK TASKS -- OF MICE AND MEN (10 tasks)
@@ -826,7 +1059,15 @@ Steinbeck witnessed this migration firsthand. He worked alongside migrant labour
 **Source:** Kennedy, D. *Freedom from Fear: The American People in Depression and War* (1999).`,
     marks: 15,
     difficulty: 'foundation',
-    keywords: ['Great Depression', 'Dust Bowl', 'migrant workers', 'California', 'Okies', 'Steinbeck', 'context'],
+    keywords: [
+      'Great Depression',
+      'Dust Bowl',
+      'migrant workers',
+      'California',
+      'Okies',
+      'Steinbeck',
+      'context',
+    ],
     linkedObjectives: ['AO3-context', 'AO1-research-skills'],
     estimatedTime: '40 mins',
     dueWeek: 2,
@@ -847,14 +1088,22 @@ Steinbeck witnessed this migration firsthand. He worked alongside migrant labour
     modelAnswer: `Steinbeck opens Of Mice and Men with a detailed, almost painterly description of the natural world that functions both as setting and as foreshadowing. The Salinas Valley is described as warm, golden, and abundant -- "the water is warm too, for it has slipped twinkling over the yellow sands in the sunlight" -- but this Edenic quality is immediately shadowed by hints of danger. The sycamore tree by the pool, the ash pile, and the "beaten hard" path all suggest a place where human beings come regularly but do not stay: it is a resting place, not a home. Most significantly, Steinbeck places a dead ash pile at the spot where George and Lennie will camp -- an image of extinguished fire that quietly anticipates the extinguishing of their dream. The overall mood created is one of fragile, temporary peace: nature here is beautiful but indifferent, capable of sustaining life briefly but not permanently. This tension between natural beauty and underlying precariousness reflects the novel's central argument about the American Dream -- it is visible and tantalising but, for men like George and Lennie, ultimately out of reach.`,
     marks: 12,
     difficulty: 'intermediate',
-    keywords: ['Chapter One', 'setting', 'foreshadowing', 'Salinas Valley', 'Edenic', 'mood', 'natural imagery'],
+    keywords: [
+      'Chapter One',
+      'setting',
+      'foreshadowing',
+      'Salinas Valley',
+      'Edenic',
+      'mood',
+      'natural imagery',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO2-structural-analysis', 'AO1-textual-reference'],
     estimatedTime: '35 mins',
     dueWeek: 3,
   },
   {
     id: 'y9t3-hw-03',
-    title: 'HW3: Exploring Crooks\'s Bunkhouse Scene',
+    title: "HW3: Exploring Crooks's Bunkhouse Scene",
     termUnit: 'T3-U2',
     type: 'analysis',
     instructions: `<h3>Homework: Crooks and Racial Isolation</h3>
@@ -866,7 +1115,15 @@ Steinbeck witnessed this migration firsthand. He worked alongside migrant labour
 As the scene progresses, Crooks's defensiveness gradually softens in Lennie's company, partly because Lennie is incapable of social cruelty and partly because isolation has made Crooks desperate for conversation. He begins to speak more freely, sharing his philosophy about loneliness: "a guy needs somebody -- to be near him... a guy goes nuts if he ain't got nobody." This confession is the emotional centre of the scene. The repetition of "a guy" universalises the experience -- Crooks is not speaking only for himself but for every man on the ranch, including those who exclude him. His intelligence and capacity for reflection are evident throughout, making the cruelty of his marginalisation all the more visible and damning.`,
     marks: 15,
     difficulty: 'higher',
-    keywords: ['Crooks', 'racial discrimination', 'segregation', '1930s America', 'isolation', 'harness room', 'Lennie'],
+    keywords: [
+      'Crooks',
+      'racial discrimination',
+      'segregation',
+      '1930s America',
+      'isolation',
+      'harness room',
+      'Lennie',
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO3-context', 'AO1-character-analysis'],
     estimatedTime: '45 mins',
     dueWeek: 5,
@@ -909,7 +1166,15 @@ As the scene progresses, Crooks's defensiveness gradually softens in Lennie's co
 **Conclusion:** Steinbeck presents power as a corrupting and ultimately self-defeating force -- those who wield it do so out of insecurity, and those who lack it are denied the dignity and freedom necessary for a meaningful life. The novel's tragedy is not just individual but systemic.`,
     marks: 10,
     difficulty: 'intermediate',
-    keywords: ['power', 'powerlessness', 'Curley', 'Crooks', 'Curley\'s wife', 'hierarchy', 'essay planning'],
+    keywords: [
+      'power',
+      'powerlessness',
+      'Curley',
+      'Crooks',
+      "Curley's wife",
+      'hierarchy',
+      'essay planning',
+    ],
     linkedObjectives: ['AO1-planning', 'AO3-context', 'AO2-language-analysis'],
     estimatedTime: '40 mins',
     dueWeek: 6,
@@ -941,7 +1206,15 @@ They'll let me go, end of the month. I'm slow and I'm one-handed and there's a h
 I should've gone with my dog when I had the chance. That's the truth of it. I should've gone while there was still someone who knew my name.`,
     marks: 15,
     difficulty: 'intermediate',
-    keywords: ['creative writing', 'Candy', 'interior monologue', 'the dream', 'loneliness', 'futility', 'dog'],
+    keywords: [
+      'creative writing',
+      'Candy',
+      'interior monologue',
+      'the dream',
+      'loneliness',
+      'futility',
+      'dog',
+    ],
     linkedObjectives: ['AO5-creative-writing', 'AO5-voice-and-register', 'AO6-accuracy'],
     estimatedTime: '40 mins',
     dueWeek: 7,
@@ -970,8 +1243,22 @@ Elsewhere in the novel, loneliness is the condition that defines every significa
 Steinbeck ultimately presents loneliness as the defining tragedy of the novel's world, more devastating than poverty because it strikes at the need for meaning. Candy's desolation after the dream is destroyed, Crooks's retreat into bitter self-sufficiency, George's final silence -- all of these endings point toward a world in which genuine human connection is systematically denied to those who need it most. The novel's most radical claim is that this denial is not inevitable but chosen, and that the choice belongs to the society that makes it.`,
     marks: 30,
     difficulty: 'higher',
-    keywords: ['AQA-style', 'exam technique', 'loneliness', 'Crooks', 'extract', 'whole text', 'timed', 'epistemological'],
-    linkedObjectives: ['AO1-extended-response', 'AO2-language-analysis', 'AO2-structural-analysis', 'AO3-context'],
+    keywords: [
+      'AQA-style',
+      'exam technique',
+      'loneliness',
+      'Crooks',
+      'extract',
+      'whole text',
+      'timed',
+      'epistemological',
+    ],
+    linkedObjectives: [
+      'AO1-extended-response',
+      'AO2-language-analysis',
+      'AO2-structural-analysis',
+      'AO3-context',
+    ],
     estimatedTime: '45 mins',
     dueWeek: 8,
   },
@@ -991,7 +1278,15 @@ Steinbeck ultimately presents loneliness as the defining tragedy of the novel's 
     modelAnswer: `Both Dickens and Steinbeck use specific, humanising detail to present the suffering of marginalised people in ways that challenge readers to confront social injustice rather than look away. Dickens uses the Cratchit family -- particularly Tiny Tim -- to make poverty personal and emotionally unbearable: when the Ghost of Christmas Present warns that Tim will die if "these shadows remain unaltered," Dickens weaponises the reader's attachment to a child to force a moral reckoning with the consequences of indifference. Similarly, Steinbeck humanises Crooks by showing not just his exclusion but his intelligence, articulating his loneliness through the quietly devastating observation that "a guy needs somebody -- to be near him." Whereas Dickens writes within a broadly optimistic framework -- suffering can be alleviated through individual transformation and social compassion -- Steinbeck's vision is considerably darker: Crooks briefly hopes for a future and then has it snatched away when reminded of his powerlessness. Both writers are responding to the political realities of their time: Dickens to the New Poor Law of 1834 and the industrial exploitation of the working class; Steinbeck to the racial segregation and economic devastation of 1930s Depression-era America. Despite these contextual differences, both share a conviction that the suffering of the marginalised is not inevitable but the product of choices made by those with power -- and that literature can and should make those choices visible.`,
     marks: 15,
     difficulty: 'extension',
-    keywords: ['comparison', 'A Christmas Carol', 'Of Mice and Men', 'Dickens', 'Steinbeck', 'marginalised', 'context'],
+    keywords: [
+      'comparison',
+      'A Christmas Carol',
+      'Of Mice and Men',
+      'Dickens',
+      'Steinbeck',
+      'marginalised',
+      'context',
+    ],
     linkedObjectives: ['AO1-comparison', 'AO3-context', 'AO2-language-analysis'],
     estimatedTime: '40 mins',
     dueWeek: 9,
@@ -1009,13 +1304,26 @@ Steinbeck ultimately presents loneliness as the defining tragedy of the novel's 
 <li>His relationship with George -- why is it significant that Slim is the first person George talks to honestly?</li>
 <li>His role at the ending -- what does his final gesture toward George suggest?</li>
 </ul>`,
-    modelAnswer: `Steinbeck introduces Slim with an authority that marks him out immediately from the other ranch hands. He is described as moving "with a majesty only achieved by royalty and master craftsmen" -- an unexpected simile that places natural skill on the same level as social rank, suggesting that Slim's authority is earned and inherent rather than conferred by money or status. His "calm, Godlike eyes" contain a quality of understanding that makes him seem almost supernatural in his perceptiveness. This characterisation positions Slim as the novel's moral arbiter: when he gives his verdict on a situation -- whether it is the shooting of Candy's dog or the complexity of George's relationship with Lennie -- his judgement carries the weight of truth.
+    modelAnswer: `Steinbeck introduces Slim with an authority that marks him out immediately from the other ranch hands. He is described as moving "with a majesty only achieved by royalty and master craftsmen" -- an unexpected simile that places natural skill on the same level as social rank, suggesting that Slim's authority is earned and inherent rather than conferred by money or status. His face is called **ageless**, and Steinbeck adds that his "slow speech had overtones not of thought, but of understanding beyond thought" -- a quality of perceptiveness that makes him seem almost supernatural. This characterisation positions Slim as the novel's moral arbiter: when he gives his verdict on a situation -- whether it is the shooting of Candy's dog or the complexity of George's relationship with Lennie -- his judgement carries the weight of truth, and Steinbeck tells us "his authority was so great that his word was taken on any subject".
 
 His role at the ending is particularly significant. After George shoots Lennie, it is Slim who comes to him and says, "You hadda, George. I swear you hadda." This simple absolution matters enormously in the context of the novel's bleak world: nobody else offers comfort or understanding, and Curley's men are already treating Lennie's death as a cause for satisfaction. Slim's recognition of what George has done -- the mercy and love that it required -- is the only form of human witness that the ending provides. That he is the one to offer it, and that he takes George away "up to the highway," suggests that in Steinbeck's world, genuine compassion is rare but real, and that even in the most brutal circumstances, one person can choose to acknowledge another's suffering.`,
     marks: 12,
     difficulty: 'intermediate',
-    keywords: ['Slim', 'natural authority', 'moral arbiter', 'absolution', 'Godlike eyes', 'ending', 'compassion'],
-    linkedObjectives: ['AO2-language-analysis', 'AO1-character-analysis', 'AO2-structural-analysis'],
+    keywords: [
+      'Slim',
+      'natural authority',
+      'moral arbiter',
+      'absolution',
+      'ageless',
+      'majesty',
+      'ending',
+      'compassion',
+    ],
+    linkedObjectives: [
+      'AO2-language-analysis',
+      'AO1-character-analysis',
+      'AO2-structural-analysis',
+    ],
     estimatedTime: '35 mins',
     dueWeek: 10,
   },
@@ -1059,7 +1367,15 @@ His role at the ending is particularly significant. After George shoots Lennie, 
 - "The meanness and the plannings and the discontent and the ache for attention were all gone from her face." -- Narrator, Ch.5. The post-death description is the novel's most compassionate view of her; it implicates the world that put those qualities in her face while she lived.`,
     marks: 15,
     difficulty: 'intermediate',
-    keywords: ['quotation bank', 'revision', 'American Dream', 'loneliness', 'friendship', 'power', 'Curley\'s wife'],
+    keywords: [
+      'quotation bank',
+      'revision',
+      'American Dream',
+      'loneliness',
+      'friendship',
+      'power',
+      "Curley's wife",
+    ],
     linkedObjectives: ['AO2-language-analysis', 'AO1-textual-reference', 'AO1-revision-skill'],
     estimatedTime: '50 mins',
     dueWeek: 11,
@@ -1092,9 +1408,23 @@ The friendship is tested most severely in the novel's final chapter. When George
 Steinbeck's overall argument is one of profound compassion tempered by clear-eyed realism. Friendship, he argues, is the most human thing we possess -- more sustaining than money, more valuable than land, more essential than the American Dream itself. But it cannot survive indefinitely in a world structured to destroy the conditions in which it can flourish. The tragedy of Of Mice and Men is not George's loss of Lennie alone but the loss of what their friendship represented: the proof that even in the hardest circumstances, two people could choose to matter to each other. Steinbeck presents this as something worth mourning -- and worth fighting to preserve.`,
     marks: 30,
     difficulty: 'extension',
-    keywords: ['friendship', 'George', 'Lennie', 'the dream', 'loneliness', 'migrant workers', 'mercy', 'compassion'],
-    linkedObjectives: ['AO1-extended-essay', 'AO2-language-analysis', 'AO2-structural-analysis', 'AO3-context'],
+    keywords: [
+      'friendship',
+      'George',
+      'Lennie',
+      'the dream',
+      'loneliness',
+      'migrant workers',
+      'mercy',
+      'compassion',
+    ],
+    linkedObjectives: [
+      'AO1-extended-essay',
+      'AO2-language-analysis',
+      'AO2-structural-analysis',
+      'AO3-context',
+    ],
     estimatedTime: '50 mins',
     dueWeek: 12,
   },
-];
+]

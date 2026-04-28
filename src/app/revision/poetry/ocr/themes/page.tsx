@@ -55,8 +55,7 @@ const CLUSTER_BADGE: Record<string, string> = {
   'Love and Relationships': 'bg-pink-500/15 text-pink-300 border-pink-500/20',
   Conflict: 'bg-red-500/15 text-red-300 border-red-500/20',
   'Youth and Age': 'bg-amber-500/15 text-amber-700 border-amber-500/20',
-  'Power and the Natural World':
-    'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
+  'Power and the Natural World': 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
 }
 
 // ─── Theme data ──────────────────────────────────────────────────────────────
@@ -137,13 +136,13 @@ const THEMES: Theme[] = [
         title: 'On My First Son',
         poet: 'Ben Jonson',
         cluster: 'Youth and Age',
-        note: 'A father\'s anguished elegy for his seven-year-old child.',
+        note: "A father's anguished elegy for his seven-year-old child.",
       },
       {
         title: 'Poppies',
         poet: 'Jane Weir',
         cluster: 'Conflict',
-        note: 'A mother\'s grief conveyed through sensory domestic details as her son leaves for war.',
+        note: "A mother's grief conveyed through sensory domestic details as her son leaves for war.",
       },
       {
         title: 'What Were They Like?',
@@ -155,7 +154,7 @@ const THEMES: Theme[] = [
         title: 'From a Mother in a Refugee Camp',
         poet: 'Chinua Achebe',
         cluster: 'Power and the Natural World',
-        note: 'A mother\'s tender, doomed act of care for her dying child in a refugee camp.',
+        note: "A mother's tender, doomed act of care for her dying child in a refugee camp.",
       },
     ],
   },
@@ -189,13 +188,13 @@ const THEMES: Theme[] = [
         title: 'The Man He Killed',
         poet: 'Thomas Hardy',
         cluster: 'Conflict',
-        note: 'A soldier\'s colloquial, halting attempt to justify killing another human being.',
+        note: "A soldier's colloquial, halting attempt to justify killing another human being.",
       },
       {
         title: 'War Photographer',
         poet: 'Carole Satyamurti',
         cluster: 'Conflict',
-        note: 'The moral cost of documenting other people\'s suffering for a distant audience.',
+        note: "The moral cost of documenting other people's suffering for a distant audience.",
       },
       {
         title: 'Belfast Confetti',
@@ -244,7 +243,7 @@ const THEMES: Theme[] = [
         note: 'An interrogation of national identity and the dangerous power of symbols.',
       },
       {
-        title: 'The Emigr\u00e9e',
+        title: 'The \u00c9migr\u00e9e',
         poet: 'Carol Rumens',
         cluster: 'Youth and Age',
         note: 'A woman clings to a sunlit memory of the homeland she can never return to.',
@@ -287,7 +286,7 @@ const THEMES: Theme[] = [
         title: 'Cousin Kate',
         poet: 'Christina Rossetti',
         cluster: 'Conflict',
-        note: 'A lord\'s sexual and social power exploits a lower-class woman.',
+        note: "A lord's sexual and social power exploits a lower-class woman.",
       },
       {
         title: 'The Charge of the Light Brigade',
@@ -336,10 +335,10 @@ const THEMES: Theme[] = [
         note: 'A city at dawn described in the language of natural beauty.',
       },
       {
-        title: 'The Prelude (extract)',
+        title: 'The Prelude (extract) — 1799 two-part Prelude (Part First, lines 81–129)',
         poet: 'William Wordsworth',
         cluster: 'Power and the Natural World',
-        note: 'Nature as a terrifying, educative force that dwarfs human confidence.',
+        note: "Nature as a terrifying, educative force that dwarfs human confidence. OCR prescribes the 1799 two-part Prelude (Part First, lines 81–129), drafted in Wordsworth's lifetime but unpublished until 1973 — not the 1850 posthumous Prelude used by AQA. The wording is materially different; never cross-quote between versions.",
       },
       {
         title: 'Wind',
@@ -363,7 +362,7 @@ const THEMES: Theme[] = [
         title: 'Below the Green Corrie',
         poet: 'Norman MacCaig',
         cluster: 'Power and the Natural World',
-        note: 'Highland mountains personified as bandits who demand the speaker\'s life and praise.',
+        note: "Highland mountains personified as bandits who demand the speaker's life and praise.",
       },
       {
         title: 'At a Potato Digging',
@@ -397,7 +396,7 @@ const THEMES: Theme[] = [
         title: 'Neutral Tones',
         poet: 'Thomas Hardy',
         cluster: 'Love and Relationships',
-        note: 'A single bitter memory of a relationship\'s death colours all subsequent experience.',
+        note: "A single bitter memory of a relationship's death colours all subsequent experience.",
       },
       {
         title: 'On an Old Song',
@@ -412,7 +411,7 @@ const THEMES: Theme[] = [
         note: 'An empty house haunted by the absence of those who once filled it.',
       },
       {
-        title: 'The Emigr\u00e9e',
+        title: 'The \u00c9migr\u00e9e',
         poet: 'Carol Rumens',
         cluster: 'Youth and Age',
         note: 'Idealised memory of a homeland that may no longer exist as the speaker remembers it.',
@@ -441,7 +440,7 @@ const THEMES: Theme[] = [
       },
       {
         title: 'Walking Away',
-        poet: 'C. Day Lewis',
+        poet: 'C. Day-Lewis',
         cluster: 'Youth and Age',
         note: 'A father watches his son walk away into independence for the first time.',
       },
@@ -483,7 +482,7 @@ const THEMES: Theme[] = [
         title: 'The Song of the Old Mother',
         poet: 'W.B. Yeats',
         cluster: 'Youth and Age',
-        note: 'A mother\'s weariness contrasted with the idleness of her children.',
+        note: "A mother's weariness contrasted with the idleness of her children.",
       },
       {
         title: 'Follower',
@@ -493,7 +492,7 @@ const THEMES: Theme[] = [
       },
       {
         title: 'Walking Away',
-        poet: 'C. Day Lewis',
+        poet: 'C. Day-Lewis',
         cluster: 'Youth and Age',
         note: 'The painful act of letting a child go as an expression of love.',
       },
@@ -513,13 +512,13 @@ const THEMES: Theme[] = [
         title: 'Nettles',
         poet: 'Vernon Scannell',
         cluster: 'Love and Relationships',
-        note: 'A father\'s fury after his son is stung becomes a meditation on protective love.',
+        note: "A father's fury after his son is stung becomes a meditation on protective love.",
       },
       {
         title: 'Poppies',
         poet: 'Jane Weir',
         cluster: 'Conflict',
-        note: 'A mother\'s quiet grief expressed through domestic rituals and sensory detail.',
+        note: "A mother's quiet grief expressed through domestic rituals and sensory detail.",
       },
       {
         title: 'Lineage',
@@ -565,7 +564,7 @@ const THEMES: Theme[] = [
         title: 'The Song of the Old Mother',
         poet: 'W.B. Yeats',
         cluster: 'Youth and Age',
-        note: 'The dying of the fire as a metaphor for the speaker\'s fading vitality.',
+        note: "The dying of the fire as a metaphor for the speaker's fading vitality.",
       },
       {
         title: 'One Flesh',
@@ -642,7 +641,7 @@ const THEMES: Theme[] = [
         note: 'London at dawn as a moment of transcendent, silent beauty.',
       },
       {
-        title: 'The Emigr\u00e9e',
+        title: 'The \u00c9migr\u00e9e',
         poet: 'Carol Rumens',
         cluster: 'Youth and Age',
         note: 'A sunlit homeland preserved in memory against a darker present reality.',
@@ -679,7 +678,7 @@ const THEMES: Theme[] = [
         title: 'Ozymandias',
         poet: 'Percy Bysshe Shelley',
         cluster: 'Power and the Natural World',
-        note: 'The sculptor\'s art outlasts the tyrant\'s empire -- art as a form of preservation.',
+        note: "The sculptor's art outlasts the tyrant's empire -- art as a form of preservation.",
       },
       {
         title: 'When I Have Fears',
@@ -707,7 +706,7 @@ const THEMES: Theme[] = [
       },
     ],
   },
-];
+]
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 
@@ -738,18 +737,16 @@ export default function OCRThemesPage() {
               <Sparkles className="mr-1 size-3" />
               OCR Towards a World Unknown
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              OCR
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Themes Across All Clusters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Every major theme in the OCR anthology mapped to the poems that
-            explore it. Use this to find strong comparison pairings and to see
-            how the same idea appears across different clusters.
+            Every major theme in the OCR anthology mapped to the poems that explore it. Use this to
+            find strong comparison pairings and to see how the same idea appears across different
+            clusters.
           </p>
         </div>
       </section>
@@ -759,23 +756,19 @@ export default function OCRThemesPage() {
         <div className="flex items-start gap-3">
           <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div>
-            <h2 className="text-heading-sm font-heading text-foreground">
-              How to use this page
-            </h2>
+            <h2 className="text-heading-sm font-heading text-foreground">How to use this page</h2>
             <ul className="mt-2 space-y-1.5 text-body-sm text-muted-foreground leading-relaxed">
               <li>
-                Each theme lists every poem in the anthology that engages with
-                it, across all 4 clusters. The cluster each poem belongs to is
-                shown with a coloured badge.
+                Each theme lists every poem in the anthology that engages with it, across all 4
+                clusters. The cluster each poem belongs to is shown with a coloured badge.
               </li>
               <li>
-                In the exam you compare poems from your own cluster. Use this
-                page to find pairings within your cluster that share a theme but
-                treat it differently.
+                In the exam you compare poems from your own cluster. Use this page to find pairings
+                within your cluster that share a theme but treat it differently.
               </li>
               <li>
-                Many poems appear under multiple themes -- this is deliberate.
-                A strong essay recognises that poems are thematically complex.
+                Many poems appear under multiple themes -- this is deliberate. A strong essay
+                recognises that poems are thematically complex.
               </li>
             </ul>
           </div>
@@ -786,15 +779,11 @@ export default function OCRThemesPage() {
       {THEMES.map((theme) => (
         <section key={theme.name}>
           <div className="mb-5 flex items-center gap-3">
-            <div
-              className={`flex size-10 items-center justify-center rounded-xl ${theme.iconBg}`}
-            >
+            <div className={`flex size-10 items-center justify-center rounded-xl ${theme.iconBg}`}>
               <theme.icon className={`size-5 ${theme.iconColour}`} />
             </div>
             <div>
-              <h2 className="text-heading-lg font-heading text-foreground">
-                {theme.name}
-              </h2>
+              <h2 className="text-heading-lg font-heading text-foreground">{theme.name}</h2>
               <p className="text-caption text-muted-foreground">
                 {theme.poems.length} poem{theme.poems.length === 1 ? '' : 's'}
               </p>
@@ -813,25 +802,18 @@ export default function OCRThemesPage() {
               >
                 <div className="mb-2 flex items-start justify-between gap-2">
                   <div>
-                    <h3 className="text-sm font-semibold text-foreground">
-                      {poem.title}
-                    </h3>
-                    <p className="text-caption text-muted-foreground">
-                      {poem.poet}
-                    </p>
+                    <h3 className="text-sm font-semibold text-foreground">{poem.title}</h3>
+                    <p className="text-caption text-muted-foreground">{poem.poet}</p>
                   </div>
                   <span
                     className={`inline-flex shrink-0 items-center rounded-full border px-2 py-0.5 text-[0.6rem] font-medium ${
-                      CLUSTER_BADGE[poem.cluster] ??
-                      'bg-muted text-muted-foreground border-border'
+                      CLUSTER_BADGE[poem.cluster] ?? 'bg-muted text-muted-foreground border-border'
                     }`}
                   >
                     {poem.cluster}
                   </span>
                 </div>
-                <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  {poem.note}
-                </p>
+                <p className="text-body-sm text-muted-foreground leading-relaxed">{poem.note}</p>
               </div>
             ))}
           </div>
@@ -840,27 +822,22 @@ export default function OCRThemesPage() {
 
       {/* ── Copyright note ────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">
-          About these study notes
-        </h2>
+        <h2 className="text-heading-sm font-heading text-foreground">About these study notes</h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          These theme descriptions discuss ideas, methods and context rather than
-          reproducing copyrighted poem text. You will need a copy of the OCR{' '}
-          <em>Towards a World Unknown</em> anthology (ISBN 9781398384408) to
-          read the full poems. Public-domain poems have full annotated study
-          pages available on this site.
+          These theme descriptions discuss ideas, methods and context rather than reproducing
+          copyrighted poem text. You will need a copy of the OCR <em>Towards a World Unknown</em>{' '}
+          anthology (ISBN 9781398384408) to read the full poems. Public-domain poems have full
+          annotated study pages available on this site.
         </p>
       </section>
 
       {/* ── Back CTA ──────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-primary" />
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Explore more
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Explore more</h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Try our essay plans for ready-made comparison structures, or learn how
-          to write a top-band comparison essay.
+          Try our essay plans for ready-made comparison structures, or learn how to write a top-band
+          comparison essay.
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <Button
@@ -878,11 +855,7 @@ export default function OCRThemesPage() {
           >
             Comparison Guide
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            render={<Link href="/revision/poetry/ocr" />}
-          >
+          <Button variant="outline" size="lg" render={<Link href="/revision/poetry/ocr" />}>
             Back to OCR Anthology
           </Button>
         </div>

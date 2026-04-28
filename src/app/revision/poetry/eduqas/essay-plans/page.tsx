@@ -4,7 +4,6 @@ import Link from 'next/link'
 import {
   ArrowLeft,
   BookOpen,
-  Sparkles,
   FileText,
   GitCompareArrows,
   ChevronDown,
@@ -12,17 +11,19 @@ import {
   Quote,
   Info,
   PenLine,
+  AlertTriangle,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 
 /* ── Essay plan data ─────────────────────────────────────────────── */
 
 interface EssayPlan {
   id: number
   title: string
+  question: string
   theme: string
   poemA: string
   poetA: string
@@ -38,548 +39,460 @@ interface EssayPlan {
     comparison: string
   }[]
   conclusion: string
+  flag?: string
 }
 
 const ESSAY_PLANS: EssayPlan[] = [
   {
     id: 1,
-    title: 'Contrasting Views of War',
+    title: 'War, Identity and Foreign Land',
+    question:
+      'Compare how Hardy in "Drummer Hodge" and Owen in "Disabled" present the cost of war on young men.',
     theme: 'War & Conflict',
-    poemA: 'Dulce et Decorum Est',
-    poetA: 'Wilfred Owen',
-    poemB: 'The Soldier',
-    poetB: 'Rupert Brooke',
+    poemA: 'Drummer Hodge',
+    poetA: 'Thomas Hardy',
+    poemB: 'Disabled',
+    poetB: 'Wilfred Owen',
+    flag: 'Context: Drummer Hodge is set in the Second Boer War (South Africa, 1899) — NOT World War I. Owen\'s "Disabled" is a WWI poem.',
     thesis:
-      'Both Owen and Brooke write about dying in war, yet they present completely opposing views: Owen exposes the horror and futility of conflict, while Brooke romanticises sacrifice and patriotic duty.',
+      "Hardy and Owen both expose what war takes from young men, but where Hardy's drummer boy is annihilated by anonymous death in a foreign land, Owen's veteran survives only to suffer a living erasure of identity at home.",
     paragraphs: [
       {
-        topic: 'How each poet presents the reality of death in war',
+        topic: 'How each poet presents the young soldier',
         poemAPoint:
-          'Owen uses graphic, visceral imagery to show death as horrifying and undignified.',
+          'Hardy presents Hodge as a rural English boy reduced to a discarded body in an alien landscape.',
         poemAEvidence:
-          '"the blood / Come gargling from the froth-corrupted lungs" -- the medical detail forces the reader to confront the physical reality of a gas attack.',
+          '"They throw in Drummer Hodge, to rest / Uncoffined -- just as found" — the brutal verb "throw" and the em-dash strip away every Victorian ritual of mourning.',
         poemBPoint:
-          'Brooke presents death as a noble transformation, almost a spiritual cleansing.',
+          'Owen presents the veteran as a once-vital young man now physically and socially diminished.',
         poemBEvidence:
-          '"a body of England\'s" -- the soldier\'s body becomes part of the English landscape, making death seem peaceful and purposeful.',
+          'Owen\'s soldier sits "in a wheeled chair, waiting for dark" — the static posture and passive waiting contrast with the youth he has lost. The poem moves between his shattered present and the recruitment-day past.',
         comparison:
-          'Where Owen uses repulsive imagery to shock, Brooke uses idealised imagery to comfort. Owen\'s dying soldier is anonymous and suffering; Brooke\'s is elevated and at peace.',
+          "Both poets reduce their soldier to an object: Hardy's Hodge is \"thrown in\" like rubbish; Owen's veteran is wheeled and handled by others. But Hardy's loss is total and bodily, while Owen's is a slower, conscious erasure the soldier must witness in himself.",
       },
       {
-        topic: 'The tone and attitude towards patriotism',
+        topic: 'The role of place and belonging',
         poemAPoint:
-          'Owen directly attacks the idea that dying for one\'s country is honourable.',
+          'Hardy contrasts Hodge\'s "Wessex home" with the "unknown plain" of South Africa, emphasising his alienation.',
         poemAEvidence:
-          '"The old Lie: Dulce et decorum est / Pro patria mori" -- by calling patriotism a "Lie" (capitalised), Owen rejects the entire propaganda machine.',
+          '"Fresh from his Wessex home" placed against "the broad Karoo, / The Bush, the dusty loam" — the foreign vocabulary (kopje, veldt, Karoo) marks a landscape Hodge cannot name.',
         poemBPoint:
-          'Brooke celebrates patriotism and frames England as a nurturing mother worth dying for.',
+          'Owen\'s soldier has returned home but finds it just as foreign — women\'s eyes "passed from him to the strong men that were whole".',
         poemBEvidence:
-          '"A dust whom England bore, shaped, made aware" -- the personification of England as a parent creates warmth and gratitude.',
+          'The veteran is now invisible in his own town: Owen contrasts a homecoming where some "cheered him home, but not as crowds cheer Goal" — a faint echo of the cheering he once received as a recruit.',
         comparison:
-          'Owen and Brooke represent the two dominant responses to World War I: disillusionment (Owen fought in the trenches) and idealism (Brooke died early, before experiencing front-line horror).',
+          'For Hardy, place is geographic exile; for Owen, place is social exile. Hodge becomes "portion of that unknown plain"; Owen\'s soldier becomes a stranger in his own street. Both are dislocated by war, but only Owen\'s soldier has to live with it.',
       },
       {
-        topic: 'Form and structure as tools for persuasion',
+        topic: "Form, structure and the poet's judgement",
         poemAPoint:
-          'Owen uses a fractured sonnet form and a direct address to the reader.',
+          "Hardy uses three tight, ballad-style stanzas that move from burial, to ignorance, to eternal absorption — formal compression mirrors the boy's erasure.",
         poemAEvidence:
-          '"If you could hear, at every jolt, the blood" -- the second-person address implicates the reader, making the poem feel like an accusation.',
+          'The closing image — "strange-eyed constellations reign / His stars eternally" — turns alien sky into permanent ownership, with bitter irony: Hodge claims the southern stars only by dying anonymously beneath them.',
         poemBPoint:
-          'Brooke uses a traditional Petrarchan sonnet with a smooth, reassuring rhythm.',
+          "Owen uses irregular stanzas and a constant shifting between past and present to enact the soldier's broken sense of time.",
         poemBEvidence:
-          'The regular iambic pentameter and gentle rhyme scheme ("me" / "be") create a hymn-like quality, reinforcing the idea that death in war is sacred.',
+          'The poem ends on a flat, unanswered question — "Why don\'t they come?" — refusing closure, refusing the redemption a sonnet form would offer.',
         comparison:
-          'Owen deliberately breaks the sonnet form to mirror the chaos of war, while Brooke\'s adherence to tradition reflects his belief that patriotic sacrifice is orderly and meaningful.',
+          'Hardy resolves into a strange, cosmic permanence; Owen refuses resolution altogether. Both poets reject the rhetoric of patriotic sacrifice — Hardy quietly, through irony of place; Owen openly, through the visible suffering of the survivor.',
       },
     ],
     conclusion:
-      'Owen and Brooke offer two irreconcilable visions of war. Owen\'s graphic realism serves as an anti-war protest, while Brooke\'s idealism reflects the pre-war innocence that the trenches would destroy. Together, they demonstrate how poetry can be used both to challenge and to reinforce dominant ideologies.',
+      "Hardy and Owen both expose war as theft — of body, of identity, of belonging. Hardy's Drummer Hodge is the anonymous dead of an imperial war few cared to mourn; Owen's soldier is the living wreckage WWI propaganda preferred to hide. Together they show that war's damage outlasts the battlefield, whether through erasure into foreign earth or through being made invisible at home.",
   },
   {
     id: 2,
-    title: 'The Power of Nature',
-    theme: 'Nature',
-    poemA: 'The Prelude: stealing the boat',
-    poetA: 'William Wordsworth',
-    poemB: 'To Autumn',
-    poetB: 'John Keats',
+    title: 'Love, Possession and the Female Voice',
+    question:
+      'Compare how Rossetti in "Cousin Kate" and Barrett Browning in Sonnet 29 ("I think of thee") present love.',
+    theme: 'Love & Relationships',
+    poemA: 'Cousin Kate',
+    poetA: 'Christina Rossetti',
+    poemB: 'Sonnet 29 ("I think of thee")',
+    poetB: 'Elizabeth Barrett Browning',
     thesis:
-      'Both Wordsworth and Keats are Romantic poets who present nature as a powerful force, yet their approaches differ: Wordsworth shows nature as sublime and terrifying, while Keats celebrates its gentle abundance and quiet inevitability.',
+      'Both Victorian women write love poems in a strong female first-person voice, but Rossetti speaks from the wreckage of love misused, while Barrett Browning speaks from the certainty of love returned — exposing how class and circumstance shape what love is permitted to be.',
     paragraphs: [
       {
-        topic: 'How nature is personified and characterised',
+        topic: 'How each speaker positions herself in relation to the beloved',
         poemAPoint:
-          'Wordsworth personifies nature as a menacing, almost parental figure that punishes transgression.',
+          'Rossetti\'s "cottage maiden" speaks as a woman cast aside, reduced to a possession by the lord\'s power.',
         poemAEvidence:
-          '"a huge peak, black and huge... / Strode after me" -- the mountain appears to pursue the boy, as though nature itself is a conscious, punishing force.',
+          '"He wore me like a silken knot, / He changed me like a glove" — the paired similes commodify her, exposing the lord\'s casual, replaceable use of her body and her name.',
         poemBPoint:
-          'Keats personifies autumn as a benign, languid companion, resting amid its own abundance.',
+          "Barrett Browning's speaker is the active subject of her own thinking, her thoughts climbing and clinging to the absent beloved like vines around a tree.",
         poemBEvidence:
-          '"sitting careless on a granary floor" -- autumn is depicted as relaxed and generous, a figure of contentment rather than threat.',
+          'Her thoughts "twine and bud about thee" with such abundance she fears they hide him. She then commands the beloved — "Renew thy presence" — to overwhelm her thoughts with himself.',
         comparison:
-          'Both poets give nature human qualities, but the emotional effect is opposite: Wordsworth inspires awe and fear; Keats inspires warmth and acceptance.',
+          "Rossetti's speaker has been an object of someone else's use; Barrett Browning's speaker is the agent of her own desire. Rossetti exposes love as power; Barrett Browning celebrates love as mutual. The contrast is between possession of and possession by.",
       },
       {
-        topic: 'The speaker\'s emotional journey',
+        topic: 'The voice of defiance and certainty',
         poemAPoint:
-          'Wordsworth traces a shift from confidence to terror to lasting psychological change.',
+          "Rossetti's speaker turns from grief to fierce defiance, refusing to envy her cousin's respectable marriage.",
         poemAEvidence:
-          '"for many days, my brain / Worked with a dim and undetermined sense" -- the encounter with the mountain leaves the speaker permanently altered.',
+          '"I would have spit into his face / And not have taken his hand" — a startlingly violent line for a Victorian woman speaker. She also claims "a gift you have not got" — her son — turning shame into pride.',
         poemBPoint:
-          'Keats moves from abundance through harvest to a quiet acceptance of endings.',
+          "Barrett Browning's speaker asserts the demands of her love with equal certainty, even daring to find her own thoughts inadequate next to the beloved's real presence.",
         poemBEvidence:
-          '"Where are the songs of Spring? Ay, where are they?" -- this rhetorical question acknowledges loss but answers it with acceptance, not grief.',
+          'She insists "I do not think of thee — I am too near thee" once he is present — a paradox that makes physical nearness more powerful than imagination.',
         comparison:
-          'Wordsworth\'s speaker is changed by a single dramatic moment; Keats\'s speaker gradually comes to terms with the natural cycle. Both show nature shaping human consciousness.',
+          'Both speakers refuse to be passive. Rossetti\'s defiance is born of betrayal; Barrett Browning\'s confidence is born of reciprocal love. Both use the female "I" to assert a self that Victorian convention often muted.',
       },
       {
-        topic: 'Structure and how it mirrors natural processes',
+        topic: 'Form and class context',
         poemAPoint:
-          'Wordsworth uses enjambment and building rhythm to create a sense of escalating fear.',
+          'Rossetti uses ballad-style quatrains and a regular rhyme scheme, drawing on the folk tradition of wronged-women songs.',
         poemAEvidence:
-          'The lines lengthen as the mountain grows, and the enjambment across "Upreared its head" forces the reader onward without pause, mirroring the boy\'s rising panic.',
+          'The repeated "Why did a great lord find me out" sets up an interrogation of class power — and the contrast between "an unclean thing" and "a dove" maps onto Victorian double standards for women.',
         poemBPoint:
-          'Keats uses three regular stanzas to mirror the three stages of autumn: ripening, harvesting, and fading.',
+          'Barrett Browning uses the Petrarchan sonnet, claiming a tradition male poets had built around male desire — and turning it to female longing.',
         poemBEvidence:
-          'The movement from "mellow fruitfulness" (stanza 1) to "soft-dying day" (stanza 3) mirrors the natural arc of the season.',
+          'The volta from imagined thoughts to commanded presence — "Drop heavily down — burst, shattered, everywhere!" — uses the sonnet\'s traditional turn to enact a moment of assertive female desire.',
         comparison:
-          'Both poets use structure to embody their subject: Wordsworth\'s escalating verse enacts the mountain\'s growing presence, while Keats\'s orderly stanzas reflect autumn\'s measured progression.',
+          'Rossetti uses a popular form to expose class injustice; Barrett Browning re-occupies a high-status form to assert female agency. Both use form as a political claim about who is allowed to speak about love.',
       },
     ],
     conclusion:
-      'Wordsworth and Keats both reveal the power of nature, but through different lenses. Wordsworth\'s sublime terror reminds the reader of human smallness, while Keats\'s sensuous acceptance celebrates nature\'s cyclical beauty. Both poems demonstrate the Romantic belief that nature is the supreme teacher.',
+      'Rossetti and Barrett Browning, writing in the same Victorian decade, give us two poles of female love: the woman wronged and the woman fulfilled. Yet both insist on speaking. Both refuse silence. The comparison shows how love poetry from women in the 1850s–60s could be at once intimate and political — a claim on the right to feel, judge, and answer back.',
   },
   {
     id: 3,
-    title: 'Loss and Suffering in Wartime',
-    theme: 'War & Conflict',
-    poemA: 'A Wife in London',
-    poetA: 'Thomas Hardy',
-    poemB: 'Dulce et Decorum Est',
-    poetB: 'Wilfred Owen',
+    title: 'Childhood, Parental Love and Memory',
+    question:
+      'Compare how Clarke in "Catrin" and Heaney in "Blackberry Picking" present memories of childhood.',
+    theme: 'Childhood & Nature',
+    poemA: 'Catrin',
+    poetA: 'Gillian Clarke',
+    poemB: 'Blackberry Picking',
+    poetB: 'Seamus Heaney',
     thesis:
-      'Both Hardy and Owen present the devastating human cost of war, but from different perspectives: Hardy reveals the anguish of those left behind at home, while Owen exposes the suffering of soldiers on the front line.',
+      "Both poets remember a childhood moment that contained both love and loss, but where Clarke remembers her daughter's birth as the start of an ongoing tug-of-war, Heaney remembers a yearly disappointment that taught him that all hoarded sweetness rots.",
     paragraphs: [
       {
-        topic: 'The use of irony to expose war\'s cruelty',
+        topic: 'The central memory and its emotional charge',
         poemAPoint:
-          'Hardy uses structural dramatic irony, delivering the death telegram before the hopeful letter.',
+          'Clarke addresses her daughter directly, recalling the labour-room moment when mother and child were first divided.',
         poemAEvidence:
-          '"his hand, whom the worm now knows" -- the wife reads her husband\'s cheerful letter after learning he is dead, a devastating sequence that amplifies her grief.',
+          'Clarke describes childbirth as a confrontation between mother and child, and uses the famous image of a "red rope of love" — a single physical image for biological connection and emotional struggle. (In-copyright text: short fair-dealing extract.)',
         poemBPoint:
-          'Owen uses verbal irony in the Latin title to expose the gap between propaganda and reality.',
+          'Heaney recalls the August ritual of picking blackberries — sweet, plentiful, then inevitably spoiled by rot.',
         poemBEvidence:
-          '"The old Lie: Dulce et decorum est / Pro patria mori" -- Owen labels the patriotic maxim a lie, using the rhetoric of the establishment against itself.',
+          'The first stanza is rich with sensual delight in the fruit\'s ripeness, comparing the first taste to a thickened wine. The second stanza turns to the "stinking juice" of decay — a single fair-dealing reference that crystallises Heaney\'s shift from pleasure to disgust. (In-copyright text: short fair-dealing extract.)',
         comparison:
-          'Both poets deploy irony as a weapon against war, but Hardy\'s irony is situational (the cruel timing of letters), while Owen\'s is explicitly political (attacking the propaganda machine).',
+          "Both poets root the memory in the body — Clarke in the cord between mother and child, Heaney in the staining juice of fruit. But Clarke's memory is of a single charged moment that keeps repeating; Heaney's is of a yearly cycle that repeats only to disappoint.",
       },
       {
-        topic: 'How setting intensifies the emotional impact',
+        topic: 'The role of parental love and longing',
         poemAPoint:
-          'Hardy uses the foggy, oppressive London setting to mirror the wife\'s isolation and despair.',
+          "Clarke's love for her daughter is bound up with the painful work of separation — the child must struggle free.",
         poemAEvidence:
-          '"She sits in the tawny vapour / That the Thames-side lanes have uprolled" -- the fog becomes a physical manifestation of her grief, suffocating and impenetrable.',
+          'The poem revisits the rope of attachment as the child grows and seeks her own freedom — the original conflict of the labour ward repeats in adolescence. (In-copyright text: paraphrased.)',
         poemBPoint:
-          'Owen places the reader directly in the trenches, using the chaotic battlefield as a setting for horror.',
+          "Heaney's love is for the lost ideal of perfect, preserved abundance — and he projects a child's grief onto the adult's knowledge that nothing keeps.",
         poemBEvidence:
-          '"Bent double, like old beggars under sacks" -- the opening line immediately establishes the degrading physical conditions of the front line.',
+          "The boy is reduced to grief when the cache spoils each summer, even though he knew it would not last. Heaney captures childhood's doomed optimism — the gap between hope and knowledge. (In-copyright text: paraphrased.)",
         comparison:
-          'Hardy\'s still, enclosed setting mirrors grief that has nowhere to go; Owen\'s chaotic, open setting mirrors the uncontrollable violence of battle. Both settings become emotional landscapes.',
+          "Clarke's love is for a person; Heaney's love is for an experience. Clarke shows that parental love and conflict are inseparable; Heaney shows that childhood pleasure and disappointment are inseparable. Both find love bound to its own ending.",
       },
       {
-        topic: 'Form and structure to control the reader\'s experience',
+        topic: 'Structure and the passage of time',
         poemAPoint:
-          'Hardy divides the poem into two acts, mirroring the two pieces of news the wife receives.',
+          'Clarke uses a two-stanza structure that jumps from the birth scene to a later confrontation, collapsing years into a single relationship.',
         poemAEvidence:
-          'The two-part structure (death telegram, then hopeful letter) forces the reader to experience the same cruel sequence as the wife.',
+          'The shift from the labour-ward scene to an adolescent confrontation at the door makes the whole poem a meditation on continuity — the same struggle, in new forms. (In-copyright text: paraphrased.)',
         poemBPoint:
-          'Owen shifts from a marching rhythm to a panicked, irregular pace when the gas attack begins.',
+          'Heaney uses a two-stanza structure that moves from gathering to spoiling — innocence to experience.',
         poemBEvidence:
-          '"Gas! GAS! Quick, boys!" -- the sudden short exclamations break the weary rhythm, plunging the reader into chaos.',
+          "The first stanza's lush imagery and forward motion give way to the second's static disappointment, mirroring how childhood's expectations curdle into knowledge.",
         comparison:
-          'Both poets manipulate structure to control timing: Hardy delays revelation for maximum impact, while Owen uses sudden acceleration to recreate the terror of combat.',
+          'Both poets divide the poem into two halves marking a turn from one state to another — Clarke from birth to adolescence, Heaney from harvest to rot. Structure becomes argument: parental love and childhood pleasure are both about learning that nothing stays where it began.',
       },
     ],
     conclusion:
-      'Hardy and Owen both indict war by showing its human cost, but from complementary angles. Hardy reveals the quiet, private devastation of bereavement at home; Owen forces the reader to witness front-line brutality. Together, they demonstrate that war destroys lives on every side of the conflict.',
+      "Clarke and Heaney both write memory poems that refuse easy nostalgia. Clarke's love is fierce and ongoing; Heaney's is rueful and final. Together they argue that childhood — whether seen from the parent's side or the child's — is the place we first learn that love and loss arrive together.",
   },
   {
     id: 4,
-    title: 'Romantic vs Modern Love',
-    theme: 'Love',
-    poemA: 'Sonnet 43',
-    poetA: 'Elizabeth Barrett Browning',
-    poemB: 'Valentine',
-    poetB: 'Carol Ann Duffy',
+    title: 'War, Honour and the Family',
+    question:
+      'Compare how Garland in "Kamikaze" and Hardy in "Drummer Hodge" present the cost of war on the family or community.',
+    theme: 'War & Conflict',
+    poemA: 'Kamikaze',
+    poetA: 'Beatrice Garland',
+    poemB: 'Drummer Hodge',
+    poetB: 'Thomas Hardy',
+    flag: 'Context: Drummer Hodge is set in the Second Boer War (South Africa, 1899) — NOT World War I. Kamikaze is set in WWII Japan.',
     thesis:
-      'Both Barrett Browning and Duffy write passionately about love, yet their poems reflect the values of their eras: Barrett Browning embraces idealised, spiritual devotion, while Duffy insists on honesty and rejects romantic cliches.',
+      "Both Garland and Hardy expose how war separates a soldier from his community, but where Hardy's drummer boy is physically thrown into anonymous foreign earth, Garland's pilot returns alive only to be socially erased by his own family for refusing to die honourably.",
     paragraphs: [
       {
-        topic: 'How each poet defines or measures love',
+        topic: 'How the soldier is positioned in relation to community',
         poemAPoint:
-          'Barrett Browning attempts to quantify love through abstract, spiritual measurements.',
+          "Garland's pilot is told from the daughter's point of view — a man whose return shamed the family that should have welcomed him.",
         poemAEvidence:
-          '"I love thee to the depth and breadth and height / My soul can reach" -- love is presented as infinite and boundless, measured in the language of faith.',
+          'Garland\'s daughter recalls how the family chose to act "as though he no longer existed" once he turned the plane back — silent ostracism replaces military glory.',
         poemBPoint:
-          'Duffy defines love through a single concrete metaphor: an onion.',
+          "Hardy's drummer is buried by anonymous hands, severed from his Wessex community by death and distance.",
         poemBEvidence:
-          '"I give you an onion. / It is a moon wrapped in brown paper" -- the onion is honest, multi-layered, and unglamorous, reflecting Duffy\'s insistence on truth over sentimentality.',
+          '"They throw in Drummer Hodge, to rest / Uncoffined -- just as found" — the unnamed "they" stand in for the absent community that should have buried him properly.',
         comparison:
-          'Barrett Browning reaches for the transcendent; Duffy deliberately chooses the mundane. Both, however, are deeply sincere -- their definitions of love simply reflect different cultural expectations.',
+          "Both soldiers are erased — Garland's by social shunning, Hardy's by burial in alien soil. The cruelty in Garland is collective and chosen; the cruelty in Hardy is bureaucratic and structural. Both ask: what is owed to the soldier by the people he came from?",
       },
       {
-        topic: 'Tone and the poet\'s attitude toward romantic conventions',
+        topic: 'The pull of home',
         poemAPoint:
-          'Barrett Browning works within the sonnet tradition, embracing its associations with love poetry.',
+          "Garland's pilot is turned by the sight of the sea, fishing boats and the remembered childhood scenes of his coastal home.",
         poemAEvidence:
-          'The Petrarchan sonnet form, with its octave and sestet, places the poem in a tradition stretching back to Shakespeare and Petrarch -- Barrett Browning elevates her feelings by choosing this form.',
+          'The poem catalogues remembered images — the fishing boats, the safe shore — that overpower the warrior code. Home, paradoxically, becomes the force that ends his honour.',
         poemBPoint:
-          'Duffy deliberately rejects romantic conventions, opening with a refusal.',
+          "For Hardy's drummer, home is exactly what he has lost. The poem grieves a Wessex landscape he will never see again.",
         poemBEvidence:
-          '"Not a red rose or a satin heart" -- the poem begins by dismissing the very symbols most love poems rely on, asserting that real love demands more honesty.',
+          '"Fresh from his Wessex home" places the rural English boy against "the broad Karoo, / The Bush, the dusty loam" — a foreign landscape "Young Hodge the Drummer never knew".',
         comparison:
-          'Barrett Browning gains power by working within tradition; Duffy gains power by breaking from it. Both approaches, paradoxically, achieve emotional intensity.',
+          "Garland's home pulls the soldier back and saves him from death — but costs him his community. Hardy's home is unreachable — and the soldier is absorbed into foreign earth. In both poems, home is the moral weight against which war is measured.",
       },
       {
-        topic: 'The darker side of love',
+        topic: 'Form, voice and the verdict on war',
         poemAPoint:
-          'Barrett Browning acknowledges death but frames it as a continuation of love, not a threat.',
+          'Garland uses a layered narrative — the daughter quotes her mother, who tells the children — distancing us from the pilot himself, mirroring his social erasure.',
         poemAEvidence:
-          '"I shall but love thee better after death" -- love transcends mortality, suggesting a faith-based optimism.',
+          'The poem closes with the daughter speculating that the pilot, in his shamed silence, may have come to question which would have been the better way to die — a damning thought about a culture that prefers death to dishonour. (In-copyright text: paraphrased.)',
         poemBPoint:
-          'Duffy warns that love is possessive and can cause pain.',
+          "Hardy uses tight ballad stanzas and the omniscient third person to mark Hodge's anonymity — the drummer never speaks for himself.",
         poemBEvidence:
-          '"Its fierce kiss will stay on your lips, / possessive and faithful" -- the onion\'s sting represents the inescapable intensity of real love, including its potential for hurt.',
+          'The closing image — "strange-eyed constellations reign / His stars eternally" — gives bitter cosmic permanence to a boy whose name is barely his own ("Hodge" is rural-English shorthand for any farm lad).',
         comparison:
-          'Both poets acknowledge love\'s permanence, but Barrett Browning presents this as comforting, while Duffy presents it as unsettling. The Victorian poet finds reassurance in eternity; the modern poet finds a warning.',
+          "Both poets choose forms that keep the soldier silent — Garland by triple-distancing his voice through women relatives, Hardy by ballad anonymity. The silence is the point: war's moral judgement falls on those who survive to remember.",
       },
     ],
     conclusion:
-      'Barrett Browning and Duffy both celebrate love with conviction, but their poems reveal how attitudes to romance have shifted. Barrett Browning\'s spiritual idealism reflects Victorian faith and decorum; Duffy\'s subversive honesty reflects a modern suspicion of sentimentality. Both, however, insist that love is profound and transformative.',
+      'Hardy and Garland both write about wars not their own — Hardy from late-Victorian England looking at South Africa, Garland from late-twentieth-century Britain looking at WWII Japan. Both poets indict the cultures that expect young men to die quietly elsewhere. Both leave us with a soldier whose story is told only by those left behind.',
   },
   {
     id: 5,
-    title: 'The Abuse of Power',
-    theme: 'Power',
-    poemA: 'Ozymandias',
-    poetA: 'Percy Bysshe Shelley',
-    poemB: 'London',
-    poetB: 'William Blake',
+    title: "Childhood, Nature and the Poet's Gaze",
+    question:
+      'Compare how Blake in "The Schoolboy" and Wordsworth in "I Wandered Lonely as a Cloud" present the relationship between people and the natural world.',
+    theme: 'Childhood & Nature',
+    poemA: 'The Schoolboy',
+    poetA: 'William Blake',
+    poemB: 'I Wandered Lonely as a Cloud',
+    poetB: 'William Wordsworth',
     thesis:
-      'Both Shelley and Blake critique the abuse of power, but through different strategies: Shelley uses the ruin of an ancient tyrant to show that all power is temporary, while Blake exposes the ongoing suffering caused by institutional power in his own society.',
+      'Both Romantic poets present nature as a source of joy threatened by adult systems, but Blake speaks in the voice of a caged child longing to escape the schoolroom, while Wordsworth speaks as an adult recollecting how a single natural scene becomes a permanent inner resource.',
     paragraphs: [
       {
-        topic: 'How each poet presents those in power',
+        topic: 'Whose voice presents nature, and from what position',
         poemAPoint:
-          'Shelley presents the powerful as arrogant and ultimately irrelevant -- time erases even the mightiest ruler.',
+          'Blake gives the poem to the schoolboy himself, who would rather be outdoors than "under a cruel eye outworn".',
         poemAEvidence:
-          '"My name is Ozymandias, King of Kings; / Look on my Works, ye Mighty, and despair!" -- the boastful inscription survives, but all the "Works" have vanished, creating devastating dramatic irony.',
+          'The boy describes the "sweet" summer morning when birds and the huntsman\'s horn call him outside — only to be marched into a schoolroom that "drives all joy away".',
         poemBPoint:
-          'Blake presents power as actively oppressive, controlled by institutions that profit from human suffering.',
+          'Wordsworth speaks as the adult poet, looking back on a moment of solitary wandering when the daffodils overwhelmed him.',
         poemBEvidence:
-          '"the mind-forg\'d manacles" -- Blake suggests that the powerful have imprisoned people not just physically, but psychologically, making them accept their own oppression.',
+          'Wordsworth describes "a host, of golden daffodils" — and crucially, the adult speaker remembers that "in vacant or in pensive mood" the scene returns to him on his "inward eye".',
         comparison:
-          'Shelley\'s critique is retrospective (power has already fallen); Blake\'s is urgent and present-tense (power is causing suffering now). Both, however, argue that tyrannical power is illegitimate.',
+          "Blake's child is trapped in the present; Wordsworth's adult uses memory as a refuge. The child longs to be in nature; the adult is consoled by having once been there. Both poets argue nature is the cure — but they differ on whether the cure is access or memory.",
       },
       {
-        topic: 'The role of setting and imagery',
+        topic: 'How adult systems intrude on natural joy',
         poemAPoint:
-          'Shelley uses the vast, empty desert to symbolise the erasure of Ozymandias\'s empire.',
+          'Blake makes the schoolroom an explicit enemy of natural growth, asking how a child can "the summer fruits appear" if his bud is "nipped" early.',
         poemAEvidence:
-          '"The lone and level sands stretch far away" -- the final image is of nature reclaiming the land, indifferent to human ambition.',
+          'The closing stanzas use plant imagery — "buds nipped", "blossoms blown away" — to argue that early formal education ruins the very growth it claims to nurture.',
         poemBPoint:
-          'Blake uses the streets of London to show suffering at every turn.',
+          'Wordsworth does not name an enemy, but the contrast between the "lonely" wanderer and the dancing crowd of flowers implies the modern adult\'s isolation.',
         poemBEvidence:
-          '"I wander thro\' each charter\'d street, / Near where the charter\'d Thames does flow" -- the repetition of "charter\'d" suggests that even the river has been claimed and controlled by the powerful.',
+          'The simile "lonely as a cloud" frames the speaker as detached, drifting; the daffodils, by contrast, are a "jocund company". Adulthood is implicitly the lonely state nature relieves.',
         comparison:
-          'Shelley\'s setting is distant and historical, creating a parable about all tyrants; Blake\'s setting is immediate and specific, creating an indictment of his own society. Both use place as a political statement.',
+          "Blake protests directly; Wordsworth implies. Blake argues schooling kills the child's joy; Wordsworth shows that the adult mind, left alone, drifts unless nature plants something in it. Both poets share the Romantic conviction that nature corrects what civilisation breaks.",
       },
       {
-        topic: 'The poet\'s message about the future of power',
+        topic: 'Form, voice and Romantic argument',
         poemAPoint:
-          'Shelley implies that time and nature will always defeat human tyranny.',
+          "Blake uses regular five-line stanzas with a controlled rhyme scheme — almost the orderliness of the schoolroom he condemns — to make the child's protest formally legible.",
         poemAEvidence:
-          '"Nothing beside remains" -- three devastatingly simple words that demolish Ozymandias\'s legacy. The natural world outlasts all empires.',
+          'The control of the form mirrors the control the child resents; the protest comes through diction ("dismay", "sigh and dismay", "weary") rather than formal disorder.',
         poemBPoint:
-          'Blake implies that revolution or radical change is needed to end institutional oppression.',
+          "Wordsworth uses four six-line stanzas of measured iambic tetrameter to mirror the speaker's wandering pace and the rhythm of recollection.",
         poemBEvidence:
-          '"the hapless Soldier\'s sigh / Runs in blood down Palace walls" -- the image of blood on palace walls hints at revolution, suggesting that the suffering of the powerless will eventually threaten the powerful.',
+          'The final stanza turns inward — "And then my heart with pleasure fills" — translating the seen scene into the imagined one. Form becomes a model of how nature is internalised.',
         comparison:
-          'Shelley trusts time to do the work of justice; Blake implies that human action is needed. Both poems serve as warnings to those who abuse power.',
+          'Both poets use neat, almost song-like forms. Blake uses form to expose the prison; Wordsworth uses form to enact recollection. The forms agree on one thing: nature is what the human mind needs in order to flourish.',
       },
     ],
     conclusion:
-      'Shelley and Blake both challenge the legitimacy of unchecked power, but from different temporal perspectives. Shelley offers a long-term philosophical view: all empires crumble. Blake offers an urgent political critique: people are suffering now. Together, they represent two essential modes of protest poetry.',
+      'Blake and Wordsworth — the two great Romantic visionaries of childhood — agree that nature is the proper home of the human spirit, but disagree on access. Blake is angry that children are denied it; Wordsworth is grateful that a single encounter can last a lifetime. Together they show Romantic nature poetry working as both protest and consolation.',
   },
   {
     id: 6,
-    title: 'Nature and the Passage of Time',
-    theme: 'Nature / Time',
-    poemA: 'To Autumn',
-    poetA: 'John Keats',
-    poemB: 'As Imperceptibly as Grief',
-    poetB: 'Emily Dickinson',
+    title: "Identity, Heritage and the Poet's Voice",
+    question:
+      'Compare how Ewing in "Origin Story" and McKay in "I Shall Return" present identity and belonging.',
+    theme: 'Identity & Voice',
+    poemA: 'Origin Story',
+    poetA: 'Eve L. Ewing',
+    poemB: 'I Shall Return',
+    poetB: 'Claude McKay',
     thesis:
-      'Both Keats and Dickinson explore the passing of summer into autumn as a metaphor for loss and change, but where Keats celebrates the beauty of the season\'s abundance, Dickinson traces its quiet, almost invisible departure.',
+      'Both Black diasporic poets reclaim identity through an act of imaginative return, but McKay writes a confident promise to a beloved homeland he will rejoin, while Ewing writes a defiant origin myth for a self the world has tried to define from outside.',
     paragraphs: [
       {
-        topic: 'How each poet presents the transition of seasons',
+        topic: 'How each speaker constructs the self',
         poemAPoint:
-          'Keats shows autumn at its peak, overflowing with ripeness and warmth.',
+          'Ewing writes a self-authored myth of origin — refusing inherited definitions and inventing her own beginning.',
         poemAEvidence:
-          '"Season of mists and mellow fruitfulness" -- the opening line immediately establishes abundance. The sibilance and assonance create a sensuous, drowsy atmosphere.',
+          'Ewing builds a personal mythology of Black identity rooted in self-creation rather than the dominant culture\'s narrative — the "origin story" is hers to tell.',
         poemBPoint:
-          'Dickinson focuses on the moment summer slips away, so gradually it goes unnoticed.',
+          "McKay's speaker constructs identity through love of a remembered Caribbean homeland (McKay was Jamaican-born, writing in the Harlem Renaissance).",
         poemBEvidence:
-          '"As imperceptibly as Grief" -- the opening simile equates the departure of summer with the slow fading of grief, suggesting both are processes the mind barely registers.',
+          'The speaker repeats "I shall return" as a refrain — promising to return to the streams, the village dances and the "fiddle and fife" of native life. The future-tense vow makes return the centre of the self.',
         comparison:
-          'Keats captures fullness; Dickinson captures absence. Both recognise that seasons change, but Keats lingers in the present moment while Dickinson observes the moment of disappearance.',
+          'Ewing builds identity by writing a new origin; McKay builds identity by promising a return to an old one. Both poets reject the idea that identity is what others have assigned — but Ewing invents, while McKay remembers.',
       },
       {
-        topic: 'Sensory imagery and emotional tone',
+        topic: 'The role of place and belonging',
         poemAPoint:
-          'Keats saturates the poem with rich sensory imagery -- sight, touch, taste, sound.',
+          "Ewing's claim is on the right to define one's own place in history and culture — heritage as creative inheritance.",
         poemAEvidence:
-          '"And full-grown lambs loud bleat from hilly bourn; / Hedge-crickets sing" -- the final stanza fills the air with autumn sounds, asserting that autumn has its own music.',
+          'The poem assembles fragments of cultural memory — Black women, urban Chicago, ancestors — into a self that belongs because she says it does.',
         poemBPoint:
-          'Dickinson uses more abstract, elusive imagery that mirrors the theme of imperceptibility.',
+          "McKay's claim is on a specific landscape — the rivers, the hills, the music of a remembered island.",
         poemBEvidence:
-          '"A quietness distilled" -- Dickinson\'s language is restrained and precise, matching the poem\'s subject: something so subtle it can barely be expressed.',
+          'The poem repeats "I shall return" as a structural anchor — place is the place the soul returns to, and identity follows.',
         comparison:
-          'Keats\'s rich sensory detail makes the reader experience autumn physically; Dickinson\'s spare, abstract language makes the reader experience the feeling of something slipping away. Both achieve their emotional power through careful control of imagery.',
+          'For Ewing, place is something the self builds; for McKay, place is something the self belongs to. Both insist that identity is not given — it is claimed. The difference is between authorship and homecoming.',
       },
       {
-        topic: 'Attitude towards endings and mortality',
+        topic: 'Form, voice and political assertion',
         poemAPoint:
-          'Keats accepts endings with grace, arguing that autumn should not envy spring.',
+          'Ewing uses contemporary free verse and direct address — the voice of a Black woman speaking on her own terms in 21st-century America.',
         poemAEvidence:
-          '"Where are the songs of Spring? Ay, where are they? / Think not of them, thou hast thy music too" -- Keats reassures autumn (and the reader) that every stage of life has its own value.',
+          'The conversational, declarative tone refuses the formal hierarchies of the inherited canon — voice itself becomes an act of self-definition.',
         poemBPoint:
-          'Dickinson presents departure as natural, peaceful, and even beautiful.',
+          'McKay uses the sonnet — a high-status European form — and bends it to a Caribbean subject and a diasporic voice.',
         poemBEvidence:
-          '"Our Summer made her light escape / Into the Beautiful" -- summer does not die but escapes gracefully into something greater, suggesting acceptance of the natural order.',
+          'The disciplined sonnet form gives the promise of return the weight of an oath; the chosen form is itself a claim on the literary tradition.',
         comparison:
-          'Both poets ultimately accept endings without bitterness. Keats finds consolation in the richness of the present; Dickinson finds consolation in the grace of departure. Both reflect a mature understanding of time.',
+          'Ewing rejects the inherited form to make space for new voice; McKay claims the inherited form to make space for new content. Both moves are political. The comparison shows two generations of Black diasporic poets — McKay (1920s) and Ewing (2010s) — using opposite formal strategies to do related work.',
       },
     ],
     conclusion:
-      'Keats and Dickinson both use the changing seasons to explore human responses to time and loss. Keats\'s sensuous celebration of autumn\'s abundance and Dickinson\'s quiet meditation on summer\'s departure complement each other perfectly, offering two ways of finding peace with impermanence.',
+      "McKay and Ewing both insist that Black identity is not something granted from outside — it is authored, remembered, returned to. McKay's sonnet of homecoming and Ewing's contemporary self-mythology are nearly a century apart, but both refuse to let the dominant culture tell the speaker who she is.",
   },
   {
     id: 7,
-    title: 'Patriotism and Sacrifice',
-    theme: 'War & Conflict',
-    poemA: 'The Soldier',
-    poetA: 'Rupert Brooke',
-    poemB: 'A Wife in London',
-    poetB: 'Thomas Hardy',
+    title: 'The Gaze, the Observed and the Photograph',
+    question:
+      'Compare how Ghose in "Decomposition" and Owen in "Disabled" present the way one person looks at another.',
+    theme: 'Identity & Voice',
+    poemA: 'Decomposition',
+    poetA: 'Zulfikar Ghose',
+    poemB: 'Disabled',
+    poetB: 'Wilfred Owen',
+    flag: 'Source confidence note: Decomposition has LOW source confidence in the verified library (CRITICAL_FLAGS #28). Quotation references should be checked against the official Eduqas anthology edition before use.',
     thesis:
-      'Both Brooke and Hardy write about death during the Boer / First World War era, but they present completely different perspectives on sacrifice: Brooke idealises the soldier\'s death as noble patriotism, while Hardy reveals the devastating emotional reality for those left behind.',
+      "Both poets examine the moral discomfort of looking at a suffering person, but Ghose interrogates the photographer's aestheticised gaze on a Bombay beggar, while Owen forces the reader to share the disabled veteran's own experience of being looked at and looked past.",
     paragraphs: [
       {
-        topic: 'How death is presented and framed',
+        topic: 'Whose gaze controls the poem',
         poemAPoint:
-          'Brooke presents the soldier\'s death as a gift to England, transforming the body into sacred ground.',
+          "Ghose places the photographer's composing eye at the centre — the poem is a self-critical confession of having framed a man as a picturesque image.",
         poemAEvidence:
-          '"there\'s some corner of a foreign field / That is for ever England" -- death becomes a form of imperial expansion, with the soldier\'s body sanctifying the foreign soil.',
+          'The speaker reflects on the photograph he took of a beggar sleeping on a Bombay pavement, eventually condemning his own act of treating a person as artistic composition. (Refer to the Eduqas anthology for verified phrasing — see source-confidence flag.)',
         poemBPoint:
-          'Hardy presents death as a cruel blow delivered through impersonal bureaucracy.',
+          'Owen positions the reader behind the eyes of the wounded veteran, who watches others looking at him and away from him.',
         poemBEvidence:
-          '"He -- has fallen" -- the telegram\'s blunt, fragmented delivery mirrors the emotional shock. The dash creates a painful pause before the devastating word.',
+          'Owen\'s soldier notes that the women\'s eyes "passed from him to the strong men that were whole" — he is the object of a gaze that prefers to look elsewhere.',
         comparison:
-          'Brooke\'s death is abstract and comforting; Hardy\'s is concrete and devastating. Brooke never shows the body or the grief; Hardy forces the reader to sit with the wife as she receives the news.',
+          'Ghose interrogates the photographer; Owen interrogates the looker by making the reader inhabit the looked-at. Both poems make the act of seeing a moral act — but they invert the position. Ghose puts us in the camera; Owen puts us in the chair.',
       },
       {
-        topic: 'The emotional perspective of each poem',
+        topic: 'How the suffering body is rendered',
         poemAPoint:
-          'Brooke writes from the soldier\'s own perspective, expressing calm acceptance and pride.',
+          'Ghose risks aestheticising poverty, then turns the poem itself into the indictment of that aestheticising.',
         poemAEvidence:
-          '"If I should die, think only this of me" -- the conditional "If" softens the reality, and the instruction to "think only this" controls the narrative, preventing grief or anger.',
+          "The poem's self-revision — moving from admiring the photograph to disavowing it — is the moral structure: beauty becomes a charge against the speaker. (Verified phrasing pending; flag applies.)",
         poemBPoint:
-          'Hardy writes from the perspective of the wife, showing private, domestic grief.',
+          "Owen catalogues the veteran's diminished body in plain, almost clinical phrases that refuse aesthetic consolation.",
         poemBEvidence:
-          '"She sits in the tawny vapour" -- the wife is passive, isolated, and overwhelmed. Hardy gives voice to those whom war propaganda typically ignores.',
+          'The veteran is reduced to "a queer disease" in the eyes of others — the deflating language strips away any patriotic glamour the recruitment poster once promised.',
         comparison:
-          'Brooke\'s poem is a public statement of principle; Hardy\'s is an intimate portrait of private suffering. Brooke asks the reader to admire; Hardy asks the reader to mourn.',
+          'Ghose worries that art beautifies suffering; Owen refuses any beauty at all. The two poets meet at the same ethical question — what does it mean to look? — but Ghose attacks the artist, while Owen attacks the casual viewer.',
       },
       {
-        topic: 'Context and the poet\'s relationship with war',
+        topic: 'Form and the moral weight of seeing',
         poemAPoint:
-          'Brooke wrote before experiencing front-line combat and died of illness en route to Gallipoli.',
+          'Ghose uses a measured, reflective form that mirrors the act of contemplating a still photograph — the poem is itself a kind of caption.',
         poemAEvidence:
-          'His idealised vision reflects pre-war enthusiasm. The poem was used as propaganda, read from the pulpit of St Paul\'s Cathedral at Easter 1915.',
+          "The poem's deliberate, considered movement enacts looking-then-judging — form embodies the moral process the poem describes. (Refer to the verified anthology edition for line-level references.)",
         poemBPoint:
-          'Hardy wrote during the Boer War and witnessed the gap between public patriotism and private grief.',
+          "Owen alternates short and long lines, present and past, to enact the soldier's broken consciousness as he sits being looked at.",
         poemBEvidence:
-          'Hardy\'s two-part structure mirrors the cruel timing of wartime communication: death arrives before the last hopeful letter.',
+          'The closing line — "Why don\'t they come?" — leaves the soldier waiting for a gaze that will not arrive, just as the women\'s eyes have already moved on.',
         comparison:
-          'Context is essential: Brooke\'s idealism was written before disillusionment set in; Hardy\'s realism reflects an older, more sceptical perspective. Both poems are products of their moment.',
+          "Ghose uses form to enact the slow work of moral self-correction; Owen uses form to enact the soldier's suspended exposure. Both poets make form a moral instrument: Ghose to indict the artist, Owen to indict the indifferent crowd.",
       },
     ],
     conclusion:
-      'Brooke and Hardy represent two poles of the wartime experience: the public ideal and the private reality. Brooke\'s sonnet offers the consolation of patriotic meaning; Hardy\'s poem strips that consolation away, revealing the raw human cost. An Eduqas comparison should examine how each poet\'s context shapes their message.',
+      'Ghose and Owen both make us examine the politics of looking. Ghose worries that the camera turns suffering into art; Owen forces us to feel suffering refuse to become art. Both poets ask the reader: when you look at a person in pain, what are you doing with what you see?',
   },
   {
     id: 8,
-    title: 'Power and Human Arrogance',
-    theme: 'Power / Nature',
-    poemA: 'Ozymandias',
-    poetA: 'Percy Bysshe Shelley',
-    poemB: 'Hawk Roosting',
-    poetB: 'Ted Hughes',
+    title: 'Gendered Voice, Class and Defiance',
+    question:
+      'Compare how Rossetti in "Cousin Kate" and Ewing in "Origin Story" present women speaking back against the world that named them.',
+    theme: 'Identity & Voice',
+    poemA: 'Cousin Kate',
+    poetA: 'Christina Rossetti',
+    poemB: 'Origin Story',
+    poetB: 'Eve L. Ewing',
     thesis:
-      'Both Shelley and Hughes explore the theme of absolute power and arrogance, but from contrasting angles: Shelley shows the inevitable collapse of human tyranny, while Hughes gives voice to a creature that embodies natural, unchallengeable dominance.',
+      'Across more than 150 years, both Rossetti and Ewing give us a female speaker who refuses the identity society has assigned her — Rossetti\'s "outcast" mother of an illegitimate son in Victorian England, Ewing\'s self-authoring Black woman in 21st-century America.',
     paragraphs: [
       {
-        topic: 'How the powerful figure is presented',
+        topic: 'How each speaker rejects the label given to her',
         poemAPoint:
-          'Ozymandias is presented indirectly, through ruins and a second-hand account, emphasising his irrelevance.',
+          'Rossetti\'s speaker is named "an unclean thing" by her community but refuses to accept the moral hierarchy that gilds her cousin and shames her.',
         poemAEvidence:
-          '"sneer of cold command" -- even the king\'s facial expression survives only because a sculptor carved it. The ruler is remembered through someone else\'s art, not through his own achievements.',
+          '"The neighbours call you good and pure, / Call me an outcast thing" — the parallelism exposes the labels as social arrangement, not moral truth. She closes with her son: "my shame, my pride".',
         poemBPoint:
-          'Hughes gives the hawk a direct, first-person voice that asserts total control.',
+          "Ewing's speaker rejects every inherited narrative about Black womanhood and authors her own origin in its place.",
         poemBEvidence:
-          '"I kill where I please because it is all mine" -- the hawk speaks with chilling certainty, claiming ownership of everything. There is no irony in the hawk\'s voice.',
+          'The poem enacts self-naming — the right to decide what one\'s story is. Ewing reframes "origin" itself as something a Black woman writes rather than receives.',
         comparison:
-          'Shelley\'s powerful figure is silent and ruined; Hughes\'s is articulate and supreme. The effect is that Shelley\'s poem critiques power from outside, while Hughes forces the reader to inhabit the mindset of the powerful.',
+          'Rossetti\'s speaker turns the moral label inside out — "shame" and "pride" sit in the same line. Ewing\'s speaker discards the labelling system altogether. Both moves are defiant; the difference is between subverting the language given and inventing new language.',
       },
       {
-        topic: 'The role of nature and time',
+        topic: 'How each poet makes voice into power',
         poemAPoint:
-          'Nature and time destroy Ozymandias\'s legacy completely.',
+          "Rossetti's speaker speaks directly to the cousin who replaced her — addressing the social order in the second person.",
         poemAEvidence:
-          '"Nothing beside remains. Round the decay / Of that colossal Wreck, boundless and bare" -- the desert has erased every trace of the empire.',
+          'The repeated "O Lady Kate, my cousin Kate" and "O cousin Kate, my love was true" turn the poem into a confrontation rather than a lament — speech itself becomes the act of defiance.',
         poemBPoint:
-          'The hawk exists outside time, claiming that "Nothing has changed since I began."',
+          "Ewing's speaker addresses the reader, the inherited tradition, and herself simultaneously, making the poem an act of public self-definition.",
         poemBEvidence:
-          '"Nothing has changed since I began. / My eye has permitted no change" -- the hawk denies the passage of time itself, suggesting a power so absolute it controls reality.',
+          'The conversational, declarative voice asserts authority over its own subject — the form is the argument: a Black woman authoring her own story in her own register.',
         comparison:
-          'Shelley shows that time defeats all tyrants; Hughes creates a figure that claims immunity from time. The reader, however, knows that even hawks die -- so Hughes\'s poem may carry its own quiet irony.',
+          'Rossetti speaks to a single cousin who stands for a whole social order; Ewing speaks to an audience that includes the dominant culture. Both turn voice into a refusal of imposed identity. Both insist: you do not get to name me.',
       },
       {
-        topic: 'The poet\'s attitude: critique or exploration?',
+        topic: 'Form, time and political stakes',
         poemAPoint:
-          'Shelley clearly critiques Ozymandias, using irony to undermine the king\'s boasts.',
+          'Rossetti uses a folk-ballad form — the form of wronged-woman songs — to put working-class female grievance into the literary record.',
         poemAEvidence:
-          '"Look on my Works, ye Mighty, and despair!" -- the dramatic irony is unmistakable. Shelley\'s political radicalism drives the poem\'s message.',
+          'The regular ballad rhythm and rhyme make the speaker\'s anger memorable, almost singable — Rossetti gives a "cottage maiden" the dignity of formal poetry.',
         poemBPoint:
-          'Hughes is more ambiguous -- he neither endorses nor condemns the hawk.',
+          'Ewing uses contemporary free verse to enact a refusal of inherited literary hierarchies.',
         poemBEvidence:
-          'Hughes said the poem was about "a hawk sitting in a wood" and resisted allegorical readings. The poem can be read as a study of natural power, a metaphor for dictatorship, or both.',
+          "The form's openness mirrors the speaker's claim: identity is not a closed inheritance but an open act of self-construction.",
         comparison:
-          'Shelley writes political satire with a clear moral; Hughes writes a dramatic monologue that invites multiple interpretations. Both, however, force the reader to think about what unchecked power looks and sounds like.',
+          'Rossetti uses an old form to give a poor woman literary voice; Ewing breaks form to give a Black woman political voice. Both poets recognise that form itself decides who gets heard. The 1862 ballad and the 21st-century free-verse self-myth do related work: a woman naming herself before the world can finish naming her.',
       },
     ],
     conclusion:
-      'Shelley and Hughes both examine absolute power, but Shelley warns against it while Hughes presents it without judgement. An Eduqas essay should explore how each poet\'s approach -- satirical distance versus dramatic immersion -- shapes the reader\'s response to the theme of power.',
-  },
-  {
-    id: 9,
-    title: 'Suffering and Social Critique',
-    theme: 'Power / War',
-    poemA: 'London',
-    poetA: 'William Blake',
-    poemB: 'A Wife in London',
-    poetB: 'Thomas Hardy',
-    thesis:
-      'Both Blake and Hardy use London as a setting to expose human suffering caused by those in power, but Blake targets institutional oppression across society, while Hardy focuses on the intimate grief of a single woman devastated by war.',
-    paragraphs: [
-      {
-        topic: 'How suffering is presented',
-        poemAPoint:
-          'Blake presents suffering as universal and inescapable -- every person in London is marked by it.',
-        poemAEvidence:
-          '"In every cry of every Man, / In every Infant\'s cry of fear" -- the anaphoric repetition of "every" insists that no one is spared.',
-        poemBPoint:
-          'Hardy focuses on one woman\'s private grief, making the reader witness her personal devastation.',
-        poemBEvidence:
-          '"She sits in the tawny vapour" -- the stillness and isolation of the wife create an intimate, claustrophobic portrait of loss.',
-        comparison:
-          'Blake\'s suffering is public and collective; Hardy\'s is private and individual. Both approaches are effective: Blake shows the scale of injustice, while Hardy gives it a human face.',
-      },
-      {
-        topic: 'The use of London as a setting',
-        poemAPoint:
-          'Blake presents London as a city controlled and corrupted by institutional power.',
-        poemAEvidence:
-          '"charter\'d street... charter\'d Thames" -- even the river is controlled. The city is a prison of the mind as much as the body.',
-        poemBPoint:
-          'Hardy uses London\'s fog and gloom as a physical manifestation of the wife\'s emotional state.',
-        poemBEvidence:
-          '"the tawny vapour / That the Thames-side lanes have uprolled" -- the fog isolates the wife, cutting her off from the world just as grief isolates her emotionally.',
-        comparison:
-          'For Blake, London is a political landscape; for Hardy, it is an emotional one. Both, however, present the city as a place of entrapment.',
-      },
-      {
-        topic: 'The poet\'s purpose and intended effect on the reader',
-        poemAPoint:
-          'Blake writes to provoke outrage and inspire political change.',
-        poemAEvidence:
-          '"the hapless Soldier\'s sigh / Runs in blood down Palace walls" -- the violent imagery is designed to shock the reader into recognising that the state is responsible for its people\'s suffering.',
-        poemBPoint:
-          'Hardy writes to create empathy and to highlight the personal cost that patriotic narratives ignore.',
-        poemBEvidence:
-          'The two-part structure forces the reader to experience the wife\'s hope being destroyed, generating profound sympathy.',
-        comparison:
-          'Blake addresses the reader as a citizen who should act; Hardy addresses the reader as a fellow human being who should feel. Both poets use their craft to challenge the reader\'s complacency.',
-      },
-    ],
-    conclusion:
-      'Blake and Hardy both expose suffering that those in power would prefer to hide. Blake\'s sweeping political critique and Hardy\'s intimate personal tragedy complement each other: together, they show that injustice operates at every scale, from the streets of a nation to the living room of a single home.',
-  },
-  {
-    id: 10,
-    title: 'Memory and Identity',
-    theme: 'Identity / Time',
-    poemA: 'The Prelude: stealing the boat',
-    poetA: 'William Wordsworth',
-    poemB: 'Excerpt from The Emigree',
-    poetB: 'Carol Rumens',
-    thesis:
-      'Both Wordsworth and Rumens explore how a powerful memory of place shapes identity, but Wordsworth\'s memory is of nature\'s terrifying power forcing self-knowledge, while Rumens\'s speaker clings to an idealised memory of a homeland that may no longer exist.',
-    paragraphs: [
-      {
-        topic: 'The nature of the memory and its emotional charge',
-        poemAPoint:
-          'Wordsworth describes a formative childhood memory that shifted from excitement to terror.',
-        poemAEvidence:
-          '"a huge peak, black and huge, / As if with voluntary purpose" -- the mountain becomes an active, threatening presence. The memory is vivid precisely because it was frightening.',
-        poemBPoint:
-          'Rumens\'s speaker treasures a memory of their homeland that remains bright and beautiful despite the reality of exile.',
-        poemBEvidence:
-          '"my city takes me dancing" -- the speaker\'s memory is warm, personalised, and alive, even though it may be a place they can never return to.',
-        comparison:
-          'Both memories are transformative, but Wordsworth\'s shapes identity through fear and humility, while Rumens\'s shapes identity through love and longing. Both show that memory is selective.',
-      },
-      {
-        topic: 'The relationship between place and selfhood',
-        poemAPoint:
-          'Wordsworth\'s encounter with the Lake District mountain teaches him about his own smallness.',
-        poemAEvidence:
-          '"for many days, my brain / Worked with a dim and undetermined sense / Of unknown modes of being" -- the landscape reveals truths about existence that the young Wordsworth cannot yet articulate.',
-        poemBPoint:
-          'Rumens\'s speaker defines herself through her connection to a lost city, which becomes part of who she is.',
-        poemBEvidence:
-          '"I have no passport, there\'s no way back at all / but my city comes to me" -- the city is internalised. Identity is not dependent on physical return.',
-        comparison:
-          'For Wordsworth, place shapes identity through direct encounter; for Rumens, place shapes identity through absence and memory. Both poets suggest that our deepest sense of self is tied to landscape.',
-      },
-      {
-        topic: 'How each poem handles the passage of time',
-        poemAPoint:
-          'Wordsworth writes retrospectively, looking back from adulthood at a childhood experience.',
-        poemAEvidence:
-          'The extract is from The Prelude, an autobiographical poem tracing the growth of Wordsworth\'s mind. The adult poet understands what the child could not.',
-        poemBPoint:
-          'Rumens\'s speaker resists the passage of time, insisting that her memory remains unchanged.',
-        poemBEvidence:
-          '"my original view, the bright, filled paperweight" -- the memory is preserved like an object, unchanging and untouchable, even as the real city may have been destroyed.',
-        comparison:
-          'Wordsworth accepts that time brings understanding; Rumens\'s speaker uses memory to defy time. Both poems show how the past continues to shape the present.',
-      },
-    ],
-    conclusion:
-      'Wordsworth and Rumens both demonstrate that identity is forged through our relationship with place. Wordsworth\'s sublime encounter with nature humbles and educates; Rumens\'s idealised memory sustains and protects. Both poems are ultimately about what we carry with us -- and how the places we have known become part of who we are.',
+      'Rossetti and Ewing — Victorian and contemporary, English and American, white and Black — share the same fundamental project: a woman speaker takes back the right to define herself. Rossetti does it from inside the moral language of her time; Ewing does it by stepping outside that language entirely. Together they show how poetry has long been a place where the silenced answer back.',
   },
 ]
 
@@ -613,16 +526,25 @@ export default function EduqasEssayPlansPage() {
             Comparison Essay Plans
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            10 fully planned comparison essays for Eduqas Component 1 Section B.
-            Each plan includes a thesis, three comparative paragraphs with
-            evidence, and a conclusion.
+            {ESSAY_PLANS.length} fully planned comparison essays drawn from the Eduqas GCSE 2025
+            anthology. Each plan provides a comparative question, a thesis, three comparative
+            paragraphs with evidence, and a conclusion.
           </p>
 
-          <div className="mt-5 flex items-start gap-2 rounded-lg bg-blue-500/5 border border-blue-500/10 p-3 max-w-2xl">
+          <div className="mt-5 flex items-start gap-2 rounded-lg bg-emerald-500/5 border border-emerald-500/10 p-3 max-w-2xl">
+            <Info className="mt-0.5 size-4 shrink-0 text-emerald-400" />
+            <p className="text-caption text-muted-foreground">
+              <strong className="text-foreground">Note:</strong> These essay plans are aligned to
+              the <strong className="text-foreground">Eduqas GCSE 2025 anthology</strong> (12
+              poems). Plans for the legacy 18-poem anthology have been retired.
+            </p>
+          </div>
+
+          <div className="mt-3 flex items-start gap-2 rounded-lg bg-blue-500/5 border border-blue-500/10 p-3 max-w-2xl">
             <Info className="mt-0.5 size-4 shrink-0 text-blue-400" />
             <p className="text-caption text-muted-foreground">
-              The Eduqas exam names one poem and asks you to compare it with
-              another of your choice. These plans show you how to structure a
+              The Eduqas Component 1 Section B exam names one poem and asks you to compare it with
+              another of your choice from the anthology. These plans show you how to structure a
               high-mark comparison with evidence from both poems.
             </p>
           </div>
@@ -643,15 +565,15 @@ export default function EduqasEssayPlansPage() {
                     How to use these essay plans
                   </h3>
                   <p className="mt-1 text-body-sm text-muted-foreground">
-                    These are model plans, not model answers. Use them to
-                    practise structuring your own comparisons, not to memorise
-                    and reproduce.
+                    These are model plans, not model answers. Use them to practise structuring your
+                    own comparisons, not to memorise and reproduce.
                   </p>
                 </div>
                 <ul className="grid gap-2 text-body-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <FileText className="mt-0.5 size-4 shrink-0 text-clay-600" />
-                    Read the thesis -- it states the argument the whole essay will prove
+                    Read the question, then the thesis -- the thesis states the argument the whole
+                    essay will prove
                   </li>
                   <li className="flex items-start gap-2">
                     <FileText className="mt-0.5 size-4 shrink-0 text-clay-600" />
@@ -659,7 +581,9 @@ export default function EduqasEssayPlansPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <FileText className="mt-0.5 size-4 shrink-0 text-clay-600" />
-                    Evidence is given as brief references, not full quotations from copyrighted poems
+                    For poems still in copyright (Catrin, Blackberry Picking, Kamikaze, Origin
+                    Story, Decomposition), evidence is given as brief paraphrase or short
+                    fair-dealing references -- not full quotations
                   </li>
                   <li className="flex items-start gap-2">
                     <FileText className="mt-0.5 size-4 shrink-0 text-clay-600" />
@@ -677,7 +601,7 @@ export default function EduqasEssayPlansPage() {
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            All 10 Essay Plans
+            All {ESSAY_PLANS.length} Essay Plans
           </h2>
         </div>
 
@@ -688,11 +612,11 @@ export default function EduqasEssayPlansPage() {
 
       {/* ── Copyright footer ─────────────────────────────────────── */}
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        All quotations are brief references for the purpose of private study and
-        educational criticism under UK fair-dealing provisions (Copyright,
-        Designs and Patents Act 1988, s.30). Full poem texts are not reproduced.
-        All quotations remain the intellectual property of the respective rights
-        holders.
+        All quotations are brief references for the purpose of private study and educational
+        criticism under UK fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30).
+        Full poem texts are not reproduced. All quotations remain the intellectual property of the
+        respective rights holders. For full anthology text, students should consult the
+        board-licensed Eduqas Poetry Anthology.
       </footer>
     </div>
   )
@@ -732,14 +656,28 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
       </summary>
 
       <div className="border-t border-border/60 px-5 pb-6 pt-5 sm:px-6 space-y-6">
+        {/* Question */}
+        <div className="rounded-lg bg-amber-500/5 border border-amber-500/10 p-4">
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-clay-600 mb-2">
+            Comparative Question
+          </h4>
+          <p className="text-body-sm text-foreground leading-relaxed italic">{plan.question}</p>
+        </div>
+
+        {/* Optional flag */}
+        {plan.flag && (
+          <div className="flex items-start gap-2 rounded-lg bg-amber-500/10 border border-amber-500/20 p-3">
+            <AlertTriangle className="mt-0.5 size-4 shrink-0 text-clay-600" />
+            <p className="text-xs text-foreground/90 leading-relaxed">{plan.flag}</p>
+          </div>
+        )}
+
         {/* Thesis */}
         <div className="rounded-lg bg-primary/5 border border-primary/10 p-4">
           <h4 className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
             Thesis / Argument
           </h4>
-          <p className="text-body-sm text-foreground leading-relaxed">
-            {plan.thesis}
-          </p>
+          <p className="text-body-sm text-foreground leading-relaxed">{plan.thesis}</p>
         </div>
 
         {/* Paragraphs */}
@@ -755,12 +693,8 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
             <div className="grid gap-3 sm:grid-cols-2">
               {/* Poem A */}
               <div className="rounded-lg border border-border/60 bg-muted/30 p-3 space-y-2">
-                <p className="text-xs font-semibold text-foreground">
-                  {plan.poemA}
-                </p>
-                <p className="text-body-sm text-muted-foreground">
-                  {para.poemAPoint}
-                </p>
+                <p className="text-xs font-semibold text-foreground">{plan.poemA}</p>
+                <p className="text-body-sm text-muted-foreground">{para.poemAPoint}</p>
                 <div className="flex items-start gap-2 rounded bg-card p-2">
                   <Quote className="mt-0.5 size-3 shrink-0 text-muted-foreground" />
                   <p className="text-xs text-muted-foreground italic leading-relaxed">
@@ -771,12 +705,8 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
 
               {/* Poem B */}
               <div className="rounded-lg border border-border/60 bg-muted/30 p-3 space-y-2">
-                <p className="text-xs font-semibold text-foreground">
-                  {plan.poemB}
-                </p>
-                <p className="text-body-sm text-muted-foreground">
-                  {para.poemBPoint}
-                </p>
+                <p className="text-xs font-semibold text-foreground">{plan.poemB}</p>
+                <p className="text-body-sm text-muted-foreground">{para.poemBPoint}</p>
                 <div className="flex items-start gap-2 rounded bg-card p-2">
                   <Quote className="mt-0.5 size-3 shrink-0 text-muted-foreground" />
                   <p className="text-xs text-muted-foreground italic leading-relaxed">
@@ -802,9 +732,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
           <h4 className="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-2">
             Conclusion
           </h4>
-          <p className="text-body-sm text-muted-foreground leading-relaxed">
-            {plan.conclusion}
-          </p>
+          <p className="text-body-sm text-muted-foreground leading-relaxed">{plan.conclusion}</p>
         </div>
       </div>
     </details>

@@ -9,7 +9,7 @@ const SLUG = 'explorers-or-boys-messing-about'
 export const metadata: Metadata = {
   title: 'Explorers, or boys messing about? — Steven Morris | The English Hub',
   description:
-    'Study guide stub for Explorers, or boys messing about? by Steven Morris. Pearson Edexcel International GCSE English Language A (4EA1) Section A non-fiction anthology.',
+    'Study guide for Explorers, or boys messing about? by Steven Morris (originally The Guardian, 24 Jan 2003; adapted for the Edexcel IGCSE Anthology by Pearson). Paper 1 Section A — Anthology Non-Fiction (4EA1). Always use the anthology version when answering Edexcel exam questions.',
   alternates: {
     canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
   },

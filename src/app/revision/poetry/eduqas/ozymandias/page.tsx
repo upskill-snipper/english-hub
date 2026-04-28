@@ -21,7 +21,7 @@ const ozymandias: PoemData = {
       annotations: [
         {
           type: 'Frame narrative',
-          note: 'Shelley distances himself from the story by using a second-hand account. The tale passes through multiple voices (traveller, sculptor, Ozymandias himself), undermining the permanence of the king\'s legacy.',
+          note: "Shelley distances himself from the story by using a second-hand account. The tale passes through multiple voices (traveller, sculptor, Ozymandias himself), undermining the permanence of the king's legacy.",
           color: '#3b82f6',
         },
         {
@@ -32,7 +32,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'Who said — "Two vast and trunkless legs of stone',
+      text: 'Who said: Two vast and trunkless legs of stone',
       annotations: [
         {
           type: 'Imagery',
@@ -42,7 +42,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'Stand in the desert. . . . Near them, on the sand,',
+      text: 'Stand in the desert. Near them, on the sand,',
       annotations: [
         {
           type: 'Symbolism',
@@ -52,7 +52,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'Half sunk a shattered visage lies, whose frown,',
+      text: 'Half sunk, a shattered visage lies, whose frown,',
       annotations: [
         {
           type: 'Imagery',
@@ -97,17 +97,17 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'The hand that mocked them, and the heart that fed;',
+      text: 'The hand that mocked them and the heart that fed:',
       annotations: [
         {
           type: 'Ambiguity',
-          note: '"The hand that mocked" could refer to the sculptor\'s hand (which imitated/mocked the king\'s expressions) or the king\'s own hand (which mocked his people through tyranny).',
+          note: "\"The hand that mocked\" could refer to the sculptor's hand (which imitated/mocked the king's expressions) or the king's own hand (which mocked his people through tyranny).",
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'And on the pedestal, these words appear:',
+      text: 'And on the pedestal these words appear:',
       annotations: [
         {
           type: 'Structure',
@@ -117,7 +117,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: '"My name is Ozymandias, King of Kings;',
+      text: "'My name is Ozymandias, king of kings:",
       annotations: [
         {
           type: 'Hubris',
@@ -127,7 +127,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'Look on my Works, ye Mighty, and despair!"',
+      text: "Look on my Works, ye Mighty, and despair!'",
       annotations: [
         {
           type: 'Dramatic irony',
@@ -250,7 +250,7 @@ Frame narrative: The poem uses three layers of voice — the speaker, the travel
     {
       quote: 'Nothing beside remains',
       analysis:
-        'Three of the most powerful words in English poetry. After the grandiose inscription, this short, blunt sentence demolishes everything. The plain, monosyllabic language contrasts sharply with the king\'s elaborate boast.',
+        "Three of the most powerful words in English poetry. After the grandiose inscription, this short, blunt sentence demolishes everything. The plain, monosyllabic language contrasts sharply with the king's elaborate boast.",
       themes: ['Transience of power', 'Irony', 'Time and decay'],
     },
     {
@@ -293,7 +293,7 @@ Frame narrative: The poem uses three layers of voice — the speaker, the travel
       device: 'Juxtaposition',
       example: '"King of Kings" vs "Nothing beside remains"',
       effect:
-        'The poem places Ozymandias\'s grandiose self-description directly beside the reality of his total obscurity. The bigger the boast, the more devastating the reality.',
+        "The poem places Ozymandias's grandiose self-description directly beside the reality of his total obscurity. The bigger the boast, the more devastating the reality.",
       lineRef: 11,
     },
     {
@@ -337,7 +337,7 @@ const comparisons = [
     poet: 'Thomas Hardy',
     href: '/revision/poetry/eduqas/a-wife-in-london',
     reason:
-      'Both poems use bitter dramatic irony. Hardy\'s wife receives news after her husband has died, just as Ozymandias\'s boast survives after his power has crumbled. Both expose the gap between human hopes and reality.',
+      "Both poems use bitter dramatic irony. Hardy's wife receives news after her husband has died, just as Ozymandias's boast survives after his power has crumbled. Both expose the gap between human hopes and reality.",
     themes: ['Dramatic irony', 'Loss', 'Time'],
   },
 ]
@@ -345,22 +345,185 @@ const comparisons = [
 /* ── Page component ───────────────────────────────────────────────── */
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'oz-1', question: 'What is the main theme of Ozymandias?', type: 'multiple-choice', options: ['The power of nature', 'The transience of political power', 'The beauty of art', 'Travel'], correctIndex: 1, explanation: 'Shelley explores how even the mightiest rulers are eventually forgotten. The ruined statue symbolises the inevitable decline of all power.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'oz-2', question: 'What does "sneer of cold command" reveal?', type: 'multiple-choice', options: ['A kind ruler', 'A cruel and authoritarian tyrant', 'A frightened man', 'An artist'], correctIndex: 1, explanation: '"Sneer" shows contempt, "cold" shows lack of empathy, "command" shows authority. Together they characterise a tyrant.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'oz-3', question: 'What is the effect of "Nothing beside remains"?', type: 'multiple-choice', options: ['The statue is preserved', 'It devastatingly undercuts the boastful inscription', 'It describes the desert positively', 'The traveller is lost'], correctIndex: 1, explanation: 'Three blunt words demolish the king\'s grand claims after his boast about his "Works."', topic: 'Language', difficulty: 'foundation' },
-  { id: 'oz-4', question: 'What form does it take?', type: 'multiple-choice', options: ['Free verse', 'A sonnet with irregular rhyme scheme', 'A ballad', 'A dramatic monologue'], correctIndex: 1, explanation: 'A 14-line sonnet with deliberately irregular rhyme, mirroring the theme of broken power structures.', topic: 'Structure', difficulty: 'foundation' },
-  { id: 'oz-5', question: 'What is significant about the sculptor?', type: 'multiple-choice', options: ['He failed', 'His art survives while the empire does not — art outlasts power', 'He was punished', 'He narrates'], correctIndex: 1, explanation: 'The sculptor\'s work endures while the king\'s achievements have vanished — art outlasts tyrannical power.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'oz-6', question: 'What type of irony is in "Look on my Works... and despair!"?', type: 'multiple-choice', options: ['Verbal irony', 'Dramatic irony', 'Cosmic irony', 'Socratic irony'], correctIndex: 1, explanation: 'Dramatic irony — the reader knows what Ozymandias did not: his works have completely vanished.', topic: 'Language', difficulty: 'higher' },
-  { id: 'oz-7', question: 'Why use a frame narrative?', type: 'multiple-choice', options: ['To make it longer', 'To distance the reader from Ozymandias, emphasising how his legacy has faded', 'To show the traveller is unreliable', 'For a happy ending'], correctIndex: 1, explanation: 'The layered retelling through multiple voices undermines the king\'s desire for a permanent, direct legacy.', topic: 'Structure', difficulty: 'higher' },
-  { id: 'oz-8', question: 'Who is Ozymandias based on?', type: 'multiple-choice', options: ['Alexander the Great', 'Caesar', 'Ramesses II of Egypt', 'Genghis Khan'], correctIndex: 2, explanation: 'Ozymandias is the Greek name for Ramesses II, inspired by a statue fragment acquired by the British Museum.', topic: 'Context', difficulty: 'higher' },
-  { id: 'oz-9', question: 'What does the final line contribute?', type: 'multiple-choice', options: ['Celebrates the desert', 'Nature has completely erased the empire — giving nature the final word', 'The traveller continues', 'Describes where the statue was built'], correctIndex: 1, explanation: 'The endless desert has reclaimed everything. Nature, not the king, has the last word.', topic: 'Language', difficulty: 'grade-9' },
-  { id: 'oz-10', question: 'What was Shelley\'s political stance?', type: 'multiple-choice', options: ['Conservative', 'A radical Romantic who opposed tyranny and monarchy', 'Apolitical', 'Monarchist'], correctIndex: 1, explanation: 'Shelley was a radical who opposed all forms of tyranny. The poem was a challenge to the monarchies of his own time.', topic: 'Context', difficulty: 'grade-9' },
+  {
+    id: 'oz-1',
+    question: 'What is the main theme of Ozymandias?',
+    type: 'multiple-choice',
+    options: [
+      'The power of nature',
+      'The transience of political power',
+      'The beauty of art',
+      'Travel',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Shelley explores how even the mightiest rulers are eventually forgotten. The ruined statue symbolises the inevitable decline of all power.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oz-2',
+    question: 'What does "sneer of cold command" reveal?',
+    type: 'multiple-choice',
+    options: ['A kind ruler', 'A cruel and authoritarian tyrant', 'A frightened man', 'An artist'],
+    correctIndex: 1,
+    explanation:
+      '"Sneer" shows contempt, "cold" shows lack of empathy, "command" shows authority. Together they characterise a tyrant.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oz-3',
+    question: 'What is the effect of "Nothing beside remains"?',
+    type: 'multiple-choice',
+    options: [
+      'The statue is preserved',
+      'It devastatingly undercuts the boastful inscription',
+      'It describes the desert positively',
+      'The traveller is lost',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Three blunt words demolish the king\'s grand claims after his boast about his "Works."',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oz-4',
+    question: 'What form does it take?',
+    type: 'multiple-choice',
+    options: [
+      'Free verse',
+      'A sonnet with irregular rhyme scheme',
+      'A ballad',
+      'A dramatic monologue',
+    ],
+    correctIndex: 1,
+    explanation:
+      'A 14-line sonnet with deliberately irregular rhyme, mirroring the theme of broken power structures.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oz-5',
+    question: 'What is significant about the sculptor?',
+    type: 'multiple-choice',
+    options: [
+      'He failed',
+      'His art survives while the empire does not — art outlasts power',
+      'He was punished',
+      'He narrates',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The sculptor's work endures while the king's achievements have vanished — art outlasts tyrannical power.",
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oz-6',
+    question: 'What type of irony is in "Look on my Works... and despair!"?',
+    type: 'multiple-choice',
+    options: ['Verbal irony', 'Dramatic irony', 'Cosmic irony', 'Socratic irony'],
+    correctIndex: 1,
+    explanation:
+      'Dramatic irony — the reader knows what Ozymandias did not: his works have completely vanished.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oz-7',
+    question: 'Why use a frame narrative?',
+    type: 'multiple-choice',
+    options: [
+      'To make it longer',
+      'To distance the reader from Ozymandias, emphasising how his legacy has faded',
+      'To show the traveller is unreliable',
+      'For a happy ending',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The layered retelling through multiple voices undermines the king's desire for a permanent, direct legacy.",
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oz-8',
+    question: 'Who is Ozymandias based on?',
+    type: 'multiple-choice',
+    options: ['Alexander the Great', 'Caesar', 'Ramesses II of Egypt', 'Genghis Khan'],
+    correctIndex: 2,
+    explanation:
+      'Ozymandias is the Greek name for Ramesses II, inspired by a statue fragment acquired by the British Museum.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oz-9',
+    question: 'What does the final line contribute?',
+    type: 'multiple-choice',
+    options: [
+      'Celebrates the desert',
+      'Nature has completely erased the empire — giving nature the final word',
+      'The traveller continues',
+      'Describes where the statue was built',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The endless desert has reclaimed everything. Nature, not the king, has the last word.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'oz-10',
+    question: "What was Shelley's political stance?",
+    type: 'multiple-choice',
+    options: [
+      'Conservative',
+      'A radical Romantic who opposed tyranny and monarchy',
+      'Apolitical',
+      'Monarchist',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Shelley was a radical who opposed all forms of tyranny. The poem was a challenge to the monarchies of his own time.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'Ozymandias explores the transience of power, hubris, the supremacy of nature and time, and art\'s endurance.', keyPoints: ['Power is temporary — even the mightiest rulers are forgotten', 'Art outlasts political power', 'Nature reclaims everything', 'Hubris leads to downfall'] },
-  { topic: 'Language & Imagery', summary: 'Shelley uses dramatic irony, alliteration, juxtaposition, and vivid desert imagery.', keyPoints: ['"Sneer of cold command" — hard consonants characterise the tyrant', '"Nothing beside remains" — blunt monosyllables', '"Boundless and bare" / "lone and level" — alliteration emphasises emptiness', 'Dramatic irony in "Look on my Works"'] },
-  { topic: 'Structure & Form', summary: 'Irregular sonnet with frame narrative and volta at "Nothing beside remains."', keyPoints: ['Irregular rhyme scheme — reflects decay', 'Volta at line 12 — devastating turn', 'Frame narrative — three voices distance the reader', 'Enjambment — flowing momentum toward decay'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      "Ozymandias explores the transience of power, hubris, the supremacy of nature and time, and art's endurance.",
+    keyPoints: [
+      'Power is temporary — even the mightiest rulers are forgotten',
+      'Art outlasts political power',
+      'Nature reclaims everything',
+      'Hubris leads to downfall',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary: 'Shelley uses dramatic irony, alliteration, juxtaposition, and vivid desert imagery.',
+    keyPoints: [
+      '"Sneer of cold command" — hard consonants characterise the tyrant',
+      '"Nothing beside remains" — blunt monosyllables',
+      '"Boundless and bare" / "lone and level" — alliteration emphasises emptiness',
+      'Dramatic irony in "Look on my Works"',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary: 'Irregular sonnet with frame narrative and volta at "Nothing beside remains."',
+    keyPoints: [
+      'Irregular rhyme scheme — reflects decay',
+      'Volta at line 12 — devastating turn',
+      'Frame narrative — three voices distance the reader',
+      'Enjambment — flowing momentum toward decay',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -378,11 +541,14 @@ export default function OzymandiasEduqasPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Eduqas Poetry", url: "https://theenglishhub.app/revision/poetry/eduqas" },
-          { name: "Ozymandias", url: "https://theenglishhub.app/revision/poetry/eduqas/ozymandias" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
+          {
+            name: 'Ozymandias',
+            url: 'https://theenglishhub.app/revision/poetry/eduqas/ozymandias',
+          },
         ]}
       />
       <div>
@@ -396,18 +562,26 @@ export default function OzymandiasEduqasPage() {
           Back to Eduqas Poetry
         </Button>
 
+        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
+          <p className="font-semibold mb-1">Legacy anthology notice</p>
+          <p className="text-amber-100/90 leading-relaxed">
+            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
+            does not include this poem. The content remains as a study reference.
+          </p>
+        </div>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
             <BookOpen className="size-5 text-clay-600" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              Ozymandias
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">Ozymandias</h1>
             <p className="text-body-sm text-muted-foreground">
               Percy Bysshe Shelley &middot; Eduqas Poetry Anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Eduqas</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              Eduqas
+            </Badge>
           </div>
         </div>
       </div>
@@ -431,13 +605,11 @@ export default function OzymandiasEduqasPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Eduqas exam asks you to compare two poems from the anthology.
-          These are strong pairings with Ozymandias.
+          The Eduqas exam asks you to compare two poems from the anthology. These are strong
+          pairings with Ozymandias.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -451,9 +623,7 @@ export default function OzymandiasEduqasPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span
@@ -470,10 +640,9 @@ export default function OzymandiasEduqasPage() {
       </section>
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        Poem text is reproduced for the purpose of private study and educational
-        criticism under UK fair-dealing provisions (Copyright, Designs and
-        Patents Act 1988, s.30). No commercial use is intended. All quotations
-        remain the intellectual property of the respective rights holders.
+        Ozymandias by Percy Bysshe Shelley (1818) is in the public domain. Source: Project Gutenberg
+        / Wikisource &mdash; verified against the Verified Library. Reproduced freely for
+        educational use.
       </footer>
     </div>
   )

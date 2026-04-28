@@ -338,25 +338,21 @@ function CommissionSection() {
 /* ─── Your Impact ────────────────────────────────────────────── */
 
 function ImpactSection() {
+  // 2026-04-25: previous stats ("2,400+ Students using the platform",
+  // "15,000+ Essays marked by AI", "4.8/5 Average student rating") were
+  // not verifiable at launch and have been withdrawn per brand-voice §11.5.
+  // Same for the previous fabricated "Sophie T." testimonial. Real Founding
+  // Creator testimonials will be added once consenting partners join.
   const stats = [
-    { value: '2,400+', label: 'Students using the platform', icon: Users },
-    { value: '15,000+', label: 'Essays marked by AI', icon: GraduationCap },
-    { value: '4.8/5', label: 'Average student rating', icon: Award },
+    { value: '20%', label: 'Recurring commission', icon: GraduationCap },
+    { value: '30-day', label: 'Cookie window', icon: Users },
+    { value: '£20/yr', label: 'Your code drops the price for followers', icon: Award },
   ]
 
-  const testimonials = [
-    {
-      quote:
-        'I started sharing The English Hub because I genuinely use it. The fact I earn from it is a bonus — my followers trust my recommendations because they are real.',
-      name: 'Sophie T.',
-      role: 'Student Creator, 12K followers',
-    },
-    {
-      quote:
-        'As a tutor, recommending The English Hub was a no-brainer. My students improve faster and I earn commission. Everyone wins.',
-      name: 'Mr. James R.',
-      role: 'Private Tutor & Affiliate',
-    },
+  const testimonials: Array<{ quote: string; name: string; role: string }> = [
+    // 2026-04-25: previous "Sophie T." and "Mr. James R." testimonials were
+    // fabricated and have been removed. This array stays empty until real
+    // Founding Creator quotes are captured with explicit reuse consent.
   ]
 
   return (
@@ -385,21 +381,32 @@ function ImpactSection() {
         </div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {testimonials.map((t) => (
-            <Card key={t.name} className="p-0 border-border/40">
-              <CardContent className="py-8 px-6">
-                <p className="text-foreground leading-relaxed mb-5 italic">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div>
-                  <div className="font-semibold text-foreground">{t.name}</div>
-                  <div className="text-sm text-muted-foreground">{t.role}</div>
-                </div>
-              </CardContent>
+        {testimonials.length > 0 ? (
+          <div className="grid md:grid-cols-2 gap-6">
+            {testimonials.map((t) => (
+              <Card key={t.name} className="p-0 border-border/40">
+                <CardContent className="py-8 px-6">
+                  <p className="text-foreground leading-relaxed mb-5 italic">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div>
+                    <div className="font-semibold text-foreground">{t.name}</div>
+                    <div className="text-sm text-muted-foreground">{t.role}</div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div className="max-w-2xl mx-auto text-center">
+            <Card className="p-8 border-dashed border-border/60 bg-card/40">
+              <p className="text-muted-foreground italic">
+                We are at launch. Founding Creator words will appear here as the first partners join
+                — verified, consented, real.
+              </p>
             </Card>
-          ))}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   )

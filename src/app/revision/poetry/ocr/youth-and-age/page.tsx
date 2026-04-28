@@ -1,15 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Clock,
-  Sparkles,
-  BookOpen,
-  Lock,
-  CheckCircle2,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Clock, Sparkles, BookOpen, Lock, CheckCircle2 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
@@ -28,7 +20,7 @@ const POEMS: Poem[] = [
     poet: 'W.B. Yeats',
     slug: 'the-song-of-the-old-mother',
     publicDomain: true,
-    hook: 'A weary old woman contrasts her ceaseless labour with her children\'s idle ease.',
+    hook: "A weary old woman contrasts her ceaseless labour with her children's idle ease.",
   },
   {
     title: 'Death the Leveller',
@@ -56,18 +48,18 @@ const POEMS: Poem[] = [
     poet: 'Ben Jonson',
     slug: 'on-my-first-son',
     publicDomain: true,
-    hook: "A father's anguished elegy for his seven-year-old son, his \"best piece of poetry\".",
+    hook: 'A father\'s anguished elegy for his seven-year-old son, his "best piece of poetry".',
   },
   {
     title: 'Piano',
     poet: 'D.H. Lawrence',
     slug: 'piano',
     publicDomain: true,
-    hook: 'A song carries the speaker back to the lost intimacy of childhood by his mother\'s knee.',
+    hook: "A song carries the speaker back to the lost intimacy of childhood by his mother's knee.",
   },
   {
     title: 'Walking Away',
-    poet: 'C. Day Lewis',
+    poet: 'C. Day-Lewis',
     slug: 'walking-away',
     publicDomain: false,
     hook: 'A father remembers the moment he first watched his young son walk away into independence.',
@@ -91,10 +83,10 @@ const POEMS: Poem[] = [
     poet: 'Margaret Walker',
     slug: 'lineage',
     publicDomain: false,
-    hook: "A granddaughter celebrates the strength and resilience of her foremothers.",
+    hook: 'A granddaughter celebrates the strength and resilience of her foremothers.',
   },
   {
-    title: 'The Emigrée',
+    title: 'The Émigrée',
     poet: 'Carol Rumens',
     slug: 'the-emigree',
     publicDomain: false,
@@ -168,7 +160,12 @@ export default function OCRYouthAndAgePage() {
         </div>
       </section>
 
-      <StudyTools textName="OCR Youth and Age Poetry" textType="anthology" examBoard="OCR" variant="banner" />
+      <StudyTools
+        textName="OCR Youth and Age Poetry"
+        textType="anthology"
+        examBoard="OCR"
+        variant="banner"
+      />
 
       <section>
         <div className="mb-5 flex items-center gap-3">
@@ -180,11 +177,7 @@ export default function OCRYouthAndAgePage() {
           {POEMS.map((poem) => (
             <Link
               key={poem.slug}
-              href={
-                poem.publicDomain
-                  ? `/revision/poetry/ocr/youth-and-age/${poem.slug}`
-                  : '#'
-              }
+              href={poem.publicDomain ? `/revision/poetry/ocr/youth-and-age/${poem.slug}` : '#'}
               className={`group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 ${
                 poem.publicDomain
                   ? 'hover:border-border hover:shadow-card-hover'
@@ -221,9 +214,7 @@ export default function OCRYouthAndAgePage() {
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">
-          Why are some poems locked?
-        </h2>
+        <h2 className="text-heading-sm font-heading text-foreground">Why are some poems locked?</h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
           Older poems are public domain so we provide full annotated study pages. More recent poems
           are still in copyright -- for those we offer context, themes and key quotation analysis
@@ -234,9 +225,7 @@ export default function OCRYouthAndAgePage() {
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-clay-600" />
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Explore other clusters
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Explore other clusters</h2>
         <Button
           variant="default"
           size="lg"

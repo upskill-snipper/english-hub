@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CourseModule } from './courses';
+import type { CourseModule } from './courses'
 
 export const litP2Modules: CourseModule[] = [
   // ──────────────────────────────────────────────
@@ -93,8 +93,7 @@ export const litP2Modules: CourseModule[] = [
       },
       {
         id: 'edx-lt2-m1-q4',
-        question:
-          'Which section of Paper 2 is "open book", and what does that mean in practice?',
+        question: 'Which section of Paper 2 is "open book", and what does that mean in practice?',
         options: [
           'Section A — you receive the full novel text',
           'Section B — you receive a clean, unannotated copy of the poetry anthology',
@@ -123,7 +122,7 @@ export const litP2Modules: CourseModule[] = [
 <div class="key-term"><strong>Key Term: Novella</strong> — A prose narrative longer than a short story but shorter than a full novel, typically between 15,000 and 40,000 words. <em>A Christmas Carol</em> is a novella — its compact form allows Dickens to deliver a focused moral message with an allegorical structure divided into five staves (chapters).</div>
 
 <h3>Historical Context: Victorian London in 1843</h3>
-<p>When Dickens published <em>A Christmas Carol</em> in December 1843, Britain was in the grip of rapid industrial change. The following contextual factors are essential for a strong AO3 response:</p>
+<p>When Chapman &amp; Hall published <em>A Christmas Carol</em> on 19 December 1843, Britain was in the grip of rapid industrial change. The following contextual factors are essential for a strong AO3 response:</p>
 
 <ul>
   <li><strong>The Poor Law Amendment Act (1834):</strong> This law created workhouses where the destitute were sent to labour in appalling conditions. The philosophy was deliberate harshness — poverty was seen as a moral failing, and relief was made as unpleasant as possible to discourage dependency. Scrooge directly echoes this attitude when he asks, <em>"Are there no prisons? Are there no workhouses?"</em></li>
@@ -175,10 +174,10 @@ export const litP2Modules: CourseModule[] = [
         question:
           'What was the Poor Law Amendment Act of 1834 designed to do, and how does Scrooge reflect its philosophy?',
         options: [
-          'It abolished child labour; Scrooge exploits Bob Cratchit\'s children',
+          "It abolished child labour; Scrooge exploits Bob Cratchit's children",
           'It created harsh workhouses to discourage the poor from seeking help; Scrooge dismisses the poor by asking "Are there no workhouses?"',
           'It introduced free education for all; Scrooge refuses to donate to schools',
-          'It banned debtors\' prisons; Scrooge threatens to imprison his debtors',
+          "It banned debtors' prisons; Scrooge threatens to imprison his debtors",
         ],
         correct: 1,
         explanation:
@@ -210,12 +209,11 @@ export const litP2Modules: CourseModule[] = [
         ],
         correct: 2,
         explanation:
-          'The third option integrates a specific date, names the legislation, connects it to a character\'s behaviour, and explains the effect — all in one sentence. This is what top-band AO3 looks like: context woven into analysis, not stated in isolation.',
+          "The third option integrates a specific date, names the legislation, connects it to a character's behaviour, and explains the effect — all in one sentence. This is what top-band AO3 looks like: context woven into analysis, not stated in isolation.",
       },
       {
         id: 'edx-lt2-m2-q4',
-        question:
-          'What was Dickens\'s primary purpose in writing A Christmas Carol?',
+        question: "What was Dickens's primary purpose in writing A Christmas Carol?",
         options: [
           'To create an entertaining ghost story for children',
           'To popularise the Christmas tree tradition in England',
@@ -228,8 +226,7 @@ export const litP2Modules: CourseModule[] = [
       },
       {
         id: 'edx-lt2-m2-q5',
-        question:
-          'Which literary form best describes A Christmas Carol?',
+        question: 'Which literary form best describes A Christmas Carol?',
         options: [
           'A three-act tragedy',
           'An epistolary novel told through letters',
@@ -298,22 +295,20 @@ export const litP2Modules: CourseModule[] = [
     quiz: [
       {
         id: 'edx-lt2-m3-q1',
-        question:
-          'What narrative function does Tiny Tim primarily serve in A Christmas Carol?',
+        question: 'What narrative function does Tiny Tim primarily serve in A Christmas Carol?',
         options: [
           'Comic relief to lighten the darker themes',
           'A symbol of innocence whose fate exposes the consequences of social neglect',
           'A plot device to create conflict between Bob Cratchit and Scrooge',
-          'A representation of Scrooge\'s childhood self',
+          "A representation of Scrooge's childhood self",
         ],
         correct: 1,
         explanation:
-          'Tiny Tim is a symbol of innocence and consequence. His potential death is directly linked to poverty and Scrooge\'s neglect, making him Dickens\'s tool for compelling both Scrooge and the reader to confront the human cost of greed.',
+          "Tiny Tim is a symbol of innocence and consequence. His potential death is directly linked to poverty and Scrooge's neglect, making him Dickens's tool for compelling both Scrooge and the reader to confront the human cost of greed.",
       },
       {
         id: 'edx-lt2-m3-q2',
-        question:
-          'Why is the contrast between Fezziwig and Scrooge as employers significant?',
+        question: 'Why is the contrast between Fezziwig and Scrooge as employers significant?',
         options: [
           'It shows that Scrooge was always a miser, even as a young man',
           'It demonstrates that Fezziwig was wealthier than Scrooge',
@@ -327,7 +322,7 @@ export const litP2Modules: CourseModule[] = [
       {
         id: 'edx-lt2-m3-q3',
         question:
-          'Which of the following best describes Scrooge\'s redemption arc as a structural feature?',
+          "Which of the following best describes Scrooge's redemption arc as a structural feature?",
         options: [
           'A subplot that runs alongside the main story of the Cratchit family',
           'A circular narrative that ends where it began',
@@ -336,7 +331,7 @@ export const litP2Modules: CourseModule[] = [
         ],
         correct: 2,
         explanation:
-          'Scrooge\'s transformation is the structural backbone of the entire novella. It spans all five staves — from introduction of his flaws, through the three visitations, to his complete moral reversal — making it the central organising principle.',
+          "Scrooge's transformation is the structural backbone of the entire novella. It spans all five staves — from introduction of his flaws, through the three visitations, to his complete moral reversal — making it the central organising principle.",
       },
       {
         id: 'edx-lt2-m3-q4',
@@ -350,7 +345,7 @@ export const litP2Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'The oyster simile conveys Scrooge\'s hard exterior and self-imposed isolation. However, oysters contain pearls, hinting at the goodness hidden within him — goodness the Ghosts will eventually bring to the surface.',
+          "The oyster simile conveys Scrooge's hard exterior and self-imposed isolation. However, oysters contain pearls, hinting at the goodness hidden within him — goodness the Ghosts will eventually bring to the surface.",
       },
     ],
   },
@@ -410,8 +405,7 @@ export const litP2Modules: CourseModule[] = [
     quiz: [
       {
         id: 'edx-lt2-m4-q1',
-        question:
-          'Why does Dickens label his chapters "staves" rather than "chapters"?',
+        question: 'Why does Dickens label his chapters "staves" rather than "chapters"?',
         options: [
           'Because the novella was originally published as a musical score',
           'To mirror the title — a carol is a song, and staves are sections of music, reinforcing themes of harmony and community',
@@ -424,8 +418,7 @@ export const litP2Modules: CourseModule[] = [
       },
       {
         id: 'edx-lt2-m4-q2',
-        question:
-          'Which of the following best explains the significance of the name "Scrooge"?',
+        question: 'Which of the following best explains the significance of the name "Scrooge"?',
         options: [
           'It is derived from an Old English word meaning "wealthy merchant"',
           'It was the name of a real Victorian banker Dickens knew personally',
@@ -439,7 +432,7 @@ export const litP2Modules: CourseModule[] = [
       {
         id: 'edx-lt2-m4-q3',
         question:
-          'What is the key difference between feature-spotting and genuine analysis of a writer\'s method?',
+          "What is the key difference between feature-spotting and genuine analysis of a writer's method?",
         options: [
           'Feature-spotting uses quotations; analysis does not',
           'Feature-spotting identifies a technique without exploring its effect, whereas analysis explains why the method is used and what it makes the reader think or feel',
@@ -452,17 +445,16 @@ export const litP2Modules: CourseModule[] = [
       },
       {
         id: 'edx-lt2-m4-q4',
-        question:
-          'How does Dickens use time in A Christmas Carol as a structural method?',
+        question: 'How does Dickens use time in A Christmas Carol as a structural method?',
         options: [
           'The novella unfolds in real time over five consecutive days',
           'The events span a full year, from one Christmas to the next',
           'The entire story takes place in a single night, yet Scrooge experiences a whole lifetime — creating urgency for change',
-          'Time moves backwards, starting with Scrooge\'s death and ending with his youth',
+          "Time moves backwards, starting with Scrooge's death and ending with his youth",
         ],
         correct: 2,
         explanation:
-          'Dickens compresses Scrooge\'s past, present, and future into a single night. This time manipulation creates urgency — Scrooge must change now, not later — and mirrors Dickens\'s broader argument that society cannot afford to delay social reform.',
+          "Dickens compresses Scrooge's past, present, and future into a single night. This time manipulation creates urgency — Scrooge must change now, not later — and mirrors Dickens's broader argument that society cannot afford to delay social reform.",
       },
       {
         id: 'edx-lt2-m4-q5',
@@ -472,7 +464,7 @@ export const litP2Modules: CourseModule[] = [
           'To show that Mrs Cratchit is a poor cook who has overcooked the goose',
           'To use hyperbolic diminution that reveals how little food the family actually had, creating dramatic irony between their delight and their deprivation',
           'To suggest that the Cratchit family is ungrateful for what they have',
-          'To foreshadow Tiny Tim\'s illness through imagery of smallness',
+          "To foreshadow Tiny Tim's illness through imagery of smallness",
         ],
         correct: 1,
         explanation:
@@ -533,8 +525,7 @@ export const litP2Modules: CourseModule[] = [
     quiz: [
       {
         id: 'edx-lt2-m5-q1',
-        question:
-          'How many marks is the 19th-century novel question worth on Edexcel Paper 2?',
+        question: 'How many marks is the 19th-century novel question worth on Edexcel Paper 2?',
         options: ['20 marks', '30 marks', '40 marks', '50 marks'],
         correct: 2,
         explanation:
@@ -544,12 +535,7 @@ export const litP2Modules: CourseModule[] = [
         id: 'edx-lt2-m5-q2',
         question:
           'In the recommended essay structure, how many paragraphs should focus on close reading of the printed extract?',
-        options: [
-          'One paragraph',
-          'Two paragraphs',
-          'Three paragraphs',
-          'Four paragraphs',
-        ],
+        options: ['One paragraph', 'Two paragraphs', 'Three paragraphs', 'Four paragraphs'],
         correct: 1,
         explanation:
           'The recommended structure includes two close-reading paragraphs on the extract and two wider-text paragraphs, ensuring you address both parts of the question.',
@@ -566,7 +552,7 @@ export const litP2Modules: CourseModule[] = [
         ],
         correct: 2,
         explanation:
-          'AO3 is most effective when integrated into your analysis — it should deepen your point by explaining the social, historical, or biographical reasons behind the writer\'s choices.',
+          "AO3 is most effective when integrated into your analysis — it should deepen your point by explaining the social, historical, or biographical reasons behind the writer's choices.",
       },
       {
         id: 'edx-lt2-m5-q4',
@@ -574,7 +560,7 @@ export const litP2Modules: CourseModule[] = [
           'Which of these is a common mistake students make on the 19th-century novel question?',
         options: [
           'Using short embedded quotations',
-          'Retelling the plot instead of analysing the writer\'s choices',
+          "Retelling the plot instead of analysing the writer's choices",
           'Writing a one-sentence thesis in the introduction',
           'Referring to the writer by name',
         ],
@@ -603,7 +589,7 @@ export const litP2Modules: CourseModule[] = [
 
 <p><strong>Relationships:</strong> Sonnet 43, London, The Farmer's Bride, Walking Away, Letters from Yorkshire, Eden Rock, Follower, Mother any distance, Before You Were Mine, Winter Swans, Singh Song!, Climbing My Grandfather.</p>
 
-<p><strong>Conflict:</strong> The Charge of the Light Brigade, Exposure, Storm on the Island, Bayonet Charge, Remains, Poppies, War Photographer, Tissue, The Emigrée, Kamikaze, Checking Out Me History, My Last Duchess.</p>
+<p><strong>Conflict:</strong> The Charge of the Light Brigade, Exposure, Storm on the Island, Bayonet Charge, Remains, Poppies, War Photographer, Tissue, The Émigrée, Kamikaze, Checking Out Me History, My Last Duchess.</p>
 
 <h3>The SMILE Framework</h3>
 <ol>
@@ -635,15 +621,14 @@ Half a league onward,<br/>
 All in the valley of Death<br/>
 Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></div>
 
-<p><strong>S:</strong> Dactylic rhythm mimics galloping; repetition propels the reader forward. <strong>I:</strong> "Valley of Death" alludes to Psalm 23; capitalised "Death" personifies a waiting presence. <strong>L:</strong> "Half a league" repeated — relentless motion; "onward" reinforces duty. <strong>Context:</strong> Written weeks after Balaclava (1854). Tennyson turned a military blunder into a celebration of courage.</p>
+<p><strong>S:</strong> Anapaestic dimeter (mostly) with dactylic refrain ("Rode the six hundred") — together they create the galloping rhythm; end-stopped lines and repetition propel the reader forward. <strong>I:</strong> "Valley of Death" alludes to Psalm 23; capitalised "Death" personifies a waiting presence. <strong>L:</strong> "Half a league" repeated — relentless motion; "onward" reinforces duty. <strong>Context:</strong> Battle of Balaclava, 25 October 1854 (Crimean War) — a miscommunicated order sent the Light Brigade into Russian artillery. Tennyson, then Poet Laureate, wrote the poem within weeks, turning a military blunder into a celebration of courage.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating every poem identically. Some are best approached through imagery, others through voice or structure. Use SMILE as a checklist, but let the poem guide your focus.</div>
 `,
     quiz: [
       {
         id: 'edx-lt2-m6-q1',
-        question:
-          'How many marks is the single-poem anthology question worth on Edexcel Paper 2?',
+        question: 'How many marks is the single-poem anthology question worth on Edexcel Paper 2?',
         options: ['10 marks', '15 marks', '20 marks', '30 marks'],
         correct: 2,
         explanation:
@@ -651,8 +636,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m6-q2',
-        question:
-          'In the SMILE framework, what does the "I" stand for?',
+        question: 'In the SMILE framework, what does the "I" stand for?',
         options: ['Intention', 'Imagery', 'Interpretation', 'Irony'],
         correct: 1,
         explanation:
@@ -660,22 +644,15 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m6-q3',
-        question:
-          'Which cluster does "Sonnet 43" by Elizabeth Barrett Browning belong to?',
-        options: [
-          'Conflict',
-          'Relationships',
-          'Power and Identity',
-          'Time and Place',
-        ],
+        question: 'Which cluster does "Sonnet 43" by Elizabeth Barrett Browning belong to?',
+        options: ['Conflict', 'Relationships', 'Power and Identity', 'Time and Place'],
         correct: 1,
         explanation:
           '"Sonnet 43" is part of the Relationships cluster. It is a Petrarchan sonnet exploring the depth and nature of romantic love, written during Barrett Browning\'s courtship with Robert Browning.',
       },
       {
         id: 'edx-lt2-m6-q4',
-        question:
-          'When annotating a poem, what should you do on the very first read?',
+        question: 'When annotating a poem, what should you do on the very first read?',
         options: [
           'Highlight every literary technique you can find',
           'Read aloud or silently mouth it and write a one-sentence summary',
@@ -752,13 +729,12 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
     quiz: [
       {
         id: 'edx-lt2-m7-q1',
-        question:
-          'What does AO2 require you to do when writing about poetry?',
+        question: 'What does AO2 require you to do when writing about poetry?',
         options: [
-          'Retell the poem\'s story in your own words',
+          "Retell the poem's story in your own words",
           'Analyse language, form and structure and their effects on meaning',
           'Compare two poems from the anthology',
-          'Evaluate how far you agree with the poet\'s viewpoint',
+          "Evaluate how far you agree with the poet's viewpoint",
         ],
         correct: 1,
         explanation:
@@ -766,12 +742,11 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m7-q2',
-        question:
-          'Which of the following best describes a "volta" in poetry?',
+        question: 'Which of the following best describes a "volta" in poetry?',
         options: [
           'A repeated line or phrase at the end of each stanza',
           'A pause in the middle of a line created by punctuation',
-          'A turn or shift in the poem\'s argument, mood, or perspective',
+          "A turn or shift in the poem's argument, mood, or perspective",
           'The use of iambic pentameter to create a regular rhythm',
         ],
         correct: 2,
@@ -780,8 +755,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m7-q3',
-        question:
-          'What effect does enjambment typically create in a poem?',
+        question: 'What effect does enjambment typically create in a poem?',
         options: [
           'A sense of finality and control',
           'A whispering, secretive tone',
@@ -794,8 +768,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m7-q4',
-        question:
-          'Why is "feature-spotting" considered a weak approach in poetry analysis?',
+        question: 'Why is "feature-spotting" considered a weak approach in poetry analysis?',
         options: [
           'Because examiners only want you to discuss content, not technique',
           'Because it identifies techniques without explaining their effect on meaning',
@@ -808,8 +781,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m7-q5',
-        question:
-          'Which of the following is an example of sibilance?',
+        question: 'Which of the following is an example of sibilance?',
         options: [
           '"The blazing bright beacon burned"',
           '"Softly she slipped through the silent shadows"',
@@ -886,8 +858,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
     quiz: [
       {
         id: 'edx-lt2-m8-q1',
-        question:
-          'What does "integrated comparison" mean in a poetry essay?',
+        question: 'What does "integrated comparison" mean in a poetry essay?',
         options: [
           'Writing about Poem A in the first half and Poem B in the second half',
           'Discussing both poems within the same paragraphs, moving between them fluidly',
@@ -900,8 +871,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m8-q2',
-        question:
-          'What should your first reading of the unseen poem focus on?',
+        question: 'What should your first reading of the unseen poem focus on?',
         options: [
           'Identifying every poetic technique used',
           'Understanding the overall meaning, situation, and mood',
@@ -910,12 +880,11 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         ],
         correct: 1,
         explanation:
-          'Your first reading should focus on grasping the poem\'s overall meaning — who is speaking, what the situation is, and what the general mood or tone feels like. Technical analysis comes on the second, more detailed reading.',
+          "Your first reading should focus on grasping the poem's overall meaning — who is speaking, what the situation is, and what the general mood or tone feels like. Technical analysis comes on the second, more detailed reading.",
       },
       {
         id: 'edx-lt2-m8-q3',
-        question:
-          'Which of the following is the strongest comparative sentence?',
+        question: 'Which of the following is the strongest comparative sentence?',
         options: [
           '"Both poems are about conflict."',
           '"The first poem uses metaphor and the second poem uses simile."',
@@ -1025,22 +994,15 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
     quiz: [
       {
         id: 'edx-lt2-m9-q1',
-        question:
-          'What does the R in the PETER framework stand for?',
-        options: [
-          'Repetition',
-          'Response / Comparison',
-          'Review',
-          'Reference to context',
-        ],
+        question: 'What does the R in the PETER framework stand for?',
+        options: ['Repetition', 'Response / Comparison', 'Review', 'Reference to context'],
         correct: 1,
         explanation:
           'R stands for Response / Comparison — the crucial step where you draw both poems together and make an explicit comparative judgement about their effects or approaches.',
       },
       {
         id: 'edx-lt2-m9-q2',
-        question:
-          'What is the biggest structural mistake students make in the comparison essay?',
+        question: 'What is the biggest structural mistake students make in the comparison essay?',
         options: [
           'Writing too many paragraphs',
           'Using too many quotations from the unseen poem',
@@ -1062,8 +1024,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m9-q4',
-        question:
-          'What distinguishes a Grade 9 comparison from a Grade 5 comparison?',
+        question: 'What distinguishes a Grade 9 comparison from a Grade 5 comparison?',
         options: [
           'A Grade 9 response uses longer quotations',
           'A Grade 9 response analyses only the unseen poem in detail',
@@ -1072,7 +1033,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         ],
         correct: 2,
         explanation:
-          'Grade 9 responses are conceptualised — they present a sophisticated argument about how and why the poets\' approaches differ, explore ambiguity, and treat the comparison as a genuine conversation between the two texts.',
+          "Grade 9 responses are conceptualised — they present a sophisticated argument about how and why the poets' approaches differ, explore ambiguity, and treat the comparison as a genuine conversation between the two texts.",
       },
     ],
   },
@@ -1172,14 +1133,8 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
     quiz: [
       {
         id: 'edx-lt2-m10-q1',
-        question:
-          'How long is Edexcel Literature Paper 2 in total?',
-        options: [
-          '1 hour 45 minutes',
-          '2 hours',
-          '2 hours 15 minutes',
-          '2 hours 30 minutes',
-        ],
+        question: 'How long is Edexcel Literature Paper 2 in total?',
+        options: ['1 hour 45 minutes', '2 hours', '2 hours 15 minutes', '2 hours 30 minutes'],
         correct: 2,
         explanation:
           'Paper 2 is 2 hours 15 minutes (135 minutes). Every minute must be accounted for across the novel response, single poem analysis, and comparison essay.',
@@ -1195,8 +1150,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m10-q3',
-        question:
-          'What is the most common timing mistake students make on Paper 2?',
+        question: 'What is the most common timing mistake students make on Paper 2?',
         options: [
           'Spending too long on the single poem and rushing the novel',
           'Spending too long on the novel and rushing the poetry questions',
@@ -1211,16 +1165,11 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         id: 'edx-lt2-m10-q4',
         question:
           'Which revision technique involves mapping poems against themes in a grid format?',
-        options: [
-          'Quotation flash cards',
-          'Theme grids',
-          'Timed practice',
-          'Quotation reduction',
-        ],
+        options: ['Quotation flash cards', 'Theme grids', 'Timed practice', 'Quotation reduction'],
         correct: 1,
         explanation:
           'Theme grids list poems along one axis and themes along the other, allowing you to quickly identify comparison pairs for any theme the exam might ask about.',
       },
     ],
   },
-];
+]

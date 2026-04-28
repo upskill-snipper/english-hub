@@ -1,14 +1,7 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Drama,
-  FileText,
-  Quote,
-  Sparkles,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Drama, FileText, Quote, Sparkles } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -21,8 +14,7 @@ export const metadata: Metadata = {
   description:
     'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/revision/texts/blood-brothers/essay-plans',
+    canonical: 'https://theenglishhub.app/revision/texts/blood-brothers/essay-plans',
   },
 }
 
@@ -48,15 +40,13 @@ type EssayPlan = {
 const ESSAY_PLANS: EssayPlan[] = [
   {
     id: 1,
-    question:
-      'How does Russell present the theme of class in Blood Brothers?',
+    question: 'How does Russell present the theme of class in Blood Brothers?',
     thesis:
       'Russell constructs the play as a controlled experiment — two identical twins raised on opposite sides of the class divide — to argue that social position, not innate character, determines life outcomes.',
     paragraphs: [
       {
         pointHeading: 'The pact as class transaction',
-        topic:
-          'Russell opens by showing how class power enables Mrs Lyons to acquire a child.',
+        topic: 'Russell opens by showing how class power enables Mrs Lyons to acquire a child.',
         quote: '"Give one to me."',
         quoteContext: 'Mrs Lyons — Act 1',
         analysis:
@@ -67,24 +57,23 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         pointHeading: 'Parallel childhoods',
         topic:
-          'Russell stages the boys\' meeting to expose how identical people are treated differently by class.',
+          "Russell stages the boys' meeting to expose how identical people are treated differently by class.",
         quote: '"We\'re blood brothers."',
         quoteContext: 'Mickey and Edward — Act 1',
         analysis:
-          'The ritual of chosen kinship mirrors the biological bond they do not know about. Russell uses dramatic irony to show that class distinctions are imposed from outside, not inherent. The boys\' natural equality makes the later divergence feel violent.',
+          "The ritual of chosen kinship mirrors the biological bond they do not know about. Russell uses dramatic irony to show that class distinctions are imposed from outside, not inherent. The boys' natural equality makes the later divergence feel violent.",
         contextLink:
           'Russell draws on his own experience of cross-class friendships in Liverpool, where children mixed freely until institutional structures — schools, housing, employment — separated them.',
       },
       {
         pointHeading: 'The fatal realisation',
-        topic:
-          'Russell delays the class argument\'s emotional climax to the final scene.',
+        topic: "Russell delays the class argument's emotional climax to the final scene.",
         quote: '"How come you didn\'t grow up like me?"',
         quoteContext: 'Mickey — Act 2',
         analysis:
-          'Mickey articulates the play\'s thesis in plain speech. The question is not about envy but about systemic injustice: Russell gives the political argument to the character who has suffered most, making it impossible to dismiss as abstract theory.',
+          "Mickey articulates the play's thesis in plain speech. The question is not about envy but about systemic injustice: Russell gives the political argument to the character who has suffered most, making it impossible to dismiss as abstract theory.",
         contextLink:
-          'Connect to Thatcherite rhetoric about personal responsibility, which Russell\'s play directly contradicts by showing that Mickey\'s decline is caused by structures, not choices.',
+          "Connect to Thatcherite rhetoric about personal responsibility, which Russell's play directly contradicts by showing that Mickey's decline is caused by structures, not choices.",
       },
     ],
     conclusion:
@@ -92,8 +81,7 @@ const ESSAY_PLANS: EssayPlan[] = [
   },
   {
     id: 2,
-    question:
-      'How does Russell use the character of the Narrator in Blood Brothers?',
+    question: 'How does Russell use the character of the Narrator in Blood Brothers?',
     thesis:
       'The Narrator functions as a Brechtian chorus figure who prevents comfortable emotional identification, forces critical distance and exposes the political mechanics behind the personal tragedy.',
     paragraphs: [
@@ -101,17 +89,17 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Framing the story as inevitable',
         topic:
           'The Narrator opens the play by revealing the ending, collapsing suspense in favour of analysis.',
-        quote: '"Did you ever hear the story of the Johnstone twins?"',
+        quote: '"So did y’ hear the story of the Johnstone twins?"',
         quoteContext: 'Narrator — prologue',
         analysis:
           'By telling the audience the outcome before the play begins, Russell redirects attention from what happens to why it happens. The Narrator transforms the play from a story into an argument, inviting the audience to read every scene as evidence.',
         contextLink:
-          'Link to Brecht\'s epic theatre, which Russell studied. The Narrator\'s function mirrors Brecht\'s use of alienation effects to prevent passive consumption and promote political engagement.',
+          "Link to Brecht's epic theatre, which Russell studied. The Narrator's function mirrors Brecht's use of alienation effects to prevent passive consumption and promote political engagement.",
       },
       {
         pointHeading: 'Building atmospheric dread',
         topic:
-          'The Narrator\'s recurring refrains create a sense of fate that Russell then critiques.',
+          "The Narrator's recurring refrains create a sense of fate that Russell then critiques.",
         quote: '"You know the devil\'s got your number."',
         quoteContext: 'Narrator — recurring refrain',
         analysis:
@@ -121,30 +109,28 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         pointHeading: 'The final question',
-        topic:
-          'The Narrator\'s closing line forces the audience to choose an explanation.',
+        topic: "The Narrator's closing line forces the audience to choose an explanation.",
         quote: '"And do we blame superstition for what came to pass?"',
         quoteContext: 'Narrator — closing line',
         analysis:
           'Russell uses a direct question to shatter the fourth wall. The Narrator rejects the supernatural reading he has spent the play building, demanding that the audience locate blame in class structures. The play refuses closure: the audience must supply the answer.',
         contextLink:
-          'Connect to Russell\'s political purpose: he wants the audience to leave the theatre angry at inequality, not merely sad about two dead boys.',
+          "Connect to Russell's political purpose: he wants the audience to leave the theatre angry at inequality, not merely sad about two dead boys.",
       },
     ],
     conclusion:
-      'The Narrator is Russell\'s most sophisticated dramatic tool. He creates the feeling of fate while simultaneously dismantling it, leaving the audience with no comfortable explanation except the one Russell intends: class kills.',
+      "The Narrator is Russell's most sophisticated dramatic tool. He creates the feeling of fate while simultaneously dismantling it, leaving the audience with no comfortable explanation except the one Russell intends: class kills.",
   },
   {
     id: 3,
-    question:
-      'How does Russell present the relationship between Mickey and Edward?',
+    question: 'How does Russell present the relationship between Mickey and Edward?',
     thesis:
-      'Russell uses the boys\' friendship as a controlled experiment in nature versus nurture, showing that genuine human connection cannot survive the structural pressures of class inequality.',
+      "Russell uses the boys' friendship as a controlled experiment in nature versus nurture, showing that genuine human connection cannot survive the structural pressures of class inequality.",
     paragraphs: [
       {
         pointHeading: 'Instant connection in childhood',
         topic:
-          'The boys\' first meeting demonstrates that without class markers, identity is shared.',
+          "The boys' first meeting demonstrates that without class markers, identity is shared.",
         quote: '"We\'re blood brothers."',
         quoteContext: 'Mickey and Edward — Act 1',
         analysis:
@@ -154,8 +140,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         pointHeading: 'Adolescent divergence',
-        topic:
-          'As teenagers, the boys begin to occupy different social worlds despite their bond.',
+        topic: 'As teenagers, the boys begin to occupy different social worlds despite their bond.',
         quote: '"Take a letter, Miss Jones."',
         quoteContext: 'Edward — childhood game',
         analysis:
@@ -165,58 +150,55 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         pointHeading: 'Adult destruction',
-        topic:
-          'The friendship collapses under the weight of inequality in adulthood.',
+        topic: 'The friendship collapses under the weight of inequality in adulthood.',
         quote: '"I could have been him."',
         quoteContext: 'Mickey — Act 2',
         analysis:
-          'Mickey\'s realisation destroys the friendship because it exposes the lie of equality on which it was built. Russell shows that genuine friendship requires genuine equality, and a class-divided society makes both impossible.',
+          "Mickey's realisation destroys the friendship because it exposes the lie of equality on which it was built. Russell shows that genuine friendship requires genuine equality, and a class-divided society makes both impossible.",
         contextLink:
-          'Connect to the mass unemployment of 1980s Liverpool: Mickey\'s decline is not personal failure but economic catastrophe. Edward\'s success is not personal merit but inherited advantage.',
+          "Connect to the mass unemployment of 1980s Liverpool: Mickey's decline is not personal failure but economic catastrophe. Edward's success is not personal merit but inherited advantage.",
       },
     ],
     conclusion:
-      'Russell structures the relationship as a tragedy of wasted potential. The boys\' natural bond proves that class distinctions are artificial, but the play\'s ending proves that artificial distinctions have real, lethal consequences.',
+      "Russell structures the relationship as a tragedy of wasted potential. The boys' natural bond proves that class distinctions are artificial, but the play's ending proves that artificial distinctions have real, lethal consequences.",
   },
   {
     id: 4,
-    question:
-      'How does Russell present mothers and motherhood in Blood Brothers?',
+    question: 'How does Russell present mothers and motherhood in Blood Brothers?',
     thesis:
       'Russell uses two mothers — Mrs Johnstone and Mrs Lyons — as a paired study to show that class determines not only life chances but also the forms of love, fear and guilt available to women.',
     paragraphs: [
       {
         pointHeading: 'Mrs Johnstone: love constrained by poverty',
         topic:
-          'Russell presents Mrs Johnstone\'s decision to give up her child as an act forced by economic desperation, not moral failure.',
+          "Russell presents Mrs Johnstone's decision to give up her child as an act forced by economic desperation, not moral failure.",
         quote: '"Already mine, already mine."',
         quoteContext: 'Mrs Johnstone — Act 1',
         analysis:
-          'Mrs Johnstone\'s anguish when she tries to reclaim the child shows that maternal love is powerless against class privilege. Russell uses her songs to give a working-class mother a voice that the social structures around her deny.',
+          "Mrs Johnstone's anguish when she tries to reclaim the child shows that maternal love is powerless against class privilege. Russell uses her songs to give a working-class mother a voice that the social structures around her deny.",
         contextLink:
           'Link to the welfare state under Thatcher: cuts to benefits, housing and childcare left working-class mothers with fewer resources and fewer choices.',
       },
       {
         pointHeading: 'Mrs Lyons: love deformed by privilege',
-        topic:
-          'Russell shows that wealth provides Mrs Lyons with power but not peace.',
+        topic: 'Russell shows that wealth provides Mrs Lyons with power but not peace.',
         quote: '"They say that if twins are separated they\'ll die."',
         quoteContext: 'Mrs Lyons — Act 1',
         analysis:
-          'Mrs Lyons invents the superstition to control Mrs Johnstone, but Russell shows her becoming its prisoner. Her paranoia is a form of guilt that wealth cannot resolve — a mirror to Mrs Johnstone\'s grief.',
+          "Mrs Lyons invents the superstition to control Mrs Johnstone, but Russell shows her becoming its prisoner. Her paranoia is a form of guilt that wealth cannot resolve — a mirror to Mrs Johnstone's grief.",
         contextLink:
           'Russell avoids making Mrs Lyons a simple villain. Her infertility and loneliness are genuine, and her descent into obsession is tragic. Class gives her different resources but not different pain.',
       },
       {
         pointHeading: 'The final revelation',
         topic:
-          'Mrs Johnstone\'s confession of the truth triggers the catastrophe, showing that honesty arrives too late in a class-divided world.',
+          "Mrs Johnstone's confession of the truth triggers the catastrophe, showing that honesty arrives too late in a class-divided world.",
         quote: '"Tell me it\'s not true, say it\'s just a story."',
         quoteContext: 'Mrs Johnstone — closing song',
         analysis:
-          'The closing song is Mrs Johnstone\'s testimony. Russell gives her the last word, framing the entire play as a working-class mother\'s plea for a world where her children could have survived.',
+          "The closing song is Mrs Johnstone's testimony. Russell gives her the last word, framing the entire play as a working-class mother's plea for a world where her children could have survived.",
         contextLink:
-          'Connect to the tradition of the working-class maternal voice in British drama, from Shelagh Delaney\'s A Taste of Honey onward. Russell writes in a lineage of playwrights who centre women\'s experience of poverty.',
+          "Connect to the tradition of the working-class maternal voice in British drama, from Shelagh Delaney's A Taste of Honey onward. Russell writes in a lineage of playwrights who centre women's experience of poverty.",
       },
     ],
     conclusion:
@@ -224,8 +206,7 @@ const ESSAY_PLANS: EssayPlan[] = [
   },
   {
     id: 5,
-    question:
-      'How does Russell use dramatic techniques to engage the audience in Blood Brothers?',
+    question: 'How does Russell use dramatic techniques to engage the audience in Blood Brothers?',
     thesis:
       'Russell combines musical theatre, dramatic irony and Brechtian alienation to create a play that moves the audience emotionally while demanding that they think politically.',
     paragraphs: [
@@ -233,12 +214,12 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Dramatic irony from the prologue',
         topic:
           'By revealing the ending at the start, Russell transforms the audience from passive spectators into critical analysts.',
-        quote: '"Did you ever hear the story of the Johnstone twins?"',
+        quote: '"So did y’ hear the story of the Johnstone twins?"',
         quoteContext: 'Narrator — prologue',
         analysis:
           'The prologue collapses suspense: the audience watches every scene knowing the outcome. This shifts their attention from plot to cause, turning the play into an argument about why the tragedy happens rather than a surprise that it does.',
         contextLink:
-          'Link to Brecht\'s epic theatre and the alienation effect. Russell studied Brecht and adapts his techniques for a popular audience through the accessible form of musical theatre.',
+          "Link to Brecht's epic theatre and the alienation effect. Russell studied Brecht and adapts his techniques for a popular audience through the accessible form of musical theatre.",
       },
       {
         pointHeading: 'Songs as emotional and political commentary',
@@ -247,7 +228,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         quote: '"Tell me it\'s not true, say it\'s just a story."',
         quoteContext: 'Mrs Johnstone — closing song',
         analysis:
-          'The closing song operates on two levels: emotionally, it is devastating; politically, it asks the audience to refuse inevitability. Russell exploits the directness of song to bypass intellectual resistance and reach the audience\'s feelings, then redirects those feelings toward political awareness.',
+          "The closing song operates on two levels: emotionally, it is devastating; politically, it asks the audience to refuse inevitability. Russell exploits the directness of song to bypass intellectual resistance and reach the audience's feelings, then redirects those feelings toward political awareness.",
         contextLink:
           'Russell chose the musical form deliberately: it reaches audiences who might never attend a political play. Blood Brothers ran in the West End for over 20 years, proving the strategy worked.',
       },
@@ -260,11 +241,11 @@ const ESSAY_PLANS: EssayPlan[] = [
         analysis:
           'The Narrator interrupts the naturalistic action with stylised, almost supernatural warnings. This keeps the audience at a critical distance, reminding them that they are watching a constructed argument, not a slice of life. Russell balances emotional engagement with analytical detachment.',
         contextLink:
-          'The Narrator\'s choric function echoes Greek tragedy as well as Brecht. Russell synthesises classical and modernist techniques to create a form that is both popular and politically sharp.',
+          "The Narrator's choric function echoes Greek tragedy as well as Brecht. Russell synthesises classical and modernist techniques to create a form that is both popular and politically sharp.",
       },
     ],
     conclusion:
-      'Russell\'s genius is structural: he uses the accessibility of musical theatre to deliver a political argument that might otherwise be resisted. The audience leaves moved and angry — exactly the combination Russell intends.',
+      "Russell's genius is structural: he uses the accessibility of musical theatre to deliver a political argument that might otherwise be resisted. The audience leaves moved and angry — exactly the combination Russell intends.",
   },
 ]
 
@@ -281,11 +262,17 @@ export default async function BloodBrothersEssayPlansPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Blood Brothers", url: "https://theenglishhub.app/revision/texts/blood-brothers" },
-          { name: "Essay Plans", url: "https://theenglishhub.app/revision/texts/blood-brothers/essay-plans" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Blood Brothers',
+            url: 'https://theenglishhub.app/revision/texts/blood-brothers',
+          },
+          {
+            name: 'Essay Plans',
+            url: 'https://theenglishhub.app/revision/texts/blood-brothers/essay-plans',
+          },
         ]}
       />
       {/* Hero */}
@@ -317,12 +304,10 @@ export default async function BloodBrothersEssayPlansPage() {
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Essay Plans
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">
-            Blood Brothers by Willy Russell
-          </p>
+          <p className="mt-2 text-body-lg text-muted-foreground">Blood Brothers by Willy Russell</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five exam-style essay plans with thesis statements, paragraph outlines,
-            embedded quotations and contextual links. All quotes are 15 words or fewer.
+            Five exam-style essay plans with thesis statements, paragraph outlines, embedded
+            quotations and contextual links. All quotes are 15 words or fewer.
           </p>
         </div>
       </section>
@@ -337,9 +322,7 @@ export default async function BloodBrothersEssayPlansPage() {
           {ESSAY_PLANS.map((plan) => (
             <Card key={plan.id}>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">
-                  Plan {plan.id}
-                </CardTitle>
+                <CardTitle className="text-heading-md font-heading">Plan {plan.id}</CardTitle>
                 <CardDescription className="text-body-sm font-medium italic">
                   {plan.question}
                 </CardDescription>
@@ -375,9 +358,7 @@ export default async function BloodBrothersEssayPlansPage() {
                     </div>
 
                     <div className="rounded-lg border border-border/40 bg-muted/30 p-3">
-                      <p className="text-xs font-semibold text-foreground mb-1">
-                        Context link
-                      </p>
+                      <p className="text-xs font-semibold text-foreground mb-1">Context link</p>
                       <p className="text-xs text-muted-foreground">{para.contextLink}</p>
                     </div>
                   </div>
@@ -385,9 +366,7 @@ export default async function BloodBrothersEssayPlansPage() {
 
                 {/* Conclusion */}
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">
-                    Conclusion
-                  </h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">Conclusion</h3>
                   <p className="text-body-sm text-muted-foreground">{plan.conclusion}</p>
                 </div>
               </CardContent>
@@ -434,9 +413,9 @@ export default async function BloodBrothersEssayPlansPage() {
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright,
-        Designs and Patents Act 1988 for criticism and review. Full text available from
-        your school or local library.
+        <strong>Rights notice:</strong> &copy; Methuen Drama / Bloomsbury on behalf of Willy Russell
+        (b. 1947). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
+        review, quotation). For full text, students should consult the licensed school edition.
       </p>
     </div>
   )

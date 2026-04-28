@@ -1,20 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Sparkles,
-  Feather,
-  Info,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { ArrowLeft, ArrowRight, BookOpen, Sparkles, Feather, Info } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
@@ -106,11 +93,7 @@ export default async function ProseHubPage() {
     <div className="space-y-10 pb-16">
       {/* Breadcrumb */}
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/edexcel" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel" />}>
           <ArrowLeft className="size-3.5" />
           Back to Edexcel IGCSE Literature
         </Button>
@@ -130,10 +113,9 @@ export default async function ProseHubPage() {
             Modern Prose
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Pick your set prose text to explore plot, characters, themes,
-            context and a curated bank of short key quotations. Each guide is
-            built around understanding the text, analysing language and
-            structure, and comparing texts.
+            Pick your set prose text to explore plot, characters, themes, context and a curated bank
+            of short key quotations. Each guide is built around understanding the text, analysing
+            language and structure, and comparing texts.
           </p>
         </div>
       </section>
@@ -147,9 +129,17 @@ export default async function ProseHubPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              These texts are all in copyright. Our guides include short
-              extracts for fair-dealing study and analysis only. Students should
-              always read the complete novel alongside these notes.
+              These texts are all in copyright. Our guides include short extracts for fair-dealing
+              study and analysis only. Students should always read the complete novel alongside
+              these notes.
+            </p>
+            <p className="mt-2 text-body-xs text-muted-foreground leading-relaxed">
+              <strong className="text-foreground">Rights notice.</strong> All prose set texts on
+              this hub remain in copyright &mdash; including Hill&rsquo;s{' '}
+              <em>The Woman in Black</em> (&copy; Vintage / Penguin Random House). Quotations on
+              individual set-text pages are short fair-dealing extracts under CDPA 1988 &sect;30
+              (criticism, review, quotation). For full text, students should consult the licensed
+              school edition.
             </p>
           </div>
         </div>
@@ -159,9 +149,7 @@ export default async function ProseHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Choose your set text
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Choose your set text</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {proseTexts.map((t) => (
@@ -190,9 +178,7 @@ export default async function ProseHubPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col gap-4">
-                <p className="text-body-sm leading-relaxed text-muted-foreground">
-                  {t.blurb}
-                </p>
+                <p className="text-body-sm leading-relaxed text-muted-foreground">{t.blurb}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {t.themes.map((theme) => (
                     <span
@@ -209,20 +195,13 @@ export default async function ProseHubPage() {
                       variant="default"
                       size="sm"
                       className="w-full"
-                      render={
-                        <Link href={`/igcse/edexcel/prose/${t.slug}`} />
-                      }
+                      render={<Link href={`/igcse/edexcel/prose/${t.slug}`} />}
                     >
                       Open study guide
                       <ArrowRight className="size-3.5" />
                     </Button>
                   ) : (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                      disabled
-                    >
+                    <Button variant="outline" size="sm" className="w-full" disabled>
                       Coming soon
                     </Button>
                   )}

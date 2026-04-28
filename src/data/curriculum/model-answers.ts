@@ -2,16 +2,16 @@
 // Each year group has 15 model answers across different assessment types
 
 export interface ModelAnswer {
-  id: string;
-  title: string;
-  yearGroup: 'year7' | 'year8' | 'year9' | 'igcse';
-  assessmentType: string;
-  gradeLevel: string;
-  question: string;
-  response: string;
-  annotations: string[];
-  wordCount: number;
-  examinersCommentary: string;
+  id: string
+  title: string
+  yearGroup: 'year7' | 'year8' | 'year9' | 'igcse'
+  assessmentType: string
+  gradeLevel: string
+  question: string
+  response: string
+  annotations: string[]
+  wordCount: number
+  examinersCommentary: string
 }
 
 export const modelAnswerBank: ModelAnswer[] = [
@@ -27,7 +27,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year7',
     assessmentType: 'Analytical Paragraph (PEE/PEEL)',
     gradeLevel: 'Emerging',
-    question: 'How does the writer use language to create tension in the opening of "The Woman in Black"?',
+    question:
+      'How does the writer use language to create tension in the opening of "The Woman in Black"?',
     response: `<p>The writer creates tension by using scary words. For example, he says the weather is "cold" and "dark." This makes the reader feel scared because cold and dark things are usually scary. The writer also mentions that the character is alone, which adds to the tension because being alone is frightening.</p>
 <p>Another way the writer creates tension is through the setting. The house is described as being far away from other houses. This is tense because nobody can help the character if something bad happens. The writer uses these techniques to make the reader feel worried about what might happen next.</p>
 <p>Overall, the writer uses language about weather and setting to create tension. The dark, cold atmosphere and the isolated location both contribute to a sense of fear and unease. The reader is left wondering what will happen to the character in this scary place, which keeps them reading on.</p>`,
@@ -36,10 +37,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Quotations are very short and not fully embedded',
       'Comments on effect are generalised ("scary", "frightening") rather than analytical',
       'PEE structure is present but underdeveloped',
-      'Limited range of vocabulary for discussing effects on the reader'
+      'Limited range of vocabulary for discussing effects on the reader',
     ],
     wordCount: 178,
-    examinersCommentary: 'This response demonstrates an emerging understanding of analytical writing. The student can identify basic language features and attempts to explain their effect, but analysis remains surface-level. To improve, the student should use more precise literary terminology, embed longer quotations, and explore connotations of individual words rather than making generalised statements about mood.'
+    examinersCommentary:
+      'This response demonstrates an emerging understanding of analytical writing. The student can identify basic language features and attempts to explain their effect, but analysis remains surface-level. To improve, the student should use more precise literary terminology, embed longer quotations, and explore connotations of individual words rather than making generalised statements about mood.',
   },
 
   {
@@ -48,7 +50,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year7',
     assessmentType: 'Analytical Paragraph (PEE/PEEL)',
     gradeLevel: 'Expected',
-    question: 'How does Shakespeare present the witches as supernatural in Act 1, Scene 1 of "Macbeth"?',
+    question:
+      'How does Shakespeare present the witches as supernatural in Act 1, Scene 1 of "Macbeth"?',
     response: `<p>Shakespeare presents the witches as supernatural and otherworldly through his deliberate use of language and structure. Firstly, the witches speak in rhyming couplets: "Fair is foul, and foul is fair, / Hover through the fog and filthy air." The use of rhyming couplets creates an incantation-like quality, suggesting that the witches possess magical powers and speak in a way that is fundamentally different from ordinary humans. The word "hover" is particularly significant as it implies the witches can defy the natural laws of gravity, reinforcing their supernatural status.</p>
 <p>Furthermore, Shakespeare uses the pathetic fallacy of "thunder and lightning" in the stage directions to herald the witches' arrival. This association between the witches and violent weather suggests they are connected to chaos and disorder in the natural world. The Jacobean audience would have found this especially unsettling, as storms were often interpreted as signs of divine displeasure or evil forces at work.</p>
 <p>Additionally, the paradox "fair is foul, and foul is fair" establishes the witches as creatures who invert moral order. By declaring that good is bad and bad is good, Shakespeare suggests these beings exist outside normal human morality. This creates a sense of unease for the audience, as the witches challenge the very foundations of right and wrong that Elizabethan and Jacobean society relied upon.</p>`,
@@ -58,10 +61,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Explores connotations of individual words ("hover")',
       'Includes contextual understanding (Jacobean audience)',
       'Links points effectively using discourse markers',
-      'Could develop the link between language and broader themes further'
+      'Could develop the link between language and broader themes further',
     ],
     wordCount: 243,
-    examinersCommentary: 'A confident expected-level response that demonstrates secure understanding of analytical writing. The student embeds quotations fluently, uses appropriate terminology, and considers the effect on the audience. The inclusion of contextual knowledge about Jacobean beliefs adds depth. To reach exceeding level, the student should explore how individual techniques work together to create a cumulative effect and consider alternative interpretations.'
+    examinersCommentary:
+      'A confident expected-level response that demonstrates secure understanding of analytical writing. The student embeds quotations fluently, uses appropriate terminology, and considers the effect on the audience. The inclusion of contextual knowledge about Jacobean beliefs adds depth. To reach exceeding level, the student should explore how individual techniques work together to create a cumulative effect and consider alternative interpretations.',
   },
 
   {
@@ -70,7 +74,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year7',
     assessmentType: 'Analytical Paragraph (PEE/PEEL)',
     gradeLevel: 'Exceeding',
-    question: 'How does Dickens present Scrooge as isolated in the opening stave of "A Christmas Carol"?',
+    question:
+      'How does Dickens present Scrooge as isolated in the opening stave of "A Christmas Carol"?',
     response: `<p>Dickens masterfully constructs Scrooge's isolation through a layered accumulation of metaphorical and structural techniques that position him as fundamentally severed from human connection. The narrator's declaration that Scrooge was "solitary as an oyster" is a carefully chosen simile that operates on multiple levels. On the surface, it conveys his physical separation from society; however, the oyster metaphor also implies a hard, impenetrable exterior shell that Scrooge has constructed around himself as a defence mechanism. Crucially, an oyster also contains a pearl within its rough exterior, which perhaps foreshadows Dickens' moral message that beneath Scrooge's callous surface lies the capacity for goodness and generosity, waiting to be revealed.</p>
 <p>Moreover, Dickens reinforces this isolation through the semantic field of cold that pervades the description: Scrooge carries "cold within him," his features are "nipped" by frost, and he has a "frosty rime" upon his head. This extended metaphor blurs the boundary between the character and the weather, suggesting that Scrooge's emotional frigidity has become so extreme that it manifests physically. The verb "nipped" is particularly effective, as its connotations of sharp, biting pain imply that Scrooge's coldness is not merely passive but actively hostile to those around him. Dickens appears to suggest that isolation is not simply the absence of warmth but an aggressive force that repels human connection.</p>
 <p>This characterisation serves Dickens' broader social purpose as a Victorian reformer. By presenting Scrooge's isolation as both self-imposed and spiritually destructive, Dickens critiques the individualistic philosophy of laissez-faire capitalism that prioritised personal profit over communal responsibility. The reader is positioned to recognise that Scrooge's wealth has purchased only loneliness, thereby reinforcing the novella's central argument that true prosperity lies in human fellowship rather than financial accumulation.</p>`,
@@ -82,10 +87,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Uses precise literary terminology (semantic field, extended metaphor, simile)',
       'Makes connections between language choices and authorial intent',
       'Considers alternative interpretations (the pearl within the oyster)',
-      'Sophisticated vocabulary and academic register throughout'
+      'Sophisticated vocabulary and academic register throughout',
     ],
     wordCount: 312,
-    examinersCommentary: 'An outstanding response that demonstrates analytical skills well beyond Year 7 expectations. The student moves fluently between close textual analysis and broader contextual understanding, identifying how individual word choices serve Dickens\' wider social purpose. The exploration of multiple layers within the oyster simile is particularly impressive. The response is cohesive, precisely expressed, and demonstrates genuine critical thinking about the relationship between language and meaning.'
+    examinersCommentary:
+      "An outstanding response that demonstrates analytical skills well beyond Year 7 expectations. The student moves fluently between close textual analysis and broader contextual understanding, identifying how individual word choices serve Dickens' wider social purpose. The exploration of multiple layers within the oyster simile is particularly impressive. The response is cohesive, precisely expressed, and demonstrates genuine critical thinking about the relationship between language and meaning.",
   },
 
   {
@@ -104,10 +110,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Shows awareness of reader response but could be more specific',
       'Identifies the technique of contrast but does not use formal terminology',
       'Personal engagement with the text is evident',
-      'Needs more precise literary vocabulary'
+      'Needs more precise literary vocabulary',
     ],
     wordCount: 215,
-    examinersCommentary: 'This response sits on the boundary between emerging and expected. The student demonstrates personal engagement with the text and can identify how Dahl creates sympathy through characterisation and contrast. The analysis of the word "brat" shows an attempt at close reading. To reach a secure expected level, the student should use formal terminology (such as "juxtaposition" instead of "contrast"), analyse the effect of specific language choices in more depth, and develop a more academic register.'
+    examinersCommentary:
+      'This response sits on the boundary between emerging and expected. The student demonstrates personal engagement with the text and can identify how Dahl creates sympathy through characterisation and contrast. The analysis of the word "brat" shows an attempt at close reading. To reach a secure expected level, the student should use formal terminology (such as "juxtaposition" instead of "contrast"), analyse the effect of specific language choices in more depth, and develop a more academic register.',
   },
 
   {
@@ -127,10 +134,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Considers the emotional depth beneath the surface narrative',
       'Links language analysis to thematic exploration effectively',
       'Uses a range of analytical verbs (reveals, suggests, implies)',
-      'Could consider the autobiographical context more explicitly'
+      'Could consider the autobiographical context more explicitly',
     ],
     wordCount: 278,
-    examinersCommentary: 'This response operates at the boundary between expected and exceeding. The student demonstrates sophisticated understanding of how an extended metaphor functions across a poem and analyses individual word choices with care. The final paragraph, which addresses the cyclical structure and its thematic implications, shows genuine critical thinking. The response would benefit from considering how the poem\'s form and structure (such as its use of enjambment or the sonnet-like volta) contribute to meaning.'
+    examinersCommentary:
+      "This response operates at the boundary between expected and exceeding. The student demonstrates sophisticated understanding of how an extended metaphor functions across a poem and analyses individual word choices with care. The final paragraph, which addresses the cyclical structure and its thematic implications, shows genuine critical thinking. The response would benefit from considering how the poem's form and structure (such as its use of enjambment or the sonnet-like volta) contribute to meaning.",
   },
 
   // --- Year 7: Creative Writing Extracts ---
@@ -153,10 +161,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'One simile attempted ("like a massive torch") but underdeveloped',
       'Chronological structure shows basic organisation',
       'Tells rather than shows emotions ("I was scared")',
-      'Vocabulary is functional but lacks ambition'
+      'Vocabulary is functional but lacks ambition',
     ],
     wordCount: 213,
-    examinersCommentary: 'This response demonstrates an emerging ability in creative writing. The student can construct a piece with a clear beginning, middle, and end, and attempts one simile. However, the writing relies heavily on simple sentences, basic vocabulary, and telling rather than showing. To improve, the student should vary sentence length for effect, use more ambitious vocabulary, employ a range of literary techniques, and focus on showing emotions through physical description rather than stating them directly.'
+    examinersCommentary:
+      'This response demonstrates an emerging ability in creative writing. The student can construct a piece with a clear beginning, middle, and end, and attempts one simile. However, the writing relies heavily on simple sentences, basic vocabulary, and telling rather than showing. To improve, the student should vary sentence length for effect, use more ambitious vocabulary, employ a range of literary techniques, and focus on showing emotions through physical description rather than stating them directly.',
   },
 
   {
@@ -177,10 +186,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Ambitious vocabulary choices ("cascading", "illuminated")',
       'Sensory details across multiple senses (taste, sound, sight)',
       'Effective use of the rule of three ("blinking and battered")',
-      'Strong ending with the single bird note creating contrast'
+      'Strong ending with the single bird note creating contrast',
     ],
     wordCount: 267,
-    examinersCommentary: 'A confident expected-level response that demonstrates a secure command of descriptive writing techniques. The student employs a range of literary devices including simile, personification, and sensory description, and varies sentence length effectively to control pace. The vocabulary is ambitious and mostly well-chosen. To reach exceeding level, the student could develop more sustained and original metaphors, experiment with structural choices such as cyclical narrative, and refine their use of imagery to avoid occasional cliches.'
+    examinersCommentary:
+      'A confident expected-level response that demonstrates a secure command of descriptive writing techniques. The student employs a range of literary devices including simile, personification, and sensory description, and varies sentence length effectively to control pace. The vocabulary is ambitious and mostly well-chosen. To reach exceeding level, the student could develop more sustained and original metaphors, experiment with structural choices such as cyclical narrative, and refine their use of imagery to avoid occasional cliches.',
   },
 
   {
@@ -204,10 +214,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Abstract concepts made concrete ("darkness that has weight and texture")',
       'Deliberate and controlled use of personification throughout',
       'Sophisticated vocabulary deployed precisely ("detonated", "translucent", "pewter")',
-      'Final image of the blackbird provides thematic resolution'
+      'Final image of the blackbird provides thematic resolution',
     ],
     wordCount: 341,
-    examinersCommentary: 'An exceptional piece of descriptive writing that demonstrates a maturity and control far beyond Year 7 expectations. The student demonstrates sophisticated understanding of how structure creates meaning, using the bookending silence to give the piece a satisfying arc. The imagery is consistently original, avoiding cliches in favour of unexpected comparisons that genuinely illuminate the subject. The control of pace through sentence length variation is particularly impressive, as is the ability to make abstract concepts tangible. This is writing of genuine quality.'
+    examinersCommentary:
+      'An exceptional piece of descriptive writing that demonstrates a maturity and control far beyond Year 7 expectations. The student demonstrates sophisticated understanding of how structure creates meaning, using the bookending silence to give the piece a satisfying arc. The imagery is consistently original, avoiding cliches in favour of unexpected comparisons that genuinely illuminate the subject. The control of pace through sentence length variation is particularly impressive, as is the ability to make abstract concepts tangible. This is writing of genuine quality.',
   },
 
   {
@@ -216,7 +227,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year7',
     assessmentType: 'Creative Writing',
     gradeLevel: 'Emerging',
-    question: 'Write the opening of a story set in a place that is unfamiliar to the main character.',
+    question:
+      'Write the opening of a story set in a place that is unfamiliar to the main character.',
     response: `<p>When I got off the bus I knew I was lost. The buildings around me were really tall and I had never seen them before. There were loads of people walking fast and nobody looked at me. I felt really scared and alone.</p>
 <p>I looked at my phone but there was no signal. I tried to find a map but I couldn't read the signs because they were in a different language. The streets all looked the same to me and I didn't know which way to go. I started walking and hoped I would find somewhere I recognised.</p>
 <p>After walking for a while I found a park. There were some children playing and an old man sitting on a bench. I sat down too because my legs were tired. The old man looked at me and smiled. He could tell I was lost. He said something to me but I couldn't understand him. He pointed down the road and I think he was trying to help me.</p>
@@ -228,10 +240,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Simple sentence structures with limited variety',
       'Setting is vaguely sketched rather than precisely described',
       'Basic vocabulary with heavy reliance on "really" as intensifier',
-      'Narrative has some engagement but lacks tension or suspense'
+      'Narrative has some engagement but lacks tension or suspense',
     ],
     wordCount: 228,
-    examinersCommentary: 'An emerging-level narrative that tells a clear story but lacks the descriptive precision and technical control needed to create an immersive reading experience. The student should focus on showing emotions through physical sensations and actions rather than stating them, developing setting through specific sensory details, and using dialogue to reveal character. Varying sentence structures would also help to control pace and create tension.'
+    examinersCommentary:
+      'An emerging-level narrative that tells a clear story but lacks the descriptive precision and technical control needed to create an immersive reading experience. The student should focus on showing emotions through physical sensations and actions rather than stating them, developing setting through specific sensory details, and using dialogue to reveal character. Varying sentence structures would also help to control pace and create tension.',
   },
 
   {
@@ -240,7 +253,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year7',
     assessmentType: 'Creative Writing',
     gradeLevel: 'Expected',
-    question: 'Write the opening of a story set in a place that is unfamiliar to the main character.',
+    question:
+      'Write the opening of a story set in a place that is unfamiliar to the main character.',
     response: `<p>The door closed behind Maya with a soft, final click, and the world she knew disappeared. In front of her stretched a corridor that shouldn't have existed, curving gently into shadow, its walls lined with mirrors that reflected versions of herself she didn't quite recognise. In one, she was taller, older, her hair threaded with silver. In another, she was barely five years old, clutching a stuffed rabbit she hadn't thought about in years.</p>
 <p>"Hello?" Her voice fell flat against the air, absorbed by the silence rather than echoing back. She had expected an echo. The absence of one felt wrong, like reaching for a step that isn't there.</p>
 <p>She took a step forward. The floor beneath her feet was warm, almost alive, and she could have sworn it pulsed gently, like the slow breathing of something enormous sleeping beneath her. The mirrors continued on either side, each one showing a different version of her life, moments she remembered and moments she was certain hadn't happened yet. A birthday cake with too many candles. A train station in a city she'd never visited. A hand reaching for hers in the darkness.</p>
@@ -254,10 +268,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'List of three ("A birthday cake... A train station... A hand") builds tension',
       'Sensory details create an immersive atmosphere',
       'Internal conflict conveyed through physical sensation ("heart hammered")',
-      'Final sentence creates momentum through polysyndeton ("and...and...and")'
+      'Final sentence creates momentum through polysyndeton ("and...and...and")',
     ],
     wordCount: 315,
-    examinersCommentary: 'A strong expected-level narrative opening that demonstrates confident creative writing skills. The student creates an intriguing premise, develops atmosphere effectively, and uses a range of techniques to engage the reader. The mirrors as a motif are handled well, and the pacing builds effectively towards the cliffhanger ending. To develop further, the student could experiment with more varied structural approaches and ensure that figurative language always serves the story rather than decorating it.'
+    examinersCommentary:
+      'A strong expected-level narrative opening that demonstrates confident creative writing skills. The student creates an intriguing premise, develops atmosphere effectively, and uses a range of techniques to engage the reader. The mirrors as a motif are handled well, and the pacing builds effectively towards the cliffhanger ending. To develop further, the student could experiment with more varied structural approaches and ensure that figurative language always serves the story rather than decorating it.',
   },
 
   // --- Year 7: Poetry Analysis Responses ---
@@ -278,10 +293,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Understands personification but does not name the technique',
       'Makes a valid point about nature vs. war but could develop it',
       'Analysis is partially developed but needs more depth',
-      'Limited use of literary terminology'
+      'Limited use of literary terminology',
     ],
     wordCount: 187,
-    examinersCommentary: 'An emerging response that shows the student can identify relevant quotations and begin to comment on their effects. The observation that nature is more dangerous than warfare shows some understanding of the poem\'s central irony. However, the analysis needs to be developed with more precise literary terminology, deeper exploration of language choices, and consideration of how form and structure contribute to meaning. The student should practise identifying and naming specific techniques.'
+    examinersCommentary:
+      "An emerging response that shows the student can identify relevant quotations and begin to comment on their effects. The observation that nature is more dangerous than warfare shows some understanding of the poem's central irony. However, the analysis needs to be developed with more precise literary terminology, deeper exploration of language choices, and consideration of how form and structure contribute to meaning. The student should practise identifying and naming specific techniques.",
   },
 
   {
@@ -290,22 +306,24 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year7',
     assessmentType: 'Poetry Analysis',
     gradeLevel: 'Expected',
-    question: 'How does the poet present the power of nature in "Ozymandias" by Percy Bysshe Shelley?',
+    question:
+      'How does the poet present the power of nature in "Ozymandias" by Percy Bysshe Shelley?',
     response: `<p>Shelley presents the power of nature as an unstoppable force that ultimately triumphs over all human ambition and pride. The poem centres on the remains of a once-mighty statue, now reduced to "two vast and trunkless legs of stone" standing in an empty desert. The adjective "trunkless" is significant as it emphasises the incompleteness and decay of the monument, suggesting that nature has slowly dismantled what was once intended to be an eternal symbol of power.</p>
-<p>The irony of the inscription, "Look on my works, ye mighty, and despair!" is central to Shelley's presentation of nature's power. The boastful command, addressed to other rulers, was intended to inspire awe at Ozymandias's achievements. However, the reader knows that "nothing beside remains," creating dramatic irony that exposes the futility of human arrogance. Nature, through the patient work of wind, sand, and time, has erased every trace of the "works" Ozymandias so proudly commanded others to admire.</p>
+<p>The irony of the inscription, "Look on my Works, ye Mighty, and despair!" is central to Shelley's presentation of nature's power. The boastful command, addressed to other rulers, was intended to inspire awe at Ozymandias's achievements. However, the reader knows that "nothing beside remains," creating dramatic irony that exposes the futility of human arrogance. Nature, through the patient work of wind, sand, and time, has erased every trace of the "works" Ozymandias so proudly commanded others to admire.</p>
 <p>Furthermore, Shelley uses the vast, empty landscape to represent nature's indifferent power. The "lone and level sands" that "stretch far away" suggest an infinite, unchanging natural world that dwarfs all human endeavour. The alliteration of "lone and level" creates a sense of monotonous, endless flatness that reinforces how completely nature has reclaimed the desert. The sibilance of "sands stretch" mimics the sound of shifting sand, making the reader almost hear the desert wind that has been slowly wearing down the statue for centuries.</p>
 <p>Ultimately, Shelley presents nature's power as quiet but absolute. Unlike the aggressive, commanding power of Ozymandias, nature's power works through patience and persistence, achieving what no human force ever could: the complete erasure of tyranny and pride.</p>`,
     annotations: [
-      'Clear and sustained analysis of how nature\'s power is presented',
+      "Clear and sustained analysis of how nature's power is presented",
       'Identifies and analyses irony with understanding',
       'Close reading of individual word choices ("trunkless")',
       'Comments on sound devices (alliteration, sibilance) with understanding of their effects',
       'Develops a clear argument about the contrast between human and natural power',
       'Uses appropriate literary terminology throughout',
-      'Strong concluding paragraph that synthesises the analysis'
+      'Strong concluding paragraph that synthesises the analysis',
     ],
     wordCount: 298,
-    examinersCommentary: 'A strong expected-level response that demonstrates confident analytical skills. The student identifies irony as a central technique and analyses it with understanding. The close reading of sound devices shows technical knowledge applied purposefully. The concluding paragraph is particularly effective in drawing together the strands of the argument. To reach exceeding level, the student should consider contextual factors such as Shelley\'s political radicalism and the Romantic movement\'s relationship with nature, and explore how the poem\'s form and structure reinforce its themes.'
+    examinersCommentary:
+      "A strong expected-level response that demonstrates confident analytical skills. The student identifies irony as a central technique and analyses it with understanding. The close reading of sound devices shows technical knowledge applied purposefully. The concluding paragraph is particularly effective in drawing together the strands of the argument. To reach exceeding level, the student should consider contextual factors such as Shelley's political radicalism and the Romantic movement's relationship with nature, and explore how the poem's form and structure reinforce its themes.",
   },
 
   {
@@ -317,7 +335,7 @@ export const modelAnswerBank: ModelAnswer[] = [
     question: 'How does the poet present ideas about time in "Ozymandias" by Percy Bysshe Shelley?',
     response: `<p>Shelley constructs a sophisticated meditation on time's destructive power through a layered narrative structure that itself enacts the passage and distortion of time. The poem reaches the reader through a chain of transmission: the poet met "a traveller from an antique land" who in turn read the words of a sculptor who in turn interpreted the expressions of a king. This nested narrative, each layer further removed from the original source, mirrors the way time erodes certainty and authority, reducing direct experience to hearsay and monument to ruin.</p>
 <p>The physical description of the statue embodies time's selective cruelty. While the "shattered visage" and "trunkless legs" testify to material decay, the sculptor's art has paradoxically survived the king's empire: the "sneer of cold command" still lives, "stamped on these lifeless things." The verb "stamped" carries dual connotations of both artistic impression and authoritarian force, yet it is the sculptor's "hand that mocked" Ozymandias whose work endures, while the king's own achievements have vanished entirely. Shelley thus suggests that art outlasts power, yet even art ultimately succumbs to time, as the statue itself crumbles.</p>
-<p>The poem's most devastating irony resides in the inscription: "Look on my works, ye mighty, and despair!" Originally a boast, time has transformed it into an inadvertent memento mori. The imperative "despair" has shifted its meaning entirely; where once it commanded rivals to despair at Ozymandias's greatness, it now invites despair at the futility of all human endeavour. This semantic transformation enacted by time is perhaps more powerful than any physical destruction, as it turns the tyrant's own words into evidence against him.</p>
+<p>The poem's most devastating irony resides in the inscription: "Look on my Works, ye Mighty, and despair!" Originally a boast, time has transformed it into an inadvertent memento mori. The imperative "despair" has shifted its meaning entirely; where once it commanded rivals to despair at Ozymandias's greatness, it now invites despair at the futility of all human endeavour. This semantic transformation enacted by time is perhaps more powerful than any physical destruction, as it turns the tyrant's own words into evidence against him.</p>
 <p>The sestet's final image of "lone and level sands" stretching "far away" crystallises Shelley's vision of time as infinite erasure. The desert, a landscape defined by the absence of human habitation and the relentless repetition of natural cycles, becomes a symbol of time itself: patient, impersonal, and absolute. As a Romantic poet writing in an era of imperial expansion, Shelley directs this meditation outward as a political warning, suggesting that the British Empire, like Ozymandias's kingdom, will inevitably be consumed by the same indifferent forces it seeks to conquer.</p>`,
     annotations: [
       'Exceptional structural analysis identifying the nested narrative layers',
@@ -328,10 +346,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Develops a sustained, coherent argument across multiple paragraphs',
       'Considers the relationship between art, power, and time with nuance',
       'Demonstrates genuine independent critical thinking',
-      'Makes perceptive structural observations about the sonnet form'
+      'Makes perceptive structural observations about the sonnet form',
     ],
     wordCount: 348,
-    examinersCommentary: 'A truly exceptional response that demonstrates analytical skills and critical thinking well beyond Year 7 expectations. The student\'s observation about the nested narrative structure is genuinely sophisticated, as is the tracking of how "despair" undergoes semantic transformation over time. The integration of contextual knowledge is seamless and purposeful. This response demonstrates the kind of independent, exploratory thinking that characterises the very best literary analysis at any level.'
+    examinersCommentary:
+      'A truly exceptional response that demonstrates analytical skills and critical thinking well beyond Year 7 expectations. The student\'s observation about the nested narrative structure is genuinely sophisticated, as is the tracking of how "despair" undergoes semantic transformation over time. The integration of contextual knowledge is seamless and purposeful. This response demonstrates the kind of independent, exploratory thinking that characterises the very best literary analysis at any level.',
   },
 
   {
@@ -351,10 +370,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Analysis of setting conventions shows some wider reading awareness',
       'Comments on pace and structure in final paragraph',
       'Could explore language choices in more depth',
-      'Needs more precise literary terminology'
+      'Needs more precise literary terminology',
     ],
     wordCount: 217,
-    examinersCommentary: 'A response that shows potential to move from emerging to expected level. The student identifies relevant features and demonstrates an understanding of how the poem creates fear. The comment about pace and repetition in the final paragraph shows developing awareness of structural techniques. To improve, the student should analyse specific word choices more closely, use formal literary terminology, and explore how techniques work together to create cumulative effects.'
+    examinersCommentary:
+      'A response that shows potential to move from emerging to expected level. The student identifies relevant features and demonstrates an understanding of how the poem creates fear. The comment about pace and repetition in the final paragraph shows developing awareness of structural techniques. To improve, the student should analyse specific word choices more closely, use formal literary terminology, and explore how techniques work together to create cumulative effects.',
   },
 
   {
@@ -363,7 +383,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year7',
     assessmentType: 'Poetry Analysis',
     gradeLevel: 'Expected',
-    question: 'Compare how the poets present the relationship between humans and nature in "Storm on the Island" by Seamus Heaney and "Exposure" by Wilfred Owen.',
+    question:
+      'Compare how the poets present the relationship between humans and nature in "Storm on the Island" by Seamus Heaney and "Exposure" by Wilfred Owen.',
     response: `<p>Both Heaney and Owen present nature as a powerful, hostile force that overwhelms human defences, yet they differ in the way humans respond to this threat. In "Storm on the Island," the speaker begins with apparent confidence, declaring "We are prepared," suggesting a community that has learned to coexist with nature's violence. In contrast, Owen's soldiers in "Exposure" are passive victims of the cold, with "nothing happens" repeated as a refrain that emphasises their helplessness.</p>
 <p>Heaney uses military language to describe nature's assault: the sea is described as "spits like a tame cat / Turned savage." The simile transforms the familiar into something threatening, with the verb "spits" conveying sudden, violent aggression. Similarly, Owen personifies the wind as a weapon that "knive[s] us," with the invented verb "knive" making the wind's assault feel deliberate and personal. Both poets use personification to present nature as an active aggressor, but while Heaney's imagery suggests a sudden transformation from calm to chaos, Owen's implies a sustained, grinding assault.</p>
 <p>The endings of both poems reveal different attitudes towards nature's power. Heaney concludes with the admission that "it is a huge nothing that we fear," suggesting that the true terror of nature lies not in physical damage but in its incomprehensible emptiness. Owen, however, ends with the soldiers' deaths, where nature has literally killed them through exposure. While Heaney's relationship with nature is ultimately philosophical, Owen's is tragically physical.</p>
@@ -376,10 +397,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Links analysis to thematic ideas effectively',
       'Contextual references are relevant and purposeful',
       'Uses comparative discourse markers fluently',
-      'Develops a clear argument about different attitudes to nature'
+      'Develops a clear argument about different attitudes to nature',
     ],
     wordCount: 310,
-    examinersCommentary: 'A confident expected-level comparative response that maintains a sustained analytical comparison throughout. The student moves between poems fluently, identifying both similarities and differences in technique and theme. The analysis of specific language choices is precise, and the contextual references enhance rather than distract from the analysis. To develop further, the student could explore how the formal structures of the poems contribute to their different effects and consider how both poems might be read as political statements about power.'
+    examinersCommentary:
+      'A confident expected-level comparative response that maintains a sustained analytical comparison throughout. The student moves between poems fluently, identifying both similarities and differences in technique and theme. The analysis of specific language choices is precise, and the contextual references enhance rather than distract from the analysis. To develop further, the student could explore how the formal structures of the poems contribute to their different effects and consider how both poems might be read as political statements about power.',
   },
 
   // ============================================================
@@ -407,10 +429,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Could explore language more closely at word level',
       'Needs more literary terminology and discussion of form',
       'Does not consider the dramatic monologue form or its effects',
-      'Limited contextual awareness'
+      'Limited contextual awareness',
     ],
     wordCount: 261,
-    examinersCommentary: 'An emerging response that demonstrates basic understanding of the poem\'s themes and can select relevant quotations. The student makes valid points about the Duke\'s controlling nature and identifies the significance of the line about giving commands. However, the response lacks engagement with form (dramatic monologue), close word-level analysis, and contextual knowledge. To improve, the student should consider how the poem\'s structure creates meaning, analyse individual words more precisely, and explore Victorian attitudes to class and gender.'
+    examinersCommentary:
+      "An emerging response that demonstrates basic understanding of the poem's themes and can select relevant quotations. The student makes valid points about the Duke's controlling nature and identifies the significance of the line about giving commands. However, the response lacks engagement with form (dramatic monologue), close word-level analysis, and contextual knowledge. To improve, the student should consider how the poem's structure creates meaning, analyse individual words more precisely, and explore Victorian attitudes to class and gender.",
   },
 
   {
@@ -432,10 +455,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Explores the psychological dimension of conflict effectively',
       'Contextual awareness is present and relevant',
       'Uses a range of literary terminology accurately',
-      'Develops a sustained argument about dehumanisation'
+      'Develops a sustained argument about dehumanisation',
     ],
     wordCount: 318,
-    examinersCommentary: 'A strong expected-level essay that demonstrates confident analytical skills across language, form, and structure. The student\'s analysis of "raw-seamed" and the caesura shows genuine close reading ability, and the exploration of the parenthetical question as psychological interruption is perceptive. The contextual reference to Hughes\'s post-war perspective is relevant and enhances the analysis. To reach exceeding level, the student should explore how the poem\'s irregular form mirrors its content more systematically and consider alternative interpretations of key images.'
+    examinersCommentary:
+      "A strong expected-level essay that demonstrates confident analytical skills across language, form, and structure. The student's analysis of \"raw-seamed\" and the caesura shows genuine close reading ability, and the exploration of the parenthetical question as psychological interruption is perceptive. The contextual reference to Hughes's post-war perspective is relevant and enhances the analysis. To reach exceeding level, the student should explore how the poem's irregular form mirrors its content more systematically and consider alternative interpretations of key images.",
   },
 
   {
@@ -455,14 +479,15 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Sophisticated close reading of grammar and pronouns as carriers of meaning',
       'Dual interpretation of "last" demonstrates outstanding analytical precision',
       'Formal analysis of enjambment and metre is integrated with thematic argument',
-      'Identifies the gap between the Duke\'s self-perception and the reader\'s perception',
+      "Identifies the gap between the Duke's self-perception and the reader's perception",
       'Analysis of the Neptune allusion as unconscious self-portrait is highly perceptive',
       'Contextual references to Victorian gender politics are natural and relevant',
       'Sustained, cohesive argument developed across the full response',
-      'Academic register and vocabulary are consistently sophisticated'
+      'Academic register and vocabulary are consistently sophisticated',
     ],
     wordCount: 468,
-    examinersCommentary: 'An outstanding essay that demonstrates analytical skills of the highest order. The student\'s understanding of dramatic irony as the poem\'s central mechanism is sophisticated, and the analysis of how enjambment and metre enact the Duke\'s character at a formal level is genuinely impressive. The observation about the dual meaning of "last" is the kind of insight that characterises exceptional literary criticism. The integration of form, language, and context into a sustained, cohesive argument is exemplary.'
+    examinersCommentary:
+      "An outstanding essay that demonstrates analytical skills of the highest order. The student's understanding of dramatic irony as the poem's central mechanism is sophisticated, and the analysis of how enjambment and metre enact the Duke's character at a formal level is genuinely impressive. The observation about the dual meaning of \"last\" is the kind of insight that characterises exceptional literary criticism. The integration of form, language, and context into a sustained, cohesive argument is exemplary.",
   },
 
   {
@@ -471,7 +496,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year8',
     assessmentType: 'Analytical Essay (Power/Conflict)',
     gradeLevel: 'Emerging',
-    question: 'How is the theme of power presented in "Charge of the Light Brigade" by Alfred, Lord Tennyson?',
+    question:
+      'How is the theme of power presented in "Charge of the Light Brigade" by Alfred, Lord Tennyson?',
     response: `<p>Tennyson presents power in different ways in this poem. The most obvious form of power is the military power of the army. The soldiers are ordered to charge "into the valley of death" which shows that the people in charge have the power to send men to their deaths. The phrase "valley of death" is a biblical reference which makes it sound like the soldiers are going to die, which many of them did.</p>
 <p>The repetition in the poem also creates a sense of power. Tennyson repeats "cannon to right of them, cannon to left of them, cannon in front of them" which shows that the soldiers are surrounded by enemy firepower. The repetition makes the reader feel the overwhelming power of the enemy forces and how hopeless the situation is for the soldiers.</p>
 <p>Another type of power in the poem is the power of duty. Even though the soldiers knew they were probably going to die, they still followed orders: "Theirs not to reason why, Theirs but to do and die." This shows that the power of military duty is stronger than the power of self-preservation. The soldiers obey even though they know someone has "blundered" and made a terrible mistake.</p>
@@ -484,10 +510,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Final paragraph shows developing critical awareness',
       'Could include more close reading of individual words',
       'Needs more formal literary terminology',
-      'Would benefit from discussion of rhythm and metre'
+      'Would benefit from discussion of rhythm and metre',
     ],
     wordCount: 282,
-    examinersCommentary: 'A response that demonstrates qualities of both emerging and expected levels. The identification of multiple types of power within the poem shows developing analytical thinking, and the final paragraph\'s consideration of alternative reader responses is promising. However, the analysis needs more precision at word level, greater use of literary terminology, and engagement with the poem\'s formal features (dactylic rhythm, stanza structure) to reach a secure expected level.'
+    examinersCommentary:
+      "A response that demonstrates qualities of both emerging and expected levels. The identification of multiple types of power within the poem shows developing analytical thinking, and the final paragraph's consideration of alternative reader responses is promising. However, the analysis needs more precision at word level, greater use of literary terminology, and engagement with the poem's formal features (anapaestic dimeter with a dactylic refrain, stanza structure) to reach a secure expected level.",
   },
 
   {
@@ -509,10 +536,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Contextual understanding of propaganda vs. testimony is well integrated',
       'Technical vocabulary is precise and varied',
       'Sustained argument built across the full response',
-      'Close reading of individual words is consistently strong'
+      'Close reading of individual words is consistently strong',
     ],
     wordCount: 378,
-    examinersCommentary: 'A response operating at the boundary between expected and exceeding. The student demonstrates sophisticated analytical skills, particularly in the observation about the truncated word form enacting breathlessness and the dual interpretation of conflict as both physical and ideological. The analysis of the tricolon as escalation is precise and persuasive. To secure exceeding level, the student could explore how Owen\'s use of the sonnet form subverts traditional poetic conventions and consider the poem\'s relationship to other war poetry more explicitly.'
+    examinersCommentary:
+      "A response operating at the boundary between expected and exceeding. The student demonstrates sophisticated analytical skills, particularly in the observation about the truncated word form enacting breathlessness and the dual interpretation of conflict as both physical and ideological. The analysis of the tricolon as escalation is precise and persuasive. To secure exceeding level, the student could explore how Owen's use of the sonnet form subverts traditional poetic conventions and consider the poem's relationship to other war poetry more explicitly.",
   },
 
   // --- Year 8: Comparative Poetry Responses ---
@@ -523,7 +551,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year8',
     assessmentType: 'Comparative Poetry',
     gradeLevel: 'Emerging',
-    question: 'Compare how the poets present memories of a person in "Mother, Any Distance" by Simon Armitage and "Walking Away" by Cecil Day-Lewis.',
+    question:
+      'Compare how the poets present memories of a person in "Mother, Any Distance" by Simon Armitage and "Walking Away" by Cecil Day-Lewis.',
     response: `<p>Both poems are about memories of important people. In "Mother, Any Distance" Armitage writes about his relationship with his mother, and in "Walking Away" Day-Lewis writes about watching his son walk away to school. Both poets feel emotional about these memories but they express their feelings in different ways.</p>
 <p>Armitage uses the image of a tape measure to show the connection between him and his mother. He writes "you at the zero-end" which shows that his mother is the starting point of his life. The tape measure represents the distance between them as he grows up and becomes more independent. When the tape measure runs out, it means he has to let go of his mother's help.</p>
 <p>Day-Lewis uses the image of a "half-fledged thing" to describe his son. This means his son is like a young bird that is not yet ready to fly. The poet feels sad because his son is walking away from him and he is worried that his son might not be ready. The word "fledged" is about birds leaving the nest which is a metaphor for children leaving their parents.</p>
@@ -535,10 +564,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Comparison is present but could be more sustained',
       'Limited use of literary terminology',
       'Does not analyse how form and structure contribute to meaning',
-      'Basic vocabulary for discussing emotional effects'
+      'Basic vocabulary for discussing emotional effects',
     ],
     wordCount: 259,
-    examinersCommentary: 'An emerging comparative response that identifies relevant connections between the two poems and selects appropriate quotations. The student shows some understanding of how metaphors work but needs to develop analysis at word level. To improve, the student should analyse how the poems\' structures reflect their themes, use more precise literary terminology, and develop comparisons more fully rather than treating each poem in separate paragraphs.'
+    examinersCommentary:
+      "An emerging comparative response that identifies relevant connections between the two poems and selects appropriate quotations. The student shows some understanding of how metaphors work but needs to develop analysis at word level. To improve, the student should analyse how the poems' structures reflect their themes, use more precise literary terminology, and develop comparisons more fully rather than treating each poem in separate paragraphs.",
   },
 
   {
@@ -547,23 +577,26 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year8',
     assessmentType: 'Comparative Poetry',
     gradeLevel: 'Expected',
-    question: 'Compare how the poets present loss in "Remains" by Simon Armitage and "War Photographer" by Carol Ann Duffy.',
+    // Corrected Armitage "Remains" quotation: "walks right over it" replaced with the verified first-person form "I walk right over it" (the line as it appears in the published poem). Surrounding analytical sentence in the response retained, with the quotation updated to the correct grammatical voice.
+    question:
+      'Compare how the poets present loss in "Remains" by Simon Armitage and "War Photographer" by Carol Ann Duffy.',
     response: `<p>Both Armitage and Duffy present loss as an experience that haunts the individual long after the traumatic event, yet they differ significantly in their perspectives. Armitage writes from the soldier's first-person perspective, creating an immediacy that immerses the reader in the psychological damage of combat, while Duffy adopts a third-person viewpoint that examines the war photographer from an outsider's distance, perhaps mirroring the emotional distance that the photographer must maintain to function.</p>
-<p>In "Remains," loss is presented as a violent intrusion into ordinary life. The colloquial language, "probably armed, possibly not," captures the casual uncertainty of the soldier's recollection, yet this understated tone makes the subsequent violence more shocking. The image of the dead man whose "blood-Loss shadow" becomes permanently fused with the road suggests that the act of killing has left an indelible stain on both the physical landscape and the soldier's psyche. Armitage's use of the present tense, "his bloody life in my bloody hands," blurs past and present, indicating that for the soldier, the moment of loss is perpetually re-experienced rather than remembered.</p>
+<p>In "Remains," loss is presented as a violent intrusion into ordinary life. The colloquial language, "probably armed, possibly not," captures the casual uncertainty of the soldier's recollection, yet this understated tone makes the subsequent violence more shocking. The image of the dead man whose "blood-shadow" stays "on the street" suggests that the act of killing has left an indelible stain on both the physical landscape and the soldier's psyche. Armitage's use of the present tense, "his bloody life in my bloody hands," blurs past and present, indicating that for the soldier, the moment of loss is perpetually re-experienced rather than remembered.</p>
 <p>Duffy, conversely, presents loss through the metaphor of photography itself. The darkroom becomes a space where suppressed emotions develop alongside images: "a stranger's features faintly start to twist before his eyes." The verb "twist" suggests both the chemical process of developing film and the emotional distortion of witnessing suffering. The photographer occupies an impossible position between documenting loss and contributing to its exploitation, and Duffy critiques the civilian readership whose "eyes prick with tears between the bath and pre-lunch beers" before returning to comfortable indifference.</p>
-<p>Both poems ultimately present loss as something that cannot be contained or processed through conventional means. Armitage's soldier "walks right over it" repeatedly, unable to move past the moment, while Duffy's photographer seeks "rural England" as an antidote to the horrors he has witnessed, only to find that his next assignment awaits. The cyclical structures of both poems, with Armitage returning to the image of the dead man and Duffy returning to the photographer boarding a plane, suggest that loss creates patterns of repetition that resist resolution or closure.</p>`,
+<p>Both poems ultimately present loss as something that cannot be contained or processed through conventional means. Armitage's soldier admits "I walk right over it" — returning compulsively to the same memory and unable to move past the moment — while Duffy's photographer seeks "rural England" as an antidote to the horrors he has witnessed, only to find that his next assignment awaits. The cyclical structures of both poems, with Armitage returning to the image of the dead man and Duffy returning to the photographer boarding a plane, suggest that loss creates patterns of repetition that resist resolution or closure.</p>`,
     annotations: [
       'Sustained comparison throughout rather than sequential treatment',
       'Analyses the significance of narrative perspective in both poems',
       'Close reading of individual words ("twist") is effective',
       'Identifies cyclical structure in both poems with understanding',
       'Addresses both emotional and structural similarities',
-      'Considers Duffy\'s social critique alongside personal loss',
+      "Considers Duffy's social critique alongside personal loss",
       'Uses comparative connectives fluently',
-      'Develops a cohesive argument about unresolvable loss'
+      'Develops a cohesive argument about unresolvable loss',
     ],
     wordCount: 338,
-    examinersCommentary: 'A confident expected-level comparison that sustains analytical comparison throughout. The student\'s observation about narrative perspective and its implications is perceptive, and the analysis of both poems\' cyclical structures demonstrates understanding of how form creates meaning. The exploration of the photographer\'s impossible position between documentation and exploitation adds critical depth. To improve further, the student could explore how the different verse forms of the two poems contribute to their different effects.'
+    examinersCommentary:
+      "A confident expected-level comparison that sustains analytical comparison throughout. The student's observation about narrative perspective and its implications is perceptive, and the analysis of both poems' cyclical structures demonstrates understanding of how form creates meaning. The exploration of the photographer's impossible position between documentation and exploitation adds critical depth. To improve further, the student could explore how the different verse forms of the two poems contribute to their different effects.",
   },
 
   {
@@ -572,14 +605,15 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year8',
     assessmentType: 'Comparative Poetry',
     gradeLevel: 'Exceeding',
-    question: 'Compare how the poets present ideas about identity in "Checking Out Me History" by John Agard and "The Emigree" by Carol Rumens.',
+    question:
+      'Compare how the poets present ideas about identity in "Checking Out Me History" by John Agard and "The Émigrée" by Carol Rumens.',
     response: `<p>Both Agard and Rumens construct identity as fundamentally shaped by the tension between imposed narratives and personal truth, yet their poems occupy very different positions within this dynamic. Agard's poem is an act of reclamation, actively dismantling a colonial education that has suppressed his Caribbean heritage, while Rumens's poem is an act of preservation, safeguarding a remembered homeland against the threat of political erasure. Both poets assert that identity is inseparable from the stories we are told and those we choose to tell ourselves.</p>
-<p>Agard presents identity as a site of cultural conflict through the poem's typographical and structural duality. The standard English stanzas detailing British historical figures ("Dem tell me / Wid Florence Nightingale and she lamp") are visually and linguistically distinct from the italicised stanzas celebrating Caribbean heroes ("Toussaint de beacon / Toussaint de lantern"). This structural separation enacts the division within the speaker's identity: the curriculum imposed by colonial education literally interrupts and suppresses the heritage he seeks to recover. The shift from Standard English to Creole is itself a political act, rejecting the linguistic hierarchy that positions one form of English as legitimate and another as inferior.</p>
+<p>Agard presents identity as a site of cultural conflict through the poem's typographical and structural duality. The standard English stanzas detailing British historical figures ("Dem tell me bout Florence Nightingale and she lamp") are visually and linguistically distinct from the italicised stanzas celebrating Caribbean heroes ("Toussaint de thorn / to de French / Toussaint de beacon / of de Haitian Revolution"). This structural separation enacts the division within the speaker's identity: the curriculum imposed by colonial education literally interrupts and suppresses the heritage he seeks to recover. The shift from Standard English to Creole is itself a political act, rejecting the linguistic hierarchy that positions one form of English as legitimate and another as inferior.</p>
 <p>Rumens, conversely, constructs identity through the luminous persistence of childhood memory against the encroachment of political reality. The repeated phrase "my city" asserts ownership over a place that may no longer exist in its remembered form, with the possessive pronoun functioning as a claim of identity rather than property. The city is consistently associated with light, "sunlight," "white," "bright," creating a semantic field of radiance that stands in stark opposition to the "dark," "tyrants," and "tanks" that threaten it. This binary of light and darkness suggests that the speaker's identity, rooted in childhood perception, possesses an almost spiritual purity that political violence cannot contaminate.</p>
 <p>Both poets employ repetition as a structural strategy for asserting identity against erasure. Agard's refrain "Dem tell me" accumulates righteous anger through its insistent repetition, each iteration adding weight to the speaker's indictment of a biased education system. Rumens's repetition of "my city" serves a different but parallel function: each return to the phrase reinforces the speaker's determination to maintain her connection to a place that forces external to her are attempting to deny. In both cases, repetition becomes an act of resistance, using the poem's formal resources to enact the stubbornness of identity in the face of forces that seek to reshape or destroy it.</p>
-<p>The poems diverge most significantly in their relationship to time. Agard's poem is future-oriented, culminating in the declaration "I carving out me own identity," where the present continuous tense suggests an ongoing, active process of self-construction. Rumens's poem, however, is anchored in the past, with the speaker's identity dependent on preserving a memory that is acknowledged as possibly unreliable. This temporal difference reveals a crucial distinction: Agard's identity is something being built, while Rumens's is something being defended. Yet both poems ultimately affirm that identity cannot be imposed from outside; it must be actively constructed or fiercely protected by the individual who claims it.</p>`,
+<p>The poems diverge most significantly in their relationship to time. Agard's poem is future-oriented, culminating in the declaration "I carving out me identity," where the present continuous tense suggests an ongoing, active process of self-construction. Rumens's poem, however, is anchored in the past, with the speaker's identity dependent on preserving a memory that is acknowledged as possibly unreliable. This temporal difference reveals a crucial distinction: Agard's identity is something being built, while Rumens's is something being defended. Yet both poems ultimately affirm that identity cannot be imposed from outside; it must be actively constructed or fiercely protected by the individual who claims it.</p>`,
     annotations: [
-      'Exceptional structural analysis of Agard\'s typographical duality',
+      "Exceptional structural analysis of Agard's typographical duality",
       'Identifies the political significance of linguistic code-switching',
       'Analysis of semantic fields in Rumens is precise and purposeful',
       'Sophisticated understanding of how repetition functions differently in each poem',
@@ -587,10 +621,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Sustained, cohesive argument developed across the full response',
       'Academic register maintained throughout',
       'Both poems are given equal analytical weight',
-      'Considers both form and content as carriers of meaning'
+      'Considers both form and content as carriers of meaning',
     ],
     wordCount: 462,
-    examinersCommentary: 'An exceptional comparative essay that demonstrates analytical thinking of the highest calibre. The student\'s identification of how typographical layout in Agard\'s poem enacts cultural conflict is sophisticated, as is the observation about the different temporal orientations of the two poems. The analysis consistently moves between close textual detail and broader thematic interpretation, maintaining a cohesive argument about identity as resistance. This response demonstrates genuine critical independence and would be exceptional at any key stage.'
+    examinersCommentary:
+      "An exceptional comparative essay that demonstrates analytical thinking of the highest calibre. The student's identification of how typographical layout in Agard's poem enacts cultural conflict is sophisticated, as is the observation about the different temporal orientations of the two poems. The analysis consistently moves between close textual detail and broader thematic interpretation, maintaining a cohesive argument about identity as resistance. This response demonstrates genuine critical independence and would be exceptional at any key stage.",
   },
 
   {
@@ -599,23 +634,25 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year8',
     assessmentType: 'Comparative Poetry',
     gradeLevel: 'Emerging',
-    question: 'Compare how the poets present anger in "London" by William Blake and "Checking Out Me History" by John Agard.',
+    question:
+      'Compare how the poets present anger in "London" by William Blake and "Checking Out Me History" by John Agard.',
     response: `<p>Both Blake and Agard are angry about unfairness in society. Blake is angry about the suffering he sees in London, and Agard is angry about the way his education ignored his Caribbean history. Both poets use their poems to protest against things they think are wrong.</p>
 <p>In "London," Blake describes walking through the streets and seeing suffering everywhere. He talks about "marks of weakness, marks of woe" on people's faces. The word "marks" suggests that the suffering is visible and permanent. Blake is angry because the people in power are allowing this suffering to happen. He mentions the "chartered" streets and river, which means everything is controlled by the rich and powerful.</p>
 <p>Agard shows his anger through the way he writes. He uses the phrase "Dem tell me" many times, which sounds like he is accusing someone. The "dem" refers to the people who controlled his education and only taught him about British history. He is angry because they left out important figures from Caribbean history like Toussaint L'Ouverture and Nanny de Maroon.</p>
-<p>Both poets are angry at people who have power and use it to control others. Blake is angry at the political and religious leaders of London, and Agard is angry at the education system. Both poets use repetition to show their anger: Blake repeats "every" and "chartered" while Agard repeats "dem tell me." This repetition makes their anger feel strong and determined. However, Agard's poem ends on a more hopeful note because he says he is "carving out me own identity" which shows he is fighting back. Blake's poem seems more hopeless because the suffering just continues.</p>`,
+<p>Both poets are angry at people who have power and use it to control others. Blake is angry at the political and religious leaders of London, and Agard is angry at the education system. Both poets use repetition to show their anger: Blake repeats "every" and "chartered" while Agard repeats "dem tell me." This repetition makes their anger feel strong and determined. However, Agard's poem ends on a more hopeful note because he says he is "carving out me identity" which shows he is fighting back. Blake's poem seems more hopeless because the suffering just continues.</p>`,
     annotations: [
-      'Identifies a valid comparison between the poems\' themes',
+      "Identifies a valid comparison between the poems' themes",
       'Selects relevant quotations from both poems',
       'Beginning to analyse repetition as a technique',
       'Identifies the difference in tone between the endings',
       'Comparison is present but could be more sustained',
       'Analysis at word level is developing but could go deeper',
       'Limited discussion of form and structure',
-      'Contextual awareness is present but could be more detailed'
+      'Contextual awareness is present but could be more detailed',
     ],
     wordCount: 275,
-    examinersCommentary: 'A response at the boundary between emerging and expected. The student identifies valid thematic connections and differences between the poems, and the comparison of how both poets use repetition is relevant. The observation about the different endings is a good point. To reach a secure expected level, the student should sustain comparison throughout rather than treating poems separately, analyse form and structure more explicitly, and develop word-level analysis in greater depth.'
+    examinersCommentary:
+      'A response at the boundary between emerging and expected. The student identifies valid thematic connections and differences between the poems, and the comparison of how both poets use repetition is relevant. The observation about the different endings is a good point. To reach a secure expected level, the student should sustain comparison throughout rather than treating poems separately, analyse form and structure more explicitly, and develop word-level analysis in greater depth.',
   },
 
   {
@@ -624,12 +661,14 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year8',
     assessmentType: 'Comparative Poetry',
     gradeLevel: 'Expected',
-    question: 'Compare how the poets present the effects of war in "Poppies" by Jane Weir and "Kamikaze" by Beatrice Garland.',
+    // Verified against Beatrice Garland's "Kamikaze" (Enitharmon, 2014): "salt-sodden" is the attested phrase the model answer references.
+    question:
+      'Compare how the poets present the effects of war in "Poppies" by Jane Weir and "Kamikaze" by Beatrice Garland.',
     response: `<p>Both Weir and Garland present war's effects not through combat itself but through the devastating impact on familial relationships, examining how conflict fractures the bonds between parents and children. In "Poppies," a mother mourns the departure of her son to war, while in "Kamikaze," a daughter narrates the aftermath of her father's decision to turn back from a suicide mission. Both poems suggest that war's most profound damage occurs not on the battlefield but in the domestic spaces left behind.</p>
-<p>Weir presents war's effects through the mother's sensory memories, which simultaneously comfort and torture her. The image of her son's "blazer" with its "sellotape bandaged" collar merges military and domestic vocabulary: "bandaged" anticipates battlefield injuries while remaining grounded in the innocent world of school uniform repair. This linguistic blurring suggests that the mother's entire perception has been contaminated by the fear of loss, finding premonitions of violence in the most mundane domestic acts. Her journey to the war memorial, where she traces the inscriptions and leans against the "ornamental stump" of a marble pillar, is both a search for connection and an acknowledgment of absence.</p>
-<p>Garland presents a different but equally devastating effect of war: the social death inflicted upon the kamikaze pilot who chose life over duty. His family "treated him as though he no longer existed," a punishment that renders survival paradoxically equivalent to death. The daughter's narrative voice, reporting events she partly witnessed and partly inherited, creates a layered temporal perspective that suggests war's effects reverberate across generations. The conditional "which feels like the way / he must have been afterwards" captures the uncertainty of reconstructed memory, acknowledging that the family's story of the father is itself incomplete.</p>
-<p>Both poems use domestic settings to heighten the contrast between war's violence and everyday life. Weir's kitchen, with its "cat hairs" and "egg cups," and Garland's coastal landscape with its "little fishing boats" and "salt-Loss sweat" represent worlds that war disrupts but never fully destroys. The poets suggest that the domestic sphere becomes a space where war's effects are most keenly felt precisely because it should be a place of safety. The tension between these settings and the reality of war creates a poignant irony that runs through both poems.</p>
-<p>Ultimately, both poets challenge the binary between combatant and civilian, soldier and parent. Weir's mother and Garland's pilot both suffer forms of silence: the mother is left "hoping to hear your playground voice" in the wind, while the pilot endures a silence imposed by family and society. These parallel silences suggest that war does not merely kill; it creates absences, gaps, and unspoken grief that persist long after the conflict itself has ended.</p>`,
+<p>Weir presents war's effects through the mother's sensory memories, which simultaneously comfort and torture her. The image of "Sellotape bandaged" around her hand merges military and domestic vocabulary: "bandaged" anticipates battlefield injuries while remaining grounded in the innocent world of everyday repair. This linguistic blurring suggests that the mother's entire perception has been contaminated by the fear of loss, finding premonitions of violence in the most mundane domestic acts. Her journey to the war memorial, where she leans against it "like a wishbone," is both a search for connection and an acknowledgment of fragility.</p>
+<p>Garland presents a different but equally devastating effect of war: the social death inflicted upon the kamikaze pilot who chose life over duty. The family "treated him as though he no longer existed," a punishment that renders survival paradoxically equivalent to death. The daughter's narrative voice, reporting events she partly witnessed and partly inherited, creates a layered temporal perspective that suggests war's effects reverberate across generations. The reconstructed memory acknowledges that the family's story of the father is itself incomplete, mediated through speech and silence.</p>
+<p>Both poems use domestic and natural settings to heighten the contrast between war's violence and everyday life. Weir's domestic interior and Garland's coastal landscape — with its "little fishing boats" and "salt-sodden" world — represent worlds that war disrupts but never fully destroys. The poets suggest that the domestic sphere becomes a space where war's effects are most keenly felt precisely because it should be a place of safety. The tension between these settings and the reality of war creates a poignant irony that runs through both poems.</p>
+<p>Ultimately, both poets challenge the binary between combatant and civilian, soldier and parent. Weir's mother is left listening for her son's "playground voice catching on the wind," while Garland's pilot endures a silence imposed by family and society. These parallel silences suggest that war does not merely kill; it creates absences, gaps, and unspoken grief that persist long after the conflict itself has ended.</p>`,
     annotations: [
       'Sustained, integrated comparison throughout',
       'Perceptive analysis of how military and domestic vocabularies merge',
@@ -637,11 +676,12 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Considers the role of narrative perspective and temporal layering',
       'Effective thematic conclusion about shared silences',
       'Domestic details are analysed as meaningful rather than merely described',
-      'Develops a sophisticated argument about war\'s non-military effects',
-      'Close reading is consistently precise and purposeful'
+      "Develops a sophisticated argument about war's non-military effects",
+      'Close reading is consistently precise and purposeful',
     ],
     wordCount: 411,
-    examinersCommentary: 'A strong response operating at the boundary between expected and exceeding. The student\'s analysis of how military and domestic vocabularies merge in "Poppies" is sophisticated, and the identification of the pilot\'s "social death" as paradoxically equivalent to the physical death he avoided shows genuine critical insight. The comparison is sustained and integrated throughout, and the concluding parallel between the two forms of silence is elegant. To secure exceeding level, the student could explore how the different poetic forms of the two poems contribute to their different effects.'
+    examinersCommentary:
+      'A strong response operating at the boundary between expected and exceeding. The student\'s analysis of how military and domestic vocabularies merge in "Poppies" is sophisticated, and the identification of the pilot\'s "social death" as paradoxically equivalent to the physical death he avoided shows genuine critical insight. The comparison is sustained and integrated throughout, and the concluding parallel between the two forms of silence is elegant. To secure exceeding level, the student could explore how the different poetic forms of the two poems contribute to their different effects.',
   },
 
   // --- Year 8: Speeches/Transactional Pieces ---
@@ -667,10 +707,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Counter-argument is acknowledged but could be developed further',
       'Persuasive techniques are limited (mainly logical argument)',
       'Lacks rhetorical devices (rhetoric questions, tricolon, emotive language)',
-      'Vocabulary is functional but not ambitious'
+      'Vocabulary is functional but not ambitious',
     ],
     wordCount: 227,
-    examinersCommentary: 'An emerging speech that demonstrates basic understanding of persuasive structure. The student organises arguments clearly and attempts a counter-argument. However, the speech lacks the rhetorical techniques that would make it genuinely persuasive: there are no rhetorical questions, no emotive language, no statistics or expert opinion, and limited use of personal address. The student should study model speeches and practise incorporating a wider range of persuasive devices.'
+    examinersCommentary:
+      'An emerging speech that demonstrates basic understanding of persuasive structure. The student organises arguments clearly and attempts a counter-argument. However, the speech lacks the rhetorical techniques that would make it genuinely persuasive: there are no rhetorical questions, no emotive language, no statistics or expert opinion, and limited use of personal address. The student should study model speeches and practise incorporating a wider range of persuasive devices.',
   },
 
   {
@@ -693,10 +734,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Emotive language deployed throughout',
       'Direct address ("you", "we") creates inclusive tone',
       'Varied sentence structures for effect',
-      'Strong, memorable conclusion with call to action'
+      'Strong, memorable conclusion with call to action',
     ],
     wordCount: 357,
-    examinersCommentary: 'A confident expected-level speech that deploys a range of persuasive techniques with skill. The opening rhetorical question immediately engages the audience, and the use of statistics lends authority to the argument. The counter-argument is handled with skill, acknowledged and then reframed rather than simply dismissed. The tricolon in the conclusion provides a memorable call to action. To reach exceeding level, the student could employ more sophisticated rhetorical structures such as anaphora, vary their tone more deliberately, and develop a more nuanced position that acknowledges complexity.'
+    examinersCommentary:
+      'A confident expected-level speech that deploys a range of persuasive techniques with skill. The opening rhetorical question immediately engages the audience, and the use of statistics lends authority to the argument. The counter-argument is handled with skill, acknowledged and then reframed rather than simply dismissed. The tricolon in the conclusion provides a memorable call to action. To reach exceeding level, the student could employ more sophisticated rhetorical structures such as anaphora, vary their tone more deliberately, and develop a more nuanced position that acknowledges complexity.',
   },
 
   {
@@ -705,7 +747,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year8',
     assessmentType: 'Speech/Transactional Writing',
     gradeLevel: 'Exceeding',
-    question: 'Write an article for a newspaper arguing that the education system needs radical reform.',
+    question:
+      'Write an article for a newspaper arguing that the education system needs radical reform.',
     response: `<p><strong>The Factory Model is Broken: Why Our Schools Are Preparing Students for a World That No Longer Exists</strong></p>
 <p>Walk into any secondary school in this country and you will find something remarkable: a system virtually unchanged since the Victorian era. Students sit in rows, face the front, and absorb information delivered by a single authority figure. They are sorted by age rather than ability, assessed through written examinations that test memory rather than understanding, and prepared for a job market that ceased to exist decades ago. We have given our children interactive whiteboards and chromebooks, certainly, but we have used them to deliver a fundamentally nineteenth-century education with a thin digital veneer. This is not reform; it is decoration.</p>
 <p>The evidence for change is overwhelming and, increasingly, impossible to ignore. Finland, consistently ranked among the world's highest-performing education systems, abandoned standardised testing years ago in favour of collaborative, project-based learning that prioritises critical thinking over rote memorisation. Their students outperform ours in every international measure, yet they spend fewer hours in the classroom, receive less homework, and report significantly higher levels of wellbeing. The lesson is clear: our devotion to examinations, league tables, and curriculum rigidity is not producing better outcomes; it is producing more stressed, less creative, and less intellectually curious young people.</p>
@@ -723,10 +766,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Tricolon and listing used for cumulative rhetorical effect',
       'Formal register sustained throughout with controlled shifts in tone',
       'Memorable, punchy conclusion that echoes the headline',
-      'Demonstrates genuine intellectual engagement with the topic'
+      'Demonstrates genuine intellectual engagement with the topic',
     ],
     wordCount: 488,
-    examinersCommentary: 'An exceptional piece of transactional writing that demonstrates mastery of the argumentative article form. The student builds a sophisticated, multi-layered argument that moves from diagnosis (the problem) through evidence (Finland) to vision (what reform would look like), while handling the counter-argument with the intellectual honesty that characterises the best persuasive writing. The extended metaphor of the factory model provides structural coherence, and the conclusion is both punchy and memorable. The register is consistently formal yet accessible, and the rhetorical devices are deployed with precision rather than excess.'
+    examinersCommentary:
+      'An exceptional piece of transactional writing that demonstrates mastery of the argumentative article form. The student builds a sophisticated, multi-layered argument that moves from diagnosis (the problem) through evidence (Finland) to vision (what reform would look like), while handling the counter-argument with the intellectual honesty that characterises the best persuasive writing. The extended metaphor of the factory model provides structural coherence, and the conclusion is both punchy and memorable. The register is consistently formal yet accessible, and the rhetorical devices are deployed with precision rather than excess.',
   },
 
   {
@@ -751,10 +795,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Emotive language attempted ("very sad")',
       'Lacks specific data, statistics, or expert opinion',
       'Persuasive techniques are limited',
-      'Vocabulary is basic and repetitive'
+      'Vocabulary is basic and repetitive',
     ],
     wordCount: 212,
-    examinersCommentary: 'An emerging letter that demonstrates understanding of the format and can present a clear argument. The student makes valid points and attempts to address a counter-argument. However, the letter lacks the persuasive sophistication needed for higher levels: there are no statistics, no expert quotations, limited rhetorical devices, and the vocabulary is basic. The student should incorporate evidence, use a wider range of persuasive techniques, and develop a more authoritative tone.'
+    examinersCommentary:
+      'An emerging letter that demonstrates understanding of the format and can present a clear argument. The student makes valid points and attempts to address a counter-argument. However, the letter lacks the persuasive sophistication needed for higher levels: there are no statistics, no expert quotations, limited rhetorical devices, and the vocabulary is basic. The student should incorporate evidence, use a wider range of persuasive techniques, and develop a more authoritative tone.',
   },
 
   {
@@ -779,10 +824,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Counter-arguments are woven into the speech rather than bolted on',
       'Powerful concluding challenge motivates action',
       'Sophisticated vocabulary and varied sentence structures',
-      'Tone shifts between conversational and authoritative with control'
+      'Tone shifts between conversational and authoritative with control',
     ],
     wordCount: 382,
-    examinersCommentary: 'A sophisticated speech that operates at the boundary between expected and exceeding. The personal opening immediately disarms potential resistance, and the progression from personal anecdote through evidence to philosophical argument shows excellent rhetorical awareness. The metaphor of reading as "the mind\'s flight simulator" is memorable, and the argument about reading as resistance is genuinely thought-provoking. To secure exceeding level, the student could vary their paragraph lengths more deliberately for effect and develop the philosophical dimension further.'
+    examinersCommentary:
+      'A sophisticated speech that operates at the boundary between expected and exceeding. The personal opening immediately disarms potential resistance, and the progression from personal anecdote through evidence to philosophical argument shows excellent rhetorical awareness. The metaphor of reading as "the mind\'s flight simulator" is memorable, and the argument about reading as resistance is genuinely thought-provoking. To secure exceeding level, the student could vary their paragraph lengths more deliberately for effect and develop the philosophical dimension further.',
   },
 
   // ============================================================
@@ -803,17 +849,18 @@ export const modelAnswerBank: ModelAnswer[] = [
 <p>The Ghost of Christmas Present shows Scrooge the Cratchit family celebrating Christmas. Even though they are poor, they are happy because they have each other. Scrooge feels sorry for Tiny Tim who is sick and might die. This makes Scrooge feel guilty because he could help them but has chosen not to.</p>
 <p>The Ghost of Christmas Yet to Come shows Scrooge his own death. Nobody is sad that he has died and people are stealing his things. This scares Scrooge and he promises to change. At the end, Scrooge becomes generous and kind. He sends a turkey to the Cratchits and gives Bob a pay rise. Dickens shows that anyone can change if they want to.</p>`,
     annotations: [
-      'Demonstrates understanding of the novella\'s plot and structure',
+      "Demonstrates understanding of the novella's plot and structure",
       'Identifies the key simile and comments on its meaning',
       'Follows the chronological structure of the text',
       'Makes a valid thematic point about money vs. happiness',
       'Analysis is largely narrative retelling rather than exploration of language',
       'Very limited use of contextual knowledge',
-      'Does not discuss Dickens\' purpose or social message',
-      'Needs more close reading of specific language choices'
+      "Does not discuss Dickens' purpose or social message",
+      'Needs more close reading of specific language choices',
     ],
     wordCount: 241,
-    examinersCommentary: 'An emerging response that demonstrates basic comprehension of the text but remains largely at the level of narrative retelling. The student identifies the simile "hard and sharp as flint" but does not explore its connotations in depth. To improve significantly, the student must move beyond retelling the story to analysing how Dickens uses specific language choices to convey his social message. Contextual knowledge about Victorian poverty, the Poor Law, and Malthusian economics would add depth to the analysis.'
+    examinersCommentary:
+      'An emerging response that demonstrates basic comprehension of the text but remains largely at the level of narrative retelling. The student identifies the simile "hard and sharp as flint" but does not explore its connotations in depth. To improve significantly, the student must move beyond retelling the story to analysing how Dickens uses specific language choices to convey his social message. Contextual knowledge about Victorian poverty, the Poor Law, and Malthusian economics would add depth to the analysis.',
   },
 
   {
@@ -822,7 +869,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year9',
     assessmentType: 'Contextual Analysis (A Christmas Carol)',
     gradeLevel: 'Expected',
-    question: 'How does Dickens use the character of Scrooge to criticise Victorian society in "A Christmas Carol"?',
+    question:
+      'How does Dickens use the character of Scrooge to criticise Victorian society in "A Christmas Carol"?',
     response: `<p>Dickens uses Scrooge as a representative figure for the wealthy Victorian upper classes whose indifference to poverty perpetuated social inequality. In the opening stave, Scrooge's response to the charity collectors reveals attitudes that Dickens wishes to condemn: his question "Are there no prisons? Are there no workhouses?" directly echoes the rhetoric of those who supported the 1834 Poor Law Amendment Act, which sought to make poverty relief so unpleasant that the poor would prefer to fend for themselves. By placing these words in the mouth of his most unsympathetic character, Dickens exposes the cruelty disguised as pragmatism.</p>
 <p>Dickens further uses Scrooge to critique the dehumanising effects of capitalism through his treatment of Bob Cratchit. Scrooge grudgingly allows Cratchit one coal for his fire and considers Christmas Day off as "picking a man's pocket every twenty-fifth of December." The metaphor of theft is revealing: Scrooge perceives his worker's basic human needs, warmth and rest, as acts of robbery against his wealth. This inversion of victim and perpetrator mirrors the way Victorian industrialists framed workers' demands for fair conditions as unreasonable and greedy, reversing the true direction of exploitation.</p>
 <p>The transformation that Dickens orchestrates is not merely personal but political. When Scrooge awakens on Christmas morning and sends the prize turkey to the Cratchits, raises Bob's salary, and begins to "know how to keep Christmas well," Dickens is not simply telling a story about one man's redemption. He is modelling the social transformation he believed was necessary: the wealthy recognising their responsibility to the poor and acting upon it voluntarily, before revolution forced them to do so. The novella was published in 1843, a period of intense social unrest, and Dickens intended it as both a warning and an appeal to the middle and upper classes.</p>
@@ -831,14 +879,15 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Strong integration of historical context (Poor Law, 1843 social unrest)',
       'Analyses Scrooge as a representative figure rather than just a character',
       'Close reading of the metaphor of theft is perceptive',
-      'Considers Dickens\' authorial purpose explicitly',
-      'Critical evaluation of Dickens\' solution in final paragraph',
+      "Considers Dickens' authorial purpose explicitly",
+      "Critical evaluation of Dickens' solution in final paragraph",
       'Uses appropriate terminology and academic register',
       'Develops a sustained argument about social criticism',
-      'Quotations are well-selected and embedded fluently'
+      'Quotations are well-selected and embedded fluently',
     ],
     wordCount: 345,
-    examinersCommentary: 'A confident expected-level response that demonstrates secure understanding of how to integrate contextual knowledge with textual analysis. The student analyses Scrooge as a representative of a social class rather than merely an individual, showing mature critical thinking. The close reading of the "picking a man\'s pocket" metaphor is perceptive, and the final paragraph\'s critical evaluation of Dickens\' political limitations adds genuine analytical depth. To reach exceeding level, the student should develop their analysis of Dickens\' narrative techniques and consider how the novella\'s form contributes to its didactic purpose.'
+    examinersCommentary:
+      "A confident expected-level response that demonstrates secure understanding of how to integrate contextual knowledge with textual analysis. The student analyses Scrooge as a representative of a social class rather than merely an individual, showing mature critical thinking. The close reading of the \"picking a man's pocket\" metaphor is perceptive, and the final paragraph's critical evaluation of Dickens' political limitations adds genuine analytical depth. To reach exceeding level, the student should develop their analysis of Dickens' narrative techniques and consider how the novella's form contributes to its didactic purpose.",
   },
 
   {
@@ -847,7 +896,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year9',
     assessmentType: 'Contextual Analysis (A Christmas Carol)',
     gradeLevel: 'Exceeding',
-    question: 'How does Dickens use the Ghost of Christmas Present to convey his social message in "A Christmas Carol"?',
+    question:
+      'How does Dickens use the Ghost of Christmas Present to convey his social message in "A Christmas Carol"?',
     response: `<p>The Ghost of Christmas Present functions as Dickens' most complex and paradoxical instrument of social critique, embodying both the generosity he advocates and the uncomfortable truths he forces his complacent readership to confront. The Ghost's initial appearance, "clothed in one simple deep green robe," surrounded by an abundance of food, "heaped up on the floor, to form a kind of throne," presents Christmas generosity as a form of power. Yet this power is fundamentally different from Scrooge's: it is defined by its capacity to be shared rather than hoarded. The cornucopia of food represents not wealth accumulated but wealth distributed, positioning Christian charity as the antithesis of capitalist accumulation.</p>
 <p>Dickens uses the Cratchit family's Christmas dinner as a carefully constructed ideological set-piece in which poverty is reframed as moral richness. The goose, which would have been the cheapest available festive meat, is described with a reverence usually reserved for lavish banquets: the family greets its arrival as though "a speckled fowl had never been witnessed." The hyperbole serves a dual purpose. It celebrates the Cratchits' capacity for joy and gratitude, qualities that Scrooge's wealth has not purchased, while simultaneously exposing the economic injustice that makes a simple goose an event of extraordinary significance for a working family. The reader is positioned to admire the Cratchits' spirit while recognising the system that necessitates such meagre celebration.</p>
 <p>The Ghost's most devastating intervention comes in the revelation of the allegorical children beneath his robes: "This boy is Ignorance. This girl is Want." Dickens strips away the comforting distance of fictional characterisation, replacing Tiny Tim's sentimental appeal with abstract concepts that demand intellectual rather than merely emotional engagement. The warning, "most of all beware this boy," inverts the expected hierarchy: ignorance, Dickens argues, is more dangerous than poverty itself, because it is ignorance that permits the wealthy to maintain their indifference. This directly challenges the utilitarian philosophy of thinkers like Thomas Malthus, who argued that poverty was a natural and necessary check on population growth, a position Dickens had already mocked through Scrooge's parroting of "surplus population."</p>
@@ -858,14 +908,15 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Dual-purpose analysis of the hyperbole around the goose is outstanding',
       'Engages critically with Malthusian philosophy and utilitarianism',
       'Analyses the allegorical children with intellectual precision',
-      'Considers how temporal structure contributes to Dickens\' argument',
+      "Considers how temporal structure contributes to Dickens' argument",
       'Sustains a coherent, complex argument across the full response',
       'Distinguishes between emotional and intellectual modes of persuasion',
       'Academic register is maintained with precision throughout',
-      'Demonstrates genuine independent critical thinking'
+      'Demonstrates genuine independent critical thinking',
     ],
     wordCount: 436,
-    examinersCommentary: 'An outstanding response that engages with the text at a level of sophistication well beyond Year 9 expectations. The analysis of the goose scene as functioning on two simultaneous levels, celebration and critique, is particularly impressive, demonstrating the student\'s ability to hold multiple interpretive frameworks simultaneously. The engagement with Malthusian philosophy is contextually accurate and analytically productive. The argument is sustained, cohesive, and genuinely illuminating. This is literary analysis of exceptional quality.'
+    examinersCommentary:
+      "An outstanding response that engages with the text at a level of sophistication well beyond Year 9 expectations. The analysis of the goose scene as functioning on two simultaneous levels, celebration and critique, is particularly impressive, demonstrating the student's ability to hold multiple interpretive frameworks simultaneously. The engagement with Malthusian philosophy is contextually accurate and analytically productive. The argument is sustained, cohesive, and genuinely illuminating. This is literary analysis of exceptional quality.",
   },
 
   {
@@ -881,16 +932,17 @@ export const modelAnswerBank: ModelAnswer[] = [
 <p>Dickens uses the Cratchit family to show his Victorian readers that the poor deserve help and respect. In Victorian times, many rich people thought that poor people were lazy. Dickens challenges this by showing that the Cratchits are hard-working and good people who just need more support from people like Scrooge.</p>`,
     annotations: [
       'Makes valid thematic observations about the family',
-      'Identifies Tiny Tim\'s symbolic function',
+      "Identifies Tiny Tim's symbolic function",
       'Attempts contextual connection in final paragraph',
       'Analysis is partially developed but often returns to retelling',
       'Quotations are brief and not fully analysed',
       'Could explore specific language choices in more depth',
       'Contrast between Cratchits and Scrooge is noted but could be developed',
-      'Victorian context is mentioned but not developed with detail'
+      'Victorian context is mentioned but not developed with detail',
     ],
     wordCount: 246,
-    examinersCommentary: 'A response that shows developing understanding of how to write about context and character purpose. The student recognises that Dickens is using the Cratchits to convey a social message, which is a key expected-level skill. However, the analysis needs more precision: specific language choices should be examined closely, contextual knowledge should be more detailed, and the student should consistently analyse rather than retell. The final paragraph shows promise that needs to be developed throughout the response.'
+    examinersCommentary:
+      'A response that shows developing understanding of how to write about context and character purpose. The student recognises that Dickens is using the Cratchits to convey a social message, which is a key expected-level skill. However, the analysis needs more precision: specific language choices should be examined closely, contextual knowledge should be more detailed, and the student should consistently analyse rather than retell. The final paragraph shows promise that needs to be developed throughout the response.',
   },
 
   {
@@ -912,10 +964,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Perceptive analysis of how the redeemed Scrooge mirrors the miserly Scrooge',
       'Contextual knowledge is integrated naturally with textual analysis',
       'Develops a sustained, coherent argument about how redemption works',
-      'Close reading is consistently precise and purposeful'
+      'Close reading is consistently precise and purposeful',
     ],
     wordCount: 360,
-    examinersCommentary: 'A strong response that operates at the boundary between expected and exceeding. The structural analysis of the five-stave form is perceptive, and the observation about Scrooge speaking "unconsciously" demonstrates careful close reading. The argument that the redeemed Scrooge\'s extravagance mirrors his former miserliness is a particularly insightful observation about characterisation. To secure exceeding level, the student could explore how the narrator\'s voice contributes to the redemption theme and consider the novella\'s reception and impact on Victorian social reform.'
+    examinersCommentary:
+      "A strong response that operates at the boundary between expected and exceeding. The structural analysis of the five-stave form is perceptive, and the observation about Scrooge speaking \"unconsciously\" demonstrates careful close reading. The argument that the redeemed Scrooge's extravagance mirrors his former miserliness is a particularly insightful observation about characterisation. To secure exceeding level, the student could explore how the narrator's voice contributes to the redemption theme and consider the novella's reception and impact on Victorian social reform.",
   },
 
   // --- Year 9: Sustained Creative Writing ---
@@ -926,7 +979,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year9',
     assessmentType: 'Sustained Creative Writing',
     gradeLevel: 'Emerging',
-    question: 'Write a story that begins with the sentence: "The letter had been waiting for three years."',
+    question:
+      'Write a story that begins with the sentence: "The letter had been waiting for three years."',
     response: `<p>The letter had been waiting for three years. It was hidden at the back of a drawer in the old desk that nobody used anymore. The desk was in the attic and nobody went up there because it was dusty and dark. But today was different because Mia had been sent upstairs to find some old photographs for her grandmother's birthday.</p>
 <p>Mia pulled open the drawer and found the letter underneath some old papers. It was in a brown envelope and it had her name on it in handwriting she didn't recognise. She felt curious so she opened it carefully. Inside was a single sheet of paper with a short message.</p>
 <p>The message said that her grandfather had left her something special and that she needed to go to a certain address to collect it. Mia was confused because her grandfather had died three years ago and nobody had mentioned a letter. She decided to ask her grandmother about it but she was worried about upsetting her.</p>
@@ -940,10 +994,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Simple sentence structures with little variation',
       'Plot is resolved too quickly and neatly',
       'Dialogue is reported rather than directly rendered',
-      'Vocabulary is functional but lacks ambition'
+      'Vocabulary is functional but lacks ambition',
     ],
     wordCount: 277,
-    examinersCommentary: 'An emerging narrative that demonstrates the ability to construct a complete story with a coherent plot. The student creates some emotional engagement, particularly in the ending. However, the writing tells rather than shows consistently, the vocabulary is basic, and the sentence structures lack variety. The narrative would benefit from direct dialogue, descriptive detail that engages the senses, and a more measured pace that allows key moments to develop their emotional weight.'
+    examinersCommentary:
+      'An emerging narrative that demonstrates the ability to construct a complete story with a coherent plot. The student creates some emotional engagement, particularly in the ending. However, the writing tells rather than shows consistently, the vocabulary is basic, and the sentence structures lack variety. The narrative would benefit from direct dialogue, descriptive detail that engages the senses, and a more measured pace that allows key moments to develop their emotional weight.',
   },
 
   {
@@ -952,7 +1007,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year9',
     assessmentType: 'Sustained Creative Writing',
     gradeLevel: 'Expected',
-    question: 'Write a story that begins with the sentence: "The letter had been waiting for three years."',
+    question:
+      'Write a story that begins with the sentence: "The letter had been waiting for three years."',
     response: `<p>The letter had been waiting for three years, tucked behind the loosened panel of the hallway skirting board where the draught crept in during winter. It had curled at the edges, its once-white envelope now the colour of weak tea, and the ink of the address had blurred just enough to make the second line unreadable. Nobody knew it was there. Not the family who had moved in after the previous owners left in a hurry. Not the postman who had delivered it on a Tuesday in November. Not even the woman who had written it, sitting at her kitchen table at three in the morning with a mug of cold coffee and a pen she kept having to shake back to life.</p>
 <p>Ellie found it by accident. She had been lying on her stomach in the hallway, reaching for a marble that had rolled under the radiator, when her fingers touched the edge of something papery. She pulled it out, examined the smudged handwriting, and carried it upstairs to her bedroom, where she sat cross-legged on the bed and turned it over in her hands.</p>
 <p>Her name was not on it. The name on it was Sarah, and Ellie did not know anyone called Sarah. She knew she should not open it. It was not hers. It was a private thing, someone else's words intended for someone else's eyes, and the decent thing to do would be to leave it on the mantelpiece and forget about it.</p>
@@ -965,14 +1021,15 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Characterisation established through small details (marble, cross-legged)',
       'Effective use of the single short sentence "She opened it" for impact',
       'Internal conflict conveyed naturally through thought process',
-      'The letter\'s content is suggested rather than fully revealed, creating intrigue',
+      "The letter's content is suggested rather than fully revealed, creating intrigue",
       'Physical description of the handwriting conveys emotional weight',
       'Ending achieves a reflective, thematic resonance',
       'Varied sentence structures control pace effectively',
-      'Shows rather than tells throughout'
+      'Shows rather than tells throughout',
     ],
     wordCount: 371,
-    examinersCommentary: 'A confident expected-level narrative that demonstrates strong control of pace, characterisation, and atmosphere. The decision to withhold the letter\'s full contents is a sophisticated narrative choice that creates intrigue while allowing the ending to achieve a reflective, thematic resonance. The single short sentence "She opened it" is a textbook example of varying sentence length for effect. The descriptive detail is precise and purposeful throughout. To reach exceeding level, the student could experiment with more ambitious structural choices and develop the letter\'s content to create a more complex thematic layer.'
+    examinersCommentary:
+      'A confident expected-level narrative that demonstrates strong control of pace, characterisation, and atmosphere. The decision to withhold the letter\'s full contents is a sophisticated narrative choice that creates intrigue while allowing the ending to achieve a reflective, thematic resonance. The single short sentence "She opened it" is a textbook example of varying sentence length for effect. The descriptive detail is precise and purposeful throughout. To reach exceeding level, the student could experiment with more ambitious structural choices and develop the letter\'s content to create a more complex thematic layer.',
   },
 
   {
@@ -981,7 +1038,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year9',
     assessmentType: 'Sustained Creative Writing',
     gradeLevel: 'Exceeding',
-    question: 'Write a story that begins with the sentence: "The letter had been waiting for three years."',
+    question:
+      'Write a story that begins with the sentence: "The letter had been waiting for three years."',
     response: `<p>The letter had been waiting for three years, patient as a stone at the bottom of a river, while above it the current of daily life rushed on. It waited through two changes of season curtains. It waited through the replacement of the carpet, during which it was briefly lifted, examined, and returned to the same spot on the mantelpiece by a decorator who assumed it was deliberately placed. It waited through the death of the family cat, whose fur still clung to the envelope in a single grey hair, fine as a crack in porcelain.</p>
 <p>Mrs Adeyemi knew the letter was there. She had always known. She passed it every morning on her way to the kitchen and every evening on her way to bed, and each time she did not look at it with a precision that required more effort than looking at it would have done. Not looking at the letter had become a discipline, a small daily act of will, the way a recovering addict does not look at the bottle on the top shelf of the supermarket. She had placed it on the mantelpiece the day it arrived because she could not bring herself to open it and could not bring herself to throw it away, and in the three years since, neither of those positions had changed.</p>
 <p>It was her daughter, home from university for the first time in months, who finally broke the stalemate.</p>
@@ -1003,10 +1061,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Content of letter deliberately withheld, making the story about the act of opening',
       'Circular structure (letter returns to mantelpiece) is sophisticated',
       'Every sentence serves multiple functions: plot, character, and theme',
-      'Mature handling of complex adult emotions with restraint and authenticity'
+      'Mature handling of complex adult emotions with restraint and authenticity',
     ],
     wordCount: 498,
-    examinersCommentary: 'An exceptional piece of sustained creative writing that demonstrates literary skill well beyond Year 9 expectations. The story\'s power lies in what it withholds: the letter\'s contents are never revealed, forcing the reader to understand that the story is about the act of facing difficult truths rather than the truths themselves. The characterisation of Mrs Adeyemi is achieved through precise, significant detail rather than exposition, and the dialogue is natural yet thematically loaded. The circular structure is handled with genuine sophistication. This is writing of remarkable maturity and control.'
+    examinersCommentary:
+      "An exceptional piece of sustained creative writing that demonstrates literary skill well beyond Year 9 expectations. The story's power lies in what it withholds: the letter's contents are never revealed, forcing the reader to understand that the story is about the act of facing difficult truths rather than the truths themselves. The characterisation of Mrs Adeyemi is achieved through precise, significant detail rather than exposition, and the dialogue is natural yet thematically loaded. The circular structure is handled with genuine sophistication. This is writing of remarkable maturity and control.",
   },
 
   {
@@ -1023,16 +1082,17 @@ export const modelAnswerBank: ModelAnswer[] = [
 <p>When Jake left on Sunday, he felt different. He hugged his grandmother properly and promised to come back soon. On the train home, he took his headphones out and watched the scenery change from green to grey. He realised that his grandmother had taught him something important: that sometimes the best things happen when you stop doing what you want and start doing what matters.</p>`,
     annotations: [
       'Clear narrative structure with a transformation arc',
-      'Some character development evident in Jake\'s changing attitude',
-      'The grandmother\'s backstory adds depth',
+      "Some character development evident in Jake's changing attitude",
+      "The grandmother's backstory adds depth",
       'Mostly tells rather than shows emotional changes',
       'Descriptive language is basic but occasionally effective',
       'Dialogue is reported rather than directly rendered',
       'Theme is stated explicitly in final line rather than implied',
-      'Pacing is somewhat rushed'
+      'Pacing is somewhat rushed',
     ],
     wordCount: 283,
-    examinersCommentary: 'A response that shows developing narrative ability with a clear transformation arc. The decision to include the grandmother\'s wartime backstory adds a layer of depth, and the contrast between city and countryside provides a structural framework. However, the story tells rather than shows Jake\'s emotional journey, and the theme is stated explicitly rather than implied. To improve, the student should use direct dialogue, show emotions through physical description and action, and trust the reader to understand the theme without having it spelled out.'
+    examinersCommentary:
+      "A response that shows developing narrative ability with a clear transformation arc. The decision to include the grandmother's wartime backstory adds a layer of depth, and the contrast between city and countryside provides a structural framework. However, the story tells rather than shows Jake's emotional journey, and the theme is stated explicitly rather than implied. To improve, the student should use direct dialogue, show emotions through physical description and action, and trust the reader to understand the theme without having it spelled out.",
   },
 
   {
@@ -1056,10 +1116,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'The bench creak sounding "like a voice" is subtle and effective',
       'Thematic depth about memory, change, and the indifference of places',
       'Sophisticated vocabulary deployed with precision',
-      'Final paragraph achieves genuine emotional and intellectual weight'
+      'Final paragraph achieves genuine emotional and intellectual weight',
     ],
     wordCount: 397,
-    examinersCommentary: 'A sophisticated piece of descriptive writing that operates at the boundary between expected and exceeding. The student moves confidently between physical description and reflective observation, using the contrast between childhood and adult perception to explore the nature of memory itself. The present tense narration is effective, and the descriptive details are precise and purposeful. The philosophical dimension, particularly the observation that the playground has "simply continued," elevates this beyond simple description into genuine literary quality.'
+    examinersCommentary:
+      'A sophisticated piece of descriptive writing that operates at the boundary between expected and exceeding. The student moves confidently between physical description and reflective observation, using the contrast between childhood and adult perception to explore the nature of memory itself. The present tense narration is effective, and the descriptive details are precise and purposeful. The philosophical dimension, particularly the observation that the playground has "simply continued," elevates this beyond simple description into genuine literary quality.',
   },
 
   // --- Year 9: OMAM Analytical Essays ---
@@ -1077,16 +1138,17 @@ export const modelAnswerBank: ModelAnswer[] = [
 <p>George and Lennie are different from the other characters because they have each other. George says "guys like us, that work on ranches, are the loneliest guys in the world" but then he says "because I got you to look after me, and you got me to look after you." This shows that friendship is the only thing that can beat loneliness. However, at the end of the book, George has to kill Lennie and becomes alone like everyone else, which is very sad.</p>`,
     annotations: [
       'Identifies key lonely characters and relevant quotations',
-      'Makes a valid point about Curley\'s wife not having a name',
+      "Makes a valid point about Curley's wife not having a name",
       'Begins to connect loneliness to racism through Crooks',
-      'Recognises the significance of George and Lennie\'s friendship',
+      "Recognises the significance of George and Lennie's friendship",
       'Analysis is partially developed but often returns to retelling',
       'Limited contextual knowledge of 1930s America',
       'Could analyse specific language choices more closely',
-      'Needs more formal literary terminology'
+      'Needs more formal literary terminology',
     ],
     wordCount: 256,
-    examinersCommentary: 'An emerging response that identifies relevant characters and quotations but remains largely at the level of identifying what the text says rather than analysing how and why Steinbeck writes about loneliness. The point about Curley\'s wife lacking a name shows developing critical awareness. To improve, the student should analyse specific language choices at word level, integrate contextual knowledge about the Great Depression, migrant workers, and racial segregation, and consider Steinbeck\'s authorial purpose more explicitly.'
+    examinersCommentary:
+      "An emerging response that identifies relevant characters and quotations but remains largely at the level of identifying what the text says rather than analysing how and why Steinbeck writes about loneliness. The point about Curley's wife lacking a name shows developing critical awareness. To improve, the student should analyse specific language choices at word level, integrate contextual knowledge about the Great Depression, migrant workers, and racial segregation, and consider Steinbeck's authorial purpose more explicitly.",
   },
 
   {
@@ -1104,14 +1166,15 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Strong thesis about the Dream as both sustaining and trapping',
       'Analyses dialect as a carrier of social meaning',
       'Close reading of "swing" as suggesting precariousness is perceptive',
-      'Biblical parallel in Crooks\' speech is well identified',
-      'Considers the Dream\'s psychological function with depth',
-      'Final paragraph identifies Steinbeck\'s ambivalence with nuance',
+      "Biblical parallel in Crooks' speech is well identified",
+      "Considers the Dream's psychological function with depth",
+      "Final paragraph identifies Steinbeck's ambivalence with nuance",
       'Contextual knowledge is integrated naturally',
-      'Develops a sustained, coherent argument across the response'
+      'Develops a sustained, coherent argument across the response',
     ],
     wordCount: 344,
-    examinersCommentary: 'A confident expected-level essay that demonstrates secure analytical skills and effective integration of contextual knowledge. The student\'s analysis of the dream as functioning psychologically rather than practically shows mature critical thinking, and the observation about Crooks\' biblical parallel is perceptive. The final paragraph\'s identification of Steinbeck\'s ambivalence is particularly strong, avoiding the trap of reducing the novel to a simple message. To reach exceeding level, the student could explore how the novel\'s structure and form contribute to the presentation of the Dream.'
+    examinersCommentary:
+      "A confident expected-level essay that demonstrates secure analytical skills and effective integration of contextual knowledge. The student's analysis of the dream as functioning psychologically rather than practically shows mature critical thinking, and the observation about Crooks' biblical parallel is perceptive. The final paragraph's identification of Steinbeck's ambivalence is particularly strong, avoiding the trap of reducing the novel to a simple message. To reach exceeding level, the student could explore how the novel's structure and form contribute to the presentation of the Dream.",
   },
 
   {
@@ -1128,17 +1191,18 @@ export const modelAnswerBank: ModelAnswer[] = [
     annotations: [
       'Exceptional thesis about power as fluid and relational rather than fixed',
       'Sophisticated intersectional analysis of power along multiple axes',
-      'Analysis of Curley\'s wife as simultaneously victim and oppressor is outstanding',
+      "Analysis of Curley's wife as simultaneously victim and oppressor is outstanding",
       'The dead mouse as "metonymic emblem" demonstrates advanced critical vocabulary',
       'Structural analysis of the cyclical narrative is integrated with thematic argument',
       'Close reading of specific language ("strung up", "ain\'t even funny") is precise',
       'Contextual understanding of the Great Depression and American social systems',
       'Engagement with philosophical concepts (determinism, agency) is sophisticated',
       'Sustained, cohesive argument of genuine intellectual complexity',
-      'Academic register maintained throughout with precision'
+      'Academic register maintained throughout with precision',
     ],
     wordCount: 449,
-    examinersCommentary: 'An outstanding essay that demonstrates analytical thinking of exceptional quality. The student\'s understanding of power as relational and intersectional reflects genuine critical sophistication, and the analysis of Curley\'s wife as occupying a position of simultaneous victimhood and power is handled with remarkable nuance. The identification of Lennie\'s "power without intention" as the novel\'s most philosophically unsettling element shows independent critical thinking of the highest order. The integration of close textual analysis with broader structural and contextual interpretation is seamless throughout.'
+    examinersCommentary:
+      "An outstanding essay that demonstrates analytical thinking of exceptional quality. The student's understanding of power as relational and intersectional reflects genuine critical sophistication, and the analysis of Curley's wife as occupying a position of simultaneous victimhood and power is handled with remarkable nuance. The identification of Lennie's \"power without intention\" as the novel's most philosophically unsettling element shows independent critical thinking of the highest order. The integration of close textual analysis with broader structural and contextual interpretation is seamless throughout.",
   },
 
   {
@@ -1160,10 +1224,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Could analyse specific language choices in more depth',
       'Discussion of authorial intent is developing',
       'Needs to consider her complexity as both victim and threat',
-      'Could integrate contextual knowledge more thoroughly'
+      'Could integrate contextual knowledge more thoroughly',
     ],
     wordCount: 270,
-    examinersCommentary: 'A response at the emerging/expected boundary that makes some perceptive observations, particularly about her lack of a name and the sympathetic presentation of her death. The student is beginning to consider authorial intent, which is a key expected-level skill. To reach a secure expected level, the analysis should explore how Steinbeck creates complexity in her characterisation, examining her as both victim and potential threat, and should integrate contextual knowledge about gender roles in 1930s America more thoroughly.'
+    examinersCommentary:
+      'A response at the emerging/expected boundary that makes some perceptive observations, particularly about her lack of a name and the sympathetic presentation of her death. The student is beginning to consider authorial intent, which is a key expected-level skill. To reach a secure expected level, the analysis should explore how Steinbeck creates complexity in her characterisation, examining her as both victim and potential threat, and should integrate contextual knowledge about gender roles in 1930s America more thoroughly.',
   },
 
   {
@@ -1172,7 +1237,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'year9',
     assessmentType: 'Analytical Essay (Of Mice and Men)',
     gradeLevel: 'Expected',
-    question: 'How does Steinbeck present the relationship between George and Lennie in "Of Mice and Men"?',
+    question:
+      'How does Steinbeck present the relationship between George and Lennie in "Of Mice and Men"?',
     response: `<p>Steinbeck presents the relationship between George and Lennie as simultaneously the novel's source of hope and the mechanism of its tragedy, a bond that defies the isolation of the itinerant worker's existence yet cannot survive the hostile social structures within which it operates. Their introduction at the Salinas River pool establishes the relationship's defining dynamic: George leads and Lennie follows, "the way a bear drags his paws." The animalistic simile positions Lennie as instinctive rather than intellectual, while the bear comparison suggests both his size and his potential for unintentional destruction, foreshadowing the fatal consequences of his strength.</p>
 <p>The dream narrative that George recites for Lennie functions as both a bond and a barrier. The ritualistic quality of their exchange, "Tell me like you done before, George," reveals that the dream has been rehearsed so many times that it has become a shared litany, a secular prayer that binds them together through collective imagination. Yet George's irritable asides, "I could live so easy" without Lennie, reveal the burden that accompanies the bond. Steinbeck refuses to sentimentalise the relationship: George's care for Lennie is genuine, but it is also exhausting, limiting, and born partly from obligation rather than pure affection.</p>
 <p>The other ranch workers' response to the relationship underscores its rarity and its threat to the established social order. Slim's observation that "Hardly none of the guys ever travel together" frames George and Lennie's bond as an anomaly in a world designed to keep workers isolated and therefore compliant. The Boss's suspicion that George is exploiting Lennie financially reveals a worldview in which selfless loyalty is literally incomprehensible, because the economic system of migrant labour has erased any framework for understanding relationships not based on profit.</p>
@@ -1180,15 +1246,16 @@ export const modelAnswerBank: ModelAnswer[] = [
     annotations: [
       'Strong thesis about the relationship as source of both hope and tragedy',
       'Analysis of the dream as "secular prayer" is perceptive',
-      'Refuses to sentimentalise George\'s feelings, acknowledging their complexity',
+      "Refuses to sentimentalise George's feelings, acknowledging their complexity",
       'Contextual understanding of migrant labour as isolating by design',
-      'Final paragraph\'s identification of the mercy/murder paradox is sophisticated',
+      "Final paragraph's identification of the mercy/murder paradox is sophisticated",
       'Close reading of simile ("the way a bear drags his paws") is effective',
-      'Considers other characters\' responses as evidence of the relationship\'s significance',
-      'Sustained argument of genuine complexity and nuance'
+      "Considers other characters' responses as evidence of the relationship's significance",
+      'Sustained argument of genuine complexity and nuance',
     ],
     wordCount: 385,
-    examinersCommentary: 'A strong response at the expected/exceeding boundary that engages with the relationship\'s complexity with genuine nuance. The refusal to sentimentalise George\'s feelings, and the observation that his care is "born partly from obligation rather than pure affection," demonstrates a critical maturity that distinguishes this from responses that simply celebrate the friendship. The final paragraph\'s analysis of mercy as indistinguishable from murder is handled with sophistication. To secure exceeding level, the student could explore how Steinbeck\'s structural choices contribute to the relationship\'s presentation.'
+    examinersCommentary:
+      "A strong response at the expected/exceeding boundary that engages with the relationship's complexity with genuine nuance. The refusal to sentimentalise George's feelings, and the observation that his care is \"born partly from obligation rather than pure affection,\" demonstrates a critical maturity that distinguishes this from responses that simply celebrate the friendship. The final paragraph's analysis of mercy as indistinguishable from murder is handled with sophistication. To secure exceeding level, the student could explore how Steinbeck's structural choices contribute to the relationship's presentation.",
   },
 
   // ============================================================
@@ -1203,7 +1270,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Language Paper Reading',
     gradeLevel: 'Grade 4',
-    question: 'How does the writer use language to create a sense of danger in this extract? (From a passage about deep-sea diving)',
+    question:
+      'How does the writer use language to create a sense of danger in this extract? (From a passage about deep-sea diving)',
     response: `<p>The writer creates a sense of danger by using words that make the reader feel scared. The diver is described as going "deeper and deeper" into the water, and the writer says the light "faded" around him. This creates danger because darkness is scary and the reader knows that the diver cannot see what is around him.</p>
 <p>The writer also uses a metaphor when they say the ocean was "a vast, hungry mouth." This creates danger because it makes the ocean seem like it wants to eat the diver. The word "hungry" suggests the ocean is alive and dangerous, which makes the reader worried about what might happen to the diver.</p>
 <p>Another way the writer creates danger is through the description of the equipment. The oxygen tank is described as "hissing" which is an onomatopoeia that sounds like a snake. Snakes are dangerous creatures so this makes the reader feel like even the diver's own equipment is threatening. The writer mentions that the gauge showed "barely enough" air, which creates danger because the reader knows the diver might run out of oxygen.</p>
@@ -1216,10 +1284,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Could explore connotations in more depth',
       'Comments on structure (short sentence) are valid',
       'Needs to integrate quotations more fluently',
-      'Analysis occasionally becomes circular'
+      'Analysis occasionally becomes circular',
     ],
     wordCount: 260,
-    examinersCommentary: 'A Grade 4 response that demonstrates the ability to identify language features and comment on their effects. The student names techniques correctly (metaphor, onomatopoeia) and attempts to explain how they create danger. However, the analysis often remains at a surface level, explaining what the technique does in general terms rather than exploring the specific connotations of the writer\'s choices. To improve, the student should explore how individual words create specific effects and develop more precise analytical vocabulary.'
+    examinersCommentary:
+      "A Grade 4 response that demonstrates the ability to identify language features and comment on their effects. The student names techniques correctly (metaphor, onomatopoeia) and attempts to explain how they create danger. However, the analysis often remains at a surface level, explaining what the technique does in general terms rather than exploring the specific connotations of the writer's choices. To improve, the student should explore how individual words create specific effects and develop more precise analytical vocabulary.",
   },
 
   {
@@ -1228,7 +1297,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Language Paper Reading',
     gradeLevel: 'Grade 6',
-    question: 'How does the writer use language and structure to convey the narrator\'s anxiety? (From a passage about waiting for exam results)',
+    question:
+      "How does the writer use language and structure to convey the narrator's anxiety? (From a passage about waiting for exam results)",
     response: `<p>The writer conveys the narrator's anxiety through a sustained metaphor of physical constriction that transforms emotional distress into tangible, bodily experience. The narrator describes their chest as feeling "wrapped in wire," a metaphor that conflates emotional anxiety with physical pain, suggesting that the anxiety is not merely a feeling but a force that literally restricts the body. The hard consonance of "wrapped in wire" mimics the tight, uncomfortable sensation being described, creating a phonological enactment of the anxiety.</p>
 <p>Structurally, the writer employs increasingly fragmented syntax as the moment of revelation approaches. Early paragraphs use flowing, compound sentences that mirror the slow passage of time: "The morning dragged, and the hours seemed to stretch like warm toffee, elastic and unbearable." However, as the results envelope appears, the sentences shorten dramatically: "There it was. Brown. Thin. Final." This progression from complex to simple syntax mirrors the narrowing of the narrator's attention from the diffuse anxiety of waiting to the sharp focus of the critical moment.</p>
 <p>The writer also creates anxiety through the careful deployment of temporal manipulation. The narrator describes time as moving "with the enthusiasm of a funeral procession," a simile that associates waiting with death and mourning, investing an ordinary experience with a sense of existential dread. The juxtaposition of the mundane setting, a kitchen with "cereal bowls" and "yesterday's newspaper," with the intensity of the narrator's inner experience creates an ironic contrast that amplifies the anxiety by highlighting its disproportion to the physical surroundings.</p>
@@ -1241,10 +1311,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Integrates language and structure analysis throughout',
       'Uses precise literary terminology confidently',
       'Explores the ironic contrast between setting and inner experience',
-      'Demonstrates understanding of how form enacts meaning'
+      'Demonstrates understanding of how form enacts meaning',
     ],
     wordCount: 307,
-    examinersCommentary: 'A confident Grade 6 response that demonstrates strong analytical skills across both language and structure. The student\'s observation about the phonological enactment of anxiety through consonance is sophisticated, and the analysis of syntax fragmentation shows genuine understanding of how structure creates meaning. The identification of the second-person shift as a dissociative effect is particularly perceptive. To reach the highest grades, the student could consider how the writer positions the reader more explicitly and develop alternative interpretations of key techniques.'
+    examinersCommentary:
+      "A confident Grade 6 response that demonstrates strong analytical skills across both language and structure. The student's observation about the phonological enactment of anxiety through consonance is sophisticated, and the analysis of syntax fragmentation shows genuine understanding of how structure creates meaning. The identification of the second-person shift as a dissociative effect is particularly perceptive. To reach the highest grades, the student could consider how the writer positions the reader more explicitly and develop alternative interpretations of key techniques.",
   },
 
   {
@@ -1253,7 +1324,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Language Paper Reading',
     gradeLevel: 'Grade 8',
-    question: 'Evaluate how successfully the writer creates a sense of wonder in the extract. (From a passage about seeing the Northern Lights for the first time)',
+    question:
+      'Evaluate how successfully the writer creates a sense of wonder in the extract. (From a passage about seeing the Northern Lights for the first time)',
     response: `<p>The writer creates wonder through a systematic dismantling of the narrator's capacity for rational description, presenting the Northern Lights as an experience that exceeds the boundaries of language itself. The opening assertion, "I had read about them. I had seen photographs. I was not prepared," employs tricolon with a pivotal volta: the first two clauses establish intellectual preparation while the third, truncated and declarative, demolishes it. This structural pattern, expectation followed by overwhelming reality, mirrors the experience of wonder itself, which by definition is the confrontation with something that surpasses prior understanding.</p>
 <p>The writer's most sophisticated technique is the strategic deployment of inadequate comparisons that acknowledge their own insufficiency. The lights are described as "like silk, if silk could burn," a simile that offers an image and then immediately qualifies it, conceding that the comparison fails to capture the reality. This self-correcting quality recurs throughout: "green, but not the green of anything I could name." By repeatedly reaching for metaphors and confessing their inadequacy, the writer performs the very experience of wonder, which involves the failure of existing frameworks to accommodate new experience. The reader thus shares the narrator's struggle to articulate the inarticulate.</p>
 <p>Structurally, the passage transitions from short, declarative observations to longer, more syntactically complex sentences as the narrator attempts to process the experience. This expansion mirrors the cognitive process of wonder: initial shock (simple observation) gives way to interpretive effort (complex, qualifying, searching sentences). The paragraph that begins with the single word "Then" marks the crucial structural pivot, the moment when the narrator shifts from passive observation to active engagement, leaning forward "as though the sky had issued a personal invitation."</p>
@@ -1269,10 +1341,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Demonstrates understanding of how language can perform its subject',
       'Technical vocabulary is precise and deployed with authority',
       'Sustained, coherent argument of genuine critical sophistication',
-      'Anticipates and addresses counter-arguments independently'
+      'Anticipates and addresses counter-arguments independently',
     ],
     wordCount: 441,
-    examinersCommentary: 'An exceptional Grade 8/9 response that demonstrates critical thinking of the highest calibre. The student\'s identification of the self-correcting simile as a technique that performs wonder rather than merely describing it is genuinely original. The evaluative dimension is handled with sophistication, anticipating and addressing a potential objection to the passage\'s literariness with a nuanced argument about retrospective reconstruction. The analysis of the semantic field of the sacred, maintained without explicit religious language, shows outstanding close reading. This response demonstrates precisely the kind of exploratory, independent thinking that characterises the highest level of achievement.'
+    examinersCommentary:
+      "An exceptional Grade 8/9 response that demonstrates critical thinking of the highest calibre. The student's identification of the self-correcting simile as a technique that performs wonder rather than merely describing it is genuinely original. The evaluative dimension is handled with sophistication, anticipating and addressing a potential objection to the passage's literariness with a nuanced argument about retrospective reconstruction. The analysis of the semantic field of the sacred, maintained without explicit religious language, shows outstanding close reading. This response demonstrates precisely the kind of exploratory, independent thinking that characterises the highest level of achievement.",
   },
 
   {
@@ -1292,12 +1365,13 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Close reading of "earned" and "determination" shows developing skill',
       'Comments on character traits with supporting evidence',
       'Structure is clear but somewhat formulaic',
-      'Could explore how the narrator\'s perspective shapes the presentation',
+      "Could explore how the narrator's perspective shapes the presentation",
       'Would benefit from more sophisticated analytical vocabulary',
-      'Summary paragraph adds little to the analysis'
+      'Summary paragraph adds little to the analysis',
     ],
     wordCount: 246,
-    examinersCommentary: 'A solid Grade 4/5 response that identifies relevant language features and begins to analyse their effects on characterisation. The close reading of "earned" and "determination" shows developing analytical skill. To improve, the student should consider how the narrator\'s perspective influences the reader\'s response, explore how the structure of the extract contributes to the presentation, and develop more sophisticated analytical vocabulary. The summary paragraph should be replaced with analysis that extends the argument.'
+    examinersCommentary:
+      'A solid Grade 4/5 response that identifies relevant language features and begins to analyse their effects on characterisation. The close reading of "earned" and "determination" shows developing analytical skill. To improve, the student should consider how the narrator\'s perspective influences the reader\'s response, explore how the structure of the extract contributes to the presentation, and develop more sophisticated analytical vocabulary. The summary paragraph should be replaced with analysis that extends the argument.',
   },
 
   {
@@ -1306,7 +1380,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Language Paper Reading',
     gradeLevel: 'Grade 8',
-    question: 'Compare how the writers of Text A and Text B present their attitudes towards city life.',
+    question:
+      'Compare how the writers of Text A and Text B present their attitudes towards city life.',
     response: `<p>The writers of Text A and Text B present starkly contrasting attitudes towards city life, yet both employ strategies of sensory immersion that reveal more complexity than their surface positions suggest. Text A's narrator celebrates the city's energy through a prose style that replicates its pace: "Traffic surged, horns blared, voices rose and fell like a symphony conducted by chaos." The orchestral metaphor, "symphony conducted by chaos," reconciles apparent contradiction, presenting disorder as a form of beauty accessible only to those attuned to its rhythms. The verb "surged" carries connotations of power and vitality, positioning the city as a living organism whose energy is fundamentally creative.</p>
 <p>Text B, conversely, presents the same urban phenomena as assault rather than symphony. The writer describes the morning commute as "a daily immersion in human exhaust," where the compound "human exhaust" conflates people with pollution, reducing commuters to toxic by-products of an industrial process. Where Text A's "surged" implies vitality, Text B's "immersion" suggests drowning, being submerged against one's will. Both writers are describing the same physical experience, crowds and noise, but their lexical choices construct entirely different emotional realities.</p>
 <p>Structurally, the two texts employ opposing approaches that reinforce their respective attitudes. Text A uses long, cumulative sentences that pile detail upon detail, mimicking the city's abundant stimulation and inviting the reader to be swept along. Text B employs short, clipped paragraphs separated by white space, creating a visual impression of isolation and disconnection that mirrors the writer's emotional experience. The structure of each text thus becomes an extension of its argument: Text A's form says "there is always more to discover," while Text B's says "there is nowhere to rest."</p>
@@ -1319,10 +1394,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Close reading of individual words ("surged" vs "immersion") is precise',
       'Analysis of form as extension of argument shows advanced understanding',
       'Considers how both texts construct "emotional realities" through language',
-      'Evaluative conclusion that acknowledges the instability of attitudes'
+      'Evaluative conclusion that acknowledges the instability of attitudes',
     ],
     wordCount: 372,
-    examinersCommentary: 'A strong Grade 7/8 comparative response that maintains integrated analysis throughout. The student\'s observation that both writers describe the same physical experience but construct different emotional realities through lexical choices is sophisticated. The structural comparison, identifying how form extends argument in both texts, demonstrates advanced understanding of how texts work. The identification of ambivalence in both texts shows the kind of nuanced thinking that characterises the highest grades. A genuinely impressive comparative analysis.'
+    examinersCommentary:
+      "A strong Grade 7/8 comparative response that maintains integrated analysis throughout. The student's observation that both writers describe the same physical experience but construct different emotional realities through lexical choices is sophisticated. The structural comparison, identifying how form extends argument in both texts, demonstrates advanced understanding of how texts work. The identification of ambivalence in both texts shows the kind of nuanced thinking that characterises the highest grades. A genuinely impressive comparative analysis.",
   },
 
   // --- IGCSE: Transactional/Creative Writing ---
@@ -1333,7 +1409,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Transactional/Creative Writing',
     gradeLevel: 'Grade 4',
-    question: 'Write an article for your school magazine about the importance of extracurricular activities.',
+    question:
+      'Write an article for your school magazine about the importance of extracurricular activities.',
     response: `<p><strong>Why Extracurricular Activities Matter</strong></p>
 <p>Many students think that school is just about lessons and exams, but extracurricular activities are also very important. In this article, I want to explain why every student should get involved in at least one activity outside of the classroom.</p>
 <p>Firstly, extracurricular activities help students develop skills that they cannot learn in lessons. For example, being part of a sports team teaches you teamwork and how to deal with losing. Being in the drama club helps with confidence and public speaking. These are skills that will be useful in the future when you are applying for jobs or going to university.</p>
@@ -1349,10 +1426,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Persuasive techniques are limited to logical argument',
       'Vocabulary is functional but not ambitious',
       'Lacks specific examples, statistics, or expert opinion',
-      'Tone is appropriate but could be more engaging'
+      'Tone is appropriate but could be more engaging',
     ],
     wordCount: 270,
-    examinersCommentary: 'A Grade 4 article that demonstrates basic competence in transactional writing. The student organises their argument clearly and addresses the target audience. However, the writing lacks the rhetorical sophistication, varied vocabulary, and specific evidence needed for higher grades. The student should incorporate statistics, expert quotations, specific examples, rhetorical questions, and more ambitious vocabulary to elevate the piece. The counter-argument needs fuller development and more convincing rebuttal.'
+    examinersCommentary:
+      'A Grade 4 article that demonstrates basic competence in transactional writing. The student organises their argument clearly and addresses the target audience. However, the writing lacks the rhetorical sophistication, varied vocabulary, and specific evidence needed for higher grades. The student should incorporate statistics, expert quotations, specific examples, rhetorical questions, and more ambitious vocabulary to elevate the piece. The counter-argument needs fuller development and more convincing rebuttal.',
   },
 
   {
@@ -1375,10 +1453,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Varied sentence structures control pace effectively',
       'Vocabulary is ambitious and well-chosen',
       'Humour ("not to investigate") adds voice and personality',
-      'Present tense creates immediacy'
+      'Present tense creates immediacy',
     ],
     wordCount: 360,
-    examinersCommentary: 'A confident Grade 6 descriptive piece that demonstrates strong creative writing skills. The sustained personification of the market as a breathing entity provides structural coherence, and the sensory description is varied and effective. The character sketches in the final paragraph are particularly accomplished, each one a miniature narrative that adds human warmth to the atmospheric description. The vocabulary is ambitious and the sentence structures are varied for effect. To reach higher grades, the student could develop a more sustained underlying theme or emotion that gives the piece deeper resonance beyond accomplished description.'
+    examinersCommentary:
+      'A confident Grade 6 descriptive piece that demonstrates strong creative writing skills. The sustained personification of the market as a breathing entity provides structural coherence, and the sensory description is varied and effective. The character sketches in the final paragraph are particularly accomplished, each one a miniature narrative that adds human warmth to the atmospheric description. The vocabulary is ambitious and the sentence structures are varied for effect. To reach higher grades, the student could develop a more sustained underlying theme or emotion that gives the piece deeper resonance beyond accomplished description.',
   },
 
   {
@@ -1387,7 +1466,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Transactional/Creative Writing',
     gradeLevel: 'Grade 8',
-    question: 'Write a story that ends with the sentence: "And that was the last time I ever saw him."',
+    question:
+      'Write a story that ends with the sentence: "And that was the last time I ever saw him."',
     response: `<p>My father taught me to skip stones on my sixth birthday. Not at a party, not with cake and candles and other children in pointed hats, but at the reservoir at the edge of town, just the two of us, at an hour when sensible families were having breakfast. He said the trick was in the wrist, a flick, not a throw, and that the best stones were flat, oval, and no bigger than a biscuit. He was specific about the biscuit. Not a digestive. More like a Rich Tea. I remember this because I remember everything about that morning, the way you remember things you did not know at the time were important.</p>
 <p>We went back to the reservoir on my seventh birthday, and my eighth, and my tenth. Not my ninth, because on my ninth birthday my father was in hospital for the first time, and the stones I threw when my mother took me instead did not skip but sank, straight and without protest, as though they understood the occasion.</p>
 <p>He came home in November. He was thinner, and he laughed less, and he had a new way of pausing before he answered questions, as though he were translating from a language he was no longer fluent in. But he was home, and for a while that was enough, the way a candle in a dark room is enough, not because it eliminates the darkness but because it gives you something to look towards.</p>
@@ -1405,10 +1485,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Restraint in the final line amplifies emotional impact',
       'First-person retrospective voice is consistent and authentic',
       'Chronological structure serves the accumulation of emotional weight',
-      'Shows rather than tells throughout, trusting the reader completely'
+      'Shows rather than tells throughout, trusting the reader completely',
     ],
     wordCount: 472,
-    examinersCommentary: 'An outstanding Grade 8/9 creative piece that achieves its extraordinary emotional power through restraint, precision, and trust in the reader. The story never states directly what is happening to the father, yet every detail, the sinking stones, the thinness, the pausing before answers, communicates it with devastating clarity. The specificity of detail (Rich Tea biscuit, cat getting fatter or fluffier) grounds the emotional weight in the texture of ordinary life, making the loss feel real rather than literary. The final stone-skipping scene achieves symbolic closure without ever becoming heavy-handed. This is writing of genuine literary quality.'
+    examinersCommentary:
+      'An outstanding Grade 8/9 creative piece that achieves its extraordinary emotional power through restraint, precision, and trust in the reader. The story never states directly what is happening to the father, yet every detail, the sinking stones, the thinness, the pausing before answers, communicates it with devastating clarity. The specificity of detail (Rich Tea biscuit, cat getting fatter or fluffier) grounds the emotional weight in the texture of ordinary life, making the loss feel real rather than literary. The final stone-skipping scene achieves symbolic closure without ever becoming heavy-handed. This is writing of genuine literary quality.',
   },
 
   {
@@ -1417,7 +1498,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Transactional/Creative Writing',
     gradeLevel: 'Grade 4',
-    question: 'Write a letter to a local council arguing that a park in your area should be improved.',
+    question:
+      'Write a letter to a local council arguing that a park in your area should be improved.',
     response: `<p>Dear Sir or Madam,</p>
 <p>I am writing to express my concern about the state of Riverside Park and to request that the council invests in improving this important community space.</p>
 <p>Riverside Park used to be a lovely place to visit, but over the past few years it has become neglected and rundown. The play equipment is old and broken, with several pieces closed off by safety tape. The paths are cracked and uneven, making it difficult for elderly residents and parents with pushchairs to use the park safely. The litter bins are frequently overflowing, and the benches are covered in graffiti.</p>
@@ -1435,10 +1517,11 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Appropriate formal register maintained throughout',
       'Could use more persuasive rhetorical techniques',
       'Vocabulary is competent but could be more ambitious',
-      'Lacks rhetorical devices that would elevate the piece'
+      'Lacks rhetorical devices that would elevate the piece',
     ],
     wordCount: 262,
-    examinersCommentary: 'A competent Grade 4/5 letter that demonstrates understanding of the formal letter format and the ability to construct a logical argument. The student identifies specific problems, offers practical solutions, and acknowledges the council\'s constraints, showing awareness of audience. However, the letter lacks the rhetorical sophistication that higher grades demand: there are no rhetorical questions, no emotive language, and limited use of persuasive techniques beyond logical argument. The vocabulary, while appropriate, could be more ambitious.'
+    examinersCommentary:
+      "A competent Grade 4/5 letter that demonstrates understanding of the formal letter format and the ability to construct a logical argument. The student identifies specific problems, offers practical solutions, and acknowledges the council's constraints, showing awareness of audience. However, the letter lacks the rhetorical sophistication that higher grades demand: there are no rhetorical questions, no emotive language, and limited use of persuasive techniques beyond logical argument. The vocabulary, while appropriate, could be more ambitious.",
   },
 
   {
@@ -1447,7 +1530,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Transactional/Creative Writing',
     gradeLevel: 'Grade 8',
-    question: 'Write an article for a broadsheet newspaper arguing that the arts are as important as STEM subjects in education.',
+    question:
+      'Write an article for a broadsheet newspaper arguing that the arts are as important as STEM subjects in education.',
     response: `<p><strong>The False Divide: Why Pitting Arts Against Sciences Impoverishes Both</strong></p>
 <p>There is a persistent and pernicious assumption running through our education policy: that the arts are a luxury and the sciences a necessity. It manifests in funding decisions that starve music departments while lavishing resources on computer labs. It appears in career advice that steers bright students away from English and towards engineering, as though the ability to write with clarity and the capacity to think with imagination were somehow less essential to a functioning economy than the ability to code. It underpins a hierarchy of disciplines in which physics sits at the summit and pottery languishes in the foothills, awaiting the next round of budget cuts.</p>
 <p>This hierarchy is not merely wrong; it is economically illiterate. The creative industries contribute over one hundred billion pounds annually to the UK economy, making them one of the nation's fastest-growing sectors. The video game industry alone generates more revenue than film and music combined, and it relies not only on programmers but on narrative designers, visual artists, composers, and voice actors. To defund the arts in favour of STEM is to saw off the branch upon which a significant portion of our national income rests.</p>
@@ -1461,13 +1545,14 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Moves from economic to philosophical argument with structural logic',
       'Historical examples (Da Vinci, Lovelace, Jobs) add authority',
       'Tricolon in conclusion is rhythmically precise and memorable',
-      'Anticipates the reader\'s assumptions and dismantles them',
+      "Anticipates the reader's assumptions and dismantles them",
       'Varied sentence structures create compelling rhythm',
       'Academic register maintained with occasional rhetorical flourish',
-      'Final sentence achieves genuine moral weight'
+      'Final sentence achieves genuine moral weight',
     ],
     wordCount: 440,
-    examinersCommentary: 'An exceptional Grade 7/8 article that demonstrates mastery of the argumentative essay form. The student builds a sophisticated, multi-layered argument that moves from economic evidence through philosophical reasoning to moral imperative, with each stage building upon the last. The historical examples are well-chosen and effectively deployed, and the tricolon in the conclusion is rhythmically precise. The headline encapsulates the argument\'s central insight: that the debate itself is founded on a false premise. The final sentence achieves genuine rhetorical and moral weight.'
+    examinersCommentary:
+      "An exceptional Grade 7/8 article that demonstrates mastery of the argumentative essay form. The student builds a sophisticated, multi-layered argument that moves from economic evidence through philosophical reasoning to moral imperative, with each stage building upon the last. The historical examples are well-chosen and effectively deployed, and the tricolon in the conclusion is rhythmically precise. The headline encapsulates the argument's central insight: that the debate itself is founded on a false premise. The final sentence achieves genuine rhetorical and moral weight.",
   },
 
   // --- IGCSE: Literature Essay Responses ---
@@ -1484,17 +1569,18 @@ export const modelAnswerBank: ModelAnswer[] = [
 <p>Lady Macbeth also calls on evil spirits to help her. She says "unsex me here" which means she wants to get rid of her feminine qualities so she can be strong enough to commit murder. This is a very powerful speech because she is asking to become something unnatural. The word "unsex" shows she believes that being a woman makes her weak and she needs to become more like a man to carry out the murder.</p>
 <p>However, Lady Macbeth's power does not last. Later in the play, she goes mad and sleepwalks, trying to wash imaginary blood from her hands. She says "Out, damned spot!" which shows she feels guilty about Duncan's murder. Shakespeare presents her loss of power as a punishment for her ambition, which would have been a warning to his audience about the dangers of unnatural ambition, especially in women.</p>`,
     annotations: [
-      'Identifies key moments that demonstrate Lady Macbeth\'s power',
+      "Identifies key moments that demonstrate Lady Macbeth's power",
       'Analyses the "unsex me" speech with some understanding',
       'Recognises the arc from power to powerlessness',
       'Comments on manipulation as a form of power',
       'Basic contextual awareness in final paragraph',
       'Quotations are selected appropriately but analysis could go deeper',
       'Limited discussion of dramatic techniques',
-      'Could explore the significance of the supernatural elements more'
+      'Could explore the significance of the supernatural elements more',
     ],
     wordCount: 258,
-    examinersCommentary: 'A Grade 4 response that demonstrates basic understanding of Lady Macbeth\'s character arc and can select relevant quotations. The student identifies manipulation, supernatural invocation, and guilt as key aspects of her characterisation. However, the analysis needs greater depth at word level, more engagement with dramatic techniques (soliloquy, stage direction), and more developed contextual understanding of Jacobean attitudes towards gender and power. The student is beginning to consider Shakespeare\'s intentions but needs to develop this more explicitly.'
+    examinersCommentary:
+      "A Grade 4 response that demonstrates basic understanding of Lady Macbeth's character arc and can select relevant quotations. The student identifies manipulation, supernatural invocation, and guilt as key aspects of her characterisation. However, the analysis needs greater depth at word level, more engagement with dramatic techniques (soliloquy, stage direction), and more developed contextual understanding of Jacobean attitudes towards gender and power. The student is beginning to consider Shakespeare's intentions but needs to develop this more explicitly.",
   },
 
   {
@@ -1504,7 +1590,7 @@ export const modelAnswerBank: ModelAnswer[] = [
     assessmentType: 'Literature Essay',
     gradeLevel: 'Grade 6',
     question: 'How does Priestley present responsibility in "An Inspector Calls"?',
-    response: `<p>Priestley presents responsibility as both a personal moral obligation and a collective social duty, using the Birling family's progressive exposure to their complicity in Eva Smith's death as a dramatic mechanism for exploring his socialist political vision. The Inspector functions as Priestley's mouthpiece, articulating a philosophy of interconnectedness that directly challenges Mr Birling's opening speech about "a man has to mind his own business and look after himself and his family."</p>
+    response: `<p>Priestley presents responsibility as both a personal moral obligation and a collective social duty, using the Birling family's progressive exposure to their complicity in Eva Smith's death as a dramatic mechanism for exploring his socialist political vision. The Inspector functions as Priestley's mouthpiece, articulating a philosophy of interconnectedness that directly challenges Mr Birling's opening speech about "a man has to mind his own business and look after himself and his own."</p>
 <p>Priestley structures the play so that each character's revelation of responsibility builds upon the last, creating an accumulative effect in which Eva Smith is not the victim of a single act of cruelty but of a systematic pattern of exploitation across class lines. Sheila's dismissal of Eva from Milwards, motivated by petty jealousy, and Gerald's abandonment of her after a brief affair both demonstrate how the privileged classes treat working people as disposable. The Inspector's insistence on showing the photograph to each family member one at a time sustains dramatic tension while reinforcing the theme that responsibility cannot be diluted by being shared.</p>
 <p>The generational divide in the Birlings' response to the Inspector's revelations is central to Priestley's message. Sheila and Eric accept responsibility: Sheila declares "I'll never, never do it again," and the repeated "never" conveys genuine remorse and a commitment to change. Mr and Mrs Birling, conversely, are concerned only with avoiding scandal, Mrs Birling refusing to accept any responsibility and deflecting blame onto the father of Eva's unborn child, not knowing it is her own son. Priestley positions the younger generation as capable of moral growth while condemning the older generation's entrenched self-interest.</p>
 <p>The Inspector's final speech, "We are members of one body. We are responsible for each other," articulates Priestley's socialist vision with the clarity and force of a political manifesto. Written in 1945 but set in 1912, the play retrospectively positions the characters' refusal of responsibility as a precursor to two world wars, investing the personal drama with historical and political significance. The audience, knowing what the Birlings do not, is invited to learn the lesson that the elder Birlings refuse to, that social responsibility is not an optional virtue but a survival imperative.</p>`,
@@ -1514,12 +1600,13 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Considers the generational divide with clear understanding of its purpose',
       'Integrates contextual knowledge of 1912/1945 dates purposefully',
       'Close reading of repeated "never" is precise',
-      'Identifies Priestley\'s socialist political purpose explicitly',
+      "Identifies Priestley's socialist political purpose explicitly",
       'Considers dramatic irony created by the dual time setting',
-      'Sustained argument developed across the full response'
+      'Sustained argument developed across the full response',
     ],
     wordCount: 338,
-    examinersCommentary: 'A confident Grade 6 literature essay that demonstrates strong understanding of how Priestley uses dramatic structure to convey his political message. The analysis of the progressive revelation pattern and its accumulative effect is effective, and the generational divide is explored with clear understanding of Priestley\'s purpose. The contextual knowledge of the dual time setting is well integrated. To reach higher grades, the student could explore the play\'s ambiguous ending more fully, consider alternative interpretations of the Inspector\'s identity, and analyse Priestley\'s use of stage directions and dramatic conventions in greater detail.'
+    examinersCommentary:
+      "A confident Grade 6 literature essay that demonstrates strong understanding of how Priestley uses dramatic structure to convey his political message. The analysis of the progressive revelation pattern and its accumulative effect is effective, and the generational divide is explored with clear understanding of Priestley's purpose. The contextual knowledge of the dual time setting is well integrated. To reach higher grades, the student could explore the play's ambiguous ending more fully, consider alternative interpretations of the Inspector's identity, and analyse Priestley's use of stage directions and dramatic conventions in greater detail.",
   },
 
   {
@@ -1528,7 +1615,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Literature Essay',
     gradeLevel: 'Grade 8',
-    question: 'How does Fitzgerald present the corruption of the American Dream in "The Great Gatsby"?',
+    question:
+      'How does Fitzgerald present the corruption of the American Dream in "The Great Gatsby"?',
     response: `<p>Fitzgerald presents the corruption of the American Dream not as the betrayal of an originally noble ideal but as the logical outcome of an aspiration that was always, at its foundation, grounded in materialism and self-reinvention rather than collective progress. Gatsby's pursuit of Daisy is simultaneously a love story and an economic transaction: she is not merely a woman but a symbol of the wealth and social status that Gatsby, born James Gatz, has spent his entire adult life attempting to acquire. The green light at the end of Daisy's dock, which Gatsby "stretched out his arms toward," functions as the novel's central symbol precisely because of its essential ambiguity: it represents hope, possibility, and desire, but also distance, unattainability, and the fundamental gap between aspiration and reality.</p>
 <p>Fitzgerald exposes the Dream's corruption through the novel's geography, which maps social hierarchy onto physical space with deliberate precision. East Egg, home to old money, and West Egg, home to new money, face each other across the water in a configuration that is simultaneously proximity and unbridgeable separation. The Valley of Ashes, which lies between the wealthy eggs and Manhattan, represents the human cost of the Dream: the industrial waste produced by others' prosperity, presided over by the unblinking eyes of Doctor T.J. Eckleburg's billboard, a commercial image that has usurped the position of God. Fitzgerald's suggestion is devastating: in America, commerce has replaced divinity, and advertising has replaced moral authority.</p>
 <p>Nick Carraway's narrative perspective is itself a study in the Dream's corrupting influence. His retrospective narration, characterised by an oscillation between enchantment and disillusionment, enacts the reader's own journey from seduction to judgement. Nick claims to be "one of the few honest people" he has ever known, yet his reliability is systematically undermined by his complicity in Gatsby's schemes, his willingness to facilitate the affair with Daisy, and his selective omissions. Fitzgerald uses Nick's compromised narration to suggest that the Dream corrupts not only those who pursue it but those who observe it, that proximity to wealth and glamour erodes the moral clarity required to condemn it.</p>
@@ -1538,16 +1626,17 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Exceptional thesis that reframes the Dream as inherently rather than subsequently corrupt',
       'Geographic analysis of East Egg, West Egg, and Valley of Ashes is precise',
       'Analysis of Eckleburg billboard as commerce replacing divinity is sophisticated',
-      'Nick\'s unreliability is identified and connected to thematic corruption',
-      'Gatsby\'s death scene analysed for symbolic precision',
+      "Nick's unreliability is identified and connected to thematic corruption",
+      "Gatsby's death scene analysed for symbolic precision",
       'Tom and Daisy\'s "carelessness" analysed with devastating clarity',
-      'Final paragraph\'s historical reach is genuinely literary-critical',
+      "Final paragraph's historical reach is genuinely literary-critical",
       'Academic register sustained throughout with controlled analytical authority',
       'Close reading and broad interpretation are seamlessly integrated',
-      'Demonstrates independent critical thinking of the highest order'
+      'Demonstrates independent critical thinking of the highest order',
     ],
     wordCount: 497,
-    examinersCommentary: 'An exceptional Grade 8/9 literature essay that demonstrates critical thinking of the highest calibre. The student\'s central argument, that the Dream\'s corruption is inherent rather than a betrayal of an original ideal, is both original and persuasive. The geographic analysis is precise and purposeful, and the identification of Nick\'s compromised narration as itself a symptom of the Dream\'s corruption shows genuine independent thinking. The final paragraph\'s historical reach, connecting Gatsby\'s personal dream to the European colonial encounter with America, demonstrates the kind of ambitious, synthesising critical intelligence that characterises the very best literary analysis at any level.'
+    examinersCommentary:
+      "An exceptional Grade 8/9 literature essay that demonstrates critical thinking of the highest calibre. The student's central argument, that the Dream's corruption is inherent rather than a betrayal of an original ideal, is both original and persuasive. The geographic analysis is precise and purposeful, and the identification of Nick's compromised narration as itself a symptom of the Dream's corruption shows genuine independent thinking. The final paragraph's historical reach, connecting Gatsby's personal dream to the European colonial encounter with America, demonstrates the kind of ambitious, synthesising critical intelligence that characterises the very best literary analysis at any level.",
   },
 
   {
@@ -1556,7 +1645,8 @@ export const modelAnswerBank: ModelAnswer[] = [
     yearGroup: 'igcse',
     assessmentType: 'Literature Essay',
     gradeLevel: 'Grade 4',
-    question: 'How does Golding present the theme of civilisation vs. savagery in "Lord of the Flies"?',
+    question:
+      'How does Golding present the theme of civilisation vs. savagery in "Lord of the Flies"?',
     response: `<p>Golding presents civilisation and savagery as two opposing forces that exist within all human beings. At the beginning of the novel, the boys try to create a civilised society on the island. Ralph is elected leader and they make rules about the conch shell: whoever holds it gets to speak. The conch represents order and democracy because it gives everyone an equal voice.</p>
 <p>However, as the novel goes on, the boys become more savage. Jack starts painting his face, which Golding describes as a "mask" that allows him to behave in ways he wouldn't normally. The paint hides his identity and makes it easier for him to be violent and cruel. This shows that civilisation is like a mask too, hiding the savage nature that exists inside all people.</p>
 <p>The beast is an important symbol in the novel. The boys are scared of a beast on the island, but Simon realises that "maybe it's only us." This is one of the most important lines in the book because it shows that the real beast is the savagery inside each person. The boys are not threatened by an external monster but by their own capacity for evil.</p>
@@ -1565,15 +1655,16 @@ export const modelAnswerBank: ModelAnswer[] = [
     annotations: [
       'Identifies key symbols (conch, beast, face paint) and their significance',
       'Makes a valid point about face paint as a mask for savagery',
-      'Simon\'s insight about the beast is correctly identified as central',
-      'Links Piggy\'s death to the destruction of civilisation',
+      "Simon's insight about the beast is correctly identified as central",
+      "Links Piggy's death to the destruction of civilisation",
       'Contextual awareness of post-war writing in final paragraph',
       'Analysis is clear but could explore language more closely',
       'Could discuss the significance of specific scenes in more depth',
-      'Would benefit from more precise literary terminology'
+      'Would benefit from more precise literary terminology',
     ],
     wordCount: 287,
-    examinersCommentary: 'A Grade 4/5 response that demonstrates clear understanding of the novel\'s central themes and symbols. The student identifies the key symbols and explains their significance with reasonable clarity. The point about face paint functioning as a mask is perceptive. However, the analysis needs to engage more closely with Golding\'s specific language choices, explore scenes in greater depth rather than summarising them, and develop the contextual dimension more fully. The student shows understanding of what Golding is saying but needs to analyse more precisely how he says it.'
+    examinersCommentary:
+      "A Grade 4/5 response that demonstrates clear understanding of the novel's central themes and symbols. The student identifies the key symbols and explains their significance with reasonable clarity. The point about face paint functioning as a mask is perceptive. However, the analysis needs to engage more closely with Golding's specific language choices, explore scenes in greater depth rather than summarising them, and develop the contextual dimension more fully. The student shows understanding of what Golding is saying but needs to analyse more precisely how he says it.",
   },
 
   {
@@ -1592,15 +1683,16 @@ export const modelAnswerBank: ModelAnswer[] = [
       'Exceptional thesis about ambition as transgression of natural boundaries',
       'Analysis of the inverted Promethean myth is sophisticated',
       'Victor as "his own first creation" is a brilliantly original observation',
-      'The Creature\'s eloquence as strategic authorial choice is well understood',
+      "The Creature's eloquence as strategic authorial choice is well understood",
       'Nested narrative structure analysed as thematically significant',
-      'Walton positioned as the reader\'s surrogate with precision',
+      "Walton positioned as the reader's surrogate with precision",
       'Biographical and historical context integrated naturally',
       'Contemporary relevance addressed without anachronism',
       'Sustained, cohesive argument of genuine intellectual sophistication',
-      'Academic register maintained throughout with authority'
+      'Academic register maintained throughout with authority',
     ],
     wordCount: 487,
-    examinersCommentary: 'An exceptional Grade 8/9 essay that engages with the novel at a level of genuine literary-critical sophistication. The observation that Victor becomes "his own first creation" is original and analytically productive, and the analysis of the nested narrative structure as thematically significant demonstrates understanding of how form and content interact. The student\'s ability to integrate biographical context, particularly Shelley\'s unique position as daughter of Godwin and Wollstonecraft, into a coherent critical argument is impressive. The final paragraph\'s connection to contemporary debates about technology and ethics demonstrates the kind of ambitious, outward-facing thinking that characterises the very best literary analysis.'
-  }
-];
+    examinersCommentary:
+      "An exceptional Grade 8/9 essay that engages with the novel at a level of genuine literary-critical sophistication. The observation that Victor becomes \"his own first creation\" is original and analytically productive, and the analysis of the nested narrative structure as thematically significant demonstrates understanding of how form and content interact. The student's ability to integrate biographical context, particularly Shelley's unique position as daughter of Godwin and Wollstonecraft, into a coherent critical argument is impressive. The final paragraph's connection to contemporary debates about technology and ethics demonstrates the kind of ambitious, outward-facing thinking that characterises the very best literary analysis.",
+  },
+]

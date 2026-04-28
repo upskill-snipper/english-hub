@@ -13,14 +13,17 @@ export default function CTABannerSection() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/[0.06] rounded-full blur-[120px] pointer-events-none" />
 
           <div className="relative">
-            <h2 className="text-foreground mb-5">
-              Ready to Raise Your Grade?
-            </h2>
+            <h2 className="text-foreground mb-5">Ready to Raise Your Grade?</h2>
             <p className="text-muted-foreground max-w-lg mx-auto mb-10 text-body-lg">
-              Join 2,400+ students who are building confidence and smashing
-              their targets with The English Hub.
+              Be one of the first students to use the platform. Built by a serving UK secondary
+              English teacher; AI-marked essays against the real AO mark scheme.
             </p>
-            <Button variant="default" size="lg" className="text-base px-10 h-12 shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
+            <Button
+              variant="default"
+              size="lg"
+              className="text-base px-10 h-12 shadow-lg shadow-primary/20"
+              render={<Link href="/auth/register" />}
+            >
               Start Free Trial
             </Button>
             <p className="mt-8 text-sm text-muted-foreground">

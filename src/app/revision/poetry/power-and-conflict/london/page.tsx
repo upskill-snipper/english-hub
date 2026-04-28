@@ -19,28 +19,56 @@ const londonPoem: PoemData = {
     {
       text: 'I wander thro\u2019 each charter\u2019d street,',
       annotations: [
-        { type: 'Vocabulary', note: '"Charter\'d" means mapped, controlled, or owned. Blake uses it to suggest that even the streets of London have been bought and sold \u2014 freedom is an illusion.', color: '#3b82f6' },
-        { type: 'Context', note: 'The speaker walks through London as a detached observer, cataloguing the suffering he sees around him.', color: '#8b5cf6' },
+        {
+          type: 'Vocabulary',
+          note: '"Charter\'d" means mapped, controlled, or owned. Blake uses it to suggest that even the streets of London have been bought and sold \u2014 freedom is an illusion.',
+          color: '#3b82f6',
+        },
+        {
+          type: 'Context',
+          note: 'The speaker walks through London as a detached observer, cataloguing the suffering he sees around him.',
+          color: '#8b5cf6',
+        },
       ],
     },
     {
       text: 'Near where the charter\u2019d Thames does flow.',
       annotations: [
-        { type: 'Imagery', note: 'Even the river Thames \u2014 a natural, free-flowing force \u2014 has been "charter\'d" (controlled). Nature itself has been commodified.', color: '#10b981' },
-        { type: 'Repetition', note: 'The repetition of "charter\'d" emphasises the all-consuming nature of commercial and political control over London.', color: '#f59e0b' },
+        {
+          type: 'Imagery',
+          note: 'Even the river Thames \u2014 a natural, free-flowing force \u2014 has been "charter\'d" (controlled). Nature itself has been commodified.',
+          color: '#10b981',
+        },
+        {
+          type: 'Repetition',
+          note: 'The repetition of "charter\'d" emphasises the all-consuming nature of commercial and political control over London.',
+          color: '#f59e0b',
+        },
       ],
     },
     {
       text: 'And mark in every face I meet',
       annotations: [
-        { type: 'Verb choice', note: '"Mark" has a double meaning: to notice/observe, and to scar or brand. Blake both sees and records the damage.', color: '#3b82f6' },
+        {
+          type: 'Verb choice',
+          note: '"Mark" has a double meaning: to notice/observe, and to scar or brand. Blake both sees and records the damage.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
       text: 'Marks of weakness, marks of woe.',
       annotations: [
-        { type: 'Repetition', note: 'Triple repetition of "marks" hammers home the universality of suffering. No one escapes.', color: '#f59e0b' },
-        { type: 'Tone', note: 'The tone is sombre and despairing. "Weakness" and "woe" are powerful emotive words conveying physical and emotional suffering.', color: '#ec4899' },
+        {
+          type: 'Repetition',
+          note: 'Triple repetition of "marks" hammers home the universality of suffering. No one escapes.',
+          color: '#f59e0b',
+        },
+        {
+          type: 'Tone',
+          note: 'The tone is sombre and despairing. "Weakness" and "woe" are powerful emotive words conveying physical and emotional suffering.',
+          color: '#ec4899',
+        },
       ],
     },
     // Stanza break
@@ -49,26 +77,46 @@ const londonPoem: PoemData = {
     {
       text: 'In every cry of every Man,',
       annotations: [
-        { type: 'Anaphora', note: '"In every" is repeated four times across stanza 2, creating a relentless, list-like rhythm that overwhelms the reader with the scale of suffering.', color: '#f59e0b' },
+        {
+          type: 'Anaphora',
+          note: '"In every" is repeated four times across stanza 2, creating a relentless, list-like rhythm that overwhelms the reader with the scale of suffering.',
+          color: '#f59e0b',
+        },
       ],
     },
     {
       text: 'In every Infant\u2019s cry of fear,',
       annotations: [
-        { type: 'Imagery', note: 'Even newborn infants are born into fear and suffering \u2014 innocence is corrupted from birth. This connects to Blake\'s broader theme in Songs of Experience.', color: '#10b981' },
+        {
+          type: 'Imagery',
+          note: "Even newborn infants are born into fear and suffering \u2014 innocence is corrupted from birth. This connects to Blake's broader theme in Songs of Experience.",
+          color: '#10b981',
+        },
       ],
     },
     {
       text: 'In every voice: in every ban,',
       annotations: [
-        { type: 'Vocabulary', note: '"Ban" suggests both legal prohibitions imposed by those in power and the banns of marriage \u2014 even love is institutionalised and controlled.', color: '#3b82f6' },
+        {
+          type: 'Vocabulary',
+          note: '"Ban" suggests both legal prohibitions imposed by those in power and the banns of marriage \u2014 even love is institutionalised and controlled.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
       text: 'The mind-forg\u2019d manacles I hear.',
       annotations: [
-        { type: 'Metaphor', note: '"Mind-forg\'d manacles" is Blake\'s most famous phrase from this poem. The chains are not physical but psychological \u2014 people are imprisoned by their own acceptance of oppression.', color: '#ef4444' },
-        { type: 'Aural imagery', note: 'Blake can "hear" the manacles, using synesthesia to blend sight and sound, suggesting oppression pervades every sense.', color: '#10b981' },
+        {
+          type: 'Metaphor',
+          note: '"Mind-forg\'d manacles" is Blake\'s most famous phrase from this poem. The chains are not physical but psychological \u2014 people are imprisoned by their own acceptance of oppression.',
+          color: '#ef4444',
+        },
+        {
+          type: 'Aural imagery',
+          note: 'Blake can "hear" the manacles, using synesthesia to blend sight and sound, suggesting oppression pervades every sense.',
+          color: '#10b981',
+        },
       ],
     },
     // Stanza break
@@ -77,27 +125,51 @@ const londonPoem: PoemData = {
     {
       text: 'How the Chimney-sweeper\u2019s cry',
       annotations: [
-        { type: 'Context', note: 'Child chimney sweeps were a notorious example of child exploitation. Blake wrote several poems about them. Boys as young as four were forced up chimneys, often dying from suffocation or cancer.', color: '#8b5cf6' },
+        {
+          type: 'Context',
+          note: 'Child chimney sweeps were a notorious example of child exploitation. Blake wrote several poems about them. Boys as young as four were forced up chimneys, often dying from suffocation or cancer.',
+          color: '#8b5cf6',
+        },
       ],
     },
     {
       text: 'Every black\u2019ning Church appalls;',
       annotations: [
-        { type: 'Symbolism', note: '"Black\'ning" works on multiple levels: literal soot from industry, moral corruption, and the Church\'s complicity in child labour by failing to act.', color: '#ef4444' },
-        { type: 'Vocabulary', note: '"Appalls" means to horrify, but also carries the sense of a funeral pall (a cloth draped over a coffin) \u2014 the Church is associated with death.', color: '#3b82f6' },
+        {
+          type: 'Symbolism',
+          note: '"Black\'ning" works on multiple levels: literal soot from industry, moral corruption, and the Church\'s complicity in child labour by failing to act.',
+          color: '#ef4444',
+        },
+        {
+          type: 'Vocabulary',
+          note: '"Appalls" means to horrify, but also carries the sense of a funeral pall (a cloth draped over a coffin) \u2014 the Church is associated with death.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
       text: 'And the hapless Soldier\u2019s sigh',
       annotations: [
-        { type: 'Emotive language', note: '"Hapless" means unlucky or unfortunate. The soldier is powerless, sent to die by those in authority. His "sigh" is quiet, suppressed protest.', color: '#ec4899' },
+        {
+          type: 'Emotive language',
+          note: '"Hapless" means unlucky or unfortunate. The soldier is powerless, sent to die by those in authority. His "sigh" is quiet, suppressed protest.',
+          color: '#ec4899',
+        },
       ],
     },
     {
       text: 'Runs in blood down Palace walls.',
       annotations: [
-        { type: 'Imagery', note: 'A shocking, visceral image: the soldier\'s suffering literally stains the walls of royal power. The monarchy is directly blamed for his death.', color: '#10b981' },
-        { type: 'Symbolism', note: 'Blood on "Palace walls" could foreshadow revolution (Blake supported the French Revolution). The powerful are not shielded from the consequences of their oppression.', color: '#ef4444' },
+        {
+          type: 'Imagery',
+          note: "A shocking, visceral image: the soldier's suffering literally stains the walls of royal power. The monarchy is directly blamed for his death.",
+          color: '#10b981',
+        },
+        {
+          type: 'Symbolism',
+          note: 'Blood on "Palace walls" could foreshadow revolution (Blake supported the French Revolution). The powerful are not shielded from the consequences of their oppression.',
+          color: '#ef4444',
+        },
       ],
     },
     // Stanza break
@@ -106,27 +178,51 @@ const londonPoem: PoemData = {
     {
       text: 'But most thro\u2019 midnight streets I hear',
       annotations: [
-        { type: 'Structure', note: '"But most" signals a shift \u2014 the worst is saved for last. "Midnight" creates a dark, secretive, morally corrupt atmosphere.', color: '#8b5cf6' },
+        {
+          type: 'Structure',
+          note: '"But most" signals a shift \u2014 the worst is saved for last. "Midnight" creates a dark, secretive, morally corrupt atmosphere.',
+          color: '#8b5cf6',
+        },
       ],
     },
     {
       text: 'How the youthful Harlot\u2019s curse',
       annotations: [
-        { type: 'Context', note: 'Prostitution was rife in 18th-century London. "Youthful" emphasises how young these women were \u2014 victims of poverty, not moral failings.', color: '#8b5cf6' },
-        { type: 'Vocabulary', note: '"Curse" has a triple meaning: swearing in anger, a sexually transmitted disease passed to clients, and a divine curse upon society.', color: '#3b82f6' },
+        {
+          type: 'Context',
+          note: 'Prostitution was rife in 18th-century London. "Youthful" emphasises how young these women were \u2014 victims of poverty, not moral failings.',
+          color: '#8b5cf6',
+        },
+        {
+          type: 'Vocabulary',
+          note: '"Curse" has a triple meaning: swearing in anger, a sexually transmitted disease passed to clients, and a divine curse upon society.',
+          color: '#3b82f6',
+        },
       ],
     },
     {
       text: 'Blasts the new-born Infant\u2019s tear',
       annotations: [
-        { type: 'Imagery', note: '"Blasts" is violent and destructive. The baby is born into disease and suffering. The cycle of misery is inescapable \u2014 it passes from generation to generation.', color: '#10b981' },
+        {
+          type: 'Imagery',
+          note: '"Blasts" is violent and destructive. The baby is born into disease and suffering. The cycle of misery is inescapable \u2014 it passes from generation to generation.',
+          color: '#10b981',
+        },
       ],
     },
     {
       text: 'And blights with plagues the Marriage hearse.',
       annotations: [
-        { type: 'Oxymoron', note: '"Marriage hearse" is a powerful oxymoron \u2014 marriage (life, love, new beginnings) is fused with a hearse (death, endings). Love and death become inseparable in Blake\'s London.', color: '#ef4444' },
-        { type: 'Vocabulary', note: '"Blights" and "plagues" are words of disease and destruction, suggesting that corruption infects all of society, even its most sacred institutions.', color: '#3b82f6' },
+        {
+          type: 'Oxymoron',
+          note: '"Marriage hearse" is a powerful oxymoron \u2014 marriage (life, love, new beginnings) is fused with a hearse (death, endings). Love and death become inseparable in Blake\'s London.',
+          color: '#ef4444',
+        },
+        {
+          type: 'Vocabulary',
+          note: '"Blights" and "plagues" are words of disease and destruction, suggesting that corruption infects all of society, even its most sacred institutions.',
+          color: '#3b82f6',
+        },
       ],
     },
   ],
@@ -199,7 +295,7 @@ const londonPoem: PoemData = {
     {
       quote: 'Marriage hearse',
       analysis:
-        'A devastating oxymoron that ends the poem. Marriage (love, life, hope) is combined with a hearse (death, funerals). In Blake\'s London, love is poisoned by disease and social corruption. There is no escape, not even in the institution meant to celebrate human connection.',
+        "A devastating oxymoron that ends the poem. Marriage (love, life, hope) is combined with a hearse (death, funerals). In Blake's London, love is poisoned by disease and social corruption. There is no escape, not even in the institution meant to celebrate human connection.",
       themes: ['Corruption', 'Death', 'Loss of Innocence'],
     },
   ],
@@ -207,7 +303,8 @@ const londonPoem: PoemData = {
   languageDevices: [
     {
       device: 'Anaphora',
-      example: 'In every cry of every Man, / In every Infant\u2019s cry of fear, / In every voice: in every ban',
+      example:
+        'In every cry of every Man, / In every Infant\u2019s cry of fear, / In every voice: in every ban',
       effect:
         'The relentless repetition of "In every" creates a cumulative, overwhelming effect. The reader is bombarded with suffering just as Blake is bombarded by what he sees and hears. It makes the oppression feel total and universal.',
       lineRef: 5,
@@ -216,7 +313,7 @@ const londonPoem: PoemData = {
       device: 'Oxymoron',
       example: 'Marriage hearse',
       effect:
-        'Fusing two contradictory concepts \u2014 marriage (celebration of life) and hearse (vehicle of death) \u2014 creates a shocking final image. It encapsulates Blake\'s argument that corruption has poisoned every aspect of human life, even love itself.',
+        "Fusing two contradictory concepts \u2014 marriage (celebration of life) and hearse (vehicle of death) \u2014 creates a shocking final image. It encapsulates Blake's argument that corruption has poisoned every aspect of human life, even love itself.",
       lineRef: 19,
     },
     {
@@ -230,7 +327,7 @@ const londonPoem: PoemData = {
       device: 'Visual imagery',
       example: 'Runs in blood down Palace walls',
       effect:
-        'This vivid, violent image transforms an abstract concept (the cost of war) into something viscerally concrete. The reader can see the blood, making the monarch\'s responsibility undeniable.',
+        "This vivid, violent image transforms an abstract concept (the cost of war) into something viscerally concrete. The reader can see the blood, making the monarch's responsibility undeniable.",
       lineRef: 15,
     },
     {
@@ -271,9 +368,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'lon-1',
     question: 'What does the word "charter\'d" suggest in the opening lines?',
     type: 'multiple-choice',
-    options: ['The streets are well-maintained', 'Everything in London is controlled, owned, and commercialised', 'The streets are full of tourists with maps', 'London is a free and open city'],
+    options: [
+      'The streets are well-maintained',
+      'Everything in London is controlled, owned, and commercialised',
+      'The streets are full of tourists with maps',
+      'London is a free and open city',
+    ],
     correctIndex: 1,
-    explanation: 'Blake uses "charter\'d" to suggest that even the streets and the Thames have been bought, sold, and controlled. Freedom is an illusion — everything is owned by those in power.',
+    explanation:
+      'Blake uses "charter\'d" to suggest that even the streets and the Thames have been bought, sold, and controlled. Freedom is an illusion — everything is owned by those in power.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -281,9 +384,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'lon-2',
     question: 'What are "mind-forg\'d manacles"?',
     type: 'multiple-choice',
-    options: ['Physical chains used on prisoners', 'Psychological chains — people are imprisoned by their own acceptance of oppression', 'Decorative bracelets worn by Londoners', 'Laws written by Parliament'],
+    options: [
+      'Physical chains used on prisoners',
+      'Psychological chains — people are imprisoned by their own acceptance of oppression',
+      'Decorative bracelets worn by Londoners',
+      'Laws written by Parliament',
+    ],
     correctIndex: 1,
-    explanation: '"Mind-forg\'d manacles" is Blake\'s most important metaphor. The chains are not physical but mental — people have internalised their oppression and accepted it as normal.',
+    explanation:
+      '"Mind-forg\'d manacles" is Blake\'s most important metaphor. The chains are not physical but mental — people have internalised their oppression and accepted it as normal.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -291,9 +400,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'lon-3',
     question: 'What institutions does Blake attack in stanza 3?',
     type: 'multiple-choice',
-    options: ['Schools and hospitals', 'The Church and the monarchy', 'Factories and shops', 'The army and the navy'],
+    options: [
+      'Schools and hospitals',
+      'The Church and the monarchy',
+      'Factories and shops',
+      'The army and the navy',
+    ],
     correctIndex: 1,
-    explanation: 'Blake attacks the Church ("every black\'ning Church appalls") for ignoring child chimney sweeps, and the monarchy ("Runs in blood down Palace walls") for sending soldiers to die.',
+    explanation:
+      'Blake attacks the Church ("every black\'ning Church appalls") for ignoring child chimney sweeps, and the monarchy ("Runs in blood down Palace walls") for sending soldiers to die.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -301,9 +416,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'lon-4',
     question: 'What is the effect of the oxymoron "Marriage hearse"?',
     type: 'multiple-choice',
-    options: ['It celebrates wedding traditions', 'It fuses love and death, showing that corruption has poisoned every aspect of life', 'It describes a funeral procession', 'It shows that marriage is popular in London'],
+    options: [
+      'It celebrates wedding traditions',
+      'It fuses love and death, showing that corruption has poisoned every aspect of life',
+      'It describes a funeral procession',
+      'It shows that marriage is popular in London',
+    ],
     correctIndex: 1,
-    explanation: 'Marriage (love, life, new beginnings) is combined with a hearse (death, endings). Blake argues that corruption has destroyed even the most sacred human institutions.',
+    explanation:
+      'Marriage (love, life, new beginnings) is combined with a hearse (death, endings). Blake argues that corruption has destroyed even the most sacred human institutions.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -311,9 +432,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'lon-5',
     question: 'What structural feature dominates stanza 2?',
     type: 'multiple-choice',
-    options: ['Rhyming couplets', 'Anaphora — the repetition of "In every"', 'A volta or turning point', 'Lack of punctuation'],
+    options: [
+      'Rhyming couplets',
+      'Anaphora — the repetition of "In every"',
+      'A volta or turning point',
+      'Lack of punctuation',
+    ],
     correctIndex: 1,
-    explanation: '"In every" is repeated four times in stanza 2, creating a relentless, overwhelming effect. The repetition makes suffering feel universal and inescapable.',
+    explanation:
+      '"In every" is repeated four times in stanza 2, creating a relentless, overwhelming effect. The repetition makes suffering feel universal and inescapable.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -321,9 +448,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'lon-6',
     question: 'What does "Runs in blood down Palace walls" suggest about the monarchy?',
     type: 'multiple-choice',
-    options: ['The Palace is being redecorated', 'Blake directly blames the monarchy for soldiers\' deaths', 'The Palace is under attack by revolutionaries', 'The soldier is protecting the Palace'],
+    options: [
+      'The Palace is being redecorated',
+      "Blake directly blames the monarchy for soldiers' deaths",
+      'The Palace is under attack by revolutionaries',
+      'The soldier is protecting the Palace',
+    ],
     correctIndex: 1,
-    explanation: 'This vivid image places blood directly on the walls of royal power, making the monarchy\'s responsibility for sending soldiers to die undeniable. It may also foreshadow revolution.',
+    explanation:
+      "This vivid image places blood directly on the walls of royal power, making the monarchy's responsibility for sending soldiers to die undeniable. It may also foreshadow revolution.",
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -331,9 +464,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'lon-7',
     question: 'When was London published, and what was happening historically?',
     type: 'multiple-choice',
-    options: ['1818, during the Romantic period', '1794, during the Industrial Revolution and aftermath of the French Revolution', '1850, during the Victorian era', '1914, at the start of World War I'],
+    options: [
+      '1818, during the Romantic period',
+      '1794, during the Industrial Revolution and aftermath of the French Revolution',
+      '1850, during the Victorian era',
+      '1914, at the start of World War I',
+    ],
     correctIndex: 1,
-    explanation: 'London was published in Songs of Experience in 1794. Blake wrote during the Industrial Revolution, which brought poverty and child labour, and was influenced by the French Revolution (1789).',
+    explanation:
+      'London was published in Songs of Experience in 1794. Blake wrote during the Industrial Revolution, which brought poverty and child labour, and was influenced by the French Revolution (1789).',
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -341,29 +480,48 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'lon-8',
     question: 'Why does Blake use iambic tetrameter throughout the poem?',
     type: 'multiple-choice',
-    options: ['It was the only metre he knew', 'The steady, marching rhythm mirrors the relentless, inescapable nature of suffering', 'It makes the poem easier to memorise', 'It creates a cheerful, upbeat tone'],
+    options: [
+      'It was the only metre he knew',
+      'The steady, marching rhythm mirrors the relentless, inescapable nature of suffering',
+      'It makes the poem easier to memorise',
+      'It creates a cheerful, upbeat tone',
+    ],
     correctIndex: 1,
-    explanation: 'The regular four-beat rhythm sounds like footsteps through the city, reinforcing the sense of relentless, unavoidable oppression. The rigid form also mirrors the "charter\'d" restrictions Blake describes.',
+    explanation:
+      'The regular four-beat rhythm sounds like footsteps through the city, reinforcing the sense of relentless, unavoidable oppression. The rigid form also mirrors the "charter\'d" restrictions Blake describes.',
     topic: 'Structure',
     difficulty: 'higher',
   },
   {
     id: 'lon-9',
-    question: 'How does the cyclical structure of the poem reinforce Blake\'s message?',
+    question: "How does the cyclical structure of the poem reinforce Blake's message?",
     type: 'multiple-choice',
-    options: ['It shows London is improving over time', 'It suggests the cycle of suffering repeats endlessly from generation to generation', 'It creates a sense of resolution', 'It reflects the circular layout of London\'s streets'],
+    options: [
+      'It shows London is improving over time',
+      'It suggests the cycle of suffering repeats endlessly from generation to generation',
+      'It creates a sense of resolution',
+      "It reflects the circular layout of London's streets",
+    ],
     correctIndex: 1,
-    explanation: 'The poem begins with an infant\'s "cry of fear" in stanza 2 and ends with a "new-born Infant\'s tear" in stanza 4. This cyclical structure suggests suffering passes from generation to generation with no escape.',
+    explanation:
+      'The poem begins with an infant\'s "cry of fear" in stanza 2 and ends with a "new-born Infant\'s tear" in stanza 4. This cyclical structure suggests suffering passes from generation to generation with no escape.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
   {
     id: 'lon-10',
-    question: 'Which poem from the Power and Conflict anthology shares London\'s concern with institutional oppression?',
+    question:
+      "Which poem from the Power and Conflict anthology shares London's concern with institutional oppression?",
     type: 'multiple-choice',
-    options: ['The Prelude by Wordsworth', 'Checking Out Me History by John Agard', 'Storm on the Island by Seamus Heaney', 'Exposure by Wilfred Owen'],
+    options: [
+      'The Prelude by Wordsworth',
+      'Checking Out Me History by John Agard',
+      'Storm on the Island by Seamus Heaney',
+      'Exposure by Wilfred Owen',
+    ],
     correctIndex: 1,
-    explanation: 'Both London and Checking Out Me History attack institutional control over people. Blake targets the Church and monarchy; Agard targets the colonial education system. Both show how power structures suppress individuals.',
+    explanation:
+      'Both London and Checking Out Me History attack institutional control over people. Blake targets the Church and monarchy; Agard targets the colonial education system. Both show how power structures suppress individuals.',
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -372,7 +530,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
-    summary: 'London explores the corruption of power, the suffering of ordinary people, and the loss of innocence in an industrialised city controlled by oppressive institutions.',
+    summary:
+      'London explores the corruption of power, the suffering of ordinary people, and the loss of innocence in an industrialised city controlled by oppressive institutions.',
     keyPoints: [
       'Power corrupts — the Church, monarchy, and commercial interests all cause suffering',
       'Oppression is both external (institutions) and internal ("mind-forg\'d manacles")',
@@ -382,7 +541,8 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Language & Imagery',
-    summary: 'Blake uses metaphor, repetition, oxymoron, and visceral imagery to create an unrelenting picture of suffering and institutional corruption.',
+    summary:
+      'Blake uses metaphor, repetition, oxymoron, and visceral imagery to create an unrelenting picture of suffering and institutional corruption.',
     keyPoints: [
       '"Mind-forg\'d manacles" — psychological chains of internalised oppression',
       '"Marriage hearse" — oxymoron fusing love with death',
@@ -392,9 +552,10 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Structure & Form',
-    summary: 'Four quatrains in ABAB rhyme with iambic tetrameter — the rigid, controlled structure mirrors the "charter\'d" restrictions of the city itself.',
+    summary:
+      'Four quatrains in ABAB rhyme with iambic tetrameter — the rigid, controlled structure mirrors the "charter\'d" restrictions of the city itself.',
     keyPoints: [
-      'Regular ABAB rhyme scheme — the poem\'s form feels as constrained as the city',
+      "Regular ABAB rhyme scheme — the poem's form feels as constrained as the city",
       'Anaphora ("In every") in stanza 2 creates overwhelming cumulative effect',
       '"But most" signals the volta to the poem\'s darkest imagery in stanza 4',
       'First-person narrator gives the poem moral authority as eyewitness testimony',
@@ -415,21 +576,24 @@ const comparePoems = [
     title: 'Ozymandias',
     poet: 'Percy Bysshe Shelley',
     link: '/revision/poetry/power-and-conflict/ozymandias',
-    reason: 'Both critique powerful rulers. Shelley shows power as temporary; Blake shows it as actively destructive.',
+    reason:
+      'Both critique powerful rulers. Shelley shows power as temporary; Blake shows it as actively destructive.',
     themes: ['Power', 'Corruption'],
   },
   {
-    title: 'The Emigr\u00e9e',
+    title: 'The \u00c9migr\u00e9e',
     poet: 'Carol Rumens',
     link: '/revision/poetry/power-and-conflict/the-emigree',
-    reason: 'Both present a city as a symbol \u2014 Blake\'s London is oppressive; Rumens\' city is idealised through memory despite political darkness.',
+    reason:
+      "Both present a city as a symbol \u2014 Blake's London is oppressive; Rumens' city is idealised through memory despite political darkness.",
     themes: ['Place', 'Power'],
   },
   {
     title: 'Checking Out Me History',
     poet: 'John Agard',
     link: '/revision/poetry/power-and-conflict/checking-out-me-history',
-    reason: 'Both attack institutional control over people. Blake targets the Church and monarchy; Agard targets the colonial education system.',
+    reason:
+      'Both attack institutional control over people. Blake targets the Church and monarchy; Agard targets the colonial education system.',
     themes: ['Power', 'Oppression', 'Identity'],
   },
 ]
@@ -445,11 +609,17 @@ export default function LondonPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
-          { name: "London", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/london" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Power and Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
+          },
+          {
+            name: 'London',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/london',
+          },
         ]}
       />
       {/* ── Back navigation ──────────────────────────────────────── */}
@@ -474,13 +644,18 @@ export default function LondonPage() {
 
       {/* ── Theme tokens ─────────────────────────────────────────── */}
       <div className="flex flex-wrap gap-2">
-        {['Power', 'Oppression', 'Corruption', 'Conflict', 'Loss of Innocence', 'Individual Suffering'].map(
-          (theme) => (
-            <Badge key={theme} variant="outline" className="text-xs">
-              {theme}
-            </Badge>
-          ),
-        )}
+        {[
+          'Power',
+          'Oppression',
+          'Corruption',
+          'Conflict',
+          'Loss of Innocence',
+          'Individual Suffering',
+        ].map((theme) => (
+          <Badge key={theme} variant="outline" className="text-xs">
+            {theme}
+          </Badge>
+        ))}
       </div>
 
       {/* ── Interactive poem viewer ──────────────────────────────── */}
@@ -517,9 +692,7 @@ export default function LondonPage() {
                 </div>
                 <ArrowRight className="size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
               </div>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {cp.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{cp.reason}</p>
               <div className="flex flex-wrap gap-1.5 mb-3">
                 {cp.themes.map((t) => (
                   <Badge key={t} variant="outline" className="text-[10px] px-1.5 py-0">

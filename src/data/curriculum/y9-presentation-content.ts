@@ -1,19 +1,19 @@
 export interface SlideContent {
-  id: string;
-  slideNumber: number;
-  title: string;
-  bulletPoints: string[];
-  teacherNotes: string;
-  activity?: string;
+  id: string
+  slideNumber: number
+  title: string
+  bulletPoints: string[]
+  teacherNotes: string
+  activity?: string
 }
 
 export interface LessonPresentation {
-  id: string;
-  lessonTitle: string;
-  yearGroup: string;
-  termUnit: string;
-  totalSlides: number;
-  slides: SlideContent[];
+  id: string
+  lessonTitle: string
+  yearGroup: string
+  termUnit: string
+  totalSlides: number
+  slides: SlideContent[]
 }
 
 export const y9Presentations: LessonPresentation[] = [
@@ -22,7 +22,7 @@ export const y9Presentations: LessonPresentation[] = [
   // ============================================================
   {
     id: 'y9-t1-pres-01',
-    lessonTitle: 'Victorian England and Dickens\'s Social Message',
+    lessonTitle: "Victorian England and Dickens's Social Message",
     yearGroup: 'Year 9',
     termUnit: 'Term 1 -- A Christmas Carol',
     totalSlides: 8,
@@ -37,8 +37,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Identify connections between historical context and specific moments in the text',
           'Use contextual knowledge accurately in analytical writing',
         ],
-        teacherNotes: 'Open with a quick show-of-hands question: "Who knows what a workhouse was?" This gauges prior knowledge and establishes what the class needs to cover. Remind students that at GCSE, context woven into analysis is worth more than context tagged on at the end.',
-        activity: 'Think-Pair-Share: What do students already know about life in Victorian England? Share three facts with a partner before feeding back to the class.',
+        teacherNotes:
+          'Open with a quick show-of-hands question: "Who knows what a workhouse was?" This gauges prior knowledge and establishes what the class needs to cover. Remind students that at GCSE, context woven into analysis is worth more than context tagged on at the end.',
+        activity:
+          'Think-Pair-Share: What do students already know about life in Victorian England? Share three facts with a partner before feeding back to the class.',
       },
       {
         id: 'y9-t1-pres-01-s2',
@@ -51,8 +53,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Life expectancy for a working-class Londoner was approximately 22 years -- less than half that of the wealthy',
           'Dickens grew up in poverty and witnessed this inequality firsthand; his father was imprisoned for debt',
         ],
-        teacherNotes: 'Emphasise the personal dimension: Dickens was not writing from privilege. His childhood experience of the blacking factory and his father\'s imprisonment gave him direct knowledge of poverty\'s humiliation. This makes A Christmas Carol a deeply personal text, not merely a political pamphlet.',
-        activity: 'Class discussion: Why might personal experience make Dickens\'s writing more powerful than that of a wealthy reformer who had only read about poverty?',
+        teacherNotes:
+          "Emphasise the personal dimension: Dickens was not writing from privilege. His childhood experience of the blacking factory and his father's imprisonment gave him direct knowledge of poverty's humiliation. This makes A Christmas Carol a deeply personal text, not merely a political pamphlet.",
+        activity:
+          "Class discussion: Why might personal experience make Dickens's writing more powerful than that of a wealthy reformer who had only read about poverty?",
       },
       {
         id: 'y9-t1-pres-01-s3',
@@ -65,8 +69,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Inmates wore uniforms, ate inadequate food, and performed degrading manual labour',
           'The workhouse carried massive social stigma; many preferred to starve rather than enter one',
         ],
-        teacherNotes: 'Direct link to the text: Scrooge quotes the language of the Poor Law when he says "Are there no prisons? Are there no workhouses?" Dickens is not inventing these attitudes -- he is putting the actual rhetoric of the ruling class into Scrooge\'s mouth, which is why the dialogue feels so shockingly cold.',
-        activity: 'Close reading: Find and annotate the passage in Stave 1 where Scrooge dismisses the charity collectors. Which specific words echo the ideologies discussed on this slide?',
+        teacherNotes:
+          'Direct link to the text: Scrooge quotes the language of the Poor Law when he says "Are there no prisons? Are there no workhouses?" Dickens is not inventing these attitudes -- he is putting the actual rhetoric of the ruling class into Scrooge\'s mouth, which is why the dialogue feels so shockingly cold.',
+        activity:
+          'Close reading: Find and annotate the passage in Stave 1 where Scrooge dismisses the charity collectors. Which specific words echo the ideologies discussed on this slide?',
       },
       {
         id: 'y9-t1-pres-01-s4',
@@ -79,22 +85,26 @@ export const y9Presentations: LessonPresentation[] = [
           'Scrooge\'s phrase "decrease the surplus population" directly echoes Malthusian language',
           'Dickens uses this allusion to expose the inhumanity lurking behind respectable economic theory',
         ],
-        teacherNotes: 'Point out the Ghost of Christmas Present\'s response to this phrase -- he throws Scrooge\'s own words back at him. This is one of the most deliberately crafted moments of social critique in the text. Ask students: what is the effect of having Scrooge\'s words come back to haunt him in this way?',
-        activity: 'Written task: In two sentences, explain how Dickens uses Scrooge\'s language in Stave 1 to critique specific Victorian ideological attitudes. Try to name the ideology.',
+        teacherNotes:
+          "Point out the Ghost of Christmas Present's response to this phrase -- he throws Scrooge's own words back at him. This is one of the most deliberately crafted moments of social critique in the text. Ask students: what is the effect of having Scrooge's words come back to haunt him in this way?",
+        activity:
+          "Written task: In two sentences, explain how Dickens uses Scrooge's language in Stave 1 to critique specific Victorian ideological attitudes. Try to name the ideology.",
       },
       {
         id: 'y9-t1-pres-01-s5',
         slideNumber: 5,
-        title: 'Dickens\'s Purpose -- Social Intervention Through Fiction',
+        title: "Dickens's Purpose -- Social Intervention Through Fiction",
         bulletPoints: [
           'Dickens originally considered writing a political pamphlet to expose child poverty but chose fiction instead',
           'He believed a story would reach and move more people than a political tract',
-          'A Christmas Carol was published in December 1843 to maximise emotional impact -- Christmas as a symbol of charity',
+          'A Christmas Carol was published by Chapman & Hall on 19 December 1843 to maximise emotional impact -- Christmas as a symbol of charity',
           'The novella sold out its first edition of 6,000 copies within days of publication',
           'Dickens later said some readers wept and resolved to treat their employees and the poor differently',
         ],
-        teacherNotes: 'Discuss the concept of literature as a vehicle for social change. Ask students: does fiction change minds more effectively than journalism or political argument? Why? This links to a broader GCSE skill -- understanding authorial purpose as distinct from character motivation.',
-        activity: 'Debate prompt: "A story is more powerful than a political argument." Students have two minutes to prepare a counter-argument before a brief class discussion.',
+        teacherNotes:
+          'Discuss the concept of literature as a vehicle for social change. Ask students: does fiction change minds more effectively than journalism or political argument? Why? This links to a broader GCSE skill -- understanding authorial purpose as distinct from character motivation.',
+        activity:
+          'Debate prompt: "A story is more powerful than a political argument." Students have two minutes to prepare a counter-argument before a brief class discussion.',
       },
       {
         id: 'y9-t1-pres-01-s6',
@@ -104,11 +114,13 @@ export const y9Presentations: LessonPresentation[] = [
           'Victorian England was publicly Christian, yet church attendance among the poor was declining due to shame and cost',
           'Dickens was deeply critical of the gap between professed Christian values and actual behaviour toward the poor',
           'Christmas as a setting symbolises charity, generosity, and communal goodwill -- everything Scrooge rejects',
-          'Scrooge\'s contempt for Christmas is therefore a symbolic rejection of the core values of his society',
+          "Scrooge's contempt for Christmas is therefore a symbolic rejection of the core values of his society",
           'Dickens is not writing a religious tract but using Christian imagery to shame his secular, wealthy audience',
         ],
-        teacherNotes: 'Clarify that Dickens was not straightforwardly religious in the conventional sense. His Christianity was ethical rather than doctrinal -- he cared about how people treated one another, not about theology. This helps students avoid the oversimplification that the novella is "about" religious redemption.',
-        activity: 'Image analysis: Show a Victorian Christmas illustration (e.g. from the Illustrated London News, 1843). How does Dickens invoke this imagery in the Fezziwig scene? What contrast is being constructed?',
+        teacherNotes:
+          'Clarify that Dickens was not straightforwardly religious in the conventional sense. His Christianity was ethical rather than doctrinal -- he cared about how people treated one another, not about theology. This helps students avoid the oversimplification that the novella is "about" religious redemption.',
+        activity:
+          'Image analysis: Show a Victorian Christmas illustration (e.g. from the Illustrated London News, 1843). How does Dickens invoke this imagery in the Fezziwig scene? What contrast is being constructed?',
       },
       {
         id: 'y9-t1-pres-01-s7',
@@ -121,8 +133,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Every contextual point must connect to a specific language choice, structural decision, or character moment',
           'Ask yourself: why does knowing this change how I read this particular word or moment?',
         ],
-        teacherNotes: 'Model the difference between surface-level context and embedded context on the board. Take a short quotation and show students how to build from language analysis to contextual embedding in a single fluid sentence. This is a high-leverage skill for GCSE.',
-        activity: 'Upgrade the paragraph: Give students a weak context-heavy paragraph and ask them to rewrite it so that the contextual knowledge enhances rather than replaces the language analysis.',
+        teacherNotes:
+          'Model the difference between surface-level context and embedded context on the board. Take a short quotation and show students how to build from language analysis to contextual embedding in a single fluid sentence. This is a high-leverage skill for GCSE.',
+        activity:
+          'Upgrade the paragraph: Give students a weak context-heavy paragraph and ask them to rewrite it so that the contextual knowledge enhances rather than replaces the language analysis.',
       },
       {
         id: 'y9-t1-pres-01-s8',
@@ -134,15 +148,17 @@ export const y9Presentations: LessonPresentation[] = [
           'The Christmas setting is a deliberate choice: it amplifies the moral contrast between Scrooge and the values of generosity',
           'At GCSE level, contextual knowledge must be embedded within analytical writing, not presented separately',
         ],
-        teacherNotes: 'Use the final five minutes for the exit task. Collect responses to check for misconceptions before the next lesson. Common errors: students treating context as background description rather than as a lens for analysis; students writing about "Victorians" as a monolithic group rather than a divided society.',
-        activity: 'Exit ticket: Write one sentence that uses a specific contextual fact to illuminate a specific language choice by Dickens. Share with a partner before handing in.',
+        teacherNotes:
+          'Use the final five minutes for the exit task. Collect responses to check for misconceptions before the next lesson. Common errors: students treating context as background description rather than as a lens for analysis; students writing about "Victorians" as a monolithic group rather than a divided society.',
+        activity:
+          'Exit ticket: Write one sentence that uses a specific contextual fact to illuminate a specific language choice by Dickens. Share with a partner before handing in.',
       },
     ],
   },
 
   {
     id: 'y9-t1-pres-02',
-    lessonTitle: 'Scrooge\'s Transformation -- Character Analysis',
+    lessonTitle: "Scrooge's Transformation -- Character Analysis",
     yearGroup: 'Year 9',
     termUnit: 'Term 1 -- A Christmas Carol',
     totalSlides: 8,
@@ -152,13 +168,15 @@ export const y9Presentations: LessonPresentation[] = [
         slideNumber: 1,
         title: 'Learning Objectives',
         bulletPoints: [
-          'Trace Scrooge\'s character transformation across all five staves of the novella',
+          "Trace Scrooge's character transformation across all five staves of the novella",
           'Analyse the language Dickens uses to present Scrooge at key moments of change',
-          'Evaluate Dickens\'s structural choices in sequencing the visions of the three ghosts',
-          'Form a judgement about whether Scrooge\'s transformation is convincing and why',
+          "Evaluate Dickens's structural choices in sequencing the visions of the three ghosts",
+          "Form a judgement about whether Scrooge's transformation is convincing and why",
         ],
-        teacherNotes: 'Begin by asking students to write down three adjectives for Scrooge at the start of Stave 1 and three at the end of Stave 5. This sets up the transformation arc and gives you a diagnostic of how carefully students have read the text.',
-        activity: 'Quick-write: List three adjectives for Scrooge in Stave 1 and three for Scrooge in Stave 5. What has changed? What, if anything, remains the same?',
+        teacherNotes:
+          'Begin by asking students to write down three adjectives for Scrooge at the start of Stave 1 and three at the end of Stave 5. This sets up the transformation arc and gives you a diagnostic of how carefully students have read the text.',
+        activity:
+          'Quick-write: List three adjectives for Scrooge in Stave 1 and three for Scrooge in Stave 5. What has changed? What, if anything, remains the same?',
       },
       {
         id: 'y9-t1-pres-02-s2',
@@ -171,8 +189,10 @@ export const y9Presentations: LessonPresentation[] = [
           'His name is semantically linked to "screw" (exploitation) and "scrouge" (to squeeze) -- a morality-tale name',
           'Dickens presents Scrooge not just as an individual but as the embodiment of a social type',
         ],
-        teacherNotes: 'Focus on the opening characterisation as a model of how to embed multiple techniques within close reading. The cold imagery is not decorative -- it is structural, returning at key moments throughout the text. Encourage students to think about what it means for Scrooge\'s transformation to be described, ultimately, in terms of warmth.',
-        activity: 'Annotate the opening paragraph of Stave 1. Identify three techniques and for each one, write a sentence explaining what it reveals about Dickens\'s presentation of Scrooge as a social symbol rather than just a character.',
+        teacherNotes:
+          "Focus on the opening characterisation as a model of how to embed multiple techniques within close reading. The cold imagery is not decorative -- it is structural, returning at key moments throughout the text. Encourage students to think about what it means for Scrooge's transformation to be described, ultimately, in terms of warmth.",
+        activity:
+          "Annotate the opening paragraph of Stave 1. Identify three techniques and for each one, write a sentence explaining what it reveals about Dickens's presentation of Scrooge as a social symbol rather than just a character.",
       },
       {
         id: 'y9-t1-pres-02-s3',
@@ -182,11 +202,13 @@ export const y9Presentations: LessonPresentation[] = [
           'The Ghost of Christmas Past forces Scrooge to confront the emotional warmth he once possessed and subsequently buried',
           'The young Scrooge reading alone as a child evokes pathos -- the roots of his isolation lie in abandonment and loneliness',
           'The Fezziwig scene demonstrates that Scrooge once understood the value of generosity; he has not always been cold',
-          'Belle\'s departure is pivotal: Scrooge chose money over love, making his isolation a consequence of his own choices',
+          "Belle's departure is pivotal: Scrooge chose money over love, making his isolation a consequence of his own choices",
           'The ghost "extinguishes" its light when Scrooge demands it stop showing him the past -- he is not yet ready for full truth',
         ],
-        teacherNotes: 'The Past ghost is crucial because it establishes that Scrooge\'s coldness is not innate -- it is acquired. This is vital for Dickens\'s moral argument: if Scrooge\'s cruelty is a choice, it can be reversed. Ask students: does knowing Scrooge\'s painful past make us more sympathetic? Does Dickens want it to? What is the risk of too much sympathy for Scrooge?',
-        activity: 'Structured discussion: Does knowing Scrooge\'s childhood justify his behaviour as an adult? Use evidence from Stave 2. Write a one-sentence verdict at the end.',
+        teacherNotes:
+          "The Past ghost is crucial because it establishes that Scrooge's coldness is not innate -- it is acquired. This is vital for Dickens's moral argument: if Scrooge's cruelty is a choice, it can be reversed. Ask students: does knowing Scrooge's painful past make us more sympathetic? Does Dickens want it to? What is the risk of too much sympathy for Scrooge?",
+        activity:
+          "Structured discussion: Does knowing Scrooge's childhood justify his behaviour as an adult? Use evidence from Stave 2. Write a one-sentence verdict at the end.",
       },
       {
         id: 'y9-t1-pres-02-s4',
@@ -196,11 +218,13 @@ export const y9Presentations: LessonPresentation[] = [
           'The Present ghost is presented as a figure of overwhelming abundance -- "heaped up" food, "jolly" demeanour, infectious warmth',
           'He shows Scrooge the Cratchit Christmas to force a confrontation with suffering he has actively chosen to ignore',
           'Tiny Tim functions as both a realistic representation of child poverty and a symbolic embodiment of innocence and vulnerability',
-          'The ghost\'s revelation of Ignorance and Want beneath his robes is the most explicit moment of social allegory in the text',
+          "The ghost's revelation of Ignorance and Want beneath his robes is the most explicit moment of social allegory in the text",
           '"Beware them both" -- Dickens uses the ghost to deliver his most direct warning to Victorian society',
         ],
-        teacherNotes: 'The Ignorance and Want passage is often under-taught because students find it dense. It is worth spending time on it. Dickens is departing from psychological realism to make a direct, almost propagandist statement. The children are not individuals -- they are named abstractions. This is a deliberate shift in register that students should notice and comment on.',
-        activity: 'Close reading: Analyse the Ignorance and Want passage. Why does Dickens name the children "Ignorance" and "Want" rather than give them personal names? What is the effect on the reader?',
+        teacherNotes:
+          'The Ignorance and Want passage is often under-taught because students find it dense. It is worth spending time on it. Dickens is departing from psychological realism to make a direct, almost propagandist statement. The children are not individuals -- they are named abstractions. This is a deliberate shift in register that students should notice and comment on.',
+        activity:
+          'Close reading: Analyse the Ignorance and Want passage. Why does Dickens name the children "Ignorance" and "Want" rather than give them personal names? What is the effect on the reader?',
       },
       {
         id: 'y9-t1-pres-02-s5',
@@ -208,27 +232,31 @@ export const y9Presentations: LessonPresentation[] = [
         title: 'The Ghost of Christmas Yet to Come -- Fear and Reckoning',
         bulletPoints: [
           'The final ghost is silent, dark, and gestures rather than speaks -- the most terrifying of the three',
-          'The indifference of the businessmen and servants toward Scrooge\'s death mirrors Scrooge\'s own indifference to others',
+          "The indifference of the businessmen and servants toward Scrooge's death mirrors Scrooge's own indifference to others",
           'Dickens constructs a moral mirror: Scrooge witnesses himself treated exactly as he has treated the poor',
-          'The vision of Tiny Tim\'s empty chair forces Scrooge to confront the concrete human cost of his indifference',
-          'Only when Scrooge promises to change does the ghost\'s hood collapse -- transformation is conditional on genuine resolve',
+          "The vision of Tiny Tim's empty chair forces Scrooge to confront the concrete human cost of his indifference",
+          "Only when Scrooge promises to change does the ghost's hood collapse -- transformation is conditional on genuine resolve",
         ],
-        teacherNotes: 'The structural symmetry here is deliberate and worth making explicit: Scrooge has spent a lifetime ignoring the deaths of others; now he is confronted with how others will ignore his. This is Dickens at his most overtly didactic. Ask students: is this ghost more effective than the others in changing Scrooge? Why does fear succeed where memory and shame only partially worked?',
-        activity: 'Comparative task: Which of the three ghosts do you think is most responsible for Scrooge\'s transformation? Write a structured paragraph defending your choice with evidence.',
+        teacherNotes:
+          'The structural symmetry here is deliberate and worth making explicit: Scrooge has spent a lifetime ignoring the deaths of others; now he is confronted with how others will ignore his. This is Dickens at his most overtly didactic. Ask students: is this ghost more effective than the others in changing Scrooge? Why does fear succeed where memory and shame only partially worked?',
+        activity:
+          "Comparative task: Which of the three ghosts do you think is most responsible for Scrooge's transformation? Write a structured paragraph defending your choice with evidence.",
       },
       {
         id: 'y9-t1-pres-02-s6',
         slideNumber: 6,
         title: 'Stave 5 -- The Transformed Scrooge',
         bulletPoints: [
-          'Scrooge\'s language in Stave 5 shifts dramatically: exclamation marks, superlatives, and spontaneous generosity replace cold monosyllables',
+          "Scrooge's language in Stave 5 shifts dramatically: exclamation marks, superlatives, and spontaneous generosity replace cold monosyllables",
           '"I am as light as a feather, I am as happy as an angel" -- the similes of transformation mirror the earlier similes of coldness',
-          'His anonymity in giving to the charity collectors is significant: genuine generosity, unlike Fezziwig\'s public display, needs no audience',
+          "His anonymity in giving to the charity collectors is significant: genuine generosity, unlike Fezziwig's public display, needs no audience",
           'His treatment of Bob Cratchit begins with playful alarm before revealing his new generosity -- Dickens uses humour to avoid sentimentality',
-          'Dickens ends with Fred\'s family as the model of the open-hearted community Scrooge is now welcomed into',
+          "Dickens ends with Fred's family as the model of the open-hearted community Scrooge is now welcomed into",
         ],
-        teacherNotes: 'Discuss whether the transformation is convincing. Some critics argue it is too rapid and complete -- a fairy-tale resolution. Others argue this is precisely Dickens\'s point: he was writing a moral fable, not a psychological novel, and he wanted to leave readers with a sense of possibility rather than despair. What genre expectations are being invoked here?',
-        activity: 'Written response: "Scrooge\'s transformation in Stave 5 is too sudden to be convincing." Do you agree? Write a paragraph using evidence from at least two staves.',
+        teacherNotes:
+          "Discuss whether the transformation is convincing. Some critics argue it is too rapid and complete -- a fairy-tale resolution. Others argue this is precisely Dickens's point: he was writing a moral fable, not a psychological novel, and he wanted to leave readers with a sense of possibility rather than despair. What genre expectations are being invoked here?",
+        activity:
+          'Written response: "Scrooge\'s transformation in Stave 5 is too sudden to be convincing." Do you agree? Write a paragraph using evidence from at least two staves.',
       },
       {
         id: 'y9-t1-pres-02-s7',
@@ -238,24 +266,28 @@ export const y9Presentations: LessonPresentation[] = [
           'Dickens called the chapters "staves" -- a pun on musical notation, suggesting the novella is a kind of song or carol',
           'The five-stave structure mirrors the five parts of a piece of music: introduction, development, climax, resolution, coda',
           'Each ghost corresponds to a different temporal dimension: past, present, and future -- together they constitute a complete moral education',
-          'The frame narrative of Marley\'s ghost establishes the stakes: Scrooge has one chance to avoid Marley\'s fate',
-          'The circular structure (Stave 1\'s coldness vs Stave 5\'s warmth) gives the text a satisfying sense of moral completion',
+          "The frame narrative of Marley's ghost establishes the stakes: Scrooge has one chance to avoid Marley's fate",
+          "The circular structure (Stave 1's coldness vs Stave 5's warmth) gives the text a satisfying sense of moral completion",
         ],
-        teacherNotes: 'Students often neglect structure in their analysis. Point out that identifying structural features is not enough -- they must explain why Dickens made that structural choice and what effect it has on the reader. The "stave" pun is a favourite of examiners because it rewards students who think beyond the obvious.',
-        activity: 'Structural mapping exercise: Draw a simple arc showing Scrooge\'s emotional state across the five staves. Annotate with key quotations at the turning points.',
+        teacherNotes:
+          'Students often neglect structure in their analysis. Point out that identifying structural features is not enough -- they must explain why Dickens made that structural choice and what effect it has on the reader. The "stave" pun is a favourite of examiners because it rewards students who think beyond the obvious.',
+        activity:
+          "Structural mapping exercise: Draw a simple arc showing Scrooge's emotional state across the five staves. Annotate with key quotations at the turning points.",
       },
       {
         id: 'y9-t1-pres-02-s8',
         slideNumber: 8,
         title: 'Summary and Essay Planning',
         bulletPoints: [
-          'Scrooge\'s transformation is the structural and moral spine of the novella -- everything serves it',
+          "Scrooge's transformation is the structural and moral spine of the novella -- everything serves it",
           'Dickens presents the transformation not as miraculous but as a return to a warmer self that was suppressed by circumstance and choice',
           'The three ghosts function as stages of a moral education: memory, empathy, and consequence',
           'Language analysis of Scrooge must track the shift in diction, imagery, and syntax across the staves',
         ],
-        teacherNotes: 'Use this slide to model an essay plan on the board. A strong essay question might be: "How does Dickens present Scrooge\'s transformation in A Christmas Carol?" Walk through a five-paragraph structure: introduction with context, three ghost paragraphs, conclusion addressing Dickens\'s purpose.',
-        activity: 'Essay planning task: Produce a bullet-point plan for the question: "How does Dickens use the character of Scrooge to comment on Victorian society?" Include one quotation and one contextual point per paragraph.',
+        teacherNotes:
+          'Use this slide to model an essay plan on the board. A strong essay question might be: "How does Dickens present Scrooge\'s transformation in A Christmas Carol?" Walk through a five-paragraph structure: introduction with context, three ghost paragraphs, conclusion addressing Dickens\'s purpose.',
+        activity:
+          'Essay planning task: Produce a bullet-point plan for the question: "How does Dickens use the character of Scrooge to comment on Victorian society?" Include one quotation and one contextual point per paragraph.',
       },
     ],
   },
@@ -277,8 +309,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Embed quotations fluently and analyse language at word level',
           'Integrate contextual knowledge within analytical paragraphs rather than separately',
         ],
-        teacherNotes: 'Start by displaying a recent GCSE Literature mark scheme extract (AO1, AO2, AO3). Students need to know what they are being assessed on before they can write effectively. Many underperform not because they lack knowledge but because they do not know how to demonstrate it in the format examiners reward.',
-        activity: 'Mark scheme exploration: In pairs, read the descriptor for Grade 5 and Grade 7 responses. List three specific differences between them. Feed back to class.',
+        teacherNotes:
+          'Start by displaying a recent GCSE Literature mark scheme extract (AO1, AO2, AO3). Students need to know what they are being assessed on before they can write effectively. Many underperform not because they lack knowledge but because they do not know how to demonstrate it in the format examiners reward.',
+        activity:
+          'Mark scheme exploration: In pairs, read the descriptor for Grade 5 and Grade 7 responses. List three specific differences between them. Feed back to class.',
       },
       {
         id: 'y9-t1-pres-03-s2',
@@ -291,8 +325,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Most Literature questions assess all three AOs together -- you cannot separate them into different paragraphs',
           'The highest marks go to responses where all three AOs are achieved simultaneously in each paragraph',
         ],
-        teacherNotes: 'A common student error is to write a paragraph of analysis (AO2) and then a separate paragraph of context (AO3). This is structurally weak. Model explicitly how to write a single sentence that achieves AO1 (personal response + quotation), AO2 (language analysis), and AO3 (context) all at once.',
-        activity: 'AO sorting task: Given a set of sentence starters, students categorise each as primarily AO1, AO2, or AO3. Then discuss: which sentences could be upgraded to address multiple AOs?',
+        teacherNotes:
+          'A common student error is to write a paragraph of analysis (AO2) and then a separate paragraph of context (AO3). This is structurally weak. Model explicitly how to write a single sentence that achieves AO1 (personal response + quotation), AO2 (language analysis), and AO3 (context) all at once.',
+        activity:
+          'AO sorting task: Given a set of sentence starters, students categorise each as primarily AO1, AO2, or AO3. Then discuss: which sentences could be upgraded to address multiple AOs?',
       },
       {
         id: 'y9-t1-pres-03-s3',
@@ -302,11 +338,13 @@ export const y9Presentations: LessonPresentation[] = [
           'Point: Make a clear, arguable claim that directly answers the question',
           'Evidence: Embed a precise, relevant quotation -- shorter is usually better',
           'Explanation: Analyse the specific language choices at word or phrase level',
-          'Link: Connect your analysis to Dickens\'s purpose and/or the wider context of the text',
+          "Link: Connect your analysis to Dickens's purpose and/or the wider context of the text",
           'Avoid retelling the plot -- every sentence should be in service of your analytical argument',
         ],
-        teacherNotes: 'Emphasise that PEEL is a scaffold, not a formula. Strong writers use it invisibly -- they do not label their sentences "Point:", "Evidence:". The structure should support fluid prose, not produce robotic paragraphs. It is a training wheel that should eventually fall away.',
-        activity: 'Paragraph surgery: Give students a weak paragraph that retells plot. Together, reconstruct it as a PEEL paragraph around the same quotation. Compare the two versions.',
+        teacherNotes:
+          'Emphasise that PEEL is a scaffold, not a formula. Strong writers use it invisibly -- they do not label their sentences "Point:", "Evidence:". The structure should support fluid prose, not produce robotic paragraphs. It is a training wheel that should eventually fall away.',
+        activity:
+          'Paragraph surgery: Give students a weak paragraph that retells plot. Together, reconstruct it as a PEEL paragraph around the same quotation. Compare the two versions.',
       },
       {
         id: 'y9-t1-pres-03-s4',
@@ -319,8 +357,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Target the specific word or phrase that carries most meaning, not the whole sentence',
           'Use "suggests," "implies," "connotes," "positions the reader to" -- these signal analytical thinking',
         ],
-        teacherNotes: 'Model the difference between describing what a quotation says and analysing what it does. "Shows Scrooge is cold" describes. "Positions the reader to understand cold as a moral rather than physical condition" analyses. The distinction is the most impactful single lesson you can teach for GCSE literature performance.',
-        activity: 'Quotation upgrade task: Students are given five quotations with weak "this shows" analyses. Rewrite each analysis to zoom in on a specific word and explain what it does rather than what it says.',
+        teacherNotes:
+          'Model the difference between describing what a quotation says and analysing what it does. "Shows Scrooge is cold" describes. "Positions the reader to understand cold as a moral rather than physical condition" analyses. The distinction is the most impactful single lesson you can teach for GCSE literature performance.',
+        activity:
+          'Quotation upgrade task: Students are given five quotations with weak "this shows" analyses. Rewrite each analysis to zoom in on a specific word and explain what it does rather than what it says.',
       },
       {
         id: 'y9-t1-pres-03-s5',
@@ -330,11 +370,13 @@ export const y9Presentations: LessonPresentation[] = [
           'An introduction should establish your argument immediately -- do not begin with "In this essay I will..."',
           'Address the question directly in your first sentence with a clear, defensible claim',
           'Briefly signal the structure of your argument -- what aspects will you explore?',
-          'Embed one piece of context in your introduction to show you understand the text\'s origins',
+          "Embed one piece of context in your introduction to show you understand the text's origins",
           'Keep it to three to four sentences -- do not waste time on preamble',
         ],
-        teacherNotes: 'Show students two introductions for the same question side by side: one that begins with plot summary and one that opens with a direct analytical claim and embedded context. Ask which one they would rather continue reading. The discussion usually surfaces the key insight without you having to state it.',
-        activity: 'Introduction writing: Write a four-sentence introduction to the question "How does Dickens present poverty in A Christmas Carol?" Exchange with a partner and give one specific piece of feedback.',
+        teacherNotes:
+          'Show students two introductions for the same question side by side: one that begins with plot summary and one that opens with a direct analytical claim and embedded context. Ask which one they would rather continue reading. The discussion usually surfaces the key insight without you having to state it.',
+        activity:
+          'Introduction writing: Write a four-sentence introduction to the question "How does Dickens present poverty in A Christmas Carol?" Exchange with a partner and give one specific piece of feedback.',
       },
       {
         id: 'y9-t1-pres-03-s6',
@@ -347,8 +389,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Better: "The semantic field of cold pervades the opening description of Scrooge, positioning his moral failing as a force that chills the world around him"',
           'Terminology is a tool, not a destination -- the insight it unlocks is what earns marks',
         ],
-        teacherNotes: 'A persistent misconception is that naming more techniques earns more marks. Address this directly. Examiners are looking for insight, not terminology lists. One deeply analysed quotation is worth more than five surface-level technique identifications.',
-        activity: 'Terminology in context: Match each term (allegory, pathetic fallacy, semantic field, irony, didactic) to a specific moment in A Christmas Carol and write one sentence of analysis for each.',
+        teacherNotes:
+          'A persistent misconception is that naming more techniques earns more marks. Address this directly. Examiners are looking for insight, not terminology lists. One deeply analysed quotation is worth more than five surface-level technique identifications.',
+        activity:
+          'Terminology in context: Match each term (allegory, pathetic fallacy, semantic field, irony, didactic) to a specific moment in A Christmas Carol and write one sentence of analysis for each.',
       },
       {
         id: 'y9-t1-pres-03-s7',
@@ -360,8 +404,10 @@ export const y9Presentations: LessonPresentation[] = [
           'The verb "are there" implies Scrooge believes his obligations end with the existence of punitive institutions -- a direct allusion to the laissez-faire ideology that Dickens despised.',
           'By making Scrooge ventriloquise the language of the powerful, Dickens implicates the comfortable Victorian reader in the worldview he is satirising.',
         ],
-        teacherNotes: 'Walk through this model paragraph slowly, identifying where AO1, AO2, and AO3 are achieved. Ask students: which sentence is doing the most analytical work? Why? Then ask them to identify one way the paragraph could be improved. This develops critical engagement rather than uncritical imitation.',
-        activity: 'Model paragraph analysis: Annotate the paragraph on your sheet, labelling each sentence with the Assessment Objective(s) it addresses. Write one sentence explaining what makes this paragraph effective.',
+        teacherNotes:
+          'Walk through this model paragraph slowly, identifying where AO1, AO2, and AO3 are achieved. Ask students: which sentence is doing the most analytical work? Why? Then ask them to identify one way the paragraph could be improved. This develops critical engagement rather than uncritical imitation.',
+        activity:
+          'Model paragraph analysis: Annotate the paragraph on your sheet, labelling each sentence with the Assessment Objective(s) it addresses. Write one sentence explaining what makes this paragraph effective.',
       },
       {
         id: 'y9-t1-pres-03-s8',
@@ -374,8 +420,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Peer assessment using the mark scheme trains you to identify the qualities of strong writing in your own work',
           'One specific, actionable target is more useful than general praise or vague criticism',
         ],
-        teacherNotes: 'For the timed practice, use the question: "How does Dickens use the character of Scrooge to criticise Victorian society?" Set a five-minute planning phase (visible on a timer) followed by twenty minutes of timed writing. Peer assessment should use the four-level descriptor grid, not free commenting.',
-        activity: 'Timed practice: Write two PEEL paragraphs in response to the essay question. Swap with a partner. Using the mark scheme descriptors, identify the band and write one WWW (What Went Well) and one EBI (Even Better If).',
+        teacherNotes:
+          'For the timed practice, use the question: "How does Dickens use the character of Scrooge to criticise Victorian society?" Set a five-minute planning phase (visible on a timer) followed by twenty minutes of timed writing. Peer assessment should use the four-level descriptor grid, not free commenting.',
+        activity:
+          'Timed practice: Write two PEEL paragraphs in response to the essay question. Swap with a partner. Using the mark scheme descriptors, identify the band and write one WWW (What Went Well) and one EBI (Even Better If).',
       },
     ],
   },
@@ -400,8 +448,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Apply format-specific features accurately (layout, register, tone, structure)',
           'Practise adapting a piece of writing for two different transactional formats',
         ],
-        teacherNotes: 'Begin by asking students to name as many types of non-fiction writing as they can in 60 seconds. This activates prior knowledge and usually reveals gaps (students often forget formats like report or review in favour of essay and letter). Use their list to frame the lesson.',
-        activity: 'Speed round: How many types of non-fiction writing can you name in 60 seconds? Compare your list with a partner. Which formats appear in your GCSE exam?',
+        teacherNotes:
+          'Begin by asking students to name as many types of non-fiction writing as they can in 60 seconds. This activates prior knowledge and usually reveals gaps (students often forget formats like report or review in favour of essay and letter). Use their list to frame the lesson.',
+        activity:
+          'Speed round: How many types of non-fiction writing can you name in 60 seconds? Compare your list with a partner. Which formats appear in your GCSE exam?',
       },
       {
         id: 'y9-t2-pres-01-s2',
@@ -414,8 +464,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Form: the specific text type with its own conventions -- letter, article, speech, report, review',
           'A mismatch between any two corners of the triangle signals writing that lacks control and focus',
         ],
-        teacherNotes: 'The PAF framework is simple but endlessly useful. Model a quick example: same content (argument for school uniform), different format (formal letter to headteacher vs informal blog post for students). Walk through how every choice -- vocabulary, sentence length, pronoun use, layout -- changes between the two.',
-        activity: 'PAF mapping: For each of the following tasks, identify the Purpose, Audience, and Form: (a) a letter to your local MP about plastic waste; (b) a travel article for a youth magazine; (c) a report for the school council on library use.',
+        teacherNotes:
+          'The PAF framework is simple but endlessly useful. Model a quick example: same content (argument for school uniform), different format (formal letter to headteacher vs informal blog post for students). Walk through how every choice -- vocabulary, sentence length, pronoun use, layout -- changes between the two.',
+        activity:
+          'PAF mapping: For each of the following tasks, identify the Purpose, Audience, and Form: (a) a letter to your local MP about plastic waste; (b) a travel article for a youth magazine; (c) a report for the school council on library use.',
       },
       {
         id: 'y9-t2-pres-01-s3',
@@ -428,8 +480,10 @@ export const y9Presentations: LessonPresentation[] = [
           'The opening paragraph should establish purpose immediately; the closing should include a clear call to action',
           'Paragraphing is functional: each paragraph deals with a distinct aspect of your argument or request',
         ],
-        teacherNotes: 'A common error is using "Yours faithfully" after "Dear Mr Smith" -- the rule is: if you know their name, use "Yours sincerely." Point out that in the exam, markers are looking for evidence that students understand conventions, not just that they can reproduce a template. Understanding why the convention exists demonstrates higher-order knowledge.',
-        activity: 'Format audit: Examine the model formal letter on your sheet. Identify five features that signal "formal letter." For each one, explain what would happen if it were removed.',
+        teacherNotes:
+          'A common error is using "Yours faithfully" after "Dear Mr Smith" -- the rule is: if you know their name, use "Yours sincerely." Point out that in the exam, markers are looking for evidence that students understand conventions, not just that they can reproduce a template. Understanding why the convention exists demonstrates higher-order knowledge.',
+        activity:
+          'Format audit: Examine the model formal letter on your sheet. Identify five features that signal "formal letter." For each one, explain what would happen if it were removed.',
       },
       {
         id: 'y9-t2-pres-01-s4',
@@ -442,8 +496,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Speeches need a strong opening hook and a memorable closing that returns to or develops the opening idea',
           'The difference between a written speech and a spoken one: a written speech must create the illusion of a live, shared moment',
         ],
-        teacherNotes: 'Play a short audio clip of a well-known speech (e.g. an excerpt from a political or TED talk context). Ask students to identify the techniques before looking at the written text. This trains the ear as well as the eye and makes the link between spoken rhetoric and written technique more concrete.',
-        activity: 'Speech opening challenge: Write the first paragraph of a speech to your year group arguing that social media does more harm than good. Your opening must include a direct address, a rhetorical question, and a concrete image or statistic.',
+        teacherNotes:
+          'Play a short audio clip of a well-known speech (e.g. an excerpt from a political or TED talk context). Ask students to identify the techniques before looking at the written text. This trains the ear as well as the eye and makes the link between spoken rhetoric and written technique more concrete.',
+        activity:
+          'Speech opening challenge: Write the first paragraph of a speech to your year group arguing that social media does more harm than good. Your opening must include a direct address, a rhetorical question, and a concrete image or statistic.',
       },
       {
         id: 'y9-t2-pres-01-s5',
@@ -456,8 +512,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Bullet points and numbered lists are appropriate in reports but rarely in other transactional formats',
           'Register should remain neutral even when findings suggest strong conclusions',
         ],
-        teacherNotes: 'Students often confuse report with essay. The key difference is structural: reports use subheadings, bullet points, and numbered sections to aid navigation; essays use continuous prose. A report writer assumes the reader will skim and dip; an essay writer assumes a linear reader.',
-        activity: 'Convert the task: Take the following three paragraphs of essay-style writing about phone use in schools and restructure them as the findings section of a formal report, using appropriate subheadings and a bullet-pointed recommendations list.',
+        teacherNotes:
+          'Students often confuse report with essay. The key difference is structural: reports use subheadings, bullet points, and numbered sections to aid navigation; essays use continuous prose. A report writer assumes the reader will skim and dip; an essay writer assumes a linear reader.',
+        activity:
+          'Convert the task: Take the following three paragraphs of essay-style writing about phone use in schools and restructure them as the findings section of a formal report, using appropriate subheadings and a bullet-pointed recommendations list.',
       },
       {
         id: 'y9-t2-pres-01-s6',
@@ -470,8 +528,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Register varies significantly by publication: academic journals vs popular magazines vs social media reviews',
           'The first paragraph should hook the reader and establish the context; the final paragraph should give a clear, memorable verdict',
         ],
-        teacherNotes: 'Bring in two reviews of the same film or book: one broadsheet, one popular. The contrast in vocabulary, sentence length, assumed knowledge, and overall register makes the point about audience more vividly than any explanation.',
-        activity: 'Write a 150-word review of a film or TV series you have watched recently. Your review must include at least three evaluative adjectives and a clear verdict in the final sentence.',
+        teacherNotes:
+          'Bring in two reviews of the same film or book: one broadsheet, one popular. The contrast in vocabulary, sentence length, assumed knowledge, and overall register makes the point about audience more vividly than any explanation.',
+        activity:
+          'Write a 150-word review of a film or TV series you have watched recently. Your review must include at least three evaluative adjectives and a clear verdict in the final sentence.',
       },
       {
         id: 'y9-t2-pres-01-s7',
@@ -484,8 +544,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Neglecting the recipient: formal writing must be shaped by who is reading it, not just what you want to say',
           'Underdeveloped conclusions: ending abruptly rather than with a purposeful closing that reinforces your argument',
         ],
-        teacherNotes: 'This slide works well as a group diagnostic activity. Give students three anonymous student responses and ask them to identify which of these errors is present. Peer analysis of errors is less threatening than self-analysis and builds critical awareness.',
-        activity: 'Error spotting: Read the three sample responses on your sheet. For each one, identify the single most damaging error and suggest one specific correction.',
+        teacherNotes:
+          'This slide works well as a group diagnostic activity. Give students three anonymous student responses and ask them to identify which of these errors is present. Peer analysis of errors is less threatening than self-analysis and builds critical awareness.',
+        activity:
+          'Error spotting: Read the three sample responses on your sheet. For each one, identify the single most damaging error and suggest one specific correction.',
       },
       {
         id: 'y9-t2-pres-01-s8',
@@ -497,8 +559,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Format features (layout, register, vocabulary, tone) are not decoration -- they are the means by which you communicate appropriately',
           'Examiners reward writers who clearly understand why conventions exist, not just writers who can reproduce them',
         ],
-        teacherNotes: 'Conclude with the timed practice task. This is an opportunity to apply everything from the lesson in an authentic exam-style format. Remind students to spend two minutes identifying Purpose, Audience, and Form before writing a single word.',
-        activity: 'Timed practice (20 minutes): Write the opening two paragraphs of either (a) a formal letter to your local council arguing for a new youth facility, or (b) an article for your school website about the importance of reading. Focus on register, format features, and vocabulary appropriate to your chosen form.',
+        teacherNotes:
+          'Conclude with the timed practice task. This is an opportunity to apply everything from the lesson in an authentic exam-style format. Remind students to spend two minutes identifying Purpose, Audience, and Form before writing a single word.',
+        activity:
+          'Timed practice (20 minutes): Write the opening two paragraphs of either (a) a formal letter to your local council arguing for a new youth facility, or (b) an article for your school website about the importance of reading. Focus on register, format features, and vocabulary appropriate to your chosen form.',
       },
     ],
   },
@@ -520,22 +584,26 @@ export const y9Presentations: LessonPresentation[] = [
           'Analyse how professional writers deploy rhetorical techniques for specific effects',
           'Apply a range of persuasive techniques in timed writing with conscious control',
         ],
-        teacherNotes: 'Open with a short persuasive text -- an advertisement, a political excerpt, or a charity campaign letter. Ask students to identify what it is trying to do and how. This diagnostic surfaces existing knowledge of rhetoric and sets the lesson in a real-world context.',
-        activity: 'Cold read: Read the persuasive text on your sheet. In 90 seconds, write down: (a) what it is trying to persuade you of, (b) three specific techniques you notice. Compare with a partner.',
+        teacherNotes:
+          'Open with a short persuasive text -- an advertisement, a political excerpt, or a charity campaign letter. Ask students to identify what it is trying to do and how. This diagnostic surfaces existing knowledge of rhetoric and sets the lesson in a real-world context.',
+        activity:
+          'Cold read: Read the persuasive text on your sheet. In 90 seconds, write down: (a) what it is trying to persuade you of, (b) three specific techniques you notice. Compare with a partner.',
       },
       {
         id: 'y9-t2-pres-02-s2',
         slideNumber: 2,
-        title: 'Ethos, Pathos, and Logos -- Aristotle\'s Rhetorical Triangle',
+        title: "Ethos, Pathos, and Logos -- Aristotle's Rhetorical Triangle",
         bulletPoints: [
           'Ethos (credibility): the writer establishes authority, expertise, or moral standing to be trusted',
-          'Pathos (emotion): the writer appeals to the audience\'s feelings -- fear, sympathy, pride, anger, hope',
+          "Pathos (emotion): the writer appeals to the audience's feelings -- fear, sympathy, pride, anger, hope",
           'Logos (logic): the writer uses facts, statistics, evidence, and reasoned argument',
           'The most persuasive writing combines all three -- relying on one alone creates a weak or unbalanced argument',
           'Aristotle identified these principles in ancient Greece; they remain the foundation of all rhetoric',
         ],
-        teacherNotes: 'Ask students to identify which of the three is dominant in the opening text from slide 1. Then show them a different piece -- a health campaign poster, for example -- where pathos is dominant. The contrast makes the principle memorable. Point out that understanding why rhetoric works makes students better readers as well as better writers.',
-        activity: 'Triangle audit: Analyse the charity advertisement on your sheet. Identify one sentence or image that uses ethos, one that uses pathos, and one that uses logos. Write a sentence for each explaining what it does.',
+        teacherNotes:
+          'Ask students to identify which of the three is dominant in the opening text from slide 1. Then show them a different piece -- a health campaign poster, for example -- where pathos is dominant. The contrast makes the principle memorable. Point out that understanding why rhetoric works makes students better readers as well as better writers.',
+        activity:
+          'Triangle audit: Analyse the charity advertisement on your sheet. Identify one sentence or image that uses ethos, one that uses pathos, and one that uses logos. Write a sentence for each explaining what it does.',
       },
       {
         id: 'y9-t2-pres-02-s3',
@@ -548,8 +616,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Direct address ("you"): creates intimacy, implicates the reader, and prevents passive disengagement',
           'Hyperbole: deliberate exaggeration to emphasise the magnitude of a claim or the urgency of a situation',
         ],
-        teacherNotes: 'Model each technique with a live example from a well-known speech or advertisement. Ask students to practise generating one example of each device around a single topic (e.g. school uniform, climate change) -- this consolidates understanding through production rather than just recognition.',
-        activity: 'Technique generation: Choose a topic (school uniform, climate change, social media). Write one example sentence for each of the five techniques on this slide. Share the most effective examples with the class.',
+        teacherNotes:
+          'Model each technique with a live example from a well-known speech or advertisement. Ask students to practise generating one example of each device around a single topic (e.g. school uniform, climate change) -- this consolidates understanding through production rather than just recognition.',
+        activity:
+          'Technique generation: Choose a topic (school uniform, climate change, social media). Write one example sentence for each of the five techniques on this slide. Share the most effective examples with the class.',
       },
       {
         id: 'y9-t2-pres-02-s4',
@@ -562,8 +632,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Emotive vocabulary: choosing words with strong connotations (crisis, catastrophe, extraordinary, vital) rather than neutral alternatives',
           'Concession: "While some argue X, it is clear that Y" -- a concession followed by a stronger counter-claim is often more persuasive than refusing to acknowledge complexity',
         ],
-        teacherNotes: 'The counter-argument/rebuttal structure is one of the most underused but high-impact techniques at this level. Students who engage with opposing views come across as more intellectually confident than those who ignore them. Model a concession-rebuttal move on the board and ask students to practise it with a partner.',
-        activity: 'Rebuttal writing: Write a two-sentence concession-rebuttal in response to this argument: "Social media is harmful for young people." First acknowledge the strongest counter-argument, then rebut it with a specific piece of evidence or reasoning.',
+        teacherNotes:
+          'The counter-argument/rebuttal structure is one of the most underused but high-impact techniques at this level. Students who engage with opposing views come across as more intellectually confident than those who ignore them. Model a concession-rebuttal move on the board and ask students to practise it with a partner.',
+        activity:
+          'Rebuttal writing: Write a two-sentence concession-rebuttal in response to this argument: "Social media is harmful for young people." First acknowledge the strongest counter-argument, then rebut it with a specific piece of evidence or reasoning.',
       },
       {
         id: 'y9-t2-pres-02-s5',
@@ -576,8 +648,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Build towards your strongest point -- save your most compelling argument for the second-to-last or final body paragraph',
           'Closing: return to the opening image or idea, issue a call to action, and leave a memorable final line',
         ],
-        teacherNotes: 'The "strongest point last" rule is counter-intuitive for students who front-load everything. Explain the "recency effect" -- readers remember what they read last. A powerful closing lands a final blow after the reader has been warmed up by earlier arguments. This is different from academic essay writing, where the argument can be more linear.',
-        activity: 'Structure mapping: Plan a persuasive speech on the topic "Schools should teach financial literacy to all students." Produce a five-paragraph plan with a one-sentence summary of each paragraph and note which rhetorical technique will be featured in each.',
+        teacherNotes:
+          'The "strongest point last" rule is counter-intuitive for students who front-load everything. Explain the "recency effect" -- readers remember what they read last. A powerful closing lands a final blow after the reader has been warmed up by earlier arguments. This is different from academic essay writing, where the argument can be more linear.',
+        activity:
+          'Structure mapping: Plan a persuasive speech on the topic "Schools should teach financial literacy to all students." Produce a five-paragraph plan with a one-sentence summary of each paragraph and note which rhetorical technique will be featured in each.',
       },
       {
         id: 'y9-t2-pres-02-s6',
@@ -585,13 +659,15 @@ export const y9Presentations: LessonPresentation[] = [
         title: 'Analysing Rhetoric -- Moving from Identification to Insight',
         bulletPoints: [
           'Weak: "The writer uses a rhetorical question. This makes the reader think."',
-          'Strong: "The rhetorical question \'How long will we ignore this?\' positions the reader as complicit in the problem -- the use of \'we\' prevents passive disengagement and makes inaction a moral failure."',
+          "Strong: \"The rhetorical question 'How long will we ignore this?' positions the reader as complicit in the problem -- the use of 'we' prevents passive disengagement and makes inaction a moral failure.\"",
           'Always explain what the technique does to the reader, not just what it is',
-          'The best analysis connects technique to the writer\'s specific purpose and audience',
+          "The best analysis connects technique to the writer's specific purpose and audience",
           'Avoid the phrase "makes the reader think" -- it is almost always a missed opportunity for genuine insight',
         ],
-        teacherNotes: 'The "makes the reader think" problem is endemic. Challenge it directly by asking: think what? Think how? Feel what? If students cannot answer these questions, they have not yet achieved analysis. The word "positions" is useful here -- it implies deliberate authorial choice and reader response simultaneously.',
-        activity: 'Analysis upgrade: Rewrite the following weak analytical sentences to achieve genuine insight: (a) "The writer uses emotive language to make the reader feel sad." (b) "The rule of three makes the speech sound powerful." (c) "The writer uses statistics to back up their argument."',
+        teacherNotes:
+          'The "makes the reader think" problem is endemic. Challenge it directly by asking: think what? Think how? Feel what? If students cannot answer these questions, they have not yet achieved analysis. The word "positions" is useful here -- it implies deliberate authorial choice and reader response simultaneously.',
+        activity:
+          'Analysis upgrade: Rewrite the following weak analytical sentences to achieve genuine insight: (a) "The writer uses emotive language to make the reader feel sad." (b) "The rule of three makes the speech sound powerful." (c) "The writer uses statistics to back up their argument."',
       },
       {
         id: 'y9-t2-pres-02-s7',
@@ -604,8 +680,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Write an analytical sentence explaining the cumulative effect of the techniques on the intended audience',
           'Consider: is this speech primarily ethos, pathos, or logos-driven? How does the balance serve the purpose?',
         ],
-        teacherNotes: 'Choose a model speech that is relevant to students\' experience -- a TED talk on education, a student-written speech from a previous year, or a historical speech with clear contemporary resonance. The key is that the speech should be genuinely good enough to reward close reading.',
-        activity: 'Annotation task: Annotate the model speech on your sheet, identifying and labelling at least five techniques. Write a 100-word analytical paragraph on the speech\'s overall rhetorical strategy.',
+        teacherNotes:
+          "Choose a model speech that is relevant to students' experience -- a TED talk on education, a student-written speech from a previous year, or a historical speech with clear contemporary resonance. The key is that the speech should be genuinely good enough to reward close reading.",
+        activity:
+          "Annotation task: Annotate the model speech on your sheet, identifying and labelling at least five techniques. Write a 100-word analytical paragraph on the speech's overall rhetorical strategy.",
       },
       {
         id: 'y9-t2-pres-02-s8',
@@ -617,8 +695,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Structure matters as much as technique: a well-built argument creates momentum that carries the reader to your conclusion',
           'In analysis, always explain what a technique does to the reader, not just what it is called',
         ],
-        teacherNotes: 'Set the timed task and circulate during writing, noting strong examples to share in the feedback phase. Common issues to watch for: students listing techniques without building an argument; failure to address the specific audience; weak closings that simply restate the introduction.',
-        activity: 'Timed writing (20 minutes): Write the full opening two paragraphs of a speech arguing that "every young person should learn to code." Use at least three distinct rhetorical techniques and aim for a confident, well-structured opening that establishes your ethos and engages the audience emotionally.',
+        teacherNotes:
+          'Set the timed task and circulate during writing, noting strong examples to share in the feedback phase. Common issues to watch for: students listing techniques without building an argument; failure to address the specific audience; weak closings that simply restate the introduction.',
+        activity:
+          'Timed writing (20 minutes): Write the full opening two paragraphs of a speech arguing that "every young person should learn to code." Use at least three distinct rhetorical techniques and aim for a confident, well-structured opening that establishes your ethos and engages the audience emotionally.',
       },
     ],
   },
@@ -640,13 +720,15 @@ export const y9Presentations: LessonPresentation[] = [
           'Structure a piece of creative writing with an effective opening, development, and ending',
           'Evaluate your own writing against the qualities that examiners reward at GCSE',
         ],
-        teacherNotes: 'Open with two passages describing the same scene: one flat and descriptive, one evocative. Ask students which they would rather read and why. Their responses will usually identify the key distinctions (concrete imagery, varied syntax, voice) before you have to teach them. This is more effective than leading with theory.',
-        activity: 'Compare the two passages on your sheet. In 90 seconds, write down three reasons why Passage B is more effective than Passage A. Share with the class.',
+        teacherNotes:
+          'Open with two passages describing the same scene: one flat and descriptive, one evocative. Ask students which they would rather read and why. Their responses will usually identify the key distinctions (concrete imagery, varied syntax, voice) before you have to teach them. This is more effective than leading with theory.',
+        activity:
+          'Compare the two passages on your sheet. In 90 seconds, write down three reasons why Passage B is more effective than Passage A. Share with the class.',
       },
       {
         id: 'y9-t2-pres-03-s2',
         slideNumber: 2,
-        title: 'Show, Don\'t Tell -- The Core Principle',
+        title: "Show, Don't Tell -- The Core Principle",
         bulletPoints: [
           'Telling: "She was nervous." -- states an emotion directly, creating no image or sensation in the reader\'s mind',
           'Showing: "Her fingers found the hem of her sleeve and began to pull at a loose thread." -- the reader infers the emotion from specific, observable behaviour',
@@ -654,8 +736,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Strong creative writers select precise, concrete details that carry emotional weight without explicit labelling',
           'This does not mean never tell -- the skill is knowing when each approach is most effective',
         ],
-        teacherNotes: 'Collect five "telling" sentences from students\' recent work (anonymised) and work through them together, converting each to a "showing" version. This is more impactful than working with model texts because students recognise the types of sentences they write themselves.',
-        activity: 'Show, don\'t tell conversion: Rewrite the following five sentences to show rather than tell: (a) "He was angry." (b) "The room was messy." (c) "She was excited about the trip." (d) "It was an uncomfortable silence." (e) "The old man was tired."',
+        teacherNotes:
+          'Collect five "telling" sentences from students\' recent work (anonymised) and work through them together, converting each to a "showing" version. This is more impactful than working with model texts because students recognise the types of sentences they write themselves.',
+        activity:
+          'Show, don\'t tell conversion: Rewrite the following five sentences to show rather than tell: (a) "He was angry." (b) "The room was messy." (c) "She was excited about the trip." (d) "It was an uncomfortable silence." (e) "The old man was tired."',
       },
       {
         id: 'y9-t2-pres-03-s3',
@@ -668,22 +752,26 @@ export const y9Presentations: LessonPresentation[] = [
           'Sensory detail should be selective -- overwhelming the reader with sensation is as deadening as providing none',
           'The rule of one perfect detail: a single, precisely observed image is worth more than a paragraph of generalised description',
         ],
-        teacherNotes: 'Introduce the concept of "the telling detail" -- the one specific observation that makes a scene or character feel real. Reference professional writers who use this technique (Chekhov\'s gun principle can be adapted here). Ask students to think about a place they know well and identify the one detail that would make a stranger feel they had been there.',
-        activity: 'Sensory mapping: Choose a location you know well (bedroom, kitchen, a street you walk regularly). Write one sentence for each of the five senses. Then select the single most powerful detail and expand it into two or three sentences.',
+        teacherNotes:
+          'Introduce the concept of "the telling detail" -- the one specific observation that makes a scene or character feel real. Reference professional writers who use this technique (Chekhov\'s gun principle can be adapted here). Ask students to think about a place they know well and identify the one detail that would make a stranger feel they had been there.',
+        activity:
+          'Sensory mapping: Choose a location you know well (bedroom, kitchen, a street you walk regularly). Write one sentence for each of the five senses. Then select the single most powerful detail and expand it into two or three sentences.',
       },
       {
         id: 'y9-t2-pres-03-s4',
         slideNumber: 4,
         title: 'Narrative Voice and Perspective',
         bulletPoints: [
-          'First person (I): intimate, subjective, unreliable -- the reader is inside the narrator\'s head and limited by their knowledge',
+          "First person (I): intimate, subjective, unreliable -- the reader is inside the narrator's head and limited by their knowledge",
           'Third person limited: the narrator follows one character closely but is not that character -- slightly more flexibility than first person',
-          'Third person omniscient: the narrator can access any character\'s thoughts and any location -- risks feeling impersonal',
+          "Third person omniscient: the narrator can access any character's thoughts and any location -- risks feeling impersonal",
           'Second person (you): unusual and striking -- creates unsettling immediacy and implicates the reader directly',
           'The choice of perspective shapes everything: what the reader knows, what they infer, and how much they trust the narrator',
         ],
-        teacherNotes: 'Give students a single short scenario (e.g. a person entering an empty house) and ask them to write the first sentence in first person, then in third person limited, then in second person. The comparison makes the difference between perspectives immediately tangible.',
-        activity: 'Perspective experiment: Write the opening sentence of a story about finding something unexpected in a park. Write it three times: once in first person, once in third person limited, once in second person. Which creates the most compelling effect? Why?',
+        teacherNotes:
+          'Give students a single short scenario (e.g. a person entering an empty house) and ask them to write the first sentence in first person, then in third person limited, then in second person. The comparison makes the difference between perspectives immediately tangible.',
+        activity:
+          'Perspective experiment: Write the opening sentence of a story about finding something unexpected in a park. Write it three times: once in first person, once in third person limited, once in second person. Which creates the most compelling effect? Why?',
       },
       {
         id: 'y9-t2-pres-03-s5',
@@ -696,8 +784,10 @@ export const y9Presentations: LessonPresentation[] = [
           'The one-word or two-word sentence, used sparingly, has enormous impact: it demands attention by breaking the pattern',
           'Sentence structure should mirror emotional content: chaos in content, fragmented syntax; calm in content, flowing subordination',
         ],
-        teacherNotes: 'Model the pacing principle by reading aloud two versions of the same passage -- one with varied sentence length, one with monotonously similar sentences. The difference is audible as well as visible. Encourage students to read their own work aloud as a revision strategy: the ear catches what the eye misses.',
-        activity: 'Pacing rewrite: Take the following flat, evenly paced passage and rewrite it to create a sense of mounting tension, using varied sentence structure. Focus on the moment of discovery -- slow down for the build-up and cut the sentence length at the peak of tension.',
+        teacherNotes:
+          'Model the pacing principle by reading aloud two versions of the same passage -- one with varied sentence length, one with monotonously similar sentences. The difference is audible as well as visible. Encourage students to read their own work aloud as a revision strategy: the ear catches what the eye misses.',
+        activity:
+          'Pacing rewrite: Take the following flat, evenly paced passage and rewrite it to create a sense of mounting tension, using varied sentence structure. Focus on the moment of discovery -- slow down for the build-up and cut the sentence length at the peak of tension.',
       },
       {
         id: 'y9-t2-pres-03-s6',
@@ -710,8 +800,10 @@ export const y9Presentations: LessonPresentation[] = [
           'The ending does not need to resolve everything but must feel earned -- an ending that merely stops is different from one that concludes',
           'A circular structure (ending that echoes the opening) is a high-impact technique that creates a sense of resonance and craft',
         ],
-        teacherNotes: 'Share the "in medias res" opening technique (beginning in the middle of the action) as an alternative to conventional chronological openings. Many students default to scene-setting before the action begins, which delays the hook. Starting in the middle of something happening creates immediate engagement.',
-        activity: 'Opening lines workshop: Write three different opening lines for a story about a person who discovers something that changes everything. Each opening must use a different technique: one in medias res, one with a striking image, one with an intriguing voice. Vote on the most effective as a class.',
+        teacherNotes:
+          'Share the "in medias res" opening technique (beginning in the middle of the action) as an alternative to conventional chronological openings. Many students default to scene-setting before the action begins, which delays the hook. Starting in the middle of something happening creates immediate engagement.',
+        activity:
+          'Opening lines workshop: Write three different opening lines for a story about a person who discovers something that changes everything. Each opening must use a different technique: one in medias res, one with a striking image, one with an intriguing voice. Vote on the most effective as a class.',
       },
       {
         id: 'y9-t2-pres-03-s7',
@@ -724,8 +816,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Crafted detail: specific, concrete images rather than vague, generic description',
           'Originality: examiners read hundreds of ghost stories and car chases -- a fresh perspective, an unexpected detail, or a distinctive voice stands out',
         ],
-        teacherNotes: 'It is worth showing students the actual language of a GCSE mark scheme for creative writing. The highest band descriptors use words like "compelling," "crafted," "inventive," and "distinctive." Spend time unpacking what each of these actually looks like on the page, with examples.',
-        activity: 'Mark scheme matching: Read the four student extracts on your sheet and place each in a GCSE band (1-4). Justify your placement with reference to at least two specific features of each extract.',
+        teacherNotes:
+          'It is worth showing students the actual language of a GCSE mark scheme for creative writing. The highest band descriptors use words like "compelling," "crafted," "inventive," and "distinctive." Spend time unpacking what each of these actually looks like on the page, with examples.',
+        activity:
+          'Mark scheme matching: Read the four student extracts on your sheet and place each in a GCSE band (1-4). Justify your placement with reference to at least two specific features of each extract.',
       },
       {
         id: 'y9-t2-pres-03-s8',
@@ -733,12 +827,14 @@ export const y9Presentations: LessonPresentation[] = [
         title: 'Summary and Extended Writing Task',
         bulletPoints: [
           'Showing is usually more powerful than telling -- trust the reader to infer emotion from concrete detail',
-          'Sensory specificity, varied sentence structure, and a compelling voice are the three most impactful tools in a creative writer\'s kit',
+          "Sensory specificity, varied sentence structure, and a compelling voice are the three most impactful tools in a creative writer's kit",
           'Structure is not an afterthought -- the shape of a piece contributes as much to its effect as the words themselves',
           'Originality comes not from unusual subjects but from fresh, precise observation of familiar ones',
         ],
-        teacherNotes: 'The extended task is the most important part of the lesson. Give students at least 25 minutes to write. Circulate and offer targeted prompts to students who are stuck -- a single well-chosen question ("What can your character hear right now?") can unlock a stalled piece. Avoid over-correcting during drafting.',
-        activity: 'Extended writing (25 minutes): Write the opening of a story inspired by one of these titles: "The Last House on the Street"; "Something Left Behind"; "A Perfect Day." Aim for 250-300 words. Focus on one strong detail, a distinctive voice, and at least two variations in sentence length to control pacing.',
+        teacherNotes:
+          'The extended task is the most important part of the lesson. Give students at least 25 minutes to write. Circulate and offer targeted prompts to students who are stuck -- a single well-chosen question ("What can your character hear right now?") can unlock a stalled piece. Avoid over-correcting during drafting.',
+        activity:
+          'Extended writing (25 minutes): Write the opening of a story inspired by one of these titles: "The Last House on the Street"; "Something Left Behind"; "A Perfect Day." Aim for 250-300 words. Focus on one strong detail, a distinctive voice, and at least two variations in sentence length to control pacing.',
       },
     ],
   },
@@ -760,11 +856,13 @@ export const y9Presentations: LessonPresentation[] = [
         bulletPoints: [
           'Explain the economic and social conditions of 1930s America that form the context of the novel',
           'Define the "American Dream" and understand its ideological function',
-          'Analyse how Steinbeck uses context to structure the novel\'s central conflicts and themes',
+          "Analyse how Steinbeck uses context to structure the novel's central conflicts and themes",
           'Connect specific contextual facts to specific moments and characters in Of Mice and Men',
         ],
-        teacherNotes: 'Begin with a visual prompt: a Depression-era photograph (Dorothea Lange\'s "Migrant Mother" is ideal). Ask students what the image tells them about life in 1930s America before revealing what it is. Images like this communicate conditions more viscerally than statistics alone and give students a concrete emotional entry point into the context.',
-        activity: 'Image analysis: Study the photograph on the board. In 60 seconds, write down everything it suggests to you about the lives of people in 1930s America. What do you notice? What questions does it raise?',
+        teacherNotes:
+          'Begin with a visual prompt: a Depression-era photograph (Dorothea Lange\'s "Migrant Mother" is ideal). Ask students what the image tells them about life in 1930s America before revealing what it is. Images like this communicate conditions more viscerally than statistics alone and give students a concrete emotional entry point into the context.',
+        activity:
+          'Image analysis: Study the photograph on the board. In 60 seconds, write down everything it suggests to you about the lives of people in 1930s America. What do you notice? What questions does it raise?',
       },
       {
         id: 'y9-t3-pres-01-s2',
@@ -777,8 +875,10 @@ export const y9Presentations: LessonPresentation[] = [
           'The Dust Bowl drought of the early 1930s devastated the Great Plains, forcing hundreds of thousands of farming families to migrate west',
           'These "Okies" (migrants from Oklahoma and surrounding states) arrived in California to find exploitation, hostility, and poverty',
         ],
-        teacherNotes: 'George and Lennie are Dust Bowl migrants. Their rootlessness and vulnerability are not personal failures -- they are the direct consequence of systemic economic collapse. This is crucial for understanding Steinbeck\'s purpose: he is not writing about individuals who made bad choices but about a system that trapped people without choices.',
-        activity: 'Context connection: For each of the following characters, write one sentence explaining how the context of the Great Depression directly shapes their situation: George, Lennie, Candy, Crooks, Curley\'s wife.',
+        teacherNotes:
+          "George and Lennie are Dust Bowl migrants. Their rootlessness and vulnerability are not personal failures -- they are the direct consequence of systemic economic collapse. This is crucial for understanding Steinbeck's purpose: he is not writing about individuals who made bad choices but about a system that trapped people without choices.",
+        activity:
+          "Context connection: For each of the following characters, write one sentence explaining how the context of the Great Depression directly shapes their situation: George, Lennie, Candy, Crooks, Curley's wife.",
       },
       {
         id: 'y9-t3-pres-01-s3',
@@ -791,8 +891,10 @@ export const y9Presentations: LessonPresentation[] = [
           'George explains the predicament directly: "Guys like us, that work on ranches, are the loneliest guys in the world"',
           'Steinbeck worked as a ranch hand himself and wrote from direct experience of this world',
         ],
-        teacherNotes: 'The novel was published in 1937 when the Depression was still ongoing. Steinbeck was not writing historical fiction -- he was writing about the present crisis. This gives the novel an urgency and anger that students should be aware of. Ask: how does knowing Steinbeck worked as a ranch hand change how you read the novel?',
-        activity: 'Close reading: Read the passage in Chapter 1 where George describes the lives of men like them. Annotate the language Steinbeck uses to convey loneliness and hopelessness. Which specific words carry the most weight?',
+        teacherNotes:
+          'The novel was published in 1937 when the Depression was still ongoing. Steinbeck was not writing historical fiction -- he was writing about the present crisis. This gives the novel an urgency and anger that students should be aware of. Ask: how does knowing Steinbeck worked as a ranch hand change how you read the novel?',
+        activity:
+          'Close reading: Read the passage in Chapter 1 where George describes the lives of men like them. Annotate the language Steinbeck uses to convey loneliness and hopelessness. Which specific words carry the most weight?',
       },
       {
         id: 'y9-t3-pres-01-s4',
@@ -803,10 +905,12 @@ export const y9Presentations: LessonPresentation[] = [
           'It is one of the founding ideological myths of the United States: "life, liberty, and the pursuit of happiness"',
           'In the 1930s, the Depression exposed the Dream as, for millions, an illusion -- structural inequality made self-sufficiency impossible',
           'George and Lennie\'s dream of owning their own farm -- "a little house and a couple of acres" -- is a direct expression of the American Dream',
-          'The novel\'s tragedy lies in how close and yet how impossible this dream is for its characters',
+          "The novel's tragedy lies in how close and yet how impossible this dream is for its characters",
         ],
-        teacherNotes: 'Distinguish between the Dream as ideology and the Dream as aspiration. Students often conflate the two. The Dream as ideology is a political tool that convinces the poor their poverty is their own fault. The Dream as aspiration is the genuine, deeply human desire for security and self-determination. Steinbeck sympathises with the aspiration while exposing the ideology as a lie.',
-        activity: 'Discussion question: Is the American Dream a source of hope or a tool of oppression in Of Mice and Men? Use two pieces of evidence from the novel to support your view.',
+        teacherNotes:
+          'Distinguish between the Dream as ideology and the Dream as aspiration. Students often conflate the two. The Dream as ideology is a political tool that convinces the poor their poverty is their own fault. The Dream as aspiration is the genuine, deeply human desire for security and self-determination. Steinbeck sympathises with the aspiration while exposing the ideology as a lie.',
+        activity:
+          'Discussion question: Is the American Dream a source of hope or a tool of oppression in Of Mice and Men? Use two pieces of evidence from the novel to support your view.',
       },
       {
         id: 'y9-t3-pres-01-s5',
@@ -819,8 +923,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Crooks cannot join the other men in the bunkhouse, cannot participate freely in social life, and has absorbed the racism around him into his own psychology',
           'Steinbeck uses Crooks to demonstrate that poverty and loneliness are compounded by racial injustice',
         ],
-        teacherNotes: 'Crooks is one of the most complex figures in the novel and one of the most important for contextual analysis. His conversation with Lennie about the nature of hope and the cruelty of dreams is devastating. Ask students: why does Crooks briefly join the dream of the farm, then withdraw? What does this moment reveal about Steinbeck\'s view of racism and hope?',
-        activity: 'Character context: Write a paragraph explaining how the historical context of racial segregation in 1930s America shapes Steinbeck\'s presentation of Crooks. Include at least one quotation and one specific contextual fact.',
+        teacherNotes:
+          "Crooks is one of the most complex figures in the novel and one of the most important for contextual analysis. His conversation with Lennie about the nature of hope and the cruelty of dreams is devastating. Ask students: why does Crooks briefly join the dream of the farm, then withdraw? What does this moment reveal about Steinbeck's view of racism and hope?",
+        activity:
+          "Character context: Write a paragraph explaining how the historical context of racial segregation in 1930s America shapes Steinbeck's presentation of Crooks. Include at least one quotation and one specific contextual fact.",
       },
       {
         id: 'y9-t3-pres-01-s6',
@@ -829,17 +935,19 @@ export const y9Presentations: LessonPresentation[] = [
         bulletPoints: [
           'Women in 1930s America had limited legal, economic, and social rights compared to men',
           'Marriage was often the primary route to financial security; women outside of marriage had few independent options',
-          'Curley\'s wife is the only female character in the novel and is given no name -- she is defined entirely by her relationship to her husband',
+          "Curley's wife is the only female character in the novel and is given no name -- she is defined entirely by her relationship to her husband",
           'Her dream of becoming a movie star represents her desire to escape the imprisonment of her marriage',
           'Steinbeck presents her with both sympathy (she is trapped and lonely) and complexity (her behaviour causes harm to others who are also vulnerable)',
         ],
-        teacherNotes: 'Curley\'s wife is a character who often divides classes. Some students find her unsympathetic; others identify with her entrapment. Both responses are valid starting points for analysis. The key question is: does Steinbeck want us to sympathise with her? What evidence suggests he does, and what complicates that sympathy?',
-        activity: 'Dual perspective writing: Write two short paragraphs about Curley\'s wife -- one presenting her as a victim of her society, one presenting her as a threat to others. Use a quotation in each. Which perspective do you find more convincing?',
+        teacherNotes:
+          "Curley's wife is a character who often divides classes. Some students find her unsympathetic; others identify with her entrapment. Both responses are valid starting points for analysis. The key question is: does Steinbeck want us to sympathise with her? What evidence suggests he does, and what complicates that sympathy?",
+        activity:
+          "Dual perspective writing: Write two short paragraphs about Curley's wife -- one presenting her as a victim of her society, one presenting her as a threat to others. Use a quotation in each. Which perspective do you find more convincing?",
       },
       {
         id: 'y9-t3-pres-01-s7',
         slideNumber: 7,
-        title: 'Steinbeck\'s Purpose -- Social Critique Through Realism',
+        title: "Steinbeck's Purpose -- Social Critique Through Realism",
         bulletPoints: [
           'Steinbeck was a committed social realist who believed fiction should expose the conditions of the oppressed',
           'Of Mice and Men was originally conceived as a stage play, which explains its highly dramatic structure and compressed dialogue',
@@ -847,21 +955,25 @@ export const y9Presentations: LessonPresentation[] = [
           'Steinbeck wanted readers to feel the injustice of the system, not merely understand it intellectually',
           'The novel\'s title (from Robert Burns: "The best laid schemes of mice and men / Gang aft agley") frames the story as a meditation on the futility of dreams in an unjust world',
         ],
-        teacherNotes: 'The Burns reference is worth unpacking in full. "Gang aft agley" means "often go wrong." Steinbeck is signalling from the title that the characters\' dreams will not be realised -- this is not a spoiler but a structural and thematic promise. The tragedy is built into the title. Ask: how does knowing this change how you read the early scenes of optimism?',
-        activity: 'Title analysis: Research the Robert Burns poem "To a Mouse." Read the full stanza that Steinbeck drew from. Write two sentences explaining why this allusion is the perfect frame for the novel\'s themes.',
+        teacherNotes:
+          'The Burns reference is worth unpacking in full. "Gang aft agley" means "often go wrong." Steinbeck is signalling from the title that the characters\' dreams will not be realised -- this is not a spoiler but a structural and thematic promise. The tragedy is built into the title. Ask: how does knowing this change how you read the early scenes of optimism?',
+        activity:
+          'Title analysis: Research the Robert Burns poem "To a Mouse." Read the full stanza that Steinbeck drew from. Write two sentences explaining why this allusion is the perfect frame for the novel\'s themes.',
       },
       {
         id: 'y9-t3-pres-01-s8',
         slideNumber: 8,
         title: 'Summary and Context Application',
         bulletPoints: [
-          'The Great Depression created the conditions of rootlessness, poverty, and loneliness that define the characters\' lives',
+          "The Great Depression created the conditions of rootlessness, poverty, and loneliness that define the characters' lives",
           'The American Dream functions in the novel as both a source of hope and an ideological illusion that sustains a cruel system',
           'Race, gender, and disability intersect with economic poverty to compound the vulnerability of specific characters',
           'Contextual knowledge should always be connected to a specific character, moment, or language choice -- it is never background decoration',
         ],
-        teacherNotes: 'Conclude with a consolidation task that forces students to apply context analytically rather than descriptively. The most common error is writing "In the 1930s, people were very poor" as a contextual point. Push students to say "Steinbeck uses the context of Depression-era California to [do something specific to the reader\'s understanding of character X]."',
-        activity: 'Context into analysis: Choose two characters from the novel. For each one, write a sentence that uses a specific historical context to illuminate a specific moment in the text. Avoid describing history; instead, use it as a lens.',
+        teacherNotes:
+          'Conclude with a consolidation task that forces students to apply context analytically rather than descriptively. The most common error is writing "In the 1930s, people were very poor" as a contextual point. Push students to say "Steinbeck uses the context of Depression-era California to [do something specific to the reader\'s understanding of character X]."',
+        activity:
+          'Context into analysis: Choose two characters from the novel. For each one, write a sentence that uses a specific historical context to illuminate a specific moment in the text. Avoid describing history; instead, use it as a lens.',
       },
     ],
   },
@@ -878,55 +990,63 @@ export const y9Presentations: LessonPresentation[] = [
         slideNumber: 1,
         title: 'Learning Objectives',
         bulletPoints: [
-          'Analyse the presentation of the major characters through Steinbeck\'s language choices',
+          "Analyse the presentation of the major characters through Steinbeck's language choices",
           'Identify and explore the key themes of the novel -- loneliness, dreams, power, and friendship',
           'Understand how characters function both as individuals and as symbolic representations of broader social types',
           'Develop analytical paragraphs that connect character, theme, language, and context',
         ],
-        teacherNotes: 'Open with a character web on the board. Ask students to add relationship lines between characters and label each line with the nature of the relationship (friendship, exploitation, fear, pity, etc.). This reveals the novel\'s power dynamics visually and gives students a reference point for the lesson.',
-        activity: 'Character web: Draw a circle for each major character. Draw lines between characters who interact significantly. Label each line with one word that describes the relationship. What does the web reveal about the novel\'s structure?',
+        teacherNotes:
+          "Open with a character web on the board. Ask students to add relationship lines between characters and label each line with the nature of the relationship (friendship, exploitation, fear, pity, etc.). This reveals the novel's power dynamics visually and gives students a reference point for the lesson.",
+        activity:
+          "Character web: Draw a circle for each major character. Draw lines between characters who interact significantly. Label each line with one word that describes the relationship. What does the web reveal about the novel's structure?",
       },
       {
         id: 'y9-t3-pres-02-s2',
         slideNumber: 2,
         title: 'George and Lennie -- Friendship and Dependency',
         bulletPoints: [
-          'George and Lennie\'s relationship is the emotional and structural centre of the novel',
+          "George and Lennie's relationship is the emotional and structural centre of the novel",
           'George is pragmatic, protective, and occasionally resentful; Lennie is childlike, physically powerful, and deeply dependent',
           'Their friendship is unusual in the context of itinerant ranch life: most workers are solitary and suspicious of connection',
           'The recurring motif of the dream farm binds them together: it is both a genuine aspiration and a coping mechanism',
-          'By the end, George\'s decision to shoot Lennie is both a mercy and a destruction of the only thing that made his own life bearable',
+          "By the end, George's decision to shoot Lennie is both a mercy and a destruction of the only thing that made his own life bearable",
         ],
-        teacherNotes: 'The relationship between George and Lennie has been interpreted in many ways: as a father-son dynamic, as a carer-dependent relationship, as a metaphor for the isolation of the powerless. All of these readings are valid and students should be encouraged to hold multiple interpretations simultaneously. The most interesting essays engage with the ambiguity of their bond.',
-        activity: 'Character comparison: Create a two-column table comparing George and Lennie\'s qualities, desires, and vulnerabilities. Use at least one quotation per character. What does each one give to the other?',
+        teacherNotes:
+          'The relationship between George and Lennie has been interpreted in many ways: as a father-son dynamic, as a carer-dependent relationship, as a metaphor for the isolation of the powerless. All of these readings are valid and students should be encouraged to hold multiple interpretations simultaneously. The most interesting essays engage with the ambiguity of their bond.',
+        activity:
+          "Character comparison: Create a two-column table comparing George and Lennie's qualities, desires, and vulnerabilities. Use at least one quotation per character. What does each one give to the other?",
       },
       {
         id: 'y9-t3-pres-02-s3',
         slideNumber: 3,
-        title: 'Loneliness -- The Novel\'s Dominant Theme',
+        title: "Loneliness -- The Novel's Dominant Theme",
         bulletPoints: [
-          'Every major character in the novel is lonely: George (despite Lennie), Lennie (despite not understanding it), Candy, Crooks, and Curley\'s wife',
+          "Every major character in the novel is lonely: George (despite Lennie), Lennie (despite not understanding it), Candy, Crooks, and Curley's wife",
           'Steinbeck presents loneliness not as a personal failing but as the inevitable product of an economic system that prevents human connection',
           'Crooks\'s speech in Chapter 4 is the most explicit statement of the theme: "A guy needs somebody -- to be near him"',
           'The communal bunkhouse creates proximity without community -- men live side by side without truly knowing each other',
           'The dream of the farm is, at its deepest level, a dream of belonging: a place where isolation ends',
         ],
-        teacherNotes: 'Ask students: which character is the loneliest? This question has no single correct answer but generates excellent discussion. Crooks has no community; Candy has just lost his dog (his companion); Curley\'s wife is imprisoned in her marriage; George will be alone once Lennie is gone. The variety of lonely situations Steinbeck creates is itself a structural argument about systemic isolation.',
-        activity: 'Ranking task: Rank the five major characters from most to least lonely and justify each ranking with one piece of evidence. Share your ranking with a partner and discuss any disagreements.',
+        teacherNotes:
+          "Ask students: which character is the loneliest? This question has no single correct answer but generates excellent discussion. Crooks has no community; Candy has just lost his dog (his companion); Curley's wife is imprisoned in her marriage; George will be alone once Lennie is gone. The variety of lonely situations Steinbeck creates is itself a structural argument about systemic isolation.",
+        activity:
+          'Ranking task: Rank the five major characters from most to least lonely and justify each ranking with one piece of evidence. Share your ranking with a partner and discuss any disagreements.',
       },
       {
         id: 'y9-t3-pres-02-s4',
         slideNumber: 4,
         title: 'Power and Powerlessness -- The Social Hierarchy',
         bulletPoints: [
-          'The ranch has a clear hierarchy: the boss at the top, then Curley, then the ranch hands, then Candy (old, one-handed), then Crooks (Black), then Curley\'s wife (female, trapped)',
-          'Power in the novel is exercised primarily through violence or the threat of it: Curley picks fights, Lennie\'s physical power terrifies, the boss holds economic power',
-          'Those with least power often direct hostility downward: Curley\'s wife threatens Crooks with lynching in a moment of anger',
+          "The ranch has a clear hierarchy: the boss at the top, then Curley, then the ranch hands, then Candy (old, one-handed), then Crooks (Black), then Curley's wife (female, trapped)",
+          "Power in the novel is exercised primarily through violence or the threat of it: Curley picks fights, Lennie's physical power terrifies, the boss holds economic power",
+          "Those with least power often direct hostility downward: Curley's wife threatens Crooks with lynching in a moment of anger",
           'Slim is the one figure who commands genuine respect -- not through fear but through competence and wisdom',
           'Steinbeck shows how systemic powerlessness corrupts human relationships: people exploit those below them because they cannot challenge those above',
         ],
-        teacherNotes: 'The scene where Curley\'s wife threatens Crooks is one of the most disturbing in the novel precisely because it shows a victim becoming an oppressor. Ask students: does understanding why she says it excuse it? This is a genuinely difficult ethical question that models the kind of nuanced response that earns top marks.',
-        activity: 'Power map: Draw a vertical hierarchy of power on the ranch. For each character, note one way they exercise power over those below them and one way they are powerless relative to those above. What does this reveal about Steinbeck\'s view of the social system?',
+        teacherNotes:
+          "The scene where Curley's wife threatens Crooks is one of the most disturbing in the novel precisely because it shows a victim becoming an oppressor. Ask students: does understanding why she says it excuse it? This is a genuinely difficult ethical question that models the kind of nuanced response that earns top marks.",
+        activity:
+          "Power map: Draw a vertical hierarchy of power on the ranch. For each character, note one way they exercise power over those below them and one way they are powerless relative to those above. What does this reveal about Steinbeck's view of the social system?",
       },
       {
         id: 'y9-t3-pres-02-s5',
@@ -936,11 +1056,13 @@ export const y9Presentations: LessonPresentation[] = [
           'The dream of the farm recurs throughout the novel as a mantra of hope: George narrates it to Lennie like a fairy tale',
           'When Candy overhears the dream and offers his savings, it briefly becomes real: "They all sat still, all bemused by the beauty of the thing"',
           'Crooks initially dismisses the dream as delusion then briefly joins it -- the shift reveals the cruel power of hope to the most marginalised',
-          'Curley\'s wife had her own version of the dream: Hollywood, stardom, escape from her current life',
+          "Curley's wife had her own version of the dream: Hollywood, stardom, escape from her current life",
           'All the dreams in the novel are destroyed -- Steinbeck is constructing an argument about the systemic impossibility of individual escape from structural poverty',
         ],
-        teacherNotes: 'The phrase "bemused by the beauty of the thing" is one of the most important moments in the novel. It is the closest any character comes to real hope. The fact that it is destroyed makes Steinbeck\'s critique all the more bitter. Ask students: does the destruction of hope make the novel nihilistic, or does the fact that hope existed at all make it something more complex?',
-        activity: 'Close reading: Analyse the passage in Chapter 3 where Candy joins the dream. Focus on the verb choices Steinbeck uses to describe the characters\' emotional state. What do these verbs suggest about the relationship between hope and vulnerability?',
+        teacherNotes:
+          'The phrase "bemused by the beauty of the thing" is one of the most important moments in the novel. It is the closest any character comes to real hope. The fact that it is destroyed makes Steinbeck\'s critique all the more bitter. Ask students: does the destruction of hope make the novel nihilistic, or does the fact that hope existed at all make it something more complex?',
+        activity:
+          "Close reading: Analyse the passage in Chapter 3 where Candy joins the dream. Focus on the verb choices Steinbeck uses to describe the characters' emotional state. What do these verbs suggest about the relationship between hope and vulnerability?",
       },
       {
         id: 'y9-t3-pres-02-s6',
@@ -949,26 +1071,30 @@ export const y9Presentations: LessonPresentation[] = [
         bulletPoints: [
           'Candy is old, one-handed, and terrified of being discarded when he is no longer useful to the ranch',
           'His dog is his companion and mirror: old, blind, and tolerated only until it becomes inconvenient -- then shot',
-          'The parallel between the dog\'s fate and Candy\'s feared fate is explicit and deliberate',
+          "The parallel between the dog's fate and Candy's feared fate is explicit and deliberate",
           '"When they can me here I wisht somebody\'d shoot me" -- Candy acknowledges the parallel himself',
-          'His investment in George and Lennie\'s dream is an act of desperate self-preservation: he needs to matter to someone',
+          "His investment in George and Lennie's dream is an act of desperate self-preservation: he needs to matter to someone",
         ],
-        teacherNotes: 'The dog-shooting scene is one of the most carefully crafted in the novel. Steinbeck uses it to foreshadow the ending and to explore how societies discard people who are no longer "productive." Ask students: is Carlson wrong to shoot the dog? This question divides the class in productive ways and models the kind of contextual ethical reasoning required at GCSE.',
-        activity: 'Foreshadowing analysis: How does the scene in which Candy\'s dog is shot foreshadow the novel\'s ending? Write a paragraph identifying at least two specific parallels between the two scenes and explaining what Steinbeck is suggesting about how society treats the weak.',
+        teacherNotes:
+          'The dog-shooting scene is one of the most carefully crafted in the novel. Steinbeck uses it to foreshadow the ending and to explore how societies discard people who are no longer "productive." Ask students: is Carlson wrong to shoot the dog? This question divides the class in productive ways and models the kind of contextual ethical reasoning required at GCSE.',
+        activity:
+          "Foreshadowing analysis: How does the scene in which Candy's dog is shot foreshadow the novel's ending? Write a paragraph identifying at least two specific parallels between the two scenes and explaining what Steinbeck is suggesting about how society treats the weak.",
       },
       {
         id: 'y9-t3-pres-02-s7',
         slideNumber: 7,
-        title: 'Steinbeck\'s Language -- Naturalism and Imagery',
+        title: "Steinbeck's Language -- Naturalism and Imagery",
         bulletPoints: [
           'Steinbeck uses a naturalistic style: plain diction, colloquial dialogue, and precise observation of the physical world',
           'The natural world (the pool by the river, the mountains, the light) is consistently used to contrast with the harshness of the human world',
           'Animal imagery is pervasive: Lennie is described as a bear, a dog, a horse -- these comparisons signal his power and his lack of full social consciousness',
-          'The recurring motif of hands: Lennie\'s hands as both nurturing (petting soft things) and destructive; Candy\'s missing hand as his vulnerability',
-          'Steinbeck\'s dialogue is highly crafted to sound authentic -- each character has a distinct voice that reflects their education, background, and emotional state',
+          "The recurring motif of hands: Lennie's hands as both nurturing (petting soft things) and destructive; Candy's missing hand as his vulnerability",
+          "Steinbeck's dialogue is highly crafted to sound authentic -- each character has a distinct voice that reflects their education, background, and emotional state",
         ],
-        teacherNotes: 'The opening and closing settings (the pool by the river) are structurally significant. The novel begins and ends in a place of natural beauty that exists outside the human world of the ranch. Ask students: why does Steinbeck frame the novel\'s action with these descriptions? What does it suggest about the relationship between nature and human suffering?',
-        activity: 'Language focus: Find three examples of animal imagery used to describe Lennie across the novel. For each one, write a sentence explaining what the comparison reveals about Steinbeck\'s presentation of Lennie\'s character and what it suggests about his fate.',
+        teacherNotes:
+          "The opening and closing settings (the pool by the river) are structurally significant. The novel begins and ends in a place of natural beauty that exists outside the human world of the ranch. Ask students: why does Steinbeck frame the novel's action with these descriptions? What does it suggest about the relationship between nature and human suffering?",
+        activity:
+          "Language focus: Find three examples of animal imagery used to describe Lennie across the novel. For each one, write a sentence explaining what the comparison reveals about Steinbeck's presentation of Lennie's character and what it suggests about his fate.",
       },
       {
         id: 'y9-t3-pres-02-s8',
@@ -977,11 +1103,13 @@ export const y9Presentations: LessonPresentation[] = [
         bulletPoints: [
           'All major characters in Of Mice and Men are both individuals and social types -- they embody specific vulnerabilities produced by the system',
           'The key themes -- loneliness, dreams, power, and friendship -- are not separate but interconnected: each illuminates the others',
-          'Steinbeck\'s language choices (animal imagery, recurring motifs, naturalistic dialogue) are always in service of thematic meaning',
+          "Steinbeck's language choices (animal imagery, recurring motifs, naturalistic dialogue) are always in service of thematic meaning",
           'The strongest essays will move between character, theme, language, and context fluidly rather than treating them as separate categories',
         ],
-        teacherNotes: 'Use this slide to model a strong thematic essay plan on the board. A productive question: "How does Steinbeck present loneliness in Of Mice and Men?" Walk through how a student could structure five paragraphs addressing different characters while building a coherent argument about Steinbeck\'s social purpose.',
-        activity: 'Essay plan: Produce a five-paragraph plan for the question "How does Steinbeck present the idea that the American Dream is impossible for the characters in Of Mice and Men?" Include one quotation and one contextual point per paragraph.',
+        teacherNotes:
+          'Use this slide to model a strong thematic essay plan on the board. A productive question: "How does Steinbeck present loneliness in Of Mice and Men?" Walk through how a student could structure five paragraphs addressing different characters while building a coherent argument about Steinbeck\'s social purpose.',
+        activity:
+          'Essay plan: Produce a five-paragraph plan for the question "How does Steinbeck present the idea that the American Dream is impossible for the characters in Of Mice and Men?" Include one quotation and one contextual point per paragraph.',
       },
     ],
   },
@@ -1003,8 +1131,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Evaluate the effectiveness of model responses and use this evaluation to improve own writing',
           'Practise timed essay writing under exam-style conditions',
         ],
-        teacherNotes: 'This is a consolidation lesson and should feel like a culmination. Begin by asking students to reflect: what do they know now about Of Mice and Men that they did not know at the start of term? What analytical skills feel more secure? This metacognitive reflection prepares them for the self-assessment elements later in the lesson.',
-        activity: 'Reflection task: Write down two things you know about Of Mice and Men that you are confident about and one question about the text or the exam that you still want answered. Share questions with the class.',
+        teacherNotes:
+          'This is a consolidation lesson and should feel like a culmination. Begin by asking students to reflect: what do they know now about Of Mice and Men that they did not know at the start of term? What analytical skills feel more secure? This metacognitive reflection prepares them for the self-assessment elements later in the lesson.',
+        activity:
+          'Reflection task: Write down two things you know about Of Mice and Men that you are confident about and one question about the text or the exam that you still want answered. Share questions with the class.',
       },
       {
         id: 'y9-t3-pres-03-s2',
@@ -1017,22 +1147,26 @@ export const y9Presentations: LessonPresentation[] = [
           'All three AOs should be present in every paragraph: a response that separates them into different sections will be penalised',
           'The examiner is looking for a coherent, argued response -- not a list of features and quotations',
         ],
-        teacherNotes: 'Reiterate the AO integration principle with a live example. Write a single analytical sentence on the board that achieves all three AOs: "Steinbeck\'s use of the verb \'bemused\' to describe Candy\'s reaction to the dream farm suggests that hope itself is a kind of temporary derangement for those the Depression has conditioned to expect failure -- a pointed commentary on how systemic poverty destroys the capacity for genuine aspiration." Parse this sentence together.',
-        activity: 'AO identification: For the model sentence on the board, identify which part achieves AO1, AO2, and AO3. Then write your own sentence about a different moment in the novel that achieves all three AOs simultaneously.',
+        teacherNotes:
+          "Reiterate the AO integration principle with a live example. Write a single analytical sentence on the board that achieves all three AOs: \"Steinbeck's use of the verb 'bemused' to describe Candy's reaction to the dream farm suggests that hope itself is a kind of temporary derangement for those the Depression has conditioned to expect failure -- a pointed commentary on how systemic poverty destroys the capacity for genuine aspiration.\" Parse this sentence together.",
+        activity:
+          'AO identification: For the model sentence on the board, identify which part achieves AO1, AO2, and AO3. Then write your own sentence about a different moment in the novel that achieves all three AOs simultaneously.',
       },
       {
         id: 'y9-t3-pres-03-s3',
         slideNumber: 3,
-        title: 'Building a Contextual Argument -- Steinbeck\'s Social Purpose',
+        title: "Building a Contextual Argument -- Steinbeck's Social Purpose",
         bulletPoints: [
-          'Steinbeck\'s purpose was not simply to tell a sad story but to indict the economic and social system that made such stories inevitable',
-          'Every character\'s suffering can be traced back to structural causes: the Depression, racial segregation, gender inequality, ableism',
+          "Steinbeck's purpose was not simply to tell a sad story but to indict the economic and social system that made such stories inevitable",
+          "Every character's suffering can be traced back to structural causes: the Depression, racial segregation, gender inequality, ableism",
           'A contextual argument makes the case that Steinbeck designed the novel to produce a specific response in a specific audience',
           'The 1937 audience would have recognised these characters because they were living through the same conditions',
           'Modern readers need to reconstruct that recognition through contextual knowledge: this is what AO3 asks you to do',
         ],
-        teacherNotes: 'Ask students: if Steinbeck\'s purpose was social critique, is the novel a failure because it did not change the system? This is an uncomfortable question that leads to a productive discussion about what literature can and cannot do. It also models the kind of evaluative, questioning stance that examiners reward.',
-        activity: 'Purpose paragraph: Write a paragraph arguing that Steinbeck\'s primary purpose in Of Mice and Men is to critique the economic system of 1930s America. Use one quotation from the text and one specific historical fact to support your argument.',
+        teacherNotes:
+          "Ask students: if Steinbeck's purpose was social critique, is the novel a failure because it did not change the system? This is an uncomfortable question that leads to a productive discussion about what literature can and cannot do. It also models the kind of evaluative, questioning stance that examiners reward.",
+        activity:
+          "Purpose paragraph: Write a paragraph arguing that Steinbeck's primary purpose in Of Mice and Men is to critique the economic system of 1930s America. Use one quotation from the text and one specific historical fact to support your argument.",
       },
       {
         id: 'y9-t3-pres-03-s4',
@@ -1045,8 +1179,10 @@ export const y9Presentations: LessonPresentation[] = [
           'The six chapters can be read as six dramatic scenes, each advancing the tragedy without detour or relief',
           'Structural comments: the circular setting (the pool at beginning and end), the foreshadowing of the ending throughout Chapter 1',
         ],
-        teacherNotes: 'Students rarely comment on form in GCSE responses. Prompt them to consider: what would be different if this were a full-length novel? The answer (more time, more complexity, more possibility of escape) reveals how the novella form itself serves Steinbeck\'s tragic purpose. Form is not neutral -- it is a choice that creates meaning.',
-        activity: 'Form analysis: Write two sentences explaining how the novella\'s compressed form contributes to the sense of tragic inevitability. How does the shortness of the book reinforce its thematic content?',
+        teacherNotes:
+          "Students rarely comment on form in GCSE responses. Prompt them to consider: what would be different if this were a full-length novel? The answer (more time, more complexity, more possibility of escape) reveals how the novella form itself serves Steinbeck's tragic purpose. Form is not neutral -- it is a choice that creates meaning.",
+        activity:
+          "Form analysis: Write two sentences explaining how the novella's compressed form contributes to the sense of tragic inevitability. How does the shortness of the book reinforce its thematic content?",
       },
       {
         id: 'y9-t3-pres-03-s5',
@@ -1059,8 +1195,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Thematic vocabulary: embodies, symbolises, represents, functions as an allegory for, is metonymic of...',
           'Contextual vocabulary: reflects, critiques, responds to, is informed by, is shaped by, challenges the convention of...',
         ],
-        teacherNotes: 'Give students the vocabulary list and ask them to identify which category (authorial intent, reader response, structural, thematic, contextual) each phrase belongs to. Then ask them to write two sentences using phrases they do not normally use. Unfamiliar vocabulary becomes familiar only through active use.',
-        activity: 'Vocabulary challenge: Using the vocabulary bank on this slide, write two analytical sentences about Of Mice and Men. Each sentence must use at least two phrases from the bank. Avoid using phrases you already use regularly.',
+        teacherNotes:
+          'Give students the vocabulary list and ask them to identify which category (authorial intent, reader response, structural, thematic, contextual) each phrase belongs to. Then ask them to write two sentences using phrases they do not normally use. Unfamiliar vocabulary becomes familiar only through active use.',
+        activity:
+          'Vocabulary challenge: Using the vocabulary bank on this slide, write two analytical sentences about Of Mice and Men. Each sentence must use at least two phrases from the bank. Avoid using phrases you already use regularly.',
       },
       {
         id: 'y9-t3-pres-03-s6',
@@ -1073,8 +1211,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Assign the response a GCSE grade and justify your assessment with reference to specific features',
           'Identify one strength and one aspect that could be developed further',
         ],
-        teacherNotes: 'The model response should be genuinely strong but not perfect -- a Grade 7 response rather than a Grade 9. This gives students something to aspire to and something constructive to improve. If the model is flawless, students have no purchase on how to develop their own writing.',
-        activity: 'Model essay annotation: Annotate the model response on your sheet. Mark AO1 in green, AO2 in blue, AO3 in red. Write a one-sentence summary at the bottom: "This response achieves [grade] because [specific reason]. It could be improved by [specific suggestion]."',
+        teacherNotes:
+          'The model response should be genuinely strong but not perfect -- a Grade 7 response rather than a Grade 9. This gives students something to aspire to and something constructive to improve. If the model is flawless, students have no purchase on how to develop their own writing.',
+        activity:
+          'Model essay annotation: Annotate the model response on your sheet. Mark AO1 in green, AO2 in blue, AO3 in red. Write a one-sentence summary at the bottom: "This response achieves [grade] because [specific reason]. It could be improved by [specific suggestion]."',
       },
       {
         id: 'y9-t3-pres-03-s7',
@@ -1087,8 +1227,10 @@ export const y9Presentations: LessonPresentation[] = [
           'Losing the argument: each paragraph should advance your overall thesis, not introduce an entirely new argument unrelated to the question',
           'Weak endings: never conclude with "In conclusion, I have shown..." -- return to your opening argument and extend or deepen it',
         ],
-        teacherNotes: 'These errors are best addressed with examples. If you have students\' recent work (anonymised), use real examples of each error. The recognition of a type of error in anonymous work is more useful than feedback on one\'s own error, which students often resist or fail to generalise from.',
-        activity: 'Error identification: Read the four short extracts on your sheet. Each one contains one of the errors listed on this slide. Identify the error in each and rewrite the problematic sentence to correct it.',
+        teacherNotes:
+          "These errors are best addressed with examples. If you have students' recent work (anonymised), use real examples of each error. The recognition of a type of error in anonymous work is more useful than feedback on one's own error, which students often resist or fail to generalise from.",
+        activity:
+          'Error identification: Read the four short extracts on your sheet. Each one contains one of the errors listed on this slide. Identify the error in each and rewrite the problematic sentence to correct it.',
       },
       {
         id: 'y9-t3-pres-03-s8',
@@ -1101,9 +1243,11 @@ export const y9Presentations: LessonPresentation[] = [
           'Each paragraph should achieve AO1 (response + quotation), AO2 (language analysis), and AO3 (context)',
           'After the timed write, self-assess using the mark scheme before receiving peer feedback',
         ],
-        teacherNotes: 'For the final timed essay, choose a question that covers the central concerns of the novel: "How does Steinbeck present the impossibility of the American Dream in Of Mice and Men?" or "How does Steinbeck use the character of Crooks to explore social injustice?" Both invite language analysis, contextual knowledge, and a strong personal response.',
-        activity: 'Final timed essay (40 minutes): Answer the question: "How does Steinbeck present loneliness in Of Mice and Men?" Plan for 5 minutes, write for 35 minutes. After writing, self-assess against the mark scheme criteria and set yourself one specific target for your next piece of analytical writing.',
+        teacherNotes:
+          'For the final timed essay, choose a question that covers the central concerns of the novel: "How does Steinbeck present the impossibility of the American Dream in Of Mice and Men?" or "How does Steinbeck use the character of Crooks to explore social injustice?" Both invite language analysis, contextual knowledge, and a strong personal response.',
+        activity:
+          'Final timed essay (40 minutes): Answer the question: "How does Steinbeck present loneliness in Of Mice and Men?" Plan for 5 minutes, write for 35 minutes. After writing, self-assess against the mark scheme criteria and set yourself one specific target for your next piece of analytical writing.',
       },
     ],
   },
-];
+]

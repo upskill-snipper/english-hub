@@ -38,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     { url: `${base}/revision/quiz`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    {
+      url: `${base}/revision/common-errors`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     { url: `${base}/mock-exams`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/games`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
 
@@ -712,7 +718,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
 
-    // Individual poems — Eduqas
+    // Individual poems — Eduqas (legacy pre-2025 anthology)
+    // These poems are NOT part of the Eduqas 2025 cluster but still serve content as a
+    // study reference. Demoted to priority 0.1 to prevent SEO promotion of legacy content.
     ...[
       'dulce-et-decorum-est',
       'the-soldier',
@@ -725,8 +733,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ].map((poem) => ({
       url: `${base}/revision/poetry/eduqas/${poem}`,
       lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      changeFrequency: 'yearly' as const,
+      priority: 0.1,
     })),
 
     // Individual poems — OCR Love and Relationships
@@ -1293,6 +1301,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/legal/safeguarding`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
+    {
+      url: `${base}/legal/rights`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.3,

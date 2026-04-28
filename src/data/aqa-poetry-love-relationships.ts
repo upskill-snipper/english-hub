@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CourseData } from './courses';
+import type { CourseData } from './courses'
 
 export const aqaLoveRelationshipsCourse: CourseData = {
   id: 'aqa-lit-love-relationships',
@@ -88,12 +88,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           id: 'aqa-lr-m1-q1',
           question:
             'What structural device does Byron use by repeating "silence and tears" at the start and end of the poem?',
-          options: [
-            'Enjambment',
-            'Cyclical structure',
-            'Volta',
-            'Anaphora',
-          ],
+          options: ['Enjambment', 'Cyclical structure', 'Volta', 'Anaphora'],
           correct: 1,
           explanation:
             'The repetition of "silence and tears" in the first and final stanzas creates a cyclical structure, suggesting the speaker is trapped in unresolved grief.',
@@ -114,12 +109,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m1-q3',
-          question:
-            'Why does the secrecy of the affair intensify the speaker\'s suffering?',
+          question: "Why does the secrecy of the affair intensify the speaker's suffering?",
           options: [
             'He fears legal punishment',
             'He cannot publicly mourn or share his grief',
-            'He has forgotten the beloved\'s name',
+            "He has forgotten the beloved's name",
             'He is angry at being discovered',
           ],
           correct: 1,
@@ -210,8 +204,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m2-q1',
-          question:
-            "What is the primary purpose of the natural imagery in Love's Philosophy?",
+          question: "What is the primary purpose of the natural imagery in Love's Philosophy?",
           options: [
             'To describe a beautiful landscape',
             'To build a persuasive argument that union is natural',
@@ -220,12 +213,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'Shelley uses natural pairings (rivers/ocean, winds, mountains/heaven) as evidence that everything in nature is united, making the beloved\'s refusal seem unnatural.',
+            "Shelley uses natural pairings (rivers/ocean, winds, mountains/heaven) as evidence that everything in nature is united, making the beloved's refusal seem unnatural.",
         },
         {
           id: 'aqa-lr-m2-q2',
-          question:
-            'What effect do the rhetorical questions at the end of each stanza create?',
+          question: 'What effect do the rhetorical questions at the end of each stanza create?',
           options: [
             'They show the speaker is confused',
             'They challenge the beloved to justify their refusal',
@@ -234,7 +226,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'The rhetorical questions directly challenge the beloved — if all of nature embraces union, why won\'t you? This reveals the persuasive, almost frustrated tone beneath the lyrical surface.',
+            "The rhetorical questions directly challenge the beloved — if all of nature embraces union, why won't you? This reveals the persuasive, almost frustrated tone beneath the lyrical surface.",
         },
         {
           id: 'aqa-lr-m2-q3',
@@ -251,17 +243,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m2-q4',
-          question:
-            'Which poem offers the best contrast as a Romantic perspective on lost love?',
-          options: [
-            'Follower',
-            'When We Two Parted',
-            'Walking Away',
-            'Eden Rock',
-          ],
+          question: 'Which poem offers the best contrast as a Romantic perspective on lost love?',
+          options: ['Follower', 'When We Two Parted', 'Walking Away', 'Eden Rock'],
           correct: 1,
           explanation:
-            'When We Two Parted is also a Romantic poem about love, but Byron\'s speaker mourns love that has ended, while Shelley\'s speaker desperately pursues love that has not yet been given.',
+            "When We Two Parted is also a Romantic poem about love, but Byron's speaker mourns love that has ended, while Shelley's speaker desperately pursues love that has not yet been given.",
         },
         {
           id: 'aqa-lr-m2-q5',
@@ -353,27 +339,20 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m3-q1',
-          question:
-            "What form is Porphyria's Lover written in?",
-          options: [
-            'Sonnet',
-            'Dramatic monologue',
-            'Ballad',
-            'Free verse',
-          ],
+          question: "What form is Porphyria's Lover written in?",
+          options: ['Sonnet', 'Dramatic monologue', 'Ballad', 'Free verse'],
           correct: 1,
           explanation:
             "Porphyria's Lover is a dramatic monologue — a single speaker addresses a silent listener, revealing their disturbed psychology through what they say.",
         },
         {
           id: 'aqa-lr-m3-q2',
-          question:
-            'What does the repetition of "mine, mine" reveal about the speaker?',
+          question: 'What does the repetition of "mine, mine" reveal about the speaker?',
           options: [
             'He is generous and selfless',
             'He is obsessed with possessing Porphyria',
             'He is afraid of losing his home',
-            'He is quoting Porphyria\'s words',
+            "He is quoting Porphyria's words",
           ],
           correct: 1,
           explanation:
@@ -381,8 +360,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m3-q3',
-          question:
-            'Why is the final line — "And yet God has not said a word!" — significant?',
+          question: 'Why is the final line — "And yet God has not said a word!" — significant?',
           options: [
             'It proves God approves of the murder',
             'It shows the speaker is an atheist',
@@ -391,26 +369,19 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 2,
           explanation:
-            'The speaker takes God\'s silence as approval of the murder, but the reader recognises this as self-delusion. Absence of punishment is not the same as divine sanction.',
+            "The speaker takes God's silence as approval of the murder, but the reader recognises this as self-delusion. Absence of punishment is not the same as divine sanction.",
         },
         {
           id: 'aqa-lr-m3-q4',
-          question:
-            "Which poem offers the best comparison for a male speaker's obsessive desire?",
-          options: [
-            'Walking Away',
-            'Eden Rock',
-            "The Farmer's Bride",
-            'Follower',
-          ],
+          question: "Which poem offers the best comparison for a male speaker's obsessive desire?",
+          options: ['Walking Away', 'Eden Rock', "The Farmer's Bride", 'Follower'],
           correct: 2,
           explanation:
             "The Farmer's Bride also features a male speaker fixated on a woman he cannot fully possess, though the farmer's desire has not yet escalated to violence.",
         },
         {
           id: 'aqa-lr-m3-q5',
-          question:
-            'What is the effect of "I found a thing to do"?',
+          question: 'What is the effect of "I found a thing to do"?',
           options: [
             'It shows the speaker carefully planned the murder',
             'Its chilling understatement reduces murder to a casual task',
@@ -555,8 +526,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m4-q1',
-          question:
-            'What form does Barrett Browning use for Sonnet 29?',
+          question: 'What form does Barrett Browning use for Sonnet 29?',
           options: [
             'Shakespearean sonnet',
             'Petrarchan sonnet',
@@ -569,11 +539,10 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m4-q2',
-          question:
-            'What does the extended metaphor of vines and a tree represent?',
+          question: 'What does the extended metaphor of vines and a tree represent?',
           options: [
-            'The speaker\'s thoughts (vines) obscuring the real beloved (tree)',
-            'The beloved\'s control over the speaker',
+            "The speaker's thoughts (vines) obscuring the real beloved (tree)",
+            "The beloved's control over the speaker",
             'A literal garden the couple share',
             'The passage of time',
           ],
@@ -583,8 +552,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m4-q3',
-          question:
-            'How does the poem\'s ending contrast with its opening?',
+          question: "How does the poem's ending contrast with its opening?",
           options: [
             'It shifts from happiness to sadness',
             'It moves from "I think of thee" to "I do not think of thee" — rejecting thought for real presence',
@@ -597,8 +565,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m4-q4',
-          question:
-            'Why is the context of Barrett Browning\'s secret courtship important?',
+          question: "Why is the context of Barrett Browning's secret courtship important?",
           options: [
             'It explains why the poem is about nature',
             'It shows why the speaker longs for physical presence — the couple communicated mainly through letters',
@@ -607,7 +574,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'Barrett Browning and Robert Browning conducted their courtship largely through letters because her father forbade marriage. This context illuminates the poem\'s tension between imagined love and physical presence.',
+            "Barrett Browning and Robert Browning conducted their courtship largely through letters because her father forbade marriage. This context illuminates the poem's tension between imagined love and physical presence.",
         },
       ],
     },
@@ -707,8 +674,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m5-q1',
-          question:
-            'Why is the title "Neutral Tones" ironic?',
+          question: 'Why is the title "Neutral Tones" ironic?',
           options: [
             'The poem is very colourful',
             'The poem is saturated with bitterness despite claiming neutrality',
@@ -721,8 +687,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m5-q2',
-          question:
-            'What does the phrase "the deadest thing" achieve when describing a smile?',
+          question: 'What does the phrase "the deadest thing" achieve when describing a smile?',
           options: [
             'It creates a cheerful contrast',
             'It creates an oxymoron — a smile (usually lively) is presented as lifeless',
@@ -735,8 +700,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m5-q3',
-          question:
-            'How does Hardy\'s use of nature differ from the Romantic poets?',
+          question: "How does Hardy's use of nature differ from the Romantic poets?",
           options: [
             'Hardy uses tropical settings instead of English ones',
             'Hardy presents nature as indifferent and desolate rather than beautiful and alive',
@@ -751,15 +715,10 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           id: 'aqa-lr-m5-q4',
           question:
             'Which poem contrasts well with Neutral Tones through its use of winter imagery that leads to reconciliation?',
-          options: [
-            'Climbing My Grandfather',
-            'Singh Song!',
-            'Winter Swans',
-            'Follower',
-          ],
+          options: ['Climbing My Grandfather', 'Singh Song!', 'Winter Swans', 'Follower'],
           correct: 2,
           explanation:
-            'Winter Swans by Owen Sheers also uses a winter landscape and water imagery, but unlike Hardy\'s poem, it moves towards reconciliation and renewed connection between the couple.',
+            "Winter Swans by Owen Sheers also uses a winter landscape and water imagery, but unlike Hardy's poem, it moves towards reconciliation and renewed connection between the couple.",
         },
       ],
     },
@@ -892,8 +851,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m6-q1',
-          question:
-            'Why is the relationship in Letters from Yorkshire considered ambiguous?',
+          question: 'Why is the relationship in Letters from Yorkshire considered ambiguous?',
           options: [
             'The speaker never names the other person',
             'Dooley deliberately avoids labelling it — they could be lovers, friends, or relatives',
@@ -906,8 +864,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m6-q2',
-          question:
-            'What does the image "pouring air and light into an envelope" suggest?',
+          question: 'What does the image "pouring air and light into an envelope" suggest?',
           options: [
             'The man is sending empty letters',
             'His letters carry the essence of his rural world to the speaker',
@@ -924,27 +881,21 @@ export const aqaLoveRelationshipsCourse: CourseData = {
             'What does the rhetorical question "Is his life more real because he digs?" reveal?',
           options: [
             'The speaker thinks gardening is pointless',
-            'The speaker\'s admiration for his physical life and insecurity about her own',
+            "The speaker's admiration for his physical life and insecurity about her own",
             'The speaker wants to become a farmer',
             'The speaker dislikes Yorkshire',
           ],
           correct: 1,
           explanation:
-            'The question reveals the speaker\'s tension between admiring his tangible, physical engagement with nature and questioning whether her indoor, intellectual life is less authentic.',
+            "The question reveals the speaker's tension between admiring his tangible, physical engagement with nature and questioning whether her indoor, intellectual life is less authentic.",
         },
         {
           id: 'aqa-lr-m6-q4',
-          question:
-            'Which poem also explores maintaining connection across physical distance?',
-          options: [
-            'Porphyria\'s Lover',
-            'Neutral Tones',
-            'Sonnet 29',
-            'Climbing My Grandfather',
-          ],
+          question: 'Which poem also explores maintaining connection across physical distance?',
+          options: ["Porphyria's Lover", 'Neutral Tones', 'Sonnet 29', 'Climbing My Grandfather'],
           correct: 2,
           explanation:
-            'Sonnet 29 by Barrett Browning also explores love across distance, though Barrett Browning\'s speaker finds thoughts inadequate and craves physical presence, while Dooley\'s speaker finds written communication sufficient.',
+            "Sonnet 29 by Barrett Browning also explores love across distance, though Barrett Browning's speaker finds thoughts inadequate and craves physical presence, while Dooley's speaker finds written communication sufficient.",
         },
       ],
     },
@@ -1042,8 +993,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m7-q1',
-          question:
-            'Why is the bride compared to animals throughout the poem?',
+          question: 'Why is the bride compared to animals throughout the poem?',
           options: [
             'She works on the farm',
             'The animal similes dehumanise her, presenting her as prey to be caught',
@@ -1052,15 +1002,14 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'The repeated animal similes (mouse, hare, leveret) dehumanise the bride, reducing her to a frightened creature. This reflects the farmer\'s inability to see her as a full person with her own agency.',
+            "The repeated animal similes (mouse, hare, leveret) dehumanise the bride, reducing her to a frightened creature. This reflects the farmer's inability to see her as a full person with her own agency.",
         },
         {
           id: 'aqa-lr-m7-q2',
-          question:
-            'What is disturbing about the final lines of the poem?',
+          question: 'What is disturbing about the final lines of the poem?',
           options: [
             'The farmer decides to leave',
-            'The farmer\'s language fragments with escalating sexual desire, suggesting he may act on it',
+            "The farmer's language fragments with escalating sexual desire, suggesting he may act on it",
             'The bride escapes',
             'The community intervenes',
           ],
@@ -1070,8 +1019,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m7-q3',
-          question:
-            'What does the verb "chose" in the opening line reveal about the marriage?',
+          question: 'What does the verb "chose" in the opening line reveal about the marriage?',
           options: [
             'The couple chose each other equally',
             'The farmer selected her like a commodity — she had no agency',
@@ -1084,22 +1032,15 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m7-q4',
-          question:
-            "Which poem is the best comparison for a male speaker with threatening desire?",
-          options: [
-            'Eden Rock',
-            "Porphyria's Lover",
-            'Walking Away',
-            'Follower',
-          ],
+          question: 'Which poem is the best comparison for a male speaker with threatening desire?',
+          options: ['Eden Rock', "Porphyria's Lover", 'Walking Away', 'Follower'],
           correct: 1,
           explanation:
             "Porphyria's Lover also features a male speaker whose desire for a woman becomes possessive and dangerous. Both poems use dramatic monologue to expose disturbing male psychology.",
         },
         {
           id: 'aqa-lr-m7-q5',
-          question:
-            'What is the significance of the bride being voiceless throughout the poem?',
+          question: 'What is the significance of the bride being voiceless throughout the poem?',
           options: [
             'She cannot speak English',
             'Her silence mirrors her powerlessness — she is spoken about but never speaks for herself',
@@ -1108,7 +1049,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'The bride\'s voicelessness is structural — she is the subject of the poem but has no agency within it. This mirrors her position in the marriage: controlled, silenced, and powerless.',
+            "The bride's voicelessness is structural — she is the subject of the poem but has no agency within it. This mirrors her position in the marriage: controlled, silenced, and powerless.",
         },
       ],
     },
@@ -1124,12 +1065,12 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <h2>Walking Away — Cecil Day-Lewis</h2>
 
 <h3>Context</h3>
-<p><strong>Cecil Day-Lewis</strong> (1904–1972) was Poet Laureate and the father of actor Daniel Day-Lewis. This poem recalls watching his son <strong>Sean</strong> walk away to his first day of school — specifically after a football match. Written years after the event, it reflects on how a <strong>parent must let go</strong> of a child for them to grow. Day-Lewis was part of the 1930s generation of politically engaged poets, but this poem is intensely personal rather than political.</p>
+<p><strong>C. Day-Lewis</strong> (1904–1972) was UK <strong>Poet Laureate from 1968 until his death in 1972</strong>. The poem was published in <strong>1956</strong> in <em>The Gate and Other Poems</em> and is dedicated to his eldest son <strong>Sean Day-Lewis</strong> (the journalist), who at age 18 had just started boarding school. (Important: this is <em>not</em> Daniel Day-Lewis the actor — Daniel was the poet's youngest son and was not yet born when the poem was written in 1956.) Written eighteen years after watching his young son play his first football match, it reflects on how a <strong>parent must let go</strong> of a child for them to grow. Day-Lewis was part of the 1930s generation of politically engaged poets, but this poem is intensely personal rather than political.</p>
 
 <h3>Form &amp; Structure</h3>
 <ul>
-  <li><strong>Four quintains</strong> (five-line stanzas) with a loose <strong>ABACA</strong> rhyme scheme — the regularity reflects the father's attempt to impose order on painful emotions.</li>
-  <li>The poem moves from <strong>memory</strong> (stanzas 1–2) to <strong>reflection</strong> (stanzas 3–4), deepening in emotional insight.</li>
+  <li><strong>Five quintains</strong> (five-line stanzas) with a loose <strong>ABACA</strong> rhyme scheme — the regularity reflects the father's attempt to impose order on painful emotions.</li>
+  <li>The poem moves from <strong>memory</strong> (stanzas 1–3) to <strong>reflection</strong> (stanzas 4–5), deepening in emotional insight.</li>
   <li><strong>Enjambment</strong> between lines mirrors the sense of something being drawn out — the slow, painful process of letting go.</li>
   <li>The final two lines form a <strong>couplet-like conclusion</strong> that delivers the poem's central message about love.</li>
 </ul>
@@ -1205,11 +1146,10 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m8-q1',
-          question:
-            'What does the metaphor "a satellite wrenched from its orbit" suggest?',
+          question: 'What does the metaphor "a satellite wrenched from its orbit" suggest?',
           options: [
             'The child is interested in space',
-            'Separation is violent and painful — the child is pulled from the parent\'s influence',
+            "Separation is violent and painful — the child is pulled from the parent's influence",
             'The parent is a planet',
             'The child is travelling abroad',
           ],
@@ -1219,8 +1159,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m8-q2',
-          question:
-            'What is the poem\'s central message in the final line?',
+          question: "What is the poem's central message in the final line?",
           options: [
             'Children should never leave home',
             'Love is proved in the letting go — true love means allowing separation',
@@ -1233,8 +1172,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m8-q3',
-          question:
-            'Why does the speaker remember this moment so precisely after eighteen years?',
+          question: 'Why does the speaker remember this moment so precisely after eighteen years?',
           options: [
             'He wrote it down at the time',
             'The moment was so emotionally significant that it became permanently etched in memory',
@@ -1248,16 +1186,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         {
           id: 'aqa-lr-m8-q4',
           question:
-            'Which poem offers the best comparison from the child\'s perspective of parent-child separation?',
-          options: [
-            'Neutral Tones',
-            'Mother, any distance',
-            'Singh Song!',
-            'Love\'s Philosophy',
-          ],
+            "Which poem offers the best comparison from the child's perspective of parent-child separation?",
+          options: ['Neutral Tones', 'Mother, any distance', 'Singh Song!', "Love's Philosophy"],
           correct: 1,
           explanation:
-            'Mother, any distance by Simon Armitage also explores parent-child separation using extended metaphor, but from the child\'s perspective — he is the one leaving, while the mother holds on.',
+            "Mother, any distance by Simon Armitage also explores parent-child separation using extended metaphor, but from the child's perspective — he is the one leaving, while the mother holds on.",
         },
       ],
     },
@@ -1273,7 +1206,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <h2>Eden Rock — Charles Causley</h2>
 
 <h3>Context</h3>
-<p><strong>Charles Causley</strong> (1917–2003) was a Cornish poet whose father died from war injuries when Causley was seven. This deeply personal poem imagines the speaker's <strong>dead parents</strong> waiting for him at a place called "Eden Rock" — a real location in Cornwall where the family picnicked. The poem can be read as a vision of the <strong>afterlife</strong>, a dream, or simply a powerful act of memory. The name "Eden" evokes the <strong>Garden of Eden</strong> — paradise, innocence, and a place before loss.</p>
+<p><strong>Charles Causley</strong> (1917–2003) was a Cornish poet whose father died from war injuries when Causley was seven. This deeply personal poem imagines the speaker's <strong>dead parents</strong> waiting for him at "Eden Rock" — an invented threshold place. Causley confirmed in interview: "I have no idea, I mean I made it up!" Some interpretations link it to the biblical Eden + Causley's Cornish landscape, but the place itself is fictional. The poem can be read as a vision of the <strong>afterlife</strong>, a dream, or simply a powerful act of memory. The name "Eden" evokes the <strong>Garden of Eden</strong> — paradise, innocence, and a place before loss.</p>
 
 <h3>Form &amp; Structure</h3>
 <ul>
@@ -1293,7 +1226,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <h3>Key Quotations &amp; Analysis</h3>
 
-<div class="text-extract">"They are waiting for me somewhere beyond Eden Rock"<div class="source">Stanza 1</div></div>
+<div class="text-extract">"They are waiting for me somewhere beyond Eden Rock:"<div class="source">Stanza 1</div></div>
 <p>The opening establishes the parents as <strong>waiting</strong> — patient, loving, present. <strong>"Beyond"</strong> hints at the afterlife. The name <strong>"Eden"</strong> evokes paradise and innocence.</p>
 
 <div class="text-extract">"My father, twenty-five, in the same suit"<div class="source">Stanza 1</div></div>
@@ -1311,7 +1244,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <div class="text-extract">"They beckon to me from the other bank"<div class="source">Stanza 4</div></div>
 <p>The <strong>"other bank"</strong> of the stream represents the boundary between life and death. The parents <strong>"beckon"</strong> — they invite but do not force, maintaining the poem's gentle, loving tone.</p>
 
-<div class="text-extract">"I had not thought it would be like this"<div class="source">Final stanza</div></div>
+<div class="text-extract">"I had not thought that it would be like this."<div class="source">Final stanza</div></div>
 <p>The poem's enigmatic final line. <strong>"This"</strong> could refer to death, reunion, or the afterlife. The tone is calm acceptance rather than fear — death is not frightening but familiar, a return to loved ones.</p>
 
 <div class="text-extract">"Slowly the wicker gate"<div class="source">Stanza 3</div></div>
@@ -1330,14 +1263,14 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <h3>Key Quotation Bank for Essays</h3>
 <ul>
-  <li>"They are waiting for me somewhere beyond Eden Rock" — Opening; establishing waiting and paradise</li>
+  <li>"They are waiting for me somewhere beyond Eden Rock:" — Opening; establishing waiting and paradise</li>
   <li>"My father, twenty-five, in the same suit" — Hyper-specific detail; vivid memory or photograph</li>
   <li>"Her hair, the colour of wheat" — Natural simile; warmth and abundance</li>
   <li>"The sky whitens as if lit by three suns" — Gradual illumination; supernatural atmosphere</li>
   <li>"my mother shades her eyes" — Ordinary human gesture within extraordinary scene</li>
   <li>"They beckon to me from the other bank" — Invitation without force; gentle</li>
   <li>"Slowly the wicker gate" — Gradual threshold; transitional space</li>
-  <li>"I had not thought it would be like this" — Calm acceptance; surprised peace</li>
+  <li>"I had not thought that it would be like this." — Calm acceptance; surprised peace</li>
   <li>"the colour of wheat" — Nourishment and warmth</li>
   <li>"beyond Eden Rock" — Paradise and innocence</li>
 </ul>
@@ -1354,8 +1287,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m9-q1',
-          question:
-            'What does the name "Eden Rock" symbolically suggest?',
+          question: 'What does the name "Eden Rock" symbolically suggest?',
           options: [
             'A dangerous cliff',
             'Paradise, innocence and a pre-loss state — evoking the Garden of Eden',
@@ -1368,13 +1300,12 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m9-q2',
-          question:
-            'What does "the other bank" of the stream symbolise?',
+          question: 'What does "the other bank" of the stream symbolise?',
           options: [
             'A different country',
             'The boundary between life and death',
             'A financial institution',
-            'The speaker\'s workplace',
+            "The speaker's workplace",
           ],
           correct: 1,
           explanation:
@@ -1382,8 +1313,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m9-q3',
-          question:
-            'Why are the parents described with such precise, specific details?',
+          question: 'Why are the parents described with such precise, specific details?',
           options: [
             'The speaker is writing a police report',
             'The hyper-specific details suggest vivid memory or a photograph come to life, making the vision feel real',
@@ -1397,7 +1327,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         {
           id: 'aqa-lr-m9-q4',
           question:
-            'What is the tone of the final line — "I had not thought it would be like this"?',
+            'What is the tone of the final line — "I had not thought that it would be like this."?',
           options: [
             'Angry and bitter',
             'Calm acceptance — death is not frightening but familiar',
@@ -1485,18 +1415,17 @@ export const aqaLoveRelationshipsCourse: CourseData = {
             'What does the simile "shoulders globed like a full sail" suggest about the father?',
           options: [
             'He is a sailor',
-            'He is heroic, powerful, and larger than life in the child\'s eyes',
+            "He is heroic, powerful, and larger than life in the child's eyes",
             'He is overweight',
             'He is cold',
           ],
           correct: 1,
           explanation:
-            'The simile presents the father\'s shoulders as filling the child\'s vision like a sail fills with wind — he is powerful, heroic, and a force of nature in the eyes of his admiring son.',
+            "The simile presents the father's shoulders as filling the child's vision like a sail fills with wind — he is powerful, heroic, and a force of nature in the eyes of his admiring son.",
         },
         {
           id: 'aqa-lr-m10-q2',
-          question:
-            'What is the effect of the final stanza\'s shift to present tense?',
+          question: "What is the effect of the final stanza's shift to present tense?",
           options: [
             'It introduces a new character',
             'It delivers a devastating role reversal — the strong father now stumbles behind his son',
@@ -1509,8 +1438,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m10-q3',
-          question:
-            'Why is the final line "will not go away" ambiguous?',
+          question: 'Why is the final line "will not go away" ambiguous?',
           options: [
             'It could mean the father is physically present, or that he is a memory that haunts the speaker — suggesting love, guilt, or frustration',
             'It is written in a dialect the reader cannot understand',
@@ -1524,16 +1452,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         {
           id: 'aqa-lr-m10-q4',
           question:
-            'Which poem offers the best comparison from the parent\'s perspective of a child leaving?',
-          options: [
-            'Neutral Tones',
-            'Walking Away',
-            'Singh Song!',
-            'Love\'s Philosophy',
-          ],
+            "Which poem offers the best comparison from the parent's perspective of a child leaving?",
+          options: ['Neutral Tones', 'Walking Away', 'Singh Song!', "Love's Philosophy"],
           correct: 1,
           explanation:
-            'Walking Away by Cecil Day-Lewis explores the same parent-child dynamic but from the parent\'s perspective. Day-Lewis watches his child leave; Heaney recalls following his father. Together they offer two sides of the same relationship.',
+            "Walking Away by Cecil Day-Lewis explores the same parent-child dynamic but from the parent's perspective. Day-Lewis watches his child leave; Heaney recalls following his father. Together they offer two sides of the same relationship.",
         },
       ],
     },
@@ -1549,7 +1472,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <h2>Mother, any distance — Simon Armitage</h2>
 
 <h3>Detailed Poet Context</h3>
-<p><strong>Simon Armitage (born 1963)</strong> is the current Poet Laureate. He writes in an accessible, conversational style about everyday experiences. This poem describes the speaker and his mother measuring rooms in a new house — a practical domestic task that becomes a metaphor for emotional separation. Armitage grew up in Marsden, West Yorkshire, and his poetry often draws on Northern English life and speech.</p>
+<p><strong>Simon Armitage (born 1963)</strong> has been UK Poet Laureate since May 2019, succeeding Carol Ann Duffy (2009-2019). He grew up in Marsden, West Yorkshire, originally trained as a probation officer, and is a professor at Leeds University; he served as Oxford Professor of Poetry from 2015 to 2019. He writes in an accessible, conversational style about everyday experiences, his poetry often drawing on Northern English life and speech. (Although Armitage's anthology poems include war pieces such as <em>Remains</em> and <em>The Manhunt</em>, he never served in any military or combat role — those poems are based on interviews with veterans, not personal experience.) This poem describes the speaker and his mother measuring rooms in a new house — a practical domestic task that becomes a metaphor for emotional separation.</p>
 
 <p>The poem's power lies in its use of everyday domestic activity to explore complex emotional terrain. By using a measuring tape as an extended metaphor, Armitage transforms a mundane task into a meditation on love, independence, and the painful process of growing away from those who love us.</p>
 
@@ -1661,12 +1584,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m11-q1',
-          question:
-            'What does the measuring tape metaphor represent?',
+          question: 'What does the measuring tape metaphor represent?',
           options: [
-            'The speaker\'s career as a builder',
+            "The speaker's career as a builder",
             'The emotional bond between mother and child being stretched by growing independence',
-            'The mother\'s hobby of sewing',
+            "The mother's hobby of sewing",
             'The length of the poem',
           ],
           correct: 1,
@@ -1675,8 +1597,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m11-q2',
-          question:
-            'What do the single-word sentences "Anchor. Kite." represent?',
+          question: 'What do the single-word sentences "Anchor. Kite." represent?',
           options: [
             'Two objects in the new house',
             'The mother (grounding, stable) and the speaker (free, airborne, still tethered)',
@@ -1689,8 +1610,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m11-q3',
-          question:
-            'Why is it significant that the poem is roughly a sonnet?',
+          question: 'Why is it significant that the poem is roughly a sonnet?',
           options: [
             'Sonnets are always 14 lines',
             'Armitage subverts the love sonnet tradition by applying it to maternal love, suggesting it is as intense as romantic love',
@@ -1703,8 +1623,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m11-q4',
-          question:
-            'What does the ending "to fall or fly" suggest about independence?',
+          question: 'What does the ending "to fall or fly" suggest about independence?',
           options: [
             'The speaker is a pilot',
             'Independence is a gamble — it could lead to success or failure',
@@ -1746,12 +1665,12 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <h3>Structural Analysis</h3>
 <p><strong>Three Time Periods:</strong> The poem moves between the mother's youth (before birth), early childhood memories, and the present, showing how the speaker reconstructs her mother's past.</p>
 
-<p><strong>Countdown Structure:</strong> "I'm ten years away from the corner you turn" — the speaker counts down to her own birth. She is a presence approaching from the future, about to change her mother's life forever.</p>
+<p><strong>Countdown Structure:</strong> "I'm ten years away from the corner you laugh on" — the speaker counts down to her own birth. She is a presence approaching from the future, about to change her mother's life forever.</p>
 
 <p><strong>Present Tense for Past Events:</strong> Using present tense for past events makes the mother's youth feel vivid and alive rather than distant history.</p>
 
 <h3>Line-by-Line Analysis</h3>
-<p><strong>Stanza 1, Lines 1–2:</strong> "I'm ten years away from the corner you turn" — The speaker counts down to her own birth. "The corner you turn" suggests fate and inevitability. The child is a presence approaching from the future.</p>
+<p><strong>Stanza 1, Lines 1–2:</strong> "I'm ten years away from the corner you laugh on" — The speaker counts down to her own birth. The image of a street corner suggests fate and inevitability. The child is a presence approaching from the future.</p>
 
 <p><strong>Stanza 1, Line 3:</strong> "your polka-dot dress blows round your legs" — A vivid, cinematic image evoking Marilyn Monroe and 1950s glamour. Suggests freedom, beauty, and sensuality.</p>
 
@@ -1782,8 +1701,8 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <h3>Key Quotations &amp; Analysis</h3>
 
-<div class="text-extract">"I'm ten years away from the corner you turn"<div class="source">Stanza 1</div></div>
-<p>The speaker counts down to her own birth — she is a <strong>presence approaching</strong> from the future, about to change her mother's life forever. "The corner you turn" suggests fate and inevitability.</p>
+<div class="text-extract">"I'm ten years away from the corner you laugh on"<div class="source">Stanza 1</div></div>
+<p>The speaker counts down to her own birth — she is a <strong>presence approaching</strong> from the future, about to change her mother's life forever. The image of a street corner suggests fate and inevitability.</p>
 
 <div class="text-extract">"your polka-dot dress blows round your legs"<div class="source">Stanza 1</div></div>
 <p>A vivid, cinematic image evoking <strong>Marilyn Monroe</strong> and 1950s glamour. The wind-blown dress suggests freedom, beauty, and sensuality — qualities the speaker associates with her mother's pre-motherhood life.</p>
@@ -1816,7 +1735,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <h3>Key Quotation Bank for Essays</h3>
 <ul>
-  <li>"I'm ten years away from the corner you turn" — Countdown to own birth</li>
+  <li>"I'm ten years away from the corner you laugh on" — Countdown to own birth</li>
   <li>"your polka-dot dress blows round your legs" — Marilyn Monroe-esque glamour</li>
   <li>"the decade ahead of my loud, possessive yell" — Birth as intrusion</li>
   <li>"you reckon it's worth it" — Mother's uncertain calculation of motherhood</li>
@@ -1839,8 +1758,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m12-q1',
-          question:
-            'What does the possessive "Mine" in the title suggest?',
+          question: 'What does the possessive "Mine" in the title suggest?',
           options: [
             'The mother belongs to the speaker',
             'The child claims ownership of the mother, reversing the usual parent-child dynamic',
@@ -1853,11 +1771,10 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m12-q2',
-          question:
-            'Why does Duffy describe the baby\'s first cry as a "loud, possessive yell"?',
+          question: 'Why does Duffy describe the baby\'s first cry as a "loud, possessive yell"?',
           options: [
             'Babies are naturally loud',
-            'It acknowledges that the child\'s arrival claimed the mother, ending her carefree youth',
+            "It acknowledges that the child's arrival claimed the mother, ending her carefree youth",
             'The speaker had a difficult birth',
             'The hospital was noisy',
           ],
@@ -1867,8 +1784,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m12-q3',
-          question:
-            'What is the significance of the Marilyn Monroe reference?',
+          question: 'What is the significance of the Marilyn Monroe reference?',
           options: [
             'The mother was a film actress',
             'It links the mother to 1950s glamour and beauty, but also carries tragic undertones',
@@ -1877,18 +1793,12 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'Marilyn Monroe represents glamour, beauty and freedom, which the speaker associates with her mother\'s youth. But Monroe\'s tragic life also hints that such glamour is fragile and temporary.',
+            "Marilyn Monroe represents glamour, beauty and freedom, which the speaker associates with her mother's youth. But Monroe's tragic life also hints that such glamour is fragile and temporary.",
         },
         {
           id: 'aqa-lr-m12-q4',
-          question:
-            'Which poem also reconstructs a parent as a young person through memory?',
-          options: [
-            'Neutral Tones',
-            'Eden Rock',
-            'Singh Song!',
-            'Love\'s Philosophy',
-          ],
+          question: 'Which poem also reconstructs a parent as a young person through memory?',
+          options: ['Neutral Tones', 'Eden Rock', 'Singh Song!', "Love's Philosophy"],
           correct: 1,
           explanation:
             'Eden Rock by Charles Causley also presents parents as young people, frozen in time through memory. Both poems create vivid, idealised portraits of parents in their youth.',
@@ -1963,8 +1873,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m13-q1',
-          question:
-            'Why is the shift from tercets to a final couplet significant?',
+          question: 'Why is the shift from tercets to a final couplet significant?',
           options: [
             'It was a printing error',
             'The move from three-line to two-line stanza mirrors the couple coming together as a pair',
@@ -1973,12 +1882,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'The structural shift from three-line stanzas to a final couplet mirrors the poem\'s emotional arc — the couple, who have been apart, finally come together as a pair. Form enacts meaning.',
+            "The structural shift from three-line stanzas to a final couplet mirrors the poem's emotional arc — the couple, who have been apart, finally come together as a pair. Form enacts meaning.",
         },
         {
           id: 'aqa-lr-m13-q2',
-          question:
-            'What do the swans symbolise in the poem?',
+          question: 'What do the swans symbolise in the poem?',
           options: [
             'Winter and cold',
             'Lifelong fidelity and partnership',
@@ -1991,8 +1899,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m13-q3',
-          question:
-            'What does the metaphor "porcelain" suggest about love?',
+          question: 'What does the metaphor "porcelain" suggest about love?',
           options: [
             'Love is expensive',
             'Love is beautiful but fragile — precious and easily broken',
@@ -2015,12 +1922,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 2,
           explanation:
-            'Neutral Tones by Thomas Hardy also uses a winter waterside setting (a pond), but Hardy\'s poem ends in complete desolation with no reconciliation — making it a powerful contrast with Sheers\'s hopeful ending.',
+            "Neutral Tones by Thomas Hardy also uses a winter waterside setting (a pond), but Hardy's poem ends in complete desolation with no reconciliation — making it a powerful contrast with Sheers's hopeful ending.",
         },
         {
           id: 'aqa-lr-m13-q5',
-          question:
-            'How do the couple reconcile — through words or actions?',
+          question: 'How do the couple reconcile — through words or actions?',
           options: [
             'They have a long conversation',
             'They argue and then apologise',
@@ -2102,22 +2008,20 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m14-q1',
-          question:
-            'Why does Nagra use phonetic spelling and Punjabi-English dialect?',
+          question: 'Why does Nagra use phonetic spelling and Punjabi-English dialect?',
           options: [
             'He cannot spell correctly',
-            'It celebrates the speaker\'s dual cultural and linguistic identity',
+            "It celebrates the speaker's dual cultural and linguistic identity",
             'It is meant to mock the speaker',
             'It is a printing error',
           ],
           correct: 1,
           explanation:
-            'Nagra\'s phonetic spelling is a deliberate celebration of British-Asian identity. The blending of Punjabi and English reflects the speaker\'s dual heritage and enriches the poem\'s voice.',
+            "Nagra's phonetic spelling is a deliberate celebration of British-Asian identity. The blending of Punjabi and English reflects the speaker's dual heritage and enriches the poem's voice.",
         },
         {
           id: 'aqa-lr-m14-q2',
-          question:
-            'How does the wife subvert traditional expectations of an Indian bride?',
+          question: 'How does the wife subvert traditional expectations of an Indian bride?',
           options: [
             'She is very traditional and obedient',
             'She has a red crew cut, swears at her mother-in-law, and is sexually confident',
@@ -2130,11 +2034,10 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m14-q3',
-          question:
-            'What do the customer complaints add to the poem?',
+          question: 'What do the customer complaints add to the poem?',
           options: [
             'They show the shop is successful',
-            'They create comic interludes that highlight the speaker\'s prioritising love over duty',
+            "They create comic interludes that highlight the speaker's prioritising love over duty",
             'They are the main focus of the poem',
             'They show the customers are unreasonable',
           ],
@@ -2144,17 +2047,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m14-q4',
-          question:
-            'Which poem offers the strongest contrast as a depiction of marriage?',
-          options: [
-            'Walking Away',
-            'The Farmer\'s Bride',
-            'Eden Rock',
-            'Follower',
-          ],
+          question: 'Which poem offers the strongest contrast as a depiction of marriage?',
+          options: ['Walking Away', "The Farmer's Bride", 'Eden Rock', 'Follower'],
           correct: 1,
           explanation:
-            'The Farmer\'s Bride depicts a one-sided, frightening marriage where the wife is terrified and voiceless. Singh Song! presents the polar opposite — a marriage built on mutual desire, humour, and joyful partnership.',
+            "The Farmer's Bride depicts a one-sided, frightening marriage where the wife is terrified and voiceless. Singh Song! presents the polar opposite — a marriage built on mutual desire, humour, and joyful partnership.",
         },
       ],
     },
@@ -2229,11 +2126,10 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       quiz: [
         {
           id: 'aqa-lr-m15-q1',
-          question:
-            'What is the poem\'s central extended metaphor?',
+          question: "What is the poem's central extended metaphor?",
           options: [
             'Swimming across a river',
-            'Climbing a mountain to explore the grandfather\'s body, character and life',
+            "Climbing a mountain to explore the grandfather's body, character and life",
             'Building a house',
             'Planting a garden',
           ],
@@ -2243,8 +2139,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m15-q2',
-          question:
-            'What does "without a rope or net" suggest about the relationship?',
+          question: 'What does "without a rope or net" suggest about the relationship?',
           options: [
             'The grandfather is dangerous',
             'The speaker approaches the relationship with vulnerability and trust — no barriers',
@@ -2257,8 +2152,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         },
         {
           id: 'aqa-lr-m15-q3',
-          question:
-            'What is the double meaning of "knowing the height of him"?',
+          question: 'What is the double meaning of "knowing the height of him"?',
           options: [
             'The grandfather is very tall',
             'Literally reaching the top of the climb; metaphorically achieving full understanding of the man',
@@ -2272,21 +2166,15 @@ export const aqaLoveRelationshipsCourse: CourseData = {
         {
           id: 'aqa-lr-m15-q4',
           question:
-            'Which poem also presents a child\'s admiring physical observation of a male relative?',
-          options: [
-            'Love\'s Philosophy',
-            'Follower',
-            'Neutral Tones',
-            'Letters from Yorkshire',
-          ],
+            "Which poem also presents a child's admiring physical observation of a male relative?",
+          options: ["Love's Philosophy", 'Follower', 'Neutral Tones', 'Letters from Yorkshire'],
           correct: 1,
           explanation:
             'Follower by Seamus Heaney also features a child closely observing and admiring a male relative (his father) through detailed physical description. Both poems use physical closeness to convey emotional intimacy.',
         },
         {
           id: 'aqa-lr-m15-q5',
-          question:
-            'Why is the single continuous stanza significant?',
+          question: 'Why is the single continuous stanza significant?',
           options: [
             'Waterhouse forgot to add stanza breaks',
             'The unbroken stanza mirrors the sustained, continuous effort of the climb and the unbroken bond',
@@ -2300,4 +2188,4 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       ],
     },
   ],
-};
+}

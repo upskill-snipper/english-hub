@@ -34,7 +34,7 @@ const wifeInLondon: PoemData = {
         },
         {
           type: 'Pathetic fallacy',
-          note: 'The fog reflects the wife\'s emotional state - obscured, suffocating, hopeless. The weather embodies her grief.',
+          note: "The fog reflects the wife's emotional state - obscured, suffocating, hopeless. The weather embodies her grief.",
           color: '#a855f7',
         },
       ],
@@ -69,7 +69,7 @@ const wifeInLondon: PoemData = {
         },
         {
           type: 'Key quote',
-          note: 'The simile makes the wife\'s vulnerability physical - she is a flickering flame about to be extinguished by the news she is about to receive.',
+          note: "The simile makes the wife's vulnerability physical - she is a flickering flame about to be extinguished by the news she is about to receive.",
           color: '#f59e0b',
         },
       ],
@@ -85,7 +85,7 @@ const wifeInLondon: PoemData = {
       ],
     },
     {
-      text: 'A messenger\'s knock cracks smartly,',
+      text: "A messenger's knock cracks smartly,",
       annotations: [
         {
           type: 'Onomatopoeia',
@@ -155,7 +155,7 @@ const wifeInLondon: PoemData = {
       ],
     },
     {
-      text: '\'Tis the morrow; the fog hangs thicker,',
+      text: "'Tis the morrow; the fog hangs thicker,",
       annotations: [
         {
           type: 'Time shift',
@@ -259,7 +259,7 @@ const wifeInLondon: PoemData = {
         },
         {
           type: 'Key quote',
-          note: 'The closing line is the dead husband\'s voice, full of love and plans. The cruelty is that the wife reads it after she knows he is gone.',
+          note: "The closing line is the dead husband's voice, full of love and plans. The cruelty is that the wife reads it after she knows he is gone.",
           color: '#f59e0b',
         },
       ],
@@ -322,7 +322,7 @@ Closure: The poem ends not with the wife\'s reaction but with the dead husband\'
       themes: ['Simile', 'Foreshadowing', 'Cold'],
     },
     {
-      quote: 'A messenger\'s knock cracks smartly',
+      quote: "A messenger's knock cracks smartly",
       analysis:
         'The verb "cracks" is violent - the knock physically breaks the silence and the wife\'s peace. "Smartly" makes the messenger sound efficient, businesslike - the bureaucracy of war contrasts with the human catastrophe being delivered.',
       themes: ['Sudden violence', 'Onomatopoeia', 'Bureaucracy'],
@@ -336,7 +336,7 @@ Closure: The poem ends not with the wife\'s reaction but with the dead husband\'
     {
       quote: 'His hand, whom the worm now knows',
       analysis:
-        'The most devastating image in the poem. The wife recognises her husband\'s handwriting on the envelope - but his actual hand has now been eaten by worms in the African earth. The familiar (his writing) and the horrifying (his decay) are placed side by side.',
+        "The most devastating image in the poem. The wife recognises her husband's handwriting on the envelope - but his actual hand has now been eaten by worms in the African earth. The familiar (his writing) and the horrifying (his decay) are placed side by side.",
       themes: ['Death', 'Decay', 'Body and absence'],
     },
     {
@@ -378,7 +378,7 @@ Closure: The poem ends not with the wife\'s reaction but with the dead husband\'
       device: 'Punctuation (dashes)',
       example: 'He — has fallen — in the far South Land ... Fresh — firm — penned',
       effect:
-        'The dashes mimic the wife\'s halting, breathless speech and reading. They mark moments of shock where she cannot continue. The visual fragmentation on the page enacts the emotional fragmentation of grief.',
+        "The dashes mimic the wife's halting, breathless speech and reading. They mark moments of shock where she cannot continue. The visual fragmentation on the page enacts the emotional fragmentation of grief.",
       lineRef: 11,
     },
     {
@@ -399,14 +399,14 @@ Closure: The poem ends not with the wife\'s reaction but with the dead husband\'
       device: 'Two-part structure',
       example: 'I - The Tragedy / II - The Irony',
       effect:
-        'Hardy formally announces the poem\'s structure with section titles. The two parts create a dramatic before/after. The labels also signal Hardy\'s argument: the universe arranges events to maximise suffering.',
+        "Hardy formally announces the poem's structure with section titles. The two parts create a dramatic before/after. The labels also signal Hardy's argument: the universe arranges events to maximise suffering.",
       lineRef: 1,
     },
     {
       device: 'Diction (cold imagery)',
       example: 'glimmers cold ... worm now knows ... fog hangs thicker',
       effect:
-        'Hardy chooses cold, dead, dark words throughout. The vocabulary creates a consistent atmosphere of gloom and lifelessness. The wife\'s warm hopes (and her dead husband\'s) cannot survive in this environment.',
+        "Hardy chooses cold, dead, dark words throughout. The vocabulary creates a consistent atmosphere of gloom and lifelessness. The wife's warm hopes (and her dead husband's) cannot survive in this environment.",
       lineRef: 5,
     },
   ],
@@ -426,7 +426,7 @@ const comparisons = [
     poet: 'William Blake',
     href: '/revision/poetry/eduqas/london',
     reason:
-      'Both poems use London as a setting for grief and oppression. Hardy\'s personal tragedy and Blake\'s political critique both make the city itself feel hostile and suffocating.',
+      "Both poems use London as a setting for grief and oppression. Hardy's personal tragedy and Blake's political critique both make the city itself feel hostile and suffocating.",
     themes: ['London setting', 'Grief', 'Oppression'],
   },
   {
@@ -434,28 +434,209 @@ const comparisons = [
     poet: 'Rupert Brooke',
     href: '/revision/poetry/eduqas/the-soldier',
     reason:
-      'Brooke imagines a noble death; Hardy shows the bureaucratic, painful reality of bereavement. The contrast between Brooke\'s romanticism and Hardy\'s realism is striking.',
+      "Brooke imagines a noble death; Hardy shows the bureaucratic, painful reality of bereavement. The contrast between Brooke's romanticism and Hardy's realism is striking.",
     themes: ['Death in war', 'Romanticism vs realism', 'Soldier and family'],
   },
 ]
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'awl-1', question: 'What happens in the poem?', type: 'multiple-choice', options: ['A wife welcomes her husband home', 'A wife receives news of her husband\'s death in war, then a letter from him arrives the next day', 'A wife writes to her husband', 'A couple argues'], correctIndex: 1, explanation: 'In Part I, a wife receives a telegram telling her that her husband has been killed in the Boer War. In Part II, a letter from him arrives the next day — written before his death, full of plans for their future.', topic: 'Meaning', difficulty: 'foundation' },
-  { id: 'awl-2', question: 'What is the devastating irony of the poem?', type: 'multiple-choice', options: ['The telegram was wrong', 'The letter arrives after the death notice — full of hope and plans that can never be fulfilled', 'She already knew', 'The letter is lost'], correctIndex: 1, explanation: 'The letter, "penned in highest feather" (optimistic), arrives after the telegram announcing death. The husband\'s hopeful plans for their future are now unbearably ironic.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'awl-3', question: 'How does Hardy use pathetic fallacy?', type: 'multiple-choice', options: ['To create sunshine', 'The fog and "tawny vapour" mirror the wife\'s emotional state — obscured, dark, suffocating', 'To describe spring', 'For decoration only'], correctIndex: 1, explanation: 'The November fog that pervades Part I mirrors the wife\'s grief and confusion. The outside world is as obscured and oppressive as her inner world after receiving the death notice.', topic: 'Language', difficulty: 'higher' },
-  { id: 'awl-4', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Two-part structure (Act I and Act II) with regular stanzas — like a two-act tragedy', 'A sonnet', 'Blank verse'], correctIndex: 1, explanation: 'The poem is divided into "The Tragedy" (Part I: the death notice) and "The Irony" (Part II: the letter). This dramatic structure emphasises the cruel twist of timing.', topic: 'Structure', difficulty: 'foundation' },
-  { id: 'awl-5', question: 'When was the poem written and what war does it reference?', type: 'multiple-choice', options: ['1918, WWI', '1899-1900, during the Second Boer War in South Africa', '1854, the Crimean War', '1945, WWII'], correctIndex: 1, explanation: 'Written during the Second Boer War (1899-1902). Hardy opposed the war and used this poem to show its devastating personal cost on those left at home.', topic: 'Context', difficulty: 'higher' },
-  { id: 'awl-6', question: 'What does "penned in highest feather" mean?', type: 'multiple-choice', options: ['Written with a fancy pen', 'Written in high spirits — the husband was optimistic and happy when he wrote the letter', 'Written quickly', 'Written in code'], correctIndex: 1, explanation: '"In highest feather" means in excellent spirits. The husband was happy and optimistic when he wrote — unaware he was about to die. This makes the letter unbearably poignant.', topic: 'Language', difficulty: 'higher' },
-  { id: 'awl-7', question: 'What does the poem suggest about war?', type: 'multiple-choice', options: ['War is glorious', 'War devastates those at home — the wife suffers the cruelest irony of receiving hope after receiving death', 'War is necessary', 'War has no effects on civilians'], correctIndex: 1, explanation: 'Hardy shows war\'s cruelty not through battlefield horror but through domestic devastation. The wife\'s suffering — receiving hope after death — is war\'s cruelest irony.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'awl-8', question: 'How does Hardy\'s choice to show the wife (not the soldier) emphasise his anti-war message?', type: 'multiple-choice', options: ['It doesn\'t', 'By focusing on the civilian victim, Hardy shows that war\'s damage extends far beyond the battlefield into ordinary homes', 'Soldiers are unimportant', 'The wife is a soldier too'], correctIndex: 1, explanation: 'Hardy\'s focus on the wife rather than the soldier shows that war\'s damage radiates outward. The real tragedy is not just death but the ripple of grief it sends through families and homes.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'awl-9', question: 'What effect does the two-part structure create?', type: 'multiple-choice', options: ['It divides the poem in half for no reason', 'The labelling of "The Tragedy" and "The Irony" prepares and frames the reader\'s response — the irony is deliberate and devastating', 'It creates two different poems', 'It makes the poem longer'], correctIndex: 1, explanation: 'By labelling the sections "The Tragedy" and "The Irony", Hardy signals that Part II will deepen Part I\'s pain. The reader knows what\'s coming, which makes it more — not less — devastating.', topic: 'Structure', difficulty: 'grade-9' },
-  { id: 'awl-10', question: 'What does the fog symbolise?', type: 'multiple-choice', options: ['London pollution', 'Grief, confusion, and the obscuring of truth — the wife cannot see clearly, literally or emotionally', 'Morning dew', 'Cooking smoke'], correctIndex: 1, explanation: 'The fog symbolises the wife\'s grief and confusion — she cannot see clearly, physically or emotionally. The truth of her husband\'s death is delivered through a fog of disbelief.', topic: 'Language', difficulty: 'foundation' },
+  {
+    id: 'awl-1',
+    question: 'What happens in the poem?',
+    type: 'multiple-choice',
+    options: [
+      'A wife welcomes her husband home',
+      "A wife receives news of her husband's death in war, then a letter from him arrives the next day",
+      'A wife writes to her husband',
+      'A couple argues',
+    ],
+    correctIndex: 1,
+    explanation:
+      'In Part I, a wife receives a telegram telling her that her husband has been killed in the Boer War. In Part II, a letter from him arrives the next day — written before his death, full of plans for their future.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'awl-2',
+    question: 'What is the devastating irony of the poem?',
+    type: 'multiple-choice',
+    options: [
+      'The telegram was wrong',
+      'The letter arrives after the death notice — full of hope and plans that can never be fulfilled',
+      'She already knew',
+      'The letter is lost',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The letter, "penned in highest feather" (optimistic), arrives after the telegram announcing death. The husband\'s hopeful plans for their future are now unbearably ironic.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'awl-3',
+    question: 'How does Hardy use pathetic fallacy?',
+    type: 'multiple-choice',
+    options: [
+      'To create sunshine',
+      'The fog and "tawny vapour" mirror the wife\'s emotional state — obscured, dark, suffocating',
+      'To describe spring',
+      'For decoration only',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The November fog that pervades Part I mirrors the wife's grief and confusion. The outside world is as obscured and oppressive as her inner world after receiving the death notice.",
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'awl-4',
+    question: 'What form does the poem use?',
+    type: 'multiple-choice',
+    options: [
+      'Free verse',
+      'Two-part structure (Act I and Act II) with regular stanzas — like a two-act tragedy',
+      'A sonnet',
+      'Blank verse',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The poem is divided into "The Tragedy" (Part I: the death notice) and "The Irony" (Part II: the letter). This dramatic structure emphasises the cruel twist of timing.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'awl-5',
+    question: 'When was the poem written and what war does it reference?',
+    type: 'multiple-choice',
+    options: [
+      '1918, WWI',
+      '1899-1900, during the Second Boer War in South Africa',
+      '1854, the Crimean War',
+      '1945, WWII',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Written during the Second Boer War (1899-1902). Hardy opposed the war and used this poem to show its devastating personal cost on those left at home.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'awl-6',
+    question: 'What does "penned in highest feather" mean?',
+    type: 'multiple-choice',
+    options: [
+      'Written with a fancy pen',
+      'Written in high spirits — the husband was optimistic and happy when he wrote the letter',
+      'Written quickly',
+      'Written in code',
+    ],
+    correctIndex: 1,
+    explanation:
+      '"In highest feather" means in excellent spirits. The husband was happy and optimistic when he wrote — unaware he was about to die. This makes the letter unbearably poignant.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'awl-7',
+    question: 'What does the poem suggest about war?',
+    type: 'multiple-choice',
+    options: [
+      'War is glorious',
+      'War devastates those at home — the wife suffers the cruelest irony of receiving hope after receiving death',
+      'War is necessary',
+      'War has no effects on civilians',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Hardy shows war's cruelty not through battlefield horror but through domestic devastation. The wife's suffering — receiving hope after death — is war's cruelest irony.",
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'awl-8',
+    question:
+      "How does Hardy's choice to show the wife (not the soldier) emphasise his anti-war message?",
+    type: 'multiple-choice',
+    options: [
+      "It doesn't",
+      "By focusing on the civilian victim, Hardy shows that war's damage extends far beyond the battlefield into ordinary homes",
+      'Soldiers are unimportant',
+      'The wife is a soldier too',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Hardy's focus on the wife rather than the soldier shows that war's damage radiates outward. The real tragedy is not just death but the ripple of grief it sends through families and homes.",
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'awl-9',
+    question: 'What effect does the two-part structure create?',
+    type: 'multiple-choice',
+    options: [
+      'It divides the poem in half for no reason',
+      'The labelling of "The Tragedy" and "The Irony" prepares and frames the reader\'s response — the irony is deliberate and devastating',
+      'It creates two different poems',
+      'It makes the poem longer',
+    ],
+    correctIndex: 1,
+    explanation:
+      'By labelling the sections "The Tragedy" and "The Irony", Hardy signals that Part II will deepen Part I\'s pain. The reader knows what\'s coming, which makes it more — not less — devastating.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'awl-10',
+    question: 'What does the fog symbolise?',
+    type: 'multiple-choice',
+    options: [
+      'London pollution',
+      'Grief, confusion, and the obscuring of truth — the wife cannot see clearly, literally or emotionally',
+      'Morning dew',
+      'Cooking smoke',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The fog symbolises the wife's grief and confusion — she cannot see clearly, physically or emotionally. The truth of her husband's death is delivered through a fog of disbelief.",
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'A Wife in London explores the devastating personal impact of war, cruel irony, and how death destroys domestic hope.', keyPoints: ['War\'s civilian cost — the wife suffers at home', 'Cruel irony — hope arrives after death', 'Pathetic fallacy — fog mirrors grief', 'Anti-war message through domestic tragedy'] },
-  { topic: 'Language & Imagery', summary: 'Hardy uses pathetic fallacy, dramatic irony, and precise timing to create devastating emotional impact.', keyPoints: ['Fog and "tawny vapour" — grief made physical', '"Penned in highest feather" — cruel optimism', 'Telegram vs letter — death vs hope, wrong order', 'Restrained, precise language intensifies emotion'] },
-  { topic: 'Structure & Form', summary: 'Two-part dramatic structure — "The Tragedy" and "The Irony" — frames the poem as a cruel, two-act drama.', keyPoints: ['"The Tragedy" (Part I) — death notice arrives', '"The Irony" (Part II) — hopeful letter arrives too late', 'Regular stanzas — controlled form for uncontrollable grief', 'Labelling sections guides the reader\'s emotional response'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      'A Wife in London explores the devastating personal impact of war, cruel irony, and how death destroys domestic hope.',
+    keyPoints: [
+      "War's civilian cost — the wife suffers at home",
+      'Cruel irony — hope arrives after death',
+      'Pathetic fallacy — fog mirrors grief',
+      'Anti-war message through domestic tragedy',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary:
+      'Hardy uses pathetic fallacy, dramatic irony, and precise timing to create devastating emotional impact.',
+    keyPoints: [
+      'Fog and "tawny vapour" — grief made physical',
+      '"Penned in highest feather" — cruel optimism',
+      'Telegram vs letter — death vs hope, wrong order',
+      'Restrained, precise language intensifies emotion',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary:
+      'Two-part dramatic structure — "The Tragedy" and "The Irony" — frames the poem as a cruel, two-act drama.',
+    keyPoints: [
+      '"The Tragedy" (Part I) — death notice arrives',
+      '"The Irony" (Part II) — hopeful letter arrives too late',
+      'Regular stanzas — controlled form for uncontrollable grief',
+      "Labelling sections guides the reader's emotional response",
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -473,11 +654,14 @@ export default function WifeInLondonEduqasPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Eduqas Poetry", url: "https://theenglishhub.app/revision/poetry/eduqas" },
-          { name: "A Wife in London", url: "https://theenglishhub.app/revision/poetry/eduqas/a-wife-in-london" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
+          {
+            name: 'A Wife in London',
+            url: 'https://theenglishhub.app/revision/poetry/eduqas/a-wife-in-london',
+          },
         ]}
       />
       <div>
@@ -491,18 +675,26 @@ export default function WifeInLondonEduqasPage() {
           Back to Eduqas Poetry
         </Button>
 
+        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
+          <p className="font-semibold mb-1">Legacy anthology notice</p>
+          <p className="text-amber-100/90 leading-relaxed">
+            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
+            does not include this poem. The content remains as a study reference.
+          </p>
+        </div>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-red-500/10">
             <BookOpen className="size-5 text-red-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              A Wife in London
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">A Wife in London</h1>
             <p className="text-body-sm text-muted-foreground">
               Thomas Hardy &middot; Eduqas Poetry Anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Eduqas</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              Eduqas
+            </Badge>
           </div>
         </div>
       </div>
@@ -526,9 +718,7 @@ export default function WifeInLondonEduqasPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Strong Eduqas pairings for comparison questions involving A Wife in London.
@@ -545,9 +735,7 @@ export default function WifeInLondonEduqasPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span
@@ -564,10 +752,10 @@ export default function WifeInLondonEduqasPage() {
       </section>
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        Poem text is reproduced for the purpose of private study and educational
-        criticism under UK fair-dealing provisions (Copyright, Designs and
-        Patents Act 1988, s.30). No commercial use is intended. All quotations
-        remain the intellectual property of the respective rights holders.
+        Poem text is reproduced for the purpose of private study and educational criticism under UK
+        fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial use
+        is intended. All quotations remain the intellectual property of the respective rights
+        holders.
       </footer>
     </div>
   )

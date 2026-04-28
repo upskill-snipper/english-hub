@@ -1,15 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Sparkles,
-  Swords,
-  BookOpen,
-  Lightbulb,
-  Lock,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Sparkles, Swords, BookOpen, Lightbulb, Lock } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
@@ -184,9 +176,7 @@ export default function EdexcelConflictPage() {
               <Sparkles className="mr-1 size-3" />
               Pearson Edexcel GCSE English Literature
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              Edexcel
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">Edexcel</Badge>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex size-12 items-center justify-center rounded-2xl bg-red-500/10">
@@ -197,22 +187,25 @@ export default function EdexcelConflictPage() {
             </h1>
           </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            All 15 poems in the Edexcel Conflict anthology. Conflict is explored
-            in many forms &mdash; war and violence, prejudice and racism, family
-            tension, internal struggle and the politics of class.
+            All 15 poems in the Edexcel Conflict anthology. Conflict is explored in many forms
+            &mdash; war and violence, prejudice and racism, family tension, internal struggle and
+            the politics of class.
           </p>
         </div>
       </section>
 
-      <StudyTools textName="Edexcel Conflict Anthology" textType="anthology" examBoard="Edexcel" variant="banner" />
+      <StudyTools
+        textName="Edexcel Conflict Anthology"
+        textType="anthology"
+        examBoard="Edexcel"
+        variant="banner"
+      />
 
       {/* ── Available poems ────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Study pages
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Study pages</h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -259,9 +252,18 @@ export default function EdexcelConflictPage() {
           </h2>
         </div>
         <p className="mb-5 text-body-sm text-muted-foreground max-w-2xl">
-          Full study pages for these poems are in development. Many are still
-          in copyright, so we will provide key quotations, analysis and
-          comparison notes rather than the full text.
+          Full study pages for these poems are in development. Many are still in copyright, so we
+          will provide key quotations, analysis and comparison notes rather than the full text.
+        </p>
+        <p className="mb-5 text-body-sm text-muted-foreground max-w-2xl">
+          <strong className="text-foreground">Rights notice.</strong> Seven of the fifteen Edexcel
+          Conflict poems remain in copyright &mdash; including Clarke&rsquo;s <em>Catrin</em>{' '}
+          (&copy; Carcanet Press), Weir&rsquo;s <em>Poppies</em> (&copy; Templar Poetry) and
+          Zephaniah&rsquo;s <em>No Problem</em> (&copy; Zephaniah estate). Quotations on individual
+          set-text pages are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
+          review, quotation). For full text, students should consult the board-licensed Pearson
+          Edexcel Poetry Anthology. For extended quotation use beyond fair-dealing extracts, contact
+          the relevant publisher directly.
         </p>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -272,9 +274,7 @@ export default function EdexcelConflictPage() {
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
-                  <h3 className="truncate text-sm font-semibold text-foreground">
-                    {poem.title}
-                  </h3>
+                  <h3 className="truncate text-sm font-semibold text-foreground">{poem.title}</h3>
                   <p className="truncate text-xs text-muted-foreground">{poem.poet}</p>
                 </div>
                 {poem.copyrighted && (
@@ -295,16 +295,14 @@ export default function EdexcelConflictPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
             <Lightbulb className="size-5 text-clay-600" />
           </div>
-          <h2 className="text-heading-md font-heading text-foreground">
-            Comparison tip
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Comparison tip</h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Edexcel often pairs a war poem with a poem about a different kind of
-          conflict (personal, racial or class-based). Practice pairing
+          Edexcel often pairs a war poem with a poem about a different kind of conflict (personal,
+          racial or class-based). Practice pairing
           <em> The Charge of the Light Brigade</em> with <em>Half-caste</em>, or
-          <em> Exposure</em> with <em>A Poison Tree</em> &mdash; the differences
-          in form and tone give you plenty to write about.
+          <em> Exposure</em> with <em>A Poison Tree</em> &mdash; the differences in form and tone
+          give you plenty to write about.
         </p>
       </section>
     </div>

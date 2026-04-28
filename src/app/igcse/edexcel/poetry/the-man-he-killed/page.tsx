@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { ArrowLeft, BookOpen, GitCompare, AlertTriangle } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
@@ -127,7 +127,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'That\'s clear enough; although',
+      text: "That's clear enough; although",
       annotations: [
         {
           type: 'Irony',
@@ -138,7 +138,7 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: '"He thought he\'d \'list, perhaps,',
+      text: "\"He thought he'd 'list, perhaps,",
       annotations: [
         {
           type: 'Empathy',
@@ -199,7 +199,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'You\'d treat if met where any bar is,',
+      text: "You'd treat if met where any bar is,",
       annotations: [
         {
           type: 'Circular structure',
@@ -290,7 +290,7 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
       themes: ['Justification', 'Doubt', 'Language'],
     },
     {
-      quote: 'Just so: my foe of course he was; / That\'s clear enough; although',
+      quote: "Just so: my foe of course he was; / That's clear enough; although",
       analysis:
         'Every phrase here undermines itself. "Just so" and "of course" are phrases of over-insistence — the speaker protests too much. "That\'s clear enough" is immediately contradicted by "although". Hardy builds the stanza from a series of self-corrections, showing a mind that cannot settle on what it believes.',
       themes: ['Self-persuasion', 'Irony', 'Confusion'],
@@ -314,7 +314,7 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
       themes: ['Understatement', 'Inadequacy of language', 'War'],
     },
     {
-      quote: 'You shoot a fellow down / You\'d treat if met where any bar is',
+      quote: "You shoot a fellow down / You'd treat if met where any bar is",
       analysis:
         'The word "fellow" is crucial — not "enemy" or "foe" but "fellow", meaning an equal, a companion. The speaker reveals his true view: the man he killed was not a foe but a fellow. The return to the bar/inn of stanza 1 completes the poem\'s circle and makes the waste of the killing inescapable.',
       themes: ['Fellowship', 'Circular structure', 'Waste'],
@@ -331,7 +331,7 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
     },
     {
       device: 'Colloquial diction',
-      example: 'nipperkin, \'list, off-hand like, traps, half-a-crown',
+      example: "nipperkin, 'list, off-hand like, traps, half-a-crown",
       effect:
         'The dialect and colloquial vocabulary establish the speaker as working-class. This is politically important: Hardy shows that the men who fight wars are poor. The unpoetic language also strips away the romantic diction of pro-war poetry, replacing glory with the plain speech of a confused, ordinary man.',
       lineRef: 3,
@@ -383,7 +383,7 @@ const comparisons = [
     poet: 'Alfred Lord Tennyson',
     href: '/igcse/edexcel/poetry/the-charge-of-the-light-brigade',
     reason:
-      'These poems present opposing views of war. Tennyson celebrates military obedience and heroism; Hardy questions whether killing can ever be justified. Compare Tennyson\'s elevated, patriotic language with Hardy\'s plain, colloquial voice.',
+      "These poems present opposing views of war. Tennyson celebrates military obedience and heroism; Hardy questions whether killing can ever be justified. Compare Tennyson's elevated, patriotic language with Hardy's plain, colloquial voice.",
     themes: ['Glory vs futility', 'Patriotism', 'Voice'],
   },
   {
@@ -391,7 +391,7 @@ const comparisons = [
     poet: 'John Agard',
     href: '/igcse/edexcel/poetry/half-caste',
     reason:
-      'Both poems use a first-person speaker whose colloquial language is politically significant. Hardy\'s soldier speaks in dialect to expose the reality of war; Agard speaks in Creole to dismantle racial prejudice. Compare how each poet uses voice to challenge institutional power.',
+      "Both poems use a first-person speaker whose colloquial language is politically significant. Hardy's soldier speaks in dialect to expose the reality of war; Agard speaks in Creole to dismantle racial prejudice. Compare how each poet uses voice to challenge institutional power.",
     themes: ['Voice', 'Power', 'Colloquial language'],
   },
 ]
@@ -417,9 +417,7 @@ export default function TheManHeKilledPage() {
             <BookOpen className="size-5 text-slate-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              The Man He Killed
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">The Man He Killed</h1>
             <p className="text-body-sm text-muted-foreground">
               Thomas Hardy &middot; Edexcel IGCSE Anthology
             </p>
@@ -430,20 +428,42 @@ export default function TheManHeKilledPage() {
         </div>
       </div>
 
+      <section
+        aria-label="Anthology scope notice"
+        className="rounded-xl border border-amber-500/40 bg-amber-500/[0.08] p-5 text-body-sm text-card-foreground"
+      >
+        <div className="flex items-start gap-3">
+          <AlertTriangle className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
+          <div>
+            <p>
+              <strong className="text-foreground">
+                This poem is not in the current Edexcel IGCSE 4ET1 anthology.
+              </strong>{' '}
+              It may have been included in earlier syllabus cycles or is provided as wider-reading
+              content. Confirm via the official Pearson Edexcel anthology before relying on it for
+              assessment.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <InteractivePoemViewer poem={poem} />
 
-      <StudyTools textName="The Man He Killed" textType="poem" examBoard="Edexcel" variant="compact" />
+      <StudyTools
+        textName="The Man He Killed"
+        textType="poem"
+        examBoard="Edexcel"
+        variant="compact"
+      />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another
-          from the anthology. These are strong pairings for The Man He Killed.
+          The Edexcel exam asks you to compare the named poem with another from the anthology. These
+          are strong pairings for The Man He Killed.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -457,9 +477,7 @@ export default function TheManHeKilledPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span

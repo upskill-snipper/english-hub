@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, BookOpen, Sparkles, Globe, Info, Clock } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, Sparkles, Globe, Info, Clock, Shield } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -106,6 +106,23 @@ export default function AqaWorldsAndLivesHubPage() {
               Love and Relationships
             </Link>
             , or Worlds and Lives. Check with your teacher which cluster your class is studying.
+          </p>
+        </section>
+
+        {/* ── Cluster-level rights notice ─────────────────────────────── */}
+        <section className="flex items-start gap-3 rounded-xl border border-border/60 bg-card p-4">
+          <Shield className="mt-0.5 size-4 shrink-0 text-emerald-400" />
+          <p className="text-body-sm text-muted-foreground">
+            <strong className="text-foreground">Rights notice.</strong> The Worlds and Lives cluster
+            mixes pre-1900 poems that are in the public domain (Wordsworth, Shelley, Brontë, Eliot)
+            with contemporary work that remains in copyright &mdash; Imtiaz Dharker (&copy; Bloodaxe
+            Books), Caleb Femi (&copy; Penguin), Roger Robinson (&copy; Peepal Tree Press), Raymond
+            Antrobus (&copy; Picador / Pan Macmillan), James Berry (&copy; Bloodaxe), Liz Berry
+            (&copy; Chatto &amp; Windus) and Grace Nichols (&copy; Bloodaxe). Quotations on this
+            site are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
+            quotation). For full text, students should consult the board-licensed AQA Worlds and
+            Lives anthology. No commercial use is intended; all quotations remain the intellectual
+            property of the respective rights holders.
           </p>
         </section>
 

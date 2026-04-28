@@ -1,23 +1,23 @@
 // @ts-nocheck
 export interface ModelAnswers {
-  [grade: string]: string;
+  [grade: string]: string
 }
 
 export interface PracticeQuestion {
-  id: string;
-  board: string;
-  paper?: number;
-  questionType?: string;
-  type?: string;
-  title?: string;
-  extract: string;
-  extractSource?: string;
-  question: string;
-  marks?: number;
-  timing?: string;
-  modelAnswers: ModelAnswers;
-  markScheme: string[];
-  examinerTips: string[];
+  id: string
+  board: string
+  paper?: number
+  questionType?: string
+  type?: string
+  title?: string
+  extract: string
+  extractSource?: string
+  question: string
+  marks?: number
+  timing?: string
+  modelAnswers: ModelAnswers
+  markScheme: string[]
+  examinerTips: string[]
 }
 
 export const practiceQuestions: PracticeQuestion[] = [
@@ -30,7 +30,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Foundation',
     extract: `The morning fog crept across the marshes like a living thing, its cold fingers probing every hollow and ditch. Pip shivered and pulled his thin coat tighter, but nothing could keep out the chill that seemed to rise from the very earth beneath his feet. The churchyard stones stood like broken teeth in the grey half-light, each one marking a life that had ended in this desolate place.`,
     extractSource: 'Adapted from Charles Dickens, Great Expectations',
-    question: 'How does the writer use language to create a sense of fear and discomfort in this extract? You could include the writer\'s choice of words and phrases, language features and techniques, and sentence forms.',
+    question:
+      "How does the writer use language to create a sense of fear and discomfort in this extract? You could include the writer's choice of words and phrases, language features and techniques, and sentence forms.",
     modelAnswers: {
       'Grade 4-5': `The writer uses personification when the fog "crept across the marshes like a living thing" which makes it seem threatening and alive. The word "crept" suggests something sneaky and dangerous. The writer also uses a metaphor when describing the fog's "cold fingers probing every hollow," which makes the fog seem like it is searching for Pip, creating fear. The simile comparing gravestones to "broken teeth" makes the churchyard sound ugly and frightening. The word "desolate" means lonely and empty, which adds to the uncomfortable feeling.`,
       'Grade 6-7': `Dickens personifies the fog as a predatory, sentient force, describing it as "a living thing" with "cold fingers probing every hollow and ditch." The verb "probing" implies an invasive, deliberate searching, as though the landscape itself is hostile. This pathetic fallacy establishes nature as an antagonist. The simile "stood like broken teeth" transforms the gravestones into something grotesque and decayed, the adjective "broken" suggesting violence and neglect. Dickens layers discomfort through tactile imagery — "shivered," "thin coat," "chill" — creating a cumulative physical unease that mirrors Pip's vulnerability. The final noun phrase "this desolate place" anchors the paragraph in isolation, the demonstrative "this" forcing proximity between reader and setting.`,
@@ -46,7 +47,7 @@ export const practiceQuestions: PracticeQuestion[] = [
     examinerTips: [
       'Start with the overall effect before zooming into specific words.',
       'Use "the verb/adjective/noun X suggests..." rather than "the writer uses a metaphor."',
-      'Always explain WHY a technique creates an effect — don\'t just spot it.',
+      "Always explain WHY a technique creates an effect — don't just spot it.",
     ],
   },
   {
@@ -85,7 +86,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Foundation',
     extract: `At first, the house seemed ordinary enough. A red door, a brass knocker, a welcome mat that said WELCOME in cheerful block letters. The windows reflected the afternoon sun and the garden was neat, if unimaginative — a row of marigolds, a square of lawn.\n\nBut as Tom walked up the path, he noticed something odd. One of the upstairs curtains twitched, though no one was supposed to be home. The welcome mat, he now saw, was turned at an angle, as if someone had left in a hurry. Or arrived.\n\nThe door was already open. Not wide — just an inch. Enough to see the darkness inside. Enough to know that stepping through it would change everything.`,
     extractSource: 'Original composition',
-    question: 'How has the writer structured the text to interest you as a reader? You could write about what the writer focuses your attention on at the beginning, how and why the writer changes this focus as the text develops, and any other structural features that interest you.',
+    question:
+      'How has the writer structured the text to interest you as a reader? You could write about what the writer focuses your attention on at the beginning, how and why the writer changes this focus as the text develops, and any other structural features that interest you.',
     modelAnswers: {
       'Grade 4-5': `At the beginning, the writer focuses on making the house seem normal and safe. Words like "ordinary," "cheerful" and "neat" make the reader feel comfortable. The paragraph describes things you would expect to see at any house. In the second paragraph, the focus shifts to things that are wrong. The curtain "twitched" even though nobody should be home, and the mat is at an angle. The word "But" at the start signals this change clearly. By the end, the tension has built up and the open door creates a cliffhanger. The short sentences "Not wide — just an inch" slow the reader down and create suspense. The final sentence makes us want to read on.`,
       'Grade 6-7': `The writer structures the text as a movement from normality to unease, using a carefully controlled shift in focus. The opening paragraph establishes a deliberately mundane setting through the listing of domestic details — "A red door, a brass knocker, a welcome mat." The use of declarative fragments creates a snapshot effect, inviting the reader to construct a picture of safety. The phrase "if unimaginative" adds a note of mild dismissiveness that reinforces the ordinariness. The second paragraph pivots on the adversative "But," signalling a disruption. The writer narrows the focus from the general scene to specific unsettling details: the twitching curtain, the angled mat. The past participle "turned" is ambiguous — passive voice withholds who or what caused it — and the final fragment "Or arrived" is structurally isolated for maximum impact, reversing the reader's assumption and reframing the scene. The final paragraph accelerates the shift through increasingly short sentences. "Not wide — just an inch" uses the dash to create a pause that mimics the tentative opening of the door. The closing sentence, with its abstract noun "everything," elevates the domestic into the ominous, using the future conditional to create a cliffhanger that compels continued reading.`,
@@ -99,7 +101,7 @@ export const practiceQuestions: PracticeQuestion[] = [
       'Uses structural terminology (shift, focus, pace, tension)',
     ],
     examinerTips: [
-      'Don\'t just describe what happens — explain WHY the writer makes structural choices.',
+      "Don't just describe what happens — explain WHY the writer makes structural choices.",
       'Think about beginning, middle, and end separately.',
       'Comment on paragraph openings and sentence length as structural tools.',
     ],
@@ -112,8 +114,10 @@ export const practiceQuestions: PracticeQuestion[] = [
     questionType: 'Comparison (Q4)',
     difficulty: 'Higher',
     extract: `Source A (1912): "The suffragette movement has gone too far. These women — if they may still be called such — have abandoned every principle of feminine decency in their hysterical pursuit of a right they are temperamentally unfit to exercise. The vote is a serious matter, requiring calm judgement and rational deliberation. It is not a plaything for those governed by emotion."\n\nSource B (2020): "Women's participation in politics has transformed every democracy for the better. Research consistently shows that gender-diverse legislatures produce more effective policy outcomes. Yet even now, women hold only 26% of parliamentary seats worldwide. The barriers are structural, not natural — and dismantling them requires more than good intentions."`,
-    extractSource: 'Source A: Adapted from a 1912 editorial; Source B: Adapted from a 2020 policy paper',
-    question: 'Compare how the two writers convey their different perspectives on women in politics. In your answer, you could compare their different perspectives, the methods they use to convey those perspectives, and how far you agree with either writer.',
+    extractSource:
+      'Source A: Adapted from a 1912 editorial; Source B: Adapted from a 2020 policy paper',
+    question:
+      'Compare how the two writers convey their different perspectives on women in politics. In your answer, you could compare their different perspectives, the methods they use to convey those perspectives, and how far you agree with either writer.',
     modelAnswers: {
       'Grade 4-5': `The two writers have very different perspectives on women in politics. Source A, from 1912, argues that women should not have the vote because they are "temperamentally unfit" and too emotional. Source B, from 2020, argues the opposite — that women make politics better. Source A uses negative language like "hysterical" and "abandoned every principle of feminine decency" to make the suffragettes sound unreasonable. In contrast, Source B uses facts and statistics such as "only 26% of parliamentary seats" to support their argument logically. Both writers use confident language but Source A relies on insults while Source B uses evidence. I agree more with Source B because it uses real data rather than just opinions.`,
       'Grade 6-7': `The two sources present diametrically opposed perspectives, yet both deploy rhetorical strategies designed to make their position seem like common sense. Source A constructs women as emotionally unstable through the lexical field of irrationality — "hysterical," "emotion," "plaything" — positioning the vote as requiring qualities antithetical to femininity. The parenthetical aside "if they may still be called such" questions the suffragettes' very womanhood, implying that political ambition is a form of gender betrayal. In contrast, Source B reframes women's political participation as empirically beneficial, using the assertive "consistently shows" and the quantitative "only 26%" to ground its argument in evidence rather than ideology. Where Source A naturalises exclusion — women are "temperamentally unfit" — Source B historicises it, insisting that "the barriers are structural, not natural." This single sentence directly contradicts the entire premise of Source A. Both writers use the tricolon: Source A's "calm judgement and rational deliberation" constructs a narrow definition of political competence, while Source B's "more than good intentions" implies that passive support is insufficient. However, Source A's reliance on ad hominem attack ("hysterical," "governed by emotion") contrasts sharply with Source B's appeal to collective benefit.`,
@@ -129,7 +133,7 @@ export const practiceQuestions: PracticeQuestion[] = [
     examinerTips: [
       'Structure your answer by theme or method, not source by source.',
       'Use comparative language throughout: "whereas," "in contrast," "similarly."',
-      'Don\'t forget to include your own perspective in the final paragraph.',
+      "Don't forget to include your own perspective in the final paragraph.",
     ],
   },
   // Paper 1 Q5 - Creative Writing
@@ -141,7 +145,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Foundation',
     extract: '',
     extractSource: '',
-    question: 'Write a description suggested by this picture: A lone figure walking along an empty beach at sunset. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
+    question:
+      'Write a description suggested by this picture: A lone figure walking along an empty beach at sunset. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
     modelAnswers: {
       'Grade 4-5': `The beach stretched out in front of her like a golden ribbon. The sun was setting, turning the sky orange and pink. She walked slowly along the water's edge, her feet sinking into the wet sand with each step.\n\nThe waves rolled in gently, making a soft shushing sound as they reached the shore. Seagulls circled overhead, their cries echoing across the empty beach. She was completely alone, but she didn't mind. Sometimes you need to be alone to hear yourself think.\n\nThe wind blew her hair across her face and she tasted salt on her lips. The air smelled of seaweed and something else — something clean and fresh that you only find at the coast. She breathed it in deeply, filling her lungs.\n\nAs the sun sank lower, the shadows grew longer. The sand beneath her feet changed from warm gold to cool grey. Soon the light would be gone, but she wasn't ready to leave. Not yet. There was something about this place, this moment, that she wanted to hold onto for just a little while longer.`,
       'Grade 6-7': `Amber light pooled across the sand like spilled honey, thick and warm against the cooling air. The beach was deserted — not empty, exactly, but cleared, as if the tide had taken the crowds along with the shells and driftwood. Only one figure remained.\n\nShe walked at the waterline where the sand was firmest, each footprint filling with silver water the moment she lifted her heel. Behind her, a chain of small lakes marked her path. Ahead, the beach curved into haze, the boundary between sand and sky dissolved by the low sun.\n\nThe sea breathed beside her — a slow, rhythmic exhale that seemed to come from somewhere deep beneath the surface. Each wave unravelled itself across the shore like a whispered secret, retreating before she could catch the words. Overhead, a single gull hung motionless against the bruised sky, suspended on thermals that she could feel pressing against her own skin.\n\nShe stopped. The wind dropped. For one held breath, everything was still: the sea paused mid-reach, the gull frozen, the light balanced on the horizon like a coin on its edge. Then the moment passed. The wave completed its collapse. The gull wheeled away. And she walked on, leaving nothing behind but footprints that the sea would claim within the hour.`,
@@ -172,7 +177,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Foundation',
     extract: '',
     extractSource: '',
-    question: '"Social media does more harm than good for young people." Write an article for a broadsheet newspaper in which you argue for or against this statement. (40 marks)',
+    question:
+      '"Social media does more harm than good for young people." Write an article for a broadsheet newspaper in which you argue for or against this statement. (40 marks)',
     modelAnswers: {
       'Grade 4-5': `Social media is a huge part of young people's lives today. Most teenagers spend hours every day on platforms like Instagram and TikTok. But is this actually hurting them?\n\nFirstly, social media can be bad for mental health. Studies have shown that young people who spend a lot of time on social media are more likely to feel anxious or depressed. This is because they are constantly comparing themselves to other people's perfect-looking lives, which are usually fake anyway.\n\nHowever, social media is not all bad. It helps young people stay connected with friends and family. During lockdown, it was the only way many teenagers could socialise. It also allows young people to find communities of people who share their interests, which can be especially important for those who feel different or isolated.\n\nOn the other hand, cyberbullying is a serious problem. Unlike bullying at school, online bullying follows you home. There is no escape. Young people can receive hurtful messages at any time of day or night.\n\nIn conclusion, while social media has some benefits, I believe it does more harm than good for young people. The damage to mental health and the risk of cyberbullying outweigh the advantages of staying connected. Social media companies need to do more to protect their youngest users.`,
       'Grade 6-7': `Every generation fears for its children. In the 1950s, it was rock and roll. In the 1980s, video games. Today, the moral panic has a new target: social media. But this time, the panic might be justified.\n\nThe evidence is difficult to ignore. A landmark study by the Royal Society for Public Health found that Instagram was the worst social media platform for young people's mental health. Rates of anxiety and depression among teenagers have risen in almost exact correlation with smartphone adoption. Coincidence? Researchers increasingly think not. The mechanisms are well understood: social comparison, sleep disruption, addictive design features engineered by Silicon Valley's brightest minds. When an app is deliberately designed to be impossible to put down, calling its effects on teenagers "their own choice" is disingenuous at best.\n\nYet dismissing social media entirely would be both naive and counterproductive. For LGBTQ+ teenagers in unsupportive environments, online communities can be lifelines. For young people with niche interests, social media provides connection that geography denies. The issue is not the technology itself but the exploitative business model that underpins it: attention harvested, sold to advertisers, and consequences externalised onto the mental health services that pick up the pieces.\n\nThe solution, then, is not abstinence but regulation. We do not allow children to buy alcohol or drive cars. We should not allow technology companies to design addictive products targeted at developing brains without meaningful oversight. Until we treat social media companies with the same regulatory seriousness we apply to tobacco or gambling, we are choosing corporate profits over children's wellbeing. And that is a choice we should all be uncomfortable with.`,
@@ -207,7 +213,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Foundation',
     extract: `The marketplace was alive with colour and noise. Stalls lined both sides of the narrow lane, their awnings flapping in the autumn breeze. Mrs Alston moved between them with practised efficiency, her basket already half full. She paused at the fishmonger's, inspecting the catch with a critical eye. The mackerel were fresh — she could tell by the brightness of their scales and the clarity of their eyes — but the prices had gone up again. Everything had gone up. She selected two fish, counted out her coins carefully, and moved on without a word.\n\nAt the far end of the market, where the lane opened into the square, a boy sat cross-legged on the cobblestones with a wooden flute. He could not have been more than ten. His shoes were held together with string and his jacket hung off one shoulder, but his playing was extraordinary — a melody that rose above the shouts and clatter like smoke above a chimney, curling and drifting until it seemed to fill the entire square. Mrs Alston stopped. She stood very still for a long time. Then she placed a coin in the cap at his feet and walked away quickly, before anyone could see her expression.`,
     extractSource: 'Original composition in the style of literary realism',
-    question: 'From lines 1–8, identify four things you learn about Mrs Alston from the extract. (4 marks)',
+    question:
+      'From lines 1–8, identify four things you learn about Mrs Alston from the extract. (4 marks)',
     modelAnswers: {
       'Grade 4-5': `From the extract, I learn that Mrs Alston is experienced at shopping in the market because she moves with "practised efficiency." I also learn that she is careful with money, as she "counted out her coins carefully." Third, she has knowledge about fish because she can tell whether mackerel are fresh by looking at their scales and eyes. Finally, she does not like to show her emotions, as she walks away "quickly, before anyone could see her expression."`,
       'Grade 6-7': `The extract reveals that Mrs Alston is a regular and efficient market shopper who navigates the stalls with "practised efficiency," suggesting long familiarity with this routine. She is also financially careful, counting coins precisely and noting that "everything had gone up," implying she is conscious of price changes and possibly under financial pressure. Her ability to judge the freshness of mackerel by "the brightness of their scales and the clarity of their eyes" reveals practical domestic expertise. Finally, her transaction is conducted without unnecessary interaction — she moves on "without a word" — indicating a reserved, unsentimental character.`,
@@ -236,7 +243,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Higher',
     extract: `The river had changed. It was no longer the gentle companion of summer — the slow, green water that had carried their paper boats and reflected the willows in a trembling mirror. Now it was something else entirely. The rains had swollen it to a creature of muscle and fury, a brown torrent that tore at the banks and swallowed the meadow in great, hungry gulps. Trees that had stood for fifty years leaned at desperate angles, their roots exposed like the tendons of a clenched fist.\n\nAnna stood at the edge and felt the ground vibrate beneath her boots. The noise was immense — not the polite murmur of a river but the full-throated roar of something that had forgotten it was ever tame. Spray struck her face like cold needles. Somewhere beneath the surface, she knew, the footbridge was still there — or what remained of it. Three days ago she had crossed it without thinking. Now it was an archaeological fact, something that belonged to the past tense of this landscape.`,
     extractSource: 'Original composition',
-    question: 'Analyse how the writer uses language and structure to present the power of the river. Support your views with detailed reference to the text. (15 marks)',
+    question:
+      'Analyse how the writer uses language and structure to present the power of the river. Support your views with detailed reference to the text. (15 marks)',
     modelAnswers: {
       'Grade 4-5': `The writer uses language to show the river is powerful and dangerous. The river is personified as "a creature of muscle and fury" which makes it sound like a strong, angry animal. The verb "tore" shows how violent the water is, and "swallowed the meadow in great, hungry gulps" makes the river seem like it is eating the land. The simile "roots exposed like the tendons of a clenched fist" suggests the trees are struggling against the water. The writer uses contrast to show how different the river is now compared to before. In summer it was a "gentle companion" with "slow, green water" but now it is a "brown torrent." This structural contrast helps the reader understand how much things have changed. The noise is described as a "full-throated roar" rather than a "polite murmur," which shows how overwhelming the river has become.`,
       'Grade 6-7': `The writer constructs the river's power through a sustained metaphorical transformation from domestic companion to untamed predator. The opening — "The river had changed" — is deceptively simple, its past perfect tense encoding a transformation that is already complete before the narrative begins. The structure enacts this shift: the first sentence recalls the summer river as a "gentle companion," but this pastoral image is immediately dismantled by the adversative "Now it was something else entirely." The metaphor of "a creature of muscle and fury" assigns the river both physical and emotional force, the noun "muscle" implying strength while "fury" attributes intention. The predatory lexical field intensifies — "tore," "swallowed," "hungry gulps" — constructing the river as an appetite that cannot be satisfied. The simile comparing exposed roots to "the tendons of a clenched fist" is particularly effective: it humanises the trees' resistance while the adjective "clenched" implies both tension and futility. In the second paragraph, the sensory register shifts from visual to physical — "the ground vibrate," "spray struck her face like cold needles" — immersing the reader in the river's power. The final image of the footbridge as "an archaeological fact" belonging to "the past tense of this landscape" is structurally significant: it reframes the river's destruction as a geological rather than meteorological event, elevating its power from the temporary to the epochal.`,
@@ -267,7 +275,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Foundation',
     extract: `I was seventeen when I first stood on the summit of Helvellyn and understood, for the first time, why people climb mountains. It is not for the view — though the view that day was extraordinary, the lakes laid out below like shattered mirrors reflecting a sky that could not decide whether to rain or shine. It is not for the achievement, although there is satisfaction in reaching a place that your legs and lungs have earned. It is for the silence.\n\nAt nine hundred and fifty metres, the world falls quiet. The petty noise of daily life — the phone, the traffic, the endless opinions of people who have never climbed anything steeper than an escalator — all of it drops away. What remains is wind, rock, and the sound of your own breathing. You become, briefly, the simplest version of yourself. No signal. No notifications. No performance. Just a body on a mountain, doing what bodies were designed to do.\n\nI have climbed Helvellyn thirty-seven times since that first ascent. I go in all seasons, in all weathers. People ask why I keep returning to the same mountain, and I tell them: it is not the same mountain. It is never the same mountain. The mountain changes with every visit because you change — and Helvellyn, unlike most things in life, has the decency to reflect that back to you honestly.`,
     extractSource: 'Original composition in the style of nature writing',
-    question: 'To what extent do you agree with the writer\'s view that climbing mountains offers something valuable that modern life does not? Evaluate the text, supporting your views with detailed reference to the source. (15 marks)',
+    question:
+      "To what extent do you agree with the writer's view that climbing mountains offers something valuable that modern life does not? Evaluate the text, supporting your views with detailed reference to the source. (15 marks)",
     modelAnswers: {
       'Grade 4-5': `I mostly agree with the writer's view because they make a convincing argument. The writer says that climbing mountains is valuable because of "the silence" you find at the top. They contrast this with the "petty noise of daily life" like phones and traffic, which makes modern life seem stressful. The phrase "endless opinions of people who have never climbed anything steeper than an escalator" is humorous and makes the reader think about how much unnecessary noise there is in everyday life. The writer also argues that mountains help you understand yourself. The line "you become, briefly, the simplest version of yourself" suggests that being in nature strips away all the complications. I find this persuasive because many people do feel that being outdoors is calming. However, the writer does not consider that not everyone can climb mountains, so this experience might not be available to all people.`,
       'Grade 6-7': `The writer presents a compelling case, though one that relies as much on rhetorical skill as on logical argument. The central claim — that mountains offer valuable silence absent from modern life — is persuasive partly because of how the writer structures the argument. The anaphoric "It is not for the view… It is not for the achievement" builds expectation before the short declarative "It is for the silence" delivers the thesis with satisfying clarity. The subsequent critique of modern life is effective: the tricolon "the phone, the traffic, the endless opinions" escalates from specific irritations to a generalised critique, while the dismissive "people who have never climbed anything steeper than an escalator" uses humour to recruit the reader's sympathy. However, this is also where the argument is most vulnerable — it constructs a somewhat self-congratulatory division between climbers and non-climbers that risks alienating readers. The writer's claim that "you become, briefly, the simplest version of yourself" is the text's most evocative moment, and the qualifier "briefly" lends it honesty. The final paragraph's insistence that "it is never the same mountain" is rhetorically powerful, with the italicised repetition creating emphasis, though the personification of Helvellyn as having "decency" perhaps overextends the metaphor. On balance, the writer succeeds in conveying a genuine and infectious enthusiasm, even if the argument occasionally substitutes poetic intensity for rigorous logic.`,
@@ -276,14 +285,14 @@ export const practiceQuestions: PracticeQuestion[] = [
     markScheme: [
       'Evaluates the text critically, considering how effectively the writer conveys their perspective',
       'Supports evaluation with well-chosen textual references',
-      'Considers the writer\'s methods and their effect on the reader',
+      "Considers the writer's methods and their effect on the reader",
       'Presents a clear personal response that goes beyond simple agreement or disagreement',
       'Maintains a critical stance throughout, not merely summarising',
     ],
     examinerTips: [
       'Evaluation means weighing up — show where the writer is effective AND where the argument has limits.',
       'Always support your judgement with quotation.',
-      'Consider the writer\'s methods (structure, language, rhetoric) as part of your evaluation.',
+      "Consider the writer's methods (structure, language, rhetoric) as part of your evaluation.",
       'A top-level answer treats the text as a crafted piece of writing, not just a collection of opinions.',
     ],
   },
@@ -297,7 +306,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Higher',
     extract: '',
     extractSource: '',
-    question: 'Your local council is considering closing the town\'s only public library to save money. Write a letter to the council arguing that the library should remain open. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
+    question:
+      "Your local council is considering closing the town's only public library to save money. Write a letter to the council arguing that the library should remain open. (40 marks: 24 for content and organisation, 16 for technical accuracy)",
     modelAnswers: {
       'Grade 4-5': `Dear Councillors,\n\nI am writing to express my strong opposition to the proposed closure of our town library. I believe this would be a serious mistake that would affect many people in our community.\n\nFirstly, the library is used by hundreds of people every week. It is not just a place to borrow books — it is a community hub. Elderly residents come for the reading groups, parents bring toddlers to story time, and students use it as a quiet place to study. Where would all these people go if the library closed?\n\nSecondly, not everyone has internet access at home. The library provides free computers and Wi-Fi, which many people rely on for job applications, benefits claims, and keeping in touch with family. Closing the library would cut off the most vulnerable people in our community from essential services.\n\nFinally, libraries save money in the long run. Research shows that for every pound spent on libraries, communities receive over five pounds in social and economic value. People who use libraries are healthier, better educated, and less isolated. Closing the library might save money now, but it will cost much more in the future.\n\nI urge you to reconsider this proposal and find alternative savings that do not destroy a vital community resource.\n\nYours faithfully,\nA Concerned Resident`,
       'Grade 6-7': `Dear Members of the Council,\n\nI write regarding the proposed closure of our public library. I should declare an interest: I use the library every week, as do my children, my elderly mother, and approximately four hundred other residents whose voices are conspicuously absent from your consultation document. I should also declare a certainty: this closure would be an act of institutional vandalism dressed up as fiscal responsibility.\n\nLet me address the financial argument directly, since it is the one you have chosen to make. The annual cost of running the library is, I understand, approximately £180,000. This is presented in your proposal as a saving. It is not. It is a cost — transferred from the council's books to the community's shoulders. When the library closes, your free computer access disappears. Your job seekers will travel twelve miles to the nearest alternative. Your elderly residents will lose the only social contact some of them have outside their own homes. The costs of increased isolation, unemployment, and digital exclusion will appear on other budgets — health, social care, welfare — but they will be no less real for being someone else's problem.\n\nThe library is also, let us not forget, a place of education. Our town has some of the lowest literacy rates in the county. Closing the library is the equivalent of diagnosing a patient with malnutrition and then locking the pantry. The children who use the library's reading programmes are disproportionately from families who cannot afford to buy books. You are proposing to remove the only free access to literature that these children have, and you are doing so in a document that cites "community wellbeing" as a council priority. The irony should embarrass you.\n\nI recognise that savings must be made. I do not recognise that they must be made here. I ask you to reconsider — not as a gesture, but as a genuine reassessment of what this community can afford to lose.\n\nYours faithfully,\nA Resident Who Intends to Be Present at the Next Council Meeting`,
@@ -332,8 +342,10 @@ export const practiceQuestions: PracticeQuestion[] = [
     questionType: 'Synthesis (Q3)',
     difficulty: 'Foundation',
     extract: `Source A: "School uniform is a leveller. When every child wears the same blazer, the same tie, the same polished shoes, the differences that divide them — wealth, background, the cruelty of fashion — become invisible. Uniform does not eliminate inequality, but it removes its most visible marker. A child in uniform is simply a student, and that anonymity is a kindness."\n— Adapted from a headteacher's letter to parents, 2019\n\nSource B: "I hated my school uniform with a passion that has not dimmed in twenty years. The polyester blazer that trapped sweat against your skin. The tie that served no purpose except to give older boys something to grab you by. The shoes that had to be 'plain black leather' even though my family could barely afford them. Uniform was not a leveller — it was a reminder, every single morning, that someone else controlled what I wore, what I looked like, who I was allowed to be."\n— Adapted from a newspaper opinion column, 2022`,
-    extractSource: 'Source A: Adapted from a 2019 headteacher\'s letter; Source B: Adapted from a 2022 opinion column',
-    question: 'Using details from both sources, write a summary of the different views on school uniform. (6 marks)',
+    extractSource:
+      "Source A: Adapted from a 2019 headteacher's letter; Source B: Adapted from a 2022 opinion column",
+    question:
+      'Using details from both sources, write a summary of the different views on school uniform. (6 marks)',
     modelAnswers: {
       'Grade 4-5': `The two sources present different views on school uniform. Source A argues that uniform is positive because it is "a leveller" that makes differences between students "invisible." The headteacher believes that when everyone wears the same clothes, students are judged equally. In contrast, Source B disagrees strongly, calling uniform "a reminder" that someone else controlled them. Where Source A sees anonymity as "a kindness," the writer of Source B felt uniform took away their identity, saying it controlled "who I was allowed to be." Source A acknowledges uniform does not fix inequality but helps, while Source B argues it actually highlighted poverty because the required shoes were difficult to afford.`,
       'Grade 6-7': `The sources offer directly opposing views on uniform, though both engage with the question of identity. Source A frames uniform as socially beneficial, arguing it renders the "differences that divide" students — specifically "wealth, background, the cruelty of fashion" — "invisible." The headteacher positions uniformity as protective, calling the resulting "anonymity" a "kindness." Source B systematically dismantles this argument through personal experience: far from eliminating markers of inequality, uniform "was a reminder" of financial hardship, since the mandated "plain black leather" shoes were unaffordable. Where Source A sees uniform as removing control from external forces like fashion, Source B reframes it as substituting one form of control for another — "someone else controlled what I wore." Both writers implicitly agree that uniform concerns power, but they disagree fundamentally about who benefits from that power.`,
@@ -344,7 +356,7 @@ export const practiceQuestions: PracticeQuestion[] = [
       'Identifies clear points of comparison or contrast between the sources',
       'Uses textual references from both sources to support points',
       'Presents a coherent overview rather than listing separate points',
-      'Shows understanding of the writers\' different perspectives',
+      "Shows understanding of the writers' different perspectives",
     ],
     examinerTips: [
       'OCR synthesis questions require you to combine information from both sources — do not write about each source separately.',
@@ -362,8 +374,10 @@ export const practiceQuestions: PracticeQuestion[] = [
     questionType: 'Evaluative Comparison (Q4)',
     difficulty: 'Higher',
     extract: `Source A (1869): "The railway has brought about changes in rural life that no revolution could have accomplished. Villages that were, within living memory, a day's journey from the nearest town now lie a mere forty minutes distant. The farmer who once knew nothing beyond his own parish boundary now reads a London newspaper over his breakfast. Whether this constitutes progress I leave to the reader's judgement, but I note that the hedgerows are quieter than they were, the lanes emptier, and the young increasingly difficult to persuade that their future lies in the soil."\n— Adapted from a Victorian rural journal\n\nSource B (2024): "The broadband cable reached our village last March. Within six months, three households had someone working from home, the pub had Wi-Fi, and our nearest shop — which had been six miles away — was now, effectively, the internet. My neighbour, who is seventy-four and has never left the county, now video-calls her grandson in Melbourne every Sunday. Connectivity has not destroyed our community. But it has quietly renegotiated the terms on which we belong to it."\n— Adapted from a contemporary rural blog`,
-    extractSource: 'Source A: Adapted from an 1869 journal; Source B: Adapted from a 2024 blog post',
-    question: 'Compare how the writers of Source A and Source B present the impact of new technology on rural communities. In your answer you should consider the writers\' use of language, the impact of the texts on the reader, and the contexts in which they were written. (14 marks)',
+    extractSource:
+      'Source A: Adapted from an 1869 journal; Source B: Adapted from a 2024 blog post',
+    question:
+      "Compare how the writers of Source A and Source B present the impact of new technology on rural communities. In your answer you should consider the writers' use of language, the impact of the texts on the reader, and the contexts in which they were written. (14 marks)",
     modelAnswers: {
       'Grade 4-5': `Both writers discuss how new technology has changed life in rural areas, but they have different attitudes. Source A, from 1869, writes about the railway. The writer says it has brought "changes that no revolution could have accomplished," which shows how powerful the railway was. However, the writer seems worried about the effects, noting that "the hedgerows are quieter" and young people are leaving. Source B writes about broadband internet in 2024. This writer is more positive, giving examples of how the internet has helped, such as a neighbour who "video-calls her grandson in Melbourne." Both writers use specific examples to show change. Source A mentions the farmer reading a London newspaper, while Source B mentions working from home and online shopping. The final line of Source B — "quietly renegotiated the terms" — is similar to Source A's ambiguous tone, as both writers suggest technology changes things in ways that are not entirely comfortable.`,
       'Grade 6-7': `Both extracts examine the moment when a new technology transforms rural isolation, and though separated by 155 years, they share a strikingly similar ambivalence. Source A frames the railway's impact through the rhetoric of revolution — "changes that no revolution could have accomplished" — borrowing political language to convey the scale of disruption. The temporal compression from "a day's journey" to "forty minutes distant" dramatises the collapse of rural isolation, while the image of a farmer reading "a London newspaper over his breakfast" captures the penetration of metropolitan culture into previously insular spaces. Source B mirrors this structure precisely: the broadband cable arrives, and within "six months" the village has been functionally reorganised. The nearest shop is now "effectively, the internet" — a dryly witty reformulation that parallels Source A's newspaper-reading farmer. Both writers use the language of quiet transformation rather than dramatic upheaval: Source A's hedgerows are "quieter," lanes "emptier"; Source B's technology "quietly renegotiated" community bonds. However, their tonal registers differ. Source A adopts a deliberately noncommittal stance — "whether this constitutes progress I leave to the reader's judgement" — but the elegiac listing of losses undermines this neutrality. Source B is warmer and more personal, deploying the specific anecdote of the seventy-four-year-old neighbour to humanise the statistics. The contextual difference is significant: Source A writes at a moment of uncertain change, while Source B writes with retrospective awareness of how similar anxieties about the railway proved both justified and survivable.`,
@@ -394,7 +408,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Foundation',
     extract: `The old woman sat in the corner of the railway carriage and watched the countryside accelerate. Fields blurred into hedgerows, hedgerows into woodland, woodland into the grey smear of approaching suburbs. She had not taken a train in eleven years. The last time had been with Harold, who had insisted on first class even though they could not afford it, because he said a person should experience luxury at least once before deciding they did not need it. Harold had been dead for ten of those eleven years.\n\nShe opened her handbag and took out a sandwich wrapped in greaseproof paper. Egg and cress. She had made it at five o'clock that morning, standing in the kitchen in her dressing gown while the house ticked and settled around her. The bread was slightly stale now but she ate it anyway, carefully, over the paper, catching every crumb. Opposite her, a young man in headphones stared at his phone. He had not looked up once since Crewe.`,
     extractSource: 'Original composition in the style of literary realism',
-    question: 'How does the writer use language and structure to portray the old woman\'s character and situation? (15 marks)',
+    question:
+      "How does the writer use language and structure to portray the old woman's character and situation? (15 marks)",
     modelAnswers: {
       'Grade 4-5': `The writer presents the old woman as someone who is lonely and careful. She is described as sitting "in the corner," which makes her seem small and isolated. The detail that she has "not taken a train in eleven years" tells us she does not travel often, and the memory of Harold shows she has lost her husband. The fact that Harold "insisted on first class even though they could not afford it" tells us they were not wealthy, and the writer uses this memory to show both love and loss. The woman is presented as very careful and precise — she eats "over the paper, catching every crumb," which suggests she does not like waste. The contrast with the "young man in headphones" who "had not looked up once since Crewe" makes her seem even more alone, because even the person sitting opposite her is ignoring her. The detail about making the sandwich at "five o'clock that morning" shows she was up very early, perhaps because she could not sleep due to anxiety about the journey.`,
       'Grade 6-7': `The writer constructs the old woman through accumulative domestic detail and structural isolation. The opening image positions her "in the corner," a spatial metaphor for marginality that is reinforced by the accelerating landscape she "watches" but does not participate in — the progressive blurring of "fields into hedgerows, hedgerows into woodland" syntactically enacts a world moving faster than she can process. The parenthetical memory of Harold is structurally central: it occupies the emotional core of the first paragraph, and the detail that he "insisted on first class even though they could not afford it" encodes both his character (generous, perhaps impractical) and their economic reality in a single clause. The devastating brevity of "Harold had been dead for ten of those eleven years" uses the arithmetic of grief — the precise counting — to suggest that the old woman measures time by his absence. The second paragraph shifts to the present tense of small, careful actions. The sandwich — "egg and cress," made at "five o'clock that morning" — is rendered with a specificity that elevates the mundane into the poignant. She eats "carefully, over the paper, catching every crumb," and the participial phrase creates a sense of habitual precision born of either thrift or loneliness or both. The structural juxtaposition with the young man "in headphones" who "had not looked up once since Crewe" creates an implicit commentary on generational disconnection: two people sharing a space but inhabiting entirely different worlds.`,
@@ -424,7 +439,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Higher',
     extract: '',
     extractSource: '',
-    question: 'Write the opening of a story set in a place that holds a significant memory for the narrator. Focus on creating a vivid sense of place and the narrator\'s emotional connection to it. (30 marks)',
+    question:
+      "Write the opening of a story set in a place that holds a significant memory for the narrator. Focus on creating a vivid sense of place and the narrator's emotional connection to it. (30 marks)",
     modelAnswers: {
       'Grade 4-5': `The playground looked smaller than I remembered. The climbing frame, which had once seemed as tall as a skyscraper, barely reached my shoulder now. The rubber surface was cracked and faded, the bright colours I remembered replaced by a tired grey.\n\nI sat down on the roundabout and pushed myself slowly with one foot. The metal groaned underneath me. Twenty years had not been kind to this place. The swings had lost their seats, just chains hanging empty against the sky. The slide was still there but its surface was rough and dull where it had once been smooth and shiny.\n\nThis is where we used to come every day after school, me and Callum. We would race to the swings, arguing over who got the good one — the one that went higher, the one with the seat that didn't pinch your legs. He always won. He was faster than me at everything.\n\nI had not been back here since the summer it happened. The summer everything changed. Standing here now, I could almost hear the sound of his laughter, carried on the wind like a ghost that refused to leave.`,
       'Grade 6-7': `The kitchen door still sticks. You have to lift the handle slightly and push with your hip — a specific, practised movement that my body remembers even though I have not performed it in seven years. Inside, the room is exactly and nothing like it was. The Formica table is the same table. The clock above the cooker is the same clock, still running three minutes fast because my mother believed that punctuality required deception. But the light is different. It falls through the window at an angle I do not recognise, and I realise, with a small shock, that the sycamore in the garden must have been cut down.\n\nThe smell is what undoes me. Not the smell of cooking — the house has been empty for months — but the smell underneath: wood polish and old carpet and something faintly metallic that I have never been able to name but which is, unmistakably, the smell of this house and no other. It enters through my nose and arrives somewhere behind my ribs, in the place where memory lives when it has nowhere else to go.\n\nI put the kettle on. This is not sentiment. This is procedure. When you return to a house where someone has died, you put the kettle on, because the alternative is to stand in the hallway and listen to the silence, and the silence in this house has teeth.`,
@@ -441,7 +457,7 @@ export const practiceQuestions: PracticeQuestion[] = [
     examinerTips: [
       'The best openings raise questions that make the reader want to continue.',
       'Use specific, concrete details rather than vague or generic descriptions.',
-      'Let the narrator\'s emotions emerge through what they notice, not through telling the reader how they feel.',
+      "Let the narrator's emotions emerge through what they notice, not through telling the reader how they feel.",
       'Control your pacing — not everything needs to be revealed immediately.',
     ],
   },
@@ -459,7 +475,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Foundation',
     extract: `The factory whistle blew at six. By ten past, the street was full of men — a dark river of caps and boots flowing downhill towards the gates. Thomas walked among them with his hands in his pockets and his collar turned up against the cold. He was eighteen and had worked at the mill for four years, since the day after his fourteenth birthday, when his father had shaken his hand and said, "You're a man now," as if manhood were a door you stepped through rather than a thing that grew on you slowly, like moss on a wall.\n\nThe mill loomed ahead, its chimney drawing a black line against the pale sky. The noise reached him before the building did — a low, mechanical hum that he felt in his teeth before he heard it in his ears. Inside, the air was thick with cotton dust that coated your throat and settled in your lungs like snow filling a ditch. The machines were already running. They were always already running. Thomas took his place at the loom and became, as he did every morning, a small moving part in a large, indifferent engine.`,
     extractSource: 'Original composition in the style of early 20th-century realism',
-    question: 'How does the writer use language to present working life in this extract? You should write about the effects of the writer\'s language choices and use examples from the text. (10 marks)',
+    question:
+      "How does the writer use language to present working life in this extract? You should write about the effects of the writer's language choices and use examples from the text. (10 marks)",
     modelAnswers: {
       'Grade 4-5': `The writer uses language to show that working life is hard and dehumanising. The men going to work are described as "a dark river of caps and boots," which is a metaphor that makes them seem like a mass rather than individuals. The words "caps and boots" reduce them to items of clothing, as if they have no personal identity. The factory is presented negatively through the description of the noise as "a low, mechanical hum that he felt in his teeth," which sounds uncomfortable and invasive. The cotton dust "settled in your lungs like snow filling a ditch," which is a simile comparing something harmful to something natural, making it seem like the damage is just part of everyday life. The final sentence is the most powerful, where Thomas "became a small moving part in a large, indifferent engine." The metaphor of the factory as an "engine" and Thomas as just a "part" shows how the work takes away his humanity. The adjective "indifferent" means the factory does not care about the workers at all.`,
       'Grade 6-7': `The writer constructs working life as a process of depersonalisation, using language that systematically strips individuality from the workers. The opening metaphor — "a dark river of caps and boots" — reduces the men to a collective flow, the synecdoche of "caps and boots" replacing human identity with industrial uniform. The adjective "dark" functions both literally and symbolically, encoding the pre-dawn grimness and the bleak prospects of their labour. Thomas's father's assertion that "you're a man now" is immediately undercut by the narrator's observation that manhood is "a thing that grew on you slowly, like moss on a wall" — a simile that reframes this rite of passage as something organic and gradual rather than the abrupt, economically driven threshold it actually is. The mill itself is characterised through sensory assault: the noise is "felt in his teeth" before it is heard, the synaesthetic description suggesting a physical violation. The simile of cotton dust settling "like snow filling a ditch" is quietly devastating — it naturalises occupational harm, while "ditch" implies both the trench of industry and the grave. The culminating metaphor of Thomas as "a small moving part in a large, indifferent engine" completes the dehumanisation, the adjective "indifferent" attributing to the factory a cold absence of concern that makes exploitation structural rather than personal.`,
@@ -489,7 +506,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Higher',
     extract: '',
     extractSource: '',
-    question: 'Write about a time when someone had to make a difficult decision. You may write from any perspective. (20 marks for communication and organisation, 20 marks for writing accuracy)',
+    question:
+      'Write about a time when someone had to make a difficult decision. You may write from any perspective. (20 marks for communication and organisation, 20 marks for writing accuracy)',
     modelAnswers: {
       'Grade 4-5': `The letter sat on the kitchen table for three days before she opened it. Everyone knew what it was. The envelope was brown and official-looking, with a typed address and a postmark from London. Her mother walked past it every morning, pretending not to notice.\n\nWhen she finally opened it, her hands were shaking. She read it twice, put it down, picked it up, and read it again. The offer was everything she had worked for: a place at a university three hundred miles away, studying the subject she loved. It should have been the happiest moment of her life.\n\nBut her mother was ill. Not seriously ill — not yet — but the kind of ill that meant someone needed to be around. To check the medication. To drive to appointments. To sit in the kitchen in the evenings and make things feel normal. Her brother had already left. Her father had left long before that.\n\nShe sat at the table for a long time, the letter in front of her. The kitchen clock ticked loudly. Outside, a bird was singing. She picked up her phone, found the number, and dialled. When the voice at the other end answered, she took a breath and said the words she had practised in her head all morning.`,
       'Grade 6-7': `He told himself he would decide by Friday. On Friday he told himself he would decide by Monday. On Monday he told himself that some decisions make themselves if you leave them long enough, and he went to work and did not think about it, except that he thought about nothing else.\n\nThe facts were simple. His father needed help. Not the kind of help that could be delivered from two hundred miles away via weekly phone calls and guilt — the physical, daily, undramatic help of someone being present. Meals prepared. Bills opened. The slow bureaucracy of aging navigated by someone who could still read the small print.\n\nThe facts on the other side were also simple. He had a life. A flat. A job he had spent five years building. A relationship that was beginning, cautiously, to use the word "we" instead of "I." None of these things were portable.\n\nHe drove up on Saturday. The house smelled of toast and loneliness — that particular combination of unwashed dishes and drawn curtains that means someone has stopped performing the rituals of order. His father was in the kitchen, attempting to change a lightbulb from a chair that wobbled. He was not frail. That was the difficult thing. He was not frail, not helpless, not incapable. He was just old enough that the distance between managing and not managing had narrowed to a margin that could be erased by a fall, a flu, a letter left unopened.\n\n"You didn't need to come," his father said, which was the sentence that settled it.`,
@@ -506,7 +524,7 @@ export const practiceQuestions: PracticeQuestion[] = [
     examinerTips: [
       'WJEC Eduqas allocates equal marks for content/organisation and accuracy — do not neglect either.',
       'The prompt says "a time when someone had to make a difficult decision" — you can write about yourself or a character.',
-      'Show the difficulty of the decision through the character\'s thought process, not just by telling the reader it was difficult.',
+      "Show the difficulty of the decision through the character's thought process, not just by telling the reader it was difficult.",
       'A strong ending that resonates is more valuable than a dramatic plot twist.',
     ],
   },
@@ -519,15 +537,17 @@ export const practiceQuestions: PracticeQuestion[] = [
     questionType: 'Reading Across Centuries Comparison (Q4)',
     difficulty: 'Foundation',
     extract: `Text A (1847): "The governess occupies a position of peculiar difficulty. She is not a servant, yet she is not family. She eats alone in her room or, if permitted to join the family table, sits in a silence that is expected rather than chosen. She educates the children, yet her own education — often superior to that of her employer — earns her no respect, only suspicion. She is, in short, a gentlewoman who must earn her bread without ever appearing to need it."\n— Adapted from a Victorian essay on women's employment\n\nText B (2023): "Teaching assistants are the invisible infrastructure of the education system. They arrive before the teachers, leave after them, and spend the hours between managing behaviour, supporting SEND pupils, running interventions, and performing a hundred daily acts of patience that never appear on any data spreadsheet. Their average salary is £18,000. Their average level of commitment is immeasurable. We talk endlessly about teacher retention while the people who hold classrooms together are paid less than supermarket shelf-stackers."`,
-    extractSource: 'Text A: Adapted from a Victorian essay, 1847; Text B: Adapted from a 2023 education article',
-    question: 'Both texts present people who work in education but are undervalued. Compare how the two writers convey their attitudes towards the people they describe. You should compare the writers\' use of language and the ways they try to influence the reader. (10 marks)',
+    extractSource:
+      'Text A: Adapted from a Victorian essay, 1847; Text B: Adapted from a 2023 education article',
+    question:
+      "Both texts present people who work in education but are undervalued. Compare how the two writers convey their attitudes towards the people they describe. You should compare the writers' use of language and the ways they try to influence the reader. (10 marks)",
     modelAnswers: {
       'Grade 4-5': `Both writers argue that certain education workers are not valued properly. Text A describes the governess as being in "a position of peculiar difficulty" because she does not belong to any clear social group — "not a servant, yet not family." Similarly, Text B calls teaching assistants "the invisible infrastructure," meaning they are essential but unnoticed. Both writers use contrast to show unfairness. Text A contrasts the governess's education with the lack of respect she receives, while Text B contrasts the high commitment of TAs with their low salary of "£18,000." Text A uses formal language and the word "gentlewoman" to emphasise the governess's social status, while Text B uses more modern, direct language and statistics. Both writers want to make the reader feel sympathy. Text A does this by showing the governess's loneliness — eating "alone in her room" — while Text B uses the comparison with "supermarket shelf-stackers" to make the reader feel that TAs' pay is unfair.`,
       'Grade 6-7': `Both texts advocate for undervalued educators, but their rhetorical strategies reflect their different historical contexts. Text A constructs the governess's predicament through the language of paradox: she is "not a servant, yet not family"; her education "earns her no respect, only suspicion." The antithetical structures enact the impossible position she occupies, caught between categories that refuse to accommodate her. The concluding paradox — a "gentlewoman who must earn her bread without ever appearing to need it" — captures the Victorian double bind of gendered class expectation with devastating economy. Text B employs a more contemporary rhetoric of quantification and indignation. The metaphor of "invisible infrastructure" borrows from engineering to argue that TAs are structurally essential, while the tricolon of "managing behaviour, supporting SEND pupils, running interventions" catalogues their labour to make it visible. The juxtaposition of the statistical ("£18,000") with the abstract ("immeasurable") creates a rhetorical contrast that highlights the gap between value and remuneration. Where Text A's influence is achieved through the reader's sympathy — the lonely meals, the enforced silence — Text B's is achieved through provocation, the comparison with "supermarket shelf-stackers" designed to produce outrage. Both writers position their subjects as essential yet expendable, though Text A's tone is one of resigned observation while Text B's is one of active protest.`,
       'Grade 8-9': `These texts are separated by 176 years, yet they prosecute the same argument: that a society's commitment to education can be measured by how it treats its least visible educators. The rhetorical architectures, however, are shaped by profoundly different conceptions of injustice. Text A operates within a discourse of social taxonomy: the governess's suffering is produced by her categorical illegibility — she fits neither "servant" nor "family," and the repeated negatives ("not… yet not") syntactically perform the erasure she experiences socially. The Victorian writer's critique is implicitly gendered: the governess's "education — often superior to that of her employer" — is parenthetically enclosed, as if the writer is smuggling this subversive comparison past a readership that might not wish to confront it. The final formulation — "earn her bread without ever appearing to need it" — exposes the performative economy of Victorian femininity, where the governess must simultaneously labour and deny that labour. Text B translates this structural invisibility into contemporary terms: TAs are "invisible infrastructure," a metaphor that argues for their necessity while acknowledging their erasure. The rhetorical force of Text B derives from accumulation and juxtaposition — the itemised list of duties followed by the blunt "£18,000," then the abstractly vast "immeasurable," creating a gap between economic and human value that the reader is invited to find intolerable. The final comparison with "supermarket shelf-stackers" is deliberately provocative: it is not a criticism of retail workers but an exposure of the irrational economics of care work. Where Text A influences through pathos — the solitary meal, the imposed silence — Text B influences through logos, marshalling evidence toward an unanswerable conclusion. Yet both texts share a structural irony: they give voice to the voiceless using the very rhetorical and literary competencies that their subjects taught to others.`,
     },
     markScheme: [
-      'Compares the writers\' attitudes and methods across both texts',
+      "Compares the writers' attitudes and methods across both texts",
       'Analyses how language is used to influence the reader in each text',
       'Considers differences in historical context and how they shape the writing',
       'Uses embedded textual references from both texts',
@@ -550,7 +570,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     difficulty: 'Higher',
     extract: '',
     extractSource: '',
-    question: '"Every young person should spend a year doing voluntary or community work before starting university or full-time employment." Write an article for a newspaper giving your views on this proposal. (20 marks for communication and organisation, 20 marks for writing accuracy)',
+    question:
+      '"Every young person should spend a year doing voluntary or community work before starting university or full-time employment." Write an article for a newspaper giving your views on this proposal. (20 marks for communication and organisation, 20 marks for writing accuracy)',
     modelAnswers: {
       'Grade 4-5': `Should every young person spend a year doing community work before going to university or starting a job? Some people think this is a great idea, but I think it is more complicated than it sounds.\n\nOn the one hand, community work could be very beneficial. Young people would gain real-world experience that they cannot get in a classroom. They would learn skills like teamwork, communication, and problem-solving. They would also get to help other people, which could make them feel more confident and mature.\n\nHowever, there are problems with making this compulsory. Not every family can afford for their child to spend a year without earning money. Some young people need to start working straight away to support themselves or their families. Making everyone do voluntary work could actually make inequality worse, because richer students would find it easy while poorer students would struggle.\n\nAlso, forced volunteering is a contradiction. The whole point of voluntary work is that it is freely chosen. If you make it compulsory, you take away the thing that makes it valuable.\n\nIn conclusion, while community work is a good thing, I do not believe it should be forced on all young people. Instead, it should be encouraged and made accessible, with financial support for those who need it.`,
       'Grade 6-7': `There is something seductive about the idea of a national service year for young people. It promises to fix everything we worry about: a generation staring at screens, communities coming apart, graduates who can write essays but cannot change a tyre. One year of "real" work, the argument goes, and they will emerge as responsible, empathetic, employable adults. It is a compelling narrative. It is also, I would suggest, a fantasy.\n\nLet me be clear: I am not against voluntary work. I spent six months working in a food bank after my A-levels, and it taught me more about the country I live in than three years of university managed. But the key word in that sentence is "I." I chose it. I had parents who could support me financially while I did it. I had a university place waiting for me afterwards. These are not universally available conditions.\n\nThe proposal to make a service year compulsory ignores the single most important fact about young people in this country: they are not all the same. For a middle-class student with a safety net, a gap year of volunteering is an enriching experience. For a care leaver, a young carer, or someone from a family where every adult wage matters, it is a year of financial hardship imposed by people who have never experienced financial hardship.\n\nThere is also the philosophical objection, which is simple and, I think, unanswerable: compulsory volunteering is an oxymoron. The value of voluntary work lies precisely in its voluntariness — in the decision to give your time freely. Mandate it and you do not create a culture of service; you create a culture of resentment.\n\nThe instinct behind this proposal is a good one. We should want young people to engage with their communities. But we should do so by removing barriers — funding gap-year placements, offering bursaries, creating meaningful opportunities — not by adding another compulsory hoop to a generation that is already over-tested, over-examined, and under-trusted.`,
@@ -583,7 +604,8 @@ export const practiceQuestions: PracticeQuestion[] = [
     tier: 'GCSE',
     title: 'Paper 1 Q5 Creative Writing (Narrative)',
     extract: '',
-    question: 'Write a story about a character who discovers something unexpected in a place they thought they knew well. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
+    question:
+      'Write a story about a character who discovers something unexpected in a place they thought they knew well. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
     marks: 40,
     timing: '45 minutes',
     markScheme: [
@@ -649,7 +671,8 @@ She did not wallpaper the room. She painted around the words, leaving them expos
     tier: 'GCSE',
     title: 'Paper 2 Q2 Summary & Synthesis',
     extract: `Source A: "Travel in the nineteenth century was an endurance test. A journey from London to Edinburgh by stagecoach took four days in good weather and considerably longer in bad. Passengers were packed together in cramped, unsprung carriages that jolted over rutted roads, arriving bruised, exhausted, and covered in the dust of three counties. Inns along the route were unreliable — the beds often shared with strangers, the food indifferent, the prices exorbitant. To travel was to suffer, and only those with compelling business or exceptional stubbornness undertook long journeys voluntarily."\n— Adapted from a history of British transport, 2018\n\nSource B: "I took the 06:15 from King's Cross and was in Edinburgh by ten. I spent the journey answering emails, drinking a coffee that cost more than my grandfather earned in a day, and watching England turn into Scotland through a window that was, by modern standards, almost clean. The train was warm, fast, and largely empty. I read the paper, slept for forty minutes, and arrived feeling precisely as I had when I left, which is both the miracle and the disappointment of modern travel: it delivers you to your destination without requiring you to experience the journey at all."`,
-    question: 'Use details from both sources. Write a summary of the differences between travelling in the nineteenth century and travelling today. (8 marks)',
+    question:
+      'Use details from both sources. Write a summary of the differences between travelling in the nineteenth century and travelling today. (8 marks)',
     marks: 8,
     timing: '10 minutes',
     markScheme: [
@@ -680,7 +703,7 @@ She did not wallpaper the room. She painted around the words, leaving them expos
     tier: 'GCSE',
     title: 'Literature Paper 2 Poetry Comparison',
     extract: `Poem A — "Remains" by Simon Armitage (extract):
-"His blood-Loss shadow stays on the street, and out on patrol
+"His blood-shadow stays on the street, and out on patrol
 I walk right over it week after week. Then I'm home on leave.
 But I blink and he bursts again through the doors of the bank.
 Sleep, and he's probably armed, and probably dangerous,
@@ -693,14 +716,15 @@ with spools of suffering set out in ordered rows.
 The only light is red and softly glows,
 as though this were a church and he a priest
 preparing to intone a Mass."`,
-    question: 'Compare how the poets present the lasting effects of conflict in "Remains" and "War Photographer." (30 marks)',
+    question:
+      'Compare how the poets present the lasting effects of conflict in "Remains" and "War Photographer." (30 marks)',
     marks: 30,
     timing: '45 minutes',
     markScheme: [
       'Compares ideas and themes across both poems',
       'Analyses how language, form, and structure create meaning in both poems',
       'Uses well-selected quotations from both poems',
-      'Explores the poets\' methods and their effects on the reader',
+      "Explores the poets' methods and their effects on the reader",
       'Considers relevant contextual factors',
       'Maintains a comparative structure throughout',
     ],
@@ -752,7 +776,8 @@ Mrs Patricia Denton, seventy-three, of Sevenoaks in Kent, described the experien
 
 The economic cost of the storm was later estimated at over one billion pounds. Eighteen people lost their lives. The Met Office was criticised for failing to issue an adequate warning, a controversy that led to a fundamental overhaul of the national weather forecasting system.`,
     extractSource: 'Adapted from an account of the Great Storm of 1987',
-    question: 'From lines 1-12, identify the information given about the storm and its effects. Give four examples. (4 marks)',
+    question:
+      'From lines 1-12, identify the information given about the storm and its effects. Give four examples. (4 marks)',
     marks: 4,
     timing: '15 minutes',
     markScheme: [
@@ -782,7 +807,8 @@ The economic cost of the storm was later estimated at over one billion pounds. E
     tier: 'GCSE',
     title: 'Language Paper 1 Q5 Transactional Writing',
     extract: '',
-    question: 'Your school is considering replacing all physical textbooks with tablets and digital resources. Write a speech to be delivered at a school assembly giving your views on this proposal. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
+    question:
+      'Your school is considering replacing all physical textbooks with tablets and digital resources. Write a speech to be delivered at a school assembly giving your views on this proposal. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
     marks: 40,
     timing: '45 minutes',
     markScheme: [
@@ -861,12 +887,13 @@ Looking as if she were alive. I call
 That piece a wonder, now: Fra Pandolf's hands
 Worked busily a day, and there she stands.
 Will't please you sit and look at her?"`,
-    question: 'Compare how the poets explore the theme of power and its limitations in "Ozymandias" and "My Last Duchess." (20 marks)',
+    question:
+      'Compare how the poets explore the theme of power and its limitations in "Ozymandias" and "My Last Duchess." (20 marks)',
     marks: 20,
     timing: '35 minutes',
     markScheme: [
       'Compares ideas about power across both poems',
-      'Analyses how the poets\' methods convey attitudes to power',
+      "Analyses how the poets' methods convey attitudes to power",
       'Uses well-selected quotations from both poems',
       'Explores how form and structure contribute to meaning',
       'Considers how context informs the treatment of power',
@@ -922,7 +949,8 @@ Then the smells arrive, and they are less romantic. Tanning pits on the eastern 
 
 You will get lost. This is not a possibility but a certainty. The lanes twist and double back and arrive at dead ends that were not dead ends yesterday because someone has parked a cart across them. Maps are useless. Ask for directions and you will receive confident, contradictory advice from five different people, all of whom are correct, because in Marrakech there are always at least three ways to get anywhere, and none of them are the one you would choose.`,
     extractSource: 'Original composition in the style of travel writing',
-    question: 'Read the extract carefully. Based on what you have read, identify and explain five things you learn about the market in Marrakech. Use evidence from the text to support each point. (10 marks)',
+    question:
+      'Read the extract carefully. Based on what you have read, identify and explain five things you learn about the market in Marrakech. Use evidence from the text to support each point. (10 marks)',
     marks: 10,
     timing: '15 minutes',
     markScheme: [
@@ -972,11 +1000,12 @@ It is the bloody business which informs
 Thus to mine eyes.
 
 (Macbeth, Act 2 Scene 1)`,
-    question: 'How does Shakespeare use this extract to present Macbeth\'s state of mind at this point in the play? Explore how the extract contributes to the play as a whole. (24 marks)',
+    question:
+      "How does Shakespeare use this extract to present Macbeth's state of mind at this point in the play? Explore how the extract contributes to the play as a whole. (24 marks)",
     marks: 24,
     timing: '30 minutes',
     markScheme: [
-      'Analyses how language presents Macbeth\'s psychological state',
+      "Analyses how language presents Macbeth's psychological state",
       'Explores the significance of the extract within the wider play',
       'Uses well-selected quotations analysed in detail',
       'Considers how dramatic techniques (soliloquy, stage imagery) contribute to meaning',
@@ -986,7 +1015,7 @@ Thus to mine eyes.
     examinerTips: [
       'The extract is a starting point, not a boundary. Refer to the rest of the play.',
       'Consider why Shakespeare uses a soliloquy here — what does it reveal?',
-      'Think about the audience\'s experience. What would a Jacobean audience think?',
+      "Think about the audience's experience. What would a Jacobean audience think?",
       'Analyse specific words, not just general ideas.',
     ],
     modelAnswers: {
@@ -1040,11 +1069,12 @@ Nothing. The radios dumb;
 And still they stand in corners of our kitchens,
 And stand, perhaps, turned on, in a million rooms
 All over the world.`,
-    question: 'In this poem, Muir presents a world recovering from catastrophe. How does the poet use language, form, and structure to convey the experience of the survivors? (24 marks)',
+    question:
+      'In this poem, Muir presents a world recovering from catastrophe. How does the poet use language, form, and structure to convey the experience of the survivors? (24 marks)',
     marks: 24,
     timing: '30 minutes',
     markScheme: [
-      'Analyses how language choices convey the survivors\' experience',
+      "Analyses how language choices convey the survivors' experience",
       'Comments on the effects of structural and formal choices',
       'Uses well-selected quotations analysed in close detail',
       'Explores multiple layers of meaning',
@@ -1101,7 +1131,8 @@ The building stood empty for six years. Rain found its way through the slate roo
 
 In 1993, a woman called Helen Rhys moved to the village from Cardiff and, within six months, had persuaded the council to let her reopen the building as a community centre. She raised fourteen thousand pounds through bake sales, sponsored walks, and what she called "the systematic exploitation of middle-class guilt." The centre opened on September 3rd, 1994. Miss Griffiths cut the ribbon. She was eighty-two years old and used the occasion to deliver a short speech about the importance of education that the local newspaper described as "moving" and the parish councillor seated nearest to her described as "fifteen minutes too long."`,
     extractSource: 'Original composition in the style of local history writing',
-    question: 'Read lines 1-15 carefully. Choose five statements below which are true. Write the correct letter in each box. (5 marks)\n\n(a) The school had twelve pupils when it closed.\n(b) Miss Griffiths taught at the school for over forty years.\n(c) Miss Griffiths posted the key through the education office letterbox.\n(d) The building was empty for ten years.\n(e) Vandals damaged the building.\n(f) The parish council quickly agreed on a new use.\n(g) Helen Rhys was originally from Cardiff.\n(h) The community centre opened in 1993.\n(i) Miss Griffiths cut the ribbon at the opening.\n(j) The local newspaper called Miss Griffiths\'s speech "fifteen minutes too long."',
+    question:
+      'Read lines 1-15 carefully. Choose five statements below which are true. Write the correct letter in each box. (5 marks)\n\n(a) The school had twelve pupils when it closed.\n(b) Miss Griffiths taught at the school for over forty years.\n(c) Miss Griffiths posted the key through the education office letterbox.\n(d) The building was empty for ten years.\n(e) Vandals damaged the building.\n(f) The parish council quickly agreed on a new use.\n(g) Helen Rhys was originally from Cardiff.\n(h) The community centre opened in 1993.\n(i) Miss Griffiths cut the ribbon at the opening.\n(j) The local newspaper called Miss Griffiths\'s speech "fifteen minutes too long."',
     marks: 5,
     timing: '10 minutes',
     markScheme: [
@@ -1130,7 +1161,8 @@ In 1993, a woman called Helen Rhys moved to the village from Cardiff and, within
     tier: 'GCSE',
     title: 'Component 2 Section B Persuasive Writing',
     extract: '',
-    question: 'Your local park is threatened with being sold for housing development. Write a letter to the local newspaper persuading readers that the park must be saved. (20 marks for communication and organisation, 20 marks for writing accuracy)',
+    question:
+      'Your local park is threatened with being sold for housing development. Write a letter to the local newspaper persuading readers that the park must be saved. (20 marks for communication and organisation, 20 marks for writing accuracy)',
     marks: 40,
     timing: '30 minutes',
     markScheme: [
@@ -1216,14 +1248,15 @@ As dreams are made on, and our little life
 Is rounded with a sleep.
 
 (The Tempest, Act 4 Scene 1)`,
-    question: 'How does Shakespeare use this speech to explore ideas about power, illusion, and the nature of life? You should consider the language and imagery used, the significance of the speech in the play as a whole, and relevant context. (20 marks)',
+    question:
+      'How does Shakespeare use this speech to explore ideas about power, illusion, and the nature of life? You should consider the language and imagery used, the significance of the speech in the play as a whole, and relevant context. (20 marks)',
     marks: 20,
     timing: '30 minutes',
     markScheme: [
       'Analyses how language and imagery convey ideas about power and impermanence',
       'Explores the significance of the speech within the wider play',
       'Uses well-selected quotations analysed in close detail',
-      'Considers relevant context (Shakespeare\'s late career, theatre, colonialism)',
+      "Considers relevant context (Shakespeare's late career, theatre, colonialism)",
       'Shows understanding of how the speech functions as a dramatic moment',
       'Develops a coherent and sustained argument',
     ],
@@ -1276,8 +1309,10 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     type: 'reading',
     difficulty: 'Foundation',
     extract: `I arrived in Manchester on a Tuesday in November, and the first thing that struck me was the sky — or rather, the absence of it. A pall of smoke hung over the city so dense and so low that one could scarcely distinguish the rooftops from the clouds. The streets were crowded beyond anything I had witnessed in London. Men, women, and children of every description hurried along the pavements, their faces blackened with soot, their clothing threadbare, their expressions fixed in that peculiar blankness which I have since learned to recognise as the mask of exhaustion.\n\nThe factories dominated everything. They rose on every side like the cathedrals of some new and pitiless religion, their chimneys belching forth a smoke that tasted of sulphur and coated the tongue with a metallic bitterness. I counted fourteen mills within a single mile of my lodging. The noise was incessant — a great grinding, clattering roar that began before dawn and did not cease until long after dark. The workers who emerged from these establishments at the end of their shifts moved with the slow, mechanical gait of people whose bodies had been borrowed for the day and returned in worse condition than they were lent.\n\nI spoke with one woman, a spinner, who told me she worked fourteen hours a day for seven shillings a week. She was thirty-one years old. She looked fifty.`,
-    extractSource: 'Adapted from a 19th-century social investigation report, in the style of Friedrich Engels',
-    question: 'Read the extract carefully. (a) Identify four things you learn about the conditions in Manchester from the extract. (4 marks) (b) What impressions do you get of the writer\'s attitude towards what they witnessed? Use evidence from the text to support your answer. (6 marks)',
+    extractSource:
+      'Adapted from a 19th-century social investigation report, in the style of Friedrich Engels',
+    question:
+      "Read the extract carefully. (a) Identify four things you learn about the conditions in Manchester from the extract. (4 marks) (b) What impressions do you get of the writer's attitude towards what they witnessed? Use evidence from the text to support your answer. (6 marks)",
     marks: 10,
     timing: '15 minutes',
     modelAnswers: {
@@ -1288,14 +1323,14 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     markScheme: [
       'Identifies four distinct, accurate pieces of information from the extract (Q1)',
       'Supports each point with textual reference or quotation',
-      'Analyses how the writer\'s language reveals their attitude (Q2)',
+      "Analyses how the writer's language reveals their attitude (Q2)",
       'Comments on the effect of specific word choices and techniques',
-      'Shows understanding of the writer\'s purpose and perspective',
+      "Shows understanding of the writer's purpose and perspective",
       'Distinguishes between explicit and implicit information',
     ],
     examinerTips: [
       'Part (a) is straightforward retrieval — keep answers clear and concise, one point per sentence.',
-      'Part (b) requires inference — read between the lines for the writer\'s attitude.',
+      "Part (b) requires inference — read between the lines for the writer's attitude.",
       'Remember: Edexcel Paper 1 uses 19th-century NON-FICTION, not fiction.',
       'Use short, embedded quotations rather than copying out long sections.',
     ],
@@ -1310,8 +1345,10 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     type: 'reading',
     difficulty: 'Higher',
     extract: `The condition of the lodging-houses in which the poorest of the poor take refuge beggars all description. I visited one such establishment in Whitechapel last Thursday evening and found, in a single room of perhaps twelve feet by ten, no fewer than seventeen persons — men, women, and children — sleeping, if that word can be applied to so fitful and wretched a state. The air was foul beyond endurance. A single candle guttered on a broken table, casting a yellow and uncertain light over a scene that resembled nothing so much as the hold of a slave ship.\n\nThe walls ran with damp. The floor, which was bare earth in places where the boards had rotted through, was covered in a substance I will not describe to a readership unaccustomed to such particulars, except to say that it would not have been tolerated in any stable in the country. There was no ventilation, no sanitation, and no water save a single pail in the corner from which all seventeen occupants were expected to drink. The landlord of this establishment, I subsequently discovered, charges fourpence a night for the privilege of sleeping in it. He owns eleven such properties. He lives in Kensington.`,
-    extractSource: 'Adapted from 19th-century investigative journalism, in the style of Henry Mayhew',
-    question: 'Analyse how the writer uses language and structure to convey the horrors of the lodging-house and to influence the reader. Support your views with detailed reference to the text. (15 marks)',
+    extractSource:
+      'Adapted from 19th-century investigative journalism, in the style of Henry Mayhew',
+    question:
+      'Analyse how the writer uses language and structure to convey the horrors of the lodging-house and to influence the reader. Support your views with detailed reference to the text. (15 marks)',
     marks: 15,
     timing: '20 minutes',
     modelAnswers: {
@@ -1321,7 +1358,7 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     },
     markScheme: [
       'Analyses specific language choices and their effects in detail',
-      'Comments on how structural features contribute to the writer\'s purpose',
+      "Comments on how structural features contribute to the writer's purpose",
       'Explores how the writer positions and influences the reader',
       'Uses well-integrated quotations with close textual analysis',
       'Employs subject terminology precisely and purposefully',
@@ -1329,7 +1366,7 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     ],
     examinerTips: [
       'Edexcel Paper 1 Q3 asks for BOTH language and structure — address both explicitly.',
-      'Remember this is 19th-century non-fiction: consider the writer\'s purpose (to inform, persuade, campaign).',
+      "Remember this is 19th-century non-fiction: consider the writer's purpose (to inform, persuade, campaign).",
       'Analyse the effect of specific techniques rather than simply identifying them.',
       'Consider how the writer positions the reader — are you being persuaded, shocked, moved?',
     ],
@@ -1345,7 +1382,8 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     difficulty: 'Higher',
     extract: '',
     extractSource: '',
-    question: 'You have been asked to give a speech to your year group about the importance of reading. Write your speech. In your speech you could explain why reading matters, give examples from your own experience, and persuade your audience to read more. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
+    question:
+      'You have been asked to give a speech to your year group about the importance of reading. Write your speech. In your speech you could explain why reading matters, give examples from your own experience, and persuade your audience to read more. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -1379,7 +1417,8 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     difficulty: 'Foundation',
     extract: `The kitchen was the warmest room in the house, and in winter it was the only room that mattered. Grace stood at the counter rolling pastry with the same wooden pin her mother had used, and her mother before that. The flour dusted her forearms like first snow on a dark field. Outside, the January light was already failing at half past three, and the window had become a black mirror in which she could see herself — a woman of sixty-two, alone in a kitchen, making a pie that nobody had asked for.\n\nThe radio murmured on the shelf above the cooker. She kept it on all day, not for the programmes but for the voices — the low, companionable hum of strangers talking about things that did not concern her. It filled the spaces that silence would otherwise occupy, and silence, she had discovered, was not the peaceful thing that poets claimed. Silence was an animal that grew larger the more room you gave it.\n\nShe heard the gate. The particular squeak of the hinge that David had promised to oil every weekend for thirty years and never had. For a moment — one brief, treacherous moment — she forgot. Her hands stilled on the rolling pin and she almost called out his name. Then she remembered. The gate squeaked in the wind sometimes. That was all. She returned to the pastry and pressed harder than was necessary, and the radio kept talking, and the light kept failing, and the pie kept being made for nobody.`,
     extractSource: 'Original composition in the style of contemporary literary fiction',
-    question: 'How does the writer present Grace\'s loneliness and grief in this extract? You should comment on the writer\'s use of language and structure, and use examples from the text to support your answer. (15 marks)',
+    question:
+      "How does the writer present Grace's loneliness and grief in this extract? You should comment on the writer's use of language and structure, and use examples from the text to support your answer. (15 marks)",
     marks: 15,
     timing: '20 minutes',
     modelAnswers: {
@@ -1412,8 +1451,10 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     type: 'reading',
     difficulty: 'Higher',
     extract: `Source A — From a letter written by a soldier during the First World War, 1916:\n"You ask me what it is like out here, and I find I cannot tell you honestly without either frightening you or boring you, because the truth is that it is both terrifying and tedious in almost equal measure. We spend days in the trench doing nothing at all — mending socks, writing letters, sleeping in mud — and then, without warning, the sky tears open and the world becomes a place of noise and metal and men screaming. Afterwards, there is silence. We count who is missing. We make tea. The ordinariness of what follows the horror is, I think, the thing I shall never be able to explain to anyone who was not here."\n\nSource B — From a 21st-century travel writer visiting the battlefields of the Western Front, 2019:\n"The fields at the Somme are green now, and very quiet. Cows graze where men died in their thousands, and the grass — thick, well-fed grass — covers everything. A guide explains that the soil here still produces iron fragments every spring, pushed upward by the frost: shrapnel, buttons, occasionally bone. The earth has not forgotten, even if the surface has learned to look as though it has. I stand at the edge of a crater that has become a pond and try to feel something adequate. I cannot. The scale defeats imagination. Seventy thousand casualties on the first day — a number so large it ceases to be a number and becomes instead a kind of weather, a pressure system of grief too vast to be experienced by a single mind."`,
-    extractSource: 'Source A: Adapted from a 1916 soldier\'s letter; Source B: Adapted from a 2019 travel essay',
-    question: 'Compare how the writers of Source A and Source B convey their experiences of war. You should compare the writers\' different perspectives and experiences, how they use language and structure to convey those experiences, and the effects on the reader. (15 marks)',
+    extractSource:
+      "Source A: Adapted from a 1916 soldier's letter; Source B: Adapted from a 2019 travel essay",
+    question:
+      "Compare how the writers of Source A and Source B convey their experiences of war. You should compare the writers' different perspectives and experiences, how they use language and structure to convey those experiences, and the effects on the reader. (15 marks)",
     marks: 15,
     timing: '25 minutes',
     modelAnswers: {
@@ -1427,11 +1468,11 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
       'Evaluates the impact on the reader for each source',
       'Uses comparative connectives to integrate the analysis',
       'Embeds well-selected quotations from both sources',
-      'Shows perceptive understanding of how context shapes each writer\'s approach',
+      "Shows perceptive understanding of how context shapes each writer's approach",
     ],
     examinerTips: [
       'Compare throughout — do not write about one source and then the other.',
-      'Consider how the writers\' different positions (participant vs. visitor) shape their language.',
+      "Consider how the writers' different positions (participant vs. visitor) shape their language.",
       'Evaluate effectiveness: which writer conveys the experience more powerfully, and why?',
       'The best answers find structural and thematic parallels between the sources, not just differences.',
     ],
@@ -1447,7 +1488,8 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     difficulty: 'Higher',
     extract: '',
     extractSource: '',
-    question: 'Write a narrative or descriptive piece about a journey that changes the person making it. You may wish to write about a physical journey, an emotional journey, or both. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
+    question:
+      'Write a narrative or descriptive piece about a journey that changes the person making it. You may wish to write about a physical journey, an emotional journey, or both. (40 marks: 24 for content and organisation, 16 for technical accuracy)',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -1489,8 +1531,9 @@ Contextually, this speech represents Shakespeare's most direct engagement with h
     tier: 'GCSE',
     title: 'Macbeth — Character Analysis (Lady Macbeth)',
     extract: `Come, you spirits\nThat tend on mortal thoughts, unsex me here,\nAnd fill me from the crown to the toe top-full\nOf direst cruelty. Make thick my blood,\nStop up the access and passage to remorse,\nThat no compunctious visitings of nature\nShake my fell purpose, nor keep peace between\nThe effect and it. Come to my woman\'s breasts,\nAnd take my milk for gall, you murd\'ring ministers.`,
-    extractSource: 'Written in the style of Shakespeare\'s Macbeth, Act 1 Scene 5',
-    question: 'Starting with this extract, how does Shakespeare present Lady Macbeth as a powerful character? Write about how Shakespeare presents Lady Macbeth in this extract and in the play as a whole. (30 marks + 4 AO4)',
+    extractSource: "Written in the style of Shakespeare's Macbeth, Act 1 Scene 5",
+    question:
+      'Starting with this extract, how does Shakespeare present Lady Macbeth as a powerful character? Write about how Shakespeare presents Lady Macbeth in this extract and in the play as a whole. (30 marks + 4 AO4)',
     marks: 34,
     timing: '50 minutes',
     modelAnswers: {
@@ -1528,7 +1571,7 @@ What makes Lady Macbeth\'s characterisation so enduring is Shakespeare\'s refusa
     ],
     examinerTips: [
       'Start with the extract but ensure you cover the rest of the play in equal detail.',
-      'Consider how Shakespeare structures Lady Macbeth\'s arc — the trajectory from power to collapse is crucial.',
+      "Consider how Shakespeare structures Lady Macbeth's arc — the trajectory from power to collapse is crucial.",
       'Context should support your argument, not replace analysis.',
       'Use the phrase "Shakespeare presents" to keep focus on authorial method.',
     ],
@@ -1543,8 +1586,9 @@ What makes Lady Macbeth\'s characterisation so enduring is Shakespeare\'s refusa
     tier: 'GCSE',
     title: 'Macbeth — Theme of Ambition',
     extract: `I have no spur\nTo prick the sides of my intent, but only\nVaulting ambition, which o\'erleaps itself\nAnd falls on the other.`,
-    extractSource: 'Written in the style of Shakespeare\'s Macbeth, Act 1 Scene 7',
-    question: 'Starting with this extract, how does Shakespeare present the theme of ambition in Macbeth? Write about how ambition is presented in this extract and in the play as a whole. (30 marks + 4 AO4)',
+    extractSource: "Written in the style of Shakespeare's Macbeth, Act 1 Scene 7",
+    question:
+      'Starting with this extract, how does Shakespeare present the theme of ambition in Macbeth? Write about how ambition is presented in this extract and in the play as a whole. (30 marks + 4 AO4)',
     marks: 34,
     timing: '50 minutes',
     modelAnswers: {
@@ -1599,8 +1643,9 @@ Shakespeare ultimately presents ambition as a force that consumes the structures
     tier: 'GCSE',
     title: 'An Inspector Calls — Theme of Responsibility',
     extract: `But just remember this. One Eva Smith has gone — but there are millions and millions of Eva Smiths and John Smiths still left with us, with their lives, their hopes and fears, their suffering and chance of happiness, all intertwined with our lives, and what we think and say and do. We don\'t live alone. We are members of one body. We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish.`,
-    extractSource: 'Written in the style of J.B. Priestley\'s An Inspector Calls, Act 3',
-    question: 'How does Priestley use the character of the Inspector to present ideas about responsibility? Write about how the Inspector presents ideas about responsibility in this extract and in the play as a whole. (30 marks + 4 AO4)',
+    extractSource: "Written in the style of J.B. Priestley's An Inspector Calls, Act 3",
+    question:
+      'How does Priestley use the character of the Inspector to present ideas about responsibility? Write about how the Inspector presents ideas about responsibility in this extract and in the play as a whole. (30 marks + 4 AO4)',
     marks: 34,
     timing: '50 minutes',
     modelAnswers: {
@@ -1631,10 +1676,10 @@ The Inspector\'s supernatural ambiguity — is he a ghost, a time traveller, a p
     markScheme: [
       'Analyses how Priestley uses the Inspector to present ideas about responsibility',
       'Explores the significance of specific language choices in the extract',
-      'Discusses responsibility across the whole play, including other characters\' responses',
+      "Discusses responsibility across the whole play, including other characters' responses",
       'Considers relevant context (1912 setting, 1945 audience, socialism, welfare state)',
       'Uses well-integrated quotations from the extract and the wider play',
-      'Develops a conceptualised argument about Priestley\'s purpose and message',
+      "Develops a conceptualised argument about Priestley's purpose and message",
     ],
     examinerTips: [
       'The Inspector is a mouthpiece — always write "Priestley uses the Inspector to..." rather than treating him as a real person.',
@@ -1653,8 +1698,9 @@ The Inspector\'s supernatural ambiguity — is he a ghost, a time traveller, a p
     tier: 'GCSE',
     title: 'An Inspector Calls — Mr Birling Character Analysis',
     extract: `But the way some of these cranks talk and write now, you\'d think everybody has to look after everybody else, as if we were all mixed up together like bees in a hive — community and all that nonsense. A man has to mind his own business and look after himself and his own — and I speak as a hard-headed practical man of business.`,
-    extractSource: 'Written in the style of J.B. Priestley\'s An Inspector Calls, Act 1',
-    question: 'How and why does Priestley present Mr Birling as an unlikeable character? Write about how Mr Birling is presented in this extract and in the play as a whole. (30 marks + 4 AO4)',
+    extractSource: "Written in the style of J.B. Priestley's An Inspector Calls, Act 1",
+    question:
+      'How and why does Priestley present Mr Birling as an unlikeable character? Write about how Mr Birling is presented in this extract and in the play as a whole. (30 marks + 4 AO4)',
     marks: 34,
     timing: '50 minutes',
     modelAnswers: {
@@ -1685,15 +1731,15 @@ The character\'s response to the investigation completes Priestley\'s portrait. 
     markScheme: [
       'Analyses how Priestley presents Mr Birling as unlikeable through language and dramatic irony',
       'Explores the effect of specific words and rhetorical strategies in the extract',
-      'Discusses Birling\'s role and characterisation across the whole play',
+      "Discusses Birling's role and characterisation across the whole play",
       'Considers relevant context (capitalism, socialism, the welfare state, dramatic irony)',
       'Uses well-integrated quotations from the extract and the wider play',
-      'Develops a sustained argument about Priestley\'s purpose in creating this character',
+      "Develops a sustained argument about Priestley's purpose in creating this character",
     ],
     examinerTips: [
-      'Always frame your analysis around Priestley\'s intentions — why did he make Birling say this?',
+      "Always frame your analysis around Priestley's intentions — why did he make Birling say this?",
       'Dramatic irony is essential to any answer about Mr Birling.',
-      'Do not just describe what Birling says — analyse what it reveals about him and about Priestley\'s message.',
+      "Do not just describe what Birling says — analyse what it reveals about him and about Priestley's message.",
       'The contrast between Birling and the Inspector is a structural device worth exploring.',
     ],
   },
@@ -1708,7 +1754,8 @@ The character\'s response to the investigation completes Priestley\'s portrait. 
     title: 'Power & Conflict Poetry Comparison',
     extract: `Poem A — "Ozymandias" by Percy Bysshe Shelley:\n"I met a traveller from an antique land,\nWho said — Two vast and trunkless legs of stone\nStand in the desert. Near them, on the sand,\nHalf sunk a shattered visage lies, whose frown,\nAnd wrinkled lip, and sneer of cold command,\nTell that its sculptor well those passions read\nWhich yet survive, stamped on these lifeless things,\nThe hand that mocked them, and the heart that fed;\nAnd on the pedestal, these words appear:\nMy name is Ozymandias, King of Kings;\nLook on my Works, ye Mighty, and despair!\nNothing beside remains. Round the decay\nOf that colossal Wreck, boundless and bare\nThe lone and level sands stretch far away."\n\nCompare with one other poem from the Power and Conflict anthology.`,
     extractSource: 'Poetry anthology extract',
-    question: 'Compare how poets present the abuse or futility of power in "Ozymandias" and one other poem from the Power and Conflict anthology. (30 marks)',
+    question:
+      'Compare how poets present the abuse or futility of power in "Ozymandias" and one other poem from the Power and Conflict anthology. (30 marks)',
     marks: 30,
     timing: '45 minutes',
     modelAnswers: {
@@ -1739,7 +1786,7 @@ The temporal contrast between the poems is structurally significant. Shelley wri
     markScheme: [
       'Compares how both poets present power and its futility',
       'Analyses specific language, form, and structural choices in both poems',
-      'Explores the poets\' methods and their effects on the reader',
+      "Explores the poets' methods and their effects on the reader",
       'Maintains a comparative structure throughout (not poem-by-poem)',
       'Considers relevant contextual factors for both poems',
       'Uses precise, well-integrated quotations from both poems',
@@ -1762,7 +1809,8 @@ The temporal contrast between the poems is structurally significant. Shelley wri
     title: 'Unseen Poetry Analysis',
     extract: `The Old Pier\n\nIt stands, though barely, listing like a drunk\nwho can\'t remember where he lives.\nThe timbers groan at every tide,\na sound like ships that never sailed.\n\nOnce, families queued here, sunburned, loud,\nwith buckets, rods, and small ambitions —\na mackerel, perhaps, or just the satisfaction\nof standing where the land gives up.\n\nNow the railings rust to lace.\nBirds own what people left behind.\nThe sea still comes, indifferent as a clock,\nand the pier receives it, open-armed,\nthe way the old receive what they cannot prevent.`,
     extractSource: 'Original poem written for this exercise',
-    question: 'In "The Old Pier," how does the poet present ideas about time and decay? You should consider the poet\'s use of language, form, and structure. (24 marks)',
+    question:
+      'In "The Old Pier," how does the poet present ideas about time and decay? You should consider the poet\'s use of language, form, and structure. (24 marks)',
     marks: 24,
     timing: '30 minutes',
     modelAnswers: {
@@ -1793,7 +1841,7 @@ The poem\'s closing lines — "the pier receives it, open-armed, / the way the o
       'Explores the effects of specific images, metaphors, and similes',
       'Comments on form and structure (stanza organisation, line breaks, progression)',
       'Uses well-selected quotations embedded in analysis',
-      'Considers the poet\'s overall purpose and the reader\'s response',
+      "Considers the poet's overall purpose and the reader's response",
       'Develops a sustained personal interpretation',
     ],
     examinerTips: [
@@ -1815,10 +1863,11 @@ The poem\'s closing lines — "the pier receives it, open-armed, / the way the o
     type: 'Extract-Based Essay',
     questionType: 'Extract-Based Essay',
     tier: 'GCSE',
-    title: 'Macbeth — Extract-Based (Banquo\'s Ghost)',
+    title: "Macbeth — Extract-Based (Banquo's Ghost)",
     extract: `Avaunt, and quit my sight! Let the earth hide thee!\nThy bones are marrowless, thy blood is cold;\nThou hast no speculation in those eyes\nWhich thou dost glare with!\n\nPrithee, see there! Behold! Look! Lo!\nIf I stand here, I saw him.`,
-    extractSource: 'Written in the style of Shakespeare\'s Macbeth, Act 3 Scene 4',
-    question: 'Explore how Shakespeare presents Macbeth\'s guilt and fear in this extract and elsewhere in the play. You must refer to the context of the play in your answer. (40 marks — 15 AO1, 15 AO2, 10 AO3)',
+    extractSource: "Written in the style of Shakespeare's Macbeth, Act 3 Scene 4",
+    question:
+      "Explore how Shakespeare presents Macbeth's guilt and fear in this extract and elsewhere in the play. You must refer to the context of the play in your answer. (40 marks — 15 AO1, 15 AO2, 10 AO3)",
     marks: 40,
     timing: '55 minutes',
     modelAnswers: {
@@ -1854,7 +1903,7 @@ The contextual significance of the ghost scene extends beyond Jacobean supernatu
       'Discusses guilt and fear across the whole play with well-chosen references',
       'Considers relevant context (Jacobean beliefs, Divine Right, supernatural)',
       'Uses precisely embedded quotations to support a sustained argument',
-      'Shows understanding of Shakespeare\'s dramatic methods and purposes',
+      "Shows understanding of Shakespeare's dramatic methods and purposes",
     ],
     examinerTips: [
       'Edexcel awards 10 marks for context (AO3) — weave it throughout your answer, do not bolt it on.',
@@ -1873,8 +1922,9 @@ The contextual significance of the ghost scene extends beyond Jacobean supernatu
     tier: 'GCSE',
     title: 'Macbeth — Extract-Based (The Witches)',
     extract: `When shall we three meet again\nIn thunder, lightning, or in rain?\n\nWhen the hurlyburly\'s done,\nWhen the battle\'s lost and won.\n\nFair is foul, and foul is fair:\nHover through the fog and filthy air.`,
-    extractSource: 'Written in the style of Shakespeare\'s Macbeth, Act 1 Scene 1',
-    question: 'Explore how Shakespeare presents the supernatural as a disruptive force in this extract and elsewhere in the play. You must refer to the context of the play in your answer. (40 marks)',
+    extractSource: "Written in the style of Shakespeare's Macbeth, Act 1 Scene 1",
+    question:
+      'Explore how Shakespeare presents the supernatural as a disruptive force in this extract and elsewhere in the play. You must refer to the context of the play in your answer. (40 marks)',
     marks: 40,
     timing: '55 minutes',
     modelAnswers: {
@@ -1917,7 +1967,7 @@ Shakespeare\'s engagement with the supernatural is inseparable from its politica
       'Develops a conceptualised response to the idea of disruption',
     ],
     examinerTips: [
-      'Consider the witches\' language as a dramatic technique, not just as speech.',
+      "Consider the witches' language as a dramatic technique, not just as speech.",
       'The best responses connect the supernatural to themes of power, language, and order.',
       'Context about James I and witchcraft should deepen your analysis, not sit separately.',
       'Do not just describe what happens — analyse how and why Shakespeare constructs meaning.',
@@ -1931,10 +1981,11 @@ Shakespeare\'s engagement with the supernatural is inseparable from its politica
     type: 'Character Analysis',
     questionType: 'Character Analysis',
     tier: 'GCSE',
-    title: 'A Christmas Carol — Scrooge\'s Transformation',
+    title: "A Christmas Carol — Scrooge's Transformation",
     extract: `He became as good a friend, as good a master, and as good a man, as the good old city knew, or any other good old city, town, or borough, in the good old world. Some people laughed to see the alteration in him, but he let them laugh, and little heeded them; for he was wise enough to know that nothing ever happened on this globe, for good, at which some people did not have their fill of laughter in the outset.`,
-    extractSource: 'Written in the style of Charles Dickens\'s A Christmas Carol, Stave 5',
-    question: 'Explore how Dickens presents Scrooge\'s transformation in this extract and in the novella as a whole. (40 marks)',
+    extractSource: "Written in the style of Charles Dickens's A Christmas Carol, Stave 5",
+    question:
+      "Explore how Dickens presents Scrooge's transformation in this extract and in the novella as a whole. (40 marks)",
     marks: 40,
     timing: '55 minutes',
     modelAnswers: {
@@ -1969,16 +2020,16 @@ The Ghost of Christmas Present shifts the register from personal memory to socia
 The novella\'s power as social criticism lies in its formal choice: the fairy tale. By casting economic injustice as a supernatural narrative with a redemptive arc, Dickens makes social reform emotionally accessible in a way that parliamentary reports could not. The transformation is deliberately excessive — Scrooge does not merely become adequate but becomes the best friend, master, and man in the city — because Dickens understood that political persuasion requires not just intellectual agreement but emotional conversion. The novella does not argue for the welfare state; it creates the feeling that makes the welfare state imaginable.`,
     },
     markScheme: [
-      'Analyses how Dickens presents Scrooge\'s transformation through language and narrative structure',
+      "Analyses how Dickens presents Scrooge's transformation through language and narrative structure",
       'Explores specific words, phrases, and rhetorical techniques in the extract',
       'Traces the transformation across all five staves of the novella',
-      'Considers relevant context (Victorian poverty, Dickens\'s social purpose, the Poor Law)',
+      "Considers relevant context (Victorian poverty, Dickens's social purpose, the Poor Law)",
       'Uses precisely embedded quotations to support a sustained argument',
       'Develops a conceptualised response to the nature and purpose of transformation',
     ],
     examinerTips: [
       'The transformation is a process, not an event — trace how it develops across the whole novella.',
-      'Connect Scrooge\'s personal change to Dickens\'s wider social message.',
+      "Connect Scrooge's personal change to Dickens's wider social message.",
       'The ghosts are not just characters — they are structural devices. Analyse what each one achieves.',
       'The best answers consider why Dickens chose this form (a fairy tale / ghost story) for a social message.',
     ],
@@ -1993,8 +2044,9 @@ The novella\'s power as social criticism lies in its formal choice: the fairy ta
     tier: 'GCSE',
     title: 'A Christmas Carol — Social Criticism',
     extract: `"Are there no prisons?" asked Scrooge.\n"Plenty of prisons," said the gentleman.\n"And the Union workhouses?" demanded Scrooge. "Are they still in operation?"\n"They are. Still," returned the gentleman, "I wish I could say they were not."\n"The Treadmill and the Poor Law are in full vigour, then?" said Scrooge.\n"Both very busy, sir."\n"Oh! I was afraid, from what you said at first, that something had occurred to stop them in their useful course," said Scrooge. "I\'m very glad to hear it."`,
-    extractSource: 'Written in the style of Charles Dickens\'s A Christmas Carol, Stave 1',
-    question: 'Explore how Dickens uses the character of Scrooge to present ideas about social responsibility in this extract and in the novella as a whole. (40 marks)',
+    extractSource: "Written in the style of Charles Dickens's A Christmas Carol, Stave 1",
+    question:
+      'Explore how Dickens uses the character of Scrooge to present ideas about social responsibility in this extract and in the novella as a whole. (40 marks)',
     marks: 40,
     timing: '55 minutes',
     modelAnswers: {
@@ -2030,14 +2082,14 @@ The novella\'s choice of form — the Christmas ghost story — is inseparable f
       'Analyses how Dickens uses Scrooge to criticise Victorian attitudes to the poor',
       'Explores specific language choices and their effects in the extract',
       'Discusses social responsibility across the whole novella',
-      'Considers relevant context (the Poor Law, Malthusianism, Victorian poverty, Dickens\'s purpose)',
+      "Considers relevant context (the Poor Law, Malthusianism, Victorian poverty, Dickens's purpose)",
       'Uses well-integrated quotations to support a sustained argument',
       'Develops a conceptualised response linking character to social criticism',
     ],
     examinerTips: [
-      'Always connect Scrooge\'s attitudes to their real-world Victorian context.',
+      "Always connect Scrooge's attitudes to their real-world Victorian context.",
       'The best responses treat the novella as a deliberate social intervention, not just a story.',
-      'Analyse Dickens\'s methods: why a ghost story? Why a fairy-tale structure?',
+      "Analyse Dickens's methods: why a ghost story? Why a fairy-tale structure?",
       'Consider the role of each ghost in challenging the philosophy Scrooge expresses here.',
     ],
   },
@@ -2052,7 +2104,8 @@ The novella\'s choice of form — the Christmas ghost story — is inseparable f
     title: 'Poetry Anthology Comparison — Relationships',
     extract: `Poem A — "Sonnet 43" by Elizabeth Barrett Browning (extract):\n"How do I love thee? Let me count the ways.\nI love thee to the depth and breadth and height\nMy soul can reach, when feeling out of sight\nFor the ends of being and ideal grace.\nI love thee to the level of every day\'s\nMost quiet need, by sun and candle-light."\n\nCompare with one other poem from the Relationships anthology.`,
     extractSource: 'Poetry anthology extract',
-    question: 'Compare how the poets present intense feelings of love in "Sonnet 43" and one other poem from the Relationships anthology. (20 marks)',
+    question:
+      'Compare how the poets present intense feelings of love in "Sonnet 43" and one other poem from the Relationships anthology. (20 marks)',
     marks: 20,
     timing: '35 minutes',
     modelAnswers: {
@@ -2104,7 +2157,8 @@ The poems\' treatment of permanence reveals their deepest divergence. Browning l
     title: 'Unseen Poetry Analysis',
     extract: `First Snow\n\nThe garden has forgotten how to be itself.\nEvery blade, every branch, every bin lid\nis someone else — anonymous and clean.\n\nThe children have run out without their coats\nbecause joy is urgent and cannot wait\nfor zips.\n\nA blackbird stands on the white lawn\nlike a full stop on an empty page,\nthe only word the morning needs.`,
     extractSource: 'Original poem written for this exercise',
-    question: 'In "First Snow," how does the poet use language and structure to present the experience of snow? (20 marks)',
+    question:
+      'In "First Snow," how does the poet use language and structure to present the experience of snow? (20 marks)',
     marks: 20,
     timing: '25 minutes',
     modelAnswers: {
@@ -2133,7 +2187,7 @@ The final stanza resolves the poem through the governing metaphor that has been 
       'Explores the effects of specific images, similes, and personification',
       'Comments on structural choices (stanza organisation, enjambment, line isolation)',
       'Uses well-selected quotations embedded in analytical sentences',
-      'Develops a personal interpretation of the poem\'s ideas and effects',
+      "Develops a personal interpretation of the poem's ideas and effects",
       'Writes with clarity and analytical precision',
     ],
     examinerTips: [
@@ -2157,8 +2211,9 @@ The final stanza resolves the poem through the governing metaphor that has been 
     tier: 'GCSE',
     title: 'Macbeth — Kingship and Tyranny',
     extract: `Besides, this Duncan\nHath borne his faculties so meek, hath been\nSo clear in his great office, that his virtues\nWill plead like angels, trumpet-tongued, against\nThe deep damnation of his taking-off;\nAnd pity, like a naked new-born babe,\nStriding the blast, or heaven\'s cherubin horsed\nUpon the sightless couriers of the air,\nShall blow the horrid deed in every eye,\nThat tears shall drown the wind.`,
-    extractSource: 'Written in the style of Shakespeare\'s Macbeth, Act 1 Scene 7',
-    question: 'How does Shakespeare use this extract to explore ideas about kingship? In your response you should explore how Shakespeare presents good and bad kingship in the play as a whole. (40 marks)',
+    extractSource: "Written in the style of Shakespeare's Macbeth, Act 1 Scene 7",
+    question:
+      'How does Shakespeare use this extract to explore ideas about kingship? In your response you should explore how Shakespeare presents good and bad kingship in the play as a whole. (40 marks)',
     marks: 40,
     timing: '50 minutes',
     modelAnswers: {
@@ -2198,12 +2253,12 @@ The political theology of kingship that Shakespeare dramatises was not merely a 
       'Discusses good and bad kingship across the whole play',
       'Considers relevant context (Divine Right, James I, political theology)',
       'Uses well-integrated quotations to support a conceptualised argument',
-      'Shows understanding of Shakespeare\'s dramatic methods and purposes',
+      "Shows understanding of Shakespeare's dramatic methods and purposes",
     ],
     examinerTips: [
       'OCR values detailed analysis of the extract — spend time on specific words and images.',
-      'The contrast between Duncan and Macbeth as kings is the essay\'s structural backbone.',
-      'Consider Malcolm\'s role in the play\'s conclusion — he represents the restoration of good kingship.',
+      "The contrast between Duncan and Macbeth as kings is the essay's structural backbone.",
+      "Consider Malcolm's role in the play's conclusion — he represents the restoration of good kingship.",
       'Context about James I is relevant but should support textual analysis, not replace it.',
     ],
   },
@@ -2217,8 +2272,9 @@ The political theology of kingship that Shakespeare dramatises was not merely a 
     tier: 'GCSE',
     title: 'Macbeth — Appearance vs Reality',
     extract: `There\'s no art\nTo find the mind\'s construction in the face:\nHe was a gentleman on whom I built\nAn absolute trust.`,
-    extractSource: 'Written in the style of Shakespeare\'s Macbeth, Act 1 Scene 4',
-    question: 'How does Shakespeare explore the theme of appearance versus reality in Macbeth? Use this extract as a starting point and refer to the play as a whole. (40 marks)',
+    extractSource: "Written in the style of Shakespeare's Macbeth, Act 1 Scene 4",
+    question:
+      'How does Shakespeare explore the theme of appearance versus reality in Macbeth? Use this extract as a starting point and refer to the play as a whole. (40 marks)',
     marks: 40,
     timing: '50 minutes',
     modelAnswers: {
@@ -2261,7 +2317,7 @@ The play\'s resolution enacts a final, paradoxical alignment of appearance and r
     examinerTips: [
       'OCR rewards close reading of the extract — spend time on individual words.',
       'The theme of appearance versus reality connects to almost everything in the play: witches, kingship, gender, language.',
-      'Consider the audience\'s role: dramatic irony makes the audience see through appearances that characters cannot.',
+      "Consider the audience's role: dramatic irony makes the audience see through appearances that characters cannot.",
       'The best responses engage with the idea of equivocation at a linguistic, not just moral, level.',
     ],
   },
@@ -2273,10 +2329,11 @@ The play\'s resolution enacts a final, paradoxical alignment of appearance and r
     type: 'Character Analysis',
     questionType: 'Character Analysis',
     tier: 'GCSE',
-    title: 'An Inspector Calls — Sheila Birling\'s Development',
+    title: "An Inspector Calls — Sheila Birling's Development",
     extract: `You\'re pretending everything is just as it was before. I\'m telling you — it isn\'t. And it won\'t be. Not for me. Whoever that Inspector was, it was anything but a joke. You knew it then. You began to learn something. And now you\'ve stopped. You\'re ready to go on in the same old way.`,
-    extractSource: 'Written in the style of J.B. Priestley\'s An Inspector Calls, Act 3',
-    question: 'How does Priestley present Sheila as a character who changes? Explore how Sheila develops in this extract and in the play as a whole. (40 marks)',
+    extractSource: "Written in the style of J.B. Priestley's An Inspector Calls, Act 3",
+    question:
+      'How does Priestley present Sheila as a character who changes? Explore how Sheila develops in this extract and in the play as a whole. (40 marks)',
     marks: 40,
     timing: '50 minutes',
     modelAnswers: {
@@ -2309,17 +2366,17 @@ Her transformation is catalysed not by argument but by empathy — the moment sh
 Priestley positions Sheila as the bridge between stage and auditorium. Her transformation models the response he demands from his post-war audience: the recognition that the pre-war social order was not merely flawed but actively destructive, and that returning to "the same old way" — as the older Birlings wish to do, and as many in 1945 wished to do — would constitute a moral failure of historic proportions. The telephone call at the play\'s end — announcing that a real inspector is on the way — is directed at the Birlings but resonates for the audience: the reckoning that Sheila has accepted and her parents have evaded is coming regardless, and the only choice is whether to face it with the honesty of the young or the evasion of the old.`,
     },
     markScheme: [
-      'Analyses how Priestley presents Sheila\'s development through language and dramatic technique',
+      "Analyses how Priestley presents Sheila's development through language and dramatic technique",
       'Explores specific language choices in the extract and their effects',
-      'Traces Sheila\'s character arc across the whole play',
+      "Traces Sheila's character arc across the whole play",
       'Considers relevant context (generational divide, 1945 audience, socialism)',
       'Uses well-integrated quotations to support a sustained argument',
-      'Develops a conceptualised response about Priestley\'s purpose in creating this character',
+      "Develops a conceptualised response about Priestley's purpose in creating this character",
     ],
     examinerTips: [
-      'Sheila\'s development must be traced as a process — show how each stage leads to the next.',
+      "Sheila's development must be traced as a process — show how each stage leads to the next.",
       'The contrast with her parents is essential: use it to structure your argument.',
-      'Consider Priestley\'s purpose: Sheila is a model for the audience.',
+      "Consider Priestley's purpose: Sheila is a model for the audience.",
       'OCR values close reading — spend significant time on the extract before moving to the wider play.',
     ],
   },
@@ -2333,8 +2390,9 @@ Priestley positions Sheila as the bridge between stage and auditorium. Her trans
     tier: 'GCSE',
     title: 'An Inspector Calls — Social Class and Inequality',
     extract: `We are members of one body. We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish. Good night.`,
-    extractSource: 'Written in the style of J.B. Priestley\'s An Inspector Calls, Act 3',
-    question: 'How does Priestley explore ideas about social class and inequality in the play? Use this extract as a starting point and refer to the play as a whole. (40 marks)',
+    extractSource: "Written in the style of J.B. Priestley's An Inspector Calls, Act 3",
+    question:
+      'How does Priestley explore ideas about social class and inequality in the play? Use this extract as a starting point and refer to the play as a whole. (40 marks)',
     marks: 40,
     timing: '50 minutes',
     modelAnswers: {
@@ -2390,7 +2448,8 @@ The play\'s temporal structure — written in 1945, set in 1912 — is itself a 
     title: 'Poetry Anthology — Time and Memory',
     extract: `Poem A — "Hour" by Carol Ann Duffy (extract):\n"Love\'s time\'s beggar, but even a single hour,\nbright as a dropped coin, makes love rich.\nWe find an hour together, spend it not on flowers\nor wine, but the whole of the summer sky and a grass ditch."\n\nCompare with one other poem from the anthology.`,
     extractSource: 'Poetry anthology extract',
-    question: 'Compare how poets present the relationship between time and human emotion in "Hour" and one other poem from the anthology. (40 marks)',
+    question:
+      'Compare how poets present the relationship between time and human emotion in "Hour" and one other poem from the anthology. (40 marks)',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -2432,7 +2491,7 @@ Both poems ultimately reveal that the relationship between time and emotion is n
     ],
     examinerTips: [
       'OCR awards high marks for perceptive, original comparisons — go beyond the obvious.',
-      'Compare methods as well as themes: how does each poem\'s form shape its argument?',
+      "Compare methods as well as themes: how does each poem's form shape its argument?",
       'Consider what the poems disagree about as well as what they share.',
       'Contextual knowledge should enhance analysis, not substitute for it.',
     ],
@@ -2448,7 +2507,8 @@ Both poems ultimately reveal that the relationship between time and emotion is n
     title: 'Unseen Poetry Analysis',
     extract: `The Supermarket at Midnight\n\nThe aisles are empty now, the music off.\nA man in a blue tabard mops the floor\nin long, unhurried arcs, the way a priest\nmight swing a censer through a darkened church.\n\nThe fruit gleams under lights that never sleep.\nBananas curve like questions no one asked.\nA pyramid of tins stands guard\nover nothing anyone would want to steal.\n\nSomewhere, a freezer hums a single note —\na sound so constant it becomes a silence,\nthe way a life, lived quietly enough,\ncan disappear without anyone noticing it has gone.`,
     extractSource: 'Original poem written for this exercise',
-    question: 'Explore how the poet uses language and imagery to create meaning in "The Supermarket at Midnight." (24 marks)',
+    question:
+      'Explore how the poet uses language and imagery to create meaning in "The Supermarket at Midnight." (24 marks)',
     marks: 24,
     timing: '30 minutes',
     modelAnswers: {
@@ -2477,16 +2537,16 @@ The poem\'s final line — "without anyone noticing it has gone" — achieves a 
     markScheme: [
       'Analyses how the poet uses language and imagery to create meaning',
       'Explores the effects of specific similes, metaphors, and word choices',
-      'Comments on structure, form, and the poem\'s overall movement',
-      'Develops a personal interpretation with reference to the poem\'s themes',
+      "Comments on structure, form, and the poem's overall movement",
+      "Develops a personal interpretation with reference to the poem's themes",
       'Uses well-selected, embedded quotations',
       'Writes with analytical precision and clarity',
     ],
     examinerTips: [
       'For OCR unseen poetry, you have significant time — use it for careful, detailed reading.',
-      'Comment on the poem\'s development from beginning to end.',
-      'The best responses identify the poem\'s central argument or insight and trace how it builds.',
-      'Do not list techniques — analyse how specific choices contribute to the poem\'s meaning as a whole.',
+      "Comment on the poem's development from beginning to end.",
+      "The best responses identify the poem's central argument or insight and trace how it builds.",
+      "Do not list techniques — analyse how specific choices contribute to the poem's meaning as a whole.",
     ],
   },
 
@@ -2503,8 +2563,9 @@ The poem\'s final line — "without anyone noticing it has gone" — achieves a 
     tier: 'GCSE',
     title: 'Macbeth — The Dagger Soliloquy',
     extract: `Is this a dagger which I see before me,\nThe handle toward my hand? Come, let me clutch thee.\nI have thee not, and yet I see thee still.\nArt thou not, fatal vision, sensible\nTo feeling as to sight? Or art thou but\nA dagger of the mind, a false creation,\nProceeding from the heat-oppressed brain?`,
-    extractSource: 'Written in the style of Shakespeare\'s Macbeth, Act 2 Scene 1',
-    question: 'Look at how Macbeth speaks and behaves here. What does it reveal about his state of mind at this point in the play? How does Shakespeare make this a dramatic and significant moment? (15 marks)',
+    extractSource: "Written in the style of Shakespeare's Macbeth, Act 2 Scene 1",
+    question:
+      'Look at how Macbeth speaks and behaves here. What does it reveal about his state of mind at this point in the play? How does Shakespeare make this a dramatic and significant moment? (15 marks)',
     marks: 15,
     timing: '20 minutes',
     modelAnswers: {
@@ -2533,10 +2594,10 @@ The self-diagnosis — "a dagger of the mind, a false creation, / Proceeding fro
 Shakespeare makes this moment dramatically significant by staging the soliloquy as a threshold scene. Macbeth stands between the world of intention and the world of action, and the soliloquy occupies the temporal space in which retreat is still possible. The audience knows — because they have witnessed his vacillation, Lady Macbeth\'s persuasion, and his eventual resolution — that Macbeth will cross this threshold, and the dramatic tension derives not from uncertainty about the outcome but from the excruciating proximity to a decision that cannot be undone. The dagger, whether real or imagined, is the last image Macbeth sees before he enters Duncan\'s chamber, and its ambiguous status — suspended between reality and hallucination, invitation and warning — captures the play\'s fundamental insight: that the most consequential actions are performed in a state of radical uncertainty, by minds that cannot fully distinguish between what they see and what they desire to see.`,
     },
     markScheme: [
-      'Analyses what the extract reveals about Macbeth\'s state of mind',
+      "Analyses what the extract reveals about Macbeth's state of mind",
       'Explores specific language choices and their dramatic effects',
       'Comments on how Shakespeare makes this a dramatic and significant moment',
-      'Shows understanding of the extract\'s significance within the play as a whole',
+      "Shows understanding of the extract's significance within the play as a whole",
       'Uses well-selected quotations from the extract',
       'Writes with clarity and analytical precision',
     ],
@@ -2557,8 +2618,9 @@ Shakespeare makes this moment dramatically significant by staging the soliloquy 
     tier: 'GCSE',
     title: 'Macbeth — The Decline of Macbeth',
     extract: `I am in blood\nStepped in so far that, should I wade no more,\nReturning were as tedious as go o\'er.`,
-    extractSource: 'Written in the style of Shakespeare\'s Macbeth, Act 3 Scene 4',
-    question: 'How does Shakespeare present Macbeth\'s moral decline? Write about the presentation of Macbeth in this extract and elsewhere in the play. (15 marks + essay 25 marks)',
+    extractSource: "Written in the style of Shakespeare's Macbeth, Act 3 Scene 4",
+    question:
+      "How does Shakespeare present Macbeth's moral decline? Write about the presentation of Macbeth in this extract and elsewhere in the play. (15 marks + essay 25 marks)",
     marks: 40,
     timing: '50 minutes',
     modelAnswers: {
@@ -2595,7 +2657,7 @@ The murder of Banquo introduces the bureaucratisation of violence that the blood
 The "Tomorrow" soliloquy in Act 5 is the terminus of the decline, and its nihilism is not a philosophical position but a psychological condition. When Macbeth declares life "a tale told by an idiot, full of sound and fury, signifying nothing," he is describing his own experience with devastating accuracy: his life has become a tale of sound and fury — battles, murders, hauntings — that has been emptied of significance by the very violence that was supposed to secure his ambition. The circular irony is complete: Macbeth killed to gain meaning (kingship, power, legacy) and the killing itself has destroyed his capacity to experience meaning. This is Shakespeare\'s profoundest insight into the psychology of violence: it does not merely damage others but annihilates the perpetrator\'s inner world, leaving a figure who can describe the emptiness of existence with poetic precision but can no longer feel anything at all — a consciousness that has become its own tomb.`,
     },
     markScheme: [
-      'Analyses how Shakespeare presents Macbeth\'s moral decline through language and imagery',
+      "Analyses how Shakespeare presents Macbeth's moral decline through language and imagery",
       'Closely examines specific words and images in the extract',
       'Traces the decline across the whole play with well-chosen references',
       'Considers relevant context (Jacobean attitudes, the moral order, tragedy)',
@@ -2605,7 +2667,7 @@ The "Tomorrow" soliloquy in Act 5 is the terminus of the decline, and its nihili
     examinerTips: [
       'WJEC splits marks between extract analysis and the wider essay — address both carefully.',
       'Track the decline as a process with distinct stages, not a single event.',
-      'Pay close attention to changes in Macbeth\'s language — how his vocabulary changes reflects his moral change.',
+      "Pay close attention to changes in Macbeth's language — how his vocabulary changes reflects his moral change.",
       'Consider what makes Macbeth a tragic figure rather than simply a villain.',
     ],
   },
@@ -2619,8 +2681,9 @@ The "Tomorrow" soliloquy in Act 5 is the terminus of the decline, and its nihili
     tier: 'GCSE',
     title: 'A Christmas Carol — The Ghost of Christmas Yet to Come',
     extract: `The Phantom slowly, gravely, silently, approached. When it came near him, Scrooge bent down upon his knee; for in the very air through which this Spirit moved it seemed to scatter gloom and mystery.\nIt was shrouded in a deep black garment, which concealed its head, its face, its form, and left nothing of it visible save one outstretched hand.`,
-    extractSource: 'Written in the style of Charles Dickens\'s A Christmas Carol, Stave 4',
-    question: 'How does Dickens use the Ghost of Christmas Yet to Come to create fear and to change Scrooge? Write about this extract and the novella as a whole. (20 marks)',
+    extractSource: "Written in the style of Charles Dickens's A Christmas Carol, Stave 4",
+    question:
+      'How does Dickens use the Ghost of Christmas Yet to Come to create fear and to change Scrooge? Write about this extract and the novella as a whole. (20 marks)',
     marks: 20,
     timing: '30 minutes',
     modelAnswers: {
@@ -2659,16 +2722,16 @@ The novella\'s fairy-tale structure is essential to understanding the Ghost\'s f
     markScheme: [
       'Analyses how Dickens uses the Ghost to create fear through language and imagery',
       'Explores specific words and phrases in the extract and their effects',
-      'Discusses the Ghost\'s role in Scrooge\'s transformation across the novella',
-      'Considers relevant context (Victorian attitudes to death, Dickens\'s social purpose)',
+      "Discusses the Ghost's role in Scrooge's transformation across the novella",
+      "Considers relevant context (Victorian attitudes to death, Dickens's social purpose)",
       'Uses well-integrated quotations to support the argument',
-      'Develops a sustained response about the Ghost\'s significance',
+      "Develops a sustained response about the Ghost's significance",
     ],
     examinerTips: [
       'WJEC expects you to cover both the extract and the wider text.',
       'Consider the Ghost in relation to the other two ghosts — the sequence matters.',
-      'The Ghost\'s silence is as important as what the other ghosts say.',
-      'Connect the Ghost\'s function to Dickens\'s purpose: why does he use fear to promote social change?',
+      "The Ghost's silence is as important as what the other ghosts say.",
+      "Connect the Ghost's function to Dickens's purpose: why does he use fear to promote social change?",
     ],
   },
 
@@ -2681,8 +2744,9 @@ The novella\'s fairy-tale structure is essential to understanding the Ghost\'s f
     tier: 'GCSE',
     title: 'A Christmas Carol — Poverty and Wealth',
     extract: `Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner! Hard and sharp as flint, from which no steel had ever struck out generous fire; secret, and self-contained, and solitary as an oyster.`,
-    extractSource: 'Written in the style of Charles Dickens\'s A Christmas Carol, Stave 1',
-    question: 'How does Dickens present ideas about poverty and wealth in A Christmas Carol? Write about this extract and the novella as a whole. (20 marks)',
+    extractSource: "Written in the style of Charles Dickens's A Christmas Carol, Stave 1",
+    question:
+      'How does Dickens present ideas about poverty and wealth in A Christmas Carol? Write about this extract and the novella as a whole. (20 marks)',
     marks: 20,
     timing: '30 minutes',
     modelAnswers: {
@@ -2718,15 +2782,15 @@ The transformation in Stave 5 raises the question of whether individual generosi
       'Analyses how Dickens presents poverty and wealth through language, character, and structure',
       'Explores specific words and phrases in the extract and their effects',
       'Discusses poverty and wealth across the whole novella',
-      'Considers relevant context (Victorian poverty, the Poor Law, Dickens\'s social purpose)',
+      "Considers relevant context (Victorian poverty, the Poor Law, Dickens's social purpose)",
       'Uses well-integrated quotations to support the argument',
       'Develops a sustained, conceptualised response to the theme',
     ],
     examinerTips: [
       'WJEC expects close reading of the extract — spend time on individual words and images.',
       'Connect poverty to specific characters and scenes across the novella.',
-      'Consider Dickens\'s purpose: why did he write this novella? What response did he want?',
-      'The best responses recognise complexity — Dickens\'s treatment of poverty is not simple.',
+      "Consider Dickens's purpose: why did he write this novella? What response did he want?",
+      "The best responses recognise complexity — Dickens's treatment of poverty is not simple.",
     ],
   },
 
@@ -2738,9 +2802,11 @@ The transformation in Stave 5 raises the question of whether individual generosi
     questionType: 'Poetry Comparison',
     tier: 'GCSE',
     title: 'Poetry Comparison — Loss and Grief',
-    extract: `Poem A — "Funeral Blues" by W.H. Auden (extract):\n"Stop all the clocks, cut off the telephone,\nPrevent the dog from barking with a juicy bone,\nSilence the pianos and with muffled drum\nBring out the coffin, let the mourners come.\n\nHe was my North, my South, my East, my West,\nMy working week and my Sunday rest,\nMy noon, my midnight, my talk, my song;\nI thought that love would last for ever: I was wrong."\n\nCompare with one other poem about loss.`,
-    extractSource: 'Poetry extract',
-    question: 'Compare how the poets present grief and loss in "Funeral Blues" and one other poem you have studied. (25 marks)',
+    extract: `Poem A — "Funeral Blues" by W. H. Auden (1940 revised version; four quatrains, AABB rhyme, iambic-pentameter dominant) — extract:\n"Stop all the clocks, cut off the telephone,\nPrevent the dog from barking with a juicy bone,\nSilence the pianos and with muffled drum\nBring out the coffin, let the mourners come.\n\nHe was my North, my South, my East, my West,\nMy working week and my Sunday rest,\nMy noon, my midnight, my talk, my song;\nI thought that love would last for ever: I was wrong."\n\nNote: This is the 1940 revised four-stanza version (the version used in the Cambridge IGCSE 0475 Songs of Ourselves Vol 1 Part 4 anthology and the version recited in Four Weddings and a Funeral, 1994), not the longer five-stanza 1936 Twelve Songs IX original written for The Ascent of F6.\n\nRights: Auden d.1973 — UK copyright expires 2044. © Faber & Faber. Treat as restricted; quote short extracts only.\n\nCompare with one other poem about loss.`,
+    extractSource:
+      'Poetry extract — W. H. Auden, "Funeral Blues" (1940 revised version), © Faber & Faber. UK in copyright until 2044; short quotation under fair-dealing for criticism/study.',
+    question:
+      'Compare how the poets present grief and loss in "Funeral Blues" and one other poem you have studied. (25 marks)',
     marks: 25,
     timing: '40 minutes',
     modelAnswers: {
@@ -2800,7 +2866,8 @@ The poems\' respective endings reveal their deepest divergence. Auden\'s "I thou
     title: 'Unseen Poetry — Nature and Change',
     extract: `Late October\n\nThe trees are giving everything away —\ntheir savings, all of them, in reds and golds,\nscattered like coins across the pavement\nfor anyone to pick up, or not.\n\nThe wind is generous with what it takes.\nIt carries a leaf past my window\nthe way a river carries a boat\nthat has slipped its mooring.\n\nSoon the branches will stand with nothing,\nhonest at last, their shape revealed\nlike the truth you see in someone\'s face\nwhen they have stopped pretending to be fine.`,
     extractSource: 'Original poem written for this exercise',
-    question: 'How does the poet use language and imagery to present ideas about nature and change in "Late October"? (20 marks)',
+    question:
+      'How does the poet use language and imagery to present ideas about nature and change in "Late October"? (20 marks)',
     marks: 20,
     timing: '25 minutes',
     modelAnswers: {
@@ -2831,8 +2898,8 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
     markScheme: [
       'Analyses how the poet uses language and imagery to present nature and change',
       'Explores the effects of specific metaphors, similes, and word choices',
-      'Comments on structure and the poem\'s development across its three stanzas',
-      'Develops a personal interpretation of the poem\'s deeper meanings',
+      "Comments on structure and the poem's development across its three stanzas",
+      "Develops a personal interpretation of the poem's deeper meanings",
       'Uses well-selected, embedded quotations',
       'Writes with analytical precision and genuine engagement',
     ],
@@ -2840,7 +2907,7 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
       'For unseen poetry, spend time absorbing the poem before writing.',
       'WJEC values personal engagement — show what the poem means to you as well as analysing technique.',
       'Track how the poem builds its argument from stanza to stanza.',
-      'The shift to human emotion in the final stanza is the poem\'s key moment — make sure you analyse it fully.',
+      "The shift to human emotion in the final stanza is the poem's key moment — make sure you analyse it fully.",
     ],
   },
 
@@ -2853,7 +2920,8 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
     difficulty: 'Foundation',
     extract: `The railway station was a cathedral of commerce. Massive iron girders stretched across the vaulted ceiling like the ribs of some sleeping leviathan. Passengers moved beneath them in a constant stream — businessmen with briefcases, tourists with maps, students with backpacks — a democratic flow of humanity converging on destinations both real and imagined. The smell of coffee and diesel fuel hung in the air, an odd perfume of modernity. And everywhere, everywhere, there was movement: the hurried shuffle of feet, the clank of departures boards, the hiss of train brakes.`,
     extractSource: 'Original composition',
-    question: 'What impression of the railway station does the writer create in this extract? Use evidence from the text to support your answer.',
+    question:
+      'What impression of the railway station does the writer create in this extract? Use evidence from the text to support your answer.',
     marks: 8,
     timing: '10 minutes',
     modelAnswers: {
@@ -2883,7 +2951,8 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
     difficulty: 'Higher',
     title: 'Describe a space that holds significance',
     extract: ``,
-    question: 'Write a descriptive piece about a space that holds meaning for you. Your writing should convey both what the space looks like and what it means to you. (400-500 words)',
+    question:
+      'Write a descriptive piece about a space that holds meaning for you. Your writing should convey both what the space looks like and what it means to you. (400-500 words)',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -2900,7 +2969,7 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
       'Demonstrates control of spelling, punctuation, grammar',
     ],
     examinerTips: [
-      'Show, don\'t tell — use specific sensory details to reveal meaning.',
+      "Show, don't tell — use specific sensory details to reveal meaning.",
       'Vary sentence length and structure for impact.',
       'Personal significance should emerge through description, not statement.',
       'Consider how space affects emotion, memory, identity.',
@@ -2916,7 +2985,8 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
     difficulty: 'Higher',
     extract: `Source A — Urban commute:\n\nThe train car smelled of synthetic fabrics and human fatigue. By 7:45 a.m., every seat was occupied, and standing room was at a premium. A businessman checked his phone for the third time in two minutes. A young mother gripped a shopping bag with one hand and her daughter\'s wrist with the other. An elderly man clutched a newspaper as though it were a life raft. Everyone faced forward, eyes fixed on the door at the far end. No one spoke. The fluorescent lights hummed their constant, nerve-testing song.\n\nSource B — Rural journey:\n\nThe bus wound through the Cotswolds, and time seemed to slow. The passengers — perhaps fifteen in total — seemed to know one another. An old woman offered the woman next to her a boiled sweet from a tin. Two farmers discussed the autumn planting in voices suggesting a conversation ongoing for decades. The driver knew everyone by name. When we stopped at a village of perhaps a hundred people, he called out: "Mrs Hartwell, your stop!" As if the entire vehicle were a social apparatus designed to move people not efficiently, but together.`,
     extractSource: 'Original compositions',
-    question: 'Compare the presentations of transport and community in these two sources. What values does each prioritise? (30 marks)',
+    question:
+      'Compare the presentations of transport and community in these two sources. What values does each prioritise? (30 marks)',
     marks: 30,
     timing: '35 minutes',
     modelAnswers: {
@@ -2949,7 +3019,8 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
     difficulty: 'Higher',
     title: 'Technology and human connection',
     extract: ``,
-    question: 'Write an argumentative essay: Has technology primarily strengthened or weakened human connection? (500-600 words)',
+    question:
+      'Write an argumentative essay: Has technology primarily strengthened or weakened human connection? (500-600 words)',
     marks: 50,
     timing: '60 minutes',
     modelAnswers: {
@@ -2983,7 +3054,8 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
     difficulty: 'Higher',
     title: 'Persuasive leaflet about screen time',
     extract: ``,
-    question: 'Write a persuasive leaflet for teenagers encouraging them to reduce daily screen usage and spend more time on offline activities. (400-500 words)',
+    question:
+      'Write a persuasive leaflet for teenagers encouraging them to reduce daily screen usage and spend more time on offline activities. (400-500 words)',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3006,13 +3078,13 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
       'Visual layout and formatting matter — use headings and white space.',
     ],
   },
-];
+]
 
-  // ============================================================
-  // AQA PAPER 1 Q5 - CREATIVE WRITING (IMAGES & PROMPTS)
-  // ============================================================
+// ============================================================
+// AQA PAPER 1 Q5 - CREATIVE WRITING (IMAGES & PROMPTS)
+// ============================================================
 
-  // Creative Writing with Image Descriptions
+// Creative Writing with Image Descriptions
 export const creativeWritingPrompts = [
   {
     id: 'aqa-p1-q5-cw-1',
@@ -3021,8 +3093,10 @@ export const creativeWritingPrompts = [
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
     title: 'Abandoned railway station',
-    extract: 'Image: An old, overgrown railway platform with peeling paint, broken benches, and weeds growing through cracks. A single light flickers above. The platform stretches into darkness.',
-    question: 'Write a description suggested by this picture. Focus on creating atmosphere and using sensory language.',
+    extract:
+      'Image: An old, overgrown railway platform with peeling paint, broken benches, and weeds growing through cracks. A single light flickers above. The platform stretches into darkness.',
+    question:
+      'Write a description suggested by this picture. Focus on creating atmosphere and using sensory language.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3038,7 +3112,7 @@ export const creativeWritingPrompts = [
       'Demonstrates technical accuracy in spelling and punctuation',
     ],
     examinerTips: [
-      'Don\'t just describe what\'s there — describe what it feels like.',
+      "Don't just describe what's there — describe what it feels like.",
       'Use a range of senses beyond just visual.',
       'Vary your sentence structure to create rhythm.',
       'Show, don\'t tell: instead of "it was scary," create fear through description.',
@@ -3051,9 +3125,11 @@ export const creativeWritingPrompts = [
     paper: 1,
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
-    title: 'Child\'s hand reaching through closing doors',
-    extract: 'Image: A crowded subway train with doors closing. In the gap, a small child\'s hand reaches desperately outward, fingers spread. The platform is blurred behind, people standing motionless.',
-    question: 'Write a narrative suggested by this image. You should focus on character and emotional tension.',
+    title: "Child's hand reaching through closing doors",
+    extract:
+      "Image: A crowded subway train with doors closing. In the gap, a small child's hand reaches desperately outward, fingers spread. The platform is blurred behind, people standing motionless.",
+    question:
+      'Write a narrative suggested by this image. You should focus on character and emotional tension.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3063,14 +3139,14 @@ export const creativeWritingPrompts = [
     markScheme: [
       'Constructs coherent narrative with clear perspective',
       'Develops emotional authenticity and tension',
-      'Uses precise language to convey character\'s experience',
+      "Uses precise language to convey character's experience",
       'Varies sentence structure for pacing and emphasis',
       'Integrates description with action',
       'Maintains narrative voice and perspective consistently',
     ],
     examinerTips: [
       'Consider the emotional core of the image before you write.',
-      'Show character\'s response through action and detail, not explanation.',
+      "Show character's response through action and detail, not explanation.",
       'Use short sentences for tension, longer ones for reflection.',
     ],
   },
@@ -3082,7 +3158,8 @@ export const creativeWritingPrompts = [
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
     title: 'Empty fairground at dusk',
-    extract: 'Image: An abandoned fairground. A carousel horse frozen mid-gallop, faded paint peeling. Carnival games stand unattended. The sky is deep orange and purple. Shadows grow longer.',
+    extract:
+      'Image: An abandoned fairground. A carousel horse frozen mid-gallop, faded paint peeling. Carnival games stand unattended. The sky is deep orange and purple. Shadows grow longer.',
     question: 'Write a description suggested by this picture.',
     marks: 40,
     timing: '45 minutes',
@@ -3113,8 +3190,10 @@ export const creativeWritingPrompts = [
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
     title: 'Underwater wreck with light filtering through',
-    extract: 'Image: An underwater scene. A sunken ship or structure visible in murky water. Shafts of golden light filter down from above, illuminating particles in the water.',
-    question: 'Write a description suggested by this image. Consider atmosphere and the use of light and colour.',
+    extract:
+      'Image: An underwater scene. A sunken ship or structure visible in murky water. Shafts of golden light filter down from above, illuminating particles in the water.',
+    question:
+      'Write a description suggested by this image. Consider atmosphere and the use of light and colour.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3143,8 +3222,10 @@ export const creativeWritingPrompts = [
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
     title: 'Figure in heavy rain and wind',
-    extract: 'Image: A solitary figure standing in a downpour. Rain streams horizontally. Wind seems to push against the figure. Urban environment becoming waterlogged.',
-    question: 'Write a description suggested by this image. Focus on movement and the power of weather.',
+    extract:
+      'Image: A solitary figure standing in a downpour. Rain streams horizontally. Wind seems to push against the figure. Urban environment becoming waterlogged.',
+    question:
+      'Write a description suggested by this image. Focus on movement and the power of weather.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3152,7 +3233,7 @@ export const creativeWritingPrompts = [
       'Grade 8-9': `Meteorological violence had assumed almost palpable agency. The precipitation, driven by wind gusts exceeding sustainable velocities, fell not in the conventional vertical trajectory but as a near-horizontal assault, each droplet becoming a kinetic projectile. The figure\'s embodied response — the compromised posture, the skeletal tension — articulated an unequal negotiation between human physiology and atmospheric force. The urban infrastructure, designed for efficiency and traffic flows, had transformed into a hydro-dynamic system: water seeking gravity\'s pull through every architectural channel, every gutter and street becoming a vector of fluid momentum. The wind possessed directionality and pressure — not merely moving air but a force with geometric intention, the way it vectored against the figure\'s body creating a visible deformation of fabric and stance. Visual clarity had contracted to perhaps twenty metres due to the density of suspended water molecules. This atmospheric opacity functioned as a form of sensory deprivation, isolating the figure within a micro-environment of weather. The chromatic register shifted toward monochromatic grey — a desaturation of colour that mirrored the collapse of visible distance. The figure\'s persistence in this environment became a study in the negotiation between individual will and environmental determinism.`,
     },
     markScheme: [
-      'Conveys weather\'s power through concrete detail',
+      "Conveys weather's power through concrete detail",
       'Uses precise verbs to suggest force and movement',
       'Creates atmosphere of struggle and isolation',
       'Varies sentence structure for dramatic effect',
@@ -3160,7 +3241,7 @@ export const creativeWritingPrompts = [
       'Maintains technical accuracy and clarity',
     ],
     examinerTips: [
-      'Show the weather\'s power through its effect on the figure.',
+      "Show the weather's power through its effect on the figure.",
       'Use verbs of force and struggle.',
       'Create contrast between human fragility and natural power.',
     ],
@@ -3173,8 +3254,10 @@ export const creativeWritingPrompts = [
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
     title: 'Crowded street market - vibrant chaos',
-    extract: 'Image: A busy market. Colourful stalls, crowds of people, hanging merchandise, blurred movement. Morning light illuminates the chaos.',
-    question: 'Write a description suggested by this picture. Focus on sensory experience and the energy of the space.',
+    extract:
+      'Image: A busy market. Colourful stalls, crowds of people, hanging merchandise, blurred movement. Morning light illuminates the chaos.',
+    question:
+      'Write a description suggested by this picture. Focus on sensory experience and the energy of the space.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3184,14 +3267,14 @@ export const creativeWritingPrompts = [
     markScheme: [
       'Evokes multiple sensory experiences vividly',
       'Uses precise, active language to convey energy',
-      'Structures description to reflect market\'s chaos',
+      "Structures description to reflect market's chaos",
       'Employs colour, sound, smell effectively',
-      'Shows rather than tells the market\'s character',
+      "Shows rather than tells the market's character",
       'Maintains control of tone and technical accuracy',
     ],
     examinerTips: [
       'Engage all five senses — this is your strength here.',
-      'Use rhythm and pacing to mirror the market\'s energy.',
+      "Use rhythm and pacing to mirror the market's energy.",
       'Show contrasts: order within chaos, beauty within mess.',
     ],
   },
@@ -3203,8 +3286,10 @@ export const creativeWritingPrompts = [
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
     title: 'Childhood bedroom from adult perspective',
-    extract: 'Image: A bedroom frozen in time. Childhood posters, toys, books still on shelves. Dust visible in light from small window. The room is unchanged but feels somehow smaller.',
-    question: 'Write a description suggested by this image. Consider how time and memory shape our perception of space.',
+    extract:
+      'Image: A bedroom frozen in time. Childhood posters, toys, books still on shelves. Dust visible in light from small window. The room is unchanged but feels somehow smaller.',
+    question:
+      'Write a description suggested by this image. Consider how time and memory shape our perception of space.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3220,7 +3305,7 @@ export const creativeWritingPrompts = [
       'Maintains technical control throughout',
     ],
     examinerTips: [
-      'This image is about more than just objects — it\'s about memory and change.',
+      "This image is about more than just objects — it's about memory and change.",
       'Consider what physical details reveal about emotional truths.',
       'Use the smaller, unchanged room to comment on how we change.',
     ],
@@ -3233,8 +3318,10 @@ export const creativeWritingPrompts = [
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
     title: 'Mirror moment — self-reflection',
-    extract: 'Image: Someone looking at themselves in a mirror, but their expression is unclear. Behind them, a reflection that doesn\'t quite match. The lighting is ambiguous.',
-    question: 'Write a description suggested by this image. Explore the theme of identity or self-awareness.',
+    extract:
+      "Image: Someone looking at themselves in a mirror, but their expression is unclear. Behind them, a reflection that doesn't quite match. The lighting is ambiguous.",
+    question:
+      'Write a description suggested by this image. Explore the theme of identity or self-awareness.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3263,8 +3350,10 @@ export const creativeWritingPrompts = [
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
     title: 'Liminal space — empty train station',
-    extract: 'Image: A subway or train platform late at night. Fluorescent lights hum. The platform is empty except for a single figure on a distant bench. Tiles on the wall reflect light coldly.',
-    question: 'Write a description suggested by this image. Consider atmosphere, isolation, and the quality of light.',
+    extract:
+      'Image: A subway or train platform late at night. Fluorescent lights hum. The platform is empty except for a single figure on a distant bench. Tiles on the wall reflect light coldly.',
+    question:
+      'Write a description suggested by this image. Consider atmosphere, isolation, and the quality of light.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3282,7 +3371,7 @@ export const creativeWritingPrompts = [
     examinerTips: [
       'Empty spaces can be more evocative than crowded ones.',
       'Use light and sound to establish atmosphere.',
-      'Consider what the space is designed for versus what it\'s actually like when empty.',
+      "Consider what the space is designed for versus what it's actually like when empty.",
     ],
   },
 
@@ -3293,8 +3382,10 @@ export const creativeWritingPrompts = [
     questionType: 'Creative Writing (Q5)',
     difficulty: 'Higher',
     title: 'Natural disaster moment — before and after',
-    extract: 'Image: Landscape altered by natural disaster. Trees twisted, soil exposed, the line between destruction and untouched nature clear. Sky heavy and dramatic.',
-    question: 'Write a description suggested by this image. Focus on the destructive power of nature and human vulnerability.',
+    extract:
+      'Image: Landscape altered by natural disaster. Trees twisted, soil exposed, the line between destruction and untouched nature clear. Sky heavy and dramatic.',
+    question:
+      'Write a description suggested by this image. Focus on the destructive power of nature and human vulnerability.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3327,8 +3418,10 @@ export const creativeWritingPrompts = [
     questionType: 'Viewpoint Writing (Q5)',
     difficulty: 'Higher',
     title: 'Climate change perspective',
-    extract: 'A scientist, an oil executive, a climate activist, and a farmer all have different perspectives on climate change.',
-    question: 'Write a piece in which you explain different viewpoints on climate change. You could write a series of monologues, a dialogue, or a debate format.',
+    extract:
+      'A scientist, an oil executive, a climate activist, and a farmer all have different perspectives on climate change.',
+    question:
+      'Write a piece in which you explain different viewpoints on climate change. You could write a series of monologues, a dialogue, or a debate format.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3358,8 +3451,10 @@ export const creativeWritingPrompts = [
     questionType: 'Viewpoint Writing (Q5)',
     difficulty: 'Higher',
     title: 'Social media impact',
-    extract: 'Different people have different views about whether social media is beneficial or harmful.',
-    question: 'Write a piece in which you present different viewpoints on the impact of social media. You could write a speech, an article with multiple perspectives, or another suitable form.',
+    extract:
+      'Different people have different views about whether social media is beneficial or harmful.',
+    question:
+      'Write a piece in which you present different viewpoints on the impact of social media. You could write a speech, an article with multiple perspectives, or another suitable form.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3377,7 +3472,7 @@ export const creativeWritingPrompts = [
     examinerTips: [
       'Avoid just listing pros and cons.',
       'Make each perspective internally coherent and intelligent.',
-      'Consider how different people\'s experiences lead to different conclusions.',
+      "Consider how different people's experiences lead to different conclusions.",
     ],
   },
 
@@ -3388,8 +3483,10 @@ export const creativeWritingPrompts = [
     questionType: 'Viewpoint Writing (Q5)',
     difficulty: 'Higher',
     title: 'Modern education system',
-    extract: 'People disagree about whether the current education system adequately prepares young people for adult life.',
-    question: 'Write a piece presenting different viewpoints on education. You could write speeches, letters, or another suitable format.',
+    extract:
+      'People disagree about whether the current education system adequately prepares young people for adult life.',
+    question:
+      'Write a piece presenting different viewpoints on education. You could write speeches, letters, or another suitable format.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3418,8 +3515,10 @@ export const creativeWritingPrompts = [
     questionType: 'Viewpoint Writing (Q5)',
     difficulty: 'Higher',
     title: 'Artificial intelligence regulation',
-    extract: 'People have different views about how much governments should regulate artificial intelligence development.',
-    question: 'Write a piece in which you present different perspectives on AI regulation. You could write a debate, an interview, or another suitable form.',
+    extract:
+      'People have different views about how much governments should regulate artificial intelligence development.',
+    question:
+      'Write a piece in which you present different perspectives on AI regulation. You could write a debate, an interview, or another suitable form.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3448,8 +3547,10 @@ export const creativeWritingPrompts = [
     questionType: 'Viewpoint Writing (Q5)',
     difficulty: 'Higher',
     title: 'Urban development and housing',
-    extract: 'A city is planning major development. Different groups have different perspectives on this.',
-    question: 'Write a piece in which you present different perspectives on urban development. You could write letters, a town hall discussion, or another suitable form.',
+    extract:
+      'A city is planning major development. Different groups have different perspectives on this.',
+    question:
+      'Write a piece in which you present different perspectives on urban development. You could write letters, a town hall discussion, or another suitable form.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3478,8 +3579,10 @@ export const creativeWritingPrompts = [
     questionType: 'Viewpoint Writing (Q5)',
     difficulty: 'Higher',
     title: 'Free speech and content moderation',
-    extract: 'Tech platforms face pressure to moderate content, but this creates questions about free speech and who decides what\'s acceptable.',
-    question: 'Write a piece in which you present different viewpoints on free speech and content moderation. You could write an article, a debate, or another suitable format.',
+    extract:
+      "Tech platforms face pressure to moderate content, but this creates questions about free speech and who decides what's acceptable.",
+    question:
+      'Write a piece in which you present different viewpoints on free speech and content moderation. You could write an article, a debate, or another suitable format.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3495,7 +3598,7 @@ export const creativeWritingPrompts = [
       'Demonstrates sophisticated analysis',
     ],
     examinerTips: [
-      'This involves real tensions — don\'t pretend there\'s an easy answer.',
+      "This involves real tensions — don't pretend there's an easy answer.",
       'Include diverse perspectives: tech workers, researchers, government, marginalised communities.',
       'Show how different values (freedom, safety, equality) can conflict.',
     ],
@@ -3509,7 +3612,8 @@ export const creativeWritingPrompts = [
     difficulty: 'Higher',
     title: 'Immigration and national borders',
     extract: 'People have different views about immigration policy and border control.',
-    question: 'Write a piece in which you present different perspectives on immigration. You could write speeches, an article with multiple viewpoints, or another suitable format.',
+    question:
+      'Write a piece in which you present different perspectives on immigration. You could write speeches, an article with multiple viewpoints, or another suitable format.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3538,8 +3642,10 @@ export const creativeWritingPrompts = [
     questionType: 'Viewpoint Writing (Q5)',
     difficulty: 'Higher',
     title: 'Wealth inequality and taxation',
-    extract: 'People have different views about how much governments should redistribute wealth through taxation.',
-    question: 'Write a piece in which you present different perspectives on wealth inequality and taxation. You could write an article, a debate, or another suitable form.',
+    extract:
+      'People have different views about how much governments should redistribute wealth through taxation.',
+    question:
+      'Write a piece in which you present different perspectives on wealth inequality and taxation. You could write an article, a debate, or another suitable form.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3568,8 +3674,10 @@ export const creativeWritingPrompts = [
     questionType: 'Viewpoint Writing (Q5)',
     difficulty: 'Higher',
     title: 'Mental health and productivity culture',
-    extract: 'There\'s tension between productivity expectations and mental health in modern workplaces.',
-    question: 'Write a piece in which you present different perspectives on work, productivity, and mental health. You could write a workplace discussion, an article, or another suitable form.',
+    extract:
+      "There's tension between productivity expectations and mental health in modern workplaces.",
+    question:
+      'Write a piece in which you present different perspectives on work, productivity, and mental health. You could write a workplace discussion, an article, or another suitable form.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3598,8 +3706,10 @@ export const creativeWritingPrompts = [
     questionType: 'Viewpoint Writing (Q5)',
     difficulty: 'Higher',
     title: 'Technology in education and screen time',
-    extract: 'Schools are increasingly using technology in classrooms, but some argue this harms learning and development.',
-    question: 'Write a piece in which you present different perspectives on technology in education. You could write an article, a debate, or another suitable format.',
+    extract:
+      'Schools are increasingly using technology in classrooms, but some argue this harms learning and development.',
+    question:
+      'Write a piece in which you present different perspectives on technology in education. You could write an article, a debate, or another suitable format.',
     marks: 40,
     timing: '45 minutes',
     modelAnswers: {
@@ -3620,6 +3730,6 @@ export const creativeWritingPrompts = [
       'Avoid framing as binary: tech vs. no-tech.',
     ],
   },
-];
+]
 
-export default practiceQuestions;
+export default practiceQuestions

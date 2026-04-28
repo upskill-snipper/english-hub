@@ -257,14 +257,16 @@ export const aqaLitP2Papers: MockExamPaper[] = [
       {
         id: 'aqa-lit-p2-01-secA',
         title: 'Section A: Modern Texts',
-        description: 'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
+        description:
+          'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
         totalMarks: 34,
         suggestedTimeMinutes: 50,
         questions: [
           {
             id: 'aqa-lit-p2-01-q1',
             questionNumber: 1,
-            questionText: 'How does Priestley use the character of Mr Birling to explore ideas about responsibility?\n\nWrite about:\n• how Priestley presents Mr Birling at different points in the play\n• how Priestley uses Mr Birling to explore ideas about responsibility.\n\n[30 marks + 4 marks for SPaG]',
+            questionText:
+              'How does Priestley use the character of Mr Birling to explore ideas about responsibility?\n\nWrite about:\n• how Priestley presents Mr Birling at different points in the play\n• how Priestley uses Mr Birling to explore ideas about responsibility.\n\n[30 marks + 4 marks for SPaG]',
             marks: 34,
             suggestedTimeMinutes: 50,
             questionType: 'evaluation',
@@ -321,12 +323,13 @@ Through Birling, Priestley crafts a devastating argument: that the language of p
           {
             id: 'aqa-lit-p2-01-q2',
             questionNumber: 2,
-            questionText: 'Compare how poets present the lasting effects of conflict in "Remains" by Simon Armitage and "Exposure" by Wilfred Owen.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+            questionText:
+              'Compare how poets present the lasting effects of conflict in "Remains" by Simon Armitage and "Exposure" by Wilfred Owen.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
             modelAnswers: {
-              'Grade 4-5': `Both "Remains" and "Exposure" show the lasting effects of conflict on soldiers. In "Remains," Armitage writes about a soldier who can't forget killing a man. The line "his blood-Loss shadow stays on the street" shows that the memory won't go away, like a stain. The soldier tries to get rid of the memory by drinking and taking drugs but "the image of the dead man" is "dug in behind my eyes." This shows the psychological effects of war.
+              'Grade 4-5': `Both "Remains" and "Exposure" show the lasting effects of conflict on soldiers. In "Remains," Armitage writes about a soldier who can't forget killing a man. The line "his blood-shadow stays on the street" shows that the memory won't go away, like a stain. The soldier tries to get rid of the memory by drinking and taking drugs but "the image of the dead man" is "dug in behind my eyes." This shows the psychological effects of war.
 
 In "Exposure," Owen shows how soldiers suffer from the cold and waiting. The repeated line "But nothing happens" shows how boring and painful war is. The cold is described as attacking them: "the merciless iced east winds that knive us." This personification makes the weather seem like an enemy.
 
@@ -335,7 +338,7 @@ Both poems show that conflict causes suffering that lasts. In "Remains" it's psy
 The context is different because Owen wrote during World War One and experienced the trenches himself, while Armitage based "Remains" on a documentary about modern soldiers in Iraq. Both poets are showing that war damages people no matter when it happens.`,
               'Grade 6-7': `Armitage and Owen both present conflict as an experience that inflicts enduring psychological and physical damage, though they approach this theme from markedly different temporal and stylistic positions.
 
-In "Remains," the lasting effects of conflict are figured primarily as psychological haunting. The speaker's casual, colloquial register — "probably armed, possibly not" — initially disguises the trauma beneath a veneer of soldierly nonchalance, but the poem's structure enacts the progressive collapse of that defence. The transition from the collective "we" to the isolated "I" tracks the soldier's descent into individual guilt, while the image of the dead man whose "blood-Loss shadow stays on the street" transforms a specific memory into something permanent and archetypal. Armitage's use of enjambment — "his bloody life in my bloody hands" — forces the reader to inhabit the soldier's inability to contain or control the memory. The final metaphor of the dead man "dug in behind my eyes" is grimly military in its vocabulary, suggesting that the victim has become an occupying force in the soldier's consciousness.
+In "Remains," the lasting effects of conflict are figured primarily as psychological haunting. The speaker's casual, colloquial register — "probably armed, possibly not" — initially disguises the trauma beneath a veneer of soldierly nonchalance, but the poem's structure enacts the progressive collapse of that defence. The transition from the collective "we" to the isolated "I" tracks the soldier's descent into individual guilt, while the image of the dead man whose "blood-shadow stays on the street" transforms a specific memory into something permanent and archetypal. Armitage's use of enjambment — "his bloody life in my bloody hands" — forces the reader to inhabit the soldier's inability to contain or control the memory. The final metaphor of the dead man "dug in behind my eyes" is grimly military in its vocabulary, suggesting that the victim has become an occupying force in the soldier's consciousness.
 
 Owen's approach in "Exposure" is more systematic and less individual. The lasting effects of conflict are presented not as a single traumatic event but as a grinding, cumulative process of attrition. The pararhyme — "knive us... nervous," "silent... salient" — creates a formal architecture of near-misses that mirrors the soldiers' experience of almost-but-not-quite dying, a sustained tension that is its own form of suffering. The repeated refrain "But nothing happens" is devastating in its simplicity: it reconfigures inaction itself as a form of violence, suggesting that the waiting and the cold are not interruptions to war but its truest expression.
 
@@ -376,7 +379,8 @@ Structurally, the two poems arrive at parallel conclusions through inverse metho
           {
             id: 'aqa-lit-p2-01-q3',
             questionNumber: 3,
-            questionText: 'In "The Foundry," how does the poet present the impact of work on family life?\n\n[24 marks]',
+            questionText:
+              'In "The Foundry," how does the poet present the impact of work on family life?\n\n[24 marks]',
             marks: 24,
             suggestedTimeMinutes: 30,
             questionType: 'analysis',
@@ -418,7 +422,8 @@ The poem's form — regular quatrains with subdued, irregular rhyme — embodies
           {
             id: 'aqa-lit-p2-01-q4',
             questionNumber: 4,
-            questionText: 'In both "The Foundry" and "Shift\'s End," the speakers describe the impact of industrial work on a father. What are the similarities and/or differences between the ways the poets present this?\n\n[8 marks]',
+            questionText:
+              'In both "The Foundry" and "Shift\'s End," the speakers describe the impact of industrial work on a father. What are the similarities and/or differences between the ways the poets present this?\n\n[8 marks]',
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'comparison',
@@ -466,14 +471,16 @@ The poems also diverge in their emotional trajectories. "Shift's End" permits a 
       {
         id: 'aqa-lit-p2-02-secA',
         title: 'Section A: Modern Texts',
-        description: 'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
+        description:
+          'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
         totalMarks: 34,
         suggestedTimeMinutes: 50,
         questions: [
           {
             id: 'aqa-lit-p2-02-q1',
             questionNumber: 1,
-            questionText: 'How does Priestley present the theme of social class in An Inspector Calls?\n\nWrite about:\n• how Priestley presents social class at different points in the play\n• how Priestley uses the theme of social class to convey his message to the audience.\n\n[30 marks + 4 marks for SPaG]',
+            questionText:
+              'How does Priestley present the theme of social class in An Inspector Calls?\n\nWrite about:\n• how Priestley presents social class at different points in the play\n• how Priestley uses the theme of social class to convey his message to the audience.\n\n[30 marks + 4 marks for SPaG]',
             marks: 34,
             suggestedTimeMinutes: 50,
             questionType: 'evaluation',
@@ -517,7 +524,7 @@ The play's conclusion — the telephone announcement of a girl's death and a rea
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'AO4: SPaG — spelling, punctuation, grammar, vocabulary (4 marks)',
-              'Band 5-6: Critical exploratory response; analysis of writer\'s methods; convincing context',
+              "Band 5-6: Critical exploratory response; analysis of writer's methods; convincing context",
               'Band 3-4: Clear explained response; understanding of methods; clear context',
               'Band 1-2: Simple response; awareness of methods; some context',
             ],
@@ -534,7 +541,8 @@ The play's conclusion — the telephone announcement of a girl's death and a rea
           {
             id: 'aqa-lit-p2-02-q2',
             questionNumber: 2,
-            questionText: 'Compare how poets present the power of nature in "Storm on the Island" by Seamus Heaney and "Ozymandias" by Percy Bysshe Shelley.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+            questionText:
+              'Compare how poets present the power of nature in "Storm on the Island" by Seamus Heaney and "Ozymandias" by Percy Bysshe Shelley.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
@@ -552,7 +560,7 @@ In "Storm on the Island," nature's power is presented as an assault. Heaney's la
 
 The poem's most striking paradox is the "huge nothing that we fear." This oxymoron captures the peculiar terror of facing an invisible, formless power. The collective pronoun "we" positions the speaker within a community, but this community is ultimately helpless — their preparations ("We are prepared: we build our houses squat") cannot protect them from what they cannot see. Heaney's blank verse form, which mimics conversational speech but carries the weight of iambic pentameter, reflects this tension between ordinariness and threat.
 
-Shelley's approach in "Ozymandias" is architecturally different. Nature's power is not dramatised but revealed through aftermath. The "colossal wreck" of Ozymandias's statue functions as a memento mori for all human ambition: the inscription "Look on my Works, ye Mighty, and despair!" is rendered bitterly ironic by the "lone and level sands" that have replaced those works. Shelley's sonnet form — traditionally associated with permanence and artistic immortality — is subverted to convey impermanence. The poem's fragmented structure (the story is relayed through multiple voices: the narrator, the traveller, the sculptor, Ozymandias himself) mirrors the fragmentation of the statue, form enacting content.
+Shelley's approach in "Ozymandias" is architecturally different. Nature's power is not dramatised but revealed through aftermath. The "colossal Wreck" of Ozymandias's statue functions as a memento mori for all human ambition: the inscription "Look on my Works, ye Mighty, and despair!" is rendered bitterly ironic by the "lone and level sands" that have replaced those works. Shelley's sonnet form — traditionally associated with permanence and artistic immortality — is subverted to convey impermanence. The poem's fragmented structure (the story is relayed through multiple voices: the narrator, the traveller, the sculptor, Ozymandias himself) mirrors the fragmentation of the statue, form enacting content.
 
 Both poets suggest that human attempts to control or resist nature are fundamentally futile, but they locate this futility differently. Heaney's community experiences it as present fear; Shelley's Ozymandias represents it as historical fact. Together, they suggest that whether nature acts in the violence of a storm or the patience of erosion, the outcome is the same.`,
               'Grade 8-9': `Heaney and Shelley construct complementary but temporally and formally distinct arguments about nature's supremacy over human agency, each deploying the resources of poetic form to enact — rather than merely assert — the inadequacy of human structures (literal and metaphorical) in the face of natural power.
@@ -593,7 +601,8 @@ Both poems ultimately suggest that human power — whether political, imperial, 
           {
             id: 'aqa-lit-p2-02-q3',
             questionNumber: 3,
-            questionText: 'In "Border Country," how does the poet present the experience of displacement?\n\n[24 marks]',
+            questionText:
+              'In "Border Country," how does the poet present the experience of displacement?\n\n[24 marks]',
             marks: 24,
             suggestedTimeMinutes: 30,
             questionType: 'analysis',
@@ -639,7 +648,8 @@ The closing stanza's sunflowers, "their heads bowed as if in welcome, / or in gr
           {
             id: 'aqa-lit-p2-02-q4',
             questionNumber: 4,
-            questionText: 'In both "Border Country" and "Passage," the speakers describe crossing a border. What are the similarities and/or differences between the ways the poets present this experience?\n\n[8 marks]',
+            questionText:
+              'In both "Border Country" and "Passage," the speakers describe crossing a border. What are the similarities and/or differences between the ways the poets present this experience?\n\n[8 marks]',
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'comparison',
@@ -689,14 +699,16 @@ Most strikingly, the poems construct opposing models of arrival. "Border Country
       {
         id: 'aqa-lit-p2-03-secA',
         title: 'Section A: Modern Texts',
-        description: 'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
+        description:
+          'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
         totalMarks: 34,
         suggestedTimeMinutes: 50,
         questions: [
           {
             id: 'aqa-lit-p2-03-q1',
             questionNumber: 1,
-            questionText: 'How does Priestley use the character of Sheila to explore ideas about change?\n\nWrite about:\n• how Priestley presents Sheila at different points in the play\n• how Priestley uses Sheila to explore ideas about change.\n\n[30 marks + 4 marks for SPaG]',
+            questionText:
+              'How does Priestley use the character of Sheila to explore ideas about change?\n\nWrite about:\n• how Priestley presents Sheila at different points in the play\n• how Priestley uses Sheila to explore ideas about change.\n\n[30 marks + 4 marks for SPaG]',
             marks: 34,
             suggestedTimeMinutes: 50,
             questionType: 'evaluation',
@@ -757,7 +769,8 @@ Contextually, Sheila embodies the audience Priestley is addressing. Writing in 1
           {
             id: 'aqa-lit-p2-03-q2',
             questionNumber: 2,
-            questionText: 'Compare how poets present the experience of loss in "Poppies" by Jane Weir and "Bayonet Charge" by Ted Hughes.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+            questionText:
+              'Compare how poets present the experience of loss in "Poppies" by Jane Weir and "Bayonet Charge" by Ted Hughes.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
@@ -768,25 +781,25 @@ In "Poppies," the mother describes small, personal details that show her love an
 
 In "Bayonet Charge," Hughes shows a soldier running towards the enemy. The soldier's thoughts are described violently: "The patriotic tear that had brimmed in his eye" has been replaced by "terror." He has lost his belief in why he is fighting. He sees a "yellow hare" rolling in pain, which represents the innocent suffering of war.
 
-Both poets show loss, but differently. Weir shows the emotional loss of a parent sending a child to war. Hughes shows the loss of idealism and humanity in battle. Weir's poem is gentle and domestic, while Hughes's is chaotic and frightening. The context is relevant because Weir wrote "Poppies" in response to modern conflicts, while Hughes was influenced by stories of World War One and Two.`,
+Both poets show loss, but differently. Weir shows the emotional loss of a parent sending a child to war. Hughes shows the loss of idealism and humanity in battle. Weir's poem is gentle and domestic, while Hughes's is chaotic and frightening. The context is relevant because Weir wrote "Poppies" in response to modern conflicts, while Hughes was born in 1930 and never fought in any war — he drew on his father William's WWI accounts (William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment) to imagine the soldier's terror.`,
               'Grade 6-7': `Weir and Hughes present loss as operating in fundamentally different registers — the domestic and the visceral — yet both poets suggest that war's destruction extends far beyond physical harm to encompass the erosion of meaning, identity, and connection.
 
 "Poppies" constructs loss through an accumulation of sensory, domestic details that function as indices of intimacy. The mother's actions — smoothing the son's collar, noting "cat hairs" on his jacket — are simultaneously ordinary and charged with the knowledge that these mundane gestures may be the last points of physical contact. Weir's use of textile imagery throughout ("bandaged," "sellotape," "bias binding") creates an extended metaphor of maternal care as mending and covering, but also, implicitly, of wounds that cannot be repaired. The poem's temporal structure, which conflates the son's childhood (playing with "plastic toys") with his departure for war, suggests that for the mother, time has collapsed: all moments of intimacy are simultaneously present, and all are shadowed by anticipated loss.
 
-Hughes constructs loss as an immediate, embodied experience. "Bayonet Charge" opens in medias res — "Suddenly he awoke and was running" — plunging the reader into the disorientation of combat without preamble or explanation. The loss here is epistemological: the soldier has lost the framework of meaning that justified his presence. "King, honour, human dignity, etcetera" — that devastating "etcetera" reduces patriotic abstractions to an exhausted list, something barely worth completing. Hughes suggests that combat does not merely endanger the body but dismantles the conceptual structures (patriotism, honour, duty) that made violence seem rational.
+Hughes constructs loss as an immediate, embodied experience. "Bayonet Charge" opens in medias res — "Suddenly he awoke and was running" — plunging the reader into the disorientation of combat without preamble or explanation. The loss here is epistemological: the soldier has lost the framework of meaning that justified his presence. "King, honour, human dignity, etcetera" — Hughes writes "etcetera" once (cite exactly as printed; do not abbreviate to "etc.", and don't double the word). The dismissive single "etcetera" reduces patriotic abstractions to an exhausted list, something barely worth completing. Hughes suggests that combat does not merely endanger the body but dismantles the conceptual structures (patriotism, honour, duty) that made violence seem rational.
 
 The "yellow hare" that "rolled like a flame" functions as a concentrated symbol of innocent suffering. Its pain is purposeless and unexplained, mirroring the soldier's growing realisation that his own suffering lacks the justification he was promised. The simile "like a flame" connects the hare to the warfare around it while individualising its pain, suggesting that war's most devastating losses are the ones too small and specific to appear in any official narrative.
 
 Structurally, the poems' forms embody their respective modes of loss. "Poppies" unfolds in long, flowing stanzas that mimic the movement of memory — associative, circling, reluctant to arrive at its conclusion. "Bayonet Charge" deploys irregular stanza breaks and heavy caesurae that reproduce the stop-start chaos of combat. Both forms are "broken" in ways that mirror their content: "Poppies" breaks the expected chronological narrative of war poetry; "Bayonet Charge" breaks the expected heroic register.
 
-Contextually, both poets address the gap between public commemorative narratives and private experience. Weir, writing in response to the Iraq and Afghanistan conflicts, places her poem in dialogue with Remembrance Sunday rituals — poppies, memorials, the expected performance of national grief — while insisting on the irreducibly personal nature of a mother's loss. Hughes, influenced by his father's World War One experiences, dismantles the rhetoric of heroism that sustained public support for war, replacing it with the brute phenomenology of terror.`,
+Contextually, both poets address the gap between public commemorative narratives and private experience. Weir, writing in response to the Iraq and Afghanistan conflicts, places her poem in dialogue with Remembrance Sunday rituals — poppies, memorials, the expected performance of national grief — while insisting on the irreducibly personal nature of a mother's loss. Hughes, who was born in 1930 and never fought in any war, drew on his father William's WWI accounts — William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment — to dismantle the rhetoric of heroism that sustained public support for war, replacing it with the brute phenomenology of terror.`,
               'Grade 8-9': `Weir and Hughes construct antiphonal accounts of war's capacity for destruction, each locating loss in a different domain — the domestic interior and the battlefield — yet converging on the shared recognition that war's deepest damage is to meaning itself: the frameworks of love, duty, honour, and connection through which human beings make sense of violence.
 
 "Poppies" operates through a poetics of displacement, in which the mother's grief is expressed not directly but through a meticulously curated sequence of sensory and domestic details that function as affective surrogates. The "sellotape bandaged" around her son's finger, the "cat hairs" on his blazer, the maternal gesture of smoothing a collar — each detail carries a double charge, simultaneously evoking the mundane intimacy of family life and the knowledge that these small physical contacts are threatened or already lost. Weir's textile imagery — "bias binding," "the poppy petals" she "pinned" — weaves an extended metaphor of fabrication and mending that is also, inescapably, an image of insufficient protection: cloth cannot stop bullets, and the mother's acts of care cannot prevent the harm she fears.
 
 The poem's temporal structure is its most formally innovative feature. Weir collapses chronological sequence, moving fluidly between the son's childhood ("playing at being Eskimos"), his departure, and the mother's solitary visit to the war memorial, without clear transitions. This technique mimics the phenomenology of anticipatory grief, in which past and future contaminate each other: every memory of the child is simultaneously an apprehension of loss, every domestic moment retrospectively charged with the knowledge of what is coming. The final image — the mother leaning against the memorial "like a wishbone" — is devastating in its implications. A wishbone is a structure designed to be broken, and its breaking is associated with the granting of wishes. The simile suggests both the mother's fragility and the desperate, futile quality of her hope.
 
-Hughes's "Bayonet Charge" approaches loss from the opposite direction — not the slow accumulation of domestic grief but the sudden, violent annihilation of conceptual coherence. The poem's opening — "Suddenly he awoke and was running" — is masterful in its disorientation: "awoke" suggests not alertness but its opposite, a transition into a reality so extreme that previous consciousness now seems like sleep. The soldier's physical experience is rendered with hallucinatory intensity ("bullets smacking the belly out of the air," "blue crackling air"), but it is the collapse of ideological framework that constitutes the poem's central loss. The parenthetical — "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" — is Hughes's most corrosive device. The word "etcetera" performs the very exhaustion it describes, reducing the entire apparatus of patriotic justification to a list too tedious to complete. "Luxuries" is equally devastating: it implies that moral principles are affordable only in peacetime, that they are possessions discarded in extremis rather than foundations that sustain.
+Hughes's "Bayonet Charge" approaches loss from the opposite direction — not the slow accumulation of domestic grief but the sudden, violent annihilation of conceptual coherence. The poem's opening — "Suddenly he awoke and was running" — is masterful in its disorientation: "awoke" suggests not alertness but its opposite, a transition into a reality so extreme that previous consciousness now seems like sleep. The soldier's physical experience is rendered with hallucinatory intensity ("bullets smacking the belly out of the air," "blue crackling air"), but it is the collapse of ideological framework that constitutes the poem's central loss. The parenthetical — "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" — is Hughes's most corrosive device. Hughes writes "etcetera" once (cite exactly as printed; do not abbreviate to "etc.", and don't double the word), and the dismissive single word performs the very exhaustion it describes, reducing the entire apparatus of patriotic justification to a list too tedious to complete. "Luxuries" is equally devastating: it implies that moral principles are affordable only in peacetime, that they are possessions discarded in extremis rather than foundations that sustain.
 
 The "yellow hare" that "rolled like a flame / And crawled in a threshing circle" is the poem's structural and moral pivot. It is the only moment of individualised suffering in a landscape of anonymous violence, and its impact derives precisely from its irrelevance — the hare's pain serves no strategic purpose, illustrates no principle, advances no cause. It is suffering as pure fact, stripped of narrative justification. Hughes suggests that this — not heroism, not sacrifice, not any of the stories war tells about itself — is the truth of combat: purposeless damage inflicted on sentient beings. The soldier's final act — running towards the enemy "his terror's touchy dynamite" — is not courage but the absence of any alternative, a "loss" of selfhood so complete that forward momentum is all that remains.
 
@@ -814,7 +827,8 @@ Both poets, though separated by context and approach, converge on a shared insig
           {
             id: 'aqa-lit-p2-03-q3',
             questionNumber: 3,
-            questionText: 'In "What the River Knows," how does the poet present the relationship between nature and human life?\n\n[24 marks]',
+            questionText:
+              'In "What the River Knows," how does the poet present the relationship between nature and human life?\n\n[24 marks]',
             marks: 24,
             suggestedTimeMinutes: 30,
             questionType: 'analysis',
@@ -860,7 +874,8 @@ The poem's deepest unsettling is its refusal to sentimentalise this indifference
           {
             id: 'aqa-lit-p2-03-q4',
             questionNumber: 4,
-            questionText: 'In both "What the River Knows" and "Estuary," the speakers describe bodies of water. What are the similarities and/or differences between the ways the poets present this?\n\n[8 marks]',
+            questionText:
+              'In both "What the River Knows" and "Estuary," the speakers describe bodies of water. What are the similarities and/or differences between the ways the poets present this?\n\n[8 marks]',
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'comparison',
@@ -910,14 +925,16 @@ This physical immersion enables "Estuary's" devastating concluding metaphor: gri
       {
         id: 'aqa-lit-p2-04-secA',
         title: 'Section A: Modern Texts',
-        description: 'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
+        description:
+          'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
         totalMarks: 34,
         suggestedTimeMinutes: 50,
         questions: [
           {
             id: 'aqa-lit-p2-04-q1',
             questionNumber: 1,
-            questionText: 'How does Priestley present the importance of the Inspector in An Inspector Calls?\n\nWrite about:\n• how Priestley presents the Inspector at different points in the play\n• how Priestley uses the Inspector to convey his ideas to the audience.\n\n[30 marks + 4 marks for SPaG]',
+            questionText:
+              'How does Priestley present the importance of the Inspector in An Inspector Calls?\n\nWrite about:\n• how Priestley presents the Inspector at different points in the play\n• how Priestley uses the Inspector to convey his ideas to the audience.\n\n[30 marks + 4 marks for SPaG]',
             marks: 34,
             suggestedTimeMinutes: 50,
             questionType: 'evaluation',
@@ -978,23 +995,24 @@ The question of the Inspector's ontological status — human, supernatural, temp
           {
             id: 'aqa-lit-p2-04-q2',
             questionNumber: 2,
-            questionText: 'Compare how poets present the effects of conflict on identity in "Remains" by Simon Armitage and "Bayonet Charge" by Ted Hughes.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+            questionText:
+              'Compare how poets present the effects of conflict on identity in "Remains" by Simon Armitage and "Bayonet Charge" by Ted Hughes.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
             modelAnswers: {
               'Grade 4-5': `Both "Remains" and "Bayonet Charge" show how conflict destroys a person's sense of who they are. In "Remains," the soldier can't escape the memory of killing someone. The dead man is "dug in behind my eyes" which is a metaphor showing the memory has become part of him. His identity has been changed by what he did.
 
-In "Bayonet Charge," the soldier loses his beliefs during battle. He started out believing in "King, honour, human dignity" but during the charge these ideas "dropped like luxuries." The word "luxuries" shows that in the middle of battle, beliefs are not important anymore — only survival matters. His identity as a patriotic soldier is replaced by pure fear.
+In "Bayonet Charge," the soldier loses his beliefs during battle. He started out believing in "King, honour, human dignity, etcetera" but during the charge these ideas "dropped like luxuries." (Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don't double the word.) The word "luxuries" shows that in the middle of battle, beliefs are not important anymore — only survival matters. His identity as a patriotic soldier is replaced by pure fear.
 
 Both poems show soldiers whose identities are damaged, but in different ways. Armitage's soldier suffers after the event — he can't sleep and tries to "flush" the memory away. Hughes's soldier suffers during the event — he is confused and frightened in the middle of the charge. The colloquial language in "Remains" ("legs it up the road") makes it sound like real speech, while Hughes uses more poetic imagery ("blue crackling air").
 
-The context matters because "Remains" is based on real accounts from soldiers in Iraq, while "Bayonet Charge" is influenced by World War One. Both show that whatever the war, conflict strips away people's sense of self.`,
+The context matters because "Remains" is based on real accounts from soldiers in Iraq, while "Bayonet Charge" imagines a World War One infantry charge. Hughes was born in 1930 and never fought in any war — he drew on his father William's WWI accounts (William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment) to imagine the soldier's terror. Both poems show that whatever the war, conflict strips away people's sense of self.`,
               'Grade 6-7': `Armitage and Hughes both present conflict as a force that fragments and reconstitutes identity, but they locate this transformation at different points in the temporal arc of combat experience — Armitage in the aftermath, Hughes in the immediate moment of violence.
 
 In "Remains," the dissolution of identity is tracked through the poem's pronominal structure. The opening stanzas employ the collective "we" — "We get sent out," "all three of us open fire" — distributing responsibility across the group and maintaining the soldier's identity as part of a unit. The transition to the singular "I" — "I see broad daylight on the other side" — marks the moment at which collective identity fails as a protective mechanism. The soldier's individual consciousness becomes inescapable, and with it, individual guilt. The dead man, "dug in behind my eyes," has colonised the speaker's perceptual apparatus; the military metaphor of being "dug in" suggests that the victim has become a permanent occupant of the soldier's identity, a presence that cannot be dislodged.
 
-Hughes constructs identity-loss as a real-time process. The opening — "Suddenly he awoke and was running" — presents a protagonist already mid-action, denied the orienting framework of beginning. The third-person pronoun "he" creates distance, as though the speaker cannot fully identify with the figure being described — or as though the soldier has become sufficiently alien to himself that first-person narration is impossible. The parenthetical aside — "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" — dramatises the shedding of ideological identity under extreme pressure. "Etcetera" performs the bankruptcy of patriotic language, trailing off into an admission that the entire framework was always a list — enumerable, disposable, not fundamental.
+Hughes constructs identity-loss as a real-time process. The opening — "Suddenly he awoke and was running" — presents a protagonist already mid-action, denied the orienting framework of beginning. The third-person pronoun "he" creates distance, as though the speaker cannot fully identify with the figure being described — or as though the soldier has become sufficiently alien to himself that first-person narration is impossible. The parenthetical aside — "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" — dramatises the shedding of ideological identity under extreme pressure. Hughes writes "etcetera" once (cite exactly as printed; do not abbreviate to "etc.", and don't double the word); the single dismissive word performs the bankruptcy of patriotic language, trailing off into an admission that the entire framework was always a list — enumerable, disposable, not fundamental.
 
 Structurally, the poems mirror their protagonists' psychological states. "Remains" begins with the appearance of narrative coherence (stanzas, a chronological account) but disintegrates into the final couplet's isolation: "his bloody life in my bloody hands." The polysemy of "bloody" — literally blood-stained, colloquially emphatic — captures the contamination of everyday language by violent experience. "Bayonet Charge" deploys three stanzas of increasing fragmentation, the enjambments and caesurae accelerating until the final image of the soldier "plunged past" understanding itself, running on pure instinct where identity once was.
 
@@ -1007,7 +1025,7 @@ The climactic image — the dead man "dug in behind my eyes" — is the poem's m
 
 Hughes approaches identity-dissolution from a radically different angle: not the retrospective failure of narrative containment but the real-time evacuation of ideological content under physical duress. "Bayonet Charge" presents a protagonist mid-action whose identity — the complex of beliefs, loyalties, and self-understandings that motivated his enlistment — is being stripped away faster than consciousness can register. The opening "Suddenly he awoke" positions the charge as a transition between states of consciousness: the "sleep" of peacetime ideology and the violent "waking" of combat reality. The third-person narration is crucial: Hughes's refusal of "I" suggests that the experience is too extreme for the first-person to accommodate — the soldier has become an object, a body in motion, witnessed rather than witnessing.
 
-The parenthetical — "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" — is Hughes's most devastating formal move. The parentheses themselves perform relegation: the entire structure of patriotic identity is bracketed, enclosed, set aside from the poem's "real" content (which is physical sensation and terror). "Etcetera" is the word that detonates the passage: it transforms patriotic values from convictions into a list, and a list not worth completing. "Luxuries" extends the metaphor: ideals are possessions rather than foundations, items one carries when circumstances permit and discards when they do not. Hughes implies that ideological identity — the sense of oneself as a patriot, a citizen, a moral agent — is not hardwired but accessory, and that combat reveals this with merciless clarity.
+The parenthetical — "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" — is Hughes's most devastating formal move. The parentheses themselves perform relegation: the entire structure of patriotic identity is bracketed, enclosed, set aside from the poem's "real" content (which is physical sensation and terror). The dismissive single "etcetera" — which Hughes writes once and which should be cited exactly as printed (never doubled, never abbreviated to "etc.") — detonates the passage: it transforms patriotic values from convictions into a list, and a list not worth completing. "Luxuries" extends the metaphor: ideals are possessions rather than foundations, items one carries when circumstances permit and discards when they do not. Hughes implies that ideological identity — the sense of oneself as a patriot, a citizen, a moral agent — is not hardwired but accessory, and that combat reveals this with merciless clarity.
 
 Both poets converge on the recognition that conflict does not merely harm identity but reveals its contingency. Armitage shows that the soldier's post-combat identity is not a damaged version of his former self but evidence that the former self was always a construction — one that depended on never having to accommodate the reality of killing. Hughes shows that the patriotic self was always provisional — a set of propositions that functioned only in the absence of the experiences they purported to justify. In both cases, combat does not destroy a real self but exposes the fragility of what was taken for one, leaving not a wounded identity but the vertiginous recognition that identity itself may be less substantial than it appears.`,
             },
@@ -1033,7 +1051,8 @@ Both poets converge on the recognition that conflict does not merely harm identi
           {
             id: 'aqa-lit-p2-04-q3',
             questionNumber: 3,
-            questionText: 'In "Controlled Assessment," how does the poet present ideas about education?\n\n[24 marks]',
+            questionText:
+              'In "Controlled Assessment," how does the poet present ideas about education?\n\n[24 marks]',
             marks: 24,
             suggestedTimeMinutes: 30,
             questionType: 'analysis',
@@ -1079,7 +1098,8 @@ The final stanza performs the poem's most sophisticated critique. The data "says
           {
             id: 'aqa-lit-p2-04-q4',
             questionNumber: 4,
-            questionText: 'In both "Controlled Assessment" and "Assembly," the speakers describe their experience of school. What are the similarities and/or differences between the ways the poets present this?\n\n[8 marks]',
+            questionText:
+              'In both "Controlled Assessment" and "Assembly," the speakers describe their experience of school. What are the similarities and/or differences between the ways the poets present this?\n\n[8 marks]',
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'comparison',
@@ -1129,14 +1149,16 @@ The phrase "that particular loss" in "Assembly" carries special weight. "Particu
       {
         id: 'aqa-lit-p2-05-secA',
         title: 'Section A: Modern Texts',
-        description: 'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
+        description:
+          'Answer one question from this section on your studied text.\n\nAn Inspector Calls — J.B. Priestley',
         totalMarks: 34,
         suggestedTimeMinutes: 50,
         questions: [
           {
             id: 'aqa-lit-p2-05-q1',
             questionNumber: 1,
-            questionText: 'How does Priestley explore the conflict between generations in An Inspector Calls?\n\nWrite about:\n• how Priestley presents the conflict between the older and younger generations\n• how Priestley uses this conflict to convey his ideas about society.\n\n[30 marks + 4 marks for SPaG]',
+            questionText:
+              'How does Priestley explore the conflict between generations in An Inspector Calls?\n\nWrite about:\n• how Priestley presents the conflict between the older and younger generations\n• how Priestley uses this conflict to convey his ideas about society.\n\n[30 marks + 4 marks for SPaG]',
             marks: 34,
             suggestedTimeMinutes: 50,
             questionType: 'evaluation',
@@ -1199,7 +1221,8 @@ Priestley's 1945 audience occupies precisely the position he has prepared for th
           {
             id: 'aqa-lit-p2-05-q2',
             questionNumber: 2,
-            questionText: 'Compare how poets present ideas about memory and the past in "Ozymandias" by Percy Bysshe Shelley and "Poppies" by Jane Weir.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+            questionText:
+              'Compare how poets present ideas about memory and the past in "Ozymandias" by Percy Bysshe Shelley and "Poppies" by Jane Weir.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
@@ -1210,7 +1233,7 @@ In "Ozymandias," the past is shown through a ruined statue in the desert. The in
 
 In "Poppies," the mother remembers personal, intimate details about her son: "smoothed down your collar," "cat hairs," "Sellotape bandaged around his hand." These small memories are very different from Ozymandias's grand inscription. The mother's memories are about love and everyday life, while Ozymandias tried to be remembered through power and fear.
 
-Both poems show that the past doesn't stay the same. Ozymandias wanted to be remembered as powerful but is now just a "colossal wreck." The mother in "Poppies" has clear, vivid memories but they are mixed with sadness because her son might not come back.
+Both poems show that the past doesn't stay the same. Ozymandias wanted to be remembered as powerful but is now just a "colossal Wreck." The mother in "Poppies" has clear, vivid memories but they are mixed with sadness because her son might not come back.
 
 Shelley was a Romantic poet who criticised powerful rulers, while Weir wrote about modern warfare and the personal cost of conflict. Both show that what we remember — and how we remember — matters.`,
               'Grade 6-7': `Shelley and Weir engage with memory and the past from diametrically opposed positions — the monumental and the intimate — yet both poets ultimately reveal the fragility of all attempts to preserve the past, whether through imperial inscription or maternal love.
@@ -1260,7 +1283,8 @@ Both poems arrive, through opposite routes, at a shared recognition: that the pa
           {
             id: 'aqa-lit-p2-05-q3',
             questionNumber: 3,
-            questionText: 'In "Inheritance," how does the poet present the relationship between generations?\n\n[24 marks]',
+            questionText:
+              'In "Inheritance," how does the poet present the relationship between generations?\n\n[24 marks]',
             marks: 24,
             suggestedTimeMinutes: 30,
             questionType: 'analysis',
@@ -1308,7 +1332,8 @@ The word "evicted" is loaded with additional connotations: forced removal, displ
           {
             id: 'aqa-lit-p2-05-q4',
             questionNumber: 4,
-            questionText: 'In both "Inheritance" and "Dowry," the speakers describe what has been passed down by a female relative. What are the similarities and/or differences between the ways the poets present this?\n\n[8 marks]',
+            questionText:
+              'In both "Inheritance" and "Dowry," the speakers describe what has been passed down by a female relative. What are the similarities and/or differences between the ways the poets present this?\n\n[8 marks]',
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'comparison',

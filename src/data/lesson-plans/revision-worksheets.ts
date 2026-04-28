@@ -1,24 +1,24 @@
 // @ts-nocheck
 export interface WorksheetSection {
-  title: string;
-  instructions: string;
+  title: string
+  instructions: string
   questions: {
-    question: string;
-    lines: number;
-    marks?: number;
-    modelAnswer: string;
-  }[];
+    question: string
+    lines: number
+    marks?: number
+    modelAnswer: string
+  }[]
 }
 
 export interface RevisionWorksheet {
-  id: string;
-  title: string;
-  subject: string;
-  board: string;
-  difficulty: 'Foundation' | 'Core' | 'Higher';
-  duration: string;
-  sections: WorksheetSection[];
-  totalMarks: number;
+  id: string
+  title: string
+  subject: string
+  board: string
+  difficulty: 'Foundation' | 'Core' | 'Higher'
+  duration: string
+  sections: WorksheetSection[]
+  totalMarks: number
 }
 
 // ============================================================
@@ -47,7 +47,7 @@ const macbethFoundation: RevisionWorksheet = {
           lines: 4,
           marks: 4,
           modelAnswer:
-            'The three witches are important because they plant the idea of kingship in Macbeth\'s mind. They prophesy that he will become Thane of Cawdor and then King. Their supernatural influence drives the plot forward, as Macbeth becomes obsessed with fulfilling their predictions. Shakespeare uses them to explore themes of fate, free will, and the dangers of ambition.',
+            "The three witches are important because they plant the idea of kingship in Macbeth's mind. They prophesy that he will become Thane of Cawdor and then King. Their supernatural influence drives the plot forward, as Macbeth becomes obsessed with fulfilling their predictions. Shakespeare uses them to explore themes of fate, free will, and the dangers of ambition.",
         },
         {
           question:
@@ -71,7 +71,7 @@ const macbethFoundation: RevisionWorksheet = {
           lines: 4,
           marks: 4,
           modelAnswer:
-            'Banquo is important because he acts as a foil to Macbeth. He also hears the witches\' prophecies but chooses not to act on them, showing moral strength. His ghost haunts Macbeth, symbolising guilt and the consequences of murder. Shakespeare uses Banquo to show the path Macbeth could have taken if he had resisted temptation.',
+            "Banquo is important because he acts as a foil to Macbeth. He also hears the witches' prophecies but chooses not to act on them, showing moral strength. His ghost haunts Macbeth, symbolising guilt and the consequences of murder. Shakespeare uses Banquo to show the path Macbeth could have taken if he had resisted temptation.",
         },
         {
           question:
@@ -102,7 +102,7 @@ const macbethFoundation: RevisionWorksheet = {
           lines: 6,
           marks: 5,
           modelAnswer:
-            'Shakespeare shows guilt through both Macbeth and Lady Macbeth\'s psychological deterioration. Lady Macbeth\'s sleepwalking scene where she tries to wash imaginary blood from her hands - "Out, damned spot!" - shows guilt has driven her to madness. Macbeth sees Banquo\'s ghost at the banquet, unable to escape his crimes. Shakespeare uses these supernatural manifestations of guilt to show that sin cannot be hidden and will eventually consume the sinner.',
+            "Shakespeare shows guilt through both Macbeth and Lady Macbeth's psychological deterioration. Lady Macbeth's sleepwalking scene where she tries to wash imaginary blood from her hands - \"Out, damned spot!\" - shows guilt has driven her to madness. Macbeth sees Banquo's ghost at the banquet, unable to escape his crimes. Shakespeare uses these supernatural manifestations of guilt to show that sin cannot be hidden and will eventually consume the sinner.",
         },
         {
           question:
@@ -110,7 +110,7 @@ const macbethFoundation: RevisionWorksheet = {
           lines: 5,
           marks: 4,
           modelAnswer:
-            'The supernatural in Macbeth is used to create an atmosphere of evil and to explore whether humans control their own fate. The witches\' prophecies, Banquo\'s ghost, and Lady Macbeth\'s invocation of "spirits" all blur the line between the natural and unnatural. A Jacobean audience would have genuinely feared witchcraft (James I wrote a book on it), so Shakespeare taps into real social anxieties. The supernatural serves as both a dramatic device and a moral warning.',
+            "The supernatural in Macbeth is used to create an atmosphere of evil and to explore whether humans control their own fate. The witches' prophecies, Banquo's ghost, and Lady Macbeth's invocation of \"spirits\" all blur the line between the natural and unnatural. A Jacobean audience would have genuinely feared witchcraft (James I wrote a book on it), so Shakespeare taps into real social anxieties. The supernatural serves as both a dramatic device and a moral warning.",
         },
         {
           question:
@@ -128,23 +128,25 @@ const macbethFoundation: RevisionWorksheet = {
         'For each quotation, explain what it means and why it is important. Use the format: "This quotation suggests... Shakespeare uses this to..."',
       questions: [
         {
-          question: '"Fair is foul, and foul is fair" - What does this suggest about the world of the play?',
+          question:
+            '"Fair is foul, and foul is fair" - What does this suggest about the world of the play?',
           lines: 3,
           marks: 2,
           modelAnswer:
-            'This quotation suggests that nothing in the play is as it seems - appearances are deceptive. The witches establish a world where good and evil are blurred. Shakespeare uses this to foreshadow the moral confusion that will follow, as Macbeth\'s apparently noble actions mask murderous intent.',
+            "This quotation suggests that nothing in the play is as it seems - appearances are deceptive. The witches establish a world where good and evil are blurred. Shakespeare uses this to foreshadow the moral confusion that will follow, as Macbeth's apparently noble actions mask murderous intent.",
         },
         {
-          question: '"Look like the innocent flower, but be the serpent under\'t" - What does this reveal about Lady Macbeth?',
+          question:
+            '"Look like the innocent flower, but be the serpent under\'t" - What does this reveal about Lady Macbeth?',
           lines: 3,
           marks: 2,
           modelAnswer:
-            'This reveals Lady Macbeth\'s skill at deception and her willingness to hide evil behind a pleasant exterior. The biblical imagery of the serpent connects her to Satan and the Fall of Man. Shakespeare shows her as the architect of Duncan\'s murder, using her intelligence for evil purposes.',
+            "This reveals Lady Macbeth's skill at deception and her willingness to hide evil behind a pleasant exterior. The biblical imagery of the serpent connects her to Satan and the Fall of Man. Shakespeare shows her as the architect of Duncan's murder, using her intelligence for evil purposes.",
         },
       ],
     },
   ],
-};
+}
 
 const macbethCore: RevisionWorksheet = {
   id: 'macbeth-core',
@@ -158,7 +160,7 @@ const macbethCore: RevisionWorksheet = {
     {
       title: 'Section A: Character Analysis',
       instructions:
-        'Analyse the following characters in detail. Support your points with quotations and consider Shakespeare\'s methods and intentions.',
+        "Analyse the following characters in detail. Support your points with quotations and consider Shakespeare's methods and intentions.",
       questions: [
         {
           question:
@@ -166,11 +168,11 @@ const macbethCore: RevisionWorksheet = {
           lines: 8,
           marks: 8,
           modelAnswer:
-            'Shakespeare presents Macbeth as a tragic hero through the classical structure of tragedy. His hamartia (fatal flaw) is his "vaulting ambition" which, combined with the witches\' prophecies and Lady Macbeth\'s manipulation, leads him to regicide. His peripeteia (reversal of fortune) occurs after Duncan\'s murder when he spirals from respected thane to paranoid tyrant, ordering the murders of Banquo and Macduff\'s family. His anagnorisis comes in Act 5 when he realises the witches have deceived him - "life\'s but a walking shadow... signifying nothing" - showing his final recognition that his actions were meaningless. Shakespeare crafts Macbeth to elicit both horror and pity, as the audience watches a man of potential destroyed by his own choices.',
+            "Shakespeare presents Macbeth as a tragic hero through the classical structure of tragedy. His hamartia (fatal flaw) is his \"vaulting ambition\" which, combined with the witches' prophecies and Lady Macbeth's manipulation, leads him to regicide. His peripeteia (reversal of fortune) occurs after Duncan's murder when he spirals from respected thane to paranoid tyrant, ordering the murders of Banquo and Macduff's family. His anagnorisis comes in Act 5 when he realises the witches have deceived him - \"life's but a walking shadow... signifying nothing\" - showing his final recognition that his actions were meaningless. Shakespeare crafts Macbeth to elicit both horror and pity, as the audience watches a man of potential destroyed by his own choices.",
         },
         {
           question:
-            'Explore how Lady Macbeth\'s character arc reflects the consequences of disrupting the natural order.',
+            "Explore how Lady Macbeth's character arc reflects the consequences of disrupting the natural order.",
           lines: 8,
           marks: 8,
           modelAnswer:
@@ -197,7 +199,7 @@ const macbethCore: RevisionWorksheet = {
     {
       title: 'Section B: Thematic Analysis',
       instructions:
-        'Write detailed analytical paragraphs on the following themes. Include relevant context and consider Shakespeare\'s purpose.',
+        "Write detailed analytical paragraphs on the following themes. Include relevant context and consider Shakespeare's purpose.",
       questions: [
         {
           question:
@@ -208,7 +210,8 @@ const macbethCore: RevisionWorksheet = {
             'Shakespeare weaves imagery of blood and darkness throughout Macbeth to chart the protagonists\' moral decline. Blood begins as a symbol of honour - Macbeth\'s "bloody" sword in battle represents valour. After Duncan\'s murder, blood becomes guilt: Macbeth fears "this my hand will rather the multitudinous seas incarnadine, making the green one red," a hyperbole suggesting his guilt is infinite and indelible. Lady Macbeth\'s "Out, damned spot!" in Act 5 shows the same blood imagery has consumed her subconscious. Darkness imagery reinforces this moral corruption: Lady Macbeth calls on "thick night" to hide the murder, Macbeth speaks of "stars, hide your fires," and the play is dominated by night scenes. Shakespeare creates a world where evil operates in shadow, connecting to the Jacobean association between darkness and the demonic. The interplay of blood and darkness creates an oppressive atmosphere that mirrors the characters\' psychological states.',
         },
         {
-          question: 'Explore how Shakespeare presents the theme of masculinity and its relationship to violence.',
+          question:
+            'Explore how Shakespeare presents the theme of masculinity and its relationship to violence.',
           lines: 7,
           marks: 6,
           modelAnswer:
@@ -226,7 +229,8 @@ const macbethCore: RevisionWorksheet = {
     },
     {
       title: 'Section C: Context and Craft',
-      instructions: 'Answer the following questions about Shakespeare\'s methods and the play\'s context.',
+      instructions:
+        "Answer the following questions about Shakespeare's methods and the play's context.",
       questions: [
         {
           question:
@@ -234,12 +238,12 @@ const macbethCore: RevisionWorksheet = {
           lines: 4,
           marks: 4,
           modelAnswer:
-            'Regicide was an intensely relevant theme for a Jacobean audience because James I had survived the Gunpowder Plot of 1605, just a year before Macbeth was likely first performed. The play dramatises the consequences of killing a king, reinforcing the Divine Right of Kings - the belief that monarchs were appointed by God. By showing Macbeth\'s descent into tyranny and eventual death, Shakespeare affirms that regicide disrupts the natural order and will be punished. The play can be read as a compliment to James I, who was also descended from the historical Banquo, and whose interest in witchcraft (he authored Daemonologie) is reflected in the supernatural elements.',
+            "Regicide was an intensely relevant theme for a Jacobean audience because James I had survived the Gunpowder Plot of 1605, just a year before Macbeth was likely first performed. The play dramatises the consequences of killing a king, reinforcing the Divine Right of Kings - the belief that monarchs were appointed by God. By showing Macbeth's descent into tyranny and eventual death, Shakespeare affirms that regicide disrupts the natural order and will be punished. The play can be read as a compliment to James I, who was also descended from the historical Banquo, and whose interest in witchcraft (he authored Daemonologie) is reflected in the supernatural elements.",
         },
       ],
     },
   ],
-};
+}
 
 const macbethHigher: RevisionWorksheet = {
   id: 'macbeth-higher',
@@ -265,7 +269,7 @@ const macbethHigher: RevisionWorksheet = {
         },
         {
           question:
-            'Analyse how Shakespeare uses the structure of the play to chart Macbeth\'s psychological disintegration. Consider soliloquies, dramatic irony, and the compression of time.',
+            "Analyse how Shakespeare uses the structure of the play to chart Macbeth's psychological disintegration. Consider soliloquies, dramatic irony, and the compression of time.",
           lines: 10,
           marks: 10,
           modelAnswer:
@@ -277,7 +281,7 @@ const macbethHigher: RevisionWorksheet = {
           lines: 10,
           marks: 10,
           modelAnswer:
-            'The disjunction between appearance and reality is established from the opening line - "Fair is foul, and foul is fair" - creating an epistemological crisis that pervades the entire play. Duncan\'s observation that "There\'s no art to find the mind\'s construction in the face" is deeply ironic given his imminent murder by a trusted thane, and it articulates a fundamental anxiety about the unreliability of surfaces. Lady Macbeth\'s instruction to "look like the innocent flower, but be the serpent under\'t" draws on Edenic imagery, positioning deception as humanity\'s original sin. The witches\' equivocations - "none of woman born" concealing Macduff\'s caesarean birth - demonstrate language itself as a tool of deception. Shakespeare connects this to Jacobean anxieties on multiple levels: the Gunpowder Plot revealed that trusted Catholic nobles could harbour murderous intent; the doctrine of equivocation (which allowed Catholics to mislead Protestant interrogators without technically lying) was a major political controversy; and James I\'s own anxieties about identifying genuine threats were well documented. The Porter\'s speech about "equivocators" directly references the trial of the Jesuit Henry Garnet. Shakespeare suggests that in a world where language can deceive and appearances lie, moral certainty becomes almost impossible - yet the play\'s resolution, with Malcolm\'s restoration, affirms that truth ultimately prevails.',
+            "The disjunction between appearance and reality is established from the opening line - \"Fair is foul, and foul is fair\" - creating an epistemological crisis that pervades the entire play. Duncan's observation that \"There's no art to find the mind's construction in the face\" is deeply ironic given his imminent murder by a trusted thane, and it articulates a fundamental anxiety about the unreliability of surfaces. Lady Macbeth's instruction to \"look like the innocent flower, but be the serpent under't\" draws on Edenic imagery, positioning deception as humanity's original sin. The witches' equivocations - \"none of woman born\" concealing Macduff's caesarean birth - demonstrate language itself as a tool of deception. Shakespeare connects this to Jacobean anxieties on multiple levels: the Gunpowder Plot revealed that trusted Catholic nobles could harbour murderous intent; the doctrine of equivocation (which allowed Catholics to mislead Protestant interrogators without technically lying) was a major political controversy; and James I's own anxieties about identifying genuine threats were well documented. The Porter's speech about \"equivocators\" directly references the trial of the Jesuit Henry Garnet. Shakespeare suggests that in a world where language can deceive and appearances lie, moral certainty becomes almost impossible - yet the play's resolution, with Malcolm's restoration, affirms that truth ultimately prevails.",
         },
       ],
     },
@@ -300,7 +304,7 @@ const macbethHigher: RevisionWorksheet = {
           lines: 10,
           marks: 10,
           modelAnswer:
-            'The banquet scene operates as the play\'s structural fulcrum and the moment where Macbeth\'s public and private worlds catastrophically collide. On the surface, it is a display of royal hospitality - Macbeth playing the gracious king. The appearance of Banquo\'s ghost shatters this performance, literalising the theme of guilt as an inescapable, visible presence. Shakespeare\'s staging is deliberately ambiguous: whether the ghost is "real" (supernatural) or a hallucination (psychological) is left open, and this ambiguity is thematically productive - both readings reinforce the play\'s concern with the unreliability of perception. Lady Macbeth\'s desperate attempt to manage the situation - "Are you a man?" - echoes her earlier manipulation, but here it fails; she can no longer control Macbeth or the consequences of their actions. The scene marks a power shift: Lady Macbeth is marginalised from this point onward, and Macbeth becomes increasingly autonomous in his tyranny. Structurally, it is the last moment of the Macbeths as a functioning partnership. The collapse of the banquet - the meal abandoned, guests dismissed in disorder - symbolises the disintegration of social and political order under Macbeth\'s rule. Shakespeare uses the formal structure of a state banquet (with its rituals of seating and toasting) to heighten the chaos when those structures break down, mirroring the larger breakdown of the Great Chain of Being.',
+            "The banquet scene operates as the play's structural fulcrum and the moment where Macbeth's public and private worlds catastrophically collide. On the surface, it is a display of royal hospitality - Macbeth playing the gracious king. The appearance of Banquo's ghost shatters this performance, literalising the theme of guilt as an inescapable, visible presence. Shakespeare's staging is deliberately ambiguous: whether the ghost is \"real\" (supernatural) or a hallucination (psychological) is left open, and this ambiguity is thematically productive - both readings reinforce the play's concern with the unreliability of perception. Lady Macbeth's desperate attempt to manage the situation - \"Are you a man?\" - echoes her earlier manipulation, but here it fails; she can no longer control Macbeth or the consequences of their actions. The scene marks a power shift: Lady Macbeth is marginalised from this point onward, and Macbeth becomes increasingly autonomous in his tyranny. Structurally, it is the last moment of the Macbeths as a functioning partnership. The collapse of the banquet - the meal abandoned, guests dismissed in disorder - symbolises the disintegration of social and political order under Macbeth's rule. Shakespeare uses the formal structure of a state banquet (with its rituals of seating and toasting) to heighten the chaos when those structures break down, mirroring the larger breakdown of the Great Chain of Being.",
         },
       ],
     },
@@ -311,7 +315,7 @@ const macbethHigher: RevisionWorksheet = {
       questions: [
         {
           question:
-            'Some critics argue that Lady Macbeth is Shakespeare\'s most complex female character, while others see her as a misogynistic stereotype of feminine evil. Evaluate these positions with close reference to the text.',
+            "Some critics argue that Lady Macbeth is Shakespeare's most complex female character, while others see her as a misogynistic stereotype of feminine evil. Evaluate these positions with close reference to the text.",
           lines: 10,
           marks: 10,
           modelAnswer:
@@ -320,7 +324,7 @@ const macbethHigher: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 // ---------- AN INSPECTOR CALLS ----------
 
@@ -371,8 +375,7 @@ const inspectorFoundation: RevisionWorksheet = {
             'Eric is shown as a young man who has been damaged by his privileged upbringing. He drinks too much, forced himself on Eva Smith, and stole money from his father\'s business. However, like Sheila, he accepts responsibility: "the fact remains that I did what I did." He is frustrated by his parents\' refusal to change. Priestley uses Eric to show that even those who have done wrong can redeem themselves by accepting responsibility.',
         },
         {
-          question:
-            'What does Mrs Birling represent? Begin with: "Mrs Birling represents..."',
+          question: 'What does Mrs Birling represent? Begin with: "Mrs Birling represents..."',
           lines: 4,
           marks: 4,
           modelAnswer:
@@ -435,7 +438,7 @@ const inspectorFoundation: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 const inspectorCore: RevisionWorksheet = {
   id: 'inspector-calls-core',
@@ -453,7 +456,7 @@ const inspectorCore: RevisionWorksheet = {
       questions: [
         {
           question:
-            'How does Priestley use the Inspector as a dramatic device to expose the Birlings\' hypocrisy?',
+            "How does Priestley use the Inspector as a dramatic device to expose the Birlings' hypocrisy?",
           lines: 8,
           marks: 8,
           modelAnswer:
@@ -461,7 +464,7 @@ const inspectorCore: RevisionWorksheet = {
         },
         {
           question:
-            'Analyse how Priestley presents Gerald Croft and his significance in the play\'s social commentary.',
+            "Analyse how Priestley presents Gerald Croft and his significance in the play's social commentary.",
           lines: 7,
           marks: 7,
           modelAnswer:
@@ -484,11 +487,11 @@ const inspectorCore: RevisionWorksheet = {
       questions: [
         {
           question:
-            'How does Priestley use the play\'s dual time setting (written 1945, set 1912) to enhance his political message?',
+            "How does Priestley use the play's dual time setting (written 1945, set 1912) to enhance his political message?",
           lines: 7,
           marks: 7,
           modelAnswer:
-            'The dual time setting is one of Priestley\'s most effective dramatic strategies. By setting the play in 1912 - before WWI, the Titanic disaster, and the General Strike - Priestley allows Mr Birling to make confidently wrong predictions that the audience immediately recognises as absurd. His claim that the Titanic is "unsinkable" and that there won\'t be a war creates dramatic irony that demolishes his credibility before the Inspector arrives. This retrospective framing means the 1945 audience has lived through the consequences of the pre-war capitalist attitudes the Birlings represent. The Inspector\'s warning of "fire and blood and anguish" references both World Wars - events the audience has experienced firsthand. Priestley\'s timing was deliberate: writing as WWII ended and the 1945 Labour government was introducing the welfare state, he wanted to ensure society didn\'t revert to pre-war inequality. The play argues that the Birlings\' world caused the wars, and that the audience has a choice: learn the lesson or repeat the cycle. The final phone call - announcing a real inspector is on his way - suggests that without change, history will indeed repeat.',
+            "The dual time setting is one of Priestley's most effective dramatic strategies. By setting the play in 1912 - before WWI, the Titanic disaster, and the General Strike - Priestley allows Mr Birling to make confidently wrong predictions that the audience immediately recognises as absurd. His claim that the Titanic is \"unsinkable\" and that there won't be a war creates dramatic irony that demolishes his credibility before the Inspector arrives. This retrospective framing means the 1945 audience has lived through the consequences of the pre-war capitalist attitudes the Birlings represent. The Inspector's warning of \"fire and blood and anguish\" references both World Wars - events the audience has experienced firsthand. Priestley's timing was deliberate: writing as WWII ended and the 1945 Labour government was introducing the welfare state, he wanted to ensure society didn't revert to pre-war inequality. The play argues that the Birlings' world caused the wars, and that the audience has a choice: learn the lesson or repeat the cycle. The final phone call - announcing a real inspector is on his way - suggests that without change, history will indeed repeat.",
         },
         {
           question:
@@ -502,7 +505,7 @@ const inspectorCore: RevisionWorksheet = {
     },
     {
       title: 'Section C: Dramatic Techniques',
-      instructions: 'Analyse Priestley\'s dramatic methods and their effects.',
+      instructions: "Analyse Priestley's dramatic methods and their effects.",
       questions: [
         {
           question:
@@ -510,12 +513,12 @@ const inspectorCore: RevisionWorksheet = {
           lines: 6,
           marks: 7,
           modelAnswer:
-            'Priestley\'s stage directions are meticulously crafted to support his themes. The opening directions describe the lighting as "pink and intimate" before the Inspector arrives, then "brighter and harder" when he does - symbolising the move from comfortable illusion to harsh truth. The single room setting creates a pressure-cooker atmosphere: the characters cannot escape each other or the Inspector\'s questions, mirroring how society cannot escape the consequences of its actions. The "heavily comfortable" furnishings represent bourgeois complacency, and the dining table - set for celebration - becomes the site of the family\'s moral exposure. The unities of time, place, and action (the play occurs in real time in one location) give it an intensity that prevents the audience from looking away, just as the Inspector prevents the Birlings from avoiding responsibility. In Stephen Daldry\'s influential 1992 production, the house physically crumbles during the Inspector\'s investigation, making the destruction of the Birlings\' world literally visible - a staging choice that realises the metaphor embedded in Priestley\'s text.',
+            "Priestley's stage directions are meticulously crafted to support his themes. The opening directions describe the lighting as \"pink and intimate\" before the Inspector arrives, then \"brighter and harder\" when he does - symbolising the move from comfortable illusion to harsh truth. The single room setting creates a pressure-cooker atmosphere: the characters cannot escape each other or the Inspector's questions, mirroring how society cannot escape the consequences of its actions. The \"heavily comfortable\" furnishings represent bourgeois complacency, and the dining table - set for celebration - becomes the site of the family's moral exposure. The unities of time, place, and action (the play occurs in real time in one location) give it an intensity that prevents the audience from looking away, just as the Inspector prevents the Birlings from avoiding responsibility. In Stephen Daldry's influential 1992 production, the house physically crumbles during the Inspector's investigation, making the destruction of the Birlings' world literally visible - a staging choice that realises the metaphor embedded in Priestley's text.",
         },
       ],
     },
   ],
-};
+}
 
 const inspectorHigher: RevisionWorksheet = {
   id: 'inspector-calls-higher',
@@ -537,11 +540,11 @@ const inspectorHigher: RevisionWorksheet = {
           lines: 12,
           marks: 12,
           modelAnswer:
-            'This statement illuminates the play\'s ambition beyond individual morality to systemic critique. Eva Smith functions not as a realistic individual but as a political symbol - her everywoman name (Eve + Smith), the ambiguity about whether she is one person or several, and her absence from the stage all resist individualisation. Priestley constructs her as a structural victim: each encounter with a Birling represents a different mechanism of class oppression (labour exploitation, consumer power, sexual predation, institutional gatekeeping). Read this way, her death indicts not specific bad actors but the capitalist system that inevitably produces such victims. The "death of an entire social system" reading is supported by the play\'s time structure: the 1945 audience knows that the world of 1912 - with its confident imperialism, rigid class hierarchy, and unchecked capitalism - was indeed destroyed by two World Wars. Mr Birling\'s predictions serve as an obituary for his worldview. However, the statement risks undervaluing the play\'s emotional power. Priestley ensures the audience feels Eva\'s suffering - the graphic description of her death, the Inspector\'s humanising descriptions, Sheila\'s visceral guilt. If Eva were merely an abstraction, the play would lose its affective force. The genius of Priestley\'s dramaturgy is that Eva works simultaneously as a realistic figure demanding empathy and a political symbol demanding systemic change. The final phone call suggests the "social system" is not yet dead - it persists whenever the Birlings of the world refuse to change, and must be confronted again and again.',
+            "This statement illuminates the play's ambition beyond individual morality to systemic critique. Eva Smith functions not as a realistic individual but as a political symbol - her everywoman name (Eve + Smith), the ambiguity about whether she is one person or several, and her absence from the stage all resist individualisation. Priestley constructs her as a structural victim: each encounter with a Birling represents a different mechanism of class oppression (labour exploitation, consumer power, sexual predation, institutional gatekeeping). Read this way, her death indicts not specific bad actors but the capitalist system that inevitably produces such victims. The \"death of an entire social system\" reading is supported by the play's time structure: the 1945 audience knows that the world of 1912 - with its confident imperialism, rigid class hierarchy, and unchecked capitalism - was indeed destroyed by two World Wars. Mr Birling's predictions serve as an obituary for his worldview. However, the statement risks undervaluing the play's emotional power. Priestley ensures the audience feels Eva's suffering - the graphic description of her death, the Inspector's humanising descriptions, Sheila's visceral guilt. If Eva were merely an abstraction, the play would lose its affective force. The genius of Priestley's dramaturgy is that Eva works simultaneously as a realistic figure demanding empathy and a political symbol demanding systemic change. The final phone call suggests the \"social system\" is not yet dead - it persists whenever the Birlings of the world refuse to change, and must be confronted again and again.",
         },
         {
           question:
-            'Analyse how Priestley manipulates dramatic form to control the audience\'s moral and political response. Consider the well-made play structure, the detective genre, and Brechtian elements.',
+            "Analyse how Priestley manipulates dramatic form to control the audience's moral and political response. Consider the well-made play structure, the detective genre, and Brechtian elements.",
           lines: 10,
           marks: 10,
           modelAnswer:
@@ -553,7 +556,7 @@ const inspectorHigher: RevisionWorksheet = {
           lines: 10,
           marks: 10,
           modelAnswer:
-            'The play is deeply embedded in its 1945 context: Priestley\'s socialism, shaped by his WWI experiences and WWII broadcasts, the optimism of the Labour landslide, and the creation of the welfare state all inform its political vision. The specific targets - Edwardian capitalism, paternalistic charity, class snobbery - are historically situated. The binary moral structure (young = good, old = bad; socialism = right, capitalism = wrong) reflects the clarity of post-war political conviction. In this sense, the play is a period piece. Yet its theatrical afterlife suggests enduring relevance. Stephen Daldry\'s 1992 revival became the longest-running production in West End history, succeeding precisely because Thatcher-era Britain had recreated many of the inequalities Priestley attacked. The play\'s themes - the responsibility of the wealthy toward the poor, the exploitation of workers, institutional failures to protect the vulnerable - resonate with contemporary debates about austerity, food banks, zero-hours contracts, and the treatment of benefits claimants. The Birlings\' refusal to accept responsibility mirrors contemporary political rhetoric about "personal responsibility" used to deflect systemic critique. However, the play\'s solutions are less clearly applicable: Priestley\'s faith in state socialism has been complicated by the mixed record of post-war nationalisation and the welfare state. What endures is the play\'s dramatic power to make audiences examine their own complicity in social structures that harm others. Its ultimate relevance lies not in its specific politics but in its insistence that indifference to suffering is a moral choice with consequences.',
+            "The play is deeply embedded in its 1945 context: Priestley's socialism, shaped by his WWI experiences and WWII broadcasts, the optimism of the Labour landslide, and the creation of the welfare state all inform its political vision. The specific targets - Edwardian capitalism, paternalistic charity, class snobbery - are historically situated. The binary moral structure (young = good, old = bad; socialism = right, capitalism = wrong) reflects the clarity of post-war political conviction. In this sense, the play is a period piece. Yet its theatrical afterlife suggests enduring relevance. Stephen Daldry's 1992 revival became the longest-running production in West End history, succeeding precisely because Thatcher-era Britain had recreated many of the inequalities Priestley attacked. The play's themes - the responsibility of the wealthy toward the poor, the exploitation of workers, institutional failures to protect the vulnerable - resonate with contemporary debates about austerity, food banks, zero-hours contracts, and the treatment of benefits claimants. The Birlings' refusal to accept responsibility mirrors contemporary political rhetoric about \"personal responsibility\" used to deflect systemic critique. However, the play's solutions are less clearly applicable: Priestley's faith in state socialism has been complicated by the mixed record of post-war nationalisation and the welfare state. What endures is the play's dramatic power to make audiences examine their own complicity in social structures that harm others. Its ultimate relevance lies not in its specific politics but in its insistence that indifference to suffering is a moral choice with consequences.",
         },
       ],
     },
@@ -581,7 +584,7 @@ const inspectorHigher: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 // ---------- A CHRISTMAS CAROL ----------
 
@@ -624,8 +627,7 @@ const carolFoundation: RevisionWorksheet = {
             'Bob Cratchit is important because he represents the honest, hardworking poor who are exploited by wealthy employers. Despite being paid very little and working in a freezing office, he remains cheerful and loving towards his family. He toasts Scrooge at Christmas dinner even though Scrooge treats him badly. Dickens uses Cratchit to make readers sympathise with the poor and see that they deserve better treatment.',
         },
         {
-          question:
-            'What does Tiny Tim symbolise? Start with: "Tiny Tim is used by Dickens to..."',
+          question: 'What does Tiny Tim symbolise? Start with: "Tiny Tim is used by Dickens to..."',
           lines: 4,
           marks: 4,
           modelAnswer:
@@ -668,12 +670,12 @@ const carolFoundation: RevisionWorksheet = {
           lines: 4,
           marks: 4,
           modelAnswer:
-            'Dickens shows that family and community are important by contrasting Scrooge\'s isolation with the warmth of families celebrating Christmas. The Cratchits\' humble meal is full of love and joy, while Scrooge eats alone in his dark rooms. Fred\'s Christmas party is lively and welcoming even though Scrooge refused his invitation. When Scrooge finally joins Fred\'s party and helps the Cratchits, he finds happiness. Dickens suggests that money without human connection is meaningless, and that true wealth comes from relationships.',
+            "Dickens shows that family and community are important by contrasting Scrooge's isolation with the warmth of families celebrating Christmas. The Cratchits' humble meal is full of love and joy, while Scrooge eats alone in his dark rooms. Fred's Christmas party is lively and welcoming even though Scrooge refused his invitation. When Scrooge finally joins Fred's party and helps the Cratchits, he finds happiness. Dickens suggests that money without human connection is meaningless, and that true wealth comes from relationships.",
         },
       ],
     },
   ],
-};
+}
 
 const carolCore: RevisionWorksheet = {
   id: 'christmas-carol-core',
@@ -687,7 +689,7 @@ const carolCore: RevisionWorksheet = {
     {
       title: 'Section A: Character Analysis',
       instructions:
-        'Write detailed analytical paragraphs. Consider Dickens\'s methods (language, structure, form) and his social message.',
+        "Write detailed analytical paragraphs. Consider Dickens's methods (language, structure, form) and his social message.",
       questions: [
         {
           question:
@@ -699,15 +701,15 @@ const carolCore: RevisionWorksheet = {
         },
         {
           question:
-            'How does Dickens present the Cratchit family, and what is their significance in the novella\'s social commentary?',
+            "How does Dickens present the Cratchit family, and what is their significance in the novella's social commentary?",
           lines: 7,
           marks: 7,
           modelAnswer:
-            'Dickens presents the Cratchits as the idealised working-class family - poor in wealth but rich in love, loyalty, and generosity. Their Christmas dinner scene is detailed with sensory language: the goose is described with reverence despite being small, and the pudding causes Mrs Cratchit anxiety lest it not be enough. Dickens makes the reader feel both the warmth of their togetherness and the precariousness of their situation. Bob Cratchit\'s willingness to toast Scrooge despite his exploitation shows extraordinary generosity of spirit, shaming Scrooge (and the reader) by comparison. Tiny Tim serves as the emotional centre: his potential death is presented as a direct consequence of poverty, placing moral responsibility on those with the power to help. The Cratchits are somewhat sentimentalised - they never complain, they are uniformly good - which reflects Dickens\'s rhetorical strategy: by making the poor sympathetic and virtuous, he challenges the prevailing narrative that poverty was caused by moral failing. This was a radical counter-argument to Victorian social Darwinism and the punitive approach of the Poor Law.',
+            "Dickens presents the Cratchits as the idealised working-class family - poor in wealth but rich in love, loyalty, and generosity. Their Christmas dinner scene is detailed with sensory language: the goose is described with reverence despite being small, and the pudding causes Mrs Cratchit anxiety lest it not be enough. Dickens makes the reader feel both the warmth of their togetherness and the precariousness of their situation. Bob Cratchit's willingness to toast Scrooge despite his exploitation shows extraordinary generosity of spirit, shaming Scrooge (and the reader) by comparison. Tiny Tim serves as the emotional centre: his potential death is presented as a direct consequence of poverty, placing moral responsibility on those with the power to help. The Cratchits are somewhat sentimentalised - they never complain, they are uniformly good - which reflects Dickens's rhetorical strategy: by making the poor sympathetic and virtuous, he challenges the prevailing narrative that poverty was caused by moral failing. This was a radical counter-argument to Victorian social Darwinism and the punitive approach of the Poor Law.",
         },
         {
           question:
-            'Analyse the role and significance of the three ghosts in Scrooge\'s transformation.',
+            "Analyse the role and significance of the three ghosts in Scrooge's transformation.",
           lines: 7,
           marks: 7,
           modelAnswer:
@@ -717,8 +719,7 @@ const carolCore: RevisionWorksheet = {
     },
     {
       title: 'Section B: Themes and Context',
-      instructions:
-        'Analyse the following themes with integrated contextual understanding.',
+      instructions: 'Analyse the following themes with integrated contextual understanding.',
       questions: [
         {
           question:
@@ -726,7 +727,7 @@ const carolCore: RevisionWorksheet = {
           lines: 7,
           marks: 7,
           modelAnswer:
-            'Dickens wrote A Christmas Carol in 1843, a period of extreme social inequality in Victorian Britain. The "Hungry Forties" saw widespread poverty, child labour, and the harsh effects of the 1834 Poor Law, which forced the destitute into degrading workhouses. Dickens had visited a ragged school in Field Lane and was horrified by the conditions of poor children; he originally planned to write a political pamphlet but realised fiction would have greater impact. The novella\'s argument for social reform operates on multiple levels: emotionally, through characters like Tiny Tim who make poverty personal; intellectually, through the allegory of Ignorance and Want; and spiritually, through the framework of Christian charity that permeates the narrative. Scrooge\'s transformation from someone who suggests the poor should "decrease the surplus population" to a generous benefactor models the change Dickens wanted to see in his wealthy readers. The novella\'s Christmas setting is strategic: it invokes the Christian duty of charity and the spirit of goodwill, making Dickens\'s social message feel natural rather than preachy. The book was enormously successful and is credited with popularising many Christmas traditions, demonstrating fiction\'s power to change social attitudes.',
+            "Dickens wrote A Christmas Carol in 1843, a period of extreme social inequality in Victorian Britain. The \"Hungry Forties\" saw widespread poverty, child labour, and the harsh effects of the 1834 Poor Law, which forced the destitute into degrading workhouses. Dickens had visited a ragged school in Field Lane and was horrified by the conditions of poor children; he originally planned to write a political pamphlet but realised fiction would have greater impact. The novella's argument for social reform operates on multiple levels: emotionally, through characters like Tiny Tim who make poverty personal; intellectually, through the allegory of Ignorance and Want; and spiritually, through the framework of Christian charity that permeates the narrative. Scrooge's transformation from someone who suggests the poor should \"decrease the surplus population\" to a generous benefactor models the change Dickens wanted to see in his wealthy readers. The novella's Christmas setting is strategic: it invokes the Christian duty of charity and the spirit of goodwill, making Dickens's social message feel natural rather than preachy. The book was enormously successful and is credited with popularising many Christmas traditions, demonstrating fiction's power to change social attitudes.",
         },
         {
           question:
@@ -734,7 +735,7 @@ const carolCore: RevisionWorksheet = {
           lines: 7,
           marks: 7,
           modelAnswer:
-            'Dickens structures the entire novella around the opposition between isolation and community. Scrooge begins "solitary as an oyster," physically and emotionally cut off from humanity. His chambers are dark and cold, his office barely heated, and he rejects every invitation to connect: his nephew\'s dinner, the charity collectors\' appeal, even his clerk\'s right to Christmas Day. This isolation is presented as both the cause and effect of his miserliness - a self-reinforcing cycle. The three ghosts systematically show him communities he has excluded himself from: Fezziwig\'s joyful workplace, the Cratchits\' loving home, Fred\'s warm party. Each scene emphasises togetherness, warmth, music, and shared food - the sensory opposite of Scrooge\'s cold, silent world. The Ghost of Christmas Yet to Come shows the ultimate consequence of isolation: an unmourned death where even his bedsheets are stolen. Dickens makes a structural argument: every stave shows community as the source of happiness and isolation as the source of misery. Scrooge\'s redemption is marked by his reintegration into community: he joins Fred\'s party, helps the Cratchits, and becomes "as good a friend... as the good old city knew." Dickens suggests that individual wealth means nothing without social connection, arguing against the atomised individualism of laissez-faire economics.',
+            "Dickens structures the entire novella around the opposition between isolation and community. Scrooge begins \"solitary as an oyster,\" physically and emotionally cut off from humanity. His chambers are dark and cold, his office barely heated, and he rejects every invitation to connect: his nephew's dinner, the charity collectors' appeal, even his clerk's right to Christmas Day. This isolation is presented as both the cause and effect of his miserliness - a self-reinforcing cycle. The three ghosts systematically show him communities he has excluded himself from: Fezziwig's joyful workplace, the Cratchits' loving home, Fred's warm party. Each scene emphasises togetherness, warmth, music, and shared food - the sensory opposite of Scrooge's cold, silent world. The Ghost of Christmas Yet to Come shows the ultimate consequence of isolation: an unmourned death where even his bedsheets are stolen. Dickens makes a structural argument: every stave shows community as the source of happiness and isolation as the source of misery. Scrooge's redemption is marked by his reintegration into community: he joins Fred's party, helps the Cratchits, and becomes \"as good a friend... as the good old city knew.\" Dickens suggests that individual wealth means nothing without social connection, arguing against the atomised individualism of laissez-faire economics.",
         },
       ],
     },
@@ -753,7 +754,7 @@ const carolCore: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 const carolHigher: RevisionWorksheet = {
   id: 'christmas-carol-higher',
@@ -775,7 +776,7 @@ const carolHigher: RevisionWorksheet = {
           lines: 12,
           marks: 12,
           modelAnswer:
-            'The term "propaganda" implies manipulation, and Dickens certainly employs sophisticated rhetorical strategies to guide his reader\'s moral and political response. The novella\'s genre choices are calculated: the ghost story entertains while delivering moral instruction; the Christmas setting invokes cultural expectations of generosity; the fairy-tale redemption arc offers satisfying closure that embeds the political message in pleasure. Dickens\'s characterisation is deliberately polarised - Scrooge is cartoonishly miserly, Tiny Tim angelically good - reducing complex social issues to a simple moral binary. The narrative voice cajoles, jokes, and emotionally manipulates: the reader is positioned as an insider sharing the narrator\'s values, making it difficult to resist the intended response. In this sense, "propaganda" is accurate. However, the term underestimates the novella\'s sophistication. Dickens was responding to real social crises with genuine moral urgency - child labour, workhouse conditions, starvation wages - and his empathy for the poor is not manufactured but rooted in personal experience of poverty and the blacking factory. The novella acknowledges complexity in ways propaganda typically does not: Scrooge\'s backstory (neglected child, loss of love) provides psychological depth that complicates moral judgement, and the Ghost of Christmas Present\'s revelation of "Ignorance" and "Want" addresses systemic causes rather than individual villainy. Furthermore, the most effective propaganda is typically authoritarian - it demands compliance. Dickens\'s approach is persuasive rather than coercive: he changes hearts through emotional engagement, not through threat. A Christmas Carol is better described as a work of advocacy fiction - literature that uses narrative pleasure to advance a political argument - a tradition that includes Uncle Tom\'s Cabin, Oliver Twist, and contemporary climate fiction. Its enduring cultural power suggests it transcends mere propaganda to achieve something more lasting: a genuine shift in how readers feel about social inequality.',
+            "The term \"propaganda\" implies manipulation, and Dickens certainly employs sophisticated rhetorical strategies to guide his reader's moral and political response. The novella's genre choices are calculated: the ghost story entertains while delivering moral instruction; the Christmas setting invokes cultural expectations of generosity; the fairy-tale redemption arc offers satisfying closure that embeds the political message in pleasure. Dickens's characterisation is deliberately polarised - Scrooge is cartoonishly miserly, Tiny Tim angelically good - reducing complex social issues to a simple moral binary. The narrative voice cajoles, jokes, and emotionally manipulates: the reader is positioned as an insider sharing the narrator's values, making it difficult to resist the intended response. In this sense, \"propaganda\" is accurate. However, the term underestimates the novella's sophistication. Dickens was responding to real social crises with genuine moral urgency - child labour, workhouse conditions, starvation wages - and his empathy for the poor is not manufactured but rooted in personal experience of poverty and the blacking factory. The novella acknowledges complexity in ways propaganda typically does not: Scrooge's backstory (neglected child, loss of love) provides psychological depth that complicates moral judgement, and the Ghost of Christmas Present's revelation of \"Ignorance\" and \"Want\" addresses systemic causes rather than individual villainy. Furthermore, the most effective propaganda is typically authoritarian - it demands compliance. Dickens's approach is persuasive rather than coercive: he changes hearts through emotional engagement, not through threat. A Christmas Carol is better described as a work of advocacy fiction - literature that uses narrative pleasure to advance a political argument - a tradition that includes Uncle Tom's Cabin, Oliver Twist, and contemporary climate fiction. Its enduring cultural power suggests it transcends mere propaganda to achieve something more lasting: a genuine shift in how readers feel about social inequality.",
         },
         {
           question:
@@ -783,7 +784,7 @@ const carolHigher: RevisionWorksheet = {
           lines: 10,
           marks: 10,
           modelAnswer:
-            'Dickens\'s choice of the novella form was both commercially strategic and artistically purposeful. At a time when his novels were serialised over months, A Christmas Carol was published as a single, affordable volume designed to be read in one sitting - ensuring the emotional momentum of Scrooge\'s transformation is uninterrupted. The five-stave structure explicitly evokes a Christmas carol (a song), giving the narrative a musical quality of movement and resolution. Each stave has a distinct tonal register: Stave One is comic-gothic (Marley\'s ghost), Stave Two is nostalgic-melancholic (Christmas Past), Stave Three is warm but darkening (Christmas Present), Stave Four is bleak-terrifying (Christmas Yet to Come), and Stave Five is jubilant-redeemed. This emotional arc mirrors the structure of a sermon - diagnosis, evidence, warning, conversion - which is appropriate given Dickens\'s quasi-religious message about Christian charity. The novella\'s compression forces Dickens into symbolic rather than realistic storytelling: Scrooge\'s decades of miserliness are overturned in a single night, which is psychologically implausible but allegorically powerful. The supernatural framework licenses this compression, allowing Dickens to cover an entire life in a few scenes. The brevity also means every detail carries weight: Marley\'s chains, the extinguished candle, the bare name on Scrooge\'s tombstone are all densely symbolic because there is no space for redundancy. The novella form thus enables Dickens to create a concentrated moral argument that functions more like a parable than a novel, achieving through intensity what his longer works achieve through accumulation.',
+            "Dickens's choice of the novella form was both commercially strategic and artistically purposeful. At a time when his novels were serialised over months, A Christmas Carol was published as a single, affordable volume designed to be read in one sitting - ensuring the emotional momentum of Scrooge's transformation is uninterrupted. The five-stave structure explicitly evokes a Christmas carol (a song), giving the narrative a musical quality of movement and resolution. Each stave has a distinct tonal register: Stave One is comic-gothic (Marley's ghost), Stave Two is nostalgic-melancholic (Christmas Past), Stave Three is warm but darkening (Christmas Present), Stave Four is bleak-terrifying (Christmas Yet to Come), and Stave Five is jubilant-redeemed. This emotional arc mirrors the structure of a sermon - diagnosis, evidence, warning, conversion - which is appropriate given Dickens's quasi-religious message about Christian charity. The novella's compression forces Dickens into symbolic rather than realistic storytelling: Scrooge's decades of miserliness are overturned in a single night, which is psychologically implausible but allegorically powerful. The supernatural framework licenses this compression, allowing Dickens to cover an entire life in a few scenes. The brevity also means every detail carries weight: Marley's chains, the extinguished candle, the bare name on Scrooge's tombstone are all densely symbolic because there is no space for redundancy. The novella form thus enables Dickens to create a concentrated moral argument that functions more like a parable than a novel, achieving through intensity what his longer works achieve through accumulation.",
         },
         {
           question:
@@ -810,7 +811,7 @@ const carolHigher: RevisionWorksheet = {
         },
         {
           question:
-            'Analyse the significance of the Ghost of Christmas Present revealing the children Ignorance and Want. How does this moment function within the novella\'s political argument?',
+            "Analyse the significance of the Ghost of Christmas Present revealing the children Ignorance and Want. How does this moment function within the novella's political argument?",
           lines: 8,
           marks: 8,
           modelAnswer:
@@ -819,7 +820,7 @@ const carolHigher: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 // ---------- POWER & CONFLICT POETRY ----------
 
@@ -862,8 +863,7 @@ const poetryFoundation: RevisionWorksheet = {
             'Blake\'s message is that London is a city of suffering caused by those in power. He describes "marks of weakness, marks of woe" on every face he sees. He criticises the Church ("every black\'ning Church appalls"), the monarchy ("the hapless Soldier\'s sigh runs in blood down Palace walls"), and the way society traps people in poverty. Blake, a Romantic poet writing during the Industrial Revolution, wanted to expose the hypocrisy of institutions that claimed to help people while actually causing their suffering.',
         },
         {
-          question:
-            'What is "Exposure" by Wilfred Owen about? Begin with: "The poem describes..."',
+          question: 'What is "Exposure" by Wilfred Owen about? Begin with: "The poem describes..."',
           lines: 4,
           marks: 4,
           modelAnswer:
@@ -911,7 +911,7 @@ const poetryFoundation: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 const poetryCore: RevisionWorksheet = {
   id: 'power-conflict-poetry-core',
@@ -925,7 +925,7 @@ const poetryCore: RevisionWorksheet = {
     {
       title: 'Section A: Poem Analysis',
       instructions:
-        'Analyse the following poems in detail. Consider the poet\'s methods (language, structure, form) and how meaning is created.',
+        "Analyse the following poems in detail. Consider the poet's methods (language, structure, form) and how meaning is created.",
       questions: [
         {
           question:
@@ -972,30 +972,34 @@ const poetryCore: RevisionWorksheet = {
           lines: 8,
           marks: 8,
           modelAnswer:
-            'Tennyson and Duffy both address how society remembers conflict, but from radically different perspectives. Tennyson, writing as Poet Laureate shortly after the Battle of Balaclava, uses thundering dactylic rhythm - "Half a league, half a league, half a league onward" - to celebrate the soldiers\' courage and create a sense of unstoppable momentum. His imperative "Honour the charge they made!" demands public memorialisation, framing sacrifice as glorious. Duffy, writing a century later, presents a war photographer developing images in his darkroom as "a priest preparing to intone a Mass," investing his work with religious solemnity. However, his photographs will appear in a Sunday supplement "between the bath and pre-lunch beers" - domestic indifference trivialising suffering. While Tennyson\'s poem attempts to give meaning to death through collective memory, Duffy questions whether modern media creates genuine empathy or merely spectacle. Tennyson uses anaphora and repetition to build patriotic fervour; Duffy uses regular stanzas and controlled rhyme to create the photographer\'s methodical composure, which cracks only in "a half-formed ghost." Both poems ultimately ask: what do we owe to those who suffer in conflict? Tennyson answers with national honour; Duffy with moral discomfort at society\'s failure to care.',
+            'Tennyson and Duffy both address how society remembers conflict, but from radically different perspectives. Tennyson, writing as Poet Laureate shortly after the Battle of Balaclava, uses a thundering galloping rhythm - predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") - "Half a league, half a league, half a league onward" - to celebrate the soldiers\' courage and create a sense of unstoppable momentum. His imperative "Honour the charge they made!" demands public memorialisation, framing sacrifice as glorious. Duffy, writing a century later, presents a war photographer developing images in his darkroom as "a priest preparing to intone a Mass," investing his work with religious solemnity. However, his photographs will appear in a Sunday supplement "between the bath and pre-lunch beers" - domestic indifference trivialising suffering. While Tennyson\'s poem attempts to give meaning to death through collective memory, Duffy questions whether modern media creates genuine empathy or merely spectacle. Tennyson uses anaphora and repetition to build patriotic fervour; Duffy uses regular stanzas and controlled rhyme to create the photographer\'s methodical composure, which cracks only in "a half-formed ghost." Both poems ultimately ask: what do we owe to those who suffer in conflict? Tennyson answers with national honour; Duffy with moral discomfort at society\'s failure to care.',
         },
       ],
     },
     {
       title: 'Section C: Quick-Fire Quotation Analysis',
-      instructions: 'For each quotation, identify the poem, explain the technique, and analyse the effect.',
+      instructions:
+        'For each quotation, identify the poem, explain the technique, and analyse the effect.',
       questions: [
         {
-          question: '"The hand that mocked them, and the heart that fed" - Analyse the ambiguity of "mocked."',
+          question:
+            '"The hand that mocked them, and the heart that fed" - Analyse the ambiguity of "mocked."',
           lines: 3,
           marks: 3,
           modelAnswer:
             'From "Ozymandias" by Shelley. "Mocked" has a double meaning: the sculptor "mocked" (imitated/copied) the king\'s expression, but also "mocked" (ridiculed) him by capturing his arrogance for posterity. The sculptor\'s art outlasts the king\'s power, suggesting that creative expression is more enduring than political authority. The juxtaposition of "hand" (sculptor) and "heart" (king) separates craft from emotion, implying art can capture truth independently of its subject\'s intentions.',
         },
         {
-          question: '"Whose survey is not in the survey" - Analyse the effect of this line from "Tissue."',
+          question:
+            '"Whose survey is not in the survey" - Analyse the effect of this line from "Tissue."',
           lines: 3,
           marks: 3,
           modelAnswer:
             'From "Tissue" by Imtiaz Dharker. This line plays on the dual meaning of "survey" - an official measurement/map and the act of looking/overseeing. It suggests that the most important things in life cannot be captured by official records or systems of measurement. Dharker challenges the structures humans build (maps, borders, money) by suggesting they are as fragile as tissue paper and cannot contain the full complexity of human experience.',
         },
         {
-          question: '"We are prepared: we build our houses squat" - Analyse the tone and meaning from "Storm on the Island."',
+          question:
+            '"We are prepared: we build our houses squat" - Analyse the tone and meaning from "Storm on the Island."',
           lines: 3,
           marks: 3,
           modelAnswer:
@@ -1004,7 +1008,7 @@ const poetryCore: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 const poetryHigher: RevisionWorksheet = {
   id: 'power-conflict-poetry-higher',
@@ -1034,7 +1038,7 @@ const poetryHigher: RevisionWorksheet = {
           lines: 10,
           marks: 10,
           modelAnswer:
-            'Dharker constructs "Tissue" as a meditation on the tension between human desire for permanence and the fundamental impermanence of existence, and the poem\'s form is inseparable from its argument. The lack of regular stanza length, the absence of rhyme, and the fluid enjambment all embody the "tissue" quality the poem celebrates - the text itself is delicate, shifting, refusing fixed shape. The central conceit accumulates layers of meaning: tissue paper holds sacred text (the Quran with "marks that trace / twenty five years"), records commerce ("fine slips"), maps territory ("borderlines"), and records identity ("your date of birth"). Each example represents a human system of control - religion, money, geography, bureaucracy - and Dharker argues that all are as fragile as the material they are recorded on. The conditional "If buildings were paper" imagines an architecture of impermanence where structures could be "let through" by light, transformed, made beautiful precisely because they are not permanent. This is a radical philosophical position: rather than lamenting impermanence (as Western tradition often does), Dharker, drawing on Islamic and South Asian perspectives, presents it as liberating. The final stanza - the single line "turned into your skin" - is structurally isolated, enacting the vulnerability it describes. The human body is the ultimate "tissue" - thin, translucent, temporary. By ending with the body, Dharker collapses the distinction between the abstract (systems of power) and the physical (human mortality), arguing that accepting our fragility is the route to authentic existence. The poem challenges the reader to hold structures lightly, recognising that what we build will always be, and should be, temporary.',
+            'Dharker constructs "Tissue" as a meditation on the tension between human desire for permanence and the fundamental impermanence of existence, and the poem\'s form is inseparable from its argument. The poem comprises 10 quatrains followed by a final isolated single-line stanza ("turned into your skin.") that stands ALONE - this structural design is itself part of the meaning. The absence of rhyme and the fluid enjambment further embody the "tissue" quality the poem celebrates - the text itself is delicate, shifting, refusing fixed shape. The central conceit accumulates layers of meaning: tissue paper holds sacred text (the Koran with family names and histories), records commerce ("fine slips"), maps territory ("borderlines"), and records identity. Each example represents a human system of control - religion, money, geography, bureaucracy - and Dharker argues that all are as fragile as the material they are recorded on. The conditional "If buildings were paper" imagines an architecture of impermanence where structures could be transformed, made beautiful precisely because they are not permanent. This is a radical philosophical position: rather than lamenting impermanence (as Western tradition often does), Dharker presents it as liberating. The final isolated single-line stanza ("turned into your skin.") is structurally isolated - Dharker breaks the regularity of the quatrains to emphasise the volta from paper to flesh, enacting the vulnerability it describes. The human body is the ultimate "tissue" - thin, translucent, temporary. By ending with the body, Dharker collapses the distinction between the abstract (systems of power) and the physical (human mortality), arguing that accepting our fragility is the route to authentic existence. The poem challenges the reader to hold structures lightly, recognising that what we build will always be, and should be, temporary. (Rights: from The terrorist at my table, Bloodaxe Books 2006.)',
         },
         {
           question:
@@ -1053,11 +1057,11 @@ const poetryHigher: RevisionWorksheet = {
       questions: [
         {
           question:
-            'Compare how poets explore the relationship between memory and identity in "The Emigree" (Rumens) and "Kamikaze" (Garland).',
+            'Compare how poets explore the relationship between memory and identity in "The Émigrée" (Rumens) and "Kamikaze" (Garland).',
           lines: 10,
           marks: 10,
           modelAnswer:
-            'Both Rumens and Garland explore how memory functions as a repository of identity that resists external pressure to conform, but they present radically different relationships between individual memory and collective expectation. In "The Emigree," memory of a homeland is defiantly preserved against political reality: the speaker\'s city is "sunlight-clear" regardless of the "new government" that has presumably destroyed it. Memory becomes an act of political resistance - the city "takes me dancing through the city of walls" - where the past self, speaking "the words I use," maintains an identity that exile cannot erase. The poem\'s structure enacts this persistence: each stanza returns to the city despite acknowledging threats, creating a pattern of resistance and reassertion. In "Kamikaze," memory functions differently: the pilot\'s childhood memories of fishing with his father ("the loose silver of whitebait") are so vivid and life-affirming that they override the ideological conditioning that should have led to his death. Here, personal memory defeats national narrative - but at devastating cost. The pilot\'s family treat him "as though he no longer existed," making him a living ghost. While Rumens\'s speaker finds strength in memory, Garland\'s pilot finds survival but loses social existence. Both poems suggest that personal memory is more authentic than political narrative, but Garland complicates this by showing that defying collective memory (the honour code) has consequences. The formal choices reflect these positions: Rumens\'s three equal stanzas suggest stability and persistence; Garland\'s continuous, enjambed stanzas suggest a story that cannot be contained or controlled, spilling forward like the pilot\'s unstoppable memories.',
+            'Both Rumens and Garland explore how memory functions as a repository of identity that resists external pressure to conform, but they present radically different relationships between individual memory and collective expectation. In "The Émigrée," memory of a homeland is defiantly preserved against political reality: the speaker\'s city is "sunlight-clear" regardless of the "new government" that has presumably destroyed it. Memory becomes an act of political resistance - the city "takes me dancing through the city of walls" - where the past self, speaking "the words I use," maintains an identity that exile cannot erase. The poem\'s structure enacts this persistence: each stanza returns to the city despite acknowledging threats, creating a pattern of resistance and reassertion. In "Kamikaze," memory functions differently: the pilot\'s childhood memories of fishing with his father ("the loose silver of whitebait") are so vivid and life-affirming that they override the ideological conditioning that should have led to his death. Here, personal memory defeats national narrative - but at devastating cost. The pilot\'s family treat him "as though he no longer existed," making him a living ghost. While Rumens\'s speaker finds strength in memory, Garland\'s pilot finds survival but loses social existence. Both poems suggest that personal memory is more authentic than political narrative, but Garland complicates this by showing that defying collective memory (the honour code) has consequences. The formal choices reflect these positions: Rumens\'s three equal stanzas suggest stability and persistence; Garland\'s continuous, enjambed stanzas suggest a story that cannot be contained or controlled, spilling forward like the pilot\'s unstoppable memories.',
         },
         {
           question:
@@ -1070,7 +1074,7 @@ const poetryHigher: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 // ============================================================
 // LANGUAGE WORKSHEETS
@@ -1161,7 +1165,7 @@ const p1q2Foundation: RevisionWorksheet = {
           lines: 4,
           marks: 4,
           modelAnswer:
-            'The writer uses short sentences to slow the pace and build suspense. By describing each step separately, the writer forces the reader to experience the character\'s fear in real time. The word "Then" creates a pause before the second action, suggesting hesitation and dread. The reader feels the character\'s reluctance and courage simultaneously. This technique makes the reader hold their breath, mirroring the character\'s anxiety.',
+            "The writer uses short sentences to slow the pace and build suspense. By describing each step separately, the writer forces the reader to experience the character's fear in real time. The word \"Then\" creates a pause before the second action, suggesting hesitation and dread. The reader feels the character's reluctance and courage simultaneously. This technique makes the reader hold their breath, mirroring the character's anxiety.",
         },
         {
           question:
@@ -1182,7 +1186,7 @@ const p1q2Foundation: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 const p1q2Higher: RevisionWorksheet = {
   id: 'lang-p1-q2-higher',
@@ -1231,7 +1235,7 @@ const p1q2Higher: RevisionWorksheet = {
       questions: [
         {
           question:
-            'How does the writer use language to present the city at night? You could include the writer\'s choice of words and phrases, language features and techniques, and sentence forms.',
+            "How does the writer use language to present the city at night? You could include the writer's choice of words and phrases, language features and techniques, and sentence forms.",
           lines: 14,
           marks: 8,
           modelAnswer:
@@ -1241,7 +1245,8 @@ const p1q2Higher: RevisionWorksheet = {
     },
     {
       title: 'Section C: Analytical Vocabulary',
-      instructions: 'For each analytical term, explain how it could be used effectively in a Q2 response.',
+      instructions:
+        'For each analytical term, explain how it could be used effectively in a Q2 response.',
       questions: [
         {
           question:
@@ -1270,7 +1275,7 @@ const p1q2Higher: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 // ---------- PAPER 1 Q5 CREATIVE WRITING ----------
 
@@ -1362,7 +1367,7 @@ const p1q5Foundation: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 const p1q5Higher: RevisionWorksheet = {
   id: 'lang-p1-q5-higher',
@@ -1384,7 +1389,7 @@ const p1q5Higher: RevisionWorksheet = {
           lines: 10,
           marks: 8,
           modelAnswer:
-            'Version 1 (External): Her fingers worked at the envelope\'s seal with the mechanical precision of someone defusing a bomb. The paper tore. A single sheet unfolded itself - or she unfolded it; later, she wouldn\'t be sure which. The words were small and black and final.\n\nVersion 2 (Internal): She knew what it would say. She had known for weeks, in the way you know something with your body before your mind catches up - the way your stomach drops before the phone finishes ringing. The envelope was just a formality. The truth had already arrived.\n\nVersion 3 (Sensory detail): The paper was cheap. She could feel the wood pulp in it, rough under her thumb like unfinished carpentry. It was the kind of paper used for things that didn\'t need to last - receipts, parking tickets, the letters that rearrange lives. It smelled of nothing. She read it twice.\n\n- Each version demonstrates a different narrative lens. The strongest creative writing often weaves all three approaches together within a single piece.',
+            "Version 1 (External): Her fingers worked at the envelope's seal with the mechanical precision of someone defusing a bomb. The paper tore. A single sheet unfolded itself - or she unfolded it; later, she wouldn't be sure which. The words were small and black and final.\n\nVersion 2 (Internal): She knew what it would say. She had known for weeks, in the way you know something with your body before your mind catches up - the way your stomach drops before the phone finishes ringing. The envelope was just a formality. The truth had already arrived.\n\nVersion 3 (Sensory detail): The paper was cheap. She could feel the wood pulp in it, rough under her thumb like unfinished carpentry. It was the kind of paper used for things that didn't need to last - receipts, parking tickets, the letters that rearrange lives. It smelled of nothing. She read it twice.\n\n- Each version demonstrates a different narrative lens. The strongest creative writing often weaves all three approaches together within a single piece.",
         },
         {
           question:
@@ -1400,7 +1405,7 @@ const p1q5Higher: RevisionWorksheet = {
           lines: 8,
           marks: 8,
           modelAnswer:
-            'Then it stopped. The engine, the alarms, the shouting - all of it, gone, as if someone had pressed a button marked \'enough.\' What replaced it wasn\'t silence, exactly. It was the negative space where sound had been: a ringing, shimmering absence that pressed against the eardrums like deep water. A car door ticked as it cooled. Glass settled into its new arrangement on the tarmac, each piece finding its place with the patience of geology. Somewhere, a bird resumed its song, unaware that anything of consequence had happened. The world, indifferent and vast, carried on.\n\n- This demonstrates economy of language, varied sentence structure, original imagery ("patience of geology"), and a controlled tonal shift from specificity to universal perspective.',
+            "Then it stopped. The engine, the alarms, the shouting - all of it, gone, as if someone had pressed a button marked 'enough.' What replaced it wasn't silence, exactly. It was the negative space where sound had been: a ringing, shimmering absence that pressed against the eardrums like deep water. A car door ticked as it cooled. Glass settled into its new arrangement on the tarmac, each piece finding its place with the patience of geology. Somewhere, a bird resumed its song, unaware that anything of consequence had happened. The world, indifferent and vast, carried on.\n\n- This demonstrates economy of language, varied sentence structure, original imagery (\"patience of geology\"), and a controlled tonal shift from specificity to universal perspective.",
         },
       ],
     },
@@ -1415,7 +1420,7 @@ const p1q5Higher: RevisionWorksheet = {
           lines: 10,
           marks: 8,
           modelAnswer:
-            'Happy: The kitchen was full of morning. Sunlight found every surface and made it sing - the copper pans, the glass jar of marmalade, the small pool of water by the sink that caught the light and held it like a jewel. She filled the kettle without thinking, humming something she half-remembered from a dream. The radio murmured news she didn\'t need. The cat had arranged itself in a patch of warmth on the tiles, and for a moment everything was in exactly the right place.\n\nGrieving: The kitchen was full of his absence. His mug stood on the draining board where he\'d left it three weeks ago, its tea-stain a brown ring she couldn\'t bring herself to wash away. The copper pans needed polishing; she hadn\'t cooked since. Light came through the window and fell on the floor without purpose, illuminating dust she used to care about. The cat wove between her ankles, waiting to be fed, and she stood there, kettle in hand, unable to remember what she\'d come in here to do.\n\n- The same room, the same objects (pans, light, cat, kettle), but filtered through different emotional states. This demonstrates how descriptive writing is always subjective - the writer\'s real subject is the character\'s inner world.',
+            "Happy: The kitchen was full of morning. Sunlight found every surface and made it sing - the copper pans, the glass jar of marmalade, the small pool of water by the sink that caught the light and held it like a jewel. She filled the kettle without thinking, humming something she half-remembered from a dream. The radio murmured news she didn't need. The cat had arranged itself in a patch of warmth on the tiles, and for a moment everything was in exactly the right place.\n\nGrieving: The kitchen was full of his absence. His mug stood on the draining board where he'd left it three weeks ago, its tea-stain a brown ring she couldn't bring herself to wash away. The copper pans needed polishing; she hadn't cooked since. Light came through the window and fell on the floor without purpose, illuminating dust she used to care about. The cat wove between her ankles, waiting to be fed, and she stood there, kettle in hand, unable to remember what she'd come in here to do.\n\n- The same room, the same objects (pans, light, cat, kettle), but filtered through different emotional states. This demonstrates how descriptive writing is always subjective - the writer's real subject is the character's inner world.",
         },
         {
           question:
@@ -1429,7 +1434,8 @@ const p1q5Higher: RevisionWorksheet = {
     },
     {
       title: 'Section C: Full Response Practice',
-      instructions: 'Write a complete response to the following task. Aim for 350-500 words. Focus on quality over quantity.',
+      instructions:
+        'Write a complete response to the following task. Aim for 350-500 words. Focus on quality over quantity.',
       questions: [
         {
           question:
@@ -1437,12 +1443,12 @@ const p1q5Higher: RevisionWorksheet = {
           lines: 20,
           marks: 18,
           modelAnswer:
-            'The sea wall was the border, and like all borders it was both a joining and a separation. On one side, the town: terraced houses climbing the hill in orderly rows, their windows reflecting the grey sky in duplicate. Satellite dishes and washing lines, a dog barking at a postman, the ordinary percussion of a Tuesday morning. On the other, nothing. Or rather, everything - the entire Atlantic, restless and self-important, throwing itself at the concrete as if it had a grievance to settle.\n\nShe sat on top of the wall with a leg on each side, belonging to neither. Below her left foot, the pavement was cracked where salt had worked its way into the concrete over decades, dissolving the town\'s edge molecule by molecule. The sea was patient. It had been here before the houses, before the wall, before the concept of ownership that the wall implied. It would be here after.\n\nA child\'s bicycle lay on its side in a front garden, one wheel still spinning slowly in the wind that came off the water. Everything on this side - the washing, the signs, the people - leaned slightly inland, shaped by a lifetime of resisting the pull of the sea. She had read somewhere that trees on coastal clifftops grew at angles, their branches streaming away from the wind like hair blown back from a face. The whole town was a tree like that, she thought. Rooted, but bent.\n\nThe tide was coming in. She could hear it reorganising the shingle below the wall, each wave a librarian reshelving stones into a new and temporary order. A fishing boat sat on the mud of the harbour, tilted and dignified, waiting for the water to remember it. Seagulls made their usual complaints. The chip shop on the corner was already open, and the smell of frying oil mixed with the brine in a combination that was either disgusting or the smell of home, depending on who you asked.\n\nShe lifted her right leg over the wall and dropped down onto the beach side. Pebbles shifted under her feet. The town was behind her now, its sounds muffled by the wall, and ahead there was only the water and the sky and the blurred line where they pretended to meet. She walked towards it, knowing she would never reach it. That was the thing about horizons. They were promises that kept moving.\n\n- This response demonstrates: sustained extended metaphor (border/boundary), original imagery, varied sentence structure, structural control (movement from town to sea), cyclical motifs, and a reflective ending that elevates description into meaning.',
+            "The sea wall was the border, and like all borders it was both a joining and a separation. On one side, the town: terraced houses climbing the hill in orderly rows, their windows reflecting the grey sky in duplicate. Satellite dishes and washing lines, a dog barking at a postman, the ordinary percussion of a Tuesday morning. On the other, nothing. Or rather, everything - the entire Atlantic, restless and self-important, throwing itself at the concrete as if it had a grievance to settle.\n\nShe sat on top of the wall with a leg on each side, belonging to neither. Below her left foot, the pavement was cracked where salt had worked its way into the concrete over decades, dissolving the town's edge molecule by molecule. The sea was patient. It had been here before the houses, before the wall, before the concept of ownership that the wall implied. It would be here after.\n\nA child's bicycle lay on its side in a front garden, one wheel still spinning slowly in the wind that came off the water. Everything on this side - the washing, the signs, the people - leaned slightly inland, shaped by a lifetime of resisting the pull of the sea. She had read somewhere that trees on coastal clifftops grew at angles, their branches streaming away from the wind like hair blown back from a face. The whole town was a tree like that, she thought. Rooted, but bent.\n\nThe tide was coming in. She could hear it reorganising the shingle below the wall, each wave a librarian reshelving stones into a new and temporary order. A fishing boat sat on the mud of the harbour, tilted and dignified, waiting for the water to remember it. Seagulls made their usual complaints. The chip shop on the corner was already open, and the smell of frying oil mixed with the brine in a combination that was either disgusting or the smell of home, depending on who you asked.\n\nShe lifted her right leg over the wall and dropped down onto the beach side. Pebbles shifted under her feet. The town was behind her now, its sounds muffled by the wall, and ahead there was only the water and the sky and the blurred line where they pretended to meet. She walked towards it, knowing she would never reach it. That was the thing about horizons. They were promises that kept moving.\n\n- This response demonstrates: sustained extended metaphor (border/boundary), original imagery, varied sentence structure, structural control (movement from town to sea), cyclical motifs, and a reflective ending that elevates description into meaning.",
         },
       ],
     },
   ],
-};
+}
 
 // ---------- PAPER 2 Q4 COMPARISON ----------
 
@@ -1518,7 +1524,7 @@ const p2q4Foundation: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 const p2q4Higher: RevisionWorksheet = {
   id: 'lang-p2-q4-higher',
@@ -1575,7 +1581,7 @@ const p2q4Higher: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 // ---------- PAPER 2 Q5 VIEWPOINT WRITING ----------
 
@@ -1623,7 +1629,7 @@ const p2q5Foundation: RevisionWorksheet = {
           lines: 6,
           marks: 7,
           modelAnswer:
-            'Ladies and gentlemen, let me ask you something. When was the last time you read a positive headline about young people? [Rhetorical question] I\'ll save you the trouble - it was probably never. According to a recent survey, 78% of news stories about young people focus on crime, laziness, or screen addiction. [Statistic] And yet, this is the same generation that organised global climate strikes, raised millions for charity during a pandemic, and achieved record exam results under the most difficult circumstances imaginable. [Tricolon] We are not lazy. We are not entitled. We are not the problem. [Repetition] The truth is that young people today are more informed, more compassionate, and more engaged than any generation before them - and it is time the world started paying attention. [Emotive language, tricolon]',
+            "Ladies and gentlemen, let me ask you something. When was the last time you read a positive headline about young people? [Rhetorical question] I'll save you the trouble - it was probably never. According to a recent survey, 78% of news stories about young people focus on crime, laziness, or screen addiction. [Statistic] And yet, this is the same generation that organised global climate strikes, raised millions for charity during a pandemic, and achieved record exam results under the most difficult circumstances imaginable. [Tricolon] We are not lazy. We are not entitled. We are not the problem. [Repetition] The truth is that young people today are more informed, more compassionate, and more engaged than any generation before them - and it is time the world started paying attention. [Emotive language, tricolon]",
         },
       ],
     },
@@ -1646,7 +1652,7 @@ const p2q5Foundation: RevisionWorksheet = {
           lines: 6,
           marks: 7,
           modelAnswer:
-            'This is not someone else\'s problem. These are our children, our neighbours, our community\'s future. Every Friday evening they spend on a street corner is an evening they could have spent learning, creating, or simply being young in a place that tells them they matter. The council meeting is on March 15th. Be there. Write to your councillor. Share this article. Because the young people of this town have been patient long enough, and patience - as any teenager will tell you - has its limits. If we do not invest in their future, we have no right to complain about the one they build without us.',
+            "This is not someone else's problem. These are our children, our neighbours, our community's future. Every Friday evening they spend on a street corner is an evening they could have spent learning, creating, or simply being young in a place that tells them they matter. The council meeting is on March 15th. Be there. Write to your councillor. Share this article. Because the young people of this town have been patient long enough, and patience - as any teenager will tell you - has its limits. If we do not invest in their future, we have no right to complain about the one they build without us.",
         },
         {
           question:
@@ -1654,12 +1660,12 @@ const p2q5Foundation: RevisionWorksheet = {
           lines: 8,
           marks: 6,
           modelAnswer:
-            'Dear Ms Thompson,\n\nI am writing to respectfully request that the school reconsider its homework policy. As a Year 11 student currently managing coursework, revision, and personal commitments, I have seen firsthand how excessive homework can damage, rather than support, learning. I believe a reduction in homework would benefit students\' mental health, improve the quality of work we produce, and ultimately lead to better results.\n\nLet me be clear: I am not arguing that homework has no value. Practising skills and consolidating learning at home is important, and I understand why teachers set it. However, when students receive homework from every subject every night - often totalling three or more hours - the result is not deeper learning but exhaustion, rushed work, and growing resentment. Research by the Organisation for Economic Co-operation and Development found that beyond one hour per night, additional homework has no measurable impact on achievement. We are working harder, but we are not working smarter.',
+            "Dear Ms Thompson,\n\nI am writing to respectfully request that the school reconsider its homework policy. As a Year 11 student currently managing coursework, revision, and personal commitments, I have seen firsthand how excessive homework can damage, rather than support, learning. I believe a reduction in homework would benefit students' mental health, improve the quality of work we produce, and ultimately lead to better results.\n\nLet me be clear: I am not arguing that homework has no value. Practising skills and consolidating learning at home is important, and I understand why teachers set it. However, when students receive homework from every subject every night - often totalling three or more hours - the result is not deeper learning but exhaustion, rushed work, and growing resentment. Research by the Organisation for Economic Co-operation and Development found that beyond one hour per night, additional homework has no measurable impact on achievement. We are working harder, but we are not working smarter.",
         },
       ],
     },
   ],
-};
+}
 
 const p2q5Higher: RevisionWorksheet = {
   id: 'lang-p2-q5-higher',
@@ -1689,7 +1695,7 @@ const p2q5Higher: RevisionWorksheet = {
           lines: 8,
           marks: 8,
           modelAnswer:
-            'I ordered a book online last Tuesday. It arrived on Wednesday. I was annoyed it hadn\'t come on Tuesday. This, I think, is the problem. Somewhere between the invention of next-day delivery and the expectation of same-day delivery, we crossed a line. Not a dramatic line - not a Rubicon, not a point of no return marked with flags and warnings. Just a quiet, incremental shift in what we consider acceptable. We used to walk to shops. Then we drove. Then we clicked. Now we swipe, and the gap between desire and fulfilment has shrunk to the width of a thumb. Convenience was supposed to free us. Instead, it has made us incapable of tolerating the smallest friction, the slightest delay, the mildest inconvenience. We have optimised ourselves into fragility.\n\n- This opening uses a personal anecdote, self-deprecating humour, and a structural progression (walk, drive, click, swipe) to establish both the argument and a distinctive, intelligent voice. The final sentence crystallises the argument in a memorable, quotable phrase.',
+            "I ordered a book online last Tuesday. It arrived on Wednesday. I was annoyed it hadn't come on Tuesday. This, I think, is the problem. Somewhere between the invention of next-day delivery and the expectation of same-day delivery, we crossed a line. Not a dramatic line - not a Rubicon, not a point of no return marked with flags and warnings. Just a quiet, incremental shift in what we consider acceptable. We used to walk to shops. Then we drove. Then we clicked. Now we swipe, and the gap between desire and fulfilment has shrunk to the width of a thumb. Convenience was supposed to free us. Instead, it has made us incapable of tolerating the smallest friction, the slightest delay, the mildest inconvenience. We have optimised ourselves into fragility.\n\n- This opening uses a personal anecdote, self-deprecating humour, and a structural progression (walk, drive, click, swipe) to establish both the argument and a distinctive, intelligent voice. The final sentence crystallises the argument in a memorable, quotable phrase.",
         },
         {
           question:
@@ -1717,7 +1723,7 @@ const p2q5Higher: RevisionWorksheet = {
       ],
     },
   ],
-};
+}
 
 // ============================================================
 // EXPORT
@@ -1752,4 +1758,4 @@ export const revisionWorksheets: RevisionWorksheet[] = [
   // Language - Paper 2 Q5
   p2q5Foundation,
   p2q5Higher,
-];
+]

@@ -1,4 +1,4 @@
-import type { CourseModule } from '../courses';
+import type { CourseModule } from '../courses'
 
 export const y10IgcseLitPoetryModules: CourseModule[] = [
   // ──────────────────────────────────────────────
@@ -56,11 +56,13 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'A treasury of wisdom',
         ],
         correct: 1,
-        explanation: 'The word "anthology" comes from the Greek "anthologia," meaning "a gathering of flowers." In an exam context, it refers to a curated collection of poems selected by the examination board for study.',
+        explanation:
+          'The word "anthology" comes from the Greek "anthologia," meaning "a gathering of flowers." In an exam context, it refers to a curated collection of poems selected by the examination board for study.',
       },
       {
         id: 'y10-poetry-m1-q2',
-        question: 'In the recommended three-phase reading plan, what should you do during the first phase?',
+        question:
+          'In the recommended three-phase reading plan, what should you do during the first phase?',
         options: [
           'Annotate every poem in detail with colour-coded notes',
           'Read every poem once without annotating and notice your instinctive reactions',
@@ -68,7 +70,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Memorise key quotations from each poem',
         ],
         correct: 1,
-        explanation: 'The first phase involves reading every poem once without stopping to annotate. You let each poem wash over you and notice your instinctive reactions, which often become the seed of a genuine personal response that examiners reward.',
+        explanation:
+          'The first phase involves reading every poem once without stopping to annotate. You let each poem wash over you and notice your instinctive reactions, which often become the seed of a genuine personal response that examiners reward.',
       },
       {
         id: 'y10-poetry-m1-q3',
@@ -80,11 +83,13 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because the exam only tests unseen poetry',
         ],
         correct: 1,
-        explanation: 'The exam question will have a specific focus — a particular theme, technique, or comparison — that may not match a pre-prepared essay. Students should build flexible knowledge that can be adapted to any question rather than rigid memorised responses.',
+        explanation:
+          'The exam question will have a specific focus — a particular theme, technique, or comparison — that may not match a pre-prepared essay. Students should build flexible knowledge that can be adapted to any question rather than rigid memorised responses.',
       },
       {
         id: 'y10-poetry-m1-q4',
-        question: 'Which of the following is NOT part of the recommended "toolkit" for each anthology poem?',
+        question:
+          'Which of the following is NOT part of the recommended "toolkit" for each anthology poem?',
         options: [
           'Subject matter and themes',
           'A full memorised essay',
@@ -92,7 +97,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Relevant biographical or historical context',
         ],
         correct: 1,
-        explanation: 'The toolkit should include subject matter, themes, tone, key language features, form and structure, and relevant context. A full memorised essay is not recommended because it creates inflexible knowledge that cannot adapt to the specific question asked.',
+        explanation:
+          'The toolkit should include subject matter, themes, tone, key language features, form and structure, and relevant context. A full memorised essay is not recommended because it creates inflexible knowledge that cannot adapt to the specific question asked.',
       },
       {
         id: 'y10-poetry-m1-q5',
@@ -104,7 +110,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'You cannot use quotations in the anthology section',
         ],
         correct: 1,
-        explanation: 'Unlike unseen poetry where you encounter a poem for the first time, the anthology section names specific poems that you are expected to have studied thoroughly. This means detailed prior knowledge, annotation, and interpretive familiarity are essential.',
+        explanation:
+          'Unlike unseen poetry where you encounter a poem for the first time, the anthology section names specific poems that you are expected to have studied thoroughly. This means detailed prior knowledge, annotation, and interpretive familiarity are essential.',
       },
     ],
   },
@@ -168,7 +175,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'There is no difference — they are synonyms',
         ],
         correct: 1,
-        explanation: 'Denotation is the literal dictionary definition of a word, while connotation refers to the associations, emotions, and implied meanings that surround it. Strong poetry analysis operates primarily at the connotative level.',
+        explanation:
+          'Denotation is the literal dictionary definition of a word, while connotation refers to the associations, emotions, and implied meanings that surround it. Strong poetry analysis operates primarily at the connotative level.',
       },
       {
         id: 'y10-poetry-m2-q2',
@@ -180,7 +188,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Writing about context instead of language',
         ],
         correct: 1,
-        explanation: 'Feature-spotting means identifying techniques (e.g., "The poet uses alliteration") without analysing their effect. This earns very few marks. Examiners want to see detailed exploration of how and why a technique creates a specific effect.',
+        explanation:
+          'Feature-spotting means identifying techniques (e.g., "The poet uses alliteration") without analysing their effect. This earns very few marks. Examiners want to see detailed exploration of how and why a technique creates a specific effect.',
       },
       {
         id: 'y10-poetry-m2-q3',
@@ -192,7 +201,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'A type of metaphor used in Romantic poetry',
         ],
         correct: 1,
-        explanation: 'A semantic field is a group of words that cluster around the same topic or concept. For example, words like "battle," "siege," and "surrender" form a semantic field of warfare. Identifying semantic fields reveals the poet\'s underlying attitude.',
+        explanation:
+          'A semantic field is a group of words that cluster around the same topic or concept. For example, words like "battle," "siege," and "surrender" form a semantic field of warfare. Identifying semantic fields reveals the poet\'s underlying attitude.',
       },
       {
         id: 'y10-poetry-m2-q4',
@@ -204,11 +214,13 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because ambiguity only appears in unseen poetry, not anthology poems',
         ],
         correct: 2,
-        explanation: 'Exploring ambiguity demonstrates sophisticated reading. Rather than forcing a single interpretation, showing how a word or phrase carries multiple simultaneous meanings — and how the tension between them enriches the poem — is characteristic of grade 8 and 9 responses.',
+        explanation:
+          'Exploring ambiguity demonstrates sophisticated reading. Rather than forcing a single interpretation, showing how a word or phrase carries multiple simultaneous meanings — and how the tension between them enriches the poem — is characteristic of grade 8 and 9 responses.',
       },
       {
         id: 'y10-poetry-m2-q5',
-        question: 'In the example "the wind clawed at the windows," what technique is being used and what is its effect?',
+        question:
+          'In the example "the wind clawed at the windows," what technique is being used and what is its effect?',
         options: [
           'Simile — comparing the wind to an animal using "like"',
           'Personification — giving the wind aggressive, predatory animal qualities',
@@ -216,7 +228,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Hyperbole — exaggerating the strength of the wind',
         ],
         correct: 1,
-        explanation: 'The verb "clawed" personifies the wind as a predatory animal, introducing connotations of aggression, desperation, and threat. The windows become a barrier under siege, shifting the atmosphere from neutral description to something menacing.',
+        explanation:
+          'The verb "clawed" personifies the wind as a predatory animal, introducing connotations of aggression, desperation, and threat. The windows become a barrier under siege, shifting the atmosphere from neutral description to something menacing.',
       },
     ],
   },
@@ -278,7 +291,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'A repeated refrain at the end of each stanza',
         ],
         correct: 1,
-        explanation: 'A volta is a "turn" in a poem where the argument, mood, or perspective shifts. It is most associated with sonnets but can occur in any poem. Identifying the volta is often the key to understanding a poem\'s structure.',
+        explanation:
+          'A volta is a "turn" in a poem where the argument, mood, or perspective shifts. It is most associated with sonnets but can occur in any poem. Identifying the volta is often the key to understanding a poem\'s structure.',
       },
       {
         id: 'y10-poetry-m3-q2',
@@ -290,7 +304,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'There is no difference — they describe the same technique',
         ],
         correct: 1,
-        explanation: 'Enjambment occurs when a sentence or phrase continues past the end of a line without punctuation, creating momentum or urgency. End-stopped lines conclude with punctuation, creating a sense of finality or control.',
+        explanation:
+          'Enjambment occurs when a sentence or phrase continues past the end of a line without punctuation, creating momentum or urgency. End-stopped lines conclude with punctuation, creating a sense of finality or control.',
       },
       {
         id: 'y10-poetry-m3-q3',
@@ -302,7 +317,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'An introduction and a conclusion of equal length',
         ],
         correct: 1,
-        explanation: 'The Petrarchan sonnet divides into an octave (8 lines) and a sestet (6 lines), with a volta or turn between them. The Shakespearean sonnet, by contrast, has three quatrains and a concluding couplet.',
+        explanation:
+          'The Petrarchan sonnet divides into an octave (8 lines) and a sestet (6 lines), with a volta or turn between them. The Shakespearean sonnet, by contrast, has three quatrains and a concluding couplet.',
       },
       {
         id: 'y10-poetry-m3-q4',
@@ -314,11 +330,13 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because free verse poems are always shorter than sonnets',
         ],
         correct: 1,
-        explanation: 'Free verse abandons regular metre and rhyme but is not formless. A skilled free verse poem uses line breaks, stanza divisions, rhythm, and white space with deliberate intent, making enjambment and caesura the primary structural tools.',
+        explanation:
+          'Free verse abandons regular metre and rhyme but is not formless. A skilled free verse poem uses line breaks, stanza divisions, rhythm, and white space with deliberate intent, making enjambment and caesura the primary structural tools.',
       },
       {
         id: 'y10-poetry-m3-q5',
-        question: 'What analytical approach should you take when a sonnet\'s subject matter is war rather than love?',
+        question:
+          "What analytical approach should you take when a sonnet's subject matter is war rather than love?",
         options: [
           'Ignore the form and focus only on the language',
           'Explore the tension between the traditional love-poem associations of the form and the violent content',
@@ -326,7 +344,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Treat it exactly as you would a love sonnet',
         ],
         correct: 1,
-        explanation: 'When a poet uses a form associated with one tradition (e.g., the love sonnet) for unexpected content (e.g., war), the tension between form and content becomes analytically significant. Exploring this tension demonstrates sophisticated understanding of how form creates meaning.',
+        explanation:
+          'When a poet uses a form associated with one tradition (e.g., the love sonnet) for unexpected content (e.g., war), the tension between form and content becomes analytically significant. Exploring this tension demonstrates sophisticated understanding of how form creates meaning.',
       },
     ],
   },
@@ -349,7 +368,7 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
 
 <p>When you first encounter an unseen poem, resist the urge to begin writing immediately. Instead, read the poem through once — slowly and completely — before you do anything else. During this first read, focus on the most basic question: <em>what is this poem about?</em> Not at a deep thematic level, but at a surface level. Who is speaking? Who are they speaking to? What is happening? Where and when is this set? What emotions are present? You do not need sophisticated answers at this stage — you need orientation.</p>
 
-<p>Pay close attention to the <strong>title</strong>, which often provides crucial context. A poem titled "Funeral Blues" tells you immediately that you are in the territory of grief and loss. A poem titled "Ozymandias" may be less immediately transparent, but the unfamiliar name itself signals something ancient or exotic. The title is the poet's first communication with you — do not ignore it.</p>
+<p>Pay close attention to the <strong>title</strong>, which often provides crucial context. A poem titled "Funeral Blues" (W. H. Auden, 1940 revised version — the four-quatrain text anthologised in Cambridge IGCSE 0475 <em>Songs of Ourselves</em> Vol 1 Part 4 and recited in <em>Four Weddings and a Funeral</em> (1994); not the longer five-stanza 1936 <em>Twelve Songs IX</em> original) tells you immediately that you are in the territory of grief and loss. A poem titled "Ozymandias" may be less immediately transparent, but the unfamiliar name itself signals something ancient or exotic. The title is the poet's first communication with you — do not ignore it. <em>Rights note: Auden d.1973 — UK copyright expires 2044. © Faber & Faber. Treat as restricted; quote short extracts only.</em></p>
 
 <h3>The Second Read: Annotation</h3>
 
@@ -390,7 +409,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Five times — to memorise the poem',
         ],
         correct: 2,
-        explanation: 'The recommended strategy involves three reads: first to orient yourself (what is this poem about?), second to annotate (marking techniques, imagery, shifts), and third to focus on the specific exam question and identify key moments for your response.',
+        explanation:
+          'The recommended strategy involves three reads: first to orient yourself (what is this poem about?), second to annotate (marking techniques, imagery, shifts), and third to focus on the specific exam question and identify key moments for your response.',
       },
       {
         id: 'y10-poetry-m4-q2',
@@ -402,7 +422,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because paraphrase takes too long to write',
         ],
         correct: 1,
-        explanation: 'Paraphrase merely retells the content without analysis. The exam rewards analysis of technique and effect — how the poet uses language, form, and structure to create meaning. Even when uncertain about overall meaning, focusing on technique scores far higher than paraphrase.',
+        explanation:
+          'Paraphrase merely retells the content without analysis. The exam rewards analysis of technique and effect — how the poet uses language, form, and structure to create meaning. Even when uncertain about overall meaning, focusing on technique scores far higher than paraphrase.',
       },
       {
         id: 'y10-poetry-m4-q3',
@@ -414,7 +435,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Identify the historical period the poem was written in',
         ],
         correct: 1,
-        explanation: 'During annotation, you should circle figurative language, underline shifts in tone, note the rhyme scheme, mark enjambment and caesura, and write brief marginal notes about effects. This transforms passive reading into active analysis.',
+        explanation:
+          'During annotation, you should circle figurative language, underline shifts in tone, note the rhyme scheme, mark enjambment and caesura, and write brief marginal notes about effects. This transforms passive reading into active analysis.',
       },
       {
         id: 'y10-poetry-m4-q4',
@@ -422,11 +444,12 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
         options: [
           'Line by line from the beginning to the end of the poem',
           'Around analytical points, with each paragraph exploring a specific technique or thematic idea',
-          'In chronological order of the poet\'s life events',
+          "In chronological order of the poet's life events",
           'As a single unbroken paragraph covering everything',
         ],
         correct: 1,
-        explanation: 'A strong response is organised around analytical points, not a line-by-line walk-through. Each paragraph should focus on a specific technique, theme, or structural feature, supported by embedded quotations and detailed analysis.',
+        explanation:
+          'A strong response is organised around analytical points, not a line-by-line walk-through. Each paragraph should focus on a specific technique, theme, or structural feature, supported by embedded quotations and detailed analysis.',
       },
       {
         id: 'y10-poetry-m4-q5',
@@ -438,7 +461,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Learning the biographies of as many poets as possible',
         ],
         correct: 1,
-        explanation: 'Wide reading is the best preparation because each new poem you encounter expands your repertoire of analytical strategies. Over time, you develop an instinct for poetic technique that allows confident responses to any poem.',
+        explanation:
+          'Wide reading is the best preparation because each new poem you encounter expands your repertoire of analytical strategies. Over time, you develop an instinct for poetic technique that allows confident responses to any poem.',
       },
     ],
   },
@@ -494,7 +518,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
     quiz: [
       {
         id: 'y10-poetry-m5-q1',
-        question: 'Why should most anthology poems appear under multiple thematic headings in your revision map?',
+        question:
+          'Why should most anthology poems appear under multiple thematic headings in your revision map?',
         options: [
           'Because it makes your notes look more thorough',
           'Because poems typically address multiple themes, giving you flexibility to deploy them in response to different exam questions',
@@ -502,23 +527,27 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because single-theme poems are not included in anthologies',
         ],
         correct: 1,
-        explanation: 'Most poems address multiple themes simultaneously. Mapping poems under several headings gives you flexibility — if the question asks about conflict, identity, or love, you have ready pairings. Versatile poems that sit at the intersection of several themes are especially valuable.',
+        explanation:
+          'Most poems address multiple themes simultaneously. Mapping poems under several headings gives you flexibility — if the question asks about conflict, identity, or love, you have ready pairings. Versatile poems that sit at the intersection of several themes are especially valuable.',
       },
       {
         id: 'y10-poetry-m5-q2',
-        question: 'What is the key difference between a strong and a weak thematic comparison opening?',
+        question:
+          'What is the key difference between a strong and a weak thematic comparison opening?',
         options: [
           'A strong opening uses longer quotations',
           'A strong opening identifies a nuanced distinction in how both poems treat the theme, rather than simply stating they share it',
-          'A strong opening always begins with context about the poet\'s life',
+          "A strong opening always begins with context about the poet's life",
           'A strong opening avoids mentioning the theme directly',
         ],
         correct: 1,
-        explanation: 'A weak opening merely states a shared theme ("Both poems are about conflict"). A strong opening identifies a nuanced distinction ("While both explore conflict, Poem A focuses on psychological trauma whereas Poem B examines how power structures erase individual suffering").',
+        explanation:
+          'A weak opening merely states a shared theme ("Both poems are about conflict"). A strong opening identifies a nuanced distinction ("While both explore conflict, Poem A focuses on psychological trauma whereas Poem B examines how power structures erase individual suffering").',
       },
       {
         id: 'y10-poetry-m5-q3',
-        question: 'How might the use of dialect or non-standard English function in an identity poem?',
+        question:
+          'How might the use of dialect or non-standard English function in an identity poem?',
         options: [
           'It indicates the poet was uneducated',
           'It can be a political act, asserting the legitimacy of a voice marginalised by mainstream culture',
@@ -526,23 +555,26 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'It has no analytical significance',
         ],
         correct: 1,
-        explanation: 'The use of dialect, code-switching, or non-standard English can be a deliberate political act that asserts the legitimacy and value of a marginalised voice. It often signals themes of cultural identity, resistance, and the relationship between language and belonging.',
+        explanation:
+          'The use of dialect, code-switching, or non-standard English can be a deliberate political act that asserts the legitimacy and value of a marginalised voice. It often signals themes of cultural identity, resistance, and the relationship between language and belonging.',
       },
       {
         id: 'y10-poetry-m5-q4',
         question: 'What is pathetic fallacy?',
         options: [
-          'A logical error in a poet\'s argument',
+          "A logical error in a poet's argument",
           'Using natural phenomena (weather, landscape) to reflect or mirror human emotions',
           'A type of irony where the speaker says the opposite of what they mean',
           'An outdated poetic form no longer used in modern poetry',
         ],
         correct: 1,
-        explanation: 'Pathetic fallacy is a technique where natural phenomena — weather, landscape, seasons — are used to reflect or mirror human emotions. For example, a storm might reflect a character\'s anger, or a barren landscape might mirror grief.',
+        explanation:
+          "Pathetic fallacy is a technique where natural phenomena — weather, landscape, seasons — are used to reflect or mirror human emotions. For example, a storm might reflect a character's anger, or a barren landscape might mirror grief.",
       },
       {
         id: 'y10-poetry-m5-q5',
-        question: 'Why is it important to note how poems within the same thematic group differ in their treatment of the theme?',
+        question:
+          'Why is it important to note how poems within the same thematic group differ in their treatment of the theme?',
         options: [
           'Because the examiner penalises responses that find similarities',
           'Because internal contrasts within a thematic group provide the material needed for comparison questions',
@@ -550,7 +582,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because differences are worth more marks than similarities',
         ],
         correct: 1,
-        explanation: 'Comparison questions dominate the exam, and they require you to explore both similarities and differences. Noting how two love poems take opposing stances, or how two nature poems use contrasting imagery, provides precisely the analytical material you need.',
+        explanation:
+          'Comparison questions dominate the exam, and they require you to explore both similarities and differences. Noting how two love poems take opposing stances, or how two nature poems use contrasting imagery, provides precisely the analytical material you need.',
       },
     ],
   },
@@ -604,7 +637,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
     quiz: [
       {
         id: 'y10-poetry-m6-q1',
-        question: 'What is the alternating (point-by-point) method of structuring a comparative essay?',
+        question:
+          'What is the alternating (point-by-point) method of structuring a comparative essay?',
         options: [
           'Analysing Poem A fully in the first half and Poem B in the second half',
           'Making a point about Poem A, then immediately comparing or contrasting with Poem B in the same paragraph',
@@ -612,7 +646,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Alternating between language analysis and structural analysis',
         ],
         correct: 1,
-        explanation: 'The alternating method makes a point about Poem A, then immediately compares or contrasts with Poem B, before moving to the next point. Each paragraph contains material from both poems, ensuring sustained comparison throughout.',
+        explanation:
+          'The alternating method makes a point about Poem A, then immediately compares or contrasts with Poem B, before moving to the next point. Each paragraph contains material from both poems, ensuring sustained comparison throughout.',
       },
       {
         id: 'y10-poetry-m6-q2',
@@ -624,7 +659,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'It only works for poems with identical themes',
         ],
         correct: 1,
-        explanation: 'The block method risks producing two separate analyses bolted together rather than a genuine comparison. If you use it, you must explicitly refer back to Poem A throughout your discussion of Poem B to maintain the comparative thread.',
+        explanation:
+          'The block method risks producing two separate analyses bolted together rather than a genuine comparison. If you use it, you must explicitly refer back to Poem A throughout your discussion of Poem B to maintain the comparative thread.',
       },
       {
         id: 'y10-poetry-m6-q3',
@@ -636,7 +672,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Footnotes that explain the relationship between the poems',
         ],
         correct: 1,
-        explanation: 'Comparative connectives (e.g., "similarly," "in contrast," "whereas," "both poets," "unlike") signal to the examiner that you are comparing. Their consistent presence across every paragraph is a clear indicator of well-structured comparative writing.',
+        explanation:
+          'Comparative connectives (e.g., "similarly," "in contrast," "whereas," "both poets," "unlike") signal to the examiner that you are comparing. Their consistent presence across every paragraph is a clear indicator of well-structured comparative writing.',
       },
       {
         id: 'y10-poetry-m6-q4',
@@ -648,7 +685,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'It focuses too much on similarities',
         ],
         correct: 1,
-        explanation: 'A "bolt-on" comparison adds a superficial comparative sentence at the end of a paragraph that otherwise analyses only one poem. Stronger essays integrate both poems throughout each paragraph, letting them speak to each other rather than treating them separately.',
+        explanation:
+          'A "bolt-on" comparison adds a superficial comparative sentence at the end of a paragraph that otherwise analyses only one poem. Stronger essays integrate both poems throughout each paragraph, letting them speak to each other rather than treating them separately.',
       },
       {
         id: 'y10-poetry-m6-q5',
@@ -660,7 +698,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'A biographical paragraph about both poets',
         ],
         correct: 1,
-        explanation: 'The conclusion should move beyond summary to offer an evaluative or reflective comment — which poem you find more powerful and why. This personal evaluative voice is rewarded at the highest grade levels and leaves the examiner with a sense of your intellectual engagement.',
+        explanation:
+          'The conclusion should move beyond summary to offer an evaluative or reflective comment — which poem you find more powerful and why. This personal evaluative voice is rewarded at the highest grade levels and leaves the examiner with a sense of your intellectual engagement.',
       },
     ],
   },
@@ -734,7 +773,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because only certain terms are allowed in the exam',
         ],
         correct: 1,
-        explanation: 'An incorrectly used term signals to the examiner that you have memorised vocabulary without genuine understanding. This undermines your credibility as an analytical reader. If unsure, describe the effect in plain language rather than guessing the label.',
+        explanation:
+          'An incorrectly used term signals to the examiner that you have memorised vocabulary without genuine understanding. This undermines your credibility as an analytical reader. If unsure, describe the effect in plain language rather than guessing the label.',
       },
       {
         id: 'y10-poetry-m7-q2',
@@ -746,7 +786,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Using terminology only in your introduction and conclusion',
         ],
         correct: 1,
-        explanation: 'Embedding terminology means integrating it naturally into your analytical sentences — identifying the technique, providing evidence, and analysing the effect in a single fluid sentence, rather than listing terms separately from your analysis.',
+        explanation:
+          'Embedding terminology means integrating it naturally into your analytical sentences — identifying the technique, providing evidence, and analysing the effect in a single fluid sentence, rather than listing terms separately from your analysis.',
       },
       {
         id: 'y10-poetry-m7-q3',
@@ -758,11 +799,13 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because examiners do not award marks for identifying emotion',
         ],
         correct: 1,
-        explanation: 'Saying "the poet uses emotive language" is too vague because all poetry uses language chosen for its emotional resonance. Instead, identify the specific word, explain what precise emotion it evokes, and analyse how it achieves that effect.',
+        explanation:
+          'Saying "the poet uses emotive language" is too vague because all poetry uses language chosen for its emotional resonance. Instead, identify the specific word, explain what precise emotion it evokes, and analyse how it achieves that effect.',
       },
       {
         id: 'y10-poetry-m7-q4',
-        question: 'At the highest level of the terminology spectrum, how is subject terminology used?',
+        question:
+          'At the highest level of the terminology spectrum, how is subject terminology used?',
         options: [
           'As many terms as possible are listed to demonstrate knowledge',
           'Terms are embedded within analysis that explores connotations, effects, and links to wider meaning',
@@ -770,7 +813,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Terms are avoided in favour of plain language',
         ],
         correct: 1,
-        explanation: 'At the highest level, terminology is embedded within detailed analysis — woven into sentences that simultaneously identify techniques, provide evidence, and explore effects and connotations, linking to the poem\'s wider meaning.',
+        explanation:
+          "At the highest level, terminology is embedded within detailed analysis — woven into sentences that simultaneously identify techniques, provide evidence, and explore effects and connotations, linking to the poem's wider meaning.",
       },
       {
         id: 'y10-poetry-m7-q5',
@@ -782,7 +826,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because examiners do not recognise it as valid terminology',
         ],
         correct: 1,
-        explanation: 'Juxtaposition specifically means the deliberate placing of two contrasting elements side by side for effect. It does not simply mean "two different things appear in the poem." Using it loosely signals imprecise understanding.',
+        explanation:
+          'Juxtaposition specifically means the deliberate placing of two contrasting elements side by side for effect. It does not simply mean "two different things appear in the poem." Using it loosely signals imprecise understanding.',
       },
     ],
   },
@@ -846,7 +891,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Use biographical context for every poem',
         ],
         correct: 1,
-        explanation: 'The golden rule is to integrate, not bolt on. Context should be woven into analytical paragraphs at the precise moments where it illuminates a specific quotation, image, or technique, rather than being presented in a separate introductory paragraph.',
+        explanation:
+          'The golden rule is to integrate, not bolt on. Context should be woven into analytical paragraphs at the precise moments where it illuminates a specific quotation, image, or technique, rather than being presented in a separate introductory paragraph.',
       },
       {
         id: 'y10-poetry-m8-q2',
@@ -858,7 +904,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'When it is mentioned more than once',
         ],
         correct: 1,
-        explanation: 'Context becomes problematic when it replaces analysis. Generic information about a literary movement or a poet\'s biography that could apply to any poem wastes time. Every contextual reference must connect directly to a specific feature of the poem being analysed.',
+        explanation:
+          "Context becomes problematic when it replaces analysis. Generic information about a literary movement or a poet's biography that could apply to any poem wastes time. Every contextual reference must connect directly to a specific feature of the poem being analysed.",
       },
       {
         id: 'y10-poetry-m8-q3',
@@ -870,7 +917,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Primary, secondary, tertiary, and quaternary',
         ],
         correct: 1,
-        explanation: 'The four main types are historical context (events and conditions of the time), biographical context (the poet\'s experiences), literary context (traditions and movements), and social/cultural context (values, beliefs, and power structures of the society).',
+        explanation:
+          "The four main types are historical context (events and conditions of the time), biographical context (the poet's experiences), literary context (traditions and movements), and social/cultural context (values, beliefs, and power structures of the society).",
       },
       {
         id: 'y10-poetry-m8-q4',
@@ -882,7 +930,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because the examiner marks context separately from analysis',
         ],
         correct: 1,
-        explanation: 'In comparative essays, contextual differences can explain why poems about the same theme take different approaches. A love poem from the Elizabethan era and one from the twenty-first century inhabit different worlds, and context helps explain their divergent techniques and assumptions.',
+        explanation:
+          'In comparative essays, contextual differences can explain why poems about the same theme take different approaches. A love poem from the Elizabethan era and one from the twenty-first century inhabit different worlds, and context helps explain their divergent techniques and assumptions.',
       },
       {
         id: 'y10-poetry-m8-q5',
@@ -894,7 +943,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because examiners do not allow any biographical references',
         ],
         correct: 1,
-        explanation: 'A poem is not a diary entry. Even when it draws on personal experience, the poet has transformed that experience through the craft of writing. Biography should only be used when it genuinely adds to interpretation, with analysis always focusing on the text itself.',
+        explanation:
+          'A poem is not a diary entry. Even when it draws on personal experience, the poet has transformed that experience through the craft of writing. Biography should only be used when it genuinely adds to interpretation, with analysis always focusing on the text itself.',
       },
     ],
   },
@@ -955,16 +1005,18 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
         question: 'In the worked exemplar, what is the purpose of Stage 1 (First Reading)?',
         options: [
           'To begin writing your essay immediately',
-          'To orient yourself by identifying the poem\'s subject, speaker, and emotional trajectory',
+          "To orient yourself by identifying the poem's subject, speaker, and emotional trajectory",
           'To identify every technique in the poem',
           'To memorise key quotations',
         ],
         correct: 1,
-        explanation: 'The first reading is for orientation — identifying what the poem is about at a surface level, who is speaking, what is happening, and the emotional trajectory. Deep analysis comes in later stages.',
+        explanation:
+          'The first reading is for orientation — identifying what the poem is about at a surface level, who is speaking, what is happening, and the emotional trajectory. Deep analysis comes in later stages.',
       },
       {
         id: 'y10-poetry-m9-q2',
-        question: 'Why does the exemplar recommend selecting only three or four main points rather than writing about everything you noticed?',
+        question:
+          'Why does the exemplar recommend selecting only three or four main points rather than writing about everything you noticed?',
         options: [
           'Because the exam has a strict word limit',
           'Because a focused response that develops points in depth scores higher than a scattered one that mentions many features without development',
@@ -972,43 +1024,48 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because poems only contain three or four techniques',
         ],
         correct: 1,
-        explanation: 'A focused response that develops three or four points in depth will always score higher than a scattered response that mentions ten features without developing any of them. Depth of analysis is more important than breadth of identification.',
+        explanation:
+          'A focused response that develops three or four points in depth will always score higher than a scattered response that mentions ten features without developing any of them. Depth of analysis is more important than breadth of identification.',
       },
       {
         id: 'y10-poetry-m9-q3',
-        question: 'In the exemplar\'s analysis of "crushed," what analytical technique is being demonstrated?',
+        question:
+          'In the exemplar\'s analysis of "crushed," what analytical technique is being demonstrated?',
         options: [
           'Feature-spotting without analysis',
-          'Exploring the connotations of a specific word and linking them to the speaker\'s emotional state and the poem\'s themes',
+          "Exploring the connotations of a specific word and linking them to the speaker's emotional state and the poem's themes",
           'Providing biographical context about the poet',
           'Comparing the poem with another text',
         ],
         correct: 1,
-        explanation: 'The analysis explores how "crushed" carries connotations beyond physical destruction to emotional devastation, suggesting the speaker feels crushed by loss. This demonstrates the skill of exploring connotations and linking word-level analysis to broader themes.',
+        explanation:
+          'The analysis explores how "crushed" carries connotations beyond physical destruction to emotional devastation, suggesting the speaker feels crushed by loss. This demonstrates the skill of exploring connotations and linking word-level analysis to broader themes.',
       },
       {
         id: 'y10-poetry-m9-q4',
-        question: 'How does the exemplar connect the poem\'s structure to its meaning?',
+        question: "How does the exemplar connect the poem's structure to its meaning?",
         options: [
           'It ignores structure and focuses only on language',
-          'It shows how the shift from expansive stanzas to fragmented stanzas mirrors the breaking apart of the house and the speaker\'s identity',
+          "It shows how the shift from expansive stanzas to fragmented stanzas mirrors the breaking apart of the house and the speaker's identity",
           'It counts the number of lines in each stanza without analysis',
           'It argues that structure is unimportant in free verse',
         ],
         correct: 1,
-        explanation: 'The exemplar shows how structural features create meaning: expansive opening stanzas suggest spacious memory, while fragmented middle stanzas mirror the house\'s destruction and the speaker\'s emotional disintegration. Form becomes a visual and rhythmic analogue for loss.',
+        explanation:
+          "The exemplar shows how structural features create meaning: expansive opening stanzas suggest spacious memory, while fragmented middle stanzas mirror the house's destruction and the speaker's emotional disintegration. Form becomes a visual and rhythmic analogue for loss.",
       },
       {
         id: 'y10-poetry-m9-q5',
-        question: 'What makes the exemplar\'s conclusion effective?',
+        question: "What makes the exemplar's conclusion effective?",
         options: [
           'It summarises all the points made in the essay',
-          'It adds a final interpretive insight about the poem\'s ending and wider significance rather than merely restating previous analysis',
+          "It adds a final interpretive insight about the poem's ending and wider significance rather than merely restating previous analysis",
           'It introduces a new poem for comparison',
           'It quotes the entire final stanza without analysis',
         ],
         correct: 1,
-        explanation: 'The conclusion adds something new — an interpretive insight about how the final word "dust" transforms the poem from personal elegy to universal meditation on impermanence. It leaves the examiner with a final insight rather than a restatement of earlier points.',
+        explanation:
+          'The conclusion adds something new — an interpretive insight about how the final word "dust" transforms the poem from personal elegy to universal meditation on impermanence. It leaves the examiner with a final insight rather than a restatement of earlier points.',
       },
     ],
   },
@@ -1068,7 +1125,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
     quiz: [
       {
         id: 'y10-poetry-m10-q1',
-        question: 'In a dramatic monologue, what is the "gap" that provides the richest material for analysis?',
+        question:
+          'In a dramatic monologue, what is the "gap" that provides the richest material for analysis?',
         options: [
           'The gap between the title and the first line',
           'The gap between what the speaker says and what they inadvertently reveal about themselves',
@@ -1076,11 +1134,13 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'The gap between the poem and its historical context',
         ],
         correct: 1,
-        explanation: 'In a dramatic monologue, the speaker reveals more about themselves than they intend. The gap between their self-presentation (cultured, dignified) and what the reader perceives (arrogant, cruel) is created through dramatic irony and is the central technique of the form.',
+        explanation:
+          'In a dramatic monologue, the speaker reveals more about themselves than they intend. The gap between their self-presentation (cultured, dignified) and what the reader perceives (arrogant, cruel) is created through dramatic irony and is the central technique of the form.',
       },
       {
         id: 'y10-poetry-m10-q2',
-        question: 'Why is it important to distinguish between the speaker and the poet in a dramatic monologue?',
+        question:
+          'Why is it important to distinguish between the speaker and the poet in a dramatic monologue?',
         options: [
           'Because the poet is always more famous than the speaker',
           'Because the poet has created a character whose views they may not share, and analysis should focus on how the speaker is constructed',
@@ -1088,7 +1148,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because the poem is autobiography and the speaker is the poet',
         ],
         correct: 1,
-        explanation: 'The poet creates a speaker whose views may differ from their own. Analysis should focus on how the poet constructs the speaker\'s character through diction, tone, and dramatic irony — not on assuming the speaker and poet are identical.',
+        explanation:
+          "The poet creates a speaker whose views may differ from their own. Analysis should focus on how the poet constructs the speaker's character through diction, tone, and dramatic irony — not on assuming the speaker and poet are identical.",
       },
       {
         id: 'y10-poetry-m10-q3',
@@ -1100,7 +1161,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'The speaker changes topic frequently',
         ],
         correct: 1,
-        explanation: 'An unreliable speaker presents events from a biased perspective, omits inconvenient details, or actively deceives. The reader must look beyond what the speaker claims to uncover the truth the poet is revealing through dramatic irony.',
+        explanation:
+          'An unreliable speaker presents events from a biased perspective, omits inconvenient details, or actively deceives. The reader must look beyond what the speaker claims to uncover the truth the poet is revealing through dramatic irony.',
       },
       {
         id: 'y10-poetry-m10-q4',
@@ -1112,19 +1174,21 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because moralising takes too much time in the exam',
         ],
         correct: 1,
-        explanation: 'Writing "The speaker is a terrible person" is opinion, not analysis. The examiner wants to see how the poet reveals character — through diction, syntax, tone, dramatic irony, and the gap between what is said and what is implied. The task is to analyse technique, not judge character.',
+        explanation:
+          'Writing "The speaker is a terrible person" is opinion, not analysis. The examiner wants to see how the poet reveals character — through diction, syntax, tone, dramatic irony, and the gap between what is said and what is implied. The task is to analyse technique, not judge character.',
       },
       {
         id: 'y10-poetry-m10-q5',
         question: 'Why are silences and absences analytically significant in a poem?',
         options: [
           'Because they indicate the poet ran out of ideas',
-          'Because the silent listener or absent figure is defined by the speaker\'s words, and what is left unsaid can be as revealing as what is said',
+          "Because the silent listener or absent figure is defined by the speaker's words, and what is left unsaid can be as revealing as what is said",
           'Because examiners award marks for identifying pauses',
           'Because silence is the most common theme in IGCSE poetry',
         ],
         correct: 1,
-        explanation: 'In a dramatic monologue, the silent listener\'s reactions must be inferred. In a love poem, the absent beloved exists only through the speaker\'s words. Reading silences and absences demonstrates sophisticated understanding of poetic voice and what a poem chooses not to say.',
+        explanation:
+          "In a dramatic monologue, the silent listener's reactions must be inferred. In a love poem, the absent beloved exists only through the speaker's words. Reading silences and absences demonstrates sophisticated understanding of poetic voice and what a poem chooses not to say.",
       },
     ],
   },
@@ -1192,19 +1256,22 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'An essay that explains every concept the poem mentions',
         ],
         correct: 1,
-        explanation: 'A conceptualised response presents a thesis about the poem and develops it through analytical paragraphs that build on each other, creating a coherent and persuasive reading. It is driven by an argument, not by a list of disconnected observations.',
+        explanation:
+          'A conceptualised response presents a thesis about the poem and develops it through analytical paragraphs that build on each other, creating a coherent and persuasive reading. It is driven by an argument, not by a list of disconnected observations.',
       },
       {
         id: 'y10-poetry-m11-q2',
-        question: 'What does "exploratory" mean in the context of a grade 7-9 mark scheme descriptor?',
+        question:
+          'What does "exploratory" mean in the context of a grade 7-9 mark scheme descriptor?',
         options: [
           'Writing about as many poems as possible',
           'Being willing to entertain multiple interpretations rather than fixing on a single meaning',
-          'Exploring the poet\'s biography in detail',
+          "Exploring the poet's biography in detail",
           'Writing a very long response that covers everything',
         ],
         correct: 1,
-        explanation: 'Being exploratory means considering multiple possible readings and dwelling in ambiguity. Rather than stating "The metaphor means X," an exploratory response considers alternative interpretations and the productive tension between them.',
+        explanation:
+          'Being exploratory means considering multiple possible readings and dwelling in ambiguity. Rather than stating "The metaphor means X," an exploratory response considers alternative interpretations and the productive tension between them.',
       },
       {
         id: 'y10-poetry-m11-q3',
@@ -1216,7 +1283,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because effects on the reader are not relevant to poetry analysis',
         ],
         correct: 1,
-        explanation: 'The phrase is too vague — it gestures towards an effect without specifying what it is. A precise response would name the specific effect: "This image unsettles the reader by transforming the domestic into something threatening."',
+        explanation:
+          'The phrase is too vague — it gestures towards an effect without specifying what it is. A precise response would name the specific effect: "This image unsettles the reader by transforming the domestic into something threatening."',
       },
       {
         id: 'y10-poetry-m11-q4',
@@ -1228,7 +1296,8 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'There is no difference — they are the same thing',
         ],
         correct: 1,
-        explanation: 'A genuine personal response uses analytical language to explain why a particular moment affects you and how the poet achieves that effect. It reflects your interpretation but is supported by textual evidence, unlike unsupported opinion ("I like this poem").',
+        explanation:
+          'A genuine personal response uses analytical language to explain why a particular moment affects you and how the poet achieves that effect. It reflects your interpretation but is supported by textual evidence, unlike unsupported opinion ("I like this poem").',
       },
       {
         id: 'y10-poetry-m11-q5',
@@ -1236,11 +1305,12 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
         options: [
           'It is an optional introduction that can be skipped to save time',
           'It provides an overarching interpretive argument stated in the opening and developed, tested, and refined throughout the essay',
-          'It summarises the poet\'s biography',
+          "It summarises the poet's biography",
           'It lists every technique the poem uses',
         ],
         correct: 1,
-        explanation: 'The thesis provides an overarching interpretive argument that gives the essay direction and purpose. It should be stated in the opening, developed through each body paragraph, and substantiated by the conclusion through close engagement with the text.',
+        explanation:
+          'The thesis provides an overarching interpretive argument that gives the essay direction and purpose. It should be stated in the opening, developed through each body paragraph, and substantiated by the conclusion through close engagement with the text.',
       },
     ],
   },
@@ -1316,11 +1386,13 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           '20 minutes on Poem A and 25 minutes on Poem B',
         ],
         correct: 2,
-        explanation: 'The recommended split is 8-10 minutes for reading, annotating, and planning; 30-32 minutes for writing; and 3-5 minutes for rereading and correcting. A well-planned response in 35 minutes outscore an unplanned response in 45 minutes.',
+        explanation:
+          'The recommended split is 8-10 minutes for reading, annotating, and planning; 30-32 minutes for writing; and 3-5 minutes for rereading and correcting. A well-planned response in 35 minutes outscore an unplanned response in 45 minutes.',
       },
       {
         id: 'y10-poetry-m12-q2',
-        question: 'Why is it damaging to abandon comparison and write about each poem separately under time pressure?',
+        question:
+          'Why is it damaging to abandon comparison and write about each poem separately under time pressure?',
         options: [
           'Because the examiner cannot read two separate analyses',
           'Because a response that fails to compare does not meet the requirements of the comparison task, regardless of how strong the individual analysis is',
@@ -1328,23 +1400,26 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because single-poem analysis is penalised more heavily than weak comparison',
         ],
         correct: 1,
-        explanation: 'Even strong individual analysis will not meet the requirements of a comparison task. The task specifically asks you to compare, so maintaining comparative connectives and integrated discussion of both poems throughout is essential.',
+        explanation:
+          'Even strong individual analysis will not meet the requirements of a comparison task. The task specifically asks you to compare, so maintaining comparative connectives and integrated discussion of both poems throughout is essential.',
       },
       {
         id: 'y10-poetry-m12-q3',
         question: 'What is the benefit of "front-loading" your strongest analytical points?',
         options: [
           'It makes the essay seem more confident',
-          'If you run out of time, your best material has already been covered and the examiner\'s impression is shaped by your strongest work',
+          "If you run out of time, your best material has already been covered and the examiner's impression is shaped by your strongest work",
           'Examiners only read the first two paragraphs',
           'It allows you to leave the easy points for last',
         ],
         correct: 1,
-        explanation: 'Front-loading ensures that your strongest, most insightful points are covered first. If time runs short, your best analysis is already on the page. Additionally, the examiner\'s impression is often shaped by the quality of the early paragraphs.',
+        explanation:
+          "Front-loading ensures that your strongest, most insightful points are covered first. If time runs short, your best analysis is already on the page. Additionally, the examiner's impression is often shaped by the quality of the early paragraphs.",
       },
       {
         id: 'y10-poetry-m12-q4',
-        question: 'What should you do if you encounter a poem you find very difficult during the exam?',
+        question:
+          'What should you do if you encounter a poem you find very difficult during the exam?',
         options: [
           'Skip the question entirely and move to the next one',
           'Spend 20 minutes trying to understand the poem before writing anything',
@@ -1352,11 +1427,13 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Write a response about a different poem you know better',
         ],
         correct: 2,
-        explanation: 'Do not panic or spend excessive time trying to understand a difficult poem. Begin with what you can analyse — tone, imagery, structure, connotations — and understanding often emerges through the act of writing. Start with a provisional interpretation and refine it.',
+        explanation:
+          'Do not panic or spend excessive time trying to understand a difficult poem. Begin with what you can analyse — tone, imagery, structure, connotations — and understanding often emerges through the act of writing. Start with a provisional interpretation and refine it.',
       },
       {
         id: 'y10-poetry-m12-q5',
-        question: 'Why should you avoid opening with "In this essay I am going to compare two poems about love"?',
+        question:
+          'Why should you avoid opening with "In this essay I am going to compare two poems about love"?',
         options: [
           'Because you should never mention the word "compare"',
           'Because it wastes time on preamble instead of beginning with your thesis — an analytical opening that does two jobs in one sentence',
@@ -1364,8 +1441,9 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
           'Because personal pronouns are not allowed in exam responses',
         ],
         correct: 1,
-        explanation: 'Generic preamble wastes precious time. Instead, begin directly with your thesis — an opening that simultaneously introduces the poems and offers an interpretive argument. This approach is both more efficient and more analytically impressive.',
+        explanation:
+          'Generic preamble wastes precious time. Instead, begin directly with your thesis — an opening that simultaneously introduces the poems and offers an interpretive argument. This approach is both more efficient and more analytically impressive.',
       },
     ],
   },
-];
+]

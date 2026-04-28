@@ -3,6 +3,15 @@
 // 3 Paper 1 (Shakespeare + 19th Century Novel) + 3 Paper 2 (Modern Text + Poetry)
 // Paper 1: Macbeth + A Christmas Carol
 // Paper 2: An Inspector Calls + Power & Conflict Poetry
+//
+// FABRICATION WARNING (FC20 audit, 2026-04-28):
+// The "extracts" in this file are NOT verbatim Shakespeare / Dickens / Priestley /
+// Blake. They are practice compositions that quote-collage real lines with
+// invented connective tissue, mis-attribute scenes/staves, and in the Power &
+// Conflict section, present poems ("Laughing Song"-derived, "My enemy is here",
+// "We are the voiceless") that are NOT in the AQA Power & Conflict anthology.
+// Treat the extracts as fabricated stimuli; do NOT cite them as authentic
+// quotation. Re-source from primary texts before any classroom use.
 
 import type { MockExamPaper } from './mock-exams'
 
@@ -20,7 +29,8 @@ ROSSE: My lord, I should report that which I say I saw, But know not how to do't
 
 LADY MACBETH: A little water clears us of this deed. How easy is it then! Your constancy hath left you unattended. Hark! I hear the strain of strutting chanticleer cry 'Cock-a-diddle-daw.' Come, come, come, come, give me your hand. What's done cannot be undone. To bed, to bed, to bed!`
 
-const MACBETH_EXTRACT_SOURCE = 'William Shakespeare, Macbeth, Act 5, Scene 1 (adapted)'
+const MACBETH_EXTRACT_SOURCE =
+  "Fabricated practice composition in the style of Shakespeare's Macbeth (Act 5 Scene 1) — NOT verbatim; do not cite"
 
 const CHRISTMAS_CAROL_EXTRACT_1 = `She prayed forgiveness one moment, and was struck by lightning the next. So had she ever been; the children of the adder, as the wise men of the east would say with reference to any stunted dealing. No further intercourse had he with Spirits, but long retained the knowledge that he had gained, had kept it before his mind as a solemn charge committed to him.
 
@@ -30,13 +40,15 @@ Some people laughed to see the alteration in him, but he let them laugh, and lit
 
 It is said that Scrooge never became as merry a man as he had been, but he was an altered man from the Christmas Future. His own words upon the parting Spirits were deeper far then any music — they came straight from his own heart, and were of such virtue that they had the power to restore him in a twinkling.`
 
-const CHRISTMAS_CAROL_EXTRACT_SOURCE = 'Charles Dickens, A Christmas Carol, Staves 4-5 (adapted)'
+const CHRISTMAS_CAROL_EXTRACT_SOURCE =
+  "Fabricated practice composition in the style of Dickens's A Christmas Carol (Staves 4-5) — NOT verbatim; do not cite"
 
 const MACBETH_EXTRACT_2 = `Tomorrow, and tomorrow, and tomorrow, creeps in this petty pace from day to day to the last syllable of recorded time, and all our yesterdays have lighted fools the way to dusty death. Out, out, brief candle! Life's but a walking shadow, a poor player that struts and frets his hour upon the stage and then is heard no more. It is a tale told by an idiot, full of sound and fury, signifying nothing.
 
 The cry of women in the castle. Seyton, I am sick when I do see— but, soft! Thou com'st to use thy tongue; thy story quickly. What's the boy Malcolm? Was he not born of woman? The spirits that know all mortal consequences have deceived me. 'Pull thy hat upon thy brows; give thee that, which claps thee to the pole, and I will fight, till from my bones my flesh be hack'd.'`
 
-const MACBETH_EXTRACT_2_SOURCE = 'William Shakespeare, Macbeth, Act 5, Scene 5 (adapted)'
+const MACBETH_EXTRACT_2_SOURCE =
+  "Fabricated practice composition in the style of Shakespeare's Macbeth (Act 5 Scene 5) — NOT verbatim; do not cite"
 
 const CHRISTMAS_CAROL_EXTRACT_2 = `"Are there no prisons?" asked Scrooge.
 
@@ -50,19 +62,22 @@ Scrooge listened to Marley's warning, and the visitation of the three Spirits re
 
 When he awoke at last, it was with a determination that should have warned the City that a change was in the wind — a change that should set even the stones of the parish stone-working mills vibrating with the news of regeneration. He thought of Tiny Tim, and he wept. He thought of Belle, and he sighed. He thought of his former self, and he shuddered. But thinking led to resolving, and he rose up early, called for the best roasted marrow-bones in the market, and had them sent to Bob Cratchit's lodgings, and wrote thereon a great turkey that is the sign of a gentleman.`
 
-const CHRISTMAS_CAROL_EXTRACT_2_SOURCE = 'Charles Dickens, A Christmas Carol, Staves 1 & 5 (adapted)'
+const CHRISTMAS_CAROL_EXTRACT_2_SOURCE =
+  "Fabricated practice composition in the style of Dickens's A Christmas Carol (Staves 1 & 5) — NOT verbatim; do not cite"
 
 const MACBETH_EXTRACT_3 = `'Tis done! The worm that gnaws thy vitals proves the worm shall nibble thy destruction. Each man upon his conscience carries weight enough to drag a giant down. But soft—what light through yonder conscience breaks? 'Tis the accusing eye of murdered sleep. Hence with these dagger wounds! Blood will have blood. 
 
 I have no spur to prick the sides of my intent, but only vaulting ambition which o'erleaps itself and falls on the other side. So it is: I am cabin'd, cribb'd, confined, bound in saucy doubts and fears. But Banquo walks; Banquo's issue shall be kings. It cannot be! There is no flying hence, nor tarrying here. I am in blood stepp'd in so far that, should I wade no more, returning were as tedious as go o'er.`
 
-const MACBETH_EXTRACT_3_SOURCE = 'William Shakespeare, Macbeth, Act 3, Scene 4 (adapted)'
+const MACBETH_EXTRACT_3_SOURCE =
+  "Fabricated practice composition in the style of Shakespeare's Macbeth — NOT verbatim; quote-collages lines from 1.7, 3.4 and elsewhere; do not cite"
 
 const CHRISTMAS_CAROL_EXTRACT_3 = `Belle, now a handsome woman, was busy in her domestic concerns, arranging a cheerful room with festive decorations. A man of middle years, her husband, sat beside the fire. "I wonder whether Scrooge has ever thought of me," said she. "His wealth matters not to me. His loss, his pitiable condition, troubles me more than his fortune ever pleased me. The night of our parting, he said that his business and his money meant more to him than love. He was right, for he has proved it by his choices ever since."
 
 The Ghost of Christmas Past showed Scrooge the fullness of what he had sacrificed — the love, the companionship, the simple joys of a life lived in communion with another soul. "I should like to have given him one chance," said Belle, "to be another man than this." But the Ghost showed that Scrooge's own path lay before him still: the choice was his, the redemption possible, but the time in which to grasp it was already fleeting, and would not remain forever at his bidding.`
 
-const CHRISTMAS_CAROL_EXTRACT_3_SOURCE = 'Charles Dickens, A Christmas Carol, Stave 2 (adapted)'
+const CHRISTMAS_CAROL_EXTRACT_3_SOURCE =
+  "Fabricated practice composition in the style of Dickens's A Christmas Carol (Stave 2 Belle scene) — NOT verbatim; do not cite"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // MODERN TEXT & POETRY EXTRACTS (PAPER 2)
@@ -86,7 +101,8 @@ INSPECTOR: Good. That's more sensible. And that's all I came here to say.
 
 [He moves towards the door as they all stare at him, bewildered and troubled.]`
 
-const INSPECTOR_CALLS_EXTRACT_SOURCE = 'J.B. Priestley, An Inspector Calls, Act 3 (adapted)'
+const INSPECTOR_CALLS_EXTRACT_SOURCE =
+  "Fabricated practice composition in the style of Priestley's An Inspector Calls (Act 3) — NOT verbatim; do not cite"
 
 const POWER_CONFLICT_POEM_1 = `When the green woods laugh with the voice of joy,
 And the dimpling stream runs laughing by;
@@ -108,7 +124,8 @@ Though conflict rages and all seems lost,
 I am here to hold you, to keep you warm,
 Through the winter's blast and the bitter frost.`
 
-const POWER_CONFLICT_POEM_1_SOURCE = 'Adapted from William Blake, "Laughing Song" and contemporary verse'
+const POWER_CONFLICT_POEM_1_SOURCE =
+  'Fabricated practice poem (NOT in AQA Power & Conflict anthology) — first stanza echoes Blake\'s "Laughing Song"; remainder invented'
 
 const INSPECTOR_CALLS_EXTRACT_2 = `PRIESTLEY'S STAGE DIRECTION: Emphasis on the responsibility of each character to society, shown through the Inspector's moral interrogation.
 
@@ -122,7 +139,8 @@ MRS. BIRLING: I had every right to refuse her request. She came to me under an a
 
 INSPECTOR: No. She came to you asking for help, and you refused her because she was beneath you socially. That's the truth, Mrs. Birling. And you know it.`
 
-const INSPECTOR_CALLS_EXTRACT_2_SOURCE = 'J.B. Priestley, An Inspector Calls, Act 3 (adapted)'
+const INSPECTOR_CALLS_EXTRACT_2_SOURCE =
+  "Fabricated practice composition in the style of Priestley's An Inspector Calls (Act 3) — NOT verbatim; do not cite"
 
 const POWER_CONFLICT_POEM_2 = `My enemy is here, and here is power—
 The clash of wills, the struggle for the light,
@@ -142,7 +160,8 @@ A justice tempered by a gentler will.
 Which power conquers—might or mercy's call?
 Which overcomes us in the end of all?`
 
-const POWER_CONFLICT_POEM_2_SOURCE = 'Adapted from traditional and modern conflict poetry'
+const POWER_CONFLICT_POEM_2_SOURCE =
+  'Fabricated practice poem (NOT in AQA Power & Conflict anthology); not by any named poet'
 
 const INSPECTOR_CALLS_EXTRACT_3 = `[The INSPECTOR stands at the door, commanding the room. His words have exposed the hypocrisy and complicity of each character. The younger generation—Sheila and Eric—have felt genuine remorse, while their parents have struggled against the blame.]
 
@@ -154,7 +173,8 @@ SHEILA: I suppose we're all nice people now.
 
 [No one answers her. The irony hangs in the air: they have been shown to be anything but nice, and knowledge of this cannot be unknown.]`
 
-const INSPECTOR_CALLS_EXTRACT_3_SOURCE = 'J.B. Priestley, An Inspector Calls, Act 3 (adapted)'
+const INSPECTOR_CALLS_EXTRACT_3_SOURCE =
+  "Fabricated practice composition in the style of Priestley's An Inspector Calls (Act 3) — NOT verbatim; do not cite"
 
 const POWER_CONFLICT_POEM_3 = `We are the voiceless, and now we speak,
 We are the powerless, growing strong,
@@ -174,8 +194,8 @@ Where mercy heals what conflict made a hole.
 So let us clash with courage and with might,
 But let compassion guide us toward the light.`
 
-const POWER_CONFLICT_POEM_3_SOURCE = 'Adapted from contemporary protest poetry'
-
+const POWER_CONFLICT_POEM_3_SOURCE =
+  'Fabricated practice poem (NOT in AQA Power & Conflict anthology); not by any named poet'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // PAPER 1: SHAKESPEARE & 19TH CENTURY NOVEL (100 MARKS, 2 HOURS 15 MINUTES)
@@ -245,7 +265,7 @@ const createPaper1 = (
             id: `aqa-lit-p1-${nn}-q2`,
             questionNumber: 2,
             questionText:
-              'With reference to this extract and elsewhere in the novella, examine how Dickens uses Scrooge\'s transformation to explore the theme of redemption and social responsibility.',
+              "With reference to this extract and elsewhere in the novella, examine how Dickens uses Scrooge's transformation to explore the theme of redemption and social responsibility.",
             marks: 40,
             suggestedTimeMinutes: 50,
             questionType: 'analysis',
@@ -302,7 +322,6 @@ const createPaper1 = (
     ],
   }
 }
-
 
 // ─────────────────────────────────────────────────────────────────────────────
 // PAPER 2: MODERN TEXT & POETRY ANTHOLOGY (100 MARKS, 2 HOURS 15 MINUTES)
@@ -435,15 +454,51 @@ const createPaper2 = (
 
 export const aqaLitMockExams: MockExamPaper[] = [
   // Paper 1 - Set 1
-  createPaper1(1, MACBETH_EXTRACT_1, MACBETH_EXTRACT_SOURCE, CHRISTMAS_CAROL_EXTRACT_1, CHRISTMAS_CAROL_EXTRACT_SOURCE),
+  createPaper1(
+    1,
+    MACBETH_EXTRACT_1,
+    MACBETH_EXTRACT_SOURCE,
+    CHRISTMAS_CAROL_EXTRACT_1,
+    CHRISTMAS_CAROL_EXTRACT_SOURCE,
+  ),
   // Paper 1 - Set 2
-  createPaper1(2, MACBETH_EXTRACT_2, MACBETH_EXTRACT_2_SOURCE, CHRISTMAS_CAROL_EXTRACT_2, CHRISTMAS_CAROL_EXTRACT_2_SOURCE),
+  createPaper1(
+    2,
+    MACBETH_EXTRACT_2,
+    MACBETH_EXTRACT_2_SOURCE,
+    CHRISTMAS_CAROL_EXTRACT_2,
+    CHRISTMAS_CAROL_EXTRACT_2_SOURCE,
+  ),
   // Paper 1 - Set 3
-  createPaper1(3, MACBETH_EXTRACT_3, MACBETH_EXTRACT_3_SOURCE, CHRISTMAS_CAROL_EXTRACT_3, CHRISTMAS_CAROL_EXTRACT_3_SOURCE),
+  createPaper1(
+    3,
+    MACBETH_EXTRACT_3,
+    MACBETH_EXTRACT_3_SOURCE,
+    CHRISTMAS_CAROL_EXTRACT_3,
+    CHRISTMAS_CAROL_EXTRACT_3_SOURCE,
+  ),
   // Paper 2 - Set 1
-  createPaper2(1, INSPECTOR_CALLS_EXTRACT_1, INSPECTOR_CALLS_EXTRACT_SOURCE, POWER_CONFLICT_POEM_1, POWER_CONFLICT_POEM_1_SOURCE),
+  createPaper2(
+    1,
+    INSPECTOR_CALLS_EXTRACT_1,
+    INSPECTOR_CALLS_EXTRACT_SOURCE,
+    POWER_CONFLICT_POEM_1,
+    POWER_CONFLICT_POEM_1_SOURCE,
+  ),
   // Paper 2 - Set 2
-  createPaper2(2, INSPECTOR_CALLS_EXTRACT_2, INSPECTOR_CALLS_EXTRACT_2_SOURCE, POWER_CONFLICT_POEM_2, POWER_CONFLICT_POEM_2_SOURCE),
+  createPaper2(
+    2,
+    INSPECTOR_CALLS_EXTRACT_2,
+    INSPECTOR_CALLS_EXTRACT_2_SOURCE,
+    POWER_CONFLICT_POEM_2,
+    POWER_CONFLICT_POEM_2_SOURCE,
+  ),
   // Paper 2 - Set 3
-  createPaper2(3, INSPECTOR_CALLS_EXTRACT_3, INSPECTOR_CALLS_EXTRACT_3_SOURCE, POWER_CONFLICT_POEM_3, POWER_CONFLICT_POEM_3_SOURCE),
+  createPaper2(
+    3,
+    INSPECTOR_CALLS_EXTRACT_3,
+    INSPECTOR_CALLS_EXTRACT_3_SOURCE,
+    POWER_CONFLICT_POEM_3,
+    POWER_CONFLICT_POEM_3_SOURCE,
+  ),
 ]

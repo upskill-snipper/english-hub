@@ -1,17 +1,18 @@
 // @ts-nocheck
-import type { CourseData } from './courses';
+import type { CourseData } from './courses'
 
 const macbethCourse: CourseData = {
   id: 'macbeth-full',
   title: 'Macbeth — GCSE Complete Course',
-  subtitle: 'Master Shakespeare\'s darkest tragedy: characters, themes, context, and exam technique.',
+  subtitle:
+    "Master Shakespeare's darkest tragedy: characters, themes, context, and exam technique.",
   tier: 'GCSE',
   board: 'AQA',
   price: 0,
   duration: '12-15 hours',
   level: 'GCSE (Years 10-11)',
   description:
-    'The ultimate guide to Shakespeare\'s Macbeth. From Jacobean history and witchcraft beliefs to character development, ambition, guilt, and the supernatural — this course builds your understanding from ground level to Grade 9 analysis. Packed with 70+ quotations, character trackers, theme webs, exam-style questions, and model answers.',
+    "The ultimate guide to Shakespeare's Macbeth. From Jacobean history and witchcraft beliefs to character development, ambition, guilt, and the supernatural — this course builds your understanding from ground level to Grade 9 analysis. Packed with 70+ quotations, character trackers, theme webs, exam-style questions, and model answers.",
   color: '#7c3aed',
   moduleList: [
     {
@@ -55,16 +56,17 @@ const macbethCourse: CourseData = {
             'He wanted to write a play about witches',
             'He believed witches were real servants of Satan and wrote a book called Daemonologie',
             'The English church required him to study witchcraft',
-            'He had been attacked by a witch'
+            'He had been attacked by a witch',
           ],
           correct: 1,
-          explanation: 'James I wrote Daemonologie (1597) arguing that witches were real and dangerous. He was paranoid about witchcraft and assassination, making Shakespeare\'s witches genuinely terrifying to a Jacobean audience rather than theatrical fantasy.'
-        }
-      ]
+          explanation:
+            "James I wrote Daemonologie (1597) arguing that witches were real and dangerous. He was paranoid about witchcraft and assassination, making Shakespeare's witches genuinely terrifying to a Jacobean audience rather than theatrical fantasy.",
+        },
+      ],
     },
     {
       id: 'mb-m2',
-      title: 'Module 2: Macbeth\'s Ambition & the Tragic Hero',
+      title: "Module 2: Macbeth's Ambition & the Tragic Hero",
       duration: '100 mins',
       content: `<h2>Macbeth: The Anatomy of Ambition</h2>
 <p>Macbeth is Shakespeare's most claustrophobic tragedy. Unlike Hamlet or Othello, which sprawl across courts and islands, Macbeth is a tight, intense study of a single man destroyed by a single vice: ambition. By understanding Macbeth's arc, you unlock the play.</p>
@@ -96,17 +98,19 @@ const macbethCourse: CourseData = {
       quiz: [
         {
           id: 'mb-m2-q1',
-          question: 'What is Macbeth\'s hamartia (tragic flaw), and how does it lead to his downfall?',
+          question:
+            "What is Macbeth's hamartia (tragic flaw), and how does it lead to his downfall?",
           options: [
             'His love for Lady Macbeth causes him to kill Duncan',
             'His vaulting ambition drives him to murder the king and commit increasingly terrible crimes',
-            'His belief in the witches\' prophecies makes him lazy and paranoid',
-            'His cowardice causes him to hire murderers instead of fighting himself'
+            "His belief in the witches' prophecies makes him lazy and paranoid",
+            'His cowardice causes him to hire murderers instead of fighting himself',
           ],
           correct: 1,
-          explanation: 'Macbeth himself identifies "vaulting ambition" as his only motivation for killing Duncan. This unchecked ambition drives him to further crimes (murdering Banquo, massacring Macduff\'s family) until he becomes the paranoid tyrant he kills at the end.'
-        }
-      ]
+          explanation:
+            'Macbeth himself identifies "vaulting ambition" as his only motivation for killing Duncan. This unchecked ambition drives him to further crimes (murdering Banquo, massacring Macduff\'s family) until he becomes the paranoid tyrant he kills at the end.',
+        },
+      ],
     },
     {
       id: 'mb-m3',
@@ -144,12 +148,13 @@ const macbethCourse: CourseData = {
             'She wants to become a man so she can be king',
             'She believes that femininity (compassion, morality) will prevent her from committing murder',
             'The witches have cursed her to lose her femininity',
-            'Macbeth has asked her to disguise herself as a man'
+            'Macbeth has asked her to disguise herself as a man',
           ],
           correct: 1,
-          explanation: 'Lady Macbeth fears that her own compassion will prevent her from pushing Macbeth to murder Duncan. She asks spirits to remove feminine qualities she sees as obstacles to power.'
-        }
-      ]
+          explanation:
+            'Lady Macbeth fears that her own compassion will prevent her from pushing Macbeth to murder Duncan. She asks spirits to remove feminine qualities she sees as obstacles to power.',
+        },
+      ],
     },
     {
       id: 'mb-m4',
@@ -176,17 +181,19 @@ const macbethCourse: CourseData = {
       quiz: [
         {
           id: 'mb-m4-q1',
-          question: 'Why is the witches\' prophecy that "None of woman born / Shall harm Macbeth" deceptive?',
+          question:
+            'Why is the witches\' prophecy that "None of woman born / Shall harm Macbeth" deceptive?',
           options: [
             'It is a direct lie',
             'Macbeth misunderstands it because he is stupid',
             'Macduff was born via caesarean section, so technically he was not "of woman born" in the usual sense',
-            'The witches never actually say this prophecy'
+            'The witches never actually say this prophecy',
           ],
           correct: 2,
-          explanation: 'The witches use equivocal (double-meaning) language. Macduff was "from his mother\'s womb / Untimely ripped," meaning caesarean delivery. Technically, he was not "of woman born," so the prophecy is fulfilled in an unexpected way.'
-        }
-      ]
+          explanation:
+            'The witches use equivocal (double-meaning) language. Macduff was "from his mother\'s womb / Untimely ripped," meaning caesarean delivery. Technically, he was not "of woman born," so the prophecy is fulfilled in an unexpected way.',
+        },
+      ],
     },
     {
       id: 'mb-m5',
@@ -219,17 +226,19 @@ const macbethCourse: CourseData = {
       quiz: [
         {
           id: 'mb-m5-q1',
-          question: 'How does Shakespeare use the natural world to reflect moral disorder in Macbeth?',
+          question:
+            'How does Shakespeare use the natural world to reflect moral disorder in Macbeth?',
           options: [
             'The weather is always bad because Scotland has a cold climate',
             'Macbeth violates the divine order by murdering the king, triggering chaos in nature (horses eating each other, darkness at noon)',
             'The supernatural beings cause storms and darkness',
-            'Nature is unrelated to the moral themes of the play'
+            'Nature is unrelated to the moral themes of the play',
           ],
           correct: 1,
-          explanation: 'Duncan\'s murder is not just a crime — it is cosmic blasphemy that violates the divine order. This violation is reflected in chaos throughout nature: unnatural darkness, animals behaving chaotically. For a Jacobean audience, this was not mere poetic imagery but spiritual reality.'
-        }
-      ]
+          explanation:
+            "Duncan's murder is not just a crime — it is cosmic blasphemy that violates the divine order. This violation is reflected in chaos throughout nature: unnatural darkness, animals behaving chaotically. For a Jacobean audience, this was not mere poetic imagery but spiritual reality.",
+        },
+      ],
     },
     {
       id: 'mb-m6',
@@ -240,7 +249,7 @@ const macbethCourse: CourseData = {
 <h3>Imagery: Blood — Guilt, Violence, and Power</h3>
 <div class="quote-bank">
 <ul>
-<li><strong>"Will all great Neptune's ocean wash away / This blood?"</strong> (Macbeth, Act 2 Scene 2) — Hyperbole; metaphor. Even Neptune (god of the ocean) cannot wash away guilt. Grade 9: The blood becomes permanent, like the stain on Macbeth's conscience.</li>
+<li><strong>"Will all great Neptune's ocean wash this blood / Clean from my hand?"</strong> (Macbeth, Act 2 Scene 2) — Hyperbole; metaphor. Even Neptune (god of the ocean) cannot wash away guilt. Grade 9: The blood becomes permanent, like the stain on Macbeth's conscience.</li>
 <li><strong>"Blood will have blood."</strong> (Macbeth, Act 3 Scene 4) — Repetition; monosyllabic bluntness. A law of cosmic retribution. Grade 9: Connects to divine justice — the universe demands repayment for regicide.</li>
 <li><strong>"Out, damned spot! Out, I say!"</strong> (Lady Macbeth, Act 5 Scene 1) — Apostrophe; repetition. Grade 9: The woman who claimed "a little water clears us" is now unable to be cleansed. Guilt has become a physical obsession.</li>
 </ul>
@@ -270,17 +279,19 @@ const macbethCourse: CourseData = {
       quiz: [
         {
           id: 'mb-m6-q1',
-          question: 'What does blood imagery represent in Macbeth, and how does its meaning change?',
+          question:
+            'What does blood imagery represent in Macbeth, and how does its meaning change?',
           options: [
             'Blood always represents honour and courage',
             'Blood begins as warrior honour but becomes a symbol of guilt and irreversible evil',
             'Blood is only used in supernatural scenes',
-            'Blood imagery is not important to the play\'s themes'
+            "Blood imagery is not important to the play's themes",
           ],
           correct: 1,
-          explanation: 'Blood imagery is central. Early in the play, Macbeth\'s blood (from battle) is honourable. After murdering Duncan, blood becomes a symbol of guilt that cannot be washed away. "Blood will have blood" expresses cosmic retribution.'
-        }
-      ]
+          explanation:
+            'Blood imagery is central. Early in the play, Macbeth\'s blood (from battle) is honourable. After murdering Duncan, blood becomes a symbol of guilt that cannot be washed away. "Blood will have blood" expresses cosmic retribution.',
+        },
+      ],
     },
     {
       id: 'mb-m7',
@@ -310,17 +321,18 @@ const macbethCourse: CourseData = {
       quiz: [
         {
           id: 'mb-m7-q1',
-          question: 'How does Macbeth\'s character change from Act 1 to Act 5?',
+          question: "How does Macbeth's character change from Act 1 to Act 5?",
           options: [
             'He becomes more confident and happy',
             'He transforms from a conflicted warrior to a paranoid, nihilistic tyrant',
             'He becomes more noble and virtuous',
-            'His character does not change significantly'
+            'His character does not change significantly',
           ],
           correct: 1,
-          explanation: 'Macbeth begins as a celebrated general who recognises ambition as his flaw. After murdering Duncan, he becomes increasingly paranoid and amoral. By Act 5, he is nihilistic. The transformation shows how ambition and crime corrupt absolutely.'
-        }
-      ]
+          explanation:
+            'Macbeth begins as a celebrated general who recognises ambition as his flaw. After murdering Duncan, he becomes increasingly paranoid and amoral. By Act 5, he is nihilistic. The transformation shows how ambition and crime corrupt absolutely.',
+        },
+      ],
     },
     {
       id: 'mb-m8',
@@ -372,19 +384,21 @@ const macbethCourse: CourseData = {
       quiz: [
         {
           id: 'mb-m8-q1',
-          question: 'What is the key difference between a Grade 9 and a Grade 5 answer on an AQA GCSE Literature question?',
+          question:
+            'What is the key difference between a Grade 9 and a Grade 5 answer on an AQA GCSE Literature question?',
           options: [
             'Grade 9 answers are longer',
             'Grade 9 answers include sophisticated analysis linking character/theme to technique and context, explore multiple interpretations, and synthesise ideas',
             'Grade 9 answers include more quotes',
-            'Grade 9 answers use more complex vocabulary'
+            'Grade 9 answers use more complex vocabulary',
           ],
           correct: 1,
-          explanation: 'Grade 9 answers are distinguished by sophisticated interpretation, perceptive exploration of multiple meanings, strong textual support, and clear connection between technique, character, theme, and context. It\'s about depth and synthesis.'
-        }
-      ]
-    }
-  ]
-};
+          explanation:
+            "Grade 9 answers are distinguished by sophisticated interpretation, perceptive exploration of multiple meanings, strong textual support, and clear connection between technique, character, theme, and context. It's about depth and synthesis.",
+        },
+      ],
+    },
+  ],
+}
 
-export default macbethCourse;
+export default macbethCourse

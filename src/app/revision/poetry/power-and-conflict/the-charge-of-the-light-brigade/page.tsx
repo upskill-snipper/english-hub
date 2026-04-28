@@ -20,8 +20,7 @@ export const metadata: Metadata = {
       'https://theenglishhub.app/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
   },
   openGraph: {
-    title:
-      'The Charge of the Light Brigade -- Tennyson | GCSE Poetry Revision',
+    title: 'The Charge of the Light Brigade -- Tennyson | GCSE Poetry Revision',
     description:
       'Full interactive study guide for The Charge of the Light Brigade: stanza-by-stanza summary, context, key quotes, language analysis and comparison poems.',
   },
@@ -36,72 +35,168 @@ const poem: PoemData = {
   /* ── Full text: 6 stanzas ─────────────────────────────────────── */
   lines: [
     /* Stanza 1 */
-    { text: 'Half a league, half a league,', annotations: [
-      { type: 'Dactylic metre', note: 'The stressed-unstressed-unstressed rhythm imitates the galloping of horses charging forward.', color: '#a855f7' },
-      { type: 'Repetition', note: 'Triple repetition of "half a league" creates a relentless forward momentum, mirroring the unstoppable charge.', color: '#f59e0b' },
-    ] },
+    {
+      text: 'Half a league, half a league,',
+      annotations: [
+        {
+          type: 'Dactylic opening',
+          note: 'The opening line falls in dactyls (DUM-da-da, "Half a league"), but the body of the poem settles into anapaestic dimeter (da-da-DUM da-da-DUM). The galloping rhythm imitates horses charging forward.',
+          color: '#a855f7',
+        },
+        {
+          type: 'Repetition',
+          note: 'Triple repetition of "half a league" creates a relentless forward momentum, mirroring the unstoppable charge.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: 'Half a league onward,' },
-    { text: 'All in the valley of Death', annotations: [
-      { type: 'Biblical allusion', note: 'Echoes Psalm 23 ("the valley of the shadow of death"), framing the battlefield as a place of inevitable death.', color: '#3b82f6' },
-      { type: 'Personification', note: 'Death is capitalised and personified as a looming presence that the soldiers ride directly towards.', color: '#10b981' },
-    ] },
+    {
+      text: 'All in the valley of Death',
+      annotations: [
+        {
+          type: 'Biblical allusion',
+          note: 'Echoes Psalm 23 ("the valley of the shadow of death"), framing the battlefield as a place of inevitable death.',
+          color: '#3b82f6',
+        },
+        {
+          type: 'Personification',
+          note: 'Death is capitalised and personified as a looming presence that the soldiers ride directly towards.',
+          color: '#10b981',
+        },
+      ],
+    },
     { text: '\u2003\u2003Rode the six hundred.' },
     { text: '\u201CForward, the Light Brigade!' },
-    { text: 'Charge for the guns!\u201D he said.' },
-    { text: 'Into the valley of Death', annotations: [
-      { type: 'Refrain', note: 'The repetition of "the valley of Death" reinforces that every soldier knows the likely outcome, yet they press on.', color: '#f59e0b' },
-    ] },
+    { text: 'Charge for the guns!\u201D he said:' },
+    {
+      text: 'Into the valley of Death',
+      annotations: [
+        {
+          type: 'Refrain',
+          note: 'The repetition of "the valley of Death" reinforces that every soldier knows the likely outcome, yet they press on.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: '\u2003\u2003Rode the six hundred.' },
     { text: '' },
 
     /* Stanza 2 */
-    { text: '\u201CForward, the Light Brigade!\u201D', annotations: [
-      { type: 'Direct speech', note: 'The command is repeated from Stanza 1, emphasising duty and obedience as central values.', color: '#3b82f6' },
-    ] },
+    {
+      text: '\u201CForward, the Light Brigade!\u201D',
+      annotations: [
+        {
+          type: 'Direct speech',
+          note: 'The command is repeated from Stanza 1, emphasising duty and obedience as central values.',
+          color: '#3b82f6',
+        },
+      ],
+    },
     { text: 'Was there a man dismay\u2019d?' },
-    { text: 'Not tho\u2019 the soldier knew', annotations: [
-      { type: 'Rhetorical question + enjambment', note: 'The question and its answer run across lines, suggesting the soldiers\u2019 courage was instinctive and immediate.', color: '#10b981' },
-    ] },
-    { text: '\u2003\u2003Some one had blunder\u2019d.' },
-    { text: 'Theirs not to make reply,', annotations: [
-      { type: 'Anaphora', note: '"Theirs not to..." is repeated three times, hammering home the soldiers\u2019 total obedience and lack of agency.', color: '#f59e0b' },
-    ] },
+    {
+      text: 'Not tho\u2019 the soldier knew',
+      annotations: [
+        {
+          type: 'Rhetorical question + enjambment',
+          note: 'The question and its answer run across lines, suggesting the soldiers\u2019 courage was instinctive and immediate.',
+          color: '#10b981',
+        },
+      ],
+    },
+    { text: '\u2003\u2003Some one had blunder\u2019d:' },
+    {
+      text: 'Theirs not to make reply,',
+      annotations: [
+        {
+          type: 'Anaphora',
+          note: '"Theirs not to..." is repeated three times, hammering home the soldiers\u2019 total obedience and lack of agency.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: 'Theirs not to reason why,' },
-    { text: 'Theirs but to do and die.' },
+    { text: 'Theirs but to do and die:' },
     { text: 'Into the valley of Death' },
     { text: '\u2003\u2003Rode the six hundred.' },
     { text: '' },
 
     /* Stanza 3 */
-    { text: 'Cannon to right of them,', annotations: [
-      { type: 'Repetition / listing', note: 'The repeated structure "Cannon to right / left / in front" surrounds the reader just as the cannons surround the soldiers, creating a sense of entrapment.', color: '#f59e0b' },
-    ] },
+    {
+      text: 'Cannon to right of them,',
+      annotations: [
+        {
+          type: 'Repetition / listing',
+          note: 'The repeated structure "Cannon to right / left / in front" surrounds the reader just as the cannons surround the soldiers, creating a sense of entrapment.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: 'Cannon to left of them,' },
     { text: 'Cannon in front of them' },
-    { text: '\u2003\u2003Volley\u2019d and thunder\u2019d;', annotations: [
-      { type: 'Onomatopoeia', note: '"Volley\u2019d and thunder\u2019d" recreates the deafening sounds of gunfire and cannon blasts, immersing the reader in the chaos of battle.', color: '#10b981' },
-    ] },
-    { text: 'Storm\u2019d at with shot and shell,', annotations: [
-      { type: 'Metonymy / metaphor', note: '"Storm\u2019d" compares the barrage to a natural storm, implying the attack was overwhelming and beyond human control.', color: '#10b981' },
-    ] },
+    {
+      text: '\u2003\u2003Volley\u2019d and thunder\u2019d;',
+      annotations: [
+        {
+          type: 'Onomatopoeia',
+          note: '"Volley\u2019d and thunder\u2019d" recreates the deafening sounds of gunfire and cannon blasts, immersing the reader in the chaos of battle.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Storm\u2019d at with shot and shell,',
+      annotations: [
+        {
+          type: 'Metonymy / metaphor',
+          note: '"Storm\u2019d" compares the barrage to a natural storm, implying the attack was overwhelming and beyond human control.',
+          color: '#10b981',
+        },
+      ],
+    },
     { text: 'Boldly they rode and well,' },
-    { text: 'Into the jaws of Death,', annotations: [
-      { type: 'Personification', note: 'Death is given "jaws" like a predatory beast, suggesting the soldiers are being consumed by the battle.', color: '#10b981' },
-      { type: 'Metonymy', note: '"Jaws of Death" and "mouth of Hell" use body parts to represent abstract concepts of mortality and suffering.', color: '#ef4444' },
-    ] },
+    {
+      text: 'Into the jaws of Death,',
+      annotations: [
+        {
+          type: 'Personification',
+          note: 'Death is given "jaws" like a predatory beast, suggesting the soldiers are being consumed by the battle.',
+          color: '#10b981',
+        },
+        {
+          type: 'Metonymy',
+          note: '"Jaws of Death" and "mouth of Hell" use body parts to represent abstract concepts of mortality and suffering.',
+          color: '#ef4444',
+        },
+      ],
+    },
     { text: 'Into the mouth of Hell' },
     { text: '\u2003\u2003Rode the six hundred.' },
     { text: '' },
 
     /* Stanza 4 */
-    { text: 'Flash\u2019d all their sabres bare,', annotations: [
-      { type: 'Imagery', note: 'The visual flash of drawn swords conveys both the bravery and the futility of cavalry with swords against cannon.', color: '#3b82f6' },
-    ] },
+    {
+      text: 'Flash\u2019d all their sabres bare,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The visual flash of drawn swords conveys both the bravery and the futility of cavalry with swords against cannon.',
+          color: '#3b82f6',
+        },
+      ],
+    },
     { text: 'Flash\u2019d as they turn\u2019d in air' },
     { text: 'Sabring the gunners there,' },
-    { text: 'Charging an army, while', annotations: [
-      { type: 'Enjambment', note: 'The line runs on, reflecting the continuous, unrelenting momentum of the charge.', color: '#a855f7' },
-    ] },
+    {
+      text: 'Charging an army, while',
+      annotations: [
+        {
+          type: 'Enjambment',
+          note: 'The line runs on, reflecting the continuous, unrelenting momentum of the charge.',
+          color: '#a855f7',
+        },
+      ],
+    },
     { text: '\u2003\u2003All the world wonder\u2019d.' },
     { text: 'Plunged in the battery-smoke' },
     { text: 'Right thro\u2019 the line they broke;' },
@@ -109,41 +204,83 @@ const poem: PoemData = {
     { text: 'Reel\u2019d from the sabre-stroke' },
     { text: 'Shatter\u2019d and sunder\u2019d.' },
     { text: 'Then they rode back, but not' },
-    { text: '\u2003\u2003Not the six hundred.', annotations: [
-      { type: 'Structural shift', note: 'The refrain changes from "Rode the six hundred" to "Not the six hundred," marking the devastating losses. The repetition of "not" underscores the tragedy.', color: '#a855f7' },
-    ] },
+    {
+      text: '\u2003\u2003Not the six hundred.',
+      annotations: [
+        {
+          type: 'Structural shift',
+          note: 'The refrain changes from "Rode the six hundred" to "Not the six hundred," marking the devastating losses. The repetition of "not" underscores the tragedy.',
+          color: '#a855f7',
+        },
+      ],
+    },
     { text: '' },
 
     /* Stanza 5 */
-    { text: 'Cannon to right of them,', annotations: [
-      { type: 'Mirrored structure', note: 'Stanza 5 mirrors Stanza 3, but now the soldiers are retreating. The repeated cannon lines show the danger has not diminished.', color: '#a855f7' },
-    ] },
+    {
+      text: 'Cannon to right of them,',
+      annotations: [
+        {
+          type: 'Mirrored structure',
+          note: 'Stanza 5 mirrors Stanza 3, but now the soldiers are retreating. The repeated cannon lines show the danger has not diminished.',
+          color: '#a855f7',
+        },
+      ],
+    },
     { text: 'Cannon to left of them,' },
-    { text: 'Cannon behind them', annotations: [
-      { type: 'Shift in preposition', note: '"Behind" replaces "in front," confirming the soldiers have turned back and are now fleeing through the same deadly corridor.', color: '#f59e0b' },
-    ] },
+    {
+      text: 'Cannon behind them',
+      annotations: [
+        {
+          type: 'Shift in preposition',
+          note: '"Behind" replaces "in front," confirming the soldiers have turned back and are now fleeing through the same deadly corridor.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: '\u2003\u2003Volley\u2019d and thunder\u2019d;' },
     { text: 'Storm\u2019d at with shot and shell,' },
     { text: 'While horse and hero fell.' },
     { text: 'They that had fought so well' },
-    { text: 'Came thro\u2019 the jaws of Death,', annotations: [
-      { type: 'Personification', note: '"Came thro\u2019" suggests the survivors have passed through death itself and emerged, battered, on the other side.', color: '#10b981' },
-    ] },
+    {
+      text: 'Came thro\u2019 the jaws of Death,',
+      annotations: [
+        {
+          type: 'Personification',
+          note: '"Came thro\u2019" suggests the survivors have passed through death itself and emerged, battered, on the other side.',
+          color: '#10b981',
+        },
+      ],
+    },
     { text: 'Back from the mouth of Hell,' },
     { text: 'All that was left of them,' },
     { text: '\u2003\u2003Left of six hundred.' },
     { text: '' },
 
     /* Stanza 6 */
-    { text: 'When can their glory fade?', annotations: [
-      { type: 'Rhetorical question', note: 'Tennyson directly addresses the reader, demanding that the soldiers be remembered. The implied answer is "never."', color: '#10b981' },
-    ] },
+    {
+      text: 'When can their glory fade?',
+      annotations: [
+        {
+          type: 'Rhetorical question',
+          note: 'Tennyson directly addresses the reader, demanding that the soldiers be remembered. The implied answer is "never."',
+          color: '#10b981',
+        },
+      ],
+    },
     { text: 'O the wild charge they made!' },
     { text: '\u2003\u2003All the world wonder\u2019d.' },
     { text: 'Honour the charge they made!' },
-    { text: 'Honour the Light Brigade,', annotations: [
-      { type: 'Imperative / anaphora', note: 'The repeated imperative "Honour" is a direct command to the reader, transforming the poem into a public memorial.', color: '#f59e0b' },
-    ] },
+    {
+      text: 'Honour the Light Brigade,',
+      annotations: [
+        {
+          type: 'Imperative / anaphora',
+          note: 'The repeated imperative "Honour" is a direct command to the reader, transforming the poem into a public memorial.',
+          color: '#f59e0b',
+        },
+      ],
+    },
     { text: '\u2003\u2003Noble six hundred!' },
   ],
 
@@ -168,7 +305,7 @@ STANZA 5: The survivors retreat through the same deadly corridor of cannon fire.
 STANZA 6: Tennyson shifts from narrative to direct address. He commands the reader to "Honour the charge they made" and remember the "Noble six hundred." The poem ends as a public memorial and a call to never forget their sacrifice.`,
 
   /* ── Form & Structure ────────────────────────────────────────── */
-  formAndStructure: `METRE: The poem uses a dactylic dimeter/trimeter rhythm (one stressed syllable followed by two unstressed: DUM-da-da). This galloping metre mimics the sound of horses\u2019 hooves, pulling the reader forward at the pace of the charge itself.
+  formAndStructure: `METRE: The poem is predominantly written in anapaestic dimeter (two unstressed syllables followed by a stressed: da-da-DUM da-da-DUM), with the recurring refrain "Rode the six hundred" falling in dactyls (DUM-da-da). This galloping metre mimics the sound of horses\u2019 hooves, pulling the reader forward at the pace of the charge itself. The lines are largely end-stopped, reinforcing the drumbeat regularity.
 
 STANZA LENGTH: The six stanzas vary in length (8, 9, 9, 12, 11, 6 lines), reflecting the arc of the charge. The longest stanza (4) is the climax of battle; the shortest (6) is the memorial conclusion, mirroring how fewer soldiers remain.
 
@@ -187,7 +324,7 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
     {
       quote: 'Half a league, half a league, / Half a league onward',
       analysis:
-        'The dactylic repetition creates a galloping rhythm that propels the reader forward. "League" is an archaic unit of distance, lending the poem a timeless, epic quality. The triple repetition suggests the charge is unstoppable and inevitable.',
+        'The opening falls in dactyls (DUM-da-da), but the body of the poem settles into anapaestic dimeter — together they create the galloping rhythm that propels the reader forward. "League" is an archaic unit of distance, lending the poem a timeless, epic quality. The triple repetition suggests the charge is unstoppable and inevitable.',
       themes: ['Power of war', 'Duty'],
     },
     {
@@ -293,7 +430,8 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
     },
     {
       device: 'Diminishing refrain',
-      example: 'Rode the six hundred \u2192 Not the six hundred \u2192 Left of six hundred \u2192 Noble six hundred',
+      example:
+        'Rode the six hundred \u2192 Not the six hundred \u2192 Left of six hundred \u2192 Noble six hundred',
       effect:
         'The evolving refrain tracks the arc of the poem: from the full brigade charging, to the devastating losses, to the few survivors, to the final elevation of their sacrifice. The structural change within the refrain itself tells the story of the battle.',
       lineRef: 7,
@@ -308,9 +446,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'clb-1',
     question: 'What event does The Charge of the Light Brigade describe?',
     type: 'multiple-choice',
-    options: ['A naval battle in World War I', 'A disastrous cavalry charge during the Battle of Balaclava in the Crimean War', 'A victorious infantry advance at Waterloo', 'A retreat from the French Revolution'],
+    options: [
+      'A naval battle in World War I',
+      'A disastrous cavalry charge during the Battle of Balaclava in the Crimean War',
+      'A victorious infantry advance at Waterloo',
+      'A retreat from the French Revolution',
+    ],
     correctIndex: 1,
-    explanation: 'The poem describes the charge of British cavalry against Russian forces at the Battle of Balaclava (1854) during the Crimean War. A miscommunicated order sent 600 soldiers into a valley surrounded by enemy cannons.',
+    explanation:
+      'The poem describes the charge of British cavalry against Russian forces at the Battle of Balaclava (1854) during the Crimean War. A miscommunicated order sent 600 soldiers into a valley surrounded by enemy cannons.',
     topic: 'Context',
     difficulty: 'foundation',
   },
@@ -318,9 +462,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'clb-2',
     question: 'What does "Theirs not to reason why, / Theirs but to do and die" mean?',
     type: 'multiple-choice',
-    options: ['The soldiers chose to die willingly', 'The soldiers\' duty was to obey orders without question, even unto death', 'The soldiers did not understand the war', 'The soldiers were cowards'],
+    options: [
+      'The soldiers chose to die willingly',
+      "The soldiers' duty was to obey orders without question, even unto death",
+      'The soldiers did not understand the war',
+      'The soldiers were cowards',
+    ],
     correctIndex: 1,
-    explanation: 'These lines emphasise the soldiers\' total obedience and lack of agency. They had no right to question their commanders, even when they knew "Some one had blunder\'d" and the order was a mistake.',
+    explanation:
+      'These lines emphasise the soldiers\' total obedience and lack of agency. They had no right to question their commanders, even when they knew "Some one had blunder\'d" and the order was a mistake.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -328,9 +478,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'clb-3',
     question: 'What is the effect of the refrain "Rode the six hundred"?',
     type: 'multiple-choice',
-    options: ['It celebrates the size of the army', 'It creates a solemn, memorial rhythm that honours the soldiers collectively', 'It shows the soldiers were disorganised', 'It is used for comic effect'],
+    options: [
+      'It celebrates the size of the army',
+      'It creates a solemn, memorial rhythm that honours the soldiers collectively',
+      'It shows the soldiers were disorganised',
+      'It is used for comic effect',
+    ],
     correctIndex: 1,
-    explanation: 'The repeated refrain gives the poem a memorial, hymn-like quality. The number changes from "six hundred" to "not the six hundred" after the charge, grimly marking the losses.',
+    explanation:
+      'The repeated refrain gives the poem a memorial, hymn-like quality. The number changes from "six hundred" to "not the six hundred" after the charge, grimly marking the losses.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -338,9 +494,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'clb-4',
     question: 'What does "Into the jaws of Death, / Into the mouth of Hell" personify?',
     type: 'multiple-choice',
-    options: ['The enemy soldiers', 'Death and Hell as predatory beasts consuming the cavalry', 'The horses the soldiers rode', 'The guns firing at them'],
+    options: [
+      'The enemy soldiers',
+      'Death and Hell as predatory beasts consuming the cavalry',
+      'The horses the soldiers rode',
+      'The guns firing at them',
+    ],
     correctIndex: 1,
-    explanation: 'Death is given "jaws" and Hell a "mouth", personifying them as predatory creatures consuming the soldiers. This creates a vivid, terrifying image of the battlefield as a place of certain destruction.',
+    explanation:
+      'Death is given "jaws" and Hell a "mouth", personifying them as predatory creatures consuming the soldiers. This creates a vivid, terrifying image of the battlefield as a place of certain destruction.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -348,9 +510,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'clb-5',
     question: 'What metre does Tennyson use, and what effect does it create?',
     type: 'multiple-choice',
-    options: ['Iambic pentameter — creating a formal tone', 'Dactylic metre — imitating the galloping rhythm of horses', 'Trochaic metre — creating a marching rhythm', 'Free verse — creating an irregular, chaotic effect'],
+    options: [
+      'Iambic pentameter — creating a formal tone',
+      'Predominantly anapaestic dimeter with a dactylic refrain — imitating the galloping rhythm of horses',
+      'Trochaic metre — creating a marching rhythm',
+      'Free verse — creating an irregular, chaotic effect',
+    ],
     correctIndex: 1,
-    explanation: 'The stressed-unstressed-unstressed dactylic rhythm ("Half a league, half a league") imitates the galloping of cavalry horses, creating relentless forward momentum that mirrors the unstoppable charge.',
+    explanation:
+      'The body of the poem is largely anapaestic dimeter (da-da-DUM da-da-DUM), while the refrain "Rode the six hundred" falls in dactyls (DUM-da-da). Together they imitate the galloping of cavalry horses, creating relentless forward momentum that mirrors the unstoppable charge.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -358,9 +526,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'clb-6',
     question: 'What is the significance of "Some one had blunder\'d"?',
     type: 'multiple-choice',
-    options: ['It criticises the soldiers for being clumsy', 'It acknowledges a catastrophic military error by those in command while praising the soldiers who obeyed despite it', 'It describes the enemy\'s mistake', 'It shows the soldiers were confused about directions'],
+    options: [
+      'It criticises the soldiers for being clumsy',
+      'It acknowledges a catastrophic military error by those in command while praising the soldiers who obeyed despite it',
+      "It describes the enemy's mistake",
+      'It shows the soldiers were confused about directions',
+    ],
     correctIndex: 1,
-    explanation: 'Tennyson briefly acknowledges the disastrous command error that sent the cavalry to their deaths, but the poem\'s focus is on honouring the soldiers\' bravery rather than dwelling on the officers\' incompetence.',
+    explanation:
+      "Tennyson briefly acknowledges the disastrous command error that sent the cavalry to their deaths, but the poem's focus is on honouring the soldiers' bravery rather than dwelling on the officers' incompetence.",
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -368,9 +542,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'clb-7',
     question: 'How does stanza 4 differ from the other stanzas?',
     type: 'multiple-choice',
-    options: ['It is written in a different language', 'It briefly shows the soldiers fighting back successfully before the retreat begins', 'It is the shortest stanza', 'It introduces a new character'],
+    options: [
+      'It is written in a different language',
+      'It briefly shows the soldiers fighting back successfully before the retreat begins',
+      'It is the shortest stanza',
+      'It introduces a new character',
+    ],
     correctIndex: 1,
-    explanation: 'Stanza 4 is the only moment where the soldiers are shown striking back — "Flash\'d all their sabres bare" — briefly achieving heroic success before the devastating retreat in stanza 5.',
+    explanation:
+      'Stanza 4 is the only moment where the soldiers are shown striking back — "Flash\'d all their sabres bare" — briefly achieving heroic success before the devastating retreat in stanza 5.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -378,9 +558,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'clb-8',
     question: 'When was the poem written, and why?',
     type: 'multiple-choice',
-    options: ['Years after the battle as a historical study', 'Within weeks of the charge (1854), after Tennyson read a newspaper report as Poet Laureate', 'Before the battle as a warning', 'During the battle as an eyewitness account'],
+    options: [
+      'Years after the battle as a historical study',
+      'Within weeks of the charge (1854), after Tennyson read a newspaper report as Poet Laureate',
+      'Before the battle as a warning',
+      'During the battle as an eyewitness account',
+    ],
     correctIndex: 1,
-    explanation: 'Tennyson wrote the poem in December 1854, just weeks after the charge on 25 October 1854. As Poet Laureate, he responded to a Times newspaper report. He intended it as a tribute to the soldiers\' bravery.',
+    explanation:
+      "Tennyson wrote the poem in December 1854, just weeks after the charge on 25 October 1854. As Poet Laureate, he responded to a Times newspaper report. He intended it as a tribute to the soldiers' bravery.",
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -388,19 +574,32 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'clb-9',
     question: 'How does the final stanza function differently from the rest of the poem?',
     type: 'multiple-choice',
-    options: ['It returns to describing the battle', 'It shifts from narrative to direct address, commanding the reader to "Honour" the soldiers and remember their sacrifice', 'It reveals the identity of who blundered', 'It describes the soldiers\' funerals'],
+    options: [
+      'It returns to describing the battle',
+      'It shifts from narrative to direct address, commanding the reader to "Honour" the soldiers and remember their sacrifice',
+      'It reveals the identity of who blundered',
+      "It describes the soldiers' funerals",
+    ],
     correctIndex: 1,
-    explanation: 'The final stanza breaks from the narrative to address the reader directly: "Honour the charge they made! / Honour the Light Brigade." It transforms the poem from story into memorial, demanding remembrance.',
+    explanation:
+      'The final stanza breaks from the narrative to address the reader directly: "Honour the charge they made! / Honour the Light Brigade." It transforms the poem from story into memorial, demanding remembrance.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
   {
     id: 'clb-10',
-    question: 'Which poem from the Power and Conflict anthology provides the strongest contrast in its presentation of soldiers?',
+    question:
+      'Which poem from the Power and Conflict anthology provides the strongest contrast in its presentation of soldiers?',
     type: 'multiple-choice',
-    options: ['Ozymandias by Shelley', 'Exposure by Wilfred Owen', 'Tissue by Imtiaz Dharker', 'The Emigrée by Carol Rumens'],
+    options: [
+      'Ozymandias by Shelley',
+      'Exposure by Wilfred Owen',
+      'Tissue by Imtiaz Dharker',
+      'The Émigrée by Carol Rumens',
+    ],
     correctIndex: 1,
-    explanation: 'Tennyson glorifies soldiers\' bravery and noble sacrifice, while Owen\'s Exposure strips war of all heroism, showing only futile suffering. They offer opposing perspectives on the soldier\'s experience.',
+    explanation:
+      "Tennyson glorifies soldiers' bravery and noble sacrifice, while Owen's Exposure strips war of all heroism, showing only futile suffering. They offer opposing perspectives on the soldier's experience.",
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -409,7 +608,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
-    summary: 'The poem celebrates the bravery and obedience of soldiers who charged into certain death, while subtly acknowledging the catastrophic error that sent them there.',
+    summary:
+      'The poem celebrates the bravery and obedience of soldiers who charged into certain death, while subtly acknowledging the catastrophic error that sent them there.',
     keyPoints: [
       'Duty and obedience — "Theirs not to reason why" — soldiers follow orders without question',
       'Honour and bravery — the soldiers are heroic despite the futility of the charge',
@@ -419,7 +619,8 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Language & Imagery',
-    summary: 'Tennyson uses personification, repetition, onomatopoeia, and biblical allusion to create a vivid, emotionally charged tribute to the fallen cavalry.',
+    summary:
+      'Tennyson uses personification, repetition, onomatopoeia, and biblical allusion to create a vivid, emotionally charged tribute to the fallen cavalry.',
     keyPoints: [
       '"Valley of Death" — biblical allusion (Psalm 23) framing the battlefield as a place of inevitable death',
       '"Jaws of Death" / "mouth of Hell" — personification of death as a predatory beast',
@@ -429,9 +630,11 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Structure & Form',
-    summary: 'Six stanzas of varying length with dactylic metre, creating a galloping rhythm that drives the poem forward like the charge itself.',
+    summary:
+      'Six stanzas of varying length, predominantly in anapaestic dimeter with a dactylic refrain. Largely end-stopped lines create a galloping, drumbeat rhythm that drives the poem forward like the charge itself.',
     keyPoints: [
-      'Dactylic metre — imitates galloping horses, creating relentless momentum',
+      'Anapaestic dimeter (mostly), with the refrain "Rode the six hundred" falling in dactyls — together they imitate galloping horses',
+      'End-stopped lines reinforce the drumbeat regularity of the charge',
       'Refrain "Rode the six hundred" — changes to "Not the six hundred" to mark losses',
       'Six stanzas mirror the charge: advance (1-3), brief success (4), retreat (5), memorial (6)',
       'Final stanza shifts from narrative to imperative — commanding the reader to remember',
@@ -504,29 +707,37 @@ export default function ChargeOfTheLightBrigadePage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Power and Conflict", url: "https://theenglishhub.app/revision/poetry/power-and-conflict" },
-          { name: "The Charge of the Light Brigade", url: "https://theenglishhub.app/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Power and Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
+          },
+          {
+            name: 'The Charge of the Light Brigade',
+            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
+          },
         ]}
       />
       {/* ── Back link ───────────────────────────────────────────── */}
       <div>
-        <Button variant="ghost" size="sm" render={<Link href="/revision/poetry/power-and-conflict" />}>
+        <Button
+          variant="ghost"
+          size="sm"
+          render={<Link href="/revision/poetry/power-and-conflict" />}
+        >
           &larr; Power &amp; Conflict Anthology
         </Button>
       </div>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
       <header className="space-y-2">
-        <h1 className="text-heading-lg text-foreground">
-          The Charge of the Light Brigade
-        </h1>
-        <p className="text-lg text-muted-foreground">
-          Alfred Lord Tennyson (1854)
-        </p>
-        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
+        <h1 className="text-heading-lg text-foreground">The Charge of the Light Brigade</h1>
+        <p className="text-lg text-muted-foreground">Alfred Lord Tennyson (1854)</p>
+        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+          AQA
+        </Badge>
       </header>
 
       {/* ── Theme tokens ────────────────────────────────────────── */}
@@ -561,27 +772,17 @@ export default function ChargeOfTheLightBrigadePage() {
 
       {/* ── Comparison poems ────────────────────────────────────── */}
       <section className="space-y-6">
-        <h2 className="text-heading-md text-foreground">
-          Compare with other poems
-        </h2>
+        <h2 className="text-heading-md text-foreground">Compare with other poems</h2>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisons.map((c) => (
-            <div
-              key={c.poem}
-              className="flex flex-col rounded-xl border border-border bg-card p-5"
-            >
-              <h3 className="text-sm font-semibold text-foreground">
-                {c.poem}
-              </h3>
+            <div key={c.poem} className="flex flex-col rounded-xl border border-border bg-card p-5">
+              <h3 className="text-sm font-semibold text-foreground">{c.poem}</h3>
               <p className="mb-3 text-xs text-muted-foreground">{c.poet}</p>
 
               <ul className="mb-4 flex-1 space-y-2">
                 {c.points.map((p, i) => (
-                  <li
-                    key={i}
-                    className="text-sm leading-relaxed text-card-foreground"
-                  >
+                  <li key={i} className="text-sm leading-relaxed text-card-foreground">
                     <span className="mr-1.5 text-primary">&bull;</span>
                     {p}
                   </li>
@@ -603,20 +804,16 @@ export default function ChargeOfTheLightBrigadePage() {
 
       {/* ── CTA ─────────────────────────────────────────────────── */}
       <section className="rounded-xl border border-border bg-card p-6 text-center">
-        <h2 className="text-heading-md text-foreground mb-2">
-          Test your knowledge
-        </h2>
+        <h2 className="text-heading-md text-foreground mb-2">Test your knowledge</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Put what you&apos;ve learned into practice with our Power &amp;
-          Conflict poetry quiz.
+          Put what you&apos;ve learned into practice with our Power &amp; Conflict poetry quiz.
         </p>
-        <Button render={<Link href="/revision/quiz" />}>
-          Start quiz
-        </Button>
+        <Button render={<Link href="/revision/quiz" />}>Start quiz</Button>
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Public domain &mdash; quotations from The Charge of the Light Brigade by Alfred Lord Tennyson reproduced freely.
+        The Charge of the Light Brigade by Alfred Lord Tennyson (1854) is in the public domain.
+        Source: Project Gutenberg / Wikisource &mdash; verified against the Verified Library.
       </p>
     </div>
   )

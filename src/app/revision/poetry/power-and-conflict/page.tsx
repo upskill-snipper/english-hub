@@ -16,6 +16,7 @@ import {
   Users,
   Shield,
   Fingerprint,
+  Info,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -154,7 +155,7 @@ const THEME_GROUPS: ThemeGroup[] = [
         title: 'Bayonet Charge',
         poet: 'Ted Hughes',
         slug: 'bayonet-charge',
-        hook: 'A soldier charges across no-man\'s-land in raw, terrifying detail.',
+        hook: "A soldier charges across no-man's-land in raw, terrifying detail.",
         themes: ['Conflict', 'Fear', 'Reality'],
       },
     ],
@@ -202,7 +203,7 @@ const THEME_GROUPS: ThemeGroup[] = [
     bgColour: 'bg-cyan-500/10',
     poems: [
       {
-        title: 'The Emigr\u00e9e',
+        title: 'The \u00c9migr\u00e9e',
         poet: 'Carol Rumens',
         slug: 'the-emigree',
         hook: 'A woman clings to a sunlit memory of the homeland she can never return to.',
@@ -277,17 +278,15 @@ export default function PowerAndConflictPage() {
               <Sparkles className="mr-1 size-3" />
               AQA GCSE English Literature
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              AQA Only
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">AQA Only</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Power &amp; Conflict Poetry
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Master all 15 poems in the AQA Power and Conflict anthology. Each study
-            page includes annotations, key quotes, context, and comparison notes to
-            help you write top-grade essays.
+            Master all 15 poems in the AQA Power and Conflict anthology. Each study page includes
+            annotations, key quotes, context, and comparison notes to help you write top-grade
+            essays.
           </p>
 
           {/* Progress bar */}
@@ -307,24 +306,49 @@ export default function PowerAndConflictPage() {
         </div>
       </section>
 
-      <StudyTools textName="Power & Conflict Anthology" textType="anthology" examBoard="AQA" variant="banner" />
+      <StudyTools
+        textName="Power & Conflict Anthology"
+        textType="anthology"
+        examBoard="AQA"
+        variant="banner"
+      />
+
+      {/* ── Cluster-level rights notice ─────────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
+        <div className="flex items-start gap-3">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/10">
+            <Info className="size-4 text-amber-700" aria-hidden="true" />
+          </div>
+          <div>
+            <h2 className="text-sm font-semibold text-foreground">Rights notice</h2>
+            <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
+              Eight of these fifteen poems remain in copyright &mdash; Heaney&rsquo;s{' '}
+              <em>Storm on the Island</em>, Hughes&rsquo;s <em>Bayonet Charge</em> and
+              Armitage&rsquo;s <em>Remains</em> (&copy; Faber &amp; Faber), Duffy&rsquo;s{' '}
+              <em>War Photographer</em> (&copy; Picador / Pan Macmillan and Rogers Coleridge &amp;
+              White), Weir&rsquo;s <em>Poppies</em> (&copy; Templar Poetry), Garland&rsquo;s{' '}
+              <em>Kamikaze</em> (&copy; Enitharmon Press), Dharker&rsquo;s <em>Tissue</em> and
+              Rumens&rsquo;s <em>The Émigrée</em> (&copy; Bloodaxe Books), and Agard&rsquo;s{' '}
+              <em>Checking Out Me History</em> (&copy; Hodder). Quotations on individual set-text
+              pages are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
+              quotation). For full text, students should consult the board-licensed AQA Anthology of
+              Poetry (school edition).
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── Poem groups ─────────────────────────────────────────────── */}
       {THEME_GROUPS.map((group) => (
         <section key={group.label}>
           <div className="mb-5 flex items-center gap-3">
-            <div
-              className={`flex size-8 items-center justify-center rounded-lg ${group.bgColour}`}
-            >
+            <div className={`flex size-8 items-center justify-center rounded-lg ${group.bgColour}`}>
               <group.icon className={`size-4 ${group.colour}`} />
             </div>
-            <h2 className="text-heading-lg font-heading text-foreground">
-              {group.label}
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">{group.label}</h2>
             {mounted && (
               <Badge variant="outline" className="ml-auto text-xs">
-                {group.poems.filter((p) => studied.has(p.slug)).length}/
-                {group.poems.length} studied
+                {group.poems.filter((p) => studied.has(p.slug)).length}/{group.poems.length} studied
               </Badge>
             )}
           </div>
@@ -352,9 +376,7 @@ export default function PowerAndConflictPage() {
                   <h3 className="pr-8 text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
                     {poem.title}
                   </h3>
-                  <p className="mt-0.5 text-caption text-muted-foreground">
-                    {poem.poet}
-                  </p>
+                  <p className="mt-0.5 text-caption text-muted-foreground">{poem.poet}</p>
 
                   <p className="mt-3 flex-1 text-body-sm text-muted-foreground leading-relaxed">
                     {poem.hook}
@@ -398,14 +420,11 @@ export default function PowerAndConflictPage() {
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
-            <h3 className="mb-2 text-sm font-semibold text-foreground">
-              Pick strong pairings
-            </h3>
+            <h3 className="mb-2 text-sm font-semibold text-foreground">Pick strong pairings</h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              The exam asks you to compare two poems. Choose poems that share a
-              theme but differ in perspective -- for example, compare Exposure
-              (soldier&apos;s suffering) with The Charge of the Light Brigade
-              (glorification of duty).
+              The exam asks you to compare two poems. Choose poems that share a theme but differ in
+              perspective -- for example, compare Exposure (soldier&apos;s suffering) with The
+              Charge of the Light Brigade (glorification of duty).
             </p>
           </div>
 
@@ -414,10 +433,9 @@ export default function PowerAndConflictPage() {
               Use the themes, not just the topic
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Markers reward thematic analysis. Instead of writing &quot;both
-              poems are about war&quot;, explore how each poet presents the
-              effects of conflict differently -- one through guilt, the other
-              through loss.
+              Markers reward thematic analysis. Instead of writing &quot;both poems are about
+              war&quot;, explore how each poet presents the effects of conflict differently -- one
+              through guilt, the other through loss.
             </p>
           </div>
 
@@ -426,9 +444,9 @@ export default function PowerAndConflictPage() {
               Compare methods, not just content
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Top-band responses compare how poets use language, structure, and
-              form. Notice how Owen uses half-rhyme to create unease, while
-              Tennyson uses repetition to build momentum.
+              Top-band responses compare how poets use language, structure, and form. Notice how
+              Owen uses half-rhyme to create unease, while Tennyson uses repetition to build
+              momentum.
             </p>
           </div>
 
@@ -437,9 +455,9 @@ export default function PowerAndConflictPage() {
               Learn 2--3 key quotes per poem
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              You don&apos;t need to memorise entire poems. Focus on short,
-              technique-rich quotes you can analyse in depth. Each poem study page
-              highlights the most important quotations.
+              You don&apos;t need to memorise entire poems. Focus on short, technique-rich quotes
+              you can analyse in depth. Each poem study page highlights the most important
+              quotations.
             </p>
           </div>
         </div>
@@ -452,8 +470,8 @@ export default function PowerAndConflictPage() {
           Ready to explore more poetry?
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Head back to the Poetry hub to explore Love and Relationships, the
-          Edexcel anthology, and unseen poetry techniques.
+          Head back to the Poetry hub to explore Love and Relationships, the Edexcel anthology, and
+          unseen poetry techniques.
         </p>
         <Button
           variant="default"
