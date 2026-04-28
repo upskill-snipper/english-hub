@@ -818,12 +818,16 @@ const edexcelRelationshipsLesson3: PoetryLesson = {
     "Full timed 32-mark essay exploring how form and communication style shape each poet's portrayal of love.",
 }
 
+// NOTE: Porphyria's Lover is in the AQA Love & Relationships cluster (NOT Edexcel
+// 1ET0); First Love (Clare) is an Eduqas anthology poem. Retagged as a cross-board
+// general comparison lesson so students using this lesson are not misled into
+// thinking either poem is on the Edexcel UK GCSE 1ET0 anthology spec.
 const edexcelRelationshipsLesson4: PoetryLesson = {
   id: 'edex-rel-04',
-  title: "Porphyria's Lover vs First Love: Possession vs Loss",
+  title: "Porphyria's Lover vs First Love: Possession vs Loss (cross-board comparison)",
   poems: ["Porphyria's Lover by Robert Browning", 'First Love by John Clare'],
-  anthology: 'Relationships',
-  examBoard: 'Edexcel',
+  anthology: 'Relationships (cross-board comparison practice)',
+  examBoard: 'General (cross-board)',
   yearGroup: '10-11',
   duration: '1.5 hours',
   learningObjectives: [
@@ -913,12 +917,17 @@ const edexcelRelationshipsLesson4: PoetryLesson = {
     'Full timed 32-mark essay evaluating moral implications alongside literary analysis.',
 }
 
+// NOTE: 'She Walks in Beauty' (Byron) IS in the canonical Edexcel UK GCSE 1ET0
+// Relationships cluster, but 'Modern Love (Sonnet 16)' (Meredith) is NOT — pairing
+// is therefore not an exam-aligned comparison. Retagged as a cross-board general
+// comparison lesson for general teaching use.
 const edexcelRelationshipsLesson5: PoetryLesson = {
   id: 'edex-rel-05',
-  title: 'She Walks in Beauty vs Modern Love: Beauty, Desire & Contemporary Relationships',
+  title:
+    'She Walks in Beauty vs Modern Love: Beauty, Desire & Contemporary Relationships (cross-board comparison)',
   poems: ['She Walks in Beauty by Lord Byron', 'Modern Love (Sonnet 16) by George Meredith'],
-  anthology: 'Relationships',
-  examBoard: 'Edexcel',
+  anthology: 'Relationships (cross-board comparison practice)',
+  examBoard: 'General (cross-board)',
   yearGroup: '10-11',
   duration: '1.5 hours',
   learningObjectives: [
@@ -1039,13 +1048,18 @@ const edexcelRelationshipsLesson5: PoetryLesson = {
 
 const edexcelRelationshipsLesson6: PoetryLesson = {
   id: 'edex-rel-06',
-  title: 'Hasty Resolution vs Upon Westminster Bridge: Love Found vs Love Observed',
+  // NOTE: Neither 'Hasty Resolution' (Donne — not a recognised Donne poem under
+  // this title) nor 'Composed upon Westminster Bridge' (Wordsworth) is in the
+  // Edexcel UK GCSE 1ET0 Relationships cluster. Retagged as a cross-board general
+  // comparison lesson.
+  title:
+    'Hasty Resolution vs Upon Westminster Bridge: Love Found vs Love Observed (cross-board comparison)',
   poems: [
     'Hasty Resolution by John Donne',
     'Composed upon Westminster Bridge by William Wordsworth',
   ],
-  anthology: 'Relationships',
-  examBoard: 'Edexcel',
+  anthology: 'Relationships (cross-board comparison practice)',
+  examBoard: 'General (cross-board)',
   yearGroup: '10-11',
   duration: '1.5 hours',
   learningObjectives: [
@@ -1137,13 +1151,17 @@ const edexcelRelationshipsLesson6: PoetryLesson = {
 
 const edexcelRelationshipsLesson7: PoetryLesson = {
   id: 'edex-rel-07',
-  title: 'A Woman to Her Lover vs Ballad of the White Horse: Female Agency & Traditional Love',
+  // NOTE: 'A Woman to Her Lover' (Walsh) and 'Ballad of the White Horse' (Chesterton)
+  // are NOT in the canonical Edexcel UK GCSE 1ET0 Relationships cluster. Retagged
+  // as a cross-board general comparison lesson.
+  title:
+    'A Woman to Her Lover vs Ballad of the White Horse: Female Agency & Traditional Love (cross-board comparison)',
   poems: [
     'A Woman to Her Lover by Christina Walsh',
     'Ballad of the White Horse (excerpt) by G.K. Chesterton',
   ],
-  anthology: 'Relationships',
-  examBoard: 'Edexcel',
+  anthology: 'Relationships (cross-board comparison practice)',
+  examBoard: 'General (cross-board)',
   yearGroup: '10-11',
   duration: '1.5 hours',
   learningObjectives: [
@@ -1236,13 +1254,17 @@ const edexcelRelationshipsLesson7: PoetryLesson = {
 
 const edexcelRelationshipsLesson8: PoetryLesson = {
   id: 'edex-rel-08',
-  title: 'How Do I Love Thee vs The Good-Morrow: Completion & Transformation in Love',
+  // NOTE: Sonnet 43 (Barrett Browning) IS in the Edexcel UK GCSE 1ET0 Relationships
+  // cluster, but 'The Good-Morrow' (Donne) is NOT — pairing is therefore not an
+  // exam-aligned comparison. Retagged as a cross-board general comparison lesson.
+  title:
+    'How Do I Love Thee vs The Good-Morrow: Completion & Transformation in Love (cross-board comparison)',
   poems: [
     'How Do I Love Thee? (Sonnet 43) by Elizabeth Barrett Browning',
     'The Good-Morrow by John Donne',
   ],
-  anthology: 'Relationships',
-  examBoard: 'Edexcel',
+  anthology: 'Relationships (cross-board comparison practice)',
+  examBoard: 'General (cross-board)',
   yearGroup: '10-11',
   duration: '1.5 hours',
   learningObjectives: [
@@ -1333,13 +1355,17 @@ const edexcelRelationshipsLesson8: PoetryLesson = {
 
 const edexcelRelationshipsLesson9: PoetryLesson = {
   id: 'edex-rel-09',
-  title: 'The Clod and the Pebble vs Absent Love: Self-Sacrifice vs Bitterness in Love',
+  // NOTE: 'The Clod and the Pebble' (Blake) and 'Absent Love' (Meredith) are NOT
+  // in the canonical Edexcel UK GCSE 1ET0 Relationships cluster. Retagged as a
+  // cross-board general comparison lesson.
+  title:
+    'The Clod and the Pebble vs Absent Love: Self-Sacrifice vs Bitterness in Love (cross-board comparison)',
   poems: [
     'The Clod and the Pebble by William Blake',
     'Absent Love (from "Modern Love" sequence) by George Meredith',
   ],
-  anthology: 'Relationships',
-  examBoard: 'Edexcel',
+  anthology: 'Relationships (cross-board comparison practice)',
+  examBoard: 'General (cross-board)',
   yearGroup: '10-11',
   duration: '1.5 hours',
   learningObjectives: [

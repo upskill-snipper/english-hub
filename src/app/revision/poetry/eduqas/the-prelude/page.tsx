@@ -488,6 +488,8 @@ const prelude: PoemData = {
     <h3>The Prelude</h3>
     <p>The full title is <em>The Prelude, or Growth of a Poet\'s Mind</em>. It is an autobiographical epic poem in which Wordsworth traces his own intellectual and emotional development. He worked on it for most of his life. This extract comes from Book One.</p>
 
+    <p><strong>Version note:</strong> The Eduqas anthology uses the <strong>1850 published Prelude</strong> (the same version used by AQA Power &amp; Conflict). OCR\'s "Towards a World Unknown" uses the earlier <strong>1799 two-part Prelude</strong>, which differs materially in wording. Always quote from the 1850 version when answering Eduqas questions.</p>
+
     <h3>"Spots of Time"</h3>
     <p>Wordsworth believed certain childhood experiences leave a permanent mark on the mind - he called them "spots of time". The boat-stealing episode is one of these. These memories are formative and continue to shape the adult.</p>
 

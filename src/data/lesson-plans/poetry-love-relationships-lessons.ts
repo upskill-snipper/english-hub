@@ -105,7 +105,7 @@ export const poetryLoveRelationshipsLessons: LessonPlan[] = [
         question: 'Name the fifteen poems in the AQA Love & Relationships cluster and their poets.',
         lines: 8,
         modelAnswer:
-          "The fifteen poems are: 'When We Two Parted' (Byron), 'Love's Philosophy' (Shelley), 'Porphyria's Lover' (Browning), 'Sonnet 29 — I think of thee!' (Barrett Browning), 'Neutral Tones' (Hardy), 'The Farmer's Bride' (Mew), 'Walking Away' (Day-Lewis), 'Letters from Yorkshire' (Dooley), 'Eden Rock' (Causley), 'Follower' (Heaney), 'Mother, Any Distance' (Armitage), 'Before You Were Mine' (Duffy), 'Winter Swans' (Sheers), 'Singh Song!' (Nagra), 'My Last Duchess' (Browning).",
+          "The fifteen poems are: 'When We Two Parted' (Byron), 'Love's Philosophy' (Shelley), 'Porphyria's Lover' (Browning), 'Sonnet 29 — I think of thee!' (Barrett Browning), 'Neutral Tones' (Hardy), 'The Farmer's Bride' (Mew), 'Walking Away' (Day-Lewis), 'Letters from Yorkshire' (Dooley), 'Eden Rock' (Causley), 'Follower' (Heaney), 'Mother, Any Distance' (Armitage), 'Before You Were Mine' (Duffy), 'Winter Swans' (Sheers), 'Singh Song!' (Nagra), 'Climbing My Grandfather' (Waterhouse).",
         marks: 5,
       },
       {
@@ -136,7 +136,7 @@ export const poetryLoveRelationshipsLessons: LessonPlan[] = [
           'Choose two poems from the cluster that you think would make a strong comparison pair. Explain your choice.',
         lines: 5,
         modelAnswer:
-          "'Porphyria's Lover' and 'My Last Duchess' would make a strong pair because both are dramatic monologues by Robert Browning that explore possessive, controlling love. Both speakers treat women as objects they wish to control, and both poems end with a disturbing sense of the speaker's power. Comparing them allows analysis of how Browning uses the same form to expose similar themes of toxic masculinity.",
+          "'Porphyria's Lover' (Browning) and 'The Farmer's Bride' (Mew) would make a strong pair because both feature speakers whose obsessive, controlling love silences and entraps the woman they desire. Browning's dramatic monologue ends in murder; Mew's portrays a young wife terrified of her husband. Comparing them allows analysis of how the dramatic monologue form exposes possessive masculinity and the powerlessness of women in patriarchal relationships.",
         marks: 4,
       },
       {
@@ -345,11 +345,20 @@ export const poetryLoveRelationshipsLessons: LessonPlan[] = [
 
   // ─────────────────────────────────────────────
   // LESSON 3 — Porphyria's Lover & My Last Duchess
+  //
+  // CROSS-CLUSTER NOTE: 'Porphyria's Lover' is in the AQA Love & Relationships
+  // cluster; 'My Last Duchess' is in the AQA Power & Conflict cluster. AQA Paper 2
+  // Section B asks students to compare two poems from the SAME cluster, so this
+  // lesson should be taught as supplementary technique practice (Browning's
+  // dramatic monologue form) rather than as exam-rehearsal comparison. For an
+  // in-cluster L&R comparison of possessive love, pair Porphyria's Lover with
+  // 'The Farmer's Bride' (Mew) instead.
   // ─────────────────────────────────────────────
   {
     id: 'lr-03-browning-obsessive',
-    title: "Porphyria's Lover & My Last Duchess: Obsessive & Possessive Love",
-    text: 'AQA Love & Relationships Poetry Anthology',
+    title:
+      "Porphyria's Lover & My Last Duchess: Obsessive & Possessive Love (cross-cluster technique lesson)",
+    text: 'AQA Love & Relationships + Power & Conflict (cross-cluster supplementary lesson)',
     board: 'AQA',
     yearGroup: 'Year 10/11',
     duration: '60 minutes',
@@ -1584,7 +1593,7 @@ export const poetryLoveRelationshipsLessons: LessonPlan[] = [
           "Write a topic sentence for a comparative paragraph on the theme of 'possessive love' in two poems of your choice.",
         lines: 3,
         modelAnswer:
-          "Example: 'Both Browning in \"My Last Duchess\" and Duffy in \"Before You Were Mine\" present speakers whose love is inseparable from possessiveness, yet while the Duke's possessiveness is sinister and controlling, Duffy's is tinged with guilt and self-awareness, suggesting that the desire to possess those we love is a more universal — and more complicated — impulse than the Duke's villainy alone might suggest.'",
+          "Example: 'Both Browning in \"Porphyria's Lover\" and Duffy in \"Before You Were Mine\" present speakers whose love is inseparable from possessiveness, yet while Browning's lover acts on his possessiveness with chilling violence, Duffy's is tinged with guilt and self-awareness, suggesting that the desire to possess those we love is a more universal — and more complicated — impulse than the speaker's villainy alone might suggest.'",
         marks: 4,
       },
       {
