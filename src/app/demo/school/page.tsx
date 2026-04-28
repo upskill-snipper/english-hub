@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState, useMemo } from "react"
-import Link from "next/link"
+import { useState, useMemo } from 'react'
+import Link from 'next/link'
 import {
   LayoutDashboard,
   Users,
@@ -18,31 +18,24 @@ import {
   Target,
   Filter,
   BookOpenCheck,
-} from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import {
-  DEMO_SCHOOL,
-  DEMO_STUDENTS,
-  DEMO_CLASSES,
-  DEMO_YEAR_GROUPS,
-} from "@/data/demo-data"
-import {
-  gcseGradeColor,
-  gcseGradeBg,
-} from "@/lib/grades"
+} from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { DEMO_SCHOOL, DEMO_STUDENTS, DEMO_CLASSES, DEMO_YEAR_GROUPS } from '@/data/demo-data'
+import { GradeDistributionChart } from '@/components/analytics/GradeDistributionChart'
+import { gcseGradeColor, gcseGradeBg } from '@/lib/grades'
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
 function ringColor(pct: number): string {
-  if (pct >= 75) return "stroke-teal-700"
-  if (pct >= 50) return "stroke-amber-500"
-  return "stroke-red-500"
+  if (pct >= 75) return 'stroke-teal-700'
+  if (pct >= 50) return 'stroke-amber-500'
+  return 'stroke-red-500'
 }
 
 function ringTrack(): string {
-  return "stroke-muted/40"
+  return 'stroke-muted/40'
 }
 
 function ProgressRing({
@@ -62,12 +55,7 @@ function ProgressRing({
 
   return (
     <div className="relative" style={{ width: size, height: size }}>
-      <svg
-        width={size}
-        height={size}
-        className="-rotate-90"
-        viewBox={`0 0 ${size} ${size}`}
-      >
+      <svg width={size} height={size} className="-rotate-90" viewBox={`0 0 ${size} ${size}`}>
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -89,9 +77,7 @@ function ProgressRing({
         />
       </svg>
       {children && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          {children}
-        </div>
+        <div className="absolute inset-0 flex items-center justify-center">{children}</div>
       )}
     </div>
   )
@@ -116,20 +102,12 @@ function computeStudentMetrics(students: typeof DEMO_STUDENTS) {
     }
 
   const total = students.length
-  const avgWorkingAt = Math.round(
-    students.reduce((sum, s) => sum + s.workingAtGrade, 0) / total
-  )
-  const avgPredicted = Math.round(
-    students.reduce((sum, s) => sum + s.predictedGrade, 0) / total
-  )
-  const avgTarget = Math.round(
-    students.reduce((sum, s) => sum + s.targetGrade, 0) / total
-  )
+  const avgWorkingAt = Math.round(students.reduce((sum, s) => sum + s.workingAtGrade, 0) / total)
+  const avgPredicted = Math.round(students.reduce((sum, s) => sum + s.predictedGrade, 0) / total)
+  const avgTarget = Math.round(students.reduce((sum, s) => sum + s.targetGrade, 0) / total)
 
   // On track = predicted grade >= target grade
-  const onTrackCount = students.filter(
-    (s) => s.predictedGrade >= s.targetGrade
-  ).length
+  const onTrackCount = students.filter((s) => s.predictedGrade >= s.targetGrade).length
   const offTrackCount = total - onTrackCount
   const onTrackPct = Math.round((onTrackCount / total) * 100)
 
@@ -137,8 +115,7 @@ function computeStudentMetrics(students: typeof DEMO_STUDENTS) {
   const gradeDistribution: Record<number, number> = {}
   for (let g = 1; g <= 9; g++) gradeDistribution[g] = 0
   students.forEach((s) => {
-    gradeDistribution[s.workingAtGrade] =
-      (gradeDistribution[s.workingAtGrade] || 0) + 1
+    gradeDistribution[s.workingAtGrade] = (gradeDistribution[s.workingAtGrade] || 0) + 1
   })
 
   // At-risk students
@@ -147,10 +124,7 @@ function computeStudentMetrics(students: typeof DEMO_STUDENTS) {
   // Top improving: students whose predicted > working at
   const topImproving = [...students]
     .filter((s) => s.predictedGrade > s.workingAtGrade)
-    .sort(
-      (a, b) =>
-        b.predictedGrade - b.workingAtGrade - (a.predictedGrade - a.workingAtGrade)
-    )
+    .sort((a, b) => b.predictedGrade - b.workingAtGrade - (a.predictedGrade - a.workingAtGrade))
     .slice(0, 5)
 
   // Needing intervention: predicted grade declining (predicted < working at) OR at-risk
@@ -177,16 +151,16 @@ function computeStudentMetrics(students: typeof DEMO_STUDENTS) {
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function DemoSchoolDashboardPage() {
-  const [selectedClass, setSelectedClass] = useState<string>("all")
-  const [selectedYear, setSelectedYear] = useState<string>("all")
+  const [selectedClass, setSelectedClass] = useState<string>('all')
+  const [selectedYear, setSelectedYear] = useState<string>('all')
 
   // Filter students based on selections
   const filteredStudents = useMemo(() => {
     let students = DEMO_STUDENTS
-    if (selectedYear !== "all") {
+    if (selectedYear !== 'all') {
       students = students.filter((s) => s.yearGroup === selectedYear)
     }
-    if (selectedClass !== "all") {
+    if (selectedClass !== 'all') {
       students = students.filter((s) => s.className === selectedClass)
     }
     return students
@@ -194,7 +168,7 @@ export default function DemoSchoolDashboardPage() {
 
   // Available classes for the year group filter
   const availableClasses = useMemo(() => {
-    if (selectedYear === "all") return DEMO_CLASSES
+    if (selectedYear === 'all') return DEMO_CLASSES
     return DEMO_CLASSES.filter((c) => c.yearGroup === selectedYear)
   }, [selectedYear])
 
@@ -206,11 +180,7 @@ export default function DemoSchoolDashboardPage() {
 
   // Active filter label
   const filterLabel =
-    selectedClass !== "all"
-      ? selectedClass
-      : selectedYear !== "all"
-        ? selectedYear
-        : "All Students"
+    selectedClass !== 'all' ? selectedClass : selectedYear !== 'all' ? selectedYear : 'All Students'
 
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">
@@ -220,15 +190,11 @@ export default function DemoSchoolDashboardPage() {
           <div className="flex items-start gap-3">
             <GraduationCap className="mt-0.5 h-5 w-5 shrink-0 text-teal-700" />
             <p className="text-sm text-blue-300">
-              You are viewing an interactive demo with sample data. Register
-              your school to use with your own students.
+              You are viewing an interactive demo with sample data. Register your school to use with
+              your own students.
             </p>
           </div>
-          <Button
-            size="sm"
-            className="shrink-0"
-            render={<Link href="/for-schools/register" />}
-          >
+          <Button size="sm" className="shrink-0" render={<Link href="/for-schools/register" />}>
             Register Your School
             <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
           </Button>
@@ -240,9 +206,7 @@ export default function DemoSchoolDashboardPage() {
         <div>
           <div className="flex items-center gap-3">
             <LayoutDashboard className="h-7 w-7 text-primary" />
-            <h1 className="text-2xl font-bold text-foreground">
-              School Dashboard
-            </h1>
+            <h1 className="text-2xl font-bold text-foreground">School Dashboard</h1>
           </div>
           <p className="mt-1 flex items-center gap-2 text-muted-foreground">
             <School className="h-4 w-4" />
@@ -261,11 +225,7 @@ export default function DemoSchoolDashboardPage() {
             </Badge>
           </p>
         </div>
-        <Button
-          variant="outline"
-          size="sm"
-          render={<Link href="/demo/school/analytics" />}
-        >
+        <Button variant="outline" size="sm" render={<Link href="/demo/school/analytics" />}>
           <BarChart3 className="mr-1.5 h-3.5 w-3.5" />
           Analytics
         </Button>
@@ -281,7 +241,7 @@ export default function DemoSchoolDashboardPage() {
           value={selectedYear}
           onChange={(e) => {
             setSelectedYear(e.target.value)
-            setSelectedClass("all")
+            setSelectedClass('all')
           }}
           className="rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         >
@@ -304,18 +264,18 @@ export default function DemoSchoolDashboardPage() {
             </option>
           ))}
         </select>
-        {(selectedYear !== "all" || selectedClass !== "all") && (
+        {(selectedYear !== 'all' || selectedClass !== 'all') && (
           <button
             onClick={() => {
-              setSelectedYear("all")
-              setSelectedClass("all")
+              setSelectedYear('all')
+              setSelectedClass('all')
             }}
             className="text-xs text-primary hover:underline"
           >
             Clear filters
           </button>
         )}
-        {filterLabel !== "All Students" && (
+        {filterLabel !== 'All Students' && (
           <Badge variant="secondary" className="text-xs">
             Showing: {filterLabel}
           </Badge>
@@ -333,14 +293,13 @@ export default function DemoSchoolDashboardPage() {
               <div>
                 <p className="text-sm font-semibold text-red-300">
                   {metrics.atRiskStudents.length} student
-                  {metrics.atRiskStudents.length !== 1 && "s"} flagged as
-                  at-risk
+                  {metrics.atRiskStudents.length !== 1 && 's'} flagged as at-risk
                 </p>
                 <p className="text-xs text-red-400/70">
                   {metrics.atRiskStudents
                     .slice(0, 5)
                     .map((s) => s.name)
-                    .join(", ")}
+                    .join(', ')}
                   {metrics.atRiskStudents.length > 5 &&
                     ` and ${metrics.atRiskStudents.length - 5} more`}
                 </p>
@@ -391,9 +350,7 @@ export default function DemoSchoolDashboardPage() {
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
                 Grade {metrics.avgWorkingAt}
               </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                Current attainment level
-              </p>
+              <p className="mt-1 text-xs text-muted-foreground">Current attainment level</p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-700/15">
               <BookOpen className="h-5 w-5 text-teal-700" />
@@ -411,15 +368,17 @@ export default function DemoSchoolDashboardPage() {
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
                 Grade {metrics.avgPredicted}
               </p>
-              <p className={`mt-1 flex items-center gap-1 text-xs ${metrics.avgPredicted >= metrics.avgWorkingAt ? "text-teal-700" : "text-red-400"}`}>
+              <p
+                className={`mt-1 flex items-center gap-1 text-xs ${metrics.avgPredicted >= metrics.avgWorkingAt ? 'text-teal-700' : 'text-red-400'}`}
+              >
                 {metrics.avgPredicted >= metrics.avgWorkingAt ? (
                   <TrendingUp className="h-3 w-3" />
                 ) : (
                   <TrendingDown className="h-3 w-3" />
                 )}
                 {metrics.avgPredicted >= metrics.avgWorkingAt
-                  ? "Positive trajectory"
-                  : "Declining trajectory"}
+                  ? 'Positive trajectory'
+                  : 'Declining trajectory'}
               </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-700/15">
@@ -458,9 +417,7 @@ export default function DemoSchoolDashboardPage() {
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
                 Grade {metrics.avgTarget}
               </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                Aspirational target
-              </p>
+              <p className="mt-1 text-xs text-muted-foreground">Aspirational target</p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15">
               <GraduationCap className="h-5 w-5 text-clay-600" />
@@ -475,87 +432,13 @@ export default function DemoSchoolDashboardPage() {
         <div className="space-y-6 lg:col-span-8">
           {/* Grade Distribution Chart */}
           <Card className="border-border bg-card/60">
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-base font-semibold text-foreground">
-                  Working At Grade Distribution
-                </CardTitle>
-                <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1">
-                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-teal-700" />
-                    Grade 7-9
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-blue-500" />
-                    Grade 4-6
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-red-500" />
-                    Grade 1-3
-                  </span>
-                </div>
-              </div>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base font-semibold text-foreground">
+                Working At Grade Distribution
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex items-end gap-2" style={{ height: 180 }}>
-                {[9, 8, 7, 6, 5, 4, 3, 2, 1].map((grade) => {
-                  const count = metrics.gradeDistribution[grade] || 0
-                  const heightPct =
-                    maxGradeCount > 0
-                      ? Math.max((count / maxGradeCount) * 100, count > 0 ? 8 : 0)
-                      : 0
-                  const barColor =
-                    grade >= 7
-                      ? "bg-teal-700"
-                      : grade >= 4
-                        ? "bg-blue-500"
-                        : "bg-red-500"
-                  return (
-                    <div
-                      key={grade}
-                      className="flex flex-1 flex-col items-center gap-1"
-                    >
-                      <span className="text-xs font-medium text-foreground">
-                        {count}
-                      </span>
-                      <div
-                        className={`w-full max-w-[40px] rounded-t-md ${barColor} transition-all`}
-                        style={{ height: `${heightPct}%`, minHeight: count > 0 ? 6 : 0 }}
-                      />
-                      <span className="text-[11px] font-medium text-muted-foreground">
-                        G{grade}
-                      </span>
-                    </div>
-                  )
-                })}
-              </div>
-              {/* Summary row below chart */}
-              <div className="mt-4 grid grid-cols-3 gap-3">
-                <div className="rounded-lg border border-teal-800/20 bg-teal-800/5 p-3 text-center">
-                  <p className="text-lg font-bold text-teal-700">
-                    {(metrics.gradeDistribution[7] || 0) +
-                      (metrics.gradeDistribution[8] || 0) +
-                      (metrics.gradeDistribution[9] || 0)}
-                  </p>
-                  <p className="text-[11px] text-teal-700/80">Grade 7-9</p>
-                </div>
-                <div className="rounded-lg border border-teal-800/20 bg-blue-500/5 p-3 text-center">
-                  <p className="text-lg font-bold text-teal-700">
-                    {(metrics.gradeDistribution[4] || 0) +
-                      (metrics.gradeDistribution[5] || 0) +
-                      (metrics.gradeDistribution[6] || 0)}
-                  </p>
-                  <p className="text-[11px] text-teal-700/80">Grade 4-6 (Standard pass+)</p>
-                </div>
-                <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-3 text-center">
-                  <p className="text-lg font-bold text-red-400">
-                    {(metrics.gradeDistribution[1] || 0) +
-                      (metrics.gradeDistribution[2] || 0) +
-                      (metrics.gradeDistribution[3] || 0)}
-                  </p>
-                  <p className="text-[11px] text-red-400/80">Grade 1-3 (Below pass)</p>
-                </div>
-              </div>
+              <GradeDistributionChart counts={metrics.gradeDistribution} title={null} />
             </CardContent>
           </Card>
 
@@ -570,18 +453,10 @@ export default function DemoSchoolDashboardPage() {
               </CardHeader>
               <CardContent>
                 <div className="flex items-center gap-6">
-                  <ProgressRing
-                    value={metrics.onTrackPct}
-                    size={96}
-                    strokeWidth={8}
-                  >
+                  <ProgressRing value={metrics.onTrackPct} size={96} strokeWidth={8}>
                     <div className="text-center">
-                      <p className="text-xl font-bold text-foreground">
-                        {metrics.onTrackPct}%
-                      </p>
-                      <p className="text-[10px] text-muted-foreground">
-                        on track
-                      </p>
+                      <p className="text-xl font-bold text-foreground">{metrics.onTrackPct}%</p>
+                      <p className="text-[10px] text-muted-foreground">on track</p>
                     </div>
                   </ProgressRing>
                   <div className="space-y-3 text-sm">
@@ -616,16 +491,12 @@ export default function DemoSchoolDashboardPage() {
               <CardContent>
                 <div className="space-y-2">
                   {DEMO_YEAR_GROUPS.slice(0, 5).map((yg: any) => {
-                    const ygStudents = DEMO_STUDENTS.filter(
-                      (s) => s.yearGroup === yg.label
-                    )
+                    const ygStudents = DEMO_STUDENTS.filter((s) => s.yearGroup === yg.label)
                     const avgWAG =
                       ygStudents.length > 0
                         ? Math.round(
-                            ygStudents.reduce(
-                              (sum, s) => sum + s.workingAtGrade,
-                              0
-                            ) / ygStudents.length
+                            ygStudents.reduce((sum, s) => sum + s.workingAtGrade, 0) /
+                              ygStudents.length,
                           )
                         : 0
                     return (
@@ -633,27 +504,21 @@ export default function DemoSchoolDashboardPage() {
                         key={yg.year}
                         onClick={() => {
                           setSelectedYear(yg.label)
-                          setSelectedClass("all")
+                          setSelectedClass('all')
                         }}
                         className="flex w-full items-center gap-3 rounded-lg border border-border bg-background/50 px-3 py-2 text-left transition-colors hover:border-primary/30 hover:bg-primary/5"
                       >
                         <div className="min-w-0 flex-1">
-                          <p className="text-xs font-semibold text-foreground">
-                            {yg.label}
-                          </p>
+                          <p className="text-xs font-semibold text-foreground">{yg.label}</p>
                           <p className="text-[11px] text-muted-foreground">
                             {yg.studentCount} students
                           </p>
                         </div>
                         <div className="text-right">
-                          <span
-                            className={`text-sm font-bold ${gcseGradeColor(avgWAG)}`}
-                          >
+                          <span className={`text-sm font-bold ${gcseGradeColor(avgWAG)}`}>
                             G{avgWAG}
                           </span>
-                          <p className="text-[10px] text-muted-foreground">
-                            avg WAG
-                          </p>
+                          <p className="text-[10px] text-muted-foreground">avg WAG</p>
                         </div>
                         {yg.atRiskCount > 0 && (
                           <span className="inline-flex items-center gap-0.5 rounded-full bg-red-500/10 px-1.5 py-0.5 text-[10px] font-medium text-red-400">
@@ -697,24 +562,15 @@ export default function DemoSchoolDashboardPage() {
                       <tr className="border-b border-border text-left text-xs text-muted-foreground">
                         <th className="pb-2 pr-3 font-medium">Student</th>
                         <th className="pb-2 pr-3 font-medium">Class</th>
-                        <th className="pb-2 pr-3 text-center font-medium">
-                          Working At
-                        </th>
-                        <th className="pb-2 pr-3 text-center font-medium">
-                          Predicted
-                        </th>
-                        <th className="pb-2 pr-3 text-center font-medium">
-                          Target
-                        </th>
+                        <th className="pb-2 pr-3 text-center font-medium">Working At</th>
+                        <th className="pb-2 pr-3 text-center font-medium">Predicted</th>
+                        <th className="pb-2 pr-3 text-center font-medium">Target</th>
                         <th className="pb-2 font-medium">Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       {metrics.needingIntervention.map((student) => (
-                        <tr
-                          key={student.id}
-                          className="border-b border-border/50 last:border-0"
-                        >
+                        <tr key={student.id} className="border-b border-border/50 last:border-0">
                           <td className="py-2.5 pr-3">
                             <Link
                               href={`/demo/school/students/${student.id}`}
@@ -753,8 +609,7 @@ export default function DemoSchoolDashboardPage() {
                               >
                                 At Risk
                               </Badge>
-                            ) : student.predictedGrade <
-                              student.workingAtGrade ? (
+                            ) : student.predictedGrade < student.workingAtGrade ? (
                               <Badge
                                 variant="secondary"
                                 className="border-amber-500/30 bg-amber-500/10 text-[10px] text-clay-600"
@@ -762,10 +617,7 @@ export default function DemoSchoolDashboardPage() {
                                 Declining
                               </Badge>
                             ) : (
-                              <Badge
-                                variant="secondary"
-                                className="text-[10px]"
-                              >
+                              <Badge variant="secondary" className="text-[10px]">
                                 Off Track
                               </Badge>
                             )}
@@ -801,7 +653,7 @@ export default function DemoSchoolDashboardPage() {
                   const weaknessCounts: Record<string, number> = {}
                   filteredStudents.forEach((s) => {
                     s.weaknesses.forEach((w) => {
-                      const name = typeof w === "string" ? w : w.name
+                      const name = typeof w === 'string' ? w : w.name
                       weaknessCounts[name] = (weaknessCounts[name] || 0) + 1
                     })
                   })
@@ -812,12 +664,8 @@ export default function DemoSchoolDashboardPage() {
                   return sorted.map(([name, count], i) => (
                     <div key={i}>
                       <div className="mb-1 flex items-center justify-between">
-                        <span className="text-xs font-medium text-foreground">
-                          {name}
-                        </span>
-                        <span className="text-[10px] text-muted-foreground">
-                          {count} students
-                        </span>
+                        <span className="text-xs font-medium text-foreground">{name}</span>
+                        <span className="text-[10px] text-muted-foreground">{count} students</span>
                       </div>
                       <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
                         <div
@@ -916,9 +764,7 @@ export default function DemoSchoolDashboardPage() {
                         <p className="truncate text-xs font-medium text-foreground">
                           {student.name}
                         </p>
-                        <p className="text-[11px] text-muted-foreground">
-                          {student.className}
-                        </p>
+                        <p className="text-[11px] text-muted-foreground">{student.className}</p>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <span
@@ -951,22 +797,18 @@ export default function DemoSchoolDashboardPage() {
             <CardContent>
               <div className="space-y-3">
                 <p className="text-xs text-muted-foreground">
-                  Reading age data is populated from the Reading Comprehension
-                  Assessment. Students who have completed the assessment will
-                  have their reading age, decoding age, and fluency age recorded.
+                  Reading age data is populated from the Reading Comprehension Assessment. Students
+                  who have completed the assessment will have their reading age, decoding age, and
+                  fluency age recorded.
                 </p>
                 <div className="rounded-lg border border-teal-800/20 bg-teal-600/5 p-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-teal-700">
-                      Assessments completed
-                    </span>
-                    <span className="text-xs font-bold text-teal-700">
-                      Demo data
-                    </span>
+                    <span className="text-xs font-medium text-teal-700">Assessments completed</span>
+                    <span className="text-xs font-bold text-teal-700">Demo data</span>
                   </div>
                   <p className="mt-1 text-[11px] text-muted-foreground">
-                    Assign the Reading Comprehension Assessment to your classes
-                    to generate reading age data for each student.
+                    Assign the Reading Comprehension Assessment to your classes to generate reading
+                    age data for each student.
                   </p>
                 </div>
                 <Button
@@ -992,47 +834,31 @@ export default function DemoSchoolDashboardPage() {
             <CardContent>
               <div className="space-y-3">
                 <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                  <span className="text-xs text-muted-foreground">
-                    Avg Working At Grade
-                  </span>
-                  <span
-                    className={`text-sm font-bold ${gcseGradeColor(metrics.avgWorkingAt)}`}
-                  >
+                  <span className="text-xs text-muted-foreground">Avg Working At Grade</span>
+                  <span className={`text-sm font-bold ${gcseGradeColor(metrics.avgWorkingAt)}`}>
                     Grade {metrics.avgWorkingAt}
                   </span>
                 </div>
                 <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                  <span className="text-xs text-muted-foreground">
-                    Avg Predicted Grade
-                  </span>
-                  <span
-                    className={`text-sm font-bold ${gcseGradeColor(metrics.avgPredicted)}`}
-                  >
+                  <span className="text-xs text-muted-foreground">Avg Predicted Grade</span>
+                  <span className={`text-sm font-bold ${gcseGradeColor(metrics.avgPredicted)}`}>
                     Grade {metrics.avgPredicted}
                   </span>
                 </div>
                 <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                  <span className="text-xs text-muted-foreground">
-                    Avg Target Grade
-                  </span>
-                  <span
-                    className={`text-sm font-bold ${gcseGradeColor(metrics.avgTarget)}`}
-                  >
+                  <span className="text-xs text-muted-foreground">Avg Target Grade</span>
+                  <span className={`text-sm font-bold ${gcseGradeColor(metrics.avgTarget)}`}>
                     Grade {metrics.avgTarget}
                   </span>
                 </div>
                 <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                  <span className="text-xs text-muted-foreground">
-                    Students on track
-                  </span>
+                  <span className="text-xs text-muted-foreground">Students on track</span>
                   <span className="text-sm font-bold text-teal-700">
                     {metrics.onTrackCount}/{metrics.total}
                   </span>
                 </div>
                 <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                  <span className="text-xs text-muted-foreground">
-                    At-risk students
-                  </span>
+                  <span className="text-xs text-muted-foreground">At-risk students</span>
                   <span className="text-sm font-bold text-red-400">
                     {metrics.atRiskStudents.length}
                   </span>

@@ -241,12 +241,11 @@ function MATBand() {
         <p className="text-cream-100/80 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
           If you run 3+ schools, speak to the founder directly about a trust-wide rollout.
         </p>
-        {/* TODO(founder): replace https://cal.com/theenglishhub/founder-mat with the real Cal.com URL once the event is live */}
         <a
-          href="https://cal.com/theenglishhub/founder-mat"
+          href="/contact"
           className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-8 py-3.5 text-base font-bold text-ink-950 transition-colors hover:bg-emerald-300 shadow-lg shadow-emerald-400/20"
         >
-          Speak to the founder &rarr;
+          Get in touch &rarr;
         </a>
       </div>
     </section>

@@ -124,13 +124,12 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
 
   return (
     <ToastProvider>
-      {/* TODO(founder): confirm real Cal.com URL */}
-      <a
-        href="https://cal.com/theenglishhub/founder"
+      <Link
+        href="/contact"
         className="fixed top-20 right-4 z-40 rounded-full bg-emerald-600 text-white px-4 py-2 shadow-lg hover:bg-emerald-700 text-sm"
       >
-        Book a 20-min call with Calum (Founder + Examiner)
-      </a>
+        Contact us about the demo
+      </Link>
       <div className="flex min-h-screen bg-background">
         {/* Desktop sidebar */}
         <aside className="hidden w-60 shrink-0 border-r border-border bg-card lg:block">

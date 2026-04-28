@@ -45,7 +45,9 @@ export default function AboutPage() {
             />
             <div>
               <h3 className="text-lg font-semibold text-foreground">Calum Johnson — Founder</h3>
-              <p className="text-sm text-slate-500">Examiner: AQA · Pearson · Cambridge · OCR · WJEC</p>
+              <p className="text-sm text-slate-500">
+                Examiner: AQA · Pearson · Cambridge · OCR · WJEC
+              </p>
               <p className="text-sm text-slate-500">
                 English Language + English Literature · GCSE + IGCSE + A-Level
               </p>
@@ -71,10 +73,10 @@ export default function AboutPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">
             We provide 15+ structured courses covering KS3, GCSE, and IGCSE English Language and
             Literature. Our content is tailored to five major exam boards — AQA, Edexcel, OCR, WJEC
-            Eduqas, and Cambridge IGCSE — so students always study material aligned to the
-            exam board they are sitting. Each course is broken down into clear, manageable topics
-            with lessons, practice activities, and revision resources designed to build confidence
-            from the first lesson through to exam day.
+            Eduqas, and Cambridge IGCSE — so students always study material aligned to the exam
+            board they are sitting. Each course is broken down into clear, manageable topics with
+            lessons, practice activities, and revision resources designed to build confidence from
+            the first lesson through to exam day.
           </p>
         </section>
 
@@ -88,8 +90,8 @@ export default function AboutPage() {
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
               <strong className="text-foreground">Exam board-specific content</strong> — lessons,
-              mark schemes, and model answers mapped directly to AQA, Edexcel, OCR, WJEC Eduqas,
-              and Cambridge IGCSE exam boards.
+              mark schemes, and model answers mapped directly to AQA, Edexcel, OCR, WJEC Eduqas, and
+              Cambridge IGCSE exam boards.
             </li>
             <li>
               <strong className="text-foreground">AI-powered essay feedback</strong> — submit
@@ -97,9 +99,9 @@ export default function AboutPage() {
               students understand how to improve before their real exam.
             </li>
             <li>
-              <strong className="text-foreground">Mock exam practice</strong> — timed,
-              exam-style questions that mirror the format, wording, and mark allocation students
-              will encounter on the day.
+              <strong className="text-foreground">Mock exam practice</strong> — timed, exam-style
+              questions that mirror the format, wording, and mark allocation students will encounter
+              on the day.
             </li>
             <li>
               <strong className="text-foreground">Interactive games and revision tools</strong> —
@@ -127,8 +129,8 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold text-foreground">Our Values</h2>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
-              <strong className="text-foreground">Quality content</strong> — every lesson is
-              written and reviewed by experienced English educators to ensure accuracy and clarity.
+              <strong className="text-foreground">Quality content</strong> — every lesson is written
+              and reviewed by experienced English educators to ensure accuracy and clarity.
             </li>
             <li>
               <strong className="text-foreground">Accessibility</strong> — we are committed to
@@ -136,12 +138,12 @@ export default function AboutPage() {
             </li>
             <li>
               <strong className="text-foreground">Evidence-based learning</strong> — our tools are
-              grounded in proven pedagogical strategies including retrieval practice, smart
-              review, and formative feedback.
+              grounded in proven pedagogical strategies including retrieval practice, smart review,
+              and formative feedback.
             </li>
             <li>
-              <strong className="text-foreground">Exam board alignment</strong> — students can
-              trust that what they study on The English Hub maps directly to the exam they will sit.
+              <strong className="text-foreground">Exam board alignment</strong> — students can trust
+              that what they study on The English Hub maps directly to the exam they will sit.
             </li>
           </ul>
         </section>
@@ -156,10 +158,7 @@ export default function AboutPage() {
               { stat: 'AI-Powered', label: 'Essay feedback in seconds' },
               { stat: 'Exam-Style', label: 'Mock questions and timed practice' },
             ].map(({ stat, label }) => (
-              <div
-                key={label}
-                className="rounded-lg border border-border bg-card p-4 text-center"
-              >
+              <div key={label} className="rounded-lg border border-border bg-card p-4 text-center">
                 <p className="text-2xl font-bold text-foreground">{stat}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{label}</p>
               </div>
@@ -174,7 +173,7 @@ export default function AboutPage() {
             <li>Upskill Energy Limited, trading as The English Hub</li>
             <li>Company No. 16511479 (England &amp; Wales)</li>
             <li>ICO Registration: ZC016690</li>
-            <li>Registered office: 110 Harington Road, Formby, Liverpool, L37 1PZ</li>
+            <li>Registered office: available via Companies House (company no. 16511479)</li>
           </ul>
         </section>
 
@@ -185,15 +184,21 @@ export default function AboutPage() {
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
               Data Protection Impact Assessment (PDF){' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                — coming soon
+              </span>
             </li>
             <li>
               Safeguarding Policy (PDF){' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                — coming soon
+              </span>
             </li>
             <li>
               VPAT — Voluntary Product Accessibility Template (PDF){' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                — coming soon
+              </span>
             </li>
             <li>
               <a className="underline hover:text-foreground" href="/accessibility">
@@ -202,11 +207,15 @@ export default function AboutPage() {
             </li>
             <li>
               Cyber Essentials certificate (filing Q3 2026){' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— coming soon</span>
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                — coming soon
+              </span>
             </li>
             <li>
               Data Processing Agreement template (Word){' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">— available on request (legal@theenglishhub.app)</span>
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                — available on request (legal@theenglishhub.app)
+              </span>
             </li>
           </ul>
         </section>

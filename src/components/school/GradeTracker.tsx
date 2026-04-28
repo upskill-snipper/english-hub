@@ -17,7 +17,6 @@ import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
-
 import type { StudentAnalytics } from '@/lib/types'
 
 /* ── Types ──────────────────────────────────────────────────────────────────── */
@@ -51,7 +50,10 @@ function getGap(current: number, target: number | null): number | null {
   return current - target
 }
 
-function getTargetStatus(current: number, target: number | null): 'above' | 'on' | 'below' | 'unknown' {
+function getTargetStatus(
+  current: number,
+  target: number | null,
+): 'above' | 'on' | 'below' | 'unknown' {
   if (target === null || target === 0) return 'unknown'
   if (current > target) return 'above'
   if (current === target) return 'on'
@@ -61,13 +63,33 @@ function getTargetStatus(current: number, target: number | null): 'above' | 'on'
 function statusColor(status: 'above' | 'on' | 'below' | 'unknown') {
   switch (status) {
     case 'above':
-      return { bg: 'bg-green-500/10', text: 'text-green-400', border: 'border-green-500/20', dot: 'bg-green-500' }
+      return {
+        bg: 'bg-green-500/10',
+        text: 'text-green-400',
+        border: 'border-green-500/20',
+        dot: 'bg-green-500',
+      }
     case 'on':
-      return { bg: 'bg-amber-500/10', text: 'text-clay-600', border: 'border-amber-500/20', dot: 'bg-amber-500' }
+      return {
+        bg: 'bg-amber-500/10',
+        text: 'text-clay-600',
+        border: 'border-amber-500/20',
+        dot: 'bg-amber-500',
+      }
     case 'below':
-      return { bg: 'bg-red-500/10', text: 'text-red-400', border: 'border-red-500/20', dot: 'bg-red-500' }
+      return {
+        bg: 'bg-red-500/10',
+        text: 'text-red-400',
+        border: 'border-red-500/20',
+        dot: 'bg-red-500',
+      }
     default:
-      return { bg: 'bg-muted', text: 'text-muted-foreground', border: 'border-border', dot: 'bg-muted-foreground' }
+      return {
+        bg: 'bg-muted',
+        text: 'text-muted-foreground',
+        border: 'border-border',
+        dot: 'bg-muted-foreground',
+      }
   }
 }
 
@@ -100,71 +122,24 @@ function trajectoryLabel(trajectory: string): string {
   }
 }
 
-/* ── Grade Distribution Bar (stacked horizontal) ───────────────────────────── */
+/* ── Grade Distribution Bar (delegates to shared visual chart) ─────────────── */
+
+import { GradeDistributionChart } from '@/components/analytics/GradeDistributionChart'
 
 function GradeDistributionBar({ students }: { students: GradeTrackerStudent[] }) {
   const distribution = useMemo(() => {
     const counts: Record<number, number> = {}
     for (let g = 1; g <= 9; g++) counts[g] = 0
-
     for (const s of students) {
       const grade = parseGrade(s.predicted_grade)
       if (grade >= 1 && grade <= 9) counts[grade]++
     }
-
     return counts
   }, [students])
 
-  const total = students.length || 1
-
-  const gradeColors: Record<number, string> = {
-    1: 'bg-red-600',
-    2: 'bg-red-500',
-    3: 'bg-red-400',
-    4: 'bg-amber-500',
-    5: 'bg-amber-400',
-    6: 'bg-yellow-400',
-    7: 'bg-green-400',
-    8: 'bg-green-500',
-    9: 'bg-emerald-500',
-  }
-
-  return (
-    <div>
-      <div className="flex h-8 w-full overflow-hidden rounded-lg border border-border">
-        {Array.from({ length: 9 }, (_, i) => i + 1).map((grade) => {
-          const count = distribution[grade]
-          const pct = (count / total) * 100
-          if (pct === 0) return null
-          return (
-            <div
-              key={grade}
-              className={cn(
-                'flex items-center justify-center text-[10px] font-bold text-white transition-all',
-                gradeColors[grade],
-              )}
-              style={{ width: `${pct}%` }}
-              title={`Grade ${grade}: ${count} student${count !== 1 ? 's' : ''} (${Math.round(pct)}%)`}
-            >
-              {pct >= 6 && grade}
-            </div>
-          )
-        })}
-      </div>
-      <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-        {Array.from({ length: 9 }, (_, i) => i + 1).map((grade) => {
-          const count = distribution[grade]
-          if (count === 0) return null
-          return (
-            <div key={grade} className="flex items-center gap-1">
-              <div className={cn('h-2.5 w-2.5 rounded-sm', gradeColors[grade])} />
-              <span>Grade {grade}: {count}</span>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
+  // Use the shared visual chart so /demo/school, /school/dashboard,
+  // and the GradeTracker all show the same readable layout.
+  return <GradeDistributionChart counts={distribution} title={null} />
 }
 
 /* ── Flight Path Row ───────────────────────────────────────────────────────── */
@@ -339,7 +314,7 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
     const onTargetPct = Math.round(((aboveCount + onCount) / totalWithTargets) * 100)
 
     const grades = enriched.map((s) => s.current).filter((g) => g > 0)
-    const avgGrade = grades.length > 0 ? (grades.reduce((a, b) => a + b, 0) / grades.length) : 0
+    const avgGrade = grades.length > 0 ? grades.reduce((a, b) => a + b, 0) / grades.length : 0
 
     return {
       aboveCount,
@@ -354,7 +329,15 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
 
   /* ── Render sort header ───────────────────────────────────────────────────── */
 
-  function SortHeader({ label, sortKeyName, align }: { label: string; sortKeyName: SortKey; align?: string }) {
+  function SortHeader({
+    label,
+    sortKeyName,
+    align,
+  }: {
+    label: string
+    sortKeyName: SortKey
+    align?: string
+  }) {
     return (
       <th
         className={cn(
@@ -364,7 +347,9 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
         )}
         role="columnheader"
         tabIndex={0}
-        aria-sort={sortKey === sortKeyName ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'}
+        aria-sort={
+          sortKey === sortKeyName ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'
+        }
         onClick={() => handleSort(sortKeyName)}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
@@ -401,12 +386,18 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
                 <Users className="h-4 w-4 text-primary" />
               </div>
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Students</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                Students
+              </span>
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold tracking-tight text-foreground">{stats.totalStudents}</div>
-            <p className="text-xs text-muted-foreground mt-1">{stats.totalWithTargets} with targets set</p>
+            <div className="text-2xl font-bold tracking-tight text-foreground">
+              {stats.totalStudents}
+            </div>
+            <p className="text-xs text-muted-foreground mt-1">
+              {stats.totalWithTargets} with targets set
+            </p>
           </CardContent>
         </Card>
 
@@ -416,11 +407,15 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-500/10">
                 <Target className="h-4 w-4 text-green-400" />
               </div>
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">On Target</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                On Target
+              </span>
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold tracking-tight text-green-400">{stats.onTargetPct}%</div>
+            <div className="text-2xl font-bold tracking-tight text-green-400">
+              {stats.onTargetPct}%
+            </div>
             <p className="text-xs text-muted-foreground mt-1">
               {stats.aboveCount + stats.onCount} of {stats.totalWithTargets} students
             </p>
@@ -433,11 +428,15 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10">
                 <BarChart3 className="h-4 w-4 text-blue-400" />
               </div>
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Avg Grade</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                Avg Grade
+              </span>
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold tracking-tight text-foreground">{stats.avgGrade}</div>
+            <div className="text-2xl font-bold tracking-tight text-foreground">
+              {stats.avgGrade}
+            </div>
           </CardContent>
         </Card>
 
@@ -447,7 +446,9 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-500/10">
                 <TrendingDown className="h-4 w-4 text-red-400" />
               </div>
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Below Target</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                Below Target
+              </span>
             </div>
           </CardHeader>
           <CardContent>
@@ -475,7 +476,8 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
                   style={{ width: `${(stats.aboveCount / (stats.totalWithTargets || 1)) * 100}%` }}
                   title={`Above target: ${stats.aboveCount}`}
                 >
-                  {(stats.aboveCount / (stats.totalWithTargets || 1)) * 100 >= 10 && `${stats.aboveCount} above`}
+                  {(stats.aboveCount / (stats.totalWithTargets || 1)) * 100 >= 10 &&
+                    `${stats.aboveCount} above`}
                 </div>
               )}
               {stats.onCount > 0 && (
@@ -484,7 +486,8 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
                   style={{ width: `${(stats.onCount / (stats.totalWithTargets || 1)) * 100}%` }}
                   title={`On target: ${stats.onCount}`}
                 >
-                  {(stats.onCount / (stats.totalWithTargets || 1)) * 100 >= 10 && `${stats.onCount} on`}
+                  {(stats.onCount / (stats.totalWithTargets || 1)) * 100 >= 10 &&
+                    `${stats.onCount} on`}
                 </div>
               )}
               {stats.belowCount > 0 && (
@@ -493,7 +496,8 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
                   style={{ width: `${(stats.belowCount / (stats.totalWithTargets || 1)) * 100}%` }}
                   title={`Below target: ${stats.belowCount}`}
                 >
-                  {(stats.belowCount / (stats.totalWithTargets || 1)) * 100 >= 10 && `${stats.belowCount} below`}
+                  {(stats.belowCount / (stats.totalWithTargets || 1)) * 100 >= 10 &&
+                    `${stats.belowCount} below`}
                 </div>
               )}
             </div>

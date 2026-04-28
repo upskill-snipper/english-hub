@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { PressHero, PressSection, StatPlaceholder } from '@/components/press/PressLayout'
 import { Mail, Download, ExternalLink, Building2, FileText } from 'lucide-react'
 
@@ -49,16 +48,17 @@ export default function PressPage() {
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground mb-2">
               Registered office
             </p>
-            <p className="text-sm text-foreground">
-              110 Harington Road
-              <br />
-              Formby
-              <br />
-              Liverpool
-              <br />
-              L37 1PZ
-              <br />
-              United Kingdom
+            <p className="text-sm text-foreground">Registered in England &amp; Wales.</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              The full registered office is available via Companies House (company number 16511479).
+              For postal correspondence please email{' '}
+              <a
+                href="mailto:press@theenglishhub.app"
+                className="text-primary underline underline-offset-4"
+              >
+                press@theenglishhub.app
+              </a>
+              .
             </p>
           </Card>
           <Card className="p-5 border-border/40">
@@ -66,18 +66,14 @@ export default function PressPage() {
               Data protection
             </p>
             <p className="text-sm text-foreground">ICO registration ZC016690</p>
-            <p className="text-sm text-muted-foreground mt-1">
-              Data controller under the UK GDPR.
-            </p>
+            <p className="text-sm text-muted-foreground mt-1">Data controller under the UK GDPR.</p>
           </Card>
           <Card className="p-5 border-border/40">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground mb-2">
               Founded
             </p>
             <p className="text-sm text-foreground">2025, based in the United Kingdom.</p>
-            <p className="text-sm text-muted-foreground mt-1">
-              Bootstrapped and teacher-led.
-            </p>
+            <p className="text-sm text-muted-foreground mt-1">Bootstrapped and teacher-led.</p>
           </Card>
         </div>
       </PressSection>
@@ -121,9 +117,7 @@ export default function PressPage() {
             schools, anchored against projected standard pricing of &pound;8,000/year.
           </li>
         </ul>
-        <p className="text-sm text-muted-foreground">
-          Prices shown in GBP.
-        </p>
+        <p className="text-sm text-muted-foreground">Prices shown in GBP.</p>
 
         <h3 className="font-serif text-xl text-foreground mt-8">What makes it distinct</h3>
         <ul>
@@ -147,7 +141,10 @@ export default function PressPage() {
       <PressSection eyebrow="Press enquiries" title="Talk to us">
         <p>
           For interviews, review access, quotes, or fact-checking, email{' '}
-          <a href="mailto:press@theenglishhub.app" className="text-primary underline underline-offset-4">
+          <a
+            href="mailto:press@theenglishhub.app"
+            className="text-primary underline underline-offset-4"
+          >
             press@theenglishhub.app
           </a>
           . We reply within one UK working day.
@@ -162,34 +159,15 @@ export default function PressPage() {
             <Mail className="w-4 h-4 mr-2" />
             Email the press desk
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="h-12"
-            render={<Link href="/contact" />}
-          >
+          <Button variant="outline" size="lg" className="h-12" render={<Link href="/contact" />}>
             General contact
           </Button>
         </div>
       </PressSection>
 
-      {/* Founder bio */}
-      <PressSection eyebrow="Founder" title="Calum Jones — founder and lead teacher">
-        <div className="not-prose mb-4">
-          <Badge variant="outline" className="border-amber-500/30 bg-amber-500/[0.06] text-amber-700">
-            DRAFT — founder to review
-          </Badge>
-        </div>
-        <p>
-          Calum Jones is the founder of Upskill Energy Limited and the lead teacher behind The
-          English Hub. He is a serving UK secondary English teacher and has spent the last several
-          years marking GCSE and IGCSE responses against AQA, Edexcel, and Cambridge mark schemes.
-          The platform grew out of the resources and feedback frameworks he wrote for his own
-          classroom. Calum lives in the North West of England and is based in Liverpool. He is
-          available for interview on exam reform, AI in schools, and how independent teachers can
-          build serious software without taking outside investment.
-        </p>
-      </PressSection>
+      {/* Founder bio — removed pending founder-approved copy.
+          Press contacts can request an interview or a short bio via the
+          press desk above. */}
 
       {/* Press kit */}
       <PressSection eyebrow="Press kit" title="Download the media kit">
