@@ -81,7 +81,7 @@ const POEMS: Poem[] = [
     poet: 'John Keats',
     date: '1819 (1820 Indicator version)',
     context:
-      "Written during the Romantic period, when poets valued emotion, nature, and the supernatural. Keats was influenced by medieval ballads and chivalric romance. The title is borrowed from a 15th-century French poem meaning 'The Beautiful Lady Without Mercy'. Keats was also grappling with his own mortality due to tuberculosis. VERSION NOTE: The Edexcel IGCSE anthology uses the 1820 'Indicator' version of the poem (with 'knight-at-arms'), NOT the later 1848 (Milnes) revision (which uses 'wretched wight'). The quotations below are taken from the 1820 anthology text — always quote from the anthology version when answering Edexcel questions.",
+      "Written during the Romantic period, when poets valued emotion, nature, and the supernatural. Keats was influenced by medieval ballads and chivalric romance. The title is borrowed from a 15th-century French poem meaning 'The Beautiful Lady Without Mercy'. Keats was also grappling with his own mortality due to tuberculosis. VERSION NOTE: The Edexcel UK GCSE 1ET0 anthology uses the 1820 'Indicator' version of the poem (with 'knight-at-arms'), NOT the later 1848 (Milnes) revision (which uses 'wretched wight'). The quotations below are taken from the 1820 anthology text — always quote from the anthology version when answering Edexcel questions.",
     summary:
       'A knight is found alone on a cold hillside, pale and haggard. He recounts meeting a beautiful, supernatural woman who enchanted him with food, song, and declarations of love. She lulled him to sleep, and he dreamed of previous victims warning him of enthrallment. He woke alone on the cold hill, trapped in a cycle of longing.',
     formAndStructure:
@@ -166,10 +166,10 @@ const POEMS: Poem[] = [
   {
     id: 'letters-from-yorkshire',
     title: 'Letters from Yorkshire',
-    poet: 'Maura Doshi',
+    poet: 'Maura Dooley',
     date: '2002',
     context:
-      'A contemporary poem exploring the relationship between two people living different lives -- one in rural Yorkshire, one in an urban environment. Doshi examines how meaningful connection can be maintained across distance through letters and shared understanding. The poem resists categorisation as purely romantic; the relationship could be familial or platonic.',
+      'A contemporary poem exploring the relationship between two people living different lives -- one in rural Yorkshire, one in an urban environment. Dooley examines how meaningful connection can be maintained across distance through letters and shared understanding. The poem resists categorisation as purely romantic; the relationship could be familial or platonic.',
     summary:
       "The speaker receives letters from someone in Yorkshire who writes about seasonal changes, nature, and rural life -- planting potatoes, seeing the first lapwings. The speaker contrasts their own screen-based work with the correspondent's physical, outdoor existence. Despite the distance and different lifestyles, the letters create a powerful emotional connection that transcends geography.",
     formAndStructure:
@@ -862,7 +862,7 @@ const COMPARISON_PAIRS: ComparisonPair[] = [
     poemB: 'Winter Swans',
     link: 'Both explore connection through the natural world',
     contrast:
-      "Doshi's connection is maintained across distance through writing; Sheers's couple reconnect through shared physical presence.",
+      "Dooley's connection is maintained across distance through writing; Sheers's couple reconnect through shared physical presence.",
   },
   {
     poemA: 'La Belle Dame Sans Merci',
@@ -886,15 +886,15 @@ export default function EdexcelAnthologyPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
-            Edexcel GCSE English Literature
+            Edexcel UK GCSE English Literature (1ET0)
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Relationships Poetry Anthology
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            In-depth analysis of all 15 poems in the Edexcel Relationships cluster. Context,
-            summaries, form and structure, key quotations with technique analysis, themes, and
-            comparison guidance.
+            In-depth analysis of all 15 poems in the Edexcel UK GCSE Pearson Anthology Relationships
+            cluster (1ET0 only — not the Edexcel IGCSE 4ET1 anthology). Context, summaries, form and
+            structure, key quotations with technique analysis, themes, and comparison guidance.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <span className="rounded-full bg-card/20 px-4 py-1.5 text-sm font-medium">

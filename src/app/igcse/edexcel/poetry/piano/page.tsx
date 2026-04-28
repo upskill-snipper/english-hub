@@ -328,23 +328,10 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
 
 /* ── Comparison poems ─────────────────────────────────────────────── */
 
+// Note: Piano is NOT in the current Edexcel IGCSE 4ET1 anthology (see scope notice
+// above). These comparisons are with poems that ARE in the 4ET1 anthology — useful
+// only as wider-reading practice, not as exam-ready pairings.
 const comparisons = [
-  {
-    title: 'Poem at Thirty-Nine',
-    poet: 'Alice Walker',
-    href: '/igcse/edexcel/poetry',
-    reason:
-      "Both poems are about an adult remembering a loved, lost parent. Both speakers find themselves now carrying forward the parent's gentleness. Compare Lawrence's overwhelmed surrender with Walker's calmer, more reflective grief.",
-    themes: ['Parent–child memory', 'Grief', 'Nostalgia'],
-  },
-  {
-    title: 'Half-past Two',
-    poet: 'U.A. Fanthorpe',
-    href: '/igcse/edexcel/poetry',
-    reason:
-      "Both poems see through a child's eyes. Piano remembers a warm, safe childhood; Half-past Two shows a bewildered, lonely one. Compare how each writer captures the way children experience time and adult attention.",
-    themes: ['Childhood perspective', 'Memory', 'Time'],
-  },
   {
     title: 'If—',
     poet: 'Rudyard Kipling',
@@ -352,6 +339,22 @@ const comparisons = [
     reason:
       'Piano is the emotional opposite of If—. Where Kipling insists that a man must "keep his head" and never "breathe a word about your loss", Lawrence lets his "manhood" be "cast down" and weeps openly. Compare two very different models of masculine emotion.',
     themes: ['Masculinity', 'Emotion', 'Self-control'],
+  },
+  {
+    title: 'Remember',
+    poet: 'Christina Rossetti',
+    href: '/igcse/edexcel/poetry/remember',
+    reason:
+      'Both poems centre on the bond between a speaker and a loved person threatened by separation. Lawrence longs to return to a remembered mother; Rossetti asks her beloved to remember her after death. Compare how each handles tenderness, memory and the wish to hold on.',
+    themes: ['Memory', 'Love', 'Loss'],
+  },
+  {
+    title: 'An Unknown Girl',
+    poet: 'Moniza Alvi',
+    href: '/igcse/edexcel/poetry/an-unknown-girl',
+    reason:
+      'Both poems explore an adult’s longing for a moment of belonging. Lawrence is pulled back to childhood domesticity; Alvi is pulled into a culture she only partly belongs to. Compare how each speaker uses sensory memory to express identity and yearning.',
+    themes: ['Identity', 'Belonging', 'Memory'],
   },
 ]
 
@@ -416,8 +419,9 @@ export default function PianoPage() {
           <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for Piano.
+          Piano is not in the current 4ET1 anthology, so these are wider-reading pairings rather
+          than exam-ready comparisons. Each poem listed here <em>is</em> in the 4ET1 anthology, so
+          you can practise the comparison skill while staying within the prescribed set.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

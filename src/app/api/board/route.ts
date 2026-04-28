@@ -1,19 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import type { ExamBoard } from '@/lib/board/board-config'
+import { BOARDS } from '@/lib/board/board-config'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 // ─── Validation ─────────────────────────────────────────────────────────
-
-const VALID_BOARDS = [
-  'aqa',
-  'edexcel',
-  'ocr',
-  'eduqas',
-  'edexcel-igcse',
-  'cambridge-0500',
-  'cambridge-0990',
-] as const satisfies readonly ExamBoard[]
+//
+// Derive the valid-board enum from the canonical BOARDS array so newly
+// added boards (KS3, IAL, UK A-Level, IGCSE Language, etc.) are accepted
+// without touching this file. Previously this was a hand-maintained subset
+// of 7 boards, which silently rejected `ks3`, `ial-edexcel`, the four UK
+// A-Level boards, `cambridge-0475`, and `edexcel-igcse-lang` with a 400
+// despite those boards being selectable in the BoardSelectorSection UI.
+const VALID_BOARDS = BOARDS.map((b) => b.id) as [
+  ExamBoard,
+  ...ExamBoard[],
+] satisfies readonly ExamBoard[]
 
 const setBoardSchema = z.object({
   board: z.enum(VALID_BOARDS),
@@ -33,7 +35,10 @@ export async function POST(request: NextRequest) {
   if (!rl.success) {
     return NextResponse.json(
       { error: 'Too many requests. Please try again later.' },
-      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      {
+        status: 429,
+        headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+      },
     )
   }
 
@@ -41,17 +46,14 @@ export async function POST(request: NextRequest) {
   try {
     body = await request.json()
   } catch {
-    return NextResponse.json(
-      { error: 'Invalid JSON body' },
-      { status: 400 }
-    )
+    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 })
   }
 
   const parsed = setBoardSchema.safeParse(body)
   if (!parsed.success) {
     return NextResponse.json(
       { error: 'Invalid board value', details: parsed.error.flatten() },
-      { status: 400 }
+      { status: 400 },
     )
   }
 

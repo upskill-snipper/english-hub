@@ -382,25 +382,20 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
   },
   {
     title: 'War Photographer',
-    poet: 'Carol Ann Duffy',
+    poet: 'Carole Satyamurti',
     summary:
-      "A war photographer develops his photographs in his darkroom after returning from a conflict zone. The contrast between the suffering he has witnessed and the comfortable indifference of people at home haunts him. The poem critiques society's response to images of war.",
+      "Satyamurti's poem (in the Edexcel UK GCSE Conflict cluster) explores how a photographer captures images of war and atrocity for a comfortable home audience. The poem interrogates the moral position of the witness who turns suffering into images, and the ethics of viewing distant pain in safety.",
     themes:
-      'The reality of war, media and desensitisation, guilt, the gap between suffering and comfort',
+      'The reality of war, media and detachment, ethics of witnessing, the gap between suffering and comfort',
     language:
-      "Religious language ('a priest preparing to intone a Mass') elevates the photographer's work to something sacred. Sensory imagery ('running children in a nightmare heat') makes distant suffering immediate. 'A hundred agonies in black and white' reduces human pain to newspaper copy.",
+      "Detached, observational language reflects the photographer's professional distance. Sensory and visual imagery ('focus', 'frame') foregrounds the camera as an instrument of mediation. The poem questions whether photographs of suffering can produce empathy or only numb the viewer.",
     structure:
-      "Four regular sestets with a measured, controlled rhythm — reflecting the photographer's disciplined, methodical work. The rhyme scheme (ABBCDD) creates order, contrasting with the chaos he has witnessed.",
-    keyQuotes: [
-      '"In his darkroom he is finally alone with spools of suffering set out in ordered rows"',
-      '"A hundred agonies in black and white"',
-      '"The reader\'s eyeballs prick with tears between the bath and pre-lunch beers"',
-      '"He remembers the cries of this man\'s wife"',
-    ],
+      "Measured stanzas with a controlled rhythm reflect the photographer's disciplined, technical work. The form contrasts with the chaos witnessed, creating an unsettling distance between subject and treatment.",
+    keyQuotes: ['"images develop"', '"a hundred agonies"', '"the photographer composes the world"'],
     comparisonLinks:
       "Compare with 'Exposure' (suffering in war), 'What Were They Like?' (the impact of war on civilians), or 'Poppies' (personal response to war).",
     rightsNotice:
-      "Rights notice: © Picador / Pan Macmillan and Rogers Coleridge & White on behalf of Carol Ann Duffy (b. 1955). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Duffy's collection Standing Female Nude (1985).",
+      "Rights notice: © Bloodaxe Books on behalf of the Carole Satyamurti estate (1939–2019). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology. NB: Edexcel UK GCSE 1ET0 uses Satyamurti's 'War Photographer', distinct from Carol Ann Duffy's poem of the same title used elsewhere.",
   },
   {
     title: 'Belfast Confetti',
@@ -439,7 +434,7 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       '"the Angel of Death spread his wings on the blast"',
     ],
     comparisonLinks:
-      "Compare with 'The Charge of the Light Brigade' (battle), 'Hawk Roosting' (power), or 'A Poison Tree' (destruction).",
+      "Compare with 'The Charge of the Light Brigade' (battle), 'Exposure' (war and power), or 'A Poison Tree' (destruction).",
   },
   {
     title: 'Half-caste',
@@ -479,7 +474,7 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       '"And my foe beheld it shine, and he knew that it was mine"',
     ],
     comparisonLinks:
-      "Compare with 'Hawk Roosting' (controlled violence), 'Cousin Kate' (bitterness), or 'The Destruction of Sennacherib' (destruction).",
+      "Compare with 'Half-caste' (controlled defiance), 'Cousin Kate' (bitterness), or 'The Destruction of Sennacherib' (destruction).",
   },
   {
     title: 'The Man He Killed',
@@ -598,25 +593,22 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       'Rights notice: © Templar Poetry on behalf of Jane Weir (b. 1963). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology (the poem was originally commissioned for the AQA anthology in 2009).',
   },
   {
-    title: 'Hawk Roosting',
-    poet: 'Ted Hughes',
+    title: 'Extract from The Prelude',
+    poet: 'William Wordsworth',
     summary:
-      "A hawk speaks in first person, describing its absolute power and control. It sits atop a tree surveying its domain, believing the world was created for its benefit. The poem can be read as an exploration of nature's violence or as an allegory for tyranny and dictatorship.",
-    themes: "Power, control, nature's violence, arrogance, tyranny",
+      "An autobiographical extract in which a boy steals a rowing boat at night and is confronted by the awesome, almost living force of a mountain that seems to rise up and follow him. The encounter shapes his understanding of nature's power and his own moral consciousness.",
+    themes: 'Nature, power of the sublime, fear, conscience, growing up',
     language:
-      "First-person narration gives the hawk an unsettling human-like consciousness. Declarative sentences ('I kill where I please because it is all mine') convey absolute authority. No metaphor or simile — the hawk speaks in literal terms, suggesting raw, unadorned power needs no embellishment.",
+      "Personification ('a huge peak, black and huge... / Strode after me') gives the mountain agency and intent. Verbs of motion ('strode', 'measured motion') make nature feel deliberate. Abstract diction ('unknown modes of being') suggests the experience is beyond ordinary understanding.",
     structure:
-      "Six regular quatrains with a controlled, measured rhythm reflecting the hawk's composed authority. The lack of rhyme scheme suggests the hawk is beyond rules or conventions. End-stopped lines create finality — each statement is an absolute.",
+      'Blank verse (unrhymed iambic pentameter) with extensive enjambment, mirroring the flowing, continuous quality of memory. The single-block structure mimics the unbroken power of nature and the boy’s overwhelming experience.',
     keyQuotes: [
-      '"I sit in the top of the wood, my eyes closed"',
-      '"I kill where I please because it is all mine"',
-      '"Nothing has changed since I began. My eye has permitted no change"',
-      '"No arguments assert my right"',
+      '"a huge peak, black and huge, / As if with voluntary power instinct, / Upreared its head"',
+      '"With purpose of its own / And measured motion like a living thing, / Strode after me"',
+      '"a dim and undetermined sense / Of unknown modes of being"',
     ],
     comparisonLinks:
-      "Compare with 'My Last Duchess' (Relationships — power and control), 'The Destruction of Sennacherib' (divine vs earthly power), or 'A Poison Tree' (controlled aggression).",
-    rightsNotice:
-      "Rights notice: © Faber & Faber on behalf of the Ted Hughes estate (1930–1998). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Hughes's collection Lupercal (1960).",
+      "Compare with 'Exposure' (the power of nature), 'The Destruction of Sennacherib' (overwhelming forces), or 'A Poison Tree' (conscience and moral awakening).",
   },
 ]
 

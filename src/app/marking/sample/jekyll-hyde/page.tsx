@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 export const metadata: Metadata = {
   title: 'Jekyll & Hyde Model Essays — Grade 5, 7 & 9 | The English Hub',
   description:
-    "Three fully-annotated model essays answering 'How does Stevenson present the theme of duality?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and marker commentary. AQA, Edexcel, OCR & Eduqas.",
+    "Three fully-annotated model essays answering 'How does Stevenson present the theme of duality?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and marker commentary. AQA mark scheme.",
   keywords: [
     'Jekyll and Hyde',
     'model essay',
@@ -19,9 +19,6 @@ export const metadata: Metadata = {
     'grade 7 essay',
     'grade 9 essay',
     'AQA',
-    'Edexcel',
-    'OCR',
-    'Eduqas',
     'Stevenson',
     'exam revision',
   ],
@@ -57,7 +54,11 @@ interface ModelEssay {
 
 /* ─── Board guard ─────────────────────────────────────────── */
 
-const SUPPORTED_BOARDS = ['AQA', 'Edexcel', 'OCR', 'Eduqas'] as const
+// These model essays use the AQA mark scheme (AO1=12, AO2=12, AO3=6, AO4=4).
+// Jekyll & Hyde is also a set text on Edexcel, OCR and Eduqas, but those
+// boards use different AO weightings on the 19th-century novel question, so
+// this page is labelled for AQA only to avoid misleading mark allocations.
+const SUPPORTED_BOARDS = ['AQA'] as const
 
 /* ─── Essay data ──────────────────────────────────────────── */
 
@@ -66,7 +67,7 @@ const ESSAYS: ModelEssay[] = [
   {
     grade: 5,
     title: 'Jekyll & Hyde — Grade 5 response',
-    boards: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
+    boards: ['AQA'],
     paper: 'English Literature',
     question:
       'How does Stevenson present the theme of duality in The Strange Case of Dr Jekyll and Mr Hyde?',
@@ -151,7 +152,7 @@ const ESSAYS: ModelEssay[] = [
   {
     grade: 7,
     title: 'Jekyll & Hyde — Grade 7 response',
-    boards: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
+    boards: ['AQA'],
     paper: 'English Literature',
     question:
       'How does Stevenson present the theme of duality in The Strange Case of Dr Jekyll and Mr Hyde?',
@@ -235,7 +236,7 @@ const ESSAYS: ModelEssay[] = [
   {
     grade: 9,
     title: 'Jekyll & Hyde — Grade 9 response',
-    boards: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
+    boards: ['AQA'],
     paper: 'English Literature',
     question:
       'How does Stevenson present the theme of duality in The Strange Case of Dr Jekyll and Mr Hyde?',

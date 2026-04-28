@@ -265,7 +265,7 @@ export default async function EdexcelIgcseLangHubPage() {
           </div>
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">
-              Paper 2: Poetry and Prose Texts and Imaginative Writing
+              Paper 2: Reading and Writing (Non-Fiction)
             </h2>
             <p className="font-mono text-body-xs text-muted-foreground">
               1 hour 30 minutes &middot; 40 marks &middot; 40% of total

@@ -194,7 +194,7 @@ export const igcseLangMocks: MockExamPaper[] = [
   // ═════════════════════════════════════════════════════════════════════════
   {
     id: 'igcse-lang-p1-mock-01',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 1,
     title: 'Cambridge IGCSE English Language - Paper 1 Mock Exam 1',
     subtitle: 'Reading and Comprehension',
@@ -205,7 +205,8 @@ export const igcseLangMocks: MockExamPaper[] = [
       {
         id: 'igcse-lang-p1-m1-reading',
         title: 'Reading Comprehension Section',
-        description: 'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
+        description:
+          'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
         totalMarks: 80,
         suggestedTimeMinutes: 120,
         questions: [
@@ -323,7 +324,7 @@ export const igcseLangMocks: MockExamPaper[] = [
 
   {
     id: 'igcse-lang-p1-mock-02',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 1,
     title: 'Cambridge IGCSE English Language - Paper 1 Mock Exam 2',
     subtitle: 'Reading and Comprehension',
@@ -334,7 +335,8 @@ export const igcseLangMocks: MockExamPaper[] = [
       {
         id: 'igcse-lang-p1-m2-reading',
         title: 'Reading Comprehension Section',
-        description: 'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
+        description:
+          'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
         totalMarks: 80,
         suggestedTimeMinutes: 120,
         questions: [
@@ -452,7 +454,7 @@ export const igcseLangMocks: MockExamPaper[] = [
 
   {
     id: 'igcse-lang-p1-mock-03',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 1,
     title: 'Cambridge IGCSE English Language - Paper 1 Mock Exam 3',
     subtitle: 'Reading and Comprehension',
@@ -463,7 +465,8 @@ export const igcseLangMocks: MockExamPaper[] = [
       {
         id: 'igcse-lang-p1-m3-reading',
         title: 'Reading Comprehension Section',
-        description: 'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
+        description:
+          'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
         totalMarks: 80,
         suggestedTimeMinutes: 120,
         questions: [
@@ -585,7 +588,7 @@ export const igcseLangMocks: MockExamPaper[] = [
 
   {
     id: 'igcse-lang-p2-mock-01',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 2,
     title: 'Cambridge IGCSE English Language - Paper 2 Mock Exam 1',
     subtitle: 'Directed Writing and Composition',
@@ -596,7 +599,8 @@ export const igcseLangMocks: MockExamPaper[] = [
       {
         id: 'igcse-lang-p2-m1-writing',
         title: 'Directed Writing and Composition',
-        description: 'Answer both questions. Question 1 (Directed Writing) is worth 40 marks. Question 2 (Composition) is worth 40 marks.',
+        description:
+          'Answer both questions. Question 1 (Directed Writing) is worth 40 marks. Question 2 (Composition) is worth 40 marks.',
         totalMarks: 80,
         suggestedTimeMinutes: 120,
         questions: [
@@ -695,7 +699,7 @@ Soon, I too will dissolve into nothing, returned to elements that can be recycle
                 'Employs metaphor, symbolism, or other figurative language (3 marks)',
                 'Vivid sensory imagery and descriptive detail (3 marks)',
                 'Sophisticated use of narrative/compositional techniques (2 marks)',
-                'Devices serve the piece\'s purpose and theme (2 marks)',
+                "Devices serve the piece's purpose and theme (2 marks)",
               ],
               'Language & Style (10 marks)': [
                 'Sophisticated, precise vocabulary (3 marks)',
@@ -718,7 +722,7 @@ Soon, I too will dissolve into nothing, returned to elements that can be recycle
 
   {
     id: 'igcse-lang-p2-mock-02',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 2,
     title: 'Cambridge IGCSE English Language - Paper 2 Mock Exam 2',
     subtitle: 'Directed Writing and Composition',
@@ -729,7 +733,8 @@ Soon, I too will dissolve into nothing, returned to elements that can be recycle
       {
         id: 'igcse-lang-p2-m2-writing',
         title: 'Directed Writing and Composition',
-        description: 'Answer both questions. Question 1 (Directed Writing) is worth 40 marks. Question 2 (Composition) is worth 40 marks.',
+        description:
+          'Answer both questions. Question 1 (Directed Writing) is worth 40 marks. Question 2 (Composition) is worth 40 marks.',
         totalMarks: 80,
         suggestedTimeMinutes: 120,
         questions: [
@@ -760,7 +765,7 @@ Many students have mental health problems like depression and anxiety. Universit
                 'Develops significant depth and complexity (2 marks)',
               ],
               'Structure & Organization (8 marks)': [
-                'Clear opening that establishes problem\'s urgency (2 marks)',
+                "Clear opening that establishes problem's urgency (2 marks)",
                 'Logical development of solutions with supporting reasoning (2 marks)',
                 'Effective use of direct address to student readers (2 marks)',
                 'Strong conclusion that calls to action (2 marks)',
@@ -839,7 +844,7 @@ I am still rebuilding, still learning to set boundaries, still fighting the voic
 
   {
     id: 'igcse-lang-p2-mock-03',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 2,
     title: 'Cambridge IGCSE English Language - Paper 2 Mock Exam 3',
     subtitle: 'Directed Writing and Composition',
@@ -850,7 +855,8 @@ I am still rebuilding, still learning to set boundaries, still fighting the voic
       {
         id: 'igcse-lang-p2-m3-writing',
         title: 'Directed Writing and Composition',
-        description: 'Answer both questions. Question 1 (Directed Writing) is worth 40 marks. Question 2 (Composition) is worth 40 marks.',
+        description:
+          'Answer both questions. Question 1 (Directed Writing) is worth 40 marks. Question 2 (Composition) is worth 40 marks.',
         totalMarks: 80,
         suggestedTimeMinutes: 120,
         questions: [

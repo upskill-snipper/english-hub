@@ -535,8 +535,10 @@ export default function CousinKatePage() {
           <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for Cousin Kate.
+          Cousin Kate is not in the current 4ET1 anthology, so these are wider-reading pairings
+          rather than exam-ready comparisons. Each poem listed here <em>is</em> in the 4ET1
+          anthology, so you can practise the comparison skill while staying within the prescribed
+          set.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -14,23 +14,25 @@ import type { ExamBoard } from './board-store'
  */
 
 export const ALL_BOARDS: ExamBoard[] = [
+  'ks3',
   'aqa',
   'edexcel',
   'ocr',
   'eduqas',
   'edexcel-igcse',
+  'edexcel-igcse-lang',
   'cambridge-0500',
   'cambridge-0990',
+  'cambridge-0475',
+  'ial-edexcel',
+  'aqa-a-level',
+  'edexcel-a-level',
+  'ocr-a-level',
+  'eduqas-a-level',
 ]
 
 /** Boards that study the standard GCSE Shakespeare/19th century novel set-texts */
-const GCSE_LIT_BOARDS: ExamBoard[] = [
-  'aqa',
-  'edexcel',
-  'ocr',
-  'eduqas',
-  'edexcel-igcse',
-]
+const GCSE_LIT_BOARDS: ExamBoard[] = ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse']
 
 const GCSE_LIT_NO_IGCSE: ExamBoard[] = ['aqa', 'edexcel', 'ocr', 'eduqas']
 
@@ -63,8 +65,19 @@ export const FLASHCARD_DECK_BOARDS: Record<string, ExamBoard[]> = {
   'jekyll-hyde-quotes': GCSE_LIT_NO_IGCSE,
   'christmas-carol-quotes': ACC_BOARDS,
   'acc-comprehensive': ACC_BOARDS,
-  'lotf-comprehensive': ['edexcel-igcse'],
-  'af-comprehensive': ['edexcel-igcse'],
+  // Lord of the Flies: AQA + OCR + Eduqas (per set-texts.ts)
+  'lotf-comprehensive': ['aqa', 'ocr', 'eduqas'],
+  // Animal Farm: AQA + Edexcel + OCR (per set-texts.ts)
+  'af-comprehensive': ['aqa', 'edexcel', 'ocr'],
+
+  // ── Board-specific exam technique decks ──────────────────────────────────
+  // These decks contain paper-by-paper question technique guidance that is
+  // strictly board-specific (paper structure, mark schemes, AOs differ).
+  'aqa-exam-technique': ['aqa'],
+  'edexcel-exam-technique': ['edexcel'],
+  'ocr-exam-technique': ['ocr'],
+  // WJEC = Eduqas (WJEC Eduqas single-anthology GCSE)
+  'wjec-exam-technique': ['eduqas'],
 
   // ── Universal skills / technique / vocabulary decks ──────────────────────
   'literary-techniques': ALL_BOARDS,
@@ -77,6 +90,11 @@ export const FLASHCARD_DECK_BOARDS: Record<string, ExamBoard[]> = {
   'bulk-deck': ALL_BOARDS,
   'final-deck': ALL_BOARDS,
   'poetry-analysis-techniques': ALL_BOARDS,
+  'essay-skills': ALL_BOARDS,
+  'academic-vocabulary': ALL_BOARDS,
+  'grammar-terms-advanced': ALL_BOARDS,
+  'rhetorical-devices': ALL_BOARDS,
+  'tier2-vocabulary': ALL_BOARDS,
 }
 
 /** Returns the boards a deck is relevant for. Unknown decks default to all boards. */

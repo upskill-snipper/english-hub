@@ -176,6 +176,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
+    // CAIE 0475 Songs of Ourselves Volume 1 — individual poems
+    ...[
+      'funeral-blues',
+      'hawk-roosting',
+      'he-never-expected-much',
+      'on-finding-a-small-fly-crushed-in-a-book',
+      'rain',
+      'the-city-planners',
+      'the-thought-fox',
+      'wind',
+    ].map((poem) => ({
+      url: `${base}/resources/english-literature/caie/songs-of-ourselves-v1/${poem}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    })),
     {
       url: `${base}/resources/english-literature/wjec/grade-boundaries`,
       lastModified: now,
@@ -906,7 +922,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })),
     ]),
 
-    // IGCSE Edexcel Poetry
+    // IGCSE Edexcel Poetry — official 4ET1 Anthology Issue 2 (13 poems)
     {
       url: `${base}/igcse/edexcel/poetry`,
       lastModified: now,
@@ -914,20 +930,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     ...[
-      'cousin-kate',
+      'an-unknown-girl',
+      'disabled',
       'half-caste',
       'if',
       'la-belle-dame-sans-merci',
-      'piano',
+      'out-out',
+      'ozymandias',
       'remember',
       'sonnet-116',
-      'the-man-he-killed',
+      'still-i-rise',
+      'the-bright-lights-of-sarajevo',
       'the-tyger',
+      'war-photographer',
     ].map((poem) => ({
       url: `${base}/igcse/edexcel/poetry/${poem}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
+    })),
+    // Orphan IGCSE Edexcel poetry slugs — pages exist but are NOT in the
+    // current 4ET1 Anthology Issue 2. Demoted to priority 0.3 to keep them
+    // discoverable for archived study traffic without promoting in SEO.
+    ...['cousin-kate', 'piano', 'the-man-he-killed'].map((poem) => ({
+      url: `${base}/igcse/edexcel/poetry/${poem}`,
+      lastModified: now,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
     })),
 
     // IGCSE Edexcel Unseen Poetry
@@ -959,9 +988,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    // Edexcel IGCSE English Language A (4EA1) — all 10 prescribed Anthology texts
     ...[
       '127-hours',
+      'a-game-of-polo-with-a-headless-goat',
       'a-passage-to-africa',
+      'beyond-the-sky-and-the-earth',
+      'chinese-cinderella',
+      'explorers-or-boys-messing-about',
+      'h-is-for-hawk',
       'the-danger-of-a-single-story',
       'the-explorers-daughter',
       'young-and-dyslexic',

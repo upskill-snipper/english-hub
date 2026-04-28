@@ -377,8 +377,11 @@ function gradeColour(grade: 5 | 7 | 9) {
 /* ─── Page (server component) ──────────────────────────────── */
 
 export default async function InspectorCallsSamplePage() {
-  /* Board guard — An Inspector Calls is on AQA, Edexcel, OCR, Eduqas */
-  await requireBoard(['aqa', 'edexcel', 'ocr', 'eduqas'], '/marking/sample')
+  /* Board guard — these model essays use the AQA mark scheme (AO1=12, AO2=12,
+     AO3=6, AO4=4). An Inspector Calls is also set on Edexcel, OCR and Eduqas,
+     but those boards have different AO weightings, so this page is restricted
+     to AQA students to avoid misleading mark allocations. */
+  await requireBoard(['aqa'], '/marking/sample')
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">

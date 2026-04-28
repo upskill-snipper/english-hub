@@ -470,8 +470,8 @@ export default function PowerAndConflictPage() {
           Ready to explore more poetry?
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Head back to the Poetry hub to explore Love and Relationships, the Edexcel anthology, and
-          unseen poetry techniques.
+          Head back to the Poetry hub to explore the AQA Love and Relationships anthology, the AQA
+          Worlds and Lives anthology, and unseen poetry techniques.
         </p>
         <Button
           variant="default"

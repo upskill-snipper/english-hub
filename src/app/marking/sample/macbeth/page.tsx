@@ -474,8 +474,12 @@ function aoBarWidth(score: number, max: number): string {
 export default function MacbethEssayBankPage() {
   return (
     <>
+      {/* These model essays use the AQA mark scheme (AO1=12, AO2=12, AO3=6,
+          AO4=4). Macbeth is also set on Edexcel, OCR, Eduqas and Edexcel iGCSE,
+          but those boards use different AO weightings, so the page is restricted
+          to AQA students to avoid misleading mark allocations. */}
       <WrongBoardBanner
-        contentBoards={['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse']}
+        contentBoards={['aqa']}
         contentName="Macbeth"
         redirectTo="/marking/sample"
       />

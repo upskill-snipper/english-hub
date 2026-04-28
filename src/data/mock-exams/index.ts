@@ -49,6 +49,9 @@ import { aqaLitP1Papers } from './aqa-lit-p1-a'
 // AQA Literature Paper 2
 import { aqaLitP2Papers } from './aqa-lit-p2-a'
 
+// Edexcel Literature
+import { edexcelLitPapers } from './edexcel-lit-a'
+
 // OCR Literature
 import { ocrLitPapers } from './ocr-lit-a'
 
@@ -58,20 +61,37 @@ import { wjecLitPapers } from './wjec-lit-a'
 /** All expanded mock exam papers across 4 boards (Language + Literature) */
 export const expandedMockExams: MockExamPaper[] = [
   // AQA Language (30)
-  ...aqaP1A, ...aqaP1B, ...aqaP1C,
-  ...aqaP2A, ...aqaP2B, ...aqaP2C,
+  ...aqaP1A,
+  ...aqaP1B,
+  ...aqaP1C,
+  ...aqaP2A,
+  ...aqaP2B,
+  ...aqaP2C,
   // Edexcel Language (30)
-  ...edexcelP1A, ...edexcelP1B, ...edexcelP1C,
-  ...edexcelP2A, ...edexcelP2B, ...edexcelP2C,
+  ...edexcelP1A,
+  ...edexcelP1B,
+  ...edexcelP1C,
+  ...edexcelP2A,
+  ...edexcelP2B,
+  ...edexcelP2C,
   // OCR Language (30)
-  ...ocrP1A, ...ocrP1B, ...ocrP1C,
-  ...ocrP2A, ...ocrP2B, ...ocrP2C,
+  ...ocrP1A,
+  ...ocrP1B,
+  ...ocrP1C,
+  ...ocrP2A,
+  ...ocrP2B,
+  ...ocrP2C,
   // WJEC Language (30)
-  ...wjecC1A, ...wjecC1B, ...wjecC1C,
-  ...wjecC2A, ...wjecC2B, ...wjecC2C,
+  ...wjecC1A,
+  ...wjecC1B,
+  ...wjecC1C,
+  ...wjecC2A,
+  ...wjecC2B,
+  ...wjecC2C,
   // Literature
   ...aqaLitP1Papers,
   ...aqaLitP2Papers,
+  ...edexcelLitPapers,
   ...ocrLitPapers,
   ...wjecLitPapers,
 ]

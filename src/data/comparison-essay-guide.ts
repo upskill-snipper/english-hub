@@ -198,9 +198,17 @@ const guide3: ComparisonGuide = {
 
 const guide4: ComparisonGuide = {
   id: 'aqa-love-relationships-2',
-  title: 'Love & Relationships: First Love vs Walking Away',
-  board: 'AQA',
-  textPair: ['First Love - John Clare', 'Walking Away - C. Day-Lewis'],
+  // BOARD-ISOLATION NOTE: This is a cross-board comparison. "First Love" by John Clare is NOT on the
+  // AQA Love & Relationships anthology — it appears in pre-1914 collections used by Eduqas and
+  // some legacy specs. "Walking Away" by C. Day-Lewis IS on the AQA Love & Relationships cluster.
+  // Title and textPair updated to make the cross-board pairing explicit so students don't assume
+  // both poems are AQA anthology poems.
+  title: 'Love & Relationships: First Love (pre-1914 / Eduqas) vs Walking Away (AQA L&R)',
+  board: 'Cross-board (AQA + Eduqas/pre-1914)',
+  textPair: [
+    'First Love - John Clare (pre-1914 / Eduqas anthology)',
+    'Walking Away - C. Day-Lewis (AQA Love & Relationships)',
+  ],
   themes: ['Sudden versus gradual love', 'Loss and separation', 'Growth and independence'],
   comparisonPoints: [
     {
@@ -256,9 +264,17 @@ const guide4: ComparisonGuide = {
 
 const guide5: ComparisonGuide = {
   id: 'aqa-power-conflict-3',
-  title: 'Power & Conflict: My Last Duchess vs The Pied Piper of Hamelin',
-  board: 'AQA',
-  textPair: ['My Last Duchess - Browning', 'The Pied Piper of Hamelin - Browning'],
+  // BOARD-ISOLATION NOTE: "My Last Duchess" IS on the AQA Power & Conflict anthology. "The Pied Piper
+  // of Hamelin" is NOT on any GCSE poetry anthology — it is included here as a wider-reading
+  // companion piece by the same author (Browning), useful for thematic comparison work but NOT for
+  // the AQA Paper 2 Section B anthology question. Title and textPair updated to make this clear.
+  title:
+    'Power & Conflict (wider-reading companion): My Last Duchess (AQA P&C) vs The Pied Piper of Hamelin (Browning, off-anthology)',
+  board: 'AQA P&C + off-anthology Browning',
+  textPair: [
+    'My Last Duchess - Browning (AQA Power & Conflict)',
+    'The Pied Piper of Hamelin - Browning (off-anthology / wider reading)',
+  ],
   themes: ['Abuse of power', 'Control and dominion', 'Consequences of authority'],
   // NOTE: Unverified "Pied Piper of Hamelin" quotations replaced with structural commentary (Option B) to avoid putting fabricated words in Browning's mouth. My Last Duchess lines retained as verified.
   comparisonPoints: [
@@ -319,9 +335,19 @@ const guide5: ComparisonGuide = {
 
 const guide6: ComparisonGuide = {
   id: 'aqa-love-relationships-3',
-  title: 'Love & Relationships: How Do I Love Thee vs Rapture',
-  board: 'AQA',
-  textPair: ['How Do I Love Thee - Elizabeth Barrett Browning', 'Rapture - Carol Ann Duffy'],
+  // BOARD-ISOLATION NOTE: Neither poem is on the AQA Love & Relationships anthology.
+  // - "How Do I Love Thee?" / Sonnet 43 (Barrett Browning) appears on Eduqas and WJEC poetry anthologies.
+  //   (AQA L&R uses her DIFFERENT sonnet, "Sonnet 29 — I think of thee.")
+  // - "Rapture" (Duffy) is from her 2005 collection, NOT on any current GCSE poetry anthology.
+  // This guide is therefore wider-reading thematic comparison rather than an anthology pairing.
+  // Title and textPair updated to make the off-anthology status explicit.
+  title:
+    'Love & Relationships (wider-reading): How Do I Love Thee / Sonnet 43 (Eduqas / WJEC) vs Rapture (off-anthology)',
+  board: 'Cross-board / off-anthology (Eduqas + wider reading)',
+  textPair: [
+    'How Do I Love Thee - Elizabeth Barrett Browning (Sonnet 43; Eduqas / WJEC anthology — NOT on AQA L&R, which uses her Sonnet 29 instead)',
+    'Rapture - Carol Ann Duffy (off-anthology wider reading; not on any current GCSE cluster)',
+  ],
   themes: ['Celebration of love', 'Physical and spiritual union', 'Female desire and agency'],
   comparisonPoints: [
     {
@@ -382,9 +408,19 @@ const guide6: ComparisonGuide = {
 
 const guide7: ComparisonGuide = {
   id: 'aqa-love-relationships-4',
-  title: 'Love & Relationships: Neutral Tones vs The Whitsun Weddings',
-  board: 'AQA',
-  textPair: ['Neutral Tones - Thomas Hardy', 'The Whitsun Weddings - Philip Larkin'],
+  // BOARD-ISOLATION NOTE: This is a cross-board comparison.
+  // - "Neutral Tones" (Hardy) IS on the AQA Love & Relationships anthology.
+  // - "The Whitsun Weddings" (Larkin) is NOT on AQA L&R; it is a Larkin poem typically encountered
+  //   at A Level (Edexcel A Level English Literature) rather than GCSE. Used here for wider-reading
+  //   thematic comparison.
+  // Title and textPair updated so students don't assume Larkin is on the AQA cluster.
+  title:
+    'Love & Relationships (wider-reading): Neutral Tones (AQA L&R) vs The Whitsun Weddings (Larkin, A-Level / off-anthology)',
+  board: 'AQA L&R + off-anthology Larkin (wider reading / A-Level)',
+  textPair: [
+    'Neutral Tones - Thomas Hardy (AQA Love & Relationships)',
+    'The Whitsun Weddings - Philip Larkin (off-anthology / A-Level wider reading; not on any GCSE cluster)',
+  ],
   themes: [
     'Romantic disillusionment',
     'Marriage and disappointment',
@@ -452,9 +488,24 @@ const guide7: ComparisonGuide = {
 
 const guide8: ComparisonGuide = {
   id: 'aqa-love-relationships-5',
-  title: 'Love & Relationships: When We Two Parted vs Manhunt',
-  board: 'AQA',
-  textPair: ['When We Two Parted - Byron', 'Manhunt - Simon Armitage'],
+  // BOARD-ISOLATION NOTE: This is a cross-board comparison.
+  // - "When We Two Parted" (Byron) IS on the AQA Love & Relationships anthology.
+  // - "The Manhunt" (Armitage) is NOT on the AQA L&R anthology. It appears on:
+  //     • Eduqas Poetry Anthology (Love & Relationships cluster)
+  //     • Edexcel GCSE English Literature anthology (Relationships cluster)
+  //     • WJEC Poetry Anthology (Love and Relationships cluster)
+  //     • OCR "Towards a World Unknown" — Love and Relationships cluster
+  //   So any reference to "Manhunt" must specify which board's cluster the analysis is anchored in,
+  //   because each board sets it within a slightly different surrounding anthology of comparison
+  //   poems. This guide treats it as the Eduqas/Edexcel/OCR cluster poem (the standard one).
+  // Title and textPair updated to disambiguate the cross-board pairing.
+  title:
+    'Love & Relationships (cross-board): When We Two Parted (AQA L&R) vs The Manhunt (Eduqas / Edexcel / OCR / WJEC clusters)',
+  board: 'Cross-board (AQA + Eduqas/Edexcel/OCR/WJEC)',
+  textPair: [
+    'When We Two Parted - Byron (AQA Love & Relationships)',
+    'The Manhunt - Simon Armitage (Eduqas / Edexcel / OCR / WJEC Love & Relationships clusters — NOT on AQA L&R)',
+  ],
   themes: ['Secrecy and shame', 'Aftermath of love', 'Physical manifestation of emotional pain'],
   // NOTE: Byron lines retained as verified PD canonical extracts. Armitage's "The Manhunt" is in copyright; unverified Armitage quotations replaced with structural commentary directing readers to a licensed edition (Option B).
   comparisonPoints: [
@@ -516,9 +567,20 @@ const guide8: ComparisonGuide = {
 
 const guide9: ComparisonGuide = {
   id: 'cross-text-responsibility-1',
-  title: 'Cross-Text Theme: Responsibility in The Great Gatsby and The Picture of Dorian Gray',
-  board: 'AQA',
-  textPair: ['The Great Gatsby - F. Scott Fitzgerald', 'The Picture of Dorian Gray - Oscar Wilde'],
+  // BOARD-ISOLATION NOTE: This is a cross-board / cross-spec wider-reading comparison.
+  // - "The Great Gatsby" sits on AQA Modern Texts (Paper 2 Section A) and OCR. NOT a P&C anthology
+  //   text and not a Section B poetry pairing.
+  // - "The Picture of Dorian Gray" is NOT on a current GCSE set-text list; it is most commonly
+  //   encountered at A Level (e.g. AQA A Level Lit B) or as wider Gothic/Aestheticism reading at
+  //   GCSE.
+  // Title and textPair updated to clarify the wider-reading status.
+  title:
+    'Cross-Text Theme (wider reading): Responsibility in The Great Gatsby (AQA Modern Texts) and The Picture of Dorian Gray (off-GCSE / A-Level / wider Gothic reading)',
+  board: 'Cross-spec wider reading (AQA Modern Texts + A-Level / wider reading)',
+  textPair: [
+    'The Great Gatsby - F. Scott Fitzgerald (AQA Modern Texts; also OCR)',
+    'The Picture of Dorian Gray - Oscar Wilde (A-Level / wider Gothic reading; not on a current GCSE set-text list)',
+  ],
   themes: ['Moral responsibility', 'Consequences of actions', 'Accountability and escape'],
   comparisonPoints: [
     {
@@ -582,9 +644,19 @@ const guide9: ComparisonGuide = {
 
 const guide10: ComparisonGuide = {
   id: 'cross-text-ambition-1',
-  title: 'Cross-Text Theme: Ambition in Macbeth and The Kite Runner',
-  board: 'AQA',
-  textPair: ['Macbeth - William Shakespeare', 'The Kite Runner - Khaled Hosseini'],
+  // BOARD-ISOLATION NOTE: This is a cross-text wider-reading thematic comparison.
+  // - "Macbeth" is the Shakespeare option on AQA, Edexcel, OCR and Eduqas — universally available.
+  // - "The Kite Runner" is on AQA Modern Texts (Paper 2 Section A) and on Eduqas Component 2;
+  //   it is NOT typically paired with the Shakespeare question in any single board's exam.
+  // Treat this as a thematic study comparison rather than an exam-question pairing.
+  // Title and textPair updated to clarify the cross-text wider-reading framing.
+  title:
+    'Cross-Text Theme (wider reading): Ambition in Macbeth (AQA / Edexcel / OCR / Eduqas Shakespeare) and The Kite Runner (AQA / Eduqas Modern Texts)',
+  board: 'Cross-spec / cross-paper (Shakespeare paper + Modern Texts paper)',
+  textPair: [
+    'Macbeth - William Shakespeare (Shakespeare paper on AQA / Edexcel / OCR / Eduqas)',
+    'The Kite Runner - Khaled Hosseini (AQA Modern Texts; also Eduqas Component 2)',
+  ],
   themes: [
     'Ambition and corruption',
     'Self-destruction through greed',
@@ -648,9 +720,19 @@ const guide10: ComparisonGuide = {
 
 const guide11: ComparisonGuide = {
   id: 'cross-text-appearance-reality-1',
-  title: 'Cross-Text Theme: Appearance vs Reality in An Inspector Calls and Atonement',
-  board: 'AQA',
-  textPair: ['An Inspector Calls - J.B. Priestley', 'Atonement - Ian McEwan'],
+  // BOARD-ISOLATION NOTE: This is a cross-board / cross-spec wider-reading comparison.
+  // - "An Inspector Calls" is on AQA Modern Texts, Edexcel, OCR and Eduqas — widely available at GCSE.
+  // - "Atonement" (McEwan) is NOT on a current GCSE modern-texts list; it is most commonly studied
+  //   at A Level (e.g. AQA A Level Lit B, Edexcel A Level Lit) or as wider reading.
+  // Title and textPair updated to clarify that the McEwan text is wider-reading rather than a GCSE
+  // set text.
+  title:
+    'Cross-Text Theme (wider reading): Appearance vs Reality in An Inspector Calls (AQA / Edexcel / OCR / Eduqas Modern Texts) and Atonement (A-Level / wider reading)',
+  board: 'Cross-spec wider reading (GCSE Modern Texts + A-Level / wider reading)',
+  textPair: [
+    'An Inspector Calls - J.B. Priestley (Modern Texts on AQA / Edexcel / OCR / Eduqas)',
+    'Atonement - Ian McEwan (A-Level / wider reading; not on a current GCSE set-text list)',
+  ],
   themes: [
     'Truth and false appearance',
     'Hidden guilt and revelation',
@@ -937,9 +1019,18 @@ const guide14: ComparisonGuide = {
 
 const guide15: ComparisonGuide = {
   id: 'language-imagery-1',
-  title: 'Language Guide: Animal Imagery in Moral Critique',
-  board: 'AQA',
-  textPair: ['Animal Farm - George Orwell', 'Things Fall Apart - Chinua Achebe'],
+  // BOARD-ISOLATION NOTE: Wider-reading / language-technique guide rather than an exam-pairing.
+  // - "Animal Farm" (Orwell) sits on AQA Modern Texts (Paper 2 Section A); also widely studied at
+  //   KS4 outside the exam set-text lists.
+  // - "Things Fall Apart" (Achebe) is NOT on the AQA Modern Texts list; it is on Edexcel IGCSE Lit
+  //   and is widely used as KS4/post-16 wider reading.
+  // Treat this guide as a language-technique illustration rather than a single-board pairing.
+  title: 'Language Guide (wider reading): Animal Imagery in Moral Critique',
+  board: 'Cross-spec wider reading (AQA Modern Texts + Edexcel IGCSE / wider reading)',
+  textPair: [
+    'Animal Farm - George Orwell (AQA Modern Texts)',
+    'Things Fall Apart - Chinua Achebe (Edexcel IGCSE Lit / wider reading; not on AQA Modern Texts)',
+  ],
   themes: ['Language and power', 'Symbolism and critique', 'Representation and truth'],
   comparisonPoints: [
     {

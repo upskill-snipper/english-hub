@@ -90,6 +90,7 @@ const anthology: AnthologyPoem[] = [
     title: 'Ozymandias',
     poet: 'Percy Bysshe Shelley',
     year: '1818',
+    href: '/igcse/edexcel/poetry/ozymandias',
     themes: ['Power', 'Hubris', 'Time and decay'],
     publicDomain: true,
     summary:
@@ -111,6 +112,7 @@ const anthology: AnthologyPoem[] = [
     title: 'Disabled',
     poet: 'Wilfred Owen',
     year: '1917',
+    href: '/igcse/edexcel/poetry/disabled',
     themes: ['War', 'Loss', 'Disability'],
     publicDomain: true,
     summary:
@@ -121,6 +123,7 @@ const anthology: AnthologyPoem[] = [
     title: 'Out, Out—',
     poet: 'Robert Frost',
     year: '1916',
+    href: '/igcse/edexcel/poetry/out-out',
     themes: ['Mortality', 'Childhood', 'Indifference'],
     publicDomain: false,
     summary:
@@ -131,6 +134,7 @@ const anthology: AnthologyPoem[] = [
     title: 'War Photographer',
     poet: 'Carol Ann Duffy',
     year: '1985',
+    href: '/igcse/edexcel/poetry/war-photographer',
     themes: ['War', 'Suffering', 'Moral responsibility'],
     publicDomain: false,
     summary:
@@ -141,6 +145,7 @@ const anthology: AnthologyPoem[] = [
     title: 'An Unknown Girl',
     poet: 'Moniza Alvi',
     year: '1996',
+    href: '/igcse/edexcel/poetry/an-unknown-girl',
     themes: ['Identity', 'Cultural heritage', 'Belonging'],
     publicDomain: false,
     summary:
@@ -151,6 +156,7 @@ const anthology: AnthologyPoem[] = [
     title: 'The Bright Lights of Sarajevo',
     poet: 'Tony Harrison',
     year: '1995',
+    href: '/igcse/edexcel/poetry/the-bright-lights-of-sarajevo',
     themes: ['War', 'Resilience', 'Hope'],
     publicDomain: false,
     summary:
@@ -161,6 +167,7 @@ const anthology: AnthologyPoem[] = [
     title: 'Still I Rise',
     poet: 'Maya Angelou',
     year: '1978',
+    href: '/igcse/edexcel/poetry/still-i-rise',
     themes: ['Resilience', 'Identity', 'Race'],
     publicDomain: false,
     summary:
@@ -171,6 +178,7 @@ const anthology: AnthologyPoem[] = [
     title: 'Half-Caste',
     poet: 'John Agard',
     year: '1996',
+    href: '/igcse/edexcel/poetry/half-caste',
     themes: ['Identity', 'Race', 'Language and prejudice'],
     publicDomain: false,
     summary:

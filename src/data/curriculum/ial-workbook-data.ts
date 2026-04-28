@@ -4,14 +4,13 @@
 //        WEN03 Crafting Language  | WEN04 Language Investigation
 // =============================================================================
 
-import type { WorkbookExercise, HomeworkTask } from './y8-workbook-data';
+import type { WorkbookExercise, HomeworkTask } from './y8-workbook-data'
 
 // =============================================================================
 // WORKBOOK EXERCISES (24 total)
 // =============================================================================
 
 export const ialWorkbookExercises: WorkbookExercise[] = [
-
   // ---------------------------------------------------------------------------
   // Unit 1: Language & Context (WEN01) -- 15 exercises
   // ---------------------------------------------------------------------------
@@ -31,11 +30,20 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     modelAnswer:
       'Churchill employs elevated lexis ("we shall fight on the beaches") alongside anaphora to create rhetorical momentum, signalling a formal oratorical register suited to a wartime address. Grammatically, declarative sentences of command carry modal certainty. ' +
       'Blair shifts to a more conversational register through shorter sentences and colloquial phrasing, reflecting a post-1997 political culture favouring accessibility. Both speakers use inclusive first-person plural ("we") to construct solidarity with their audience. ' +
-      'Contextually, Churchill\'s address is shaped by existential threat: hyperbolic lexis and elevated syntax are pragmatically appropriate when rallying a nation under siege. Blair\'s post-election context demands optimism and consensus, producing warmer, less combative prosody. ' +
+      "Contextually, Churchill's address is shaped by existential threat: hyperbolic lexis and elevated syntax are pragmatically appropriate when rallying a nation under siege. Blair's post-election context demands optimism and consensus, producing warmer, less combative prosody. " +
       'A linguistic analysis should note the role of speech act theory: Churchill performs directives and commissives, Blair predominantly performs expressives and representatives. Register is therefore not merely stylistic but is determined by social function and audience expectation.',
     marks: 20,
     difficulty: 'secure',
-    keywords: ['register', 'audience', 'lexis', 'grammar', 'context', 'pragmatics', 'anaphora', 'pronoun use'],
+    keywords: [
+      'register',
+      'audience',
+      'lexis',
+      'grammar',
+      'context',
+      'pragmatics',
+      'anaphora',
+      'pronoun use',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3'],
   },
 
@@ -54,10 +62,19 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     modelAnswer:
       'A sociolect is a variety of language used by a particular social group, defined by shared characteristics such as age, occupation, or subculture. In Transcript A, features include slang lexis ("wicked", "bare") and non-standard syntax typical of late 1990s youth speech. ' +
       'Comparing A and B reveals lexical change (new slang, influence of social media and AAVE borrowings in 2018 data) alongside continuing grammatical features such as discourse markers and hedges. This illustrates how sociolects are dynamic, absorbing new cultural influences while preserving identity-marking functions. ' +
-      'The evaluative question invites critical engagement: while Halliday\'s social semiotic model supports the identity-construction function of sociolect, it would be reductive to deny its referential role. Sociolects encode shared cultural knowledge efficiently (Grice\'s maxim of manner). However, the marked features -- slang, non-standard grammar -- are often redundant from a purely informational standpoint, supporting the identity argument. A strong answer acknowledges both functions and uses Transcript C as a counterexample where workplace sociolect serves professional clarity.',
+      "The evaluative question invites critical engagement: while Halliday's social semiotic model supports the identity-construction function of sociolect, it would be reductive to deny its referential role. Sociolects encode shared cultural knowledge efficiently (Grice's maxim of manner). However, the marked features -- slang, non-standard grammar -- are often redundant from a purely informational standpoint, supporting the identity argument. A strong answer acknowledges both functions and uses Transcript C as a counterexample where workplace sociolect serves professional clarity.",
     marks: 20,
     difficulty: 'secure',
-    keywords: ['sociolect', 'identity', 'slang', 'youth language', 'discourse', 'Halliday', 'AAVE', 'social media'],
+    keywords: [
+      'sociolect',
+      'identity',
+      'slang',
+      'youth language',
+      'discourse',
+      'Halliday',
+      'AAVE',
+      'social media',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO4'],
   },
 
@@ -69,17 +86,27 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     instructions:
       '<p>Read the short summary of Robin Lakoff\'s "Language and Woman\'s Place" (1975) and the counter-arguments from Deborah Cameron\'s "The Myth of Mars and Venus" (2007).</p>' +
       '<ol>' +
-      '<li>Outline the key claims of Lakoff\'s deficit model. (4 marks)</li>' +
+      "<li>Outline the key claims of Lakoff's deficit model. (4 marks)</li>" +
       '<li>Explain how the difference model (Tannen) challenges the deficit model. (6 marks)</li>' +
       '<li>Evaluate how far either model adequately accounts for gender variation in contemporary British English. Use linguistic evidence in your answer. (10 marks)</li>' +
       '</ol>',
     modelAnswer:
       'Lakoff argues that women\'s language is characterised by features reflecting social powerlessness: hedges ("sort of", "I think"), tag questions, super-polite forms, and empty adjectives. This deficit model frames women\'s language as deficient compared to a male norm. ' +
       'Tannen\'s difference model reframes these features as reflecting different communicative goals: women use language for "rapport talk" (maintaining relationships) while men use it for "report talk" (conveying information). Neither style is inherently inferior. ' +
-      'Evaluation should consider: (1) both models risk essentialism by treating gender as binary and fixed; (2) Cameron\'s critique highlights that observed differences are context-dependent and often overstated; (3) corpus research (Coates, Holmes) shows considerable overlap between male and female speech; (4) contemporary British English is shaped by intersecting identity factors -- class, ethnicity, sexuality -- that neither model sufficiently addresses. A strong evaluation acknowledges the historical value of both models while arguing for a more nuanced, intersectional approach.',
+      "Evaluation should consider: (1) both models risk essentialism by treating gender as binary and fixed; (2) Cameron's critique highlights that observed differences are context-dependent and often overstated; (3) corpus research (Coates, Holmes) shows considerable overlap between male and female speech; (4) contemporary British English is shaped by intersecting identity factors -- class, ethnicity, sexuality -- that neither model sufficiently addresses. A strong evaluation acknowledges the historical value of both models while arguing for a more nuanced, intersectional approach.",
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['Lakoff', 'Tannen', 'Cameron', 'deficit model', 'difference model', 'gender', 'tag questions', 'hedges', 'corpus'],
+    keywords: [
+      'Lakoff',
+      'Tannen',
+      'Cameron',
+      'deficit model',
+      'difference model',
+      'gender',
+      'tag questions',
+      'hedges',
+      'corpus',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3', 'WEN01.AO4'],
   },
 
@@ -96,12 +123,21 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '<li>Evaluate the view that institutional discourse always reflects and reproduces existing social hierarchies. (8 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'The 1975 transcript exhibits asymmetrical power through: the GP\'s use of minimal response and topic control (initiating all topic shifts); use of technical register inaccessible to the patient; and the patient\'s repeated back-channel responses and deference markers. Fairclough\'s notion of discourse as social practice is useful here. ' +
+      "The 1975 transcript exhibits asymmetrical power through: the GP's use of minimal response and topic control (initiating all topic shifts); use of technical register inaccessible to the patient; and the patient's repeated back-channel responses and deference markers. Fairclough's notion of discourse as social practice is useful here. " +
       'By 2020, features of mitigation have increased: the GP uses hedged directives ("I\'d suggest..."), invites patient opinion, and uses shared naming. These reflect a cultural shift toward patient-centred care and shared decision-making. ' +
       'Evaluation of the claim that institutional discourse always reproduces hierarchy: this is broadly supported by CDA (Critical Discourse Analysis -- Fairclough, van Dijk), which shows that unequal access to institutional language reproduces social inequality. However, the diachronic comparison above complicates "always" -- discourse can and does change as power relations shift. Furthermore, Goffman\'s concept of face-work shows that institutional participants negotiate rather than simply accept power asymmetries. A nuanced evaluation avoids determinism.',
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['institutional discourse', 'power', 'CDA', 'Fairclough', 'asymmetry', 'topic control', 'face-work', 'Goffman'],
+    keywords: [
+      'institutional discourse',
+      'power',
+      'CDA',
+      'Fairclough',
+      'asymmetry',
+      'topic control',
+      'face-work',
+      'Goffman',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3'],
   },
 
@@ -120,11 +156,21 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     modelAnswer:
       'The tabloid uses emotive lexis ("chaos", "held to ransom") and nominalisation to suppress worker agency (e.g., "disruption caused by the strike" rather than "workers disrupted services"), constructing strikers as a threat. Short, punchy sentences maximise impact. ' +
       'The broadsheet employs more neutral reporting verbs, longer attributive clauses, and provides contextual detail about pay conditions. Agency is more clearly assigned -- workers are grammatical subjects of verbs that describe deliberate choice ("workers voted", "unions demanded"). ' +
-      'Comparative analysis should use transitivity (Halliday\'s systemic functional grammar) to show how participants are constructed as actors or recipients. Nominalisation in the tabloid removes human agency and masks causation. ' +
-      'Ideologically, the tabloid\'s framing positions it as aligned with managerial/establishment interests; the broadsheet\'s framing (though not uncritical) allows greater space for contextualised judgement. Van Dijk\'s ideological square is a useful analytical framework.',
+      "Comparative analysis should use transitivity (Halliday's systemic functional grammar) to show how participants are constructed as actors or recipients. Nominalisation in the tabloid removes human agency and masks causation. " +
+      "Ideologically, the tabloid's framing positions it as aligned with managerial/establishment interests; the broadsheet's framing (though not uncritical) allows greater space for contextualised judgement. Van Dijk's ideological square is a useful analytical framework.",
     marks: 20,
     difficulty: 'secure',
-    keywords: ['tabloid', 'broadsheet', 'transitivity', 'nominalisation', 'agency', 'ideology', 'Halliday', 'van Dijk', 'class'],
+    keywords: [
+      'tabloid',
+      'broadsheet',
+      'transitivity',
+      'nominalisation',
+      'agency',
+      'ideology',
+      'Halliday',
+      'van Dijk',
+      'class',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3'],
   },
 
@@ -147,7 +193,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'The comparison reveals how advertising discourse constructs consumer identity: it does not merely reflect pre-existing identities but actively interpellates (Althusser) readers into subject positions. The luxury advertisement produces an identity of aspiration and distinction; the charity advertisement produces an identity of moral agency. This demonstrates that advertising language is fundamentally ideological.',
     marks: 20,
     difficulty: 'secure',
-    keywords: ['advertising', 'imperative', 'presupposition', 'second-person address', 'interpellation', 'Althusser', 'consumer identity', 'multimodal'],
+    keywords: [
+      'advertising',
+      'imperative',
+      'presupposition',
+      'second-person address',
+      'interpellation',
+      'Althusser',
+      'consumer identity',
+      'multimodal',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3'],
   },
 
@@ -161,8 +216,8 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '<p><em>"Yeah so like I was gonna go down the shops innit but me mum was like nah you gotta stay in and revise cos exams are comin up yeah and I was proper annoyed like"</em></p>' +
       '<ol>' +
       '<li>Identify three phonological features present in this transcript (e.g. elision, assimilation, glottal stops). (6 marks)</li>' +
-      '<li>For each feature, provide the specific example and explain how it reflects the speaker\'s social context. (6 marks)</li>' +
-      '<li>Comment on how these phonological choices contribute to the speaker\'s construction of identity. (8 marks)</li>' +
+      "<li>For each feature, provide the specific example and explain how it reflects the speaker's social context. (6 marks)</li>" +
+      "<li>Comment on how these phonological choices contribute to the speaker's construction of identity. (8 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Elision is evident in "gonna" (going to) and "gotta" (got to), where unstressed syllables are dropped, reflecting informal register typical of casual peer-to-peer conversation. ' +
@@ -171,7 +226,15 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'These phonological choices collectively construct an identity rooted in youth culture and informality, signalling in-group membership with peers rather than conformity to prestige norms.',
     marks: 20,
     difficulty: 'foundation',
-    keywords: ['elision', 'g-dropping', 'glottal stop', 'phonology', 'sociolect', 'MLE', 'connected speech'],
+    keywords: [
+      'elision',
+      'g-dropping',
+      'glottal stop',
+      'phonology',
+      'sociolect',
+      'MLE',
+      'connected speech',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2'],
   },
 
@@ -194,7 +257,15 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'The exchange demonstrates how prosodic features encode power: the teacher\'s controlled, paused delivery asserts authority, while the student\'s emphatic stress attempts to resist the subordinate position. The micropause before "honestly" may paradoxically undermine the claim of honesty.',
     marks: 20,
     difficulty: 'secure',
-    keywords: ['prosody', 'stress', 'intonation', 'micropause', 'power', 'paralinguistic', 'pragmatics'],
+    keywords: [
+      'prosody',
+      'stress',
+      'intonation',
+      'micropause',
+      'power',
+      'paralinguistic',
+      'pragmatics',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3'],
   },
 
@@ -218,7 +289,15 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'The speech uses semantic fields to create pathos that bypasses rational analysis of the actual political situation.',
     marks: 20,
     difficulty: 'foundation',
-    keywords: ['semantic field', 'lexis', 'metaphor', 'rhetoric', 'synthetic personalisation', 'connotation', 'political discourse'],
+    keywords: [
+      'semantic field',
+      'lexis',
+      'metaphor',
+      'rhetoric',
+      'synthetic personalisation',
+      'connotation',
+      'political discourse',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3'],
   },
 
@@ -239,10 +318,18 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'The main clause is "The ancient, crumbling wall...had slowly surrendered to the persistent ivy." The defining relative clause "that surrounded the forgotten garden" post-modifies the noun phrase, identifying which wall. ' +
       'The absolute clause "its grey stones now entirely hidden beneath a thick blanket of dark green leaves" provides supplementary description as a non-finite clause. ' +
       'Pre-modifying adjectives ("ancient", "crumbling", "forgotten") front-load noun phrases with deterioration. "Surrendered" personifies the wall while "slowly" stretches the action temporally. ' +
-      'The absolute clause mirrors the ivy\'s coverage — syntax buries the stones beneath layers of modification, just as ivy buries them physically. Form enacts meaning.',
+      "The absolute clause mirrors the ivy's coverage — syntax buries the stones beneath layers of modification, just as ivy buries them physically. Form enacts meaning.",
     marks: 20,
     difficulty: 'secure',
-    keywords: ['clause structure', 'relative clause', 'absolute clause', 'subordination', 'noun phrase', 'personification', 'syntax'],
+    keywords: [
+      'clause structure',
+      'relative clause',
+      'absolute clause',
+      'subordination',
+      'noun phrase',
+      'personification',
+      'syntax',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2'],
   },
 
@@ -267,7 +354,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'The advertisements may not merely reflect but actively construct gendered norms through lexical choices.',
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['gender', 'Lakoff', 'Tannen', 'Cameron', 'semantic field', 'report talk', 'rapport talk', 'gendered language'],
+    keywords: [
+      'gender',
+      'Lakoff',
+      'Tannen',
+      'Cameron',
+      'semantic field',
+      'report talk',
+      'rapport talk',
+      'gendered language',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO4'],
   },
 
@@ -291,7 +387,15 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'The institutional context of medicine legitimises this asymmetric discourse, though research suggests patient outcomes improve with more collaborative strategies.',
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['adjacency pair', 'turn-taking', 'interruption', 'Fairclough', 'Zimmerman and West', 'institutional discourse', 'power'],
+    keywords: [
+      'adjacency pair',
+      'turn-taking',
+      'interruption',
+      'Fairclough',
+      'Zimmerman and West',
+      'institutional discourse',
+      'power',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3'],
   },
 
@@ -315,7 +419,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Text B is highly effective within context: "absolute scenes" is concise and evocative; orthographic stretching iconically represents celebration intensity. Trudgill notes "covert prestige" — speakers may choose vernacular to signal authenticity and solidarity. Neither variety is linguistically superior; each is maximally effective for its context.',
     marks: 20,
     difficulty: 'secure',
-    keywords: ['social class', 'Bernstein', 'elaborated code', 'restricted code', 'Labov', 'Trudgill', 'covert prestige', 'CMC'],
+    keywords: [
+      'social class',
+      'Bernstein',
+      'elaborated code',
+      'restricted code',
+      'Labov',
+      'Trudgill',
+      'covert prestige',
+      'CMC',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO4'],
   },
 
@@ -338,7 +451,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Social media challenges traditional power by bypassing institutional gatekeepers. However, new hierarchies emerge: algorithmic amplification, follower counts, and "ratio" create new forms of social capital. The medium changes but the struggle for discursive power remains.',
     marks: 20,
     difficulty: 'secure',
-    keywords: ['CMC', 'hashtag', 'emoji', 'face', 'impoliteness', 'Culpeper', 'digital discourse', 'social media'],
+    keywords: [
+      'CMC',
+      'hashtag',
+      'emoji',
+      'face',
+      'impoliteness',
+      'Culpeper',
+      'digital discourse',
+      'social media',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3'],
   },
 
@@ -361,7 +483,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'The final sentence performs subtle gatekeeping: "families who share our values" implies some families do not. The defining relative clause sets conditions disguised as welcome. This is Fairclough\'s "technologisation of discourse" — market-driven language applied to public service, naturalising ideological choices as common sense.',
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['CDA', 'Fairclough', 'institutional discourse', 'synthetic personalisation', 'gatekeeping', 'ideology', 'nominalisation', 'marketisation'],
+    keywords: [
+      'CDA',
+      'Fairclough',
+      'institutional discourse',
+      'synthetic personalisation',
+      'gatekeeping',
+      'ideology',
+      'nominalisation',
+      'marketisation',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3', 'WEN01.AO4'],
   },
 
@@ -383,10 +514,18 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     modelAnswer:
       'Amelioration describes a word\'s meaning becoming more positive over time: "nice" originally meant "foolish" (from Latin "nescius" -- ignorant), moving through "precise" to its modern positive sense. Pejoration is the opposite: "villain" originally meant a feudal serf, acquiring its modern sense of a criminal through class-based social attitudes. ' +
       'Social drivers of semantic change in "villain": feudal class structure associated peasantry with moral inferiority, leading to pejoration through social stigma. "Nice" reflects the growing value placed on pleasantness and sociability in post-Enlightenment bourgeois culture. The semantic history of both words is therefore inseparable from the social history of England. ' +
-      'Evaluating amelioration/pejoration as frameworks: they are descriptively useful -- they categorise directional semantic drift -- but they are limited as explanatory frameworks. They describe outcomes but do not fully explain causes. Blank and Koch\'s cognitive semantic model (conceptual metaphor, metonymy) offers a richer explanatory framework. Additionally, these categories are scalar, not binary, and many words undergo complex, non-linear shifts that neither term captures adequately.',
+      "Evaluating amelioration/pejoration as frameworks: they are descriptively useful -- they categorise directional semantic drift -- but they are limited as explanatory frameworks. They describe outcomes but do not fully explain causes. Blank and Koch's cognitive semantic model (conceptual metaphor, metonymy) offers a richer explanatory framework. Additionally, these categories are scalar, not binary, and many words undergo complex, non-linear shifts that neither term captures adequately.",
     marks: 20,
     difficulty: 'secure',
-    keywords: ['amelioration', 'pejoration', 'semantic change', 'etymology', 'social context', 'diachronic', 'cognitive semantics'],
+    keywords: [
+      'amelioration',
+      'pejoration',
+      'semantic change',
+      'etymology',
+      'social context',
+      'diachronic',
+      'cognitive semantics',
+    ],
     linkedObjectives: ['WEN02.AO1', 'WEN02.AO2', 'WEN02.AO3'],
   },
 
@@ -408,7 +547,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Prescriptivist challenge: prescriptivists argue that progressive forms such as "I\'m loving it" (stative progressive) violate traditional grammar rules and represent language decline. However, the diachronic data undermines this: grammatical change is systematic, widespread, and historically attested. Descriptivists (Crystal, Aitchison) point out that all of today\'s standard forms were once non-standard. The prescriptivist position confuses social judgement with linguistic fact, as labelled "the language myth" by Bauer and Trudgill.',
     marks: 20,
     difficulty: 'secure',
-    keywords: ['progressive aspect', 'grammatical change', 'prescriptivism', 'descriptivism', 'corpus', 'colloquialisation', 'Leech', 'Crystal'],
+    keywords: [
+      'progressive aspect',
+      'grammatical change',
+      'prescriptivism',
+      'descriptivism',
+      'corpus',
+      'colloquialisation',
+      'Leech',
+      'Crystal',
+    ],
     linkedObjectives: ['WEN02.AO1', 'WEN02.AO2', 'WEN02.AO3', 'WEN02.AO4'],
   },
 
@@ -430,7 +578,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Evaluation of the "decline" claim: David Crystal argues in "Language and the Internet" that netspeak is a creative, systematic addition to the speaker\'s repertoire, not a replacement of standard forms. Users demonstrate code-switching competence. The correlation between texting and literacy decline is not supported by empirical research (Plester et al.). The concern reflects moral panic rather than linguistic evidence.',
     marks: 20,
     difficulty: 'developing',
-    keywords: ['neologism', 'digital communication', 'netspeak', 'Crystal', 'lexical innovation', 'code-switching', 'functional shift', 'blending'],
+    keywords: [
+      'neologism',
+      'digital communication',
+      'netspeak',
+      'Crystal',
+      'lexical innovation',
+      'code-switching',
+      'functional shift',
+      'blending',
+    ],
     linkedObjectives: ['WEN02.AO1', 'WEN02.AO2', 'WEN02.AO3'],
   },
 
@@ -440,7 +597,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     termUnit: 'WEN02: Language Change',
     type: 'comparison',
     instructions:
-      '<p>Read Extract A (Pepys\' Diary, 1666) and Extract B (a contemporary blog diary entry, 2023) covering a day in London.</p>' +
+      "<p>Read Extract A (Pepys' Diary, 1666) and Extract B (a contemporary blog diary entry, 2023) covering a day in London.</p>" +
       '<ol>' +
       '<li>Identify and analyse three grammatical differences between the two texts. (6 marks)</li>' +
       '<li>Compare the lexical choices in each text and explain what these reveal about language change. (8 marks)</li>' +
@@ -449,10 +606,19 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     modelAnswer:
       'Grammatical differences: (1) Pepys uses the second-person pronoun "thou"/"thee" (now archaic); the blog uses "you" throughout. (2) Verb inflection: Pepys employs third-person "-eth" endings ("goeth", "saith"), now replaced by "-s". (3) Word order: Pepys uses verb-second constructions influenced by Latin and earlier English syntax; contemporary syntax is more rigidly SVO. ' +
       'Lexical comparison reveals both loss and gain: words like "bespake" and "prithee" reflect Early Modern vocabulary now lost, while the blog incorporates digital-era lexis ("scrolled", "posted", "pinged"). Borrowing patterns also differ: Pepys draws on French and Latin prestige forms; the blog shows American English influence. ' +
-      'Standardisation: the establishment of the printing press, Johnson\'s Dictionary (1755), and later compulsory education drove standardisation of spelling and grammar. Pepys\'s text shows pre-standardisation variability (inconsistent spelling within the same entry). The blog, despite informal register, adheres to standard spelling norms, demonstrating how thoroughly standardisation has been internalised -- even in informal writing.',
+      "Standardisation: the establishment of the printing press, Johnson's Dictionary (1755), and later compulsory education drove standardisation of spelling and grammar. Pepys's text shows pre-standardisation variability (inconsistent spelling within the same entry). The blog, despite informal register, adheres to standard spelling norms, demonstrating how thoroughly standardisation has been internalised -- even in informal writing.",
     marks: 20,
     difficulty: 'secure',
-    keywords: ['Early Modern English', 'standardisation', 'diachronic', 'grammar', 'lexis', 'Pepys', 'pronoun', 'verb inflection'],
+    keywords: [
+      'Early Modern English',
+      'standardisation',
+      'diachronic',
+      'grammar',
+      'lexis',
+      'Pepys',
+      'pronoun',
+      'verb inflection',
+    ],
     linkedObjectives: ['WEN02.AO1', 'WEN02.AO2', 'WEN02.AO3'],
   },
 
@@ -462,19 +628,28 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     termUnit: 'WEN02: Language Change',
     type: 'evaluation',
     instructions:
-      '<p>Consider the three theoretical perspectives on the causes of language change: (A) contact and borrowing (Thomason and Kaufman); (B) internal drift (Sapir); (C) social prestige and identity (Labov\'s social stratification research).</p>' +
+      "<p>Consider the three theoretical perspectives on the causes of language change: (A) contact and borrowing (Thomason and Kaufman); (B) internal drift (Sapir); (C) social prestige and identity (Labov's social stratification research).</p>" +
       '<ol>' +
       '<li>Outline the key claims of ONE of the three theories listed above. (4 marks)</li>' +
       '<li>Evaluate the strengths and weaknesses of your chosen theory using linguistic evidence. (8 marks)</li>' +
       '<li>To what extent is it possible to identify a single dominant cause of language change? (8 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'Labov\'s social stratification theory (recommended choice for richest evaluation): Labov\'s New York department store study (1966) showed that use of post-vocalic /r/ correlated with social class, demonstrating that prestige variants drive change from above, while stigmatised variants drive change from below. His work on Martha\'s Vineyard showed identity as a driver of dialect retention. ' +
-      'Strengths: Labov\'s empirical methodology provides reproducible, quantitative evidence. His model explains both the direction and spread of change through social networks (Milroy and Milroy\'s network theory). Weaknesses: over-reliance on urban, English-language contexts limits universality; the model underweights contact-induced change (which better explains post-colonial varieties). ' +
-      'On identifying a single dominant cause: most contemporary linguists favour a multi-causal model. Trudgill\'s dialect contact model, Mufwene\'s "feature pool" model, and Croft\'s evolutionary framework all treat language change as the product of multiple interacting pressures -- social, cognitive, typological, and contact-based. Monocausal explanations are pedagogically convenient but empirically inadequate.',
+      "Labov's social stratification theory (recommended choice for richest evaluation): Labov's New York department store study (1966) showed that use of post-vocalic /r/ correlated with social class, demonstrating that prestige variants drive change from above, while stigmatised variants drive change from below. His work on Martha's Vineyard showed identity as a driver of dialect retention. " +
+      "Strengths: Labov's empirical methodology provides reproducible, quantitative evidence. His model explains both the direction and spread of change through social networks (Milroy and Milroy's network theory). Weaknesses: over-reliance on urban, English-language contexts limits universality; the model underweights contact-induced change (which better explains post-colonial varieties). " +
+      "On identifying a single dominant cause: most contemporary linguists favour a multi-causal model. Trudgill's dialect contact model, Mufwene's \"feature pool\" model, and Croft's evolutionary framework all treat language change as the product of multiple interacting pressures -- social, cognitive, typological, and contact-based. Monocausal explanations are pedagogically convenient but empirically inadequate.",
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['Labov', 'social stratification', 'prestige', 'language change', 'internal drift', 'contact', 'Milroy', 'Trudgill'],
+    keywords: [
+      'Labov',
+      'social stratification',
+      'prestige',
+      'language change',
+      'internal drift',
+      'contact',
+      'Milroy',
+      'Trudgill',
+    ],
     linkedObjectives: ['WEN02.AO1', 'WEN02.AO2', 'WEN02.AO3', 'WEN02.AO4'],
   },
 
@@ -496,7 +671,17 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Corpus methodology: advantages include large-scale reproducibility, diachronic comparison across registers, and quantitative rigour. Limitations include the "corpus as mirror" fallacy (what is included reflects collection decisions), lack of contextual metadata for speaker identity, and the difficulty of capturing spoken data comprehensively. Corpus evidence is best supplemented with ethnographic or experimental methods.',
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['corpus', 'BNC', 'frequency', 'modal recession', 'discourse marker', 'like', 'methodology', 'diachronic', 'quantitative'],
+    keywords: [
+      'corpus',
+      'BNC',
+      'frequency',
+      'modal recession',
+      'discourse marker',
+      'like',
+      'methodology',
+      'diachronic',
+      'quantitative',
+    ],
     linkedObjectives: ['WEN02.AO1', 'WEN02.AO2', 'WEN02.AO3', 'WEN02.AO4'],
   },
 
@@ -518,11 +703,20 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '</ul>',
     modelAnswer:
       'Model column (arguing against): "The Illusion of the Agora" -- opens with a classical allusion to establish intellectual register; uses tricolon to list failings ("siloed, monetised, weaponised"); deploys rhetorical questions to implicate the reader; concedes a limited counter-argument ("Of course, #MeToo and Arab Spring demonstrate social media\'s organising power") before refuting it with reference to algorithmic filtering. Register: formal lexis, complex sentence structures, no contractions in main argument. ' +
-      'Commentary should identify: (1) choice of allusion as audience positioning device; (2) tricolon for cumulative rhetorical force; (3) concession-refutation structure as a credibility strategy (demonstrating fair-mindedness); (4) register choices reflecting the broadsheet reader\'s expectation of intellectual engagement. ' +
+      "Commentary should identify: (1) choice of allusion as audience positioning device; (2) tricolon for cumulative rhetorical force; (3) concession-refutation structure as a credibility strategy (demonstrating fair-mindedness); (4) register choices reflecting the broadsheet reader's expectation of intellectual engagement. " +
       'Marking note: AO5 (crafting) is primary -- reward sustained register, rhetorical variety, and authorial control. AO1 (commentary) rewards metalinguistic awareness.',
     marks: 30,
     difficulty: 'secure',
-    keywords: ['persuasive writing', 'rhetorical strategies', 'tricolon', 'register', 'opinion column', 'commentary', 'broadsheet', 'rhetoric'],
+    keywords: [
+      'persuasive writing',
+      'rhetorical strategies',
+      'tricolon',
+      'register',
+      'opinion column',
+      'commentary',
+      'broadsheet',
+      'rhetoric',
+    ],
     linkedObjectives: ['WEN03.AO5', 'WEN03.AO1'],
   },
 
@@ -544,7 +738,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Reward ambitious experimentation even where execution is partially successful. Penalise description that lacks structural awareness.',
     marks: 30,
     difficulty: 'secure',
-    keywords: ['creative non-fiction', 'narrative voice', 'free indirect discourse', 'second-person', 'sensory detail', 'structure', 'metaphor', 'place writing'],
+    keywords: [
+      'creative non-fiction',
+      'narrative voice',
+      'free indirect discourse',
+      'second-person',
+      'sensory detail',
+      'structure',
+      'metaphor',
+      'place writing',
+    ],
     linkedObjectives: ['WEN03.AO5', 'WEN03.AO1'],
   },
 
@@ -556,7 +759,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     instructions:
       '<p>Read the provided scientific abstract on climate feedback loops.</p>' +
       '<ol>' +
-      '<li>Rewrite the abstract as: (a) a 300-word newspaper article for a general readership; (b) a 200-word entry for a children\'s encyclopaedia (ages 10-12). (20 marks)</li>' +
+      "<li>Rewrite the abstract as: (a) a 300-word newspaper article for a general readership; (b) a 200-word entry for a children's encyclopaedia (ages 10-12). (20 marks)</li>" +
       '<li>Write a comparative commentary (200 words) analysing how you adapted lexis, syntax, and discourse structure for each audience. (10 marks)</li>' +
       '</ol>',
     modelAnswer:
@@ -566,7 +769,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'The exercise develops metalinguistic competence: students must not only produce appropriate texts but articulate the principles governing their choices.',
     marks: 30,
     difficulty: 'developing',
-    keywords: ['audience adaptation', 'register', 'nominalisation', 'active voice', 'analogy', 'discourse structure', 'commentary', 'rewriting'],
+    keywords: [
+      'audience adaptation',
+      'register',
+      'nominalisation',
+      'active voice',
+      'analogy',
+      'discourse structure',
+      'commentary',
+      'rewriting',
+    ],
     linkedObjectives: ['WEN03.AO5', 'WEN03.AO1', 'WEN03.AO2'],
   },
 
@@ -581,21 +793,30 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '<li>Write a 300-word analytical commentary identifying three specific language choices you made and explaining their intended effects. (15 marks)</li>' +
       '<li>Identify one moment where your writing did not achieve the intended effect and explain, with linguistic precision, how you would revise it. (5 marks)</li>' +
       '</ol>' +
-      '<p><em>Use the AQA/Edexcel assessment vocabulary: register, lexical field, syntactic structure, semantic field, pragmatic effect.</em></p>',
+      '<p><em>Use the Pearson Edexcel IAL assessment vocabulary: register, lexical field, syntactic structure, semantic field, pragmatic effect.</em></p>',
     modelAnswer:
       'A strong commentary: names specific linguistic features (not vague claims like "I used good vocabulary"); connects choice to effect using conditional "in order to" / "so that" / "which constructs" structures; demonstrates awareness of audience and context as determinants of choice. ' +
-      'Example structure: "In paragraph two I used the semantic field of warfare (\'assault\', \'campaign\', \'frontline\') to construct the commercial environment as an aggressive space. This lexical field was chosen to position my audience -- young professionals -- as active combatants rather than passive consumers, reinforcing the assertive ethos of the piece." ' +
+      "Example structure: \"In paragraph two I used the semantic field of warfare ('assault', 'campaign', 'frontline') to construct the commercial environment as an aggressive space. This lexical field was chosen to position my audience -- young professionals -- as active combatants rather than passive consumers, reinforcing the assertive ethos of the piece.\" " +
       'The revision section rewards honest self-evaluation: a student who identifies vague metaphor, over-long sentences, or inconsistent register, and proposes a specific alternative with justification, demonstrates the metalinguistic awareness central to WEN03 assessment. ' +
       'Common weaknesses to address in feedback: commentaries that list features without analysis; those that describe content rather than language; those that fail to link choices to effect.',
     marks: 20,
     difficulty: 'developing',
-    keywords: ['commentary', 'metalanguage', 'self-evaluation', 'semantic field', 'lexical field', 'pragmatic effect', 'register', 'revision'],
+    keywords: [
+      'commentary',
+      'metalanguage',
+      'self-evaluation',
+      'semantic field',
+      'lexical field',
+      'pragmatic effect',
+      'register',
+      'revision',
+    ],
     linkedObjectives: ['WEN03.AO1', 'WEN03.AO5'],
   },
 
   {
     id: 'ial-wb-ex-17',
-    title: 'Evaluating Published Writers\' Craft: Autobiography',
+    title: "Evaluating Published Writers' Craft: Autobiography",
     termUnit: 'WEN03: Crafting Language',
     type: 'evaluation',
     instructions:
@@ -605,12 +826,21 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '<li>Evaluate which writer more effectively uses structural contrast to create meaning. (10 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'Angelou: voice constructed through dialect features and the vernacular of rural Arkansas (lexical authenticity), rhythmic, biblical cadence in sentence structures, and the child\'s-eye perspective which creates dramatic irony (the adult narrator\'s awareness subtly inflecting the child\'s innocence). ' +
+      "Angelou: voice constructed through dialect features and the vernacular of rural Arkansas (lexical authenticity), rhythmic, biblical cadence in sentence structures, and the child's-eye perspective which creates dramatic irony (the adult narrator's awareness subtly inflecting the child's innocence). " +
       'Smith: voice constructed through essayistic register, complex subordinate clause nesting that enacts intellectual deliberation, and self-interruption (parenthetical asides) that models the process of thinking. Code-switches between intellectual register and colloquial observation. ' +
-      'Structural contrast evaluation: Angelou uses the contrast between the lyrical, elevated description of nature and the brutal social reality of Jim Crow America -- the structural juxtaposition is the meaning. Smith uses contrast between abstract philosophical claim and concrete personal anecdote. A strong evaluation argues which use of contrast is more effective with reference to the purpose of each text: Angelou\'s contrast is affective and political; Smith\'s is epistemological. Neither is objectively superior -- the evaluation should be argued rather than asserted.',
+      "Structural contrast evaluation: Angelou uses the contrast between the lyrical, elevated description of nature and the brutal social reality of Jim Crow America -- the structural juxtaposition is the meaning. Smith uses contrast between abstract philosophical claim and concrete personal anecdote. A strong evaluation argues which use of contrast is more effective with reference to the purpose of each text: Angelou's contrast is affective and political; Smith's is epistemological. Neither is objectively superior -- the evaluation should be argued rather than asserted.",
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['autobiography', 'narrative voice', 'structural contrast', 'Angelou', 'Smith', 'dramatic irony', 'register', 'syntax'],
+    keywords: [
+      'autobiography',
+      'narrative voice',
+      'structural contrast',
+      'Angelou',
+      'Smith',
+      'dramatic irony',
+      'register',
+      'syntax',
+    ],
     linkedObjectives: ['WEN03.AO1', 'WEN03.AO5', 'WEN03.AO2'],
   },
 
@@ -629,10 +859,20 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Yousafzai: primary strategy is ethos -- personal testimony as a survivor of extremist violence gives her unique moral authority. Grammatical construction of self as both victim and agent ("They thought that the bullets would silence us. But they failed.") is powerful. ' +
       'Thunberg: primary strategy is pathos combined with direct accusation. The truncated, declarative register ("You say you love your children above all else. Yet you are stealing their future.") uses syntactic parallelism and adversative conjunction to construct a moral indictment. Deliberate register simplicity enacts the message (why complicate what is morally obvious?). ' +
       'Obama: primary strategy is logos structured by narrative -- his personal story as evidence for the American Dream thesis. Sophisticated use of anaphora, conditional clauses, and the "there is not a liberal America / there is not a conservative America" antithetical construction performs the unity he is arguing for. ' +
-      'Evaluation of ethos/pathos/logos: a strong answer avoids simply labelling and instead argues about the interaction of appeals. Yousafzai\'s ethos amplifies her pathos; Thunberg\'s deliberately underdeveloped logos positions logos itself as a rhetorical failure of the powerful; Obama carefully balances all three. Award highest marks for an argued comparative evaluation rather than separate description.',
+      "Evaluation of ethos/pathos/logos: a strong answer avoids simply labelling and instead argues about the interaction of appeals. Yousafzai's ethos amplifies her pathos; Thunberg's deliberately underdeveloped logos positions logos itself as a rhetorical failure of the powerful; Obama carefully balances all three. Award highest marks for an argued comparative evaluation rather than separate description.",
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['rhetoric', 'ethos', 'pathos', 'logos', 'anaphora', 'parallelism', 'speech', 'Aristotle', 'register'],
+    keywords: [
+      'rhetoric',
+      'ethos',
+      'pathos',
+      'logos',
+      'anaphora',
+      'parallelism',
+      'speech',
+      'Aristotle',
+      'register',
+    ],
     linkedObjectives: ['WEN03.AO1', 'WEN03.AO5', 'WEN03.AO2'],
   },
 
@@ -658,7 +898,17 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Frameworks: (1) Critical Discourse Analysis (Fairclough) -- appropriate because it links linguistic features to ideological assumptions, directly relevant to the gender/power focus. (2) Corpus stylistics / keyword analysis (Baker) -- appropriate for identifying statistically significant lexical patterns across large data sets, avoiding researcher confirmation bias. Justify the combination: CDA provides the interpretive depth; corpus methodology provides the quantitative rigour.',
     marks: 20,
     difficulty: 'secure',
-    keywords: ['research question', 'hypothesis', 'methodology', 'corpus', 'sampling', 'CDA', 'Fairclough', 'Baker', 'ethics'],
+    keywords: [
+      'research question',
+      'hypothesis',
+      'methodology',
+      'corpus',
+      'sampling',
+      'CDA',
+      'Fairclough',
+      'Baker',
+      'ethics',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO4'],
   },
 
@@ -680,7 +930,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Strengthening the analysis: (1) Qualitative analysis of full texts to capture pragmatic context (frequency alone cannot establish meaning). (2) Customer satisfaction scores correlated with text type. (3) Analysis of syntactic patterns (sentence length, clause complexity) to complement the noun frequency data. (4) A comparable corpus from another industry to test whether patterns are bank-specific or genre-wide.',
     marks: 20,
     difficulty: 'secure',
-    keywords: ['quantitative analysis', 'frequency', 'corpus', 'chatbot', 'politeness theory', 'Brown and Levinson', 'data analysis', 'AI language'],
+    keywords: [
+      'quantitative analysis',
+      'frequency',
+      'corpus',
+      'chatbot',
+      'politeness theory',
+      'Brown and Levinson',
+      'data analysis',
+      'AI language',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO3'],
   },
 
@@ -699,10 +958,19 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     modelAnswer:
       'CA methods: identify transition relevance places (TRPs), adjacency pairs (question-answer, greeting-greeting), overlaps and interruptions (as power moves or as cooperative "floor-holding"), back-channel signals, repair sequences. Note whether turn allocation is self-selected or other-selected. ' +
       'Age and interactional power: if the grandparent takes longer turns, initiates more topic changes, and performs more directives, this suggests generational status confers interactional authority. If the teenager uses more hedges and minimal responses, this supports the analysis. However, data may complicate expectations -- a teenager who dominates the conversation challenges the age-power assumption and requires explanation. ' +
-      'Limitations of single-transcript case study: (1) Cannot support generalisations -- one family\'s interactional norms may be atypical. (2) The "observer\'s paradox" (Labov) -- the presence of a recording device may alter natural behaviour. (3) No demographic information provided about participants -- class, ethnicity, and family dynamic are confounding variables. (4) A single occasion is unrepresentative of this family\'s range of interactional contexts. The discussion should recommend a larger, more varied corpus and consider triangulation with ethnographic observation.',
+      "Limitations of single-transcript case study: (1) Cannot support generalisations -- one family's interactional norms may be atypical. (2) The \"observer's paradox\" (Labov) -- the presence of a recording device may alter natural behaviour. (3) No demographic information provided about participants -- class, ethnicity, and family dynamic are confounding variables. (4) A single occasion is unrepresentative of this family's range of interactional contexts. The discussion should recommend a larger, more varied corpus and consider triangulation with ethnographic observation.",
     marks: 20,
     difficulty: 'secure',
-    keywords: ['conversation analysis', 'turn-taking', 'adjacency pairs', 'TRP', 'observer\'s paradox', 'Labov', 'discourse', 'qualitative'],
+    keywords: [
+      'conversation analysis',
+      'turn-taking',
+      'adjacency pairs',
+      'TRP',
+      "observer's paradox",
+      'Labov',
+      'discourse',
+      'qualitative',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO3', 'WEN04.AO4'],
   },
 
@@ -722,7 +990,16 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'Literature review model: Myers-Scotton\'s Markedness Model -- code choice as a social strategy, with marked and unmarked selections signalling relational work. Milroy\'s social network theory -- dense, multiplex networks reinforce vernacular use; looser networks facilitate convergence to a dominant variety. Gardner-Chloros -- challenges the "rational actor" model; code-switching is often automatic and identity-driven rather than strategically calculated. The current investigation extends Myers-Scotton by testing whether the Markedness Model applies to informal, peer-to-peer contexts (she primarily studied institutional settings). A good literature review synthesises rather than summarises: it shows how the studies relate to each other and to the current project.',
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['code-switching', 'bilingualism', 'Myers-Scotton', 'Gardner-Chloros', 'Milroy', 'literature review', 'academic writing', 'research question'],
+    keywords: [
+      'code-switching',
+      'bilingualism',
+      'Myers-Scotton',
+      'Gardner-Chloros',
+      'Milroy',
+      'literature review',
+      'academic writing',
+      'research question',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO4'],
   },
 
@@ -736,15 +1013,25 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '<ol>' +
       '<li>Write a 300-word discussion section that interprets these findings in relation to linguistic theory. (10 marks)</li>' +
       '<li>Write a 150-word conclusion that summarises your findings, acknowledges limitations, and proposes directions for further research. (5 marks)</li>' +
-      '<li>Identify two specific limitations of this study\'s methodology and explain their impact on the validity of the findings. (5 marks)</li>' +
+      "<li>Identify two specific limitations of this study's methodology and explain their impact on the validity of the findings. (5 marks)</li>" +
       '</ol>',
     modelAnswer:
-      'Discussion model: interprets the hedging difference through multiple theoretical lenses. First, Lakoff\'s deficit model would interpret female hedging as evidence of linguistic insecurity. However, this should be challenged: epistemic hedges in academic writing are a marker of scholarly sophistication (Hyland\'s work on academic hedging shows that experienced writers hedge more than novices). The finding may therefore indicate that female students in this corpus are deploying more advanced academic register. Alternatively, if male students are underusing hedges, this may reflect overconfidence rather than ability. A nuanced discussion holds multiple interpretations in tension. ' +
+      "Discussion model: interprets the hedging difference through multiple theoretical lenses. First, Lakoff's deficit model would interpret female hedging as evidence of linguistic insecurity. However, this should be challenged: epistemic hedges in academic writing are a marker of scholarly sophistication (Hyland's work on academic hedging shows that experienced writers hedge more than novices). The finding may therefore indicate that female students in this corpus are deploying more advanced academic register. Alternatively, if male students are underusing hedges, this may reflect overconfidence rather than ability. A nuanced discussion holds multiple interpretations in tension. " +
       'Conclusion model: summarises findings without overclaiming ("This investigation found statistically significant differences in hedging frequency, though the direction of effect\'s meaning remains ambiguous..."); acknowledges limitations (small corpus, single institution, essay genre only); proposes future research (cross-genre comparison, spoken academic discourse, longitudinal study tracking the same students). ' +
-      'Limitations: (1) Single-genre corpus -- academic essays may not represent the full range of each student\'s linguistic repertoire. Impact: limits generalisability. (2) No control for essay topic, mark, or year of study -- confounding variables that could independently explain hedging differences. Impact: threatens internal validity.',
+      "Limitations: (1) Single-genre corpus -- academic essays may not represent the full range of each student's linguistic repertoire. Impact: limits generalisability. (2) No control for essay topic, mark, or year of study -- confounding variables that could independently explain hedging differences. Impact: threatens internal validity.",
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['discussion', 'conclusion', 'hedging', 'Hyland', 'Lakoff', 'academic writing', 'limitations', 'validity', 'further research'],
+    keywords: [
+      'discussion',
+      'conclusion',
+      'hedging',
+      'Hyland',
+      'Lakoff',
+      'academic writing',
+      'limitations',
+      'validity',
+      'further research',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO3', 'WEN04.AO4'],
   },
 
@@ -758,7 +1045,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '<ol>' +
       '<li>Write a 200-word critical evaluation of your methodology: what worked, what you would change, and why. (8 marks)</li>' +
       '<li>Exchange your draft with a peer and provide 150-200 words of written feedback focused on: clarity of research question, quality of data analysis, and use of linguistic frameworks. (6 marks)</li>' +
-      '<li>In response to your peer\'s feedback, identify one substantive revision you will make to your investigation and justify it with reference to the assessment criteria. (6 marks)</li>' +
+      "<li>In response to your peer's feedback, identify one substantive revision you will make to your investigation and justify it with reference to the assessment criteria. (6 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Self-evaluation model: a strong response is honest and specific. It does not simply list what was done; it assesses the gap between intention and outcome. "My sampling strategy was designed to be systematic, but in practice I collected data from only two social media platforms, which limits the generalisability of my findings to those platforms specifically. If I were to repeat the study, I would include a broader range of platforms and conduct a pilot analysis on a small sub-corpus before committing to a final analytical framework." ' +
@@ -767,17 +1054,25 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'This exercise develops the metacognitive skills essential for independent academic work at university level.',
     marks: 20,
     difficulty: 'mastery',
-    keywords: ['self-evaluation', 'peer review', 'methodology', 'revision', 'metacognition', 'assessment criteria', 'coursework', 'reflection'],
+    keywords: [
+      'self-evaluation',
+      'peer review',
+      'methodology',
+      'revision',
+      'metacognition',
+      'assessment criteria',
+      'coursework',
+      'reflection',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO3', 'WEN04.AO4'],
   },
-];
+]
 
 // =============================================================================
 // HOMEWORK TASKS (30 total)
 // =============================================================================
 
 export const ialHomeworkTasks: HomeworkTask[] = [
-
   // ---------------------------------------------------------------------------
   // WEN01 Language & Context -- Tasks 1-8
   // ---------------------------------------------------------------------------
@@ -788,16 +1083,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     weekNumber: 1,
     type: 'reading-response',
     instructions:
-      '<p>Read Chapters 1-3 of Norman Fairclough\'s <em>Language and Power</em> (2001 edition, Longman).</p>' +
+      "<p>Read Chapters 1-3 of Norman Fairclough's <em>Language and Power</em> (2001 edition, Longman).</p>" +
       '<ol>' +
-      '<li>Write a 400-500 word reading log entry summarising Fairclough\'s core argument about the relationship between language and social power. (10 marks)</li>' +
-      '<li>Identify two examples from your own experience of language use where power is exercised through discourse. Analyse each briefly (100 words each) using Fairclough\'s vocabulary. (10 marks)</li>' +
+      "<li>Write a 400-500 word reading log entry summarising Fairclough's core argument about the relationship between language and social power. (10 marks)</li>" +
+      "<li>Identify two examples from your own experience of language use where power is exercised through discourse. Analyse each briefly (100 words each) using Fairclough's vocabulary. (10 marks)</li>" +
       '</ol>' +
       '<p>Use APA referencing for the text you are logging.</p>',
     modelAnswer:
       'Log summary should capture: Fairclough\'s central claim that language is not merely a reflection of social reality but constitutes it; the distinction between discourse as text, as interaction, and as social practice (the three-dimensional model); the concept of "naturalisation" -- how dominant ideological meanings become common sense. ' +
       'Personal examples should demonstrate application of concepts rather than mere labelling. A strong response might identify the language of a job advertisement (Chapter 1 is particularly relevant here) or a news broadcast and analyse how it naturalises particular social relations. ' +
-      'Reward: APA referencing correctly formatted; distinction between summary and analysis; use of Fairclough\'s own terminology accurately deployed.',
+      "Reward: APA referencing correctly formatted; distinction between summary and analysis; use of Fairclough's own terminology accurately deployed.",
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'secure',
@@ -820,12 +1115,20 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<p><strong>Note:</strong> Ensure all personal information is redacted before submitting.</p>',
     modelAnswer:
       'Annotation checklist: register markers should include lexical choices (Latinate vs. Germanic vocabulary), sentence complexity, use of passive voice, salutation and sign-off conventions, modality (degree of hedging and directness). ' +
-      'Patterns analysis: a strong response looks for variation across institutional types (e.g., a council letter vs. a school email from a form tutor) and relates this variation to the power relationship between sender and recipient. Reference to Grice\'s maxims can illuminate cases where emails are deliberately indirect. ' +
+      "Patterns analysis: a strong response looks for variation across institutional types (e.g., a council letter vs. a school email from a form tutor) and relates this variation to the power relationship between sender and recipient. Reference to Grice's maxims can illuminate cases where emails are deliberately indirect. " +
       'Award method marks for systematic annotation (not just impressionistic), and analysis marks for generalisations supported by specific evidence from the corpus.',
     marks: 20,
     estimatedMinutes: 90,
     difficulty: 'developing',
-    keywords: ['register', 'professional email', 'corpus', 'annotation', 'Grice', 'data collection', 'institutional language'],
+    keywords: [
+      'register',
+      'professional email',
+      'corpus',
+      'annotation',
+      'Grice',
+      'data collection',
+      'institutional language',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2'],
   },
 
@@ -844,24 +1147,33 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<li>Submit with a 100-word reflection on what you found most challenging to argue.</li>' +
       '</ul>',
     modelAnswer:
-      'A band 4 response will: argue a coherent position (not simply list points about class and language); use theorists as evidence rather than as authority (i.e., critiques as well as applies them); demonstrate knowledge of the research context (Bernstein\'s restricted/elaborated codes controversy; Labov\'s critique of deficit theory; Trudgill\'s Norwich study); and maintain analytical rather than descriptive register throughout. ' +
-      'Common weaknesses: treating Bernstein\'s elaborated/restricted codes as fixed properties of individuals rather than of contexts; failing to acknowledge that class intersects with other variables; conflating accent with dialect. ' +
+      "A band 4 response will: argue a coherent position (not simply list points about class and language); use theorists as evidence rather than as authority (i.e., critiques as well as applies them); demonstrate knowledge of the research context (Bernstein's restricted/elaborated codes controversy; Labov's critique of deficit theory; Trudgill's Norwich study); and maintain analytical rather than descriptive register throughout. " +
+      "Common weaknesses: treating Bernstein's elaborated/restricted codes as fixed properties of individuals rather than of contexts; failing to acknowledge that class intersects with other variables; conflating accent with dialect. " +
       'Reflection should be honest: reward students who identify genuine conceptual difficulties rather than practical ones ("I found it hard to write 1000 words" is not a linguistic reflection).',
     marks: 20,
     estimatedMinutes: 150,
     difficulty: 'secure',
-    keywords: ['social class', 'Bernstein', 'Labov', 'Trudgill', 'essay', 'extended writing', 'argument', 'theorists'],
+    keywords: [
+      'social class',
+      'Bernstein',
+      'Labov',
+      'Trudgill',
+      'essay',
+      'extended writing',
+      'argument',
+      'theorists',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3', 'WEN01.AO4'],
   },
 
   {
     id: 'ial-hw-04',
-    title: 'Peer Review: Analysing a Classmate\'s Language and Context Essay',
+    title: "Peer Review: Analysing a Classmate's Language and Context Essay",
     halfTerm: 1,
     weekNumber: 4,
     type: 'analysis',
     instructions:
-      '<p>You will be given a partner\'s essay (ial-hw-03) to peer review.</p>' +
+      "<p>You will be given a partner's essay (ial-hw-03) to peer review.</p>" +
       '<ol>' +
       '<li>Read the essay carefully and write structured feedback (300-400 words) addressing: (a) the strength of the argument; (b) the quality and range of linguistic evidence; (c) the accuracy of theoretical references; (d) one specific paragraph that could be improved, with a suggested revision. (15 marks)</li>' +
       '<li>In response to the feedback you receive on your own essay, write a 150-word action plan for your final draft. (5 marks)</li>' +
@@ -869,11 +1181,19 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     modelAnswer:
       'Peer feedback criteria: strong feedback is specific, referenced to the text ("In paragraph 3, the claim that Bernstein\'s theory has been \"disproven\" overstates the case -- Bernstein himself revised the model in the 1970s"), and constructive (it identifies both strengths and areas for development). It avoids generic praise ("good points") and generic criticism ("needs more analysis"). ' +
       'Action plan: should translate feedback into specific, achievable revision tasks mapped onto assessment objectives. E.g., "AO2 -- I will add a footnote explaining the revised version of Bernstein\'s code theory; AO4 -- I will restructure my conclusion to make the evaluative judgement clearer." ' +
-      'The peer review process develops metalinguistic awareness: students must apply assessment vocabulary to someone else\'s writing before they can apply it reflexively to their own.',
+      "The peer review process develops metalinguistic awareness: students must apply assessment vocabulary to someone else's writing before they can apply it reflexively to their own.",
     marks: 20,
     estimatedMinutes: 90,
     difficulty: 'developing',
-    keywords: ['peer review', 'feedback', 'essay', 'action plan', 'assessment criteria', 'revision', 'metalinguistic'],
+    keywords: [
+      'peer review',
+      'feedback',
+      'essay',
+      'action plan',
+      'assessment criteria',
+      'revision',
+      'metalinguistic',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO4'],
   },
 
@@ -891,12 +1211,20 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '</ol>',
     modelAnswer:
       'Cameron log: should capture the core argument that prescriptive attitudes to language (verbal hygiene) are not simply about correctness but encode social anxieties about gender, class, and identity. The chapter demonstrates how grammar guides targeted at women reinforce gendered norms. ' +
-      'Coates log: should focus on the argument that all-female talk is characterised by collaboration, topic-sharing, and minimal competition -- directly challenging Lakoff\'s deficit model. ' +
-      'The agree/challenge section rewards critical engagement: students should not simply assert agreement or disagreement but reason from evidence. A strong challenge might note that Coates\' data is from a specific social class and era, limiting generalisability; or that Cameron\'s focus on prescriptivism, while illuminating, does not fully account for descriptive variation.',
+      "Coates log: should focus on the argument that all-female talk is characterised by collaboration, topic-sharing, and minimal competition -- directly challenging Lakoff's deficit model. " +
+      "The agree/challenge section rewards critical engagement: students should not simply assert agreement or disagreement but reason from evidence. A strong challenge might note that Coates' data is from a specific social class and era, limiting generalisability; or that Cameron's focus on prescriptivism, while illuminating, does not fully account for descriptive variation.",
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'secure',
-    keywords: ['Cameron', 'Coates', 'gender', 'verbal hygiene', 'collaboration', 'reading log', 'critical thinking'],
+    keywords: [
+      'Cameron',
+      'Coates',
+      'gender',
+      'verbal hygiene',
+      'collaboration',
+      'reading log',
+      'critical thinking',
+    ],
     linkedObjectives: ['WEN01.AO2', 'WEN01.AO3', 'WEN01.AO4'],
   },
 
@@ -911,16 +1239,25 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<ol>' +
       '<li>Produce a clean transcript using basic CA conventions (pause length, overlap, stress). (5 marks)</li>' +
       '<li>Identify and categorise at least six dialect features (lexical, phonological -- represented in spelling -- or grammatical). (6 marks)</li>' +
-      '<li>Write a 250-word analysis relating your data to Trudgill\'s dialect continuum model or Chambers and Trudgill\'s concept of dialect levelling. (9 marks)</li>' +
+      "<li>Write a 250-word analysis relating your data to Trudgill's dialect continuum model or Chambers and Trudgill's concept of dialect levelling. (9 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Transcript quality: basic conventions consistently applied; speaker identification codes used; pauses marked. ' +
       'Dialect features: lexical items (local words, terms not in standard dictionaries); grammatical features (non-standard negation, pronoun use, verb agreement: "we was"); phonological representation (glottal stop rendered as apostrophe, h-dropping, vowel representation). ' +
-      'Analysis: Trudgill\'s dialect continuum positions regional dialects on a spectrum from broadest vernacular to standard; dialect levelling describes the process by which geographically proximate dialects converge through contact. A strong analysis considers: does the speaker\'s age affect dialect density? Does context (two family members vs. a speaker addressing a stranger) affect dialect use? This links to audience design and style-shifting.',
+      "Analysis: Trudgill's dialect continuum positions regional dialects on a spectrum from broadest vernacular to standard; dialect levelling describes the process by which geographically proximate dialects converge through contact. A strong analysis considers: does the speaker's age affect dialect density? Does context (two family members vs. a speaker addressing a stranger) affect dialect use? This links to audience design and style-shifting.",
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'secure',
-    keywords: ['dialect', 'Trudgill', 'dialect levelling', 'transcription', 'CA', 'phonology', 'grammar', 'data collection'],
+    keywords: [
+      'dialect',
+      'Trudgill',
+      'dialect levelling',
+      'transcription',
+      'CA',
+      'phonology',
+      'grammar',
+      'data collection',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO4'],
   },
 
@@ -944,7 +1281,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 150,
     difficulty: 'mastery',
-    keywords: ['MLE', 'ethnicity', 'language crossing', 'Rampton', 'AAVE', 'code-switching', 'Gilroy', 'essay'],
+    keywords: [
+      'MLE',
+      'ethnicity',
+      'language crossing',
+      'Rampton',
+      'AAVE',
+      'code-switching',
+      'Gilroy',
+      'essay',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3', 'WEN01.AO4'],
   },
 
@@ -960,12 +1306,21 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<p>Your response should address: register and audience; the construction of the subject (young men in urban areas) through grammatical choices; the use of reported speech and its effect; and what the text reveals about the ideological position of the broadcaster. (20 marks)</p>' +
       '<p>After completing the timed response, use your mark scheme to self-assess and write a 100-word reflection on your performance.</p>',
     modelAnswer:
-      'Key analytical points: register -- formal but accessible (Radio 4 target audience: educated adult, not specialist); subject construction -- examine whether young men are grammatical agents or patients (transitivity analysis); reported speech -- consider whose voices are quoted, who is ventriloquised, and who is absent; ideology -- BBC\'s editorial positioning (claims of neutrality are themselves ideologically significant: the choice to air the documentary, the selection of voices, the framing questions all encode a perspective). ' +
+      "Key analytical points: register -- formal but accessible (Radio 4 target audience: educated adult, not specialist); subject construction -- examine whether young men are grammatical agents or patients (transitivity analysis); reported speech -- consider whose voices are quoted, who is ventriloquised, and who is absent; ideology -- BBC's editorial positioning (claims of neutrality are themselves ideologically significant: the choice to air the documentary, the selection of voices, the framing questions all encode a perspective). " +
       'Self-assessment reflection: rewards metacognitive engagement. Students should map their response against band descriptors (not just mark themselves out of 20) and identify specific gaps: "I analysed register but did not connect it to audience; I should have used the term \'transitivity\' and provided a worked example."',
     marks: 20,
     estimatedMinutes: 90,
     difficulty: 'secure',
-    keywords: ['timed practice', 'documentary', 'transitivity', 'ideology', 'register', 'reported speech', 'BBC', 'self-assessment'],
+    keywords: [
+      'timed practice',
+      'documentary',
+      'transitivity',
+      'ideology',
+      'register',
+      'reported speech',
+      'BBC',
+      'self-assessment',
+    ],
     linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3'],
   },
 
@@ -979,18 +1334,26 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     weekNumber: 3,
     type: 'reading-response',
     instructions:
-      '<p>Read Jean Aitchison\'s <em>Language Change: Progress or Decay?</em> (4th edition, 2012), Chapters 1-3.</p>' +
+      "<p>Read Jean Aitchison's <em>Language Change: Progress or Decay?</em> (4th edition, 2012), Chapters 1-3.</p>" +
       '<ol>' +
-      '<li>Write a 500-word reading log summarising Aitchison\'s three metaphors for language change (damp spoon, crumbling castle, infectious disease) and evaluating their rhetorical effectiveness. (10 marks)</li>' +
+      "<li>Write a 500-word reading log summarising Aitchison's three metaphors for language change (damp spoon, crumbling castle, infectious disease) and evaluating their rhetorical effectiveness. (10 marks)</li>" +
       '<li>Which of the three metaphors do you find most persuasive and why? (200 words, supported with linguistic evidence.) (10 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'Reading log: Aitchison\'s three metaphors describe the most common prescriptivist anxieties -- careless usage (damp spoon), decay from a golden age (crumbling castle), contamination by foreign or lower-class influence (infectious disease). Her own position is descriptive and evolutionary: language change is inevitable, systematic, and not a sign of decay. ' +
-      'Persuasion analysis: strong responses evaluate the rhetorical function of each metaphor (not just its accuracy). The infectious disease metaphor is arguably the most powerful because it invokes fear and moral panic -- two affective levers that prescriptivism routinely uses. However, Aitchison\'s point is that these metaphors are misleading, and the strongest responses will turn the evaluative question back on itself: which metaphor is most persuasive as a rhetorical device even while being most misleading as a description of linguistic reality?',
+      "Reading log: Aitchison's three metaphors describe the most common prescriptivist anxieties -- careless usage (damp spoon), decay from a golden age (crumbling castle), contamination by foreign or lower-class influence (infectious disease). Her own position is descriptive and evolutionary: language change is inevitable, systematic, and not a sign of decay. " +
+      "Persuasion analysis: strong responses evaluate the rhetorical function of each metaphor (not just its accuracy). The infectious disease metaphor is arguably the most powerful because it invokes fear and moral panic -- two affective levers that prescriptivism routinely uses. However, Aitchison's point is that these metaphors are misleading, and the strongest responses will turn the evaluative question back on itself: which metaphor is most persuasive as a rhetorical device even while being most misleading as a description of linguistic reality?",
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'secure',
-    keywords: ['Aitchison', 'language change', 'prescriptivism', 'metaphor', 'decay', 'reading log', 'evaluation'],
+    keywords: [
+      'Aitchison',
+      'language change',
+      'prescriptivism',
+      'metaphor',
+      'decay',
+      'reading log',
+      'evaluation',
+    ],
     linkedObjectives: ['WEN02.AO2', 'WEN02.AO3'],
   },
 
@@ -1004,16 +1367,25 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<p>Interview three people from different age groups (ideally: under 25, 40-55, 65+) using the following protocol: show each participant 10 slang terms (provided on the stimulus sheet) and ask them to: (a) indicate if they know the term; (b) provide a definition; (c) indicate if they use it; (d) indicate if they find it acceptable in formal contexts.</p>' +
       '<ol>' +
       '<li>Record your data in the provided table and calculate percentage recognition and usage rates by age group. (8 marks)</li>' +
-      '<li>Write a 400-word preliminary analysis relating your findings to Labov\'s theory of age-grading or Trudgill\'s diffusion model. (12 marks)</li>' +
+      "<li>Write a 400-word preliminary analysis relating your findings to Labov's theory of age-grading or Trudgill's diffusion model. (12 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Data recording: all 10 terms x 3 participants x 4 questions = 120 data points; percentage calculations should be shown. ' +
-      'Analysis: Labov\'s age-grading suggests some features are associated with adolescent speech and are shed as speakers age (not necessarily evidence of long-term change); Trudgill\'s diffusion model describes how innovations spread from a source population through social networks. A strong analysis will determine whether the data better supports age-grading (the older speakers knew the terms but do not use them, suggesting they were used in youth) or generational change (the oldest speakers have no knowledge of the terms, suggesting the items are genuinely new). ' +
+      "Analysis: Labov's age-grading suggests some features are associated with adolescent speech and are shed as speakers age (not necessarily evidence of long-term change); Trudgill's diffusion model describes how innovations spread from a source population through social networks. A strong analysis will determine whether the data better supports age-grading (the older speakers knew the terms but do not use them, suggesting they were used in youth) or generational change (the oldest speakers have no knowledge of the terms, suggesting the items are genuinely new). " +
       'Methodological reflection: small sample size; interviewer effect (participants may adjust their responses for a student researcher); the choice of slang terms by the researcher is not random and may skew results.',
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'developing',
-    keywords: ['slang', 'age-grading', 'Labov', 'Trudgill', 'diffusion', 'generational change', 'interview', 'data collection'],
+    keywords: [
+      'slang',
+      'age-grading',
+      'Labov',
+      'Trudgill',
+      'diffusion',
+      'generational change',
+      'interview',
+      'data collection',
+    ],
     linkedObjectives: ['WEN02.AO1', 'WEN02.AO2', 'WEN02.AO4'],
   },
 
@@ -1037,7 +1409,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 150,
     difficulty: 'mastery',
-    keywords: ['globalisation', 'Crystal', 'Kachru', 'Pennycook', 'World Englishes', 'American English', 'language change', 'essay'],
+    keywords: [
+      'globalisation',
+      'Crystal',
+      'Kachru',
+      'Pennycook',
+      'World Englishes',
+      'American English',
+      'language change',
+      'essay',
+    ],
     linkedObjectives: ['WEN02.AO2', 'WEN02.AO3', 'WEN02.AO4'],
   },
 
@@ -1052,16 +1433,24 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<ol>' +
       '<li>Identify and analyse four specific grammatical or lexical changes between Extract A and the contemporary versions. (8 marks)</li>' +
       '<li>What do the differences between B (human) and C (AI) tell us about how language change is absorbed differently by humans and machines? (6 marks)</li>' +
-      '<li>Reflect on what Shakespeare\'s English reveals about the process of standardisation in Early Modern English. (6 marks)</li>' +
+      "<li>Reflect on what Shakespeare's English reveals about the process of standardisation in Early Modern English. (6 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Grammatical/lexical changes: (1) Second-person pronoun: "thou" (Shakespeare) vs. "you" (both B and C). (2) Verb morphology: "tak\'st" (contracted form) vs. regular forms. (3) Lexical density: Shakespeare\'s syntax is heavily embedded; both B and C reduce syntactic complexity. (4) Modal verbs: Shakespeare\'s use of "may" and "must" with Early Modern meanings contrasts with their current semantic range. ' +
-      'Human vs. AI: a Year 11 student\'s adaptation shows idiosyncratic choices that reflect their own idiolect and contemporary teen register; the AI version produces statistically average contemporary English, ironing out idiolect. This reveals that human language change is driven by social identity and creativity, whereas AI language is driven by frequency distributions in training data -- a fundamental difference. ' +
+      "Human vs. AI: a Year 11 student's adaptation shows idiosyncratic choices that reflect their own idiolect and contemporary teen register; the AI version produces statistically average contemporary English, ironing out idiolect. This reveals that human language change is driven by social identity and creativity, whereas AI language is driven by frequency distributions in training data -- a fundamental difference. " +
       'Standardisation: Shakespeare\'s spelling inconsistency, flexible syntax, and fluid word class boundaries reflect pre-standardisation English. The 1604 First Quarto and 1623 First Folio show textual variation, undermining any notion of a fixed "standard" Shakespeare.',
     marks: 20,
     estimatedMinutes: 90,
     difficulty: 'mastery',
-    keywords: ['Shakespeare', 'Early Modern English', 'standardisation', 'AI language', 'pronoun', 'verb morphology', 'historical text'],
+    keywords: [
+      'Shakespeare',
+      'Early Modern English',
+      'standardisation',
+      'AI language',
+      'pronoun',
+      'verb morphology',
+      'historical text',
+    ],
     linkedObjectives: ['WEN02.AO1', 'WEN02.AO2', 'WEN02.AO3'],
   },
 
@@ -1090,7 +1479,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'secure',
-    keywords: ['investigation plan', 'diachronic', 'corpus', 'methodology', 'research question', 'coursework', 'APA', 'keyword frequency'],
+    keywords: [
+      'investigation plan',
+      'diachronic',
+      'corpus',
+      'methodology',
+      'research question',
+      'coursework',
+      'APA',
+      'keyword frequency',
+    ],
     linkedObjectives: ['WEN04.AO2', 'WEN04.AO4'],
   },
 
@@ -1104,7 +1502,7 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<p>Read Alastair Pennycook\'s "The Cultural Politics of English as an International Language" (1994), Chapter 1, OR Braj Kachru\'s "The Alchemy of English" (1986), Chapter 2.</p>' +
       '<ol>' +
       '<li>500-word log summarising the central argument and its significance. (10 marks)</li>' +
-      '<li>How does the chosen text challenge or complicate Crystal\'s more optimistic account of English as a global language? (250 words) (10 marks)</li>' +
+      "<li>How does the chosen text challenge or complicate Crystal's more optimistic account of English as a global language? (250 words) (10 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Pennycook log: should capture the argument that the spread of English is inseparable from colonial power relations and cannot be understood in purely linguistic or pragmatic terms. English is not a neutral tool; it carries cultural capital and ideological baggage that disadvantages speakers of other languages. ' +
@@ -1113,7 +1511,15 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'mastery',
-    keywords: ['Pennycook', 'Kachru', 'World Englishes', 'post-colonial', 'Crystal', 'global English', 'reading log'],
+    keywords: [
+      'Pennycook',
+      'Kachru',
+      'World Englishes',
+      'post-colonial',
+      'Crystal',
+      'global English',
+      'reading log',
+    ],
     linkedObjectives: ['WEN02.AO2', 'WEN02.AO3', 'WEN02.AO4'],
   },
 
@@ -1128,13 +1534,22 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<p>"Describe and evaluate the methods linguists use to study language change." (20 marks)</p>' +
       '<p>After the timed response, annotate your essay using the mark scheme to identify where you have met (or missed) each assessment objective. Submit the annotated version.</p>',
     modelAnswer:
-      'Key content: corpora and diachronic corpora (BNC, COHA, Google Ngram Viewer); the comparative method in historical linguistics; sociolinguistic methods (variationist studies, Labov\'s stratification surveys); real-time vs. apparent-time studies; self-report questionnaires; perceptual dialectology. ' +
+      "Key content: corpora and diachronic corpora (BNC, COHA, Google Ngram Viewer); the comparative method in historical linguistics; sociolinguistic methods (variationist studies, Labov's stratification surveys); real-time vs. apparent-time studies; self-report questionnaires; perceptual dialectology. " +
       'Evaluation of methods: corpora are large-scale and reproducible but over-represent written formal language; real-time studies are the gold standard but logistically demanding; apparent-time studies are efficient but assume age-grading is not occurring. Strong essays will argue that a mixed-methods approach is most reliable. ' +
       'Annotation task: students should mark their essay with AO labels at the margin (AO1 = knowledge and understanding; AO2 = applying frameworks; AO3 = comparing and evaluating; AO4 = methodological awareness). This metacognitive task is as important as the timed writing itself.',
     marks: 20,
     estimatedMinutes: 90,
     difficulty: 'secure',
-    keywords: ['methods', 'corpora', 'apparent-time', 'real-time', 'Labov', 'diachronic', 'variationist', 'timed practice'],
+    keywords: [
+      'methods',
+      'corpora',
+      'apparent-time',
+      'real-time',
+      'Labov',
+      'diachronic',
+      'variationist',
+      'timed practice',
+    ],
     linkedObjectives: ['WEN02.AO2', 'WEN02.AO3', 'WEN02.AO4'],
   },
 
@@ -1150,8 +1565,8 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     instructions:
       '<p>Read James Baldwin\'s essay "Notes of a Native Son" (1955) in full.</p>' +
       '<ol>' +
-      '<li>Write a 500-word reading log identifying three distinctive aspects of Baldwin\'s prose style (e.g., sentence rhythm, lexical register, use of the first person). (10 marks)</li>' +
-      '<li>Write a 200-word imitation of Baldwin\'s style on a topic of your choice, followed by a 100-word commentary explaining which techniques you employed. (10 marks)</li>' +
+      "<li>Write a 500-word reading log identifying three distinctive aspects of Baldwin's prose style (e.g., sentence rhythm, lexical register, use of the first person). (10 marks)</li>" +
+      "<li>Write a 200-word imitation of Baldwin's style on a topic of your choice, followed by a 100-word commentary explaining which techniques you employed. (10 marks)</li>" +
       '</ol>',
     modelAnswer:
       'Reading log: Baldwin\'s prose style is characterised by long, syntactically complex sentences that build through subordination and apposition -- mirroring the accumulation of historical weight he describes. His register oscillates between the intensely personal (first-person confession) and the abstractly political (racial analysis), creating a distinctive essayistic voice. His use of the second person ("You do not know") implicates the reader in the failure he diagnoses. ' +
@@ -1160,7 +1575,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 150,
     difficulty: 'mastery',
-    keywords: ['Baldwin', 'style', 'non-fiction', 'sentence rhythm', 'imitation', 'reading log', 'periodic sentence', 'register'],
+    keywords: [
+      'Baldwin',
+      'style',
+      'non-fiction',
+      'sentence rhythm',
+      'imitation',
+      'reading log',
+      'periodic sentence',
+      'register',
+    ],
     linkedObjectives: ['WEN03.AO5', 'WEN03.AO1'],
   },
 
@@ -1187,7 +1611,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 30,
     estimatedMinutes: 180,
     difficulty: 'secure',
-    keywords: ['coursework', 'persuasive writing', 'rhetorical strategies', 'commentary', 'draft', 'AO5', 'audience', 'purpose'],
+    keywords: [
+      'coursework',
+      'persuasive writing',
+      'rhetorical strategies',
+      'commentary',
+      'draft',
+      'AO5',
+      'audience',
+      'purpose',
+    ],
     linkedObjectives: ['WEN03.AO5', 'WEN03.AO1'],
   },
 
@@ -1200,7 +1633,7 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     instructions:
       '<p>Select two newspaper opinion columns from the same week responding to the same news event. These may be from the teacher-provided pack or from your own research (broadsheet or quality press only).</p>' +
       '<ol>' +
-      '<li>Write a 600-word comparative analysis of the two columns addressing: register, rhetorical strategies, the construction of the writer\'s persona, and ideological positioning. (20 marks)</li>' +
+      "<li>Write a 600-word comparative analysis of the two columns addressing: register, rhetorical strategies, the construction of the writer's persona, and ideological positioning. (20 marks)</li>" +
       '</ol>' +
       '<p>Attach photocopies or printouts of both articles.</p>',
     modelAnswer:
@@ -1210,7 +1643,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'mastery',
-    keywords: ['newspaper column', 'comparative analysis', 'register', 'rhetoric', 'ideology', 'persona', 'van Dijk', 'Fairclough'],
+    keywords: [
+      'newspaper column',
+      'comparative analysis',
+      'register',
+      'rhetoric',
+      'ideology',
+      'persona',
+      'van Dijk',
+      'Fairclough',
+    ],
     linkedObjectives: ['WEN03.AO1', 'WEN03.AO2'],
   },
 
@@ -1234,7 +1676,15 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'secure',
-    keywords: ['short story', 'narrative voice', 'in medias res', 'unreliable narrator', 'creative writing', 'craft commentary', 'structure'],
+    keywords: [
+      'short story',
+      'narrative voice',
+      'in medias res',
+      'unreliable narrator',
+      'creative writing',
+      'craft commentary',
+      'structure',
+    ],
     linkedObjectives: ['WEN03.AO5', 'WEN03.AO1'],
   },
 
@@ -1250,7 +1700,7 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<ul>' +
       '<li>State the intended audience and purpose at the head of the draft.</li>' +
       '<li>Annotate five specific language choices in the margin with a brief note on intended effect.</li>' +
-      '<li>Include a 300-word writer\'s commentary explaining your structural and linguistic decisions.</li>' +
+      "<li>Include a 300-word writer's commentary explaining your structural and linguistic decisions.</li>" +
       '</ul>' +
       '<p>First drafts are not graded; they receive written developmental feedback only.</p>',
     modelAnswer:
@@ -1260,7 +1710,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 30,
     estimatedMinutes: 180,
     difficulty: 'mastery',
-    keywords: ['coursework', 'creative writing', 'draft', 'writer\'s commentary', 'pacing', 'voice', 'imagery', 'developmental feedback'],
+    keywords: [
+      'coursework',
+      'creative writing',
+      'draft',
+      "writer's commentary",
+      'pacing',
+      'voice',
+      'imagery',
+      'developmental feedback',
+    ],
     linkedObjectives: ['WEN03.AO5', 'WEN03.AO1'],
   },
 
@@ -1273,7 +1732,7 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     instructions:
       '<p>Exchange your WEN03 coursework draft (ial-hw-20) with a partner and complete a structured peer review.</p>' +
       '<ol>' +
-      '<li>Written feedback (400 words) addressing: narrative voice or rhetorical consistency; structural effectiveness; three specific language choices and whether they achieve their stated intention (as described in the writer\'s commentary). (15 marks)</li>' +
+      "<li>Written feedback (400 words) addressing: narrative voice or rhetorical consistency; structural effectiveness; three specific language choices and whether they achieve their stated intention (as described in the writer's commentary). (15 marks)</li>" +
       '<li>Based on feedback received, write a 200-word revision plan for your own draft, identifying the two most important revisions and justifying each against the WEN03 assessment criteria. (5 marks)</li>' +
       '</ol>',
     modelAnswer:
@@ -1283,7 +1742,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'secure',
-    keywords: ['peer review', 'coursework', 'feedback', 'revision plan', 'structural coherence', 'motif', 'AO5', 'metalinguistic'],
+    keywords: [
+      'peer review',
+      'coursework',
+      'feedback',
+      'revision plan',
+      'structural coherence',
+      'motif',
+      'AO5',
+      'metalinguistic',
+    ],
     linkedObjectives: ['WEN03.AO5', 'WEN03.AO1'],
   },
 
@@ -1299,13 +1767,22 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<p>Your response will be assessed on: crafting of language for spoken delivery (including prosodic features signalled in writing); rhetorical effectiveness; register appropriateness for a sixth-form audience. (30 marks)</p>' +
       '<p>Self-assessment: after completing the timed piece, write 100 words identifying which rhetorical strategy you feel was most effective and why.</p>',
     modelAnswer:
-      'Assessed criteria: crafting for spoken delivery (use of repetition, rhetorical questions, direct address, tricolon -- features that translate to the ear); rhetorical structure (Aristotle\'s three-part structure: exordium, narratio, peroratio -- or modern equivalents); register (formal enough for a public speech; accessible enough for a peer audience). ' +
+      "Assessed criteria: crafting for spoken delivery (use of repetition, rhetorical questions, direct address, tricolon -- features that translate to the ear); rhetorical structure (Aristotle's three-part structure: exordium, narratio, peroratio -- or modern equivalents); register (formal enough for a public speech; accessible enough for a peer audience). " +
       'Common weaknesses: essays that read as written texts rather than speeches (no address, no prosodic signalling); over-reliance on one rhetorical device; failure to engage with the counter-argument (AI creativity). ' +
       'Self-assessment: reward specific identification of a strategy (naming it, locating it in the text, explaining why it worked). Penalise vague self-praise. A student who identifies that their tricolon fell flat because the three items were not semantically parallel demonstrates sophisticated metalinguistic awareness.',
     marks: 30,
     estimatedMinutes: 90,
     difficulty: 'secure',
-    keywords: ['speech', 'timed practice', 'rhetorical strategy', 'prosodic features', 'tricolon', 'register', 'AI creativity', 'self-assessment'],
+    keywords: [
+      'speech',
+      'timed practice',
+      'rhetorical strategy',
+      'prosodic features',
+      'tricolon',
+      'register',
+      'AI creativity',
+      'self-assessment',
+    ],
     linkedObjectives: ['WEN03.AO5', 'WEN03.AO1'],
   },
 
@@ -1319,7 +1796,7 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     weekNumber: 5,
     type: 'reading-response',
     instructions:
-      '<p>Read Chapters 1-2 of John Creswell\'s <em>Research Design: Qualitative, Quantitative, and Mixed Methods Approaches</em> (4th edition, 2014).</p>' +
+      "<p>Read Chapters 1-2 of John Creswell's <em>Research Design: Qualitative, Quantitative, and Mixed Methods Approaches</em> (4th edition, 2014).</p>" +
       '<ol>' +
       '<li>Write a 400-word reading log summarising the key differences between qualitative and quantitative research paradigms and their respective strengths and weaknesses. (10 marks)</li>' +
       '<li>For your own WEN04 investigation, decide whether your primary approach will be qualitative, quantitative, or mixed methods. Write 200 words justifying your choice with reference to Creswell. (10 marks)</li>' +
@@ -1331,7 +1808,15 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'developing',
-    keywords: ['Creswell', 'qualitative', 'quantitative', 'mixed methods', 'research paradigm', 'methodology', 'reading log'],
+    keywords: [
+      'Creswell',
+      'qualitative',
+      'quantitative',
+      'mixed methods',
+      'research paradigm',
+      'methodology',
+      'reading log',
+    ],
     linkedObjectives: ['WEN04.AO2', 'WEN04.AO4'],
   },
 
@@ -1355,7 +1840,15 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 150,
     difficulty: 'secure',
-    keywords: ['corpus building', 'pilot analysis', 'data collection', 'methodological reflection', 'WEN04', 'coursework', 'framework'],
+    keywords: [
+      'corpus building',
+      'pilot analysis',
+      'data collection',
+      'methodological reflection',
+      'WEN04',
+      'coursework',
+      'framework',
+    ],
     linkedObjectives: ['WEN04.AO2', 'WEN04.AO3', 'WEN04.AO4'],
   },
 
@@ -1369,7 +1862,7 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<p>Write the abstract (150 words) and introduction (400 words) for your WEN04 investigation.</p>' +
       '<ul>' +
       '<li>The abstract must summarise: topic, methodology, key findings (anticipated if not yet complete), and significance.</li>' +
-      '<li>The introduction must: establish the topic\'s relevance, review relevant prior research (minimum three sources), and state the research question clearly.</li>' +
+      "<li>The introduction must: establish the topic's relevance, review relevant prior research (minimum three sources), and state the research question clearly.</li>" +
       '<li>Use academic citation conventions (APA 7th edition) throughout.</li>' +
       '</ul>',
     modelAnswer:
@@ -1379,7 +1872,16 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 150,
     difficulty: 'mastery',
-    keywords: ['abstract', 'introduction', 'APA', 'academic writing', 'literature review', 'WEN04', 'coursework', 'citation'],
+    keywords: [
+      'abstract',
+      'introduction',
+      'APA',
+      'academic writing',
+      'literature review',
+      'WEN04',
+      'coursework',
+      'citation',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO4'],
   },
 
@@ -1401,11 +1903,20 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       'Assessment priorities: the analysis section should distinguish clearly between what the data shows (description) and what it means (interpretation). A common failure is to present a frequency table and then claim far more than the data supports. ' +
       'Framework application: the chosen framework must do analytical work -- it should produce insights that would not be available without it. If CDA is chosen, the analysis should show how specific textual features encode ideological assumptions; if CA is chosen, specific transcript features (overlaps, pauses, topic control) should be connected to interactional power. ' +
       'Connection to prior research: findings should be positioned relative to existing studies -- do they confirm, extend, complicate, or contradict? This is where the literature review pays off. A finding that "agrees with Smith (2015)" is less interesting than one that "extends Smith\'s finding to a new register" or "partially contradicts Smith\'s model in the following respect." ' +
-      'Limitations: genuine methodological limitations (sample size, corpus balance, observer\'s paradox) are required; students who claim no limitations have not thought carefully enough.',
+      "Limitations: genuine methodological limitations (sample size, corpus balance, observer's paradox) are required; students who claim no limitations have not thought carefully enough.",
     marks: 25,
     estimatedMinutes: 180,
     difficulty: 'mastery',
-    keywords: ['findings', 'discussion', 'data analysis', 'framework', 'limitation', 'WEN04', 'coursework', 'interpretation'],
+    keywords: [
+      'findings',
+      'discussion',
+      'data analysis',
+      'framework',
+      'limitation',
+      'WEN04',
+      'coursework',
+      'interpretation',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO3', 'WEN04.AO4'],
   },
 
@@ -1428,7 +1939,15 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 120,
     difficulty: 'secure',
-    keywords: ['peer review', 'WEN04', 'investigation', 'revision plan', 'assessment criteria', 'academic writing', 'feedback'],
+    keywords: [
+      'peer review',
+      'WEN04',
+      'investigation',
+      'revision plan',
+      'assessment criteria',
+      'academic writing',
+      'feedback',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO3', 'WEN04.AO4'],
   },
 
@@ -1451,7 +1970,18 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 150,
     difficulty: 'mastery',
-    keywords: ['self-evaluation', 'mark scheme', 'Edexcel', 'WEN04', 'band descriptors', 'revision', 'AO1', 'AO2', 'AO3', 'AO4'],
+    keywords: [
+      'self-evaluation',
+      'mark scheme',
+      'Edexcel',
+      'WEN04',
+      'band descriptors',
+      'revision',
+      'AO1',
+      'AO2',
+      'AO3',
+      'AO4',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO3', 'WEN04.AO4'],
   },
 
@@ -1465,16 +1995,24 @@ export const ialHomeworkTasks: HomeworkTask[] = [
       '<p>Choose ONE text from the reading list that you have not yet read (minimum 50 pages). This should be a text directly relevant to your WEN04 investigation topic.</p>' +
       '<ol>' +
       '<li>Write a 600-word critical reading log: summarise the argument, evaluate the methodology (if empirical), and explain how it informs your investigation. (15 marks)</li>' +
-      '<li>Write a 150-word additional bibliography entry in APA 7th edition format, including a one-sentence annotation explaining the text\'s relevance to your investigation. (5 marks)</li>' +
+      "<li>Write a 150-word additional bibliography entry in APA 7th edition format, including a one-sentence annotation explaining the text's relevance to your investigation. (5 marks)</li>" +
       '</ol>',
     modelAnswer:
-      'Reading log quality markers: the log is critical, not merely descriptive. It evaluates the text\'s argument -- where it is persuasive, where it overreaches, where its methodology is strong or limited. A student who engages critically with a text they admire (noting both its strengths and its blind spots) demonstrates higher-order reading than one who simply summarises. ' +
+      "Reading log quality markers: the log is critical, not merely descriptive. It evaluates the text's argument -- where it is persuasive, where it overreaches, where its methodology is strong or limited. A student who engages critically with a text they admire (noting both its strengths and its blind spots) demonstrates higher-order reading than one who simply summarises. " +
       'Connection to investigation: must be substantive and specific. "This text is relevant because it also discusses language" is inadequate. "Myers-Scotton\'s analysis of conversation-internal code-switching in Chapter 3 provides the framework I will use to annotate my transcripts, though I will need to adapt her matrix language criteria for a British Punjabi context" is substantive. ' +
       'APA annotation: the annotated bibliography entry format should follow APA 7th with the annotation on a new line, not indented, in present tense. Award marks for format accuracy and for the precision of the relevance claim.',
     marks: 20,
     estimatedMinutes: 150,
     difficulty: 'mastery',
-    keywords: ['reading log', 'critical reading', 'annotated bibliography', 'APA', 'independent research', 'WEN04', 'methodology'],
+    keywords: [
+      'reading log',
+      'critical reading',
+      'annotated bibliography',
+      'APA',
+      'independent research',
+      'WEN04',
+      'methodology',
+    ],
     linkedObjectives: ['WEN04.AO1', 'WEN04.AO2', 'WEN04.AO4'],
   },
 
@@ -1500,7 +2038,23 @@ export const ialHomeworkTasks: HomeworkTask[] = [
     marks: 20,
     estimatedMinutes: 180,
     difficulty: 'mastery',
-    keywords: ['exam practice', 'past paper', 'self-marking', 'exam reflection', 'time management', 'revision', 'WEN01', 'WEN02'],
-    linkedObjectives: ['WEN01.AO1', 'WEN01.AO2', 'WEN01.AO3', 'WEN02.AO1', 'WEN02.AO2', 'WEN02.AO3'],
+    keywords: [
+      'exam practice',
+      'past paper',
+      'self-marking',
+      'exam reflection',
+      'time management',
+      'revision',
+      'WEN01',
+      'WEN02',
+    ],
+    linkedObjectives: [
+      'WEN01.AO1',
+      'WEN01.AO2',
+      'WEN01.AO3',
+      'WEN02.AO1',
+      'WEN02.AO2',
+      'WEN02.AO3',
+    ],
   },
-];
+]

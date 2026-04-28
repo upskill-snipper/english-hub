@@ -132,7 +132,7 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
   // ═════════════════════════════════════════════════════════════════════════
   {
     id: 'igcse-lang-p1-mock-04',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 1,
     title: 'Cambridge IGCSE English Language - Paper 1 Mock Exam 4',
     subtitle: 'Reading and Comprehension',
@@ -143,7 +143,8 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
       {
         id: 'igcse-lang-p1-m4-reading',
         title: 'Reading Comprehension Section',
-        description: 'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
+        description:
+          'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
         totalMarks: 80,
         suggestedTimeMinutes: 120,
         questions: [
@@ -157,9 +158,14 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M4_PASSAGE_A,
             extractSource: 'Passage A: The Rise of Artificial Intelligence',
             modelAnswers: {
-              fullMark: '1. Loss of human jobs and economic displacement. 2. Concentration of wealth and increased inequality. 3. Existential concern about human identity and meaning if machines can do everything humans can do.',
-              partialMarks: ['2 marks for identifying concern about job losses', '2 marks for identifying concern about wealth concentration', '2 marks for identifying existential concerns about human purpose and identity']
-            }
+              fullMark:
+                '1. Loss of human jobs and economic displacement. 2. Concentration of wealth and increased inequality. 3. Existential concern about human identity and meaning if machines can do everything humans can do.',
+              partialMarks: [
+                '2 marks for identifying concern about job losses',
+                '2 marks for identifying concern about wealth concentration',
+                '2 marks for identifying existential concerns about human purpose and identity',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m4-q2',
@@ -171,9 +177,13 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M4_PASSAGE_A,
             extractSource: 'Passage A: The Rise of Artificial Intelligence',
             modelAnswers: {
-              fullMark: 'The writer uses the Industrial Revolution as a historical precedent to show that while new technology eventually creates new jobs, the transition period is brutal and devastating for workers and communities. This suggests AI will follow a similar pattern, with job losses occurring faster than new opportunities emerge, leaving workers vulnerable.',
-              partialMarks: ['2-3 marks for explaining the historical parallel', '2-3 marks for explaining how this supports the argument about AI']
-            }
+              fullMark:
+                'The writer uses the Industrial Revolution as a historical precedent to show that while new technology eventually creates new jobs, the transition period is brutal and devastating for workers and communities. This suggests AI will follow a similar pattern, with job losses occurring faster than new opportunities emerge, leaving workers vulnerable.',
+              partialMarks: [
+                '2-3 marks for explaining the historical parallel',
+                '2-3 marks for explaining how this supports the argument about AI',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m4-q3',
@@ -185,9 +195,13 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M4_PASSAGE_B,
             extractSource: 'Passage B: The Value of Urban Parks',
             modelAnswers: {
-              fullMark: 'Parks are underfunded because they generate no revenue and do not contribute to GDP. They are invisible to policymakers focused on economic growth metrics.',
-              partialMarks: ['2 marks for identifying lack of economic value/revenue generation', '2 marks for explaining policymakers prioritise economic metrics']
-            }
+              fullMark:
+                'Parks are underfunded because they generate no revenue and do not contribute to GDP. They are invisible to policymakers focused on economic growth metrics.',
+              partialMarks: [
+                '2 marks for identifying lack of economic value/revenue generation',
+                '2 marks for explaining policymakers prioritise economic metrics',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m4-q4',
@@ -199,9 +213,13 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M4_PASSAGE_B,
             extractSource: 'Passage B: The Value of Urban Parks',
             modelAnswers: {
-              fullMark: 'The writer points out that while parks do not generate revenue directly, they are cost-effective investments that return multiple times their cost through health benefits and crime prevention. However, traditional economic thinking focuses on immediate revenue generation, making the long-term and diffuse benefits of parks invisible to fiscal decision-makers.',
-              partialMarks: ['2-3 marks for identifying the contradiction', '2-3 marks for explaining the conflict between traditional economics and actual value']
-            }
+              fullMark:
+                'The writer points out that while parks do not generate revenue directly, they are cost-effective investments that return multiple times their cost through health benefits and crime prevention. However, traditional economic thinking focuses on immediate revenue generation, making the long-term and diffuse benefits of parks invisible to fiscal decision-makers.',
+              partialMarks: [
+                '2-3 marks for identifying the contradiction',
+                '2-3 marks for explaining the conflict between traditional economics and actual value',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m4-q5',
@@ -213,9 +231,14 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: '',
             extractSource: 'Both passages',
             modelAnswers: {
-              fullMark: 'Passage A is less optimistic. While it acknowledges potential benefits of AI, it concludes with concerns about existential meaning and suggests that individual willpower cannot solve addiction-like problems created by design. Passage B is more optimistic, offering specific solutions (regenerative agriculture, policy changes) and suggesting that improvement is possible with proper investment and regulation.',
-              partialMarks: ['2-3 marks for identifying which passage is more optimistic', '2-3 marks for supporting with textual evidence', '2 marks for explaining the difference in tone/approach']
-            }
+              fullMark:
+                'Passage A is less optimistic. While it acknowledges potential benefits of AI, it concludes with concerns about existential meaning and suggests that individual willpower cannot solve addiction-like problems created by design. Passage B is more optimistic, offering specific solutions (regenerative agriculture, policy changes) and suggesting that improvement is possible with proper investment and regulation.',
+              partialMarks: [
+                '2-3 marks for identifying which passage is more optimistic',
+                '2-3 marks for supporting with textual evidence',
+                '2 marks for explaining the difference in tone/approach',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m4-q6',
@@ -227,18 +250,24 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: '',
             extractSource: 'Both passages',
             modelAnswers: {
-              fullMark: 'Passage A relies on logical reasoning and historical analogy (the Industrial Revolution), drawing implications from technological change. Passage B uses concrete evidence (statistics, research findings) and cost-benefit analysis, showing that parks are measurable investments. Passage A emphasizes existential concerns; Passage B emphasizes practical solutions and economics. Both use counter-argument (acknowledging opposing views) but Passage A suggests solutions are insufficient while Passage B offers specific remedies.',
-              partialMarks: ['2 marks for identifying use of reasoning in A', '2 marks for identifying use of evidence in B', '2 marks for comparing their approaches', '2 marks for explaining differences in tone/persuasiveness']
-            }
-          }
-        ]
-      }
-    ]
+              fullMark:
+                'Passage A relies on logical reasoning and historical analogy (the Industrial Revolution), drawing implications from technological change. Passage B uses concrete evidence (statistics, research findings) and cost-benefit analysis, showing that parks are measurable investments. Passage A emphasizes existential concerns; Passage B emphasizes practical solutions and economics. Both use counter-argument (acknowledging opposing views) but Passage A suggests solutions are insufficient while Passage B offers specific remedies.',
+              partialMarks: [
+                '2 marks for identifying use of reasoning in A',
+                '2 marks for identifying use of evidence in B',
+                '2 marks for comparing their approaches',
+                '2 marks for explaining differences in tone/persuasiveness',
+              ],
+            },
+          },
+        ],
+      },
+    ],
   },
 
   {
     id: 'igcse-lang-p1-mock-05',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 1,
     title: 'Cambridge IGCSE English Language - Paper 1 Mock Exam 5',
     subtitle: 'Reading and Comprehension',
@@ -249,7 +278,8 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
       {
         id: 'igcse-lang-p1-m5-reading',
         title: 'Reading Comprehension Section',
-        description: 'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
+        description:
+          'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
         totalMarks: 80,
         suggestedTimeMinutes: 120,
         questions: [
@@ -263,9 +293,13 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M5_PASSAGE_A,
             extractSource: 'Passage A: The Smartphone',
             modelAnswers: {
-              fullMark: 'The writer means that smartphone technology uses deliberate design techniques to hold users\' attention so that they can sell advertising. Attention is sold as a commodity to advertisers—the longer users are engaged, the more valuable they are to companies.',
-              partialMarks: ['2-3 marks for explaining "capture"', '2-3 marks for explaining "commodify" or relating to profit/advertising']
-            }
+              fullMark:
+                "The writer means that smartphone technology uses deliberate design techniques to hold users' attention so that they can sell advertising. Attention is sold as a commodity to advertisers—the longer users are engaged, the more valuable they are to companies.",
+              partialMarks: [
+                '2-3 marks for explaining "capture"',
+                '2-3 marks for explaining "commodify" or relating to profit/advertising',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m5-q2',
@@ -277,9 +311,10 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M5_PASSAGE_A,
             extractSource: 'Passage A: The Smartphone',
             modelAnswers: {
-              fullMark: '1. Infinite scroll. 2. Notifications. 3. Social validation through likes. 4. Social validation through comments.',
-              partialMarks: ['1 mark per technique identified']
-            }
+              fullMark:
+                '1. Infinite scroll. 2. Notifications. 3. Social validation through likes. 4. Social validation through comments.',
+              partialMarks: ['1 mark per technique identified'],
+            },
           },
           {
             id: 'igcse-lang-p1-m5-q3',
@@ -291,9 +326,13 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M5_PASSAGE_A,
             extractSource: 'Passage A: The Smartphone',
             modelAnswers: {
-              fullMark: 'Both exploit psychological vulnerabilities to trigger immediate pleasure despite long-term harm. Both are engineered to be addictive. Just as junk food feels good immediately but damages health, smartphone use feels rewarding but harms cognitive and psychological wellbeing.',
-              partialMarks: ['2 marks for identifying similarity in addiction/pleasure', '2 marks for identifying harm despite immediate reward']
-            }
+              fullMark:
+                'Both exploit psychological vulnerabilities to trigger immediate pleasure despite long-term harm. Both are engineered to be addictive. Just as junk food feels good immediately but damages health, smartphone use feels rewarding but harms cognitive and psychological wellbeing.',
+              partialMarks: [
+                '2 marks for identifying similarity in addiction/pleasure',
+                '2 marks for identifying harm despite immediate reward',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m5-q4',
@@ -305,9 +344,13 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M5_PASSAGE_B,
             extractSource: 'Passage B: Language and Reality',
             modelAnswers: {
-              fullMark: 'Language determines which concepts are available to our minds and therefore what distinctions we can perceive. The passage uses the example of languages with multiple words for snow: speakers of these languages can perceive and distinguish types of snow that speakers of languages with only one word for snow cannot.',
-              partialMarks: ['2-3 marks for explaining how language shapes thought', '3 marks for using the snow example correctly']
-            }
+              fullMark:
+                'Language determines which concepts are available to our minds and therefore what distinctions we can perceive. The passage uses the example of languages with multiple words for snow: speakers of these languages can perceive and distinguish types of snow that speakers of languages with only one word for snow cannot.',
+              partialMarks: [
+                '2-3 marks for explaining how language shapes thought',
+                '3 marks for using the snow example correctly',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m5-q5',
@@ -319,9 +362,13 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M5_PASSAGE_B,
             extractSource: 'Passage B: Language and Reality',
             modelAnswers: {
-              fullMark: 'One language dies every nine days. By the end of this century, half of the world\'s seven thousand languages will have disappeared. This represents a "linguistic extinction event."',
-              partialMarks: ['2 marks for rate of language death', '2 marks for projection or scale of loss']
-            }
+              fullMark:
+                'One language dies every nine days. By the end of this century, half of the world\'s seven thousand languages will have disappeared. This represents a "linguistic extinction event."',
+              partialMarks: [
+                '2 marks for rate of language death',
+                '2 marks for projection or scale of loss',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m5-q6',
@@ -333,18 +380,23 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: '',
             extractSource: 'Both passages',
             modelAnswers: {
-              fullMark: 'Passage A identifies a technological threat: smartphone design deliberately harms our capacity for sustained attention and deep thought. This is external technology damaging internal cognitive capacity. Passage B identifies a cultural/linguistic threat: the loss of linguistic diversity reduces the conceptual frameworks available to humanity. One threatens individual cognition; the other threatens collective human knowledge and perception. Both result from profit-driven systems prioritising short-term gain over human wellbeing.',
-              partialMarks: ['2-3 marks for identifying threat in A', '2-3 marks for identifying threat in B', '2 marks for comparison/contrast']
-            }
-          }
-        ]
-      }
-    ]
+              fullMark:
+                'Passage A identifies a technological threat: smartphone design deliberately harms our capacity for sustained attention and deep thought. This is external technology damaging internal cognitive capacity. Passage B identifies a cultural/linguistic threat: the loss of linguistic diversity reduces the conceptual frameworks available to humanity. One threatens individual cognition; the other threatens collective human knowledge and perception. Both result from profit-driven systems prioritising short-term gain over human wellbeing.',
+              partialMarks: [
+                '2-3 marks for identifying threat in A',
+                '2-3 marks for identifying threat in B',
+                '2 marks for comparison/contrast',
+              ],
+            },
+          },
+        ],
+      },
+    ],
   },
 
   {
     id: 'igcse-lang-p1-mock-06',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 1,
     title: 'Cambridge IGCSE English Language - Paper 1 Mock Exam 6',
     subtitle: 'Reading and Comprehension',
@@ -355,7 +407,8 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
       {
         id: 'igcse-lang-p1-m6-reading',
         title: 'Reading Comprehension Section',
-        description: 'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
+        description:
+          'Answer all questions on the answer sheet provided. Read the passages carefully and answer the questions in the spaces provided.',
         totalMarks: 80,
         suggestedTimeMinutes: 120,
         questions: [
@@ -369,9 +422,10 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M6_PASSAGE_A,
             extractSource: 'Passage A: The Prison System',
             modelAnswers: {
-              fullMark: '1. The US incarceration rate is 6-10 times higher than other wealthy democracies. 2. Black men are incarcerated at 5 times the rate of white men despite similar crime rates. 3. Poor people are massively overrepresented in prisons. The point is that incarceration is not equally distributed but disproportionately targets specific populations, particularly the poor and racial minorities.',
-              partialMarks: ['2 marks per specific statistic/example']
-            }
+              fullMark:
+                '1. The US incarceration rate is 6-10 times higher than other wealthy democracies. 2. Black men are incarcerated at 5 times the rate of white men despite similar crime rates. 3. Poor people are massively overrepresented in prisons. The point is that incarceration is not equally distributed but disproportionately targets specific populations, particularly the poor and racial minorities.',
+              partialMarks: ['2 marks per specific statistic/example'],
+            },
           },
           {
             id: 'igcse-lang-p1-m6-q2',
@@ -383,9 +437,14 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M6_PASSAGE_A,
             extractSource: 'Passage A: The Prison System',
             modelAnswers: {
-              fullMark: 'Prisons fail to achieve their three stated purposes: they do not punish (not with justice), they do not rehabilitate (programmes are underfunded), and they do not increase public safety (recidivism is high). They only inflict punishment indiscriminately on the vulnerable.',
-              partialMarks: ['2 marks for identifying failure in rehabilitation', '2 marks for noting high recidivism/public safety failure', '1 mark for noting unjust punishment']
-            }
+              fullMark:
+                'Prisons fail to achieve their three stated purposes: they do not punish (not with justice), they do not rehabilitate (programmes are underfunded), and they do not increase public safety (recidivism is high). They only inflict punishment indiscriminately on the vulnerable.',
+              partialMarks: [
+                '2 marks for identifying failure in rehabilitation',
+                '2 marks for noting high recidivism/public safety failure',
+                '1 mark for noting unjust punishment',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m6-q3',
@@ -397,9 +456,13 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M6_PASSAGE_A,
             extractSource: 'Passage A: The Prison System',
             modelAnswers: {
-              fullMark: 'Prisons treat poverty, mental illness, and addiction as criminal problems requiring punishment and incarceration, when they are actually social problems requiring healthcare, education, and support. By criminalising these social issues instead of addressing them, prisons fail to solve the actual problems they are supposed to address.',
-              partialMarks: ['2-3 marks for identifying misidentification of root causes', '2-3 marks for explaining why this approach fails']
-            }
+              fullMark:
+                'Prisons treat poverty, mental illness, and addiction as criminal problems requiring punishment and incarceration, when they are actually social problems requiring healthcare, education, and support. By criminalising these social issues instead of addressing them, prisons fail to solve the actual problems they are supposed to address.',
+              partialMarks: [
+                '2-3 marks for identifying misidentification of root causes',
+                '2-3 marks for explaining why this approach fails',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m6-q4',
@@ -411,9 +474,13 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M6_PASSAGE_B,
             extractSource: 'Passage B: Food Production',
             modelAnswers: {
-              fullMark: 'The system simultaneously causes starvation and overfeeding, environmental destruction and hunger. We produce enough food to feed everyone adequately, yet billions suffer malnutrition while wealthy countries have obesity epidemics from cheap, processed food. The problem is not scarcity but how food is distributed and produced (for profit, not human need).',
-              partialMarks: ['2-3 marks for identifying production is sufficient', '2-3 marks for explaining distribution/profit problem']
-            }
+              fullMark:
+                'The system simultaneously causes starvation and overfeeding, environmental destruction and hunger. We produce enough food to feed everyone adequately, yet billions suffer malnutrition while wealthy countries have obesity epidemics from cheap, processed food. The problem is not scarcity but how food is distributed and produced (for profit, not human need).',
+              partialMarks: [
+                '2-3 marks for identifying production is sufficient',
+                '2-3 marks for explaining distribution/profit problem',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p1-m6-q5',
@@ -425,9 +492,10 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P1_M6_PASSAGE_B,
             extractSource: 'Passage B: Food Production',
             modelAnswers: {
-              fullMark: 'The writer mentions regenerative agriculture, which produces food sustainably while restoring soil health and supporting biodiversity. Also mentions small-scale farming, local food systems, and crop diversity as proven alternatives that improve resilience and sustainability.',
-              partialMarks: ['1 mark per example of alternative farming method']
-            }
+              fullMark:
+                'The writer mentions regenerative agriculture, which produces food sustainably while restoring soil health and supporting biodiversity. Also mentions small-scale farming, local food systems, and crop diversity as proven alternatives that improve resilience and sustainability.',
+              partialMarks: ['1 mark per example of alternative farming method'],
+            },
           },
           {
             id: 'igcse-lang-p1-m6-q6',
@@ -439,13 +507,19 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: '',
             extractSource: 'Both passages',
             modelAnswers: {
-              fullMark: 'Passage A suggests solutions require systemic change: stopping subsidies for harmful agriculture and investing in sustainable alternatives—acknowledging that individual consumer choice is insufficient. Similarly, Passage B argues that individual willpower is inadequate against systems designed to be addictive; regulation and design changes are necessary. Both writers reject individual-level solutions and demand policy/systemic change. However, Passage B emphasizes changing how decisions are made (stopping subsidies, investing differently), while Passage A emphasizes changing how products are designed. Both require confronting powerful interests profiting from the current system.',
-              partialMarks: ['2 marks for identifying systemic change requirement in A', '2 marks for identifying systemic change requirement in B', '2 marks for comparing their solutions', '2 marks for noting both reject individual-level solutions']
-            }
-          }
-        ]
-      }
-    ]
+              fullMark:
+                'Passage A suggests solutions require systemic change: stopping subsidies for harmful agriculture and investing in sustainable alternatives—acknowledging that individual consumer choice is insufficient. Similarly, Passage B argues that individual willpower is inadequate against systems designed to be addictive; regulation and design changes are necessary. Both writers reject individual-level solutions and demand policy/systemic change. However, Passage B emphasizes changing how decisions are made (stopping subsidies, investing differently), while Passage A emphasizes changing how products are designed. Both require confronting powerful interests profiting from the current system.',
+              partialMarks: [
+                '2 marks for identifying systemic change requirement in A',
+                '2 marks for identifying systemic change requirement in B',
+                '2 marks for comparing their solutions',
+                '2 marks for noting both reject individual-level solutions',
+              ],
+            },
+          },
+        ],
+      },
+    ],
   },
 
   // ═════════════════════════════════════════════════════════════════════════
@@ -454,7 +528,7 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
 
   {
     id: 'igcse-lang-p2-mock-04',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 2,
     title: 'Cambridge IGCSE English Language - Paper 2 Mock Exam 4',
     subtitle: 'Directed Writing and Composition',
@@ -465,7 +539,8 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
       {
         id: 'igcse-lang-p2-m4-directed',
         title: 'Directed Writing Task',
-        description: 'Complete the directed writing task below based on the provided source material.',
+        description:
+          'Complete the directed writing task below based on the provided source material.',
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -479,16 +554,17 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P2_M4_SOURCE_A,
             extractSource: 'Source A: Air Pollution and Health',
             modelAnswers: {
-              fullMark: 'A well-developed article that: (1) Presents compelling evidence about air pollution\'s health effects (respiratory disease, heart disease, stroke, cancer, impact on children and elderly); (2) Clearly articulates why this is an equity/justice issue (affects low-income communities disproportionately); (3) Proposes concrete actions (renewable energy transition, improved public transport, industrial emission regulation); (4) Uses persuasive techniques effectively (rhetorical questions, statistics, emotional appeals to vulnerable populations); (5) Maintains appropriate magazine article tone; (6) Meets word count requirements.',
+              fullMark:
+                "A well-developed article that: (1) Presents compelling evidence about air pollution's health effects (respiratory disease, heart disease, stroke, cancer, impact on children and elderly); (2) Clearly articulates why this is an equity/justice issue (affects low-income communities disproportionately); (3) Proposes concrete actions (renewable energy transition, improved public transport, industrial emission regulation); (4) Uses persuasive techniques effectively (rhetorical questions, statistics, emotional appeals to vulnerable populations); (5) Maintains appropriate magazine article tone; (6) Meets word count requirements.",
               partialMarks: [
                 '10 marks: Content and understanding—evidence of health effects, understanding of inequality',
                 '10 marks: Structure and organization—clear article structure, logical flow',
                 '10 marks: Style and tone—appropriate to magazine audience, persuasive language',
-                '10 marks: Technical accuracy—grammar, spelling, punctuation'
-              ]
-            }
-          }
-        ]
+                '10 marks: Technical accuracy—grammar, spelling, punctuation',
+              ],
+            },
+          },
+        ],
       },
       {
         id: 'igcse-lang-p2-m4-composition',
@@ -505,14 +581,15 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 60,
             questionType: 'creative-writing',
             modelAnswers: {
-              fullMark: 'A compelling story that: (1) Incorporates the required line naturally; (2) Creates interesting characters with recognisable motivations; (3) Uses vivid imagery and descriptive language; (4) Maintains narrative tension and clear plot structure; (5) Uses dialogue effectively if included; (6) Demonstrates range of sentence structures and vocabulary; (7) Meets word count requirements (typically 300-500 words for short story).',
+              fullMark:
+                'A compelling story that: (1) Incorporates the required line naturally; (2) Creates interesting characters with recognisable motivations; (3) Uses vivid imagery and descriptive language; (4) Maintains narrative tension and clear plot structure; (5) Uses dialogue effectively if included; (6) Demonstrates range of sentence structures and vocabulary; (7) Meets word count requirements (typically 300-500 words for short story).',
               partialMarks: [
                 '10 marks: Narrative craft—plot, character, tension',
                 '10 marks: Setting and atmosphere—vivid description, sensory detail',
                 '10 marks: Language and style—vocabulary range, sentence variety, tone',
-                '10 marks: Technical accuracy—grammar, spelling, punctuation'
-              ]
-            }
+                '10 marks: Technical accuracy—grammar, spelling, punctuation',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p2-m4-composition-b',
@@ -522,23 +599,24 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 60,
             questionType: 'creative-writing',
             modelAnswers: {
-              fullMark: 'An evocative descriptive piece that: (1) Brings the place vividly to life through detailed, sensory description; (2) Conveys the sense of threat or change through language and tone; (3) Creates atmosphere and emotional resonance; (4) Uses varied sentence structures and sophisticated vocabulary; (5) Maintains focus on the place while evoking the human dimension; (6) Meets word count requirements.',
+              fullMark:
+                'An evocative descriptive piece that: (1) Brings the place vividly to life through detailed, sensory description; (2) Conveys the sense of threat or change through language and tone; (3) Creates atmosphere and emotional resonance; (4) Uses varied sentence structures and sophisticated vocabulary; (5) Maintains focus on the place while evoking the human dimension; (6) Meets word count requirements.',
               partialMarks: [
                 '10 marks: Descriptive power—vivid imagery, sensory detail',
                 '10 marks: Sense of place—specific detail that brings location to life',
                 '10 marks: Conveying change/threat—through language choice, tone, atmosphere',
-                '10 marks: Technical accuracy—grammar, spelling, punctuation'
-              ]
-            }
-          }
-        ]
-      }
-    ]
+                '10 marks: Technical accuracy—grammar, spelling, punctuation',
+              ],
+            },
+          },
+        ],
+      },
+    ],
   },
 
   {
     id: 'igcse-lang-p2-mock-05',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 2,
     title: 'Cambridge IGCSE English Language - Paper 2 Mock Exam 5',
     subtitle: 'Directed Writing and Composition',
@@ -549,7 +627,8 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
       {
         id: 'igcse-lang-p2-m5-directed',
         title: 'Directed Writing Task',
-        description: 'Complete the directed writing task below based on the provided source material.',
+        description:
+          'Complete the directed writing task below based on the provided source material.',
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -563,16 +642,17 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P2_M5_SOURCE_A,
             extractSource: 'Source A: Facial Recognition Technology',
             modelAnswers: {
-              fullMark: 'A well-structured memo that: (1) Takes a clear position with strong justification (for or against); (2) Systematically addresses potential benefits and serious concerns; (3) Acknowledges strongest arguments from opposition; (4) If recommending deployment, proposes meaningful safeguards and oversight mechanisms; (5) Uses appropriate formal memo format (To, From, Date, Subject, clear sections); (6) Maintains objective, professional tone while making persuasive case; (7) Addresses practical implementation concerns.',
+              fullMark:
+                'A well-structured memo that: (1) Takes a clear position with strong justification (for or against); (2) Systematically addresses potential benefits and serious concerns; (3) Acknowledges strongest arguments from opposition; (4) If recommending deployment, proposes meaningful safeguards and oversight mechanisms; (5) Uses appropriate formal memo format (To, From, Date, Subject, clear sections); (6) Maintains objective, professional tone while making persuasive case; (7) Addresses practical implementation concerns.',
               partialMarks: [
                 '10 marks: Clear position and justification',
                 '10 marks: Addressing benefits and concerns comprehensively',
                 '10 marks: Acknowledging opposing arguments and proposing solutions',
-                '10 marks: Format, tone, and technical accuracy'
-              ]
-            }
-          }
-        ]
+                '10 marks: Format, tone, and technical accuracy',
+              ],
+            },
+          },
+        ],
       },
       {
         id: 'igcse-lang-p2-m5-composition',
@@ -589,14 +669,15 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 60,
             questionType: 'personal-narrative',
             modelAnswers: {
-              fullMark: 'A reflective narrative that: (1) Describes a genuine, significant decision clearly; (2) Explains the difficulty and conflicting considerations; (3) Conveys the emotional dimension of the experience; (4) Shows clear reflection on what was learned; (5) Uses specific, concrete detail to bring the moment alive; (6) Demonstrates range of language and sentence structures; (7) Creates emotional connection with reader.',
+              fullMark:
+                'A reflective narrative that: (1) Describes a genuine, significant decision clearly; (2) Explains the difficulty and conflicting considerations; (3) Conveys the emotional dimension of the experience; (4) Shows clear reflection on what was learned; (5) Uses specific, concrete detail to bring the moment alive; (6) Demonstrates range of language and sentence structures; (7) Creates emotional connection with reader.',
               partialMarks: [
                 '10 marks: Clarity and significance of decision',
                 '10 marks: Exploration of difficulty and conflict',
                 '10 marks: Reflection and learning',
-                '10 marks: Technical accuracy and language quality'
-              ]
-            }
+                '10 marks: Technical accuracy and language quality',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p2-m5-composition-b',
@@ -606,23 +687,24 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 60,
             questionType: 'creative-writing',
             modelAnswers: {
-              fullMark: 'A compelling dialogue-driven story that: (1) Uses dialogue as primary narrative vehicle; (2) Reveals character through how they speak, not just what they say; (3) Shows relationship dynamic and how it shifts; (4) Conveys significant revelation naturally within dialogue; (5) Uses dialogue punctuation correctly throughout; (6) Creates distinct character voices; (7) Builds tension and emotional impact.',
+              fullMark:
+                'A compelling dialogue-driven story that: (1) Uses dialogue as primary narrative vehicle; (2) Reveals character through how they speak, not just what they say; (3) Shows relationship dynamic and how it shifts; (4) Conveys significant revelation naturally within dialogue; (5) Uses dialogue punctuation correctly throughout; (6) Creates distinct character voices; (7) Builds tension and emotional impact.',
               partialMarks: [
                 '10 marks: Dialogue authenticity and character voice',
                 '10 marks: Relationship development and revelation',
                 '10 marks: Narrative impact and emotional resonance',
-                '10 marks: Technical accuracy—dialogue punctuation, grammar'
-              ]
-            }
-          }
-        ]
-      }
-    ]
+                '10 marks: Technical accuracy—dialogue punctuation, grammar',
+              ],
+            },
+          },
+        ],
+      },
+    ],
   },
 
   {
     id: 'igcse-lang-p2-mock-06',
-    board: 'IGCSE',
+    board: 'CAIE',
     paperNumber: 2,
     title: 'Cambridge IGCSE English Language - Paper 2 Mock Exam 6',
     subtitle: 'Directed Writing and Composition',
@@ -633,7 +715,8 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
       {
         id: 'igcse-lang-p2-m6-directed',
         title: 'Directed Writing Task',
-        description: 'Complete the directed writing task below based on the provided source material.',
+        description:
+          'Complete the directed writing task below based on the provided source material.',
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -647,16 +730,17 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extract: P2_M6_SOURCE_A,
             extractSource: 'Source A: University Admissions',
             modelAnswers: {
-              fullMark: 'A persuasive opinion article that: (1) Takes a clear, defensible position on admissions approach; (2) Supports argument with logical reasoning and evidence; (3) Addresses strongest opposing arguments and responds effectively; (4) Explains implications for students, universities, and society; (5) Uses persuasive techniques (rhetorical questions, concrete examples, appeals to values); (6) Maintains appropriate formal article tone; (7) Shows sophisticated engagement with complexity of issue.',
+              fullMark:
+                'A persuasive opinion article that: (1) Takes a clear, defensible position on admissions approach; (2) Supports argument with logical reasoning and evidence; (3) Addresses strongest opposing arguments and responds effectively; (4) Explains implications for students, universities, and society; (5) Uses persuasive techniques (rhetorical questions, concrete examples, appeals to values); (6) Maintains appropriate formal article tone; (7) Shows sophisticated engagement with complexity of issue.',
               partialMarks: [
                 '10 marks: Clear position and logical support',
                 '10 marks: Evidence and reasoning quality',
                 '10 marks: Engagement with counter-arguments and implications',
-                '10 marks: Persuasive technique and article quality'
-              ]
-            }
-          }
-        ]
+                '10 marks: Persuasive technique and article quality',
+              ],
+            },
+          },
+        ],
       },
       {
         id: 'igcse-lang-p2-m6-composition',
@@ -673,14 +757,15 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 60,
             questionType: 'creative-writing',
             modelAnswers: {
-              fullMark: 'A meaningful story that: (1) Explores theme of belonging authentically; (2) Creates protagonists readers care about; (3) Develops conflict related to belonging/outsider status; (4) Uses specific, concrete detail to bring emotional experience alive; (5) Shows resolution that reflects on the theme; (6) Uses varied sentence structures and sophisticated vocabulary; (7) Conveys emotional depth and insight about human experience.',
+              fullMark:
+                'A meaningful story that: (1) Explores theme of belonging authentically; (2) Creates protagonists readers care about; (3) Develops conflict related to belonging/outsider status; (4) Uses specific, concrete detail to bring emotional experience alive; (5) Shows resolution that reflects on the theme; (6) Uses varied sentence structures and sophisticated vocabulary; (7) Conveys emotional depth and insight about human experience.',
               partialMarks: [
                 '10 marks: Thematic exploration of belonging',
                 '10 marks: Character development and emotional authenticity',
                 '10 marks: Narrative structure and resolution',
-                '10 marks: Language quality and technical accuracy'
-              ]
-            }
+                '10 marks: Language quality and technical accuracy',
+              ],
+            },
           },
           {
             id: 'igcse-lang-p2-m6-composition-b',
@@ -690,17 +775,18 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 60,
             questionType: 'persuasive-writing',
             modelAnswers: {
-              fullMark: 'A compelling reflective piece that: (1) Clearly identifies and describes the injustice; (2) Explains convincingly why it is unjust; (3) Proposes meaningful remedies; (4) Conveys genuine concern and emotional engagement; (5) Uses evidence or specific detail to support arguments; (6) Maintains balanced, thoughtful tone while being persuasive; (7) Demonstrates sophisticated thinking about justice and responsibility.',
+              fullMark:
+                'A compelling reflective piece that: (1) Clearly identifies and describes the injustice; (2) Explains convincingly why it is unjust; (3) Proposes meaningful remedies; (4) Conveys genuine concern and emotional engagement; (5) Uses evidence or specific detail to support arguments; (6) Maintains balanced, thoughtful tone while being persuasive; (7) Demonstrates sophisticated thinking about justice and responsibility.',
               partialMarks: [
                 '10 marks: Clarity and significance of injustice described',
                 '10 marks: Explanation of why it is unjust',
                 '10 marks: Proposed solutions and emotional authenticity',
-                '10 marks: Language quality and persuasive technique'
-              ]
-            }
-          }
-        ]
-      }
-    ]
-  }
+                '10 marks: Language quality and persuasive technique',
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
 ]

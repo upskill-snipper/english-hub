@@ -2270,11 +2270,11 @@ const edexcelLitPaper2: CourseData = {
 
 <div class="key-term"><strong>Key Term: Poetry Cluster</strong> — A thematic grouping of poems where each poet approaches the theme differently in form, voice, and perspective.</div>
 
-<h3>The Two Clusters (12 Poems Each)</h3>
+<h3>The Two Clusters (15 Poems Each)</h3>
 
-<p><strong>Relationships:</strong> Sonnet 43, London, The Farmer's Bride, Walking Away, Letters from Yorkshire, Eden Rock, Follower, Mother any distance, Before You Were Mine, Winter Swans, Singh Song!, Climbing My Grandfather.</p>
+<p><strong>Conflict:</strong> A Poison Tree (Blake), The Destruction of Sennacherib (Byron), Extract from The Prelude (Wordsworth), The Man He Killed (Hardy), Cousin Kate (Rossetti), Half-caste (Agard), Exposure (Owen), The Charge of the Light Brigade (Tennyson), Catrin (Clarke), War Photographer (Satyamurti), Belfast Confetti (Carson), The Class Game (Casey), Poppies (Weir), No Problem (Zephaniah), What Were They Like? (Levertov).</p>
 
-<p><strong>Conflict:</strong> The Charge of the Light Brigade, Exposure, Storm on the Island, Bayonet Charge, Remains, Poppies, War Photographer, Tissue, The Émigrée, Kamikaze, Checking Out Me History, My Last Duchess.</p>
+<p><strong>Time and Place:</strong> To Autumn (Keats), Composed Upon Westminster Bridge (Wordsworth), London (Blake), I started Early – Took my Dog (Dickinson), Where the Picnic was (Hardy), Adlestrop (Thomas), Home Thoughts from Abroad (Browning), First Flight (Fanthorpe), Stewart Island (Adcock), Presents from my Aunts in Pakistan (Alvi), Hurricane Hits England (Nichols), Nothing's Changed (Afrika), Postcard from a Travel Snob (Hannah), In Romney Marsh (Davidson), Absence (Jennings).</p>
 
 <h3>The SMILE Framework</h3>
 <ol>

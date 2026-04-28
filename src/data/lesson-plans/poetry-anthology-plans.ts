@@ -5,13 +5,22 @@
 // Each lesson covers full format with starter, main (differentiated), plenary,
 // homework, resources, and SEND adaptations
 //
-// FACT-CHECK NOTE (2026-04-28): Edexcel Relationships lessons 6–10 reference
-// poems that are NOT in the standard Edexcel anthology (e.g. "Hasty Resolution"
-// is not a recognised Donne poem; "Ballad of the White Horse" by Chesterton is
-// not in the Edexcel Relationships cluster). Teachers should cross-check the
-// poems list against their actual specification before using lessons 6–10.
-// Lessons 1–5 (AQA P&C) and lessons 1–5 (Edexcel Relationships) have been
-// fact-checked against canonical poem texts.
+// FACT-CHECK NOTE (2026-04-28): Several Edexcel-tagged Relationships lessons
+// reference poems that are NOT in the canonical Edexcel UK GCSE 1ET0 Pearson
+// Anthology Relationships cluster:
+//   - Lesson 4: "Porphyria's Lover" is an AQA L&R cluster poem; "First Love"
+//     by Clare is an Eduqas anthology poem — neither is in Edexcel 1ET0.
+//   - Lesson 5: "Modern Love (Sonnet 16)" by Meredith is not in Edexcel 1ET0
+//     (though "She Walks in Beauty" by Byron IS in Edexcel 1ET0).
+//   - Lessons 6–10 reference poems that are NOT in the standard Edexcel
+//     anthology (e.g. "Hasty Resolution" is not a recognised Donne poem;
+//     "Ballad of the White Horse" is not in the Edexcel Relationships
+//     cluster; "The Good-Morrow" / "The Clod and the Pebble" are not in
+//     1ET0).
+// Teachers should cross-check the poems list against their actual
+// specification before using lessons 4–10. Only AQA P&C lessons 1–5 and
+// Edexcel Relationships lessons 1–3 (Sonnet 43/Byron, Shelley/Hardy,
+// Dooley/Mew) have been fact-checked against canonical poem texts.
 
 export interface LessonActivity {
   title: string

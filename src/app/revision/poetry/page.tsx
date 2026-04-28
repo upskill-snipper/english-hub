@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import type { ExamBoard } from '@/lib/board/board-config'
 import { PoetryHubAQAClient } from './PoetryHubAQAClient'
 
 type SearchParams = { wrongBoard?: string }
@@ -50,6 +51,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
           title="Edexcel Poetry Anthology"
           description="The Pearson Edexcel anthology is split into themed clusters. You'll study one cluster: Conflict or Time and Place."
           wrongBoard={wrongBoard}
+          board={board}
         >
           <ClusterCard
             href="/revision/poetry/edexcel/conflict"
@@ -84,6 +86,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
           title="Towards a World Unknown"
           description="The OCR anthology has 4 thematic clusters of 15 poems each. You'll study one cluster prescribed by your teacher."
           wrongBoard={wrongBoard}
+          board={board}
         >
           <ClusterCard
             href="/revision/poetry/ocr/love-and-relationships"
@@ -130,6 +133,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
           title="Eduqas Poetry Anthology"
           description="The Eduqas 2025 anthology has 12 poems that all students study. You'll be asked to compare two of them in the exam — strong pairings are essential. Six of the twelve remain in copyright; quotations are short fair-dealing extracts."
           wrongBoard={wrongBoard}
+          board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href="/revision/poetry/eduqas" />}>
@@ -152,6 +156,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
           title="Edexcel IGCSE Poetry Anthology"
           description="Pearson Edexcel IGCSE prescribes its own poetry anthology. Head to the IGCSE area for the poems you need."
           wrongBoard={wrongBoard}
+          board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href="/igcse/edexcel/poetry" />}>
@@ -177,6 +182,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
           title="No poetry anthology for your board"
           description="Cambridge IGCSE First Language English doesn't include a poetry anthology. Focus on Paper 1 reading skills instead — that's where your time pays off."
           wrongBoard={wrongBoard}
+          board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href={paperHref} />}>
@@ -208,12 +214,14 @@ function PoetryShell({
   title,
   description,
   wrongBoard,
+  board,
   children,
 }: {
   boardLabel: string
   title: string
   description: string
   wrongBoard: boolean
+  board: ExamBoard | null
   children: React.ReactNode
 }) {
   return (
@@ -266,7 +274,7 @@ function PoetryShell({
         <div className="grid gap-4 sm:grid-cols-2">{children}</div>
       </section>
 
-      <AnthologyLinks />
+      <AnthologyLinks board={board} />
     </div>
   )
 }
@@ -308,7 +316,7 @@ function BoardlessPoetryShell({ title, description }: { title: string; descripti
 
       <PoetrySeoContent />
 
-      <AnthologyLinks />
+      <AnthologyLinks board={null} />
     </div>
   )
 }
@@ -402,51 +410,109 @@ function PoetrySeoContent() {
   )
 }
 
-function AnthologyLinks() {
-  const links: Array<{ href: string; title: string; snippet: string }> = [
-    {
-      href: '/revision/poetry/power-and-conflict',
-      title: 'AQA Power & Conflict',
-      snippet:
-        'Fifteen poems on power, war and human struggle with annotations, themes and comparison pairings built for AQA.',
-    },
-    {
-      href: '/revision/poetry/love-and-relationships',
-      title: 'AQA Love & Relationships',
-      snippet:
-        'Romantic, familial and painful love across fifteen poems with method analysis and exam-ready comparison grids.',
-    },
-    {
-      href: '/revision/poetry/aqa-worlds-and-lives',
-      title: 'AQA Worlds & Lives',
-      snippet:
-        'The newer AQA cluster on identity, place and belonging with full annotations and thematic links between poems.',
-    },
-    {
-      href: '/revision/poetry/eduqas',
-      title: 'Eduqas Poetry',
-      snippet:
-        'All twelve poems from the Eduqas 2025 GCSE anthology with strong pairing suggestions for the compulsory comparison question.',
-    },
-    {
-      href: '/revision/poetry/edexcel/conflict',
-      title: 'Edexcel Conflict',
-      snippet:
-        'Fifteen Edexcel Conflict poems with deeper historical context notes to hit AO3 confidently in the exam.',
-    },
-    {
-      href: '/revision/poetry/ocr',
-      title: 'OCR Towards a World Unknown',
-      snippet:
-        'OCR anthology revision covering Love and Relationships, Conflict, Youth and Age and Power and the Natural World clusters.',
-    },
-  ]
+type AnthologyLink = {
+  href: string
+  title: string
+  snippet: string
+  /** Boards this anthology link is relevant to. */
+  boards: ExamBoard[]
+  /** Short board tag rendered on each card so cross-board fallbacks stay labelled. */
+  boardTag: string
+}
+
+const ANTHOLOGY_LINKS: AnthologyLink[] = [
+  {
+    href: '/revision/poetry/power-and-conflict',
+    title: 'AQA Power & Conflict',
+    snippet:
+      'Fifteen poems on power, war and human struggle with annotations, themes and comparison pairings built for AQA.',
+    boards: ['aqa'],
+    boardTag: 'AQA',
+  },
+  {
+    href: '/revision/poetry/love-and-relationships',
+    title: 'AQA Love & Relationships',
+    snippet:
+      'Romantic, familial and painful love across fifteen poems with method analysis and exam-ready comparison grids.',
+    boards: ['aqa'],
+    boardTag: 'AQA',
+  },
+  {
+    href: '/revision/poetry/aqa-worlds-and-lives',
+    title: 'AQA Worlds & Lives',
+    snippet:
+      'The newer AQA cluster on identity, place and belonging with full annotations and thematic links between poems.',
+    boards: ['aqa'],
+    boardTag: 'AQA',
+  },
+  {
+    href: '/revision/poetry/eduqas',
+    title: 'Eduqas Poetry',
+    snippet:
+      'All twelve poems from the Eduqas 2025 GCSE anthology with strong pairing suggestions for the compulsory comparison question.',
+    boards: ['eduqas'],
+    boardTag: 'Eduqas',
+  },
+  {
+    href: '/revision/poetry/edexcel/conflict',
+    title: 'Edexcel Conflict',
+    snippet:
+      'Fifteen Edexcel Conflict poems with deeper historical context notes to hit AO3 confidently in the exam.',
+    boards: ['edexcel'],
+    boardTag: 'Edexcel',
+  },
+  {
+    href: '/revision/poetry/edexcel/time-and-place',
+    title: 'Edexcel Time and Place',
+    snippet:
+      'Edexcel anthology cluster on memory, landscape and belonging with full annotations and comparison support.',
+    boards: ['edexcel'],
+    boardTag: 'Edexcel',
+  },
+  {
+    href: '/revision/poetry/ocr',
+    title: 'OCR Towards a World Unknown',
+    snippet:
+      'OCR anthology revision covering Love and Relationships, Conflict, Youth and Age and Power and the Natural World clusters.',
+    boards: ['ocr'],
+    boardTag: 'OCR',
+  },
+  {
+    href: '/igcse/edexcel/poetry',
+    title: 'Edexcel IGCSE Poetry',
+    snippet:
+      'Pearson Edexcel IGCSE anthology poems with annotations, themes and comparison support for the international syllabus.',
+    boards: ['edexcel-igcse'],
+    boardTag: 'Edexcel IGCSE',
+  },
+]
+
+function AnthologyLinks({ board }: { board: ExamBoard | null }) {
+  // Filter to the user's board when known. If we don't know the board, OR
+  // we know the board but nothing matches it (e.g. Cambridge language-only),
+  // we fall back to showing every anthology so the page still has discovery
+  // value — but every card stays explicitly labelled with its board so a
+  // student on the wrong board never confuses an AQA cluster for their own.
+  const filtered = board ? ANTHOLOGY_LINKS.filter((l) => l.boards.includes(board)) : []
+  const isFallback = filtered.length === 0
+  const links = isFallback ? ANTHOLOGY_LINKS : filtered
+  const heading = isFallback
+    ? board
+      ? 'Other anthologies on the platform'
+      : 'Anthology-specific revision'
+    : 'Your anthology'
 
   return (
     <section aria-labelledby="anthology-links-heading" className="space-y-4">
       <h2 id="anthology-links-heading" className="text-heading-md font-heading text-foreground">
-        Anthology-specific revision
+        {heading}
       </h2>
+      {isFallback && board && (
+        <p className="text-body-sm text-muted-foreground">
+          Your selected board does not have a dedicated anthology in this section. Other boards are
+          listed below for reference — each is labelled with the board it belongs to.
+        </p>
+      )}
       <div className="grid gap-4 sm:grid-cols-2">
         {links.map((link) => (
           <Link
@@ -454,6 +520,11 @@ function AnthologyLinks() {
             href={link.href}
             className="group flex flex-col gap-1.5 rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-border hover:shadow-card-hover"
           >
+            <div className="mb-1 flex items-center gap-2">
+              <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
+                {link.boardTag}
+              </Badge>
+            </div>
             <h3 className="text-heading-sm font-heading text-foreground group-hover:text-primary">
               {link.title}
             </h3>

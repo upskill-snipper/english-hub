@@ -371,20 +371,20 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
 
 const comparisons = [
   {
-    title: 'Exposure',
+    title: 'Disabled',
     poet: 'Wilfred Owen',
-    href: '/igcse/edexcel/poetry/exposure',
+    href: '/igcse/edexcel/poetry/disabled',
     reason:
-      'Both poems strip war of its glory and reveal the suffering of ordinary soldiers. Hardy focuses on the moral absurdity of killing; Owen focuses on the physical suffering of waiting. Compare how each poet uses simplicity and repetition to convey the futility of war.',
+      'Both poems strip war of its glory and reveal the suffering of ordinary soldiers. Hardy focuses on the moral absurdity of killing; Owen focuses on the physical and psychological cost borne by an individual man. Compare how each poet uses plainness, contrast and irony to convey war’s futility.',
     themes: ['Futility of war', 'Suffering', 'Common soldiers'],
   },
   {
-    title: 'The Charge of the Light Brigade',
-    poet: 'Alfred Lord Tennyson',
-    href: '/igcse/edexcel/poetry/the-charge-of-the-light-brigade',
+    title: 'War Photographer',
+    poet: 'Carol Ann Duffy',
+    href: '/igcse/edexcel/poetry/war-photographer',
     reason:
-      "These poems present opposing views of war. Tennyson celebrates military obedience and heroism; Hardy questions whether killing can ever be justified. Compare Tennyson's elevated, patriotic language with Hardy's plain, colloquial voice.",
-    themes: ['Glory vs futility', 'Patriotism', 'Voice'],
+      'Both poems wrestle with the moral consequences of seeing or causing violence. Hardy’s soldier struggles to justify a killing he committed; Duffy’s photographer struggles with the weight of bearing witness. Compare how each poet shows the conscience confronting war.',
+    themes: ['Witness', 'Conscience', 'War'],
   },
   {
     title: 'Half-Caste',
@@ -462,8 +462,10 @@ export default function TheManHeKilledPage() {
           <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for The Man He Killed.
+          The Man He Killed is not in the current 4ET1 anthology, so these are wider-reading
+          pairings rather than exam-ready comparisons. Each poem listed here <em>is</em> in the 4ET1
+          anthology, so you can practise the comparison skill while staying within the prescribed
+          set.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
