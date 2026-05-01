@@ -182,8 +182,8 @@ export default function CourseGridSection({ board }: { board?: ExamBoard | null 
 
   const heading = config ? `${config.shortName} Courses` : 'Featured Courses'
   const sub = config
-    ? `Every course below is mapped to ${config.fullName}. All courses included with your subscription. First ${PRICING.TRIAL_DAYS}-day month free!`
-    : `All courses included with your subscription. First ${PRICING.TRIAL_DAYS}-day month free!`
+    ? `Every course below is mapped to ${config.fullName}. All courses included with your subscription. ${PRICING.TRIAL_TEXT}!`
+    : `All courses included with your subscription. ${PRICING.TRIAL_TEXT}!`
 
   return (
     <section className="py-24 sm:py-32">

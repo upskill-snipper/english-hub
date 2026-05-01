@@ -16,34 +16,34 @@
 
 ### v4 to v5 (Cycle 3 — FINAL)
 
-| Item | v4 status | v5 status | Impact |
-|------|-----------|-----------|--------|
-| Safeguarding signposting system | Not present | **Shipped.** `SafeguardingBanner` component with Childline number + report link; `/safeguarding` policy page (10-section, DSL-named, externals list); `/safeguarding/report` multi-step concern form (468 lines, 4 report types, severity auto-classification); `/api/safeguarding/report` POST with Zod validation, `SafeguardingReport` Prisma model, reference-number generation, DSL email alerting via Resend, rate-limited; `/api/safeguarding/report/[id]` PATCH for admin case management (status transitions, assignment, notes) | Child safety differentiator for B2B school sales; KCSIE-aligned signposting |
-| Migration applicator script | Not present | **Shipped.** `scripts/apply-pending-migrations.sh` — bash script covering 7 pending migrations with dry-run default, `--apply` mode, `--one <prefix>` single-migration, `--show` SQL preview, `--list` inventory. Uses `psql` with `ON_ERROR_STOP=1`, idempotent SQL (`IF NOT EXISTS`), coloured output, post-apply next-steps guidance | Reduces acquirer database-state risk; enables controlled migration during technical DD |
-| Environment variable validation | `requireEnv` for Stripe prices only | **Shipped.** `src/lib/env-validation.ts` — 8 required vars (Supabase, Stripe, Anthropic, site URL), 3 recommended (CRON_SECRET, CSRF_SECRET, RESEND_API_KEY), 8 optional (Upstash, Rewardful, Sentry, GA4, admin emails), 1 deprecated (NEXTAUTH_URL). Format validation for NEXT_PUBLIC_SITE_URL. Production throws on missing required vars. Test suite in `env-validation.test.ts` | Reduces onboarding friction; makes env setup self-documenting for acquirer teams |
-| Bundle analyzer | Not present | **Shipped.** `@next/bundle-analyzer` in `devDependencies`; `next.config.js` wraps config with `withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })` | Enables technical DD verification of bundle size, tree-shaking, and dependency bloat |
-| Content safety checks | Not present | **Shipped.** `src/lib/content-safety.ts` — prompt injection detection (11 patterns), essay-generation blocking (3 patterns), non-prose detection (word-count, repeated-word, character-ratio checks). Tested in `content-safety.test.ts` | Protects AI marking endpoints from misuse; supports responsible-AI narrative for B2B |
-| PII email fields in exports | Present in all school CSV exports | **Unchanged.** Email columns remain in `export/users`, `export/report`, `export/logins`, and `export/route.ts` | Noted gap — PII in exported CSVs should be reviewed for GDPR data-minimisation compliance |
-| Revenue verification | Zero | **Zero.** No code change can fix this — requires Stripe dashboard actuals | Still the top-line finding |
+| Item                            | v4 status                           | v5 status                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Impact                                                                                    |
+| ------------------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Safeguarding signposting system | Not present                         | **Shipped.** `SafeguardingBanner` component with Childline number + report link; `/safeguarding` policy page (10-section, DSL-named, externals list); `/safeguarding/report` multi-step concern form (468 lines, 4 report types, severity auto-classification); `/api/safeguarding/report` POST with Zod validation, `SafeguardingReport` Prisma model, reference-number generation, DSL email alerting via Resend, rate-limited; `/api/safeguarding/report/[id]` PATCH for admin case management (status transitions, assignment, notes) | Child safety differentiator for B2B school sales; KCSIE-aligned signposting               |
+| Migration applicator script     | Not present                         | **Shipped.** `scripts/apply-pending-migrations.sh` — bash script covering 7 pending migrations with dry-run default, `--apply` mode, `--one <prefix>` single-migration, `--show` SQL preview, `--list` inventory. Uses `psql` with `ON_ERROR_STOP=1`, idempotent SQL (`IF NOT EXISTS`), coloured output, post-apply next-steps guidance                                                                                                                                                                                                   | Reduces acquirer database-state risk; enables controlled migration during technical DD    |
+| Environment variable validation | `requireEnv` for Stripe prices only | **Shipped.** `src/lib/env-validation.ts` — 8 required vars (Supabase, Stripe, Anthropic, site URL), 3 recommended (CRON_SECRET, CSRF_SECRET, RESEND_API_KEY), 8 optional (Upstash, Rewardful, Sentry, GA4, admin emails), 1 deprecated (NEXTAUTH_URL). Format validation for NEXT_PUBLIC_SITE_URL. Production throws on missing required vars. Test suite in `env-validation.test.ts`                                                                                                                                                     | Reduces onboarding friction; makes env setup self-documenting for acquirer teams          |
+| Bundle analyzer                 | Not present                         | **Shipped.** `@next/bundle-analyzer` in `devDependencies`; `next.config.js` wraps config with `withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })`                                                                                                                                                                                                                                                                                                                                                                           | Enables technical DD verification of bundle size, tree-shaking, and dependency bloat      |
+| Content safety checks           | Not present                         | **Shipped.** `src/lib/content-safety.ts` — prompt injection detection (11 patterns), essay-generation blocking (3 patterns), non-prose detection (word-count, repeated-word, character-ratio checks). Tested in `content-safety.test.ts`                                                                                                                                                                                                                                                                                                  | Protects AI marking endpoints from misuse; supports responsible-AI narrative for B2B      |
+| PII email fields in exports     | Present in all school CSV exports   | **Unchanged.** Email columns remain in `export/users`, `export/report`, `export/logins`, and `export/route.ts`                                                                                                                                                                                                                                                                                                                                                                                                                            | Noted gap — PII in exported CSVs should be reviewed for GDPR data-minimisation compliance |
+| Revenue verification            | Zero                                | **Zero.** No code change can fix this — requires Stripe dashboard actuals                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Still the top-line finding                                                                |
 
 ### v3 to v4 (Cycle 2)
 
-| Item | v3 status | v4 status | Impact |
-|------|-----------|-----------|--------|
-| AI opt-out enforcement | Client-side only (localStorage); `api/mark/route.ts` did not check opt-out flag; flagged as R7 | **Resolved.** `isAiOptedOutServer()` queries `PrivacySettings.aiOptOut` via Prisma. Enforced in all 4 AI API routes: `api/mark/route.ts`, `api/mark/stream/route.ts`, `api/essay-feedback/route.ts`, `api/essay/feedback/route.ts`. Returns 403 with clear re-enable instructions. | Closes Children's Code GAP-12B compliance gap; eliminates R7 |
-| Cookie consent server-side logging | Not present; consent was client-side localStorage only | **Shipped.** `api/consent/cookie/route.ts` with `CookieConsent` Prisma model: `visitorId`, `userId` (optional — works for anonymous visitors), `choice` (accept_all/reject_all/custom), per-category `analytics`/`marketing` booleans, SHA-256 `ipHash` (never stores raw IP), `userAgent`, policy `version`, rate-limited (10/min/IP) | Provable PECR/ICO compliance; B2B procurement value-add |
-| Privacy settings API | Not present | **Shipped.** `api/privacy/settings/route.ts` — GET returns settings + data summary + essay list; PUT allows partial updates with audit-log trail. Rate-limited (30/min/IP). Auto-creates child-default settings for under-16 users per Children's Code. | Full server-side privacy control surface |
-| RUNBOOK.md | Not present | **Shipped.** Covers architecture, dev setup, env vars, database (dual Supabase+Prisma layer), migrations, deployment (Vercel), Stripe webhook config, cron jobs (6 scheduled), Sentry monitoring, GA4, error boundaries | Materially improves technical transferability; reduces key-person risk for acquirer diligence |
-| Test suite | Not fully characterised | **All tests passing.** Unit tests (vitest) and E2E tests (Playwright) green | Acquisition confidence signal; reduces integration risk |
+| Item                               | v3 status                                                                                      | v4 status                                                                                                                                                                                                                                                                                                                              | Impact                                                                                        |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| AI opt-out enforcement             | Client-side only (localStorage); `api/mark/route.ts` did not check opt-out flag; flagged as R7 | **Resolved.** `isAiOptedOutServer()` queries `PrivacySettings.aiOptOut` via Prisma. Enforced in all 4 AI API routes: `api/mark/route.ts`, `api/mark/stream/route.ts`, `api/essay-feedback/route.ts`, `api/essay/feedback/route.ts`. Returns 403 with clear re-enable instructions.                                                     | Closes Children's Code GAP-12B compliance gap; eliminates R7                                  |
+| Cookie consent server-side logging | Not present; consent was client-side localStorage only                                         | **Shipped.** `api/consent/cookie/route.ts` with `CookieConsent` Prisma model: `visitorId`, `userId` (optional — works for anonymous visitors), `choice` (accept_all/reject_all/custom), per-category `analytics`/`marketing` booleans, SHA-256 `ipHash` (never stores raw IP), `userAgent`, policy `version`, rate-limited (10/min/IP) | Provable PECR/ICO compliance; B2B procurement value-add                                       |
+| Privacy settings API               | Not present                                                                                    | **Shipped.** `api/privacy/settings/route.ts` — GET returns settings + data summary + essay list; PUT allows partial updates with audit-log trail. Rate-limited (30/min/IP). Auto-creates child-default settings for under-16 users per Children's Code.                                                                                | Full server-side privacy control surface                                                      |
+| RUNBOOK.md                         | Not present                                                                                    | **Shipped.** Covers architecture, dev setup, env vars, database (dual Supabase+Prisma layer), migrations, deployment (Vercel), Stripe webhook config, cron jobs (6 scheduled), Sentry monitoring, GA4, error boundaries                                                                                                                | Materially improves technical transferability; reduces key-person risk for acquirer diligence |
+| Test suite                         | Not fully characterised                                                                        | **All tests passing.** Unit tests (vitest) and E2E tests (Playwright) green                                                                                                                                                                                                                                                            | Acquisition confidence signal; reduces integration risk                                       |
 
 ### v2 to v3 (Cycle 1)
 
-| Item | v2 status | v3 status | Impact |
-|------|-----------|-----------|--------|
-| School billing page pricing | Flat £1,500/yr — contradicted sales materials | **Fixed.** Per-pupil `PRICING_TIERS` matching sales materials | Eliminated critical pricing inconsistency |
-| Founding Schools banner | Not present | **Added.** In-product banner with worked example | Sales/product alignment |
-| Parent data deletion flow | Not built | **Shipped.** Soft-delete, 30-day grace, rate-limited | Children's Code Standard 11 compliance |
-| AI opt-out mechanism | Not present | **Shipped.** Client-side localStorage toggle + UI fallback | Children's Code GAP-12B (partial — see v4 for server-side) |
+| Item                        | v2 status                                     | v3 status                                                     | Impact                                                     |
+| --------------------------- | --------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------- |
+| School billing page pricing | Flat £1,500/yr — contradicted sales materials | **Fixed.** Per-pupil `PRICING_TIERS` matching sales materials | Eliminated critical pricing inconsistency                  |
+| Founding Schools banner     | Not present                                   | **Added.** In-product banner with worked example              | Sales/product alignment                                    |
+| Parent data deletion flow   | Not built                                     | **Shipped.** Soft-delete, 30-day grace, rate-limited          | Children's Code Standard 11 compliance                     |
+| AI opt-out mechanism        | Not present                                   | **Shipped.** Client-side localStorage toggle + UI fallback    | Children's Code GAP-12B (partial — see v4 for server-side) |
 
 ---
 
@@ -51,28 +51,28 @@
 
 The English Hub has six codified revenue streams and one planned but unshipped stream.
 
-| # | Stream | Status | Mechanism | Revenue type |
-|---|--------|--------|-----------|--------------|
-| 1 | Student subscriptions (£8.99/mo, £67.99/yr) | **Live in code** — `PRO_MONTHLY`/`PRO_ANNUAL` via `requireEnv`; 30-day trial | Stripe Checkout -> webhook -> `profiles.subscription_status = 'pro'` | Recurring |
-| 2 | Teacher subscriptions (£12.99/mo, £99.99/yr) | **Marketed on pricing page** — no distinct Stripe price ID in `PRICE_IDS`; likely re-uses `PRO_MONTHLY`/`PRO_ANNUAL` | Same Stripe flow; pricing-page claim may be misleading | Recurring |
-| 3 | One-time course purchases (9 fixed + 6 optional SKUs) | **Partially live** — KS3, GCSE, IGCSE and bundle price IDs wired; Edexcel/IGCSE optional if env vars populated | `mode: 'payment'` in checkout; writes to `enrolments` table | One-time |
-| 4 | Founding Schools (per-pupil, capped at 10 logos) | **Sales-led, off-Stripe** — per-pupil pricing from £6-£26/student/yr depending on key stage; free until 31 Aug 2026; billing page aligned to per-pupil model | Manual invoice; renewal via email to `info@Upskillenergy.com` | Annual contract |
-| 5 | MAT/trust framework deals (per-pupil, banded) | **Sales playbook exists** — 5 bands from £7-£15/student/yr; worked examples up to £315k ARR per flagship trust | Not productised in Stripe; no self-serve checkout | Annual contract |
-| 6 | International school deals (per-pupil, 18 currencies) | **Sales playbook exists** — USD $9-$18/student/yr; 200 target schools listed; regional pricing in USD/GBP/EUR/AED/SGD/HKD etc. | Not productised in Stripe | Annual contract |
-| 7 | Parent tier (£4.99/mo) | **Pre-launch** — `PARENT_MONTHLY` price ID is literal string `'price_TBD_parent'`; 13 parent pages exist in UI including data deletion flow; `api/parent/README.md` flags explicit "do not enable in production" checklist; Supabase migration `001_parent_accounts.sql` is in `migrations-pending/` | Not wired | Planned recurring |
+| #   | Stream                                                | Status                                                                                                                                                                                                                                                                                               | Mechanism                                                            | Revenue type      |
+| --- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------- |
+| 1   | Student subscriptions (£8.99/mo, £67.99/yr)           | **Live in code** — `PRO_MONTHLY`/`PRO_ANNUAL` via `requireEnv`; 30-day trial                                                                                                                                                                                                                         | Stripe Checkout -> webhook -> `profiles.subscription_status = 'pro'` | Recurring         |
+| 2   | Teacher subscriptions (£12.99/mo, £99.99/yr)          | **Marketed on pricing page** — no distinct Stripe price ID in `PRICE_IDS`; likely re-uses `PRO_MONTHLY`/`PRO_ANNUAL`                                                                                                                                                                                 | Same Stripe flow; pricing-page claim may be misleading               | Recurring         |
+| 3   | One-time course purchases (9 fixed + 6 optional SKUs) | **Partially live** — KS3, GCSE, IGCSE and bundle price IDs wired; Edexcel/IGCSE optional if env vars populated                                                                                                                                                                                       | `mode: 'payment'` in checkout; writes to `enrolments` table          | One-time          |
+| 4   | Founding Schools (per-pupil, capped at 10 logos)      | **Sales-led, off-Stripe** — per-pupil pricing from £6-£26/student/yr depending on key stage; free until 31 Aug 2026; billing page aligned to per-pupil model                                                                                                                                         | Manual invoice; renewal via email to `info@Upskillenergy.com`        | Annual contract   |
+| 5   | MAT/trust framework deals (per-pupil, banded)         | **Sales playbook exists** — 5 bands from £7-£15/student/yr; worked examples up to £315k ARR per flagship trust                                                                                                                                                                                       | Not productised in Stripe; no self-serve checkout                    | Annual contract   |
+| 6   | International school deals (per-pupil, 18 currencies) | **Sales playbook exists** — USD $9-$18/student/yr; 200 target schools listed; regional pricing in USD/GBP/EUR/AED/SGD/HKD etc.                                                                                                                                                                       | Not productised in Stripe                                            | Annual contract   |
+| 7   | Parent tier (£4.99/mo)                                | **Pre-launch** — `PARENT_MONTHLY` price ID is literal string `'price_TBD_parent'`; 13 parent pages exist in UI including data deletion flow; `api/parent/README.md` flags explicit "do not enable in production" checklist; Supabase migration `001_parent_accounts.sql` is in `migrations-pending/` | Not wired                                                            | Planned recurring |
 
 **Affiliate programme** (Stream 6b — cost, not revenue): 3-tier commission schedule is live in `002_affiliate_system.sql`, with 14 affiliate pages across two route groups (`/affiliate/*` and `/affiliates/*`), Rewardful attribution through checkout metadata, and refund/cancellation commission voiding in the webhook handler.
 
 ### 1a. Revenue model maturity assessment
 
-| Dimension | B2C (Student/Teacher) | B2B (Schools/MATs) | International | Parent |
-|---|---|---|---|---|
-| Product built | Yes | Yes (extensive) | Partially (same product, sales materials) | Yes (UI + data deletion flow) |
-| Pricing defined | Yes | Yes (per-pupil framework) | Yes (18 currencies) | Yes |
-| Stripe wired | Yes | No | No | No |
-| Self-serve checkout | Yes | No | No | No |
-| Sales materials | N/A | 58 files (Founding + MAT) | 16 files | N/A |
-| Revenue verified | No | No | No | No |
+| Dimension           | B2C (Student/Teacher) | B2B (Schools/MATs)        | International                             | Parent                        |
+| ------------------- | --------------------- | ------------------------- | ----------------------------------------- | ----------------------------- |
+| Product built       | Yes                   | Yes (extensive)           | Partially (same product, sales materials) | Yes (UI + data deletion flow) |
+| Pricing defined     | Yes                   | Yes (per-pupil framework) | Yes (18 currencies)                       | Yes                           |
+| Stripe wired        | Yes                   | No                        | No                                        | No                            |
+| Self-serve checkout | Yes                   | No                        | No                                        | No                            |
+| Sales materials     | N/A                   | 58 files (Founding + MAT) | 16 files                                  | N/A                           |
+| Revenue verified    | No                    | No                        | No                                        | No                            |
 
 ---
 
@@ -80,30 +80,31 @@ The English Hub has six codified revenue streams and one planned but unshipped s
 
 ### 2a. B2C plan book (from `src/constants/pricing.ts`)
 
-| Plan | Monthly | Annual | Effective monthly | Annual discount |
-|------|---------|--------|-------------------|-----------------|
-| Student | **£8.99** | **£67.99** | £5.67 | ~37% |
-| Teacher | **£12.99** | **£99.99** | £8.33 | ~36% |
-| Parent (not live) | **£4.99** | -- | -- | -- |
+| Plan              | Monthly    | Annual     | Effective monthly | Annual discount |
+| ----------------- | ---------- | ---------- | ----------------- | --------------- |
+| Student           | **£8.99**  | **£67.99** | £5.67             | ~37%            |
+| Teacher           | **£12.99** | **£99.99** | £8.33             | ~36%            |
+| Parent (not live) | **£4.99**  | --         | --                | --              |
 
-Constants also set: `FREE_USES_PER_FEATURE = 3`, `TRIAL_DAYS = 30`, `FOUNDER_SCHOOL_LIMIT = 10`.
+Constants also set: `FREE_USES_PER_FEATURE = 3`, `TRIAL_DAYS = 7`, `FOUNDER_SCHOOL_LIMIT = 10`.
 
 **Free tier mechanics:**
+
 - Free forever: exam-board-aligned courses, revision notes, flashcards.
 - Freemium meter: 3 free uses of every premium feature (AI marking, mock exams, feedback reports, lesson plans, worksheet builder).
-- Trial: 30 days, credit-card-up-front (Stripe hosted checkout), `subscription_data.trial_period_days`.
+- Trial: 7 days, credit-card-up-front (Stripe hosted checkout), `subscription_data.trial_period_days`.
 - Marketing framing: "First month FREE" on the pricing page.
 
 ### 2b. B2B pricing (from sales materials and in-product billing page)
 
 **Founding Schools — per-pupil (50% off standard Year 1):**
 
-| Key stage | Standard | Founding (Y1) |
-|-----------|----------|---------------|
-| KS3 only (Y7-9) | £12/pupil | £6/pupil |
-| KS4 only (Y10-11) | £15/pupil | £7.50/pupil |
-| KS3+KS4 | £22/pupil | £11/pupil |
-| Whole secondary (Y7-13) | £26/pupil | £13/pupil |
+| Key stage               | Standard  | Founding (Y1) |
+| ----------------------- | --------- | ------------- |
+| KS3 only (Y7-9)         | £12/pupil | £6/pupil      |
+| KS4 only (Y10-11)       | £15/pupil | £7.50/pupil   |
+| KS3+KS4                 | £22/pupil | £11/pupil     |
+| Whole secondary (Y7-13) | £26/pupil | £13/pupil     |
 
 Worked examples: small school (800 pupils KS3+KS4) = £8,800 founding year; large school (1,800 pupils whole secondary) = £23,400 founding year.
 
@@ -111,25 +112,25 @@ Worked examples: small school (800 pupils KS3+KS4) = £8,800 founding year; larg
 
 **MAT framework pricing (from `sales-materials/mat/05-commercials/mat-pricing-model.md`):**
 
-| Band | Students | Per-student/yr | Annual floor |
-|------|----------|---------------|--------------|
-| Single school / very small MAT | up to 1,000 | £15 | £5,000 |
-| Small MAT | 1,001-5,000 | £13 | £15,000 |
-| Mid MAT | 5,001-10,000 | £11 | £60,000 |
-| Large MAT | 10,001-25,000 | £9 | £115,000 |
-| Flagship MAT | 25,001+ | £7 | £230,000 |
+| Band                           | Students      | Per-student/yr | Annual floor |
+| ------------------------------ | ------------- | -------------- | ------------ |
+| Single school / very small MAT | up to 1,000   | £15            | £5,000       |
+| Small MAT                      | 1,001-5,000   | £13            | £15,000      |
+| Mid MAT                        | 5,001-10,000  | £11            | £60,000      |
+| Large MAT                      | 10,001-25,000 | £9             | £115,000     |
+| Flagship MAT                   | 25,001+       | £7             | £230,000     |
 
 Worked examples range from £32,500 (small MAT, 2,500 students) to £315,000 (flagship, 30,000 students). Term discounts: 5% for 2-year, 10% for 3-year, 15% for 5-year.
 
 **International pricing (from `sales-materials/international/05-commercials/international-pricing.md`):**
 
-| Tier | Students | USD/student/yr | USD annual list |
-|------|----------|----------------|-----------------|
-| Starter | up to 150 | $18 | $2,700 |
-| Standard | 151-400 | $15 | $6,000 |
-| Mid | 401-800 | $13 | $10,400 |
-| Large | 801-1,500 | $11 | $16,500 |
-| Premium | 1,501+ | $9 | $13,500+ |
+| Tier     | Students  | USD/student/yr | USD annual list |
+| -------- | --------- | -------------- | --------------- |
+| Starter  | up to 150 | $18            | $2,700          |
+| Standard | 151-400   | $15            | $6,000          |
+| Mid      | 401-800   | $13            | $10,400         |
+| Large    | 801-1,500 | $11            | $16,500         |
+| Premium  | 1,501+    | $9             | $13,500+        |
 
 Pricing published in 18 currencies (USD, GBP, EUR, AED, SAR, QAR, KWD, BHD, SGD, HKD, CNY, THB, MYR, JPY, BRL, MXN, ZAR, KES). Discounting policy allows up to 30% combined maximum.
 
@@ -152,25 +153,25 @@ The B2C price point (£8.99/mo student, £12.99/mo teacher) is consistent with U
 
 ### 3a. What is production-grade
 
-| Capability | Status | Evidence |
-|-----------|--------|----------|
-| Real Stripe SDK | Yes | `new Stripe(requireEnv('STRIPE_SECRET_KEY'), { apiVersion: '2026-02-25.clover' })` in `src/lib/stripe.ts` |
-| Env-driven price IDs | Yes | `requireEnv` for all core prices (fails loud if missing) |
-| Checkout with rate limiting | Yes | 10 attempts per IP per 5 minutes; auth required; price-ID validated against whitelist |
-| Lazy Stripe customer creation | Yes | Creates customer on first checkout, writes `profiles.stripe_customer_id` |
-| 30-day trial on subscriptions | Yes | `subscription_data.trial_period_days: PRICING.TRIAL_DAYS` |
-| Promotion codes | Yes | `allow_promotion_codes: true` on subscription checkouts |
-| Billing portal | Yes | `api/stripe/portal/route.ts` with rate limiting |
-| Cancellation endpoint | Yes | Full cancellation with reference numbers, reason capture, rate limiting (5/IP/10min); cancels at period end |
-| Webhook signature verification | Yes | Raw-body handling with `stripe.webhooks.constructEvent` |
-| Full event handling | Yes | 8 event types: `checkout.session.completed`, `customer.subscription.created/updated/deleted`, `customer.subscription.trial_will_end`, `invoice.paid`, `invoice.payment_failed`, `charge.refunded` |
-| Payment-failed dunning email | Yes | Resend-driven with billing link |
-| Trial-ending notification | Yes | Dedicated `handleTrialWillEnd` with formatted date email via Resend |
-| Refund -> commission voiding | Yes | `charge.refunded` updates `affiliate_referrals.commission_status = 'refunded'` |
-| Cancellation -> commission voiding | Yes | `handleSubscriptionDeleted` voids pending/confirmed commissions with `voided` status |
-| Affiliate attribution | Yes | Rewardful referral ID flows checkout metadata -> webhook -> `attributeAffiliateReferral` |
-| Subscription state machine | Yes | `active/trialing -> pro`, `past_due`, `canceled -> cancelled`, `unpaid`, `incomplete`, `incomplete_expired -> cancelled`, `paused`; fallback `free` |
-| One-time enrolment handling | Yes | `mode: 'payment'` writes to `enrolments` table with upsert on `user_id,course_id` |
+| Capability                         | Status | Evidence                                                                                                                                                                                          |
+| ---------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Real Stripe SDK                    | Yes    | `new Stripe(requireEnv('STRIPE_SECRET_KEY'), { apiVersion: '2026-02-25.clover' })` in `src/lib/stripe.ts`                                                                                         |
+| Env-driven price IDs               | Yes    | `requireEnv` for all core prices (fails loud if missing)                                                                                                                                          |
+| Checkout with rate limiting        | Yes    | 10 attempts per IP per 5 minutes; auth required; price-ID validated against whitelist                                                                                                             |
+| Lazy Stripe customer creation      | Yes    | Creates customer on first checkout, writes `profiles.stripe_customer_id`                                                                                                                          |
+| 7-day trial on subscriptions       | Yes    | `subscription_data.trial_period_days: PRICING.TRIAL_DAYS`                                                                                                                                         |
+| Promotion codes                    | Yes    | `allow_promotion_codes: true` on subscription checkouts                                                                                                                                           |
+| Billing portal                     | Yes    | `api/stripe/portal/route.ts` with rate limiting                                                                                                                                                   |
+| Cancellation endpoint              | Yes    | Full cancellation with reference numbers, reason capture, rate limiting (5/IP/10min); cancels at period end                                                                                       |
+| Webhook signature verification     | Yes    | Raw-body handling with `stripe.webhooks.constructEvent`                                                                                                                                           |
+| Full event handling                | Yes    | 8 event types: `checkout.session.completed`, `customer.subscription.created/updated/deleted`, `customer.subscription.trial_will_end`, `invoice.paid`, `invoice.payment_failed`, `charge.refunded` |
+| Payment-failed dunning email       | Yes    | Resend-driven with billing link                                                                                                                                                                   |
+| Trial-ending notification          | Yes    | Dedicated `handleTrialWillEnd` with formatted date email via Resend                                                                                                                               |
+| Refund -> commission voiding       | Yes    | `charge.refunded` updates `affiliate_referrals.commission_status = 'refunded'`                                                                                                                    |
+| Cancellation -> commission voiding | Yes    | `handleSubscriptionDeleted` voids pending/confirmed commissions with `voided` status                                                                                                              |
+| Affiliate attribution              | Yes    | Rewardful referral ID flows checkout metadata -> webhook -> `attributeAffiliateReferral`                                                                                                          |
+| Subscription state machine         | Yes    | `active/trialing -> pro`, `past_due`, `canceled -> cancelled`, `unpaid`, `incomplete`, `incomplete_expired -> cancelled`, `paused`; fallback `free`                                               |
+| One-time enrolment handling        | Yes    | `mode: 'payment'` writes to `enrolments` table with upsert on `user_id,course_id`                                                                                                                 |
 
 ### 3b. DMCC Act compliance
 
@@ -220,6 +221,7 @@ The B2B product surface is the most mature area of the codebase:
 Three complete sales playbook packs exist in `sales-materials/`:
 
 **Founding Schools pack (23 files):**
+
 - Positioning: key messages, programme overview, unique value proposition
 - Pitch: deck outline, speaker notes, demo script
 - Outreach: cold email sequences, LinkedIn templates, phone script, referral request
@@ -228,6 +230,7 @@ Three complete sales playbook packs exist in `sales-materials/`:
 - Close: case study template, pilot agreement, proposal template, reference commitment letter
 
 **MAT pack (19 files):**
+
 - Target list: top 50 UK MATs, tier 1 priority list, contact research template
 - Positioning: MAT value proposition, competitor comparison, Ofsted alignment
 - Pitch: executive one-pager, MAT deck outline, speaker notes
@@ -236,6 +239,7 @@ Three complete sales playbook packs exist in `sales-materials/`:
 - Diligence: MAT DPA, procurement questions answered, security questionnaire
 
 **International pack (16 files):**
+
 - Market research: regional analysis, COBIS/BSME/FOBISIA networks, market overview
 - Target list: top 200 schools, tier 1 priority 50, by-country breakdown, school groups/chains
 - Positioning: IGCSE-focus messaging, value proposition for international schools
@@ -261,15 +265,18 @@ Three complete sales playbook packs exist in `sales-materials/`:
 A complete safeguarding signposting and reporting system has shipped, comprising four layers:
 
 **Layer 1 — Persistent banner (`SafeguardingBanner.tsx`):**
+
 - Site-wide banner component displaying Childline number (0800 1111) with click-to-call and a "Report a concern" button linking to `/legal/safeguarding`.
 - Responsive layout (mobile: stacked with separate Childline link; desktop: inline).
 - Shield icon visual indicator.
 
 **Layer 2 — Policy pages:**
+
 - `/safeguarding` — 10-section safeguarding policy page: Commitment Statement, Scope, Designated Safeguarding Lead, Key Principles, Online Safety Measures, Reporting Procedures, Data Protection in Safeguarding, Staff and Contractor Training, Review Schedule, External Contacts. Anchored TOC, SEO metadata, canonical URL.
 - `/legal/safeguarding` — Parallel legal-section safeguarding policy (version 1.0, effective March 2026, review March 2027).
 
 **Layer 3 — Concern reporting form (`/safeguarding/report`, 468 lines):**
+
 - Multi-step client-side form with 4 report types: "I'm worried about myself" (HIGH), "I'm worried about someone else" (HIGH), "Platform concern" (MEDIUM), "Other" (LOW).
 - Auto-severity classification based on report type.
 - Description field (max 5,000 chars) with optional reporter name and contact.
@@ -277,6 +284,7 @@ A complete safeguarding signposting and reporting system has shipped, comprising
 - Submission confirmation with reference number display.
 
 **Layer 4 — API and database:**
+
 - `api/safeguarding/report` POST: Zod-validated input, Prisma `SafeguardingReport` model (id, reporterId, reportType, description, severity, status, createdAt, assignedTo, resolvedAt), reference-number generation (SG-{timestamp}-{random}), DSL email alert via Resend to configurable `DSL_EMAIL` (default: `safeguarding@theenglishhub.app`), rate-limited.
 - `api/safeguarding/report/[id]` PATCH: Admin-only case management (status: OPEN/IN_PROGRESS/RESOLVED/CLOSED, assignee, notes). Rate-limited (30/min/user).
 - Database indexes on `reporterId`, `severity`, `status`, `assignedTo`, `createdAt`.
@@ -353,14 +361,14 @@ Full server-side privacy settings API at `api/privacy/settings/route.ts`:
 
 A comprehensive operational runbook has been added at `RUNBOOK.md`, covering:
 
-| Section | Content |
-|---------|---------|
+| Section               | Content                                                                                                                                                                                                                                                                          |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Architecture overview | Framework (Next.js 14 App Router), database (Supabase + Prisma), payments (Stripe), AI (Anthropic Claude), hosting (Vercel lhr1), email (Resend), error tracking (Sentry), analytics (GA4 + Vercel), rate limiting (Upstash Redis), affiliates (Rewardful), auth (Supabase Auth) |
-| Development setup | Prerequisites, install, env vars, local dev, test commands, lint/type-check |
-| Database | Dual layer explanation (Supabase client SDK + Prisma), applied migrations, pending migrations listed with purpose, Prisma commands |
-| Deployment | Vercel config, build command (`prisma generate && next build`), env var setup, Stripe webhook registration, post-deploy checklist |
-| Cron jobs | 6 scheduled jobs with paths, schedules, and descriptions (invite expiry, affiliate confirm, dormancy check, data retention, school access, weekly reports) |
-| Monitoring | Sentry config (PII scrubbing enabled), error boundaries, GA4 setup, Vercel Analytics/Speed Insights |
+| Development setup     | Prerequisites, install, env vars, local dev, test commands, lint/type-check                                                                                                                                                                                                      |
+| Database              | Dual layer explanation (Supabase client SDK + Prisma), applied migrations, pending migrations listed with purpose, Prisma commands                                                                                                                                               |
+| Deployment            | Vercel config, build command (`prisma generate && next build`), env var setup, Stripe webhook registration, post-deploy checklist                                                                                                                                                |
+| Cron jobs             | 6 scheduled jobs with paths, schedules, and descriptions (invite expiry, affiliate confirm, dormancy check, data retention, school access, weekly reports)                                                                                                                       |
+| Monitoring            | Sentry config (PII scrubbing enabled), error boundaries, GA4 setup, Vercel Analytics/Speed Insights                                                                                                                                                                              |
 
 **Acquisition significance:** A runbook is one of the first things an acquirer's engineering team looks for during technical diligence. Its presence signals operational maturity and reduces the cost of knowledge transfer.
 
@@ -368,12 +376,12 @@ A comprehensive operational runbook has been added at `RUNBOOK.md`, covering:
 
 `src/lib/env-validation.ts` provides structured startup-time validation:
 
-| Tier | Variables | Behaviour |
-|------|-----------|-----------|
-| **Required** (8) | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `ANTHROPIC_API_KEY`, `NEXT_PUBLIC_SITE_URL` | Production: throws. Dev: console.error with hints |
-| **Recommended** (3) | `CRON_SECRET`, `CSRF_SECRET`, `RESEND_API_KEY` | Console.warn with setup instructions |
-| **Optional** (8) | Upstash Redis, Rewardful, Sentry, GA4, admin emails | Console.info listing |
-| **Deprecated** (1) | `NEXTAUTH_URL` | Warns if still set; explains replacement |
+| Tier                | Variables                                                                                                                                                                                                                 | Behaviour                                         |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| **Required** (8)    | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `ANTHROPIC_API_KEY`, `NEXT_PUBLIC_SITE_URL` | Production: throws. Dev: console.error with hints |
+| **Recommended** (3) | `CRON_SECRET`, `CSRF_SECRET`, `RESEND_API_KEY`                                                                                                                                                                            | Console.warn with setup instructions              |
+| **Optional** (8)    | Upstash Redis, Rewardful, Sentry, GA4, admin emails                                                                                                                                                                       | Console.info listing                              |
+| **Deprecated** (1)  | `NEXTAUTH_URL`                                                                                                                                                                                                            | Warns if still set; explains replacement          |
 
 Additional features: URL format validation for `NEXT_PUBLIC_SITE_URL` (protocol check, trailing-slash warning). Each variable includes a human-readable hint explaining its purpose, where to find it, and example values.
 
@@ -383,15 +391,15 @@ Additional features: URL format validation for `NEXT_PUBLIC_SITE_URL` (protocol 
 
 `scripts/apply-pending-migrations.sh` provides controlled database migration for the 7 pending Supabase migrations:
 
-| Migration | Purpose |
-|-----------|---------|
-| `001_parent_accounts.sql` | Parent tier: accounts, link codes, parent-child links + RLS |
-| `002_affiliates.sql` | Percentage-tier affiliate programme |
-| `003_exam_board_enum_update.sql` | ExamBoard enum (Cambridge split, Eduqas, Edexcel IGCSE) |
-| `004_progress_tables.sql` | Student progress tracking + RLS |
-| `005_analytics_tables.sql` | Daily analytics aggregates + email preferences |
-| `006_recommendation_cache.sql` | Personalised recommendation cache |
-| `007_cycle_improvements.sql` | Child privacy columns, CookieConsent, PrivacySettings.aiOptOut |
+| Migration                        | Purpose                                                        |
+| -------------------------------- | -------------------------------------------------------------- |
+| `001_parent_accounts.sql`        | Parent tier: accounts, link codes, parent-child links + RLS    |
+| `002_affiliates.sql`             | Percentage-tier affiliate programme                            |
+| `003_exam_board_enum_update.sql` | ExamBoard enum (Cambridge split, Eduqas, Edexcel IGCSE)        |
+| `004_progress_tables.sql`        | Student progress tracking + RLS                                |
+| `005_analytics_tables.sql`       | Daily analytics aggregates + email preferences                 |
+| `006_recommendation_cache.sql`   | Personalised recommendation cache                              |
+| `007_cycle_improvements.sql`     | Child privacy columns, CookieConsent, PrivacySettings.aiOptOut |
 
 Features: dry-run default (no `--apply` = safe listing), `--one <prefix>` for single-migration application, `--show <prefix>` for SQL preview, `--list` for inventory, `ON_ERROR_STOP=1` for fail-fast, coloured output, post-apply next-steps guidance.
 
@@ -414,6 +422,7 @@ Running `ANALYZE=true npm run build` generates an interactive treemap showing bu
 ### 6e. Test suite status
 
 All tests are passing across the suite:
+
 - **Unit/integration tests** (vitest): Including AI preferences, cookie consent, content safety, env validation, and component tests.
 - **E2E tests** (Playwright): Covering critical user flows.
 
@@ -421,17 +430,17 @@ All tests are passing across the suite:
 
 ## 7. Sales Enablement Assets — Detailed Inventory
 
-| Category | Files | Key content |
-|----------|-------|-------------|
-| Founding Schools | 23 | Full sales cycle coverage: positioning through close |
-| MAT/Trust | 19 | Banded pricing model, framework agreement, procurement Q&A |
-| International | 16 | 200-school target list, 18-currency pricing, regional analysis |
-| Affiliate programme | 14 pages (7 `/affiliate/*` + 7 `/affiliates/*`) | Public page, signup, agreement, dashboard, payouts, resources, admin |
-| Press kit | 7 subdirectories | Fact sheet, brand, founder story, boilerplate, press releases, media, contacts |
-| Exam board endorsement | 2 boards (AQA, Edexcel) x 6 workstreams | Research, application, evidence, legal, commercial, tracking |
-| Examiner credentials | 4 subdirectories | Agreements, disclosure restrictions, evidence, acquirer perspective |
-| Email templates | 5 files | Parent weekly, student weekly, teacher weekly reports + base templates |
-| Demo school | Dedicated `/demo/school` route | Pre-built demo environment for school prospects |
+| Category               | Files                                           | Key content                                                                    |
+| ---------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------ |
+| Founding Schools       | 23                                              | Full sales cycle coverage: positioning through close                           |
+| MAT/Trust              | 19                                              | Banded pricing model, framework agreement, procurement Q&A                     |
+| International          | 16                                              | 200-school target list, 18-currency pricing, regional analysis                 |
+| Affiliate programme    | 14 pages (7 `/affiliate/*` + 7 `/affiliates/*`) | Public page, signup, agreement, dashboard, payouts, resources, admin           |
+| Press kit              | 7 subdirectories                                | Fact sheet, brand, founder story, boilerplate, press releases, media, contacts |
+| Exam board endorsement | 2 boards (AQA, Edexcel) x 6 workstreams         | Research, application, evidence, legal, commercial, tracking                   |
+| Examiner credentials   | 4 subdirectories                                | Agreements, disclosure restrictions, evidence, acquirer perspective            |
+| Email templates        | 5 files                                         | Parent weekly, student weekly, teacher weekly reports + base templates         |
+| Demo school            | Dedicated `/demo/school` route                  | Pre-built demo environment for school prospects                                |
 
 **Total: 58+ sales files, 14 affiliate pages, 7 press-kit directories, 12+ exam-board endorsement folders, 5 email templates, 1 demo school route.**
 
@@ -443,14 +452,14 @@ All tests are passing across the suite:
 
 The data room at `data-room/` contains 61 files across 5 categories:
 
-| Category | Files | Status |
-|----------|-------|--------|
-| `00-overview/` | 3 | Information memorandum, one-pager, pitch deck outline — all templates |
-| `01-financials/` | 11 | Financial model, key assumptions, ARR bridge, cohort retention, unit economics, revenue recognition, SaaS metrics glossary — **all templates, every value cell is `[X]` or blank** |
-| `02-legal/` | 17 | Cap table, contract register, domain register, IP assignment, NDA, shareholders agreement, option pool, advisor/contractor/employment agreements, open-source audit, litigation register, trademark register — all templates |
-| `03-privacy/` | 17 | Privacy policy, terms, DPA, DPIA, cookie policy, safeguarding, consent notices, age verification, subprocessor register, DSAR log, retention schedule, transfer impact assessments, ROPA — mix of templates and partial content |
-| `04-diligence/` | 10 | Anticipated red flags, buyer Q log, code escrow, customer references, DD Q&A master, dealroom timeline, key-person risk, NDA-before-sharing, VDR structure — all templates |
-| `08-metrics/` | 3 | Monthly KPI template, ARR build template, README — all empty |
+| Category         | Files | Status                                                                                                                                                                                                                          |
+| ---------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `00-overview/`   | 3     | Information memorandum, one-pager, pitch deck outline — all templates                                                                                                                                                           |
+| `01-financials/` | 11    | Financial model, key assumptions, ARR bridge, cohort retention, unit economics, revenue recognition, SaaS metrics glossary — **all templates, every value cell is `[X]` or blank**                                              |
+| `02-legal/`      | 17    | Cap table, contract register, domain register, IP assignment, NDA, shareholders agreement, option pool, advisor/contractor/employment agreements, open-source audit, litigation register, trademark register — all templates    |
+| `03-privacy/`    | 17    | Privacy policy, terms, DPA, DPIA, cookie policy, safeguarding, consent notices, age verification, subprocessor register, DSAR log, retention schedule, transfer impact assessments, ROPA — mix of templates and partial content |
+| `04-diligence/`  | 10    | Anticipated red flags, buyer Q log, code escrow, customer references, DD Q&A master, dealroom timeline, key-person risk, NDA-before-sharing, VDR structure — all templates                                                      |
+| `08-metrics/`    | 3     | Monthly KPI template, ARR build template, README — all empty                                                                                                                                                                    |
 
 ### 8b. Critical finding: zero populated financial data
 
@@ -483,43 +492,43 @@ A parallel `business-docs/` directory contains 136 files across:
 
 ### 9a. Derivable price points (from code)
 
-| Metric | Value | Source |
-|--------|-------|--------|
-| Student monthly ARPU | £8.99 | `src/constants/pricing.ts` |
-| Student annual ARPU (effective) | £67.99/12 = £5.67 | Pricing constants |
-| Teacher monthly ARPU | £12.99 | Pricing page (no distinct Stripe price) |
-| Teacher annual ARPU (effective) | £99.99/12 = £8.33 | Pricing page |
-| Parent (not live) | £4.99/mo | `PARENT_PLAN` in `src/lib/stripe.ts` |
-| School (per-pupil standard) | £12-£26/pupil/yr | Sales materials + billing page `PRICING_TIERS` |
-| School (founding, 50% off) | £6-£13/pupil/yr | Sales materials + billing page `founderPricePerPupil` |
-| MAT (banded) | £7-£15/student/yr | MAT pricing model |
-| International (banded, USD) | $9-$18/student/yr | International pricing |
-| Stripe fees (UK default) | ~1.5% + 20p | Not coded (Stripe default) |
-| Trial length | 30 days | `PRICING.TRIAL_DAYS` |
-| Free premium uses | 3 per feature | `FREE_USES_PER_FEATURE` |
-| Affiliate commission (monthly, Tier 1) | £5.99 | `002_affiliate_system.sql` |
-| Affiliate commission (annual, Tier 1) | £10.00 | `002_affiliate_system.sql` |
+| Metric                                 | Value             | Source                                                |
+| -------------------------------------- | ----------------- | ----------------------------------------------------- |
+| Student monthly ARPU                   | £8.99             | `src/constants/pricing.ts`                            |
+| Student annual ARPU (effective)        | £67.99/12 = £5.67 | Pricing constants                                     |
+| Teacher monthly ARPU                   | £12.99            | Pricing page (no distinct Stripe price)               |
+| Teacher annual ARPU (effective)        | £99.99/12 = £8.33 | Pricing page                                          |
+| Parent (not live)                      | £4.99/mo          | `PARENT_PLAN` in `src/lib/stripe.ts`                  |
+| School (per-pupil standard)            | £12-£26/pupil/yr  | Sales materials + billing page `PRICING_TIERS`        |
+| School (founding, 50% off)             | £6-£13/pupil/yr   | Sales materials + billing page `founderPricePerPupil` |
+| MAT (banded)                           | £7-£15/student/yr | MAT pricing model                                     |
+| International (banded, USD)            | $9-$18/student/yr | International pricing                                 |
+| Stripe fees (UK default)               | ~1.5% + 20p       | Not coded (Stripe default)                            |
+| Trial length                           | 7 days            | `PRICING.TRIAL_DAYS`                                  |
+| Free premium uses                      | 3 per feature     | `FREE_USES_PER_FEATURE`                               |
+| Affiliate commission (monthly, Tier 1) | £5.99             | `002_affiliate_system.sql`                            |
+| Affiliate commission (annual, Tier 1)  | £10.00            | `002_affiliate_system.sql`                            |
 
 ### 9b. Gross margin sketch (B2C student, average usage)
 
-| Line | Estimate | Notes |
-|------|----------|-------|
-| Revenue | £8.99 | Monthly subscription |
-| Stripe fees | -£0.33 | 1.5% + 20p UK default |
-| LLM cost (Anthropic) | -£0.40 | Claude Sonnet, ~10 marks/mo at ~£0.027/call |
-| Hosting (Vercel + Supabase) | -£0.25 | Allocated per-MAU |
-| Email (Resend) | -£0.05 | Weekly reports + transactional |
-| **Gross profit** | **~£7.96** | **~89% GM** |
+| Line                        | Estimate   | Notes                                       |
+| --------------------------- | ---------- | ------------------------------------------- |
+| Revenue                     | £8.99      | Monthly subscription                        |
+| Stripe fees                 | -£0.33     | 1.5% + 20p UK default                       |
+| LLM cost (Anthropic)        | -£0.40     | Claude Sonnet, ~10 marks/mo at ~£0.027/call |
+| Hosting (Vercel + Supabase) | -£0.25     | Allocated per-MAU                           |
+| Email (Resend)              | -£0.05     | Weekly reports + transactional              |
+| **Gross profit**            | **~£7.96** | **~89% GM**                                 |
 
 **Warning: LLM cost scales non-linearly.** At 30 marks/month, LLM cost rises to ~£0.80 (~9% of revenue). At 100 marks/month (exam season peak), LLM cost hits ~£2.70 (~30% of revenue). The marking endpoint (`api/mark/route.ts`) has a rate limit of 10 essays/day but **no monthly usage quota** once a user is on a paid plan. Unlimited AI marking on £8.99 is survivable at average usage but exposed to power users and exam-season surges. Content safety checks (v5) provide partial mitigation by blocking misuse but do not cap legitimate heavy usage.
 
 ### 9c. Effective affiliate take rate
 
-| Plan | Commission | Revenue | Take rate (Month 1) | Payback months |
-|------|-----------|---------|---------------------|----------------|
-| Student monthly (Tier 1) | £5.99 | £8.99 | 67% | ~2-3 |
-| Student annual (Tier 1) | £10.00 | £67.99 | 15% | <1 |
-| Student monthly (Tier 3) | £12.00 | £8.99 | **133%** | ~4-5 |
+| Plan                     | Commission | Revenue | Take rate (Month 1) | Payback months |
+| ------------------------ | ---------- | ------- | ------------------- | -------------- |
+| Student monthly (Tier 1) | £5.99      | £8.99   | 67%                 | ~2-3           |
+| Student annual (Tier 1)  | £10.00     | £67.99  | 15%                 | <1             |
+| Student monthly (Tier 3) | £12.00     | £8.99   | **133%**            | ~4-5           |
 
 Tier 3 monthly commission (£12.00) **exceeds month-1 revenue** (£8.99). This is unit-economically negative unless the subscriber retains for 4-5+ months. At current rates, the affiliate channel is loss-leading for monthly subscribers on higher commission tiers.
 
@@ -541,34 +550,34 @@ Because no actuals exist, these are plausibility sketches. Assumptions: 50/50 an
 
 **Scenario A — Founding cohort + modest self-serve (Year 1)**
 
-| Line | Customers | ARPU | Annual revenue |
-|------|-----------|------|----------------|
-| Students (self-serve) | 500 | £87.93 | £43,965 |
-| Teachers (self-serve) | 50 | £127.94 | £6,397 |
-| Founding Schools (10 slots, mid-size) | 10 | £8,800 avg | £88,000 |
-| **Total** | | | **~£138,362** |
+| Line                                  | Customers | ARPU       | Annual revenue |
+| ------------------------------------- | --------- | ---------- | -------------- |
+| Students (self-serve)                 | 500       | £87.93     | £43,965        |
+| Teachers (self-serve)                 | 50        | £127.94    | £6,397         |
+| Founding Schools (10 slots, mid-size) | 10        | £8,800 avg | £88,000        |
+| **Total**                             |           |            | **~£138,362**  |
 
 **Scenario B — Post-founding growth + first MAT deal (Year 2)**
 
-| Line | Customers | ARPU | Annual revenue |
-|------|-----------|------|----------------|
-| Students | 2,500 | £87.93 | £219,825 |
-| Teachers | 250 | £127.94 | £31,985 |
-| Founding renewals (8/10) | 8 | £17,600 avg (standard price) | £140,800 |
-| First MAT deal (mid-sized, 6,500 students) | 1 | £64,350 | £64,350 |
-| **Total** | | | **~£456,960** |
+| Line                                       | Customers | ARPU                         | Annual revenue |
+| ------------------------------------------ | --------- | ---------------------------- | -------------- |
+| Students                                   | 2,500     | £87.93                       | £219,825       |
+| Teachers                                   | 250       | £127.94                      | £31,985        |
+| Founding renewals (8/10)                   | 8         | £17,600 avg (standard price) | £140,800       |
+| First MAT deal (mid-sized, 6,500 students) | 1         | £64,350                      | £64,350        |
+| **Total**                                  |           |                              | **~£456,960**  |
 
 **Scenario C — B2B-led with productised school SKU + international (Year 3, speculative)**
 
-| Line | Customers | ARPU | Annual revenue |
-|------|-----------|------|----------------|
-| Students | 5,000 | £87.93 | £439,650 |
-| Teachers | 500 | £127.94 | £63,970 |
-| Schools (post-founding, per-pupil) | 25 | £17,600 avg | £440,000 |
-| MATs (3 deals) | 3 | £80,000 avg | £240,000 |
-| International schools | 15 | £8,000 avg | £120,000 |
-| Parent add-ons | 1,000 | £59.88 | £59,880 |
-| **Total** | | | **~£1,363,500** |
+| Line                               | Customers | ARPU        | Annual revenue  |
+| ---------------------------------- | --------- | ----------- | --------------- |
+| Students                           | 5,000     | £87.93      | £439,650        |
+| Teachers                           | 500       | £127.94     | £63,970         |
+| Schools (post-founding, per-pupil) | 25        | £17,600 avg | £440,000        |
+| MATs (3 deals)                     | 3         | £80,000 avg | £240,000        |
+| International schools              | 15        | £8,000 avg  | £120,000        |
+| Parent add-ons                     | 1,000     | £59.88      | £59,880         |
+| **Total**                          |           |             | **~£1,363,500** |
 
 **Caveat:** None of these scenarios is verifiable from the codebase. Founding school deals are off-Stripe, MAT deals exist only as sales documentation, and international deals have not started. B2B ARR must be tracked externally.
 
@@ -579,6 +588,7 @@ Because no actuals exist, these are plausibility sketches. Assumptions: 50/50 an
 ### 10a. Current state
 
 The operating entity is **Upskill Energy Limited** (Companies House No. 16511479). This name:
+
 - Does not match the trading brand ("The English Hub")
 - Appears in the school billing page email address (`info@Upskillenergy.com`)
 - Appears in the safeguarding policy page header ("Upskill Energy Limited, trading as The English Hub")
@@ -593,6 +603,7 @@ The `business-docs/entity-restructure/` directory (27 files) documents a planned
 - **Legacy:** Upskill Energy Ltd to go dormant then strike off via Form DS01
 
 The restructure plan includes:
+
 - Asset transfer agreement template
 - IP assignment agreement template
 - Companies House filings checklist
@@ -630,6 +641,7 @@ Evidence for zero verified revenue:
 7. The `cap-table-template.csv` and `contract-register-template.csv` are empty.
 
 **What would constitute verification:**
+
 - Stripe dashboard export showing MRR/ARR actuals
 - Signed school contracts with payment evidence
 - Bank statements showing subscription revenue deposits
@@ -642,28 +654,28 @@ Evidence for zero verified revenue:
 
 ### 12a. Critical risks
 
-| # | Risk | Severity | Detail |
-|---|------|----------|--------|
-| R1 | **Zero verified revenue** | Critical | No ARR, MRR, or customer count is verifiable from the codebase or data room. Any revenue claim is forward-looking. |
-| R2 | **Entity structure** | Critical | Operating entity "Upskill Energy Ltd" does not match brand. Restructure planned but entirely unexecuted. All entity-map fields are placeholders. |
-| R3 | **B2B revenue not productised** | High | 64 school pages + 39 API routes + sophisticated pricing frameworks, but zero Stripe integration for B2B. All school deals require manual email contact and off-Stripe invoicing. |
-| R4 | ~~**School billing page vs sales materials pricing**~~ | ~~High~~ **Resolved (v3)** | Billing page now displays per-pupil `PRICING_TIERS` matching sales materials. |
-| R5 | **LLM cost exposure** | Medium | Daily rate limit exists (10/day) but no monthly usage quota. Power users at exam season could compress GM from 89% to <70%. Content safety checks (v5) mitigate misuse but not legitimate heavy usage. |
-| R6 | **Founding schools revenue cliff** | Medium | 10-logo cap, free until Aug 2026, no productised follow-on SKU. After founding cohort, B2B revenue line flatlines until per-pupil Stripe SKU ships. |
-| R7 | ~~**AI opt-out is client-side only**~~ | ~~Low-Medium~~ **Resolved (v4)** | `isAiOptedOutServer()` now enforced in all 4 AI API routes via Prisma `PrivacySettings.aiOptOut`. Full defence-in-depth with audit trail. |
+| #   | Risk                                                   | Severity                         | Detail                                                                                                                                                                                                 |
+| --- | ------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| R1  | **Zero verified revenue**                              | Critical                         | No ARR, MRR, or customer count is verifiable from the codebase or data room. Any revenue claim is forward-looking.                                                                                     |
+| R2  | **Entity structure**                                   | Critical                         | Operating entity "Upskill Energy Ltd" does not match brand. Restructure planned but entirely unexecuted. All entity-map fields are placeholders.                                                       |
+| R3  | **B2B revenue not productised**                        | High                             | 64 school pages + 39 API routes + sophisticated pricing frameworks, but zero Stripe integration for B2B. All school deals require manual email contact and off-Stripe invoicing.                       |
+| R4  | ~~**School billing page vs sales materials pricing**~~ | ~~High~~ **Resolved (v3)**       | Billing page now displays per-pupil `PRICING_TIERS` matching sales materials.                                                                                                                          |
+| R5  | **LLM cost exposure**                                  | Medium                           | Daily rate limit exists (10/day) but no monthly usage quota. Power users at exam season could compress GM from 89% to <70%. Content safety checks (v5) mitigate misuse but not legitimate heavy usage. |
+| R6  | **Founding schools revenue cliff**                     | Medium                           | 10-logo cap, free until Aug 2026, no productised follow-on SKU. After founding cohort, B2B revenue line flatlines until per-pupil Stripe SKU ships.                                                    |
+| R7  | ~~**AI opt-out is client-side only**~~                 | ~~Low-Medium~~ **Resolved (v4)** | `isAiOptedOutServer()` now enforced in all 4 AI API routes via Prisma `PrivacySettings.aiOptOut`. Full defence-in-depth with audit trail.                                                              |
 
 ### 12b. Structural risks
 
-| # | Risk | Detail |
-|---|------|--------|
-| R8 | **Seasonality** | GCSE exams run May-June. Expect July-August trough, June cancellation wave. Annual plan ratio matters more here than in typical SaaS. |
-| R9 | **Exam specification risk** | Content is tightly aligned to AQA/Edexcel/OCR/WJEC/CAIE specifications. A spec re-issue (cycle ~4-7 years) forces content rewrites. |
+| #   | Risk                                    | Detail                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| R8  | **Seasonality**                         | GCSE exams run May-June. Expect July-August trough, June cancellation wave. Annual plan ratio matters more here than in typical SaaS.                                                                                                                                                                                                                                                                                                   |
+| R9  | **Exam specification risk**             | Content is tightly aligned to AQA/Edexcel/OCR/WJEC/CAIE specifications. A spec re-issue (cycle ~4-7 years) forces content rewrites.                                                                                                                                                                                                                                                                                                     |
 | R10 | **Children's Code / Online Safety Act** | Product serves under-18s. Compliance surface is extensive (Children's Code policies, DPIAs, age verification, safeguarding) but a breach carries ICO enforcement risk (4% global turnover cap). Safeguarding signposting (v5), parent data deletion, server-side AI opt-out, content safety checks, and server-side cookie consent logging are positive mitigants — now the strongest compliance posture across all five review cycles. |
-| R11 | **Affiliate cannibalisation** | Tier 3 monthly commission (£12.00) exceeds month-1 revenue (£8.99). Loss-leading channel at higher tiers. |
-| R12 | **Key-person dependency** | Single-founder operation (explicit in entity-restructure docs). All sales are founder-led. All school relationships are founder-held. RUNBOOK.md, env validation, and migration script partially mitigate the technical dimension; the commercial dimension remains unmitigated. |
-| R13 | **Teacher pricing identity** | £12.99 Teacher tier may route to the same Stripe price as £8.99 Student. If so, the pricing page is potentially misleading under ASA/consumer-protection standards. |
-| R14 | **Remaining pricing inconsistencies** | Affiliate commission tables still mismatched between public page and DB defaults. Billing email still uses legacy entity name. |
-| R15 | **PII in school exports** | Email addresses are included in all 5 school CSV export endpoints (`export/users`, `export/report`, `export/logins`, `export/route.ts`, `export/template`). Under GDPR data-minimisation principles, analytics/progress exports should not include personal email addresses unless strictly necessary. Schools downloading and circulating these CSVs creates a data-leakage surface. | 
+| R11 | **Affiliate cannibalisation**           | Tier 3 monthly commission (£12.00) exceeds month-1 revenue (£8.99). Loss-leading channel at higher tiers.                                                                                                                                                                                                                                                                                                                               |
+| R12 | **Key-person dependency**               | Single-founder operation (explicit in entity-restructure docs). All sales are founder-led. All school relationships are founder-held. RUNBOOK.md, env validation, and migration script partially mitigate the technical dimension; the commercial dimension remains unmitigated.                                                                                                                                                        |
+| R13 | **Teacher pricing identity**            | £12.99 Teacher tier may route to the same Stripe price as £8.99 Student. If so, the pricing page is potentially misleading under ASA/consumer-protection standards.                                                                                                                                                                                                                                                                     |
+| R14 | **Remaining pricing inconsistencies**   | Affiliate commission tables still mismatched between public page and DB defaults. Billing email still uses legacy entity name.                                                                                                                                                                                                                                                                                                          |
+| R15 | **PII in school exports**               | Email addresses are included in all 5 school CSV export endpoints (`export/users`, `export/report`, `export/logins`, `export/route.ts`, `export/template`). Under GDPR data-minimisation principles, analytics/progress exports should not include personal email addresses unless strictly necessary. Schools downloading and circulating these CSVs creates a data-leakage surface.                                                   |
 
 ### 12c. Recommendations
 
@@ -696,6 +708,7 @@ Evidence for zero verified revenue:
 ## Bottom Line for Investment Committee
 
 **Positives:**
+
 - Stripe integration is production-grade and demonstrates genuine operator rigour (DMCC compliance, affiliate attribution, commission voiding, trial-ending notifications).
 - B2B product surface (64 pages, 39 API routes, 5-step onboarding wizard) is the deepest we have seen in a pre-revenue EdTech SaaS.
 - Sales enablement (58 files) is exceptionally thorough: per-pupil pricing frameworks, MAT banded pricing with multi-year discounts and true-up mechanics, international pricing in 18 currencies, complete outreach sequences.
@@ -709,6 +722,7 @@ Evidence for zero verified revenue:
 - Compliance documentation (Children's Code, Cyber Essentials, safeguarding) is extensive and backed by functional parent data deletion, server-side AI opt-out, content safety checks, server-side cookie consent, and safeguarding reporting mechanisms.
 
 **Negatives:**
+
 - Zero verified revenue. Financial data room is entirely empty templates.
 - Entity structure is wrong: "Upskill Energy Ltd" is not "The English Hub Ltd". Restructure is planned but unexecuted.
 - B2B revenue is not productised in Stripe. All school deals require manual email and off-Stripe invoicing.

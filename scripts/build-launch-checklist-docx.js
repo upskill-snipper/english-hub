@@ -203,9 +203,9 @@ function buildSection2() {
   items.push(subItem("Why", "A broken cancellation flow violates consumer rights and generates chargebacks."));
   items.push(subItem("Verify", "Cancel a subscription. Confirm access retained until period end. Stripe shows `cancel_at_period_end`."));
 
-  items.push(checklistItem("30-day trial period configured correctly", "CRITICAL"));
+  items.push(checklistItem("7-day trial period configured correctly", "CRITICAL"));
   items.push(subItem("Why", "This is your conversion funnel."));
-  items.push(subItem("Verify", "Confirm `trial_period_days: 30` in Stripe. Create new account, verify no payment taken and correct end date."));
+  items.push(subItem("Verify", "Confirm `trial_period_days: 7` (sourced from `PRICING.TRIAL_DAYS`) in Stripe. Create new account, verify no payment taken and correct end date."));
 
   items.push(checklistItem("Invoices and receipts sent automatically", "IMPORTANT"));
   items.push(subItem("Why", "Customers expect receipts. Required for tax purposes."));

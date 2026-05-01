@@ -106,9 +106,9 @@ Each item is tagged with a priority level:
   - **Why:** A broken cancellation flow violates consumer rights and generates chargebacks.
   - **Verify:** Cancel a subscription. Confirm access retained until period end. Stripe shows `cancel_at_period_end`.
 
-- [ ] **30-day trial period configured correctly** — CRITICAL
+- [ ] **7-day trial period configured correctly** — CRITICAL
   - **Why:** This is your conversion funnel.
-  - **Verify:** Confirm `trial_period_days: 30` in Stripe. Create new account, verify no payment taken and correct end date.
+  - **Verify:** Confirm `trial_period_days: 7` (sourced from `PRICING.TRIAL_DAYS`) in Stripe. Create new account, verify no payment taken and correct end date.
 
 - [ ] **Invoices and receipts sent automatically** — IMPORTANT
   - **Why:** Customers expect receipts. Required for tax purposes.
@@ -299,6 +299,7 @@ Each item is tagged with a priority level:
 ## Pre-Launch Day Sequence
 
 ### 3 Days Before Launch
+
 - [ ] Final content freeze
 - [ ] Full regression test of signup → trial → lesson → payment flow
 - [ ] Email launch announcement scheduled
@@ -306,6 +307,7 @@ Each item is tagged with a priority level:
 - [ ] Confirm team knows incident response plan
 
 ### 1 Day Before Launch
+
 - [ ] Switch Stripe to live keys (if not already)
 - [ ] Verify all environment variables one final time
 - [ ] Run smoke tests against production
@@ -313,6 +315,7 @@ Each item is tagged with a priority level:
 - [ ] Confirm backup ran in last 24 hours
 
 ### Launch Day
+
 - [ ] Deploy final production build
 - [ ] Run smoke test: signup, login, access content, start trial
 - [ ] Make a real purchase with your own card
@@ -322,6 +325,7 @@ Each item is tagged with a priority level:
 - [ ] Respond to support queries within 1 hour
 
 ### 1 Day After Launch
+
 - [ ] Review Sentry for new errors
 - [ ] Check Stripe for payments and failures
 - [ ] Review analytics: traffic, signups, trial starts
@@ -332,8 +336,8 @@ Each item is tagged with a priority level:
 
 ## Summary by Priority
 
-| Priority | Count | Guideline |
-|---|---|---|
-| **CRITICAL** | 24 | Must be complete before accepting payments |
-| **IMPORTANT** | 22 | Complete before launch or within first 48 hours |
-| **NICE TO HAVE** | 6 | Target for Week 1–2 post-launch |
+| Priority         | Count | Guideline                                       |
+| ---------------- | ----- | ----------------------------------------------- |
+| **CRITICAL**     | 24    | Must be complete before accepting payments      |
+| **IMPORTANT**    | 22    | Complete before launch or within first 48 hours |
+| **NICE TO HAVE** | 6     | Target for Week 1–2 post-launch                 |
