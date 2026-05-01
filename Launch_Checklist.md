@@ -1,7 +1,7 @@
 # The English Hub — Pre-Launch Checklist
 
 **Platform:** Next.js (Vercel) + Express (Azure App Service) + PostgreSQL (Azure) + Supabase Auth + Stripe + Rewardful
-**Pricing:** £9.99/mo | £79.99/yr | 30-day free trial
+**Pricing:** £9.99/mo | £79.99/yr | 7-day free trial
 **Date Created:** 2026-03-22
 
 ---

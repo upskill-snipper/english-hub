@@ -14,7 +14,6 @@ const legalPages = [
   { href: '/legal/safeguarding', label: 'Safeguarding Policy' },
   { href: '/accessibility', label: 'Accessibility Statement' },
   { href: '/legal/complaints', label: 'Complaints Procedure' },
-  { href: '/legal/cancellation-form', label: 'Cancellation Form' },
   { href: '/data-processing', label: 'Data Processing' },
   { href: '/legal/privacy-qatar', label: 'Qatar Privacy Notice' },
   { href: '/legal/disclaimer', label: 'Full Disclaimer' },

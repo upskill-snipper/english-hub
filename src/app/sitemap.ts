@@ -1311,12 +1311,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
-      url: `${base}/legal/cancellation-form`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
       url: `${base}/legal/complaints`,
       lastModified: now,
       changeFrequency: 'monthly',
