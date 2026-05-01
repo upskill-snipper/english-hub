@@ -30,11 +30,8 @@
 
 import { NextRequest } from 'next/server'
 
-import {
-  errorResponse,
-  rateLimitResponse,
-  successResponse,
-} from '@/lib/api-response'
+import { errorResponse, rateLimitResponse, successResponse } from '@/lib/api-response'
+import { PRICING } from '@/constants/pricing'
 import { getClientIp, rateLimit } from '@/lib/rate-limit'
 
 /** Max allowed length for a submitted code. Arbitrary but generous. */
@@ -51,12 +48,9 @@ const CODE_REGEX = /^[A-Z0-9_-]{3,64}$/
  * Session with a pre-discounted unit amount, which is simpler to reason
  * about and audit.
  *
- * The `2026ENGLISH` code takes Student Annual from £29.99 → £24.99, a £5.00
- * discount (500 pence). Pricing per `english-hub-mobile/SHARED-CONTEXT.md`.
- * Note: the web app's `src/constants/pricing.ts` currently lists a different
- * discount for this code; treat the mobile shared-context figure as the
- * authority for this feature (ASSUMPTION: to be reconciled by Product before
- * production flip).
+ * The `2026ENGLISH` code takes Student Annual from £29.99 → £20, a £9.99
+ * discount. Sourced from `src/constants/pricing.ts` (STUDENT_ANNUAL_SAVINGS)
+ * so a single change in the constants module cascades to validate + redeem.
  */
 interface PromoRule {
   readonly discountPennies: number
@@ -64,8 +58,8 @@ interface PromoRule {
 }
 
 const HOUSE_PROMO_ALLOWLIST: Readonly<Record<string, PromoRule>> = Object.freeze({
-  '2026ENGLISH': {
-    discountPennies: 500,
+  [PRICING.AFFILIATE_PROMO_CODE]: {
+    discountPennies: Math.round(PRICING.STUDENT_ANNUAL_SAVINGS * 100),
     // Product ID is resolved via the server-side STRIPE_PRICE_* env var on
     // the redeem route. Here we expose a stable identifier that the redeem
     // page can forward unchanged.

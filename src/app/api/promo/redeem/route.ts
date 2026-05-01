@@ -34,6 +34,7 @@ import {
   successResponse,
   unauthorizedResponse,
 } from '@/lib/api-response'
+import { PRICING } from '@/constants/pricing'
 import { getClientIp, rateLimit } from '@/lib/rate-limit'
 import { PRICE_IDS, stripe } from '@/lib/stripe'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
@@ -65,8 +66,10 @@ function resolveStripePriceId(productId: string): string | null {
  *
  * `finalAmountPennies` is the unit amount to charge AFTER the discount, not
  * the discount itself — Stripe's `price_data` works on the final amount for
- * one-off sessions. For `2026ENGLISH`, £29.99 base - £5 discount = £24.99
- * (2499p). Figure comes from `english-hub-mobile/SHARED-CONTEXT.md`.
+ * one-off sessions. For `2026ENGLISH`, the canonical figure is
+ * STUDENT_ANNUAL_WITH_CODE (£20 → 2000p), taking the £29.99 base down by the
+ * STUDENT_ANNUAL_SAVINGS amount (£9.99). Sourced from
+ * `src/constants/pricing.ts` so any future price change cascades here.
  */
 interface RedemptionRule {
   readonly finalAmountPennies: number
@@ -75,15 +78,13 @@ interface RedemptionRule {
   readonly description: string
 }
 
-const REDEMPTION_RULES: Readonly<Record<string, RedemptionRule>> = Object.freeze(
-  {
-    '2026ENGLISH': {
-      finalAmountPennies: 2499,
-      allowedProductIds: ['student_annual'],
-      description: 'The English Hub — Student Annual (promo 2026ENGLISH)',
-    },
+const REDEMPTION_RULES: Readonly<Record<string, RedemptionRule>> = Object.freeze({
+  [PRICING.AFFILIATE_PROMO_CODE]: {
+    finalAmountPennies: Math.round(PRICING.STUDENT_ANNUAL_WITH_CODE * 100),
+    allowedProductIds: ['student_annual'],
+    description: `The English Hub — Student Annual (promo ${PRICING.AFFILIATE_PROMO_CODE})`,
   },
-)
+})
 
 interface RedeemRequestBody {
   code?: string
@@ -132,10 +133,7 @@ export async function POST(request: NextRequest) {
       return errorResponse('Unknown or expired promo code.', 404)
     }
     if (!rule.allowedProductIds.includes(productId)) {
-      return errorResponse(
-        'This promo code does not apply to the selected plan.',
-        400,
-      )
+      return errorResponse('This promo code does not apply to the selected plan.', 400)
     }
 
     const priceId = resolveStripePriceId(productId)
@@ -178,10 +176,7 @@ export async function POST(request: NextRequest) {
         .update({ stripe_customer_id: stripeCustomerId })
         .eq('id', user.id)
       if (updateError) {
-        console.error(
-          '[api/promo/redeem] profile update failed:',
-          updateError,
-        )
+        console.error('[api/promo/redeem] profile update failed:', updateError)
         return serverErrorResponse('Failed to link Stripe customer.')
       }
     }
@@ -248,10 +243,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('[api/promo/redeem] unexpected error:', error)
     if (error instanceof Stripe.errors.StripeError) {
-      return errorResponse(
-        'Payment processing error. Please try again.',
-        error.statusCode ?? 500,
-      )
+      return errorResponse('Payment processing error. Please try again.', error.statusCode ?? 500)
     }
     return serverErrorResponse()
   }
