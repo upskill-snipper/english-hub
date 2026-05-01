@@ -132,7 +132,19 @@ function LoginForm() {
           <CardContent>
             {error && (
               <Alert variant="destructive" className="mb-6">
-                <AlertDescription>{error}</AlertDescription>
+                <AlertDescription>
+                  {error}
+                  <span className="mt-2 block">
+                    Email not confirmed yet?{' '}
+                    <Link
+                      href="/auth/resend-verification"
+                      className="font-medium underline underline-offset-2 hover:no-underline"
+                    >
+                      Resend verification email
+                    </Link>
+                    .
+                  </span>
+                </AlertDescription>
               </Alert>
             )}
 
@@ -204,7 +216,18 @@ function LoginForm() {
             </form>
           </CardContent>
 
-          <CardFooter className="justify-center">
+          <CardFooter className="flex-col gap-3 justify-center">
+            <p className="text-muted-foreground text-sm">
+              Didn&apos;t get it?{' '}
+              <Button
+                variant="link"
+                size="sm"
+                className="h-auto p-0 font-medium"
+                render={<Link href="/auth/resend-verification" />}
+              >
+                Resend verification email
+              </Button>
+            </p>
             <p className="text-muted-foreground text-sm">
               Don&apos;t have an account?{' '}
               <Button

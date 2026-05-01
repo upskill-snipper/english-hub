@@ -304,6 +304,16 @@ function RegisterForm() {
                   planning, student analytics, and assessment tools.
                 </p>
               )}
+              <p className="text-sm text-muted-foreground mb-4">
+                Didn&apos;t get it?{' '}
+                <Link
+                  href="/auth/resend-verification"
+                  className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+                >
+                  Resend verification email
+                </Link>
+                .
+              </p>
               <Button render={<Link href="/auth/login" />}>Back to login</Button>
             </CardContent>
           </Card>
