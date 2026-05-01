@@ -48,7 +48,7 @@ const LEVEL_STYLES: Record<Level, string> = {
   'a-level': 'bg-violet-400/15 text-violet-300 ring-violet-400/30',
 }
 
-export default function LevelChip({ level, className, children }: LevelChipProps): JSX.Element {
+export default function LevelChip({ level, className, children }: LevelChipProps) {
   return (
     <span
       className={cn(
