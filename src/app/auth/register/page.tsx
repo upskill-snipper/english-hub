@@ -274,6 +274,18 @@ function RegisterForm() {
     trackEvent('sign_up', { method: 'email' })
     // Funnel: signup_completed — Supabase returned a verified/created user.
     phCapture(PH_EVENTS.SIGNUP_COMPLETED, { accountType })
+
+    // Auto-login path: when Supabase email-confirmation is disabled (or the
+    // user already had a confirmed identity), signUp() returns a session
+    // alongside the user. We don't want to render "Check your email" in
+    // that case — the user is already logged in. Send them straight to the
+    // dashboard with the welcome flag so onboarding fires. When there's no
+    // session, fall back to the verification-pending success card.
+    if (data.session) {
+      window.location.assign('/dashboard?welcome=true')
+      return
+    }
+
     setSuccess(true)
     setLoading(false)
   }

@@ -171,6 +171,16 @@ export default function TeacherRegisterPage() {
         }).catch(() => {})
       }
 
+      // Auto-login path: when Supabase email-confirmation is disabled,
+      // signUp() returns a session and the user is already logged in.
+      // Skip the "Check your email" card and route straight to the
+      // dashboard (which routes teachers to the right surface) with the
+      // welcome flag set so onboarding fires.
+      if (data.session) {
+        window.location.assign('/dashboard?welcome=true')
+        return
+      }
+
       setSuccess(true)
     } catch {
       setError('Something went wrong. Please try again.')
