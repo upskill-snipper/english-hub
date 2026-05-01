@@ -1,6 +1,6 @@
 # Stripe sync report
 
-Generated 2026-05-01T10:15:25.929Z · mode `DRY-RUN` · Stripe API NOT connected (offline)
+Generated 2026-05-01T10:16:41.956Z · mode `DRY-RUN` · Stripe API NOT connected (offline)
 
 Source of truth: [`src/constants/pricing.ts`](../src/constants/pricing.ts).
 Generator: [`scripts/stripe-sync-products.ts`](../scripts/stripe-sync-products.ts).

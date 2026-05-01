@@ -10,6 +10,12 @@
  *   npx tsx scripts/stripe-sync-products.ts             # dry-run, no writes
  *   npx tsx scripts/stripe-sync-products.ts --dry-run   # explicit dry-run
  *   npx tsx scripts/stripe-sync-products.ts --apply     # CREATE missing prices
+ *   npx tsx scripts/stripe-sync-products.ts -v          # verbose logging
+ *
+ * Exit codes:
+ *   0 — every expected price matches Stripe (or env-unset only).
+ *   2 — at least one mismatch (Stripe amount differs from pricing.ts).
+ *   1 — unexpected error (Stripe API failure, malformed args, etc.).
  *
  * Outputs:
  *   - Console table summarising each expected price.
