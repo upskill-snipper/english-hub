@@ -18,12 +18,14 @@ import {
   Gamepad2,
   BarChart3,
   Layers,
+  Library,
   Wrench,
   ChevronRight,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { getSetTextsForBoard } from '@/lib/board/set-texts'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -339,6 +341,20 @@ function SectionCard({
 export default async function EdexcelIgcseHubPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
+  // All Literature set texts prescribed for Pearson Edexcel IGCSE — pulled
+  // straight from the canonical set-texts data so this list stays in sync
+  // with the rest of the site (no hard-coded counts).
+  const setTexts = getSetTextsForBoard('edexcel-igcse')
+
+  const setTextCategoryLabels: Record<string, string> = {
+    shakespeare: 'Shakespeare',
+    '19th-century': '19th-century novel',
+    modern: 'Modern prose & drama',
+    'poetry-anthology': 'Poetry anthology',
+    'non-fiction': 'Non-fiction',
+    prose: 'Prose',
+  }
+
   return (
     <div className="space-y-12 pb-16">
       {/* ── Back link ───────────────────────────────────────────────── */}
@@ -468,6 +484,47 @@ export default async function EdexcelIgcseHubPage() {
         <div className="space-y-4">
           {paper2Sections.map((section) => (
             <SectionCard key={section.heading} section={section} />
+          ))}
+        </div>
+      </section>
+
+      {/* ── Set Texts (full study guides) ───────────────────────────── */}
+      <section>
+        <div className="mb-5 flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+            <Library className="size-5 text-primary" />
+          </div>
+          <div>
+            <h2 className="text-heading-lg font-heading text-foreground">Set Texts</h2>
+            <p className="font-mono text-body-xs text-muted-foreground">
+              Every Pearson Edexcel IGCSE Literature text on one page
+            </p>
+          </div>
+        </div>
+
+        <p className="mb-5 max-w-3xl text-body-sm text-muted-foreground leading-relaxed">
+          Full study guides for each prescribed text — characters, themes, key quotations, context
+          and essay plans. Pick a text to open its complete revision guide.
+        </p>
+
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {setTexts.map((text) => (
+            <Link
+              key={text.slug}
+              href={`/revision/texts/${text.slug}`}
+              className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+            >
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                <BookOpen className="size-5 text-primary" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="font-heading text-body text-foreground truncate">{text.title}</h3>
+                <p className="text-body-xs text-muted-foreground truncate">
+                  {text.author} &middot; {setTextCategoryLabels[text.category] ?? text.category}
+                </p>
+              </div>
+              <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+            </Link>
           ))}
         </div>
       </section>

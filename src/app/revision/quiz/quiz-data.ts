@@ -6893,6 +6893,65 @@ export function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
+// ─── Deterministic option shuffling ────────────────────────────────────────
+// Multiple-choice authors unconsciously bias the correct answer toward the
+// middle (most often option B). To balance the answer position across A/B/C/D
+// without rewriting the question bank, we shuffle the options at presentation
+// time using a deterministic seed derived from the question id and the
+// session salt. The same student in the same session sees the same option
+// order (so navigating back and forth is stable), but a fresh session
+// re-randomises.
+
+/** Cheap, stable string hash → 32-bit unsigned integer. */
+function hashString(input: string): number {
+  let h = 2166136261 >>> 0
+  for (let i = 0; i < input.length; i++) {
+    h ^= input.charCodeAt(i)
+    h = Math.imul(h, 16777619) >>> 0
+  }
+  return h >>> 0
+}
+
+/** Mulberry32 PRNG — small, fast, deterministic from a 32-bit seed. */
+function mulberry32(seed: number): () => number {
+  let t = seed >>> 0
+  return () => {
+    t = (t + 0x6d2b79f5) >>> 0
+    let r = t
+    r = Math.imul(r ^ (r >>> 15), r | 1)
+    r ^= r + Math.imul(r ^ (r >>> 7), r | 61)
+    return ((r ^ (r >>> 14)) >>> 0) / 4294967296
+  }
+}
+
+/**
+ * Shuffle an option list deterministically, using a seed derived from the
+ * question id and an opaque session salt. Pure — does not mutate input.
+ */
+export function shuffleOptionsDeterministic<T>(options: readonly T[], seed: string): T[] {
+  const rng = mulberry32(hashString(seed))
+  const a = [...options]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+/**
+ * Build a shuffled view of a quiz question. Returns the new option order
+ * alongside the correct option's VALUE so callers can score answers without
+ * relying on indices (which become meaningless after shuffling).
+ */
+export function getShuffledQuestion(
+  question: QuizQuestion,
+  sessionSalt: string,
+): { options: string[]; correctValue: string } {
+  const correctValue = question.options[question.correctIndex]
+  const options = shuffleOptionsDeterministic(question.options, `${question.id}|${sessionSalt}`)
+  return { options, correctValue }
+}
+
 /** True if a question applies to the given board (untagged = all boards). */
 export function questionMatchesBoard(q: QuizQuestion, board: ExamBoard | null): boolean {
   if (!board) return true

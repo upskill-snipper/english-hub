@@ -97,7 +97,10 @@ type HoursPerWeek = '1-2' | '3-5' | '6-10' | '10+'
 interface StudyPlanAnswers {
   weeks: WeeksUntilExam
   grade: TargetGrade
-  weakArea: WeakArea
+  // Multi-select: students often find more than one area hardest. Stored as an
+  // array; we keep the order they tapped so the first item is the *primary*
+  // weak area (used for the front-loaded WEAK_BOOST in week 1, etc.).
+  weakArea: WeakArea[]
   hoursPerWeek: HoursPerWeek
 }
 
@@ -148,6 +151,13 @@ interface Question<T extends string> {
   prompt: string
   helper?: string
   options: { value: T; label: string; description?: string }[]
+  /**
+   * When true, the user can pick more than one option (rendered as a multi-
+   * select with a "Continue" button). Defaults to false (single-select, auto-
+   * advances on tap). Currently used only on `weakArea` per Lauren's feedback
+   * 2026-04-28: students often find more than one area hardest.
+   */
+  multiSelect?: boolean
 }
 
 const QUESTIONS: [
@@ -183,11 +193,16 @@ const QUESTIONS: [
   },
   {
     id: 'weakArea',
-    prompt: 'Which area do you find hardest right now?',
-    helper: 'We will give this extra time in your plan.',
+    prompt: 'Which areas do you find hardest right now?',
+    helper: 'Pick all that apply -- we will give these extra time in your plan.',
+    multiSelect: true,
     options: [
       { value: 'poetry', label: 'Poetry analysis', description: 'Anthology comparisons' },
-      { value: 'set-texts', label: 'Set text essays', description: 'Shakespeare, novels, modern texts' },
+      {
+        value: 'set-texts',
+        label: 'Set text essays',
+        description: 'Shakespeare, novels, modern texts',
+      },
       { value: 'language', label: 'Language paper', description: 'Reading and writing skills' },
       { value: 'exam-technique', label: 'Exam technique', description: 'Structure and timing' },
       { value: 'spag', label: 'SPaG accuracy', description: 'Spelling, punctuation, grammar' },
@@ -314,7 +329,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
   }
   const SPAG: PlannedTask = {
     title: 'SPaG accuracy session',
-    description: 'Review the SPaG mastery guide and proofread last week\'s writing.',
+    description: "Review the SPaG mastery guide and proofread last week's writing.",
     href: '/revision/language/spag',
     icon: 'penTool',
     colour: 'text-violet-400',
@@ -354,7 +369,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
   }
   const QUIZ: PlannedTask = {
     title: 'Topic quiz check-in',
-    description: 'Take a quick quiz on this week\'s topics to test recall.',
+    description: "Take a quick quiz on this week's topics to test recall.",
     href: '/revision/quiz',
     icon: 'zap',
     colour: 'text-clay-600',
@@ -379,21 +394,24 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     bgColour: 'bg-cyan-500/10',
   }
 
-  // Weak-area boost
-  const WEAK_BOOST: PlannedTask = (() => {
-    switch (answers.weakArea) {
-      case 'poetry':
-        return POETRY_COMPARE
-      case 'set-texts':
-        return TEXT_DEEPDIVE
-      case 'language':
-        return READING
-      case 'exam-technique':
-        return ESSAY_STRUCTURE
-      case 'spag':
-        return SPAG
-    }
+  // Weak-area boosts -- one per area the student flagged as hard.
+  // weakArea is now an array (multi-select); we rotate through them so each
+  // chosen area gets its own week-0/2/4 boost slot rather than collapsing them.
+  const WEAK_BOOST_MAP: Record<WeakArea, PlannedTask> = {
+    poetry: POETRY_COMPARE,
+    'set-texts': TEXT_DEEPDIVE,
+    language: READING,
+    'exam-technique': ESSAY_STRUCTURE,
+    spag: SPAG,
+  }
+  const weakAreasList: WeakArea[] = (() => {
+    // Backward compat: old saved plans stored a single string. Accept either.
+    const raw = answers.weakArea as unknown as WeakArea | WeakArea[] | undefined
+    if (Array.isArray(raw)) return raw.length > 0 ? raw : ['exam-technique']
+    if (raw) return [raw]
+    return ['exam-technique']
   })()
+  const WEAK_BOOSTS: PlannedTask[] = weakAreasList.map((a) => WEAK_BOOST_MAP[a])
 
   // Hour-aware task count
   const tasksPerWeek = (() => {
@@ -413,7 +431,17 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
 
   // For Cambridge 0500/0990 (language only), drop poetry/set-text blocks from rotation
   const rotation: PlannedTask[] = isCambridge
-    ? [READING, WRITING, ESSAY_STRUCTURE, FLASHCARDS, QUESTION_TYPES, SPAG, TIMING, QUIZ, GRADE_GUIDE]
+    ? [
+        READING,
+        WRITING,
+        ESSAY_STRUCTURE,
+        FLASHCARDS,
+        QUESTION_TYPES,
+        SPAG,
+        TIMING,
+        QUIZ,
+        GRADE_GUIDE,
+      ]
     : [
         POETRY,
         TEXT_DEEPDIVE,
@@ -432,7 +460,12 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
   const weeks: PlannedWeek[] = []
   for (let w = 0; w < weekCount; w++) {
     const tasks: PlannedTask[] = []
-    if (w % 2 === 0) tasks.push(WEAK_BOOST)
+    if (w % 2 === 0) {
+      // Rotate which weak-area boost we feature each even week, so a student
+      // who flagged 3 weak areas sees all 3 cycled through their plan.
+      const boost = WEAK_BOOSTS[Math.floor(w / 2) % WEAK_BOOSTS.length]
+      if (boost) tasks.push(boost)
+    }
     let i = w
     while (tasks.length < tasksPerWeek) {
       const candidate = rotation[i % rotation.length]
@@ -497,7 +530,11 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
   const currentQuestion = boardQuestions[step]
   const isComplete = step >= boardQuestions.length
 
-  const handleAnswer = <T extends string>(value: T) => {
+  // Handles both single-select (auto-advance on click) and multi-select
+  // (advance on Continue). The DiagnosticStep below decides which UI to render
+  // based on `question.multiSelect`; this fn just persists whatever shape it
+  // gets handed (string for single, string[] for multi).
+  const handleAnswer = <T extends string>(value: T | T[]) => {
     const next = { ...answers, [currentQuestion.id]: value }
     setAnswers(next)
 
@@ -626,7 +663,9 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
                 Weakest area
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground capitalize">
-                {meta.weakArea.replace('-', ' ')}
+                {Array.isArray(meta.weakArea)
+                  ? meta.weakArea.map((a) => a.replace('-', ' ')).join(', ')
+                  : (meta.weakArea as unknown as string).replace('-', ' ')}
               </p>
             </div>
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
@@ -654,10 +693,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
         <section className="space-y-4">
           <h2 className="text-heading-md font-heading text-foreground">Week-by-week tasks</h2>
           {planWeeks.map((week) => (
-            <div
-              key={week.week}
-              className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6"
-            >
+            <div key={week.week} className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
               <div className="mb-4 flex items-center justify-between gap-3">
                 <div>
                   <Badge variant="secondary" className="mb-1.5">
@@ -673,26 +709,26 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
                 {week.tasks.map((task, i) => {
                   const Icon = ICON_MAP[task.icon] ?? BookOpen
                   return (
-                  <Link
-                    key={task.title + i}
-                    href={task.href}
-                    className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
-                  >
-                    <div
-                      className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${task.bgColour}`}
+                    <Link
+                      key={task.title + i}
+                      href={task.href}
+                      className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
                     >
-                      <Icon className={`size-4 ${task.colour}`} />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                        {task.title}
-                      </p>
-                      <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
-                        {task.description}
-                      </p>
-                    </div>
-                    <ArrowRight className="mt-1 size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
-                  </Link>
+                      <div
+                        className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${task.bgColour}`}
+                      >
+                        <Icon className={`size-4 ${task.colour}`} />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                          {task.title}
+                        </p>
+                        <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
+                          {task.description}
+                        </p>
+                      </div>
+                      <ArrowRight className="mt-1 size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                    </Link>
                   )
                 })}
               </div>
@@ -704,8 +740,8 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
           <CheckCircle2 className="mx-auto mb-3 size-8 text-primary" />
           <h2 className="text-heading-md font-heading text-foreground">Stick with the plan</h2>
           <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-            Your plan is saved on this device. Come back any time and tick off tasks as you
-            complete them. If your situation changes, you can always retake the diagnostic.
+            Your plan is saved on this device. Come back any time and tick off tasks as you complete
+            them. If your situation changes, you can always retake the diagnostic.
           </p>
           <Button variant="default" size="lg" className="mt-5" render={<Link href="/revision" />}>
             Back to Revision Hub
@@ -819,12 +855,52 @@ function DiagnosticStep<T extends string>({
   question: Question<T>
   stepIndex: number
   totalSteps: number
-  onSelect: (value: T) => void
+  onSelect: (value: T | T[]) => void
   onBack: () => void
   canGoBack: boolean
-  currentValue: string | undefined
+  currentValue: string | string[] | undefined
 }) {
   const progress = Math.round(((stepIndex + 1) / totalSteps) * 100)
+  const isMulti = question.multiSelect ?? false
+
+  // Local state for multi-select mode. We hydrate from currentValue so a
+  // student navigating back keeps their previous picks. Resetting when
+  // question.id changes is handled by React's key on the parent.
+  const [localSelections, setLocalSelections] = useState<T[]>(() => {
+    if (Array.isArray(currentValue)) return currentValue as T[]
+    return []
+  })
+
+  // When the question changes (next step), reset local multi-select state
+  // unless the new question already has values (back-navigation case).
+  useEffect(() => {
+    if (Array.isArray(currentValue)) {
+      setLocalSelections(currentValue as T[])
+    } else {
+      setLocalSelections([])
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [question.id])
+
+  const toggleSelection = (value: T) => {
+    setLocalSelections((prev) => {
+      if (prev.includes(value)) return prev.filter((v) => v !== value)
+      return [...prev, value]
+    })
+  }
+
+  const handleClick = (opt: { value: T }) => {
+    if (isMulti) {
+      toggleSelection(opt.value)
+      return
+    }
+    onSelect(opt.value)
+  }
+
+  const handleContinue = () => {
+    if (localSelections.length === 0) return
+    onSelect(localSelections)
+  }
 
   return (
     <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
@@ -847,15 +923,28 @@ function DiagnosticStep<T extends string>({
       {question.helper && (
         <p className="mt-1 text-body-sm text-muted-foreground">{question.helper}</p>
       )}
+      {isMulti && (
+        <p className="mt-2 text-caption text-muted-foreground">
+          {localSelections.length === 0
+            ? 'Select one or more.'
+            : `${localSelections.length} selected`}
+        </p>
+      )}
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         {question.options.map((opt) => {
-          const isSelected = currentValue === opt.value
+          const isSelected = isMulti
+            ? localSelections.includes(opt.value)
+            : currentValue === opt.value
+          // Multi-select: render a square checkbox indicator.
+          // Single-select: keep the existing rounded radio dot for visual continuity.
+          const indicatorRadius = isMulti ? 'rounded-md' : 'rounded-full'
           return (
             <button
               key={opt.value}
               type="button"
-              onClick={() => onSelect(opt.value)}
+              onClick={() => handleClick(opt)}
+              aria-pressed={isMulti ? isSelected : undefined}
               className={`group flex items-start gap-3 rounded-xl border p-4 text-left transition-all ${
                 isSelected
                   ? 'border-primary/40 bg-primary/[0.06]'
@@ -863,7 +952,7 @@ function DiagnosticStep<T extends string>({
               }`}
             >
               <div
-                className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border transition-colors ${
+                className={`mt-0.5 flex size-5 shrink-0 items-center justify-center border transition-colors ${indicatorRadius} ${
                   isSelected
                     ? 'border-primary bg-primary text-primary-foreground'
                     : 'border-muted-foreground/30 group-hover:border-foreground/40'
@@ -882,15 +971,28 @@ function DiagnosticStep<T extends string>({
         })}
       </div>
 
-      {canGoBack && (
-        <div className="mt-6 flex justify-start">
+      <div className="mt-6 flex items-center justify-between gap-3">
+        {canGoBack ? (
           <Button variant="ghost" size="sm" onClick={onBack}>
             <ArrowLeft className="size-3.5" />
             Previous
           </Button>
-        </div>
-      )}
+        ) : (
+          <span aria-hidden="true" />
+        )}
+
+        {isMulti && (
+          <Button
+            variant="default"
+            size="sm"
+            onClick={handleContinue}
+            disabled={localSelections.length === 0}
+          >
+            Continue
+            <ArrowRight className="size-3.5" />
+          </Button>
+        )}
+      </div>
     </section>
   )
 }
-

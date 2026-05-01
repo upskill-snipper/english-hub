@@ -24,7 +24,12 @@ import { useBoard } from '@/hooks/useBoard'
 import type { ExamBoard } from '@/lib/board/board-store'
 
 import type { QuizQuestion, Topic } from './quiz-data'
-import { TOPIC_META, getGrade, questionMatchesBoard } from './quiz-data'
+import {
+  TOPIC_META,
+  getGrade,
+  questionMatchesBoard,
+  shuffleOptionsDeterministic,
+} from './quiz-data'
 
 // ─── Weak topic → revision page mapping (board-aware) ─────────────────────
 
@@ -278,11 +283,31 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     [rawQuestions, board],
   )
 
+  // Per-session salt — fresh on every mount of the quiz engine, so each new
+  // attempt re-randomises option order. Stable for the whole quiz so a student
+  // navigating between answered questions sees the same order they answered.
+  const sessionSaltRef = useRef<string>(
+    `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`,
+  )
+
+  // Pre-compute the shuffled option order for every question. Storing the
+  // shuffled options as strings lets us score by VALUE rather than index, so
+  // shuffling cannot break correctness checks.
+  const shuffledOptions = useMemo(
+    () =>
+      questions.map((q) =>
+        shuffleOptionsDeterministic(q.options, `${q.id}|${sessionSaltRef.current}`),
+      ),
+    [questions],
+  )
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
   const [hasAnswered, setHasAnswered] = useState(false)
   const [score, setScore] = useState(0)
-  const [answers, setAnswers] = useState<(number | null)[]>(() =>
+  // Store the option VALUE the user picked, not the (post-shuffle) index, so
+  // review/scoring stays correct regardless of presentation order.
+  const [answers, setAnswers] = useState<(string | null)[]>(() =>
     new Array(questions.length).fill(null),
   )
   const [finished, setFinished] = useState(false)
@@ -299,6 +324,8 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
   const questionShownAtRef = useRef<number>(Date.now())
 
   const question = questions[currentIndex]
+  const currentOptions = shuffledOptions[currentIndex] ?? question?.options ?? []
+  const correctValue = question ? question.options[question.correctIndex] : ''
   const progress = ((currentIndex + (hasAnswered ? 1 : 0)) / questions.length) * 100
 
   // Start timer
@@ -337,12 +364,14 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     setSelectedOption(optionIndex)
     setHasAnswered(true)
 
-    const isCorrect = optionIndex === question.correctIndex
+    // Score by option VALUE, not index — options are shuffled at render time.
+    const pickedValue = currentOptions[optionIndex]
+    const isCorrect = pickedValue === correctValue
     if (isCorrect) setScore((s) => s + 1)
 
     setAnswers((prev) => {
       const next = [...prev]
-      next[currentIndex] = optionIndex
+      next[currentIndex] = pickedValue
       return next
     })
 
@@ -388,15 +417,18 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     if (timerRef.current) clearInterval(timerRef.current)
     setFinished(true)
 
-    // Build topic breakdown
+    // Build topic breakdown — compare answer values to the canonical correct
+    // option value, since shuffled indices are not portable.
     const topicBreakdown: Record<string, { correct: number; total: number }> = {}
     questions.forEach((q, i) => {
       if (!topicBreakdown[q.topic]) topicBreakdown[q.topic] = { correct: 0, total: 0 }
       topicBreakdown[q.topic].total++
-      if (
-        answers[i] === q.correctIndex ||
-        (i === currentIndex && selectedOption === q.correctIndex)
-      ) {
+      const correctValueForQ = q.options[q.correctIndex]
+      const liveSelectedValue =
+        i === currentIndex && selectedOption !== null
+          ? (shuffledOptions[i]?.[selectedOption] ?? null)
+          : null
+      if (answers[i] === correctValueForQ || liveSelectedValue === correctValueForQ) {
         topicBreakdown[q.topic].correct++
       }
     })
@@ -430,12 +462,12 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     const percentage = Math.round((score / questions.length) * 100)
     const { grade, descriptor } = getGrade(percentage)
 
-    // Build topic breakdown for display
+    // Build topic breakdown for display — score by option value.
     const topicBreakdown: Record<string, { correct: number; total: number }> = {}
     questions.forEach((q, i) => {
       if (!topicBreakdown[q.topic]) topicBreakdown[q.topic] = { correct: 0, total: 0 }
       topicBreakdown[q.topic].total++
-      if (answers[i] === q.correctIndex) topicBreakdown[q.topic].correct++
+      if (answers[i] === q.options[q.correctIndex]) topicBreakdown[q.topic].correct++
     })
 
     return (
@@ -556,7 +588,8 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
           <div className="space-y-3">
             {questions.map((q, i) => {
               const userAnswer = answers[i]
-              const isCorrect = userAnswer === q.correctIndex
+              const correctValueForQ = q.options[q.correctIndex]
+              const isCorrect = userAnswer === correctValueForQ
               const meta = TOPIC_META[q.topic]
               return (
                 <details
@@ -583,12 +616,10 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
                     </Badge>
                   </summary>
                   <div className="mt-2 pl-7 space-y-1.5">
-                    {userAnswer !== null && userAnswer !== q.correctIndex && (
-                      <p className="text-sm text-red-400">Your answer: {q.options[userAnswer]}</p>
+                    {userAnswer !== null && userAnswer !== correctValueForQ && (
+                      <p className="text-sm text-red-400">Your answer: {userAnswer}</p>
                     )}
-                    <p className="text-sm text-emerald-400">
-                      Correct answer: {q.options[q.correctIndex]}
-                    </p>
+                    <p className="text-sm text-emerald-400">Correct answer: {correctValueForQ}</p>
                     <p className="text-body-sm text-muted-foreground">{q.explanation}</p>
                   </div>
                 </details>
@@ -613,8 +644,10 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
   }
 
   // ─── Question screen ─────────────────────────────────────────────────────
-  const isCorrect = hasAnswered && selectedOption === question.correctIndex
-  const isWrong = hasAnswered && selectedOption !== question.correctIndex
+  // Correctness is determined by the option VALUE the user picked, since
+  // currentOptions has been shuffled and the index alone is not meaningful.
+  const selectedValue = selectedOption !== null ? currentOptions[selectedOption] : null
+  const isCorrect = hasAnswered && selectedValue === correctValue
 
   return (
     <div className="space-y-5 animate-fade-in">
@@ -688,9 +721,9 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
 
       {/* Options */}
       <div className="grid gap-3">
-        {question.options.map((option, i) => {
+        {currentOptions.map((option, i) => {
           const isSelected = selectedOption === i
-          const isCorrectOption = i === question.correctIndex
+          const isCorrectOption = option === correctValue
 
           let optionClass =
             'rounded-xl border p-4 text-left transition-all duration-200 cursor-pointer'

@@ -7,6 +7,7 @@ import {
   Clock,
   FileText,
   Feather,
+  Library,
   ScrollText,
   GraduationCap,
   Sparkles,
@@ -164,6 +165,26 @@ export default async function EdexcelIgcseLangHubPage() {
             </span>
           </div>
         </div>
+      </section>
+
+      {/* ── Cross-link: Literature set texts ────────────────────────── */}
+      <section
+        aria-label="Edexcel Literature cross-link"
+        className="rounded-xl border border-primary/30 bg-primary/[0.04] p-5"
+      >
+        <Link href="/igcse/edexcel" className="group flex items-center gap-4">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+            <Library className="size-5 text-primary" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <h3 className="font-heading text-body text-foreground">Studying Literature too?</h3>
+            <p className="text-body-sm text-muted-foreground">
+              See your Pearson Edexcel IGCSE Literature set texts — full study guides for Macbeth,
+              An Inspector Calls, Of Mice and Men and more.
+            </p>
+          </div>
+          <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+        </Link>
       </section>
 
       {/* ── Anthology version disclaimer ────────────────────────────── */}

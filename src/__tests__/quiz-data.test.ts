@@ -6,6 +6,7 @@ import {
   questionMatchesBoard,
   getQuestionsForBoard,
   pickQuestions,
+  shuffleOptionsDeterministic,
 } from '@/app/revision/quiz/quiz-data'
 import type { QuizQuestion } from '@/app/revision/quiz/quiz-data'
 
@@ -54,9 +55,7 @@ describe('getTopicsForBoard', () => {
 
   it('returns only language-techniques and exam-technique for cambridge-0500', () => {
     const topics = getTopicsForBoard('cambridge-0500')
-    expect(topics).toEqual(
-      expect.arrayContaining(['language-techniques', 'exam-technique']),
-    )
+    expect(topics).toEqual(expect.arrayContaining(['language-techniques', 'exam-technique']))
     expect(topics).not.toContain('poetry')
     expect(topics).not.toContain('set-texts')
     expect(topics).not.toContain('context')
@@ -176,6 +175,76 @@ describe('pickQuestions', () => {
     for (const q of qs) {
       expect(q.id).toBeTruthy()
       expect(q.options).toHaveLength(4)
+    }
+  })
+})
+
+// ─── Option-shuffling sanity checks ────────────────────────────────────────
+//
+// The raw question bank is heavily biased toward option B (authors
+// unconsciously place the correct answer in the middle). The renderer is
+// expected to shuffle options deterministically so that, across a full bank
+// run, the correct answer lands in roughly even proportion at A / B / C / D.
+//
+// We deliberately do not require a perfect 25/25/25/25 split — the shuffle
+// is seeded by question id, so the distribution depends on the bank. We
+// assert that every position holds at least 12% of correct answers (well
+// below 25% but well above the pre-fix ~0% for A and D).
+
+describe('Option shuffling balances correct-answer position', () => {
+  it('keeps the correct answer present after shuffling (round-trip)', () => {
+    for (const q of ALL_QUESTIONS.slice(0, 50)) {
+      const correctValue = q.options[q.correctIndex]
+      const shuffled = shuffleOptionsDeterministic(q.options, `${q.id}|test-salt`)
+      expect(shuffled).toContain(correctValue)
+      expect(shuffled).toHaveLength(q.options.length)
+    }
+  })
+
+  it('is deterministic for a given seed', () => {
+    const q = ALL_QUESTIONS[0]
+    const a = shuffleOptionsDeterministic(q.options, `${q.id}|salt-X`)
+    const b = shuffleOptionsDeterministic(q.options, `${q.id}|salt-X`)
+    expect(a).toEqual(b)
+  })
+
+  it('produces different orders for different session salts', () => {
+    // Across the bank, two different salts should disagree on at least some
+    // questions. (Any individual question may collide; we only require the
+    // bank-level outcome to differ.)
+    let differences = 0
+    for (const q of ALL_QUESTIONS) {
+      const a = shuffleOptionsDeterministic(q.options, `${q.id}|salt-A`)
+      const b = shuffleOptionsDeterministic(q.options, `${q.id}|salt-B`)
+      if (a.some((opt, i) => opt !== b[i])) differences++
+    }
+    expect(differences).toBeGreaterThan(ALL_QUESTIONS.length * 0.5)
+  })
+
+  it('spreads correct answers across A/B/C/D approximately uniformly', () => {
+    // Aggregate across several salts to simulate many sessions of users
+    // taking the quiz. Each salt is one notional session.
+    const counts = [0, 0, 0, 0]
+    const salts = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8']
+    let total = 0
+    for (const salt of salts) {
+      for (const q of ALL_QUESTIONS) {
+        const correctValue = q.options[q.correctIndex]
+        const shuffled = shuffleOptionsDeterministic(q.options, `${q.id}|${salt}`)
+        const pos = shuffled.indexOf(correctValue)
+        if (pos >= 0 && pos < 4) {
+          counts[pos]++
+          total++
+        }
+      }
+    }
+    // Expected uniform share is 25%. We allow a generous tolerance band
+    // (12% – 38%) to keep the test stable while still catching a broken
+    // shuffle (e.g. always-B would put position 1 well above 38%).
+    for (let i = 0; i < 4; i++) {
+      const share = counts[i] / total
+      expect(share).toBeGreaterThan(0.12)
+      expect(share).toBeLessThan(0.38)
     }
   })
 })

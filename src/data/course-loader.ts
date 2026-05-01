@@ -71,7 +71,13 @@ function getBoardForCourse(courseId: string): string {
   if (courseId.startsWith('igcse-lit-')) return 'igcse-lit'
 
   // Edexcel Literature
-  if (courseId.startsWith('edexcel-lit-') || courseId.startsWith('edexcel-lit')) return 'edexcel-lit'
+  if (courseId.startsWith('edexcel-lit-') || courseId.startsWith('edexcel-lit'))
+    return 'edexcel-lit'
+
+  // Edexcel IGCSE Language (Specifications A & B) — must come BEFORE the
+  // generic `edexcel-` rule below, otherwise these IDs route to the wrong
+  // board loader and the course player 404s.
+  if (courseId.startsWith('edexcel-igcse-')) return 'igcse'
 
   // Edexcel Language
   if (courseId.startsWith('edexcel-')) return 'edexcel'
@@ -106,7 +112,7 @@ export async function loadCourseById(courseId: string): Promise<CourseData | und
   const board = getBoardForCourse(courseId)
 
   const courses = await loadCoursesByBoard(board)
-  const found = courses.find(c => c.id === courseId)
+  const found = courses.find((c) => c.id === courseId)
   if (found) return found
 
   // Fallback: IGCSE poem courses span two files with the same prefix
@@ -114,7 +120,7 @@ export async function loadCourseById(courseId: string): Promise<CourseData | und
     for (const fallback of POETRY_FALLBACK) {
       if (fallback === board) continue
       const fallbackCourses = await loadCoursesByBoard(fallback)
-      const match = fallbackCourses.find(c => c.id === courseId)
+      const match = fallbackCourses.find((c) => c.id === courseId)
       if (match) return match
     }
   }
@@ -156,7 +162,7 @@ export async function loadAllCourses(): Promise<CourseData[]> {
 
   allCoursesCache = (async () => {
     const boards = Object.keys(BOARD_LOADERS)
-    const results = await Promise.all(boards.map(b => loadCoursesByBoard(b)))
+    const results = await Promise.all(boards.map((b) => loadCoursesByBoard(b)))
     return results.flat()
   })()
 
@@ -167,7 +173,13 @@ function extractCourses(mod: Record<string, unknown>): CourseData[] {
   for (const key of Object.keys(mod)) {
     const val = mod[key]
     // Handle single course objects (not arrays)
-    if (val && typeof val === 'object' && !Array.isArray(val) && 'id' in val && 'moduleList' in val) {
+    if (
+      val &&
+      typeof val === 'object' &&
+      !Array.isArray(val) &&
+      'id' in val &&
+      'moduleList' in val
+    ) {
       return [val as CourseData]
     }
     // Handle arrays of courses

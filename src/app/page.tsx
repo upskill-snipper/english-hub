@@ -1,19 +1,9 @@
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
 import Link from 'next/link'
 import SectionSkeleton from '@/components/home/SectionSkeleton'
-import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
 
-/* ───────────────────── Cinematic marketing sections (client, dynamic) ───────────────────── */
-
-const CinematicHero = dynamic(() => import('@/components/home/CinematicHero'), {
-  loading: () => <SectionSkeleton />,
-})
-
-const MarqueeStrip = dynamic(() => import('@/components/home/MarqueeStrip'), {
-  loading: () => <div className="h-14 border-y border-cream-200/10" />,
-})
+/* ───────────────────── Below-the-fold sections (client, dynamic) ───────────────────── */
 
 const AnthologyPricing = dynamic(() => import('@/components/home/AnthologyPricing'), {
   loading: () => <SectionSkeleton />,
@@ -30,78 +20,31 @@ export default async function Home() {
     <main className="min-h-screen bg-background">
       {/* Funnel: home_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="home_viewed" />
-      {/* Trust pill row removed per founder request — was overweighting compliance copy. */}
 
-      {/* 0b. Named hero H1 block — commercial-review item #02 */}
+      {/* 1. Tight hero — short, named, kept as-is. */}
       <HeroHeadlineBlock />
 
-      {/* 1. Cinematic Hero — auto-advancing 4-chapter stage */}
-      <CinematicHero />
+      {/* 2. Board picker — the main job of the homepage. */}
+      <BoardPickerSection />
 
-      {/* 2. Marquee strip */}
-      <MarqueeStrip />
+      {/* 3. Try-a-feature row — three demo cards into the platform's strengths. */}
+      <TryAFeatureSection />
 
-      {/* 3. Trust strip */}
-      <TrustStrip />
-
-      {/* 3a. Trustpilot TrustBox — horizontal */}
-      <section className="bg-ink-950 pb-10">
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
-          <TrustBox variant="horizontal" theme="dark" />
-        </div>
-      </section>
-
-      {/* 3b. Verified Content callout — content-quality signal */}
-      <VerifiedContentCallout />
-
-      {/* 3b. School logo wall hidden until we have signed, consenting schools.
-          Restore by re-rendering <UsedInSchools /> below once logos + consent
-          are in place. */}
-
-      {/* 4. Pricing */}
+      {/* 4. Pricing — folded in for visitors who scroll past the picker. */}
       <AnthologyPricing />
 
       {/* 5. Final CTA */}
       <FinalCTA />
-
-      {/* 5b. MAT band — above footer */}
-      <MATBand />
     </main>
   )
 }
 
-/* ───────────────────── Trust pill row (item #01) ───────────────────── */
-
-function TrustPills() {
-  const pills = [
-    'Built by AQA \u00B7 Pearson \u00B7 Cambridge \u00B7 OCR \u00B7 WJEC examiners',
-    'UK GDPR \u00B7 ICO ZC016690',
-    'WCAG 2.1 AA target',
-  ]
-  return (
-    <section className="bg-slate-50/50 border-b border-slate-200/60">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 py-3">
-        <ul className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-xs md:text-sm text-slate-600">
-          {pills.map((p) => (
-            <li
-              key={p}
-              className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-3 py-1 whitespace-nowrap"
-            >
-              {p}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  )
-}
-
-/* ───────────────────── Hero headline block (item #02) ───────────────────── */
+/* ───────────────────── Hero headline block (kept) ───────────────────── */
 
 function HeroHeadlineBlock() {
   return (
     <section className="bg-ink-950">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 pb-10 sm:pt-16 sm:pb-12 text-center">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 pb-8 sm:pt-16 sm:pb-10 text-center">
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight">
           Built by a teacher. Marked by AI.
           <br className="hidden sm:block" />
@@ -119,30 +62,119 @@ function HeroHeadlineBlock() {
   )
 }
 
-/* ───────────────────── Used in these schools (item #03) ───────────────────── */
+/* ───────────────────── Board picker (the main event) ───────────────────── */
 
-function UsedInSchools() {
+type Board = {
+  name: string
+  initials: string
+  href: string
+  blurb: string
+  // Tailwind classes for the initials disc.
+  discClass: string
+}
+
+const BOARDS: Board[] = [
+  {
+    name: 'AQA',
+    initials: 'AQA',
+    href: '/revision/poetry/power-and-conflict',
+    blurb: 'Power &amp; Conflict, Love &amp; Relationships, Worlds &amp; Lives.',
+    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+  },
+  {
+    name: 'Pearson Edexcel',
+    initials: 'EDX',
+    href: '/revision/poetry/edexcel',
+    blurb: 'Time &amp; Place, Conflict, Relationships anthology.',
+    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+  },
+  {
+    name: 'OCR',
+    initials: 'OCR',
+    href: '/revision/poetry/ocr',
+    blurb: 'Love, Conflict, Power &amp; Natural World, Youth &amp; Age.',
+    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+  },
+  {
+    name: 'WJEC Eduqas',
+    initials: 'WJEC',
+    href: '/revision/poetry/eduqas',
+    blurb: 'Eduqas Anthology poems with annotated walkthroughs.',
+    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+  },
+  {
+    name: 'Cambridge IGCSE',
+    initials: 'CIE',
+    href: '/igcse/cambridge',
+    blurb: '0500 and 0990 &mdash; Reading, Composition, model answers.',
+    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+  },
+  {
+    name: 'Edexcel IGCSE',
+    initials: 'iEDX',
+    href: '/igcse/edexcel',
+    blurb: 'Drama, Prose, Shakespeare, Unseen Poetry.',
+    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+  },
+]
+
+function BoardPickerSection() {
   return (
-    <section className="bg-ink-950 py-14 sm:py-16 border-t border-cream-200/5">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 text-center">
-        <h2 className="font-mono text-[11px] tracking-[0.14em] uppercase text-ink-300 mb-8">
-          Used in these schools
-        </h2>
-        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-70 grayscale">
-          {[1, 2, 3, 4, 5].map((n) => (
-            <Image
-              key={n}
-              src={`/logos/school-${n}.svg`}
-              alt={`School ${n} logo placeholder`}
-              width={160}
-              height={40}
-              className="h-10 w-auto"
-            />
-          ))}
+    <section
+      aria-labelledby="board-picker-heading"
+      className="bg-ink-950 pb-14 sm:pb-20 border-t border-cream-200/5"
+    >
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
+        <div className="text-center mb-10 sm:mb-12">
+          <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-emerald-300 mb-3">
+            Start here
+          </p>
+          <h2
+            id="board-picker-heading"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
+          >
+            Pick your exam board to start.
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
+            Six boards covered. Tap your board and you&rsquo;ll land straight on the texts, poems
+            and papers you actually sit.
+          </p>
         </div>
-        <p className="mt-8 text-sm text-cream-200/70">
-          <Link href="/for-schools#founding" className="underline hover:text-clay-300">
-            Become a Founding School &mdash; 10 places.
+
+        <ul className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          {BOARDS.map((b) => (
+            <li key={b.name}>
+              <Link
+                href={b.href}
+                className="group flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-all hover:border-emerald-400/40 hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+              >
+                <div className="flex items-center gap-4">
+                  <span
+                    aria-hidden="true"
+                    className={`inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 ${b.discClass} font-mono text-xs sm:text-sm font-bold tracking-wide`}
+                  >
+                    {b.initials}
+                  </span>
+                  <h3 className="font-serif text-xl sm:text-2xl font-semibold text-cream-50 leading-tight">
+                    {b.name}
+                  </h3>
+                </div>
+                <p
+                  className="text-sm text-cream-100/70 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: b.blurb }}
+                />
+                <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-emerald-300 transition-colors group-hover:text-emerald-200">
+                  Open board <span aria-hidden="true">&rarr;</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-8 text-center text-xs text-cream-200/55">
+          Not sure which board?{' '}
+          <Link href="/board-select" className="underline underline-offset-4 hover:text-clay-300">
+            Choose by level instead.
           </Link>
         </p>
       </div>
@@ -150,103 +182,82 @@ function UsedInSchools() {
   )
 }
 
-/* ───────────────────── Trust strip (inline, server-rendered) ───────────────────── */
+/* ───────────────────── Try a feature (3 demo cards) ───────────────────── */
 
-function TrustStrip() {
-  // Removed 2026-04-25 (brand-voice \u00a711.5): "2,400 Students learning" and
-  // "4.9 Student rating / 5" \u2014 neither currently verifiable. "470+ lessons"
-  // and "130+ mock papers" also withdrawn pending founder content-DB count.
-  // Replaced with launch-honest verified facts only.
-  const stats = [
-    { value: 'AO', label: 'Marked against the real mark scheme' },
-    { value: '6', label: 'Exam boards covered' },
-    { value: '1\u20139', label: 'Grade tracking' },
-    { value: '7-day', label: 'Free trial' },
-    { value: 'UK', label: 'Built and hosted in the UK' },
-    { value: 'AI', label: 'The language young people need next' },
-  ]
-
-  return (
-    <section className="py-14 sm:py-16 bg-ink-950">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-6">
-        {stats.map((s) => (
-          <div key={s.label} className="flex flex-col gap-1.5">
-            <span className="font-serif italic text-3xl sm:text-[44px] font-normal tracking-tight leading-none text-clay-300">
-              {s.value}
-            </span>
-            <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-ink-300">
-              {s.label}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
+type Feature = {
+  title: string
+  href: string
+  description: string
+  cta: string
 }
 
-/* ───────────────────── Verified Content callout ───────────────────── */
+const FEATURES: Feature[] = [
+  {
+    title: 'AI essay feedback',
+    href: '/marking/sample/macbeth',
+    description:
+      'See a real Macbeth response marked against the AQA AO rubric &mdash; AO1 / AO2 / AO5 strengths and weaknesses, in under a minute.',
+    cta: 'Try the sample',
+  },
+  {
+    title: 'Mock exam preview',
+    href: '/mock-exams',
+    description:
+      'Walk through a full mock paper the way pupils sit it &mdash; timed, AO-aligned, with grade 1&ndash;9 prediction at the end.',
+    cta: 'Open the mocks',
+  },
+  {
+    title: 'Build your study plan',
+    href: '/revision/study-plan',
+    description:
+      'Tell us your board and exam date. We&rsquo;ll draft a week-by-week plan against the specification you actually sit.',
+    cta: 'Build my plan',
+  },
+]
 
-function VerifiedContentCallout() {
+function TryAFeatureSection() {
   return (
     <section
-      aria-labelledby="verified-content-heading"
-      className="bg-ink-950 pb-14 sm:pb-16 border-t border-cream-200/5"
+      aria-labelledby="try-feature-heading"
+      className="bg-ink-950 pb-14 sm:pb-20 border-t border-cream-200/5"
     >
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-10 sm:pt-12">
-        <div className="mx-auto max-w-3xl rounded-2xl border border-emerald-400/20 bg-emerald-400/5 px-5 py-5 sm:px-7 sm:py-6">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-5">
-            <div
-              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-300"
-              aria-hidden="true"
-            >
-              <span className="font-mono text-sm font-bold">{'✓'}</span>
-            </div>
-            <div className="flex-1">
-              <h3
-                id="verified-content-heading"
-                className="font-mono text-[11px] tracking-[0.14em] uppercase text-emerald-300"
-              >
-                Verified content
-              </h3>
-              <p className="mt-1.5 text-sm sm:text-base text-cream-100/85 leading-relaxed">
-                Every quote, date, and biography on the platform is cross-checked against primary
-                sources &mdash; Project Gutenberg, the Folger Shakespeare Library, and official
-                exam-board syllabus PDFs.
-              </p>
-              <p className="mt-3">
-                <Link
-                  href="/about/verified-content"
-                  className="inline-flex items-center gap-1 text-sm font-medium text-emerald-300 underline-offset-4 hover:text-emerald-200 hover:underline"
-                >
-                  See how we verify &rarr;
-                </Link>
-              </p>
-            </div>
-          </div>
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
+        <div className="text-center mb-10 sm:mb-12">
+          <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-clay-300 mb-3">
+            Try a feature
+          </p>
+          <h2
+            id="try-feature-heading"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
+          >
+            See the platform in action.
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
+            No login. No card. Three free uses of the premium features before the trial even starts.
+          </p>
         </div>
-      </div>
-    </section>
-  )
-}
 
-/* ───────────────────── MAT band (item #26) ───────────────────── */
-
-function MATBand() {
-  return (
-    <section className="w-full bg-teal-900/95 border-y border-teal-700/40">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 py-14 sm:py-16 text-center">
-        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-cream-50 mb-3">
-          For ambitious MATs
-        </h2>
-        <p className="text-cream-100/80 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-          If you run 3+ schools, speak to the founder directly about a trust-wide rollout.
-        </p>
-        <a
-          href="/contact"
-          className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-8 py-3.5 text-base font-bold text-ink-950 transition-colors hover:bg-emerald-300 shadow-lg shadow-emerald-400/20"
-        >
-          Get in touch &rarr;
-        </a>
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+          {FEATURES.map((f) => (
+            <li key={f.title}>
+              <Link
+                href={f.href}
+                className="group flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-6 transition-all hover:border-clay-300/40 hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+              >
+                <h3 className="font-serif text-xl sm:text-2xl font-semibold text-cream-50 leading-tight">
+                  {f.title}
+                </h3>
+                <p
+                  className="text-sm sm:text-base text-cream-100/75 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: f.description }}
+                />
+                <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-clay-300 transition-colors group-hover:text-clay-200">
+                  {f.cta} <span aria-hidden="true">&rarr;</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )
