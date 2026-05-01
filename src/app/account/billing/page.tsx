@@ -92,7 +92,14 @@ export default function BillingPage() {
     ? new Date(profile.subscription_end_date)
     : null
 
-  async function handleCheckout(plan: 'monthly') {
+  // Plan keys map 1:1 to /api/stripe/checkout's PlanKey type. Student keys
+  // resolve to STRIPE_PRICE_STUDENT_* env vars (with PRO_* fallback);
+  // Teacher keys resolve to STRIPE_PRICE_TEACHER_* (with PRO_* fallback).
+  // Previously both buttons sent `'monthly'` which silently charged every
+  // teacher at the student price.
+  type CheckoutPlan = 'student_monthly' | 'student_annual' | 'teacher_monthly' | 'teacher_annual'
+
+  async function handleCheckout(plan: CheckoutPlan) {
     setCheckoutLoading(plan)
     setError(null)
 
@@ -284,7 +291,9 @@ export default function BillingPage() {
                       {PRICING.STUDENT_MONTHLY_STANDARD}/month
                     </span>{' '}
                     / {PRICING.CURRENCY}
-                    <span className="line-through">{PRICING.STUDENT_ANNUAL_STANDARD}/year</span>{' '}
+                    <span className="line-through">
+                      {PRICING.STUDENT_ANNUAL_STANDARD}/year
+                    </span>{' '}
                     from {PRICING.PRICE_INCREASE_DATE}
                   </p>
                   <p className="text-sm text-emerald-500 font-semibold mb-2">
@@ -304,11 +313,11 @@ export default function BillingPage() {
                     </li>
                   </ul>
                   <button
-                    onClick={() => handleCheckout('monthly')}
+                    onClick={() => handleCheckout('student_monthly')}
                     disabled={checkoutLoading !== null}
                     className="btn-primary w-full text-sm"
                   >
-                    {checkoutLoading === 'monthly' ? (
+                    {checkoutLoading === 'student_monthly' ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin mr-2" />
                         Loading...
@@ -343,7 +352,9 @@ export default function BillingPage() {
                       {PRICING.TEACHER_MONTHLY_STANDARD}/month
                     </span>{' '}
                     / {PRICING.CURRENCY}
-                    <span className="line-through">{PRICING.TEACHER_ANNUAL_STANDARD}/year</span>{' '}
+                    <span className="line-through">
+                      {PRICING.TEACHER_ANNUAL_STANDARD}/year
+                    </span>{' '}
                     from {PRICING.PRICE_INCREASE_DATE}
                   </p>
                   <p className="text-sm text-emerald-500 font-semibold mb-2">
@@ -364,11 +375,11 @@ export default function BillingPage() {
                     </li>
                   </ul>
                   <button
-                    onClick={() => handleCheckout('monthly')}
+                    onClick={() => handleCheckout('teacher_monthly')}
                     disabled={checkoutLoading !== null}
                     className="btn-primary w-full text-sm bg-purple-600 hover:bg-purple-700"
                   >
-                    {checkoutLoading === 'monthly' ? (
+                    {checkoutLoading === 'teacher_monthly' ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin mr-2" />
                         Loading...

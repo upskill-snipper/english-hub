@@ -5,12 +5,54 @@ import { PRICING } from '@/constants/pricing'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
+/**
+ * Recognised plan identifiers. The legacy `'monthly' | 'annual'` keys
+ * resolve to the historical `STRIPE_PRICE_PRO_*` env vars (treated as the
+ * Student tier for backward compatibility). The granular `student_*` /
+ * `teacher_*` keys honour the dedicated STUDENT/TEACHER env vars when set
+ * — falling back to PRO_* when they aren't — so the billing page can drive
+ * distinct Student vs Teacher subscriptions without breaking existing
+ * deployments that only have the legacy env vars wired up.
+ */
+type PlanKey =
+  | 'monthly'
+  | 'annual'
+  | 'student_monthly'
+  | 'student_annual'
+  | 'teacher_monthly'
+  | 'teacher_annual'
+
 interface CheckoutRequestBody {
   priceId?: string
-  plan?: 'monthly' | 'annual'
+  plan?: PlanKey
   courseId?: string
   mode: 'subscription' | 'payment'
   rewardful_referral?: string | null
+}
+
+/**
+ * Resolve a plan key → Stripe price ID via env vars. The Stripe-sync
+ * script (`scripts/stripe-sync-products.ts`) provisions
+ * `STRIPE_PRICE_STUDENT_*` and `STRIPE_PRICE_TEACHER_*`, but historically
+ * only the `STRIPE_PRICE_PRO_*` pair was wired up. To avoid 500s in
+ * environments still on the legacy pair, fall back to PRO_* whenever the
+ * tier-specific env var is missing.
+ */
+function resolvePlanPriceId(plan: PlanKey): string | undefined {
+  switch (plan) {
+    case 'monthly':
+    case 'student_monthly':
+      return process.env.STRIPE_PRICE_STUDENT_MONTHLY || process.env.STRIPE_PRICE_PRO_MONTHLY
+    case 'annual':
+    case 'student_annual':
+      return process.env.STRIPE_PRICE_STUDENT_ANNUAL || process.env.STRIPE_PRICE_PRO_ANNUAL
+    case 'teacher_monthly':
+      return process.env.STRIPE_PRICE_TEACHER_MONTHLY || process.env.STRIPE_PRICE_PRO_MONTHLY
+    case 'teacher_annual':
+      return process.env.STRIPE_PRICE_TEACHER_ANNUAL || process.env.STRIPE_PRICE_PRO_ANNUAL
+    default:
+      return undefined
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -21,7 +63,10 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
@@ -36,24 +81,20 @@ export async function POST(request: NextRequest) {
 
     // Resolve plan identifier to a server-side price ID
     if (!priceId && body.plan) {
-      if (body.plan === 'monthly') {
-        priceId = process.env.STRIPE_PRICE_PRO_MONTHLY
-      } else if (body.plan === 'annual') {
-        priceId = process.env.STRIPE_PRICE_PRO_ANNUAL
-      }
+      priceId = resolvePlanPriceId(body.plan)
     }
 
     if (!priceId || !mode) {
       return NextResponse.json(
         { error: 'Missing required fields: priceId (or plan) and mode' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
     if (mode !== 'subscription' && mode !== 'payment') {
       return NextResponse.json(
         { error: 'Invalid mode. Must be "subscription" or "payment"' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -61,16 +102,26 @@ export async function POST(request: NextRequest) {
     if (courseId && (typeof courseId !== 'string' || courseId.length > 100)) {
       return NextResponse.json({ error: 'Invalid courseId' }, { status: 400 })
     }
-    if (rewardful_referral && (typeof rewardful_referral !== 'string' || rewardful_referral.length > 200)) {
+    if (
+      rewardful_referral &&
+      (typeof rewardful_referral !== 'string' || rewardful_referral.length > 200)
+    ) {
       return NextResponse.json({ error: 'Invalid referral code' }, { status: 400 })
     }
 
-    // Validate priceId against known price IDs (filter out undefined/empty values)
+    // Validate priceId against known price IDs (filter out undefined/empty values).
+    // Also accept the granular STUDENT_/TEACHER_ env vars when they are set —
+    // the resolver above can produce them, so the validator must too.
+    const tierEnvPriceIds = [
+      process.env.STRIPE_PRICE_STUDENT_MONTHLY,
+      process.env.STRIPE_PRICE_STUDENT_ANNUAL,
+      process.env.STRIPE_PRICE_TEACHER_MONTHLY,
+      process.env.STRIPE_PRICE_TEACHER_ANNUAL,
+    ]
     const validPriceIds = new Set(
-      [
-        ...Object.values(PRICE_IDS),
-        ...Object.values(COURSE_PRICE_MAP),
-      ].filter((id): id is string => typeof id === 'string' && id.length > 0)
+      [...Object.values(PRICE_IDS), ...Object.values(COURSE_PRICE_MAP), ...tierEnvPriceIds].filter(
+        (id): id is string => typeof id === 'string' && id.length > 0,
+      ),
     )
     if (!validPriceIds.has(priceId)) {
       return NextResponse.json({ error: 'Invalid price ID' }, { status: 400 })
@@ -84,10 +135,7 @@ export async function POST(request: NextRequest) {
     } = await supabase.auth.getUser()
 
     if (authError || !user) {
-      return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401 }
-      )
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     // Get or create Stripe customer
@@ -99,10 +147,7 @@ export async function POST(request: NextRequest) {
 
     if (profileError) {
       console.error('Failed to fetch profile:', profileError)
-      return NextResponse.json(
-        { error: 'Failed to fetch user profile' },
-        { status: 500 }
-      )
+      return NextResponse.json({ error: 'Failed to fetch user profile' }, { status: 500 })
     }
 
     let stripeCustomerId = profile?.stripe_customer_id
@@ -122,10 +167,7 @@ export async function POST(request: NextRequest) {
 
       if (updateError) {
         console.error('Failed to update profile with Stripe customer ID:', updateError)
-        return NextResponse.json(
-          { error: 'Failed to link Stripe customer' },
-          { status: 500 }
-        )
+        return NextResponse.json({ error: 'Failed to link Stripe customer' }, { status: 500 })
       }
     }
 
@@ -173,13 +215,10 @@ export async function POST(request: NextRequest) {
     if (error instanceof Stripe.errors.StripeError) {
       return NextResponse.json(
         { error: 'Payment processing error. Please try again.' },
-        { status: error.statusCode ?? 500 }
+        { status: error.statusCode ?? 500 },
       )
     }
 
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
