@@ -55,25 +55,24 @@ export default function ResendVerificationPage() {
         <div className="w-full max-w-md">
           <Card className="text-center">
             <CardContent className="pt-8">
-              <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-foreground mb-2">Check your inbox</h1>
-              <p className="text-muted-foreground mb-4">
-                If an account exists for{' '}
-                <span className="text-foreground font-medium">{email}</span>, we&apos;ve sent a
-                fresh verification link. Check your inbox (and spam folder).
+              <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" aria-hidden="true" />
+              <h1 className="text-2xl font-bold text-foreground mb-2">Sent</h1>
+              <p className="text-muted-foreground mb-6">
+                Check your inbox — including spam — for an email from The English Hub.
               </p>
-              <p className="text-xs text-muted-foreground mb-6">
+              <Button render={<Link href="/auth/login" />} className="w-full" size="lg">
+                Back to sign in
+              </Button>
+              <p className="text-xs text-muted-foreground mt-6">
                 Still no email? Contact{' '}
                 <a
-                  href="mailto:info@Upskillenergy.com"
+                  href="mailto:founder@theenglishhub.app"
                   className="underline underline-offset-2 hover:text-foreground transition-colors"
                 >
-                  info@Upskillenergy.com
-                </a>
+                  founder@theenglishhub.app
+                </a>{' '}
+                — we&apos;ll confirm you manually.
               </p>
-              <Button variant="outline" render={<Link href="/auth/login" />}>
-                Back to login
-              </Button>
             </CardContent>
           </Card>
         </div>
@@ -91,15 +90,14 @@ export default function ResendVerificationPage() {
           render={<Link href="/auth/login" />}
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to login
+          Back to sign in
         </Button>
 
         <Card>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Resend verification email</CardTitle>
+            <CardTitle className="text-2xl">Resend your verification email</CardTitle>
             <CardDescription>
-              Didn&apos;t receive your confirmation email? Enter your address and we&apos;ll send a
-              fresh link.
+              Pop your email in below. We&apos;ll send a fresh link to your inbox — check spam too.
             </CardDescription>
           </CardHeader>
 
@@ -114,7 +112,10 @@ export default function ResendVerificationPage() {
               <div className="space-y-1.5">
                 <Label htmlFor="email">Email address</Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Mail
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70"
+                    aria-hidden="true"
+                  />
                   <Input
                     id="email"
                     type="email"
@@ -124,6 +125,7 @@ export default function ResendVerificationPage() {
                     className="pl-11"
                     required
                     autoComplete="email"
+                    aria-invalid={!!error}
                   />
                 </div>
               </div>
@@ -131,14 +133,51 @@ export default function ResendVerificationPage() {
               <Button type="submit" disabled={loading} className="w-full" size="lg">
                 {loading ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                    Sending verification link...
+                    <Loader2 className="w-5 h-5 animate-spin mr-2" aria-hidden="true" />
+                    Sending fresh link...
                   </>
                 ) : (
-                  'Resend verification email'
+                  'Send me a fresh link'
                 )}
               </Button>
             </form>
+
+            <div className="mt-6 rounded-md border border-primary/20 bg-primary/5 px-4 py-4">
+              <h2 className="text-sm font-medium text-foreground mb-3">
+                Tried twice and still no email?
+              </h2>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li>
+                  <Link
+                    href="/auth/login"
+                    className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+                  >
+                    Sign in with Google instead
+                  </Link>{' '}
+                  — Google verifies your email for us, so you don&apos;t need our link.
+                </li>
+                <li>
+                  Already verified your link in another tab?{' '}
+                  <Link
+                    href="/auth/login"
+                    className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+                  >
+                    Just sign in
+                  </Link>
+                  .
+                </li>
+                <li>
+                  Contact us at{' '}
+                  <a
+                    href="mailto:founder@theenglishhub.app"
+                    className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+                  >
+                    founder@theenglishhub.app
+                  </a>{' '}
+                  — we&apos;ll confirm your email manually within a few hours.
+                </li>
+              </ul>
+            </div>
           </CardContent>
 
           <CardFooter className="flex-col gap-3">
@@ -152,15 +191,6 @@ export default function ResendVerificationPage() {
               >
                 Sign in
               </Button>
-            </p>
-            <p className="text-xs text-muted-foreground text-center">
-              Need help? Contact{' '}
-              <a
-                href="mailto:info@Upskillenergy.com"
-                className="underline underline-offset-2 hover:text-foreground transition-colors"
-              >
-                info@Upskillenergy.com
-              </a>
             </p>
           </CardFooter>
         </Card>

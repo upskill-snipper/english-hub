@@ -4,6 +4,11 @@ import { stripe, PRICE_IDS, COURSE_PRICE_MAP } from '@/lib/stripe'
 import { PRICING } from '@/constants/pricing'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import {
+  assertEmailVerifiedFor,
+  PolicyError,
+  emailVerificationRequiredResponse,
+} from '@/lib/auth/email-verification-policy'
 
 /**
  * Recognised plan identifiers. The legacy `'monthly' | 'annual'` keys
@@ -136,6 +141,21 @@ export async function POST(request: NextRequest) {
 
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    // Soft-verification gate: as of 28 Apr 2026 sign-up no longer requires
+    // a verified email, but Stripe checkout still does — this catches
+    // typo'd email addresses before any money moves. Policy lives in
+    // src/lib/auth/email-verification-policy.ts.
+    try {
+      assertEmailVerifiedFor('stripe_checkout', user)
+    } catch (e) {
+      if (e instanceof PolicyError) {
+        return NextResponse.json(emailVerificationRequiredResponse('stripe_checkout'), {
+          status: 403,
+        })
+      }
+      throw e
     }
 
     // Get or create Stripe customer

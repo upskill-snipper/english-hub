@@ -23,7 +23,7 @@
  * mobile reads entitlement via `/api/me/entitlements` on next foreground.
  */
 
-import { NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 
 import {
@@ -34,6 +34,11 @@ import {
   successResponse,
   unauthorizedResponse,
 } from '@/lib/api-response'
+import {
+  assertEmailVerifiedFor,
+  PolicyError,
+  emailVerificationRequiredResponse,
+} from '@/lib/auth/email-verification-policy'
 import { PRICING } from '@/constants/pricing'
 import { getClientIp, rateLimit } from '@/lib/rate-limit'
 import { PRICE_IDS, stripe } from '@/lib/stripe'
@@ -151,6 +156,20 @@ export async function POST(request: NextRequest) {
     } = await supabase.auth.getUser()
     if (authError !== null || user === null) {
       return unauthorizedResponse()
+    }
+
+    // Soft-verification gate: parity with /api/stripe/checkout. Money is
+    // about to move, so the user must have a verified email first. Policy
+    // lives in src/lib/auth/email-verification-policy.ts.
+    try {
+      assertEmailVerifiedFor('stripe_checkout', user)
+    } catch (e) {
+      if (e instanceof PolicyError) {
+        return NextResponse.json(emailVerificationRequiredResponse('stripe_checkout'), {
+          status: 403,
+        })
+      }
+      throw e
     }
 
     // Get / create Stripe customer — same pattern as /api/stripe/checkout.

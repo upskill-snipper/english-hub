@@ -40,6 +40,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
 
 function RegisterForm() {
   const searchParams = useSearchParams()
@@ -281,6 +282,7 @@ function RegisterForm() {
     // that case — the user is already logged in. Send them straight to the
     // dashboard with the welcome flag so onboarding fires. When there's no
     // session, fall back to the verification-pending success card.
+    // When Supabase email-confirmation is OFF, signUp() returns a session and we go straight to /dashboard. When confirmation is ON, no session → fall through to the verification-pending success card below.
     if (data.session) {
       window.location.assign('/dashboard?welcome=true')
       return
@@ -299,10 +301,10 @@ function RegisterForm() {
               <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
               <h1 className="text-2xl font-bold text-foreground mb-2">Check your email</h1>
               <p className="text-muted-foreground mb-4">
-                We&apos;ve sent a confirmation link to{' '}
-                <span className="text-foreground font-medium">{email}</span>. Please click the link
-                to verify your {accountType === 'teacher' ? 'teacher' : ''} account before signing
-                in.
+                Welcome to The English Hub. We&apos;ve sent a quick verification link to{' '}
+                <span className="text-foreground font-medium">{email}</span> so we can keep your
+                account safe — but you can keep exploring while you wait. The link will let you log
+                back in next time.
               </p>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6">
                 <p className="text-sm text-muted-foreground">
@@ -326,7 +328,14 @@ function RegisterForm() {
                 </Link>
                 .
               </p>
-              <Button render={<Link href="/auth/login" />}>Back to login</Button>
+              <div className="flex flex-col gap-2">
+                <Button className="w-full" render={<Link href="/revision" />}>
+                  Start exploring
+                </Button>
+                <Button variant="outline" className="w-full" render={<Link href="/" />}>
+                  Back to home
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -362,6 +371,10 @@ function RegisterForm() {
             Teacher sign-up
           </Button>
         </div>
+
+        <p className="mb-4 text-center text-xs text-muted-foreground">
+          Sign-up takes 30 seconds. No card required.
+        </p>
 
         <Card>
           <CardHeader className="text-center">
@@ -402,6 +415,18 @@ function RegisterForm() {
           </div>
 
           <CardContent>
+            <div className="mb-5 space-y-4">
+              <GoogleSignInButton redirectTo="/dashboard" className="w-full" />
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t border-border" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-card px-2 text-muted-foreground">or sign up with email</span>
+                </div>
+              </div>
+            </div>
+
             {error && (
               <Alert variant="destructive" className="mb-6">
                 <AlertDescription>{error}</AlertDescription>

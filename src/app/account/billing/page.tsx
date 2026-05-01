@@ -42,6 +42,11 @@ export default function BillingPage() {
   const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null)
   const [portalLoading, setPortalLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  // Set when /api/stripe/checkout returns 403 email_verification_required.
+  // Rendered as a calm inline notice (separate from the generic red error
+  // banner) with a link to /auth/resend-verification. See the
+  // soft-verification policy in src/lib/auth/email-verification-policy.ts.
+  const [needsEmailVerification, setNeedsEmailVerification] = useState(false)
 
   useEffect(() => {
     if (!user && !useAuthStore.getState().isLoading) {
@@ -102,6 +107,7 @@ export default function BillingPage() {
   async function handleCheckout(plan: CheckoutPlan) {
     setCheckoutLoading(plan)
     setError(null)
+    setNeedsEmailVerification(false)
 
     try {
       const res = await fetch('/api/stripe/checkout', {
@@ -117,6 +123,15 @@ export default function BillingPage() {
       const data = await res.json()
 
       if (!res.ok) {
+        // Soft email-verification gate (403). Render a calm inline notice
+        // with a link to resend the verification email, instead of the
+        // generic red error banner — this is the one expected non-error
+        // failure mode pre-checkout.
+        if (res.status === 403 && data?.error === 'email_verification_required') {
+          setNeedsEmailVerification(true)
+          setCheckoutLoading(null)
+          return
+        }
         setError(data.error || 'Failed to create checkout session.')
         setCheckoutLoading(null)
         return
@@ -182,6 +197,23 @@ export default function BillingPage() {
         {error && (
           <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
             {error}
+          </div>
+        )}
+
+        {needsEmailVerification && (
+          <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4 mb-6 text-clay-600 text-sm">
+            <p className="font-semibold mb-1">Verify your email before upgrading</p>
+            <p className="mb-3">
+              We&rsquo;ve sent a fresh link to{' '}
+              <span className="font-medium">{user?.email ?? 'your inbox'}</span>. Confirm it and
+              come back to finish checkout.
+            </p>
+            <Link
+              href="/auth/resend-verification"
+              className="inline-flex items-center gap-1.5 text-amber-700 underline underline-offset-2 hover:text-amber-700 transition-colors"
+            >
+              Resend now
+            </Link>
           </div>
         )}
 

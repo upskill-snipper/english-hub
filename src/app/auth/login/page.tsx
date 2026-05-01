@@ -18,6 +18,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
 
 function LoginForm() {
   const router = useRouter()
@@ -79,8 +80,7 @@ function LoginForm() {
       // /auth/forgot-password or a dedicated "resend verification" flow,
       // both of which respond identically whether or not the email exists.
       setError(
-        'Invalid email or password, or your email has not yet been verified. ' +
-          'Please check your credentials and verification link.',
+        "We couldn't sign you in. Double-check your email and password — or if you've just signed up, the verification link in your inbox might still be needed.",
       )
       setLoading(false)
       return
@@ -126,10 +126,23 @@ function LoginForm() {
         <Card>
           <CardHeader className="text-center">
             <h1 className="text-2xl font-semibold leading-none tracking-tight">Welcome back</h1>
-            <CardDescription>Sign in to your English Hub account.</CardDescription>
+            <CardDescription>
+              Sign in to your English Hub account. New here? Sign up below — it takes 30 seconds.
+            </CardDescription>
           </CardHeader>
 
           <CardContent>
+            <GoogleSignInButton redirectTo={redirectTo} className="w-full mb-4" />
+
+            <div className="relative mb-6">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t border-border" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-card px-2 text-muted-foreground">or sign in with email</span>
+              </div>
+            </div>
+
             {error && (
               <Alert variant="destructive" className="mb-6">
                 <AlertDescription>
@@ -217,17 +230,19 @@ function LoginForm() {
           </CardContent>
 
           <CardFooter className="flex-col gap-3 justify-center">
-            <p className="text-muted-foreground text-sm">
-              Didn&apos;t get it?{' '}
-              <Button
-                variant="link"
-                size="sm"
-                className="h-auto p-0 font-medium"
-                render={<Link href="/auth/resend-verification" />}
-              >
-                Resend verification email
-              </Button>
-            </p>
+            <div className="w-full rounded-md border border-primary/20 bg-primary/5 px-4 py-3 text-sm">
+              <p className="text-foreground">
+                Didn&apos;t get the verification email?{' '}
+                <Button
+                  variant="link"
+                  size="sm"
+                  className="h-auto p-0 font-medium"
+                  render={<Link href="/auth/resend-verification" />}
+                >
+                  Resend verification email
+                </Button>
+              </p>
+            </div>
             <p className="text-muted-foreground text-sm">
               Don&apos;t have an account?{' '}
               <Button
@@ -238,6 +253,16 @@ function LoginForm() {
               >
                 Start Free Trial
               </Button>
+            </p>
+            <p className="text-muted-foreground text-xs text-center">
+              If your account was created before 28 April 2026 and you can&apos;t sign in, contact{' '}
+              <a
+                href="mailto:founder@theenglishhub.app"
+                className="font-medium underline underline-offset-2 hover:no-underline"
+              >
+                founder@theenglishhub.app
+              </a>{' '}
+              — we&apos;ll sort it manually.
             </p>
           </CardFooter>
         </Card>

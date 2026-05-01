@@ -34,6 +34,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
 
 const BENEFITS = [
   { icon: BookOpen, text: '300+ ready-made lesson plans' },
@@ -174,10 +175,9 @@ export default function TeacherRegisterPage() {
       // Auto-login path: when Supabase email-confirmation is disabled,
       // signUp() returns a session and the user is already logged in.
       // Skip the "Check your email" card and route straight to the
-      // dashboard (which routes teachers to the right surface) with the
-      // welcome flag set so onboarding fires.
+      // teacher dashboard with the welcome flag set so onboarding fires.
       if (data.session) {
-        window.location.assign('/dashboard?welcome=true')
+        window.location.assign('/dashboard/teacher?welcome=true')
         return
       }
 
@@ -196,10 +196,13 @@ export default function TeacherRegisterPage() {
           <Card className="text-center">
             <CardContent className="pt-10 pb-8">
               <CheckCircle className="w-14 h-14 text-primary mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-foreground mb-3">Account created!</h1>
+              <h1 className="text-2xl font-bold text-foreground mb-3">
+                Welcome to The English Hub
+              </h1>
               <p className="text-muted-foreground mb-4">
-                Check your email to verify your address, then log in to access your teacher
-                dashboard.
+                We&rsquo;ve sent a quick verification link to{' '}
+                <span className="text-foreground font-medium">{email}</span> so we can keep your
+                account safe &mdash; but you can keep exploring while you wait.
               </p>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6 text-left">
                 <p className="text-sm text-muted-foreground">
@@ -209,9 +212,24 @@ export default function TeacherRegisterPage() {
                   required, cancel before day 7).
                 </p>
               </div>
-              <Button render={<Link href="/auth/login" />} className="w-full" size="lg">
-                Go to login
-              </Button>
+              <div className="flex flex-col gap-2 mb-4">
+                <Button render={<Link href="/demo/teacher" />} className="w-full" size="lg">
+                  Open the teacher dashboard preview
+                </Button>
+                <Button variant="outline" render={<Link href="/" />} className="w-full" size="lg">
+                  Back to home
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Didn&rsquo;t get the email?{' '}
+                <Link
+                  href="/auth/resend-verification"
+                  className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+                >
+                  Resend verification email
+                </Link>
+                .
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -248,6 +266,9 @@ export default function TeacherRegisterPage() {
           <p className="text-sm text-primary font-medium mt-2">
             From &pound;7.99/month &mdash; 7-day free trial, card required, cancel before day 7
           </p>
+          <p className="text-sm text-muted-foreground mt-2">
+            Sign-up takes under a minute. No card required.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -260,6 +281,17 @@ export default function TeacherRegisterPage() {
               </CardHeader>
 
               <CardContent>
+                {/* Google OAuth — Google sign-up users skip the school name
+                    field; we collect that later in /dashboard/teacher/profile. */}
+                <GoogleSignInButton redirectTo="/dashboard/teacher" className="w-full" />
+                <div className="my-6 flex items-center gap-3">
+                  <div className="h-px flex-1 bg-border" />
+                  <span className="text-xs uppercase tracking-wide text-muted-foreground">
+                    or sign up with email
+                  </span>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+
                 {error && (
                   <div className="mb-6 rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive">
                     {error}
