@@ -17,6 +17,88 @@ class WebhookMetadataError extends Error {
   }
 }
 
+/**
+ * Map a Stripe subscription `status` to our Prisma `SubscriptionStatus`
+ * enum. Kept narrow on purpose — `incomplete` / `unpaid` etc. fall back
+ * to `PAST_DUE` so the entitlement layer still revokes Pro access.
+ */
+function mapStripeToPrismaStatus(
+  stripeStatus: Stripe.Subscription.Status,
+): 'ACTIVE' | 'CANCELLED' | 'PAST_DUE' | 'TRIALING' | 'PAUSED' {
+  switch (stripeStatus) {
+    case 'active':
+      return 'ACTIVE'
+    case 'trialing':
+      return 'TRIALING'
+    case 'past_due':
+    case 'unpaid':
+    case 'incomplete':
+    case 'incomplete_expired':
+      return 'PAST_DUE'
+    case 'canceled':
+      return 'CANCELLED'
+    case 'paused':
+      return 'PAUSED'
+    default:
+      return 'PAST_DUE'
+  }
+}
+
+/**
+ * Upsert the public."Subscription" Prisma row that the rest of the app
+ * (entitlements, renewal reminders, growth dashboard) reads from. The
+ * Stripe webhook is the canonical point of truth for web-originated
+ * subscriptions; without this call the row only existed for mobile
+ * (RevenueCat) users.
+ */
+async function upsertStripeSubscriptionRow(
+  userId: string,
+  subscription: Stripe.Subscription,
+): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const sub = subscription as any
+  const periodStart = sub.current_period_start as number | undefined
+  const periodEnd = sub.current_period_end as number | undefined
+  // `items` is sometimes absent on test fixtures and on certain Stripe
+  // event shapes; tolerate that and default to MONTHLY.
+  const interval = subscription.items?.data?.[0]?.price?.recurring?.interval
+  const plan: 'MONTHLY' | 'ANNUAL' = interval === 'year' ? 'ANNUAL' : 'MONTHLY'
+  const status = mapStripeToPrismaStatus(subscription.status)
+  const cancelledAt =
+    subscription.status === 'canceled' && sub.ended_at ? new Date(sub.ended_at * 1000) : null
+
+  try {
+    await prisma.subscription.upsert({
+      where: { userId },
+      create: {
+        userId,
+        stripeCustomerId: subscription.customer as string,
+        stripeSubscriptionId: subscription.id,
+        plan,
+        status,
+        currentPeriodStart: periodStart ? new Date(periodStart * 1000) : new Date(),
+        currentPeriodEnd: periodEnd ? new Date(periodEnd * 1000) : new Date(),
+        cancelledAt,
+        platform: 'WEB',
+      },
+      update: {
+        stripeCustomerId: subscription.customer as string,
+        stripeSubscriptionId: subscription.id,
+        plan,
+        status,
+        ...(periodStart && { currentPeriodStart: new Date(periodStart * 1000) }),
+        ...(periodEnd && { currentPeriodEnd: new Date(periodEnd * 1000) }),
+        cancelledAt,
+      },
+    })
+  } catch (err) {
+    // Log but do not fail the webhook — the Supabase profile write is the
+    // load-bearing one for entitlement gating; the Prisma row is the
+    // canonical record for renewals / dashboards and can be back-filled.
+    console.error('[stripe/webhook] Failed to upsert Subscription row:', err)
+  }
+}
+
 export async function POST(request: NextRequest) {
   if (!process.env.STRIPE_WEBHOOK_SECRET) {
     console.error('STRIPE_WEBHOOK_SECRET is not configured')
@@ -105,6 +187,25 @@ export async function POST(request: NextRequest) {
             currency: invoice.currency,
           }),
         )
+
+        // Mark the profile past_due immediately. Stripe will eventually fire
+        // a `customer.subscription.updated` with `status: 'past_due'`, but
+        // delivery order / lag is not guaranteed — flipping the flag here
+        // keeps the entitlement gate honest from the moment the charge fails.
+        if (failedProfile) {
+          const { error: pastDueError } = await supabase
+            .from('profiles')
+            .update({ subscription_status: 'past_due' })
+            .eq('id', failedProfile.id)
+
+          if (pastDueError) {
+            console.error(
+              '[stripe/webhook] Failed to set subscription_status=past_due:',
+              pastDueError,
+            )
+            throw pastDueError
+          }
+        }
 
         // Send payment-failed notification via Resend (non-blocking)
         const resendApiKey = process.env.RESEND_API_KEY
@@ -297,8 +398,23 @@ export async function POST(request: NextRequest) {
           if (profile) userId = profile.id
         }
         if (!userId) {
-          console.error('Could not resolve user for subscription', subscription.id)
-          return NextResponse.json({ received: true })
+          // Loud, structured error so it shows up in Sentry / log search.
+          // Returning 500 makes Stripe retry — preferable to silently
+          // dropping a paying customer's first subscription event.
+          console.error(
+            JSON.stringify({
+              level: 'error',
+              event: 'customer.subscription.created',
+              error: 'unresolved_user',
+              subscriptionId: subscription.id,
+              customerId: subscription.customer,
+              metadata: subscription.metadata,
+            }),
+          )
+          return NextResponse.json(
+            { error: 'Could not resolve user for subscription' },
+            { status: 500 },
+          )
         }
 
         const activeStatuses = ['active', 'trialing']
@@ -322,6 +438,12 @@ export async function POST(request: NextRequest) {
           console.error('Failed to update profile for new subscription:', error)
           throw error
         }
+
+        // Mirror to the Prisma `Subscription` row so entitlements,
+        // renewal reminders, and the growth dashboard see the new
+        // subscription. (Until now this row was only created by the
+        // RevenueCat mobile reconciler.)
+        await upsertStripeSubscriptionRow(userId, subscription)
         break
       }
 
@@ -396,6 +518,12 @@ async function handleCheckoutCompleted(
       throw error
     }
 
+    // Ensure the Prisma `Subscription` row exists at checkout time. This
+    // is the first event in the subscription lifecycle, so the rest of
+    // the app sees the new subscription immediately rather than waiting
+    // for the trailing `customer.subscription.created`.
+    await upsertStripeSubscriptionRow(userId, subscription)
+
     // Grandfathering capture (R-031). Lock the price + tier on the Prisma
     // Subscription row at signup so renewals after the Aug 2026 Standard
     // rollover still charge / display the Early Access price. Preserves any
@@ -405,13 +533,11 @@ async function handleCheckoutCompleted(
       if (!existingSub?.grandfatheredPriceMinor) {
         const isTeacherPlan = existingSub?.isTeacherPlan ?? false
         const plan: PricingPlan =
-          existingSub?.plan === 'ANNUAL' || subscription.items.data[0]?.price?.recurring?.interval === 'year'
+          existingSub?.plan === 'ANNUAL' ||
+          subscription.items.data[0]?.price?.recurring?.interval === 'year'
             ? 'ANNUAL'
             : 'MONTHLY'
-        const grandfather = captureGrandfatherFields(
-          plan,
-          isTeacherPlan ? 'teacher' : 'student',
-        )
+        const grandfather = captureGrandfatherFields(plan, isTeacherPlan ? 'teacher' : 'student')
         if (existingSub) {
           await prisma.subscription.update({
             where: { userId },
@@ -540,6 +666,9 @@ async function handleSubscriptionUpdated(
     console.error('Failed to update subscription_status:', error)
     throw error
   }
+
+  // Keep the Prisma `Subscription` row in lock-step with the profile.
+  await upsertStripeSubscriptionRow(userId, subscription)
 }
 
 async function handleSubscriptionDeleted(
@@ -582,6 +711,9 @@ async function handleSubscriptionDeleted(
     console.error('Failed to set subscription_status to cancelled:', error)
     throw error
   }
+
+  // Mirror cancellation onto the Prisma `Subscription` row.
+  await upsertStripeSubscriptionRow(userId, subscription)
 
   // Void any pending/confirmed affiliate commissions for this subscription
   const { error: voidError, count: voidedCount } = await supabase

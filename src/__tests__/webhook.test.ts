@@ -27,7 +27,10 @@ function createSupabaseMock() {
   const updateEqFn = vi.fn(() => ({ error: null, in: updateInFn }))
   const updateFn = vi.fn(() => ({ eq: updateEqFn }))
 
-  const singleFn = vi.fn(() => ({ data: { id: 'user-123', email: 'test@test.com', subscription_status: 'pro' }, error: null }))
+  const singleFn = vi.fn(() => ({
+    data: { id: 'user-123', email: 'test@test.com', subscription_status: 'pro' },
+    error: null,
+  }))
   const inFn = vi.fn(() => ({ single: vi.fn(() => ({ data: null, error: null })) }))
   const selectEqFn = vi.fn(() => ({ single: singleFn, in: inFn }))
   const selectFn = vi.fn(() => ({ eq: selectEqFn }))
@@ -61,7 +64,17 @@ function createSupabaseMock() {
   return {
     from: fromFn,
     // Expose inner mocks so tests can inspect/override them
-    _mocks: { fromFn, updateFn, updateEqFn, selectFn, selectEqFn, singleFn, inFn, upsertFn, insertFn },
+    _mocks: {
+      fromFn,
+      updateFn,
+      updateEqFn,
+      selectFn,
+      selectEqFn,
+      singleFn,
+      inFn,
+      upsertFn,
+      insertFn,
+    },
   }
 }
 
@@ -170,7 +183,7 @@ describe('Stripe Webhook POST handler', () => {
     expect(mockRetrieveSubscription).toHaveBeenCalledWith('sub_123')
     expect(supabaseMock.from).toHaveBeenCalledWith('profiles')
     expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ subscription_status: 'pro' })
+      expect.objectContaining({ subscription_status: 'pro' }),
     )
     expect(supabaseMock._mocks.updateEqFn).toHaveBeenCalledWith('id', 'user-123')
   })
@@ -192,7 +205,7 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
     expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ subscription_status: 'pro' })
+      expect.objectContaining({ subscription_status: 'pro' }),
     )
   })
 
@@ -213,7 +226,7 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
     expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ subscription_status: 'incomplete' })
+      expect.objectContaining({ subscription_status: 'incomplete' }),
     )
   })
 
@@ -240,7 +253,7 @@ describe('Stripe Webhook POST handler', () => {
         payment_type: 'one_time',
         stripe_payment_intent_id: 'pi_abc',
       },
-      { onConflict: 'user_id,course_id' }
+      { onConflict: 'user_id,course_id' },
     )
   })
 
@@ -289,7 +302,7 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
     expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ subscription_status: 'past_due' })
+      expect.objectContaining({ subscription_status: 'past_due' }),
     )
   })
 
@@ -324,7 +337,7 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
     expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ subscription_status: 'cancelled' })
+      expect.objectContaining({ subscription_status: 'cancelled' }),
     )
     // Should also check affiliate_referrals
     expect(supabaseMock.from).toHaveBeenCalledWith('affiliate_referrals')
@@ -363,7 +376,7 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
     expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ subscription_status: 'pro' })
+      expect.objectContaining({ subscription_status: 'pro' }),
     )
   })
 
@@ -414,7 +427,7 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
     expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ subscription_status: 'pro' })
+      expect.objectContaining({ subscription_status: 'pro' }),
     )
     expect(supabaseMock._mocks.updateEqFn).toHaveBeenCalledWith('id', 'user-123')
   })
@@ -434,7 +447,7 @@ describe('Stripe Webhook POST handler', () => {
     expect(supabaseMock._mocks.selectEqFn).toHaveBeenCalledWith('stripe_customer_id', 'cus_999')
   })
 
-  it('returns 200 and does nothing when user cannot be resolved for subscription.created', async () => {
+  it('returns 500 (so Stripe retries) when user cannot be resolved for subscription.created', async () => {
     // Override single() to return no profile
     supabaseMock._mocks.singleFn.mockReturnValue({ data: null, error: null } as any)
 
@@ -448,7 +461,8 @@ describe('Stripe Webhook POST handler', () => {
     mockConstructEvent.mockReturnValue(makeEvent('customer.subscription.created', subscription))
 
     const res = await POST(buildRequest('{}', 'sig_ok'))
-    expect(res.status).toBe(200)
+    // 500 forces Stripe to retry rather than silently dropping the event
+    expect(res.status).toBe(500)
     // update should not be called since no user was found
     expect(supabaseMock._mocks.updateFn).not.toHaveBeenCalled()
   })
