@@ -1,21 +1,11 @@
-import { redirect } from 'next/navigation'
-import { getServerBoard } from '@/lib/board/get-server-board'
-
-export default async function CaieLitLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const board = await getServerBoard()
-  // Cambridge boards in our store (cambridge-0500 / cambridge-0990) are
-  // language-only — they do not study the literature syllabus we cover here.
-  // Redirect Cambridge users to the language equivalent, and redirect any
-  // other board to the literature hub.
-  if (board === 'cambridge-0500' || board === 'cambridge-0990') {
-    redirect('/resources/english-language/caie')
-  }
-  if (board) {
-    redirect('/resources/english-literature')
-  }
+// 28 Apr 2026 — wrong-board cookie redirect intentionally removed.
+// See /revision/poetry/edexcel/layout.tsx for the canonical version of
+// this fix. Bouncing stale-cookie users away from URLs they explicitly
+// clicked silently broke the homepage / cross-hub navigation flows.
+// Render the page; cross-board UX nudges belong on the unified hubs.
+// (The previous Cambridge-board → language redirect lived here too; it
+// was part of the same wrong-board bounce pattern and is removed for
+// the same reason.)
+export default function CaieLitLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
