@@ -28,8 +28,7 @@ export default function PressPage() {
           What makes it different: every piece of feedback, every mark scheme reference, and every
           model answer is anchored to the real examiners’ mark schemes used by AQA, Edexcel, OCR,
           Eduqas, and Cambridge. The artificial intelligence layer is trained on those rubrics, not
-          generic writing heuristics. The product is built by a serving UK secondary English
-          teacher, which shapes the pedagogy, tone, and pace.
+          generic writing heuristics.
         </p>
       </PressSection>
 
@@ -125,7 +124,7 @@ export default function PressPage() {
             Feedback trained on the actual mark schemes published by AQA, Edexcel, OCR, Eduqas, and
             Cambridge — not generic writing rubrics.
           </li>
-          <li>Built and edited by a serving UK secondary English teacher.</li>
+          <li>Feedback explained in plain English, calibrated to the AO rubric.</li>
           <li>
             Every school picks its board during setup, so pupils only ever see content that maps to
             their specification.

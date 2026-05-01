@@ -21,11 +21,27 @@ export default async function Home() {
       {/* Funnel: home_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="home_viewed" />
 
-      {/* 1. Tight hero — short, named, kept as-is. */}
-      <HeroHeadlineBlock />
+      {/* 1. GCSE board picker — opens the page; clear level split. */}
+      <BoardPickerSection
+        level="gcse"
+        boards={GCSE_BOARDS}
+        sectionId="gcse-boards"
+        kicker="Start here — pick your exam board"
+        heading="GCSE boards"
+        subheading="Year 10–11, ages 14–16. Tap your board and you’ll land on the exact specification you sit."
+        showHelpLink={false}
+      />
 
-      {/* 2. Board picker — the main job of the homepage. */}
-      <BoardPickerSection />
+      {/* 2. IGCSE board picker — international split with a thin divider on top. */}
+      <BoardPickerSection
+        level="igcse"
+        boards={IGCSE_BOARDS}
+        sectionId="igcse-boards"
+        heading="IGCSE boards (international)"
+        subheading="International routes for the same age group. Pick the spec your school enters."
+        showHelpLink
+        showDivider
+      />
 
       {/* 3. Try-a-feature row — three demo cards into the platform's strengths. */}
       <TryAFeatureSection />
@@ -39,123 +55,162 @@ export default async function Home() {
   )
 }
 
-/* ───────────────────── Hero headline block (kept) ───────────────────── */
-
-function HeroHeadlineBlock() {
-  return (
-    <section className="bg-ink-950">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 pb-8 sm:pt-16 sm:pb-10 text-center">
-        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight">
-          Built by a teacher. Marked by AI.
-          <br className="hidden sm:block" />
-          <span className="text-clay-300 italic"> Against the real AO mark scheme.</span>
-        </h1>
-        <p className="mt-5 max-w-2xl mx-auto text-base sm:text-lg text-cream-100/80 leading-relaxed">
-          GCSE &amp; IGCSE English revision, AI-marked essays and mocks &mdash; co-founded by a
-          serving UK secondary English teacher.
-        </p>
-        <p className="mt-3 text-xs text-cream-200/55">
-          We&rsquo;re at launch and we say so plainly. Founding pricing locked for the first cohort.
-        </p>
-      </div>
-    </section>
-  )
-}
-
 /* ───────────────────── Board picker (the main event) ───────────────────── */
+
+type BoardLevel = 'gcse' | 'igcse'
 
 type Board = {
   name: string
   initials: string
   href: string
   blurb: string
+  level: BoardLevel
   // Tailwind classes for the initials disc.
   discClass: string
 }
 
-const BOARDS: Board[] = [
+const GCSE_BOARDS: Board[] = [
   {
     name: 'AQA',
     initials: 'AQA',
     href: '/revision/poetry/power-and-conflict',
     blurb: 'Power &amp; Conflict, Love &amp; Relationships, Worlds &amp; Lives.',
+    level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
   },
   {
-    name: 'Pearson Edexcel',
+    name: 'Pearson Edexcel GCSE',
     initials: 'EDX',
     href: '/revision/poetry/edexcel',
     blurb: 'Time &amp; Place, Conflict, Relationships anthology.',
-    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+    level: 'gcse',
+    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
   },
   {
     name: 'OCR',
     initials: 'OCR',
     href: '/revision/poetry/ocr',
     blurb: 'Love, Conflict, Power &amp; Natural World, Youth &amp; Age.',
+    level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
   },
   {
     name: 'WJEC Eduqas',
     initials: 'WJEC',
     href: '/revision/poetry/eduqas',
-    blurb: 'Eduqas Anthology poems with annotated walkthroughs.',
-    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+    blurb: 'Eduqas anthology with annotated walkthroughs.',
+    level: 'gcse',
+    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
   },
+]
+
+const IGCSE_BOARDS: Board[] = [
   {
-    name: 'Cambridge IGCSE',
+    name: 'Cambridge IGCSE (CIE 0500 / 0990)',
     initials: 'CIE',
     href: '/igcse/cambridge',
     blurb: '0500 and 0990 &mdash; Reading, Composition, model answers.',
-    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+    level: 'igcse',
+    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
   },
   {
-    name: 'Edexcel IGCSE',
-    initials: 'iEDX',
+    name: 'Pearson Edexcel IGCSE Literature (4ET1)',
+    initials: 'iEDX-Lit',
     href: '/igcse/edexcel',
     blurb: 'Drama, Prose, Shakespeare, Unseen Poetry.',
+    level: 'igcse',
+    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+  },
+  {
+    name: 'Pearson Edexcel IGCSE Language A (4EA1)',
+    initials: 'iEDX-Lang',
+    href: '/igcse/edexcel-lang',
+    blurb: 'Anthology, non-fiction, transactional writing.',
+    level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
   },
 ]
 
-function BoardPickerSection() {
+type BoardPickerSectionProps = {
+  level: BoardLevel
+  boards: Board[]
+  sectionId: string
+  heading: string
+  subheading: string
+  kicker?: string
+  showHelpLink?: boolean
+  showDivider?: boolean
+}
+
+function BoardPickerSection({
+  level,
+  boards,
+  sectionId,
+  heading,
+  subheading,
+  kicker,
+  showHelpLink = false,
+  showDivider = false,
+}: BoardPickerSectionProps) {
+  const headingId = `${sectionId}-heading`
+  const isGcse = level === 'gcse'
+
   return (
     <section
-      aria-labelledby="board-picker-heading"
-      className="bg-ink-950 pb-14 sm:pb-20 border-t border-cream-200/5"
+      aria-labelledby={headingId}
+      className={`bg-ink-950 pb-14 sm:pb-20${showDivider ? ' border-t border-cream-200/10' : ''}`}
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
         <div className="text-center mb-10 sm:mb-12">
-          <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-emerald-300 mb-3">
-            Start here
-          </p>
+          {kicker ? (
+            <p
+              className={`font-mono text-[11px] tracking-[0.14em] uppercase mb-3 ${
+                isGcse ? 'text-emerald-300' : 'text-clay-300'
+              }`}
+            >
+              {kicker}
+            </p>
+          ) : null}
           <h2
-            id="board-picker-heading"
+            id={headingId}
             className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
           >
-            Pick your exam board to start.
+            {heading}
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
-            Six boards covered. Tap your board and you&rsquo;ll land straight on the texts, poems
-            and papers you actually sit.
+            {subheading}
           </p>
         </div>
 
-        <ul className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {BOARDS.map((b) => (
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          {boards.map((b) => (
             <li key={b.name}>
               <Link
                 href={b.href}
-                className="group flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-all hover:border-emerald-400/40 hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+                className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-all hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 ${
+                  b.level === 'gcse'
+                    ? 'hover:border-emerald-400/40 focus-visible:ring-emerald-400'
+                    : 'hover:border-clay-300/40 focus-visible:ring-clay-300'
+                }`}
               >
-                <div className="flex items-center gap-4">
+                <span
+                  aria-hidden="true"
+                  className={`absolute right-4 top-4 inline-flex items-center rounded-full border px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase ${
+                    b.level === 'gcse'
+                      ? 'border-emerald-300/40 text-emerald-300'
+                      : 'border-clay-300/40 text-clay-300'
+                  }`}
+                >
+                  {b.level === 'gcse' ? 'GCSE' : 'IGCSE'}
+                </span>
+                <div className="flex items-center gap-4 pr-16">
                   <span
                     aria-hidden="true"
                     className={`inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 ${b.discClass} font-mono text-xs sm:text-sm font-bold tracking-wide`}
                   >
                     {b.initials}
                   </span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-semibold text-cream-50 leading-tight">
+                  <h3 className="font-serif text-lg sm:text-xl font-semibold text-cream-50 leading-tight">
                     {b.name}
                   </h3>
                 </div>
@@ -163,7 +218,13 @@ function BoardPickerSection() {
                   className="text-sm text-cream-100/70 leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: b.blurb }}
                 />
-                <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-emerald-300 transition-colors group-hover:text-emerald-200">
+                <span
+                  className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
+                    b.level === 'gcse'
+                      ? 'text-emerald-300 group-hover:text-emerald-200'
+                      : 'text-clay-300 group-hover:text-clay-200'
+                  }`}
+                >
                   Open board <span aria-hidden="true">&rarr;</span>
                 </span>
               </Link>
@@ -171,12 +232,14 @@ function BoardPickerSection() {
           ))}
         </ul>
 
-        <p className="mt-8 text-center text-xs text-cream-200/55">
-          Not sure which board?{' '}
-          <Link href="/board-select" className="underline underline-offset-4 hover:text-clay-300">
-            Choose by level instead.
-          </Link>
-        </p>
+        {showHelpLink ? (
+          <p className="mt-8 text-center text-xs text-cream-200/55">
+            Not sure which spec your school sits?{' '}
+            <Link href="/board-select" className="underline underline-offset-4 hover:text-clay-300">
+              Choose by level instead.
+            </Link>
+          </p>
+        ) : null}
       </div>
     </section>
   )

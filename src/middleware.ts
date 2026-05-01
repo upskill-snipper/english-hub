@@ -291,16 +291,37 @@ export async function middleware(request: NextRequest) {
   const nonce = btoa(globalThis.crypto.randomUUID())
 
   // ── Unified hub redirect — board landing → /revision with cookie set.
+  //
+  // 28 Apr 2026 — narrowed. Previously this fired unconditionally, so a
+  // user with `english-hub-board=aqa` clicking the homepage's IGCSE
+  // Edexcel card was silently switched to `edexcel-igcse` AND bounced
+  // to /revision, rendering whichever hub their previous board mapped
+  // to. That manifested as "Clicking GCSE Pearson takes me to IGCSE Lit"
+  // (the second-order effect once the cookie had been corrupted).
+  //
+  // The redirect is now first-visit only: a user with no board cookie
+  // arriving on a landing URL gets the cookie set and is sent to the
+  // unified hub (the original "Your <Board> Hub" UX). A returning user
+  // with any board cookie is allowed to see the page they explicitly
+  // requested. Page-level guards (e.g. requireIgcseBoard) used to bounce
+  // mismatched cookies away from board pages, but those have also been
+  // softened — the homepage now treats every board card as an explicit
+  // user choice that should always render.
   const boardForLanding = BOARD_LANDING_REDIRECTS[pathname]
   if (boardForLanding) {
-    const redirectUrl = new URL('/revision', request.url)
-    const response = NextResponse.redirect(redirectUrl)
-    response.cookies.set('english-hub-board', boardForLanding, {
-      path: '/',
-      maxAge: 60 * 60 * 24 * 365, // 1 year
-      sameSite: 'lax',
-    })
-    return response
+    const existingCookie = request.cookies.get('english-hub-board')?.value
+    if (!existingCookie) {
+      const redirectUrl = new URL('/revision', request.url)
+      const response = NextResponse.redirect(redirectUrl)
+      response.cookies.set('english-hub-board', boardForLanding, {
+        path: '/',
+        maxAge: 60 * 60 * 24 * 365, // 1 year
+        sameSite: 'lax',
+      })
+      return response
+    }
+    // Returning user — fall through to the normal CSP/nonce pipeline so
+    // the page they clicked actually renders.
   }
 
   // ── Retired-page redirect (e.g. /toolkit → /revision) ──────────────

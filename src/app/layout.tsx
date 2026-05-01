@@ -26,27 +26,36 @@ const monaSans = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://theenglishhub.app'),
   title: {
-    default: 'The English Hub — Master English. Ace Your Exams.',
+    default: 'The English Hub — GCSE & IGCSE English revision, AI marked',
     template: '%s — The English Hub',
   },
   description:
-    'GCSE, IGCSE & KS3 English platform with 470+ courses, 30 interactive poem study pages, 7 GCSE-grade games, a full revision hub (Grade 5/7/9 guides), reading assessment with fluency testing, AI essay feedback, and 130+ mock papers. AQA, Edexcel, OCR & WJEC.',
+    'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
   alternates: {
     canonical: 'https://theenglishhub.app',
   },
   openGraph: {
-    title: 'The English Hub — Master English. Ace Your Exams.',
-    description: '470+ courses, 30 interactive poem studies, 7 GCSE-grade games, full revision hub with grade 5/7/9 targets, reading assessment, AI essay feedback and 130+ mock papers. AQA, Edexcel, OCR & WJEC.',
+    title: 'The English Hub — GCSE & IGCSE English revision, AI marked',
+    description:
+      'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
     url: 'https://theenglishhub.app',
     siteName: 'The English Hub',
     type: 'website',
     locale: 'en_GB',
-    images: [{ url: '/api/og', width: 1200, height: 630, alt: 'The English Hub' }],
+    images: [
+      {
+        url: '/api/og',
+        width: 1200,
+        height: 630,
+        alt: 'The English Hub — GCSE and IGCSE English revision',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The English Hub — Master English. Ace Your Exams.',
-    description: '470+ courses, 30 interactive poem studies, 7 GCSE-grade games, revision hub, reading assessment & AI essay feedback. AQA, Edexcel, OCR & WJEC.',
+    title: 'The English Hub — GCSE & IGCSE English revision, AI marked',
+    description:
+      'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
     images: ['/api/og'],
   },
 }
@@ -57,18 +66,17 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const initialBoard = await getServerBoard()
   return (
     <html lang="en-GB" className={monaSans.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
         <link rel="manifest" href="/manifest.json" />
         {process.env.NEXT_PUBLIC_TRUSTPILOT_VERIFICATION_ID ? (
           <meta
@@ -82,7 +90,10 @@ export default async function RootLayout({
             unconditionally here would breach PECR reg. 6. */}
       </head>
       <body className="min-h-screen font-sans antialiased">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
+        >
           Skip to content
         </a>
         <SupabaseProvider>

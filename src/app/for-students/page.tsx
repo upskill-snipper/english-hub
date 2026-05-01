@@ -89,7 +89,11 @@ export default function ForStudentsPage() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Button size="lg" className="text-base h-12 px-6" render={<Link href="/auth/register" />}>
+            <Button
+              size="lg"
+              className="text-base h-12 px-6"
+              render={<Link href="/auth/register" />}
+            >
               Start free &mdash; no card
               <ArrowRight className="w-4 h-4" />
             </Button>
@@ -144,7 +148,7 @@ export default function ForStudentsPage() {
               A complete, personalised learning hub
             </h2>
             <p className="mt-3 max-w-xl mx-auto text-muted-foreground">
-              Built by examiners. Marked by AI. Designed to help you go further, faster.
+              GCSE and IGCSE English revision, AI marked against the AO rubric.
             </p>
           </div>
         </div>
@@ -174,11 +178,15 @@ export default function ForStudentsPage() {
             Ready to level up your English?
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Free trial, no card. Cancel any time. Unlimited courses, flashcards, and revision
-            notes &mdash; 3 free uses of every AI tool before you decide.
+            Free trial, no card. Cancel any time. Unlimited courses, flashcards, and revision notes
+            &mdash; 3 free uses of every AI tool before you decide.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <Button size="lg" className="text-base h-12 px-6" render={<Link href="/auth/register" />}>
+            <Button
+              size="lg"
+              className="text-base h-12 px-6"
+              render={<Link href="/auth/register" />}
+            >
               Create free account
               <ArrowRight className="w-4 h-4" />
             </Button>

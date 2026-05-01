@@ -1,53 +1,217 @@
 import type { Metadata } from 'next'
-
-import { BoardSelectorSection } from '@/components/board/BoardSelectorSection'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Choose your level — The English Hub',
+  title: 'Choose your exam board — The English Hub',
   description:
-    'Pick KS3, GCSE, IGCSE, or IAL and your English exam board so we can show you the right texts, poems, and past paper walkthroughs for your course.',
+    'Pick the level your school sits — GCSE or IGCSE — then the board so we can show you the right texts, poems, and past paper walkthroughs for your course.',
   alternates: { canonical: 'https://theenglishhub.app/board-select' },
   openGraph: {
-    title: 'Choose your level — The English Hub',
-    description: 'Pick KS3, GCSE, IGCSE, or IAL to get a personalised English study hub.',
+    title: 'Choose your exam board — The English Hub',
+    description: 'Pick the level your school sits, then the board. GCSE and IGCSE supported.',
   },
   robots: { index: false, follow: true },
 }
 
-/**
- * After a board is picked we send the user to the deep-link they requested
- * (`?next=...`) or to "Your Hub" (`/revision`) as the new default landing.
- * We keep the `next` flow working and sanitise it against open-redirect abuse.
- */
-function sanitiseNext(raw: string | string[] | undefined): string {
-  if (typeof raw !== 'string' || raw.length === 0) return '/revision'
-  // Only allow same-origin relative paths. Block protocol-relative, absolute URLs,
-  // and anything that doesn't start with a single leading slash.
-  if (!raw.startsWith('/') || raw.startsWith('//')) return '/revision'
-  return raw
+/* ────────────────────────────────────────────────────────────────────────────
+ * Board data
+ * Mirrors the homepage's BoardPickerSection so users see the same options
+ * whether they enter via the homepage card grid or via this page.
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+type Level = 'GCSE' | 'IGCSE'
+
+type Board = {
+  name: string
+  href: string
+  description: string
+  level: Level
 }
 
-export default async function BoardSelectPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ next?: string | string[] }>
-}) {
-  const params = await searchParams
-  const redirectTo = sanitiseNext(params.next)
+const GCSE_BOARDS: readonly Board[] = [
+  {
+    name: 'AQA',
+    href: '/revision/poetry/power-and-conflict',
+    description: 'Power & Conflict, Love & Relationships, Worlds & Lives.',
+    level: 'GCSE',
+  },
+  {
+    name: 'Pearson Edexcel GCSE',
+    href: '/revision/poetry/edexcel',
+    description: 'Time & Place, Conflict, Relationships anthology.',
+    level: 'GCSE',
+  },
+  {
+    name: 'OCR',
+    href: '/revision/poetry/ocr',
+    description: 'Love, Conflict, Power & Natural World, Youth & Age.',
+    level: 'GCSE',
+  },
+  {
+    name: 'WJEC Eduqas',
+    href: '/revision/poetry/eduqas',
+    description: 'Eduqas Anthology poems with annotated walkthroughs.',
+    level: 'GCSE',
+  },
+] as const
 
+const IGCSE_BOARDS: readonly Board[] = [
+  {
+    name: 'Cambridge IGCSE',
+    href: '/igcse/cambridge',
+    description: '0500 and 0990 — Reading, Composition, model answers.',
+    level: 'IGCSE',
+  },
+  {
+    name: 'Pearson Edexcel IGCSE Literature',
+    href: '/igcse/edexcel',
+    description: 'Drama, Prose, Shakespeare, Unseen Poetry.',
+    level: 'IGCSE',
+  },
+  {
+    name: 'Pearson Edexcel IGCSE Language A',
+    href: '/igcse/edexcel-lang',
+    description: 'Non-fiction anthology, reading and transactional writing.',
+    level: 'IGCSE',
+  },
+] as const
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Page
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+export default function BoardSelectPage() {
   return (
-    <main className="relative isolate min-h-[calc(100vh-4rem)] w-full overflow-hidden">
-      {/* Ambient background — soft gradient glow */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
-        <div className="absolute -top-24 left-1/2 h-[30rem] w-[40rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute top-1/2 right-0 h-[24rem] w-[32rem] translate-x-1/4 rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-[22rem] w-[28rem] -translate-x-1/4 rounded-full bg-primary/5 blur-3xl" />
-      </div>
+    <main className="min-h-screen bg-ink-950">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 pb-14 sm:pt-16 sm:pb-20">
+        {/* Headline */}
+        <header className="text-center mb-12 sm:mb-16">
+          <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-emerald-300 mb-3">
+            Choose by level
+          </p>
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight">
+            Choose your exam board
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
+            Pick the level your school sits, then the board. You can change this later in Settings.
+          </p>
+        </header>
 
-      <div className="relative mx-auto flex w-full max-w-5xl flex-col px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <BoardSelectorSection redirectTo={redirectTo} />
+        {/* GCSE section */}
+        <BoardSection
+          id="gcse"
+          level="GCSE"
+          subtitle="Years 10–11, UK GCSE 9–1"
+          boards={GCSE_BOARDS}
+        />
+
+        {/* IGCSE section */}
+        <div className="mt-14 sm:mt-20">
+          <BoardSection
+            id="igcse"
+            level="IGCSE"
+            subtitle="International — Cambridge & Pearson Edexcel specifications"
+            boards={IGCSE_BOARDS}
+          />
+        </div>
+
+        {/* Back to homepage */}
+        <p className="mt-12 text-center text-xs text-cream-200/55">
+          <Link href="/" className="underline underline-offset-4 hover:text-clay-300">
+            Back to the homepage
+          </Link>
+        </p>
       </div>
     </main>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Section — one per level
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+function BoardSection({
+  id,
+  level,
+  subtitle,
+  boards,
+}: {
+  id: string
+  level: Level
+  subtitle: string
+  boards: readonly Board[]
+}) {
+  const headingId = `${id}-heading`
+  const isIgcse = level === 'IGCSE'
+  return (
+    <section aria-labelledby={headingId} className="border-t border-cream-200/5 pt-10 sm:pt-12">
+      <div className="mb-6 sm:mb-8 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <h2
+          id={headingId}
+          className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50 leading-tight"
+        >
+          {level}
+        </h2>
+        <p className="text-sm text-cream-100/70">{subtitle}</p>
+      </div>
+
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        {boards.map((b) => (
+          <li key={b.href}>
+            <BoardCard board={b} highlight={isIgcse ? 'igcse' : 'gcse'} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Card
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+function BoardCard({ board, highlight }: { board: Board; highlight: 'gcse' | 'igcse' }) {
+  // GCSE = emerald accent, IGCSE = clay accent. Mirrors the homepage palette
+  // without importing its component — the spirit, not the literal markup.
+  const pillClass =
+    highlight === 'gcse'
+      ? 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30'
+      : 'bg-clay-300/15 text-clay-300 ring-clay-300/30'
+
+  const hoverClass =
+    highlight === 'gcse'
+      ? 'hover:border-emerald-400/40 focus-visible:ring-emerald-400'
+      : 'hover:border-clay-300/40 focus-visible:ring-clay-300'
+
+  const ctaClass =
+    highlight === 'gcse'
+      ? 'text-emerald-300 group-hover:text-emerald-200'
+      : 'text-clay-300 group-hover:text-clay-200'
+
+  return (
+    <Link
+      href={board.href}
+      className={`group relative flex h-full flex-col gap-3 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-all hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 ${hoverClass}`}
+    >
+      {/* Level pill — top-right */}
+      <span
+        aria-hidden="true"
+        className={`absolute top-4 right-4 inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider ring-1 ${pillClass}`}
+      >
+        {board.level}
+      </span>
+
+      <h3 className="font-serif text-xl sm:text-2xl font-semibold text-cream-50 leading-tight pr-16">
+        {board.name}
+      </h3>
+
+      <p className="text-sm text-cream-100/70 leading-relaxed">{board.description}</p>
+
+      <span
+        className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${ctaClass}`}
+      >
+        Open board <span aria-hidden="true">&rarr;</span>
+      </span>
+    </Link>
   )
 }

@@ -1,12 +1,8 @@
-import { redirect } from 'next/navigation'
-import { getServerBoard } from '@/lib/board/get-server-board'
-
-export default async function AqaWorldsAndLivesLayout({ children }: { children: React.ReactNode }) {
-  const board = await getServerBoard()
-  // Worlds and Lives is an AQA-specific cluster. If the user has chosen a
-  // different board, send them to their own anthology.
-  if (board && board !== 'aqa') {
-    redirect('/revision/poetry?wrongBoard=1')
-  }
+// 28 Apr 2026 — wrong-board cookie redirect intentionally removed. Worlds
+// and Lives is an AQA-specific cluster, but bouncing non-AQA users meant
+// homepage clicks on the AQA card silently failed for anyone holding an
+// older board cookie. The page is now reachable directly; cross-board
+// UX nudges belong on the unified `/revision` hub.
+export default function AqaWorldsAndLivesLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }

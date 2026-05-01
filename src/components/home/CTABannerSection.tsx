@@ -15,8 +15,7 @@ export default function CTABannerSection() {
           <div className="relative">
             <h2 className="text-foreground mb-5">Ready to Raise Your Grade?</h2>
             <p className="text-muted-foreground max-w-lg mx-auto mb-10 text-body-lg">
-              Be one of the first students to use the platform. Built by a serving UK secondary
-              English teacher; AI-marked essays against the real AO mark scheme.
+              GCSE and IGCSE English revision, AI marked against the AO rubric.
             </p>
             <Button
               variant="default"

@@ -25,7 +25,7 @@ const features = [
   {
     icon: Star,
     title: 'Built for Top Grades',
-    desc: 'Clear explanations, structured approach, exam-focused content — designed by a serving UK secondary English teacher.',
+    desc: 'Clear explanations, a structured approach, and exam-focused content aligned to the AO rubric.',
   },
   {
     icon: BookOpen,

@@ -1,16 +1,8 @@
-import { redirect } from 'next/navigation'
-import { getServerBoard } from '@/lib/board/get-server-board'
-
-export default async function PowerAndConflictLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const board = await getServerBoard()
-  // Power & Conflict is an AQA-specific cluster. If the user has chosen a
-  // different board, send them to their own anthology.
-  if (board && board !== 'aqa') {
-    redirect('/revision/poetry?wrongBoard=1')
-  }
+// 28 Apr 2026 — wrong-board cookie redirect intentionally removed. AQA's
+// Power & Conflict cluster is the headline GCSE AQA homepage CTA;
+// bouncing stale-cookie users meant the click silently failed for any
+// non-AQA user. The page is reachable directly now. Cross-board UX
+// nudges belong on the unified `/revision` hub.
+export default function PowerAndConflictLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }

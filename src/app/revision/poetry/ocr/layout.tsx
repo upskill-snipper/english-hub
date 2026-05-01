@@ -1,14 +1,8 @@
-import { redirect } from 'next/navigation'
-import { getServerBoard } from '@/lib/board/get-server-board'
-
-export default async function OcrPoetryLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const board = await getServerBoard()
-  if (board && board !== 'ocr') {
-    redirect('/revision/poetry?wrongBoard=1')
-  }
+// 28 Apr 2026 — wrong-board cookie redirect intentionally removed. See
+// /revision/poetry/edexcel/layout.tsx and /revision/poetry/eduqas/layout.tsx
+// for the same pattern + explanation. Homepage CTAs are explicit user
+// choices and must always render the requested page regardless of stale
+// cookie state.
+export default function OcrPoetryLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
