@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
@@ -23,7 +24,7 @@ const data: TextGuideData = {
   category: 'Novella',
   badge: 'Edexcel IGCSE',
   intro:
-    "A Depression-era novella about two displaced ranch workers chasing an impossible dream of owning their own piece of land. Steinbeck strips the American Dream bare and exposes the loneliness, prejudice and powerlessness at the heart of 1930s rural California.",
+    'A Depression-era novella about two displaced ranch workers chasing an impossible dream of owning their own piece of land. Steinbeck strips the American Dream bare and exposes the loneliness, prejudice and powerlessness at the heart of 1930s rural California.',
   quickInfo: {
     genre: 'Novella / Social realism',
     setting: 'Soledad, California, 1930s',
@@ -40,12 +41,12 @@ const data: TextGuideData = {
     {
       name: 'George Milton',
       role: 'Protective, sharp-tongued migrant worker',
-      body: "George is small, clever and quick to anger, but his loyalty to Lennie defines him. He carries the dream as much for Lennie as for himself, and Steinbeck uses his final, unbearable choice to show how the Depression destroys even the most fiercely held friendships.",
+      body: 'George is small, clever and quick to anger, but his loyalty to Lennie defines him. He carries the dream as much for Lennie as for himself, and Steinbeck uses his final, unbearable choice to show how the Depression destroys even the most fiercely held friendships.',
     },
     {
       name: 'Lennie Small',
       role: 'Gentle, physically powerful, learning disabled',
-      body: "Lennie embodies innocence and vulnerability. His love of soft things foreshadows every tragedy in the book. Steinbeck presents him sympathetically to challenge the casual prejudice of 1930s America toward disability and to make his death genuinely devastating.",
+      body: 'Lennie embodies innocence and vulnerability. His love of soft things foreshadows every tragedy in the book. Steinbeck presents him sympathetically to challenge the casual prejudice of 1930s America toward disability and to make his death genuinely devastating.',
     },
     {
       name: 'Candy',
@@ -130,8 +131,7 @@ const data: TextGuideData = {
     {
       quote: '"I ought to of shot that dog myself, George."',
       who: 'Candy — Chapter 3',
-      analysis:
-        'Foreshadows the ending and teaches George the lesson he will act on at the pool.',
+      analysis: 'Foreshadows the ending and teaches George the lesson he will act on at the pool.',
     },
     {
       quote: '"Tell about the rabbits, George."',
@@ -149,34 +149,379 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'omm-1', question: 'What is George and Lennie\'s shared dream?', type: 'multiple-choice', options: ['To become famous', 'To own a small farm where Lennie can tend rabbits', 'To move to the city', 'To start a business'], correctIndex: 1, explanation: 'George and Lennie dream of owning "a little house and a couple of acres" where Lennie can tend rabbits. This dream represents the American Dream of independence, but Steinbeck shows it is ultimately unattainable.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'omm-2', question: 'Why did George and Lennie flee the town of Weed?', type: 'multiple-choice', options: ['They stole money', 'Lennie was accused of assault for touching a woman\'s dress', 'They were fired', 'George got into a fight'], correctIndex: 1, explanation: 'Lennie was accused of attempted rape for touching a woman\'s dress in Weed. He was simply stroking the soft fabric, but his inability to let go terrified the woman. This foreshadows the tragic events at the ranch.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'omm-3', question: 'What is Lennie\'s defining characteristic?', type: 'multiple-choice', options: ['He is very intelligent', 'He is physically powerful but mentally childlike, with a compulsion to stroke soft things', 'He is small and quick', 'He is an experienced worker'], correctIndex: 1, explanation: 'Lennie is huge and physically powerful but has the mental age of a child. His compulsion to stroke soft things foreshadows every tragedy in the book — from the mouse to the puppy to Curley\'s wife\'s hair.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'omm-4', question: 'What does Candy\'s dog symbolise?', type: 'multiple-choice', options: ['Loyalty', 'The way capitalism discards those who are old or useless', 'Friendship between humans and animals', 'The beauty of nature'], correctIndex: 1, explanation: 'Candy\'s old, sick dog is shot by Carlson because it is no longer useful. This mirrors Candy\'s own fear of becoming disposable and foreshadows George\'s final act with Lennie — it is better to be killed by a friend than by a stranger.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'omm-5', question: 'Why is Crooks segregated from the other ranch workers?', type: 'multiple-choice', options: ['He prefers to be alone', 'Because of his race — he is Black and segregation was enforced', 'He has a contagious illness', 'He is a troublemaker'], correctIndex: 1, explanation: 'Crooks sleeps in the harness room because of racial segregation. Steinbeck uses him to expose the entrenched racism of 1930s America and to show how prejudice corrodes the soul.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'omm-6', question: 'How does Curley\'s wife die?', type: 'multiple-choice', options: ['She drowns', 'She falls from a horse', 'Lennie accidentally breaks her neck while stroking her hair', 'She is killed by Curley'], correctIndex: 2, explanation: 'Curley\'s wife invites Lennie to stroke her soft hair. When she tries to pull away, Lennie panics and breaks her neck. The tragedy is that both characters are victims: she of isolation, he of his own uncontrollable strength.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'omm-7', question: 'Who shoots Lennie at the end of the novella?', type: 'multiple-choice', options: ['Curley', 'Slim', 'Carlson', 'George'], correctIndex: 3, explanation: 'George shoots Lennie himself, retelling the dream of the farm one last time, to spare him a brutal death at the hands of the lynch mob. It is an act of mercy that destroys George.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'omm-8', question: 'What does "Soledad" (the nearby town) mean in Spanish?', type: 'multiple-choice', options: ['Happiness', 'Freedom', 'Solitude', 'Strength'], correctIndex: 2, explanation: 'Soledad means "solitude" in Spanish. Steinbeck turns the very landscape into a metaphor for the workers\' isolation, reinforcing the theme that loneliness pervades every character\'s life.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'omm-9', question: 'What is the significance of the novella opening and closing at the same pool by the Salinas River?', type: 'multiple-choice', options: ['It is a coincidence', 'The circular structure suggests the dream was always doomed and the cycle of migrant poverty continues', 'Steinbeck ran out of settings', 'It symbolises hope'], correctIndex: 1, explanation: 'The circular structure creates a sense of inevitability. Nature is indifferent: a heron kills a water snake in both the opening and closing chapters, foreshadowing and then sealing Lennie\'s fate. The dream returns to where it started — nowhere.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'omm-10', question: 'What does Candy mean when he says "I ought to of shot that dog myself"?', type: 'multiple-choice', options: ['He regrets not taking responsibility himself', 'He foreshadows George\'s decision to shoot Lennie rather than let strangers do it', 'He is angry at Carlson', 'He wants a new dog'], correctIndex: 1, explanation: 'Candy\'s regret about letting a stranger kill his dog directly foreshadows and teaches George the lesson he will act on at the pool. It is better to end a loved one\'s suffering yourself than to let a hostile world do it cruelly.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'omm-11', question: 'Why is Curley\'s wife never given a name?', type: 'multiple-choice', options: ['Steinbeck forgot', 'It reduces her to her husband\'s property, reflecting the sexism of the period', 'She is not important to the plot', 'She refuses to share her name'], correctIndex: 1, explanation: 'The only significant female character is never given a name, reducing her to "Curley\'s wife" — his property. This reflects the sexism of 1930s America. Steinbeck later reveals her as a lost young woman whose own dreams have been crushed.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'omm-12', question: 'What is Slim\'s role in the novella?', type: 'multiple-choice', options: ['He is the villain', 'He is the ranch\'s moral compass, described with almost religious authority', 'He is a minor character', 'He is George\'s enemy'], correctIndex: 1, explanation: 'Slim is described with almost religious authority — the "prince of the ranch." His approval matters, and his final compassion ("You hadda, George. I swear you hadda.") validates George\'s impossible choice and gives the reader somewhere to rest.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'omm-13', question: 'How does Crooks\'s brief moment of hope reflect the novella\'s themes?', type: 'multiple-choice', options: ['He remains hopeful throughout', 'He briefly allows himself to dream of joining the farm but crushes the hope when reminded of his place by racism', 'He never shows any emotion', 'He is consistently optimistic'], correctIndex: 1, explanation: 'Crooks briefly imagines joining George and Lennie\'s dream, but when Curley\'s wife threatens him with racist violence, he withdraws immediately: "I didn\' mean it. Jus\' foolin\'." Steinbeck shows how prejudice corrodes hope itself.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'omm-14', question: 'What is the significance of the title Of Mice and Men?', type: 'multiple-choice', options: ['It is about mice on a farm', 'It quotes Robert Burns\'s poem about how the best-laid plans go wrong, framing the novella\'s theme', 'It was chosen randomly', 'It refers to George and Lennie specifically'], correctIndex: 1, explanation: 'The title quotes Robert Burns\'s poem "To a Mouse": "The best laid schemes o\' mice an\' men / Gang aft agley." It warns that even the most carefully held dreams can be destroyed by forces beyond our control.', topic: 'Context', difficulty: 'higher' },
-  { id: 'omm-15', question: 'How does Steinbeck present the American Dream in the novella?', type: 'multiple-choice', options: ['As achievable for everyone', 'As a cruel illusion that is systematically dismantled at the exact moment it seems achievable', 'As irrelevant to the characters', 'As already achieved'], correctIndex: 1, explanation: 'Steinbeck systematically dismantles the myth of the self-made man. The dream of the farm is repeated like a prayer but is crushed at the exact moment it seems achievable (when Candy offers his savings). The novella argues the American Dream is an illusion for the powerless.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'omm-16', question: 'What does "A guy needs somebody — to be near him" reveal about the novella\'s world?', type: 'multiple-choice', options: ['Crooks is clingy', 'It reveals the devastating loneliness of segregation and universalises it to all workers under capitalism', 'It is a casual remark', 'Crooks wants a pet'], correctIndex: 1, explanation: 'Crooks\'s desperate statement reveals the devastating loneliness of racial segregation and extends it to all workers under capitalism. Nearly every character in the novella is alone — Steinbeck shows loneliness as a systemic condition, not a personal failing.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'omm-17', question: 'How does Steinbeck use the natural world in the novella?', type: 'multiple-choice', options: ['Nature is always beautiful', 'Nature is indifferent to human suffering — herons eat snakes, the cycle continues regardless', 'Nature helps the characters', 'Nature is not mentioned'], correctIndex: 1, explanation: 'Nature is portrayed as indifferent: a heron kills a water snake in both the opening and closing scenes. The natural cycle continues regardless of human tragedy, suggesting the workers\' suffering is invisible to the larger world.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'omm-18', question: 'What is the effect of Steinbeck writing Curley\'s wife\'s death scene with gentleness?', type: 'multiple-choice', options: ['It is sloppy writing', 'In death she finally appears peaceful and beautiful, humanising her and making the reader mourn both her and the dream simultaneously', 'It undermines the tragedy', 'It shows she deserved sympathy'], correctIndex: 1, explanation: 'After her death, Steinbeck describes Curley\'s wife as finally peaceful and pretty, the "meanness and the plannings and the discontent" gone from her face. This tender treatment humanises her at the last moment and makes the reader mourn both her wasted life and the death of the dream.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'omm-19', question: 'What does Slim\'s final line "You hadda, George" do for the reader?', type: 'multiple-choice', options: ['It is a throwaway remark', 'The moral authority of the ranch validates George\'s impossible choice and allows the reader to accept it', 'It condemns George', 'It changes the subject'], correctIndex: 1, explanation: 'Slim, the respected moral voice of the ranch, validates George\'s terrible choice with compassion. His approval allows both George and the reader to believe the act was merciful rather than murderous, providing the novella\'s painful but necessary closure.', topic: 'Characters', difficulty: 'grade-9' },
-  { id: 'omm-20', question: 'What was the Great Depression, and how does it shape the novella?', type: 'multiple-choice', options: ['A period of artistic decline', 'An economic catastrophe that began in 1929, causing mass unemployment, displacement, and the collapse of the American Dream', 'A European war', 'A natural disaster'], correctIndex: 1, explanation: 'The Great Depression began with the 1929 Wall Street Crash and caused millions to lose their jobs and homes. In rural California, displaced workers drifted from ranch to ranch. This economic devastation shapes every aspect of the novella\'s world.', topic: 'Context', difficulty: 'foundation' },
+  {
+    id: 'omm-1',
+    question: "What is George and Lennie's shared dream?",
+    type: 'multiple-choice',
+    options: [
+      'To become famous',
+      'To own a small farm where Lennie can tend rabbits',
+      'To move to the city',
+      'To start a business',
+    ],
+    correctIndex: 1,
+    explanation:
+      'George and Lennie dream of owning "a little house and a couple of acres" where Lennie can tend rabbits. This dream represents the American Dream of independence, but Steinbeck shows it is ultimately unattainable.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'omm-2',
+    question: 'Why did George and Lennie flee the town of Weed?',
+    type: 'multiple-choice',
+    options: [
+      'They stole money',
+      "Lennie was accused of assault for touching a woman's dress",
+      'They were fired',
+      'George got into a fight',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Lennie was accused of attempted rape for touching a woman's dress in Weed. He was simply stroking the soft fabric, but his inability to let go terrified the woman. This foreshadows the tragic events at the ranch.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'omm-3',
+    question: "What is Lennie's defining characteristic?",
+    type: 'multiple-choice',
+    options: [
+      'He is very intelligent',
+      'He is physically powerful but mentally childlike, with a compulsion to stroke soft things',
+      'He is small and quick',
+      'He is an experienced worker',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Lennie is huge and physically powerful but has the mental age of a child. His compulsion to stroke soft things foreshadows every tragedy in the book — from the mouse to the puppy to Curley's wife's hair.",
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'omm-4',
+    question: "What does Candy's dog symbolise?",
+    type: 'multiple-choice',
+    options: [
+      'Loyalty',
+      'The way capitalism discards those who are old or useless',
+      'Friendship between humans and animals',
+      'The beauty of nature',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Candy's old, sick dog is shot by Carlson because it is no longer useful. This mirrors Candy's own fear of becoming disposable and foreshadows George's final act with Lennie — it is better to be killed by a friend than by a stranger.",
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'omm-5',
+    question: 'Why is Crooks segregated from the other ranch workers?',
+    type: 'multiple-choice',
+    options: [
+      'He prefers to be alone',
+      'Because of his race — he is Black and segregation was enforced',
+      'He has a contagious illness',
+      'He is a troublemaker',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Crooks sleeps in the harness room because of racial segregation. Steinbeck uses him to expose the entrenched racism of 1930s America and to show how prejudice corrodes the soul.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'omm-6',
+    question: "How does Curley's wife die?",
+    type: 'multiple-choice',
+    options: [
+      'She drowns',
+      'She falls from a horse',
+      'Lennie accidentally breaks her neck while stroking her hair',
+      'She is killed by Curley',
+    ],
+    correctIndex: 2,
+    explanation:
+      "Curley's wife invites Lennie to stroke her soft hair. When she tries to pull away, Lennie panics and breaks her neck. The tragedy is that both characters are victims: she of isolation, he of his own uncontrollable strength.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'omm-7',
+    question: 'Who shoots Lennie at the end of the novella?',
+    type: 'multiple-choice',
+    options: ['Curley', 'Slim', 'Carlson', 'George'],
+    correctIndex: 3,
+    explanation:
+      'George shoots Lennie himself, retelling the dream of the farm one last time, to spare him a brutal death at the hands of the lynch mob. It is an act of mercy that destroys George.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'omm-8',
+    question: 'What does "Soledad" (the nearby town) mean in Spanish?',
+    type: 'multiple-choice',
+    options: ['Happiness', 'Freedom', 'Solitude', 'Strength'],
+    correctIndex: 2,
+    explanation:
+      'Soledad means "solitude" in Spanish. Steinbeck turns the very landscape into a metaphor for the workers\' isolation, reinforcing the theme that loneliness pervades every character\'s life.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'omm-9',
+    question:
+      'What is the significance of the novella opening and closing at the same pool by the Salinas River?',
+    type: 'multiple-choice',
+    options: [
+      'It is a coincidence',
+      'The circular structure suggests the dream was always doomed and the cycle of migrant poverty continues',
+      'Steinbeck ran out of settings',
+      'It symbolises hope',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The circular structure creates a sense of inevitability. Nature is indifferent: a heron kills a water snake in both the opening and closing chapters, foreshadowing and then sealing Lennie's fate. The dream returns to where it started — nowhere.",
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'omm-10',
+    question: 'What does Candy mean when he says "I ought to of shot that dog myself"?',
+    type: 'multiple-choice',
+    options: [
+      'He regrets not taking responsibility himself',
+      "He foreshadows George's decision to shoot Lennie rather than let strangers do it",
+      'He is angry at Carlson',
+      'He wants a new dog',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Candy's regret about letting a stranger kill his dog directly foreshadows and teaches George the lesson he will act on at the pool. It is better to end a loved one's suffering yourself than to let a hostile world do it cruelly.",
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'omm-11',
+    question: "Why is Curley's wife never given a name?",
+    type: 'multiple-choice',
+    options: [
+      'Steinbeck forgot',
+      "It reduces her to her husband's property, reflecting the sexism of the period",
+      'She is not important to the plot',
+      'She refuses to share her name',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The only significant female character is never given a name, reducing her to "Curley\'s wife" — his property. This reflects the sexism of 1930s America. Steinbeck later reveals her as a lost young woman whose own dreams have been crushed.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'omm-12',
+    question: "What is Slim's role in the novella?",
+    type: 'multiple-choice',
+    options: [
+      'He is the villain',
+      "He is the ranch's moral compass, described with almost religious authority",
+      'He is a minor character',
+      "He is George's enemy",
+    ],
+    correctIndex: 1,
+    explanation:
+      'Slim is described with almost religious authority — the "prince of the ranch." His approval matters, and his final compassion ("You hadda, George. I swear you hadda.") validates George\'s impossible choice and gives the reader somewhere to rest.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'omm-13',
+    question: "How does Crooks's brief moment of hope reflect the novella's themes?",
+    type: 'multiple-choice',
+    options: [
+      'He remains hopeful throughout',
+      'He briefly allows himself to dream of joining the farm but crushes the hope when reminded of his place by racism',
+      'He never shows any emotion',
+      'He is consistently optimistic',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Crooks briefly imagines joining George and Lennie's dream, but when Curley's wife threatens him with racist violence, he withdraws immediately: \"I didn' mean it. Jus' foolin'.\" Steinbeck shows how prejudice corrodes hope itself.",
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'omm-14',
+    question: 'What is the significance of the title Of Mice and Men?',
+    type: 'multiple-choice',
+    options: [
+      'It is about mice on a farm',
+      "It quotes Robert Burns's poem about how the best-laid plans go wrong, framing the novella's theme",
+      'It was chosen randomly',
+      'It refers to George and Lennie specifically',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The title quotes Robert Burns\'s poem "To a Mouse": "The best laid schemes o\' mice an\' men / Gang aft agley." It warns that even the most carefully held dreams can be destroyed by forces beyond our control.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'omm-15',
+    question: 'How does Steinbeck present the American Dream in the novella?',
+    type: 'multiple-choice',
+    options: [
+      'As achievable for everyone',
+      'As a cruel illusion that is systematically dismantled at the exact moment it seems achievable',
+      'As irrelevant to the characters',
+      'As already achieved',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Steinbeck systematically dismantles the myth of the self-made man. The dream of the farm is repeated like a prayer but is crushed at the exact moment it seems achievable (when Candy offers his savings). The novella argues the American Dream is an illusion for the powerless.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'omm-16',
+    question:
+      'What does "A guy needs somebody — to be near him" reveal about the novella\'s world?',
+    type: 'multiple-choice',
+    options: [
+      'Crooks is clingy',
+      'It reveals the devastating loneliness of segregation and universalises it to all workers under capitalism',
+      'It is a casual remark',
+      'Crooks wants a pet',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Crooks's desperate statement reveals the devastating loneliness of racial segregation and extends it to all workers under capitalism. Nearly every character in the novella is alone — Steinbeck shows loneliness as a systemic condition, not a personal failing.",
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'omm-17',
+    question: 'How does Steinbeck use the natural world in the novella?',
+    type: 'multiple-choice',
+    options: [
+      'Nature is always beautiful',
+      'Nature is indifferent to human suffering — herons eat snakes, the cycle continues regardless',
+      'Nature helps the characters',
+      'Nature is not mentioned',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Nature is portrayed as indifferent: a heron kills a water snake in both the opening and closing scenes. The natural cycle continues regardless of human tragedy, suggesting the workers' suffering is invisible to the larger world.",
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'omm-18',
+    question:
+      "What is the effect of Steinbeck writing Curley's wife's death scene with gentleness?",
+    type: 'multiple-choice',
+    options: [
+      'It is sloppy writing',
+      'In death she finally appears peaceful and beautiful, humanising her and making the reader mourn both her and the dream simultaneously',
+      'It undermines the tragedy',
+      'It shows she deserved sympathy',
+    ],
+    correctIndex: 1,
+    explanation:
+      'After her death, Steinbeck describes Curley\'s wife as finally peaceful and pretty, the "meanness and the plannings and the discontent" gone from her face. This tender treatment humanises her at the last moment and makes the reader mourn both her wasted life and the death of the dream.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'omm-19',
+    question: 'What does Slim\'s final line "You hadda, George" do for the reader?',
+    type: 'multiple-choice',
+    options: [
+      'It is a throwaway remark',
+      "The moral authority of the ranch validates George's impossible choice and allows the reader to accept it",
+      'It condemns George',
+      'It changes the subject',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Slim, the respected moral voice of the ranch, validates George's terrible choice with compassion. His approval allows both George and the reader to believe the act was merciful rather than murderous, providing the novella's painful but necessary closure.",
+    topic: 'Characters',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'omm-20',
+    question: 'What was the Great Depression, and how does it shape the novella?',
+    type: 'multiple-choice',
+    options: [
+      'A period of artistic decline',
+      'An economic catastrophe that began in 1929, causing mass unemployment, displacement, and the collapse of the American Dream',
+      'A European war',
+      'A natural disaster',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The Great Depression began with the 1929 Wall Street Crash and caused millions to lose their jobs and homes. In rural California, displaced workers drifted from ranch to ranch. This economic devastation shapes every aspect of the novella's world.",
+    topic: 'Context',
+    difficulty: 'foundation',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'The American Dream', summary: 'Steinbeck systematically dismantles the myth that hard work guarantees success.', keyPoints: ['George and Lennie\'s farm dream is repeated like a prayer', 'The dream is crushed at the moment it seems achievable', 'The title (from Burns) warns that plans go awry', 'Every character has a broken dream: Curley\'s wife wanted Hollywood, Crooks wanted equality', 'Steinbeck argues the Dream is an illusion for the powerless'] },
-  { topic: 'Loneliness and Isolation', summary: 'Nearly every character is alone in some way, and Steinbeck shows loneliness as systemic, not personal.', keyPoints: ['"Guys like us, that work on ranches, are the loneliest guys in the world"', 'Crooks: segregated by race', 'Curley\'s wife: isolated by gender and marriage', 'Candy: clinging to his dog, then to the dream', 'Soledad means "solitude" — the landscape itself is lonely'] },
-  { topic: 'Power, Prejudice and Discrimination', summary: 'The novella catalogues racism, sexism, ableism, and ageism in 1930s America.', keyPoints: ['Crooks is segregated because of his race', 'Curley\'s wife is never given a name', 'Lennie is exploited and feared because of his disability', 'Candy fears being discarded like his old dog', 'The powerless sometimes turn on each other to feel strong'] },
-  { topic: 'Friendship and Companionship', summary: 'George and Lennie\'s bond is what makes them different from every other worker.', keyPoints: ['"I got you to look after me, and you got me to look after you"', 'Their friendship is both sacred and fragile', 'It cannot survive the economic and social pressures', 'Candy\'s dog foreshadows: it is better to be killed by a friend', 'Slim\'s validation: "You hadda, George"'] },
-  { topic: 'Circular Structure and Nature', summary: 'The novella opens and closes at the same pool, suggesting the dream was always doomed.', keyPoints: ['The heron killing the water snake appears in both opening and closing', 'Nature is indifferent to human suffering', 'The circular structure creates a sense of inevitability', 'Steinbeck uses the natural world to comment on human futility', 'The last words reduce George and Lennie\'s bond to silence'] },
+  {
+    topic: 'The American Dream',
+    summary: 'Steinbeck systematically dismantles the myth that hard work guarantees success.',
+    keyPoints: [
+      "George and Lennie's farm dream is repeated like a prayer",
+      'The dream is crushed at the moment it seems achievable',
+      'The title (from Burns) warns that plans go awry',
+      "Every character has a broken dream: Curley's wife wanted Hollywood, Crooks wanted equality",
+      'Steinbeck argues the Dream is an illusion for the powerless',
+    ],
+  },
+  {
+    topic: 'Loneliness and Isolation',
+    summary:
+      'Nearly every character is alone in some way, and Steinbeck shows loneliness as systemic, not personal.',
+    keyPoints: [
+      '"Guys like us, that work on ranches, are the loneliest guys in the world"',
+      'Crooks: segregated by race',
+      "Curley's wife: isolated by gender and marriage",
+      'Candy: clinging to his dog, then to the dream',
+      'Soledad means "solitude" — the landscape itself is lonely',
+    ],
+  },
+  {
+    topic: 'Power, Prejudice and Discrimination',
+    summary: 'The novella catalogues racism, sexism, ableism, and ageism in 1930s America.',
+    keyPoints: [
+      'Crooks is segregated because of his race',
+      "Curley's wife is never given a name",
+      'Lennie is exploited and feared because of his disability',
+      'Candy fears being discarded like his old dog',
+      'The powerless sometimes turn on each other to feel strong',
+    ],
+  },
+  {
+    topic: 'Friendship and Companionship',
+    summary: "George and Lennie's bond is what makes them different from every other worker.",
+    keyPoints: [
+      '"I got you to look after me, and you got me to look after you"',
+      'Their friendship is both sacred and fragile',
+      'It cannot survive the economic and social pressures',
+      "Candy's dog foreshadows: it is better to be killed by a friend",
+      'Slim\'s validation: "You hadda, George"',
+    ],
+  },
+  {
+    topic: 'Circular Structure and Nature',
+    summary:
+      'The novella opens and closes at the same pool, suggesting the dream was always doomed.',
+    keyPoints: [
+      'The heron killing the water snake appears in both opening and closing',
+      'Nature is indifferent to human suffering',
+      'The circular structure creates a sense of inevitability',
+      'Steinbeck uses the natural world to comment on human futility',
+      "The last words reduce George and Lennie's bond to silence",
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -184,7 +529,7 @@ const ESSAY_PROMPTS = [
   'How does Steinbeck use the character of Crooks to explore racial prejudice?',
   'How does Steinbeck present the American Dream as an illusion?',
   'How does Steinbeck present the relationship between George and Lennie?',
-  'How does Steinbeck use Curley\'s wife to explore the themes of gender and isolation?',
+  "How does Steinbeck use Curley's wife to explore the themes of gender and isolation?",
 ]
 
 export default async function OfMiceAndMenPage() {
@@ -193,6 +538,9 @@ export default async function OfMiceAndMenPage() {
   if (board && !allowedBoards.includes(board)) {
     redirect('/revision/texts')
   }
+  const userBoardLabel = board
+    ? (getBoardConfig(board)?.shortName ?? 'Edexcel IGCSE')
+    : 'Edexcel IGCSE'
 
   return (
     <>
@@ -202,24 +550,51 @@ export default async function OfMiceAndMenPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Of Mice and Men", url: "https://theenglishhub.app/revision/texts/of-mice-and-men" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Of Mice and Men',
+            url: 'https://theenglishhub.app/revision/texts/of-mice-and-men',
+          },
         ]}
       />
       <TextStudyHub
         textName="Of Mice and Men"
         textType="novella"
-        examBoard="Edexcel IGCSE"
+        examBoard={userBoardLabel}
         basePath="/revision/texts/of-mice-and-men"
         subPages={[
-          { id: 'characters', href: '/revision/texts/of-mice-and-men/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/of-mice-and-men/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/of-mice-and-men/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/of-mice-and-men/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
+          {
+            id: 'characters',
+            href: '/revision/texts/of-mice-and-men/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/of-mice-and-men/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/of-mice-and-men/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/of-mice-and-men/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -229,9 +604,9 @@ export default async function OfMiceAndMenPage() {
           'How does Steinbeck use the character of Crooks to explore racial prejudice?',
           'How does Steinbeck present the American Dream as an illusion?',
           'How does Steinbeck present the relationship between George and Lennie?',
-          'How does Steinbeck use Curley\'s wife to explore the theme of gender?',
+          "How does Steinbeck use Curley's wife to explore the theme of gender?",
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}
@@ -245,7 +620,9 @@ export default async function OfMiceAndMenPage() {
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for criticism and review. Full text available from your school or local library.
+        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
+        Patents Act 1988 for criticism and review. Full text available from your school or local
+        library.
       </p>
     </>
   )

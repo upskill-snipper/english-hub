@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
@@ -114,82 +115,101 @@ const data: TextGuideData = {
     {
       quote: '"We are members of one body. We are responsible for each other."',
       who: 'Inspector Goole — Act 3',
-      analysis: 'The play\u2019s thesis statement, delivered as the Inspector\u2019s final warning. It echoes the communal ethos of the 1945 welfare-state moment.',
+      analysis:
+        'The play\u2019s thesis statement, delivered as the Inspector\u2019s final warning. It echoes the communal ethos of the 1945 welfare-state moment.',
     },
     {
       quote: '"Fire and blood and anguish."',
       who: 'Inspector Goole — Act 3',
-      analysis: 'A prophetic reference to the two world wars the audience already knows about, lending the Inspector an almost supernatural authority.',
+      analysis:
+        'A prophetic reference to the two world wars the audience already knows about, lending the Inspector an almost supernatural authority.',
     },
     {
       quote: '"The Titanic \u2014 unsinkable, absolutely unsinkable."',
       who: 'Arthur Birling — Act 1',
-      analysis: 'Dramatic irony at its sharpest. Birling\u2019s certainty immediately marks him as a man whose judgment cannot be trusted.',
+      analysis:
+        'Dramatic irony at its sharpest. Birling\u2019s certainty immediately marks him as a man whose judgment cannot be trusted.',
     },
     {
-      quote: '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
+      quote:
+        '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
       who: 'Arthur Birling — Act 3',
-      analysis: 'Birling reduces a moral question to a practical inconvenience, revealing the hollowness of capitalist individualism.',
+      analysis:
+        'Birling reduces a moral question to a practical inconvenience, revealing the hollowness of capitalist individualism.',
     },
     {
       quote: '"But these girls aren\u2019t cheap labour \u2014 they\u2019re people."',
       who: 'Sheila Birling — Act 1',
-      analysis: 'Sheila\u2019s awakening to social responsibility, phrased simply but powerfully against her father\u2019s economic logic.',
+      analysis:
+        'Sheila\u2019s awakening to social responsibility, phrased simply but powerfully against her father\u2019s economic logic.',
     },
     {
       quote: '"I\u2019ll never, never do it again to anybody."',
       who: 'Sheila Birling — Act 1',
-      analysis: 'Sheila is the first character to accept guilt fully, modelling the moral change Priestley wants from his audience.',
+      analysis:
+        'Sheila is the first character to accept guilt fully, modelling the moral change Priestley wants from his audience.',
     },
     {
       quote: '"You\u2019re not the kind of father a chap could go to."',
       who: 'Eric Birling — Act 3',
-      analysis: 'Eric\u2019s accusation exposes the emotional bankruptcy beneath Birling\u2019s patriarchal authority.',
+      analysis:
+        'Eric\u2019s accusation exposes the emotional bankruptcy beneath Birling\u2019s patriarchal authority.',
     },
     {
       quote: '"We don\u2019t live alone. We are members of one body."',
       who: 'Inspector Goole — Act 3',
-      analysis: 'A compressed restatement of the play\u2019s core socialist message, linking individual action to communal consequence.',
+      analysis:
+        'A compressed restatement of the play\u2019s core socialist message, linking individual action to communal consequence.',
     },
     {
       quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
       who: 'Inspector Goole — Act 1',
-      analysis: 'The Inspector directly challenges Birling\u2019s belief that wealth entitles him to immunity from scrutiny.',
+      analysis:
+        'The Inspector directly challenges Birling\u2019s belief that wealth entitles him to immunity from scrutiny.',
     },
     {
       quote: '"It\u2019s what happened to the girl and what we all did to her that matters."',
       who: 'Sheila Birling — Act 3',
-      analysis: 'Sheila cuts through her parents\u2019 evasion, insisting that the moral lesson matters regardless of the Inspector\u2019s identity.',
+      analysis:
+        'Sheila cuts through her parents\u2019 evasion, insisting that the moral lesson matters regardless of the Inspector\u2019s identity.',
     },
     {
       quote: '"I was quite justified."',
       who: 'Sybil Birling — Act 2',
-      analysis: 'Sybil\u2019s stubborn self-righteousness. She refuses to accept guilt even when the evidence is overwhelming.',
+      analysis:
+        'Sybil\u2019s stubborn self-righteousness. She refuses to accept guilt even when the evidence is overwhelming.',
     },
     {
       quote: '"Girls of that class\u2014"',
       who: 'Sybil Birling — Act 2',
-      analysis: 'An interrupted phrase that exposes Sybil\u2019s deep-rooted class prejudice as instinctive and unexamined.',
+      analysis:
+        'An interrupted phrase that exposes Sybil\u2019s deep-rooted class prejudice as instinctive and unexamined.',
     },
     {
       quote: '"I didn\u2019t feel about her as she felt about me."',
       who: 'Gerald Croft — Act 2',
-      analysis: 'Gerald\u2019s admission reveals the power imbalance in his relationship with Daisy: he could leave, she could not.',
+      analysis:
+        'Gerald\u2019s admission reveals the power imbalance in his relationship with Daisy: he could leave, she could not.',
     },
     {
-      quote: '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
+      quote:
+        '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
       who: 'Arthur Birling — Act 1',
-      analysis: 'Birling dismisses socialism before the Inspector arrives, setting up the dramatic reversal that follows.',
+      analysis:
+        'Birling dismisses socialism before the Inspector arrives, setting up the dramatic reversal that follows.',
     },
     {
-      quote: '"One Eva Smith has gone \u2014 but there are millions of Eva Smiths and John Smiths still left with us."',
+      quote:
+        '"One Eva Smith has gone \u2014 but there are millions of Eva Smiths and John Smiths still left with us."',
       who: 'Inspector Goole — Act 3',
-      analysis: 'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice.',
+      analysis:
+        'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice.',
     },
     {
       quote: '"You began to learn something. And now you\u2019ve stopped."',
       who: 'Sheila Birling — Act 3',
-      analysis: 'Sheila accuses Gerald and her parents of moral regression, sharpening the generational divide at the play\u2019s climax.',
+      analysis:
+        'Sheila accuses Gerald and her parents of moral regression, sharpening the generational divide at the play\u2019s climax.',
     },
   ],
 }
@@ -199,9 +219,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'aic-1',
     question: 'What event is the Birling family celebrating at the start of the play?',
     type: 'multiple-choice',
-    options: ['Arthur\'s knighthood', 'Sheila\'s engagement to Gerald', 'Eric\'s graduation', 'A business deal'],
+    options: [
+      "Arthur's knighthood",
+      "Sheila's engagement to Gerald",
+      "Eric's graduation",
+      'A business deal',
+    ],
     correctIndex: 1,
-    explanation: 'The play opens with the Birlings celebrating Sheila\'s engagement to Gerald Croft, the son of a rival industrialist. This occasion of family pride makes the Inspector\'s revelations all the more devastating.',
+    explanation:
+      "The play opens with the Birlings celebrating Sheila's engagement to Gerald Croft, the son of a rival industrialist. This occasion of family pride makes the Inspector's revelations all the more devastating.",
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -209,9 +235,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'aic-2',
     question: 'How did Eva Smith die?',
     type: 'multiple-choice',
-    options: ['She was murdered', 'She died in a factory accident', 'She swallowed disinfectant', 'She drowned'],
+    options: [
+      'She was murdered',
+      'She died in a factory accident',
+      'She swallowed disinfectant',
+      'She drowned',
+    ],
     correctIndex: 2,
-    explanation: 'Eva Smith killed herself by swallowing disinfectant. This painful, desperate method of suicide reflects the extreme suffering she endured after being failed by every member of the Birling family.',
+    explanation:
+      'Eva Smith killed herself by swallowing disinfectant. This painful, desperate method of suicide reflects the extreme suffering she endured after being failed by every member of the Birling family.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -219,9 +251,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'aic-3',
     question: 'Why did Arthur Birling sack Eva Smith from his factory?',
     type: 'multiple-choice',
-    options: ['She was late to work', 'She led a strike over pay', 'She stole from the factory', 'She argued with customers'],
+    options: [
+      'She was late to work',
+      'She led a strike over pay',
+      'She stole from the factory',
+      'She argued with customers',
+    ],
     correctIndex: 1,
-    explanation: 'Birling sacked Eva for leading a strike demanding higher wages. This reveals his attitude that workers are disposable and profit matters more than people, establishing Priestley\'s critique of capitalism.',
+    explanation:
+      "Birling sacked Eva for leading a strike demanding higher wages. This reveals his attitude that workers are disposable and profit matters more than people, establishing Priestley's critique of capitalism.",
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -231,7 +269,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: ['Arthur Birling', 'Gerald Croft', 'Sheila Birling', 'Sybil Birling'],
     correctIndex: 2,
-    explanation: 'Sheila begins as naive and sheltered but quickly accepts her guilt, sees through Gerald\'s deception, and challenges her parents\' refusal to change. She represents the younger generation Priestley believed could build a better society.',
+    explanation:
+      "Sheila begins as naive and sheltered but quickly accepts her guilt, sees through Gerald's deception, and challenges her parents' refusal to change. She represents the younger generation Priestley believed could build a better society.",
     topic: 'Characters',
     difficulty: 'foundation',
   },
@@ -239,9 +278,15 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'aic-5',
     question: 'When was An Inspector Calls written, and when is it set?',
     type: 'multiple-choice',
-    options: ['Written 1912, set 1945', 'Written 1945, set 1912', 'Written 1945, set 1945', 'Written 1912, set 1912'],
+    options: [
+      'Written 1912, set 1945',
+      'Written 1945, set 1912',
+      'Written 1945, set 1945',
+      'Written 1912, set 1912',
+    ],
     correctIndex: 1,
-    explanation: 'Priestley wrote the play in 1945 but deliberately set it in 1912, before two world wars and the creation of the welfare state. This creates dramatic irony: the audience knows Birling\'s confident predictions are catastrophically wrong.',
+    explanation:
+      "Priestley wrote the play in 1945 but deliberately set it in 1912, before two world wars and the creation of the welfare state. This creates dramatic irony: the audience knows Birling's confident predictions are catastrophically wrong.",
     topic: 'Context',
     difficulty: 'foundation',
   },
@@ -249,29 +294,47 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'aic-6',
     question: 'What is the significance of Arthur Birling saying the Titanic is "unsinkable"?',
     type: 'multiple-choice',
-    options: ['It shows he is knowledgeable about ships', 'It creates dramatic irony that undermines his authority and judgement', 'It foreshadows Eva\'s death', 'It proves he is a reliable narrator'],
+    options: [
+      'It shows he is knowledgeable about ships',
+      'It creates dramatic irony that undermines his authority and judgement',
+      "It foreshadows Eva's death",
+      'It proves he is a reliable narrator',
+    ],
     correctIndex: 1,
-    explanation: 'Since the audience knows the Titanic sank in 1912, Birling\'s confident prediction creates powerful dramatic irony. It signals that his other certainties about capitalism and social stability are equally wrong, undermining everything he says.',
-    topic: 'Writer\'s Methods',
+    explanation:
+      "Since the audience knows the Titanic sank in 1912, Birling's confident prediction creates powerful dramatic irony. It signals that his other certainties about capitalism and social stability are equally wrong, undermining everything he says.",
+    topic: "Writer's Methods",
     difficulty: 'foundation',
   },
   {
     id: 'aic-7',
     question: 'Why did Sheila have Eva dismissed from Milwards?',
     type: 'multiple-choice',
-    options: ['Eva was rude to her', 'Out of jealous spite because a dress suited Eva better', 'Eva stole from the shop', 'Sheila\'s mother told her to'],
+    options: [
+      'Eva was rude to her',
+      'Out of jealous spite because a dress suited Eva better',
+      'Eva stole from the shop',
+      "Sheila's mother told her to",
+    ],
     correctIndex: 1,
-    explanation: 'Sheila had Eva dismissed from Milwards out of jealous spite because Eva looked better in a dress. This shows how privilege allows the upper classes to ruin working-class lives on a whim.',
+    explanation:
+      'Sheila had Eva dismissed from Milwards out of jealous spite because Eva looked better in a dress. This shows how privilege allows the upper classes to ruin working-class lives on a whim.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
   {
     id: 'aic-8',
-    question: 'What was Gerald\'s relationship with Eva/Daisy Renton?',
+    question: "What was Gerald's relationship with Eva/Daisy Renton?",
     type: 'multiple-choice',
-    options: ['She was his employee', 'She was his cousin', 'He kept her as his mistress', 'She was his childhood friend'],
+    options: [
+      'She was his employee',
+      'She was his cousin',
+      'He kept her as his mistress',
+      'She was his childhood friend',
+    ],
     correctIndex: 2,
-    explanation: 'Gerald kept Eva (now calling herself Daisy Renton) as his mistress. Although their relationship contained genuine feeling, he ultimately abandoned her when it suited him, treating her as disposable.',
+    explanation:
+      'Gerald kept Eva (now calling herself Daisy Renton) as his mistress. Although their relationship contained genuine feeling, he ultimately abandoned her when it suited him, treating her as disposable.',
     topic: 'Plot',
     difficulty: 'higher',
   },
@@ -279,29 +342,48 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'aic-9',
     question: 'Why is it significant that Inspector Goole\'s name sounds like "ghoul"?',
     type: 'multiple-choice',
-    options: ['It suggests he is a frightening character', 'It implies he may be supernatural, acting as a ghostly moral agent', 'It is a coincidence with no significance', 'It means he works at night'],
+    options: [
+      'It suggests he is a frightening character',
+      'It implies he may be supernatural, acting as a ghostly moral agent',
+      'It is a coincidence with no significance',
+      'It means he works at night',
+    ],
     correctIndex: 1,
-    explanation: 'The name "Goole" puns on "ghoul," suggesting the Inspector may be a supernatural figure — a ghost of the future, a moral conscience, or a divine agent. His mysterious origins are never explained, making him a dramatic device for Priestley\'s socialist message.',
+    explanation:
+      'The name "Goole" puns on "ghoul," suggesting the Inspector may be a supernatural figure — a ghost of the future, a moral conscience, or a divine agent. His mysterious origins are never explained, making him a dramatic device for Priestley\'s socialist message.',
     topic: 'Characters',
     difficulty: 'higher',
   },
   {
     id: 'aic-10',
-    question: 'What does Sybil Birling\'s refusal of Eva\'s charity application reveal about her character?',
+    question:
+      "What does Sybil Birling's refusal of Eva's charity application reveal about her character?",
     type: 'multiple-choice',
-    options: ['She is a compassionate but overworked woman', 'She uses charitable institutions as instruments of class prejudice rather than genuine aid', 'She did not recognise Eva', 'She followed the committee rules fairly'],
+    options: [
+      'She is a compassionate but overworked woman',
+      'She uses charitable institutions as instruments of class prejudice rather than genuine aid',
+      'She did not recognise Eva',
+      'She followed the committee rules fairly',
+    ],
     correctIndex: 1,
-    explanation: 'Sybil refused Eva help because she used the name "Birling," which offended Sybil. Priestley uses her to expose how charitable institutions could be instruments of class prejudice, punishing the poor rather than helping them.',
+    explanation:
+      'Sybil refused Eva help because she used the name "Birling," which offended Sybil. Priestley uses her to expose how charitable institutions could be instruments of class prejudice, punishing the poor rather than helping them.',
     topic: 'Characters',
     difficulty: 'higher',
   },
   {
     id: 'aic-11',
-    question: 'How does Eric contribute to Eva\'s downfall?',
+    question: "How does Eric contribute to Eva's downfall?",
     type: 'multiple-choice',
-    options: ['He fired her from a job', 'He forced himself on her, got her pregnant, and stole money to support her', 'He reported her to the police', 'He refused to marry her'],
+    options: [
+      'He fired her from a job',
+      'He forced himself on her, got her pregnant, and stole money to support her',
+      'He reported her to the police',
+      'He refused to marry her',
+    ],
     correctIndex: 1,
-    explanation: 'Eric forced himself on Eva when drunk, got her pregnant, and then stole money from his father\'s firm to support her. His alcoholism hints at deeper dysfunction beneath the Birling family\'s polished exterior.',
+    explanation:
+      "Eric forced himself on Eva when drunk, got her pregnant, and then stole money from his father's firm to support her. His alcoholism hints at deeper dysfunction beneath the Birling family's polished exterior.",
     topic: 'Plot',
     difficulty: 'higher',
   },
@@ -309,39 +391,66 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'aic-12',
     question: 'What happens at the very end of the play?',
     type: 'multiple-choice',
-    options: ['The family celebrates', 'A real inspector phones to say he is on his way to investigate a suicide', 'Eva is found alive', 'Gerald calls off the engagement'],
+    options: [
+      'The family celebrates',
+      'A real inspector phones to say he is on his way to investigate a suicide',
+      'Eva is found alive',
+      'Gerald calls off the engagement',
+    ],
     correctIndex: 1,
-    explanation: 'The telephone rings and a real inspector announces he is on his way. The cycle begins again, suggesting the Birlings cannot escape their responsibility. This ending gives the play its devastating final twist.',
+    explanation:
+      'The telephone rings and a real inspector announces he is on his way. The cycle begins again, suggesting the Birlings cannot escape their responsibility. This ending gives the play its devastating final twist.',
     topic: 'Plot',
     difficulty: 'higher',
   },
   {
     id: 'aic-13',
-    question: 'What is the dramatic purpose of the play being set in a single room on a single evening?',
+    question:
+      'What is the dramatic purpose of the play being set in a single room on a single evening?',
     type: 'multiple-choice',
-    options: ['It saves money on set design', 'It creates claustrophobic tension and follows the classical unities of time and place', 'It shows the family never leaves home', 'It was required by the theatre company'],
+    options: [
+      'It saves money on set design',
+      'It creates claustrophobic tension and follows the classical unities of time and place',
+      'It shows the family never leaves home',
+      'It was required by the theatre company',
+    ],
     correctIndex: 1,
-    explanation: 'The single setting creates intense claustrophobia. There is no escape from the Inspector\'s questioning. Priestley follows the classical unities of time and place, tightening the dramatic tension as each revelation peels back the family\'s respectable surface.',
-    topic: 'Writer\'s Methods',
+    explanation:
+      "The single setting creates intense claustrophobia. There is no escape from the Inspector's questioning. Priestley follows the classical unities of time and place, tightening the dramatic tension as each revelation peels back the family's respectable surface.",
+    topic: "Writer's Methods",
     difficulty: 'higher',
   },
   {
     id: 'aic-14',
-    question: 'What does Priestley suggest about the difference between the older and younger generations?',
+    question:
+      'What does Priestley suggest about the difference between the older and younger generations?',
     type: 'multiple-choice',
-    options: ['The older generation is wiser', 'Both generations are equally guilty but the younger generation can still change', 'Only the young are guilty', 'The older generation accepts responsibility more readily'],
+    options: [
+      'The older generation is wiser',
+      'Both generations are equally guilty but the younger generation can still change',
+      'Only the young are guilty',
+      'The older generation accepts responsibility more readily',
+    ],
     correctIndex: 1,
-    explanation: 'While both generations share guilt, Sheila and Eric accept responsibility and are horrified by their parents\' refusal to change. Arthur and Sybil celebrate their apparent escape. Priestley\'s message is that the younger generation can build a better, more equal society if they learn from these mistakes.',
+    explanation:
+      "While both generations share guilt, Sheila and Eric accept responsibility and are horrified by their parents' refusal to change. Arthur and Sybil celebrate their apparent escape. Priestley's message is that the younger generation can build a better, more equal society if they learn from these mistakes.",
     topic: 'Themes',
     difficulty: 'higher',
   },
   {
     id: 'aic-15',
-    question: 'Priestley was a committed socialist. How does the Inspector\'s final speech reflect this?',
+    question:
+      "Priestley was a committed socialist. How does the Inspector's final speech reflect this?",
     type: 'multiple-choice',
-    options: ['He calls for higher taxes', 'He argues that "we are members of one body" and must be responsible for each other', 'He asks the family to donate to charity', 'He warns about the dangers of trade unions'],
+    options: [
+      'He calls for higher taxes',
+      'He argues that "we are members of one body" and must be responsible for each other',
+      'He asks the family to donate to charity',
+      'He warns about the dangers of trade unions',
+    ],
     correctIndex: 1,
-    explanation: 'The Inspector\'s speech that "we are members of one body" is Priestley\'s direct socialist argument for collective responsibility. Written in 1945, it speaks to the post-war audience about building the welfare state and rejecting the selfish individualism Birling represents.',
+    explanation:
+      'The Inspector\'s speech that "we are members of one body" is Priestley\'s direct socialist argument for collective responsibility. Written in 1945, it speaks to the post-war audience about building the welfare state and rejecting the selfish individualism Birling represents.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -349,49 +458,81 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'aic-16',
     question: 'Why is Eva Smith never seen on stage?',
     type: 'multiple-choice',
-    options: ['The actress was unavailable', 'Her absence makes her a symbol of all exploited workers, not just one individual', 'Priestley forgot to include her', 'It was too expensive to hire another actor'],
+    options: [
+      'The actress was unavailable',
+      'Her absence makes her a symbol of all exploited workers, not just one individual',
+      'Priestley forgot to include her',
+      'It was too expensive to hire another actor',
+    ],
     correctIndex: 1,
-    explanation: 'Eva never appears because she represents every exploited worker, every abandoned woman, every person failed by the class system. Whether she is one girl or several is deliberately ambiguous — Priestley\'s point is that countless Evas exist and their suffering is collective.',
-    topic: 'Writer\'s Methods',
+    explanation:
+      "Eva never appears because she represents every exploited worker, every abandoned woman, every person failed by the class system. Whether she is one girl or several is deliberately ambiguous — Priestley's point is that countless Evas exist and their suffering is collective.",
+    topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
   {
     id: 'aic-17',
     question: 'How does Priestley use the 1912 setting to create dramatic irony about capitalism?',
     type: 'multiple-choice',
-    options: ['1912 was the best year for capitalism', 'Birling\'s confident predictions about progress and peace are known by the audience to be catastrophically wrong', 'The audience would not recognise the date', 'It makes the play feel old-fashioned'],
+    options: [
+      '1912 was the best year for capitalism',
+      "Birling's confident predictions about progress and peace are known by the audience to be catastrophically wrong",
+      'The audience would not recognise the date',
+      'It makes the play feel old-fashioned',
+    ],
     correctIndex: 1,
-    explanation: 'Birling confidently predicts there will be no war and that workers should look after themselves. The 1945 audience, having lived through two world wars and the creation of the welfare state, knows he is spectacularly wrong. This undermines his capitalist ideology and makes his authority a target for critique.',
-    topic: 'Writer\'s Methods',
+    explanation:
+      'Birling confidently predicts there will be no war and that workers should look after themselves. The 1945 audience, having lived through two world wars and the creation of the welfare state, knows he is spectacularly wrong. This undermines his capitalist ideology and makes his authority a target for critique.',
+    topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
   {
     id: 'aic-18',
-    question: 'What is the effect of Gerald leading the effort to discredit the Inspector after he leaves?',
+    question:
+      'What is the effect of Gerald leading the effort to discredit the Inspector after he leaves?',
     type: 'multiple-choice',
-    options: ['It shows Gerald is a detective', 'It aligns him with the older generation, choosing self-preservation over moral growth', 'It proves the Inspector was fake', 'It shows Gerald is the smartest character'],
+    options: [
+      'It shows Gerald is a detective',
+      'It aligns him with the older generation, choosing self-preservation over moral growth',
+      'It proves the Inspector was fake',
+      'It shows Gerald is the smartest character',
+    ],
     correctIndex: 1,
-    explanation: 'Gerald\'s eagerness to prove the Inspector was a fraud reveals his alignment with the older generation\'s values. Rather than accepting responsibility like Sheila and Eric, he chooses self-preservation, showing that class loyalty overrides personal conscience.',
+    explanation:
+      "Gerald's eagerness to prove the Inspector was a fraud reveals his alignment with the older generation's values. Rather than accepting responsibility like Sheila and Eric, he chooses self-preservation, showing that class loyalty overrides personal conscience.",
     topic: 'Characters',
     difficulty: 'grade-9',
   },
   {
     id: 'aic-19',
-    question: 'How does Priestley use the structure of the play to reinforce his message about collective responsibility?',
+    question:
+      'How does Priestley use the structure of the play to reinforce his message about collective responsibility?',
     type: 'multiple-choice',
-    options: ['Each act focuses on a different theme', 'The chain of responsibility is revealed link by link, showing every Birling contributed to one woman\'s destruction', 'The acts get progressively shorter', 'The play uses flashbacks'],
+    options: [
+      'Each act focuses on a different theme',
+      "The chain of responsibility is revealed link by link, showing every Birling contributed to one woman's destruction",
+      'The acts get progressively shorter',
+      'The play uses flashbacks',
+    ],
     correctIndex: 1,
-    explanation: 'The Inspector reveals each family member\'s guilt one by one, building a chain of responsibility. This structure shows that Eva\'s death was not caused by any single person but by the cumulative effect of a selfish society. Each revelation makes the net of guilt wider.',
-    topic: 'Writer\'s Methods',
+    explanation:
+      "The Inspector reveals each family member's guilt one by one, building a chain of responsibility. This structure shows that Eva's death was not caused by any single person but by the cumulative effect of a selfish society. Each revelation makes the net of guilt wider.",
+    topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
   {
     id: 'aic-20',
     question: 'What role does Edna the maid play in the wider themes of the play?',
     type: 'multiple-choice',
-    options: ['She provides comic relief', 'Her silent presence is a constant reminder of the class divide inside the Birling household', 'She is the Inspector\'s secret ally', 'She represents Eva Smith'],
+    options: [
+      'She provides comic relief',
+      'Her silent presence is a constant reminder of the class divide inside the Birling household',
+      "She is the Inspector's secret ally",
+      'She represents Eva Smith',
+    ],
     correctIndex: 1,
-    explanation: 'Edna has very few lines, but her quiet presence throughout the evening is a constant reminder of the class divide. She serves the family who treat people like Eva as disposable, and her deference underlines the power imbalance the play exposes.',
+    explanation:
+      'Edna has very few lines, but her quiet presence throughout the evening is a constant reminder of the class divide. She serves the family who treat people like Eva as disposable, and her deference underlines the power imbalance the play exposes.',
     topic: 'Characters',
     difficulty: 'foundation',
   },
@@ -400,33 +541,36 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 const REVISION_TOPICS = [
   {
     topic: 'Social Responsibility',
-    summary: 'Priestley\'s central argument is that we are all responsible for each other, not just for ourselves.',
+    summary:
+      "Priestley's central argument is that we are all responsible for each other, not just for ourselves.",
     keyPoints: [
       'The Inspector\'s final speech: "We are members of one body"',
-      'Each Birling contributed to Eva\'s death through selfish actions',
+      "Each Birling contributed to Eva's death through selfish actions",
       'Written in 1945, the play argues for the welfare state and collective care',
-      'Birling\'s capitalist individualism is presented as morally bankrupt',
+      "Birling's capitalist individualism is presented as morally bankrupt",
       'Eva represents all exploited workers, making her suffering universal',
     ],
   },
   {
     topic: 'Class and Privilege',
-    summary: 'The play exposes how the wealthy use their power to exploit and destroy working-class lives.',
+    summary:
+      'The play exposes how the wealthy use their power to exploit and destroy working-class lives.',
     keyPoints: [
       'Birling sacks Eva for demanding fair wages',
       'Sheila uses her social position to have Eva dismissed on a whim',
-      'Sybil\'s charity committee punishes rather than helps the poor',
+      "Sybil's charity committee punishes rather than helps the poor",
       'Gerald treats Eva/Daisy as disposable once the affair is over',
       'Eva has no safety net: each rejection pushes her closer to death',
     ],
   },
   {
     topic: 'Generational Divide',
-    summary: 'Priestley contrasts the older Birlings\' refusal to change with the younger generation\'s capacity for growth.',
+    summary:
+      "Priestley contrasts the older Birlings' refusal to change with the younger generation's capacity for growth.",
     keyPoints: [
       'Sheila and Eric accept guilt; Arthur and Sybil deny it',
       'Gerald aligns with the older generation by trying to discredit the Inspector',
-      'Priestley\'s hope lies with the young: they can build a fairer society',
+      "Priestley's hope lies with the young: they can build a fairer society",
       'The older generation prioritises reputation over moral truth',
       'The final phone call suggests those who refuse to learn will face consequences again',
     ],
@@ -437,7 +581,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Birling predicts the Titanic is "unsinkable" and war is impossible',
       'The 1945 audience knows these predictions are spectacularly wrong',
-      'This undermines Birling\'s capitalist ideology throughout the play',
+      "This undermines Birling's capitalist ideology throughout the play",
       'Priestley uses hindsight to argue for social change',
       'The gap between 1912 and 1945 makes the need for collective responsibility urgent',
     ],
@@ -449,7 +593,7 @@ const REVISION_TOPICS = [
       'Eva is exploited by men at every stage: sacked, used, abandoned, refused help',
       'Sheila is initially defined by her engagement to Gerald',
       'Sybil enforces patriarchal values by blaming Eva for her own suffering',
-      'Eric\'s assault on Eva goes unpunished because of his class and gender',
+      "Eric's assault on Eva goes unpunished because of his class and gender",
       'Priestley shows how gender and class intersect to destroy vulnerable women',
     ],
   },
@@ -458,7 +602,7 @@ const REVISION_TOPICS = [
 const ESSAY_PROMPTS = [
   'How does Priestley present the theme of social responsibility in An Inspector Calls?',
   'How does Priestley use the character of Sheila to convey his message about the younger generation?',
-  'How does Priestley use dramatic irony to undermine Arthur Birling\'s views?',
+  "How does Priestley use dramatic irony to undermine Arthur Birling's views?",
   'How does Priestley present the Inspector as a dramatic device for his socialist message?',
   'How does Priestley explore the treatment of women through the character of Eva Smith?',
 ]
@@ -469,6 +613,7 @@ export default async function AnInspectorCallsPage() {
   if (board && !allowedBoards.includes(board)) {
     redirect('/revision/texts')
   }
+  const userBoardLabel = board ? (getBoardConfig(board)?.shortName ?? 'AQA') : 'AQA'
 
   return (
     <>
@@ -478,26 +623,65 @@ export default async function AnInspectorCallsPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/revision/texts/an-inspector-calls" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
+          },
         ]}
       />
       <TextStudyHub
         textName="An Inspector Calls"
         textType="play"
-        examBoard="AQA"
+        examBoard={userBoardLabel}
         basePath="/revision/texts/an-inspector-calls"
         subPages={[
-          { id: 'acts', href: '/revision/texts/an-inspector-calls/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/an-inspector-calls/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/an-inspector-calls/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/an-inspector-calls/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/an-inspector-calls/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
-          { id: 'essays', href: '/revision/texts/an-inspector-calls/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+          {
+            id: 'acts',
+            href: '/revision/texts/an-inspector-calls/acts',
+            icon: 'acts' as const,
+            title: 'Act-by-Act Analysis',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/an-inspector-calls/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/an-inspector-calls/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/an-inspector-calls/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/an-inspector-calls/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/an-inspector-calls/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'GCSE essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -509,7 +693,7 @@ export default async function AnInspectorCallsPage() {
           'How does Priestley present the Inspector as a dramatic device?',
           'How does Priestley use the generational divide to convey his ideas?',
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}
@@ -523,7 +707,10 @@ export default async function AnInspectorCallsPage() {
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations (&le;15 words each) reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from your school or local library.
+        Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+        Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational
+        study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from
+        your school or local library.
       </p>
     </>
   )

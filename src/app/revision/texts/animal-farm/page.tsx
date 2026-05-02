@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
@@ -519,6 +520,7 @@ export default async function AnimalFarmPage() {
   if (board && !allowedBoards.includes(board)) {
     redirect('/revision/texts')
   }
+  const userBoardLabel = board ? (getBoardConfig(board)?.shortName ?? 'AQA') : 'AQA'
 
   return (
     <>
@@ -537,7 +539,7 @@ export default async function AnimalFarmPage() {
       <TextStudyHub
         textName="Animal Farm"
         textType="novella"
-        examBoard="AQA"
+        examBoard={userBoardLabel}
         basePath="/revision/texts/animal-farm"
         subPages={[
           {

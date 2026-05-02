@@ -109,64 +109,70 @@ describe('GCSE_BOARDS expected entries', () => {
   it('AQA -> /revision/poetry/power-and-conflict', () => {
     const entry = findEntry(GCSE_BOARDS, /AQA/)
     expect(entry, 'AQA entry missing from GCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision/poetry/power-and-conflict')
+    expect(entry?.href).toBe('/revision?setBoard=aqa')
   })
 
-  it('Pearson Edexcel -> /revision/poetry/edexcel', () => {
+  it('Pearson Edexcel -> /revision?setBoard=edexcel', () => {
     const entry = findEntry(GCSE_BOARDS, /Pearson Edexcel/)
     expect(entry, 'Pearson Edexcel entry missing from GCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision/poetry/edexcel')
+    expect(entry?.href).toBe('/revision?setBoard=edexcel')
   })
 
-  it('OCR -> /revision/poetry/ocr', () => {
+  it('OCR -> /revision?setBoard=ocr', () => {
     const entry = findEntry(GCSE_BOARDS, /OCR/)
     expect(entry, 'OCR entry missing from GCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision/poetry/ocr')
+    expect(entry?.href).toBe('/revision?setBoard=ocr')
   })
 
-  it('WJEC Eduqas / Eduqas -> /revision/poetry/eduqas', () => {
+  it('WJEC Eduqas / Eduqas -> /revision?setBoard=eduqas', () => {
     const entry = findEntry(GCSE_BOARDS, /WJEC Eduqas|Eduqas/)
     expect(entry, 'Eduqas entry missing from GCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision/poetry/eduqas')
+    expect(entry?.href).toBe('/revision?setBoard=eduqas')
   })
 })
 
 describe('IGCSE_BOARDS expected entries', () => {
-  it('Cambridge IGCSE / CIE -> /igcse/cambridge', () => {
+  it('Cambridge IGCSE / CIE -> /revision?setBoard=cambridge-0500', () => {
     const entry = findEntry(IGCSE_BOARDS, /Cambridge IGCSE|CIE/)
     expect(entry, 'Cambridge entry missing from IGCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/igcse/cambridge')
+    expect(entry?.href).toBe('/revision?setBoard=cambridge-0500')
   })
 
-  it('Pearson Edexcel IGCSE Literature -> /igcse/edexcel', () => {
+  it('Pearson Edexcel IGCSE Literature -> /revision?setBoard=edexcel-igcse', () => {
     const entry = findEntry(IGCSE_BOARDS, /Pearson Edexcel IGCSE Literature|Edexcel IGCSE/)
     expect(entry, 'Edexcel IGCSE Literature entry missing from IGCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/igcse/edexcel')
+    expect(entry?.href).toBe('/revision?setBoard=edexcel-igcse')
   })
 
-  it('Pearson Edexcel IGCSE Language A -> /igcse/edexcel-lang', () => {
+  it('Pearson Edexcel IGCSE Language A -> /revision?setBoard=edexcel-igcse-lang', () => {
     const entry = findEntry(IGCSE_BOARDS, /Pearson Edexcel IGCSE Language|Language A/)
     expect(entry, 'Edexcel IGCSE Language entry missing from IGCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/igcse/edexcel-lang')
+    expect(entry?.href).toBe('/revision?setBoard=edexcel-igcse-lang')
   })
 })
 
 describe('GCSE / IGCSE URL boundary (regression: GCSE -> IGCSE Lit bug)', () => {
-  it('no GCSE board points at an /igcse/ URL', () => {
-    for (const b of GCSE_BOARDS) {
+  // Per BOARD_NAVIGATION_MODEL.md (02 May 2026) every board card is now a
+  // canonical `/revision?setBoard=<id>` URL. Middleware reads the param,
+  // sets the cookie, and redirects to clean /revision. The historic
+  // "GCSE -> IGCSE Lit" bug was that one of seven cards used /igcse/edexcel
+  // (which silently set the IGCSE cookie via BOARD_LANDING_REDIRECTS).
+  // The invariant we lock in: NO card href may start with /igcse/ ever again.
+  it('no homepage card href starts with /igcse/ (regression for original bug)', () => {
+    for (const b of [...GCSE_BOARDS, ...IGCSE_BOARDS]) {
       expect(
         b.href.startsWith('/igcse/'),
-        `GCSE board "${b.name}" must not link to an /igcse/ URL but href=${b.href}`,
+        `Card "${b.name}" must use /revision?setBoard=<id> but href=${b.href}`,
       ).toBe(false)
     }
   })
 
-  it('every IGCSE board points at /igcse/ or the Pearson IGCSE poetry route', () => {
-    for (const b of IGCSE_BOARDS) {
-      const ok = b.href.startsWith('/igcse/') || b.href.startsWith('/revision/poetry/pearson-igcse')
+  it('every card href is the canonical /revision?setBoard=<id> shape', () => {
+    const canonical = /^\/revision\?setBoard=[a-z0-9-]+$/
+    for (const b of [...GCSE_BOARDS, ...IGCSE_BOARDS]) {
       expect(
-        ok,
-        `IGCSE board "${b.name}" should link to /igcse/* or /revision/poetry/pearson-igcse* but href=${b.href}`,
+        canonical.test(b.href),
+        `Card "${b.name}" href "${b.href}" must match /revision?setBoard=<id>`,
       ).toBe(true)
     }
   })

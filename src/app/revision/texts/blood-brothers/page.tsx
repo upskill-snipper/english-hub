@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
@@ -521,6 +522,7 @@ export default async function BloodBrothersPage() {
   if (board && !allowedBoards.includes(board)) {
     redirect('/revision/texts')
   }
+  const userBoardLabel = board ? (getBoardConfig(board)?.shortName ?? 'Edexcel') : 'Edexcel'
 
   return (
     <>
@@ -542,7 +544,7 @@ export default async function BloodBrothersPage() {
       <TextStudyHub
         textName="Blood Brothers"
         textType="play"
-        examBoard="Edexcel"
+        examBoard={userBoardLabel}
         basePath="/revision/texts/blood-brothers"
         subPages={[
           {

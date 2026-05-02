@@ -19,16 +19,11 @@ import {
   FileText,
   BarChart3,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { getBoardMismatchState } from '@/app/igcse/_lib/guard'
+import BoardMismatchBanner from '@/components/board/BoardMismatchBanner'
 
 export const metadata: Metadata = {
   title: 'Cambridge IGCSE English — The English Hub',
@@ -155,251 +150,227 @@ const studyTools = [
 ]
 
 export default async function CambridgeHubPage() {
-  await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
+  const mismatch = await getBoardMismatchState(['cambridge-0500', 'cambridge-0990'])
 
   return (
-    <div className="space-y-12 pb-16">
-      {/* ── Back link ─────────────────────────────────────────────── */}
-      <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse" />}
-          className="gap-1"
-        >
-          <ChevronLeft className="size-4" />
-          All exam boards
-        </Button>
-      </div>
-
-      {/* ── Hero ────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
-
-        <div className="relative">
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
-              Cambridge International
-            </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              First Language English
-            </Badge>
-          </div>
-          <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Cambridge IGCSE English
-          </h1>
-          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Cambridge First Language English is the world&apos;s largest
-            international English qualification. Pick your course below to
-            access full study guides, paper walkthroughs and past paper
-            practice.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Syllabus cards ────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
-            <BookOpen className="size-5 text-primary" />
-          </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Choose your course
-          </h2>
+    <>
+      {!mismatch.matched && <BoardMismatchBanner pageBoard="cambridge-0500" />}
+      <div className="space-y-12 pb-16">
+        {/* ── Back link ─────────────────────────────────────────────── */}
+        <div>
+          <Button variant="ghost" size="sm" render={<Link href="/igcse" />} className="gap-1">
+            <ChevronLeft className="size-4" />
+            All exam boards
+          </Button>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          {syllabuses.map((syllabus) => {
-            const Icon = syllabus.icon
-            return (
-              <Card
-                key={syllabus.slug}
-                className="group relative flex flex-col overflow-hidden transition-all duration-200 hover:border-border hover:shadow-card-hover"
-              >
-                <CardHeader className="pb-3">
-                  <div className="mb-3 flex items-start justify-between gap-3">
-                    <div
-                      className={`flex size-11 items-center justify-center rounded-xl ${syllabus.iconBg}`}
-                    >
-                      <Icon className={`size-5 ${syllabus.iconText}`} />
-                    </div>
-                    <Badge className="bg-primary/10 text-primary border-primary/20">
-                      Available now
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-heading-md font-heading leading-tight">
-                    {syllabus.name}
-                  </CardTitle>
-                  <CardDescription className="text-body-sm">
-                    {syllabus.tagline}
-                  </CardDescription>
-                </CardHeader>
+        {/* ── Hero ────────────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
 
-                <CardContent className="flex flex-1 flex-col gap-4">
-                  <p className="text-body-sm text-muted-foreground leading-relaxed">
-                    {syllabus.description}
-                  </p>
+          <div className="relative">
+            <div className="mb-4 flex flex-wrap items-center gap-2">
+              <Badge variant="secondary">
+                <Sparkles className="mr-1 size-3" />
+                Cambridge International
+              </Badge>
+              <Badge className="bg-primary/10 text-primary border-primary/20">
+                First Language English
+              </Badge>
+            </div>
+            <h1 className="text-display-sm font-heading text-foreground sm:text-display">
+              Cambridge IGCSE English
+            </h1>
+            <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
+              Cambridge First Language English is the world&apos;s largest international English
+              qualification. Pick your course below to access full study guides, paper walkthroughs
+              and past paper practice.
+            </p>
+          </div>
+        </section>
 
-                  <div className="flex flex-wrap gap-3 text-body-xs text-muted-foreground">
-                    <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-2 py-1">
-                      <Scroll className="size-3" />
-                      {syllabus.papers}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-2 py-1">
-                      <Clock className="size-3" />
-                      {syllabus.time}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-2 py-1">
-                      <GraduationCap className="size-3" />
-                      {syllabus.grading}
-                    </span>
-                  </div>
+        {/* ── Syllabus cards ────────────────────────────────────────── */}
+        <section>
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+              <BookOpen className="size-5 text-primary" />
+            </div>
+            <h2 className="text-heading-lg font-heading text-foreground">Choose your course</h2>
+          </div>
 
-                  {/* Clickable highlight links */}
-                  <div className="space-y-1.5">
-                    {syllabus.highlights.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="group/link flex items-center justify-between gap-2 rounded-lg border border-border/40 bg-muted/20 px-3 py-2 text-body-sm text-muted-foreground transition-all hover:border-primary/40 hover:bg-primary/[0.04] hover:text-foreground"
+          <div className="grid gap-6 lg:grid-cols-2">
+            {syllabuses.map((syllabus) => {
+              const Icon = syllabus.icon
+              return (
+                <Card
+                  key={syllabus.slug}
+                  className="group relative flex flex-col overflow-hidden transition-all duration-200 hover:border-border hover:shadow-card-hover"
+                >
+                  <CardHeader className="pb-3">
+                    <div className="mb-3 flex items-start justify-between gap-3">
+                      <div
+                        className={`flex size-11 items-center justify-center rounded-xl ${syllabus.iconBg}`}
                       >
-                        <span>{item.label}</span>
-                        <ChevronRight className="size-3.5 shrink-0 text-muted-foreground/60 transition-transform group-hover/link:translate-x-0.5 group-hover/link:text-primary" />
-                      </Link>
-                    ))}
+                        <Icon className={`size-5 ${syllabus.iconText}`} />
+                      </div>
+                      <Badge className="bg-primary/10 text-primary border-primary/20">
+                        Available now
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-heading-md font-heading leading-tight">
+                      {syllabus.name}
+                    </CardTitle>
+                    <CardDescription className="text-body-sm">{syllabus.tagline}</CardDescription>
+                  </CardHeader>
+
+                  <CardContent className="flex flex-1 flex-col gap-4">
+                    <p className="text-body-sm text-muted-foreground leading-relaxed">
+                      {syllabus.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-3 text-body-xs text-muted-foreground">
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-2 py-1">
+                        <Scroll className="size-3" />
+                        {syllabus.papers}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-2 py-1">
+                        <Clock className="size-3" />
+                        {syllabus.time}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-2 py-1">
+                        <GraduationCap className="size-3" />
+                        {syllabus.grading}
+                      </span>
+                    </div>
+
+                    {/* Clickable highlight links */}
+                    <div className="space-y-1.5">
+                      {syllabus.highlights.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="group/link flex items-center justify-between gap-2 rounded-lg border border-border/40 bg-muted/20 px-3 py-2 text-body-sm text-muted-foreground transition-all hover:border-primary/40 hover:bg-primary/[0.04] hover:text-foreground"
+                        >
+                          <span>{item.label}</span>
+                          <ChevronRight className="size-3.5 shrink-0 text-muted-foreground/60 transition-transform group-hover/link:translate-x-0.5 group-hover/link:text-primary" />
+                        </Link>
+                      ))}
+                    </div>
+
+                    <div className="mt-auto pt-2">
+                      <Button
+                        variant="default"
+                        size="sm"
+                        className="w-full"
+                        render={<Link href={syllabus.href} />}
+                      >
+                        Open {syllabus.name}
+                        <ArrowRight className="size-3.5" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+        </section>
+
+        {/* ── Shared skills ─────────────────────────────────────────── */}
+        <section>
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+              <Target className="size-5 text-primary" />
+            </div>
+            <h2 className="text-heading-lg font-heading text-foreground">Skills &amp; Practice</h2>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {sharedSkillsLinks.map((link) => {
+              const Icon = link.icon
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+                >
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Icon className="size-5 text-primary" />
                   </div>
-
-                  <div className="mt-auto pt-2">
-                    <Button
-                      variant="default"
-                      size="sm"
-                      className="w-full"
-                      render={<Link href={syllabus.href} />}
-                    >
-                      Open {syllabus.name}
-                      <ArrowRight className="size-3.5" />
-                    </Button>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-heading text-body text-foreground">{link.label}</h3>
+                    <p className="text-body-xs text-muted-foreground">{link.description}</p>
                   </div>
-                </CardContent>
-              </Card>
-            )
-          })}
-        </div>
-      </section>
-
-      {/* ── Shared skills ─────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
-            <Target className="size-5 text-primary" />
+                  <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                </Link>
+              )
+            })}
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Skills &amp; Practice
-          </h2>
-        </div>
+        </section>
 
-        <div className="grid gap-3 sm:grid-cols-2">
-          {sharedSkillsLinks.map((link) => {
-            const Icon = link.icon
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
-              >
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                  <Icon className="size-5 text-primary" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">
-                    {link.label}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {link.description}
-                  </p>
-                </div>
-                <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-              </Link>
-            )
-          })}
-        </div>
-      </section>
-
-      {/* ── Study Tools ───────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
-            <GraduationCap className="size-5 text-primary" />
+        {/* ── Study Tools ───────────────────────────────────────────── */}
+        <section>
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+              <GraduationCap className="size-5 text-primary" />
+            </div>
+            <h2 className="text-heading-lg font-heading text-foreground">Study Tools</h2>
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Study Tools
-          </h2>
-        </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {studyTools.map((tool) => {
-            const Icon = tool.icon
-            return (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
-              >
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                  <Icon className="size-5 text-primary" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">
-                    {tool.title}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {tool.description}
-                  </p>
-                </div>
-                <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-              </Link>
-            )
-          })}
-        </div>
-      </section>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {studyTools.map((tool) => {
+              const Icon = tool.icon
+              return (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+                >
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Icon className="size-5 text-primary" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-heading text-body text-foreground">{tool.title}</h3>
+                    <p className="text-body-xs text-muted-foreground">{tool.description}</p>
+                  </div>
+                  <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                </Link>
+              )
+            })}
+          </div>
+        </section>
 
-      {/* ── About Cambridge First Language ─────────────────────────── */}
-      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <div className="mb-4 flex items-center gap-3">
-          <Globe className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            About Cambridge First Language English
-          </h2>
-        </div>
-        <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Cambridge First Language English is designed for students whose first
-          language is English. It develops the ability to communicate clearly,
-          accurately and effectively in both speech and writing, and to use a
-          wide range of vocabulary, correct grammar, spelling and punctuation.
-          Students also learn to read a wide range of texts fluently and with
-          good understanding.
-        </p>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <h3 className="text-body-sm font-semibold text-foreground">
-              Reading skills
-            </h3>
-            <p className="mt-1 text-body-xs text-muted-foreground">
-              Demonstrate understanding of explicit and implicit meanings.
-            </p>
+        {/* ── About Cambridge First Language ─────────────────────────── */}
+        <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+          <div className="mb-4 flex items-center gap-3">
+            <Globe className="size-5 text-primary" />
+            <h2 className="text-heading-md font-heading text-foreground">
+              About Cambridge First Language English
+            </h2>
           </div>
-          <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <h3 className="text-body-sm font-semibold text-foreground">
-              Writing skills
-            </h3>
-            <p className="mt-1 text-body-xs text-muted-foreground">
-              Communicate clearly, accurately and effectively for different purposes.
-            </p>
+          <p className="text-body-sm text-muted-foreground leading-relaxed">
+            Cambridge First Language English is designed for students whose first language is
+            English. It develops the ability to communicate clearly, accurately and effectively in
+            both speech and writing, and to use a wide range of vocabulary, correct grammar,
+            spelling and punctuation. Students also learn to read a wide range of texts fluently and
+            with good understanding.
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
+              <h3 className="text-body-sm font-semibold text-foreground">Reading skills</h3>
+              <p className="mt-1 text-body-xs text-muted-foreground">
+                Demonstrate understanding of explicit and implicit meanings.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
+              <h3 className="text-body-sm font-semibold text-foreground">Writing skills</h3>
+              <p className="mt-1 text-body-xs text-muted-foreground">
+                Communicate clearly, accurately and effectively for different purposes.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   )
 }

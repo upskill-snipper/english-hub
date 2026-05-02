@@ -96,6 +96,7 @@ export function getIgcseHubUrl(board: ExamBoard | null): string | null {
 }
 
 // Routes that are board-specific and should redirect if user is on wrong board
+// NOTE: Currently unused. Documents which URL prefixes are board-specific. Future implementations of cross-board UX could use this to render appropriate banners.
 export const BOARD_SPECIFIC_PATH_PREFIXES: Record<ExamBoard, string[]> = {
   ks3: [],
   aqa: [

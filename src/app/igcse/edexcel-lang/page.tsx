@@ -19,7 +19,8 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { getBoardMismatchState } from '@/app/igcse/_lib/guard'
+import BoardMismatchBanner from '@/components/board/BoardMismatchBanner'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -103,272 +104,277 @@ const paper2Sections = [
 /* ─── Page ───────────────────────────────────────────────────────────── */
 
 export default async function EdexcelIgcseLangHubPage() {
-  await requireIgcseBoard(['edexcel-igcse-lang'])
+  const mismatch = await getBoardMismatchState(['edexcel-igcse-lang'])
 
   return (
-    <div className="space-y-12 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Language', url: 'https://theenglishhub.app/igcse/edexcel-lang' },
-        ]}
-      />
-      {/* ── Back link ───────────────────────────────────────────────── */}
-      <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
-          render={<Link href="/igcse" />}
+    <>
+      {!mismatch.matched && <BoardMismatchBanner pageBoard="edexcel-igcse-lang" />}
+      <div className="space-y-12 pb-16">
+        <BreadcrumbJsonLd
+          items={[
+            { name: 'Home', url: 'https://theenglishhub.app' },
+            { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+            { name: 'Edexcel IGCSE Language', url: 'https://theenglishhub.app/igcse/edexcel-lang' },
+          ]}
+        />
+        {/* ── Back link ───────────────────────────────────────────────── */}
+        <div>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="mb-3 -ml-2 text-muted-foreground"
+            render={<Link href="/igcse" />}
+          >
+            <ArrowLeft className="size-3.5" />
+            Back to IGCSE
+          </Button>
+        </div>
+
+        {/* ── Hero ────────────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
+
+          <div className="relative">
+            <div className="mb-4 flex flex-wrap items-center gap-2">
+              <Badge variant="secondary">
+                <Sparkles className="mr-1 size-3" />
+                International GCSE English Language
+              </Badge>
+            </div>
+            <h1 className="text-display-sm font-heading text-foreground sm:text-display">
+              Pearson Edexcel IGCSE Language A
+            </h1>
+            <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
+              The Pearson Edexcel International GCSE in English Language (Specification A) is a
+              two-paper qualification covering{' '}
+              <strong className="text-foreground">non-fiction reading</strong>,{' '}
+              <strong className="text-foreground">transactional writing</strong> and a{' '}
+              <strong className="text-foreground">prescribed anthology</strong> of ten non-fiction
+              texts studied for Paper 1 Section A.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
+              <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
+                <ScrollText className="size-3.5" />2 papers
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
+                <Clock className="size-3.5" />
+                3h 15m total
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
+                <BookOpen className="size-3.5" />
+                10 anthology texts
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Cross-link: Literature set texts ────────────────────────── */}
+        <section
+          aria-label="Edexcel Literature cross-link"
+          className="rounded-xl border border-primary/30 bg-primary/[0.04] p-5"
         >
-          <ArrowLeft className="size-3.5" />
-          Back to IGCSE
-        </Button>
-      </div>
+          <Link href="/igcse/edexcel" className="group flex items-center gap-4">
+            <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+              <Library className="size-5 text-primary" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <h3 className="font-heading text-body text-foreground">Studying Literature too?</h3>
+              <p className="text-body-sm text-muted-foreground">
+                See your Pearson Edexcel IGCSE Literature set texts — full study guides for Macbeth,
+                An Inspector Calls, Of Mice and Men and more.
+              </p>
+            </div>
+            <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+          </Link>
+        </section>
 
-      {/* ── Hero ────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
-
-        <div className="relative">
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
-              International GCSE English Language
-            </Badge>
-          </div>
-          <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Pearson Edexcel IGCSE Language A
-          </h1>
-          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            The Pearson Edexcel International GCSE in English Language (Specification A) is a
-            two-paper qualification covering{' '}
-            <strong className="text-foreground">non-fiction reading</strong>,{' '}
-            <strong className="text-foreground">transactional writing</strong> and a{' '}
-            <strong className="text-foreground">prescribed anthology</strong> of ten non-fiction
-            texts studied for Paper 1 Section A.
+        {/* ── Anthology version disclaimer ────────────────────────────── */}
+        <section
+          aria-label="Anthology version notice"
+          className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
+        >
+          <p className="mb-2">
+            <strong className="text-foreground">Anthology version:</strong> This site teaches the{' '}
+            <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
+            978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
+            freely-available online versions include:
           </p>
+          <ol className="mb-2 list-decimal space-y-1 pl-5 text-muted-foreground">
+            <li>
+              <em>Half-Caste</em> uses Agard&rsquo;s spelling &lsquo;yu&rsquo; (not
+              &lsquo;you&rsquo;);
+            </li>
+            <li>
+              <em>The Bright Lights of Sarajevo</em> has additional stanza breaks not in
+              Harrison&rsquo;s original <em>Guardian</em> publication;
+            </li>
+            <li>
+              the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
+              &lsquo;Young and dyslexic?&rsquo;) differ from their online originals — always use the
+              anthology version when answering Edexcel questions.
+            </li>
+          </ol>
+          <p className="text-body-xs text-muted-foreground">
+            © Pearson Education — quotations on individual set-text pages are short fair-dealing
+            extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
+            school-licensed editions.
+          </p>
+        </section>
 
-          <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <ScrollText className="size-3.5" />2 papers
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <Clock className="size-3.5" />
-              3h 15m total
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <BookOpen className="size-3.5" />
-              10 anthology texts
-            </span>
+        {/* ── Paper 1 ─────────────────────────────────────────────────── */}
+        <section>
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+              <Feather className="size-5 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-heading-lg font-heading text-foreground">
+                Paper 1: Non-Fiction Texts and Transactional Writing
+              </h2>
+              <p className="font-mono text-body-xs text-muted-foreground">
+                1 hour 45 minutes &middot; 60 marks &middot; 60% of total
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── Cross-link: Literature set texts ────────────────────────── */}
-      <section
-        aria-label="Edexcel Literature cross-link"
-        className="rounded-xl border border-primary/30 bg-primary/[0.04] p-5"
-      >
-        <Link href="/igcse/edexcel" className="group flex items-center gap-4">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-            <Library className="size-5 text-primary" />
-          </div>
-          <div className="min-w-0 flex-1">
-            <h3 className="font-heading text-body text-foreground">Studying Literature too?</h3>
-            <p className="text-body-sm text-muted-foreground">
-              See your Pearson Edexcel IGCSE Literature set texts — full study guides for Macbeth,
-              An Inspector Calls, Of Mice and Men and more.
-            </p>
-          </div>
-          <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-        </Link>
-      </section>
-
-      {/* ── Anthology version disclaimer ────────────────────────────── */}
-      <section
-        aria-label="Anthology version notice"
-        className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
-      >
-        <p className="mb-2">
-          <strong className="text-foreground">Anthology version:</strong> This site teaches the{' '}
-          <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
-          978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
-          freely-available online versions include:
-        </p>
-        <ol className="mb-2 list-decimal space-y-1 pl-5 text-muted-foreground">
-          <li>
-            <em>Half-Caste</em> uses Agard&rsquo;s spelling &lsquo;yu&rsquo; (not
-            &lsquo;you&rsquo;);
-          </li>
-          <li>
-            <em>The Bright Lights of Sarajevo</em> has additional stanza breaks not in
-            Harrison&rsquo;s original <em>Guardian</em> publication;
-          </li>
-          <li>
-            the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
-            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals — always use the
-            anthology version when answering Edexcel questions.
-          </li>
-        </ol>
-        <p className="text-body-xs text-muted-foreground">
-          © Pearson Education — quotations on individual set-text pages are short fair-dealing
-          extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
-          school-licensed editions.
-        </p>
-      </section>
-
-      {/* ── Paper 1 ─────────────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
-            <Feather className="size-5 text-primary" />
-          </div>
-          <div>
-            <h2 className="text-heading-lg font-heading text-foreground">
-              Paper 1: Non-Fiction Texts and Transactional Writing
-            </h2>
-            <p className="font-mono text-body-xs text-muted-foreground">
-              1 hour 45 minutes &middot; 60 marks &middot; 60% of total
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          {paper1Sections.map((section) => (
-            <div
-              key={section.heading}
-              className="rounded-2xl border border-border/60 bg-card transition-all duration-200"
-            >
-              <Link
-                href={section.href}
-                className="group/section flex items-center justify-between gap-3 p-5 pb-3"
+          <div className="space-y-4">
+            {paper1Sections.map((section) => (
+              <div
+                key={section.heading}
+                className="rounded-2xl border border-border/60 bg-card transition-all duration-200"
               >
-                <div className="min-w-0">
+                <Link
+                  href={section.href}
+                  className="group/section flex items-center justify-between gap-3 p-5 pb-3"
+                >
+                  <div className="min-w-0">
+                    <span className="mb-1 block font-mono text-body-xs text-muted-foreground uppercase tracking-wider">
+                      {section.label}
+                    </span>
+                    <h3 className="font-heading text-heading-sm text-foreground group-hover/section:text-primary transition-colors">
+                      {section.heading}
+                    </h3>
+                    <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
+                      {section.detail}
+                    </p>
+                  </div>
+                  <ChevronRight className="size-5 shrink-0 text-muted-foreground transition-transform group-hover/section:translate-x-0.5 group-hover/section:text-primary" />
+                </Link>
+
+                {section.subLinks && section.subLinks.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 border-t border-border/40 px-5 py-3">
+                    {section.subLinks.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className="rounded-md border border-border/40 bg-muted/30 px-2.5 py-1 text-body-xs text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Paper 2 ─────────────────────────────────────────────────── */}
+        <section>
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+              <PenTool className="size-5 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-heading-lg font-heading text-foreground">
+                Paper 2: Reading and Writing (Non-Fiction)
+              </h2>
+              <p className="font-mono text-body-xs text-muted-foreground">
+                1 hour 30 minutes &middot; 40 marks &middot; 40% of total
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {paper2Sections.map((section) => (
+              <div
+                key={section.heading}
+                className="rounded-2xl border border-border/60 bg-card transition-all duration-200"
+              >
+                <div className="p-5 pb-3">
                   <span className="mb-1 block font-mono text-body-xs text-muted-foreground uppercase tracking-wider">
                     {section.label}
                   </span>
-                  <h3 className="font-heading text-heading-sm text-foreground group-hover/section:text-primary transition-colors">
+                  <h3 className="font-heading text-heading-sm text-foreground">
                     {section.heading}
                   </h3>
                   <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
                     {section.detail}
                   </p>
                 </div>
-                <ChevronRight className="size-5 shrink-0 text-muted-foreground transition-transform group-hover/section:translate-x-0.5 group-hover/section:text-primary" />
-              </Link>
-
-              {section.subLinks && section.subLinks.length > 0 && (
-                <div className="flex flex-wrap gap-1.5 border-t border-border/40 px-5 py-3">
-                  {section.subLinks.map((sub) => (
-                    <Link
-                      key={sub.href}
-                      href={sub.href}
-                      className="rounded-md border border-border/40 bg-muted/30 px-2.5 py-1 text-body-xs text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary"
-                    >
-                      {sub.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Paper 2 ─────────────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
-            <PenTool className="size-5 text-primary" />
-          </div>
-          <div>
-            <h2 className="text-heading-lg font-heading text-foreground">
-              Paper 2: Reading and Writing (Non-Fiction)
-            </h2>
-            <p className="font-mono text-body-xs text-muted-foreground">
-              1 hour 30 minutes &middot; 40 marks &middot; 40% of total
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          {paper2Sections.map((section) => (
-            <div
-              key={section.heading}
-              className="rounded-2xl border border-border/60 bg-card transition-all duration-200"
-            >
-              <div className="p-5 pb-3">
-                <span className="mb-1 block font-mono text-body-xs text-muted-foreground uppercase tracking-wider">
-                  {section.label}
-                </span>
-                <h3 className="font-heading text-heading-sm text-foreground">{section.heading}</h3>
-                <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
-                  {section.detail}
-                </p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Study Tools ─────────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
-            <GraduationCap className="size-5 text-primary" />
+            ))}
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">Quick Links</h2>
-        </div>
+        </section>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              title: 'Anthology Study',
-              description: 'All 10 non-fiction texts with full analysis',
-              href: '/igcse/edexcel-lang/anthology',
-              icon: BookOpen,
-            },
-            {
-              title: 'AI Essay Marking',
-              description: 'Submit writing for AI feedback',
-              href: '/marking',
-              icon: PenTool,
-            },
-            {
-              title: 'Quiz',
-              description: 'Test yourself with language questions',
-              href: '/revision/quiz',
-              icon: Brain,
-            },
-          ].map((tool) => {
-            const Icon = tool.icon
-            return (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
-              >
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                  <Icon className="size-5 text-primary" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">{tool.title}</h3>
-                  <p className="text-body-xs text-muted-foreground">{tool.description}</p>
-                </div>
-                <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-              </Link>
-            )
-          })}
-        </div>
-      </section>
+        {/* ── Study Tools ─────────────────────────────────────────────── */}
+        <section>
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+              <GraduationCap className="size-5 text-primary" />
+            </div>
+            <h2 className="text-heading-lg font-heading text-foreground">Quick Links</h2>
+          </div>
 
-      {/* ── Footer ──────────────────────────────────────────────────── */}
-      <footer className="pt-4 text-center text-body-xs text-muted-foreground">
-        Aligned with Pearson Edexcel specification 4EA1
-      </footer>
-    </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: 'Anthology Study',
+                description: 'All 10 non-fiction texts with full analysis',
+                href: '/igcse/edexcel-lang/anthology',
+                icon: BookOpen,
+              },
+              {
+                title: 'AI Essay Marking',
+                description: 'Submit writing for AI feedback',
+                href: '/marking',
+                icon: PenTool,
+              },
+              {
+                title: 'Quiz',
+                description: 'Test yourself with language questions',
+                href: '/revision/quiz',
+                icon: Brain,
+              },
+            ].map((tool) => {
+              const Icon = tool.icon
+              return (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+                >
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Icon className="size-5 text-primary" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-heading text-body text-foreground">{tool.title}</h3>
+                    <p className="text-body-xs text-muted-foreground">{tool.description}</p>
+                  </div>
+                  <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+
+        {/* ── Footer ──────────────────────────────────────────────────── */}
+        <footer className="pt-4 text-center text-body-xs text-muted-foreground">
+          Aligned with Pearson Edexcel specification 4EA1
+        </footer>
+      </div>
+    </>
   )
 }

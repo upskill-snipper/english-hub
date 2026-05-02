@@ -1,3 +1,4 @@
+// Currently no client code POSTs to this route. The canonical client cookie writer is writeBoardCookie inside @/lib/board/board-store. This endpoint is retained for future server-side use cases.
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import type { ExamBoard } from '@/lib/board/board-config'

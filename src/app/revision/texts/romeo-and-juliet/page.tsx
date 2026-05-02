@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
@@ -107,43 +108,50 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote: '"Two households, both alike in dignity, / In fair Verona, where we lay our scene, / From ancient grudge break to new mutiny, / Where civil blood makes civil hands unclean."',
+      quote:
+        '"Two households, both alike in dignity, / In fair Verona, where we lay our scene, / From ancient grudge break to new mutiny, / Where civil blood makes civil hands unclean."',
       who: 'Chorus — Prologue',
       analysis:
         'The sonnet prologue establishes the feud, foreshadows the tragedy and frames the play as a story whose ending is already known.',
     },
     {
-      quote: '"From forth the fatal loins of these two foes / A pair of star-cross\'d lovers take their life."',
+      quote:
+        '"From forth the fatal loins of these two foes / A pair of star-cross\'d lovers take their life."',
       who: 'Chorus — Prologue',
       analysis:
         'Introduces the idea of fate ("star-cross\'d") and the double meaning of "take their life" — both born and killed.',
     },
     {
-      quote: '"O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiope\'s ear."',
+      quote:
+        '"O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiope\'s ear."',
       who: 'Romeo — Act 1, Scene 5',
       analysis:
         'Romeo\u2019s first sight of Juliet, using light and dark imagery to elevate her above the ordinary world.',
     },
     {
-      quote: '"My only love sprung from my only hate! / Too early seen unknown, and known too late!"',
+      quote:
+        '"My only love sprung from my only hate! / Too early seen unknown, and known too late!"',
       who: 'Juliet — Act 1, Scene 5',
       analysis:
         'Juliet recognises the paradox at the heart of the play: love and enmity are inseparable from birth.',
     },
     {
-      quote: '"But soft, what light through yonder window breaks? / It is the east, and Juliet is the sun."',
+      quote:
+        '"But soft, what light through yonder window breaks? / It is the east, and Juliet is the sun."',
       who: 'Romeo — Act 2, Scene 2',
       analysis:
         'The famous balcony speech uses cosmic imagery to present Juliet as a life-giving force that eclipses everything else.',
     },
     {
-      quote: '"What\'s in a name? That which we call a rose / By any other word would smell as sweet."',
+      quote:
+        '"What\'s in a name? That which we call a rose / By any other word would smell as sweet."',
       who: 'Juliet — Act 2, Scene 2',
       analysis:
         'Juliet challenges the idea that identity is determined by family name, striking at the root of the feud.',
     },
     {
-      quote: '"These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume."',
+      quote:
+        '"These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume."',
       who: 'Friar Lawrence — Act 2, Scene 6',
       analysis:
         'The Friar\u2019s warning foreshadows the lovers\u2019 destruction and links passion directly to self-annihilation.',
@@ -167,7 +175,8 @@ const data: TextGuideData = {
         'Juliet tries to deny the coming of dawn and Romeo\u2019s banishment, using birdsong to cling to their last moments together.',
     },
     {
-      quote: '"Hang thee, young baggage! Disobedient wretch! / I tell thee what: get thee to church o\' Thursday, / Or never after look me in the face."',
+      quote:
+        '"Hang thee, young baggage! Disobedient wretch! / I tell thee what: get thee to church o\' Thursday, / Or never after look me in the face."',
       who: 'Lord Capulet — Act 3, Scene 5',
       analysis:
         'Capulet\u2019s fury at Juliet\u2019s refusal exposes the patriarchal violence beneath his earlier reasonableness.',
@@ -221,7 +230,8 @@ const data: TextGuideData = {
         'Juliet\u2019s use of oxymoron when she learns Romeo killed Tybalt captures her agonising conflict between love and family loyalty.',
     },
     {
-      quote: '"Death lies on her like an untimely frost / Upon the sweetest flower of all the field."',
+      quote:
+        '"Death lies on her like an untimely frost / Upon the sweetest flower of all the field."',
       who: 'Lord Capulet — Act 4, Scene 5',
       analysis:
         'Capulet\u2019s grief uses natural imagery to present Juliet\u2019s apparent death as an unnatural destruction of youth and beauty.',
@@ -233,7 +243,8 @@ const data: TextGuideData = {
         'The Nurse\u2019s comic admiration for the Friar\u2019s learning contrasts with her practical, bawdy worldview and adds warmth to the middle acts.',
     },
     {
-      quote: '"Give me my Romeo, and when I shall die / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night."',
+      quote:
+        '"Give me my Romeo, and when I shall die / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night."',
       who: 'Juliet — Act 3, Scene 2',
       analysis:
         'Juliet\u2019s epithalamium imagines love as cosmic and eternal, but the word "die" carries a dark premonition alongside its Elizabethan double meaning.',
@@ -242,34 +253,363 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'rj-1', question: 'What are Romeo and Juliet called in the Prologue?', type: 'multiple-choice', options: ['Young lovers', 'Star-cross\'d lovers', 'Forbidden lovers', 'Tragic heroes'], correctIndex: 1, explanation: 'The Prologue calls them "star-cross\'d lovers," establishing fate as a force that hangs over the entire play and foreshadowing their deaths.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'rj-2', question: 'Which two families are feuding in the play?', type: 'multiple-choice', options: ['Capulet and Montague', 'Benvolio and Tybalt', 'Verona and Mantua', 'Escalus and Capulet'], correctIndex: 0, explanation: 'The Montagues and Capulets are the feuding families. Their "ancient grudge" poisons Verona and ultimately destroys their children.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'rj-3', question: 'Who says "A plague o\' both your houses"?', type: 'multiple-choice', options: ['Romeo', 'Tybalt', 'Mercutio', 'The Prince'], correctIndex: 2, explanation: 'Mercutio curses both families as he dies, having been fatally stabbed under Romeo\'s arm. His dying curse voices the play\'s moral judgement on the feud.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'rj-4', question: 'Who kills Tybalt?', type: 'multiple-choice', options: ['Benvolio', 'Mercutio', 'Romeo', 'Paris'], correctIndex: 2, explanation: 'Romeo kills Tybalt in a rage after Tybalt fatally stabs Mercutio. This act of vengeance transforms the play from comedy into tragedy and leads to Romeo\'s banishment.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'rj-5', question: 'What is Juliet\'s age in the play?', type: 'multiple-choice', options: ['Twelve', 'Thirteen', 'Fifteen', 'Sixteen'], correctIndex: 1, explanation: 'Juliet is thirteen years old. This was historically accurate for marriage in Elizabethan England (the legal age was twelve with parental consent), but Shakespeare emphasises her youth to heighten the tragedy.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'rj-6', question: 'Who marries Romeo and Juliet in secret?', type: 'multiple-choice', options: ['The Nurse', 'The Prince', 'Friar Lawrence', 'Benvolio'], correctIndex: 2, explanation: 'Friar Lawrence marries them in secret, hoping the union will reconcile the feuding families. His well-meaning but over-confident schemes ultimately fail.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'rj-7', question: 'What does Juliet mean by "What\'s in a name? That which we call a rose / By any other word would smell as sweet"?', type: 'multiple-choice', options: ['She loves flowers', 'Names are meaningless — Romeo\'s family name does not define who he is', 'She wants to change her own name', 'She is talking about gardening'], correctIndex: 1, explanation: 'Juliet challenges the idea that identity is determined by family name, arguing that Romeo would be the same person regardless of being a Montague. This strikes at the root of the feud.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'rj-8', question: 'Why does Romeo take poison at the end of the play?', type: 'multiple-choice', options: ['He is forced to by Paris', 'He believes Juliet is truly dead because the Friar\'s letter never reached him', 'Juliet asks him to', 'He is tricked by Tybalt\'s ghost'], correctIndex: 1, explanation: 'The Friar\'s letter explaining the plan never reaches Romeo. Instead, his servant Balthasar brings news that Juliet is dead. Romeo buys poison and takes it beside her body, not knowing she will wake moments later.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'rj-9', question: 'What literary device is used when the Prologue reveals the ending before the play begins?', type: 'multiple-choice', options: ['Metaphor', 'Dramatic irony / foreshadowing', 'Personification', 'Alliteration'], correctIndex: 1, explanation: 'The Prologue tells the audience the lovers will die, creating dramatic irony throughout the play. Every moment of hope is shadowed by the audience\'s knowledge of the inevitable ending.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'rj-10', question: 'What does Friar Lawrence mean by "These violent delights have violent ends"?', type: 'multiple-choice', options: ['He enjoys violence', 'Extreme passion leads to self-destruction', 'He is warning about the weather', 'He disapproves of marriage'], correctIndex: 1, explanation: 'The Friar warns that intense, uncontrolled passion will destroy itself "like fire and powder, / Which as they kiss consume." This foreshadows the lovers\' deaths and links passion to self-annihilation.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'rj-11', question: 'How does Lord Capulet\'s attitude towards Juliet change during the play?', type: 'multiple-choice', options: ['He becomes more lenient', 'He shifts from apparently reasonable father to domestic tyrant who threatens to disown her', 'He stays consistently kind', 'He never interacts with Juliet directly'], correctIndex: 1, explanation: 'Capulet initially tells Paris to wait and win Juliet\'s consent, but later threatens to disown her when she refuses the match. His rage ("Hang thee, young baggage! Disobedient wretch!") exposes the patriarchal power controlling Juliet\'s life.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'rj-12', question: 'What does Juliet mean by "My dismal scene I needs must act alone"?', type: 'multiple-choice', options: ['She wants to perform in a play', 'She must face the terrifying potion and possible death with no support from anyone', 'She is practising acting', 'She is running away from home'], correctIndex: 1, explanation: 'Juliet steels herself to take the death-mimicking potion alone. By this point, the Nurse has betrayed her and she has no adult support. The theatrical metaphor ("act") highlights her courage in facing death alone.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'rj-13', question: 'How does Shakespeare use light and darkness imagery in the play?', type: 'multiple-choice', options: ['Light = good, darkness = evil (conventional)', 'The pattern is inverted: darkness is safety and intimacy for the lovers, while daylight brings violence and separation', 'There is no consistent pattern', 'Darkness always symbolises death'], correctIndex: 1, explanation: 'Shakespeare inverts conventional associations: the lovers\' scenes happen at night (safety, intimacy), while the bright daylight world brings fights and death. This intensifies as the play moves towards the tomb.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'rj-14', question: 'Why does the Nurse ultimately fail Juliet?', type: 'multiple-choice', options: ['She dies before she can help', 'She advises Juliet to forget Romeo and marry Paris, choosing pragmatism over loyalty', 'She reveals the secret marriage', 'She sides with Tybalt'], correctIndex: 1, explanation: 'When the crisis arrives, the Nurse advises Juliet to forget Romeo and marry Paris. This pragmatic betrayal isolates Juliet at the moment she most needs support, leaving her with no adult ally.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'rj-15', question: 'What is the significance of Mercutio\'s Queen Mab speech?', type: 'multiple-choice', options: ['It is purely comic relief', 'It reveals a dark imagination beneath his jokes, connecting dreams to desire and violence', 'It explains the feud', 'It is a love poem to Juliet'], correctIndex: 1, explanation: 'The Queen Mab speech starts as witty fantasy but becomes increasingly dark, exposing the violence and desire beneath surface appearances. It reveals Mercutio\'s unsettling depth and foreshadows the play\'s dark turn.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'rj-16', question: 'How does Romeo\'s language about Rosaline differ from his language about Juliet?', type: 'multiple-choice', options: ['Both are identical', 'His love for Rosaline is conventional Petrarchan posturing; his love for Juliet is mutual, genuine and transformative', 'He speaks more about Rosaline', 'He uses prose for Rosaline and verse for Juliet'], correctIndex: 1, explanation: 'Romeo\'s love for Rosaline is performed, using cliched Petrarchan conventions (oxymorons, sighing). His love for Juliet is immediate, mutual, and expressed in a shared sonnet at their first meeting, marking it as genuine.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'rj-17', question: 'What does "Then I defy you, stars!" suggest about the conflict between fate and free will?', type: 'multiple-choice', options: ['Romeo accepts his fate calmly', 'Romeo asserts free will against the fate that has governed the play, but his defiance leads to the very tragedy fate predicted', 'Romeo is talking about astrology', 'Romeo is angry at the night sky'], correctIndex: 1, explanation: 'Romeo\'s defiant cry asserts human agency against cosmic fate. The tragic irony is that his attempt to defy fate (rushing to Juliet\'s tomb) is exactly what fulfils the "star-cross\'d" prophecy, suggesting free will and fate are intertwined.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'rj-18', question: 'How does Shakespeare use the sonnet form structurally in the play?', type: 'multiple-choice', options: ['All dialogue is in sonnet form', 'Romeo and Juliet share a sonnet at their first meeting, symbolising their perfect union and elevating their love to a literary ideal', 'Sonnets are used only in the Prologue', 'The sonnets show conflict'], correctIndex: 1, explanation: 'At their first meeting, Romeo and Juliet share a sonnet, each speaking alternate lines. This shared form symbolises their perfect compatibility and elevates their love above the ordinary. The Prologue is also a sonnet, framing the entire play within the form.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'rj-19', question: 'What is the dramatic significance of the play being set in Italy rather than England?', type: 'multiple-choice', options: ['Shakespeare had visited Italy', 'Italy was associated with passion, beauty, vendetta and danger, allowing exploration of extreme emotions at a slight remove from English society', 'It was set in Italy by accident', 'English settings were banned'], correctIndex: 1, explanation: 'Italy was associated in the English imagination with passion, beauty, and vendetta. The Italian setting allowed Shakespeare to explore extreme emotions and family violence at a remove from English society, while themes of forced marriage and honour killing still resonated with his audience.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'rj-20', question: 'How does the final scene function as a resolution to the feud?', type: 'multiple-choice', options: ['The feud continues after the deaths', 'The deaths of the children force the families to confront the consequences of their hatred and finally reconcile', 'The Prince punishes both families with exile', 'The families agree to a truce before the deaths'], correctIndex: 1, explanation: 'The Prince delivers judgement that the tragedy belongs to everyone. Confronted with the bodies of their children, Montague and Capulet finally agree to end the feud, but the price — two young lives — makes the reconciliation feel devastatingly hollow.', topic: 'Themes', difficulty: 'higher' },
+  {
+    id: 'rj-1',
+    question: 'What are Romeo and Juliet called in the Prologue?',
+    type: 'multiple-choice',
+    options: ['Young lovers', "Star-cross'd lovers", 'Forbidden lovers', 'Tragic heroes'],
+    correctIndex: 1,
+    explanation:
+      'The Prologue calls them "star-cross\'d lovers," establishing fate as a force that hangs over the entire play and foreshadowing their deaths.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rj-2',
+    question: 'Which two families are feuding in the play?',
+    type: 'multiple-choice',
+    options: [
+      'Capulet and Montague',
+      'Benvolio and Tybalt',
+      'Verona and Mantua',
+      'Escalus and Capulet',
+    ],
+    correctIndex: 0,
+    explanation:
+      'The Montagues and Capulets are the feuding families. Their "ancient grudge" poisons Verona and ultimately destroys their children.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rj-3',
+    question: 'Who says "A plague o\' both your houses"?',
+    type: 'multiple-choice',
+    options: ['Romeo', 'Tybalt', 'Mercutio', 'The Prince'],
+    correctIndex: 2,
+    explanation:
+      "Mercutio curses both families as he dies, having been fatally stabbed under Romeo's arm. His dying curse voices the play's moral judgement on the feud.",
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rj-4',
+    question: 'Who kills Tybalt?',
+    type: 'multiple-choice',
+    options: ['Benvolio', 'Mercutio', 'Romeo', 'Paris'],
+    correctIndex: 2,
+    explanation:
+      "Romeo kills Tybalt in a rage after Tybalt fatally stabs Mercutio. This act of vengeance transforms the play from comedy into tragedy and leads to Romeo's banishment.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rj-5',
+    question: "What is Juliet's age in the play?",
+    type: 'multiple-choice',
+    options: ['Twelve', 'Thirteen', 'Fifteen', 'Sixteen'],
+    correctIndex: 1,
+    explanation:
+      'Juliet is thirteen years old. This was historically accurate for marriage in Elizabethan England (the legal age was twelve with parental consent), but Shakespeare emphasises her youth to heighten the tragedy.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rj-6',
+    question: 'Who marries Romeo and Juliet in secret?',
+    type: 'multiple-choice',
+    options: ['The Nurse', 'The Prince', 'Friar Lawrence', 'Benvolio'],
+    correctIndex: 2,
+    explanation:
+      'Friar Lawrence marries them in secret, hoping the union will reconcile the feuding families. His well-meaning but over-confident schemes ultimately fail.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rj-7',
+    question:
+      'What does Juliet mean by "What\'s in a name? That which we call a rose / By any other word would smell as sweet"?',
+    type: 'multiple-choice',
+    options: [
+      'She loves flowers',
+      "Names are meaningless — Romeo's family name does not define who he is",
+      'She wants to change her own name',
+      'She is talking about gardening',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Juliet challenges the idea that identity is determined by family name, arguing that Romeo would be the same person regardless of being a Montague. This strikes at the root of the feud.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rj-8',
+    question: 'Why does Romeo take poison at the end of the play?',
+    type: 'multiple-choice',
+    options: [
+      'He is forced to by Paris',
+      "He believes Juliet is truly dead because the Friar's letter never reached him",
+      'Juliet asks him to',
+      "He is tricked by Tybalt's ghost",
+    ],
+    correctIndex: 1,
+    explanation:
+      "The Friar's letter explaining the plan never reaches Romeo. Instead, his servant Balthasar brings news that Juliet is dead. Romeo buys poison and takes it beside her body, not knowing she will wake moments later.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'rj-9',
+    question:
+      'What literary device is used when the Prologue reveals the ending before the play begins?',
+    type: 'multiple-choice',
+    options: ['Metaphor', 'Dramatic irony / foreshadowing', 'Personification', 'Alliteration'],
+    correctIndex: 1,
+    explanation:
+      "The Prologue tells the audience the lovers will die, creating dramatic irony throughout the play. Every moment of hope is shadowed by the audience's knowledge of the inevitable ending.",
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'rj-10',
+    question: 'What does Friar Lawrence mean by "These violent delights have violent ends"?',
+    type: 'multiple-choice',
+    options: [
+      'He enjoys violence',
+      'Extreme passion leads to self-destruction',
+      'He is warning about the weather',
+      'He disapproves of marriage',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The Friar warns that intense, uncontrolled passion will destroy itself "like fire and powder, / Which as they kiss consume." This foreshadows the lovers\' deaths and links passion to self-annihilation.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'rj-11',
+    question: "How does Lord Capulet's attitude towards Juliet change during the play?",
+    type: 'multiple-choice',
+    options: [
+      'He becomes more lenient',
+      'He shifts from apparently reasonable father to domestic tyrant who threatens to disown her',
+      'He stays consistently kind',
+      'He never interacts with Juliet directly',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Capulet initially tells Paris to wait and win Juliet\'s consent, but later threatens to disown her when she refuses the match. His rage ("Hang thee, young baggage! Disobedient wretch!") exposes the patriarchal power controlling Juliet\'s life.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'rj-12',
+    question: 'What does Juliet mean by "My dismal scene I needs must act alone"?',
+    type: 'multiple-choice',
+    options: [
+      'She wants to perform in a play',
+      'She must face the terrifying potion and possible death with no support from anyone',
+      'She is practising acting',
+      'She is running away from home',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Juliet steels herself to take the death-mimicking potion alone. By this point, the Nurse has betrayed her and she has no adult support. The theatrical metaphor ("act") highlights her courage in facing death alone.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'rj-13',
+    question: 'How does Shakespeare use light and darkness imagery in the play?',
+    type: 'multiple-choice',
+    options: [
+      'Light = good, darkness = evil (conventional)',
+      'The pattern is inverted: darkness is safety and intimacy for the lovers, while daylight brings violence and separation',
+      'There is no consistent pattern',
+      'Darkness always symbolises death',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Shakespeare inverts conventional associations: the lovers' scenes happen at night (safety, intimacy), while the bright daylight world brings fights and death. This intensifies as the play moves towards the tomb.",
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'rj-14',
+    question: 'Why does the Nurse ultimately fail Juliet?',
+    type: 'multiple-choice',
+    options: [
+      'She dies before she can help',
+      'She advises Juliet to forget Romeo and marry Paris, choosing pragmatism over loyalty',
+      'She reveals the secret marriage',
+      'She sides with Tybalt',
+    ],
+    correctIndex: 1,
+    explanation:
+      'When the crisis arrives, the Nurse advises Juliet to forget Romeo and marry Paris. This pragmatic betrayal isolates Juliet at the moment she most needs support, leaving her with no adult ally.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'rj-15',
+    question: "What is the significance of Mercutio's Queen Mab speech?",
+    type: 'multiple-choice',
+    options: [
+      'It is purely comic relief',
+      'It reveals a dark imagination beneath his jokes, connecting dreams to desire and violence',
+      'It explains the feud',
+      'It is a love poem to Juliet',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The Queen Mab speech starts as witty fantasy but becomes increasingly dark, exposing the violence and desire beneath surface appearances. It reveals Mercutio's unsettling depth and foreshadows the play's dark turn.",
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'rj-16',
+    question: "How does Romeo's language about Rosaline differ from his language about Juliet?",
+    type: 'multiple-choice',
+    options: [
+      'Both are identical',
+      'His love for Rosaline is conventional Petrarchan posturing; his love for Juliet is mutual, genuine and transformative',
+      'He speaks more about Rosaline',
+      'He uses prose for Rosaline and verse for Juliet',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Romeo's love for Rosaline is performed, using cliched Petrarchan conventions (oxymorons, sighing). His love for Juliet is immediate, mutual, and expressed in a shared sonnet at their first meeting, marking it as genuine.",
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'rj-17',
+    question:
+      'What does "Then I defy you, stars!" suggest about the conflict between fate and free will?',
+    type: 'multiple-choice',
+    options: [
+      'Romeo accepts his fate calmly',
+      'Romeo asserts free will against the fate that has governed the play, but his defiance leads to the very tragedy fate predicted',
+      'Romeo is talking about astrology',
+      'Romeo is angry at the night sky',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Romeo's defiant cry asserts human agency against cosmic fate. The tragic irony is that his attempt to defy fate (rushing to Juliet's tomb) is exactly what fulfils the \"star-cross'd\" prophecy, suggesting free will and fate are intertwined.",
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'rj-18',
+    question: 'How does Shakespeare use the sonnet form structurally in the play?',
+    type: 'multiple-choice',
+    options: [
+      'All dialogue is in sonnet form',
+      'Romeo and Juliet share a sonnet at their first meeting, symbolising their perfect union and elevating their love to a literary ideal',
+      'Sonnets are used only in the Prologue',
+      'The sonnets show conflict',
+    ],
+    correctIndex: 1,
+    explanation:
+      'At their first meeting, Romeo and Juliet share a sonnet, each speaking alternate lines. This shared form symbolises their perfect compatibility and elevates their love above the ordinary. The Prologue is also a sonnet, framing the entire play within the form.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'rj-19',
+    question:
+      'What is the dramatic significance of the play being set in Italy rather than England?',
+    type: 'multiple-choice',
+    options: [
+      'Shakespeare had visited Italy',
+      'Italy was associated with passion, beauty, vendetta and danger, allowing exploration of extreme emotions at a slight remove from English society',
+      'It was set in Italy by accident',
+      'English settings were banned',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Italy was associated in the English imagination with passion, beauty, and vendetta. The Italian setting allowed Shakespeare to explore extreme emotions and family violence at a remove from English society, while themes of forced marriage and honour killing still resonated with his audience.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'rj-20',
+    question: 'How does the final scene function as a resolution to the feud?',
+    type: 'multiple-choice',
+    options: [
+      'The feud continues after the deaths',
+      'The deaths of the children force the families to confront the consequences of their hatred and finally reconcile',
+      'The Prince punishes both families with exile',
+      'The families agree to a truce before the deaths',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The Prince delivers judgement that the tragedy belongs to everyone. Confronted with the bodies of their children, Montague and Capulet finally agree to end the feud, but the price — two young lives — makes the reconciliation feel devastatingly hollow.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Love', summary: 'Shakespeare presents love in multiple forms, from Romeo\'s conventional Petrarchan infatuation to the genuine, transformative love he shares with Juliet.', keyPoints: ['Rosaline = performative love; Juliet = genuine mutual love', 'The shared sonnet at their first meeting elevates their love', 'Love is linked to light, religion, and death', 'The Nurse\'s maternal love and Friar\'s spiritual love provide contrast', 'In a corrupt society, genuine love can only exist outside ordinary life'] },
-  { topic: 'Fate and Destiny', summary: 'The Prologue establishes fate as a governing force, but the play also suggests human choices cause the tragedy.', keyPoints: ['"Star-cross\'d lovers" introduces the idea of cosmic fate', 'Unlucky timing: the undelivered letter, Romeo arriving minutes too early', '"Then I defy you, stars!" — the tension between fate and free will', 'The feud, parental tyranny, and impulsiveness are human causes', 'Shakespeare leaves the audience to weigh fate against free will'] },
-  { topic: 'Conflict and Violence', summary: 'The feud saturates every level of Verona, and every moment of love is shadowed by the threat of violence.', keyPoints: ['Public brawls force the Prince to threaten death', 'Tybalt actively seeks conflict rather than merely inheriting it', 'Mercutio\'s death is the turning point from comedy to tragedy', 'Violence is self-perpetuating: each act demands revenge', 'Only the lovers\' deaths can break the cycle'] },
-  { topic: 'Youth vs Age', summary: 'The play contrasts youthful passion with adult authority, showing how the older generation crushes young autonomy.', keyPoints: ['Romeo and Juliet\'s love is spontaneous; the feud is inherited', 'Lord Capulet shifts from indulgent father to furious patriarch', 'The Nurse and Friar both fail the lovers at critical moments', 'Elizabethan marriage was a financial arrangement controlled by fathers', 'The play\'s sympathy lies with the young, but neither generation escapes blame'] },
-  { topic: 'Honour and Reputation', summary: 'Honour in Verona is public, male, and violent — and Shakespeare exposes it as a destructive social code.', keyPoints: ['Tybalt fights to defend the Capulet name', 'Romeo kills to avenge Mercutio\'s honour', 'Juliet is controlled by expectations of female obedience', 'Lord Capulet forces the Paris match partly for family standing', 'Honour values reputation over human life'] },
+  {
+    topic: 'Love',
+    summary:
+      "Shakespeare presents love in multiple forms, from Romeo's conventional Petrarchan infatuation to the genuine, transformative love he shares with Juliet.",
+    keyPoints: [
+      'Rosaline = performative love; Juliet = genuine mutual love',
+      'The shared sonnet at their first meeting elevates their love',
+      'Love is linked to light, religion, and death',
+      "The Nurse's maternal love and Friar's spiritual love provide contrast",
+      'In a corrupt society, genuine love can only exist outside ordinary life',
+    ],
+  },
+  {
+    topic: 'Fate and Destiny',
+    summary:
+      'The Prologue establishes fate as a governing force, but the play also suggests human choices cause the tragedy.',
+    keyPoints: [
+      '"Star-cross\'d lovers" introduces the idea of cosmic fate',
+      'Unlucky timing: the undelivered letter, Romeo arriving minutes too early',
+      '"Then I defy you, stars!" — the tension between fate and free will',
+      'The feud, parental tyranny, and impulsiveness are human causes',
+      'Shakespeare leaves the audience to weigh fate against free will',
+    ],
+  },
+  {
+    topic: 'Conflict and Violence',
+    summary:
+      'The feud saturates every level of Verona, and every moment of love is shadowed by the threat of violence.',
+    keyPoints: [
+      'Public brawls force the Prince to threaten death',
+      'Tybalt actively seeks conflict rather than merely inheriting it',
+      "Mercutio's death is the turning point from comedy to tragedy",
+      'Violence is self-perpetuating: each act demands revenge',
+      "Only the lovers' deaths can break the cycle",
+    ],
+  },
+  {
+    topic: 'Youth vs Age',
+    summary:
+      'The play contrasts youthful passion with adult authority, showing how the older generation crushes young autonomy.',
+    keyPoints: [
+      "Romeo and Juliet's love is spontaneous; the feud is inherited",
+      'Lord Capulet shifts from indulgent father to furious patriarch',
+      'The Nurse and Friar both fail the lovers at critical moments',
+      'Elizabethan marriage was a financial arrangement controlled by fathers',
+      "The play's sympathy lies with the young, but neither generation escapes blame",
+    ],
+  },
+  {
+    topic: 'Honour and Reputation',
+    summary:
+      'Honour in Verona is public, male, and violent — and Shakespeare exposes it as a destructive social code.',
+    keyPoints: [
+      'Tybalt fights to defend the Capulet name',
+      "Romeo kills to avenge Mercutio's honour",
+      'Juliet is controlled by expectations of female obedience',
+      'Lord Capulet forces the Paris match partly for family standing',
+      'Honour values reputation over human life',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -286,6 +626,7 @@ export default async function RomeoAndJulietPage() {
   if (board && !allowedBoards.includes(board)) {
     redirect('/revision/texts')
   }
+  const userBoardLabel = board ? (getBoardConfig(board)?.shortName ?? 'AQA') : 'AQA'
 
   return (
     <>
@@ -295,27 +636,72 @@ export default async function RomeoAndJulietPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Romeo and Juliet", url: "https://theenglishhub.app/revision/texts/romeo-and-juliet" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Romeo and Juliet',
+            url: 'https://theenglishhub.app/revision/texts/romeo-and-juliet',
+          },
         ]}
       />
       <TextStudyHub
         textName="Romeo and Juliet"
         textType="play"
-        examBoard="AQA"
+        examBoard={userBoardLabel}
         basePath="/revision/texts/romeo-and-juliet"
         subPages={[
-          { id: 'read', href: '/revision/texts/romeo-and-juliet/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
-          { id: 'acts', href: '/revision/texts/romeo-and-juliet/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/romeo-and-juliet/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/romeo-and-juliet/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/romeo-and-juliet/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/romeo-and-juliet/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
-          { id: 'essays', href: '/revision/texts/romeo-and-juliet/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+          {
+            id: 'read',
+            href: '/revision/texts/romeo-and-juliet/read',
+            icon: 'read' as const,
+            title: 'Read Full Text',
+            description: 'With annotations',
+          },
+          {
+            id: 'acts',
+            href: '/revision/texts/romeo-and-juliet/acts',
+            icon: 'acts' as const,
+            title: 'Act-by-Act Analysis',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/romeo-and-juliet/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/romeo-and-juliet/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/romeo-and-juliet/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/romeo-and-juliet/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/romeo-and-juliet/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'GCSE essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -327,7 +713,7 @@ export default async function RomeoAndJulietPage() {
           'How does Shakespeare explore the theme of youth versus age?',
           'How does Shakespeare use light and dark imagery in Romeo and Juliet?',
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}

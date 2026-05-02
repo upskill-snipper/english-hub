@@ -5,6 +5,7 @@ import { persist } from 'zustand/middleware'
 // Re-export server-safe types and data from board-config so existing imports keep working.
 export { BOARDS, getBoardConfig, getDisplayName } from './board-config'
 export type { ExamBoard, BoardConfig, BoardCategory } from './board-config'
+import { BOARDS } from './board-config'
 import type { ExamBoard } from './board-config'
 
 type State = { board: ExamBoard | null; isHydrated: boolean }
@@ -55,15 +56,34 @@ export const useBoardStore = create<State & Actions>()(
     {
       name: 'english-hub-board',
       onRehydrateStorage: () => (state) => {
-        // Rehydration fires after zustand restores `board` from localStorage.
-        // If the store has a board but the cookie is missing (e.g. user
-        // cleared cookies but kept localStorage, or the cookie expired),
-        // re-write the cookie so middleware + server components see the
-        // same value as the client store.
-        if (state?.board && !readBoardCookie()) {
+        if (!state) return
+
+        // localStorage → cookie repair (one-way). If the store has a board
+        // but the cookie is missing (e.g. user cleared cookies but kept
+        // localStorage, or the cookie expired), re-write the cookie so
+        // middleware + server components see the same value as the client store.
+        if (state.board && !readBoardCookie()) {
           writeBoardCookie(state.board)
         }
-        state?._setHydrated()
+
+        // 02 May 2026 — cookie → store bridge. When middleware writes the
+        // cookie via the ?setBoard=<id> mechanism, the Zustand store stays
+        // empty until the user explicitly calls setBoard(). Without this
+        // bridge, components reading useBoard() would show "no board" while
+        // the server-rendered content shows the new board (the "different
+        // board without my knowledge" symptom). Validate against BOARDS to
+        // defend against stale/invalid cookie values.
+        if (!state.board) {
+          const cookieValue = readBoardCookie()
+          if (cookieValue) {
+            const validIds = BOARDS.map((b) => b.id) as readonly string[]
+            if (validIds.includes(cookieValue)) {
+              state.board = cookieValue as ExamBoard
+            }
+          }
+        }
+
+        state._setHydrated()
       },
     },
   ),

@@ -128,9 +128,7 @@ function isAllowlisted(pathname: string | null): boolean {
 /** Read the `english-hub-board` cookie (client side) as a fallback pre-hydration. */
 function readBoardCookie(): string | null {
   if (typeof document === 'undefined') return null
-  const match = document.cookie
-    .split('; ')
-    .find((row) => row.startsWith('english-hub-board='))
+  const match = document.cookie.split('; ').find((row) => row.startsWith('english-hub-board='))
   if (!match) return null
   const value = match.split('=')[1]
   return value ? decodeURIComponent(value) : null
@@ -138,9 +136,6 @@ function readBoardCookie(): string | null {
 
 type BoardGateProps = {
   children: React.ReactNode
-  /** Server-side board value passed from layout for SSR consistency. Currently unused
-   *  but accepted so the layout can pass it without a type error. */
-  initialBoard?: import('@/lib/board/board-config').ExamBoard | null
 }
 
 export function BoardGate({ children }: BoardGateProps) {
@@ -232,11 +227,7 @@ export function BoardGate({ children }: BoardGateProps) {
               </p>
             </div>
 
-            <BoardSelectorSection
-              disableRedirect
-              compact
-              onSelected={() => setDismissed(true)}
-            />
+            <BoardSelectorSection disableRedirect compact onSelected={() => setDismissed(true)} />
           </div>
         </div>
       )}

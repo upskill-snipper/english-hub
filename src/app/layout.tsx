@@ -13,7 +13,6 @@ import { PostHogProvider } from '@/components/PostHogProvider'
 import { TrustpilotInviteScript } from '@/components/trustpilot/TrustpilotInviteScript'
 import { Suspense } from 'react'
 import { BoardGate } from '@/components/board/BoardGate'
-import { getServerBoard } from '@/lib/board/get-server-board'
 import './globals.css'
 
 const monaSans = localFont({
@@ -67,7 +66,6 @@ export const viewport: Viewport = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const initialBoard = await getServerBoard()
   return (
     <html lang="en-GB" className={monaSans.variable}>
       <head>
@@ -100,7 +98,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <TooltipProvider>
             <PostHogProvider>
               <RootLayoutShell>
-                <BoardGate initialBoard={initialBoard}>{children}</BoardGate>
+                <BoardGate>{children}</BoardGate>
               </RootLayoutShell>
             </PostHogProvider>
             <Toaster richColors position="bottom-right" />

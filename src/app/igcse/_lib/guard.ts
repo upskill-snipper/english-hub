@@ -1,3 +1,19 @@
+/**
+ * IGCSE board guard helpers.
+ *
+ * Two APIs:
+ * - getBoardMismatchState(allowed) — preferred. Returns { matched, currentBoard }
+ *   for use with <BoardMismatchBanner>. Never redirects.
+ * - requireIgcseBoard(allowed) — legacy no-op shim retained for backward compat
+ *   while the 127 existing callers across /igcse/* migrate to the new pattern.
+ *
+ * Migration: each page that currently calls `await requireIgcseBoard(['edexcel-igcse'])`
+ * should add `const mismatch = await getBoardMismatchState(['edexcel-igcse'])` and
+ * render `<BoardMismatchBanner pageBoard="edexcel-igcse" />` when `!mismatch.matched`.
+ *
+ * See business-docs/BOARD_NAVIGATION_MODEL.md (02 May 2026) for context.
+ */
+
 import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import type { ExamBoard } from '@/lib/board/board-config'
@@ -6,31 +22,52 @@ import type { ExamBoard } from '@/lib/board/board-config'
 export { getIgcseHubUrl } from '@/lib/board/board-filter'
 
 /**
- * Server-side guard for IGCSE pages.
+ * Result of the board-mismatch check.
+ * - `matched: true` if the user's cookie matches one of the page's allowed
+ *   boards, OR if no cookie is set (boardless users see content as-is).
+ * - `currentBoard`: the user's cookie board, or null.
+ */
+export interface BoardMismatchState {
+  matched: boolean
+  currentBoard: ExamBoard | null
+}
+
+/**
+ * Server-side helper for IGCSE pages (and other board-pinned pages) to
+ * determine whether the user's cookie matches the page's expected board(s).
  *
- * Renders the page if the user's board cookie is in the `allowed` list, OR
- * if no cookie is set (board-less users are handled by the page itself).
+ * Pages call this and pass the result into <BoardMismatchBanner> so the user
+ * gets a non-blocking notice when their cookie disagrees with the URL they're
+ * on. Replaces the prior `requireIgcseBoard` redirect-or-noop pattern.
+ */
+export async function getBoardMismatchState(
+  allowed: readonly ExamBoard[],
+): Promise<BoardMismatchState> {
+  const board = await getServerBoard()
+  if (!board) {
+    // No cookie → no mismatch (treat boardless users as "no opinion").
+    return { matched: true, currentBoard: null }
+  }
+  return {
+    matched: allowed.includes(board),
+    currentBoard: board,
+  }
+}
+
+/**
+ * @deprecated Use `getBoardMismatchState` with `<BoardMismatchBanner>` instead.
  *
- * 28 Apr 2026 — softened. Previously, a user on a different board cookie
- * (e.g. `aqa` for GCSE AQA) clicking an IGCSE board card on the homepage
- * was silently redirected to `/revision`, leaving them stranded with no
- * indication the click did anything. The homepage now treats every board
- * card as an explicit user choice, so this guard is effectively a no-op
- * for the homepage flow. The `redirect` is intentionally retained but
- * unused — kept for the future case where we want to gate deep IGCSE
- * sub-routes behind a confirmed cookie. The compiler will warn `redirect`
- * is unused, which is the desired signal.
+ * Legacy no-op shim. Awaits `getServerBoard()` for parity with consumers but
+ * never redirects. Retained while the ~127 existing callers across the IGCSE
+ * tree migrate to the new pattern.
  */
 export async function requireIgcseBoard(
   _allowed: ExamBoard[],
   _fallback: string = '/revision',
 ): Promise<void> {
-  // Softened guard: read the cookie for parity with consumers but never
-  // redirect. The user clicked an explicit URL — show them the page.
   await getServerBoard()
-  // Intentional: do not call `redirect()`. See header comment.
-  // The unused `redirect` import below is kept so re-enabling the guard
-  // is a one-line edit.
+  // Intentional no-op. The redirect import is retained so re-enabling the
+  // guard is a one-line edit if abuse ever surfaces.
   void redirect
 }
 

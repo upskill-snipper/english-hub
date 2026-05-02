@@ -28,28 +28,31 @@ type Board = {
   level: Level
 }
 
+// 02 May 2026 — hrefs use the canonical `/revision?setBoard=<id>` mechanism.
+// Middleware reads ?setBoard=, validates, sets cookie, redirects to clean
+// /revision. See business-docs/BOARD_NAVIGATION_MODEL.md.
 const GCSE_BOARDS: readonly Board[] = [
   {
     name: 'AQA',
-    href: '/revision/poetry/power-and-conflict',
+    href: '/revision?setBoard=aqa',
     description: 'Power & Conflict, Love & Relationships, Worlds & Lives.',
     level: 'GCSE',
   },
   {
     name: 'Pearson Edexcel GCSE',
-    href: '/revision/poetry/edexcel',
+    href: '/revision?setBoard=edexcel',
     description: 'Time & Place, Conflict, Relationships anthology.',
     level: 'GCSE',
   },
   {
     name: 'OCR',
-    href: '/revision/poetry/ocr',
+    href: '/revision?setBoard=ocr',
     description: 'Love, Conflict, Power & Natural World, Youth & Age.',
     level: 'GCSE',
   },
   {
     name: 'WJEC Eduqas',
-    href: '/revision/poetry/eduqas',
+    href: '/revision?setBoard=eduqas',
     description: 'Eduqas Anthology poems with annotated walkthroughs.',
     level: 'GCSE',
   },
@@ -58,19 +61,19 @@ const GCSE_BOARDS: readonly Board[] = [
 const IGCSE_BOARDS: readonly Board[] = [
   {
     name: 'Cambridge IGCSE',
-    href: '/igcse/cambridge',
+    href: '/revision?setBoard=cambridge-0500',
     description: '0500 and 0990 — Reading, Composition, model answers.',
     level: 'IGCSE',
   },
   {
     name: 'Pearson Edexcel IGCSE Literature',
-    href: '/igcse/edexcel',
+    href: '/revision?setBoard=edexcel-igcse',
     description: 'Drama, Prose, Shakespeare, Unseen Poetry.',
     level: 'IGCSE',
   },
   {
     name: 'Pearson Edexcel IGCSE Language A',
-    href: '/igcse/edexcel-lang',
+    href: '/revision?setBoard=edexcel-igcse-lang',
     description: 'Non-fiction anthology, reading and transactional writing.',
     level: 'IGCSE',
   },

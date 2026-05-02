@@ -3,10 +3,53 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { BookOpen, Clock, ArrowRight } from 'lucide-react'
+import { useBoard } from '@/hooks/useBoard'
+import type { ExamBoard } from '@/hooks/useBoard'
 
 const RECENTLY_STUDIED_KEY = 'english-hub-recently-studied'
 const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
 const LAST_VISITED_KEY = 'english-hub-last-visited-revision'
+
+// Fallback poetry hub bases used when the user has no board set or is on a
+// board that does not have a dedicated poetry hub. Mirrors the previous
+// hardcoded behaviour of this widget.
+const FALLBACK_POETRY_HUB_PATHS: readonly string[] = [
+  '/revision/poetry/power-and-conflict',
+  '/revision/poetry/love-and-relationships',
+  '/revision/poetry/eduqas',
+]
+
+// Map each board to its preferred poetry hub bases (no trailing slug).
+// Order matters: the first base whose `${base}/${slug}` href has not yet
+// been added to the merged list is what we link to.
+const POETRY_HUB_PATHS_BY_BOARD: Partial<Record<ExamBoard, readonly string[]>> = {
+  aqa: [
+    '/revision/poetry/power-and-conflict',
+    '/revision/poetry/love-and-relationships',
+    '/revision/poetry/aqa-worlds-and-lives',
+  ],
+  edexcel: ['/revision/poetry/edexcel/conflict', '/revision/poetry/edexcel/time-and-place'],
+  ocr: [
+    '/revision/poetry/ocr/love-and-relationships',
+    '/revision/poetry/ocr/conflict',
+    '/revision/poetry/ocr/youth-and-age',
+    '/revision/poetry/ocr/power-and-natural-world',
+  ],
+  eduqas: ['/revision/poetry/eduqas'],
+  // IGCSE boards: use the IGCSE hub
+  'edexcel-igcse': ['/igcse/edexcel/poetry'],
+  'edexcel-igcse-lang': ['/igcse/edexcel-lang/anthology'],
+  // No-board / A-Level / IAL / KS3 / Cambridge: use the AQA-style fallback
+  // ordering defined in FALLBACK_POETRY_HUB_PATHS.
+}
+
+function buildCandidatePaths(slug: string, board: ExamBoard | null): readonly string[] {
+  const bases =
+    board && POETRY_HUB_PATHS_BY_BOARD[board]
+      ? POETRY_HUB_PATHS_BY_BOARD[board]!
+      : FALLBACK_POETRY_HUB_PATHS
+  return bases.map((base) => `${base}/${slug}`)
+}
 
 interface RecentItem {
   title: string
@@ -25,6 +68,7 @@ function slugToTitle(slug: string): string {
 export function RecentlyStudied() {
   const [recentItems, setRecentItems] = useState<RecentItem[]>([])
   const [mounted, setMounted] = useState(false)
+  const { board } = useBoard()
 
   useEffect(() => {
     setMounted(true)
@@ -71,16 +115,14 @@ export function RecentlyStudied() {
         }
       }
 
-      // 3. Studied poem slugs
+      // 3. Studied poem slugs — build candidate paths board-aware so that a
+      // student who switches boards is linked to a hub valid for their
+      // current board rather than the AQA URL the poem was studied under.
       const studiedPoems = localStorage.getItem(STUDIED_POEMS_KEY)
       if (studiedPoems) {
         const slugs: string[] = JSON.parse(studiedPoems)
         for (const slug of slugs) {
-          const candidatePaths = [
-            `/revision/poetry/power-and-conflict/${slug}`,
-            `/revision/poetry/love-and-relationships/${slug}`,
-            `/revision/poetry/eduqas/${slug}`,
-          ]
+          const candidatePaths = buildCandidatePaths(slug, board)
           for (const href of candidatePaths) {
             if (seen.has(href)) continue
             merged.push({
@@ -100,7 +142,7 @@ export function RecentlyStudied() {
     } catch {
       // ignore parse errors
     }
-  }, [])
+  }, [board])
 
   if (!mounted || recentItems.length === 0) return null
 

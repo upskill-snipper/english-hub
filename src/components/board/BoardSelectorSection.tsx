@@ -25,7 +25,7 @@ import { cn } from '@/lib/utils'
  * ──────────────────────────────────────────────────────────────────────────── */
 
 type Props = {
-  /** Where to redirect after a selection (defaults to `/`). */
+  /** Where to redirect after a selection (defaults to `/revision`). */
   redirectTo?: string
   /** When true, do not redirect on selection — used by the modal gate. */
   disableRedirect?: boolean
@@ -58,7 +58,7 @@ type AwardingBody =
  * ──────────────────────────────────────────────────────────────────────────── */
 
 export function BoardSelectorSection({
-  redirectTo = '/',
+  redirectTo = '/revision',
   disableRedirect = false,
   onSelected,
   compact,
@@ -78,14 +78,41 @@ export function BoardSelectorSection({
       if (loadingBoard) return
       setLoadingBoard(board)
       try {
+        // Update Zustand + write the cookie via document.cookie so any client
+        // UI reading `useBoard()` synchronously sees the new value before we
+        // navigate (e.g. the highlighted "current board" tick on Step 3).
         setBoard(board)
+
+        // Fire analytics synchronously — `events.boardSelected` is a sync
+        // push to GA4's dataLayer, so it completes before the page tears
+        // down on the location change below.
         try {
           events.boardSelected(board)
         } catch {
           /* never break */
         }
+
+        // Allow the host (e.g. <BoardGate> modal) to intercept and handle
+        // navigation itself (the modal closes and forwards to its `next`
+        // redirect target). When `disableRedirect` is true we never navigate.
         onSelected?.(board)
-        if (!disableRedirect) {
+        if (disableRedirect) return
+
+        // Canonical "explicit board choice" navigation: full reload to
+        // `<redirectTo>?setBoard=<board>`. The middleware validates the id,
+        // writes the cookie authoritatively (server-side `Set-Cookie`), then
+        // redirects to the clean URL — so the server-rendered chrome
+        // (sidebar, badge, getServerBoard) re-renders against the new
+        // cookie even if Zustand never hydrated. We use `window.location`
+        // (not `router.push` + `router.refresh`) because Next.js's client
+        // navigation doesn't reliably resend the request with the freshly
+        // written cookie on a single tick.
+        if (typeof window !== 'undefined') {
+          const sep = redirectTo.includes('?') ? '&' : '?'
+          window.location.href = `${redirectTo}${sep}setBoard=${encodeURIComponent(board)}`
+        } else {
+          // SSR fallback (handleSelect should never run server-side, but
+          // keep the branch type-safe).
           router.push(redirectTo)
           router.refresh()
         }

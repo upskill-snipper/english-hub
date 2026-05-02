@@ -195,7 +195,133 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
     )
   }
 
-  // Fallback (shouldn't be reachable)
+  // ── cambridge-0475 (Cambridge IGCSE Literature in English) ─────────
+  if (board === 'cambridge-0475') {
+    return (
+      <>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel="Cambridge IGCSE Literature in English (0475)"
+          title="Cambridge IGCSE Literature in English"
+          description="The Cambridge Literature spec uses the Songs of Ourselves anthology. Detailed guides for each prescribed poem are on the Cambridge Lit hub."
+          wrongBoard={wrongBoard}
+          board={board}
+        >
+          <div className="sm:col-span-2">
+            <Button variant="default" size="sm" render={<Link href="/igcse/cambridge" />}>
+              Open Cambridge Literature hub
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
+      </>
+    )
+  }
+
+  // ── edexcel-igcse-lang (Pearson Edexcel IGCSE Language A 4EA1) ─────
+  if (board === 'edexcel-igcse-lang') {
+    return (
+      <>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel="Pearson Edexcel IGCSE Language A (4EA1)"
+          title="Edexcel IGCSE Language A doesn't have a poetry anthology"
+          description="The Language A spec (4EA1) focuses on non-fiction, transactional writing, and unseen prose — not a poetry anthology. Head to the Anthology section under Paper 1 for your prescribed texts."
+          wrongBoard={wrongBoard}
+          board={board}
+        >
+          <div className="sm:col-span-2">
+            <Button
+              variant="default"
+              size="sm"
+              render={<Link href="/igcse/edexcel-lang/anthology" />}
+            >
+              Go to Language A anthology
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
+      </>
+    )
+  }
+
+  // ── A-Level boards ──────────────────────────────────────────────────
+  if (
+    board === 'aqa-a-level' ||
+    board === 'edexcel-a-level' ||
+    board === 'ocr-a-level' ||
+    board === 'eduqas-a-level'
+  ) {
+    return (
+      <>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel="A-Level English Literature"
+          title="A-Level poetry isn't an anthology cluster"
+          description="At A-Level, poetry is studied as part of a wider literature paper, not as a separate cluster. Use the unified hub to access your A-Level-specific resources."
+          wrongBoard={wrongBoard}
+          board={board}
+        >
+          <div className="sm:col-span-2">
+            <Button variant="default" size="sm" render={<Link href="/revision" />}>
+              Open your A-Level hub
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
+      </>
+    )
+  }
+
+  // ── IAL Edexcel ─────────────────────────────────────────────────────
+  if (board === 'ial-edexcel') {
+    return (
+      <>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel="Edexcel IAL English Literature"
+          title="Edexcel IAL English Literature"
+          description="The IAL Literature paper draws on Edexcel's anthology. Open your IAL hub for spec-specific resources."
+          wrongBoard={wrongBoard}
+          board={board}
+        >
+          <div className="sm:col-span-2">
+            <Button variant="default" size="sm" render={<Link href="/revision/ial" />}>
+              Open IAL hub
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
+      </>
+    )
+  }
+
+  // ── KS3 ─────────────────────────────────────────────────────────────
+  if (board === 'ks3') {
+    return (
+      <>
+        <Breadcrumb items={breadcrumbItems} />
+        <PoetryShell
+          boardLabel="KS3 English"
+          title="KS3 poetry is themed, not anthology-based"
+          description="KS3 lessons cover a rotating set of poems by theme rather than a fixed anthology. Use the unified KS3 hub for your year-group resources."
+          wrongBoard={wrongBoard}
+          board={board}
+        >
+          <div className="sm:col-span-2">
+            <Button variant="default" size="sm" render={<Link href="/revision" />}>
+              Open KS3 hub
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </div>
+        </PoetryShell>
+      </>
+    )
+  }
+
+  // Defensive fallback for any future board id added without a matching branch.
+  // Boardless null users were handled higher up — they get the explicit
+  // "Choose your exam board" CTA via BoardlessPoetryShell.
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />

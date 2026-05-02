@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
@@ -113,55 +114,64 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote: '"In my younger and more vulnerable years my father gave me some advice that I\u2019ve been turning over in my mind ever since."',
+      quote:
+        '"In my younger and more vulnerable years my father gave me some advice that I\u2019ve been turning over in my mind ever since."',
       who: 'Nick Carraway \u2014 Chapter 1',
       analysis:
         'The opening line establishes Nick as a retrospective, morally reflective narrator, and sets up the novel\u2019s interest in judgement, memory and the attempt to understand the past.',
     },
     {
-      quote: '"I hope she\u2019ll be a fool \u2014 that\u2019s the best thing a girl can be in this world, a beautiful little fool."',
+      quote:
+        '"I hope she\u2019ll be a fool \u2014 that\u2019s the best thing a girl can be in this world, a beautiful little fool."',
       who: 'Daisy Buchanan \u2014 Chapter 1',
       analysis:
         'Daisy\u2019s wish for her infant daughter is a startlingly clear-eyed indictment of the world she lives in, and hints at her own knowing complicity in the system that traps her.',
     },
     {
-      quote: '"He stretched out his arms toward the dark water \u2026 I could have sworn he was trembling \u2026 a single green light, minute and far away."',
+      quote:
+        '"He stretched out his arms toward the dark water \u2026 I could have sworn he was trembling \u2026 a single green light, minute and far away."',
       who: 'Nick describing Gatsby \u2014 Chapter 1',
       analysis:
         'The first appearance of the green light at the end of Daisy\u2019s dock introduces the novel\u2019s central symbol of longing and unreachable hope.',
     },
     {
-      quote: '"This is a valley of ashes \u2014 a fantastic farm where ashes grow like wheat into ridges and hills and grotesque gardens."',
+      quote:
+        '"This is a valley of ashes \u2014 a fantastic farm where ashes grow like wheat into ridges and hills and grotesque gardens."',
       who: 'Nick \u2014 Chapter 2',
       analysis:
         'The Valley of Ashes is the novel\u2019s emblem of the industrial waste that underpins the glittering life of the rich, and is watched over by the blank eyes of Doctor T. J. Eckleburg.',
     },
     {
-      quote: '"The eyes of Doctor T. J. Eckleburg are blue and gigantic \u2026 they look out of no face, but, instead, from a pair of enormous yellow spectacles."',
+      quote:
+        '"The eyes of Doctor T. J. Eckleburg are blue and gigantic \u2026 they look out of no face, but, instead, from a pair of enormous yellow spectacles."',
       who: 'Nick \u2014 Chapter 2',
       analysis:
         'Fitzgerald\u2019s billboard eyes become a secular stand-in for a watching God, presiding unseeing over a moral landscape that has abandoned traditional value.',
     },
     {
-      quote: '"I was within and without, simultaneously enchanted and repelled by the inexhaustible variety of life."',
+      quote:
+        '"I was within and without, simultaneously enchanted and repelled by the inexhaustible variety of life."',
       who: 'Nick \u2014 Chapter 2',
       analysis:
         'Nick captures his double position as participant and observer, a tension that structures his narration and frames the novel\u2019s ambivalent attitude towards wealth and glamour.',
     },
     {
-      quote: '"I believe that on the first night I went to Gatsby\u2019s house I was one of the few guests who had actually been invited."',
+      quote:
+        '"I believe that on the first night I went to Gatsby\u2019s house I was one of the few guests who had actually been invited."',
       who: 'Nick \u2014 Chapter 3',
       analysis:
         'The detail exposes the impersonal spectacle of Gatsby\u2019s parties: hundreds of strangers arriving uninvited to consume a host they barely acknowledge.',
     },
     {
-      quote: '"I\u2019m inclined to reserve all judgments \u2026 Reserving judgments is a matter of infinite hope."',
+      quote:
+        '"I\u2019m inclined to reserve all judgments \u2026 Reserving judgments is a matter of infinite hope."',
       who: 'Nick \u2014 Chapter 1',
       analysis:
         'Nick\u2019s claim to impartiality is both a moral stance and a narrative strategy, and the novel repeatedly tests whether he can sustain it.',
     },
     {
-      quote: '"You can\u2019t repeat the past."\u2003"Can\u2019t repeat the past?" he cried incredulously. "Why of course you can!"',
+      quote:
+        '"You can\u2019t repeat the past."\u2003"Can\u2019t repeat the past?" he cried incredulously. "Why of course you can!"',
       who: 'Nick and Gatsby \u2014 Chapter 6',
       analysis:
         'The exchange crystallises Gatsby\u2019s defining delusion: that time can be reversed by willpower and wealth, and that a five-year-old love affair can be restarted where it left off.',
@@ -173,25 +183,29 @@ const data: TextGuideData = {
         'Gatsby\u2019s sharpest insight \u2014 that the charm of Daisy\u2019s voice is inseparable from the wealth that shaped it \u2014 exposes the inseparability of love and class in the novel.',
     },
     {
-      quote: '"Her voice is full of money \u2026 That was it. I\u2019d never understood before. It was full of money \u2014 that was the inexhaustible charm that rose and fell in it, the jingle of it, the cymbals\u2019 song of it."',
+      quote:
+        '"Her voice is full of money \u2026 That was it. I\u2019d never understood before. It was full of money \u2014 that was the inexhaustible charm that rose and fell in it, the jingle of it, the cymbals\u2019 song of it."',
       who: 'Nick reflecting on Gatsby\u2019s phrase \u2014 Chapter 7',
       analysis:
         'Nick\u2019s expansion of Gatsby\u2019s line turns a three-word diagnosis into a sustained meditation on the sound of privilege itself.',
     },
     {
-      quote: '"Her face was smeared with a mixture of blood and dust \u2026 her left breast was swinging loose like a flap."',
+      quote:
+        '"Her face was smeared with a mixture of blood and dust \u2026 her left breast was swinging loose like a flap."',
       who: 'Nick describing Myrtle\u2019s death \u2014 Chapter 7',
       analysis:
         'The violence of the passage \u2014 shocking in its graphic bodily detail \u2014 makes unavoidable the human cost of the Buchanans\u2019 carelessness and Gatsby\u2019s silk-shirt fantasies.',
     },
     {
-      quote: '"They were careless people, Tom and Daisy \u2014 they smashed up things and creatures and then retreated back into their money \u2026 and let other people clean up the mess they had made."',
+      quote:
+        '"They were careless people, Tom and Daisy \u2014 they smashed up things and creatures and then retreated back into their money \u2026 and let other people clean up the mess they had made."',
       who: 'Nick \u2014 Chapter 9',
       analysis:
         'Nick\u2019s retrospective verdict on the Buchanans is the novel\u2019s most damning moral statement, and the phrase "retreated back into their money" captures how old wealth functions as both shield and weapon.',
     },
     {
-      quote: '"Gatsby believed in the green light, the orgastic future that year by year recedes before us."',
+      quote:
+        '"Gatsby believed in the green light, the orgastic future that year by year recedes before us."',
       who: 'Nick \u2014 Chapter 9',
       analysis:
         'In the closing pages, Nick transforms Gatsby\u2019s personal longing into a national and universal condition, binding him to the American Dream itself.',
@@ -203,31 +217,36 @@ const data: TextGuideData = {
         'The famous final sentence turns the novel\u2019s central image of striving into a resigned, elegiac truth: forward motion is an illusion, and the past always catches us.',
     },
     {
-      quote: '"He had come a long way to this blue lawn, and his dream must have seemed so close that he could hardly fail to grasp it."',
+      quote:
+        '"He had come a long way to this blue lawn, and his dream must have seemed so close that he could hardly fail to grasp it."',
       who: 'Nick \u2014 Chapter 9',
       analysis:
         'Nick\u2019s final evocation of Gatsby frames his whole life as a near-miss, making the novel\u2019s tragedy one of narrowly unrealised hope rather than foolish fantasy.',
     },
     {
-      quote: '"The truth was that Jay Gatsby of West Egg, Long Island, sprang from his Platonic conception of himself."',
+      quote:
+        '"The truth was that Jay Gatsby of West Egg, Long Island, sprang from his Platonic conception of himself."',
       who: 'Nick \u2014 Chapter 6',
       analysis:
         'The phrase "Platonic conception of himself" gives philosophical weight to Gatsby\u2019s self-invention, presenting him as both fraud and visionary.',
     },
     {
-      quote: '"Let us learn to show our friendship for a man when he is alive and not after he is dead."',
+      quote:
+        '"Let us learn to show our friendship for a man when he is alive and not after he is dead."',
       who: 'Meyer Wolfshiem \u2014 Chapter 9',
       analysis:
         'Wolfshiem\u2019s excuse for missing the funeral completes the picture of a world in which loyalty evaporates as soon as the money stops flowing.',
     },
     {
-      quote: '"If personality is an unbroken series of successful gestures, then there was something gorgeous about him."',
+      quote:
+        '"If personality is an unbroken series of successful gestures, then there was something gorgeous about him."',
       who: 'Nick \u2014 Chapter 1',
       analysis:
         'Nick\u2019s early verdict on Gatsby captures the double quality of his persona: a construction of deliberate gestures that nevertheless amounts to something "gorgeous" and genuinely remarkable.',
     },
     {
-      quote: '"They\u2019re a rotten crowd \u2026 You\u2019re worth the whole damn bunch put together."',
+      quote:
+        '"They\u2019re a rotten crowd \u2026 You\u2019re worth the whole damn bunch put together."',
       who: 'Nick to Gatsby \u2014 Chapter 8',
       analysis:
         'Nick\u2019s last words to Gatsby, shouted across a lawn on the morning of his death, mark the point at which his claim to reserve all judgements finally breaks down.',
@@ -236,34 +255,367 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'gg-1', question: 'Who narrates The Great Gatsby?', type: 'multiple-choice', options: ['Jay Gatsby', 'Nick Carraway', 'Daisy Buchanan', 'Tom Buchanan'], correctIndex: 1, explanation: 'The novel is narrated in retrospective first person by Nick Carraway, Daisy\'s cousin and Gatsby\'s West Egg neighbour.', topic: 'Writer\'s Methods', difficulty: 'foundation' },
-  { id: 'gg-2', question: 'What is Gatsby\'s real name and where is he from?', type: 'multiple-choice', options: ['Jay Gatsby from New York', 'James Gatz from North Dakota', 'Jay Gatz from Minnesota', 'James Gatsby from Louisville'], correctIndex: 1, explanation: 'Gatsby was born James Gatz to poor farmers in North Dakota. He reinvented himself as Jay Gatsby, a crucial fact about the novel\'s theme of self-invention.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'gg-3', question: 'What does the green light at the end of Daisy\'s dock symbolise?', type: 'multiple-choice', options: ['Jealousy', 'Gatsby\'s unreachable longing for Daisy and the wider American Dream', 'Wealth', 'Luck'], correctIndex: 1, explanation: 'The green light represents Gatsby\'s hope of reuniting with Daisy, and by extension the American Dream — always just out of reach across the water.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'gg-4', question: 'Where do the Buchanans live in relation to Gatsby?', type: 'multiple-choice', options: ['Next door in West Egg', 'Across the bay in East Egg (old money)', 'In Manhattan', 'In the Valley of Ashes'], correctIndex: 1, explanation: 'The Buchanans live in East Egg, the "old money" side of the bay. Gatsby lives in West Egg, the "new money" side. This geography dramatises the class barrier Gatsby cannot cross.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'gg-5', question: 'Who is driving the car that kills Myrtle Wilson?', type: 'multiple-choice', options: ['Gatsby', 'Daisy', 'Tom', 'Nick'], correctIndex: 1, explanation: 'Daisy is at the wheel of Gatsby\'s yellow car when it strikes Myrtle. Gatsby takes the blame to protect her, a decision that ultimately costs him his life.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'gg-6', question: 'Who kills Gatsby?', type: 'multiple-choice', options: ['Tom Buchanan', 'Meyer Wolfshiem', 'George Wilson', 'The police'], correctIndex: 2, explanation: 'George Wilson, believing Gatsby killed his wife and was her lover, shoots Gatsby in his swimming pool and then kills himself. He has been misled by Tom Buchanan.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'gg-7', question: 'What is Jordan Baker\'s profession?', type: 'multiple-choice', options: ['Actress', 'Professional golfer', 'Journalist', 'Socialite only'], correctIndex: 1, explanation: 'Jordan is a professional golfer, rumoured to have cheated to win a tournament. She represents the new, sporting, independent woman of the 1920s.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'gg-8', question: 'Where does Myrtle Wilson live?', type: 'multiple-choice', options: ['East Egg', 'West Egg', 'The Valley of Ashes, above her husband\'s garage', 'Manhattan'], correctIndex: 2, explanation: 'Myrtle lives in the Valley of Ashes, the grey industrial wasteland between West Egg and New York City, above George Wilson\'s failing garage.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'gg-9', question: 'What does Gatsby mean when he says Daisy\'s "voice is full of money"?', type: 'multiple-choice', options: ['She is greedy', 'Her charm is inseparable from the wealth and class that shaped her', 'She is literally paid to speak', 'She talks about money constantly'], correctIndex: 1, explanation: 'Gatsby\'s insight captures the novel\'s central point that love and wealth cannot be separated in this world. Daisy\'s voice sounds the way it does because of the privilege that produced her.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'gg-10', question: 'What is the significance of the billboard in the Valley of Ashes?', type: 'multiple-choice', options: ['It is an advertisement for Gatsby\'s parties', 'The giant fading eyes of Doctor T. J. Eckleburg function as a secular stand-in for a watching God', 'It is a memorial', 'It is for bootleg liquor'], correctIndex: 1, explanation: 'The disused billboard with the eyes of Doctor T. J. Eckleburg watches unseeing over the Valley of Ashes and its moral wreckage, suggesting a world that has lost its traditional sense of divine judgement.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'gg-11', question: 'How does Fitzgerald present the difference between East Egg and West Egg?', type: 'multiple-choice', options: ['They are identical', 'East Egg = old inherited money; West Egg = new self-made money, a geography that dramatises class division', 'West Egg is richer', 'They are both poor neighbourhoods'], correctIndex: 1, explanation: 'Fitzgerald uses the two Eggs to externalise the divide between old money (Tom and Daisy) and new money (Gatsby). No matter how vast his fortune, Gatsby cannot cross the bay.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'gg-12', question: 'What does Gatsby mean by "Can\'t repeat the past? Why of course you can!"?', type: 'multiple-choice', options: ['He is joking', 'He genuinely believes he can restart his 1917 romance with Daisy exactly where it left off — the novel\'s defining delusion', 'He is talking about history books', 'He is quoting someone else'], correctIndex: 1, explanation: 'Gatsby\'s outburst crystallises his central delusion: that five years can be erased and the past restored through willpower and wealth. His tragedy is the discovery that they cannot.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'gg-13', question: 'How does Fitzgerald present Tom and Daisy at the end of the novel?', type: 'multiple-choice', options: ['As repentant', 'As "careless people" who smash things up and retreat back into their money, letting others clean up the mess', 'As heroic', 'As tragic victims'], correctIndex: 1, explanation: 'Nick\'s retrospective verdict — "They were careless people, Tom and Daisy" — is the novel\'s most damning moral statement and frames the Buchanans as the true villains of the story.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'gg-14', question: 'Who attends Gatsby\'s funeral?', type: 'multiple-choice', options: ['Hundreds of party guests', 'Almost no one — Nick, Gatsby\'s father Henry Gatz, Owl Eyes and a few servants', 'Daisy and Tom', 'Meyer Wolfshiem'], correctIndex: 1, explanation: 'Gatsby\'s funeral is almost empty. Daisy and Tom have left town, Wolfshiem refuses to come, and only Nick, Henry Gatz, Owl Eyes and a handful of servants stand at the graveside. The absence exposes the hollowness of his social world.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'gg-15', question: 'How is the source of Gatsby\'s wealth presented?', type: 'multiple-choice', options: ['He inherited it', 'Bootlegging and organised crime, connected through Meyer Wolfshiem — the supposedly meritocratic dream is built on lawbreaking', 'He earned it honestly', 'It is never addressed'], correctIndex: 1, explanation: 'Gatsby\'s fortune comes from Prohibition bootlegging and shadowy dealings with gangster Meyer Wolfshiem (a fictionalised Arnold Rothstein). Fitzgerald uses this to expose the criminal underside of 1920s wealth.', topic: 'Context', difficulty: 'higher' },
-  { id: 'gg-16', question: 'What is the effect of Nick\'s retrospective first-person narration?', type: 'multiple-choice', options: ['It is unreliable in an obvious way', 'It creates a morally reflective, elegiac frame that lets Fitzgerald explore memory, judgement and disillusionment simultaneously', 'It is omniscient', 'It is purely objective'], correctIndex: 1, explanation: 'Nick narrates from somewhere in the Middle West after the events, giving the novel its characteristic mix of participation and judgement. His retrospective stance makes the whole story an act of remembered loss.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'gg-17', question: 'How does the novel\'s final sentence ("So we beat on, boats against the current...") function?', type: 'multiple-choice', options: ['As a happy ending', 'It universalises Gatsby\'s longing, turning individual tragedy into a meditation on human effort against time', 'As a literal description of sailing', 'As a joke'], correctIndex: 1, explanation: 'The closing line converts Gatsby\'s personal defeat into a universal image of striving against time, binding the American Dream to the impossibility of ever truly moving forward.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'gg-18', question: 'How does Fitzgerald use the Valley of Ashes?', type: 'multiple-choice', options: ['As comic relief', 'As a grey industrial symbol of the poverty that underpins the wealth of East and West Egg, watched over by Eckleburg\'s eyes', 'As Gatsby\'s home', 'As the setting for the parties'], correctIndex: 1, explanation: 'The Valley of Ashes is the literal and symbolic waste that makes the wealth of Long Island possible, and the site of Myrtle\'s death. It exposes the human cost of the Jazz Age boom.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'gg-19', question: 'How does Fitzgerald treat the American Dream in the novel?', type: 'multiple-choice', options: ['He celebrates it', 'He presents it as corrupted: Gatsby\'s rise is powered by crime, his love object is already taken, and the old rich reject him to the end', 'He ignores it', 'He says it is uniquely European'], correctIndex: 1, explanation: 'The novel dissects the American Dream at the height of its Jazz Age form and finds it hollow. Even Gatsby\'s "extraordinary gift for hope" cannot survive the carelessness of the class he tried to join.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'gg-20', question: 'What is the significance of Fitzgerald\'s own biography for the novel?', type: 'multiple-choice', options: ['It is irrelevant', 'His marriage to Zelda Sayre, a Southern debutante who initially rejected him as not rich enough, shapes Gatsby\'s pursuit of Daisy and the novel\'s outsider perspective on the rich', 'He was actually wealthy old money', 'He never married'], correctIndex: 1, explanation: 'Fitzgerald\'s own experience of being an outsider pursuing a wealthy woman informs Gatsby\'s story, and his ambivalent position — enchanted by the rich but clear-eyed about them — gives the novel its characteristic tone.', topic: 'Context', difficulty: 'grade-9' },
+  {
+    id: 'gg-1',
+    question: 'Who narrates The Great Gatsby?',
+    type: 'multiple-choice',
+    options: ['Jay Gatsby', 'Nick Carraway', 'Daisy Buchanan', 'Tom Buchanan'],
+    correctIndex: 1,
+    explanation:
+      "The novel is narrated in retrospective first person by Nick Carraway, Daisy's cousin and Gatsby's West Egg neighbour.",
+    topic: "Writer's Methods",
+    difficulty: 'foundation',
+  },
+  {
+    id: 'gg-2',
+    question: "What is Gatsby's real name and where is he from?",
+    type: 'multiple-choice',
+    options: [
+      'Jay Gatsby from New York',
+      'James Gatz from North Dakota',
+      'Jay Gatz from Minnesota',
+      'James Gatsby from Louisville',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Gatsby was born James Gatz to poor farmers in North Dakota. He reinvented himself as Jay Gatsby, a crucial fact about the novel's theme of self-invention.",
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'gg-3',
+    question: "What does the green light at the end of Daisy's dock symbolise?",
+    type: 'multiple-choice',
+    options: [
+      'Jealousy',
+      "Gatsby's unreachable longing for Daisy and the wider American Dream",
+      'Wealth',
+      'Luck',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The green light represents Gatsby's hope of reuniting with Daisy, and by extension the American Dream — always just out of reach across the water.",
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'gg-4',
+    question: 'Where do the Buchanans live in relation to Gatsby?',
+    type: 'multiple-choice',
+    options: [
+      'Next door in West Egg',
+      'Across the bay in East Egg (old money)',
+      'In Manhattan',
+      'In the Valley of Ashes',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The Buchanans live in East Egg, the "old money" side of the bay. Gatsby lives in West Egg, the "new money" side. This geography dramatises the class barrier Gatsby cannot cross.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'gg-5',
+    question: 'Who is driving the car that kills Myrtle Wilson?',
+    type: 'multiple-choice',
+    options: ['Gatsby', 'Daisy', 'Tom', 'Nick'],
+    correctIndex: 1,
+    explanation:
+      "Daisy is at the wheel of Gatsby's yellow car when it strikes Myrtle. Gatsby takes the blame to protect her, a decision that ultimately costs him his life.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'gg-6',
+    question: 'Who kills Gatsby?',
+    type: 'multiple-choice',
+    options: ['Tom Buchanan', 'Meyer Wolfshiem', 'George Wilson', 'The police'],
+    correctIndex: 2,
+    explanation:
+      'George Wilson, believing Gatsby killed his wife and was her lover, shoots Gatsby in his swimming pool and then kills himself. He has been misled by Tom Buchanan.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'gg-7',
+    question: "What is Jordan Baker's profession?",
+    type: 'multiple-choice',
+    options: ['Actress', 'Professional golfer', 'Journalist', 'Socialite only'],
+    correctIndex: 1,
+    explanation:
+      'Jordan is a professional golfer, rumoured to have cheated to win a tournament. She represents the new, sporting, independent woman of the 1920s.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'gg-8',
+    question: 'Where does Myrtle Wilson live?',
+    type: 'multiple-choice',
+    options: [
+      'East Egg',
+      'West Egg',
+      "The Valley of Ashes, above her husband's garage",
+      'Manhattan',
+    ],
+    correctIndex: 2,
+    explanation:
+      "Myrtle lives in the Valley of Ashes, the grey industrial wasteland between West Egg and New York City, above George Wilson's failing garage.",
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'gg-9',
+    question: 'What does Gatsby mean when he says Daisy\'s "voice is full of money"?',
+    type: 'multiple-choice',
+    options: [
+      'She is greedy',
+      'Her charm is inseparable from the wealth and class that shaped her',
+      'She is literally paid to speak',
+      'She talks about money constantly',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Gatsby's insight captures the novel's central point that love and wealth cannot be separated in this world. Daisy's voice sounds the way it does because of the privilege that produced her.",
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'gg-10',
+    question: 'What is the significance of the billboard in the Valley of Ashes?',
+    type: 'multiple-choice',
+    options: [
+      "It is an advertisement for Gatsby's parties",
+      'The giant fading eyes of Doctor T. J. Eckleburg function as a secular stand-in for a watching God',
+      'It is a memorial',
+      'It is for bootleg liquor',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The disused billboard with the eyes of Doctor T. J. Eckleburg watches unseeing over the Valley of Ashes and its moral wreckage, suggesting a world that has lost its traditional sense of divine judgement.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'gg-11',
+    question: 'How does Fitzgerald present the difference between East Egg and West Egg?',
+    type: 'multiple-choice',
+    options: [
+      'They are identical',
+      'East Egg = old inherited money; West Egg = new self-made money, a geography that dramatises class division',
+      'West Egg is richer',
+      'They are both poor neighbourhoods',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Fitzgerald uses the two Eggs to externalise the divide between old money (Tom and Daisy) and new money (Gatsby). No matter how vast his fortune, Gatsby cannot cross the bay.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'gg-12',
+    question: 'What does Gatsby mean by "Can\'t repeat the past? Why of course you can!"?',
+    type: 'multiple-choice',
+    options: [
+      'He is joking',
+      "He genuinely believes he can restart his 1917 romance with Daisy exactly where it left off — the novel's defining delusion",
+      'He is talking about history books',
+      'He is quoting someone else',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Gatsby's outburst crystallises his central delusion: that five years can be erased and the past restored through willpower and wealth. His tragedy is the discovery that they cannot.",
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'gg-13',
+    question: 'How does Fitzgerald present Tom and Daisy at the end of the novel?',
+    type: 'multiple-choice',
+    options: [
+      'As repentant',
+      'As "careless people" who smash things up and retreat back into their money, letting others clean up the mess',
+      'As heroic',
+      'As tragic victims',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Nick\'s retrospective verdict — "They were careless people, Tom and Daisy" — is the novel\'s most damning moral statement and frames the Buchanans as the true villains of the story.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'gg-14',
+    question: "Who attends Gatsby's funeral?",
+    type: 'multiple-choice',
+    options: [
+      'Hundreds of party guests',
+      "Almost no one — Nick, Gatsby's father Henry Gatz, Owl Eyes and a few servants",
+      'Daisy and Tom',
+      'Meyer Wolfshiem',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Gatsby's funeral is almost empty. Daisy and Tom have left town, Wolfshiem refuses to come, and only Nick, Henry Gatz, Owl Eyes and a handful of servants stand at the graveside. The absence exposes the hollowness of his social world.",
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'gg-15',
+    question: "How is the source of Gatsby's wealth presented?",
+    type: 'multiple-choice',
+    options: [
+      'He inherited it',
+      'Bootlegging and organised crime, connected through Meyer Wolfshiem — the supposedly meritocratic dream is built on lawbreaking',
+      'He earned it honestly',
+      'It is never addressed',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Gatsby's fortune comes from Prohibition bootlegging and shadowy dealings with gangster Meyer Wolfshiem (a fictionalised Arnold Rothstein). Fitzgerald uses this to expose the criminal underside of 1920s wealth.",
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'gg-16',
+    question: "What is the effect of Nick's retrospective first-person narration?",
+    type: 'multiple-choice',
+    options: [
+      'It is unreliable in an obvious way',
+      'It creates a morally reflective, elegiac frame that lets Fitzgerald explore memory, judgement and disillusionment simultaneously',
+      'It is omniscient',
+      'It is purely objective',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Nick narrates from somewhere in the Middle West after the events, giving the novel its characteristic mix of participation and judgement. His retrospective stance makes the whole story an act of remembered loss.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'gg-17',
+    question:
+      'How does the novel\'s final sentence ("So we beat on, boats against the current...") function?',
+    type: 'multiple-choice',
+    options: [
+      'As a happy ending',
+      "It universalises Gatsby's longing, turning individual tragedy into a meditation on human effort against time",
+      'As a literal description of sailing',
+      'As a joke',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The closing line converts Gatsby's personal defeat into a universal image of striving against time, binding the American Dream to the impossibility of ever truly moving forward.",
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'gg-18',
+    question: 'How does Fitzgerald use the Valley of Ashes?',
+    type: 'multiple-choice',
+    options: [
+      'As comic relief',
+      "As a grey industrial symbol of the poverty that underpins the wealth of East and West Egg, watched over by Eckleburg's eyes",
+      "As Gatsby's home",
+      'As the setting for the parties',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The Valley of Ashes is the literal and symbolic waste that makes the wealth of Long Island possible, and the site of Myrtle's death. It exposes the human cost of the Jazz Age boom.",
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'gg-19',
+    question: 'How does Fitzgerald treat the American Dream in the novel?',
+    type: 'multiple-choice',
+    options: [
+      'He celebrates it',
+      "He presents it as corrupted: Gatsby's rise is powered by crime, his love object is already taken, and the old rich reject him to the end",
+      'He ignores it',
+      'He says it is uniquely European',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The novel dissects the American Dream at the height of its Jazz Age form and finds it hollow. Even Gatsby\'s "extraordinary gift for hope" cannot survive the carelessness of the class he tried to join.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'gg-20',
+    question: "What is the significance of Fitzgerald's own biography for the novel?",
+    type: 'multiple-choice',
+    options: [
+      'It is irrelevant',
+      "His marriage to Zelda Sayre, a Southern debutante who initially rejected him as not rich enough, shapes Gatsby's pursuit of Daisy and the novel's outsider perspective on the rich",
+      'He was actually wealthy old money',
+      'He never married',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Fitzgerald's own experience of being an outsider pursuing a wealthy woman informs Gatsby's story, and his ambivalent position — enchanted by the rich but clear-eyed about them — gives the novel its characteristic tone.",
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'The American Dream', summary: 'Fitzgerald dissects the Jazz Age form of the American Dream and finds it corrupted by money, crime and class.', keyPoints: ['Gatsby rises from poor North Dakota farm boy to Long Island millionaire', 'His fortune is built on bootlegging and ties to Meyer Wolfshiem', 'The old rich (Tom and Daisy) reject him to the end', 'The green light symbolises the receding "orgastic future"', 'The closing line binds Gatsby\'s longing to America itself'] },
-  { topic: 'Old Money vs New Money', summary: 'The geography of East Egg and West Egg dramatises the novel\'s central class divide.', keyPoints: ['East Egg = old inherited money (Tom and Daisy)', 'West Egg = new self-made money (Gatsby)', 'No amount of wealth lets Gatsby cross the bay', 'Tom exposes Gatsby\'s criminal origins at the Plaza', 'The Buchanans "retreat back into their money" at the end'] },
-  { topic: 'Love and Idealisation', summary: 'Gatsby loves an idea of Daisy he has cultivated for five years, and the real woman cannot match the fantasy.', keyPoints: ['The reunion scene: Gatsby throws shirts onto the bed', '"Her voice is full of money" — love and wealth are inseparable', 'Daisy cannot say she never loved Tom', 'Gatsby takes the blame for Myrtle\'s death', 'His dream "must have seemed so close he could hardly fail to grasp it"'] },
-  { topic: 'The Past and Longing', summary: 'The novel\'s great subject is the impossibility of recovering time.', keyPoints: ['"Can\'t repeat the past? Why of course you can!"', 'Gatsby has organised his life around a 1917 affair', 'The green light is always just across the water', 'Nick narrates retrospectively from the Midwest', 'Final line: "borne back ceaselessly into the past"'] },
-  { topic: 'Illusion vs Reality and Symbols', summary: 'Fitzgerald uses recurring symbols to expose the gap between appearance and truth.', keyPoints: ['The green light — unreachable hope', 'The eyes of Doctor T. J. Eckleburg — absent moral witness', 'The Valley of Ashes — industrial poverty behind the glamour', 'Gatsby\'s invented name, accent and Oxford story', 'Nick\'s dual position "within and without"'] },
+  {
+    topic: 'The American Dream',
+    summary:
+      'Fitzgerald dissects the Jazz Age form of the American Dream and finds it corrupted by money, crime and class.',
+    keyPoints: [
+      'Gatsby rises from poor North Dakota farm boy to Long Island millionaire',
+      'His fortune is built on bootlegging and ties to Meyer Wolfshiem',
+      'The old rich (Tom and Daisy) reject him to the end',
+      'The green light symbolises the receding "orgastic future"',
+      "The closing line binds Gatsby's longing to America itself",
+    ],
+  },
+  {
+    topic: 'Old Money vs New Money',
+    summary: "The geography of East Egg and West Egg dramatises the novel's central class divide.",
+    keyPoints: [
+      'East Egg = old inherited money (Tom and Daisy)',
+      'West Egg = new self-made money (Gatsby)',
+      'No amount of wealth lets Gatsby cross the bay',
+      "Tom exposes Gatsby's criminal origins at the Plaza",
+      'The Buchanans "retreat back into their money" at the end',
+    ],
+  },
+  {
+    topic: 'Love and Idealisation',
+    summary:
+      'Gatsby loves an idea of Daisy he has cultivated for five years, and the real woman cannot match the fantasy.',
+    keyPoints: [
+      'The reunion scene: Gatsby throws shirts onto the bed',
+      '"Her voice is full of money" — love and wealth are inseparable',
+      'Daisy cannot say she never loved Tom',
+      "Gatsby takes the blame for Myrtle's death",
+      'His dream "must have seemed so close he could hardly fail to grasp it"',
+    ],
+  },
+  {
+    topic: 'The Past and Longing',
+    summary: "The novel's great subject is the impossibility of recovering time.",
+    keyPoints: [
+      '"Can\'t repeat the past? Why of course you can!"',
+      'Gatsby has organised his life around a 1917 affair',
+      'The green light is always just across the water',
+      'Nick narrates retrospectively from the Midwest',
+      'Final line: "borne back ceaselessly into the past"',
+    ],
+  },
+  {
+    topic: 'Illusion vs Reality and Symbols',
+    summary: 'Fitzgerald uses recurring symbols to expose the gap between appearance and truth.',
+    keyPoints: [
+      'The green light — unreachable hope',
+      'The eyes of Doctor T. J. Eckleburg — absent moral witness',
+      'The Valley of Ashes — industrial poverty behind the glamour',
+      "Gatsby's invented name, accent and Oxford story",
+      'Nick\'s dual position "within and without"',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -280,6 +632,7 @@ export default async function TheGreatGatsbyPage() {
   if (board && !allowedBoards.includes(board)) {
     redirect('/revision/texts')
   }
+  const userBoardLabel = board ? (getBoardConfig(board)?.shortName ?? 'AQA') : 'AQA'
 
   return (
     <>
@@ -289,31 +642,78 @@ export default async function TheGreatGatsbyPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "The Great Gatsby", url: "https://theenglishhub.app/revision/texts/the-great-gatsby" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'The Great Gatsby',
+            url: 'https://theenglishhub.app/revision/texts/the-great-gatsby',
+          },
         ]}
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">Draft study guide</strong>
-        <span>AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.</span>
+        <span>
+          AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.
+        </span>
       </div>
       <TextStudyHub
         textName="The Great Gatsby"
         textType="novel"
-        examBoard="AQA"
+        examBoard={userBoardLabel}
         basePath="/revision/texts/the-great-gatsby"
         subPages={[
-          { id: 'read', href: '/revision/texts/the-great-gatsby/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
-          { id: 'acts', href: '/revision/texts/the-great-gatsby/chapters', icon: 'acts' as const, title: 'Chapter-by-Chapter Analysis', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/the-great-gatsby/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/the-great-gatsby/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/the-great-gatsby/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/the-great-gatsby/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
-          { id: 'essays', href: '/revision/texts/the-great-gatsby/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'A-Level essay plans' },
+          {
+            id: 'read',
+            href: '/revision/texts/the-great-gatsby/read',
+            icon: 'read' as const,
+            title: 'Read Full Text',
+            description: 'With annotations',
+          },
+          {
+            id: 'acts',
+            href: '/revision/texts/the-great-gatsby/chapters',
+            icon: 'acts' as const,
+            title: 'Chapter-by-Chapter Analysis',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/the-great-gatsby/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/the-great-gatsby/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/the-great-gatsby/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/the-great-gatsby/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/the-great-gatsby/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'A-Level essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -325,7 +725,7 @@ export default async function TheGreatGatsbyPage() {
           'How does Fitzgerald use setting to explore class in The Great Gatsby?',
           'How does Fitzgerald present the impossibility of repeating the past?',
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}

@@ -2,9 +2,18 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useAuthStore, useAuthUserLoading, useAuthProfile } from '@/store/auth-store'
-import { Menu, LogOut, School, Sparkles, BookOpen, ChevronDown, RefreshCw, Handshake } from 'lucide-react'
+import {
+  Menu,
+  LogOut,
+  School,
+  Sparkles,
+  BookOpen,
+  ChevronDown,
+  RefreshCw,
+  Handshake,
+} from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { Badge } from '@/components/ui/badge'
 import {
@@ -21,7 +30,7 @@ import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
-import { getBoardType, getIgcseHubUrl, getALevelHubUrl } from '@/lib/board/board-filter'
+import { getBoardType } from '@/lib/board/board-filter'
 import type { ExamBoard } from '@/lib/board/board-store'
 
 type NavLink = {
@@ -60,10 +69,9 @@ export function Header() {
   const { user, isLoading } = useAuthUserLoading()
   const profile = useAuthProfile()
   const pathname = usePathname()
-  const router = useRouter()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isSchoolMember, setIsSchoolMember] = useState(false)
-  const { board, isHydrated: isBoardHydrated, clearBoard } = useBoard()
+  const { board, isHydrated: isBoardHydrated } = useBoard()
 
   const isPremium = profile?.subscription_status === 'pro'
 
@@ -308,19 +316,14 @@ export function Header() {
                       >
                         Change board
                       </Link>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          clearBoard()
-                          setMobileOpen(false)
-                          router.push('/board-select')
-                          router.refresh()
-                        }}
+                      <Link
+                        href="/board-select?change=1"
+                        onClick={() => setMobileOpen(false)}
                         className="inline-flex items-center justify-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-red-400 transition-colors hover:bg-red-400/10"
                       >
                         <RefreshCw className="h-3 w-3" aria-hidden="true" />
                         Reset exam board
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 ) : (
@@ -473,9 +476,6 @@ export function Header() {
 }
 
 function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydrated: boolean }) {
-  const router = useRouter()
-  const { clearBoard } = useBoard()
-
   // Avoid hydration mismatch — render a placeholder until the persisted store is ready.
   if (!isHydrated) {
     return <div className="h-8 w-20" aria-hidden="true" />
@@ -493,12 +493,6 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
         Select board
       </Link>
     )
-  }
-
-  const handleReset = () => {
-    clearBoard()
-    router.push('/board-select')
-    router.refresh()
   }
 
   return (
@@ -528,7 +522,10 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
         <DropdownMenuItem render={<Link href="/board-select?change=1" />}>
           Change board
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={handleReset} className="text-destructive focus:text-destructive">
+        <DropdownMenuItem
+          render={<Link href="/board-select?change=1" />}
+          className="text-destructive focus:text-destructive"
+        >
           <RefreshCw className="mr-2 h-3.5 w-3.5" aria-hidden="true" />
           Reset exam board
         </DropdownMenuItem>
