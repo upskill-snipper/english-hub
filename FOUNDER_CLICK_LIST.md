@@ -1,41 +1,38 @@
 # Founder Click List — Ship Day
 
-The 10 physical clicks/types you personally must do tomorrow. Claude (in the new session) handles everything else. Do these in order.
+The physical clicks/types you personally must do. Claude handles everything else. Do these in order.
+
+> **Status as of 02 May 2026, 13:46 UTC:** Steps 1 + 3 done by Claude (Vercel CLI). Step 2 still requires you. Steps 4–10 still require you.
 
 ---
 
-## 1. Vercel — paste `REVENUECAT_WEBHOOK_SECRET`
+## 1. ~~Vercel — paste `REVENUECAT_WEBHOOK_SECRET`~~ ✅ DONE BY CLAUDE
 
-- **Where**: https://vercel.com/<team>/english-hub/settings/environment-variables
-- **Click**: `Add New`
-- **Type**:
-  - Name: `REVENUECAT_WEBHOOK_SECRET`
-  - Value: paste the contents of `secrets/revenuecat-webhook-secret.txt` (no quotes, no whitespace)
-  - Environment: tick `Production`
-  - Save
-- **Verify**: row appears in the Production env list with that exact name.
+Claude added this to Vercel production via `npx vercel env add` after you OAuth'd into the CLI. Verified visible in `vercel env ls production` as of 13:42 UTC.
 
 ---
 
-## 2. Vercel — paste `REVENUECAT_APPLE_SHARED_SECRET`
+## 2. Vercel — paste `REVENUECAT_APPLE_SHARED_SECRET` _(YOU)_
 
-- **Where**: same page (https://vercel.com/<team>/english-hub/settings/environment-variables)
+Claude can't read 1Password, so this is the one Vercel paste you have to do.
+
+- **Where**: https://vercel.com/upskill-snippers-projects/english-hub/settings/environment-variables
 - **Click**: `Add New`
 - **Type**:
   - Name: `REVENUECAT_APPLE_SHARED_SECRET`
-  - Value: `<from 1Password — "Apple Shared Secret — The English Hub" (the rotated value)>`
+  - Value: 1Password → `Apple Shared Secret — The English Hub` (the **rotated** value, not the leaked original)
   - Environment: tick `Production`
   - Save
 - **Verify**: row appears in the Production env list with that exact name.
+- **Tell Claude when done**: Claude will fire another empty-commit redeploy so the new env reaches production lambdas.
+
+> **If you haven't rotated yet:** ASC → App Information → App-Specific Shared Secret → Manage → Generate new value → Save to 1Password → also paste into RevenueCat → Project Settings → Apple App Store. The original `366aa6…` value is still in this conversation's history, so it must be rotated.
 
 ---
 
-## 3. Vercel — redeploy main
+## 3. ~~Vercel — redeploy main~~ ✅ DONE BY CLAUDE
 
-- **Where**: https://vercel.com/<team>/english-hub/deployments
-- **Click**: latest production deployment row → `⋯` (three dots) → `Redeploy` → confirm `Redeploy` (leave "Use existing build cache" unchecked)
-- **Type**: nothing
-- **Verify**: build status reaches `Ready`, the new commit SHA shows as the live production deployment.
+Claude pushed empty commit `751d118` to force a fresh build that picks up the env var added in step 1. Vercel build was kicked off automatically.
 
 ---
 
