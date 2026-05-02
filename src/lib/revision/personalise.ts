@@ -19,12 +19,7 @@ import {
   type GameScoreEntry,
   type MarkingHistoryEntry,
 } from '@/components/toolkit/toolkit-types'
-import {
-  TOPIC_META,
-  TOPICS,
-  getTopicsForBoard,
-  type Topic,
-} from '@/app/revision/quiz/quiz-data'
+import { TOPIC_META, TOPICS, getTopicsForBoard, type Topic } from '@/app/revision/quiz/quiz-data'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -101,9 +96,9 @@ function calculateStreak(): number {
     const dates: string[] = JSON.parse(raw)
     if (!dates.length) return 0
 
-    const unique = [
-      ...new Set(dates.map((d) => new Date(d).toISOString().slice(0, 10))),
-    ].sort().reverse()
+    const unique = [...new Set(dates.map((d) => new Date(d).toISOString().slice(0, 10)))]
+      .sort()
+      .reverse()
 
     const today = new Date().toISOString().slice(0, 10)
     const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10)
@@ -113,9 +108,7 @@ function calculateStreak(): number {
     for (let i = 1; i < unique.length; i++) {
       const prev = new Date(unique[i - 1])
       const curr = new Date(unique[i])
-      const diffDays = Math.round(
-        (prev.getTime() - curr.getTime()) / (1000 * 60 * 60 * 24),
-      )
+      const diffDays = Math.round((prev.getTime() - curr.getTime()) / (1000 * 60 * 60 * 24))
       if (diffDays === 1) streak++
       else break
     }
@@ -203,12 +196,17 @@ export function buildStudentProfile(board: ExamBoard | null): StudentProfile {
 
   // ── AO gaps from marking history ──
   // The marking-history entries have an `aos` array with { code, label, score, max }
-  const aoAccumulator: Record<string, { totalScore: number; totalMax: number; count: number; label: string }> = {}
+  const aoAccumulator: Record<
+    string,
+    { totalScore: number; totalMax: number; count: number; label: string }
+  > = {}
 
   for (const entry of markingHistory) {
     // The entry shape from the results page: { id, grade, aos: AOScore[] }
     const raw = entry as unknown as Record<string, unknown>
-    const aos = raw.aos as Array<{ code?: string; label?: string; score?: number; max?: number }> | undefined
+    const aos = raw.aos as
+      | Array<{ code?: string; label?: string; score?: number; max?: number }>
+      | undefined
 
     if (Array.isArray(aos)) {
       for (const ao of aos) {
@@ -241,12 +239,14 @@ export function buildStudentProfile(board: ExamBoard | null): StudentProfile {
 
   // ── Predicted grade ──
   const allScores = quizHistory.map((q) => q.score)
-  const avgPercentage = allScores.length > 0
-    ? allScores.reduce((a, b) => a + b, 0) / allScores.length
-    : 0
-  const predictedGradeNum = allScores.length >= 2
-    ? calculatePredictedGrade(allScores)
-    : (allScores.length === 1 ? percentageToGCSEGrade(allScores[0]) : 0)
+  const avgPercentage =
+    allScores.length > 0 ? allScores.reduce((a, b) => a + b, 0) / allScores.length : 0
+  const predictedGradeNum =
+    allScores.length >= 2
+      ? calculatePredictedGrade(allScores)
+      : allScores.length === 1
+        ? percentageToGCSEGrade(allScores[0])
+        : 0
 
   const hasData = quizHistory.length > 0 || studiedPoems.length > 0 || markingHistory.length > 0
 
@@ -272,9 +272,10 @@ export function buildStudentProfile(board: ExamBoard | null): StudentProfile {
 
 function getTopicSuggestion(topic: string, avg: number): string {
   const deficit = 60 - avg
-  const gradeImpact = deficit > 20
-    ? 'This is significantly pulling your grade down.'
-    : 'Improving this could bump you up a grade.'
+  const gradeImpact =
+    deficit > 20
+      ? 'This is significantly pulling your grade down.'
+      : 'Improving this could bump you up a grade.'
 
   switch (topic) {
     case 'poetry':
@@ -308,28 +309,28 @@ function getStretchQuestions(grade: number): string[] {
   if (grade <= 4) {
     return [
       'How does the writer use language to create a specific mood or atmosphere?',
-      'What effect does the writer\'s choice of [specific word] have on the reader?',
+      "What effect does the writer's choice of [specific word] have on the reader?",
       'Why do you think the writer chose to begin/end the text this way?',
-      'How does the structure of the text help convey the writer\'s message?',
+      "How does the structure of the text help convey the writer's message?",
     ]
   }
   if (grade <= 6) {
     return [
-      'How does the writer\'s structural choices mirror the thematic content of the text?',
+      "How does the writer's structural choices mirror the thematic content of the text?",
       'Evaluate the argument that the protagonist is truly a victim of their circumstances.',
-      'Compare how two writers use contrasting settings to reflect their characters\' inner states.',
+      "Compare how two writers use contrasting settings to reflect their characters' inner states.",
       '"The writer presents [character] as a symbol rather than a real person." To what extent do you agree?',
-      'How does the writer use the opening and closing of the text to shape the reader\'s interpretation?',
+      "How does the writer use the opening and closing of the text to shape the reader's interpretation?",
     ]
   }
   // Grade 7+
   return [
     'To what extent is the text a product of its time, and could it carry the same meaning in a modern context?',
     'Evaluate the argument that [character] is the true protagonist. Consider alternative readings.',
-    'How does the writer subvert genre conventions to challenge the reader\'s expectations?',
+    "How does the writer subvert genre conventions to challenge the reader's expectations?",
     '"All literature is political." Discuss this claim in relation to your set text, considering feminist, Marxist, or post-colonial perspectives.',
     'Compare how two writers use [technique] to achieve contrasting effects. Which is more successful, and why?',
-    'Analyse how the writer\'s biographical context shapes the text\'s ideological position.',
+    "Analyse how the writer's biographical context shapes the text's ideological position.",
   ]
 }
 
@@ -377,7 +378,7 @@ function getLanguageTechniquesContent(grade: number): RevisionBlock {
         'What is the difference between a simile and a metaphor? Give one example of each.',
         'Why might a writer use short sentences at a tense moment in a story?',
       ],
-      revisionLink: { href: '/revision/language-techniques', label: 'Language Techniques Revision' },
+      revisionLink: { href: '/revision/language', label: 'Language Techniques Revision' },
     }
   }
 
@@ -394,11 +395,11 @@ function getLanguageTechniquesContent(grade: number): RevisionBlock {
         'Zooming in on word choice: Consider why Shakespeare chose "vaulting" ambition rather than simply "great" ambition. "Vaulting" suggests something that leaps beyond its proper bounds — ambition that overreaches.',
       ],
       quickTest: [
-        'Analyse how Dickens uses the Ghost of Christmas Yet to Come\'s silence as a structural technique. What effect does this have compared to the other ghosts?',
+        "Analyse how Dickens uses the Ghost of Christmas Yet to Come's silence as a structural technique. What effect does this have compared to the other ghosts?",
         'Identify two techniques in this sentence and explain their combined effect: "The soldiers marched on, their boots pounding the earth like heartbeats."',
         'Why is it more effective to say "The writer creates a sense of unease" rather than "This makes the reader feel sad"?',
       ],
-      revisionLink: { href: '/revision/language-techniques', label: 'Language Techniques Revision' },
+      revisionLink: { href: '/revision/language', label: 'Language Techniques Revision' },
     }
   }
 
@@ -410,7 +411,7 @@ function getLanguageTechniquesContent(grade: number): RevisionBlock {
     examples: [
       'Alternative reading: A post-colonial reading of "The Tempest" might view Caliban not as a "savage" but as an indigenous person whose land and language have been stolen by Prospero. Shakespeare\'s use of prose for Caliban (vs. verse for Prospero) could be read as linguistic colonisation.',
       'Challenging the writer: Shelley\'s decision to frame "Ozymandias" as a reported story (a traveller told the speaker) creates multiple layers of distance from the original monument. This structural choice mirrors the poem\'s theme: power is always mediated, filtered, and ultimately lost.',
-      'Critical lens (Marxist): In "A Christmas Carol", Dickens\' Ghost of Christmas Present\'s robe concealing Ignorance and Want can be read as a bourgeois fantasy — the wealthy man is shown poverty, feels guilt, and throws money at it. Does personal charity address structural inequality, or merely soothe Scrooge\'s conscience?',
+      "Critical lens (Marxist): In \"A Christmas Carol\", Dickens' Ghost of Christmas Present's robe concealing Ignorance and Want can be read as a bourgeois fantasy — the wealthy man is shown poverty, feels guilt, and throws money at it. Does personal charity address structural inequality, or merely soothe Scrooge's conscience?",
       'Conceptualised argument: Rather than saying "Shakespeare uses a metaphor here", write: "Shakespeare constructs ambition as a physical force — one that \'o\'erleaps itself\' — to dramatise the Jacobean anxiety that unchecked desire destabilises the divinely ordered state."',
       'Form and meaning intertwined: Browning\'s use of the dramatic monologue form in "My Last Duchess" is itself an act of control — the Duke controls the narrative just as he controlled the Duchess. The reader is trapped in his perspective, forced to piece together the horror from his euphemisms.',
     ],
@@ -419,7 +420,7 @@ function getLanguageTechniquesContent(grade: number): RevisionBlock {
       '"The Inspector is not a character but a dramatic device." Evaluate this claim with reference to Priestley\'s structural and linguistic choices.',
       'Compare how Shelley and Browning use the concept of power in "Ozymandias" and "My Last Duchess". Which poet presents the more unsettling vision of power, and why?',
     ],
-    revisionLink: { href: '/revision/language-techniques', label: 'Language Techniques Revision' },
+    revisionLink: { href: '/revision/language', label: 'Language Techniques Revision' },
   }
 }
 
@@ -459,7 +460,7 @@ function getPoetryContent(grade: number): RevisionBlock {
       quickTest: [
         'Compare how two poets from your anthology present conflict. Focus on one similarity and one difference in their methods.',
         'Choose a poem you know well. Write a paragraph that integrates context with analysis of a specific technique.',
-        'What is the difference between writing about a poem and writing about the poet\'s choices?',
+        "What is the difference between writing about a poem and writing about the poet's choices?",
       ],
       revisionLink: { href: '/revision/poetry', label: 'Poetry Revision Hub' },
     }
@@ -502,7 +503,7 @@ function getSetTextsContent(grade: number): RevisionBlock {
         'Who is the antagonist in your set text? What motivates them?',
         'What is the most important scene in your set text, and why?',
       ],
-      revisionLink: { href: '/revision/set-texts', label: 'Set Texts Revision' },
+      revisionLink: { href: '/revision/texts', label: 'Set Texts Revision' },
     }
   }
 
@@ -512,16 +513,16 @@ function getSetTextsContent(grade: number): RevisionBlock {
       explanation:
         'At Grade 5-6, move beyond plot retelling. Every paragraph should analyse how the writer creates meaning through language, structure, and form. Use the writer\'s name frequently — "Shakespeare presents...", "Dickens suggests..." — to show you understand the text as a constructed artefact, not a true story. Integrate context naturally rather than bolting it on.',
       examples: [
-        'Writer-focused analysis: "Priestley uses the Inspector as a mouthpiece for his socialist beliefs. The repeated imperative \'We are members of one body\' directly challenges the Birlings\' capitalist individualism."',
+        "Writer-focused analysis: \"Priestley uses the Inspector as a mouthpiece for his socialist beliefs. The repeated imperative 'We are members of one body' directly challenges the Birlings' capitalist individualism.\"",
         'Structure analysis: "Shakespeare places the \'Tomorrow\' soliloquy near the end of Act 5 — by this point, Macbeth has lost everything. The positioning forces the audience to confront the consequences of his choices before his death."',
         'Integrated context: "Dickens\' portrayal of Scrooge\'s transformation reflects the Victorian ideal of Christian redemption, but it also serves a political purpose — Dickens was campaigning against the New Poor Law, which treated poverty as a moral failing."',
       ],
       quickTest: [
-        'Write a paragraph about a key moment in your set text. Include: the writer\'s name, an embedded quotation, analysis of a technique, and a contextual link.',
+        "Write a paragraph about a key moment in your set text. Include: the writer's name, an embedded quotation, analysis of a technique, and a contextual link.",
         'How does the ending of your set text reinforce its key themes?',
         'Choose one character. How does the writer use them to convey a message to the audience?',
       ],
-      revisionLink: { href: '/revision/set-texts', label: 'Set Texts Revision' },
+      revisionLink: { href: '/revision/texts', label: 'Set Texts Revision' },
     }
   }
 
@@ -532,14 +533,14 @@ function getSetTextsContent(grade: number): RevisionBlock {
     examples: [
       'Thesis-driven response: "Priestley does not simply critique the Birlings — he critiques the audience. By making the Inspector\'s identity ambiguous, Priestley forces the audience to decide whether accountability requires external enforcement or internal conscience."',
       'Alternative interpretation: "While Macbeth is traditionally read as a cautionary tale about ambition, a more nuanced reading might see it as Shakespeare\'s exploration of determinism — if the witches\' prophecies are true, was Macbeth ever truly free to choose differently?"',
-      'Critical perspective: "A Marxist reading of \'A Christmas Carol\' might argue that Scrooge\'s transformation is ultimately conservative — individual philanthropy replaces systemic change, leaving the structures that produce poverty intact."',
+      "Critical perspective: \"A Marxist reading of 'A Christmas Carol' might argue that Scrooge's transformation is ultimately conservative — individual philanthropy replaces systemic change, leaving the structures that produce poverty intact.\"",
     ],
     quickTest: [
       '"The true horror of [your set text] is not what happens, but what is left unspoken." Write a thesis statement responding to this claim.',
-      'How does the writer use a minor character to complicate or challenge the protagonist\'s worldview?',
+      "How does the writer use a minor character to complicate or challenge the protagonist's worldview?",
       'To what extent is the ending of your set text satisfying? Consider what the writer gains — and what they sacrifice — by resolving the narrative this way.',
     ],
-    revisionLink: { href: '/revision/set-texts', label: 'Set Texts Revision' },
+    revisionLink: { href: '/revision/texts', label: 'Set Texts Revision' },
   }
 }
 
@@ -589,7 +590,7 @@ function getExamTechniqueContent(grade: number): RevisionBlock {
     explanation:
       'At Grade 7-9, your exam technique should be invisible — the reader should feel they are reading a critical essay, not a formulaic exam response. Open with a conceptualised thesis. Build a sustained argument across paragraphs (not isolated PEE blocks). Use topic sentences that advance your argument, not just introduce a new point. Conclude by synthesising, not summarising.',
     examples: [
-      'Conceptualised opening: "Priestley\'s real investigation in \'An Inspector Calls\' is not Eva Smith\'s death but the audience\'s capacity for moral responsibility. The Inspector functions less as a character than as a theatrical device — a mirror held up to both the Birlings and the audience."',
+      "Conceptualised opening: \"Priestley's real investigation in 'An Inspector Calls' is not Eva Smith's death but the audience's capacity for moral responsibility. The Inspector functions less as a character than as a theatrical device — a mirror held up to both the Birlings and the audience.\"",
       'Advancing an argument: Each topic sentence should build on the last. Instead of "Another technique is...", write "This tension between [previous point] and [new point] becomes most acute when..."',
       'Synthesising conclusion: Rather than repeating your points, push further: "Ultimately, the text asks not whether [character] is guilty, but whether guilt can ever be fully resolved — a question the writer deliberately leaves open."',
     ],
@@ -609,7 +610,7 @@ function getContextContent(grade: number): RevisionBlock {
     return {
       title: 'Context — Why It Matters',
       explanation:
-        'Context means the historical, social, and cultural background to a text. It helps you understand why the writer wrote it and what message they wanted to convey. For GCSE, you need to know: when the text was written, what was happening at that time, and how this influenced the writer\'s choices. Don\'t just state context — connect it to the text.',
+        "Context means the historical, social, and cultural background to a text. It helps you understand why the writer wrote it and what message they wanted to convey. For GCSE, you need to know: when the text was written, what was happening at that time, and how this influenced the writer's choices. Don't just state context — connect it to the text.",
       examples: [
         'Victorian context: Dickens wrote "A Christmas Carol" in 1843, during a time of extreme poverty. He wanted to highlight the gap between rich and poor and encourage charity.',
         'Jacobean context: Shakespeare wrote "Macbeth" for King James I, who believed in witchcraft and the divine right of kings. This explains why the witches are so central to the plot.',
@@ -618,9 +619,9 @@ function getContextContent(grade: number): RevisionBlock {
       quickTest: [
         'When was your main set text written? What was happening in Britain at that time?',
         'Why does knowing the context help you write better essays?',
-        'Name one way the writer\'s personal life influenced their set text.',
+        "Name one way the writer's personal life influenced their set text.",
       ],
-      revisionLink: { href: '/revision/context', label: 'Context Revision' },
+      revisionLink: { href: '/revision/exam-technique', label: 'Context Revision' },
     }
   }
 
@@ -639,7 +640,7 @@ function getContextContent(grade: number): RevisionBlock {
         'How does knowing the date a text was first performed change our reading of it?',
         'What is the difference between historical context and social context?',
       ],
-      revisionLink: { href: '/revision/context', label: 'Context Revision' },
+      revisionLink: { href: '/revision/exam-technique', label: 'Context Revision' },
     }
   }
 
@@ -654,10 +655,10 @@ function getContextContent(grade: number): RevisionBlock {
     ],
     quickTest: [
       'How might a post-colonial critic read your set text differently from a traditional literary scholar?',
-      'Does knowing the writer\'s personal biography help or hinder our reading of the text? Argue both sides.',
+      "Does knowing the writer's personal biography help or hinder our reading of the text? Argue both sides.",
       '"All texts are political documents." Discuss with reference to your set text and its historical context.',
     ],
-    revisionLink: { href: '/revision/context', label: 'Context Revision' },
+    revisionLink: { href: '/revision/exam-technique', label: 'Context Revision' },
   }
 }
 
@@ -681,7 +682,7 @@ export function getModelParagraph(grade: number): { paragraph: string; annotatio
   if (grade <= 6) {
     return {
       paragraph:
-        'Shakespeare presents Macbeth\'s ambition as an uncontrollable force that ultimately destroys him. The metaphor "vaulting ambition, which o\'erleaps itself" compares his desire for power to a horse rider who jumps too eagerly and falls on the other side. The verb "o\'erleaps" suggests excess — Macbeth\'s ambition goes beyond what is natural or safe. Contextually, this would have resonated with a Jacobean audience familiar with the concept of the Great Chain of Being: attempting to rise above one\'s divinely appointed station could only lead to catastrophe.',
+        "Shakespeare presents Macbeth's ambition as an uncontrollable force that ultimately destroys him. The metaphor \"vaulting ambition, which o'erleaps itself\" compares his desire for power to a horse rider who jumps too eagerly and falls on the other side. The verb \"o'erleaps\" suggests excess — Macbeth's ambition goes beyond what is natural or safe. Contextually, this would have resonated with a Jacobean audience familiar with the concept of the Great Chain of Being: attempting to rise above one's divinely appointed station could only lead to catastrophe.",
       annotations: [
         'Opens with a conceptual point about the character.',
         'Embeds the quotation into the sentence fluently.',
@@ -695,14 +696,14 @@ export function getModelParagraph(grade: number): { paragraph: string; annotatio
 
   return {
     paragraph:
-      'Shakespeare constructs ambition in "Macbeth" not merely as a character flaw but as a force that destabilises the entire moral and political order. The equestrian metaphor of "vaulting ambition, which o\'erleaps itself / And falls on th\'other" is characteristically Shakespearean in its physicality — ambition is rendered as a bodily act, a leap that carries its own punishment. The enjambment across the line break mirrors the very overreaching it describes: the sentence, like Macbeth, cannot contain itself within its proper bounds. For a Jacobean audience steeped in the doctrine of divine right, this image would carry theocratic weight — to vault beyond one\'s station is not merely unwise but blasphemous. Yet Shakespeare\'s genius lies in making this transgression compelling: we understand Macbeth\'s desire even as we recognise its destruction, implicating the audience in the very ambition the play purports to condemn.',
+      "Shakespeare constructs ambition in \"Macbeth\" not merely as a character flaw but as a force that destabilises the entire moral and political order. The equestrian metaphor of \"vaulting ambition, which o'erleaps itself / And falls on th'other\" is characteristically Shakespearean in its physicality — ambition is rendered as a bodily act, a leap that carries its own punishment. The enjambment across the line break mirrors the very overreaching it describes: the sentence, like Macbeth, cannot contain itself within its proper bounds. For a Jacobean audience steeped in the doctrine of divine right, this image would carry theocratic weight — to vault beyond one's station is not merely unwise but blasphemous. Yet Shakespeare's genius lies in making this transgression compelling: we understand Macbeth's desire even as we recognise its destruction, implicating the audience in the very ambition the play purports to condemn.",
     annotations: [
       'Driven by a conceptualised argument, not a technique-spotting exercise.',
       'Analyses form (enjambment) as well as language — form enacts meaning.',
       'Explores how the audience is implicated, not just the character.',
       'Context is used as an analytical tool, not background information.',
       'Sophisticated vocabulary without being pretentious.',
-      'Considers the writer\'s craft and the text\'s ideological work.',
+      "Considers the writer's craft and the text's ideological work.",
       'The final clause complicates the reading — Grade 9 responses embrace ambiguity.',
     ],
   }
@@ -783,13 +784,13 @@ function getTopicLink(topic: string): { href: string; label: string } {
     case 'poetry':
       return { href: '/revision/poetry', label: 'Poetry Revision' }
     case 'set-texts':
-      return { href: '/revision/set-texts', label: 'Set Texts Revision' }
+      return { href: '/revision/texts', label: 'Set Texts Revision' }
     case 'language-techniques':
-      return { href: '/revision/language-techniques', label: 'Language Techniques' }
+      return { href: '/revision/language', label: 'Language Techniques' }
     case 'exam-technique':
       return { href: '/revision/exam-technique', label: 'Exam Technique' }
     case 'context':
-      return { href: '/revision/context', label: 'Context Revision' }
+      return { href: '/revision/exam-technique', label: 'Context Revision' }
     default:
       return { href: '/revision', label: 'Revision Hub' }
   }

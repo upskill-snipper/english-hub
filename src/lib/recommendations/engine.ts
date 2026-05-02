@@ -69,10 +69,10 @@ const MAX_RECOMMENDATIONS = 5
 
 const TOPIC_REVISION_LINKS: Record<Topic, { href: string; title: string }> = {
   poetry: { href: '/revision/poetry', title: 'Poetry Revision' },
-  'set-texts': { href: '/revision/set-texts', title: 'Set Texts Revision' },
+  'set-texts': { href: '/revision/texts', title: 'Set Texts Revision' },
   'language-techniques': { href: '/revision/language', title: 'Language Techniques' },
   'exam-technique': { href: '/revision/exam-technique', title: 'Exam Technique' },
-  context: { href: '/revision/context', title: 'Context Revision' },
+  context: { href: '/revision/exam-technique', title: 'Context Revision' },
 }
 
 const BOARD_POETRY_LINKS: Partial<Record<ExamBoard, { href: string; title: string }>> = {
@@ -111,7 +111,10 @@ function topicPercentage(data: { correct: number; total: number }): number {
 }
 
 function makeId(...parts: string[]): string {
-  return parts.join('-').replace(/[^a-z0-9-]/gi, '-').toLowerCase()
+  return parts
+    .join('-')
+    .replace(/[^a-z0-9-]/gi, '-')
+    .toLowerCase()
 }
 
 // ─── Main Generator ─────────────────────────────────────────────────────────
@@ -131,9 +134,10 @@ export function generateRecommendations(
       if (pct < 60) {
         const topicKey = topic as Topic
         const meta = TOPIC_META[topicKey]
-        const link = topicKey === 'poetry' && board
-          ? BOARD_POETRY_LINKS[board] ?? TOPIC_REVISION_LINKS[topicKey]
-          : TOPIC_REVISION_LINKS[topicKey]
+        const link =
+          topicKey === 'poetry' && board
+            ? (BOARD_POETRY_LINKS[board] ?? TOPIC_REVISION_LINKS[topicKey])
+            : TOPIC_REVISION_LINKS[topicKey]
 
         if (meta && link) {
           recs.push({
@@ -153,7 +157,7 @@ export function generateRecommendations(
   // ── 2. Study plan: next uncompleted task → HIGH ───────────────────────
   if (progress.studyPlan?.weeks) {
     const allTasks = progress.studyPlan.weeks.flatMap((w) =>
-      w.tasks.map((t) => ({ ...t, week: w.week }))
+      w.tasks.map((t) => ({ ...t, week: w.week })),
     )
     // Recommend the first task (study plans don't track completion per-task
     // in localStorage, so we recommend the next week's first task as a nudge)
@@ -196,8 +200,7 @@ export function generateRecommendations(
   if (progress.studiedPoems.length >= 3) {
     // Check quiz history for comparison-related topics
     const hasTriedComparison = progress.quizHistory.some(
-      (r) => r.mode?.toLowerCase().includes('comparison') ||
-             r.topics?.includes('poetry'),
+      (r) => r.mode?.toLowerCase().includes('comparison') || r.topics?.includes('poetry'),
     )
 
     // Even if they've done poetry quizzes, recommend comparison practice
@@ -210,7 +213,8 @@ export function generateRecommendations(
       recs.push({
         id: makeId('next-step', 'comparison'),
         title: 'Try poetry comparison practice',
-        description: 'You have studied enough poems to start practising comparisons — a key exam skill worth up to 30 marks.',
+        description:
+          'You have studied enough poems to start practising comparisons — a key exam skill worth up to 30 marks.',
         href: '/revision/exam-technique/essay-structure',
         reason: `You have studied ${progress.studiedPoems.length} poems — time to compare them`,
         priority: 'medium',
@@ -224,9 +228,10 @@ export function generateRecommendations(
     recs.push({
       id: makeId('new-content', 'reading-assessment'),
       title: 'Take the Reading Assessment',
-      description: 'Discover your reading age and get personalised recommendations for comprehension and fluency.',
+      description:
+        'Discover your reading age and get personalised recommendations for comprehension and fluency.',
       href: '/assessment/reading',
-      reason: 'You haven\'t completed the reading assessment yet',
+      reason: "You haven't completed the reading assessment yet",
       priority: 'low',
       type: 'new-content',
     })
